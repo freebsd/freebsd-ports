@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -20,10 +19,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui panel
+USE_XFCE=	configenv libmenu panel
 INSTALLS_ICONS=	yes
-
-CONFIGURE_ARGS=	--disable-debug
 
 OPTIONS=	NLS "Enable Native Language Support" on
 
