@@ -1,0 +1,2 @@
+Curly filters a list of filenames to a greatest-common-denominator
+glob pattern used by most shells.
