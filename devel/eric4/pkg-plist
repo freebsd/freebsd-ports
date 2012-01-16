@@ -2643,6 +2643,7 @@
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/empty.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/endline.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/enum.png
+%%PYTHON_SITELIBDIR%%/eric4/icons/default/eric_2.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/eric.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/ericWeb.png
 %%PYTHON_SITELIBDIR%%/eric4/icons/default/ericWeb32.png
@@ -2899,9 +2900,11 @@
 %%PYTHON_SITELIBDIR%%/eric4/patch_modpython.pyc
 %%PYTHON_SITELIBDIR%%/eric4/patch_pyxml.py
 %%PYTHON_SITELIBDIR%%/eric4/patch_pyxml.pyc
+%%PYTHON_SITELIBDIR%%/eric4/pixmaps/aboutEric_2.png
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/aboutEric.png
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/eric_1.ico
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/eric_2.ico
+%%PYTHON_SITELIBDIR%%/eric4/pixmaps/eric_3.ico
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/eric.png
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/eric4.ico
 %%PYTHON_SITELIBDIR%%/eric4/pixmaps/ericSplash.png
