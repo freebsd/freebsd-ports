@@ -9022,6 +9022,7 @@ mdnsresponder                   ports/net/mDNSResponder
 mdocml                          ports/textproc/mdocml
 mdpop3d                         ports/mail/mdpop3d
 mdtest                          ports/benchmarks/mdtest
+meandmyshadow                   ports/games/meandmyshadow
 meanwhile                       ports/net-im/meanwhile
 mediadownloader                 ports/multimedia/mediadownloader
 mediainfo                       ports/multimedia/mediainfo
@@ -27251,6 +27252,10 @@ xcalib                          ports/x11/xcalib
 xcb                             ports/x11/xcb
 xcb-proto                       ports/x11/xcb-proto
 xcb-util                        ports/x11/xcb-util
+xcb-util-image                  ports/x11/xcb-util-image
+xcb-util-keysyms                ports/x11/xcb-util-keysyms
+xcb-util-renderutil             ports/x11/xcb-util-renderutil
+xcb-util-wm                     ports/x11/xcb-util-wm
 xcd                             ports/audio/xcd
 xcdplayer                       ports/audio/xcdplayer
 xcdroast                        ports/sysutils/xcdroast
