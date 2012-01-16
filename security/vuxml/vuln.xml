@@ -70,6 +70,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>v8</name>
 	<range><lt>3.8.5</lt></range>
       </package>
+      <package>
+	<name>node</name>
+	<range><lt>0.6.7</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
