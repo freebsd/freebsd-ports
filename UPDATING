@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120116:
+  AFFECTS: users of x11/xcb-util
+  AUTHOR: garga@FreeBSD.org
+
+  x11/xcb-util was updated to 0.3.8 and was splitted in new modules.
+  Dependencies were adjusted but main port symbols were moved to a single
+  library, xcb-util.so.  For this reason, all dependent ports must be
+  recompiled.If you use portmaster, run:
+
+  # portmaster -R -r xcb-util
+
+  Or for portupgrade:
+
+  # portupgrade -r xcb-util-0\*
+
 20120112:
   AFFECTS: Nobody
   AUTHOR: wxs@FreeBSD.org
