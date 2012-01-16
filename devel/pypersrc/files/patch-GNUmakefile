@@ -1,28 +1,22 @@
---- GNUmakefile.orig	Sun Mar  5 10:32:34 2006
-+++ GNUmakefile	Thu Apr 27 00:12:07 2006
-@@ -6,13 +6,7 @@
+--- GNUmakefile.orig	2012-01-16 19:12:38.000000000 +0800
++++ GNUmakefile	2012-01-16 19:15:21.000000000 +0800
+@@ -6,13 +6,14 @@
  include GNUmakefile.config
  
  # Where to install.
 -ifeq ($(USER),root)
 -	INSTALL_DIR=/usr/local/bin
 -else
--    # Quote INSTALL_DIR (cygwin HOME has space chars)
--    # but not wildcards which would suppress globbing.
++#ifeq ($(USER),root)
++#	INSTALL_DIR=/usr/local/bin
++#else
+     # Quote INSTALL_DIR (cygwin HOME has space chars)
+     # but not wildcards which would suppress globbing.
 -	INSTALL_DIR="$(HOME)/bin"
 -endif
++#	INSTALL_DIR="$(HOME)/bin"
++#endif
 +INSTALL_DIR=$(PREFIX)/bin
  
  INSTALL			= install
  INSTALL_OWNER	=
-@@ -82,8 +76,8 @@
- CC_OBJS			= $(addprefix $(OUT_DIR)/,$(CC_OBJS_))
- EXTRA_HH_SRCS	= $(addprefix $(HH_SRC_DIR)/,$(EXTRA_HH_SRCS_))
- HH_SRCS         = $(CC_SRCS:.cc=.hh) $(EXTRA_HH_SRCS)
--CC				= g++
--LD				= $(CC)
-+CXX				?= g++
-+LD				= $(CXX)
- ifeq ($(PROFILE),1)
- CC_FLAGS		+= -pg -O0
- LD_FLAGS		+= -pg -O0
