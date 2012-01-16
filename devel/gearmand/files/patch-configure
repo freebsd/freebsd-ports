@@ -1,0 +1,10 @@
+--- ./configure.orig	2012-01-16 15:07:46.000000000 -0500
++++ ./configure	2012-01-16 15:08:21.000000000 -0500
+@@ -23441,6 +23441,7 @@
+                         | sed -e 's/"//'`
+                 if test $ac_sqlite3_version != ""; then
+                     SQLITE3_VERSION=$ac_sqlite3_version
++                    ac_cv_libsqlite3=yes
+                 else
+                     { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Cannot find SQLITE_VERSION macro in sqlite3.h header to retrieve SQLite version!" >&5
+ $as_echo "$as_me: WARNING: Cannot find SQLITE_VERSION macro in sqlite3.h header to retrieve SQLite version!" >&2;}
