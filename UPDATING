@@ -9,12 +9,12 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11/xcb-util
   AUTHOR: garga@FreeBSD.org
 
-  x11/xcb-util was updated to 0.3.8 and was splitted in new modules.
+  x11/xcb-util was updated to 0.3.8 and was split in new modules.
   Dependencies were adjusted but main port symbols were moved to a single
   library, xcb-util.so.  For this reason, all dependent ports must be
   recompiled.If you use portmaster, run:
 
-  # portmaster -R -r xcb-util
+  # portmaster -R -r xcb-util-0
 
   Or for portupgrade:
 
