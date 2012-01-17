@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.60a
+PORTVERSION=	2.61
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -27,15 +27,16 @@ WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_OUTSOURCE=	yes
-CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF \
+		-DWITH_LIBMV:BOOL=OFF
 
 SUB_FILES=	blender blenderplayer
 MAN1=		blender.1
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.60
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.61
 
-LANG=		ar bg ca cs de el es fi fr hr hr_HR it ja ko nl pl pt_BR ro \
-		ru sr sr@Latn sv uk zh_CN
+LANG=		ar bg ca cs de el es es_ES es_MX fa fi fr id it ja ne pl pt_BR \
+		ru sr sr@latin sv zh_CN zh_TW
 
 OPTIONS=	BULLET		"Enable bullet physics engine" on \
 		CINEON		"CINEON and DPX graphics format support" on \
