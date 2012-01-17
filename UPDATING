@@ -6,6 +6,31 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120116:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: Sahil Tandon <sahil@FreeBSD.org>
+
+  From the upstream RELEASE_NOTES:
+
+  Instead of terminating immediately with a "fatal" message when a
+  database file can't be opened, a Postfix daemon program now logs
+  an "error" message, and continues execution with reduced
+  functionality.
+
+  Specify "daemon_table_open_error_is_fatal = yes" to get the
+  historical behavior (immediate termination with "fatal" message).
+
+  Logfile-based alerting systems may need to be updated to look for
+  "error" messages in addition to "fatal" messages.  
+
+  By default the Postfix SMTP server no longer reports transcripts
+  of sessions where a client command is rejected because a table is
+  unavailable.  To receive such reports, add the new "data" class to
+  the notify_classes parameter value. The reports will be sent to the
+  error_notice_recipient address as before. This class is also used
+  by the Postfix SMTP client to report about sessions that fail
+  because a table is unavailable.
+
+20120116:
   AFFECTS: users of x11/xcb-util
   AUTHOR: garga@FreeBSD.org
 
