@@ -1,6 +1,6 @@
---- ./plugins/im3195/im3195.c.orig	2010-10-05 05:17:31.289999990 +0000
-+++ ./plugins/im3195/im3195.c	2010-10-05 05:18:22.651270169 +0000
-@@ -161,8 +161,8 @@
+--- ./plugins/im3195/im3195.c.orig	2011-09-15 06:01:15.000000000 +0000
++++ ./plugins/im3195/im3195.c	2012-01-17 01:17:22.083763800 +0000
+@@ -195,8 +195,8 @@
  CODEmodInit_QueryRegCFSLineHdlr
  	CHKiRet(objUse(errmsg, CORE_COMPONENT));
  
