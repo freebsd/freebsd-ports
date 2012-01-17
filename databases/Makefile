@@ -391,6 +391,7 @@
     SUBDIR += p5-DBIx-TransactionManager
     SUBDIR += p5-DBIx-Tree
     SUBDIR += p5-DBIx-VersionedDDL
+    SUBDIR += p5-DBIx-Wrapper
     SUBDIR += p5-DBIx-XHTML_Table
     SUBDIR += p5-DBIx-XML_RDB
     SUBDIR += p5-DBM-Deep

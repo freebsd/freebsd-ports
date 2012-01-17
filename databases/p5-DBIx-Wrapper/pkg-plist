@@ -1,0 +1,14 @@
+%%SITE_PERL%%/DBIx/Wrapper.pm
+%%SITE_PERL%%/DBIx/Wrapper/DBIDelegator.pm
+%%SITE_PERL%%/DBIx/Wrapper/Delegator.pm
+%%SITE_PERL%%/DBIx/Wrapper/Request.pm
+%%SITE_PERL%%/DBIx/Wrapper/SQLCommand.pm
+%%SITE_PERL%%/DBIx/Wrapper/SelectExecLoop.pm
+%%SITE_PERL%%/DBIx/Wrapper/SelectLoop.pm
+%%SITE_PERL%%/DBIx/Wrapper/Statement.pm
+%%SITE_PERL%%/DBIx/Wrapper/StatementLoop.pm
+%%SITE_PERL%%/mach/auto/DBIx/Wrapper/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/DBIx/Wrapper
+@dirrmtry %%SITE_PERL%%/mach/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Wrapper
+@dirrmtry %%SITE_PERL%%/DBIx
