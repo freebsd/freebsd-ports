@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	davmail
-PORTVERSION=	3.9.4
+PORTVERSION=	3.9.7
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1787
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	swt>=3.5:${PORTSDIR}/x11-toolkits/swt
 
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
+ALL_TARGET=	release
+REVISION=	1870
+# port build number, same as on DISTNAME
+MAKE_ARGS=	-Drevision=${REVISION}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
