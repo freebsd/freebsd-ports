@@ -73,7 +73,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2012-0049</cvename>
-      <url>http://security.openttd.org/en/CVE-2011-3343</url>
+      <url>http://security.openttd.org/en/CVE-2012-0049</url>
     </references>
     <dates>
       <discovery>2012-01-06</discovery>
