@@ -47,6 +47,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1ac858b0-3fae-11e1-a127-0013d3ccd9df">
+    <topic>OpenTTD -- Denial of service (server) via slow read attack</topic>
+    <affects>
+      <package>
+        <name>openttd</name>
+        <range><ge>0.3.5</ge><lt>1.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenTTD Team reports:</p>
+	<blockquote cite="http://security.openttd.org/en/CVE-2012-0049">
+	  <p>Using a slow read type attack it is possible to prevent anyone
+	  from joining a server with virtually no resources.  Once downloading
+	  the map no other downloads of the map can start, so downloading
+	  really slowly will prevent others from joining.  This can be further
+	  aggravated by the pause-on-join setting in which case the game is
+	  paused and the players cannot continue the game during such an
+	  attack.  This attack requires that the user is not banned and passes
+	  the authorization to the server, although for many servers there is
+	  no server password and thus authorization is easy.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0049</cvename>
+      <url>http://security.openttd.org/en/CVE-2011-3343</url>
+    </references>
+    <dates>
+      <discovery>2012-01-06</discovery>
+      <entry>2012-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="91be81e7-3fea-11e1-afc7-2c4138874f7d">
     <topic>Multiple implementations denial-of-service via hash algorithm collision</topic>
     <affects>
