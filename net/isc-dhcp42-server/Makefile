@@ -147,6 +147,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bind__Makefile
 post-patch:
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's|/usr/local||g' \
+		${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/client/dhclient.conf
 
