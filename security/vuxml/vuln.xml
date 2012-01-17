@@ -51,8 +51,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>OpenTTD -- Denial of service (server) via slow read attack</topic>
     <affects>
       <package>
-        <name>openttd</name>
-        <range><ge>0.3.5</ge><lt>1.1.5</lt></range>
+	<name>openttd</name>
+	<range><ge>0.3.5</ge><lt>1.1.5</lt></range>
       </package>
     </affects>
     <description>
@@ -282,8 +282,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The PowerDNS Team reports:</p>
 	<blockquote cite="http://www.powerdns.com/news/powerdns-security-advisory-2012-01.html">
 	  <p>Using well crafted UDP packets, one or more PowerDNS servers
-            could be made to enter a tight packet loop, causing temporary
-            denial of service.</p>
+	    could be made to enter a tight packet loop, causing temporary
+	    denial of service.</p>
 	</blockquote>
       </body>
     </description>
@@ -472,7 +472,7 @@ Note:  Please add new entries to the beginning of this file.
 	      the upgrade.</li>
 	  </ul>
 	  <p>All affected installations are encouraged to upgrade as soon as
-            possible.</p>
+	    possible.</p>
 	</blockquote>
       </body>
     </description>
@@ -500,7 +500,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>3.3.1,1</lt></range>
       </package>
       <package>
-        <name>de-wordpress</name>
+	<name>de-wordpress</name>
 	<name>zh-wordpress-zh_CN</name>
 	<name>zh-wordpress-zh_TW</name>
 	<range><lt>3.3.1</lt></range>
@@ -713,11 +713,11 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Mozilla Project reports:</p>
 	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
-          <p>MFSA 2011-53 Miscellaneous memory safety hazards (rv:9.0)</p>
-          <p>MFSA 2011-54 Potentially exploitable crash in the YARR regular expression library</p>
-          <p>MFSA 2011-55 nsSVGValue out-of-bounds access</p>
-          <p>MFSA 2011-56 Key detection without JavaScript via SVG animation</p>
-          <p>MFSA 2011-58 Crash scaling video to extreme sizes</p>
+	  <p>MFSA 2011-53 Miscellaneous memory safety hazards (rv:9.0)</p>
+	  <p>MFSA 2011-54 Potentially exploitable crash in the YARR regular expression library</p>
+	  <p>MFSA 2011-55 nsSVGValue out-of-bounds access</p>
+	  <p>MFSA 2011-56 Key detection without JavaScript via SVG animation</p>
+	  <p>MFSA 2011-58 Crash scaling video to extreme sizes</p>
 	</blockquote>
       </body>
     </description>
@@ -1035,7 +1035,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>isc-dhcp41-server</name>
-        <range><lt>4.1.e_3,2</lt></range>
+	<range><lt>4.1.e_3,2</lt></range>
       </package>
     </affects>
     <description>
@@ -1094,8 +1094,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>hiawatha -- memory leak in PreventSQLi routine</topic>
     <affects>
       <package>
-        <name>hiawatha</name>
-        <range><ge>7.6</ge><lt>7.8.2</lt></range>
+	<name>hiawatha</name>
+	<range><ge>7.6</ge><lt>7.8.2</lt></range>
       </package>
     </affects>
     <description>
@@ -1228,14 +1228,14 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>kdeutils</name>
-        <range><ge>4.0.*</ge><lt>4.7.3</lt></range>
+	<range><ge>4.0.*</ge><lt>4.7.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Tim Brown from Nth Dimention reports:</p>
+	<p>Tim Brown from Nth Dimention reports:</p>
 	<blockquote cite="http://seclists.org/fulldisclosure/2011/Oct/351">
-          <p>I recently discovered that the Ark archiving tool is
+	  <p>I recently discovered that the Ark archiving tool is
 	    vulnerable to directory traversal via malformed.  When
 	    attempts are made to view files within the malformed Zip
 	    file in Ark's default view, the wrong file may be displayed
@@ -1590,7 +1590,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Cacti Group reports:</p>
 	<blockquote cite="http://www.cacti.net/release_notes_0_8_7h.php">
 	  <p>SQL injection issue with user login, and cross-site scripting
-            issues.</p>
+	    issues.</p>
 	</blockquote>
       </body>
     </description>
@@ -1651,7 +1651,7 @@ Note:  Please add new entries to the beginning of this file.
 	    vector is when handling the 'query_engine' command, in which input
 	    passed through $_REQUEST['orderby'] is passed as $sortby parameter
 	    to 'masort' function.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1669,11 +1669,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>kdelibs</name>
-        <range><ge>4.0.*</ge><lt>4.7.2</lt></range>
+	<range><ge>4.0.*</ge><lt>4.7.2</lt></range>
       </package>
       <package>
-        <name>rekonq</name>
-        <range><lt>0.8.0</lt></range>
+	<name>rekonq</name>
+	<range><lt>0.8.0</lt></range>
       </package>
     </affects>
     <description>
@@ -1749,7 +1749,7 @@ Note:  Please add new entries to the beginning of this file.
 	    that the X server is behaving differently if the lock file already
 	    exists as a symbolic link pointing to an existing or non-existing
 	    file.</p>
-          <p>It is possible for a non-root user to set the permissions for all
+	  <p>It is possible for a non-root user to set the permissions for all
 	    users on any file or directory to 444, giving unwanted read access
 	    or causing denies of service (by removing execute permission).
 	    This is caused by a race between creating the lock file and
@@ -1801,24 +1801,24 @@ Note:  Please add new entries to the beginning of this file.
     <topic>PivotX -- Remote File Inclusion Vulnerability of TimThumb</topic>
     <affects>
       <package>
-        <name>pivotx</name>
-        <range><lt>2.3.0</lt></range>
+	<name>pivotx</name>
+	<range><lt>2.3.0</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The PivotX team reports:</p>
-        <blockquote cite="http://blog.pivotx.net/page/security">
-          <p>TimThumb domain name security bypass and insecure cache
+	<p>The PivotX team reports:</p>
+	<blockquote cite="http://blog.pivotx.net/page/security">
+	  <p>TimThumb domain name security bypass and insecure cache
 	    handling. PivotX before 2.3.0 includes a vulnerable version
 	    of TimThumb.</p>
-        </blockquote>
-        <blockquote cite="http://blog.pivotx.net/2011-10-14/timthumb-update-for-older-pivotx-installs">
-          <p>If you are still running PivotX 2.2.6, you might be
+	</blockquote>
+	<blockquote cite="http://blog.pivotx.net/2011-10-14/timthumb-update-for-older-pivotx-installs">
+	  <p>If you are still running PivotX 2.2.6, you might be
 	    vulnerable to a security exploit, that was patched
 	    previously. Version 2.3.0 doesn't have this issue, but any
 	    older version of PivotX might be vulnerable.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1835,19 +1835,19 @@ Note:  Please add new entries to the beginning of this file.
     <topic>OpenTTD -- Multiple buffer overflows in validation of external data</topic>
     <affects>
       <package>
-        <name>openttd</name>
-        <range><ge>0.1.0</ge><lt>1.1.3</lt></range>
+	<name>openttd</name>
+	<range><ge>0.1.0</ge><lt>1.1.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The OpenTTD Team reports:</p>
+	<p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3343">
-          <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow
+	  <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow
 	    local users to cause a denial of service (daemon crash) or
 	    possibly gain privileges via (1) a crafted BMP file with RLE
 	    compression or (2) crafted dimensions in a BMP file.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1864,19 +1864,19 @@ Note:  Please add new entries to the beginning of this file.
     <topic>OpenTTD -- Buffer overflows in savegame loading</topic>
     <affects>
       <package>
-        <name>openttd</name>
-        <range><ge>0.1.0</ge><lt>1.1.3</lt></range>
+	<name>openttd</name>
+	<range><ge>0.1.0</ge><lt>1.1.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The OpenTTD Team reports:</p>
+	<p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3342">
-          <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow remote
+	  <p>Multiple buffer overflows in OpenTTD before 1.1.3 allow remote
 	    attackers to cause a denial of service (daemon crash) or possibly
 	    execute arbitrary code via vectors related to (1) NAME, (2) PLYR,
 	    (3) CHTS, or (4) AIPL (aka AI config) chunk loading from a savegame.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -1893,18 +1893,18 @@ Note:  Please add new entries to the beginning of this file.
     <topic>OpenTTD -- Denial of service via improperly validated commands</topic>
     <affects>
       <package>
-        <name>openttd</name>
-        <range><ge>0.3.5</ge><lt>1.1.3</lt></range>
+	<name>openttd</name>
+	<range><ge>0.3.5</ge><lt>1.1.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The OpenTTD Team reports:</p>
+	<p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3341">
-          <p>Multiple off-by-one errors in order_cmd.cpp in OpenTTD before
-            1.1.3 allow remote attackers to cause a denial of service (daemon crash)
-            or possibly execute arbitrary code via a crafted CMD_INSERT_ORDER command.</p>
-        </blockquote>
+	  <p>Multiple off-by-one errors in order_cmd.cpp in OpenTTD before
+	    1.1.3 allow remote attackers to cause a denial of service (daemon crash)
+	    or possibly execute arbitrary code via a crafted CMD_INSERT_ORDER command.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -2338,15 +2338,15 @@ Note:  Please add new entries to the beginning of this file.
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>openssl</name>
-        <range><ge>1.0.0</ge><lt>1.0.0_6</lt></range>
-        <range><ge>0.9.8</ge><lt>1.0.0</lt></range>
+	<name>openssl</name>
+	<range><ge>1.0.0</ge><lt>1.0.0_6</lt></range>
+	<range><ge>0.9.8</ge><lt>1.0.0</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>OpenSSL Team reports:</p>
-        <blockquote cite="http://openssl.org/news/secadv_20110906.txt">
+	<p>OpenSSL Team reports:</p>
+	<blockquote cite="http://openssl.org/news/secadv_20110906.txt">
 	  <p>Two security flaws have been fixed in OpenSSL 1.0.0e</p>
 	  <p>Under certain circumstances OpenSSL's internal certificate
 	    verification routines can incorrectly accept a CRL whose
@@ -2355,7 +2355,7 @@ Note:  Please add new entries to the beginning of this file.
 	    not thread-safe, and furthermore can crash if a client
 	    violates the protocol by sending handshake messages in
 	    incorrect order. (CVE-2011-3210)</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -2373,18 +2373,18 @@ Note:  Please add new entries to the beginning of this file.
     <topic>XSS issue in MantisBT</topic>
     <affects>
       <package>
-        <name>mantis</name>
-        <range><ge>1.2.0</ge><lt>1.2.7</lt></range>
+	<name>mantis</name>
+	<range><ge>1.2.0</ge><lt>1.2.7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <blockquote cite="http://www.mantisbt.org/blog/?p=142">
-          <p>Net.Edit0r from BlACK Hat Group reported an XSS issue in
-            search.php. All MantisBT users (including anonymous users that
-            are not logged in to public bug trackers) could be impacted by
-            this vulnerability.</p>
-        </blockquote>
+	<blockquote cite="http://www.mantisbt.org/blog/?p=142">
+	  <p>Net.Edit0r from BlACK Hat Group reported an XSS issue in
+	    search.php. All MantisBT users (including anonymous users that
+	    are not logged in to public bug trackers) could be impacted by
+	    this vulnerability.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -2458,14 +2458,14 @@ Note:  Please add new entries to the beginning of this file.
     <topic>nss/ca_root_nss -- fraudulent certificates issued by DigiNotar.nl</topic>
     <affects>
       <package>
-        <name>nss</name>
+	<name>nss</name>
 	<range><lt>3.12.11</lt></range>
 	<!-- this builds on the assumption that 3.12.11 in ports actually
 	     contains the CKBI 1.87 update to the built-in certificates
 	     as commited by kwm@ on September 3rd, 2011 -->
       </package>
       <package>
-        <name>ca_root_nss</name>
+	<name>ca_root_nss</name>
 	<range><lt>3.12.11</lt></range>
 	<!-- this builds on the assumption that 3.12.11 in ports actually
 	     contains the CKBI 1.87 update to the built-in certificates
@@ -2678,19 +2678,19 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>PHP development team reports:</p>
 	<blockquote cite="http://www.php.net/ChangeLog-5.php#5.3.7">
-          <p>Security Enhancements and Fixes in PHP 5.3.7:</p>
-          <ul>
-            <li>Updated crypt_blowfish to 1.2. (CVE-2011-2483)</li>
-            <li>Fixed crash in error_log(). Reported by Mateusz Kocielski</li>
-            <li>Fixed buffer overflow on overlog salt in crypt().</li>
-            <li>Fixed bug #54939 (File path injection vulnerability
+	  <p>Security Enhancements and Fixes in PHP 5.3.7:</p>
+	  <ul>
+	    <li>Updated crypt_blowfish to 1.2. (CVE-2011-2483)</li>
+	    <li>Fixed crash in error_log(). Reported by Mateusz Kocielski</li>
+	    <li>Fixed buffer overflow on overlog salt in crypt().</li>
+	    <li>Fixed bug #54939 (File path injection vulnerability
 	      in RFC1867 File upload filename). Reported by Krzysztof Kotowicz.
 	      (CVE-2011-2202)</li>
-            <li>Fixed stack buffer overflow in socket_connect().
+	    <li>Fixed stack buffer overflow in socket_connect().
 	      (CVE-2011-1938)</li>
-            <li>Fixed bug #54238 (use-after-free in substr_replace()).
+	    <li>Fixed bug #54238 (use-after-free in substr_replace()).
 	      (CVE-2011-1148)</li>
-          </ul>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -2780,11 +2780,11 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OTRS Security Advisory reports:</p>
 	<blockquote cite="http://otrs.org/advisory/OSA-2011-03-en/">
-          <ul>
+	  <ul>
 	    <li>An attacker with valid session and admin permissions could
-              get read access to any file on the servers local operating system.
-              For this it would be needed minimum one installed OTRS package.</li>
-          </ul>
+	      get read access to any file on the servers local operating system.
+	      For this it would be needed minimum one installed OTRS package.</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -2954,27 +2954,27 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>The following security issues have been discovered in Bugzilla:</p>
 	  <ul>
 	    <li>Internet Explorer 8 and older, and Safari before 5.0.6 do
-              content sniffing when viewing a patch in "Raw Unified" mode,
-              which could trigger a cross-site scripting attack due to
-              the execution of malicious code in the attachment.</li>
+	      content sniffing when viewing a patch in "Raw Unified" mode,
+	      which could trigger a cross-site scripting attack due to
+	      the execution of malicious code in the attachment.</li>
 	    <li>It is possible to determine whether or not certain group names
-              exist while creating or updating bugs.</li>
+	      exist while creating or updating bugs.</li>
 	    <li>Attachment descriptions with a newline in them could lead
-              to the injection of crafted headers in email notifications sent
-              to the requestee or the requester when editing an attachment
-              flag.</li>
+	      to the injection of crafted headers in email notifications sent
+	      to the requestee or the requester when editing an attachment
+	      flag.</li>
 	    <li>If an attacker has access to a user's session, he can modify
-              that user's email address without that user being notified
-              of the change.</li>
+	      that user's email address without that user being notified
+	      of the change.</li>
 	    <li>Temporary files for uploaded attachments are not deleted
-              on Windows, which could let a user with local access to
-              the server read them.</li>
+	      on Windows, which could let a user with local access to
+	      the server read them.</li>
 	    <li>Up to Bugzilla 3.4.11, if a BUGLIST cookie is compromised,
-              it can be used to inject HTML code when viewing a bug report,
-              leading to a cross-site scripting attack.</li>
+	      it can be used to inject HTML code when viewing a bug report,
+	      leading to a cross-site scripting attack.</li>
 	  </ul>
 	  <p>All affected installations are encouraged to upgrade as soon as
-            possible.</p>
+	    possible.</p>
 	</blockquote>
       </body>
     </description>
@@ -3205,12 +3205,12 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-        <cvename>CVE-2011-2642</cvename>
-        <cvename>CVE-2011-2643</cvename>
-        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php</url>
-        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php</url>
-        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php</url>
-        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php</url>
+	<cvename>CVE-2011-2642</cvename>
+	<cvename>CVE-2011-2643</cvename>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php</url>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php</url>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php</url>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php</url>
     </references>
     <dates>
       <discovery>2011-07-23</discovery>
@@ -3232,11 +3232,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>OpenSAML developer reports:</p>
 	<blockquote cite="http://shibboleth.internet2.edu/secadv/secadv_20110725.txt">
 	  <p>The Shibboleth software relies on the OpenSAML libraries to perform
-             verification of signed XML messages such as attribute queries or
-             SAML assertions. Both the Java and C++ versions are vulnerable to a
-             so-called "wrapping attack" that allows a remote, unauthenticated
-             attacker to craft specially formed messages that can be successfully
-             verified, but contain arbitrary content.</p>
+	     verification of signed XML messages such as attribute queries or
+	     SAML assertions. Both the Java and C++ versions are vulnerable to a
+	     so-called "wrapping attack" that allows a remote, unauthenticated
+	     attacker to craft specially formed messages that can be successfully
+	     verified, but contain arbitrary content.</p>
 	</blockquote>
       </body>
     </description>
@@ -3453,21 +3453,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>ejabberd -- remote denial of service vulnerability</topic>
     <affects>
       <package>
-        <name>ejabberd</name>
-        <range><lt>2.1.7</lt></range>
+	<name>ejabberd</name>
+	<range><lt>2.1.7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>It's reported in CVE advisory that:</p>
-        <blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1753">
-          <p>expat_erl.c in ejabberd before 2.1.7 and 3.x before
-            3.0.0-alpha-3, and exmpp before 0.9.7, does not properly detect
-            recursion during entity expansion, which allows remote attackers
-            to cause a denial of service (memory and CPU consumption) via a
-            crafted XML document containing a large number of nested entity
-            references, a similar issue to CVE-2003-1564.</p>
-        </blockquote>
+	<p>It's reported in CVE advisory that:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1753">
+	  <p>expat_erl.c in ejabberd before 2.1.7 and 3.x before
+	    3.0.0-alpha-3, and exmpp before 0.9.7, does not properly detect
+	    recursion during entity expansion, which allows remote attackers
+	    to cause a denial of service (memory and CPU consumption) via a
+	    crafted XML document containing a large number of nested entity
+	    references, a similar issue to CVE-2003-1564.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -3769,11 +3769,11 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>9.8.0.2</lt></range>
       </package>
       <system>
-        <name>FreeBSD</name>
-        <range><gt>7.3</gt><lt>7.3_6</lt></range>
-        <range><gt>7.4</gt><lt>7.4_2</lt></range>
-        <range><gt>8.1</gt><lt>8.1_4</lt></range>
-        <range><gt>8.2</gt><lt>8.2_2</lt></range>
+	<name>FreeBSD</name>
+	<range><gt>7.3</gt><lt>7.3_6</lt></range>
+	<range><gt>7.4</gt><lt>7.4_2</lt></range>
+	<range><gt>8.1</gt><lt>8.1_4</lt></range>
+	<range><gt>8.2</gt><lt>8.2_2</lt></range>
       </system>
     </affects>
     <description>
@@ -3873,12 +3873,12 @@ Note:  Please add new entries to the beginning of this file.
     <topic>subversion -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>subversion</name>
-        <range><lt>1.6.17</lt></range>
+	<name>subversion</name>
+	<range><lt>1.6.17</lt></range>
       </package>
       <package>
-        <name>subversion-freebsd</name>
-        <range><lt>1.6.17</lt></range>
+	<name>subversion-freebsd</name>
+	<range><lt>1.6.17</lt></range>
       </package>
     </affects>
     <description>
@@ -3888,24 +3888,24 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Subversion's mod_dav_svn Apache HTTPD server module will
 	    dereference a NULL pointer if asked to deliver baselined WebDAV
 	    resources.</p>
-          <p>This can lead to a DoS.  An exploit has been tested, and tools or
+	  <p>This can lead to a DoS.  An exploit has been tested, and tools or
 	    users have been observed triggering this problem in the wild.</p>
 	</blockquote>
-        <blockquote cite="http://subversion.apache.org/security/CVE-2011-1783-advisory.txt">
-          <p>Subversion's mod_dav_svn Apache HTTPD server module may in certain
-            scenarios enter a logic loop which does not exit and which allocates
-            memory in each iteration, ultimately exhausting all the available
-            memory on the server.</p>
-          <p>This can lead to a DoS.  There are no known instances of this
-            problem being observed in the wild, but an exploit has been tested.</p>
-        </blockquote>
-        <blockquote cite="http://subversion.apache.org/security/CVE-2011-1921-advisory.txt">
-          <p>Subversion's mod_dav_svn Apache HTTPD server module may leak to
-            remote users the file contents of files configured to be unreadable
-            by those users.</p>
-          <p>There are no known instances of this problem being observed in the
-            wild, but an exploit has been tested.</p>
-        </blockquote>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2011-1783-advisory.txt">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module may in certain
+	    scenarios enter a logic loop which does not exit and which allocates
+	    memory in each iteration, ultimately exhausting all the available
+	    memory on the server.</p>
+	  <p>This can lead to a DoS.  There are no known instances of this
+	    problem being observed in the wild, but an exploit has been tested.</p>
+	</blockquote>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2011-1921-advisory.txt">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module may leak to
+	    remote users the file contents of files configured to be unreadable
+	    by those users.</p>
+	  <p>There are no known instances of this problem being observed in the
+	    wild, but an exploit has been tested.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -4027,14 +4027,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Nathan Dors, Pubcookie Project reports:</p>
 	<blockquote cite="http://pubcookie.org/news/20070606-login-secadv.html">
 	  <p>A  new non-persistent XSS vulnerability was found in the
-            Pubcookie login server's compiled binary "index.cgi" CGI
-            program. The CGI program mishandles untrusted data when
-            printing responses to the browser. This makes the program
-            vulnerable to carefully crafted requests containing script
-            or HTML. If an attacker can lure an unsuspecting user to
-            visit carefully staged content, the attacker can use it to
-            redirect the user to his or her local Pubcookie login page
-            and attempt to exploit the XSS vulnerability.</p>
+	    Pubcookie login server's compiled binary "index.cgi" CGI
+	    program. The CGI program mishandles untrusted data when
+	    printing responses to the browser. This makes the program
+	    vulnerable to carefully crafted requests containing script
+	    or HTML. If an attacker can lure an unsuspecting user to
+	    visit carefully staged content, the attacker can use it to
+	    redirect the user to his or her local Pubcookie login page
+	    and attempt to exploit the XSS vulnerability.</p>
 	</blockquote>
       </body>
     </description>
@@ -4121,7 +4121,7 @@ Note:  Please add new entries to the beginning of this file.
 	    Runtime (APR) library 1.4.4 (or any backported versions that contained the
 	    upstream fix for CVE-2011-0419). This could cause httpd workers to enter a
 	    hung state (100% CPU utilization).</p>
-          <p>apr-util 1.3.11 could cause crashes with httpd's mod_authnz_ldap in some
+	  <p>apr-util 1.3.11 could cause crashes with httpd's mod_authnz_ldap in some
 	    situations.</p>
 	</blockquote>
       </body>
@@ -4269,15 +4269,15 @@ Note:  Please add new entries to the beginning of this file.
 	    occur in lists, *not* arbitrary string expansion). This
 	    allowed for information disclosure.</p>
 	</blockquote>
-        <p>Also, impact assessment was redone shortly after the original
-          announcement:</p>
+	<p>Also, impact assessment was redone shortly after the original
+	  announcement:</p>
 	<blockquote cite="https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html">
-          <p>Further analysis revealed that the second security was
-            more severe than I realised at the time that I wrote the
-            announcement.  The second security issue has been assigned
-            CVE-2011-1407 and is also a remote code execution flaw.
-            For clarity: both issues were introduced with 4.70.</p>
-        </blockquote>
+	  <p>Further analysis revealed that the second security was
+	    more severe than I realised at the time that I wrote the
+	    announcement.  The second security issue has been assigned
+	    CVE-2011-1407 and is also a remote code execution flaw.
+	    For clarity: both issues were introduced with 4.70.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -4305,10 +4305,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Apache Portable Runtime Project reports:</p>
 	<blockquote cite="http://www.apache.org/dist/apr/CHANGES-APR-1.4">
 	  <p>Note especially a security fix to APR 1.4.4, excessive CPU
-            consumption was possible due to an unconstrained, recursive
-            invocation of apr_fnmatch, as apr_fnmatch processed '*' wildcards.
-            Reimplement apr_fnmatch() from scratch using a non-recursive algorithm
-            now has improved compliance with the fnmatch() spec. (William Rowe)</p>
+	    consumption was possible due to an unconstrained, recursive
+	    invocation of apr_fnmatch, as apr_fnmatch processed '*' wildcards.
+	    Reimplement apr_fnmatch() from scratch using a non-recursive algorithm
+	    now has improved compliance with the fnmatch() spec. (William Rowe)</p>
 	</blockquote>
       </body>
     </description>
@@ -4335,9 +4335,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Zend Framework team reports:</p>
 	<blockquote cite="http://framework.zend.com/security/advisory/ZF2011-02">
 	  <p>Developers using non-ASCII-compatible encodings in conjunction
-            with the MySQL PDO driver of PHP may be vulnerable to SQL
-            injection attacks. Developers using ASCII-compatible encodings
-            like UTF8 or latin1 are not affected by this PHP issue.</p>
+	    with the MySQL PDO driver of PHP may be vulnerable to SQL
+	    injection attacks. Developers using ASCII-compatible encodings
+	    like UTF8 or latin1 are not affected by this PHP issue.</p>
 	</blockquote>
       </body>
     </description>
@@ -4538,7 +4538,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>VideoLAN project reports:</p>
 	<blockquote cite="http://www.videolan.org/security/sa1103.html">
 	  <p>When parsing some MP4 (MPEG-4 Part 14) files, insufficient
-            buffer size might lead to corruption of the heap.</p>
+	    buffer size might lead to corruption of the heap.</p>
 	</blockquote>
       </body>
     </description>
@@ -4689,14 +4689,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>An advisory published by the MIT Kerberos team says:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-003.txt">
 	  <p>The MIT Kerberos 5 Key Distribution Center (KDC) daemon is
-             vulnerable to a double-free condition if the Public Key
-             Cryptography for Initial Authentication (PKINIT) capability is
-             enabled, resulting in daemon crash or arbitrary code execution
-             (which is believed to be difficult).</p>
+	     vulnerable to a double-free condition if the Public Key
+	     Cryptography for Initial Authentication (PKINIT) capability is
+	     enabled, resulting in daemon crash or arbitrary code execution
+	     (which is believed to be difficult).</p>
 	  <p>An unauthenticated remote attacker can induce a double-free
-             event, causing the KDC daemon to crash (denial of service),
-             or to execute arbitrary code.  Exploiting a double-free event
-             to execute arbitrary code is believed to be difficult.</p>
+	     event, causing the KDC daemon to crash (denial of service),
+	     or to execute arbitrary code.  Exploiting a double-free event
+	     to execute arbitrary code is believed to be difficult.</p>
 	</blockquote>
       </body>
     </description>
@@ -4736,13 +4736,13 @@ Note:  Please add new entries to the beginning of this file.
 	    disclosed.  The triggers for CVE-2011-0282 and CVE-2011-0283
 	    have not yet been disclosed publicly, but they are also
 	    trivial.</p>
-          <p>CVE-2011-0281: An unauthenticated remote attacker can cause a KDC
+	  <p>CVE-2011-0281: An unauthenticated remote attacker can cause a KDC
 	    configured with an LDAP back end to become completely unresponsive
 	    until restarted.</p>
-          <p>CVE-2011-0282: An unauthenticated remote attacker can cause a KDC
+	  <p>CVE-2011-0282: An unauthenticated remote attacker can cause a KDC
 	    configured with an LDAP back end to crash with a null pointer
 	    dereference.</p>
-          <p>CVE-2011-0283: An unauthenticated remote attacker can cause a
+	  <p>CVE-2011-0283: An unauthenticated remote attacker can cause a
 	    krb5-1.9 KDC with any back end to crash with a null pointer
 	    dereference.</p>
 	</blockquote>
@@ -4783,7 +4783,7 @@ Note:  Please add new entries to the beginning of this file.
 	    database updates from the master KDC.</p>
 	  <p>Exploit code is not known to exist, but the vulnerabilities are
 	    easy to trigger manually.</p>
-          <p>An unauthenticated remote attacker can cause kpropd running in
+	  <p>An unauthenticated remote attacker can cause kpropd running in
 	    standalone mode (the "-S" option) to terminate its listening
 	    process, preventing database propagations to the KDC host on
 	    which it was running.  Configurations where kpropd runs in
@@ -4846,13 +4846,13 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OTRS Security Advisory reports:</p>
 	<blockquote cite="http://otrs.org/advisory/OSA-2011-01-en/">
-          <ul>
+	  <ul>
 	    <li>Several XSS attacks possible:
-              An attacker could trick a logged in user to following a prepared
-              URL inside of the OTRS system which causes a page to be shown that
-              possibly includes malicious !JavaScript code because of incorrect
-              escaping during the generation of the HTML page.</li>
-          </ul>
+	      An attacker could trick a logged in user to following a prepared
+	      URL inside of the OTRS system which causes a page to be shown that
+	      possibly includes malicious !JavaScript code because of incorrect
+	      escaping during the generation of the HTML page.</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -5351,7 +5351,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><ge>1.5</ge><le>1.6.9</le></range>
       </package>
       <package>
-        <name>subversion-freebsd</name>
+	<name>subversion-freebsd</name>
 	<range><ge>1.6</ge><le>1.6.15</le></range>
 	<range><ge>1.5</ge><le>1.6.9</le></range>
       </package>
@@ -5566,23 +5566,23 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>5.5.0</gt><lt>5.5.32</lt></range>
       </package>
       <package>
-      	<name>tomcat</name>
+	<name>tomcat</name>
 	<range><gt>6.0.0</gt><lt>6.0.30</lt></range>
       </package>
       <package>
-        <name>tomcat</name>
-        <range><gt>7.0.0</gt><lt>7.0.6</lt></range>
+	<name>tomcat</name>
+	<range><gt>7.0.0</gt><lt>7.0.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Tomcat security team reports:</p>
 	<blockquote cite="http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.32">
-          <p>The HTML Manager interface displayed web applciation
-            provided data, such as display names, without filtering.
-            A malicious web application could trigger script execution
-            by an administartive user when viewing the manager pages.</p>
-        </blockquote>
+	  <p>The HTML Manager interface displayed web applciation
+	    provided data, such as display names, without filtering.
+	    A malicious web application could trigger script execution
+	    by an administartive user when viewing the manager pages.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -5946,10 +5946,10 @@ Note:  Please add new entries to the beginning of this file.
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <name>opera-devel</name>
-        <name>linux-opera</name>
-        <range><lt>11.01</lt></range>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>11.01</lt></range>
       </package>
     </affects>
     <description>
@@ -6094,7 +6094,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>3.0.2,1</lt></range>
       </package>
       <package>
-        <name>de-wordpress</name>
+	<name>de-wordpress</name>
 	<name>zh-wordpress-zh_CN</name>
 	<name>zh-wordpress-zh_TW</name>
 	<range><lt>3.0.2</lt></range>
@@ -6168,7 +6168,7 @@ Note:  Please add new entries to the beginning of this file.
 	    overwritten array can not be remotely controlled (it is a list of
 	    increasing integers), there is no way to increase privileges
 	    exploiting this bug.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -6229,17 +6229,17 @@ Note:  Please add new entries to the beginning of this file.
 	    fixed in the Bugzilla code:</p>
 	  <ul>
 	    <li>A weakness in Bugzilla could allow a user to gain unauthorized
-              access to another Bugzilla account.</li>
+	      access to another Bugzilla account.</li>
 	    <li>A weakness in the Perl CGI.pm module allows injecting HTTP
-              headers and content to users via several pages in Bugzilla.</li>
+	      headers and content to users via several pages in Bugzilla.</li>
 	    <li>If you put a harmful "javascript:" or "data:" URL into
-              Bugzilla's "URL" field, then there are multiple situations in
-              which Bugzilla will unintentionally make that link clickable.</li>
+	      Bugzilla's "URL" field, then there are multiple situations in
+	      which Bugzilla will unintentionally make that link clickable.</li>
 	    <li>Various pages lack protection against cross-site request
-              forgeries.</li>
+	      forgeries.</li>
 	  </ul>
 	  <p>All affected installations are encouraged to upgrade as soon as
-            possible.</p>
+	    possible.</p>
 	</blockquote>
       </body>
     </description>
@@ -6389,11 +6389,11 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The MoinMoin developers reports:</p>
-        <blockquote cite="http://hg.moinmo.in/moin/1.9/raw-file/1.9.3/docs/CHANGES">
+	<p>The MoinMoin developers reports:</p>
+	<blockquote cite="http://hg.moinmo.in/moin/1.9/raw-file/1.9.3/docs/CHANGES">
 	  <p>Fix XSS in Despam action (CVE-2010-0828)</p>
-        </blockquote>
-        <blockquote cite="http://moinmo.in/MoinMoinBugs/1.9.2UnescapedInputForThemeAddMsg">
+	</blockquote>
+	<blockquote cite="http://moinmo.in/MoinMoinBugs/1.9.2UnescapedInputForThemeAddMsg">
 	  <p>Fix XSS issues</p>
 	  <ul>
 	    <li>by escaping template name in messages</li>
@@ -6602,22 +6602,22 @@ Note:  Please add new entries to the beginning of this file.
     <topic>mediawiki -- Clickjacking vulnerabilities</topic>
     <affects>
       <package>
-        <name>mediawiki</name>
-        <range><gt>1.16</gt><lt>1.16.1</lt></range>
-        <range><gt>1.15</gt><lt>1.15.5_1</lt></range>
+	<name>mediawiki</name>
+	<range><gt>1.16</gt><lt>1.16.1</lt></range>
+	<range><gt>1.15</gt><lt>1.15.5_1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Clickjacking vulnerabilities:</p>
-        <blockquote cite="https://bugzilla.wikimedia.org/show_bug.cgi?id=26561">
-          <p>Clickjacking is a type of vulnerability discovered in 2008, which
-            is similar to CSRF. The attack involves displaying the target webpage
-            in a iframe embedded in a malicious website. Using CSS, the submit button
-            of the form on the targeit webpage is made invisible, and then overlaid
-            with some button or link on the malicious website that encourages
-            the user to click on it.</p>
-        </blockquote>
+	<p>Clickjacking vulnerabilities:</p>
+	<blockquote cite="https://bugzilla.wikimedia.org/show_bug.cgi?id=26561">
+	  <p>Clickjacking is a type of vulnerability discovered in 2008, which
+	    is similar to CSRF. The attack involves displaying the target webpage
+	    in a iframe embedded in a malicious website. Using CSS, the submit button
+	    of the form on the targeit webpage is made invisible, and then overlaid
+	    with some button or link on the malicious website that encourages
+	    the user to click on it.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -8257,15 +8257,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The ProFTPD Project team reports:</p>
 	<blockquote cite="http://proftpd.org/">
 	  <p>The security issue is caused due to the distribution of compromised
-            ProFTPD 1.3.3c source code packages via the project's main FTP server
-            and all of the mirror servers, which contain a backdoor allowing
-            remote root access.</p>
+	    ProFTPD 1.3.3c source code packages via the project's main FTP server
+	    and all of the mirror servers, which contain a backdoor allowing
+	    remote root access.</p>
 	</blockquote>
       </body>
     </description>
     <references>
 	  <url>http://sourceforge.net/mailarchive/message.php?msg_name=alpine.DEB.2.00.1012011542220.12930%40familiar.castaglia.org</url>
-          <url>http://secunia.com/advisories/42449</url>
+	  <url>http://secunia.com/advisories/42449</url>
     </references>
     <dates>
       <discovery>2010-11-28</discovery>
@@ -8377,10 +8377,10 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-      	<p>The Horde team reports:</p>
+	<p>The Horde team reports:</p>
 	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/532">
 	  <p>The major changes compared to Horde version 3.3.10 are:</p>
-          <p>* Fixed XSS vulnerability when viewing details of a vCard.</p>
+	  <p>* Fixed XSS vulnerability when viewing details of a vCard.</p>
 	</blockquote>
       </body>
     </description>
@@ -8434,25 +8434,25 @@ Note:  Please add new entries to the beginning of this file.
     <topic>openssl -- TLS extension parsing race condition</topic>
     <affects>
       <package>
-        <name>openssl</name>
-        <range><lt>1.0.0_2</lt></range>
+	<name>openssl</name>
+	<range><lt>1.0.0_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>OpenSSL Team reports:</p>
-        <blockquote cite="http://openssl.org/news/secadv_20101116.txt">
-          <p>Rob Hulswit has found a flaw in the OpenSSL TLS server extension
-            code parsing which on affected servers can be exploited in a buffer
-            overrun attack.</p>
-          <p>Any OpenSSL based TLS server is vulnerable if it is multi-threaded
-            and uses OpenSSL's internal caching mechanism. Servers that are
-            multi-process and/or disable internal session caching are NOT
-            affected.</p>
-          <p>In particular the Apache HTTP server (which never uses OpenSSL
-            internal caching) and Stunnel (which includes its own workaround)
-            are NOT affected.</p>
-        </blockquote>
+	<p>OpenSSL Team reports:</p>
+	<blockquote cite="http://openssl.org/news/secadv_20101116.txt">
+	  <p>Rob Hulswit has found a flaw in the OpenSSL TLS server extension
+	    code parsing which on affected servers can be exploited in a buffer
+	    overrun attack.</p>
+	  <p>Any OpenSSL based TLS server is vulnerable if it is multi-threaded
+	    and uses OpenSSL's internal caching mechanism. Servers that are
+	    multi-process and/or disable internal session caching are NOT
+	    affected.</p>
+	  <p>In particular the Apache HTTP server (which never uses OpenSSL
+	    internal caching) and Stunnel (which includes its own workaround)
+	    are NOT affected.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -8594,7 +8594,7 @@ Note:  Please add new entries to the beginning of this file.
 	    of an affected site when the malicious data is being
 	    viewed.</p>
 	  <p>Successful exploitation requires "list owner" permissions.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -8620,20 +8620,20 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OTRS Security Advisory reports:</p>
 	<blockquote cite="http://otrs.org/advisory/OSA-2010-02-en/">
-          <ul>
+	  <ul>
 	    <li>Multiple Cross Site Scripting issues:
-              Missing HTML quoting allows authenticated agents or
-              customers to inject HTML tags. This vulnerability
-              allows an attacker to inject script code into the OTRS
-              web-interface which will be loaded and executed
-              in the browsers of system users.</li>
+	      Missing HTML quoting allows authenticated agents or
+	      customers to inject HTML tags. This vulnerability
+	      allows an attacker to inject script code into the OTRS
+	      web-interface which will be loaded and executed
+	      in the browsers of system users.</li>
 	    <li>Possible Denial of Service Attack:
-              Perl's regular expressions consume 100% CPU time
-              on the server if an agent or customer views an affected
-              article.  To exploit this vulnerability the malicious user
-              needs to send extremely large HTML emails to your
-              system address.</li>
-          </ul>
+	      Perl's regular expressions consume 100% CPU time
+	      on the server if an agent or customer views an affected
+	      article.  To exploit this vulnerability the malicious user
+	      needs to send extremely large HTML emails to your
+	      system address.</li>
+	  </ul>
 	</blockquote>
 	<blockquote cite="http://otrs.org/advisory/OSA-2010-03-en/">
 	  <p>AgentTicketZoom is vulnerable to XSS attacks from HTML e-mails:</p>
@@ -8717,29 +8717,29 @@ Note:  Please add new entries to the beginning of this file.
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <range><lt>10.63</lt></range>
+	<name>opera</name>
+	<range><lt>10.63</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Opera Desktop Team reports:</p>
-        <blockquote cite="http://www.opera.com/docs/changelogs/unix/1063/">
-          <ul>
-            <li>Fixed an issue that allowed cross-domain checks to be bypassed,
-              allowing limited data theft using CSS, as reported by Isaac
-              Dawson.</li>
-            <li>Fixed an issue where manipulating the window could be used to
-              spoof the page address.</li>
-            <li>Fixed an issue with reloads and redirects that could allow
-              spoofing and cross-site scripting.</li>
-            <li>Fixed an issue that allowed private video streams to be
-              intercepted, as reported by Nirankush Panchbhai of Microsoft
-              Vulnerability Research.</li>
-            <li>Fixed an issue that caused JavaScript to run in the wrong
-              security context after manual interaction.</li>
-          </ul>
-        </blockquote>
+	<p>The Opera Desktop Team reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1063/">
+	  <ul>
+	    <li>Fixed an issue that allowed cross-domain checks to be bypassed,
+	      allowing limited data theft using CSS, as reported by Isaac
+	      Dawson.</li>
+	    <li>Fixed an issue where manipulating the window could be used to
+	      spoof the page address.</li>
+	    <li>Fixed an issue with reloads and redirects that could allow
+	      spoofing and cross-site scripting.</li>
+	    <li>Fixed an issue that allowed private video streams to be
+	      intercepted, as reported by Nirankush Panchbhai of Microsoft
+	      Vulnerability Research.</li>
+	    <li>Fixed an issue that caused JavaScript to run in the wrong
+	      security context after manual interaction.</li>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -8768,11 +8768,11 @@ Note:  Please add new entries to the beginning of this file.
     <p>Secunia reports:</p>
     <blockquote cite="http://secunia.com/advisories/41452">
       <p>A vulnerability has been reported in bzip2, which can be exploited by
-        malicious people to cause a DoS (Denial of Service) or potentially
-        compromise a vulnerable system.</p>
+	malicious people to cause a DoS (Denial of Service) or potentially
+	compromise a vulnerable system.</p>
       <p>The vulnerability is caused due to an integer overflow in the
-        "BZ2_decompress()" function in decompress.c and can be exploited to
-        cause a crash or potentially execute arbitrary code.</p>
+	"BZ2_decompress()" function in decompress.c and can be exploited to
+	cause a crash or potentially execute arbitrary code.</p>
     </blockquote>
       </body>
     </description>
@@ -9122,9 +9122,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The monotone developers report:</p>
 	<blockquote cite="http://www.monotone.ca/NEWS">
 	  <p>Running "mtn ''" or "mtn ls ''" doesn't cause an internal
-          error anymore. In monotone 0.48 and earlier this behavior
-          could be used to crash a server remotely (but only if it was
-          configured to allow execution of remote commands).</p>
+	  error anymore. In monotone 0.48 and earlier this behavior
+	  could be used to crash a server remotely (but only if it was
+	  configured to allow execution of remote commands).</p>
 	</blockquote>
       </body>
     </description>
@@ -9267,15 +9267,15 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/41701">
-          <p>Multiple vulnerabilities have been reported in APR-util, which can
-            be exploited by malicious people to cause a DoS (Denial of
-            Service).</p>
-          <p>Two XML parsing vulnerabilities exist in the bundled version of
-            expat.</p>
-          <p>An error within the "apr_brigade_split_line()" function in
-            buckets/apr_brigade.c can be exploited to cause high memory
-            consumption.</p>
+	<blockquote cite="http://secunia.com/advisories/41701">
+	  <p>Multiple vulnerabilities have been reported in APR-util, which can
+	    be exploited by malicious people to cause a DoS (Denial of
+	    Service).</p>
+	  <p>Two XML parsing vulnerabilities exist in the bundled version of
+	    expat.</p>
+	  <p>An error within the "apr_brigade_split_line()" function in
+	    buckets/apr_brigade.c can be exploited to cause high memory
+	    consumption.</p>
 	</blockquote>
       </body>
     </description>
@@ -9336,10 +9336,10 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-      	<p>The Horde team reports:</p>
+	<p>The Horde team reports:</p>
 	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/523">
 	  <p>The major changes compared to Gollem version H3 (1.1.1) are:</p>
-          <p>* Fixed an XSS vulnerability in the file viewer.</p>
+	  <p>* Fixed an XSS vulnerability in the file viewer.</p>
 	</blockquote>
       </body>
     </description>
@@ -9365,12 +9365,12 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-      	<p>The Horde team reports:</p>
+	<p>The Horde team reports:</p>
 	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/516">
 	  <p>Thanks to Naumann IT Security Consulting for reporting the XSS
-            vulnerability.</p>
+	    vulnerability.</p>
 	  <p>The major changes compared to IMP version H3 (4.3.7) are:</p>
-          <p>* Fixed an XSS vulnerability in the Fetchmail configuration.</p>
+	  <p>* Fixed an XSS vulnerability in the Fetchmail configuration.</p>
 	</blockquote>
       </body>
     </description>
@@ -9395,15 +9395,15 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-      	<p>The Horde team reports:</p>
+	<p>The Horde team reports:</p>
 	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/515">
 	  <p>Thanks to Naumann IT Security Consulting for reporting the XSS
-            vulnerability.</p>
+	    vulnerability.</p>
 	  <p>Thanks to Secunia for releasing an advisory for the new CSRF
-            protection in the preference interface</p>
+	    protection in the preference interface</p>
 	  <p>The major changes compared to Horde version 3.3.8 are:</p>
-          <p>* Fixed XSS vulnerability in util/icon_browser.php.</p>
-          <p>* Protected preference forms against CSRF attacks.</p>
+	  <p>* Fixed XSS vulnerability in util/icon_browser.php.</p>
+	  <p>* Protected preference forms against CSRF attacks.</p>
 	</blockquote>
       </body>
     </description>
@@ -9905,36 +9905,36 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>A Bugzilla Security Advisory reports:</p>
 	<blockquote cite="http://www.bugzilla.org/security/3.2.7/">
-          <ul>
+	  <ul>
 	    <li>Remote Information Disclosure:
-              An unprivileged user is normally not allowed to view
-              other users' group membership. But boolean charts
-              let the user use group-based pronouns, indirectly
-              disclosing group membership. This security fix
-              restricts the use of pronouns to groups the user
-              belongs to.</li>
+	      An unprivileged user is normally not allowed to view
+	      other users' group membership. But boolean charts
+	      let the user use group-based pronouns, indirectly
+	      disclosing group membership. This security fix
+	      restricts the use of pronouns to groups the user
+	      belongs to.</li>
 	    <li>Notification Bypass:
-              Normally, when a user is impersonated, he receives
-              an email informing him that he is being impersonated,
-              containing the identity of the impersonator. However,
-              it was possible to impersonate a user without this
-              notification being sent.</li>
-            <li>Remote Information Disclosure:
-              An error message thrown by the "Reports" and "Duplicates"
-              page confirmed the non-existence of products, thus
-              allowing users to guess confidential product names.
-              (Note that the "Duplicates" page was not vulnerable
-              in Bugzilla 3.6rc1 and above though.)</li>
-            <li>Denial of Service:
-              If a comment contained the phrases "bug X" or
-              "attachment X", where X was an integer larger than the
-              maximum 32-bit signed integer size, PostgreSQL would
-              throw an error, and any page containing that comment would
-              not be viewable. On most Bugzillas, any user can enter
-              a comment on any bug, so any user could have used this to
-              deny access to one or all bugs. Bugzillas running on
-              databases other than PostgreSQL are not affected.</li>
-          </ul>
+	      Normally, when a user is impersonated, he receives
+	      an email informing him that he is being impersonated,
+	      containing the identity of the impersonator. However,
+	      it was possible to impersonate a user without this
+	      notification being sent.</li>
+	    <li>Remote Information Disclosure:
+	      An error message thrown by the "Reports" and "Duplicates"
+	      page confirmed the non-existence of products, thus
+	      allowing users to guess confidential product names.
+	      (Note that the "Duplicates" page was not vulnerable
+	      in Bugzilla 3.6rc1 and above though.)</li>
+	    <li>Denial of Service:
+	      If a comment contained the phrases "bug X" or
+	      "attachment X", where X was an integer larger than the
+	      maximum 32-bit signed integer size, PostgreSQL would
+	      throw an error, and any page containing that comment would
+	      not be viewable. On most Bugzillas, any user can enter
+	      a comment on any bug, so any user could have used this to
+	      deny access to one or all bugs. Bugzillas running on
+	      databases other than PostgreSQL are not affected.</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -10003,7 +10003,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-    	<url>http://people.freebsd.org/~niels/issues/corkscrew-20100821.txt</url>
+	<url>http://people.freebsd.org/~niels/issues/corkscrew-20100821.txt</url>
     </references>
     <dates>
       <discovery>2010-08-21</discovery>
@@ -10019,7 +10019,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>3.3.5.1</lt></range>
       </package>
       <package>
-        <name>phpMyAdmin211</name>
+	<name>phpMyAdmin211</name>
 	<range><lt>2.11.10.1</lt></range>
       </package>
     </affects>
@@ -10146,9 +10146,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>VideoLAN project reports:</p>
 	<blockquote cite="http://www.videolan.org/security/sa1004.html">
 	  <p>VLC fails to perform sufficient input validation when trying to
-            extract some meta-informations about input media through ID3v2
-            tags. In the failure case, VLC attempt dereference an invalid
-            memory address, and a crash will ensure.</p>
+	    extract some meta-informations about input media through ID3v2
+	    tags. In the failure case, VLC attempt dereference an invalid
+	    memory address, and a crash will ensure.</p>
 	</blockquote>
       </body>
     </description>
@@ -10206,24 +10206,24 @@ Note:  Please add new entries to the beginning of this file.
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <range><lt>10.61</lt></range>
+	<name>opera</name>
+	<range><lt>10.61</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Opera Destkop Team reports:</p>
-        <blockquote cite="http://www.opera.com/docs/changelogs/unix/1061/">
-          <ul>
-            <li>Fixed an issue where heap buffer overflow in HTML5 canvas could
-              be used to execute arbitrary code, as reported by Kuzzcc.</li>
-            <li>Fixed an issue where unexpected changes in tab focus could be
-              used to run programs from the Internet, as reported by Jakob Balle
-              and Sven Krewitt of Secunia.</li>
-            <li>Fixed an issue where news feed preview could subscribe to feeds
-              without interaction, as reported by Alexios Fakos.</li>
-          </ul>
-        </blockquote>
+	<p>The Opera Destkop Team reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1061/">
+	  <ul>
+	    <li>Fixed an issue where heap buffer overflow in HTML5 canvas could
+	      be used to execute arbitrary code, as reported by Kuzzcc.</li>
+	    <li>Fixed an issue where unexpected changes in tab focus could be
+	      used to run programs from the Internet, as reported by Jakob Balle
+	      and Sven Krewitt of Secunia.</li>
+	    <li>Fixed an issue where news feed preview could subscribe to feeds
+	      without interaction, as reported by Alexios Fakos.</li>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -10409,7 +10409,7 @@ Note:  Please add new entries to the beginning of this file.
 	    CodeIgniter 1.7.2.  All applications using the File
 	    Upload class should install the patch to ensure that
 	    their application is not subject to a vulnerability.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -10603,7 +10603,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>This security release addresses some security
 	    vulnerabilities found in the advanced subversion
 	    integration module (Redmine.pm perl script).</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -10666,22 +10666,22 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>A Bugzilla Security Advisory reports:</p>
 	<blockquote cite="http://www.bugzilla.org/security/3.2.6/">
-          <ul>
+	  <ul>
 	    <li>Normally, information about time-tracking (estimated
-              hours, actual hours, hours worked, and deadlines) is
-              restricted to users in the "time-tracking group".
-              However, any user was able, by crafting their own
-              search URL, to search for bugs based using those
-              fields as criteria, thus possibly exposing sensitive
-              time-tracking information by a user seeing that a bug
-              matched their search.</li>
+	      hours, actual hours, hours worked, and deadlines) is
+	      restricted to users in the "time-tracking group".
+	      However, any user was able, by crafting their own
+	      search URL, to search for bugs based using those
+	      fields as criteria, thus possibly exposing sensitive
+	      time-tracking information by a user seeing that a bug
+	      matched their search.</li>
 	    <li>If $use_suexec was set to "1" in the localconfig file,
-              then the localconfig file's permissions were set as
-              world-readable by checksetup.pl. This allowed any user
-              with local shell access to see the contents of the file,
-              including the database password and the site_wide_secret
-              variable used for CSRF protection.</li>
-          </ul>
+	      then the localconfig file's permissions were set as
+	      world-readable by checksetup.pl. This allowed any user
+	      with local shell access to see the contents of the file,
+	      including the database password and the site_wide_secret
+	      variable used for CSRF protection.</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -10828,24 +10828,24 @@ Note:  Please add new entries to the beginning of this file.
     <topic>opera -- Data URIs can be used to allow cross-site scripting</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <range><lt>10.11</lt></range>
+	<name>opera</name>
+	<range><lt>10.11</lt></range>
       </package>
       <package>
-        <name>opera-devel</name>
-        <range><le>10.20_2,1</le></range>
+	<name>opera-devel</name>
+	<range><le>10.20_2,1</le></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Opera Desktop Team reports:</p>
-        <blockquote cite="http://www.opera.com/support/kb/view/955/">
-          <p>Data URIs are allowed to run scripts that manipulate
-            pages from the site that directly opened them. In some cases, the opening site
-            is not correctly detected. In these cases, Data URIs may erroneously be able to
-            run scripts so that they interact with sites that did not directly cause them to
-            be opened.</p>
-        </blockquote>
+	<p>The Opera Desktop Team reports:</p>
+	<blockquote cite="http://www.opera.com/support/kb/view/955/">
+	  <p>Data URIs are allowed to run scripts that manipulate
+	    pages from the site that directly opened them. In some cases, the opening site
+	    is not correctly detected. In these cases, Data URIs may erroneously be able to
+	    run scripts so that they interact with sites that did not directly cause them to
+	    be opened.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -10861,22 +10861,22 @@ Note:  Please add new entries to the beginning of this file.
     <topic>cacti -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>cacti</name>
-        <range><lt>0.8.7f</lt></range>
+	<name>cacti</name>
+	<range><lt>0.8.7f</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Multiple vulnerabilities have been reported to exist in older version of
+	<p>Multiple vulnerabilities have been reported to exist in older version of
 	  Cacti. The release notes of Cacti 0.8.7f summarizes the problems as
 	  follows:</p>
 	<blockquote cite="http://www.cacti.net/release_notes_0_8_7f.php">
-        <ul>
-          <li>SQL injection and shell escaping issues</li>
-          <li>Cross-site scripting issues</li>
-          <li>Cacti Graph Viewer SQL injection vulnerability</li>
-        </ul>
-        </blockquote>
+	<ul>
+	  <li>SQL injection and shell escaping issues</li>
+	  <li>Cross-site scripting issues</li>
+	  <li>Cacti Graph Viewer SQL injection vulnerability</li>
+	</ul>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -10895,21 +10895,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>firefox</name>
-        <range><gt>3.6.*,1</gt><lt>3.6.4,1</lt></range>
-        <range><gt>3.5.*,1</gt><lt>3.5.10,1</lt></range>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.4,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.10,1</lt></range>
       </package>
       <package>
-        <name>linux-firefox-devel</name>
-        <range><lt>3.5.10</lt></range>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.10</lt></range>
       </package>
       <package>
-        <name>seamonkey</name>
-        <range><gt>2.0.*</gt><lt>2.0.5</lt></range>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.5</lt></range>
       </package>
       <package>
-        <name>thunderbird</name>
-        <range><ge>3.0</ge><lt>3.0.5</lt></range>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.5</lt></range>
       </package>
     </affects>
     <description>
@@ -10970,7 +10970,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
        <p>Daniel Mealha Cabrita reports:</p>
        <blockquote cite="http://ziproxy.sourceforge.net/#news">
-         <p>Fixed security vulnerability (heap-related) in PNG decoder.
+	 <p>Fixed security vulnerability (heap-related) in PNG decoder.
 	   (new bug from 3.1.0)</p>
        </blockquote>
       </body>
@@ -10989,25 +10989,25 @@ Note:  Please add new entries to the beginning of this file.
     <topic>tiff -- Multiple integer overflows</topic>
     <affects>
       <package>
-        <name>tiff</name>
-        <range><lt>3.9.4</lt></range>
+	<name>tiff</name>
+	<range><lt>3.9.4</lt></range>
       </package>
       <package>
-        <name>linux-tiff</name>
-        <range><lt>3.9.4</lt></range>
+	<name>linux-tiff</name>
+	<range><lt>3.9.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Tielei Wang:</p>
-        <blockquote cite="http://www.ocert.org/advisories/ocert-2009-012.html">
-          <p>Multiple integer overflows in inter-color spaces conversion
-            tools in libtiff 3.8 through 3.8.2, 3.9, and 4.0 allow
-            context-dependent attackers to execute arbitrary code via a
-            TIFF image with large (1) width and (2) height values, which
-            triggers a heap-based buffer overflow in the (a) cvt_whole_image
-            function in tiff2rgba and (b) tiffcvt function in rgb2ycbcr.</p>
-        </blockquote>
+	<p>Tielei Wang:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2009-012.html">
+	  <p>Multiple integer overflows in inter-color spaces conversion
+	    tools in libtiff 3.8 through 3.8.2, 3.9, and 4.0 allow
+	    context-dependent attackers to execute arbitrary code via a
+	    TIFF image with large (1) width and (2) height values, which
+	    triggers a heap-based buffer overflow in the (a) cvt_whole_image
+	    function in tiff2rgba and (b) tiffcvt function in rgb2ycbcr.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -11091,25 +11091,25 @@ Note:  Please add new entries to the beginning of this file.
     <topic>tiff -- buffer overflow vulnerability</topic>
     <affects>
       <package>
-        <name>tiff</name>
-        <range><lt>3.9.3</lt></range>
+	<name>tiff</name>
+	<range><lt>3.9.3</lt></range>
       </package>
       <package>
-        <name>linux-tiff</name>
-        <range><lt>3.9.3</lt></range>
+	<name>linux-tiff</name>
+	<range><lt>3.9.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Kevin Finisterre reports:</p>
-        <blockquote cite="http://support.apple.com/kb/HT4196">
-          <p>Multiple integer overflows in the handling of TIFF files may
-            result in a heap buffer overflow. Opening a maliciously crafted
-            TIFF file may lead to an unexpected application termination or
-            arbitrary code execution. The issues are addressed through
-            improved bounds checking. Credit to Kevin Finisterre of
-            digitalmunition.com for reporting these issues.</p>
-        </blockquote>
+	<p>Kevin Finisterre reports:</p>
+	<blockquote cite="http://support.apple.com/kb/HT4196">
+	  <p>Multiple integer overflows in the handling of TIFF files may
+	    result in a heap buffer overflow. Opening a maliciously crafted
+	    TIFF file may lead to an unexpected application termination or
+	    arbitrary code execution. The issues are addressed through
+	    improved bounds checking. Credit to Kevin Finisterre of
+	    digitalmunition.com for reporting these issues.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -11191,24 +11191,24 @@ Note:  Please add new entries to the beginning of this file.
     <topic>mediawiki -- two security vulnerabilities</topic>
     <affects>
       <package>
-        <name>mediawiki</name>
-        <range><lt>1.15.4</lt></range>
+	<name>mediawiki</name>
+	<range><lt>1.15.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Two security vulnerabilities were discovered:</p>
-        <blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-May/000091.html">
-          <p>Noncompliant CSS parsing behaviour in Internet Explorer
-            allows attackers to construct CSS strings which are treated
-            as safe by previous versions of MediaWiki, but are decoded
-            to unsafe strings by Internet Explorer.</p>
-          <p>A CSRF vulnerability was discovered in our login interface.
-            Although regular logins are protected as of 1.15.3,  it was
-            discovered that the account creation and password reset
-            reset features were not protected from CSRF. This could lead
-            to unauthorised access to private wikis.</p>
-        </blockquote>
+	<p>Two security vulnerabilities were discovered:</p>
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-May/000091.html">
+	  <p>Noncompliant CSS parsing behaviour in Internet Explorer
+	    allows attackers to construct CSS strings which are treated
+	    as safe by previous versions of MediaWiki, but are decoded
+	    to unsafe strings by Internet Explorer.</p>
+	  <p>A CSRF vulnerability was discovered in our login interface.
+	    Although regular logins are protected as of 1.15.3,  it was
+	    discovered that the account creation and password reset
+	    reset features were not protected from CSRF. This could lead
+	    to unauthorised access to private wikis.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -11225,16 +11225,16 @@ Note:  Please add new entries to the beginning of this file.
     <topic>redmine -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>redmine</name>
-        <range><lt>0.9.4</lt></range>
+	<name>redmine</name>
+	<range><lt>0.9.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-         <p>The Redmine release announcement reports that
-           several cross side scripting vulnerabilities
-           and a potential data disclosure vulnerability have
-           been fixed in the latest release.</p>
+	 <p>The Redmine release announcement reports that
+	   several cross side scripting vulnerabilities
+	   and a potential data disclosure vulnerability have
+	   been fixed in the latest release.</p>
       </body>
     </description>
     <references>
@@ -11962,7 +11962,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Debian security team reports:</p>
+	<p>The Debian security team reports:</p>
 	<blockquote cite="http://www.debian.org/security/2010/dsa-2030">
 	<p>It was discovered that mahara, an electronic portfolio,
 	  weblog, and resume builder is not properly escaping input
@@ -11970,7 +11970,7 @@ Note:  Please add new entries to the beginning of this file.
 	  name from a single sign-on application. An attacker can
 	  use this to compromise the mahara database via crafted
 	  user names.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -12068,17 +12068,17 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Dojo Toolkit team reports:</p>
 	<blockquote cite="http://dojotoolkit.org/blog/post/dylan/2010/03/dojo-security-advisory/">
-          <p>Some PHP files did not properly escape input.</p>
-          <p>Some files could operate like "open redirects". A bad actor
-            could form an URL that looks like it came from a trusted
-            site, but the user would be redirected or load content from
-            the bad actor's site.</p>
-          <p>A file exposed a more serious cross-site scripting
-            vulnerability with the possibility of executing code on the
-            domain where the file exists.</p>
-          <p>The Dojo build process defaulted to copying over tests and
-            demos, which are normally not needed and just increased the
-            number of files that could be targets of attacks.</p>
+	  <p>Some PHP files did not properly escape input.</p>
+	  <p>Some files could operate like "open redirects". A bad actor
+	    could form an URL that looks like it came from a trusted
+	    site, but the user would be redirected or load content from
+	    the bad actor's site.</p>
+	  <p>A file exposed a more serious cross-site scripting
+	    vulnerability with the possibility of executing code on the
+	    domain where the file exists.</p>
+	  <p>The Dojo build process defaulted to copying over tests and
+	    demos, which are normally not needed and just increased the
+	    number of files that could be targets of attacks.</p>
 	</blockquote>
       </body>
     </description>
@@ -12108,9 +12108,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Zend Framework team reports:</p>
 	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-07">
 	  <p>Several files in the bundled Dojo library were identified
-            as having potential exploits, and the Dojo team also advised
-            disabling or removing any PHP scripts in the Dojo library tree
-            when deploying to production.</p>
+	    as having potential exploits, and the Dojo team also advised
+	    disabling or removing any PHP scripts in the Dojo library tree
+	    when deploying to production.</p>
 	</blockquote>
       </body>
     </description>
@@ -12366,22 +12366,22 @@ Note:  Please add new entries to the beginning of this file.
     <topic>egroupware -- two vulnerabilities</topic>
     <affects>
       <package>
-        <name>egroupware</name>
-        <range><lt>1.6.003</lt></range>
+	<name>egroupware</name>
+	<range><lt>1.6.003</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Egroupware Team report:</p>
-        <blockquote cite="http://www.egroupware.org/Home?category_id=95&amp;item=93">
-          <p>Nahuel Grisolia from CYBSEC S.A. Security Systems found two security
-            problems in EGroupware:</p>
-          <p>Serious remote command execution (allowing to run arbitrary command
-            on the web server by simply issuing a HTTP request!).</p>
-          <p>A reflected cross-site scripting (XSS).</p>
-          <p>Both require NO valid EGroupware account and work without being logged
-            in!</p>
-        </blockquote>
+	<p>Egroupware Team report:</p>
+	<blockquote cite="http://www.egroupware.org/Home?category_id=95&amp;item=93">
+	  <p>Nahuel Grisolia from CYBSEC S.A. Security Systems found two security
+	    problems in EGroupware:</p>
+	  <p>Serious remote command execution (allowing to run arbitrary command
+	    on the web server by simply issuing a HTTP request!).</p>
+	  <p>A reflected cross-site scripting (XSS).</p>
+	  <p>Both require NO valid EGroupware account and work without being logged
+	    in!</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -12403,7 +12403,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.22</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.16</lt></range>
       </package>
     </affects>
@@ -12801,15 +12801,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>OTRS Security Advisory reports:</p>
 	<blockquote cite="http://otrs.org/advisory/OSA-2010-01-en/">
 	  <p>Missing security quoting for SQL statements allows agents and
-            customers to manipulate SQL queries. So it's possible for
-            authenticated users to inject SQL queries
-            via string manipulation of statements.</p>
-          <p>A malicious user may be able to manipulate SQL queries to read
-            or modify records in the database. This way it could also be
-            possible to get access to more permissions (e. g. administrator
-            permissions).</p>
-          <p>To use this vulnerability the malicious user needs to have
-            a valid Agent- or Customer-session.</p>
+	    customers to manipulate SQL queries. So it's possible for
+	    authenticated users to inject SQL queries
+	    via string manipulation of statements.</p>
+	  <p>A malicious user may be able to manipulate SQL queries to read
+	    or modify records in the database. This way it could also be
+	    possible to get access to more permissions (e. g. administrator
+	    permissions).</p>
+	  <p>To use this vulnerability the malicious user needs to have
+	    a valid Agent- or Customer-session.</p>
 	</blockquote>
       </body>
     </description>
@@ -12876,11 +12876,11 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Apache ChangeLog reports:</p>
-        <blockquote cite="http://www.apache.org/dist/httpd/CHANGES_1.3.42">
-          <p>Integer overflow in the ap_proxy_send_fb function in
-            proxy/proxy_util.c in mod_proxy in the Apache HTTP Server before
-            1.3.42 on 64-bit platforms allows remote origin servers to cause a
-            denial of service (daemon crash) or possibly execute arbitrary code
+	<blockquote cite="http://www.apache.org/dist/httpd/CHANGES_1.3.42">
+	  <p>Integer overflow in the ap_proxy_send_fb function in
+	    proxy/proxy_util.c in mod_proxy in the Apache HTTP Server before
+	    1.3.42 on 64-bit platforms allows remote origin servers to cause a
+	    denial of service (daemon crash) or possibly execute arbitrary code
 	    via a large chunk size that triggers a heap-based buffer overflow.</p>
 	</blockquote>
       </body>
@@ -12944,13 +12944,13 @@ Note:  Please add new entries to the beginning of this file.
 	<p>A Bugzilla Security Advisory reports:</p>
 	<blockquote cite="http://www.bugzilla.org/security/3.0.10/">
 	  <p>When moving a bug from one product to another, an intermediate
-            page is displayed letting you select the groups the bug should
-            be restricted to in the new product. However, a regression in
-            the 3.4.x series made it ignore all groups which are not
-            available in both products. As a workaround, you had to move
-            the bug to the new product first and then restrict it to the
-            desired groups, in two distinct steps, which could make the bug
-            temporarily public.</p>
+	    page is displayed letting you select the groups the bug should
+	    be restricted to in the new product. However, a regression in
+	    the 3.4.x series made it ignore all groups which are not
+	    available in both products. As a workaround, you had to move
+	    the bug to the new product first and then restrict it to the
+	    desired groups, in two distinct steps, which could make the bug
+	    temporarily public.</p>
 	</blockquote>
       </body>
     </description>
@@ -12972,7 +12972,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.2.9</lt></range>
       </package>
       <package>
-        <name>ircd-ratbox-devel</name>
+	<name>ircd-ratbox-devel</name>
 	<range><lt>3.0.6</lt></range>
       </package>
     </affects>
@@ -13171,7 +13171,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.21</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.15</lt></range>
       </package>
     </affects>
@@ -13497,29 +13497,29 @@ Note:  Please add new entries to the beginning of this file.
     <topic>pligg -- Cross-Site Scripting and Cross-Site Request Forgery</topic>
     <affects>
       <package>
-        <name>pligg</name>
-        <range><lt>1.0.3b</lt></range>
+	<name>pligg</name>
+	<range><lt>1.0.3b</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/37349">
-          <p>Russ McRee has discovered some vulnerabilities in Pligg, which can
-            be exploited by malicious people to conduct cross-site scripting and
-            request forgery attacks.</p>
-          <p>Input passed via the "Referer" HTTP header to various scripts (e.g.
-            admin/admin_config.php, admin/admin_modules.php, delete.php, editlink.php,
-            submit.php, submit_groups.php, user_add_remove_links.php, and
-            user_settings.php) is not properly sanitised before being returned to
-            the user. This can be exploited to execute arbitrary HTML and script
-            code in a user's browser session in context of an affected site.</p>
-          <p>The application allows users to perform certain actions via HTTP
-            requests without performing any validity checks to verify the requests.
-            This can be exploited to e.g. create an arbitrary user with administrative
-            privileges if a logged-in administrative user visits a malicious web
-            site.</p>
-        </blockquote>
+	<p>secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/37349">
+	  <p>Russ McRee has discovered some vulnerabilities in Pligg, which can
+	    be exploited by malicious people to conduct cross-site scripting and
+	    request forgery attacks.</p>
+	  <p>Input passed via the "Referer" HTTP header to various scripts (e.g.
+	    admin/admin_config.php, admin/admin_modules.php, delete.php, editlink.php,
+	    submit.php, submit_groups.php, user_add_remove_links.php, and
+	    user_settings.php) is not properly sanitised before being returned to
+	    the user. This can be exploited to execute arbitrary HTML and script
+	    code in a user's browser session in context of an affected site.</p>
+	  <p>The application allows users to perform certain actions via HTTP
+	    requests without performing any validity checks to verify the requests.
+	    This can be exploited to e.g. create an arbitrary user with administrative
+	    privileges if a logged-in administrative user visits a malicious web
+	    site.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -13770,7 +13770,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>10.10.20091120</lt></range>
       </package>
       <package>
-        <name>linux-opera</name>
+	<name>linux-opera</name>
 	<range><lt>10.10</lt></range>
 	</package>
     </affects>
@@ -13876,13 +13876,13 @@ Note:  Please add new entries to the beginning of this file.
 	<p>A Bugzilla Security Advisory reports:</p>
 	<blockquote cite="http://www.bugzilla.org/security/3.4.3/">
 	  <p>When a bug is in a group, none of its information
-            (other than its status and resolution) should be visible
-            to users outside that group. It was discovered that
-            as of 3.3.2, Bugzilla was showing the alias of the bug
-            (a very short string used as a shortcut for looking up
-            the bug) to users outside of the group, if the protected
-            bug ended up in the "Depends On" or "Blocks" list of any
-            other bug.</p>
+	    (other than its status and resolution) should be visible
+	    to users outside that group. It was discovered that
+	    as of 3.3.2, Bugzilla was showing the alias of the bug
+	    (a very short string used as a shortcut for looking up
+	    the bug) to users outside of the group, if the protected
+	    bug ended up in the "Depends On" or "Blocks" list of any
+	    other bug.</p>
 	</blockquote>
       </body>
     </description>
@@ -13933,7 +13933,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.8.6,1</lt></range>
       </package>
       <package>
-        <name>de-wordpress</name>
+	<name>de-wordpress</name>
 	<range><lt>2.8.6</lt></range>
       </package>
     </affects>
@@ -14118,7 +14118,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><ge>4.0.*</ge><lt>4.3.1_2</lt></range>
       </package>
       <package>
-        <name>kdelibs</name>
+	<name>kdelibs</name>
 	<range><ge>4.0.*</ge><lt>4.3.1_5</lt></range>
       </package>
     </affects>
@@ -14161,25 +14161,25 @@ Note:  Please add new entries to the beginning of this file.
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>opera</name>
-        <range><lt>10.01.20091019</lt></range>
+	<name>opera</name>
+	<range><lt>10.01.20091019</lt></range>
       </package>
       <package>
-        <name>linux-opera</name>
-        <range><lt>10.01</lt></range>
+	<name>linux-opera</name>
+	<range><lt>10.01</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Opera Team Reports:</p>
-        <blockquote cite="http://www.opera.com/docs/changelogs/unix/1001/">
-          <ul>
-            <li>Fixed an issue where certain domain names could allow execution
+	<p>Opera Team Reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1001/">
+	  <ul>
+	    <li>Fixed an issue where certain domain names could allow execution
 	      of arbitrary code, as reported by Chris Weber of Casaba Security</li>
-            <li>Fixed an issue where scripts can run on the feed subscription
+	    <li>Fixed an issue where scripts can run on the feed subscription
 	      page, as reported by Inferno</li>
-          </ul>
-        </blockquote>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -14198,23 +14198,23 @@ Note:  Please add new entries to the beginning of this file.
     <topic>Enhanced cTorrent -- stack-based overflow</topic>
     <affects>
       <package>
-        <name>ctorrent</name>
-        <range><lt>3.3.2_2</lt></range>
+	<name>ctorrent</name>
+	<range><lt>3.3.2_2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Securityfocus reports:</p>
-        <blockquote cite="http://www.securityfocus.com/bid/34584">
-          <p>cTorrent and dTorrent are prone to a remote buffer-overflow
-            vulnerability because the software fails to properly
-            bounds-check user-supplied input before copying it to an
-            insufficiently sized memory buffer.</p>
-          <p>Successful exploits allow remote attackers to execute
-            arbitrary machine code in the context of a vulnerable
-            application. Failed exploit attempts will likely result in
-            denial-of-service conditions.</p>
-        </blockquote>
+	<p>Securityfocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/34584">
+	  <p>cTorrent and dTorrent are prone to a remote buffer-overflow
+	    vulnerability because the software fails to properly
+	    bounds-check user-supplied input before copying it to an
+	    insufficiently sized memory buffer.</p>
+	  <p>Successful exploits allow remote attackers to execute
+	    arbitrary machine code in the context of a vulnerable
+	    application. Failed exploit attempts will likely result in
+	    denial-of-service conditions.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -14481,7 +14481,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>3.2.2.1</lt></range>
       </package>
       <package>
-        <name>phpMyAdmin211</name>
+	<name>phpMyAdmin211</name>
 	<range><lt>2.11.9.6</lt></range>
       </package>
     </affects>
@@ -14692,7 +14692,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.20</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.14</lt></range>
       </package>
     </affects>
@@ -14780,12 +14780,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>A Bugzilla Security Advisory reports:</p>
 	<blockquote cite="http://www.bugzilla.org/security/3.4/">
 	  <ul>
-            <li>It is possible to inject raw SQL into the Bugzilla
-            database via the "Bug.create" and "Bug.search" WebService
-            functions.</li>
-            <li>When a user would change his password, his new password would
-            be exposed in the URL field of the browser if he logged in right
-            after changing his password.</li>
+	    <li>It is possible to inject raw SQL into the Bugzilla
+	    database via the "Bug.create" and "Bug.search" WebService
+	    functions.</li>
+	    <li>When a user would change his password, his new password would
+	    be exposed in the URL field of the browser if he logged in right
+	    after changing his password.</li>
 	  </ul>
 	</blockquote>
       </body>
@@ -14812,7 +14812,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-      	<p>The Horde team reports:</p>
+	<p>The Horde team reports:</p>
 	<blockquote cite="http://cvs.horde.org/diff.php/horde/docs/CHANGES?r1=1.515.2.558&amp;r2=1.515.2.559">
 	  <p>An error within the form library when handling image form fields can
 	    be exploited to overwrite arbitrary local files.</p>
@@ -15020,7 +15020,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>SILC Changlog reports:</p>
 	<blockquote cite="http://silcnet.org/docs/changelog/SILC%20Toolkit%201.1.10">
 	  <p>An unspecified format string vulnerability exists in
-            silc-toolkit.</p>
+	    silc-toolkit.</p>
 	</blockquote>
       </body>
     </description>
@@ -15039,30 +15039,30 @@ Note:  Please add new entries to the beginning of this file.
      <topic>opera -- multiple vulnerabilities</topic>
      <affects>
        <package>
-         <name>opera</name>
-         <range><lt>10.00.20090830</lt></range>
+	 <name>opera</name>
+	 <range><lt>10.00.20090830</lt></range>
        </package>
        <package>
-         <name>opera-devel</name>
-         <range><le>10.00.b3_1,1</le></range>
+	 <name>opera-devel</name>
+	 <range><le>10.00.b3_1,1</le></range>
        </package>
        <package>
-         <name>linux-opera</name>
-         <range><lt>10.00</lt></range>
+	 <name>linux-opera</name>
+	 <range><lt>10.00</lt></range>
        </package>
      </affects>
      <description>
        <body xmlns="http://www.w3.org/1999/xhtml">
-         <p>Opera Team Reports:</p>
-         <blockquote cite="http://www.opera.com/docs/changelogs/freebsd/1000/">
-             <ul>
-               <li>Issue where sites using revoked intermediate certificates might be shown as secure</li>
-               <li>Issue where the collapsed address bar didn't show the current domain</li>
-               <li>Issue where pages could trick users into uploading files</li>
-               <li>Some IDNA characters not correctly displaying in the address bar</li>
-               <li>Issue where Opera accepts nulls and invalid wild-cards in certificates</li>
-             </ul>
-         </blockquote>
+	 <p>Opera Team Reports:</p>
+	 <blockquote cite="http://www.opera.com/docs/changelogs/freebsd/1000/">
+	     <ul>
+	       <li>Issue where sites using revoked intermediate certificates might be shown as secure</li>
+	       <li>Issue where the collapsed address bar didn't show the current domain</li>
+	       <li>Issue where pages could trick users into uploading files</li>
+	       <li>Some IDNA characters not correctly displaying in the address bar</li>
+	       <li>Issue where Opera accepts nulls and invalid wild-cards in certificates</li>
+	     </ul>
+	 </blockquote>
        </body>
      </description>
      <references>
@@ -15455,11 +15455,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>A Bugzilla Security Advisory reports:</p>
 	<blockquote cite="http://www.bugzilla.org/security/3.4/">
 	  <p>Normally, users are only supposed to see products that
-            they can file bugs against in the "Product" drop-down on
-            the bug-editing page. Instead, users were being shown all
-            products, even those that they normally could not see. Any
-            user who could edit any bug could see all product
-            names.</p>
+	    they can file bugs against in the "Product" drop-down on
+	    the bug-editing page. Instead, users were being shown all
+	    products, even those that they normally could not see. Any
+	    user who could edit any bug could see all product
+	    names.</p>
 	</blockquote>
       </body>
     </description>
@@ -15487,7 +15487,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>3.5.2</lt></range>
       </package>
       <package>
-        <name>seamonkey</name>
+	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
 	<range><lt>1.1.18</lt></range>
       </package>
@@ -15496,7 +15496,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>0</gt></range>
       </package>
       <package>
-        <name>thunderbird</name>
+	<name>thunderbird</name>
 	<name>linux-thunderbird</name>
 	<range><lt>2.0.0.23</lt></range>
       </package>
@@ -15551,7 +15551,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>SILC changelog reports:</p>
 	<blockquote cite="http://silcnet.org/docs/changelog/SILC%20Client%201.1.8">
 	  <p>An unspecified format string vulnerability exists in
-            silc-client.</p>
+	    silc-client.</p>
 	</blockquote>
       </body>
     </description>
@@ -15570,18 +15570,18 @@ Note:  Please add new entries to the beginning of this file.
     <topic>SquirrelMail -- Plug-ins compromise</topic>
     <affects>
       <package>
-        <name>squirrelmail-multilogin-plugin</name>
-        <range><ge>2.3.4</ge><lt>2.3.4_2</lt></range>
+	<name>squirrelmail-multilogin-plugin</name>
+	<range><ge>2.3.4</ge><lt>2.3.4_2</lt></range>
       </package>
    </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <h1>Problem Description:</h1>
-          <p>The SquirrelMail Web Server has been compromised, and three plugins
-            are affected.</p>
-          <p>The port of squirrelmail-sasql-plugin is safe (right MD5), and
-            change_pass is not in the FreeBSD ports tree, but multilogin has a
-            wrong MD5.</p>
+	<h1>Problem Description:</h1>
+	  <p>The SquirrelMail Web Server has been compromised, and three plugins
+	    are affected.</p>
+	  <p>The port of squirrelmail-sasql-plugin is safe (right MD5), and
+	    change_pass is not in the FreeBSD ports tree, but multilogin has a
+	    wrong MD5.</p>
      </body>
     </description>
     <references>
@@ -15598,41 +15598,41 @@ Note:  Please add new entries to the beginning of this file.
     <topic>BIND -- Dynamic update message remote DoS</topic>
     <affects>
       <package>
-        <name>bind9</name>
-        <range><lt>9.3.6.1.1</lt></range>
+	<name>bind9</name>
+	<range><lt>9.3.6.1.1</lt></range>
       </package>
       <package>
-        <name>bind9-sdb-postgresql</name>
-        <name>bind9-sdb-ldap</name>
-        <range><lt>9.4.3.3</lt></range>
+	<name>bind9-sdb-postgresql</name>
+	<name>bind9-sdb-ldap</name>
+	<range><lt>9.4.3.3</lt></range>
       </package>
       <system>
-        <name>FreeBSD</name>
-        <range><ge>6.3</ge><lt>6.3_12</lt></range>
-        <range><ge>6.4</ge><lt>6.4_6</lt></range>
-        <range><ge>7.1</ge><lt>7.1_7</lt></range>
-        <range><ge>7.2</ge><lt>7.2_3</lt></range>
+	<name>FreeBSD</name>
+	<range><ge>6.3</ge><lt>6.3_12</lt></range>
+	<range><ge>6.4</ge><lt>6.4_6</lt></range>
+	<range><ge>7.1</ge><lt>7.1_7</lt></range>
+	<range><ge>7.2</ge><lt>7.2_3</lt></range>
       </system>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <h1>Problem Description:</h1>
-          <p>When named(8) receives a specially crafted dynamic update
-            message an internal assertion check is triggered which causes
-            named(8) to exit.</p>
-          <p>To trigger the problem, the dynamic update message must contains
-            a record of type "ANY" and at least one resource record set (RRset)
-            for this fully qualified domain name (FQDN) must exist on the
-            server.</p>
-        <h1>Impact:</h1>
-          <p>An attacker which can send DNS requests to a nameserver can cause
-            it to exit, thus creating a Denial of Service situation.</p>
-        <h1>Workaround:</h1>
-          <p>No generally applicable workaround is available, but some firewalls
-            may be able to prevent nsupdate DNS packets from reaching the
-            nameserver.</p>
-          <p>NOTE WELL: Merely configuring named(8) to ignore dynamic updates
-            is NOT sufficient to protect it from this vulnerability.</p>
+	<h1>Problem Description:</h1>
+	  <p>When named(8) receives a specially crafted dynamic update
+	    message an internal assertion check is triggered which causes
+	    named(8) to exit.</p>
+	  <p>To trigger the problem, the dynamic update message must contains
+	    a record of type "ANY" and at least one resource record set (RRset)
+	    for this fully qualified domain name (FQDN) must exist on the
+	    server.</p>
+	<h1>Impact:</h1>
+	  <p>An attacker which can send DNS requests to a nameserver can cause
+	    it to exit, thus creating a Denial of Service situation.</p>
+	<h1>Workaround:</h1>
+	  <p>No generally applicable workaround is available, but some firewalls
+	    may be able to prevent nsupdate DNS packets from reaching the
+	    nameserver.</p>
+	  <p>NOTE WELL: Merely configuring named(8) to ignore dynamic updates
+	    is NOT sufficient to protect it from this vulnerability.</p>
       </body>
     </description>
     <references>
@@ -15800,34 +15800,34 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Drupal Security Team reports:</p>
 	<blockquote cite="http://drupal.org/node/507572">
-          <p>Cross-site scripting</p>
-          <p>The Forum module does not correctly handle certain arguments
-            obtained from the URL.  By enticing a suitably privileged user
-            to visit a specially crafted URL, a malicious user is able to
-            insert arbitrary HTML and script code into forum pages.  Such a
-            cross-site scripting attack may lead to the malicious user
-            gaining administrative access.  Wikipedia has more information
-            about cross-site scripting (XSS).</p>
-          <p>User signatures have no separate input format, they use the
-            format of the comment with which they are displayed.  A user
-            will no longer be able to edit a comment when an administrator
-            changes the comment's input format to a format that is not
-            accessible to the user.  However they will still be able to
-            modify their signature, which will then be processed by the new
-            input format.</p>
-          <p>If the new format is very permissive, via their signature, the
-            user may be able to insert arbitrary HTML and script code into
-            pages or, when the PHP filter is enabled for the new format,
-            execute PHP code.  This issue affects Drupal 6.x only.</p>
-          <p>When an anonymous user fails to login due to mistyping his
-            username or password, and the page he is on contains a sortable
-            table, the (incorrect) username and password are included in
-            links on the table.  If the user visits these links the password
-            may then be leaked to external sites via the HTTP referer.</p>
-          <p>In addition, if the anonymous user is enticed to visit the site
-            via a specially crafted URL while the Drupal page cache is
-            enabled, a malicious user might be able to retrieve the
-            (incorrect) username and password from the page cache.</p>
+	  <p>Cross-site scripting</p>
+	  <p>The Forum module does not correctly handle certain arguments
+	    obtained from the URL.  By enticing a suitably privileged user
+	    to visit a specially crafted URL, a malicious user is able to
+	    insert arbitrary HTML and script code into forum pages.  Such a
+	    cross-site scripting attack may lead to the malicious user
+	    gaining administrative access.  Wikipedia has more information
+	    about cross-site scripting (XSS).</p>
+	  <p>User signatures have no separate input format, they use the
+	    format of the comment with which they are displayed.  A user
+	    will no longer be able to edit a comment when an administrator
+	    changes the comment's input format to a format that is not
+	    accessible to the user.  However they will still be able to
+	    modify their signature, which will then be processed by the new
+	    input format.</p>
+	  <p>If the new format is very permissive, via their signature, the
+	    user may be able to insert arbitrary HTML and script code into
+	    pages or, when the PHP filter is enabled for the new format,
+	    execute PHP code.  This issue affects Drupal 6.x only.</p>
+	  <p>When an anonymous user fails to login due to mistyping his
+	    username or password, and the page he is on contains a sortable
+	    table, the (incorrect) username and password are included in
+	    links on the table.  If the user visits these links the password
+	    may then be leaked to external sites via the HTTP referer.</p>
+	  <p>In addition, if the anonymous user is enticed to visit the site
+	    via a specially crafted URL while the Drupal page cache is
+	    enabled, a malicious user might be able to retrieve the
+	    (incorrect) username and password from the page cache.</p>
 	</blockquote>
      </body>
    </description>
@@ -16275,36 +16275,36 @@ Note:  Please add new entries to the beginning of this file.
     <topic>apr -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>apr</name>
-        <range><lt>1.3.5.1.3.7</lt></range>
+	<name>apr</name>
+	<range><lt>1.3.5.1.3.7</lt></range>
       </package>
       <package>
-        <name>apache</name>
-        <range><ge>2.2.0</ge><lt>2.2.11_5</lt></range>
-        <range><ge>2.0.0</ge><lt>2.0.63_3</lt></range>
+	<name>apache</name>
+	<range><ge>2.2.0</ge><lt>2.2.11_5</lt></range>
+	<range><ge>2.0.0</ge><lt>2.0.63_3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/35284/">
-          <p>Some vulnerabilities have been reported in APR-util, which
-            can be exploited by malicious users and malicious people to
-            cause a DoS (Denial of Service).</p>
-          <p>A vulnerability is caused due to an error in the processing
-            of XML files and can be exploited to exhaust all available
-            memory via a specially crafted XML file containing a
-            predefined entity inside an entity definition.</p>
-          <p>A vulnerability is caused due to an error within the
-            "apr_strmatch_precompile()" function in
-             strmatch/apr_strmatch.c, which can be exploited to crash an
-             application using the library.</p>
-        </blockquote>
-        <p>RedHat reports:</p>
-        <blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=3D504390">
-          <p>A single NULL byte buffer overflow flaw was found in
-          apr-util's apr_brigade_vprintf() function.</p>
-        </blockquote>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/35284/">
+	  <p>Some vulnerabilities have been reported in APR-util, which
+	    can be exploited by malicious users and malicious people to
+	    cause a DoS (Denial of Service).</p>
+	  <p>A vulnerability is caused due to an error in the processing
+	    of XML files and can be exploited to exhaust all available
+	    memory via a specially crafted XML file containing a
+	    predefined entity inside an entity definition.</p>
+	  <p>A vulnerability is caused due to an error within the
+	    "apr_strmatch_precompile()" function in
+	     strmatch/apr_strmatch.c, which can be exploited to crash an
+	     application using the library.</p>
+	</blockquote>
+	<p>RedHat reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=3D504390">
+	  <p>A single NULL byte buffer overflow flaw was found in
+	  apr-util's apr_brigade_vprintf() function.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -16363,7 +16363,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openssl</name>
-        <range><ge>0.9.8</ge><lt>0.9.8k_1</lt></range>
+	<range><ge>0.9.8</ge><lt>0.9.8k_1</lt></range>
       </package>
     </affects>
     <description>
@@ -16679,14 +16679,14 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Note: A similar issue also affects xine-lib &lt; version
 	    1.1.16.2.</p>
 	</blockquote>
-        <p>xine developers report:</p>
-        <blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=9655&amp;release_id=660071">
-          <ul>
-            <li>Fix broken size checks in various input plugins (ref.
+	<p>xine developers report:</p>
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=9655&amp;release_id=660071">
+	  <ul>
+	    <li>Fix broken size checks in various input plugins (ref.
 	      CVE-2008-5239).</li>
-            <li>More malloc checking (ref. CVE-2008-5240).</li>
-          </ul>
-        </blockquote>
+	    <li>More malloc checking (ref. CVE-2008-5240).</li>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -16710,7 +16710,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>4.4.9_1</lt></range>
       </package>
       <package>
-        <name>php5-dba</name>
+	<name>php5-dba</name>
 	<range><lt>5.2.7</lt></range>
       </package>
     </affects>
@@ -16852,7 +16852,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/3459796">
+	<blockquote cite="http://secunia.com/advisories/3459796">
 	  <p>Certain input passed to the "Apache::Status" and "Apache2::Status"
 	    modules is not properly sanitised before being returned to the user.
 	    This can be exploited to execute arbitrary HTML and script code in a
@@ -17024,18 +17024,18 @@ Note:  Please add new entries to the beginning of this file.
     <topic>pango -- integer overflow</topic>
     <affects>
       <package>
-        <name>pango</name>
-        <name>linux-pango</name>
-        <name>linux-f8-pango</name>
-        <name>linux-f10-pango</name>
-        <range><lt>1.24</lt></range>
+	<name>pango</name>
+	<name>linux-pango</name>
+	<name>linux-f8-pango</name>
+	<name>linux-f10-pango</name>
+	<range><lt>1.24</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>oCERT reports:</p>
-        <blockquote cite="http://www.ocert.org/advisories/ocert-2009-001.html">
-          <p>Pango suffers from a multiplicative integer overflow which
+	<p>oCERT reports:</p>
+	<blockquote cite="http://www.ocert.org/advisories/ocert-2009-001.html">
+	  <p>Pango suffers from a multiplicative integer overflow which
 	    may lead to a potentially exploitable, heap overflow depending
 	    on the calling conditions.</p>
 	  <p>For example, this vulnerability is remotely reachable in Firefox
@@ -17044,7 +17044,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>The affected function is pango_glyph_string_set_size. An overflow
 	    check when doubling the size neglects the overflow possible on the
 	    subsequent allocation.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -17063,32 +17063,32 @@ Note:  Please add new entries to the beginning of this file.
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>ethereal</name>
+	<name>ethereal</name>
 	<name>ethereal-lite</name>
 	<name>tethereal</name>
 	<name>tethereal-lite</name>
 	<name>wireshark</name>
 	<name>wireshark-lite</name>
-        <range><lt>1.0.7</lt></range>
+	<range><lt>1.0.7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Wireshark team reports:</p>
-        <blockquote cite="http://www.wireshark.org/security/wnpa-sec-2009-02.html">
-          <p>Wireshark 1.0.7 fixes the following vulnerabilities:</p>
-          <ul>
-            <li>The PROFINET dissector was vulnerable to a format
-              string overflow. (Bug 3382) Versions affected: 0.99.6 to
-              1.0.6, CVE-2009-1210.</li>
-            <li>The Check Point High-Availability Protocol (CPHAP)
-              dissector could crash. (Bug 3269) Versions affected: 0.9.6
-              to 1.0.6; CVE-2009-1268.</li>
-            <li>Wireshark could crash while loading a Tektronix .rf5
-              file. (Bug 3366) Versions affected: 0.99.6 to 1.0.6,
-              CVE-2009-1269.</li>
-          </ul>
-        </blockquote>
+	<p>Wireshark team reports:</p>
+	<blockquote cite="http://www.wireshark.org/security/wnpa-sec-2009-02.html">
+	  <p>Wireshark 1.0.7 fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>The PROFINET dissector was vulnerable to a format
+	      string overflow. (Bug 3382) Versions affected: 0.99.6 to
+	      1.0.6, CVE-2009-1210.</li>
+	    <li>The Check Point High-Availability Protocol (CPHAP)
+	      dissector could crash. (Bug 3269) Versions affected: 0.9.6
+	      to 1.0.6; CVE-2009-1268.</li>
+	    <li>Wireshark could crash while loading a Tektronix .rf5
+	      file. (Bug 3366) Versions affected: 0.99.6 to 1.0.6,
+	      CVE-2009-1269.</li>
+	  </ul>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -17111,34 +17111,34 @@ Note:  Please add new entries to the beginning of this file.
     <topic>cups -- remote code execution and DNS rebinding</topic>
     <affects>
       <package>
-        <name>cups-base</name>
-        <range><lt>1.3.10</lt></range>
+	<name>cups-base</name>
+	<range><lt>1.3.10</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Gentoo security team summarizes:</p>
-        <blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200904-20.xml">
-          <p>The following issues were reported in CUPS:</p>
-          <ul>
-            <li>iDefense reported an integer overflow in the
-              _cupsImageReadTIFF() function in the "imagetops" filter,
-              leading to a heap-based buffer overflow (CVE-2009-0163).</li>
-            <li>Aaron Siegel of Apple Product Security reported that the
-              CUPS web interface does not verify the content of the "Host"
-              HTTP header properly (CVE-2009-0164).</li>
-            <li>Braden Thomas and Drew Yao of Apple Product Security
-              reported that CUPS is vulnerable to CVE-2009-0146,
-              CVE-2009-0147 and CVE-2009-0166, found earlier in xpdf and
-              poppler.</li>
-          </ul>
-          <p>A remote attacker might send or entice a user to send a
-            specially crafted print job to CUPS, possibly resulting in the
-            execution of arbitrary code with the privileges of the
-            configured CUPS user -- by default this is "lp", or a Denial
-            of Service. Furthermore, the web interface could be used to
-            conduct DNS rebinding attacks.</p>
-        </blockquote>
+	<p>Gentoo security team summarizes:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200904-20.xml">
+	  <p>The following issues were reported in CUPS:</p>
+	  <ul>
+	    <li>iDefense reported an integer overflow in the
+	      _cupsImageReadTIFF() function in the "imagetops" filter,
+	      leading to a heap-based buffer overflow (CVE-2009-0163).</li>
+	    <li>Aaron Siegel of Apple Product Security reported that the
+	      CUPS web interface does not verify the content of the "Host"
+	      HTTP header properly (CVE-2009-0164).</li>
+	    <li>Braden Thomas and Drew Yao of Apple Product Security
+	      reported that CUPS is vulnerable to CVE-2009-0146,
+	      CVE-2009-0147 and CVE-2009-0166, found earlier in xpdf and
+	      poppler.</li>
+	  </ul>
+	  <p>A remote attacker might send or entice a user to send a
+	    specially crafted print job to CUPS, possibly resulting in the
+	    execution of arbitrary code with the privileges of the
+	    configured CUPS user -- by default this is "lp", or a Denial
+	    of Service. Furthermore, the web interface could be used to
+	    conduct DNS rebinding attacks.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -17163,28 +17163,28 @@ Note:  Please add new entries to the beginning of this file.
     <topic>FreeBSD -- remotely exploitable crash in OpenSSL</topic>
     <affects>
       <system>
-        <name>FreeBSD</name>
-        <range><ge>6.3</ge><lt>6.3_10</lt></range>
-        <range><ge>6.4</ge><lt>6.4_4</lt></range>
-        <range><ge>7.0</ge><lt>7.0_12</lt></range>
-        <range><ge>7.1</ge><lt>7.1_5</lt></range>
+	<name>FreeBSD</name>
+	<range><ge>6.3</ge><lt>6.3_10</lt></range>
+	<range><ge>6.4</ge><lt>6.4_4</lt></range>
+	<range><ge>7.0</ge><lt>7.0_12</lt></range>
+	<range><ge>7.1</ge><lt>7.1_5</lt></range>
       </system>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <h1>Problem Description</h1>
-          <p>The function ASN1_STRING_print_ex does not properly validate
-            the lengths of BMPString or UniversalString objects before
-            attempting to print them.</p>
-        <h1>Impact</h1>
-          <p>An application which attempts to print a BMPString or
-            UniversalString which has an invalid length will crash as a
-            result of OpenSSL accessing invalid memory locations.  This
-            could be used by an attacker to crash a remote application.</p>
-        <h1>Workaround</h1>
-          <p>No workaround is available, but applications which do not use
-            the ASN1_STRING_print_ex function (either directly or indirectly)
-            are not affected.</p>
+	<h1>Problem Description</h1>
+	  <p>The function ASN1_STRING_print_ex does not properly validate
+	    the lengths of BMPString or UniversalString objects before
+	    attempting to print them.</p>
+	<h1>Impact</h1>
+	  <p>An application which attempts to print a BMPString or
+	    UniversalString which has an invalid length will crash as a
+	    result of OpenSSL accessing invalid memory locations.  This
+	    could be used by an attacker to crash a remote application.</p>
+	<h1>Workaround</h1>
+	  <p>No workaround is available, but applications which do not use
+	    the ASN1_STRING_print_ex function (either directly or indirectly)
+	    are not affected.</p>
       </body>
     </description>
     <references>
@@ -17234,21 +17234,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>openfire -- Openfire No Password Changes Security Bypass</topic>
     <affects>
       <package>
-        <name>openfire</name>
-        <range><lt>3.6.4</lt></range>
+	<name>openfire</name>
+	<range><lt>3.6.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Secunia reports:</p>
-        <blockquote cite="http://secunia.com/advisories/34984/">
-          <p>A vulnerability has been reported in Openfire which can
-            be exploited by malicious users to bypass certain security
-            restrictions. The vulnerability is caused due to Openfire
-            not properly respecting the no password changes setting which
-            can be exploited to change passwords by sending jabber:iq:auth
-            passwd_change requests to the server.</p>
-        </blockquote>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/34984/">
+	  <p>A vulnerability has been reported in Openfire which can
+	    be exploited by malicious users to bypass certain security
+	    restrictions. The vulnerability is caused due to Openfire
+	    not properly respecting the no password changes setting which
+	    can be exploited to change passwords by sending jabber:iq:auth
+	    passwd_change requests to the server.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -17272,7 +17272,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.17</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.11</lt></range>
       </package>
     </affects>
@@ -17333,12 +17333,12 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>0</gt></range>
       </package>
       <package>
-        <name>seamonkey</name>
+	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
 	<range><lt>1.1.17</lt></range>
       </package>
       <package>
-        <name>thunderbird</name>
+	<name>thunderbird</name>
 	<name>linux-thunderbird</name>
 	<range><lt>2.0.0.22</lt></range>
       </package>
@@ -17690,7 +17690,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.11.9.5</lt></range>
       </package>
       <package>
-        <name>phpMyAdmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>3.1.3.1</lt></range>
       </package>
     </affects>
@@ -17986,8 +17986,8 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.3.2</lt></range>
       </package>
       <package>
-        <name>proftpd-devel</name>
-        <range><le>1.3.20080922</le></range>
+	<name>proftpd-devel</name>
+	<range><le>1.3.20080922</le></range>
       </package>
     </affects>
     <description>
@@ -18029,7 +18029,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.6.2_1,1</lt></range>
       </package>
       <package>
-        <name>zabbix-agent</name>
+	<name>zabbix-agent</name>
 	<range><lt>1.6.2_1,2</lt></range>
       </package>
     </affects>
@@ -18076,7 +18076,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>4.4.9</lt></range>
       </package>
       <package>
-        <name>php5-mbstring</name>
+	<name>php5-mbstring</name>
 	<range><lt>5.2.9</lt></range>
       </package>
     </affects>
@@ -18306,8 +18306,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Matthew Weier O'Phinney reports:</p>
-        <blockquote cite="http://weierophinney.net/matthew/archives/206-Zend-Framework-1.7.5-Released-Important-Note-Regarding-Zend_View.html">
+	<p>Matthew Weier O'Phinney reports:</p>
+	<blockquote cite="http://weierophinney.net/matthew/archives/206-Zend-Framework-1.7.5-Released-Important-Note-Regarding-Zend_View.html">
 	  <p>A potential Local File Inclusion (LFI) vulnerability exists in
 	    the Zend_View::render() method. If user input is used to
 	    specify the script path, then it is possible to trigger the
@@ -18315,7 +18315,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Note that Zend Framework applications that never call the
 	    Zend_View::render() method with a user-supplied parameter are
 	    not affected by this vulnerability.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -18391,21 +18391,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>varnish -- Varnish HTTP Request Parsing Denial of Service</topic>
     <affects>
       <package>
-        <name>varnish</name>
-        <range><lt>2.0.1</lt></range>
+	<name>varnish</name>
+	<range><lt>2.0.1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>SecurityFocus reports:</p>
-        <blockquote cite="http://www.securityfocus.com/bid/33712">
-          <p>Varnish is prone to a remote denial-of-service
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/33712">
+	  <p>Varnish is prone to a remote denial-of-service
 	    vulnerability because the application fails to handle
 	    certain HTTP requests.</p>
-          <p>Successfully exploiting this issue allows remote
+	  <p>Successfully exploiting this issue allows remote
 	    attackers to crash the affected application denying further
 	    service to legitimate users.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -18428,7 +18428,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>0.2.0.34</lt></range>
       </package>
       <package>
-        <name>tor-devel</name>
+	<name>tor-devel</name>
 	<range><lt>0.2.12-alpha</lt></range>
       </package>
     </affects>
@@ -18535,15 +18535,15 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>znirkel reports:</p>
-        <blockquote cite="http://secunia.com/advisories/33829/">
+	<p>znirkel reports:</p>
+	<blockquote cite="http://secunia.com/advisories/33829/">
 	  <p>The eval() function in _reset_post_array crashes when posting
 	    certain data. By passing in carefully-crafted input data, the eval()
 	    function could also execute malicious PHP code.</p>
 	  <p>Note that CodeIgniter applications that either do not use the
 	    new Form Validation class or use the old Validation class are not
 	    affected by this vulnerability.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -18559,14 +18559,14 @@ Note:  Please add new entries to the beginning of this file.
     <topic>pyblosxom -- atom flavor multiple XML injection vulnerabilities</topic>
     <affects>
       <package>
-        <name>pyblosxom</name>
-        <range><lt>1.5.r3</lt></range>
+	<name>pyblosxom</name>
+	<range><lt>1.5.r3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Security Focus reports:</p>
-        <blockquote cite="http://www.securityfocus.com/bid/33676/">
+	<p>Security Focus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/33676/">
 	  <p>PyBlosxom is prone to multiple XML-injection
 	    vulnerabilities because the application fails to
 	    properly sanitize user-supplied input before using it
@@ -18576,7 +18576,7 @@ Note:  Please add new entries to the beginning of this file.
 	    the attacker to steal cookie-based authentication credentials
 	    or to control how the site is rendered to the user. Other attacks
 	    are also possible.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -18833,20 +18833,20 @@ Note:  Please add new entries to the beginning of this file.
     <topic>sudo -- certain authorized users could run commands as any user</topic>
     <affects>
       <package>
-        <name>sudo</name>
-        <range><ge>1.6.9</ge><lt>1.6.9.20</lt></range>
+	<name>sudo</name>
+	<range><ge>1.6.9</ge><lt>1.6.9.20</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Todd Miller reports:</p>
-        <blockquote cite="http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html">
-          <p>A bug was introduced in Sudo's group matching code in version
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.gratisoft.us/pipermail/sudo-announce/2009-February/000085.html">
+	  <p>A bug was introduced in Sudo's group matching code in version
 	    1.6.9 when support for matching based on the supplemental group
 	    vector was added.  This bug may allow certain users listed in
 	    the sudoers file to run a command as a different user than their
 	    access rule specifies.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -18868,7 +18868,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.15</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.9</lt></range>
       </package>
     </affects>
@@ -19021,7 +19021,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>0.2.0.33</lt></range>
       </package>
       <package>
-        <name>tor-devel</name>
+	<name>tor-devel</name>
 	<range><lt>0.2.1.11-alpha</lt></range>
       </package>
     </affects>
@@ -19058,8 +19058,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The GLPI project reports:</p>
-        <blockquote cite="http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=161&amp;lang=en">
+	<p>The GLPI project reports:</p>
+	<blockquote cite="http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=161&amp;lang=en">
 	  <p>Input passed via unspecified parameters is not properly sanitised
 	    before being used in SQL queries. This can be exploited to
 	    manipulateSQL queries by injecting arbitrary SQL code.</p>
@@ -19249,21 +19249,21 @@ Note:  Please add new entries to the beginning of this file.
     <topic>gtar -- GNU TAR safer_name_suffix Remote Denial of Service Vulnerability</topic>
     <affects>
       <package>
-        <name>gtar</name>
-        <range><lt>1.19</lt></range>
+	<name>gtar</name>
+	<range><lt>1.19</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>SecurityFocus reports:</p>
-        <blockquote cite="http://www.securityfocus.com/bid/26445/">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/26445/">
 	  <p>GNUs tar and cpio utilities are prone to a denial-of-service
 	    vulnerability because of insecure use of the alloca()
 	    function.</p>
 	  <p>Successfully exploiting this issue allows attackers
 	    to crash the affected utilities and possibly to execute
 	    code but this has not been confirmed.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -19356,7 +19356,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>3.0.5</lt></range>
       </package>
       <package>
-        <name>nagios2</name>
+	<name>nagios2</name>
 	<range><lt>2.12_2</lt></range>
       </package>
     </affects>
@@ -19989,20 +19989,20 @@ Note:  Please add new entries to the beginning of this file.
     <topic>p5-File-Path -- rmtree allows creation of setuid files</topic>
     <affects>
       <package>
-        <name>p5-File-Path</name>
-        <range><lt>2.07_1</lt></range>
+	<name>p5-File-Path</name>
+	<range><lt>2.07_1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Jan Lieskovsky reports:</p>
-        <blockquote cite="http://www.openwall.com/lists/oss-security/2008/11/28/1">
+	<p>Jan Lieskovsky reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2008/11/28/1">
 	  <p>perl-File-Path rmtree race condition (CVE-2005-0448 was assigned to
 	    address this)</p>
 	  <p>This vulnerability was fixed in 5.8.4-7 but re-introduced
 	    in 5.8.8-1.  It's also present in File::Path 2.xx, up to and
 	    including 2.07 which has only a partial fix.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -20067,23 +20067,23 @@ Note:  Please add new entries to the beginning of this file.
     <topic>vinagre -- format string vulnerability</topic>
     <affects>
       <package>
-        <name>vinagre</name>
-        <range><lt>0.5.2</lt></range>
+	<name>vinagre</name>
+	<range><lt>0.5.2</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>CORE Security Technologies reports:</p>
-        <blockquote cite="http://www.coresecurity.com/content/vinagre-format-string">
-          <p>A format string error has been found on the
+	<p>CORE Security Technologies reports:</p>
+	<blockquote cite="http://www.coresecurity.com/content/vinagre-format-string">
+	  <p>A format string error has been found on the
 	    vinagre_utils_show_error() function that can be exploited via
 	    commands issued from a malicious server containing format
 	    string specifiers on the VNC name.</p>
-          <p>In a web based attack scenario, the user would be required
+	  <p>In a web based attack scenario, the user would be required
 	    to connect to a malicious server. Successful exploitation
 	    would then allow the attacker to execute arbitrary code with
 	    the privileges of the Vinagre user.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -20103,17 +20103,17 @@ Note:  Please add new entries to the beginning of this file.
     <topic>twiki -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>twiki</name>
-        <range><lt>4.2.4,1</lt></range>
+	<name>twiki</name>
+	<range><lt>4.2.4,1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Marc Schoenefeld and Steve Milner of RedHat SRT and Peter Allor of IBM ISS report:</p>
-        <blockquote cite="http://twiki.org/cgi-bin/view/Codev/TWikiSecurityAlerts#Security_Alerts_of_TWiki_4_2_x_P">
-          <p>XSS vulnerability with URLPARAM variable</p>
-          <p>SEARCH variable allows arbitrary shell command execution</p>
-        </blockquote>
+	<p>Marc Schoenefeld and Steve Milner of RedHat SRT and Peter Allor of IBM ISS report:</p>
+	<blockquote cite="http://twiki.org/cgi-bin/view/Codev/TWikiSecurityAlerts#Security_Alerts_of_TWiki_4_2_x_P">
+	  <p>XSS vulnerability with URLPARAM variable</p>
+	  <p>SEARCH variable allows arbitrary shell command execution</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -20139,8 +20139,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>roundcube -- remote execution of arbitrary code</topic>
     <affects>
       <package>
-        <name>roundcube</name>
-        <range><lt>0.2.b2,1</lt></range>
+	<name>roundcube</name>
+	<range><lt>0.2.b2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -20381,7 +20381,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.14</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.8</lt></range>
       </package>
     </affects>
@@ -20421,16 +20421,16 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>3.*,1</gt><lt>3.0.5,1</lt></range>
       </package>
       <package>
-        <name>linux-firefox</name>
+	<name>linux-firefox</name>
 	<range><lt>2.0.0.20</lt></range>
       </package>
       <package>
-        <name>seamonkey</name>
+	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
 	<range><lt>1.1.14</lt></range>
       </package>
       <package>
-        <name>thunderbird</name>
+	<name>thunderbird</name>
 	<name>linux-thunderbird</name>
 	<range><lt>2.0.0.18</lt></range>
       </package>
@@ -20493,7 +20493,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.11.9.4</lt></range>
       </package>
       <package>
-        <name>phpMyAdmin</name>
+	<name>phpMyAdmin</name>
 	<range><lt>3.1.1</lt></range>
       </package>
     </affects>
@@ -20924,7 +20924,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>2.6.5</lt></range>
       </package>
       <package>
-        <name>zh-wordpress</name>
+	<name>zh-wordpress</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -20955,13 +20955,13 @@ Note:  Please add new entries to the beginning of this file.
     <topic>samba -- potential leakage of arbitrary memory contents</topic>
     <affects>
       <package>
-        <name>samba</name>
+	<name>samba</name>
 	<name>samba3</name>
 	<name>ja-samba</name>
 	<range><ge>3.0.29,1</ge><lt>3.0.32_2,1</lt></range>
       </package>
       <package>
-        <name>samba32-devel</name>
+	<name>samba32-devel</name>
 	<range><lt>3.2.4_1</lt></range>
       </package>
     </affects>
@@ -21347,7 +21347,7 @@ Note:  Please add new entries to the beginning of this file.
 	    (aka special escapes processing) option is enabled, allows
 	    user-assisted remote attackers to execute arbitrary code via a
 	    crafted ASCII file, related to the setfilename command.</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -21398,14 +21398,14 @@ Note:  Please add new entries to the beginning of this file.
     <topic>net-snmp -- DoS for SNMP agent via crafted GETBULK request</topic>
     <affects>
       <package>
-        <name>net-snmp</name>
+	<name>net-snmp</name>
 	<range><gt>5.4</gt><lt>5.4.2.1</lt></range>
 	<range><gt>5.3</gt><lt>5.3.2.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Wes Hardaker reports through sourceforge.net forum:</p>
+	<p>Wes Hardaker reports through sourceforge.net forum:</p>
 	<blockquote cite="http://sourceforge.net/forum/forum.php?forum_id=882903">
 	  <p>SECURITY ISSUE: A bug in the getbulk handling code could
 	    let anyone with even minimal access crash the agent. If you
@@ -21690,7 +21690,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>0.8.6.i_2,2</lt></range>
       </package>
       <package>
-        <name>vlc-devel</name>
+	<name>vlc-devel</name>
 	<range><lt>0.9.6,3</lt></range>
       </package>
     </affects>
@@ -22178,7 +22178,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.11</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
+	<name>drupal6</name>
 	<range><lt>6.5</lt></range>
       </package>
     </affects>
@@ -22469,22 +22469,22 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>3.*,1</gt><lt>3.0.2,1</lt></range>
       </package>
       <package>
-        <name>linux-firefox</name>
+	<name>linux-firefox</name>
 	<name>linux-firefox-devel</name>
 	<range><lt>2.0.0.17</lt></range>
       </package>
       <package>
-        <name>seamonkey</name>
+	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
 	<range><lt>1.1.12</lt></range>
       </package>
       <package>
-        <name>thunderbird</name>
+	<name>thunderbird</name>
 	<name>linux-thunderbird</name>
 	<range><lt>2.0.0.17</lt></range>
       </package>
       <package>
-        <name>flock</name>
+	<name>flock</name>
 	<name>linux-flock</name>
 	<range><lt>2.0</lt></range>
       </package>
@@ -22591,7 +22591,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.3.2rc2</lt></range>
       </package>
       <package>
-        <name>proftpd-devel</name>
+	<name>proftpd-devel</name>
 	<range><lt>1.3.20080922</lt></range>
       </package>
     </affects>
@@ -22659,7 +22659,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.5.9</lt></range>
       </package>
       <package>
-        <name>gallery2</name>
+	<name>gallery2</name>
 	<range><lt>2.2.6</lt></range>
       </package>
     </affects>
@@ -22724,22 +22724,22 @@ Note:  Please add new entries to the beginning of this file.
     <topic>twiki -- Arbitrary code execution in session files</topic>
     <affects>
       <package>
-        <name>twiki</name>
-        <range><lt>4.2.3</lt></range>
+	<name>twiki</name>
+	<range><lt>4.2.3</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Th1nk3r reports:</p>
-        <blockquote cite="http://www.milw0rm.com/exploits/6269">
-          <p>The version of TWiki installed on the remote host allows access to
+	<p>Th1nk3r reports:</p>
+	<blockquote cite="http://www.milw0rm.com/exploits/6269">
+	  <p>The version of TWiki installed on the remote host allows access to
 	    the 'configure' script and fails to sanitize the 'image' parameter
 	    of that script of directory traversal sequences before returning the
 	    file contents when the 'action' parameter is set to 'image'. An
 	    unauthenticated attacker can leverage this issue to view arbitrary
 	    files on the remote host subject to the privileges of the web server
 	    user id. .</p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -22863,15 +22863,15 @@ Note:  Please add new entries to the beginning of this file.
     <topic>python -- multiple vulnerabilities</topic>
     <affects>
       <package>
-      	<name>python24</name>
+	<name>python24</name>
 	<range><lt>2.4.5_2</lt></range>
       </package>
       <package>
-      	<name>python25</name>
+	<name>python25</name>
 	<range><lt>2.5.2_3</lt></range>
       </package>
       <package>
-      	<name>python23</name>
+	<name>python23</name>
 	<range><gt>0</gt></range>
       </package>
     </affects>
@@ -23299,23 +23299,23 @@ Note:  Please add new entries to the beginning of this file.
 	<p>NASA Goddard Space Flight Center reports:</p>
 	<blockquote cite="http://cdf.gsfc.nasa.gov/CDF32_buffer_overflow.html">
 	  <p>The libraries for the scientific data file format, Common Data
-            Format (CDF) version 3.2 and earlier, have the potential for a
-            buffer overflow vulnerability when reading specially-crafted
-            (invalid) CDF files. If successful, this could trigger execution
-            of arbitrary code within the context of the CDF-reading program
-            that could be exploited to compromise a system, or otherwise
-            crash the program. While it's unlikely that you would open CDFs
-            from untrusted sources, we recommend everyone upgrade to the
-            latest CDF libraries on their systems, including the IDL and
-            Matlab plugins. Most worrisome is any service that enables the
-            general public to submit CDF files for processing.</p>
+	    Format (CDF) version 3.2 and earlier, have the potential for a
+	    buffer overflow vulnerability when reading specially-crafted
+	    (invalid) CDF files. If successful, this could trigger execution
+	    of arbitrary code within the context of the CDF-reading program
+	    that could be exploited to compromise a system, or otherwise
+	    crash the program. While it's unlikely that you would open CDFs
+	    from untrusted sources, we recommend everyone upgrade to the
+	    latest CDF libraries on their systems, including the IDL and
+	    Matlab plugins. Most worrisome is any service that enables the
+	    general public to submit CDF files for processing.</p>
 	  <p>The vulnerability is in the CDF library routines not properly
-            checking the length tags on a CDF file before copying data to a
-            stack buffer. Exploitation requires the user to explicitly open
-            a specially-crafted file. CDF users should not open files from
-            untrusted third parties until the patch is applied (and continue
-            then to exercise normal caution for files from untrusted third
-            parties).</p>
+	    checking the length tags on a CDF file before copying data to a
+	    stack buffer. Exploitation requires the user to explicitly open
+	    a specially-crafted file. CDF users should not open files from
+	    untrusted third parties until the patch is applied (and continue
+	    then to exercise normal caution for files from untrusted third
+	    parties).</p>
 	</blockquote>
       </body>
     </description>
@@ -23612,8 +23612,8 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>5.8</lt></range>
       </package>
       <package>
-        <name>drupal6</name>
-      	<range><lt>6.3</lt></range>
+	<name>drupal6</name>
+	<range><lt>6.3</lt></range>
       </package>
     </affects>
     <description>
@@ -23672,18 +23672,18 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <h1>Problem Description:</h1>
-        <p>The BIND DNS implementation does not randomize the UDP source
+	<h1>Problem Description:</h1>
+	<p>The BIND DNS implementation does not randomize the UDP source
 	  port when doing remote queries, and the query id alone does
 	  not provide adequate randomization.</p>
-        <h1>Impact:</h1>
-        <p>The lack of source port randomization reduces the amount of
+	<h1>Impact:</h1>
+	<p>The lack of source port randomization reduces the amount of
 	  data the attacker needs to guess in order to successfully
 	  execute a DNS cache poisoning attack.  This allows the
 	  attacker to influence or control the results of DNS queries
 	  being returned to users from target systems.</p>
-        <h1>Workaround:</h1>
-        <p>Limiting the group of machines that can do recursive queries
+	<h1>Workaround:</h1>
+	<p>Limiting the group of machines that can do recursive queries
 	  on the DNS server will make it more difficult, but not
 	  impossible, for this vulnerability to be exploited.</p>
 	<p>To limit the machines able to perform recursive queries, add an ACL in
@@ -24516,8 +24516,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/29915">
 	  <p>A vulnerability has been reported in swfdec, which can be
-    	    exploited by malicious people to disclose sensitive
-    	    information.</p>
+	    exploited by malicious people to disclose sensitive
+	    information.</p>
 	  <p>The vulnerability is caused due to swfdec not properly
 	    restricting untrusted sandboxes from reading local files,
 	    which can be exploited to disclose the content of arbitrary
@@ -57853,7 +57853,7 @@ http_access deny Gopher</pre>
 	  explicitly enabled via "make config". As a workaround,
 	  SNMP can be disabled by defining "snmp_port 0" in
 	  squid.conf.</p>
-  	<p>Squid security advisory SQUID-2008:1 explains that Squid-3 versions
+	<p>Squid security advisory SQUID-2008:1 explains that Squid-3 versions
 	  up to and including Squid-3.0.STABLE6 are affected by this error,
 	  too.</p>
       </body>
