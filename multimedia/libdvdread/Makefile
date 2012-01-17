@@ -6,25 +6,15 @@
 #
 
 PORTNAME=	libdvdread
-PORTVERSION=	4.1.4.r1219
+PORTVERSION=	4.2.0
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdread
-MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
-		http://www1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/dvdnav/ \
-		http://www3.mplayerhq.hu/MPlayer/releases/dvdnav/ \
-		http://www4.mplayerhq.hu/MPlayer/releases/dvdnav/ \
-		http://www5.mplayerhq.hu/MPlayer/releases/dvdnav/ \
-		ftp://ftp1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
-		ftp://ftp2.mplayerhq.hu/MPlayer/releases/dvdnav/ \
+MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
+		http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	MPlayer version of the libdvdread project
-
-.if !defined(PACKAGE_BUILDING)
-LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
-.endif
 
 LICENSE=	GPLv2
 
@@ -42,8 +32,22 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+.if defined(PACKAGE_BUILDING)
+DVDCSS_OPTION=	off
+.else
+DVDCSS_OPTION=	on
+.endif
+
+OPTIONS=	DVDCSS "Include libdvdcss support" ${DVDCSS_OPTION}
+
 # DVDCSS version hardcoded in src/dvd_input.c (dlopen'ed)
 DVDCSS_LIBVERSION=	3
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DVDCSS)
+LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl ||g' \
@@ -51,4 +55,4 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
 		${WRKSRC}/src/dvd_input.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

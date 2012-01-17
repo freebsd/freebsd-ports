@@ -7,6 +7,7 @@
 
 PORTNAME=	bombono
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/bombono/bombono-dvd/1.2
 DISTNAME=	bombono-dvd-${PORTVERSION}
