@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbsdconv
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	converters python
 MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	tag_c.0:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsdconv>=7.2:${PORTSDIR}/converters/py-bsdconv \
 		${LOCALBASE}/bin/g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
-GITVERSION=	eab9940
+GITVERSION=	22788c2
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
 
