@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.4.07
+PORTVERSION=	1.4.10
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.4/${PORTVERSION}/ \
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
