@@ -10,7 +10,7 @@ PORTVERSION=	0.5.2
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	elbarto@ArcadeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Device Firmware Update based USB programmer for Atmel chips
 
 GNU_CONFIGURE=	yes
