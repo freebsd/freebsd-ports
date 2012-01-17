@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	7.2
+PORTVERSION=	7.3
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
@@ -16,7 +16,7 @@ COMMENT=	BSD licensed charset/encoding converter library
 
 LICENSE=	BSD
 
-GITVERSION=	e11e47d
+GITVERSION=	500f86a
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
 
