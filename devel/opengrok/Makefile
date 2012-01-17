@@ -10,7 +10,7 @@ PORTVERSION=	0.10
 CATEGORIES=	devel java
 MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+opengrok/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Fast and powerful code search and cross-reference egine
 
 LICENSE=	CDDL
