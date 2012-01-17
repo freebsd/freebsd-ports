@@ -1,0 +1,11 @@
+--- ./build.xml.orig	2012-01-13 19:17:31.000000000 -0800
++++ ./build.xml	2012-01-13 19:46:34.000000000 -0800
+@@ -47,7 +47,7 @@
+     </target>
+ 
+     <target name="defaultrelease" unless="is.svn">
+-        <property name="release" value="${version}"/>
++	<property name="release" value="${version}-${revision}"/>
+     </target>
+ 
+     <target name="init" depends="check-java6, svnrelease, defaultrelease">
