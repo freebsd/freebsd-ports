@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	libtifiles2
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	devel
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.16
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator file types library
 
-LIB_DEPENDS=	ticonv.5:${PORTSDIR}/converters/libticonv
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	ticonv.6:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes

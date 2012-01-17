@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	tilp2
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/${DISTNAME}
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI Linking Program
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	ticables2.4:${PORTSDIR}/comms/libticables2 \
-		tifiles2.7:${PORTSDIR}/devel/libtifiles2 \
-		ticalcs2.9:${PORTSDIR}/comms/libticalcs2 \
-		ticonv.5:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	ticables2.5:${PORTSDIR}/comms/libticables2 \
+		tifiles2.8:${PORTSDIR}/devel/libtifiles2 \
+		ticalcs2.10:${PORTSDIR}/comms/libticalcs2 \
+		ticonv.6:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
