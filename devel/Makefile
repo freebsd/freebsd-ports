@@ -3685,6 +3685,7 @@
     SUBDIR += rubygem-rubyforge
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubyinlineaccel
+    SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-sdl
