@@ -7,6 +7,7 @@
 
 PORTNAME=	scrotwm
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/scrotwm/
 EXTRACT_SUFX=	.tgz
@@ -37,7 +38,7 @@ post-patch:
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include \
 		-I${WRKSRC}/freebsd -lutil -L${LOCALBASE}/lib -lX11 -lXrandr \
-		-lXtst -DSWM_LIB=\"${PREFIX}/lib/libwmhack.so\" \
+		-lXtst -DSWM_LIB=\"${PREFIX}/lib/libswmhack.so\" \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -shared -fpic -DPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
