@@ -288,8 +288,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.tu-chemnitz.de/pub/linux/fedora-core/%SUBDIR%/ \
 	http://ftp.heanet.ie/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/pub/fedora/linux/core/%SUBDIR%/ \
-	http://ftp.esat.net/pub/linux/fedora/%SUBDIR%/ \
-	ftp://ftp.esat.net/pub/linux/fedora/%SUBDIR%/ \
 	ftp://alviss.et.tudelft.nl/pub/fedora/core/%SUBDIR%/ \
 	http://ftp.surfnet.nl/ftp/pub/os/Linux/distr/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.surfnet.nl/pub/os/Linux/distr/fedora/linux/core/%SUBDIR%/ \
@@ -678,7 +676,6 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
 	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://kde.paralax.org/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
 	http://kde.cs.nctu.edu.tw/%SUBDIR%/ \
