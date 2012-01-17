@@ -5,7 +5,7 @@ include/tilp2/timeout.h
 lib/libticables2.a
 lib/libticables2.la
 lib/libticables2.so
-lib/libticables2.so.4
+lib/libticables2.so.5
 libdata/pkgconfig/ticables2.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libticables2.mo
 @dirrmtry include/tilp2

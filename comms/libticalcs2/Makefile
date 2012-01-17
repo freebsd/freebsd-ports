@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	libticalcs2
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	comms
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.16
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator library
 
-LIB_DEPENDS=	ticables2.4:${PORTSDIR}/comms/libticables2 \
-		ticonv.5:${PORTSDIR}/converters/libticonv \
-		tifiles2.7:${PORTSDIR}/devel/libtifiles2
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	ticables2.5:${PORTSDIR}/comms/libticables2 \
+		ticonv.6:${PORTSDIR}/converters/libticonv \
+		tifiles2.8:${PORTSDIR}/devel/libtifiles2
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes

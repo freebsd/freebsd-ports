@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libticables2
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	comms
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.16
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator link cables library
+
+LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes

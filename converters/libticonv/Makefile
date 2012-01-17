@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	libticonv
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	converters
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.16
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator character set library
+
+LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes

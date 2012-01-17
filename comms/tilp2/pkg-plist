@@ -1,5 +1,7 @@
 bin/tilp
+share/applications/tilp.desktop
 %%NLS%%share/locale/fr/LC_MESSAGES/tilp2.mo
+share/mime/packages/tilp.xml
 %%DATADIR%%/COPYING
 %%DATADIR%%/Manpage.txt
 %%DATADIR%%/RELEASE
@@ -103,7 +105,6 @@ bin/tilp
 %%DATADIR%%/pixmaps/clist_dir.png
 %%DATADIR%%/pixmaps/ctree_close_dir.png
 %%DATADIR%%/pixmaps/ctree_open_dir.png
-%%DATADIR%%/pixmaps/icon.xpm
 %%DATADIR%%/pixmaps/logo.png
 %%DATADIR%%/pixmaps/screendump.png
 %%DATADIR%%/pixmaps/tb_backup.png
@@ -116,9 +117,13 @@ bin/tilp
 %%DATADIR%%/pixmaps/tb_restore.png
 %%DATADIR%%/pixmaps/tb_send.png
 %%DATADIR%%/pixmaps/tb_trash.png
+%%DATADIR%%/pixmaps/tilp.xpm
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/applications
