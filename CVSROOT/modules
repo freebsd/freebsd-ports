@@ -2012,6 +2012,7 @@ cups-smb-backend                ports/print/cups-smb-backend
 curator                         ports/graphics/curator
 curl                            ports/ftp/curl
 curlpp                          ports/ftp/curlpp
+curly                           ports/sysutils/curly
 cursive                         ports/games/cursive
 cursor-bluecurve-theme          ports/x11-themes/cursor-bluecurve-theme
 cursor-chameleon-anthracite     ports/x11-themes/cursor-chameleon-anthracite
@@ -22189,6 +22190,7 @@ py-obspy.imaging                ports/science/py-obspy.imaging
 py-obspy.iris                   ports/science/py-obspy.iris
 py-obspy.mseed                  ports/science/py-obspy.mseed
 py-obspy.signal                 ports/science/py-obspy.signal
+py-obspy.taup                   ports/science/py-obspy.taup
 py-obspy.wav                    ports/science/py-obspy.wav
 py-obspy.xseed                  ports/science/py-obspy.xseed
 py-ocempgui                     ports/devel/py-ocempgui
@@ -24423,6 +24425,7 @@ rubygem-uglifier                ports/www/rubygem-uglifier
 rubygem-unicode                 ports/devel/rubygem-unicode
 rubygem-unicorn                 ports/www/rubygem-unicorn
 rubygem-uri-redis               ports/net/rubygem-uri-redis
+rubygem-url-mount               ports/www/rubygem-url-mount
 rubygem-url_escape              ports/www/rubygem-url_escape
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
