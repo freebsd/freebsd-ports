@@ -21,7 +21,7 @@ JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_CDROM=	See the license
-DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jaf-1.1.1-fcs-oth-JPR@CDS-CDS_Developer
+DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-plat-419418.html\#jaf-1.1.1-fcs-oth-JPR
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JAF-1.1.pdf JAF-1.1.ps JAF-1.1-changes.txt javadocs
