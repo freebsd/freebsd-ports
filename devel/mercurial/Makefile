@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -21,9 +21,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	${PORTNAME}
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}
-PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
