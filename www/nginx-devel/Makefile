@@ -470,8 +470,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-lua-nginx-module::config
 .endif
 
 .if defined(WITH_MEMC_MODULE)
-NGINX_MEMC_MODULE_VERSION=	0.12
-GIT_MEMC_MODULE_VERSION=	0-g4f1952c
+NGINX_MEMC_MODULE_VERSION=	0.13rc3
+GIT_MEMC_MODULE_VERSION=	0-g4007350
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/memc-nginx-module/tarball/v${NGINX_MEMC_MODULE_VERSION}/:memc
 DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_MODULE_VERSION}-${GIT_MEMC_MODULE_VERSION}.tar.gz:memc
@@ -536,8 +536,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-rds-json-nginx-module-${GIT_RDS_J
 .endif
 
 .if defined(WITH_REDIS2_MODULE)
-NGINX_REDIS2_MODULE_VERSION=	0.07
-GIT_REDIS2_MODULE_VERSION=	0-g6f7fc37
+NGINX_REDIS2_MODULE_VERSION=	0.08rc2
+GIT_REDIS2_MODULE_VERSION=	0-g0a8a6b9
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_MODULE_VERSION}/:redis2
 DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_MODULE_VERSION}-${GIT_REDIS2_MODULE_VERSION}.tar.gz:redis2
@@ -546,8 +546,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 
 .if defined(WITH_SET_MISC_MODULE)
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_SET_MISC_MODULE_VERSION=	0.22rc3
-GIT_SET_MISC_VERSION=	0-g7adef5a
+NGINX_SET_MISC_MODULE_VERSION=	0.22rc4
+GIT_SET_MISC_VERSION=	0-g290d6cb
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_MODULE_VERSION}/:setmisc
 DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_MODULE_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
@@ -563,8 +563,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MOD
 .endif
 
 .if defined(WITH_SRCACHE_MODULE)
-NGINX_SRCACHE_MODULE_VERSION=	0.12
-GIT_SRCACHE_MODULE_VERSION=	0-g362530f
+NGINX_SRCACHE_MODULE_VERSION=	0.13rc3
+GIT_SRCACHE_MODULE_VERSION=	0-g60ca0d1
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_MODULE_VERSION}/:srcache
 DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_MODULE_VERSION}-${GIT_SRCACHE_MODULE_VERSION}.tar.gz:srcache
@@ -601,8 +601,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/gabor-nginx-x-rid-header-${GIT_XRID_MODUL
 .endif
 
 .if defined(WITH_XSS_MODULE)
-NGINX_XSS_MODULE_VERSION=	0.03rc3
-GIT_XSS_MODULE_VERSION=	0-g8618dd3
+NGINX_XSS_MODULE_VERSION=	0.03rc8
+GIT_XSS_MODULE_VERSION=	0-g57e2119
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/xss-nginx-module/tarball/v${NGINX_XSS_MODULE_VERSION}/:xss
 DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_MODULE_VERSION}-${GIT_XSS_MODULE_VERSION}.tar.gz:xss
