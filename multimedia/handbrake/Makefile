@@ -7,6 +7,7 @@
 
 PORTNAME=		handbrake
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=		multimedia
 MASTER_SITES=			LOCAL/beech/handbrake/:main \
 				LOCAL/beech/handbrake/:contrib

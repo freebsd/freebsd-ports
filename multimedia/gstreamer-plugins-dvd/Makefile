@@ -6,7 +6,7 @@
 #   $MCom: ports/multimedia/gstreamer-plugins-dvd/Makefile,v 1.7 2008/03/19 14:05:36 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer dvd plugin set
