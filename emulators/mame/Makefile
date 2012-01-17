@@ -20,7 +20,7 @@ DISTFILES=	\
 	${UPDATE_PATCHES:C/$/.zip:patchsets/}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	elbarto@ArcadeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The popular MAME (Multi Arcade Machine Emulator)
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig

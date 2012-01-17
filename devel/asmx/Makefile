@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://xi6.com/files/ \
 		http://distfiles.arcadebsd.org/
 
-MAINTAINER=	elbarto@ArcadeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-CPU macro assembler for many major 8-bit and 16-bit CPUs
 
 WRKSRC=		${WRKDIR}

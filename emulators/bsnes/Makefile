@@ -10,7 +10,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
-MAINTAINER=	elbarto@ArcadeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super Nintendo/Super Famicom emulator
 
 BROKEN=		does not compile

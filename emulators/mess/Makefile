@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.aarongiles.com/mirror/releases/:mame \
 DISTFILES=	mame${PORTVERSION:S/.//}s.zip:mame \
 		mess${PORTVERSION:S/.//}s.zip:mess
 
-MAINTAINER=	elbarto@ArcadeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The popular MESS (Multiple Emulator Super System)
 
 BROKEN=		does not compile

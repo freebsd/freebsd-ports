@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	elbarto@ArcadeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 based UNIX MAME/MESS frontend supporting MAME/SDLMESS
 
 RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame
