@@ -6,6 +6,4 @@ Primary goals:
   2. VCS agnostic (bazaar, cvs, git, mercurial, monotone, perforce, subversion)
   3. Good keyboard navigation, keep the typical work-flow simple
 
-
-Author: Steve Borho <steve@borho.org>
 WWW: http://qct.sourceforge.net/
