@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
+
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/sdcc
 
@@ -21,26 +25,20 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	MCS51   "Intel 8051 port" on \
-		Z80     "Zilog Z80 port" on \
-		AVR     "AVR port" on \
+		Z80	"Zilog Z80/Z180, Rabbit 2000 port" on \
 		DS390   "Maxim 80DS390/DS400 port" on \
-		PIC     "Microchip PIC16 series port" on \
+		PIC14	"Microchip PIC16 series port" on \
 		PIC16   "Microchip PIC18 series port" on \
-		XA51    "Philips XA51 port" on \
 		HC08    "Motorola 68HC08 port" on \
 		DEVLIB  "Device libraries" on \
-		UCSIM   "The ucSim simulator" on \
-		PACKIHX "A tool to pack (compress) Intel hex files" on
+		UCSIM	"The ucSim simulator" on
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--disable-avr --docdir=${DOCSDIR} --enable-new-pics
+CONFIGURE_ENV=	ARCH=""
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
 
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
 CONFIGURE_ARGS+=	--disable-51
@@ -58,18 +56,11 @@ PLIST_SUB+=		MCS51=""
 .endif
 
 .if defined(WITHOUT_Z80)
-CONFIGURE_ARGS+=	--disable-gbz80-port --disable-z80-port --disable-z80
+CONFIGURE_ARGS+=	--disable-gbz80-port --disable-r2k-port \
+			--disable-z180-port --disable-z80-port --disable-z80
 PLIST_SUB+=		Z80="@comment "
 .else
 PLIST_SUB+=		Z80=""
-.endif
-
-.if defined(WITHOUT_AVR)
-CONFIGURE_ARGS+=	--disable-avr
-PLIST_SUB+=		AVR="@comment "
-.else
-CONFIGURE_ARGS+=	--enable-avr-port
-PLIST_SUB+=		AVR=""
 .endif
 
 .if defined(WITHOUT_DS390)
@@ -79,29 +70,22 @@ PLIST_SUB+=		DS390="@comment "
 PLIST_SUB+=		DS390=""
 .endif
 
-.if defined(WITHOUT_PIC)
-CONFIGURE_ARGS+=	--disable-pic-port
-PLIST_SUB+=		PIC="@comment "
+.if defined(WITHOUT_PIC14)
+CONFIGURE_ARGS+=	--disable-pic14-port
+PLIST_SUB+=		PIC14="@comment "
 .else
-BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
-RUN_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
-PLIST_SUB+=		PIC=""
+BUILD_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
+PLIST_SUB+=		PIC14=""
 .endif
 
 .if defined(WITHOUT_PIC16)
 CONFIGURE_ARGS+=	--disable-pic16-port
 PLIST_SUB+=		PIC16="@comment "
 .else
-BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
-RUN_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
+BUILD_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=		gputils>=0.14.1:${PORTSDIR}/devel/gputils
 PLIST_SUB+=		PIC16=""
-.endif
-
-.if defined(WITHOUT_XA51)
-PLIST_SUB+=		XA51="@comment "
-.else
-CONFIGURE_ARGS+=	--enable-xa51-port --enable-xa
-PLIST_SUB+=		XA51=""
 .endif
 
 .if defined(WITHOUT_HC08)
@@ -127,18 +111,7 @@ LIBTOOLFILES=		sim/ucsim/configure
 PLIST_SUB+=		UCSIM=""
 .endif
 
-.if defined(WITHOUT_PACKIHX)
-CONFIGURE_ARGS+=	--disable-packihx
-PLIST_SUB+=		PACKIHX="@comment "
-.else
-PLIST_SUB+=		PACKIHX=""
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} 's,ARCH,PICARCH,g' \
-		${WRKSRC}/device/lib/pic/Makefile.common.in \
-		${WRKSRC}/device/lib/pic/Makefile.rules \
-		${WRKSRC}/device/lib/pic16/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
