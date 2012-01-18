@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	devel
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/3579/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3672/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
