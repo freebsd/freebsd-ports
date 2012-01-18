@@ -49,7 +49,7 @@ include/cdio++/track.hpp
 lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
-lib/libcdio.so.12
+lib/libcdio.so.13
 lib/libcdio++.a
 lib/libcdio++.la
 lib/libcdio++.so
@@ -57,15 +57,15 @@ lib/libcdio++.so.0
 lib/libcdio_cdda.a
 lib/libcdio_cdda.la
 lib/libcdio_cdda.so
-lib/libcdio_cdda.so.0
+lib/libcdio_cdda.so.1
 lib/libcdio_paranoia.a
 lib/libcdio_paranoia.la
 lib/libcdio_paranoia.so
-lib/libcdio_paranoia.so.0
+lib/libcdio_paranoia.so.1
 lib/libiso9660.a
 lib/libiso9660.la
 lib/libiso9660.so
-lib/libiso9660.so.7
+lib/libiso9660.so.8
 lib/libiso9660++.a
 lib/libiso9660++.la
 lib/libiso9660++.so
