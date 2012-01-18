@@ -1,5 +1,5 @@
---- /dev/null	2010-12-16 16:44:10.000000000 +0100
-+++ xbmc/linux/FreeBSDGNUReplacements.c	2010-12-16 16:45:22.613185593 +0100
+--- ./xbmc/linux/FreeBSDGNUReplacements.c.orig	2012-01-02 10:14:38.000000000 +0100
++++ ./xbmc/linux/FreeBSDGNUReplacements.c	2012-01-02 10:14:38.000000000 +0100
 @@ -0,0 +1,252 @@
 +
 +#include "FreeBSDGNUReplacements.h"
