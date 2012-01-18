@@ -7,7 +7,7 @@
 
 PORTNAME=	php52
 PORTVERSION=	5.2.17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -187,7 +187,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 .if defined(WITH_BACKPORTS)
-PATCHFILES+=	php52-backports-security-20120103.patch
+PATCHFILES+=	php52-backports-security-20120117.patch
 PATCH_SITES+=	http://php52-backports.googlecode.com/files/
 .else
 FORBIDDEN=	Vulnerable since 2011-01-13, http://portaudit.freebsd.org/3761df02-0f9c-11e0-becc-0022156e8794.html
