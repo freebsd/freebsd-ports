@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	kcachegrind
-PORTVERSION=	0.4.6
-PORTREVISION=	4
+PORTVERSION=	0.7.0
 CATEGORIES=	devel kde
-MASTER_SITES=	SF/${PORTNAME}/KCachegrind/KCachegrind%20${PORTVERSION}
+MASTER_SITES=	http://kcachegrind.sourceforge.net/
 
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Profiling Visualization Tool
@@ -18,11 +17,11 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS=	kdesdk3-[0-9]*
 
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-USE_KDELIBS_VER=3
+USE_CMAKE=	yes
+USE_KDE4=	automoc4 kdehier kdelibs
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 
@@ -38,9 +37,5 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .if defined (WITH_VALGRIND)
 RUN_DEPENDS+=	valgrind:${PORTSDIR}/devel/valgrind
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.post.mk>
