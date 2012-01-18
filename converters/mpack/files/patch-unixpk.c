@@ -1,5 +1,5 @@
---- unixpk.c.orig	Mon Jul 21 23:50:41 2003
-+++ unixpk.c	Sun Mar 26 23:35:56 2006
+--- unixpk.c.orig	2003-07-21 22:50:41.000000000 +0200
++++ unixpk.c	2012-01-12 18:56:56.000000000 +0100
 @@ -23,23 +23,25 @@
   * SOFTWARE.
   */
@@ -41,7 +41,7 @@
  	subject = sbuf;
      }	
  
-@@ -164,10 +166,10 @@
+@@ -164,7 +166,7 @@
  	    strcpy(fnamebuf, getenv("TMPDIR"));
  	}
  	else {
@@ -49,8 +49,4 @@
 +	    strcpy(fnamebuf, "/tmp");
  	}
  	strcat(fnamebuf, "/mpackXXXXXX");
--	mktemp(fnamebuf);
-+	close(mkstemp(fnamebuf));
- 	outfname = strsave(fnamebuf);
-     }
- 
+ 	mktemp(fnamebuf);

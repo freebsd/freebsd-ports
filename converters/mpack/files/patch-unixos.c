@@ -1,5 +1,5 @@
---- unixos.c.orig	Mon Jul 21 23:54:05 2003
-+++ unixos.c	Sun Mar 26 23:03:33 2006
+--- unixos.c.orig	2003-07-21 22:54:05.000000000 +0200
++++ unixos.c	2012-01-12 19:22:31.000000000 +0100
 @@ -23,24 +23,30 @@
   * SOFTWARE.
   */
@@ -51,19 +51,28 @@
      }
      strcat(buf, "/m-prts-");
      p = getenv("USER");
-@@ -136,11 +142,7 @@
-     int fd;
-     FILE *ret;
-      
--#ifdef O_EXCL
--    fd=open(fname, O_RDWR|O_CREAT|O_EXCL, 0644);
--#else
-     fd=open(fname, O_RDWR|O_CREAT|O_TRUNC, 0644);
--#endif
+@@ -131,6 +137,20 @@
+     rmdir(dir);
+ }
  
-     if (fd == -1)
-         return NULL;
-@@ -194,7 +196,7 @@
++FILE *os_createfile(char *fname)
++{
++    int fd;
++    FILE *ret;
++    
++    fd=open(fname, O_RDWR|O_CREAT|O_TRUNC, 0600);
++
++    if (fd == -1)
++        return NULL;
++    
++    ret=fdopen(fd, "w");
++    return ret;
++}
++
+ FILE *os_createnewfile(char *fname)
+ {
+     int fd;
+@@ -194,7 +214,7 @@
  	do {
  	    if (outfile) fclose(outfile);
  	    sprintf(buf, "part%d", ++filesuffix);
@@ -72,7 +81,7 @@
  	fname = buf;
      }
      else if (!overwrite_files && (outfile = fopen(fname, "r"))) {
-@@ -202,7 +204,7 @@
+@@ -202,7 +222,7 @@
  	    fclose(outfile);
  	    sprintf(buf, "%s.%d", fname, ++filesuffix);
  	 
@@ -81,7 +90,7 @@
  	fname = buf;
      }
  
-@@ -228,7 +230,7 @@
+@@ -228,7 +248,7 @@
  
      p = strchr(descfname, '/');
      if (!p) p = descfname;

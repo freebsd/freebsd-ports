@@ -1,5 +1,5 @@
---- decode.c.orig	Mon Jul 21 23:47:54 2003
-+++ decode.c	Sun Mar 26 23:08:44 2006
+--- decode.c.orig	2003-07-21 22:47:54.000000000 +0200
++++ decode.c	2012-01-12 19:22:04.000000000 +0100
 @@ -26,8 +26,10 @@
   * SOFTWARE.  */
  
@@ -11,8 +11,11 @@
  #include "xmalloc.h"
  #include "common.h"
  #include "part.h"
-@@ -37,6 +39,19 @@
+@@ -35,8 +37,22 @@
+ 
+ extern char *os_idtodir(char *id);
  extern FILE *os_newtypedfile(char *fname, char *contentType, int flags, params contentParams);
++extern FILE *os_createfile(char *fname);
  extern FILE *os_createnewfile(char *fname);
  extern char *md5contextTo64(MD5_CTX *context);
 +extern void warn(char *s);
@@ -31,7 +34,7 @@
  
  /* The possible content transfer encodings */
  enum encoding { enc_none, enc_qp, enc_base64 };
-@@ -49,6 +64,17 @@
+@@ -49,6 +65,17 @@
  void from64(struct part *inpart, FILE *outfile, char **digestp, int suppressCR);
  void fromqp(struct part *inpart, FILE *outfile, char **digestp);
  void fromnone(struct part *inpart, FILE *outfile, char **digestp);
@@ -49,7 +52,7 @@
  /*
   * Read and handle an RFC 822 message from the body-part 'inpart'.
   */
-@@ -624,7 +650,7 @@
+@@ -624,7 +651,7 @@
      }
      thispart = atoi(p);
  
@@ -58,7 +61,16 @@
  	nparts = atoi(p);
  	if (nparts <= 0) {
  	    warn("partial message has invalid number of parts");
-@@ -643,7 +669,7 @@
+@@ -632,7 +659,7 @@
+ 	}
+ 	/* Store number of parts in reassembly directory */
+ 	sprintf(buf, "%sCT", dir);
+-	partfile = os_createnewfile(buf);
++	partfile = os_createfile(buf);
+ 	if (!partfile) {
+ 	    os_perror(buf);
+ 	    goto ignore;
+@@ -643,7 +670,7 @@
      else {
  	/* Try to retrieve number of parts from reassembly directory */
  	sprintf(buf, "%sCT", dir);
