@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -219,10 +219,6 @@ PLIST_SUB+=		PDF_MANUAL="@comment "
 .endif # !LIBRMATH_SLAVEPORT
 
 post-patch:
-	@${REINPLACE_CMD} -e '\|R_RD4PDF|s|,inconsolata||' \
-		${WRKSRC}/configure \
-		${WRKSRC}/src/library/tools/R/Rd2dvi.R \
-		${WRKSRC}/src/library/utils/R/help.R
 	@${REINPLACE_CMD} -e '\|LIBS=|s|-lrt ||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
