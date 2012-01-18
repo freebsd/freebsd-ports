@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-signal
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 RUN_DEPENDS+=	${TARBALLS_DIR}/optim.tar.gz:${PORTSDIR}/math/octave-forge-optim
 RUN_DEPENDS+=	${TARBALLS_DIR}/specfun.tar.gz:${PORTSDIR}/math/octave-forge-specfun
 RUN_DEPENDS+=	${TARBALLS_DIR}/control.tar.gz:${PORTSDIR}/math/octave-forge-control
-RUN_DEPENDS+=	${TARBALLS_DIR}/audio.tar.gz:${PORTSDIR}/math/octave-forge-audio
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
