@@ -1,6 +1,0 @@
-bin/stockfish
-%%DATADIR%%/Book.bin
-%%DOCSDIR%%/Readme.txt
-%%DOCSDIR%%/polyglot.ini
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%

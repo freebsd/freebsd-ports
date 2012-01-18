@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	stockfish
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	games
-MASTER_SITES=	http://f.cl.ly/items/1W3R1i3c3Y2n0m133q15/:src \
+MASTER_SITES=	http://dl.dropbox.com/u/2116588/sf-archive/:src \
 		http://www.execve.net/sf/:src \
 		http://f.cl.ly/items/1y0Q3P2n0I2S0g0Y100E/:book \
 		http://www.execve.net/sf/:book
-DISTNAME=	sf-211-linux-eng
-DISTFILES=	sf-211-linux-eng.zip:src \
+DISTNAME=	stockfish-221-ja
+DISTFILES=	stockfish-221-ja.zip:src \
 		sf-211-book.zip:book
 
 MAINTAINER=	execve@gmail.com
@@ -27,6 +26,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 MYARCH=		${ARCH}
 BOOKDIR=	sf-211-book
+PORTDOCS=	Readme.txt polyglot.ini
+PORTDATA=	Book.bin
+
+PLIST_FILES=	bin/stockfish
+PLIST_DIRSTRY=	share/data/${PORTNAME} \
+		share/docs/${PORTNAME}
 
 ALL_TARGET=	build ARCH=${MYARCH}
 
@@ -63,10 +68,16 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${PREFIX}/bin/stockfish
+
+post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/polyglot.ini ${DOCSDIR}
+.endif
+.if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/${BOOKDIR}/Book.bin ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${BOOKDIR}/${PORTDATA} ${DATADIR}
+.endif
 
 .include <bsd.port.post.mk>
