@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.10
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -338,6 +339,7 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
+	${MKDIR} ${LOCALBASE}/${PG_USER} && ${CHOWN} ${PG_USER}:${PG_GROUP} ${LOCALBASE}/${PG_USER}
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
 	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install-local
