@@ -6,14 +6,15 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJ}.${GDCM_MIN}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Grassroots DICOM library
 
-LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg \
+   		expat.6:${PORTSDIR}/textproc/expat2
 
 OPTIONS=	VTK "Build the VTK bindings" off
 
@@ -22,8 +23,12 @@ USE_CMAKE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	${PREFIX}/lib \
 		${PREFIX}/lib/gdcm-${GDCM_MAJ}
+CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DGDCM_PDF_DOCUMENTATION:BOOL=NO \
-   		-DGDCM_USE_SYSTEM_OPENSSL:BOOL=YES
+   		-DGDCM_USE_SYSTEM_OPENSSL:BOOL=YES \
+		-DGDCM_USE_SYSTEM_EXPAT:BOOL=YES \
+		-DGDCM_USE_SYSTEM_OPENJPEG:BOOL=YES \
+		-DGDCM_USE_SYSTEM_ZLIB:BOOL=YES
 
 .include <bsd.port.options.mk>
 
