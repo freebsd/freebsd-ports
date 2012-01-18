@@ -6,6 +6,7 @@
 
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.24
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	vcdimager
@@ -17,7 +18,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
-		cdio.12:${PORTSDIR}/sysutils/libcdio
+		cdio.13:${PORTSDIR}/sysutils/libcdio
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

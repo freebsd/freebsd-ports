@@ -171,7 +171,7 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
 .if defined(WITH_LIBCDIO) && !defined(WITH_CDPARANOIA)
-LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
 .endif

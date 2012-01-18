@@ -7,6 +7,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -205,7 +206,7 @@ CONFIGURE_ARGS+=	--disable-cdda
 PLIST_SUB+=	CDDA="@comment "
 .else
 PLIST_SUB+=	CDDA=""
-LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio \
 		cddb.4:${PORTSDIR}/audio/libcddb
 .endif
 

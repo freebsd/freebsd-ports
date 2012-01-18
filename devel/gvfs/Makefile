@@ -8,7 +8,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -56,7 +56,7 @@ PLIST_SUB+=	SMB="@comment "
 .endif
 
 .if defined(WITH_CDDA) && !defined(WITHOUT_HAL)
-LIB_DEPENDS+=	cdio_paranoia.0:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio_paranoia.1:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	CDDA=""
 .else
 CONFIGURE_ARGS+=	--disable-cdda

@@ -7,7 +7,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.92.r68256
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -22,7 +22,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		cdio.12:${PORTSDIR}/sysutils/libcdio
+		cdio.13:${PORTSDIR}/sysutils/libcdio
 
 ONLY_FOR_ARCHS=	i386 amd64
 

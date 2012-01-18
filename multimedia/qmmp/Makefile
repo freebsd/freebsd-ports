@@ -7,6 +7,7 @@
 
 PORTNAME=	qmmp
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -175,7 +176,7 @@ PLUGIN_OPTIONS_CMAKE+=	-DUSE_AAC:BOOL=FALSE
 
 .ifndef(WITHOUT_CDIO)
 PLIST_SUB+=	CDIO=""
-LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
 PLUGIN_OPTIONS_CMAKE+=	-DUSE_CDA:BOOL=TRUE
 .else
 PLIST_SUB+=	CDIO="@comment "

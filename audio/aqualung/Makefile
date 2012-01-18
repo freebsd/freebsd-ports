@@ -7,7 +7,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
  		http://wickedmachine.net/mirror/
@@ -27,7 +27,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		mac.2:${PORTSDIR}/audio/mac \
 		tag.1:${PORTSDIR}/audio/taglib \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
-		cdio.12:${PORTSDIR}/sysutils/libcdio \
+		cdio.13:${PORTSDIR}/sysutils/libcdio \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		strfunc.9:${PORTSDIR}/devel/libstrfunc \
