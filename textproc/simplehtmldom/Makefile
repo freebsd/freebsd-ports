@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		simplehtmldom
-DISTVERSION=		1.11
-PORTREVISION=		1
+DISTVERSION=		1.5
+PORTEPOCH=		1
 CATEGORIES=		textproc www
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTNAME=		${PORTNAME}_${DISTVERSION:S/./_/g}
@@ -15,7 +15,7 @@ DISTNAME=		${PORTNAME}_${DISTVERSION:S/./_/g}
 MAINTAINER=		joehorn@gmail.com
 COMMENT=		PHP Simple HTML DOM Parser
 
-WRKSRC=			${WRKDIR}/${PORTNAME}
+WRKSRC=			${WRKDIR}
 
 USE_ZIP=		YES
 NO_BUILD=		YES
@@ -28,30 +28,39 @@ IGNORE_WITH_PHP=	4
 SUB_FILES+=		pkg-message
 SUB_LIST+=		DATADIR=${DATADIR} PREFIX=${PREFIX}
 
-EXAMPLES_SUB_DIR=	scraping
-DOCS_SUB_DIR=		css img js
-
 .include <bsd.port.pre.mk>
 
+post-extract:
+	@${FIND} ${WRKSRC} -name .svn -type d | ${XARGS} ${RM} -rf
+
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${ECHO_CMD} "=> Installing simple_html_dom.php to ${DATADIR}"
+	@${MKDIR} ${DATADIR} ${DATADIR}/app ${DATADIR}/testcase
+	@${ECHO_CMD} "=> Installing programs to ${DATADIR}"
 	@${INSTALL} -c -m 644 ${WRKSRC}/simple_html_dom.php ${DATADIR}
+	@${INSTALL} -c -m 644 ${WRKSRC}/change_log.txt ${DATADIR}
+	@cd ${WRKSRC}/app && ${FIND} . -type d \
+		-exec ${MKDIR} ${DATADIR}/app/{} \;
+	@cd ${WRKSRC}/app && ${FIND} . -type f \
+		-exec ${INSTALL} -c -m 644 "{}" "${DATADIR}/app/{}" \;
+	@cd ${WRKSRC}/testcase && ${FIND} . -type d \
+		-exec ${MKDIR} ${DATADIR}/testcase/{} \;
+	@cd ${WRKSRC}/testcase && ${FIND} . -type f \
+		-exec ${INSTALL} -c -m 644 "{}" "${DATADIR}/testcase/{}" \;
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for _DOC in ${DOCS_SUB_DIR}
-	@${MKDIR} ${DOCSDIR}/${_DOC}
-.endfor
 	@${ECHO_CMD} "=> Installing manuals to ${DOCSDIR}"
-	@cd ${WRKSRC}/manual && ${FIND} * -type f -exec ${INSTALL} -c -m 644 "{}" "${DOCSDIR}/{}" \;
+	@cd ${WRKSRC}/manual && ${FIND} . -type d \
+		-exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/manual && ${FIND} . -type f \
+		-exec ${INSTALL} -c -m 644 "{}" "${DOCSDIR}/{}" \;
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-.for _EXAMPLE in ${EXAMPLES_SUB_DIR}
-	@${MKDIR} ${EXAMPLESDIR}/${_EXAMPLE}
-.endfor
 	@${ECHO_CMD} "=> Installing examples to ${EXAMPLESDIR}"
-	@cd ${WRKSRC}/example && ${FIND} * -type f -exec ${INSTALL} -c -m 644 "{}" "${EXAMPLESDIR}/{}" \;
+	@cd ${WRKSRC}/example && ${FIND} . -type d \
+		-exec ${MKDIR} ${EXAMPLESDIR}/{} \;
+	@cd ${WRKSRC}/example && ${FIND} . -type f \
+		-exec ${INSTALL} -c -m 644 "{}" "${EXAMPLESDIR}/{}" \;
 .endif
 
 post-install:
