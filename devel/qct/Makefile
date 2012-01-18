@@ -17,11 +17,11 @@ COMMENT=	QCT GUI commit tool
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
 USE_PYTHON=	2.5+
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/qct
 
 post-install:
