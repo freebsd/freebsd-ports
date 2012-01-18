@@ -1,22 +1,42 @@
---- ./docs/conf/extra/httpd-ssl.conf.in.orig	2008-02-04 18:00:07.000000000 -0500
-+++ ./docs/conf/extra/httpd-ssl.conf.in	2010-05-06 19:37:54.219730055 -0400
-@@ -77,8 +77,8 @@
- DocumentRoot "@exp_htdocsdir@"
- ServerName www.example.com:@@SSLPort@@
- ServerAdmin you@example.com
--ErrorLog "@exp_logfiledir@/error_log"
--TransferLog "@exp_logfiledir@/access_log"
-+ErrorLog "@exp_logfiledir@/httpd-error.log"
-+TransferLog "@exp_logfiledir@/httpd-access.log"
- 
- #   SSL Engine Switch:
+--- ./docs/conf/extra/httpd-ssl.conf.in.orig	2012-01-18 03:31:51.970548706 +0000
++++ ./docs/conf/extra/httpd-ssl.conf.in	2012-01-18 03:32:22.100547808 +0000
+@@ -84,11 +84,29 @@
  #   Enable/Disable SSL for this virtual host.
-@@ -225,7 +225,7 @@
- #   Per-Server Logging:
- #   The home of a custom SSL log file. Use this when you want a
- #   compact non-error SSL logfile on a virtual host basis.
--CustomLog "@exp_logfiledir@/ssl_request_log" \
-+CustomLog "@exp_logfiledir@/httpd-ssl_request.log" \
-           "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
+ SSLEngine on
  
- </VirtualHost>                                  
++#   SSL Protocol support:
++#   List the protocol versions which clients are allowed to
++#   connect with. Disable SSLv2 by default (cf. RFC 6176).
++SSLProtocol all -SSLv2
++
+ #   SSL Cipher Suite:
+ #   List the ciphers that the client is permitted to negotiate.
+ #   See the mod_ssl documentation for a complete list.
+-SSLCipherSuite ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP:+eNULL
++SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
+ 
++#   Speed-optimized SSL Cipher configuration:
++#   If speed is your main concern (on busy HTTPS servers e.g.),
++#   you might want to force clients to specific, performance
++#   optimized ciphers. In this case, prepend those ciphers
++#   to the SSLCipherSuite list, and enable SSLHonorCipherOrder.
++#   Caveat: by giving precedence to RC4-SHA and AES128-SHA
++#   (as in the example below), most connections will no longer
++#   have perfect forward secrecy - if the server's key is
++#   compromised, captures of past or future traffic must be
++#   considered compromised, too.
++#SSLCipherSuite RC4-SHA:AES128-SHA:HIGH:MEDIUM:!aNULL:!MD5
++#SSLHonorCipherOrder on 
++ 
+ #   Server Certificate:
+ #   Point SSLCertificateFile at a PEM encoded certificate.  If
+ #   the certificate is encrypted, then you will be prompted for a
+@@ -218,7 +236,7 @@
+ #   Similarly, one has to force some clients to use HTTP/1.0 to workaround
+ #   their broken HTTP/1.1 implementation. Use variables "downgrade-1.0" and
+ #   "force-response-1.0" for this.
+-BrowserMatch ".*MSIE.*" \
++BrowserMatch "MSIE [2-5]" \
+          nokeepalive ssl-unclean-shutdown \
+          downgrade-1.0 force-response-1.0
+ 
