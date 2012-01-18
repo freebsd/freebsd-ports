@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgadu
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.1
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
