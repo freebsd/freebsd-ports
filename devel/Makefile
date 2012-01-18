@@ -2429,6 +2429,7 @@
     SUBDIR += p5-Term-UI
     SUBDIR += p5-Term-VT102
     SUBDIR += p5-Term-Visual
+    SUBDIR += p5-Test-Aggregate
     SUBDIR += p5-Test-Assertions
     SUBDIR += p5-Test-Base
     SUBDIR += p5-Test-Benchmark
