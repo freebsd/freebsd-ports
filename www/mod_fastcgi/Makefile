@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 
@@ -22,6 +22,9 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c
 PORTDOCS=	LICENSE.TERMS mod_fastcgi.html
+
+do-install:
+	@${APXS} -i -a -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 
 post-install:
 .if !defined(NOPORTDOCS)
