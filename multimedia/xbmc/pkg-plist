@@ -1,19 +1,17 @@
 bin/xbmc-standalone
 bin/xbmc
-lib/xbmc/addons/screensaver.rsxs.euphoria/Euphoria.xbs
-lib/xbmc/addons/screensaver.rsxs.plasma/Plasma.xbs
-lib/xbmc/addons/screensaver.rsxs.solarwinds/Solarwinds.xbs
-lib/xbmc/addons/script.module.pil/addon.xml
-lib/xbmc/addons/script.module.pysqlite/addon.xml
+%%RSXS%%lib/xbmc/addons/screensaver.rsxs.euphoria/Euphoria.xbs
+%%RSXS%%lib/xbmc/addons/screensaver.rsxs.plasma/Plasma.xbs
+%%RSXS%%lib/xbmc/addons/screensaver.rsxs.solarwinds/Solarwinds.xbs
 lib/xbmc/addons/visualization.glspectrum/opengl_spectrum.vis
 lib/xbmc/addons/visualization.projectm/projectM.vis
 lib/xbmc/addons/visualization.waveform/Waveform.vis
 lib/xbmc/system/ImageLib-%%ARCH%%-freebsd.so
 lib/xbmc/system/hdhomerun-%%ARCH%%-freebsd.so
+lib/xbmc/system/libcmyth-%%ARCH%%-freebsd.so
 lib/xbmc/system/libcpluff-%%ARCH%%-freebsd.so
 lib/xbmc/system/libexif-%%ARCH%%-freebsd.so
 lib/xbmc/system/libid3tag-%%ARCH%%-freebsd.so
-lib/xbmc/system/players/dvdplayer/libass-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/dvdplayer/libdvdcss-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/dvdplayer/libdvdnav-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/adpcm-%%ARCH%%-freebsd.so
@@ -22,7 +20,6 @@ lib/xbmc/system/players/paplayer/nosefart-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/stsoundlibrary-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/timidity-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/vgmstream-%%ARCH%%-freebsd.so
-lib/xbmc/system/python/python%%PYVER%%-%%ARCH%%-freebsd.so
 lib/xbmc/xbmc-xrandr
 lib/xbmc/xbmc.bin
 %%DOCSDIR%%/LICENSE.GPL
@@ -46,7 +43,6 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Portuguese/strings.xml
-%%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Swedish/strings.xml
@@ -65,7 +61,6 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Portuguese/strings.xml
-%%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Swedish/strings.xml
@@ -83,9 +78,6 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.common.last.fm/lastfm.xml
 %%DATADIR%%/addons/metadata.common.themoviedb.org/addon.xml
 %%DATADIR%%/addons/metadata.common.themoviedb.org/tmdb.xml
-%%DATADIR%%/addons/metadata.mtv.com/addon.xml
-%%DATADIR%%/addons/metadata.mtv.com/icon.png
-%%DATADIR%%/addons/metadata.mtv.com/mtv.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/addon.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/changelog.txt
 %%DATADIR%%/addons/metadata.themoviedb.org/icon.png
@@ -118,20 +110,29 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Portuguese/strings.xml
-%%DATADIR%%/addons/metadata.tvdb.com/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/resources/settings.xml
 %%DATADIR%%/addons/metadata.tvdb.com/tvdb.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/addon.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/icon.png
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Dutch/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/English/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Hungarian/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Korean/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Polish/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/settings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/yahoomusic.xml
 %%DATADIR%%/addons/repository.xbmc.org/addon.xml
 %%DATADIR%%/addons/repository.xbmc.org/icon.png
-%%DATADIR%%/addons/screensaver.rsxs.euphoria/addon.xml
-%%DATADIR%%/addons/screensaver.rsxs.euphoria/icon.png
-%%DATADIR%%/addons/screensaver.rsxs.plasma/addon.xml
-%%DATADIR%%/addons/screensaver.rsxs.plasma/icon.png
-%%DATADIR%%/addons/screensaver.rsxs.solarwinds/addon.xml
-%%DATADIR%%/addons/screensaver.rsxs.solarwinds/icon.png
+%%RSXS%%%%DATADIR%%/addons/screensaver.rsxs.euphoria/addon.xml
+%%RSXS%%%%DATADIR%%/addons/screensaver.rsxs.euphoria/icon.png
+%%RSXS%%%%DATADIR%%/addons/screensaver.rsxs.plasma/addon.xml
+%%RSXS%%%%DATADIR%%/addons/screensaver.rsxs.plasma/icon.png
+%%RSXS%%%%DATADIR%%/addons/screensaver.rsxs.solarwinds/addon.xml
+%%RSXS%%%%DATADIR%%/addons/screensaver.rsxs.solarwinds/icon.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.black/addon.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.black/icon.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/addon.xml
@@ -148,6 +149,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Portuguese/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Russian/strings.xml
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/settings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/addon.xml
@@ -162,35 +165,20 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Russian/strings.xml
+%%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/settings.xml
-%%DATADIR%%/addons/script.recentlyadded/LICENSE.txt
-%%DATADIR%%/addons/script.recentlyadded/RecentlyAdded.py
-%%DATADIR%%/addons/script.recentlyadded/addon.xml
-%%DATADIR%%/addons/script.recentlyadded/changelog.txt
-%%DATADIR%%/addons/script.rss.editor/LICENSE.txt
-%%DATADIR%%/addons/script.rss.editor/addon.xml
-%%DATADIR%%/addons/script.rss.editor/default.py
-%%DATADIR%%/addons/script.rss.editor/icon.png
-%%DATADIR%%/addons/script.rss.editor/resources/__init__.py
-%%DATADIR%%/addons/script.rss.editor/resources/language/English/strings.xml
-%%DATADIR%%/addons/script.rss.editor/resources/language/Finnish/strings.xml
-%%DATADIR%%/addons/script.rss.editor/resources/language/German/strings.xml
-%%DATADIR%%/addons/script.rss.editor/resources/language/Hungarian/strings.xml
-%%DATADIR%%/addons/script.rss.editor/resources/lib/__init__.py
-%%DATADIR%%/addons/script.rss.editor/resources/lib/rssEditor.py
-%%DATADIR%%/addons/script.rss.editor/resources/lib/setEditor.py
-%%DATADIR%%/addons/script.rss.editor/resources/lib/xmlParser.py
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/720p/script-RSS_Editor-rssEditor.xml
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/720p/script-RSS_Editor-setEditor.xml
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/PAL/script-RSS_Editor-rssEditor.xml
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/PAL/script-RSS_Editor-setEditor.xml
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/media/black.png
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/media/dialog-panel2.png
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/media/input-focus.png
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/media/input-nofocus.png
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/media/keyboard-btn-backspace-focus.png
-%%DATADIR%%/addons/script.rss.editor/resources/skins/default/media/keyboard-btn-backspace.png
+%%DATADIR%%/addons/script.module.pil/addon.xml
+%%DATADIR%%/addons/script.module.pysqlite/addon.xml
+%%DATADIR%%/addons/script.module.pysqlite/lib/pysqlite2/__init__.py
+%%DATADIR%%/addons/script.module.simplejson/addon.xml
+%%DATADIR%%/addons/script.module.simplejson/lib/LICENSE.txt
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/__init__.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/decoder.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/encoder.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/scanner.py
+%%DATADIR%%/addons/script.module.simplejson/lib/simplejson/tool.py
 %%DATADIR%%/addons/skin.confluence/720p/AddonBrowser.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogAddonInfo.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogAddonSettings.xml
@@ -201,7 +189,6 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/720p/DialogContextMenu.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogFavourites.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogFileStacking.xml
-%%DATADIR%%/addons/skin.confluence/720p/DialogFullScreenInfo.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogGamepad.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogKaiToast.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogKaraokeSongSelector.xml
@@ -213,6 +200,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/720p/DialogNetworkSetup.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogNumeric.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogOK.xml
+%%DATADIR%%/addons/skin.confluence/720p/DialogPeripheralManager.xml
+%%DATADIR%%/addons/skin.confluence/720p/DialogPeripheralSettings.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogPictureInfo.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogProgress.xml
 %%DATADIR%%/addons/skin.confluence/720p/DialogSeekBar.xml
@@ -228,7 +217,9 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/720p/FileManager.xml
 %%DATADIR%%/addons/skin.confluence/720p/Font.xml
 %%DATADIR%%/addons/skin.confluence/720p/Home.xml
+%%DATADIR%%/addons/skin.confluence/720p/IncludesBackgroundBuilding.xml
 %%DATADIR%%/addons/skin.confluence/720p/IncludesCodecFlagging.xml
+%%DATADIR%%/addons/skin.confluence/720p/IncludesHomeMenuItems.xml
 %%DATADIR%%/addons/skin.confluence/720p/IncludesHomeRecentlyAdded.xml
 %%DATADIR%%/addons/skin.confluence/720p/LockSettings.xml
 %%DATADIR%%/addons/skin.confluence/720p/LoginScreen.xml
@@ -242,7 +233,6 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/720p/MyMusicSongs.xml
 %%DATADIR%%/addons/skin.confluence/720p/MyPics.xml
 %%DATADIR%%/addons/skin.confluence/720p/MyPrograms.xml
-%%DATADIR%%/addons/skin.confluence/720p/MyVideo.xml
 %%DATADIR%%/addons/skin.confluence/720p/MyVideoNav.xml
 %%DATADIR%%/addons/skin.confluence/720p/MyVideoPlaylist.xml
 %%DATADIR%%/addons/skin.confluence/720p/MyWeather.xml
@@ -270,28 +260,25 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/720p/ViewsPictures.xml
 %%DATADIR%%/addons/skin.confluence/720p/ViewsVideoLibrary.xml
 %%DATADIR%%/addons/skin.confluence/720p/VisualisationPresetList.xml
-%%DATADIR%%/addons/skin.confluence/720p/custom_DiscDialog_1113.xml
 %%DATADIR%%/addons/skin.confluence/720p/custom_SkinSetting_1111.xml
 %%DATADIR%%/addons/skin.confluence/720p/defaults.xml
 %%DATADIR%%/addons/skin.confluence/720p/includes.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-Apple_Movie_Trailers-chooser.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-Apple_Movie_Trailers-context.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-Apple_Movie_Trailers-main.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-Apple_Movie_Trailers-search.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-Apple_Movie_Trailers-settings.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-Apple_Movie_Trailers-showtimes.xml
 %%DATADIR%%/addons/skin.confluence/720p/script-RSS_Editor-rssEditor.xml
 %%DATADIR%%/addons/skin.confluence/720p/script-RSS_Editor-setEditor.xml
 %%DATADIR%%/addons/skin.confluence/720p/script-XBMC_Lyrics-main.xml
-%%DATADIR%%/addons/skin.confluence/720p/script-XBMC_Lyrics-settings.xml
+%%DATADIR%%/addons/skin.confluence/720p/weather+/10DayForecast.xml
+%%DATADIR%%/addons/skin.confluence/720p/weather+/36HourForecast.xml
+%%DATADIR%%/addons/skin.confluence/720p/weather+/HourlyForecast.xml
+%%DATADIR%%/addons/skin.confluence/720p/weather+/MapsVideo.xml
+%%DATADIR%%/addons/skin.confluence/720p/weather+/WeekendForecast.xml
 %%DATADIR%%/addons/skin.confluence/addon.xml
 %%DATADIR%%/addons/skin.confluence/backgrounds/addons.jpg
-%%DATADIR%%/addons/skin.confluence/backgrounds/amt.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/appearance.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/media-overlay.png
 %%DATADIR%%/addons/skin.confluence/backgrounds/music.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/network.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/pictures.jpg
+%%DATADIR%%/addons/skin.confluence/backgrounds/playdisc.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/programs.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/settings.jpg
 %%DATADIR%%/addons/skin.confluence/backgrounds/skinsetting.jpg
@@ -306,7 +293,9 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/fonts/DejaVuSans-Bold.ttf
 %%DATADIR%%/addons/skin.confluence/fonts/DejaVuSans.ttf
 %%DATADIR%%/addons/skin.confluence/icon.png
+%%DATADIR%%/addons/skin.confluence/language/Afrikaans/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Bulgarian/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Catalan/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Chinese (Traditional)/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Czech/strings.xml
@@ -320,6 +309,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Hungarian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Icelandic/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Italian/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Japanese/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Korean/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Norwegian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Polish/strings.xml
@@ -329,32 +319,13 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Russian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Serbian (Cyrillic)/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Serbian/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Slovak/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Slovenian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Spanish/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Swedish/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Turkish/strings.xml
-%%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers/G.png
-%%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers/NC-17.png
-%%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers/NR.png
-%%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers/PG-13.png
-%%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers/PG.png
-%%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers/R.png
-%%DATADIR%%/addons/skin.confluence/media/AppleLogo.png
 %%DATADIR%%/addons/skin.confluence/media/ArrowDown.png
 %%DATADIR%%/addons/skin.confluence/media/ArrowUp.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuExitFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuExitNF.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuLogOffFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuLogOffNF.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuMasterFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuMasterNF.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuNoMasterFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuNoMasterNF.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuRestartFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuRestartNF.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuShutdownFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuShutdownNF.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuSleepFO.png
-%%DATADIR%%/addons/skin.confluence/media/ButtonMenuSleepNF.png
 %%DATADIR%%/addons/skin.confluence/media/CalibrateBottomRight.png
 %%DATADIR%%/addons/skin.confluence/media/CalibratePixelRatio.png
 %%DATADIR%%/addons/skin.confluence/media/CalibrateSubtitles.png
@@ -367,8 +338,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/CenterRating/rating5.png
 %%DATADIR%%/addons/skin.confluence/media/Confluence_Logo.png
 %%DATADIR%%/addons/skin.confluence/media/ContentPanel.png
-%%DATADIR%%/addons/skin.confluence/media/ContentPanel2.png
-%%DATADIR%%/addons/skin.confluence/media/ContentPanel4.png
+%%DATADIR%%/addons/skin.confluence/media/ContentPanelMirror.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultActor.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddSource.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddon.png
@@ -383,6 +353,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonProgram.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonRepository.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonScreensaver.png
+%%DATADIR%%/addons/skin.confluence/media/DefaultAddonService.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonSkin.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonSubtitles.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultAddonTvInfo.png
@@ -429,28 +400,29 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultVideoPlaylists.png
 %%DATADIR%%/addons/skin.confluence/media/DefaultVideoPlugins.png
 %%DATADIR%%/addons/skin.confluence/media/DialogBack.png
+%%DATADIR%%/addons/skin.confluence/media/DialogBack2.png
 %%DATADIR%%/addons/skin.confluence/media/DialogCloseButton-focus.png
 %%DATADIR%%/addons/skin.confluence/media/DialogCloseButton.png
 %%DATADIR%%/addons/skin.confluence/media/DialogContextBottom.png
 %%DATADIR%%/addons/skin.confluence/media/DialogContextMiddle.png
 %%DATADIR%%/addons/skin.confluence/media/DialogContextTop.png
-%%DATADIR%%/addons/skin.confluence/media/Fanart_Diffuse.png
 %%DATADIR%%/addons/skin.confluence/media/Fanart_Fallback_Music_Small.jpg
 %%DATADIR%%/addons/skin.confluence/media/Fanart_Fallback_Small.jpg
 %%DATADIR%%/addons/skin.confluence/media/GlassOverlay.png
 %%DATADIR%%/addons/skin.confluence/media/GlassTitleBar.png
-%%DATADIR%%/addons/skin.confluence/media/HomeBlade.png
+%%DATADIR%%/addons/skin.confluence/media/GoFullscreen.png
+%%DATADIR%%/addons/skin.confluence/media/HasSub.png
+%%DATADIR%%/addons/skin.confluence/media/HomeBack.png
 %%DATADIR%%/addons/skin.confluence/media/HomeBladeSub.png
-%%DATADIR%%/addons/skin.confluence/media/HomeBladeSub_Part1.png
-%%DATADIR%%/addons/skin.confluence/media/HomeBladeSub_Part2.png
-%%DATADIR%%/addons/skin.confluence/media/HomeBlade_bottom.png
-%%DATADIR%%/addons/skin.confluence/media/HomeBlade_middle.png
-%%DATADIR%%/addons/skin.confluence/media/HomeBlade_top.png
 %%DATADIR%%/addons/skin.confluence/media/HomeButtonsBack.png
-%%DATADIR%%/addons/skin.confluence/media/HomeHasSub.png
 %%DATADIR%%/addons/skin.confluence/media/HomeIcon-Focus.png
 %%DATADIR%%/addons/skin.confluence/media/HomeIcon.png
 %%DATADIR%%/addons/skin.confluence/media/HomeNowPlayingBack.png
+%%DATADIR%%/addons/skin.confluence/media/HomeOverlay1.png
+%%DATADIR%%/addons/skin.confluence/media/HomeSeperator.png
+%%DATADIR%%/addons/skin.confluence/media/HomeSubEnd.png
+%%DATADIR%%/addons/skin.confluence/media/HomeSubFO.png
+%%DATADIR%%/addons/skin.confluence/media/HomeSubNF.png
 %%DATADIR%%/addons/skin.confluence/media/InfoMessagePanel.png
 %%DATADIR%%/addons/skin.confluence/media/KeyboardCornerBottom.png
 %%DATADIR%%/addons/skin.confluence/media/KeyboardCornerBottomNF.png
@@ -466,16 +438,12 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/LeftRating/rating4.png
 %%DATADIR%%/addons/skin.confluence/media/LeftRating/rating5.png
 %%DATADIR%%/addons/skin.confluence/media/Makefile
+%%DATADIR%%/addons/skin.confluence/media/Makefile.in
 %%DATADIR%%/addons/skin.confluence/media/MediaBladeSub.png
-%%DATADIR%%/addons/skin.confluence/media/MediaBladeSub_Part1.png
-%%DATADIR%%/addons/skin.confluence/media/MediaBladeSub_Part2.png
-%%DATADIR%%/addons/skin.confluence/media/MediaInfoBackLower.png
-%%DATADIR%%/addons/skin.confluence/media/MediaInfoBackUpper.png
 %%DATADIR%%/addons/skin.confluence/media/MediaItemDetailBG.png
-%%DATADIR%%/addons/skin.confluence/media/MediaSubSet.png
-%%DATADIR%%/addons/skin.confluence/media/MediaSubSetNF.png
 %%DATADIR%%/addons/skin.confluence/media/MenuItemFO.png
 %%DATADIR%%/addons/skin.confluence/media/MenuItemNF.png
+%%DATADIR%%/addons/skin.confluence/media/NowPlayingIcon.png
 %%DATADIR%%/addons/skin.confluence/media/OSD16x.png
 %%DATADIR%%/addons/skin.confluence/media/OSD2x.png
 %%DATADIR%%/addons/skin.confluence/media/OSD32x.png
@@ -509,6 +477,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/OSDPrevTrackNF.png
 %%DATADIR%%/addons/skin.confluence/media/OSDProgressBack.png
 %%DATADIR%%/addons/skin.confluence/media/OSDProgressMid.png
+%%DATADIR%%/addons/skin.confluence/media/OSDProgressMidLight.png
 %%DATADIR%%/addons/skin.confluence/media/OSDRandomOffFO.png
 %%DATADIR%%/addons/skin.confluence/media/OSDRandomOffNF.png
 %%DATADIR%%/addons/skin.confluence/media/OSDRandomOnFO.png
@@ -541,10 +510,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/OverlayLocked.png
 %%DATADIR%%/addons/skin.confluence/media/OverlayRAR.png
 %%DATADIR%%/addons/skin.confluence/media/OverlayWatched.png
-%%DATADIR%%/addons/skin.confluence/media/RecentAddedFO.png
-%%DATADIR%%/addons/skin.confluence/media/RecentAddedNF.png
-%%DATADIR%%/addons/skin.confluence/media/Rss_Back.png
-%%DATADIR%%/addons/skin.confluence/media/Rss_Back_Overlay.png
+%%DATADIR%%/addons/skin.confluence/media/RecentAddedBack.png
 %%DATADIR%%/addons/skin.confluence/media/ScrollBarH.png
 %%DATADIR%%/addons/skin.confluence/media/ScrollBarH_bar.png
 %%DATADIR%%/addons/skin.confluence/media/ScrollBarH_bar_focus.png
@@ -552,34 +518,25 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/ScrollBarV.png
 %%DATADIR%%/addons/skin.confluence/media/ScrollBarV_bar.png
 %%DATADIR%%/addons/skin.confluence/media/ScrollBarV_bar_focus.png
+%%DATADIR%%/addons/skin.confluence/media/ShutdownButtonFocus.png
+%%DATADIR%%/addons/skin.confluence/media/ShutdownButtonNoFocus.png
+%%DATADIR%%/addons/skin.confluence/media/SideFade.png
 %%DATADIR%%/addons/skin.confluence/media/StackFO.png
 %%DATADIR%%/addons/skin.confluence/media/StackNF.png
 %%DATADIR%%/addons/skin.confluence/media/Textures.xbt
 %%DATADIR%%/addons/skin.confluence/media/ThumbBG.png
 %%DATADIR%%/addons/skin.confluence/media/ThumbBorder.png
 %%DATADIR%%/addons/skin.confluence/media/ThumbShadow.png
-%%DATADIR%%/addons/skin.confluence/media/VisOsdPanel.png
 %%DATADIR%%/addons/skin.confluence/media/VolumeIcon-Mute.png
 %%DATADIR%%/addons/skin.confluence/media/VolumeIcon.png
-%%DATADIR%%/addons/skin.confluence/media/XBMC_Logo.png
-%%DATADIR%%/addons/skin.confluence/media/amt-blank-poster.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-actor.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-genre-i.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-genre.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-noactor.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-studio.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-trailer-w.png
-%%DATADIR%%/addons/skin.confluence/media/amt-generic-trailer.png
-%%DATADIR%%/addons/skin.confluence/media/amt-overlay-favorite.png
-%%DATADIR%%/addons/skin.confluence/media/amt-overlay-saved.png
-%%DATADIR%%/addons/skin.confluence/media/amt-overlay-watched.png
 %%DATADIR%%/addons/skin.confluence/media/black-back.png
 %%DATADIR%%/addons/skin.confluence/media/black-back2.png
 %%DATADIR%%/addons/skin.confluence/media/busy.png
 %%DATADIR%%/addons/skin.confluence/media/button-focus.png
+%%DATADIR%%/addons/skin.confluence/media/button-focus2.png
 %%DATADIR%%/addons/skin.confluence/media/button-nofocus.png
 %%DATADIR%%/addons/skin.confluence/media/defaultDVDFull.png
-%%DATADIR%%/addons/skin.confluence/media/diffuse_mirror.png
+%%DATADIR%%/addons/skin.confluence/media/dialogheader.png
 %%DATADIR%%/addons/skin.confluence/media/diffuse_mirror2.png
 %%DATADIR%%/addons/skin.confluence/media/diffuse_mirror3.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/aspectratio/1.33.png
@@ -590,31 +547,46 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/aspectratio/2.35.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/0.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/1.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/10.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/2.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/3.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/4.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/5.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/6.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/7.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/8.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/aac.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/ac3.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/aif.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/aifc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/aiff.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/alac.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/ape.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/avc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/cdda.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/dca.png
-%%DATADIR%%/addons/skin.confluence/media/flagging/audio/dolbydigital.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/dts.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/dtshd_hra.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/dtshd_ma.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/eac3.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/flac.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/mp1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/mp2.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/mp3.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/ogg.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm_bluray.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/truehd.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/wav.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wavpack.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wma.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wmapro.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wmav2.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/blank.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/lists/1080.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/lists/480.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/lists/540.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/lists/576.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/lists/720.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/ratings/mpaa_general.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/ratings/mpaa_nc17.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/ratings/mpaa_notrated.png
@@ -635,10 +607,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/hddvd.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/mpeg1video.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/mpeg2video.png
-%%DATADIR%%/addons/skin.confluence/media/flagging/video/sd.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/tv.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/vc-1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/vhs.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/video/vp8.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/wvc1.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/video/xvid.png
 %%DATADIR%%/addons/skin.confluence/media/floor.png
@@ -646,11 +618,12 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/header.png
 %%DATADIR%%/addons/skin.confluence/media/home-favourites-FO.png
 %%DATADIR%%/addons/skin.confluence/media/home-favourites.png
-%%DATADIR%%/addons/skin.confluence/media/home-playmedia-FO.png
-%%DATADIR%%/addons/skin.confluence/media/home-playmedia.png
 %%DATADIR%%/addons/skin.confluence/media/home-power-FO.png
 %%DATADIR%%/addons/skin.confluence/media/home-power.png
 %%DATADIR%%/addons/skin.confluence/media/icon-mute.png
+%%DATADIR%%/addons/skin.confluence/media/icon-rss.png
+%%DATADIR%%/addons/skin.confluence/media/icon-video.png
+%%DATADIR%%/addons/skin.confluence/media/icon-weather.png
 %%DATADIR%%/addons/skin.confluence/media/lastfm-hate-focus.png
 %%DATADIR%%/addons/skin.confluence/media/lastfm-hate-nofocus.png
 %%DATADIR%%/addons/skin.confluence/media/lastfm-love-focus.png
@@ -678,11 +651,12 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/scroll-up-focus.png
 %%DATADIR%%/addons/skin.confluence/media/scroll-up.png
 %%DATADIR%%/addons/skin.confluence/media/seekslider.png
+%%DATADIR%%/addons/skin.confluence/media/seekslider2.png
 %%DATADIR%%/addons/skin.confluence/media/separator.png
 %%DATADIR%%/addons/skin.confluence/media/separator2.png
 %%DATADIR%%/addons/skin.confluence/media/separator_vertical.png
-%%DATADIR%%/addons/skin.confluence/media/twc-logo.png
 %%DATADIR%%/addons/skin.confluence/media/unknown-user.png
+%%DATADIR%%/addons/skin.confluence/media/xbmc-logo.png
 %%DATADIR%%/addons/skin.confluence/sounds/back.wav
 %%DATADIR%%/addons/skin.confluence/sounds/click.wav
 %%DATADIR%%/addons/skin.confluence/sounds/cursor.wav
@@ -704,6 +678,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Portuguese/strings.xml
 %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Romanian/strings.xml
+%%DATADIR%%/addons/visualization.dxspectrum/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/visualization.dxspectrum/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/visualization.dxspectrum/resources/settings.xml
 %%DATADIR%%/addons/visualization.glspectrum/addon.xml
@@ -719,6 +695,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian/strings.xml
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/settings.xml
 %%DATADIR%%/addons/visualization.itunes/addon.xml
@@ -739,7 +717,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.milkdrop/resources/language/Portuguese/strings.xml
 %%DATADIR%%/addons/visualization.milkdrop/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/visualization.milkdrop/resources/language/Russian/strings.xml
+%%DATADIR%%/addons/visualization.milkdrop/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/visualization.milkdrop/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/visualization.milkdrop/resources/language/Swedish/strings.xml
+%%DATADIR%%/addons/visualization.milkdrop/resources/settings.xml
 %%DATADIR%%/addons/visualization.projectm/addon.xml
 %%DATADIR%%/addons/visualization.projectm/icon.png
 %%DATADIR%%/addons/visualization.projectm/resources/language/Bulgarian/strings.xml
@@ -754,12 +735,22 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.projectm/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Portuguese/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Russian/strings.xml
+%%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian/strings.xml
+%%DATADIR%%/addons/visualization.projectm/resources/language/Spanish/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/presets.zip
+%%DATADIR%%/addons/visualization.projectm/resources/settings.xml
 %%DATADIR%%/addons/visualization.waveform/addon.xml
 %%DATADIR%%/addons/visualization.waveform/icon.png
-%%DATADIR%%/addons/weather.xbmc.builtin/addon.xml
-%%DATADIR%%/addons/weather.xbmc.builtin/icon.png
+%%DATADIR%%/addons/weather.wunderground/LICENSE.txt
+%%DATADIR%%/addons/weather.wunderground/addon.xml
+%%DATADIR%%/addons/weather.wunderground/changelog.txt
+%%DATADIR%%/addons/weather.wunderground/default.py
+%%DATADIR%%/addons/weather.wunderground/icon.png
+%%DATADIR%%/addons/weather.wunderground/resources/language/English/strings.xml
+%%DATADIR%%/addons/weather.wunderground/resources/language/German/strings.xml
+%%DATADIR%%/addons/weather.wunderground/resources/lib/utilities.py
+%%DATADIR%%/addons/weather.wunderground/resources/settings.xml
 %%DATADIR%%/addons/webinterface.default/addon.xml
 %%DATADIR%%/addons/webinterface.default/css/core.css
 %%DATADIR%%/addons/webinterface.default/css/ipad.css
@@ -769,14 +760,15 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/webinterface.default/images/DefaultVideo.png
 %%DATADIR%%/addons/webinterface.default/images/ajax-loader.gif
 %%DATADIR%%/addons/webinterface.default/images/close-button.png
+%%DATADIR%%/addons/webinterface.default/images/remote.jpg
 %%DATADIR%%/addons/webinterface.default/index.html
 %%DATADIR%%/addons/webinterface.default/js/Core.js
 %%DATADIR%%/addons/webinterface.default/js/Launcher.js
 %%DATADIR%%/addons/webinterface.default/js/MediaLibrary.js
 %%DATADIR%%/addons/webinterface.default/js/NowPlayingManager.js
 %%DATADIR%%/addons/webinterface.default/js/iscroll-min.js
-%%DATADIR%%/addons/webinterface.default/js/jquery-1.4.2.js
-%%DATADIR%%/addons/webinterface.default/js/jquery-1.4.2.min.js
+%%DATADIR%%/addons/webinterface.default/js/jquery-1.5.2.js
+%%DATADIR%%/addons/webinterface.default/js/jquery-1.5.2.min.js
 %%DATADIR%%/addons/webinterface.default/js/jquery.lazyload.js
 %%DATADIR%%/addons/xbmc.addon/addon.xml
 %%DATADIR%%/addons/xbmc.addon/metadata.xsd
@@ -784,11 +776,18 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/xbmc.core/addon.xml
 %%DATADIR%%/addons/xbmc.gui/addon.xml
 %%DATADIR%%/addons/xbmc.gui/skin.xsd
+%%DATADIR%%/addons/xbmc.json/addon.xml
 %%DATADIR%%/addons/xbmc.metadata/addon.xml
 %%DATADIR%%/addons/xbmc.metadata/scraper.xsd
 %%DATADIR%%/addons/xbmc.python/addon.xml
 %%DATADIR%%/addons/xbmc.python/pluginsource.xsd
 %%DATADIR%%/addons/xbmc.python/script.xsd
+%%DATADIR%%/language/Afrikaans/langinfo.xml
+%%DATADIR%%/language/Afrikaans/strings.xml
+%%DATADIR%%/language/Basque/langinfo.xml
+%%DATADIR%%/language/Basque/strings.xml
+%%DATADIR%%/language/Bosnian/langinfo.xml
+%%DATADIR%%/language/Bosnian/strings.xml
 %%DATADIR%%/language/Bulgarian/langinfo.xml
 %%DATADIR%%/language/Bulgarian/strings.xml
 %%DATADIR%%/language/Catalan/langinfo.xml
@@ -822,6 +821,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Greek/strings.xml
 %%DATADIR%%/language/Hebrew/langinfo.xml
 %%DATADIR%%/language/Hebrew/strings.xml
+%%DATADIR%%/language/Hindi (Devanagiri)/langinfo.xml
+%%DATADIR%%/language/Hindi (Devanagiri)/strings.xml
 %%DATADIR%%/language/Hungarian/langinfo.xml
 %%DATADIR%%/language/Hungarian/strings.xml
 %%DATADIR%%/language/Icelandic/langinfo.xml
@@ -882,6 +883,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/system/X10-Lola-IRSSmap.xml
 %%DATADIR%%/system/asound.conf
 %%DATADIR%%/system/colors.xml
+%%DATADIR%%/system/keymaps/appcommand.xml
 %%DATADIR%%/system/keymaps/gamepad.xml
 %%DATADIR%%/system/keymaps/joystick.Alienware.Dual.Compatible.Controller.xml
 %%DATADIR%%/system/keymaps/joystick.AppleRemote.xml
@@ -894,7 +896,10 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/system/keymaps/joystick.Sony.PLAYSTATION(R)3.Controller.xml
 %%DATADIR%%/system/keymaps/joystick.WiiRemote.xml
 %%DATADIR%%/system/keymaps/keyboard.xml
+%%DATADIR%%/system/keymaps/mouse.xml
+%%DATADIR%%/system/keymaps/nyxboard/keyboard.xml
 %%DATADIR%%/system/keymaps/remote.xml
+%%DATADIR%%/system/peripherals.xml
 %%DATADIR%%/system/playercorefactory.xml
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/conf.avail/10-autohint.conf
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/conf.avail/10-no-sub-pixel.conf
@@ -939,28 +944,20 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/fonts.conf
 %%DATADIR%%/system/players/dvdplayer/etc/fonts/fonts.dtd
 %%DATADIR%%/system/python/readme.txt
-%%DATADIR%%/system/scrapers/video/AdultFilmdatabase.gif
-%%DATADIR%%/system/scrapers/video/Excalibur.jpg
-%%DATADIR%%/system/scrapers/video/Excalibur.xml
-%%DATADIR%%/system/scrapers/video/adultcdmovies.jpg
-%%DATADIR%%/system/scrapers/video/adultcdmovies.xml
-%%DATADIR%%/system/scrapers/video/adultdvdempire.jpg
-%%DATADIR%%/system/scrapers/video/adultdvdempire.xml
-%%DATADIR%%/system/scrapers/video/adultfilmdatabase.xml
-%%DATADIR%%/system/scrapers/video/jaded.jpg
-%%DATADIR%%/system/scrapers/video/jadedVideo.xml
-%%DATADIR%%/system/scrapers/video/tlaraw.png
-%%DATADIR%%/system/scrapers/video/tlaraw.xml
 %%DATADIR%%/system/shaders/convolution-4x4.glsl
 %%DATADIR%%/system/shaders/convolution-4x4_d3d.fx
 %%DATADIR%%/system/shaders/convolution-6x6.glsl
 %%DATADIR%%/system/shaders/convolution-6x6_d3d.fx
-%%DATADIR%%/system/shaders/guishader_frag.glsl
-%%DATADIR%%/system/shaders/guishader_frag0.glsl
-%%DATADIR%%/system/shaders/guishader_frag1.glsl
-%%DATADIR%%/system/shaders/guishader_frag2.glsl
-%%DATADIR%%/system/shaders/guishader_frag3.glsl
-%%DATADIR%%/system/shaders/guishader_frag4.glsl
+%%DATADIR%%/system/shaders/convolutionsep-4x4_d3d.fx
+%%DATADIR%%/system/shaders/convolutionsep-6x6_d3d.fx
+%%DATADIR%%/system/shaders/guishader_frag_default.glsl
+%%DATADIR%%/system/shaders/guishader_frag_fonts.glsl
+%%DATADIR%%/system/shaders/guishader_frag_multi.glsl
+%%DATADIR%%/system/shaders/guishader_frag_multi_blendcolor.glsl
+%%DATADIR%%/system/shaders/guishader_frag_rgba.glsl
+%%DATADIR%%/system/shaders/guishader_frag_rgba_blendcolor.glsl
+%%DATADIR%%/system/shaders/guishader_frag_texture.glsl
+%%DATADIR%%/system/shaders/guishader_frag_texture_noblend.glsl
 %%DATADIR%%/system/shaders/guishader_vert.glsl
 %%DATADIR%%/system/shaders/stretch.glsl
 %%DATADIR%%/system/shaders/testshader.fx
@@ -989,8 +986,6 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/userdata/PictureIcon
 @dirrm %%DATADIR%%/userdata
 @dirrm %%DATADIR%%/system/shaders
-@dirrm %%DATADIR%%/system/scrapers/video
-@dirrm %%DATADIR%%/system/scrapers
 @dirrm %%DATADIR%%/system/python
 @dirrm %%DATADIR%%/system/players/dvdplayer/etc/fonts/conf.d
 @dirrm %%DATADIR%%/system/players/dvdplayer/etc/fonts/conf.avail
@@ -998,6 +993,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/system/players/dvdplayer/etc
 @dirrm %%DATADIR%%/system/players/dvdplayer
 @dirrm %%DATADIR%%/system/players
+@dirrm %%DATADIR%%/system/keymaps/nyxboard
 @dirrm %%DATADIR%%/system/keymaps
 @dirrm %%DATADIR%%/system
 @dirrm %%DATADIR%%/sounds/Bursting Bubbles
@@ -1027,6 +1023,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/language/Indonesian
 @dirrm %%DATADIR%%/language/Icelandic
 @dirrm %%DATADIR%%/language/Hungarian
+@dirrm %%DATADIR%%/language/Hindi (Devanagiri)
 @dirrm %%DATADIR%%/language/Hebrew
 @dirrm %%DATADIR%%/language/Greek
 @dirrm %%DATADIR%%/language/German
@@ -1043,9 +1040,13 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/language/Chinese (Simple)
 @dirrm %%DATADIR%%/language/Catalan
 @dirrm %%DATADIR%%/language/Bulgarian
+@dirrm %%DATADIR%%/language/Bosnian
+@dirrm %%DATADIR%%/language/Basque
+@dirrm %%DATADIR%%/language/Afrikaans
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%/addons/xbmc.python
 @dirrm %%DATADIR%%/addons/xbmc.metadata
+@dirrm %%DATADIR%%/addons/xbmc.json
 @dirrm %%DATADIR%%/addons/xbmc.gui
 @dirrm %%DATADIR%%/addons/xbmc.core
 @dirrm %%DATADIR%%/addons/xbmc.addon
@@ -1053,9 +1054,16 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/webinterface.default/images
 @dirrm %%DATADIR%%/addons/webinterface.default/css
 @dirrm %%DATADIR%%/addons/webinterface.default
-@dirrm %%DATADIR%%/addons/weather.xbmc.builtin
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/German
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/English
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/lib
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources
+@dirrm %%DATADIR%%/addons/weather.wunderground
 @dirrm %%DATADIR%%/addons/visualization.waveform
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Russian
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Polish
@@ -1072,6 +1080,8 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources
 @dirrm %%DATADIR%%/addons/visualization.projectm
 @dirrm %%DATADIR%%/addons/visualization.milkdrop/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/visualization.milkdrop/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/visualization.milkdrop/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/visualization.milkdrop/resources/language/Russian
 @dirrm %%DATADIR%%/addons/visualization.milkdrop/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/visualization.milkdrop/resources/language/Portuguese
@@ -1091,6 +1101,8 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/visualization.milkdrop
 @dirrm %%DATADIR%%/addons/visualization.itunes
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Polish
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Korean
@@ -1106,6 +1118,8 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources
 @dirrm %%DATADIR%%/addons/visualization.glspectrum
 @dirrm %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/visualization.dxspectrum/resources/language/Polish
@@ -1124,16 +1138,18 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/sounds
 @dirrm %%DATADIR%%/addons/skin.confluence/media/flagging/video
 @dirrm %%DATADIR%%/addons/skin.confluence/media/flagging/ratings
+@dirrm %%DATADIR%%/addons/skin.confluence/media/flagging/lists
 @dirrm %%DATADIR%%/addons/skin.confluence/media/flagging/audio
 @dirrm %%DATADIR%%/addons/skin.confluence/media/flagging/aspectratio
 @dirrm %%DATADIR%%/addons/skin.confluence/media/flagging
 @dirrm %%DATADIR%%/addons/skin.confluence/media/LeftRating
 @dirrm %%DATADIR%%/addons/skin.confluence/media/CenterRating
-@dirrm %%DATADIR%%/addons/skin.confluence/media/Apple Movie Trailers
 @dirrm %%DATADIR%%/addons/skin.confluence/media
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Turkish
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Swedish
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Spanish
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Slovenian
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Slovak
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Serbian (Cyrillic)
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Serbian
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Russian
@@ -1143,6 +1159,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Polish
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Norwegian
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Korean
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Japanese
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Italian
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Icelandic
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Hungarian
@@ -1156,28 +1173,26 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Czech
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Chinese (Traditional)
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Catalan
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Bulgarian
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Afrikaans
 @dirrm %%DATADIR%%/addons/skin.confluence/language
 @dirrm %%DATADIR%%/addons/skin.confluence/fonts
 @dirrm %%DATADIR%%/addons/skin.confluence/colors
 @dirrm %%DATADIR%%/addons/skin.confluence/backgrounds
+@dirrm %%DATADIR%%/addons/skin.confluence/720p/weather+
 @dirrm %%DATADIR%%/addons/skin.confluence/720p
 @dirrm %%DATADIR%%/addons/skin.confluence
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/skins/default/media
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/skins/default/PAL
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/skins/default/720p
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/skins/default
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/skins
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/lib
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/language/Hungarian
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/language/German
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/language/Finnish
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/language/English
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources/language
-@dirrm %%DATADIR%%/addons/script.rss.editor/resources
-@dirrm %%DATADIR%%/addons/script.rss.editor
-@dirrm %%DATADIR%%/addons/script.recentlyadded
+@dirrm %%DATADIR%%/addons/script.module.pil
+@dirrm %%DATADIR%%/addons/script.module.pysqlite/lib/pysqlite2
+@dirrm %%DATADIR%%/addons/script.module.pysqlite/lib
+@dirrm %%DATADIR%%/addons/script.module.pysqlite
+@dirrm %%DATADIR%%/addons/script.module.simplejson/lib/simplejson
+@dirrm %%DATADIR%%/addons/script.module.simplejson/lib
+@dirrm %%DATADIR%%/addons/script.module.simplejson
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Russian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Polish
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Korean
@@ -1192,6 +1207,8 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Swedish
+@dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish
+@dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Russian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Polish
@@ -1208,14 +1225,22 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.black
-@dirrm %%DATADIR%%/addons/screensaver.rsxs.solarwinds
-@dirrm %%DATADIR%%/addons/screensaver.rsxs.plasma
-@dirrm %%DATADIR%%/addons/screensaver.rsxs.euphoria
+%%RSXS%%@dirrm %%DATADIR%%/addons/screensaver.rsxs.solarwinds
+%%RSXS%%@dirrm %%DATADIR%%/addons/screensaver.rsxs.plasma
+%%RSXS%%@dirrm %%DATADIR%%/addons/screensaver.rsxs.euphoria
 @dirrm %%DATADIR%%/addons/repository.xbmc.org
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Portuguese
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Polish
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Korean
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Hungarian
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/English
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Dutch
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Swedish
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Russian
-@dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Polish
 @dirrm %%DATADIR%%/addons/metadata.tvdb.com/resources/language/Korean
@@ -1246,7 +1271,6 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org
-@dirrm %%DATADIR%%/addons/metadata.mtv.com
 @dirrm %%DATADIR%%/addons/metadata.common.themoviedb.org
 @dirrm %%DATADIR%%/addons/metadata.common.last.fm
 @dirrm %%DATADIR%%/addons/metadata.common.imdb.com
@@ -1256,7 +1280,6 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Swedish
 @dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Russian
-@dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Polish
 @dirrm %%DATADIR%%/addons/metadata.artists.allmusic.com/resources/language/Korean
@@ -1274,7 +1297,6 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Swedish
 @dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Russian
-@dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Polish
 @dirrm %%DATADIR%%/addons/metadata.albums.allmusic.com/resources/language/Korean
@@ -1303,15 +1325,12 @@ share/xsessions/XBMC.desktop
 @dirrm lib/xbmc/system/players/dvdplayer
 @dirrm lib/xbmc/system/players/paplayer
 @dirrm lib/xbmc/system/players
-@dirrm lib/xbmc/system/python
 @dirrm lib/xbmc/system
 @dirrm lib/xbmc/addons/visualization.waveform
 @dirrm lib/xbmc/addons/visualization.projectm
 @dirrm lib/xbmc/addons/visualization.glspectrum
-@dirrm lib/xbmc/addons/script.module.pysqlite
-@dirrm lib/xbmc/addons/script.module.pil
-@dirrm lib/xbmc/addons/screensaver.rsxs.solarwinds
-@dirrm lib/xbmc/addons/screensaver.rsxs.plasma
-@dirrm lib/xbmc/addons/screensaver.rsxs.euphoria
+%%RSXS%%@dirrm lib/xbmc/addons/screensaver.rsxs.solarwinds
+%%RSXS%%@dirrm lib/xbmc/addons/screensaver.rsxs.plasma
+%%RSXS%%@dirrm lib/xbmc/addons/screensaver.rsxs.euphoria
 @dirrm lib/xbmc/addons
 @dirrm lib/xbmc
