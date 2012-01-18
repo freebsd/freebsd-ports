@@ -1,9 +1,6 @@
-SDCC is a Freeware, retargettable, optimizing ANSI-C compiler that
-targets the Intel 8051, Maxim 80DS390, Zilog Z80 and the Motorola
-68HC08 based MCUs. Work is in progress on supporting the Microchip
-PIC16 and PIC18 series.
-
-SDCC also comes with the source level debugger SDCDB, using the
-current version of Daniel's s51 simulator.
+SDCC is a retargettable, optimizing ANSI C compiler that targets the
+Intel 8051, Maxim 80DS390, Zilog Z80, Z180, Rabbit 2000 and the Motorola
+68HC08 based MCUs. Work is in progress on supporting the Microchip PIC16
+and PIC18 series.
 
 WWW: http://sdcc.sourceforge.net/
