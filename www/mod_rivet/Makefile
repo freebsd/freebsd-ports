@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_rivet
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	www tcl
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tcl/rivet
@@ -15,16 +15,14 @@ DISTNAME=		rivet-${PORTVERSION}
 MAINTAINER=	cowbert@gmail.com
 COMMENT=	Embeds a Tcl interpreter in the Apache server
 
-WRKSRC=			${WRKDIR}/libapache2-mod-rivet-${PORTVERSION}
-
 MAKE_JOBS_SAFE=	yes
 LICENSE=		AL2
 
 USE_APACHE=	22+
-USE_AUTOTOOLS=	automake autoconf
 USE_TCL=	84+
-GMAKE=		yes
+USE_LDCONFIG=	${PREFIX}/lib/rivet
 
+GMAKE=		yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
@@ -33,6 +31,10 @@ CONFIGURE_ARGS+=	--with-apache-version=2 \
 			--prefix=${PREFIX} --with-apxs=${APXS} \
 			--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH} \
 			--with-rivet-target-dir=${PREFIX}/lib/rivet
+
+post-patch:
+	${REINPLACE_CMD}  -e 's|`$${apxs_found} -q LIBEXECDIR`|${PREFIX}/${APACHEMODDIR}|g' \
+	   ${WRKSRC}/configure.ac ${WRKSRC}/configure
 
 post-install:
 	@${ECHO_MSG} ""

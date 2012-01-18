@@ -1,10 +1,7 @@
-%%APACHEMODDIR%%/mod_rivet.la
 %%APACHEMODDIR%%/mod_rivet.so
 lib/rivet/README
 lib/rivet/init.tcl
-lib/rivet/librivet.la
 lib/rivet/librivet.so
-lib/rivet/librivetparser.la
 lib/rivet/librivetparser.so
 lib/rivet/packages/README
 lib/rivet/packages/calendar/calendar.tcl
