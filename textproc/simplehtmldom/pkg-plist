@@ -1,4 +1,3 @@
-%%DATADIR%%/simple_html_dom.php
 %%PORTDOCS%%%%DOCSDIR%%/css/default.css
 %%PORTDOCS%%%%DOCSDIR%%/css/ui.tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/img/tab.png
@@ -16,10 +15,47 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scraping/example_scraping_imdb.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scraping/example_scraping_slashdot.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_html_dom_utility.php
+%%DATADIR%%/app/google.htm
+%%DATADIR%%/app/index.php
+%%DATADIR%%/app/js/images/treeview-default-line.gif
+%%DATADIR%%/app/js/images/treeview-default.gif
+%%DATADIR%%/app/js/jquery.js
+%%DATADIR%%/app/js/jquery.treeview.css
+%%DATADIR%%/app/js/jquery.treeview.js
+%%DATADIR%%/app/js/screen.css
+%%DATADIR%%/change_log.txt
+%%DATADIR%%/simple_html_dom.php
+%%DATADIR%%/testcase/all_test.php
+%%DATADIR%%/testcase/callback_testcase.php
+%%DATADIR%%/testcase/dom_testcase.php
+%%DATADIR%%/testcase/element_testcase.php
+%%DATADIR%%/testcase/invalid_testcase.php
+%%DATADIR%%/testcase/jquery-1.2.3.pack.js
+%%DATADIR%%/testcase/mass_test.php
+%%DATADIR%%/testcase/memory_test.php
+%%DATADIR%%/testcase/misc_testcase.php
+%%DATADIR%%/testcase/performance_test.php
+%%DATADIR%%/testcase/reader/all_test.php
+%%DATADIR%%/testcase/reader/element_testcase.php
+%%DATADIR%%/testcase/reader/memory_test.php
+%%DATADIR%%/testcase/reader/performance_test.php
+%%DATADIR%%/testcase/reader/selector_testcase.php
+%%DATADIR%%/testcase/selector_testcase.php
+%%DATADIR%%/testcase/slick_test.php
+%%DATADIR%%/testcase/slickspeed.htm
+%%DATADIR%%/testcase/std_testcase.php
+%%DATADIR%%/testcase/strip_testcase.php
+@dirrm %%DATADIR%%/testcase/reader
+@dirrm %%DATADIR%%/testcase/html
+@dirrm %%DATADIR%%/testcase
+@dirrm %%DATADIR%%/app/js/images
+@dirrm %%DATADIR%%/app/js
+@dirrm %%DATADIR%%/app
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scraping
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/js
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scraping
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %D/%%DATADIR%%/testcase/html
