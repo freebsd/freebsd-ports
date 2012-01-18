@@ -1,3 +1,4 @@
+bin/pcsc-spy
 include/PCSC/debuglog.h
 include/PCSC/ifdhandler.h
 include/PCSC/pcsclite.h
@@ -6,6 +7,8 @@ include/PCSC/winscard.h
 include/PCSC/wintypes.h
 lib/libpcsclite.so
 lib/libpcsclite.so.1
+lib/libpcscspy.so
+lib/libpcscspy.so.0
 lib/pcsc/drivers/.keep_me
 lib/pcsc/services/.keep_me
 libdata/pkgconfig/libpcsclite.pc
