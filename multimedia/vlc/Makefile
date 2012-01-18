@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.13
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -645,7 +645,7 @@ CONFIGURE_ARGS+=	--enable-twolame
 .endif
 
 .if defined(WITH_UPNP)
-LIB_DEPENDS+=	upnp.7:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=	upnp.8:${PORTSDIR}/devel/upnp
 CONFIGURE_ARGS+=--enable-upnp
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__services_discovery__upnp_intel.cpp
 .else
