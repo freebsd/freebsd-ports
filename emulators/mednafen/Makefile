@@ -7,7 +7,7 @@
 
 PORTNAME=	mednafen
 PORTVERSION=	0.8.B
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/${PORTNAME}/Mednafen/${PORTVERSION}
@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/Mednafen/${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable multi-system emulator
 
-LIB_DEPENDS=	cdio.12:${PORTSDIR}/sysutils/libcdio \
+LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.16.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -145,7 +145,7 @@ CONFIGURE_ARGS+=--enable-bzip2 \
 		--enable-zip \
 		--enable-iso9660
 LIB_DEPENDS+=	zzip.13:${PORTSDIR}/devel/zziplib \
-		iso9660.7:${PORTSDIR}/sysutils/libcdio
+		iso9660.8:${PORTSDIR}/sysutils/libcdio
 .endif
 
 .if defined(WITHOUT_FFMPEG)

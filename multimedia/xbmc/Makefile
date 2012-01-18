@@ -7,6 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0.b1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 DISTNAME=	${PORTNAME}-11.0-Eden_beta1
@@ -29,7 +30,7 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		ass.5:${PORTSDIR}/multimedia/libass \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		cdio.12:${PORTSDIR}/sysutils/libcdio	\
+		cdio.13:${PORTSDIR}/sysutils/libcdio	\
 		curl.6:${PORTSDIR}/ftp/curl \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		enca.5:${PORTSDIR}/converters/enca \
