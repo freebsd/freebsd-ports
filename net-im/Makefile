@@ -35,7 +35,6 @@
     SUBDIR += gajim
     SUBDIR += gajim-devel
     SUBDIR += gale
-    SUBDIR += gicq
     SUBDIR += gloox
     SUBDIR += grouch
     SUBDIR += gtkyahoo
@@ -61,7 +60,6 @@
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += kpopup
-    SUBDIR += libicq
     SUBDIR += libjingle
     SUBDIR += libmsn
     SUBDIR += libnice
