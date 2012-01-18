@@ -147,6 +147,7 @@ post-patch:
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|-lbz2|/usr/lib/libbz2.so|' \
+		-e 's|-lncurses|/usr/lib/libncurses.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
