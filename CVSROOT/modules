@@ -23651,15 +23651,6 @@ rsync                           ports/net/rsync
 rsyncbackup                     ports/sysutils/rsyncbackup
 rsyncmanager                    ports/sysutils/rsyncmanager
 rsynth                          ports/audio/rsynth
-rsyslog4                        ports/sysutils/rsyslog4
-rsyslog4-dbi                    ports/sysutils/rsyslog4-dbi
-rsyslog4-gnutls                 ports/sysutils/rsyslog4-gnutls
-rsyslog4-gssapi                 ports/sysutils/rsyslog4-gssapi
-rsyslog4-mysql                  ports/sysutils/rsyslog4-mysql
-rsyslog4-pgsql                  ports/sysutils/rsyslog4-pgsql
-rsyslog4-relp                   ports/sysutils/rsyslog4-relp
-rsyslog4-rfc3195                ports/sysutils/rsyslog4-rfc3195
-rsyslog4-snmp                   ports/sysutils/rsyslog4-snmp
 rsyslog5                        ports/sysutils/rsyslog5
 rsyslog5-dbi                    ports/sysutils/rsyslog5-dbi
 rsyslog5-gnutls                 ports/sysutils/rsyslog5-gnutls
@@ -24343,6 +24334,7 @@ rubygem-rubyfulsoup             ports/www/rubygem-rubyfulsoup
 rubygem-rubygame                ports/devel/rubygem-rubygame
 rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
 rubygem-rubyrep                 ports/databases/rubygem-rubyrep
+rubygem-rubytree                ports/devel/rubygem-rubytree
 rubygem-rubytter                ports/net/rubygem-rubytter
 rubygem-rubyzip2                ports/archivers/rubygem-rubyzip2
 rubygem-runt                    ports/devel/rubygem-runt
