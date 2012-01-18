@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.7.4
+PORTVERSION=	1.8.2
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/3598/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3695/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--enable-ipcdir=/var/tmp/ \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+MAN1=		pcsc-spy.1
 MAN5=		reader.conf.5
 MAN8=		pcscd.8
 
@@ -49,6 +50,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h,; \
 		s,libusb_strerror(ret),ret," ${WRKSRC}/configure \
 			${WRKSRC}/src/hotplug_libusb.c
+	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/src/spy/Makefile.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/^install-data-am: / s|install-docDATA||' ${WRKSRC}/doc/Makefile.in
 .endif
