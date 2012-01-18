@@ -1,6 +1,6 @@
---- ext/openssl/openssl_missing.c.orig	2008-05-19 05:00:52.000000000 +0200
-+++ ext/openssl/openssl_missing.c	2010-04-06 14:20:20.000000000 +0200
-@@ -22,7 +22,7 @@
+--- ./ext/openssl/openssl_missing.c.orig	2008-05-19 03:00:52.000000000 +0000
++++ ./ext/openssl/openssl_missing.c	2012-01-17 05:09:13.816807984 +0000
+@@ -22,15 +22,16 @@
  #include "openssl_missing.h"
  
  #if !defined(HAVE_HMAC_CTX_COPY)
@@ -8,8 +8,10 @@
 +int
  HMAC_CTX_copy(HMAC_CTX *out, HMAC_CTX *in)
  {
-     if (!out || !in) return;
-@@ -31,6 +31,7 @@
+-    if (!out || !in) return;
++    if (!out || !in) return 0;
+     memcpy(out, in, sizeof(HMAC_CTX));
+ 
      EVP_MD_CTX_copy(&out->md_ctx, &in->md_ctx);
      EVP_MD_CTX_copy(&out->i_ctx, &in->i_ctx);
      EVP_MD_CTX_copy(&out->o_ctx, &in->o_ctx);
