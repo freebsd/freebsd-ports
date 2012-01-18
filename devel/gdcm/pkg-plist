@@ -398,9 +398,6 @@ lib/libgdcmMSFF.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 lib/libgdcmcharls.so
 lib/libgdcmcharls.so.%%GDCM_SO%%
 lib/libgdcmcharls.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
-lib/libgdcmexpat.so
-lib/libgdcmexpat.so.%%GDCM_SO%%
-lib/libgdcmexpat.so.%%GDCM_MAJ%%.0
 lib/libgdcmjpeg12.so
 lib/libgdcmjpeg12.so.%%GDCM_SO%%
 lib/libgdcmjpeg12.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
@@ -413,9 +410,6 @@ lib/libgdcmjpeg8.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 lib/libgdcmuuid.so
 lib/libgdcmuuid.so.%%GDCM_SO%%
 lib/libgdcmuuid.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
-lib/libgdcmzlib.so
-lib/libgdcmzlib.so.%%GDCM_SO%%
-lib/libgdcmzlib.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 %%VTK%%lib/libvtkgdcm.so
 %%VTK%%lib/libvtkgdcm.so.%%GDCM_SO%%
 %%VTK%%lib/libvtkgdcm.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
