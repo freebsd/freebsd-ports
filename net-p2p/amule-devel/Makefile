@@ -7,6 +7,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	10703
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -182,7 +183,7 @@ PLIST_SUB+=		PLASMAMULE="@comment "
 .endif
 
 .if !defined(WITHOUT_UPNP)
-LIB_DEPENDS+=		upnp.7:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=		upnp.8:${PORTSDIR}/devel/upnp
 .else
 CONFIGURE_ARGS+=	--disable-upnp
 .endif
