@@ -36,7 +36,7 @@
 %%T%%/common/i18n/tomcat-i18n-fr.jar
 %%T%%/common/i18n/tomcat-i18n-ja.jar
 %%T%%/common/lib/commons-el.jar
-%%T%%/common/lib/jasper-compiler-jdt.jar
+%%T%%/common/lib/ecj-3.7.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
 %%T%%/common/lib/jsp-api.jar
@@ -506,7 +506,6 @@
 %%T%%/webapps/tomcat-docs/architecture/startup/serverStartup.pdf
 %%T%%/webapps/tomcat-docs/architecture/startup/serverStartup.txt
 %%T%%/webapps/tomcat-docs/balancer-howto.html
-%%T%%/webapps/tomcat-docs/build.xml
 %%T%%/webapps/tomcat-docs/building.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/index.html
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-apps.html
@@ -536,6 +535,7 @@
 %%T%%/webapps/tomcat-docs/config/ajp.html
 %%T%%/webapps/tomcat-docs/config/context.html
 %%T%%/webapps/tomcat-docs/config/engine.html
+%%T%%/webapps/tomcat-docs/config/filter.html
 %%T%%/webapps/tomcat-docs/config/globalresources.html
 %%T%%/webapps/tomcat-docs/config/host.html
 %%T%%/webapps/tomcat-docs/config/http.html
@@ -545,6 +545,7 @@
 %%T%%/webapps/tomcat-docs/config/printer/ajp.html
 %%T%%/webapps/tomcat-docs/config/printer/context.html
 %%T%%/webapps/tomcat-docs/config/printer/engine.html
+%%T%%/webapps/tomcat-docs/config/printer/filter.html
 %%T%%/webapps/tomcat-docs/config/printer/globalresources.html
 %%T%%/webapps/tomcat-docs/config/printer/host.html
 %%T%%/webapps/tomcat-docs/config/printer/http.html
