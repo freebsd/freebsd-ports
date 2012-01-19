@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Test-EOL
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:FLORA
+MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	milki@rescomp.berkeley.edu
@@ -19,8 +19,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Pod-Coverage \
-	p5-Pod-Coverage-TrustPod>=0:${PORTSDIR}/devel/p5-Pod-Coverage-TrustPod \
-	p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod
+		p5-Pod-Coverage-TrustPod>=0:${PORTSDIR}/devel/p5-Pod-Coverage-TrustPod \
+		p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
 
