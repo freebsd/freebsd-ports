@@ -310,7 +310,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php52-exif</name>
-	<range><gt>0</gt></range>
+	<range><gt>5.2.17_6</gt></range>
       </package>
     </affects>
     <description>
@@ -335,6 +335,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-12-29</discovery>
       <entry>2012-01-11</entry>
+      <modified>2012-01-19</modified>
     </dates>
   </vuln>
 
