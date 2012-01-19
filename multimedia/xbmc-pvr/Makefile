@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	58
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
@@ -29,7 +29,7 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib	\
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		cdio.12:${PORTSDIR}/sysutils/libcdio	\
+		cdio.13:${PORTSDIR}/sysutils/libcdio	\
 		curl.6:${PORTSDIR}/ftp/curl \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		enca.5:${PORTSDIR}/converters/enca \
