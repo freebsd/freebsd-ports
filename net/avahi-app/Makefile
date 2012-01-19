@@ -115,6 +115,8 @@ avahi-post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
+	@${REINPLACE_CMD} -e 's|have_inotify=yes|have_inotify=no|' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 	    	${REINPLACE_CMD} -e 's|(LIBINTL)|(INTLLIBS)|g ; \
 		s|(LIBICONV)|(LTLIBICONV)|g'

@@ -85,6 +85,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
 		${WRKSRC}/gio/gdbusaddress.c ${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
+	@${REINPLACE_CMD} -e 's|inotify_support=yes|inotify_support=no| ; \
+		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/GConf/gsettings
