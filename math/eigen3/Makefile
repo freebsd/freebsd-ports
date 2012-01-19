@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	2.0.16
+PORTVERSION=	2.0.17
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://bitbucket.org/eigen/eigen/get/
+MASTER_SITES=	https://bitbucket.org/eigen/eigen/get/
 DISTNAME=	${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -17,11 +17,10 @@ COMMENT=	Lightweight library for vector and matrix math
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-FETCH_ARGS=	-Fpr
 
 LATEST_LINK=	${PORTNAME}2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b23437e61a07
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
