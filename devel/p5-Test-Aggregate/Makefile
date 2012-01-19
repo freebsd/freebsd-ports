@@ -7,8 +7,10 @@
 
 PORTNAME=	Test-Aggregate
 PORTVERSION=	0.364
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Aggregate perl tests for better performance
