@@ -1451,6 +1451,7 @@
     SUBDIR += p5-Curses-UI
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-Cvs
+    SUBDIR += p5-DBIx-Class-Schema-PopulateMore
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Dancer-Debug
     SUBDIR += p5-Danga-Socket
