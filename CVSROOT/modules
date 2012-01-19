@@ -4276,7 +4276,6 @@ ghostview                       ports/print/ghostview
 ghtool                          ports/dns/ghtool
 giacxcas                        ports/math/giacxcas
 giblib                          ports/graphics/giblib
-gicq                            ports/net-im/gicq
 gif2png                         ports/graphics/gif2png
 giflib                          ports/graphics/giflib
 gifmerge                        ports/graphics/gifmerge
@@ -7900,7 +7899,6 @@ libhx                           ports/lang/libhx
 libical                         ports/devel/libical
 libice                          ports/x11/libICE
 libiconv                        ports/converters/libiconv
-libicq                          ports/net-im/libicq
 libid3tag                       ports/audio/libid3tag
 libident                        ports/security/libident
 libidl                          ports/devel/libIDL
@@ -11628,6 +11626,7 @@ p5-DBIx-TableHash               ports/databases/p5-DBIx-TableHash
 p5-DBIx-TransactionManager      ports/databases/p5-DBIx-TransactionManager
 p5-DBIx-Tree                    ports/databases/p5-DBIx-Tree
 p5-DBIx-VersionedDDL            ports/databases/p5-DBIx-VersionedDDL
+p5-DBIx-Wrapper                 ports/databases/p5-DBIx-Wrapper
 p5-DBIx-XHTML_Table             ports/databases/p5-DBIx-XHTML_Table
 p5-DBIx-XML_RDB                 ports/databases/p5-DBIx-XML_RDB
 p5-DBM-Deep                     ports/databases/p5-DBM-Deep
@@ -16229,6 +16228,7 @@ p5-dbix-tablehash               ports/databases/p5-DBIx-TableHash
 p5-dbix-transactionmanager      ports/databases/p5-DBIx-TransactionManager
 p5-dbix-tree                    ports/databases/p5-DBIx-Tree
 p5-dbix-versionedddl            ports/databases/p5-DBIx-VersionedDDL
+p5-dbix-wrapper                 ports/databases/p5-DBIx-Wrapper
 p5-dbix-xhtml_table             ports/databases/p5-DBIx-XHTML_Table
 p5-dbix-xml_rdb                 ports/databases/p5-DBIx-XML_RDB
 p5-dbm-deep                     ports/databases/p5-DBM-Deep
