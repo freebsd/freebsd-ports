@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmail
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
