@@ -464,7 +464,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 .endif
 
 .if defined(WITH_LUA_MODULE)
-LIB_DEPENDS=	luajit-5.1.2:${PORTSDIR}/devel/luajit
+LIB_DEPENDS=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+= "LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
