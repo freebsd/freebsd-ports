@@ -90,7 +90,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>ruby</name>
-	<range><le>1.8.7.352,1</le></range>
+	<range><lt>1.8.7.357,1</lt></range>
       </package>
       <package>
 	<name>rubygem-rack</name>
