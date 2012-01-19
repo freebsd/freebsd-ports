@@ -1,4 +1,4 @@
-# New ports collection makefile for:	BIEW
+# New ports collection makefile for:	BIEW (now called BEYE, Binary EYE)
 # Date created:				04 February 2000
 # Whom:					Michael Vasilenko <acid@stu.cn.ua>
 #
@@ -7,13 +7,15 @@
 
 PORTNAME=	biew
 PORTVERSION=	6.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SF/beye/biew/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
+
+LICENSE=	GPLv2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
@@ -28,7 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAN1=		biew.1
 PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
-		file_ini.ru licence.en licence.ru release.txt unix.txt
+		file_ini.ru release.txt unix.txt
 
 OPTIONS=	SLANG	"Use S-Lang based display renderer"	on
 
@@ -50,16 +52,17 @@ post-patch:
 # Allow it to find definition of `uintmax_t' (required at least for ia64)
 	@${REINPLACE_CMD} -e 's,<sys/types,<stdint,' \
 		${WRKSRC}/biewlib/sysdep/generic/__config.h
+# Fix BTx group of x86 opcodes disasm bug (sf.net bug id 3150304)
+	@${REINPLACE_CMD} -e 's,DisP->codelen++),++DisP->codelen),' \
+		${WRKSRC}/plugins/disasm/ix86/ix86_fun.c
 
-# Rebuilding of help file does not work at least on ia64; use precompiled
-# file provided by original vendor (MD5 sums of both match)
-#post-build:
-#	${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
-#	cd ${WRKSRC}/tools/biewhlp && ${GMAKE} ${MAKE_ARGS}
-#	${LN} -sf ../../biewlib ${WRKSRC}/tools/lzss/biewlib
-#	cd ${WRKSRC}/tools/lzss && ${GMAKE} ${MAKE_ARGS}
-#	(cd ${WRKSRC}/hlp; ${LN} -sf ../tools/biewhlp/biewhlp; \
-#	${LN} -sf ../tools/lzss/lzss; ./biewhlp biewhlp.prj)
+post-build:
+# Convert Russian text files to UTF-8 encoding (doing it in post-build
+# ensures we have iconv(1) installed, and seems more logical since these
+# files could theoretically also be [re]built)
+	@${SH} -c '${FIND} ${WRKSRC}/doc/*ru* -type f | while read f ; \
+		do iconv -f cp866 -t utf-8 "$${f}" > "$${f}.tmp" && \
+		${MV} "$${f}.tmp" "$${f}" ; done'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
