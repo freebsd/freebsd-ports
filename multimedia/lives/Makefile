@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.10
-PORTREVISION=	2
+PORTVERSION=	1.3.12
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
+MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Video editing system
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		oil-0.3.0:${PORTSDIR}/devel/liboil \
@@ -35,15 +36,13 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		x264:${PORTSDIR}/multimedia/x264 \
 		xmms:${PORTSDIR}/multimedia/xmms
 
-LICENSE=	GPLv3
-
 OPTIONS=	FREI0R "Enable frei0r support" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gnomehack
 USE_SDL=	sdl
 USE_PYTHON=	yes
 USE_PERL5=	yes
@@ -53,7 +52,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=	--disable-ldvgrab
+CONFIGURE_ARGS=	--disable-ldvgrab --disable-doxygen
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -67,10 +66,7 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
-# Restrict to stable versions.
-PORTSCOUT=	limit:^1\.0\.[0-9]*
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_FREI0R)
 BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
@@ -81,15 +77,24 @@ CONFIGURE_ENV+=	ac_cv_header_frei0r_h=no
 PLIST_SUB+=	FREI0R="@comment "
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-ldl ||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; \
-		 /update_with_plugins.*install/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-d alsa|-d oss|' ${WRKSRC}/src/main.c
-.for file in src/audio.c lives-plugins/plugins/decoders/dv_decoder.c
-	@${REINPLACE_CMD} -e 's|off64_t|off_t|g ; \
-		 s|lseek64|lseek|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's| install-docDATA||g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|: install-data-local |: |g' \
+		${WRKSRC}/lives-plugins/weed-plugins/gdk/Makefile.in \
+		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
+	@${REINPLACE_CMD} -e 's|off64_t|off_t|g ; s|lseek64|lseek|g' \
+		${WRKSRC}/src/audio.c \
+		${WRKSRC}/lives-plugins/plugins/decoders/dv_decoder.c \
+		${WRKSRC}/lives-plugins/plugins/decoders/ogg_decoder.h
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/|${LOCALBASE}/lib/|g' \
 		${WRKSRC}/lives-plugins/weed-plugins/frei0r.c
 	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
@@ -112,4 +117,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
