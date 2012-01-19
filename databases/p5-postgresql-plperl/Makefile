@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX=	-plperl
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
 MASTERDIR=	${.CURDIR}/../../databases/postgresql${PGSQL_VER}-server
