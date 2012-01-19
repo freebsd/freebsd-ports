@@ -12,7 +12,7 @@ MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A new C++ interface for PostgreSQL
 
 CONFLICTS=	postgresql-libpqxx-3.*

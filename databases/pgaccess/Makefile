@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
 
 LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk

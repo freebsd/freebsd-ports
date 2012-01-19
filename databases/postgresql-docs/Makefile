@@ -9,7 +9,7 @@ PORTNAME=	postgresql
 PORTREVISION=	0
 PKGNAMESUFFIX=	-docs
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
 MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server

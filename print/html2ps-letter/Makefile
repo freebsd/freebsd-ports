@@ -13,7 +13,7 @@ CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to PostScript converter
 
 USE_GHOSTSCRIPT_BUILD=	yes

@@ -15,7 +15,7 @@ DISTNAME=	Mulberry
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scalable high-performance GUI internet Mail User Agent
 
 NO_WRKSUBDIR=	yes

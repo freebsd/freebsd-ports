@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER?=	girgen@FreeBSD.org
+MAINTAINER?=	crees@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
 CONFLICTS?=	${PORTNAME}-client-[79].* \
