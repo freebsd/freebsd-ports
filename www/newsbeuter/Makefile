@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -13,7 +13,8 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
 
 LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl \
+		json.0:${PORTSDIR}/devel/json-c
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -36,5 +37,7 @@ post-patch:
 				${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,<ncursesw/ncurses.h>,<ncurses.h>,' \
 		${WRKSRC}/src/controller.cpp ${WRKSRC}/src/view.cpp
+	${REINPLACE_CMD} -e 's,fail "ncursesw5",true,; s,fail "libcrypto",true,' \
+		${WRKSRC}/config.sh
 
 .include <bsd.port.post.mk>
