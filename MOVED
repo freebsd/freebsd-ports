@@ -2894,7 +2894,6 @@ databases/mysqlman||2011-11-01|Has expired: apache13 is deprecated, migrate to 2
 databases/mysql-editor||2011-11-01|Has expired: apache13 is deprecated, migrate to 2.2.x+ now
 databases/gnats||2011-11-01|Has expired: security issues
 graphics/poppler-qt||2011-11-01|Poppler upstream removed support for Qt3
-audio/shoutcast||2011-11-01|Unfetchable; website rearranged
 audio/linux-shoutcast||2011-11-01|Unfetchable; website rearranged
 chinese/scim-chewing||2011-11-01|Does not configure
 converters/py-cjkcodecs||2011-11-01|Integrated into every Python version in the tree

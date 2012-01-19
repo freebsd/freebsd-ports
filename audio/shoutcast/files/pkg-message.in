@@ -1,0 +1,13 @@
+**********************************************************************
+
+ SHOUTcast Distributed Network Audio Server is now installed.
+
+ Enable SHOUTcast in /etc/rc.conf with the following line:
+
+   shoutcast_enable="YES"
+
+ Configuration templates are available in %%PREFIX%%/%%ETCDIR%% as
+ *.sample files. A basic installation can be completed by copying
+ sc_serv_basic.conf.sample to sc_serv.conf.
+
+**********************************************************************
