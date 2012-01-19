@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jasperserver
-PORTVERSION=	4.2.1
+PORTVERSION=	4.5.0
 CATEGORIES=	databases print java
 MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1
-DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
+DISTFILES=	jasperreports-server-${PORTVERSION}-src.zip:source1 \
 		jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source1
-EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip
+EXTRACT_ONLY=	jasperreports-server-${PORTVERSION}-src.zip
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Open Source Java Reporting Library
@@ -21,7 +21,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
-SRCDIR=		${WRKDIR}/jasperreports-server-cp-${PORTVERSION}-src
+SRCDIR=		${WRKDIR}/jasperreports-server-${PORTVERSION}-src
 PATCH_WRKSRC=	${SRCDIR}
 WRKSRC=		${SRCDIR}/${PORTNAME}/buildomatic
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
@@ -29,11 +29,12 @@ SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
 JSMAVENARCH=	jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
+JSUPDATE=	4.2.1-4.5.0
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 JAVA_VENDOR?=	freebsd
-JAVA_VERSION?=	1.6
+JAVA_VERSION=	1.6
 USE_ZIP=	yes
 
 # use own DOS2UNIX in pre-patch, not the one from bsd.port.mk!
@@ -54,6 +55,7 @@ SUB_LIST=	DATABASE=${DATABASE} \
 		JSDB=${JSDB} \
 		JSHOME=${JSHOME} \
 		JSTIMEOUT=${JSTIMEOUT} \
+		JSUPDATE=${JSUPDATE} \
 		PORTNAME=${PORTNAME} \
 		PORTSDIR=${PORTSDIR} \
 		PORTVERSION=${PORTVERSION} \
@@ -61,17 +63,18 @@ SUB_LIST=	DATABASE=${DATABASE} \
 
 PLIST_SUB=	DATABASE=${DATABASE} \
 		JDBCLOC=${JDBCLOC} \
+		JSUPDATE=${JSUPDATE} \
 		PORTNAME=${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-#use version <55,jasperserver quartz scheduler won't work properly (tested well with 51)
 .if defined(WITH_MYSQL)
-USE_MYSQL=	yes
+WANT_MYSQL_VER=	55
 DBUSER?=	root
 DBPASS?=
 DATABASE=	mysql
 RUN_DEPENDS+=	${JAVAJARDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+BUILD_DEPENDS+= ${JAVAJARDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 PLIST_SUB+=	JDBC="mysql-connector-java.jar"
 .endif
 
@@ -235,7 +238,7 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME}
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/js-create.ddl ${JSHOME} )
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/quartz.ddl ${JSHOME} )
-	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-4.1.0-4.2.1-ce.sql ${JSHOME} )
+	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-${JSUPDATE}-ce.sql ${JSHOME} )
 	@${INSTALL} -m 440 ${QTZ_PROPERTIES} ${JSHOME}/WEB-INF/
 
 #removed shipped driver from vendor
