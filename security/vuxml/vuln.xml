@@ -47,6 +47,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="553ec4ed-38d6-11e0-94b1-000c29ba66d2">
+    <topic>tomcat -- Denial of Service</topic>
+    <affects>
+      <package>
+        <name>tomcat</name>
+        <range><gt>5.5.0</gt><lt>5.5.35</lt></range>
+      </package>
+      <package>
+        <name>tomcat</name>
+        <range><gt>6.0.0</gt><lt>6.0.34</lt></range>
+      </package>
+      <package>
+        <name>tomcat</name>
+        <range><gt>7.0.0</gt><lt>7.0.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Tomcat security team reports:</p>
+        <blockquote cite="http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.35">
+          <p>Analysis of the recent hash collision vulnerability identified
+            unrelated inefficiencies with Apache Tomcat's handling of large
+            numbers of parameters and parameter values. These inefficiencies could
+            allow an attacker, via a specially crafted request, to cause large
+            amounts of CPU to be used which in turn could create a denial of
+            service. The issue was addressed by modifying the Tomcat parameter
+            handling code to efficiently process large numbers of parameters and
+            parameter values.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0022</cvename>
+      <url>http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.35</url>
+      <url>http://tomcat.apache.org/security-6.html#Fixed_in_Apache_Tomcat_6.0.34</url>
+      <url>http://tomcat.apache.org/security-7.html#Fixed_in_Apache_Tomcat_7.0.23</url>
+    </references>
+    <dates>
+      <discovery>2011-10-21</discovery>
+      <entry>2012-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ac858b0-3fae-11e1-a127-0013d3ccd9df">
     <topic>OpenTTD -- Denial of service (server) via slow read attack</topic>
     <affects>
