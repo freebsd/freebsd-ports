@@ -4,13 +4,21 @@ bin/build-lives-rfx-plugin-multi
 bin/lives
 bin/lives-exe
 bin/lives_avi_encoder
+bin/lives_avi_encoder3
 bin/lives_dirac_encoder
+bin/lives_dirac_encoder3
 bin/lives_gif_encoder
+bin/lives_gif_encoder3
 bin/lives_mkv_encoder
+bin/lives_mkv_encoder3
 bin/lives_mng_encoder
+bin/lives_mng_encoder3
 bin/lives_mpeg_encoder
+bin/lives_mpeg_encoder3
 bin/lives_ogm_encoder
+bin/lives_ogm_encoder3
 bin/lives_theora_encoder
+bin/lives_theora_encoder3
 bin/midistart
 bin/midistop
 bin/sendOSC
@@ -18,10 +26,15 @@ bin/smogrify
 include/weed/weed-effects.h
 include/weed/weed-events.h
 include/weed/weed-host.h
+include/weed/weed-palettes.h
 include/weed/weed-plugin-utils.h
 include/weed/weed-plugin.h
 include/weed/weed-utils.h
 include/weed/weed.h
+libdata/pkgconfig/libweed.pc
+libdata/pkgconfig/libweed-plugin-utils.pc
+libdata/pkgconfig/libweed-utils.pc
+libdata/pkgconfig/libweed_slice.pc
 lib/libweed-plugin-utils.a
 lib/libweed-plugin-utils.la
 lib/libweed-utils.a
@@ -36,8 +49,8 @@ lib/libweed_slice.so
 lib/libweed_slice.so.0
 lib/lives/plugins/decoders/dv_decoder.la
 lib/lives/plugins/decoders/dv_decoder.so
-lib/lives/plugins/decoders/ogg_theora_decoder.la
-lib/lives/plugins/decoders/ogg_theora_decoder.so
+lib/lives/plugins/decoders/ogg_decoder.la
+lib/lives/plugins/decoders/ogg_decoder.so
 lib/lives/plugins/effects/realtime/weed/alien_overlay.la
 lib/lives/plugins/effects/realtime/weed/alien_overlay.so
 lib/lives/plugins/effects/realtime/weed/audio_transition.la
@@ -52,8 +65,8 @@ lib/lives/plugins/effects/realtime/weed/ccorrect.la
 lib/lives/plugins/effects/realtime/weed/ccorrect.so
 lib/lives/plugins/effects/realtime/weed/colorkey.la
 lib/lives/plugins/effects/realtime/weed/colorkey.so
-lib/lives/plugins/effects/realtime/weed/compositor.la
-lib/lives/plugins/effects/realtime/weed/compositor.so
+lib/lives/plugins/effects/realtime/weed/comic.la
+lib/lives/plugins/effects/realtime/weed/comic.so
 lib/lives/plugins/effects/realtime/weed/deinterlace.la
 lib/lives/plugins/effects/realtime/weed/deinterlace.so
 lib/lives/plugins/effects/realtime/weed/edge.la
@@ -62,16 +75,12 @@ lib/lives/plugins/effects/realtime/weed/fg_bg_removal.la
 lib/lives/plugins/effects/realtime/weed/fg_bg_removal.so
 lib/lives/plugins/effects/realtime/weed/fireTV.la
 lib/lives/plugins/effects/realtime/weed/fireTV.so
-%%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r.la
-%%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r.so
-lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.la
-lib/lives/plugins/effects/realtime/weed/gdk_fast_resize.so
+%%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r/frei0r.la
+%%FREI0R%%lib/lives/plugins/effects/realtime/weed/frei0r/frei0r.so
 lib/lives/plugins/effects/realtime/weed/haip.la
 lib/lives/plugins/effects/realtime/weed/haip.so
 lib/lives/plugins/effects/realtime/weed/layout_blends.la
 lib/lives/plugins/effects/realtime/weed/layout_blends.so
-lib/lives/plugins/effects/realtime/weed/libvis.la
-lib/lives/plugins/effects/realtime/weed/libvis.so
 lib/lives/plugins/effects/realtime/weed/lifeTV.la
 lib/lives/plugins/effects/realtime/weed/lifeTV.so
 lib/lives/plugins/effects/realtime/weed/livetext.la
@@ -80,6 +89,8 @@ lib/lives/plugins/effects/realtime/weed/mirrors.la
 lib/lives/plugins/effects/realtime/weed/mirrors.so
 lib/lives/plugins/effects/realtime/weed/multi_blends.la
 lib/lives/plugins/effects/realtime/weed/multi_blends.so
+lib/lives/plugins/effects/realtime/weed/multi_transitions.la
+lib/lives/plugins/effects/realtime/weed/multi_transitions.so
 lib/lives/plugins/effects/realtime/weed/negate.la
 lib/lives/plugins/effects/realtime/weed/negate.so
 lib/lives/plugins/effects/realtime/weed/noise.la
@@ -100,6 +111,8 @@ lib/lives/plugins/effects/realtime/weed/simple_blend.la
 lib/lives/plugins/effects/realtime/weed/simple_blend.so
 lib/lives/plugins/effects/realtime/weed/slide_over.la
 lib/lives/plugins/effects/realtime/weed/slide_over.so
+lib/lives/plugins/effects/realtime/weed/softlight.la
+lib/lives/plugins/effects/realtime/weed/softlight.so
 lib/lives/plugins/effects/realtime/weed/targeted_zoom.la
 lib/lives/plugins/effects/realtime/weed/targeted_zoom.so
 lib/lives/plugins/effects/realtime/weed/textfun.la
@@ -108,11 +121,11 @@ lib/lives/plugins/effects/realtime/weed/tvpic.la
 lib/lives/plugins/effects/realtime/weed/tvpic.so
 lib/lives/plugins/effects/realtime/weed/vertigo.la
 lib/lives/plugins/effects/realtime/weed/vertigo.so
-lib/lives/plugins/effects/realtime/weed/videowall.la
-lib/lives/plugins/effects/realtime/weed/videowall.so
 lib/lives/plugins/effects/realtime/weed/warpTV.la
 lib/lives/plugins/effects/realtime/weed/warpTV.so
 lib/lives/plugins/effects/realtime/weed/xeffect.la
+lib/lives/plugins/effects/realtime/weed/libvisual/libvis.la
+lib/lives/plugins/effects/realtime/weed/libvisual/libvis.so
 lib/lives/plugins/effects/realtime/weed/xeffect.so
 lib/lives/plugins/effects/rendered/blank_frames
 lib/lives/plugins/effects/rendered/blur
@@ -138,6 +151,7 @@ lib/lives/plugins/effects/rendered/gen_clip_from_image
 lib/lives/plugins/effects/rendered/gen_coloured_frames
 lib/lives/plugins/effects/rendered/gen_text
 lib/lives/plugins/effects/rendered/hue_change
+lib/lives/plugins/effects/rendered/image_overlay
 lib/lives/plugins/effects/rendered/jumble
 lib/lives/plugins/effects/rendered/modulate
 lib/lives/plugins/effects/rendered/monochrome
@@ -173,10 +187,12 @@ lib/lives/plugins/encoders/ffmpeg_encoder
 lib/lives/plugins/encoders/mencoder_encoder
 lib/lives/plugins/encoders/mjpegtools_encoder
 lib/lives/plugins/encoders/multi_encoder
+lib/lives/plugins/encoders/multi_encoder3
 lib/lives/plugins/encoders/pdf_encoder
 lib/lives/plugins/encoders/qtutils_encoder
 lib/lives/plugins/encoders/sswf_encoder
 lib/lives/plugins/encoders/transcode_encoder
+lib/lives/plugins/encoders/x264_encoder
 lib/lives/plugins/playback/video/SDL.la
 lib/lives/plugins/playback/video/SDL.so
 lib/lives/plugins/playback/video/lives2lives_stream.la
@@ -203,6 +219,20 @@ share/applications/LiVES.desktop
 %%DATADIR%%/icons/fullscreen.png
 %%DATADIR%%/icons/loop.png
 %%DATADIR%%/icons/playsel.png
+%%DATADIR%%/icons/pref_decoding.png
+%%DATADIR%%/icons/pref_directory.png
+%%DATADIR%%/icons/pref_effects.png
+%%DATADIR%%/icons/pref_encoding.png
+%%DATADIR%%/icons/pref_gui.png
+%%DATADIR%%/icons/pref_jack.png
+%%DATADIR%%/icons/pref_midi.png
+%%DATADIR%%/icons/pref_misc.png
+%%DATADIR%%/icons/pref_multitrack.png
+%%DATADIR%%/icons/pref_net.png
+%%DATADIR%%/icons/pref_playback.png
+%%DATADIR%%/icons/pref_record.png
+%%DATADIR%%/icons/pref_themes.png
+%%DATADIR%%/icons/pref_warning.png
 %%DATADIR%%/icons/sepwin.png
 %%DATADIR%%/icons/volume_mute.png
 %%DATADIR%%/icons/zoom-in.png
@@ -231,6 +261,7 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/gen_coloured_frames.script
 %%DATADIR%%/plugins/effects/RFXscripts/gen_text.script
 %%DATADIR%%/plugins/effects/RFXscripts/hue_change.script
+%%DATADIR%%/plugins/effects/RFXscripts/image_overlay.script
 %%DATADIR%%/plugins/effects/RFXscripts/jumble.script
 %%DATADIR%%/plugins/effects/RFXscripts/modulate.script
 %%DATADIR%%/plugins/effects/RFXscripts/monochrome.script
@@ -261,6 +292,7 @@ share/applications/LiVES.desktop
 %%DATADIR%%/plugins/effects/RFXscripts/trim_frames.script
 %%DATADIR%%/plugins/effects/RFXscripts/tunnel.script
 %%DATADIR%%/plugins/effects/RFXscripts/wave.script
+%%DATADIR%%/resources/vidtest.avi
 %%DATADIR%%/themes/camera/frame.jpg
 %%DATADIR%%/themes/camera/main.jpg
 %%DATADIR%%/themes/crayons/frame.jpg
@@ -274,22 +306,35 @@ share/applications/LiVES.desktop
 %%DATADIR%%/themes/lives-splash.png
 %%DATADIR%%/themes/pinks/frame.jpg
 %%DATADIR%%/themes/pinks/main.jpg
-share/locale/cs/LC_MESSAGES/lives.mo
-share/locale/de_DE/LC_MESSAGES/lives.mo
-share/locale/es/LC_MESSAGES/lives.mo
-share/locale/fr/LC_MESSAGES/lives.mo
-share/locale/he/LC_MESSAGES/lives.mo
-share/locale/hu/LC_MESSAGES/lives.mo
-share/locale/it/LC_MESSAGES/lives.mo
-share/locale/ja/LC_MESSAGES/lives.mo
-share/locale/nl_NL/LC_MESSAGES/lives.mo
-share/locale/pl/LC_MESSAGES/lives.mo
-share/locale/pt/LC_MESSAGES/lives.mo
-share/locale/pt_BR/LC_MESSAGES/lives.mo
-share/locale/ru/LC_MESSAGES/lives.mo
-share/locale/sk/LC_MESSAGES/lives.mo
-share/locale/tr/LC_MESSAGES/lives.mo
-share/locale/zh_CN/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/da/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/es/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/et/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/he/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/it/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/nl_NL/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/te/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/uz/LC_MESSAGES/lives.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/lives.xpm
 @dirrm %%DATADIR%%/themes/pinks
 @dirrm %%DATADIR%%/themes/editor
@@ -298,6 +343,7 @@ share/pixmaps/lives.xpm
 @dirrm %%DATADIR%%/themes/crayons
 @dirrm %%DATADIR%%/themes/camera
 @dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/plugins/effects/RFXscripts
 @dirrm %%DATADIR%%/plugins/effects
 @dirrm %%DATADIR%%/plugins
@@ -309,14 +355,20 @@ share/pixmaps/lives.xpm
 @dirrm lib/lives/plugins/playback
 @dirrm lib/lives/plugins/encoders
 @dirrm lib/lives/plugins/effects/rendered
+@dirrm lib/lives/plugins/effects/realtime/weed/libvisual
+%%FREI0R%%@dirrm lib/lives/plugins/effects/realtime/weed/frei0r
 @dirrm lib/lives/plugins/effects/realtime/weed
 @dirrm lib/lives/plugins/effects/realtime
 @dirrm lib/lives/plugins/effects
 @dirrm lib/lives/plugins/decoders
 @dirrm lib/lives/plugins
 @dirrm lib/lives
-@dirrmtry share/locale/nl_NL/LC_MESSAGES
-@dirrmtry share/locale/nl_NL
-@dirrmtry share/locale/de_DE/LC_MESSAGES
-@dirrmtry share/locale/de_DE
-@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/applications
