@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	projects/gborg/pgeasy/stable
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	An easy-to-use C interface to PostgreSQL
 
 USE_AUTOTOOLS=	libtool

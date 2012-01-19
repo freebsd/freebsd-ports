@@ -13,7 +13,7 @@ MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION:C/.([0-9][0-9][0-9]*)/-\1/g}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The Java JDBC implementation for PostgreSQL
 
 DIST_SUBDIR=	postgresql

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	projects/gborg/pgperl/stable
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	An interface for using perl5 to access PostgreSQL databases
 
 USE_PGSQL=	yes

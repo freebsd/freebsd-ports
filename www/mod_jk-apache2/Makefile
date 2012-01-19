@@ -11,7 +11,7 @@ PORTREVISION=	2
 PORTEPOCH=	0
 LATEST_LINK=	mod_jk-ap2
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache2 JK module for connecting to Tomcat using AJP1X
 
 MAKE_JOBS_SAFE=  yes

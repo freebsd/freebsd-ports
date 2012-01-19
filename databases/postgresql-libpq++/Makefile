@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	projects/gborg/libpqpp/stable
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	C++ interface for  PostgreSQL
 
 USE_PGSQL=	YES

@@ -9,7 +9,7 @@ PORTNAME=	postgresql
 PKGNAMESUFFIX=	-contrib
 CATEGORIES=	databases
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 USE_PGSQL=	yes

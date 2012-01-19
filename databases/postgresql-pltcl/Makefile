@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	databases tcl
 PKGNAMESUFFIX=	-pltcl
 
-MAINTAINER=	girgen@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A module for using Tcl to write SQL functions
 
 MASTERDIR=	${.CURDIR}/../../databases/postgresql${PGSQL_VER}-server
