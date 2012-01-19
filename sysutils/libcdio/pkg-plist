@@ -13,6 +13,7 @@ include/cdio/cd_types.h
 include/cdio/cdda.h
 include/cdio/cdio.h
 include/cdio/cdio_config.h
+include/cdio/cdio_unconfig.h
 include/cdio/cdtext.h
 include/cdio/device.h
 include/cdio/disc.h
@@ -22,6 +23,10 @@ include/cdio/ecma_167.h
 include/cdio/iso9660.h
 include/cdio/logging.h
 include/cdio/mmc.h
+include/cdio/mmc_cmds.h
+include/cdio/mmc_hl_cmds.h
+include/cdio/mmc_ll_cmds.h
+include/cdio/mmc_util.h
 include/cdio/paranoia.h
 include/cdio/posix.h
 include/cdio/read.h
