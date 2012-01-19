@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: shoutcast
+# REQUIRE: LOGIN
+# BEFORE:
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable SHOUTcast:
+# shoutcast_enable (bool):    Set to "NO" by default.
+#                             Set it to "YES" to enable SHOUTcast.
+# shoutcast_configfile (str): Set to "%%PREFIX%%/%%ETCDIR%%/sc_serv.conf" by default.
+#
+
+. /etc/rc.subr
+
+name="shoutcast"
+rcvar=`set_rcvar`
+shoutcast_logfile="/var/log/sc_serv.log"
+
+start_cmd="shoutcast_startcmd"
+stop_cmd="shoutcast_stopcmd"
+
+[ -z "${shoutcast_enable}" ] && shoutcast_enable="NO"
+[ -z "${shoutcast_configfile}" ] && shoutcast_configfile="%%PREFIX%%/%%ETCDIR%%/sc_serv.conf"
+
+load_rc_config "${name}"
+
+required_files="${shoutcast_configfile}"
+
+shoutcast_startcmd() {
+  touch ${shoutcast_logfile}
+  chown %%SHOUTCASTUSER%%:wheel ${shoutcast_logfile}
+  chmod 0640 ${shoutcast_logfile}
+  su %%SHOUTCASTUSER%% -c "cd %%SHOUTCASTDIR%% && %%PREFIX%%/sbin/sc_serv ${shoutcast_configfile} >/dev/null 2>&1 &"
+}
+
+shoutcast_stopcmd() {
+  killall sc_serv
+}
+
+run_rc_command "$1"
