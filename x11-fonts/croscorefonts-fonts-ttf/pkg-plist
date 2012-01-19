@@ -1,0 +1,18 @@
+%%FONTDIR%%/Arimo-Bold.ttf
+%%FONTDIR%%/Arimo-BoldItalic.ttf
+%%FONTDIR%%/Arimo-Italic.ttf
+%%FONTDIR%%/Arimo-Regular.ttf
+%%FONTDIR%%/Cousine-Bold.ttf
+%%FONTDIR%%/Cousine-BoldItalic.ttf
+%%FONTDIR%%/Cousine-Italic.ttf
+%%FONTDIR%%/Cousine-Regular.ttf
+%%FONTDIR%%/LICENSE
+%%FONTDIR%%/SymbolNeu.ttf
+%%FONTDIR%%/Tinos-Bold.ttf
+%%FONTDIR%%/Tinos-BoldItalic.ttf
+%%FONTDIR%%/Tinos-Italic.ttf
+%%FONTDIR%%/Tinos-Regular.ttf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTDIR%%
