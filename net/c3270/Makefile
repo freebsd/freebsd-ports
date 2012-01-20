@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c3270
-PORTVERSION=	3.3.11ga6
+PORTVERSION=	3.3.12ga7
 CATEGORIES=	net
 MASTER_SITES=	http://x3270.bgp.nu/download/
 EXTRACT_SUFX=	-src.tgz
