@@ -1,0 +1,6 @@
+bin/pcsc_scan
+bin/ATR_analysis
+bin/gscriptor
+bin/scriptor
+share/pcsc/smartcard_list.txt
+@dirrm share/pcsc
