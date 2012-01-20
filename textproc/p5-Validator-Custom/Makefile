@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validator-Custom
-PORTVERSION=	0.1425
+PORTVERSION=	0.1426
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KIMOTO
@@ -17,6 +17,9 @@ COMMENT=	Validator::Custom for simple data validation
 
 BUILD_DEPENDS=	p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple
 RUN_DEPENDS=	p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple
+
+TEST_DEPENDS=	p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
+		p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
 
