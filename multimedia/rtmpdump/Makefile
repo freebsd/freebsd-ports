@@ -5,25 +5,27 @@
 # $FreeBSD$
 
 PORTNAME=	rtmpdump
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://rtmpdump.mplayerhq.hu/download/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A tool to download RTMP streams
 
-MAN1=		rtmpdump.1
-MAN3=		librtmp.3
-MAN8=		rtmpgw.8
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 MAKE_ENV=	THREADLIB="${PTHREAD_LIBS}"
 CFLAGS+=	${PTHREAD_CFLAGS}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PORTDOCS=	ChangeLog README
+
+MAN1=		rtmpdump.1
+MAN3=		librtmp.3
+MAN8=		rtmpgw.8
 
 .include <bsd.port.pre.mk>
 

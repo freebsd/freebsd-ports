@@ -1,36 +1,10 @@
---- librtmp/Makefile.orig	2010-07-01 05:01:28.000000000 +0900
-+++ librtmp/Makefile	2011-01-05 23:18:28.000000000 +0900
-@@ -1,10 +1,10 @@
- VERSION=v2.3
+--- librtmp/Makefile.orig	2011-07-12 09:24:33.000000000 +0900
++++ librtmp/Makefile	2012-01-20 10:06:27.000000000 +0900
+@@ -1,19 +1,21 @@
+ VERSION=v2.4
  
 -prefix=/usr/local
-+prefix=${PREFIX}
- 
--CC=$(CROSS_COMPILE)gcc
--LD=$(CROSS_COMPILE)ld
--AR=$(CROSS_COMPILE)ar
-+#CC=$(CROSS_COMPILE)gcc
-+#LD=$(CROSS_COMPILE)ld
-+#AR=$(CROSS_COMPILE)ar
- 
- SYS=posix
- CRYPTO=OPENSSL
-@@ -14,7 +14,7 @@
- DEF_GNUTLS=-DUSE_GNUTLS
- DEF_=-DNO_CRYPTO
- REQ_GNUTLS=gnutls
--REQ_OPENSSL=libssl,libcrypto
-+#REQ_OPENSSL=libssl,libcrypto
- LIBZ=-lz
- LIBS_posix=
- LIBS_mingw=-lws2_32 -lwinmm -lgdi32
-@@ -39,15 +39,18 @@
- 
- DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
- OPT=-O2
--CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT) $(SO_DEF)
-+#CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT) $(SO_DEF)
-+CFLAGS+= $(DEF) $(SO_DEF)
++prefix=$(PREFIX)
  
  incdir=$(prefix)/include/librtmp
  bindir=$(prefix)/bin
@@ -43,16 +17,41 @@
 +LIBDATADIR=$(DESTDIR)$(libdatadir)
  MANDIR=$(DESTDIR)$(mandir)
  
- OBJS=rtmp.o log.o amf.o hashswf.o parseurl.o
-@@ -72,15 +75,18 @@
+-CC=$(CROSS_COMPILE)gcc
+-LD=$(CROSS_COMPILE)ld
+-AR=$(CROSS_COMPILE)ar
++CC?=$(CROSS_COMPILE)gcc
++LD?=$(CROSS_COMPILE)ld
++AR?=$(CROSS_COMPILE)ar
  
- librtmp.pc: librtmp.pc.in Makefile
- 	sed -e "s;@prefix@;$(prefix);" -e "s;@VERSION@;$(VERSION);" \
--		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" librtmp.pc.in > $@
-+		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" \
+ SYS=posix
+ CRYPTO=OPENSSL
+@@ -23,7 +25,7 @@
+ DEF_GNUTLS=-DUSE_GNUTLS
+ DEF_=-DNO_CRYPTO
+ REQ_GNUTLS=gnutls
+-REQ_OPENSSL=libssl,libcrypto
++#REQ_OPENSSL=libssl,libcrypto
+ LIBZ=-lz
+ LIBS_posix=
+ LIBS_darwin=
+@@ -67,7 +69,8 @@
+ 
+ DEF=-DRTMPDUMP_VERSION=\"$(VERSION)\" $(CRYPTO_DEF) $(XDEF)
+ OPT=-O2
+-CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT) $(SO_DEF)
++#CFLAGS=-Wall $(XCFLAGS) $(INC) $(DEF) $(OPT) $(SO_DEF)
++CFLAGS=$(DEF) $(OPT) $(SO_DEF)
+ LDFLAGS=$(XLDFLAGS)
+ 
+ 
+@@ -95,15 +98,17 @@
+ 	sed -e "s;@prefix@;$(prefix);" -e "s;@libdir@;$(libdir);" \
+ 		-e "s;@VERSION@;$(VERSION);" \
+ 		-e "s;@CRYPTO_REQ@;$(CRYPTO_REQ);" \
 +		-e "s;@OPENSSLLIB@;$(OPENSSLLIB);" \
 +		-e "s;@OPENSSLINC@;$(OPENSSLINC);" \
-+		librtmp.pc.in > $@
+ 		-e "s;@PRIVATE_LIBS@;$(PRIVATE_LIBS);" librtmp.pc.in > $@
  
  install:	install_base $(SO_INST)
  
@@ -65,4 +64,4 @@
 +	cp librtmp.pc $(LIBDATADIR)/pkgconfig
  	cp librtmp.3 $(MANDIR)/man3
  
- install_so.0:	librtmp.so.0
+ install_so:	librtmp.$(SO_EXT)
