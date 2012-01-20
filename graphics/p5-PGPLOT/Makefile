@@ -7,6 +7,7 @@
 
 PORTNAME=	PGPLOT
 PORTVERSION=	2.21
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KGB
@@ -20,7 +21,7 @@ LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 
 INSTALL_TARGET=	pure_install
 SCRIPTS_ENV=	PERL=${PERL}
-USE_FORTRAN=	g77
+USE_FORTRAN=	yes
 USE_PERL5=	yes
 
 MAN3=		PGPLOT.3
@@ -30,6 +31,12 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 post-install:
 	${MKDIR} ${EXAMPLESDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE test* ${EXAMPLESDIR}/
+.endif
+
+.if defined(MAINTAINER_MODE) && !defined(BATCH)
+check regression-test test: build
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	${_MAKE_JOBS} ${MAKE_ARGS} test
 .endif
 
 .include <bsd.port.mk>
