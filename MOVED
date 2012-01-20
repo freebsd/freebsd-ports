@@ -3224,3 +3224,4 @@ sysutils/rsyslog4-snmp|rsyslog5-snmp|2012-01-16|EOL Upstream
 net-im/gicq||2012-01-18|Runtime is broken. Unmaintained upstream
 net-im/libicq||2012-01-18|Runtime is broken. Unmaintained upstream
 devel/luajit|lang/luajit|2012-01-19|Compilers typically live in the lang category
+devel/p5-DBIx-Class-Schema-PopulateMore||2012-01-20|Removed
