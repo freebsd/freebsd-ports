@@ -10,7 +10,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	${XXE_VERSION}
 
-MAINTAINER=	saper@SAPER.INFO
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	An xml2rfc configuration for XMLMind XML Editor
 
 RUN_DEPENDS=	xxe:${PORTSDIR}/editors/xxe
