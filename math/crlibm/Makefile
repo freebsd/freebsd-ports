@@ -10,7 +10,7 @@ DISTVERSION=	1.0beta4
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://lipforge.ens-lyon.fr/frs/download.php/%SUBDIR%/:1,2,3 \
-		LOCAL/bf:4
+		LOCAL/bf/crlibm:4
 MASTER_SITE_SUBDIR=	162/:1 153/:2 154/:3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1,4
 .if make(makesum) || !defined(NOPORTDOCS)
