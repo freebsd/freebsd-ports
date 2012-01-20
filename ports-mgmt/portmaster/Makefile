@@ -14,8 +14,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
 
-LICENSE=	BSD
-
 OPTIONS=	BASH "Install programmable completions for Bash" off \
 		ZSH "Install programmable completions for zsh" off
 
@@ -26,8 +24,9 @@ MAN8=		portmaster.8
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BASH)
-PLIST_FILES+=	share/portmaster/bash-completions
-PLIST_DIRS+=	share/portmaster
+PORTREVISION=	1
+PLIST_FILES+=	etc/bash_completion.d/portmaster
+PLIST_DIRSTRY+=	etc/bash_completion.d
 .endif
 
 .if defined(WITH_ZSH)
@@ -50,8 +49,9 @@ do-install:
 
 post-install:
 .if defined(WITH_BASH)
-	${MKDIR} ${PREFIX}/share/portmaster
-	${INSTALL_DATA} ${WRKSRC}/bash-completions ${PREFIX}/share/portmaster
+	${MKDIR} ${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/bash-completions \
+		${PREFIX}/etc/bash_completion.d/portmaster.sh
 .endif
 .if defined(WITH_ZSH)
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
