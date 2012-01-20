@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Development version of math/atlas
 
+IGNORE =	: dependent ports have been altered to link with math/atlas -- please\
+use that port instead of math/atlas-devel, while the latter is being revised
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
 USE_BZIP2=	yes
