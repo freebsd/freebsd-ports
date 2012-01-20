@@ -477,6 +477,7 @@ lib/LLVMHello.so
 lib/libCompilerDriver.a
 lib/libEnhancedDisassembly.a
 lib/libEnhancedDisassembly.so
+lib/libLLVM-2.9.so
 lib/libLLVMARMAsmParser.a
 lib/libLLVMARMAsmPrinter.a
 lib/libLLVMARMCodeGen.a
