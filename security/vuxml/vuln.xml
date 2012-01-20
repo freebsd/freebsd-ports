@@ -47,6 +47,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5c5f19ce-43af-11e1-89b4-001ec9578670">
+    <topic>OpenSSL -- DTLS Denial of Service</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.0g</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Team reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20120118.txt">
+	  <p>A flaw in the fix to CVE-2011-4108 can be exploited in a
+	     denial of service attack. Only DTLS applications using
+	     OpenSSL 1.0.0f and 0.9.8s are affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0050</cvename>
+      <url>http://www.openssl.org/news/secadv_20120118.txt</url>
+    </references>
+    <dates>
+      <discovery>2012-01-18</discovery>
+      <entry>2012-01-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd698b76-42f7-11e1-a1b6-14dae9ebcf89">
     <topic>asterisk -- SRTP Video Remote Crash Vulnerability</topic>
     <affects>
