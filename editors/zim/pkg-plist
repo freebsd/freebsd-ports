@@ -122,6 +122,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/attachmentbrowser.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/automount.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/automount.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/automount.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/calendar.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/calendar.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/calendar.pyo
@@ -222,6 +225,8 @@ share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-zim-notebook.png
 share/icons/hicolor/scalable/apps/zim.svg
 share/icons/hicolor/scalable/mimetypes/application-x-zim-notebook.svg
 share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-zim-notebook.svg
+share/icons/ubuntu-mono-dark/apps/22/zim-panel.svg
+share/icons/ubuntu-mono-light/apps/22/zim-panel.svg
 share/locale/ca/LC_MESSAGES/zim.mo
 share/locale/cs/LC_MESSAGES/zim.mo
 share/locale/da/LC_MESSAGES/zim.mo
@@ -231,6 +236,7 @@ share/locale/en_GB/LC_MESSAGES/zim.mo
 share/locale/es/LC_MESSAGES/zim.mo
 share/locale/et/LC_MESSAGES/zim.mo
 share/locale/fr/LC_MESSAGES/zim.mo
+share/locale/gl/LC_MESSAGES/zim.mo
 share/locale/he/LC_MESSAGES/zim.mo
 share/locale/hu/LC_MESSAGES/zim.mo
 share/locale/it/LC_MESSAGES/zim.mo
@@ -285,6 +291,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Help/Wiki_Syntax.txt
 %%DATADIR%%/manual/Plugins.txt
 %%DATADIR%%/manual/Plugins/Arithmetic.txt
+%%DATADIR%%/manual/Plugins/Automount.txt
 %%DATADIR%%/manual/Plugins/Calendar.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor/diagram.png
@@ -367,6 +374,12 @@ share/pixmaps/zim.png
 @dirrmtry share/mime/packages
 @dirrmtry share/mime/application
 @dirrmtry share/mime
+@dirrm share/icons/ubuntu-mono-light/apps/22
+@dirrm share/icons/ubuntu-mono-light/apps
+@dirrm share/icons/ubuntu-mono-light
+@dirrm share/icons/ubuntu-mono-dark/apps/22
+@dirrm share/icons/ubuntu-mono-dark/apps
+@dirrm share/icons/ubuntu-mono-dark
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/zim/stores
 @dirrm %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol
