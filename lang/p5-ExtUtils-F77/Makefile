@@ -7,6 +7,7 @@
 
 PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,15 +16,13 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Helps link C programs with Fortran subroutines
 
 PERL_CONFIGURE=	yes
+USE_FORTRAN=	yes
 
 MAN3=		ExtUtils::F77.3
 
-GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
-F2CLIB=		-lgfortran
-
 post-patch:
-	@${REINPLACE_CMD} -e "s/'gfortran44'/'${FC}'/" \
-			  -e "s/'-O2'/'${CFLAGS}'/" \
+	@${REINPLACE_CMD} -e "s|'gfortran44'|'${FC}'|" \
+			  -e "s|'-O2'|'${CFLAGS}'|" \
 			  ${WRKSRC}/F77.pm
 
 .include <bsd.port.mk>
