@@ -12,11 +12,14 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTROUT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Minimalist Object Orientation (with Moose compatiblity)
 
+BUILD_DEPENDS=	p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures \
+		p5-Class-Method-Modifiers>=1.05:${PORTSDIR}/devel/p5-Class-Method-Modifiers
 RUN_DEPENDS=	p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures \
 		p5-Class-Method-Modifiers>=1.05:${PORTSDIR}/devel/p5-Class-Method-Modifiers
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
