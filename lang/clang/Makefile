@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LLVM_SOURCE}
 EXTRACT_ONLY=	${LLVM_SOURCE}
@@ -24,7 +23,7 @@ CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
 LLVM_NAME=	llvm-${PORTVERSION}
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
 
-WRKSRC=		${WRKDIR}/${LLVM_NAME}
+WRKSRC=		${WRKDIR}/${LLVM_NAME}.src
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
@@ -45,9 +44,12 @@ USE_PERL5=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	LLVMIncDir=${LOCALBASE}/include \
+MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/Release/bin/clang-tblgen \
+		LLVMIncDir=${LOCALBASE}/include \
 		LLVMToolDir=${LOCALBASE}/bin \
 		LLVMLibDir=${LOCALBASE}/lib
+
+CONFIGURE_ARGS+=	--enable-shared
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -58,6 +60,8 @@ CONFIGURE_ARGS+=	--enable-optimized
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 MAN1=		clang.1
 
@@ -70,7 +74,7 @@ BROKEN=		Does not compile on sparc64
 post-extract:
 	cd ${WRKSRC}/tools && \
 	    tar xf ${DISTDIR}/${CLANG_SOURCE} && \
-	    ${MV} ${CLANG_NAME} clang
+	    ${MV} ${CLANG_NAME}.src clang
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
@@ -86,8 +90,17 @@ post-patch:
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
 pre-build:
-	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
-	cd ${WRKSRC}/utils/unittest && ${GMAKE}
+	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen \
+	    ${WRKSRC}/include/llvm/
+	${MKDIR} ${WRKSRC}/Release/lib
+	${LN} -sf ${LOCALBASE}/lib/libLLVM-${PORTVERSION}.so \
+	    ${WRKSRC}/Release/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMTableGen.a \
+	    ${WRKSRC}/Release/lib/
+	${LN} -sf ${LOCALBASE}/lib/libLLVMSupport.a \
+	    ${WRKSRC}/Release/lib/
+	cd ${WRKSRC}/utils/unittest/UnitTestMain && ${GMAKE}
+	cd ${WRKSRC}/utils/unittest/googletest && ${GMAKE}
 
 .if defined(NOPORTDOCS)
 post-build:
@@ -129,6 +142,8 @@ PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
 			bin/clang \
 			bin/clang++ \
+			bin/clang-tblgen \
+			bin/c-index-test \
 			bin/scan-build \
 			bin/scan-view \
 			lib/libclang*
@@ -145,7 +160,7 @@ build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
-	    ${SORT} >> ${PLIST}
+	     ${SED} -e 's|${PORTVERSION}|%%PORTVERSION%%|' | ${SORT} >> ${PLIST}
 	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
 	     -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
@@ -154,6 +169,7 @@ build-plist:
 	    ${SED} -e 's|^|%%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
 	cd ${PREFIX} && \
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
+	    ${SED} -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
 	cd ${PYTHONPREFIX_SITELIBDIR} && \
 	    ${FIND} ${PLIST_PYDIR_LIST} -type d | ${SORT} -r | \
