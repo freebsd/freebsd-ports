@@ -7,6 +7,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.47
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
@@ -15,8 +16,8 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	A modern-style functional programming language
 
 LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
-BUILD_DEPENDS+=	llvm>=2.6:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	llvm>=2.6:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llvm29>=2.9<2.10.*:${PORTSDIR}/devel/llvm29
+RUN_DEPENDS+=	llvm29>=2.9<2.10.*:${PORTSDIR}/devel/llvm29
 
 MAN1=		pure.1
 LICENSE=	LGPL3
