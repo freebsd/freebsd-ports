@@ -1,0 +1,32 @@
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Find.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Env.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Date.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator/Index.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/FriendList.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/CompanyPerson.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/Company.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/EmploymentHistory.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/Gender.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result/Person.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet/Person.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Visitor.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Command.pm
+%%SITE_PERL%%/DBIx/Class/Schema/PopulateMore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore/.packlist
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/Result
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema/ResultSet
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test/Schema
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Test
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore/Inflator
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/PopulateMore
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/PopulateMore
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
