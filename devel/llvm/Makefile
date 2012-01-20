@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
@@ -24,12 +23,17 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	llvm-devel-[23]* llvm-etoile-2*
 
+WRKSRC=		${WRKDIR}/${DISTNAME}.src
+
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
+
+CONFIGURE_ARGS+=	--enable-shared
+MAKE_ARGS+=		REQUIRES_RTTI=1
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -48,8 +52,7 @@ CONFIGURE_ARGS+=	--disable-docs
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
-		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
-		llvmgxx.1 opt.1 tblgen.1
+		llvm-prof.1 llvm-ranlib.1 opt.1 tblgen.1
 
 .include <bsd.port.pre.mk>
 
@@ -70,6 +73,8 @@ CONFIGURE_ARGS+=	--enable-assertions
 .else
 CONFIGURE_ARGS+=	--disable-assertions
 .endif
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_docsdir.*:=\).*$$|\1${DOCSDIR}|g' \
@@ -103,21 +108,20 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llvm* \
 			bin/macho-dump \
 			bin/opt \
-			bin/tblgen \
 			lib/BugpointPasses.so \
-			lib/libCompilerDriver.a \
-			lib/libEnhancedDisassembly.so \
-			lib/libEnhancedDisassembly.a \
 			lib/LLVMHello.so \
+			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
-			lib/profile_rt.so
+			lib/libprofile_rt.a \
+			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
+	    ${SED} -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
