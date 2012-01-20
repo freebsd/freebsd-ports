@@ -14,8 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 
-LICENSE=	GPLv2
-
 USE_GNOME=		pygtk2
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
