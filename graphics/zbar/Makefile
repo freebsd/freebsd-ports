@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--with-jpeg=no
 
 .if defined(WITH_X11)
 USE_XORG=	ice sm x11 xau xdmcp xext xv
-LIBDEPENDS+=	xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS+=	xcb.2:${PORTSDIR}/x11/libxcb
 CONFIGURE_ARGS+=	--with-x=yes
 .else
 CONFIGURE_ARGS+=	--with-x=no --without-xshm --without-xv
