@@ -165,6 +165,8 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>ruby</name>
 	<name>ruby+nopthreads</name>
+	<name>ruby+nopthreads+oniguruma</name>
+	<name>ruby+oniguruma</name>
 	<range><lt>1.8.7.357,1</lt></range>
       </package>
       <package>
@@ -203,7 +205,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-12-28</discovery>
       <entry>2012-01-16</entry>
-      <modified>2012-01-16</modified>
+      <modified>2012-01-20</modified>
     </dates>
   </vuln>
 
