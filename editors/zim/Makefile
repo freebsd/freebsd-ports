@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.53
-PORTREVISION=	1
+PORTVERSION=	0.54
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
