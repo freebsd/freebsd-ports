@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope213
-PORTVERSION=	2.13.11
+PORTVERSION=	2.13.12
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Zope2-${PORTVERSION}
@@ -87,7 +87,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}AccessControl>=2.13.2:${PORTSDIR}/security/p
 USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Zope2
-USE_ZIP=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	instance-message package-pkg-message pkg-message
