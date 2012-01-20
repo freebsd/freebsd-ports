@@ -17,17 +17,18 @@ USE_AUTOTOOLS=	libtool
 USE_PERL5_BUILD=yes
 USE_GNOME=	ltverhack:9
 
-OPTIONS=	SIMD "Enable autodetection of SIMD features (MMX, SSE2, VMX)" off
+OPTIONS=	SIMD "Enable SIMD features autodetection (MMX, SSE2, VMX)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_SIMD)
 CONFIGURE_ARGS=	--disable-vmx --disable-arm-simd
-
-.if ${ARCH:Namd64}
-CONFIGURE_ARGS+=	--disable-mmx --disable-sse2
-.endif
-
+. if ! ${MACHINE_CPU:Mmmx}
+CONFIGURE_ARGS+=	--disable-mmx
+. endif
+. if ! ${MACHINE_CPU:Msse2}
+CONFIGURE_ARGS+=	--disable-sse2
+. endif
 .endif
 
 post-patch:
