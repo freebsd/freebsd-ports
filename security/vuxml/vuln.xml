@@ -47,6 +47,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dd698b76-42f7-11e1-a1b6-14dae9ebcf89">
+    <topic>asterisk -- SRTP Video Remote Crash Vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>1.8.8.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk10</name>
+	<range><lt>10.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="http://downloads.asterisk.org/pub/security/AST-2012-001.html">
+	  <p>An attacker attempting to negotiate a secure video stream can crash
+	    Asterisk if video support has not been enabled and the res_srtp
+	    Asterisk module is loaded.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2012-001.html</url>
+    </references>
+    <dates>
+      <discovery>2012-01-15</discovery>
+      <entry>2011-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="553ec4ed-38d6-11e0-94b1-000c29ba66d2">
     <topic>tomcat -- Denial of Service</topic>
     <affects>
