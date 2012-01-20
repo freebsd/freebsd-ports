@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm29
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	llvm-${PORTVERSION}
@@ -23,7 +24,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-devel-[23]* llvm-etoile-2*
+CONFLICTS=	llvm-*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -31,6 +32,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 MAKE_JOBS_SAFE=	yes
+
+CONFIGURE_ARGS+=	--enable-shared
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
