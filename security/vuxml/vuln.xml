@@ -78,7 +78,7 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="553ec4ed-38d6-11e0-94b1-000c29ba66d2">
+  <vuln vid="7f5ccb1d-439b-11e1-bc16-0023ae8e59f0">
     <topic>tomcat -- Denial of Service</topic>
     <affects>
       <package>
