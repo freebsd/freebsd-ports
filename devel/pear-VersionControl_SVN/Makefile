@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	VersionControl_SVN
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Wrapper interface for the Subversion command-line client
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
+USE_PHP=	yes
+IGNORE_WITH_PHP=4
+
+BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
+		pear-XML_Parser>=1.3.4:${PORTSDIR}/devel/pear-XML_Parser
+RUN_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \
+		pear-XML_Parser>=1.3.4:${PORTSDIR}/devel/pear-XML_Parser
 
 CATEGORY=	VersionControl_SVN
 FILES=		SVN.php \
