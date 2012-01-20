@@ -8780,7 +8780,7 @@ luabind                         ports/devel/luabind
 luaexpat                        ports/textproc/luaexpat
 luafilesystem                   ports/devel/luafilesystem
 luajava                         ports/devel/luajava
-luajit                          ports/devel/luajit
+luajit                          ports/lang/luajit
 luasec                          ports/security/luasec
 luasocket                       ports/net/luasocket
 luasql-mysql                    ports/databases/luasql-mysql
@@ -14274,6 +14274,7 @@ p5-Term-Title                   ports/devel/p5-Term-Title
 p5-Term-UI                      ports/devel/p5-Term-UI
 p5-Term-VT102                   ports/devel/p5-Term-VT102
 p5-Term-Visual                  ports/devel/p5-Term-Visual
+p5-Test-Aggregate               ports/devel/p5-Test-Aggregate
 p5-Test-Assertions              ports/devel/p5-Test-Assertions
 p5-Test-Base                    ports/devel/p5-Test-Base
 p5-Test-Benchmark               ports/devel/p5-Test-Benchmark
@@ -18749,6 +18750,7 @@ p5-term-title                   ports/devel/p5-Term-Title
 p5-term-ui                      ports/devel/p5-Term-UI
 p5-term-visual                  ports/devel/p5-Term-Visual
 p5-term-vt102                   ports/devel/p5-Term-VT102
+p5-test-aggregate               ports/devel/p5-Test-Aggregate
 p5-test-assertions              ports/devel/p5-Test-Assertions
 p5-test-base                    ports/devel/p5-Test-Base
 p5-test-benchmark               ports/devel/p5-Test-Benchmark
@@ -24822,6 +24824,7 @@ shootingstar                    ports/games/shootingstar
 shorten                         ports/audio/shorten
 shotwell                        ports/graphics/shotwell
 shout                           ports/audio/shout
+shoutcast                       ports/audio/shoutcast
 show                            ports/graphics/show
 showfont                        ports/x11-fonts/showfont
 showgrammar                     ports/devel/showgrammar
