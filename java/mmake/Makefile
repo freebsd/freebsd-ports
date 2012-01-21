@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a Makefile for Your Java files, ready to compile
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

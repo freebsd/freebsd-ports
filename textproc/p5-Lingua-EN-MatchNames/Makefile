@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/NameParse.pm:${PORTSDIR}/textproc/p5-Lingu
 		${SITE_PERL}/Lingua/EN/Nickname.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Nickname \
 		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx \
 		${SITE_PERL}/${PERL_ARCH}/Text/Metaphone.pm:${PORTSDIR}/textproc/p5-Text-Metaphone
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Simple representation of mathematical variables
 
 BUILD_DEPENDS=	${SITE_PERL}/fields.pm:${PORTSDIR}/devel/p5-Class-Fields
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

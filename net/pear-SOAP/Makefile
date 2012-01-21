@@ -15,7 +15,7 @@ COMMENT=	PEAR SOAP Client/Server for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-SOAP
 OPTIONS=	PEAR_MAIL "PEAR::Mail support" off \

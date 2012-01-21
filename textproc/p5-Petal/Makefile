@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Template Attribute Language - TAL for Perl!
 
 BUILD_DEPENDS=	${SITE_PERL}/MKDoc/XML.pm:${PORTSDIR}/textproc/p5-MKDoc-XML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Petal.3 \
 	Petal::Cookbook.3 \

@@ -15,7 +15,7 @@ COMMENT=	Quick CSS parser
 
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		libcroco>=0.6:${PORTSDIR}/textproc/libcroco
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=	CSS::Croco.3\

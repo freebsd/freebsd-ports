@@ -16,7 +16,7 @@ COMMENT=	Perl module intended to make it easier to create reusable web apps
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Util.pm:${PORTSDIR}/devel/p5-IO-Util \
 		${SITE_PERL}/Class/constr.pm:${PORTSDIR}/devel/p5-OOTools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

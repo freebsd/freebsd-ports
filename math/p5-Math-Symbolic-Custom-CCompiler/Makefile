@@ -16,7 +16,7 @@ COMMENT=	Compile Math::Symbolic trees to C
 
 BUILD_DEPENDS=	p5-Math-Symbolic>=0.509:${PORTSDIR}/math/p5-Math-Symbolic \
 		p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Math::Symbolic::Custom::CCompiler.3
 

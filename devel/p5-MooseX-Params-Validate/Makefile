@@ -17,7 +17,7 @@ COMMENT=	An extension of Params::Validate for using Moose types
 BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
 		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Devel-Caller>0:${PORTSDIR}/devel/p5-Devel-Caller
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

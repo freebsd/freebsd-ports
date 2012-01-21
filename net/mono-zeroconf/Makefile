@@ -15,7 +15,7 @@ COMMENT=	Cross platform Zero Configuration Networking library for Mono
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/libdata/pkgconfig/avahi-sharp.pc:${PORTSDIR}/net/avahi-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

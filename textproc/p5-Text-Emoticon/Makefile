@@ -15,7 +15,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Factory class for Yahoo! and MSN emoticons
 
 BUILD_DEPENDS=	${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

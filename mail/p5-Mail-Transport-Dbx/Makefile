@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Mail::Transport::Dbx - Parse Outlook Express mailboxes
 
 #BUILD_DEPENDS=	p5-ExtUtils-Constant>0:${PORTSDIR}/devel/p5-ExtUtils-Constant
-#RUN_DEPENDS=	${BUILD_DEPENDS}
+#RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

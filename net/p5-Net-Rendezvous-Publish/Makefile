@@ -16,7 +16,7 @@ COMMENT=	Publish Rendezvous services
 
 BUILD_DEPENDS=	p5-Class-Accessor-Lvalue>=0:${PORTSDIR}/devel/p5-Class-Accessor-Lvalue \
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

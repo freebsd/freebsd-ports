@@ -16,7 +16,7 @@ COMMENT=	Return a new instance a component on each request
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime	\
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

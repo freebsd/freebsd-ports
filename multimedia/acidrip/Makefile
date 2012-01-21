@@ -17,7 +17,7 @@ COMMENT=	GTK2::Perl wrapper for MPlayer and MEncoder for ripping DVDs
 BUILD_DEPENDS=	lsdvd:${PORTSDIR}/multimedia/lsdvd \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN1=		acidrip.1

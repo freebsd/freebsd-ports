@@ -16,7 +16,7 @@ MAINTAINER=		perl@FreeBSD.org
 COMMENT=	Perl extension to choose a language
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/TraceMessages.pm:${PORTSDIR}/devel/p5-Log-TraceMessages
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 

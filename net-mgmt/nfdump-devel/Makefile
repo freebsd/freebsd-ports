@@ -16,7 +16,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Development version of tools to collect and process NetFlow data
 
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nfprofile --with-rrdpath=${LOCALBASE}

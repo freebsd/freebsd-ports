@@ -17,7 +17,7 @@ COMMENT=	Parser extension for dealing with numeric errors
 BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
 		${SITE_PERL}/Math/SymbolicX/ParserExtensionFactory.pm:${PORTSDIR}/math/p5-Math-SymbolicX-ParserExtensionFactory \
 		${SITE_PERL}/Number/WithError.pm:${PORTSDIR}/math/p5-Number-WithError
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Math::SymbolicX::Error.3
 

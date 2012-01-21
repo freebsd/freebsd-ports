@@ -16,7 +16,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Jinja (Django & Smarty-like) template for TurboGears
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbogears
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja>=0.9:${PORTSDIR}/devel/py-Jinja
 
 USE_PYTHON=	2.5+

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tool for summarizing bodies of English text
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Summary.pm:${PORTSDIR}/www/p5-HTML-Summary
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

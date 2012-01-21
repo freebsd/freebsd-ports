@@ -16,7 +16,7 @@ COMMENT=	Write Perl subroutines in Tcl
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC="-I${PREFIX}/include/tcl8.4" \

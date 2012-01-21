@@ -17,7 +17,7 @@ COMMENT=	POE Component to create XMLRPC Servers
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/POE/Component/Server/HTTP.pm:${PORTSDIR}/www/p5-POE-Component-Server-HTTP \
 		${SITE_PERL}/XMLRPC/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

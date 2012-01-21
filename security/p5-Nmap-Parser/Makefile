@@ -16,7 +16,7 @@ COMMENT=	Parse nmap scan data with perl
 
 BUILD_DEPENDS=	p5-XML-Twig>=3.16:${PORTSDIR}/textproc/p5-XML-Twig \
 		p5-Storable>=2:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 
 PERL_CONFIGURE=	yes

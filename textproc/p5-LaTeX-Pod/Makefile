@@ -17,7 +17,7 @@ COMMENT=	Transform LaTeX source files to POD
 BUILD_DEPENDS=	p5-LaTeX-TOM>=0.9:${PORTSDIR}/textproc/p5-LaTeX-TOM \
 		p5-Params-Validate>=0.91:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-boolean>=0.20:${PORTSDIR}/devel/p5-boolean
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

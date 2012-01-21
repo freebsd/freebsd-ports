@@ -13,7 +13,7 @@ MAINTAINER=	numisemis@yahoo.com
 COMMENT=	PHP and JavaScript AJAX library
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML
 FILES=		AJAX.php AJAX/Action.php AJAX/Debug.php AJAX/Helper.php \

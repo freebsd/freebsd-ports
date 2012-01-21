@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl implementation of the A* pathfinding algorithm
 
 BUILD_DEPENDS=	${SITE_PERL}/Heap/Binomial.pm:${PORTSDIR}/devel/p5-Heap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

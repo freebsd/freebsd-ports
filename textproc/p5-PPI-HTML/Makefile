@@ -18,7 +18,7 @@ COMMENT=	Generate syntax-hightlighted HTML for Perl using PPI
 BUILD_DEPENDS=	p5-PPI>=0.990:${PORTSDIR}/textproc/p5-PPI \
 		p5-CSS-Tiny>=0.10:${PORTSDIR}/textproc/p5-CSS-Tiny \
 		p5-Params-Util>=0.05:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

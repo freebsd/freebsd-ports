@@ -17,7 +17,7 @@ COMMENT=	A pluggable Captcha framework for Perl
 
 BUILD_DEPENDS=	p5-Number-Spell>=0:${PORTSDIR}/textproc/p5-Number-Spell \
 		p5-HTML-Email-Obfuscate>=0:${PORTSDIR}/security/p5-HTML-Email-Obfuscate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Authen::PluggableCaptcha.3 \
 		Authen::PluggableCaptcha::Challenge.3 \

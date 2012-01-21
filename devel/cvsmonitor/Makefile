@@ -41,7 +41,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Time/Duration.pm:${PORTSDIR}/devel/p5-Time-Duration 
 		${SITE_PERL}/Text/Glob.pm:${PORTSDIR}/textproc/p5-Text-Glob \
 		${SITE_PERL}/XML/Generator.pm:${PORTSDIR}/textproc/p5-XML-Generator \
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

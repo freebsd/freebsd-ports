@@ -17,7 +17,7 @@ MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	Perl bindings for VeriSign's PayFlow Pro SDK
 
 BUILD_DEPENDS=	pfpro:${PORTSDIR}/finance/pfpro
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/verisign/payflowpro/freebsd/perl
 PERL_CONFIGURE=	yes

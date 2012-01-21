@@ -16,7 +16,7 @@ COMMENT=	For DBI to selectively log SQL, parameters, result-sets, transactions
 
 BUILD_DEPENDS=	p5-DBI>=1.50:${PORTSDIR}/databases/p5-DBI \
 		p5-Log-Log4perl>=1.04:${PORTSDIR}/devel/p5-Log-Log4perl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

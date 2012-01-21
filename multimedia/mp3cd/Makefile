@@ -15,7 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Perl script that burns MP3 to audio CDs
 
 BUILD_DEPENDS=	${SITE_PERL}/Config/Simple.pm:${PORTSDIR}/devel/p5-Config-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes

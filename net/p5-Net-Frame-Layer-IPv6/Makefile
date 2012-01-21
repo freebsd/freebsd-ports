@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-V
 		${SITE_PERL}/Net/Frame.pm:${PORTSDIR}/net/p5-Net-Frame \
     		p5-Net-Pcap>=0.12:${PORTSDIR}/net/p5-Net-Pcap \
     		p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

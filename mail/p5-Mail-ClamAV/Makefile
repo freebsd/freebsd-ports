@@ -17,7 +17,7 @@ COMMENT=	Perl extension for the clamav virus scanner
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
 		clamscan:${PORTSDIR}/security/clamav
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 

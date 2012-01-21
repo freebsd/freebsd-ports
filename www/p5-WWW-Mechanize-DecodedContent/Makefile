@@ -17,7 +17,7 @@ COMMENT=	Decode Mech content using its HTTP response encoding
 
 BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-HTTP-Response-Encoding>=0:${PORTSDIR}/www/p5-HTTP-Response-Encoding
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

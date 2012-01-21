@@ -24,7 +24,7 @@ BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		${LOCALBASE}/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes

@@ -18,7 +18,7 @@ COMMENT=	TheSchwartz Worker Task to Send Email
 
 BUILD_DEPENDS=	p5-TheSchwartz>=1.10:${PORTSDIR}/devel/p5-TheSchwartz \
 		p5-Net-DNS>=0.66_1:${PORTSDIR}/dns/p5-Net-DNS
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

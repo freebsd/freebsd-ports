@@ -17,7 +17,7 @@ COMMENT=	TT plugin to make URLs clickable in HTML
 BUILD_DEPENDS=	p5-URI-Find>=0.13:${PORTSDIR}/textproc/p5-URI-Find \
 		p5-Template-Toolkit>=2.07:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 thread-safe queues
 
 BUILD_DEPENDS=	p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

@@ -17,7 +17,7 @@ MAINTAINER=	stefan@fh-mainz.de
 COMMENT=	A 100% compatible replacement for Vixie cron
 
 BUILD_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile

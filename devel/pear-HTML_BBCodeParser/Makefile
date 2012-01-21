@@ -13,7 +13,7 @@ MAINTAINER=	lewiz@compsoc.man.ac.uk
 COMMENT=	Parser to replace UBB style tags with their HTML equivalents
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML
 FILES=		BBCodeParser.php \

@@ -30,7 +30,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Output.pm:${PORTSDIR}/devel/p5-Test-Output \
 		${SITE_PERL}/Data/TreeDumper.pm:${PORTSDIR}/devel/p5-Data-TreeDumper \
 		${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
 		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 MAKE_JOBS_SAFE=	yes

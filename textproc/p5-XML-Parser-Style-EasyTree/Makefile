@@ -17,7 +17,7 @@ COMMENT=	Parse XML to a simple tree
 
 BUILD_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-ex-lib>=0.03:${PORTSDIR}/devel/p5-ex-lib
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

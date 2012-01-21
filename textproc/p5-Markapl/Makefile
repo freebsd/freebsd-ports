@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-String-BufferStack>=1.15:${PORTSDIR}/textproc/p5-String-BufferStack \
 		p5-Devel-Declare>=0:${PORTSDIR}/devel/p5-Devel-Declare
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

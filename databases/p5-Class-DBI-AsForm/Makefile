@@ -16,7 +16,7 @@ COMMENT=	Produce HTML form elements for database columns
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/Class/DBI/Plugin/Type.pm:${PORTSDIR}/databases/p5-Class-DBI-Plugin-Type
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

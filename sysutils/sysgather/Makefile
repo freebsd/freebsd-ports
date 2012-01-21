@@ -15,7 +15,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Keep configuration files under version control
 
 BUILD_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 

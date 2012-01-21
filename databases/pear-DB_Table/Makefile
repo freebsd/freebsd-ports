@@ -14,7 +14,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR object-oriented interface to a database table
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-DB_Table
 OPTIONS=	PEAR_HTML_QUICKFORM "PEAR::HTML_QuickForm support" off \

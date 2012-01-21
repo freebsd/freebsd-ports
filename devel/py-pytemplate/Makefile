@@ -15,7 +15,7 @@ MAINTAINER=	benoit@litchis.org
 COMMENT=	Pytemplate gives python developpers a starting framework
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes

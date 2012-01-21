@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert fractions into unicode chars
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Fraction.pm:${PORTSDIR}/textproc/p5-HTML-Fraction
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	String::Fraction.3
 

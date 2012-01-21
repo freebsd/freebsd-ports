@@ -18,7 +18,7 @@ MAINTAINER=	ozkan@enderunix.org
 COMMENT=	A qmail-queue replacement to filter mail traffic
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	YES
 

@@ -16,7 +16,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CPAN Testers report object
 
 BUILD_DEPENDS=	p5-Metabase-Fact>0:${PORTSDIR}/devel/p5-Metabase-Fact
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	ASCII sprite animation framework
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

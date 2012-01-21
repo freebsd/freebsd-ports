@@ -16,7 +16,7 @@ COMMENT=	Perl Authentication & Authorization Service
 
 BUILD_DEPENDS=	p5-Config-Record>=1.1.0:${PORTSDIR}/devel/p5-Config-Record \
 		p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=	authen-paas-passwd.1
 MAN3=	Authen::PAAS.3 \

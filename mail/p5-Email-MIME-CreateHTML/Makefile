@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/File/Slurp/WithinPolicy.pm:${PORTSDIR}/devel/p5-File
 		p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

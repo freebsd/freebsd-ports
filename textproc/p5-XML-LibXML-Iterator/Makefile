@@ -16,7 +16,7 @@ COMMENT=	XML::LibXML::Iterator is an iterator for XML::LibXML parsed documents
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/XML/NodeFilter.pm:${PORTSDIR}/textproc/p5-XML-NodeFilter
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	Library to perform geo-location lookups of IP addresses.
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache \
 		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		GeoIP.php GeoIP/DMA.php GeoIP/Location.php

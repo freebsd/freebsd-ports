@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-CPANPLUS>=0:${PORTSDIR}/devel/p5-CPANPLUS \
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		subversion>=0:${PORTSDIR}/devel/subversion
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.10.0+
 MAN1=		pm2port.1

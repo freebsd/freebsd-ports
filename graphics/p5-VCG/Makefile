@@ -18,7 +18,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the VCG graphing tool
 
 BUILD_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		xvcg:${PORTSDIR}/graphics/vcg
 
 PERL_CONFIGURE=	yes

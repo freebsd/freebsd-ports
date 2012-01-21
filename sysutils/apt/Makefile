@@ -16,7 +16,7 @@ COMMENT=	Advanced front-end for dpkg
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		dpkg:${PORTSDIR}/archivers/dpkg \
 		gpg:${PORTSDIR}/security/gnupg1
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl

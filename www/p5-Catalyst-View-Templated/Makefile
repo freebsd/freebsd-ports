@@ -18,7 +18,7 @@ COMMENT=	Generic base class for template-based views
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Catalyst/Component/ACCEPT_CONTEXT.pm:${PORTSDIR}/www/p5-Catalyst-Component-ACCEPT_CONTEXT \
 		${SITE_PERL}/Class/C3.pm:${PORTSDIR}/devel/p5-Class-C3
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

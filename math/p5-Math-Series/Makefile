@@ -16,7 +16,7 @@ COMMENT=	Perl extension dealing with mathematic series
 
 BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
 		${SITE_PERL}/Math/Sequence.pm:${PORTSDIR}/math/p5-Math-Sequence
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Math::Series.3
 

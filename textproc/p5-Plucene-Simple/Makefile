@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-File-Find-Rule>=0.10:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-File-Slurp>=2002.1031:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Test-Class>=0.03:${PORTSDIR}/devel/p5-Test-Class
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES
 

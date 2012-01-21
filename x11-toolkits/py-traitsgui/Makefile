@@ -17,7 +17,7 @@ MAINTAINER=	jacob.frelinger@duke.edu
 COMMENT=	Gui toolkit derived from the Enthought python traits library
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitsbackendwx>=3.1.0:${PORTSDIR}/x11-toolkits/py-traitsbackendwx
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install

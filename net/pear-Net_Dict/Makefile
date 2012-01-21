@@ -14,7 +14,7 @@ COMMENT=	PEAR interface to the DICT protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/Cache.php:${PORTSDIR}/sysutils/pear-Cache
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		Net/Dict.php
 DOCS=		dict.php

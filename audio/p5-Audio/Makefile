@@ -16,7 +16,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	An audio manipulation routines for perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/GSL.pm:${PORTSDIR}/math/p5-Math-GSL
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

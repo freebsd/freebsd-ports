@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A Plain virtual filesystem
 
 BUILD_DEPENDS=	p5-Filesys-Virtual>=0.05:${PORTSDIR}/devel/p5-Filesys-Virtual
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

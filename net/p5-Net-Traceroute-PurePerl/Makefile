@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traceroute(1) functionality in perl via raw sockets
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Traceroute.pm:${PORTSDIR}/net/p5-Net-Traceroute
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

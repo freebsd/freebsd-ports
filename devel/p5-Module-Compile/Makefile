@@ -15,7 +15,7 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Provide a system for writing modules that compile other Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

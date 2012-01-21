@@ -17,7 +17,7 @@ COMMENT=	Get the byte size of an internet resource
 BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-HTML-SimpleLinkExtor>0:${PORTSDIR}/www/p5-HTML-SimpleLinkExtor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=  yes
 

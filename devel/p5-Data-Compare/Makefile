@@ -17,7 +17,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::Compare - compare perl data structures
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

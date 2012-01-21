@@ -17,7 +17,7 @@ COMMENT=	Abstract interface to bit.ly, one of URL shortening sites
 BUILD_DEPENDS=	p5-JSON-Any>=1.18:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-WWW-Shorten>=1.9:${PORTSDIR}/www/p5-WWW-Shorten \
 		p5-XML-Simple>=2.18:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

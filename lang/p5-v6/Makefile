@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-Data-Bind>=0.28:${PORTSDIR}/devel/p5-Data-Bind \
 		p5-Pugs-Compiler-Rule>=0.17:${PORTSDIR}/lang/p5-Pugs-Compiler-Rule \
 		p5-Sub-Multi>=0:${PORTSDIR}/devel/p5-Sub-Multi \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

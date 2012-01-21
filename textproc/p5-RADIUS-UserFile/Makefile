@@ -15,7 +15,7 @@ MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Perl extension for manipulating a RADIUS users file
 
 BUILD_DEPENDS=		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 

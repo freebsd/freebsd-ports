@@ -15,7 +15,7 @@ MAINTAINER=	vivek@khera.org
 COMMENT=	Generate nice HTML files from HTML syntax trees
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Tree.pm:${PORTSDIR}/www/p5-HTML-Tree
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

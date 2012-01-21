@@ -14,7 +14,7 @@ COMMENT=	Element for PEAR::HTML_QuickForm to enable a suggest search.
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm \
 		${PEARDIR}/HTML/AJAX.php:${PORTSDIR}/www/pear-HTML_AJAX
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML/QuickForm
 FILES=		live.js livesearch_select.php

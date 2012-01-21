@@ -16,7 +16,7 @@ COMMENT=	An IDE for the Vala programming language
 
 LIB_DEPENDS=	gdl-1:${PORTSDIR}/x11-toolkits/gdl
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		Doesn't build with vala-0.10
 

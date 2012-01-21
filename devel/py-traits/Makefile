@@ -17,7 +17,7 @@ COMMENT=	Explicitly Typed Attributes for Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}EnthoughtBase>=3.0.1:${PORTSDIR}/devel/py-EnthoughtBase \
 		${PYNUMPY}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FETCH_ARGS=		-pRr
 USE_PYTHON=		yes

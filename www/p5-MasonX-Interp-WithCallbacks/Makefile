@@ -16,7 +16,7 @@ COMMENT=	Mason callback support via Params::CallbackRequest
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Params/CallbackRequest.pm:${PORTSDIR}/devel/p5-Params-CallbackRequest
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

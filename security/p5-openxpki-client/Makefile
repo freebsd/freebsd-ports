@@ -18,7 +18,7 @@ COMMENT=	Perl based trustcenter software for PKI: base class for actual clients
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/OpenXPKI.pm:${PORTSDIR}/security/p5-openxpki
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI::Client.3 \
 	OpenXPKI::Client::API.3

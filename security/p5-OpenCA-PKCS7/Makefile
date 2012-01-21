@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl extension for basic handling PKCS#7 Signatures
 
 BUILD_DEPENDS=	${SITE_PERL}/X500/DN.pm:${PORTSDIR}/net/p5-X500-DN
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

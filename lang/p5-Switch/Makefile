@@ -16,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Switch - A switch statement for Perl
 
 BUILD_DEPENDS=	p5-Filter>0:${PORTSDIR}/devel/p5-Filter
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

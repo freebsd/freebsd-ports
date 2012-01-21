@@ -34,7 +34,7 @@ BUILD_DEPENDS=	\
 	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

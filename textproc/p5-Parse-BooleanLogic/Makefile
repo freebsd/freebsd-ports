@@ -16,7 +16,7 @@ COMMENT=	Parser of boolean expressions
 
 BUILD_DEPENDS=	p5-Regexp-Common>=2.122:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Module-Install>=0.91_1:${PORTSDIR}/devel/p5-Module-Install
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

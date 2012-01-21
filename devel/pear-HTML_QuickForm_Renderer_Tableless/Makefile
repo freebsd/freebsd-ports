@@ -13,7 +13,7 @@ MAINTAINER=	chris@smartt.com
 COMMENT=	Implementation of Tableless Renderer for HTML_QuickForm
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		HTML/QuickForm/Renderer/Tableless.php
 

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Applicatio
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/HTML/Template/Plugin/Dot.pm:${PORTSDIR}/www/p5-HTML-Template-Pluggable \
 		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

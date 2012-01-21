@@ -15,7 +15,7 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Asynchronous DNS helper for high volume applications
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

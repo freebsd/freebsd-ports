@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Contai
 		${SITE_PERL}/${PERL_ARCH}/Algorithm/SVM.pm:${PORTSDIR}/devel/p5-Algorithm-SVM \
 		${SITE_PERL}/${PERL_ARCH}/AI/DecisionTree.pm:${PORTSDIR}/math/p5-AI-DecisionTree \
 		${SITE_PERL}/Algorithm/NaiveBayes.pm:${PORTSDIR}/devel/p5-Algorithm-NaiveBayes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	AI::Categorizer.3 \
 	AI::Categorizer::Category.3 \

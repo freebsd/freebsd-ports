@@ -14,7 +14,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A massively-parallel build system implemented on top of GNU make
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

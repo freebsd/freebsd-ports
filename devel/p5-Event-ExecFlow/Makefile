@@ -16,7 +16,7 @@ COMMENT=	API for complex flow controls with asynchronous execution of external p
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

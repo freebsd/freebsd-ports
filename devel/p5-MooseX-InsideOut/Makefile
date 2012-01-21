@@ -17,7 +17,7 @@ COMMENT=	Inside-out objects with Moose
 BUILD_DEPENDS=	p5-Hash-Util-FieldHash-Compat>=0:${PORTSDIR}/devel/p5-Hash-Util-FieldHash-Compat \
 		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0.11:${PORTSDIR}/devel/p5-namespace-clean
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

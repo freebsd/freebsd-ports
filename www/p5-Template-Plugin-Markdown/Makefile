@@ -16,7 +16,7 @@ COMMENT=	TT plugin for Text::Markdown
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Text-Markdown>=0:${PORTSDIR}/textproc/p5-Text-Markdown
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

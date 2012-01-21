@@ -28,7 +28,7 @@ BUILD_DEPENDS=	p5-Moose>=0.89:${PORTSDIR}/devel/p5-Moose \
 		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Text-Balanced>=0:${PORTSDIR}/textproc/p5-Text-Balanced
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

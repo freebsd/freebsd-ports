@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Net-OAuth>=0.27:${PORTSDIR}/net/p5-Net-OAuth \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
 		p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=	Net::OAuth::Simple.3

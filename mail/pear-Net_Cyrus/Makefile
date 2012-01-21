@@ -14,7 +14,7 @@ COMMENT=	PEAR class to administer Cyrus IMAP servers
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/Net/IMAP.php:${PORTSDIR}/mail/pear-Net_IMAP
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		Cyrus.php

@@ -17,7 +17,7 @@ COMMENT=	A loader class for phrasebook implementations using YAML
 
 BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/Data/Phrasebook.pm:${PORTSDIR}/textproc/p5-Data-Phrasebook
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

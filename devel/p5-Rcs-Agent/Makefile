@@ -15,7 +15,7 @@ MAINTAINER=	nick@foobar.org
 COMMENT=	A perl module for RCS archive manipulation
 
 BUILD_DEPENDS=	p5-String-ShellQuote>1.00:${PORTSDIR}/textproc/p5-String-ShellQuote
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

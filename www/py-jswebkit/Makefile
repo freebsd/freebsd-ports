@@ -18,7 +18,7 @@ COMMENT=		WebKit/JavaScriptCore Python bindings
 
 BUILD_DEPENDS=		cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/jswebkit.so
 

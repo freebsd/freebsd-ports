@@ -17,7 +17,7 @@ COMMENT=	Faster Set::IntSpan::Fast
 
 BUILD_DEPENDS=	p5-Data-Swap>=0.07:${PORTSDIR}/devel/p5-Data-Swap \
 		p5-Set-IntSpan-Fast>=1.13:${PORTSDIR}/math/p5-Set-IntSpan-Fast
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

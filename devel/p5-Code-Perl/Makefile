@@ -17,7 +17,7 @@ COMMENT=	Produce Perl code from a tree
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Code::Perl.3 Code::Perl::Expr.3
 

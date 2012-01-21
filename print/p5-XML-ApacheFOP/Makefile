@@ -17,7 +17,7 @@ COMMENT=	Access Apache FOP from Perl to create PDF files using XSL-FO
 
 BUILD_DEPENDS=	${SITE_PERL}/Java.pm:${PORTSDIR}/devel/p5-Java \
 		${LOCALBASE}/share/java/fop/build/fop.jar:${PORTSDIR}/textproc/fop
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

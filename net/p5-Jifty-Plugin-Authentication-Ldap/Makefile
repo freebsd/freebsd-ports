@@ -16,7 +16,7 @@ COMMENT=	LDAP Authentication Plugin for Jifty Apps
 
 BUILD_DEPENDS=	p5-Jifty>=0:${PORTSDIR}/www/p5-Jifty \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::ACL - Perl extension for simple ACL lists
 
 BUILD_DEPENDS=	${SITE_PERL}/Set/NestedGroups.pm:${PORTSDIR}/devel/p5-Set-NestedGroups
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

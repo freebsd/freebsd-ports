@@ -17,7 +17,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to Haru PDF functions
 
 BUILD_DEPENDS=	${LOCALBASE}/include/hpdf.h:${PORTSDIR}/print/libharu
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

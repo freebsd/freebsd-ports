@@ -19,7 +19,7 @@ COMMENT=	A Simple website based Newsletter interface
 BUILD_DEPENDS=	p5-MIME-Explode>0:${PORTSDIR}/mail/p5-MIME-Explode \
 		p5-MIME-Lite>0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-File-Type>0:${PORTSDIR}/devel/p5-File-Type
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

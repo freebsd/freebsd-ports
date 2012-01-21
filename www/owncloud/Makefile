@@ -14,7 +14,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A personal cloud which runs on your own server
 
 BUILD_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PHP=	ctype curl hash json mbstring mysql session simplexml sqlite zip

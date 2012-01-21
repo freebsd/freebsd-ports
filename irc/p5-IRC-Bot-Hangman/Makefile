@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Bot/BasicBot.pm:${PORTSDIR}/irc/p5-Bot-BasicBot \
 		${SITE_PERL}/Module/Find.pm:${PORTSDIR}/devel/p5-Module-Find \
 		${SITE_PERL}/Chatbot/Eliza.pm:${PORTSDIR}/misc/p5-Chatbot-Eliza \
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	IRC::Bot::Hangman.3 \
 	IRC::Bot::Hangman::Command.3 \

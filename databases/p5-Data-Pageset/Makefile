@@ -16,7 +16,7 @@ COMMENT=	Page numbering and page sets
 
 BUILD_DEPENDS=	p5-Data-Page>=2:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Test-Simple>=0.1:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Data::Pageset.3
 

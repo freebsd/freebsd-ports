@@ -51,7 +51,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		p5-YAML-Syck>=0.60:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-version>=0.68:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

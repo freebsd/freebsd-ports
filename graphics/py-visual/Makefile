@@ -22,7 +22,7 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		boost_python.4:${PORTSDIR}/devel/boost-python-libs
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

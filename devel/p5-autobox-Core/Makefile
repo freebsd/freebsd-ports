@@ -15,7 +15,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Core functions exposed as methods in primitive types
 
 BUILD_DEPENDS=	p5-autobox>=0:${PORTSDIR}/devel/p5-autobox
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

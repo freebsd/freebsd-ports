@@ -15,7 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A simple class holding IRC related methods for bingo
 
 BUILD_DEPENDS=	${SITE_PERL}/Games/Bingo.pm:${PORTSDIR}/games/p5-Games-Bingo
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

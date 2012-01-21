@@ -17,7 +17,7 @@ COMMENT=	A collection of planar geometry functions
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/Geometry/Planar/GPC.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar-GPC \
 		${SITE_PERL}/Math/Geometry/Planar/Offset.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar-Offset
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Math::Geometry::Planar.3
 

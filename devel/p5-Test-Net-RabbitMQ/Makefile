@@ -18,7 +18,7 @@ COMMENT=	A Perl mock RabbitMQ implementation for use when testing
 BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
 		p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes

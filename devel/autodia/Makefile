@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template
 		${SITE_PERL}/VCG.pm:${PORTSDIR}/graphics/p5-VCG \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/SpringGraph.pm:${PORTSDIR}/graphics/p5-SpringGraph
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

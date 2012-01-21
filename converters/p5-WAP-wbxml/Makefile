@@ -17,7 +17,7 @@ COMMENT=	Binarization of XML file
 BUILD_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
 		${SITE_PERL}/I18N/Charset.pm:${PORTSDIR}/misc/p5-I18N-Charset \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
 PERL_CONFIGURE=	yes

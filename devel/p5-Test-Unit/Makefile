@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump 
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Class/Inner.pm:${PORTSDIR}/devel/p5-Class-Inner \
 		${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-Class-Fields
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

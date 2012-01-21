@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7007:${PORTSDIR}/www/p5-Catalyst-Runtime	\
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken		\
 		p5-URI-SmartURI>=0:${PORTSDIR}/net/p5-URI-SmartURI		\
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

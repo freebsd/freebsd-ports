@@ -17,7 +17,7 @@ COMMENT=	OCaml modules for Internet applications
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		camlp5:${PORTSDIR}/devel/ocaml-camlp5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	ocaml-equeue-2* ocaml-netclient-0*
 

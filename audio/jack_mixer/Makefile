@@ -17,7 +17,7 @@ COMMENT=	A mixer for the jack audio connection kit
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
    		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_GNOME=	gconf2

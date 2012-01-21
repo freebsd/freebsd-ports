@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
 		${SITE_PERL}/LWPx/ParanoidAgent.pm:${PORTSDIR}/www/p5-LWPx-ParanoidAgent \
 		${SITE_PERL}/Net/Yadis.pm:${PORTSDIR}/net/p5-Net-Yadis \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

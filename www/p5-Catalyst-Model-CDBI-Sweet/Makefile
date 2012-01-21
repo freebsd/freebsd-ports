@@ -17,7 +17,7 @@ COMMENT=	CDBI model class for Catalyst that makes things sweeter
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Class/DBI/Sweet.pm:${PORTSDIR}/databases/p5-Class-DBI-Sweet
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

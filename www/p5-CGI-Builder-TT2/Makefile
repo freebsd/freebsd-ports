@@ -17,7 +17,7 @@ COMMENT=	CGI::Builder and Template Toolkit 2 integration
 
 BUILD_DEPENDS=	${SITE_PERL}/CGI/Builder.pm:${PORTSDIR}/www/p5-CGI-Builder \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

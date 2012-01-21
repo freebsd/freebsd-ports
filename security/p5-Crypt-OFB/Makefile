@@ -15,7 +15,7 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Encrypt Data using OFB Mode
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/ECB.pm:${PORTSDIR}/security/p5-Crypt-ECB
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

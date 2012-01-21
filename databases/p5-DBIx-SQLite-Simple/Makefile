@@ -16,7 +16,7 @@ COMMENT=	Easy access to SQLite databases using objects
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Gomor.pm:${PORTSDIR}/devel/p5-Class-Gomor \
 		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

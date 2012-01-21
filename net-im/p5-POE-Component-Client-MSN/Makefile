@@ -18,7 +18,7 @@ COMMENT=	POE Component for MSN Messenger
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-Client-Keepalive>=0:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
 		p5-POE-Component-SSLify>=0:${PORTSDIR}/security/p5-POE-Component-SSLify
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		POE::Component::Client::MSN.3
 

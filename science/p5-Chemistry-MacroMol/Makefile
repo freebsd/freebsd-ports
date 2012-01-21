@@ -15,7 +15,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Perl toolkit to describe macromolecules
 
 BUILD_DEPENDS=	p5-Chemistry-Mol>=0.37:${PORTSDIR}/science/p5-Chemistry-Mol
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

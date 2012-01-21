@@ -16,7 +16,7 @@ COMMENT=	Persistent lexical variable values for arbitrary calls
 
 BUILD_DEPENDS=	p5-Devel-LexAlias>=0.04:${PORTSDIR}/devel/p5-Devel-LexAlias \
 		p5-PadWalker>=1.1:${PORTSDIR}/devel/p5-PadWalker
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Lexical::Persistence.3
 

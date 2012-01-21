@@ -17,7 +17,7 @@ COMMENT=	An implementation of an Object Dependency Algorithm
 
 BUILD_DEPENDS=	p5-Set-Object>0:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Algorithm::Dependency::Objects.3 \
 	Algorithm::Dependency::Objects::Ordered.3

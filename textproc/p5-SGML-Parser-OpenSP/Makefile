@@ -18,7 +18,7 @@ COMMENT=	Parse SGML documents using OpenSP
 BUILD_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
 PERL_CONFIGURE=	yes

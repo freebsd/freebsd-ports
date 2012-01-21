@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl interface to the ISAAC PRNG Algorithm
 
 BUILD_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-Math-Random-ISAAC-XS>0:${PORTSDIR}/math/p5-Math-Random-ISAAC-XS
 
 PERL_CONFIGURE=	yes

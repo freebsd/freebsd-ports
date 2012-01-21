@@ -17,7 +17,7 @@ COMMENT=	Exchange XML via AnyEvent::HTTP
 BUILD_DEPENDS=	p5-XML-Compile-SOAP>=2.18:${PORTSDIR}/net/p5-XML-Compile-SOAP \
 		p5-AnyEvent-HTTP>=1.46:${PORTSDIR}/www/p5-AnyEvent-HTTP \
 		p5-Log-Report>=0.28:${PORTSDIR}/devel/p5-Log-Report
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual

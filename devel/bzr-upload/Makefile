@@ -15,7 +15,7 @@ MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Bzr plugin to incrementally upload changes to a dumb server
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 

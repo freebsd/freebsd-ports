@@ -16,7 +16,7 @@ MAINTAINER=	markun@onohara.to
 COMMENT=	Parse HTML For Robots Exclusion META Markup
 
 BUILD_DEPENDS=	p5-HTML-Parser>=3:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

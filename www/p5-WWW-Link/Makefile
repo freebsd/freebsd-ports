@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

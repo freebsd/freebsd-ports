@@ -16,7 +16,7 @@ COMMENT=	Debugging And Tracing Ultimate Module
 
 BUILD_DEPENDS=	${PM_BASE}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
 		${PM_BASE}/Getargs/Long.pm:${PORTSDIR}/devel/p5-Getargs-Long
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 PM_BASE=	${SITE_PERL}

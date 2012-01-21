@@ -15,7 +15,7 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 module for unloading classes
 
 BUILD_DEPENDS=	${SITE_PERL}/AutoXS/Header.pm:${PORTSDIR}/devel/p5-AutoXS-Header
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

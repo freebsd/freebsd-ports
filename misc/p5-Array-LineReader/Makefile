@@ -15,7 +15,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Access lines of a file via an array
 
 BUILD_DEPENDS=	p5-IO>=0:${PORTSDIR}/devel/p5-IO
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

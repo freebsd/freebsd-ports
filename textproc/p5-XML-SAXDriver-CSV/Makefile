@@ -16,7 +16,7 @@ COMMENT=	Perl SAX driver for converting CSV files to XML
 
 BUILD_DEPENDS=	p5-Text-CSV_XS>=0.22:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-XML-SAX>=0.14:${PORTSDIR}/textproc/p5-XML-SAX
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_DOS2UNIX=	yes

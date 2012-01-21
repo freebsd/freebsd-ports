@@ -15,7 +15,7 @@ MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	Emoticon filter of MSN Messenger
 
 BUILD_DEPENDS=	p5-Text-Emoticon>=0.02:${PORTSDIR}/textproc/p5-Text-Emoticon
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

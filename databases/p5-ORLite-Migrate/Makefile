@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-File-pushd>=1.00:${PORTSDIR}/devel/p5-File-pushd \
 		p5-DBI>=1.58:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-SQLite>=1.21:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Params-Util>0.37:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

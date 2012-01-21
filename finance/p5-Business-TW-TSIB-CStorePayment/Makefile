@@ -17,7 +17,7 @@ COMMENT=	Module for Taishin Bank Convenient Store Payment Management
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

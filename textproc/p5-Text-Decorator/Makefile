@@ -17,7 +17,7 @@ COMMENT=	Apply a chain of filters to text
 BUILD_DEPENDS=	${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Text::Decorator.3 \
 	Text::Decorator::Filter.3 \

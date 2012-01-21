@@ -16,7 +16,7 @@ COMMENT=	Simple SMB authentication
 
 BUILD_DEPENDS=	${SITE_PERL}/Authen/Simple.pm:${PORTSDIR}/security/p5-Authen-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Authen/Smb.pm:${PORTSDIR}/security/p5-Authen-Smb
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Authen::Simple::SMB.3
 

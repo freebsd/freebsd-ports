@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Business/CreditCard.pm:${PORTSDIR}/finance/p5-Busine
 		${SITE_PERL}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
 		${SITE_PERL}/String/Parity.pm:${PORTSDIR}/devel/p5-String-Parity \
 		${SITE_PERL}/${PERL_ARCH}/String/LRC.pm:${PORTSDIR}/devel/p5-String-LRC
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

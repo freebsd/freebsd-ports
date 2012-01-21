@@ -15,7 +15,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	The next generation Web Server Framework built with Twisted
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedWeb2-${PORTVERSION}
 

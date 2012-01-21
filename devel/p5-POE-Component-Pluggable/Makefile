@@ -16,7 +16,7 @@ COMMENT=	A base class for creating plugin enabled POE Components
 
 BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

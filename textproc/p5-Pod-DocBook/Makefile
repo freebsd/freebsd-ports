@@ -18,7 +18,7 @@ COMMENT=	Convert Pod data to DocBook SGML
 
 BUILD_DEPENDS=	${SITE_PERL}/Pod/ParseLink.pm:${PORTSDIR}/textproc/p5-podlators \
 		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

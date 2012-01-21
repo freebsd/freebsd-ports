@@ -16,7 +16,7 @@ COMMENT=	Deliver mail into ezmlm archives
 
 BUILD_DEPENDS=	${SITE_PERL}/Email/LocalDelivery.pm:${PORTSDIR}/mail/p5-Email-LocalDelivery \
 		${SITE_PERL}/Email/FolderType.pm:${PORTSDIR}/mail/p5-Email-FolderType
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

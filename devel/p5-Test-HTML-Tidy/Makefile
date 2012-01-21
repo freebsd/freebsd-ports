@@ -15,7 +15,7 @@ MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Test::More-style wrapper around HTML::Tidy
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Tidy.pm:${PORTSDIR}/textproc/p5-HTML-Tidy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/mach/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 
 PERL_CONFIGURE=		yes

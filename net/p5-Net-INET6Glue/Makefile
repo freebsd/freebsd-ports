@@ -16,7 +16,7 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Make common modules IPv6 ready by hotpatching
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

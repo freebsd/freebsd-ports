@@ -19,7 +19,7 @@ COMMENT=	Resolve public identifiers and remap system identifiers
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

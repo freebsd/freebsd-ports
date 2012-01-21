@@ -15,7 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	HP Lights-Out management perl scripts
 
 BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.19:${PORTSDIR}/security/p5-IO-Socket-SSL
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.0+
 NO_BUILD=	yes

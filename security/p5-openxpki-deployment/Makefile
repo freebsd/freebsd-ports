@@ -21,7 +21,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std \
 	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=	openxpki-configure.1 \
 	openxpki-metaconf.1 \

@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Fast handling of sets containing integer spans
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/Types.pm:${PORTSDIR}/devel/p5-Data-Types
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

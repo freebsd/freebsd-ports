@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/IPv4Addr.pm:${PORTSDIR}/net-mgmt/p5-Net-IPv4Addr
 		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/NetPacket.pm:${PORTSDIR}/net/p5-NetPacket \
 		${SITE_PERL}/Net/Ping/External.pm:${PORTSDIR}/net/p5-Net-Ping-External
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN8=		fwknop.8 fwknopd.8 knopmd.8 knopwatchd.8
 MANCOMPRESSED=	yes

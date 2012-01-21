@@ -18,7 +18,7 @@ COMMENT=	HTML::Lint - check for HTML errors in a string or file
 BUILD_DEPENDS=	p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

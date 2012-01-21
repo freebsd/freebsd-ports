@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/HTML/Template/HashWrapper.pm:${PORTSDIR}/www/p5-HTML-Template-HashWrapper \
 		${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

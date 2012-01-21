@@ -15,7 +15,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	CVS to Subversion Repository Converter
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
 

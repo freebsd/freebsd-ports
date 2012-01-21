@@ -16,7 +16,7 @@ COMMENT=	A perlish interface to SQL databases
 
 BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 		p5-PadWalker>0:${PORTSDIR}/devel/p5-PadWalker
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

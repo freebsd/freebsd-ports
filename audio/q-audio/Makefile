@@ -21,7 +21,7 @@ LIB_DEPENDS=	q.8:${PORTSDIR}/lang/q \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		fftw3:${PORTSDIR}/math/fftw3
 BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so.2:${PORTSDIR}/audio/portaudio2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 DATADIR=	${PREFIX}/share/q
 

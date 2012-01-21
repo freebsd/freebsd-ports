@@ -18,7 +18,7 @@ COMMENT=	Catalyst View handler that returns stash data in JSON format
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.6000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-MRO-Compat>0:${PORTSDIR}/devel/p5-MRO-Compat
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -14,7 +14,7 @@ COMMENT=	A PHP5 Interface to the GeoNames Public API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		Services/GeoNames.php  Services/GeoNames/Exception.php
 EXAMPLES=	examples1.php

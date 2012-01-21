@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 		p5-MouseX-Types>=0.01:${PORTSDIR}/devel/p5-MouseX-Types \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-MouseX-Getopt>=0:${PORTSDIR}/devel/p5-MouseX-Getopt
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

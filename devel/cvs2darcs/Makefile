@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	darcs:${PORTSDIR}/devel/hs-darcs \
 		cvsps:${PORTSDIR}/devel/cvsps \
 		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes

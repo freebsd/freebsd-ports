@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Format validation and more for Net:: related strings
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Default.pm:${PORTSDIR}/devel/p5-Class-Default
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

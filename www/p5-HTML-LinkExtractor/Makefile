@@ -17,7 +17,7 @@ COMMENT=	HTML::LinkExtractor is used for extracting links from HTML
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/TokeParser/Simple.pm:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

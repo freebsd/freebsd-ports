@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Class-C3-Componentised>=0:${PORTSDIR}/devel/p5-Class-C3-Compon
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose				\
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat		\
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

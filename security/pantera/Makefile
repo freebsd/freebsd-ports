@@ -17,7 +17,7 @@ COMMENT=	Web Application Penetration Testing Suite
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/MySQLdb/connections.pyc:${PORTSDIR}/databases/py-MySQLdb
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		bad dependency line
 

@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reliable job queue
 
 BUILD_DEPENDS=	p5-Data-ObjectDriver>=0:${PORTSDIR}/devel/p5-Data-ObjectDriver
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

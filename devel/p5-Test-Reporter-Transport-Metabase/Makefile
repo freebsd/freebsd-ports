@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Metabase-Fact>0:${PORTSDIR}/devel/p5-Metabase-Fact \
 		p5-Metabase-Client-Simple>0:${PORTSDIR}/devel/p5-Metabase-Client-Simple \
 		p5-Test-Reporter>>1.54:${PORTSDIR}/devel/p5-Test-Reporter
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

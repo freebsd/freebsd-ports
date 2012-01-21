@@ -13,7 +13,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Makes the design of HTML tables easy, flexible, reusable and efficient
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML
 FILES=		Table.php Table/Storage.php

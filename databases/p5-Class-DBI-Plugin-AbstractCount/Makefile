@@ -17,7 +17,7 @@ COMMENT=	Get COUNT(*) results with abstract SQL
 BUILD_DEPENDS=	p5-Class-DBI-Plugin>=0.02:${PORTSDIR}/databases/p5-Class-DBI-Plugin \
 		p5-Class-DBI>=0.95:${PORTSDIR}/databases/p5-Class-DBI \
 		p5-SQL-Abstract>=1.50:${PORTSDIR}/databases/p5-SQL-Abstract
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

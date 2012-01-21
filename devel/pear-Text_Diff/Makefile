@@ -13,7 +13,7 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Engine for performing and rendering text diffs
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Text
 FILES=		Diff.php Diff/Engine/native.php Diff/Engine/shell.php \

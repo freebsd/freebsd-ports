@@ -19,7 +19,7 @@ COMMENT=	Check stock quotes from Taiwan Security Exchange
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Finance-TW-EmergingQuote>=0:${PORTSDIR}/finance/p5-Finance-TW-EmergingQuote
 

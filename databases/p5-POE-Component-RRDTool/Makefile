@@ -17,7 +17,7 @@ COMMENT=	POE interface to Round Robin Database Tools
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null

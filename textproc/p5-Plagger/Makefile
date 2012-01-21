@@ -373,7 +373,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/Lingua/JA/Summarize/Extract.pm:${PORTSDIR}/japanese
 BUILD_DEPENDS+=	${SITE_PERL}/Text/Original.pm:${PORTSDIR}/textproc/p5-Text-Original
 .endif
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Plagger.3 \

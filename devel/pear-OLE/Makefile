@@ -13,7 +13,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	PEAR class for reading and writing OLE containers
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	OLE
 FILES=		OLE.php PPS.php ChainedBlockStream.php \

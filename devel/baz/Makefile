@@ -18,7 +18,7 @@ COMMENT=	An implementation of the GNU Arch RCS protocol in C by Canonical
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \
 		gpgme.19:${PORTSDIR}/security/gpgme
 

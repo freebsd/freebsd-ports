@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
 		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP \
 		${SITE_PERL}/Text/NeatTemplate.pm:${PORTSDIR}/textproc/p5-Text-NeatTemplate \
 		${SITE_PERL}/HTML/FormatText/WithLinks.pm:${PORTSDIR}/textproc/p5-HTML-FormatText-WithLinks
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

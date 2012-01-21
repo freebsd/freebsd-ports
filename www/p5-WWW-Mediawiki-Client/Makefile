@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-URI>=1.31:${PORTSDIR}/net/p5-URI \
 		p5-Exception-Class>0:${PORTSDIR}/devel/p5-Exception-Class
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

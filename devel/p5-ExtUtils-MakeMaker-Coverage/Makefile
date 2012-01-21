@@ -17,7 +17,7 @@ COMMENT=	Add a Makefile target to determine test coverage using Devel::Cover
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/Cover.pm:${PORTSDIR}/devel/p5-Devel-Cover \
 		${SITE_PERL}/Object/Accessor.pm:${PORTSDIR}/devel/p5-Object-Accessor \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

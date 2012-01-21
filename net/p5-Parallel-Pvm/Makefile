@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl extension for the Parallel Virtual Machine (PVM)
 
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 PVM_ROOT=	${LOCALBASE}/lib/pvm

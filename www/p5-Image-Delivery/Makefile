@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Test-ClassAPI>=1.04:${PORTSDIR}/devel/p5-Test-ClassAPI \
 		p5-File-Slurp>=9999.04:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-HTML-Location>=1.00:${PORTSDIR}/www/p5-HTML-Location \
 		p5-Params-Coerce>=0.13:${PORTSDIR}/devel/p5-Params-Coerce
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

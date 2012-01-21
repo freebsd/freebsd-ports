@@ -13,7 +13,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Provides automatic documenting of php-api from the source
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	pear-PHPDoc-[0-9]*
 

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x1
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.6:${PORTSDIR}/graphics/png \
 		pcre.0:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-awffull-[0-9]*
 

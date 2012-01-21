@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Class/DBI/FromForm.pm:${PORTSDIR}/www/p5-Class-DBI-FromForm \
 		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
 		${SITE_PERL}/Template/Plugin/Class.pm:${PORTSDIR}/www/p5-Template-Plugin-Class
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

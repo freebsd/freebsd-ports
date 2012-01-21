@@ -16,7 +16,7 @@ COMMENT=	Documentation browser for Mono and Mono libraries
 
 LIB_DEPENDS=	gdiplus.0:${PORTSDIR}/x11-toolkits/libgdiplus
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomedesktopsharp20

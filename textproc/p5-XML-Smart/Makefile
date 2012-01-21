@@ -15,7 +15,7 @@ COMMENT=	A Smart, easy and powerful way to access/create XML files/data
 
 BUILD_DEPENDS=	${SITE_PERL}/Object/MultiType.pm:${PORTSDIR}/devel/p5-Object-MultiType \
 		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

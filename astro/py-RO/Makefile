@@ -15,7 +15,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package of Python astronomical utilities
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS=	MATPLOTLIB "Add support for Matplotlib" Off \
 		PYFITS     "Add Support for PyFITS" On \

@@ -16,7 +16,7 @@ COMMENT=	Authorization for WSGI applications
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:${PORTSDIR}/www/py-paste \
 		${PYTHON_PKGNAMEPREFIX}repoze.who-testutil>=0:${PORTSDIR}/devel/py-repoze.who-testutil
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

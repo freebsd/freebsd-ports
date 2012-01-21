@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/DBIx/AnyDBD.pm:${PORTSDIR}/databases/p5-DBIx-AnyDBD 
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Class/MakeMethods.pm:${PORTSDIR}/devel/p5-Class-MakeMethods \
 		${SITE_PERL}/Class/MixinFactory.pm:${PORTSDIR}/devel/p5-Class-MixinFactory
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

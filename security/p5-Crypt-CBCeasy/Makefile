@@ -16,7 +16,7 @@ COMMENT=	Easy things make really easy with Crypt::CBC
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/MD5.pm:${PORTSDIR}/security/p5-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

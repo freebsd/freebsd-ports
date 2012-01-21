@@ -22,7 +22,7 @@ MAN3=		Geo::IPfree.3
 
 .if ${PERL_LEVEL} < 501200
 BUILD_DEPENDS=	p5-Memoize>=0:${PORTSDIR}/devel/p5-Memoize
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 .endif
 
 .include <bsd.port.post.mk>

@@ -14,7 +14,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	OO interface for searching and manipulating LDAP-entries
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	ldap
 CATEGORY=	Net

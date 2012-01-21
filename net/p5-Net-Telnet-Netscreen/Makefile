@@ -15,7 +15,7 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A Perl interface for interact with a Netscreen firewall
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

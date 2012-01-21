@@ -17,7 +17,7 @@ COMMENT=	A HTTP POE filter for HTTP clients or servers
 BUILD_DEPENDS=	p5-POE>=1.003:${PORTSDIR}/devel/p5-POE \
 		p5-libwww>=0:${PORTSDIR}/www/libwww \
 		p5-HTTP-Parser>=0.06:${PORTSDIR}/www/p5-HTTP-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

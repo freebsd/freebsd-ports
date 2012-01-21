@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ocaml Object interface for ocaml's standard library modules
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-extract:
 	@${CP} ${FILESDIR}/META ${WRKSRC}

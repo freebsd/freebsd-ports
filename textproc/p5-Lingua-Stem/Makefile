@@ -23,7 +23,7 @@ BUILD_DEPENDS=		${SITE_PERL}/Lingua/PT/Stemmer.pm:${PORTSDIR}/textproc/p5-Lingua
 			${SITE_PERL}/Lingua/Stem/Snowball/No.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball-No \
 			${SITE_PERL}/Lingua/Stem/Snowball/Se.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball-Se \
 			${SITE_PERL}/Text/German.pm:${PORTSDIR}/textproc/p5-Text-German
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 

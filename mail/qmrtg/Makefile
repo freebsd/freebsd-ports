@@ -15,7 +15,7 @@ MAINTAINER=	mij@bitchx.it
 COMMENT=	A simple tool for monitoring and graphing qmail activity through MRTG
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 .if !defined(WITHOUT_MRTG)
 RUN_DEPENDS+=	mrtg:${PORTSDIR}/net-mgmt/mrtg
 .endif

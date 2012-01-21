@@ -18,7 +18,7 @@ COMMENT=	Perl module to provide access to vpopmail API
 VPOPMAIL_PORT?=	mail/vpopmail
 
 BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/${VPOPMAIL_PORT}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

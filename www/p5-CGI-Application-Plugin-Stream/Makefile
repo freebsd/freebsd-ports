@@ -17,7 +17,7 @@ COMMENT=	Plugin that adds file streaming support to CGI::Application
 BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
 		${SITE_PERL}/CGI/Application/Plugin/AutoRunmode.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-AutoRunmode \
 		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

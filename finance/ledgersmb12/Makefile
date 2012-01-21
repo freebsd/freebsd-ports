@@ -16,7 +16,7 @@ COMMENT=	A double entry accounting system
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 			${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 			${SITE_PERL}/Config/Std.pm:${PORTSDIR}/devel/p5-Config-Std
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	ledgersmb12
 

@@ -18,7 +18,7 @@ COMMENT=	XSL FO processor, written in TeX
 
 BUILD_DEPENDS=	${LOCALBASE}/${TEXMFLOCAL}/web2c/xmltex.fmt:${PORTSDIR}/print/xmltex \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 USE_ZIP=	yes

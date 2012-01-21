@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=1.29:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

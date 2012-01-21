@@ -17,7 +17,7 @@ COMMENT=	Configuration data as perl objects
 
 BUILD_DEPENDS=	${SITE_PERL}/Parse/Yapp.pm:${PORTSDIR}/devel/p5-Parse-Yapp \
 		${SITE_PERL}/Parse/Lex.pm:${PORTSDIR}/devel/p5-ParseLex
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

@@ -15,7 +15,7 @@ MAINTAINER=	nmh@t3x.org
 COMMENT=	A collection of classes for the T3X language
 
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
 

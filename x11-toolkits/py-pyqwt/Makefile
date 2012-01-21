@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		${PYTHON_PKGNAMEPREFIX}qt4-gui>=4.5.4:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.4.1:${PORTSDIR}/devel/py-qt4-qscintilla2 \
 		${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_PYTHON=	2.5+

@@ -17,7 +17,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python module to control beep-media-player
 
 BUILD_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GNOME=	glib12

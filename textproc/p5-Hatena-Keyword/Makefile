@@ -23,7 +23,7 @@ BUILD_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 		ja-p5-Jcode>=0:${PORTSDIR}/japanese/p5-Jcode \
 		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	Glue code to build client-server style TCP-based services
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/Ioctl.pm:${PORTSDIR}/devel/p5-Ioctl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

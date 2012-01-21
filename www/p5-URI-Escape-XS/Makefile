@@ -15,7 +15,7 @@ MAINTAINER=	catone@cpan.org
 COMMENT=	Drop-In replacement for URI::Escape in XS
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

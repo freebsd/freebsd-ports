@@ -13,7 +13,7 @@ MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	EPS (Email Parsing System) sample tools
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:${PORTSDIR}/mail/eps
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTDOCS=	README
 

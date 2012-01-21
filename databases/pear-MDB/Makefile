@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR unified API for DB access, based on user meta data
 
 BUILD_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		MDB.php MDB/Common.php MDB/querysim.php MDB/mssql.php	\
 		MDB/ibase.php MDB/oci8.php MDB/fbsql.php MDB/mysql.php	\

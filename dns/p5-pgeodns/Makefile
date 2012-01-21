@@ -17,7 +17,7 @@ COMMENT=	A Geographic NameServer
 BUILD_DEPENDS=	p5-Geo-IP>=0:${PORTSDIR}/net/p5-Geo-IP \
   				p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 				p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
