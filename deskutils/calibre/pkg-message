@@ -1,0 +1,34 @@
+---
+
+NOTE: Calibre requires Hal to be running for access to devices.  The user who
+is running Calibre also needs to be able to mount devices.  For non-root users,
+this means modifying /usr/local/etc/PolicyKit/PolicyKit.conf and adding the
+policy there.
+
+To allow a single user named "example" to mount removable devices, add the
+following:
+
+  <match action="org.freedesktop.hal.storage.mount-removable">
+    <match user="example">
+      <return result="yes" />
+    </match>
+  </match> 
+
+Additional users will each need their own <match user="user"> block with a
+"yes" return result.
+
+To permit all accounts to mount removable devices (allowing a denial of access
+attack) add the following:
+
+  <match action="org.freedesktop.hal.storage.mount-removable">
+    <return result="yes" />
+  </match>
+
+---
+
+If you are using an Android device as your e-book reader, please note
+that the stock Google Books app uses a storage format that is not
+supported by calibre.  The calibre FAQ recommends that either of the
+free apps Aldiko or WordPlayer are used instead.
+
+---

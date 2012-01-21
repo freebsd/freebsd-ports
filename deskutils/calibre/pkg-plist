@@ -131,41 +131,7 @@ lib/calibre/calibre/ebooks/__init__.py
 lib/calibre/calibre/ebooks/azw4/__init__.py
 lib/calibre/calibre/ebooks/azw4/reader.py
 lib/calibre/calibre/ebooks/azw4/input.py
-lib/calibre/calibre/ebooks/chardet/__init__.py
-lib/calibre/calibre/ebooks/chardet/big5freq.py
-lib/calibre/calibre/ebooks/chardet/big5prober.py
-lib/calibre/calibre/ebooks/chardet/chardistribution.py
-lib/calibre/calibre/ebooks/chardet/charsetgroupprober.py
-lib/calibre/calibre/ebooks/chardet/charsetprober.py
-lib/calibre/calibre/ebooks/chardet/codingstatemachine.py
-lib/calibre/calibre/ebooks/chardet/constants.py
-lib/calibre/calibre/ebooks/chardet/escprober.py
-lib/calibre/calibre/ebooks/chardet/escsm.py
-lib/calibre/calibre/ebooks/chardet/eucjpprober.py
-lib/calibre/calibre/ebooks/chardet/euckrfreq.py
-lib/calibre/calibre/ebooks/chardet/euckrprober.py
-lib/calibre/calibre/ebooks/chardet/euctwfreq.py
-lib/calibre/calibre/ebooks/chardet/euctwprober.py
-lib/calibre/calibre/ebooks/chardet/gb2312freq.py
-lib/calibre/calibre/ebooks/chardet/gb2312prober.py
-lib/calibre/calibre/ebooks/chardet/hebrewprober.py
-lib/calibre/calibre/ebooks/chardet/jisfreq.py
-lib/calibre/calibre/ebooks/chardet/jpcntx.py
-lib/calibre/calibre/ebooks/chardet/langbulgarianmodel.py
-lib/calibre/calibre/ebooks/chardet/langcyrillicmodel.py
-lib/calibre/calibre/ebooks/chardet/langgreekmodel.py
-lib/calibre/calibre/ebooks/chardet/langhebrewmodel.py
-lib/calibre/calibre/ebooks/chardet/langhungarianmodel.py
-lib/calibre/calibre/ebooks/chardet/langthaimodel.py
-lib/calibre/calibre/ebooks/chardet/latin1prober.py
-lib/calibre/calibre/ebooks/chardet/mbcharsetprober.py
-lib/calibre/calibre/ebooks/chardet/mbcsgroupprober.py
-lib/calibre/calibre/ebooks/chardet/mbcssm.py
-lib/calibre/calibre/ebooks/chardet/sbcharsetprober.py
-lib/calibre/calibre/ebooks/chardet/sbcsgroupprober.py
-lib/calibre/calibre/ebooks/chardet/sjisprober.py
-lib/calibre/calibre/ebooks/chardet/universaldetector.py
-lib/calibre/calibre/ebooks/chardet/utf8prober.py
+lib/calibre/calibre/ebooks/chardet.py
 lib/calibre/calibre/ebooks/chm/__init__.py
 lib/calibre/calibre/ebooks/chm/input.py
 lib/calibre/calibre/ebooks/chm/metadata.py
@@ -333,11 +299,12 @@ lib/calibre/calibre/ebooks/odt/__init__.py
 lib/calibre/calibre/ebooks/odt/input.py
 lib/calibre/calibre/ebooks/oeb/__init__.py
 lib/calibre/calibre/ebooks/oeb/base.py
-lib/calibre/calibre/ebooks/oeb/entitydefs.py
 lib/calibre/calibre/ebooks/oeb/iterator.py
 lib/calibre/calibre/ebooks/oeb/output.py
+lib/calibre/calibre/ebooks/oeb/parse_utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
 lib/calibre/calibre/ebooks/oeb/stylizer.py
+lib/calibre/calibre/ebooks/oeb/display/test/test.py
 lib/calibre/calibre/ebooks/oeb/transforms/__init__.py
 lib/calibre/calibre/ebooks/oeb/transforms/cover.py
 lib/calibre/calibre/ebooks/oeb/transforms/filenames.py
@@ -686,6 +653,7 @@ lib/calibre/calibre/gui2/dialogs/tweak_epub_ui.py
 lib/calibre/calibre/gui2/dialogs/user_profiles.py
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
 lib/calibre/calibre/gui2/dnd.py
+lib/calibre/calibre/gui2/duplicates.py
 lib/calibre/calibre/gui2/ebook_download.py
 lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
@@ -775,11 +743,14 @@ lib/calibre/calibre/gui2/store/basic_config.py
 lib/calibre/calibre/gui2/store/opensearch_store.py
 lib/calibre/calibre/gui2/store/web_store_dialog.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
+lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
+lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
 lib/calibre/calibre/gui2/store/stores/beam_ebooks_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
+lib/calibre/calibre/gui2/store/stores/litres_plugin.py
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
 lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
 lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
@@ -1009,6 +980,9 @@ lib/calibre/calibre/utils/sigil.py
 lib/calibre/calibre/utils/smartypants.py
 lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
+lib/calibre/calibre/utils/soupparser.py
+lib/calibre/calibre/utils/coffeescript.py
+lib/calibre/calibre/utils/linux_trash.py
 lib/calibre/calibre/utils/terminfo.py
 lib/calibre/calibre/utils/text2int.py
 lib/calibre/calibre/utils/threadpool.py
@@ -1035,14 +1009,52 @@ lib/calibre/calibre/web/jsbrowser/__init__.py
 lib/calibre/calibre/web/jsbrowser/login.py
 lib/calibre/calibre/web/jsbrowser/test.py
 lib/calibre/calibre/web/jsbrowser/forms.py
+lib/calibre/chardet/euctwprober.py
+lib/calibre/chardet/hebrewprober.py
+lib/calibre/chardet/euckrfreq.py
+lib/calibre/chardet/charsetgroupprober.py
+lib/calibre/chardet/latin1prober.py
+lib/calibre/chardet/mbcssm.py
+lib/calibre/chardet/langthaimodel.py
+lib/calibre/chardet/euckrprober.py
+lib/calibre/chardet/escprober.py
+lib/calibre/chardet/mbcharsetprober.py
+lib/calibre/chardet/langcyrillicmodel.py
+lib/calibre/chardet/__init__.py
+lib/calibre/chardet/chardistribution.py
+lib/calibre/chardet/sbcharsetprober.py
+lib/calibre/chardet/sjisprober.py
+lib/calibre/chardet/langbulgarianmodel.py
+lib/calibre/chardet/langhebrewmodel.py
+lib/calibre/chardet/gb2312prober.py
+lib/calibre/chardet/escsm.py
+lib/calibre/chardet/utf8prober.py
+lib/calibre/chardet/codingstatemachine.py
+lib/calibre/chardet/test.py
+lib/calibre/chardet/big5freq.py
+lib/calibre/chardet/gb2312freq.py
+lib/calibre/chardet/langgreekmodel.py
+lib/calibre/chardet/euctwfreq.py
+lib/calibre/chardet/eucjpprober.py
+lib/calibre/chardet/jpcntx.py
+lib/calibre/chardet/jisfreq.py
+lib/calibre/chardet/charsetprober.py
+lib/calibre/chardet/sbcsgroupprober.py
+lib/calibre/chardet/constants.py
+lib/calibre/chardet/mbcsgroupprober.py
+lib/calibre/chardet/langhungarianmodel.py
+lib/calibre/chardet/universaldetector.py
+lib/calibre/chardet/big5prober.py
 lib/calibre/cherrypy/__init__.py
-lib/calibre/cherrypy/_cpcgifs.py
 lib/calibre/cherrypy/_cpchecker.py
+lib/calibre/cherrypy/_cpcompat.py
 lib/calibre/cherrypy/_cpconfig.py
 lib/calibre/cherrypy/_cpdispatch.py
 lib/calibre/cherrypy/_cperror.py
 lib/calibre/cherrypy/_cplogging.py
 lib/calibre/cherrypy/_cpmodpy.py
+lib/calibre/cherrypy/_cpnative_server.py
+lib/calibre/cherrypy/_cpreqbody.py
 lib/calibre/cherrypy/_cprequest.py
 lib/calibre/cherrypy/_cpserver.py
 lib/calibre/cherrypy/_cpthreadinglocal.py
@@ -1052,19 +1064,23 @@ lib/calibre/cherrypy/_cpwsgi.py
 lib/calibre/cherrypy/_cpwsgi_server.py
 lib/calibre/cherrypy/lib/__init__.py
 lib/calibre/cherrypy/lib/auth.py
+lib/calibre/cherrypy/lib/auth_basic.py
+lib/calibre/cherrypy/lib/auth_digest.py
 lib/calibre/cherrypy/lib/caching.py
 lib/calibre/cherrypy/lib/covercp.py
+lib/calibre/cherrypy/lib/cpstats.py
 lib/calibre/cherrypy/lib/cptools.py
 lib/calibre/cherrypy/lib/encoding.py
+lib/calibre/cherrypy/lib/gctools.py
 lib/calibre/cherrypy/lib/http.py
 lib/calibre/cherrypy/lib/httpauth.py
+lib/calibre/cherrypy/lib/httputil.py
+lib/calibre/cherrypy/lib/jsontools.py
 lib/calibre/cherrypy/lib/profiler.py
-lib/calibre/cherrypy/lib/safemime.py
+lib/calibre/cherrypy/lib/reprconf.py
 lib/calibre/cherrypy/lib/sessions.py
 lib/calibre/cherrypy/lib/static.py
-lib/calibre/cherrypy/lib/tidy.py
-lib/calibre/cherrypy/lib/wsgiapp.py
-lib/calibre/cherrypy/lib/xmlrpc.py
+lib/calibre/cherrypy/lib/xmlrpcutil.py
 lib/calibre/cherrypy/process/__init__.py
 lib/calibre/cherrypy/process/plugins.py
 lib/calibre/cherrypy/process/servers.py
@@ -1072,6 +1088,46 @@ lib/calibre/cherrypy/process/win32.py
 lib/calibre/cherrypy/process/wspbus.py
 lib/calibre/cherrypy/scaffold/__init__.py
 lib/calibre/cherrypy/wsgiserver/__init__.py
+lib/calibre/cherrypy/wsgiserver/ssl_builtin.py
+lib/calibre/cherrypy/wsgiserver/ssl_pyopenssl.py
+lib/calibre/cherrypy/wsgiserver/wsgiserver2.py
+lib/calibre/cherrypy/wsgiserver/wsgiserver3.py
+lib/calibre/html5lib/sanitizer.py
+lib/calibre/html5lib/tokenizer.py
+lib/calibre/html5lib/html5parser.py
+lib/calibre/html5lib/ihatexml.py
+lib/calibre/html5lib/__init__.py
+lib/calibre/html5lib/tokenizer_old.py
+lib/calibre/html5lib/inputstream.py
+lib/calibre/html5lib/utils.py
+lib/calibre/html5lib/constants.py
+lib/calibre/html5lib/filters/lint.py
+lib/calibre/html5lib/filters/sanitizer.py
+lib/calibre/html5lib/filters/whitespace.py
+lib/calibre/html5lib/filters/__init__.py
+lib/calibre/html5lib/filters/inject_meta_charset.py
+lib/calibre/html5lib/filters/_base.py
+lib/calibre/html5lib/filters/formfiller.py
+lib/calibre/html5lib/filters/optionaltags.py
+lib/calibre/html5lib/serializer/xhtmlserializer.py
+lib/calibre/html5lib/serializer/__init__.py
+lib/calibre/html5lib/serializer/htmlserializer.py
+lib/calibre/html5lib/treewalkers/dom.py
+lib/calibre/html5lib/treewalkers/genshistream.py
+lib/calibre/html5lib/treewalkers/etree.py
+lib/calibre/html5lib/treewalkers/__init__.py
+lib/calibre/html5lib/treewalkers/pulldom.py
+lib/calibre/html5lib/treewalkers/soup.py
+lib/calibre/html5lib/treewalkers/lxmletree.py
+lib/calibre/html5lib/treewalkers/_base.py
+lib/calibre/html5lib/treewalkers/simpletree.py
+lib/calibre/html5lib/treebuilders/dom.py
+lib/calibre/html5lib/treebuilders/etree.py
+lib/calibre/html5lib/treebuilders/__init__.py
+lib/calibre/html5lib/treebuilders/etree_lxml.py
+lib/calibre/html5lib/treebuilders/soup.py
+lib/calibre/html5lib/treebuilders/_base.py
+lib/calibre/html5lib/treebuilders/simpletree.py
 lib/calibre/odf/__init__.py
 lib/calibre/odf/anim.py
 lib/calibre/odf/attrconverters.py
@@ -1191,6 +1247,7 @@ share/calibre/content_server/star-half.png
 share/calibre/content_server/star-off.png
 share/calibre/content_server/star-on.png
 share/calibre/default_tweaks.py
+share/calibre/display/cfi.js
 share/calibre/ebook-convert-complete.pickle
 share/calibre/fonts/liberation/LiberationMono-Bold.ttf
 share/calibre/fonts/liberation/LiberationMono-BoldItalic.ttf
@@ -1454,6 +1511,7 @@ share/calibre/viewer/referencing.js
 @dirrm share/calibre/fonts/prs500
 @dirrm share/calibre/fonts/liberation
 @dirrm share/calibre/fonts
+@dirrm share/calibre/display
 @dirrm share/calibre/content_server/read
 @dirrm share/calibre/content_server/jquery_ui/js
 @dirrm share/calibre/content_server/jquery_ui/css/humanity-custom/images
@@ -1468,6 +1526,7 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/routes
 @dirrm lib/calibre/pyPdf
 @dirrm lib/calibre/odf
+@dirrm lib/calibre/chardet
 @dirrm lib/calibre/cherrypy/wsgiserver
 @dirrm lib/calibre/cherrypy/scaffold
 @dirrm lib/calibre/cherrypy/process
@@ -1537,6 +1596,8 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/ebooks/pdb/palmdoc
 @dirrm lib/calibre/calibre/ebooks/pdb/ereader
 @dirrm lib/calibre/calibre/ebooks/pdb
+@dirrm lib/calibre/calibre/ebooks/oeb/display/test
+@dirrm lib/calibre/calibre/ebooks/oeb/display
 @dirrm lib/calibre/calibre/ebooks/oeb/transforms
 @dirrm lib/calibre/calibre/ebooks/oeb
 @dirrm lib/calibre/calibre/ebooks/odt
@@ -1565,7 +1626,6 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/ebooks/compression
 @dirrm lib/calibre/calibre/ebooks/comic
 @dirrm lib/calibre/calibre/ebooks/chm
-@dirrm lib/calibre/calibre/ebooks/chardet
 @dirrm lib/calibre/calibre/ebooks/azw4
 @dirrm lib/calibre/calibre/ebooks
 @dirrm lib/calibre/calibre/db/tests
@@ -1604,6 +1664,11 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/devices
 @dirrm lib/calibre/calibre/customize
 @dirrm lib/calibre/calibre
+@dirrm lib/calibre/html5lib/filters
+@dirrm lib/calibre/html5lib/serializer
+@dirrm lib/calibre/html5lib/treewalkers
+@dirrm lib/calibre/html5lib/treebuilders
+@dirrm lib/calibre/html5lib
 @dirrm lib/calibre
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
