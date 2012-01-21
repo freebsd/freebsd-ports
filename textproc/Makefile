@@ -351,6 +351,7 @@
     SUBDIR += libcue
     SUBDIR += libebml
     SUBDIR += libextractor
+    SUBDIR += libexttextcat
     SUBDIR += libkmfl
     SUBDIR += liblinebreak
     SUBDIR += liblingoteach

@@ -1,0 +1,16 @@
+%%DATADIR%%/fpdb.conf
+bin/createfp
+include/libexttextcat/common.h
+include/libexttextcat/constants.h
+include/libexttextcat/exttextcat-version.h
+include/libexttextcat/fingerprint.h
+include/libexttextcat/textcat.h
+include/libexttextcat/utf8misc.h
+lib/libexttextcat.a
+lib/libexttextcat.la
+lib/libexttextcat.so
+lib/libexttextcat.so.0
+libdata/pkgconfig/libexttextcat.pc
+@dirrmtry lib/pkgconfig
+@dirrmtry include/libexttextcat
+@dirrmtry %%DATADIR%%
