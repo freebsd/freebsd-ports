@@ -1935,6 +1935,7 @@ crm114                          ports/mail/crm114
 cromwell                        ports/sysutils/cromwell
 cronolog                        ports/sysutils/cronolog
 cronolog-devel                  ports/sysutils/cronolog-devel
+croscorefonts-fonts-ttf         ports/x11-fonts/croscorefonts-fonts-ttf
 cross-binutils                  ports/devel/cross-binutils
 cross-gcc                       ports/devel/cross-gcc
 cross-gdb                       ports/devel/cross-gdb
@@ -11588,6 +11589,7 @@ p5-DBIx-Class-QueryProfiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-DBIx-Class-ResultSet-HashRef  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-DBIx-Class-ResultSet-RecursiveUpdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
+p5-DBIx-Class-Schema-PopulateMore  ports/devel/p5-DBIx-Class-Schema-PopulateMore
 p5-DBIx-Class-TimeStamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-DBIx-Class-Tree              ports/databases/p5-DBIx-Class-Tree
 p5-DBIx-Class-Tree-NestedSet    ports/databases/p5-DBIx-Class-Tree-NestedSet
@@ -16191,6 +16193,7 @@ p5-dbix-class-queryprofiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-dbix-class-resultset-hashref  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-dbix-class-resultset-recursiveupdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
+p5-dbix-class-schema-populatemore  ports/devel/p5-DBIx-Class-Schema-PopulateMore
 p5-dbix-class-timestamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-dbix-class-tree              ports/databases/p5-DBIx-Class-Tree
 p5-dbix-class-tree-nestedset    ports/databases/p5-DBIx-Class-Tree-NestedSet
@@ -19637,6 +19640,7 @@ pcre                            ports/devel/pcre
 pcre++                          ports/devel/pcre++
 pcrs                            ports/textproc/pcrs
 pcsc-lite                       ports/devel/pcsc-lite
+pcsc-tools                      ports/security/pcsc-tools
 pcsxr                           ports/emulators/pcsxr
 pd                              ports/audio/pd
 pdb                             ports/net/pdb
