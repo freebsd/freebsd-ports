@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120121:
+  AFFECTS: users of multimedia/vdr
+  AUTHOR: Juergen Lock <nox@FreeBSD.org>
+
+  The vdr ports have been updated to 1.7.22 which involves at least
+  two changes:
+
+  - svdrsend.pl is now called svdrsend.
+
+  - The ttxtsubs channels.conf format has changed so if you use that
+    plugin you need to edit /usr/local/etc/vdr/channels.conf for the
+    channels you want to receive teletext subtitles on - see:
+
+        /usr/local/share/doc/vdr-plugin-ttxtsubs/HISTORY
+
 20120116:
   AFFECTS: users of mail/postfix-current
   AUTHOR: Sahil Tandon <sahil@FreeBSD.org>
