@@ -21,6 +21,8 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
+MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat filesize limit
+
 SRCDIR=		${WRKDIR}/jasperreports-server-${PORTVERSION}-src
 PATCH_WRKSRC=	${SRCDIR}
 WRKSRC=		${SRCDIR}/${PORTNAME}/buildomatic
