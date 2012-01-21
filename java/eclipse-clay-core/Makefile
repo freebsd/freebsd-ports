@@ -20,6 +20,8 @@ COMMENT=	A database design tool for the Eclipse development environment
 
 RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 
+BROKEN=		unfetchable
+
 RESTRICTED=	License agreement is required to download.
 
 NO_BUILD=	yes
