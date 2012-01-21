@@ -21,3 +21,5 @@ share/ibus/component/hangul.xml
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%
+@dirrm lib/ibus-hangul/setup
+@dirrm lib/ibus-hangul
