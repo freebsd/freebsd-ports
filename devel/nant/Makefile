@@ -27,8 +27,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000 && ${ARCH} == "amd64"
-BROKEN=		fails to build on 9.X
+.if ${ARCH} == "amd64"
+BROKEN=		fails to build
 .endif
 
 post-patch:
