@@ -885,6 +885,7 @@
     SUBDIR += s10sh
     SUBDIR += sage
     SUBDIR += sam2p
+    SUBDIR += sampleicc
     SUBDIR += sane-backends
     SUBDIR += sane-epkowa
     SUBDIR += sane-frontends
