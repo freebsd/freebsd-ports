@@ -1,11 +1,7 @@
---- src/calibre/devices/scanner.py.orig	2011-06-14 14:10:28.000000000 -0500
-+++ src/calibre/devices/scanner.py	2011-06-14 14:12:39.000000000 -0500
-@@ -5,10 +5,10 @@
- manner.
- '''
- 
--import sys, os, re
-+import sys, os, re, subprocess
+--- src/calibre/devices/scanner.py.orig	2011-11-11 20:22:34.000000000 -0800
++++ src/calibre/devices/scanner.py	2011-12-30 16:32:32.000000000 -0800
+@@ -8,7 +8,7 @@
+ import sys, os, re
  from threading import RLock
  
 -from calibre.constants import iswindows, isosx, plugins, islinux
@@ -13,7 +9,7 @@
  
  osx_scanner = win_scanner = linux_scanner = None
  
-@@ -155,17 +155,68 @@
+@@ -155,17 +155,80 @@
              ans.add(tuple(dev))
          return ans
  
@@ -21,43 +17,55 @@
 +
 +    def __call__(self):
 +        ans = set([])
++        import dbus
++        devs = []
 +
 +        try:
-+            out = subprocess.Popen("/usr/sbin/usbconfig dump_device_desc | /usr/bin/awk 'function get_str(s) { split(s, a, /<|>/); if (a[2] != \"no string\") { return a[2]; } else { return \"\";} } BEGIN {state=0;} /^[[:space:]]+idVendor/ {state = 1; vendor = $3; next;} /idProduct/ {productid = $3; next;} /bcdDevice/ {bcd = $3; next;} /iManufacturer/ { manufacturer = get_str($0); next; }  /iProduct/ { product = get_str($0); next;} /iSerialNumber/ { sn = get_str($0); next;} /^$/ {if (state == 1) { state = 0; printf(\"%s%%%%%s%%%%%s%%%%%s%%%%%s%%%%%s\\n\",vendor, productid, bcd, manufacturer, product, sn);} }'", shell=True, stdout=subprocess.PIPE).communicate()[0]
-+        except OSError, e:
++           bus = dbus.SystemBus()
++           manager = dbus.Interface(bus.get_object('org.freedesktop.Hal',
++                         '/org/freedesktop/Hal/Manager'), 'org.freedesktop.Hal.Manager')
++           paths = manager.FindDeviceStringMatch('freebsd.driver','da')
++           for path in paths:
++              obj = bus.get_object('org.freedesktop.Hal', path)
++              objif = dbus.Interface(obj, 'org.freedesktop.Hal.Device')
++              devif = objif
++              parentdriver = None
++              while parentdriver != 'umass':
++                 try:
++                    obj = bus.get_object('org.freedesktop.Hal',
++                          objif.GetProperty('info.parent'))
++                    objif = dbus.Interface(obj, 'org.freedesktop.Hal.Device')
++                    try:
++                       parentdriver = objif.GetProperty('freebsd.driver')
++                    except dbus.exceptions.DBusException, e:
++                       continue
++                 except dbus.exceptions.DBusException, e:
++                    break
++              if parentdriver != 'umass':
++                  continue
++              dev = []
++              try:
++                 dev.append(objif.GetProperty('usb.vendor_id'))
++                 dev.append(objif.GetProperty('usb.product_id'))
++                 dev.append(objif.GetProperty('usb.device_revision_bcd'))
++              except dbus.exceptions.DBusException, e:
++                 continue
++              try:
++                 dev.append(objif.GetProperty('info.vendor'))
++              except:
++                 dev.append('')
++              try:
++                 dev.append(objif.GetProperty('info.product'))
++              except:
++                 dev.append('')
++              try:
++                 dev.append(objif.GetProperty('usb.serial'))
++              except:
++                 dev.append('')
++              dev.append(path)
++              ans.add(tuple(dev))
++        except dbus.exceptions.DBusException, e:
 +           print >>sys.stderr, "Execution failed:", e
-+
-+        if out.strip() == "":
-+            return ans
-+        for line in out.strip().split("\n"):
-+            ven, prod, bcd, man, prod_string, serial = line.strip().split("%%", 6)
-+            dev = []
-+            try:
-+                dev.append(int(ven, 16))
-+            except:
-+                continue
-+            try:
-+                dev.append(int(prod, 16))
-+            except:
-+                continue
-+            try:
-+                dev.append(int(bcd, 16))
-+            except:
-+                continue
-+            try:
-+                dev.append(man)
-+            except:
-+                dev.append('')
-+            try:
-+                dev.append(prod_string)
-+            except:
-+                dev.append('')
-+            try:
-+                dev.append(serial)
-+            except:
-+                dev.append('')
-+
-+            ans.add(tuple(dev))
 +        return ans
 +
 +

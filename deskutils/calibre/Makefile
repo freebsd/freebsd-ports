@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.26
+PORTVERSION=	0.8.33
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -39,12 +39,18 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
 		py*-qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
-		py*-qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
+		py*-qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml \
+		py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
+		pdftohtml:${PORTSDIR}/graphics/poppler-utils \
+		lshal:${PORTSDIR}/sysutils/hal
 
-OPTIONS=	PODOFO "PDF support via PoDoFo library" on \
-		MOUNTHELPER_SUID "Install mount helper as suid binary" off
+OPTIONS=	PODOFO	"PDF support via PoDoFo library" on \
+		NLS	"Enable NLS support"	on
 
+USE_XZ=		yes
+.if defined(WITH_NLS)
 USE_GETTEXT=	yes
+.endif
 USE_PYTHON=	2.7+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build
@@ -101,12 +107,9 @@ do-install:
 	${MKDIR} ${PREFIX}/share/mime/packages
 	${MKDIR} ${PREFIX}/share/icons/hicolor/128x128/apps
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-		${PYSETUP} install --prefix ${PREFIX})
+		${PYSETUP} ${INSTALL} --prefix ${PREFIX})
 
 post-install:
-.if defined(WITH_MOUNTHELPER_SUID)
-	${CHOWN} ${BINOWN}:operator ${PREFIX}/bin/calibre-mount-helper
-	${CHMOD} ug+s ${PREFIX}/bin/calibre-mount-helper
-.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
