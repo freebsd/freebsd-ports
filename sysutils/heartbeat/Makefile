@@ -208,7 +208,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-post-deinstall:
-	@${SH} ${PKGINSTALL} ${PKGNAME} DEINSTALL
-
 .include <bsd.port.post.mk>
