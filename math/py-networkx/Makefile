@@ -17,11 +17,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYSETUP=	setup_egg.py
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} "s,^docdirbase  =.*,docdirbase = '${DOCSDIR}'," ${WRKSRC}/setup.py
-
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
@@ -32,4 +27,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
