@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-sleeptimer
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/652/
 EXTRACT_SUFX=	.tgz

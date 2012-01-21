@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vdr-plugin-ttxtsubs
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.2.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/309/
+MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/725/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	nox@FreeBSD.org
@@ -17,7 +16,7 @@ COMMENT=	Video Disk Recorder - teletext subtitle plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING README HISTORY
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 

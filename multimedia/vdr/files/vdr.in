@@ -24,11 +24,23 @@
 name=vdr
 rcvar=vdr_enable
 
-command="%%PREFIX%%/bin/vdr"
-command_args="-d"
-
 load_rc_config ${name}
 : ${vdr_enable="NO"}
 : ${vdr_chdir="%%VIDEODIR%%"}
+: ${vdr_waitdvb="YES"}
+
+command="%%PREFIX%%/bin/vdr"
+procname="$command"
+command_args="-d"
+
+start_precmd="${name}_prestart"
+
+vdr_prestart()
+{
+	if checkyesno "${name}_waitdvb"; then
+		command="/usr/sbin/daemon"
+		rc_flags="-f %%PREFIX%%/bin/vdr-waitdvb $rc_flags"
+	fi
+}
 
 run_rc_command "$1"
