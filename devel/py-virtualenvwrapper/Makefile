@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	virtualenvwrapper
-PORTVERSION=	2.10.1
+PORTVERSION=	2.11.1
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
-		http://www.doughellmann.com/downloads/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+		http://www.doughellmann.com/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
