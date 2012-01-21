@@ -1,4 +1,4 @@
-lib/vdr/libvdr-infosatepg.so.1.7.19
+lib/vdr/libvdr-infosatepg.so.1.7.22
 @exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdr/infosatepg
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-infosatepg.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/vdr-infosatepg.mo

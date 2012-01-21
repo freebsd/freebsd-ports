@@ -6,9 +6,9 @@ Index: Makefile
 -	$(MAKE) -C $(LSIDIR) all
 +	$(MAKE) -C $(LSIDIR) all CC=${CC} CXX=${CXX}
  
- # Internationalization (I18N):
+ # pkg-config file:
  
-@@ -167,7 +167,7 @@ plugins: include-dir
+@@ -186,7 +186,7 @@ plugins: include-dir
  	       noapiv="$$noapiv $$i";\
  	       continue;\
  	       fi;\
@@ -17,16 +17,16 @@ Index: Makefile
  	    done;\
  	if [ -n "$$noapiv" ] ; then echo; echo "*** plugins without APIVERSION:$$noapiv"; echo; fi;\
  	if [ -n "$$failed" ] ; then echo; echo "*** failed plugins:$$failed"; echo; exit 1; fi
-@@ -176,7 +176,7 @@ clean-plugins:
+@@ -197,7 +197,7 @@ clean-plugins:
  
  # Install the files:
  
--install: install-bin install-conf install-doc install-plugins install-i18n install-includes
-+install: install-bin install-doc install-plugins install-includes
+-install: install-bin install-conf install-doc install-plugins install-i18n install-includes install-pc
++install: install-bin install-conf install-doc install-plugins install-includes install-pc
  
  # VDR binary:
  
-@@ -191,7 +191,6 @@ endif
+@@ -212,7 +212,6 @@ endif
  # Configuration files:
  
  install-conf:
@@ -34,7 +34,7 @@ Index: Makefile
  	@if [ ! -d $(DESTDIR)$(CONFDIR) ]; then\
  	    mkdir -p $(DESTDIR)$(CONFDIR);\
  	    cp *.conf $(DESTDIR)$(CONFDIR);\
-@@ -207,7 +206,7 @@ install-doc:
+@@ -228,7 +227,7 @@ install-doc:
  
  # Plugins:
  

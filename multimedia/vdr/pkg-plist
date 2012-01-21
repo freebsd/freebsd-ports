@@ -1,14 +1,16 @@
-bin/svdrpsend.pl
+bin/svdrpsend
 bin/vdr
-lib/vdr/libvdr-dvbsddevice.so.1.7.19
-lib/vdr/libvdr-svcsvr.so.1.7.19
-lib/vdr/libvdr-svccli.so.1.7.19
-lib/vdr/libvdr-status.so.1.7.19
-lib/vdr/libvdr-skincurses.so.1.7.19
-lib/vdr/libvdr-pictures.so.1.7.19
-lib/vdr/libvdr-osddemo.so.1.7.19
-lib/vdr/libvdr-hello.so.1.7.19
-lib/vdr/libvdr-svdrpdemo.so.1.7.19
+bin/vdr-waitdvb
+lib/vdr/libvdr-dvbsddevice.so.1.7.22
+lib/vdr/libvdr-svcsvr.so.1.7.22
+lib/vdr/libvdr-svccli.so.1.7.22
+lib/vdr/libvdr-status.so.1.7.22
+lib/vdr/libvdr-skincurses.so.1.7.22
+lib/vdr/libvdr-pictures.so.1.7.22
+lib/vdr/libvdr-osddemo.so.1.7.22
+lib/vdr/libvdr-hello.so.1.7.22
+lib/vdr/libvdr-svdrpdemo.so.1.7.22
+libdata/pkgconfig/vdr.pc
 %%NLS%%share/locale/ar/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-hello.mo
@@ -149,6 +151,9 @@ etc/vdr/diseqc.conf.sample
 @unexec if cmp -s %D/etc/vdr/keymacros.conf.sample %D/etc/vdr/keymacros.conf; then rm -f %D/etc/vdr/keymacros.conf; fi
 etc/vdr/keymacros.conf.sample
 @exec if [ ! -f %D/etc/vdr/keymacros.conf ] ; then cp -p %D/%F %B/keymacros.conf; fi
+@unexec if cmp -s %D/etc/vdr/scr.conf.sample %D/etc/vdr/scr.conf; then rm -f %D/etc/vdr/scr.conf; fi
+etc/vdr/scr.conf.sample
+@exec if [ ! -f %D/etc/vdr/scr.conf ] ; then cp -p %D/%F %B/scr.conf; fi
 @unexec if cmp -s %D/etc/vdr/sources.conf.sample %D/etc/vdr/sources.conf; then rm -f %D/etc/vdr/sources.conf; fi
 etc/vdr/sources.conf.sample
 @exec if [ ! -f %D/etc/vdr/sources.conf ] ; then cp -p %D/%F %B/sources.conf; fi

@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/multimedia/vdr/files/vdr-waitdvb.in,v 1.1 2012-01-21 17:32:50 nox Exp $
+#
+
+command="%%PREFIX%%/bin/vdr"
+
+echo -n "vdr: waiting for dvb nodes: "
+i=0
+while true
+do
+	ndvb=$(ls /dev/dvb/adapter*/frontend* 2>/dev/null|wc -l|tr -d ' ')
+	if [ $ndvb -gt 0 ]; then
+		break
+	fi
+	if [ $i -ge 60 ]; then
+		break
+	fi
+	i=$((i + 1))
+	sleep 1
+	echo -n "."
+done
+
+i=0
+while true
+do
+	sleep 2
+	nndvb=$(ls /dev/dvb/adapter*/frontend* 2>/dev/null|wc -l|tr -d ' ')
+	echo -n " $nndvb"
+	if [ $nndvb -eq $ndvb ]; then
+		break
+	fi
+	if [ $i -ge 30 ]; then
+		break
+	fi
+	i=$((i + 1))
+done
+echo .
+
+exec "$command" "$@"

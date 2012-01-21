@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr
-PORTVERSION=	1.7.19
-PORTREVISION=	3
+PORTVERSION=	1.7.22
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -27,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME+=	pkgconfig
 USE_GETTEXT=	yes
-PORTDOCS=	COPYING INSTALL MANUAL README
+PORTDOCS=	COPYING INSTALL MANUAL README HISTORY
 MAKE_JOBS_SAFE=	yes
 MAN1=		vdr.1
 MAN5=		vdr.5
@@ -45,6 +44,7 @@ ALL_TARGET=	all plugins
 
 VIDEODIR=	/video
 SUB_LIST+=	VIDEODIR=${VIDEODIR}
+SUB_FILES+=	vdr-waitdvb
 USE_RC_SUBR=	vdr
 VDR_USER=	vdr
 VDR_GROUP=	vdr
@@ -74,24 +74,21 @@ ALL_TARGET=	vdr plugins
 .endif
 
 post-patch:
-# avoid a bug found post-release by reverting parts of the 1.7.19 update
-# thread:
-#	http://thread.gmane.org/gmane.linux.vdr/44724/focus=44729
-	@${PATCH} -d ${WRKSRC} --quiet -p1 -R <${FILESDIR}/vdr-1.7.18-1.7.19-tspacketbug.diff
 # clang doesn't know -MG:
 	@${REINPLACE_CMD} '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
 		${WRKSRC}/Makefile ${WRKSRC}/libsi/Makefile \
 		${WRKSRC}/PLUGINS/src/*/Makefile
 .if defined(WITH_TTXPATCH)
-	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.15-ttxtsubs.patch-1
-	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.15-ttxtsubs.patch-2
-	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.19-ttxtsubs.patch-3
+	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-1
+	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-2
 .endif
 	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
 		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${CONFDIR}|' ${WRKSRC}/vdr.1
 # We don't support this yet:
 	@${RM} -r ${WRKSRC}/PLUGINS/src/dvbhddevice
+# upstream bug:
+	@${CP} ${WRKSRC}/svdrpsend.pl ${WRKSRC}/svdrpsend
 
 post-install:
 .if !defined(WITHOUT_NLS)
@@ -109,6 +106,7 @@ post-install:
 			${INSTALL_DATA} -o ${VDR_USER} -g ${VDR_GROUP} ${WRKSRC}/$$i ${CONFDIR}/$$i; \
 		fi; \
 	done
+	${INSTALL_SCRIPT} ${WRKDIR}/vdr-waitdvb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})

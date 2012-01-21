@@ -1,5 +1,5 @@
 bin/markad
-lib/vdr/libvdr-markad.so.1.7.19
+lib/vdr/libvdr-markad.so.1.7.22
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-markad.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr-markad.mo
 %%NLS%%share/locale/fi_FI/LC_MESSAGES/vdr-markad.mo
