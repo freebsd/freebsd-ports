@@ -33,16 +33,14 @@ PLIST_SUB=	SHOUTCASTUSER=${SHOUTCASTUSER} \
 
 SUB_FILES=	pkg-message
 
-SUB_LIST=	${PLIST_SUB}
+SUB_LIST=	SHOUTCASTUSER=${SHOUTCASTUSER} \
+		SHOUTCASTGROUP=${SHOUTCASTGROUP} \
+		SHOUTCASTDIR=${SHOUTCASTDIR}
 
 USERS=		${SHOUTCASTUSER}
 GROUPS=		${SHOUTCASTGROUP}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-IGNORE=		is for FreeBSD 8.x and later
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^logfile=.*\/logfile.log/d' \
