@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.2.1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://people.rit.edu/rpsfa/distfiles/
@@ -200,6 +200,8 @@ post-patch:
 .endif
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} '/install-data-am: /s/install-dist_docDATA//' \
+		${WRKSRC}/tools/u2boat/Makefile.in
 .endif
 
 pre-configure:

@@ -1,4 +1,4 @@
-SHA256 (snort-2.9.2.tar.gz) = 04d375b627dd256d6257f2cbe5a770e4552e3f35d5e2100b97f75426b600d8cb
-SIZE (snort-2.9.2.tar.gz) = 6467539
+SHA256 (snort-2.9.2.1.tar.gz) = 4ec549fc2b0df5e89b2dc0453eabf3499f7da2fa88cd004a084ffa1109cbffa5
+SIZE (snort-2.9.2.1.tar.gz) = 6522229
 SHA256 (snortsam-2.9.1.2.diff.gz) = 712017ee8155c28469de81d7a579899034b2965617fd3c29bac03c1a1484067e
 SIZE (snortsam-2.9.1.2.diff.gz) = 28902
