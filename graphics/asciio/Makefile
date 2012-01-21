@@ -35,7 +35,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Directory/Scratch.pm:${PORTSDIR}/devel/p5-Directory-
 		${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
 		${SITE_PERL}/Eval/Context.pm:${PORTSDIR}/devel/p5-Eval-Context \
 		${SITE_PERL}/Check/ISA.pm:${PORTSDIR}/devel/p5-Check-ISA
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 MAKE_JOBS_SAFE=	yes

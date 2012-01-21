@@ -16,7 +16,7 @@ COMMENT=	A mechanism for validating MARC records
 
 BUILD_DEPENDS=	${SITE_PERL}/MARC/Record.pm:${PORTSDIR}/textproc/p5-MARC-Record \
 		p5-Business-ISBN>=2.03:${PORTSDIR}/misc/p5-Business-ISBN
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=		marclint.1
 MAN3=		MARC::Lint.3 MARC::Lint::CodeData.3

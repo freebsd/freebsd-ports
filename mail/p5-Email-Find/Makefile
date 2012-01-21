@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Find RFC 822 email addresses in plain text
 
 BUILD_DEPENDS=	${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

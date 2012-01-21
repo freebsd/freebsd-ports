@@ -24,7 +24,7 @@ COMMENT=	A Multitrack tablature editor and player
 BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
     		jack.0:${PORTSDIR}/audio/jack
 

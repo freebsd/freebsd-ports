@@ -17,7 +17,7 @@ COMMENT=	Create WSDL documents from (extended) pod
 BUILD_DEPENDS=	p5-IO-stringy>=2.110:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-XML-Writer>=0.531:${PORTSDIR}/textproc/p5-XML-Writer \
 		p5-XML-XPath>=1.13:${PORTSDIR}/textproc/p5-XML-XPath
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

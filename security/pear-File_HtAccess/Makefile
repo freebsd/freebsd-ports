@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to manipulate .htaccess files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	File
 FILES=		HtAccess.php

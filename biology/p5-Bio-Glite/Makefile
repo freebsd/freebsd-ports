@@ -16,7 +16,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	An Perl Interface to G-language
 
 BUILD_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

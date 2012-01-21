@@ -18,7 +18,7 @@ COMMENT=	Multiprotocol Web Services for TurboGears
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TurboGears>=1.1.2:${PORTSDIR}/www/py-turbogears \
 		${PYTHON_PKGNAMEPREFIX}Genshi>=0.3.6:${PORTSDIR}/textproc/py-genshi
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Log-Log4perl>=1.0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	WWW::Mechanize::Plugin::phpBB.3
 

@@ -16,7 +16,7 @@ COMMENT=	Perl interface to the Yahoo Search public API
 
 BUILD_DEPENDS=	p5-URI>=1.54:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.835:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes

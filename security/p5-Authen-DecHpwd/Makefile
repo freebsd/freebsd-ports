@@ -17,7 +17,7 @@ COMMENT=	Perl module for DEC VMS password hashing
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/String.pm:${PORTSDIR}/devel/p5-Scalar-String \
 		${SITE_PERL}/Data/Integer.pm:${PORTSDIR}/devel/p5-Data-Integer \
 		${SITE_PERL}/${PERL_ARCH}/Digest/CRC.pm:${PORTSDIR}/security/p5-Digest-CRC
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 PERL_MODBUILD=	yes

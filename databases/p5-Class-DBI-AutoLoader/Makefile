@@ -17,7 +17,7 @@ COMMENT=	Generates Class::DBI subclasses dynamically
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/Class/DBI/BaseDSN.pm:${PORTSDIR}/databases/p5-Class-DBI-BaseDSN
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

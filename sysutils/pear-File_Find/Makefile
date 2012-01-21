@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class that facillitates the search of filesystems
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PEAR_CATSRC=	yes
 CATEGORY=	File

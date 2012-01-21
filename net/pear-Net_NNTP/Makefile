@@ -14,7 +14,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR implementation of the NNTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		NNTP/Client.php NNTP/Header.php NNTP/Message.php \

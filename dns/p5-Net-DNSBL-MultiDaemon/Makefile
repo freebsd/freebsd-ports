@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/mach/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Sys
 		${SITE_PERL}/mach/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		${SITE_PERL}/Net/DNS/Codes.pm:${PORTSDIR}/dns/p5-Net-DNS-Codes \
 		${SITE_PERL}/mach/Net/DNS/ToolKit.pm:${PORTSDIR}/dns/p5-Net-DNS-ToolKit
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 				${SITE_PERL}/File/SafeDO.pm:${PORTSDIR}/devel/p5-File-SafeDO
 
 PERL_CONFIGURE=	yes

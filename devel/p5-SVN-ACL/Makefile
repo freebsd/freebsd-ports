@@ -19,7 +19,7 @@ COMMENT=	A simple ACL frontend for subversion
 BUILD_DEPENDS=	\
 		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

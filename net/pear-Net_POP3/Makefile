@@ -14,7 +14,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Provides a POP3 class to access POP3 server
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		Net/POP3.php
 DOCS=		examples/Net_POP3_example.php

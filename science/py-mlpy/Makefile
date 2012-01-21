@@ -18,7 +18,7 @@ COMMENT=	High performance Python package for predictive modeling
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		cython>0:${PORTSDIR}/lang/cython
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
 
 CFLAGS+=	-I${LOCALBASE}/include -I${PYTHON_SITELIBDIR}/numpy/core

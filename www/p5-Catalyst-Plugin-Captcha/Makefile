@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Catalyst/Plugin/Session.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/GD/SecurityImage.pm:${PORTSDIR}/security/p5-GD-SecurityImage
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

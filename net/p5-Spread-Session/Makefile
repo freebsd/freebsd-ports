@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl OO wrapper for Spread messaging toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Spread.pm:${PORTSDIR}/net/spread
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

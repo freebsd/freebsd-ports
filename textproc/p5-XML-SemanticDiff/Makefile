@@ -16,7 +16,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perl extension for comparing XML documents
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

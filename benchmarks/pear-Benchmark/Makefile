@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework to benchmark PHP scripts or function calls
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+RUN_DEPENDS:=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	bcmath
 PEAR_AUTOINSTALL=	yes

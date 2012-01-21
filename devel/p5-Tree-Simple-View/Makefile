@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Tree/Simple.pm:${PORTSDIR}/devel/p5-Tree-Simple \
 		${SITE_PERL}/Class/Throwable.pm:${PORTSDIR}/devel/p5-Class-Throwable \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Test/LongString.pm:${PORTSDIR}/devel/p5-Test-LongString
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		Tree::Simple::View.3 \
 		Tree::Simple::View::ASCII.3 \

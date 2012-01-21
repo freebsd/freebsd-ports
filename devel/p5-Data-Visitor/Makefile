@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Moose>=0.89:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Tie-ToObject>=0.01:${PORTSDIR}/devel/p5-Tie-ToObject \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes

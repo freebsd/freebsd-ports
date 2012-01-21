@@ -17,7 +17,7 @@ COMMENT=	Perl interface for the MusicBrainz libdiscid library
 
 BUILD_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	pkgconfig
 PERL_MODBUILD=	yes

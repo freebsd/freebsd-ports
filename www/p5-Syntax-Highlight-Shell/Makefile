@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syntax::Highlight::Shell - Highlight shell scripts
 
 BUILD_DEPENDS=	${SITE_PERL}/Shell/Parser.pm:${PORTSDIR}/devel/p5-Shell-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

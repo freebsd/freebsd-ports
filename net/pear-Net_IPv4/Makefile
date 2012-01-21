@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	IPv4 network calculations and validation
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		Net/IPv4.php
 TESTS=		AllTests.php    IPv4Test.php    MyIPv4.php

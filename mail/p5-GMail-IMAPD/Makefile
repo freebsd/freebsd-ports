@@ -15,7 +15,7 @@ MAINTAINER=	mashtizadeh@gmail.com
 COMMENT=	Perl IMAP4 gateway to Google's webmail service
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Webmail/Gmail.pm:${PORTSDIR}/mail/p5-Mail-Webmail-Gmail
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

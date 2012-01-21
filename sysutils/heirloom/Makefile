@@ -15,7 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Heirloom Toolchest is a collection of standard Unix utilities
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

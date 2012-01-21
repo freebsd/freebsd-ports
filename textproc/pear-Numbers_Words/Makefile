@@ -14,7 +14,7 @@ COMMENT=	PEAR package provides methods for spelling numerals in words
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Math/BigInteger.php:${PORTSDIR}/math/pear-Math_BigInteger
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Numbers
 FILES=		Numbers/Words.php Numbers/Words/lang.bg.php \

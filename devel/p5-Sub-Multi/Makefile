@@ -18,7 +18,7 @@ COMMENT=	Data::Bind-based multi-sub dispatch
 BUILD_DEPENDS=	p5-Class-Multimethods-Pure>=0.11:${PORTSDIR}/devel/p5-Class-Multimethods-Pure \
 		p5-Data-Bind>=0.26:${PORTSDIR}/devel/p5-Data-Bind \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	A perl class that defines RGB values for common color names
 
 BUILD_DEPENDS=	p5-Module-Load>=0.10:${PORTSDIR}/devel/p5-Module-Load \
 		p5-Module-Loaded>=0:${PORTSDIR}/devel/p5-Module-Loaded
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

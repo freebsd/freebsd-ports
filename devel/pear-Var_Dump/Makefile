@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides methods for dumping structured information about a variable
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		Var_Dump.php Var_Dump/Renderer.php Var_Dump/Renderer/Common.php \
 		Var_Dump/Renderer/Text.php Var_Dump/Renderer/Table.php \

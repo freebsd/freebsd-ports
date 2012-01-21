@@ -21,7 +21,7 @@ BUILD_DEPENDS=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd23 \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.10+
 

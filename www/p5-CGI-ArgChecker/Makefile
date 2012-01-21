@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module implementing a cgi interface to String::Checker
 
 BUILD_DEPENDS=	${SITE_PERL}/String/Checker.pm:${PORTSDIR}/devel/p5-String-Checker
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

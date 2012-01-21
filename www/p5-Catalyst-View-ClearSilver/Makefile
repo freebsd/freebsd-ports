@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/ClearSilver.pm:${PORTSDIR}/www/p5-Clear
 		${SITE_PERL}/${PERL_ARCH}/Data/Structure/Util.pm:${PORTSDIR}/devel/p5-Data-Structure-Util \
 		${SITE_PERL}/Class/C3.pm:${PORTSDIR}/devel/p5-Class-C3 \
 		${SITE_PERL}/Catalyst/View/Templated.pm:${PORTSDIR}/www/p5-Catalyst-View-Templated
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

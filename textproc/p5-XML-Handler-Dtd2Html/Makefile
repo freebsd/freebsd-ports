@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-XML-SAX-Expat>=0.37:${PORTSDIR}/textproc/p5-XML-SAX-Expat \
 		p5-XML-SAX-Writer>=0.44:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-HTML-Template>=2.8:${PORTSDIR}/www/p5-HTML-Template
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

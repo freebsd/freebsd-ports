@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/WebService/Validator/CSS/W3C.pm:${PORTSDIR}/www/p5-webservice-validator-css-w3c \
 		${SITE_PERL}/WebService/Validator/HTML/W3C.pm:${PORTSDIR}/www/p5-webservice-validator-html-w3c \
 		${LOCALBASE}/bin/checklink:${PORTSDIR}/www/p5-W3C-LinkChecker
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

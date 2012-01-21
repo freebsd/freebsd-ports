@@ -15,7 +15,7 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A simple CD catalog for GNOME
 
 BUILD_DEPENDS=	sqlite3>=3.0:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

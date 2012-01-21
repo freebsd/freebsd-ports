@@ -14,7 +14,7 @@ COMMENT=	PEAR Database Abstraction Layer
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 FILES=		Pager.php

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QM-like superpositions in Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Multimethods.pm:${PORTSDIR}/devel/p5-Class-Multimethods
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Quantum::Superpositions.3
 

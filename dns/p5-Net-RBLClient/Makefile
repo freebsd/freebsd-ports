@@ -16,7 +16,7 @@ COMMENT=	Queries multiple Realtime Blackhole Lists in parallel
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS/Packet.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/RBLCLient-${PORTVERSION}
 

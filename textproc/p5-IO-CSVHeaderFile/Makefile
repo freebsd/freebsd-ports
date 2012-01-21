@@ -15,7 +15,7 @@ MAINTAINER=	vasek@ti.cz
 COMMENT=	Perl module to automate reads from CSV formatted text files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

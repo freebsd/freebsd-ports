@@ -15,7 +15,7 @@ MAINTAINER=	chifeng@gmail.com
 COMMENT=	Perl module to detect newer messages in procmail-generated mailboxes
 
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

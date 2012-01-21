@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Log-Dispatch>=2.13:${PORTSDIR}/devel/p5-Log-Dispatch		\
 		p5-Log-Dispatch-Config>=0:${PORTSDIR}/devel/p5-Log-Dispatch-Config	\
 		p5-Catalyst-Runtime>=5.65:${PORTSDIR}/www/p5-Catalyst-Runtime	\
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	Write Perl subroutines and classes in Java
 
 BUILD_DEPENDS=	p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline \
 		p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_JAVA=       yes
 JAVA_VERSION=   1.5+

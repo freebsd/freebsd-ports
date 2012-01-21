@@ -20,7 +20,7 @@ BUILD_DEPENDS=		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 			p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 			p5-Sys-Syslog>=0.16:${PORTSDIR}/sysutils/p5-Sys-Syslog \
 
-RUN_DEPENDS=		${BUILD_DEPENDS}
+RUN_DEPENDS:=		${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 

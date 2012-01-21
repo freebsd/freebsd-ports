@@ -16,7 +16,7 @@ COMMENT=	An object-oriented Perl API for the NEXUS file format
 
 BUILD_DEPENDS=	p5-Clone-PP>=1.02:${PORTSDIR}/devel/p5-Clone-PP \
 		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

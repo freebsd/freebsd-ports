@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module to create an XS file from an Inline C file
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

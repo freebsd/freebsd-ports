@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Driver based class to calculate holidays in the UNO
 
 BUILD_DEPENDS=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Date
 FILES=		Holidays/Driver/UNO.php

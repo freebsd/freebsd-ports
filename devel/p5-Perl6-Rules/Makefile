@@ -16,7 +16,7 @@ COMMENT=	Implements (most of) the Perl 6 regex syntax
 
 BUILD_DEPENDS=	p5-Attribute-Handlers>=0:${PORTSDIR}/devel/p5-Attribute-Handlers \
 		p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

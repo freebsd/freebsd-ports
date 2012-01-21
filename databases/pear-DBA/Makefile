@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Berkely-style database abstraction class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		DBA.php DBA/Compatibility.php DBA/Driver/File.php DBA/Driver/Builtin.php
 TESTS=		benchmark_drivers.php test_drivers.php test_compatibility.php

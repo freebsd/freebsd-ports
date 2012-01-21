@@ -15,7 +15,7 @@ MAINTAINER=	snb@FreeBSD.org
 COMMENT=	FreeBSD Automated Release Bot
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

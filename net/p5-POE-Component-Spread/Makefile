@@ -16,7 +16,7 @@ COMMENT=	Handle Spread communications in POE
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/${PERL_ARCH}/Spread.pm:${PORTSDIR}/net/spread
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES
 

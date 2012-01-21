@@ -14,7 +14,7 @@ MAINTAINER=	ivan@serezhkin.com
 COMMENT=	A collection of handy Perl::Critic policies
 
 BUILD_DEPENDS=	${SITE_PERL}/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Perl-Critic
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

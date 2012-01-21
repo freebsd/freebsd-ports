@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/RPC/XML.pm:${PORTSDIR}/net/p5-RPC-XML \
 		${SITE_PERL}/XML/Feed.pm:${PORTSDIR}/textproc/p5-XML-Feed \

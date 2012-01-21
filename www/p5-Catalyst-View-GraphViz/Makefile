@@ -17,7 +17,7 @@ COMMENT=	Catalyst::View::GraphViz - GraphViz View Class
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst/Plugin/SubRequest.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-SubRequest \
 		${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

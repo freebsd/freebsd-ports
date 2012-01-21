@@ -21,7 +21,7 @@ BROKEN=		does not compile
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-readline>=1.0.1.0:${PORTSDIR}/devel/hs-readline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 HAS_CONFIGURE=	YES

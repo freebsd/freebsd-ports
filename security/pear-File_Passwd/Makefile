@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to manipulate many kinds of password files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-File_Passwd
 OPTIONS=	PEAR_CRYPT_CHAP "PEAR::Crypt_CHAP support" off

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/SVK.pm:${PORTSDIR}/devel/svk \
 		${SITE_PERL}/Graph/SocialMap.pm:${PORTSDIR}/graphics/p5-Graph-SocialMap \
 		${SITE_PERL}/Graph/Writer/GraphViz.pm:${PORTSDIR}/graphics/p5-Graph-Writer-GraphViz \
 		${SITE_PERL}/Algorithm/Accounting.pm:${PORTSDIR}/devel/p5-Algorithm-Accounting
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

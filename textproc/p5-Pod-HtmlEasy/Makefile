@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-version>=0.72:${PORTSDIR}/devel/p5-version \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-Regexp-Common>=2.12:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Environmentally friendly, ink saving typeface
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_ZIP=	yes
 NO_BUILD=	yes

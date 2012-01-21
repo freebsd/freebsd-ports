@@ -15,7 +15,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Declarative testing for your web app
 
 BUILD_DEPENDS=	p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

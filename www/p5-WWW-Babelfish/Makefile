@@ -16,7 +16,7 @@ COMMENT=	Perl interface to obtain translations from the babelfish server
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

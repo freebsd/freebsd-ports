@@ -15,7 +15,7 @@ MAINTAINER=	jf@dockes.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
 BUILD_DEPENDS=	xapian-core>=1.0.22:${PORTSDIR}/databases/xapian-core
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1

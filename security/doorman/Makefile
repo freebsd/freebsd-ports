@@ -16,7 +16,7 @@ MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	A Port Knocking implementation, both daemon and client
 
 BUILD_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PATCH_STRIP=	-p1

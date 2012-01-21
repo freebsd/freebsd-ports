@@ -24,7 +24,7 @@ MAN3=		App::CLI.3 App::CLI::Command.3 App::CLI::Command::Help.3 App::CLI::Helper
 BUILD_DEPENDS=	p5-Getopt-Long>=2.35:${PORTSDIR}/devel/p5-Getopt-Long \
 		p5-Locale-Maketext-Simple>0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Pod-Simple>0:${PORTSDIR}/textproc/p5-Pod-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 .endif
 
 .include <bsd.port.post.mk>

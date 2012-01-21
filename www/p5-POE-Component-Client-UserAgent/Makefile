@@ -17,7 +17,7 @@ COMMENT=	LWP and LWP::Parallel based POE component
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

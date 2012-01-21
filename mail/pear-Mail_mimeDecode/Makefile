@@ -15,7 +15,7 @@ COMMENT=	Provides a class to decode mime messages
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	BSD
 

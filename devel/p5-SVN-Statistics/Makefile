@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subver
 		p5-RRDTool-OO>=0:${PORTSDIR}/devel/p5-RRDTool-OO \
 		p5-Data-Dumper-Simple>=0:${PORTSDIR}/devel/p5-Data-Dumper-Simple \
 		p5-IO-Toolkit>=0:${PORTSDIR}/devel/p5-IO-Toolkit
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

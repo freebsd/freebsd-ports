@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-Class-DBI-SQLite>=0:${PORTSDIR}/databases/p5-Class-DBI-SQLite 
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

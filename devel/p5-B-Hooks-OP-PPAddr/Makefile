@@ -17,7 +17,7 @@ COMMENT=	Hook into opcode execution
 
 BUILD_DEPENDS=	p5-parent>0:${PORTSDIR}/devel/p5-parent \
 		p5-ExtUtils-Depends>=0.302:${PORTSDIR}/devel/p5-ExtUtils-Depends
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

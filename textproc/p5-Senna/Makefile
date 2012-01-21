@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Embeddable Fulltext Search Engine
 
 BUILD_DEPENDS=	senna-cfg:${PORTSDIR}/textproc/senna
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES
 CONFIGURE_ARGS+=</dev/null

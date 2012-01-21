@@ -15,7 +15,7 @@ MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Python Interface to FITS Formatted Files
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

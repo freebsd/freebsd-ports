@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Quickie Wiki Package that's not too Tricky
 
 BUILD_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext
 
 PERL_CONFIGURE=	yes

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
 	${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 	${SITE_PERL}/Data/SpreadPagination.pm:${PORTSDIR}/textproc/p5-Data-SpreadPagination
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI::Client::HTML::Mason.3 \
 	OpenXPKI::Client::HTML::Mason::CRR.3 \

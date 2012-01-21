@@ -14,7 +14,7 @@ COMMENT=	PEAR class for writing Microsoft Excel files
 
 BUILD_DEPENDS=	${PEARDIR}/OLE/OLE.php:${PORTSDIR}/devel/pear-OLE \
 		${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		Spreadsheet/Excel/Writer.php Spreadsheet/Excel/Writer/BIFFwriter.php \
 		Spreadsheet/Excel/Writer/Format.php Spreadsheet/Excel/Writer/Parser.php \

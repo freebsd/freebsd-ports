@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Math-Symbolic>=0.510:${PORTSDIR}/math/p5-Math-Symbolic \
 		p5-Test-Pod>=1.0:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Math::Symbolic::Custom::Pattern.3 \
 	Math::Symbolic::Custom::Pattern::Export.3

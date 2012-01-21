@@ -14,7 +14,7 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl extension for Adler32 hash algorithm
 
 BUILD_DEPENDS=	${SITE_PERL}/Digest.pm:${PORTSDIR}/security/p5-Digest
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

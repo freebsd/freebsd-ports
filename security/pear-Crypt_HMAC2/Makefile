@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Implementation of Hashed Message Authentication Code for PHP5
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 #CATEGORY=	Crypt
 FILES=		Crypt/HMAC2.php Crypt/HMAC2/Exception.php

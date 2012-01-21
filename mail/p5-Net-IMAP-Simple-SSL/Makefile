@@ -16,7 +16,7 @@ COMMENT=	SSL support for Net::IMAP::Simple
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/Net/IMAP/Simple.pm:${PORTSDIR}/mail/p5-Net-IMAP-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

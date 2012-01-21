@@ -18,7 +18,7 @@ COMMENT=	Pidgin-Audacious-Remote is a plug-in for Pidgin 2
 
 BUILD_DEPENDS=	audacious>=2.2:${PORTSDIR}/multimedia/audacious \
 		pidgin:${PORTSDIR}/net-im/pidgin
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 

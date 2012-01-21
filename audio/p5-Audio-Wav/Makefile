@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl modules for reading and writing Microsoft WAV files
 
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

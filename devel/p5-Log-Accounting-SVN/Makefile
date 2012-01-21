@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subver
 		p5-SVN-Log>=0:${PORTSDIR}/devel/p5-SVN-Log \
 		p5-Algorithm-Accounting>=0:${PORTSDIR}/devel/p5-Algorithm-Accounting \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

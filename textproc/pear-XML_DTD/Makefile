@@ -14,7 +14,7 @@ COMMENT=	Parsing of DTD files and DTD validation of XML files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
 

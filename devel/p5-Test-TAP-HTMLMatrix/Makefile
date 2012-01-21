@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/TAP/Model.pm:${PORTSDIR}/devel/p5-Test-TAP-Mode
 		${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
 		${SITE_PERL}/Petal/Utils.pm:${PORTSDIR}/textproc/p5-Petal-Utils \
 		${SITE_PERL}/URI/file.pm:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ MAINTAINER=	nistor@snickers.org
 COMMENT=	Module allows you to easily decode/parse form and query data
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

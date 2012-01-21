@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Tie/Array/Sorted.pm:${PORTSDIR}/devel/p5-Tie-Array-S
 		${SITE_PERL}/Lingua/Stem/En.pm:${PORTSDIR}/textproc/p5-Lingua-Stem \
 		${SITE_PERL}/Bit/Vector/Minimal.pm:${PORTSDIR}/math/p5-Bit-Vector-Minimal \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Email-Abstract>=2.10:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-Email-Simple>=1.9:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Time-Piece>=1.08:${PORTSDIR}/devel/p5-Time-Piece \
 		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

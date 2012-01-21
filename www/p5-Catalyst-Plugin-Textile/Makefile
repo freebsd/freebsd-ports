@@ -18,7 +18,7 @@ COMMENT=	Textile for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Text/Textile.pm:${PORTSDIR}/textproc/p5-Text-Textile
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

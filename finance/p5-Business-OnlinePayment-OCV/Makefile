@@ -17,7 +17,7 @@ COMMENT=	A Business::OnlinePayment backend module for OCV
 
 BUILD_DEPENDS=	${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment \
 		${SITE_PERL}/Business/OCV.pm:${PORTSDIR}/finance/p5-Business-OCV
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -18,7 +18,7 @@ COMMENT=	SLIB installation for Guile
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib \
 		guile:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 

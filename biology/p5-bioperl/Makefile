@@ -59,7 +59,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VERSION}/Text/Wrap.pm:${PORTSDIR}/l
 		${SITE_PERL}/Set/Scalar.pm:${PORTSDIR}/devel/p5-Set-Scalar \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 #CONFLICTS=	p5-bioperl-1.[13579]*
 

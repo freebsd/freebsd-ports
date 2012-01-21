@@ -16,7 +16,7 @@ COMMENT=	A Log::Dispatch output class for logging to shared files
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

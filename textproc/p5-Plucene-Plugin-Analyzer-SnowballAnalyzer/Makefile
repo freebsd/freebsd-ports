@@ -19,7 +19,7 @@ COMMENT=	Stemmed analyzer plugin for p5-Plucene search engine
 BUILD_DEPENDS=	${SITE_PERL}/Lingua/StopWords.pm:${PORTSDIR}/textproc/p5-Lingua-StopWords \
 		${SITE_PERL}/${PERL_ARCH}/Lingua/Stem/Snowball.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \
 		${SITE_PERL}/Plucene/Analysis/TokenFilter.pm:${PORTSDIR}/textproc/p5-Plucene
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

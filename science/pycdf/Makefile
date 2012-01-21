@@ -16,7 +16,7 @@ COMMENT=	A Python Interface to the Unidata NetCDF Library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		${LOCALBASE}/lib/libnetcdf.so:${PORTSDIR}/science/netcdf
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 

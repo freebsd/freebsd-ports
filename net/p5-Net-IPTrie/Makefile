@@ -16,7 +16,7 @@ COMMENT=	Module for building IPv4 and IPv6 address space hierarchies
 
 BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

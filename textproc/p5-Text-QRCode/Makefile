@@ -15,7 +15,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Generate text based QR Code
 
 BUILD_DEPENDS=	libqrencode>=2.0.0:${PORTSDIR}/graphics/libqrencode
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

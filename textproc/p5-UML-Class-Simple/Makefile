@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-Class-Inspector>=1.16:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
 		dot:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

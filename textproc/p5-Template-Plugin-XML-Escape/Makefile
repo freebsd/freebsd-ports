@@ -15,7 +15,7 @@ MAINTAINER=	simarg@gmail.com
 COMMENT=	Escape variables to suit being placed into XML
 
 BUILD_DEPENDS=	p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=		Template::Plugin::XML::Escape.3

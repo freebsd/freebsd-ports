@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/NamedParms.pm:${PORTSDIR}/devel/p5-Class-Named
 		${SITE_PERL}/Class/ParmList.pm:${PORTSDIR}/devel/p5-Class-ParmList \
 		${SITE_PERL}/Tie/DB_File/SplitHash.pm:${PORTSDIR}/devel/p5-Tie-DB_File-SplitHash \
 		${SITE_PERL}/Tie/FileLRUCache.pm:${PORTSDIR}/devel/p5-Tie-FileLRUCache
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

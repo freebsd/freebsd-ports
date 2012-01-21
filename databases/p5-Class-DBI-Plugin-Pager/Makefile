@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Class-DBI-Plugin-AbstractCount>=0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-AbstractCount
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=		Class::DBI::Plugin::Pager.3

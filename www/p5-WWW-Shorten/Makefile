@@ -17,7 +17,7 @@ COMMENT=	Abstract interface to URL shortening sites
 BUILD_DEPENDS=	p5-libwww>=5.75:${PORTSDIR}/www/p5-libwww \
 		p5-Config-Auto>=0:${PORTSDIR}/devel/p5-Config-Auto \
 		p5-URI>=1.27:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

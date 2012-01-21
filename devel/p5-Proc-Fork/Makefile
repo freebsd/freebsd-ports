@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Proc::Fork - Simple, intuitive interface to the fork() system call
 
 BUILD_DEPENDS=	p5-Exporter-Tidy>0:${PORTSDIR}/devel/p5-Exporter-Tidy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

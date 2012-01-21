@@ -18,7 +18,7 @@ COMMENT=	Make Petal go faster by compiling the expressions
 BUILD_DEPENDS=	${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		${SITE_PERL}/Code/Perl.pm:${PORTSDIR}/devel/p5-Code-Perl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Petal::CodePerl.3 Petal::CodePerl::Expr.3 \
 	Petal::CodePerl::Modifiers.3

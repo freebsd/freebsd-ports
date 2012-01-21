@@ -18,7 +18,7 @@ COMMENT=	Perl based trustcenter software for PKI: i18n tools
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/OpenXPKI.pm:${PORTSDIR}/security/p5-openxpki
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 USE_GETTEXT=	yes

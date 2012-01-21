@@ -16,7 +16,7 @@ COMMENT=	The Dining Cryptographers' Protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random \
 		${SITE_PERL}/Net/Address/IPv4/Local.pm:${PORTSDIR}/net/p5-Net-Address-IPv4-Local
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Crypt::Dining.3
 

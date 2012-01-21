@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Net-Server>=0.97:${PORTSDIR}/net/p5-Net-Server \
 		p5-XML-Compile-SOAP>=2.10:${PORTSDIR}/net/p5-XML-Compile-SOAP \
 		p5-XML-Compile>=1.01:${PORTSDIR}/textproc/p5-XML-Compile \
 		p5-XML-Compile-Cache>=0.91:${PORTSDIR}/textproc/p5-XML-Compile-Cache
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

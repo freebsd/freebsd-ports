@@ -16,7 +16,7 @@ COMMENT=	Pure Perl implementation for an XML-RPC client and server
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/TreePP.pm:${PORTSDIR}/textproc/p5-XML-TreePP
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

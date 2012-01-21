@@ -42,7 +42,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-IPC-ShareLite \
 	${SITE_PERL}/DateTime/Format/DateParse.pm:${PORTSDIR}/devel/p5-DateTime-Format-DateParse \
 	${SITE_PERL}/IO/Prompt.pm:${PORTSDIR}/devel/p5-IO-Prompt
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::API.3 \

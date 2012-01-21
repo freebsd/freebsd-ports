@@ -13,7 +13,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR DB compliant interface to LDAP servers
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS:=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
 PEAR_AUTOINSTALL=	yes
 

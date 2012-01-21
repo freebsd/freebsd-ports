@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to the GNU Aspell library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=INC=-I${LOCALBASE}/include \

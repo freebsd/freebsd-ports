@@ -29,7 +29,7 @@ BUILD_DEPENDS=	p5-ConfigReader-Simple>=1.15:${PORTSDIR}/devel/p5-ConfigReader-Si
 		p5-Text-Template>0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-Test-File>0:${PORTSDIR}/devel/p5-Test-File \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

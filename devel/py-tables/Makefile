@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		lzo2.2:${PORTSDIR}/archivers/lzo2 \
 		ucl.1:${PORTSDIR}/archivers/ucl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

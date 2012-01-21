@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide high level APIs for rapid UI design on the console
 
 BUILD_DEPENDS=	${SITE_PERL}/Curses/Widgets.pm:${PORTSDIR}/devel/p5-Curses-Widgets
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

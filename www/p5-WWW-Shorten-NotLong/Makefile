@@ -17,7 +17,7 @@ COMMENT=	A Perl interface to the web site notlong.com
 BUILD_DEPENDS=	p5-libwww>=5.75:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.27:${PORTSDIR}/net/p5-URI \
 		p5-WWW-Shorten>=0:${PORTSDIR}/www/p5-WWW-Shorten
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		WWW::Shorten::NotLong.3
 

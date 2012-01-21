@@ -15,7 +15,7 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Webkit
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB+=	ASSEMBLY_VERSION=1.1.15
 

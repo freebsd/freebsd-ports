@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gperf>=3.0.3:${PORTSDIR}/devel/gperf \
 		libevent>=1.3:${PORTSDIR}/devel/libevent \
 		pcre>=7.6:${PORTSDIR}/devel/pcre \
 		tokyocabinet>=1.4.9:${PORTSDIR}/databases/tokyocabinet
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_ENV+=	GPERF=${LOCALBASE}/bin/gperf \
 		EXTRA_CFLAGS=-I${LOCALBASE}/include \

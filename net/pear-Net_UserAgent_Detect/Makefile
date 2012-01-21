@@ -15,7 +15,7 @@ COMMENT=	PEAR class that determines the Web browser, version, and platform
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		Detect/APC.php UserAgent/Detect.php

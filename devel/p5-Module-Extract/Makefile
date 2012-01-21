@@ -16,7 +16,7 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Base class for working with Perl distributions
 
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Extract.pm:${PORTSDIR}/archivers/p5-Archive-Extract
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

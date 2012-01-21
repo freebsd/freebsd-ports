@@ -14,7 +14,7 @@ COMMENT=	Automatically build HTML_QuickForm objects using DB_DataObject
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm \
 		${PEARDIR}/DB/DataObject.php:${PORTSDIR}/databases/pear-DB_DataObject
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-DB_DataObject_FormBuilder
 OPTIONS=	PEAR_DATE "PEAR::Date support" off \

@@ -17,7 +17,7 @@ COMMENT=	File::ShareDir returning Path::Class objects
 BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

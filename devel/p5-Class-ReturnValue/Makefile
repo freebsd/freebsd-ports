@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A return-value object that can be treated as a boolean,array or object
 
 BUILD_DEPENDS=	${SITE_PERL}/Devel/StackTrace.pm:${PORTSDIR}/devel/p5-Devel-StackTrace
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.0+
 USE_PERL5_REASON=	fails tests with 5.6.X

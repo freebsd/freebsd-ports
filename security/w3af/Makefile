@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/scapy/main.py:${PORTSDIR}/net/scapy \
 		${PYTHON_SITELIBDIR}/wordnet.py:${PORTSDIR}/textproc/py-wordnet \
 		${PYTHON_SITELIBDIR}/yaml/loader.py:${PORTSDIR}/devel/py-yaml
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1PREFIX=	${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/plugins/discovery/oHalberd/
 MAN1=	halberd.1

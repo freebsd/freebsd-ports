@@ -14,7 +14,7 @@ COMMENT=	Show Information about your PEAR install and its packages
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
   		${PEARDIR}/Console/Getargs.php:${PORTSDIR}/devel/pear-Console_Getargs
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LATEST_LINK=	pear-PEAR_Info
 OPTIONS=	PEAR_PHPUnit3 "PEAR::PHPUnit3 support" on

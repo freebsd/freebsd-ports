@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-WWW-HatenaLogin>=0:${PORTSDIR}/www/p5-WWW-HatenaLogin \
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		WWW::HatenaStar.3
 

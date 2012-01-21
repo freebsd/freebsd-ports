@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
 		${SITE_PERL}/MooseX/Types/Path/Class.pm:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		${SITE_PERL}/File/Signature.pm:${PORTSDIR}/sysutils/p5-File-Signature
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install

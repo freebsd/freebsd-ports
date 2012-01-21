@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/DTD.php:${PORTSDIR}/textproc/pear-XML_DTD \
 		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		MDB2/Schema/Reserved/ibase.php \
 		MDB2/Schema/Reserved/mssql.php \

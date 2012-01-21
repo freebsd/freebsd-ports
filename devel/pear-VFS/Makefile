@@ -14,7 +14,7 @@ COMMENT=	PEAR Virtual File System API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	gettext
 

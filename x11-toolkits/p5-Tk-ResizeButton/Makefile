@@ -16,7 +16,7 @@ MAINTAINER=		perl@FreeBSD.org
 COMMENT=		A resizeable button to be used in a Tk::HList column header
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

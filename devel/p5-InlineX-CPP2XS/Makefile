@@ -17,7 +17,7 @@ COMMENT=	Convert from Inline C++ code to XS
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline \
 		p5-Inline-CPP>=0.25:${PORTSDIR}/devel/p5-Inline-CPP
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

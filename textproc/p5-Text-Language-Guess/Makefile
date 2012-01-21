@@ -18,7 +18,7 @@ COMMENT=	Trained module to guess a document's language
 BUILD_DEPENDS=	p5-Log-Log4perl>=1.0:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Text-ExtractWords>=0:${PORTSDIR}/textproc/p5-Text-ExtractWords \
 		p5-Lingua-StopWords>=0:${PORTSDIR}/textproc/p5-Lingua-StopWords
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

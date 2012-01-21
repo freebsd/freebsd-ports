@@ -17,7 +17,7 @@ COMMENT=	Sender Rewriting Scheme
 
 BUILD_DEPENDS=	${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Mail::SRS.3 \
 	Mail::SRS::DB.3 \

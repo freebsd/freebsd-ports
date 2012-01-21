@@ -15,7 +15,7 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	Glues object frameworks together transparently
 
 BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

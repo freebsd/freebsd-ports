@@ -22,7 +22,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib \
 		${LOCALBASE}/libdata/pkgconfig/taglib-sharp.pc:${PORTSDIR}/audio/taglib-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		does not compile
 

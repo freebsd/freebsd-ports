@@ -14,7 +14,7 @@ COMMENT=	PEAR Class for accessing Vpopmail's vpopmaild daemon
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		Vpopmaild.php \

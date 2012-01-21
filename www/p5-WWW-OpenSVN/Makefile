@@ -15,7 +15,7 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	An automated interface for OpenSVN.csie.org
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

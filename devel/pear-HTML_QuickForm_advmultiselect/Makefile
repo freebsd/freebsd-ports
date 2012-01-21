@@ -14,7 +14,7 @@ COMMENT=	Element for PEAR::HTML_QuickForm that defines a 2 box multi-select
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm \
 		${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML/QuickForm
 FILES=		advmultiselect.php qfamsHandler.js qfamsHandler-min.js

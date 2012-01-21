@@ -13,7 +13,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Tool to generate documentation from the source
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	PHPDoc
 FILES=		accessor/PhpdocAccessor.php \

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}Genshi>0.5.1:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}relatorio>=0.2.0:${PORTSDIR}/print/py-relatorio
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install

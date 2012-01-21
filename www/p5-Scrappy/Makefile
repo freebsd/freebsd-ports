@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.03:${PORTSDIR}/devel/p5-File-ShareDir
 		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-Web-Scraper>=0:${PORTSDIR}/www/p5-Web-Scraper \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	DateTime extension for generating recurrence sets from crontab
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Set.pm:${PORTSDIR}/devel/p5-DateTime-Set \
 		${SITE_PERL}/Set/Crontab.pm:${PORTSDIR}/devel/p5-Set-Crontab
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

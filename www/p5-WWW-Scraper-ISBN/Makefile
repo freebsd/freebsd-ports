@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieving information about books by ISBN number
 
 BUILD_DEPENDS=	${SITE_PERL}/WWW/Scraper/ISBN/Record.pm:${PORTSDIR}/www/p5-WWW-Scraper-ISBN-Record
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

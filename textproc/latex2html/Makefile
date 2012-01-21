@@ -17,7 +17,7 @@ COMMENT=	Convert LaTeX documents to HTML
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	ja-latex2html-[0-9]*
 

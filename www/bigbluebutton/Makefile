@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pdf2swf:${PORTSDIR}/graphics/swftools \
 		${LOCALBASE}/sbin/nginx:${PORTSDIR}/www/nginx \
 		${LOCALBASE}/etc/rc.d/tomcat6:${PORTSDIR}/www/tomcat6 \
 		${LOCALBASE}/etc/rc.d/red5:${PORTSDIR}/www/red5
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	requires non-default configuration of dependency
 

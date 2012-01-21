@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Converts time intervals of days, hours, minutes, and seconds
 
 BUILD_DEPENDS=	p5-TimeDate>0:${PORTSDIR}/devel/p5-TimeDate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

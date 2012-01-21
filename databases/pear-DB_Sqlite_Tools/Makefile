@@ -14,7 +14,7 @@ COMMENT=	an object oriented interface to backup Sqlite databases
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
 		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	DB
 FILES=		DB/Sqlite/Tools.php DB/Sqlite/Tools/ArcFour.php DB/Sqlite/Tools/DBC.php \

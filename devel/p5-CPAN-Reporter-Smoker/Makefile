@@ -18,7 +18,7 @@ COMMENT=	Turnkey CPAN Testers smoking
 BUILD_DEPENDS=	p5-CPAN-Checksums>0:${PORTSDIR}/devel/p5-CPAN-Checksums \
 		p5-CPAN-Reporter>0:${PORTSDIR}/devel/p5-CPAN-Reporter \
 		p5-Term-Title>0:${PORTSDIR}/devel/p5-Term-Title
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=		CPAN::Reporter::Smoker.3
 PERL_CONFIGURE=	yes

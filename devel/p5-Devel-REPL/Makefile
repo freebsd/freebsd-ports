@@ -30,7 +30,7 @@ BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
 	p5-App-Nopaste>0:${PORTSDIR}/www/p5-App-Nopaste \
 	p5-Module-Refresh>0:${PORTSDIR}/devel/p5-Module-Refresh \
 	p5-Sys-SigAction>0:${PORTSDIR}/devel/p5-Sys-SigAction
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

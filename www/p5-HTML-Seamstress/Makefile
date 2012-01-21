@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Class-Prototyped>=0:${PORTSDIR}/devel/p5-Class-Prototyped \
 		p5-HTML-Element-Library>=0:${PORTSDIR}/www/p5-HTML-Element-Library \
 		p5-HTML-PrettyPrinter>=0:${PORTSDIR}/www/p5-HTML-PrettyPrinter \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=		sbase.pl.1 \
 		spkg.pl.1

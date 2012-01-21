@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An extented persistence framework for session data
 
 BUILD_DEPENDS=	${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Apache::SessionX.3 \
 	Apache::SessionX::Generate::MD5.3

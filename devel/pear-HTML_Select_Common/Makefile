@@ -14,7 +14,7 @@ COMMENT=	Some small PEAR classes to handle common <select> lists
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
 		${PEARDIR}/I18N/Common.php:${PORTSDIR}/devel/pear-I18N
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FILES=		HTML/Select/Common/BRState.php \
 		HTML/Select/Common/Country.php \

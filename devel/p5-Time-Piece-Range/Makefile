@@ -16,7 +16,7 @@ COMMENT=	Time::Piece::Range - deal with a range of Time::Piece objects
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
 		${SITE_PERL}/Date/Range.pm:${PORTSDIR}/devel/p5-Date-Range
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

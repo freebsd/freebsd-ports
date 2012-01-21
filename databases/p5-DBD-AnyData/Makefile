@@ -18,7 +18,7 @@ COMMENT=	DBI access to XML, CSV and other formats
 BUILD_DEPENDS=	p5-AnyData>=0.07:${PORTSDIR}/devel/p5-AnyData \
 		p5-DBI>1:${PORTSDIR}/databases/p5-DBI \
 		p5-SQL-Statement>1:${PORTSDIR}/databases/p5-SQL-Statement
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

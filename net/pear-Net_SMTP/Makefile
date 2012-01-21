@@ -13,7 +13,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	PEAR class that provides an implementation of the SMTP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		SMTP.php

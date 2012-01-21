@@ -16,7 +16,7 @@ MAINTAINER=	markun@onohara.to
 COMMENT=	DateTime Calculation Utilities
 
 BUILD_DEPENDS=	p5-Math-BigInt>=0:${PORTSDIR}/math/p5-Math-BigInt
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

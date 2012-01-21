@@ -15,7 +15,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Provide regexes for U.S. profanity
 
 BUILD_DEPENDS=	${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

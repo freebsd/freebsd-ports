@@ -14,7 +14,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Resolver library used to communicate with a DNS server
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PEAR_CATSRC=	yes
 PORTSCOUT=	skipv:1.00b2,1.00b1

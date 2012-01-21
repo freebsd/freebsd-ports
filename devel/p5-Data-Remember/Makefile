@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-DBM-Deep>0:${PORTSDIR}/databases/p5-DBM-Deep \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-POE>0:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

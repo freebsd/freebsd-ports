@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy \
 		${SITE_PERL}/Graph/Writer/GraphViz.pm:${PORTSDIR}/graphics/p5-Graph-Writer-GraphViz \
 		${SITE_PERL}/Quantum/Superpositions.pm:${PORTSDIR}/lang/p5-Quantum-Superpositions \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Graph::SocialMap.3
 

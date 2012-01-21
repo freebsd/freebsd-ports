@@ -16,7 +16,7 @@ COMMENT=	Make sure something really is faster
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Tester.pm:${PORTSDIR}/devel/p5-Test-Tester \
 		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

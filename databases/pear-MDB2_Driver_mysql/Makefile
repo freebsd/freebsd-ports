@@ -14,7 +14,7 @@ COMMENT=	PEAR mysql MDB2 driver
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	mysql
 

@@ -16,7 +16,7 @@ MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	Perl interface to the htmldoc program
 
 BUILD_DEPENDS=	htmldoc>0:${PORTSDIR}/textproc/htmldoc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

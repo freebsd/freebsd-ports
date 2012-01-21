@@ -20,7 +20,7 @@ COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_FAM=	yes
 USE_GETTEXT=	yes

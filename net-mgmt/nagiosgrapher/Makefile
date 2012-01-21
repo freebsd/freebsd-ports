@@ -23,7 +23,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 	${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
 	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	YES
 

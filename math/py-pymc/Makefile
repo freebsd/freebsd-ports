@@ -16,7 +16,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Markov Chain Monte Carlo Sampling Toolkit
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

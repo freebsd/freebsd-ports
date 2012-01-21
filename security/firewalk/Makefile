@@ -17,7 +17,7 @@ COMMENT=	A remote firewall auditing tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet	\
 		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/Firewalk
 

@@ -16,7 +16,7 @@ COMMENT=	Distributed cache for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Cache-Memcached>=0:${PORTSDIR}/databases/p5-Cache-Memcached
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

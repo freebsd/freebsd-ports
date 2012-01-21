@@ -16,7 +16,7 @@ COMMENT=	Set of modules to operate with class fields and members access
 
 BUILD_DEPENDS=	${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
 		${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

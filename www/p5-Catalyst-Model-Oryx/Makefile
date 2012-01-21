@@ -17,7 +17,7 @@ COMMENT=	Oryx model component for Catalyst
 BUILD_DEPENDS=	${SITE_PERL}/Oryx.pm:${PORTSDIR}/databases/p5-Oryx \
 		${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

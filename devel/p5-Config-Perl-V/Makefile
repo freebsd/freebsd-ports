@@ -16,7 +16,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Structured data retreival of perl -V output
 
 BUILD_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Class-Data-Inheritable>=0.02:${PORTSDIR}/devel/p5-Class-Data-I
 		p5-HTML-Tagset>=3.04:${PORTSDIR}/www/p5-HTML-Tagset \
 		p5-HTML-Tree>=3.18:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

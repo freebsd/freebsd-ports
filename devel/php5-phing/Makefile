@@ -14,7 +14,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Project build system based on Apache Ant
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	attempts to contact pear.phing.info during install phase
 

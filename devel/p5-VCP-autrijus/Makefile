@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
 		${SITE_PERL}/BFD.pm:${PORTSDIR}/devel/p5-BFD \
 		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes

@@ -17,7 +17,7 @@ COMMENT=	Perl interface to the popt(3) library
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include' LIBS'-L${LOCALBASE}/lib'

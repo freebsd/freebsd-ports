@@ -18,7 +18,7 @@ COMMENT=	String munging for loggers
 BUILD_DEPENDS=	p5-Params-Util>0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-SGMLSpm>=1.03:${PORTSDIR}/textproc/p5-SGMLSpm \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		jade>=0:${PORTSDIR}/textproc/jade
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GETTEXT=	yes
 USE_PERL5=	yes

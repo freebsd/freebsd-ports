@@ -17,7 +17,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple interface to create and store data in RRD files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 MAN3=		RRD::Simple.3 RRD::Simple::Examples.3

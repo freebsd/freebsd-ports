@@ -14,7 +14,7 @@ MAINTAINER=	pavel@ext.by
 COMMENT=	Wrapper to top(1) that maps pids to jails
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=		jtop.1
 MANCOMPRESSED=	yes

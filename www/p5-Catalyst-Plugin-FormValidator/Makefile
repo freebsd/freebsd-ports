@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80001:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-Data-FormValidator>=0:${PORTSDIR}/textproc/p5-Data-FormValidator \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Moose>=0.93:${PORTSDIR}/devel/p5-Moose
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

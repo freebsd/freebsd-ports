@@ -18,7 +18,7 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	OpenGL binding for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 BROKEN=		does not build
 

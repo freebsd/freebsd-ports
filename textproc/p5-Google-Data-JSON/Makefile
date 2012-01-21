@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

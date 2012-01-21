@@ -16,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A text graphics rendering toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

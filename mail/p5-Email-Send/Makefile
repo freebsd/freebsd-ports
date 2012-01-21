@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Email-Simple>=1.92:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-Return-Value>=1.28:${PORTSDIR}/devel/p5-Return-Value \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

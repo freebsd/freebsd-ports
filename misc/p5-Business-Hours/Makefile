@@ -15,7 +15,7 @@ MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Calculate business hours during a time period
 
 BUILD_DEPENDS=	${SITE_PERL}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

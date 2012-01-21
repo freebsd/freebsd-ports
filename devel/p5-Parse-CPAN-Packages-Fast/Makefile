@@ -16,7 +16,7 @@ COMMENT=	Parse CPAN's package index
 
 BUILD_DEPENDS=	p5-CPAN-DistnameInfo>=0:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
 		p5-PerlIO-gzip>=0:${PORTSDIR}/archivers/p5-PerlIO-gzip
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 

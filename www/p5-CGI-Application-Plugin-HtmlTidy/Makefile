@@ -17,7 +17,7 @@ COMMENT=	Add HTML::Tidy support to CGI::Application
 BUILD_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
 		${SITE_PERL}/CGI/Application/Plugin/DevPopup.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-DevPopup \
 		p5-HTML-Tidy>=1.08:${PORTSDIR}/textproc/p5-HTML-Tidy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A method of annotation as /* */ in perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Compile.pm:${PORTSDIR}/devel/p5-Module-Compile
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

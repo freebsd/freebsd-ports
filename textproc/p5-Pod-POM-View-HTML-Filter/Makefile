@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Pod/POM.pm:${PORTSDIR}/textproc/p5-Pod-POM \
 		${SITE_PERL}/Syntax/Highlight/Shell.pm:${PORTSDIR}/www/p5-Syntax-Highlight-Shell \
 		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
 		${SITE_PERL}/Syntax/Highlight/HTML.pm:${PORTSDIR}/www/p5-Syntax-Highlight-HTML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

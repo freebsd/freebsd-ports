@@ -13,7 +13,7 @@ MAINTAINER=	dk@catpipe.net
 COMMENT=	The add-on to HTML_QuickForm that allows building of multipage forms
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML/QuickForm
 FILES=		Action.php Controller.php Page.php Action/Back.php Action/Direct.php \

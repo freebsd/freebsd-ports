@@ -16,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Calculate Distances and Closest Locations faster
 
 BUILD_DEPENDS=	p5-Geo-Distance>=0.16:${PORTSDIR}/math/p5-Geo-Distance
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

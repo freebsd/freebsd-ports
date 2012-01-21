@@ -17,7 +17,7 @@ COMMENT=	Provides graphical X Window startup to FreeBSD during 'rc'
 BUILD_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xrdb:${PORTSDIR}/x11/xrdb \
 		xsetroot:${PORTSDIR}/x11/xsetroot
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_MOTIF=	yes
 USE_BZIP2=	yes

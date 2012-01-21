@@ -16,7 +16,7 @@ COMMENT=	Perl module for LDAP server side protocol handling
 
 BUILD_DEPENDS=	p5-Convert-ASN1>=0.22:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		p5-perl-ldap>=0.39:${PORTSDIR}/net/p5-perl-ldap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Scientific and Mathematical calculations
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.6.0:${PORTSDIR}/devel/py-traits
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 PYEASYINSTALL_ARCHDEP=	yes

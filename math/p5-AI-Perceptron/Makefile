@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for introducing to internal operations of neural networks
 
 BUILD_DEPENDS=	${SITE_PERL}/accessors.pm:${PORTSDIR}/devel/p5-accessors
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

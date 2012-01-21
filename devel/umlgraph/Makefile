@@ -25,7 +25,7 @@ JAVA_VERSION=	1.5+
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		pic2plot:${PORTSDIR}/graphics/plotutils
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/umlgraph %%JAVAJARDIR%%/UmlGraph.jar
 

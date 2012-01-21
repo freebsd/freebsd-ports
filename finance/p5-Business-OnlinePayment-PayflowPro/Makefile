@@ -16,7 +16,7 @@ COMMENT=	A Business::OnlinePayment backend module for PayflowPro
 
 BUILD_DEPENDS=	${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment \
 		${SITE_PERL}/mach/PFProAPI.pm:${PORTSDIR}/finance/p5-PFProAPI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

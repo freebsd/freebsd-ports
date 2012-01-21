@@ -15,7 +15,7 @@ MAINTAINER=	freebsd@netfence.it
 COMMENT=	Perl5 modules for parsing of `Received' headers in e-mails.
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Field.pm:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

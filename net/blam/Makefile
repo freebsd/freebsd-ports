@@ -17,7 +17,7 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A simple feed reader for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

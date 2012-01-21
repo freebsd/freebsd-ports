@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Throwable.pm:${PORTSDIR}/devel/p5-Class-Throwa
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Class/StrongSingleton.pm:${PORTSDIR}/devel/p5-Class-StrongSingleton \
 		${SITE_PERL}/Class/Interfaces.pm:${PORTSDIR}/devel/p5-Class-Interfaces
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-List-Compare>=0.37:${PORTSDIR}/misc/p5-List-Compare \
 		p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-NoWarnings>=1.01:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

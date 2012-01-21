@@ -17,7 +17,7 @@ COMMENT=	Log::Agent::Logger - a logging interface for perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
 		${SITE_PERL}/Getargs/Long.pm:${PORTSDIR}/devel/p5-Getargs-Long
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

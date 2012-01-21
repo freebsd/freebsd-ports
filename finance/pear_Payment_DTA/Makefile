@@ -13,7 +13,7 @@ MAINTAINER=	rottner@punkt.de
 COMMENT=	PEAR class to create and handle DTA files used in Germany
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Payment
 FILES=		DTA.php

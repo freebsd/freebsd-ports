@@ -14,7 +14,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	An interface to AT&T's GraphViz tools
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 
 CATEGORY=	Image

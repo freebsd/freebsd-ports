@@ -14,7 +14,7 @@ COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
 
 BUILD_DEPENDS=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB \
 		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	MDB
 FILES=		QueryTool.php QueryTool/Query.php QueryTool/EasyJoin.php \

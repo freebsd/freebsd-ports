@@ -16,7 +16,7 @@ COMMENT=	Provide Perl 5 versions of the new Perl 6 builtins
 
 BUILD_DEPENDS=	p5-Contextual-Return>=0:${PORTSDIR}/devel/p5-Contextual-Return \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

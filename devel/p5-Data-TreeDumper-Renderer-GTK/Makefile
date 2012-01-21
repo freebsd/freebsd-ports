@@ -17,7 +17,7 @@ COMMENT=	GTK renderer for Data::TreeDumper
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/TreeDumper.pm:${PORTSDIR}/devel/p5-Data-TreeDumper \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

@@ -17,7 +17,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Swish-e bindings for PHP
 
 BUILD_DEPENDS=	swish-config:${PORTSDIR}/www/swish-e
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

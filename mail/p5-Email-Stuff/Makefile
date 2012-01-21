@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-prefork>=1.01:${PORTSDIR}/devel/p5-prefork \
 		p5-File-Type>=0.22:${PORTSDIR}/devel/p5-File-Type \
 		p5-Email-MIME>=1.901:${PORTSDIR}/mail/p5-Email-MIME \
 		p5-Email-Send>=2.185:${PORTSDIR}/mail/p5-Email-Send
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

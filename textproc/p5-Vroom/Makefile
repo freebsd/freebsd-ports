@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/All.pm:${PORTSDIR}/devel/p5-IO-All \
 		${SITE_PERL}/Class/Field.pm:${PORTSDIR}/devel/p5-Class-Field \
 		${SITE_PERL}/File/HomeDir.pm:${PORTSDIR}/devel/p5-File-HomeDir \
 		${SITE_PERL}/Template/Toolkit/Simple.pm:${PORTSDIR}/www/p5-Template-Toolkit-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

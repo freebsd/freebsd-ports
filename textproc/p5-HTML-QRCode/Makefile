@@ -16,7 +16,7 @@ COMMENT=	Generate HTML based QR Code
 
 BUILD_DEPENDS=	p5-Text-QRCode>0:${PORTSDIR}/textproc/p5-Text-QRCode \
 		libqrencode>=2.0.0:${PORTSDIR}/graphics/libqrencode
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include

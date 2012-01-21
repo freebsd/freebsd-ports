@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Text-Query-SQL provides query builders for SQL databases
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Query.pm:${PORTSDIR}/textproc/p5-Text-Query
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

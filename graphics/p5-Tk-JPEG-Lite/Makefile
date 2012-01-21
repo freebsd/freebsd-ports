@@ -17,7 +17,7 @@ COMMENT=	Very simplistic image viewer that loads JPEG images
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

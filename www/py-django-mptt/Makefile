@@ -15,7 +15,7 @@ MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Utilities for implementing a pre-order traversal tree in django
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	BSD
 

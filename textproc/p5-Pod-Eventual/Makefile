@@ -16,7 +16,7 @@ COMMENT=	Read a POD document as a series of trivial events
 
 BUILD_DEPENDS=	p5-Mixin-Linewise>=0.001:${PORTSDIR}/devel/p5-Mixin-Linewise \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 MAN3=	Pod::Eventual.3\

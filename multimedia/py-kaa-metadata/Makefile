@@ -17,7 +17,7 @@ COMMENT=	Kaa Media Repository - media file metadata parser
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/kaa/__init__.py:${PORTSDIR}/multimedia/py-kaa-base
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

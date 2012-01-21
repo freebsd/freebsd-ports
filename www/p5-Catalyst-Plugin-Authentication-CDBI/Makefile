@@ -18,7 +18,7 @@ COMMENT=	CDBI Authentication for Catalyst
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/Catalyst/Model/CDBI.pm:${PORTSDIR}/www/p5-Catalyst-Model-CDBI \
 		${SITE_PERL}/Catalyst/Plugin/Session/FastMmap.pm:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-FastMmap
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

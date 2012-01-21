@@ -16,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Return true every N cycles or S seconds
 
 BUILD_DEPENDS=	p5-Devel-Callsite>=0.04:${PORTSDIR}/devel/p5-Devel-Callsite
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

@@ -17,7 +17,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Object-oriented delegation
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

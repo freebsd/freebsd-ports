@@ -18,7 +18,7 @@ COMMENT=	Visualise data structures
 
 BUILD_DEPENDS=	${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

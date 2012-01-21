@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	C implementation of the ISAAC PRNG Algorithm
 
 BUILD_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 

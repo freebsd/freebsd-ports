@@ -17,7 +17,7 @@ MAINTAINER=	jacob.frelinger@duke.edu
 COMMENT=	Wx backend for TraitsGUI
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=3.2.0:${PORTSDIR}/devel/py-traits
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

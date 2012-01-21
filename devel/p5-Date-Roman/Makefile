@@ -15,7 +15,7 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl module to play with Roman dates
 
 BUILD_DEPENDS=	${SITE_PERL}/Roman.pm:${PORTSDIR}/math/p5-Roman
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

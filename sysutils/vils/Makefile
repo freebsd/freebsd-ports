@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
 BUILD_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/vils
 

@@ -15,7 +15,7 @@ MAINTAINER=	ahumphrey@realestate.com.au
 COMMENT=	Perl SAX Filter allowing DOM processing of selected subtrees
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

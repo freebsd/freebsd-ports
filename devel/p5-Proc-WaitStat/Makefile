@@ -15,7 +15,7 @@ MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Interpret and act on wait() status values
 
 BUILD_DEPENDS=	p5-IPC-Signal>=0:${PORTSDIR}/devel/p5-IPC-Signal
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

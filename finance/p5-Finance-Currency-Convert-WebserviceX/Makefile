@@ -16,7 +16,7 @@ COMMENT=	Lightweight currency conversion using WebserviceX.NET
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		p5-Module-Install>=0.65:${PORTSDIR}/devel/p5-Module-Install
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

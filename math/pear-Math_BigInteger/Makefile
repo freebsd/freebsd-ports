@@ -13,7 +13,7 @@ MAINTAINER=	meritus@innervision.pl
 COMMENT=	Pure-PHP arbitrary precission integer arithmetic library
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	Math
 FILES=		BigInteger.php

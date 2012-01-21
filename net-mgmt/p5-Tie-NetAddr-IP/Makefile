@@ -15,7 +15,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Tie::NetAddr::IP - Implements a Hash where the key is a subnet
 
 BUILD_DEPENDS=	p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

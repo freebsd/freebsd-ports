@@ -16,7 +16,7 @@ COMMENT=	Emulate Class::Accessor::Fast behavior using Moose attributes
 
 BUILD_DEPENDS=	p5-Moose>=0.84:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

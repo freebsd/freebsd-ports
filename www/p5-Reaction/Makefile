@@ -41,7 +41,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7002:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 		${SITE_PERL}/${PERL_ARCH}/Devel/Declare.pm:${PORTSDIR}/devel/p5-Devel-Declare
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

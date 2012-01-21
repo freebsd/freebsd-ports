@@ -16,7 +16,7 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Tk::Splashscreen, display a Splashscreen during program initialization
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

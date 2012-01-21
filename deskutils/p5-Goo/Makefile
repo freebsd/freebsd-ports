@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Config/Auto.pm:${PORTSDIR}/devel/p5-Config-Auto \
 		${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Text/FormatTable.pm:${PORTSDIR}/textproc/p5-Text-FormatTable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN1=	goo.1 goo.pl.1
 MAN3=	Goo.3 \

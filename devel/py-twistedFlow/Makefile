@@ -16,7 +16,7 @@ MAINTAINER=	neal@nelson.name
 COMMENT=	Generator based asynchronous result flows
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/TwistedFlow-${PORTVERSION}
 

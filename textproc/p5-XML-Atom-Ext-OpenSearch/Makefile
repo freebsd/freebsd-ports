@@ -15,7 +15,7 @@ MAINTAINER=	catone@cpan.org
 COMMENT=	XML::Atom extension for OpenSearch data
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

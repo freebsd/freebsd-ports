@@ -18,7 +18,7 @@ COMMENT=	Mark up text as HTML
 BUILD_DEPENDS=	${SITE_PERL}/Email/Find.pm:${PORTSDIR}/mail/p5-Email-Find \
 		${SITE_PERL}/Exporter/Lite.pm:${PORTSDIR}/devel/p5-Exporter-Lite \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 

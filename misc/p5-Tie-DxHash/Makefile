@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing ordered hashes with duplicate keys
 
 BUILD_DEPENDS=	p5-version>0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

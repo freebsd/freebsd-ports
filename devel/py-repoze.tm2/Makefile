@@ -15,7 +15,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Zope-like transaction manager via WSGI middleware
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>=1.0.0:${PORTSDIR}/devel/py-transaction
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

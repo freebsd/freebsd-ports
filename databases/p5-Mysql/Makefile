@@ -17,7 +17,7 @@ COMMENT=	Perl5 modules for accessing MySQL databases
 
 BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-DBD-mysql-* p5-DBD-mysql4[0-9]-* p5-DBD-mysql5[0-9]-*
 

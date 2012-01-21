@@ -18,7 +18,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multi-threaded mail queue manager for TurboGears applications
 
 BUILD_DEPENDS=	tg-admin:${PORTSDIR}/www/py-turbogears
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 

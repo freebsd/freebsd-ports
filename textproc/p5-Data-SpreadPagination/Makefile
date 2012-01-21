@@ -17,7 +17,7 @@ COMMENT=	Page numbering and spread pagination
 BUILD_DEPENDS=	\
 	${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page \
 	${SITE_PERL}/Math/Round.pm:${PORTSDIR}/math/p5-Math-Round
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

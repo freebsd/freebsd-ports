@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Common source code filters for Inline Modules
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

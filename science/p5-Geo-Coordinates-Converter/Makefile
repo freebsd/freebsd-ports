@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Lite>0.0.5:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Readonly>0:${PORTSDIR}/devel/p5-Readonly \
 		p5-String-CamelCase>0:${PORTSDIR}/textproc/p5-String-CamelCase \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

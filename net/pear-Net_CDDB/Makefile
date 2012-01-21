@@ -15,7 +15,7 @@ COMMENT=	PEAR class that access and query CDDB audio-CD servers
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request \
 		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
 

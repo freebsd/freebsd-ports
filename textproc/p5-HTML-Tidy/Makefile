@@ -16,7 +16,7 @@ COMMENT=	Web validation in a Perl object using tidy
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 LIB_DEPENDS=	tidyp:${PORTSDIR}/textproc/tidyp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
