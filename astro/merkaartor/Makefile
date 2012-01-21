@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.merkaartor.be/attachments/download/253/
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	An openstreetmap mapping program
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost-libs
-
 LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -25,7 +25,10 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build \
 		gui network svg webkit xml imageformats script scripttools
 MAKE_JOBS_SAFE=	yes
+
+.if exists(${LOCALBASE}/bin/gnome-session)
 INSTALLS_ICONS=	yes
+.endif
 
 QMAKEFLAGS=	PREFIX=${PREFIX}
 
