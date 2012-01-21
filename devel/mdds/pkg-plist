@@ -1,21 +1,21 @@
-mdds/flat_segment_tree.hpp
-mdds/flat_segment_tree_def.inl
-mdds/flat_segment_tree_itr.hpp
-mdds/global.hpp
-mdds/hash_container/map.hpp
-mdds/mixed_type_matrix.hpp
-mdds/mixed_type_matrix_def.inl
-mdds/mixed_type_matrix_element.hpp
-mdds/mixed_type_matrix_flag_storage.hpp
-mdds/mixed_type_matrix_storage.hpp
-mdds/mixed_type_matrix_storage_filled_linear.inl
-mdds/mixed_type_matrix_storage_filled_nested_array.inl
-mdds/mixed_type_matrix_storage_sparse.inl
-mdds/node.hpp
-mdds/point_quad_tree.hpp
-mdds/quad_node.hpp
-mdds/rectangle_set.hpp
-mdds/rectangle_set_def.inl
-mdds/segment_tree.hpp
-@dirrmtry mdds/hash_container
-@dirrmtry mdds
+include/mdds/flat_segment_tree.hpp
+include/mdds/flat_segment_tree_def.inl
+include/mdds/flat_segment_tree_itr.hpp
+include/mdds/global.hpp
+include/mdds/hash_container/map.hpp
+include/mdds/mixed_type_matrix.hpp
+include/mdds/mixed_type_matrix_def.inl
+include/mdds/mixed_type_matrix_element.hpp
+include/mdds/mixed_type_matrix_flag_storage.hpp
+include/mdds/mixed_type_matrix_storage.hpp
+include/mdds/mixed_type_matrix_storage_filled_linear.inl
+include/mdds/mixed_type_matrix_storage_filled_nested_array.inl
+include/mdds/mixed_type_matrix_storage_sparse.inl
+include/mdds/node.hpp
+include/mdds/point_quad_tree.hpp
+include/mdds/quad_node.hpp
+include/mdds/rectangle_set.hpp
+include/mdds/rectangle_set_def.inl
+include/mdds/segment_tree.hpp
+@dirrmtry include/mdds/hash_container
+@dirrmtry include/mdds
