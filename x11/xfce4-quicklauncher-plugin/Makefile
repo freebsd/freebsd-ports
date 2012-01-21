@@ -16,13 +16,11 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Quicklauncher plugin for Xfce
 
-BROKEN=		does not configure
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv panel
+USE_XFCE=	configenv libgui panel
 
 .include <bsd.port.mk>
