@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bottle
-PORTVERSION=	0.9.6
+PORTVERSION=	0.10.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -16,7 +16,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Fast and simple WSGI-framework for small web-applications
 
 # Python3 ready
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.6-
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
