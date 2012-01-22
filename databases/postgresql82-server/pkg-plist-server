@@ -723,8 +723,8 @@ share/postgresql/timezonesets/Europe.txt
 share/postgresql/timezonesets/India
 share/postgresql/timezonesets/Indian.txt
 share/postgresql/timezonesets/Pacific.txt
-@exec /bin/mkdir -p %%LOCALBASE%%/%%PG_USER%% || /usr/bin/true
-@exec /usr/bin/chown %%PG_USER%%:%%PG_GROUP%% %%LOCALBASE%%/%%PG_USER%% || /usr/bin/true
+@exec /bin/mkdir -p %%PREFIX%%/%%PG_USER%% || /usr/bin/true
+@exec /usr/sbin/chown %%PG_USER%%:%%PG_GROUP%% %%PREFIX%%/%%PG_USER%% || /usr/bin/true
 @dirrm share/postgresql/timezone/Africa
 @dirrm share/postgresql/timezone/America/Argentina
 @dirrm share/postgresql/timezone/America/Indiana
