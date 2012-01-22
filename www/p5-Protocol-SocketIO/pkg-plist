@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Protocol/SocketIO.pm
+%%SITE_PERL%%/Protocol/SocketIO/Message.pm
+%%SITE_PERL%%/Protocol/SocketIO/Path.pm
+%%SITE_PERL%%/Protocol/SocketIO/Handshake.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/SocketIO/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/SocketIO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
+@dirrm %%SITE_PERL%%/Protocol/SocketIO
+@dirrmtry %%SITE_PERL%%/Protocol
