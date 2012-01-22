@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
 PKGNAMESUFFIX?=	51
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MySQL Workbench
 
 LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \

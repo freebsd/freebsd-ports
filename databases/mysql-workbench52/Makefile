@@ -9,7 +9,7 @@ PORTVERSION=	5.2.1
 PORTREVISION=	2
 PKGNAMESUFFIX=	52
 
-MAINTAINER=	gelraen.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
