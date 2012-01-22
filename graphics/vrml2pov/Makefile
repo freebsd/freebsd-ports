@@ -12,12 +12,14 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.chemicalgraphics.com/paul/vrml2pov/dist/v${PORTVERSION}/
 DISTNAME=	vrml2pov-src
 
-MAINTAINER=	dieringe@zedat.fu-berlin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert VRML files to POVRay source
 
 RESTRICTED=	Redistribution is not allowed
 
 BROKEN=		unfetchable
+DEPRECATED=		"${BROKEN}"
+EXPIRATION_DATE=	2012-03-21
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
