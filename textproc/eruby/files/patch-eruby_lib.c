@@ -1,6 +1,6 @@
---- eruby_lib.c.orig	2011-07-27 01:20:00.000000000 +0000
-+++ eruby_lib.c	2011-07-27 01:27:56.000000000 +0000
-@@ -34,10 +34,18 @@
+--- eruby_lib.c.orig	2012-01-22 14:43:16.000000000 +0100
++++ eruby_lib.c	2012-01-22 15:27:01.000000000 +0100
+@@ -34,12 +34,24 @@
  #include <signal.h>
  
  #include "ruby.h"
@@ -18,9 +18,15 @@
 +#endif
 +
  EXTERN VALUE rb_stdin;
++#if defined(WITH_RUBY_19)
++#define	ruby_top_self	rb_errinfo()
++#else
  EXTERN VALUE ruby_top_self;
++#endif
  
-@@ -144,6 +152,7 @@
+ static VALUE mERuby;
+ static VALUE cERubyCompiler;
+@@ -144,6 +156,7 @@
  	    }
  	    s++;
  	    goto again;
@@ -28,7 +34,7 @@
  	case 'K':
  	    s++;
  	    if (*s == '\0') {
-@@ -153,6 +162,7 @@
+@@ -153,6 +166,7 @@
  	    rb_set_kcode(s);
  	    s++;
  	    goto again;
@@ -36,7 +42,7 @@
  	case 'C':
  	    s++;
  	    if (isspace(*s)) s++;
-@@ -397,7 +407,7 @@
+@@ -397,7 +411,7 @@
  static void compile_error(eruby_compiler_t *compiler, char *msg)
  {
      rb_raise(eERubyCompileError, "%s:%d:%s",
@@ -45,7 +51,7 @@
  }
  
  static void parse_embedded_program(eruby_compiler_t *compiler,
-@@ -592,8 +602,13 @@
+@@ -592,8 +606,13 @@
  		if (prevc < 0) output_literal(compiler, "print \"");
  		output_char(compiler, c);
  		prevc = c;
@@ -59,7 +65,7 @@
                      
                      for (i = 0; i < len; i++) {
                          c = nextc(compiler);
-@@ -697,7 +712,7 @@
+@@ -697,7 +716,7 @@
      VALUE compiler, file, code;
  
      compiler = eruby_compiler_new();

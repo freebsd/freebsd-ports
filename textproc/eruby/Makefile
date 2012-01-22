@@ -62,7 +62,7 @@ CONFIGURE_ENV+=	EXTRA_LDFLAGS="${EXTRA_LDFLAGS} -pthread"
 .endif
 .endif
 
-.if ${RUBY_RELVERSION} == 1.9.2
+.if ${RUBY_VER} == "1.9"
 CONFIGURE_ENV+=	EXTRA_CFLAGS="${EXTRA_CFLAGS} -DWITH_RUBY_19"
 .endif
 
