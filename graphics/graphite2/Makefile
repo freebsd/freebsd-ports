@@ -11,7 +11,7 @@ CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
 USE_GNOME=	gnomehack
