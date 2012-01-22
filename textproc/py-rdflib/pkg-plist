@@ -37,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/notation3.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/notation3.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/notation3.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/nquads.py
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/nquads.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/nquads.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/nt.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/nt.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/parsers/nt.pyo
@@ -79,6 +82,9 @@
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/n3.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/n3.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/n3.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/nquads.py
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/nquads.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/nquads.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/nt.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/nt.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/serializers/nt.pyo
@@ -97,9 +103,15 @@
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/sleepycat.py
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/sleepycat.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/plugins/sleepycat.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/py3compat.py
+%%PYTHON_SITELIBDIR%%/rdflib/py3compat.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/py3compat.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/query.py
 %%PYTHON_SITELIBDIR%%/rdflib/query.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/query.pyo
+%%PYTHON_SITELIBDIR%%/rdflib/resource.py
+%%PYTHON_SITELIBDIR%%/rdflib/resource.pyc
+%%PYTHON_SITELIBDIR%%/rdflib/resource.pyo
 %%PYTHON_SITELIBDIR%%/rdflib/serializer.py
 %%PYTHON_SITELIBDIR%%/rdflib/serializer.pyc
 %%PYTHON_SITELIBDIR%%/rdflib/serializer.pyo
