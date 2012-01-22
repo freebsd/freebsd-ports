@@ -299,6 +299,7 @@
     SUBDIR += gracula
     SUBDIR += grads
     SUBDIR += grafx2
+    SUBDIR += graphite2
     SUBDIR += graphopt
     SUBDIR += graphviz
     SUBDIR += grx

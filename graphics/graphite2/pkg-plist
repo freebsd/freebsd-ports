@@ -1,0 +1,13 @@
+%%DATADIR%%/graphite2-release.cmake
+%%DATADIR%%/graphite2.cmake
+bin/comparerenderer
+bin/gr2fonttest
+include/graphite2/Font.h
+include/graphite2/Segment.h
+include/graphite2/Types.h
+lib/libgraphite2.so
+lib/libgraphite2.so.2.0.0
+libdata/pkgconfig/graphite2.pc
+@dirrmtry libdata/pkgconfig
+@dirrmtry include/graphite2
+@dirrmtry %%DATADIR%%
