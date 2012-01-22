@@ -14,6 +14,7 @@ share/locale/tr/LC_MESSAGES/newsbeuter.mo
 share/locale/uk/LC_MESSAGES/newsbeuter.mo
 share/locale/zh/LC_MESSAGES/newsbeuter.mo
 share/locale/zh_TW/LC_MESSAGES/newsbeuter.mo
+share/doc/newsbeuter/docbook-xsl.css
 share/doc/newsbeuter/newsbeuter.html
 share/doc/newsbeuter/examples/config
 @dirrm share/doc/newsbeuter/examples
