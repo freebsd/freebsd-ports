@@ -776,8 +776,8 @@ share/postgresql/tsearch_data/ispell_sample.affix
 share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
-@exec /bin/mkdir -p %%LOCALBASE%%/%%PG_USER%% || /usr/bin/true
-@exec /usr/bin/chown %%PG_USER%%:%%PG_GROUP%% %%LOCALBASE%%/%%PG_USER%% || /usr/bin/true
+@exec /bin/mkdir -p %%PREFIX%%/%%PG_USER%% || /usr/bin/true
+@exec /usr/sbin/chown %%PG_USER%%:%%PG_GROUP%% %%PREFIX%%/%%PG_USER%% || /usr/bin/true
 @dirrmtry share/postgresql/tsearch_data
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily

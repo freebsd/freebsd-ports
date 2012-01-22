@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.2.22
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -231,7 +231,8 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		savepoint.7 values.7
 .endif
 
-PLIST_SUB+=	PG_USER=$(PG_USER)
+PLIST_SUB+=	PG_USER=$(PG_USER) \
+		PG_GROUP=$(PG_GROUP)
 SUB_LIST+=	PG_GROUP=$(PG_GROUP) \
 		PG_USER=$(PG_USER) \
 		PG_UID=$(PG_UID)
@@ -286,7 +287,7 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${WRKDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
-	${MKDIR} ${LOCALBASE}/${PG_USER} && ${CHOWN} ${PG_USER}:${PG_GROUP} ${LOCALBASE}/${PG_USER}
+	${MKDIR} ${PREFIX}/${PG_USER} && ${CHOWN} ${PG_USER}:${PG_GROUP} ${PREFIX}/${PG_USER}
 .  endif # SERVER_ONLY
 .  if defined(CLIENT_ONLY)
 	@ cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install-local
