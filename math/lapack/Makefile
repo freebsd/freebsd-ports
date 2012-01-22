@@ -5,136 +5,201 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lapack
+PORTNAME?=	lapack
 PORTVERSION=	3.4.0
+PORTREVISION?=	1
 CATEGORIES=	math
-MASTER_SITES=	NL
-MASTER_SITE_SUBDIR=	lapack
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	NL/lapack/ \
+		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
+DISTFILES=	lapack-${PORTVERSION}.tgz
+.if make(makesum) || !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
+DISTFILES+=		manpages-${PORTVERSION}.tgz
+.endif
 DIST_SUBDIR=	lapack
 
-MAINTAINER=	maho@FreeBSD.org
-COMMENT=	A library of Fortran 77 subroutines for linear algebra
+MAINTAINER?=	maho@FreeBSD.org
+COMMENT?=	A library of Fortran 77 subroutines for linear algebra
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas
-
 USE_FORTRAN=	yes
-USE_LDCONFIG=	yes
 
-OPTIONS=	PROFILE "Build and install profiling libraries" Off \
-		DOXYGEN "Install Doxygen to build manpages" Off
+OPTIONS=	PROFILE "Build profiling libraries" Off \
+		SHARED	"Build shared libraries and PIC archives" On \
+		STATIC	"Build (non-PIC) archives" On
 
-.include <bsd.port.pre.mk>
+MAKE_ENV=	BLASLIB="${BLASLIB}"
+MAKE_JOBS_SAFE=	yes
+PLIST_SUB=	SVERSION="${SVERSION}"
 
-.if defined(WITH_DOXYGEN)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+WRKSRC =		${WRKDIR}/lapack-${PORTVERSION}
+WRKSRC_PROFILE =	${WRKSRC}_PROFILE
+WRKSRC_SHARED=		${WRKSRC}_SHARED
+WRKSRC_STATIC=		${WRKSRC}
+
+.include <bsd.port.options.mk>
+
+.if defined(BLAS_SLAVEPORT)
+ALL_TARGET=		blaslib
+BLASLIB=		../../libblas.a
+LIBS=			blas
+PLIST_SUB+=		BLAS="" LAPACK="@comment " XLAPACK="@comment "
+SVERSION=		2
+TEST_TARGET=		blas_testing
+.else
+ALL_TARGET=		lib
+BLASLIB?=		-L${LOCALBASE}/lib -lblas
+LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
+LIBS=			lapack tmglib
+SVERSION=		4
+TEST_TARGET=		lapack_testing
+.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
+S=			${PYTHON_CMD}
+USE_PYTHON_BUILD=	yes
+.else
+S=			\#
+.endif
+.if defined(XLAPACK_SLAVEPORT)
+LIB_DEPENDS+=		xblas.0:${PORTSDIR}/math/xblas
+MAKE_ENV+=		USEXBLAS=yes XBLASLIB="${XBLASLIB}"
+P=			x
+PLIST_SUB+=		BLAS="@comment " LAPACK="@comment " XLAPACK=""
+XBLASLIB?=		-L${LOCALBASE}/lib -lxblas
+.else
+PLIST_SUB+=		BLAS="@comment " LAPACK="" XLAPACK="@comment "
+.if defined(MAINTAINER_MODE)
+BUILD_DEPENDS +=	doxygen:${PORTSDIR}/devel/doxygen
+MAN_TARGET=		build-manpages
+.endif
+.endif
 .endif
 
 .if ${ARCH} == "sparc64"
-FPIC=	-fPIC
+PICFLAG?=	-fPIC
 .else
-FPIC=	-fpic
+PICFLAG?=	-fpic
 .endif
 
-MAKE_JOBS_SAFE=	yes
-WRKSRC_SHARED=${WRKSRC}_shared
-FFLAGS_SHARED=${FPIC}
-.if defined(WITH_PROFILE)
-.if defined(WITHOUT_PROFILE)
-IGNORE =	you have defined both WITH_PROFILE and WITHOUT_PROFILE
-.elif !exists(/usr/lib/libc_p.a)
+FFLAGS_PROFILE?=	-pg
+FFLAGS_SHARED ?=	${PICFLAG}
+
+.if defined(WITH_PROFILE) && !exists(/usr/lib/libc_p.a)
 IGNORE=	you have chosen WITH_PROFILE, but have not installed the\
 base system profiling libraries
 .endif
-WRKSRC_PROFILE=${WRKSRC}_profile
-FFLAGS_PROFILE=-pg
-PLIST_SUB+=	PROFILE=""
-.else
-PLIST_SUB+=	PROFILE="@comment "
+
+.if defined(WITH_SHARED)
+USE_LDCONFIG=	yes
 .endif
 
-SVERSION=4
-BLAS?=	-L${LOCALBASE}/lib -lblas
-
-.if !defined(WITH_DOXYGEN)
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} manpages-3.2.0.tgz
-MANSRC=		${WRKDIR}/lapack-3.2.0/manpages/man/manl
-.include "${FILESDIR}/manpages"
-MANL=		${LAPACK_MAN}
-MANDIR=		${PREFIX}/man/manl
+.for o in PROFILE SHARED STATIC
+.if defined(WITH_${o})
+PLIST_SUB+=	${o}=""
 .else
-.include "${FILESDIR}/manpages_doxygen"
-MANSRC=		${WRKSRC}/DOCS/man/man3
-MAN3=		${LAPACK_MAN}
-MANDIR=		${PREFIX}/man/man3
+PLIST_SUB+=	${o}="@comment "
 .endif
-
-pre-fetch:
-	@${ECHO} "You can override F77 and FFLAGS on the command line."
+.endfor
 
 post-patch:
-	@${MV} ${WRKSRC}/INSTALL/make.inc.gfortran ${WRKSRC}/make.inc
-	${REINPLACE_CMD} -Ee \
-		's,\( *cd ([^ ;]+) *; *\$$\(MAKE\) *([[:alnum:]]*) *\),${MAKE} -C \1 ${_MAKE_JOBS} \2,' \
+	@${SED} -Ee '\
+		s@^(FORTRAN|LOADER)([[:blank:]]*=)(.*)@\1\2 $${FC}@; \
+		s@^(OPTS[[:blank:]]*=)(.*)@\1 $${FFLAGS} $${EXTRAFLAGS}@; \
+		s@^NOOPT[[:blank:]]*=.*@& $${EXTRAFLAGS}@; \
+		s@^(LOADOPTS[[:blank:]]*=)(.*)@\1 $${LDFLAGS} $${EXTRAFLAGS}@; \
+		\@(BLAS|RAN)LIB[[:blank:]]*=@d;' \
+			${WRKSRC}/make.inc.example > ${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's@\./lapack_testing\.py@${S} &@' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -Ee \
-		's,cd ([^ ;]+) *; *\$$\(MAKE\) *([[:alnum:]]*) *,${MAKE} -C \1 ${_MAKE_JOBS} \2,' \
-		${WRKSRC}/TESTING/Makefile
-	@${REINPLACE_CMD} -e 's;%%F77%%;${F77};g' \
-			  -e 's;%%FFLAGS%%;${FFLAGS};g' \
-			  -e 's;%%LDFLAGS%%;${LDFLAGS};g' \
-			  -e 's;%%RANLIB%%;${RANLIB};g' \
-			  -e 's;%%BLAS%%;${BLAS};g' \
-				${WRKSRC}/make.inc
-	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
-	@${CP} -r ${WRKSRC} ${WRKSRC_PROFILE}
+.for o in PROFILE SHARED
+.if defined(WITH_${o})
+	@${CP} -a ${WRKSRC} ${WRKSRC_${o}}
 .endif
-	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,,g' \
-				${WRKSRC}/make.inc
-	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_SHARED},g' \
-				${WRKSRC_SHARED}/make.inc
-.if defined(WITH_PROFILE)
-	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_PROFILE},g' \
-				${WRKSRC_PROFILE}/make.inc
-.endif
+.endfor
 
-do-build:
-	@${ECHO_CMD} "Building static lapack library"
-	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
-	@${ECHO_CMD} "Building shared lapack library"
-	${MAKE} -C ${WRKSRC_SHARED} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
-.if defined(WITH_PROFILE)
-	@${ECHO_CMD} "Building profile lapack library"
-	${MAKE} -C ${WRKSRC_PROFILE} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
+do-build: ${MAN_TARGET} build-profile build-shared build-static
+
+.for o in PROFILE SHARED STATIC
+build-${o:L}: patch
+.if defined(WITH_${o})
+	${PRINTF} "\n\nBuilding ${o:L} libraries:\n\n\n"
+	cd ${WRKSRC_${o}}; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FFLAGS_${o}}" \
+	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ARCH="${AR}" ${ALL_TARGET}
+
 .endif
-.if defined(WITH_DOXYGEN)
-	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}" man
+.endfor
+
+.if defined (MAINTAINER_MODE)
+build-manpages: patch
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} man
+
 .endif
 
 post-build:
-.for lib in lapack tmglib
+.if defined(WITH_SHARED)
+.for L in ${LIBS}
 	cd ${WRKSRC_SHARED} ; ${FC} ${FFLAGS} ${FFLAGS_SHARED} ${LDFLAGS} -shared \
-	-o lib${lib}.so.${SVERSION} -Wl,-x -Wl,-soname,lib${lib}.so.${SVERSION} \
-	-Wl,--whole-archive lib${lib}.a -Wl,--no-whole-archive
+	-o lib${P}${L}.so.${SVERSION} -Wl,-x -Wl,-soname,lib${P}${L}.so.${SVERSION} \
+	-Wl,--whole-archive lib${L}.a -Wl,--no-whole-archive
+.endfor
+.endif
+
+.if defined(WITH_SHARED)
+TESTS ?=	test-shared
+.elif defined(WITH_STATIC)
+TESTS ?=	test-static
+.elif defined(WITH_PROFILE)
+TESTS ?=	test-profile
+.endif
+
+check regression-test test: ${TESTS}
+
+.for o in PROFILE SHARED STATIC
+test-${o:L}: build-${o:L}
+.if defined(WITH_${o})
+	@${PRINTF} "\n\nTesting ${o:L} libraries:\n\n\n"
+	@cd ${WRKSRC_${o}}; ${SETENV} ${MAKE_ENV} EXTRAFLAGS="${FFLAGS_${o}}" \
+	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ARCH="${AR}" ${TEST_TARGET}
+.if defined(BLAS_SLAVEPORT)
+	@${CAT} ${WRKSRC_${o}}/BLAS/*.out
+.endif
+
+.endif
 .endfor
 
 do-install:
-.for lib in lapack tmglib
-	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC_SHARED}/lib${lib}.so.${SVERSION} ${PREFIX}/lib
-	${LN} -sf lib${lib}.so.${SVERSION} ${PREFIX}/lib/lib${lib}.so
+.for L in ${LIBS}
+.if defined(WITH_STATIC)
+	@${INSTALL_DATA} ${WRKSRC}/lib${L}.a ${PREFIX}/lib/lib${P}${L}.a
+.endif
+.if defined(WITH_SHARED)
+	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib${L}.a ${PREFIX}/lib/lib${P}${L}_pic.a
+	@${INSTALL_DATA} ${WRKSRC_SHARED}/lib${P}${L}.so.${SVERSION} ${PREFIX}/lib
+	@${LN} -sf lib${P}${L}.so.${SVERSION} ${PREFIX}/lib/lib${P}${L}.so
+.endif
 .if defined(WITH_PROFILE)
-	${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${lib}.a ${PREFIX}/lib/lib${lib}_p.a
+	@${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${L}.a ${PREFIX}/lib/lib${P}${L}_p.a
 .endif
 .endfor
-	@(cd ${MANSRC} && ${INSTALL_MAN} ${LAPACK_MAN} ${MANDIR})
 
-regression-test check test: build
-	@${ECHO_CMD} "Testing static lapack library"
-	${MAKE} -C ${WRKSRC}/TESTING ${.MAKEFLAGS} ARCH="${AR}"
+.include  <bsd.port.pre.mk>
 
+.if !(defined(BLAS_SLAVEPORT) || defined(XLAPACK_SLAVEPORT))
+
+.include "${FILESDIR}/manpages"
+
+post-install:
+	@cd ${WRKDIR}/man ; ${ECHO_CMD} ${MAN3:S|^|man3/|} \
+	| ${XARGS} -J @ ${INSTALL_MAN} @ ${MAN3PREFIX}/man/man3
+
+.if defined(MAINTAINER_MODE)
+package-manpages: build-manpages
+	@${RM} -f ${WRKDIR}/lapack-manpages-${PORTVERSION}.tar.gz ; \
+	cd ${WRKSRC}/DOCS/man; \
+	${TAR} -czvf ${WRKDIR}/lapack-manpages-${PORTVERSION}.tar.gz \
+	${MAN3:S|^|man3/|}
+
+.endif
+.endif
 .include <bsd.port.post.mk>
