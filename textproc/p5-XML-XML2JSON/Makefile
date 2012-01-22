@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-XML2JSON
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert XML into JSON (and back again) using XML::LibXML
 
+BUILD_DEPENDS=	p5-XML-LibXML>=1.59:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	p5-XML-LibXML>=1.59:${PORTSDIR}/textproc/p5-XML-LibXML
 
 # the order of options follows the search order of JSON module by XML::XML2JSON
@@ -29,22 +30,26 @@ MAN3=		XML::XML2JSON.3
 .include <bsd.port.options.mk>
 
 .if defined(WITHOUT_JSON_SYCK) && !defined(WITH_JSON_XS) && !defined(WITH_JSON) && !defined(WITH_JSON_DWIW)
-IGNORE=		You must choose at least one JSON module.
+IGNORE=		you must choose at least one JSON module
 .endif
 
 .if !defined(WITHOUT_JSON_SYCK)
+BUILD_DEPENDS+=	p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS+=	p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 .endif
 
 .if defined(WITH_JSON_XS)
+BUILD_DEPENDS+=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
 RUN_DEPENDS+=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
 .endif
 
 .if defined(WITH_JSON)
+BUILD_DEPENDS+=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 RUN_DEPENDS+=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
 .endif
 
 .if defined(WITH_JSON_)
+BUILD_DEPENDS+=	p5-JSON-DWIW>=0:${PORTSDIR}/converters/p5-JSON-DWIW
 RUN_DEPENDS+=	p5-JSON-DWIW>=0:${PORTSDIR}/converters/p5-JSON-DWIW
 .endif
 
