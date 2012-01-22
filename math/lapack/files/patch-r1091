@@ -1,0 +1,39 @@
+Index: SRC/ctprfb.f
+===================================================================
+--- SRC/ctprfb.f	(revision 1090)
++++ SRC/ctprfb.f	(revision 1091)
+@@ -280,7 +280,7 @@
+       EXTERNAL  LSAME
+ *     ..
+ *     .. External Subroutines ..
+-      EXTERNAL  CCOPY, CGEMM, CLACGV, CTRMM
++      EXTERNAL  CGEMM, CTRMM
+ *     ..
+ *     .. Intrinsic Functions ..
+       INTRINSIC CONJG
+Index: SRC/ztprfb.f
+===================================================================
+--- SRC/ztprfb.f	(revision 1090)
++++ SRC/ztprfb.f	(revision 1091)
+@@ -280,7 +280,7 @@
+       EXTERNAL  LSAME
+ *     ..
+ *     .. External Subroutines ..
+-      EXTERNAL  ZCOPY, ZGEMM, ZLACGV, ZTRMM
++      EXTERNAL  ZGEMM, ZTRMM
+ *     ..
+ *     .. Intrinsic Functions ..
+       INTRINSIC CONJG
+Index: SRC/stprfb.f
+===================================================================
+--- SRC/stprfb.f	(revision 1090)
++++ SRC/stprfb.f	(revision 1091)
+@@ -280,7 +280,7 @@
+       EXTERNAL  LSAME
+ *     ..
+ *     .. External Subroutines ..
+-      EXTERNAL  SCOPY, SGEMM, SLACGV, STRMM
++      EXTERNAL  SGEMM, STRMM
+ *     ..
+ *     .. Executable Statements ..
+ *
