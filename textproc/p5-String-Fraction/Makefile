@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	String-Fraction
-PORTVERSION=	0.20
+PORTVERSION=	0.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Convert fractions into unicode chars
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Fraction.pm:${PORTSDIR}/textproc/p5-HTML-Fraction
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-HTML-Fraction>=0.40:${PORTSDIR}/textproc/p5-HTML-Fraction
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	String::Fraction.3
