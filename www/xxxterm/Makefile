@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xxxterm
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xxxterm/ \
