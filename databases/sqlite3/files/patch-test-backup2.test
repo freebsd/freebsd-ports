@@ -1,11 +1,11 @@
---- test/backup2.test.orig	2010-12-09 13:44:49.000000000 +0300
-+++ test/backup2.test	2010-12-09 13:45:39.000000000 +0300
-@@ -155,7 +155,7 @@
-     file mkdir bu3.db
-     set rc [catch {db restore temp bu3.db} res]
-     lappend rc $res
--  } {1 {cannot open source database: disk I/O error}}
-+  } {1 {restore failed: file is encrypted or is not a database}}
- }
- 
- # Try to restore from something that is not a database file.
+--- test/backup2.test.orig	2012-01-22 16:15:22.000000000 +0400
++++ test/backup2.test	2012-01-22 16:30:38.000000000 +0400
+@@ -143,7 +143,7 @@
+ #
+ if {$tcl_platform(platform)=="windows"} {
+   set msg {cannot open source database: unable to open database file}
+-} elseif {$tcl_platform(os)=="OpenBSD"} {
++} elseif {$tcl_platform(os)=="OpenBSD" || $tcl_platform(os)=="FreeBSD"} {
+   set msg {restore failed: file is encrypted or is not a database}
+ } else {
+   set msg {cannot open source database: disk I/O error}
