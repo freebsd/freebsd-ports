@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	mail security
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/Previous%20Releases/
+MASTER_SITE_SUBDIR=	${PORTNAME} \
+			${PORTNAME}/Previous%20Releases
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	DKIM library and milter implementation
