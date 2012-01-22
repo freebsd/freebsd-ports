@@ -2,10 +2,10 @@ Index: webmagickrc.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagickrc.in,v
 retrieving revision 1.16
-retrieving revision 1.22
-diff -u -r1.16 -r1.22
+retrieving revision 1.23
+diff -u -r1.16 -r1.23
 --- webmagickrc.in	4 Dec 2001 19:36:57 -0000	1.16
-+++ webmagickrc.in	4 Apr 2011 00:06:12 -0000	1.22
++++ webmagickrc.in	22 Jan 2012 16:46:16 -0000	1.23
 @@ -83,6 +83,7 @@
  # $opt_ignore		= 0;	# Do not webmagick this directory
  				#    but still recurse into sub-directories
@@ -14,7 +14,7 @@ diff -u -r1.16 -r1.22
  # $opt_srcdir		= '.';	# Source directory path (current directory)
  # $opt_verbose		= 0;	# Verbose flag (default off)
  # $opt_forcecache		= 0;	# Force update of cached thumbnails
-@@ -90,30 +91,48 @@
+@@ -90,30 +91,49 @@
  # $opt_forcemontage	= 0;	# Force montage (default off)
  # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
  # $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
@@ -28,6 +28,7 @@ diff -u -r1.16 -r1.22
 +# $opt_bodytagins       = '';   # Insert something into <BODY> tag
  # $opt_header           = '<CENTER>';   # Imagemap extra page header (HTML)
  # $opt_footer           = '</CENTER>';   # Imagemap extra page footer (HTML)
++# $opt_prepend          = '';   # Prepend to the very top of each HTML
 +# $opt_headins          = '';   # Insert something into <HEAD> section
  # $opt_javascript		= 1;	# Enable JavaScript output
  # $opt_readmevisible	= 0;	# Make README.html be first page.
@@ -63,7 +64,7 @@ diff -u -r1.16 -r1.22
  # $opt_allowconfig	 = 0; # allow user to configure table and framestyle
  
  #				
-@@ -199,8 +218,7 @@
+@@ -199,8 +219,7 @@
  # $opt_frames           = 1;            # Use frames
  # $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  # $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
@@ -73,7 +74,7 @@ diff -u -r1.16 -r1.22
  # $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -245,6 +263,7 @@
+@@ -245,6 +264,7 @@
  # $opt_icons{'next_gray'}		= 'gray_next.gif';	# Next (grayed out)
  # $opt_icons{'up'}		= 'blue_up.gif';  	# Up
  # $opt_icons{'help'}		= 'blue_readme.gif';	# Help Readme File
