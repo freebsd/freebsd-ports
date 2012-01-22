@@ -3657,6 +3657,7 @@
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-railsless-deploy
+    SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rake-compiler
     SUBDIR += rubygem-rapt
