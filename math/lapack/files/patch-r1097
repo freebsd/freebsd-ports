@@ -1,0 +1,52 @@
+Index: TESTING/LIN/cdrvsyx.f
+===================================================================
+--- TESTING/LIN/cdrvsyx.f	(revision 1096)
++++ TESTING/LIN/cdrvsyx.f	(revision 1097)
+@@ -620,7 +620,7 @@
+      $                 LDA, IWORK, EQUED, WORK( N+1 ), B, LDA, X,
+      $                 LDA, RCOND, RPVGRW_SVXX, BERR, N_ERR_BNDS,
+      $                 ERRBNDS_N, ERRBNDS_C, 0, ZERO, WORK,
+-     $                 IWORK( N+1 ), INFO )
++     $                 RWORK, INFO )
+ *
+ *                 Adjust the expected value of INFO to account for
+ *                 pivoting.
+Index: TESTING/LIN/zdrvhex.f
+===================================================================
+--- TESTING/LIN/zdrvhex.f	(revision 1096)
++++ TESTING/LIN/zdrvhex.f	(revision 1097)
+@@ -614,7 +614,7 @@
+      $                 LDA, IWORK, EQUED, WORK( N+1 ), B, LDA, X,
+      $                 LDA, RCOND, RPVGRW_SVXX, BERR, N_ERR_BNDS,
+      $                 ERRBNDS_N, ERRBNDS_C, 0, ZERO, WORK,
+-     $                 IWORK( N+1 ), INFO )
++     $                 RWORK, INFO )
+ *
+ *                 Adjust the expected value of INFO to account for
+ *                 pivoting.
+Index: TESTING/LIN/cdrvhex.f
+===================================================================
+--- TESTING/LIN/cdrvhex.f	(revision 1096)
++++ TESTING/LIN/cdrvhex.f	(revision 1097)
+@@ -614,7 +614,7 @@
+      $                 LDA, IWORK, EQUED, WORK( N+1 ), B, LDA, X,
+      $                 LDA, RCOND, RPVGRW_SVXX, BERR, N_ERR_BNDS,
+      $                 ERRBNDS_N, ERRBNDS_C, 0, ZERO, WORK,
+-     $                 IWORK( N+1 ), INFO )
++     $                 RWORK, INFO )
+ *
+ *                 Adjust the expected value of INFO to account for
+ *                 pivoting.
+Index: TESTING/LIN/zdrvsyx.f
+===================================================================
+--- TESTING/LIN/zdrvsyx.f	(revision 1096)
++++ TESTING/LIN/zdrvsyx.f	(revision 1097)
+@@ -620,7 +620,7 @@
+      $                 LDA, IWORK, EQUED, WORK( N+1 ), B, LDA, X,
+      $                 LDA, RCOND, RPVGRW_SVXX, BERR, N_ERR_BNDS,
+      $                 ERRBNDS_N, ERRBNDS_C, 0, ZERO, WORK,
+-     $                 IWORK( N+1 ), INFO )
++     $                 RWORK, INFO )
+ *
+ *                 Adjust the expected value of INFO to account for
+ *                 pivoting.
