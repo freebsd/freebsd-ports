@@ -11,6 +11,5 @@ lib/libexttextcat.la
 lib/libexttextcat.so
 lib/libexttextcat.so.0
 libdata/pkgconfig/libexttextcat.pc
-@dirrmtry libdata/pkgconfig
 @dirrmtry include/libexttextcat
 @dirrmtry %%DATADIR%%
