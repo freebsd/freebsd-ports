@@ -86,12 +86,12 @@
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libWRServices.so.3.1
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libadobelinguistic.so.3.2.0
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libahclient.so
-%%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libauthplay.so.0.0.0
+%%LANG_NONENU%%%%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libauthplay.so.0.0.0
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libcrypto.so.0.9.8
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libcurl.so.3.0.0
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libeggtrayicon.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libextendscript.so
-%%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libflashsupport.so
+%%LANG_NONENU%%%%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libflashsupport.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libicucnv.so.36.0
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libicudata.so.36.0
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libicui18n.so.36.0
@@ -102,7 +102,7 @@
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libACE.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libadobelinguistic.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libAGM.so
-%%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libauthplay.so
+%%LANG_NONENU%%%%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libauthplay.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libBIB.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libBIBUtils.so
 %%ACRODIR%%/Adobe/Reader9/Reader/intellinux/lib/libCoolType.so

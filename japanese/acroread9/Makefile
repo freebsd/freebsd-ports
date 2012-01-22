@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTVERSION=	9.4.2
+PORTREVISION=	1
 CATEGORIES=	japanese print
 
 MASTERDIR=	${.CURDIR}/../../print/acroread9

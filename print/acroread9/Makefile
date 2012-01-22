@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acroread9
-PORTVERSION=	9.4.2
+PORTVERSION?=	9.4.7
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -16,13 +16,18 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
+LICENSE=	Adobe_WWEULA_20080204_1313
+LICENSE_NAME=	Adobe EULA (Reader_Player_AIR_WWEULA-en_US-20080204_1313)
+LICENSE_TEXT=	${INSTALLDIR}/Adobe/Reader9/Reader/Legal/en_US/License.txt
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	acroreadwrapper>=0.0.20110529:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_LINUX_APPS=	gdkpixbuf gtk2 libxml2 pango
+USE_LINUX_APPS=	cups-libs gdkpixbuf gtk2 libgcrypt libgpg-error libxml2 pango
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
 NO_BUILD=	yes
@@ -46,6 +51,7 @@ LANGCODE=	chs:zh_CN cht:zh_TW dan:da_DK deu:de_DE enu:en_US \
 ADOBE_LANG?=	ENU
 .for L in ${ADOBE_LANG:L}
 LOCALE_NAME=	${LANGCODE:M${L}\:*:C/.*\://}
+MANLANG=	${LOCALE_NAME:C/_.*//:C/en/""/}
 LANG_${L:U}=	""
 LANG_NON${L:U}=	"@comment "
 .endfor
@@ -66,7 +72,14 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			UNAME_r="Linux Compatibility on FreeBSD" \
 			${SH} ./INSTALL --install_path=${INSTALLDIR} > /dev/null
 
-pre-install:
+MAN1=		acroread.1
+MANCOMPRESSED=	yes
+post-man-install:
+	${LN} -s -f \
+		${INSTALLDIR}/Adobe/Reader9/Resource/Shell/acroread.1.gz \
+		${MANPREFIX}/man/${MANLANG}/man1/
+
+pre-su-install:
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \
 		${WRKDIR}/ln ${WRKDIR}/rm ${WRKDIR}/mv \
@@ -78,7 +91,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/desktop-directories
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
 
-post-install:
+post-install: post-man-install
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
