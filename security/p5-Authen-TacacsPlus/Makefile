@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	Authen-TacacsPlus
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIKEM/Authen-TacacsPlus
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module that provides authentication using a tacacs+ server
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
