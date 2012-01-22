@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.172
-diff -u -r1.117 -r1.172
+retrieving revision 1.175
+diff -u -r1.117 -r1.175
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	14 Dec 2011 18:58:00 -0000	1.172
++++ webmagick.in	22 Jan 2012 18:20:40 -0000	1.175
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.172 2011/12/14 18:58:00 ache Exp $
++# $Id: webmagick.in,v 1.175 2012/01/22 18:20:40 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -69,7 +69,15 @@ diff -u -r1.117 -r1.172
      $opt_imgindexname,
      $opt_indexname,
      $opt_javascript,
-@@ -212,6 +218,12 @@
+@@ -199,6 +205,7 @@
+     $opt_msg_up,
+     $opt_pageindexname,
+     $opt_prefixpath,
++    $opt_prepend,
+     $opt_prune,
+     $opt_readfailhook,
+     $opt_readme,
+@@ -212,6 +219,12 @@
      $opt_srcdir,
      $opt_stylesheet, 	# URL to a CSS to use
      $opt_tables,
@@ -82,7 +90,7 @@ diff -u -r1.117 -r1.172
      $opt_thumbbackground,
      $opt_thumbbordercolor,
      $opt_thumbborderwidth,
-@@ -237,14 +249,21 @@
+@@ -237,14 +250,21 @@
      $opt_webmagickrc,	# Per-directory WebMagick rc file name
      $opt_zoomfilter,
      $opt_pichtml,
@@ -104,7 +112,7 @@ diff -u -r1.117 -r1.172
      $pageStatusTime,	# Time status file last modified
      $pageNumber,	# Current page number
      $pathSep,		# OS-specific path separator
-@@ -368,6 +387,7 @@
+@@ -368,6 +388,7 @@
  $opt_ignore		= 0;	# Do not webmagick this directory
  				#    but still recurse into sub-directories
  $opt_ignorefp		= 1;	# ignore _* special FrontPage directories (on)
@@ -112,7 +120,7 @@ diff -u -r1.117 -r1.172
  $opt_srcdir		= '.';	# Source directory path (current directory)
  $opt_verbose		= 0;	# Verbose flag (default off)
  $opt_forcecache		= 0;	# Force update of cached thumbnails
-@@ -376,25 +396,44 @@
+@@ -376,25 +397,45 @@
  $opt_forcemontage	= 0;	# Force montage (default off)
  $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
  $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
@@ -126,6 +134,7 @@ diff -u -r1.117 -r1.172
 +$opt_bodytagins         = '';   # Insert something into <BODY> tag
  $opt_header             = '<CENTER>';   # Imagemap extra page header (HTML)
  $opt_footer             = '</CENTER>';   # Imagemap extra page footer (HTML)
++$opt_prepend            = '';   # Prepend this to the very top of each HTML
 +$opt_headins            = '';   # Insert something into <HEAD> section
  $opt_javascript         = 0;    # Enable JavaScript output
  $opt_readmevisible	= 0;	# Make README.html be first page.
@@ -158,7 +167,7 @@ diff -u -r1.117 -r1.172
  $opt_pichtmltarget      = '';
  $opt_pichtmltitleend    = '</P>'; # End tags for picture title
  $opt_pichtmltitlestart  = '<P>';  # Start tags for picture title
-@@ -491,8 +530,7 @@
+@@ -491,8 +532,7 @@
  $opt_frames             = 1;            # Use frames
  $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
@@ -168,7 +177,7 @@ diff -u -r1.117 -r1.172
  $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -539,6 +577,7 @@
+@@ -539,6 +579,7 @@
  $opt_icons{'next_gray'}		= 'gray_next.gif';	# Next (grayed out)
  $opt_icons{'up'}		= 'blue_up.gif';  	# Up
  $opt_icons{'help'}		= 'blue_readme.gif';	# Help Readme File
@@ -176,7 +185,7 @@ diff -u -r1.117 -r1.172
  # $opt_icons{'help'}		= 'blue_help.gif';	# Help Alternative (Question)
  # $opt_icons{'dir'}             = 'blue_dir.gif';       # Directory List Icon (See below)
  # $opt_icons{'ball'}		= 'blue_ball.gif';	# A ball matching other icons
-@@ -596,12 +635,11 @@
+@@ -596,12 +637,11 @@
  # |  |          |
  #  -------------
  $opt_framefmt{1}=
@@ -193,7 +202,7 @@ diff -u -r1.117 -r1.172
  $opt_framefmt_frames{1}=2;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in top-left frame,
-@@ -616,16 +654,15 @@
+@@ -616,16 +656,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{2}=
@@ -216,7 +225,7 @@ diff -u -r1.117 -r1.172
  $opt_framefmt_frames{2}=3;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in left frame,
-@@ -640,16 +677,15 @@
+@@ -640,16 +679,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{3}=
@@ -239,7 +248,7 @@ diff -u -r1.117 -r1.172
  $opt_framefmt_frames{3}=3;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in lower-left frame,
-@@ -664,16 +700,15 @@
+@@ -664,16 +702,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{4}=
@@ -262,7 +271,7 @@ diff -u -r1.117 -r1.172
  $opt_framefmt_frames{4}=3;	# Number of frames expressed by this frame format
  
  #
-@@ -756,7 +791,9 @@
+@@ -756,7 +793,9 @@
  use Getopt::Long;
  if ( ! GetOptions(
  		'address=s'		=> \$opt_address,
@@ -272,7 +281,7 @@ diff -u -r1.117 -r1.172
  		'cache!'		=> \$opt_cache,
  		'cachedir=s'		=> \$opt_cachedir,
  		'cacheformat=s'		=> \$opt_cacheformat,
-@@ -790,19 +827,22 @@
+@@ -790,19 +829,22 @@
  		'forcehtml!'		=> \$opt_forcehtml,
  		'forcejpeg!'            => \$opt_forcejpeg,
  		'forcemontage!'		=> \$opt_forcemontage,
@@ -297,7 +306,7 @@ diff -u -r1.117 -r1.172
  		'imgindexname=s'	=> \$opt_imgindexname,
  		'indexname=s'		=> \$opt_indexname,
  		'javascript!'		=> \$opt_javascript,
-@@ -828,14 +868,21 @@
+@@ -828,15 +870,23 @@
  		'msg_up=s'              => \$opt_msg_up,
  		'pageindexname=s'	=> \$opt_pageindexname,
  		'pichtml!'              => \$opt_pichtml,
@@ -317,9 +326,11 @@ diff -u -r1.117 -r1.172
  		'pichtmltop=s'          => \$opt_pichtmltop,
 +		'edgelinksindex!'       => \$opt_edgelinksindex,
  		'prefixpath=s'		=> \$opt_prefixpath,
++		'prepend=s'             => \$opt_prepend,
  		'readme=s'		=> \$opt_readme,
  		'readmevisible!'	=> \$opt_readmevisible,
-@@ -846,6 +893,12 @@
+ 		'recurse!'		=> \$opt_recurse,
+@@ -846,6 +896,12 @@
  		'srcdir=s'		=> \$opt_srcdir,
  		'stylesheet=s'		=> \$opt_stylesheet,
  		'tables!'		=> \$opt_tables,
@@ -332,7 +343,7 @@ diff -u -r1.117 -r1.172
  		'thumbtexture=s'	=> \$opt_thumbtexture,
  		'thumbbackground=s'	=> \$opt_thumbbackground,
  		'thumbborderwidth=i'	=> \$opt_thumbborderwidth,
-@@ -1153,12 +1206,12 @@
+@@ -1153,12 +1209,12 @@
  	'|(\.eps2$)|(\.epsf$)|(\.epsi$)|(\.ept$)|(\.fax$)|(\.fig$)' .
          '|(\.fits$)|(\.fpx$)|(\.g3$)|(\.gif$)|(\.gplt$)|(\.hdf$)' .
          '|(\.hpgl$)|(\.ico$)|(\.im1$)|(\.im24$)|(\.im8$)|(\.jbg$)' .
@@ -348,7 +359,7 @@ diff -u -r1.117 -r1.172
          '|(\.ttf$)|(\.vicar$)|(\.viff$)|(\.wmf$)|(\.xbm$)|(\.xpm$)' .
          '|(\.xwd$)';
  
-@@ -1187,7 +1240,6 @@
+@@ -1187,7 +1243,6 @@
  
      evaluateRcFiles();
  
@@ -356,7 +367,7 @@ diff -u -r1.117 -r1.172
      # Decide if we want to process this directory or not based on the
      # value of $opt_ignore.  If not, then just return.
  
-@@ -1329,7 +1381,6 @@
+@@ -1329,7 +1384,6 @@
  	$pageStatusTime=fmtime($fileNames{'pageStatus'});
      }
  
@@ -364,7 +375,7 @@ diff -u -r1.117 -r1.172
      # Handle a directory name to title index file.  Store alternative
      # names in %dirTitles.
      {
-@@ -1346,34 +1397,50 @@
+@@ -1346,34 +1400,50 @@
  		    $tmp_dirTitles{$dirname} = escapehtml($dirtitle);
  		    $dirOrder{$dirname} = $pos;
  		    $pos++;
@@ -422,7 +433,7 @@ diff -u -r1.117 -r1.172
  		    $imageOrder{$imgname} = $pos;
  		    $pos++;
  		}
-@@ -1383,11 +1450,25 @@
+@@ -1383,11 +1453,25 @@
  	#
  	# This code is totally BOGUS since decision should be made on a per-page basis!!
  	#	
@@ -449,7 +460,7 @@ diff -u -r1.117 -r1.172
  	}
      }
  
-@@ -1396,6 +1477,7 @@
+@@ -1396,6 +1480,7 @@
      #
      {
  	my %tmp_iconImageUrls;
@@ -457,7 +468,7 @@ diff -u -r1.117 -r1.172
  	print( "Icon URLs:\n" )  if $opt_debug;
  	my $icon;
  	for $icon ( keys %opt_icons ) {
-@@ -1405,11 +1487,14 @@
+@@ -1405,11 +1490,14 @@
  		    if $opt_debug;
  	    }
  	}
@@ -473,7 +484,7 @@ diff -u -r1.117 -r1.172
  	}
      }
      
-@@ -1431,6 +1516,7 @@
+@@ -1431,6 +1519,7 @@
      # Build list of image files
      #
      @allImageFiles = sort( sortImages grep( /$includeRegex/io, @allFiles));
@@ -481,7 +492,7 @@ diff -u -r1.117 -r1.172
  
      # Find subdirectory names (if any) ignoring hidden directories and
      # directories without index files. Directories should have index
-@@ -1446,10 +1532,9 @@
+@@ -1446,10 +1535,9 @@
  	if ($opt_frames) {
  	    grep($tarray{$_}++, @allImageFiles);
  	    foreach $_ ( grep(! $tarray{$_},@allFiles) ) {
@@ -494,7 +505,7 @@ diff -u -r1.117 -r1.172
  			    push(@dirfiles, $_);            #  then add it to the list
  			    if ($opt_javascript) {
  				# Check which index file to use for JavaScript
-@@ -1461,6 +1546,7 @@
+@@ -1461,6 +1549,7 @@
  				    $dirJsLink{"$_"} = '';
  				}
  			    }
@@ -502,7 +513,7 @@ diff -u -r1.117 -r1.172
  		    }
  		}
  	    }
-@@ -1510,9 +1596,7 @@
+@@ -1510,9 +1599,7 @@
      if( $numimages > 0 ) {
      	$haveImages = 1;
      }
@@ -513,7 +524,7 @@ diff -u -r1.117 -r1.172
      #
      # Determine page title
      #
-@@ -1520,10 +1604,18 @@
+@@ -1520,10 +1607,18 @@
          $pageTitle = $opt_title;
      } else {
          my $dirname=basename($sourceDirectory);
@@ -534,7 +545,7 @@ diff -u -r1.117 -r1.172
      #
      # Put the PerlMagick Montage options together
      #
-@@ -1576,7 +1668,7 @@
+@@ -1576,7 +1671,7 @@
  	$tmp_montageParameters .= "mattecolor=>\'$opt_thumbframecolor\',\n "
  	    if $opt_thumbframecolor ne 'false';
  	$tmp_montageParameters .= "label=>\'$opt_thumblabel\',\n "
@@ -543,7 +554,7 @@ diff -u -r1.117 -r1.172
  	$tmp_montageParameters .= "labelwidth=>\'$opt_thumblabelwidth\',\n ";
  	$tmp_montageParameters .= "\Lzoomfilter=>\'$opt_zoomfilter\'";
  	if( !defined($montageParameters) || ($tmp_montageParameters ne $montageParameters)) {
-@@ -1595,8 +1687,10 @@
+@@ -1595,8 +1690,10 @@
  	 'address'		=> $opt_address,	 
  	 'anonymous'		=> $opt_anonymous,
  	 'backgroundimg'	=> $opt_icons{'background'},
@@ -554,7 +565,7 @@ diff -u -r1.117 -r1.172
  	 'coloralink'		=> $opt_coloralink,
  	 'colorback'		=> $opt_colorback,
  	 'colorfore'		=> $opt_colorfore,
-@@ -1615,18 +1709,21 @@
+@@ -1615,18 +1712,21 @@
  	 'dirhtmlext'           => !$opt_frames ? "" : $opt_dirhtmlext,
  	 'dirindexname'         => !$opt_frames ? "" : $opt_dirindexname,
  	 'footer'               => $opt_footer,
@@ -578,7 +589,7 @@ diff -u -r1.117 -r1.172
  	 'indexname'            => $opt_indexname,
  	 'javascript'           => $opt_javascript,
  	 'jsdirindex'           => !$opt_javascript ? "" : $fileNames{'jsDirIndex'},
-@@ -1647,8 +1744,8 @@
+@@ -1647,8 +1747,8 @@
  	 'msg_directory_navigator' => !$opt_frames ? "" : $opt_msg_directory_navigator,
  	 'msg_images'           => !$opt_frames ? "" : $opt_msg_images,
  	 'msg_index_of_directory' => $opt_msg_index_of_directory,
@@ -589,7 +600,7 @@ diff -u -r1.117 -r1.172
  	 'msg_next'             => $opt_msg_next,
  	 'msg_pause'             => $opt_msg_pause,
  	 'msg_page_navigator'   => !$opt_frames ? "" : $opt_msg_page_navigator,
-@@ -1659,14 +1756,21 @@
+@@ -1659,15 +1759,23 @@
  	 'numpages'		=> $numPages,
  	 'pageindexname'        => $opt_pageindexname,
  	 'pichtml'              => $opt_pichtml,
@@ -609,9 +620,11 @@ diff -u -r1.117 -r1.172
  	 'pichtmltop'           => !$opt_pichtml ? "" : $opt_pichtmltop,
 +	 'edgelinksindex'       => $opt_edgelinksindex,
  	 'prefixpath'		=> $opt_prefixpath,
++	 'prepend'              => $opt_prepend,
  	 'readme'               => !$haveReadme ? "" : $opt_readme,
  	 'readmepresent'	=> $haveReadme,
-@@ -1676,6 +1780,12 @@
+ 	 'readmevisible'        => !$haveReadme ? 0 : $opt_readmevisible,
+@@ -1676,6 +1784,12 @@
  	 'stylesheet'		=> $opt_stylesheet,
  	 'subdirectories'       => !$opt_frames ? "" : join(' ',@dirNames),
  	 'tables'		=> $opt_tables,
@@ -624,7 +637,7 @@ diff -u -r1.117 -r1.172
  	 'title'		=> $pageTitle,
  	 'version'              => $opt_anonymous ? "" : $webmagickInfo{'version'},
  	 );
-@@ -1749,7 +1859,7 @@
+@@ -1749,7 +1863,7 @@
      if ( $perlVarsVersion < $requiredPerlVarsVersion) {
      	print ( STDERR "Need to do montage, HTML and cache because",
      		" version has changed\n") if $opt_debug;
@@ -633,7 +646,7 @@ diff -u -r1.117 -r1.172
  		$opt_forcemontage = 1;
  		$opt_forcecache = 1;
  		$opt_forcelowres = 1;
-@@ -1763,7 +1873,7 @@
+@@ -1763,7 +1877,7 @@
              if( ! $opt_tables && (! -f $fileNames{'pageStatus'} ||
  	       ( ! -f $fileNames{'montageGIF'} && ! -f $fileNames{'montageJPEG'} ))) {
                  # If key file is missing then do montage
@@ -642,7 +655,7 @@ diff -u -r1.117 -r1.172
  		      " file is missing\n")
  		    if $opt_debug;
                  ++$doMontage;
-@@ -1975,9 +2085,10 @@
+@@ -1975,9 +2089,10 @@
      # get indexname of parent directory
      my $upindexname =
  	     get_rc_var('..', 'opt_indexname', "$opt_indexname");
@@ -655,7 +668,7 @@ diff -u -r1.117 -r1.172
  	  " <A HREF=\"../${upindexname}\">${opt_msg_up}</A><BR>\n";
      }
  
-@@ -1987,7 +2098,7 @@
+@@ -1987,7 +2102,7 @@
      my $helphtml = '';
      if( $haveReadme ) {
  	$helphtml .= "<A HREF=\"" . escapeurl(${opt_readme}) . "\" TARGET=\"$frameTargets{'readmeview'}\"><IMG\n" .
@@ -664,7 +677,7 @@ diff -u -r1.117 -r1.172
  	    " <A HREF=\"" . escapeurl(${opt_readme}) . "\" TARGET=\"$frameTargets{'readmeview'}\">${opt_msg_readme}</A><BR>\n";
      }
  
-@@ -1997,7 +2108,7 @@
+@@ -1997,7 +2112,7 @@
      my $nexthtml = '';
      if( $haveReadme && $haveImages && $opt_framefmt_frames{$opt_framestyle}<=2 ) {
  	$nexthtml .= "<A HREF=\"${opt_pageindexname}1$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\"><IMG\n" .
@@ -673,7 +686,7 @@ diff -u -r1.117 -r1.172
  	    " <A HREF=\"${opt_pageindexname}1$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\">${opt_msg_images}</A><BR>";
      }
  
-@@ -2023,20 +2134,19 @@
+@@ -2023,20 +2138,19 @@
  	    } else {
  		$dirtitle=$subdir;
  	    }
@@ -697,11 +710,14 @@ diff -u -r1.117 -r1.172
  	    } 
  	}
      }
-@@ -2128,25 +2238,26 @@
+@@ -2128,25 +2242,29 @@
      #
      open( INDEX, ">${opt_indexname}")
  	|| die("$0: Failed to open file ${opt_indexname} for output\n$@\n");
 -    print( INDEX "<HTML>\n<HEAD>\n" );
++    if( "$opt_prepend" ne '' ) {
++	print( INDEX "${opt_prepend}" );
++    }
 +    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\" \"http://www.w3.org/TR/html4/frameset.dtd\">\n<HTML>\n<HEAD>\n" );
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
@@ -731,7 +747,7 @@ diff -u -r1.117 -r1.172
  	if( "$opt_metaexpires" ne '' );
      print( INDEX "  <LINK REL=\"stylesheet\" type=\"text/css\" HREF=\"${opt_stylesheet}\">\n")
  	if ("$opt_stylesheet" ne '');
-@@ -2154,7 +2265,7 @@
+@@ -2154,7 +2272,7 @@
      # If in JavaScript mode, output code to switch to JavaScript pages
      # Currently knows about certain browsers.
      if( $opt_javascript ) {
@@ -740,7 +756,7 @@ diff -u -r1.117 -r1.172
  	print( INDEX '<!--' . "\n" );
  	print( INDEX '  var browserName = navigator.appName;', "\n" );
  	print( INDEX '  var browserVersion = parseInt(navigator.appVersion);', "\n" );
-@@ -2164,7 +2275,7 @@
+@@ -2164,7 +2282,7 @@
  	print( INDEX '  } else if ( browserName == "Microsoft Internet Explorer" && browserVersion >= 3) {', "\n" );
  	print( INDEX '    location = filename;', "\n" );
  	print( INDEX '  }', "\n" );
@@ -749,7 +765,7 @@ diff -u -r1.117 -r1.172
  	print( INDEX "</SCRIPT>\n" );
      }
  
-@@ -2173,20 +2284,17 @@
+@@ -2173,20 +2291,17 @@
      print( INDEX $framespechtml );
      print( INDEX "<NOFRAMES>\n" );
      print( INDEX "<BODY\n" );
@@ -779,12 +795,15 @@ diff -u -r1.117 -r1.172
      close( INDEX );
  
  
-@@ -2195,12 +2303,11 @@
+@@ -2195,12 +2310,14 @@
      if( $opt_javascript ) {
      open( INDEX, ">$fileNames{'jsDirIndex'}")
  	|| die("$0: Failed to open file $fileNames{'jsDirIndex'} for output\n$@\n");
 -    print( INDEX "<HTML>\n" );
 -    print( INDEX "<HEAD>\n" );
++    if( "$opt_prepend" ne '' ) {
++	print( INDEX "${opt_prepend}" );
++    }
 +    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
      print( INDEX "</HEAD>\n" );
 -    print( INDEX q/<SCRIPT LANGUAGE="JavaScript" SRC="/ . $fileNames{'jsVariables'} . q!"></SCRIPT>! . "\n" );
@@ -796,16 +815,19 @@ diff -u -r1.117 -r1.172
      print( INDEX q/document.write(returnFrameHTML());/ . "\n" );
      print( INDEX q/document.close();/ . "\n" );
      print( INDEX "</SCRIPT>\n" );
-@@ -2214,7 +2321,7 @@
+@@ -2214,7 +2331,10 @@
      open( INDEX, ">${opt_pageindexname}dir${opt_dirhtmlext}")
  	|| die("$0: Failed to open file \"${opt_pageindexname}dir${opt_dirhtmlext}\"",
                  " for output\n$@\n");
 -    print( INDEX "<HTML>\n<HEAD>\n" );
++    if( "$opt_prepend" ne '' ) {
++	print( INDEX "${opt_prepend}" );
++    }
 +    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  	if( "$opt_metacharset" ne '' );
-@@ -2224,35 +2331,37 @@
+@@ -2224,35 +2344,37 @@
      print( INDEX "  <BASE TARGET=\"$opt_frame_name_top\">\n" );
  
      # Meta tags
@@ -861,7 +883,7 @@ diff -u -r1.117 -r1.172
      print( INDEX ">\n");
      print( INDEX $pagedirhtml );
      print( INDEX "</BODY></HTML>\n" );
-@@ -2262,6 +2371,114 @@
+@@ -2262,6 +2384,114 @@
      return ( 0 );
  }
  
@@ -976,7 +998,7 @@ diff -u -r1.117 -r1.172
  
  #
  # Write out page index files
-@@ -2279,7 +2496,7 @@
+@@ -2279,7 +2509,7 @@
      # Calculate page index bar
      # No link for current page
      # Nothing at all when there is only one page.
@@ -985,7 +1007,7 @@ diff -u -r1.117 -r1.172
  
      # Must be visible at each page, if no frames
      if (!$opt_frames) {
-@@ -2287,7 +2504,7 @@
+@@ -2287,7 +2517,7 @@
  	# --- readme link ---
  	if ( $haveReadme ) {
  	    $indexbar .= "<A HREF=\"${opt_readme}\"><IMG\n" .
@@ -994,7 +1016,7 @@ diff -u -r1.117 -r1.172
  	}
  
  	# --- up link ---
-@@ -2295,7 +2512,7 @@
+@@ -2295,7 +2525,7 @@
  
  	if ( "$upindexname" ne 'NOLINK' ) {
  	    $indexbar .= "<A HREF=\"../${upindexname}\"><IMG\n" .
@@ -1003,7 +1025,7 @@ diff -u -r1.117 -r1.172
  	}
  
      }
-@@ -2312,7 +2529,7 @@
+@@ -2312,7 +2542,7 @@
  	$indexbar .= " TARGET=\"$frameTargets{'thumbview'}\""
  	    if ($opt_frames);
  	$indexbar .= "><IMG\n" .
@@ -1012,7 +1034,7 @@ diff -u -r1.117 -r1.172
      }
  
      # --- next link ---
-@@ -2322,15 +2539,13 @@
+@@ -2322,15 +2552,13 @@
  	    $indexbar .= " TARGET=\"$frameTargets{'thumbview'}\""
  		if ($opt_frames);
  	    $indexbar .= "><IMG\n" .
@@ -1029,16 +1051,19 @@ diff -u -r1.117 -r1.172
      # --- page links ---
      if( $numPages > 1 ) {
  	my $page;
-@@ -2352,7 +2567,7 @@
+@@ -2352,7 +2580,10 @@
      
      open( INDEX, ">$fileNames{'htmlCurrentIndex'}")
          || die("$0: Failed to open file $fileNames{'htmlCurrentIndex'} for output\n$@\n");
 -    print( INDEX "<HTML>\n<HEAD>\n" );
++    if( "$opt_prepend" ne '' ) {
++	print( INDEX "${opt_prepend}" );
++    }
 +    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  	if( "$opt_metacharset" ne '' );
-@@ -2361,50 +2576,86 @@
+@@ -2361,50 +2592,86 @@
  	if ($opt_frames);
  
      # Meta tags
@@ -1102,7 +1127,8 @@ diff -u -r1.117 -r1.172
 +	if( $imageCaptions{'pageTitle'} ne '') {
 +	    print( INDEX "<p><FONT SIZE=\"+3\">$imageCaptions{'pageTitle'}</FONT></p>\n");
 +	    print( STDERR "Using custom PageDescription\n") if $opt_debug;
-+	}
+ 	}
+-	print( INDEX "$indexbar<BR>\n" );
 +
 +	if( $imageCaptions{'pageTitle'} eq '' &&
 +	    $opt_indexinfo && (!$opt_frames || $opt_framestyle == 1) ) {
@@ -1125,8 +1151,7 @@ diff -u -r1.117 -r1.172
 +	    print( INDEX "<DIV class='wm_msgindex'>${opt_msg_index_of_files}\"",
 +		   $desc1, "\" ${opt_msg_index_through}", " \"", $desc2,
 +		   "\"</DIV>\n" );
- 	}
--	print( INDEX "$indexbar<BR>\n" );
++	}
 +	print( INDEX "<DIV class='wm_indexbar'>$indexbar</DIV>\n" );
  
  	if ($opt_tables)
@@ -1147,7 +1172,7 @@ diff -u -r1.117 -r1.172
  	}
  	else
  	{
-@@ -2423,143 +2674,105 @@
+@@ -2423,143 +2690,108 @@
  		}
  		print( INDEX
  		      "<IMG SRC=\"$montageImages[$pageNumber - 1]\" $montageImageSizes[$pageNumber - 1]",
@@ -1191,6 +1216,9 @@ diff -u -r1.117 -r1.172
  			open( PICHTML, ">$pichtml")
  			    || die("$0: Failed to open file $pichtml for output\n$@\n");
 -			print( PICHTML "<HTML>\n<HEAD>\n" );
++			if( "$opt_prepend" ne '' ) {
++			    print( PICHTML "${opt_prepend}" );
++			}
 +			print( PICHTML "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
  			# Charset is better before title
  			print( PICHTML "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
@@ -1348,7 +1376,7 @@ diff -u -r1.117 -r1.172
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -2570,15 +2783,15 @@
+@@ -2570,15 +2802,15 @@
  
  			unless ($opt_tables)
  			{				
@@ -1368,7 +1396,7 @@ diff -u -r1.117 -r1.172
  		    } 
  	    }
  	    
-@@ -2590,7 +2803,7 @@
+@@ -2590,7 +2822,7 @@
  				print INDEX "<TR ALIGN=CENTER VALIGN=TOP>";
  			}
  				
@@ -1377,7 +1405,7 @@ diff -u -r1.117 -r1.172
  			
  			if ($opt_pichtml) {
  				print (INDEX "<A${target} HREF=\"", escapeurl($pichtml), "\">");
-@@ -2601,17 +2814,34 @@
+@@ -2601,17 +2833,34 @@
  			# TODO: make sure the thumbnails are created, and get some image sizes
  			# TODO: save the labels in a new array, maybe same with sizes
  			if ( $thumbImageSizes{$pic}) {
@@ -1417,7 +1445,7 @@ diff -u -r1.117 -r1.172
  		} # if ($opt_tables)
  	
  	} # for each picture
-@@ -2622,6 +2852,13 @@
+@@ -2622,6 +2871,13 @@
  		{
  			print INDEX "</TR>";
  		}
@@ -1431,7 +1459,7 @@ diff -u -r1.117 -r1.172
  		print (INDEX "</TABLE>\n")
  	} else {print( INDEX "</MAP>\n" );}
      }
-@@ -2630,6 +2867,9 @@
+@@ -2630,6 +2886,9 @@
  
      # Print Copyright info on non-blank pages.
      if( $numimages > 0 ) {
@@ -1441,7 +1469,7 @@ diff -u -r1.117 -r1.172
         if( "${opt_address}" ne '' ) {
  	   print( INDEX "<BR><ADDRESS>${opt_address}</ADDRESS>\n" );
         }
-@@ -2642,13 +2882,17 @@
+@@ -2642,13 +2901,17 @@
         # If anonymous, don't show copyright and address info
         if( ! $opt_anonymous ) {
  	   print( INDEX "<HR>\n${opt_msg_produced_by} " );
@@ -1461,7 +1489,7 @@ diff -u -r1.117 -r1.172
      }
  
      print( INDEX "</BODY>\n" );
-@@ -2674,13 +2918,12 @@
+@@ -2674,13 +2937,15 @@
      open( JSINDEX, ">$fileNames{'jsPageIndex'}")
          || die("$0: Failed to open file $fileNames{'jsPageIndex'} for output\n$@\n");
  
@@ -1469,6 +1497,9 @@ diff -u -r1.117 -r1.172
 -    print( JSINDEX "<HEAD>\n");
 -    print( JSINDEX "<SCRIPT LANGUAGE=\"JavaScript\" SRC=\"$fileNames{'jsVariables'}\"></SCRIPT>\n");
 -    print( JSINDEX "<SCRIPT LANGUAGE=\"JavaScript\" SRC=\"$fileNames{'jsFunctions'}\"></SCRIPT>\n");
++    if( "$opt_prepend" ne '' ) {
++	print( JSINDEX "${opt_prepend}" );
++    }
 +    print( JSINDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
 +    print( JSINDEX "<SCRIPT TYPE=\"text/javascript\" SRC=\"$fileNames{'jsVariables'}\"></SCRIPT>\n");
 +    print( JSINDEX "<SCRIPT TYPE=\"text/javascript\" SRC=\"$fileNames{'jsFunctions'}\"></SCRIPT>\n");
@@ -1479,7 +1510,7 @@ diff -u -r1.117 -r1.172
      print( JSINDEX "  top.drawWindows();\n");
      print( JSINDEX "</SCRIPT>\n");
      print( JSINDEX "</BODY>\n");
-@@ -2714,6 +2957,8 @@
+@@ -2714,6 +2979,8 @@
  
      # Image labels
      print( JSVARS "\n// image titles\n", jsHash( 'imageLabels', \%imageLabels ) );
@@ -1488,7 +1519,7 @@ diff -u -r1.117 -r1.172
  
  	# Image labels
      #print( JSVARS "\n// table image titles\n", jsHash( 'tableImageLabels', \%tableImageLabels ) );
-@@ -2803,6 +3048,8 @@
+@@ -2803,6 +3070,8 @@
  
      # Image labels
      print( PERLVARS "\n# image titles\n", plHash( 'imageLabels', \%imageLabels ) );
@@ -1497,7 +1528,7 @@ diff -u -r1.117 -r1.172
  
  	# Table image labels
      print( PERLVARS "\n# table image titles\n", plHash( 'tableImageLabels', \%tableImageLabels ) );
-@@ -3062,7 +3309,7 @@
+@@ -3062,7 +3331,7 @@
  		# Copy image so we can play with it without effecting original
  		print( STDERR "Copying montage to scratch ...\n" )
  		    if $opt_debug;
@@ -1506,7 +1537,7 @@ diff -u -r1.117 -r1.172
  		handleMagickError( __FILE__, __LINE__, "", $image) unless ref($image);
  		last MONTAGE unless ref($image);
  	
-@@ -3191,12 +3438,16 @@
+@@ -3191,12 +3460,16 @@
      }
      my $imageNum;
      for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
@@ -1524,7 +1555,7 @@ diff -u -r1.117 -r1.172
  	if( $opt_maptype eq 'ncsa' ) {
  	    if ( "${opt_htimage}" ne '' ) {
  		print( IMAGEMAP "rect "
-@@ -3465,6 +3716,10 @@
+@@ -3465,6 +3738,10 @@
  sub sortDir {
      if(defined($dirOrder{$a}) && defined($dirOrder{$b})) {
  	$dirOrder{$a} <=> $dirOrder{$b}
@@ -1535,7 +1566,7 @@ diff -u -r1.117 -r1.172
      } else {
  	lc($a) cmp lc($b);
      }
-@@ -3476,7 +3731,11 @@
+@@ -3476,7 +3753,11 @@
  sub sortImages {
      if(defined($imageOrder{$a}) && defined($imageOrder{$b})) {
  	$imageOrder{$a} <=> $imageOrder{$b}
@@ -1548,7 +1579,7 @@ diff -u -r1.117 -r1.172
  	lc($a) cmp lc($b);
      }
  }
-@@ -3533,6 +3792,9 @@
+@@ -3533,6 +3814,9 @@
  sub compareHash {
      my( $hash1, $hash2) = @_;
  
@@ -1558,7 +1589,7 @@ diff -u -r1.117 -r1.172
      if(scalar(keys(%$hash1)) != scalar(keys(%$hash2))) {
  	return( 1 ); # different length
      }
-@@ -3633,7 +3895,7 @@
+@@ -3633,7 +3917,7 @@
  	}
      }
      
@@ -1567,7 +1598,7 @@ diff -u -r1.117 -r1.172
  	%iconImageSizes = %tmp_iconImageSizes;
  	print( STDERR "Icon sizes have changed, must re-do all HTML\n" )
  	    if $opt_debug;
-@@ -3868,7 +4130,7 @@
+@@ -3868,7 +4152,7 @@
  	# Set image label
  	#
  	my $label = '';
@@ -1576,7 +1607,7 @@ diff -u -r1.117 -r1.172
  	    if( defined( $imageLabels{$imagename} ) ) {
  		# Set image specific label
  		$label = $imageLabels{$imagename};
-@@ -3922,7 +4184,7 @@
+@@ -3922,7 +4206,7 @@
  
  	    # put our label into the table image hash
  
@@ -1585,7 +1616,7 @@ diff -u -r1.117 -r1.172
  	    $tableImageLabels{$imagename} =~ s/\n/<BR>/g;
  
  	    print( STDERR "Applying image label: \"${label}\"\n" )
-@@ -4073,6 +4335,7 @@
+@@ -4073,6 +4357,7 @@
    --[no]forcehtml    Force HTML files to be generated (default off)
    --[no]forcemontage Force montage (default off)
    --[no]ignorefp     Ignore directories with names like _vti (FrontPage directories) (default on)
@@ -1593,7 +1624,7 @@ diff -u -r1.117 -r1.172
    --[no]help         Display usage message (default off)
    --[no]recurse      Recurse directory tree (default off)
    --srcdir	     Image directory to process
-@@ -4093,6 +4356,8 @@
+@@ -4093,6 +4378,8 @@
  Filenames:
    --dirindexname     Directory-name to title cross-reference file name
    --imgindexname     Image-name to thumbnail label cross-reference file name
@@ -1602,7 +1633,7 @@ diff -u -r1.117 -r1.172
    --indexname	     Name of master index files (default server index)
    --pageindexname    Base name of page-related index files
    --readme	     Name of directory info file
-@@ -4138,7 +4403,9 @@
+@@ -4138,7 +4425,9 @@
  
  HTML Colors & Appearance:
    --address          Optional user address info
@@ -1612,7 +1643,7 @@ diff -u -r1.117 -r1.172
    --coloralink	     Link (active) color
    --colorback	     Background color (also applied to JPEG montage background)
    --colorfore	     Foreground text color
-@@ -4150,31 +4417,46 @@
+@@ -4150,31 +4439,47 @@
    --dircolorlink     Link (unvisited) color (directory frame)
    --dircolorvlink    Link (visited) color (directory frame)
    --dirhtmlext       Extension for directory frame
@@ -1624,6 +1655,7 @@ diff -u -r1.117 -r1.172
    --footer           Page footer (imagemap frame) (default to </CENTER>)
    --header           Page header (imagemap frame) (default to <CENTER>)
 +  --headins          Insert argument into <HEAD> section
++  --prepend          Prepend to the very top of each HTML
    --[no]javascript   Enable JavaScript output (default off)
 +  --[no]readmevisible Show README.html on first page rather than just linking (default off)
 +  --[no]tables       Use HTML tables instead of imagemaps for thumbnails (default off)
@@ -1667,7 +1699,7 @@ diff -u -r1.117 -r1.172
    --framestyle       Frame style to use (out of those available)
    --[no]allowconfig  Allow user to configure framestyle, columns and rows (requires javascript and tables) (default off)
  
-@@ -4296,6 +4578,7 @@
+@@ -4296,6 +4601,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -1675,7 +1707,7 @@ diff -u -r1.117 -r1.172
      return( $_ );
  }
  
-@@ -4324,23 +4607,11 @@
+@@ -4324,23 +4630,11 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {
@@ -1703,7 +1735,7 @@ diff -u -r1.117 -r1.172
      return( $_ );
  }
  
-@@ -4387,7 +4658,6 @@
+@@ -4387,7 +4681,6 @@
      my $rc;
      foreach $rc (@_) {
          next if ( ! -r $rc || ! -f $rc );
@@ -1711,7 +1743,7 @@ diff -u -r1.117 -r1.172
  	eval ( get_rc($rc) );
  	if( $@ ) {
  	    print( STDERR "Bad Eval for file \"${rc}\"...\n$@\n" );
-@@ -4468,7 +4738,7 @@
+@@ -4468,7 +4761,7 @@
      my $path=$top;
      $direlem='';
      do {
