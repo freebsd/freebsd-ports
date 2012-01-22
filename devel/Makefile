@@ -3556,6 +3556,7 @@
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bioruby
+    SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-classifier
