@@ -33,7 +33,7 @@
 +#if RUBY_VERSION_CODE < 190
  EXTERN VALUE ruby_top_self;
 +#else
-+#define ruby_top_self	rb_vm_top_self()
++#define ruby_top_self	rb_errinfo()
 +#endif
  
  /* copied from eval.c */
