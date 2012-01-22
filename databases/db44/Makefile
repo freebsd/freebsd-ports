@@ -40,9 +40,6 @@ pre-patch:
 	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|freebsd1\*)|freebsd1\.\*)|' \
-		-e 's|freebsd\[123\]\*)|freebsd\[123\]\.\*)|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${CHMOD} u+w ${WRKSRC}/../dist/configure
 
 post-configure:
