@@ -20,6 +20,8 @@ RUN_DEPENDS=	rubygem-amqp>=0.7.1:${PORTSDIR}/net/rubygem-amqp \
 		rubygem-msgpack>=0.4.5:${PORTSDIR}/devel/rubygem-msgpack \
 		rubygem-trollop>=1.16.2:${PORTSDIR}/devel/rubygem-trollop
 
+BROKEN=		bad dependencies
+
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
