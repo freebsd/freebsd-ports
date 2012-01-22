@@ -8472,6 +8472,7 @@ linux-f10-mikmod                ports/audio/linux-f10-mikmod
 linux-f10-nas-libs              ports/audio/linux-f10-nas-libs
 linux-f10-nspr                  ports/devel/linux-f10-nspr
 linux-f10-nss                   ports/security/linux-f10-nss
+linux-f10-nss_ldap              ports/net/linux-f10-nss_ldap
 linux-f10-openal                ports/audio/linux-f10-openal
 linux-f10-openal-soft           ports/audio/linux-f10-openal-soft
 linux-f10-openldap              ports/net/linux-f10-openldap
@@ -11589,7 +11590,7 @@ p5-DBIx-Class-QueryProfiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-DBIx-Class-ResultSet-HashRef  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-DBIx-Class-ResultSet-RecursiveUpdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-DBIx-Class-Schema-Loader     ports/databases/p5-DBIx-Class-Schema-Loader
-p5-DBIx-Class-Schema-PopulateMore  ports/devel/p5-DBIx-Class-Schema-PopulateMore
+p5-DBIx-Class-Schema-PopulateMore  ports/databases/p5-DBIx-Class-Schema-PopulateMore
 p5-DBIx-Class-TimeStamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-DBIx-Class-Tree              ports/databases/p5-DBIx-Class-Tree
 p5-DBIx-Class-Tree-NestedSet    ports/databases/p5-DBIx-Class-Tree-NestedSet
@@ -14289,6 +14290,7 @@ p5-Test-Command-Simple          ports/devel/p5-Test-Command-Simple
 p5-Test-Compile                 ports/devel/p5-Test-Compile
 p5-Test-Corpus-Audio-MPD        ports/audio/p5-Test-Corpus-Audio-MPD
 p5-Test-Cukes                   ports/databases/p5-Test-Cukes
+p5-Test-DBIx-Class              ports/devel/p5-Test-DBIx-Class
 p5-Test-Data                    ports/devel/p5-Test-Data
 p5-Test-Database                ports/databases/p5-Test-Database
 p5-Test-DatabaseRow             ports/databases/p5-Test-DatabaseRow
@@ -16193,7 +16195,7 @@ p5-dbix-class-queryprofiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-dbix-class-resultset-hashref  ports/databases/p5-DBIx-Class-ResultSet-HashRef
 p5-dbix-class-resultset-recursiveupdate  ports/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate
 p5-dbix-class-schema-loader     ports/databases/p5-DBIx-Class-Schema-Loader
-p5-dbix-class-schema-populatemore  ports/devel/p5-DBIx-Class-Schema-PopulateMore
+p5-dbix-class-schema-populatemore  ports/databases/p5-DBIx-Class-Schema-PopulateMore
 p5-dbix-class-timestamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-dbix-class-tree              ports/databases/p5-DBIx-Class-Tree
 p5-dbix-class-tree-nestedset    ports/databases/p5-DBIx-Class-Tree-NestedSet
@@ -18769,6 +18771,7 @@ p5-test-cukes                   ports/databases/p5-Test-Cukes
 p5-test-data                    ports/devel/p5-Test-Data
 p5-test-database                ports/databases/p5-Test-Database
 p5-test-databaserow             ports/databases/p5-Test-DatabaseRow
+p5-test-dbix-class              ports/devel/p5-Test-DBIx-Class
 p5-test-debugger                ports/devel/p5-Test-Debugger
 p5-test-declare                 ports/devel/p5-Test-Declare
 p5-test-deep                    ports/devel/p5-Test-Deep
@@ -23019,7 +23022,6 @@ qgis                            ports/graphics/qgis
 qgit                            ports/devel/qgit
 qgmailnotifier                  ports/mail/qgmailnotifier
 qgo                             ports/games/qgo
-qgoogletranslator               ports/textproc/qgoogletranslator
 qhacc                           ports/finance/qhacc
 qhull                           ports/math/qhull
 qhull5                          ports/math/qhull5
