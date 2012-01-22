@@ -199,7 +199,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>rubygem-rack</name>
-	<range><lt>1.3.6</lt></range>
+	<range><lt>1.3.6,3</lt></range>
       </package>
       <package>
 	<name>v8</name>
