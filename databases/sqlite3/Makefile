@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.9
-PORTREVISION=	1
+PORTVERSION=	3.7.10
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
-DISTNAME=	sqlite-src-3070900
+DISTNAME=	sqlite-src-3071000
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
@@ -46,11 +45,13 @@ OPTIONS=	\
 		RAMTABLE	"Store temporary tables in RAM = ${RAMTABLE}" off \
 		UPD_DEL_LIMIT	"ORDER BY and LIMIT on UPDATE and DELETE" off \
 		URI		"Enable use the URI filename"		off \
+		POWERSAFE	"Enable powersafe overwrite"		on \
 		SOUNDEX		"Enables the soundex() SQL function"	off \
 		METADATA	"Enable column metadata"		on \
 		STAT3		"Help SQLite to chose a better query plan" off \
 		DIRECT_READ	"File is read directly from disk"	off \
 		MEMMAN		"Allows it to release unused memory"	off \
+		MEMSTATUS	"Enable memory statistics"		on \
 		SECURE_DELETE	"Overwrite deleted information with zeros" on \
 		UNLOCK_NOTIFY	"Enable notification on unlocking"	on \
 		THREADSAFE	"Build thread-safe library"		on \
@@ -124,8 +125,33 @@ CFLAGS+=		-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
 CFLAGS+=		-DSQLITE_DEFAULT_TEMP_CACHE_SIZE=${TEMP_CACHE_SIZE}
 .endif
 
+# http://www.sqlite.org/wal.html#ckpt
+.ifdef WAL_AUTOCHECKPOINT
+CFLAGS+=		-DSQLITE_DEFAULT_WAL_AUTOCHECKPOINT=${WAL_AUTOCHECKPOINT}
+.endif
+
+.ifdef SCHEMA_RETRY
+CFLAGS+=		-DSQLITE_MAX_SCHEMA_RETRY=${SCHEMA_RETRY}
+.endif
+
+# http://www.sqlite.org/psow.html
+.if defined(WITH_POWERSAFE)
+# SQLite to assume that application-level writes cannot changes bytes outside the range
+# of bytes written even if the write occurs just before a power loss.
+CFLAGS+=		-DSQLITE_POWERSAFE_OVERWRITE=1
+.else
+# SQLite assumes that other bytes in the same sector with a written byte might be changed
+# or damaged by a power loss.
+CFLAGS+=		-DSQLITE_POWERSAFE_OVERWRITE=0
+.endif
+
 .if defined(WITH_MEMMAN)
 CFLAGS+=		-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
+.endif
+
+# Disable memory statistics.
+.if defined(WITHOUT_MEMSTATUS)
+CFLAGS+=		-DSQLITE_DEFAULT_MEMSTATUS=0
 .endif
 
 .if defined(WITH_UPD_DEL_LIMIT)
