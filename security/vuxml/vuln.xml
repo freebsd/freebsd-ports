@@ -52,7 +52,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openssl</name>
-	<range><lt>1.0.0g</lt></range>
+	<range><lt>1.0.0_9</lt></range>
       </package>
     </affects>
     <description>
@@ -204,6 +204,10 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>v8</name>
 	<range><lt>3.8.5</lt></range>
+      </package>
+      <package>
+	<name>redis</name>
+	<range><le>2.4.6</le></range>
       </package>
       <package>
 	<name>node</name>
