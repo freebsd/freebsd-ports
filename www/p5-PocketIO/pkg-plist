@@ -17,6 +17,7 @@
 %%SITE_PERL%%/PocketIO/Transport/WebSocket.pm
 %%SITE_PERL%%/PocketIO/Transport/XHRMultipart.pm
 %%SITE_PERL%%/PocketIO/Transport/XHRPolling.pm
+%%SITE_PERL%%/PocketIO/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PocketIO
 @dirrm %%SITE_PERL%%/PocketIO/Transport
