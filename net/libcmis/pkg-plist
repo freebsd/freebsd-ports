@@ -1,0 +1,12 @@
+bin/cmis-client
+include/libcmis/cmis-object.hxx
+include/libcmis/document.hxx
+include/libcmis/folder.hxx
+include/libcmis/session-factory.hxx
+include/libcmis/session.hxx
+lib/libcmis-0.2.a
+lib/libcmis-0.2.la
+lib/libcmis-0.2.so
+lib/libcmis-0.2.so.0
+libdata/pkgconfig/libcmis-0.2.pc
+@dirrm include/libcmis

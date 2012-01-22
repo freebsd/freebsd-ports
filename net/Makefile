@@ -298,6 +298,7 @@
     SUBDIR += ldapsh
     SUBDIR += lft
     SUBDIR += libbgpdump
+    SUBDIR += libcmis
     SUBDIR += libconnect
     SUBDIR += libdnet
     SUBDIR += libexosip2
