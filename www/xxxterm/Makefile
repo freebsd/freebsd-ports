@@ -57,5 +57,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xxxterm.conf ${EXAMPLESDIR}/
 .endif
 
-# vim: set ts=8 sw=8:
 .include <bsd.port.post.mk>
