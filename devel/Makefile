@@ -520,6 +520,7 @@
     SUBDIR += google-styleguide
     SUBDIR += googlemock
     SUBDIR += googletest
+    SUBDIR += goprotobuf
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gprbuild-aux
