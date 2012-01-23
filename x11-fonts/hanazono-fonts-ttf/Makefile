@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hanazono-fonts-ttf
-PORTVERSION=	20110516
+PORTVERSION=	20110915
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://kage.sourceforge.jp/hanazono/
 DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
