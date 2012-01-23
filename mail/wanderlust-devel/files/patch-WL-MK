@@ -1,0 +1,20 @@
+--- WL-MK.orig	2012-01-23 21:34:34.000000000 +0900
++++ WL-MK	2012-01-23 21:38:11.000000000 +0900
+@@ -131,7 +131,7 @@
+     (defvar PIXMAPDIR
+       (if (string= pixmap-dir "NONE")
+ 	  (if packagedir
+-	      (expand-file-name "etc/wl/" packagedir)
++	      (expand-file-name "wl/icons/" packagedir)
+ 	    (expand-file-name "wl/icons/" data-directory))
+ 	pixmap-dir)))
+   (if PIXMAPDIR
+@@ -148,7 +148,7 @@
+   (princ (format "LISPDIR is %s\n" LISPDIR))
+   (setq command-line-args-left (cdr command-line-args-left))
+   ;; PIXMAPDIR check.
+-  (config-wl-pixmap-dir)
++  (config-wl-pixmap-dir "%%EMACS_LIBDIR_WITH_VER%%/etc")
+   (princ "\n"))
+ 
+ (defun update-version ()
