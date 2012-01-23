@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.11
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -79,7 +79,7 @@ PLIST_SUB+=	SCIM="@comment "
 .if defined(WITH_IBUS)
 CONFIGURE_ARGS+=	--enable-ibus
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
-LIB_DEPENDS+=	ibus.2:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS+=	ibus-1.0.400:${PORTSDIR}/textproc/ibus
 PLIST_SUB+=	IBUS=""
 .else
 CONFIGURE_ARGS+=	--disable-ibus
