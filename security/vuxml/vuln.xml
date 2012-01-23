@@ -93,8 +93,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The OpenSSL Team reports:</p>
 	<blockquote cite="http://www.openssl.org/news/secadv_20120118.txt">
 	  <p>A flaw in the fix to CVE-2011-4108 can be exploited in a
-	     denial of service attack. Only DTLS applications using
-	     OpenSSL 1.0.0f and 0.9.8s are affected.</p>
+	    denial of service attack. Only DTLS applications using
+	    OpenSSL 1.0.0f and 0.9.8s are affected.</p>
 	</blockquote>
       </body>
     </description>
