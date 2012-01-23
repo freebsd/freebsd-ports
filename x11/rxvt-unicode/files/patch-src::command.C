@@ -1,14 +1,14 @@
---- src/command.C.orig	2011-06-22 14:44:37.000000000 +0400
-+++ src/command.C	2011-09-21 15:39:21.000000000 +0400
+--- src/command.C.orig	2012-01-19 14:34:39.000000000 +0100
++++ src/command.C	2012-01-23 19:28:46.000000000 +0100
 @@ -57,6 +57,7 @@
  #endif
  
- #include <csignal>
+ #include <signal.h>
 +#include <sys/param.h>
  
  #if LINUX_YIELD_HACK
- # include <ctime>
-@@ -2357,7 +2358,9 @@
+ # include <time.h>
+@@ -2354,7 +2355,9 @@
        if (len == (size_t)-2)
          {
            // the mbstate stores incomplete sequences. didn't know this :/
