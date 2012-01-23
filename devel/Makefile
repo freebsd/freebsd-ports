@@ -2221,6 +2221,7 @@
     SUBDIR += p5-PatchReader
     SUBDIR += p5-Path-Abstract
     SUBDIR += p5-Path-Class
+    SUBDIR += p5-Path-Class-File-Lockable
     SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-Path-Dispatcher-Declarative
     SUBDIR += p5-Path-Resource

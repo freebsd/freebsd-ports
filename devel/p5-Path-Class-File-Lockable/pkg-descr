@@ -1,0 +1,10 @@
+Path::Class::File::Lockable uses simple files to indicate
+whether a file is locked or not.
+
+It does not use flock(), since that is unstable over NFS.
+Effort has been made to avoid race conditions.
+
+Path::Class::File::Lockable is intended for long-standing locks,
+as in a Subversion workspace. See SVN::Class for example.
+
+WWW: http://search.cpan.org/dist/Path-Class-File-Lockable/
