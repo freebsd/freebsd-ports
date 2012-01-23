@@ -47,6 +47,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3ebb2dc8-4609-11e1-9f47-00e0815b8da8">
+    <topic>Wireshark -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.5</lt></range>
+      </package>
+      <package>
+	<name>wireshark-lite</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.5</lt></range>
+      </package>
+      <package>
+	<name>tshark</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.5</lt></range>
+      </package>
+      <package>
+	<name>tshark-lite</name>
+	<range><ge>1.4</ge><lt>1.4.11</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wireshark reports:</p>
+	<blockquote cite="http://www.wireshark.org/docs/relnotes/wireshark-1.6.5.html">
+	  <p>Laurent Butti discovered that Wireshark failed to properly check
+	    record sizes for many packet capture file formats</p>
+	  <p>Wireshark could dereference a NULL pointer and crash.</p>
+	  <p>The RLC dissector could overflow a buffer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0041</cvename>
+      <cvename>CVE-2012-0066</cvename>
+      <cvename>CVE-2012-0067</cvename>
+      <cvename>CVE-2012-0068</cvename>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-01.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-02.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2012-03.html</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6663</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6666</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6667</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6668</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6669</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6670</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6634</url>
+      <url>https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6391</url>
+    </references>
+    <dates>
+      <discovery>2010-01-10</discovery>
+      <entry>2012-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d2336c2-4607-11e1-9f47-00e0815b8da8">
     <topic>spamdyke -- Buffer Overflow Vulnerabilities</topic>
     <affects>
