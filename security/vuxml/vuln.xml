@@ -47,6 +47,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7d2336c2-4607-11e1-9f47-00e0815b8da8">
+    <topic>spamdyke -- Buffer Overflow Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>spamdyke</name>
+	<range><lt>4.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://www.spamdyke.org/documentation/Changelog.txt">
+	  <p>Fixed a number of very serious errors in the usage of
+	    snprintf()/vsnprintf().</p>
+	  <p>The return value was being used as the length of the string
+	    printed into the buffer, but the return value really indicates the
+	    length of the string that *could* be printed if the buffer were of
+	    infinite size. Because the returned value could be larger than the
+	    buffer's size, this meant remotely exploitable buffer overflows
+	    were possible, depending on spamdyke's configuration.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://secunia.com/advisories/47548/</url>
+      <url>http://www.spamdyke.org/documentation/Changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2012-01-15</discovery>
+      <entry>2012-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c5f19ce-43af-11e1-89b4-001ec9578670">
     <topic>OpenSSL -- DTLS Denial of Service</topic>
     <affects>
