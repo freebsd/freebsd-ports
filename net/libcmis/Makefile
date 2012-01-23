@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Client library for the CMIS interface
 
+LICENSE=	LGPL20 MPL GPLv2
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
