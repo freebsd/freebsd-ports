@@ -7,7 +7,6 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
-PORTREVISION=	3
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/wl/snapshots/ \
 		${MASTER_SITE_LOCAL}
@@ -23,8 +22,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_EMACS=	yes
 
-SNAPDATE=	20110420
-SNAPTIME=	0743
+SNAPDATE=	20120102
+SNAPTIME=	0309
 
 CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
@@ -83,6 +82,9 @@ MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD} \
 
 post-extract:
 	@${CP} ${FILESDIR}/WL-CFG ${WRKSRC}
+
+post-configure:
+	${REINPLACE_CMD} -e 's|%%EMACS_LIBDIR_WITH_VER%%|${PREFIX}/${EMACS_LIBDIR_WITH_VER}|' ${WRKSRC}/WL-MK
 
 post-install:
 .if !exists(${EMACS_W3M_LISP_FILE})
