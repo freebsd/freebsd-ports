@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.morettoni.net/qmail/ \
 		CRITICAL
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A qmail RBL filter
 
 USE_QMAIL_RUN=	yes
