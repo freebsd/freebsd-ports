@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	muparser
-PORTVERSION=	1.34
+PORTVERSION=	2.2.0
 CATEGORIES=	math devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Mathematical expressions parser library written in C++
+
+LICENSE=	MIT
 
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
@@ -24,6 +26,7 @@ CONFIGURE_ARGS+=	--enable-samples=no
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 .endif
 USE_GMAKE=	yes
+USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 

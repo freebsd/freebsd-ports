@@ -3,4 +3,4 @@ It is based on transforming an expression into a bytecode and precalculating
 constant parts of it.
 
 Author:	Ingo Berg <ingo_berg@gmx.de>
-WWW:	http://muparser.sourceforge.net/
+WWW:	http://muparser.beltoforion.de/

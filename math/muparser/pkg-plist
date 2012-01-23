@@ -1,59 +1,50 @@
+@comment $FreeBSD$
 include/muParser.h
 include/muParserBase.h
 include/muParserBytecode.h
 include/muParserCallback.h
-include/muParserComplex.h
 include/muParserDLL.h
 include/muParserDef.h
 include/muParserError.h
 include/muParserFixes.h
 include/muParserInt.h
 include/muParserStack.h
+include/muParserTemplateMagic.h
 include/muParserTest.h
 include/muParserToken.h
 include/muParserTokenReader.h
 lib/libmuparser.a
 libdata/pkgconfig/muparser.pc
-%%PORTDOCS%%%%DOCSDIR%%/images/Crystal_Clear_app_utilities.png
 %%PORTDOCS%%%%DOCSDIR%%/images/api.png
 %%PORTDOCS%%%%DOCSDIR%%/images/api_dark.png
+%%PORTDOCS%%%%DOCSDIR%%/images/back_idx.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bench2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/blocks.png
 %%PORTDOCS%%%%DOCSDIR%%/images/build.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bytecode.png
 %%PORTDOCS%%%%DOCSDIR%%/images/caption.png
 %%PORTDOCS%%%%DOCSDIR%%/images/diff.png
-%%PORTDOCS%%%%DOCSDIR%%/images/download.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/download.png
-%%PORTDOCS%%%%DOCSDIR%%/images/download_dark.png
 %%PORTDOCS%%%%DOCSDIR%%/images/download_muparser.png
 %%PORTDOCS%%%%DOCSDIR%%/images/download_muparser_.png
-%%PORTDOCS%%%%DOCSDIR%%/images/grad1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/grad2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/grad2.xcf
-%%PORTDOCS%%%%DOCSDIR%%/images/grad3.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/help.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/help.png
 %%PORTDOCS%%%%DOCSDIR%%/images/home.png
 %%PORTDOCS%%%%DOCSDIR%%/images/home_dark.png
 %%PORTDOCS%%%%DOCSDIR%%/images/info.png
 %%PORTDOCS%%%%DOCSDIR%%/images/list.png
-%%PORTDOCS%%%%DOCSDIR%%/images/logo.xcf
 %%PORTDOCS%%%%DOCSDIR%%/images/mathparser.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/mathparser_logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/mathparser_small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/images/muParser.png
-%%PORTDOCS%%%%DOCSDIR%%/images/muParserNET.png
-%%PORTDOCS%%%%DOCSDIR%%/images/muParserNET.xcf
-%%PORTDOCS%%%%DOCSDIR%%/images/muParserNET_.png
-%%PORTDOCS%%%%DOCSDIR%%/images/muParserX.png
-%%PORTDOCS%%%%DOCSDIR%%/images/muParserX.xcf
-%%PORTDOCS%%%%DOCSDIR%%/images/muParserX_.png
+%%PORTDOCS%%%%DOCSDIR%%/images/muparsernet.png
+%%PORTDOCS%%%%DOCSDIR%%/images/muparsernet_.png
+%%PORTDOCS%%%%DOCSDIR%%/images/muparsersse.png
+%%PORTDOCS%%%%DOCSDIR%%/images/muparsersse_.png
+%%PORTDOCS%%%%DOCSDIR%%/images/muparserx.png
+%%PORTDOCS%%%%DOCSDIR%%/images/muparserx_.png
 %%PORTDOCS%%%%DOCSDIR%%/images/osi.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/question.png
+%%PORTDOCS%%%%DOCSDIR%%/images/related (Kopie).png
 %%PORTDOCS%%%%DOCSDIR%%/images/related.png
-%%PORTDOCS%%%%DOCSDIR%%/images/run.png
-%%PORTDOCS%%%%DOCSDIR%%/images/sflogo.png
+%%PORTDOCS%%%%DOCSDIR%%/images/thumb_gct.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_geodes.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_kst.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_matrix.jpg
@@ -63,8 +54,6 @@ libdata/pkgconfig/muparser.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_tm2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/thumb_trini.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/xxx .png
-%%PORTDOCS%%%%DOCSDIR%%/images/xxx.xcf
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/misc/Main.txt
 %%PORTDOCS%%%%DOCSDIR%%/misc/calc.cpp
@@ -101,10 +90,14 @@ libdata/pkgconfig/muparser.pc
 %%PORTDOCS%%%%DOCSDIR%%/sources/mup_version_meta.html
 %%PORTDOCS%%%%DOCSDIR%%/sources/navigation.html
 %%PORTDOCS%%%%DOCSDIR%%/style/formate.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/Example1.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/example1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/example1.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/example2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparser32.dll
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparser64.dll
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparserd32.dll
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2/muparserd64.dll
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/example1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
