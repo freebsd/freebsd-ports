@@ -217,6 +217,7 @@ post-patch:
 		${APU_WRKDIR}/build/apu-conf.m4
 	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
 		${APR_WRKDIR}/build/gen-build.py
+	${REINPLACE_CMD} -e 's/void main/int main/' ${APR_WRKDIR}/build/apr_network.m4
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \
