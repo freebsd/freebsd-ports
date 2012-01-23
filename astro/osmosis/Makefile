@@ -69,5 +69,6 @@ do-install:
 	@${MKDIR} ${DATADIR}/config
 	${INSTALL_DATA} ${CONFFILES:S,^,${WRKSRC}/config/,} ${DATADIR}/config
 	${INSTALL_SCRIPT} ${WRKDIR}/osmosis ${PREFIX}/bin/osmosis
+	cd ${WRKSRC} && ${COPYTREE_SHARE} script ${DATADIR}/
 
 .include <bsd.port.mk>
