@@ -1,0 +1,17 @@
+bin/cargo
+bin/rustc
+bin/rustdoc
+lib/libcore-14bd852465126fe7-0.1.so
+lib/librustc-4171d83aef249987-0.1.so
+lib/librustllvm.so
+lib/librustrt.so
+lib/libstd-79ca5fac56b63fde-0.1.so
+lib/rustc/x86_64-unknown-freebsd/lib/intrinsics.bc
+lib/rustc/x86_64-unknown-freebsd/lib/libcore-14bd852465126fe7-0.1.so
+lib/rustc/x86_64-unknown-freebsd/lib/libmorestack.a
+lib/rustc/x86_64-unknown-freebsd/lib/librustc-4171d83aef249987-0.1.so
+lib/rustc/x86_64-unknown-freebsd/lib/librustrt.so
+lib/rustc/x86_64-unknown-freebsd/lib/libstd-79ca5fac56b63fde-0.1.so
+@dirrm lib/rustc/x86_64-unknown-freebsd/lib
+@dirrm lib/rustc/x86_64-unknown-freebsd
+@dirrm lib/rustc
