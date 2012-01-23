@@ -521,12 +521,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-0070</cvename>
       <url>http://secunia.com/advisories/47435/</url>
       <url>http://www.spamdyke.org/documentation/Changelog.txt</url>
     </references>
     <dates>
       <discovery>2012-01-04</discovery>
       <entry>2012-01-08</entry>
+      <modified>2012-01-23</modified>
     </dates>
   </vuln>
 
