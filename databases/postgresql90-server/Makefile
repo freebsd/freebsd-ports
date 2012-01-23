@@ -121,6 +121,14 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 .endif # !SLAVE_ONLY
 
+.if defined(WITH_OSSP_UUID)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid
+CONFIGURE_ARGS+=--with-ossp-uuid
+PLIST_SUB+=	OSSP=""
+.else
+PLIST_SUB+=	OSSP="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !defined(SLAVE_ONLY)
