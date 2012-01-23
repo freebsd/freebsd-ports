@@ -7,7 +7,7 @@
 
 PORTNAME=	sarg
 PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -19,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS=	GD "Enable GD support" on
 
+USE_AUTOTOOLS=	autoconf aclocal
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -31,10 +32,6 @@ CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/etc/${PORTNAME}" \
 MAN1=		sarg.1
 
 .include <bsd.port.pre.mk>
-
-.if ${CC} == "cc"
-CC=	gcc
-.endif
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -60,5 +57,8 @@ post-patch:
 .if !defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e '/^LIBS/ s/$$/ -lintl/' ${WRKSRC}/Makefile.in
 .endif
+
+pre-configure:
+	@(cd ${WRKSRC} && ${AUTORECONF})
 
 .include <bsd.port.post.mk>
