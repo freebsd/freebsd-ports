@@ -7,6 +7,7 @@
 
 PORTNAME=	c++-gtk-utils
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -16,7 +17,6 @@ COMMENT=	Lightweight library for programming GTK+ programs
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	chrpath:${PORTSDIR}/devel/chrpath
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
@@ -38,8 +38,5 @@ post-patch:
 		-e 's|install-pkgconfigDATA install-pkgdocDATA|install-pkgconfigDATA|' \
 		${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	@chrpath -d ${PREFIX}/lib/libcxx-gtk-utils-2-2.0.so.0
 
 .include <bsd.port.mk>
