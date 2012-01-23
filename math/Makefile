@@ -609,6 +609,7 @@
     SUBDIR += xgfe
     SUBDIR += xgobi
     SUBDIR += xgraph
+    SUBDIR += xlapack
     SUBDIR += xldlas
     SUBDIR += xlispstat
     SUBDIR += xplot
