@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_rpaf2
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://stderr.net/apache/rpaf/download/
 DISTNAME=	mod_rpaf-${PORTVERSION}
@@ -20,6 +20,7 @@ MAKE_JOBS_SAFE=  yes
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
+SHORTMODNAME=	rpaf
 
 SRC_FILE=	mod_rpaf-2.0.c
 
