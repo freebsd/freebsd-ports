@@ -20,6 +20,7 @@
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.py
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyc
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/tests/unicode.txt
 %%PYTHON_SITELIBDIR%%/pygraphviz/version.py
 %%PYTHON_SITELIBDIR%%/pygraphviz/version.pyc
 %%PYTHON_SITELIBDIR%%/pygraphviz/version.pyo
@@ -31,6 +32,7 @@
 %%DOCSDIR%%/examples/simple.py
 %%DOCSDIR%%/examples/star.py
 %%DOCSDIR%%/examples/subgraph.py
+%%DOCSDIR%%/examples/utf8_encoding.py
 @dirrm %%PYTHON_SITELIBDIR%%/pygraphviz/tests
 @dirrm %%PYTHON_SITELIBDIR%%/pygraphviz
 @dirrm %%DOCSDIR%%/examples
