@@ -37,6 +37,31 @@ bin/osmosis
 %%DATADIR%%/lib/default/stax2-api-3.1.1.jar
 %%DATADIR%%/lib/default/woodstox-core-lgpl-4.1.2.jar
 %%DATADIR%%/lib/default/xercesImpl-2.9.1.jar
+%%DATADIR%%/script/contrib/CreateGeometryForWays.sql
+%%DATADIR%%/script/contrib/apidb_0.6.sql
+%%DATADIR%%/script/contrib/apidb_0.6_osmosis_xid_indexing.sql
+%%DATADIR%%/script/contrib/dump_apidb.sh
+%%DATADIR%%/script/contrib/replicate_osm_file.sh
+%%DATADIR%%/script/fix_line_endings.sh
+%%DATADIR%%/script/munin/README
+%%DATADIR%%/script/munin/osm_replication.conf
+%%DATADIR%%/script/munin/osm_replication_lag
+%%DATADIR%%/script/pgsimple_load_0.6.sql
+%%DATADIR%%/script/pgsimple_schema_0.6.sql
+%%DATADIR%%/script/pgsimple_schema_0.6_action.sql
+%%DATADIR%%/script/pgsimple_schema_0.6_bbox.sql
+%%DATADIR%%/script/pgsimple_schema_0.6_linestring.sql
+%%DATADIR%%/script/pgsnapshot_and_pgsimple.txt
+%%DATADIR%%/script/pgsnapshot_load_0.6.sql
+%%DATADIR%%/script/pgsnapshot_schema_0.6.sql
+%%DATADIR%%/script/pgsnapshot_schema_0.6_action.sql
+%%DATADIR%%/script/pgsnapshot_schema_0.6_bbox.sql
+%%DATADIR%%/script/pgsnapshot_schema_0.6_linestring.sql
+%%DATADIR%%/script/pgsnapshot_schema_0.6_upgrade_4-5.sql
+%%DATADIR%%/script/pgsnapshot_schema_0.6_upgrade_5-6.sql
+@dirrm %%DATADIR%%/script/munin
+@dirrm %%DATADIR%%/script/contrib
+@dirrm %%DATADIR%%/script
 @dirrm %%DATADIR%%/lib/default
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/config
