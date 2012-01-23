@@ -47,7 +47,6 @@ USE_SDL=	sdl
 USE_PYTHON=	yes
 USE_PERL5=	yes
 USE_CDRTOOLS=	yes
-USE_GETTEXT=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -81,6 +80,7 @@ PLIST_SUB+=	FREI0R="@comment "
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
