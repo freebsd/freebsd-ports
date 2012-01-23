@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	pawel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21
