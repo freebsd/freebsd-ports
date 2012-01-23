@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	deskutils python
-MASTER_SITES=	${MASTER_SITE_BERLIOS:S/$/:treeline/} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/:treeline \
 		http://treeline.bellz.org/plugins/:plugins \
 		http://depot.fsck.ch/mirror/distfiles/:treeline,plugins
 MASTER_SITE_SUBDIR=treeline/:treeline
@@ -18,7 +18,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	TreeLine is a structured information storage program
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network
 
 OPTIONS=	ASPELL "install with aspell support" off \
 		ISPELL "install with ispell support" off \
@@ -29,13 +32,12 @@ WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	4
 USE_PYTHON=	2.5+
 NO_BUILD=	yes
-LICENSE=	GPLv2
 
 DESKTOP_ENTRIES=	"TreeLine" "Structured information storage program" \
 			"${DATADIR}/icons/tree/treeline.png" "treeline" \
 			"Utility;" false
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_ASPELL)
 BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
@@ -71,4 +73,4 @@ post-install:
 	${RMDIR} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
