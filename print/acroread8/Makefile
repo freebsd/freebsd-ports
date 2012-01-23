@@ -7,7 +7,7 @@
 
 PORTNAME=	acroread8
 PORTVERSION=	8.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -17,12 +17,17 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
+LICENSE=	Adobe_WWEULA_20080204_1313
+LICENSE_NAME=	Adobe EULA (Reader_Player_AIR_WWEULA-en_US-20080204_1313)
+LICENSE_TEXT=	${INSTALLDIR}/Adobe/Reader8/Reader/Legal/en_US/License.txt
+LICENSE_PERMS=	auto-accept
+
 RUN_DEPENDS=	acroreadwrapper>=0.0.20100806:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 pango
+USE_LINUX_APPS=	cups-libs gtk2 pango libgcrypt libgpg-error
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
