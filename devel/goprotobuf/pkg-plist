@@ -3,6 +3,9 @@ bin/protoc-gen-go
 %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler/generator.a
 %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler/plugin.a
 %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/proto.a
+go/src/pkg/goprotobuf.googlecode.com/hg/Make.protobuf
 @dirrm %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler
 @dirrm %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg
 @dirrm %%GO_LIBDIR%%/goprotobuf.googlecode.com
+@dirrm go/src/pkg/goprotobuf.googlecode.com/hg
+@dirrm go/src/pkg/goprotobuf.googlecode.com
