@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.22
-PORTREVISION=	1
+PORTVERSION=	2.23
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN \
 		http://www.template-toolkit.org/download/
@@ -18,6 +17,9 @@ COMMENT=	Extensive Toolkit for template processing
 
 BUILD_DEPENDS=	p5-AppConfig>=1.56:${PORTSDIR}/devel/p5-AppConfig
 RUN_DEPENDS=	p5-AppConfig>=1.56:${PORTSDIR}/devel/p5-AppConfig
+
+TEST_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
 
 OPTIONS=	DATE_CALC	"With Date::Calc Plugin"	off \
 		IMAGE_INFO	"With Image::Info Plugin"	off \
