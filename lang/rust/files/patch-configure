@@ -1,0 +1,20 @@
+--- configure.orig	2012-01-22 04:29:36.401802685 +0800
++++ configure	2012-01-22 11:40:28.231803897 +0800
+@@ -281,7 +281,6 @@
+ 
+ probe_need CFG_PERL         perl
+ probe_need CFG_PYTHON       python python2.6 python2 python3
+-probe_need CFG_CURL         curl
+ 
+ probe CFG_GIT              git
+ probe CFG_CLANG            clang++
+@@ -340,7 +339,8 @@
+     CFG_CLANG_VERSION=$("$CFG_CLANG" \
+                       --version \
+                       | grep version \
+-                      | cut -d ' ' -f 3)
++                      | sed 's/.*\(version .*\)/\1/' \
++                      | cut -d ' ' -f 2)
+ 
+     case $CFG_CLANG_VERSION in
+         (3.0svn | 3.0 | 3.1)

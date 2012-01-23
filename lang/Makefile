@@ -299,6 +299,7 @@
     SUBDIR += ruby18
     SUBDIR += ruby19
     SUBDIR += runawk
+    SUBDIR += rust
     SUBDIR += s9fes
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
