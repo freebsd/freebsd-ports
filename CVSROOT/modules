@@ -4743,6 +4743,7 @@ goose                           ports/www/goose
 gopchop                         ports/multimedia/gopchop
 gopher                          ports/net/gopher
 gopod                           ports/misc/gopod
+goprotobuf                      ports/devel/goprotobuf
 gorilla                         ports/security/gorilla
 gorm                            ports/devel/gorm
 gosa                            ports/sysutils/gosa
@@ -4820,6 +4821,7 @@ graphics_orca                   ports/graphics/orca
 graphicsmagick                  ports/graphics/GraphicsMagick
 graphicsmagick12                ports/graphics/GraphicsMagick12
 graphicsmagick13                ports/graphics/GraphicsMagick13
+graphite2                       ports/graphics/graphite2
 graphopt                        ports/graphics/graphopt
 graphthing                      ports/math/graphthing
 graphviz                        ports/graphics/graphviz
@@ -7696,6 +7698,7 @@ libchk                          ports/sysutils/libchk
 libcii                          ports/devel/libcii
 libclaw                         ports/devel/libclaw
 libcli                          ports/devel/libcli
+libcmis                         ports/net/libcmis
 libcompizconfig                 ports/x11-wm/libcompizconfig
 libcomprex                      ports/archivers/libcomprex
 libconfig                       ports/devel/libconfig
@@ -7773,6 +7776,7 @@ libexo                          ports/x11/libexo
 libexosip2                      ports/net/libexosip2
 libexplain                      ports/devel/libexplain
 libextractor                    ports/textproc/libextractor
+libexttextcat                   ports/textproc/libexttextcat
 libfame                         ports/multimedia/libfame
 libfb                           ports/net/libfb
 libfec                          ports/comms/libfec
@@ -24007,6 +24011,7 @@ rubygem-benelux                 ports/devel/rubygem-benelux
 rubygem-bigrecord               ports/databases/rubygem-bigrecord
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
+rubygem-bugspots                ports/devel/rubygem-bugspots
 rubygem-builder                 ports/devel/rubygem-builder
 rubygem-bundler                 ports/sysutils/rubygem-bundler
 rubygem-bunny                   ports/net/rubygem-bunny
@@ -24289,6 +24294,7 @@ rubygem-rails-app-installer     ports/www/rubygem-rails-app-installer
 rubygem-railsbench              ports/benchmarks/rubygem-railsbench
 rubygem-railsless-deploy        ports/devel/rubygem-railsless-deploy
 rubygem-railties                ports/www/rubygem-railties
+rubygem-rainbow                 ports/devel/rubygem-rainbow
 rubygem-raindrops               ports/www/rubygem-raindrops
 rubygem-rak                     ports/textproc/rubygem-rak
 rubygem-rake                    ports/devel/rubygem-rake
@@ -24525,6 +24531,7 @@ samhain                         ports/security/samhain
 samhain-client                  ports/security/samhain-client
 samhain-server                  ports/security/samhain-server
 samidare                        ports/www/samidare
+sampleicc                       ports/graphics/sampleicc
 sampsvr                         ports/games/sampsvr
 sams                            ports/www/sams
 sancp                           ports/security/sancp
