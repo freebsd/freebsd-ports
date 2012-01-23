@@ -479,8 +479,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>TORCS News reports:</p>
-	<blockquote
-	  cite="http://torcs.sourceforge.net/index.php?name=News&amp;file=article&amp;sid=77">
+	<blockquote cite="http://torcs.sourceforge.net/index.php?name=News&amp;file=article&amp;sid=77">
 	  <p>An insecure change to LD_LIBRARY_PATH allows loading of libraries
 	    in directories other than the standard paths. This can be a
 	    problem when downloading and installing untrusted content from the
