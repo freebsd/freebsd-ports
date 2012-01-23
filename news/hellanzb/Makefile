@@ -8,22 +8,24 @@
 
 PORTNAME=	hellanzb
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://www.hellanzb.com/distfiles/
 
 MAINTAINER=	pjenvey@groovie.org
 COMMENT=	Nzb downloader and post processor
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	par2:${PORTSDIR}/archivers/par2cmdline \
 		flac:${PORTSDIR}/audio/flac \
 		shorten:${PORTSDIR}/audio/shorten \
-		${PYTHON_SITELIBDIR}/yenc.py:${PORTSDIR}/news/py-yenc \
-		${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
-		${PYTHON_SITELIBDIR}/twisted/web:${PORTSDIR}/www/py-twistedWeb \
+		${PYTHON_PKGNAMEPREFIX}yenc>=0:${PORTSDIR}/news/py-yenc \
 		mac:${PORTSDIR}/audio/mac
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+USE_TWISTED_RUN=	web
 
 .include <bsd.port.pre.mk>
 
@@ -34,18 +36,17 @@ RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
 RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 
-.ifndef(NOPORTDOCS)
-PORTDOCS=	CHANGELOG CREDITS README LICENSE
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CHANGELOG CREDITS README
 .endif
 
 post-install:
-
 	@if [ ! -f ${PREFIX}/etc/hellanzb.conf ]; then \
 		${ECHO} "Installing default configuration file."; \
 		${INSTALL_DATA} ${WRKSRC}/etc/hellanzb.conf.sample ${PREFIX}/etc/hellanzb.conf; \
 	fi
 
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
