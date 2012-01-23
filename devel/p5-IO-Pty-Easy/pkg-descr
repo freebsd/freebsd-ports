@@ -1,0 +1,8 @@
+IO::Pty::Easy provides an interface to IO::Pty which hides most of the ugly
+details of handling ptys, wrapping them instead in simple spawn/read/write
+commands.
+
+IO::Pty::Easy uses IO::Pty internally, so it inherits all of the portability
+restrictions from that module.
+
+WWW: http://search.cpan.org/dist/IO-Pty-Easy/
