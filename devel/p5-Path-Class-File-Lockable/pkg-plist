@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Path/Class/File/Lockable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/File/Lockable/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/File/Lockable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
+@dirrmtry %%SITE_PERL%%/Path/Class/File
+@dirrmtry %%SITE_PERL%%/Path/Class
+@dirrmtry %%SITE_PERL%%/Path
