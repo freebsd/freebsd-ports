@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Printer
-PORTVERSION=	0.26
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,9 @@ RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 
 TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
-		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-IO-Pty-Easy>=0:${PORTSDIR}/devel/p5-IO-Pty-Easy \
+		p5-Test-Pod>=1.41:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
 
