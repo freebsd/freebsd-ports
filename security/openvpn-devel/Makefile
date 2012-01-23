@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	201139
+DISTVERSION=	201204
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -24,8 +24,7 @@ CONFLICTS_INSTALL=	openvpn-[0-9]* openvpn-beta-[0-9]*
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include \
-		--disable-depr-random-resolv
+		--with-lzo-headers=${LOCALBASE}/include
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man
 
 LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2

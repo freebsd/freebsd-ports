@@ -1,6 +1,6 @@
-sbin/openvpn
 lib/openvpn-auth-pam.so
 lib/openvpn-down-root.so
+sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.GPL
@@ -10,7 +10,6 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.openvpn-auth-pam
 %%PORTDOCS%%%%DOCSDIR%%/README.openvpn-down-root
-%%PORTDOCS%%%%DOCSDIR%%/management-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/README
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-ca
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-dh
@@ -51,6 +50,7 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/sign-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/vars
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/whichopensslcnf
+%%PORTDOCS%%%%DOCSDIR%%/management-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/README
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/client.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/firewall.sh
