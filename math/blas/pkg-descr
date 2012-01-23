@@ -1,12 +1,12 @@
-The BLAS (Basic Linear Algebra Subprograms) are high quality "building
-block" routines for performing basic vector and matrix operations. Level 1
-BLAS do vector-vector operations, Level 2 BLAS do matrix-vector operations,
-and Level 3 BLAS do matrix-matrix operations. Because the BLAS are
-efficient, portable, and widely available, they're commonly used in the
-development of high quality linear algebra software, LINPACK and LAPACK for
-example.
+The BLAS (Basic Linear Algebra Subprograms) are high quality "building block"
+routines for performing basic vector and matrix operations. Level 1 BLAS do
+vector-vector operations, Level 2 BLAS do matrix-vector operations, and Level
+3 BLAS do matrix-matrix operations. Because the BLAS are efficient, portable,
+and widely available, they're commonly used in the development of high quality
+linear algebra software -- LINPACK and LAPACK, for example.
 
-A Fortran77 reference implementation of the BLAS is located in the blas
-directory of Netlib.
+The original Fortran77 reference implementation of the BLAS is located in the
+blas directory of Netlib.  However, this port uses the updated sources
+distributed with LAPACK.
 
 WWW: http://www.netlib.org/blas/
