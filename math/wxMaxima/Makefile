@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	wxMaxima
-PORTVERSION=	11.04.0
+PORTVERSION=	11.08.0
 PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A wxWidgets GUI for the computer algebra system maxima
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	maxima:${PORTSDIR}/math/maxima
 
