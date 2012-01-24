@@ -24,8 +24,8 @@ MAN8=		portmaster.8
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BASH)
-PORTREVISION=	1
-PLIST_FILES+=	etc/bash_completion.d/portmaster
+PORTREVISION=	2
+PLIST_FILES+=	etc/bash_completion.d/portmaster.sh
 PLIST_DIRSTRY+=	etc/bash_completion.d
 .endif
 
