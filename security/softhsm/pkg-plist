@@ -1,0 +1,9 @@
+@unexec if cmp -s %D/etc/softhsm.conf %D/etc/softhsm.conf.sample; then rm -f %D/etc/softhsm.conf; else echo If permanently deleting this package, %D/etc/softhsm.conf must be removed manually; fi
+bin/softhsm
+bin/softhsm-keyconv
+lib/softhsm/libsofthsm.a
+lib/softhsm/libsofthsm.la
+lib/softhsm/libsofthsm.so
+etc/softhsm.conf.sample
+@exec if [ ! -f %D/etc/softhsm.conf ]; then cp %D/etc/softhsm.conf.sample %D/etc/softhsm.conf; fi
+@dirrm lib/softhsm
