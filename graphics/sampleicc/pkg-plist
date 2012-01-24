@@ -54,5 +54,4 @@ lib/libSampleICC.la
 lib/libSampleICC.so
 lib/libSampleICC.so.2
 libdata/pkgconfig/sampleicc.pc
-@dirrmtry libdata/pkgconfig
-@dirrmtry include/SampleICC
+@dirrm include/SampleICC
