@@ -16,6 +16,9 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=	ek@purplehat.org
 COMMENT=	PHP-based ISP System Control Panel
 
+DEPRECATED=	Long ditched, possibly dangerous and replaced with sysutils/froxlor
+EXPIRATION_DATE=2011-03-24
+
 WRKSRC=		${WRKDIR}
 
 NO_BUILD=	yes
