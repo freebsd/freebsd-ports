@@ -73,18 +73,16 @@ lib/node/wafadmin/__init__.py
 lib/node/wafadmin/ansiterm.py
 lib/node/wafadmin/pproc.py
 lib/node/wafadmin/py3kfixes.py
-lib/node_modules/npm/.gitmodules
 lib/node_modules/npm/.npmignore
 lib/node_modules/npm/.travis.yml
 lib/node_modules/npm/AUTHORS
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
 lib/node_modules/npm/README.md
+lib/node_modules/npm/bin/npm
 lib/node_modules/npm/bin/npm-cli.js
-lib/node_modules/npm/bin/npm-g.cmd
 lib/node_modules/npm/bin/npm-get-uid-gid.js
 lib/node_modules/npm/bin/npm.cmd
-lib/node_modules/npm/bin/npm_g.cmd
 lib/node_modules/npm/bin/read-package-json.js
 lib/node_modules/npm/cli.js
 lib/node_modules/npm/configure
@@ -579,6 +577,7 @@ lib/node_modules/npm/node_modules/read/lib/read.js
 lib/node_modules/npm/node_modules/read/package.json
 lib/node_modules/npm/node_modules/request/LICENSE
 lib/node_modules/npm/node_modules/request/README.md
+lib/node_modules/npm/node_modules/request/forever.js
 lib/node_modules/npm/node_modules/request/main.js
 lib/node_modules/npm/node_modules/request/mimetypes.js
 lib/node_modules/npm/node_modules/request/oauth.js
@@ -654,6 +653,7 @@ lib/node_modules/npm/test/packages/npm-test-ignore/sub/include4
 lib/node_modules/npm/test/packages/npm-test-ignore/test.sh
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/package.json
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
+lib/node_modules/npm/test/packages/npm-test-optional-deps/package.json
 lib/node_modules/npm/test/packages/npm-test-private/package.json
 lib/node_modules/npm/test/packages/npm-test-test-package/package.json
 lib/node_modules/npm/test/packages/npm-test-url-dep/package.json
@@ -662,6 +662,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-url-dep
 @dirrm lib/node_modules/npm/test/packages/npm-test-test-package
 @dirrm lib/node_modules/npm/test/packages/npm-test-private
+@dirrm lib/node_modules/npm/test/packages/npm-test-optional-deps
 @dirrm lib/node_modules/npm/test/packages/npm-test-missing-bindir
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore/sub
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore
