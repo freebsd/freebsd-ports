@@ -11,7 +11,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brix
 
-MAINTAINER=	jf@dockes.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
 LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core
