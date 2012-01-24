@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dulwich
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
 		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
@@ -38,7 +38,9 @@ post-patch:
 post-install:
 .ifndef (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

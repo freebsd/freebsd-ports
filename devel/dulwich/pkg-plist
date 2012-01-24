@@ -13,6 +13,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/client.py
 %%PYTHON_SITELIBDIR%%/dulwich/client.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/client.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/config.py
+%%PYTHON_SITELIBDIR%%/dulwich/config.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/config.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/diff_tree.py
 %%PYTHON_SITELIBDIR%%/dulwich/diff_tree.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/diff_tree.pyo
@@ -70,6 +73,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_config.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_config.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_config.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_diff_tree.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_diff_tree.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_diff_tree.pyo
