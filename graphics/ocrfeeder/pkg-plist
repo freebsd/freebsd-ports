@@ -1,28 +1,29 @@
 bin/ocrfeeder
 bin/ocrfeeder-cli
-lib/locale/ca/LC_MESSAGES/ocrfeeder.mo
-lib/locale/ca@valencia/LC_MESSAGES/ocrfeeder.mo
-lib/locale/cs/LC_MESSAGES/ocrfeeder.mo
-lib/locale/da/LC_MESSAGES/ocrfeeder.mo
-lib/locale/de/LC_MESSAGES/ocrfeeder.mo
-lib/locale/el/LC_MESSAGES/ocrfeeder.mo
-lib/locale/en_GB/LC_MESSAGES/ocrfeeder.mo
-lib/locale/es/LC_MESSAGES/ocrfeeder.mo
-lib/locale/fr/LC_MESSAGES/ocrfeeder.mo
-lib/locale/gl/LC_MESSAGES/ocrfeeder.mo
-lib/locale/hu/LC_MESSAGES/ocrfeeder.mo
-lib/locale/it/LC_MESSAGES/ocrfeeder.mo
-lib/locale/nb/LC_MESSAGES/ocrfeeder.mo
-lib/locale/pl/LC_MESSAGES/ocrfeeder.mo
-lib/locale/pt/LC_MESSAGES/ocrfeeder.mo
-lib/locale/pt_BR/LC_MESSAGES/ocrfeeder.mo
-lib/locale/ro/LC_MESSAGES/ocrfeeder.mo
-lib/locale/sl/LC_MESSAGES/ocrfeeder.mo
-lib/locale/sv/LC_MESSAGES/ocrfeeder.mo
-lib/locale/uk/LC_MESSAGES/ocrfeeder.mo
-lib/locale/zh_CN/LC_MESSAGES/ocrfeeder.mo
-lib/locale/zh_HK/LC_MESSAGES/ocrfeeder.mo
-lib/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/ca/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/ca@valencia/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/cs/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/da/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/de/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/el/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/en_GB/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/eo/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/es/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/fr/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/gl/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/hu/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/it/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/nb/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/pl/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/pt/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/pt_BR/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/ro/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/sl/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/sv/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/uk/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/zh_CN/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/zh_HK/LC_MESSAGES/ocrfeeder.mo
+%%NLS%%lib/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/__init__.pyo
@@ -137,15 +138,15 @@ lib/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/configuration.py
-%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/configuration.pyc
-%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/configuration.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/customWidgets.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/dataHolder.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/project.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/project.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/studio/project.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/studioBuilder.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/studioBuilder.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/studio/studioBuilder.pyo
@@ -161,6 +162,9 @@ lib/locale/zh_TW/LC_MESSAGES/ocrfeeder.mo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/asyncworker.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/asyncworker.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/asyncworker.pyo
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/configuration.py
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/configuration.pyc
+%%PYTHON_SITELIBDIR%%/ocrfeeder/util/configuration.pyo
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/constants.py
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/constants.pyc
 %%PYTHON_SITELIBDIR%%/ocrfeeder/util/constants.pyo
@@ -269,50 +273,52 @@ share/gnome/help/ocrfeeder/sl/unpaper.page
 @dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/odf
 @dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder/feeder
 @dirrm %%PYTHON_SITELIBDIR%%/ocrfeeder
-@dirrmtry lib/locale/ca/LC_MESSAGES
-@dirrmtry lib/locale/ca
-@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
-@dirrmtry lib/locale/ca@valencia
-@dirrmtry lib/locale/cs/LC_MESSAGES
-@dirrmtry lib/locale/cs
-@dirrmtry lib/locale/da/LC_MESSAGES
-@dirrmtry lib/locale/da
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale/el/LC_MESSAGES
-@dirrmtry lib/locale/el
-@dirrmtry lib/locale/en_GB/LC_MESSAGES
-@dirrmtry lib/locale/en_GB
-@dirrmtry lib/locale/es/LC_MESSAGES
-@dirrmtry lib/locale/es
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale/gl/LC_MESSAGES
-@dirrmtry lib/locale/gl
-@dirrmtry lib/locale/hu/LC_MESSAGES
-@dirrmtry lib/locale/hu
-@dirrmtry lib/locale/it/LC_MESSAGES
-@dirrmtry lib/locale/it
-@dirrmtry lib/locale/nb/LC_MESSAGES
-@dirrmtry lib/locale/nb
-@dirrmtry lib/locale/pl/LC_MESSAGES
-@dirrmtry lib/locale/pl
-@dirrmtry lib/locale/pt/LC_MESSAGES
-@dirrmtry lib/locale/pt
-@dirrmtry lib/locale/pt_BR/LC_MESSAGES
-@dirrmtry lib/locale/pt_BR
-@dirrmtry lib/locale/ro/LC_MESSAGES
-@dirrmtry lib/locale/ro
-@dirrmtry lib/locale/sl/LC_MESSAGES
-@dirrmtry lib/locale/sl
-@dirrmtry lib/locale/sv/LC_MESSAGES
-@dirrmtry lib/locale/sv
-@dirrmtry lib/locale/uk/LC_MESSAGES
-@dirrmtry lib/locale/uk
-@dirrmtry lib/locale/zh_CN/LC_MESSAGES
-@dirrmtry lib/locale/zh_CN
-@dirrmtry lib/locale/zh_HK/LC_MESSAGES
-@dirrmtry lib/locale/zh_HK
-@dirrmtry lib/locale/zh_TW/LC_MESSAGES
-@dirrmtry lib/locale/zh_TW
-@dirrmtry lib/locale
+%%NLS%%@dirrmtry lib/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ca
+%%NLS%%@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ca@valencia
+%%NLS%%@dirrmtry lib/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/cs
+%%NLS%%@dirrmtry lib/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/da
+%%NLS%%@dirrmtry lib/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/de
+%%NLS%%@dirrmtry lib/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/el
+%%NLS%%@dirrmtry lib/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/en_GB
+%%NLS%%@dirrmtry lib/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/eo
+%%NLS%%@dirrmtry lib/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/es
+%%NLS%%@dirrmtry lib/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/fr
+%%NLS%%@dirrmtry lib/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/gl
+%%NLS%%@dirrmtry lib/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hu
+%%NLS%%@dirrmtry lib/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/it
+%%NLS%%@dirrmtry lib/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/nb
+%%NLS%%@dirrmtry lib/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pl
+%%NLS%%@dirrmtry lib/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pt
+%%NLS%%@dirrmtry lib/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pt_BR
+%%NLS%%@dirrmtry lib/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ro
+%%NLS%%@dirrmtry lib/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sl
+%%NLS%%@dirrmtry lib/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sv
+%%NLS%%@dirrmtry lib/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/uk
+%%NLS%%@dirrmtry lib/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_CN
+%%NLS%%@dirrmtry lib/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_HK
+%%NLS%%@dirrmtry lib/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_TW
+%%NLS%%@dirrmtry lib/locale
