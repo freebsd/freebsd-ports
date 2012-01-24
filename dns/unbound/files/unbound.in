@@ -17,10 +17,18 @@ rcvar=unbound_enable
 
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"
+start_precmd="start_unbound_anchor"
 
 load_rc_config $name
 
 pidfile=${unbound_pidfile:-"%%PREFIX%%/etc/unbound/unbound.pid"}
 unbound_enable=${unbound_enable:-"NO"}
+
+start_unbound_anchor()
+{
+	echo -n "Obtaining a trust anchor:"
+	%%PREFIX%%/sbin/unbound-anchor
+	echo .
+}
 
 run_rc_command "$1"
