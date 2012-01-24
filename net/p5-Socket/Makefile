@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Networking constants and support functions
 
-BUILD_DEPENDS=	p5-ExtUtils-Constant>=0.23:${PORTSDIR}/devel/p5-ExtUtils-Constant
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Socket.3
@@ -25,6 +23,10 @@ MAN3=		Socket.3
 
 .if ${PERL_LEVEL} < 501000
 BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-ExtUtils-Constant>=0.23:${PORTSDIR}/devel/p5-ExtUtils-Constant
 .endif
 
 .include <bsd.port.post.mk>
