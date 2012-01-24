@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osm2pgsql
-PORTVERSION=	r26711
+PORTVERSION=	r27612
 CATEGORIES=	converters geography
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
