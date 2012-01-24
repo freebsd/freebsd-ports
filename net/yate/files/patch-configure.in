@@ -1,5 +1,5 @@
 --- ./configure.in.orig	2011-04-12 18:04:04.000000000 +0400
-+++ ./configure.in	2011-04-13 15:25:28.000000000 +0400
++++ ./configure.in	2012-01-17 00:54:49.000000000 +0400
 @@ -476,7 +476,7 @@
  AC_SUBST(MYSQL_VER)
  
@@ -45,3 +45,12 @@
      if [[ "$vpw" '<' "01.06.00" ]]; then
          # Very old pwlib needs more includes.
          PWLIB_INC="$PWLIB_INC/unix/ptlib $PWLIB_INC/unix $PWLIB_INC"
+@@ -1036,7 +1036,7 @@
+     AC_MSG_CHECKING([for OpenSSL in $ac_cv_use_openssl])
+     verssl=no
+     if [[ -f "$ac_cv_use_openssl/include/openssl/opensslconf.h" ]]; then
+-	verssl=`sed -n 's/^#define SHLIB_VERSION_NUMBER "\([0-9.]\+\)".*/\1/p' <$ac_cv_use_openssl/include/openssl/opensslv.h 2>/dev/null`
++	verssl=`sed -n 's/^#define SHLIB_VERSION_NUMBER "\([0-9.]*\)"/\1/p' <$ac_cv_use_openssl/include/openssl/opensslv.h 2>/dev/null`
+ 	if [[ "x$verssl" != "x" ]]; then
+ 	    HAVE_OPENSSL=yes
+ 	    OPENSSL_VER="$verssl"

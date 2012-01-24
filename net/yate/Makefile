@@ -6,6 +6,7 @@
 
 PORTNAME=	yate
 PORTVERSION=	3.3.2.p1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate3/
 DISTNAME=	yate-3.3.2-1
@@ -18,7 +19,7 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
-USE_AUTOTOOLS=	autoconf:env
+USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_LDCONFIG=	yes
@@ -28,6 +29,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/yate
 
 CONFIGURE_ARGS=	--without-fdsize \
+		--without-libqt4 \
 		--with-zlib=/usr
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -43,6 +45,9 @@ MAN8=		yate-config.8 yate.8
 
 OPTIONS=	MYSQL "MySQL Database support" off \
 		PGSQL "PostgreSQL Database support" off \
+		SCTP "Stream Control Transmission Protocol" on \
+		AMR_NB "AMR Narrow Band encoder (opencore)" off \
+		ILBC "Enable iLBC codec" off \
 		SPANDSP "Enable Spandsp faxing support" off \
 		DAHDI "Dahdi driver" off \
 		H323 "H323 software channel/protocol support" off \
@@ -77,6 +82,32 @@ CONFIGURE_ARGS+=	--without-libpq
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
+.if !defined(WITHOUT_SCTP)
+CONFIGURE_ARGS+=	--enable-sctp
+MAKE_ENV+=	WITH_SCTP=1
+PLIST_SUB+=	WITH_SCTP=""
+.else
+PLIST_SUB+=	WITH_SCTP="@comment "
+.endif
+
+.if !defined(WITHOUT_AMR_NB)
+LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
+CONFIGURE_ARGS+=	--with-amrnb=${LOCALBASE}
+PLIST_SUB+=	WITH_AMR_NB=""
+.else
+CONFIGURE_ARGS+=	--without-amrnb
+PLIST_SUB+=	WITH_AMR_NB="@comment "
+.endif
+
+.if !defined(WITHOUT_ILBC)
+LIB_DEPENDS+=	ilbc.0:${PORTSDIR}/net/ilbc
+CONFIGURE_ARGS+=	--enable-ilbc
+PLIST_SUB+=	WITH_ILBC=""
+.else
+CONFIGURE_ARGS+=	--disable-ilbc
+PLIST_SUB+=	WITH_ILBC="@comment "
+.endif
+
 .if !defined(WITHOUT_SPANDSP)
 CONFIGURE_ARGS+=	--with-spandsp=${LOCALBASE}/include
 LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
@@ -93,7 +124,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 MAKE_ENV+=	WITH_DAHDI=1
 PLIST_SUB+=	WITH_DAHDI=""
 .else
-CONFIGURE_ARGS+=	--without-dahdi
+CONFIGURE_ARGS+=	--disable-dahdi
 PLIST_SUB+=	WITH_DAHDI="@comment "
 .endif
 
@@ -110,9 +141,8 @@ PLIST_SUB+=	WITH_H323="@comment "
 .endif
 
 .if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=	--with-openssl
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS+=	ssl.7:${PORTSDIR}/security/openssl
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 MAKE_ENV+=	WITH_SSL=1
 PLIST_SUB+=	WITH_SSL=""
 .else
