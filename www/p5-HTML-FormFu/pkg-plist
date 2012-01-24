@@ -105,6 +105,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/I18N/ua.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/ro.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/no.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/zh_cn.pm
 %%SITE_PERL%%/HTML/FormFu/Model/HashRef.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/DateTime.pm
