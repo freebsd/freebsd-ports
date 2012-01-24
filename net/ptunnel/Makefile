@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptunnel
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.uit.no/~daniels/PingTunnel/
 DISTNAME=	PingTunnel-${PORTVERSION}
