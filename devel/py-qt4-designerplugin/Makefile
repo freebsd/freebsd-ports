@@ -31,7 +31,7 @@ OPTIONS=	DEBUG		"Enable debugging in generated code" off \
 		TRACING		"Enable tracing in generated code" off
 
 PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
-OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin\
 		-d ${PYTHONPREFIX_SITELIBDIR}\

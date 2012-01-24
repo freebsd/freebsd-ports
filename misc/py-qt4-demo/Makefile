@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 
 OPTIONS=	PYQT4	"Install any missing PyQt4 components" off
 
-OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"

@@ -32,7 +32,7 @@ OPTIONS=	API		"Install binding API for QScintilla2" on \
 		SIPFILES	"Install the Qscintilla SIP files" on \
 		TRACING		"Enable tracing in generated code" off
 
-OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 ARGS=		-p 4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4

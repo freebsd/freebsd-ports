@@ -29,7 +29,7 @@ OPTIONS=	API		"Install QtCore API for QScintilla2" on \
 		SIPFILES	"Install the QtCore SIP files" on \
 		TRACING		"Enable tracing in generated code" off
 
-OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
