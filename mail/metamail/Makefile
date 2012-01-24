@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jf@dockes.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 OPTIONS=	X11 "X11 hebrew font support" on
@@ -31,9 +31,9 @@ MAN4=		mailcap.4
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
-RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
+RUN_DEPENDS+=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 USE_XORG=	x11
 PLIST_SUB+=	X11=""
