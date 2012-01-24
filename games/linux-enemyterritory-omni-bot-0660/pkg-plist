@@ -1,5 +1,5 @@
-bin/et-omni-bot
-bin/etded-omni-bot
+bin/et-omni-bot-%%VERSTR%%
+bin/etded-omni-bot-%%VERSTR%%
 %%DATADIR%%/et/nav/et_custom.zip
 %%DATADIR%%/et/nav/et_official.zip
 %%DATADIR%%/et/scripts/ammo_goal.gm
