@@ -148,10 +148,11 @@ do-build:
 	@${ECHO_CMD} "Building the LAPACK archives with ${opt} ATLAS flags:"
 	F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
 	LW=`${MAKE} -C ${PORTSDIR}/math/lapack -V ${${opt:U}_LAPACK_WRKSRC}` ; \
-	${MAKE} -C ${PORTSDIR}/math/lapack FFLAGS="-pipe $${F77FLAGS}" \
+	${MAKE} -C ${PORTSDIR}/math/lapack WITH_${opt:U}=yes \
 		clean patch ; \
-	${MAKE} -C $${LW} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}" \
-		FFLAGS="-pipe $${F77FLAGS}" lapacklib ; \
+	cd $${LW} ; ${SETENV} ${MAKE_ENV:NFFLAGS=*} EXTRAFLAGS="${${opt:U}_FLAGS}" \
+		FFLAGS="-pipe $${F77FLAGS}" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
+		ARCH="${AR}" lapacklib ; \
 	TIMEFLAG=`${MAKE} -f ${WRKSRC}/saved_flags -V TIMEFLAG` ; \
 	${MKDIR} ${WRKSRC}/${opt} ; cd ${WRKSRC}/${opt} ; \
 	${MV} $${LW}/liblapack.a liblapack_${opt}.a ; \
