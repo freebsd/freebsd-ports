@@ -504,5 +504,7 @@
 @dirrm %%ACRODIR%%
 @exec /bin/mkdir -p %D/share/desktop-directories
 @dirrmtry share/desktop-directories
+%%LANG_FRA%%@dirrmtry %%MANINSTALLDIR%%/man1
+%%LANG_DEU%%@dirrmtry %%MANINSTALLDIR%%/man1
 @dirrmtry %%ACROBASE%%
 @dirrmtry %%ADOBEBASE%%
