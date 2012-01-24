@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.54.0
+PORTVERSION=	1.0.55.0
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
@@ -81,6 +81,13 @@ SBCLPATCHLEVEL=	-r${PORTVERSION:E}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
+
+MAKE_SH_ARGS?=	--with-sb-core-compression
+.if defined(WITH_THREADS)
+MAKE_SH_ARGS+=	--with-sb-thread
+.else
+MAKE_SH_ARGS+=	--without-sb-thread
+.endif
 
 .if !defined(NOPORTDOCS) && (defined(WITH_PDF) || defined(WITH_PS))
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
@@ -186,9 +193,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|cc -c|${CC} -c|' \
 		-e 's|ld \$$SO_FLAGS|${LD} \$$SO_FLAGS|' \
 			 ${WRKSRC}/tests/foreign.test.sh
-.if defined(WITH_THREADS)
-	@${CP} ${FILESDIR}/customize-target-features.lisp ${WRKSRC}
-.endif
 	@${REINPLACE_CMD} -E -e 's,makeinfo,makeinfo --no-split,g' \
 		${WRKSRC}/doc/internals/Makefile
 
@@ -196,7 +200,7 @@ do-build:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
 	@(cd ${WRKSRC} && ${SETENV} CC="${CC}" INSTALL_ROOT=${PREFIX} \
 		LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" \
-		${SH} make.sh ${LISP_CMD})
+		${SH} make.sh ${LISP_CMD} ${MAKE_SH_ARGS})
 	@${RM} -rf ${WRKSRC}/contrib/sb-cover/test-output
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/doc/manual && ${SETENV} \
