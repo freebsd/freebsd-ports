@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	opengtl
-PORTVERSION=	0.9.15.1
+PORTVERSION=	0.9.15.2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -17,13 +17,15 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	llvm29>=2.9<2.10.*:${PORTSDIR}/devel/llvm29
 
-USE_BZIP2=	yes
-USE_GCC=	4.2+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libLLVM-2.9.so:${PORTSDIR}/devel/llvm29
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USE_PERL5=	yes
-MAKE_JOBS_SAFE=	yes
+USE_BZIP2=	yes
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	SHIVA	"Install filters and generators" on
@@ -35,7 +37,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/OpenGTL/shiva/kernels/oilify.shiva:${PORTSDIR}/
 .endif
 
 post-patch:
-# Disable latex doc, it's not ready yet.
+	# Disable latex doc, it's not ready yet.
 	${REINPLACE_CMD} -e '/add_subdirectory.*doc/d' \
 		${PATCH_WRKSRC}/OpenShiva/CMakeLists.txt
 
@@ -47,7 +49,5 @@ pre-configure:
 		${PATCH_WRKSRC}/OpenGTL/GTLCore/CMakeLists.txt \
 		${PATCH_WRKSRC}/OpenGTL/GTLImageIO/CMakeLists.txt \
 		${PATCH_WRKSRC}/OpenShiva/OpenShiva/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|(int) pthread_self|(unsigned long long) pthread_self|' \
-		${PATCH_WRKSRC}/OpenGTL/GTLCore/MemoryManager_p.cpp
 
 .include <bsd.port.mk>
