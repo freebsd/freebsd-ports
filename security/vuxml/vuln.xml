@@ -133,6 +133,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.spamdyke.org/documentation/Changelog.txt</url>
     </references>
     <dates>
+      <cvename>CVE-2012-0802</cvename>
       <discovery>2012-01-15</discovery>
       <entry>2012-01-23</entry>
     </dates>
