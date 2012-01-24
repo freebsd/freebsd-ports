@@ -12581,6 +12581,7 @@ p5-IO-NestedCapture             ports/devel/p5-IO-NestedCapture
 p5-IO-Null                      ports/devel/p5-IO-Null
 p5-IO-Pager                     ports/devel/p5-IO-Pager
 p5-IO-Prompt                    ports/devel/p5-IO-Prompt
+p5-IO-Pty-Easy                  ports/devel/p5-IO-Pty-Easy
 p5-IO-Socket-INET6              ports/net/p5-IO-Socket-INET6
 p5-IO-Socket-IP                 ports/net/p5-IO-Socket-IP
 p5-IO-Socket-Multicast          ports/net/p5-IO-Socket-Multicast
@@ -13686,6 +13687,7 @@ p5-ParseTemplate                ports/devel/p5-ParseTemplate
 p5-PatchReader                  ports/devel/p5-PatchReader
 p5-Path-Abstract                ports/devel/p5-Path-Abstract
 p5-Path-Class                   ports/devel/p5-Path-Class
+p5-Path-Class-File-Lockable     ports/devel/p5-Path-Class-File-Lockable
 p5-Path-Class-URI               ports/www/p5-Path-Class-URI
 p5-Path-Dispatcher              ports/devel/p5-Path-Dispatcher
 p5-Path-Dispatcher-Declarative  ports/devel/p5-Path-Dispatcher-Declarative
@@ -13828,6 +13830,7 @@ p5-Proc-Wait3                   ports/devel/p5-Proc-Wait3
 p5-Proc-WaitStat                ports/devel/p5-Proc-WaitStat
 p5-Project-Gantt                ports/devel/p5-Project-Gantt
 p5-Prophet                      ports/databases/p5-Prophet
+p5-Protocol-SocketIO            ports/www/p5-Protocol-SocketIO
 p5-Protocol-WebSocket           ports/www/p5-Protocol-WebSocket
 p5-Protocol-XMLRPC              ports/www/p5-Protocol-XMLRPC
 p5-Protocol-XMPP                ports/net-im/p5-Protocol-XMPP
@@ -14055,6 +14058,7 @@ p5-Sledge-Template-Expr         ports/www/p5-Sledge-Template-Expr
 p5-Slurp                        ports/devel/p5-Slurp
 p5-Smart-Comments               ports/devel/p5-Smart-Comments
 p5-Snort-Rule                   ports/security/p5-Snort-Rule
+p5-Socket                       ports/net/p5-Socket
 p5-Socket-Class                 ports/net/p5-Socket-Class
 p5-Socket-GetAddrInfo           ports/net/p5-Socket-GetAddrInfo
 p5-Socket-Multicast6            ports/net/p5-Socket-Multicast6
@@ -17055,6 +17059,7 @@ p5-io-nestedcapture             ports/devel/p5-IO-NestedCapture
 p5-io-null                      ports/devel/p5-IO-Null
 p5-io-pager                     ports/devel/p5-IO-Pager
 p5-io-prompt                    ports/devel/p5-IO-Prompt
+p5-io-pty-easy                  ports/devel/p5-IO-Pty-Easy
 p5-io-socket-inet6              ports/net/p5-IO-Socket-INET6
 p5-io-socket-ip                 ports/net/p5-IO-Socket-IP
 p5-io-socket-multicast          ports/net/p5-IO-Socket-Multicast
@@ -18024,6 +18029,7 @@ p5-parsetemplate                ports/devel/p5-ParseTemplate
 p5-patchreader                  ports/devel/p5-PatchReader
 p5-path-abstract                ports/devel/p5-Path-Abstract
 p5-path-class                   ports/devel/p5-Path-Class
+p5-path-class-file-lockable     ports/devel/p5-Path-Class-File-Lockable
 p5-path-class-uri               ports/www/p5-Path-Class-URI
 p5-path-dispatcher              ports/devel/p5-Path-Dispatcher
 p5-path-dispatcher-declarative  ports/devel/p5-Path-Dispatcher-Declarative
@@ -18293,6 +18299,7 @@ p5-proc-wait3                   ports/devel/p5-Proc-Wait3
 p5-proc-waitstat                ports/devel/p5-Proc-WaitStat
 p5-project-gantt                ports/devel/p5-Project-Gantt
 p5-prophet                      ports/databases/p5-Prophet
+p5-protocol-socketio            ports/www/p5-Protocol-SocketIO
 p5-protocol-websocket           ports/www/p5-Protocol-WebSocket
 p5-protocol-xmlrpc              ports/www/p5-Protocol-XMLRPC
 p5-protocol-xmpp                ports/net-im/p5-Protocol-XMPP
@@ -18486,6 +18493,7 @@ p5-soap-transport-ftp           ports/ftp/p5-SOAP-Transport-FTP
 p5-soap-transport-jabber        ports/net-im/p5-SOAP-Transport-JABBER
 p5-soap-transport-tcp           ports/net/p5-SOAP-Transport-TCP
 p5-soap-wsdl                    ports/devel/p5-SOAP-WSDL
+p5-socket                       ports/net/p5-Socket
 p5-socket-class                 ports/net/p5-Socket-Class
 p5-socket-getaddrinfo           ports/net/p5-Socket-GetAddrInfo
 p5-socket-multicast6            ports/net/p5-Socket-Multicast6
@@ -24464,6 +24472,7 @@ runawk                          ports/lang/runawk
 runit                           ports/sysutils/runit
 runsomebrowser                  ports/www/runsomebrowser
 runwhen                         ports/sysutils/runwhen
+rust                            ports/lang/rust
 rvi                             ports/devel/rvi
 rw-aspell                       ports/textproc/rw-aspell
 rwhoisd                         ports/net/rwhoisd
@@ -27569,6 +27578,7 @@ xkill                           ports/x11/xkill
 xkobo                           ports/games/xkobo
 xkoules                         ports/games/xkoules
 xlaby                           ports/games/xlaby
+xlapack                         ports/math/xlapack
 xlbiff                          ports/mail/xlbiff
 xldlas                          ports/math/xldlas
 xless                           ports/misc/xless
