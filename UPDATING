@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   The vdr ports have been updated to 1.7.22 which involves at least
   two changes:
 
-  - svdrsend.pl is now called svdrsend.
+  - svdrpsend.pl is now called svdrpsend.
 
   - The ttxtsubs channels.conf format has changed so if you use that
     plugin you need to edit /usr/local/etc/vdr/channels.conf for the
