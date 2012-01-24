@@ -10,7 +10,7 @@ PORTVERSION=	1.15.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
-MAINTAINER=	jf@dockes.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal full text search package, based on QT and Xapian
 
 LIB_DEPENDS=	xapian.[1-2][0-9]:${PORTSDIR}/databases/xapian-core
