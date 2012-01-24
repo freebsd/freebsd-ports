@@ -7,6 +7,7 @@
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.660
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -18,15 +19,16 @@ COMMENT=	Omni-Bot is a bot for Enemy Territory
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
-CONFLICTS=	linux-enemyterritory-omni-bot-0.[7-9]*
-NO_LATEST_LINK=	yes
+VERSTR=	${PORTVERSION:C/([0-9])\.([0-9]+)/\1\2/}
+PKGNAMESUFFIX=	-${VERSTR}
+PLIST_SUB=	VERSTR="${VERSTR}"
 
 USE_ZIP=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 
-DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
+DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
+DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 
 do-build:
 .for f in et etded
@@ -37,7 +39,8 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	${MV} ${WRKSRC}/${f}-${PORTNAME} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/omni-bot/omnibot_et.so ${DATADIR}
