@@ -184,7 +184,33 @@ lib/libstorage.a
 %%WITH_TAGGED_HASH%%@unexec rm -f %D/%%EXAMPLESDIR%%/db/history.pag 2> /dev/null || true
 @comment --------------------------------------------------------------
 @unexec for f in %%ETCFILES%%; do if cmp -s %%ETCDIR%%/${f} %D/%%EXAMPLESDIR%%/${f}; then rm -f %%ETCDIR%%/${f}; fi; done
-@unexec for f in %%ETCFILES%%; do rm -f %D/%%EXAMPLESDIR%%/${f}; done
+%%EXAMPLESDIR%%/actsync.cfg
+%%EXAMPLESDIR%%/actsync.ign
+%%EXAMPLESDIR%%/buffindexed.conf
+%%EXAMPLESDIR%%/control.ctl
+%%EXAMPLESDIR%%/cycbuff.conf
+%%EXAMPLESDIR%%/distrib.pats
+%%EXAMPLESDIR%%/expire.ctl
+%%EXAMPLESDIR%%/incoming.conf
+%%EXAMPLESDIR%%/inn.conf
+%%EXAMPLESDIR%%/innfeed.conf
+%%EXAMPLESDIR%%/innreport.conf
+%%EXAMPLESDIR%%/innwatch.ctl
+%%EXAMPLESDIR%%/moderators
+%%EXAMPLESDIR%%/motd.news
+%%EXAMPLESDIR%%/news2mail.cf
+%%EXAMPLESDIR%%/newsfeeds
+%%EXAMPLESDIR%%/nnrpd.track
+%%EXAMPLESDIR%%/nntpsend.ctl
+%%EXAMPLESDIR%%/ovdb.conf
+%%EXAMPLESDIR%%/overview.fmt
+%%EXAMPLESDIR%%/passwd.nntp
+%%EXAMPLESDIR%%/radius.conf
+%%EXAMPLESDIR%%/readers.conf
+%%EXAMPLESDIR%%/sasl.conf
+%%EXAMPLESDIR%%/storage.conf
+%%EXAMPLESDIR%%/subscriptions
+@exec mkdir %%ETCDIR%%
 @exec for f in %%ETCFILES%%; do [ -f %%ETCDIR%%/${f} ] || cp -fp %D/%%EXAMPLESDIR%%/${f} %%ETCDIR%%/${f}; done
 @comment --------------------------------------------------------------
 @dirrm %%EXAMPLESDIR%%/db
