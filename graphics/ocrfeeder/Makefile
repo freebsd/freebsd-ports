@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ocrfeeder
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=sources/ocrfeeder/0.7
+MASTER_SITE_SUBDIR=sources/ocrfeeder/${PORTVERSION:R}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Document layout analysis and optical character recognition
@@ -33,6 +33,14 @@ USE_PYTHON=	yes
 USE_GNOME=	pygtk2 pygnomeextras
 USE_GETTEXT=	yes
 USE_GHOSTSCRIPT=yes
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
