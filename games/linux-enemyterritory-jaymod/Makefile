@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	jaymod
-PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://etmod.googlecode.com/files/ \
-		http://www.zenenterprises.biz/bud/jaymod/ \
-		http://bud.zenenterprises.biz/jaymod/ \
-		http://et.lsdfunweb.fr/et/jaymod/
+MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
+		http://www.zenenterprises.biz/bud/jaymod/
 PKGNAMEPREFIX=	linux-enemyterritory-
 
 MAINTAINER=	barbara.xxx1975@libero.it
@@ -33,7 +30,7 @@ PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OMNIBOT)
-RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot-0660
+RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
 .endif
 
 do-build:
@@ -49,11 +46,22 @@ do-install:
 .endfor
 	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} *.cfg ${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${CLIENT_PK3} ${DATADIR}
+.for f in jaymod.cfg server.cfg
+	${CP} -p ${WRKSRC}/${f} ${DATADIR}/${f}.sample
+.endfor
 	${CP} -r ${WRKSRC}/linux ${WRKSRC}/mapscripts ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} README.txt doc/jaymod.pdf ${DOCSDIR}
 .endif
+
+post-install:
+	@if [ ! -f ${DATADIR}/jaymod.cfg ]; then \
+		${CP} -p ${DATADIR}/jaymod.cfg.sample ${DATADIR}/jaymod.cfg ; \
+	fi
+	@if [ ! -f ${DATADIR}/server.cfg ]; then \
+		${CP} -p ${DATADIR}/server.cfg.sample ${DATADIR}/server.cfg ; \
+	fi
 
 .include <bsd.port.post.mk>
