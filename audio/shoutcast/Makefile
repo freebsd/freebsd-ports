@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	shoutcast
-PORTVERSION=	2.0.b14
+PORTVERSION=	2.0.0.29
 CATEGORIES=	audio net
 MASTER_SITES=	http://download.nullsoft.com/shoutcast/tools/
-DISTNAME=	sc_serv2_bsd_8_x_01_25_2011
+DISTNAME=	sc_serv2_bsd_8_x_07_31_2011
 
 MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	SHOUTcast Distributed Network Audio Server
@@ -27,15 +27,15 @@ SHOUTCASTUSER=	${PORTNAME}
 SHOUTCASTGROUP=	${PORTNAME}
 SHOUTCASTDIR=	/var/run/${PORTNAME}
 
-PLIST_SUB=	SHOUTCASTUSER=${SHOUTCASTUSER} \
+SHOUTCAST_SUB=	SHOUTCASTUSER=${SHOUTCASTUSER} \
 		SHOUTCASTGROUP=${SHOUTCASTGROUP} \
 		SHOUTCASTDIR=${SHOUTCASTDIR}
+
+PLIST_SUB=	${SHOUTCAST_SUB}
 
 SUB_FILES=	pkg-message
 
-SUB_LIST=	SHOUTCASTUSER=${SHOUTCASTUSER} \
-		SHOUTCASTGROUP=${SHOUTCASTGROUP} \
-		SHOUTCASTDIR=${SHOUTCASTDIR}
+SUB_LIST=	${SHOUTCAST_SUB}
 
 USERS=		${SHOUTCASTUSER}
 GROUPS=		${SHOUTCASTGROUP}
@@ -43,11 +43,10 @@ GROUPS=		${SHOUTCASTGROUP}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^logfile=.*\/logfile.log/d' \
-		-e '/sc_serv2 directory/d' \
+	@${REINPLACE_CMD} -e '/sc_serv2 directory/d' \
 		-e 's#=.*/sc_serv.log#=/var/log/sc_serv.log#g' \
 		-e 's#=.*/sc_w3c.log#=/var/log/sc_w3c.log#g' \
-		-e 's#=./control/#=${SHOUTCASTDIR}/#g' ${WRKSRC}/sc_serv_basic.conf
+		-e 's#=control/#=${SHOUTCASTDIR}/#g' ${WRKSRC}/sc_serv_basic.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
@@ -64,7 +63,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/dsp_sc/dsp_sc.txt ${DOCSDIR}/dsp_sc.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/dsp_sc/dsp_sc_config.txt ${DOCSDIR}/dsp_sc_config.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/getting_started.txt ${DOCSDIR}/getting_started.txt
-	${INSTALL_DATA} ${WRKSRC}/docs/sc2_xml_metadata.txt ${DOCSDIR}/sc2_xml_metadata.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/sc_serv2.txt ${DOCSDIR}/sc_serv2.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/sc_serv2_authhash.txt ${DOCSDIR}/sc_serv2_authhash.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/sc_serv2_xml_responses.txt ${DOCSDIR}/sc_serv2_xml_responses.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/shoutcast_system_overview.txt ${DOCSDIR}/shoutcast_system_overview.txt
 .endif
 

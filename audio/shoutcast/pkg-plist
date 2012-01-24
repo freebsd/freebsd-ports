@@ -12,7 +12,9 @@ sbin/sc_serv
 %%PORTDOCS%%%%DOCSDIR%%/dsp_sc.txt
 %%PORTDOCS%%%%DOCSDIR%%/dsp_sc_config.txt
 %%PORTDOCS%%%%DOCSDIR%%/getting_started.txt
-%%PORTDOCS%%%%DOCSDIR%%/sc2_xml_metadata.txt
+%%PORTDOCS%%%%DOCSDIR%%/sc_serv2.txt
+%%PORTDOCS%%%%DOCSDIR%%/sc_serv2_authhash.txt
+%%PORTDOCS%%%%DOCSDIR%%/sc_serv2_xml_responses.txt
 %%PORTDOCS%%%%DOCSDIR%%/shoutcast_system_overview.txt
 @dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
