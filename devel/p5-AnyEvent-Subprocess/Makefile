@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AnyEvent-Subprocess
-PORTVERSION=	1.102910
+PORTVERSION=	1.102912
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	catone@cpan.org
 COMMENT=	Flexible, OO, asynchronous process spawning and management
 
-RUN_DEPENDS=	p5-AnyEvent>=5.2:${PORTSDIR}/devel/p5-AnyEvent \
-		p5-EV>=3.9:${PORTSDIR}/devel/p5-EV \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-AnyEvent>=5.2:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-EV>=4.0:${PORTSDIR}/devel/p5-EV \
 		p5-Event-Join>=0.05:${PORTSDIR}/devel/p5-Event-Join \
 		p5-IO-Tty>=0:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-JSON>=2:${PORTSDIR}/converters/p5-JSON \
@@ -27,8 +30,12 @@ RUN_DEPENDS=	p5-AnyEvent>=5.2:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-MooseX-Types-Signal>=0:${PORTSDIR}/devel/p5-MooseX-Types-Signal \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-use-ok>0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
 
