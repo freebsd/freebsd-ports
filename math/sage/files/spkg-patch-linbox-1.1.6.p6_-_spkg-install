@@ -1,0 +1,12 @@
+--- linbox-1.1.6.p6/spkg-install-orig	2012-01-23 04:02:57.000000000 +0000
++++ linbox-1.1.6.p6/spkg-install	2012-01-23 04:03:12.000000000 +0000
+@@ -8,9 +8,6 @@
+ 
+ CUR=`pwd`
+ 
+-echo "Copying commentator patch"
+-cp patches/commentator.C src/linbox/util/                                                                                
+-
+ if [ $? -ne 0 ]; then
+     echo "Error copying commentator OSX 10.4 fix"
+     exit 1
