@@ -18,7 +18,6 @@ USE_GNOME=	libgsf
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
