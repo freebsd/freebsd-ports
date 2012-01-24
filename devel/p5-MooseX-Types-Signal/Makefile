@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-Signal
-PORTVERSION=	1.101930
+PORTVERSION=	1.101932
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	catone@cpan.org
 COMMENT=	A type to represent valid UNIX or Perl signals
 
-RUN_DEPENDS=	p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types
-BUILD_DEPENDS=	${RUN_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-MooseX-Types>0:${PORTSDIR}/devel/p5-MooseX-Types
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 
 PERL_CONFIGURE=	yes
 
