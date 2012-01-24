@@ -9,36 +9,39 @@
 # Add the following lines to /etc/rc.conf to enable SHOUTcast:
 # shoutcast_enable (bool):    Set to "NO" by default.
 #                             Set it to "YES" to enable SHOUTcast.
-# shoutcast_configfile (str): Set to "%%PREFIX%%/%%ETCDIR%%/sc_serv.conf" by default.
-# shoutcast_user (str):       Set to %%SHOUTCASTUSER%% by default
-# shoutcast_chdir (str):      Set to %%SHOUTCASTDIR%% by default
+# shoutcast_configfile (str): Set to "%%ETCDIR%%/sc_serv.conf" by default.
+# shoutcast_user (str):       Set to "%%SHOUTCASTUSER%%" by default.
+# shoutcast_chdir (str):      Set to "%%SHOUTCASTDIR%%" by default.
+# shoutcast_logfile (str):    Set to "/var/log/sc_serv.log" by default.
+# shoutcast_w3clog (str):     Set to "/var/log/sc_w3c.log" by default.
 
 . /etc/rc.subr
 
 name=shoutcast
 rcvar=shoutcast_enable
 
-load_rc_config shoutcast
+load_rc_config ${name}
 
 : ${shoutcast_enable:="NO"}
+: ${shoutcast_configfile:="%%ETCDIR%%/sc_serv.conf"}
 : ${shoutcast_user:="%%SHOUTCASTUSER%%"}
 : ${shoutcast_chdir:="%%SHOUTCASTDIR%%"}
+: ${shoutcast_logfile:="/var/log/sc_serv.log"}
+: ${shoutcast_w3clog:="/var/log/sc_w3c.log"}
 
 command="%%PREFIX%%/sbin/sc_serv"
-shoutcast_logfile="/var/log/sc_serv.log"
 
-required_dirs="${shoutcast_chdir}"
-required_files="${shoutcast_configfile:="%%PREFIX%%/%%ETCDIR%%/sc_serv.conf"}"
+required_files="${shoutcast_configfile}"
 
-command_args="${required_files} >/dev/null 2>&1 &"
+command_args="${shoutcast_configfile} >/dev/null 2>&1 &"
 
 start_precmd="shoutcast_prestart"
 
 shoutcast_prestart()
 {
-  touch ${shoutcast_logfile}
-  chown %%SHOUTCASTUSER%%:wheel ${shoutcast_logfile}
-  chmod 0640 ${shoutcast_logfile}
+  touch "${shoutcast_logfile}" "${shoutcast_w3clog}"
+  chown %%SHOUTCASTUSER%%:wheel "${shoutcast_logfile}" "${shoutcast_w3clog}"
+  chmod 0640 "${shoutcast_logfile}" "${shoutcast_w3clog}"
 }
 
 run_rc_command "$1"
