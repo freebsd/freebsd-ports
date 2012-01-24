@@ -1,5 +1,5 @@
-bin/et-jaymod
-bin/etded-jaymod
+bin/et-jaymod-%%VERSTR%%
+bin/etded-jaymod-%%VERSTR%%
 %%DATADIR%%/jaymod.cfg
 %%DATADIR%%/%%CLIENT_PK3%%
 %%DATADIR%%/linux/convert_shrub

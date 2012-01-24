@@ -7,7 +7,7 @@
 
 PORTNAME=	jaymod
 PORTVERSION=	2.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://etmod.googlecode.com/files/ \
 		http://www.zenenterprises.biz/bud/jaymod/ \
@@ -20,32 +20,37 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
+VERSTR=		${PORTVERSION:C/([0-9])\.([0-9])\.([0-9]+)/\1\2\3/}
+PKGNAMESUFFIX=	-${VERSTR}
+PLIST_SUB=	VERSTR="${VERSTR}"
+
 USE_LINUX=	yes
 
 OPTIONS=	OMNIBOT "Install Omni-Bot for bot support" off
 
-DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
+DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}-${VERSTR}
+DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}-${VERSTR}
 
 CLIENT_PK3=	${PORTNAME}-${PORTVERSION}.pk3
-PLIST_SUB=	CLIENT_PK3="${CLIENT_PK3}"
+PLIST_SUB+=	CLIENT_PK3="${CLIENT_PK3}"
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OMNIBOT)
-RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot-0660
+OB_VERSTR=	0660
+RUN_DEPENDS+=	et-omni-bot-${OB_VERSTR}:${PORTSDIR}/games/linux-enemyterritory-omni-bot-${OB_VERSTR}
 .endif
 
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \
-	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/../omni-bot" "$$@"') > \
-		${WRKSRC}/${f}-${PORTNAME}
+	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME}-${VERSTR} +set omnibot_path "${DATADIR}/../omni-bot-${OB_VERSTR}" "$$@"') > \
+		${WRKSRC}/${f}-${PORTNAME}-${VERSTR}
 .endfor
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME}-${VERSTR} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/qagame.mp.i386.so ${DATADIR}
