@@ -36,7 +36,8 @@ PLIST_SUB=	ACRODIR=${ACRODIR} \
 		ADOBEBASE=${ADOBEBASE} \
 		PLUGINDIR=${PLUGINDIR} \
 		ADOBE_LANG=${ADOBE_LANG:U} \
-		LOCALE_NAME=${LOCALE_NAME}
+		LOCALE_NAME=${LOCALE_NAME} \
+		MANINSTALLDIR=${MANINSTALLDIR}
 SUB_FILES=	ln mv rm pkg-message pkg-deinstall
 SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U} \
 		ACROBASE=${ACROBASE}
@@ -74,10 +75,12 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 
 MAN1=		acroread.1
 MANCOMPRESSED=	yes
+MANINSTALLDIR=	man/${MANLANG}
 post-man-install:
+	${MKDIR} ${MANPREFIX}/${MANINSTALLDIR}/man1
 	${LN} -s -f \
 		${INSTALLDIR}/Adobe/Reader9/Resource/Shell/acroread.1.gz \
-		${MANPREFIX}/man/${MANLANG}/man1/
+		${MANPREFIX}/${MANINSTALLDIR}/man1/
 
 pre-su-install:
 	@${MKDIR} ${WRKDIR}/bin
