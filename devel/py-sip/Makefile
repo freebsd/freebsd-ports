@@ -21,7 +21,7 @@ OPTIONS=	DEBUG "Build with debugging symbols" off
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR}\
 		-e ${PYTHONPREFIX_INCLUDEDIR} -v ${DATADIR}
 

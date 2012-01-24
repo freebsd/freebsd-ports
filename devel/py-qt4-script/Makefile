@@ -30,7 +30,7 @@ OPTIONS=	API		"Install QtScript API for QScintilla2" on \
 		TRACING		"Enable tracing in generated code" off
 
 PATCHDIR=	${PORTSDIR}/devel/py-qt4-core/files
-OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
+OPTIONSFILE?=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 QSCIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
