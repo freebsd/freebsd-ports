@@ -47,6 +47,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="33d73d59-4677-11e1-88cd-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>16.0.912.77</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[106484] High CVE-2011-3924: Use-after-free in DOM selections.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[108461] High CVE-2011-3928: Use-after-free in DOM handling.
+	    Credit to wushi of team509 reported through ZDI (ZDI-CAN-1415).</p>
+	  <p>[108605] High CVE-2011-3927: Uninitialized value in Skia. Credit
+	    to miaubiz.</p>
+	  <p>[109556] High CVE-2011-3926: Heap-buffer-overflow in tree builder.
+	    Credit to Arthur Gerkis.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3924</cvename>
+      <cvename>CVE-2011-3926</cvename>
+      <cvename>CVE-2011-3927</cvename>
+      <cvename>CVE-2011-3928</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-01-23</discovery>
+      <entry>2012-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ebb2dc8-4609-11e1-9f47-00e0815b8da8">
     <topic>Wireshark -- Multiple vulnerabilities</topic>
     <affects>
@@ -641,6 +677,8 @@ Note:  Please add new entries to the beginning of this file.
 	    to Juri Aedla.<br/>
 	    [108006] High CVE-2011-3922: Stack-buffer-overflow in glyph
 	      handling. Credit to Google Chrome Security Team (Cris Neckar).</p>
+	  <p>[107182] Critical CVE-2011-3925: Use-after-free in Safe Browsing
+	      navigation. Credit to Chamal de Silva.></p>
 	</blockquote>
       </body>
     </description>
@@ -648,10 +686,12 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-3919</cvename>
       <cvename>CVE-2011-3921</cvename>
       <cvename>CVE-2011-3922</cvename>
+      <cvename>CVE-2011-3925</cvename>
     </references>
     <dates>
       <discovery>2012-01-05</discovery>
       <entry>2012-01-06</entry>
+      <modified>2012-01-23</modified>
     </dates>
   </vuln>
 
