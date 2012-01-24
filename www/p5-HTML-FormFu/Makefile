@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.09005
+PORTVERSION=	0.09007
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPT
 		p5-DateTime>=0.54:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Builder>=0.79:${PORTSDIR}/devel/p5-DateTime-Format-Builder \
 		p5-DateTime-Format-Natural>=0:${PORTSDIR}/devel/p5-DateTime-Format-Natural \
-		p5-DateTime-Format-Strptime>=1.2000:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-DateTime-Locale>=0.45:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
@@ -36,9 +36,9 @@ BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPT
 		p5-HTML-TokeParser-Simple>=3.14:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-Hash-Flatten>=0:${PORTSDIR}/devel/p5-Hash-Flatten \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Moose>=2.00:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Aliases>=0:${PORTSDIR}/devel/p5-MooseX-Aliases \
-		p5-MooseX-ChainedAccessors>=0.02:${PORTSDIR}/devel/p5-MooseX-ChainedAccessors \
+		p5-MooseX-Attribute-Chained>=1.0.1:${PORTSDIR}/devel/p5-MooseX-Attribute-Chained \
 		p5-MooseX-SetOnce>=0:${PORTSDIR}/devel/p5-MooseX-SetOnce \
 		p5-Number-Format>=0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
@@ -50,125 +50,128 @@ BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPT
 		p5-libwww>=1.64:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-CGI-Simple>=0:${PORTSDIR}/www/p5-CGI-Simple \
+		p5-Test-Aggregate>=0:${PORTSDIR}/devel/p5-Test-Aggregate
+
 PERL_CONFIGURE=	yes
 
-MAN3=	HTML::FormFu::Inflator.3 \
-	HTML::FormFu::Processor.3 \
-	HTML::FormFu::Constraint::Integer.3 \
-	HTML::FormFu::Constraint::AutoSet.3 \
-	HTML::FormFu::Constraint::File.3 \
-	HTML::FormFu::QueryType::CGI.3 \
-	HTML::FormFu::Constraint::File::Size.3 \
-	HTML::FormFu::Upload.3 \
-	HTML::FormFu::QueryType::CGI::Simple.3 \
-	HTML::FormFu::QueryType::Catalyst.3 \
-	HTML::FormFu::Constraint::File::MIME.3 \
-	HTML::FormFu::Manual::Cookbook.3 \
-	HTML::FormFu::Filter::UpperCase.3 \
-	HTML::FormFu::Constraint::Repeatable::Any.3 \
-	HTML::FormFu::Element::Radio.3 \
-	HTML::FormFu::Element::SimpleTable.3 \
-	HTML::FormFu::Element::Block.3 \
-	HTML::FormFu::Element::Button.3 \
-	HTML::FormFu.3 \
-	HTML::FormFu::Validator::Callback.3 \
-	HTML::FormFu::Filter::HTMLEscape.3 \
-	HTML::FormFu::Element.3 \
-	HTML::FormFu::Element::Multi.3 \
-	HTML::FormFu::Filter::CopyValue.3 \
-	HTML::FormFu::OutputProcessor::StripWhitespace.3 \
-	HTML::FormFu::Constraint::Word.3 \
-	HTML::FormFu::Element::Submit.3 \
-	HTML::FormFu::OutputProcessor.3 \
-	HTML::FormFu::Validator.3 \
-	HTML::FormFu::Constraint::Number.3 \
-	HTML::FormFu::Transformer.3 \
-	HTML::FormFu::Filter::Encode.3 \
-	HTML::FormFu::Element::Hidden.3 \
-	HTML::FormFu::Element::Date.3 \
-	HTML::FormFu::Constraint::Email.3 \
-	HTML::FormFu::Constraint::Length.3 \
-	HTML::FormFu::Constraint::CallbackOnce.3 \
-	HTML::FormFu::Attribute.3 \
-	HTML::FormFu::Filter::Whitespace.3 \
-	HTML::FormFu::Element::Image.3 \
-	HTML::FormFu::Inflator::DateTime.3 \
-	HTML::FormFu::Constraint::MinMaxFields.3 \
-	HTML::FormFu::Deflator.3 \
-	HTML::FormFu::Filter::TrimEdges.3 \
-	HTML::FormFu::Element::Radiogroup.3 \
-	HTML::FormFu::Filter.3 \
-	HTML::FormFu::Manual::Unicode.3 \
-	HTML::FormFu::Deflator::Strftime.3 \
-	HTML::FormFu::Element::Select.3 \
-	HTML::FormFu::Filter::LowerCase.3 \
-	HTML::FormFu::Filter::Callback.3 \
-	HTML::FormFu::Element::Password.3 \
-	HTML::FormFu::Constraint::MaxLength.3 \
-	HTML::FormFu::Element::Blank.3 \
-	HTML::FormFu::Transformer::Callback.3 \
-	HTML::FormFu::Constraint::Regex.3 \
-	HTML::FormFu::Constraint::DependOn.3 \
-	HTML::FormFu::Element::Reset.3 \
-	HTML::FormFu::Constraint::Bool.3 \
-	HTML::FormFu::Element::Textarea.3 \
-	HTML::FormFu::Constraint::MinLength.3 \
-	HTML::FormFu::OutputProcessor::Indent.3 \
-	HTML::FormFu::Element::Checkboxgroup.3 \
-	HTML::FormFu::Constraint::Range.3 \
-	HTML::FormFu::Element::Checkbox.3 \
-	HTML::FormFu::Element::Repeatable.3 \
-	HTML::FormFu::Element::Src.3 \
-	HTML::FormFu::Element::Fieldset.3 \
-	HTML::FormFu::Constraint::Printable.3 \
-	HTML::FormFu::Element::Text.3 \
-	HTML::FormFu::Constraint::AllOrNone.3 \
-	HTML::FormFu::Constraint.3 \
-	HTML::FormFu::Element::File.3 \
-	HTML::FormFu::Filter::NonNumeric.3 \
-	HTML::FormFu::Constraint::ASCII.3 \
-	HTML::FormFu::Constraint::Required.3 \
-	HTML::FormFu::Constraint::SingleValue.3 \
-	HTML::FormFu::Constraint::Equal.3 \
-	HTML::FormFu::Element::Hr.3 \
-	HTML::FormFu::Constraint::Callback.3 \
-	HTML::FormFu::Element::ContentButton.3 \
-	HTML::FormFu::Filter::Regex.3 \
-	HTML::FormFu::Filter::HTMLScrubber.3 \
-	HTML::FormFu::Constraint::Set.3 \
-	HTML::FormFu::UploadParam.3 \
-	HTML::FormFu::Inflator::CompoundDateTime.3 \
-	HTML::FormFu::Deflator::CompoundDateTime.3 \
-	HTML::FormFu::Filter::Split.3 \
-	HTML::FormFu::Filter::CompoundJoin.3 \
-	HTML::FormFu::Plugin::StashValid.3 \
-	HTML::FormFu::Deflator::CompoundSplit.3 \
-	HTML::FormFu::Plugin.3 \
-	HTML::FormFu::Model.3 \
-	HTML::FormFu::Constraint::DateTime.3 \
-	HTML::FormFu::Filter::CompoundSprintf.3 \
-	HTML::FormFu::Element::reCAPTCHA.3 \
-	HTML::FormFu::Constraint::reCAPTCHA.3 \
-	HTML::FormFu::Element::ComboBox.3 \
-	HTML::FormFu::Constraint::MinRange.3 \
-	HTML::FormFu::MultiForm.3 \
-	HTML::FormFu::Element::DateTime.3 \
-	HTML::FormFu::Constraint::MaxRange.3 \
-	HTML::FormFu::Constraint::File::MinSize.3 \
-	HTML::FormFu::Constraint::File::MaxSize.3 \
-	HTML::FormFu::Element::Number.3 \
-	HTML::FormFu::Model::HashRef.3 \
-	HTML::FormFu::Deflator::Callback.3 \
-	HTML::FormFu::Deflator::FormatNumber.3 \
-	HTML::FormFu::Inflator::Callback.3 \
-	HTML::FormFu::Deflator::PathClassFile.3 \
-	HTML::FormFu::Filter::FormatNumber.3 \
-	HTML::FormFu::Element::Label.3 \
-	HTML::FormFu::Role::Constraint::Others.3 \
-	HTML::FormFu::Role::Element::Field.3 \
-	HTML::FormFu::Role::Element::Group.3 \
-	HTML::FormFu::Role::Element::Input.3 \
-	HTML::FormFu::Role::Element::NonBlock.3 \
-	HTML::FormFu::Role::Filter::Compound.3
+MAN3=		HTML::FormFu.3 \
+		HTML::FormFu::Attribute.3 \
+		HTML::FormFu::Constraint.3 \
+		HTML::FormFu::Constraint::ASCII.3 \
+		HTML::FormFu::Constraint::AllOrNone.3 \
+		HTML::FormFu::Constraint::AutoSet.3 \
+		HTML::FormFu::Constraint::Bool.3 \
+		HTML::FormFu::Constraint::Callback.3 \
+		HTML::FormFu::Constraint::CallbackOnce.3 \
+		HTML::FormFu::Constraint::DateTime.3 \
+		HTML::FormFu::Constraint::DependOn.3 \
+		HTML::FormFu::Constraint::Email.3 \
+		HTML::FormFu::Constraint::Equal.3 \
+		HTML::FormFu::Constraint::File.3 \
+		HTML::FormFu::Constraint::File::MIME.3 \
+		HTML::FormFu::Constraint::File::MaxSize.3 \
+		HTML::FormFu::Constraint::File::MinSize.3 \
+		HTML::FormFu::Constraint::File::Size.3 \
+		HTML::FormFu::Constraint::Integer.3 \
+		HTML::FormFu::Constraint::Length.3 \
+		HTML::FormFu::Constraint::MaxLength.3 \
+		HTML::FormFu::Constraint::MaxRange.3 \
+		HTML::FormFu::Constraint::MinLength.3 \
+		HTML::FormFu::Constraint::MinMaxFields.3 \
+		HTML::FormFu::Constraint::MinRange.3 \
+		HTML::FormFu::Constraint::Number.3 \
+		HTML::FormFu::Constraint::Printable.3 \
+		HTML::FormFu::Constraint::Range.3 \
+		HTML::FormFu::Constraint::Regex.3 \
+		HTML::FormFu::Constraint::Repeatable::Any.3 \
+		HTML::FormFu::Constraint::Required.3 \
+		HTML::FormFu::Constraint::Set.3 \
+		HTML::FormFu::Constraint::SingleValue.3 \
+		HTML::FormFu::Constraint::Word.3 \
+		HTML::FormFu::Constraint::reCAPTCHA.3 \
+		HTML::FormFu::Deflator.3 \
+		HTML::FormFu::Deflator::Callback.3 \
+		HTML::FormFu::Deflator::CompoundDateTime.3 \
+		HTML::FormFu::Deflator::CompoundSplit.3 \
+		HTML::FormFu::Deflator::FormatNumber.3 \
+		HTML::FormFu::Deflator::PathClassFile.3 \
+		HTML::FormFu::Deflator::Strftime.3 \
+		HTML::FormFu::Element.3 \
+		HTML::FormFu::Element::Blank.3 \
+		HTML::FormFu::Element::Block.3 \
+		HTML::FormFu::Element::Button.3 \
+		HTML::FormFu::Element::Checkbox.3 \
+		HTML::FormFu::Element::Checkboxgroup.3 \
+		HTML::FormFu::Element::ComboBox.3 \
+		HTML::FormFu::Element::ContentButton.3 \
+		HTML::FormFu::Element::Date.3 \
+		HTML::FormFu::Element::DateTime.3 \
+		HTML::FormFu::Element::Fieldset.3 \
+		HTML::FormFu::Element::File.3 \
+		HTML::FormFu::Element::Hidden.3 \
+		HTML::FormFu::Element::Hr.3 \
+		HTML::FormFu::Element::Image.3 \
+		HTML::FormFu::Element::Label.3 \
+		HTML::FormFu::Element::Multi.3 \
+		HTML::FormFu::Element::Number.3 \
+		HTML::FormFu::Element::Password.3 \
+		HTML::FormFu::Element::Radio.3 \
+		HTML::FormFu::Element::Radiogroup.3 \
+		HTML::FormFu::Element::Repeatable.3 \
+		HTML::FormFu::Element::Reset.3 \
+		HTML::FormFu::Element::Select.3 \
+		HTML::FormFu::Element::SimpleTable.3 \
+		HTML::FormFu::Element::Src.3 \
+		HTML::FormFu::Element::Submit.3 \
+		HTML::FormFu::Element::Text.3 \
+		HTML::FormFu::Element::Textarea.3 \
+		HTML::FormFu::Element::reCAPTCHA.3 \
+		HTML::FormFu::Filter.3 \
+		HTML::FormFu::Filter::Callback.3 \
+		HTML::FormFu::Filter::CompoundJoin.3 \
+		HTML::FormFu::Filter::CompoundSprintf.3 \
+		HTML::FormFu::Filter::CopyValue.3 \
+		HTML::FormFu::Filter::Encode.3 \
+		HTML::FormFu::Filter::FormatNumber.3 \
+		HTML::FormFu::Filter::HTMLEscape.3 \
+		HTML::FormFu::Filter::HTMLScrubber.3 \
+		HTML::FormFu::Filter::LowerCase.3 \
+		HTML::FormFu::Filter::NonNumeric.3 \
+		HTML::FormFu::Filter::Regex.3 \
+		HTML::FormFu::Filter::Split.3 \
+		HTML::FormFu::Filter::TrimEdges.3 \
+		HTML::FormFu::Filter::UpperCase.3 \
+		HTML::FormFu::Filter::Whitespace.3 \
+		HTML::FormFu::Inflator.3 \
+		HTML::FormFu::Inflator::Callback.3 \
+		HTML::FormFu::Inflator::CompoundDateTime.3 \
+		HTML::FormFu::Inflator::DateTime.3 \
+		HTML::FormFu::Manual::Cookbook.3 \
+		HTML::FormFu::Manual::Unicode.3 \
+		HTML::FormFu::Model.3 \
+		HTML::FormFu::Model::HashRef.3 \
+		HTML::FormFu::MultiForm.3 \
+		HTML::FormFu::OutputProcessor.3 \
+		HTML::FormFu::OutputProcessor::Indent.3 \
+		HTML::FormFu::OutputProcessor::StripWhitespace.3 \
+		HTML::FormFu::Plugin.3 \
+		HTML::FormFu::Plugin::StashValid.3 \
+		HTML::FormFu::Processor.3 \
+		HTML::FormFu::QueryType::CGI.3 \
+		HTML::FormFu::QueryType::CGI::Simple.3 \
+		HTML::FormFu::QueryType::Catalyst.3 \
+		HTML::FormFu::Role::Constraint::Others.3 \
+		HTML::FormFu::Role::Element::Field.3 \
+		HTML::FormFu::Role::Element::Group.3 \
+		HTML::FormFu::Role::Element::Input.3 \
+		HTML::FormFu::Role::Element::NonBlock.3 \
+		HTML::FormFu::Role::Filter::Compound.3 \
+		HTML::FormFu::Transformer.3 \
+		HTML::FormFu::Transformer::Callback.3 \
+		HTML::FormFu::Upload.3 \
+		HTML::FormFu::UploadParam.3 \
+		HTML::FormFu::Validator.3 \
+		HTML::FormFu::Validator::Callback.3
 
 .include <bsd.port.mk>
