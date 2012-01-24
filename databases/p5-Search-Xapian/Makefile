@@ -11,14 +11,15 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/1.0.22/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jf@dockes.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	xapian-core>=1.0.22:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
 PERL_CONFIGURE=	yes
 CC=		${CXX}
 
