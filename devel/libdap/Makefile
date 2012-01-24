@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdap
-PORTVERSION=	3.11.1
+PORTVERSION=	3.11.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
@@ -28,6 +28,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
+
+MAN1=		dap-config.1 \
+		getdap.1
 
 post-patch:
 	# do not alter ${PREFIX}/lib/charset.alias
