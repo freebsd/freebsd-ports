@@ -21,7 +21,6 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	glib20
