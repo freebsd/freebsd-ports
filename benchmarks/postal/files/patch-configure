@@ -1,26 +1,24 @@
---- configure.orig	Fri Mar  2 14:15:19 2007
-+++ configure	Fri Mar  2 14:15:42 2007
-@@ -4558,7 +4558,6 @@
+--- configure.orig	2012-01-25 09:52:46.445155128 +0100
++++ configure	2012-01-25 09:53:01.565155948 +0100
+@@ -4025,7 +4025,7 @@
     linux_pthread="#define LINUX_PTHREAD"
  fi
  
 -LDFLAGS=-lpthread
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
++#LDFLAGS=-lpthread
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <pthread.h>
+@@ -4043,10 +4043,10 @@
+ }
  _ACEOF
-@@ -4597,13 +4596,13 @@
- 	 test ! -s conftest.err
-        } && test -s conftest$ac_exeext &&
-        $as_test_x conftest$ac_exeext; then
+ if ac_fn_cxx_try_link "$LINENO"; then :
 -  extra_ldflags="$extra_ldflags -lpthread"
-+  extra_ldflags="$extra_ldflags"
++#  extra_ldflags="$extra_ldflags -lpthread"
  
  else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--	extra_ldflags="$extra_ldflags -pthread"
-+	extra_ldflags="$extra_ldflags"
+-  extra_ldflags="$extra_ldflags -pthread"
++#  extra_ldflags="$extra_ldflags -pthread"
  fi
- 
- rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext

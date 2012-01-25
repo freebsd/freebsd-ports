@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	postal
-PORTVERSION=	0.70
+PORTVERSION=	0.72
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--disable-gnutls
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-CFLAGS+=	${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS} -Wno-long-long
 LDFLAGS+=	${PTHREAD_LIBS}
 
 .include <bsd.port.post.mk>
