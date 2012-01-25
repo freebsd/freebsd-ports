@@ -1419,7 +1419,6 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images/patterns
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DOCSDIR%%-%%PORTVERSION%%
 @dirrm %%DATADIR%%-%%PORTVERSION%%
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
