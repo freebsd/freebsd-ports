@@ -31,6 +31,8 @@ INSPIRCD_LOG?=	/var/log/${PORTNAME}/ircd.log
 SUB_LIST+=	PORTNAME=${PORTNAME}         \
 		INSPIRCD_USR=${INSPIRCD_USR} \
 		INSPIRCD_GRP=${INSPIRCD_GRP} \
+		INSPIRCD_LOG=${INSPIRCD_LOG} \
+		INSPIRCD_RUN=${INSPIRCD_RUN}
 PLIST_SUB+=	INSPIRCD_GRP=${INSPIRCD_GRP}
 SUB_FILES+=	pkg-deinstall
 
@@ -90,7 +92,8 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--enable-gnutls
 PLIST_SUB+=	GNUTLS=""
 .else
