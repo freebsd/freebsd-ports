@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	11.0.b1
-PORTREVISION=	1
+PORTVERSION=	11.0.b2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
-DISTNAME=	${PORTNAME}-11.0-Eden_beta1
+DISTNAME=	${PORTNAME}-11.0-Eden_beta2
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	XBMC is an award winning media center application
@@ -26,7 +25,6 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		nasm:${PORTSDIR}/devel/nasm \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20
-
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		ass.5:${PORTSDIR}/multimedia/libass \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
@@ -55,7 +53,6 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		yajl:${PORTSDIR}/devel/yajl
-
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
