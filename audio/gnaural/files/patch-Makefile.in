@@ -1,0 +1,23 @@
+--- Makefile.in.orig	2011-05-26 00:38:21.000000000 +0200
++++ Makefile.in	2012-01-18 07:12:38.767047961 +0100
+@@ -742,15 +742,16 @@
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -d $(srcdir)/pixmaps; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	  $(mkinstalldirs) $(DESTDIR)$(datadir)/pixmaps; \
+ 	  for pixmap in $(srcdir)/pixmaps/*; do \
+ 	    if test -f $$pixmap; then \
+-	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
++	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/pixmaps; \
+ 	    fi \
+ 	  done \
+ 	fi; \
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)/gnome/apps/Multimedia; \
+-	$(INSTALL_DATA) gnaural.desktop $(DESTDIR)$(datadir)/gnome/apps/Multimedia; \
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/applications; \
++	$(INSTALL_DATA) gnaural.desktop $(DESTDIR)$(datadir)/applications; \
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir); \
+ 	$(INSTALL_DATA) src/gnaural.glade $(DESTDIR)$(pkgdatadir);
+ 
+ dist-hook:

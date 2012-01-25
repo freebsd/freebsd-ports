@@ -230,6 +230,7 @@
     SUBDIR += gmpc-shout
     SUBDIR += gmpc-wikipedia
     SUBDIR += gmusicbrowser
+    SUBDIR += gnaural
     SUBDIR += gnome-audio
     SUBDIR += gnome-media
     SUBDIR += gnomoradio
