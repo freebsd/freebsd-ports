@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	shiboken
-PORTVERSION=	1.0.10
+PORTVERSION=	1.1.0
 #PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.pyside.org/files/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.pyside.org/files/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	C++ code generator for CPython extensions
