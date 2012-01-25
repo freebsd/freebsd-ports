@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	salt
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -44,14 +44,23 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.9:${PORTSDIR}/devel/py-msgpack \
 		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:${PORTSDIR}/security/py-m2crypto
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-patch:
+.for file in conf/minion.template conf/master.template doc/man/salt-key.1 \
+    doc/man/salt-cp.1 doc/man/salt-minion.1 doc/man/salt-syndic.1 \
+    doc/man/salt-master.1 doc/man/salt-run.1 doc/man/salt.7 doc/man/salt.1 \
+    salt/cli/__init__.py salt/__init__.py salt/config.py salt/client.py \
+    salt/modules/mysql.py
+	@${REINPLACE_CMD} -e 's|/etc/salt|${PREFIX}/etc/salt|' \
+	    -e 's|/srv/salt|${PREFIX}/etc/salt/states|' ${WRKSRC}/${file}
+.endfor
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
-	${MV} ${WRKSRC}/conf/master ${WRKSRC}/conf/master.sample
-	${MV} ${WRKSRC}/conf/minion ${WRKSRC}/conf/minion.sample
+	@${MV} ${WRKSRC}/conf/master.template ${WRKSRC}/conf/master.sample
+	@${MV} ${WRKSRC}/conf/minion.template ${WRKSRC}/conf/minion.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
