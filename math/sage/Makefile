@@ -37,6 +37,8 @@ MAKE_ENV+=	SAGE_PORT=yes \
 		SAGE_FORTRAN_LIB=${LOCALBASE}/lib/gcc${GCC_DEFAULT_V}/libgfortran.so \
 		SAGE_ATLAS_LIB=${LOCALBASE}/lib
 
+NO_LATEST_LINK=	yes	# Conflicts with graphics/sage.
+
 # The following is needed for the lapack subpackage.
 MAKE_ARGS+=	ARCH="${AR}"
 
