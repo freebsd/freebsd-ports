@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	File-HomeDir
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get home directory for self or other users
 
+BUILD_DEPENDS=	p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS=	p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -31,15 +30,4 @@ MAN3=		File::HomeDir.3 \
 		File::HomeDir::Unix.3 \
 		File::HomeDir::Windows.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500808
-RUN_DEPENDS+=	p5-PathTools>=3.12:${PORTSDIR}/devel/p5-PathTools
-.endif
-
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-File-Path>=2.01:${PORTSDIR}/devel/p5-File-Path \
-		p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
