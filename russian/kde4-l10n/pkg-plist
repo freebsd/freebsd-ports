@@ -343,6 +343,21 @@ share/doc/HTML/ru/kblackbox/index.docbook
 share/doc/HTML/ru/kbounce/common
 share/doc/HTML/ru/kbounce/index.cache.bz2
 share/doc/HTML/ru/kbounce/index.docbook
+share/doc/HTML/ru/kbruch/checked.png
+share/doc/HTML/ru/kbruch/common
+share/doc/HTML/ru/kbruch/compare.png
+share/doc/HTML/ru/kbruch/convert.png
+share/doc/HTML/ru/kbruch/factorize.png
+share/doc/HTML/ru/kbruch/gui_main.png
+share/doc/HTML/ru/kbruch/gui_mode.png
+share/doc/HTML/ru/kbruch/index.cache.bz2
+share/doc/HTML/ru/kbruch/index.docbook
+share/doc/HTML/ru/kbruch/learning.png
+share/doc/HTML/ru/kbruch/man-kbruch.1.docbook
+share/doc/HTML/ru/kbruch/percentage.png
+share/doc/HTML/ru/kbruch/reduced.png
+share/doc/HTML/ru/kbruch/settings.png
+share/doc/HTML/ru/kbruch/statistics.png
 share/doc/HTML/ru/kcachegrind/common
 share/doc/HTML/ru/kcachegrind/index.cache.bz2
 share/doc/HTML/ru/kcachegrind/index.docbook
@@ -498,6 +513,16 @@ share/doc/HTML/ru/kig/selecting_objects.png
 share/doc/HTML/ru/kig/simple_locus_construction.png
 share/doc/HTML/ru/kig/text_label_attaching.png
 share/doc/HTML/ru/kig/text_label_wizard.png
+share/doc/HTML/ru/kigo/common
+share/doc/HTML/ru/kigo/get-new-games.png
+share/doc/HTML/ru/kigo/hint.png
+share/doc/HTML/ru/kigo/index.cache.bz2
+share/doc/HTML/ru/kigo/index.docbook
+share/doc/HTML/ru/kigo/play-game.png
+share/doc/HTML/ru/kigo/setup-general.png
+share/doc/HTML/ru/kigo/setup-theme.png
+share/doc/HTML/ru/kigo/start-loaded-game.png
+share/doc/HTML/ru/kigo/start-new-game.png
 share/doc/HTML/ru/kioslave/audiocd/common
 share/doc/HTML/ru/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/ru/kioslave/audiocd/index.docbook
@@ -830,14 +855,6 @@ share/doc/HTML/ru/ktuberling/common
 share/doc/HTML/ru/ktuberling/index.cache.bz2
 share/doc/HTML/ru/ktuberling/index.docbook
 share/doc/HTML/ru/ktuberling/technical-reference.docbook
-share/doc/HTML/ru/kturtle/common
-share/doc/HTML/ru/kturtle/getting-started.docbook
-share/doc/HTML/ru/kturtle/glossary.docbook
-share/doc/HTML/ru/kturtle/index.cache.bz2
-share/doc/HTML/ru/kturtle/index.docbook
-share/doc/HTML/ru/kturtle/programming-reference.docbook
-share/doc/HTML/ru/kturtle/translator-guide.docbook
-share/doc/HTML/ru/kturtle/using-kturtle.docbook
 share/doc/HTML/ru/kuser/common
 share/doc/HTML/ru/kuser/index.cache.bz2
 share/doc/HTML/ru/kuser/index.docbook
@@ -1606,7 +1623,6 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kwatchgnupg
 @dirrm share/doc/HTML/ru/kwallet
 @dirrm share/doc/HTML/ru/kuser
-@dirrm share/doc/HTML/ru/kturtle
 @dirrm share/doc/HTML/ru/ktuberling
 @dirrm share/doc/HTML/ru/ktouch
 @dirrm share/doc/HTML/ru/ktimer
@@ -1675,6 +1691,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kioslave/data
 @dirrm share/doc/HTML/ru/kioslave/audiocd
 @dirrm share/doc/HTML/ru/kioslave
+@dirrm share/doc/HTML/ru/kigo
 @dirrm share/doc/HTML/ru/kig
 @dirrm share/doc/HTML/ru/khelpcenter/glossary
 @dirrm share/doc/HTML/ru/khelpcenter/documentationnotfound
@@ -1718,6 +1735,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kcharselect
 @dirrm share/doc/HTML/ru/kcalc
 @dirrm share/doc/HTML/ru/kcachegrind
+@dirrm share/doc/HTML/ru/kbruch
 @dirrm share/doc/HTML/ru/kbounce
 @dirrm share/doc/HTML/ru/kblackbox
 @dirrm share/doc/HTML/ru/kbattleship

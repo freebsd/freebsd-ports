@@ -166,6 +166,7 @@ share/locale/hu/LC_MESSAGES/dolphin.mo
 share/locale/hu/LC_MESSAGES/domtreeviewer.mo
 share/locale/hu/LC_MESSAGES/dragonplayer.mo
 share/locale/hu/LC_MESSAGES/drkonqi.mo
+share/locale/hu/LC_MESSAGES/filelight.mo
 share/locale/hu/LC_MESSAGES/filetypes.mo
 share/locale/hu/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/hu/LC_MESSAGES/fileviewsvnplugin.mo
@@ -256,6 +257,7 @@ share/locale/hu/LC_MESSAGES/kcm_pci.mo
 share/locale/hu/LC_MESSAGES/kcm_phonon.mo
 share/locale/hu/LC_MESSAGES/kcm_phononxine.mo
 share/locale/hu/LC_MESSAGES/kcm_platform.mo
+share/locale/hu/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/hu/LC_MESSAGES/kcm_solid.mo
 share/locale/hu/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hu/LC_MESSAGES/kcm_standard_actions.mo
@@ -459,9 +461,11 @@ share/locale/hu/LC_MESSAGES/kppp.mo
 share/locale/hu/LC_MESSAGES/kppplogview.mo
 share/locale/hu/LC_MESSAGES/kquitapp.mo
 share/locale/hu/LC_MESSAGES/krandr.mo
+share/locale/hu/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/hu/LC_MESSAGES/krdb.mo
 share/locale/hu/LC_MESSAGES/krdc.mo
 share/locale/hu/LC_MESSAGES/kreadconfig.mo
+share/locale/hu/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/hu/LC_MESSAGES/kres_blog.mo
 share/locale/hu/LC_MESSAGES/kres_groupwise.mo
 share/locale/hu/LC_MESSAGES/kres_remote.mo
@@ -553,6 +557,7 @@ share/locale/hu/LC_MESSAGES/libkpgp.mo
 share/locale/hu/LC_MESSAGES/libkpimidentities.mo
 share/locale/hu/LC_MESSAGES/libkpimtextedit.mo
 share/locale/hu/LC_MESSAGES/libkpimutils.mo
+share/locale/hu/LC_MESSAGES/libkremotecontrol.mo
 share/locale/hu/LC_MESSAGES/libkresources.mo
 share/locale/hu/LC_MESSAGES/libksane.mo
 share/locale/hu/LC_MESSAGES/libkscreensaver.mo

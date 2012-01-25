@@ -1,0 +1,8 @@
+======================================================================
+
+You'll need cupsd running for the printer configuration utility to
+work:
+
+# service cupsd start
+
+======================================================================

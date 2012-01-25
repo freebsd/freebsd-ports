@@ -25,6 +25,7 @@ lib/kde4/cantor_eigenvectorsassistant.so
 lib/kde4/cantor_helppanelplugin.so
 lib/kde4/cantor_integrateassistant.so
 lib/kde4/cantor_invertmatrixassistant.so
+%%KALGEBRA%%lib/kde4/cantor_kalgebrabackend.so
 lib/kde4/cantor_maximabackend.so
 lib/kde4/cantor_nullbackend.so
 lib/kde4/cantor_octavebackend.so
@@ -93,6 +94,7 @@ share/kde4/services/cantor/eigenvectorsassistant.desktop
 share/kde4/services/cantor/helppanelplugin.desktop
 share/kde4/services/cantor/integrateassistant.desktop
 share/kde4/services/cantor/invertmatrixassistant.desktop
+%%KALGEBRA%%share/kde4/services/cantor/kalgebrabackend.desktop
 share/kde4/services/cantor/maximabackend.desktop
 share/kde4/services/cantor/nullbackend.desktop
 share/kde4/services/cantor/octavebackend.desktop

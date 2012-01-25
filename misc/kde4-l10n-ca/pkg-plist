@@ -677,6 +677,9 @@ share/doc/HTML/ca/kioslave/webdav/index.docbook
 share/doc/HTML/ca/kioslave/xz/common
 share/doc/HTML/ca/kioslave/xz/index.cache.bz2
 share/doc/HTML/ca/kioslave/xz/index.docbook
+share/doc/HTML/ca/kjots/common
+share/doc/HTML/ca/kjots/index.cache.bz2
+share/doc/HTML/ca/kjots/index.docbook
 share/doc/HTML/ca/kleopatra/common
 share/doc/HTML/ca/kleopatra/index.cache.bz2
 share/doc/HTML/ca/kleopatra/index.docbook
@@ -787,12 +790,26 @@ share/doc/HTML/ca/korganizer/index.cache.bz2
 share/doc/HTML/ca/korganizer/index.docbook
 share/doc/HTML/ca/korganizer/remotefile-resource.png
 share/doc/HTML/ca/korganizer/todo-general.png
+share/doc/HTML/ca/krdc/address_input.png
+share/doc/HTML/ca/krdc/bookmarks_menu.png
 share/doc/HTML/ca/krdc/common
+share/doc/HTML/ca/krdc/general_preferences.png
 share/doc/HTML/ca/krdc/index.cache.bz2
 share/doc/HTML/ca/krdc/index.docbook
+share/doc/HTML/ca/krdc/krdc_mainwindow.png
+share/doc/HTML/ca/krdc/password_entry.png
+share/doc/HTML/ca/krdc/rdp_preferences.png
+share/doc/HTML/ca/krdc/vnc_host_configuration.png
+share/doc/HTML/ca/krdc/vnc_preferences.png
 share/doc/HTML/ca/krfb/common
+share/doc/HTML/ca/krfb/configuration_network.png
+share/doc/HTML/ca/krfb/configuration_security.png
+share/doc/HTML/ca/krfb/connection.png
+share/doc/HTML/ca/krfb/email_invitation.png
 share/doc/HTML/ca/krfb/index.cache.bz2
 share/doc/HTML/ca/krfb/index.docbook
+share/doc/HTML/ca/krfb/personal_invitation.png
+share/doc/HTML/ca/krfb/screenshot.png
 share/doc/HTML/ca/kstars/aavso.png
 share/doc/HTML/ca/kstars/ai-contents.docbook
 share/doc/HTML/ca/kstars/altvstime.docbook
@@ -888,6 +905,7 @@ share/doc/HTML/ca/ksysguard/index.docbook
 share/doc/HTML/ca/ksystemlog/common
 share/doc/HTML/ca/ksystemlog/index.cache.bz2
 share/doc/HTML/ca/ksystemlog/index.docbook
+share/doc/HTML/ca/ksystemlog/main-screen.png
 share/doc/HTML/ca/kteatime/common
 share/doc/HTML/ca/kteatime/index.cache.bz2
 share/doc/HTML/ca/kteatime/index.docbook
@@ -897,7 +915,7 @@ share/doc/HTML/ca/ktimer/index.cache.bz2
 share/doc/HTML/ca/ktimer/index.docbook
 share/doc/HTML/ca/ktimer/main.png
 share/doc/HTML/ca/ktimer/running.png
-share/doc/HTML/ca/ktimer/two.at.once.png
+share/doc/HTML/ca/ktimer/two_at_once.png
 share/doc/HTML/ca/ktouch/color_options.png
 share/doc/HTML/ca/ktouch/common
 share/doc/HTML/ca/ktouch/general_options.png
@@ -923,6 +941,7 @@ share/doc/HTML/ca/kturtle/using-kturtle.docbook
 share/doc/HTML/ca/kuser/common
 share/doc/HTML/ca/kuser/index.cache.bz2
 share/doc/HTML/ca/kuser/index.docbook
+share/doc/HTML/ca/kuser/kuser.png
 share/doc/HTML/ca/kwallet/common
 share/doc/HTML/ca/kwallet/first-open-request.png
 share/doc/HTML/ca/kwallet/index.cache.bz2
@@ -1742,6 +1761,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/klipper
 @dirrm share/doc/HTML/ca/klettres
 @dirrm share/doc/HTML/ca/kleopatra
+@dirrm share/doc/HTML/ca/kjots
 @dirrm share/doc/HTML/ca/kioslave/xz
 @dirrm share/doc/HTML/ca/kioslave/webdav
 @dirrm share/doc/HTML/ca/kioslave/thumbnail

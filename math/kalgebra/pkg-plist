@@ -1,6 +1,22 @@
 %%READLINE%%bin/calgebra
 bin/kalgebra
 bin/kalgebramobile
+include/analitza/abstractlexer.h
+include/analitza/analitzaexport.h
+include/analitza/analitzautils.h
+include/analitza/analyzer.h
+include/analitza/builtinmethods.h
+include/analitza/expression.h
+include/analitza/expressiontype.h
+include/analitza/object.h
+include/analitza/operations.h
+include/analitza/operator.h
+include/analitza/value.h
+include/analitza/variables.h
+include/analitzagui/algebrahighlighter.h
+include/analitzagui/analitzaguiexport.h
+include/analitzagui/operatorsmodel.h
+include/analitzagui/variablesmodel.h
 lib/kde4/plasma_applet_kalgebra.so
 lib/libanalitza.so
 lib/libanalitza.so.5
@@ -10,6 +26,7 @@ lib/libanalitzagui.so.5
 lib/libanalitzagui.so.5.0.1
 share/applications/kde4/kalgebra.desktop
 share/applications/kde4/kalgebramobile.desktop
+share/apps/cmake/modules/FindAnalitza.cmake
 share/apps/kalgebra/scripts/console/console.js
 share/apps/kalgebra/scripts/console/kalgebraconsole.desktop
 share/apps/kalgebra/scripts/plot2d/kalgebraplot2d.desktop
@@ -38,3 +55,5 @@ share/kde4/servicetypes/kalgebrascript.desktop
 @dirrm share/apps/kalgebra/scripts/console
 @dirrm share/apps/kalgebra/scripts
 @dirrm share/apps/kalgebra
+@dirrm include/analitzagui
+@dirrm include/analitza

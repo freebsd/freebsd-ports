@@ -94,6 +94,7 @@ share/locale/kk/LC_MESSAGES/kaddressbook.mo
 share/locale/kk/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/kk/LC_MESSAGES/kalarm.mo
 share/locale/kk/LC_MESSAGES/kalgebra.mo
+share/locale/kk/LC_MESSAGES/kalzium.mo
 share/locale/kk/LC_MESSAGES/kapptemplate.mo
 share/locale/kk/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/kk/LC_MESSAGES/kate.mo
@@ -409,6 +410,7 @@ share/locale/kk/LC_MESSAGES/libkcddb.mo
 share/locale/kk/LC_MESSAGES/libkcompactdisc.mo
 share/locale/kk/LC_MESSAGES/libkdcraw.mo
 share/locale/kk/LC_MESSAGES/libkdecorations.mo
+share/locale/kk/LC_MESSAGES/libkdeedu.mo
 share/locale/kk/LC_MESSAGES/libkdepim.mo
 share/locale/kk/LC_MESSAGES/libkdepimmobileui.mo
 share/locale/kk/LC_MESSAGES/libkexiv2.mo
@@ -451,6 +453,8 @@ share/locale/kk/LC_MESSAGES/libtaskmanager.mo
 share/locale/kk/LC_MESSAGES/libtemplateparser.mo
 share/locale/kk/LC_MESSAGES/lokalize.mo
 share/locale/kk/LC_MESSAGES/mailreader.mo
+share/locale/kk/LC_MESSAGES/marble.mo
+share/locale/kk/LC_MESSAGES/marble_qt.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
