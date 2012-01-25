@@ -1,0 +1,13 @@
+Puppet-lint checks your Puppet manifests against the Puppet Labs style
+guide and alerts you to any discrepancies.
+
+You can test a single manifest file by running:
+
+	puppet-lint <path to file>
+
+If you want to test your entire Puppet manifest directory, you can add
+require 'puppet-lint/tasks/puppet-lint' to your Rakefile and then run:
+
+	rake lint
+
+WWW: https://github.com/rodjek/puppet-lint
