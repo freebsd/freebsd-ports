@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dropbox-api-command
-PORTVERSION=	1.00
+PORTVERSION=	1.02
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/s-aska/${PORTNAME}/raw/${PORTVERSION}/
