@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	webrobots
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write robots.txt compliant web robots in Ruby
-
-RUN_DEPENDS=	rubygem-nokogiri>=1.4.4:${PORTSDIR}/textproc/rubygem-nokogiri
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
