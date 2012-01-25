@@ -113,12 +113,9 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/de/standard_speeddial.ini
 %%DATADIR%%/locale/el/el.lng
 %%DATADIR%%/locale/en-GB/en-GB.lng
-%%DATADIR%%/locale/en/bookmarks.adr
 %%DATADIR%%/locale/en/en.lng
 %%DATADIR%%/locale/en/en.zip
 %%DATADIR%%/locale/en/license.txt
-%%DATADIR%%/locale/en/search.ini
-%%DATADIR%%/locale/en/standard_speeddial.ini
 %%DATADIR%%/locale/es-ES/bookmarks.adr
 %%DATADIR%%/locale/es-ES/es-ES.lng
 %%DATADIR%%/locale/es-ES/search.ini
@@ -139,10 +136,7 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/hu/hu.lng
 %%DATADIR%%/locale/hu/search.ini
 %%DATADIR%%/locale/hu/standard_speeddial.ini
-%%DATADIR%%/locale/id/bookmarks.adr
 %%DATADIR%%/locale/id/id.lng
-%%DATADIR%%/locale/id/search.ini
-%%DATADIR%%/locale/id/standard_speeddial.ini
 %%DATADIR%%/locale/it/bookmarks.adr
 %%DATADIR%%/locale/it/it.lng
 %%DATADIR%%/locale/it/search.ini
@@ -228,6 +222,9 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/region/cis/en/bookmarks.adr
 %%DATADIR%%/region/cis/en/search.ini
 %%DATADIR%%/region/cis/en/standard_speeddial.ini
+%%DATADIR%%/region/cis/ru/bookmarks.adr
+%%DATADIR%%/region/cis/ru/search.ini
+%%DATADIR%%/region/cis/ru/standard_speeddial.ini
 %%DATADIR%%/region/cn/browser.js
 %%DATADIR%%/region/cn/en/bookmarks.adr
 %%DATADIR%%/region/cn/en/search.ini
@@ -244,6 +241,9 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/region/in/bookmarks.adr
 %%DATADIR%%/region/in/search.ini
 %%DATADIR%%/region/in/standard_speeddial.ini
+%%DATADIR%%/region/latin_america/bookmarks.adr
+%%DATADIR%%/region/latin_america/search.ini
+%%DATADIR%%/region/latin_america/standard_speeddial.ini
 %%DATADIR%%/region/middle_east/bookmarks.adr
 %%DATADIR%%/region/middle_east/search.ini
 %%DATADIR%%/region/middle_east/standard_speeddial.ini
@@ -360,12 +360,14 @@ share/mime/packages/opera-widget.xml
 @dirrm %%DATADIR%%/region/ua
 @dirrm %%DATADIR%%/region/tw
 @dirrm %%DATADIR%%/region/middle_east
+@dirrm %%DATADIR%%/region/latin_america
 @dirrm %%DATADIR%%/region/in
 @dirrm %%DATADIR%%/region/id
 @dirrm %%DATADIR%%/region/hk
 @dirrm %%DATADIR%%/region/gb
 @dirrm %%DATADIR%%/region/cn/en
 @dirrm %%DATADIR%%/region/cn
+@dirrm %%DATADIR%%/region/cis/ru
 @dirrm %%DATADIR%%/region/cis/en
 @dirrm %%DATADIR%%/region/cis
 @dirrm %%DATADIR%%/region
