@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylib
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 MASTER_SITE_SUBDIR=	source/p/py
@@ -18,7 +18,8 @@ COMMENT=	An agile development and test support library
 
 LICENSE=	MIT
 
-USE_PYTHON=	2.5+
+# Python3 ready
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	py
 USE_ZIP=	yes
