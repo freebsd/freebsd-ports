@@ -45,6 +45,9 @@ share/doc/HTML/et/dolphin/index.docbook
 share/doc/HTML/et/dragonplayer/common
 share/doc/HTML/et/dragonplayer/index.cache.bz2
 share/doc/HTML/et/dragonplayer/index.docbook
+share/doc/HTML/et/filelight/common
+share/doc/HTML/et/filelight/index.cache.bz2
+share/doc/HTML/et/filelight/index.docbook
 share/doc/HTML/et/granatier/common
 share/doc/HTML/et/granatier/index.cache.bz2
 share/doc/HTML/et/granatier/index.docbook
@@ -1860,6 +1863,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/jovie
 @dirrm share/doc/HTML/et/gwenview
 @dirrm share/doc/HTML/et/granatier
+@dirrm share/doc/HTML/et/filelight
 @dirrm share/doc/HTML/et/dragonplayer
 @dirrm share/doc/HTML/et/dolphin
 @dirrm share/doc/HTML/et/cervisia

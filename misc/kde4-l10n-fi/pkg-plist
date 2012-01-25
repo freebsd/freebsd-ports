@@ -111,6 +111,7 @@ share/locale/fi/LC_MESSAGES/kabcformat_binary.mo
 share/locale/fi/LC_MESSAGES/kaccess.mo
 share/locale/fi/LC_MESSAGES/kaccessibleapp.mo
 share/locale/fi/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/fi/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/fi/LC_MESSAGES/kaddressbook.mo
 share/locale/fi/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/fi/LC_MESSAGES/kajongg.mo
@@ -153,6 +154,7 @@ share/locale/fi/LC_MESSAGES/kbounce.mo
 share/locale/fi/LC_MESSAGES/kbreakout.mo
 share/locale/fi/LC_MESSAGES/kbruch.mo
 share/locale/fi/LC_MESSAGES/kcachegrind.mo
+share/locale/fi/LC_MESSAGES/kcachegrind_qt.mo
 share/locale/fi/LC_MESSAGES/kcal_akonadi.mo
 share/locale/fi/LC_MESSAGES/kcalc.mo
 share/locale/fi/LC_MESSAGES/kcertpart.mo
@@ -176,6 +178,7 @@ share/locale/fi/LC_MESSAGES/kcm_pci.mo
 share/locale/fi/LC_MESSAGES/kcm_phonon.mo
 share/locale/fi/LC_MESSAGES/kcm_phononxine.mo
 share/locale/fi/LC_MESSAGES/kcm_platform.mo
+share/locale/fi/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/fi/LC_MESSAGES/kcm_solid.mo
 share/locale/fi/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/fi/LC_MESSAGES/kcm_standard_actions.mo
@@ -386,6 +389,7 @@ share/locale/fi/LC_MESSAGES/kppp.mo
 share/locale/fi/LC_MESSAGES/kppplogview.mo
 share/locale/fi/LC_MESSAGES/kquitapp.mo
 share/locale/fi/LC_MESSAGES/krandr.mo
+share/locale/fi/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/fi/LC_MESSAGES/krdb.mo
 share/locale/fi/LC_MESSAGES/krdc.mo
 share/locale/fi/LC_MESSAGES/kreadconfig.mo
@@ -500,6 +504,7 @@ share/locale/fi/LC_MESSAGES/libmessagecore.mo
 share/locale/fi/LC_MESSAGES/libmessagelist.mo
 share/locale/fi/LC_MESSAGES/libmessageviewer.mo
 share/locale/fi/LC_MESSAGES/liboktetacore.mo
+share/locale/fi/LC_MESSAGES/liboktetagui.mo
 share/locale/fi/LC_MESSAGES/liboktetakasten.mo
 share/locale/fi/LC_MESSAGES/libphonon.mo
 share/locale/fi/LC_MESSAGES/libplasma.mo

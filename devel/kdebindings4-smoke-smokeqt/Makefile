@@ -32,7 +32,6 @@ QT_COMPONENTS=	dbus declarative designer gui help multimedia \
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-CFLAGS+=	-I/usr/local/include
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

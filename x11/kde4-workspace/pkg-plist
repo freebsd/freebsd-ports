@@ -414,7 +414,6 @@ lib/libksignalplotter.so.5.0.1
 lib/libkwineffects.so
 lib/libkwineffects.so.1
 lib/libkwineffects.so.1.0.0
-lib/libkwinnvidiahack.so
 lib/libkwinnvidiahack.so.5
 lib/libkwinnvidiahack.so.5.0.1
 lib/libkworkspace.so

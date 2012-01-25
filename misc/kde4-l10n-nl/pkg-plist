@@ -125,24 +125,9 @@ share/doc/HTML/nl/cantor/index.docbook
 share/doc/HTML/nl/cervisia/common
 share/doc/HTML/nl/cervisia/index.cache.bz2
 share/doc/HTML/nl/cervisia/index.docbook
-share/doc/HTML/nl/common/fdl-translated.html
-share/doc/HTML/nl/common/gpl-translated.html
-share/doc/HTML/nl/common/kde-localised.css
-share/doc/HTML/nl/common/lgpl-translated.html
 share/doc/HTML/nl/dolphin/common
-share/doc/HTML/nl/dolphin/default-ui.png
 share/doc/HTML/nl/dolphin/index.cache.bz2
 share/doc/HTML/nl/dolphin/index.docbook
-share/doc/HTML/nl/dolphin/locationbar-breadcrumb.png
-share/doc/HTML/nl/dolphin/locationbar-editable.png
-share/doc/HTML/nl/dolphin/preferences-general-behavior.png
-share/doc/HTML/nl/dolphin/preferences-navigation.png
-share/doc/HTML/nl/dolphin/preferences-startup.png
-share/doc/HTML/nl/dolphin/preferences-trash.png
-share/doc/HTML/nl/dolphin/preferences-viewmodes-icons.png
-share/doc/HTML/nl/dolphin/toolbar-navigation.png
-share/doc/HTML/nl/dolphin/toolbar-view-appearance.png
-share/doc/HTML/nl/dolphin/viewproperties-dialog.png
 share/doc/HTML/nl/dragonplayer/common
 share/doc/HTML/nl/dragonplayer/index.cache.bz2
 share/doc/HTML/nl/dragonplayer/index.docbook
@@ -320,8 +305,6 @@ share/doc/HTML/nl/kcontrol/emoticons/index.docbook
 share/doc/HTML/nl/kcontrol/filemanager/common
 share/doc/HTML/nl/kcontrol/filemanager/index.cache.bz2
 share/doc/HTML/nl/kcontrol/filemanager/index.docbook
-share/doc/HTML/nl/kcontrol/filemanager/kfileman1.png
-share/doc/HTML/nl/kcontrol/filemanager/kfileman2.png
 share/doc/HTML/nl/kcontrol/filetypes/common
 share/doc/HTML/nl/kcontrol/filetypes/index.cache.bz2
 share/doc/HTML/nl/kcontrol/filetypes/index.docbook
@@ -335,12 +318,8 @@ share/doc/HTML/nl/kcontrol/history/common
 share/doc/HTML/nl/kcontrol/history/index.cache.bz2
 share/doc/HTML/nl/kcontrol/history/index.docbook
 share/doc/HTML/nl/kcontrol/icons/common
-share/doc/HTML/nl/kcontrol/icons/effects.png
-share/doc/HTML/nl/kcontrol/icons/get-new-theme.png
 share/doc/HTML/nl/kcontrol/icons/index.cache.bz2
 share/doc/HTML/nl/kcontrol/icons/index.docbook
-share/doc/HTML/nl/kcontrol/icons/main.png
-share/doc/HTML/nl/kcontrol/icons/size.png
 share/doc/HTML/nl/kcontrol/joystick/common
 share/doc/HTML/nl/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/nl/kcontrol/joystick/index.docbook
@@ -481,9 +460,6 @@ share/doc/HTML/nl/kcontrol/workspaceoptions/index.docbook
 share/doc/HTML/nl/kcron/common
 share/doc/HTML/nl/kcron/index.cache.bz2
 share/doc/HTML/nl/kcron/index.docbook
-share/doc/HTML/nl/kcron/newtask.png
-share/doc/HTML/nl/kcron/newvariable.png
-share/doc/HTML/nl/kcron/print.png
 share/doc/HTML/nl/kdebugdialog/common
 share/doc/HTML/nl/kdebugdialog/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog/index.docbook
@@ -546,6 +522,7 @@ share/doc/HTML/nl/kfloppy/index.docbook
 share/doc/HTML/nl/kfontview/common
 share/doc/HTML/nl/kfontview/index.cache.bz2
 share/doc/HTML/nl/kfontview/index.docbook
+share/doc/HTML/nl/kfontview/kfontview.png
 share/doc/HTML/nl/kfourinline/common
 share/doc/HTML/nl/kfourinline/index.cache.bz2
 share/doc/HTML/nl/kfourinline/index.docbook
@@ -740,7 +717,6 @@ share/doc/HTML/nl/kmag/common
 share/doc/HTML/nl/kmag/index.cache.bz2
 share/doc/HTML/nl/kmag/index.docbook
 share/doc/HTML/nl/kmag/man-kmag.1.docbook
-share/doc/HTML/nl/kmag/screenshot.png
 share/doc/HTML/nl/kmahjongg/common
 share/doc/HTML/nl/kmahjongg/index.cache.bz2
 share/doc/HTML/nl/kmahjongg/index.docbook
@@ -771,12 +747,6 @@ share/doc/HTML/nl/kmousetool/man-kmousetool.1.docbook
 share/doc/HTML/nl/kmouth/common
 share/doc/HTML/nl/kmouth/index.cache.bz2
 share/doc/HTML/nl/kmouth/index.docbook
-share/doc/HTML/nl/kmouth/kmouthcpref.png
-share/doc/HTML/nl/kmouth/kmouthctts.png
-share/doc/HTML/nl/kmouth/kmouthcwcp.png
-share/doc/HTML/nl/kmouth/kmouthedit.png
-share/doc/HTML/nl/kmouth/kmouthmain.png
-share/doc/HTML/nl/kmouth/kmouthwizard.png
 share/doc/HTML/nl/kmouth/man-kmouth.1.docbook
 share/doc/HTML/nl/kmplot/commands.docbook
 share/doc/HTML/nl/kmplot/common
@@ -833,6 +803,7 @@ share/doc/HTML/nl/kolf/index.docbook
 share/doc/HTML/nl/kollision/common
 share/doc/HTML/nl/kollision/index.cache.bz2
 share/doc/HTML/nl/kollision/index.docbook
+share/doc/HTML/nl/kolourpaint/KolourPaint.png
 share/doc/HTML/nl/kolourpaint/common
 share/doc/HTML/nl/kolourpaint/index.cache.bz2
 share/doc/HTML/nl/kolourpaint/index.docbook
@@ -858,26 +829,19 @@ share/doc/HTML/nl/kompare/index.docbook
 share/doc/HTML/nl/konqueror/basics.docbook
 share/doc/HTML/nl/konqueror/bookmarks.docbook
 share/doc/HTML/nl/konqueror/browser.docbook
-share/doc/HTML/nl/konqueror/cmndline.png
 share/doc/HTML/nl/konqueror/commands.docbook
 share/doc/HTML/nl/konqueror/common
 share/doc/HTML/nl/konqueror/config.docbook
 share/doc/HTML/nl/konqueror/credits.docbook
-share/doc/HTML/nl/konqueror/dirtree.png
-share/doc/HTML/nl/konqueror/dragdrop.png
 share/doc/HTML/nl/konqueror/faq.docbook
 share/doc/HTML/nl/konqueror/filemanager.docbook
 share/doc/HTML/nl/konqueror/index.cache.bz2
 share/doc/HTML/nl/konqueror/index.docbook
 share/doc/HTML/nl/konqueror/introduction.docbook
-share/doc/HTML/nl/konqueror/konqorg.png
 share/doc/HTML/nl/konqueror/man-kbookmarkmerger.1.docbook
-share/doc/HTML/nl/konqueror/parts.png
 share/doc/HTML/nl/konqueror/path-complete.docbook
 share/doc/HTML/nl/konqueror/plugins.docbook
 share/doc/HTML/nl/konqueror/save-settings.docbook
-share/doc/HTML/nl/konqueror/shortcut1.png
-share/doc/HTML/nl/konqueror/shortcut2.png
 share/doc/HTML/nl/konqueror/sidebar.docbook
 share/doc/HTML/nl/konqueror/view-extensions.docbook
 share/doc/HTML/nl/konquest/common
@@ -1096,7 +1060,6 @@ share/doc/HTML/nl/kturtle/wrapping.png
 share/doc/HTML/nl/kuser/common
 share/doc/HTML/nl/kuser/index.cache.bz2
 share/doc/HTML/nl/kuser/index.docbook
-share/doc/HTML/nl/kuser/kuser.png
 share/doc/HTML/nl/kwallet/common
 share/doc/HTML/nl/kwallet/index.cache.bz2
 share/doc/HTML/nl/kwallet/index.docbook
@@ -2150,7 +2113,6 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/filelight
 @dirrm share/doc/HTML/nl/dragonplayer
 @dirrm share/doc/HTML/nl/dolphin
-@dirrm share/doc/HTML/nl/common
 @dirrm share/doc/HTML/nl/cervisia
 @dirrm share/doc/HTML/nl/cantor
 @dirrm share/doc/HTML/nl/bovo

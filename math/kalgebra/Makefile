@@ -25,6 +25,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl script scripttools xml \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
+CMAKE_ARGS+=	-DINSTALL_ANALITZA_HEADERS:BOOL=TRUE
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	READLINE "Install console interface" on

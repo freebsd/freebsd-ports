@@ -23,6 +23,9 @@ share/locale/tr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/tr/LC_MESSAGES/akonadi_kalarm_dir_resource.mo
+share/locale/tr/LC_MESSAGES/akonadi_kalarm_resource.mo
+share/locale/tr/LC_MESSAGES/akonadi_kalarm_resource_common.mo
 share/locale/tr/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_kdeaccounts_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_knut_resource.mo
@@ -125,6 +128,7 @@ share/locale/tr/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/tr/LC_MESSAGES/kateopenheader.mo
 share/locale/tr/LC_MESSAGES/katepart4.mo
 share/locale/tr/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/tr/LC_MESSAGES/katesearch.mo
 share/locale/tr/LC_MESSAGES/katesnippets_tng.mo
 share/locale/tr/LC_MESSAGES/katesql.mo
 share/locale/tr/LC_MESSAGES/katesymbolviewer.mo

@@ -1,0 +1,8 @@
+--- ./CMakeLists.txt.orig	2011-12-12 11:26:46.061238287 +0100
++++ ./CMakeLists.txt	2011-12-12 11:29:33.561244057 +0100
+@@ -48,3 +48,5 @@
+    macro_display_feature_log()
+ endif (${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
+ 
++set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modules)
++install(FILES ${CMAKE_SOURCE_DIR}/cmake/FindAnalitza.cmake DESTINATION ${module_install_dir})
