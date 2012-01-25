@@ -8000,6 +8000,7 @@ libmtp                          ports/audio/libmtp
 libmtrie                        ports/devel/libmtrie
 libmusicbrainz                  ports/audio/libmusicbrainz
 libmusicbrainz3                 ports/audio/libmusicbrainz3
+libmusicbrainz4                 ports/audio/libmusicbrainz4
 libmxp                          ports/net/libmxp
 libnaji                         ports/devel/libnaji
 libnatpmp                       ports/net/libnatpmp
@@ -11654,6 +11655,7 @@ p5-Dancer-Plugin-DataFu         ports/www/p5-Dancer-Plugin-DataFu
 p5-Dancer-Plugin-Database       ports/databases/p5-Dancer-Plugin-Database
 p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
 p5-Dancer-Plugin-Feed           ports/www/p5-Dancer-Plugin-Feed
+p5-Dancer-Plugin-Passphrase     ports/security/p5-Dancer-Plugin-Passphrase
 p5-Dancer-Plugin-Redis          ports/databases/p5-Dancer-Plugin-Redis
 p5-Dancer-Plugin-ValidationClass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-Dancer-Session-Memcached     ports/databases/p5-Dancer-Session-Memcached
@@ -13110,6 +13112,7 @@ p5-Moose-Policy                 ports/devel/p5-Moose-Policy
 p5-MooseX-Aliases               ports/devel/p5-MooseX-Aliases
 p5-MooseX-App-Cmd               ports/devel/p5-MooseX-App-Cmd
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
+p5-MooseX-Attribute-Chained     ports/devel/p5-MooseX-Attribute-Chained
 p5-MooseX-Attribute-ENV         ports/devel/p5-MooseX-Attribute-ENV
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ChainedAccessors      ports/devel/p5-MooseX-ChainedAccessors
@@ -15969,6 +15972,7 @@ p5-dancer-plugin-datafu         ports/www/p5-Dancer-Plugin-DataFu
 p5-dancer-plugin-dbic           ports/databases/p5-Dancer-Plugin-DBIC
 p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
 p5-dancer-plugin-feed           ports/www/p5-Dancer-Plugin-Feed
+p5-dancer-plugin-passphrase     ports/security/p5-Dancer-Plugin-Passphrase
 p5-dancer-plugin-redis          ports/databases/p5-Dancer-Plugin-Redis
 p5-dancer-plugin-validationclass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
@@ -17550,6 +17554,7 @@ p5-moose-policy                 ports/devel/p5-Moose-Policy
 p5-moosex-aliases               ports/devel/p5-MooseX-Aliases
 p5-moosex-app-cmd               ports/devel/p5-MooseX-App-Cmd
 p5-moosex-async                 ports/devel/p5-MooseX-Async
+p5-moosex-attribute-chained     ports/devel/p5-MooseX-Attribute-Chained
 p5-moosex-attribute-env         ports/devel/p5-MooseX-Attribute-ENV
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-chainedaccessors      ports/devel/p5-MooseX-ChainedAccessors
