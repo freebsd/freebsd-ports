@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	apiextractor
-PORTVERSION=	0.10.9
+PORTVERSION=	0.10.10
 #PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.pyside.org/files/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.pyside.org/files/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	API Extractor library to build PySide
