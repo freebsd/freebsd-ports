@@ -6,4 +6,3 @@ share/doc/tripwire/COPYING
 share/doc/tripwire/TRADEMARK
 share/doc/tripwire/policyguide.txt
 @dirrm share/doc/tripwire
-@unexec echo If permanently deleting this package, %%TWCFG%% and %%TWDB%% must be removed manually
