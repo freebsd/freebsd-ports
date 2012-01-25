@@ -16,15 +16,17 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER?=	crees@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-CONFLICTS?=	${PORTNAME}-client-[79].* \
-		${PORTNAME}${PKGNAMESUFFIX}-[79].* \
-		${PORTNAME}-client-8.[0-35-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-8.[0-35-9]*
+CONFLICTS?=	${PORTNAME}-client-[^${PORTVERSION:R:R}].* \
+		${PORTNAME}${PKGNAMESUFFIX}-[^${PORTVERSION:R:R}].* \
+		${PORTNAME}-client-8.[^${PORTVERSION:R:E}].* \
+		${PORTNAME}${PKGNAMESUFFIX}-8.[^${PORTVERSION:R:E}].*
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-UNIQUENAME?=	${PORTNAME}84
+ICU_PATCHFILE?=	pg-840-icu-2009-09-15.diff.gz:icu
+
+UNIQUENAME?=	${PORTNAME}${PORTVERSION:R:S/.//}
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
@@ -48,7 +50,7 @@ CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
 CONFIGURE_ENV+=	INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		LDFLAGS_SL="${LDFLAGS_SL}" \
+		LDFLAGS_SL="${LDFLAGS_SL}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -82,23 +84,31 @@ CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
 .if !defined(SLAVE_ONLY)
+. if ${DISTVERSION:R} == 8.4
 OPTIONS+=	DTRACE "Build with DTrace probes (server only)" off
+OPTIONS+=	GSSAPI "Build with GSSAPI support" off
+INTDATE=	on
+. else
+INTDATE=	off
+. endif
+. if ${DISTVERSION:R} == 8.4 || ${DISTVERSION:R} == 8.3
+OPTIONS+=	XML "Build with XML data type (server)" on
+OPTIONS+=	TZDATA "Use internal timezone database (server)" on
+. endif
+. if !empty(ICU_PATCHFILE)
+# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
+OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
+.endif
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
-OPTIONS+=	GSSAPI "Build with GSSAPI support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-OPTIONS+=	XML "Build with XML data type (server)" on
-OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
-
-# See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
-OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
+OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" ${INTDATE}
 OPTIONS+=	SSL "Build with OpenSSL support" on
 .endif # !SLAVE_ONLY
 
@@ -113,8 +123,8 @@ CONFIGURE_ARGS+=--with-openssl
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
-PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-840-icu-2009-09-15.diff.gz:icu
+PATCH_SITES+=	http://people.freebsd.org/~crees/postgresql-icu/:icu
+PATCHFILES+=	${ICU_PATCHFILE}:icu
 LIB_DEPENDS+=	icudata.48:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
@@ -156,6 +166,8 @@ PLIST_SUB+=	TZDATA="@comment "
 
 .  if defined(WITHOUT_INTDATE)
 CONFIGURE_ARGS+=--disable-integer-datetimes
+.  else
+CONFIGURE_ARGS+=--enable-integer-datetimes
 .  endif
 
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))
@@ -194,7 +206,7 @@ CONFIGURE_ARGS+=--without-gssapi
 
 .  if defined(WITH_MIT_KRB5)
 .    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
-BROKEN=		You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/src.conf to build successfully with MIT-KRB
+IGNORE=	requires that you remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/src.conf to build successfully with MIT-KRB
 .    endif
 # Allow defining a home built MIT Kerberos by setting KRB5_HOME
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
@@ -221,51 +233,56 @@ CONFIGURE_ARGS+=--with-krb5
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
-MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
+MAN1+=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
 		pg_config.1 pg_controldata.1 pg_ctl.1   \
 		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
 		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1
 
-MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
-		alter_domain.7 alter_foreign_data_wrapper.7 alter_function.7 alter_group.7 alter_server.7 \
-		alter_user_mapping.7		alter_index.7 alter_language.7 alter_operator_class.7	      \
+MAN7?=		alter_foreign_data_wrapper.7 alter_server.7 \
 		alter_operator_family.7 				      \
-		alter_role.7						      \
-		alter_schema.7 alter_sequence.7 alter_table.7		      \
 		alter_text_search_configuration.7			      \
 		alter_text_search_dictionary.7				      \
 		alter_text_search_parser.7				      \
 		alter_text_search_template.7				      \
-		alter_trigger.7 alter_user.7 alter_view.7 analyze.7 begin.7   \
+		alter_user_mapping.7 alter_view.7			      \
+		create_foreign_data_wrapper.7 create_server.7		      \
+		create_operator_family.7 create_user_mapping.7		      \
+		create_text_search_configuration.7			      \
+		create_text_search_dictionary.7				      \
+		create_text_search_parser.7				      \
+		create_text_search_template.7				      \
+		drop_text_search_configuration.7			      \
+		drop_text_search_dictionary.7				      \
+		drop_text_search_parser.7				      \
+		drop_text_search_template.7 				      \
+		discard.7 drop_foreign_data_wrapper.7 drop_server.7	      \
+		drop_operator_family.7 drop_user_mapping.7		      \
+		table.7 with.7
+MAN7+=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
+		alter_domain.7 alter_function.7 alter_group.7		      \
+		alter_index.7 alter_language.7 alter_operator_class.7	      \
+		alter_role.7						      \
+		alter_schema.7 alter_sequence.7 alter_table.7		      \
+		alter_trigger.7 alter_user.7 analyze.7 begin.7		      \
 		checkpoint.7 close.7 cluster.7 comment.7 commit.7	      \
 		commit_prepared.7					      \
 		copy.7 create_aggregate.7 create_cast.7			      \
 		create_constraint_trigger.7 create_conversion.7		      \
-		create_database.7 create_domain.7 create_foreign_data_wrapper.7 \
-		create_function.7	      \
+		create_database.7 create_domain.7 create_function.7	      \
 		create_group.7 create_index.7 create_language.7		      \
 		create_operator.7 create_operator_class.7		      \
-		create_operator_family.7 create_role.7			      \
-		create_rule.7 create_schema.7 create_sequence.7		      \
-		create_server.7 create_table.7 create_table_as.7			      \
-		create_text_search_configuration.7			      \
-		create_text_search_dictionary.7				      \
-		create_text_search_parser.7				      \
-		create_text_search_template.7 create_trigger.7		      \
-		create_type.7 create_user.7 create_user_mapping.7 create_view.7 deallocate.7	      \
-		declare.7 delete.7 discard.7				      \
+		create_role.7 create_rule.7 create_schema.7 create_sequence.7 \
+		create_table.7 create_table_as.7 create_trigger.7	      \
+		create_type.7 create_user.7 create_view.7 deallocate.7	      \
+		declare.7 delete.7					      \
 		drop_aggregate.7 drop_cast.7 drop_conversion.7		      \
-		drop_database.7 drop_domain.7 drop_foreign_data_wrapper.7 drop_function.7		      \
+		drop_database.7 drop_domain.7 drop_function.7		      \
 		drop_group.7 drop_index.7 drop_language.7		      \
-		drop_operator.7 drop_operator_class.7 drop_operator_family.7  \
+		drop_operator.7 drop_operator_class.7			      \
 		drop_owned.7 drop_role.7 drop_rule.7			      \
-		drop_schema.7 drop_sequence.7 drop_server.7 drop_table.7		      \
-		drop_text_search_configuration.7			      \
-		drop_text_search_dictionary.7				      \
-		drop_text_search_parser.7				      \
-		drop_text_search_template.7 drop_trigger.7		      \
-		drop_type.7 drop_user.7 drop_user_mapping.7 drop_view.7 end.7 execute.7	      \
+		drop_schema.7 drop_sequence.7 drop_table.7 drop_trigger.7     \
+		drop_type.7 drop_user.7 drop_view.7 end.7 execute.7	      \
 		explain.7 fetch.7 grant.7 insert.7 listen.7 load.7	      \
 		lock.7 move.7 notify.7 prepare.7 prepare_transaction.7	      \
 		reassign_owned.7 reindex.7 reset.7			      \
@@ -273,11 +290,11 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		select_into.7 set.7					      \
 		set_constraints.7 set_role.7 set_transaction.7 show.7	      \
 		set_session_authorization.7 start_transaction.7		      \
-		table.7 truncate.7 unlisten.7 update.7 vacuum.7			      \
+		truncate.7 unlisten.7 update.7 vacuum.7			      \
 		alter_operator.7 alter_tablespace.7 alter_type.7	      \
 		create_tablespace.7 drop_tablespace.7			      \
 		release_savepoint.7 rollback_to_savepoint.7		      \
-		savepoint.7 values.7 with.7
+		savepoint.7 values.7
 .endif
 
 PLIST_SUB+=	PG_USER=$(PG_USER) \
@@ -300,8 +317,12 @@ pre-configure:
 	@exit 1
 .  endif
 
-do-build:
+.if !target(pre-build)
+pre-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
+.endif
+	
+do-build:
 	@ for dir in ${BUILD_DIRS}; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
 	done
@@ -348,9 +369,7 @@ do-install:
 	@ if [ -r ${PKGMESSAGE} ]; then \
 		${MKDIR} ${DOCSDIR} ;\
 		${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README${PKGNAMESUFFIX} ;\
-		${ECHO} "======================================================================" ;\
 		${CAT} ${PKGMESSAGE} ;\
-		${ECHO} "======================================================================" ;\
 	fi
 .endif # !NO_BUILD
 
