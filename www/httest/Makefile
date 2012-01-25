@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httest
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.12
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	htt/htt2.1/${PORTNAME}-${PORTVERSION}
@@ -21,12 +21,15 @@ LICENSE=	AL2
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+USE_LUA=	yes
 
-LDFLAGS+=	-lm
+LDFLAGS+=	-L${LUA_LIBDIR} -lm
 
 CONFIGURE_ARGS+=--with-apr="${LOCALBASE}/bin" \
 		--with-apr-util="${LOCALBASE}/bin" \
-		--with-pcre="${LOCALBASE}/bin"
+		--with-pcre="${LOCALBASE}/bin" \
+		--with-lua="${LUA_INCDIR}" \
+		--enable-lua-module
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
