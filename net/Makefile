@@ -643,6 +643,7 @@
     SUBDIR += p5-Net-SSH2
     SUBDIR += p5-Net-Server
     SUBDIR += p5-Net-Server-Coro
+    SUBDIR += p5-Net-Server-SS-PreFork
     SUBDIR += p5-Net-Services
     SUBDIR += p5-Net-Subnet
     SUBDIR += p5-Net-Subnets
