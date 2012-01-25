@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pyside
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 #PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.pyside.org/files/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.pyside.org/files/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}-qt${QT4_VERSION:R}+${PORTVERSION}
 

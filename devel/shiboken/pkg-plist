@@ -7,13 +7,15 @@ include/shiboken/conversions.h
 include/shiboken/gilstate.h
 include/shiboken/helper.h
 include/shiboken/python25compat.h
+include/shiboken/sbkconverter.h
 include/shiboken/sbkdbg.h
 include/shiboken/sbkenum.h
 include/shiboken/sbkmodule.h
 include/shiboken/sbkpython.h
 include/shiboken/sbkstring.h
-include/shiboken/shibokenbuffer.h
+include/shiboken/sbkversion.h
 include/shiboken/shiboken.h
+include/shiboken/shibokenbuffer.h
 include/shiboken/shibokenmacros.h
 include/shiboken/threadstatesaver.h
 include/shiboken/typeresolver.h
