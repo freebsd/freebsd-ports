@@ -40,6 +40,7 @@ sbin/assplog
 %%DATADIR%%/files/tlds-alpha-by-domain.txt
 %%DATADIR%%/files/uriblwhite.txt
 %%DATADIR%%/files/validptr.txt
+%%DATADIR%%/files/whiteptr.txt
 %%DATADIR%%/files/whiteorg.txt
 %%DATADIR%%/images/assp.css
 %%DATADIR%%/images/blockreport.css
@@ -73,6 +74,8 @@ sbin/assplog
 %%DATADIR%%/reports/notspamreport.txt
 %%DATADIR%%/reports/npremovereport.txt
 %%DATADIR%%/reports/npreport.txt
+%%DATADIR%%/reports/persblackremovereport.txt
+%%DATADIR%%/reports/persblackreport.txt
 %%DATADIR%%/reports/redremovereport.txt
 %%DATADIR%%/reports/redreport.txt
 %%DATADIR%%/reports/slremovereport.txt

@@ -19,7 +19,7 @@ if [ "${2}" = "POST-INSTALL" ]; then
     ln -sf ${DATADIR}/files ${ASSP_HOME}
     ln -sf ${DATADIR}/images ${ASSP_HOME}
     ln -sf ${DATADIR}/reports ${ASSP_HOME}
-    ln -sf ${DATADIR}/rebuildspam.pl ${ASSP_HOME}
+    ln -sf ${DATADIR}/rebuildspamdb.pl ${ASSP_HOME}
     ln -sf ${ASSP_LOG} ${ASSP_HOME}/logs
 
 fi
