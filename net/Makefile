@@ -851,6 +851,7 @@
     SUBDIR += pvm++
     SUBDIR += pxe
     SUBDIR += py-GeoIP
+    SUBDIR += py-amqplib
     SUBDIR += py-avahi
     SUBDIR += py-beanstalkc
     SUBDIR += py-cloudfiles
