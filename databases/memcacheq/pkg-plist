@@ -1,0 +1,2 @@
+bin/memcacheq
+@exec /usr/bin/install -d -o nobody -g nobody %%MCQDIR%% || true
