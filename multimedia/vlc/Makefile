@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.13
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -553,7 +553,7 @@ CONFIGURE_ARGS+=--disable-smb
 .endif
 
 .if defined(WITH_SCHROED)
-LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=--enable-schroedinger
 .else
 CONFIGURE_ARGS+=--disable-schroedinger
