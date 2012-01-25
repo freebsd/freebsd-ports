@@ -85,6 +85,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Chinese (Simple)/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Dutch/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English/strings.xml
+%%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/German/strings.xml
 %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hungarian/strings.xml
@@ -119,10 +120,12 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.yahoomusic.com/icon.png
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Dutch/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/English/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Hungarian/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/settings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/yahoomusic.xml
 %%DATADIR%%/addons/repository.xbmc.org/addon.xml
@@ -311,6 +314,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/language/Italian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Japanese/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Korean/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Lithuanian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Norwegian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Polish/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Portuguese (Brazil)/strings.xml
@@ -748,7 +752,9 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/weather.wunderground/default.py
 %%DATADIR%%/addons/weather.wunderground/icon.png
 %%DATADIR%%/addons/weather.wunderground/resources/language/English/strings.xml
+%%DATADIR%%/addons/weather.wunderground/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/German/strings.xml
+%%DATADIR%%/addons/weather.wunderground/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/lib/utilities.py
 %%DATADIR%%/addons/weather.wunderground/resources/settings.xml
 %%DATADIR%%/addons/webinterface.default/addon.xml
@@ -835,6 +841,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/language/Japanese/strings.xml
 %%DATADIR%%/language/Korean/langinfo.xml
 %%DATADIR%%/language/Korean/strings.xml
+%%DATADIR%%/language/Lithuanian/langinfo.xml
+%%DATADIR%%/language/Lithuanian/strings.xml
 %%DATADIR%%/language/Maltese/langinfo.xml
 %%DATADIR%%/language/Maltese/strings.xml
 %%DATADIR%%/language/Norwegian/langinfo.xml
@@ -1017,6 +1025,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/language/Polish
 @dirrm %%DATADIR%%/language/Norwegian
 @dirrm %%DATADIR%%/language/Maltese
+@dirrm %%DATADIR%%/language/Lithuanian
 @dirrm %%DATADIR%%/language/Korean
 @dirrm %%DATADIR%%/language/Japanese
 @dirrm %%DATADIR%%/language/Italian
@@ -1054,7 +1063,9 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/webinterface.default/images
 @dirrm %%DATADIR%%/addons/webinterface.default/css
 @dirrm %%DATADIR%%/addons/webinterface.default
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Swedish
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/German
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/English
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/lib
@@ -1158,6 +1169,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Portuguese
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Polish
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Norwegian
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Lithuanian
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Korean
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Japanese
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Italian
@@ -1229,10 +1241,12 @@ share/xsessions/XBMC.desktop
 %%RSXS%%@dirrm %%DATADIR%%/addons/screensaver.rsxs.plasma
 %%RSXS%%@dirrm %%DATADIR%%/addons/screensaver.rsxs.euphoria
 @dirrm %%DATADIR%%/addons/repository.xbmc.org
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Swedish
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Polish
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Korean
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Hungarian
+@dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/English
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Dutch
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language
@@ -1264,6 +1278,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Hungarian
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/German
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/French
+@dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/English
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Dutch
 @dirrm %%DATADIR%%/addons/metadata.themoviedb.org/resources/language/Chinese (Simple)
