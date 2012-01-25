@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/docgenerator
 bin/generatorrunner
 include/generatorrunner/generator.h
