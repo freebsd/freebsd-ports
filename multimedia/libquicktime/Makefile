@@ -7,7 +7,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -153,7 +153,7 @@ CONFIGURE_ARGS+=	--without-x264
 .endif
 
 .if !defined(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
 PLIST_SUB+=	SCHROEDINGER=""
 .else
 PLIST_SUB+=	SCHROEDINGER="@comment "

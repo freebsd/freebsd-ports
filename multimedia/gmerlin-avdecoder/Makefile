@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -173,7 +173,7 @@ CONFIGURE_ARGS+=--disable-openjpeg
 .endif
 
 .if !defined(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.11:${PORTSDIR}/multimedia/schroedinger
 .else
 CONFIGURE_ARGS+=--disable-schroedinger
 .endif

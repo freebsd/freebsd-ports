@@ -36,7 +36,7 @@ include/schroedinger-1.0/schroedinger/schrowavelet.h
 lib/libschroedinger-1.0.a
 lib/libschroedinger-1.0.la
 lib/libschroedinger-1.0.so
-lib/libschroedinger-1.0.so.10
+lib/libschroedinger-1.0.so.11
 libdata/pkgconfig/schroedinger-1.0.pc
 share/gtk-doc/html/schroedinger/home.png
 share/gtk-doc/html/schroedinger/index.html
@@ -71,7 +71,6 @@ share/gtk-doc/html/schroedinger/schroedinger-schrounpack.html
 share/gtk-doc/html/schroedinger/schroedinger-schroutils.html
 share/gtk-doc/html/schroedinger/schroedinger-schrovideoformat.html
 share/gtk-doc/html/schroedinger/schroedinger-schrowavelet.html
-share/gtk-doc/html/schroedinger/schroedinger.devhelp
 share/gtk-doc/html/schroedinger/schroedinger.devhelp2
 share/gtk-doc/html/schroedinger/schrointernal.html
 share/gtk-doc/html/schroedinger/schropublic.html
