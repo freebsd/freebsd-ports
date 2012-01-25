@@ -1,0 +1,32 @@
+%%PYTHON_SITELIBDIR%%/amqplib/__init__.py
+%%PYTHON_SITELIBDIR%%/amqplib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/__init__.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/__init__.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/__init__.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/abstract_channel.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/abstract_channel.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/abstract_channel.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/basic_message.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/basic_message.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/basic_message.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/channel.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/channel.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/channel.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/connection.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/connection.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/connection.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/exceptions.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/method_framing.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/method_framing.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/method_framing.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/serialization.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/serialization.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/serialization.pyo
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/transport.py
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/transport.pyc
+%%PYTHON_SITELIBDIR%%/amqplib/client_0_8/transport.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/amqplib/client_0_8
+@dirrm %%PYTHON_SITELIBDIR%%/amqplib
