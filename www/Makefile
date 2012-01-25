@@ -1527,7 +1527,6 @@
     SUBDIR += py-requests-oauth-hook
     SUBDIR += py-restclient
     SUBDIR += py-routes
-    SUBDIR += py-rssdler
     SUBDIR += py-satchmo
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
