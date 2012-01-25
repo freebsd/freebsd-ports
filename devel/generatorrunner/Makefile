@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	generatorrunner
-PORTVERSION=	0.6.15
+PORTVERSION=	0.6.16
 #PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.pyside.org/files/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.pyside.org/files/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tool to create binding generators for C++ and Qt libraries
