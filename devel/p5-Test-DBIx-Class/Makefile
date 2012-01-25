@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easier test cases for your DBIx::Class applications
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 SHARED_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
 		p5-DBIx-Class>=0.08123:${PORTSDIR}/databases/p5-DBIx-Class \
