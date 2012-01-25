@@ -31,6 +31,7 @@ lib/liborc-test-0.4.la
 lib/liborc-test-0.4.so
 lib/liborc-test-0.4.so.0
 libdata/pkgconfig/orc-0.4.pc
+share/aclocal/orc.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1orc.orc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example2
