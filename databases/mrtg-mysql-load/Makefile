@@ -12,7 +12,7 @@ CATEGORIES=	databases net-mgmt
 MASTER_SITES=	http://www.bitbybit.dk/mysql/mrtg-mysql-load/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A MySQL load analysis fetcher for MRTG
 
 RUN_DEPENDS=	mrtg:${PORTSDIR}/net-mgmt/mrtg
