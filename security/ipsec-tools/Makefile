@@ -11,7 +11,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -61,7 +61,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900007
-EXTRA_PATCHES=files/patch8-utmp.diff
+EXTRA_PATCHES=	${FILESDIR}/patch8-utmp.diff
 .endif
 
 .ifdef(WITH_DEBUG)
