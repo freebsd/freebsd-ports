@@ -19,8 +19,7 @@ COMMENT=	Open source Mathematics software
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		latex:${PORTSDIR}/print/teTeX-base \
 		autoconf-2.68:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
-		atlas:${PORTSDIR}/math/atlas \
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -30,11 +29,12 @@ PLIST_FILES=	bin/sage
 USE_FORTRAN=	yes
 USE_TK=		yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAKE_ENV+=	SAGE_PORT=yes \
 		SAGE_FORTRAN=${LOCALBASE}/bin/${FC} \
-		SAGE_FORTRAN_LIB=${LOCALBASE}/lib/gcc${FC:S/gfortran//}/libgfortran.so \
+		SAGE_FORTRAN_LIB=${LOCALBASE}/lib/gcc${GCC_DEFAULT_V}/libgfortran.so \
 		SAGE_ATLAS_LIB=${LOCALBASE}/lib
 
 # The following is needed for the lapack subpackage.
@@ -62,14 +62,14 @@ post-patch:
 		if [ -e $$f-orig ]; then \
 			${MV} $$f-orig $$f; \
 		fi; \
-		bunzip2 -c $$f | ${TAR} -xf -; \
+		${BZIP2_CMD} -dc $$f | ${TAR} -xf -; \
 		${ECHO_CMD} "Patching $$t:"; \
 		for p in ${FILESDIR}/spkg-patch-$${t}_-_*; do \
 			${ECHO_CMD} "	applying $$p" | ${SED} -e 's#${FILESDIR}/.*_-_##' ; \
 			${PATCH} < $$p 2>/dev/null || exit 1; \
 		done; \
 		${MV} $$f $$f-orig; \
-		${TAR} -cf - $$t | bzip2 -c > $$f; \
+		${TAR} -cf - $$t | ${BZIP2_CMD} -c > $$f; \
 		${RM} -rf $$t; \
 	done
 
@@ -91,7 +91,7 @@ MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
 # the maxima subpackage.  See
 # http://www.freebsd.org/cgi/query-pr.cgi?pr=164361
 do-build:
-	LDFLAGS=`${ECHO_CMD} ${LDFLAGS}`; \
+	LDFLAGS=${LDFLAGS:C|^ ||}; \
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} LDFLAGS="$${LDFLAGS}" ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
 	${MKDIR} ${WRKDIR}/bin
 	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${WRKDIR}/bin/sage
