@@ -29,6 +29,7 @@ include/fxt/aux2-all.h
 include/fxt/aux2/copy2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
+include/fxt/bits/fibrep-sl.h
 include/fxt/bits/bit-dragon-r4.h
 include/fxt/bits/bitzip-pairs.h
 include/fxt/bits/radix-2i.h
@@ -151,6 +152,9 @@ include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/mixedradix-gslex-alt2.h
+include/fxt/comb/mixedradix-naf-sl.h
+include/fxt/comb/paren-string-to-rgs.h
 include/fxt/comb/binary-sl-gray.h
 include/fxt/comb/mixedradix-naf-gray.h
 include/fxt/comb/acgray.h
@@ -474,6 +478,7 @@ include/fxt/walsh/walshwalrev.h
 include/fxt/walsh/weighted-arithtransform.h
 include/fxt/walsh/weighted-or-convolution.h
 include/fxt/wavelet-all.h
+include/fxt/wavelet/harmonic-wavelet.h
 include/fxt/wavelet/daubechies.h
 include/fxt/wavelet/wavelet.h
 include/fxt/wavelet/waveletfilter.h
@@ -592,8 +597,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r9-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-texpic-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/gotcha-demo.cc
@@ -618,6 +621,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/hilbert-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/modular-lookup-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/modular-lookup-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/hilbert-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/hilbert-gray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-sl-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-sl-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/negbin-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/negbin-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/negbin2-demo.cc
@@ -640,6 +647,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-sl-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-gslex-alt2-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-sl-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-gslex-alt2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-sl-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/binary-sl-gray-demo.cc
