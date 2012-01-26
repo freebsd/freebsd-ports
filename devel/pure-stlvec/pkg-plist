@@ -1,0 +1,13 @@
+lib/pure/stlalgorithm.so
+lib/pure/stlbase.pure
+lib/pure/stlcontainer.so
+lib/pure/stlvec.pure
+lib/pure/stlvec/algorithms.pure
+lib/pure/stlvec/heap.pure
+lib/pure/stlvec/merge.pure
+lib/pure/stlvec/minmax.pure
+lib/pure/stlvec/modifying.pure
+lib/pure/stlvec/nonmodifying.pure
+lib/pure/stlvec/numeric.pure
+lib/pure/stlvec/sort.pure
+@dirrm lib/pure/stlvec
