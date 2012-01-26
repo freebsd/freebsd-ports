@@ -7,6 +7,7 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.34.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.sg/pub/dtc/bsd/ \
 		ftp://qala-sg.apt-proxy.gplhost.sg/pub/dtc/bsd/ \
@@ -77,7 +78,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/visitors:${PORTSDIR}/www/visitors
 .if defined(WITH_PUREFTPD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/pure-ftpd:${PORTSDIR}/ftp/pure-ftpd
 .elif defined(WITH_PROFTPD)
-RUN_DEPENDS+=	proftpd-mysql>=0:${PORTSDIR}/ftp/proftpd-mysql
+RUN_DEPENDS+=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:${PORTSDIR}/databases/proftpd-mod_sql_mysql
 .endif
 
 .if defined(WITH_POSTFIX)
