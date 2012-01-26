@@ -1,0 +1,6 @@
+Clay is a programming language designed for Generic Programming.
+It provides whole program type propagation and efficient type-specialized
+code generation. Let you write generic programs less verbose and
+have the same memory footprint and runtime overhead as C.
+
+WWW: https://github.com/jckarter/clay
