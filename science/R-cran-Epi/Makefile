@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Epi
-PORTVERSION=	1.1.24
-PORTREVISION=	3
+PORTVERSION=	1.1.33
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A package for statistical analysis in epidemiology
+
+LICENSE=	GPLv2
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
