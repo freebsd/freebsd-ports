@@ -6,24 +6,18 @@
 #
 
 PORTNAME=	pure-csv
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A CSV reading and writing module for the Pure language
 
-LIB_DEPENDS+=	pure:${PORTSDIR}/lang/pure
-
-LICENSE_FILE=	${WRKSRC}/COPYING
+USE_PURE=	yes
+NO_PURE_EXAMPLES=	yes
 
 PLIST_FILES=	lib/pure/csv.pure \
 		lib/pure/csv.so
 
-USE_GCC=	4.2+
-USE_GMAKE=	yes
-
-MAKE_ARGS+=	prefix=${PREFIX} CPPFLAGS+=-I${LOCALBASE}/include \
-		LDFLAGS+=-L${LOCALBASE}/lib CFLAGS="${CFLAGS}"
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
+.include <bsd.port.post.mk>
