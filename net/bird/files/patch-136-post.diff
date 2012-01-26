@@ -1,0 +1,507 @@
+diff --git nest/config.Y nest/config.Y
+index a6baf4e..3fcfa52 100644
+--- nest/config.Y
++++ nest/config.Y
+@@ -219,7 +219,6 @@ CF_ADDTO(proto, dev_proto '}')
+ 
+ dev_proto_start: proto_start DIRECT {
+      this_proto = proto_config_new(&proto_device, sizeof(struct rt_dev_config), $1);
+-     this_proto->preference = DEF_PREF_DIRECT;
+      init_list(&DIRECT_CFG->iface_list);
+    }
+  ;
+diff --git nest/iface.c nest/iface.c
+index b8b214e..eea3d3b 100644
+--- nest/iface.c
++++ nest/iface.c
+@@ -253,6 +253,24 @@ if_change_flags(struct iface *i, unsigned flags)
+ }
+ 
+ /**
++ * if_delete - remove interface 
++ * @old: interface 
++ *
++ * This function is called by the low-level platform dependent code
++ * whenever it notices an interface disappears. It is just a shorthand
++ * for if_update().
++ */
++
++void
++if_delete(struct iface *old)
++{
++  struct iface f = {};
++  strncpy(f.name, old->name, sizeof(f.name)-1);
++  f.flags = IF_SHUTDOWN;
++  if_update(&f);
++}
++
++/**
+  * if_update - update interface status
+  * @new: new interface status
+  *
+@@ -288,13 +306,14 @@ if_update(struct iface *new)
+ 	    new->addr = i->addr;
+ 	    memcpy(&new->addrs, &i->addrs, sizeof(i->addrs));
+ 	    memcpy(i, new, sizeof(*i));
++	    i->flags &= ~IF_UP; /* IF_TMP_DOWN will be added later */
+ 	    goto newif;
+ 	  }
+-	else if (c)
+-	  {
+-	    if_copy(i, new);
+-	    if_notify_change(c, i);
+-	  }
++
++	if_copy(i, new);
++	if (c)
++	  if_notify_change(c, i);
++
+ 	i->flags |= IF_UPDATED;
+ 	return i;
+       }
+@@ -400,7 +419,7 @@ if_find_by_index(unsigned idx)
+   struct iface *i;
+ 
+   WALK_LIST(i, iface_list)
+-    if (i->index == idx)
++    if (i->index == idx && !(i->flags & IF_SHUTDOWN))
+       return i;
+   return NULL;
+ }
+diff --git nest/iface.h nest/iface.h
+index d6d58ff..2416f82 100644
+--- nest/iface.h
++++ nest/iface.h
+@@ -88,6 +88,7 @@ void ifa_dump(struct ifa *);
+ void if_show(void);
+ void if_show_summary(void);
+ struct iface *if_update(struct iface *);
++void if_delete(struct iface *old);
+ struct ifa *ifa_update(struct ifa *);
+ void ifa_delete(struct ifa *);
+ void if_start_update(void);
+diff --git nest/proto.c nest/proto.c
+index d55c348..0fc72ce 100644
+--- nest/proto.c
++++ nest/proto.c
+@@ -200,6 +200,7 @@ proto_config_new(struct protocol *pr, unsigned size, int class)
+   c->global = new_config;
+   c->protocol = pr;
+   c->name = pr->name;
++  c->preference = pr->preference;
+   c->class = class;
+   c->out_filter = FILTER_REJECT;
+   c->table = c->global->master_rtc;
+diff --git nest/protocol.h nest/protocol.h
+index 3766e15..a83c4ff 100644
+--- nest/protocol.h
++++ nest/protocol.h
+@@ -39,6 +39,7 @@ struct protocol {
+   char *template;			/* Template for automatic generation of names */
+   int name_counter;			/* Counter for automatic name generation */
+   int attr_class;			/* Attribute class known to this protocol */
++  unsigned preference;			/* Default protocol preference */
+ 
+   void (*preconfig)(struct protocol *, struct config *);	/* Just before configuring */
+   void (*postconfig)(struct proto_config *);			/* After configuring each instance */
+diff --git nest/rt-dev.c nest/rt-dev.c
+index 497ee80..54cb14b 100644
+--- nest/rt-dev.c
++++ nest/rt-dev.c
+@@ -109,6 +109,7 @@ dev_copy_config(struct proto_config *dest, struct proto_config *src)
+ struct protocol proto_device = {
+   name:		"Direct",
+   template:	"direct%d",
++  preference:	DEF_PREF_DIRECT,
+   init:		dev_init,
+   reconfigure:	dev_reconfigure,
+   copy_config:	dev_copy_config
+diff --git proto/bgp/bgp.c proto/bgp/bgp.c
+index 66fdc60..4d3c32f 100644
+--- proto/bgp/bgp.c
++++ proto/bgp/bgp.c
+@@ -1178,6 +1178,7 @@ struct protocol proto_bgp = {
+   name:			"BGP",
+   template:		"bgp%d",
+   attr_class:		EAP_BGP,
++  preference:		DEF_PREF_BGP,
+   init:			bgp_init,
+   start:		bgp_start,
+   shutdown:		bgp_shutdown,
+diff --git proto/bgp/config.Y proto/bgp/config.Y
+index 5fb6094..78ca52d 100644
+--- proto/bgp/config.Y
++++ proto/bgp/config.Y
+@@ -33,7 +33,6 @@ CF_ADDTO(proto, bgp_proto '}' { bgp_check_config(BGP_CFG); } )
+ 
+ bgp_proto_start: proto_start BGP {
+      this_proto = proto_config_new(&proto_bgp, sizeof(struct bgp_config), $1);
+-     this_proto->preference = DEF_PREF_BGP;
+      BGP_CFG->hold_time = 240;
+      BGP_CFG->connect_retry_time = 120;
+      BGP_CFG->initial_hold_time = 240;
+diff --git proto/ospf/config.Y proto/ospf/config.Y
+index 4ada41e..24e125a 100644
+--- proto/ospf/config.Y
++++ proto/ospf/config.Y
+@@ -129,7 +129,6 @@ CF_ADDTO(proto, ospf_proto '}' { ospf_proto_finish(); } )
+ 
+ ospf_proto_start: proto_start OSPF {
+      this_proto = proto_config_new(&proto_ospf, sizeof(struct ospf_config), $1);
+-     this_proto->preference = DEF_PREF_OSPF;
+      init_list(&OSPF_CFG->area_list);
+      init_list(&OSPF_CFG->vlink_list);
+      OSPF_CFG->rfc1583 = DEFAULT_RFC1583;
+diff --git proto/ospf/ospf.c proto/ospf/ospf.c
+index ce7ad37..73c06c2 100644
+--- proto/ospf/ospf.c
++++ proto/ospf/ospf.c
+@@ -1542,6 +1542,7 @@ struct protocol proto_ospf = {
+   name:			"OSPF",
+   template:		"ospf%d",
+   attr_class:		EAP_OSPF,
++  preference:		DEF_PREF_OSPF,
+   init:			ospf_init,
+   dump:			ospf_dump,
+   start:		ospf_start,
+diff --git proto/ospf/ospf.h proto/ospf/ospf.h
+index 60a34fb..d696151 100644
+--- proto/ospf/ospf.h
++++ proto/ospf/ospf.h
+@@ -177,7 +177,7 @@ struct ospf_area_config
+ struct ospf_iface
+ {
+   node n;
+-  struct iface *iface;		/* Nest's iface */
++  struct iface *iface;		/* Nest's iface, non-NULL (unless type OSPF_IT_VLINK) */
+   struct ifa *addr;		/* IP prefix associated with that OSPF iface */
+   struct ospf_area *oa;
+   struct ospf_iface_patt *cf;
+diff --git proto/ospf/packet.c proto/ospf/packet.c
+index df67d5a..7a26967 100644
+--- proto/ospf/packet.c
++++ proto/ospf/packet.c
+@@ -489,17 +489,17 @@ ospf_rx_hook(sock *sk, int size)
+ void
+ ospf_tx_hook(sock * sk)
+ {
+-//  struct ospf_iface *ifa= (struct ospf_iface *) (sk->data);
++  struct ospf_iface *ifa= (struct ospf_iface *) (sk->data);
+ //  struct proto *p = (struct proto *) (ifa->oa->po);
+-  log(L_ERR "OSPF: TX_Hook called");
++  log(L_ERR "OSPF: TX hook called on %s", ifa->iface->name);
+ }
+ 
+ void
+ ospf_err_hook(sock * sk, int err)
+ {
+-//  struct ospf_iface *ifa= (struct ospf_iface *) (sk->data);
++  struct ospf_iface *ifa= (struct ospf_iface *) (sk->data);
+ //  struct proto *p = (struct proto *) (ifa->oa->po);
+-  log(L_ERR "OSPF: Socket error: %M", err);
++  log(L_ERR "OSPF: Socket error on %s: %M", ifa->iface->name, err);
+ }
+ 
+ void
+diff --git proto/pipe/config.Y proto/pipe/config.Y
+index 4478afe..4063755 100644
+--- proto/pipe/config.Y
++++ proto/pipe/config.Y
+@@ -24,7 +24,6 @@ CF_ADDTO(proto, pipe_proto '}')
+ 
+ pipe_proto_start: proto_start PIPE {
+      this_proto = proto_config_new(&proto_pipe, sizeof(struct pipe_config), $1);
+-     this_proto->preference = DEF_PREF_PIPE;
+      PIPE_CFG->mode = PIPE_TRANSPARENT;
+   }
+  ;
+diff --git proto/pipe/pipe.c proto/pipe/pipe.c
+index 420c5a9..fe8618b 100644
+--- proto/pipe/pipe.c
++++ proto/pipe/pipe.c
+@@ -197,6 +197,7 @@ pipe_get_status(struct proto *P, byte *buf)
+ struct protocol proto_pipe = {
+   name:		"Pipe",
+   template:	"pipe%d",
++  preference:	DEF_PREF_PIPE,
+   postconfig:	pipe_postconfig,
+   init:		pipe_init,
+   start:	pipe_start,
+diff --git proto/rip/rip.c proto/rip/rip.c
+index 543aa30..f0a4134 100644
+--- proto/rip/rip.c
++++ proto/rip/rip.c
+@@ -975,7 +975,6 @@ void
+ rip_init_config(struct rip_proto_config *c)
+ {
+   init_list(&c->iface_list);
+-  c->c.preference = DEF_PREF_RIP;
+   c->infinity	= 16;
+   c->port	= 520;
+   c->period	= 30;
+@@ -1032,6 +1031,7 @@ struct protocol proto_rip = {
+   name: "RIP",
+   template: "rip%d",
+   attr_class: EAP_RIP,
++  preference: DEF_PREF_RIP,
+   get_route_info: rip_get_route_info,
+   get_attr: rip_get_attr,
+ 
+diff --git proto/static/static.c proto/static/static.c
+index f6c2a33..aaa9bfa 100644
+--- proto/static/static.c
++++ proto/static/static.c
+@@ -353,7 +353,6 @@ static_if_notify(struct proto *p, unsigned flags, struct iface *i)
+ void
+ static_init_config(struct static_config *c)
+ {
+-  c->c.preference = DEF_PREF_STATIC;
+   init_list(&c->iface_routes);
+   init_list(&c->other_routes);
+ }
+@@ -523,6 +522,7 @@ static_copy_config(struct proto_config *dest, struct proto_config *src)
+ struct protocol proto_static = {
+   name:		"Static",
+   template:	"static%d",
++  preference:	DEF_PREF_STATIC,
+   init:		static_init,
+   dump:		static_dump,
+   start:	static_start,
+diff --git sysdep/bsd/krt-sock.c sysdep/bsd/krt-sock.c
+index 4bf6600..4ee5495 100644
+--- sysdep/bsd/krt-sock.c
++++ sysdep/bsd/krt-sock.c
+@@ -410,14 +410,42 @@ krt_read_rt(struct ks_msg *msg, struct krt_proto *p, int scan)
+ }
+ 
+ static void
++krt_read_ifannounce(struct ks_msg *msg)
++{
++  struct if_announcemsghdr *ifam = (struct if_announcemsghdr *)&msg->rtm;
++
++  if (ifam->ifan_what == IFAN_ARRIVAL)
++  {
++    /* Not enough info to create the iface, so we just trigger iface scan */
++    kif_request_scan();
++  }
++  else if (ifam->ifan_what == IFAN_DEPARTURE)
++  {
++    struct iface *iface = if_find_by_index(ifam->ifan_index);
++
++    /* Interface is destroyed */
++    if (!iface)
++    {
++      DBG("KRT: unknown interface (%s, #%d) going down. Ignoring\n", ifam->ifan_name, ifam->ifan_index);
++      return;
++    }
++
++    if_delete(iface);
++  }
++
++  DBG("KRT: IFANNOUNCE what: %d index %d name %s\n", ifam->ifan_what, ifam->ifan_index, ifam->ifan_name);
++}
++
++static void
+ krt_read_ifinfo(struct ks_msg *msg)
+ {
+   struct if_msghdr *ifm = (struct if_msghdr *)&msg->rtm;
+   void *body = (void *)(ifm + 1);
+   struct sockaddr_dl *dl = NULL;
+   unsigned int i;
+-  struct iface *iface = NULL, f;
++  struct iface *iface = NULL, f = {};
+   int fl = ifm->ifm_flags;
++  int nlen = 0;
+ 
+   for (i = 1; i<=RTA_IFP; i <<= 1)
+   {
+@@ -432,31 +460,42 @@ krt_read_ifinfo(struct ks_msg *msg)
+     }
+   }
+ 
+-  if(dl && (dl->sdl_family != AF_LINK))
++  if (dl && (dl->sdl_family != AF_LINK))
+   {
+-    log("Ignoring strange IFINFO");
++    log(L_WARN "Ignoring strange IFINFO");
+     return;
+   }
+ 
+-  iface = if_find_by_index(ifm->ifm_index);
++  if (dl)
++    nlen = MIN(sizeof(f.name)-1, dl->sdl_nlen);
+ 
+-  if(!iface)
++  /* Note that asynchronous IFINFO messages do not contain iface
++     name, so we have to found an existing iface by iface index */
++
++  iface = if_find_by_index(ifm->ifm_index);
++  if (!iface)
+   {
+     /* New interface */
+-    if(!dl) return;	/* No interface name, ignoring */
++    if (!dl)
++      return;	/* No interface name, ignoring */
+ 
+-    bzero(&f, sizeof(f));
+-    f.index = ifm->ifm_index;
+-    memcpy(f.name, dl->sdl_data, MIN(sizeof(f.name)-1, dl->sdl_nlen));
+-    DBG("New interface '%s' found", f.name);
++    memcpy(f.name, dl->sdl_data, nlen);
++    DBG("New interface '%s' found\n", f.name);
++  }
++  else if (dl && memcmp(iface->name, dl->sdl_data, nlen))
++  {
++    /* Interface renamed */
++    if_delete(iface);
++    memcpy(f.name, dl->sdl_data, nlen);
+   }
+   else
+   {
+-    memcpy(&f, iface, sizeof(struct iface));
++    /* Old interface */
++    memcpy(f.name, iface->name, sizeof(f.name));
+   }
+ 
++  f.index = ifm->ifm_index;
+   f.mtu = ifm->ifm_data.ifi_mtu;
+-  f.flags = 0;
+ 
+   if (fl & IFF_UP)
+     f.flags |= IF_ADMIN_UP;
+@@ -471,8 +510,7 @@ krt_read_ifinfo(struct ks_msg *msg)
+   else
+     f.flags |= IF_MULTIACCESS;      /* NBMA */
+ 
+-  if((!iface) || memcmp(&f, iface, sizeof(struct iface)))
+-    if_update(&f);	/* Just if something happens */
++  if_update(&f);
+ }
+ 
+ static void
+@@ -588,6 +626,9 @@ krt_read_msg(struct proto *p, struct ks_msg *msg, int scan)
+     case RTM_DELETE:
+       krt_read_rt(msg, (struct krt_proto *)p, scan);
+       break;
++    case RTM_IFANNOUNCE:
++      krt_read_ifannounce(msg);
++      break;
+     case RTM_IFINFO:
+       krt_read_ifinfo(msg);
+       break;
+diff --git sysdep/linux/netlink/netlink.c sysdep/linux/netlink/netlink.c
+index cf80823..17c369e 100644
+--- sysdep/linux/netlink/netlink.c
++++ sysdep/linux/netlink/netlink.c
+@@ -386,7 +386,7 @@ nl_parse_link(struct nlmsghdr *h, int scan)
+   struct ifinfomsg *i;
+   struct rtattr *a[IFLA_WIRELESS+1];
+   int new = h->nlmsg_type == RTM_NEWLINK;
+-  struct iface f;
++  struct iface f = {};
+   struct iface *ifi;
+   char *name;
+   u32 mtu;
+@@ -408,26 +408,21 @@ nl_parse_link(struct nlmsghdr *h, int scan)
+   if (!new)
+     {
+       DBG("KIF: IF%d(%s) goes down\n", i->ifi_index, name);
+-      if (ifi && !scan)
+-	{
+-	  memcpy(&f, ifi, sizeof(struct iface));
+-	  f.flags |= IF_SHUTDOWN;
+-	  if_update(&f);
+-	}
++      if (!ifi)
++	return;
++
++      if_delete(ifi);
+     }
+   else
+     {
+       DBG("KIF: IF%d(%s) goes up (mtu=%d,flg=%x)\n", i->ifi_index, name, mtu, i->ifi_flags);
+-      if (ifi)
+-	memcpy(&f, ifi, sizeof(f));
+-      else
+-	{
+-	  bzero(&f, sizeof(f));
+-	  f.index = i->ifi_index;
+-	}
+-      strncpy(f.name, RTA_DATA(a[IFLA_IFNAME]), sizeof(f.name)-1);
++      if (ifi && strncmp(ifi->name, name, sizeof(ifi->name)-1))
++	if_delete(ifi);
++
++      strncpy(f.name, name, sizeof(f.name)-1);
++      f.index = i->ifi_index;
+       f.mtu = mtu;
+-      f.flags = 0;
++
+       fl = i->ifi_flags;
+       if (fl & IFF_UP)
+ 	f.flags |= IF_ADMIN_UP;
+diff --git sysdep/unix/krt.Y sysdep/unix/krt.Y
+index 8608196..18e1e52 100644
+--- sysdep/unix/krt.Y
++++ sysdep/unix/krt.Y
+@@ -31,7 +31,6 @@ kern_proto_start: proto_start KERNEL {
+        cf_error("Kernel protocol already defined");
+ #endif
+      cf_krt = this_proto = proto_config_new(&proto_unix_kernel, sizeof(struct krt_config), $1);
+-     this_proto->preference = DEF_PREF_INHERITED;
+      THIS_KRT->scan_time = 60;
+      THIS_KRT->learn = THIS_KRT->persist = 0;
+      krt_scan_construct(THIS_KRT);
+@@ -67,7 +66,6 @@ kif_proto_start: proto_start DEVICE {
+      if (cf_kif)
+        cf_error("Kernel device protocol already defined");
+      cf_kif = this_proto = proto_config_new(&proto_unix_iface, sizeof(struct kif_config), $1);
+-     this_proto->preference = DEF_PREF_DIRECT;
+      THIS_KIF->scan_time = 60;
+      init_list(&THIS_KIF->primary);
+      krt_if_construct(THIS_KIF);
+diff --git sysdep/unix/krt.c sysdep/unix/krt.c
+index e5a8ce1..231c5fc 100644
+--- sysdep/unix/krt.c
++++ sysdep/unix/krt.c
+@@ -104,6 +104,13 @@ kif_force_scan(void)
+     }
+ }
+ 
++void
++kif_request_scan(void)
++{
++  if (kif_proto && kif_scan_timer->expires > now)
++    tm_start(kif_scan_timer, 1);
++}
++
+ static struct proto *
+ kif_init(struct proto_config *c)
+ {
+@@ -236,6 +243,7 @@ kif_copy_config(struct proto_config *dest, struct proto_config *src)
+ struct protocol proto_unix_iface = {
+   name:		"Device",
+   template:	"device%d",
++  preference:	DEF_PREF_DIRECT,
+   preconfig:	kif_preconfig,
+   init:		kif_init,
+   start:	kif_start,
+@@ -961,6 +969,7 @@ struct protocol proto_unix_kernel = {
+   name:		"Kernel",
+   template:	"kernel%d",
+   attr_class:	EAP_KRT,
++  preference:	DEF_PREF_INHERITED,
+   preconfig:	krt_preconfig,
+   postconfig:	krt_postconfig,
+   init:		krt_init,
+diff --git sysdep/unix/krt.h sysdep/unix/krt.h
+index 7bb4fe7..b0c4dc5 100644
+--- sysdep/unix/krt.h
++++ sysdep/unix/krt.h
+@@ -77,6 +77,7 @@ extern pool *krt_pool;
+   if (pr->p.debug & fl)				\
+     { log(L_TRACE "%s: " msg, pr->p.name , ## args); } } while(0)
+ 
++void kif_request_scan(void);
+ void krt_got_route(struct krt_proto *p, struct rte *e);
+ void krt_got_route_async(struct krt_proto *p, struct rte *e, int new);
+ 

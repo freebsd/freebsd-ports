@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.3.4
-PORTREVESION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
@@ -18,7 +17,8 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	FIBS		"Enable multiple fib support" Off
+OPTIONS=	FIBS		"Enable multiple fib support" Off \
+		FIREWALL	"Enable firewall protocol" Off
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -28,6 +28,10 @@ USE_RC_SUBR=	bird
 
 .if defined(WITH_FIBS)
 EXTRA_PATCHES+=	${FILESDIR}/fibs.diff
+.endif
+
+.if defined(WITH_FIREWALL)
+EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
 .endif
 
 post-install:
