@@ -23,7 +23,6 @@ MASTER_SITES?=	http://pure-lang.googlecode.com/files/
 DIST_SUBDIR=	pure
 
 USE_GMAKE=	yes
-USE_GCC=	4.2+
 
 _PURE_audio_cat=	audio
 _PURE_csv_cat=		textproc

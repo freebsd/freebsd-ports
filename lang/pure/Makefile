@@ -7,6 +7,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	lang
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 
@@ -25,8 +26,9 @@ SUB_FILES=	pkg-message
 
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 USE_PURE=	yes
+USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
