@@ -1,0 +1,5 @@
+Counts the usage ratio of each IP range and shared network pool
+that ISC dhcpd is in control of.  It also allows you to generate
+csv output files for use with monitoring software.
+
+WWW: http://dhcpd-pools.sourceforge.net/
