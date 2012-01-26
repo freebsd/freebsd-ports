@@ -1,0 +1,560 @@
+bin/clay
+lib/lib-clay/algorithms/algorithms.clay
+lib/lib-clay/algorithms/heaps/heaps.clay
+lib/lib-clay/algorithms/introsort/introsort.clay
+lib/lib-clay/algorithms/permutations/permutations.clay
+lib/lib-clay/algorithms/strings/strings.clay
+lib/lib-clay/any/any.clay
+lib/lib-clay/arrays/arrays.clay
+lib/lib-clay/booleans/booleans.clay
+lib/lib-clay/byteorder/byteorder.clay
+lib/lib-clay/byteorder/byteorder.x86.32.clay
+lib/lib-clay/byteorder/byteorder.x86.64.clay
+lib/lib-clay/byteorder/common/common.clay
+lib/lib-clay/byteorder/constants/constants.clay
+lib/lib-clay/byteorder/platform/platform.arm.clay
+lib/lib-clay/byteorder/platform/platform.clay
+lib/lib-clay/byteorder/platform/platform.ppc.clay
+lib/lib-clay/byteorder/platform/platform.sparc.clay
+lib/lib-clay/byteorder/platform/platform.x86.clay
+lib/lib-clay/characters/characters.clay
+lib/lib-clay/clay/ast/ast.clay
+lib/lib-clay/clay/common/common.clay
+lib/lib-clay/clay/core/core.clay
+lib/lib-clay/clay/diagnostics/diagnostics.clay
+lib/lib-clay/clay/lexer/lexer.clay
+lib/lib-clay/clay/loader/loader.clay
+lib/lib-clay/clay/loader/platform/platform.linux.x86.32.clay
+lib/lib-clay/clay/loader/platform/platform.linux.x86.64.clay
+lib/lib-clay/clay/loader/platform/platform.macosx.x86.32.clay
+lib/lib-clay/clay/loader/platform/platform.macosx.x86.64.clay
+lib/lib-clay/clay/loader/platform/platform.windows.x86.32.clay
+lib/lib-clay/clay/parser/parser.clay
+lib/lib-clay/clay/v0_0/ast/ast.clay
+lib/lib-clay/clay/v0_0/lexer/lexer.clay
+lib/lib-clay/clay/v0_0/parser/parser.clay
+lib/lib-clay/cocoa/appkit/appkit.clay
+lib/lib-clay/cocoa/appkit/generated/Makefile
+lib/lib-clay/cocoa/appkit/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/appkit/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/appkit/generated/generated_from.h
+lib/lib-clay/cocoa/applicationservices/applicationservices.clay
+lib/lib-clay/cocoa/applicationservices/generated/Makefile
+lib/lib-clay/cocoa/applicationservices/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/applicationservices/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/applicationservices/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/applicationservices/generated/generated_from_arm.h
+lib/lib-clay/cocoa/applicationservices/generated/generated_from_x86.h
+lib/lib-clay/cocoa/audiotoolbox/audiotoolbox.clay
+lib/lib-clay/cocoa/audiotoolbox/generated/Makefile
+lib/lib-clay/cocoa/audiotoolbox/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/audiotoolbox/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/audiotoolbox/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/audiotoolbox/generated/generated_from.h
+lib/lib-clay/cocoa/cocoa.macosx.clay
+lib/lib-clay/cocoa/coreaudio/coreaudio.clay
+lib/lib-clay/cocoa/coreaudio/generated/Makefile
+lib/lib-clay/cocoa/coreaudio/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/coreaudio/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/coreaudio/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/coreaudio/generated/generated_from_arm.h
+lib/lib-clay/cocoa/coreaudio/generated/generated_from_x86.h
+lib/lib-clay/cocoa/corefoundation/corefoundation.clay
+lib/lib-clay/cocoa/corefoundation/generated/Makefile
+lib/lib-clay/cocoa/corefoundation/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/corefoundation/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/corefoundation/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/corefoundation/generated/generated_from.h
+lib/lib-clay/cocoa/coreservices/coreservices.clay
+lib/lib-clay/cocoa/coreservices/generated/Makefile
+lib/lib-clay/cocoa/coreservices/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/coreservices/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/coreservices/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/coreservices/generated/generated_from_arm.h
+lib/lib-clay/cocoa/coreservices/generated/generated_from_x86.h
+lib/lib-clay/cocoa/foundation/foundation.clay
+lib/lib-clay/cocoa/foundation/generated/Makefile
+lib/lib-clay/cocoa/foundation/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/foundation/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/foundation/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/foundation/generated/generated_from.h
+lib/lib-clay/cocoa/nib/nib.clay
+lib/lib-clay/cocoa/objc/objc.clay
+lib/lib-clay/cocoa/objc/platform/platform.arm.clay
+lib/lib-clay/cocoa/objc/platform/platform.x86.32.clay
+lib/lib-clay/cocoa/objc/platform/platform.x86.64.clay
+lib/lib-clay/cocoa/objc/runtime/runtime.clay
+lib/lib-clay/cocoa/qtkit/generated/Makefile
+lib/lib-clay/cocoa/qtkit/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/qtkit/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/qtkit/generated/generated_from.h
+lib/lib-clay/cocoa/qtkit/qtkit.clay
+lib/lib-clay/cocoa/quartzcore/generated/Makefile
+lib/lib-clay/cocoa/quartzcore/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/quartzcore/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/quartzcore/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/quartzcore/generated/generated_from.h
+lib/lib-clay/cocoa/quartzcore/quartzcore.clay
+lib/lib-clay/cocoa/test/test.clay
+lib/lib-clay/cocoa/uikit/generated/Makefile
+lib/lib-clay/cocoa/uikit/generated/generated.macosx.arm.clay
+lib/lib-clay/cocoa/uikit/generated/generated_from.h
+lib/lib-clay/cocoa/uikit/uikit.clay
+lib/lib-clay/cocoa/util/platform/platform.macosx.arm.clay
+lib/lib-clay/cocoa/util/platform/platform.macosx.x86.clay
+lib/lib-clay/cocoa/util/util.clay
+lib/lib-clay/cocoa/webkit/generated/Makefile
+lib/lib-clay/cocoa/webkit/generated/generated.macosx.x86.32.clay
+lib/lib-clay/cocoa/webkit/generated/generated.macosx.x86.64.clay
+lib/lib-clay/cocoa/webkit/generated/generated_from.h
+lib/lib-clay/cocoa/webkit/webkit.clay
+lib/lib-clay/commandline/dispatch/dispatch.clay
+lib/lib-clay/commandline/options/options.clay
+lib/lib-clay/commandline/options/parser.clay
+lib/lib-clay/commandline/options/spec.clay
+lib/lib-clay/commandline/options/table.clay
+lib/lib-clay/commandline/options/util.clay
+lib/lib-clay/comparators/comparators.clay
+lib/lib-clay/complex/complex.clay
+lib/lib-clay/console/color.clay
+lib/lib-clay/coordinates/coordinates.clay
+lib/lib-clay/defaultarguments/defaultarguments.clay
+lib/lib-clay/deques/deques.clay
+lib/lib-clay/destructors/destructors.clay
+lib/lib-clay/enumerations/enumerations.clay
+lib/lib-clay/errors/backtrace/backtrace.clay
+lib/lib-clay/errors/backtrace/backtrace.freebsd.clay
+lib/lib-clay/errors/backtrace/backtrace.linux.clay
+lib/lib-clay/errors/backtrace/backtrace.macosx.clay
+lib/lib-clay/errors/errors.clay
+lib/lib-clay/exceptions/exceptions.clay
+lib/lib-clay/expat/constants/constants.clay
+lib/lib-clay/expat/expat.clay
+lib/lib-clay/expat/generated/Makefile
+lib/lib-clay/expat/generated/generated.clay
+lib/lib-clay/expat/generated/generated_from.h
+lib/lib-clay/externals/externals.clay
+lib/lib-clay/glut/glut.clay
+lib/lib-clay/hash/hash.clay
+lib/lib-clay/hashmaps/hashmaps.clay
+lib/lib-clay/identifiers/identifiers.clay
+lib/lib-clay/interfaces/interfaces.clay
+lib/lib-clay/io/directories/directories.unix.clay
+lib/lib-clay/io/errors/errors.clay
+lib/lib-clay/io/files/api/api.clay
+lib/lib-clay/io/files/easy/easy.clay
+lib/lib-clay/io/files/files.clay
+lib/lib-clay/io/files/lines/lines.clay
+lib/lib-clay/io/files/raw/raw.unix.clay
+lib/lib-clay/io/files/raw/raw.windows.clay
+lib/lib-clay/io/filesystem/executable/executable.linux.clay
+lib/lib-clay/io/filesystem/executable/executable.unix.clay
+lib/lib-clay/io/filesystem/filesystem.unix.clay
+lib/lib-clay/io/filesystem/filesystem.windows.clay
+lib/lib-clay/io/mapping/mapping.unix.clay
+lib/lib-clay/io/mapping/mapping.windows.clay
+lib/lib-clay/io/paths/paths.unix.clay
+lib/lib-clay/io/paths/paths.windows.clay
+lib/lib-clay/io/sockets/platform/platform.unix.clay
+lib/lib-clay/io/sockets/platform/platform.windows.clay
+lib/lib-clay/io/sockets/sockets.clay
+lib/lib-clay/io/streams/streams.clay
+lib/lib-clay/keywordarguments/keywordarguments.clay
+lib/lib-clay/lambdas/lambdas.clay
+lib/lib-clay/libc/generated/Makefile
+lib/lib-clay/libc/generated/generated.freebsd.32.clay
+lib/lib-clay/libc/generated/generated.freebsd.64.clay
+lib/lib-clay/libc/generated/generated.linux.32.clay
+lib/lib-clay/libc/generated/generated.linux.64.clay
+lib/lib-clay/libc/generated/generated.macosx.arm.clay
+lib/lib-clay/libc/generated/generated.macosx.x86.32.clay
+lib/lib-clay/libc/generated/generated.macosx.x86.64.clay
+lib/lib-clay/libc/generated/generated.windows.32.clay
+lib/lib-clay/libc/generated/generated.windows.64.clay
+lib/lib-clay/libc/generated/generated_from_unix.h
+lib/lib-clay/libc/generated/generated_from_win32.h
+lib/lib-clay/libc/libc.freebsd.clay
+lib/lib-clay/libc/libc.linux.clay
+lib/lib-clay/libc/libc.macosx.clay
+lib/lib-clay/libc/libc.windows.clay
+lib/lib-clay/llvm/libclang/generated/Makefile
+lib/lib-clay/llvm/libclang/generated/generated.clay
+lib/lib-clay/llvm/libclang/generated/generated_from.h
+lib/lib-clay/llvm/libclang/libclang.clay
+lib/lib-clay/math/libm/libm.clay
+lib/lib-clay/math/math.clay
+lib/lib-clay/math/native/approxmath.clay
+lib/lib-clay/math/native/atan_std.clay
+lib/lib-clay/math/native/bessel_std.clay
+lib/lib-clay/math/native/beta_std.clay
+lib/lib-clay/math/native/bigfloat.clay
+lib/lib-clay/math/native/cbrt_std.clay
+lib/lib-clay/math/native/ccore.clay
+lib/lib-clay/math/native/cnative.clay
+lib/lib-clay/math/native/core.clay
+lib/lib-clay/math/native/defines.clay
+lib/lib-clay/math/native/erf_std.clay
+lib/lib-clay/math/native/exact.clay
+lib/lib-clay/math/native/exp_fast.clay
+lib/lib-clay/math/native/exp_std.clay
+lib/lib-clay/math/native/expm1_std.clay
+lib/lib-clay/math/native/gamma_std.clay
+lib/lib-clay/math/native/log_std.clay
+lib/lib-clay/math/native/native.clay
+lib/lib-clay/math/native/pow_std.clay
+lib/lib-clay/math/native/rem_pi_2.clay
+lib/lib-clay/math/native/sqrt_std.clay
+lib/lib-clay/math/native/trig_std.clay
+lib/lib-clay/math/simd/core_x86.clay
+lib/lib-clay/math/simd/exact.clay
+lib/lib-clay/maybe/maybe.clay
+lib/lib-clay/memory/memory.clay
+lib/lib-clay/memory/platform/platform.clay
+lib/lib-clay/memory/platform/platform.macosx.clay
+lib/lib-clay/numbers/floats/floats.clay
+lib/lib-clay/numbers/numbers.clay
+lib/lib-clay/numbers/overflow/overflow.clay
+lib/lib-clay/numbers/parser/errno/errno.unix.clay
+lib/lib-clay/numbers/parser/errno/errno.windows.clay
+lib/lib-clay/numbers/parser/parser.clay
+lib/lib-clay/opengl/enums/enums.clay
+lib/lib-clay/opengl/lookup/lookup.clay
+lib/lib-clay/opengl/nolookup/nolookup.clay
+lib/lib-clay/opengl/opengl.clay
+lib/lib-clay/opengl/platform/platform.macosx.clay
+lib/lib-clay/opengl/platform/platform.unix.clay
+lib/lib-clay/opengl/platform/platform.windows.clay
+lib/lib-clay/opengl/types/types.clay
+lib/lib-clay/operators/operators.clay
+lib/lib-clay/operators/pod/pod.clay
+lib/lib-clay/os/errors/errors.clay
+lib/lib-clay/os/errors/platform/platform.unix.clay
+lib/lib-clay/os/errors/platform/platform.windows.clay
+lib/lib-clay/paged/allocator/allocator.clay
+lib/lib-clay/paged/misc/misc.clay
+lib/lib-clay/paged/namedscalars/namedscalars.clay
+lib/lib-clay/paged/namedvectors/namedvectors.clay
+lib/lib-clay/paged/paged.clay
+lib/lib-clay/paged/sharedpointers/sharedpointers.clay
+lib/lib-clay/paged/strings/strings.clay
+lib/lib-clay/paged/vectors/vectors.clay
+lib/lib-clay/parsing/combinators/generic/generic.clay
+lib/lib-clay/parsing/combinators/strings/strings.clay
+lib/lib-clay/parsing/combinators/wrapper/wrapper.clay
+lib/lib-clay/platform/cpu/cpu.arm.clay
+lib/lib-clay/platform/cpu/cpu.ppc.32.clay
+lib/lib-clay/platform/cpu/cpu.ppc.64.clay
+lib/lib-clay/platform/cpu/cpu.x86.32.clay
+lib/lib-clay/platform/cpu/cpu.x86.64.clay
+lib/lib-clay/platform/os/os.freebsd.clay
+lib/lib-clay/platform/os/os.linux.clay
+lib/lib-clay/platform/os/os.macosx.clay
+lib/lib-clay/platform/os/os.windows.clay
+lib/lib-clay/platform/platform.clay
+lib/lib-clay/platform/symbols/symbols.clay
+lib/lib-clay/pointers/pointers.clay
+lib/lib-clay/prelude/prelude.clay
+lib/lib-clay/printer/formatter/formatter.clay
+lib/lib-clay/printer/platform/platform.clay
+lib/lib-clay/printer/platform/platform.windows.clay
+lib/lib-clay/printer/printer.clay
+lib/lib-clay/queues/queues.clay
+lib/lib-clay/random/random.clay
+lib/lib-clay/records/records.clay
+lib/lib-clay/referencetypes/referencetypes.clay
+lib/lib-clay/remote/marshaling/marshaling.clay
+lib/lib-clay/remote/messages/messages.clay
+lib/lib-clay/sequences/force/force.clay
+lib/lib-clay/sequences/handle/handle.clay
+lib/lib-clay/sequences/lazy/enumerated/enumerated.clay
+lib/lib-clay/sequences/lazy/filtered/filtered.clay
+lib/lib-clay/sequences/lazy/grouped/grouped.clay
+lib/lib-clay/sequences/lazy/lazy.clay
+lib/lib-clay/sequences/lazy/mapped/mapped.clay
+lib/lib-clay/sequences/lazy/range/range.clay
+lib/lib-clay/sequences/lazy/reversed/reversed.clay
+lib/lib-clay/sequences/lazy/sliced/sliced.clay
+lib/lib-clay/sequences/lazy/zipped/zipped.clay
+lib/lib-clay/sequences/sequences.clay
+lib/lib-clay/sequences/util/util.clay
+lib/lib-clay/sha2/sha2.clay
+lib/lib-clay/sharedpointers/sharedpointers.clay
+lib/lib-clay/simd/primitives/primitives.clay
+lib/lib-clay/simd/simd.clay
+lib/lib-clay/statics/statics.clay
+lib/lib-clay/strings/constants/constants.clay
+lib/lib-clay/strings/cstringrefs/cstringrefs.clay
+lib/lib-clay/strings/encodings/utf8/utf8.clay
+lib/lib-clay/strings/strings.clay
+lib/lib-clay/system/platform/platform.clay
+lib/lib-clay/system/platform/testing.clay
+lib/lib-clay/system/platform/testing.unix.clay
+lib/lib-clay/system/platform/testing.windows.clay
+lib/lib-clay/system/system.clay
+lib/lib-clay/test/memory/memory.clay
+lib/lib-clay/test/memory2/memory2.clay
+lib/lib-clay/test/test.clay
+lib/lib-clay/time/platform/platform.freebsd.clay
+lib/lib-clay/time/platform/platform.linux.clay
+lib/lib-clay/time/platform/platform.macosx.clay
+lib/lib-clay/time/platform/platform.windows.clay
+lib/lib-clay/time/time.clay
+lib/lib-clay/tuples/tuples.clay
+lib/lib-clay/twohash/implementation/implementation.clay
+lib/lib-clay/twohash/twohash.clay
+lib/lib-clay/types/platform/platform.32.clay
+lib/lib-clay/types/platform/platform.64.clay
+lib/lib-clay/types/platform/platform.windows.64.clay
+lib/lib-clay/types/types.clay
+lib/lib-clay/unions/unions.clay
+lib/lib-clay/uniquepointers/uniquepointers.clay
+lib/lib-clay/unix/constants/constants.freebsd.clay
+lib/lib-clay/unix/constants/constants.linux.clay
+lib/lib-clay/unix/constants/constants.macosx.clay
+lib/lib-clay/unix/errno/errno.freebsd.clay
+lib/lib-clay/unix/errno/errno.linux.clay
+lib/lib-clay/unix/errno/errno.macosx.clay
+lib/lib-clay/unix/errnonames/errnonames.freebsd.clay
+lib/lib-clay/unix/errnonames/errnonames.linux.clay
+lib/lib-clay/unix/errnonames/errnonames.macosx.clay
+lib/lib-clay/unix/generated/Makefile
+lib/lib-clay/unix/generated/generated.freebsd.32.clay
+lib/lib-clay/unix/generated/generated.freebsd.64.clay
+lib/lib-clay/unix/generated/generated.linux.32.clay
+lib/lib-clay/unix/generated/generated.linux.64.clay
+lib/lib-clay/unix/generated/generated.macosx.arm.clay
+lib/lib-clay/unix/generated/generated.macosx.x86.32.clay
+lib/lib-clay/unix/generated/generated.macosx.x86.64.clay
+lib/lib-clay/unix/generated/generated_from_freebsd.h
+lib/lib-clay/unix/generated/generated_from_linux.h
+lib/lib-clay/unix/generated/generated_from_macosx.h
+lib/lib-clay/unix/unix.clay
+lib/lib-clay/values/values.clay
+lib/lib-clay/variants/nested/nested.clay
+lib/lib-clay/variants/variants.clay
+lib/lib-clay/vectors/buffer/buffer.clay
+lib/lib-clay/vectors/generic/generic.clay
+lib/lib-clay/vectors/vectors.clay
+lib/lib-clay/win32/constants/constants.clay
+lib/lib-clay/win32/errno/errno.clay
+lib/lib-clay/win32/errorcodes/errorcodes.clay
+lib/lib-clay/win32/errornames/errornames.clay
+lib/lib-clay/win32/generated/Makefile
+lib/lib-clay/win32/generated/generated.windows.32.clay
+lib/lib-clay/win32/generated/generated.windows.64.clay
+lib/lib-clay/win32/generated/generated_from.h
+lib/lib-clay/win32/platform/platform.windows.32.clay
+lib/lib-clay/win32/platform/platform.windows.64.clay
+lib/lib-clay/win32/win32.clay
+%%PORTDOCS%%%%DOCSDIR%%/language-reference.md
+%%PORTDOCS%%%%DOCSDIR%%/primitives-reference.md
+@dirrm lib/lib-clay/algorithms/heaps
+@dirrm lib/lib-clay/algorithms/introsort
+@dirrm lib/lib-clay/algorithms/permutations
+@dirrm lib/lib-clay/algorithms/strings
+@dirrm lib/lib-clay/algorithms
+@dirrm lib/lib-clay/any
+@dirrm lib/lib-clay/arrays
+@dirrm lib/lib-clay/booleans
+@dirrm lib/lib-clay/byteorder/common
+@dirrm lib/lib-clay/byteorder/constants
+@dirrm lib/lib-clay/byteorder/platform
+@dirrm lib/lib-clay/byteorder
+@dirrm lib/lib-clay/characters
+@dirrm lib/lib-clay/clay/ast
+@dirrm lib/lib-clay/clay/common
+@dirrm lib/lib-clay/clay/core
+@dirrm lib/lib-clay/clay/diagnostics
+@dirrm lib/lib-clay/clay/lexer
+@dirrm lib/lib-clay/clay/loader/platform
+@dirrm lib/lib-clay/clay/loader
+@dirrm lib/lib-clay/clay/parser
+@dirrm lib/lib-clay/clay/v0_0/ast
+@dirrm lib/lib-clay/clay/v0_0/lexer
+@dirrm lib/lib-clay/clay/v0_0/parser
+@dirrm lib/lib-clay/clay/v0_0
+@dirrm lib/lib-clay/clay
+@dirrm lib/lib-clay/cocoa/appkit/generated
+@dirrm lib/lib-clay/cocoa/appkit
+@dirrm lib/lib-clay/cocoa/applicationservices/generated
+@dirrm lib/lib-clay/cocoa/applicationservices
+@dirrm lib/lib-clay/cocoa/audiotoolbox/generated
+@dirrm lib/lib-clay/cocoa/audiotoolbox
+@dirrm lib/lib-clay/cocoa/coreaudio/generated
+@dirrm lib/lib-clay/cocoa/coreaudio
+@dirrm lib/lib-clay/cocoa/corefoundation/generated
+@dirrm lib/lib-clay/cocoa/corefoundation
+@dirrm lib/lib-clay/cocoa/coreservices/generated
+@dirrm lib/lib-clay/cocoa/coreservices
+@dirrm lib/lib-clay/cocoa/foundation/generated
+@dirrm lib/lib-clay/cocoa/foundation
+@dirrm lib/lib-clay/cocoa/nib
+@dirrm lib/lib-clay/cocoa/objc/platform
+@dirrm lib/lib-clay/cocoa/objc/runtime
+@dirrm lib/lib-clay/cocoa/objc
+@dirrm lib/lib-clay/cocoa/qtkit/generated
+@dirrm lib/lib-clay/cocoa/qtkit
+@dirrm lib/lib-clay/cocoa/quartzcore/generated
+@dirrm lib/lib-clay/cocoa/quartzcore
+@dirrm lib/lib-clay/cocoa/test
+@dirrm lib/lib-clay/cocoa/uikit/generated
+@dirrm lib/lib-clay/cocoa/uikit
+@dirrm lib/lib-clay/cocoa/util/platform
+@dirrm lib/lib-clay/cocoa/util
+@dirrm lib/lib-clay/cocoa/webkit/generated
+@dirrm lib/lib-clay/cocoa/webkit
+@dirrm lib/lib-clay/cocoa
+@dirrm lib/lib-clay/commandline/dispatch
+@dirrm lib/lib-clay/commandline/options
+@dirrm lib/lib-clay/commandline
+@dirrm lib/lib-clay/comparators
+@dirrm lib/lib-clay/complex
+@dirrm lib/lib-clay/console
+@dirrm lib/lib-clay/coordinates
+@dirrm lib/lib-clay/defaultarguments
+@dirrm lib/lib-clay/deques
+@dirrm lib/lib-clay/destructors
+@dirrm lib/lib-clay/enumerations
+@dirrm lib/lib-clay/errors/backtrace
+@dirrm lib/lib-clay/errors
+@dirrm lib/lib-clay/exceptions
+@dirrm lib/lib-clay/expat/constants
+@dirrm lib/lib-clay/expat/generated
+@dirrm lib/lib-clay/expat
+@dirrm lib/lib-clay/externals
+@dirrm lib/lib-clay/glut
+@dirrm lib/lib-clay/hash
+@dirrm lib/lib-clay/hashmaps
+@dirrm lib/lib-clay/identifiers
+@dirrm lib/lib-clay/interfaces
+@dirrm lib/lib-clay/io/directories
+@dirrm lib/lib-clay/io/errors
+@dirrm lib/lib-clay/io/files/api
+@dirrm lib/lib-clay/io/files/easy
+@dirrm lib/lib-clay/io/files/lines
+@dirrm lib/lib-clay/io/files/raw
+@dirrm lib/lib-clay/io/files
+@dirrm lib/lib-clay/io/filesystem/executable
+@dirrm lib/lib-clay/io/filesystem
+@dirrm lib/lib-clay/io/mapping
+@dirrm lib/lib-clay/io/paths
+@dirrm lib/lib-clay/io/sockets/platform
+@dirrm lib/lib-clay/io/sockets
+@dirrm lib/lib-clay/io/streams
+@dirrm lib/lib-clay/io
+@dirrm lib/lib-clay/keywordarguments
+@dirrm lib/lib-clay/lambdas
+@dirrm lib/lib-clay/libc/generated
+@dirrm lib/lib-clay/libc
+@dirrm lib/lib-clay/llvm/libclang/generated
+@dirrm lib/lib-clay/llvm/libclang
+@dirrm lib/lib-clay/llvm
+@dirrm lib/lib-clay/math/libm
+@dirrm lib/lib-clay/math/native
+@dirrm lib/lib-clay/math/simd
+@dirrm lib/lib-clay/math
+@dirrm lib/lib-clay/maybe
+@dirrm lib/lib-clay/memory/platform
+@dirrm lib/lib-clay/memory
+@dirrm lib/lib-clay/numbers/floats
+@dirrm lib/lib-clay/numbers/overflow
+@dirrm lib/lib-clay/numbers/parser/errno
+@dirrm lib/lib-clay/numbers/parser
+@dirrm lib/lib-clay/numbers
+@dirrm lib/lib-clay/opengl/enums
+@dirrm lib/lib-clay/opengl/lookup
+@dirrm lib/lib-clay/opengl/nolookup
+@dirrm lib/lib-clay/opengl/platform
+@dirrm lib/lib-clay/opengl/types
+@dirrm lib/lib-clay/opengl
+@dirrm lib/lib-clay/operators/pod
+@dirrm lib/lib-clay/operators
+@dirrm lib/lib-clay/os/errors/platform
+@dirrm lib/lib-clay/os/errors
+@dirrm lib/lib-clay/os
+@dirrm lib/lib-clay/paged/allocator
+@dirrm lib/lib-clay/paged/misc
+@dirrm lib/lib-clay/paged/namedscalars
+@dirrm lib/lib-clay/paged/namedvectors
+@dirrm lib/lib-clay/paged/sharedpointers
+@dirrm lib/lib-clay/paged/strings
+@dirrm lib/lib-clay/paged/vectors
+@dirrm lib/lib-clay/paged
+@dirrm lib/lib-clay/parsing/combinators/generic
+@dirrm lib/lib-clay/parsing/combinators/strings
+@dirrm lib/lib-clay/parsing/combinators/wrapper
+@dirrm lib/lib-clay/parsing/combinators
+@dirrm lib/lib-clay/parsing
+@dirrm lib/lib-clay/platform/cpu
+@dirrm lib/lib-clay/platform/os
+@dirrm lib/lib-clay/platform/symbols
+@dirrm lib/lib-clay/platform
+@dirrm lib/lib-clay/pointers
+@dirrm lib/lib-clay/prelude
+@dirrm lib/lib-clay/printer/formatter
+@dirrm lib/lib-clay/printer/platform
+@dirrm lib/lib-clay/printer
+@dirrm lib/lib-clay/queues
+@dirrm lib/lib-clay/random
+@dirrm lib/lib-clay/records
+@dirrm lib/lib-clay/referencetypes
+@dirrm lib/lib-clay/remote/marshaling
+@dirrm lib/lib-clay/remote/messages
+@dirrm lib/lib-clay/remote
+@dirrm lib/lib-clay/sequences/force
+@dirrm lib/lib-clay/sequences/handle
+@dirrm lib/lib-clay/sequences/lazy/enumerated
+@dirrm lib/lib-clay/sequences/lazy/filtered
+@dirrm lib/lib-clay/sequences/lazy/grouped
+@dirrm lib/lib-clay/sequences/lazy/mapped
+@dirrm lib/lib-clay/sequences/lazy/range
+@dirrm lib/lib-clay/sequences/lazy/reversed
+@dirrm lib/lib-clay/sequences/lazy/sliced
+@dirrm lib/lib-clay/sequences/lazy/zipped
+@dirrm lib/lib-clay/sequences/lazy
+@dirrm lib/lib-clay/sequences/util
+@dirrm lib/lib-clay/sequences
+@dirrm lib/lib-clay/sha2
+@dirrm lib/lib-clay/sharedpointers
+@dirrm lib/lib-clay/simd/primitives
+@dirrm lib/lib-clay/simd
+@dirrm lib/lib-clay/statics
+@dirrm lib/lib-clay/strings/constants
+@dirrm lib/lib-clay/strings/cstringrefs
+@dirrm lib/lib-clay/strings/encodings/utf8
+@dirrm lib/lib-clay/strings/encodings
+@dirrm lib/lib-clay/strings
+@dirrm lib/lib-clay/system/platform
+@dirrm lib/lib-clay/system
+@dirrm lib/lib-clay/test/memory
+@dirrm lib/lib-clay/test/memory2
+@dirrm lib/lib-clay/test
+@dirrm lib/lib-clay/time/platform
+@dirrm lib/lib-clay/time
+@dirrm lib/lib-clay/tuples
+@dirrm lib/lib-clay/twohash/implementation
+@dirrm lib/lib-clay/twohash
+@dirrm lib/lib-clay/types/platform
+@dirrm lib/lib-clay/types
+@dirrm lib/lib-clay/unions
+@dirrm lib/lib-clay/uniquepointers
+@dirrm lib/lib-clay/unix/constants
+@dirrm lib/lib-clay/unix/errno
+@dirrm lib/lib-clay/unix/errnonames
+@dirrm lib/lib-clay/unix/generated
+@dirrm lib/lib-clay/unix
+@dirrm lib/lib-clay/values
+@dirrm lib/lib-clay/variants/nested
+@dirrm lib/lib-clay/variants
+@dirrm lib/lib-clay/vectors/buffer
+@dirrm lib/lib-clay/vectors/generic
+@dirrm lib/lib-clay/vectors
+@dirrm lib/lib-clay/win32/constants
+@dirrm lib/lib-clay/win32/errno
+@dirrm lib/lib-clay/win32/errorcodes
+@dirrm lib/lib-clay/win32/errornames
+@dirrm lib/lib-clay/win32/generated
+@dirrm lib/lib-clay/win32/platform
+@dirrm lib/lib-clay/win32
+@dirrm lib/lib-clay
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
