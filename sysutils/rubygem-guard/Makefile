@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guard
-PORTVERSION=	0.10.0
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
