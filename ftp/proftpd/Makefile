@@ -376,9 +376,9 @@ USE_SQLITE=     yes
 MODULES:=${MODULES}:mod_sql_sqlite
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-PLIST_SUB+=	MOD_SQLITE=""
+PLIST_SUB+=	MOD_SQL_SQLITE=""
 .else
-PLIST_SUB+=	MOD_SQLITE="@comment "
+PLIST_SUB+=	MOD_SQL_SQLITE="@comment "
 .endif
 
 .if defined(WITH_ODBC)
