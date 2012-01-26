@@ -17,17 +17,18 @@ rcvar=unbound_enable
 
 command="%%PREFIX%%/sbin/unbound"
 extra_commands="reload"
-start_precmd="start_unbound_anchor"
+start_precmd="start_precmd"
 
 load_rc_config $name
 
 pidfile=${unbound_pidfile:-"%%PREFIX%%/etc/unbound/unbound.pid"}
 unbound_enable=${unbound_enable:-"NO"}
 
-start_unbound_anchor()
+start_precmd()
 {
-	echo -n "Obtaining a trust anchor:"
-	su -m unbound -c %%PREFIX%%/sbin/unbound-anchor
+	%%PREFIX%%/sbin/unbound-checkconf && \
+	echo -n "Obtaining a trust anchor:" && \
+	su -m unbound -c %%PREFIX%%/sbin/unbound-anchor && \
 	echo .
 }
 
