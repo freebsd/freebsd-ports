@@ -7,7 +7,7 @@
 
 PORTNAME=	syscp
 PORTVERSION=	1.4.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.syscp.org/releases/tgz/
 
@@ -32,8 +32,9 @@ USE_APACHE=	22
 RUN_DEPENDS+=	\
 		dovecot:${PORTSDIR}/mail/dovecot \
 		postfix:${PORTSDIR}/mail/postfix \
-		proftpd:${PORTSDIR}/ftp/proftpd-mysql \
 		webalizer:${PORTSDIR}/www/webalizer
+
+RUN_DEPENDS+=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:${PORTSDIR}/databases/proftpd-mod_sql_mysql
 
 post-patch:
 	${FIND} ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
