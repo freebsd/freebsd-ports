@@ -38,9 +38,7 @@ post-patch:
 post-install:
 .ifndef (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
