@@ -637,6 +637,7 @@
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += proftpd-mod_sql_mysql
+    SUBDIR += proftpd-mod_sql_postgres
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
