@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	aacplusenc
-PORTVERSION=	0.17.1
-PORTREVISION=	1
+PORTVERSION=	0.17.5
 CATEGORIES=	audio
-MASTER_SITES=	http://teknoraver.net/software/mp4tools/
+MASTER_SITES=	http://ppa.launchpad.net/teknoraver/ppa/ubuntu/pool/main/a/aacplusenc/
+DISTFILES=	${DISTNAME:S,-,_,}${EXTRACT_SUFX}
 
 MAINTAINER=	pav@FreeBSD.org
-COMMENT=	aacPlus v2 command-line encoder
+COMMENT=	An aacPlus v2 command-line encoder
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
-
-BROKEN=		unfetchable
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
@@ -31,8 +28,11 @@ LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float \
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -ftree-vectorize|${CFLAGS}| ; s|-lfftw3f|-L${LOCALBASE}/lib -lfftw3f| ; s|INSTDIR=.*|INSTDIR=${PREFIX}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>| ; s|__BYTE|_BYTE|' ${WRKSRC}/au_channel.h
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
