@@ -7,6 +7,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	2.4.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,7 +20,6 @@ NO_LICENSES_INSTALL=	yes
 LATEST_LINK=	${PORTNAME}
 MAN5=		twfiles.5 twconfig.5 twpolicy.5
 MAN8=		siggen.8 tripwire.8 twadmin.8 twintro.8 twprint.8
-# NO_PACKAGE=	"requires local database to be built"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -28,23 +28,43 @@ MAKE_ARGS=	SYSPRE=${ARCH}-unknown-freebsd
 IS_INTERACTIVE=	yes
 M4=		/usr/bin/m4
 
+# Tripwire database files are stored in TWDB.
+TWDB?=		/var/db/tripwire
+
+OPTIONS=	TWCFG_ETC "Put config files in ${ETCDIR}" on \
+		TWCFG_TWDB "Put config files in ${TWDB}/etc" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TWCFG_ETC) && ${WITH_TWCFG_ETC} == "true" && defined(WITH_TWCFG_TWDB) && ${WITH_TWCFG_TWDB} == "true"
+BROKEN=		Must select only one of WITH_TWCFG_ETC or WITH_TWCFG_TWDB
+.endif
+
 # Tripwire config files are stored in TWCFG
-TWCFG?=		/usr/local/etc/tripwire
+.if defined(WITH_TWCFG_ETC) && ${WITH_TWCFG_ETC} == "true"
+TWCFG?=		${ETCDIR}
+.endif
+.if defined(WITH_TWCFG_TWDB) && ${WITH_TWCFG_TWDB} == "true"
+TWCFG?=		${TWDB}/etc
+.endif
+
+.ifndef TWCFG
+BROKEN=		TWCFG must be defined
+.endif
+
 # Tripwire policy files are stored in TWPOLICY.
 TWPOLICY?=	${TWCFG}
 # The Tripwire site key files are stored in TWSITEKEYDIR.
 TWSITEKEYDIR?=	${TWPOLICY}
 # The Tripwire local key files are stored in TWLOCALKEYDIR.
 TWLOCALKEYDIR?=	${TWPOLICY}
-# Tripwire database files are stored in TWDB.
-TWDB?=		/var/db/tripwire
 # Tripwire report files are stored in TWREPORT.
 TWREPORT?=	${TWDB}/report
 # This sets the default text editor for Tripwire.
 TWEDITOR?=	/usr/bin/vi
 # This sets the location of the twpol.txt file that is to be installed
 TWPOL_TXT?=	${FILESDIR}/twpol.m4
-# Other variables that are used:
+# Other variables that are used, when not package building:
 TRIPWIRE_CLOBBER?=	false
 TRIPWIRE_PROMPT?=	true
 #	If TRIPWIRE_CLOBBER is set to YES, the install script clobbers
@@ -59,7 +79,7 @@ SUB_LIST=	TWCFG=${TWCFG} TWDB=${TWDB}
 pre-configure:
 	@ ${M4} -DFREEBSD_VERSION=`${ECHO_CMD} ${OSREL} | ${CUT} -d. -f1` < ${TWPOL_TXT} > ${WRKSRC}/policy/twpol-FreeBSD.txt
 	@ ${MV} ${WRKSRC}/src/core/stdcore.h ${WRKSRC}/src/core/stdcore.h.orig
-	@ ${SED} 's%^# define CONFIG_FILE_ROOT	"/usr/local/etc/tripwire"%# define CONFIG_FILE_ROOT	"${TWCFG}"%' ${WRKSRC}/src/core/stdcore.h.orig > ${WRKSRC}/src/core/stdcore.h
+	@ ${SED} 's%^# define CONFIG_FILE_ROOT	"${TWCFG}"%# define CONFIG_FILE_ROOT	"${TWCFG}"%' ${WRKSRC}/src/core/stdcore.h.orig > ${WRKSRC}/src/core/stdcore.h
 	@ ${MV} ${WRKSRC}/man/man4/twconfig.4 ${WRKSRC}/man/man5/twconfig.5
 	@ ${MV} ${WRKSRC}/man/man4/twpolicy.4 ${WRKSRC}/man/man5/twpolicy.5
 	@ ${LN} -s ${WRKSRC}/contrib ${WRKSRC}/install
@@ -72,15 +92,10 @@ install-config-files:
 	@ ${ECHO_CMD} TWREPORT=${TWREPORT} >> ${WRKSRC}/install/install.cfg
 	@ ${ECHO_CMD} TWEDITOR=${TWEDITOR} >> ${WRKSRC}/install/install.cfg
 	@ cd ${WRKSRC} && ${LN} -sf install/install.cfg install/install.sh .
-.ifndef PACKAGE_BUILDING
-.if ( defined(TRIPWIRE_CLOBBER) && ${TRIPWIRE_CLOBBER} == "YES" ) || \
-    ( defined(TRIPWIRE_CLOBBER) && ${TRIPWIRE_CLOBBER} == "yes" )
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} CLOBBER=true ${GMAKE} install-data-hook
+.ifdef PACKAGE_BUILDING
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} DO_NOT_CONFIG=yes TRIPWIRE_CLOBBER=${TRIPWIRE_CLOBBER} TRIPWIRE_PROMPT="false" ${GMAKE} install-data-hook
 .else
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} ${GMAKE} install-data-hook
-.endif
-.else
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} DO_NOT_CONFIG=yes ${GMAKE} install-data-hook
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} TRIPWIRE_CLOBBER=${TRIPWIRE_CLOBBER} TRIPWIRE_PROMPT=${TRIPWIRE_PROMPT) ${GMAKE} install-data-hook
 .endif
 
 make-pkg-install:
@@ -95,6 +110,9 @@ make-pkg-install:
 	@ ${ECHO_CMD} PACKAGE_INSTALLER=yes >> ${PKGINSTALL}
 	@ ${ECHO_CMD} POLICYSRC=/tmp/$$$$.tmp >> ${PKGINSTALL}
 	@ ${ECHO_CMD} PREFIX="$(PREFIX)" >> ${PKGINSTALL}
+	@ ${ECHO_CMD} DO_NOT_CONFIG=yes >> ${PKGINSTALL}
+	@ ${ECHO_CMD} TRIPWIRE_CLOBBER="false" >> ${PKGINSTALL}
+	@ ${ECHO_CMD} TRIPWIRE_PROMPT="false" >> ${PKGINSTALL}
 	@ ${ECHO_CMD} sysconfdir="$(sysconfdir)" >> ${PKGINSTALL}
 	@ ${ECHO_CMD} prefix=${PREFIX} >> ${PKGINSTALL}
 	@ ${ECHO_CMD} sysconfdir=${TWCFG} >> ${PKGINSTALL}
@@ -124,4 +142,4 @@ create-database:
 
 post-install:	install-config-files create-database make-pkg-install
 	
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
