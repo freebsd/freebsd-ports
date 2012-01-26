@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120126:
+  AFFECTS: users of ftp/proftpd and ftp/proftpd-mysql
+  AUTHOR: Martin Matuska <mm@FreeBSD.org>
+
+  The proftpd port has been updated to 1.3.4 and changed to use
+  dynamically loadable modules. Please add corresponding LoadModule
+  directives to your configuration file, like in the following example:
+
+    LoadModule mod_tls.c
+
+  The modules mod_sql_mysql and mod_sql_postgres are now outside of the
+  main proftpd port:
+    databases/proftpd-mod_sql_mysql
+    databases/proftpd-mod_sql_postgres
+
+  The proftpd-mysql port has been removed, use the alternative port:
+    databases/proftpd-mod_sql_mysql
+  
 20120121:
   AFFECTS: users of multimedia/vdr
   AUTHOR: Juergen Lock <nox@FreeBSD.org>
