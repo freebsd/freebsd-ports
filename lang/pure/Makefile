@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	pure
-PORTVERSION=	0.47
-PORTREVISION=	1
+PORTVERSION=	0.51
 CATEGORIES=	lang
-MASTER_SITES=	http://pure-lang.googlecode.com/files/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A modern-style functional programming language
 
-LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
-BUILD_DEPENDS+=	llvm29>=2.9<2.10.*:${PORTSDIR}/devel/llvm29
-RUN_DEPENDS+=	llvm29>=2.9<2.10.*:${PORTSDIR}/devel/llvm29
+LICENSE=	LGPL3
+
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
+		mpfr.4:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS=	llvm>=2.9:${PORTSDIR}/devel/llvm
+RUN_DEPENDS=	llvm>=2.9:${PORTSDIR}/devel/llvm
 
 MAN1=		pure.1
-LICENSE=	LGPL3
 SUB_FILES=	pkg-message
 
-USE_GCC=	4.2+
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+USE_PURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
@@ -86,4 +85,5 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
+.include "bsd.pure.mk"
 .include <bsd.port.post.mk>

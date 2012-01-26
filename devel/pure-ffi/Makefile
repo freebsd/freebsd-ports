@@ -7,35 +7,19 @@
 
 PORTNAME=	pure-ffi
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Pure language interface to libffi
 
-LIB_DEPENDS+=	pure.7:${PORTSDIR}/lang/pure \
-		ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
 
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-USE_GCC=	4.2+
-USE_GMAKE=	yes
+USE_PURE=	yes
 
 PLIST_FILES=	lib/pure/ffi.pure \
 		lib/pure/ffi.so
-MAKE_ARGS+=	prefix=${PREFIX} \
-		CPPFLAGS+=-I${LOCALBASE}/include  \
-		LDFLAGS+=-L${LOCALBASE}/lib \
-		CFLAGS="${CFLAGS}"
-
-PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
-
+.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
 .include <bsd.port.post.mk>

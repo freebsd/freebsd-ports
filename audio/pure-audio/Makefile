@@ -7,26 +7,18 @@
 
 PORTNAME=	pure-audio
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A digital audio interface for the Pure language
 
-LIB_DEPENDS+=	pure.7:${PORTSDIR}/lang/pure \
-		portaudio.2:${PORTSDIR}/audio/portaudio2 \
+LIB_DEPENDS=	portaudio.2:${PORTSDIR}/audio/portaudio2 \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		fftw3:${PORTSDIR}/math/fftw3
 
-#RUN_DEPENDS+=	${LOCALBASE}/lib/pure/ffi.pure:${PORTSDIR}/devel/pure-ffi
-
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-USE_GMAKE=	yes
-
-MAKE_ARGS+=	prefix=${PREFIX} CPPFLAGS+=-I${LOCALBASE}/include LDFLAGS+=-L${LOCALBASE}/lib CFLAGS="${CFLAGS}"
+USE_PURE=	yes
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -34,14 +26,6 @@ post-patch:
 		-e "s|portaudio.h|portaudio2/portaudio.h|g" \
 	   	${WRKSRC}/Makefile
 
-PORTEXAMPLES=	*
-
 .include <bsd.port.pre.mk>
-
-post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
-
+.include "${PORTSDIR}/lang/pure/bsd.pure.mk"
 .include <bsd.port.post.mk>
