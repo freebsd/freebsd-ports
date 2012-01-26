@@ -7,7 +7,7 @@
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -58,7 +58,7 @@ RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot
 .endif
 
 .if !defined(WITHOUT_PROFTPD)
-RUN_DEPENDS+=	proftpd:${PORTSDIR}/ftp/proftpd-mysql
+RUN_DEPENDS+=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:${PORTSDIR}/databases/proftpd-mod_sql_mysql
 .endif
 
 .if defined(WITH_POWERDNS)
