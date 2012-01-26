@@ -19,6 +19,7 @@
 %%DOKUWIKI_DIR%%/conf/mediameta.php
 %%DOKUWIKI_DIR%%/conf/mime.conf
 %%DOKUWIKI_DIR%%/conf/mysql.conf.php.example
+%%DOKUWIKI_DIR%%/conf/plugins.required.php
 %%DOKUWIKI_DIR%%/conf/scheme.conf
 %%DOKUWIKI_DIR%%/conf/smileys.conf
 %%DOKUWIKI_DIR%%/conf/users.auth.php.dist
@@ -30,6 +31,8 @@
 %%DOKUWIKI_DIR%%/data/index/_dummy
 %%DOKUWIKI_DIR%%/data/locks/_dummy
 %%DOKUWIKI_DIR%%/data/media/wiki/dokuwiki-128.png
+%%DOKUWIKI_DIR%%/data/media_attic/_dummy
+%%DOKUWIKI_DIR%%/data/media_meta/_dummy
 %%DOKUWIKI_DIR%%/data/meta/_dummy
 %%DOKUWIKI_DIR%%/data/pages/playground/playground.txt
 %%DOKUWIKI_DIR%%/data/pages/wiki/dokuwiki.txt
@@ -1168,6 +1171,7 @@
 %%DOKUWIKI_DIR%%/inc/lang/ja/subscr_single.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/ja/uploadmail.txt
+%%DOKUWIKI_DIR%%/inc/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/km/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/km/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/km/conflict.txt
@@ -1422,6 +1426,7 @@
 %%DOKUWIKI_DIR%%/inc/lang/mr/stopwords.txt
 %%DOKUWIKI_DIR%%/inc/lang/mr/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/mr/uploadmail.txt
+%%DOKUWIKI_DIR%%/inc/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/inc/lang/ne/admin.txt
 %%DOKUWIKI_DIR%%/inc/lang/ne/backlinks.txt
 %%DOKUWIKI_DIR%%/inc/lang/ne/conflict.txt
@@ -1506,6 +1511,10 @@
 %%DOKUWIKI_DIR%%/inc/lang/no/searchpage.txt
 %%DOKUWIKI_DIR%%/inc/lang/no/showrev.txt
 %%DOKUWIKI_DIR%%/inc/lang/no/stopwords.txt
+%%DOKUWIKI_DIR%%/inc/lang/no/subscr_digest.txt
+%%DOKUWIKI_DIR%%/inc/lang/no/subscr_form.txt
+%%DOKUWIKI_DIR%%/inc/lang/no/subscr_list.txt
+%%DOKUWIKI_DIR%%/inc/lang/no/subscr_single.txt
 %%DOKUWIKI_DIR%%/inc/lang/no/updateprofile.txt
 %%DOKUWIKI_DIR%%/inc/lang/no/uploadmail.txt
 %%DOKUWIKI_DIR%%/inc/lang/pl/admin.txt
@@ -2064,11 +2073,6 @@
 %%DOKUWIKI_DIR%%/inc/utf8.php
 %%DOKUWIKI_DIR%%/index.php
 %%DOKUWIKI_DIR%%/install.php
-%%DOKUWIKI_DIR%%/lib/_fla/.htaccess
-%%DOKUWIKI_DIR%%/lib/_fla/MultipleUpload.as
-%%DOKUWIKI_DIR%%/lib/_fla/README
-%%DOKUWIKI_DIR%%/lib/_fla/index.html
-%%DOKUWIKI_DIR%%/lib/_fla/multipleUpload.fla
 %%DOKUWIKI_DIR%%/lib/exe/ajax.php
 %%DOKUWIKI_DIR%%/lib/exe/css.php
 %%DOKUWIKI_DIR%%/lib/exe/detail.php
@@ -2077,7 +2081,6 @@
 %%DOKUWIKI_DIR%%/lib/exe/indexer.php
 %%DOKUWIKI_DIR%%/lib/exe/js.php
 %%DOKUWIKI_DIR%%/lib/exe/mediamanager.php
-%%DOKUWIKI_DIR%%/lib/exe/multipleUpload.swf
 %%DOKUWIKI_DIR%%/lib/exe/opensearch.php
 %%DOKUWIKI_DIR%%/lib/exe/xmlrpc.php
 %%DOKUWIKI_DIR%%/lib/images/admin/README
@@ -2155,6 +2158,10 @@
 %%DOKUWIKI_DIR%%/lib/images/fileicons/xml.png
 %%DOKUWIKI_DIR%%/lib/images/fileicons/zip.png
 %%DOKUWIKI_DIR%%/lib/images/history.png
+%%DOKUWIKI_DIR%%/lib/images/icon-file.png
+%%DOKUWIKI_DIR%%/lib/images/icon-list.png
+%%DOKUWIKI_DIR%%/lib/images/icon-sort.png
+%%DOKUWIKI_DIR%%/lib/images/icon-thumb.png
 %%DOKUWIKI_DIR%%/lib/images/index.html
 %%DOKUWIKI_DIR%%/lib/images/info.png
 %%DOKUWIKI_DIR%%/lib/images/interwiki/amazon.de.gif
@@ -2216,8 +2223,8 @@
 %%DOKUWIKI_DIR%%/lib/images/media_size_medium.png
 %%DOKUWIKI_DIR%%/lib/images/media_size_original.png
 %%DOKUWIKI_DIR%%/lib/images/media_size_small.png
+%%DOKUWIKI_DIR%%/lib/images/mediamanager.png
 %%DOKUWIKI_DIR%%/lib/images/minus.gif
-%%DOKUWIKI_DIR%%/lib/images/multiupload.png
 %%DOKUWIKI_DIR%%/lib/images/notify.png
 %%DOKUWIKI_DIR%%/lib/images/ns.png
 %%DOKUWIKI_DIR%%/lib/images/page.png
@@ -2325,6 +2332,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hi/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hr/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hr/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hu/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hu/lang.php
@@ -2337,6 +2345,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/it/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ja/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ja/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ko/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ko/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/la/help.txt
@@ -2349,6 +2358,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mr/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ne/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/nl/help.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/nl/lang.php
@@ -2389,6 +2399,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/acl/pix/ns.png
 %%DOKUWIKI_DIR%%/lib/plugins/acl/pix/page.png
 %%DOKUWIKI_DIR%%/lib/plugins/acl/pix/user.png
+%%DOKUWIKI_DIR%%/lib/plugins/acl/plugin.info.txt
 %%DOKUWIKI_DIR%%/lib/plugins/acl/rtl.css
 %%DOKUWIKI_DIR%%/lib/plugins/acl/script.js
 %%DOKUWIKI_DIR%%/lib/plugins/acl/style.css
@@ -2451,6 +2462,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/it/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ko/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ko/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/la/intro.txt
@@ -2464,6 +2476,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ne/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/nl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/nl/lang.php
@@ -2498,6 +2511,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh-tw/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh-tw/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/config/plugin.info.txt
 %%DOKUWIKI_DIR%%/lib/plugins/config/rtl.css
 %%DOKUWIKI_DIR%%/lib/plugins/config/settings/config.class.php
 %%DOKUWIKI_DIR%%/lib/plugins/config/settings/config.metadata.php
@@ -2505,6 +2519,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/config/style.css
 %%DOKUWIKI_DIR%%/lib/plugins/index.html
 %%DOKUWIKI_DIR%%/lib/plugins/info/lang/sl/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/info/plugin.info.txt
 %%DOKUWIKI_DIR%%/lib/plugins/info/syntax.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/admin.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/classes/ap_delete.class.php
@@ -2564,6 +2579,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/it/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ko/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ko/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/la/admin_plugin.txt
@@ -2577,6 +2593,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mr/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ne/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/nl/admin_plugin.txt
 %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/nl/lang.php
@@ -2647,6 +2664,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/en/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eo/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eo/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eo/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/es/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/es/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/es/submitted.txt
@@ -2656,6 +2674,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eu/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fa/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fa/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fa/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fi/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fi/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fi/submitted.txt
@@ -2664,6 +2683,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fr/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/gl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/gl/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/gl/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/he/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/he/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hi/lang.php
@@ -2683,6 +2703,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ja/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ja/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ja/submitted.txt
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ko/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ko/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ko/submitted.txt
@@ -2697,14 +2718,17 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ne/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/nl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/nl/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/nl/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/no/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/no/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/no/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pl/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pl/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt/submitted.txt
@@ -2719,6 +2743,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ru/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sk/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sk/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sl/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sl/submitted.txt
@@ -2734,6 +2759,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/tr/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/uk/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/uk/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/uk/submitted.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh/submitted.txt
@@ -2793,6 +2819,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/it/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ja/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ja/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/revert/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ko/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ko/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/la/intro.txt
@@ -2805,6 +2832,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mr/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ne/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/nl/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/nl/lang.php
@@ -2840,6 +2868,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh-tw/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh-tw/lang.php
+%%DOKUWIKI_DIR%%/lib/plugins/revert/plugin.info.txt
 %%DOKUWIKI_DIR%%/lib/plugins/safefnrecode/action.php
 %%DOKUWIKI_DIR%%/lib/plugins/safefnrecode/plugin.info.txt
 %%DOKUWIKI_DIR%%/lib/plugins/syntax.php
@@ -2990,6 +3019,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/kk/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ko/add.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ko/delete.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ko/edit.txt
@@ -3028,6 +3058,7 @@
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mr/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mr/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mr/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ms/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ne/add.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ne/delete.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ne/edit.txt
@@ -3136,25 +3167,51 @@
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/intro.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/lang.php
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw/list.txt
+%%DOKUWIKI_DIR%%/lib/plugins/usermanager/plugin.info.txt
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/script.js
 %%DOKUWIKI_DIR%%/lib/plugins/usermanager/style.css
-%%DOKUWIKI_DIR%%/lib/scripts/ajax.js
+%%DOKUWIKI_DIR%%/lib/scripts/behaviour.js
+%%DOKUWIKI_DIR%%/lib/scripts/compatibility.js
 %%DOKUWIKI_DIR%%/lib/scripts/cookie.js
 %%DOKUWIKI_DIR%%/lib/scripts/delay.js
 %%DOKUWIKI_DIR%%/lib/scripts/drag.js
 %%DOKUWIKI_DIR%%/lib/scripts/edit.js
-%%DOKUWIKI_DIR%%/lib/scripts/events.js
+%%DOKUWIKI_DIR%%/lib/scripts/editor.js
+%%DOKUWIKI_DIR%%/lib/scripts/fileuploader.js
+%%DOKUWIKI_DIR%%/lib/scripts/fileuploaderextended.js
 %%DOKUWIKI_DIR%%/lib/scripts/helpers.js
 %%DOKUWIKI_DIR%%/lib/scripts/hotkeys.js
 %%DOKUWIKI_DIR%%/lib/scripts/index.html
 %%DOKUWIKI_DIR%%/lib/scripts/index.js
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_flat_75_ffffff_40x100.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_65_ffffff_1x400.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_75_dadada_1x400.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_222222_256x240.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_2e83ff_256x240.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_454545_256x240.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_888888_256x240.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_cd0a0a_256x240.png
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/smoothness.css
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui.js
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui.min.js
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery.cookie.js
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery.js
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery.min.js
+%%DOKUWIKI_DIR%%/lib/scripts/jquery/update.sh
 %%DOKUWIKI_DIR%%/lib/scripts/linkwiz.js
 %%DOKUWIKI_DIR%%/lib/scripts/locktimer.js
 %%DOKUWIKI_DIR%%/lib/scripts/media.js
+%%DOKUWIKI_DIR%%/lib/scripts/page.js
+%%DOKUWIKI_DIR%%/lib/scripts/qsearch.js
 %%DOKUWIKI_DIR%%/lib/scripts/script.js
-%%DOKUWIKI_DIR%%/lib/scripts/subscriptions.js
 %%DOKUWIKI_DIR%%/lib/scripts/textselection.js
 %%DOKUWIKI_DIR%%/lib/scripts/toolbar.js
+%%DOKUWIKI_DIR%%/lib/scripts/tree.js
 %%DOKUWIKI_DIR%%/lib/scripts/tw-sack.js
 %%DOKUWIKI_DIR%%/lib/styles/all.css
 %%DOKUWIKI_DIR%%/lib/styles/feed.css
@@ -3162,14 +3219,18 @@
 %%DOKUWIKI_DIR%%/lib/styles/print.css
 %%DOKUWIKI_DIR%%/lib/styles/screen.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/_admin.css
+%%DOKUWIKI_DIR%%/lib/tpl/default/_fileuploader.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/_linkwiz.css
+%%DOKUWIKI_DIR%%/lib/tpl/default/_mediamanager.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/_mediaoptions.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/_subscription.css
+%%DOKUWIKI_DIR%%/lib/tpl/default/_tabs.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/design.css
 %%DOKUWIKI_DIR%%/lib/tpl/default/detail.php
 %%DOKUWIKI_DIR%%/lib/tpl/default/footer.html
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/UWEB.png
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/UWEBshadow.png
+%%DOKUWIKI_DIR%%/lib/tpl/default/images/apple-touch-icon.png
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/bullet.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/button-cc.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/button-css.png
@@ -3185,6 +3246,7 @@
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/link_icon.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/mail_icon.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/open.gif
+%%DOKUWIKI_DIR%%/lib/tpl/default/images/resizecol.png
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/tocdot2.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/images/windows.gif
 %%DOKUWIKI_DIR%%/lib/tpl/default/layout.css
@@ -3197,445 +3259,463 @@
 %%DOKUWIKI_DIR%%/lib/tpl/index.php
 @dirrm %%DOKUWIKI_DIR%%/bin
 @dirrm %%DOKUWIKI_DIR%%/conf
-@dirrm %%DOKUWIKI_DIR%%/data/meta
-@dirrm %%DOKUWIKI_DIR%%/data/pages/wiki
-@dirrm %%DOKUWIKI_DIR%%/data/pages/playground
-@dirrm %%DOKUWIKI_DIR%%/data/pages
+@dirrm %%DOKUWIKI_DIR%%/data/index
+@dirrm %%DOKUWIKI_DIR%%/data/cache
+@dirrm %%DOKUWIKI_DIR%%/data/media_meta
+@dirrm %%DOKUWIKI_DIR%%/data/locks
 @dirrm %%DOKUWIKI_DIR%%/data/media/wiki
 @dirrm %%DOKUWIKI_DIR%%/data/media
-@dirrm %%DOKUWIKI_DIR%%/data/locks
-@dirrm %%DOKUWIKI_DIR%%/data/cache
-@dirrm %%DOKUWIKI_DIR%%/data/index
+@dirrm %%DOKUWIKI_DIR%%/data/media_attic
+@dirrm %%DOKUWIKI_DIR%%/data/pages/playground
+@dirrm %%DOKUWIKI_DIR%%/data/pages/wiki
+@dirrm %%DOKUWIKI_DIR%%/data/pages
+@dirrm %%DOKUWIKI_DIR%%/data/meta
 @dirrm %%DOKUWIKI_DIR%%/data/attic
 @dirrm %%DOKUWIKI_DIR%%/data/tmp
 @dirrm %%DOKUWIKI_DIR%%/data
 @dirrm %%DOKUWIKI_DIR%%/inc/parser
 @dirrm %%DOKUWIKI_DIR%%/inc/auth
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/it
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ku
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/la
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/is
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/da
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/de
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/vi
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/el
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/th
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/az
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/id
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/af
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/he
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/inc/geshi
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/km
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/en
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt-br
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/et
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/es
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ku
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/fo
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/la
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/no
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/da
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/en
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/hu
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/mg
-@dirrm %%DOKUWIKI_DIR%%/inc/lang/no
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/de
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/id
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/vi
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ja
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/mg
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/it
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/el
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/is
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/az
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/et
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/af
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/es
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/th
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/he
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/zh
 @dirrm %%DOKUWIKI_DIR%%/inc/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/inc/lang/ca-valencia
 @dirrm %%DOKUWIKI_DIR%%/inc/lang
-@dirrm %%DOKUWIKI_DIR%%/inc/geshi
 @dirrm %%DOKUWIKI_DIR%%/inc
-@dirrm %%DOKUWIKI_DIR%%/lib/exe
-@dirrm %%DOKUWIKI_DIR%%/lib/_fla
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/he
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/af
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ne
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/gl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/es
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/is
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/la
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/th
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/el
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/images
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/th
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/is
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/la
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ne
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/gl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/af
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/he
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/af
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ne
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/gl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/es
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/is
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/la
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/th
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/el
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/classes
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/gl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ne
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/es
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/he
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/af
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/el
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/th
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/is
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/la
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/af
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/es
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/gl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ne
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/la
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/is
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/vi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/th
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/el
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/pix
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/settings
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh-tw
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/hi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/eo
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de-informal
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/it
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ro
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ca-valencia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ca
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/da
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/is
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/la
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/tr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sq
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/th
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/el
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/id-ni
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/uk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mk
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/id
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ru
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/eu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ko
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lb
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sv
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fi
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lt
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fa
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/af
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/he
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ar
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/cs
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ia
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/nl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pt-br
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/en
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/et
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/bg
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/hr
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/no
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ne
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/gl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/hu
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/es
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pl
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/images
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins/safefnrecode
-@dirrm %%DOKUWIKI_DIR%%/lib/plugins
+@dirrm %%DOKUWIKI_DIR%%/lib/images/toolbar
+@dirrm %%DOKUWIKI_DIR%%/lib/images/smileys
+@dirrm %%DOKUWIKI_DIR%%/lib/images/admin
+@dirrm %%DOKUWIKI_DIR%%/lib/images/fileicons
 @dirrm %%DOKUWIKI_DIR%%/lib/images/license/badge
 @dirrm %%DOKUWIKI_DIR%%/lib/images/license/button
 @dirrm %%DOKUWIKI_DIR%%/lib/images/license
 @dirrm %%DOKUWIKI_DIR%%/lib/images/interwiki
-@dirrm %%DOKUWIKI_DIR%%/lib/images/toolbar
-@dirrm %%DOKUWIKI_DIR%%/lib/images/admin
-@dirrm %%DOKUWIKI_DIR%%/lib/images/fileicons
-@dirrm %%DOKUWIKI_DIR%%/lib/images/smileys
 @dirrm %%DOKUWIKI_DIR%%/lib/images
+@dirrm %%DOKUWIKI_DIR%%/lib/exe
+@dirrm %%DOKUWIKI_DIR%%/lib/styles
+@dirrm %%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme/images
+@dirrm %%DOKUWIKI_DIR%%/lib/scripts/jquery/jquery-ui-theme
+@dirrm %%DOKUWIKI_DIR%%/lib/scripts/jquery
 @dirrm %%DOKUWIKI_DIR%%/lib/scripts
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/la
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/is
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/af
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/th
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang/ca-valencia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/popularity
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/la
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/is
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/af
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/th
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang/ca-valencia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/revert
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/safefnrecode
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/images
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/la
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/is
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/af
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/th
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang/ca-valencia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/usermanager
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/images
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/settings
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/la
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/is
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/af
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/th
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang/ca-valencia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/config
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/classes
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/la
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/is
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/af
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/th
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang/ca-valencia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/plugin
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/pix
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pt-br
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/nl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lb
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/la
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/no
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/da
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ar
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ru
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/en
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh-tw
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/vi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ja
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/gl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/it
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/el
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/bg
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ca
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/tr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pt
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hi
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/is
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/hr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ro
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/et
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/id-ni
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ko
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eo
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/kk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ms
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/pl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/de-informal
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/af
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sq
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/es
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/uk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/mk
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/cs
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/lv
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/eu
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/th
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/he
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/zh
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ne
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/fa
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/sr
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang/ca-valencia
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/acl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info/lang/sl
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info/lang
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins/info
+@dirrm %%DOKUWIKI_DIR%%/lib/plugins
 @dirrm %%DOKUWIKI_DIR%%/lib/tpl/default/images
 @dirrm %%DOKUWIKI_DIR%%/lib/tpl/default
 @dirrm %%DOKUWIKI_DIR%%/lib/tpl
-@dirrm %%DOKUWIKI_DIR%%/lib/styles
 @dirrm %%DOKUWIKI_DIR%%/lib
 @dirrmtry %%DOKUWIKI_DIR%%
