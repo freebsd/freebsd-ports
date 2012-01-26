@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	pinpoint
-DISTVERSION=	0.1.2
+DISTVERSION=	0.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A tool for making hackers do excellent presentations
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack librsvg2
 GNU_CONFIGURE=	yes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	GST "Enable live videos as slide backgrounds" off
 
