@@ -1,10 +1,11 @@
---- librtmp/librtmp.pc.in.orig	2010-07-01 04:58:34.000000000 +0900
-+++ librtmp/librtmp.pc.in	2011-01-05 23:29:34.000000000 +0900
-@@ -8,5 +8,5 @@
+--- librtmp/librtmp.pc.in.orig	2011-07-12 09:24:33.000000000 +0900
++++ librtmp/librtmp.pc.in	2012-01-26 10:58:43.000000000 +0900
+@@ -8,6 +8,6 @@
  Version: @VERSION@
  Requires: @CRYPTO_REQ@
  URL: http://rtmpdump.mplayerhq.hu
 -Libs: -L${libdir} -lrtmp -lz
--Cflags: -I${incdir}
 +Libs: -L${libdir} -L@OPENSSLLIB@ -lrtmp -lz -lssl -lcrypto
+ Libs.private: @PRIVATE_LIBS@
+-Cflags: -I${incdir}
 +Cflags: -I${incdir} -I@OPENSSLINC@
