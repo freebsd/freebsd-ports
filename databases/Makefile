@@ -636,6 +636,7 @@
     SUBDIR += postgresql91-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
+    SUBDIR += proftpd-mod_sql_mysql
     SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
