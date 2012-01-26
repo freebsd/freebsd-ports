@@ -4489,6 +4489,7 @@ gnatdroid-sysroot               ports/lang/gnatdroid-sysroot
 gnatpython                      ports/devel/gnatpython
 gnats4                          ports/databases/gnats4
 gnatsweb4                       ports/databases/gnatsweb4
+gnaural                         ports/audio/gnaural
 gnet2                           ports/net/gnet2
 gnetcat                         ports/net/gnetcat
 gnewtellium                     ports/net-p2p/gnewtellium
@@ -4818,6 +4819,7 @@ graphics_flip                   ports/graphics/flip
 graphics_ipa                    ports/graphics/IPA
 graphics_jgraph                 ports/graphics/jgraph
 graphics_orca                   ports/graphics/orca
+graphics_sage                   ports/graphics/sage
 graphicsmagick                  ports/graphics/GraphicsMagick
 graphicsmagick12                ports/graphics/GraphicsMagick12
 graphicsmagick13                ports/graphics/GraphicsMagick13
@@ -8417,6 +8419,7 @@ linux-enemyterritory-etpro      ports/games/linux-enemyterritory-etpro
 linux-enemyterritory-etpub      ports/games/linux-enemyterritory-etpub
 linux-enemyterritory-fortress   ports/games/linux-enemyterritory-fortress
 linux-enemyterritory-jaymod     ports/games/linux-enemyterritory-jaymod
+linux-enemyterritory-jaymod-21  ports/games/linux-enemyterritory-jaymod-21
 linux-enemyterritory-omni-bot   ports/games/linux-enemyterritory-omni-bot
 linux-enemyterritory-omni-bot-0660  ports/games/linux-enemyterritory-omni-bot-0660
 linux-enemyterritory-shrub      ports/games/linux-enemyterritory-shrub
@@ -8958,6 +8961,7 @@ math_atlas-devel                ports/math/atlas-devel
 math_fbm                        ports/math/fbm
 math_jags                       ports/math/jags
 math_mpc                        ports/math/mpc
+math_sage                       ports/math/sage
 math_surf                       ports/math/surf
 math_ump                        ports/math/ump
 matharray                       ports/math/matharray
@@ -13417,6 +13421,7 @@ p5-Net-Server                   ports/net/p5-Net-Server
 p5-Net-Server-Coro              ports/net/p5-Net-Server-Coro
 p5-Net-Server-Mail              ports/mail/p5-Net-Server-Mail
 p5-Net-Server-Mail-ESMTP-AUTH   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
+p5-Net-Server-SS-PreFork        ports/net/p5-Net-Server-SS-PreFork
 p5-Net-Services                 ports/net/p5-Net-Services
 p5-Net-SinFP                    ports/security/p5-Net-SinFP
 p5-Net-Stomp                    ports/net-im/p5-Net-Stomp
@@ -17849,6 +17854,7 @@ p5-net-server                   ports/net/p5-Net-Server
 p5-net-server-coro              ports/net/p5-Net-Server-Coro
 p5-net-server-mail              ports/mail/p5-Net-Server-Mail
 p5-net-server-mail-esmtp-auth   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
+p5-net-server-ss-prefork        ports/net/p5-Net-Server-SS-PreFork
 p5-net-services                 ports/net/p5-Net-Services
 p5-net-sftp                     ports/net/p5-Net-SFTP
 p5-net-sftp-foreign             ports/net/p5-Net-SFTP-Foreign
@@ -21622,6 +21628,7 @@ pulseaudio                      ports/audio/pulseaudio
 punbb                           ports/www/punbb
 pup                             ports/print/pup
 puppet                          ports/sysutils/puppet
+puppet-lint                     ports/sysutils/puppet-lint
 pure                            ports/lang/pure
 pure-audio                      ports/audio/pure-audio
 pure-csv                        ports/textproc/pure-csv
@@ -21776,6 +21783,7 @@ py-akismet                      ports/devel/py-akismet
 py-albatross                    ports/www/py-albatross
 py-amanith                      ports/graphics/py-amanith
 py-amf                          ports/www/py-amf
+py-amqplib                      ports/net/py-amqplib
 py-anki                         ports/games/py-anki
 py-anonfunc                     ports/devel/py-anonfunc
 py-anyjson                      ports/devel/py-anyjson
@@ -22540,7 +22548,6 @@ py-roxlib                       ports/devel/py-roxlib
 py-rpyc                         ports/devel/py-RPyC
 py-rrdtool_lgpl                 ports/databases/py-rrdtool_lgpl
 py-rss2gen                      ports/textproc/py-rss2gen
-py-rssdler                      ports/www/py-rssdler
 py-rstyoutube                   ports/textproc/py-rstyoutube
 py-rtf                          ports/print/py-rtf
 py-rtree                        ports/devel/py-rtree
@@ -24509,7 +24516,6 @@ safesh                          ports/security/safesh
 safestr                         ports/devel/safestr
 saga                            ports/math/saga
 sagasu                          ports/textproc/sagasu
-sage                            ports/graphics/sage
 saint                           ports/security/saint
 sakai                           ports/www/sakai
 sakura                          ports/x11-toolkits/sakura
