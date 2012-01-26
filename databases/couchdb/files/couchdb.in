@@ -36,11 +36,18 @@ couchdb_respawn="${couchdb_respawn:-"0"}"
 command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}/${name}.pid"
 
+command_args="-p ${pidfile} -b"
+
 couchdb_prestart()
 {
 	install -o $couchdb_user /dev/null $pidfile
 
-	[ -n "$couchdb_flags" ] && return 0
+	if [ -n "$couchdb_flags" ]; then
+		case "$couchdb_flags" in
+		*-[bp]*) err 1 'The -b and -p options should be removed from couchdb_flags' ;;
+		esac
+		return 0
+	fi
 
 	if [ $couchdb_respawn -gt 0 ]; then
 		respawn="-r ${couchdb_respawn}"
@@ -54,7 +61,7 @@ couchdb_prestart()
 		errfile=/dev/null
 	fi
 
-	couchdb_flags="-b -a ${couchdb_etcdir}/default.ini -a ${couchdb_etcdir}/local.ini ${respawn} -o ${logfile} -e ${errfile} -p ${pidfile}"
+	command_args="-a ${couchdb_etcdir}/default.ini -a ${couchdb_etcdir}/local.ini ${respawn} -o ${logfile} -e ${errfile} ${command_args}"
 }
 
 start_precmd=${name}_prestart
