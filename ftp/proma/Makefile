@@ -7,6 +7,7 @@
 
 PORTNAME=	proma
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
@@ -29,7 +30,7 @@ OPTIONS=	PROFTPD "Install ProFTPd with MySQL support" off \
 SUB_FILES=	pkg-message
 
 .if defined(WITH_PROFTPD)
-RUN_DEPENDS+=	proftpd:${PORTSDIR}/ftp/proftpd-mysql
+RUN_DEPENDS+=	${LOCALBASE}/libexec/proftpd/mod_sql_mysql.so:${PORTSDIR}/databases/proftpd-mod_sql_mysql
 .endif
 .if defined(WITH_APACHE)
 USE_APACHE=	22
