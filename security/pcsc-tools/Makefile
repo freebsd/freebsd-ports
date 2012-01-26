@@ -15,7 +15,7 @@ COMMENT=	Tools to test a PCSC driver, card or reader
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-RUN_DEPENDS=	${SITE_PERL}/$PERL_ARCH}/Chipcard/PCSC.pm:${PORTSDIR}/devel/p5-PCSC-Card
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Chipcard/PCSC.pm:${PORTSDIR}/devel/p5-PCSC-Card
 
 USE_GMAKE=	yes
 
