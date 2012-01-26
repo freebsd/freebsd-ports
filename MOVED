@@ -3226,3 +3226,4 @@ devel/luajit|lang/luajit|2012-01-19|Compilers typically live in the lang categor
 devel/p5-DBIx-Class-Schema-PopulateMore||2012-01-20|Removed
 textproc/qgoogletranslator||2012-01-20|Has expired: Runtime is broken because Google close free usage of API.  Project closed.
 py-rssdler||2012-01-25|Runtime is mostly broken, abandoned upstream. Use www/py-flexget instead
+ftp/proftpd-mysql|databases/proftpd-mod_sql_mysql|2012-01-26|Module now in slave port
