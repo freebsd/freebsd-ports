@@ -7,6 +7,7 @@
 
 PORTNAME=	Tk-ToolBar
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A toolbar widget for Perl/Tk
 
-#BUILD_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/Tk-CursorControl
-#RUN_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/Tk-CursorControl
+BUILD_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/p5-Tk-CursorControl
+RUN_DEPENDS=	p5-Tk-CursorControl>=0:${PORTSDIR}/x11-toolkits/p5-Tk-CursorControl
 
 USE_ZIP=	yes
 PERL_CONFIGURE=	yes
