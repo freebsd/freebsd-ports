@@ -191,6 +191,7 @@
     SUBDIR += phat
     SUBDIR += plib
     SUBDIR += pure-gtk
+    SUBDIR += pure-tk
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam
     SUBDIR += py-fltk
