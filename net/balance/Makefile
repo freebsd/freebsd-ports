@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	balance
-PORTVERSION=	3.42
-PORTREVISION=	1
+PORTVERSION=	3.54
 CATEGORIES=	net
 MASTER_SITES=	http://www.inlab.de/
 
@@ -25,7 +24,7 @@ pre-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/balance ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/balance.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/balance.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} /var/run/balance
 
 .include <bsd.port.mk>
