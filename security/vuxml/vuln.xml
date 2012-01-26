@@ -47,6 +47,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fa2f386f-4814-11e1-89b4-001ec9578670">
+    <topic>acroread9 -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>acroread9</name>
+	<range><lt>9.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Adobe Security Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/advisories/apsa11-04.html">
+	  <p>An unspecified vulnerability in the U3D component allows
+	     remote attackers to execute arbitrary code (or cause a denial
+	     of service attack) via unknown vectors.</p>
+	</blockquote>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-24.html">
+	   <p>A heap-based buffer overflow allows attackers to execute
+	      arbitrary code via unspecified vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2462</cvename>
+      <cvename>CVE-2011-1353</cvename>
+      <cvename>CVE-2011-2431</cvename>
+      <cvename>CVE-2011-2432</cvename>
+      <cvename>CVE-2011-2433</cvename>
+      <cvename>CVE-2011-2434</cvename>
+      <cvename>CVE-2011-2435</cvename>
+      <cvename>CVE-2011-2436</cvename>
+      <cvename>CVE-2011-2437</cvename>
+      <cvename>CVE-2011-2438</cvename>
+      <cvename>CVE-2011-2439</cvename>
+      <cvename>CVE-2011-2440</cvename>
+      <cvename>CVE-2011-2441</cvename>
+      <cvename>CVE-2011-2442</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb11-24.html</url>
+      <url>http://www.adobe.com/support/security/advisories/apsa11-04.html</url>
+    </references>
+    <dates>
+      <discovery>2011-12-07</discovery>
+      <entry>2012-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33d73d59-4677-11e1-88cd-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
