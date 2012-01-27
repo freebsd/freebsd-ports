@@ -7,13 +7,17 @@
 #
 
 PORTNAME=	stow
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of Carnegie Mellon's "Depot" program
+
+LICENSE=	GPLv3
+
+TEST_DEPENDS=	p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
