@@ -1,4 +1,4 @@
-/* $FreeBSD: /tmp/pcvs/ports/devel/gdb/files/fbsd-threads.c,v 1.2 2011-11-06 18:12:32 ohauer Exp $ */
+/* $FreeBSD: /tmp/pcvs/ports/devel/gdb/files/fbsd-threads.c,v 1.3 2012-01-27 09:38:15 scheidell Exp $ */
 /* FreeBSD libthread_db assisted debugging support.
    Copyright 1999, 2000, 2001 Free Software Foundation, Inc.
 
@@ -358,11 +358,8 @@ enable_thread_event_reporting (void)
 
   /* Set the process wide mask saying which events we're interested in.  */
   td_event_emptyset (&events);
-
-/* XXX PR ports/162093
- * td_event_addset (&events, TD_CREATE);
- * td_event_addset (&events, TD_DEATH);
-*/
+  td_event_addset (&events, TD_CREATE);
+  td_event_addset (&events, TD_DEATH);
 
   err = td_ta_set_event_p (thread_agent, &events);
   if (err != TD_OK)
@@ -377,7 +374,6 @@ enable_thread_event_reporting (void)
   td_create_bp_addr = 0;
   td_death_bp_addr = 0;
 
-#if 0
   /* Set up the thread creation event.  */
   err = enable_thread_event (thread_agent, TD_CREATE, &td_create_bp_addr);
   if (err != TD_OK)
@@ -395,7 +391,6 @@ enable_thread_event_reporting (void)
 	       thread_db_err_str (err));
       return;
     }
-#endif
 }
 
 static void
@@ -738,11 +733,15 @@ fbsd_thread_wait (struct target_ops *ops,
       if (ourstatus->value.sig == TARGET_SIGNAL_TRAP)
         check_event(ret);
       /* this is a hack, if an event won't cause gdb to stop, for example,
-         SIGARLM, gdb resumes the process immediatly without setting
+         SIGALRM, gdb resumes the process immediatly without setting
          inferior_ptid to the new thread returned here, this is a bug
          because inferior_ptid may already not exist there, and passing
-         a none existing thread to fbsd_thread_resume causes error. */
-      if (!fbsd_thread_alive (ops, inferior_ptid))
+         a non-existing thread to fbsd_thread_resume causes error. However,
+         if the exiting thread is the currently selected thread,
+         then that is handled later in handle_inferior_event(), and we must
+         not delete the currently selected thread. 
+      */
+      if (!fbsd_thread_alive (ops, inferior_ptid) && !ptid_equal(inferior_ptid, ret))
         {
           delete_thread (inferior_ptid);
           inferior_ptid = ret;
