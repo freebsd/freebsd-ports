@@ -29,6 +29,7 @@ do-configure:
 		-e 's|%%PREFIX%%|${PREFIX}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		-e 's|%%CFLAGS%%|${CFLAGS}|' \
+		-e 's|gcc|${CC}|' \
 		${WRKSRC}/config.dat
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
