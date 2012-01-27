@@ -19,9 +19,10 @@ DOCUMENTS=	README.txt example
 
 post-patch:
 	@${REINPLACE_CMD} \
+		-e 's#^CC *=#CC ?=#;' \
 		-e 's#^CFLAGS.*#CFLAGS  += \$$\(CC_OPTS\)#;' \
 		-e 's#CC_OPTS = -g#CC_OPTS =#;' \
-		-e 's#LDFLAGS = -g#LDFLAGS ?=#;' \
+		-e 's#LDFLAGS = -g#LDFLAGS +=#;' \
 		-e 's#^WHITEHEAD_SPECIFIC_HACK.*##;' \
 		${WRKDIR}/src/Makefile
 
