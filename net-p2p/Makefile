@@ -90,6 +90,7 @@
     SUBDIR += qbittorrent-29-nox11
     SUBDIR += qtella
     SUBDIR += qtorrent
+    SUBDIR += retroshare
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
