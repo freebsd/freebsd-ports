@@ -1,0 +1,69 @@
+!
+! Make UDP_STREAM work on IPv6 by transmitting and extracting IPv6
+! addresses correctly.  Otherwise bind(2) calls will fail, etc.
+!
+! Sponsored by:	The FreeBSD Foundation
+! Sponsored by:	iXsystems
+!
+--- src/nettest_bsd.c.orig	2011-12-20 09:55:01.000000000 -0500
++++ src/nettest_bsd.c	2011-12-20 10:20:06.000000000 -0500
+@@ -1072,15 +1072,9 @@
+ #if defined(AF_INET6)
+   case AF_INET6: {
+     struct sockaddr_in6 *foo = (struct sockaddr_in6 *)sockaddr;
+-    int *bar;
+-    int i;
+     foo->sin6_port = htons((unsigned short) port);
+     foo->sin6_family = (unsigned short) family;
+     memcpy(&(foo->sin6_addr),addr,sizeof(foo->sin6_addr));
+-    /* how to put this into "host" order? */
+-    for (i = sizeof(foo->sin6_addr)/sizeof(int), bar=addr; i > 0; i--) {
+-      bar[i] = htonl(bar[i]);
+-    }
+     break;
+   }
+ #endif
+@@ -1121,17 +1115,13 @@
+   }
+ #ifdef AF_INET6
+   case AF_INET6: {
+-    int *foo;
+     int i;
+     struct sockaddr_in6 *sin6 = (struct sockaddr_in6 *)sockaddr;
+-    ret = 0;
+     *port = ntohs(sin6->sin6_port);
++    ret = 1;
++    for (i=0; i < sizeof(struct in6_addr); i++)
++      if (sin6->sin6_addr.s6_addr[i] != 0) ret=0;
+     memcpy(addr,&(sin6->sin6_addr), sizeof(sin6->sin6_addr));
+-    /* how to put this into "host" order? */
+-    for (i = sizeof(sin6->sin6_addr)/sizeof(int), foo=addr; i > 0; i--) {
+-      if (foo[i] != 0) ret = 1;
+-      foo[i] = ntohl(foo[i]);
+-    }
+     break;
+   }
+ #endif
+--- src/nettest_omni.c.orig	2011-12-20 11:23:37.000000000 -0500
++++ src/nettest_omni.c	2011-12-20 11:49:38.000000000 -0500
+@@ -6042,9 +6042,17 @@
+   /* kludgy, because I have no way at present to say how many bytes
+      needed to be swapped around for the request from which this is
+      pulled, and it is probably all wrong for IPv6 :( */
+-  for (ret=0; ret < 4; ret++) {
+-    omni_request->netserver_ip[ret] = htonl(omni_request->netserver_ip[ret]);
+-    omni_request->netperf_ip[ret] = htonl(omni_request->netperf_ip[ret]);
++  switch (nf_to_af(omni_request->ipfamily)) {
++  case AF_INET6:
++    /* yes indeed it is, do nothing, bz */
++    break;
++  case AF_INET:
++  default:
++    for (ret=0; ret < 4; ret++) {
++      omni_request->netserver_ip[ret] = htonl(omni_request->netserver_ip[ret]);
++      omni_request->netperf_ip[ret] = htonl(omni_request->netperf_ip[ret]);
++    }
++    break;
+   }
+ 
+   set_hostname_and_port_2(omni_request->netserver_ip,
