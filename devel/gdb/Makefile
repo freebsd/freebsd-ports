@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	7.3.1
-PORTREVISION=	1
+PORTVERSION=	7.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -40,6 +39,11 @@ MAN1=	gdb${VER}.1
 
 ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
 
+# Forcing to use the readline.6
+LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+CFLAGS+=	-isystem ${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 OPTIONS=	DEBUG "Build with debugging symbols" off \
 		EXPAT "Enable XML parsing for metadata" off \
 		PYTHON "Enable Python support" off \
@@ -68,13 +72,6 @@ CONFIGURE_ARGS+=	--without-expat
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 .else
 CONFIGURE_ARGS+=	--without-python
-.endif
-
-# XXX: add OSVERSION check after readline is removed from base
-.if exists(${LOCALBASE}/lib/libreadline.so)
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
-CFLAGS+=	-isystem ${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if ${ARCH} == "amd64"
