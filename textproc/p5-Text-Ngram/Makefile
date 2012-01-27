@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Text-Ngram
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for n-gram analysis
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
