@@ -1,0 +1,13 @@
+--- doc/Makefile.am.orig	2011-10-26 21:30:26.000000000 +0300
++++ doc/Makefile.am	2011-11-13 09:08:17.999745756 +0200
+@@ -2,7 +2,9 @@
+ 
+ # Install configuration file
+ confdir = $(CONFDIR)/
+-dist_conf_DATA = torsocks.conf
++dist_conf_DATA = torsocks.conf.sample
++datarootdir = ${prefix}/share/torsocks
++
+ 
+ # Install man pages
+ dist_man_MANS = torsocks.1 torsocks.8 usewithtor.1 torsocks.conf.5

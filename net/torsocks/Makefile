@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	torsocks
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
@@ -30,7 +29,7 @@ SUB_FILES=	pkg-message
 OPTIONS=	SOCKSDNS "Use socks server for DNS lookups" off \
 		OLDMETHOD "Do not use RTLD_NEXT parameter to dlsym" off \
 		NODEBUG "Disable output of error messages" off \
-		HOSTNAMES "Disable DNS lookups of socks server" off
+		HOSTNAMES "Enable DNS lookups of socks server" off
 
 .include <bsd.port.pre.mk>
 
@@ -50,8 +49,8 @@ CONFIGURE_ARGS+=	--disable-debug
 CONFIGURE_ARGS+=	--enable-hostnames
 .endif
 
-.if defined(WITH_SOCKSDNS) && !defined(WITH_HOSTNAMES)
-BROKEN=		HOSTNAMES option is necessary if SOCKSDNS option is enabled
+.if defined(WITH_SOCKSDNS) && defined(WITH_HOSTNAMES)
+BROKEN=		HOSTNAMES option is not allowed when SOCKSDNS option is enabled
 .endif
 
 pre-everything::
@@ -87,9 +86,9 @@ pre-everything::
 .if !defined(WITH_HOSTNAMES)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use the HOSTNAMES option."
-	@${ECHO_MSG} "This disables DNS lookups on names"
+	@${ECHO_MSG} "This enables DNS lookups on names"
 	@${ECHO_MSG} "provided as socks servers in the config"
-	@${ECHO_MSG} "file. This option is necessary"
+	@${ECHO_MSG} "file. This option is not allowed"
 	@${ECHO_MSG} "if socks dns is enabled since torsocks"
 	@${ECHO_MSG} "can't send a socks dns request to resolve"
 	@${ECHO_MSG} "the location of the socks server."
@@ -99,12 +98,13 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|@prefix@|${PREFIX}|' ${WRKSRC}/src/torsocks.in
 	@${REINPLACE_CMD} -e 's|MAP_ANONYMOUS|MAP_ANON|' ${WRKSRC}/src/dead_pool.c
-	@${MV} ${WRKSRC}/src/torsocks.conf ${WRKSRC}/src/torsocks.conf.sample
+	@${MV} ${WRKSRC}/doc/torsocks.conf ${WRKSRC}/doc/torsocks.conf.sample
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/*.example ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.sample ${PREFIX}/etc
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
