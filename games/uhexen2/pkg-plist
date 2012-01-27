@@ -4,11 +4,11 @@
 %%LAUNCHER_GTK2%%bin/h2launcher.gtk2
 %%HEXEN2%%bin/hexen2
 %%HW%%bin/hwcl
-%%HW%%bin/hwmaster
 %%HW%%bin/hwsv
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.old
 %%PORTDOCS%%%%DOCSDIR%%/COMPILE
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Features
@@ -16,10 +16,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.3dfx
 %%PORTDOCS%%%%DOCSDIR%%/README.AoT
 %%PORTDOCS%%%%DOCSDIR%%/README.demo
+%%PORTDOCS%%%%DOCSDIR%%/README.dos
 %%PORTDOCS%%%%DOCSDIR%%/README.hwcl
 %%PORTDOCS%%%%DOCSDIR%%/README.hwmaster
 %%PORTDOCS%%%%DOCSDIR%%/README.hwsv
 %%PORTDOCS%%%%DOCSDIR%%/README.launcher
+%%PORTDOCS%%%%DOCSDIR%%/README.music
 %%PORTDOCS%%%%DOCSDIR%%/README.win32
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.2.3
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.2.4a
@@ -28,13 +30,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.1
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.2
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.3
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.5.0
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.5.1
 %%PORTDOCS%%%%DOCSDIR%%/SrcNotes.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/data1/default.cfg
 %%DATADIR%%/data1/hexen.rc
 %%DEMO%%%%DATADIR%%/data1/pak0.pak
-%%FULL%%%%DATADIR%%/data1/data1pak0.xd
-%%FULL%%%%DATADIR%%/data1/data1pak1.xd
+%%FULL%%%%DATADIR%%/data1/data1pk0.xd3
+%%FULL%%%%DATADIR%%/data1/data1pk1.xd3
 %%DATADIR%%/data1/progs.dat
 %%FULL%%%%DATADIR%%/data1/progs2.dat
 %%FULL%%%%DATADIR%%/data1/strings.txt
@@ -43,6 +47,7 @@
 %%HW%%%%DATADIR%%/hw/pak4.pak
 %%FULL%%%%HW%%%%DATADIR%%/hw/pak4_readme.txt
 %%HW%%%%DATADIR%%/hw/strings.txt
+%%FULL%%%%HW%%%%DATADIR%%/hw/strings.txt.demo
 %%FULL%%%%DATADIR%%/portals/default.cfg
 %%FULL%%%%DATADIR%%/portals/hexen.rc
 %%FULL%%%%DATADIR%%/portals/infolist.txt
@@ -50,10 +55,13 @@
 %%FULL%%%%DATADIR%%/portals/progs.dat
 %%FULL%%%%DATADIR%%/portals/puzzles.txt
 %%FULL%%%%DATADIR%%/portals/strings.txt
-%%FULL%%%%DATADIR%%/update_loki.dat
-%%FULL%%%%DATADIR%%/update_loki.sh
-%%FULL%%%%DATADIR%%/update_xdelta.sh
+%%FULL%%%%DATADIR%%/portals/maps/README.txt
+%%FULL%%%%DATADIR%%/portals/maps/tibet2.ent
+%%FULL%%%%DATADIR%%/portals/maps/tibet2.txt
+%%FULL%%%%DATADIR%%/portals/maps/tibet9.ent
+%%FULL%%%%DATADIR%%/portals/maps/tibet9.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%FULL%%@dirrm %%DATADIR%%/portals/maps
 %%FULL%%@dirrm %%DATADIR%%/portals
 %%HW%%@dirrm %%DATADIR%%/hw
 @dirrm %%DATADIR%%/data1
