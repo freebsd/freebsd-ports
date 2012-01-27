@@ -11,6 +11,9 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	crees@FreeBSD.org
 
+DEPRECATED=	No longer supported by upstream-- upgrade to later version
+EXPIRATION_DATE=2012-03-27
+
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 
 ICU_PATCHFILE=	# no ICU patch for 8.2; this inhibits ICU option display
