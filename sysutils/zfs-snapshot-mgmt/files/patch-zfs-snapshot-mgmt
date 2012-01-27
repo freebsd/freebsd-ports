@@ -12,3 +12,21 @@
    end
  
  private
+@@ -175,7 +179,7 @@ private
+ 
+ end
+ 
+-class Config
++class ZConfig
+   attr_reader :snapshot_prefix, :filesystems, :pools
+ 
+   def initialize(value)
+@@ -194,7 +198,7 @@ class Config
+ 
+ config_yaml = File.open(CONFIG_FILE_NAME).read(CONFIG_SIZE_MAX)
+ die "Config file too long" if config_yaml.nil?
+-config = Config.new(YAML::load(config_yaml))
++config = ZConfig.new(YAML::load(config_yaml))
+ 
+ now_minutes = Time.now.to_i / 60
+ 
