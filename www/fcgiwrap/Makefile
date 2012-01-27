@@ -7,17 +7,18 @@
 
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/gnosek/fcgiwrap/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple FastCGI wrapper for CGI scripts
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 WRKSRC=		${WRKDIR}/gnosek-fcgiwrap-2e301c8
-LICENSE=	MIT
 
 USE_RC_SUBR=	fcgiwrap
 
