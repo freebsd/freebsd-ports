@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cjson
-PORTVERSION=	1.0.4
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kyne.com.au/~mark/software/download/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
