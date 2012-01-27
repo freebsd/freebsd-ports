@@ -7,7 +7,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	2.4.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -31,8 +31,17 @@ M4=		/usr/bin/m4
 # Tripwire database files are stored in TWDB.
 TWDB?=		/var/db/tripwire
 
+#	If TW_CLOBBER is set to true, the install script clobbers
+#	previously installed config files.
+#
+#	If TW_PROMPT is set to true, the install script is interactive.
+
 OPTIONS=	TWCFG_ETC "Put config files in ${ETCDIR}" on \
-		TWCFG_TWDB "Put config files in ${TWDB}/etc" off
+		TWCFG_TWDB "Put config files in ${TWDB}/etc" off \
+		TW_CLOBBER "Clobber existing database files at install" off \
+		TW_PROMPT "Interactive install (ignored when PACKAGE_BUILDING)" on \
+		SW_ONLY "Install software only, do not post-configure (ignored when PACKAGE_BUILDING)" off \
+		DB_BUILD "Build database during post-install (ignored when PACKAGE_BUILDING)" on
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +61,26 @@ TWCFG?=		${TWDB}/etc
 BROKEN=		TWCFG must be defined
 .endif
 
+.if defined(WITH_TW_CLOBBER) && ${WITH_TW_CLOBBER} == "true"
+TW_CLOBBER=	true
+.else
+TW_CLOBBER=	false
+.endif
+
+.if defined(WITH_TW_PROMPT) && ${WITH_TW_PROMPT} == "true"
+TW_PROMPT=	true
+.else
+TW_PROMPT=	false
+# TW_SITE_PASS?=	FreeBSD
+.ifndef TW_SITE_PASS
+BROKEN=		No site passphrase specified or turn PROMPT on
+.endif
+# TW_LOCAL_PASS?=	FreeBSD
+.ifndef TW_LOCAL_PASS
+BROKEN=		No local passphrase specified or turn PROMPT on
+.endif
+.endif
+
 # Tripwire policy files are stored in TWPOLICY.
 TWPOLICY?=	${TWCFG}
 # The Tripwire site key files are stored in TWSITEKEYDIR.
@@ -64,11 +93,6 @@ TWREPORT?=	${TWDB}/report
 TWEDITOR?=	/usr/bin/vi
 # This sets the location of the twpol.txt file that is to be installed
 TWPOL_TXT?=	${FILESDIR}/twpol.m4
-# Other variables that are used, when not package building:
-TRIPWIRE_CLOBBER?=	false
-TRIPWIRE_PROMPT?=	true
-#	If TRIPWIRE_CLOBBER is set to YES, the install script clobbers
-#	previously installed config files.
 CONFIGURE_ARGS=	--prefix=${PREFIX} --program-transform-name='' --sysconfdir=${TWCFG}
 
 PLIST_SUB+=	TWCFG=${TWCFG} TWDB=${TWDB}
@@ -91,11 +115,21 @@ install-config-files:
 	@ ${ECHO_CMD} TWDB=${TWDB} >> ${WRKSRC}/install/install.cfg
 	@ ${ECHO_CMD} TWREPORT=${TWREPORT} >> ${WRKSRC}/install/install.cfg
 	@ ${ECHO_CMD} TWEDITOR=${TWEDITOR} >> ${WRKSRC}/install/install.cfg
+.ifdef TW_SITE_PASS
+	@ ${ECHO_CMD} TW_SITE_PASS=${TW_SITE_PASS} >> ${WRKSRC}/install/install.cfg
+.endif
+.ifdef TW_LOCAL_PASS
+	@ ${ECHO_CMD} TW_LOCAL_PASS=${TW_LOCAL_PASS} >> ${WRKSRC}/install/install.cfg
+.endif
 	@ cd ${WRKSRC} && ${LN} -sf install/install.cfg install/install.sh .
 .ifdef PACKAGE_BUILDING
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} DO_NOT_CONFIG=yes TRIPWIRE_CLOBBER=${TRIPWIRE_CLOBBER} TRIPWIRE_PROMPT="false" ${GMAKE} install-data-hook
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${GMAKE} install-data-hook
 .else
-	@ cd ${WRKSRC} && PREFIX=${PREFIX} TRIPWIRE_CLOBBER=${TRIPWIRE_CLOBBER} TRIPWIRE_PROMPT=${TRIPWIRE_PROMPT} ${GMAKE} install-data-hook
+.if defined(WITH_SW_ONLY) && ${WITH_SW_ONLY} == "true"
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} DO_NOT_CONFIG="yes" TW_PROMPT="false" ${GMAKE} install-data-hook
+.else
+	@ cd ${WRKSRC} && PREFIX=${PREFIX} TW_CLOBBER=${TW_CLOBBER} TW_PROMPT=${TW_PROMPT} ${GMAKE} install-data-hook
+.endif
 .endif
 
 make-pkg-install:
@@ -111,8 +145,8 @@ make-pkg-install:
 	@ ${ECHO_CMD} POLICYSRC=/tmp/$$$$.tmp >> ${PKGINSTALL}
 	@ ${ECHO_CMD} PREFIX="$(PREFIX)" >> ${PKGINSTALL}
 	@ ${ECHO_CMD} DO_NOT_CONFIG=yes >> ${PKGINSTALL}
-	@ ${ECHO_CMD} TRIPWIRE_CLOBBER="false" >> ${PKGINSTALL}
-	@ ${ECHO_CMD} TRIPWIRE_PROMPT="false" >> ${PKGINSTALL}
+	@ ${ECHO_CMD} TW_CLOBBER="false" >> ${PKGINSTALL}
+	@ ${ECHO_CMD} TW_PROMPT="false" >> ${PKGINSTALL}
 	@ ${ECHO_CMD} sysconfdir="$(sysconfdir)" >> ${PKGINSTALL}
 	@ ${ECHO_CMD} prefix=${PREFIX} >> ${PKGINSTALL}
 	@ ${ECHO_CMD} sysconfdir=${TWCFG} >> ${PKGINSTALL}
@@ -120,6 +154,12 @@ make-pkg-install:
 	@ ${ECHO_CMD} path_to_sendmail="/usr/sbin/sendmail" >> ${PKGINSTALL}
 	@ ${ECHO_CMD} BASE_DIR=${PREFIX}/ >> ${PKGINSTALL}
 	@ ${ECHO_CMD} BIN_DIR=${PREFIX}/sbin >> ${PKGINSTALL}
+.ifdef TW_SITE_PASS
+	@ ${ECHO_CMD} TW_SITE_PASS=${TW_SITE_PASS} >> ${PKGINSTALL}
+.endif
+.ifdef TW_LOCAL_PASS
+	@ ${ECHO_CMD} TW_LOCAL_PASS=${TW_LOCAL_PASS} >> ${PKGINSTALL}
+.endif
 	@ ${CAT} ${WRKSRC}/install/install.cfg >> ${PKGINSTALL}
 	@ ${ECHO_CMD} ${CAT} "> /tmp/$$$$.tmp <<'EOF'" >> ${PKGINSTALL}
 	@ ${M4} -DFREEBSD_VERSION=`${ECHO_CMD} ${OSREL} | ${CUT} -d. -f1` < ${TWPOL_TXT} >> ${PKGINSTALL}
@@ -127,7 +167,10 @@ make-pkg-install:
 	@ ${SED} "/^\. /s/^/: /;/^BASE_DIR=/d;s/BIN_DIR=/: BIN_DIR=/;/^POLICYSRC/d" ${WRKSRC}/install/install.sh >> ${PKGINSTALL}
 
 create-database:
-.if !defined(NO_DB_BUILD) && !defined(PACKAGE_BUILDING)
+.if defined(WITH_DB_BUILD) && ${WITH_DB_BUILD} == "true"
+.if defined(WITH_SW_ONLY) && ${WITH_SW_ONLY} == "true"
+	@ ${ECHO} SW_ONLY has been specified, database will not be built.
+.else
 	@ ${MKDIR} -p ${TWCFG} ${TWPOLICY} ${TWSITEKEYDIR} ${TWLOCALKEYDIR} \
 		${TWDB} ${TWREPORT}
 	@ ${ECHO} Creating tripwire database
@@ -137,7 +180,7 @@ create-database:
 	@ ${ECHO} policy file are signed using the local and site keys,
 	@ ${ECHO} therefore according to the support staff at
 	@ ${ECHO} tripwiresecurity.com, creating a floppy is not necessary.
-	
+.endif
 .endif
 
 post-install:	install-config-files create-database make-pkg-install
