@@ -231,6 +231,7 @@
     SUBDIR += filters
     SUBDIR += fishsupper
     SUBDIR += fkiss
+    SUBDIR += flare
     SUBDIR += flightgear
     SUBDIR += flightgear-aircrafts
     SUBDIR += flightgear-atlas
