@@ -38,5 +38,9 @@ PLIST_SUB+= NLS="@comment "
 do-patch:
 	@${REINPLACE_CMD} -e 's|#  include <net/if_ppp.h>||' \
 		${WRKSRC}/panel-plugin/os.h
+	@${REINPLACE_CMD} -e 's, || __FreeBSD_kernel__,,' \
+		${WRKSRC}/panel-plugin/net.c \
+		${WRKSRC}/panel-plugin/net.h \
+		${WRKSRC}/panel-plugin/os.h
 
 .include <bsd.port.post.mk>
