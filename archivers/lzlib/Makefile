@@ -18,6 +18,7 @@ PLIST_FILES=	include/lzlib.h \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	${MAKE_ENV}
 INFO=		lzlib
 
 .include <bsd.port.mk>
