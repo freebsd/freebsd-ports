@@ -21,6 +21,21 @@
 # fcgiwrap_flags=
 # Use fcgiwrap_user to run fcgiwrap as user
 
+# fcgiwrap rc.d script supports multiple profiles (a-la rc.d/nginx)
+# When profiles are specified, the non-profile specific parameters become defaults.
+# You need to make sure that no two profiles have the same socket parameter.
+#
+# Example:
+#
+# fcgiwrap_enable="YES"
+# fcgiwrap_profiles="myserver myotherserver"
+# fcgiwrap_flags="-c 4"
+# fcgiwrap_myserver_socket="unix:/var/run/fcgiwrap.myserver.socket"
+# fcgiwrap_myserver_user="myuser"
+# fcgiwrap_myotherserver_socket="unix:/var/run/fcgiwrap.myotherserver.socket"
+# fcgiwrap_myotherserver_user="myotheruser"
+# fcgiwrap_myotherserver_flags=""  # No flags for this profile.
+
 . /etc/rc.subr
 
 name="fcgiwrap"
@@ -40,7 +55,7 @@ fcgiwrap_setfib() {
 
 fcgiwrap_precmd() {
 	fcgiwrap_setfib
-	install -d -o $fcgiwrap_user -m 755 /var/run/fcgiwrap
+	install -d -o root -g wheel -m 1777 /var/run/fcgiwrap
 }
 
 fcgiwrap_cleansocket() {
@@ -53,7 +68,8 @@ fcgiwrap_cleansocket() {
 	rm -f $pidfile
 }
 
-pidfile="/var/run/fcgiwrap/fcgiwrap.pid"
+pidprefix="/var/run/fcgiwrap/fcgiwrap"
+pidfile="${pidprefix}.pid"  # May be a different path if profiles are in use
 
 procname="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"
@@ -62,10 +78,41 @@ stop_postcmd="fcgiwrap_cleansocket"
 
 load_rc_config $name
 
+# These are just the defaults, they might get overriden for a specific profile.
 fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
 fcgiwrap_fib=${fcgiwrap_fib:-"NONE"}
 fcgiwrap_user=${fcgiwrap_user:-"root"}
 fcgiwrap_socket=${fcgiwrap_socket:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
+
+# This handles profile specific vars.
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${fcgiwrap_profiles}" ]; then
+		pidfile="${pidprefix}.${profile}.pid"
+		eval fcgiwrap_enable="\${fcgiwrap_${profile}_enable:-${fcgiwrap_enable}}"
+		eval fcgiwrap_fib="\${fcgiwrap_${profile}_fib:-${fcgiwrap_fib}}"
+		eval fcgiwrap_user="\${fcgiwrap_${profile}_user:-${fcgiwrap_user}}"
+		eval fcgiwrap_socket="\${fcgiwrap_${profile}_socket:?}"
+		eval fcgiwrap_flags="\${fcgiwrap_${profile}_flags:-${fciwrap_flags}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ -n "${fcgiwrap_profiles}" -a -n "$1" ]; then
+		for profile in ${fcgiwrap_profiles}; do
+			echo "===> fcgiwrap profile: ${profile}"
+			/usr/local/etc/rc.d/fcgiwrap $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		# It exits so that non-profile rc.d is not started when there are profiles.
+		exit 0
+	fi
+fi
 
 command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket}"
 
