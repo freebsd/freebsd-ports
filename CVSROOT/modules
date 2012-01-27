@@ -1676,6 +1676,7 @@ claws-mail-themes               ports/x11-themes/claws-mail-themes
 claws-mail-tnef                 ports/mail/claws-mail-tnef
 claws-mail-vcalendar            ports/mail/claws-mail-vcalendar
 clawsker                        ports/mail/clawsker
+clay                            ports/lang/clay
 clean                           ports/sysutils/clean
 cleanfeed                       ports/news/cleanfeed
 cleanq3                         ports/games/cleanq3
@@ -2346,6 +2347,7 @@ dgs                             ports/x11/dgs
 dhcdrop                         ports/net-mgmt/dhcdrop
 dhcp6                           ports/net/dhcp6
 dhcpcd                          ports/net/dhcpcd
+dhcpd-pools                     ports/net/dhcpd-pools
 dhcpdump                        ports/net/dhcpdump
 dhcperf                         ports/net/dhcperf
 dhcping                         ports/net/dhcping
@@ -21497,7 +21499,8 @@ procmap                         ports/sysutils/procmap
 prodosemu                       ports/emulators/prodosemu
 profont                         ports/x11-fonts/profont
 proftpd                         ports/ftp/proftpd
-proftpd-mysql                   ports/ftp/proftpd-mysql
+proftpd-mod_sql_mysql           ports/databases/proftpd-mod_sql_mysql
+proftpd-mod_sql_postgres        ports/databases/proftpd-mod_sql_postgres
 profxp                          ports/ftp/profxp
 proggy_fonts                    ports/x11-fonts/proggy_fonts
 proggy_fonts-ttf                ports/x11-fonts/proggy_fonts-ttf
