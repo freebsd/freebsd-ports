@@ -1,0 +1,8 @@
+--- ./search.cgi.in.orig	2004-04-05 15:50:25.000000000 -0700
++++ ./search.cgi.in	2011-12-30 17:37:16.000000000 -0800
+@@ -1,4 +1,4 @@
+-#!@which_perl@
++#!@PERL@
+ #
+ # Douglas Thrift's Search Engine CGI Script
+ #

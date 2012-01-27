@@ -17,6 +17,8 @@ COMMENT=	An indexing search engine for use on small websites
 
 LICENSE=	AL2
 
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_check_gnu_make.m4:${PORTSDIR}/devel/autoconf-archive
+
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
@@ -25,6 +27,7 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${PORTNAME}
@@ -32,5 +35,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${PORTNAME}
 MAKEFILE=	GNUmakefile
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+pre-configure:
+	cd ${WRKSRC}; ${SH} autogen.sh
 
 .include <bsd.port.mk>
