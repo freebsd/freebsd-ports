@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minetest
-DISTVERSION=	0.2.20110922_1
+DISTVERSION=	0.4.dev-20120122-1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
@@ -17,10 +17,9 @@ LIB_DEPENDS=	Irrlicht.1:${PORTSDIR}/x11-toolkits/irrlicht \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
 USE_CMAKE=	yes
-USE_GL=		gl
 MAKE_JOBS_SAFE=	yes
 
-WRKSRC=		${WRKDIR}/celeron55-minetest-bdf5490
+WRKSRC=		${WRKDIR}/celeron55-minetest-cb05a28
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -50,6 +49,7 @@ CXXFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -funroll-loops
 .endif
 
 .if !defined(WITHOUT_CLIENT)
+USE_GL=		gl
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 CMAKE_ARGS+=	-DBUILD_CLIENT=1
@@ -72,11 +72,13 @@ post-patch:
 		${WRKSRC}/src/porting.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/FindIrrlicht.cmake
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/src/CMakeLists.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/README.txt ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/changelog.txt ${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)

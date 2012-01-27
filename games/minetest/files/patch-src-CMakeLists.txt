@@ -1,5 +1,5 @@
---- src/CMakeLists.txt.orig	2011-09-22 21:47:47.000000000 +0400
-+++ src/CMakeLists.txt	2011-09-24 18:23:37.000000000 +0400
+--- src/CMakeLists.txt.orig	2012-01-23 01:05:36.000000000 +0400
++++ src/CMakeLists.txt	2012-01-26 23:39:18.625614369 +0400
 @@ -11,23 +11,25 @@
  # this is only set to 1 if gettext is enabled _and_ available
  set(USE_GETTEXT 0)
@@ -31,8 +31,8 @@
 +		endif()
 +		set(USE_GETTEXT 1)
 +		message(STATUS "GetText enabled; locales found: ${GETTEXT_AVAILABLE_LOCALES}")
-+	else(GETTEXT_FOUND)
-+		message(STATUS "GetText not found, disabling")
++	elseif(GETTEXT_FOUND)
++		MESSAGE(STATUS "GetText not found, disabling")
 +	endif(GETTEXT_FOUND)
 +else(ENABLE_GETTEXT)
  	message(STATUS "GetText disabled")
@@ -41,29 +41,14 @@
  
  if(NOT MSVC)
  	set(USE_GPROF 0 CACHE BOOL "Use -pg flag for g++")
-@@ -74,7 +76,7 @@
- 		endif(APPLE)
- 	endif(BUILD_CLIENT)
- 	find_package(ZLIB REQUIRED)
--	set(PLATFORM_LIBS -lpthread ${CMAKE_DL_LIBS})
-+	set(PLATFORM_LIBS -pthread ${CMAKE_DL_LIBS})
- 	#set(CLIENT_PLATFORM_LIBS -lXxf86vm)
- 	# This way Xxf86vm is found on OpenBSD too
- 	find_library(XXF86VM_LIBRARY Xxf86vm)
-@@ -250,7 +252,7 @@
+@@ -280,8 +282,8 @@
  		set(ARCH i386)
  	endif()
  
 -	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} -O3 -ffast-math -Wall -fomit-frame-pointer -pipe -funroll-loops")
-+	set(CMAKE_CXX_FLAGS_RELEASE "${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} -Wall") 
- 	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS}")
+-	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS}")
++	set(CMAKE_CXX_FLAGS_RELEASE "${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} -Wall")
++	set(CMAKE_CXX_FLAGS_DEBUG "-Wall ${WARNING_FLAGS}")
  
  	if(USE_GPROF)
-@@ -272,7 +274,6 @@
- #
- 
- # Example configuration file
--install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/../minetest.conf.example" DESTINATION ${EXAMPLE_CONF_DIR})
- 
- if(BUILD_CLIENT)
- 	install(TARGETS ${PROJECT_NAME} DESTINATION ${BINDIR})
+ 		set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -pg")
