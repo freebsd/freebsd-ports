@@ -7,6 +7,7 @@
 
 PORTNAME=	sumwars
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/sumwars/${PORTVERSION}
 DISTNAME=	sumwars-${PORTVERSION}-src
@@ -15,10 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Role-playing game, featuring both a single and a multiplayer mode
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.3:${PORTSDIR}/graphics/ogre3d \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois \
 		${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
-RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.3:${PORTSDIR}/graphics/ogre3d \
+RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois
 LIB_DEPENDS=	CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
