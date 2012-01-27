@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	uhexen2
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Source
 DISTNAME=	hexen2source-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
+
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
 LICENSE_=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -30,7 +31,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS=	DEMO "Install demo version of the game data" off \
 		HEXEN2 "Build Hexen II clients and servers" on \
 		HW "Build HexenWorld clients and servers" on \
-		LAUNCHER_GTK1 "Build graphical (GTK1) game launcher" off \
+		LAUNCHER_GTK1 "Build graphical (GTK1) game launcher" on \
 		LAUNCHER_GTK2 "Build graphical (GTK2) game launcher" off \
 		X86_ASM "Enable use of optimized x86 assembly code" on
 
@@ -43,15 +44,16 @@ IGNORE=		needs at least one group of binaries (HEXEN2 and HW)
 .endif
 
 .if defined(WITH_DEMO)
-DISTFILES+=	hexen2demo-${PORTVERSION}-linux-i586${EXTRACT_SUFX}
+MASTER_SITES+=	SF/${PORTNAME}/Hammer%20of%20Thyrion/${PORTVERSION}/Linux-demo-version:demo
+DISTFILES+=	hexen2demo-${PORTVERSION}-linux-i586${EXTRACT_SUFX}:demo
 MAKE_ENV+=	DEMO=yes
 PLIST_SUB+=	DEMO="" \
 		FULL="@comment "
 UH2_DATA=	default.cfg hexen.rc pak0.pak progs.dat
 UH2_DATADIR=	${WRKDIR}/hexen2demo-${PORTVERSION}
 .else
-MASTER_SITES+=	SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.19a:data
-DISTFILES+=	gamedata-all-1.19a${EXTRACT_SUFX}:data
+MASTER_SITES+=	SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.20:data
+DISTFILES+=	gamedata-all-1.20${EXTRACT_SUFX}:data
 PLIST_SUB+=	DEMO="@comment " \
 		FULL=""
 SUB_FILES+=	pkg-message
@@ -62,8 +64,8 @@ UH2_DATADIR=	${WRKDIR}
 .if defined(WITH_HEXEN2)
 MAKE_ENV+=	BUILD_HEXEN2=yes
 PLIST_SUB+=	HEXEN2=""
-UH2_BIN+=	hexen2/glhexen2 \
-		hexen2/hexen2
+UH2_BIN+=	engine/hexen2/glhexen2 \
+		engine/hexen2/hexen2
 .else
 PLIST_SUB+=	HEXEN2="@comment "
 .endif
@@ -75,9 +77,9 @@ DISTFILES+=	hexenworld-pakfiles-0.15${EXTRACT_SUFX}:hw
 . endif
 MAKE_ENV+=	BUILD_HW=yes
 PLIST_SUB+=	HW=""
-UH2_BIN+=	hexenworld/Client/glhwcl hexenworld/Master/hwmaster \
-		hexenworld/Server/hwsv \
-		hexenworld/Client/hwcl
+UH2_BIN+=	engine/hexenworld/client/glhwcl \
+		engine/hexenworld/server/hwsv \
+		engine/hexenworld/client/hwcl
 .else
 PLIST_SUB+=	HW="@comment "
 .endif
@@ -106,12 +108,6 @@ MAKE_ENV+=	USE_X86_ASM=yes
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
-post-patch:
-.for f in hexen2/common.c hexenworld/Client/common.c
-	@${REINPLACE_CMD} -e 's|host_parms\.basedir|"${DATADIR}"|' \
-		${WRKSRC}/${f}
-.endfor
-
 do-install:
 .for f in ${UH2_BIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
@@ -121,8 +117,7 @@ do-install:
 	${INSTALL_DATA} ${UH2_DATADIR}/data1/${f} ${DATADIR}/data1
 .endfor
 .if !defined(WITH_DEMO)
-	${INSTALL_DATA} ${WRKDIR}/patchdata/data1/* ${DATADIR}/data1
-	${INSTALL_DATA} ${WRKDIR}/update_* ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/patchdat/data1/* ${DATADIR}/data1
 	${CP} -R ${WRKDIR}/portals ${DATADIR}
 .endif
 .if defined(WITH_HW)

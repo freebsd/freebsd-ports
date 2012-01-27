@@ -6,11 +6,11 @@
 
 all:
 ifeq ($(BUILD_HEXEN2),yes)
-	$(MAKE) -C hexen2 h2 clean
-	$(MAKE) -C hexen2 glh2 clean
+	$(MAKE) -C engine/hexen2 h2 clean
+	$(MAKE) -C engine/hexen2 glh2 clean
 endif
 ifeq ($(BUILD_HW),yes)
-	cd hexenworld && ./build.sh
+	cd engine/hexenworld && ./build.sh
 endif
 ifeq ($(BUILD_LAUNCHER_GTK1),yes)
 	$(MAKE) -C launcher GTK1=yes
