@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPIx-Regexp
-PORTVERSION=	0.020
+PORTVERSION=	0.024
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -17,10 +17,7 @@ COMMENT=	PPI regular expression parser
 
 BUILD_DEPENDS=	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-PPI>=1.117:${PORTSDIR}/textproc/p5-PPI \
-		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
-		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
-
+		p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -84,4 +81,10 @@ MAN3=	PPIx::Regexp.3 \
 	PPIx::Regexp::Tokenizer.3 \
 	PPIx::Regexp::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
