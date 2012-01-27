@@ -1,0 +1,57 @@
+--- ./configure.ac.orig	2008-08-23 03:29:42.000000000 -0700
++++ ./configure.ac	2011-12-30 17:37:16.000000000 -0800
+@@ -9,36 +9,22 @@
+ AC_PREFIX_DEFAULT(/usr/local/dtse)
+ AC_PROG_INSTALL
+ 
+-CHECK_GNU_MAKE
+-if test x$_cv_gnu_make_command = x; then
+-    AC_MSG_ERROR(You need GNU Make.)
+-fi
++AX_CHECK_GNU_MAKE
++AC_SUBST([GNUMAKE], [$_cv_gnu_make_command])
++AS_IF([test "x$GNUMAKE" = x], [AC_MSG_ERROR([You need GNU make])])
++AX_WITH_PERL
++AX_PROG_PERL_MODULES([File::Temp], [], [AC_MSG_ERROR([You need File::Temp.])])
++AC_LANG([C++])
+ AC_PROG_CXX
+-if ! test x$GXX = x; then
+-	AC_MSG_CHECKING(if g++ is version 3.1 or higher)
+-	dt_gxx_3_x=`$CXX --version 2>&1 | grep ^$CXX`
+-	if test "x$dt_gxx_3_x" = "x"; then
+-		AC_MSG_RESULT(no)
+-		AC_MSG_ERROR(You need g++ 3.1 or higher.)
+-	else
+-		AC_MSG_RESULT(yes)
+-	fi
+-fi
+-AC_PROG_PERL_VERSION(5.00503, , AC_MSG_ERROR(You need a Perl 5.6 or higher.))
+-AC_MSG_CHECKING(perl path)
+-AC_SUBST(which_perl, `which $PERL`)
+-AC_MSG_RESULT($which_perl)
+-
+-AC_PROG_PERL_MODULES(File::Temp, , AC_MSG_ERROR(You need File::Temp.))
+ mingw=`$CXX --version 2>&1 | grep mingw\ special`
+ if test "x$mingw" = "x"; then
+-	ETR_SOCKET_NSL
++	AX_LIB_SOCKET_NSL
+ 	LIBS="$LIBS $ETR_SOCKET_LIBS"
+ else
+ 	LIBS="$LIBS -lws2_32"
+ fi
+-AC_MSG_CHECKING(if OpenSSL is wanted)
+-AC_ARG_WITH(openssl, [[  --with-openssl[=DIR]    enable OpenSSL [DIR=path]]
++AC_MSG_CHECKING([if OpenSSL is wanted])
++AC_ARG_WITH([openssl], [[  --with-openssl[=DIR]    enable OpenSSL [DIR=path]]
+ ], [
+ 	AC_MSG_RESULT(yes)
+ 	AC_MSG_CHECKING(for OpenSSL)
+@@ -62,7 +48,7 @@
+ 		AC_SUBST(OpenSSL, -D_OpenSSL_)
+ 	else
+ 		AC_MSG_RESULT(not found);
+-		AC_MSG_ERROR(couldn't find OpenSSL)
++		AC_MSG_ERROR(could not find OpenSSL)
+ 	fi
+ ], [ AC_MSG_RESULT(no) ])
+ if ! test x$openssl = x; then
