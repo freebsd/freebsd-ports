@@ -1,0 +1,8 @@
+--- test/Makefile.am.orig	2011-11-13 09:40:52.593544321 +0200
++++ test/Makefile.am	2011-11-13 09:41:18.074140449 +0200
+@@ -5,3 +5,5 @@
+ CLEANFILES= test_torsocks
+ 
+ dist_data_DATA = run_tests.sh expectedresults.txt
++
++datarootdir = ${prefix}/share/torsocks/test
