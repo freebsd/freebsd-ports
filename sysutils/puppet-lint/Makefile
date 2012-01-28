@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet-lint
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.12
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
