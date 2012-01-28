@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hwloc
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.3/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.3/downloads/
@@ -24,6 +24,9 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2 pkgconfig
 MAKE_JOBS_SAFE=	yes
+
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 OPTIONS=	CAIRO		"Enable CAIRO support"		off
 
