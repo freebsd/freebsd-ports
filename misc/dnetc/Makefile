@@ -49,14 +49,12 @@ SUB_LIST=	BINDIR="${BINDIR}" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
-.if ${OSVERSION} >= 800107
-VERSION=	2.9107.516
+VERSION=	2.9110.519
 REVISION=	0
+.if ${OSVERSION} >= 800107
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd8-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd8-${ARCH:S/i386/x86/}
 .else
-VERSION=	2.9108.517
-REVISION=	1
 DISTNAME=	dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd7-${ARCH:S/i386/x86/}
 .endif
