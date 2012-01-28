@@ -22,7 +22,7 @@ you update your ports collection, before attempting any port upgrades.
 
   The proftpd-mysql port has been removed, use the alternative port:
     databases/proftpd-mod_sql_mysql
-  
+
 20120121:
   AFFECTS: users of multimedia/vdr
   AUTHOR: Juergen Lock <nox@FreeBSD.org>
@@ -53,7 +53,7 @@ you update your ports collection, before attempting any port upgrades.
   historical behavior (immediate termination with "fatal" message).
 
   Logfile-based alerting systems may need to be updated to look for
-  "error" messages in addition to "fatal" messages.  
+  "error" messages in addition to "fatal" messages.
 
   By default the Postfix SMTP server no longer reports transcripts
   of sessions where a client command is rejected because a table is
