@@ -16,32 +16,23 @@ COMMENT=	Multiplayer tank shoot-em-up
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
+OPTIONS=	MIKMOD "Enable libmikmod support" on
 
-USE_XORG=	xpm
 USE_GNOME=	gtk20
-WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtk
 MAKE_JOBS_SAFE=	yes
 
 MAN6=		xscorch.6
-NO_MANCOMPRESS=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomeprefix gnomelibs
-PKGNAMESUFFIX=	-gnome
+.if defined(WITHOUT_MIKMOD)
+CONFIGURE_ARGS+=--disable-sound
 .else
-CONFIGURE_ARGS+=	--without-gnome
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,MSG_NOSIGNAL,0,' \
-		${WRKSRC}/snet/tcpnet/tn_internal.c \
-		${WRKSRC}/snet/tcpnet/tn_read.c
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
