@@ -64,6 +64,7 @@
 %%MALAYALAM%%%%FONTSDIR%%/malayalam/Meera_04.ttf
 %%MALAYALAM%%%%FONTSDIR%%/malayalam/Rachana_04.ttf
 %%MALAYALAM%%%%FONTSDIR%%/malayalam/RaghuMalayalamSans2.ttf
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/Samyak-Malayalam.ttf
 %%MALAYALAM%%%%FONTSDIR%%/malayalam/fonts.dir
 %%MALAYALAM%%%%FONTSDIR%%/malayalam/fonts.scale
 %%MALAYALAM%%%%FONTSDIR%%/malayalam/lohit_ml.ttf
@@ -80,14 +81,7 @@
 %%PUNJABI%%%%FONTSDIR%%/punjabi/fonts.scale
 %%PUNJABI%%%%FONTSDIR%%/punjabi/lohit_pa.ttf
 %%PUNJABI%%%%FONTSDIR%%/punjabi/ttf-punjabi-fonts.copyright
-%%TAMIL%%%%FONTSDIR%%/tamil/TAMu_Kadampari.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TAMu_Kalyani.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TAMu_Maduram.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_Comic.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_Paranar.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_Times.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_paranarb.ttf
-%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_paranari.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/Samyak-Tamil.ttf
 %%TAMIL%%%%FONTSDIR%%/tamil/fonts.dir
 %%TAMIL%%%%FONTSDIR%%/tamil/fonts.scale
 %%TAMIL%%%%FONTSDIR%%/tamil/lohit_ta.ttf
