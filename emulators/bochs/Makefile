@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -15,31 +14,29 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
-LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib
-
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--disable-docbook
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	A20_PIN "Enable support for A20 pin" on \
-		ACPI "Enable ACPI emulation" off \
 		ALIGN_CHECK "Enable alignment check support" on \
 		ASSERT_CHECK "Enable BX_ASSERT checks" off \
 		CDROM "Enable CDROM support" on \
+		CHAINING "Enable handlers-chaining emulation speedups" off \
 		CLGD54XX "Enable Cirrus Logic GD54xx video card" off \
 		CONF_MSRS "Enable configurable MSR registers support" on \
 		CPP_SUFX "Use .cpp as C++ suffix" off \
 		DEBUGGER "Enable debugger support" off \
 		DEBUGGER_X86 "Enable x86 hardware debugger" off \
-		DISASM "Enable disassemler support " on \
+		DISASM "Enable disassemler support" on \
+		ES1370 "Enable ES1370 soundcard support" off \
 		FAST_FUNCCALL "Enable fast function calls support (x86 only)" off \
 		FPU "Enable FPU emulator" on \
 		GAMEPORT "Enable standard PC gameport support" off \
 		GDB_STUB "Enable GDB stub support" off \
-		HS_ASMS "Enable support for host specific inline asms" off \
 		IDLE_HACK "Keep Bochs from using all CPU time" off \
 		INSTRUMENT "Enable support for instrumentation" off \
 		IODEBUG "Enable I/O interface to debugger" off \
+		LARGE_RAMFILE "Enable large ramfile support" off \
 		LOGGING "Enable logging" on \
 		LONG_PHY_ADDR "Enable support for physical address >= 32bit" off \
 		MISALIGNEDSSE "Enable misaligned SSE support" off \
@@ -58,17 +55,20 @@ OPTIONS=	A20_PIN "Enable support for A20 pin" on \
 		SHOW_IPS "Enable logging of measured IPS" off \
 		SMP "Enable SMP simulation support (CPU level 6)" off \
 		SVGA "Enable SVGAlib support" off \
-		TCACHE "Enable trace cache" on \
 		TERM "Use text only, console based interface" off \
 		USB "Enable limited USB UHCI support" off \
 		USB_OHCI "Enable limited USB OHCI support" off \
-		VBE "Enable VGA BIOS Extensions" on \
+		USB_XHCI "Enable limited USB xHCI support" off \
 		VMX "Enable Virtialization extensions" off \
 		WX "Use WxWidgets display interface" off \
 		X11 "Use X11 display interface" on \
-		X2APIC "Enable support for X2APIC" off \
 		X86_64 "Enable AMD x86-64 support" off \
 		XPM "Enable XPM library support" off
+
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--disable-docbook
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-fno-exceptions -fomit-frame-pointer ${CPPFLAGS}
 CXXFLAGS+=	-fno-rtti
@@ -81,7 +81,7 @@ MAN5=		bochsrc.5
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_TERM) && defined(WITHOUT_WX) && defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--with-nogui
@@ -91,12 +91,6 @@ CONFIGURE_ARGS+=--with-nogui
 CONFIGURE_ARGS+=--disable-a20-pin
 .else
 CONFIGURE_ARGS+=--enable-a20-pin
-.endif
-
-.if defined(WITH_ACPI)
-CONFIGURE_ARGS+=--enable-acpi
-.else
-CONFIGURE_ARGS+=--disable-acpi
 .endif
 
 .if !defined(WITH_ALIGN_CHECK)
@@ -115,6 +109,12 @@ CONFIGURE_ARGS+=--disable-assert-checks
 CONFIGURE_ARGS+=--disable-cdrom
 .else
 CONFIGURE_ARGS+=--enable-cdrom
+.endif
+
+.if defined(WITH_CHAINING)
+CONFIGURE_ARGS+=--enable-handlers-chaining
+.else
+CONFIGURE_ARGS+=--disable-handlers-chaining
 .endif
 
 .if defined(WITH_CLGD54XX)
@@ -177,12 +177,6 @@ CONFIGURE_ARGS+=--enable-gdb-stub
 CONFIGURE_ARGS+=--disable-gdb-stub
 .endif
 
-.if defined(WITH_HS_ASMS)
-CONFIGURE_ARGS+=--enable-host-specific-asms
-.else
-CONFIGURE_ARGS+=--disable-host-specific-asms
-.endif
-
 .if defined(WITH_IDLE_HACK)
 CONFIGURE_ARGS+=--enable-idle-hack
 .else
@@ -190,6 +184,7 @@ CONFIGURE_ARGS+=--disable-idle-hack
 .endif
 
 .if defined(WITH_INSTRUMENT)
+BROKEN=		currently unbuildable
 CONFIGURE_ARGS+=--enable-instrumentation
 .else
 CONFIGURE_ARGS+=--disable-instrumentation
@@ -199,6 +194,12 @@ CONFIGURE_ARGS+=--disable-instrumentation
 CONFIGURE_ARGS+=--enable-iodebug
 .else
 CONFIGURE_ARGS+=--disable-iodebug
+.endif
+
+.if defined(WITH_LARGE_RAMFILE)
+CONFIGURE_ARGS+=--enable-large-ramfile
+.else
+CONFIGURE_ARGS+=--disable-large-ramfile
 .endif
 
 .if !defined(WITH_LOGGING)
@@ -280,7 +281,7 @@ CONFIGURE_ARGS+=--without-rfb
 .endif
 
 .if defined(WITH_SB16)
-CONFIGURE_ARGS+=--enable-sb16=freebsd
+CONFIGURE_ARGS+=--enable-sb16
 .endif
 
 .if defined(WITH_SDL)
@@ -308,12 +309,6 @@ CONFIGURE_ARGS+=--with-svga
 CONFIGURE_ARGS+=--with-term
 .endif
 
-.if !defined(WITH_TCACHE)
-CONFIGURE_ARGS+=--disable-trace-cache
-.else
-CONFIGURE_ARGS+=--enable-trace-cache
-.endif
-
 .if defined(WITH_USB)
 CONFIGURE_ARGS+=--enable-usb
 .else
@@ -326,10 +321,10 @@ CONFIGURE_ARGS+=--enable-usb-ohci
 CONFIGURE_ARGS+=--disable-usb-ohci
 .endif
 
-.if !defined(WITH_VBE)
-CONFIGURE_ARGS+=--disable-vbe
+.if defined(WITH_USB_XHCI)
+CONFIGURE_ARGS+=--enable-usb-xhci
 .else
-CONFIGURE_ARGS+=--enable-vbe
+CONFIGURE_ARGS+=--disable-usb-xhci
 .endif
 
 .if defined(WITH_VMX)
@@ -352,12 +347,6 @@ USE_XORG=	xrandr
 CONFIGURE_ARGS+=--with-x11
 .endif
 
-.if defined(WITH_X2APIC)
-CONFIGURE_ARGS+=--enable-x2apic
-.else
-CONFIGURE_ARGS+=--disable-x2apic
-.endif
-
 .if defined(WITH_X86_64)
 CONFIGURE_ARGS+=--enable-x86-64
 .else
@@ -376,6 +365,19 @@ CONFIGURE_ARGS+=--disable-xpm
 IGNORE=		can not install: WITH_CPU_LEVEL must be an integer value between 3 and 6
 .endif
 CONFIGURE_ARGS+=--enable-cpu-level=${WITH_CPU_LEVEL}
+.endif
+
+.if defined(WITH_SB16) || defined(WITH_ES1370)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ENV+=	SOUND_LINK_OPTS="-L${LOCALBASE}/lib"
+.endif
+
+.if defined(WITH_DEBUGGER) && defined(WITH_GDB_STUB)
+IGNORE=		DEBUGGER and GDB_STUB are mutialy exclusive
+.endif
+
+.if defined(WITH_GDB_STUB) && defined(WITH_SMP)
+IGNORE=		GDB_STUB is incompatible with multiprocessor
 .endif
 
 pre-everything::
@@ -403,7 +405,7 @@ post-patch:
 		 s|/usr/local/share/doc/bochs|${DOCSDIR}|' \
 		 ${WRKSRC}/doc/docbook/user/user.dbk ${WRKSRC}/doc/man/*.[15]
 	@${REINPLACE_CMD} -Ee 's|/usr/(include/vga\.h)|${LOCALBASE}/\1|' \
-		${WRKSRC}/gui/svga.cc
+		 ${WRKSRC}/gui/svga.cc
 	@${REINPLACE_CMD} -Ee \
 		's|(^LOCAL_CXXFLAGS.+=)|\1 @CPPFLAGS@|; \
 		 s|(-lvgagl)$$|\1 @LDFLAGS@|' \
@@ -428,4 +430,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
