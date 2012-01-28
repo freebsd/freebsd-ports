@@ -64,6 +64,10 @@ NO_WRKSUBDIR=	yes
 BROKEN=		Fails to install on sparc64 with error 2
 .endif
 
+post-patch:
+	@${GREP} -l '^main' ${WRKSRC}/*.c | ${XARGS} ${REINPLACE_CMD} \
+		-e '/argv/s/unsigned//'
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
