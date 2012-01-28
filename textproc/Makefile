@@ -456,6 +456,7 @@
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-text
+    SUBDIR += ocaml-tyxml
     SUBDIR += odt2txt
     SUBDIR += openfts
     SUBDIR += openjade
