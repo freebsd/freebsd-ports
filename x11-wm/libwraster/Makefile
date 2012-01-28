@@ -17,7 +17,7 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	libwraster from Window Maker
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
