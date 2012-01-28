@@ -21641,10 +21641,15 @@ pure-ftpd                       ports/ftp/pure-ftpd
 pure-gen                        ports/devel/pure-gen
 pure-gl                         ports/graphics/pure-gl
 pure-gtk                        ports/x11-toolkits/pure-gtk
+pure-mpfr                       ports/math/pure-mpfr
 pure-rational                   ports/math/pure-rational
+pure-readline                   ports/devel/pure-readline
 pure-sfv                        ports/security/pure-sfv
 pure-sockets                    ports/net/pure-sockets
 pure-sql3                       ports/databases/pure-sql3
+pure-stldict                    ports/devel/pure-stldict
+pure-stlvec                     ports/devel/pure-stlvec
+pure-tk                         ports/x11-toolkits/pure-tk
 pure-xemacs21-mule              ports/irc/pure-xemacs21-mule
 pure-xml                        ports/textproc/pure-xml
 pureadmin                       ports/ftp/pureadmin
@@ -23531,6 +23536,7 @@ resume-extensions               ports/textproc/resume-extensions
 retail                          ports/sysutils/retail
 retawq                          ports/www/retawq
 retranslator                    ports/security/retranslator
+retroshare                      ports/net-p2p/retroshare
 revelation                      ports/security/revelation
 reviewboard                     ports/www/reviewboard
 rexima                          ports/audio/rexima
