@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	eiciel
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.8.1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2 libgnomeui
-USE_GETTEXT=	yes
+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -28,6 +28,14 @@ CONFIGURE_ARGS=	--with-nautilus-extensions-dir=${PREFIX}/lib/nautilus/extensions
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		eiciel.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
