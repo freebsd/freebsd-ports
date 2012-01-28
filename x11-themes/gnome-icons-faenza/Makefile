@@ -7,6 +7,7 @@
 
 PORTNAME=	faenza
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://fc05.deviantart.com/fs71/f/2011/320/4/f/
 PKGNAMEPREFIX=	gnome-icons-
@@ -23,11 +24,24 @@ INSTALLS_ICONS=	yes
 
 THEMES=		Faenza Faenza-Dark Faenza-Darkest Faenza-Darker \
 		Faenza-Ambiance Faenza-Radiance
+FAENZA_LIGHT=	Faenza
+FAENZA_DARK=	Faenza-Dark
 
 do-install:
-.for i in ${THEMES}
-	@cd ${WRKDIR} && ${TAR} -xf ${i}.tar.gz
-	${CP} -R ${WRKDIR}/${i} ${PREFIX}/share/icons
+.for theme in ${THEMES}
+	@cd ${WRKDIR} && ${TAR} -xf ${theme}.tar.gz
+
+.if ${FAENZA_LIGHT} == ${theme} || ${FAENZA_DARK} == ${theme}
+	@cd ${WRKDIR}/${theme}/places/scalable && \
+	${LN} -sf start-here-gnome.svg start-here.svg && \
+	${LN} -sf start-here-gnome-symbolic.svg start-here-symbolic.svg
+.for size in 22 24 32 48 64 96
+	@cd ${WRKDIR}/${theme}/places/${size} && \
+	${LN} -sf start-here-gnome.png start-here.png
+.endfor
+.endif
+
+	${CP} -R ${WRKDIR}/${theme} ${PREFIX}/share/icons
 .endfor
 
 .include <bsd.port.mk>
