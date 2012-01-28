@@ -34,9 +34,6 @@ include/libserveez/util.h
 include/libserveez/vector.h
 include/libserveez/windoze.h
 include/svzconfig.h
-@dirrm include/libserveez/coserver
-@dirrm include/libserveez/codec
-@dirrm include/libserveez
 lib/libserveez.a
 lib/libserveez.la
 lib/libserveez.so
@@ -52,3 +49,6 @@ share/aclocal/serveez.m4
 %%DATADIR%%/serveez-procedures.txt
 %%DATADIR%%/serveez.scm
 @dirrm %%DATADIR%%
+@dirrm include/libserveez/coserver
+@dirrm include/libserveez/codec
+@dirrm include/libserveez
