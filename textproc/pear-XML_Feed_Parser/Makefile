@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Feed_Parser
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	textproc devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
