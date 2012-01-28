@@ -6,15 +6,22 @@
 #
 
 PORTNAME=	pyblosxom
-DISTVERSION=	1.5rc3
+DISTVERSION=	1.5.2
 CATEGORIES=	www python
 MASTER_SITES=	http://pyblosxom.bluesock.org/download/
 
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	A lightweight weblog system
 
-USE_PYTHON=	2.5+
+LICENSE=	MIT
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGVERSION=	${DISTVERSION}
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \. ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
