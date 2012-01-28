@@ -1715,7 +1715,6 @@ lang/u++||2011-04-18|Has expired: has been broken for over a half year
 lang/pugs||2011-04-18|Has expired: has been broken for over a year
 lang/mozart||2011-04-18|Has expired: does not compile on FreeBSD 7.x or newer
 math/linalg||2011-04-18|Has expired: does not build on FreeBSD 7.x or newer
-math/R-cran-igraph||2011-04-18|Has expired: has been broken for over a half year
 misc/ftree||2011-04-18|Has expired: has been broken for over a half year
 multimedia/katchtv||2011-04-18|Has expired: has been broken for a half year
 multimedia/libomxil-bellagio||2011-04-18|Has expired: has been broken for almost a year
