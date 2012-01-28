@@ -70,6 +70,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/http/stream.pyc
 %%DATADIR%%/log.py
 %%DATADIR%%/log.pyc
+%%DATADIR%%/log_api.py
+%%DATADIR%%/log_api.pyc
 %%DATADIR%%/main/__init__.py
 %%DATADIR%%/main/__init__.pyc
 %%DATADIR%%/main/browser.py
@@ -100,6 +102,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/net/stream.pyc
 %%DATADIR%%/notifier/__init__.py
 %%DATADIR%%/notifier/__init__.pyc
+%%DATADIR%%/notifier/macos.py
+%%DATADIR%%/notifier/macos.pyc
 %%DATADIR%%/notifier/unix.py
 %%DATADIR%%/notifier/unix.pyc
 %%DATADIR%%/notify.py
@@ -118,6 +122,16 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/rendezvous/server.pyc
 %%DATADIR%%/rootdir.py
 %%DATADIR%%/rootdir.pyc
+%%DATADIR%%/runner_api.py
+%%DATADIR%%/runner_api.pyc
+%%DATADIR%%/runner_clnt.py
+%%DATADIR%%/runner_clnt.pyc
+%%DATADIR%%/runner_core.py
+%%DATADIR%%/runner_core.pyc
+%%DATADIR%%/runner_lst.py
+%%DATADIR%%/runner_lst.pyc
+%%DATADIR%%/runner_rendezvous.py
+%%DATADIR%%/runner_rendezvous.pyc
 %%DATADIR%%/server.py
 %%DATADIR%%/server.pyc
 %%DATADIR%%/simplejson/__init__.py

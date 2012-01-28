@@ -1,6 +1,6 @@
---- Makefile.orig	2011-10-25 20:20:56.000000000 +0200
-+++ Makefile	2011-11-01 21:08:46.000000000 +0100
-@@ -124,7 +124,7 @@
+--- Makefile.orig	2012-01-23 15:46:31.000000000 +0100
++++ Makefile	2012-01-28 14:53:37.000000000 +0100
+@@ -125,7 +125,7 @@
  # [2] http://bit.ly/ayYyAR (debian.org)
  #
  DESTDIR =
@@ -9,3 +9,12 @@
  LOCALSTATEDIR = /var/neubot
  PREFIX = /usr/local
  BINDIR = $(PREFIX)/bin
+@@ -150,7 +150,7 @@
+ 	    $(INSTALL) -d $(DESTDIR)$(MANDIR)/$$DIR; \
+ 	    test $$? || exit 1; \
+ 	done
+-	for FILE in `cd UNIX/man && find . -type f`; do \
++	for FILE in `cd UNIX/man && find . -type f -a ! -name "*.gz"`; do \
+ 	    gzip -9c UNIX/man/$$FILE > UNIX/man/$$FILE.gz; \
+ 	    test $$? || exit 1; \
+ 	    $(INSTALL) -m644 UNIX/man/$$FILE.gz $(DESTDIR)$(MANDIR)/$$FILE.gz; \

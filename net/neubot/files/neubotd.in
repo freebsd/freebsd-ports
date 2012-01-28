@@ -9,7 +9,7 @@
 
 # Add the following line to /etc/rc.conf to enable `neubotd':
 #
-#neubotd_enable="YES"
+# neubotd_enable="YES"
 #
 
 . /etc/rc.subr

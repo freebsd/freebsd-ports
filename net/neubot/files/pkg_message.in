@@ -5,5 +5,8 @@ program.
 
 To start the daemon, add the following line to /etc/rc.conf:
 neubotd_enable="YES"
+
+When upgrading, don't forget to restart the daemon, in order to migrate its
+database if needed.
 ==============================================================================
 
