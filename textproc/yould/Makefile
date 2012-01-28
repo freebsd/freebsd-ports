@@ -8,7 +8,7 @@
 PORTNAME=	yould
 PORTVERSION=	0.3.7
 CATEGORIES=	textproc
-MASTER_SITES=	http://ygingras.net/files/ CENKES
+MASTER_SITES=	CHEESESHOP/source/y/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pronounceable word generator
