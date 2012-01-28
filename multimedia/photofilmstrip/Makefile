@@ -8,6 +8,7 @@
 
 PORTNAME=	photofilmstrip
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -71,7 +72,7 @@ do-install:
 	@${FIND} ${PFSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}.desktop ${PREFIX}/share/applications
-.for lang in cs de en fr it ko pt
+.for lang in cs de en fr it ko nl pt tr
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/PhotoFilmStrip.mo
