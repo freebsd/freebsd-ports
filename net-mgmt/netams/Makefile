@@ -146,10 +146,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cgi-bin/images/${f} ${WWWDIR}/images/
 .endfor
 .for f in ${USERCGI}
-	${INSTALL_DATA} ${WRKSRC}/cgi-bin/${f} ${WWWDIR}/cgi-bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/cgi-bin/${f} ${WWWDIR}/cgi-bin/
 .endfor
 .for f in ${ADMINCGI}
-	${INSTALL_DATA} ${WRKSRC}/cgi-bin/admin/${f} ${WWWDIR}/cgi-bin/admin/
+	${INSTALL_PROGRAM} ${WRKSRC}/cgi-bin/admin/${f} ${WWWDIR}/cgi-bin/admin/
 .endfor
 .endif
 .for f in ${MAN8}
