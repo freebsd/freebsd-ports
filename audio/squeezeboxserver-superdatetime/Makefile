@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	superdatetime
-PORTVERSION=	5.9.8
+PORTVERSION=	5.9.9
 CATEGORIES=	audio
-MASTER_SITES=	http://www.gregbrown.net/squeeze/SuperDateTime/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	squeezeboxserver-
-DISTNAME=	SuperDateTime${PORTVERSION:S/./-/g}
+DISTNAME=	SuperDateTime${PORTVERSION}
 DIST_SUBDIR=	squeezeboxserver
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Squeezebox Server plugin to display weather conditions and forecasts
 
 RUN_DEPENDS=	softsqueeze:${PORTSDIR}/audio/squeezeboxserver
+
+PROJECTHOST=	grebrown-projects
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
