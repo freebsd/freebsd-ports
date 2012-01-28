@@ -53,6 +53,10 @@ SVN_REV!=	svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d
 .include "Makefile.svn_rev"
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 .if defined(BOOTSTRAP)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
