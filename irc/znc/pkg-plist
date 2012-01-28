@@ -30,7 +30,6 @@ include/znc/zncconfig.h
 lib/znc/admin.so
 lib/znc/adminlog.so
 lib/znc/autoattach.so
-lib/znc/autocycle.so
 lib/znc/autoop.so
 lib/znc/autoreply.so
 lib/znc/awaynick.so
@@ -58,6 +57,7 @@ lib/znc/stickychan.so
 lib/znc/watch.so
 lib/znc/webadmin.so
 %%EXTRA%%lib/znc/antiidle.so
+%%EXTRA%%lib/znc/autocycle.so
 %%EXTRA%%lib/znc/autovoice.so
 %%EXTRA%%%%OPENSSL%%lib/znc/away.so
 %%EXTRA%%lib/znc/block_motd.so
