@@ -11,8 +11,14 @@
 %%XPI_XPIDIR%%/modules/GM_notification.js
 %%XPI_XPIDIR%%/modules/addons4.js
 %%XPI_XPIDIR%%/modules/constants.js
+%%XPI_XPIDIR%%/modules/parseScript.js
 %%XPI_XPIDIR%%/modules/prefmanager.js
+%%XPI_XPIDIR%%/modules/remoteScript.js
 %%XPI_XPIDIR%%/modules/runScript.js
+%%XPI_XPIDIR%%/modules/script.js
+%%XPI_XPIDIR%%/modules/scriptIcon.js
+%%XPI_XPIDIR%%/modules/scriptRequire.js
+%%XPI_XPIDIR%%/modules/scriptResource.js
 %%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
 %%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
 %%XPI_XPIDIR%%/modules/util/alert.js
@@ -24,6 +30,7 @@
 %%XPI_XPIDIR%%/modules/util/getEditor.js
 %%XPI_XPIDIR%%/modules/util/getEnabled.js
 %%XPI_XPIDIR%%/modules/util/getService.js
+%%XPI_XPIDIR%%/modules/util/getTempDir.js
 %%XPI_XPIDIR%%/modules/util/getTempFile.js
 %%XPI_XPIDIR%%/modules/util/getUriFromFile.js
 %%XPI_XPIDIR%%/modules/util/hitch.js
@@ -37,6 +44,7 @@
 %%XPI_XPIDIR%%/modules/util/scriptMatchesUrlAndRuns.js
 %%XPI_XPIDIR%%/modules/util/setEnabled.js
 %%XPI_XPIDIR%%/modules/util/sha1.js
+%%XPI_XPIDIR%%/modules/util/showInstallDialog.js
 %%XPI_XPIDIR%%/modules/util/timeout.js
 %%XPI_XPIDIR%%/modules/util/uriFromUrl.js
 %%XPI_XPIDIR%%/modules/util/windowId.js
