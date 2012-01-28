@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddrescue
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -19,16 +19,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		${PORTNAME}.1
-INFO=		${PORTNAME}
+MAN1=		ddrescue.1 ddrescuelog.1
+INFO=		ddrescue
 PORTDOCS=	AUTHORS ChangeLog NEWS README
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/ddrescue bin/ddrescuelog
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.info ${PREFIX}/${INFO_PATH}
+.for i in ddrescue ddrescuelog
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${MAN1PREFIX}/man/man1
+.endfor
+.for i in ddrescue
+	${INSTALL_DATA} ${WRKSRC}/doc/${i}.info ${PREFIX}/${INFO_PATH}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
