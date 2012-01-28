@@ -61,13 +61,24 @@
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images/yahoo.png
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/basic.html
 %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings/player.html
-%%SLIMDIR%%/Plugins/SuperDateTime/MANIFEST
-%%SLIMDIR%%/Plugins/SuperDateTime/META.yml
 %%SLIMDIR%%/Plugins/SuperDateTime/install.xml
-%%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins-SuperDateTime-Plugin.par
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/AsSubs.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Element.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Element/traverse.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Parse.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Tagset.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Tree.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/TreeBuilder.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins/SuperDateTime/PlayerSettings.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins/SuperDateTime/Plugin.pm
+%%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins/SuperDateTime/Settings.pm
 %%SLIMDIR%%/Plugins/SuperDateTime/mlb.2.font.bmp
 %%SLIMDIR%%/Plugins/SuperDateTime/nfl.2.font.bmp
 %%SLIMDIR%%/Plugins/SuperDateTime/strings.txt
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins/SuperDateTime
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/Plugins
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML/Element
+@dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib/HTML
 @dirrm %%SLIMDIR%%/Plugins/SuperDateTime/lib
 @dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/settings
 @dirrm %%SLIMDIR%%/Plugins/SuperDateTime/HTML/EN/plugins/SuperDateTime/html/images
