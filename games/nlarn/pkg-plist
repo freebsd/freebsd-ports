@@ -1,0 +1,10 @@
+bin/nlarn
+%%DATADIR%%/README.txt
+%%DATADIR%%/fortune
+%%DATADIR%%/maze
+%%DATADIR%%/maze_doc.txt
+%%DATADIR%%/monsters.lua
+%%DATADIR%%/nlarn.hlp
+%%DATADIR%%/nlarn.ini-sample
+%%DATADIR%%/nlarn.msg
+@dirrm %%DATADIR%%

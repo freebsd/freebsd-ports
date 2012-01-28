@@ -578,6 +578,7 @@
     SUBDIR += nimuh
     SUBDIR += ninix-aya
     SUBDIR += njam
+    SUBDIR += nlarn
     SUBDIR += noegnud-addons
     SUBDIR += noegnud-data
     SUBDIR += noegnud-littlehack
