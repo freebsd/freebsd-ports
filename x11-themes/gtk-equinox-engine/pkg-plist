@@ -239,7 +239,7 @@ lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.so
 @dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0/apps
 @dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0
 @dirrm %%DATADIR%%/Equinox Evolution
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
