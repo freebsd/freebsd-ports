@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.12
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/201
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
 
 XPI_DISTNAME=	downthemall
