@@ -1515,6 +1515,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/metadata/webm-0.webm
 %%DATADIR%%/resources/testdata/metadata/mp3-2.mp3
 %%DATADIR%%/resources/testdata/metadata/theora_with_ogg_extension.ogg
+%%DATADIR%%/resources/devices/ereader.py
 %%DATADIR%%/resources/devices/mediaplayer.py
 %%DATADIR%%/resources/devices/generic_phone.py
 %%DATADIR%%/resources/devices/android.py
