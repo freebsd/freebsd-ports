@@ -60,7 +60,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The oss-security list reports:</p>
 	<blockquote cite="http://openwall.com/lists/oss-security/2011/12/31/1">
 	  <p>Incorrect permissions on temporary files can lead to
-	     information disclosure.</p>
+	    information disclosure.</p>
 	</blockquote>
       </body>
     </description>
@@ -87,12 +87,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Adobe Security Team reports:</p>
 	<blockquote cite="http://www.adobe.com/support/security/advisories/apsa11-04.html">
 	  <p>An unspecified vulnerability in the U3D component allows
-	     remote attackers to execute arbitrary code (or cause a denial
-	     of service attack) via unknown vectors.</p>
+	    remote attackers to execute arbitrary code (or cause a denial
+	    of service attack) via unknown vectors.</p>
 	</blockquote>
 	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-24.html">
 	   <p>A heap-based buffer overflow allows attackers to execute
-	      arbitrary code via unspecified vectors.</p>
+	     arbitrary code via unspecified vectors.</p>
 	</blockquote>
       </body>
     </description>
@@ -363,14 +363,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The OpenTTD Team reports:</p>
 	<blockquote cite="http://security.openttd.org/en/CVE-2012-0049">
 	  <p>Using a slow read type attack it is possible to prevent anyone
-	  from joining a server with virtually no resources.  Once downloading
-	  the map no other downloads of the map can start, so downloading
-	  really slowly will prevent others from joining.  This can be further
-	  aggravated by the pause-on-join setting in which case the game is
-	  paused and the players cannot continue the game during such an
-	  attack.  This attack requires that the user is not banned and passes
-	  the authorization to the server, although for many servers there is
-	  no server password and thus authorization is easy.</p>
+	    from joining a server with virtually no resources.  Once downloading
+	    the map no other downloads of the map can start, so downloading
+	    really slowly will prevent others from joining.  This can be further
+	    aggravated by the pause-on-join setting in which case the game is
+	    paused and the players cannot continue the game during such an
+	    attack.  This attack requires that the user is not banned and passes
+	    the authorization to the server, although for many servers there is
+	    no server password and thus authorization is easy.</p>
 	</blockquote>
       </body>
     </description>
@@ -420,29 +420,29 @@ Note:  Please add new entries to the beginning of this file.
 	<p>oCERT reports:</p>
 	<blockquote cite="http://www.ocert.org/advisories/ocert-2011-003.html">
 	  <p>A variety of programming languages suffer from a denial-of-service
-	     (DoS) condition against storage functions of key/value pairs in
-	     hash data structures, the condition can be leveraged by exploiting
-	     predictable collisions in the underlying hashing algorithms.</p>
+	    (DoS) condition against storage functions of key/value pairs in
+	    hash data structures, the condition can be leveraged by exploiting
+	    predictable collisions in the underlying hashing algorithms.</p>
 	  <p>The issue finds particular exposure in web server applications
-	     and/or frameworks. In particular, the lack of sufficient limits
-	     for the number of parameters in POST requests in conjunction with
-	     the predictable collision properties in the hashing functions of
-	     the underlying languages can render web applications vulnerable
-	     to the DoS condition. The attacker, using specially crafted HTTP
-	     requests, can lead to a 100% of CPU usage which can last up to
-	     several hours depending on the targeted application and server
-	     performance, the amplification effect is considerable and
-	     requires little bandwidth and time on the attacker side.</p>
+	    and/or frameworks. In particular, the lack of sufficient limits
+	    for the number of parameters in POST requests in conjunction with
+	    the predictable collision properties in the hashing functions of
+	    the underlying languages can render web applications vulnerable
+	    to the DoS condition. The attacker, using specially crafted HTTP
+	    requests, can lead to a 100% of CPU usage which can last up to
+	    several hours depending on the targeted application and server
+	    performance, the amplification effect is considerable and
+	    requires little bandwidth and time on the attacker side.</p>
 	  <p>The condition for predictable collisions in the hashing functions
-	     has been reported for the following language implementations:
-	     Java, JRuby, PHP, Python, Rubinius, Ruby. In the case of the
-	     Ruby language, the 1.9.x branch is not affected by the
-	     predictable collision condition since this version includes a
-	     randomization of the hashing function.</p>
+	    has been reported for the following language implementations:
+	    Java, JRuby, PHP, Python, Rubinius, Ruby. In the case of the
+	    Ruby language, the 1.9.x branch is not affected by the
+	    predictable collision condition since this version includes a
+	    randomization of the hashing function.</p>
 	  <p>The vulnerability outlined in this advisory is practically
-	     identical to the one reported in 2003 and described in the paper
-	     Denial of Service via Algorithmic Complexity Attacks which
-	     affected the Perl language.</p>
+	    identical to the one reported in 2003 and described in the paper
+	    Denial of Service via Algorithmic Complexity Attacks which
+	    affected the Perl language.</p>
 	</blockquote>
       </body>
     </description>
