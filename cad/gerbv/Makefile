@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,13 +21,14 @@ USE_GNOME=	desktopfileutils gnomehack gtk20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		gerbv.1
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|desktop||g' ${WRKSRC}/Makefile.in
