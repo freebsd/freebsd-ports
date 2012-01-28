@@ -9,7 +9,7 @@ PORTNAME=	xballoon
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
+MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Balloons move on root window
