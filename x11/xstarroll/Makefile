@@ -10,7 +10,7 @@ PORTVERSION=	1.1b
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
+MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Letters fly to far, far, far away
