@@ -5,6 +5,7 @@ share/applications/mtpaint.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/mtpaint.mo
@@ -14,6 +15,7 @@ share/applications/mtpaint.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mtpaint.mo

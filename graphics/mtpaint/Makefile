@@ -6,33 +6,61 @@
 #
 
 PORTNAME=	mtpaint
-PORTVERSION=	3.31
-PORTREVISION=	5
+PORTVERSION=	3.40
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple painting program
 
-LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
-		jasper.4:${PORTSDIR}/graphics/jasper \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+OPTIONS=	GIFLIB "Enable LZW-compressed GIF support" off \
+		LCMS2 "Enable ICC color management support" on \
+		OPENJPEG "Enable OpenJPEG support" on \
+		NLS "Enable Native Language support" on
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
-		--locale=${PREFIX}/share/locale \
-		gtk2 cflags slow asneeded GIF jpeg jp2 tiff man
+		--localedir=${PREFIX}/share/locale \
+		gtk2 cflags asneeded ft jpeg tiff man
+MAKE_JOBS_SAFE=	yes
 
-MANCOMPRESSED=	yes
 MAN1=		${PORTNAME}.1
 
-CFLAGS+=	-DU_FREETYPE
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GIFLIB)
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+CONFIGURE_ARGS+=GIF
+.else
+LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+CONFIGURE_ARGS+=gif
+.endif
+
+.if defined(WITHOUT_LCMS2)
+CONFIGURE_ARGS+=nolcms
+.else
+LIB_DEPENDS+=	lcms2.2:${PORTSDIR}/graphics/lcms2
+CONFIGURE_ARGS+=lcms2
+.endif
+
+.if defined(WITHOUT_OPENJPEG)
+LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+CONFIGURE_ARGS+=jasper
+.else
+LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+CONFIGURE_ARGS+=jp2
+.endif
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -42,17 +70,10 @@ CONFIGURE_ARGS+=intl
 PLIST_SUB+=	NLS=""
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|="/usr"|="${LOCALBASE}"|g ; \
-		 s|/usr/X11R6|${LOCALBASE}|g ; \
-		 s|GTK_LIB -s|GTK_LIB|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/src/png.c
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1.gz \
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
 		${MANPREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.desktop \
@@ -60,7 +81,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.png \
 		${PREFIX}/share/pixmaps
 .if !defined(WITHOUT_NLS)
-.for lang in cs de es fr gl it ja nl pl pt pt_BR ru sk sv tr zh_CN zh_TW
+.for lang in cs de es fr gl hu it ja nl pl pt pt_BR ru sk sv tl tr zh_CN zh_TW
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/mtpaint.mo
