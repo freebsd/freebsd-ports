@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.8.1
-PORTREVISION=	1
+PORTVERSION=	1.5.9
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
