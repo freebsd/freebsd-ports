@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.202
+PORTVERSION=	0.204
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://znc.in/releases/
 
