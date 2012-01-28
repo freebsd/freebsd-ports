@@ -431,6 +431,7 @@
     SUBDIR += lbl-hf
     SUBDIR += lcdproc
     SUBDIR += ldap-account-manager
+    SUBDIR += ldapenter
     SUBDIR += ldapvi
     SUBDIR += ledit
     SUBDIR += less

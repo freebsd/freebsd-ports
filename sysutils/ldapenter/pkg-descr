@@ -1,0 +1,6 @@
+The ldapform utility creates a text file in ldif(5) format, which can be
+used to add or modify entries in an LDAP server. The ldapedit utility does
+the same, but also invokes an editor and submits the changes back to that
+server.
+
+WWW: http://ldapenter.googlecode.com/
