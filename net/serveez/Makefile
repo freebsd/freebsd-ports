@@ -7,31 +7,31 @@
 #
 
 PORTNAME=	serveez
-PORTVERSION=	0.1.5
-PORTREVISION=	7
+PORTVERSION=	0.1.7
 CATEGORIES=	net devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server framework
 
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
-GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
-
-USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ARGS=	--with-guile=${LOCALBASE}
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	serveez.1 serveez-config.1
-INFO=	serveez serveez-api
-
-CPPFLAGS+=	`${GUILE_CONFIG} compile`
-LDFLAGS+=	`${GUILE_CONFIG} link`
+MAN1=		serveez.1 serveez-config.1
+INFO=		serveez serveez-api
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-release||g' \
-		${WRKSRC}/src/libserveez/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|test||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's| -release .*||' ${WRKSRC}/src/libserveez/Makefile.in
 
 .include <bsd.port.mk>
