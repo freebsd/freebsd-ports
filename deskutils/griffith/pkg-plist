@@ -25,6 +25,8 @@ share/applications/griffith.desktop
 %%DATADIR%%/export_templates/latex/page.tpl
 %%DATADIR%%/export_templates/xml/config.xml
 %%DATADIR%%/export_templates/xml/page.tpl
+%%DATADIR%%/glade/add_poster.png
+%%DATADIR%%/glade/delete_poster.png
 %%DATADIR%%/glade/exporthtml.glade
 %%DATADIR%%/glade/griffith.glade
 %%DATADIR%%/glade/griffith.png
@@ -44,6 +46,11 @@ share/applications/griffith.desktop
 %%DATADIR%%/images/09.png
 %%DATADIR%%/images/default.png
 %%DATADIR%%/images/default_thumbnail.png
+%%DATADIR%%/images/ge_amazon.png
+%%DATADIR%%/images/ge_mark_seen.png
+%%DATADIR%%/images/ge_movieposterdb.png
+%%DATADIR%%/images/ge_player.png
+%%DATADIR%%/images/ge_remover.png
 %%DATADIR%%/images/griffith.png
 %%DATADIR%%/images/meter00.png
 %%DATADIR%%/images/meter01.png
@@ -70,6 +77,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/db/_movie.py
 %%DATADIR%%/lib/db/_objects.py
 %%DATADIR%%/lib/db/tables.py
+%%DATADIR%%/lib/db/validators.py
 %%DATADIR%%/lib/dbupgrade.py
 %%DATADIR%%/lib/delete.py
 %%DATADIR%%/lib/edit.py
@@ -80,6 +88,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/gutils.py
 %%DATADIR%%/lib/initialize.py
 %%DATADIR%%/lib/loan.py
+%%DATADIR%%/lib/macutils.py
 %%DATADIR%%/lib/main_treeview.py
 %%DATADIR%%/lib/movie.py
 %%DATADIR%%/lib/people.py
@@ -101,6 +110,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/extensions/ge_movieposterdb.py
 %%DATADIR%%/lib/plugins/extensions/ge_player.py
 %%DATADIR%%/lib/plugins/extensions/ge_remover.py
+%%DATADIR%%/lib/plugins/extensions/ge_sqlitemaintenance.py
 %%DATADIR%%/lib/plugins/imp/AMC.py
 %%DATADIR%%/lib/plugins/imp/AllMyMovies.py
 %%DATADIR%%/lib/plugins/imp/BESTheMovieLibrary.py
@@ -117,7 +127,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/imp/__init__.py
 %%DATADIR%%/lib/plugins/imp/eXtremeMovieManager.py
 %%DATADIR%%/lib/plugins/movie/PluginMovie7arte.py
-%%DATADIR%%/lib/plugins/movie/PluginMovieAllMovie.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieAllRovi.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAllocine.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAmazon.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieAniDB.py
@@ -140,7 +150,9 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-de.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-es.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-it.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-pt.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieIMDB.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieInterfilmes.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieKinoDe.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieMediadis.py
 %%DATADIR%%/lib/plugins/movie/PluginMovieMovieMeter.py
@@ -162,6 +174,7 @@ share/applications/griffith.desktop
 %%DATADIR%%/lib/version.py
 %%DATADIR%%/lib/view.py
 %%DATADIR%%/lib/widgets.py
+share/locale/ar/LC_MESSAGES/griffith.mo
 share/locale/bg/LC_MESSAGES/griffith.mo
 share/locale/ca/LC_MESSAGES/griffith.mo
 share/locale/cs/LC_MESSAGES/griffith.mo
@@ -171,9 +184,11 @@ share/locale/el/LC_MESSAGES/griffith.mo
 share/locale/en_GB/LC_MESSAGES/griffith.mo
 share/locale/es/LC_MESSAGES/griffith.mo
 share/locale/et/LC_MESSAGES/griffith.mo
+share/locale/eu/LC_MESSAGES/griffith.mo
 share/locale/fa/LC_MESSAGES/griffith.mo
 share/locale/fi/LC_MESSAGES/griffith.mo
 share/locale/fr/LC_MESSAGES/griffith.mo
+share/locale/gl/LC_MESSAGES/griffith.mo
 share/locale/hr/LC_MESSAGES/griffith.mo
 share/locale/hu/LC_MESSAGES/griffith.mo
 share/locale/id/LC_MESSAGES/griffith.mo
@@ -189,10 +204,12 @@ share/locale/pl/LC_MESSAGES/griffith.mo
 share/locale/ps/LC_MESSAGES/griffith.mo
 share/locale/pt/LC_MESSAGES/griffith.mo
 share/locale/pt_BR/LC_MESSAGES/griffith.mo
+share/locale/ro/LC_MESSAGES/griffith.mo
 share/locale/ru/LC_MESSAGES/griffith.mo
 share/locale/sk/LC_MESSAGES/griffith.mo
 share/locale/sr/LC_MESSAGES/griffith.mo
 share/locale/sv/LC_MESSAGES/griffith.mo
+share/locale/th/LC_MESSAGES/griffith.mo
 share/locale/tr/LC_MESSAGES/griffith.mo
 share/locale/uk/LC_MESSAGES/griffith.mo
 share/locale/zh_CN/LC_MESSAGES/griffith.mo
