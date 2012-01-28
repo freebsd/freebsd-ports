@@ -51,6 +51,7 @@ CC=	${LOCALBASE}/bin/clang
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 .else
 USE_GCC=	4.6+
+BROKEN=		does not compile
 .endif
 .endif
 .endif
