@@ -6,36 +6,44 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.29
-PORTREVISION=	0
+PORTVERSION=	1.30
 CATEGORIES=	sysutils
-MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/ \
-		http://codemonkey.org.uk/projects/x86info/old/
+MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to display information about the systems x86 processor(s)
 
+LICENSE=	GPLv2
+
+ONLY_FOR_ARCHS=	i386 amd64
+
 LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
 
-USE_GMAKE=	yes
-USE_PYTHON_BUILD=	yes
 USE_GNOME=	pkgconfig
-LICENSE=	GPLv2
+USE_PYTHON_BUILD=yes
+USE_GMAKE=	yes
 ALL_TARGET=	x86info lsmsr
-ONLY_FOR_ARCHS=	i386 amd64
-PLIST_FILES=	bin/x86info bin/lsmsr
 MAKE_JOBS_SAFE=	yes
-MAN1=	x86info.1
-MAN8=	lsmsr.8
+
+MAN1=		x86info.1
+MAN8=		lsmsr.8
+PLIST_FILES=	bin/lsmsr bin/x86info
 
 post-patch:
-	${REINPLACE_CMD} -E -e 's,-g -O2,${CFLAGS},g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^CFLAGS/s| =| +=|g ; \
+		 /^CFLAGS/s| -g|| ; \
+		 /^CFLAGS/s| -O2|| ; \
+		 /^CFLAGS/s| -Werror|| ; \
+		 /^CC/s| =| ?=|' ${WRKSRC}/Makefile
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 701102
 BUILD_DEPENDS+=	${LOCALBASE}/include/cpu.h:${PORTSDIR}/sysutils/devcpu
-CFLAGS+=	-I"${LOCALBASE}"/include
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
 do-install:
