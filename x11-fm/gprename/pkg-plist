@@ -1,6 +1,6 @@
 bin/gprename
+share/applications/gprename-nautilus-actions.xml
 share/applications/gprename.desktop
-share/applications/gprename.schemas
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/ca/LC_MESSAGES/gprename.mo
 share/locale/de/LC_MESSAGES/gprename.mo
