@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	pcpustat
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chipstips.com/download/
 
 MAINTAINER=	sterling@camdensoftware.com
 COMMENT=	Per-CPU usage statistics
 
+LICENSE=	OWL
+
 MAN1=		pcpustat.1
 
 USE_BZIP2=	yes
 PLIST_FILES=	bin/pcpustat
-
-LICENSE=	OWL
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
