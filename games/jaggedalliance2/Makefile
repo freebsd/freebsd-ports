@@ -64,6 +64,8 @@ MAKE_ARGS+=	NO_DEPS=yes # For a single full build dependency calculation is unne
 
 MAKE_ARGS+=	SGPDATADIR=${DATADIR}
 
+MAKE_ARGS+=	${INSTALL_MACROS:S/BSD_//}
+
 MAN6=	ja2.6
 
 post-install:
