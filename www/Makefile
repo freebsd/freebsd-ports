@@ -1795,6 +1795,7 @@
     SUBDIR += trac-pagelist
     SUBDIR += trac-pagetopdf
     SUBDIR += trac-pendingticket
+    SUBDIR += trac-permredirect
     SUBDIR += trac-privatetickets
     SUBDIR += trac-pydotorgtheme
     SUBDIR += trac-remind
