@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	griffith
-PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTVERSION=	0.13
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/58153655/
+MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_PKGNAMEPREFIX}reportlab>=1.19:${PORTSDIR}/print/py-reportlab \
-		${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		${PYXML}
+
+OPTIONS=	LXML "Enable lxml support" off \
+		REPORTLAB2 "Enable ReportLab2 support" off \
+		CHARDET "Enable chardet support" off \
+		PYGNOMEEXTRAS "Enable python-gnome-extras support" off
 
 USE_XZ=		yes
 USE_GNOME=	pygtk2
-WANT_GNOME=	yes
 USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -35,9 +36,23 @@ NO_BUILD=	yes
 MANLANG=	"" pl pt
 MAN1=		${PORTNAME}.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${HAVE_GNOME:Mpygnomeextras}!=""
+.if defined(WITH_LXML)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lxml>=0:${PORTSDIR}/devel/py-lxml
+.endif
+
+.if defined(WITH_REPORTLAB2)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab2>=2:${PORTSDIR}/print/py-reportlab2
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}reportlab>=1.19:${PORTSDIR}/print/py-reportlab
+.endif
+
+.if defined(WITH_CHARDET)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet
+.endif
+
+.if defined(WITH_PYGNOMEEXTRAS)
 USE_GNOME+=	pygnomeextras
 .endif
 
@@ -54,4 +69,4 @@ post-patch:
 		 /^MANDIR/s|=.*|=${MANPREFIX}/man|g' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
