@@ -42,6 +42,9 @@ lib/libvdesnmp.a
 lib/libvdesnmp.la
 lib/libvdesnmp.so
 lib/libvdesnmp.so.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/VdePlug.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vdeplug_python.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vdeplug_python.so
 lib/vde2/vde_l3/bfifo.la
 lib/vde2/vde_l3/bfifo.so
 lib/vde2/vde_l3/pfifo.la

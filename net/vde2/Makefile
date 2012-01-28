@@ -6,12 +6,17 @@
 #
 
 PORTNAME=	vde2
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	net
 MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
+
+LICENSE=	BSD GPLv2 LGPL21
+LICENSE_COMB=	multi
+
+OPTIONS=	PYTHON "Enable python bindings support" on
 
 CONFLICTS=	vde-[0-9]*
 
@@ -19,7 +24,7 @@ USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 MLINKS=		unixcmd.1 vdecmd.1 \
 		vdeq.1 vdeqemu.1 \
@@ -29,6 +34,18 @@ MAN1=		dpipe.1 slirpvde.1 unixcmd.1 unixterm.1 \
 		vde_pcapplug.1 vde_plug.1 vde_plug2tap.1 vde_switch.1 \
 		vdeq.1 vdetaplib.1 vdeterm.1 wirefilter.1
 MAN8=		vde_tunctl.8
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_PYTHON)
+CONFIGURE_ARGS+=--disable-python
+PLIST_SUB+=	PYTHON="@comment "
+.else
+USE_PYTHON=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB+=	PYTHON=""
+.endif
 
 .include <bsd.port.pre.mk>
 
