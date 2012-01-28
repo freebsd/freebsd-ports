@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.11
-PORTREVISION=	1
+PORTVERSION=	1.6.12
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -33,14 +32,9 @@ OPTIONS=	DOCS "With documentation" Off \
 
 .if defined(WITH_PYLDNS)
 USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-CONFIGURE_ARGS+=--with-pyldns
-BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-INSTALL_TARGET+=install-pyldns
-PLIST_SUB+=	PYLDNS=""
-.else
-PLIST_SUB+=	PYLDNS="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install-lib install-h
@@ -271,6 +265,15 @@ PLIST_SUB+=	EXAMPLES="@comment "
 CONFIGURE_ARGS+=--enable-ecdsa
 .endif
 
+.if defined(WITH_PYLDNS)
+CONFIGURE_ARGS+=--with-pyldns
+BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+INSTALL_TARGET+=install-pyldns
+PLIST_SUB+=	PYLDNS=""
+.else
+PLIST_SUB+=	PYLDNS="@comment "
+.endif
+
 post-configure:
 .if defined(WITH_EXAMPLES)
 	@(cd ${WRKSRC}/examples; ./configure --prefix=${PREFIX} \
@@ -299,4 +302,4 @@ post-install:
 	@(cd ${WRKSRC}/drill; ${GMAKE} install)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
