@@ -14,4 +14,6 @@ MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 PLIST_SUB=	REALPREFIX=${PREFIX}
 
+BROKEN=		does not install properly after X11BASE removal
+
 .include "${MASTERDIR}/Makefile"
