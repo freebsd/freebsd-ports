@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	trac-
 MAINTAINER=	magik@roorback.net
 COMMENT=	Redirect users to the login screen on PermissionError
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
