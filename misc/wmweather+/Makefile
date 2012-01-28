@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		Hermes:${PORTSDIR}/graphics/Hermes \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		ungif:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes

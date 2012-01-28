@@ -17,7 +17,7 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	GNUstep-compliant NeXTstep window manager clone
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
