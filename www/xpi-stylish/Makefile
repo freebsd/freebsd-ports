@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	stylish
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.5
 DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	User styles manager
 
 XPI_NUM=	2108

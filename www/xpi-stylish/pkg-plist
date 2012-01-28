@@ -18,14 +18,11 @@
 %%XPI_XPIDIR%%/content/install.xul
 %%XPI_XPIDIR%%/content/manage-addons-fx4.js
 %%XPI_XPIDIR%%/content/manage-addons-fx4.xul
-%%XPI_XPIDIR%%/content/manage-addons.js
-%%XPI_XPIDIR%%/content/manage-addons.xul
 %%XPI_XPIDIR%%/content/manage-standalone.xul
 %%XPI_XPIDIR%%/content/manage.js
 %%XPI_XPIDIR%%/content/manage.xul
 %%XPI_XPIDIR%%/content/overlay-fx4.xul
 %%XPI_XPIDIR%%/content/overlay.js
-%%XPI_XPIDIR%%/content/overlay.xul
 %%XPI_XPIDIR%%/content/style.xbl
 %%XPI_XPIDIR%%/content/test.xul
 %%XPI_XPIDIR%%/content/unittest.js
@@ -202,6 +199,18 @@
 %%XPI_XPIDIR%%/locale/ko-KR/manage.properties
 %%XPI_XPIDIR%%/locale/ko-KR/overlay.dtd
 %%XPI_XPIDIR%%/locale/ko-KR/overlay.properties
+%%XPI_XPIDIR%%/locale/lt/common.dtd
+%%XPI_XPIDIR%%/locale/lt/common.properties
+%%XPI_XPIDIR%%/locale/lt/domi.dtd
+%%XPI_XPIDIR%%/locale/lt/edit.dtd
+%%XPI_XPIDIR%%/locale/lt/edit.properties
+%%XPI_XPIDIR%%/locale/lt/extensions.dtd
+%%XPI_XPIDIR%%/locale/lt/install.dtd
+%%XPI_XPIDIR%%/locale/lt/install.properties
+%%XPI_XPIDIR%%/locale/lt/manage.dtd
+%%XPI_XPIDIR%%/locale/lt/manage.properties
+%%XPI_XPIDIR%%/locale/lt/overlay.dtd
+%%XPI_XPIDIR%%/locale/lt/overlay.properties
 %%XPI_XPIDIR%%/locale/nl/common.dtd
 %%XPI_XPIDIR%%/locale/nl/common.properties
 %%XPI_XPIDIR%%/locale/nl/domi.dtd
@@ -334,6 +343,11 @@
 %%XPI_XPIDIR%%/locale/zh-TW/manage.properties
 %%XPI_XPIDIR%%/locale/zh-TW/overlay.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/overlay.properties
+%%XPI_XPIDIR%%/skin/16.png
+%%XPI_XPIDIR%%/skin/16w.png
+%%XPI_XPIDIR%%/skin/24.png
+%%XPI_XPIDIR%%/skin/24w.png
+%%XPI_XPIDIR%%/skin/32.png
 %%XPI_XPIDIR%%/skin/edit.css
 %%XPI_XPIDIR%%/skin/extensions-gnome.css
 %%XPI_XPIDIR%%/skin/extensions-mac.css
@@ -341,19 +355,8 @@
 %%XPI_XPIDIR%%/skin/install.css
 %%XPI_XPIDIR%%/skin/manage-addons-fx4.css
 %%XPI_XPIDIR%%/skin/manage-addons-fx6.css
-%%XPI_XPIDIR%%/skin/manage-addons-mac.css
-%%XPI_XPIDIR%%/skin/manage-addons.css
 %%XPI_XPIDIR%%/skin/manage.css
 %%XPI_XPIDIR%%/skin/overlay.css
-%%XPI_XPIDIR%%/skin/s1-16.png
-%%XPI_XPIDIR%%/skin/s1-24.png
-%%XPI_XPIDIR%%/skin/s1-32.png
-%%XPI_XPIDIR%%/skin/s2-16.png
-%%XPI_XPIDIR%%/skin/s2-24.png
-%%XPI_XPIDIR%%/skin/s2-32.png
-%%XPI_XPIDIR%%/skin/s3-16.png
-%%XPI_XPIDIR%%/skin/s3-24.png
-%%XPI_XPIDIR%%/skin/s3-32.png
 %%XPI_XPIDIR%%/skin/style.css
 @dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/content
@@ -374,6 +377,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/it
 @dirrm %%XPI_XPIDIR%%/locale/ja
 @dirrm %%XPI_XPIDIR%%/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/locale/lt
 @dirrm %%XPI_XPIDIR%%/locale/nl
 @dirrm %%XPI_XPIDIR%%/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/locale/pt-BR
