@@ -1,47 +1,56 @@
---- Engine/csound_orc.l.old	2011-02-03 05:49:04.000000000 -0600
-+++ Engine/csound_orc.l	2011-02-03 05:49:33.000000000 -0600
-@@ -202,7 +202,7 @@
-                   alt_stack[macro_stack_ptr++] = macros;
-                   /* printf("Push %p macro stack; new body #%s#\n", macros, mm->body); */
+--- Engine/csound_orc.l.orig	2011-12-22 19:41:53.000000000 +0900
++++ Engine/csound_orc.l	2011-12-27 21:28:55.000000000 +0900
+@@ -288,7 +288,7 @@
+                   /* printf("Push %p macro stack; new body #%s#\n",
+                             PARM->macros, mm->body); */
                    /* printf("Push buffer %p -> ", YY_CURRENT_BUFFER); */
--                  yypush_buffer_state(YY_CURRENT_BUFFER);
-+                  //yypush_buffer_state(YY_CURRENT_BUFFER);
-                   yy_scan_string(mm->body);
+-                  yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
++                  //yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
+                   yy_scan_string(mm->body, yyscanner);
                    /* printf("%p\n", YY_CURRENT_BUFFER); */
                   }
-@@ -228,7 +228,7 @@
-                   alt_stack[macro_stack_ptr++] = macros;
-                   /* printf("Push %p macro stack\n", mm_save); */
-                   /* printf("Push buffer %p -> ", YY_CURRENT_BUFFER); */
--                  yypush_buffer_state(YY_CURRENT_BUFFER);
-+                  //yypush_buffer_state(YY_CURRENT_BUFFER);
-                   yy_scan_string(mm->body);
+@@ -313,7 +313,7 @@
+                   PARM->alt_stack[PARM->macro_stack_ptr].n = 0;
+                   PARM->alt_stack[PARM->macro_stack_ptr++].s = NULL;
+                   /* printf("Push buffer %p -> ", YY_CURRENBUFFER_TOKEN); */
+-                  yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
++                  //yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
+                   yy_scan_string(mm->body, yyscanner);
                    /* printf("%p\n", YY_CURRENT_BUFFER); */
                  }
-@@ -280,7 +280,7 @@
-                   //include_stack[include_stack_ptr++] = YY_CURRENT_BUFFER;
-                   alt_stack[macro_stack_ptr++] = mm_save;
-                   /* printf("Push %p macro stack\n", mm_save); */
--                  yypush_buffer_state(YY_CURRENT_BUFFER);
-+                  //yypush_buffer_state(YY_CURRENT_BUFFER);
-                   yy_scan_string(mm->body);
+@@ -367,7 +367,7 @@
+                   PARM->alt_stack[PARM->macro_stack_ptr].n = mm->acnt;
+                   PARM->alt_stack[PARM->macro_stack_ptr++].s = PARM->macros;
+                   /* printf("Push %p macro stack\n",PARM->macros); */
+-                  yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
++                  //yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
+                   yy_scan_string(mm->body, yyscanner);
                  }
- {MACRONAMEDA}   { printf("Macro with arguments call not written\n");}
-@@ -307,7 +307,7 @@
- <<EOF>>         {
-                   MACRO *x, *y=macros;
-                   /* printf("Leaving buffer %p\n", YY_CURRENT_BUFFER); */
--                  yypop_buffer_state();
-+                  //yypop_buffer_state();
+ {MACRONAMEDA}    {
+@@ -419,7 +419,7 @@
+                   /* printf("New body: ...#%s#\n", mm->body); */
+                   PARM->alt_stack[PARM->macro_stack_ptr].n = mm->acnt;
+                   PARM->alt_stack[PARM->macro_stack_ptr++].s = PARM->macros;
+-                  yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
++                  //yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
+                   yy_scan_string(mm->body, yyscanner);
+                 }
+ {INTGR}         {
+@@ -448,7 +448,7 @@
+                   MACRO *x, *y;
+                   int n;
+                   printf("Leaving buffer %p\n", YY_CURRENT_BUFFER);
+-                  yypop_buffer_state(yyscanner);
++                  //yypop_buffer_state(yyscanner);
                    if ( !YY_CURRENT_BUFFER ) yyterminate();
-                   /* printf("End of input; popping to %p\n", YY_CURRENT_BUFFER); */
-                   macros = alt_stack[--macro_stack_ptr];
-@@ -388,7 +388,7 @@
-       exit(1);
-     }
-     alt_stack[macro_stack_ptr++] = macros;
--    yypush_buffer_state(yy_create_buffer( yyin, YY_BUF_SIZE ) );
-+    //yypush_buffer_state(yy_create_buffer( yyin, YY_BUF_SIZE ) );
+                   printf("End of input; popping to %p\n", YY_CURRENT_BUFFER);
+                   if (PARM->clearBufferAfterEOF)
+@@ -581,7 +581,7 @@
+     PARM->alt_stack[PARM->macro_stack_ptr].n = 0;
+     PARM->alt_stack[PARM->macro_stack_ptr++].s = NULL;
+     PARM->isInclude = PARM->clearBufferAfterEOF = 1;
+-    yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
++    //yypush_buffer_state(YY_CURRENT_BUFFER, yyscanner);
+     yy_scan_string(cf->body, yyscanner);
  }
  
- static inline int isNameChar(int c, int pos)
