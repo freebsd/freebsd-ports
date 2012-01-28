@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apngasm
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
@@ -14,20 +14,18 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Animated PNG from a sequence of files
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	yes
-NO_WRKSUBDIR=	yes
-
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-ALL_TARGET=	${PORTNAME}
-MAKEFILE=	/dev/null
-MAKE_ENV+=	LDLIBS="${LDLIBS}"
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-LDLIBS+=	-lpng -lm -lz
+NO_WRKSUBDIR=	yes
 
+USE_ZIP=	yes
+USE_DOS2UNIX=	yes
+
+CPPFLAGS+=	`libpng-config --I_opts`
+LDFLAGS+=	`libpng-config --ldflags`
+
+PORTDOCS=	readme.txt
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -39,7 +37,15 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
 LDFLAGS+=	-static
 .endif
 
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} ${PORTNAME}.c \
+		-o ${PORTNAME} ${LDFLAGS}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
