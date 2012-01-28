@@ -13,6 +13,7 @@
     SUBDIR += R-cran-coda
     SUBDIR += R-cran-deldir
     SUBDIR += R-cran-gpclib
+    SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-psych
