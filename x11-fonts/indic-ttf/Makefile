@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	indic-ttf
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.14
 CATEGORIES=	x11-fonts
 MASTER_SITES=	DEBIAN/pool/main/t/ttf-indic-fonts
 PKGNAMESUFFIX=	-fonts
