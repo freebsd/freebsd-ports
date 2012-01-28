@@ -7,24 +7,23 @@
 
 PORTNAME=	xshodou
 PORTVERSION=	1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese tk
-MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
+MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Japanese shodou program for X based on Tcl/Tk
 
-USE_TK_RUN=	82+
+USE_TK_WRAPPER=	yes
 
-MAN1=		xshodou.1
 MANCOMPRESSED=	yes
+MAN1=		xshodou.1
 
-USE_XORG=	x11
-
-.include <bsd.port.pre.mk>
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${PREFIX}|g' \
-		-e 's|/usr/local/bin/wish|${WISH}|g' \
-		${WRKSRC}/Makefile ${WRKSRC}/xshodou
+.for f in Makefile xshodou
+	@${REINPLACE_CMD} -e \
+		's|/usr/X11R6|${PREFIX}|g ; \
+		 s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${f}
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
