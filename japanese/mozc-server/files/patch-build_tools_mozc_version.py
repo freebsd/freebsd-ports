@@ -1,5 +1,5 @@
---- build_tools/mozc_version.py.orig	2011-12-24 13:17:12.978092858 +0900
-+++ build_tools/mozc_version.py	2011-12-04 16:35:15.156605950 +0900
+--- build_tools/mozc_version.py.orig	2012-01-29 13:42:31.190807067 +0900
++++ build_tools/mozc_version.py	2012-01-29 13:49:15.791805587 +0900
 @@ -56,7 +56,7 @@
  
  def IsLinux():

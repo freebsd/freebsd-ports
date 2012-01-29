@@ -7,14 +7,13 @@
 
 PKGNAMEPREFIX=	ja-ibus-
 PKGNAMESUFFIX=
-PORTREVISION=	3
 COMMENT=	Mozc engine for IBus
 DATADIR=	${PREFIX}/share/ibus-${PORTNAME}
 
-MASTERDIR=      ${.CURDIR}/../../japanese/mozc-server
+MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-BUILD_MOZC_LIST=        ibus_mozc
+BUILD_MOZC_LIST=	ibus_mozc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

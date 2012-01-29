@@ -1,5 +1,5 @@
---- gyp/common.gypi.orig	2011-12-24 13:17:13.115092509 +0900
-+++ gyp/common.gypi	2011-12-24 13:35:51.371092696 +0900
+--- gyp/common.gypi.orig	2012-01-29 13:42:31.215806054 +0900
++++ gyp/common.gypi	2012-01-29 13:49:19.328805472 +0900
 @@ -50,7 +50,7 @@
      # warning_cflags will be shared with Mac and Linux.
      'warning_cflags': [
@@ -9,7 +9,7 @@
        '-Wno-char-subscripts',
        '-Wno-sign-compare',
        '-Wno-deprecated-declarations',
-@@ -528,6 +528,12 @@
+@@ -568,6 +568,12 @@
            # <unordered_map> and <unordered_set>.
            '-Wno-deprecated',
          ],
