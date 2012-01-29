@@ -55,6 +55,10 @@ NOGUI=
 NOGUI=		NOGUI=1
 .endif
 
+.if ${OSVERSION} >= 1000000
+BROKEN=		does not currently build under FreeBSD 10
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if (!exists(${DISTDIR}/${TC_SRCFILE}))
