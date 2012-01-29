@@ -7,14 +7,13 @@
 
 PKGNAMEPREFIX=  ja-scim-
 PKGNAMESUFFIX=
-PORTREVISION=	1
 COMMENT=	Mozc engine for SCIM
-DATADIR=        ${PREFIX}/share/scim-${PORTNAME}
+DATADIR=	${PREFIX}/share/scim-${PORTNAME}
 
-MASTERDIR=      ${.CURDIR}/../../japanese/mozc-server
-PKGMESSAGE=     ${.CURDIR}/pkg-message
+MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
+PKGMESSAGE=	${.CURDIR}/pkg-message
 
-BUILD_MOZC_LIST=        scim_mozc
+BUILD_MOZC_LIST=	scim_mozc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

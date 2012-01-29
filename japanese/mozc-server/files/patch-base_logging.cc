@@ -1,5 +1,5 @@
---- base/logging.cc.orig	2011-12-24 13:17:13.094097336 +0900
-+++ base/logging.cc	2011-12-04 19:57:28.052770432 +0900
+--- base/logging.cc.orig	2012-01-29 13:42:31.194805201 +0900
++++ base/logging.cc	2012-01-29 13:49:21.256805888 +0900
 @@ -212,7 +212,7 @@
    char buf[512];
    snprintf(buf, sizeof(buf),

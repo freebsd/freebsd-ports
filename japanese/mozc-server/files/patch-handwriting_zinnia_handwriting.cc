@@ -1,5 +1,5 @@
---- handwriting/zinnia_handwriting.cc.orig	2011-12-24 13:17:13.115092509 +0900
-+++ handwriting/zinnia_handwriting.cc	2011-12-04 22:27:01.145136587 +0900
+--- handwriting/zinnia_handwriting.cc.orig	2012-01-29 13:42:31.214806556 +0900
++++ handwriting/zinnia_handwriting.cc	2012-01-29 13:49:21.926806405 +0900
 @@ -49,10 +49,16 @@
    const char kModelFile[] = "handwriting-light-ja.model";
    return Util::JoinPath(MacUtil::GetResourcesDirectory(), kModelFile);
