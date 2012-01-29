@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nistor@snickers.org
 COMMENT=	DBIx::Sequence - A simple SQL92 ID generator
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
