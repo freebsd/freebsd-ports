@@ -223,6 +223,8 @@ post-patch:	.SILENT
 		-e 's/test.*-print-file-name.*`/true/' \
 		-e '/if.*test/s/==/=/' \
 		${WRKSRC}/configure
+	${FIND} ${WRKSRC} -name \*.pl -exec ${REINPLACE_CMD} \
+		's|/usr/bin/perl|${PERL}|' {} +
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
 		${WRKSRC}/docs/Makefile.in
