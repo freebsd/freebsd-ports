@@ -59,14 +59,16 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Postfix Admin Team reports:</p>
 	<blockquote cite="http://sourceforge.net/projects/postfixadmin/forums/forum/676076/topic/4977778">
-	  <p>Multiple XSS vulnerabilities exist:
-	     - XSS with $_GET[domain] in templates/menu.php and edit-vacation
-	     - XSS in some create-domain input fields
-	     - XSS in create-alias and edit-alias error message
-	     - XSS (by values stored in the database) in fetchmail list view,
-	       list-domain and list-virtual</p>
-	  <p>Multiple SQL injection issues exist:
-	     - SQL injection in pacrypt() (if $CONF[encrypt] == 'mysql_encrypt')
+	  <p>Multiple XSS vulnerabilities exist:<br/>
+	     - XSS with $_GET[domain] in templates/menu.php and
+	       edit-vacation<br/>
+	     - XSS in some create-domain input fields<br/>
+	     - XSS in create-alias and edit-alias error message<br/>
+	     - XSS (by values stored in the database) in fetchmail list
+	       view, list-domain and list-virtual</p>
+	  <p>Multiple SQL injection issues exist:<br/>
+	     - SQL injection in pacrypt() (if $CONF[encrypt] ==
+	       'mysql_encrypt')<br/>
 	     - SQL injection in backup.php - the dump was not mysql_escape()d,
 	       therefore users could inject SQL (for example in the vacation message)
 	       which will be executed when restoring the database dump.
