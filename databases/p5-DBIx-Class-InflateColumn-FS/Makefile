@@ -19,6 +19,7 @@ RUN_DEPENDS=	\
 	p5-DBIx-Class-UUIDColumns>=0.02005:${PORTSDIR}/databases/p5-DBIx-Class-UUIDColumns \
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-DBICx-TestDatabase>=0:${PORTSDIR}/databases/p5-DBICx-TestDatabase
 
 PERL_CONFIGURE=	yes
 
