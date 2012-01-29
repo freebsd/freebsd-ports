@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PocketIO
-PORTVERSION=	0.12000
+PORTVERSION=	0.13000
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VTI
@@ -20,7 +20,7 @@ LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Protocol-SocketIO>=0:${PORTSDIR}/www/p5-Protocol-SocketIO \
+		p5-Protocol-SocketIO>=0.04:${PORTSDIR}/www/p5-Protocol-SocketIO \
 		p5-Protocol-WebSocket>=0.00906:${PORTSDIR}/www/p5-Protocol-WebSocket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
