@@ -5,18 +5,17 @@ collaboration point for a team with developers using both Git and Mercurial.
 
 The Hg-Git plugin can convert commits / changesets losslessly from one system
 to another, so you can push via a Mercurial repository and another Mercurial
-client can pull it and their changeset node ids will be identical - Mercurial
-data does not get lost in translation.
+client can pull it. In theory, the changeset IDs should not change, although
+this may not hold true for complex histories.
 
 This plugin is implemented entirely in Python - there are no Git binary
 dependencies, you do not need to have Git installed on your system.
 
 *** WARNING: Do not use this software in data critical production environments,
-only in safe test environments! This software is still BETA!
+only in safe test environments! This software is still BETA! ***
 
-It is basically feature complete and pretty stable now, but there could be
-still some edge cases. The user interface could also still be changed. However,
-there are now a lot of people using it effectively, so please test it yourself
-and report encountered bugs upstream (see website). Thanks! ***
+The plugin is basically functional and usable now, but there are still some
+edge cases. However, there are several people using it effectively, so please
+test it yourself and report encountered bugs upstream (see website). Thanks!
 
 WWW:	http://hg-git.github.com/
