@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.13.1
+PORTVERSION=	1.0.14.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
@@ -21,8 +21,6 @@ OPTIONS=	PERL "Add Perl bindings" off \
 		RUBY "Add Ruby bindings" off
 
 GNU_CONFIGURE=	yes
-
-#IGNORE=		does not compatible with redland-1.0.12
 
 .include <bsd.port.options.mk>
 
@@ -76,5 +74,10 @@ PLIST_SUB+=	WITH_RUBY=""
 .else
 PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
+
+post-install:
+. if defined(WITH_PERL)
+	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
+. endif
 
 .include <bsd.port.mk>
