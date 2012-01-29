@@ -1,0 +1,17 @@
+QuickCheck++ is a tool for testing C++ programs automatically,
+inspired by QuickCheck, a similar library for Haskell programs.
+
+In QuickCheck++, the application programmer provides a specification
+of parts of its code in the form of properties which this code must
+satisfy. Then, the QuickCheck++ utilities can check that these
+properties holds in a large number of randomly generated test cases.
+
+Specifications, i.e. properties, are written in C++ by deriving
+from the quickcheck::Property class. This class contains members
+not only to express the specification but also to observe the
+distribution of test data and to write custom test data generators.
+
+The framework also allows the specification of fixed test data, as
+can be done with more traditional unit testing frameworks.
+
+WWW:	http://software.legiasoft.com/quickcheck/
