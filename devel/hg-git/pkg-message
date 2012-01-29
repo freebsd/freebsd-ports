@@ -7,10 +7,9 @@ To enable the Hg-Git extension make sure you have the following lines in your
 Mercurial global configuration file '~/.hgrc':
 
 [extensions]
-bookmarks =
 hggit =
 
-The bookmarks section is only required prior to hg 1.7. Bookmarks will be
-translated to git heads when pushing.
+Note: As of Mercurial 1.8 the required bookmarks extension became a core
+functionality and can be removed from the extensions list.
 
 ====
