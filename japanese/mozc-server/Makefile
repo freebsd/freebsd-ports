@@ -79,7 +79,7 @@ BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CM
 
 post-patch:
 	cd ${WRKSRC} && \
-		${REINPLACE_CMD} "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
+		${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \
 		${LOCALBASE_REPLACE_FILES}
 
 pre-build:
