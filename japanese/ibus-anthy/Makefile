@@ -36,9 +36,9 @@ INCLUDEDIR_REPLACE_FILES= \
 
 post-patch:
 	cd ${WRKSRC} && \
-                ${REINPLACE_CMD} "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
+                ${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \
                 ${LOCALBASE_REPLACE_FILES} && \
-                ${REINPLACE_CMD} "s/@@INCLUDEDIR@@/${INCLUDEDIR:S/\//\\\//g}/g" \
+                ${REINPLACE_CMD} "s,@@INCLUDEDIR@@,${INCLUDEDIR},g" \
                 ${INCLUDEDIR_REPLACE_FILES}
 
 post-install:
