@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vimpager
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${GH_DEVELOPER}/${GH_PORTNAME}/tarball/${DISTVERSION}/
 DISTNAME=	${GH_DEVELOPER}-${GH_PORTNAME}-${DISTVERSION}-0-g${GH_VERSION}
@@ -19,8 +19,8 @@ RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 # Github makes this very confusing
 GH_PORTNAME=	${PORTNAME}
 GH_DEVELOPER=	rkitover	#GH trees live under a username
-GH_VERSION=	d1876c44ad	#GH appends a commit hash to the filename
-GH_SRCDIR=	114c7eb		#GH appends something else (??) to the extracted pathname
+GH_VERSION=	8f3e9b6285	#GH appends a commit hash to the filename
+GH_SRCDIR=	2ed353a		#GH appends something else (??) to the extracted pathname
 WRKSRC=		${WRKDIR}/${GH_DEVELOPER}-${GH_PORTNAME}-${GH_SRCDIR}
 FETCH_ARGS=	-prR		#GH issues HTTP/302 errors for source tarballs
 
