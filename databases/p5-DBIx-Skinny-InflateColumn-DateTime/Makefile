@@ -22,6 +22,7 @@ RUN_DEPENDS=	\
 	p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 	p5-DateTime-TimeZone>0:${PORTSDIR}/devel/p5-DateTime-TimeZone
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-DBD-Mock>=0:${PORTSDIR}/databases/p5-DBD-Mock
 
 PERL_CONFIGURE=	yes
 
