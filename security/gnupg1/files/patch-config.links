@@ -1,5 +1,14 @@
 --- mpi/config.links.orig	Thu Apr 24 20:15:58 2003
 +++ mpi/config.links	Sat May 10 16:29:28 2003
+@@ -40,7 +40,7 @@
+        ;;
+     i[3467]86*-*-openbsd*      | \
+     i[3467]86*-*-freebsd*-elf  | \
+-    i[3467]86*-*-freebsd[3-9]* | \
++    i[3467]86*-*-freebsd[1-9]* | \
+     i[3467]86*-*-freebsdelf*   | \
+     i[3467]86*-*-netbsd*       | \
+     i[3467]86*-*-k*bsd*)
 @@ -142,6 +142,12 @@
         echo '/* configured for sparc64-*netbsd */' >>./mpi/asm-syntax.h
         path=""
