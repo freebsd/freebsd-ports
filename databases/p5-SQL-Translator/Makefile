@@ -7,6 +7,7 @@
 
 PORTNAME=	SQL-Translator
 PORTVERSION=	0.11010
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,8 +30,12 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Spreadsheet-ParseExcel>=0.41:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
 		p5-Text-ParseWords>0:${PORTSDIR}/textproc/p5-Text-ParseWords \
 		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
-		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML
+		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-Writer>=0.5:${PORTSDIR}/textproc/p5-XML-Writer \
+		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 OPTIONS=	DIAGRAM "Diagram generation support" Off
 
 PERL_CONFIGURE=	yes
