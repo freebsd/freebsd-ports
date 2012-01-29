@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	3.87
+PORTVERSION=	3.88
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -18,8 +18,9 @@ COMMENT=	Object::InsideOut - Comprehensive inside-out object support module
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Exception-Class>=1.29:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Want>=0.12:${PORTSDIR}/devel/p5-Want
+BUILD_DEPENDS=	p5-Data-Dumper>=2.131:${PORTSDIR}/devel/p5-Data-Dumper \
+		p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Want>=0.18:${PORTSDIR}/devel/p5-Want
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -33,6 +34,7 @@ MAN3=		Bundle::Object::InsideOut.3 \
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
