@@ -1,6 +1,6 @@
---- js/src/configure.in.orig	2011-09-28 14:41:24.000000000 +0200
-+++ js/src/configure.in	2011-10-01 16:02:43.000000000 +0200
-@@ -1533,7 +1533,7 @@
+--- js/src/configure.in.orig	2011-12-21 00:28:21.000000000 +0100
++++ js/src/configure.in	2012-01-29 13:08:44.000000000 +0100
+@@ -1432,7 +1432,7 @@
      CPU_ARCH=sparc
      ;;
  
@@ -9,7 +9,7 @@
      CPU_ARCH="$OS_TEST"
      ;;
  
-@@ -1555,7 +1555,7 @@
+@@ -1454,7 +1454,7 @@
  dnl ===============================================================
  INTEL_ARCHITECTURE=
  case "$OS_TEST" in
@@ -18,7 +18,7 @@
        INTEL_ARCHITECTURE=1
  esac
  
-@@ -2743,6 +2743,16 @@
+@@ -2491,6 +2491,16 @@
      AC_DEFINE(JS_CPU_X86)
      AC_DEFINE(JS_NUNBOX32)
      ;;
@@ -35,7 +35,23 @@
  x86_64*-*)
      ENABLE_TRACEJIT=1
      NANOJIT_ARCH=X64
-@@ -2827,6 +2837,10 @@
+@@ -2512,6 +2522,7 @@
+     AC_DEFINE(JS_NUNBOX32)
+     ;;
+ sparc*-*)
++    if test ! "$HAVE_64BIT_OS" ; then
+     ENABLE_TRACEJIT=1
+     NANOJIT_ARCH=Sparc
+     ENABLE_METHODJIT=1
+@@ -2520,6 +2531,7 @@
+     ENABLE_METHODJIT_TYPED_ARRAY=1
+     AC_DEFINE(JS_CPU_SPARC)
+     AC_DEFINE(JS_NUNBOX32)
++    fi
+     ;;
+ esac
+ 
+@@ -2575,6 +2587,10 @@
  i?86-*)
      AC_DEFINE(AVMPLUS_IA32)
      ;;
