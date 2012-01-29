@@ -15,6 +15,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	New iterator for p5-Class-DBI
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/DBI.pm:${PORTSDIR}/databases/p5-Class-DBI
+TEST_DEPENDS=	p5-DBD-SQLite>=1.27:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Class-DBI-Pager>=0:${PORTSDIR}/databases/p5-Class-DBI-Pager
 
 PERL_CONFIGURE=	yes
 MAN3=		Class::DBI::Plugin::Iterator.3 \
