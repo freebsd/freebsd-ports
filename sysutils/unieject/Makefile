@@ -18,6 +18,8 @@ LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
 		confuse.0:${PORTSDIR}/devel/libconfuse \
 		popt.0:${PORTSDIR}/devel/popt
 
+BROKEN=		does not link
+
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
