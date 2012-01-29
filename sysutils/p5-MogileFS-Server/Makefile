@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.55
+PORTVERSION=	2.56
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 
-RUN_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
+BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
 		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO \
@@ -24,6 +24,7 @@ RUN_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
 		p5-Perlbal>=1.79:${PORTSDIR}/www/perlbal \
 		p5-Sys-Syscall>=0.22:${PORTSDIR}/devel/p5-Sys-Syscall \
 		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -48,17 +49,7 @@ MAN3=		MogileFS::Class.3 \
 		MogileFS::Store::Postgres.3 \
 		MogileFS::Store::SQLite.3 \
 		MogileFS::Worker::Query.3 \
-		MogileFS::Worker::Replicate.3 \
-		mogdeps::Danga::Socket.3 \
-		mogdeps::Perlbal.3 \
-		mogdeps::Perlbal::Plugin::Cgilike.3 \
-		mogdeps::Perlbal::Plugin::Include.3 \
-		mogdeps::Perlbal::Plugin::MaxContentLength.3 \
-		mogdeps::Perlbal::Plugin::Palimg.3 \
-		mogdeps::Perlbal::Plugin::Redirect.3 \
-		mogdeps::Perlbal::Test.3 \
-		mogdeps::Perlbal::Util.3 \
-		mogdeps::Sys::Syscall.3
+		MogileFS::Worker::Replicate.3
 
 post-install:
 .ifndef(NOPORTDOCS)
