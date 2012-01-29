@@ -55,49 +55,6 @@ bin/mogstored
 %%SITE_PERL%%/Mogstored/HTTPServer/Perlbal.pm
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm
 %%SITE_PERL%%/Mogstored/SideChannelListener.pm
-%%SITE_PERL%%/mogdeps/Danga/Socket.pm
-%%SITE_PERL%%/mogdeps/Net/Netmask.pm
-%%SITE_PERL%%/mogdeps/Perlbal.pm
-%%SITE_PERL%%/mogdeps/Perlbal/AIO.pm
-%%SITE_PERL%%/mogdeps/Perlbal/BackendHTTP.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Cache.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ChunkedUploadState.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ClientHTTP.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ClientHTTPBase.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ClientManage.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ClientProxy.pm
-%%SITE_PERL%%/mogdeps/Perlbal/CommandContext.pm
-%%SITE_PERL%%/mogdeps/Perlbal/HTTPHeaders.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ManageCommand.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/AccessControl.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/AtomInject.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/AtomStream.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/AutoRemoveLeadingDir.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Cgilike.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/EchoService.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Highpri.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Include.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/LazyCDN.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/MaxContentLength.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/NotModified.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Palimg.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Queues.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Redirect.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Stats.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Vhosts.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Plugin/Vpaths.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Pool.pm
-%%SITE_PERL%%/mogdeps/Perlbal/ReproxyManager.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Service.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Socket.pm
-%%SITE_PERL%%/mogdeps/Perlbal/SocketSSL.pm
-%%SITE_PERL%%/mogdeps/Perlbal/TCPListener.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Test.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Test/WebClient.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Test/WebServer.pm
-%%SITE_PERL%%/mogdeps/Perlbal/UploadListener.pm
-%%SITE_PERL%%/mogdeps/Perlbal/Util.pm
-%%SITE_PERL%%/mogdeps/Sys/Syscall.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
@@ -106,18 +63,6 @@ bin/mogstored
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
-@dirrmtry %%SITE_PERL%%/mogdeps/Sys
-@dirrmtry %%SITE_PERL%%/mogdeps/Perlbal/Test
-@dirrmtry %%SITE_PERL%%/mogdeps/Perlbal/Plugin
-@dirrmtry %%SITE_PERL%%/mogdeps/Perlbal
-@dirrmtry %%SITE_PERL%%/mogdeps/Net
-@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/Server
-@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/ResponseParser
-@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/Client/Async
-@dirrmtry %%SITE_PERL%%/mogdeps/Gearman/Client
-@dirrmtry %%SITE_PERL%%/mogdeps/Gearman
-@dirrmtry %%SITE_PERL%%/mogdeps/Danga
-@dirrmtry %%SITE_PERL%%/mogdeps
 @dirrmtry %%SITE_PERL%%/Mogstored/HTTPServer
 @dirrmtry %%SITE_PERL%%/Mogstored/ChildProcess
 @dirrmtry %%SITE_PERL%%/Mogstored
