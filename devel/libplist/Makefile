@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libplist
-PORTVERSION=	1.4
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
@@ -15,28 +15,45 @@ COMMENT=	A library to handle Apple Property List format
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-USE_BZIP2=	yes
-USE_GNOME=	glib20 libxml2
+USE_GNOME=	libxml2
+# Unlisted dependency.
 USE_ICONV=	yes
-MAKE_JOBS_SAFE=	yes
+USE_BZIP2=	yes
 USE_CMAKE=	yes
+# Required for iconv headers.
 CFLAGS+=	-I${LOCALBASE}/include
-USE_LDCONFIG=	yes
+# Required for MAKE_JOBS_SAFE to work.
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	${LOCALBASE}/lib
 
-PORTDOCS=	AUTHORS README
+PORTDOCS=	AUTHORS NEWS README
 
-OPTIONS=	PYTHON	"Enable Python bindings (needs Swig)" off
+OPTIONS=	CYTHON	"Enable Cython Python bindings" off \
+		SWIG	"Enable Swig Python bindings" off
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_PYTHON)
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+.ifdef(WITH_CYTHON)
+BUILD_DEPENDS+=	cython:${PORTSDIR}/lang/cython
 USE_PYTHON=	yes
-CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=On
-PLIST_SUB+=	PYTHON=""
+CMAKE_ARGS+=	-DENABLE_CYTHON:BOOL=On
+# Is this really needed?
+USE_LDCONFIG+=	${PYTHON_SITELIBDIR}
+PLIST_SUB+=	CYTHON=""
 .else
-CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=Off
-PLIST_SUB+=	PYTHON="@comment "
+CMAKE_ARGS+=	-DENABLE_CYTHON:BOOL=Off
+PLIST_SUB+=	CYTHON="@comment "
+.endif
+
+.ifdef(WITH_SWIG)
+BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
+USE_PYTHON=	yes
+CMAKE_ARGS+=	-DENABLE_SWIG:BOOL=On
+PLIST_SUB+=	SWIG=""
+.else
+CMAKE_ARGS+=	-DENABLE_SWIG:BOOL=Off
+PLIST_SUB+=	SWIG="@comment "
 .endif
 
 pre-configure:
