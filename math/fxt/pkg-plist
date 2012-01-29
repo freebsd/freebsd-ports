@@ -29,6 +29,7 @@ include/fxt/aux2-all.h
 include/fxt/aux2/copy2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
+include/fxt/bits/bit-sl-gray.h
 include/fxt/bits/fibrep-sl.h
 include/fxt/bits/bit-dragon-r4.h
 include/fxt/bits/bitzip-pairs.h
@@ -506,6 +507,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-sl-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-sl-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r4-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r4-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m1pi-to-z-out.txt
