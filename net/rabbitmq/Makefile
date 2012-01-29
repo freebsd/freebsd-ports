@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -14,13 +14,12 @@ DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	RabbitMQ is an implementation of AMQP
 
-BUILD_DEPENDS=	erlang-lite>=r14b03,1:${PORTSDIR}/lang/erlang-lite \
+BUILD_DEPENDS=	erl:${PORTSDIR}/lang/erlang-lite \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	erlang-lite>=r14b03,1:${PORTSDIR}/lang/erlang-lite \
-		sudo:${PORTSDIR}/security/sudo
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang-lite
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
@@ -50,7 +49,7 @@ MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
 		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl ${SCRIPTS_DIR}/rabbitmq-env
-	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
