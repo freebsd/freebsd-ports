@@ -1,5 +1,5 @@
 bin/plutil
-bin/plutil-1.4
+bin/plutil-1.8
 include/plist/Array.h
 include/plist/Boolean.h
 include/plist/Data.h
@@ -10,20 +10,23 @@ include/plist/Node.h
 include/plist/Real.h
 include/plist/String.h
 include/plist/Structure.h
+%%CYTHON%%include/plist/cython/plist.pxd
 include/plist/plist++.h
 include/plist/plist.h
-%%PYTHON%%include/plist/swig/plist.i
+%%SWIG%%include/plist/swig/plist.i
 lib/libplist++.so
 lib/libplist++.so.1
-lib/libplist++.so.1.1.4
+lib/libplist++.so.1.1.8
 lib/libplist.so
 lib/libplist.so.1
-lib/libplist.so.1.1.4
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/_plist.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/plist/plist.py
+lib/libplist.so.1.1.8
+%%SWIG%%%%PYTHON_SITELIBDIR%%/plist/__init__.py
+%%SWIG%%%%PYTHON_SITELIBDIR%%/plist/_plist.so
+%%SWIG%%%%PYTHON_SITELIBDIR%%/plist/plist.py
+%%CYTHON%%%%PYTHON_SITELIBDIR%%/plist.so
 libdata/pkgconfig/libplist++.pc
 libdata/pkgconfig/libplist.pc
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/plist
-%%PYTHON%%@dirrm include/plist/swig
+%%SWIG%%@dirrm %%PYTHON_SITELIBDIR%%/plist
+%%SWIG%%@dirrm include/plist/swig
+%%CYTHON%%@dirrm include/plist/cython
 @dirrm include/plist
