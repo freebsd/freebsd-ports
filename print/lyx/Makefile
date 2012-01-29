@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -31,6 +32,7 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc_build uic_build rcc_build
+USE_GNOME=	desktopfileutils
 USE_PYTHON=	yes
 USE_PERL=	yes
 GNU_CONFIGURE=	yes
@@ -78,6 +80,14 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-install:
+# Manually install the 48x48 icon and .desktop file.
+# Will not be needed in the 2.1 series, see LyX tickets 2820 and 7919.
+	${MKDIR} ${LOCALBASE}/share/icons/hicolor/48x48/apps
+	${MKDIR} ${LOCALBASE}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/lib/images/lyx.png ${LOCALBASE}/share/icons/hicolor/48x48/apps
+	${INSTALL_DATA} ${FILESDIR}/lyx.desktop ${LOCALBASE}/share/applications
+	${LOCALBASE}/bin/update-desktop-database --quiet
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

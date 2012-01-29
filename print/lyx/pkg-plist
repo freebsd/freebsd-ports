@@ -32,6 +32,8 @@ bin/tex2lyx
 %%NLS%%share/locale/uk/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lyx.mo
+share/applications/lyx.desktop
+share/icons/hicolor/48x48/apps/lyx.png
 %%DATADIR%%/autocorrect
 %%DATADIR%%/CREDITS
 %%DATADIR%%/bind/aqua.bind
@@ -1861,5 +1863,10 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/bind/de
 @dirrm %%DATADIR%%/bind
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/ia/LC_MESSAGES/
 %%NLS%%@dirrmtry share/locale/ia
