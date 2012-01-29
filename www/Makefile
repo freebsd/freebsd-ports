@@ -1059,6 +1059,7 @@
     SUBDIR += p5-Plack-Middleware-Precompressed
     SUBDIR += p5-Plack-Middleware-Reproxy
     SUBDIR += p5-Plack-Middleware-ReverseProxy
+    SUBDIR += p5-Plack-Middleware-ServerStatus-Lite
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-SocketIO
     SUBDIR += p5-Plack-Middleware-Status
