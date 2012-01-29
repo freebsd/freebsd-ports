@@ -18,6 +18,7 @@ COMMENT=	Automatically set and update fields
 RUN_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent \
 		p5-DBIx-Class>=0.08009:${PORTSDIR}/databases/p5-DBIx-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-DBICx-TestDatabase>=0:${PORTSDIR}/databases/p5-DBICx-TestDatabase
 
 PERL_CONFIGURE=	yes
 
