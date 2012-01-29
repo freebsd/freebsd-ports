@@ -1,12 +1,42 @@
 bin/googleearth
-%%DATADIR%%/browserwrapper
+%%DATADIR%%/Google-googleearth.desktop
 %%DATADIR%%/ImporterGlobalSettings.ini
 %%DATADIR%%/ImporterUISettings.ini
 %%DATADIR%%/PCOptimizations.ini
+%%DATADIR%%/README.linux
+%%DATADIR%%/bin/googleearth
+%%DATADIR%%/bin/browserwrapper
+%%DATADIR%%/desktop_icons/consumer/product_logo_128.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_16.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_22.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_24.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_256.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_32.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_32.xpm
+%%DATADIR%%/desktop_icons/consumer/product_logo_48.png
+%%DATADIR%%/desktop_icons/consumer/product_logo_64.png
+%%DATADIR%%/desktop_icons/ec/product_logo_128.png
+%%DATADIR%%/desktop_icons/ec/product_logo_16.png
+%%DATADIR%%/desktop_icons/ec/product_logo_22.png
+%%DATADIR%%/desktop_icons/ec/product_logo_24.png
+%%DATADIR%%/desktop_icons/ec/product_logo_256.png
+%%DATADIR%%/desktop_icons/ec/product_logo_32.png
+%%DATADIR%%/desktop_icons/ec/product_logo_32.xpm
+%%DATADIR%%/desktop_icons/ec/product_logo_48.png
+%%DATADIR%%/desktop_icons/ec/product_logo_64.png
+%%DATADIR%%/desktop_icons/pro/product_logo_128.png
+%%DATADIR%%/desktop_icons/pro/product_logo_16.png
+%%DATADIR%%/desktop_icons/pro/product_logo_22.png
+%%DATADIR%%/desktop_icons/pro/product_logo_24.png
+%%DATADIR%%/desktop_icons/pro/product_logo_256.png
+%%DATADIR%%/desktop_icons/pro/product_logo_32.png
+%%DATADIR%%/desktop_icons/pro/product_logo_32.xpm
+%%DATADIR%%/desktop_icons/pro/product_logo_48.png
+%%DATADIR%%/desktop_icons/pro/product_logo_64.png
 %%DATADIR%%/drivers.ini
-%%DATADIR%%/google-earth.desktop
-%%DATADIR%%/googleearth
 %%DATADIR%%/googleearth-bin
+%%DATADIR%%/googleearth-icon.png
+%%DATADIR%%/googleearth.xpm
 %%DATADIR%%/gpl.txt
 %%DATADIR%%/gpsbabel
 %%DATADIR%%/kh20
@@ -81,15 +111,12 @@ bin/googleearth
 %%DATADIR%%/libflightsim.so
 %%DATADIR%%/libfusioncommon.so
 %%DATADIR%%/libgdal.so.1
-%%DATADIR%%/libgdata.so
 %%DATADIR%%/libge_net.so
 %%DATADIR%%/libgeobase.so
 %%DATADIR%%/libgeobaseutils.so
-%%DATADIR%%/libgoogleapi.so
 %%DATADIR%%/libgoogleearth_free.so
 %%DATADIR%%/libgooglesearch.so
 %%DATADIR%%/libgps.so
-%%DATADIR%%/libgtest.so
 %%DATADIR%%/libicudata.so.38
 %%DATADIR%%/libicuuc.so.38
 %%DATADIR%%/libinput_plugin.so
@@ -101,18 +128,17 @@ bin/googleearth
 %%DATADIR%%/libnavigate.so
 %%DATADIR%%/libnss_mdns4_minimal.so.2
 %%DATADIR%%/libport.so
-%%DATADIR%%/libprofile.so
 %%DATADIR%%/libproj.so.0
 %%DATADIR%%/librender.so
 %%DATADIR%%/libreporting.so
-%%DATADIR%%/libsearch.so
-%%DATADIR%%/libsearchmodule.so
 %%DATADIR%%/libsgutil.so
 %%DATADIR%%/libspatial.so
 %%DATADIR%%/libviewsync.so
 %%DATADIR%%/libwebbrowser.so
 %%DATADIR%%/libwmsbase.so
-%%DATADIR%%/libxsltransform.so
+%%DATADIR%%/linux/xdg/xdg-desktop-icon
+%%DATADIR%%/linux/xdg/xdg-desktop-menu
+%%DATADIR%%/linux/xdg/xdg-mime
 %%DATADIR%%/plugins/imageformats/libqgif.so
 %%DATADIR%%/plugins/imageformats/libqjpeg.so
 %%DATADIR%%/product_logo_128.png
@@ -125,14 +151,96 @@ bin/googleearth
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/product_logo_64.png
 %%DATADIR%%/qt.conf
+%%DATADIR%%/resources/ad.country/startinglocation.kml
+%%DATADIR%%/resources/ae.country/startinglocation.kml
+%%DATADIR%%/resources/af.country/startinglocation.kml
+%%DATADIR%%/resources/ag.country/startinglocation.kml
+%%DATADIR%%/resources/ai.country/startinglocation.kml
+%%DATADIR%%/resources/al.country/startinglocation.kml
+%%DATADIR%%/resources/am.country/startinglocation.kml
+%%DATADIR%%/resources/an.country/startinglocation.kml
+%%DATADIR%%/resources/ao.country/startinglocation.kml
 %%DATADIR%%/resources/application.rcc
+%%DATADIR%%/resources/aq.country/startinglocation.kml
+%%DATADIR%%/resources/ar.country/startinglocation.kml
+%%DATADIR%%/resources/ar.locale/default_myplaces.kml
+%%DATADIR%%/resources/as.country/startinglocation.kml
+%%DATADIR%%/resources/at.country/startinglocation.kml
+%%DATADIR%%/resources/au.country/startinglocation.kml
+%%DATADIR%%/resources/aw.country/startinglocation.kml
+%%DATADIR%%/resources/ax.country/startinglocation.kml
+%%DATADIR%%/resources/az.country/startinglocation.kml
+%%DATADIR%%/resources/ba.country/startinglocation.kml
 %%DATADIR%%/resources/balloons.rcc
+%%DATADIR%%/resources/bb.country/startinglocation.kml
+%%DATADIR%%/resources/bd.country/startinglocation.kml
+%%DATADIR%%/resources/be.country/startinglocation.kml
+%%DATADIR%%/resources/bf.country/startinglocation.kml
+%%DATADIR%%/resources/bg.country/startinglocation.kml
+%%DATADIR%%/resources/bg.locale/default_myplaces.kml
+%%DATADIR%%/resources/bh.country/startinglocation.kml
+%%DATADIR%%/resources/bi.country/startinglocation.kml
+%%DATADIR%%/resources/bj.country/startinglocation.kml
+%%DATADIR%%/resources/bm.country/startinglocation.kml
+%%DATADIR%%/resources/bn.country/startinglocation.kml
+%%DATADIR%%/resources/bo.country/startinglocation.kml
+%%DATADIR%%/resources/br.country/startinglocation.kml
+%%DATADIR%%/resources/bs.country/startinglocation.kml
+%%DATADIR%%/resources/bt.country/startinglocation.kml
 %%DATADIR%%/resources/builtin_webdata.rcc
+%%DATADIR%%/resources/bv.country/startinglocation.kml
+%%DATADIR%%/resources/bw.country/startinglocation.kml
+%%DATADIR%%/resources/by.country/startinglocation.kml
+%%DATADIR%%/resources/bz.country/startinglocation.kml
+%%DATADIR%%/resources/ca.country/startinglocation.kml
+%%DATADIR%%/resources/ca.locale/default_myplaces.kml
+%%DATADIR%%/resources/cc.country/startinglocation.kml
+%%DATADIR%%/resources/cd.country/startinglocation.kml
+%%DATADIR%%/resources/cf.country/startinglocation.kml
+%%DATADIR%%/resources/cg.country/startinglocation.kml
+%%DATADIR%%/resources/ch.country/startinglocation.kml
+%%DATADIR%%/resources/ci.country/startinglocation.kml
+%%DATADIR%%/resources/ck.country/startinglocation.kml
+%%DATADIR%%/resources/cl.country/startinglocation.kml
+%%DATADIR%%/resources/cm.country/startinglocation.kml
+%%DATADIR%%/resources/cn.country/startinglocation.kml
+%%DATADIR%%/resources/co.country/startinglocation.kml
+%%DATADIR%%/resources/cr.country/startinglocation.kml
+%%DATADIR%%/resources/cs.country/startinglocation.kml
+%%DATADIR%%/resources/cs.locale/default_myplaces.kml
+%%DATADIR%%/resources/cu.country/startinglocation.kml
 %%DATADIR%%/resources/cursor_crosshair_inverse.png
 %%DATADIR%%/resources/cursor_crosshair_thick.png
-%%DATADIR%%/resources/default_myplaces.rcc
+%%DATADIR%%/resources/cv.country/startinglocation.kml
+%%DATADIR%%/resources/cx.country/startinglocation.kml
+%%DATADIR%%/resources/cy.country/startinglocation.kml
+%%DATADIR%%/resources/cz.country/startinglocation.kml
+%%DATADIR%%/resources/da.locale/default_myplaces.kml
+%%DATADIR%%/resources/de.country/startinglocation.kml
+%%DATADIR%%/resources/de.locale/default_myplaces.kml
+%%DATADIR%%/resources/dj.country/startinglocation.kml
+%%DATADIR%%/resources/dk.country/startinglocation.kml
+%%DATADIR%%/resources/dm.country/startinglocation.kml
+%%DATADIR%%/resources/do.country/startinglocation.kml
 %%DATADIR%%/resources/doppler.txt
+%%DATADIR%%/resources/dz.country/startinglocation.kml
+%%DATADIR%%/resources/ec.country/startinglocation.kml
+%%DATADIR%%/resources/ee.country/startinglocation.kml
 %%DATADIR%%/resources/effects.rcc
+%%DATADIR%%/resources/eg.country/startinglocation.kml
+%%DATADIR%%/resources/eh.country/startinglocation.kml
+%%DATADIR%%/resources/el.locale/default_myplaces.kml
+%%DATADIR%%/resources/en.locale/default_myplaces.kml
+%%DATADIR%%/resources/er.country/startinglocation.kml
+%%DATADIR%%/resources/es-419.locale/default_myplaces.kml
+%%DATADIR%%/resources/es.country/startinglocation.kml
+%%DATADIR%%/resources/es.locale/default_myplaces.kml
+%%DATADIR%%/resources/et.country/startinglocation.kml
+%%DATADIR%%/resources/fi.country/startinglocation.kml
+%%DATADIR%%/resources/fi.locale/default_myplaces.kml
+%%DATADIR%%/resources/fil.locale/default_myplaces.kml
+%%DATADIR%%/resources/fj.country/startinglocation.kml
+%%DATADIR%%/resources/fk.country/startinglocation.kml
 %%DATADIR%%/resources/flightsim/aircraft/f16.acf
 %%DATADIR%%/resources/flightsim/aircraft/sr22.acf
 %%DATADIR%%/resources/flightsim/controller/generic.ini
@@ -154,95 +262,255 @@ bin/googleearth
 %%DATADIR%%/resources/flightsim/keyboard/generic.ini
 %%DATADIR%%/resources/flightsim/keyboard/sr22.ini
 %%DATADIR%%/resources/flightsim/planet/earth.ini
+%%DATADIR%%/resources/fm.country/startinglocation.kml
+%%DATADIR%%/resources/fo.country/startinglocation.kml
+%%DATADIR%%/resources/fr.country/startinglocation.kml
+%%DATADIR%%/resources/fr.locale/default_myplaces.kml
+%%DATADIR%%/resources/ga.country/startinglocation.kml
+%%DATADIR%%/resources/gb.country/startinglocation.kml
+%%DATADIR%%/resources/gd.country/startinglocation.kml
+%%DATADIR%%/resources/ge.country/startinglocation.kml
+%%DATADIR%%/resources/gf.country/startinglocation.kml
+%%DATADIR%%/resources/gg.country/startinglocation.kml
+%%DATADIR%%/resources/gh.country/startinglocation.kml
+%%DATADIR%%/resources/gi.country/startinglocation.kml
+%%DATADIR%%/resources/gl.country/startinglocation.kml
+%%DATADIR%%/resources/gm.country/startinglocation.kml
+%%DATADIR%%/resources/gn.country/startinglocation.kml
+%%DATADIR%%/resources/gp.country/startinglocation.kml
+%%DATADIR%%/resources/gq.country/startinglocation.kml
+%%DATADIR%%/resources/gr.country/startinglocation.kml
+%%DATADIR%%/resources/gs.country/startinglocation.kml
+%%DATADIR%%/resources/gt.country/startinglocation.kml
+%%DATADIR%%/resources/gu.country/startinglocation.kml
+%%DATADIR%%/resources/gw.country/startinglocation.kml
+%%DATADIR%%/resources/gy.country/startinglocation.kml
+%%DATADIR%%/resources/he.locale/default_myplaces.kml
+%%DATADIR%%/resources/hi.locale/default_myplaces.kml
+%%DATADIR%%/resources/hk.country/startinglocation.kml
+%%DATADIR%%/resources/hm.country/startinglocation.kml
+%%DATADIR%%/resources/hn.country/startinglocation.kml
+%%DATADIR%%/resources/hr.country/startinglocation.kml
+%%DATADIR%%/resources/hr.locale/default_myplaces.kml
+%%DATADIR%%/resources/ht.country/startinglocation.kml
+%%DATADIR%%/resources/hu.country/startinglocation.kml
+%%DATADIR%%/resources/hu.locale/default_myplaces.kml
+%%DATADIR%%/resources/id.country/startinglocation.kml
+%%DATADIR%%/resources/id.locale/default_myplaces.kml
+%%DATADIR%%/resources/ie.country/startinglocation.kml
+%%DATADIR%%/resources/il.country/startinglocation.kml
+%%DATADIR%%/resources/im.country/startinglocation.kml
+%%DATADIR%%/resources/in.country/startinglocation.kml
+%%DATADIR%%/resources/io.country/startinglocation.kml
+%%DATADIR%%/resources/iq.country/startinglocation.kml
+%%DATADIR%%/resources/ir.country/startinglocation.kml
+%%DATADIR%%/resources/is.country/startinglocation.kml
+%%DATADIR%%/resources/it.country/startinglocation.kml
+%%DATADIR%%/resources/it.locale/default_myplaces.kml
+%%DATADIR%%/resources/ja.locale/default_myplaces.kml
+%%DATADIR%%/resources/je.country/startinglocation.kml
+%%DATADIR%%/resources/jm.country/startinglocation.kml
+%%DATADIR%%/resources/jo.country/startinglocation.kml
+%%DATADIR%%/resources/jp.country/startinglocation.kml
+%%DATADIR%%/resources/ke.country/startinglocation.kml
+%%DATADIR%%/resources/kg.country/startinglocation.kml
+%%DATADIR%%/resources/kh.country/startinglocation.kml
+%%DATADIR%%/resources/ki.country/startinglocation.kml
+%%DATADIR%%/resources/km.country/startinglocation.kml
+%%DATADIR%%/resources/kn.country/startinglocation.kml
+%%DATADIR%%/resources/ko.locale/default_myplaces.kml
+%%DATADIR%%/resources/kp.country/startinglocation.kml
+%%DATADIR%%/resources/kr.country/startinglocation.kml
+%%DATADIR%%/resources/kw.country/startinglocation.kml
+%%DATADIR%%/resources/ky.country/startinglocation.kml
+%%DATADIR%%/resources/kz.country/startinglocation.kml
+%%DATADIR%%/resources/la.country/startinglocation.kml
+%%DATADIR%%/resources/lb.country/startinglocation.kml
+%%DATADIR%%/resources/lc.country/startinglocation.kml
 %%DATADIR%%/resources/leftpanel-common.rcc
 %%DATADIR%%/resources/leftpanel-layer.rcc
+%%DATADIR%%/resources/li.country/startinglocation.kml
+%%DATADIR%%/resources/lk.country/startinglocation.kml
 %%DATADIR%%/resources/localshapes.rcc
+%%DATADIR%%/resources/lr.country/startinglocation.kml
+%%DATADIR%%/resources/ls.country/startinglocation.kml
+%%DATADIR%%/resources/lt.country/startinglocation.kml
+%%DATADIR%%/resources/lt.locale/default_myplaces.kml
+%%DATADIR%%/resources/lu.country/startinglocation.kml
+%%DATADIR%%/resources/lv.country/startinglocation.kml
+%%DATADIR%%/resources/lv.locale/default_myplaces.kml
+%%DATADIR%%/resources/ly.country/startinglocation.kml
+%%DATADIR%%/resources/ma.country/startinglocation.kml
+%%DATADIR%%/resources/mc.country/startinglocation.kml
+%%DATADIR%%/resources/md.country/startinglocation.kml
+%%DATADIR%%/resources/me.country/startinglocation.kml
+%%DATADIR%%/resources/mg.country/startinglocation.kml
+%%DATADIR%%/resources/mh.country/startinglocation.kml
+%%DATADIR%%/resources/mk.country/startinglocation.kml
+%%DATADIR%%/resources/ml.country/startinglocation.kml
+%%DATADIR%%/resources/mm.country/startinglocation.kml
+%%DATADIR%%/resources/mn.country/startinglocation.kml
+%%DATADIR%%/resources/mo.country/startinglocation.kml
+%%DATADIR%%/resources/mp.country/startinglocation.kml
+%%DATADIR%%/resources/mq.country/startinglocation.kml
+%%DATADIR%%/resources/mr.country/startinglocation.kml
+%%DATADIR%%/resources/ms.country/startinglocation.kml
+%%DATADIR%%/resources/mt.country/startinglocation.kml
+%%DATADIR%%/resources/mu.country/startinglocation.kml
+%%DATADIR%%/resources/mv.country/startinglocation.kml
+%%DATADIR%%/resources/mw.country/startinglocation.kml
+%%DATADIR%%/resources/mx.country/startinglocation.kml
+%%DATADIR%%/resources/my.country/startinglocation.kml
+%%DATADIR%%/resources/mz.country/startinglocation.kml
+%%DATADIR%%/resources/na.country/startinglocation.kml
 %%DATADIR%%/resources/navcontrols.rcc
+%%DATADIR%%/resources/nc.country/startinglocation.kml
+%%DATADIR%%/resources/ne.country/startinglocation.kml
+%%DATADIR%%/resources/nf.country/startinglocation.kml
+%%DATADIR%%/resources/ng.country/startinglocation.kml
+%%DATADIR%%/resources/ni.country/startinglocation.kml
+%%DATADIR%%/resources/nl.country/startinglocation.kml
+%%DATADIR%%/resources/nl.locale/default_myplaces.kml
+%%DATADIR%%/resources/no.country/startinglocation.kml
+%%DATADIR%%/resources/no.locale/default_myplaces.kml
 %%DATADIR%%/resources/notifications.rcc
+%%DATADIR%%/resources/np.country/startinglocation.kml
+%%DATADIR%%/resources/nr.country/startinglocation.kml
+%%DATADIR%%/resources/nu.country/startinglocation.kml
+%%DATADIR%%/resources/nz.country/startinglocation.kml
+%%DATADIR%%/resources/om.country/startinglocation.kml
+%%DATADIR%%/resources/pa.country/startinglocation.kml
+%%DATADIR%%/resources/pe.country/startinglocation.kml
+%%DATADIR%%/resources/pf.country/startinglocation.kml
+%%DATADIR%%/resources/pg.country/startinglocation.kml
+%%DATADIR%%/resources/ph.country/startinglocation.kml
+%%DATADIR%%/resources/pk.country/startinglocation.kml
+%%DATADIR%%/resources/pl.country/startinglocation.kml
+%%DATADIR%%/resources/pl.locale/default_myplaces.kml
+%%DATADIR%%/resources/pm.country/startinglocation.kml
+%%DATADIR%%/resources/pn.country/startinglocation.kml
+%%DATADIR%%/resources/pr.country/startinglocation.kml
 %%DATADIR%%/resources/progress.rcc
+%%DATADIR%%/resources/ps.country/startinglocation.kml
+%%DATADIR%%/resources/pt-PT.locale/default_myplaces.kml
+%%DATADIR%%/resources/pt.country/startinglocation.kml
+%%DATADIR%%/resources/pt.locale/default_myplaces.kml
+%%DATADIR%%/resources/pw.country/startinglocation.kml
+%%DATADIR%%/resources/py.country/startinglocation.kml
+%%DATADIR%%/resources/qa.country/startinglocation.kml
+%%DATADIR%%/resources/re.country/startinglocation.kml
 %%DATADIR%%/resources/renderui.rcc
+%%DATADIR%%/resources/ro.country/startinglocation.kml
+%%DATADIR%%/resources/ro.locale/default_myplaces.kml
+%%DATADIR%%/resources/rs.country/startinglocation.kml
+%%DATADIR%%/resources/ru.country/startinglocation.kml
+%%DATADIR%%/resources/ru.locale/default_myplaces.kml
+%%DATADIR%%/resources/rw.country/startinglocation.kml
+%%DATADIR%%/resources/sa.country/startinglocation.kml
+%%DATADIR%%/resources/sb.country/startinglocation.kml
+%%DATADIR%%/resources/sc.country/startinglocation.kml
+%%DATADIR%%/resources/sd.country/startinglocation.kml
+%%DATADIR%%/resources/se.country/startinglocation.kml
+%%DATADIR%%/resources/sg.country/startinglocation.kml
+%%DATADIR%%/resources/sh.country/startinglocation.kml
+%%DATADIR%%/resources/si.country/startinglocation.kml
+%%DATADIR%%/resources/sj.country/startinglocation.kml
+%%DATADIR%%/resources/sk.country/startinglocation.kml
+%%DATADIR%%/resources/sk.locale/default_myplaces.kml
+%%DATADIR%%/resources/sl.country/startinglocation.kml
+%%DATADIR%%/resources/sl.locale/default_myplaces.kml
+%%DATADIR%%/resources/sm.country/startinglocation.kml
+%%DATADIR%%/resources/sn.country/startinglocation.kml
+%%DATADIR%%/resources/so.country/startinglocation.kml
 %%DATADIR%%/resources/spin_icon.png
-%%DATADIR%%/resources/startinglocations-nonmac.rcc
-%%DATADIR%%/resources/startinglocations.rcc
+%%DATADIR%%/resources/sr.country/startinglocation.kml
+%%DATADIR%%/resources/sr.locale/default_myplaces.kml
+%%DATADIR%%/resources/st.country/startinglocation.kml
 %%DATADIR%%/resources/statusbar.rcc
+%%DATADIR%%/resources/sv.country/startinglocation.kml
+%%DATADIR%%/resources/sv.locale/default_myplaces.kml
+%%DATADIR%%/resources/sy.country/startinglocation.kml
+%%DATADIR%%/resources/sz.country/startinglocation.kml
+%%DATADIR%%/resources/tc.country/startinglocation.kml
+%%DATADIR%%/resources/td.country/startinglocation.kml
 %%DATADIR%%/resources/terrainmgr.rcc
+%%DATADIR%%/resources/tf.country/startinglocation.kml
+%%DATADIR%%/resources/tg.country/startinglocation.kml
+%%DATADIR%%/resources/th.country/startinglocation.kml
+%%DATADIR%%/resources/th.locale/default_myplaces.kml
+%%DATADIR%%/resources/tj.country/startinglocation.kml
+%%DATADIR%%/resources/tk.country/startinglocation.kml
+%%DATADIR%%/resources/tl.country/startinglocation.kml
+%%DATADIR%%/resources/tm.country/startinglocation.kml
 %%DATADIR%%/resources/tmcontrols.rcc
+%%DATADIR%%/resources/tn.country/startinglocation.kml
+%%DATADIR%%/resources/to.country/startinglocation.kml
 %%DATADIR%%/resources/toolbar.rcc
 %%DATADIR%%/resources/tourcontrols.rcc
+%%DATADIR%%/resources/tr.country/startinglocation.kml
+%%DATADIR%%/resources/tr.locale/default_myplaces.kml
+%%DATADIR%%/resources/tt.country/startinglocation.kml
+%%DATADIR%%/resources/tv.country/startinglocation.kml
+%%DATADIR%%/resources/tw.country/startinglocation.kml
+%%DATADIR%%/resources/tz.country/startinglocation.kml
+%%DATADIR%%/resources/ua.country/startinglocation.kml
+%%DATADIR%%/resources/ug.country/startinglocation.kml
+%%DATADIR%%/resources/uk.locale/default_myplaces.kml
+%%DATADIR%%/resources/um.country/startinglocation.kml
 %%DATADIR%%/resources/unknown_plugin.png
+%%DATADIR%%/resources/us.country/startinglocation.kml
 %%DATADIR%%/resources/userpalette.kml
+%%DATADIR%%/resources/uy.country/startinglocation.kml
+%%DATADIR%%/resources/uz.country/startinglocation.kml
+%%DATADIR%%/resources/va.country/startinglocation.kml
+%%DATADIR%%/resources/vc.country/startinglocation.kml
+%%DATADIR%%/resources/ve.country/startinglocation.kml
+%%DATADIR%%/resources/vg.country/startinglocation.kml
+%%DATADIR%%/resources/vi.country/startinglocation.kml
+%%DATADIR%%/resources/vi.locale/default_myplaces.kml
+%%DATADIR%%/resources/vn.country/startinglocation.kml
+%%DATADIR%%/resources/vu.country/startinglocation.kml
 %%DATADIR%%/resources/webbrowser.rcc
+%%DATADIR%%/resources/wf.country/startinglocation.kml
+%%DATADIR%%/resources/ws.country/startinglocation.kml
+%%DATADIR%%/resources/ye.country/startinglocation.kml
+%%DATADIR%%/resources/yt.country/startinglocation.kml
+%%DATADIR%%/resources/za.country/startinglocation.kml
+%%DATADIR%%/resources/zh-Hans.locale/default_myplaces.kml
+%%DATADIR%%/resources/zh-Hant.locale/default_myplaces.kml
+%%DATADIR%%/resources/zm.country/startinglocation.kml
+%%DATADIR%%/resources/zw.country/startinglocation.kml
 %%DATADIR%%/shaders/atmosphere_common.ini
 %%DATADIR%%/shaders/atmosphere_ground_sun_off.arbfp1
 %%DATADIR%%/shaders/atmosphere_ground_sun_off.arbvp1
 %%DATADIR%%/shaders/atmosphere_ground_sun_off.asd
 %%DATADIR%%/shaders/atmosphere_ground_sun_off.cfg
-%%DATADIR%%/shaders/atmosphere_ground_sun_off.glslesf
-%%DATADIR%%/shaders/atmosphere_ground_sun_off.glslesv
 %%DATADIR%%/shaders/atmosphere_ground_sun_off.ps_2_0
 %%DATADIR%%/shaders/atmosphere_ground_sun_off.vs_2_0
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.arbfp1
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.arbvp1
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.asd
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.cfg
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.glslesf
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.glslesv
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.ps_2_0
-%%DATADIR%%/shaders/atmosphere_ground_sun_off_overlay.vs_2_0
 %%DATADIR%%/shaders/atmosphere_ground_sun_on.arbfp1
 %%DATADIR%%/shaders/atmosphere_ground_sun_on.arbvp1
 %%DATADIR%%/shaders/atmosphere_ground_sun_on.asd
 %%DATADIR%%/shaders/atmosphere_ground_sun_on.cfg
-%%DATADIR%%/shaders/atmosphere_ground_sun_on.glslesf
-%%DATADIR%%/shaders/atmosphere_ground_sun_on.glslesv
 %%DATADIR%%/shaders/atmosphere_ground_sun_on.ps_2_0
 %%DATADIR%%/shaders/atmosphere_ground_sun_on.vs_2_0
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.arbfp1
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.arbvp1
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.asd
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.cfg
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.glslesf
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.glslesv
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.ps_2_0
-%%DATADIR%%/shaders/atmosphere_ground_sun_on_overlay.vs_2_0
 %%DATADIR%%/shaders/atmosphere_sky_sun_off.arbfp1
 %%DATADIR%%/shaders/atmosphere_sky_sun_off.arbvp1
 %%DATADIR%%/shaders/atmosphere_sky_sun_off.asd
 %%DATADIR%%/shaders/atmosphere_sky_sun_off.cfg
-%%DATADIR%%/shaders/atmosphere_sky_sun_off.glslesf
-%%DATADIR%%/shaders/atmosphere_sky_sun_off.glslesv
 %%DATADIR%%/shaders/atmosphere_sky_sun_off.ps_2_0
 %%DATADIR%%/shaders/atmosphere_sky_sun_off.vs_2_0
 %%DATADIR%%/shaders/atmosphere_sky_sun_on.arbfp1
 %%DATADIR%%/shaders/atmosphere_sky_sun_on.arbvp1
 %%DATADIR%%/shaders/atmosphere_sky_sun_on.asd
 %%DATADIR%%/shaders/atmosphere_sky_sun_on.cfg
-%%DATADIR%%/shaders/atmosphere_sky_sun_on.glslesf
-%%DATADIR%%/shaders/atmosphere_sky_sun_on.glslesv
 %%DATADIR%%/shaders/atmosphere_sky_sun_on.ps_2_0
 %%DATADIR%%/shaders/atmosphere_sky_sun_on.vs_2_0
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.arbfp1
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.arbvp1
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.asd
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.cfg
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.glslesf
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.glslesv
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.ps_2_0
-%%DATADIR%%/shaders/ground_overlay_no_atmosphere.vs_2_0
 %%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.arbfp1
 %%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.arbvp1
 %%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.asd
 %%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.cfg
 %%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.ps_2_0
 %%DATADIR%%/shaders/mars_atmosphere_ground_sun_on.vs_2_0
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.arbfp1
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.arbvp1
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.asd
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.cfg
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.glslesf
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.glslesv
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.ps_2_0
-%%DATADIR%%/shaders/mars_atmosphere_ground_sun_on_overlay.vs_2_0
 %%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.arbfp1
 %%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.arbvp1
 %%DATADIR%%/shaders/mars_atmosphere_sky_sun_on.asd
@@ -290,27 +558,315 @@ bin/googleearth
 %%DATADIR%%/shaders/watersurface.arbvp1
 %%DATADIR%%/shaders/watersurface.asd
 %%DATADIR%%/shaders/watersurface.cfg
-%%DATADIR%%/shaders/watersurface.glslesf
-%%DATADIR%%/shaders/watersurface.glslesv
 %%DATADIR%%/shaders/watersurface.ps_2_0
 %%DATADIR%%/shaders/watersurface.vs_2_0
-%%DATADIR%%/xdg-mime
-%%DATADIR%%/xdg-settings
 share/applications/googleearth.desktop
 share/mime/application/earthviewer.xml
 share/mime/application/keyhole.xml
 share/mime/application/vnd.google-earth.kml+xml.xml
 share/mime/application/vnd.google-earth.kmz.xml
 share/mime/packages/googleearth-mimetypes.xml
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%/desktop_icons/consumer
+@dirrm %%DATADIR%%/desktop_icons/ec
+@dirrm %%DATADIR%%/desktop_icons/pro
+@dirrm %%DATADIR%%/desktop_icons
 @dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/linux/xdg
+@dirrm %%DATADIR%%/linux
 @dirrm %%DATADIR%%/plugins/imageformats
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/resources/ad.country
+@dirrm %%DATADIR%%/resources/ae.country
+@dirrm %%DATADIR%%/resources/af.country
+@dirrm %%DATADIR%%/resources/ag.country
+@dirrm %%DATADIR%%/resources/ai.country
+@dirrm %%DATADIR%%/resources/al.country
+@dirrm %%DATADIR%%/resources/am.country
+@dirrm %%DATADIR%%/resources/an.country
+@dirrm %%DATADIR%%/resources/ao.country
+@dirrm %%DATADIR%%/resources/aq.country
+@dirrm %%DATADIR%%/resources/ar.country
+@dirrm %%DATADIR%%/resources/ar.locale
+@dirrm %%DATADIR%%/resources/as.country
+@dirrm %%DATADIR%%/resources/at.country
+@dirrm %%DATADIR%%/resources/au.country
+@dirrm %%DATADIR%%/resources/aw.country
+@dirrm %%DATADIR%%/resources/ax.country
+@dirrm %%DATADIR%%/resources/az.country
+@dirrm %%DATADIR%%/resources/ba.country
+@dirrm %%DATADIR%%/resources/bb.country
+@dirrm %%DATADIR%%/resources/bd.country
+@dirrm %%DATADIR%%/resources/be.country
+@dirrm %%DATADIR%%/resources/bf.country
+@dirrm %%DATADIR%%/resources/bg.country
+@dirrm %%DATADIR%%/resources/bg.locale
+@dirrm %%DATADIR%%/resources/bh.country
+@dirrm %%DATADIR%%/resources/bi.country
+@dirrm %%DATADIR%%/resources/bj.country
+@dirrm %%DATADIR%%/resources/bm.country
+@dirrm %%DATADIR%%/resources/bn.country
+@dirrm %%DATADIR%%/resources/bo.country
+@dirrm %%DATADIR%%/resources/br.country
+@dirrm %%DATADIR%%/resources/bs.country
+@dirrm %%DATADIR%%/resources/bt.country
+@dirrm %%DATADIR%%/resources/bv.country
+@dirrm %%DATADIR%%/resources/bw.country
+@dirrm %%DATADIR%%/resources/by.country
+@dirrm %%DATADIR%%/resources/bz.country
+@dirrm %%DATADIR%%/resources/ca.country
+@dirrm %%DATADIR%%/resources/ca.locale
+@dirrm %%DATADIR%%/resources/cc.country
+@dirrm %%DATADIR%%/resources/cd.country
+@dirrm %%DATADIR%%/resources/cf.country
+@dirrm %%DATADIR%%/resources/cg.country
+@dirrm %%DATADIR%%/resources/ch.country
+@dirrm %%DATADIR%%/resources/ci.country
+@dirrm %%DATADIR%%/resources/ck.country
+@dirrm %%DATADIR%%/resources/cl.country
+@dirrm %%DATADIR%%/resources/cm.country
+@dirrm %%DATADIR%%/resources/cn.country
+@dirrm %%DATADIR%%/resources/co.country
+@dirrm %%DATADIR%%/resources/cr.country
+@dirrm %%DATADIR%%/resources/cs.country
+@dirrm %%DATADIR%%/resources/cs.locale
+@dirrm %%DATADIR%%/resources/cu.country
+@dirrm %%DATADIR%%/resources/cv.country
+@dirrm %%DATADIR%%/resources/cx.country
+@dirrm %%DATADIR%%/resources/cy.country
+@dirrm %%DATADIR%%/resources/cz.country
+@dirrm %%DATADIR%%/resources/da.locale
+@dirrm %%DATADIR%%/resources/de.country
+@dirrm %%DATADIR%%/resources/de.locale
+@dirrm %%DATADIR%%/resources/dj.country
+@dirrm %%DATADIR%%/resources/dk.country
+@dirrm %%DATADIR%%/resources/dm.country
+@dirrm %%DATADIR%%/resources/do.country
+@dirrm %%DATADIR%%/resources/dz.country
+@dirrm %%DATADIR%%/resources/ec.country
+@dirrm %%DATADIR%%/resources/ee.country
+@dirrm %%DATADIR%%/resources/eg.country
+@dirrm %%DATADIR%%/resources/eh.country
+@dirrm %%DATADIR%%/resources/el.locale
+@dirrm %%DATADIR%%/resources/en.locale
+@dirrm %%DATADIR%%/resources/er.country
+@dirrm %%DATADIR%%/resources/es-419.locale
+@dirrm %%DATADIR%%/resources/es.country
+@dirrm %%DATADIR%%/resources/es.locale
+@dirrm %%DATADIR%%/resources/et.country
+@dirrm %%DATADIR%%/resources/fi.country
+@dirrm %%DATADIR%%/resources/fi.locale
+@dirrm %%DATADIR%%/resources/fil.locale
+@dirrm %%DATADIR%%/resources/fj.country
+@dirrm %%DATADIR%%/resources/fk.country
 @dirrm %%DATADIR%%/resources/flightsim/aircraft
 @dirrm %%DATADIR%%/resources/flightsim/controller
 @dirrm %%DATADIR%%/resources/flightsim/hud
 @dirrm %%DATADIR%%/resources/flightsim/keyboard
 @dirrm %%DATADIR%%/resources/flightsim/planet
 @dirrm %%DATADIR%%/resources/flightsim
+@dirrm %%DATADIR%%/resources/fm.country
+@dirrm %%DATADIR%%/resources/fo.country
+@dirrm %%DATADIR%%/resources/fr.country
+@dirrm %%DATADIR%%/resources/fr.locale
+@dirrm %%DATADIR%%/resources/ga.country
+@dirrm %%DATADIR%%/resources/gb.country
+@dirrm %%DATADIR%%/resources/gd.country
+@dirrm %%DATADIR%%/resources/ge.country
+@dirrm %%DATADIR%%/resources/gf.country
+@dirrm %%DATADIR%%/resources/gg.country
+@dirrm %%DATADIR%%/resources/gh.country
+@dirrm %%DATADIR%%/resources/gi.country
+@dirrm %%DATADIR%%/resources/gl.country
+@dirrm %%DATADIR%%/resources/gm.country
+@dirrm %%DATADIR%%/resources/gn.country
+@dirrm %%DATADIR%%/resources/gp.country
+@dirrm %%DATADIR%%/resources/gq.country
+@dirrm %%DATADIR%%/resources/gr.country
+@dirrm %%DATADIR%%/resources/gs.country
+@dirrm %%DATADIR%%/resources/gt.country
+@dirrm %%DATADIR%%/resources/gu.country
+@dirrm %%DATADIR%%/resources/gw.country
+@dirrm %%DATADIR%%/resources/gy.country
+@dirrm %%DATADIR%%/resources/he.locale
+@dirrm %%DATADIR%%/resources/hi.locale
+@dirrm %%DATADIR%%/resources/hk.country
+@dirrm %%DATADIR%%/resources/hm.country
+@dirrm %%DATADIR%%/resources/hn.country
+@dirrm %%DATADIR%%/resources/hr.country
+@dirrm %%DATADIR%%/resources/hr.locale
+@dirrm %%DATADIR%%/resources/ht.country
+@dirrm %%DATADIR%%/resources/hu.country
+@dirrm %%DATADIR%%/resources/hu.locale
+@dirrm %%DATADIR%%/resources/id.country
+@dirrm %%DATADIR%%/resources/id.locale
+@dirrm %%DATADIR%%/resources/ie.country
+@dirrm %%DATADIR%%/resources/il.country
+@dirrm %%DATADIR%%/resources/im.country
+@dirrm %%DATADIR%%/resources/in.country
+@dirrm %%DATADIR%%/resources/io.country
+@dirrm %%DATADIR%%/resources/iq.country
+@dirrm %%DATADIR%%/resources/ir.country
+@dirrm %%DATADIR%%/resources/is.country
+@dirrm %%DATADIR%%/resources/it.country
+@dirrm %%DATADIR%%/resources/it.locale
+@dirrm %%DATADIR%%/resources/ja.locale
+@dirrm %%DATADIR%%/resources/je.country
+@dirrm %%DATADIR%%/resources/jm.country
+@dirrm %%DATADIR%%/resources/jo.country
+@dirrm %%DATADIR%%/resources/jp.country
+@dirrm %%DATADIR%%/resources/ke.country
+@dirrm %%DATADIR%%/resources/kg.country
+@dirrm %%DATADIR%%/resources/kh.country
+@dirrm %%DATADIR%%/resources/ki.country
+@dirrm %%DATADIR%%/resources/km.country
+@dirrm %%DATADIR%%/resources/kn.country
+@dirrm %%DATADIR%%/resources/ko.locale
+@dirrm %%DATADIR%%/resources/kp.country
+@dirrm %%DATADIR%%/resources/kr.country
+@dirrm %%DATADIR%%/resources/kw.country
+@dirrm %%DATADIR%%/resources/ky.country
+@dirrm %%DATADIR%%/resources/kz.country
+@dirrm %%DATADIR%%/resources/la.country
+@dirrm %%DATADIR%%/resources/lb.country
+@dirrm %%DATADIR%%/resources/lc.country
+@dirrm %%DATADIR%%/resources/li.country
+@dirrm %%DATADIR%%/resources/lk.country
+@dirrm %%DATADIR%%/resources/lr.country
+@dirrm %%DATADIR%%/resources/ls.country
+@dirrm %%DATADIR%%/resources/lt.country
+@dirrm %%DATADIR%%/resources/lt.locale
+@dirrm %%DATADIR%%/resources/lu.country
+@dirrm %%DATADIR%%/resources/lv.country
+@dirrm %%DATADIR%%/resources/lv.locale
+@dirrm %%DATADIR%%/resources/ly.country
+@dirrm %%DATADIR%%/resources/ma.country
+@dirrm %%DATADIR%%/resources/mc.country
+@dirrm %%DATADIR%%/resources/md.country
+@dirrm %%DATADIR%%/resources/me.country
+@dirrm %%DATADIR%%/resources/mg.country
+@dirrm %%DATADIR%%/resources/mh.country
+@dirrm %%DATADIR%%/resources/mk.country
+@dirrm %%DATADIR%%/resources/ml.country
+@dirrm %%DATADIR%%/resources/mm.country
+@dirrm %%DATADIR%%/resources/mn.country
+@dirrm %%DATADIR%%/resources/mo.country
+@dirrm %%DATADIR%%/resources/mp.country
+@dirrm %%DATADIR%%/resources/mq.country
+@dirrm %%DATADIR%%/resources/mr.country
+@dirrm %%DATADIR%%/resources/ms.country
+@dirrm %%DATADIR%%/resources/mt.country
+@dirrm %%DATADIR%%/resources/mu.country
+@dirrm %%DATADIR%%/resources/mv.country
+@dirrm %%DATADIR%%/resources/mw.country
+@dirrm %%DATADIR%%/resources/mx.country
+@dirrm %%DATADIR%%/resources/my.country
+@dirrm %%DATADIR%%/resources/mz.country
+@dirrm %%DATADIR%%/resources/na.country
+@dirrm %%DATADIR%%/resources/nc.country
+@dirrm %%DATADIR%%/resources/ne.country
+@dirrm %%DATADIR%%/resources/nf.country
+@dirrm %%DATADIR%%/resources/ng.country
+@dirrm %%DATADIR%%/resources/ni.country
+@dirrm %%DATADIR%%/resources/nl.country
+@dirrm %%DATADIR%%/resources/nl.locale
+@dirrm %%DATADIR%%/resources/no.country
+@dirrm %%DATADIR%%/resources/no.locale
+@dirrm %%DATADIR%%/resources/np.country
+@dirrm %%DATADIR%%/resources/nr.country
+@dirrm %%DATADIR%%/resources/nu.country
+@dirrm %%DATADIR%%/resources/nz.country
+@dirrm %%DATADIR%%/resources/om.country
+@dirrm %%DATADIR%%/resources/pa.country
+@dirrm %%DATADIR%%/resources/pe.country
+@dirrm %%DATADIR%%/resources/pf.country
+@dirrm %%DATADIR%%/resources/pg.country
+@dirrm %%DATADIR%%/resources/ph.country
+@dirrm %%DATADIR%%/resources/pk.country
+@dirrm %%DATADIR%%/resources/pl.country
+@dirrm %%DATADIR%%/resources/pl.locale
+@dirrm %%DATADIR%%/resources/pm.country
+@dirrm %%DATADIR%%/resources/pn.country
+@dirrm %%DATADIR%%/resources/pr.country
+@dirrm %%DATADIR%%/resources/ps.country
+@dirrm %%DATADIR%%/resources/pt-PT.locale
+@dirrm %%DATADIR%%/resources/pt.country
+@dirrm %%DATADIR%%/resources/pt.locale
+@dirrm %%DATADIR%%/resources/pw.country
+@dirrm %%DATADIR%%/resources/py.country
+@dirrm %%DATADIR%%/resources/qa.country
+@dirrm %%DATADIR%%/resources/re.country
+@dirrm %%DATADIR%%/resources/ro.country
+@dirrm %%DATADIR%%/resources/ro.locale
+@dirrm %%DATADIR%%/resources/rs.country
+@dirrm %%DATADIR%%/resources/ru.country
+@dirrm %%DATADIR%%/resources/ru.locale
+@dirrm %%DATADIR%%/resources/rw.country
+@dirrm %%DATADIR%%/resources/sa.country
+@dirrm %%DATADIR%%/resources/sb.country
+@dirrm %%DATADIR%%/resources/sc.country
+@dirrm %%DATADIR%%/resources/sd.country
+@dirrm %%DATADIR%%/resources/se.country
+@dirrm %%DATADIR%%/resources/sg.country
+@dirrm %%DATADIR%%/resources/sh.country
+@dirrm %%DATADIR%%/resources/si.country
+@dirrm %%DATADIR%%/resources/sj.country
+@dirrm %%DATADIR%%/resources/sk.country
+@dirrm %%DATADIR%%/resources/sk.locale
+@dirrm %%DATADIR%%/resources/sl.country
+@dirrm %%DATADIR%%/resources/sl.locale
+@dirrm %%DATADIR%%/resources/sm.country
+@dirrm %%DATADIR%%/resources/sn.country
+@dirrm %%DATADIR%%/resources/so.country
+@dirrm %%DATADIR%%/resources/sr.country
+@dirrm %%DATADIR%%/resources/sr.locale
+@dirrm %%DATADIR%%/resources/st.country
+@dirrm %%DATADIR%%/resources/sv.country
+@dirrm %%DATADIR%%/resources/sv.locale
+@dirrm %%DATADIR%%/resources/sy.country
+@dirrm %%DATADIR%%/resources/sz.country
+@dirrm %%DATADIR%%/resources/tc.country
+@dirrm %%DATADIR%%/resources/td.country
+@dirrm %%DATADIR%%/resources/tf.country
+@dirrm %%DATADIR%%/resources/tg.country
+@dirrm %%DATADIR%%/resources/th.country
+@dirrm %%DATADIR%%/resources/th.locale
+@dirrm %%DATADIR%%/resources/tj.country
+@dirrm %%DATADIR%%/resources/tk.country
+@dirrm %%DATADIR%%/resources/tl.country
+@dirrm %%DATADIR%%/resources/tm.country
+@dirrm %%DATADIR%%/resources/tn.country
+@dirrm %%DATADIR%%/resources/to.country
+@dirrm %%DATADIR%%/resources/tr.country
+@dirrm %%DATADIR%%/resources/tr.locale
+@dirrm %%DATADIR%%/resources/tt.country
+@dirrm %%DATADIR%%/resources/tv.country
+@dirrm %%DATADIR%%/resources/tw.country
+@dirrm %%DATADIR%%/resources/tz.country
+@dirrm %%DATADIR%%/resources/ua.country
+@dirrm %%DATADIR%%/resources/ug.country
+@dirrm %%DATADIR%%/resources/uk.locale
+@dirrm %%DATADIR%%/resources/um.country
+@dirrm %%DATADIR%%/resources/us.country
+@dirrm %%DATADIR%%/resources/uy.country
+@dirrm %%DATADIR%%/resources/uz.country
+@dirrm %%DATADIR%%/resources/va.country
+@dirrm %%DATADIR%%/resources/vc.country
+@dirrm %%DATADIR%%/resources/ve.country
+@dirrm %%DATADIR%%/resources/vg.country
+@dirrm %%DATADIR%%/resources/vi.country
+@dirrm %%DATADIR%%/resources/vi.locale
+@dirrm %%DATADIR%%/resources/vn.country
+@dirrm %%DATADIR%%/resources/vu.country
+@dirrm %%DATADIR%%/resources/wf.country
+@dirrm %%DATADIR%%/resources/ws.country
+@dirrm %%DATADIR%%/resources/ye.country
+@dirrm %%DATADIR%%/resources/yt.country
+@dirrm %%DATADIR%%/resources/za.country
+@dirrm %%DATADIR%%/resources/zh-Hans.locale
+@dirrm %%DATADIR%%/resources/zh-Hant.locale
+@dirrm %%DATADIR%%/resources/zm.country
+@dirrm %%DATADIR%%/resources/zw.country
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%
