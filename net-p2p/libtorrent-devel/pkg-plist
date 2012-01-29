@@ -6,6 +6,7 @@ include/torrent/data/block.h
 include/torrent/data/block_list.h
 include/torrent/data/block_transfer.h
 include/torrent/data/chunk_utils.h
+include/torrent/data/download_data.h
 include/torrent/data/file.h
 include/torrent/data/file_list.h
 include/torrent/data/file_list_iterator.h
@@ -18,6 +19,7 @@ include/torrent/download.h
 include/torrent/download/choke_group.h
 include/torrent/download/choke_queue.h
 include/torrent/download/download_manager.h
+include/torrent/download/group_entry.h
 include/torrent/download/resource_manager.h
 include/torrent/download_info.h
 include/torrent/error.h
@@ -46,10 +48,13 @@ include/torrent/thread_base.h
 include/torrent/throttle.h
 include/torrent/torrent.h
 include/torrent/tracker.h
+include/torrent/tracker_controller.h
 include/torrent/tracker_list.h
 include/torrent/utils/extents.h
+include/torrent/utils/log.h
 include/torrent/utils/log_files.h
 include/torrent/utils/option_strings.h
+include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
 lib/libtorrent.a
 lib/libtorrent.la
