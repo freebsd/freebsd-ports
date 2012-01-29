@@ -37,7 +37,7 @@ etc/qemu-ifdown.sample
 @exec if [ ! -f %D/etc/qemu-ifdown ] ; then cp -p %D/%F %B/qemu-ifdown; fi
 @unexec if cmp -s %D/etc/qemu/target-x86_64.conf.sample %D/etc/qemu/target-x86_64.conf; then rm -f %D/etc/qemu/target-x86_64.conf; fi
 etc/qemu/target-x86_64.conf.sample
-@exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %B/etc/qemu/target-x86_64.conf; fi
+@exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %D/etc/qemu/target-x86_64.conf; fi
 @dirrmtry etc/qemu
 %%DATADIR%%/bios.bin
 %%DATADIR%%/vgabios.bin
