@@ -25,6 +25,9 @@ BUILD_DEPENDS=	\
 	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
 
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Test::Declare.3
