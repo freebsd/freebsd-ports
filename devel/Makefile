@@ -3468,6 +3468,7 @@
     SUBDIR += qt4-uic3
     SUBDIR += qtcreator
     SUBDIR += qtscriptgenerator
+    SUBDIR += quickcheck++
     SUBDIR += quilt
     SUBDIR += radare2
     SUBDIR += ragel
