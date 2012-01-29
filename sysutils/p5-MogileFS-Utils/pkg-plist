@@ -1,14 +1,16 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS-Utils/.packlist
-%%SITE_PERL%%/MogileFS/Utils.pm
+bin/mogadm
 bin/mogdelete
 bin/mogfetch
 bin/mogfiledebug
 bin/mogfileinfo
 bin/moglistfids
 bin/moglistkeys
-bin/mogupload
-bin/mogadm
+bin/mogrename
 bin/mogstats
 bin/mogtool
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS-Utils
+bin/mogupload
+%%SITE_PERL%%/MogileFS/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Utils/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Utils
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
 @dirrmtry %%SITE_PERL%%/MogileFS

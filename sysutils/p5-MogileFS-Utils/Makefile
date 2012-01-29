@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MogileFS tools
 
+BUILD_DEPENDS=	p5-MogileFS-Client>=1.14:${PORTSDIR}/sysutils/p5-MogileFS-Client \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-MogileFS-Client>=1.14:${PORTSDIR}/sysutils/p5-MogileFS-Client \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
@@ -27,6 +29,7 @@ MAN1=		mogadm.1 \
 		mogfileinfo.1 \
 		moglistfids.1 \
 		moglistkeys.1 \
+		mogrename.1 \
 		mogstats.1 \
 		mogtool.1 \
 		mogupload.1
@@ -37,5 +40,8 @@ MAN3=		MogileFS::Utils.3
 .if ${PERL_LEVEL} < 501000
 RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/NAME/ s|MogileFS-Utils|MogileFS::Utils|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.post.mk>
