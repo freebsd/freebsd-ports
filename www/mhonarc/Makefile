@@ -7,12 +7,13 @@
 
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.18
+PORTREVISION=	1
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/
 DISTNAME=	MHonArc-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kerndtr@kerndt.com
 COMMENT=	WWW front end for mail archives
 
 USE_BZIP2=	Yes
