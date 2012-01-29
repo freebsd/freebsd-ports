@@ -7,7 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}/
 
@@ -32,10 +32,12 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 		ESOUND		"Enable EsounD daemon support"		off \
 		XFT		"Enable Xft support for fonts"		on \
-		XINERAMA	"Enable Xinerama support"		off \
+		XINERAMA	"Enable Xinerama support"		on \
 		X86_ASM		"Use optimized x86 assembly code"	on \
-		BEASTIE		"Use Beastie'fied startup button"	off \
-		NLS		"Enable National Language Support"	on
+		BEASTIE		"Use Beastie'fied startup button"	on \
+		NLS		"Enable National Language Support"	on \
+		LITE		"Reduced features and memory"		off \
+		MENUFIX		"MenuIconSize fix"			on
 
 # Restrict to stable (even) versions, indicated by the second component.
 #PORTSCOUT=	limitw:1,even
@@ -85,6 +87,14 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls --disable-i18n
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_LITE)
+MAKE_ENV+=	LITE=1
+.endif
+
+.if defined(WITH_MENUFIX)
+EXTRA_PATCHES+=	${FILESDIR}/extra-menu-icon-fix.patch
 .endif
 
 post-extract:
