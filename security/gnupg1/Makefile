@@ -23,6 +23,9 @@ GNU_CONFIGURE=	YES
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
+.if ${CC} == "clang"
+CFLAGS:=	${CFLAGS:S/$/ -std=c89/}
+.endif
 MAN1=		gpg.1 gpgv.1 gpg.ru.1 gpg-zip.1
 MAN7=		gnupg.7
 INFO=		gnupg1
