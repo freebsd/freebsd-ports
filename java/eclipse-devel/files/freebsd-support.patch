@@ -7349,3 +7349,26 @@ $FreeBSD$
  org.eclipse.equinox.log,0.0.0=v20110502
  org.eclipse.equinox.jmx.client,0.0.0=v20100503
  org.eclipse.ui.win32,0.0.0=I20100509-0800
+--- build/eclipse-3.7.0-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	2011-05-27 13:45:22.000000000 -0500
++++ build/eclipse-3.7.0-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	2012-01-23 11:51:27.000000000 -0600
+@@ -25,7 +25,7 @@
+ fi
+ 
+ # Check if we have to compile external.xpt from external.idl
+-COMPONENTS_DIR=`pwd`/../../components
++COMPONENTS_DIR=`pwd`/../../org.eclipse.swt/components
+ if test ! -f ${COMPONENTS_DIR}/external.xpt; then
+ 	if test ! -f ${COMPONENTS_DIR}/external.idl; then
+ 		echo "Can't find ${COMPONENTS_DIR}/external.idl"
+@@ -179,9 +181,10 @@
+ 	elif [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
+ 		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
+ 		XULRUNNER_LIBS=`pkg-config --libs libxul`
++		XULRUNNER_LIBS=`echo ${XULRUNNER_LIBS} -lxpcomglue`
+ 		export XULRUNNER_INCLUDES
+ 		export XULRUNNER_LIBS
+-		MAKE_MOZILLA=make_xulrunner
++		MAKE_MOZILLA=`echo make_xulrunner make_xpcominit`
+ 	else
+ 		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
+ 		echo "    *** Mozilla embedding support will not be compiled."
