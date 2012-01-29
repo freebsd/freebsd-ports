@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	polkit-qt
-PORTVERSION=	0.99.0
+PORTVERSION=	0.103.0
 DISTVERSIONPREFIX=	1-
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 frontend to PolKit-1
+COMMENT=	Qt 4 frontend to PolKit-1
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -28,6 +28,9 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
+# TODO: the next release (post-0.103.0) should have commit 56883bd, which
+#       syncs FindGObject.cmake with kdelibs' and should find GObject without
+#       requiring us to explicitly set LDFLAGS.
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-extract:
