@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	Math-Random-MT-Auto
-PORTVERSION=	6.17
+PORTVERSION=	6.18
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Auto-seeded Mersenne Twister PRNGs
 
 BUILD_DEPENDS=	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Object-InsideOut>=3.85:${PORTSDIR}/devel/p5-Object-InsideOut
+		p5-Object-InsideOut>=3.88:${PORTSDIR}/devel/p5-Object-InsideOut
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
