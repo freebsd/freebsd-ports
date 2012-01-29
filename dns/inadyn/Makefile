@@ -7,7 +7,7 @@
 
 PORTNAME=	inadyn
 PORTVERSION=	1.96.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.inatech.eu/inadyn/ \
 		${MASTER_SITE_LOCAL}
@@ -24,31 +24,32 @@ USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN8=		inadyn.8
 MAN5=		inadyn.conf.5
-MANCOMPRESSED=	no
+.endif
 
 PORTDOCS=	readme.html
 PLIST_FILES=	bin/inadyn
 
-NO_INSTALL_MANPAGES=yes
-
 post-extract:
-	${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$$\(CC\)|g' ${WRKSRC}/makefile
-	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
 		${WRKSRC}/man/inadyn.8 ${WRKSRC}/readme.html \
 		${WRKSRC}/src/dyndns.h
 
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} -p ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
-	 ${INSTALL_SCRIPT} ${WRKSRC}/bin/linux/inadyn ${PREFIX}/bin
-	 ${INSTALL_SCRIPT} ${WRKSRC}/man/inadyn.8 ${MANPREFIX}/man/man8
-	 ${INSTALL_SCRIPT} ${WRKSRC}/man/inadyn.conf.5 ${MANPREFIX}/man/man5
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/linux/inadyn ${PREFIX}/bin
+.if !defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKSRC}/man/inadyn.8 ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/inadyn.conf.5 ${MANPREFIX}/man/man5
+.endif
 
 .include <bsd.port.mk>
