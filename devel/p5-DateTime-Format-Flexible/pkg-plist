@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible/.packlist
 %%SITE_PERL%%/DateTime/Format/Flexible.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang.pm
+%%SITE_PERL%%/DateTime/Format/Flexible/lang/de.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/en.pm
 %%SITE_PERL%%/DateTime/Format/Flexible/lang/es.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Flexible

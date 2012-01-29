@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Flexible
-PORTVERSION=	0.17
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,11 +19,13 @@ RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-MockTime>=0:${PORTSDIR}/devel/p5-Test-MockTime
 
 PERL_CONFIGURE=	yes
 
 MAN3=	DateTime::Format::Flexible.3 \
 	DateTime::Format::Flexible::lang.3 \
+	DateTime::Format::Flexible::lang::de.3 \
 	DateTime::Format::Flexible::lang::en.3 \
 	DateTime::Format::Flexible::lang::es.3
 
