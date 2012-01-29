@@ -230,6 +230,7 @@ R-cran-foreach                  ports/devel/R-cran-foreach
 R-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 R-cran-gmm                      ports/finance/R-cran-gmm
 R-cran-gpclib                   ports/math/R-cran-gpclib
+R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-inline                   ports/math/R-cran-inline
 R-cran-iterators                ports/devel/R-cran-iterators
 R-cran-itertools                ports/devel/R-cran-itertools
@@ -1038,6 +1039,7 @@ bind96                          ports/dns/bind96
 bind97                          ports/dns/bind97
 bind97-sdb                      ports/dns/bind97-sdb
 bind98                          ports/dns/bind98
+bind99                          ports/dns/bind99
 bindgraph                       ports/dns/bindgraph
 bindtest                        ports/net/bindtest
 biniax2                         ports/games/biniax2
@@ -2154,6 +2156,7 @@ darts                           ports/devel/darts
 darwinstreamingserver           ports/net/DarwinStreamingServer
 dash                            ports/shells/dash
 dasher                          ports/accessibility/dasher
+databases_flare                 ports/databases/flare
 datadesigner                    ports/devel/datadesigner
 datadraw                        ports/devel/datadraw
 datapipe                        ports/net/datapipe
@@ -3481,7 +3484,6 @@ flac                            ports/audio/flac
 flac123                         ports/audio/flac123
 flam3                           ports/graphics/flam3
 flamerobin                      ports/databases/flamerobin
-flare                           ports/databases/flare
 flash                           ports/shells/flash
 flasher                         ports/sysutils/flasher
 flashrom                        ports/sysutils/flashrom
@@ -4058,6 +4060,7 @@ gambas                          ports/lang/gambas
 gambit                          ports/math/gambit
 gambit-c                        ports/lang/gambit-c
 games_crimson                   ports/games/crimson
+games_flare                     ports/games/flare
 games_openmsx                   ports/games/openmsx
 gamess                          ports/science/gamess
 gamin                           ports/devel/gamin
@@ -7541,6 +7544,7 @@ ldap2dns                        ports/net/ldap2dns
 ldapbrowser                     ports/net/ldapbrowser
 ldapdiff                        ports/net/ldapdiff
 ldapdns                         ports/dns/ldapdns
+ldapenter                       ports/sysutils/ldapenter
 ldapscripts                     ports/net/ldapscripts
 ldapsdk                         ports/net/ldapsdk
 ldapsh                          ports/net/ldapsh
@@ -10016,6 +10020,7 @@ nl-aspell                       ports/textproc/nl-aspell
 nl-hyphen                       ports/textproc/nl-hyphen
 nl-ispell                       ports/textproc/nl-ispell
 nl-mythes                       ports/textproc/nl-mythes
+nlarn                           ports/games/nlarn
 nload                           ports/net/nload
 nltk                            ports/textproc/nltk
 nmap                            ports/security/nmap
@@ -10218,6 +10223,7 @@ ocaml-sqlite3                   ports/databases/ocaml-sqlite3
 ocaml-ssl                       ports/security/ocaml-ssl
 ocaml-text                      ports/textproc/ocaml-text
 ocaml-typeconv                  ports/devel/ocaml-typeconv
+ocaml-tyxml                     ports/textproc/ocaml-tyxml
 ocaml-ulex                      ports/devel/ocaml-ulex
 ocaml-xstr                      ports/devel/ocaml-xstr
 ocaml-xstrp4                    ports/devel/ocaml-xstrp4
@@ -11663,6 +11669,7 @@ p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
 p5-Dancer-Plugin-Feed           ports/www/p5-Dancer-Plugin-Feed
 p5-Dancer-Plugin-Passphrase     ports/security/p5-Dancer-Plugin-Passphrase
 p5-Dancer-Plugin-Redis          ports/databases/p5-Dancer-Plugin-Redis
+p5-Dancer-Plugin-SiteMap        ports/www/p5-Dancer-Plugin-SiteMap
 p5-Dancer-Plugin-ValidationClass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-Dancer-Session-Memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-Dancer-Template-Xslate       ports/www/p5-Dancer-Template-Xslate
@@ -12226,6 +12233,7 @@ p5-GMail-IMAPD                  ports/mail/p5-GMail-IMAPD
 p5-GPS                          ports/astro/p5-GPS
 p5-GPS-Babel                    ports/astro/p5-GPS-Babel
 p5-GPS-OID                      ports/astro/p5-GPS-OID
+p5-GRNOC-TL1                    ports/net-mgmt/p5-GRNOC-TL1
 p5-GSSAPI                       ports/security/p5-GSSAPI
 p5-GStreamer                    ports/multimedia/p5-GStreamer
 p5-Games-Alak                   ports/games/p5-Games-Alak
@@ -15981,6 +15989,7 @@ p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
 p5-dancer-plugin-feed           ports/www/p5-Dancer-Plugin-Feed
 p5-dancer-plugin-passphrase     ports/security/p5-Dancer-Plugin-Passphrase
 p5-dancer-plugin-redis          ports/databases/p5-Dancer-Plugin-Redis
+p5-dancer-plugin-sitemap        ports/www/p5-Dancer-Plugin-SiteMap
 p5-dancer-plugin-validationclass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-dancer-template-xslate       ports/www/p5-Dancer-Template-Xslate
@@ -16769,6 +16778,7 @@ p5-graphviz-dbi                 ports/databases/p5-GraphViz-DBI
 p5-graphviz-traverse            ports/graphics/p5-GraphViz-Traverse
 p5-graphviz2                    ports/graphics/p5-GraphViz2
 p5-gravatar-url                 ports/devel/p5-Gravatar-URL
+p5-grnoc-tl1                    ports/net-mgmt/p5-GRNOC-TL1
 p5-growl-gntp                   ports/net/p5-Growl-GNTP
 p5-gssapi                       ports/security/p5-GSSAPI
 p5-gstreamer                    ports/multimedia/p5-GStreamer
@@ -20475,6 +20485,7 @@ pecl-bcompiler                  ports/devel/pecl-bcompiler
 pecl-big_int                    ports/math/pecl-big_int
 pecl-bitset                     ports/math/pecl-bitset
 pecl-bz2                        ports/archivers/pecl-bz2
+pecl-chdb                       ports/databases/pecl-chdb
 pecl-crack                      ports/security/pecl-crack
 pecl-ctemplate                  ports/textproc/pecl-ctemplate
 pecl-cvsclient                  ports/net/pecl-cvsclient
@@ -23324,6 +23335,7 @@ r-cran-foreach                  ports/devel/R-cran-foreach
 r-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 r-cran-gmm                      ports/finance/R-cran-gmm
 r-cran-gpclib                   ports/math/R-cran-gpclib
+r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
@@ -26136,6 +26148,7 @@ trac-ohlohwidgetsmacro          ports/www/trac-OhlohWidgetsMacro
 trac-pagelist                   ports/www/trac-pagelist
 trac-pagetopdf                  ports/www/trac-pagetopdf
 trac-pendingticket              ports/www/trac-pendingticket
+trac-permredirect               ports/www/trac-permredirect
 trac-privatetickets             ports/www/trac-privatetickets
 trac-pydotorgtheme              ports/www/trac-pydotorgtheme
 trac-remind                     ports/www/trac-remind
