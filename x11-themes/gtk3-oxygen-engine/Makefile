@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	oxygen
-PORTVERSION=	1.2.0
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}-gtk2/${PORTVERSION}/src/
-PKGNAMEPREFIX=	gtk-
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}-gtk3/${PORTVERSION}/src/
+PKGNAMEPREFIX=	gtk3-
 PKGNAMESUFFIX=	-engine
-DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
+DISTNAME=	${PORTNAME}-gtk3-${PORTVERSION}
 
 MAINTAINER=	rakuco@FreeBSD.org
-COMMENT=	Oxygen-Gtk engine and theme
+COMMENT=	Oxygen GTK+ 3 engine and theme
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 pkgconfig
+USE_GNOME=	gtk30 pkgconfig
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
