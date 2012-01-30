@@ -6,10 +6,9 @@
 #
 
 PORTNAME=		sudosh2
-PORTVERSION=		1.0.2
-PORTREVISION=		1
+PORTVERSION=		1.0.4
 CATEGORIES=		security
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
+MASTER_SITES=		SF/${PORTNAME}
 EXTRACT_SUFX=		.tbz2
 
 MAINTAINER=		cy@FreeBSD.org
@@ -29,7 +28,7 @@ CONFIGURE_ARGS+=	--with-logdir="${SUDOSH_LOGDIR}"
 .else
 CONFIGURE_ARGS+=	--with-logdir=/var/log/sudosh
 .endif
-LDFLAGS+=		-lutil
+CFLAGS+=		-lutil
 
 MAN1=			sudosh.1
 MAN5=			sudosh.conf.5
