@@ -21,6 +21,8 @@ RUN_DEPENDS=	\
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Sub-Uplevel>=0:${PORTSDIR}/devel/p5-Sub-Uplevel
 
 PERL_CONFIGURE=	yes
 
