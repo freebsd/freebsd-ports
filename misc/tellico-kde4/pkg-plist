@@ -127,6 +127,17 @@ share/config.kcfg/tellico_config.kcfg
 share/config/tellico-script.knsrc
 share/config/tellico-template.knsrc
 share/config/tellicorc
+share/doc/HTML/de/tellico/advanced.docbook
+share/doc/HTML/de/tellico/common
+share/doc/HTML/de/tellico/configuration.docbook
+share/doc/HTML/de/tellico/details.docbook
+share/doc/HTML/de/tellico/faqs.docbook
+share/doc/HTML/de/tellico/fundamentals.docbook
+share/doc/HTML/de/tellico/hacking.docbook
+share/doc/HTML/de/tellico/importing-exporting.docbook
+share/doc/HTML/de/tellico/index.cache.bz2
+share/doc/HTML/de/tellico/index.docbook
+share/doc/HTML/de/tellico/menus.docbook
 share/doc/HTML/en/tellico/advanced.docbook
 share/doc/HTML/en/tellico/amazon-options.png
 share/doc/HTML/en/tellico/common
@@ -244,16 +255,43 @@ share/doc/HTML/sv/tellico/index.cache.bz2
 share/doc/HTML/sv/tellico/index.docbook
 share/doc/HTML/sv/tellico/menus.docbook
 share/doc/HTML/uk/tellico/advanced.docbook
+share/doc/HTML/uk/tellico/amazon-options.png
 share/doc/HTML/uk/tellico/common
 share/doc/HTML/uk/tellico/configuration.docbook
+share/doc/HTML/uk/tellico/csv-dialog.png
 share/doc/HTML/uk/tellico/details.docbook
+share/doc/HTML/uk/tellico/entry-editor1.png
+share/doc/HTML/uk/tellico/entry-editor3.png
+share/doc/HTML/uk/tellico/entry-editor4.png
+share/doc/HTML/uk/tellico/entry-editor5.png
+share/doc/HTML/uk/tellico/export-csv.png
+share/doc/HTML/uk/tellico/export-html.png
+share/doc/HTML/uk/tellico/export-options.png
+share/doc/HTML/uk/tellico/export-pdb.png
+share/doc/HTML/uk/tellico/externalexec-options.png
 share/doc/HTML/uk/tellico/faqs.docbook
+share/doc/HTML/uk/tellico/fetch-dialog.png
+share/doc/HTML/uk/tellico/fields-dialog.png
+share/doc/HTML/uk/tellico/filter-dialog.png
+share/doc/HTML/uk/tellico/filter-view.png
 share/doc/HTML/uk/tellico/fundamentals.docbook
+share/doc/HTML/uk/tellico/general-options.png
 share/doc/HTML/uk/tellico/hacking.docbook
+share/doc/HTML/uk/tellico/imdb-options.png
 share/doc/HTML/uk/tellico/importing-exporting.docbook
 share/doc/HTML/uk/tellico/index.cache.bz2
 share/doc/HTML/uk/tellico/index.docbook
+share/doc/HTML/uk/tellico/loan-dialog.png
+share/doc/HTML/uk/tellico/loan-view.png
+share/doc/HTML/uk/tellico/main-window.png
 share/doc/HTML/uk/tellico/menus.docbook
+share/doc/HTML/uk/tellico/multiple-sources-options.png
+share/doc/HTML/uk/tellico/print-options.png
+share/doc/HTML/uk/tellico/report-dialog.png
+share/doc/HTML/uk/tellico/source-options.png
+share/doc/HTML/uk/tellico/sru-options.png
+share/doc/HTML/uk/tellico/template-options.png
+share/doc/HTML/uk/tellico/z3950-options.png
 share/icons/hicolor/128x128/apps/tellico.png
 share/icons/hicolor/128x128/mimetypes/application-x-tellico.png
 share/icons/hicolor/16x16/apps/tellico.png
@@ -320,6 +358,7 @@ share/mimelnk/application/x-tellico.desktop
 @dirrm share/doc/HTML/et/tellico
 @dirrm share/doc/HTML/es/tellico
 @dirrm share/doc/HTML/en/tellico
+@dirrm share/doc/HTML/de/tellico
 @dirrm share/apps/tellico/report-templates
 @dirrm share/apps/tellico/pics
 @dirrm share/apps/tellico/entry-templates
