@@ -21,6 +21,7 @@
     SUBDIR += arts++
     SUBDIR += aspathtree
     SUBDIR += bandwidthd
+    SUBDIR += better-cacti-templates
     SUBDIR += bgpq
     SUBDIR += bgpq3
     SUBDIR += bigsister
