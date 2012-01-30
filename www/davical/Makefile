@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	davical
-PORTVERSION=	0.9.9.7
+PORTVERSION=	1.0.1
 CATEGORIES?=	www
 MASTER_SITES=	http://debian.mcmillan.net.nz/packages/davical/ \
 		SF/rscds/${PORTNAME}/${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
-		php-libawl>=0.49:${PORTSDIR}/devel/php-libawl
+		php-libawl>=0.50:${PORTSDIR}/devel/php-libawl
 
 NO_BUILD=	yes
 USE_PGSQL=	yes
@@ -28,18 +28,19 @@ USE_PHP=	gettext iconv pcre pdo pdo_pgsql pgsql xml
 SUB_FILES=	pkg-message httpd-davical.conf
 
 do-install:
-	${MKDIR} ${WWWDIR} ${WWWDIR}/htdocs ${WWWDIR}/inc ${WWWDIR}/config
+.for dirs in htdocs inc config
+	${MKDIR} ${WWWDIR}/${dirs}
+.endfor
 	cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} . ${WWWDIR}/htdocs
 	cd ${WRKSRC}/inc && ${COPYTREE_SHARE} . ${WWWDIR}/inc "! -name *.in"
 	${CP} -pv ${WRKSRC}/config/example-config.php ${WWWDIR}/config/
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${DOCSDIR}/config ${DOCSDIR}/docs ${DOCSDIR}/scripts ${DOCSDIR}/dba
-	cd ${WRKSRC}/config && ${COPYTREE_SHARE} . ${DOCSDIR}/config
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}/docs
-	cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${DOCSDIR}/scripts
-	cd ${WRKSRC}/dba && ${COPYTREE_SHARE} . ${DOCSDIR}/dba
+.for docdirs in config docs scripts dba
+	${MKDIR} ${DOCSDIR}/${docdirs}
+	cd ${WRKSRC}/${docdirs} && ${COPYTREE_SHARE} . ${DOCSDIR}/${docdirs}
+.endfor
 	${CP} -pv ${WRKDIR}/httpd-davical.conf ${DOCSDIR}
 	${CP} -pv ${WRKSRC}/README ${DOCSDIR}
 	${CP} -pv ${WRKSRC}/INSTALL ${DOCSDIR}

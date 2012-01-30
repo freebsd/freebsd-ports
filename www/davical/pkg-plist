@@ -51,6 +51,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/CalendarInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RRule.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRule.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRuleDateRange.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRuleDateTime.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RepeatRuleTimeZone.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/Rfc5545Duration.html
@@ -104,6 +105,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---well-known.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---AtomFeed.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---WritableCollection.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---autodiscover-handler.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-LOCK.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-calquery.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-cardquery.php.html
@@ -123,9 +125,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE-v2.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---collection-edit.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---external-browse.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-browse.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-edit.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---vcard.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---well-known.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/authentication/_inc---auth-functions.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---caldav.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---public.php.html
@@ -147,6 +151,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT-pps-set.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT-sync-collection.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---schedule-functions.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/external-bind/_inc---external-fetch.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule/_inc---iSchedule.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/iSchedule/iSchedule.html
@@ -368,6 +373,7 @@
 %%WWWDIR%%/inc/page-footer.php
 %%WWWDIR%%/inc/page-header.php
 %%WWWDIR%%/inc/pubsub.php
+%%WWWDIR%%/inc/schedule-functions.php
 %%WWWDIR%%/inc/test-RRULE.php
 %%WWWDIR%%/inc/tz/capabilities.php
 %%WWWDIR%%/inc/tz/expand.php
