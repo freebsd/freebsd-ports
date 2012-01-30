@@ -259,6 +259,9 @@ lib/scons-%%SCONS_VER%%/SCons/Tool/dvipdf.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/dvips.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/dvips.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/dvips.pyo
+lib/scons-%%SCONS_VER%%/SCons/Tool/f03.py
+lib/scons-%%SCONS_VER%%/SCons/Tool/f03.pyc
+lib/scons-%%SCONS_VER%%/SCons/Tool/f03.pyo
 lib/scons-%%SCONS_VER%%/SCons/Tool/f77.py
 lib/scons-%%SCONS_VER%%/SCons/Tool/f77.pyc
 lib/scons-%%SCONS_VER%%/SCons/Tool/f77.pyo
@@ -556,6 +559,7 @@ lib/scons-%%SCONS_VER%%/SCons/dblite.pyo
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.py
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyc
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyo
+lib/scons-%%SCONS_VER%%/%%PYDISTUTILS_EGGINFO%%
 @dirrm lib/scons-%%SCONS_VER%%/SCons/compat
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Variables
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool/packaging
