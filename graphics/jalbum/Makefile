@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jalbum
-PORTVERSION=	10.1.2
+PORTVERSION=	10.3.1
 CATEGORIES=	graphics java
 MASTER_SITES=	http://jalbum.net/download/
 DISTNAME=	jAlbum${PORTVERSION}
