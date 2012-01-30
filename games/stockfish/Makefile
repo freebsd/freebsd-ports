@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	stockfish
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://dl.dropbox.com/u/2116588/sf-archive/:src \
 		http://www.execve.net/sf/:src \
 		http://f.cl.ly/items/1y0Q3P2n0I2S0g0Y100E/:book \
 		http://www.execve.net/sf/:book
-DISTNAME=	stockfish-221-ja
-DISTFILES=	stockfish-221-ja.zip:src \
+DISTNAME=	stockfish-${PORTVERSION:S/.//g}-ja
+DISTFILES=	stockfish-${PORTVERSION:S/.//g}-ja.zip:src \
 		sf-211-book.zip:book
 
 MAINTAINER=	execve@gmail.com
