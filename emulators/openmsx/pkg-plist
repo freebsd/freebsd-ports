@@ -18,6 +18,8 @@ bin/openmsx
 %%DATADIR%%/extensions/Konami_EC-702/roms/SHA1SUMS
 %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge/hardwareconfig.xml
 %%DATADIR%%/extensions/Konami_Snatcher_Sound_Cartridge/hardwareconfig.xml
+%%DATADIR%%/extensions/Lascom_Kanji/hardwareconfig.xml
+%%DATADIR%%/extensions/Lascom_Kanji/roms/lascom_kanji.rom.gz
 %%DATADIR%%/extensions/MegaRAM_Disk/hardwareconfig.xml
 %%DATADIR%%/extensions/MegaRAM_Disk/roms/SHA1SUMS
 %%DATADIR%%/extensions/Mega_Flash_ROM_SCC/hardwareconfig.xml
@@ -40,6 +42,8 @@ bin/openmsx
 %%DATADIR%%/extensions/Sony_HBD-50/roms/SHA1SUMS
 %%DATADIR%%/extensions/Sony_HBD-F1/hardwareconfig.xml
 %%DATADIR%%/extensions/Sony_HBD-F1/roms/SHA1SUMS
+%%DATADIR%%/extensions/Sony_HBI-232/hardwareconfig.xml
+%%DATADIR%%/extensions/Sony_HBI-232/roms/SHA1SUMS
 %%DATADIR%%/extensions/Sony_HBI-55/hardwareconfig.xml
 %%DATADIR%%/extensions/Sony_HBK-30/hardwareconfig.xml
 %%DATADIR%%/extensions/Sony_HBK-30/roms/SHA1SUMS
@@ -86,7 +90,6 @@ bin/openmsx
 %%DATADIR%%/machines/Al_Alamiah_AX170/roms/SHA1SUMS
 %%DATADIR%%/machines/Boosted_MSX2_EN/README
 %%DATADIR%%/machines/Boosted_MSX2_EN/hardwareconfig.xml
-%%DATADIR%%/machines/Boosted_MSX2_EN/roms/README
 %%DATADIR%%/machines/C-BIOS_MSX1/hardwareconfig.xml
 %%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_logo_msx1.rom
 %%DATADIR%%/machines/C-BIOS_MSX1/roms/cbios_main_msx1.rom
@@ -226,6 +229,8 @@ bin/openmsx
 %%DATADIR%%/machines/Pioneer_PX-7UK/roms/SHA1SUMS
 %%DATADIR%%/machines/Pioneer_PX-V60/hardwareconfig.xml
 %%DATADIR%%/machines/Pioneer_PX-V60/roms/SHA1SUMS
+%%DATADIR%%/machines/Boosted_MSX2+_JP/README
+%%DATADIR%%/machines/Boosted_MSX2+_JP/hardwareconfig.xml
 %%DATADIR%%/machines/Sanyo_MPC-100/hardwareconfig.xml
 %%DATADIR%%/machines/Sanyo_MPC-100/roms/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_MPC-25FD/hardwareconfig.xml
@@ -281,6 +286,10 @@ bin/openmsx
 %%DATADIR%%/machines/Sony_HB-F9P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F9P_Russian/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-F9P_Russian/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F9S/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F9S/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-G900P/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-G900P/roms/SHA1SUMS
 %%DATADIR%%/machines/Spectravideo_SVI-728/hardwareconfig.xml
 %%DATADIR%%/machines/Spectravideo_SVI-728/roms/SHA1SUMS
 %%DATADIR%%/machines/Spectravideo_SVI-738/hardwareconfig.xml
@@ -531,6 +540,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/ESE_WAVE-SCSI
 @dirrm %%DATADIR%%/extensions/Gouda_SCSI/roms
 @dirrm %%DATADIR%%/extensions/Gouda_SCSI
+@dirrm %%DATADIR%%/extensions/Lascom_Kanji/roms
+@dirrm %%DATADIR%%/extensions/Lascom_Kanji
 @dirrm %%DATADIR%%/extensions/Konami_EC-702/roms
 @dirrm %%DATADIR%%/extensions/Konami_EC-702
 @dirrm %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge
@@ -557,6 +568,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/Sony_HBD-50
 @dirrm %%DATADIR%%/extensions/Sony_HBD-F1/roms
 @dirrm %%DATADIR%%/extensions/Sony_HBD-F1
+@dirrm %%DATADIR%%/extensions/Sony_HBI-232/roms
+@dirrm %%DATADIR%%/extensions/Sony_HBI-232
 @dirrm %%DATADIR%%/extensions/Sony_HBI-55
 @dirrm %%DATADIR%%/extensions/Sony_HBK-30/roms
 @dirrm %%DATADIR%%/extensions/Sony_HBK-30
@@ -596,8 +609,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/machines/Al_Alamiah_AX170/roms
 @dirrm %%DATADIR%%/machines/Al_Alamiah_AX170
-@dirrm %%DATADIR%%/machines/Boosted_MSX2_EN/roms
 @dirrm %%DATADIR%%/machines/Boosted_MSX2_EN
+@dirrm %%DATADIR%%/machines/Boosted_MSX2+_JP
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1_BR/roms
@@ -775,6 +788,10 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Sony_HB-F9P
 @dirrm %%DATADIR%%/machines/Sony_HB-F9P_Russian/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-F9P_Russian
+@dirrm %%DATADIR%%/machines/Sony_HB-F9S/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F9S
+@dirrm %%DATADIR%%/machines/Sony_HB-G900P/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-G900P
 @dirrm %%DATADIR%%/machines/Spectravideo_SVI-728/roms
 @dirrm %%DATADIR%%/machines/Spectravideo_SVI-728
 @dirrm %%DATADIR%%/machines/Spectravideo_SVI-738/roms
