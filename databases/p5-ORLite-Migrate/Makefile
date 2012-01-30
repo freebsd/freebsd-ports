@@ -7,6 +7,7 @@
 
 PORTNAME=	ORLite-Migrate
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
@@ -21,7 +22,8 @@ BUILD_DEPENDS=	p5-File-pushd>=1.00:${PORTSDIR}/devel/p5-File-pushd \
 		p5-Probe-Perl>=0.01:${PORTSDIR}/sysutils/p5-Probe-Perl \
 		p5-DBI>=1.58:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-SQLite>=1.21:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-Params-Util>0.37:${PORTSDIR}/devel/p5-Params-Util
+		p5-Params-Util>0.37:${PORTSDIR}/devel/p5-Params-Util \
+		p5-File-Which>=0.05:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
