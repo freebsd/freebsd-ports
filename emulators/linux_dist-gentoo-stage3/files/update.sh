@@ -5,9 +5,9 @@
 #
 cd ${GENTOODIR}
 wget -q ftp://ftp.dei.uc.pt/pub/linux/gentoo/releases/x86/autobuilds/current-stage3-i486/ >/dev/null
-NEWVER=$(grep -o '\".*current-stage3.*"' index.html | grep 'stage3-i486-.*bz2"' | sed -e "s|.*/||g" | grep -o "2011[0-9]*")
+NEWVER=$(grep -o '\".*current-stage3.*"' index.html | grep 'stage3-i486-.*bz2"' | sed -e "s|.*/||g" | grep -o "2012[0-9]*")
 OLDVER=$(make -V PORTVERSION)
-rm index.html
+#rm index.html
 
 if [ ${NEWVER} -gt ${OLDVER} ]; then
 	sed -i '' "s|${OLDVER}|${NEWVER}|g" Makefile
