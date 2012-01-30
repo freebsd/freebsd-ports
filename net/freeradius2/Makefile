@@ -25,11 +25,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
-USE_GMAKE=	yes
-
-USE_BZIP2=	yes
-
 LOGDIR?=	/var/log
+KRB5_CONFIG?=	/usr/bin/krb5-config --libs
 
 CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 		freeradius-mysql-[0-9].* freeradius-[013-9].*
@@ -37,6 +34,7 @@ CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl libtool autoconf
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
@@ -47,6 +45,8 @@ PLIST_SUB=	PORTVERSION=${DISTVERSION}
 OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		KERBEROS	"With Kerberos support" off \
 		HEIMDAL		"With Heimdal Kerberos support" off \
+		HEIMDAL_PORT	"Use Heimdal Kerberos from ports" off \
+		HEIMDAL_PATCH	"Enhanced Heimdal support (specify SPN/keytab)" off \
 		LDAP		"With LDAP database support" off \
 		MYSQL		"With MySQL database support" off \
 		PGSQL		"With PostgreSQL database support" off \
@@ -86,18 +86,31 @@ WITH_KERBEROS=	yes
 
 .ifdef(WITH_KERBEROS)
 .ifdef(WITH_HEIMDAL)
+.ifdef(WITH_HEIMDAL_PORT)
 LIB_DEPENDS+=	krb5.26:${PORTSDIR}/security/heimdal
+.endif
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 .endif
 CONFIGURE_ARGS+=--with-rlm_krb5
+.if defined (WITH_HEIMDAL) && !defined(WITH_HEIMDAL_PORT)
+CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=/usr/lib
+CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=/usr/include
+CONFIGURE_ENV+=	KRB5LIBS="$$(${KRB5_CONFIG})"
+.else
 CONFIGURE_ARGS+=--with-rlm-krb5-lib-dir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-rlm-krb5-include-dir=${LOCALBASE}/include
+.endif
 PLIST_SUB+=	KRB5=""
 .else
 CONFIGURE_ARGS+=--without-rlm_krb5
 PLIST_SUB+=	KRB5="@comment "
+.endif
+
+# Patch rlm_krb5.c to add Heimdal support for specifying keytab+SPN
+.ifdef(WITH_HEIMDAL_PATCH)
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src__modules__rlm_krb5__rlm_krb5.c
 .endif
 
 .ifdef(WITH_LDAP)
@@ -333,6 +346,12 @@ post-patch:
 	@${FIND} -E ${WRKSRC}/raddb/certs \
 		-regex '.*/(bootstrap|Makefile)\.(orig|bak)$$' \
 		-delete
+# If we're using Heimdal from base, alter the LIBS variable
+.if defined(WITH_HEIMDAL) && !defined(WITH_HEIMDAL_PORT)
+	@${REINPLACE_CMD} -e 's|LIBS|KRB5LIBS|g' ${WRKSRC}/src/modules/rlm_krb5/configure
+	@${REINPLACE_CMD} -e 's|-lkrb5|$$(${KRB5_CONFIG})|g' \
+		${WRKSRC}/src/modules/rlm_krb5/configure
+.endif
 # If DHCPis enabled, enable the DHCP dictionary
 .ifdef(WITH_DHCP)
 	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
