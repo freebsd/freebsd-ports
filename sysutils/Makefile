@@ -694,6 +694,7 @@
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
     SUBDIR += py-drmaa
+    SUBDIR += py-dvdvideo
     SUBDIR += py-filelike
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
