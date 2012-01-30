@@ -73,7 +73,6 @@ BUILD_CMD=	${SETENV} ${MAKE_ENV} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${WRKSRC}/mozcmake" \
 		PYTHONPATH=${WRKSRC}/third_party/gyp/local/lib/python${PYTHON_VER}/site-packages \
-		FLOCK= \
 		${PYTHON_CMD} build_mozc.py
 BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP}
 
