@@ -13780,6 +13780,7 @@ p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-Precompressed  ports/www/p5-Plack-Middleware-Precompressed
 p5-Plack-Middleware-Reproxy     ports/www/p5-Plack-Middleware-Reproxy
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
+p5-Plack-Middleware-ServerStatus-Lite  ports/www/p5-Plack-Middleware-ServerStatus-Lite
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
 p5-Plack-Middleware-SocketIO    ports/www/p5-Plack-Middleware-SocketIO
 p5-Plack-Middleware-Status      ports/www/p5-Plack-Middleware-Status
@@ -18146,6 +18147,7 @@ p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-precompressed  ports/www/p5-Plack-Middleware-Precompressed
 p5-plack-middleware-reproxy     ports/www/p5-Plack-Middleware-Reproxy
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
+p5-plack-middleware-serverstatus-lite  ports/www/p5-Plack-Middleware-ServerStatus-Lite
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
 p5-plack-middleware-socketio    ports/www/p5-Plack-Middleware-SocketIO
 p5-plack-middleware-status      ports/www/p5-Plack-Middleware-Status
@@ -21848,6 +21850,7 @@ py-bittornado-core              ports/net-p2p/py-bittornado-core
 py-bittorrent                   ports/net-p2p/py-bittorrent
 py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
+py-bjoern                       ports/www/py-bjoern
 py-blockdiag                    ports/graphics/py-blockdiag
 py-blockdiagcontrib-cisco       ports/graphics/py-blockdiagcontrib-cisco
 py-blogofile                    ports/www/py-blogofile
@@ -23284,6 +23287,7 @@ queue-fix                       ports/mail/queue-fix
 queue-repair                    ports/mail/queue-repair
 quftp                           ports/ftp/quftp
 quick-lounge-applet             ports/misc/quick-lounge-applet
+quickcheck++                    ports/devel/quickcheck++
 quickie                         ports/www/quickie
 quickml                         ports/mail/quickml
 quicksynergy                    ports/sysutils/quicksynergy
