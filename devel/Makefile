@@ -105,6 +105,7 @@
     SUBDIR += bisoncpp
     SUBDIR += blame
     SUBDIR += bmake
+    SUBDIR += bmkdep
     SUBDIR += bncsutil-ghost++
     SUBDIR += bnf
     SUBDIR += boaconstructor
