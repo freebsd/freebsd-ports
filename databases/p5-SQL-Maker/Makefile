@@ -19,6 +19,9 @@ RUN_DEPENDS=	\
 	p5-Class-Accessor-Lite>=0.05:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 
 PERL_MODBUILD=	yes
 
