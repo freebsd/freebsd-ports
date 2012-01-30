@@ -26,7 +26,8 @@ MAN1=		ccache.1
 PORTDOCS=	ccache-howto-freebsd.txt MANUAL.html
 
 OPTIONS=	CLANGLINK	"Create clang compiler links if clang is installed" off \
-		LLVMLINK	"Create llvm compiler links if llvm is installed" off
+		LLVMLINK	"Create llvm compiler links if llvm is installed" off \
+		STATIC		"Statically build ccache" off
 
 .include <bsd.port.pre.mk>
 
@@ -45,6 +46,10 @@ CCACHE_COMPILERS+=	clang clang++
 
 .if defined(WITH_LLVMLINK)
 CCACHE_COMPILERS+=	llvm-gcc llvm-c++ llvm-g++
+.endif
+
+.if defined(WITH_STATIC)
+LDFLAGS+=		"--static"
 .endif
 
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
