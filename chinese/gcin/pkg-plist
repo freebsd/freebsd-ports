@@ -3,7 +3,7 @@ bin/gcin-exit
 bin/gcin-gb-toggle
 bin/gcin-kbm-toggle
 bin/gcin-message
-bin/gcin-setup
+bin/gcin-tools
 bin/gcin2tab
 bin/gtab-merge
 bin/juyin-learn
@@ -11,16 +11,20 @@ bin/phoa2d
 bin/phod2a
 bin/sim2trad
 bin/trad2sim
+bin/ts-edit
 bin/tsa2d32
 bin/tsd2a32
 bin/tsin2gtab-phrase
 bin/tslearn
 lib/gtk-2.0/immodules/im-gcin.so
-@comment %%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
+%%QT_IM_MODULE%%lib/qt4/plugins/inputmethods/im-gcin.so
+%%ANTHY_MODULE%%lib/gcin/anthy-module.so
+%%CHEWING_MODULE%%lib/gcin/chewing-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
+%%CHEWING_MODULE%%lib/gcin/intcode-module.so
 lib/gcin/libgcin-im-client.so
-lib/gcin/libgcin-im-client.so.1.2.2
+lib/gcin/libgcin-im-client.so.1.2.5
 lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/script/gcin-user-setup
 %%DATADIR%%/script/gtab.append_prepare
@@ -28,8 +32,10 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/script/tsin-gtab-import
 %%DATADIR%%/script/tsin-gtab-edit
 %%DATADIR%%/script/utf8-edit
+%%DATADIR%%/table/NewCJ3.gtab
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/ar30-big.gtab
+%%DATADIR%%/table/ar33.gtab
 %%DATADIR%%/table/cj-punc.gtab
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/cj5.gtab
@@ -41,6 +47,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/et26.kbm
 %%DATADIR%%/table/greek.gtab
 %%DATADIR%%/table/gtab.list
+%%DATADIR%%/table/hangul.gtab
 %%DATADIR%%/table/hsu.kbm
 %%DATADIR%%/table/ibm.kbm
 %%DATADIR%%/table/jyutping.gtab
@@ -52,10 +59,16 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/phrase.table
 %%DATADIR%%/table/pinyin.gtab
 %%DATADIR%%/table/pinyin.kbm
+%%DATADIR%%/table/pinyin-no-tone.kbm
 %%DATADIR%%/table/pin-juyin.xlt
 %%DATADIR%%/table/russian.gtab
+%%DATADIR%%/table/s-pho-huge.tab2
+%%DATADIR%%/table/s-pho.tab2
+%%DATADIR%%/table/s-tsin32
+%%DATADIR%%/table/s-tsin32.idx
 %%DATADIR%%/table/s2t.dat
 %%DATADIR%%/table/simplex.gtab
+%%DATADIR%%/table/simplex-punc.gtab
 %%DATADIR%%/table/symbol-table
 %%DATADIR%%/table/symbols.gtab
 %%DATADIR%%/table/t2s.dat
@@ -65,8 +78,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/zo.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
-share/applications/gcin
-share/applications/gcin-setup
+share/applications/gcin-tools.desktop
 share/icons/gcin/NewCJ3.png
 share/icons/gcin/4corner.png
 share/icons/gcin/amis-gcin.png
@@ -74,6 +86,7 @@ share/icons/gcin/ar30.png
 share/icons/gcin/cj-punc.png
 share/icons/gcin/cj.png
 share/icons/gcin/cj5.png
+share/icons/gcin/chewing.png
 share/icons/gcin/dayi3.png
 share/icons/gcin/en-kana-nippon.png
 share/icons/gcin/en-tsin.png

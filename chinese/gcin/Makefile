@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	chinese textproc gnome
-MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main \
-		LOCAL/chinsan/gcin:main
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
-EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.bz2
+EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 LICENSE=	LGPL21
 
-USE_BZIP2=	YES
+USE_XZ=		YES
 HAS_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--use_gtk3=N
+CONFIGURE_ARGS+=	--use_gtk3=N --use_qt3=N
 USE_GNOME=	gtk20
 USE_GMAKE=	YES
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
 OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
+		CHEWING		"enable Chewing IM module" off \
 		QT_IM_MODULE	"enable QT IM module" off
 
 MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
@@ -39,21 +39,44 @@ MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 USE_QT_VER=	4
 QT_COMPONENTS=	inputmethods qmake_build moc_build corelib gui
 LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
+PLIST_SUB+=	QT_IM_MODULE=""
+.else
+CONFIGURE_ARGS+=	--use_qt4=N
+PLIST_SUB+=	QT_IM_MODULE="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 .if defined(WITH_ANTHY)
 BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
-RUN_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
+PLIST_SUB+=	ANTHY_MODULE=""
+.else
+CONFIGURE_ARGS+=	--use_anthy=N
+PLIST_SUB+=	ANTHY_MODULE="@comment "
+.endif
+
+.if defined(WITH_CHEWING)
+BUILD_DEPENDS+=	${LOCALBASE}/include/chewing/chewing.h:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS+=	chewing.3:${PORTSDIR}/chinese/libchewing
+PLIST_SUB+=	CHEWING_MODULE=""
+.else
+CONFIGURE_ARGS+=	--use_chewing=N
+PLIST_SUB+=	CHEWING_MODULE="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,&,,; 1 s,bash,sh,; \
+	@${REINPLACE_CMD} -e 's,&,,; 1 s,##!/bin/bash,#!/bin/sh,; \
 		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,g; \
 		s,QT4_IM_DIR=/usr,QT4_IM_DIR=$$prefix,g; \
+		s,-ldl,,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; \
+		s,/usr/lib64/qt4/bin/moc,${LOCALBASE}/bin/moc-qt4,; \
 		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
 		/GCIN_DEBUG/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
@@ -78,14 +101,9 @@ post-patch:
 		${WRKSRC}/qt-im/Makefile ${WRKSRC}/scripts/modify-XIM \
 		${WRKSRC}/scripts/utf8-edit
 	@${REINPLACE_CMD} -e '/make/ d' ${WRKSRC}/IMdkit/lib/Makefile
+	@${REINPLACE_CMD} -e 's,/usr/X11R6/lib,${LOCALBASE}/lib,' ${WRKSRC}/im-client/Makefile
 .ifdef NOPORTDOCS
 	@${REINPLACE_CMD} '/install.*DOC_DIR/d' ${WRKSRC}/Makefile
-.endif
-
-.if defined(WITH_QT_IM_MODULE)
-PLIST_SUB+=	QT_IM_MODULE=""
-.else
-PLIST_SUB+=	QT_IM_MODULE="@comment "
 .endif
 
 post-build:
@@ -101,8 +119,8 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in Changelog.html README.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in Changelog.html README.html
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 	@gtk-query-immodules-2.0 > ${PREFIX}/etc/gtk-2.0/gtk.immodules
