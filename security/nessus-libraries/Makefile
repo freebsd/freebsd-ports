@@ -36,10 +36,10 @@ USE_LDCONFIG=	YES
 
 MAN1=		nessus-config.1
 
-.if ! defined(NESSUS_CLIENT_ONLY)
+.if ! defined(NESSUS_CLIENT_ONLY) && ! defined(PACKAGE_BUILDING)
 MANUAL_PACKAGE_BUILD=	needs /dev/bpf which is not available in pointyhat jail
 pre-configure:
-	@if [ ! -c /dev/bpf1 ]; then \
+	@if [ ! -c /dev/bpf ]; then \
 	    ${ECHO} "********************************************************";\
 	    ${ECHO} "*                   W a r n i n g                      *";\
 	    ${ECHO} "*                                                      *";\
@@ -47,25 +47,10 @@ pre-configure:
 	    ${ECHO} "* To use nessus, your kernel must be rebuilt with bpf, *";\
 	    ${ECHO} "* and make bpf devices on /dev directory.              *";\
 	    ${ECHO} "*                                                      *";\
-	    ${ECHO} "* Be sure to build as many bpf devices as you need.    *";\
 	    ${ECHO} "* For more info on this read files/README.BPF          *";\
 	    ${ECHO} "********************************************************";\
 	    ${FALSE}; \
 	fi
-.if ! defined(WITH_NESSUS_BPF_SHARE)
-	@if [ ! -c /dev/bpf40 ]; then \
-	    ${ECHO} "********************************************************";\
-	    ${ECHO} "*                   W a r n i n g                      *";\
-	    ${ECHO} "*                                                      *";\
-	    ${ECHO} "* Nessus needs many bpf devices. If you can't rebuild  *";\
-	    ${ECHO} "* your kernel with more than 40 bpf devices (as        *";\
-	    ${ECHO} "* described in files/README.BPF) then build this port  *";\
-	    ${ECHO} "* with \"make -DWITH_NESSUS_BPF_SHARE\"                  *";\
-	    ${ECHO} "*                                                      *";\
-	    ${ECHO} "********************************************************";\
-	    ${FALSE}; \
-	fi
-.endif
 .endif
 
 .include <bsd.port.mk>

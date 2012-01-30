@@ -1,0 +1,21 @@
+--- nasl/Makefile.orig	2005-02-10 17:03:51.000000000 +0100
++++ nasl/Makefile	2012-01-29 10:29:13.000000000 +0100
+@@ -88,7 +88,8 @@
+ 	nasl_server.c \
+ 	nasl_debug.c
+ 
+-COMPILE = $(LIBTOOL) $(CC) $(CFLAGS) $(NESSUS_INCLUDE)
++COMPILE = $(LIBTOOL) --mode compile $(CC) $(CFLAGS) $(NESSUS_INCLUDE)
++LINK = $(LIBTOOL) --mode link $(CC) $(CFLAGS) $(NESSUS_INCLUDE)
+ all : cflags libnasl.la nasl
+ 
+ .c.o:
+@@ -101,7 +102,7 @@
+ 	$(CC) $(CFLAGS)  $(NESSUS_INCLUDE) $(include) -o nasl -DVERSION=\"$(VERSION)\" nasl.c $(OBJS) $(NESSUS_LIBS) 
+ 
+ libnasl.la : cflags $(OBJS)
+-	$(COMPILE) $(NESSUS_LIBS) -o libnasl.la $(LO_OBJS) -rpath ${libdir} \
++	$(LINK) $(NESSUS_LIBS) -o libnasl.la $(LO_OBJS) -rpath ${libdir} \
+ 	-version-info ${PACKAGE_VERSION}
+ 
+ install : libnasl.la nasl
