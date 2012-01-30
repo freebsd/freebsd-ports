@@ -19,10 +19,10 @@ USE_BZIP2=	yes
 
 PERIODICDIR?=	${PREFIX}/etc/periodic
 REPORTDIR?=	${PREFIX}/jailaudit/reports
-TMPDIR?=	${PREFIX}/jailaudit/tmp
+XTMPDIR?=	${PREFIX}/jailaudit/tmp
 
 PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}" \
 		REPORTDIR="${REPORTDIR:S,^${PREFIX}/,,}" \
-		TMPDIR="${TMPDIR:S,^${PREFIX}/,,}"
+		XTMPDIR="${XTMPDIR:S,^${PREFIX}/,,}"
 
 .include <bsd.port.mk>
