@@ -7,6 +7,7 @@
 
 PORTNAME=	madfufw
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/usb-midi-fw/madfu-firmware/1.2/
 DISTNAME=	madfuload-1.2
