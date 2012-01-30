@@ -1,18 +1,15 @@
-bin/oxygen-gtk-deco
-bin/oxygen-gtk-demo
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/liboxygen-gtk.so
-share/themes/oxygen-gtk/gtk-2.0/argb-apps.conf
-share/themes/oxygen-gtk/gtk-2.0/gtkrc
-share/themes/oxygen-gtk/gtk-2.0/icons4
-share/themes/oxygen-gtk/gtk-2.0/kdeglobals
-share/themes/oxygen-gtk/gtk-2.0/oxygenrc
-share/themes/oxygen-gtk/gtk-2.0/special-icons/standardbutton-closetab-16.png
-share/themes/oxygen-gtk/gtk-2.0/special-icons/standardbutton-closetab-down-16.png
-share/themes/oxygen-gtk/gtk-2.0/special-icons/standardbutton-closetab-hover-16.png
-@dirrm share/themes/oxygen-gtk/gtk-2.0/special-icons
-@dirrm share/themes/oxygen-gtk/gtk-2.0
-@dirrm share/themes/oxygen-gtk
+bin/oxygen-gtk3-demo
+lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines/liboxygen-gtk.so
+share/themes/oxygen-gtk/gtk-3.0/argb-apps.conf
+share/themes/oxygen-gtk/gtk-3.0/gtk.css
+share/themes/oxygen-gtk/gtk-3.0/icons4
+share/themes/oxygen-gtk/gtk-3.0/kdeglobals
+share/themes/oxygen-gtk/gtk-3.0/oxygenrc
+share/themes/oxygen-gtk/gtk-3.0/special-icons/standardbutton-closetab-16.png
+share/themes/oxygen-gtk/gtk-3.0/special-icons/standardbutton-closetab-down-16.png
+share/themes/oxygen-gtk/gtk-3.0/special-icons/standardbutton-closetab-hover-16.png
+@dirrm share/themes/oxygen-gtk/gtk-3.0/special-icons
+@dirrm share/themes/oxygen-gtk/gtk-3.0
+@dirrmtry share/themes/oxygen-gtk
 @dirrmtry share/themes
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
-@dirrmtry lib/gtk-2.0
+@dirrmtry lib/gtk-3.0/%%GTK3_VERSION%%/theming-engines
