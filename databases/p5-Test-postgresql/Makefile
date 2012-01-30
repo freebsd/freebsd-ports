@@ -19,6 +19,7 @@ RUN_DEPENDS=	\
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 	p5-DBD-Pg>0:${PORTSDIR}/databases/p5-DBD-Pg
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-SharedFork>=0.06:${PORTSDIR}/devel/p5-Test-SharedFork
 
 PERL_CONFIGURE=	yes
 
