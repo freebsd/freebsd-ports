@@ -1,13 +1,12 @@
-Sudosh2 is a tool which can provide systems administrators with extensive
+Sudosh3 is a tool which can provide systems administrators with extensive
 auditing of user shell usage.
 
-There are two distinct modes of operation for sudosh2: as a filter for sudo,
+There are two distinct modes of operation for sudosh3: as a filter for sudo,
 and directly as a login shell. In either case, you will be able to audit
 user sessions by replaying them to your screen, much like a VCR.
 
-Sudosh2 is a fork of sudosh (by Douglas Hanks). He stopped updating sudosh
+Sudosh3 is a fork of sudosh (by Douglas Hanks). He stopped updating sudosh
 in 2005, and this fork was created in 2007. Sudosh2 is licensed with the
 Open Source License v2.0.
 
-http://sourceforge.net/projects/sudosh2/
-http://www.shortcutsolutions.net/software/40-software-development/55-introduction-to-sudosh2.html
+http://sourceforge.net/projects/sudosh3/
