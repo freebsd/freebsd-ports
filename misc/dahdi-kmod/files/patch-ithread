@@ -1,0 +1,26 @@
+Index: freebsd/drivers/dahdi/wct4xxp/base.c
+===================================================================
+--- freebsd/drivers/dahdi/wct4xxp/base.c	(revision 10453)
++++ freebsd/drivers/dahdi/wct4xxp/base.c	(working copy)
+@@ -4132,7 +4132,7 @@
+ #endif
+ 	if (unlikely(test_bit(T4_CHANGE_LATENCY, &wc->checkflag) || test_bit(T4_CHECK_VPM, &wc->checkflag))) {
+ #if defined(__FreeBSD__)
+-		res |= FILTER_SCHEDULE_THREAD;
++		res = FILTER_SCHEDULE_THREAD;
+ #else
+ 		tasklet_schedule(&wc->t4_tlet);
+ #endif
+Index: freebsd/drivers/dahdi/wctc4xxp/base.c
+===================================================================
+--- freebsd/drivers/dahdi/wctc4xxp/base.c	(revision 10453)
++++ freebsd/drivers/dahdi/wctc4xxp/base.c	(working copy)
+@@ -2931,7 +2931,7 @@
+ #if DEFERRED_PROCESSING == WORKQUEUE
+ 		schedule_work(&wc->deferred_work);
+ #elif DEFERRED_PROCESSING == ITHREAD
+-		res |= FILTER_SCHEDULE_THREAD;
++		res = FILTER_SCHEDULE_THREAD;
+ #elif DEFERRED_PROCESSING == INTERRUPT
+ #error "You will need to change the locks if you want to run the processing " \
+ 		"in the interrupt handler."
