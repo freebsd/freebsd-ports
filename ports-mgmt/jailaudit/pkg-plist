@@ -5,7 +5,7 @@ etc/jailaudit.conf.sample
 @dirrmtry %%PERIODICDIR%%
 @exec mkdir -p %D/%%REPORTDIR%%
 @dirrmtry %%REPORTDIR%%
-@exec mkdir -p %D/%%TMPDIR%%
-@dirrmtry %%TMPDIR%%
+@exec mkdir -p %D/%%XTMPDIR%%
+@dirrmtry %%XTMPDIR%%
 @unexec rmdir %DPDIR%% 2>/dev/null || true
 @dirrmtry jailaudit
