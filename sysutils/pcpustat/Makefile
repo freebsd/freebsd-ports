@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcpustat
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://chipstips.com/download/
 
