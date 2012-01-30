@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.616
-PORTREVISION=	1
+PORTVERSION=	1.617
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +17,7 @@ COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
-.if defined(WITH_PROXY)
-BUILD_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
-RUN_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
-.endif
+OPTIONS=	PROXY "Build DBI::Proxy" off
 
 CONFLICTS=	p5-DBI-1.3*
 
@@ -78,11 +74,11 @@ MAN3=		Bundle::DBI.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
 
-.if !defined(WITH_PROXY)
-pre-everything::
-	@${ECHO_CMD} "If you need DBI::Proxy, try to set WITH_PROXY."
-	@${ECHO_CMD} ""
-	@sleep 1
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PROXY)
+BUILD_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
+RUN_DEPENDS+=	p5-PlRPC>=0.2001:${PORTSDIR}/net/p5-PlRPC
 .endif
 
 .if !defined(NOPORTDOCS)
