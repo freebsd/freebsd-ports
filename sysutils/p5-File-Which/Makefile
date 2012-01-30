@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Portable implementation of `which' in Perl
 
+TEST_DEPENDS=	p5-Test-Script>=1.05:${PORTSDIR}/devel/p5-Test-Script
+
 PERL_CONFIGURE=	yes
 
 MAN1=		pwhich.1
