@@ -17,6 +17,8 @@ COMMENT=	A re-port of a perl5 interface to Tk8.4
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
+OPTIONS=	XFT	"Client-side fonts via libXft (experimental)" off
+
 CONFIGURE_ARGS=	X11INC=${LOCALBASE}/include X11LIB=${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	yes
@@ -142,34 +144,25 @@ MAN3=		Tie::Watch.3 \
 		Tk::tkvars.3 \
 		Tk::widgets.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_XFT)
 CONFIGURE_ARGS=	XFT=1
 USE_XORG+=	xft
 .endif
 
-.if !defined(WITH_XFT)
-pre-everything::
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> An experimental implementation of client side fonts"
-	@${ECHO_MSG} "===> and anti-aliased fonts via Xft"
-	@${ECHO_MSG} "===> can be enabled by defining WITH_XFT"
-	@${ECHO_MSG} "===>"
-.endif
-
 post-patch:
-	@${PERL} -i -p -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/pTk/Makefile.PL \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/JPEG/Makefile.PL \
-		${WRKSRC}/PNG/Makefile.PL
+		${WRKSRC}/PNG/Makefile.PL \
+		${WRKSRC}/pTk/Makefile.PL
 
 post-configure:
-	@${PERL} -i -p \
-		-e 's|^(CC = ).*|$$1 ${CC}|;' \
-		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|;' \
-		-e 's|^(LD = ).*|$$1 ${CC} ${CFLAGS} ${LDFLAGS}|;' \
-		-e 's|^(FULL_AR = ).*|$$1 ${AR}|' \
+	@${REINPLACE_CMD} \
+		-e '/^CC = / s|.*|CC = ${CC}|' \
+		-e '/^CCFLAGS = / s|.*|CCFLAGS = ${CFLAGS}|' \
+		-e '/^LD = / s|.*|LD = ${CC} ${CFLAGS} ${LDFLAGS}|' \
+		-e '/^FULL_AR = / s|.*|FULL_AR = ${AR}|' \
 		`${FIND} ${WRKSRC} -name Makefile`
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
