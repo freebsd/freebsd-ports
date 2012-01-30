@@ -47,6 +47,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7c920bb7-4b5f-11e1-9f47-00e0815b8da8">
+    <topic>sudo -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.8.3_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.gratisoft.us/sudo/alerts/sudo_debug.html">
+	  <p>Sudo 1.8.0 introduced simple debugging support that was primarily
+	    intended for use when developing policy or I/O logging plugins.
+	    The sudo_debug() function contains a flaw where the program name
+	    is used as part of the format string passed to the fprintf()
+	    function. The program name can be controlled by the caller,
+	    either via a symbolic link or, on some systems, by setting argv[0]
+	    when executing sudo.</p>
+	  <p>Using standard format string vulnerability exploitation techniques
+	    it is possible to leverage this bug to achieve root privileges.</p>
+	  <p>Exploitation of the bug does not require that the attacker be
+	    listed in the sudoers file. As such, we strongly suggest that
+	    affected sites upgrade from affected sudo versions as soon as
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0809</cvename>
+      <url>http://www.gratisoft.us/sudo/alerts/sudo_debug.html</url>
+    </references>
+    <dates>
+      <discovery>2012-01-30</discovery>
+      <entry>2012-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e51d5b1a-4638-11e1-9f47-00e0815b8da8">
     <topic>FreeBSD -- pam_ssh() does not validate service names</topic>
     <affects>
