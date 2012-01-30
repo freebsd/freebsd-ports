@@ -19,7 +19,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/replace.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/replace_language_keys.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/replace_language_values.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tablesorter/asc.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tablesorter/bg.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tablesorter/desc.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tablesorter/jquery.tablesorter.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tablesorter/jquery.tablesorter.min.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translation_analysis.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/triggers_list.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ws.htm
 %%WWWDIR%%/_data/dummy.txt
 %%WWWDIR%%/about.php
@@ -91,6 +97,7 @@
 %%WWWDIR%%/admin/popuphelp.php
 %%WWWDIR%%/admin/profile.php
 %%WWWDIR%%/admin/rating.php
+%%WWWDIR%%/admin/rating_user.php
 %%WWWDIR%%/admin/site_manager.php
 %%WWWDIR%%/admin/site_reader_local.php
 %%WWWDIR%%/admin/site_reader_remote.php
@@ -271,6 +278,7 @@
 %%WWWDIR%%/admin/themes/default/template/profile.tpl
 %%WWWDIR%%/admin/themes/default/template/profile_content.tpl
 %%WWWDIR%%/admin/themes/default/template/rating.tpl
+%%WWWDIR%%/admin/themes/default/template/rating_user.tpl
 %%WWWDIR%%/admin/themes/default/template/site_manager.tpl
 %%WWWDIR%%/admin/themes/default/template/site_update.tpl
 %%WWWDIR%%/admin/themes/default/template/stats.tpl
@@ -977,6 +985,11 @@
 %%WWWDIR%%/language/ka_GE/iso.txt
 %%WWWDIR%%/language/ka_GE/ka_GE.jpg
 %%WWWDIR%%/language/ka_GE/upgrade.lang.php
+%%WWWDIR%%/language/km_KH/about.html
+%%WWWDIR%%/language/km_KH/common.lang.php
+%%WWWDIR%%/language/km_KH/index.php
+%%WWWDIR%%/language/km_KH/iso.txt
+%%WWWDIR%%/language/km_KH/km_KH.jpg
 %%WWWDIR%%/language/ko_KR/common.lang.php
 %%WWWDIR%%/language/ko_KR/index.php
 %%WWWDIR%%/language/ko_KR/iso.txt
@@ -2261,6 +2274,7 @@
 @dirrm %%WWWDIR%%/language/lv_LV/help
 @dirrm %%WWWDIR%%/language/lv_LV
 @dirrm %%WWWDIR%%/language/ko_KR
+@dirrm %%WWWDIR%%/language/km_KH
 @dirrm %%WWWDIR%%/language/ka_GE/help
 @dirrm %%WWWDIR%%/language/ka_GE
 @dirrm %%WWWDIR%%/language/ja_JP/help
@@ -2326,5 +2340,6 @@
 @dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%/_data
 @dirrmtry %%WWWDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tablesorter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/language
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
