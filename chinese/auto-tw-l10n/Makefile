@@ -3,9 +3,10 @@
 # Whom:			"Michael C . Wu" <keichii@iteration.net>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/sunpoet
 
