@@ -27,6 +27,7 @@
     SUBDIR += packagekit-qt4
     SUBDIR += pbi-manager
     SUBDIR += pib
+    SUBDIR += pkg
     SUBDIR += pkg-orphan
     SUBDIR += pkg-plist
     SUBDIR += pkg_add_it

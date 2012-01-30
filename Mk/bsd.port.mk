@@ -1404,6 +1404,10 @@ LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
+.if defined(WITH_PKGNG)
+.include "${PORTSDIR}/Mk/bsd.pkgng.mk"
+.endif
+
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -1657,6 +1661,12 @@ IGNORE=		requires i386 (or compatible) platform to run
 LIB32DIR=	lib
 .endif
 PLIST_SUB+=	LIB32DIR=${LIB32DIR}
+
+.if defined(WITH_PKGNG)
+.if !defined(PKG_DEPENDS)
+PKG_DEPENDS+=		${LOCALBASE}/sbin/pkg:${PORTSDIR}/ports-mgmt/pkg
+.endif
+.endif
 
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
@@ -1984,6 +1994,9 @@ IGNORE=	uses unknown USE_BISON construct
 
 .endif
 
+.if defined(WITH_PKGNG)
+.include "${PORTSDIR}/Mk/bsd.pkgng.mk"
+.endif
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -4268,7 +4281,10 @@ _SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile \
 				check-depends identify-install-conflicts check-deprecated \
 				check-vulnerable check-license buildanyway-message \
 				options-message
-_FETCH_DEP=		check-sanity
+
+_PKG_DEP=		check-sanity
+_PKG_SEQ=		pkg-depends
+_FETCH_DEP=		pkg-depends
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
@@ -4364,6 +4380,7 @@ ${${target:U}_COOKIE}::
 # Enforce order for -jN builds
 
 .ORDER: ${_SANITY_SEQ}
+.ORDER: ${_PKG_DEP} ${_PKG_SEQ}
 .ORDER: ${_FETCH_DEP} ${_FETCH_SEQ}
 .ORDER: ${_EXTRACT_DEP} ${_EXTRACT_SEQ}
 .ORDER: ${_PATCH_DEP} ${_PATCH_SEQ}
@@ -4388,7 +4405,7 @@ package-message:
 # Empty pre-* and post-* targets
 
 .for stage in pre post
-.for name in check-sanity fetch extract patch configure build install package
+.for name in pkg check-sanity fetch extract patch configure build install package
 
 .if !target(${stage}-${name})
 ${stage}-${name}:
@@ -4957,7 +4974,7 @@ package-noinstall:
 ################################################################
 
 .if !target(depends)
-depends: extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
+depends: pkg-depends extract-depends patch-depends lib-depends fetch-depends build-depends run-depends
 
 .if defined(ALWAYS_BUILD_DEPENDS)
 _DEPEND_ALWAYS=	1
@@ -4968,9 +4985,18 @@ _DEPEND_ALWAYS=	0
 _INSTALL_DEPENDS=	\
 		if [ X${USE_PACKAGE_DEPENDS} != "X" ]; then \
 			subpkgfile=`(cd $$dir; ${MAKE} $$depends_args -V PKGFILE)`; \
+			subpkgname=$${subpkgfile%-*} ; \
+			subpkgname=$${subpkgname\#\#*/} ; \
 			if [ -r "$${subpkgfile}" -a "$$target" = "${DEPENDS_TARGET}" ]; then \
 				${ECHO_MSG} "===>   Installing existing package $${subpkgfile}"; \
-				${PKG_ADD} $${subpkgfile}; \
+				if [ -n "${WITH_PKGNG}" -a $${subpkgname} = "pkg" ]; then \
+					[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR} ; \
+					${TAR} xf $${subpkgfile} -C ${WRKDIR} -s ",/.*/,,g" "*/pkg-static" ; \
+					${WRKDIR}/pkg-static add $${subpkgfile}; \
+					${RM} -f ${WRKDIR}/pkg-static; \
+				else \
+					${PKG_ADD} $${subpkgfile}; \
+				fi; \
 			else \
 			  (cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 			fi; \
@@ -4979,7 +5005,7 @@ _INSTALL_DEPENDS=	\
 		fi; \
 		${ECHO_MSG} "===>   Returning to build of ${PKGNAME}";
 
-.for deptype in EXTRACT PATCH FETCH BUILD RUN
+.for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
 ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
@@ -5124,7 +5150,7 @@ lib-depends:
 
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
-_UNIFIED_DEPENDS=${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
+_UNIFIED_DEPENDS=${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}
 _DEPEND_DIRS=	${_UNIFIED_DEPENDS:C,^[^:]*:([^:]*).*$,\1,}
 
 all-depends-list:
@@ -5311,7 +5337,7 @@ fetch-required: fetch
 	@${ECHO_MSG} "===> NO_DEPENDS is set, not fetching any other distfiles for ${PKGNAME}"
 .else
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
-.for deptype in EXTRACT PATCH FETCH BUILD RUN
+.for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
 .if defined(${deptype}_DEPENDS)
 	@targ=fetch; deps="${${deptype}_DEPENDS}"; ${FETCH_LIST}
 .endif
@@ -5323,7 +5349,7 @@ fetch-required: fetch
 .if !target(fetch-required-list)
 fetch-required-list: fetch-list
 .if !defined(NO_DEPENDS)
-.for deptype in EXTRACT PATCH FETCH BUILD RUN
+.for deptype in PKG EXTRACT PATCH FETCH BUILD RUN
 .if defined(${deptype}_DEPENDS)
 	@targ=fetch-list; deps="${${deptype}_DEPENDS}"; ${FETCH_LIST}
 .endif
@@ -5342,12 +5368,12 @@ checksum-recursive:
 # Dependency lists: build and runtime.  Print out directory names.
 
 build-depends-list:
-.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS)
+.if defined(PKG_DEPENDS) || defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS)
 	@${BUILD-DEPENDS-LIST}
 .endif
 
 BUILD-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${SED} -E -e 's,([^: ]*):([^: ]*)(:[^ ]*)?,\2,g' -e 'y/ /\n/'| ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${PKG_DEPENDS} ${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${SED} -E -e 's,([^: ]*):([^: ]*)(:[^ ]*)?,\2,g' -e 'y/ /\n/'| ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -5575,7 +5601,7 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 
 .if !target(pretty-print-build-depends-list)
 pretty-print-build-depends-list:
-.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
+.if defined(PKG_PEPENDS) || defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || \
 	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS)
 	@${_PRETTY_PRINT_DEPENDS_LIST}
 .endif
