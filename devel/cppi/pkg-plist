@@ -1,0 +1,11 @@
+bin/cppi
+%%NLS%%share/locale/eo/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/it/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/cppi.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/cppi.mo

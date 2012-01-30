@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cppi
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,13 +19,17 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_FILES=	bin/cppi
 MAN1=		cppi.1
 
 .ifndef	WITHOUT_NLS
 USE_GETTEXT=    yes                                                             
+PLIST_SUB+=	NLS=""
 .else                                                                           
 CONFIGURE_ARGS+=--disable-nls                                                   
+PLIST_SUB+=	NLS="@comment "
 .endif                                                                          
+
+post-patch:
+	@${REINPLACE_CMD} -e 's:(libdir)/lib:(libdir):' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
