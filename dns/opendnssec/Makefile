@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Tool suite for maintaining DNSSEC
 
-BUILD_DEPENDS=	ldns>=1.6.9:${PORTSDIR}/dns/ldns
+BUILD_DEPENDS=	ldns>=1.6.12:${PORTSDIR}/dns/ldns
 LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns
 
 GNU_CONFIGURE=	yes
