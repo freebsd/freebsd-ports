@@ -26,19 +26,24 @@ rcvar=maudio_enable
 load_rc_config $name
 
 : ${maudio_enable="NO"}
+: ${maudio_default="NO"}
 
 command="%%PREFIX%%/bin/dfu-util"
 start_cmd="maudio_start"
 firmware_dir="%%PREFIX%%/share/maudio"
+temp_dir="/tmp/.maudio"
 required_modules="uhub/uaudio"
 required_dirs=$firmware_dir
 required_files=$command
-extra_commands="mixer"
-mixer_cmd="maudio_mixer"
+extra_commands="attach detach"
+attach_cmd="maudio_attach"
+detach_cmd="maudio_detach"
 
 maudio_start()
 {
 	local firmware dev idVendor idProduct
+
+	mkdir -p ${temp_dir} && touch ${temp_dir}/state
 
 	if [ -n "${1}" -a -n "${2}" ]; then
 		idProduct=${2}
@@ -81,18 +86,79 @@ maudio_start()
 	/usr/sbin/usbconfig -d ${dev} reset
 }
 
-maudio_mixer()
+maudio_init()
 {
-	local dev
-
-	if [ -z "${1}" ]; then
-		err 1 "No device specified"
-	fi
-
-	dev="/dev/mixer$( echo ${1} |sed -E 's/^[a-z]+([0-9]+)$/\1/' )"
+	local unit dev
+	unit=${1#pcm*}
+	test -n "${unit}" || return 1
+	dev="/dev/mixer${unit}"
 	if [ -r ${dev} ]; then
 		mixer -f ${dev} vol 100 pcm 100
+		if checkyesno maudio_default; then
+			sysctl -w hw.snd.default_unit=${unit}
+		fi
 	fi
+}
+
+maudio_attach()
+{
+	local bus pcmdev pcmdevs
+
+	. ${temp_dir}/state
+
+	case "${1}" in
+	pcm*)
+		eval "bus=\$maudio_${2}"
+		if [ "${bus}" = "1" ]; then
+			maudio_init ${1}
+		fi
+		pcmdevs="${pcmdevs:+${pcmdevs} }${1}"
+		echo "pcmdevs=\"${pcmdevs}\"" >${temp_dir}/state
+		for pcmdev in ${pcmdevs}; do
+			echo "pcmbus_${1}=${2}" >>${temp_dir}/state
+		done
+		grep "^maudio_" >>${temp_dir}/state
+		;;
+	uaudio*)
+		for pcmdev in ${pcmdevs}; do
+			eval "bus=\$pcmbus_${pcmdev}"
+			if [ "${bus}" = "${1}" ]; then
+				maudio_init ${pcmdev}
+				break
+			fi
+		done
+		echo "maudio_${1}=1" >>${temp_dir}/state
+		;;
+	*)
+		err 1 "Unknown device specified"
+		;;
+	esac
+}
+
+maudio_detach()
+{
+	local pcmdev pcmdevs pcmdevs_new
+
+	. ${temp_dir}/state
+
+	case "${1}" in
+	pcm*)
+		for pcmdev in ${pcmdevs}; do
+			if [ "${pcmdev}" = "${1}" ]; then
+				continue
+			fi
+			pcmdevs_new="${pcmdevs_new:+${pcmdevs_new} }${1}"
+		done
+		pcmdevs="${pcmdevs_new}"
+		sed -i "" -e "/^pcmdevs=/ s/=.*$/=\"${pcmdevs}\"/" -e "/^pcmbus_${1}=/ d" ${temp_dir}/state
+		;;
+	uaudio*)
+		sed -i "" "/^maudio_${1}=/ d" ${temp_dir}/state
+		;;
+	*)
+		err 1 "Unknown device specified"
+		;;
+	esac
 }
 
 run_rc_command $*

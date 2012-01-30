@@ -4,6 +4,11 @@ A devd(8) configuration has been installed at:
 You must add 'maudio_enable="YES"' to rc.conf
 and restart devd(8) for this port to work.
 
+You can optionally add 'maudio_default="YES"'
+to rc.conf if you'd like M-Audio devices to
+be setup as the default sound device upon
+detection.
+
 Some devices (eg. Transit) may also require
 sysctl modifications:
 
