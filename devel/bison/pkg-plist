@@ -38,6 +38,7 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/de/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/et/LC_MESSAGES/bison-runtime.mo
@@ -48,8 +49,10 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/fr/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/id/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/id/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bison-runtime.mo
