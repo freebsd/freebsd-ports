@@ -47,6 +47,173 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e51d5b1a-4638-11e1-9f47-00e0815b8da8">
+    <topic>FreeBSD -- pam_ssh() does not validate service names</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_9</lt></range>
+	<range><ge>7.4</ge><lt>7.4_5</lt></range>
+	<range><ge>8.1</ge><lt>8.1_7</lt></range>
+	<range><ge>8.2</ge><lt>8.2_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-11:10.pam.asc">
+	<h1>Problem Description:</h1>
+	<p>Some third-party applications, including KDE's kcheckpass command,
+	  allow the user to specify the name of the policy on the command line.
+	  Since OpenPAM treats the policy name as a path relative to /etc/pam.d
+	  or /usr/local/etc/pam.d, users who are permitted to run such an
+	  application can craft their own policies and cause the application
+	  to load and execute their own modules.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-11:10.pam</freebsdsa>
+      <cvename>CVE-2011-4122</cvename>
+    </references>
+    <dates>
+      <discovery>2011-12-23</discovery>
+      <entry>2012-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="eda151d8-4638-11e1-9f47-00e0815b8da8">
+    <topic>FreeBSD -- pam_ssh improperly grants access when user account has unencrypted SSH private keys</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_9</lt></range>
+	<range><ge>7.4</ge><lt>7.4_5</lt></range>
+	<range><ge>8.1</ge><lt>8.1_7</lt></range>
+	<range><ge>8.2</ge><lt>8.2_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-11:09.pam_ssh.asc">
+	<h1>Problem Description:</h1>
+	<p>The OpenSSL library call used to decrypt private keys ignores the
+	  passphrase argument if the key is not encrypted.  Because the pam_ssh
+	  module only checks whether the passphrase provided by the user is
+	  null, users with unencrypted SSH private keys may successfully
+	  authenticate themselves by providing a dummy passphrase.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-11:09.pam_ssh</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2012-12-23</discovery>
+      <entry>2012-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f56390a4-4638-11e1-9f47-00e0815b8da8">
+    <topic>FreeBSD -- Buffer overflow in handling of UNIX socket addresses</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_8</lt></range>
+	<range><ge>7.4</ge><lt>7.4_4</lt></range>
+	<range><ge>8.1</ge><lt>8.1_6</lt></range>
+	<range><ge>8.2</ge><lt>8.2_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-11:05.unix.asc">
+	<h1>Problem Description:</h1>
+	<p>When a UNIX-domain socket is attached to a location using the
+	  bind(2) system call, the length of the provided path is not
+	  validated. Later, when this address was returned via other system
+	  calls, it is copied into a fixed-length buffer.</p>
+	<p>Linux uses a larger socket address structure for UNIX-domain sockets
+	  than FreeBSD, and the FreeBSD's linux emulation code did not translate
+	  UNIX-domain socket addresses into the correct size of structure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-11:05.unix</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2011-09-28</discovery>
+      <entry>2012-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fee94342-4638-11e1-9f47-00e0815b8da8">
+    <topic>FreeBSD -- Errors handling corrupt compress file in compress(1) and gzip(1)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_7</lt></range>
+	<range><ge>7.4</ge><lt>7.4_3</lt></range>
+	<range><ge>8.1</ge><lt>8.1_5</lt></range>
+	<range><ge>8.2</ge><lt>8.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-11:04.compress.asc">
+	<h1>Problem Description:</h1>
+	<p>The code used to decompress a file created by compress(1) does not
+	  do sufficient boundary checks on compressed code words, allowing
+	  reference beyond the decompression table, which may result in a stack
+	  overflow or an infinite loop when the decompressor encounters a
+	  corrupted file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-11:04.compress</freebsdsa>
+      <cvename>CVE-2011-2895</cvename>
+    </references>
+    <dates>
+      <discovery>2011-09-28</discovery>
+      <entry>2012-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7a09a8df-ca41-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Network ACL mishandling in mountd(8)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_5</lt></range>
+	<range><ge>7.4</ge><lt>7.4_1</lt></range>
+	<range><ge>8.1</ge><lt>8.1_3</lt></range>
+	<range><ge>8.2</ge><lt>8.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://security.freebsd.org/advisories/FreeBSD-SA-11:01.mountd.asc">
+	<h1>Problem Description:</h1>
+	<p>While parsing the exports(5) table, a network mask in the form of
+	  "-network=netname/prefixlength" results in an incorrect network mask
+	  being computed if the prefix length is not a multiple of 8.</p>
+	<p>For example, specifying the ACL for an export as "-network
+	  192.0.2.0/23" would result in a netmask of 255.255.127.0 being used
+	  instead of the correct netmask of 255.255.254.0.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-11:01.mountd</freebsdsa>
+      <cvename>CVE-2011-1739</cvename>
+    </references>
+    <dates>
+      <discovery>2011-04-20</discovery>
+      <entry>2012-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="93688f8f-4935-11e1-89b4-001ec9578670">
     <topic>postfixadmin -- Multiple Vulnerabilities</topic>
     <affects>
@@ -966,6 +1133,13 @@ Note:  Please add new entries to the beginning of this file.
     <topic>krb5-appl -- telnetd code execution vulnerability</topic>
     <affects>
       <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_9</lt></range>
+	<range><ge>7.4</ge><lt>7.4_5</lt></range>
+	<range><ge>8.1</ge><lt>8.1_7</lt></range>
+	<range><ge>8.2</ge><lt>8.2_5</lt></range>
+      </package>
+      <package>
 	<name>krb5-appl</name>
 	<range><lt>1.0.2_1</lt></range>
       </package>
@@ -981,18 +1155,28 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <freebsdsa>SA-11:08.telnetd</freebsdsa>
       <cvename>CVE-2011-4862</cvename>
       <url>http://security.FreeBSD.org/advisories/FreeBSD-SA-11:08.telnetd.asc</url>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-008.txt</url>
     </references>
     <dates>
       <discovery>2011-12-23</discovery>
       <entry>2011-12-26</entry>
+      <modified>2012-01-29</modified>
     </dates>
   </vuln>
 
   <vuln vid="022a4c77-2da4-11e1-b356-00215c6a37bb">
     <topic>proftpd -- arbitrary code execution vulnerability with chroot</topic>
     <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_9</lt></range>
+	<range><ge>7.4</ge><lt>7.4_5</lt></range>
+	<range><ge>8.1</ge><lt>8.1_6</lt></range>
+	<range><ge>8.2</ge><lt>8.2_5</lt></range>
+      </package>
       <package>
 	<name>proftpd</name>
 	<name>proftpd-mysql</name>
@@ -1021,6 +1205,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-11-30</discovery>
       <entry>2011-12-23</entry>
+      <modified>2012-01-29</modified>
     </dates>
   </vuln>
 
@@ -1497,7 +1682,14 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="90cc1494-10ac-11e1-b3ec-0024e830109b">
     <topic>BIND -- Remote DOS</topic>
     <affects>
-     <package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>7.3</ge><lt>7.3_9</lt></range>
+	<range><ge>7.4</ge><lt>7.4_5</lt></range>
+	<range><ge>8.1</ge><lt>8.1_7</lt></range>
+	<range><ge>8.2</ge><lt>8.2_5</lt></range>
+      </package>
+      <package>
 	<name>bind96</name>
 	<range><lt>9.6.3.1.ESV.R5.1</lt></range>
       </package>
@@ -1529,6 +1721,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+	<freebsdsa>SA-11:06.bind</freebsdsa>
 	<cvename>CVE-2011-4313</cvename>
 	<url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4313</url>
 	<url>https://www.isc.org/software/bind/advisories/cve-2011-4313</url>
@@ -1536,7 +1729,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-11-16</discovery>
       <entry>2011-11-16</entry>
-      <modified>2011-11-18</modified>
+      <modified>2012-01-29</modified>
     </dates>
   </vuln>
 
