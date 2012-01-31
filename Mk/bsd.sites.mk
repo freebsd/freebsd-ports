@@ -118,7 +118,6 @@ MASTER_SITE_CHEESESHOP+=	\
 	http://d.pypi.python.org/packages/%SUBDIR%/ \
 	http://e.pypi.python.org/packages/%SUBDIR%/ \
 	http://f.pypi.python.org/packages/%SUBDIR%/ \
-	http://pypi.d9t.de/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.inqbus.de/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.it.uwosh.edu/${DISTNAME:S/${DISTVERSION}//:S/-//}/ \
 	http://pypi.python.jp/${DISTNAME:S/${DISTVERSION}//:S/-//}/
