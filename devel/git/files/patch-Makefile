@@ -1,6 +1,6 @@
---- ./Makefile.orig	2011-10-05 10:02:13.605889189 -0400
-+++ ./Makefile	2011-10-05 10:05:22.414881672 -0400
-@@ -278,8 +278,8 @@
+--- ./Makefile.orig	2012-01-30 16:19:10.085737423 -0500
++++ ./Makefile	2012-01-30 20:58:38.938730750 -0500
+@@ -301,8 +301,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -11,7 +11,7 @@
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
-@@ -299,14 +299,14 @@
+@@ -322,15 +322,15 @@
  prefix = $(HOME)
  bindir_relative = bin
  bindir = $(prefix)/$(bindir_relative)
@@ -24,15 +24,16 @@
  sharedir = $(prefix)/share
 -gitwebdir = $(sharedir)/gitweb
 +gitwebdir = $(sharedir)/examples/git/gitweb
+ localedir = $(sharedir)/locale
  template_dir = share/git-core/templates
 -htmldir = share/doc/git-doc
 +htmldir = share/doc/git
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
  ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
  lib = lib
-@@ -315,20 +315,20 @@
+@@ -339,21 +339,21 @@
  
- export prefix bindir sharedir sysconfdir gitwebdir
+ export prefix bindir sharedir sysconfdir gitwebdir localedir
  
 -CC = gcc
 -AR = ar
@@ -45,6 +46,7 @@
 -TCL_PATH = tclsh
 -TCLTK_PATH = wish
 -XGETTEXT = xgettext
+-MSGFMT = msgfmt
 -PTHREAD_LIBS = -lpthread
 -PTHREAD_CFLAGS =
 -GCOV = gcov
@@ -59,13 +61,14 @@
 +TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
 +XGETTEXT ?= xgettext
++MSGFMT ?= msgfmt
 +PTHREAD_LIBS ?= -lpthread
 +PTHREAD_CFLAGS ?=
 +GCOV ?= gcov
  
  export TCL_PATH TCLTK_PATH
  
-@@ -1356,9 +1356,9 @@
+@@ -1435,9 +1435,9 @@
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl

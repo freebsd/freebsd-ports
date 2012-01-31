@@ -50,6 +50,9 @@ libexec/git-core/git-commit
 libexec/git-core/git-commit-tree
 libexec/git-core/git-config
 libexec/git-core/git-count-objects
+libexec/git-core/git-credential-cache--daemon
+libexec/git-core/git-credential-cache
+libexec/git-core/git-credential-store
 %%CVS%%libexec/git-core/git-cvsexportcommit
 %%CVS%%libexec/git-core/git-cvsimport
 %%CVS%%libexec/git-core/git-cvsserver
@@ -201,8 +204,10 @@ libexec/git-core/mergetools/araxis
 %%GUI%%bin/gitk
 %%PERLSUB%%%%SITE_PERL%%/Git.pm
 %%PERLSUB%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
+%%PERLSUB%%%%SITE_PERL%%/Git/I18N.pm
 lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/git-blame.el
+share/locale/is/LC_MESSAGES/git.mo
 share/emacs/site-lisp/git/git.el
 share/emacs/site-lisp/git/git-blame.el
 share/git-core/templates/description
@@ -510,6 +515,18 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/howto/separating-topic-branches.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/rebase-from-internal-branch.txt
 %%HTMLDOCS%%%%DOCSDIR%%/howto/use-git-daemon.txt
+%%HTMLDOCS%%%%DOCSDIR%%/howto/using-signed-tag-in-pull-request.html
+%%HTMLDOCS%%%%DOCSDIR%%/howto/using-signed-tag-in-pull-request.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-credential-cache--daemon.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-credential-cache--daemon.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-credential-cache.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-credential-cache.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-credential-store.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-credential-store.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitcredentials.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitcredentials.txt
+%%HTMLDOCS%%%%DOCSDIR%%/git-p4.html
+%%HTMLDOCS%%%%DOCSDIR%%/git-p4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-merge-one-file.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-fetch-pack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-branch.txt
@@ -524,6 +541,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-repack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitworkflows.txt
 %%HTMLDOCS%%%%DOCSDIR%%/diff-config.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-credentials.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-credentials.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-argv-array.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-argv-array.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sha1-array.html
@@ -874,6 +893,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.4.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
@@ -896,6 +916,9 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/continuous/post-receive-cinotify
 %%CONTRIB%%share/git-core/contrib/convert-objects/convert-objects.c
 %%CONTRIB%%share/git-core/contrib/convert-objects/git-convert-objects.txt
+%%CONTRIB%%share/git-core/contrib/credential/osxkeychain/Makefile
+%%CONTRIB%%share/git-core/contrib/credential/osxkeychain/git-credential-osxkeychain.c
+%%CONTRIB%%share/git-core/contrib/credential/osxkeychain/.gitignore
 %%CONTRIB%%share/git-core/contrib/diff-highlight/README
 %%CONTRIB%%share/git-core/contrib/diff-highlight/diff-highlight
 %%CONTRIB%%share/git-core/contrib/emacs/.gitignore
@@ -928,7 +951,6 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/fast-import/git-import.sh
 %%CONTRIB%%share/git-core/contrib/fast-import/git-p4
 %%CONTRIB%%share/git-core/contrib/fast-import/git-p4.bat
-%%CONTRIB%%share/git-core/contrib/fast-import/git-p4.txt
 %%CONTRIB%%share/git-core/contrib/fast-import/import-directories.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/import-tars.perl
 %%CONTRIB%%share/git-core/contrib/fast-import/import-zips.py
@@ -970,6 +992,7 @@ share/git-core/templates/info/exclude
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%
 %%PERLSUB%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
+%%PERLSUB%%@dirrmtry %%SITE_PERL%%/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
 @dirrmtry lib/xemacs
@@ -997,6 +1020,8 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/completion
 %%CONTRIB%%@dirrm share/git-core/contrib/continuous
 %%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
+%%CONTRIB%%@dirrm share/git-core/contrib/credential/osxkeychain
+%%CONTRIB%%@dirrm share/git-core/contrib/credential
 %%CONTRIB%%@dirrm share/git-core/contrib/diff-highlight
 %%CONTRIB%%@dirrm share/git-core/contrib/emacs
 %%CONTRIB%%@dirrm share/git-core/contrib/examples
