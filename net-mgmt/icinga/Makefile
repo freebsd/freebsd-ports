@@ -10,7 +10,7 @@ PORTVERSION=	1.6.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Enterprise grade open source monitoring system based on nagios
 
 LICENSE=	GPLv2
