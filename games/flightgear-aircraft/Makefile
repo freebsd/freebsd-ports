@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	flightgear-aircrafts
+PORTNAME=	flightgear-aircraft
 PORTVERSION=	20111013
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
