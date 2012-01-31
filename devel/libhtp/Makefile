@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libhtp
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
+DISTNAME=	htp-${PORTVERSION}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Security-aware parser for the HTTP protocol
