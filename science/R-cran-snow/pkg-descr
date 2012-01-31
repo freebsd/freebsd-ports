@@ -1,0 +1,21 @@
+The snow package provides support for simple parallel computing on a
+network of workstations using R.  A master R process calls makeCluster
+to start a cluster of worker processes; the master process then uses
+functions such as clusterCall and clusterApply to execute R code on
+the worker processes and collect and return the results on the master.
+This framework supports many forms of "embarrassingly parallel"
+computations.
+
+Snow can use one of four communications mechanisms: sockets, PVM, MPI,
+or NetWorkSpaces (NWS).  NWS support was provided by Steve Weston.
+PVM clusters use the rpvm package; MPI clusters use package Rmpi; NWS
+clusters use package nws.  If pvm is used, then pvm must be started,
+either using a pvm console (e.g the pvm text console or the graphical
+xpvm console, both available with pvm) or from R using functions
+provided by rpvm.  Similarly, LAM-MPI must be started, e.g.  using
+lamboot, for MPI clusters that use Rmpi and LAM-MPI.  If NWS is used,
+the NetWorkSpaces server must be running.  SOCK clusters are the
+easiest approach for using snow on a single multi-core computer as
+they require no additional software.
+
+WWW:	http://cran.r-project.org/web/packages/snow/
