@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	ladvd
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+MASTER_SITES=	GOOGLE_CODE \
 		http://blinkenlights.nl/software/ladvd/
 
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	A minimal LLDP/CDP daemon
 
+LICENSE=	BSD
+
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
-LICENSE=	BSD
+USERS=		ladvd
+GROUPS=		${USERS}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-chroot-dir=/var/empty
@@ -24,7 +27,10 @@ CONFIGURE_ARGS=	--with-chroot-dir=/var/empty
 PORTDOCS=	*
 MAN8=		ladvd.8 ladvdc.8
 USE_RC_SUBR+=	ladvd
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message
+
+PLIST_FILES=	sbin/ladvd \
+		sbin/ladvdc
 
 post-patch:
 .if defined(NOPORTDOCS)
@@ -33,8 +39,6 @@ post-patch:
 .endif
 
 post-install:
-	@${ECHO} "==>  Creating custom user to run ladvd..."
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
