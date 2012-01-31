@@ -69,7 +69,7 @@ do-install:
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/bash_completion.d
-	@${LN} ${WRKSRC}/examples/bash_completion_tmux.sh ${PREFIX}/etc/bash_completion.d/tmux
+	@${INSTALL_DATA} ${WRKSRC}/examples/bash_completion_tmux.sh ${PREFIX}/etc/bash_completion.d/tmux
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
