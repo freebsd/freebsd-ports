@@ -100,6 +100,12 @@ IGNORE=		POSIX semaphores are required, and the support only works in FreeBSD 7-
 MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
 .endif
 
+check regression-test test: build
+	@${ECHO_MSG} This test can also be performed after installation by typing \"sage --testall\".
+	@${ECHO_MSG}
+	cd ${WRKSRC}; local/bin/sage-starts; \
+	${LOCALBASE}/bin/bash -c ". local/bin/sage-env && sage-maketest"
+
 INSTALL_SAGE_DIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 do-install:
 	cd ${WRKDIR} && ${FIND} -s ${WRKSRC} | ${SED} -e 's#${WRKDIR}/##' | \
