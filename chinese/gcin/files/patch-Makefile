@@ -1,0 +1,10 @@
+--- Makefile.orig	2012-01-31 16:17:52.000000000 +0800
++++ Makefile	2012-01-31 16:18:06.000000000 +0800
+@@ -221,6 +221,7 @@
+ 	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
+ 	fi
+ 	$(MAKE) -C scripts install
++	$(MAKE) -C man install
+ 	$(MAKE) -C menu install
+ 	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po install; fi
+ 
