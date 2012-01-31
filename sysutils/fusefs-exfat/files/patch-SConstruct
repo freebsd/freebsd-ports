@@ -1,0 +1,22 @@
+--- SConstruct.orig	2012-01-25 09:15:01.332956305 +0000
++++ SConstruct	2012-01-25 09:15:48.373957139 +0000
+@@ -41,6 +41,19 @@
+ env.Append(CPPPATH = ['libexfat'])
+ env.Append(LINKFLAGS = '')
+ 
++# ---- check for environment variables
++if 'CXX' in os.environ:
++    env.Replace(CXX = os.environ['CXX'])
++    print(">> Using compiler " + os.environ['CXX'])
++
++if 'CXXFLAGS' in os.environ:
++    env.Append(CCFLAGS = os.environ['CXXFLAGS'])
++    print(">> Appending custom build flags : " + os.environ['CXXFLAGS'])
++
++if 'LDFLAGS' in os.environ:
++    env.Append(LINKFLAGS = os.environ['LDFLAGS'])
++    print(">> Appending custom link flags : " + os.environ['LDFLAGS'])
++
+ def make_symlink(dir, target, link_name):
+ 	workdir = os.getcwd()
+ 	os.chdir(dir)
