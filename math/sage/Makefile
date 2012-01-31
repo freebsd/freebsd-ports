@@ -7,6 +7,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://modular.math.jmu.edu/src/ \
 		http://boxen.math.washington.edu/sage/src/ \
@@ -31,6 +32,13 @@ USE_TK=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
+LDFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
+FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
+CFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
+CXXFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
+# Note that the above addition to LDFLAGS, as a side effect, provides a
+# work-around for the make(1) idiosyncracy mentioned in PR 164361 (which
+# otherwise breaks the build of the maxima sub-package).
 
 MAKE_ENV+=	SAGE_PORT=yes \
 		SAGE_FORTRAN=${LOCALBASE}/bin/${FC} \
@@ -44,19 +52,26 @@ MAKE_ARGS+=	ARCH="${AR}"
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/local/bin
-	@${LN} -s ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
-	@${LN} -s ${LOCALBASE}/bin/bash ${WRKSRC}/local/bin/sh
-	@${LN} -s ${LOCALBASE}/bin/${FC} ${WRKSRC}/local/bin/gfortran
+	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
+	@${LN} -s -f ${LOCALBASE}/bin/bash ${WRKSRC}/local/bin/sh
+	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CC}#' -e 's#%%CFLAGS%%#${CFLAGS}#' ${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/cc
+	@${CHMOD} ${BINMODE} ${WRKSRC}/local/bin/cc
+	@${LN} -s cc ${WRKSRC}/local/bin/gcc
+	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CXX}#' -e 's#%%CFLAGS%%#${CXXFLAGS}#' ${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/c++
+	@${CHMOD} ${BINMODE} ${WRKSRC}/local/bin/c++
+	@${LN} -s c++ ${WRKSRC}/local/bin/g++
+	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${FC}#' -e 's#%%CFLAGS%%#${FFLAGS}#' ${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/gfortran
+	@${CHMOD} +x ${WRKSRC}/local/bin/gfortran
 	@${MKDIR} ${WRKSRC}/tmp
 	@for p in ${FILESDIR}/spkg-patch-*; do \
-	        t=`${ECHO_CMD} $$p | ${SED} -e "s+^${FILESDIR}/spkg-patch-++" -e 's+_-_.*++'`; \
+		q=$${p#*/spkg-patch-}; t=$${q%_-_*}; \
        		if ! [ -e ${WRKSRC}/spkg/standard/$$t.spkg ]; then \
-			${ECHO_CMD} "$$t not found."; \
+			${ECHO_MSG} "$$t not found."; \
 			exit 1; \
 		fi; \
 		tarballs="$$tarballs $$t"; \
 	done ;\
-	tarballs=`for t in $$tarballs; do ${ECHO_CMD} $$t; done | uniq`; \
+	tarballs=`${PRINTF} "%s\n" $$tarballs | ${SORT} -u`; \
 	\
 	cd ${WRKSRC}/tmp || exit 1; \
 	for t in $$tarballs; do \
@@ -65,9 +80,9 @@ post-patch:
 			${MV} $$f-orig $$f; \
 		fi; \
 		${BZIP2_CMD} -dc $$f | ${TAR} -xf -; \
-		${ECHO_CMD} "Patching $$t:"; \
+		${ECHO_MSG} "Patching $$t:"; \
 		for p in ${FILESDIR}/spkg-patch-$${t}_-_*; do \
-			${ECHO_CMD} "	applying $$p" | ${SED} -e 's#${FILESDIR}/.*_-_##' ; \
+			${ECHO_MSG} "	applying $${p#*_-_}" ; \
 			${PATCH} < $$p 2>/dev/null || exit 1; \
 		done; \
 		${MV} $$f $$f-orig; \
@@ -80,37 +95,27 @@ post-patch:
 .if ${OSVERSION} < 701106
 IGNORE=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
 .endif
-.if ${OSVERSION} >= 900000
-IGNORE=		the port isn't tested for FreeBSD 9 or later
-.endif
 
 .if !defined(DISABLE_MAKE_JOBS)
 MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
 .endif
 
-# The following code is copied from bsd.port.mk, but with extra code that
-# removes an extra space from ${LDFLAGS}.  The space messes up the build of
-# the maxima subpackage.  See
-# http://www.freebsd.org/cgi/query-pr.cgi?pr=164361
-do-build:
-	LDFLAGS=${LDFLAGS:C|^ ||}; \
-	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} LDFLAGS="$${LDFLAGS}" ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
-	${MKDIR} ${WRKDIR}/bin
-	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${WRKDIR}/bin/sage
-
 INSTALL_SAGE_DIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 do-install:
 	cd ${WRKDIR} && ${FIND} -s ${WRKSRC} | ${SED} -e 's#${WRKDIR}/##' | \
-		${CPIO} -pmud -R root:wheel ${PREFIX}
-	${ECHO_CMD} | ${INSTALL_SAGE_DIR}/sage
-	${INSTALL_SCRIPT} ${WRKDIR}/bin/sage ${PREFIX}/bin
+		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${PREFIX}
+	${ECHO_CMD} | ${SETENV} DOT_SAGE=${INSTALL_SAGE_DIR}/tmp/.sage ${INSTALL_SAGE_DIR}/sage
+	${RM} -rf ${INSTALL_SAGE_DIR}/tmp/.sage
+	${SED} -e "s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+" ${WRKSRC}/sage > ${PREFIX}/bin/sage
+	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/sage
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/sage
 
 post-install:
-	${FIND} -s ${INSTALL_SAGE_DIR} -not -type d | \
+	@${FIND} -s ${INSTALL_SAGE_DIR} -not -type d | \
 		${SED} -e 's#${PREFIX}/##' >> ${TMPPLIST}
-	${FIND} -s ${INSTALL_SAGE_DIR} -type d -empty | \
+	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -empty | \
 		${SED} -e 's#${PREFIX}/#@exec ${MKDIR} %D/#' >> ${TMPPLIST}
-	${FIND} -s ${INSTALL_SAGE_DIR} -type d -depth | \
+	@${FIND} -s ${INSTALL_SAGE_DIR} -type d -depth | \
 		${SED} -e 's#${PREFIX}/#@dirrm #' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
