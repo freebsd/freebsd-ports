@@ -15,6 +15,7 @@
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-igraph
     SUBDIR += R-cran-inline
+    SUBDIR += R-cran-memisc
     SUBDIR += R-cran-mvtnorm
     SUBDIR += R-cran-psych
     SUBDIR += R-cran-sandwich
