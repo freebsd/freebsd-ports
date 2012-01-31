@@ -7,6 +7,7 @@
 
 PORTNAME=	neubot
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://releases.neubot.org/_packages/
 
@@ -14,6 +15,8 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Measures neutrality of your network connection in the background
 
 LICENSE=	GPLv3
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=	2.5-2.9
 
