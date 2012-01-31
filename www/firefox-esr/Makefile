@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	9.0.1
+DISTVERSION=	10.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -118,6 +118,8 @@ post-patch:
 		${WRKSRC}/security/manager/ssl/src/Makefile.in \
 		${WRKSRC}/js/src/config/mkdepend/Makefile.in \
 		${WRKSRC}/js/src/config/config.mk \
+		${WRKSRC}/config/mkdepend/Makefile.in \
+		${WRKSRC}/config/config.mk \
 		${WRKSRC}/config/mkdepend/Makefile.in \
 		${WRKSRC}/config/config.mk \
 		${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp
