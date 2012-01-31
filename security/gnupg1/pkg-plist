@@ -35,6 +35,7 @@ libexec/gnupg/gpgkeys_hkp
 %%NLS%%share/locale/sk/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gnupg.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
 @unexec [ -r %D/bin/gpg2 ] && ln -s gpg2 %D/bin/gpg || true
