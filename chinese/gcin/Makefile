@@ -7,6 +7,7 @@
 
 PORTNAME=	gcin
 PORTVERSION=	2.7.0
+PORTREVISOIN=	1
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
@@ -30,7 +31,7 @@ OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
 		QT_IM_MODULE	"enable QT IM module" off
 
 MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
-		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
+		gcin-message.1 gcin-tools.1 gtab-merge.1 juyin-learn.1 \
 		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
 
 .include <bsd.port.options.mk>
