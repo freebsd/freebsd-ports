@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oldrunner
-PORTVERSION=	20120106
+PORTVERSION=	20120131
 CATEGORIES=	games
 MASTER_SITES=	ftp://culot.org/culot/
 
