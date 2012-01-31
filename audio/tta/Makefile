@@ -12,25 +12,25 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}enc-src
 DISTNAME=	${PORTNAME}enc-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	The True Audio Encoder, lossless (de)compressor
 
-PROGRAM=	ttaenc
+LICENSE=	GPLv2
 
-PORTDOCS=	README
+USE_GMAKE=	yes
+ALL_TARGET=	ttaenc
+MAKE_ARGS=	CFLAGS="${CFLAGS}" INSDIR="${PREFIX}/bin"
+
 PLIST_FILES=	bin/ttaenc
+PORTDOCS=	README
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ifdef _BIG_ENDIAN/s|ifdef|if _BYTE_ORDER ==|' \
-		${WRKSRC}/${PROGRAM}.h
+		${WRKSRC}/ttaenc.h
+	@${REINPLACE_CMD} -e 's|gcc|${CC}| ; /strip/d ; \
+		s|install -m 755|${INSTALL_PROGRAM}|' ${WRKSRC}/Makefile
 
-do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/${PROGRAM} \
-		${WRKSRC}/${PROGRAM}.c
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} ${PREFIX}/bin
-
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
