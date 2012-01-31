@@ -7,6 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.2-build2005
+PORTREVISION=	1
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -14,9 +15,9 @@ DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Open Sound System
 
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-
 LICENSE=	BSD
+
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 USE_BZIP2=	yes
 ALL_TARGET=	all install
