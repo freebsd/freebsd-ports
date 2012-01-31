@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.8.4
+PORTVERSION=	1.7.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -45,6 +45,9 @@ MAN1=		git.1 \
 		git-commit.1 \
 		git-config.1 \
 		git-count-objects.1 \
+		git-credential-cache--daemon.1 \
+		git-credential-cache.1 \
+		git-credential-store.1 \
 		git-daemon.1 \
 		git-describe.1 \
 		git-diff-files.1 \
@@ -95,6 +98,7 @@ MAN1=		git.1 \
 		git-mv.1 \
 		git-name-rev.1 \
 		git-notes.1 \
+		git-p4.1 \
 		git-pack-objects.1 \
 		git-pack-redundant.1 \
 		git-pack-refs.1 \
@@ -166,6 +170,7 @@ MAN5=		gitattributes.5 \
 		gitrepository-layout.5 \
 		gitweb.conf.5
 MAN7=		gitcli.7 \
+		gitcredentials.7 \
 		gitglossary.7 \
 		gittutorial.7 \
 		gitcore-tutorial.7 \
@@ -226,7 +231,8 @@ MAKE_ENV+=	PERL_PATH=${PERL}
 BUILD_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
-MAN3=		Git.3
+MAN3=		Git.3 \
+		Git::I18N.3
 PLIST_SUB+=	PERLSUB=""
 .else
 MAKE_ENV+=	NO_PERL=1
