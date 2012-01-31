@@ -781,6 +781,7 @@
     SUBDIR += rubygem-sys-proctable
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
+    SUBDIR += rubygem-teamocil
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
