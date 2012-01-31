@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.wavpack.com/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Audio codec for lossless, lossy, and hybrid compression
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
