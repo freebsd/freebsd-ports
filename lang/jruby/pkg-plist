@@ -1323,6 +1323,7 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/source_index.rb
 %%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/spec_fetcher.rb
 %%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/specification.rb
+%%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/syck_hack.rb
 %%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/test_case.rb
 %%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/test_utilities.rb
 %%JRUBY_HOME%%/lib/ruby/site_ruby/1.8/rubygems/text.rb
@@ -10647,7 +10648,6 @@ bin/jruby
 %%JRUBY_HOME%%/share/ri/1.8/system/Zlib/zlib_version-c.yaml
 %%JRUBY_HOME%%/share/ri/1.8/system/created.rid
 %%JRUBY_HOME%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
-%%JRUBY_HOME%%/share/ri_cache.bin.gz
 @dirrm %%JRUBY_HOME%%/share/ri/1.8/system/fatal
 @dirrm %%JRUBY_HOME%%/share/ri/1.8/system/Zlib/ZStream
 @dirrm %%JRUBY_HOME%%/share/ri/1.8/system/Zlib/VersionError
