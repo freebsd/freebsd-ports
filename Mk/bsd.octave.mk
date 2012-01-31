@@ -35,7 +35,7 @@ LOAD_OCTAVE_PKG_CMD=	${LOCALBASE}/libexec/octave/load-octave-pkg
 do-install:
 	${MKDIR} ${TARBALLS_DIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}.tar.gz ${TARBALLS_DIR}/.
-	${LN} -s ${DISTNAME}.tar.gz ${TARBALLS_DIR}/${OCTAVE_PKGNAME}.tar.gz
+	${LN} -s -f ${DISTNAME}.tar.gz ${TARBALLS_DIR}/${OCTAVE_PKGNAME}.tar.gz
 	${LOAD_OCTAVE_PKG_CMD}
 
 post-install:
