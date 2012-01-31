@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmux
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,11 +15,13 @@ COMMENT=	A Terminal Multiplexer
 
 LICENSE=	BSD
 
-HAS_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
 
 MAN1=		tmux.1
 
-PLIST_FILES=	bin/tmux
+PLIST_FILES=	bin/tmux \
+		etc/bash_completion.d/tmux
+PLIST_DIRSTRY=	etc/bash_completion.d
 
 PORTDOCS=	CHANGES FAQ NOTES
 PORTEXAMPLES=	*
@@ -28,18 +30,21 @@ OPTIONS=	LIBEVENT2	"Use libevent version 2" Off \
 		LIBEVENT_STATIC	"Build with static libevent" Off \
 		BACKSPACE 	"Build with tty/keys patch" Off
 
+CONFIGURE_ENV+=	"LIBEVENT_CFLAGS=${CFLAGS}" \
+		"LIBEVENT_LIBS=${LDFLAGS} -levent"
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBEVENT2)
 LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
-CPPFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/event2
 . if defined(WITH_LIBEVENT_STATIC)
 LESTATIC=	${LOCALBASE}/lib/event2/libevent.a
 . endif
 .else
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
-CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 . if defined(WITH_LIBEVENT_STATIC)
 LESTATIC=	${LOCALBASE}/lib/libevent.a
@@ -55,7 +60,7 @@ post-patch:
 		${WRKSRC}/tmux.1 ${WRKSRC}/tmux.h ${WRKSRC}/CHANGES
 	${REINPLACE_CMD} -e '/LIBS=/s/-lrt//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITH_LIBEVENT_STATIC)
-	${REINPLACE_CMD} -e '4534s|$$ac_res |${LESTATIC} |' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's|$$LIBEVENT_LIBS |${LESTATIC} |' ${WRKSRC}/configure.ac
 .endif
 
 do-install:
@@ -63,6 +68,8 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/tmux.1 ${MANPREFIX}/man/man1
 
 post-install:
+	${MKDIR} ${PREFIX}/etc/bash_completion.d
+	@${LN} ${WRKSRC}/examples/bash_completion_tmux.sh ${PREFIX}/etc/bash_completion.d/tmux
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
