@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	6.0.3.2197
-PORTEPOCH=	2
+PORTVERSION=	5.2.1.1588
+PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
 		http://dl.google.com/earth/client/current/:current
