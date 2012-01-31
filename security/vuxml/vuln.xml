@@ -52,7 +52,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>sudo</name>
-	<range><lt>1.8.3_2</lt></range>
+	<range><ge>1.8.0</ge><lt>1.8.3_2</lt></range>
       </package>
     </affects>
     <description>
@@ -82,6 +82,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-01-30</discovery>
       <entry>2012-01-30</entry>
+      <modified>2012-01-31</modified>
     </dates>
   </vuln>
 
