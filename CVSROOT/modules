@@ -991,6 +991,7 @@ bennugd-core                    ports/devel/bennugd-core
 bennugd-modules                 ports/devel/bennugd-modules
 berkeley-db                     ports/java/berkeley-db
 bestfit                         ports/misc/bestfit
+better-cacti-templates          ports/net-mgmt/better-cacti-templates
 bf2c                            ports/lang/bf2c
 bfbtester                       ports/security/bfbtester
 bfe                             ports/emulators/bfe
@@ -1118,6 +1119,7 @@ blwm                            ports/x11-wm/blwm
 bmake                           ports/devel/bmake
 bmeps                           ports/graphics/bmeps
 bmf                             ports/mail/bmf
+bmkdep                          ports/devel/bmkdep
 bmon                            ports/net/bmon
 bmp-alarm                       ports/x11-clocks/bmp-alarm
 bmp-crossfade                   ports/audio/bmp-crossfade
@@ -21107,6 +21109,7 @@ pkfonts300                      ports/print/pkfonts300
 pkfonts360                      ports/print/pkfonts360
 pkfonts400                      ports/print/pkfonts400
 pkfonts600                      ports/print/pkfonts600
+pkg                             ports/ports-mgmt/pkg
 pkg-config                      ports/devel/pkg-config
 pkg-orphan                      ports/ports-mgmt/pkg-orphan
 pkg-plist                       ports/ports-mgmt/pkg-plist
@@ -21963,6 +21966,7 @@ py-drmaa                        ports/sysutils/py-drmaa
 py-dsv                          ports/textproc/py-dsv
 py-dtflickr                     ports/www/py-dtflickr
 py-durus                        ports/devel/py-durus
+py-dvdvideo                     ports/sysutils/py-dvdvideo
 py-dynrules                     ports/devel/py-dynrules
 py-editobj                      ports/graphics/py-editobj
 py-elementtree                  ports/devel/py-elementtree
