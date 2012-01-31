@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	bzr-externals
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/54615635/ \
+MASTER_SITES=	http://launchpadlibrarian.net/91495699/ \
 		http://www.c-s.li/ports/
-DISTNAME=	externals-${PORTVERSION}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Support external branches like svn:externals
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/externals
 
