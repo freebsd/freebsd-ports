@@ -22,7 +22,7 @@ lib/gtk-2.0/immodules/im-gcin.so
 %%CHEWING_MODULE%%lib/gcin/chewing-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
-%%CHEWING_MODULE%%lib/gcin/intcode-module.so
+lib/gcin/intcode-module.so
 lib/gcin/libgcin-im-client.so
 lib/gcin/libgcin-im-client.so.1.2.5
 lib/gcin/libgcin-im-client.so.1
@@ -83,9 +83,12 @@ share/icons/gcin/NewCJ3.png
 share/icons/gcin/4corner.png
 share/icons/gcin/amis-gcin.png
 share/icons/gcin/ar30.png
+share/icons/gcin/ar30-big.png
+share/icons/gcin/ar33.png
 share/icons/gcin/cj-punc.png
 share/icons/gcin/cj.png
 share/icons/gcin/cj5.png
+share/icons/gcin/cj543.png
 share/icons/gcin/chewing.png
 share/icons/gcin/dayi3.png
 share/icons/gcin/en-kana-nippon.png
@@ -104,6 +107,7 @@ share/icons/gcin/hakka.png
 share/icons/gcin/half-simp.png
 share/icons/gcin/half-trad.png
 share/icons/gcin/halfwidth-kana.png
+share/icons/gcin/hangul.png
 share/icons/gcin/intcode.png
 share/icons/gcin/jtcj_gb.png
 share/icons/gcin/juyin.png
@@ -114,10 +118,13 @@ share/icons/gcin/newcj.png
 share/icons/gcin/noseeing.png
 share/icons/gcin/paiwan-gcin.png
 share/icons/gcin/pinyin.png
+share/icons/gcin/russian.png
 share/icons/gcin/sakura.png
 share/icons/gcin/scj.png
 share/icons/gcin/shuangpin.png
 share/icons/gcin/simplex.png
+share/icons/gcin/simplex-punc.png
+share/icons/gcin/symbol_table.png
 share/icons/gcin/symbols.png
 share/icons/gcin/taiwan.png
 share/icons/gcin/telecode.png
@@ -127,7 +134,7 @@ share/icons/gcin/wm2.png
 share/icons/gcin/wubi.png
 share/icons/gcin.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/icons/gcin
+@dirrm share/icons/gcin
 @dirrmtry share/icons
 @dirrmtry share/applications
 @dirrmtry %%DATADIR%%/table
@@ -135,6 +142,6 @@ share/icons/gcin.png
 @dirrmtry %%DATADIR%%
 @dirrmtry lib/gtk-2.0/immodules
 @dirrmtry lib/gtk-2.0
-@dirrmtry lib/gcin
+@dirrm lib/gcin
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules

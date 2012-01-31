@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTVERSION=	2.7.1
+PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
@@ -114,7 +114,7 @@ post-build:
 
 post-install:
 .if !defined(DEBUG_FLAGS)
-.for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts*
+.for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts-edit tsa2d32 tsd2a32 tsin2gtab-phrase tslearn
 	@${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 .endif
