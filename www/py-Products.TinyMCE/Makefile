@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Products.TinyMCE
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.imaging>=1.0.2:${PORTSDIR}/www/py-
 DIST_SUBDIR=	zope
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 
 .include <bsd.port.mk>
