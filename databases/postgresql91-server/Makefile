@@ -26,7 +26,11 @@ DIST_SUBDIR=	postgresql
 
 ICU_PATCHFILE?=	pg-910-icu-2011-09-22.diff.gz
 
+.if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
+.else # Contrib has different options from -client/-server
+UNIQUENAME?=    ${PORTNAME}${DISTVERSION:R:S/.//}-${PKGNAMESUFFIX}
+.endif
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
@@ -75,16 +79,13 @@ GROUPS?=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
-.if !defined(SLAVE_ONLY)
-OPTIONS+=	NLS "Use internationalized messages" on
-.endif
-
 .if !defined(CLIENT_ONLY)
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
 .if !defined(SLAVE_ONLY)
+OPTIONS+=	NLS "Use internationalized messages" on
 OPTIONS+=	DTRACE "Build with DTrace probes (server only)" off
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	LDAP "Build with LDAP authentication support" off
