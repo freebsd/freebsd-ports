@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.6.1
+DISTVERSION=	2.7
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -142,12 +142,12 @@ post-patch:
 		${WRKSRC}/mozilla/xpcom/io/nsNativeCharsetUtils.cpp
 	@${REINPLACE_CMD} -e 's|libgnome-2.so.0|libgnome-2.so|' \
 		${WRKSRC}/mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp \
-		${WRKSRC}/mozilla/modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp
+		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
 	@${REINPLACE_CMD} -e 's|libgnomeui-2.so.0|libgnomeui-2.so|' \
 		${WRKSRC}/mozilla/toolkit/xre/nsNativeAppSupportUnix.cpp \
-		${WRKSRC}/mozilla/modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp
+		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
 	@${REINPLACE_CMD} -e 's|libgnomevfs-2.so.0|libgnomevfs-2.so|' \
-		${WRKSRC}/mozilla/modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp
+		${WRKSRC}/mozilla/image/decoders/icon/gtk/nsIconChannel.cpp
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; \

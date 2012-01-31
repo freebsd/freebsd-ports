@@ -1,18 +1,18 @@
 --- mozilla/js/src/configure.in.orig	2012-01-30 11:45:12.914127778 +0100
 +++ mozilla/js/src/configure.in	2012-01-30 11:46:03.130059796 +0100
-@@ -2512,6 +2512,7 @@
+@@ -2732,6 +2742,7 @@
      AC_DEFINE(JS_NUNBOX32)
      ;;
  sparc*-*)
 +    if test ! "$HAVE_64BIT_OS" ; then
-     ENABLE_TRACEJIT=1
      NANOJIT_ARCH=Sparc
      ENABLE_METHODJIT=1
-@@ -2520,6 +2521,7 @@
+     ENABLE_MONOIC=1
+@@ -2739,6 +2750,7 @@
      ENABLE_METHODJIT_TYPED_ARRAY=1
      AC_DEFINE(JS_CPU_SPARC)
      AC_DEFINE(JS_NUNBOX32)
 +    fi
      ;;
  esac
- 
+
