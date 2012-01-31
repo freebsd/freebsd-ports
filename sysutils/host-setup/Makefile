@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	host-setup
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
