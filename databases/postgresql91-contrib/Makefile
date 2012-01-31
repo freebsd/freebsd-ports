@@ -28,6 +28,8 @@ SLAVE_ONLY=	yes
 CONFIGURE_ARGS+=--with-libxslt --with-libxml
 LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
+OPTIONS=	OSSP_UUID	"Enable / disable ossp-uuid support"	on
+
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/extension/README
 
