@@ -233,7 +233,7 @@
     SUBDIR += fkiss
     SUBDIR += flare
     SUBDIR += flightgear
-    SUBDIR += flightgear-aircrafts
+    SUBDIR += flightgear-aircraft
     SUBDIR += flightgear-atlas
     SUBDIR += flightgear-data
     SUBDIR += flightgear-mb339-pan
