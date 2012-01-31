@@ -71,6 +71,7 @@
     SUBDIR += portupdate-scan
     SUBDIR += portupgrade
     SUBDIR += portupgrade-devel
+    SUBDIR += poudriere
     SUBDIR += psearch
     SUBDIR += pver
     SUBDIR += qtpkg
