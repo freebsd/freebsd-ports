@@ -12,6 +12,7 @@
     SUBDIR += R-cran-bayesm
     SUBDIR += R-cran-eco
     SUBDIR += R-cran-epicalc
+    SUBDIR += R-cran-snow
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += avogadro
