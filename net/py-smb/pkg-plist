@@ -43,6 +43,18 @@
 %%PYTHON_SITELIBDIR%%/smb/smb_structs.py
 %%PYTHON_SITELIBDIR%%/smb/smb_structs.pyc
 %%PYTHON_SITELIBDIR%%/smb/smb_structs.pyo
+%%PYTHON_SITELIBDIR%%/smb/utils/U32.py
+%%PYTHON_SITELIBDIR%%/smb/utils/U32.pyc
+%%PYTHON_SITELIBDIR%%/smb/utils/U32.pyo
+%%PYTHON_SITELIBDIR%%/smb/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/smb/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/smb/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/smb/utils/md4.py
+%%PYTHON_SITELIBDIR%%/smb/utils/md4.pyc
+%%PYTHON_SITELIBDIR%%/smb/utils/md4.pyo
+%%PYTHON_SITELIBDIR%%/smb/utils/pyDes.py
+%%PYTHON_SITELIBDIR%%/smb/utils/pyDes.pyc
+%%PYTHON_SITELIBDIR%%/smb/utils/pyDes.pyo
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/nmb/NetBIOS.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/nmb/NetBIOSProtocol.html
@@ -89,5 +101,6 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules/nmb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_modules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/smb/utils
 @dirrm %%PYTHON_SITELIBDIR%%/smb
 @dirrm %%PYTHON_SITELIBDIR%%/nmb
