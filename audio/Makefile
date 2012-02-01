@@ -777,7 +777,6 @@
     SUBDIR += wmalbum
     SUBDIR += wmauda
     SUBDIR += wmix
-    SUBDIR += wmmixer
     SUBDIR += wmmp
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
