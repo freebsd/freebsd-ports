@@ -9,8 +9,7 @@ PORTNAME=	wmsmixer
 PORTVERSION=	0.5.1
 PORTREVISION=	1
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.dockapps.org/files/63/268/ \
-				http://redundancy.redundancy.org/mirror/
+MASTER_SITES=	http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock
