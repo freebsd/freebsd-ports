@@ -14,13 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A pure perl persistent multi-level hash/array DBM
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FileHandle/Fmode.pm:${PORTSDIR}/devel/p5-FileHandle-Fmode
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-IO-stringy>=0.01:${PORTSDIR}/devel/p5-IO-stringy
-RUN_DEPENDS+=	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
-RUN_DEPENDS+=	p5-Test-Warn>=0.08:${PORTSDIR}/devel/p5-Test-Warn
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
+		${SITE_PERL}/${PERL_ARCH}/FileHandle/Fmode.pm:${PORTSDIR}/devel/p5-FileHandle-Fmode \
+		p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-IO-stringy>=0.01:${PORTSDIR}/devel/p5-IO-stringy
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
+		${SITE_PERL}/${PERL_ARCH}/FileHandle/Fmode.pm:${PORTSDIR}/devel/p5-FileHandle-Fmode \
+		p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-IO-stringy>=0.01:${PORTSDIR}/devel/p5-IO-stringy
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Warn>=0.08:${PORTSDIR}/devel/p5-Test-Warn
 
 MAN3=		DBM::Deep.3 DBM::Deep::Cookbook.3 DBM::Deep::Internals.3 \
 		DBM::Deep::Iterator::File::BucketList.3 \
