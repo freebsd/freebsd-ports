@@ -28,10 +28,11 @@ ICU_PATCHFILE?=	pg-910-icu-2011-09-22.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
-.else # Contrib has different options from -client/-server
-UNIQUENAME?=    ${PORTNAME}${DISTVERSION:R:S/.//}-${PKGNAMESUFFIX}
-.endif
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
+.else # Contrib has different options from -client/-server
+UNIQUENAME?=    ${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
+LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}
+.endif
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	YES
