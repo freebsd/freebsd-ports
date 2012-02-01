@@ -55,11 +55,11 @@ post-patch:
 	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
 	@${LN} -s -f ${LOCALBASE}/bin/bash ${WRKSRC}/local/bin/sh
 	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CC}#' -e 's#%%CFLAGS%%#${CFLAGS}#' ${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/cc
-	@${CHMOD} ${BINMODE} ${WRKSRC}/local/bin/cc
-	@${LN} -s cc ${WRKSRC}/local/bin/gcc
+	@${CHMOD} +x ${WRKSRC}/local/bin/cc
+	@${LN} -s -f cc ${WRKSRC}/local/bin/gcc
 	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${CXX}#' -e 's#%%CFLAGS%%#${CXXFLAGS}#' ${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/c++
-	@${CHMOD} ${BINMODE} ${WRKSRC}/local/bin/c++
-	@${LN} -s c++ ${WRKSRC}/local/bin/g++
+	@${CHMOD} +x ${WRKSRC}/local/bin/c++
+	@${LN} -s -f c++ ${WRKSRC}/local/bin/g++
 	@${SED} -e 's#%%CC%%#${LOCALBASE}/bin/${FC}#' -e 's#%%CFLAGS%%#${FFLAGS}#' ${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/gfortran
 	@${CHMOD} +x ${WRKSRC}/local/bin/gfortran
 	@${MKDIR} ${WRKSRC}/tmp
@@ -96,7 +96,7 @@ post-patch:
 IGNORE=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
 .endif
 
-.if !defined(DISABLE_MAKE_JOBS)
+.if !defined(DISABLE_MAKE_JOBS) && ${OSVERSION} < 900000
 MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
 .endif
 
