@@ -4,5 +4,4 @@ verification. Domain owners can specify who is qualified to send
 mail for the domain by publishing SPF TXT records in DNS.
 Read all about SPF at http://spf.pobox.com/
 
-Author: James Couzens <jcouzens@6o4.ca>
-WWW: http://www.libspf.org/
+WWW: http://software.schmorp.de/pkg/libspf.html
