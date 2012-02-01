@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	solidcoin
-PORTVERSION=	2.03
+PORTVERSION=	2.041
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	http://solidcoin.info/downloads/ \
 		http://dl.dropbox.com/u/47582909/
-DISTNAME=	${PORTNAME}-source-203
+DISTNAME=	${PORTNAME}-source-2041
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Alternative Bitcoin peer-to-peer currency client
