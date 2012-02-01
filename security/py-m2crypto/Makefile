@@ -13,22 +13,22 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	M2Crypto-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=	2.5+
 USE_OPENSSL=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
-PYDISTUTILS_PKGNAME=	M2Crypto
-
-.include <bsd.port.pre.mk>
-
 PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
+PYDISTUTILS_PKGNAME=	M2Crypto
+PYEASYINSTALL_ARCHDEP=	yes
 
 post-patch:
-	@${REINPLACE_CMD} "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" ${WRKSRC}/SWIG/Makefile
+	@${REINPLACE_CMD} \
+		-e 's|/usr/local/include/python$$(PYVER)|${PYTHON_INCLUDEDIR}|g' \
+		-e 's|/usr/local/lib/python$$(PYVER)|${PYTHON_INCLUDEDIR}|g' \
+			${WRKSRC}/SWIG/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
