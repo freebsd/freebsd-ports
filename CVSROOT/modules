@@ -235,6 +235,7 @@ R-cran-inline                   ports/math/R-cran-inline
 R-cran-iterators                ports/devel/R-cran-iterators
 R-cran-itertools                ports/devel/R-cran-itertools
 R-cran-maptools                 ports/astro/R-cran-maptools
+R-cran-memisc                   ports/math/R-cran-memisc
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-proto                    ports/devel/R-cran-proto
@@ -244,8 +245,10 @@ R-cran-sandwich                 ports/math/R-cran-sandwich
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
 R-cran-sm                       ports/math/R-cran-sm
+R-cran-snow                     ports/science/R-cran-snow
 R-cran-sp                       ports/math/R-cran-sp
 R-cran-spdep                    ports/math/R-cran-spdep
+R-cran-survival                 ports/science/R-cran-survival
 R-cran-twitteR                  ports/net/R-cran-twitteR
 R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
@@ -3508,7 +3511,7 @@ flick                           ports/devel/flick
 flickcurl                       ports/www/flickcurl
 flickrnet                       ports/devel/flickrnet
 flightgear                      ports/games/flightgear
-flightgear-aircrafts            ports/games/flightgear-aircrafts
+flightgear-aircraft             ports/games/flightgear-aircraft
 flightgear-atlas                ports/games/flightgear-atlas
 flightgear-data                 ports/games/flightgear-data
 flightgear-mb339-pan            ports/games/flightgear-mb339-pan
@@ -3976,6 +3979,7 @@ fusefs-chironfs                 ports/sysutils/fusefs-chironfs
 fusefs-cryptofs                 ports/sysutils/fusefs-cryptofs
 fusefs-curlftpfs                ports/sysutils/fusefs-curlftpfs
 fusefs-encfs                    ports/sysutils/fusefs-encfs
+fusefs-exfat                    ports/sysutils/fusefs-exfat
 fusefs-ext4fuse                 ports/sysutils/fusefs-ext4fuse
 fusefs-funionfs                 ports/sysutils/fusefs-funionfs
 fusefs-fur                      ports/sysutils/fusefs-fur
@@ -5060,6 +5064,7 @@ gtk-xfce-engine                 ports/x11-themes/gtk-xfce-engine
 gtk12                           ports/x11-toolkits/gtk12
 gtk20                           ports/x11-toolkits/gtk20
 gtk20-reference                 ports/x11-toolkits/gtk20-reference
+gtk3-oxygen-engine              ports/x11-themes/gtk3-oxygen-engine
 gtk30                           ports/x11-toolkits/gtk30
 gtk30-reference                 ports/x11-toolkits/gtk30-reference
 gtkada                          ports/x11-toolkits/gtkada
@@ -23348,6 +23353,7 @@ r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
 r-cran-maptools                 ports/astro/R-cran-maptools
+r-cran-memisc                   ports/math/R-cran-memisc
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-proto                    ports/devel/R-cran-proto
@@ -23365,9 +23371,11 @@ r-cran-sandwich                 ports/math/R-cran-sandwich
 r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-shape                    ports/graphics/R-cran-shape
 r-cran-sm                       ports/math/R-cran-sm
+r-cran-snow                     ports/science/R-cran-snow
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-spdep                    ports/math/R-cran-spdep
 r-cran-suppdists                ports/math/R-cran-SuppDists
+r-cran-survival                 ports/science/R-cran-survival
 r-cran-twitter                  ports/net/R-cran-twitteR
 r-cran-xml                      ports/textproc/R-cran-XML
 r-cran-xtable                   ports/textproc/R-cran-xtable
@@ -24451,6 +24459,7 @@ rubygem-sysinfo                 ports/devel/rubygem-sysinfo
 rubygem-sysloglogger            ports/sysutils/rubygem-SyslogLogger
 rubygem-systemu                 ports/devel/rubygem-systemu
 rubygem-taggable                ports/www/rubygem-taggable
+rubygem-teamocil                ports/sysutils/rubygem-teamocil
 rubygem-templater               ports/devel/rubygem-templater
 rubygem-termcolor               ports/textproc/rubygem-termcolor
 rubygem-terminal-table          ports/textproc/rubygem-terminal-table
