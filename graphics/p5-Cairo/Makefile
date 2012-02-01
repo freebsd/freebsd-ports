@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	Cairo
-PORTVERSION=	1.082
+PORTVERSION=	1.090
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION} \
 		CPAN
-MASTER_SITE_SUBDIR=	CPAN:TSCH
+MASTER_SITE_SUBDIR=	CPAN:XAOC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.200:${PORTSDIR}/devel/p5-ExtUtils-Depends 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Number-Delta>=1:${PORTSDIR}/devel/p5-Test-Number-Delta
+TEST_DEPENDS=	p5-Font-FreeType>=0:${PORTSDIR}/print/p5-Font-FreeType \
+		p5-Test-Number-Delta>=1:${PORTSDIR}/devel/p5-Test-Number-Delta
 
 PERL_CONFIGURE=	yes
 
