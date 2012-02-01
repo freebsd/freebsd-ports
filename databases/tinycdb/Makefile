@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analogous to cdb, but faster
 
 USE_GMAKE=	yes

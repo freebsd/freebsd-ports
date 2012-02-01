@@ -12,7 +12,7 @@ CATEGORIES?=	mail
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	-24
 
-MAINTAINER?=	mnag@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Library (written in C) for parsing and creating messages using MIME
 
 CONFLICTS=	gmime-1.0.*

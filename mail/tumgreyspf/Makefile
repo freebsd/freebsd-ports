@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
 		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf

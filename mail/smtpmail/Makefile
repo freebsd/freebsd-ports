@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to send e-mail via a remote smtp server
 
 GNU_CONFIGURE=	yes

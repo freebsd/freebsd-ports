@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://ftp.osuosl.org/pub/blfs/svn/l/ \
 		ftp://ftp.linux.ee/pub/gentoo/distfiles/distfiles/
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for posting electronic mail
 
 USE_BZIP2=	yes

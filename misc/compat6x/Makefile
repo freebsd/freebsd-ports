@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mnag/compat6x
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A convenience package to install the compat6x libraries
 
 USE_BZIP2=	yes

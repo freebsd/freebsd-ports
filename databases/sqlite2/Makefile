@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library
 
 USE_GMAKE=	YES
