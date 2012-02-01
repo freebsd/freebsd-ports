@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	tumgreyspf
-PORTVERSION=	1.35
+PORTVERSION=	1.36
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.tummy.com/pub/tummy/tumgreyspf/ \
-		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/
+		ftp://ftp.tummy.com/pub/tummy/tumgreyspf/old-releases/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	External policy checker for the postfix mail server
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
