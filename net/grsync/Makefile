@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grsync
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
@@ -21,6 +21,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 
 USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--disable-unity
 USE_GMAKE=	yes
 
 INSTALLS_ICONS=	yes
