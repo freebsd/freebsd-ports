@@ -1,11 +1,12 @@
-bin/args
-bin/car
-bin/commoncpp-config
-bin/mdsum
-bin/scrub-files
-bin/sockaddr
-bin/ucommon-config
-bin/zerofill
+bin/ucommon/args
+bin/ucommon/car
+bin/ucommon/commoncpp-config
+bin/ucommon/mdsum
+bin/ucommon/pdetach
+bin/ucommon/scrub-files
+bin/ucommon/sockaddr
+bin/ucommon/ucommon-config
+bin/ucommon/zerofill
 include/commoncpp/address.h
 include/commoncpp/applog.h
 include/commoncpp/commoncpp.h
@@ -13,6 +14,7 @@ include/commoncpp/config.h
 include/commoncpp/dccp.h
 include/commoncpp/exception.h
 include/commoncpp/export.h
+include/commoncpp/file.h
 include/commoncpp/mime.h
 include/commoncpp/numbers.h
 include/commoncpp/pointer.h
@@ -73,3 +75,4 @@ libdata/pkgconfig/commoncpp.pc
 libdata/pkgconfig/ucommon.pc
 @dirrm include/ucommon
 @dirrm include/commoncpp
+@dirrm bin/ucommon
