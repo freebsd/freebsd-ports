@@ -26,6 +26,9 @@ UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
 WRKSRC=		${WRKDIR}/bacula-${DISTVERSION}
 
+USERS=		bacula
+GROUPS=		${USERS}
+
 .if !defined(WITH_BAT)
 .if !defined(WITH_CLIENT_ONLY)
 USE_RC_SUBR?=	bacula-dir bacula-sd
@@ -155,7 +158,6 @@ USE_MYSQL=		yes
 DBTYPE=			mysql
 SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
 .elif defined(WITH_POSTGRESQL)
-DEFAULT_PGSQL_VER?=	82
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
