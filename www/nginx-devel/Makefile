@@ -213,8 +213,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODUL
 .endif
 
 .if defined(WITH_ECHO_MODULE)
-NGINX_ECHO_MODULE_VERSION=	0.37
-GIT_ECHO_MODULE_VERSION=	0-gb0c1fc6
+NGINX_ECHO_MODULE_VERSION=	0.38rc1
+GIT_ECHO_MODULE_VERSION=	0-g6c1f553
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_MODULE_VERSION}/:echo
 DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_MODULE_VERSION}-${GIT_ECHO_MODULE_VERSION}.tar.gz:echo
@@ -222,8 +222,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_MODU
 .endif
 
 .if defined(WITH_HEADERS_MORE_MODULE)
-NGINX_HEADERS_MORE_MODULE_VERSION=	0.16
-GIT_HEADERS_MORE_MODULE_VERSION=	0-gde77fd2
+NGINX_HEADERS_MORE_MODULE_VERSION=	0.17rc1
+GIT_HEADERS_MORE_MODULE_VERSION=	0-g3580526
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_MODULE_VERSION}/:headers_more
 DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_MODULE_VERSION}-${GIT_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
@@ -423,8 +423,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKI
 
 .if defined(WITH_DRIZZLE_MODULE)
 LIB_DEPENDS+=	drizzle.0:${PORTSDIR}/databases/drizzle
-NGINX_DRIZZLE_MODULE_VERSION=	0.1.2rc4
-GIT_DRIZZLE_MODULE_VERSION=	0-g46b744a
+NGINX_DRIZZLE_MODULE_VERSION=	0.1.2rc6
+GIT_DRIZZLE_MODULE_VERSION=	0-ge05b5ff
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_MODULE_VERSION}/:drizzle
 DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_MODULE_VERSION}-${GIT_DRIZZLE_MODULE_VERSION}.tar.gz:drizzle
@@ -546,8 +546,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 
 .if defined(WITH_SET_MISC_MODULE)
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_SET_MISC_MODULE_VERSION=	0.22rc4
-GIT_SET_MISC_VERSION=	0-g290d6cb
+NGINX_SET_MISC_MODULE_VERSION=	0.22rc5
+GIT_SET_MISC_VERSION=	0-ge6a54ab
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_MODULE_VERSION}/:setmisc
 DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_MODULE_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
