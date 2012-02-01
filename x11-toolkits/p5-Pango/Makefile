@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	Pango
-PORTVERSION=	1.222
+PORTVERSION=	1.223
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:TSCH
+MASTER_SITE_SUBDIR=	CPAN:XAOC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module for layout and render i18n text
 
-BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
-		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
-		${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \
-		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
+BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
+		p5-ExtUtils-PkgConfig>=1.03:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
+		p5-Cairo>=1:${PORTSDIR}/graphics/p5-Cairo \
+		p5-Glib2>=1.220:${PORTSDIR}/devel/p5-Glib2
+RUN_DEPENDS=	p5-Glib2>=1.220:${PORTSDIR}/devel/p5-Glib2
 
 USE_GNOME=	pango
 PERL_CONFIGURE=	yes
