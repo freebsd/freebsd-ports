@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	wpvs
-PORTVERSION=	2.2
+PORTVERSION=	2.5
 CATEGORIES=	graphics java
 MASTER_SITES=	http://download.deegree.org/deegree${PORTVERSION}/
 PKGNAMEPREFIX=	deegree-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_v${PORTVERSION:S/./_/}
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Deegree Web Terrain Service(WTS)/Web Perspective View Service(WPVS)
 
-RUN_DEPENDS=	${TOMCATDIR}:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS=	${LOCALBASE}/${TOMCATVER}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 
 USE_ZIP=	yes
 USE_JAVA=	1.5+
@@ -23,20 +23,22 @@ USE_JAVA=	1.5+
 NO_BUILD=	yes
 TOMCATVER=	tomcat5.5
 TOMCATDIR=	${PREFIX}/${TOMCATVER}
-TOMCATOWN=	www
-TOMCATGRP=	www
 WEBAPPDIR=	${TOMCATDIR}/webapps
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/deegree-wpvs
-PLIST_FILES=	${TOMCATVER}/webapps/deegree-wpvs.war
+PLIST_SUB=	TOMCATDIR=${TOMCATDIR:S|^${PREFIX}/||}
+
+post-extract:
+	@${MKDIR} ${WRKDIR}/${PORTDIRNAME}
+	@${TAR} xf ${WRKDIR}/deegree-wpvs.war -C ${WRKDIR}/${PORTDIRNAME}
 
 do-install:
-	cd ${WRKDIR} && \
-		${INSTALL} -g ${TOMCATGRP} -o ${TOMCATOWN} -m 444 deegree-wpvs.war ${WEBAPPDIR};
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${TOMCATDIR}/webapps/${PORTDIRNAME}
+	@cd ${WRKDIR}/${PORTDIRNAME} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTDIRNAME}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README_WPVS.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/README.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/deegree_wpvs_documentation_en.pdf ${DOCSDIR}
 .endif
 

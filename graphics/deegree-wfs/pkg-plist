@@ -1,0 +1,258 @@
+%%TOMCATDIR%%/webapps/deegree-wfs/META-INF/MANIFEST.MF
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes/log4j.properties
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes/wfsrequestmapping.properties
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/Commented_FeaturetypeDefiniton.xsd.txt
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/SGID024_Municipalities2004_edited_shp.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/SGID024_Springs_shp.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/SGID024_stateboundary_hsql.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/SGID100_RailroadsDLG100_shp.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/SGID100_countyboundaries_edited_hsql.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/SGID500_zipcodes_hsql.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/README.txt
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/cascade_wfs/SGID024_Springs_cascade.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/digitize/DigitizeFeatures.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/gazetteer/README.txt
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/gazetteer/gazetteer.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/philosopher/README.txt
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/philosopher/oracle/Philosopher.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/philosopher/postgis/Philosopher.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID024_springs.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID100_airports.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID100_lakesdlg100.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID100_railroadsdlg100.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID100_railroadstiger1990.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID100_roadsdlg100.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID500_contours1000ft.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID500_contours2500ft.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID500_contours500ft.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID500_dominantvegetation.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID500_energyresourcespoly.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons/SGID500_roadsdlg500.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/schemas/SGID024_Springs_shp.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/schemas/iso19112.xsd
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/wfs_configuration.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/cascade_infilter_main.xsl
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/cascade_outfilter_main.xsl
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/infilter_main.xsl
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/outfilter_basictypes.xsl
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/outfilter_counties.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/outfilter_main.xsl
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/outfilter_municipalities.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt/outwfs1_0_0.xsl
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Municipalities2004_edited.dbf
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Municipalities2004_edited.shp
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Municipalities2004_edited.shx
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Springs.dbf
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Springs.sbn
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Springs.sbx
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Springs.shp
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Springs.shp.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID024_Springs.shx
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_CountyBoundaries_edited.dbf
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_CountyBoundaries_edited.shp
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_CountyBoundaries_edited.shx
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_RailroadsDLG100.dbf
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_RailroadsDLG100.rti
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_RailroadsDLG100.shp
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_RailroadsDLG100.shp.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/SGID100_RailroadsDLG100.shx
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/hsqldb/administration.log
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/hsqldb/administration.properties
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/hsqldb/administration.script
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/commons-codec-1.3.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/commons-httpclient-2.0.2-deegreeversion.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/commons-logging.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/deegree2.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/hsqldb.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/jai_core.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/jaxen-1.1-beta-8.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/jts-1.8.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/log4j-1.2.13.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/postgis-1.3.3.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/postgresql-8.3-603.jdbc3.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib/vecmath.jar
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/README.txt
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/DBtoFeatureTypeDef.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/HSQLDBtoFeatureTypeDef.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/IndexShapefiles.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/ShapetoFeatureTypeDef.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/SupportedSRS.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/create_digitizer_table_postgis.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/create_gazetteer_tables_postgis.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/create_spatial_database_postgis.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch/shp2pgsql.bat
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/DBtoFeatureTypeDef.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/HSQLDBtoFeatureTypeDef.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/IndexShapefiles.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/ShapetoFeatureTypeDef.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/SupportedSRS.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/create_digitizer_table_postgis.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/create_gazetteer_tables_postgis.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/create_spatial_database_postgis.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell/shp2pgsql.sh
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/create_digitizer_table_postgis.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/02_postgis_counties_create-table.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/02_postgis_municipalities_create-table.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/03_postgis_counties_insert-and-update.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/03_postgis_municipalities_insert-and-update.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/04_postgis_counties_create-index.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/04_postgis_municipalities_create-index.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer/05_create_tables_for_ft_si_gazeteer_metadata.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/oracle/create_philosopher.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/oracle/drop+create_philosopher.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/oracle/drop_philosopher.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/postgis/create_philosopher.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/postgis/drop+create_philosopher.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/postgis/drop_philosopher.sql
+%%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/web.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/client.html
+%%TOMCATDIR%%/webapps/deegree-wfs/client/client.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/output.html
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requestHandler.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/DescribeFeatureType/xml/Gaz_DF_SI_Gazetteer.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetCapabilities/xml/Simple.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetFeature/xml/Gaz_GF_1.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetFeature/xml/Gaz_GF_2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetFeature/xml/Gaz_GF_3.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetFeature/xml/Gaz_GF_SI_Gazetteer.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/kvp/Example1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/kvp/Example1variant1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/kvp/Example2.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/kvp/Example2variant1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/kvp/Example3.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/xml/DescribePhilosopher.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/xml/DescribePhilosopher2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetCapabilities/kvp/Example1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetCapabilities/xml/Simple.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example1variant1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example1variant2.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example2.kvp.ignore
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example3.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example3variant1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example4.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp/Example4variant1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/BBOX.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/BBOX2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Beyond.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/ComplexFilter.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/ComplexFilter2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Country_All.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Country_BBOX.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Country_BBOXTransform.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Country_Intersects.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Country_TransformedBBOX.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/DWithin.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Disjoint.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Id.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Philosopher_All.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Philosopher_All_Sorted_by_birth.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/Philosopher_All_Sorted_by_birth2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/PropertyIsEqualTo.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/PropertyIsEqualTo2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/PropertyIsLike.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml/PropertyIsLike2.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeatureWithLock/xml/Country_BBOX.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/LockFeature/xml/example1.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/kvp/Example1.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/kvp/Example2.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/kvp/Example3.kvp
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/xml/Complex.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/xml/DeleteAllCountries.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/xml/DeleteAllPhilosophers.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/xml/Insert.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/xml/Replace.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/DescribeFeatureType/xml/Railroads.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/DescribeFeatureType/xml/Springs.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetCapabilities/xml/Simple.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetFeature/xml/CountyBoundaries_edited_hits.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetFeature/xml/Springs_code5.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetFeature/xml/Springs_code5_srs4326.xml
+%%TOMCATDIR%%/webapps/deegree-wfs/css/deegree.css
+%%TOMCATDIR%%/webapps/deegree-wfs/deegree_header.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/deegree_main.html
+%%TOMCATDIR%%/webapps/deegree-wfs/deegree_navi.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/error.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/images/OSGeo_project.png
+%%TOMCATDIR%%/webapps/deegree-wfs/images/logo-deegree.png
+%%TOMCATDIR%%/webapps/deegree-wfs/images/logo-latlon.png
+%%TOMCATDIR%%/webapps/deegree-wfs/images/logo-unibonn.png
+%%TOMCATDIR%%/webapps/deegree-wfs/images/portal_saltlake.jpg
+%%TOMCATDIR%%/webapps/deegree-wfs/index.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs_basic.html
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs_ftList.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs_getfeature.html
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs_main.html
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs_navi.jsp
+%%TOMCATDIR%%/webapps/deegree-wfs/wfs_transaction.html
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/images
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/css
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetFeature/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetFeature
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetCapabilities/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/GetCapabilities
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/DescribeFeatureType/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah/DescribeFeatureType
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/utah
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction/kvp
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/Transaction
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/LockFeature/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/LockFeature/kvp
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/LockFeature
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeatureWithLock/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeatureWithLock
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature/kvp
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetFeature
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetCapabilities/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetCapabilities/kvp
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/GetCapabilities
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType/kvp
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher/DescribeFeatureType
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/philosopher
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetFeature/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetFeature
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetCapabilities/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/GetCapabilities
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/DescribeFeatureType/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer/DescribeFeatureType
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs/gazetteer
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests/wfs
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client/requests
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/client
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/postgis
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher/oracle
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/philosopher
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql/gazetteer
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/sql
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/shell
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts/batch
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/scripts
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/lib
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector/hsqldb
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah/vector
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/utah
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data/sql
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/data
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/xslt
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/schemas
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/postgis_featuretypedefinitons
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/philosopher/postgis
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/philosopher/oracle
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/philosopher
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/gazetteer
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/digitize
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes/cascade_wfs
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes/example_featuretypes
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs/featuretypes
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf/wfs
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/conf
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF/classes
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/WEB-INF
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs/META-INF
+@dirrm %%TOMCATDIR%%/webapps/deegree-wfs
+@dirrm %%TOMCATDIR%%/webapps
