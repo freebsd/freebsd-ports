@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.24.1
-PORTREVISION=	2
+PORTVERSION=	0.24.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
