@@ -1038,8 +1038,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/keyboard/ar_ui.xml
 %%DATADIR%%/themes/default/keyboard/de.xml
 %%DATADIR%%/themes/default/keyboard/de_ui.xml
-%%DATADIR%%/themes/default/keyboard/dk.xml
-%%DATADIR%%/themes/default/keyboard/dk_ui.xml
+%%DATADIR%%/themes/default/keyboard/da.xml
+%%DATADIR%%/themes/default/keyboard/da_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_gb.xml
 %%DATADIR%%/themes/default/keyboard/en_gb_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_us.xml
