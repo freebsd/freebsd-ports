@@ -1,5 +1,5 @@
---- ../chaoslawful-drizzle-nginx-module-46b744a/config.orig	2011-12-30 10:26:53.000000000 +0400
-+++ ../chaoslawful-drizzle-nginx-module-46b744a/config	2011-12-30 10:28:20.000000000 +0400
+--- ../chaoslawful-drizzle-nginx-module-e05b5ff/config.orig	2011-12-30 10:26:53.000000000 +0400
++++ ../chaoslawful-drizzle-nginx-module-e05b5ff/config	2011-12-30 10:28:20.000000000 +0400
 @@ -22,12 +22,12 @@
  
      if [ $ngx_found = no ]; then
