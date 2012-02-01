@@ -9,10 +9,10 @@ PORTNAME=	libspf2
 PORTVERSION=	1.2.9
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.libspf2.org/%SUBDIR%/
-MASTER_SITE_SUBDIR=	spf
+MASTER_SITES=	http://www.libspf2.org/spf/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=	${PORTNAME}-1.0.*
