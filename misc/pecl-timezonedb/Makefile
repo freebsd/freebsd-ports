@@ -13,16 +13,14 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Timezone Database to be used with PHP's date and time functions
 
-LICENSE=	PHP301
-
-USE_PHP=	yes
-USE_PHPEXT=	yes
-PHP_MODNAME=	timezonedb
-IGNORE_WITH_PHP=4
+LICENSE=	PHP30
 
 CONFIGURE_ARGS=	--enable-timezonedb
+USE_PHP=	yes
+USE_PHPEXT=	yes
+IGNORE_WITH_PHP=4
 
 .include <bsd.port.mk>
