@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	M2Crypto-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13

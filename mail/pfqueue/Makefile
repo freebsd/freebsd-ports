@@ -10,7 +10,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console-based tool for handling Postfix 1, Postfix 2 and Exim queues
 
 USE_AUTOTOOLS=	libtool

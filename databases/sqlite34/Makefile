@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 DISTNAME=	sqlite-${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library
 
 CONFLICTS=	sqlite3-[0-9]*

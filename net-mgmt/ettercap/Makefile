@@ -14,7 +14,7 @@ CATEGORIES=		net-mgmt security
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/NG-${PORTVERSION} \
 			${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.libspf.org/files/src/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mnag/${PORTNAME}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Policy Framework (SPF) library and client
 
 USE_BZIP2=	yes

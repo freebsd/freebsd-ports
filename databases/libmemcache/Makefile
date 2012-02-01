@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/libmemcache/
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C library for accessing a memcache cluster
 
 USE_BZIP2=	yes

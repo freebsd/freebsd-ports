@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 
 GNU_CONFIGURE=	yes

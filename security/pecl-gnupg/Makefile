@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pecl wrapper around the gpgme library
 
 LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme

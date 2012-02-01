@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.libspf2.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	spf
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
 CONFLICTS=	${PORTNAME}-1.0.*

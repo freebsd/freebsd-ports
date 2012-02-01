@@ -11,7 +11,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to provide access to Gmail via Python
 
 BUILD_DEPENDS=	py*-mechanize>=0:${PORTSDIR}/www/py-mechanize

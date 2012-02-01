@@ -13,7 +13,7 @@ MASTER_SITES=	http://xael.org/norman/python/pyclamav/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python binding to libclamav written in C
 
 LIB_DEPENDS=	clamav.7:${PORTSDIR}/security/clamav

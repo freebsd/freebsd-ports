@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
 
 USE_PYTHON=	yes
