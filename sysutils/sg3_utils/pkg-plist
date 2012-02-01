@@ -1,3 +1,4 @@
+bin/sg_decode_sense
 bin/sg_format
 bin/sg_get_config
 bin/sg_get_lba_status
@@ -16,10 +17,12 @@ bin/sg_read_buffer
 bin/sg_read_long
 bin/sg_readcap
 bin/sg_reassign
+bin/sg_referrals
 bin/sg_requests
 bin/sg_rmsn
 bin/sg_rtpg
 bin/sg_safte
+bin/sg_sanitize
 bin/sg_sat_identify
 bin/sg_sat_phy_event
 bin/sg_sat_set_features
