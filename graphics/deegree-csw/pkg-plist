@@ -1,0 +1,545 @@
+%%TOMCATDIR%%/webapps/deegree-csw/META-INF/MANIFEST.MF
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/harvestrepository.properties
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/log4j.properties
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/org/deegree/ogcwebservices/csw/csw202.properties
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/cataloguemanager.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/controller.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/metadata2FlatStructure.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/metadata2htmlBrief.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/metadata2htmlFull.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/reports/logo-deegree.png
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/reports/report1.jasper
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/reports/report1.jrxml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/serviceMetadata2htmlLinkage.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/templates/dataseries.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/templates/dataset.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/LOCALWFS_configuration.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/README.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/csw_configuration.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/csw_configuration_blob.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/featuretypes/csw_blob_oracle.xsd.ignore
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/featuretypes/csw_blob_postgres.xsd.ignore
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/featuretypes/csw_oracle.xsd.ignore
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/featuretypes/csw_postgres.xsd.ignore
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/CSW-discovery.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/CSW-publication.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/ChangeLog.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/rec-dcmes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/rec-dcterms.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/record.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/dc_dataset.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/examples/Filter_Capabilities_Sample.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/examples/Filter_Capabilities_Small_Sample.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/expr.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/filter.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/filterCapabilities.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/sort.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/ReadMe.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/basicTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/coordinateOperations.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/coordinateReferenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/coordinateSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/coverage.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/dataQuality.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/datums.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/defaultStyle.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/dictionary.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/direction.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/dynamicFeature.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/feature.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/geometryAggregates.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/geometryBasic0d1d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/geometryBasic2d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/geometryComplexes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/geometryPrimitives.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/gml.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/gmlBase.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/grids.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/measures.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/observation.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/referenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/temporal.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/temporalReferenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/temporalTopology.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/topology.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/units.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base/valueObjects.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/column.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/compoundCRS#2.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/crsDictionaryv1.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleCompoundCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleConversion.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleConversionSimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleGeographicCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleGeographicCRSsimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleProjectedCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleProjectedCRSsimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleVerticalCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/exampleVerticalCRSsimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/grid2dSquareCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/row.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/transverseMercatorGeneral#2.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/transverseMercatorMethod#1.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/transverse_mercator_application_schema/transverseMercator.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/coordinateOperations.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/coordinateReferenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/coordinateSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/dataQuality.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/datums.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/gmlCommonCRSsProfile.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/basicTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/crsSupportProfile.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/dictionary.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/geometryBasic0d1d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/geometryBasic2d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/gmlBase.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/gmlCrsSupportProfile.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/measures.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/referenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0/units.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/exampleImageCRSpixelCenter.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/exampleImageCRSpixelCorner.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/exampleMethodEPSG9624.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/exampleMethodGridElevation.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/exampleMethodRSM.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/gridSpacing.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/imageCRSpixelCenter.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/imageCRSpixelCorner.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/imageDatumPixelCenter.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/imageDatumPixelCorner.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateConcatenatedOperation.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateConcatenatedOperationSimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateGeorectifiedGridCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateGeorectifiedGridCRSsimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateGeoreferencingTransformation.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateGeoreferencingTransformationSimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateGridElevationTransformation.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateGridElevationTransformationSimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateImageCRS.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples/templateImageCRSsimplified.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/coordinateOperations.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/coordinateReferenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/dataQuality.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/datums.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/gmlGridCRSsProfile.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples/axisDirection.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples/dataTypesDictionary.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples/derivedCRSType.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples/pixelInCell.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples/rangeMeaning.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples/verticalDatumType.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/basicTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/dictionary.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/gmlBase.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/gmlSimpleDictionaryProfile.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/GML-pidf-lo-shape.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/basicTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/geometryBasic0d1d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/geometryBasic2d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/geometryPrimitives.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/gmlBase.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9/measures.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation/annotation.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation/annotation.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation/curveOfInterest.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation/featureOfInterest.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation/pointOfInterest.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation/regionOfInterest.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples/landsat7Annotation.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples/landsat7Coverage.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples/landsat7Instance.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples/minimalInstance.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples/r3dCoverage.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples/r3dDemOrthoInstance.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/gmlJP2Profile.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/examples/exampleHydrographySchema.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/examples/exampleReporterSchema.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/examples/exampleRoads_BtsSchema.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf2.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsfLevels.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/readme.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/smil/smil20-language.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/smil/smil20.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/smil/xml-mod.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/xlink/xlinks.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/ReadMe.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/Version.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gco/basicTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gco/gco.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gco/gcoBase.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/applicationSchema.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/citation.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/constraints.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/content.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/dataQuality.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/distribution.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/extent.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/freeText.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/gmd.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/identification.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/maintenance.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/metadataApplication.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/metadataEntity.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/metadataExtension.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/portrayalCatalogue.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/referenceSystem.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd/spatialRepresentation.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/ReadMe.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/basicTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/coordinateOperations.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/coordinateReferenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/coordinateSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/coverage.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/datums.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/dictionary.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/direction.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/dynamicFeature.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/feature.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/geometryAggregates.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/geometryBasic0d1d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/geometryBasic2d.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/geometryComplexes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/geometryPrimitives.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/gml.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/gmlBase.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/grids.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/measures.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/observation.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/referenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/temporal.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/temporalReferenceSystems.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/temporalTopology.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/topology.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/units.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml/valueObjects.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/catalogues.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/codelistItem.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/crsItem.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/extendedTypes.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/gmx.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/gmxUsage.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx/uomItem.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gsr/gsr.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gsr/spatialReferencing.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gss/geometry.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gss/gss.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gts/gts.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gts/temporalObjects.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/Codelist/ML_gmxCodelists.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/Codelist/gmxCodelists.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/crs/ML_gmxCrs.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/crs/gmxCrs.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/example/fr-fr.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/uom/ML_gmxUom.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/uom/gmxUom.xml
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/srv/serviceMetadata.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/srv/serviceModel.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/srv/srv.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/ReadMe.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/ows19115subset.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsAll.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsCommon.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsDataIdentification.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsExceptionReport.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsGetCapabilities.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsOperationsMetadata.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsServiceIdentification.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0/owsServiceProvider.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/xlink/1.0.0/ReadMe.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/xlink/1.0.0/xlinks.xsd
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/getRecordById.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/getRecordById_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/getRecords.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/getRecords_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/inDC.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/inISO.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/inISO_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/iso19115_out.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/iso19115_transaction.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/iso19115_transaction_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/iso19119_out.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/iso19119_transaction.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/iso19119_transaction_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/outDC.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/outISO.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/outISO_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/transaction.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/transactionOut.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/transactionOut_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/transaction_blob.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/utility_templates.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/wfs2iso19119.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt/wms2iso19119.xsl
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/setup/catalogueManager_config.properties
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/activation.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-beanutils-1.7.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-codec-1.3.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-collections-3.1.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-digester-1.7.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-discovery-0.2.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-fileupload-1.1.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-httpclient-2.0.2-deegreeversion.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-lang-2.1.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/commons-logging.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/deegree2.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/hsqldb.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/iText-2.1.7.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/j3d-vrml97.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/j3d_deegreeversion.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/j3dcore.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/j3dutils.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jai_core.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jasperreports-3.7.3.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jasperreports-fonts-3.7.3.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jasperreports-javaflow-3.7.3.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jaxb-api.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jaxb-impl.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jaxen-1.1-beta-8.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jsr173_1.0_api.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/jts-1.8.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/log4j-1.2.13.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/mail.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/postgis-1.3.3.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/postgresql-8.3-603.jdbc3.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/stringtree-json-2.0.5.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib/vecmath.jar
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/README.txt
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/README.TXT
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/count.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_blob_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_database.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_harvester.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_normal_index.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_spatial_index.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/create_trigger.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/drop_database.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/drop_harvester.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle/drop_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/count.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/create_blob_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/create_database.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/create_harvester.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/create_normal_index.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/create_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/create_spatial_index.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/drop_blob_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/drop_database.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/drop_harvester.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/drop_normal_index.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/drop_searchTables.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis/drop_spatial_index.sql
+%%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/web.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/client.html
+%%TOMCATDIR%%/webapps/deegree-csw/client/client.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/client/output.html
+%%TOMCATDIR%%/webapps/deegree-csw/client/requestHandler.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/DescribeRecord/xml/DescribeRecords.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetCapabilities/xml/GetCapabilities.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml/getRecordById_CountyBoundariesOfUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml/getRecordById_ElectricalGenerationTransmissionFacilitiesInUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml/getRecordById_LakesInUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml/getRecordById_Municipalities2004.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml/getRecordById_service1.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml/getRecordById_service2.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml/GetRecords_BBOX.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml/GetRecords_anytext_dc.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml/GetRecords_modified_csw.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml/GetRecords_sort_title.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml/GetRecords_subject.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml/GetRecords_title.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/delete.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_CountyBoundariesOfUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_ElectricalGenerationTransmissionFacilitiesInUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_LakesInUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_Municipalities2004.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_application_HessenAnalyser.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_application_HessenAnalyser_MultiLang.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_collection_TK50.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_dataset_TK50_BL_Frankfurt.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_dataset_TK50_BL_Wiesbaden.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_dataset_Ueberschwemmungsflaechen.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_dataset_Wasserschutzgebiete.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_service_WFS_Wasser.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_service_WMS_TK50.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_csw202apIso10_service_WMS_Wasser.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_service1.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/insert_service2.xml
+%%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml/update_ElectricalGenerationTransmissionFacilitiesInUtah.xml
+%%TOMCATDIR%%/webapps/deegree-csw/codethatcalendar.html
+%%TOMCATDIR%%/webapps/deegree-csw/css/ctc.css
+%%TOMCATDIR%%/webapps/deegree-csw/css/ctcstd.css
+%%TOMCATDIR%%/webapps/deegree-csw/css/deegree.css
+%%TOMCATDIR%%/webapps/deegree-csw/css/metadataclient.css
+%%TOMCATDIR%%/webapps/deegree-csw/csw_appselect_de.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/csw_appselect_en.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/csw_header.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/csw_main.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/csw_navi.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/cswsetup.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/deegree_header.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/deegree_main.html
+%%TOMCATDIR%%/webapps/deegree-csw/deegree_navi.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/error.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/help.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/images/OSGeo_project.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/calendar.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/control_add_blue.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/control_back_blue.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/control_play_blue.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/control_remove_blue.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/folder_database.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/help.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/logo-deegree.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/logo-latlon.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/logo-unibonn.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_close.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_code.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_add.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_add.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_database.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_delete.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_delete.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_edit.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_edit.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_gear.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_gear.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_get.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_save.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_text.png
+%%TOMCATDIR%%/webapps/deegree-csw/images/page_white_wrench.gif
+%%TOMCATDIR%%/webapps/deegree-csw/images/portal_saltlake.jpg
+%%TOMCATDIR%%/webapps/deegree-csw/images/progress.gif
+%%TOMCATDIR%%/webapps/deegree-csw/index.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/OpenLayers.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/accordian-src.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/accordian.pack.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/codethatcalendarstd.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/dialogs.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/exception.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/iso19115.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/json2.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/md_search.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/metadata.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/metadatabean.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/metadatavalidation.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/request_handler.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/scroller_ex.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/utils.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/uuid.js
+%%TOMCATDIR%%/webapps/deegree-csw/javascript/validation.js
+%%TOMCATDIR%%/webapps/deegree-csw/loginRedirect.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/logoutRedirect.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/mdCommon.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/mdContent.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/mdDistribution.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/mdPointOfContact.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/mdTime.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/md_editor.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/md_search.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/md_upload.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/md_upload_handler.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/metadataselect.jsp
+%%TOMCATDIR%%/webapps/deegree-csw/oracle_de.html
+%%TOMCATDIR%%/webapps/deegree-csw/oracle_en.html
+%%TOMCATDIR%%/webapps/deegree-csw/templateselect.jsp
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/javascript
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/images
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/css
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/Transaction
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecords
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetRecordById
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetCapabilities/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/GetCapabilities
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/DescribeRecord/xml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example/DescribeRecord
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw/example
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests/csw
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client/requests
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/client
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/postgis
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql/oracle
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts/sql
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/scripts
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/lib
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/setup
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/xslt
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/xlink/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/xlink
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/ows
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/srv
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/uom
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/example
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/crs
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources/Codelist
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/resources
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gts
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gss
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gsr
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmx
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gmd
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504/gco
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139/20060504
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso/19139
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/iso
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/xlink
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/smil
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0/examples
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlsfProfile
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/examples
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0/annotation
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/gmlJP2Profile
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape/0.0.9
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/geoshape
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0/Examples
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/SimpleDictionary
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0/Examples
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/GridCRSs
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CrsSupport
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples/transverse_mercator_application_schema
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0/Examples
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles/CommonCRSs
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/profiles
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1/base
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml/3.1.1
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/gml
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0/examples
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter/1.1.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/filter
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/profiles/apiso/1.0.0
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/profiles/apiso
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2/profiles
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw/2.0.2
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema/csw
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/schema
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw/featuretypes
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/csw
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/templates
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager/reports
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf/cataloguemanager
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/conf
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/org/deegree/ogcwebservices/csw
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/org/deegree/ogcwebservices
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/org/deegree
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes/org
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF/classes
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/WEB-INF
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw/META-INF
+@dirrm %%TOMCATDIR%%/webapps/deegree-csw
+@dirrm %%TOMCATDIR%%/webapps
