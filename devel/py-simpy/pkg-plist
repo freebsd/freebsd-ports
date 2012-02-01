@@ -6,6 +6,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/SManual/source/Acknowledgments.rst
 %%PORTDOCS%%%%DOCSDIR%%/SManual/source/Cheatsheets.rst
 %%PORTDOCS%%%%DOCSDIR%%/SManual/source/SManual.rst
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/CheatsheetOO_A4.pdf
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/CheatsheetOO_Letter.pdf
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/Cheatsheet_A4.pdf
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/Cheatsheet_Letter.pdf
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/SimGUIDebug2_0.pdf
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/cheatsheetOO_A4.xls
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/cheatsheetOO_Letter.xls
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/cheatsheet_A4.xls
+%%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/cheatsheet_Letter.xls
 %%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/images/Mon004.fig
 %%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/images/Mon004.pdf
 %%PORTDOCS%%%%DOCSDIR%%/SManual/source/_static/images/Mon004.png
@@ -374,30 +383,30 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bank23.py
 %%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bank24.out
 %%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bank24.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank01_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank02_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank03_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank04_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank05_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank06_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank07_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank08_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank09_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank10_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank11_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank12_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank13_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank14_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank15_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank16_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank17_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank18_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank19_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank20_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank21_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank22_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank23_OO.py
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO/bank24_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank01_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank02_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank03_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank04_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank05_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank06_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank07_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank08_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank09_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank10_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank11_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank12_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank13_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank14_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank15_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank16_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank17_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank18_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank19_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank20_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank21_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank22_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank23_OO.py
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms_OO/bank24_OO.py
 %%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/python2_out/bank01.out
 %%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/python2_out/bank02.out
 %%PORTDOCS%%%%DOCSDIR%%/source/Tutorials/bankprograms/python2_out/bank03.out
@@ -536,7 +545,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_static/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/Tutorials/bankprograms/python2_out
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/Tutorials/bankprograms/bankprograms_OO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/Tutorials/bankprograms_OO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/Tutorials/bankprograms
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/Tutorials
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/Manuals/programs
