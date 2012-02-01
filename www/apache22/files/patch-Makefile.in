@@ -96,10 +96,10 @@
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
 -	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
 -	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
-+	for i in dbmmanage htdbm htdigest htpasswd; do \
++	for i in ab apxs dbmmanage htdbm htdigest htpasswd httxt2dbm logresolve; do \
 +	  ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i.1 $(DESTDIR)$(mandir)/man1; \
 +	done
-+	for i in ab apachectl apxs htcacheclean httpd logresolve rotatelogs suexec; do \
++	for i in apachectl htcacheclean httpd rotatelogs suexec; do \
 +	  ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i.8 $(DESTDIR)$(mandir)/man8; \
 +	done
 +.if !defined(NOPORTDOCS)
