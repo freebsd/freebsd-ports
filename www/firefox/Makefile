@@ -120,8 +120,6 @@ post-patch:
 		${WRKSRC}/js/src/config/config.mk \
 		${WRKSRC}/config/mkdepend/Makefile.in \
 		${WRKSRC}/config/config.mk \
-		${WRKSRC}/config/mkdepend/Makefile.in \
-		${WRKSRC}/config/config.mk \
 		${WRKSRC}/xpcom/io/nsAppFileLocationProvider.cpp
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
