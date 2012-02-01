@@ -1,5 +1,5 @@
---- ../chaoslawful-lua-nginx-module-7bdd850/config.orig	2011-07-12 11:24:16.000000000 +0400
-+++ ../chaoslawful-lua-nginx-module-7bdd850/config	2011-07-12 11:26:45.000000000 +0400
+--- ../chaoslawful-lua-nginx-module-204ce2b/config.orig	2011-07-12 11:24:16.000000000 +0400
++++ ../chaoslawful-lua-nginx-module-204ce2b/config	2011-07-12 11:26:45.000000000 +0400
 @@ -104,12 +104,12 @@
  
          if [ $ngx_found = no ]; then
