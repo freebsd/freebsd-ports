@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative PHP Cache
 
 USE_PHP=	yes
@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-apc
-CFLAGS=		-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	IPC		"Enable IPC shm memory support (default: mmap)"	off \
 		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
