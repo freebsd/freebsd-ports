@@ -166,5 +166,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/README
 @unexec rmdir /var/db/rabbitmq/mnesia 2>/dev/null || true
 @unexec rmdir /var/db/rabbitmq 2>/dev/null || true
 @exec mkdir -p /var/log/rabbitmq
+@exec chown -R rabbitmq:rabbitmq /var/log/rabbitmq
 @exec mkdir -p /var/db/rabbitmq/mnesia
+@exec chown -R rabbitmq:rabbitmq /var/db/rabbitmq
 @exec mkdir -p %D/etc/rabbitmq

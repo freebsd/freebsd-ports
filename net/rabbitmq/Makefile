@@ -7,6 +7,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -25,18 +26,10 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	rabbitmq
 
-RABBITMQ_GID=	135
-RABBITMQ_GROUP=	rabbitmq
-RABBITMQ_UID=	135
-RABBITMQ_USER=	rabbitmq
+USERS=	rabbitmq
+GROUPS=	rabbitmq
 
 PLIST_SUB=	"VERSION=${PORTVERSION}"
-
-SUB_FILES=	pkg-install
-SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
-		RABBITMQ_GROUP=${RABBITMQ_GROUP} \
-		RABBITMQ_UID=${RABBITMQ_UID} \
-		RABBITMQ_USER=${RABBITMQ_USER}
 
 MAN1=		rabbitmq-server.1 rabbitmqctl.1 rabbitmq-plugins.1
 MAN5=		rabbitmq-env.conf.5
@@ -48,17 +41,21 @@ MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" 
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
-		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl ${SCRIPTS_DIR}/rabbitmq-env
+		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl \
+		${SCRIPTS_DIR}/rabbitmq-env ${SCRIPTS_DIR}/rabbitmq-plugins
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${FIND} ${WRKSRC}/ebin ${WRKSRC}/include -type d | \
 		${XARGS} ${CHMOD} 0755
 	@${FIND} ${WRKSRC}/ebin ${WRKSRC}/include -type f | \
 		${XARGS} ${CHMOD} 0644
+	@${MKDIR} ${PREFIX}/etc/rabbitmq
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} /var/db/rabbitmq/mnesia
+	@${MKDIR} /var/log/rabbitmq
+	@${CHOWN} -R rabbitmq:rabbitmq /var/db/rabbitmq
+	@${CHOWN} -R rabbitmq:rabbitmq /var/log/rabbitmq
 
 .include <bsd.port.mk>
