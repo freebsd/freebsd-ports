@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
+BROKEN=		does not configure
+
 USE_GNOME=	gnomehack intlhack pygobject
 USE_GMAKE=	yes
 USE_PYTHON=	yes
