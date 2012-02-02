@@ -32,7 +32,7 @@ USE_TK=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
-LDFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
+LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
 CFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
 CXXFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib
@@ -96,7 +96,7 @@ post-patch:
 IGNORE=		POSIX semaphores are required, and the support only works in FreeBSD 7-STABLE and later
 .endif
 
-.if !defined(DISABLE_MAKE_JOBS) && ${OSVERSION} < 900000
+.if !defined(DISABLE_MAKE_JOBS)
 MAKE_ENV+=	MAKE="make -j${MAKE_JOBS_NUMBER}"
 .endif
 
