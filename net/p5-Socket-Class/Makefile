@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Socket-Class
-PORTVERSION=	2.256
+PORTVERSION=	2.258
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl class to communicate with sockets
 
 PERL_CONFIGURE=	yes
