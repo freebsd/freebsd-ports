@@ -12,8 +12,6 @@
 # shoutcast_configfile (str): Set to "%%ETCDIR%%/sc_serv.conf" by default.
 # shoutcast_user (str):       Set to "%%SHOUTCASTUSER%%" by default.
 # shoutcast_chdir (str):      Set to "%%SHOUTCASTDIR%%" by default.
-# shoutcast_logfile (str):    Set to "/var/log/sc_serv.log" by default.
-# shoutcast_w3clog (str):     Set to "/var/log/sc_w3c.log" by default.
 
 . /etc/rc.subr
 
@@ -26,22 +24,12 @@ load_rc_config ${name}
 : ${shoutcast_configfile:="%%ETCDIR%%/sc_serv.conf"}
 : ${shoutcast_user:="%%SHOUTCASTUSER%%"}
 : ${shoutcast_chdir:="%%SHOUTCASTDIR%%"}
-: ${shoutcast_logfile:="/var/log/sc_serv.log"}
-: ${shoutcast_w3clog:="/var/log/sc_w3c.log"}
 
 command="%%PREFIX%%/sbin/sc_serv"
 
+required_dirs="${shoutcast_chdir}"
 required_files="${shoutcast_configfile}"
 
 command_args="${shoutcast_configfile} >/dev/null 2>&1 &"
-
-start_precmd="shoutcast_prestart"
-
-shoutcast_prestart()
-{
-  touch "${shoutcast_logfile}" "${shoutcast_w3clog}"
-  chown %%SHOUTCASTUSER%%:wheel "${shoutcast_logfile}" "${shoutcast_w3clog}"
-  chmod 0640 "${shoutcast_logfile}" "${shoutcast_w3clog}"
-}
 
 run_rc_command "$1"

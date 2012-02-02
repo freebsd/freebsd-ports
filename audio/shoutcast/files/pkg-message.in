@@ -6,8 +6,8 @@
 
    shoutcast_enable="YES"
 
- Configuration templates are available in %%ETCDIR%% as
- *.sample files. A basic installation can be completed by copying
- sc_serv_basic.conf.sample to sc_serv.conf.
+ See %%EXAMPLESDIR%% for configuration examples.
+ A basic installation can be completed by copying sc_serv_basic.conf
+ to %%ETCDIR%%/sc_serv.conf.
 
 **********************************************************************
