@@ -1,4 +1,4 @@
-# Ports collection makefile for:	clex-tty
+# New ports collection makefile for:	CLEX File Manager
 # Date created:				Tue Oct 30, 2002
 # Whom:			Michael L. Hostbaek <mich@freebsdcluster.org>
 #
@@ -6,34 +6,34 @@
 #
 
 PORTNAME=	clex
-PORTVERSION=	3.18
+PORTVERSION=	4.6.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.clex.sk/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	A commandline file manager
+COMMENT=	A command line file manager
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
-MAN1=		clex.1
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	LARGE_FILES "Enable support for large files" on
+PLIST_FILES=	bin/clex bin/cfg-clex bin/kbd-test
+PORTDOCS=	AUTHORS ChangeLog README
+MAN1=		clex.1 cfg-clex.1 kbd-test.1
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '18s,^,#include <stdio.h>,' \
+		${WRKSRC}/src/preview.c
 
-.if !defined(WITH_LARGE_FILES)
-CONFIGURE_ARGS+=	--disable-largefile
-.endif
-
-do-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/src/${MAN1} ${MAN1PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
