@@ -135,6 +135,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.pyo
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualRedirDevice.py
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualRedirDevice.pyc
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualRedirDevice.pyo
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualSmartCardDevice.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualSmartCardDevice.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualSmartCardDevice.pyo
@@ -189,6 +192,3 @@ share/locale/zh_CN/LC_MESSAGES/virtinst.mo
 @dirrm %%PYTHON_SITELIBDIR%%/virtinst
 @dirrm %%PYTHON_SITELIBDIR%%/virtconv/parsers
 @dirrm %%PYTHON_SITELIBDIR%%/virtconv
-@dirrmtry share/man/man5
-@dirrmtry share/man/man1
-@dirrmtry share/man

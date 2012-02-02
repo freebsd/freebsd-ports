@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtinst
-PORTVERSION=	0.600.0
+PORTVERSION=	0.600.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,6 @@ USE_PYDISTUTILS=	yes
 
 MAN1=		virt-clone.1 virt-convert.1 virt-image.1 virt-install.1
 MAN5=		virt-image.5
-MAN1PREFIX=	${PREFIX}/share
-MAN5PREFIX=	${PREFIX}/share
 MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
