@@ -1,0 +1,22 @@
+--- configure.orig	2011-12-15 15:01:05.000000000 +0100
++++ configure	2012-01-28 17:33:54.674887100 +0100
+@@ -3107,7 +3107,7 @@
+ echores "$_kstat"
+ 
+ 
+-for func in cbrtf exp2 exp2f llrint llrintf log2 log2f lrint lrintf round roundf trunc truncf; do
++for func in cbrtf exp2 exp2f llrint llrintf lrint lrintf round roundf trunc truncf; do
+ echocheck $func
+ eval _$func=no
+ statement_check math.h "${func}(2.0)" -D_ISOC99_SOURCE && eval _$func=yes
+@@ -3119,7 +3119,9 @@
+   echores no
+ fi
+ done
+-
++for func in log2 log2f; do
++  eval def_$func="\"#define HAVE_$(echo $func | tr '[a-z]' '[A-Z]') 0\""
++done
+ 
+ echocheck "mkstemp"
+ _mkstemp=no
