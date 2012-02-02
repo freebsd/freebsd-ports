@@ -179,7 +179,6 @@
     SUBDIR += wmii-devel
     SUBDIR += wmname
     SUBDIR += xcompmgr
-    SUBDIR += xfce
     SUBDIR += xfce4
     SUBDIR += xfce4-desktop
     SUBDIR += xfce4-panel
