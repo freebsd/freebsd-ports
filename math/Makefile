@@ -144,6 +144,7 @@
     SUBDIR += hs-contravariant
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
+    SUBDIR += hs-math-functions
     SUBDIR += hs-mwc-random
     SUBDIR += hs-pointed
     SUBDIR += hs-probability
