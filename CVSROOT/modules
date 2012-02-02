@@ -21439,6 +21439,7 @@ postmark                        ports/benchmarks/postmark
 postpals                        ports/mail/postpals
 potrace                         ports/graphics/potrace
 potracegui                      ports/graphics/potracegui
+poudriere                       ports/ports-mgmt/poudriere
 pouetchess                      ports/games/pouetchess
 pound                           ports/www/pound
 povchem                         ports/biology/povchem
@@ -25081,6 +25082,7 @@ sml-nj-devel                    ports/lang/sml-nj-devel
 sml_tk                          ports/devel/sml_tk
 smm++                           ports/net/smm++
 smokeping                       ports/net-mgmt/smokeping
+smp_utils                       ports/sysutils/smp_utils
 smpeg                           ports/multimedia/smpeg
 smplayer                        ports/multimedia/smplayer
 smplayer-themes                 ports/multimedia/smplayer-themes
