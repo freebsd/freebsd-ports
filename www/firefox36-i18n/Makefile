@@ -46,9 +46,9 @@ pre-everything::
 	@${ECHO_CMD}
 	@${ECHO_CMD} "Please define FIREFOX_I18N_ALL to install all languages."
 	@${ECHO_CMD}
-	@${MKDIR} ${WRKSRC}
 
 do-extract:
+	@${MKDIR} ${WRKSRC}
 	@for lang in ${FIREFOX_I18N_}; do \
 		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack3-$$lang@firefox.mozilla.org);\
 		then \
