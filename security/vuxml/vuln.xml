@@ -59,11 +59,21 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>CVE MITRE reports:</p>
 	<blockquote cite="http://httpd.apache.org/security/vulnerabilities_22.html">
+	  <p>An exposure was found when using mod_proxy in reverse proxy mode. In
+	    certain configurations using RewriteRule with proxy flag or ProxyPassMatch,
+	    a remote attacker could cause the reverse proxy to connect to an arbitrary
+	    server, possibly disclosing sensitive information from internal web servers
+	    not directly accessible to attacker.</p>
 	  <p>Integer overflow in the ap_pregsub function in server/util.c in the
 	    Apache HTTP Server 2.0.x through 2.0.64 and 2.2.x through 2.2.21, when the
 	    mod_setenvif module is enabled, allows local users to gain privileges via a
 	    .htaccess file with a crafted SetEnvIf directive, in conjunction with a
 	    crafted HTTP request header, leading to a heap-based buffer overflow.</p>
+	  <p>An additional exposure was found when using mod_proxy in reverse proxy
+	    mode. In certain configurations using RewriteRule with proxy flag or
+	    ProxyPassMatch, a remote attacker could cause the reverse proxy to connect
+	    to an arbitrary server, possibly disclosing sensitive information from
+	    internal web servers not directly accessible to attacker.</p>
 	  <p>A flaw was found in mod_log_config. If the '%{cookiename}C' log format
 	    string is in use, a remote attacker could send a specific cookie causing a
 	    crash. This crash would only be a denial of service if using a threaded
@@ -71,29 +81,19 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>A flaw was found in the handling of the scoreboard. An unprivileged
 	    child process could cause the parent process to crash at shutdown rather
 	    than terminate cleanly.</p>
-	  <p>An additional exposure was found when using mod_proxy in reverse proxy
-	    mode. In certain configurations using RewriteRule with proxy flag or
-	    ProxyPassMatch, a remote attacker could cause the reverse proxy to connect
-	    to an arbitrary server, possibly disclosing sensitive information from
-	    internal web servers not directly accessible to attacker.</p>
 	  <p>A flaw was found in the default error response for status code 400. This
 	    flaw could be used by an attacker to expose "httpOnly" cookies when no
 	    custom ErrorDocument is specified.</p>
-	  <p>An exposure was found when using mod_proxy in reverse proxy mode. In
-	    certain configurations using RewriteRule with proxy flag or ProxyPassMatch,
-	    a remote attacker could cause the reverse proxy to connect to an arbitrary
-	    server, possibly disclosing sensitive information from internal web servers
-	    not directly accessible to attacker.</p>
 	</blockquote>
       </body>
     </description>
     <references>
+	   <cvename>CVE-2011-3368</cvename>
 	   <cvename>CVE-2011-3607</cvename>
+	   <cvename>CVE-2011-4317</cvename>
 	   <cvename>CVE-2012-0021</cvename>
 	   <cvename>CVE-2012-0031</cvename>
-	   <cvename>CVE-2011-4317</cvename>
 	   <cvename>CVE-2012-0053</cvename>
-	   <cvename>CVE-2011-3368</cvename>
     </references>
     <dates>
       <discovery>2011-10-05</discovery>
