@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION=	1.5p6
+PORTVERSION=	1.5p7
 CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/
 
 MAINTAINER=	michiel@boland.org
 COMMENT=	A very small, yet very fast HTTP server
+
 CFLAGS+=	-DFREEBSD_SENDFILE
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
