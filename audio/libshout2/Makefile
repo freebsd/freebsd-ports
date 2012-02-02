@@ -13,7 +13,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 DISTNAME=	libshout-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connect and transmit data to an Icecast media streaming server
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
