@@ -25,6 +25,7 @@ ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
 USE_XORG=	xorg-server
 USE_GL=		gl
 USE_LDCONFIG=	yes
+
 # NVIDIA_ROOT is not set in src/Makefile, which results in bogus -I/src
 # passed to compiler and broken build on HEAD since r221320 when option
 # -Wmissing-include-dirs was added for kernel sources.  Until properly
@@ -172,6 +173,9 @@ post-install: .SILENT
 .endif
 # Some applications need this symlink (see PR ports/72877)
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+.if ${NVVERSION} >= 1952200
+	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
+.endif
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}
