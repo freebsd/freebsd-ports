@@ -1,14 +1,6 @@
---- configure.orig	2012-01-22 04:29:36.401802685 +0800
-+++ configure	2012-01-22 11:40:28.231803897 +0800
-@@ -281,7 +281,6 @@
- 
- probe_need CFG_PERL         perl
- probe_need CFG_PYTHON       python python2.6 python2 python3
--probe_need CFG_CURL         curl
- 
- probe CFG_GIT              git
- probe CFG_CLANG            clang++
-@@ -340,7 +339,8 @@
+--- ./configure.orig	2012-01-26 10:47:57.178803535 +0800
++++ ./configure	2012-01-26 10:48:24.324805426 +0800
+@@ -340,7 +340,8 @@
      CFG_CLANG_VERSION=$("$CFG_CLANG" \
                        --version \
                        | grep version \
@@ -18,3 +10,31 @@
  
      case $CFG_CLANG_VERSION in
          (3.0svn | 3.0 | 3.1)
+@@ -534,14 +535,23 @@
+ 	# Disable unused LLVM features
+ 	LLVM_OPTS="$LLVM_DBG_OPTS --disable-docs --disable-jit --enable-bindings=none --disable-threads --disable-pthreads"
+ 
+-	LLVM_CXX_32="g++ -m32"
+-	LLVM_CC_32="gcc -m32"
++	if [ "$CFG_C_COMPILER" = "clang" ]
++	then
++	    LLVM_CXX_32="clang++ -m32"
++	    LLVM_CC_32="clang -m32"
++	    LLVM_CXX_64="clang++"
++	    LLVM_CC_64="clang"
++	else
++	    LLVM_CXX_32="g++ -m32"
++	    LLVM_CC_32="gcc -m32"
++	    LLVM_CXX_64="g++"
++	    LLVM_CC_64="gcc"
++	fi
++
+ 	LLVM_CFLAGS_32="-m32"
+ 	LLVM_CXXFLAGS_32="-m32"
+ 	LLVM_LDFLAGS_32="-m32"
+ 
+-	LLVM_CXX_64="g++"
+-	LLVM_CC_64="gcc"
+ 	LLVM_CFLAGS_64=""
+ 	LLVM_CXXFLAGS_64=""
+ 	LLVM_LDFLAGS_64=""
