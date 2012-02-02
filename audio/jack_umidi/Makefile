@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jack_umidi
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://hselasky.homeunix.org:8192/distfiles/
