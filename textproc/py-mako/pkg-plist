@@ -58,6 +58,9 @@ bin/mako-render
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/babelplugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/babelplugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/babelplugin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/beaker_cache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/beaker_cache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/beaker_cache.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/preprocessors.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/preprocessors.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mako/ext/preprocessors.pyo
