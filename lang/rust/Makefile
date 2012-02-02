@@ -7,6 +7,7 @@
 
 PORTNAME=	rust
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://dl.rust-lang.org/dist/:source \
 		http://people.cs.nctu.edu.tw/~jyyou/rust/:boot
@@ -20,7 +21,7 @@ COMMENT=	A language with a focus on memory safety and concurrency
 OPTIONS=	CARGO	"Build with package manager" off
 
 RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
-RUST_BOOT=	rust-${PORTVERSION}-boot.tar.bz2
+RUST_BOOT=	rust-${PORTVERSION}-boot-${CC}.tar.bz2
 RUST_TARGET=	x86_64-unknown-freebsd
 
 ONLY_FOR_ARCHS=	amd64
@@ -43,10 +44,6 @@ CONFIGURE_ARGS+=	--enable-clang
 USE_GCC=	4.4+
 .endif
 
-.if ${OSVERSION} < 800107
-IGNORE=	needs tgammaf(3)
-.endif
-
 .if !defined(WITHOUT_CARGO)
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		git:${PORTSDIR}/devel/git \
@@ -66,10 +63,18 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} \
+	    -e '/probe_need CFG_CURL/d' \
+	    ${WRKSRC}/configure
+	${REINPLACE_CMD} \
 	    -e '/src\/etc\/get-snapshot.py $$(CFG_HOST_TRIPLE)/d' \
 	    ${WRKSRC}/mk/stage0.mk
 	${REINPLACE_CMD} \
 	    -e 's|\$$(PREFIX_ROOT)/share/man|${MANPREFIX}/man|g' \
 	    ${WRKSRC}/mk/install.mk
+.if ${OSVERSION} >= 900044
+	${REINPLACE_CMD} \
+	    -e 's|prog: str = "gcc"|prog: str = "clang"|' \
+	    ${WRKSRC}/src/comp/back/link.rs
+.endif
 
 .include <bsd.port.post.mk>
