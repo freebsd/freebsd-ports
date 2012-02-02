@@ -1016,9 +1016,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/checklistbox.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/checklistbox.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/checklistbox.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/datectrl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/datectrl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/datectrl.pyo
