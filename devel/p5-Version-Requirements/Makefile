@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of version requirements for a CPAN dist
 
-DEPRECATED=	Use CPAN::Meta::Requirements, which is a drop-in replacement
+DEPRECATED=	Use CPAN::Meta::Requirements (devel/p5-CPAN-Meta >= 2.113640), which is a drop-in replacement
+EXPIRATION_DATE=	2012-03-01
 
 PERL_CONFIGURE=	yes
 
