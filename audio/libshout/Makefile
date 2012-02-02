@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	audio net
 #MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connect and transmit data to an Icecast media streaming server
 
 CONFLICTS=	libshout2-*
