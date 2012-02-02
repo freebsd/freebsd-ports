@@ -223,6 +223,7 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/rmspk.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/roundinterp.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/rr2.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/s64pi.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/s.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/s65536.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/samplesviacolormap.png
@@ -427,7 +428,6 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/snd-gtk.scm
 %%SCHEME%%%%DATADIR%%/snd-motif.scm
 %%SCHEME%%%%DATADIR%%/snd-test.scm
-%%SCHEME%%%%DATADIR%%/snd10.scm
 %%SCHEME%%%%DATADIR%%/snd11.scm
 %%SCHEME%%%%DATADIR%%/snd12.scm
 %%SCHEME%%%%DATADIR%%/snddiff.scm
