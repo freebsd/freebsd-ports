@@ -7,10 +7,12 @@
 MPLAYER_SNAPSHOT_DATE=	2011-12-18
 MPLAYER_PORT_VERSION=	1.0.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://www.rrr.de/~riggs/mplayer/
 DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/rc/g}
 WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
+
+PROJECTHOST=	bsdistfiles
 
 MAINTAINER?=	thomas.e.zander@googlemail.com
 

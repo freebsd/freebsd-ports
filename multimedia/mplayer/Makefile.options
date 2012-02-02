@@ -29,6 +29,10 @@
 # Enables language support bg, cz, de, dk, en, es, fr, gr, hu, it, ko, nl, no, pl, pt_BR, ro, ru, sk, tr, uk, zh
 #
 
+.if ${OSVERSION} < 802502
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_log2f
+.endif
+
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
 .endif
