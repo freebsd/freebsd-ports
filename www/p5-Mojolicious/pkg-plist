@@ -32,6 +32,7 @@
 %%SITE_PERL%%/Mojo/IOWatcher.pm
 %%SITE_PERL%%/Mojo/IOWatcher/EV.pm
 %%SITE_PERL%%/Mojo/JSON.pm
+%%SITE_PERL%%/Mojo/JSON/Pointer.pm
 %%SITE_PERL%%/Mojo/Loader.pm
 %%SITE_PERL%%/Mojo/Log.pm
 %%SITE_PERL%%/Mojo/Message.pm
@@ -105,10 +106,8 @@
 %%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
-%%SITE_PERL%%/Mojolicious/public/amelia.png
 %%SITE_PERL%%/Mojolicious/public/css/prettify-mojo.css
 %%SITE_PERL%%/Mojolicious/public/css/prettify.css
-%%SITE_PERL%%/Mojolicious/public/failraptor.png
 %%SITE_PERL%%/Mojolicious/public/favicon.ico
 %%SITE_PERL%%/Mojolicious/public/js/jquery.js
 %%SITE_PERL%%/Mojolicious/public/js/lang-apollo.js
@@ -130,10 +129,8 @@
 %%SITE_PERL%%/Mojolicious/public/js/lang-xq.js
 %%SITE_PERL%%/Mojolicious/public/js/lang-yaml.js
 %%SITE_PERL%%/Mojolicious/public/js/prettify.js
-%%SITE_PERL%%/Mojolicious/public/mojolicious-arrow.png
 %%SITE_PERL%%/Mojolicious/public/mojolicious-black.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-box.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-clouds.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-failraptor.png
 %%SITE_PERL%%/Mojolicious/public/mojolicious-noraptor.png
 %%SITE_PERL%%/Mojolicious/public/mojolicious-notfound.png
 %%SITE_PERL%%/Mojolicious/public/mojolicious-pinstripe.gif
@@ -166,6 +163,7 @@ bin/morbo
 @dirrm %%SITE_PERL%%/Mojo/Transaction
 @dirrm %%SITE_PERL%%/Mojo/Server
 @dirrm %%SITE_PERL%%/Mojo/Message
+@dirrm %%SITE_PERL%%/Mojo/JSON
 @dirrm %%SITE_PERL%%/Mojo/IOWatcher
 @dirrm %%SITE_PERL%%/Mojo/IOLoop
 @dirrm %%SITE_PERL%%/Mojo/DOM
