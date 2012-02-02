@@ -191,6 +191,10 @@ MAN8=	gearmand.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 # This hack is required for the test programs invoked by configure,
 # in the event that libmemcached was compiled with SASL support.
 .if exists(${LOCALBASE}/lib/libsasl.so)
