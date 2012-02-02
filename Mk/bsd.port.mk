@@ -4284,7 +4284,7 @@ _SANITY_SEQ=	${_CHROOT_SEQ} pre-everything check-makefile \
 
 _PKG_DEP=		check-sanity
 _PKG_SEQ=		pkg-depends
-_FETCH_DEP=		pkg-depends
+_FETCH_DEP=		pkg
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
@@ -4327,6 +4327,10 @@ check-sanity: ${_SANITY_SEQ}
 # XXX MCL might need to move in loop below?
 .if !target(fetch)
 fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
+.endif
+
+.if !target(pkg)
+pkg: ${_PKG_DEP} ${_PKG_SEQ}
 .endif
 
 # Main logic. The loop generates 6 main targets and using cookies
