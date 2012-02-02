@@ -35,6 +35,8 @@ RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		fails to build
+
 ONLY_FOR_ARCHS=	i386 amd64
 # it requires boehm-gc 7.X
 CONFIGURE_ARGS=	--disable-gc
