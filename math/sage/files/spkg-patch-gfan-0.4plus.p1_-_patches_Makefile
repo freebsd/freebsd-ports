@@ -1,0 +1,11 @@
+--- gfan-0.4plus.p1/patches/Makefile-orig	2012-02-01 18:41:42.000000000 +0000
++++ gfan-0.4plus.p1/patches/Makefile	2012-02-01 18:42:10.000000000 +0000
+@@ -270,7 +270,7 @@
+ default: $(OBJECTS) $(ADDITIONALOBJECTS) $(EXECS)
+ 
+ $(MAIN): $(OBJECTS)
+-	$(CXX) $(CXXFLAG64) $(OBJECTS) $(ADDITIONALLINKOPTIONS) $(GPROFFLAG) -o $(MAIN)
++	$(CXX) ${LDFLAGS} $(CXXFLAG64) $(OBJECTS) $(ADDITIONALLINKOPTIONS) $(GPROFFLAG) -o $(MAIN)
+ 
+ release:
+ 	rm -f -r $(RELEASEDIR)/*
