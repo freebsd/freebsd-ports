@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	thingylaunch
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_LOCAL}/gahr/ \
-		http://people.freebsd.org/~gahr/distfiles/ \
-		http://www.gahr.ch/${PORTNAME}/
+MASTER_SITES=	http://www.gahr.ch/${PORTNAME}/	\
+   		${MASTER_SITE_LOCAL}/gahr/ \
+		http://people.freebsd.org/~gahr/distfiles/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A lightweight tab-completing launcher for X
+
+LICENSE=	MIT
 
 USE_XORG=	x11 xproto
 USE_GNOME=	pkgconfig
