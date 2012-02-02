@@ -13,6 +13,7 @@ share/applications/mined.desktop
 %%DATADIR%%/bin/wined
 %%DATADIR%%/bin/wined.bat
 %%DATADIR%%/bin/xmined
+%%DATADIR%%/conf_user/MINED-VMS.COM
 %%DATADIR%%/conf_user/Xdefaults.mined
 %%DATADIR%%/conf_user/konsole/xterm-modified.keytab
 %%DATADIR%%/conf_user/kp5
