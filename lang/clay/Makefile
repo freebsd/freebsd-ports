@@ -24,13 +24,15 @@ WRKSRC=		${WRKDIR}/jckarter-${PORTNAME}-${GITVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-CC=		clang
-CXX=		clang++
-
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-G "Unix Makefiles" -DBUILD_FIX=false
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CC=		clang
+CXX=		clang++
+.endif
 
 .if ${OSVERSION} < 900044
 BUILD_DEPENDS+=	clang>=3.0:${PORTSDIR}/lang/clang
