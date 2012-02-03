@@ -141,10 +141,10 @@
 %%XPI_XPIDIR%%/content/firebug/net/svgViewer.js
 %%XPI_XPIDIR%%/content/firebug/net/xmlViewer.js
 %%XPI_XPIDIR%%/content/firebug/panel.html
-%%XPI_XPIDIR%%/content/firebug/trace.js
 %%XPI_XPIDIR%%/content/firebug/trace/debug.js
 %%XPI_XPIDIR%%/content/firebug/trace/traceListener.js
 %%XPI_XPIDIR%%/content/firebug/trace/traceModule.js
+%%XPI_XPIDIR%%/content/firebug/trace.js
 %%XPI_XPIDIR%%/defaults/preferences/firebug.js
 %%XPI_XPIDIR%%/defaults/preferences/tracingConsole.js
 %%XPI_XPIDIR%%/docs/Bugs.txt
@@ -171,15 +171,15 @@
 %%XPI_XPIDIR%%/locale/en-US/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/en-US/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/en-US/firebug.properties
+%%XPI_XPIDIR%%/locale/es/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/es/firebug-tracing.properties
+%%XPI_XPIDIR%%/locale/es/firebug.properties
 %%XPI_XPIDIR%%/locale/es-AR/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es-AR/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/es-AR/firebug.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/es-ES/firebug.properties
-%%XPI_XPIDIR%%/locale/es/firebug-amo.properties
-%%XPI_XPIDIR%%/locale/es/firebug-tracing.properties
-%%XPI_XPIDIR%%/locale/es/firebug.properties
 %%XPI_XPIDIR%%/locale/fa/firebug.properties
 %%XPI_XPIDIR%%/locale/fr/firebug-amo.properties
 %%XPI_XPIDIR%%/locale/fr/firebug-tracing.properties
@@ -368,69 +368,69 @@
 %%XPI_XPIDIR%%/skin/classic/win/up.png
 %%XPI_XPIDIR%%/skin/classic/win/window.css
 %%XPI_XPIDIR%%/skin/classic/window.css
-@dirrm %%XPI_XPIDIR%%/skin/classic/win
-@dirrm %%XPI_XPIDIR%%/skin/classic/tabbar
-@dirrm %%XPI_XPIDIR%%/skin/classic/mac
-@dirrm %%XPI_XPIDIR%%/skin/classic/breakOn
-@dirrm %%XPI_XPIDIR%%/skin/classic
-@dirrm %%XPI_XPIDIR%%/skin
-@dirrm %%XPI_XPIDIR%%/modules
-@dirrm %%XPI_XPIDIR%%/locale/zh-TW
-@dirrm %%XPI_XPIDIR%%/locale/zh-CN
-@dirrm %%XPI_XPIDIR%%/locale/vi
-@dirrm %%XPI_XPIDIR%%/locale/uk-UA
-@dirrm %%XPI_XPIDIR%%/locale/tr-TR
-@dirrm %%XPI_XPIDIR%%/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/locale/sr
-@dirrm %%XPI_XPIDIR%%/locale/sl-SI
-@dirrm %%XPI_XPIDIR%%/locale/sk-SK
-@dirrm %%XPI_XPIDIR%%/locale/ru
-@dirrm %%XPI_XPIDIR%%/locale/ro-RO
-@dirrm %%XPI_XPIDIR%%/locale/pt-PT
-@dirrm %%XPI_XPIDIR%%/locale/pt-BR
-@dirrm %%XPI_XPIDIR%%/locale/pl
-@dirrm %%XPI_XPIDIR%%/locale/nl
-@dirrm %%XPI_XPIDIR%%/locale/ko-KR
-@dirrm %%XPI_XPIDIR%%/locale/ja-JP
-@dirrm %%XPI_XPIDIR%%/locale/it
-@dirrm %%XPI_XPIDIR%%/locale/is-IS
-@dirrm %%XPI_XPIDIR%%/locale/hy-AM
-@dirrm %%XPI_XPIDIR%%/locale/hu-HU
-@dirrm %%XPI_XPIDIR%%/locale/hr-HR
-@dirrm %%XPI_XPIDIR%%/locale/he
-@dirrm %%XPI_XPIDIR%%/locale/fr
-@dirrm %%XPI_XPIDIR%%/locale/fa
-@dirrm %%XPI_XPIDIR%%/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/locale/es-AR
-@dirrm %%XPI_XPIDIR%%/locale/es
-@dirrm %%XPI_XPIDIR%%/locale/en-US
-@dirrm %%XPI_XPIDIR%%/locale/el
-@dirrm %%XPI_XPIDIR%%/locale/de
-@dirrm %%XPI_XPIDIR%%/locale/da
-@dirrm %%XPI_XPIDIR%%/locale/cs
-@dirrm %%XPI_XPIDIR%%/locale/ca-AD
-@dirrm %%XPI_XPIDIR%%/locale/bg
-@dirrm %%XPI_XPIDIR%%/locale
-@dirrm %%XPI_XPIDIR%%/icons/default
-@dirrm %%XPI_XPIDIR%%/icons
-@dirrm %%XPI_XPIDIR%%/docs
-@dirrm %%XPI_XPIDIR%%/defaults/preferences
-@dirrm %%XPI_XPIDIR%%/defaults
-@dirrm %%XPI_XPIDIR%%/content/firebug/trace
-@dirrm %%XPI_XPIDIR%%/content/firebug/net
-@dirrm %%XPI_XPIDIR%%/content/firebug/lib
-@dirrm %%XPI_XPIDIR%%/content/firebug/js
-@dirrm %%XPI_XPIDIR%%/content/firebug/html
-@dirrm %%XPI_XPIDIR%%/content/firebug/firefox/start-button
-@dirrm %%XPI_XPIDIR%%/content/firebug/firefox
-@dirrm %%XPI_XPIDIR%%/content/firebug/editor/external
-@dirrm %%XPI_XPIDIR%%/content/firebug/editor
-@dirrm %%XPI_XPIDIR%%/content/firebug/dom
-@dirrm %%XPI_XPIDIR%%/content/firebug/css
-@dirrm %%XPI_XPIDIR%%/content/firebug/console
-@dirrm %%XPI_XPIDIR%%/content/firebug/chrome
+@dirrm %%XPI_XPIDIR%%/content/firebug/accessible
 @dirrm %%XPI_XPIDIR%%/content/firebug/bti/inProcess
 @dirrm %%XPI_XPIDIR%%/content/firebug/bti
-@dirrm %%XPI_XPIDIR%%/content/firebug/accessible
+@dirrm %%XPI_XPIDIR%%/content/firebug/chrome
+@dirrm %%XPI_XPIDIR%%/content/firebug/console
+@dirrm %%XPI_XPIDIR%%/content/firebug/css
+@dirrm %%XPI_XPIDIR%%/content/firebug/dom
+@dirrm %%XPI_XPIDIR%%/content/firebug/editor/external
+@dirrm %%XPI_XPIDIR%%/content/firebug/editor
+@dirrm %%XPI_XPIDIR%%/content/firebug/firefox/start-button
+@dirrm %%XPI_XPIDIR%%/content/firebug/firefox
+@dirrm %%XPI_XPIDIR%%/content/firebug/html
+@dirrm %%XPI_XPIDIR%%/content/firebug/js
+@dirrm %%XPI_XPIDIR%%/content/firebug/lib
+@dirrm %%XPI_XPIDIR%%/content/firebug/net
+@dirrm %%XPI_XPIDIR%%/content/firebug/trace
 @dirrm %%XPI_XPIDIR%%/content/firebug
 @dirrm %%XPI_XPIDIR%%/content
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/docs
+@dirrm %%XPI_XPIDIR%%/icons/default
+@dirrm %%XPI_XPIDIR%%/icons
+@dirrm %%XPI_XPIDIR%%/locale/bg
+@dirrm %%XPI_XPIDIR%%/locale/ca-AD
+@dirrm %%XPI_XPIDIR%%/locale/cs
+@dirrm %%XPI_XPIDIR%%/locale/da
+@dirrm %%XPI_XPIDIR%%/locale/de
+@dirrm %%XPI_XPIDIR%%/locale/el
+@dirrm %%XPI_XPIDIR%%/locale/en-US
+@dirrm %%XPI_XPIDIR%%/locale/es
+@dirrm %%XPI_XPIDIR%%/locale/es-AR
+@dirrm %%XPI_XPIDIR%%/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/locale/fa
+@dirrm %%XPI_XPIDIR%%/locale/fr
+@dirrm %%XPI_XPIDIR%%/locale/he
+@dirrm %%XPI_XPIDIR%%/locale/hr-HR
+@dirrm %%XPI_XPIDIR%%/locale/hu-HU
+@dirrm %%XPI_XPIDIR%%/locale/hy-AM
+@dirrm %%XPI_XPIDIR%%/locale/is-IS
+@dirrm %%XPI_XPIDIR%%/locale/it
+@dirrm %%XPI_XPIDIR%%/locale/ja-JP
+@dirrm %%XPI_XPIDIR%%/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/locale/nl
+@dirrm %%XPI_XPIDIR%%/locale/pl
+@dirrm %%XPI_XPIDIR%%/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/locale/pt-PT
+@dirrm %%XPI_XPIDIR%%/locale/ro-RO
+@dirrm %%XPI_XPIDIR%%/locale/ru
+@dirrm %%XPI_XPIDIR%%/locale/sk-SK
+@dirrm %%XPI_XPIDIR%%/locale/sl-SI
+@dirrm %%XPI_XPIDIR%%/locale/sr
+@dirrm %%XPI_XPIDIR%%/locale/sv-SE
+@dirrm %%XPI_XPIDIR%%/locale/tr-TR
+@dirrm %%XPI_XPIDIR%%/locale/uk-UA
+@dirrm %%XPI_XPIDIR%%/locale/vi
+@dirrm %%XPI_XPIDIR%%/locale/zh-CN
+@dirrm %%XPI_XPIDIR%%/locale/zh-TW
+@dirrm %%XPI_XPIDIR%%/locale
+@dirrm %%XPI_XPIDIR%%/modules
+@dirrm %%XPI_XPIDIR%%/skin/classic/breakOn
+@dirrm %%XPI_XPIDIR%%/skin/classic/mac
+@dirrm %%XPI_XPIDIR%%/skin/classic/tabbar
+@dirrm %%XPI_XPIDIR%%/skin/classic/win
+@dirrm %%XPI_XPIDIR%%/skin/classic
+@dirrm %%XPI_XPIDIR%%/skin
