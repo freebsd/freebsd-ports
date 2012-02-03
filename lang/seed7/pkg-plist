@@ -58,6 +58,7 @@ lib/seed7/progs.s7i
 lib/seed7/rational.s7i
 lib/seed7/reverse.s7i
 lib/seed7/s7_comp.a
+lib/seed7/s7_con.a
 lib/seed7/s7_data.a
 lib/seed7/s7_draw.a
 lib/seed7/scanfile.s7i
