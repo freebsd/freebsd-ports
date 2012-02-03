@@ -1,0 +1,19 @@
+Index: sysutils/uhidd/files/patch-uhidd-uhidd-devd.conf.sample
+===================================================================
+RCS file: sysutils/uhidd/files/patch-uhidd-uhidd-devd.conf.sample
+diff -N sysutils/uhidd/files/patch-uhidd-uhidd-devd.conf.sample
+--- /dev/null 1 Jan 1970 00:00:00 -0000
++++ sysutils/uhidd/files/patch-uhidd-uhidd-devd.conf.sample 8 Aug 2011 03:25:53 -0000
+@@ -0,0 +1,12 @@
++--- uhidd/uhidd-devd.conf.sample~
+++++ uhidd/uhidd-devd.conf.sample
++@@ -1,4 +1,6 @@
++-attach 0 {
++- match "device-name" "ugen[0-9]+.[0-9]+";
++- action "/usr/local/etc/rc.d/uhidd start /dev/$device-name";
+++notify 0 {
+++ match "subsystem" "DEVICE";
+++ match "type" "ATTACH";
+++ match "cdev" "ugen[0-9]+.[0-9]+";
+++ action "/usr/local/etc/rc.d/uhidd start /dev/$cdev";
++ };
