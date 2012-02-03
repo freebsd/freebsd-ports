@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	vitunes
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	audio
 MASTER_SITES=	http://vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A curses-based media player with vim-like keybinds
