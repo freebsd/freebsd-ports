@@ -17,6 +17,9 @@ CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]* bacula-docs-dev
 
 UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
+USERS=		bacula
+GROUPS=		${USERS}
+
 PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
 
 USE_GMAKE=	yes
@@ -161,7 +164,6 @@ CONFIGURE_ARGS+=	--with-sqlite3=yes
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 DBTYPE=			sqlite3
 .else
-DEFAULT_PGSQL_VER?=	83
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
