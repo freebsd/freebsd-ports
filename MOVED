@@ -3228,3 +3228,4 @@ ftp/proftpd-mysql|databases/proftpd-mod_sql_mysql|2012-01-26|Module now in slave
 games/flightgear-aircrafts|games/flightgear-aircraft|2012-01-31|Renamed for better naming
 audio/wmmixer||2012-02-01|EOL Upstream; please use audio/wmsmixer instead
 x11-wm/xfce|x11-wm/xfce4|2012-02-02|Has expired: abandoned upstream, use x11-wm/xfce4 instead
+sysutils/py-dvdvideo|sysutils/dvdvideo|2012-02-03|Renamed for better naming

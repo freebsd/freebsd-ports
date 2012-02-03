@@ -190,6 +190,7 @@
     SUBDIR += dvdbackup
     SUBDIR += dvdimagecmp
     SUBDIR += dvdisaster
+    SUBDIR += dvdvideo
     SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
@@ -695,7 +696,6 @@
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
     SUBDIR += py-drmaa
-    SUBDIR += py-dvdvideo
     SUBDIR += py-filelike
     SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
