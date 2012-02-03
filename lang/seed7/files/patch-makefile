@@ -1,5 +1,5 @@
---- makefile.orig	2011-11-01 12:55:40.000000000 +0100
-+++ makefile	2011-11-23 10:05:28.000000000 +0100
+--- makefile.orig	2012-01-01 16:17:58.000000000 +0100
++++ makefile	2012-02-03 11:22:53.000000000 +0100
 @@ -12,14 +12,14 @@
  # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
  # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
@@ -26,6 +26,17 @@
  GET_CC_VERSION_INFO = $(CC) --version >
  
  BIGINT_LIB_DEFINE = USE_BIG_RTL_LIBRARY
+@@ -47,8 +47,8 @@
+ # BIGINT_LIB = big_gmp
+ 
+ TERMINFO_OR_TERMCAP = USE_TERMINFO
+-CONSOLE_LIB_OBJ = kbd_rtl.o con_inf.o kbd_inf.o trm_inf.o
+-CONSOLE_LIB_SRC = kbd_rtl.c con_inf.c kbd_inf.c trm_inf.c
++CONSOLE_LIB_OBJ = kbd_rtl.o con_inf.o kbd_poll.o trm_inf.o
++CONSOLE_LIB_SRC = kbd_rtl.c con_inf.c kbd_poll.c trm_inf.c
+ # TERMINFO_OR_TERMCAP = USE_TERMCAP
+ # CONSOLE_LIB_OBJ = kbd_rtl.o con_inf.o kbd_inf.o trm_cap.o
+ # CONSOLE_LIB_SRC = kbd_rtl.c con_inf.c kbd_inf.c trm_cap.c
 @@ -112,6 +112,7 @@
  COMP_DATA_LIB_SRC = typ_data.c rfl_data.c ref_data.c listutl.c flistutl.c typeutl.c datautl.c
  COMPILER_LIB_SRC = $(PSRC1) $(LSRC1) $(LSRC2) $(LSRC3) $(ESRC1) $(ASRC1) $(ASRC2) $(ASRC3) $(GSRC1) $(GSRC2)

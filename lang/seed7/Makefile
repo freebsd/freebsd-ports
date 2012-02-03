@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seed7
-DISTVERSION=	05_20120101
+DISTVERSION=	05_20120115
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -46,6 +46,7 @@ do-install:
 	${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/../lib && ${COPYTREE_SHARE} \* ${PREFIX}/lib/${PORTNAME})
 	${INSTALL_DATA} ${WRKSRC}/../bin/s7_comp.a ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/../bin/s7_con.a ${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/../bin/s7_draw.a ${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/../bin/s7_data.a ${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/../bin/seed7_05.a ${PREFIX}/lib/${PORTNAME}
