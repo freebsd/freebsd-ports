@@ -7,6 +7,7 @@
 
 PORTNAME=	icinga
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -109,14 +110,14 @@ CONFIGURE_ARGS+=	--disable-event-broker
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's#/bin/ping#/sbin/ping#' ${WRKSRC}/sample-config/cgi.cfg.in
+	@${REINPLACE_CMD} -e 's#Linux#FreeBSD#' ${WRKSRC}/sample-config/icinga.cfg.in
+	@${REINPLACE_CMD} -e 's#775#755#g; s#664#644#g' ${WRKSRC}/html/Makefile.in
 .if defined(WITH_UNHANDLED_HACK)
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/menu.html.in
-	@${REINPLACE_CMD} -e 's#Linux#FreeBSD#' ${WRKSRC}/sample-config/icinga.cfg.in
-	@${REINPLACE_CMD} -e 's#775#755#g; s#664#644#g' ${WRKSRC}/html/Makefile.in
-	@${REINPLACE_CMD} -e 's#/bin/ping#/sbin/ping#' ${WRKSRC}/*
-	@${FIND} ${WRKSRC} -name '*.orig' -delete
 .endif
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 pre-su-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
