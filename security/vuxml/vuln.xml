@@ -47,6 +47,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6e7ad1d7-4e27-11e1-8e12-90e6ba8a36a2">
+    <topic>mathopd - directory traversal vulnerability</topic>
+    <affects>
+      <package>
+        <name>mathopd</name>
+        <range><lt>1.5p7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Michiel Boland reports:</p>
+        <blockquote cite="http://www.mathopd.org/security.html">
+          <p>The software has a vulnerability that could lead to directory
+             traversal if the '*' construct for mass virtual hosting is used.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="4F2AFEF2.5040708@boland.org">http://www.mail-archive.com/mathopd%40mathopd.org/msg00392.html</mlist>
+      <url>http://www.mathopd.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2012-02-02</discovery>
+      <entry>2012-02-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b7dbfab-4c6b-11e1-bc16-0023ae8e59f0">
     <topic>apache -- multiple vulnerabilities</topic>
     <affects>
