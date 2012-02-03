@@ -2,14 +2,6 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 
-# Install UID/GID
-USER=%%BACULA_USER%%
-GROUP=%%BACULA_GROUP%%
-UID=%%BACULA_UID%%
-GID=%%BACULA_UID%%
-BACULA_DIR=%%BACULA_DIR%%
-
-
 # Always add lines in /etc/services
 grep -q "bacula-dir" /etc/services
 if [ "$?" != "0" ]; then
@@ -19,24 +11,3 @@ bacula-fd       9102/tcp   #Bacula file daemon
 bacula-sd       9103/tcp   #Bacula storage daemon
 # Bacule port end" >> /etc/services
 fi
-
-case $2 in
-PRE-INSTALL)
-	if [ ! -d ${BACULA_DIR} ]; then
-		mkdir -p ${BACULA_DIR}
-	fi
-
-	if pw group show "${GROUP}" 2>/dev/null; then
-		echo "You already have a group \"${GROUP}\", so I will use it."
-	else
-		if pw groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
-		else
-			echo "Adding group \"${GROUP}\" failed..."
-			exit 1
-		fi
-	fi
-
-	chgrp -R ${GROUP} ${BACULA_DIR}
-	;;
-esac
