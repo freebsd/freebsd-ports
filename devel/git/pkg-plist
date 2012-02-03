@@ -207,7 +207,7 @@ libexec/git-core/mergetools/araxis
 %%PERLSUB%%%%SITE_PERL%%/Git/I18N.pm
 lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/git-blame.el
-share/locale/is/LC_MESSAGES/git.mo
+%%NLS%%share/locale/is/LC_MESSAGES/git.mo
 share/emacs/site-lisp/git/git.el
 share/emacs/site-lisp/git/git-blame.el
 share/git-core/templates/description

@@ -212,13 +212,21 @@ OPTIONS=	GUI "Enable building of GUI tools" off \
 
 .include <bsd.port.options.mk>
 
+.ifndef (WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+MAKE_ENV+=	NO_GETTEXT=yes
+.endif
+
 .ifndef (WITH_DEBUG)
 ALL_TARGET=	all strip
 .endif
 
 .ifdef (WITH_P4) || defined (WITH_CONTRIB)
 USE_PYTHON=	yes
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER} PYTHON=""
+PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} PYTHON=""
 CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
 .else
 CONFIGURE_ARGS+=	--without-python
