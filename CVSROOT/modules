@@ -5542,6 +5542,7 @@ hs-lazysmallcheck               ports/devel/hs-lazysmallcheck
 hs-lhs2tex                      ports/textproc/hs-lhs2tex
 hs-libmpd                       ports/audio/hs-libmpd
 hs-libxml                       ports/textproc/hs-libxml
+hs-math-functions               ports/math/hs-math-functions
 hs-memotrie                     ports/devel/hs-MemoTrie
 hs-mime                         ports/mail/hs-mime
 hs-missingh                     ports/devel/hs-MissingH
@@ -27492,7 +27493,6 @@ xf86vidmodeproto                ports/x11/xf86vidmodeproto
 xface.el                        ports/graphics/xface.el
 xfaces                          ports/mail/xfaces
 xfburn                          ports/sysutils/xfburn
-xfce                            ports/x11-wm/xfce
 xfce4                           ports/x11-wm/xfce4
 xfce4-appfinder                 ports/misc/xfce4-appfinder
 xfce4-artwork                   ports/misc/xfce4-artwork
