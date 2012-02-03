@@ -191,8 +191,10 @@ MAN8=	gearmand.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
+# Workaround for missing sigignore that wasn't introduced until
+# FreeBSD 8.0
+.if ${OSVERSION} < 800500
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libtest__test.cc
 .endif
 
 # This hack is required for the test programs invoked by configure,
