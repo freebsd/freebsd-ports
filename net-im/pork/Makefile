@@ -10,7 +10,7 @@ PORTVERSION=		0.99.8.1
 CATEGORIES=		net-im
 MASTER_SITES=		SF/ojnk/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=		wxs@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Console-based AIM client
 
 USE_PERL5=		yes
