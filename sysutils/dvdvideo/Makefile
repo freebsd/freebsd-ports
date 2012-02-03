@@ -1,4 +1,4 @@
-# New ports collection makefile for:	py-dvdvideo
+# New ports collection makefile for:	dvdvideo
 # Date created:			26 Jan 2012
 # Whom:				Ganael Laplanche <ganael.laplanche@martymac.org>
 #
@@ -7,10 +7,10 @@
 
 PORTNAME=	dvdvideo
 PORTVERSION=	20120126
-CATEGORIES=	sysutils
+PORTREVISION=	1
+CATEGORIES=	sysutils multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
