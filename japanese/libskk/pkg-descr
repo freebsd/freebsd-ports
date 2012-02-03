@@ -1,0 +1,27 @@
+libskk -- a library to deal with Japanese kana-to-kanji conversion method
+
+Features:
+
+* Support basic features of SKK including new word registration into
+  dictionary, completion, numeric conversion, abbrev mode, kuten input, 
+  hankaku-katakana input, Lisp expression evaluation (concat 
+  only), and re-conversion.
+
+* Support various typing rules including romaji-to-kana, AZIK, TUT-Code,
+  and NICOLA.
+
+* Support various dictionary types including file dictionary (such as
+  SKK-JISYO.[SML]), user dictionary, skkserv, and CDB format dictionary.
+
+* GObject based API with gobject-introspection support.
+
+* Experimental support for intelligent kana-to-kanji conversion based
+  on Viterbi algorithm.
+
+Documentation:
+
+* file:tests/context.c for basic usage
+* http://du-a.org/docs/libskk/libskk/ for Vala binding reference
+* http://du-a.org/docs/gtk-doc/libskk/html/ for C binding reference
+
+WWW: http://github.com/ueno/libskk
