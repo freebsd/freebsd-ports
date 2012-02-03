@@ -13,7 +13,6 @@
     SUBDIR += R-cran-eco
     SUBDIR += R-cran-epicalc
     SUBDIR += R-cran-snow
-    SUBDIR += R-cran-survival
     SUBDIR += abinit
     SUBDIR += afni
     SUBDIR += avogadro
