@@ -22,9 +22,15 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		usb_modeswitch.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/usb_modeswitch ${PREFIX}/sbin
 		${INSTALL_DATA} ${WRKSRC}/usb_modeswitch.conf ${PREFIX}/etc/usb_modeswitch.conf.sample
 		${INSTALL_MAN} ${WRKSRC}/usb_modeswitch.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
