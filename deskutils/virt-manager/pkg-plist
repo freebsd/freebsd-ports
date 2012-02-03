@@ -60,7 +60,6 @@ share/icons/hicolor/48x48/apps/virt-manager.png
 %%DATADIR%%/virtManager/halhelper.py
 %%DATADIR%%/virtManager/host.py
 %%DATADIR%%/virtManager/inspection.py
-%%DATADIR%%/virtManager/inspectiondata.py
 %%DATADIR%%/virtManager/interface.py
 %%DATADIR%%/virtManager/keyring.py
 %%DATADIR%%/virtManager/libvirtglib.py
