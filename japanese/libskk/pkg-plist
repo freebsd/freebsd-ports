@@ -1,0 +1,112 @@
+bin/skk
+include/libskk/libskk.h
+lib/libskk.so.0
+lib/libskk.so
+lib/libskk.la
+lib/girepository-1.0/Skk-1.0.typelib
+libdata/pkgconfig/libskk.pc
+%%NLS%%share/locale/ja/LC_MESSAGES/libskk.mo
+share/gir-1.0/Skk-1.0.gir
+share/vala/vapi/skk-1.0.deps
+share/vala/vapi/skk-1.0.vapi
+%%DATADIR%%/rules/tcode/keymap/latin.json
+%%DATADIR%%/rules/tcode/keymap/katakana.json
+%%DATADIR%%/rules/tcode/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/tcode/keymap/wide-latin.json
+%%DATADIR%%/rules/tcode/keymap/hiragana.json
+%%DATADIR%%/rules/tcode/rom-kana/default.json
+%%DATADIR%%/rules/tcode/metadata.json
+%%DATADIR%%/rules/tutcode-touch16x/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/tutcode-touch16x/keymap/hiragana.json
+%%DATADIR%%/rules/tutcode-touch16x/keymap/katakana.json
+%%DATADIR%%/rules/tutcode-touch16x/keymap/latin.json
+%%DATADIR%%/rules/tutcode-touch16x/keymap/wide-latin.json
+%%DATADIR%%/rules/tutcode-touch16x/metadata.json
+%%DATADIR%%/rules/tutcode-touch16x/rom-kana/default.json
+%%DATADIR%%/rules/tutcode/metadata.json
+%%DATADIR%%/rules/tutcode/rom-kana/default.json
+%%DATADIR%%/rules/tutcode/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/tutcode/keymap/hiragana.json
+%%DATADIR%%/rules/tutcode/keymap/katakana.json
+%%DATADIR%%/rules/tutcode/keymap/latin.json
+%%DATADIR%%/rules/tutcode/keymap/wide-latin.json
+%%DATADIR%%/rules/trycode/metadata.json
+%%DATADIR%%/rules/trycode/keymap/latin.json
+%%DATADIR%%/rules/trycode/keymap/katakana.json
+%%DATADIR%%/rules/trycode/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/trycode/keymap/wide-latin.json
+%%DATADIR%%/rules/trycode/keymap/hiragana.json
+%%DATADIR%%/rules/trycode/rom-kana/default.json
+%%DATADIR%%/rules/nicola/metadata.json
+%%DATADIR%%/rules/nicola/rom-kana/default.json
+%%DATADIR%%/rules/nicola/keymap/default.json
+%%DATADIR%%/rules/nicola/keymap/kana.json
+%%DATADIR%%/rules/nicola/keymap/latin.json
+%%DATADIR%%/rules/nicola/keymap/katakana.json
+%%DATADIR%%/rules/nicola/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/nicola/keymap/wide-latin.json
+%%DATADIR%%/rules/nicola/keymap/hiragana.json
+%%DATADIR%%/rules/kzik/rom-kana/default.json
+%%DATADIR%%/rules/kzik/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/kzik/keymap/hiragana.json
+%%DATADIR%%/rules/kzik/keymap/katakana.json
+%%DATADIR%%/rules/kzik/keymap/latin.json
+%%DATADIR%%/rules/kzik/keymap/wide-latin.json
+%%DATADIR%%/rules/kzik/metadata.json
+%%DATADIR%%/rules/azik/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/azik/keymap/hiragana.json
+%%DATADIR%%/rules/azik/keymap/katakana.json
+%%DATADIR%%/rules/azik/keymap/latin.json
+%%DATADIR%%/rules/azik/keymap/wide-latin.json
+%%DATADIR%%/rules/azik/rom-kana/default.json
+%%DATADIR%%/rules/azik/metadata.json
+%%DATADIR%%/rules/default/rom-kana/default.json
+%%DATADIR%%/rules/default/metadata.json
+%%DATADIR%%/rules/default/keymap/default.json
+%%DATADIR%%/rules/default/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/default/keymap/hiragana.json
+%%DATADIR%%/rules/default/keymap/katakana.json
+%%DATADIR%%/rules/default/keymap/latin.json
+%%DATADIR%%/rules/default/keymap/wide-latin.json
+%%DATADIR%%/rules/README.rules
+%%DATADIR%%/rules/act/rom-kana/default.json
+%%DATADIR%%/rules/act/metadata.json
+%%DATADIR%%/rules/act/keymap/default.json
+%%DATADIR%%/rules/act/keymap/hankaku-katakana.json
+%%DATADIR%%/rules/act/keymap/hiragana.json
+%%DATADIR%%/rules/act/keymap/katakana.json
+%%DATADIR%%/rules/act/keymap/latin.json
+%%DATADIR%%/rules/act/keymap/wide-latin.json
+@dirrmtry %%DATADIR%%/rules/tutcode/rom-kana
+@dirrmtry %%DATADIR%%/rules/tutcode/keymap
+@dirrmtry %%DATADIR%%/rules/tutcode-touch16x/rom-kana
+@dirrmtry %%DATADIR%%/rules/tutcode-touch16x/keymap
+@dirrmtry %%DATADIR%%/rules/tutcode-touch16x
+@dirrmtry %%DATADIR%%/rules/tutcode
+@dirrmtry %%DATADIR%%/rules/trycode/rom-kana
+@dirrmtry %%DATADIR%%/rules/trycode/keymap
+@dirrmtry %%DATADIR%%/rules/trycode
+@dirrmtry %%DATADIR%%/rules/tcode/rom-kana
+@dirrmtry %%DATADIR%%/rules/tcode/keymap
+@dirrmtry %%DATADIR%%/rules/tcode
+@dirrmtry %%DATADIR%%/rules/nicola/rom-kana
+@dirrmtry %%DATADIR%%/rules/nicola/keymap
+@dirrmtry %%DATADIR%%/rules/nicola
+@dirrmtry %%DATADIR%%/rules/kzik/rom-kana
+@dirrmtry %%DATADIR%%/rules/kzik/keymap
+@dirrmtry %%DATADIR%%/rules/kzik
+@dirrmtry %%DATADIR%%/rules/default/rom-kana
+@dirrmtry %%DATADIR%%/rules/default/keymap
+@dirrmtry %%DATADIR%%/rules/default
+@dirrmtry %%DATADIR%%/rules/azik/rom-kana
+@dirrmtry %%DATADIR%%/rules/azik/keymap
+@dirrmtry %%DATADIR%%/rules/azik
+@dirrmtry %%DATADIR%%/rules/act/rom-kana
+@dirrmtry %%DATADIR%%/rules/act/keymap
+@dirrmtry %%DATADIR%%/rules/act
+@dirrmtry %%DATADIR%%/rules
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/locale/ja/LC_MESSAGES
+@dirrmtry lib/locale/ja
+@dirrmtry lib/locale
+@dirrmtry include/libskk
