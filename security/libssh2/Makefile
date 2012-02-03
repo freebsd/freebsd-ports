@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -137,6 +137,8 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_scp_send64.3 \
 	libssh2_scp_send_ex.3 \
 	libssh2_session_abstract.3 \
+	libssh2_session_banner_get.3 \
+	libssh2_session_banner_set.3 \
 	libssh2_session_block_directions.3 \
 	libssh2_session_callback_set.3 \
 	libssh2_session_disconnect.3 \
@@ -155,6 +157,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_session_set_blocking.3 \
 	libssh2_session_set_timeout.3 \
 	libssh2_session_startup.3 \
+	libssh2_session_supported_algs.3 \
 	libssh2_sftp_close.3 \
 	libssh2_sftp_close_handle.3 \
 	libssh2_sftp_closedir.3 \
@@ -162,6 +165,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_sftp_fstat.3 \
 	libssh2_sftp_fstat_ex.3 \
 	libssh2_sftp_fstatvfs.3 \
+	libssh2_sftp_get_channel.3 \
 	libssh2_sftp_init.3 \
 	libssh2_sftp_last_error.3 \
 	libssh2_sftp_lstat.3 \
