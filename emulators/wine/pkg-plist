@@ -582,6 +582,8 @@ include/wine/windows/textserv.h
 include/wine/windows/textstor.h
 include/wine/windows/textstor.idl
 include/wine/windows/tlhelp32.h
+include/wine/windows/tlogstg.h
+include/wine/windows/tlogstg.idl
 include/wine/windows/tmschema.h
 include/wine/windows/tom.h
 include/wine/windows/tom.idl
