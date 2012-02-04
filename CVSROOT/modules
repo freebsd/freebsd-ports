@@ -248,7 +248,6 @@ R-cran-sm                       ports/math/R-cran-sm
 R-cran-snow                     ports/science/R-cran-snow
 R-cran-sp                       ports/math/R-cran-sp
 R-cran-spdep                    ports/math/R-cran-spdep
-R-cran-survival                 ports/science/R-cran-survival
 R-cran-twitteR                  ports/net/R-cran-twitteR
 R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
@@ -2704,6 +2703,7 @@ dvdimagecmp                     ports/sysutils/dvdimagecmp
 dvdisaster                      ports/sysutils/dvdisaster
 dvdrip                          ports/multimedia/dvdrip
 dvdstyler                       ports/multimedia/dvdstyler
+dvdvideo                        ports/sysutils/dvdvideo
 dvi2tty                         ports/print/dvi2tty
 dvipdfmx                        ports/print/dvipdfmx
 dvips                           ports/print/dvips
@@ -6264,6 +6264,7 @@ ja-leafrogue                    ports/japanese/leafrogue
 ja-less                         ports/japanese/less
 ja-libicq                       ports/japanese/libicq
 ja-libjcode                     ports/japanese/libjcode
+ja-libskk                       ports/japanese/libskk
 ja-libslang                     ports/japanese/libslang
 ja-libtomoe-gtk                 ports/japanese/libtomoe-gtk
 ja-lipsf                        ports/japanese/lipsf
@@ -21973,7 +21974,6 @@ py-drmaa                        ports/sysutils/py-drmaa
 py-dsv                          ports/textproc/py-dsv
 py-dtflickr                     ports/www/py-dtflickr
 py-durus                        ports/devel/py-durus
-py-dvdvideo                     ports/sysutils/py-dvdvideo
 py-dynrules                     ports/devel/py-dynrules
 py-editobj                      ports/graphics/py-editobj
 py-elementtree                  ports/devel/py-elementtree
@@ -23377,7 +23377,6 @@ r-cran-snow                     ports/science/R-cran-snow
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-spdep                    ports/math/R-cran-spdep
 r-cran-suppdists                ports/math/R-cran-SuppDists
-r-cran-survival                 ports/science/R-cran-survival
 r-cran-twitter                  ports/net/R-cran-twitteR
 r-cran-xml                      ports/textproc/R-cran-XML
 r-cran-xtable                   ports/textproc/R-cran-xtable
