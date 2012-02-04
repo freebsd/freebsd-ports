@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cvc3
-PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTVERSION=	2.4.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/ \
-		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An automatic theorem prover for the SMT problem
@@ -29,4 +27,14 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/Makefile.std
+	${REINPLACE_CMD} -e 's,.*$$(LDCONFIG).*,,' ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,' ${WRKSRC}/src/Makefile
+
+post-install:
+	${INSTALL_PROGRAM} `readlink ${WRKSRC}/bin/cvc3` ${PREFIX}/bin
+
+.include <bsd.port.post.mk>
