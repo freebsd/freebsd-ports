@@ -7,7 +7,7 @@
 
 PORTNAME=	nedit
 PORTVERSION=	5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nedit.org/pub/NEdit/v5_5/ \
 		ftp://ftp.nedit.org/pub/NEdit/contrib/misc/ \
