@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	58
-PORTREVISION=	3
+PORTVERSION=	65
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
-DISTNAME=	opdenkamp-${PORTNAME}-Eden-pvr_beta1-0-g${GITHASH}
+DISTNAME=	opdenkamp-${PORTNAME}-Eden-pvr_beta2-0-g${GITHASH}
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	XBMC is an award winning media center application - PVR branch
@@ -63,7 +62,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-GITHASH=	84817e6
+GITHASH=	cbe2cf3
 WRKSRC=		${WRKDIR}/opdenkamp-${PORTNAME}-${GITHASH}
 FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
@@ -221,8 +220,6 @@ post-patch:
 		${WRKSRC}/lib/timidity/configure.in \
 		${WRKSRC}/xbmc/screensavers/rsxs-0.9/acinclude.m4
 	${RM} ${WRKSRC}/addons/library.xbmc.addon/libXBMC_addon.h.orig
-	${RM} ${WRKSRC}/addons/library.xbmc.gui/libXBMC_gui.h.orig
-	${RM} ${WRKSRC}/addons/library.xbmc.pvr/libXBMC_pvr.h.orig
 # XXX somehow there are still references to linux libraries, if you find
 # where they come from please tell us!
 .if ${ARCH} == "amd64"
