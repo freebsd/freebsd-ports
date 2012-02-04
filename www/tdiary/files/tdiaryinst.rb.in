@@ -138,6 +138,9 @@ class TdiaryInstall
     if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}")
       FileUtils.mkdir_p("#{@passwd.dir}/#{@httpdir}/#{@diarydir}", @fileutilOptions)
     end
+    if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/images")
+      FileUtils.mkdir_p("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/images", @fileutilOptions)
+    end
   end
 
   def linkBaseFile
@@ -183,6 +186,11 @@ class TdiaryInstall
     tempfile.write tdiaryConfReplace("#{@tdiarymaster}/tdiary.conf.sample")
     tempfile.close
     FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf.sample", @fileutilOptions)
+
+    tempfile = Tempfile.new("tdiary.conf.sample-en")
+    tempfile.write tdiaryConfReplace("#{@tdiarymaster}/tdiary.conf.sample-en")
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf.sample-en", @fileutilOptions)
 
     if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf")
       FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf.sample", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf", @fileutilOptions)

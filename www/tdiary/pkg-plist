@@ -5,6 +5,7 @@
 %%WWWDIR%%/js/01conf.js
 %%WWWDIR%%/js/amazon.js
 %%WWWDIR%%/js/category.js
+%%WWWDIR%%/js/draft.js
 %%WWWDIR%%/js/highlight.js
 %%WWWDIR%%/js/image.js
 %%WWWDIR%%/misc/convert2.rb
@@ -40,6 +41,7 @@
 %%WWWDIR%%/misc/plugin/daily_theme.rb
 %%WWWDIR%%/misc/plugin/disp_referrer.rb
 %%WWWDIR%%/misc/plugin/doctype-html401tr.rb
+%%WWWDIR%%/misc/plugin/draft.rb
 %%WWWDIR%%/misc/plugin/dropdown_calendar.rb
 %%WWWDIR%%/misc/plugin/edit_today.rb
 %%WWWDIR%%/misc/plugin/en/a.rb
@@ -185,6 +187,7 @@
 %%WWWDIR%%/skel/i.header.rhtml
 %%WWWDIR%%/skel/i.latest.rhtml
 %%WWWDIR%%/skel/i.month.rhtml
+%%WWWDIR%%/skel/i.search.rhtml
 %%WWWDIR%%/skel/i.show.rhtml
 %%WWWDIR%%/skel/i.update.rhtml
 %%WWWDIR%%/skel/i.update.rhtml.en
@@ -203,6 +206,7 @@
 %%WWWDIR%%/skel/update.rhtml.en
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample
+%%WWWDIR%%/tdiary.conf.sample-en
 %%WWWDIR%%/tdiary.rb
 %%WWWDIR%%/tdiary/application.rb
 %%WWWDIR%%/tdiary/comment.rb
@@ -1828,97 +1832,166 @@
 %%WWWDIR%%/update.fcgi
 %%WWWDIR%%/update.rb
 %%WWWDIR%%/vendor/imagesize-0.1.1/lib
-%%WWWDIR%%/vendor/rdtool-0.6.29/COPYING.txt
-%%WWWDIR%%/vendor/rdtool-0.6.29/Gemfile
-%%WWWDIR%%/vendor/rdtool-0.6.29/HISTORY
-%%WWWDIR%%/vendor/rdtool-0.6.29/LICENSE.txt
-%%WWWDIR%%/vendor/rdtool-0.6.29/MANIFEST
-%%WWWDIR%%/vendor/rdtool-0.6.29/README.rd
-%%WWWDIR%%/vendor/rdtool-0.6.29/README.rd.ja
-%%WWWDIR%%/vendor/rdtool-0.6.29/Rakefile
-%%WWWDIR%%/vendor/rdtool-0.6.29/TODO
-%%WWWDIR%%/vendor/rdtool-0.6.29/VERSION
-%%WWWDIR%%/vendor/rdtool-0.6.29/bin/rd2
-%%WWWDIR%%/vendor/rdtool-0.6.29/bin/rdswap.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/doc/rd-draft.rd
-%%WWWDIR%%/vendor/rdtool-0.6.29/doc/rd-draft.rd.ja
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/block-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/complex-list-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/desclist.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/document-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/dot.rd2rc
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/filter.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/inline-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/labeled-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/list.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/loose-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/methodlist.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/output-format-visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/package.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/parser-util.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/post-install
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rbl-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rbl-suite.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rd-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rd2html-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rd2html-opt.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rd2man-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rd2rdo-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rd2rmi-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rdblockparser.ry
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rdblockparser.tab.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rdfmt.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rdinlineparser.ry
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rdinlineparser.tab.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/rdvisitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/reference-resolver.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/search-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/tree.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/version.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd/visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/makerdtool.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/rdtool.gemspec
-%%WWWDIR%%/vendor/rdtool-0.6.29/setup.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/dummy-observer.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/dummy.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/temp-dir.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-block-parser.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-desclist-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-document-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-document-struct.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-headline.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-inline-parser.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-list-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-list.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-methodlist-item.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-nonterminal-element.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-nonterminal-inline.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-output-format-visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-parser-util.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-rbl-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-rbl-suite.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-rd2html-lib.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-rdtree.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-rdvisitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-reference-resolver.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-reference.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-search-file.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-terminal-inline.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-textblock.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-tree.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-version.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/test/test-visitor.rb
-%%WWWDIR%%/vendor/rdtool-0.6.29/utils/rd-mode.el
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29/utils
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29/test
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29/lib/rd
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29/lib
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29/doc
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29/bin
-@dirrm %%WWWDIR%%/vendor/rdtool-0.6.29
+%%WWWDIR%%/vendor/json_pure-1.6.5/.gitignore
+%%WWWDIR%%/vendor/json_pure-1.6.5/.travis.yml
+%%WWWDIR%%/vendor/json_pure-1.6.5/CHANGES
+%%WWWDIR%%/vendor/json_pure-1.6.5/COPYING
+%%WWWDIR%%/vendor/json_pure-1.6.5/COPYING-json-jruby
+%%WWWDIR%%/vendor/json_pure-1.6.5/GPL
+%%WWWDIR%%/vendor/json_pure-1.6.5/Gemfile
+%%WWWDIR%%/vendor/json_pure-1.6.5/README-json-jruby.markdown
+%%WWWDIR%%/vendor/json_pure-1.6.5/README.rdoc
+%%WWWDIR%%/vendor/json_pure-1.6.5/Rakefile
+%%WWWDIR%%/vendor/json_pure-1.6.5/TODO
+%%WWWDIR%%/vendor/json_pure-1.6.5/VERSION
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/.keep
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkComparison.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_fast-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_fast.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_pretty-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_pretty.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_safe-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_safe.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_fast-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_fast.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_pretty-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_pretty.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_safe-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_safe.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails#generator-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails#generator.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkComparison.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt#parser-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt#parser.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure#parser-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure#parser.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails#parser-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails#parser.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML#parser-autocorrelation.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML#parser.dat
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML.log
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/generator2_benchmark.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/generator_benchmark.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/ohai.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/ohai.ruby
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/parser2_benchmark.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/parser_benchmark.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/diagrams/.keep
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/fbuffer/fbuffer.h
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/generator/extconf.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/generator/generator.c
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/generator/generator.h
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/parser/extconf.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/parser/parser.c
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/parser/parser.h
+%%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/parser/parser.rl
+%%WWWDIR%%/vendor/json_pure-1.6.5/install.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/ByteListTranscoder.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/Generator.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/GeneratorMethods.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/GeneratorService.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/GeneratorState.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/OptionsReader.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/Parser.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/Parser.rl
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/ParserService.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/RuntimeInfo.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/StringDecoder.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/StringEncoder.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext/Utils.java
+%%WWWDIR%%/vendor/json_pure-1.6.5/json-java.gemspec
+%%WWWDIR%%/vendor/json_pure-1.6.5/json.gemspec
+%%WWWDIR%%/vendor/json_pure-1.6.5/json_pure.gemspec
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/bigdecimal.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/complex.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/core.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/date.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/date_time.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/exception.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/ostruct.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/range.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/rational.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/regexp.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/struct.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/symbol.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add/time.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/common.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/ext.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/ext/.keep
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/pure.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/pure/generator.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/pure/parser.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/version.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail1.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail10.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail11.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail12.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail13.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail14.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail18.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail19.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail2.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail20.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail21.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail22.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail23.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail24.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail25.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail27.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail28.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail3.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail4.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail5.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail6.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail7.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail8.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/fail9.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass1.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass15.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass16.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass17.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass2.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass26.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures/pass3.json
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/setup_variant.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json_addition.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json_encoding.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json_fixtures.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json_generate.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json_string_matching.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tests/test_json_unicode.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tools/fuzz.rb
+%%WWWDIR%%/vendor/json_pure-1.6.5/tools/server.rb
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/tools
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/tests/fixtures
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/tests
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/pure
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/lib/json/add
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/lib/json
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/lib
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/java/src/json
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/java/src
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/java
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/parser
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/generator
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext/fbuffer
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/ext/json/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/ext/json
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/ext
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/diagrams
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks/data-p4-3GHz-ruby18
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5/benchmarks
+@dirrm %%WWWDIR%%/vendor/json_pure-1.6.5
 @dirrm %%WWWDIR%%/vendor/imagesize-0.1.1
 @dirrm %%WWWDIR%%/vendor
 @dirrm %%WWWDIR%%/theme/zef
