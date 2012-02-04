@@ -8,7 +8,7 @@
 PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
