@@ -1,0 +1,71 @@
+commit 14baa0141315ac673f4d492ba84bc7d3befade3a
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue Jan 31 22:23:40 2012 -0200
+
+    Install and load the grantlee plugin the right way.
+    
+    This should hopefully solve the issues with the installation and loading
+    of grantlee_skroogefilters once and for all.
+    
+    Long story short: grantlee plugins are Qt plugins, and thus it makes the
+    most sense to install them into ${PLUGIN_INSTALL_DIR}/plugins/whatever,
+    so that the QT_PLUGIN_PATH environment variable can be used to let
+    QCoreApplication::libraryPaths() automatically find it. To err on the
+    safe side, we also add the paths via Grantlee::Engine::addPluginPath so
+    the plugin is found even is QT_PLUGIN_PATH is not properly set.
+    
+    Below is an account of the troubles we've had so far:
+    
+     * Commit 87baaf5a hardcoded the installation to
+       ${PLUGIN_INSTALL_DIR}/../grantlee/0.1, and it was wrong because it
+       assumed a certain directory layout and installed above
+       PLUGIN_INSTALL_DIR.
+     * Commit a2b5f2ab later changed that to
+       ${PLUGIN_INSTALL_DIR}/../grantlee/<GRANTLEE MAJOR>.<GRANTLEE MINOR>,
+       which was only slightly better.
+     * Commit 2be99742 then installed the plugin into
+       ${DATA_INSTALL_DIR}/skrooge/plugins/grantlee/<GRANTLEE
+       MAJOR>.<GRANTLEE MINOR> and added some C++ code to add this directory to
+       Grantlee's plugin search path. ${DATA_INSTALL_DIR} is not the right
+       place to install plugins, though.
+     * Commit 8eb59377 fixed the issue by installing the plugin into
+       ${LIB_INSTALL_DIR}/grantlee/<GRANTLEE MAJOR>.<GRANTLEE MINOR>. For
+       some unfortunate reason, this commit also removed the C++ code added
+       in the previous commit.
+    
+    Reviewed-by: Guillaume DE BURE
+    
+    CCMAIL: guillaume.debure@gmail.com
+    CCMAIL: stephane@mankowski.fr
+
+diff --git a/plugins/skrooge/skrooge_monthly/grantlee_filters/CMakeLists.txt b/plugins/skrooge/skrooge_monthly/grantlee_filters/CMakeLists.txt
+index ebeef7d..7c782d8 100644
+--- ./plugins/skrooge/skrooge_monthly/grantlee_filters/CMakeLists.txt
++++ ./plugins/skrooge/skrooge_monthly/grantlee_filters/CMakeLists.txt
+@@ -13,7 +13,7 @@ TARGET_LINK_LIBRARIES(grantlee_skroogefilters skgbasemodeler skgbankmodeler skgb
+ 
+ ########### install files ###############
+ IF(WIN32)
+-  INSTALL(TARGETS grantlee_skroogefilters ARCHIVE DESTINATION ${LIB_INSTALL_DIR}/grantlee/${Grantlee_VERSION_MAJOR}.${Grantlee_VERSION_MINOR} )
++  INSTALL(TARGETS grantlee_skroogefilters ARCHIVE DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/grantlee/${Grantlee_VERSION_MAJOR}.${Grantlee_VERSION_MINOR} )
+ ELSE(WIN32)
+-  INSTALL(TARGETS grantlee_skroogefilters LIBRARY DESTINATION ${LIB_INSTALL_DIR}/grantlee/${Grantlee_VERSION_MAJOR}.${Grantlee_VERSION_MINOR} )
+-ENDIF(WIN32)
+\ No newline at end of file
++  INSTALL(TARGETS grantlee_skroogefilters LIBRARY DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/grantlee/${Grantlee_VERSION_MAJOR}.${Grantlee_VERSION_MINOR} )
++ENDIF(WIN32)
+diff --git a/plugins/skrooge/skrooge_monthly/skgmonthlypluginwidget.cpp b/plugins/skrooge/skrooge_monthly/skgmonthlypluginwidget.cpp
+index f82f1b1..91a7037 100644
+--- ./plugins/skrooge/skrooge_monthly/skgmonthlypluginwidget.cpp
++++ ./plugins/skrooge/skrooge_monthly/skgmonthlypluginwidget.cpp
+@@ -652,6 +652,10 @@ QString SKGMonthlyPluginWidget::getReport()
+ 
+             //Prepare grantlee engine
+             Grantlee::Engine gEngine(this);
++            const QStringList pluginDirs = KGlobal::dirs()->resourceDirs("qtplugins");
++            foreach (const QString& pluginDir, pluginDirs) {
++                gEngine.addPluginPath(pluginDir);
++            }
+             gEngine.addDefaultLibrary("grantlee_skroogefilters");
+ 
+             Grantlee::FileSystemTemplateLoader::Ptr gLoader = Grantlee::FileSystemTemplateLoader::Ptr(new Grantlee::FileSystemTemplateLoader());
