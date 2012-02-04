@@ -8,6 +8,7 @@
     SUBDIR += bxpkg
     SUBDIR += distilator
     SUBDIR += fastest_sites
+    SUBDIR += fbsdmon
     SUBDIR += genplist
     SUBDIR += gnome-packagekit
     SUBDIR += hs-porte
