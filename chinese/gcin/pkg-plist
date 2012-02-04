@@ -22,7 +22,7 @@ lib/gtk-2.0/immodules/im-gcin.so
 %%CHEWING_MODULE%%lib/gcin/chewing-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
-lib/gcin/intcode-module.so
+%%CHEWING_MODULE%%lib/gcin/intcode-module.so
 lib/gcin/libgcin-im-client.so
 lib/gcin/libgcin-im-client.so.1.2.5
 lib/gcin/libgcin-im-client.so.1
