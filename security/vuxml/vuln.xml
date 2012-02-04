@@ -47,6 +47,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3fd040be-4f0b-11e1-9e32-0025900931f8">
+    <topic>php -- arbitrary remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><ge>5.3.9</ge><lt>5.3.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP development team reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php">
+	  <p>Fixed arbitrary remote code execution vulnerability reported
+	    by Stefan Esser, CVE-2012-0830.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0830</cvename>
+    </references>
+    <dates>
+      <discovery>2012-02-02</discovery>
+      <entry>2012-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e7ad1d7-4e27-11e1-8e12-90e6ba8a36a2">
     <topic>mathopd - directory traversal vulnerability</topic>
     <affects>
