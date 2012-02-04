@@ -212,6 +212,7 @@
     SUBDIR += pcal
     SUBDIR += pdf-renderer
     SUBDIR += pdfbox
+    SUBDIR += pdfcolorsplit
     SUBDIR += pdfcube
     SUBDIR += pdfjam
     SUBDIR += pdflib
