@@ -12,6 +12,9 @@ include/hamlib/riglist.h
 include/hamlib/rotator.h
 include/hamlib/rotclass.h
 include/hamlib/rotlist.h
+lib/hamlib/hamlib-adat.a
+lib/hamlib/hamlib-adat.la
+lib/hamlib/hamlib-adat.so
 lib/hamlib/hamlib-alinco.a
 lib/hamlib/hamlib-alinco.la
 lib/hamlib/hamlib-alinco.so
@@ -24,6 +27,9 @@ lib/hamlib/hamlib-amsat.so
 lib/hamlib/hamlib-ars.a
 lib/hamlib/hamlib-ars.la
 lib/hamlib/hamlib-ars.so
+lib/hamlib/hamlib-celestron.a
+lib/hamlib/hamlib-celestron.la
+lib/hamlib/hamlib-celestron.so
 lib/hamlib/hamlib-drake.a
 lib/hamlib/hamlib-drake.la
 lib/hamlib/hamlib-drake.so
