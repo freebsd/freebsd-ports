@@ -22,7 +22,7 @@ lib/gtk-2.0/immodules/im-gcin.so
 %%CHEWING_MODULE%%lib/gcin/chewing-module.so
 lib/gcin/gcin1.so
 lib/gcin/gcin2.so
-%%CHEWING_MODULE%%lib/gcin/intcode-module.so
+lib/gcin/intcode-module.so
 lib/gcin/libgcin-im-client.so
 lib/gcin/libgcin-im-client.so.1.2.5
 lib/gcin/libgcin-im-client.so.1
@@ -91,6 +91,7 @@ share/icons/gcin/cj5.png
 share/icons/gcin/cj543.png
 share/icons/gcin/chewing.png
 share/icons/gcin/dayi3.png
+share/icons/gcin/en-gtab.png
 share/icons/gcin/en-kana-nippon.png
 share/icons/gcin/en-tsin.png
 share/icons/gcin/erbi.png
