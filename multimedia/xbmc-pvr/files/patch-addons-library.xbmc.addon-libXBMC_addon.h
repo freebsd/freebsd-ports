@@ -1,34 +1,33 @@
 --- addons/library.xbmc.addon/libXBMC_addon.h.orig
 +++ addons/library.xbmc.addon/libXBMC_addon.h
-@@ -40,15 +40,31 @@
- #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-x86-osx.so"
+@@ -41,6 +41,22 @@
+ #else
+ #define ADDON_HELPER_ARCH       "x86"
  #endif
- #elif defined(__x86_64__)
-+#ifdef __FreeBSD__
-+#define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-x86_64-freebsd.so"
 +#else
- #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-x86_64-linux.so"
-+#endif
- #elif defined(_POWERPC)
-+#ifdef __FreeBSD__
-+#define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-powerpc-freebsd.so"
++#if defined(__FreeBSD__)         // FreeBSD
++#define ADDON_HELPER_PLATFORM   "freebsd"
++#if defined(__x86_64__)
++#define ADDON_HELPER_ARCH       "x86_64"
++#elif defined(_POWERPC)
++#define ADDON_HELPER_ARCH       "powerpc"
++#elif defined(_POWERPC64)
++#define ADDON_HELPER_ARCH       "powerpc64"
++#elif defined(_ARMEL)
++#define ADDON_HELPER_ARCH       "arm"
++#elif defined(_MIPSEL)
++#define ADDON_HELPER_ARCH       "mipsel"
 +#else
- #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-powerpc-linux.so"
++#define ADDON_HELPER_ARCH       "x86"
 +#endif
- #elif defined(_POWERPC64)
-+#ifdef __FreeBSD__
-+#define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-powerpc64-freebsd.so"
-+#else
- #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-powerpc64-linux.so"
+ #else                           // linux
+ #define ADDON_HELPER_PLATFORM   "linux"
+ #if defined(__x86_64__)
+@@ -57,6 +73,7 @@
+ #define ADDON_HELPER_ARCH       "i486"
+ #endif
+ #endif
 +#endif
- #elif defined(_ARMEL)
- #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-arm.so"
- #else /* !__x86_64__ && !__powerpc__ */
-+#ifdef __FreeBSD__
-+#define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-x86-freebsd.so"
-+#else
- #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-i486-linux.so"
-+#endif
- #endif /* __x86_64__ */
- #endif /* _LINUX */
- 
+ #include <dlfcn.h>              // linux+osx
+ #define ADDON_HELPER_EXT        ".so"
+ #define ADDON_DLL "/library.xbmc.addon/libXBMC_addon-" ADDON_HELPER_ARCH "-" ADDON_HELPER_PLATFORM ADDON_HELPER_EXT
