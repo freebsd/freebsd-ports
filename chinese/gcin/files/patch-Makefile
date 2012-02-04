@@ -1,5 +1,5 @@
 --- Makefile.orig	2011-12-19 10:45:09.000000000 +0800
-+++ Makefile	2012-01-31 20:30:12.000000000 +0800
++++ Makefile	2012-02-03 08:29:40.000000000 +0800
 @@ -90,7 +90,7 @@ PROGS_CV=kbmcv pin-juyin
  all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) gcin.spec gcin-fedora.spec
  	$(MAKE) -C data
@@ -9,6 +9,15 @@
  	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po; fi
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im; fi
  	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im; fi
+@@ -204,7 +204,7 @@ install:
+ 	$(MAKE) -C data install
+ 	$(MAKE) -C im-client install
+ 	$(MAKE) -C gtk-im install
+-	if [ $(BUILD_MODULE) = 'Y' ]; then $(MAKE) -C modules install; fi
++	$(MAKE) -C modules install
+ 	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im install; fi
+ 	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im install; fi
+ 	if [ $(QT4_IM) = 'Y' ]; then $(MAKE) -C qt4-im install; fi
 @@ -221,6 +221,7 @@ install:
  	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
  	fi
