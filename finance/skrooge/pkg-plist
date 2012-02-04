@@ -1,5 +1,16 @@
 bin/skrooge
 bin/skroogeconvert
+lib/kde4/plasma_applet_tipsoftheday.so
+lib/kde4/plasma_skroogoid_account.so
+lib/kde4/plasma_skroogoid_advice.so
+lib/kde4/plasma_skroogoid_bank.so
+lib/kde4/plasma_skroogoid_highlightedoperation.so
+lib/kde4/plasma_skroogoid_report.so
+lib/kde4/plasma_skroogoid_scheduledoperation.so
+lib/kde4/plasma_skroogoid_unit.so
+lib/kde4/plasma_widget_incomeexpenditure.so
+lib/kde4/plasma_widget_simulation.so
+lib/kde4/plugins/grantlee/0.2/grantlee_skroogefilters.so
 lib/kde4/skg_advice.so
 lib/kde4/skg_bookmark.so
 lib/kde4/skg_dashboard.so
@@ -11,6 +22,8 @@ lib/kde4/skg_print.so
 lib/kde4/skg_properties.so
 lib/kde4/skg_selectall.so
 lib/kde4/skg_undoredo.so
+lib/kde4/skgdataengine.so
+lib/kde4/skrooge_add_operation.so
 lib/kde4/skrooge_bank.so
 lib/kde4/skrooge_budget.so
 lib/kde4/skrooge_calculator.so
@@ -36,18 +49,20 @@ lib/kde4/skrooge_search.so
 lib/kde4/skrooge_tracker.so
 lib/kde4/skrooge_unit.so
 lib/libskgbankgui.so
-lib/libskgbankgui.so.0
+lib/libskgbankgui.so.1
 lib/libskgbankgui.so.%%VERSION%%
 lib/libskgbankmodeler.so
-lib/libskgbankmodeler.so.0
+lib/libskgbankmodeler.so.1
 lib/libskgbankmodeler.so.%%VERSION%%
 lib/libskgbasegui.so
-lib/libskgbasegui.so.0
+lib/libskgbasegui.so.1
 lib/libskgbasegui.so.%%VERSION%%
 lib/libskgbasemodeler.so
-lib/libskgbasemodeler.so.0
+lib/libskgbasemodeler.so.1
 lib/libskgbasemodeler.so.%%VERSION%%
 share/applications/kde4/skrooge.desktop
+share/apps/plasma/plasmoids/adviceapplet-qml/contents/ui/main.qml
+share/apps/plasma/plasmoids/adviceapplet-qml/metadata.desktop
 share/apps/skg/skgmainpanel.rc
 share/apps/skg_advice/skg_advice.rc
 share/apps/skg_bookmark/skg_bookmark.rc
@@ -60,7 +75,14 @@ share/apps/skg_print/skg_print.rc
 share/apps/skg_properties/skg_properties.rc
 share/apps/skg_selectall/skg_selectall.rc
 share/apps/skg_undoredo/skg_undoredo.rc
-share/apps/skrooge/css/skrooge_monthly-default.css
+share/apps/skrooge/html/default.txt
+share/apps/skrooge/html/default/account_table.html
+share/apps/skrooge/html/default/advices_table.html
+share/apps/skrooge/html/default/budget_table.html
+share/apps/skrooge/html/default/categories_month_table.html
+share/apps/skrooge/html/default/categories_previous_month_table.html
+share/apps/skrooge/html/default/income_vs_expenditure_table.html
+share/apps/skrooge/html/default/unit_table.html
 share/apps/skrooge/images/logo/absa_bank__632005.png
 share/apps/skrooge/images/logo/aib.png
 share/apps/skrooge/images/logo/allianz.png
@@ -136,6 +158,8 @@ share/apps/skrooge/images/logo/unicredit_bank.png
 share/apps/skrooge/images/logo/westpac.png
 share/apps/skrooge/images/logo/woori_bank.png
 share/apps/skrooge/images/splash.png
+share/apps/skrooge/quotes/Stooq monthly history.txt
+share/apps/skrooge/quotes/Stooq.txt
 share/apps/skrooge/skrooge.notifyrc
 share/apps/skrooge_bank/skrooge_bank.rc
 share/apps/skrooge_budget/skrooge_budget.rc
@@ -163,6 +187,8 @@ share/config.kcfg/skgsearch_settings.kcfg
 share/config.kcfg/skgtracker_settings.kcfg
 share/config.kcfg/skgundoredo_settings.kcfg
 share/config.kcfg/skgunit_settings.kcfg
+share/config/skrooge_monthly.knsrc
+share/config/skrooge_unit.knsrc
 share/doc/HTML/en/skrooge/after_mass_update.png
 share/doc/HTML/en/skrooge/alarm.png
 share/doc/HTML/en/skrooge/analysis_build_report.png
@@ -242,6 +268,58 @@ share/doc/HTML/en/skrooge/transfer_operation.png
 share/doc/HTML/en/skrooge/units.png
 share/doc/HTML/en/skrooge/validate.png
 share/doc/HTML/en/skrooge/zoom_graph.png
+share/doc/HTML/es/skrooge/common
+share/doc/HTML/es/skrooge/index.cache.bz2
+share/doc/HTML/es/skrooge/index.docbook
+share/doc/HTML/lt/skrooge/after_mass_update.png
+share/doc/HTML/lt/skrooge/bank_accounts.png
+share/doc/HTML/lt/skrooge/before_mass_update.png
+share/doc/HTML/lt/skrooge/bookmarks_browser.png
+share/doc/HTML/lt/skrooge/categories.png
+share/doc/HTML/lt/skrooge/common
+share/doc/HTML/lt/skrooge/context_chooser.png
+share/doc/HTML/lt/skrooge/dashboard.png
+share/doc/HTML/lt/skrooge/docks_detached.png
+share/doc/HTML/lt/skrooge/docks_left_right.png
+share/doc/HTML/lt/skrooge/docks_stacked.png
+share/doc/HTML/lt/skrooge/document-save.png
+share/doc/HTML/lt/skrooge/edit-redo.png
+share/doc/HTML/lt/skrooge/edit-undo.png
+share/doc/HTML/lt/skrooge/edition_panel_buttons.png
+share/doc/HTML/lt/skrooge/export_graph_menu.png
+share/doc/HTML/lt/skrooge/export_table_menu.png
+share/doc/HTML/lt/skrooge/history_browser.png
+share/doc/HTML/lt/skrooge/index.cache.bz2
+share/doc/HTML/lt/skrooge/index.docbook
+share/doc/HTML/lt/skrooge/merge_operations_menu.png
+share/doc/HTML/lt/skrooge/multi_tabs.png
+share/doc/HTML/lt/skrooge/operations.png
+share/doc/HTML/lt/skrooge/progress-bar.png
+share/doc/HTML/lt/skrooge/property_editor.png
+share/doc/HTML/lt/skrooge/reconciliation_information.png
+share/doc/HTML/lt/skrooge/reports.png
+share/doc/HTML/lt/skrooge/scheduled.png
+share/doc/HTML/lt/skrooge/split_operation.png
+share/doc/HTML/lt/skrooge/tab_state_management.png
+share/doc/HTML/lt/skrooge/table_menu.png
+share/doc/HTML/lt/skrooge/template_button.png
+share/doc/HTML/lt/skrooge/trackers.png
+share/doc/HTML/lt/skrooge/transfer_operation.png
+share/doc/HTML/nl/skrooge/common
+share/doc/HTML/nl/skrooge/index.cache.bz2
+share/doc/HTML/nl/skrooge/index.docbook
+share/doc/HTML/pt/skrooge/common
+share/doc/HTML/pt/skrooge/index.cache.bz2
+share/doc/HTML/pt/skrooge/index.docbook
+share/doc/HTML/pt_BR/skrooge/common
+share/doc/HTML/pt_BR/skrooge/index.cache.bz2
+share/doc/HTML/pt_BR/skrooge/index.docbook
+share/doc/HTML/sv/skrooge/common
+share/doc/HTML/sv/skrooge/index.cache.bz2
+share/doc/HTML/sv/skrooge/index.docbook
+share/doc/HTML/uk/skrooge/common
+share/doc/HTML/uk/skrooge/index.cache.bz2
+share/doc/HTML/uk/skrooge/index.docbook
 share/icons/hicolor/128x128/actions/skg-chart-bubble.png
 share/icons/hicolor/128x128/actions/skg_open.png
 share/icons/hicolor/128x128/actions/skrooge_category.png
@@ -382,6 +460,15 @@ share/icons/hicolor/scalable/apps/skrooge-black.svgz
 share/icons/hicolor/scalable/apps/skrooge.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-skg.svgz
 share/icons/hicolor/scalable/mimetypes/application-x-skgc.svgz
+share/kde4/services/accountskroogoid.desktop
+share/kde4/services/adviceskroogoid.desktop
+share/kde4/services/bankskroogoid.desktop
+share/kde4/services/highlightedoperationskroogoid.desktop
+share/kde4/services/incomeexpenditurewidget.desktop
+share/kde4/services/plasma-runner-skrooge-add-operation.desktop
+share/kde4/services/reportskroogoid.desktop
+share/kde4/services/scheduledoperationskroogoid.desktop
+share/kde4/services/simulationwidget.desktop
 share/kde4/services/skg-plugin-advice.desktop
 share/kde4/services/skg-plugin-bookmark.desktop
 share/kde4/services/skg-plugin-dashboard.desktop
@@ -393,6 +480,8 @@ share/kde4/services/skg-plugin-print.desktop
 share/kde4/services/skg-plugin-properties.desktop
 share/kde4/services/skg-plugin-selectall.desktop
 share/kde4/services/skg-plugin-undoredo.desktop
+share/kde4/services/skgadvicedataengine.desktop
+share/kde4/services/skgdataengine.desktop
 share/kde4/services/skrooge-import-csv.desktop
 share/kde4/services/skrooge-import-gnc.desktop
 share/kde4/services/skrooge-import-gsb.desktop
@@ -417,6 +506,8 @@ share/kde4/services/skrooge-plugin-scheduled.desktop
 share/kde4/services/skrooge-plugin-search.desktop
 share/kde4/services/skrooge-plugin-tracker.desktop
 share/kde4/services/skrooge-plugin-unit.desktop
+share/kde4/services/tipsofthedayapplet.desktop
+share/kde4/services/unitskroogoid.desktop
 share/kde4/servicetypes/skg-plugin.desktop
 share/kde4/servicetypes/skrooge-import-plugin.desktop
 share/locale/bg/LC_MESSAGES/skrooge.mo
@@ -458,6 +549,13 @@ share/locale/zh_TW/LC_MESSAGES/skrooge.mo
 share/mime/application/x-skg.xml
 share/mime/application/x-skgc.xml
 share/mime/packages/x-skg.xml
+@dirrm share/doc/HTML/uk/skrooge
+@dirrm share/doc/HTML/sv/skrooge
+@dirrm share/doc/HTML/pt_BR/skrooge
+@dirrm share/doc/HTML/pt/skrooge
+@dirrm share/doc/HTML/nl/skrooge
+@dirrm share/doc/HTML/lt/skrooge
+@dirrm share/doc/HTML/es/skrooge
 @dirrm share/doc/HTML/en/skrooge
 @dirrm share/apps/skrooge_unit
 @dirrm share/apps/skrooge_tracker
@@ -472,6 +570,7 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skrooge_calculator
 @dirrm share/apps/skrooge_budget
 @dirrm share/apps/skrooge_bank
+@dirrm share/apps/skrooge/quotes
 @dirrm share/apps/skrooge/images/logo/l10n/lt
 @dirrm share/apps/skrooge/images/logo/l10n/ko
 @dirrm share/apps/skrooge/images/logo/l10n/fr
@@ -482,7 +581,8 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skrooge/images/logo/l10n
 @dirrm share/apps/skrooge/images/logo
 @dirrm share/apps/skrooge/images
-@dirrm share/apps/skrooge/css
+@dirrm share/apps/skrooge/html/default
+@dirrm share/apps/skrooge/html
 @dirrm share/apps/skrooge
 @dirrm share/apps/skg_undoredo
 @dirrm share/apps/skg_selectall
@@ -496,5 +596,11 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skg_bookmark
 @dirrm share/apps/skg_advice
 @dirrm share/apps/skg
+@dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents/ui
+@dirrm share/apps/plasma/plasmoids/adviceapplet-qml/contents
+@dirrm share/apps/plasma/plasmoids/adviceapplet-qml
+@dirrm share/apps/plasma/plasmoids
+@dirrmtry lib/kde4/plugins/grantlee/0.2
+@dirrmtry lib/kde4/plugins/grantlee
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
