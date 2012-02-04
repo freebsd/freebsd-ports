@@ -1,0 +1,7 @@
+Panel data econometrics is obviously one of the main fields in the
+profession, but most of the models used are difficult to estimate with
+R. plm is a package for R which intends to make the estimation of
+linear panel models straightforward. plm provides functions to
+estimate a wide variety of models and to make (robust) inference.
+
+WWW:	http://cran.r-project.org/web/packages/plm/
