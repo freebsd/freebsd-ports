@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# System preference location
+PREFS_LOCATION=%%JRE_HOME%%
+
+# Set up system preferences during post install
+if [ "$2" = "POST-INSTALL" ]; then
+	if [ ! -d "${PREFS_LOCATION}/.systemPrefs" ] ; then
+		mkdir -m 755 "${PREFS_LOCATION}/.systemPrefs"
+	fi
+	if [ ! -f "${PREFS_LOCATION}/.systemPrefs/.system.lock" ] ; then
+		touch "${PREFS_LOCATION}/.systemPrefs/.system.lock"
+		chmod 644 "${PREFS_LOCATION}/.systemPrefs/.system.lock"
+	fi
+	if [ ! -f "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile" ] ; then
+		touch "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
+		chmod 644 "${PREFS_LOCATION}/.systemPrefs/.systemRootModFile"
+	fi
+fi
