@@ -1,33 +1,33 @@
-@unexec if cmp -s %D/etc/oops/accel_maps %D/etc/oops/accel_maps.sample; then rm -f %D/etc/oops/accel_maps; fi
-etc/oops/accel_maps.sample
-@exec [ -f %B/accel_maps ] || cp %B/%f %B/accel_maps
-@unexec if cmp -s %D/etc/oops/acl_local_networks %D/etc/oops/acl_local_networks.sample; then rm -f %D/etc/oops/acl_local_networks; fi
-etc/oops/acl_local_networks.sample
-@exec [ -f %B/etc/oops/acl_local_networks ] || cp %B/%f %B/acl_local_networks
-@unexec if cmp -s %D/etc/oops/auth_template.html %D/etc/oops/auth_template.html.sample; then rm -f %D/etc/oops/auth_template.html; fi
-etc/oops/auth_template.html.sample
-@exec [ -f %B/etc/oops/auth_template.html ] || cp %B/%f %B/auth_template.html
-@unexec if cmp -s %D/etc/oops/err_template.html %D/etc/oops/err_template.html.sample; then rm -f %D/etc/oops/err_template.html; fi
-etc/oops/err_template.html.sample
-@exec [ -f %B/etc/oops/err_template.html ] || cp %B/%f %B/err_template.html
-@unexec if cmp -s %D/etc/oops/oops.cfg %D/etc/oops/oops.cfg.sample; then rm -f %D/etc/oops/oops.cfg; fi
-etc/oops/oops.cfg.sample
-@exec [ -f %B/etc/oops/oops.cfg ] || cp %B/%f %B/oops.cfg
-@unexec if cmp -s %D/etc/oops/passwd %D/etc/oops/passwd.sample; then rm -f %D/etc/oops/passwd; fi
-etc/oops/passwd.sample
-@exec [ -f %B/etc/oops/passwd ] || cp %B/%f %B/passwd
-@unexec if cmp -s %D/etc/oops/redir_rules %D/etc/oops/redir_rules.sample; then rm -f %D/etc/oops/redir_rules; fi
-etc/oops/redir_rules.sample
-@exec [ -f %B/etc/oops/redir_rules ] || cp %B/%f %B/redir_rules
-@unexec if cmp -s %D/etc/oops/redir_template.html %D/etc/oops/redir_template.html.sample; then rm -f %D/etc/oops/redir_template.html; fi
-etc/oops/redir_template.html.sample
-@exec [ -f %B/etc/oops/redir_template.html ] || cp %B/%f %B/redir_template.html
-@unexec if cmp -s %D/etc/oops/select.sql %D/etc/oops/select.sql.sample; then rm -f %D/etc/oops/select.sql; fi
-etc/oops/select.sql.sample
-@exec [ -f %B/etc/oops/select.sql ] || cp %B/%f %B/select.sql
-etc/oops/tables/koi-alt.tab
-etc/oops/tables/koi-iso.tab
-etc/oops/tables/koi-win.tab
+@unexec if cmp -s %D/%%ETCDIR%%/accel_maps %D/%%ETCDIR%%/accel_maps.sample; then rm -f %D/%%ETCDIR%%/accel_maps; fi
+%%ETCDIR%%/accel_maps.sample
+@exec if [ ! -f %D/%%ETCDIR%%/accel_maps ] ; then cp -p %D/%F %B/accel_maps; fi
+@unexec if cmp -s %D/%%ETCDIR%%/acl_local_networks %D/%%ETCDIR%%/acl_local_networks.sample; then rm -f %D/%%ETCDIR%%/acl_local_networks; fi
+%%ETCDIR%%/acl_local_networks.sample
+@exec if [ ! -f %D/%%ETCDIR%%/acl_local_networks ] ; then cp -p %D/%F %B/acl_local_networks; fi
+@unexec if cmp -s %D/%%ETCDIR%%/auth_template.html %D/%%ETCDIR%%/auth_template.html.sample; then rm -f %D/%%ETCDIR%%/auth_template.html; fi
+%%ETCDIR%%/auth_template.html.sample
+@exec if [ ! -f %D/%%ETCDIR%%/auth_template.html ] ; then cp -p %D/%F %B/auth_template.html; fi
+@unexec if cmp -s %D/%%ETCDIR%%/err_template.html %D/%%ETCDIR%%/err_template.html.sample; then rm -f %D/%%ETCDIR%%/err_template.html; fi
+%%ETCDIR%%/err_template.html.sample
+@exec if [ ! -f %D/%%ETCDIR%%/err_template.html ] ; then cp -p %D/%F %B/err_template.html; fi
+@unexec if cmp -s %D/%%ETCDIR%%/oops.cfg %D/%%ETCDIR%%/oops.cfg.sample; then rm -f %D/%%ETCDIR%%/oops.cfg; fi
+%%ETCDIR%%/oops.cfg.sample
+@exec if [ ! -f %D/%%ETCDIR%%/oops.cfg ] ; then cp -p %D/%F %B/oops.cfg; fi
+@unexec if cmp -s %D/%%ETCDIR%%/passwd %D/%%ETCDIR%%/passwd.sample; then rm -f %D/%%ETCDIR%%/passwd; fi
+%%ETCDIR%%/passwd.sample
+@exec if [ ! -f %D/%%ETCDIR%%/passwd ] ; then cp -p %D/%F %B/passwd; fi
+@unexec if cmp -s %D/%%ETCDIR%%/redir_rules %D/%%ETCDIR%%/redir_rules.sample; then rm -f %D/%%ETCDIR%%/redir_rules; fi
+%%ETCDIR%%/redir_rules.sample
+@exec if [ ! -f %D/%%ETCDIR%%/redir_rules ] ; then cp -p %D/%F %B/redir_rules; fi
+@unexec if cmp -s %D/%%ETCDIR%%/redir_template.html %D/%%ETCDIR%%/redir_template.html.sample; then rm -f %D/%%ETCDIR%%/redir_template.html; fi
+%%ETCDIR%%/redir_template.html.sample
+@exec if [ ! -f %D/%%ETCDIR%%/redir_template.html ] ; then cp -p %D/%F %B/redir_template.html; fi
+@unexec if cmp -s %D/%%ETCDIR%%/select.sql %D/%%ETCDIR%%/select.sql.sample; then rm -f %D/%%ETCDIR%%/select.sql; fi
+%%ETCDIR%%/select.sql.sample
+@exec if [ ! -f %D/%%ETCDIR%%/select.sql ] ; then cp -p %D/%F %B/select.sql; fi
+%%ETCDIR%%/tables/koi-alt.tab
+%%ETCDIR%%/tables/koi-iso.tab
+%%ETCDIR%%/tables/koi-win.tab
 libexec/oops/accel.so
 libexec/oops/berkeley_db_api.so
 libexec/oops/custom_log.so
@@ -51,8 +51,8 @@ libexec/oops/win_http.so
 sbin/oops
 sbin/oopsctl
 @dirrm libexec/oops
-@dirrm etc/oops/tables
-@dirrmtry etc/oops
+@dirrm %%ETCDIR%%/tables
+@dirrmtry %%ETCDIR%%
 @dirrmtry oops/DB
 @dirrmtry oops/logs
 @dirrmtry oops/storages

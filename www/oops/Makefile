@@ -7,11 +7,10 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/ \
 		ftp://kucha.ru/pub/misc/oops/
-DISTNAME=	${PORTNAME}-${OOPSVERSION}
 
 MAINTAINER=	marck@FreeBSD.org
 COMMENT=	A caching web proxy server
