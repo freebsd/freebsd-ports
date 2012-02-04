@@ -741,6 +741,7 @@
     SUBDIR += p5-XML-Compile-SOAP-AnyEvent
     SUBDIR += p5-XML-Compile-SOAP-Daemon
     SUBDIR += p5-XML-Compile-SOAP-WSA
+    SUBDIR += p5-XML-Fast
     SUBDIR += p5-XML-RPC
     SUBDIR += p5-XML-RPC-Fast
     SUBDIR += p5-XPC
