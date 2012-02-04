@@ -7,7 +7,7 @@
 
 PORTNAME=	nemiver
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,8 +21,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gtksourceviewmm-2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm
-BUILD_DEPENDS=	gdb73.1:${PORTSDIR}/devel/gdb
-RUN_DEPENDS=	gdb73.1:${PORTSDIR}/devel/gdb
+BUILD_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
+RUN_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
 
 OPTIONS=	GHEX "Enable memory view" off
 
@@ -31,7 +31,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool gnomedocutils gconf2 vte
 USE_GCC=	4.4+
-GCONF_SCHEMAS=	nemiver-workbench.schemas nemiver-dbgperspective.schemas
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
