@@ -295,6 +295,7 @@
     SUBDIR += id-aspell
     SUBDIR += id-hyphen
     SUBDIR += idnits
+    SUBDIR += igor
     SUBDIR += iksemel
     SUBDIR += info2html
     SUBDIR += info2man
