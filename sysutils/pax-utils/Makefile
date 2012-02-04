@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://dev.gentoo.org/~vapier/dist/
