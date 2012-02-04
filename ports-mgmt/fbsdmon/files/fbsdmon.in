@@ -1,0 +1,30 @@
+#!/bin/sh 
+#
+# $FreeBSD$
+#
+
+# PROVIDE: fbsdmon
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `fbsdmon':
+#
+# fbsdmon_enable="YES"
+#
+
+
+. /etc/rc.subr
+
+name=fbsdmon
+rcvar=fbsdmon_enable
+
+load_rc_config "$name"
+: ${fbsdmon_enable="NO"}
+
+pidfile="/var/run/$name.pid"
+procname="%%PREFIX%%/sbin/$name"
+command="/usr/sbin/daemon"
+command_args="-c -f -p $pidfile $procname"
+stop_postcmd="/bin/rm -f $pidfile"
+
+run_rc_command "$1"
