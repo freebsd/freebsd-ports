@@ -22,8 +22,6 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 # Required for iconv headers.
 CFLAGS+=	-I${LOCALBASE}/include
-# Required for MAKE_JOBS_SAFE to work.
-USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${LOCALBASE}/lib
 
