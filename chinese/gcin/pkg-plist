@@ -11,6 +11,7 @@ bin/phoa2d
 bin/phod2a
 bin/sim2trad
 bin/trad2sim
+bin/ts-contribute
 bin/ts-edit
 bin/tsa2d32
 bin/tsd2a32
