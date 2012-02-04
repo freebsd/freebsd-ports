@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.7.9
+PORTVERSION=	2.7.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -15,8 +15,6 @@ COMMENT=	A configuration management framework written in Ruby
 
 RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas
-
-CONFLICTS=	puppet-devel-[0-9]*
 
 NO_BUILD=	yes
 USE_RUBY=	yes
