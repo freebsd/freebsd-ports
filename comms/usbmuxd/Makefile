@@ -6,7 +6,7 @@
 
 PORTNAME=	usbmuxd
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://marcansoft.com/uploads/${PORTNAME}/
 
@@ -15,8 +15,6 @@ COMMENT=	A daemon for multiplexing connections over USB to an iPhone/iPod Touch
 
 LIB_DEPENDS=	plist.1:${PORTSDIR}/devel/libplist
 
-USE_PYTHON=	yes
-PYTHON_NO_DEPENDS=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -34,10 +32,14 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|$${LIB_SUFFIX}/pkgconfig|data/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
+pre-install:
+	${REINPLACE_CMD} -e '1 s|python|env python|' \
+		${WRKSRC}/python-client/*.py
+
 post-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/python-client/*.py \
-		${PYTHON_SITELIBDIR}/${PORTNAME}/
+	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/python-client/*.py \
+		${DATADIR}/
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}

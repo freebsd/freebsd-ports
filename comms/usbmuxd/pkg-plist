@@ -4,9 +4,8 @@ include/usbmuxd.h
 lib/libusbmuxd.so
 lib/libusbmuxd.so.1
 lib/libusbmuxd.so.1.0.7
-%%PYTHON_SITELIBDIR%%/usbmuxd/tcprelay.py
-%%PYTHON_SITELIBDIR%%/usbmuxd/usbmux.py
 libdata/pkgconfig/libusbmuxd.pc
 sbin/usbmuxd
-@dirrm %%PYTHON_SITELIBDIR%%/usbmuxd
-@dirrmtry %%PYTHON_SITELIBDIR%%
+%%DATADIR%%/tcprelay.py
+%%DATADIR%%/usbmux.py
+@dirrm %%DATADIR%%
