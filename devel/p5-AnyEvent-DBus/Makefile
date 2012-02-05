@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Seamlessly integrate Net::DBus into AnyEvent
 
+BUILD_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-Net-DBus>=0.33:${PORTSDIR}/devel/p5-Net-DBus \
+		p5-common-sense>=3.2:${PORTSDIR}/devel/p5-common-sense
 RUN_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Net-DBus>=0.33:${PORTSDIR}/devel/p5-Net-DBus \
 		p5-common-sense>=3.2:${PORTSDIR}/devel/p5-common-sense
