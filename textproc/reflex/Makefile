@@ -8,8 +8,8 @@
 PORTNAME=	reflex
 PORTVERSION=	20100906
 CATEGORIES=	textproc
-MASTER_SITES=	http://invisible-island.net/datafiles/release/ LOCAL/bf
-DISTNAME=	reflex
+MASTER_SITES=	ftp://invisible-island.net/reflex/ LOCAL/bf
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Relocalizable fast lexical scanner
