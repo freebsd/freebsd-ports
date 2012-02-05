@@ -1,7 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 
-#  Copyright (c) 2007-2011 Andy Kosela <akosela@andykosela.com>
+#  Copyright (c) 2007-2012 Andy Kosela <akosela@andykosela.com>
 #  All rights reserved.
 #
 #  Redistribution and use in source and binary forms, with or without
@@ -328,6 +328,7 @@ pkg_ftp()
 	arch=`uname -m`
 	sys=`uname -r | cut -d- -f1`
 
+	[ -e /tmp/bpkg*.tmp ] && rm /tmp/bpkg*.tmp 1>/dev/null 2>&1
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
@@ -360,6 +361,7 @@ pkg_latestftp()
 	arch=`uname -m`
 	sys=`uname -r | cut -d. -f1`
 
+	[ -e /tmp/bpkg*.tmp ] && rm /tmp/bpkg*.tmp 1>/dev/null 2>&1
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
@@ -607,7 +609,7 @@ pkg_freshports()
 		echo "bpkg: text WWW browser required"
 	else
 		echo "Loading..."
-		pwd=`cd /usr/ports && make search path=/$pkg | grep -w Path |
+		pwd=`cd /usr/ports && make search path=/$pkg$ | grep -w Path |
 		    sed -n 1p | cut -d/ -f4,5`
 		$browser http://www.freshports.org/$pwd
 	fi
