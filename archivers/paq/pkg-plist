@@ -3,6 +3,7 @@
 %%PORTDATA%%bin/bwtrle
 %%PORTDATA%%bin/exe_jo
 %%PORTDATA%%bin/jpeg_jo
+%%PORTDATA%%bin/lzpre
 %%PORTDATA%%bin/lzppre
 bin/wbpe
 bin/zpaq

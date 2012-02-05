@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20111221
+PORTVERSION=	20120202
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	libzpaq401.zip wbpe110.zip zpaq403.zip zpipe.201.zip
+DISTFILES=	libzpaq501.zip wbpe110.zip zpaq403.zip zpipe.201.zip
 .if !defined(NOPORTDATA) || make(makesum)
 DISTFILES+=	bmp_j4a.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
-		calgarytest.zpaq exe_j1.zip fast.cfg jpg_test2.zip max.cfg \
-		mid.cfg min.zip zpsfx.100.zip
+		calgarytest.zpaq calgarytest2.zpaq exe_j1.zip fast.cfg \
+		jpg_test2.zip lz1.zip max.cfg mid.cfg min.zip zpsfx.100.zip
 .endif
 .if !defined(NOPORTDOCS) || make(makesum)
-DISTFILES+=	zpaq1.pdf
+DISTFILES+=	zpaq1.pdf zpaq200.pdf
 .endif
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
@@ -62,7 +62,7 @@ PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpipe.cpp
 .if !defined(NOPORTDATA)
 .if !defined(NOPORTDOCS)
 PORTDOCS+=	bwt_.cpp bwtpre.cpp bwtrle.cpp divsufsort.c divsufsort.h \
-		exe_jo.cpp jpeg_jo.cpp lzppre.cpp readme_bwt.txt \
+		exe_jo.cpp jpeg_jo.cpp lzpre.cpp lzppre.cpp readme_bwt.txt \
 		readme_bwt_j3.txt readme_exe_j1.txt zpsfx.cpp
 READMES+=	bwt_j3 exe_j1
 EXTRA_PATCHES +=	${FILESDIR}/patch_zpsfx.cpp
@@ -70,7 +70,7 @@ EXTRA_PATCHES +=	${FILESDIR}/patch_zpsfx.cpp
 WDATA=	bmp_j4.cfg bwt_j3.cfg bwt_slowmode1_1GB_block.cfg \
 	bwt_slowmode1_256MB_block.cfg bwt_slowmode1_4MB_block.cfg \
 	bwt1.cfg bwt2.cfg bwtrle1.cfg bwtrle2.cfg colorpre.cfg \
-	exe_j1.cfg jpg_test2.cfg min.cfg zpsfx.tag
+	exe_j1.cfg jpg_test2.cfg lz1.cfg min.cfg zpsfx.tag
 DDATA=	fast.cfg max.cfg mid.cfg
 PORTDATA=	${WDATA} ${DDATA} zpsfx
 .endif
@@ -92,7 +92,7 @@ post-patch:
 
 do-build:
 .if !defined(NOPORTDATA)
-	@cd ${WRKSRC}; for prog in bwt_ bwtpre exe_jo jpeg_jo lzppre; do \
+	@cd ${WRKSRC}; for prog in bwt_ bwtpre exe_jo jpeg_jo lzpre lzppre; do \
 	${CXX} ${CXXFLAGS} -o $${prog} $${prog}.cpp; done; \
 	${CXX} ${CXXFLAGS} -o bwtrle bwtrle.cpp divsufsort.c; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} -o zpsfx zpsfx.cpp libzpaq.cpp
@@ -116,7 +116,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/${page} ${MANPREFIX}/man/man${page:E}
 .endfor
 .if !defined(NOPORTDATA)
-.for prog in bwt_ bwtpre bwtrle exe_jo jpeg_jo lzppre
+.for prog in bwt_ bwtpre bwtrle exe_jo jpeg_jo lzpre lzppre
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
 .endfor
 	@${MKDIR} ${DATADIR}
@@ -133,5 +133,6 @@ do-install:
 
 check regression-test test: build
 	${WRKSRC}/zpaq l ${_DISTDIR}/calgarytest.zpaq
+	${WRKSRC}/zpaq l ${_DISTDIR}/calgarytest2.zpaq
 
 .include <bsd.port.post.mk>
