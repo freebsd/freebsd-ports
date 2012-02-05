@@ -1,9 +1,15 @@
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/blank.html
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/classtrees_PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/elementindex.html
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/elementindex_PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/li_PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/5.0-phpdocs/packages.html
 %%PORTDOCS%%%%DOCSDIR%%/Callback_function_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/DomainKeys_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/Note_for_SMTP_debugging.txt
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/aboutus.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/extending.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
@@ -29,6 +35,7 @@
 %%DATADIR%%/class.phpmailer.php
 %%DATADIR%%/class.pop3.php
 %%DATADIR%%/class.smtp.php
+%%DATADIR%%/extras/htmlfilter.php
 %%DATADIR%%/language/phpmailer.lang-ar.php
 %%DATADIR%%/language/phpmailer.lang-br.php
 %%DATADIR%%/language/phpmailer.lang-ca.php
@@ -58,9 +65,65 @@
 %%DATADIR%%/test/test.png
 %%DATADIR%%/test/test_callback.php
 %%DATADIR%%/test/testemail.php
+%%DATADIR%%/test_script/LGPLv3.txt
+%%DATADIR%%/test_script/contents.html
+%%DATADIR%%/test_script/images/aikido.gif
+%%DATADIR%%/test_script/images/bkgrnd.gif
+%%DATADIR%%/test_script/images/phpmailer.gif
+%%DATADIR%%/test_script/index.php
+%%DATADIR%%/test_script/scripts/clipboard.swf
+%%DATADIR%%/test_script/scripts/shBrushBash.js
+%%DATADIR%%/test_script/scripts/shBrushCSharp.js
+%%DATADIR%%/test_script/scripts/shBrushCpp.js
+%%DATADIR%%/test_script/scripts/shBrushCss.js
+%%DATADIR%%/test_script/scripts/shBrushDelphi.js
+%%DATADIR%%/test_script/scripts/shBrushDiff.js
+%%DATADIR%%/test_script/scripts/shBrushGroovy.js
+%%DATADIR%%/test_script/scripts/shBrushJScript.js
+%%DATADIR%%/test_script/scripts/shBrushJava.js
+%%DATADIR%%/test_script/scripts/shBrushPerl.js
+%%DATADIR%%/test_script/scripts/shBrushPhp.js
+%%DATADIR%%/test_script/scripts/shBrushPlain.js
+%%DATADIR%%/test_script/scripts/shBrushPython.js
+%%DATADIR%%/test_script/scripts/shBrushRuby.js
+%%DATADIR%%/test_script/scripts/shBrushScala.js
+%%DATADIR%%/test_script/scripts/shBrushSql.js
+%%DATADIR%%/test_script/scripts/shBrushVb.js
+%%DATADIR%%/test_script/scripts/shBrushXml.js
+%%DATADIR%%/test_script/scripts/shCore.js
+%%DATADIR%%/test_script/scripts/shLegacy.js
+%%DATADIR%%/test_script/src/shCore.js
+%%DATADIR%%/test_script/src/shLegacy.js
+%%DATADIR%%/test_script/styles/help.png
+%%DATADIR%%/test_script/styles/magnifier.png
+%%DATADIR%%/test_script/styles/page_white_code.png
+%%DATADIR%%/test_script/styles/page_white_copy.png
+%%DATADIR%%/test_script/styles/printer.png
+%%DATADIR%%/test_script/styles/shCore.css
+%%DATADIR%%/test_script/styles/shThemeDefault.css
+%%DATADIR%%/test_script/styles/shThemeDjango.css
+%%DATADIR%%/test_script/styles/shThemeEmacs.css
+%%DATADIR%%/test_script/styles/shThemeFadeToGrey.css
+%%DATADIR%%/test_script/styles/shThemeMidnight.css
+%%DATADIR%%/test_script/styles/shThemeRDark.css
+%%DATADIR%%/test_script/styles/wrapping.png
+%%DATADIR%%/test_script/test.html
+@dirrm %%DATADIR%%/test_script/styles
+@dirrm %%DATADIR%%/test_script/src
+@dirrm %%DATADIR%%/test_script/scripts
+@dirrm %%DATADIR%%/test_script/images
+@dirrm %%DATADIR%%/test_script
 @dirrm %%DATADIR%%/test
 @dirrm %%DATADIR%%/language
+@dirrm %%DATADIR%%/extras
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/5.0-phpdocs/media
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/5.0-phpdocs/__filesource
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/5.0-phpdocs/PHPMailer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/5.0-phpdocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/5.0-phpdocs/media
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/5.0-phpdocs/__filesource
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/5.0-phpdocs/PHPMailer
