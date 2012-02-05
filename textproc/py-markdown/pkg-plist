@@ -78,9 +78,9 @@ bin/markdown_py
 %%PYTHON_SITELIBDIR%%/markdown/preprocessors.py
 %%PYTHON_SITELIBDIR%%/markdown/preprocessors.pyc
 %%PYTHON_SITELIBDIR%%/markdown/preprocessors.pyo
-%%PYTHON_SITELIBDIR%%/markdown/searializers.py
-%%PYTHON_SITELIBDIR%%/markdown/searializers.pyc
-%%PYTHON_SITELIBDIR%%/markdown/searializers.pyo
+%%PYTHON_SITELIBDIR%%/markdown/serializers.py
+%%PYTHON_SITELIBDIR%%/markdown/serializers.pyc
+%%PYTHON_SITELIBDIR%%/markdown/serializers.pyo
 %%PYTHON_SITELIBDIR%%/markdown/treeprocessors.py
 %%PYTHON_SITELIBDIR%%/markdown/treeprocessors.pyc
 %%PYTHON_SITELIBDIR%%/markdown/treeprocessors.pyo
