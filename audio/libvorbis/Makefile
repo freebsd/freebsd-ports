@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
@@ -17,11 +17,13 @@ COMMENT=	Audio compression codec library
 LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
+USE_XZ=		yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE} \
 		--disable-docs		# don't rebuild
-USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 .if defined(NOPORTDOCS)
