@@ -45,6 +45,12 @@ ADDITIONAL_LDFLAGS=	-rpath-link=${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework
 MAKE_ENV+=	GSL_LIB_DIR=${LOCALBASE}/lib
 MAKE_ENV+=	GSL_INCLUDE_DIR=${LOCALBASE}/include
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \
 		${WRKSRC}/GNUmakefile \
@@ -60,4 +66,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|GNUSTEP_HOME./..GNUSTEP_USER_DIR_TOOLS|GNUSTEP_LOCAL_TOOLS|' \
 		${WRKSRC}/GNUmakefile.postamble
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
