@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	mk-configure
-PORTVERSION=	0.21.1
+PORTVERSION=	0.21.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@freebsd.org
 COMMENT=	Lightweight, easy to use replacement for GNU autotools
 
-BUILD_DEPENDS=	${BMAKE}:${PORTSDIR}/devel/bmake
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 LICENSE=	BSD
+
+BUILD_DEPENDS=	${BMAKE}:${PORTSDIR}/devel/bmake
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		bmkdep:${PORTSDIR}/devel/bmkdep
 
 BMAKE?=		${LOCALBASE}/bin/bmake
 INSTALL_TARGET=	installdirs install
@@ -34,6 +35,9 @@ MAKE_ENV+=	EXTRAFILES="${PORTDOCS:C|.*\.pdf|doc/&|}"
 .else
 MAKE_ENV+=	EXTRAFILES=""
 .endif
+
+post-patch:
+	@${ECHO_CMD} "MKDEP ?= bmkdep" >> ${WRKSRC}/sys.mk
 
 do-build:
 	@${SETENV} ${MAKE_ENV} ${BMAKE} -C ${BUILD_WRKSRC} ${MAKE_FLAGS} ${MAKEFILE} \
