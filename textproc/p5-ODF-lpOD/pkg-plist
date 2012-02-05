@@ -1,3 +1,4 @@
+bin/lpod_test
 %%SITE_PERL%%/ODF/lpOD/data/rgb.txt
 %%SITE_PERL%%/ODF/lpOD/data/oasis_odf_logo.png
 %%SITE_PERL%%/ODF/lpOD/templates/spreadsheet.ods

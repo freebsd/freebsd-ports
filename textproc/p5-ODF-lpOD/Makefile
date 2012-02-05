@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	ODF-lpOD
-PORTVERSION=	1.116
+PORTVERSION=	1.117
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JMGDOC
+#MASTER_SITE_SUBDIR=	CPAN:JMGDOC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An OpenDocument management interface
 
-RUN_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-XML-Twig>=3.34:${PORTSDIR}/textproc/p5-XML-Twig
+BUILD_DEPENDS=	p5-Archive-Zip>=1.30:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-XML-Twig>=3.37:${PORTSDIR}/textproc/p5-XML-Twig \
+		p5-File-Type>=0:${PORTSDIR}/devel/p5-File-Type \
+		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
