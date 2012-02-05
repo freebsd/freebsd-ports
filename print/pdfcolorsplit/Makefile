@@ -11,7 +11,7 @@ CATEGORIES=	print python
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Split your pdf into 2 pdf, color and bw, for printing
 
 LICENSE=	GPLv2
