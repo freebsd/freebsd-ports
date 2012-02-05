@@ -326,5 +326,7 @@ share/icons/hicolor/scalable/apps/ibus.svg
 @dirrm include/ibus-1.0
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
+%%GTK3%%@exec gtk-query-immodules-3.0 --update-cache
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 %%GTK3%%@unexec gtk-query-immodules-3.0 --update-cache
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
