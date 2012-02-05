@@ -1,7 +1,6 @@
 bin/scribed
 lib/libdynamicbucketupdater.a
 lib/libscribe.a
-%%SITE_PERL%%/Scribe/Thrift/BucketStoreMapping.pm
 %%SITE_PERL%%/Scribe/Thrift/Constants.pm
 %%SITE_PERL%%/Scribe/Thrift/Types.pm
 %%SITE_PERL%%/Scribe/Thrift/scribe.pm

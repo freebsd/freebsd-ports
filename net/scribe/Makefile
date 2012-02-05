@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	scribe
-DISTVERSION=	2.2.2011.07.27
+DISTVERSION=	2.2.2012.01.07
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
 		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
 
-GITVERSION=	6600084
+GITVERSION=	63e4824
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -37,12 +37,12 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local/scribe|${LOCALBASE}/etc|' ${WRKSRC}/src/env_default.h
+post-build:
+	${LOCALBASE}/bin/thrift -o ${WRKSRC} -I ${LOCALBASE}/share --gen "perl" ${WRKSRC}/if/scribe.thrift
 
 post-install:
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Scribe/Thrift
-	${CP} -R ${WRKSRC}/src/gen-perl/ ${PREFIX}/${SITE_PERL_REL}
+	${CP} -R ${WRKSRC}/gen-perl/ ${PREFIX}/${SITE_PERL_REL}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
