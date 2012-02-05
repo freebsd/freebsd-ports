@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	rabbit
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://rabbit-shockers.org/download/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/rabbit|}
+		LOCAL
+MASTER_SITE_SUBDIR=	tota/${PORTNAME}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	An RD-document-based presentation application
@@ -23,10 +24,10 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
 		rubygem-nokogiri>0:${PORTSDIR}/textproc/rubygem-nokogiri \
 		rubygem-sinatra>0:${PORTSDIR}/www/rubygem-sinatra \
-		rubygem-rack>0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-haml>0:${PORTSDIR}/www/rubygem-haml \
 		rd2:${PORTSDIR}/textproc/ruby-rdtool \
-		rubygem-coderay>0:${PORTSDIR}/textproc/rubygem-coderay
+		rubygem-coderay>=1.0.0:${PORTSDIR}/textproc/rubygem-coderay \
+		rubygem-kramdown>0:${PORTSDIR}/textproc/rubygem-kramdown
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
@@ -66,9 +67,11 @@ RUN_DEPENDS+=	rubygem-twitter_oauth>=0:${PORTSDIR}/security/rubygem-twitter_oaut
 
 post-patch:
 	${RM} ${WRKSRC}/bin/rabwii
+	${RMDIR} ${WRKSRC}/lib/rt
 	${RUBY} -i -pe 'sub %r|((\s*)require "rack")|, %Q|\\2require "rubygems"\n\\1|' ${WRKSRC}/bin/rabbirack
 	${RUBY} -i -pe 'sub %r|(require "hikidoc")|, %Q|require "rubygems"\n\\1|' ${WRKSRC}/lib/rabbit/parser/wiki.rb
 	${RUBY} -i -pe "sub %r|((\s*)require 'twitter_oauth')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/lib/rabbit/twitter.rb
+	${RUBY} -i -pe "sub %r|(require 'coderay')|, %Q|require 'rubygems'\n\\\1|" ${WRKSRC}/lib/rabbit/parser/ext/coderay.rb
 .if defined(WITH_MIMETEX)
 	${REINPLACE_CMD} -e 's|"mimetex.cgi"|"${PREFIX}/www/mimetex/cgi-bin/mimetex.cgi"|' \
 		${WRKSRC}/lib/rabbit/parser/ext/tex.rb
