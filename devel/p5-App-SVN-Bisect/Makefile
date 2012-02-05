@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-IO-All>0:${PORTSDIR}/devel/p5-IO-All \
 		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
 		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
 
 PERL_CONFIGURE=	yes
 
