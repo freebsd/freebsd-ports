@@ -14,12 +14,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Tests remote URLs or local web files
 
+BUILD_DEPENDS=	p5-UNIVERSAL-can>=1.16:${PORTSDIR}/devel/p5-UNIVERSAL-can \
+		p5-UNIVERSAL-isa>=1.03:${PORTSDIR}/devel/p5-UNIVERSAL-isa
 RUN_DEPENDS=	p5-UNIVERSAL-can>=1.16:${PORTSDIR}/devel/p5-UNIVERSAL-can \
 		p5-UNIVERSAL-isa>=1.03:${PORTSDIR}/devel/p5-UNIVERSAL-isa
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
 MAN3=		Test::MockObject.3 Test::MockObject::Extends.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
