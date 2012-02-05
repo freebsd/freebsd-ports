@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	9.1.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -63,7 +63,8 @@ INSTALL_DIRS?=	src/timezone src/backend \
 		src/backend/utils/mb/conversion_procs \
 		src/backend/snowball src/backend/replication/libpqwalreceiver \
 		src/bin/initdb src/bin/pg_ctl \
-		src/bin/pg_controldata src/bin/pg_resetxlog src/pl
+		src/bin/pg_controldata src/bin/pg_resetxlog src/pl \
+		src/bin/pg_basebackup
 BUILD_DIRS?=	src/port ${INSTALL_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
