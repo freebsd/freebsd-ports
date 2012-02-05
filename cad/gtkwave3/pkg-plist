@@ -14,6 +14,17 @@ bin/vcd2vzt
 bin/vermin
 bin/vzt2vcd
 bin/vztminer
+share/mime/XMLnamespaces
+share/mime/aliases
+share/mime/generic-icons
+share/mime/globs
+share/mime/globs2
+share/mime/icons
+share/mime/magic
+share/mime/mime.cache
+share/mime/subclasses
+share/mime/treemagic
+share/mime/types
 share/mime/application/vnd.gtkwave-ae2.xml
 share/mime/application/vnd.gtkwave-aet.xml
 share/mime/application/vnd.gtkwave-evcd.xml
@@ -36,17 +47,8 @@ share/mime/packages/x-gtkwave-extension-lxt2.xml
 share/mime/packages/x-gtkwave-extension-lxt.xml
 share/mime/packages/x-gtkwave-extension-vcd.xml
 share/mime/packages/x-gtkwave-extension-vzt.xml
-share/applications/x-gtkwave-extension-ae2.desktop
-share/applications/x-gtkwave-extension-aet.desktop
-share/applications/x-gtkwave-extension-evcd.desktop
-share/applications/x-gtkwave-extension-fst.desktop
-share/applications/x-gtkwave-extension-ghw.desktop
-share/applications/x-gtkwave-extension-gtkw.desktop
-share/applications/x-gtkwave-extension-lx2.desktop
-share/applications/x-gtkwave-extension-lxt2.desktop
-share/applications/x-gtkwave-extension-lxt.desktop
-share/applications/x-gtkwave-extension-vcd.desktop
-share/applications/x-gtkwave-extension-vzt.desktop
+share/applications/gtkwave.desktop
+share/icons/gnome/16x16/mimetypes/gtkwave.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
@@ -58,6 +60,7 @@ share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-lxt.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
+share/icons/gnome/32x32/mimetypes/gtkwave.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
@@ -69,6 +72,7 @@ share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-lxt2.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-lxt.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-vcd.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-vnd.gtkwave-vzt.png
+share/icons/gnome/48x48/mimetypes/gtkwave.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-ae2.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-aet.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.gtkwave-evcd.png
@@ -91,7 +95,7 @@ share/icons/gtkwave_savefiles_256x256x32.png
 %%EXAMPLESDIR%%/transaction.fst
 %%EXAMPLESDIR%%/transaction.gtkw
 %%EXAMPLESDIR%%/transaction.c
-%%EXAMPLESDIR%%/.gtkwaverc
+%%EXAMPLESDIR%%/gtkwaverc
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
 @dirrmtry share/mime/application
