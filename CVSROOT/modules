@@ -204,6 +204,7 @@ R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
 R-cran-DCluster                 ports/science/R-cran-DCluster
 R-cran-Epi                      ports/science/R-cran-Epi
+R-cran-Formula                  ports/math/R-cran-Formula
 R-cran-RColorBrewer             ports/graphics/R-cran-RColorBrewer
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
 R-cran-RFinanceYJ               ports/finance/R-cran-RFinanceYJ
@@ -216,6 +217,7 @@ R-cran-SuppDists                ports/math/R-cran-SuppDists
 R-cran-XML                      ports/textproc/R-cran-XML
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-bayesm                   ports/science/R-cran-bayesm
+R-cran-bdsmatrix                ports/math/R-cran-bdsmatrix
 R-cran-bitops                   ports/devel/R-cran-bitops
 R-cran-car                      ports/math/R-cran-car
 R-cran-caret                    ports/devel/R-cran-caret
@@ -237,6 +239,7 @@ R-cran-itertools                ports/devel/R-cran-itertools
 R-cran-maptools                 ports/astro/R-cran-maptools
 R-cran-memisc                   ports/math/R-cran-memisc
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
+R-cran-plm                      ports/finance/R-cran-plm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-proto                    ports/devel/R-cran-proto
 R-cran-psych                    ports/math/R-cran-psych
@@ -3342,6 +3345,7 @@ fbdesk                          ports/x11/fbdesk
 fbpager                         ports/x11-wm/fbpager
 fbpanel                         ports/x11/fbpanel
 fbreader                        ports/deskutils/fbreader
+fbsdmon                         ports/ports-mgmt/fbsdmon
 fc++                            ports/devel/fc++
 fceu-server                     ports/emulators/fceu-server
 fceux                           ports/emulators/fceux
@@ -5853,6 +5857,7 @@ igal2                           ports/www/igal2
 igbinary                        ports/converters/igbinary
 iglooftp                        ports/ftp/IglooFTP
 igmpproxy                       ports/net/igmpproxy
+igor                            ports/textproc/igor
 igraph                          ports/math/igraph
 ii                              ports/irc/ii
 iiview                          ports/graphics/iiview
@@ -19700,6 +19705,7 @@ pdf-renderer                    ports/print/pdf-renderer
 pdf2djvu                        ports/converters/pdf2djvu
 pdf2svg                         ports/graphics/pdf2svg
 pdfbox                          ports/print/pdfbox
+pdfcolorsplit                   ports/print/pdfcolorsplit
 pdfcrack                        ports/security/pdfcrack
 pdfcube                         ports/print/pdfcube
 pdfedit                         ports/editors/pdfedit
@@ -21947,6 +21953,7 @@ py-django-devel                 ports/www/py-django-devel
 py-django-evolution             ports/www/py-django-evolution
 py-django-extensions            ports/www/py-django-extensions
 py-django-haystack              ports/www/py-django-haystack
+py-django-json-rpc              ports/www/py-django-json-rpc
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-mptt                  ports/www/py-django-mptt
@@ -23333,6 +23340,7 @@ qzeitgeist                      ports/sysutils/qzeitgeist
 r                               ports/math/R
 r-cran-amore                    ports/science/R-cran-AMORE
 r-cran-bayesm                   ports/science/R-cran-bayesm
+r-cran-bdsmatrix                ports/math/R-cran-bdsmatrix
 r-cran-bitops                   ports/devel/R-cran-bitops
 r-cran-car                      ports/math/R-cran-car
 r-cran-caret                    ports/devel/R-cran-caret
@@ -23347,6 +23355,7 @@ r-cran-eco                      ports/science/R-cran-eco
 r-cran-epi                      ports/science/R-cran-Epi
 r-cran-epicalc                  ports/science/R-cran-epicalc
 r-cran-foreach                  ports/devel/R-cran-foreach
+r-cran-formula                  ports/math/R-cran-Formula
 r-cran-ggplot2                  ports/graphics/R-cran-ggplot2
 r-cran-gmm                      ports/finance/R-cran-gmm
 r-cran-gpclib                   ports/math/R-cran-gpclib
@@ -23357,6 +23366,7 @@ r-cran-itertools                ports/devel/R-cran-itertools
 r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-memisc                   ports/math/R-cran-memisc
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
+r-cran-plm                      ports/finance/R-cran-plm
 r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-proto                    ports/devel/R-cran-proto
 r-cran-psych                    ports/math/R-cran-psych
