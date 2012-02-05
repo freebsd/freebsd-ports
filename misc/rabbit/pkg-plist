@@ -102,6 +102,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/inline.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/tex.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/image.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/markdown.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/markdown/converter.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/pause-support.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/pdf.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd.rb
@@ -530,6 +532,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/rd/rt
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/rd
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/markdown
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/ext
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/middleware/views
