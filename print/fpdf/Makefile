@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fpdf
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTEPOCH=	1
 CATEGORIES=	print www
-MASTER_SITES=	http://www.fpdf.org/fr/
+MASTER_SITES=	http://www.fpdf.org/en/
 DISTNAME=	${PORTNAME}${PORTVERSION:S|.||}
 EXTRACT_SUFX=	.tgz
 
@@ -19,6 +19,7 @@ COMMENT=	A free PHP class to generate PDF files with pure PHP
 USE_PHP=	zlib
 
 FETCH_CMD=	${FETCH_BINARY} -ARr -o ${DISTDIR}/${DISTFILES}
+USE_DOS2UNIX=	yes
 NO_BUILD=	yes
 
 FPDF_DIR?=	share/fpdf
@@ -28,7 +29,7 @@ SUB_LIST=	FPDF_DIR=${FPDF_DIR}
 PLIST_SUB=	FPDF_DIR=${FPDF_DIR}
 
 EXT2CNV=	afm css htm php txt
-DOCS=		FAQ.htm doc/* fpdf.css histo.htm install.txt tutoriel
+DOCS=		FAQ.htm changelog.htm doc fpdf.css install.txt license.txt tutorial
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
@@ -36,21 +37,13 @@ do-fetch:
 		'${MASTER_SITES}dl.php?v=${PORTVERSION:S|.||}&f=${EXTRACT_SUFX:S|.||}'; \
 	fi
 
-pre-patch:
-	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-.for ext in ${EXT2CNV}
-	@${FIND} ${WRKSRC} -type f -name "*.${ext}" -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
-.endfor
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-
 do-install:
 	${MKDIR} ${PREFIX}/${FPDF_DIR}
 	${INSTALL_DATA} ${WRKSRC}/fpdf.php ${PREFIX}/${FPDF_DIR}
-	${CP} -R ${WRKSRC}/font ${PREFIX}/${FPDF_DIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "font makefont" ${PREFIX}/${FPDF_DIR}/)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${DOCS}" ${DOCSDIR}/)
 .endif
 
 post-install:
