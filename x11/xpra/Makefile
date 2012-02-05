@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpra
-PORTVERSION=	0.0.7.32
+PORTVERSION=	0.0.7.35
 CATEGORIES=	x11
 MASTER_SITES=	http://winswitch.org/src/
 
