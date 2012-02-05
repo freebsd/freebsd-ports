@@ -238,6 +238,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/glossary.pod
 %%PORTDOCS%%%%DOCSDIR%%/hacking.pod
 %%PORTDOCS%%%%DOCSDIR%%/network-diagram.svg
+%%PORTDOCS%%%%DOCSDIR%%/schema.dot
 %%PORTDOCS%%%%DOCSDIR%%/security.pod
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/3.1.0/acl.Pg
@@ -1179,6 +1180,7 @@ share/rt40/html/Ticket/ModifyLinks.html
 share/rt40/html/Ticket/ModifyPeople.html
 share/rt40/html/Ticket/Reminders.html
 share/rt40/html/Ticket/ShowEmailRecord.html
+share/rt40/html/Ticket/autohandler
 share/rt40/html/Ticket/Update.html
 share/rt40/html/Tools/MyDay.html
 share/rt40/html/Tools/MyReminders.html
@@ -1215,9 +1217,9 @@ share/rt40/html/m/index.html
 share/rt40/html/m/login
 share/rt40/html/m/logout
 share/rt40/html/m/style.css
+share/rt40/html/m/ticket/autohandler
 share/rt40/html/m/ticket/create
 share/rt40/html/m/ticket/history
-share/rt40/html/m/ticket/modify
 share/rt40/html/m/ticket/reply
 share/rt40/html/m/ticket/select_create_queue
 share/rt40/html/m/ticket/show
@@ -1259,9 +1261,11 @@ share/rt40/po/zh_CN.po
 share/rt40/po/zh_TW.po
 @dirrmtry www/rt40
 @dirrm share/rt40/po
+@exec mkdir -p %D/share/rt40/etc
+@exec mkdir -p %D/share/rt40/lib
 @exec mkdir -p %D/share/rt40/plugins
 @dirrm share/rt40/plugins
-@dirrm share/rt40/lib
+@dirrmtry share/rt40/lib
 @dirrm share/rt40/html/m/tickets
 @dirrm share/rt40/html/m/ticket
 @dirrm share/rt40/html/m/_elements
@@ -1444,7 +1448,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/html/Admin
 @dirrm share/rt40/html
 @dirrm share/rt40/fonts
-@dirrm share/rt40/etc
+@dirrmtry share/rt40/etc
 @dirrm share/rt40
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.3

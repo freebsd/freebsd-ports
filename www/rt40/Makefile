@@ -11,8 +11,7 @@
 #   o install a sample into etc/apache22/Includes
 
 PORTNAME=	rt
-PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTVERSION=	4.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -24,14 +23,14 @@ COMMENT=	RT is an industrial-grade ticketing system written in Perl
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
 .endif
 
-CONFLICTS=	rt-3.6* rt-3.8*
+CONFLICTS=	rt-3.8*
 LATEST_LINK=	rt40
 
 # See doc/web_deployment.pod for info on the choices of webserver /
-# webapp combinations.  Note: apache-1.3.x is no longer supported in
-# ports: apache-2.2+ is recommended.  For deployment with nginx, use
-# the SPAWN_FCGI method.  A standalone PSGI based webserver is always
-# available, but this is really only suitable for development usage.
+# webapp combinations.  Note: if using apache, apache-2.2+ is
+# recommended.  For deployment with nginx, use the SPAWN_FCGI method.
+# A standalone PSGI based webserver is always available, but this is
+# really only suitable for development usage.
 #
 # See doc/full_text_indexing.pod if you need to set up full text
 # indexes on your ticket database.  PostgreSQL or Oracle are
@@ -47,6 +46,7 @@ OPTIONS=	AP_MODPERL	"Deploy with apache and mod_perl"	on \
 		POSTGRESQL	"Enable PosgreSQL backend"		off \
 		ORACLE		"Enable Oracle backend"			off \
 		SQLITE		"Enable SQLite backend (dev only)"	off \
+		SSL_MAILGATE	"Enable HTTPS support for rt-mailgate"	off \
 		DEV 		"Configure for Developers"		off \
 		GPG		"Enable GnuPG support"			on \
 		GRAPHVIZ	"Enable GraphViz charts"		off \
@@ -160,25 +160,31 @@ IGNORE=	please select one of MYSQL, POSTGRESQL, ORACLE or SQLITE
 .if defined(WITH_DEV)
 BUILD_DEPENDS+=	${DEV_DEPS}
 RUN_DEPENDS+=	${DEV_DEPS}
-CONFIGURE_ARGS+=	"--enable-developer-mode"
+CONFIGURE_ARGS+=	--enable-developer-mode
+.endif
+
+.if defined(WITH_SSL_MAILGATE)
+BUILD_DEPENDS+=	${SSL_MAILGATE_DEPS}
+RUN_DEPENDS+=	${SSL_MAILGATE_DEPS}
+CONFIGURE_ARGS+=	--enable-ssl-mailgate
 .endif
 
 .if defined(WITH_GRAPHVIZ)
 BUILD_DEPENDS+=	${GRAPHVIZ_DEPS}
 RUN_DEPENDS+=	${GRAPHVIZ_DEPS}
-CONFIGURE_ARGS+=	"--enable-graphviz"
+CONFIGURE_ARGS+=	--enable-graphviz
 .endif
 
 .if defined(WITH_GPG)
 BUILD_DEPENDS+=	${GPG_DEPS}
 RUN_DEPENDS+=	${GPG_DEPS}
-CONFIGURE_ARGS+=	"--enable-gpg"
+CONFIGURE_ARGS+=	--enable-gpg
 .endif
 
 .if defined(WITH_GD)
 BUILD_DEPENDS+=	${GD_DEPS}
 RUN_DEPENDS+=	${GD_DEPS}
-configure_args+=	"--enable-gd"
+configure_args+=	--enable-gd
 .endif
 
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}40

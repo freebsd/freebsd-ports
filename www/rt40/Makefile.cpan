@@ -6,7 +6,7 @@
 ### Scalar::Util     1.18                 core
 ### Text::ParseWords 3.24                 core
 ### Term::ReadLine	 		  core
-### 
+###
 ### Digest::base                          core
 ### Time::HiRes                           core
 ### Errno                                 core
@@ -73,15 +73,19 @@ PSGI_DEPS=	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI \
 
 MAILGATE_DEPS=	p5-HTML-Format>0:${PORTSDIR}/textproc/p5-HTML-Format \
 		p5-HTML-Tree>0:${PORTSDIR}/www/p5-HTML-Tree \
-		p5-libwww>0:${PORTSDIR}/www/p5-libwww
-	
+		p5-libwww>6.0:${PORTSDIR}/www/p5-libwww
+
+SSL_MAILGATE_DEPS=	p5-Crypt-SSLeay>0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-LWP-Protocol-https>0:${PORTSDIR}/www/p5-LWP-Protocol-https \
+		p5-Mozilla-CA>0:${PORTSDIR}/www/p5-Mozilla-CA
+
 CLI_DEPS=	p5-HTTP-Message>0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 # ports to add:
 # Test::Email
-# Test::Builder >= 0.90 
+# Test::Builder >= 0.90
 # Plack::Middleware::Test::StashWarnings
 DEV_DEPS=	p5-Email-Abstract>0:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-HTML-Form>0:${PORTSDIR}/www/p5-HTML-Form \
@@ -105,7 +109,7 @@ FASTCGI_DEPS=	p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager \
 MODPERL2_DEPS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
 		p5-Apache-DBI>0:${PORTSDIR}/www/p5-Apache-DBI
 
-MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql 
+MYSQL_DEPS=	p5-DBD-mysql>=2.1018:${PORTSDIR}/databases/p5-DBD-mysql
 
 ORACLE_DEPS=	p5-DBD-Oracle>0:${PORTSDIR}/databases/p5-DBD-Oracle
 
@@ -128,6 +132,6 @@ GRAPHVIZ_DEPS=	p5-GraphViz>0:${PORTSDIR}/graphics/p5-GraphViz \
 
 GD_DEPS=	p5-GD>0:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-Graph>0:${PORTSDIR}/graphics/p5-GD-Graph \
-		p5-GD-TextUtil>0:${PORTSDIR}/graphics/p5-GD-TextUtil 
+		p5-GD-TextUtil>0:${PORTSDIR}/graphics/p5-GD-TextUtil
 
 USERLOGO_DEPS=	p5-Convert-Color>0:${PORTSDIR}/graphics/p5-Convert-Color
