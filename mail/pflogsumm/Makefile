@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pflogsumm
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
