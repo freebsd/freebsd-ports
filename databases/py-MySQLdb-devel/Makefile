@@ -17,6 +17,9 @@ DISTNAME=	MySQL-python-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
+DEPRECATED=		use databases/py-MySQLdb instead
+EXPIRATION_DATE=	2012-05-01
+
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
