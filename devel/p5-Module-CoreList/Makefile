@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.59
+PORTVERSION=	2.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/corelist/d' ${WRKSRC}/Makefile.PL
 
 regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
