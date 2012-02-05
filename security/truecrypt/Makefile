@@ -44,11 +44,11 @@ PLIST_FILES+=	%%DOCSDIR%%/License.txt
 PLIST_DIRS=	%%DOCSDIR%%
 .endif
 
-OPTIONS=	GUI     "With GUI" off
+OPTIONS=	X11     "With GUI (depends on X)" off
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_GUI)
+.ifdef(WITH_X11)
 USE_GNOME=	gtk20
 NOGUI=
 .else
