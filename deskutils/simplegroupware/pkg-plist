@@ -31,7 +31,6 @@
 %%WWWDIR%%/docs/licenses/qpl_license.txt
 %%WWWDIR%%/docs/licenses/unzip_license.txt
 %%WWWDIR%%/docs/licenses/xmlrpc.txt
-%%WWWDIR%%/docs/package.html
 %%WWWDIR%%/ext/.htaccess
 %%WWWDIR%%/ext/ext/.htaccess
 %%WWWDIR%%/ext/ext/index.htm
@@ -183,11 +182,13 @@
 %%WWWDIR%%/lang/index.htm
 %%WWWDIR%%/lang/index.html
 %%WWWDIR%%/lang/it.lang
+%%WWWDIR%%/lang/jp.lang
 %%WWWDIR%%/lang/master.lang
 %%WWWDIR%%/lang/master_google_translate.lang.html
 %%WWWDIR%%/lang/nl.lang
 %%WWWDIR%%/lang/pl.lang
 %%WWWDIR%%/lang/ptBR.lang
+%%WWWDIR%%/lang/ptPT.lang
 %%WWWDIR%%/lang/ru.lang
 %%WWWDIR%%/lang/se.lang
 %%WWWDIR%%/lang/sk.lang
@@ -313,6 +314,7 @@
 %%WWWDIR%%/src/ext/icons/logout.gif
 %%WWWDIR%%/src/ext/icons/milestone.gif
 %%WWWDIR%%/src/ext/icons/minus.gif
+%%WWWDIR%%/src/ext/icons/offline.png
 %%WWWDIR%%/src/ext/icons/paste.gif
 %%WWWDIR%%/src/ext/icons/phone.gif
 %%WWWDIR%%/src/ext/icons/php.gif
@@ -335,7 +337,6 @@
 %%WWWDIR%%/src/ext/images/bg_beach.jpg
 %%WWWDIR%%/src/ext/images/bg_beach2.jpg
 %%WWWDIR%%/src/ext/images/bg_blackwhite.jpg
-%%WWWDIR%%/src/ext/images/bg_bridge.jpg
 %%WWWDIR%%/src/ext/images/bg_desert.jpg
 %%WWWDIR%%/src/ext/images/bg_earth.jpg
 %%WWWDIR%%/src/ext/images/bg_lake.jpg
@@ -350,7 +351,8 @@
 %%WWWDIR%%/src/ext/images/logo_black.gif
 %%WWWDIR%%/src/ext/images/logo_dark.gif
 %%WWWDIR%%/src/ext/images/sgs_logo.gif
-%%WWWDIR%%/src/ext/images/sgs_logo_setup.jpg
+%%WWWDIR%%/src/ext/images/sgs_logo.woff
+%%WWWDIR%%/src/ext/images/sgs_logo_bg.jpg
 %%WWWDIR%%/src/ext/import_local_fs.php.txt
 %%WWWDIR%%/src/ext/install_unattended.php.txt
 %%WWWDIR%%/src/ext/js/functions.js
@@ -875,9 +877,11 @@
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/hr.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/hu.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/it.js
+%%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/jp.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/nl.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/pl.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/ptBR.js
+%%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/ptPT.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/ru.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/se.js
 %%WWWDIR%%/src/ext/lib/simple_spreadsheet/translations/sk.js
@@ -952,6 +956,7 @@
 %%WWWDIR%%/src/ext/lib/tinymce/utils/form_utils.js
 %%WWWDIR%%/src/ext/lib/tinymce/utils/mctabs.js
 %%WWWDIR%%/src/ext/lib/tinymce/utils/validate.js
+%%WWWDIR%%/src/ext/modules/absence.png
 %%WWWDIR%%/src/ext/modules/anchor_accounting.png
 %%WWWDIR%%/src/ext/modules/anchor_customize.png
 %%WWWDIR%%/src/ext/modules/anchor_debug.png
@@ -991,6 +996,7 @@
 %%WWWDIR%%/src/ext/modules/gallery.png
 %%WWWDIR%%/src/ext/modules/graphviz.png
 %%WWWDIR%%/src/ext/modules/helpdesk.png
+%%WWWDIR%%/src/ext/modules/hr_contracts.png
 %%WWWDIR%%/src/ext/modules/htmldocs.png
 %%WWWDIR%%/src/ext/modules/intranet.png
 %%WWWDIR%%/src/ext/modules/inventories.png
@@ -1471,6 +1477,7 @@
 %%WWWDIR%%/src/modules/schema_sys/nodb_backups.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_bookmarks.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_calendar_contacts.xml
+%%WWWDIR%%/src/modules/schema_sys/nodb_calendar_departments.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_calendar_users.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_cifs.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_csv_calendar.xml
@@ -1485,7 +1492,6 @@
 %%WWWDIR%%/src/modules/schema_sys/nodb_modules.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_pmwiki.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_pop3.xml
-%%WWWDIR%%/src/modules/schema_sys/nodb_processes.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_rights.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_rights_edit.xml
 %%WWWDIR%%/src/modules/schema_sys/nodb_rss.xml
