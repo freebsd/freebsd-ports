@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		psptoolchain
-PORTVERSION=		20090127
+PORTVERSION=		20111215
 CATEGORIES=		devel
 MASTER_SITES=		# none
 DISTFILES=		# none
@@ -20,7 +20,6 @@ RUN_DEPENDS=		psp-gdb:${PORTSDIR}/devel/psptoolchain-gdb \
 			psp-ar:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-as:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-c++filt:${PORTSDIR}/devel/psptoolchain-binutils \
-			psp-gprof:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-ld:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-nm:${PORTSDIR}/devel/psptoolchain-binutils \
 			psp-objcopy:${PORTSDIR}/devel/psptoolchain-binutils \

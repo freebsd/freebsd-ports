@@ -176,6 +176,8 @@
 %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blend/Makefile
 %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/beginobject/beginobject.c
 %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/beginobject/Makefile
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/exceptions/main.cpp
+%%PSP_SDK_STAGE_PREFIX%%/sdk/samples/exceptions/Makefile
 %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio/readme.txt
 %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio/main.c
 %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio/Makefile
@@ -394,6 +396,7 @@
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/blend
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu/beginobject
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/gu
+@dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/exceptions
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/sio
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/prxdecrypt
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/debug/profiler
@@ -408,9 +411,9 @@
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio/polyphonic
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples/audio
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/samples
-@dirrmtry %%PSP_SDK_STAGE_PREFIX%%/sdk/lib
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/include/libc
 @dirrm %%PSP_SDK_STAGE_PREFIX%%/sdk/include
+@dirrmtry %%PSP_SDK_STAGE_PREFIX%%/sdk/lib
 @dirrmtry %%PSP_SDK_STAGE_PREFIX%%/sdk
 @dirrmtry %%PSP_SDK_STAGE_PREFIX%%
 @dirrmtry psp

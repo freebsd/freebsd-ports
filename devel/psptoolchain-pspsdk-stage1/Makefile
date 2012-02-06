@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		pspsdk
-PORTVERSION=		20090127
-PORTREVISION=	1
+PORTVERSION=		20111215
 CATEGORIES=		devel
 MASTER_SITES=		http://www.potion-studios.com/
 PKGNAMEPREFIX=		psptoolchain-
@@ -21,7 +20,8 @@ PSP_SDK_STAGE_PREFIX=	psp/stage1
 USE_AUTOTOOLS=		libtool:env aclocal:env autoheader:env automake:env autoconf:env
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} --with-pspdev="${PREFIX}/${PSP_SDK_STAGE_PREFIX}"
+CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} \
+			--with-pspdev="${LOCALBASE}/${PSP_SDK_STAGE_PREFIX}"
 
 # First stage only needs to install some data needed to compile newlib.
 # Patch a hardcoded prefix, such that we can set our own stage1 subdir.
