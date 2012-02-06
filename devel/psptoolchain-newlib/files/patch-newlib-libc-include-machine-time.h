@@ -1,5 +1,5 @@
---- newlib/libc/include/machine/time.h.orig	2000-12-04 21:06:37.000000000 +0200
-+++ newlib/libc/include/machine/time.h	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/include/machine/time.h.orig	2009-04-06 22:04:33.000000000 +0000
++++ ./newlib/libc/include/machine/time.h	2012-01-25 19:33:11.000000000 +0000
 @@ -9,6 +9,10 @@
  #endif
  #endif /* !__rtems__ */
@@ -8,6 +8,6 @@
 +#define _CLOCKS_PER_SEC_  1000000
 +#endif
 +
- #endif	/* _MACHTIME_H_ */
- 
- 
+ #ifdef __SPU__
+ #include <sys/types.h>
+ int nanosleep (const struct timespec *, struct timespec *);

@@ -1,7 +1,8 @@
 psp/lib/libm.a
 psp/lib/libg.a
 psp/lib/libc.a
-psp/lib/crt0.o
+psp/lib/crt0.newlib.o
+psp/include/wordexp.h
 psp/include/wctype.h
 psp/include/wchar.h
 psp/include/utmp.h
@@ -10,6 +11,7 @@ psp/include/unistd.h
 psp/include/unctrl.h
 psp/include/time.h
 psp/include/termios.h
+psp/include/tar.h
 psp/include/sys/wait.h
 psp/include/sys/utime.h
 psp/include/sys/unistd.h
@@ -38,16 +40,23 @@ psp/include/sys/fd_set.h
 psp/include/sys/fcntl.h
 psp/include/sys/errno.h
 psp/include/sys/dirent.h
+psp/include/sys/dir.h
+psp/include/sys/custom_file.h
 psp/include/sys/config.h
 psp/include/sys/cdefs.h
 psp/include/sys/_types.h
+psp/include/sys/_default_fcntl.h
+psp/include/strings.h
 psp/include/string.h
 psp/include/stdlib.h
+psp/include/stdio_ext.h
 psp/include/stdio.h
 psp/include/stdint.h
 psp/include/signal.h
 psp/include/setjmp.h
 psp/include/search.h
+psp/include/sched.h
+psp/include/regex.h
 psp/include/regdef.h
 psp/include/reent.h
 psp/include/pwd.h
@@ -74,6 +83,7 @@ psp/include/machine/fastmath.h
 psp/include/machine/endian.h
 psp/include/machine/ansi.h
 psp/include/machine/_types.h
+psp/include/machine/_default_types.h
 psp/include/locale.h
 psp/include/limits.h
 psp/include/libgen.h
@@ -82,13 +92,17 @@ psp/include/inttypes.h
 psp/include/ieeefp.h
 psp/include/iconv.h
 psp/include/grp.h
+psp/include/glob.h
 psp/include/getopt.h
+psp/include/fnmatch.h
 psp/include/fcntl.h
 psp/include/fastmath.h
 psp/include/errno.h
 psp/include/envz.h
+psp/include/envlock.h
 psp/include/dirent.h
 psp/include/ctype.h
+psp/include/complex.h
 psp/include/assert.h
 psp/include/arpa/inet.h
 psp/include/argz.h
@@ -100,6 +114,8 @@ psp/include/_ansi.h
 @dirrm psp/include/netinet
 @dirrm psp/include/machine
 @dirrm psp/include/arpa
+@dirrmtry psp/include/rpc
 @dirrmtry psp/include/bits
 @dirrmtry psp/include
+@dirrmtry psp/lib
 @dirrmtry psp

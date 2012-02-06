@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/Makefile.am.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/Makefile.am	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/Makefile.am.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/Makefile.am	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,71 @@
 +## Process this file with automake to generate Makefile.in
 +
@@ -11,11 +11,11 @@
 +
 +noinst_LIBRARIES = lib.a
 +
-+LIBCGLUE_MULT_OBJS = _close.o _exit.o _fork.o _fstat.o _getpid.o    \
-+                     _gettimeofday.o _kill.o _lseek.o _open.o _read.o   \
-+                     _sbrk.o _wait.o _write.o clock.o isatty.o time.o   \
-+                     _link.o _unlink.o sleep.o opendir.o readdir.o  \
-+                     closedir.o getcwd.o chdir.o mkdir.o rmdir.o    \
++LIBCGLUE_MULT_OBJS = _close.o _exit.o _fork.o _fstat.o _getpid.o \
++                     _gettimeofday.o _kill.o _lseek.o _open.o _read.o \
++                     _sbrk.o _wait.o _write.o clock.o isatty.o _isatty.o \
++                     time.o_link.o _unlink.o sleep.o opendir.o readdir.o \
++                     closedir.o getcwd.o chdir.o mkdir.o rmdir.o \
 +                     realpath.o _stat.o truncate.o access.o tzset.o \
 +                     __psp_set_errno.o mlock.o _fcntl.o _rename.o nanosleep.o
 +

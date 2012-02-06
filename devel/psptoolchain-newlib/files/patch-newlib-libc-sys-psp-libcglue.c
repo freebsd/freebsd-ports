@@ -1,6 +1,6 @@
---- newlib/libc/sys/psp/libcglue.c.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/libcglue.c	2007-06-01 12:22:26.000000000 +0300
-@@ -0,0 +1,936 @@
+--- ./newlib/libc/sys/psp/libcglue.c.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/libcglue.c	2012-01-25 19:33:12.000000000 +0000
+@@ -0,0 +1,969 @@
 +/*
 + * PSP Software Development Kit - http://www.pspdev.org
 + * -----------------------------------------------------------------------
@@ -455,7 +455,42 @@
 +#ifdef F__gettimeofday
 +int _gettimeofday(struct timeval *tp, struct timezone *tzp)
 +{
-+	return __psp_set_errno(sceKernelLibcGettimeofday(tp, tzp));
++	int ret;
++	time_t t;
++	struct timeval tv1, tv2;
++
++	/* The kernel sceKernelLibcGettimeofday only returns time
++	   since midnight.  To get a proper timeval return value, we
++	   get seconds using sceKernelLibcTime and microseconds using
++	   sceKernelLibcGettimeofday.  Since we are reading the time
++	   with two different function calls, we need to be careful 
++	   to avoid glitches when the time changes between calls. */
++
++ retry:
++	/* Get seconds and microseconds since midnight */
++	ret = __psp_set_errno(sceKernelLibcGettimeofday(&tv1, tzp));
++	if (ret < 0)
++		return ret;
++
++	/* Get seconds since epoch */
++	ret = __psp_set_errno(sceKernelLibcTime(&t));
++	if (ret < 0)
++		return ret;
++
++	/* Get seconds and microseconds since midnight, again */
++	ret = __psp_set_errno(sceKernelLibcGettimeofday(&tv2, tzp));
++	if (ret < 0)
++		return ret;
++
++	/* Retry if microseconds wrapped around */
++	if (tv2.tv_usec < tv1.tv_usec)
++		goto retry;
++
++	/* Return the actual time since epoch */
++	tp->tv_sec = t;
++	tp->tv_usec = tv2.tv_usec;
++
++	return 0;
 +}
 +
 +#endif
@@ -485,23 +520,11 @@
 +
 +/* PSP-compatible sbrk(). */
 +#if defined(F__sbrk) || defined(F_glue__sbrk)
-+/* TODO: Currently our default heap is set to the maximum available block size
-+   when sbrk() is first called.  Sony seems to always use a default of 64KB,
-+   with the expectation that user programs will override the default size with
-+   their own desired size.  The only reason I can think of them doing this is
-+   to allow each PRX to have their own seperate heap.  I think that their
-+   method is overkill for most user programs.
 +
-+   What I'd like to do instead is to use the default of 64KB for PRXes as Sony
-+   does, but use the maximum available block size for executables.  This avoids
-+   the requirement of specifying the heap size manually in user programs.
-+   However, we currently don't have a clean way to distinguish PRXes and normal
-+   executables, so this code needs to be revisited once we do come up with a
-+   way. */
 +#define DEFAULT_PRX_HEAP_SIZE_KB 64
 +
 +/* If defined it specifies the desired size of the heap, in KB. */
-+extern unsigned int sce_newlib_heap_kb_size __attribute__((weak));
++extern int sce_newlib_heap_kb_size __attribute__((weak));
 +extern int __pspsdk_is_prx __attribute__((weak));
 +
 +/* UID of the memory block that represents the heap. */
@@ -516,23 +539,26 @@
 +	/* Has our heap been initialized? */
 +	if (heap_bottom == NULL) {
 +		/* No, initialize the heap. */
-+		SceSize heap_size;
++		SceSize heap_size = (SceSize) -1;
 +
 +		if (&sce_newlib_heap_kb_size != NULL) {
-+			heap_size = sce_newlib_heap_kb_size * 1024;
-+		} else {
-+			if (&__pspsdk_is_prx != NULL) {
-+				heap_size = DEFAULT_PRX_HEAP_SIZE_KB * 1024;
-+			} else {
-+				heap_size = sceKernelMaxFreeMemSize();
-+			}
++			heap_size = sce_newlib_heap_kb_size;
++		} else if(&__pspsdk_is_prx != NULL) {
++			heap_size = DEFAULT_PRX_HEAP_SIZE_KB;
 +		}
 +
-+		__psp_heap_blockid = sceKernelAllocPartitionMemory(2, "block", PSP_SMEM_Low, heap_size, NULL);
-+		if (__psp_heap_blockid > 0) {
-+			heap_bottom = sceKernelGetBlockHeadAddr(__psp_heap_blockid);
-+			heap_ptr = heap_bottom;
-+			heap_top = (unsigned char *) heap_bottom + heap_size;
++		heap_size *= 1024;
++		if ((int)heap_size < 0) {
++			heap_size += sceKernelMaxFreeMemSize();
++		}
++
++		if (heap_size != 0) {
++			__psp_heap_blockid = sceKernelAllocPartitionMemory(2, "block", PSP_SMEM_Low, heap_size, NULL);
++			if (__psp_heap_blockid > 0) {
++				heap_bottom = sceKernelGetBlockHeadAddr(__psp_heap_blockid);
++				heap_ptr = heap_bottom;
++				heap_top = (unsigned char *) heap_bottom + heap_size;
++			}
 +		}
 +	}
 +
@@ -613,6 +639,13 @@
 +	else {
 +		return 0;
 +	}
++}
++#endif
++
++#ifdef F__isatty
++int _isatty(int fd)
++{
++    return isatty(fd);
 +}
 +#endif
 +

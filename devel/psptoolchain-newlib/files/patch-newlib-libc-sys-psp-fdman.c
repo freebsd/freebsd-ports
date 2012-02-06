@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/fdman.c.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/fdman.c	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/fdman.c.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/fdman.c	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,115 @@
 +/*
 + * PSP Software Development Kit - http://www.pspdev.org
@@ -30,19 +30,19 @@
 +	memset(__psp_descriptormap,        0, sizeof(__psp_descriptormap_type*)*__PSP_FILENO_MAX);
 +
 +	scefd = sceKernelStdin();
-+	if ((scefd >= 0) && (scefd < __PSP_FILENO_MAX)) {
++	if (scefd >= 0) {
 +		__psp_descriptormap[0] = &__psp_descriptor_data_pool[0];
 +		__psp_descriptormap[0]->sce_descriptor = scefd;
 +		__psp_descriptormap[0]->type = __PSP_DESCRIPTOR_TYPE_TTY;
 +	}
 +	scefd = sceKernelStdout();
-+	if ((scefd >= 0) && (scefd < __PSP_FILENO_MAX)) {
++	if (scefd >= 0) {
 +		__psp_descriptormap[1] = &__psp_descriptor_data_pool[1];
 +		__psp_descriptormap[1]->sce_descriptor = scefd;
 +		__psp_descriptormap[1]->type = __PSP_DESCRIPTOR_TYPE_TTY;
 +	}
 +	scefd = sceKernelStderr();
-+	if ((scefd >= 0) && (scefd < __PSP_FILENO_MAX)) {
++	if (scefd >= 0) {
 +		__psp_descriptormap[2] = &__psp_descriptor_data_pool[2];
 +		__psp_descriptormap[2]->sce_descriptor = scefd;
 +		__psp_descriptormap[2]->type = __PSP_DESCRIPTOR_TYPE_TTY;
