@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libmpd
-PORTVERSION=	0.20.0
+PORTVERSION=	11.8.17
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/11.8.16/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
