@@ -19,6 +19,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	varnish-2.*
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON_BUILD=	yes
@@ -39,12 +41,6 @@ MAN7=		vcl.7 varnish-cli.7 varnish-counters.7
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$$(libdir)/pkgconfig|\$$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
@@ -60,4 +56,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
