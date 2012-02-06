@@ -10,8 +10,11 @@ PORTVERSION=	3.0
 CATEGORIES=	misc
 MASTER_SITES=	http://izb.knu.ac.kr/~bh/fortune/
 
-MAINTAINER=	bh@izb.knu.ac.kr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compilation of excuses from the "The Godfather"
+
+DEPRECATED=	No longer supported
+EXPIRATION_DATE=2012-05-06
 
 NO_BUILD=	yes
 
