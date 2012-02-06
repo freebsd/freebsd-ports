@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple .ini files emitter and parser for Perl
 
 LICENSE=	ART10 GPLv1

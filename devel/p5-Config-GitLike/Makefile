@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPANG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple git-compatible config file parser for Perl
 
 LICENSE=	ART10 GPLv1
