@@ -7,12 +7,13 @@
 
 PORTNAME=	App-SD
 PORTVERSION=	0.75
+PORTREVISION=	1
 CATEGORIES=	devel www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPANG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	App::SD is a peer-to-peer replicated distributed issue tracker
 
 LICENSE=	MIT
@@ -67,7 +68,8 @@ BUILD_DEPENDS+=	p5-Net-Google-Code>=0.14:${PORTSDIR}/net/p5-Net-Google-Code
 
 .if defined(WITH_HIVEMINDER)
 BUILD_DEPENDS+=	p5-Net-Jifty>=0.09:${PORTSDIR}/net/p5-Net-Jifty \
-		p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address
+		p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
+		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME
 .endif
 
 .if defined(WITH_TRAC)
