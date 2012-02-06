@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20111226
+PORTVERSION=	20120206
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -78,6 +78,7 @@ OPTIONS=	\
 	PLOT "Install package: plot" On \
 	PT_BR "Install package: pt_br" On \
 	QUATERNION "Install package: quaternion" On \
+	QUEUEING "Install package: queueing" On \
 	SECS1D "Install package: secs1d" On \
 	SECS2D "Install package: secs2d" On \
 	SECS3D "Install package: secs3d" On \
@@ -287,6 +288,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/pt_br.tar.gz:${PORTSDIR}/math/octave-forge-pt_br
 .endif
 .if defined(WITH_QUATERNION)
 RUN_DEPENDS+=	${TARBALLS_DIR}/quaternion.tar.gz:${PORTSDIR}/math/octave-forge-quaternion
+.endif
+.if defined(WITH_QUEUEING)
+RUN_DEPENDS+=	${TARBALLS_DIR}/queueing.tar.gz:${PORTSDIR}/math/octave-forge-queueing
 .endif
 .if defined(WITH_SECS1D)
 RUN_DEPENDS+=	${TARBALLS_DIR}/secs1d.tar.gz:${PORTSDIR}/math/octave-forge-secs1d
