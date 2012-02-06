@@ -830,6 +830,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-news.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-apps.html
@@ -1173,4 +1174,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5730.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5733.html
