@@ -18,6 +18,7 @@ include/gmpc/mpd-async-request.h
 include/gmpc/mpdinteraction.h
 include/gmpc/playlist3-messages.h
 include/gmpc/plugin.h
+include/gmpc/status_icon.h
 libdata/pkgconfig/gmpc.pc
 share/applications/gmpc.desktop
 %%DATADIR%%/aboutdialog.ui
@@ -200,10 +201,6 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/Humanity/32x32/status/emblem-favorite.png
 %%DATADIR%%/icons/Humanity/32x32/status/fetching-artist.png
 %%DATADIR%%/icons/Humanity/32x32/status/frame-artist.png
-%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray-disconnected.png
-%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray-pause.png
-%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray-play.png
-%%DATADIR%%/icons/Humanity/32x32/status/gmpc-tray.png
 %%DATADIR%%/icons/Humanity/32x32/status/media-album.png
 %%DATADIR%%/icons/Humanity/32x32/status/media-artist.png
 %%DATADIR%%/icons/Humanity/32x32/status/media-codec.png
@@ -278,10 +275,6 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/Humanity/64x64/status/emblem-favorite.png
 %%DATADIR%%/icons/Humanity/64x64/status/fetching-artist.png
 %%DATADIR%%/icons/Humanity/64x64/status/frame-artist.png
-%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray-disconnected.png
-%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray-pause.png
-%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray-play.png
-%%DATADIR%%/icons/Humanity/64x64/status/gmpc-tray.png
 %%DATADIR%%/icons/Humanity/64x64/status/media-album.png
 %%DATADIR%%/icons/Humanity/64x64/status/media-artist.png
 %%DATADIR%%/icons/Humanity/64x64/status/media-codec.png
@@ -316,10 +309,6 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/Humanity/72x72/status/emblem-favorite.png
 %%DATADIR%%/icons/Humanity/72x72/status/fetching-artist.png
 %%DATADIR%%/icons/Humanity/72x72/status/frame-artist.png
-%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray-disconnected.png
-%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray-pause.png
-%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray-play.png
-%%DATADIR%%/icons/Humanity/72x72/status/gmpc-tray.png
 %%DATADIR%%/icons/Humanity/72x72/status/media-album.png
 %%DATADIR%%/icons/Humanity/72x72/status/media-artist.png
 %%DATADIR%%/icons/Humanity/72x72/status/media-codec.png
@@ -354,10 +343,6 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/Humanity/96x96/status/emblem-favorite.png
 %%DATADIR%%/icons/Humanity/96x96/status/fetching-artist.png
 %%DATADIR%%/icons/Humanity/96x96/status/frame-artist.png
-%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray-disconnected.png
-%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray-pause.png
-%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray-play.png
-%%DATADIR%%/icons/Humanity/96x96/status/gmpc-tray.png
 %%DATADIR%%/icons/Humanity/96x96/status/media-album.png
 %%DATADIR%%/icons/Humanity/96x96/status/media-artist.png
 %%DATADIR%%/icons/Humanity/96x96/status/media-codec.png
@@ -394,10 +379,6 @@ share/applications/gmpc.desktop
 %%DATADIR%%/icons/Humanity/scalable/status/emblem-favorite.svg
 %%DATADIR%%/icons/Humanity/scalable/status/fetching-artist.svg
 %%DATADIR%%/icons/Humanity/scalable/status/frame-artist.svg
-%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray-disconnected.svg
-%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray-pause.svg
-%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray-play.svg
-%%DATADIR%%/icons/Humanity/scalable/status/gmpc-tray.svg
 %%DATADIR%%/icons/Humanity/scalable/status/media-album.svg
 %%DATADIR%%/icons/Humanity/scalable/status/media-artist.svg
 %%DATADIR%%/icons/Humanity/scalable/status/media-codec.svg
@@ -606,9 +587,10 @@ share/applications/gmpc.desktop
 %%DATADIR%%/password-dialog.ui
 %%DATADIR%%/playlist-message-window.ui
 %%DATADIR%%/playlist-save-dialog.ui
-%%DATADIR%%/playlist3.glade
+%%DATADIR%%/playlist3.ui
 %%DATADIR%%/preferences-connection.ui
 %%DATADIR%%/preferences-esf-dialog.ui
+%%DATADIR%%/preferences-metadata-appearance.ui
 %%DATADIR%%/preferences-mmkeys.ui
 %%DATADIR%%/preferences-playlist.ui
 %%DATADIR%%/preferences-plugins.ui
@@ -617,6 +599,94 @@ share/applications/gmpc.desktop
 %%DATADIR%%/preferences-trayicon.ui
 %%DATADIR%%/preferences.ui
 %%DATADIR%%/weblinks.list
+share/gnome/help/gmpc/C/AboutThisDocument.page
+share/gnome/help/gmpc/C/BrowserArtistBrowser.page
+share/gnome/help/gmpc/C/BrowserDatabase.page
+share/gnome/help/gmpc/C/BrowserGenreBrowser.page
+share/gnome/help/gmpc/C/BrowserMetadataBrowser.page
+share/gnome/help/gmpc/C/BrowserNowPlaying.page
+share/gnome/help/gmpc/C/BrowserPlayQueue.page
+share/gnome/help/gmpc/C/BrowserPlaylistEditor.page
+share/gnome/help/gmpc/C/BrowserSearch.page
+share/gnome/help/gmpc/C/Browsers.page
+share/gnome/help/gmpc/C/BuildInstallInstructions.page
+share/gnome/help/gmpc/C/EasyCommand.page
+share/gnome/help/gmpc/C/Images/Gmpc-easy-command.png
+share/gnome/help/gmpc/C/Images/browser-artist-browser.png
+share/gnome/help/gmpc/C/Images/browser-database.png
+share/gnome/help/gmpc/C/Images/browser-genre-browser.png
+share/gnome/help/gmpc/C/Images/browser-metadata-browser.png
+share/gnome/help/gmpc/C/Images/browser-nowplaying.png
+share/gnome/help/gmpc/C/Images/browser-pane-double.png
+share/gnome/help/gmpc/C/Images/browser-pane-single.png
+share/gnome/help/gmpc/C/Images/browser-playlist-editor.png
+share/gnome/help/gmpc/C/Images/browser-playqueue.png
+share/gnome/help/gmpc/C/Images/browser-search.png
+share/gnome/help/gmpc/C/Images/database-columns.png
+share/gnome/help/gmpc/C/Images/database.png
+share/gnome/help/gmpc/C/Images/easy-command.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_10.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_11.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_12.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_13.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_14.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_15.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_16.png
+share/gnome/help/gmpc/C/Images/gmpc-dev-install-guidestep_9.png
+share/gnome/help/gmpc/C/Images/main-view-collapsed2.png
+share/gnome/help/gmpc/C/Images/main-window-collapsed1.png
+share/gnome/help/gmpc/C/Images/main-window.png
+share/gnome/help/gmpc/C/Images/menu-bar.png
+share/gnome/help/gmpc/C/Images/message-bar.png
+share/gnome/help/gmpc/C/Images/meta-data-selector-artist.png
+share/gnome/help/gmpc/C/Images/meta-data-selector-lyrics.png
+share/gnome/help/gmpc/C/Images/nowplaying.png
+share/gnome/help/gmpc/C/Images/pc-cover-plain.png
+share/gnome/help/gmpc/C/Images/pc-cover.png
+share/gnome/help/gmpc/C/Images/pc-favorite-hl.png
+share/gnome/help/gmpc/C/Images/pc-favorite-nhl.png
+share/gnome/help/gmpc/C/Images/pc-playback-control.png
+share/gnome/help/gmpc/C/Images/pc-seek-bar.png
+share/gnome/help/gmpc/C/Images/pc-song-info.png
+share/gnome/help/gmpc/C/Images/play-queue-rightclick.png
+share/gnome/help/gmpc/C/Images/play-queue.png
+share/gnome/help/gmpc/C/Images/playback-control.png
+share/gnome/help/gmpc/C/Images/preferences-connection.png
+share/gnome/help/gmpc/C/Images/preferences-interface.png
+share/gnome/help/gmpc/C/Images/preferences-internal-extra-playlist-view.png
+share/gnome/help/gmpc/C/Images/preferences-metadata-appearance.png
+share/gnome/help/gmpc/C/Images/preferences-metadata-browser.png
+share/gnome/help/gmpc/C/Images/preferences-metadata-handler.png
+share/gnome/help/gmpc/C/Images/preferences-multimedia-keys.png
+share/gnome/help/gmpc/C/Images/preferences-notification.png
+share/gnome/help/gmpc/C/Images/preferences-plugins.png
+share/gnome/help/gmpc/C/Images/preferences-proxy.png
+share/gnome/help/gmpc/C/Images/preferences-server-settings.png
+share/gnome/help/gmpc/C/Images/preferences-tag-based-browser.png
+share/gnome/help/gmpc/C/Images/server-information.png
+share/gnome/help/gmpc/C/Images/sidebar-hori1.png
+share/gnome/help/gmpc/C/Images/sidebar-hori2.png
+share/gnome/help/gmpc/C/Images/sidebar.png
+share/gnome/help/gmpc/C/Images/status-bar.png
+share/gnome/help/gmpc/C/Images/status-icons.png
+share/gnome/help/gmpc/C/MainInterface.page
+share/gnome/help/gmpc/C/Preferences.page
+share/gnome/help/gmpc/C/PreferencesConnection.page
+share/gnome/help/gmpc/C/PreferencesInterface.page
+share/gnome/help/gmpc/C/PreferencesInternalExtraPlaylistView.page
+share/gnome/help/gmpc/C/PreferencesMetadataAppearance.page
+share/gnome/help/gmpc/C/PreferencesMetadataHandler.page
+share/gnome/help/gmpc/C/PreferencesMultimediaKeys.page
+share/gnome/help/gmpc/C/PreferencesNotification.page
+share/gnome/help/gmpc/C/PreferencesPlugins.page
+share/gnome/help/gmpc/C/PreferencesProxy.page
+share/gnome/help/gmpc/C/PreferencesServerSettings.page
+share/gnome/help/gmpc/C/PreferencesTagBasedBrowser.page
+share/gnome/help/gmpc/C/ProblemSolving.page
+share/gnome/help/gmpc/C/QuickStartGuide.page
+share/gnome/help/gmpc/C/TipsAndTricks.page
+share/gnome/help/gmpc/C/index.page
+share/gnome/help/gmpc/C/legal.xml
 share/icons/Humanity/128x128/apps/gmpc.png
 share/icons/Humanity/16x16/apps/gmpc.png
 share/icons/Humanity/22x22/apps/gmpc.png
@@ -647,6 +717,7 @@ share/locale/el/LC_MESSAGES/gmpc.mo
 share/locale/en_CA/LC_MESSAGES/gmpc.mo
 share/locale/en_GB/LC_MESSAGES/gmpc.mo
 share/locale/es/LC_MESSAGES/gmpc.mo
+share/locale/et/LC_MESSAGES/gmpc.mo
 share/locale/fi/LC_MESSAGES/gmpc.mo
 share/locale/fr/LC_MESSAGES/gmpc.mo
 share/locale/gl/LC_MESSAGES/gmpc.mo
@@ -664,6 +735,7 @@ share/locale/ms/LC_MESSAGES/gmpc.mo
 share/locale/nb/LC_MESSAGES/gmpc.mo
 share/locale/ne/LC_MESSAGES/gmpc.mo
 share/locale/nl/LC_MESSAGES/gmpc.mo
+share/locale/oc/LC_MESSAGES/gmpc.mo
 share/locale/pl/LC_MESSAGES/gmpc.mo
 share/locale/pt/LC_MESSAGES/gmpc.mo
 share/locale/pt_BR/LC_MESSAGES/gmpc.mo
@@ -675,7 +747,12 @@ share/locale/th/LC_MESSAGES/gmpc.mo
 share/locale/tr/LC_MESSAGES/gmpc.mo
 share/locale/zh_CN/LC_MESSAGES/gmpc.mo
 share/locale/zh_TW/LC_MESSAGES/gmpc.mo
-@dirrm include/gmpc
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/jv/LC_MESSAGES
+@dirrmtry share/locale/jv
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrmtry share/icons/Humanity/scalable/apps
 @dirrmtry share/icons/Humanity/scalable
 @dirrmtry share/icons/Humanity/96x96/apps
@@ -697,6 +774,12 @@ share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 @dirrmtry share/icons/Humanity/128x128/apps
 @dirrmtry share/icons/Humanity/128x128
 @dirrmtry share/icons/Humanity
+@dirrmtry share/icons
+@dirrmtry share/gnome/help/gmpc/C/Images
+@dirrmtry share/gnome/help/gmpc/C
+@dirrmtry share/gnome/help/gmpc
+@dirrmtry share/gnome/help
+@dirrmtry share/gnome
 @dirrm %%DATADIR%%/icons/hicolor/scalable/status
 @dirrm %%DATADIR%%/icons/hicolor/scalable/categories
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps
@@ -777,6 +860,5 @@ share/locale/zh_TW/LC_MESSAGES/gmpc.mo
 @dirrm %%DATADIR%%/icons/Humanity
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/jv/LC_MESSAGES
-@dirrmtry share/locale/jv
 @dirrmtry share/applications
+@dirrm include/gmpc

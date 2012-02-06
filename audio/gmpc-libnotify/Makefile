@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gmpc-libnotify
-PORTVERSION=	0.20.0
-PORTREVISION=	2
+PORTVERSION=	11.8.16
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A libnotify for gmpc
