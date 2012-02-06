@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.3.11
+PORTVERSION=	3.3.12
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -114,21 +114,21 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-pre-install-su:
-	@${MKDIR} ${DATADIR}/
+pre-su-install:
+	@${MKDIR} ${DATADIR}
 
 post-install:
 	${LN} -sf libmnogosearch.so \
 		${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/mnogosearch
 .if !defined (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
+	${MKDIR} ${DOCSDIR}
 .    for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .    endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${EXAMPLESDIR}/
 .endif
 	@${ECHO}
