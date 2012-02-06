@@ -6,6 +6,7 @@
     SUBDIR += R-cran-RFinanceYJ
     SUBDIR += R-cran-gmm
     SUBDIR += R-cran-plm
+    SUBDIR += R-cran-strucchange
     SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += beanie

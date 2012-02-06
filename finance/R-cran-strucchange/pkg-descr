@@ -1,0 +1,12 @@
+Testing, monitoring and dating structural changes in (linear)
+regression models. strucchange features tests/methods from the
+generalized fluctuation test framework as well as from the F test
+(Chow test) framework. This includes methods to fit, plot and test
+fluctuation processes (e.g., CUSUM, MOSUM, recursive/moving estimates)
+and F statistics, respectively. It is possible to monitor incoming
+data online using fluctuation processes. Finally, the breakpoints
+in regression models with structural changes can be estimated
+together with confidence intervals. Emphasis is always given to
+methods for visualizing the data.
+
+WWW:	http://cran.r-project.org/web/packages/strucchange/
