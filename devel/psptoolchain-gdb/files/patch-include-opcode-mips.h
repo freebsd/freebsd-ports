@@ -1,8 +1,8 @@
---- include/opcode/mips.h.orig	2005-09-06 19:42:58.000000000 +0100
-+++ include/opcode/mips.h	2007-02-08 20:06:04.000000000 +0000
-@@ -203,6 +203,83 @@
- #define MDMX_FMTSEL_VEC_QH	0x15
- #define MDMX_FMTSEL_VEC_OB	0x16
+--- ./include/opcode/mips.h.orig	2011-02-28 16:06:51.000000000 +0000
++++ ./include/opcode/mips.h	2012-01-25 22:24:29.000000000 +0000
+@@ -238,6 +238,83 @@
+ #define OP_SH_FZ		0
+ #define OP_MASK_FZ		0x1f
  
 +#define OP_SH_VFPU_DELTA	0
 +#define OP_MASK_VFPU_DELTA	0xfffc
@@ -84,7 +84,7 @@
  /* This structure holds information for a particular instruction.  */
  
  struct mips_opcode
-@@ -290,6 +367,29 @@
+@@ -327,6 +404,29 @@
  	Requires that "+A" or "+E" occur first to set position.
  	Enforces: 32 < (pos+size) <= 64.
  
@@ -114,32 +114,32 @@
     Floating point instructions:
     "D" 5 bit destination register (OP_*_FD)
     "M" 3 bit compare condition code (OP_*_CCC) (only used for mips4 and up)
-@@ -500,6 +600,8 @@
- #define INSN_5400		  0x01000000
- /* NEC VR5500 instruction.  */
- #define INSN_5500		  0x02000000
+@@ -620,6 +720,8 @@
+ #define INSN_SMARTMIPS            0x10000000
+ /* DSP R2 ASE  */
+ #define INSN_DSPR2                0x20000000
 +/* Sony Allegrex instruction.  */
-+#define INSN_ALLEGREX		  0x10000000
- /* MT ASE */
- #define INSN_MT                   0x04000000
- 
-@@ -549,6 +651,7 @@
++#define INSN_ALLEGREX             0x40000000
+ /* ST Microelectronics Loongson 2E.  */
+ #define INSN_LOONGSON_2E          0x40000000
+ /* ST Microelectronics Loongson 2F.  */
+@@ -677,6 +779,7 @@
  #define CPU_MIPS64      64
  #define CPU_MIPS64R2	65
  #define CPU_SB1         12310201        /* octal 'SB', 01.  */
 +#define CPU_ALLEGREX    10111431        /* octal 'AL', 31.  */
- 
- /* Test for membership in an ISA including chip specific ISAs.  INSN
-    is pointer to an element of the opcode table; ISA is the specified
-@@ -570,6 +673,7 @@
+ #define CPU_LOONGSON_2E 3001
+ #define CPU_LOONGSON_2F 3002
+ #define CPU_LOONGSON_3A 3003
+@@ -709,6 +812,7 @@
       || (cpu == CPU_VR4120 && ((insn)->membership & INSN_4120) != 0)	\
       || (cpu == CPU_VR5400 && ((insn)->membership & INSN_5400) != 0)	\
       || (cpu == CPU_VR5500 && ((insn)->membership & INSN_5500) != 0)	\
 +     || (cpu == CPU_ALLEGREX && ((insn)->membership & INSN_ALLEGREX) != 0)	\
-      || 0)	/* Please keep this term for easier source merging.  */
- 
- /* This is a list of macro expanded instructions.
-@@ -685,6 +789,16 @@
+      || (cpu == CPU_LOONGSON_2E                                         \
+          && ((insn)->membership & INSN_LOONGSON_2E) != 0)               \
+      || (cpu == CPU_LOONGSON_2F                                         \
+@@ -835,6 +939,16 @@
    M_LL_AB,
    M_LLD_AB,
    M_LS_A,
@@ -156,7 +156,7 @@
    M_LW_A,
    M_LW_AB,
    M_LWC0_A,
-@@ -774,6 +888,10 @@
+@@ -930,6 +1044,10 @@
    M_SUB_I,
    M_SUBU_I,
    M_SUBU_I_2,
@@ -167,7 +167,7 @@
    M_TEQ_I,
    M_TGE_I,
    M_TGEU_I,
-@@ -788,14 +906,24 @@
+@@ -944,14 +1062,24 @@
    M_ULH_A,
    M_ULHU,
    M_ULHU_A,

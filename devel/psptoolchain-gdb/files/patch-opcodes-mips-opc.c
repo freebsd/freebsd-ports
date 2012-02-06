@@ -1,14 +1,14 @@
---- opcodes/mips-opc.c.orig	2005-09-06 19:46:57.000000000 +0100
-+++ opcodes/mips-opc.c	2007-02-08 20:06:04.000000000 +0000
-@@ -109,6 +109,7 @@
+--- ./opcodes/mips-opc.c.orig	2011-02-28 16:34:39.000000000 +0000
++++ ./opcodes/mips-opc.c	2012-01-25 22:24:29.000000000 +0000
+@@ -120,6 +120,7 @@
  #define N5	(INSN_5400 | INSN_5500)
  #define N54	INSN_5400
  #define N55	INSN_5500
 +#define AL	INSN_ALLEGREX
+ #define IOCT	INSN_OCTEON
+ #define XLR     INSN_XLR
  
- #define G1      (T3             \
-                  )
-@@ -298,6 +299,7 @@
+@@ -391,6 +392,7 @@
  {"bnel",    "s,t,p",	0x54000000, 0xfc000000,	CBL|RD_s|RD_t, 		0,		I2|T3	},
  {"bnel",    "s,I,p",	0,    (int) M_BNEL_I,	INSN_MACRO,		0,		I2|T3	},
  {"break",   "",		0x0000000d, 0xffffffff,	TRAP,			0,		I1	},
@@ -16,18 +16,18 @@
  {"break",   "c",	0x0000000d, 0xfc00ffff,	TRAP,			0,		I1	},
  {"break",   "c,q",	0x0000000d, 0xfc00003f,	TRAP,			0,		I1	},
  {"c.f.d",   "S,T",	0x46200030, 0xffe007ff,	RD_S|RD_T|WR_CC|FP_D,	0,		I1	},
-@@ -459,7 +461,7 @@
- {"cabs.un.d",  "M,S,T",	0x46200071, 0xffe000ff,	RD_S|RD_T|WR_CC|FP_D,	0,		M3D	},
- {"cabs.un.ps", "M,S,T",	0x46c00071, 0xffe000ff,	RD_S|RD_T|WR_CC|FP_D,	0,		M3D	},
- {"cabs.un.s",  "M,S,T",	0x46000071, 0xffe000ff,	RD_S|RD_T|WR_CC|FP_S,	0,		M3D	},
--{"cache",   "k,o(b)",   0xbc000000, 0xfc000000, RD_b,           	0,		I3|I32|T3},
+@@ -573,7 +575,7 @@
+ {"flushd",  "",		0xbc020000, 0xffffffff, 0, 			0,		L1	},
+ {"flushid", "",		0xbc030000, 0xffffffff, 0, 			0,		L1	},
+ {"wb", 	    "o(b)",	0xbc040000, 0xfc1f0000, SM|RD_b,		0,		L1	},
+-{"cache",   "k,o(b)",   0xbc000000, 0xfc000000, RD_b,           	0,		I3_32|T3},
 +{"cache",   "k,o(b)",   0xbc000000, 0xfc000000, RD_b,           	0,		I3|I32|T3|AL},
- {"ceil.l.d", "D,S",	0x4620000a, 0xffff003f, WR_D|RD_S|FP_D,		0,		I3	},
- {"ceil.l.s", "D,S",	0x4600000a, 0xffff003f, WR_D|RD_S|FP_S,		0,		I3	},
- {"ceil.w.d", "D,S",	0x4620000e, 0xffff003f, WR_D|RD_S|FP_D,		0,		I2	},
-@@ -473,7 +475,9 @@
- {"cftc1",   "d,T",	0x41000023, 0xffe007ff, TRAP|LCD|WR_d|RD_C1|FP_S, 0,		MT32	},
- {"cftc2",   "d,E",	0x41000025, 0xffe007ff, TRAP|LCD|WR_d|RD_C2,	0,		MT32	},
+ {"cache",   "k,A(b)",	0,    (int) M_CACHE_AB, INSN_MACRO,		0,		I3_32|T3},
+ {"ceil.l.d", "D,S",	0x4620000a, 0xffff003f, WR_D|RD_S|FP_D,		0,		I3_33	},
+ {"ceil.l.s", "D,S",	0x4600000a, 0xffff003f, WR_D|RD_S|FP_S|FP_D,	0,		I3_33	},
+@@ -591,7 +593,9 @@
+ {"cins",    "t,r,+P,+S",0x70000033, 0xfc00003f, WR_t|RD_s,		0,		IOCT	}, /* cins32 */
+ {"cins",    "t,r,+p,+s",0x70000032, 0xfc00003f, WR_t|RD_s,		0,		IOCT	},
  {"clo",     "U,s",      0x70000021, 0xfc0007ff, WR_d|WR_t|RD_s, 	0,		I32|N55 },
 +{"clo",     "d,s",      0x00000017, 0xfc1f07ff, WR_d|RD_s,      	0,		AL	},
  {"clz",     "U,s",      0x70000020, 0xfc0007ff, WR_d|WR_t|RD_s, 	0,		I32|N55 },
@@ -35,65 +35,68 @@
  {"ctc0",    "t,G",	0x40c00000, 0xffe007ff,	COD|RD_t|WR_CC,		0,		I1	},
  {"ctc1",    "t,G",	0x44c00000, 0xffe007ff,	COD|RD_t|WR_CC|FP_S,	0,		I1	},
  {"ctc1",    "t,S",	0x44c00000, 0xffe007ff,	COD|RD_t|WR_CC|FP_S,	0,		I1	},
-@@ -498,13 +502,15 @@
- {"cvt.ps.s","D,V,T",	0x46000026, 0xffe0003f,	WR_D|RD_S|RD_T|FP_D,	0,		I5	},
+@@ -616,16 +620,16 @@
+ {"cvt.ps.s","D,V,T",	0x46000026, 0xffe0003f,	WR_D|RD_S|RD_T|FP_S|FP_D, 0,		I5_33	},
  {"cvt.pw.ps", "D,S",	0x46c00024, 0xffff003f,	WR_D|RD_S|FP_S|FP_D,	0,		M3D	},
  {"dabs",    "d,v",	0,    (int) M_DABS,	INSN_MACRO,		0,		I3	},
-+{"max",     "d,v,t",    0x0000002c, 0xfc0007ff, WR_d|RD_s|RD_t,         0,              AL	},
++{"max",     "d,v,t",    0x0000002c, 0xfc0007ff, WR_d|RD_s|RD_t,         0,              AL },
  {"dadd",    "d,v,t",	0x0000002c, 0xfc0007ff, WR_d|RD_s|RD_t,		0,		I3	},
  {"dadd",    "t,r,I",	0,    (int) M_DADD_I,	INSN_MACRO,		0,		I3	},
+-{"dadd",	"D,S,T",	0x45e00000,	0xffe0003f,	RD_S|RD_T|WR_D|FP_D,	0,	IL2E	},
+-{"dadd",	"D,S,T",	0x4b60000c,	0xffe0003f,	RD_S|RD_T|WR_D|FP_D,	0,	IL2F|IL3A	},
  {"daddi",   "t,r,j",	0x60000000, 0xfc000000, WR_t|RD_s,		0,		I3	},
  {"daddiu",  "t,r,j",	0x64000000, 0xfc000000, WR_t|RD_s,		0,		I3	},
-+{"min",     "d,v,t",    0x0000002d, 0xfc0007ff, WR_d|RD_s|RD_t,         0,              AL	},
++{"min",     "d,v,t",    0x0000002d, 0xfc0007ff, WR_d|RD_s|RD_t,         0,              AL },
  {"daddu",   "d,v,t",	0x0000002d, 0xfc0007ff, WR_d|RD_s|RD_t,		0,		I3	},
  {"daddu",   "t,r,I",	0,    (int) M_DADDU_I,	INSN_MACRO,		0,		I3	},
+ {"daddwc",  "d,s,t", 	0x70000038, 0xfc0007ff, WR_d|RD_s|RD_t|WR_C0|RD_C0,	0,	XLR	},
 -{"dbreak",  "",		0x7000003f, 0xffffffff,	0,			0,		N5	},
 +{"dbreak",  "",		0x7000003f, 0xffffffff,	0,			0,		N5|AL	},
  {"dclo",    "U,s",      0x70000025, 0xfc0007ff, RD_s|WR_d|WR_t, 	0,		I64|N55 },
  {"dclz",    "U,s",      0x70000024, 0xfc0007ff, RD_s|WR_d|WR_t, 	0,		I64|N55 },
  /* dctr and dctw are used on the r5000.  */
-@@ -593,7 +599,7 @@
+@@ -714,7 +718,7 @@
  {"dremu",   "z,s,t",    0x0000001f, 0xfc00ffff, RD_s|RD_t|WR_HILO,      0,		I3      },
- {"dremu",   "d,v,t",	3,    (int) M_DREMU_3,	INSN_MACRO,		0,		I3	},
- {"dremu",   "d,v,I",	3,    (int) M_DREMU_3I,	INSN_MACRO,		0,		I3	},
+ {"dremu",   "d,v,t",	0,    (int) M_DREMU_3,	INSN_MACRO,		0,		I3	},
+ {"dremu",   "d,v,I",	0,    (int) M_DREMU_3I,	INSN_MACRO,		0,		I3	},
 -{"dret",    "",		0x7000003e, 0xffffffff,	0,			0,		N5	},
 +{"dret",    "",		0x7000003e, 0xffffffff,	0,			0,		N5|AL	},
  {"drol",    "d,v,t",	0,    (int) M_DROL,	INSN_MACRO,		0,		I3	},
  {"drol",    "d,v,I",	0,    (int) M_DROL_I,	INSN_MACRO,		0,		I3	},
  {"dror",    "d,v,t",	0,    (int) M_DROR,	INSN_MACRO,		0,		I3	},
-@@ -634,10 +640,10 @@
- {"ei",      "t",	0x41606020, 0xffe0ffff,	WR_t|WR_C0,		0,		I33	},
+@@ -763,10 +767,10 @@
+ {"ei",      "t",	0x41606020, 0xffe0ffff,	WR_t|WR_C0,		0,		I33|IOCT},
  {"emt",     "",		0x41600be1, 0xffffffff, TRAP,			0,		MT32	},
  {"emt",     "t",	0x41600be1, 0xffe0ffff, TRAP|WR_t,		0,		MT32	},
--{"eret",    "",         0x42000018, 0xffffffff, 0,      		0,		I3|I32	},
-+{"eret",    "",         0x42000018, 0xffffffff, 0,      		0,		I3|I32|AL	},
+-{"eret",    "",         0x42000018, 0xffffffff, 0,      		0,		I3_32	},
++{"eret",    "",         0x42000018, 0xffffffff, 0,      		0,		I3_32|AL	},
  {"evpe",    "",		0x41600021, 0xffffffff, TRAP,			0,		MT32	},
  {"evpe",    "t",	0x41600021, 0xffe0ffff, TRAP|WR_t,		0,		MT32	},
 -{"ext",     "t,r,+A,+C", 0x7c000000, 0xfc00003f, WR_t|RD_s,    		0,		I33	},
 +{"ext",     "t,r,+A,+C", 0x7c000000, 0xfc00003f, WR_t|RD_s,    		0,		I33|AL	},
- {"floor.l.d", "D,S",	0x4620000b, 0xffff003f, WR_D|RD_S|FP_D,		0,		I3	},
- {"floor.l.s", "D,S",	0x4600000b, 0xffff003f, WR_D|RD_S|FP_S,		0,		I3	},
- {"floor.w.d", "D,S",	0x4620000f, 0xffff003f, WR_D|RD_S|FP_D,		0,		I2	},
-@@ -646,7 +652,7 @@
- {"flushd",  "",		0xbc020000, 0xffffffff, 0, 			0,		L1	},
- {"flushid", "",		0xbc030000, 0xffffffff, 0, 			0,		L1	},
+ {"exts32",  "t,r,+p,+S",0x7000003b, 0xfc00003f, WR_t|RD_s,		0,		IOCT	},
+ {"exts",    "t,r,+P,+S",0x7000003b, 0xfc00003f, WR_t|RD_s,		0,		IOCT	}, /* exts32 */
+ {"exts",    "t,r,+p,+s",0x7000003a, 0xfc00003f, WR_t|RD_s,		0,		IOCT	},
+@@ -775,7 +779,7 @@
+ {"floor.w.d", "D,S",	0x4620000f, 0xffff003f, WR_D|RD_S|FP_S|FP_D,	0,		I2	},
+ {"floor.w.s", "D,S",	0x4600000f, 0xffff003f, WR_D|RD_S|FP_S,		0,		I2	},
  {"hibernate","",        0x42000023, 0xffffffff,	0, 			0,		V1	},
 -{"ins",     "t,r,+A,+B", 0x7c000004, 0xfc00003f, WR_t|RD_s,    		0,		I33	},
 +{"ins",     "t,r,+A,+B", 0x7c000004, 0xfc00003f, WR_t|RD_s,    		0,		I33|AL	},
  {"jr",      "s",	0x00000008, 0xfc1fffff,	UBD|RD_s,		0,		I1	},
- {"jr.hb",   "s",	0x00000408, 0xfc1fffff,	UBD|RD_s,		0,		I33	},
- {"j",       "s",	0x00000008, 0xfc1fffff,	UBD|RD_s,		0,		I1	}, /* jr */
-@@ -680,18 +686,10 @@
- {"ld",	    "t,o(b)",   0xdc000000, 0xfc000000, WR_t|RD_b,		0,		I3	},
- {"ld",      "t,o(b)",	0,    (int) M_LD_OB,	INSN_MACRO,		0,		I1	},
- {"ld",      "t,A(b)",	0,    (int) M_LD_AB,	INSN_MACRO,		0,		I1	},
+ /* jr.hb is officially MIPS{32,64}R2, but it works on R1 as jr with
+    the same hazard barrier effect.  */
+@@ -817,18 +821,10 @@
+ {"ldaddw",  "t,b",	0x70000010, 0xfc00ffff,	SM|RD_t|WR_t|RD_b,	0,		XLR	},
+ {"ldaddwu", "t,b",	0x70000011, 0xfc00ffff,	SM|RD_t|WR_t|RD_b,	0,		XLR	},
+ {"ldaddd",  "t,b",	0x70000012, 0xfc00ffff,	SM|RD_t|WR_t|RD_b,	0,		XLR	},
 -{"ldc1",    "T,o(b)",	0xd4000000, 0xfc000000, CLD|RD_b|WR_T|FP_D,	0,		I2	},
 -{"ldc1",    "E,o(b)",	0xd4000000, 0xfc000000, CLD|RD_b|WR_T|FP_D,	0,		I2	},
--{"ldc1",    "T,A(b)",	0,    (int) M_LDC1_AB,	INSN_MACRO,		0,		I2	},
--{"ldc1",    "E,A(b)",	0,    (int) M_LDC1_AB,	INSN_MACRO,		0,		I2	},
+-{"ldc1",    "T,A(b)",	0,    (int) M_LDC1_AB,	INSN_MACRO,		INSN2_M_FP_D,	I2	},
+-{"ldc1",    "E,A(b)",	0,    (int) M_LDC1_AB,	INSN_MACRO,		INSN2_M_FP_D,	I2	},
 -{"l.d",     "T,o(b)",	0xd4000000, 0xfc000000, CLD|RD_b|WR_T|FP_D,	0,		I2	}, /* ldc1 */
--{"l.d",     "T,o(b)",	0,    (int) M_L_DOB,	INSN_MACRO,		0,		I1	},
--{"l.d",     "T,A(b)",	0,    (int) M_L_DAB,	INSN_MACRO,		0,		I1	},
+-{"l.d",     "T,o(b)",	0,    (int) M_L_DOB,	INSN_MACRO,		INSN2_M_FP_D,	I1	},
+-{"l.d",     "T,A(b)",	0,    (int) M_L_DAB,	INSN_MACRO,		INSN2_M_FP_D,	I1	},
 -{"ldc2",    "E,o(b)",	0xd8000000, 0xfc000000, CLD|RD_b|WR_CC,		0,		I2	},
 -{"ldc2",    "E,A(b)",	0,    (int) M_LDC2_AB,	INSN_MACRO,		0,		I2	},
 -{"ldc3",    "E,o(b)",	0xdc000000, 0xfc000000, CLD|RD_b|WR_CC,		0,		I2	},
@@ -102,162 +105,150 @@
 +/* ldc1 is at the bottom of the table.  */
 +/* ldc2 is at the bottom of the table.  */
 +/* ldc3 is at the bottom of the table.  */
-+{"ldl",	    "t,o(b)",	0x68000000, 0xfc000000, LDD|WR_t|RD_b,		0,		I3|AL	},
++{"ldl",        "t,o(b)",   0x68000000, 0xfc000000, LDD|WR_t|RD_b,      0,      I3|AL   },
  {"ldl",	    "t,A(b)",	0,    (int) M_LDL_AB,	INSN_MACRO,		0,		I3	},
  {"ldr",	    "t,o(b)",	0x6c000000, 0xfc000000, LDD|WR_t|RD_b,		0,		I3	},
  {"ldr",     "t,A(b)",	0,    (int) M_LDR_AB,	INSN_MACRO,		0,		I3	},
-@@ -721,8 +719,7 @@
- {"lwc1",    "E,A(b)",	0,    (int) M_LWC1_AB,	INSN_MACRO,		0,		I1	},
+@@ -858,8 +854,7 @@
+ {"lwc1",    "E,A(b)",	0,    (int) M_LWC1_AB,	INSN_MACRO,		INSN2_M_FP_S,	I1	},
  {"l.s",     "T,o(b)",	0xc4000000, 0xfc000000,	CLD|RD_b|WR_T|FP_S,	0,		I1	}, /* lwc1 */
- {"l.s",     "T,A(b)",	0,    (int) M_LWC1_AB,	INSN_MACRO,		0,		I1	},
+ {"l.s",     "T,A(b)",	0,    (int) M_LWC1_AB,	INSN_MACRO,		INSN2_M_FP_S,	I1	},
 -{"lwc2",    "E,o(b)",	0xc8000000, 0xfc000000,	CLD|RD_b|WR_CC,		0,		I1	},
 -{"lwc2",    "E,A(b)",	0,    (int) M_LWC2_AB,	INSN_MACRO,		0,		I1	},
 +/* lwc2 is at the bottom of the table.  */
  {"lwc3",    "E,o(b)",	0xcc000000, 0xfc000000,	CLD|RD_b|WR_CC,		0,		I1	},
  {"lwc3",    "E,A(b)",	0,    (int) M_LWC3_AB,	INSN_MACRO,		0,		I1	},
  {"lwl",     "t,o(b)",	0x88000000, 0xfc000000,	LDD|RD_b|WR_t,		0,		I1	},
-@@ -755,10 +752,12 @@
- {"madd.s",  "D,R,S,T",	0x4c000020, 0xfc00003f, RD_R|RD_S|RD_T|WR_D|FP_S,    0,		I4	},
- {"madd.ps", "D,R,S,T",	0x4c000026, 0xfc00003f, RD_R|RD_S|RD_T|WR_D|FP_D,    0,		I5	},
- {"madd",    "s,t",      0x0000001c, 0xfc00ffff, RD_s|RD_t|WR_HILO,           0,		L1 },
-+{"madd",    "s,t",      0x0000001c, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,         AL	},
- {"madd",    "s,t",      0x70000000, 0xfc00ffff, RD_s|RD_t|MOD_HILO,          0,		I32|N55},
- {"madd",    "s,t",      0x70000000, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,		G1 },
- {"madd",    "d,s,t",    0x70000000, 0xfc0007ff, RD_s|RD_t|WR_HILO|WR_d|IS_M, 0,		G1 },
- {"maddu",   "s,t",      0x0000001d, 0xfc00ffff, RD_s|RD_t|WR_HILO,           0,		L1 },
-+{"maddu",   "s,t",      0x0000001d, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,         AL	},
- {"maddu",   "s,t",      0x70000001, 0xfc00ffff, RD_s|RD_t|MOD_HILO,          0,		I32|N55},
- {"maddu",   "s,t",      0x70000001, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,		G1	},
+@@ -900,13 +895,13 @@
+ {"madd.ps",	"D,S,T",	0x71600018,	0xffe0003f,	RD_S|RD_T|WR_D|FP_D,	0,	IL2F	},
+ {"madd",    "s,t",      0x0000001c, 0xfc00ffff, RD_s|RD_t|WR_HILO,           0,		L1	},
+ {"madd",    "s,t",      0x70000000, 0xfc00ffff, RD_s|RD_t|MOD_HILO,          0,		I32|N55	},
+-{"madd",    "s,t",      0x70000000, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,		G1	},
++{"madd",    "s,t",      0x70000000, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,		G1|AL	},
+ {"madd",    "7,s,t",	0x70000000, 0xfc00e7ff, MOD_a|RD_s|RD_t,             0,         D32	},
+ {"madd",    "d,s,t",    0x70000000, 0xfc0007ff, RD_s|RD_t|WR_HILO|WR_d|IS_M, 0,		G1	},
+ {"maddp",   "s,t",      0x70000441, 0xfc00ffff,	RD_s|RD_t|MOD_HILO,	     0,		SMT	},
+ {"maddu",   "s,t",      0x0000001d, 0xfc00ffff, RD_s|RD_t|WR_HILO,           0,		L1	},
+ {"maddu",   "s,t",      0x70000001, 0xfc00ffff, RD_s|RD_t|MOD_HILO,          0,		I32|N55	},
+-{"maddu",   "s,t",      0x70000001, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,		G1	},
++{"maddu",   "s,t",      0x70000001, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M,      0,		G1|AL	},
+ {"maddu",   "7,s,t",	0x70000001, 0xfc00e7ff, MOD_a|RD_s|RD_t,             0,         D32	},
  {"maddu",   "d,s,t",    0x70000001, 0xfc0007ff, RD_s|RD_t|WR_HILO|WR_d|IS_M, 0,		G1	},
-@@ -799,7 +798,7 @@
+ {"madd16",  "s,t",      0x00000028, 0xfc00ffff, RD_s|RD_t|MOD_HILO,	0,		N411    },
+@@ -945,7 +940,7 @@
+ /* mfc2 is at the bottom of the table.  */
  /* mfhc2 is at the bottom of the table.  */
- {"mfc3",    "t,G",	0x4c000000, 0xffe007ff,	LCD|WR_t|RD_C3,		0,		I1	},
- {"mfc3",    "t,G,H",    0x4c000000, 0xffe007f8, LCD|WR_t|RD_C3, 	0,		I32     },
+ /* mfc3 is at the bottom of the table.  */
 -{"mfdr",    "t,G",	0x7000003d, 0xffe007ff,	LCD|WR_t|RD_C0,		0,		N5      },
 +{"mfdr",    "t,G",	0x7000003d, 0xffe007ff,	LCD|WR_t|RD_C0,		0,		N5|AL      },
  {"mfhi",    "d",	0x00000010, 0xffff07ff,	WR_d|RD_HI,		0,		I1	},
  {"mfhi",    "d,9",	0x00000010, 0xff9f07ff, WR_d|RD_HI,		0,		D32	},
  {"mflo",    "d",	0x00000012, 0xffff07ff,	WR_d|RD_LO,		0,		I1	},
-@@ -818,7 +817,7 @@
+@@ -967,7 +962,7 @@
  {"movf.l",  "X,Y,N",	0x46a00011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_D,	0,		MX|SB1	},
- {"movf.s",  "D,S,N",    0x46000011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_S,   0,		I4|I32	},
- {"movf.ps", "D,S,N",	0x46c00011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_D,	0,		I5	},
--{"movn",    "d,v,t",    0x0000000b, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4|I32	},
-+{"movn",    "d,v,t",    0x0000000b, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4|I32|AL	},
+ {"movf.s",  "D,S,N",    0x46000011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_S,   0,		I4_32	},
+ {"movf.ps", "D,S,N",	0x46c00011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_D,	0,		I5_33	},
+-{"movn",    "d,v,t",    0x0000000b, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4_32|IL2E|IL2F	},
++{"movn",    "d,v,t",    0x0000000b, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4_32|IL2E|IL2F|AL	},
+ {"movnz",   "d,v,t",    0x0000000b, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		IL2E|IL2F|IL3A	},
  {"ffc",     "d,v",	0x0000000b, 0xfc1f07ff,	WR_d|RD_s,		0,		L1	},
- {"movn.d",  "D,S,t",    0x46200013, 0xffe0003f, WR_D|RD_S|RD_t|FP_D,    0,		I4|I32	},
- {"movn.l",  "D,S,t",    0x46a00013, 0xffe0003f, WR_D|RD_S|RD_t|FP_D,    0,		MX|SB1	},
-@@ -831,7 +830,7 @@
+ {"movn.d",  "D,S,t",    0x46200013, 0xffe0003f, WR_D|RD_S|RD_t|FP_D,    0,		I4_32	},
+@@ -981,7 +976,7 @@
  {"movt.l",  "X,Y,N",    0x46a10011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_D,   0,		MX|SB1	},
- {"movt.s",  "D,S,N",    0x46010011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_S,   0,		I4|I32	},
- {"movt.ps", "D,S,N",	0x46c10011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_D,	0,		I5	},
--{"movz",    "d,v,t",    0x0000000a, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4|I32	},
+ {"movt.s",  "D,S,N",    0x46010011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_S,   0,		I4_32	},
+ {"movt.ps", "D,S,N",	0x46c10011, 0xffe3003f, WR_D|RD_S|RD_CC|FP_D,	0,		I5_33	},
+-{"movz",    "d,v,t",    0x0000000a, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4_32|IL2E|IL2F	},
 +{"movz",    "d,v,t",    0x0000000a, 0xfc0007ff, WR_d|RD_s|RD_t, 	0,		I4|I32|AL	},
  {"ffs",     "d,v",	0x0000000a, 0xfc1f07ff,	WR_d|RD_s,		0,		L1	},
- {"movz.d",  "D,S,t",    0x46200012, 0xffe0003f, WR_D|RD_S|RD_t|FP_D,    0,		I4|I32	},
+ {"movz.d",  "D,S,t",    0x46200012, 0xffe0003f, WR_D|RD_S|RD_t|FP_D,    0,		I4_32	},
  {"movz.l",  "D,S,t",    0x46a00012, 0xffe0003f, WR_D|RD_S|RD_t|FP_D,    0,		MX|SB1	},
-@@ -848,8 +847,10 @@
- {"msub.s",  "D,R,S,T",	0x4c000028, 0xfc00003f, RD_R|RD_S|RD_T|WR_D|FP_S, 0,		I4	},
- {"msub.ps", "D,R,S,T",	0x4c00002e, 0xfc00003f, RD_R|RD_S|RD_T|WR_D|FP_D, 0,		I5	},
+@@ -1010,8 +1005,10 @@
+ {"msub.ps",	"D,S,T",	0x71600019,	0xffe0003f,	RD_S|RD_T|WR_D|FP_D,	0,	IL2F	},
  {"msub",    "s,t",      0x0000001e, 0xfc00ffff, RD_s|RD_t|WR_HILO,	0,		L1    	},
-+{"msub",    "s,t",      0x0000002e, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M, 0,              AL	},
  {"msub",    "s,t",      0x70000004, 0xfc00ffff, RD_s|RD_t|MOD_HILO,     0,		I32|N55 },
++{"msub",    "s,t",      0x0000002e, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M, 0,              AL },
+ {"msub",    "7,s,t",	0x70000004, 0xfc00e7ff, MOD_a|RD_s|RD_t,        0,              D32	},
  {"msubu",   "s,t",      0x0000001f, 0xfc00ffff, RD_s|RD_t|WR_HILO,	0,		L1	},
-+{"msubu",   "s,t",      0x0000002f, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M, 0,              AL	},
++{"msubu",   "s,t",      0x0000002f, 0xfc00ffff, RD_s|RD_t|WR_HILO|IS_M, 0,              AL },
  {"msubu",   "s,t",      0x70000005, 0xfc00ffff, RD_s|RD_t|MOD_HILO,     0,		I32|N55	},
+ {"msubu",   "7,s,t",	0x70000005, 0xfc00e7ff, MOD_a|RD_s|RD_t,        0,              D32	},
  {"mtpc",    "t,P",	0x4080c801, 0xffe0ffc1,	COD|RD_t|WR_C0,		0,		M1|N5	},
- {"mtps",    "t,P",	0x4080c800, 0xffe0ffc1,	COD|RD_t|WR_C0,		0,		M1|N5	},
-@@ -864,7 +865,7 @@
+@@ -1026,7 +1023,7 @@
+ /* mtc2 is at the bottom of the table.  */
  /* mthc2 is at the bottom of the table.  */
- {"mtc3",    "t,G",	0x4c800000, 0xffe007ff,	COD|RD_t|WR_C3|WR_CC,	0,		I1	},
- {"mtc3",    "t,G,H",    0x4c800000, 0xffe007f8, COD|RD_t|WR_C3|WR_CC,   0,		I32     },
+ /* mtc3 is at the bottom of the table.  */
 -{"mtdr",    "t,G",	0x7080003d, 0xffe007ff,	COD|RD_t|WR_C0,		0,		N5	},
 +{"mtdr",    "t,G",	0x7080003d, 0xffe007ff,	COD|RD_t|WR_C0,		0,		N5|AL	},
  {"mthi",    "s",	0x00000011, 0xfc1fffff,	RD_s|WR_HI,		0,		I1	},
  {"mthi",    "s,7",	0x00000011, 0xfc1fe7ff, RD_s|WR_HI,		0,		D32	},
  {"mtlo",    "s",	0x00000013, 0xfc1fffff,	RD_s|WR_LO,		0,		I1	},
-@@ -1018,13 +1019,13 @@
+@@ -1211,13 +1208,13 @@
  {"rol",     "d,v,I",	0,    (int) M_ROL_I,	INSN_MACRO,		0,		I1	},
  {"ror",     "d,v,t",	0,    (int) M_ROR,	INSN_MACRO,		0,		I1	},
  {"ror",     "d,v,I",	0,    (int) M_ROR_I,	INSN_MACRO,		0,		I1	},
--{"ror",	    "d,w,<",	0x00200002, 0xffe0003f,	WR_d|RD_t,		0,		N5|I33	},
--{"rorv",    "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		N5|I33	},
--{"rotl",    "d,v,t",	0,    (int) M_ROL,	INSN_MACRO,		0,		I33	},
--{"rotl",    "d,v,I",	0,    (int) M_ROL_I,	INSN_MACRO,		0,		I33	},
--{"rotr",    "d,v,t",	0,    (int) M_ROR,	INSN_MACRO,		0,		I33	},
--{"rotr",    "d,v,I",	0,    (int) M_ROR_I,	INSN_MACRO,		0,		I33	},
--{"rotrv",   "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		I33	},
-+{"ror",	    "d,w,<",	0x00200002, 0xffe0003f,	WR_d|RD_t,		0,		N5|I33|AL	},
-+{"rorv",    "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		N5|I33|AL	},
-+{"rotl",    "d,v,t",	0,    (int) M_ROL,	INSN_MACRO,		0,		I33|AL	},
-+{"rotl",    "d,v,I",	0,    (int) M_ROL_I,	INSN_MACRO,		0,		I33|AL	},
-+{"rotr",    "d,v,t",	0,    (int) M_ROR,	INSN_MACRO,		0,		I33|AL	},
-+{"rotr",    "d,v,I",	0,    (int) M_ROR_I,	INSN_MACRO,		0,		I33|AL	},
-+{"rotrv",   "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		I33|AL	},
- {"round.l.d", "D,S",	0x46200008, 0xffff003f, WR_D|RD_S|FP_D,		0,		I3	},
- {"round.l.s", "D,S",	0x46000008, 0xffff003f, WR_D|RD_S|FP_S,		0,		I3	},
- {"round.w.d", "D,S",	0x4620000c, 0xffff003f, WR_D|RD_S|FP_D,		0,		I2	},
-@@ -1056,24 +1057,17 @@
- {"sdbbp",   "c,q",	0x0000000e, 0xfc00003f,	TRAP,			0,		G2	},
- {"sdbbp",   "",         0x7000003f, 0xffffffff, TRAP,           	0,		I32     },
- {"sdbbp",   "B",        0x7000003f, 0xfc00003f, TRAP,           	0,		I32     },
--{"sdc1",    "T,o(b)",	0xf4000000, 0xfc000000, SM|RD_T|RD_b|FP_D,	0,		I2	},
--{"sdc1",    "E,o(b)",	0xf4000000, 0xfc000000, SM|RD_T|RD_b|FP_D,	0,		I2	},
--{"sdc1",    "T,A(b)",	0,    (int) M_SDC1_AB,	INSN_MACRO,		0,		I2	},
--{"sdc1",    "E,A(b)",	0,    (int) M_SDC1_AB,	INSN_MACRO,		0,		I2	},
--{"sdc2",    "E,o(b)",	0xf8000000, 0xfc000000, SM|RD_C2|RD_b,		0,		I2	},
--{"sdc2",    "E,A(b)",	0,    (int) M_SDC2_AB,	INSN_MACRO,		0,		I2	},
--{"sdc3",    "E,o(b)",	0xfc000000, 0xfc000000, SM|RD_C3|RD_b,		0,		I2	},
--{"sdc3",    "E,A(b)",	0,    (int) M_SDC3_AB,	INSN_MACRO,		0,		I2	},
--{"s.d",     "T,o(b)",	0xf4000000, 0xfc000000, SM|RD_T|RD_b|FP_D,	0,		I2	},
--{"s.d",     "T,o(b)",	0,    (int) M_S_DOB,	INSN_MACRO,		0,		I1	},
--{"s.d",     "T,A(b)",	0,    (int) M_S_DAB,	INSN_MACRO,		0,		I1	},
+-{"ror",	    "d,w,<",	0x00200002, 0xffe0003f,	WR_d|RD_t,		0,		N5|I33|SMT },
+-{"rorv",    "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		N5|I33|SMT },
+-{"rotl",    "d,v,t",	0,    (int) M_ROL,	INSN_MACRO,		0,		I33|SMT	},
+-{"rotl",    "d,v,I",	0,    (int) M_ROL_I,	INSN_MACRO,		0,		I33|SMT	},
+-{"rotr",    "d,v,t",	0,    (int) M_ROR,	INSN_MACRO,		0,		I33|SMT	},
+-{"rotr",    "d,v,I",	0,    (int) M_ROR_I,	INSN_MACRO,		0,		I33|SMT	},
+-{"rotrv",   "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		I33|SMT	},
++{"ror",	    "d,w,<",	0x00200002, 0xffe0003f,	WR_d|RD_t,		0,		N5|I33|SMT|AL },
++{"rorv",    "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		N5|I33|SMT|AL },
++{"rotl",    "d,v,t",	0,    (int) M_ROL,	INSN_MACRO,		0,		I33|SMT|AL	},
++{"rotl",    "d,v,I",	0,    (int) M_ROL_I,	INSN_MACRO,		0,		I33|SMT|AL	},
++{"rotr",    "d,v,t",	0,    (int) M_ROR,	INSN_MACRO,		0,		I33|SMT|AL	},
++{"rotr",    "d,v,I",	0,    (int) M_ROR_I,	INSN_MACRO,		0,		I33|SMT|AL	},
++{"rotrv",   "d,t,s",	0x00000046, 0xfc0007ff,	RD_t|RD_s|WR_d,		0,		I33|SMT|AL	},
+ {"round.l.d", "D,S",	0x46200008, 0xffff003f, WR_D|RD_S|FP_D,		0,		I3_33	},
+ {"round.l.s", "D,S",	0x46000008, 0xffff003f, WR_D|RD_S|FP_S|FP_D,	0,		I3_33	},
+ {"round.w.d", "D,S",	0x4620000c, 0xffff003f, WR_D|RD_S|FP_S|FP_D,	0,		I2	},
+@@ -1261,13 +1258,13 @@
+ {"s.d",     "T,o(b)",	0xf4000000, 0xfc000000, SM|RD_T|RD_b|FP_D,	0,		I2	},
+ {"s.d",     "T,o(b)",	0,    (int) M_S_DOB,	INSN_MACRO,		INSN2_M_FP_D,	I1	},
+ {"s.d",     "T,A(b)",	0,    (int) M_S_DAB,	INSN_MACRO,		INSN2_M_FP_D,	I1	},
 -{"sdl",     "t,o(b)",	0xb0000000, 0xfc000000,	SM|RD_t|RD_b,		0,		I3	},
-+/* sdc1 is at the bottom of the table.  */
-+/* sdc2 is at the bottom of the table.  */
-+/* sdc3 is at the bottom of the table.  */
-+/* s.d (sdc1 is at the bottom of the table.  */
 +{"sdl",     "t,o(b)",	0xb0000000, 0xfc000000,	SM|RD_t|RD_b,		0,		I3|AL	},
  {"sdl",     "t,A(b)",	0,    (int) M_SDL_AB,	INSN_MACRO,		0,		I3	},
  {"sdr",     "t,o(b)",	0xb4000000, 0xfc000000,	SM|RD_t|RD_b,		0,		I3	},
  {"sdr",     "t,A(b)",	0,    (int) M_SDR_AB,	INSN_MACRO,		0,		I3	},
- {"sdxc1",   "S,t(b)",   0x4c000009, 0xfc0007ff, SM|RD_S|RD_t|RD_b,	0,		I4	},
+ {"sdxc1",   "S,t(b)",   0x4c000009, 0xfc0007ff, SM|RD_S|RD_t|RD_b|FP_D,	0,		I4_33	},
 -{"seb",     "d,w",	0x7c000420, 0xffe007ff,	WR_d|RD_t,		0,		I33	},
 -{"seh",     "d,w",	0x7c000620, 0xffe007ff,	WR_d|RD_t,		0,		I33	},
 +{"seb",     "d,w",	0x7c000420, 0xffe007ff,	WR_d|RD_t,		0,		I33|AL	},
 +{"seh",     "d,w",	0x7c000620, 0xffe007ff,	WR_d|RD_t,		0,		I33|AL	},
  {"selsl",   "d,v,t",	0x00000005, 0xfc0007ff,	WR_d|RD_s|RD_t,		0,		L1	},
  {"selsr",   "d,v,t",	0x00000001, 0xfc0007ff,	WR_d|RD_s|RD_t,		0,		L1	},
- {"seq",     "d,v,t",	0,    (int) M_SEQ,	INSN_MACRO,		0,		I1	},
-@@ -1165,8 +1159,7 @@
- {"swc1",    "E,A(b)",	0,    (int) M_SWC1_AB,	INSN_MACRO,		0,		I1	},
+ {"seq",	    "d,v,t",	0x7000002a, 0xfc0007ff, WR_d|RD_s|RD_t,		0,		IOCT	},
+@@ -1387,8 +1384,7 @@
+ {"swc1",    "E,A(b)",	0,    (int) M_SWC1_AB,	INSN_MACRO,		INSN2_M_FP_S,	I1	},
  {"s.s",     "T,o(b)",	0xe4000000, 0xfc000000,	SM|RD_T|RD_b|FP_S,	0,		I1	}, /* swc1 */
- {"s.s",     "T,A(b)",	0,    (int) M_SWC1_AB,	INSN_MACRO,		0,		I1	},
+ {"s.s",     "T,A(b)",	0,    (int) M_SWC1_AB,	INSN_MACRO,		INSN2_M_FP_S,	I1	},
 -{"swc2",    "E,o(b)",	0xe8000000, 0xfc000000,	SM|RD_C2|RD_b,		0,		I1	},
 -{"swc2",    "E,A(b)",	0,    (int) M_SWC2_AB,	INSN_MACRO,		0,		I1	},
 +/* swc2 is at the bottom of the table.  */
  {"swc3",    "E,o(b)",	0xec000000, 0xfc000000,	SM|RD_C3|RD_b,		0,		I1	},
  {"swc3",    "E,A(b)",	0,    (int) M_SWC3_AB,	INSN_MACRO,		0,		I1	},
  {"swl",     "t,o(b)",	0xa8000000, 0xfc000000,	SM|RD_t|RD_b,		0,		I1	},
-@@ -1251,7 +1244,8 @@
+@@ -1485,7 +1481,8 @@
+ {"wait",    "J",        0x42000020, 0xfe00003f, TRAP,   		0,		I32|N55	},
  {"waiti",   "",		0x42000020, 0xffffffff,	TRAP,			0,		L1	},
- {"wb", 	    "o(b)",	0xbc040000, 0xfc1f0000, SM|RD_b,		0,		L1	},
  {"wrpgpr",  "d,w",	0x41c00000, 0xffe007ff, RD_t,			0,		I33	},
 -{"wsbh",    "d,w",	0x7c0000a0, 0xffe007ff,	WR_d|RD_t,		0,		I33	},
 +{"wsbh",    "d,w",	0x7c0000a0, 0xffe007ff,	WR_d|RD_t,		0,		I33|AL	},
 +{"wsbw",    "d,t",	0x7c0000e0, 0xffe007ff, WR_d|RD_t,		0,		AL	},
  {"xor",     "d,v,t",	0x00000026, 0xfc0007ff,	WR_d|RD_s|RD_t,		0,		I1	},
  {"xor",     "t,r,I",	0,    (int) M_XOR_I,	INSN_MACRO,		0,		I1	},
- {"xor.ob",  "X,Y,Q",	0x7800000d, 0xfc20003f,	WR_D|RD_S|RD_T|FP_D,	0,		MX|SB1	},
-@@ -1263,6 +1257,319 @@
- {"yield",   "s",	0x7c000009, 0xfc1fffff, TRAP|RD_s,		0,		MT32	},
- {"yield",   "d,s",	0x7c000009, 0xfc1f07ff, TRAP|WR_d|RD_s,		0,		MT32	},
- 
+ {"xor",	"D,S,T",	0x47800002,	0xffe0003f,	RD_S|RD_T|WR_D|FP_D,	0,	IL2E	},
+@@ -1564,7 +1561,318 @@
+ {"udi15",    "s,t,+2",	0x7000001f, 0xfc00003f,	WR_d|RD_s|RD_t,		0,		I33	},
+ {"udi15",    "s,+3",	0x7000001f, 0xfc00003f,	WR_d|RD_s|RD_t,		0,		I33	},
+ {"udi15",    "+4",	0x7000001f, 0xfc00003f,	WR_d|RD_s|RD_t,		0,		I33	},
 +/* Sony Allegrex CPU core.  */
 +{"bitrev",  "d,t",      0x7c000520, 0xffe007ff, WR_d|RD_t,              0,              AL	},
 +{"mfic",    "t,G",	0x70000024, 0xffe007ff, LCD|WR_t|RD_C0,		0,		AL	},
 +{"mtic",    "t,G",	0x70000026, 0xffe007ff, COD|RD_t|WR_C0,		0,		AL	},
-+
+ 
 +/* Sony Allegrex VFPU instructions.  */
 +{"bvf",     "?c,p",		0x49000000, 0xffe30000, CBD|RD_CC,	0,		AL	},
 +{"bvfl",    "?c,p",		0x49020000, 0xffe30000, CBL|RD_CC,	0,		AL	},
@@ -565,14 +556,14 @@
 +{"vflush",  "",			0xffff040d, 0xffffffff, RD_C2,		0,		AL	},
 +{"vsync",   "",			0xffff0320, 0xffffffff, RD_C2,		0,		AL	},
 +{"vsync",   "i",		0xffff0000, 0xffff0000, RD_C2,		0,		AL	},
-+
  /* Coprocessor 2 move/branch operations overlap with VR5400 .ob format
     instructions so they are here for the latters to take precedence.  */
  {"bc2f",    "p",	0x49000000, 0xffff0000,	CBD|RD_CC,		0,		I1	},
-@@ -1282,6 +1589,36 @@
- {"mtc2",    "t,G,H",	0x48800000, 0xffe007f8,	COD|RD_t|WR_C2|WR_CC,	0,		I32	},
- {"mthc2",   "t,i",	0x48e00000, 0xffe00000,	COD|RD_t|WR_C2|WR_CC,	0,		I33	},
+@@ -1609,6 +1917,38 @@
+ {"mtc3",    "t,G",	0x4c800000, 0xffe007ff,	COD|RD_t|WR_C3|WR_CC,	0,		I1	},
+ {"mtc3",    "t,G,H",    0x4c800000, 0xffe007f8, COD|RD_t|WR_C3|WR_CC,   0,		I32     },
  
++
 +/* Coprocessor 2 load/store operations overlap with the Allegrex VFPU
 +   instructions so they are here for the latters to take precedence.  */
 +/* COP1 ldc1 and sdc1 and COP3 ldc3 and sdc3 also overlap with the VFPU.  */
@@ -603,6 +594,7 @@
 +{"swc2",    "E,o(b)",	0xe8000000, 0xfc000000,	SM|RD_C2|RD_b,		0,		I1	},
 +{"swc2",    "E,A(b)",	0,    (int) M_SWC2_AB,	INSN_MACRO,		0,		I1	},
 +
- /* No hazard protection on coprocessor instructions--they shouldn't
-    change the state of the processor and if they do it's up to the
-    user to put in nops as necessary.  These are at the end so that the
++
+   /* Conflicts with the 4650's "mul" instruction.  Nobody's using the
+      4010 any more, so move this insn out of the way.  If the object
+      format gave us more info, we could do this right.  */
