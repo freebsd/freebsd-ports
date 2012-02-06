@@ -1,5 +1,5 @@
 --- Net-Server-0.99/lib/Net/Server/Proto/UDP.pm	2008-02-08 03:40:33.000000000 +0100
-+++ Net-Server-0.99/lib/Net/Server/Proto/UDP.pm	2010-10-05 15:41:16.000000000 +0200
++++ lib/Net/Server/Proto/UDP.pm	2010-10-05 15:41:16.000000000 +0200
 @@ -35,9 +35,4 @@
    my $class = ref($type) || $type || __PACKAGE__;
  
@@ -68,7 +68,7 @@
      unless $sock;
  
 --- Net-Server-0.99/lib/Net/Server/Proto.pm	2010-05-05 06:13:22.000000000 +0200
-+++ Net-Server-0.99/lib/Net/Server/Proto.pm	2010-10-05 17:56:38.000000000 +0200
++++ lib/Net/Server/Proto.pm	2010-10-05 17:56:38.000000000 +0200
 @@ -69,5 +69,6 @@
  
  
@@ -119,7 +119,7 @@
  
  You can see what Net::Server::Proto parsed out by looking at
 --- Net-Server-0.99/lib/Net/Server.pm	2010-07-09 16:55:31.000000000 +0200
-+++ Net-Server-0.99/lib/Net/Server.pm	2010-10-05 19:52:16.000000000 +0200
++++ lib/Net/Server.pm	2010-10-05 19:52:16.000000000 +0200
 @@ -26,5 +26,5 @@
  use strict;
  use vars qw($VERSION);
@@ -280,7 +280,7 @@
      push @fd, $fd .'|'. $sock->hup_string;
  
 --- Net-Server-0.99/lib/Net/Server.pod	2010-07-08 21:22:42.000000000 +0200
-+++ Net-Server-0.99/lib/Net/Server.pod	2010-10-05 19:32:28.000000000 +0200
++++ lib/Net/Server.pod	2010-10-05 19:32:28.000000000 +0200
 @@ -556,19 +556,46 @@
  bound at server startup.  May be of the form
  C<host:port/proto>, C<host:port>, C<port/proto>, or C<port>,
@@ -350,7 +350,7 @@
  passed to new or run may be either a scalar containing a single
  host or an arrayref of hosts - if the hosts array is shorter than
 --- Net-Server-0.99/lib/Net/Server/Proto/SSLEAY.pm.orig	2010-07-09 09:44:48.000000000 -0700
-+++ Net-Server-0.99/lib/Net/Server/Proto/SSLEAY.pm	2011-08-01 11:08:19.183613424 -0700
++++ lib/Net/Server/Proto/SSLEAY.pm	2011-08-01 11:08:19.183613424 -0700
 @@ -22,156 +22,254 @@
  package Net::Server::Proto::SSLEAY;
  
@@ -777,7 +777,7 @@
      no strict 'refs';
      *{__PACKAGE__."::${prop}"} = sub {
 --- Net-Server-0.99/lib/Net/Server/Proto/SSL.pm.orig	2010-05-04 20:13:03.000000000 -0700
-+++ Net-Server-0.99/lib/Net/Server/Proto/SSL.pm	2011-08-01 11:08:50.503627241 -0700
++++ lib/Net/Server/Proto/SSL.pm	2011-08-01 11:08:50.503627241 -0700
 @@ -22,14 +22,47 @@
  package Net::Server::Proto::SSL;
  
@@ -1125,7 +1125,7 @@
  Protocol module for Net::Server.  This module implements a
  secure socket layer over tcp (also known as SSL).
 --- Net-Server-0.99/lib/Net/Server/Proto/TCP.pm.orig	2011-08-01 10:24:36.463625993 -0700
-+++ Net-Server-0.99/lib/Net/Server/Proto/TCP.pm	2011-08-01 11:08:27.283623011 -0700
++++ lib/Net/Server/Proto/TCP.pm	2011-08-01 11:08:27.283623011 -0700
 @@ -22,11 +22,22 @@
  package Net::Server::Proto::TCP;
  
