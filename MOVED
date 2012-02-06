@@ -3230,3 +3230,4 @@ audio/wmmixer||2012-02-01|EOL Upstream; please use audio/wmsmixer instead
 x11-wm/xfce|x11-wm/xfce4|2012-02-02|Has expired: abandoned upstream, use x11-wm/xfce4 instead
 sysutils/py-dvdvideo|sysutils/dvdvideo|2012-02-03|Renamed for better naming
 science/R-cran-survival||2012-02-03|This CRAN port has been included in math/R
+editors/openoffice.org-3-devel|editors/openoffice-3-devel|2012-02-06|Project was taken over and renamed.
