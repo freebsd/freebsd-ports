@@ -1,5 +1,5 @@
---- gcc/config/mips/t-allegrex.orig	1970-01-01 01:00:00.000000000 +0100
-+++ gcc/config/mips/t-allegrex	2006-05-07 13:27:43.000000000 +0100
+--- ./gcc/config/mips/t-allegrex.orig	2012-01-21 14:11:19.000000000 +0000
++++ ./gcc/config/mips/t-allegrex	2012-01-21 14:11:19.000000000 +0000
 @@ -0,0 +1,29 @@
 +# Suppress building libgcc1.a, since the MIPS compiler port is complete
 +# and does not need anything from libgcc1.a.
