@@ -27,6 +27,7 @@ PORTDOCS=	README
 post-patch:
 	@${REINPLACE_CMD} -e '/ifdef _BIG_ENDIAN/s|ifdef|if _BYTE_ORDER ==|' \
 		${WRKSRC}/ttaenc.h
+	@${REINPLACE_CMD} -e 's|__inline void|static &|' ${WRKSRC}/ttaenc.c
 	@${REINPLACE_CMD} -e 's|gcc|${CC}| ; /strip/d ; \
 		s|install -m 755|${INSTALL_PROGRAM}|' ${WRKSRC}/Makefile
 
