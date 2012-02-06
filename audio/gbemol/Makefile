@@ -7,14 +7,14 @@
 
 PORTNAME=	gbemol
 PORTVERSION=	0.3.2
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	tmh.public@gmail.com
 COMMENT=	Graphical frontend for the Music Player Daemon
 
-LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
+LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 		curl.6:${PORTSDIR}/ftp/curl \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

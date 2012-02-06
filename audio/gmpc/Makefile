@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
@@ -17,7 +18,7 @@ COMMENT=	Full featured GTK2 client for musicpd
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
 		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
+LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
