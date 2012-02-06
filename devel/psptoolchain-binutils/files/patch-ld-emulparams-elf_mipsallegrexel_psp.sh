@@ -1,5 +1,5 @@
---- ld/emulparams/elf_mipsallegrexel_psp.sh.orig	1970-01-01 01:00:00.000000000 +0100
-+++ ld/emulparams/elf_mipsallegrexel_psp.sh	2006-05-09 02:55:36.000000000 +0100
+--- ./ld/emulparams/elf_mipsallegrexel_psp.sh.orig	2012-01-21 13:31:35.000000000 +0000
++++ ./ld/emulparams/elf_mipsallegrexel_psp.sh	2012-01-21 13:31:35.000000000 +0000
 @@ -0,0 +1,22 @@
 +# Based off of the default elf32 MIPS target.  However, we use a seperate
 +# script template because the PSP architecture defines sections that normally

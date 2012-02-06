@@ -1,57 +1,57 @@
---- ld/scripttempl/elf_psp.sc.orig	1970-01-01 01:00:00.000000000 +0100
-+++ ld/scripttempl/elf_psp.sc	2006-05-09 02:55:36.000000000 +0100
+--- ./ld/scripttempl/elf_psp.sc.orig	2012-01-21 13:31:35.000000000 +0000
++++ ./ld/scripttempl/elf_psp.sc	2012-01-21 13:31:35.000000000 +0000
 @@ -0,0 +1,496 @@
 +#
 +# Unusual variables checked by this code:
-+#	NOP - four byte opcode for no-op (defaults to 0)
-+#	NO_SMALL_DATA - no .sbss/.sbss2/.sdata/.sdata2 sections if not
-+#		empty.
-+#	SMALL_DATA_CTOR - .ctors contains small data.
-+#	SMALL_DATA_DTOR - .dtors contains small data.
-+#	DATA_ADDR - if end-of-text-plus-one-page isn't right for data start
-+#	INITIAL_READONLY_SECTIONS - at start of text segment
-+#	OTHER_READONLY_SECTIONS - other than .text .init .rodata ...
-+#		(e.g., .PARISC.milli)
-+#	OTHER_TEXT_SECTIONS - these get put in .text when relocating
-+#	OTHER_READWRITE_SECTIONS - other than .data .bss .ctors .sdata ...
-+#		(e.g., .PARISC.global)
-+#	OTHER_RELRO_SECTIONS - other than .data.rel.ro ...
-+#		(e.g. PPC32 .fixup, .got[12])
-+#	OTHER_BSS_SECTIONS - other than .bss .sbss ...
-+#	OTHER_SECTIONS - at the end
-+#	EXECUTABLE_SYMBOLS - symbols that must be defined for an
-+#		executable (e.g., _DYNAMIC_LINK)
++#  NOP - four byte opcode for no-op (defaults to 0)
++#  NO_SMALL_DATA - no .sbss/.sbss2/.sdata/.sdata2 sections if not
++#      empty.
++#  SMALL_DATA_CTOR - .ctors contains small data.
++#  SMALL_DATA_DTOR - .dtors contains small data.
++#  DATA_ADDR - if end-of-text-plus-one-page isn't right for data start
++#  INITIAL_READONLY_SECTIONS - at start of text segment
++#  OTHER_READONLY_SECTIONS - other than .text .init .rodata ...
++#      (e.g., .PARISC.milli)
++#  OTHER_TEXT_SECTIONS - these get put in .text when relocating
++#  OTHER_READWRITE_SECTIONS - other than .data .bss .ctors .sdata ...
++#      (e.g., .PARISC.global)
++#  OTHER_RELRO_SECTIONS - other than .data.rel.ro ...
++#      (e.g. PPC32 .fixup, .got[12])
++#  OTHER_BSS_SECTIONS - other than .bss .sbss ...
++#  OTHER_SECTIONS - at the end
++#  EXECUTABLE_SYMBOLS - symbols that must be defined for an
++#      executable (e.g., _DYNAMIC_LINK)
 +#       TEXT_START_ADDR - the first byte of the text segment, after any
 +#               headers.
 +#       TEXT_BASE_ADDRESS - the first byte of the text segment.
-+#	TEXT_START_SYMBOLS - symbols that appear at the start of the
-+#		.text section.
-+#	DATA_START_SYMBOLS - symbols that appear at the start of the
-+#		.data section.
-+#	OTHER_GOT_SYMBOLS - symbols defined just before .got.
-+#	OTHER_GOT_SECTIONS - sections just after .got.
-+#	OTHER_SDATA_SECTIONS - sections just after .sdata.
-+#	OTHER_BSS_SYMBOLS - symbols that appear at the start of the
-+#		.bss section besides __bss_start.
-+#	DATA_PLT - .plt should be in data segment, not text segment.
-+#	PLT_BEFORE_GOT - .plt just before .got when .plt is in data segement.
-+#	BSS_PLT - .plt should be in bss segment
-+#	TEXT_DYNAMIC - .dynamic in text segment, not data segment.
-+#	EMBEDDED - whether this is for an embedded system. 
-+#	SHLIB_TEXT_START_ADDR - if set, add to SIZEOF_HEADERS to set
-+#		start address of shared library.
-+#	INPUT_FILES - INPUT command of files to always include
-+#	WRITABLE_RODATA - if set, the .rodata section should be writable
-+#	INIT_START, INIT_END -  statements just before and just after
-+# 	combination of .init sections.
-+#	FINI_START, FINI_END - statements just before and just after
-+# 	combination of .fini sections.
-+#	STACK_ADDR - start of a .stack section.
-+#	OTHER_END_SYMBOLS - symbols to place right at the end of the script.
-+#	SEPARATE_GOTPLT - if set, .got.plt should be separate output section,
-+#		so that .got can be in the RELRO area.  It should be set to
-+#		the number of bytes in the beginning of .got.plt which can be
-+#		in the RELRO area as well.
++#  TEXT_START_SYMBOLS - symbols that appear at the start of the
++#      .text section.
++#  DATA_START_SYMBOLS - symbols that appear at the start of the
++#      .data section.
++#  OTHER_GOT_SYMBOLS - symbols defined just before .got.
++#  OTHER_GOT_SECTIONS - sections just after .got.
++#  OTHER_SDATA_SECTIONS - sections just after .sdata.
++#  OTHER_BSS_SYMBOLS - symbols that appear at the start of the
++#      .bss section besides __bss_start.
++#  DATA_PLT - .plt should be in data segment, not text segment.
++#  PLT_BEFORE_GOT - .plt just before .got when .plt is in data segement.
++#  BSS_PLT - .plt should be in bss segment
++#  TEXT_DYNAMIC - .dynamic in text segment, not data segment.
++#  EMBEDDED - whether this is for an embedded system. 
++#  SHLIB_TEXT_START_ADDR - if set, add to SIZEOF_HEADERS to set
++#      start address of shared library.
++#  INPUT_FILES - INPUT command of files to always include
++#  WRITABLE_RODATA - if set, the .rodata section should be writable
++#  INIT_START, INIT_END -  statements just before and just after
++#  combination of .init sections.
++#  FINI_START, FINI_END - statements just before and just after
++#  combination of .fini sections.
++#  STACK_ADDR - start of a .stack section.
++#  OTHER_END_SYMBOLS - symbols to place right at the end of the script.
++#  SEPARATE_GOTPLT - if set, .got.plt should be separate output section,
++#      so that .got can be in the RELRO area.  It should be set to
++#      the number of bytes in the beginning of .got.plt which can be
++#      in the RELRO area as well.
 +#
 +# When adding sections, do note that the names of some sections are used
 +# when specifying the start address of the next.
@@ -60,23 +60,23 @@
 +#  Many sections come in three flavours.  There is the 'real' section,
 +#  like ".data".  Then there are the per-procedure or per-variable
 +#  sections, generated by -ffunction-sections and -fdata-sections in GCC,
-+#  and useful for --gc-sections, which for a variable "foo" might be
++#  and useful for --gc-sections, which for a variable "foo" might be                                                                       
 +#  ".data.foo".  Then there are the linkonce sections, for which the linker
 +#  eliminates duplicates, which are named like ".gnu.linkonce.d.foo".
 +#  The exact correspondences are:
 +#
-+#  Section	Linkonce section
-+#  .text	.gnu.linkonce.t.foo
-+#  .rodata	.gnu.linkonce.r.foo
-+#  .data	.gnu.linkonce.d.foo
-+#  .bss		.gnu.linkonce.b.foo
-+#  .sdata	.gnu.linkonce.s.foo
-+#  .sbss	.gnu.linkonce.sb.foo
-+#  .sdata2	.gnu.linkonce.s2.foo
-+#  .sbss2	.gnu.linkonce.sb2.foo
-+#  .debug_info	.gnu.linkonce.wi.foo
-+#  .tdata	.gnu.linkonce.td.foo
-+#  .tbss	.gnu.linkonce.tb.foo
++#  Section Linkonce section
++#  .text   .gnu.linkonce.t.foo
++#  .rodata .gnu.linkonce.r.foo
++#  .data   .gnu.linkonce.d.foo
++#  .bss        .gnu.linkonce.b.foo
++#  .sdata  .gnu.linkonce.s.foo
++#  .sbss   .gnu.linkonce.sb.foo
++#  .sdata2 .gnu.linkonce.s2.foo
++#  .sbss2  .gnu.linkonce.sb2.foo
++#  .debug_info .gnu.linkonce.wi.foo
++#  .tdata  .gnu.linkonce.td.foo
++#  .tbss   .gnu.linkonce.tb.foo
 +#
 +#  Each of these can also have corresponding .rel.* and .rela.* sections.
 +
@@ -202,7 +202,7 @@
 +
 +cat <<EOF
 +OUTPUT_FORMAT("${OUTPUT_FORMAT}", "${BIG_OUTPUT_FORMAT}",
-+	      "${LITTLE_OUTPUT_FORMAT}")
++         "${LITTLE_OUTPUT_FORMAT}")
 +OUTPUT_ARCH(${OUTPUT_ARCH})
 +ENTRY(${ENTRY})
 +
@@ -266,10 +266,10 @@
 +  .rela.data.rel.ro ${RELOCATING-0} : { *(.rel.data.rel.ro${RELOCATING+*}) }
 +  .rel.data     ${RELOCATING-0} : { *(.rel.data${RELOCATING+ .rel.data.* .rel.gnu.linkonce.d.*}) }
 +  .rela.data    ${RELOCATING-0} : { *(.rela.data${RELOCATING+ .rela.data.* .rela.gnu.linkonce.d.*}) }
-+  .rel.tdata	${RELOCATING-0} : { *(.rel.tdata${RELOCATING+ .rel.tdata.* .rel.gnu.linkonce.td.*}) }
-+  .rela.tdata	${RELOCATING-0} : { *(.rela.tdata${RELOCATING+ .rela.tdata.* .rela.gnu.linkonce.td.*}) }
-+  .rel.tbss	${RELOCATING-0} : { *(.rel.tbss${RELOCATING+ .rel.tbss.* .rel.gnu.linkonce.tb.*}) }
-+  .rela.tbss	${RELOCATING-0} : { *(.rela.tbss${RELOCATING+ .rela.tbss.* .rela.gnu.linkonce.tb.*}) }
++  .rel.tdata   ${RELOCATING-0} : { *(.rel.tdata${RELOCATING+ .rel.tdata.* .rel.gnu.linkonce.td.*}) }
++  .rela.tdata  ${RELOCATING-0} : { *(.rela.tdata${RELOCATING+ .rela.tdata.* .rela.gnu.linkonce.td.*}) }
++  .rel.tbss    ${RELOCATING-0} : { *(.rel.tbss${RELOCATING+ .rel.tbss.* .rel.gnu.linkonce.tb.*}) }
++  .rela.tbss   ${RELOCATING-0} : { *(.rela.tbss${RELOCATING+ .rela.tbss.* .rela.gnu.linkonce.tb.*}) }
 +  .rel.ctors    ${RELOCATING-0} : { *(.rel.ctors) }
 +  .rela.ctors   ${RELOCATING-0} : { *(.rela.ctors) }
 +  .rel.dtors    ${RELOCATING-0} : { *(.rel.dtors) }
@@ -289,13 +289,13 @@
 +  .rel.dyn      ${RELOCATING-0} :
 +    {
 +EOF
-+sed -e '/^[ 	]*[{}][ 	]*$/d;/:[ 	]*$/d;/\.rela\./d;s/^.*: { *\(.*\)}$/      \1/' $COMBRELOC
++sed -e '/^[    ]*[{}][     ]*$/d;/:[   ]*$/d;/\.rela\./d;s/^.*: { *\(.*\)}$/      \1/' $COMBRELOC
 +cat <<EOF
 +    }
 +  .rela.dyn     ${RELOCATING-0} :
 +    {
 +EOF
-+sed -e '/^[ 	]*[{}][ 	]*$/d;/:[ 	]*$/d;/\.rel\./d;s/^.*: { *\(.*\)}/      \1/' $COMBRELOC
++sed -e '/^[    ]*[{}][     ]*$/d;/:[   ]*$/d;/\.rel\./d;s/^.*: { *\(.*\)}/      \1/' $COMBRELOC
 +cat <<EOF
 +    }
 +EOF
@@ -374,8 +374,8 @@
 +  .gcc_except_table ${RELOCATING-0} : ONLY_IF_RW { KEEP (*(.gcc_except_table)) *(.gcc_except_table.*) }
 +
 +  /* Thread Local Storage sections  */
-+  .tdata	${RELOCATING-0} : { *(.tdata${RELOCATING+ .tdata.* .gnu.linkonce.td.*}) }
-+  .tbss		${RELOCATING-0} : { *(.tbss${RELOCATING+ .tbss.* .gnu.linkonce.tb.*})${RELOCATING+ *(.tcommon)} }
++  .tdata   ${RELOCATING-0} : { *(.tdata${RELOCATING+ .tdata.* .gnu.linkonce.td.*}) }
++  .tbss        ${RELOCATING-0} : { *(.tbss${RELOCATING+ .tbss.* .gnu.linkonce.tb.*})${RELOCATING+ *(.tcommon)} }
 +
 +  /* Ensure the __preinit_array_start label is properly aligned.  We
 +     could instead move the label definition inside the section, but
