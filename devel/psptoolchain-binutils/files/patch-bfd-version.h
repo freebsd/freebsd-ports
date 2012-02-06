@@ -1,7 +1,8 @@
---- bfd/version.h.orig	2005-06-12 18:37:59.000000000 +0100
-+++ bfd/version.h	2006-05-09 02:55:36.000000000 +0100
-@@ -1,3 +1,3 @@
--#define BFD_VERSION_DATE 20050612
-+#define BFD_VERSION_DATE (PSPDEV 20060116)
+--- ./bfd/version.h.orig	2011-11-21 09:29:28.000000000 +0000
++++ ./bfd/version.h	2012-01-21 13:31:35.000000000 +0000
+@@ -1,4 +1,4 @@
+-#define BFD_VERSION_DATE 20111121
++#define BFD_VERSION_DATE (PSNPT 20120103)
  #define BFD_VERSION @bfd_version@
- #define BFD_VERSION_STRING @bfd_version_string@
+ #define BFD_VERSION_STRING  @bfd_version_package@ @bfd_version_string@
+ #define REPORT_BUGS_TO @report_bugs_to@

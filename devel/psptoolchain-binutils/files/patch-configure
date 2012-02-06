@@ -1,20 +1,19 @@
---- configure.orig	2005-02-28 14:06:59.000000000 +0000
-+++ configure	2006-05-09 02:55:10.000000000 +0100
-@@ -1034,7 +1034,7 @@
+--- ./configure.orig	2011-08-14 12:28:15.000000000 +0000
++++ ./configure	2012-01-21 13:31:35.000000000 +0000
+@@ -2667,7 +2667,7 @@
+ # binutils, gas and ld appear in that order because it makes sense to run
+ # "make check" in that particular order.
+ # If --enable-gold is used, "gold" may replace "ld".
+-host_tools="texinfo flex bison binutils gas ld fixincludes gcc cgen sid sim gdb gprof etc expect dejagnu m4 utils guile fastjar gnattools"
++host_tools="texinfo flex bison binutils gas ld fixincludes gcc cgen sid sim gdb etc expect dejagnu m4 utils guile fastjar gnattools"
  
- # Some tools are only suitable for building in a "native" situation.
- # Remove these if host!=target.  
--native_only="autoconf automake libtool fileutils find gawk gettext gzip hello indent m4 rcs recode sed shellutils tar textutils uudecode wdiff gprof target-groff guile perl time ash bash bzip2 prms gnuserv target-gperf"
-+native_only="autoconf automake libtool fileutils find gawk gettext gzip hello indent m4 rcs recode sed shellutils tar textutils uudecode wdiff target-groff guile perl time ash bash bzip2 prms gnuserv target-gperf"
- 
- # Similarly, some are only suitable for cross toolchains.
- # Remove these if host=target.
-@@ -1516,7 +1516,7 @@
-     noconfigdirs="$noconfigdirs target-newlib target-libgloss"
+ # libgcj represents the runtime libraries only used by gcj.
+ libgcj="target-libffi \
+@@ -3568,7 +3568,6 @@
+   mips*-*-linux*)
      ;;
    mips*-*-*)
--    noconfigdirs="$noconfigdirs gprof ${libgcj}"
-+    noconfigdirs="$noconfigdirs ${libgcj}"
+-    noconfigdirs="$noconfigdirs gprof"
      ;;
-   romp-*-*)
-     noconfigdirs="$noconfigdirs bfd binutils ld gas opcodes target-libgloss ${libgcj}"
+   sh-*-* | sh64-*-*)
+     case "${target}" in
