@@ -1,38 +1,9 @@
-bin/ibus-skk-convert-jisyo
 libexec/ibus-engine-skk
 libexec/ibus-setup-skk
-share/ibus/component/skk.xml
-%%DATADIR%%/engine/engine.py
-%%DATADIR%%/engine/engine.pyc
-%%DATADIR%%/engine/engine.pyo
-%%DATADIR%%/engine/factory.py
-%%DATADIR%%/engine/factory.pyc
-%%DATADIR%%/engine/factory.pyo
-%%DATADIR%%/engine/kzik.py
-%%DATADIR%%/engine/kzik.pyc
-%%DATADIR%%/engine/kzik.pyo
-%%DATADIR%%/engine/main.py
-%%DATADIR%%/engine/main.pyc
-%%DATADIR%%/engine/main.pyo
-%%DATADIR%%/engine/nicola.py
-%%DATADIR%%/engine/nicola.pyc
-%%DATADIR%%/engine/nicola.pyo
-%%DATADIR%%/engine/skk.py
-%%DATADIR%%/engine/skk.pyc
-%%DATADIR%%/engine/skk.pyo
-%%DATADIR%%/engine/virtkbd.py
-%%DATADIR%%/engine/virtkbd.pyc
-%%DATADIR%%/engine/virtkbd.pyo
-%%DATADIR%%/icons/ibus-skk.svg
-%%DATADIR%%/setup/config.py
-%%DATADIR%%/setup/config.pyc
-%%DATADIR%%/setup/config.pyo
+%%NLS%%share/locale/ja/LC_MESSAGES/ibus-skk.mo
 %%DATADIR%%/setup/ibus-skk-preferences.ui
-%%DATADIR%%/setup/main.py
-%%DATADIR%%/setup/main.pyc
-%%DATADIR%%/setup/main.pyo
-share/locale/ja/LC_MESSAGES/ibus-skk.mo
-@dirrm %%DATADIR%%/engine
-@dirrm %%DATADIR%%/icons
+%%DATADIR%%/icons/ibus-skk.svg
+share/ibus/component/skk.xml
 @dirrm %%DATADIR%%/setup
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
