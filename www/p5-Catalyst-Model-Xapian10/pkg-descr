@@ -1,0 +1,10 @@
+This model class wraps Search::Xapian to provide a friendly, paged
+interface to Xapian (www.xapian.org) indexes. This class adds a little
+extra convenience on top of the Search::Xapian class. It expects you to
+use the QueryParser, and sets up some keywords based on the standard
+omega keywords (id, host, date, month, year,title), so that you can do
+searches like
+
+      'fubar site:microsoft.com'
+
+WWW: http://search.cpan.org/dist/Catalyst-Model-Xapian/
