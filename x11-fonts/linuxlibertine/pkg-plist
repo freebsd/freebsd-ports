@@ -1,25 +1,24 @@
-%%FONTSDIR%%/Biolinum_Bd-0.4.1.otf
-%%FONTSDIR%%/Biolinum_Bd-0.4.1.ttf
-%%FONTSDIR%%/Biolinum_Re-0.4.1.otf
-%%FONTSDIR%%/Biolinum_Re-0.4.1.ttf
-%%FONTSDIR%%/LinLibertine_Bd-4.1.0.otf
-%%FONTSDIR%%/LinLibertine_BI-4.0.5.ttf
-%%FONTSDIR%%/LinLibertine_Bd-4.1.0.ttf
-%%FONTSDIR%%/LinLibertineC_Re-4.0.3.otf
-%%FONTSDIR%%/LinLibertine_It-4.0.6.ttf
-%%FONTSDIR%%/LinLibertine_Re-4.4.1.ttf
-%%FONTSDIR%%/LinLibertine_It-4.0.6.otf
-%%FONTSDIR%%/LinLibertine_BI-4.0.5.otf
-%%FONTSDIR%%/LinLibertineC_Re-4.0.3.ttf
-%%FONTSDIR%%/LinLibertine_Re-4.4.1.otf
-%%PORTDOCS%%%%DOCSDIR%%/Bugs
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
-%%PORTDOCS%%%%DOCSDIR%%/GPL.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENCE.txt
-%%PORTDOCS%%%%DOCSDIR%%/OFL.txt
-%%PORTDOCS%%%%DOCSDIR%%/Readme
-%%PORTDOCS%%%%DOCSDIR%%/Readme-TEX.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%FONTSDIR%%/LinBiolinum_Bd-0.5.5.otf
+%%FONTSDIR%%/LinBiolinum_Bd-0.5.5.ttf
+%%FONTSDIR%%/LinBiolinum_It-0.5.1.otf
+%%FONTSDIR%%/LinBiolinum_It-0.5.1.ttf
+%%FONTSDIR%%/LinBiolinum_Kb-0.5.4.otf
+%%FONTSDIR%%/LinBiolinum_Kb-0.5.4.ttf
+%%FONTSDIR%%/LinBiolinum_Re-0.6.4.otf
+%%FONTSDIR%%/LinBiolinum_Re-0.6.4.ttf
+%%FONTSDIR%%/LinLibertine_BI-4.1.0.otf
+%%FONTSDIR%%/LinLibertine_BI-4.1.0.ttf
+%%FONTSDIR%%/LinLibertine_Bd-4.1.5.otf
+%%FONTSDIR%%/LinLibertine_Bd-4.1.5.ttf
+%%FONTSDIR%%/LinLibertine_C-4.0.4.otf
+%%FONTSDIR%%/LinLibertine_C-4.0.4.ttf
+%%FONTSDIR%%/LinLibertine_It-4.2.6.otf
+%%FONTSDIR%%/LinLibertine_It-4.2.6.ttf
+%%FONTSDIR%%/LinLibertine_Re-4.7.5.otf
+%%FONTSDIR%%/LinLibertine_Re-4.7.5.ttf
+%%FONTSDIR%%/LinBiolinum_Sl-0.4.9.otf
+%%FONTSDIR%%/LinBiolinum_Sl-0.4.9.ttf
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
-@dirrm %%FONTSDIR%%
-@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@dirrmtry %%FONTSDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true

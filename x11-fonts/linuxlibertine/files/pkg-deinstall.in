@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ $2 = "DEINSTALL" ]; then
+  /bin/echo "===> Running fc-cache"
+  %%LOCALBASE%%/bin/fc-cache -f -v %%FONTSDIR%%
+fi
