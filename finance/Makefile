@@ -7,6 +7,7 @@
     SUBDIR += R-cran-gmm
     SUBDIR += R-cran-plm
     SUBDIR += R-cran-strucchange
+    SUBDIR += R-cran-urca
     SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += beanie
