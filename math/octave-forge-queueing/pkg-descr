@@ -1,0 +1,17 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is queueing.
+
+  The queueing toolbox provides functions for queueing networks and Markov
+  chains analysis. This package can be used to compute steady-state performance
+  measures for open, closed and mixed networks with single or multiple job
+  classes. Mean Valud Analysis (MVA), convolution and various bounding
+  techniques are implemented. Various transient and steady-state performance
+  measures for Markov chains can als be computed (including state occupancy
+  probabilities, mean time to absorption, time-averaged sojourn times), both
+  for continuous-time and discrete-time chains. 
+
+WWW: http://octave.sourceforge.net/
