@@ -729,7 +729,7 @@ post-patch:
 .endif
 .if defined(WITH_DRIZZLE_MODULE)
 	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${PREFIX}!' \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_MODULE_VERSION:S/^0-g//}/config
 .endif
 # Respect CFLAGS by remove needless --std=c99 flag
@@ -740,7 +740,7 @@ post-patch:
 .endif
 .if defined(WITH_LUA_MODULE)
 	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${PREFIX}!g' \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}/config
 .endif
 .if defined(WITH_PASSENGER_MODULE)
@@ -761,7 +761,7 @@ post-patch:
 .endif
 .if defined(WITH_POSTGRES_MODULE)
 	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${PREFIX}!' \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}/config
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
@@ -774,7 +774,7 @@ post-patch:
 .endif
 .if defined(WITH_ICONV_MODULE)
 	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${PREFIX}!g' \
+		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKDIR}/calio-iconv-nginx-module-${GIT_ICONV_MODULE_VERSION:S/^0-g//}/config
 .endif
 
