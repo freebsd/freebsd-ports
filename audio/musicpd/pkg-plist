@@ -1,4 +1,3 @@
-@stopdaemon musicpd
 bin/musicpd
 @unexec if cmp -s %D/etc/%%MPDCONF%%.sample %D/etc/%%MPDCONF%%; then rm -f %D/etc/%%MPDCONF%%; fi
 etc/%%MPDCONF%%.sample
