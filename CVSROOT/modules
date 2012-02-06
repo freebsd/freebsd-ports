@@ -8622,6 +8622,7 @@ linux-ssamtse                   ports/games/linux-ssamtse
 linux-steam                     ports/games/linux-steam
 linux-sun-jdk15                 ports/java/linux-sun-jdk15
 linux-sun-jdk16                 ports/java/linux-sun-jdk16
+linux-sun-jdk17                 ports/java/linux-sun-jdk17
 linux-sun-jre15                 ports/java/linux-sun-jre15
 linux-sun-jre16                 ports/java/linux-sun-jre16
 linux-systemsimcell             ports/emulators/linux-systemsimcell
@@ -13172,6 +13173,7 @@ p5-MooseX-OneArgNew             ports/devel/p5-MooseX-OneArgNew
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-RelatedClassRoles     ports/devel/p5-MooseX-RelatedClassRoles
+p5-MooseX-Role-Loggable         ports/devel/p5-MooseX-Role-Loggable
 p5-MooseX-Role-Parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-MooseX-Role-WithOverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-MooseX-Runnable              ports/devel/p5-MooseX-Runnable
@@ -14448,6 +14450,7 @@ p5-Text-ASCIIMathML             ports/textproc/p5-Text-ASCIIMathML
 p5-Text-ASCIITable              ports/textproc/p5-Text-ASCIITable
 p5-Text-Affixes                 ports/textproc/p5-Text-Affixes
 p5-Text-Aligner                 ports/textproc/p5-Text-Aligner
+p5-Text-AsciiTeX                ports/math/p5-Text-AsciiTeX
 p5-Text-Aspell                  ports/textproc/p5-Text-Aspell
 p5-Text-Autoformat              ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced                ports/textproc/p5-Text-Balanced
@@ -14915,6 +14918,7 @@ p5-XML-Elemental                ports/textproc/p5-XML-Elemental
 p5-XML-Encoding                 ports/textproc/p5-XML-Encoding
 p5-XML-Entities                 ports/textproc/p5-XML-Entities
 p5-XML-FOAF                     ports/textproc/p5-XML-FOAF
+p5-XML-Fast                     ports/net/p5-XML-Fast
 p5-XML-Feed                     ports/textproc/p5-XML-Feed
 p5-XML-Feed-Deduper             ports/textproc/p5-XML-Feed-Deduper
 p5-XML-FeedPP                   ports/textproc/p5-XML-FeedPP
@@ -17618,6 +17622,7 @@ p5-moosex-oneargnew             ports/devel/p5-MooseX-OneArgNew
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-relatedclassroles     ports/devel/p5-MooseX-RelatedClassRoles
+p5-moosex-role-loggable         ports/devel/p5-MooseX-Role-Loggable
 p5-moosex-role-parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-moosex-role-withoverloading  ports/devel/p5-MooseX-Role-WithOverloading
 p5-moosex-runnable              ports/devel/p5-MooseX-Runnable
@@ -18938,6 +18943,7 @@ p5-text-affixes                 ports/textproc/p5-Text-Affixes
 p5-text-aligner                 ports/textproc/p5-Text-Aligner
 p5-text-asciimathml             ports/textproc/p5-Text-ASCIIMathML
 p5-text-asciitable              ports/textproc/p5-Text-ASCIITable
+p5-text-asciitex                ports/math/p5-Text-AsciiTeX
 p5-text-aspell                  ports/textproc/p5-Text-Aspell
 p5-text-autoformat              ports/textproc/p5-Text-Autoformat
 p5-text-balanced                ports/textproc/p5-Text-Balanced
@@ -19416,6 +19422,7 @@ p5-xml-dumper                   ports/textproc/p5-XML-Dumper
 p5-xml-elemental                ports/textproc/p5-XML-Elemental
 p5-xml-encoding                 ports/textproc/p5-XML-Encoding
 p5-xml-entities                 ports/textproc/p5-XML-Entities
+p5-xml-fast                     ports/net/p5-XML-Fast
 p5-xml-feed                     ports/textproc/p5-XML-Feed
 p5-xml-feed-deduper             ports/textproc/p5-XML-Feed-Deduper
 p5-xml-feedpp                   ports/textproc/p5-XML-FeedPP
@@ -20495,6 +20502,7 @@ pebble                          ports/www/pebble
 pebrot                          ports/net-im/pebrot
 pecl-APC                        ports/www/pecl-APC
 pecl-amfext                     ports/www/pecl-amfext
+pecl-amqp                       ports/net/pecl-amqp
 pecl-apc                        ports/www/pecl-APC
 pecl-automap                    ports/devel/pecl-automap
 pecl-bbcode                     ports/devel/pecl-bbcode
