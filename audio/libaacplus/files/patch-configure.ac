@@ -1,6 +1,30 @@
---- configure.ac.orig	2009-10-09 01:02:10.000000000 +0400
-+++ configure.ac	2010-09-16 04:08:51.000000000 +0400
-@@ -114,7 +114,7 @@
+--- configure.ac.orig  2010-11-11 06:27:45.000000000 +0900
++++ configure.ac       2012-01-26 17:47:39.000000000 +0900
+@@ -8,7 +8,7 @@
+ AM_CONFIG_HEADER(config.h)
+ AC_CONFIG_MACRO_DIR([m4])
+ # Checks for programs.
+-AC_PROG_CC
++AC_PROG_CC(clang gcc cc)
+ AM_PROG_CC_C_O
+ AC_PROG_CPP
+ AC_PROG_INSTALL
+@@ -16,10 +16,10 @@
+ AC_PROG_MAKE_SET
+ AC_LIBTOOL_WIN32_DLL
+ AM_PROG_LIBTOOL
+-AC_PATH_PROG([UNZIP],[unzip])
+-if test x"$UNZIP" = x -a ! -f "aacenc.c" ; then
+-    AC_MSG_ERROR([You need unzip utility to prepare sources.])
+-fi
++dnl AC_PATH_PROG([UNZIP],[unzip])
++dnl if test x"$UNZIP" = x -a ! -f "aacenc.c" ; then
++dnl    AC_MSG_ERROR([You need unzip utility to prepare sources.])
++dnl fi
+ AC_PATH_PROG([PATCH],[patch])
+ if test x"$PATCH" = x -a ! -f "aacenc.c" ; then
+     AC_MSG_ERROR([You need patch utility to prepare sources.])
+@@ -123,7 +123,7 @@
  	    
  AACPLUS_VERSION="$VERSION"
  AACPLUS_CPPFLAGS="-I$aacplus_includedir $FFTW3_CPPFLAGS"
