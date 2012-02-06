@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/FreeImage
 
+CFLAGS+= -fexceptions -fvisibility=hidden
+
 PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimage.a \
 		lib/libfreeimage-${PORTVERSION}.so \
