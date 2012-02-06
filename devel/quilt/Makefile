@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quilt
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
@@ -21,9 +21,9 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed \
 		gpatch:${PORTSDIR}/devel/patch \
 		diffstat:${PORTSDIR}/textproc/diffstat \
-		gawk:${PORTSDIR}/lang/gawk \
+		gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:${PORTSDIR}/mail/procmail
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

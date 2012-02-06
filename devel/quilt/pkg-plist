@@ -29,8 +29,8 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/previous
 %%DATADIR%%/push
 %%DATADIR%%/refresh
-%%DATADIR%%/rename
 %%DATADIR%%/remove
+%%DATADIR%%/rename
 %%DATADIR%%/revert
 %%DATADIR%%/series
 %%DATADIR%%/setup
@@ -38,19 +38,18 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/top
 %%DATADIR%%/unapplied
 %%DATADIR%%/upgrade
-%%DATADIR%%/scripts/parse-patch
-%%DATADIR%%/scripts/inspect
 %%DATADIR%%/scripts/dependency-graph
 %%DATADIR%%/scripts/edmail
-%%DATADIR%%/scripts/remove-trailing-ws
+%%DATADIR%%/scripts/inspect
 %%DATADIR%%/scripts/patchfns
+%%DATADIR%%/scripts/remove-trailing-ws
 %%DATADIR%%/wrapper/patch
 %%DATADIR%%/compat/awk
-%%DATADIR%%/compat/getopt
 %%DATADIR%%/compat/cp
 %%DATADIR%%/compat/date
-%%DATADIR%%/compat/sed
+%%DATADIR%%/compat/getopt
 %%DATADIR%%/compat/patch
+%%DATADIR%%/compat/sed
 %%SENDMAIL%%%%DATADIR%%/compat/sendmail
 %%RPMBUILD%%%%DATADIR%%/compat/rpmbuild
 @dirrmtry etc/bash_completion.d
