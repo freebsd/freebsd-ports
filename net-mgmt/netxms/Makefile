@@ -7,6 +7,7 @@
 
 PORTNAME=	netxms
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
@@ -137,7 +138,7 @@ PLIST_SUB+=	SQLITE="@comment "
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=	--with-odbc
 PLIST_SUB+=	ODBC=""
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 .else
 PLIST_SUB+=	ODBC="@comment "
 .endif

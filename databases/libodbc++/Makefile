@@ -7,7 +7,7 @@
 
 PORTNAME=	libodbc++
 PORTVERSION=	0.2.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/libodbcxx/libodbc%2B%2B/${PORTVERSION}
 
@@ -37,7 +37,7 @@ WITH_UNIXODBC?=	yes
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .elif defined(WITH_UNIXODBC)
-LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 .endif
 

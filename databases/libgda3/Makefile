@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda3
 PORTVERSION?=	3.0.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:R}
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--without-mdb
 .endif
 
 .if ${LIBGDA3_SLAVE}=="odbc"
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-odbc

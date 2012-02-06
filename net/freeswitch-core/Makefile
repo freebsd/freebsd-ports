@@ -8,6 +8,7 @@
 PORTNAME=	freeswitch-core
 PORTVERSION=	1.0.7.1
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://dl.dropbox.com/u/152504/ \
 		http://files.freeswitch.org/downloads/libs/:2 \

@@ -7,6 +7,7 @@
 
 PORTNAME=		openldap
 DISTVERSION=		2.4.26
+PORTREVISION=	1
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -401,7 +402,7 @@ WITH_ODBC_TYPE?=	iODBC
 .if ${WITH_ODBC_TYPE:L} == iodbc
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .elif ${WITH_ODBC_TYPE:L} == unixodbc
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 .else
 BROKEN=			choose either iODBC or unixODBC for WITH_ODBC_TYPE
 .endif

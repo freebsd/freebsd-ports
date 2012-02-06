@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.9.2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://people.rit.edu/rpsfa/distfiles/
@@ -97,7 +98,7 @@ CONFIGURE_ARGS+=	--with-mysql=no
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 LDFLAGS+=		${PTHREAD_LIBS}
 .else

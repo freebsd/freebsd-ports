@@ -7,6 +7,7 @@
 
 PORTNAME=		openldap
 DISTVERSION=		2.3.43
+PORTREVISION=	1
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -335,7 +336,7 @@ PLIST_SUB+=		BACK_SQL=${BACKEND_PLIST}
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .elif defined(WITH_UNIXODBC)
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 .endif
 .else
 PLIST_SUB+=		BACK_SQL="@comment "

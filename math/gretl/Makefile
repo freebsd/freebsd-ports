@@ -8,6 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.9.7
+PORTREVISION=	1
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -73,7 +74,7 @@ PLIST_SUB+=		NLS="@comment "
 
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=	--with-odbc
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=		ODBC=""
 .else
 CONFIGURE_ARGS+=	--without-odbc

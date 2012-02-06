@@ -10,6 +10,7 @@
 
 PORTNAME=	sphinxsearch
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
@@ -76,7 +77,7 @@ CONFIGURE_ARGS+=	--enable-id64
 
 .if defined(WITH_UNIXODBC)
 CONFIGURE_ARGS+=	--with-unixodbc
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--without-unixodbc
 .endif

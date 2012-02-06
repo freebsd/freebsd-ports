@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.2.22
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -129,7 +130,7 @@ PLIST_SUB+=	WITH_ODBC=""
 USE_AUTOTOOLS=	libltdl
 .if defined(WITH_UODBC)
 CONFIGURE_ARGS+=	--with-unixodbc --with-ltdl
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 .elif defined(WITH_IODBC)
 CONFIGURE_ARGS+=	--with-iodbc --with-ltdl
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc

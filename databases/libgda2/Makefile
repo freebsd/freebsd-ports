@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda2
 PORTVERSION=	1.2.4
-PORTREVISION?=	5
+PORTREVISION?=	6
 PORTEPOCH?=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
@@ -149,7 +149,7 @@ PLIST_SUB+=		MDB:="@comment "
 .endif
 
 .if !defined(WITHOUT_ODBC) && defined(WITH_ODBC)
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 PLIST_SUB+=		ODBC:=""
 .else

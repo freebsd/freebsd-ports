@@ -7,6 +7,7 @@
 
 PORTNAME=	ptlib
 PORTVERSION=	2.6.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Final/
 DISTNAME=	ptlib-${PORTVERSION}
@@ -55,7 +56,7 @@ ALL_TARGET=	optshared
 
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--disable-odbc
 .endif

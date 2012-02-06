@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r14b04
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -91,7 +91,7 @@ USE_GCC=	4.2+
 .if !defined(WITHOUT_ODBC)
 DRIVER_MANAGER?=	iodbc
 .if ${DRIVER_MANAGER} == "unixodbc"
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 .else # assume we're using iodbc
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
