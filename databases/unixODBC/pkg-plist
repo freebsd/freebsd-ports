@@ -3,6 +3,7 @@ bin/dltest
 bin/odbcinst
 bin/iusql
 bin/odbc_config
+include/autotest.h
 include/odbcinst.h
 include/odbcinstext.h
 include/sql.h
@@ -13,15 +14,15 @@ include/uodbc_stats.h
 include/uodbc_extras.h
 include/unixodbc_conf.h
 lib/libodbcinst.so
-lib/libodbcinst.so.1
+lib/libodbcinst.so.2
 lib/libodbcinst.la
 lib/libodbcinst.a
 lib/libodbc.so
-lib/libodbc.so.1
+lib/libodbc.so.2
 lib/libodbc.la
 lib/libodbc.a
 lib/libodbccr.so
-lib/libodbccr.so.1
+lib/libodbccr.so.2
 lib/libodbccr.la
 lib/libodbccr.a
 @unexec test -s %D/etc/odbc.ini || rm -f %D/etc/odbc.ini
