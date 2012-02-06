@@ -11,6 +11,7 @@ include/sudo_plugin.h
 libexec/sudo_noexec.so
 libexec/sudoers.so
 sbin/visudo
+%%LDAP%%bin/sudoers2ldif
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
@@ -27,7 +28,6 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.iPlanet
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
-%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
 %%NLS%%share/locale/da/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/sudo.mo
