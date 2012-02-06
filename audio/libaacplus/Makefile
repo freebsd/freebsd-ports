@@ -20,9 +20,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:site1\
 MAINTAINER=	takefu@airport.fm
 COMMENT=	HE-AAC+ Codec as Shared Library
 
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
 CONFLICTS=	aacplusenc-0*
@@ -32,6 +29,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool libtoolize aclocal autoheader automake
 GNOME_MAKEFILEIN=	Makefile.am
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
