@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/sys/fd_set.h.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/sys/fd_set.h	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/sys/fd_set.h.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/sys/fd_set.h	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,69 @@
 +/*	$NetBSD: fd_set.h,v 1.1 2005/05/22 12:44:24 kleink Exp $	*/
 +

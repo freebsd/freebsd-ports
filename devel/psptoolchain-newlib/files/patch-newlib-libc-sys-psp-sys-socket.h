@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/sys/socket.h.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/sys/socket.h	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/sys/socket.h.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/sys/socket.h	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,294 @@
 +/*	$NetBSD: socket.h,v 1.77 2005/11/29 03:12:16 christos Exp $	*/
 +

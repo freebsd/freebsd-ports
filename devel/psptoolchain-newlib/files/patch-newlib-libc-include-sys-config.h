@@ -1,6 +1,6 @@
---- newlib/libc/include/sys/config.h.orig	2006-08-30 00:00:59.000000000 +0300
-+++ newlib/libc/include/sys/config.h	2007-06-01 12:22:26.000000000 +0300
-@@ -98,6 +98,12 @@
+--- ./newlib/libc/include/sys/config.h.orig	2010-12-02 19:30:46.000000000 +0000
++++ ./newlib/libc/include/sys/config.h	2012-01-25 19:33:12.000000000 +0000
+@@ -130,6 +130,12 @@
  #define __ATTRIBUTE_IMPURE_PTR__ __attribute__((__section__(".sdata")))
  #endif
  

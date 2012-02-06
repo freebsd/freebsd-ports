@@ -1,6 +1,6 @@
---- newlib/libc/sys/configure.in.orig	2006-04-13 22:56:27.000000000 +0300
-+++ newlib/libc/sys/configure.in	2007-06-01 12:22:26.000000000 +0300
-@@ -32,6 +32,7 @@
+--- ./newlib/libc/sys/configure.in.orig	2010-02-24 20:59:55.000000000 +0000
++++ ./newlib/libc/sys/configure.in	2012-01-25 19:33:12.000000000 +0000
+@@ -34,6 +34,7 @@
  	mmixware) AC_CONFIG_SUBDIRS(mmixware) ;;
  	netware) AC_CONFIG_SUBDIRS(netware) ;;
  	rdos) AC_CONFIG_SUBDIRS(rdos) ;;

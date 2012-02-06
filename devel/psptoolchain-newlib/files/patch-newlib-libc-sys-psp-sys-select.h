@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/sys/select.h.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/sys/select.h	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/sys/select.h.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/sys/select.h	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,54 @@
 +/*	$NetBSD: select.h,v 1.24 2005/05/22 12:44:24 kleink Exp $	*/
 +

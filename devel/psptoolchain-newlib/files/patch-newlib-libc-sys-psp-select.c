@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/select.c.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/select.c	2007-06-01 17:45:11.000000000 +0300
+--- ./newlib/libc/sys/psp/select.c.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/select.c	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,199 @@
 +/*
 + * PSP Software Development Kit - http://www.pspdev.org

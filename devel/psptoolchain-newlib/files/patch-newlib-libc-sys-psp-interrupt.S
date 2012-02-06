@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/interrupt.S.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/interrupt.S	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/interrupt.S.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/interrupt.S	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,66 @@
 +
 +	.set noreorder

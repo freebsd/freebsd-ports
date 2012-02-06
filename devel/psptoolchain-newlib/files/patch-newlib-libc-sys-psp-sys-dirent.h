@@ -1,5 +1,5 @@
---- newlib/libc/sys/psp/sys/dirent.h.orig	1970-01-01 02:00:00.000000000 +0200
-+++ newlib/libc/sys/psp/sys/dirent.h	2007-06-01 12:22:26.000000000 +0300
+--- ./newlib/libc/sys/psp/sys/dirent.h.orig	2012-01-25 19:33:12.000000000 +0000
++++ ./newlib/libc/sys/psp/sys/dirent.h	2012-01-25 19:33:12.000000000 +0000
 @@ -0,0 +1,39 @@
 +#ifndef _SYS_DIRENT_H
 +#define _SYS_DIRENT_H
