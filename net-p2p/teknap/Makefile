@@ -9,7 +9,7 @@ PORTNAME=	TekNap
 PORTVERSION=	1.3.g
 PORTREVISION=	3
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://got.net/~brian/teknap/
+MASTER_SITES=	http://www.epicsol.org/~brian/got.net-archive/teknap/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
 MAINTAINER=	sam@cassiba.com
