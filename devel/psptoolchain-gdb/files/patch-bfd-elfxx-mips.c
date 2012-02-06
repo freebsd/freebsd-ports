@@ -1,27 +1,26 @@
---- bfd/elfxx-mips.c.orig	2005-10-25 17:19:08.000000000 +0100
-+++ bfd/elfxx-mips.c	2007-02-08 20:06:04.000000000 +0000
-@@ -4666,6 +4666,9 @@
+--- ./bfd/elfxx-mips.c.orig	2011-01-22 10:16:28.000000000 +0000
++++ ./bfd/elfxx-mips.c	2012-01-25 22:24:29.000000000 +0000
+@@ -5940,14 +5940,19 @@
      case E_MIPS_MACH_SB1:
        return bfd_mach_mips_sb1;
  
 +    case E_MIPS_MACH_ALLEGREX:
 +      return bfd_mach_mips_allegrex;
 +
-     default:
-       switch (flags & EF_MIPS_ARCH)
- 	{
-@@ -7950,6 +7953,10 @@
-       val = E_MIPS_ARCH_64 | E_MIPS_MACH_SB1;
-       break;
+     case E_MIPS_MACH_LS2E:
+       return bfd_mach_mips_loongson_2e;
  
-+    case bfd_mach_mips_allegrex:
-+      val = E_MIPS_ARCH_2 | E_MIPS_MACH_ALLEGREX;
-+      break;
-+
-     case bfd_mach_mipsisa32:
-       val = E_MIPS_ARCH_32;
-       break;
-@@ -9648,6 +9655,7 @@
+     case E_MIPS_MACH_LS2F:
+       return bfd_mach_mips_loongson_2f;
+ 
++    /*
+     case E_MIPS_MACH_LS3A:
+       return bfd_mach_mips_loongson_3a;
++    */
+ 
+     case E_MIPS_MACH_OCTEON:
+       return bfd_mach_mips_octeon;
+@@ -12311,6 +12316,7 @@
    /* MIPS II extensions.  */
    { bfd_mach_mips4000, bfd_mach_mips6000 },
    { bfd_mach_mipsisa32, bfd_mach_mips6000 },

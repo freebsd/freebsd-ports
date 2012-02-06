@@ -1,22 +1,22 @@
---- config.sub.orig	2005-07-14 02:24:56.000000000 +0100
-+++ config.sub	2007-02-08 20:06:04.000000000 +0000
-@@ -256,6 +256,7 @@
+--- ./config.sub.orig	2011-03-24 11:13:32.000000000 +0000
++++ ./config.sub	2012-01-25 22:24:29.000000000 +0000
+@@ -279,6 +279,7 @@
  	| mipsisa64sb1 | mipsisa64sb1el \
  	| mipsisa64sr71k | mipsisa64sr71kel \
  	| mipstx39 | mipstx39el \
 +	| mipsallegrex | mipsallegrexel \
  	| mn10200 | mn10300 \
- 	| ms1 \
- 	| msp430 \
-@@ -335,6 +336,7 @@
+ 	| moxie \
+ 	| mt \
+@@ -388,6 +389,7 @@
  	| mipsisa64sb1-* | mipsisa64sb1el-* \
  	| mipsisa64sr71k-* | mipsisa64sr71kel-* \
  	| mipstx39-* | mipstx39el-* \
 +	| mipsallegrex-* | mipsallegrexel-* \
  	| mmix-* \
- 	| ms1-* \
+ 	| mt-* \
  	| msp430-* \
-@@ -678,6 +680,10 @@
+@@ -785,6 +787,10 @@
  		basic_machine=m68k-atari
  		os=-mint
  		;;

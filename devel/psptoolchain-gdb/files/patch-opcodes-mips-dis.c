@@ -1,6 +1,6 @@
---- opcodes/mips-dis.c.orig	2005-09-06 19:46:57.000000000 +0100
-+++ opcodes/mips-dis.c	2007-02-08 20:06:04.000000000 +0000
-@@ -133,6 +133,139 @@
+--- ./opcodes/mips-dis.c.orig	2011-01-11 07:22:09.000000000 +0000
++++ ./opcodes/mips-dis.c	2012-01-25 22:24:29.000000000 +0000
+@@ -160,6 +160,139 @@
    "c0_taglo",     "c0_taghi",     "c0_errorepc",  "c0_desave",
  };
  
@@ -140,7 +140,7 @@
  static const struct mips_cp0sel_name mips_cp0sel_names_mips3264[] =
  {
    { 16, 1, "c0_config1"		},
-@@ -288,6 +421,55 @@
+@@ -386,6 +519,54 @@
    "$24",  "$25",  "$26",  "$27",  "$28",  "$29",  "$30",  "$31"
  };
  
@@ -192,20 +192,20 @@
 +  "",  "[0:1]",  "",  "[-1:1]"
 +};
 +
-+
  struct mips_abi_choice
  {
    const char * name;
-@@ -363,6 +545,8 @@
+@@ -465,7 +646,8 @@
      mips_cp0_names_numeric, NULL, 0, mips_hwr_names_numeric },
    { "mips5",	1, bfd_mach_mips5, CPU_MIPS5, ISA_MIPS5,
      mips_cp0_names_numeric, NULL, 0, mips_hwr_names_numeric },
+-
 +  { "allegrex", 1, bfd_mach_mips_allegrex, CPU_ALLEGREX, ISA_MIPS2,
 +    mips_cp0_names_numeric, NULL, 0, mips_hwr_names_numeric },
- 
    /* For stock MIPS32, disassemble all applicable MIPS-specified ASEs.
       Note that MIPS-3D and MDMX are not applicable to MIPS32.  (See
-@@ -1147,6 +1331,349 @@
+      _MIPS32 Architecture For Programmers Volume I: Introduction to the
+@@ -1365,6 +1547,349 @@
  				 (l >> OP_SH_FT) & OP_MASK_FT);
  	  break;
  
