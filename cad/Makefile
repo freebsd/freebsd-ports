@@ -57,6 +57,7 @@
     SUBDIR += linux-eagle5
     SUBDIR += magic
     SUBDIR += mars
+    SUBDIR += meshdev
     SUBDIR += meshlab
     SUBDIR += netgen
     SUBDIR += ngspice_rework

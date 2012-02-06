@@ -1,0 +1,21 @@
+--- build/Makefile.release.gcc.orig	2012-02-06 16:12:55.000000000 +0100
++++ build/Makefile.release.gcc	2012-02-06 16:13:07.000000000 +0100
+@@ -2,7 +2,7 @@
+ # Makefile created by Michaël Roy
+ 
+ CXX  = g++
+-OBJ  = tmp/Deviation.o tmp/FileVrml1.o tmp/FileVrml2.o tmp/Mesh.o tmp/MeshDev.o tmp/Neighborhood.o tmp/Sample.o tmp/UniformGrid.o
++OBJ  = tmp/Deviation.o tmp/FileVrml1.o tmp/FileVrml2.o tmp/FileSTL.o tmp/Mesh.o tmp/MeshDev.o tmp/Neighborhood.o tmp/Sample.o tmp/UniformGrid.o
+ BIN  = ../bin/meshdev
+ CFLAGS += -DNDEBUG -Wall -W -ansi -pedantic -s -O2
+ 
+@@ -25,6 +25,9 @@
+ tmp/FileVrml2.o: ../src/FileVrml2.cpp
+ 	$(CXX) -c ../src/FileVrml2.cpp -o tmp/FileVrml2.o $(CFLAGS)
+ 
++tmp/FileSTL.o: ../src/FileSTL.cpp
++	$(CXX) -c ../src/FileSTL.cpp -o tmp/FileSTL.o $(CFLAGS)
++
+ tmp/Mesh.o: ../src/Mesh.cpp
+ 	$(CXX) -c ../src/Mesh.cpp -o tmp/Mesh.o $(CFLAGS)
+ 
