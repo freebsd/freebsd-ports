@@ -47,6 +47,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="309542b5-50b9-11e1-b0d8-00151735203a">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>2.4.*</ge><lt>3.6.8</lt></range>
+	<range><ge>4.0.*</ge><lt>4.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.4.12/">
+	  <p>The following security issues have been discovered in Bugzilla:</p>
+	  <ul>
+	    <li>Account Impersonation:
+	      When a user creates a new account, Bugzilla doesn't
+	      correctly reject email addresses containing non-ASCII
+	      characters, which could be used to impersonate another
+	      user account. Such email addresses could look visually
+	      identical to other valid email addresses, and an attacker
+	      could try to confuse other users and be added to bugs he
+	      shouldn't have access to.</li>
+	    <li>Cross-Site Request Forgery:
+	     Due to a lack of validation of the Content-Type header
+             when making POST requests to jsonrpc.cgi, a possible
+             CSRF vulnerability was discovered. If a user visits an
+             HTML page with some malicious JS code in it, an attacker
+             could make changes to a remote Bugzilla installation on
+             behalf of the victim's account by using the JSON-RPC API.
+             The user would have had to be already logged in to the
+             target site for the vulnerability to work.</li>
+	  </ul>
+	  <p>All affected installations are encouraged to upgrade as soon as
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0448</cvename>
+      <cvename>CVE-2012-0440</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=714472</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=718319</url>
+    </references>
+    <dates>
+      <discovery>2012-01-31</discovery>
+      <entry>2012-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3fd040be-4f0b-11e1-9e32-0025900931f8">
     <topic>php -- arbitrary remote code execution vulnerability</topic>
     <affects>
