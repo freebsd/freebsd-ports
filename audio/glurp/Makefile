@@ -7,13 +7,14 @@
 
 PORTNAME=	glurp
 PORTVERSION=	0.12.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 
-LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libglade2

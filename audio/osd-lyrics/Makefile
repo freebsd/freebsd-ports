@@ -7,6 +7,7 @@
 
 PORTNAME=	osdlyrics
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	audio deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	osd-lyrics
@@ -40,7 +41,7 @@ BROKEN=		does not compile on FreeBSD 9.X
 .endif
 
 .if defined(WITH_MPD)
-LIB_DEPENDS+=	mpd.3:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS+=	mpd.4:${PORTSDIR}/audio/libmpd
 .else
 CONFIGURE_ARGS+=	--disable-mpd
 .endif

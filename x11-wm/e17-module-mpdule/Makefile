@@ -7,6 +7,7 @@
 
 PORTNAME=	mpdule
 PORTVERSION=	20110129
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
 PKGNAMEPREFIX=	e17-module-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	e17-module-
 MAINTAINER=	magik@roorback.net
 COMMENT=	An MPD module for e17
 
-LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
