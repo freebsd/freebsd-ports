@@ -444,6 +444,7 @@
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
     SUBDIR += nl-aspell
+    SUBDIR += nl-hunspell
     SUBDIR += nl-hyphen
     SUBDIR += nl-ispell
     SUBDIR += nl-mythes
