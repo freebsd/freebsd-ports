@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	joytran
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	BERLIOS GOOGLE_CODE
+MASTER_SITE_SUBDIR=	joytran
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Joystick to keyboard/mouse events translator written in C
