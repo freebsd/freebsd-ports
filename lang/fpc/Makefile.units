@@ -37,7 +37,7 @@ USE_MYSQL=	yes
 
 .if ${PKGNAMESUFFIX} == "-odbc"
 .	if defined(WITH_ODBC)
-LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	odbc.2:${PORTSDIR}/databases/unixODBC
 .	endif
 .endif
 

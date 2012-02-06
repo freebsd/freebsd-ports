@@ -6,7 +6,7 @@
 
 PORTNAME=	callweaver
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://devs.callweaver.org/release/
 EXTRACT_SUFX=	.tgz
@@ -117,7 +117,7 @@ PLIST_SUB+=	FAX="@comment "
 
 #.if defined(WITH_ODBC)
 #CONFIGURE_ARGS+=	--enable-odbc
-#LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+#LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 #.else
 #CONFIGURE_ARGS+=	--disable-odbc
 #.endif

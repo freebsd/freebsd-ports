@@ -6,7 +6,7 @@
 
 PORTNAME=	hk_classes
 PORTVERSION=	0.8.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	SF/hk-classes/${PORTNAME}/${PORTVERSION}
 
@@ -77,7 +77,7 @@ PLIST_SUB+=	POSTGRESQL="@comment "
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-incdir=${LOCALBASE}/include/\
 			--with-odbc-libdir=${LOCALBASE}/lib
 PLIST_SUB+=	ODBC=""

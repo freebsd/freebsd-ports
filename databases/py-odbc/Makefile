@@ -19,7 +19,7 @@
 
 PORTNAME=	pyodbc
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,7 +40,7 @@ WITH_UNIXODBC=	yes
 
 .if defined(WITH_UNIXODBC)
 # I.e. even if WITH_IODBC is defined
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 .else
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc

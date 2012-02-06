@@ -7,7 +7,7 @@
 
 PORTNAME=	openser
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://openser.org/pub/openser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src
@@ -85,7 +85,7 @@ MAKE_ENV+=	POSTGRESQL=postgres
 .endif
 
 .if defined(WITH_UNIXODBC)
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 MODULES+=	unixodbc
 .else
 MAKE_ENV+=	UNIXODBC=unixodbc

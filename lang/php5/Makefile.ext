@@ -534,7 +534,7 @@ LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
 .else
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 
 CONFIGURE_ARGS+=--with-unixODBC=${LOCALBASE}
 .endif
@@ -554,7 +554,7 @@ LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
 CONFIGURE_ARGS+=--with-pdo-odbc=iODBC,${LOCALBASE}
 .else
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 
 CONFIGURE_ARGS+=--with-pdo-odbc=unixODBC,${LOCALBASE}
 .endif

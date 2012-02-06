@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.42
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -100,7 +101,7 @@ CONFIGURE_ARGS+= --without-odbc
 PLIST_SUB+=	WITH_ODBC=""
 CONFIGURE_ARGS+= --with-odbc --with-ltdl
 USE_AUTOTOOLS+=	libltdl
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 .endif
 
 .if !defined(WITH_FREETDS)

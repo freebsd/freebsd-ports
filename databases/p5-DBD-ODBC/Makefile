@@ -7,6 +7,7 @@
 
 PORTNAME=	DBD-ODBC
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MJEVANS
@@ -40,7 +41,7 @@ WITH_IODBC?=	yes
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 MYODBC=	iodbc
 .elif defined(WITH_UNIXODBC)
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
 MYODBC=	unixodbc
 post-configure:
 	@${PERL} -pi -e 's/-lodbc/-lodbc ${PTHREAD_LIBS}/g;' \

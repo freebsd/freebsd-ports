@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	--with-netcdf=no
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-odbc=no

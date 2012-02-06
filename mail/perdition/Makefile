@@ -7,7 +7,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.17.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
@@ -138,7 +138,7 @@ PLIST_SUB+=		OPENLDAP="@comment "
 
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=	--enable-odbc
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 PLIST_SUB+=		ODBC=""
 MAN8+=			perditiondb_odbc_makedb.8
 .else

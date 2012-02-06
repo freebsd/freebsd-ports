@@ -7,7 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -96,8 +96,8 @@ CONFIGURE_ARGS+=	--disable-postgresql
 IF_POSTGRESQL=	"@comment "
 .endif
 
-.if defined(WITH_ODBC) && ${WITH_ODBC:L} != no
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+.if defined(WITH_[BODBC) && ${WITH_ODBC:L} != no
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-prefix="${LOCALBASE}"
 IF_ODBC=	""
 .else
