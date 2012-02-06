@@ -5,58 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openoffice.org
-PORTVERSION=	3.4.${SNAPDATE}
+PORTNAME=	apache-openoffice
+PORTVERSION=	3.4.${SVNREVISION}
 CATEGORIES=	editors java
-MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:extsrc \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:l10nsdf \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
-		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
-DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	maho/openoffice
+DISTFILES+=	${OOOSRC} unowinreg.dll
+EXTRACT_ONLY=	${OOOSRC}
 
 #de facto maintainer is maho@FreeBSD.org
-#patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
+#Frequent Patch submitters should optionally sign Apache iCLA
 MAINTAINER=	office@FreeBSD.org
-COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
-
-IGNORE=		now development towards ver. 3.5 has been stopped, and OOO340_m0 is the newest milestone
-
-CONFLICTS=	cppunit*
-
-EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
-
-OOOEXTSRC=	ext_sources.20110331.tar.bz2:extsrc l10n.20110611.tar.bz2:l10nsdf
-
-.if defined(CWS)
-PORTNAME:=	openoffice.org-${CWS}
-OOOSRC=		OOo_${CWS}_source.tar.bz2:cws
-OOOTAG=		${CWS}
-.endif
+COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
 NO_LATEST_LINK=	yes
 
-.if !defined(WITHOUT_MOZILLA)
-USE_GNOME+=		libidl
-.endif
-
-USE_GNOME=	desktopfileutils gtk20
-
-.if defined(WITH_KDE4) && defined(WITH_KDE)
-.error "Cannot define WITH_KDE and WITH_KDE4 at the same time"
-.endif
-.if defined(WITH_KDE4)
-USE_KDE4=	kdelibs
-USE_QT_VER=	4
-.endif
-
-.if defined(WITH_KDE)
-USE_KDELIBS_VER=	3
-.endif
+USE_GNOME=	desktopfileutils gtk20 libxslt libidl gconf2 gnomevfs2 glib20
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
+USE_GL=		gl glu
+USE_GSTREAMER=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USE_PYTHON=	yes
+USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
@@ -78,24 +49,20 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		106
-OOOTAG?=		DEV300_m${MILESTONE}
-OOOTAG2=		${OOOTAG:C/_//g}
-OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
+OOOSRC?=		ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20110405
-INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
-EXECBASE?=		openoffice.org-${OOOTAG}
-DIST_SUBDIR=		openoffice.org3
+SVNREVISION=		1240439
+INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
+EXECBASE?=		openoffice-r${SVNREVISION}
+DIST_SUBDIR=		openoffice
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
-PACKAGE_BASENAME=	${OOOTAG2}_${OPSYS}${SIMPLEOSVER}_x86-64
+PACKAGE_BASENAME=	ApacheOpenOffice_${OPSYS}_${PORTREVISION}_x86-64
 .else
-PACKAGE_BASENAME=	${OOOTAG2}_${OPSYS}${SIMPLEOSVER}_x86
+PACKAGE_BASENAME=	ApacheOpenOffice_${OPSYS}_${PORTREVISION}_x86
 .endif
 
 LOCALIZED_LANG?=	en-US
-# FIXME (Somehow INDEX build fails)
 .if defined(LANG_PKGNAME)
 PKGNAMEPREFIX=		${LANG_PKGNAME}-
 .endif
@@ -115,9 +82,18 @@ OOOCC=		${CC}
 OOOCXX=		${CXX}
 .endif
 CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
-		PATH=${WRKSRC}/solenv/bin:$$PATH
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+		PATH=${WRKSRC}/solenv/bin:$$PATH	\
+		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		curl.6:${PORTSDIR}/ftp/curl \
+		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
+		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
+		rdf.0:${PORTSDIR}/textproc/redland \
+		textcat.0:${PORTSDIR}/textproc/libtextcat \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -129,37 +105,63 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ant:${PORTSDIR}/devel/apache-ant \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
-#see #i85469# for gperf
+		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
+		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
+		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
+		epm:${PORTSDIR}/devel/epm \
+		dmake:${PORTSDIR}/devel/dmake
 
+USE_AUTOTOOLS=	autoconf
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-WRKSRC?=	${WRKDIR}/${OOOTAG}
+WRKSRC?=	${WRKDIR}/ooo/main
 BASH?=		${PREFIX}/bin/bash
 SUB_FILES=	pkg-message
 SUB_LIST=	EXECBASE=${EXECBASE} OOOTAG=${OOOTAG} OOODIR=${OOODIR}
 
 .if defined(DISABLE_MAKE_JOBS)
-MAKE_JOBS_NUMBER=	1
+MAKE_JOBS_NUMBER=	4
 .endif
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
+CONFIGURE_ARGS+=	--enable-verbose \
+			--enable-symbols \
+			--enable-crashdump \
+			--with-vendor="FreeBSD ports system"	\
+			--with-epm=${LOCALBASE}/bin/epm \
+			--with-gnu-cp=${LOCALBASE}/bin/gcp	\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
-			--enable-crashdump=yes				\
-			--with-junit=${LOCALBASE}/share/java/classes/junit.jar	\
-			--with-system-zlib				\
-			--with-system-stdlibs				\
-			--with-epm=internal				\
-			--enable-hids					\
-			--enable-minimizer 				\
-			--enable-presenter-console			\
-			--enable-pdfimport				\
-			--enable-wiki-publisher				\
-			--enable-report-builder				\
-			--enable-verbose				\
-			--disable-gstreamer				\
-			--with-vendor="FreeBSD ports system"
-#disable-gstreamer: simple build fix req'ed
+			--with-gperf=${LOCALBASE}/bin/gperf	\
+			--x-includes=${LOCALBASE}/include	\
+			--x-libraries=${LOCALBASE}lib	\
+			--with-system-libxslt 		\
+			--with-system-cairo --enable-cairo \
+			--with-system-boost 		\
+			--with-system-zlib		\
+			--with-system-python		\
+			--with-system-expat		\
+			--with-system-openssl		\
+			--with-system-curl		\
+			--with-system-poppler \
+			--with-system-redland \
+			--with-system-hunspell \
+			--with-system-libtextcat \
+			--with-system-vigra \
+			--with-system-stdlibs \
+			--with-system-saxon     \
+			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
+			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
+			--with-system-beanshell	\
+			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
+			--with-package-format="archive" \
+			--enable-gstreamer \
+			--enable-minimizer \
+			--enable-presenter-console \
+			--enable-wiki-publisher \
+			--enable-dbus \
+			--enable-opengl
+
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
@@ -188,71 +190,45 @@ pre-everything::
 	@${TOUCH} ${BUILD_COOKIE}
 .endif
 
-#issue XXXXXX not raised yet...
-DOS2UNIX_REGEX=curl/curl*patch neon/neon*patch jfreereport/patches/*.patch
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 
 pre-configure:
-#Workaround for gperf. #i85469#
-	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
 	@${LN} -sf ${LOCALBASE}/bin/unzip ${WRKSRC}/solenv/bin/unzip
 .if defined(WITH_KDE4)
 	@${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/solenv/bin/moc
 .endif
 
 do-build:
-	@cd ${WRKDIR} ; ${PRINTF} "[repositories]\n" > source_config
-	@cd ${WRKDIR} ; ${PRINTF} "${OOOTAG}=active\n" >> source_config
-	@cd ${WRKDIR} ; ${PRINTF} "l10n=active\n" >> source_config
+	@cd ${WRKDIR}/ooo ; ${PRINTF} "[repositories]\n" > source_config
+	@cd ${WRKDIR}/ooo ; ${PRINTF} "main=active\n" >> source_config
+	@cd ${WRKDIR}/ooo ; ${PRINTF} "extras=active\n" >> source_config
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; ../solenv/bin/build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
-
-.if ${LOCALIZED_LANG} == "alllangs"
-	@${MAKE} languagepack
-.endif
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
-.if ${LOCALIZED_LANG} == "alllangs"
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/ ; ${LS} */freebsd*/*.t?z > ${WRKDIR}/LANGPACKFILES
-	@${RM} -Rf ${WRKDIR}/tmp
-	@${MKDIR} ${WRKDIR}/tmp
-	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
+	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
+	${RM} -Rf ${WRKDIR}/tmp
+	${MKDIR} ${WRKDIR}/tmp
+	for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/en-US/freebsd/$$i ; \
+		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/$$i ; \
 	done
-	@for i in `${CAT} ${WRKDIR}/LANGPACKFILES`; do \
-		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/bsd/install/$$i ;\
-	done
-	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
-	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-.else
-	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
-	@${RM} -Rf ${WRKDIR}/tmp
-	@${MKDIR} ${WRKDIR}/tmp
-	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
-		${ECHO_CMD} "extracting $$i" ; \
-		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/$$i ; \
-	done
-	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
-.endif
-	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
+	cd ${WRKDIR}/tmp/OO*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+
+	${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	#cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
+	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
+			-e 's#%%SVNREVISION%%#${SVNREVISION}#g' \
 			-e 's#%%OOODIR%%#${OOODIR}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
-			${WRKDIR}/openoffice.org-wrapper
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice.org-wrapper \
+			${WRKDIR}/openoffice-wrapper
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${PREFIX}/bin/${EXECBASE}
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sbase
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-scalc
@@ -294,10 +270,10 @@ post-install:
 				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/${EXECBASE}-$${app}.png" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
-		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
-			${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/mimetypes/$${file} \
+		for iconfile in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
+			${INSTALL_DATA} ${ICONS}/hicolor/$${dir}/mimetypes/$${iconfile} \
 			    ${PREFIX}/share/icons/hicolor/$${dir}/mimetypes/ ; \
-			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${file}" >> ${TMPPLIST} ; \
+			${ECHO_CMD} "share/icons/hicolor/$${dir}/mimetypes/$${iconfile}" >> ${TMPPLIST} ; \
 		done ; \
 	done
 	@${PREFIX}/bin/gtk-update-icon-cache -q -f ${PREFIX}/share/icons/hicolor 2>/dev/null || ${TRUE}
