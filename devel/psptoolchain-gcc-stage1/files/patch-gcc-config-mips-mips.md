@@ -1,70 +1,69 @@
---- gcc/config/mips/mips.md.orig	2005-07-29 18:25:27.000000000 +0100
-+++ gcc/config/mips/mips.md	2006-05-07 14:59:33.000000000 +0100
-@@ -142,6 +142,21 @@
-    (UNSPEC_MTHLIP		365)
-    (UNSPEC_WRDSP		366)
-    (UNSPEC_RDDSP		367)
-+
-+   ;; Sony ALLEGREX instructions
-+   (UNSPEC_WSBH 		401)
-+   (UNSPEC_WSBW 		402)
-+
-+   (UNSPEC_CLO			403)
-+   (UNSPEC_CTO			404)
-+
-+   (UNSPEC_CACHE		405)
-+   (UNSPEC_SYNC 		406)
-+
-+   (UNSPEC_CEIL_W_S		407)
-+   (UNSPEC_FLOOR_W_S		408)
-+   (UNSPEC_ROUND_W_S		409)
-+
-   ]
- )
+--- ./gcc/config/mips/mips.md.orig	2011-03-03 21:56:58.000000000 +0000
++++ ./gcc/config/mips/mips.md	2012-01-21 14:11:19.000000000 +0000
+@@ -37,6 +37,7 @@
+   74kf2_1
+   74kf1_1
+   74kf3_2
++  allegrex
+   loongson_2e
+   loongson_2f
+   loongson_3a
+@@ -598,7 +599,7 @@
+ ;; This mode iterator allows :MOVECC to be used anywhere that a
+ ;; conditional-move-type condition is needed.
+ (define_mode_iterator MOVECC [SI (DI "TARGET_64BIT")
+-                              (CC "TARGET_HARD_FLOAT && !TARGET_LOONGSON_2EF")])
++                              (CC "TARGET_HARD_FLOAT && !TARGET_LOONGSON_2EF && !TARGET_ALLEGREX")])
  
-@@ -1601,9 +1616,9 @@
+ ;; 32-bit integer moves for which we provide move patterns.
+ (define_mode_iterator IMOVE32
+@@ -1885,11 +1886,11 @@
  	   (mult:DI
  	      (any_extend:DI (match_operand:SI 1 "register_operand" "d"))
  	      (any_extend:DI (match_operand:SI 2 "register_operand" "d")))))]
--  "!TARGET_64BIT && ISA_HAS_MSAC"
-+  "!TARGET_64BIT && (ISA_HAS_MSAC || TARGET_ALLEGREX)"
+-  "!TARGET_64BIT && (ISA_HAS_MSAC || GENERATE_MADD_MSUB || ISA_HAS_DSP)"
++  "!TARGET_64BIT && (ISA_HAS_MSAC || GENERATE_MADD_MSUB || ISA_HAS_DSP || TARGET_ALLEGREX)"
  {
--  if (TARGET_MIPS5500)
-+  if (TARGET_MIPS5500 || TARGET_ALLEGREX)
+   if (ISA_HAS_DSP_MULT)
+     return "msub<u>\t%q0,%1,%2";
+-  else if (TARGET_MIPS5500 || GENERATE_MADD_MSUB)
++  else if (TARGET_MIPS5500 || GENERATE_MADD_MSUB || TARGET_ALLEGREX)
      return "msub<u>\t%1,%2";
    else
      return "msac<u>\t$0,%1,%2";
-@@ -1718,12 +1733,12 @@
+@@ -2066,14 +2067,14 @@
  	 (mult:DI (any_extend:DI (match_operand:SI 1 "register_operand" "d"))
  		  (any_extend:DI (match_operand:SI 2 "register_operand" "d")))
  	 (match_operand:DI 3 "register_operand" "0")))]
--  "(TARGET_MAD || ISA_HAS_MACC)
-+  "(TARGET_MAD || ISA_HAS_MACC || TARGET_ALLEGREX)
+-  "(TARGET_MAD || ISA_HAS_MACC || GENERATE_MADD_MSUB || ISA_HAS_DSP)
++  "(TARGET_MAD || ISA_HAS_MACC || GENERATE_MADD_MSUB || ISA_HAS_DSP || TARGET_ALLEGREX)
     && !TARGET_64BIT"
  {
    if (TARGET_MAD)
      return "mad<u>\t%1,%2";
--  else if (TARGET_MIPS5500)
-+  else if (TARGET_MIPS5500 || TARGET_ALLEGREX)
+   else if (ISA_HAS_DSP_MULT)
+     return "madd<u>\t%q0,%1,%2";
+-  else if (GENERATE_MADD_MSUB || TARGET_MIPS5500)
++  else if (GENERATE_MADD_MSUB || TARGET_MIPS5500 || TARGET_ALLEGREX)
      return "madd<u>\t%1,%2";
    else
      /* See comment in *macc.  */
-@@ -1995,6 +2010,32 @@
+@@ -2500,6 +2501,33 @@
  ;;
  ;;  ....................
  ;;
-+;;	FIND FIRST BIT INSTRUCTION
++;; FIND FIRST BIT INSTRUCTION
 +;;
 +;;  ....................
 +;;
 +
 +(define_expand "ffs<mode>2"
 +  [(set (match_operand:GPR 0 "register_operand" "")
-+	(ffs:GPR (match_operand:GPR 1 "register_operand" "")))]
++   (ffs:GPR (match_operand:GPR 1 "register_operand" "")))]
 +  "ISA_HAS_CLZ_CLO"
 +{
 +  rtx r1, r2, r3, r4;
-+
++  
 +  r1 = gen_reg_rtx (<MODE>mode);
 +  r2 = gen_reg_rtx (<MODE>mode);
 +  r3 = gen_reg_rtx (<MODE>mode);
@@ -76,21 +75,22 @@
 +  emit_insn (gen_sub<mode>3 (operands[0], r4, r3));
 +  DONE;
 +})
++
 +;;
 +;;  ....................
 +;;
  ;;	NEGATION and ONE'S COMPLEMENT
  ;;
  ;;  ....................
-@@ -4193,6 +4234,25 @@
-   [(set_attr "type" "shift")
+@@ -2550,6 +2578,25 @@
+   [(set_attr "alu_type" "not")
     (set_attr "mode" "<MODE>")])
  
 +(define_expand "rotl<mode>3"
 +  [(set (match_operand:GPR 0 "register_operand")
-+      	(rotate:GPR (match_operand:GPR 1 "register_operand")
-+		    (match_operand:SI 2 "arith_operand")))]
-+  "ISA_HAS_ROTR_<MODE>"
++       (rotate:GPR (match_operand:GPR 1 "register_operand")
++           (match_operand:SI 2 "arith_operand")))]
++  "ISA_HAS_ROR"
 +{
 +  rtx temp;
 +
@@ -108,7 +108,7 @@
  ;;
  ;;  ....................
  ;;
-@@ -5306,7 +5366,7 @@
+@@ -6301,7 +6348,7 @@
  		 (const_int 0)])
  	 (match_operand:GPR 2 "reg_or_0_operand" "dJ,0")
  	 (match_operand:GPR 3 "reg_or_0_operand" "0,dJ")))]
@@ -117,7 +117,7 @@
    "@
      mov%T4\t%0,%z2,%1
      mov%t4\t%0,%z3,%1"
-@@ -5336,8 +5396,12 @@
+@@ -6331,8 +6378,12 @@
  	(if_then_else:GPR (match_dup 5)
  			  (match_operand:GPR 2 "reg_or_0_operand")
  			  (match_operand:GPR 3 "reg_or_0_operand")))]
@@ -125,16 +125,19 @@
 +  "ISA_HAS_CONDMOVE || ISA_HAS_INT_CONDMOVE"
  {
 +  if (ISA_HAS_INT_CONDMOVE
-+      && GET_MODE_CLASS (GET_MODE (cmp_operands[0])) == MODE_FLOAT)
++      && GET_MODE_CLASS (GET_MODE (operands[0])) == MODE_FLOAT)
 +    FAIL;
 +
-   gen_conditional_move (operands);
+   mips_expand_conditional_move (operands);
    DONE;
  })
-@@ -5428,3 +5492,6 @@
- ; The MIPS DSP Instructions.
+@@ -6481,6 +6532,9 @@
+ ; ST-Microelectronics Loongson-2E/2F-specific patterns.
+ (include "loongson.md")
  
- (include "mips-dsp.md")
-+
 +; Sony ALLEGREX instructions.
 +(include "allegrex.md")
++
+ (define_c_enum "unspec" [
+   UNSPEC_ADDRESS_FIRST
+ ])

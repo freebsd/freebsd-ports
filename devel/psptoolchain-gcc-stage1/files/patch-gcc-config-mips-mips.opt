@@ -1,0 +1,12 @@
+--- ./gcc/config/mips/mips.opt.orig	2011-02-17 01:59:04.000000000 +0000
++++ ./gcc/config/mips/mips.opt	2012-01-21 14:11:19.000000000 +0000
+@@ -306,5 +306,9 @@
+ Target Report Var(TARGET_XGOT)
+ Lift restrictions on GOT size
+ 
++mpreferred-stack-boundary=
++Target RejectNegative Joined Var(mips_preferred_stack_boundary_string)
++Attempt to keep stack aligned to this power of 2
++
+ noasmopt
+ Driver

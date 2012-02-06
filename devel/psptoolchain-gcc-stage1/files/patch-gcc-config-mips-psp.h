@@ -1,5 +1,5 @@
---- gcc/config/mips/psp.h.orig	1970-01-01 01:00:00.000000000 +0100
-+++ gcc/config/mips/psp.h	2006-05-07 13:27:43.000000000 +0100
+--- ./gcc/config/mips/psp.h.orig	2012-01-21 14:11:19.000000000 +0000
++++ ./gcc/config/mips/psp.h	2012-01-21 14:11:19.000000000 +0000
 @@ -0,0 +1,31 @@
 +/* Support for Sony's Playstation Portable (PSP).
 +   Copyright (C) 2005 Free Software Foundation, Inc.
