@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	gmpc-lyricwiki
-PORTVERSION=	0.20.0
-PORTREVISION=	1
+PORTVERSION=	11.8.16
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Lyricswiki Provider plugin for gmpc
