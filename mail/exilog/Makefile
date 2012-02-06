@@ -7,12 +7,14 @@
 
 PORTNAME=	exilog
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://duncanthrax.net/exilog/
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Tool to centralize and visualize Exim logs with a web front end
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
