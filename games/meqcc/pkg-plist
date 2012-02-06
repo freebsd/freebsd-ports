@@ -1,5 +1,0 @@
-bin/meqcc
-%%PORTDOCS%%%%DOCSDIR%%/meqcc.txt
-%%PORTDOCS%%%%DOCSDIR%%/qcc.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
