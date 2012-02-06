@@ -237,6 +237,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mount-unmount.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/multimedia.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mythtv.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/network-communication.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/nis.html
@@ -307,10 +308,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x14143.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30034.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30078.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30122.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x14276.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30166.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30210.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30254.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
