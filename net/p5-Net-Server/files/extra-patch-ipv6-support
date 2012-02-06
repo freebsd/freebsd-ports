@@ -1,0 +1,1384 @@
+--- Net-Server-0.99/lib/Net/Server/Proto/UDP.pm	2008-02-08 03:40:33.000000000 +0100
++++ Net-Server-0.99/lib/Net/Server/Proto/UDP.pm	2010-10-05 15:41:16.000000000 +0200
+@@ -35,9 +35,4 @@
+   my $class = ref($type) || $type || __PACKAGE__;
+ 
+-  my $sock = $class->SUPER::object( @_ );
+-
+-  $sock->NS_proto('UDP');
+-
+-  ### set a few more parameters
+   my($default_host,$port,$server) = @_;
+   my $prop = $server->{server};
+@@ -62,33 +57,42 @@
+     && $prop->{udp_broadcast};
+ 
+-  $sock->NS_recv_len(   $prop->{udp_recv_len} );
+-  $sock->NS_recv_flags( $prop->{udp_recv_flags} );
++  my @sockets_list = $class->SUPER::object( @_ );
+ 
+-  return $sock;
++  foreach my $sock ( @sockets_list ){
++    $sock->NS_proto('UDP');
++    $sock->NS_recv_len(   $prop->{udp_recv_len} );
++    $sock->NS_recv_flags( $prop->{udp_recv_flags} );
++  }
++
++  ### returns any number of sockets,
++  ### one for each protocol family (PF_INET or PF_INET6) and each bind address
++  return !wantarray ? $sockets_list[0] : @sockets_list;
+ }
+ 
+ 
+-### connect the first time
++### bind the first time
+ ### doesn't support the listen or the reuse option
+ sub connect {
+-  my $sock   = shift;
+-  my $server = shift;
+-  my $prop   = $server->{server};
+-
+-  my $host  = $sock->NS_host;
+-  my $port  = $sock->NS_port;
++  my $sock    = shift;
++  my $server  = shift;
++  my $prop    = $server->{server};
++
++  my $host    = $sock->NS_host;
++  my $port    = $sock->NS_port;
++  my $pfamily = $sock->NS_family || 0;
+ 
+-  my %args = ();
++  my %args;
+   $args{LocalPort} = $port;                  # what port to bind on
+   $args{Proto}     = 'udp';                  # what procol to use
+   $args{LocalAddr} = $host if $host !~ /\*/; # what local address (* is all)
++  $args{Domain} = $pfamily  if $Net::Server::Proto::TCP::have_inet6 && $pfamily;
+   $args{Reuse}     = 1;  # allow us to rebind the port on a restart
+   $args{Broadcast} = 1 if $prop->{udp_broadcast};
+ 
+-  ### connect to the sock
++  ### bind to the sock
+   $sock->SUPER::configure(\%args)
+-    or $server->fatal("Can't connect to UDP port $port on $host [$!]");
++    or $server->fatal("Can't bind to UDP port $port on $host [$!]");
+ 
+-  $server->fatal("Back sock [$!]!".caller())
++  $server->fatal("Bad sock [$!]!".caller())
+     unless $sock;
+ 
+--- Net-Server-0.99/lib/Net/Server/Proto.pm	2010-05-05 06:13:22.000000000 +0200
++++ Net-Server-0.99/lib/Net/Server/Proto.pm	2010-10-05 17:56:38.000000000 +0200
+@@ -69,5 +69,6 @@
+ 
+ 
+-  ### return an object of that procol class
++  ### returns any number of objects (socket),
++  ### one for each protocol family (PF_INET or PF_INET6) and each bind address
+   return $proto_class->object($default_host,$port,$server);
+ 
+@@ -84,5 +85,5 @@
+ =head1 SYNOPSIS
+ 
+-  # Net::Server::Proto and its accompianying modules are not
++  # Net::Server::Proto and its accompanying modules are not
+   # intended to be used outside the scope of Net::Server.
+ 
+@@ -103,5 +104,5 @@
+   
+   ### Net::Server::Proto will attempt to interface with
+-  ### sub modules named simillar to Net::Server::Proto::TCP
++  ### sub modules named similar to Net::Server::Proto::TCP
+   ### Individual sub modules will be loaded by
+   ### Net::Server::Proto as they are needed.
+@@ -225,8 +226,22 @@
+ The port is the most important argument passed to the sub
+ module classes and to Net::Server::Proto itself.  For tcp,
+-udp, and ssl style ports, the form is generally
+-host:port/protocol, host|port|protocol, host/port, or port.
+-For unix the form is generally socket_file|type|unix or 
+-socket_file.  
++udp, and ssl style ports, the form is generally host:port/protocol
++or [host]:port/protocol, host|port|protocol, host/port, or port.
++If I<host> is a numerical IPv6 address it must be enclosed in square
++brackets to avoid ambiguity in parsing a port number, e.g.: "[::1]:80".
++For unix sockets the form is generally socket_file|type|unix or socket_file.
++
++A socket protocol family PF_INET or PF_INET6 is derived from a specified
++address family of the binding address. A PF_INET socket can only accept
++IPv4 connections. A PF_INET6 socket accepts IPv6 connections, but may also
++accept IPv4 connections, depending on OS and its settings. For example,
++on FreeBSD systems setting a sysctl net.inet6.ip6.v6only to 0 will allow
++IPv4 connections to a PF_INET6 socket.
++
++The Net::Server::Proto::object method returns a list of objects corresponding
++to created sockets. For Unix and INET sockets the list typically contains
++just one element, but may return multiple objects when multiple protocol
++families are allowed or when a host name resolves to multiple local
++binding addresses.
+ 
+ You can see what Net::Server::Proto parsed out by looking at
+--- Net-Server-0.99/lib/Net/Server.pm	2010-07-09 16:55:31.000000000 +0200
++++ Net-Server-0.99/lib/Net/Server.pm	2010-10-05 19:52:16.000000000 +0200
+@@ -26,5 +26,5 @@
+ use strict;
+ use vars qw($VERSION);
+-use Socket qw(inet_aton inet_ntoa AF_INET AF_UNIX SOCK_DGRAM SOCK_STREAM);
++use Socket qw(AF_INET AF_UNIX SOCK_DGRAM SOCK_STREAM);
+ use IO::Socket ();
+ use IO::Select ();
+@@ -356,6 +356,12 @@
+   push @{ $prop->{host} }, (($prop->{host}->[-1]) x (@{ $prop->{port} } - @{ $prop->{host}})); # augment hosts with as many as port
+   foreach my $host (@{ $prop->{host} }) {
+-    $host = '*' if ! defined $host || ! length $host;;
+-    $host = ($host =~ /^([\w\.\-\*\/]+)$/) ? $1 : $self->fatal("Unsecure host \"$host\"");
++    local $1;
++    if (!defined $host || $host eq '' || $host eq '*') {
++      $host = '*';
++    } elsif ($host =~ /^\[([\w\/.:-]+)\]$/ || $host =~ /^([\w\/.:-]+)$/) {
++      $host = $1;
++    } else {
++      $self->fatal("Unsecure host \"$host\"");
++    }
+   }
+ 
+@@ -377,10 +383,12 @@
+     my $host  = $prop->{host}->[$i];
+     my $proto = $prop->{proto}->[$i];
+-    if ($port ne 0 && $bound{"$host/$port/$proto"}++) {
++    if ($port ne "0" && $bound{"$host/$port/$proto"}++) {
+       $self->log(2, "Duplicate configuration (".(uc $proto)." port $port on host $host - skipping");
+       next;
+     }
+-    my $obj = $self->proto_object($host, $port, $proto) || next;
+-    push @{ $prop->{sock} }, $obj;
++    my @obj_list = $self->proto_object($host, $port, $proto);
++    for my $obj (@obj_list) {
++      push @{ $prop->{sock} }, $obj  if $obj;
++    }
+   }
+   if (! @{ $prop->{sock} }) {
+@@ -397,5 +405,7 @@
+ }
+ 
+-### method for invoking procol specific bindings
++### method for invoking procol specific bindings;
++### returns any number of sockets,
++### one for each protocol family (PF_INET or PF_INET6) and each bind address
+ sub proto_object {
+   my $self = shift;
+@@ -440,6 +450,8 @@
+   }
+ 
+-  ### if more than one port we'll need to select on it
+-  if( @{ $prop->{port} } > 1 || $prop->{multi_port} ){
++  ### if more than one socket we'll need to select on it;
++  ### note there may be more than one socket per port,
++  ### one for each protocol family (PF_INET and PF_INET6)
++  if( @{ $prop->{sock} } > 1 || $prop->{multi_port} ){
+     $prop->{multi_port} = 1;
+     $prop->{select} = IO::Select->new();
+@@ -748,5 +760,7 @@
+     return;
+   } elsif ($self->isa('Net::Server::INET')) {
+-    $prop->{sockaddr} = $ENV{'REMOTE_HOST'} || '0.0.0.0';
++    # since we do not know a socket protocol family, we are unable
++    # to choose between '0.0.0.0' and '::' as an unspecified address
++    $prop->{sockaddr} = $ENV{'REMOTE_HOST'} || '0.0.0.0';  # or is is a '::' ?
+     $prop->{peeraddr} = '0.0.0.0';
+     $prop->{sockhost} = $prop->{peerhost} = 'inetd.server';
+@@ -756,12 +770,12 @@
+ 
+   ### read information about this connection
+-  my $sockname = getsockname( $sock );
++  my $sockname = $sock->sockname;
+   if( $sockname ){
+-    ($prop->{sockport}, $prop->{sockaddr})
+-      = Socket::unpack_sockaddr_in( $sockname );
+-    $prop->{sockaddr} = inet_ntoa( $prop->{sockaddr} );
+-
++    $prop->{sockaddr} = $sock->sockhost;
++    $prop->{sockport} = $sock->sockport;
+   }else{
+     ### does this only happen from command line?
++    # since we do not know a socket protocol family, we are unable
++    # to choose between '0.0.0.0' and '::' as an unspecified address
+     $prop->{sockaddr} = $ENV{'REMOTE_HOST'} || '0.0.0.0';
+     $prop->{sockhost} = 'inet.test';
+@@ -773,16 +787,24 @@
+   if( $prop->{udp_true} ){
+     $proto_type = 'UDP';
+-    ($prop->{peerport} ,$prop->{peeraddr})
+-      = Socket::sockaddr_in( $prop->{udp_peer} );
+-  }elsif( $prop->{peername} = getpeername( $sock ) ){
+-    ($prop->{peerport}, $prop->{peeraddr})
+-      = Socket::unpack_sockaddr_in( $prop->{peername} );
+-  }
+-
+-  if( $prop->{peername} || $prop->{udp_true} ){
+-    $prop->{peeraddr} = inet_ntoa( $prop->{peeraddr} );
+-
+-    if( defined $prop->{reverse_lookups} ){
+-      $prop->{peerhost} = gethostbyaddr( inet_aton($prop->{peeraddr}), AF_INET );
++    if ($sock->sockdomain == AF_INET) { ($prop->{peerport}, $prop->{peeraddrn}) = Socket::sockaddr_in($prop->{udp_peer});
++    } else { ($prop->{peerport}, $prop->{peeraddrn}) = Socket6::sockaddr_in6($prop->{udp_peer});
++    }
++    $prop->{peeraddr} = Socket6->UNIVERSAL::can('inet_ntop')
++                   ? Socket6::inet_ntop($sock->sockdomain, $prop->{peeraddrn})
++                   : Socket::inet_ntoa( $prop->{peeraddrn} );
++  }elsif( $prop->{peername} = $sock->peername ){
++    $prop->{peeraddrn} = $sock->peeraddr;  # binary
++    $prop->{peeraddr} = $sock->peerhost;   # ascii
++    $prop->{peerport} = $sock->peerport;
++  }
++
++  if( $prop->{peeraddrn} ){
++    if( !defined $prop->{reverse_lookups} ){
++      # no reverse DNS resolving
++    }elsif( Socket6->UNIVERSAL::can('getnameinfo') ){
++      my @res = Socket6::getnameinfo( $prop->{peeraddrn}, 0 );
++      $prop->{peerhost} = $res[0]  if @res > 1;
++    }else{
++      $prop->{peerhost} = gethostbyaddr( $prop->{peeraddrn}, AF_INET );
+     }
+     $prop->{peerhost} = '' unless defined $prop->{peerhost};
+@@ -790,4 +812,6 @@
+   }else{
+     ### does this only happen from command line?
++    # since we do not know a socket protocol family, we are unable
++    # to choose between '0.0.0.0' and '::' as an unspecified address
+     $prop->{peeraddr} = '0.0.0.0';
+     $prop->{peerhost} = 'inet.test';
+@@ -796,6 +820,6 @@
+ 
+   $self->log(3,$self->log_time
+-             ." CONNECT $proto_type Peer: \"$prop->{peeraddr}:$prop->{peerport}\""
+-             ." Local: \"$prop->{sockaddr}:$prop->{sockport}\"\n");
++             ." CONNECT $proto_type Peer: \"[$prop->{peeraddr}]:$prop->{peerport}\""
++             ." Local: \"[$prop->{sockaddr}]:$prop->{sockport}\"\n");
+ 
+ }
+@@ -1141,9 +1165,11 @@
+   foreach my $sock ( @{ $prop->{sock} } ){
+ 
+-    ### duplicate the sock
++    ### duplicate the socket descriptor
+     my $fd = POSIX::dup($sock->fileno)
+       or $self->fatal("Can't dup socket [$!]");
+ 
+-    ### hold on to the socket copy until exec
++    ### hold on to the socket copy until exec;
++    ### just temporary: any socket domain will do,
++    ### forked process will decide to use IO::Socket::INET6 if necessary
+     $prop->{_HUP}->[$i] = IO::Socket::INET->new;
+     $prop->{_HUP}->[$i]->fdopen($fd, 'w')
+@@ -1153,5 +1179,5 @@
+     $prop->{_HUP}->[$i]->fcntl( Fcntl::F_SETFD(), my $flags = "" );
+ 
+-    ### save host,port,proto, and file descriptor
++    ### save file descriptor and host|port|proto|family
+     push @fd, $fd .'|'. $sock->hup_string;
+ 
+--- Net-Server-0.99/lib/Net/Server.pod	2010-07-08 21:22:42.000000000 +0200
++++ Net-Server-0.99/lib/Net/Server.pod	2010-10-05 19:32:28.000000000 +0200
+@@ -556,19 +556,46 @@
+ bound at server startup.  May be of the form
+ C<host:port/proto>, C<host:port>, C<port/proto>, or C<port>,
+-where I<host> represents a hostname residing on the local
+-box, where I<port> represents either the number of the port
+-(eg. "80") or the service designation (eg.  "http"), and
+-where I<proto> represents the protocol to be used.  See
+-L<Net::Server::Proto>.  If you are working with unix sockets,
+-you may also specify C<socket_file|unix> or
+-C<socket_file|type|unix> where type is SOCK_DGRAM or
+-SOCK_STREAM.  If the protocol is not specified, I<proto> will
++where I<host> represents a hostname residing on the local box,
++where I<port> represents either the number of the port (eg. "80")
++or the service designation (eg. "http"), and where I<proto>
++represents the protocol to be used. See L<Net::Server::Proto>.
++
++An explicit I<host> given in a port specification overrides
++a default binding address (a C<host> setting, see below).
++The I<host> part may be enclosed in square brackets, but when it is
++a numerical IPv6 address it B<must> be enclosed in square brackets
++to avoid ambiguity in parsing a port number, e.g.: "[::1]:80".
++
++If you are working with unix sockets, you may also specify
++C<socket_file|unix> or C<socket_file|type|unix> where type is SOCK_DGRAM
++or SOCK_STREAM.  If the protocol is not specified, I<proto> will
+ default to the C<proto> specified in the arguments.  If C<proto> is not
+ specified there it will default to "tcp".  If I<host> is not
+ specified, I<host> will default to C<host> specified in the
+-arguments.  If C<host> is not specified there it will
+-default to "*".  Default port is 20203.  Configuration passed
+-to new or run may be either a scalar containing a single port
+-number or an arrayref of ports.
++arguments.  If C<host> is not specified there it will default to "*".
++Default port is 20203.  Configuration passed to new or run may be either
++a scalar containing a single port number or an arrayref of ports.
++
++On an IPv6-enabled host where a module IO::Socket::INET6 is installed
++the "*" implies two listening sockets, one for each of the protocols
++(PF_INET and PF_INET6) and is equivalent to specifying two ports, bound
++to an 'unspecified' address of each address family ("0.0.0.0" and "::").
++If listening on an INET6 socket is not desired despite IO::Socket::INET6
++module being available, please supply the 'unspecifed' INET (IPv4) address
++'0.0.0.0' as a I<host>, either in the C<port> or in the C<host> argument.
++
++An INET socket can only accept IPv4 connections. An INET6 socket accepts
++IPv6 connections, but may also accept IPv4 connections depending on
++OS and its settings. For example, on FreeBSD systems setting a sysctl
++net.inet6.ip6.v6only to 0 will allow IPv4 connections to an INET6 socket.
++If this is the case, specifying "::" as a binding address instead of a "*"
++might be desired to reduce the number of sockets needed. Note that a
++textual representation of a peer's IPv4 address as connected to an INET6
++socket will typically be in a form of an IPv4-mapped IPv6 addresses,
++e.g. "::FFFF:127.0.0.1" .
++
++Restricting binding to a loopback interface on systems where an INET6
++socket does not accept IPv4 connections requires creating two sockets,
++one bound to address "127.0.0.1" and the other bound to address "::1".
+ 
+ On systems that support it, a port value of 0 may be used to ask
+@@ -583,5 +610,7 @@
+ Local host or addr upon which to bind port.  If a value of '*' is
+ given, the server will bind that port on all available addresses
+-on the box.  See L<Net::Server::Proto>. See L<IO::Socket>.  Configuration
++on the box.  The C<host> argument provides a default local host
++address if the C<port> argument omits a host specification.
++See L<Net::Server::Proto>. See L<IO::Socket>.  Configuration
+ passed to new or run may be either a scalar containing a single
+ host or an arrayref of hosts - if the hosts array is shorter than
+--- Net-Server-0.99/lib/Net/Server/Proto/SSLEAY.pm.orig	2010-07-09 09:44:48.000000000 -0700
++++ Net-Server-0.99/lib/Net/Server/Proto/SSLEAY.pm	2011-08-01 11:08:19.183613424 -0700
+@@ -22,156 +22,254 @@
+ package Net::Server::Proto::SSLEAY;
+ 
+ use strict;
+-use vars qw($VERSION $AUTOLOAD @ISA);
+-use IO::Socket::INET;
++use vars qw($VERSION $AUTOLOAD @ISA $have_inet6);
+ use Fcntl ();
+ use Errno ();
+ use Socket ();
++use IO::Socket;
+ 
+ BEGIN {
+-    eval { require Net::SSLeay };
+-    $@ && warn "Module Net::SSLeay is required for SSLeay.";
+-    # Net::SSLeay gets mad if we call these multiple times - the question is - who will call them multiple times?
+-    for my $sub (qw(load_error_strings SSLeay_add_ssl_algorithms ENGINE_load_builtin_engines ENGINE_register_all_complete randomize)) {
+-        Net::SSLeay->can($sub)->();
+-    }
++  eval {
++    require Socket6; import Socket6;
++    require IO::Socket::INET6;
++    @ISA = qw(IO::Socket::INET6);
++    $have_inet6 = 1;
++  } or do {
++    require IO::Socket::INET;
++    @ISA = qw(IO::Socket::INET);
++  };
++  eval { require Net::SSLeay };
++  $@ && warn "Module Net::SSLeay is required for SSLeay.";
++  # Net::SSLeay gets mad if we call these multiple times - the question is - who will call them multiple times?
++  for my $sub (qw(load_error_strings SSLeay_add_ssl_algorithms ENGINE_load_builtin_engines ENGINE_register_all_complete randomize)) {
++    Net::SSLeay->can($sub)->();
++  }
+ }
+ 
+ $VERSION = $Net::Server::VERSION; # done until separated
+-@ISA = qw(IO::Socket::INET);
++
++# additional protocol specific arguments
++my @ssl_args = qw(
++    SSL_use_cert
++    SSL_verify_mode
++    SSL_key_file
++    SSL_cert_file
++    SSL_ca_path
++    SSL_ca_file
++    SSL_cipher_list
++    SSL_passwd_cb
++    SSL_max_getline_length
++    SSL_error_callback
++);
+ 
+ sub object {
+-    my $type  = shift;
+-    my $class = ref($type) || $type || __PACKAGE__;
++  my $type  = shift;
++  my $class = ref($type) || $type || __PACKAGE__;
+ 
+-    my ($default_host,$port,$server) = @_;
+-    my $prop = $server->{'server'};
+-    my $host;
+-
+-    if ($port =~ m/^([\w\.\-\*\/]+):(\w+)$/) { # allow for things like "domain.com:80"
+-        ($host, $port) = ($1, $2);
+-    }
+-    elsif ($port =~ /^(\w+)$/) { # allow for things like "80"
+-        ($host, $port) = ($default_host, $1);
+-    }
+-    else {
+-        $server->fatal("Undeterminate port \"$port\" under ".__PACKAGE__);
+-    }
+-
+-    # read any additional protocol specific arguments
+-    my @ssl_args = qw(
+-        SSL_server
+-        SSL_use_cert
+-        SSL_verify_mode
+-        SSL_key_file
+-        SSL_cert_file
+-        SSL_ca_path
+-        SSL_ca_file
+-        SSL_cipher_list
+-        SSL_passwd_cb
+-        SSL_error_callback
+-        SSL_max_getline_length
+-    );
+-    my %args;
+-    $args{$_} = \$prop->{$_} for @ssl_args;
+-    $server->configure(\%args);
+-
+-    my $sock = $class->new;
+-    $sock->NS_host($host);
+-    $sock->NS_port($port);
+-    $sock->NS_proto('SSLEAY');
++  my ($default_host,$port,$server) = @_;
++  my $host;
++  my $prop = $server->{'server'};
++
++  local($1,$2);
++  ### allow for things like "[::1]:80" or "[host.example.com]:80"
++  if( $port =~ m/^\[([^\]]*)\]:(\w+)$/ ){
++    ($host,$port) = ($1,$2);
++
++  ### allow for things like "host.example.com:80"
++  }elsif( $port =~ m/^([\w\.\-\*\/]+):(\w+)$/ ){
++    ($host,$port) = ($1,$2);
++
++  ### allow for things like "80" or "http"
++  }elsif( $port =~ /^(\w+)$/ ){
++    ($host,$port) = ($default_host,$1);
++
++  ### don't know that style of port
++  }else{
++    $server->fatal("Undeterminate port \"$port\" under ".__PACKAGE__);
++  }
++
++  ### collect bind addresses along with their address family for all hosts
++  my @bind_tuples;
++  if( $host =~ /^\d{1,3}(?:\.\d{1,3}){3}\z/ ){
++    push(@bind_tuples, [AF_INET,$host,$port]);
++  }elsif( $host =~ /:/ ){
++    die "No IO::Socket::INET6, cannot bind to [$host]:$port"  if !$have_inet6;
++    push(@bind_tuples, [AF_INET6,$host,$port]);
++  }elsif( !$have_inet6 ){
++    push(@bind_tuples, [AF_INET,$host,$port]);
++  }elsif( $have_inet6 && $host =~ /\*/ ){
++    push(@bind_tuples, [AF_INET6,$host,$port], [AF_INET,$host,$port]);
++  }else{  # we do have IO::Socket::INET6, it handles inet6 as well as inet
++    # obtain a list of IP addresses for $host, resolve port name
++    my @res1 = getaddrinfo($host, $port, AF_UNSPEC, SOCK_STREAM, 0,
++                           AI_PASSIVE|AI_ADDRCONFIG);
++    die "Unresolvable [$host]:$port: $res1[0]"  if @res1 < 5;
++    while (@res1 >= 5) {
++      my($afam, $socktype, $proto, $saddr, $canonname);
++      ($afam, $socktype, $proto, $saddr, $canonname, @res1) = @res1;
++      my @res2 = getnameinfo($saddr, NI_NUMERICHOST | NI_NUMERICSERV);
++      die "getnameinfo failed on [$host]:$port: $res2[0]"  if @res2 < 2;
++      my($hostip,$portnum) = @res2;
++      $server->log(4,"Resolved [$host]:$port -> [$hostip]:$portnum, AF $afam");
++      push(@bind_tuples, [$afam,$hostip,$portnum]);
++    }
++  }
++
++  my @sockets_list;
++  ### create a socket for each specified bind address and family
++  foreach my $tuple ( @bind_tuples ){
++    my $afamily;  # address family (AF_* constants)
++    my $pfamily;  # socket protocol family (PF_* constants)
++    ($afamily,$host,$port) = @$tuple;
++    my $sock;
++    if( $have_inet6 ){
++      # Using IO::Socket::INET6 to handle both the IPv4 and IPv6.
++      # Constants PF_INET/PF_INET6 (protocol family) usually happen to have
++      # the same value as AF_INET/AF_INET6 (address family) constants.
++      # Still, better safe than sorry:
++      if ( $afamily == AF_INET ) {
++        $pfamily = PF_INET;
++      } elsif ( $afamily == AF_INET6 ) {
++        $pfamily = PF_INET6;
++      } else {
++        $pfamily = $afamily;
++      }
++      $server->log(3,"Using IO::Socket::INET6 for [$host]:$port, PF $pfamily");
++      $sock = IO::Socket::INET6->new(Domain => $pfamily);  # inet or inet6
++    }else{
++      $pfamily = PF_INET;
++      $server->log(3,"Using IO::Socket::INET for [$host]:$port, PF $pfamily");
++      $sock = IO::Socket::INET->new();  # inet socket (IPv4 only)
++    }
++
++    if ($sock) {
++      bless $sock, $class;
++
++      $sock->NS_host($host);
++      $sock->NS_port($port);
++      $sock->NS_proto('SSLEAY');
++      $sock->NS_family($pfamily);  # socket protocol family
+ 
+-    for my $key (@ssl_args) {
++      for my $key (@ssl_args) {
+         my $val = defined($prop->{$key}) ? $prop->{$key} : $server->can($key) ? $server->$key($host, $port, 'SSLEAY') : undef;
+         $sock->$key($val);
++      }
++      push @sockets_list, $sock;
+     }
++  }
+ 
+-    return $sock;
++  ### returns any number of sockets,
++  ### one for each protocol family (PF_INET or PF_INET6) and each bind address
++  return !wantarray ? $sockets_list[0] : @sockets_list;
+ }
+ 
+ sub log_connect {
+-    my $sock = shift;
+-    my $server = shift;
+-    my $host   = $sock->NS_host;
+-    my $port   = $sock->NS_port;
+-    my $proto  = $sock->NS_proto;
+-    $server->log(2,"Binding to $proto port $port on host $host\n");
++  my $sock = shift;
++  my $server  = shift;
++  my $host    = $sock->NS_host; 
++  my $port    = $sock->NS_port;
++  my $proto   = $sock->NS_proto;
++  my $pfamily = $sock->NS_family || 0;
++  $server->log(2,"Binding to $proto port $port on host $host, PF $pfamily\n");
+ }
+ 
+ ###----------------------------------------------------------------###
+ 
+-sub connect { # connect the first time
+-    my $sock   = shift;
+-    my $server = shift;
+-    my $prop   = $server->{'server'};
+-
+-    my $host  = $sock->NS_host;
+-    my $port  = $sock->NS_port;
+-
+-    my %args;
+-    $args{'LocalPort'} = $port;
+-    $args{'Proto'}     = 'tcp';
+-    $args{'LocalAddr'} = $host if $host !~ /\*/; # * is all
+-    $args{'Listen'}    = $prop->{'listen'};
+-    $args{'Reuse'}     = 1;
+-
+-    $sock->SUPER::configure(\%args) || $server->fatal("Can't connect to SSL port $port on $host [$!]");
+-    $server->fatal("Bad sock [$!]!".caller()) if ! $sock;
+-
+-    if ($port == 0 && ($port = $sock->sockport)) {
+-        $sock->NS_port($port);
+-        $server->log(2,"Bound to auto-assigned port $port");
+-    }
+-
+-    $sock->bind_SSL($server);
+-}
+-
+-sub reconnect { # connect on a sig -HUP
+-    my ($sock, $fd, $server) = @_;
+-    my $resp = $sock->fdopen( $fd, 'w' ) || $server->fatal("Error opening to file descriptor ($fd) [$!]");
+-    $sock->bind_SSL($server);
+-    return $resp;
++### bind the first time
++sub connect {
++  my $sock    = shift;
++  my $server  = shift;
++  my $prop    = $server->{server};
++
++  my $host    = $sock->NS_host;
++  my $port    = $sock->NS_port;
++  my $pfamily = $sock->NS_family || 0;
++
++  my %args;
++  $args{LocalPort} = $port;
++  $args{Proto}     = 'tcp';
++  $args{LocalAddr} = $host if $host !~ /\*/;  # * is all
++  $args{Domain}    = $pfamily  if $have_inet6 && $pfamily;
++  $args{Listen}    = $prop->{listen};
++  $args{Reuse}     = 1;
++
++  $sock->SUPER::configure(\%args)
++    or $server->fatal("Can't bind to SSL port $port on $host [$!]");
++  $server->fatal("Bad sock [$!]!".caller())  if !$sock;
++
++  my $actual_port = $sock->sockport;
++  # $port may be a service name, compare as strings
++  if( $actual_port && (!defined $port || $actual_port ne $port) ){
++    $sock->NS_port($actual_port);
++    if( $port =~ /^0*\z/ ){
++      $server->log(2,"Bound to auto-assigned port $actual_port");
++    }else{
++      $server->log(3,"Bound to service \"$port\", port number $actual_port");
++    }
++  }
++
++  $sock->bind_SSL($server);
++}
++
++### reassociate sockets with inherited file descriptors on a sig -HUP
++sub reconnect {
++  my ($sock, $fd, $server) = @_;
++
++  my $host    = $sock->NS_host; 
++  my $port    = $sock->NS_port;
++  my $proto   = $sock->NS_proto;
++  my $pfamily = $sock->NS_family || 0;
++
++  $server->log(3,"Reassociating file descriptor $fd ".
++                 "with socket $proto on [$host]:port, PF $pfamily\n");
++  my $resp = $sock->fdopen( $fd, 'w' )
++    or $server->fatal("Error opening to file descriptor ($fd) [$!]");
++  $sock->bind_SSL($server);
++  return $resp;
+ }
+ 
+ sub bind_SSL {
+-    my ($sock, $server) = @_;
+-    my $ctx = Net::SSLeay::CTX_new();  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_new");
++  my ($sock, $server) = @_;
++  my $ctx = Net::SSLeay::CTX_new();  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_new");
+ 
+-    Net::SSLeay::CTX_set_options($ctx, Net::SSLeay::OP_ALL());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_set_options");
++  Net::SSLeay::CTX_set_options($ctx, Net::SSLeay::OP_ALL());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_set_options");
+ 
+-    # 0x1:  SSL_MODE_ENABLE_PARTIAL_WRITE
+-    # 0x10: SSL_MODE_RELEASE_BUFFERS (ignored before OpenSSL v1.0.0)
+-    Net::SSLeay::CTX_set_mode($ctx, 0x11);  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_set_mode");
+-
+-    # Load certificate. This will prompt for a password if necessary.
+-    my $file_key  = $sock->SSL_key_file  || die "SSLeay missing SSL_key_file.\n";
+-    my $file_cert = $sock->SSL_cert_file || die "SSLeay missing SSL_cert_file.\n";
+-    Net::SSLeay::CTX_use_RSAPrivateKey_file($ctx, $file_key,  Net::SSLeay::FILETYPE_PEM());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_use_RSAPrivateKey_file");
+-    Net::SSLeay::CTX_use_certificate_file(  $ctx, $file_cert, Net::SSLeay::FILETYPE_PEM());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_use_certificate_file");
+-    $sock->SSLeay_context($ctx);
++  # 0x1:  SSL_MODE_ENABLE_PARTIAL_WRITE
++  # 0x10: SSL_MODE_RELEASE_BUFFERS (ignored before OpenSSL v1.0.0)
++  Net::SSLeay::CTX_set_mode($ctx, 0x11);  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_set_mode");
++
++  # Load certificate. This will prompt for a password if necessary.
++  my $file_key  = $sock->SSL_key_file  || die "SSLeay missing SSL_key_file.\n";
++  my $file_cert = $sock->SSL_cert_file || die "SSLeay missing SSL_cert_file.\n";
++  Net::SSLeay::CTX_use_RSAPrivateKey_file($ctx, $file_key,  Net::SSLeay::FILETYPE_PEM());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_use_RSAPrivateKey_file");
++  Net::SSLeay::CTX_use_certificate_file(  $ctx, $file_cert, Net::SSLeay::FILETYPE_PEM());  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_use_certificate_file");
++  $sock->SSLeay_context($ctx);
+ }
+ 
+ sub close {
+-    my $sock = shift;
+-    if ($sock->SSLeay_is_client) {
+-        Net::SSLeay::free($sock->SSLeay);
+-    } else {
+-        Net::SSLeay::CTX_free($sock->SSLeay_context);
+-    }
+-    $sock->SSLeay_check_fatal("SSLeay close free");
+-    return $sock->SUPER::close(@_);
++  my $sock = shift;
++  if ($sock->SSLeay_is_client) {
++    Net::SSLeay::free($sock->SSLeay);
++  } else {
++    Net::SSLeay::CTX_free($sock->SSLeay_context);
++  }
++  $sock->SSLeay_check_fatal("SSLeay close free");
++  return $sock->SUPER::close(@_);
+ }
+ 
+ sub accept {
+-    my $sock = shift;
+-    my $client = $sock->SUPER::accept;
+-    if (defined $client) {
+-        $client->NS_proto($sock->NS_proto);
+-        $client->SSLeay_context($sock->SSLeay_context);
+-        $client->SSLeay_is_client(1);
+-    }
++  my $sock = shift;
++  my $client = $sock->SUPER::accept;
++  if (defined $client) {
++    $client->NS_proto( $sock->NS_proto );
++    $client->NS_family( $sock->NS_family );
++    $client->NS_host( $sock->NS_host );
++    $client->NS_port( $sock->NS_port );
++    $client->SSLeay_context( $sock->SSLeay_context );
++    $client->SSLeay_is_client(1);
++  }
+ 
+-    return $client;
++  return $client;
+ }
+ 
+ sub SSLeay {
+@@ -280,6 +378,17 @@
+     return length $read;
+ }
+ 
++sub sysread {
++    my ($client, $buf, $size, $offset) = @_;
++    warn "sysread is not supported by Net::Server::Proto::SSLEAY";
++    # not quite right, usable only for testing:
++    my ($ok, $read) = $client->read_until($size, $/, 1);
++    substr($_[1], $offset || 0, defined($buf) ? length($buf) : 0, $read);
++    # should return the number of bytes actually read, 0 at end of file, or
++    # undef if there was an error (in the latter case $! should also be set)
++    return length $read;
++}
++
+ sub getline {
+     my $client = shift;
+     my ($ok, $line) = $client->read_until($client->SSL_max_getline_length, $/);
+@@ -330,20 +439,24 @@
+     $client->print($buf);
+ }
+ 
+-sub sysread  { die "sysread is not supported by Net::Server::Proto::SSLEAY" }
+ sub syswrite { die "syswrite is not supported by Net::Server::Proto::SSLEAY" }
+ 
+ ###----------------------------------------------------------------###
+ 
+ sub hup_string {
+     my $sock = shift;
+-    return join "|", map{$sock->$_()} qw(NS_host NS_port NS_proto);
++    return join("|",
++                $sock->NS_host,
++                $sock->NS_port,
++                $sock->NS_proto,
++                !$have_inet6 || !$sock->NS_family ? () : $sock->NS_family,
++              );
+ }
+ 
+ sub show {
+     my $sock = shift;
+     my $t = "Ref = \"" .ref($sock) . "\"\n";
+-    foreach my $prop ( qw(NS_proto NS_port NS_host SSLeay_context SSLeay_is_client) ){
++    foreach my $prop ( qw(NS_proto NS_port NS_host NS_family SSLeay_context SSLeay_is_client) ){
+         $t .= "  $prop = \"" .$sock->$prop()."\"\n";
+     }
+     return $t;
+@@ -353,7 +466,7 @@
+     my $sock = shift;
+     my $prop = $AUTOLOAD =~ /::([^:]+)$/ ? $1 : die "Missing property in AUTOLOAD.";
+     die "Unknown method or property [$prop]"
+-        if $prop !~ /^(NS_proto|NS_port|NS_host|SSLeay_context|SSLeay_is_client|SSL_\w+)$/;
++        if $prop !~ /^(NS_proto|NS_port|NS_host|NS_family|SSLeay_context|SSLeay_is_client|SSL_\w+)$/;
+ 
+     no strict 'refs';
+     *{__PACKAGE__."::${prop}"} = sub {
+--- Net-Server-0.99/lib/Net/Server/Proto/SSL.pm.orig	2010-05-04 20:13:03.000000000 -0700
++++ Net-Server-0.99/lib/Net/Server/Proto/SSL.pm	2011-08-01 11:08:50.503627241 -0700
+@@ -22,14 +22,47 @@
+ package Net::Server::Proto::SSL;
+ 
+ use strict;
+-use vars qw($VERSION $AUTOLOAD @ISA);
+-use Net::Server::Proto::TCP ();
+-eval { require IO::Socket::SSL; };
+-$@ && warn "Module IO::Socket::SSL is required for SSL.";
++use vars qw($VERSION $AUTOLOAD @ISA $have_inet6 $io_socket_module);
++use IO::Socket;
++
++BEGIN {
++  eval {
++    require Socket6; import Socket6;
++    require IO::Socket::INET6;
++    $io_socket_module = 'IO::Socket::INET6';
++    $have_inet6 = 1;
++  } or do {
++    require IO::Socket::INET;
++    $io_socket_module = 'IO::Socket::INET';
++  };
++  @ISA = ( $io_socket_module );
++}
++
++eval {
++  require IO::Socket::SSL; import IO::Socket::SSL;
++  # we could add IO::Socket::SSL to a local copy of @ISA just before calling
++  # start_SSL and do away with the $io_socket_module trick later, but this
++  # causes perl 5.12.2 to crash, so do it the way it likes it
++  unshift(@ISA, qw(IO::Socket::SSL));  1;
++} or do {
++  warn "Module IO::Socket::SSL is required for SSL: $@";
++};
+ 
+ $VERSION = $Net::Server::VERSION; # done until separated
+-@ISA = qw(IO::Socket::SSL);
+ 
++# additional protocol specific arguments
++my @ssl_args = qw(
++    SSL_use_cert
++    SSL_verify_mode
++    SSL_key_file
++    SSL_cert_file
++    SSL_ca_path
++    SSL_ca_file
++    SSL_cipher_list
++    SSL_passwd_cb
++    SSL_max_getline_length
++    SSL_error_callback
++);
+ 
+ sub object {
+   my $type  = shift;
+@@ -39,11 +72,16 @@
+   my $prop = $server->{server};
+   my $host;
+ 
+-  ### allow for things like "domain.com:80"
+-  if( $port =~ m/^([\w\.\-\*\/]+):(\w+)$/ ){
++  local($1,$2);
++  ### allow for things like "[::1]:80" or "[host.example.com]:80"
++  if( $port =~ m/^\[([^\]]*)\]:(\w+)$/ ){
+     ($host,$port) = ($1,$2);
+ 
+-  ### allow for things like "80"
++  ### allow for things like "host.example.com:80"
++  }elsif( $port =~ m/^([\w\.\-\*\/]+):(\w+)$/ ){
++    ($host,$port) = ($1,$2);
++
++  ### allow for things like "80" or "http"
+   }elsif( $port =~ /^(\w+)$/ ){
+     ($host,$port) = ($default_host,$1);
+ 
+@@ -52,98 +90,167 @@
+     $server->fatal("Undeterminate port \"$port\" under ".__PACKAGE__);
+   }
+ 
+-  # read any additional protocol specific arguments
+-  my @ssl_args = qw(
+-      SSL_server
+-      SSL_use_cert
+-      SSL_verify_mode
+-      SSL_key_file
+-      SSL_cert_file
+-      SSL_ca_path
+-      SSL_ca_file
+-      SSL_cipher_list
+-      SSL_passwd_cb
+-      SSL_max_getline_length
+-  );
+-  my %args;
+-  $args{$_} = \$prop->{$_} for @ssl_args;
+-  $server->configure(\%args);
+-
+-  my $sock = $class->new;
+-  $sock->NS_host($host);
+-  $sock->NS_port($port);
+-  $sock->NS_proto('SSL');
++  ### collect bind addresses along with their address family for all hosts
++  my @bind_tuples;
++  if( $host =~ /^\d{1,3}(?:\.\d{1,3}){3}\z/ ){
++    push(@bind_tuples, [AF_INET,$host,$port]);
++  }elsif( $host =~ /:/ ){
++    die "No IO::Socket::INET6, cannot bind to [$host]:$port"  if !$have_inet6;
++    push(@bind_tuples, [AF_INET6,$host,$port]);
++  }elsif( !$have_inet6 ){
++    push(@bind_tuples, [AF_INET,$host,$port]);
++  }elsif( $have_inet6 && $host =~ /\*/ ){
++    push(@bind_tuples, [AF_INET6,$host,$port], [AF_INET,$host,$port]);
++  }else{  # we do have IO::Socket::INET6, it handles inet6 as well as inet
++    # obtain a list of IP addresses for $host, resolve port name
++    my @res1 = getaddrinfo($host, $port, AF_UNSPEC, SOCK_STREAM, 0,
++                           AI_PASSIVE|AI_ADDRCONFIG);
++    die "Unresolvable [$host]:$port: $res1[0]"  if @res1 < 5;
++    while (@res1 >= 5) {
++      my($afam, $socktype, $proto, $saddr, $canonname);
++      ($afam, $socktype, $proto, $saddr, $canonname, @res1) = @res1;
++      my @res2 = getnameinfo($saddr, NI_NUMERICHOST | NI_NUMERICSERV);
++      die "getnameinfo failed on [$host]:$port: $res2[0]"  if @res2 < 2;
++      my($hostip,$portnum) = @res2;
++      $server->log(4,"Resolved [$host]:$port -> [$hostip]:$portnum, AF $afam");
++      push(@bind_tuples, [$afam,$hostip,$portnum]);
++    }
++  }
+ 
+-  for my $key (@ssl_args) {
+-    my $val = defined($prop->{$key}) ? $prop->{$key} : $server->can($key) ? $server->$key($host, $port, 'SSL') : undef;
+-    $sock->$key($val);
++  my @sockets_list;
++  ### create a socket for each specified bind address and family
++  foreach my $tuple ( @bind_tuples ){
++    my $afamily;  # address family (AF_* constants)
++    my $pfamily;  # socket protocol family (PF_* constants)
++    ($afamily,$host,$port) = @$tuple;
++    my $sock;
++    if( $have_inet6 ){
++      # Using IO::Socket::INET6 to handle both the IPv4 and IPv6.
++      # Constants PF_INET/PF_INET6 (protocol family) usually happen to have
++      # the same value as AF_INET/AF_INET6 (address family) constants.
++      # Still, better safe than sorry:
++      if ( $afamily == AF_INET ) {
++        $pfamily = PF_INET;
++      } elsif ( $afamily == AF_INET6 ) {
++        $pfamily = PF_INET6;
++      } else {
++        $pfamily = $afamily;
++      }
++      $server->log(3,"Using IO::Socket::INET6 for [$host]:$port, PF $pfamily");
++      $sock = IO::Socket::INET6->new(Domain => $pfamily);  # inet or inet6
++    }else{
++      $pfamily = PF_INET;
++      $server->log(3,"Using IO::Socket::INET for [$host]:$port, PF $pfamily");
++      $sock = IO::Socket::INET->new();  # inet socket (IPv4 only)
++    }
++
++    if ($sock) {
++      ### create the handle under this package
++      bless $sock, $class;
++
++      $sock->NS_host($host);
++      $sock->NS_port($port);
++      $sock->NS_proto('SSL');
++      $sock->NS_family($pfamily);  # socket protocol family
++
++      for my $key (@ssl_args) {
++        my $val = defined($prop->{$key}) ? $prop->{$key} : $server->can($key) ? $server->$key($host, $port, 'SSL') : undef;
++        $sock->$key($val);
++      }
++      push @sockets_list, $sock;
++    }
+   }
+ 
+-  return $sock;
++  ### returns any number of sockets,
++  ### one for each protocol family (PF_INET or PF_INET6) and each bind address
++  return !wantarray ? $sockets_list[0] : @sockets_list;
+ }
+ 
+ sub log_connect {
+   my $sock = shift;
+-  my $server = shift;
+-  my $host   = $sock->NS_host;
+-  my $port   = $sock->NS_port;
+-  my $proto  = $sock->NS_proto;
+- $server->log(2,"Binding to $proto port $port on host $host\n");
++  my $server  = shift;
++  my $host    = $sock->NS_host; 
++  my $port    = $sock->NS_port;
++  my $proto   = $sock->NS_proto;
++  my $pfamily = $sock->NS_family || 0;
++  $server->log(2,"Binding to $proto port $port on host $host, PF $pfamily\n");
+ }
+ 
+-### connect the first time
++### bind the first time
+ sub connect {
+-  my $sock   = shift;
+-  my $server = shift;
+-  my $prop   = $server->{server};
+-
+-  my $host  = $sock->NS_host;
+-  my $port  = $sock->NS_port;
+-
+-  my %args = ();
+-  $args{LocalPort} = $port;                  # what port to bind on
+-  $args{Proto}     = 'tcp';                  # what procol to use
+-  $args{LocalAddr} = $host if $host !~ /\*/; # what local address (* is all)
+-  $args{Listen}    = $prop->{listen};        # how many connections for kernel to queue
+-  $args{Reuse}     = 1;  # allow us to rebind the port on a restart
+-
+-  ### add in any ssl specific properties
+-  foreach ( keys %$prop ){
+-    next unless /^SSL_/;
+-    $args{$_} = $prop->{$_};
+-  }
+-
+-  ### connect to the sock
+-  $sock->SUPER::configure(\%args)
+-    or $server->fatal("Can't connect to SSL port $port on $host [$!]");
+-
+-  $server->fatal("Back sock [$!]!".caller())
+-    unless $sock;
++  my $sock    = shift;
++  my $server  = shift;
++  my $prop    = $server->{server};
++
++  my $host    = $sock->NS_host;
++  my $port    = $sock->NS_port;
++  my $pfamily = $sock->NS_family || 0;
+ 
++  my %args;
++  $args{LocalPort} = $port;
++  $args{Proto}     = 'tcp';
++  $args{LocalAddr} = $host if $host !~ /\*/;  # * is all
++  $args{Domain}    = $pfamily  if $have_inet6 && $pfamily;
++  $args{Listen}    = $prop->{listen};
++  $args{Reuse}     = 1;
++
++  ### bind to the sock using the underlying IO Socket module
++  { local @ISA = ( $io_socket_module );
++    $sock->SUPER::configure(\%args)
++      or $server->fatal("Can't bind to SSL port $port on $host [$!]");
++    $server->fatal("Bad sock [$!]!".caller())  if !$sock;
++  }
+ }
+ 
+ ### connect on a sig -HUP
+ sub reconnect {
+-  my $sock = shift;
+-  my $fd   = shift;
+-  my $server = shift;
+-
+-  $sock->fdopen( $fd, 'w' )
+-    or $server->fatal("Error opening to file descriptor ($fd) [$!]");
++  my ($sock, $fd, $server) = @_;
+ 
++  my $host    = $sock->NS_host; 
++  my $port    = $sock->NS_port;
++  my $proto   = $sock->NS_proto;
++  my $pfamily = $sock->NS_family || 0;
++
++  $server->log(3,"Reassociating file descriptor $fd ".
++                 "with socket $proto on [$host]:port, PF $pfamily\n");
++
++  ### fdopen cannot be used on a IO::Socket::SSL object!!!
++  ### use fdopen() from the underlying IO Socket package
++  { local @ISA = ( $io_socket_module );
++    $sock->fdopen( $fd, 'w' )
++      or $server->fatal("Error opening to file descriptor ($fd) [$!]");
++  }
+ }
+ 
+ ### allow for endowing the child
+ sub accept {
+   my $sock = shift;
+-  my $client = $sock->SUPER::accept();
++  my $client;
+ 
+-  ### pass items on
+-  if( defined($client) ){
+-    bless $client, ref($sock);
+-    $client->NS_proto( $sock->NS_proto );
++  ### fdopen (in reconnect) cannot be used on an IO::Socket::SSL object,
++  ### which is why we accept first and upgrade to SSL later
++
++  ### accept() with the underlying IO Socket package, upgrade to SSL later
++  { local @ISA = ( $io_socket_module );
++    $client = $sock->SUPER::accept();
+   }
+ 
++  if( defined $client ){
++    $client->NS_proto( $sock->NS_proto );
++    $client->NS_family( $sock->NS_family );
++    $client->NS_host( $sock->NS_host );
++    $client->NS_port( $sock->NS_port );
++
++    ### must bless the upgraded SSL object into our package
++    ### to be able to reference its NS_* properties later
++    __PACKAGE__->start_SSL($client,
++      SSL_error_trap => sub { my($sock,$msg) = @_;
++                              die "Error upgrading socket to SSL: $msg" },
++      SSL_server => 1,
++      map { defined $sock->$_() ? ($_,$sock->$_()) : () } @ssl_args,
++    ) or die "Upgrading socket to SSL failed: ".IO::Socket::SSL::errstr();
++
++  }
+   return $client;
+ }
+ 
+@@ -157,6 +264,7 @@
+               $sock->NS_host,
+               $sock->NS_port,
+               $sock->NS_proto,
++              !$have_inet6 || !$sock->NS_family ? () : $sock->NS_family,
+               );
+ }
+ 
+@@ -164,7 +272,7 @@
+ sub show {
+   my $sock = shift;
+   my $t = "Ref = \"" .ref($sock) . "\"\n";
+-  foreach my $prop ( qw(NS_proto NS_port NS_host) ){
++  foreach my $prop ( qw(NS_proto NS_port NS_host NS_family) ){
+     $t .= "  $prop = \"" .$sock->$prop()."\"\n";
+   }
+   return $t;
+@@ -179,7 +287,7 @@
+     die "No property called.";
+   }
+ 
+-  if( $prop =~ /^(NS_proto|NS_port|NS_host)$/ ){
++  if( $prop =~ /^(NS_proto|NS_port|NS_host|NS_family|SSL_\w+)$/ ){
+     no strict 'refs';
+     * { __PACKAGE__ ."::". $prop } = sub {
+       my $sock = shift;
+@@ -215,8 +323,8 @@
+ =head1 DESCRIPTION
+ 
+ This original SSL module was experimental.  It has been superceeded by
+-Net::Server::Proto::SSLEAY If anybody has any successes or ideas for
+-improvment under SSL, please email <paul@seamons.com>.
++Net::Server::Proto::SSLEAY. If anybody has any successes or ideas for
++improvement under SSL, please email <paul@seamons.com>.
+ 
+ Protocol module for Net::Server.  This module implements a
+ secure socket layer over tcp (also known as SSL).
+--- Net-Server-0.99/lib/Net/Server/Proto/TCP.pm.orig	2011-08-01 10:24:36.463625993 -0700
++++ Net-Server-0.99/lib/Net/Server/Proto/TCP.pm	2011-08-01 11:08:27.283623011 -0700
+@@ -22,11 +22,22 @@
+ package Net::Server::Proto::TCP;
+ 
+ use strict;
+-use vars qw($VERSION $AUTOLOAD @ISA);
+-use IO::Socket ();
++use vars qw($VERSION $AUTOLOAD @ISA $have_inet6);
++use IO::Socket;
++
++BEGIN {
++  eval {
++    require Socket6; import Socket6;
++    require IO::Socket::INET6;
++    @ISA = qw(IO::Socket::INET6);
++    $have_inet6 = 1;
++  } or do {
++    require IO::Socket::INET;
++    @ISA = qw(IO::Socket::INET);
++  };
++}
+ 
+ $VERSION = $Net::Server::VERSION; # done until separated
+-@ISA = qw(IO::Socket::INET);
+ 
+ sub object {
+   my $type  = shift;
+@@ -35,11 +46,16 @@
+   my ($default_host,$port,$server) = @_;
+   my $host;
+ 
+-  ### allow for things like "domain.com:80"
+-  if( $port =~ m/^([\w\.\-\*\/]+):(\w+)$/ ){
++  local($1,$2);
++  ### allow for things like "[::1]:80" or "[host.example.com]:80"
++  if( $port =~ m/^\[([^\]]*)\]:(\w+)$/ ){
+     ($host,$port) = ($1,$2);
+ 
+-  ### allow for things like "80"
++  ### allow for things like "host.example.com:80"
++  }elsif( $port =~ m/^([\w\.\-\*\/]+):(\w+)$/ ){
++    ($host,$port) = ($1,$2);
++
++  ### allow for things like "80" or "http"
+   }elsif( $port =~ /^(\w+)$/ ){
+     ($host,$port) = ($default_host,$1);
+ 
+@@ -48,65 +64,137 @@
+     $server->fatal("Undeterminate port \"$port\" under ".__PACKAGE__);
+   }
+ 
+-  ### create the handle under this package
+-  my $sock = $class->SUPER::new();
++  ### collect bind addresses along with their address family for all hosts
++  my @bind_tuples;
++  if( $host =~ /^\d{1,3}(?:\.\d{1,3}){3}\z/ ){
++    push(@bind_tuples, [AF_INET,$host,$port]);
++  }elsif( $host =~ /:/ ){
++    die "No IO::Socket::INET6, cannot bind to [$host]:$port"  if !$have_inet6;
++    push(@bind_tuples, [AF_INET6,$host,$port]);
++  }elsif( !$have_inet6 ){
++    push(@bind_tuples, [AF_INET,$host,$port]);
++  }elsif( $have_inet6 && $host =~ /\*/ ){
++    push(@bind_tuples, [AF_INET6,$host,$port], [AF_INET,$host,$port]);
++  }else{  # we do have IO::Socket::INET6, it handles inet6 as well as inet
++    # obtain a list of IP addresses for $host, resolve port name
++    my @res1 = getaddrinfo($host, $port, AF_UNSPEC, SOCK_STREAM, 0,
++                           AI_PASSIVE|AI_ADDRCONFIG);
++    die "Unresolvable [$host]:$port: $res1[0]"  if @res1 < 5;
++    while (@res1 >= 5) {
++      my($afam, $socktype, $proto, $saddr, $canonname);
++      ($afam, $socktype, $proto, $saddr, $canonname, @res1) = @res1;
++      my @res2 = getnameinfo($saddr, NI_NUMERICHOST | NI_NUMERICSERV);
++      die "getnameinfo failed on [$host]:$port: $res2[0]"  if @res2 < 2;
++      my($hostip,$portnum) = @res2;
++      $server->log(4,"Resolved [$host]:$port -> [$hostip]:$portnum, AF $afam");
++      push(@bind_tuples, [$afam,$hostip,$portnum]);
++    }
++  }
+ 
+-  ### store some properties
+-  $sock->NS_host($host);
+-  $sock->NS_port($port);
+-  $sock->NS_proto('TCP');
++  my @sockets_list;
++  ### create a socket for each specified bind address and family
++  foreach my $tuple ( @bind_tuples ){
++    my $afamily;  # address family (AF_* constants)
++    my $pfamily;  # socket protocol family (PF_* constants)
++    ($afamily,$host,$port) = @$tuple;
++    my $sock;
++    if( $have_inet6 ){
++      # Using IO::Socket::INET6 to handle both the IPv4 and IPv6.
++      # Constants PF_INET/PF_INET6 (protocol family) usually happen to have
++      # the same value as AF_INET/AF_INET6 (address family) constants.
++      # Still, better safe than sorry:
++      if ( $afamily == AF_INET ) {
++        $pfamily = PF_INET;
++      } elsif ( $afamily == AF_INET6 ) {
++        $pfamily = PF_INET6;
++      } else {
++        $pfamily = $afamily;
++      }
++      $server->log(3,"Using IO::Socket::INET6 for [$host]:$port, PF $pfamily");
++      $sock = IO::Socket::INET6->new(Domain => $pfamily);  # inet or inet6
++    }else{
++      $pfamily = PF_INET;
++      $server->log(3,"Using IO::Socket::INET for [$host]:$port, PF $pfamily");
++      $sock = IO::Socket::INET->new();  # inet socket (IPv4 only)
++    }
+ 
+-  return $sock;
++    if ($sock) {
++      ### create the handle under this package
++      bless $sock, $class;
++
++      ### store some properties
++      $sock->NS_host($host);
++      $sock->NS_port($port);
++      $sock->NS_proto('TCP');
++      $sock->NS_family($pfamily);  # socket protocol family
++      push @sockets_list, $sock;
++    }
++  }
++
++  ### returns any number of sockets,
++  ### one for each protocol family (PF_INET or PF_INET6) and each bind address
++  return !wantarray ? $sockets_list[0] : @sockets_list;
+ }
+ 
+ sub log_connect {
+   my $sock = shift;
+-  my $server = shift;
+-  my $host   = $sock->NS_host; 
+-  my $port   = $sock->NS_port;
+-  my $proto  = $sock->NS_proto;
+- $server->log(2,"Binding to $proto port $port on host $host\n");
++  my $server  = shift;
++  my $host    = $sock->NS_host; 
++  my $port    = $sock->NS_port;
++  my $proto   = $sock->NS_proto;
++  my $pfamily = $sock->NS_family || 0;
++  $server->log(2,"Binding to $proto port $port on host $host, PF $pfamily\n");
+ }
+ 
+-### connect the first time
++### bind the first time
+ sub connect {
+-  my $sock   = shift;
+-  my $server = shift;
+-  my $prop   = $server->{server};
++  my $sock    = shift;
++  my $server  = shift;
++  my $prop    = $server->{server};
++
++  my $host    = $sock->NS_host;
++  my $port    = $sock->NS_port;
++  my $pfamily = $sock->NS_family || 0;
+ 
+-  my $host  = $sock->NS_host;
+-  my $port  = $sock->NS_port;
+-
+-  my %args = ();
++  my %args;
+   $args{LocalPort} = $port;                  # what port to bind on
+   $args{Proto}     = 'tcp';                  # what procol to use
+   $args{LocalAddr} = $host if $host !~ /\*/; # what local address (* is all)
++  $args{Domain}    = $pfamily  if $have_inet6 && $pfamily;
+   $args{Listen}    = $prop->{listen};        # how many connections for kernel to queue
+   $args{Reuse}     = 1;  # allow us to rebind the port on a restart
+ 
+-  ### connect to the sock
++  ### bind the sock
+   $sock->SUPER::configure(\%args)
+-    or $server->fatal("Can't connect to TCP port $port on $host [$!]");
++    or $server->fatal("Can't bind to TCP port $port on $host [$!]");
++  $server->fatal("Bad sock [$!]!".caller())  if !$sock;
+ 
+-  if ($port == 0 && ($port = $sock->sockport)) {
+-    $sock->NS_port($port);
+-    $server->log(2,"Bound to auto-assigned port $port");
++  my $actual_port = $sock->sockport;
++  # $port may be a service name, compare as strings
++  if( $actual_port && (!defined $port || $actual_port ne $port) ){
++    $sock->NS_port($actual_port);
++    if( $port =~ /^0*\z/ ){
++      $server->log(2,"Bound to auto-assigned port $actual_port");
++    }else{
++      $server->log(3,"Bound to service \"$port\", port number $actual_port");
++    }
+   }
+ 
+-  $server->fatal("Back sock [$!]!".caller())
+-    unless $sock;
+-
+ }
+ 
+-### connect on a sig -HUP
++### reassociate sockets with inherited file descriptors on a sig -HUP
+ sub reconnect {
+-  my $sock = shift;
+-  my $fd   = shift;
+-  my $server = shift;
++  my ($sock, $fd, $server) = @_;
+ 
++  my $host    = $sock->NS_host; 
++  my $port    = $sock->NS_port;
++  my $proto   = $sock->NS_proto;
++  my $pfamily = $sock->NS_family || 0;
++
++  $server->log(3,"Reassociating file descriptor $fd ".
++                 "with socket $proto on [$host]:port, PF $pfamily\n");
+   $sock->fdopen( $fd, 'w' )
+     or $server->fatal("Error opening to file descriptor ($fd) [$!]");
+-
+ }
+ 
+ ### allow for endowing the child
+@@ -115,8 +203,11 @@
+   my $client = $sock->SUPER::accept();
+ 
+   ### pass items on
+-  if( defined($client) ){
++  if( defined $client ){
+     $client->NS_proto( $sock->NS_proto );
++    $client->NS_family( $sock->NS_family );
++    $client->NS_host( $sock->NS_host );
++    $client->NS_port( $sock->NS_port );
+   }
+ 
+   return $client;
+@@ -156,6 +247,7 @@
+               $sock->NS_host,
+               $sock->NS_port,
+               $sock->NS_proto,
++              !$have_inet6 || !$sock->NS_family ? () : $sock->NS_family,
+               );
+ }
+ 
+@@ -163,7 +255,7 @@
+ sub show {
+   my $sock = shift;
+   my $t = "Ref = \"" .ref($sock) . "\"\n";
+-  foreach my $prop ( qw(NS_proto NS_port NS_host) ){
++  foreach my $prop ( qw(NS_proto NS_port NS_host NS_family) ){
+     $t .= "  $prop = \"" .$sock->$prop()."\"\n";
+   }
+   return $t;
+@@ -178,7 +270,7 @@
+     die "No property called.";
+   }
+ 
+-  if( $prop =~ /^(NS_proto|NS_port|NS_host|NS_recv_len|NS_recv_flags)$/ ){
++  if( $prop =~ /^(NS_proto|NS_port|NS_host|NS_family|NS_recv_len|NS_recv_flags)$/ ){
+     no strict 'refs';
+     * { __PACKAGE__ ."::". $prop } = sub {
+       my $sock = shift;

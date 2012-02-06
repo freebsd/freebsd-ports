@@ -18,6 +18,8 @@ RUN_DEPENDS=	${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex
 
 PERL_CONFIGURE=	yes
 
+OPTIONS=	IPV6	"Enable ipv6 support patch from Debian"	off
+
 MAN3=		Net::Server.3 \
 		Net::Server::Daemonize.3\
 		Net::Server::Fork.3 \
@@ -35,5 +37,11 @@ MAN3=		Net::Server.3 \
 		Net::Server::Proto::UNIX.3\
 		Net::Server::SIG.3\
 		Net::Server::Single.3
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_IPV6)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ipv6-support
+.endif
 
 .include <bsd.port.mk>
