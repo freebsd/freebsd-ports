@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Write your linewise code for handles; this does the rest
 
 LICENSE=	ART10 GPLv1
