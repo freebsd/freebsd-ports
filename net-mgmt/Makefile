@@ -81,6 +81,7 @@
     SUBDIR += grepip
     SUBDIR += gsnmp
     SUBDIR += hastmon
+    SUBDIR += hawk
     SUBDIR += horde-nic
     SUBDIR += icinga
     SUBDIR += icmpmonitor
