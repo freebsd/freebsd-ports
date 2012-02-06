@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/Xapian/.packlist
+%%SITE_PERL%%/Catalyst/Helper/Model/Xapian.pm
+%%SITE_PERL%%/Catalyst/Model/Xapian.pm
+%%SITE_PERL%%/Catalyst/Model/Xapian/Result.pm
+%%SITE_PERL%%/Catalyst/Model/sample-indexer.pl
+@dirrmtry %%SITE_PERL%%/Catalyst/Model/Xapian
+@dirrmtry %%SITE_PERL%%/Catalyst/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/Model
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/Xapian
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
