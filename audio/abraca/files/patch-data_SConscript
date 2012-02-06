@@ -1,0 +1,13 @@
+--- data/SConscript.orig  2011-01-22 18:16:43.000000000 +0100
++++ data/SConscript        2012-02-04 16:19:46.829073844 +0100
+@@ -14,8 +14,8 @@
+ 
+ images, header, vapi = env.GdkPixBufCSource('abraca_images', lst)
+ 
+-env.Append(CPPPATH = [Dir('.')])
+-env.Append(VALAPKGPATH = [Dir('.')])
++env.Append(CPPPATH = [Dir('.').abspath])
++env.Append(VALAPKGPATH = [Dir('.').abspath])
+ env.Append(VALAPKGS = ['abraca_images'])
+ 
+ Export('images')

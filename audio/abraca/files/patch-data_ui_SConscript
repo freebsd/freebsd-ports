@@ -1,0 +1,13 @@
+--- data/ui/SConscript.orig       2011-01-22 18:16:43.000000000 +0100
++++ data/ui/SConscript     2012-02-04 16:21:40.477072762 +0100
+@@ -10,8 +10,8 @@
+ 
+ ui, header, vapi = env.BinaryBlob('abraca_ui', lst)
+ 
+-env.Append(CPPPATH = [Dir('.')])
+-env.Append(VALAPKGPATH = [Dir('.')])
++env.Append(CPPPATH = [Dir('.').abspath])
++env.Append(VALAPKGPATH = [Dir('.').abspath])
+ env.Append(VALAPKGS = ['abraca_ui'])
+ 
+ Export('ui')
