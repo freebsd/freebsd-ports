@@ -2,7 +2,7 @@
 You will also need to configure Apache.  Consider adding the following
 to your httpd.conf:
 
-     Alias /phpSysInfo "%%WWWDIR%%"
+     Alias /phpSysInfo "%%WWWDIR%%/"
 
     <Directory "%%WWWDIR%%">
         AllowOverride all
