@@ -5,108 +5,104 @@
 # $FreeBSD$
 #
 
-PORTNAME=		ettercap
-PORTVERSION=		0.7.3
-DISTVERSIONPREFIX=	NG-
-PORTREVISION=	10
-PORTEPOCH=		1
-CATEGORIES=		net-mgmt security
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/NG-${PORTVERSION} \
-			${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
+PORTNAME=	ettercap
+PORTVERSION=	0.7.4
+PORTEPOCH=	1
+CATEGORIES=	net-mgmt security
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-Lazarus \
+		${MASTER_SITE_PACKETSTORM:S:%SUBDIR%:sniffers/ettercap:}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/bin/libnet11-config:${PORTSDIR}/net/libnet
 
-OPTIONS=	GTK	"Build with GTK2+ GUI"	on \
-		ICONV	"Build with support for UTF-8"	on \
-		PLUGINS	"Build with ettercap plugins"	on \
-		SSL	"Build with support for SSH1 and SSL decryption"	on \
-		PCRE	"Build with PCRE regexps in filters"	on
+OPTIONS=	GTK	"Build with GTK2+ GUI" on \
+		ICONV	"Build with support for UTF-8" on \
+		PCRE	"Build with PCRE regexps in filters" on \
+		PLUGINS	"Build with ettercap plugins" on \
+		SSL	"Build with support for SSH1 and SSL decryption" on
 
-WANT_GNOME=	yes
-USE_AUTOTOOLS=	libltdl
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LIBS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-plugins
+CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
+USE_AUTOTOOLS=	libltdl libtool
+USE_BISON=	build
+WANT_GNOME=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN5=		etter.conf.5
 MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
-		README.CVS README.PLATFORMS THANKS TODO TODO.TESTING \
+		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/threads
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
-.include <bsd.port.pre.mk>
-
-CFLAGS+=		${PTHREAD_CFLAGS}
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		LIBS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--enable-plugins
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_GTK)
-USE_GNOME=		glib20 atk pango gtk20
-PKGNAMESUFFIX+=		-gtk2
-CONFIGURE_ARGS+=	--enable-gtk
+USE_GNOME=	atk glib20 gtk20 pango
+PKGNAMESUFFIX+=	-gtk2
+CONFIGURE_ARGS+=--enable-gtk
 .else
-CONFIGURE_ARGS+=	--disable-gtk
+CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 .if !defined(WITHOUT_ICONV)
-USE_ICONV=		yes
-CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=	--with-libpcre=${LOCALBASE}
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=--with-libpcre=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--without-libpcre
+CONFIGURE_ARGS+=--without-libpcre
 .endif
 
 .if !defined(WITHOUT_PLUGINS)
-MAN8+=			ettercap_plugins.8
-DOCS+=			doc/plugins
-CONFIGURE_ARGS+=	--enable-plugins
-PLIST_SUB+=		PLUGINS=""
+MAN8+=		ettercap_plugins.8
+DOCS+=		doc/plugins
+CONFIGURE_ARGS+=--enable-plugins
+PLIST_SUB+=	PLUGINS=""
 .else
-CONFIGURE_ARGS+=	--disable-plugins
-PLIST_SUB+=		PLUGINS="@comment "
+CONFIGURE_ARGS+=--disable-plugins
+PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
 .if !defined(WITHOUT_SSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .else
-CONFIGURE_ARGS+=	--without-openssl
+CONFIGURE_ARGS+=--without-openssl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
-		 s|test -f /usr/include/libnet\.h|${TRUE}|; \
-		 s|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|; \
-		 s|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E -e 's|(^pkgdatadir.+=).+|\1 ${DATADIR}|' \
-		${WRKSRC}/share/Makefile.in
+	@${REINPLACE_CMD} -E \
+		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+		-e 's|test -f /usr/include/libnet\.h|${TRUE}|' \
+		-e 's|(LNETINC=).*|\1"`${LIBNET_CONFIG} --cflags`"|' \
+		-e 's|(LNETLIB=).*|\1"`${LIBNET_CONFIG} --libs`"|' \
+			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E \
+		-e 's|(^pkgdatadir.+=).+|\1 ${DATADIR}|' \
+		-e '/^install-exec-am:/ s|: .*$$|:|'\
+	       		${WRKSRC}/share/Makefile.in
 # Fix objformat
 	@${REINPLACE_CMD} -E -e 's|(^.*=).*/usr/bin/objformat.*|\1"elf"|' \
 		${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/share/etter.conf \
-		${PREFIX}/etc/etter.conf.sample
-.	if !exists(${PREFIX}/etc/etter.conf)
-		@${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${PREFIX}/etc/etter.conf
-.	endif
-.	if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-.		for i in ${DOCS}
-			@${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
-.		endfor
-.	endif
+	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${PREFIX}/etc/etter.conf.sample
+.if !exists(${PREFIX}/etc/etter.conf)
+	${INSTALL_DATA} ${WRKSRC}/share/etter.conf ${PREFIX}/etc/etter.conf
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
