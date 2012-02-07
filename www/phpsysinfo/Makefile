@@ -7,18 +7,19 @@
 
 PORTNAME=	phpsysinfo
 PORTVERSION=	3.0.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	walt@relnor.com
 COMMENT=	A PHP script for displaying system information
 
-LATEST_LINK=	phpsysinfo-dev
+LICENSE=	GPLv2
 
-USE_PHP=	pcre xml simplexml mbstring
+USE_PHP=	dom pcre xml simplexml mbstring
 WANT_PHP_WEB=	yes
 
-LICENSE=	GPLv2
+LATEST_LINK=	phpsysinfo-dev
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
