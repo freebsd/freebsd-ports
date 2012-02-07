@@ -1,4 +1,4 @@
-# $FreeBSD$
+ $FreeBSD$
 #
 
     COMMENT = Databases
@@ -455,6 +455,7 @@
     SUBDIR += p5-Search-InvertedIndex
     SUBDIR += p5-Search-Namazu
     SUBDIR += p5-Search-Xapian
+    SUBDIR += p5-Search-Xapian10
     SUBDIR += p5-T2
     SUBDIR += p5-Tangram
     SUBDIR += p5-Template-DBI
@@ -825,7 +826,9 @@
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
+    SUBDIR += xapian-bindings10
     SUBDIR += xapian-core
+    SUBDIR += xapian-core10
     SUBDIR += xmbase-grok
     SUBDIR += xtrabackup
     SUBDIR += yasql
