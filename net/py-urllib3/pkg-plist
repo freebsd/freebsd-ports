@@ -6,9 +6,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/app.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/app.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/handlers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/handlers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/handlers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/server.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/server.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver/server.pyo
@@ -33,6 +33,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/mimetools_choose_boundary/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/mimetools_choose_boundary/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/mimetools_choose_boundary/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/six.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/six.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/six.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname/__init__.pyo
@@ -46,6 +52,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/response.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/response.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/ssl_match_hostname
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages/mimetools_choose_boundary
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3/packages
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/urllib3
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dummyserver
