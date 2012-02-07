@@ -1,0 +1,11 @@
+--- Makefile.in-orig	2012-01-08 16:17:23.178149792 +0100
++++ Makefile.in	2012-01-08 16:17:34.604154595 +0100
+@@ -87,7 +87,7 @@
+ INSTALL_HOSTSDK_STATIC    = libvamp-hostsdk.a
+ INSTALL_HOSTSDK_LA        = libvamp-hostsdk.la
+ 
+-INSTALL_PKGCONFIG	  = $(INSTALL_PREFIX)/lib/pkgconfig
++INSTALL_PKGCONFIG	  = $(INSTALL_PREFIX)/libdata/pkgconfig
+ 
+ # Flags required to tell the compiler to create a dynamically loadable object
+ #

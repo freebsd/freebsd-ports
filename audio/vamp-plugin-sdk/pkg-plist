@@ -1,0 +1,41 @@
+bin/vamp-rdf-template-generator
+bin/vamp-simple-host
+include/vamp-hostsdk/Plugin.h
+include/vamp-hostsdk/PluginBase.h
+include/vamp-hostsdk/PluginBufferingAdapter.h
+include/vamp-hostsdk/PluginChannelAdapter.h
+include/vamp-hostsdk/PluginHostAdapter.h
+include/vamp-hostsdk/PluginInputDomainAdapter.h
+include/vamp-hostsdk/PluginLoader.h
+include/vamp-hostsdk/PluginSummarisingAdapter.h
+include/vamp-hostsdk/PluginWrapper.h
+include/vamp-hostsdk/RealTime.h
+include/vamp-hostsdk/hostguard.h
+include/vamp-hostsdk/vamp-hostsdk.h
+include/vamp-sdk/Plugin.h
+include/vamp-sdk/PluginAdapter.h
+include/vamp-sdk/PluginBase.h
+include/vamp-sdk/RealTime.h
+include/vamp-sdk/plugguard.h
+include/vamp-sdk/vamp-sdk.h
+include/vamp/vamp.h
+lib/libvamp-hostsdk.a
+lib/libvamp-hostsdk.la
+lib/libvamp-hostsdk.so
+lib/libvamp-hostsdk.so.3
+lib/libvamp-hostsdk.so.3.3.0
+lib/libvamp-sdk.a
+lib/libvamp-sdk.la
+lib/libvamp-sdk.so
+lib/libvamp-sdk.so.2
+lib/libvamp-sdk.so.2.3.0
+lib/vamp/vamp-example-plugins.cat
+lib/vamp/vamp-example-plugins.n3
+lib/vamp/vamp-example-plugins.so
+libdata/pkgconfig/vamp-hostsdk.pc
+libdata/pkgconfig/vamp-sdk.pc
+libdata/pkgconfig/vamp.pc
+@dirrm lib/vamp
+@dirrm include/vamp-sdk
+@dirrm include/vamp-hostsdk
+@dirrm include/vamp
