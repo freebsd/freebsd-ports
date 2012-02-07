@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mybb
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.mybb.com/download/latest/
-DISTNAME=	${PORTNAME}_1604
+MASTER_SITES=	http://cloud.github.com/downloads/mybb/mybb16/
+DISTNAME=	${PORTNAME}_1605
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
