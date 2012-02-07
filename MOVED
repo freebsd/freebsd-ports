@@ -3231,5 +3231,4 @@ x11-wm/xfce|x11-wm/xfce4|2012-02-02|Has expired: abandoned upstream, use x11-wm/
 sysutils/py-dvdvideo|sysutils/dvdvideo|2012-02-03|Renamed for better naming
 science/R-cran-survival||2012-02-03|This CRAN port has been included in math/R
 editors/openoffice.org-3-devel|editors/openoffice-3-devel|2012-02-06|Project was taken over and renamed.
-net/p5-Net-Subnets||2012-02-07|Disappeared from CPAN
 www/zope-cmf||2012-02-07|Has expired: Doesn't work with modern Zope versions
