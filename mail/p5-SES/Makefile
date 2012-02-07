@@ -9,10 +9,9 @@ PORTNAME=	SES
 PORTVERSION=	1.01
 PORTREVISION=	1
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://d36cz9buwru1tt.cloudfront.net/catalog/attachments/ \
-		http://files.gslin.org/Software/
+MASTER_SITES=	http://d36cz9buwru1tt.cloudfront.net/catalog/attachments/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	ses-tools-2011-10-31
+DISTNAME=	ses-tools-2011-11-14
 
 MAINTAINER=	stephon@gmail.com
 COMMENT=	Perl module of Amazon Simple Email Services
@@ -20,12 +19,10 @@ COMMENT=	Perl module of Amazon Simple Email Services
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
-		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
-		p5-Switch>=0:${PORTSDIR}/lang/p5-Switch \
+RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -44,7 +41,12 @@ post-extract:
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/
 	${INSTALL_DATA} ${WRKSRC}/SES.pm ${PREFIX}/${SITE_PERL_REL}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.include <bsd.port.post.mk>
