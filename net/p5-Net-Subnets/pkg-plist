@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Subnets/.packlist
+%%SITE_PERL%%/Net/Subnets.pm
+@dirrmtry %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Subnets
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
