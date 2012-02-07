@@ -23,7 +23,7 @@ BUILD_VER=		471268
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-USE_AUTOMAKE=		yes
+USE_AUTOTOOLS=		automake
 
 CONFIGURE_ARGS+=	--without-procps --sysconfdir=${LOCALBASE}/etc
 .if defined(WITHOUT_X11)
