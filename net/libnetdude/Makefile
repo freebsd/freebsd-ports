@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 CATEGORIES=	net
 MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	brenton.chang@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for manipulating libpcap/tcpdump trace files
 
 LIB_DEPENDS=	pcapnav.0:${PORTSDIR}/net/libpcapnav

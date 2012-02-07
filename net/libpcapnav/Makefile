@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	brenton.chang@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A libpcap wrapper library
 
 USE_AUTOTOOLS=	libtool

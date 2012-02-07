@@ -11,7 +11,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	brenton.chang@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
 LIB_DEPENDS=	netdude.0:${PORTSDIR}/net/libnetdude
