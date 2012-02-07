@@ -1,2 +1,4 @@
 SHA256 (sphinx-2.0.3-release.tar.gz) = 875af63473875b7c7e152e85ed34bd1a92d09db062a289b594bf049b3a8c82dd
 SIZE (sphinx-2.0.3-release.tar.gz) = 1923911
+SHA256 (libstemmer_c.tgz) = e9c3a2c13acf34945054e35ad53b7410c61f046d4044c0ade620fdac253bab46
+SIZE (libstemmer_c.tgz) = 129529
