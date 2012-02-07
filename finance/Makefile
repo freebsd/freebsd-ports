@@ -9,6 +9,7 @@
     SUBDIR += R-cran-plm
     SUBDIR += R-cran-strucchange
     SUBDIR += R-cran-urca
+    SUBDIR += R-cran-vars
     SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += beanie
