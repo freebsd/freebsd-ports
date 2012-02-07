@@ -488,6 +488,7 @@
 %%WWWDIR%%/inc/captcha_fonts/index.html
 %%WWWDIR%%/inc/captcha_fonts/read_me.html
 %%WWWDIR%%/inc/class_bitwise.php
+%%WWWDIR%%/inc/class_captcha.php
 %%WWWDIR%%/inc/class_core.php
 %%WWWDIR%%/inc/class_custommoderation.php
 %%WWWDIR%%/inc/class_datacache.php
@@ -706,6 +707,7 @@
 %%WWWDIR%%/install/resources/upgrade19.php
 %%WWWDIR%%/install/resources/upgrade2.php
 %%WWWDIR%%/install/resources/upgrade20.php
+%%WWWDIR%%/install/resources/upgrade21.php
 %%WWWDIR%%/install/resources/upgrade3.php
 %%WWWDIR%%/install/resources/upgrade4.php
 %%WWWDIR%%/install/resources/upgrade5.php
