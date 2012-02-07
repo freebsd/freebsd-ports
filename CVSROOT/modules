@@ -251,7 +251,9 @@ R-cran-sm                       ports/math/R-cran-sm
 R-cran-snow                     ports/science/R-cran-snow
 R-cran-sp                       ports/math/R-cran-sp
 R-cran-spdep                    ports/math/R-cran-spdep
+R-cran-strucchange              ports/finance/R-cran-strucchange
 R-cran-twitteR                  ports/net/R-cran-twitteR
+R-cran-urca                     ports/finance/R-cran-urca
 R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
 R-cran-zoo                      ports/math/R-cran-zoo
@@ -9101,6 +9103,7 @@ merkaartor                      ports/astro/merkaartor
 mesa-demos                      ports/graphics/mesa-demos
 mesagl                          ports/graphics/mesagl
 mesgui                          ports/x11-toolkits/mesgui
+meshdev                         ports/cad/meshdev
 meshlab                         ports/cad/meshlab
 meshviewer                      ports/graphics/meshviewer
 mess                            ports/emulators/mess
@@ -10032,6 +10035,7 @@ njam                            ports/games/njam
 njplot                          ports/biology/njplot
 nl-acroread8                    ports/print/nl-acroread8
 nl-aspell                       ports/textproc/nl-aspell
+nl-hunspell                     ports/textproc/nl-hunspell
 nl-hyphen                       ports/textproc/nl-hyphen
 nl-ispell                       ports/textproc/nl-ispell
 nl-mythes                       ports/textproc/nl-mythes
@@ -10322,6 +10326,7 @@ octave-forge-physicalconstants  ports/math/octave-forge-physicalconstants
 octave-forge-plot               ports/math/octave-forge-plot
 octave-forge-pt_br              ports/math/octave-forge-pt_br
 octave-forge-quaternion         ports/math/octave-forge-quaternion
+octave-forge-queueing           ports/math/octave-forge-queueing
 octave-forge-secs1d             ports/math/octave-forge-secs1d
 octave-forge-secs2d             ports/math/octave-forge-secs2d
 octave-forge-secs3d             ports/math/octave-forge-secs3d
@@ -10500,9 +10505,9 @@ openntpd                        ports/net/openntpd
 opennx                          ports/net/opennx
 openobex                        ports/comms/openobex
 openocd                         ports/devel/openocd
+openoffice-3-devel              ports/editors/openoffice-3-devel
 openoffice.org-3                ports/editors/openoffice.org-3
 openoffice.org-3-RC             ports/editors/openoffice.org-3-RC
-openoffice.org-3-devel          ports/editors/openoffice.org-3-devel
 openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
 openoffice.org-vcltesttool      ports/editors/openoffice.org-vcltesttool
 openospfd                       ports/net/openospfd
@@ -23394,8 +23399,10 @@ r-cran-sm                       ports/math/R-cran-sm
 r-cran-snow                     ports/science/R-cran-snow
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-spdep                    ports/math/R-cran-spdep
+r-cran-strucchange              ports/finance/R-cran-strucchange
 r-cran-suppdists                ports/math/R-cran-SuppDists
 r-cran-twitter                  ports/net/R-cran-twitteR
+r-cran-urca                     ports/finance/R-cran-urca
 r-cran-xml                      ports/textproc/R-cran-XML
 r-cran-xtable                   ports/textproc/R-cran-xtable
 r-cran-xts                      ports/math/R-cran-xts
