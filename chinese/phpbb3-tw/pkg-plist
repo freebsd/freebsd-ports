@@ -546,7 +546,6 @@
 %%PHPBBDIR%%/language/zh_cmn_hant/captcha_qa.php
 %%PHPBBDIR%%/language/zh_cmn_hant/captcha_recaptcha.php
 %%PHPBBDIR%%/language/zh_cmn_hant/common.php
-%%PHPBBDIR%%/language/zh_cmn_hant/docs/COPYING
 %%PHPBBDIR%%/language/zh_cmn_hant/email/admin_activate.txt
 %%PHPBBDIR%%/language/zh_cmn_hant/email/admin_send_email.txt
 %%PHPBBDIR%%/language/zh_cmn_hant/email/admin_welcome_activated.txt
@@ -948,7 +947,6 @@
 %%PHPBBDIR%%/styles/subsilver2/imageset/zh_cmn_hant/icon_user_search.gif
 %%PHPBBDIR%%/styles/subsilver2/imageset/zh_cmn_hant/icon_user_warn.gif
 %%PHPBBDIR%%/styles/subsilver2/imageset/zh_cmn_hant/imageset.cfg
-%%PHPBBDIR%%/styles/subsilver2/imageset/zh_cmn_hant/index.htm
 %%PHPBBDIR%%/styles/subsilver2/style.cfg
 %%PHPBBDIR%%/styles/subsilver2/template/attachment.html
 %%PHPBBDIR%%/styles/subsilver2/template/bbcode.html
@@ -1097,7 +1095,6 @@
 @dirrm %%PHPBBDIR%%/store
 @dirrm %%PHPBBDIR%%/language/zh_cmn_hant/mods
 @dirrm %%PHPBBDIR%%/language/zh_cmn_hant/email
-@dirrm %%PHPBBDIR%%/language/zh_cmn_hant/docs
 @dirrm %%PHPBBDIR%%/language/zh_cmn_hant/acp
 @dirrm %%PHPBBDIR%%/language/zh_cmn_hant
 @dirrm %%PHPBBDIR%%/language/en/mods
