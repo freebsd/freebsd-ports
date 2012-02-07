@@ -41,7 +41,6 @@ RUN_DEPENDS=	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 	p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
 	p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS
 
-USE_PERL=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	File::Assets.3 File::Assets::Asset.3
