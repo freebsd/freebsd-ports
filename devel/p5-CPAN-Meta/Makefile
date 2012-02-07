@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.113640
+PORTVERSION=	2.120351
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,13 +16,13 @@ COMMENT=	The distribution metadata for a CPAN dist
 
 PERL_CONFIGURE=	yes
 
-MAN3=		CPAN::Meta.3		\
-		CPAN::Meta::Converter.3	\
-		CPAN::Meta::Feature.3	\
-		CPAN::Meta::History.3	\
-		CPAN::Meta::Prereqs.3	\
+MAN3=		CPAN::Meta.3 \
+		CPAN::Meta::Converter.3 \
+		CPAN::Meta::Feature.3 \
+		CPAN::Meta::History.3 \
+		CPAN::Meta::Prereqs.3 \
 		CPAN::Meta::Requirements.3 \
-		CPAN::Meta::Spec.3	\
+		CPAN::Meta::Spec.3 \
 		CPAN::Meta::Validator.3
 
 .include <bsd.port.pre.mk>
