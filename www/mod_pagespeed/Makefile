@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mod_pagespeed
-PORTVERSION=	20111031
-PORTREVISION=	1
+PORTVERSION=	0.10.21.2
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	swills
@@ -50,6 +50,18 @@ GYP_DEFINES+=	\
 		include_dirs=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 802517 || ${OSVERSION} < 900502
+EXTRA_PATCHES=		${FILESDIR}/extra-gperf.gypi
+BUILD_DEPENDS+=		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
+.endif
+
+post-patch:
+.if ${OSVERSION} < 802517 || ${OSVERSION} < 900502
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}/bin,g" \
+		${WRKSRC}/net/instaweb/gperf.gypi
+
+.endif
 
 do-configure:
 	cd ${WRKSRC} && \
