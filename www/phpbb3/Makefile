@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.9
-PORTREVISION=	1
+PORTVERSION=	3.0.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpbb.com/files/release/ \
 		http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
