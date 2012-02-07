@@ -1,0 +1,8 @@
+stringr is a set of simple wrappers that make R's string functions
+more consistent, simpler and easier to use. It does this by ensuring
+that: function and argument names (and positions) are consistent,
+all functions deal with NA's and zero length character appropriately,
+and the output data structures from each function matches the input
+data structures of other functions.
+
+WWW:	http://cran.r-project.org/web/packages/stringr/
