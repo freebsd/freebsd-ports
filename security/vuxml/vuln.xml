@@ -47,6 +47,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="10720fe8-51e0-11e1-91c1-00215c6a37bb">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.23</lt></range>
+      </package>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal development team reports:</p>
+	<blockquote cite="http://drupal.org/node/1425084">
+	  <h3>Cross Site Request Forgery vulnerability in Aggregator
+	    module</h3>
+	  <p>CVE: CVE-2012-0826</p>
+	  <p>An XSRF vulnerability can force an aggregator feed to
+	    update.  Since some services are rate-limited (e.g.
+	    Twitter limits requests to 150 per hour) this could
+	    lead to a denial of service.</p>
+	  <p>This issue affects Drupal 6.x and 7.x.</p>
+	  <h3>OpenID not verifying signed attributes in SREG and AX</h3>
+	  <p>CVE: CVE-2012-0825</p>
+	  <p>A group of security researchers identified a flaw in how
+	    some OpenID relying parties implement Attribute Exchange (AX).
+	    Not verifying that attributes being passed through AX have been
+	    signed could allow an attacker to modify users' information.</p>
+	  <p>This issue affects Drupal 6.x and 7.x.</p>
+	  <h3>Access bypass in File module</h3>
+	  <p>CVE: CVE-2012-0827</p>
+	  <p>When using private files in combination with certain field
+	    access modules, the File module will allow users to download
+	    the file even if they do not have access to view the field
+	    it was attached to.</p>
+	  <p>This issue affects Drupal 7.x only.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0825</cvename>
+      <cvename>CVE-2012-0826</cvename>
+      <cvename>CVE-2012-0827</cvename>
+    </references>
+    <dates>
+      <discovery>2012-02-01</discovery>
+      <entry>2012-02-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="309542b5-50b9-11e1-b0d8-00151735203a">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
