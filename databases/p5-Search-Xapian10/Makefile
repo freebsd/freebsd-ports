@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Search-Xapian
+PORTNAME=	Search-Xapian10
 PORTVERSION=	1.0.22.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/1.0.22/
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
@@ -17,7 +18,7 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	xapian-core>=1.0.22:${PORTSDIR}/databases/xapian-core
+BUILD_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
