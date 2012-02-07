@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.9
+PORTVERSION=	3.0.10
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
 		http://freebsd.ee.ccu.edu.tw/phpBB/
