@@ -693,6 +693,7 @@
     SUBDIR += p5-Catalyst-Model-Oryx
     SUBDIR += p5-Catalyst-Model-XML-Feed
     SUBDIR += p5-Catalyst-Model-Xapian
+    SUBDIR += p5-Catalyst-Model-Xapian10
     SUBDIR += p5-Catalyst-Plugin-AtomServer
     SUBDIR += p5-Catalyst-Plugin-Authentication
     SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
@@ -1937,6 +1938,7 @@
     SUBDIR += wwwstat
     SUBDIR += wyvern
     SUBDIR += xapian-omega
+    SUBDIR += xapian-omega10
     SUBDIR += xaraya
     SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin
