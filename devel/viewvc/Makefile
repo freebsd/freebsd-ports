@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 #PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.viewvc.org/ \
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
+
+LICENSE=	BSD
 
 OPTIONS=	SUBVERSION "use svn binding" on \
 		APACHE "Use apache as webserver" on \
@@ -33,13 +35,10 @@ SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
 
-LICENSE=	BSD
-
 .include <bsd.port.options.mk>
 
-.if !defined(WITH_APACHE) && !defined(WITH_LIGHTTPD)
+# standalone script is usefull even if a webserver was choosen.
 USE_RC_SUBR=	viewvc
-.endif
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/pygmentize:${PORTSDIR}/textproc/py-pygments
 

@@ -1,0 +1,75 @@
+Fix issue #504
+("annotate view fails on filenames with colon (:) characters in their names").
+
+
+Index: lib/vclib/svn/svn_ra.py
+===================================================================
+--- lib/vclib/svn/svn_ra.py
++++ lib/vclib/svn/svn_ra.py
+@@ -20,7 +20,10 @@
+ import tempfile
+ import time
+ import urllib
+-from svn_repos import Revision, SVNChangedPath, _datestr_to_date, _compare_paths, _path_parts, _cleanup_path, _rev2optrev, _fix_subversion_exception, _split_revprops
++from svn_repos import Revision, SVNChangedPath, _datestr_to_date, \
++                      _compare_paths, _path_parts, _cleanup_path, \
++                      _rev2optrev, _fix_subversion_exception, \
++                      _split_revprops, _canonicalize_path
+ from svn import core, delta, client, wc, ra
+ 
+ 
+@@ -421,7 +424,8 @@
+   def _geturl(self, path=None):
+     if not path:
+       return self.rootpath
+-    return self.rootpath + '/' + urllib.quote(path, "/*~")
++    path = self.rootpath + '/' + urllib.quote(path)
++    return _canonicalize_path(path)
+ 
+   def _get_dirents(self, path, rev):
+     """Return a 2-type of dirents and locks, possibly reading/writing
+Index: lib/vclib/svn/svn_repos.py
+===================================================================
+--- lib/vclib/svn/svn_repos.py
++++ lib/vclib/svn/svn_repos.py
+@@ -43,7 +43,14 @@
+     e.apr_err = e[1]
+   if not hasattr(e, 'message'):
+     e.message = e[0]
+-  
++
++### Pre-1.4 Subversion doesn't have svn_path_canonicalize()
++def _canonicalize_path(path):
++  try:
++    return core.svn_path_canonicalize(path)
++  except AttributeError:
++    return path
++
+ def _allow_all(root, path, pool):
+   """Generic authz_read_func that permits access to all paths"""
+   return 1
+@@ -115,9 +122,10 @@
+   rootpath = urllib.quote(rootpath)
+   path = urllib.quote(path)
+   if drive:
+-    return 'file:///' + drive + rootpath + '/' + path
++    url = 'file:///' + drive + rootpath + '/' + path
+   else:
+-    return 'file://' + rootpath + '/' + path
++    url = 'file://' + rootpath + '/' + path
++  return _canonicalize_path(url)
+ 
+ 
+ # Given a dictionary REVPROPS of revision properties, pull special
+Index: CHANGES
+===================================================================
+--- CHANGES
++++ CHANGES
+@@ -1,3 +1,7 @@
++Version 1.1.14 (released ??-???-????)
++
++  * fix annotation of svn files with non-URI-safe paths (issue #504)
++
+ Version 1.1.13 (released 23-Jan-2012)
+ 
+   * fix svndbadmin failure on deleted paths under Subversion 1.7 (issue #499)
