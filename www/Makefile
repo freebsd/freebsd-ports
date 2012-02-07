@@ -2057,7 +2057,6 @@
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
     SUBDIR += zope
-    SUBDIR += zope-cmf
     SUBDIR += zope211
     SUBDIR += zope213
 
