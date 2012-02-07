@@ -642,6 +642,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += rubberband
     SUBDIR += ruby-audiofile
     SUBDIR += ruby-esound
     SUBDIR += ruby-freedb

@@ -1,0 +1,18 @@
+bin/rubberband
+include/rubberband/RubberBandStretcher.h
+include/rubberband/rubberband-c.h
+lib/ladspa/ladspa-rubberband.cat
+lib/ladspa/ladspa-rubberband.so
+lib/librubberband.a
+lib/librubberband.so
+lib/librubberband.so.2
+lib/librubberband.so.2.1.0
+lib/vamp/vamp-rubberband.cat
+lib/vamp/vamp-rubberband.so
+libdata/pkgconfig/rubberband.pc
+share/ladspa/rdf/ladspa-rubberband.rdf
+@dirrm share/ladspa/rdf
+@dirrm share/ladspa
+@dirrm lib/vamp
+@dirrm lib/ladspa
+@dirrm include/rubberband
