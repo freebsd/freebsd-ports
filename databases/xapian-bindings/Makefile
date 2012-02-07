@@ -10,7 +10,7 @@ PORTVERSION=	1.2.7
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
 LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core

@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 DISTNAME=      ${PORTNAME:S/10$//}-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
 RUN_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10

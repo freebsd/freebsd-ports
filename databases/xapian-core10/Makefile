@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A probabilistic text search database engine
 
 LICENSE=	GPLv2

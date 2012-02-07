@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 DISTNAME=      ${PORTNAME:S/10$//}-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
 LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core10
