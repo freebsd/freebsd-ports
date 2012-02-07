@@ -1413,6 +1413,7 @@
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
     SUBDIR += py-django-registration
+    SUBDIR += py-django-sekizai
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-storages
     SUBDIR += py-django-tagging
