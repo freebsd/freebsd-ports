@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2011.07
+PORTVERSION=	2012.01
 PORTEPOCH=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -25,7 +25,7 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 
 CONFLICTS=	parrot-[0-9]*
 
-PARROT_VERSION=3.6.0
+PARROT_VERSION=3.11.0
 INSTALL_TARGET=	install
 CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
@@ -36,7 +36,8 @@ CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" 
 		--yacc=${LOCALBASE}/bin/bison \
 		--verbose \
 		--prefix=${PREFIX}
-CONFIGURE_ARGS=	--parrot-config=parrot-${PARROT_VERSION}/installable_parrot_config
+CONFIGURE_ARGS=	--with-parrot=${PREFIX}/bin/parrot \
+		--with-nqp=${PREFIX}/bin/nqp
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +68,10 @@ do-build:
 do-install:
 	cd ${WRKSRC}/parrot-${PARROT_VERSION} \
 	&& ${MAKE} install-dev PREFIX=${PREFIX} \
+	&& cd ${WRKSRC}/nqp-2012.01 \
+	&& ${PERL} ${CONFIGURE_SCRIPT} --with-parrot=${PREFIX}/bin/parrot \
+					--prefix=${PREFIX} \
+	&& ${MAKE} install PREFIX=${PREFIX} \
 	&& cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}\
 	&& ${MAKE} PREFIX=${PREFIX} && ${MAKE} ${INSTALL_TARGET} PREFIX=${PREFIX}
 
