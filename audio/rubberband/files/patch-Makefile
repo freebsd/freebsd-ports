@@ -1,0 +1,11 @@
+--- Makefile.in-dist	2012-01-08 17:53:50.857150609 +0100
++++ Makefile.in	2012-01-08 17:54:03.141155975 +0100
+@@ -32,7 +32,7 @@
+ INSTALL_VAMPDIR		:= @prefix@/lib/vamp
+ INSTALL_LADSPADIR	:= @prefix@/lib/ladspa
+ INSTALL_LRDFDIR		:= @prefix@/share/ladspa/rdf
+-INSTALL_PKGDIR		:= @prefix@/lib/pkgconfig
++INSTALL_PKGDIR		:= @prefix@/libdata/pkgconfig
+ 
+ all:	bin lib $(PROGRAM_TARGET) $(STATIC_TARGET) $(DYNAMIC_TARGET) $(VAMP_TARGET) $(LADSPA_TARGET)
+ 
