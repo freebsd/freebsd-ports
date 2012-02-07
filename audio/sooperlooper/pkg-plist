@@ -1,0 +1,15 @@
+bin/slconsole
+bin/slgui
+bin/slregister
+bin/sooperlooper
+share/licenses/sooperlooper-1.6.18/GPLv2
+share/licenses/sooperlooper-1.6.18/LICENSE
+share/licenses/sooperlooper-1.6.18/catalog.mk
+share/sooperlooper/presets/bcf2000.slb
+share/sooperlooper/presets/edp4.slb
+share/sooperlooper/presets/midiwizard.slb
+share/sooperlooper/presets/oxy8.slb
+@dirrm share/sooperlooper/presets
+@dirrm share/sooperlooper
+@dirrm share/licenses/sooperlooper-1.6.18
+@dirrm share/licenses

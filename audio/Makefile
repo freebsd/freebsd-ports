@@ -683,6 +683,7 @@
     SUBDIR += solfege
     SUBDIR += sonata
     SUBDIR += sonice
+    SUBDIR += sooperlooper
     SUBDIR += sound-juicer
     SUBDIR += soundconverter
     SUBDIR += soundgrab
