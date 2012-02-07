@@ -19,7 +19,7 @@ COMMENT=	Catalyst model for Search::Xapian
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		p5-Data-Page>=0:${PORTSDIR}/databases/p5-Data-Page \
-		p5-Search-Xapian>=0.9.2.4:${PORTSDIR}/databases/p5-Search-Xapian
+		p5-Search-Xapian>=1.2.7.0:${PORTSDIR}/databases/p5-Search-Xapian
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
