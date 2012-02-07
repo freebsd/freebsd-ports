@@ -9,7 +9,7 @@ PORTVERSION=	1.2.7
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \

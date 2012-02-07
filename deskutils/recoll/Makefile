@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal full text search package, based on QT and Xapian
 
 LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
