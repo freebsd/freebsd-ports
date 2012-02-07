@@ -14,6 +14,7 @@ include/fcitx-config/fcitx-config.h
 include/fcitx-config/hotkey.h
 include/fcitx-config/xdg.h
 include/fcitx-utils/log.h
+include/fcitx-utils/memory.h
 include/fcitx-utils/utarray.h
 include/fcitx-utils/utf8.h
 include/fcitx-utils/uthash.h
@@ -21,6 +22,7 @@ include/fcitx-utils/utils.h
 include/fcitx/addon.h
 include/fcitx/candidate.h
 include/fcitx/configfile.h
+include/fcitx/context.h
 include/fcitx/fcitx.h
 include/fcitx/frontend.h
 include/fcitx/hook.h
@@ -28,9 +30,10 @@ include/fcitx/ime.h
 include/fcitx/instance.h
 include/fcitx/keys.h
 include/fcitx/module.h
+include/fcitx/module/chttrans/chttrans.h
 include/fcitx/module/classicui/classicuiinterface.h
-%%DBUS%%include/fcitx/module/dbus/dbusstuff.h
-%%DBUS%%include/fcitx/module/ipc/ipc.h
+include/fcitx/module/dbus/dbusstuff.h
+include/fcitx/module/ipc/ipc.h
 include/fcitx/module/pinyin/pydef.h
 include/fcitx/module/punc/punc.h
 include/fcitx/module/x11/x11stuff.h
@@ -39,10 +42,10 @@ include/fcitx/ui.h
 lib/fcitx/fcitx-autoeng.so
 lib/fcitx/fcitx-chttrans.so
 lib/fcitx/fcitx-classic-ui.so
-%%DBUS%%lib/fcitx/fcitx-dbus.so
+lib/fcitx/fcitx-dbus.so
 lib/fcitx/fcitx-fullwidth-char.so
-%%DBUS%%lib/fcitx/fcitx-ipc.so
-%%DBUS%%lib/fcitx/fcitx-kimpanel-ui.so
+lib/fcitx/fcitx-ipc.so
+lib/fcitx/fcitx-kimpanel-ui.so
 lib/fcitx/fcitx-pinyin.so
 lib/fcitx/fcitx-punc.so
 lib/fcitx/fcitx-quickphrase.so
@@ -54,18 +57,17 @@ lib/fcitx/fcitx-x11.so
 lib/fcitx/fcitx-xim.so
 lib/libfcitx-config.so
 lib/libfcitx-config.so.4
-lib/libfcitx-config.so.4.1.0
+lib/libfcitx-config.so.4.1
 lib/libfcitx-core.so
 lib/libfcitx-core.so.0
-lib/libfcitx-core.so.0.2.0
+lib/libfcitx-core.so.0.3
 lib/libfcitx-utils.so
 lib/libfcitx-utils.so.0
-lib/libfcitx-utils.so.0.1.0
+lib/libfcitx-utils.so.0.1
 libdata/pkgconfig/fcitx-config.pc
 libdata/pkgconfig/fcitx-utils.pc
 libdata/pkgconfig/fcitx.pc
 share/applications/fcitx-configtool.desktop
-%%DBUS%%share/applications/fcitx-kimpanel.desktop
 share/applications/fcitx-skin-installer.desktop
 share/applications/fcitx.desktop
 share/cmake/fcitx/FcitxConfig.cmake
@@ -80,10 +82,10 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/addon/fcitx-autoeng.conf
 %%DATADIR%%/addon/fcitx-chttrans.conf
 %%DATADIR%%/addon/fcitx-classic-ui.conf
-%%DBUS%%%%DATADIR%%/addon/fcitx-dbus.conf
+%%DATADIR%%/addon/fcitx-dbus.conf
 %%DATADIR%%/addon/fcitx-fullwidth-char.conf
-%%DBUS%%%%DATADIR%%/addon/fcitx-ipc.conf
-%%DBUS%%%%DATADIR%%/addon/fcitx-kimpanel-ui.conf
+%%DATADIR%%/addon/fcitx-ipc.conf
+%%DATADIR%%/addon/fcitx-kimpanel-ui.conf
 %%DATADIR%%/addon/fcitx-pinyin.conf
 %%DATADIR%%/addon/fcitx-punc.conf
 %%DATADIR%%/addon/fcitx-quickphrase.conf
@@ -99,13 +101,18 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/configdesc/fcitx-classic-ui.desc
 %%DATADIR%%/configdesc/fcitx-pinyin.desc
 %%DATADIR%%/configdesc/fcitx-xim.desc
+%%DATADIR%%/configdesc/inputmethod.desc
 %%DATADIR%%/configdesc/profile.desc
 %%DATADIR%%/configdesc/skin.desc
 %%DATADIR%%/configdesc/table.desc
 %%DATADIR%%/data/AutoEng.dat
 %%DATADIR%%/data/gbks2t.tab
-%%DATADIR%%/data/punc.mb
+%%DATADIR%%/data/punc.mb.zh_CN
+%%DATADIR%%/data/punc.mb.zh_TW
 %%DATADIR%%/data/vk.conf
+%%DATADIR%%/inputmethod/pinyin.conf
+%%DATADIR%%/inputmethod/qw.conf
+%%DATADIR%%/inputmethod/shuangpin.conf
 %%DATADIR%%/pinyin/pySym.mb
 %%DATADIR%%/pinyin/pybase.mb
 %%DATADIR%%/pinyin/pyphrase.mb
@@ -226,38 +233,62 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/table/zrm.mb
 share/icons/hicolor/128x128/apps/fcitx.png
 share/icons/hicolor/16x16/apps/fcitx.png
-share/icons/hicolor/22x22/apps/fcitx.png
+share/icons/hicolor/16x16/status/fcitx-fullwidth-active.png
+share/icons/hicolor/16x16/status/fcitx-fullwidth-inactive.png
+share/icons/hicolor/16x16/status/fcitx-kbd.png
+share/icons/hicolor/16x16/status/fcitx-punc-active.png
+share/icons/hicolor/16x16/status/fcitx-punc-inactive.png
+share/icons/hicolor/16x16/status/fcitx-vk-active.png
+share/icons/hicolor/16x16/status/fcitx-vk-inactive.png
 share/icons/hicolor/24x24/apps/fcitx.png
+share/icons/hicolor/24x24/status/fcitx-fullwidth-active.png
+share/icons/hicolor/24x24/status/fcitx-fullwidth-inactive.png
+share/icons/hicolor/24x24/status/fcitx-kbd.png
+share/icons/hicolor/24x24/status/fcitx-punc-active.png
+share/icons/hicolor/24x24/status/fcitx-punc-inactive.png
+share/icons/hicolor/24x24/status/fcitx-vk-active.png
+share/icons/hicolor/24x24/status/fcitx-vk-inactive.png
 share/icons/hicolor/32x32/apps/fcitx.png
-share/icons/hicolor/32x32/status/fcitx-fullwidth-active.png
-share/icons/hicolor/32x32/status/fcitx-fullwidth-inactive.png
-share/icons/hicolor/32x32/status/fcitx-punc-active.png
-share/icons/hicolor/32x32/status/fcitx-punc-inactive.png
-share/icons/hicolor/32x32/status/fcitx-vk-active.png
-share/icons/hicolor/32x32/status/fcitx-vk-inactive.png
 share/icons/hicolor/48x48/apps/fcitx.png
 share/icons/hicolor/48x48/status/fcitx-cangjie.png
 share/icons/hicolor/48x48/status/fcitx-chn.png
 share/icons/hicolor/48x48/status/fcitx-chttrans-active.png
 share/icons/hicolor/48x48/status/fcitx-chttrans-inactive.png
-share/icons/hicolor/48x48/status/fcitx-eng.png
 share/icons/hicolor/48x48/status/fcitx-erbi.png
+share/icons/hicolor/48x48/status/fcitx-fullwidth-active.png
+share/icons/hicolor/48x48/status/fcitx-fullwidth-inactive.png
+share/icons/hicolor/48x48/status/fcitx-kbd.png
 share/icons/hicolor/48x48/status/fcitx-pinyin.png
+share/icons/hicolor/48x48/status/fcitx-punc-active.png
+share/icons/hicolor/48x48/status/fcitx-punc-inactive.png
 share/icons/hicolor/48x48/status/fcitx-remind-active.png
 share/icons/hicolor/48x48/status/fcitx-remind-inactive.png
 share/icons/hicolor/48x48/status/fcitx-shuangpin.png
+share/icons/hicolor/48x48/status/fcitx-vk-active.png
+share/icons/hicolor/48x48/status/fcitx-vk-inactive.png
 share/icons/hicolor/48x48/status/fcitx-wbpy.png
 share/icons/hicolor/48x48/status/fcitx-wubi.png
 share/icons/hicolor/48x48/status/fcitx-ziranma.png
+share/icons/hicolor/scabable/status/fcitx-fullwidth-active.svg
+share/icons/hicolor/scabable/status/fcitx-fullwidth-inactive.svg
+share/icons/hicolor/scabable/status/fcitx-kbd.svg
+share/icons/hicolor/scabable/status/fcitx-punc-active.svg
+share/icons/hicolor/scabable/status/fcitx-punc-inactive.svg
+share/icons/hicolor/scabable/status/fcitx-vk-active.svg
+share/icons/hicolor/scabable/status/fcitx-vk-inactive.svg
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor/scabable/status
+@dirrmtry share/icons/hicolor/scabable
 @dirrm %%DATADIR%%/table
 @dirrm %%DATADIR%%/skin/default
 @dirrm %%DATADIR%%/skin/dark
 @dirrm %%DATADIR%%/skin/classic
 @dirrm %%DATADIR%%/skin
 @dirrm %%DATADIR%%/pinyin
+@dirrm %%DATADIR%%/inputmethod
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/configdesc
 @dirrm %%DATADIR%%/addon
@@ -268,9 +299,10 @@ share/mime/packages/x-fskin.xml
 @dirrm include/fcitx/module/x11
 @dirrm include/fcitx/module/punc
 @dirrm include/fcitx/module/pinyin
-%%DBUS%%@dirrm include/fcitx/module/ipc
-%%DBUS%%@dirrm include/fcitx/module/dbus
+@dirrm include/fcitx/module/ipc
+@dirrm include/fcitx/module/dbus
 @dirrm include/fcitx/module/classicui
+@dirrm include/fcitx/module/chttrans
 @dirrm include/fcitx/module
 @dirrm include/fcitx-utils
 @dirrm include/fcitx-config

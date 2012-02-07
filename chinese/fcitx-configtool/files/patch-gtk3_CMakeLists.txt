@@ -1,0 +1,10 @@
+--- gtk3/CMakeLists.txt~	2012-01-30 04:51:25.000000000 -0600
++++ gtk3/CMakeLists.txt	2012-02-06 03:22:50.184481579 -0600
+@@ -45,6 +45,7 @@ target_link_libraries (fcitx-config-gtk3
+                        ${FCITX4_FCITX_CONFIG_LIBRARIES}
+                        ${FCITX4_FCITX_LIBRARIES}
+                        ${GIO2_LIBRARIES}
++					   -lintl
+ )
+ 
+ if (UNIQUE3_FOUND)

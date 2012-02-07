@@ -11,3 +11,4 @@ share/icons/hicolor/24x24/apps/fcitx-sunpinyin.png
 share/icons/hicolor/32x32/apps/fcitx-sunpinyin.png
 share/icons/hicolor/48x48/apps/fcitx-sunpinyin.png
 share/locale/zh_CN/LC_MESSAGES/fcitx-sunpinyin.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx-sunpinyin.mo
