@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	percona-toolkit
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/percona-toolkit/${PORTVERSION}/
 
@@ -23,7 +23,6 @@ PERL_CONFIGURE=	yes
 MAN1=	percona-toolkit.1 \
 	pt-align.1 \
 	pt-archiver.1 \
-	pt-collect.1 \
 	pt-config-diff.1 \
 	pt-deadlock-logger.1 \
 	pt-diskstats.1 \
