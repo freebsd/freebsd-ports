@@ -107,19 +107,26 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>PHP development team reports:</p>
-	<blockquote cite="http://www.php.net/ChangeLog-5.php">
-	  <p>Fixed arbitrary remote code execution vulnerability reported
-	    by Stefan Esser, CVE-2012-0830.</p>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/47806/">
+	  <p>A vulnerability has been reported in PHP, which can be exploited
+	    by malicious people to compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to a logic error within the
+	    "php_register_variable_ex()" function (php_variables.c) when
+	    hashing form posts and updating a hash table, which can be
+	    exploited to execute arbitrary code.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2012-0830</cvename>
+      <url>http://www.php.net/archive/2012.php#id2012-02-02-1</url>
+      <url>http://secunia.com/advisories/47806/</url>
     </references>
     <dates>
       <discovery>2012-02-02</discovery>
       <entry>2012-02-04</entry>
+      <modified>2012-02-06</modified>
     </dates>
   </vuln>
 
