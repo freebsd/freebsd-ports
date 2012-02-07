@@ -1,0 +1,9 @@
+--- Makefile.orig	2011-09-28 11:50:28.876409429 +0400
++++ Makefile	2011-09-28 11:50:41.723014235 +0400
+@@ -1,5 +1,5 @@
+ CFLAGS=-g -O2 -Wall -Wextra -Isrc -pthread -rdynamic -DNDEBUG $(OPTFLAGS) -D_FILE_OFFSET_BITS=64
+-LIBS=-lzmq -ldl -lsqlite3 $(OPTLIBS)
++LIBS=-lzmq -lsqlite3 $(OPTLIBS)
+ PREFIX?=/usr/local
+ 
+ get_objs = $(addsuffix .o,$(basename $(wildcard $(1))))

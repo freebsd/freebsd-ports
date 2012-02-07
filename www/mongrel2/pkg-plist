@@ -1,0 +1,146 @@
+bin/mongrel2
+bin/m2sh
+lib/mongrel2/config_modules/null.so
+lib/mongrel2/config_modules/zmq.so
+lib/mongrel2/filters/null.so
+%%EXAMPLES%%%%EXAMPLESDIR%%/procer/procer.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/procer/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/procer/rampart.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/procer/profile.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/procer/procer.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/site.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/app.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/text.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/bbs.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/js/jsonStringify.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/js/jsSocket.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/fsm.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/index.html
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/reset.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/flash/jsSocket.as
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/flash/jsSocket.swf
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/flash/JsSocket.hx
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/flash/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/html/flash/jsSocket2.swf
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/db.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/bbs.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/engine.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/config.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/client.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/ui.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/mongrel2.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/bbs/strict.lua
+%%EXAMPLES%%%%EXAMPLESDIR%%/http_0mq/http.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/http_0mq/xml.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/http_0mq/upload.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/setup.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/handler.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/request.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/control.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/__init__.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/config/__init__.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/config/model.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/config/args.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/config/rc.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/config/commands.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/tnetstrings.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/mongrel2/sql/config.sql
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/tests/__init__.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/tests/sample_conf.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/tests/two_servers.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/tests/composite_conf.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/tests/mongrel2_org.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/python/bin/m2shpy
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/lempar.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/lemon.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_lexer.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/httpclient.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/param.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_tokens.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_parser.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_parser.y
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_lexer.rl
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/fuzzrnd.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_parser.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_tokens.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/param.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi.h
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/httpclient.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/kegogi_parser_extra.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/src/fuzzrnd.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/kegogi/tests/googletest.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/configs/multi.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/configs/sample.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/configs/mongrel2.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/configs/multi_handler.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/configs/any.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/configs/complex.conf
+%%EXAMPLES%%%%EXAMPLESDIR%%/tornado/auth_demo.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/tornado/README
+%%EXAMPLES%%%%EXAMPLESDIR%%/tornado/authdemo.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/site.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/fsm.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/flash/jsSocket.swf
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/flash/JsSocket.hx
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/flash/jsSocket2.swf
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/flash/jsSocket.as
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/flash/Makefile
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/text.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/960.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/index.html
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/js/jsonStringify.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/js/jsSocket.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/reset.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/app.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/static/chat.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/www.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/idiots
+%%EXAMPLES%%%%EXAMPLESDIR%%/chat/chat.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/mp3stream/handler.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/mp3stream/mp3stream.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/mp3stream/stream_conf.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/setup.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/README.txt
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/zcov/data/style.css
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/zcov/data/js/sourceview.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/zcov/data/js/sorttable.js
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/zcov/GCovParser.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/zcov/GCovGroup.py
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/bin/zcov-merge
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/bin/zcov-summarize
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/bin/zcov-scan
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/bin/zcov-genhtml
+%%EXAMPLES%%%%EXAMPLESDIR%%/zcov/LICENSE.txt
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/zcov/zcov/data/js
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/zcov/zcov/data
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/zcov/zcov
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/zcov/bin
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/zcov
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/tornado
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/tests
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/mongrel2/sql
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/mongrel2/config
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/mongrel2
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/python/bin
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/python
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/procer
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/mp3stream
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/kegogi/tests
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/kegogi/src
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/kegogi
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/http_0mq
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/configs
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/chat/static/js
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/chat/static/flash
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/chat/static
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/chat
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bbs/html/js
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bbs/html/flash
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bbs/html
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/bbs
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/mongrel2/filters
+@dirrm lib/mongrel2/config_modules
+@dirrm lib/mongrel2
