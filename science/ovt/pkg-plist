@@ -37,7 +37,6 @@ share/ovt-%%PORTVERSION%%/odata/dmspf14.tle
 share/ovt-%%PORTVERSION%%/odata/dmspf15.tle
 share/ovt-%%PORTVERSION%%/odata/dmspf8.tle
 share/ovt-%%PORTVERSION%%/odata/dmspf9.tle
-share/ovt-%%PORTVERSION%%/odata/exosd.tle
 share/ovt-%%PORTVERSION%%/odata/uars.tle
 share/ovt-%%PORTVERSION%%/textures/earth8km2000x1000.pnm
 share/ovt-%%PORTVERSION%%/textures/earth_BnW.pnm

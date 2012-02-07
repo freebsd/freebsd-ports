@@ -1,70 +1,13 @@
-Save the attached patch as science/ovt/files/patch-configure
+$FreeBSD$
 
-Patch attached with submission follows:
-
---- configure.orig	2004-03-23 22:21:46.000000000 +0100
-+++ configure	2008-09-05 14:56:01.000000000 +0200
-@@ -2496,8 +2496,8 @@
- echo "${ECHO_T}$ac_cv_jdk_version" >&6
- case "$ac_cv_jdk_version" in
- 1.1|1.2*)
--	{ { echo "$as_me:$LINENO: error: Java 1.3.x or 1.4.x is needed" >&5
--echo "$as_me: error: Java 1.3.x or 1.4.x is needed" >&2;}
-+	{ { echo "$as_me:$LINENO: error: Java >=1.3.x is needed" >&5
-+echo "$as_me: error: Java >=1.3.x is needed" >&2;}
-    { (exit 1); exit 1; }; }
- 	;;
- 1.3*)
-@@ -2507,6 +2507,7 @@
- 	JAVAHFLAGS=""
- 	JAVA_INCLUDES="$ac_cv_java_home/include"
- 	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$PLATFORM"
-+	JAVA_LIBS_OS=""
- 	;;
- 1.4*)
- 	JDK_VERSION_STRING=$ac_cv_jdk_version
-@@ -2515,7 +2516,25 @@
- 	JAVAHFLAGS=""
- 	JAVA_INCLUDES="$ac_cv_java_home/include"
- 	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$JNI_MD_H_SUBDIR"
--#	AC_MSG_ERROR(jdk 1.4 is not yet supported)
-+	JAVA_LIBS_OS=""
-+	;;
-+1.5*)
-+	JDK_VERSION_STRING=$ac_cv_jdk_version
-+	JDK_VERSION=15
-+	JAVACFLAGS="-classpath ."
-+	JAVAHFLAGS=""
-+	JAVA_INCLUDES="$ac_cv_java_home/include"
-+	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$JNI_MD_H_SUBDIR"
-+	JAVA_LIBS_OS="$ac_cv_java_home/jre/lib/i386:$ac_cv_java_home/jre/lib/i386/xawt"
-+	;;
-+1.6*)
-+	JDK_VERSION_STRING=$ac_cv_jdk_version
-+	JDK_VERSION=16
-+	JAVACFLAGS="-classpath ."
-+	JAVAHFLAGS=""
-+	JAVA_INCLUDES="$ac_cv_java_home/include"
-+	JAVA_INCLUDES_OS="$ac_cv_java_home/include/$JNI_MD_H_SUBDIR"
-+	JAVA_LIBS_OS="$ac_cv_java_home/jre/lib/i386:$ac_cv_java_home/jre/lib/i386/xawt"
- 	;;
- *)
- 	{ { echo "$as_me:$LINENO: error: unrecognized JDK version:$ac_cv_jdk_version" >&5
-@@ -2527,6 +2546,7 @@
- 
- 
- 
-+
- # Extract the first word of "javac", so it can be a program name with args.
- set dummy javac; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
-@@ -3627,6 +3647,7 @@
- s,@JAVA@,$JAVA,;t t
- s,@JAVA_INCLUDES@,$JAVA_INCLUDES,;t t
- s,@JAVA_INCLUDES_OS@,$JAVA_INCLUDES_OS,;t t
-+s,@JAVA_LIBS_OS@,$JAVA_LIBS_OS,;t t
- s,@ac_cv_javac@,$ac_cv_javac,;t t
- s,@ac_cv_jikes@,$ac_cv_jikes,;t t
- s,@JAVAC@,$JAVAC,;t t
-
-
+--- configure.orig	2012-02-05 18:29:34.000000000 -0800
++++ configure	2012-02-05 18:29:49.000000000 -0800
+@@ -3234,7 +3234,7 @@
+ if test "${ac_cv_jdk_version+set}" = set; then
+   $as_echo_n "(cached) " >&6
+ else
+-  ac_cv_jdk_version=`($JAVABIN -version 2>&1) | sed -n '/.*java.* version *"\(.*\)".*/s//\1/p'`
++  ac_cv_jdk_version=`($JAVABIN -version 2>&1) | sed -n '/.* version *"\(.*\)".*/s//\1/p'`
+ fi
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_jdk_version" >&5
+ $as_echo "$ac_cv_jdk_version" >&6; }
