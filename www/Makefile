@@ -498,6 +498,7 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += monast
+    SUBDIR += mongrel2
     SUBDIR += moodle
     SUBDIR += moodle2
     SUBDIR += moonshine
