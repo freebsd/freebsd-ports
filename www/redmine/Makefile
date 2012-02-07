@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	redmine
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +15,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A flexible project management web application
 
 RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
+		rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n
 
 .if defined(RUBY_VER) && ${RUBY_VER} != "1.8"
