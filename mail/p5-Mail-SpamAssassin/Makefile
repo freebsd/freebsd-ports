@@ -7,15 +7,15 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.2
-PORTREVISION=	6
-CATEGORIES=	mail perl5
+PORTREVISION?=	6
+CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
 PKGNAMEPREFIX?=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
-MAINTAINER=	scheidell@freebsd.org
-COMMENT=	A highly efficient mail filter for identifying spam
+MAINTAINER?=	scheidell@FreeBSD.org
+COMMENT?=	A highly efficient mail filter for identifying spam
 
 RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
-CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
+CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]*
 
 PERL_CONFIGURE=	yes
 USE_PERL5_RUN=	5.8.8+
