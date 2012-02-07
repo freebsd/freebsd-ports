@@ -31,5 +31,6 @@ USE_GNUSTEP_MAKE_DIRS+=	Services/User/Vindaloo
 
 POPPLERKIT_PORT?=	graphics/popplerkit
 ICONKIT_PORT?=	x11-themes/etoile-iconkit
+UNITKIT_PORT?=	devel/etoile-unitkit
 
 .include <bsd.port.mk>
