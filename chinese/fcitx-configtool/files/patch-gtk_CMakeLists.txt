@@ -1,0 +1,10 @@
+--- gtk/CMakeLists.txt~	2012-01-30 04:51:25.000000000 -0600
++++ gtk/CMakeLists.txt	2012-02-06 03:19:28.808521532 -0600
+@@ -44,6 +44,7 @@ target_link_libraries (fcitx-config-gtk
+                        ${FCITX4_FCITX_CONFIG_LIBRARIES}
+                        ${FCITX4_FCITX_LIBRARIES}
+                        ${GIO2_LIBRARIES}
++					   -lintl
+ )
+ 
+ if (UNIQUE_FOUND)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
@@ -18,7 +18,8 @@ COMMENT=	A simple and fast GBK Chinese XIM server
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 MAN1=	createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
@@ -35,7 +36,8 @@ INSTALLS_ICONS=	yes
 OPTIONS=	GTK2		"Enable Gtk2 IM module" off \
 		GTK3		"Enable Gtk3 IM module" off \
 		QT4		"Enable Qt4 IM module" off \
-		DBUS		"Enable D-Bus for KIMPanel support" off
+		OPENCC		"Enable OpenCC for Chinese Transform" off \
+		TPUNC		"Use traditional quotation marks" off
 
 .include <bsd.port.options.mk>
 
@@ -57,12 +59,14 @@ QT_COMPONENTS=	gui
 CMAKE_ARGS+=	-DENABLE_QT_IM_MODULE=ON
 .endif
 
-.if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-PLIST_SUB+=	DBUS=""
+.if defined(WITH_OPENCC)
+LIB_DEPENDS+=	opencc.1:${PORTSDIR}/chinese/opencc
 .else
-CMAKE_ARGS+=	-DENABLE_DBUS=OFF
-PLIST_SUB+=	DBUS="@comment "
+CMAKE_ARGS+=	-DENABLE_OPENCC=OFF
+.endif
+
+.if defined(WITH_TPUNC)
+EXTRA_PATCHES+=	${FILESDIR}/tpunc-data_punc.mb.zh_CN
 .endif
 
 .if defined(WITH_DEBUG)

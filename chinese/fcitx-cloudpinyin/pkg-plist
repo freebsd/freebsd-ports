@@ -2,3 +2,4 @@ lib/fcitx/fcitx-cloudpinyin.so
 share/fcitx/addon/fcitx-cloudpinyin.conf
 share/fcitx/configdesc/fcitx-cloudpinyin.desc
 share/locale/zh_CN/LC_MESSAGES/fcitx-cloudpinyin.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx-cloudpinyin.mo

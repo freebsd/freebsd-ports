@@ -1,8 +1,10 @@
---- data/CMakeLists.txt~	2011-09-06 00:15:40.000000000 -0500
-+++ data/CMakeLists.txt	2011-11-11 05:33:16.204582570 -0600
-@@ -6,4 +6,4 @@ add_custom_target(datafile ALL DEPENDS d
+--- data/CMakeLists.txt~	2012-02-03 02:20:17.000000000 -0600
++++ data/CMakeLists.txt	2012-02-06 01:57:14.709943289 -0600
+@@ -14,5 +14,5 @@ add_custom_command(OUTPUT dict_pinyin.da
+ add_custom_target(datafile ALL DEPENDS dict_pinyin.dat)
  
  configure_file(googlepinyin.pc.in ${CMAKE_CURRENT_BINARY_DIR}/googlepinyin.pc)
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dict_pinyin.dat DESTINATION ${datadir}/googlepinyin)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dict_pinyin.dat DESTINATION ${libdir}/googlepinyin/data)
 -install(FILES ${CMAKE_CURRENT_BINARY_DIR}/googlepinyin.pc DESTINATION ${libdir}/pkgconfig)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/dict_pinyin.dat DESTINATION ${datadir}/googlepinyin)
 +install(FILES ${CMAKE_CURRENT_BINARY_DIR}/googlepinyin.pc DESTINATION ${prefix}/libdata/pkgconfig)

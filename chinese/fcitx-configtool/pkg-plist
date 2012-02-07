@@ -1,0 +1,4 @@
+%%GTK2%%bin/fcitx-config-gtk
+%%GTK3%%bin/fcitx-config-gtk3
+share/locale/zh_CN/LC_MESSAGES/fcitx-configtool.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx-configtool.mo
