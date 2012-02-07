@@ -3,9 +3,10 @@ bin/htdig2omega
 bin/mbox2omega
 bin/omindex
 bin/scriptindex
-www/xapian-omega/cgi-bin/omega
 share/omega/htdig2omega.script
 share/omega/mbox2omega.script
-@dirrm www/xapian-omega/cgi-bin
-@dirrm www/xapian-omega
+%%WWWDIR%%/cgi-bin/omega
+%%WWWDIR%%/cgi-bin/outlookmsg2html
+@dirrm %%WWWDIR%%/cgi-bin
+@dirrm %%WWWDIR%%
 @dirrm share/omega
