@@ -7,13 +7,14 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.15.5
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A personal full text search package, based on QT and Xapian
 
-LIB_DEPENDS=	xapian.[1-2][0-9]:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui qmake_build uic_build moc_build rcc_build \
