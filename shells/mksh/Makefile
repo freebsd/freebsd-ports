@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mksh
-DISTVERSION=	R40c
-PORTREVISION=	1
+DISTVERSION=	R40d
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		http://pub.allbsd.org/MirOS/dist/mir/mksh/
