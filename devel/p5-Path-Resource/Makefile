@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Path-Abstract>0:${PORTSDIR}/devel/p5-Path-Abstract \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Path::Resource.3 Path::Resource::Base.3

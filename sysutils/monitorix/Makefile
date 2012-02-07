@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
 
-USE_PERL=	5.8+
+USE_PERL5=	5.8+
 MAN5=		monitorix.conf.5
 MAN8=		monitorix.8
 MANCOMPRESSED=	no

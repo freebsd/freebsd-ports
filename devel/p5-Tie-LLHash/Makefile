@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module which implements an ordered hash-like object
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Tie::LLHash.3

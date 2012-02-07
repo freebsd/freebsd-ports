@@ -18,7 +18,7 @@ COMMENT=	Fast and featureful UNIX-style path parsing and manipulation
 BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Path::Abstract.3 Path::Abstract::Underload.3

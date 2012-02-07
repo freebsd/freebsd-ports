@@ -22,7 +22,7 @@ LICENSE=	LGPL21
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_PERL_BUILD=	yes
+USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack intltool glib20
 GNU_CONFIGURE=	yes
 

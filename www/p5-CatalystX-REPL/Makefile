@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Carp-REPL>=0:${PORTSDIR}/devel/p5-Carp-REPL \
 		p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		CatalystX::REPL.3

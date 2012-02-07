@@ -18,7 +18,7 @@ COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-USE_PERL=	5.8.1+
+USE_PERL5=	5.8.1+
 USE_BZIP2=	yes
 USE_XORG=	x11 sm ice xext
 USE_GMAKE=	yes

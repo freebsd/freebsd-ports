@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Devel-Cycle>0:${PORTSDIR}/devel/p5-Devel-Cycle \
 		p5-PadWalker>0:${PORTSDIR}/devel/p5-PadWalker
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		CatalystX::LeakChecker.3

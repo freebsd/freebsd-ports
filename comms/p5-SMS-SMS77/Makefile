@@ -19,7 +19,7 @@ MAN1=		sms77send.1
 MAN3=		SMS::SMS77::Message.3 \
 		SMS::SMS77.3
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

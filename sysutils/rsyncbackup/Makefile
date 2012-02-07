@@ -21,7 +21,7 @@ CONFIGSRC=	${WRKSRC}/config
 CONFIGFILES=	backupset.conf config.conf destinations.conf sources.conf
 
 USE_ZIP=	yes
-USE_PERL=	yes
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
