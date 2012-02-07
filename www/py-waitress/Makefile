@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	waitress
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+
+# Avoid to install patch files backup
+post-patch:
+	@cd ${WRKSRC} && \
+		${FIND} . -type f -name '*.orig' -exec ${RM} -f \{\} \;
 
 .include <bsd.port.mk>
