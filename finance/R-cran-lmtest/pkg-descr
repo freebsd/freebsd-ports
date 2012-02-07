@@ -1,0 +1,5 @@
+A collection of tests, data sets, and examples for diagnostic
+checking in linear regression models. Furthermore, some generic
+tools for inference in parametric models are provided.
+
+WWW: http://cran.r-project.org/web/packages/lmtest/
