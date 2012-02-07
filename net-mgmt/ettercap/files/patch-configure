@@ -1,75 +1,86 @@
---- configure.orig	Fri Jun 14 18:53:14 2002
-+++ configure	Wed Jul 17 17:09:18 2002
-@@ -27504,8 +27504,8 @@
- rm -f conftest.err conftest.$ac_objext \
-       conftest$ac_exeext conftest.$ac_ext
- if test "$ac_cv_search_pthread_create" = no; then
--  for ac_lib in c_r pthread; do
--    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
-+#  for ac_lib in c_r pthread; do
-+    LIBS="%%PTHREAD_LIBS%%  $ac_func_search_save_LIBS"
-     cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
+--- configure.orig	2012-01-03 10:07:17.000000000 +0800
++++ configure	2012-02-02 03:41:52.196909256 +0800
+@@ -15293,22 +15293,23 @@
+   return 0;
+ }
  _ACEOF
-@@ -27550,7 +27550,7 @@
-   ac_status=$?
-   echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; }; then
--  ac_cv_search_pthread_create="-l$ac_lib"
-+  ac_cv_search_pthread_create="%%PTHREAD_LIBS%%"
- break
+-for ac_lib in '' c_r pthread; do
+-  if test -z "$ac_lib"; then
+-    ac_res="none required"
+-  else
+-    ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
+-  fi
+-  if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_search_pthread_create=$ac_res
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext
+-  if ${ac_cv_search_pthread_create+:} false; then :
+-  break
+-fi
+-done
++#for ac_lib in '' c_r pthread; do
++#  if test -z "$ac_lib"; then
++#    ac_res="none required"
++#  else
++#    ac_res=-l$ac_lib
++#    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++#  fi
++#  if ac_fn_c_try_link "$LINENO"; then :
++#  ac_cv_search_pthread_create=$ac_res
++#fi
++#rm -f core conftest.err conftest.$ac_objext \
++#    conftest$ac_exeext
++#  if ${ac_cv_search_pthread_create+:} false; then :
++#  break
++#fi
++#done
++ac_cv_search_pthread_create=%%PTHREAD_LIBS%%
+ if ${ac_cv_search_pthread_create+:} false; then :
+ 
  else
-   echo "$as_me: failed program was:" >&5
-@@ -27559,7 +27559,7 @@
- fi
- rm -f conftest.err conftest.$ac_objext \
-       conftest$ac_exeext conftest.$ac_ext
--  done
-+#  done
- fi
- LIBS=$ac_func_search_save_LIBS
- fi
-@@ -27699,10 +27699,10 @@
+@@ -15384,10 +15385,10 @@
  fi
  
-    elif test "$OS" != "MACOSX" -a "$OS" != "WINDOWS"; then
--      echo "$as_me:$LINENO: checking whether $CC accepts -pthread" >&5
--echo $ECHO_N "checking whether $CC accepts -pthread... $ECHO_C" >&6
-+      echo "$as_me:$LINENO: checking whether $CC accepts %%PTHREAD_LIBS%%" >&5
-+echo $ECHO_N "checking whether $CC accepts %%PTHREAD_LIBS%%... $ECHO_C" >&6
+    elif test "$OS" = "MACOSX"; then
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $CC accepts -pthread" >&5
+-$as_echo_n "checking whether $CC accepts -pthread... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether $CC accepts %%PTHREAD_LIBS%%" >&5
++$as_echo_n "checking whether $CC accepts %%PTHREAD_LIBS%%... " >&6; }
        LDFLAGS_store="$LDFLAGS"
--      LDFLAGS="$LDFLAGS -pthread"
-+      LDFLAGS="$LDFLAGS %%PTHREAD_LIBS%%"
-       cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -30441,14 +30441,14 @@
+-      LDFLAGS="$LDFLAGS -pthread -fnested-functions"
++      LDFLAGS="$LDFLAGS %%PTHREAD_LIBS%% -fnested-functions"
+       cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16387,14 +16388,14 @@
        ;;
-    no)  echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
+    no)  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
 -      DEBUG_FLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
 +      DEBUG_FLAGS="-Wall"
        ac_ec_debug=no
        ;;
  esac
  else
-   echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
 -   DEBUG_FLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
 +   DEBUG_FLAGS="-Wall"
     ac_ec_debug=no
  
- fi;
-@@ -30935,7 +30935,7 @@
+ fi
+@@ -16544,7 +16545,7 @@
  
     OLDLDFLAGS="${LDFLAGS}"
     OLDLIBS="${LIBS}"
 -   LDFLAGS="$PCAPLIB"
 +   LDFLAGS="$LDFLAGS $PCAPLIB"
     LIBS="$LIBS"
- 
- echo "$as_me:$LINENO: checking for pcap_datalink_val_to_description in -lpcap" >&5
-@@ -31271,6 +31271,16 @@
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pcap_datalink_val_to_description in -lwpcap" >&5
+ $as_echo_n "checking for pcap_datalink_val_to_description in -lwpcap... " >&6; }
+@@ -17002,6 +17003,14 @@
  
  
  
@@ -81,22 +92,6 @@
 +  HAVE_PCRE_FALSE=
 +fi
 +
-+
-+
- 
  ac_ec_pcre=no
  
-@@ -32817,6 +32827,13 @@
-   { { echo "$as_me:$LINENO: error: conditional \"OPENSSL\" was never defined.
- Usually this means the macro was only invoked conditionally." >&5
- echo "$as_me: error: conditional \"OPENSSL\" was never defined.
-+Usually this means the macro was only invoked conditionally." >&2;}
-+   { (exit 1); exit 1; }; }
-+fi
-+if test -z "${HAVE_PCRE_TRUE}" && test -z "${HAVE_PCRE_FALSE}"; then
-+  { { echo "$as_me:$LINENO: error: conditional \"HAVE_PCRE\" was never defined.
-+Usually this means the macro was only invoked conditionally." >&5
-+echo "$as_me: error: conditional \"HAVE_PCRE\" was never defined.
- Usually this means the macro was only invoked conditionally." >&2;}
-    { (exit 1); exit 1; }; }
- fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libpcre" >&5
