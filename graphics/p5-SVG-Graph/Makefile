@@ -1,4 +1,3 @@
-# vim:ts=8
 # New ports collection makefile for:	p5-SVG-Graph
 # Date created:				25 November 2004
 # Whom:					Fernan Aguero <fernan@iib.unsam.edu.ar>
@@ -7,24 +6,24 @@
 #
 
 PORTNAME=	SVG-Graph
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Visualize your data in Scalable Vector Graphics (SVG) format
 
-BUILD_DEPENDS=	${SITE_PERL}/SVG.pm:${PORTSDIR}/textproc/p5-SVG \
-		${SITE_PERL}/Statistics/Descriptive.pm:${PORTSDIR}/math/p5-Statistics-Descriptive \
-		${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \
-		${SITE_PERL}/Math/Spline.pm:${PORTSDIR}/math/p5-Math-Spline \
-		${SITE_PERL}/Math/Derivative.pm:${PORTSDIR}/math/p5-Math-Derivative
+BUILD_DEPENDS=	p5-Math-Spline>=0:${PORTSDIR}/math/p5-Math-Spline \
+		p5-SVG>=0:${PORTSDIR}/textproc/p5-SVG \
+		p5-Statistics-Descriptive>=0:${PORTSDIR}/math/p5-Statistics-Descriptive \
+		p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		SVG::Graph.3 \
-		SVG::Frame.3 \
 		SVG::Graph::Data.3 \
 		SVG::Graph::Data::Datum.3 \
 		SVG::Graph::Data::Node.3 \
