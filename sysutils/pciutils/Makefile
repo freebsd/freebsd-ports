@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pciutils
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		${MASTER_SITE_KERNEL_ORG} \
