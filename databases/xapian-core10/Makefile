@@ -1,11 +1,11 @@
-# New ports collection makefile for:	xapian-core
+# New ports collection makefile for:	xapian-core10
 # Date created:				5 November 2005
 # Whom:					J.F. Dockes
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xapian-core
+PORTNAME=	xapian-core10
 PORTVERSION=	1.0.17
 PORTEPOCH=	1
 CATEGORIES=	databases
