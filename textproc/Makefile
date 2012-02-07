@@ -5,6 +5,7 @@
 
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
     SUBDIR += add-css-links
     SUBDIR += af-aspell
