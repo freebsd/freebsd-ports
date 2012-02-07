@@ -25,7 +25,7 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-parent>=0:${PORTSDIR}/devel/p5-parent
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		CatalystX::InjectComponent.3

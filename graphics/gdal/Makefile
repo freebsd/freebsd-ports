@@ -166,7 +166,7 @@ CONFIGURE_ARGS+=	--with-odbc=no
 .endif
 
 .if defined(WITH_PERL)
-USE_PERL=		yes
+USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl
 .endif
 

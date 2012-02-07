@@ -51,7 +51,7 @@ MAN1=	rspamc.1
 .endif
 
 .if defined(WITH_RSPAMD_REDIRECTOR)
- USE_PERL=	5.8+
+ USE_PERL5=	5.8+
  CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
  PLIST_SUB+=	REDIRECTOR=""
  USE_RC_SUBR+=	rspamd_redirector

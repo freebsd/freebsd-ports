@@ -17,7 +17,7 @@ COMMENT=	Perl extension for using UUID interfaces as defined in e2fsprogs
 
 LIB_DEPENDS=	uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 

@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Catalyst-Controller-ActionRole>=0:${PORTSDIR}/www/p5-Catalyst-Controller-ActionRole \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
-USE_PERL=	yes
+USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Action::Role::ACL.3 Catalyst::ActionRole::ACL.3
