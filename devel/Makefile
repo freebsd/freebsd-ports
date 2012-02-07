@@ -2869,6 +2869,7 @@
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
     SUBDIR += pecl-runkit
+    SUBDIR += pecl-scream
     SUBDIR += pecl-shape
     SUBDIR += pecl-spl_types
     SUBDIR += pecl-spread
