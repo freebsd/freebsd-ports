@@ -1,5 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/Graph/.packlist
-%%SITE_PERL%%/SVG/Frame.pm
 %%SITE_PERL%%/SVG/Graph.pm
 %%SITE_PERL%%/SVG/Graph/Data.pm
 %%SITE_PERL%%/SVG/Graph/Frame.pm
@@ -19,8 +17,6 @@
 %%SITE_PERL%%/SVG/Graph/Glyph/tree.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/heatmap.pm
 %%SITE_PERL%%/SVG/Graph/Glyph/scatter.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG/Graph
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVG
 @dirrm %%SITE_PERL%%/SVG/Graph/Data
 @dirrm %%SITE_PERL%%/SVG/Graph/Glyph
 @dirrm %%SITE_PERL%%/SVG/Graph
