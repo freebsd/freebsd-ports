@@ -1,19 +1,20 @@
-# New ports collection makefile for:	xapian-bindings
+# New ports collection makefile for:	xapian-bindings10
 # Date created:		2007-05-26
 # Whom:			Gea-Suan Lin <gslin@gslin.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xapian-bindings
+PORTNAME=	xapian-bindings10
 PORTVERSION=	1.0.22
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
+DISTNAME=      ${PORTNAME:S/10$//}-${PORTVERSION}
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
-RUN_DEPENDS=	xapian-core>=1.0.22:${PORTSDIR}/databases/xapian-core
+RUN_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 LICENSE=	GPLv2
