@@ -15,6 +15,7 @@ libdata/pkgconfig/weechat.pc
 %%PYTHON%%lib/weechat/plugins/python.so
 %%RUBY%%lib/weechat/plugins/ruby.so
 %%TCL%%lib/weechat/plugins/tcl.so
+%%DOCUMENTATION%%share/doc/weechat/weechat_dev.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.fr.html
@@ -25,11 +26,13 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_plugin_api.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.en.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.es.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.ja.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.pl.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.ru.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_relay_protocol.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.fr.html
