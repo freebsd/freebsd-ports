@@ -15,7 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A __DIR__ constant for the directory your source file is in
 
-USE_PERL=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Dir::Self.3
