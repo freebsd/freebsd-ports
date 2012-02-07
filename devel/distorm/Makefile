@@ -7,6 +7,7 @@
 
 PORTNAME?=	distorm
 DISTVERSION=	20110707-r193
+PORTREVISION?=	1
 CATEGORIES=	devel
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
@@ -60,13 +61,10 @@ PLIST_FILES=	bin/disasm \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
-.endif
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
 .endif
 
 .if defined(PYTHON_SLAVEPORT)
