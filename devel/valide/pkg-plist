@@ -12,7 +12,7 @@ include/valide-0.7/plugins/todo/todo.h
 include/valide-0.7/plugins/waf/waf.h
 lib/libvalide-0.0.so
 lib/libvalide-0.0.so.0
-lib/libvalide-0.0.so.0.7.0
+lib/libvalide-0.0.so.0.7.1
 lib/valide/plugins/advanced-search/advanced-search.valide-plugin
 lib/valide/plugins/advanced-search/libadvanced-search.so
 lib/valide/plugins/completion/completion.valide-plugin
@@ -34,12 +34,31 @@ lib/valide/plugins/waf/libwaf.so
 lib/valide/plugins/waf/waf.valide-plugin
 share/applications/valide.desktop
 share/icons/hicolor/48x48/mimetypes/application-x-vide.png
+share/locale/de/LC_MESSAGES/valide.mo
 share/locale/es/LC_MESSAGES/valide.mo
 share/locale/fr/LC_MESSAGES/valide.mo
+share/locale/gl/LC_MESSAGES/valide.mo
 share/locale/it/LC_MESSAGES/valide.mo
+share/locale/ja/LC_MESSAGES/valide.mo
+share/locale/pl/LC_MESSAGES/valide.mo
+share/locale/pt_BR/LC_MESSAGES/valide.mo
 share/locale/ru/LC_MESSAGES/valide.mo
+share/locale/tr/LC_MESSAGES/valide.mo
+share/locale/vec/LC_MESSAGES/valide.mo
+share/locale/zh_CN/LC_MESSAGES/valide.mo
+share/mime/XMLnamespaces
+share/mime/aliases
 share/mime/application/x-vide.xml
+share/mime/generic-icons
+share/mime/globs
+share/mime/globs2
+share/mime/icons
+share/mime/magic
+share/mime/mime.cache
 share/mime/packages/x-vide.xml
+share/mime/subclasses
+share/mime/treemagic
+share/mime/types
 share/pixmaps/valide/icone-16.xpm
 share/pixmaps/valide/icone-32.xpm
 share/pixmaps/valide/icone-48.xpm
@@ -53,6 +72,21 @@ share/pixmaps/valide/pref-compiler.png
 share/pixmaps/valide/pref-executable.png
 share/pixmaps/valide/pref-general.png
 share/pixmaps/valide/pref-pkg.png
+share/pixmaps/valide/symbols/afrodite/element-class-16.png
+share/pixmaps/valide/symbols/afrodite/element-delegate-16.png
+share/pixmaps/valide/symbols/afrodite/element-enumeration-16.png
+share/pixmaps/valide/symbols/afrodite/element-event-16.png
+share/pixmaps/valide/symbols/afrodite/element-field-16.png
+share/pixmaps/valide/symbols/afrodite/element-interface-16.png
+share/pixmaps/valide/symbols/afrodite/element-literal-16.png
+share/pixmaps/valide/symbols/afrodite/element-method-16.png
+share/pixmaps/valide/symbols/afrodite/element-namespace-16.png
+share/pixmaps/valide/symbols/afrodite/element-property-16.png
+share/pixmaps/valide/symbols/afrodite/element-structure-16.png
+share/pixmaps/valide/symbols/afrodite/internal-symbols-22.png
+share/pixmaps/valide/symbols/afrodite/private-symbols-22.png
+share/pixmaps/valide/symbols/afrodite/protected-symbols-22.png
+share/pixmaps/valide/symbols/afrodite/public-symbols-22.png
 share/pixmaps/valide/symbols/class.png
 share/pixmaps/valide/symbols/constructor.png
 share/pixmaps/valide/symbols/delegate.png
@@ -104,6 +138,8 @@ share/vala/vapi/waf.vapi
 %%DATADIR%%/template/gtk/main.gs
 %%DATADIR%%/template/gtk/main.vala
 %%DATADIR%%/template/gtk/template.yml
+%%DATADIR%%/template/opengl/gl.vapi
+%%DATADIR%%/template/opengl/gtkglext-1.0.vapi
 %%DATADIR%%/template/opengl/icon.png
 %%DATADIR%%/template/opengl/main.vala
 %%DATADIR%%/template/opengl/template.yml
@@ -120,6 +156,7 @@ share/vala/vapi/waf.vapi
 @dirrm %%DATADIR%%/template/cmd
 @dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%
+@dirrm share/pixmaps/valide/symbols/afrodite
 @dirrm share/pixmaps/valide/symbols
 @dirrm share/pixmaps/valide/plugins
 @dirrm share/pixmaps/valide
