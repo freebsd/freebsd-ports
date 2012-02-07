@@ -30,8 +30,8 @@ USE_GNOME=		pkgconfig
 
 MAKE_JOBS_SAFE=		yes
 
-PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
-PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
+PKGCONFIGDIR?=		${LOCALBASE}/libdata/pkgconfig
+PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${LOCALBASE}/;;}
 
 OPTIONS=		PYTHON		"Python bindings"	on
 
@@ -48,7 +48,7 @@ CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
 MAKE_ENV+=		NOCOLOR=yes X11BASE=${LOCALBASE}
 
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --prefix=${LOCALBASE}
 
 .if !defined(DISABLE_MAKE_JOBS)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
@@ -83,7 +83,7 @@ pre-build:
 
 do-build:
 			@(cd ${BUILD_WRKSRC}; \
-			if ! ${SETENV} ${MAKE_ENV} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
+			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
 				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
 					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
@@ -92,6 +92,6 @@ do-build:
 			fi)
 
 do-install:
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>
