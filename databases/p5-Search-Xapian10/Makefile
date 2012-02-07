@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
-BUILD_DEPENDS=	xapian-core>=1.0.10:${PORTSDIR}/databases/xapian-core
+BUILD_DEPENDS=	xapian-core10>=1.0.10:${PORTSDIR}/databases/xapian-core10
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

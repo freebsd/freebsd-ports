@@ -1,10 +1,10 @@
-# New ports collection makefile for:	xapian-omega
+# New ports collection makefile for:	xapian-omega10
 # Date created:		05 Jul 2008
 # Whom:			Henrik Brix Andersen <brix@FreeBSD.org>
 #
 # $FreeBSD$
 
-PORTNAME=	xapian-omega
+PORTNAME=	xapian-omega10
 PORTVERSION=	1.0.21
 PORTREVISION=	3
 CATEGORIES=	www
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	brix
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
-LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core10
 
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
