@@ -19,10 +19,10 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+CONFIGURE_ENV+=		POPT_CFLAGS=-I${LOCALBASE}/include POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
-CONFIGURE_ENV+=		POPT_CFLAGS=-I${PREFIX}/include POPT_LIBS="-L${PREFIX}/lib -lpopt"
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_ICONV=	yes
