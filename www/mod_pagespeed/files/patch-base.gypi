@@ -4,7 +4,7 @@
        'base_target': 0,
        'base_extra_target': 0,
        'chromium_root': '<(DEPTH)/third_party/chromium/src',
-+      'system_include_path_execinfo%': '/usr/local/include',
++      'system_include_path_execinfo%': '%%LOCALBASE%%/include',
      },
      'target_conditions': [
        # This part is shared between the targets defined below. Only files and

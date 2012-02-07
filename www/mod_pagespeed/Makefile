@@ -60,8 +60,10 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
+		${WRKSRC}/base/base.gypi
 .if ${OSVERSION} < 802517 || ${OSVERSION} < 900502
-	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}/bin,g" \
+	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/net/instaweb/gperf.gypi
 
 .endif

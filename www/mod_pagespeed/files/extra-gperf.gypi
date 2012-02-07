@@ -4,7 +4,7 @@
        'message': 'Generating C++ code from <(RULE_INPUT_PATH)',
        'variables': {
          'gperf_out_dir': '<(SHARED_INTERMEDIATE_DIR)/gperf_out/instaweb',
-+        'gperf_bin_dir': '%%LOCALBASE%%',
++        'gperf_bin_dir': '%%LOCALBASE%%/bin',
        },
        'outputs': [
          '<(gperf_out_dir)/<(instaweb_gperf_subdir)/<(RULE_INPUT_ROOT).gp.cc',
