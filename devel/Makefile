@@ -16,6 +16,7 @@
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-reshape
+    SUBDIR += R-cran-reshape2
     SUBDIR += SpecTcl
     SUBDIR += ZendOptimizer
     SUBDIR += aap
