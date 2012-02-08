@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--without-ruby
 PLIST_SUB+=	BINDING_RUBY="@comment "
 .else
 CONFIGURE_ARGS+=	--with-ruby
-USE_RUBY_RDOCS=	no
+USE_RUBY_RDOC=	no
 PLIST_SUB+=	BINDING_RUBY=""
 USE_RUBY=	yes
 .endif
