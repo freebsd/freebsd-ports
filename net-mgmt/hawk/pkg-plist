@@ -1,20 +1,20 @@
 etc/hawk/daemon.conf.sample
 etc/hawk/php.conf.sample
 sbin/hawk
-%%WWWDIR_REL%%/images/bluesphere.png
-%%WWWDIR_REL%%/images/favicon.ico
-%%WWWDIR_REL%%/images/greensphere.png
-%%WWWDIR_REL%%/images/hawk.jpg
-%%WWWDIR_REL%%/images/purplesphere.png
-%%WWWDIR_REL%%/images/questionsphere.png
-%%WWWDIR_REL%%/images/redsphere.png
-%%WWWDIR_REL%%/images/yellowsphere.png
-%%WWWDIR_REL%%/hawk.php
-%%WWWDIR_REL%%/hawk.css
+%%WWWDIR%%/images/bluesphere.png
+%%WWWDIR%%/images/favicon.ico
+%%WWWDIR%%/images/greensphere.png
+%%WWWDIR%%/images/hawk.jpg
+%%WWWDIR%%/images/purplesphere.png
+%%WWWDIR%%/images/questionsphere.png
+%%WWWDIR%%/images/redsphere.png
+%%WWWDIR%%/images/yellowsphere.png
+%%WWWDIR%%/hawk.php
+%%WWWDIR%%/hawk.css
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/create_hawk_db.sql
 %%PORTDOCS%%%%DOCSDIR%%/create_hawk_user.sql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %D/etc/hawk
-@dirrm %%WWWDIR_REL%%/images
-@dirrm %%WWWDIR_REL%%
+@dirrmtry etc/hawk
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%
