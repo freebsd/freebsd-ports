@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library that preprocesses and concatenates JavaScript files
 
 LICENSE=	MIT
