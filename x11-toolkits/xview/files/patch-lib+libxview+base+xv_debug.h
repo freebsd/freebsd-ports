@@ -1,20 +1,17 @@
---- ./lib/libxview/base/xv_debug.h.orig	Tue Jun 29 07:14:44 1993
-+++ ./lib/libxview/base/xv_debug.h	Sat Apr  1 18:25:23 2000
-@@ -9,11 +9,16 @@
- #ifndef _xv_debug_h_already_included
- #define _xv_debug_h_already_included
+--- lib/libxview/base/xv_debug.h.orig	2005-03-28 06:41:49.000000000 -0800
++++ lib/libxview/base/xv_debug.h	2012-02-02 16:34:28.232644833 -0800
+@@ -11,9 +11,14 @@
  
-+#ifdef NULL
-+#undef NULL
-+#endif
  #ifndef FILE
- #ifndef SVR4
--#undef NULL
- #endif SVR4
+ #if !defined(SVR4) && !defined(__linux__)
++#ifdef NULL
+ #undef NULL
++#endif
+ #endif /* SVR4 */
  #include <stdio.h>
 +#ifndef NULL
 +#define NULL 0
 +#endif
- #endif FILE
+ #endif /* FILE */
  #include <xview/pkg.h>		/* needed to get definition of Xv_private */
    /* 

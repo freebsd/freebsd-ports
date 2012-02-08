@@ -1,14 +1,12 @@
---- lib/libxview/defaults/defaults.c.orig	Sat Oct  4 21:06:17 2003
-+++ lib/libxview/defaults/defaults.c	Sat Oct  4 21:39:32 2003
-@@ -24,7 +24,11 @@
+--- lib/libxview/defaults/defaults.c.orig	2005-03-28 06:41:45.000000000 -0800
++++ lib/libxview/defaults/defaults.c	2012-02-02 16:50:29.447421571 -0800
+@@ -24,8 +24,7 @@
  #include <xview/server.h>
  #endif
  #include <xview/xv_error.h>
+-/* mbuck@debian.org */
+-#if 1
 +#ifdef X11R6
-+#include <X11/Xlibint.h>
-+#else
+ #include <X11/Xlibint.h>
+ #else
  #include <X11/Xlib.h>
-+#endif
- #include <X11/Xatom.h>
- #include <X11/Xresource.h>
- #include <xview_private/i18n_impl.h>

@@ -1,12 +1,12 @@
---- lib/libxview/textsw/es_file.c.orig	Tue Jun 29 00:17:34 1993
-+++ lib/libxview/textsw/es_file.c	Sat Oct  4 18:46:45 2003
+--- lib/libxview/textsw/es_file.c.orig	2005-03-28 06:40:33.000000000 -0800
++++ lib/libxview/textsw/es_file.c	2012-02-03 09:41:57.345780320 -0800
 @@ -85,14 +85,14 @@
  
  #include <string.h>
  #include <fcntl.h>
--#ifdef SVR4
+-#if defined SVR4 || defined __CYGWIN__
 +#include <sys/param.h>
-+#if (defined(BSD4_4) || defined(SVR4))
++#if defined SVR4 || defined __CYGWIN__ || defined(BSD4_4)
  #include <stdlib.h>
  #include <dirent.h>
  #else
@@ -17,20 +17,21 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/file.h>
-@@ -109,9 +109,15 @@
- #include <xview_private/txt_18impl.h>
- 
- 
--extern int      errno, sys_nerr;
-+extern int	errno;
-+extern const	sys_nerr;
-+#if (defined(BSD) && (BSD >= 199306))
+@@ -115,11 +115,16 @@
+ #if (defined(__linux__) && defined(__GLIBC__)) || defined(__CYGWIN__)
+ /* martin.buck@bigfoot.com */
+ #include <errno.h>
++#elif defined(__FreeBSD__)
++extern int    errno;
++extern const  sys_nerr;
 +extern const char *const sys_err_list[];
-+extern off_t	lseek();
-+#else
++extern off_t  lseek();
+ #else
+ extern int      errno, sys_nerr;
  extern char    *sys_errlist[];
+ #endif
+-#ifndef __CYGWIN__
++#if !defined(__CYGWIN__) && !defined(__FreeBSD__)
  extern long     lseek();
-+#endif
+ #endif
  
- static void update_read_buf();  /* update the read buf if overlaps write buf */
- static Es_status es_file_commit();

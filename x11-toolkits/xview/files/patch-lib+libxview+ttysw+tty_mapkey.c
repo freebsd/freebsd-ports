@@ -1,21 +1,20 @@
---- lib/libxview/ttysw/tty_mapkey.c.orig	Tue Jun 29 00:17:20 1993
-+++ lib/libxview/ttysw/tty_mapkey.c	Fri Oct 17 09:54:12 2003
-@@ -12,7 +12,8 @@
+--- lib/libxview/ttysw/tty_mapkey.c.orig	2005-03-28 06:41:31.000000000 -0800
++++ lib/libxview/ttysw/tty_mapkey.c	2012-02-03 12:18:01.439658731 -0800
+@@ -12,7 +12,7 @@
  
  #include <stdio.h>
  #include <ctype.h>
--#ifdef SVR4
-+#include <sys/param.h>
-+#if (defined(BSD4_4) || defined(SVR4))
+-#if defined SVR4 || defined __linux__ || defined __CYGWIN__ 
++#if defined SVR4 || defined __linux__ || defined __CYGWIN__ || defined __FreeBSD__
  #include <string.h>
  #endif
  #include <sys/types.h>
-@@ -500,7 +501,7 @@
+@@ -507,7 +507,7 @@
   * have more time.
   */
  
--#ifdef i386
-+#if defined(i386) && !defined (__FreeBSD__)
+-#if defined(i386) && !defined(__linux__) && !defined(__CYGWIN__)
++#if defined(i386) && !defined(__linux__) && !defined(__CYGWIN__) && !defined (__FreeBSD__)
  static void
  ttysw_arrow_keys_to_string(xv_id, str)
      unsigned        xv_id;

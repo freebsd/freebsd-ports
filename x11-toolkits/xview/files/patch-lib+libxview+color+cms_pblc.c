@@ -1,11 +1,12 @@
---- lib/libxview/color/cms_pblc.c.orig	Mon Sep 29 00:02:28 2003
-+++ lib/libxview/color/cms_pblc.c	Mon Sep 29 00:02:28 2003
-@@ -316,9 +316,10 @@
- {
-     Cms_info		*cms = CMS_PRIVATE(cms_public);
-     Xv_opaque		value;
--    Attr_avlist     	avlist = (Attr_avlist) args;
-+    Attr_avlist     	avlist;
+--- lib/libxview/color/cms_pblc.c.orig	2005-03-28 06:41:05.000000000 -0800
++++ lib/libxview/color/cms_pblc.c	2012-02-02 16:47:45.624915917 -0800
+@@ -319,9 +319,12 @@
+ /* Alpha compatibility, mbuck@debian.org */
+ #if 0
+     Attr_avlist     	avlist = (Attr_avlist) args;
++#else
++    Attr_avlist       avlist;
+ #endif
      int			cms_status = 0;
  
 +    MAKE_AVLIST(args, avlist);

@@ -1,23 +1,17 @@
---- lib/libxview/frame/fm_impl.h.orig	Tue Jun 29 00:16:15 1993
-+++ lib/libxview/frame/fm_impl.h	Sun Oct 12 20:13:46 2003
-@@ -17,12 +17,17 @@
- #define _frame_impl_h_already_included
- 
+--- lib/libxview/frame/fm_impl.h.orig	2005-03-28 06:41:27.000000000 -0800
++++ lib/libxview/frame/fm_impl.h	2012-02-02 17:15:19.460301420 -0800
+@@ -19,9 +19,14 @@
  /* standard includes */
-+#ifdef NULL
-+#undef NULL
-+#endif
  #ifndef FILE
- #ifndef SVR4
--#undef NULL
--#endif SVR4
-+#endif /* SVR4 */
+ #if !defined(SVR4) && !defined(__linux__) && !defined(__CYGWIN__)
++#ifdef NULL
+ #undef NULL
++#endif
+ #endif /* SVR4 */
  #include <stdio.h>
--#endif FILE
 +#ifndef NULL
 +#define NULL 0
 +#endif
-+#endif /* FILE */
+ #endif /* FILE */
  #include <sys/time.h>
  #ifdef OW_I18N
- #endif /* OW_I18N */

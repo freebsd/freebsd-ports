@@ -1,23 +1,20 @@
---- lib/libxview/panel/p_utl.c.orig	Sun Oct  5 11:58:54 2003
-+++ lib/libxview/panel/p_utl.c	Sun Oct  5 12:08:09 2003
-@@ -168,11 +168,6 @@
-         if (image_string_wc(dest))
+--- lib/libxview/panel/p_utl.c.orig	2005-03-28 06:40:39.000000000 -0800
++++ lib/libxview/panel/p_utl.c	2012-02-03 08:39:12.397932758 -0800
+@@ -169,7 +169,7 @@
              xv_free(image_string_wc(dest));
      }
--#else
--    {
--        if (image_string(dest))
--            xv_free(image_string(dest));
--    }
- #endif
- 
-     size.x = size.y = 0;
-@@ -195,6 +190,8 @@
+ #else
+-#if !defined(__linux__) && !defined(__CYGWIN__)
++#if !defined(__linux__) && !defined(__CYGWIN__) && !defined(__FreeBSD__)
+     {
+         if (image_string(dest))
+             xv_free(image_string(dest));
+@@ -197,7 +197,7 @@
  	    value_str = "";
  	if (!(str = (char *) panel_strsave((u_char *) value_str)))
  	    return (size);
-+        if (image_string(dest))	/* lmfken Oct-93 */
-+            xv_free(image_string(dest));
- 	image_set_string(dest, str);
- #endif
- 	panel_image_set_font(dest, font);
+-#if defined(__linux__) || defined(__CYGWIN__)
++#if defined(__linux__) || defined(__CYGWIN__) || defined(__FreeBSD__)
+ /* XView bug: This routine sometimes used a value that was already freed,
+  * leading to clobbered menu items. The problem is the 
+  * 'xv_free(image_string(dest))' above. In some cases the new 'value' 
