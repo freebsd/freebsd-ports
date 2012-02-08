@@ -39,6 +39,7 @@
     SUBDIR += beecrypt
     SUBDIR += belier
     SUBDIR += bfbtester
+    SUBDIR += binwalk
     SUBDIR += bioapi
     SUBDIR += blindelephant
     SUBDIR += blocksshd
