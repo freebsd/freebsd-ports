@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/CallChecker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker/CallChecker.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker/CallChecker.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CallChecker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel

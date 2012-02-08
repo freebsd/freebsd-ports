@@ -1,0 +1,17 @@
+Devel::CallChecker makes some new features of the Perl 5.14.0 C API available to
+XS modules running on older versions of Perl. The features are centred around
+the function cv_set_call_checker, which allows XS code to attach a magical
+annotation to a Perl subroutine, resulting in resolvable calls to that
+subroutine being mutated at compile time by arbitrary C code. This module makes
+cv_set_call_checker and several supporting functions available. (It is possible
+to achieve the effect of cv_set_call_checker from XS code on much earlier Perl
+versions, but it is painful to achieve without the centralised facility.)
+
+Devel::CallCheckerprovides the implementation of the functions at runtime (on
+Perls where they are not provided by the core). It also, at compile time,
+supplies the C header file and link library which provide access to the
+functions. In normal use, "callchecker0_h" and "callchecker_linkable" should be
+called at build time (not authoring time) for the module that wishes to use the
+C functions.
+
+WWW: http://search.cpan.org/dist/Devel-CallChecker/
