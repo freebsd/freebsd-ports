@@ -3,4 +3,4 @@ feature, allowing users to go back in time and re-enter a botched answer.
 Supports multiple-choice, password prompting, overriding input events,
 defaults, etc.
 
-WWW:	http://rubygems.org/gems/interact
+WWW: https://github.com/vito/interact
