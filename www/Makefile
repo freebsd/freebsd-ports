@@ -1630,6 +1630,7 @@
     SUBDIR += rubygem-httpclient
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
+    SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-rails
     SUBDIR += rubygem-layout-yullio
     SUBDIR += rubygem-less
