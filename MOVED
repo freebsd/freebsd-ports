@@ -3230,3 +3230,4 @@ sysutils/py-dvdvideo|sysutils/dvdvideo|2012-02-03|Renamed for better naming
 science/R-cran-survival||2012-02-03|This CRAN port has been included in math/R
 editors/openoffice.org-3-devel|editors/openoffice-3-devel|2012-02-06|Project was taken over and renamed.
 www/zope-cmf||2012-02-07|Has expired: Doesn't work with modern Zope versions
+chinese/fcitx-keyboard|textproc/fcitx-keyboard|2012-02-07|Moved to more appropriate category
