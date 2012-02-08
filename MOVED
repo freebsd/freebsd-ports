@@ -416,7 +416,6 @@ science/gchempaint|science/gchemutils|2009-01-13|gchempaint was integrated into 
 net/fpc-libasync|devel/fpc-fcl-async|2009-01-13|This unit was renamed
 x11-toolkits/forms|x11-toolkits/xforms|2009-01-13|This unit was renamed
 x11-toolkits/gtk|x11-toolkits/gtk12|2009-01-13|This unit was renamed
-x11-toolkits/gnome|x11-toolkits/gnome1|2009-01-13|This unit was renamed
 devel/fpc-gconf||2008-01-13|This is now part of fpc-gnome1
 x11-toolkits/fpc-zvt||2008-01-13|This is now part of fpc-gnome1
 net/fpc-netdb||2008-01-13|This is now part of fpc-fcl-net
@@ -904,7 +903,6 @@ www/mod_auth_mysql41_ap2||2009-11-30|Has expired: distfile no longer fetchable
 x11-toolkits/gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
 x11-toolkits/py-gtkscintilla||2009-11-30|Has expired: no longer under development, last release in 2002
 www/xulrunner|www/libxul|2009-12-02|Superseded by www/libxul
-secuirty/nettel2|security/nettel|2009-12-02|Please use security/nettel
 security/pear-Crypt_HMAC||2009-12-07|Please use security/pear-Crypt_HMAC2
 mail/dovecot-devel|mail/dovecot|2009-12-08|Non-devel version is newer
 net-mgmt/net-snmp-tkmib||2009-12-08|Depends on expired port p5-SNMP
@@ -2185,10 +2183,10 @@ games/tnl||2011-06-01|Has expired: Upstream development has ceased, it doesn't w
 net/vnc2swf|deskutils/vnc2flv|2011-06-01|Has expired: Development is now superseded by deskutils/vnc2flv
 mail/postfix24||2011-06-03|Has expired: no further upstream development; please consider upgrading
 www/mod_roaming2||2011-06-04|Has expired: no supported browser and no further upstream development; see PR 73383
-net-p2p/qbittorrent26|net-p2p/qbittorrent28|2011-06-05|Old version no longer updated
-net-p2p/qbittorrent26-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version no longer updated
-net-p2p/qbittorrent27|net-p2p/qbittorrent28|2011-06-05|Old version no longer updated
-net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version no longer updated
+net-p2p/qbittorrent26|net-p2p/qbittorrent-29|2011-06-05|Old version no longer updated
+net-p2p/qbittorrent26-nox11|net-p2p/qbittorrent-29-nox11|2011-06-05|Old version no longer updated
+net-p2p/qbittorrent27|net-p2p/qbittorrent-29|2011-06-05|Old version no longer updated
+net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent-29-nox11|2011-06-05|Old version no longer updated
 www/pubcookie-login-server||2011-06-06|Has expired: Unused by maintainer, needs updates
 databases/mariadb||2011-06-06|Split into databases/mariadb-{client,scripts,server}
 devel/bugzilla2||2011-06-07|Removed: no longer under development
@@ -3223,7 +3221,7 @@ net-im/libicq||2012-01-18|Runtime is broken. Unmaintained upstream
 devel/luajit|lang/luajit|2012-01-19|Compilers typically live in the lang category
 devel/p5-DBIx-Class-Schema-PopulateMore||2012-01-20|Removed
 textproc/qgoogletranslator||2012-01-20|Has expired: Runtime is broken because Google close free usage of API.  Project closed.
-py-rssdler||2012-01-25|Runtime is mostly broken, abandoned upstream. Use www/py-flexget instead
+www/py-rssdler||2012-01-25|Runtime is mostly broken, abandoned upstream. Use www/py-flexget instead
 ftp/proftpd-mysql|databases/proftpd-mod_sql_mysql|2012-01-26|Module now in slave port
 games/flightgear-aircrafts|games/flightgear-aircraft|2012-01-31|Renamed for better naming
 audio/wmmixer||2012-02-01|EOL Upstream; please use audio/wmsmixer instead
