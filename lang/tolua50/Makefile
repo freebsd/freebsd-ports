@@ -26,7 +26,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC=).*|\1 ${CC}|; \
-		 s|^(CCPP=).*|\1 ${CXX}|; \
+		 s|^(CCPP =).*|\1 ${CXX}|; \
 		 s|^(LUA=).*|\1 ${LOCALBASE}|; \
 		 s|^(LUA(INC\|LIB)=).*|\1 $${LUA_\2DIR}|; \
 		 s|^(CPPFLAGS)(=.*)|\1+\2 -lstdc++|; \
