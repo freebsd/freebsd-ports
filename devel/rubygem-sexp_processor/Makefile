@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sexp_processor
-PORTVERSION=	3.0.9
+PORTVERSION=	3.0.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
