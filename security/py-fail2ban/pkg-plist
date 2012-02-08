@@ -1,6 +1,7 @@
 %%ETCDIR%%/action.d/bsd-ipfw.conf
 %%ETCDIR%%/action.d/complain.conf
 %%ETCDIR%%/action.d/dshield.conf
+%%ETCDIR%%/action.d/dummy.conf
 %%ETCDIR%%/action.d/hostsdeny.conf
 %%ETCDIR%%/action.d/ipfilter.conf
 %%ETCDIR%%/action.d/ipfw.conf
@@ -32,6 +33,8 @@
 %%ETCDIR%%/filter.d/courierlogin.conf
 %%ETCDIR%%/filter.d/couriersmtp.conf
 %%ETCDIR%%/filter.d/cyrus-imap.conf
+%%ETCDIR%%/filter.d/dovecot.conf
+%%ETCDIR%%/filter.d/dropbear.conf
 %%ETCDIR%%/filter.d/exim.conf
 %%ETCDIR%%/filter.d/gssftpd.conf
 %%ETCDIR%%/filter.d/lighttpd-fastcgi.conf
