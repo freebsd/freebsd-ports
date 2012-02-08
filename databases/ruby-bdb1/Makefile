@@ -31,6 +31,9 @@ DOCS=		Changes \
 		docs/*.rd \
 		docs/doc
 
+test regression-test check:
+	${MAKE} -C ${WRKSRC} test
+
 post-build:
 .if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
@@ -48,6 +51,14 @@ post-install:
 
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
+pre-everything::
+	########################################################
+	# Although it is now possible to compile ${PORTNAME}
+	# against Ruby-${RUBY_VER}, the resulting binary is not
+	# fully functional due to changes in Ruby API.
+	# Use of Ruby-1.8 is recommended for full compatibility.
+	########################################################
+.elif ${RUBY_VER} == 1.8
+post-build: test
 .endif
 .include <bsd.port.post.mk>

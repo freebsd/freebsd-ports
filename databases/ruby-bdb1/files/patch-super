@@ -1,0 +1,16 @@
+The RCLASS_SUPER define is present in both Ruby 1.8 and 1.9.
+
+Direct access to "super" no longer works in 1.9 (the field is
+not there), but the define continues to work properly.
+
+	-mi
+
+--- src/bdb1.c	2006-09-20 12:41:01.000000000 -0400
++++ src/bdb1.c	2011-09-02 12:27:34.000000000 -0400
+@@ -692,5 +692,5 @@
+ 	    break;
+ 	}
+-	cl = RCLASS(cl)->super;
++	cl = RCLASS_SUPER(cl);
+     }
+     if (!cl) {
