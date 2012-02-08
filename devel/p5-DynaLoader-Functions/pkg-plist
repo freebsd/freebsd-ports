@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DynaLoader/Functions.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DynaLoader/Functions/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DynaLoader/Functions
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DynaLoader
+@dirrmtry %%SITE_PERL%%/DynaLoader
