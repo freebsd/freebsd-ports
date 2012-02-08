@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sprockets
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
