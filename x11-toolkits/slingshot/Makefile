@@ -9,7 +9,11 @@ PORTNAME=	slingshot
 PORTVERSION=	2.1
 PORTREVISION=	3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		http://komquats.com/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     cy
+
 DISTNAME=	SlingShot${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
