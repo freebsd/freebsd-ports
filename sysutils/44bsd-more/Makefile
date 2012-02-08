@@ -9,9 +9,9 @@ PORTNAME=	44bsd-more
 PORTVERSION=	${RELDATE}
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	hoek
+MASTER_SITE_SUBDIR=	cy
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The pager installed with FreeBSD before less(1) was imported
 
 USE_BZIP2=	yes
