@@ -1,4 +1,4 @@
 Alien lets a Lua application call load dynamic libraries and call C
 functions in a portable way, using libffi.
 
-WWW: http://alien.luaforge.net/
+WWW: http://mascarenhas.github.com/alien
