@@ -321,56 +321,44 @@ make_search_info()
 	exit 0
 }
 
-pkg_ftp()
+pkg_releaseftp()
 {
-	local arch sys e n size_pkg size mtime
-
-	arch=`uname -m`
 	sys=`uname -r | cut -d- -f1`
-
-	[ -e /tmp/bpkg*.tmp ] && rm /tmp/bpkg*.tmp 1>/dev/null 2>&1
-	for e in $pkg; do
-		echo "ls $e*" >> /tmp/bpkg.tmp
-	done
-	sed -i '' s/[0-9][0-9].*/*/ /tmp/bpkg.tmp
-
-	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-release/Latest/"
-	echo "Loading data..."
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-release/Latest/ < /tmp/bpkg.tmp > /tmp/bpkg1.tmp
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-release/All/ < /tmp/bpkg.tmp > /tmp/bpkg2.tmp
-
-	n=1
-	for e in `cat /tmp/bpkg1.tmp | awk '{print $9}' | cut -d. -f1`
-	do
-		size_pkg=`cat /tmp/bpkg1.tmp | sed '/^[A-Z]/d' | sed -n ${n}p |
-		    awk '{print $11}' | cut -d/ -f3`
-		size=`cat /tmp/bpkg2.tmp | grep $size_pkg | awk '{print $5}'`
-		mtime=`cat /tmp/bpkg2.tmp | grep $size_pkg |
-		    awk '{print $6, $7, $8}'`
-		echo "$e -> $size_pkg `convert $size` [$mtime]"
-		n=`expr $n + 1`
-	done
-	rm /tmp/bpkg*.tmp
-	exit 0
+	branch='-release'
+	pkg_ftp
 }
 
-pkg_latestftp()
+pkg_stableftp()
 {
-	local arch sys e n size_pkg size mtime
+	sys=`uname -r | cut -d. -f1`
+	branch='-stable'
+	pkg_ftp
+}
+
+pkg_currentftp()
+{
+	sys=''
+	branch=current
+	pkg_ftp
+}
+
+pkg_ftp()
+{
+	local arch site e n size_pkg size mtime
 
 	arch=`uname -m`
-	sys=`uname -r | cut -d. -f1`
+	site='ftp.freebsd.org/pub/FreeBSD/ports'
 
-	[ -e /tmp/bpkg*.tmp ] && rm /tmp/bpkg*.tmp 1>/dev/null 2>&1
+	[ -e /tmp/bpkg*.tmp ] && rm -f /tmp/bpkg*.tmp 1>/dev/null 2>&1
 	for e in $pkg; do
 		echo "ls $e*" >> /tmp/bpkg.tmp
 	done
 	sed -i '' s/[0-9][0-9].*/*/ /tmp/bpkg.tmp
 
-	echo "ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-stable/Latest/"
+	echo "$site/$arch/packages-${sys}$branch/Latest/"
 	echo "Loading data..."
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-stable/Latest/ < /tmp/bpkg.tmp > /tmp/bpkg1.tmp
-	ftp -4Va ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-$sys-stable/All/ < /tmp/bpkg.tmp > /tmp/bpkg2.tmp
+	ftp -4Va ftp://$site/$arch/packages-${sys}$branch/Latest/ < /tmp/bpkg.tmp > /tmp/bpkg1.tmp
+	ftp -4Va ftp://$site/$arch/packages-${sys}$branch/All/ < /tmp/bpkg.tmp > /tmp/bpkg2.tmp
 
 	n=1
 	for e in `cat /tmp/bpkg1.tmp | awk '{print $9}' | cut -d. -f1`
@@ -383,7 +371,7 @@ pkg_latestftp()
 		echo "$e -> $size_pkg `convert $size` [$mtime]"
 		n=`expr $n + 1`
 	done
-	rm /tmp/bpkg*.tmp
+	rm -f /tmp/bpkg*.tmp
 	exit 0
 }
 
@@ -429,9 +417,9 @@ pkg_backup()
 	fi
 
 	pkg_install=`pkg_info -xoQ ^$pkg | cut -d: -f1 | awk '{ORS=" " ;print}'`
-	echo "Creating backup package(s) "$pkg_install"in /var/tmp/bpkg/"
-	[ ! -d /var/tmp/bpkg/ ] && mkdir /var/tmp/bpkg/
-	cd /var/tmp/bpkg/
+	echo "Creating backup package(s) "$pkg_install"in /usr/ports/packages/bpkg"
+	[ ! -d /usr/ports/packages/bpkg ] && mkdir -p /usr/ports/packages/bpkg
+	cd /usr/ports/packages/bpkg
 
 	for e in $pkg; do
 		i=`pkg_info -xoQ ^$e | cut -d: -f1`
@@ -446,9 +434,9 @@ pkg_backup_all()
 	local e
 
 	root
-	echo "Creating backup packages in /var/tmp/bpkg"
-	[ ! -d /var/tmp/bpkg/ ] && mkdir /var/tmp/bpkg
-	cd /var/tmp/bpkg
+	echo "Creating backup packages in /usr/ports/packages/bpkg"
+	[ ! -d /usr/ports/packages/bpkg ] && mkdir -p /usr/ports/packages/bpkg
+	cd /usr/ports/packages/bpkg
 
 	for e in `pkg_info -Ea`; do
 		pkg_create -b "$e" 1>/dev/null 2>&1
@@ -751,7 +739,7 @@ help()
 ########################################################################
 
 while
-getopts a:b:D:d:e:F:f:g:I:i:j:k:L:M:m:O:o:p:Q:q:r:s:w:z:BCchltvZ opts
+getopts a:b:D:d:E:e:F:f:g:I:i:j:k:L:M:m:O:o:p:Q:q:r:s:w:z:BCchltvZ opts
 do
 	case $opts in
 		a) pkg=$OPTARG
@@ -765,6 +753,8 @@ do
 		d) pkg=$OPTARG
 		   check_index
 		   pkg_info-x ;;
+		E) pkg=$OPTARG
+		   pkg_currentftp ;;
 		e) pkg=$OPTARG
 		   check_index
 		   make_config ;;
@@ -804,9 +794,9 @@ do
 		   check_index
 		   pkg_path ;;
 		Q) pkg=$OPTARG
-		   pkg_latestftp ;;
+		   pkg_stableftp ;;
 		q) pkg=$OPTARG
-		   pkg_ftp ;;
+		   pkg_releaseftp ;;
 		r) pkg=$OPTARG
 		   check_index
 		   pkg_info-xr ;;
