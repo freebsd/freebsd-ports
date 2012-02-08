@@ -1,0 +1,108 @@
+@comment $FreeBSD$
+bin/adventure
+bin/arithmetic
+bin/atc
+bin/backgammon
+bin/teachgammon
+bin/battlestar
+bin/bs
+bin/canfield
+bin/cfscores
+bin/cribbage
+bin/fish
+bin/hack
+bin/hangman
+bin/larn
+bin/mille
+bin/phantasia
+bin/piano
+bin/pig
+bin/quiz
+bin/robots
+bin/rogue
+bin/sail
+bin/snake
+bin/snscore
+bin/trek
+bin/worm
+bin/wump
+share/games/atc/Game_List
+share/games/atc/Killer
+share/games/atc/crossover
+share/games/atc/default
+share/games/atc/easy
+share/games/atc/game_2
+@dirrm share/games/atc
+share/games/larn/larnmaze
+share/games/larn/larnopts
+share/games/larn/larn.help
+@dirrm share/games/larn
+share/games/quiz.db/africa
+share/games/quiz.db/america
+share/games/quiz.db/areas
+share/games/quiz.db/arith
+share/games/quiz.db/asia
+share/games/quiz.db/babies
+share/games/quiz.db/bard
+share/games/quiz.db/chinese
+share/games/quiz.db/collectives
+share/games/quiz.db/ed
+share/games/quiz.db/elements
+share/games/quiz.db/europe
+share/games/quiz.db/flowers
+share/games/quiz.db/greek
+share/games/quiz.db/inca
+share/games/quiz.db/index
+share/games/quiz.db/latin
+share/games/quiz.db/locomotive
+share/games/quiz.db/midearth
+share/games/quiz.db/morse
+share/games/quiz.db/murders
+share/games/quiz.db/poetry
+share/games/quiz.db/posneg
+share/games/quiz.db/pres
+share/games/quiz.db/province
+share/games/quiz.db/seq-easy
+share/games/quiz.db/seq-hard
+share/games/quiz.db/sexes
+share/games/quiz.db/sov
+share/games/quiz.db/spell
+share/games/quiz.db/state
+share/games/quiz.db/trek
+share/games/quiz.db/ucc
+@dirrm share/games/quiz.db
+share/games/cribbage.instr
+share/games/fish.instr
+share/games/wump.info
+@dirrm share/games
+@cwd /var/games
+@dirrm atc
+@dirrm battlestar
+hackdir/perm
+hackdir/record
+hackdir/rumors
+hackdir/help
+hackdir/hh
+hackdir/data
+@dirrm hackdir/save
+@dirrm hackdir
+larn/lscore12.0
+larn/llog12.0
+@dirrm larn
+phantasia/characs
+phantasia/gold
+phantasia/lastdead
+phantasia/mess
+phantasia/monsters
+phantasia/motd
+phantasia/scoreboard
+phantasia/void
+@dirrm phantasia
+battlestar.log
+cfscores
+criblog
+robots_roll
+rogue.scores
+saillog
+snakerawscores
+snake.log
