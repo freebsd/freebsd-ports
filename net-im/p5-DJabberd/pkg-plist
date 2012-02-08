@@ -1,4 +1,3 @@
-bin/djabberd
 %%SITE_PERL%%/DJabberd.pm
 %%SITE_PERL%%/DJabberd/Agent.pm
 %%SITE_PERL%%/DJabberd/Agent/Node.pm
@@ -17,6 +16,7 @@ bin/djabberd
 %%SITE_PERL%%/DJabberd/Component/Example.pm
 %%SITE_PERL%%/DJabberd/Component/External.pm
 %%SITE_PERL%%/DJabberd/Component/Node.pm
+%%SITE_PERL%%/DJabberd/Config.pod
 %%SITE_PERL%%/DJabberd/Connection.pm
 %%SITE_PERL%%/DJabberd/Connection/Admin.pm
 %%SITE_PERL%%/DJabberd/Connection/ClientIn.pm
@@ -53,10 +53,19 @@ bin/djabberd
 %%SITE_PERL%%/DJabberd/RosterItem.pm
 %%SITE_PERL%%/DJabberd/RosterStorage.pm
 %%SITE_PERL%%/DJabberd/RosterStorage/InMemoryOnly.pm
+%%SITE_PERL%%/DJabberd/SASL.pm
+%%SITE_PERL%%/DJabberd/SASL/AuthenSASL.pm
+%%SITE_PERL%%/DJabberd/SASL/Connection.pm
+%%SITE_PERL%%/DJabberd/SASL/Connection/AuthenSASL.pm
+%%SITE_PERL%%/DJabberd/SASL/DumbPlain.pm
+%%SITE_PERL%%/DJabberd/SASL/DumbPlainManager.pm
+%%SITE_PERL%%/DJabberd/SASL/Manager/AuthenSASL.pm
+%%SITE_PERL%%/DJabberd/SASL/ManagerBase.pm
 %%SITE_PERL%%/DJabberd/SAXHandler.pm
 %%SITE_PERL%%/DJabberd/Stanza.pm
 %%SITE_PERL%%/DJabberd/Stanza/DialbackResult.pm
 %%SITE_PERL%%/DJabberd/Stanza/DialbackVerify.pm
+%%SITE_PERL%%/DJabberd/Stanza/SASL.pm
 %%SITE_PERL%%/DJabberd/Stanza/StartTLS.pm
 %%SITE_PERL%%/DJabberd/Stanza/StreamFeatures.pm
 %%SITE_PERL%%/DJabberd/Stats.pm
@@ -68,17 +77,21 @@ bin/djabberd
 %%SITE_PERL%%/DJabberd/VHost.pm
 %%SITE_PERL%%/DJabberd/XMLElement.pm
 %%SITE_PERL%%/DJabberd/XMLParser.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd/.packlist
-@dirrm %%SITE_PERL%%/DJabberd/Agent
-@dirrm %%SITE_PERL%%/DJabberd/Authen
-@dirrm %%SITE_PERL%%/DJabberd/Bot
-@dirrm %%SITE_PERL%%/DJabberd/ClusterMessage
-@dirrm %%SITE_PERL%%/DJabberd/Component
-@dirrm %%SITE_PERL%%/DJabberd/Connection
-@dirrm %%SITE_PERL%%/DJabberd/Delivery
-@dirrm %%SITE_PERL%%/DJabberd/PresenceChecker
-@dirrm %%SITE_PERL%%/DJabberd/Queue
-@dirrm %%SITE_PERL%%/DJabberd/RosterStorage
+%%SITE_PERL%%/mach/auto/DJabberd/.packlist
+bin/djabberd
+@dirrm %%SITE_PERL%%/mach/auto/DJabberd
 @dirrm %%SITE_PERL%%/DJabberd/Stanza
+@dirrm %%SITE_PERL%%/DJabberd/SASL/Manager
+@dirrm %%SITE_PERL%%/DJabberd/SASL/Connection
+@dirrm %%SITE_PERL%%/DJabberd/SASL
+@dirrm %%SITE_PERL%%/DJabberd/RosterStorage
+@dirrm %%SITE_PERL%%/DJabberd/Queue
+@dirrm %%SITE_PERL%%/DJabberd/PresenceChecker
+@dirrm %%SITE_PERL%%/DJabberd/Delivery
+@dirrm %%SITE_PERL%%/DJabberd/Connection
+@dirrm %%SITE_PERL%%/DJabberd/Component
+@dirrm %%SITE_PERL%%/DJabberd/ClusterMessage
+@dirrm %%SITE_PERL%%/DJabberd/Bot
+@dirrm %%SITE_PERL%%/DJabberd/Authen
+@dirrm %%SITE_PERL%%/DJabberd/Agent
 @dirrm %%SITE_PERL%%/DJabberd
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd
