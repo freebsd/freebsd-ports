@@ -15,7 +15,7 @@ COMMENT=	Object-relational mapping layer for Rails MVC Framework
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-tzinfo>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo \
-		rubygem-arel>=2.2.1:${PORTSDIR}/databases/rubygem-arel
+		rubygem-arel>=3.0.0:${PORTSDIR}/databases/rubygem-arel
 
 USE_RUBY=   yes
 USE_RUBYGEMS=   yes
