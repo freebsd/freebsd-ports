@@ -2018,6 +2018,7 @@
     SUBDIR += p5-Module-Extract
     SUBDIR += p5-Module-ExtractUse
     SUBDIR += p5-Module-Find
+    SUBDIR += p5-Module-Implementation
     SUBDIR += p5-Module-Info
     SUBDIR += p5-Module-Info-File
     SUBDIR += p5-Module-Inspector
