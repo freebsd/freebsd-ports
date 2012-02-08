@@ -39,6 +39,14 @@ USE_MAKEFILE=	yes
 MAKE_ENV+=	MAKE="${GMAKE}" EMACSLOADPATH="${WRKSRC}/lisp:${WRKSRC}/leim"
 MAKE_ENV+=	GNUSTEP_SYSTEM_HEADERS="${GNUSTEP_SYSTEM_ROOT}/Library/Headers"
 
+post-patch:
+	${MV} ${WRKSRC}/lib-src/Makefile.in ${WRKSRC}/lib-src/Makefile.in.orig
+	${AWK} '/\\$$/ { printf("%s",$$0); next}; {print}' < ${WRKSRC}/lib-src/Makefile.in.orig > ${WRKSRC}/lib-src/Makefile.in
+	${REINPLACE_CMD} -e 's|\\ | |g' -e 's|\\	| |g' ${WRKSRC}/lib-src/Makefile.in
+	${MV} ${WRKSRC}/src/Makefile.in ${WRKSRC}/src/Makefile.in.tmp
+	${AWK} '/\\$$/ { printf("%s",$$0); next}; {print}' < ${WRKSRC}/src/Makefile.in.tmp > ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e 's|\\ | |g' -e 's|\\	| |g' ${WRKSRC}/src/Makefile.in
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|#define config_machfile "m/.h"|#define config_machfile "m/sparc.h"|g' ${WRKSRC}/src/config.h
 
