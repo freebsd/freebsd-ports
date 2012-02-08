@@ -1683,6 +1683,7 @@
     SUBDIR += p5-Directory-Scratch-Structured
     SUBDIR += p5-Dist-CheckConflicts
     SUBDIR += p5-Dist-Joseki
+    SUBDIR += p5-DynaLoader-Functions
     SUBDIR += p5-EV
     SUBDIR += p5-Env-PS1
     SUBDIR += p5-Env-Path
