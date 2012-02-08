@@ -174,6 +174,7 @@
     SUBDIR += exslt
     SUBDIR += ezxml
     SUBDIR += fa-aspell
+    SUBDIR += fcitx-keyboard
     SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell
