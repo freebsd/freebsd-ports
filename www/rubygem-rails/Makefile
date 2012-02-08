@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -37,7 +37,6 @@ USE_RUBY=	yes
 USE_RUBY_RDOC=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
-PLIST_FILES=	bin/rails
 
 OPTIONS= \
 	FCGI 			"FastCGI backend" 			Off \
