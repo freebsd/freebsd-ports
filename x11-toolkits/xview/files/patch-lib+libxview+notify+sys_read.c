@@ -1,16 +1,11 @@
-*** lib/libxview/notify/sys_read.c~	Mon Jun 28 22:18:01 1993
---- lib/libxview/notify/sys_read.c	Tue Nov 22 08:16:11 1994
-***************
-*** 15,21 ****
---- 15,25 ----
-   */
-  
-  #ifndef SVR4
-+ #ifndef __FreeBSD__
-  #include <syscall.h>
-+ #else
-+ #include <sys/syscall.h>
-+ #endif
-  #else SVR4
-  #include <sys/syscall.h>
-  #endif SVR4
+--- lib/libxview/notify/sys_read.c.orig	2005-03-28 06:41:00.000000000 -0800
++++ lib/libxview/notify/sys_read.c	2012-02-03 08:17:27.427881537 -0800
+@@ -14,7 +14,7 @@
+  * Sys_read.c - Real system call to read.
+  */
+ 
+-#ifndef SVR4
++#if !defined(SVR4) && !defined(__FreeBSD__)
+ #if !defined(__linux__) && !defined(__CYGWIN__)
+ #include <syscall.h>
+ #else

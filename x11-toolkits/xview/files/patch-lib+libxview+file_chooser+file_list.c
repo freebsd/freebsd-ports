@@ -1,5 +1,5 @@
---- lib/libxview/file_chooser/file_list.c.orig	Thu Oct  5 18:21:11 2006
-+++ lib/libxview/file_chooser/file_list.c	Thu Oct  5 18:43:18 2006
+--- lib/libxview/file_chooser/file_list.c.orig	2005-03-28 06:40:42.000000000 -0800
++++ lib/libxview/file_chooser/file_list.c	2012-02-02 17:05:39.791400764 -0800
 @@ -23,6 +23,9 @@
  #include <xview_private/flist_impl.h>
  #include <xview_private/portable.h>
@@ -18,27 +18,25 @@
  
  #if defined(__STDC__) || defined(__cplusplus) || defined(c_plusplus)
  static void	flist_error(File_list_private *private, char *format, ...);
-@@ -521,7 +525,11 @@
-     if (status == DESTROY_CLEANUP) {
- 	xv_free_ref( private->directory );
- 	xv_free_ref( private->regex_pattern );
-+#ifndef __FreeBSD__
- 	xv_free_ref( private->regex_compile );
+@@ -530,7 +534,11 @@
+ 	if (private->regex_compile != NULL && private->regex_compile->allocated)
+ 		xv_free_ref( private->regex_compile->buffer);
+ #endif
++#ifdef __FreeBSD__
++        xv_free_regex_t( private->regex_compile );
 +#else
-+	xv_free_regex_t( private->regex_compile );
+ 	xv_free_ref( private->regex_compile );
 +#endif
  	xv_free_ref( private->dotdot_string );
  	if ( private->dir_ptr )
  	    (void) closedir( private->dir_ptr );
-@@ -1174,14 +1182,16 @@
+@@ -1184,12 +1192,15 @@
  static int 	step();
- #endif
+ #endif /* SVR4 */
  
--
 +#ifndef __FreeBSD__
  #include <regexp.h>
 +#endif
- 
  
  static void
  flist_compile_regex( private )
@@ -48,7 +46,7 @@
      char compile_buf[MAXPATHLEN+1];
      char *end_ptr;
      size_t num_bytes;
-@@ -1197,6 +1207,17 @@
+@@ -1205,6 +1216,17 @@
      xv_free_ref( private->regex_compile );
      private->regex_compile = xv_alloc_n(char, num_bytes);
      (void) XV_BCOPY(compile_buf, private->regex_compile, num_bytes);
@@ -66,7 +64,7 @@
  } 
  
  
-@@ -1205,7 +1226,11 @@
+@@ -1213,7 +1235,11 @@
       char *s;
       File_list_private *private;
  {
@@ -77,4 +75,4 @@
 +#endif
  }
  
- /****************************************************************************/
+ #else /* __linux__ */

@@ -1,15 +1,11 @@
---- lib/libxview/attr/attr.c.orig	Wed May  5 15:36:36 2004
-+++ lib/libxview/attr/attr.c	Wed May  5 15:37:13 2004
-@@ -91,7 +91,12 @@
+--- lib/libxview/attr/attr.c.orig	2005-03-28 06:41:03.000000000 -0800
++++ lib/libxview/attr/attr.c	2012-02-02 16:15:04.864763999 -0800
+@@ -91,7 +91,7 @@
     /* These two variables are used instead of the paramters so that the
        position in the lists is maintained after a recursive call. 
     */
-+
-+#ifdef __amd64__
-+   va_copy(valist,valist1);
-+#else
+-#if (__GLIBC__ > 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1)
++#if (__GLIBC__ > 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 1) || __amd64__
+    __va_copy(valist, valist1);
+ #else
     valist = valist1;
-+#endif
-    avlist = avlist1;
- 
-    if( !avlist )

@@ -1,6 +1,6 @@
---- lib/libxview/base/xv_error.c.orig	Sat Oct  4 16:03:54 2003
-+++ lib/libxview/base/xv_error.c	Sat Oct  4 16:52:26 2003
-@@ -11,17 +11,22 @@
+--- lib/libxview/base/xv_error.c.orig	2005-03-28 06:41:48.000000000 -0800
++++ lib/libxview/base/xv_error.c	2012-02-02 16:41:03.978724572 -0800
+@@ -11,6 +11,7 @@
   */
  
  #include <stdio.h>
@@ -8,20 +8,21 @@
  #include <xview/pkg_public.h>
  #include <X11/Xlib.h>
  #include <xview_private/i18n_impl.h>
- #include <xview_private/portable.h>
- 
+@@ -21,12 +22,15 @@
+ #include <errno.h>
+ #else
  /* Unix system error variables */
 -extern int      sys_nerr;
-+extern const int      sys_nerr;
 +#if (defined(BSD) && (BSD >= 199306))
 +extern const char *const sys_errlist[];
 +#else
  extern char    *sys_errlist[];
 +#endif
  extern int      errno;
+ #endif
  
--Xv_private_data char *xv_app_name;
-+extern Xv_private_data char *xv_app_name;
- Xv_private int (*xv_error_proc) ();
- 
- /*
+-#if !defined(__linux__) && !defined(__CYGWIN__)
++#if !defined(__linux__) && !defined(__CYGWIN__) && !defined(__FreeBSD__)
+ /* Global already defined in xv_init.c */
+ Xv_private_data char *xv_app_name;
+ #else

@@ -1,6 +1,6 @@
---- config/XView.rules.orig	Mon Sep 29 00:02:17 2003
-+++ config/XView.rules	Mon Sep 29 00:02:17 2003
-@@ -148,7 +148,7 @@ lib/**/libname.so.rev:: solist 						@@\
+--- config/XView.rules.orig	2005-03-28 06:40:20.000000000 -0800
++++ config/XView.rules	2012-02-02 15:51:23.012928640 -0800
+@@ -229,7 +229,7 @@
  	$(RM) $@~ sodir/lib/**/libname.so.xs.o				@@\
  	@if [ -f xstrings ]; then \                                     @@\
          	$(RM) strings; $(CP) xstrings strings; fi               @@\
@@ -9,7 +9,7 @@
  	-@if [ -f strings~ ]; then $(RM) strings~; else exit 0; fi	@@\
  	$(RM) $@  							@@\
  	$(MV) $@~ $@							@@\
-@@ -175,7 +175,8 @@ lib/**/libname.so.rev:: solist 						@@\
+@@ -265,7 +265,8 @@
  	@if [ -f xstrings ]; then \                                     @@\
          	$(RM) strings; $(CP) xstrings strings; fi               @@\
  	-@if [ ! -x objsort ];then $(CHMOD) 755 objsort;else exit 0;fi	@@\
@@ -18,16 +18,16 @@
 +		$(SHLIBLDFLAGS) 					@@\
  	@if [ -f strings~ ]; then $(RM) strings~; else exit 0; fi	@@\
  	$(RM) $@  							@@\
- 	$(MV) $@~ $@							@@\ 
-@@ -366,9 +366,9 @@
- #ifndef InstallSharedLibraryNoBuild
- #define	InstallSharedLibraryNoBuild(libname,rev,dest)				@@\
+ 	$(MV) $@~ $@							@@\
+@@ -557,9 +558,9 @@
+ #else /* __linux__ */
+ #define	InstallSharedLibraryNoBuild(libname,rev,dest)			@@\
  install::  								@@\
--        $(RM) /dest/lib/**/libname.so                                   @@\
-+	$(RM) /dest/lib/**/libname.so                                   @@\
- 	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev dest	@@\
--        (cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
+-	$(RM) $(DESTDIR)dest/lib/**/libname.so				@@\
++	$(RM) /dest/lib/**/libname.so					@@\
+ 	$(INSTALL) -c $(INSTSHAREDLIBFLAGS) lib/**/libname.so.rev $(DESTDIR)dest @@\
+-	(cd $(DESTDIR)dest && $(LN) lib/**/libname.so.rev lib/**/libname.so) @@\
 +	(cd dest; $(LN) lib/**/libname.so.rev lib/**/libname.so)
  
- #endif
- 
+ #endif /* !__linux__ */
+ #endif /* InstallSharedLibraryNoBuild */

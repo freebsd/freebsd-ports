@@ -1,14 +1,6 @@
---- lib/libxview/server/server.c.orig	1994-06-26 11:53:40.000000000 -0700
-+++ lib/libxview/server/server.c	2011-06-08 10:21:36.653037943 -0700
-@@ -25,6 +25,7 @@
- #include <xview/win_notify.h>
- #include <xview/defaults.h>
- #include <X11/Xlib.h>
-+#include <X11/Xlibint.h>
- #include <xview_private/portable.h>
- #include <xview_private/svr_atom.h>
- #include <xview_private/svr_impl.h>
-@@ -65,6 +66,7 @@
+--- lib/libxview/server/server.c.orig	2012-02-04 10:06:21.849338608 -0800
++++ lib/libxview/server/server.c	2012-02-04 10:10:13.953502758 -0800
+@@ -70,6 +70,7 @@
  static unsigned int 	 string_to_modmask();
  static Server_atom_type  save_atom();
  static void 		 server_yield_modifiers();
@@ -16,16 +8,24 @@
  
  Xv_private char		*xv_strtok();
  
-@@ -440,7 +442,7 @@
+@@ -451,14 +452,14 @@
+     /* See if defaults have been loaded on server */
+ #ifdef X11R6
    	/* lumpi@dobag.in-berlin.de */
+-#if 1
++#ifndef __FreeBSD__
+     /* martin-2.buck@student.uni-ulm.de */
+     if ((xrmstr = XResourceManagerString((Display *)server->xdisplay))) {
+ 	server->db = XrmGetStringDatabase(xrmstr);
+ #else
      if (XrmGetDatabase((Display *)server->xdisplay)) {
  	server->db = XrmGetStringDatabase(
 -				(XrmGetDatabase((Display *)server->xdisplay)));
 +				(char *) (XrmGetDatabase((Display *)server->xdisplay)));
+ #endif
  #else
      if (((Display *)server->xdisplay)->xdefaults) {
- 	server->db = XrmGetStringDatabase(
-@@ -741,10 +743,8 @@
+@@ -778,10 +779,8 @@
       */
  
      /* Used by atom mgr */

@@ -1,8 +1,8 @@
---- Imakefile.orig	Sun Jun 26 03:47:22 1994
-+++ Imakefile	Thu Aug 11 14:26:34 2005
-@@ -4,8 +4,8 @@
- /**/# Top level Imakefile for ProductNameAndRelease
- /**/# @(#)Imakefile	1.7 1/7/92 SMI
+--- Imakefile.orig	2005-03-28 06:41:59.000000000 -0800
++++ Imakefile	2012-02-02 13:40:06.681898858 -0800
+@@ -10,8 +10,8 @@
+ XCOMM # Top level Imakefile for ProductNameAndRelease
+ XCOMM # @(#)Imakefile	1.7 1/7/92 SMI
  
 -CC = cc
 -CFLAGS = -O 
@@ -11,19 +11,11 @@
  
  #define IHaveSubdirs
  #define PassCDebugFlags
-@@ -13,14 +13,21 @@
-            WORLDOPTS = 
- /**/# If you want to make only the library, then start the build in the lib
- /**/# subdirectory.  Be sure to do a 'make includes' in images and bitmaps first.
--            COREDIRS = lib images bitmaps misc util
-+            COREDIRS = lib images bitmaps misc util config
- #if InstallOpenLookFonts 
-             FONTSDIR = fonts
- #else
+@@ -26,7 +26,15 @@
              FONTSDIR = 
  #endif
            CLIENTSDIR = clients
--             SUBDIRS = $(COREDIRS) $(FONTSDIR) 
+-          SUBDIRS = $(COREDIRS) $(FONTSDIR) 
 +.ifdef DOCLIENTS
 +             SUBDIRS = $(CLIENTSDIR)
 +.else
@@ -32,10 +24,11 @@
 +.ifdef WITHDOCSUBDIR
 +SUBDIRS+=doc
 +.endif
- /**/# even if these subdirs are not included in the general rules, be sure to
- /**/# do a make clean in them.
-        CLEAN_SUBDIRS = clients contrib doc fonts bitmaps images lib misc util
-@@ -59,11 +66,11 @@
++
+ XCOMM # even if these SUBDIRS are not included in the general rules, be sure to
+ XCOMM # do a make clean in them.
+        CLEAN_SUBDIRS = clients contrib doc fonts bitmaps images lib misc util config
+@@ -65,11 +73,11 @@
  	@echo ""
  	@date
  	@echo ""
@@ -52,7 +45,7 @@
  	@echo ""
  	@date
  	@echo ""
-@@ -96,9 +103,9 @@
+@@ -102,9 +110,9 @@
  	@echo ""
  	@date
  	@echo ""

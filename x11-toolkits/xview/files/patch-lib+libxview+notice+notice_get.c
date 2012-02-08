@@ -1,11 +1,12 @@
---- lib/libxview/notice/notice_get.c.orig	Tue Jun 29 14:16:39 1993
-+++ lib/libxview/notice/notice_get.c	Sat Jan  9 23:40:19 1999
-@@ -29,9 +29,10 @@
- va_list			valist;
- {
-     Notice_info	*notice = NOTICE_PRIVATE(notice_public);
--    Attr_avlist     avlist = (Attr_avlist) valist;
+--- lib/libxview/notice/notice_get.c.orig	2005-03-28 06:41:08.000000000 -0800
++++ lib/libxview/notice/notice_get.c	2012-02-02 20:44:18.306259052 -0800
+@@ -32,9 +32,12 @@
+ /* Alpha compatibility, mbuck@debian.org */
+ #if 0
+     Attr_avlist     avlist = (Attr_avlist) valist;
++#else
 +    Attr_avlist     avlist;
+ #endif
      Xv_opaque	v = (Xv_opaque)NULL;
  
 +    MAKE_AVLIST(valist, avlist);

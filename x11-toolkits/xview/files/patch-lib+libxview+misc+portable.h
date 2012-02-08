@@ -1,5 +1,5 @@
---- lib/libxview/misc/portable.h.orig	Tue Jun 29 14:16:34 1993
-+++ lib/libxview/misc/portable.h	Sat Jan  9 23:19:57 1999
+--- lib/libxview/misc/portable.h.orig	2005-03-28 06:41:36.000000000 -0800
++++ lib/libxview/misc/portable.h	2012-02-02 20:41:11.043182949 -0800
 @@ -10,6 +10,7 @@
  #ifndef xview_portable_h_DEFINED
  #define xview_portable_h_DEFINED
@@ -19,14 +19,15 @@
  #ifdef NO_CAST_VATOAV
  #define AVLIST_DECL  Attr_attribute avarray[ATTR_STANDARD_SIZE];  \
                       Attr_avlist    avlist = avarray
-@@ -70,7 +75,11 @@
- #define	XV_USE_TERMIOS
- #define	XV_USE_SVR4_PTYS
- #else	/* SVR4 */
+@@ -74,7 +79,11 @@
+ #define XV_USE_TERMIOS
+ #define XV_USE_SVR4_PTYS
+ #else   /* SVR4 */
 +#if (defined(BSD) && (BSD >= 199103))
 +#define XV_USE_TERMIOS
 +#else
- #undef	XV_USE_TERMIOS
+ #undef  XV_USE_TERMIOS
 +#endif
- #undef	XV_USE_SVR4_PTYS
- #endif	/* SVR4 */
+ #undef  XV_USE_SVR4_PTYS
+ #endif  /* SVR4 */
+ #endif  /* __linux__ */

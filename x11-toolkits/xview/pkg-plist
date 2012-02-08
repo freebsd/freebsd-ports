@@ -133,6 +133,8 @@ include/images/confirm.pr
 include/images/confirm_left.pr
 include/images/confirm_middle.pr
 include/images/confirm_right.pr
+include/images/console.icon
+include/images/console_mask.icon
 include/images/copy.cursor
 include/images/copy_cursor.pr
 include/images/copyletter.cursor

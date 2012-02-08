@@ -1,6 +1,6 @@
---- lib/libxview/sel/sel_agent.c.orig	Fri Oct 17 00:27:07 2003
-+++ lib/libxview/sel/sel_agent.c	Fri Oct 17 00:55:00 2003
-@@ -28,10 +28,10 @@
+--- lib/libxview/sel/sel_agent.c.orig	2005-03-28 06:41:13.000000000 -0800
++++ lib/libxview/sel/sel_agent.c	2012-02-03 09:06:12.722830476 -0800
+@@ -33,10 +33,10 @@
  #include <stdio.h>
  /*
   * The following header file provides fd_set compatibility with SunOS for
@@ -8,12 +8,12 @@
 + * Ultrix and provides howmany() for newer BSDs
   */
  #include <xview_private/ultrix_cpt.h>
--#ifdef SVR4
-+#if (defined(BSD4_4) || defined(SVR4))
+-#if defined(SVR4) || defined(__linux__) || defined(__CYGWIN__)
++#if defined(SVR4) || defined(__linux__) || defined(__CYGWIN__) || (defined(BSD4_4) || defined(SVR4))
  #include <stdlib.h>
  #include <unistd.h>
- #endif
-@@ -63,7 +63,7 @@
+ #endif /* SVR4 */
+@@ -68,7 +68,7 @@
  static void     selection_agent_do_function();
  static Atom 	get_atom();
  static Seln_attribute save_atom();
@@ -22,15 +22,14 @@
  
  Xv_private Seln_result seln_convert_request_to_property();
  /* called by seln_svc.c
-@@ -309,7 +309,11 @@
+@@ -314,7 +314,9 @@
      struct stat     stat_buf;
      int             count, size;
      char           *destp;
+-#ifndef __CYGWIN__
 +#if (defined(BSD) && (BSD >= 199306))
 +    extern off_t    lseek();
-+#else
++#elif !defined __CYGWIN__)
      extern long     lseek();
-+#endif
- 
+ #endif
      if (fstat(fd, &stat_buf) != 0) {
- 	perror(XV_MSG("Agent couldn't reply about a file"));
