@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.13
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -43,8 +43,8 @@ CFLAGS+=	-fstack-protector
 .endif
 
 .if defined(WITH_REPCACHED)
-# WWW: http://repcached.lab.klab.org/
-PATCH_SITES+=		http://mdounin.ru/files/
+PATCH_SITES+=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	swills
 PATCH_DIST_STRIP+=	-p1
 PATCHFILES+=		repcached-2.3.1-${PORTVERSION}.patch.gz
 CONFIGURE_ARGS+=	--enable-replication
