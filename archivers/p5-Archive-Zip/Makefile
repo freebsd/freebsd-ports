@@ -27,4 +27,3 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 .include <bsd.port.post.mk>
-

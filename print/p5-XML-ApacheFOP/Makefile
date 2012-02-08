@@ -24,4 +24,3 @@ PERL_CONFIGURE=	yes
 MAN3=		XML::ApacheFOP.3
 
 .include <bsd.port.mk>
-

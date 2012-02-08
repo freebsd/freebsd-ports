@@ -41,4 +41,3 @@ CONFIGURE_ARGS+=--enable-enable-quvi=no
 .endif
 
 .include <bsd.port.mk>
-

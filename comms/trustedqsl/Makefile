@@ -65,4 +65,3 @@ post-install:
 	@${ECHO}
 
 .include <bsd.port.mk>
-

@@ -17,4 +17,3 @@ XORG_CAT=	driver
 MAN4=		penmount.4x
 
 .include <bsd.port.mk>
-

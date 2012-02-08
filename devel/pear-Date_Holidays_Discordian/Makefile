@@ -21,4 +21,3 @@ FILES=          Holidays/Driver/Discordian.php
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
-
