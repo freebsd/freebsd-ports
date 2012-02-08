@@ -144,7 +144,7 @@ APACHEDIR=	${MASTERDIR}
 
 .if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
 USE_OPENLDAP=		YES
-CONFIGURE_ARGS+=	--enable-ldap=shared --enable-auth-ldap --with-ldap \
+CONFIGURE_ARGS+=	--enable-ldap=shared --enable-auth-ldap=shared --with-ldap \
 	--with-ldap-lib="${LOCALBASE}/lib" \
 	--with-ldap-include="${LOCALBASE}/include"
 .endif
