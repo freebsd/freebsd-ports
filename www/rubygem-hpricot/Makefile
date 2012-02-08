@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hpricot
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
