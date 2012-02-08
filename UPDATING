@@ -217,7 +217,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: Koop Mast <kwm@FreeBSD.org>
 
   Poppler was update to 0.18.0, and the gtk slave port was renamed to
-  match the library it installes. Please run the following command to migrate.
+  match the library it installs. Please run the following command to migrate.
 
   # portmaster -o graphics/poppler-glib poppler-gtk-0.16.7
 
