@@ -3709,6 +3709,7 @@
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-simple_form
+    SUBDIR += rubygem-slop
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-spruz
