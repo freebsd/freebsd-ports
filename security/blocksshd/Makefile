@@ -23,6 +23,8 @@ USE_PERL5_RUN=	yes
 USE_RC_SUBR=	blocksshd
 USE_DOS2UNIX=	blocksshd blocksshd.conf
 
+DEPRECATED=	security/sshguard is more active and a better tool.
+
 MAN1=		blocksshd.1
 MANCOMPRESSED=	yes
 
