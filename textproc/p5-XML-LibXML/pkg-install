@@ -1,5 +1,7 @@
-#!/usr/bin/perl
-exit unless $ARGV[1]=~ /^(DE|POST\-)INSTALL$/;
-$action=(($1 eq 'DE')?'remove':'add').'_parser';
-eval "use XML::SAX;"; exit(-1) if $@;
-XML::SAX->$action('XML::LibXML::SAX'.$_)->save_parsers() for('::Parser', '');
+#!/bin/sh
+
+if [ "$2" = "XPOST-INSTALL" ]; then
+	perl -MXML::SAX -e "XML::SAX->add_parser('XML::LibXML::SAX'.\$_)->save_parsers()"
+elif [ "X$2" = "XDEINSTALL" ]; then
+	perl -MXML::SAX -e "XML::SAX->remove_parser('XML::LibXML::SAX'.\$_)->save_parsers()"
+fi
