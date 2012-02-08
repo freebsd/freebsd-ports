@@ -3209,15 +3209,15 @@ www/xpi-savegenpage||2012-01-14|Has expired: Development has been ceased and not
 www/xpi-videodownloader||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
 www/xpi-xpcom-component-viewer||2012-01-14|Has expired: Development has been ceased and not compatible with Firefox > 7.
 net-im/skype20||2012-01-14|Has expired: old version without many of the newer features; please try net-im/skype instead
-sysutils/rsyslog4|rsyslog5|2012-01-16|EOL Upstream
-sysutils/rsyslog4-dbi|rsyslog5-dbi|2012-01-16|EOL Upstream
-sysutils/rsyslog4-gnutls|rsyslog5-gnutils|2012-01-16|EOL Upstream
-sysutils/rsyslog4-gssapi|rsyslog5-gssapi|2012-01-16|EOL Upstream
-sysutils/rsyslog4-mysql|rsyslog5-mysql|2012-01-16|EOL Upstream
-sysutils/rsyslog4-pgsql|rsyslog5-pgsql|2012-01-16|EOL Upstream
-sysutils/rsyslog4-relp|rsyslog5-relp|2012-01-16|EOL Upstream
-sysutils/rsyslog4-rfc3195|rsyslog5-rfc3195|2012-01-16|EOL Upstream
-sysutils/rsyslog4-snmp|rsyslog5-snmp|2012-01-16|EOL Upstream
+sysutils/rsyslog4|sysutils/rsyslog5|2012-01-16|EOL Upstream
+sysutils/rsyslog4-dbi|sysutils/rsyslog5-dbi|2012-01-16|EOL Upstream
+sysutils/rsyslog4-gnutls|sysutils/rsyslog5-gnutls|2012-01-16|EOL Upstream
+sysutils/rsyslog4-gssapi|sysutils/rsyslog5-gssapi|2012-01-16|EOL Upstream
+sysutils/rsyslog4-mysql|sysutils/rsyslog5-mysql|2012-01-16|EOL Upstream
+sysutils/rsyslog4-pgsql|sysutils/rsyslog5-pgsql|2012-01-16|EOL Upstream
+sysutils/rsyslog4-relp|sysutils/rsyslog5-relp|2012-01-16|EOL Upstream
+sysutils/rsyslog4-rfc3195|sysutils/rsyslog5-rfc3195|2012-01-16|EOL Upstream
+sysutils/rsyslog4-snmp|sysutils/rsyslog5-snmp|2012-01-16|EOL Upstream
 net-im/gicq||2012-01-18|Runtime is broken. Unmaintained upstream
 net-im/libicq||2012-01-18|Runtime is broken. Unmaintained upstream
 devel/luajit|lang/luajit|2012-01-19|Compilers typically live in the lang category
