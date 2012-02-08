@@ -5,19 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	launchy
-PORTVERSION=	0.4.0
+PORTVERSION=	2.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A helper class for launching cross-platform applications
 
-RUN_DEPENDS=	rubygem-configuration>=0.0.5:${PORTSDIR}/devel/rubygem-configuration
+RUN_DEPENDS=	rubygem-addressable>=2.2.6:${PORTSDIR}/www/rubygem-addressable
 
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES+=	bin/launchy
+PLIST_FILES=	bin/launchy
 
 .include <bsd.port.mk>
