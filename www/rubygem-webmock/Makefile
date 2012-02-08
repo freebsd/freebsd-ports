@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmock
-PORTVERSION=	1.7.8
+PORTVERSION=	1.7.9
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
