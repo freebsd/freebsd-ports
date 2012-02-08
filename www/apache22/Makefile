@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.22
-#PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -42,6 +42,9 @@ USE_AUTOTOOLS=		autoconf libtool
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22 htcacheclean
 LIBTOOLFILES=	configure.in
+
+USERS=	www
+GROUPS=	www
 
 MPM_ITK_VERSION?=	20110321-01
 
@@ -190,9 +193,6 @@ post-configure:
 	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," ${WRKSRC}/docs/conf/extra/httpd-userdir.conf
 	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e  "s,%%WWWGRP%%,${WWWGRP}," ${WRKSRC}/docs/conf/httpd.conf
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
