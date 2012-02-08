@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	alien
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel
-MASTER_SITES=	http://alien.luaforge.net/
+MASTER_SITES=	http://nodeload.github.com/mascarenhas/alien/tarball/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
+DISTFILES=	${DISTVERSION}
+DIST_SUBDIR=	lua-${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua -> C FFI
@@ -17,13 +19,23 @@ COMMENT=	Lua -> C FFI
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
 
 LICENSE=	MIT
+
+LICENSE=	MIT
 USE_LUA=	5.1
 
-CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} \
-		-DBSD -fPIC #-fno-stack-protector
+WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_SRC_SUFX}
+CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} -DBSD -fPIC #-fno-stack-protector
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} -llua -shared
 MAKE_ENV+=	LIB_OPTION="${LDFLAGS}" LIB_EXT=".so" LUA="${LUA_CMD}"
 TESTS_EXCLUDE=	tests/alien tests/alien.lua
+
+GITHUB_USER=	mascarenhas
+GITHUB_SRC_SUFX=e667d5d
+
+.if ${CFLAGS:M-fstack-prot*}
+MAKE_ENV+=	__MAKE_CONF= # inherit CFLAGS only once
+CFLAGS+=	-fno-stack-protector
+.endif
 
 # add lua prefix to directories
 .for p in data: docs:doc/ examples:examples/
