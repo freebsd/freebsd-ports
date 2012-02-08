@@ -236,6 +236,7 @@ lib/php/build/shtool
 %%APACHE%%%%APACHEMODDIR%%/%%AP_MODULE%%
 %%APACHE%%@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %f
 %%APACHE%%@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %f
+%%FPM%%share/php/fpm/status.html
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/date/lib
@@ -253,3 +254,5 @@ lib/php/build/shtool
 @dirrmtry include/php
 @dirrm lib/php/build
 @dirrmtry lib/php
+%%FPM%%@dirrm share/php/fpm
+%%FPM%%@dirrm share/php
