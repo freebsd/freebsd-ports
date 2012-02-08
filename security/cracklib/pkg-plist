@@ -1,14 +1,14 @@
-bin/mkdict
-bin/packer
-bin/testlib
-bin/testnum
-bin/teststr
-bin/unpacker
+include/crack.h
 include/packer.h
 lib/libcrack.a
+lib/libcrack.la
 lib/libcrack.so
-lib/libcrack.so.1
-libdata/cracklib/pw_dict.hwm
-libdata/cracklib/pw_dict.pwd
-libdata/cracklib/pw_dict.pwi
-@dirrm libdata/cracklib
+lib/libcrack.so.10
+sbin/cracklib-check
+sbin/cracklib-format
+sbin/cracklib-packer
+sbin/cracklib-unpacker
+sbin/create-cracklib-dict
+%%DATADIR%%/cracklib-small
+%%DATADIR%%/cracklib.magic
+@dirrm share/cracklib
