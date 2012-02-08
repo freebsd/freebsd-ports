@@ -107,4 +107,3 @@ post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 .include <bsd.port.post.mk>
-

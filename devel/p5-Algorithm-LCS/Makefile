@@ -20,4 +20,3 @@ PERL_CONFIGURE=	yes
 MAN3=		Algorithm::LCS.3
 
 .include <bsd.port.mk>
-

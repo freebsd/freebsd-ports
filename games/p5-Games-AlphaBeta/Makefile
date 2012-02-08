@@ -23,4 +23,3 @@ MAN3=		Games::AlphaBeta.3 Games::AlphaBeta::Position.3 \
 		Games::Sequential.3 Games::Sequential::Position.3
 
 .include <bsd.port.mk>
-

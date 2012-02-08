@@ -27,4 +27,3 @@ KDE_I18N=	yes
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.mk>
-

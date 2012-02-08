@@ -34,4 +34,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-

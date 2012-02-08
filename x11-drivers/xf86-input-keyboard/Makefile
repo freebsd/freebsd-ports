@@ -17,4 +17,3 @@ USE_XORG=	kbproto
 MAN4=		kbd.4x
 
 .include <bsd.port.mk>
-
