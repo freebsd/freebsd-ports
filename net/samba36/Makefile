@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		${SAMBA_BASENAME}36
-PORTVERSION=		3.6.1
+PORTVERSION=		3.6.3
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -138,7 +138,7 @@ CONFIGURE_ARGS+=	--disable-pie
 CONFIGURE_ARGS+=	--disable-cups --disable-fam --without-winbind \
 			--without-syslog --without-quotas --without-utmp \
 			--without-pam --without-pam_smbpass \
-			--without-aio-support
+			--without-aio-support --with-included-popt
 # Dirty hack to work around usage of OPTIONS in slave ports
 .	if exists(${.CURDIR}/Makefile.inc)
 .		include "${.CURDIR}/Makefile.inc"
