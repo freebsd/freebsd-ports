@@ -7,35 +7,31 @@
 #
 
 PORTNAME=	freeglut
-PORTVERSION=	2.6.0
+PORTVERSION=	2.8.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/
+MASTER_SITES=	SF
 
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	An alternative to the OpenGL Utility Toolkit (GLUT) library
+
+LICENSE=	MIT
 
 CONFLICTS=	libglut-[0-9].*
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_XORG=	ice xi
+USE_XORG=	ice xi xxf86vm xrandr
 USE_GL=		glu
 CONFIGURE_ARGS=	--disable-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lusbhid
+LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid
 USE_LDCONFIG=	yes
 
 DOCS=	download.html freeglut.html freeglut_logo.png		\
 	freeglut_user_interface.html index.html ogl_sm.png	\
 	progress.html structure.html
 BINS=	CallbackMaker Fractals Fractals_random Lorenz One shapes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src__freeglut_joystick.c
-.endif
 
 pre-configure:
 .for fract in Fractals/fractals.c Fractals_random/fractals_random.c
@@ -63,10 +59,5 @@ post-install:
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
-.if ${OSVERSION} >= 800000
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
