@@ -1,0 +1,10 @@
+--- fpx/f_fpxvw.cpp	2005-02-25 21:23:05.000000000 -0500
++++ fpx/f_fpxvw.cpp	2012-01-19 19:44:34.425688599 +0200
+@@ -613,6 +613,7 @@ HRESULT OleRegGetUserType(REFCLSID clsid
+     const OLECHAR *src=OLESTR("Flashpix Toolkit Application");
+     OLECHAR *dest=*pszUserType;
+     while(*src) *dest++=*src++;
++    *dest=(OLECHAR)0;
+
+     return S_OK;
+ }
