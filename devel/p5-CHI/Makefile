@@ -30,6 +30,11 @@ RUN_DEPENDS=	\
 	p5-Time-Duration>=1.06:${PORTSDIR}/devel/p5-Time-Duration \
 	p5-Time-Duration-Parse>=0.03:${PORTSDIR}/devel/p5-Time-Duration-Parse \
 	p5-Try-Tiny>=0.05:${PORTSDIR}/lang/p5-Try-Tiny
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 PERL_CONFIGURE=	yes
 
