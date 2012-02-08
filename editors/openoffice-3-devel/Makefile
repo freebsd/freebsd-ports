@@ -32,6 +32,8 @@ USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
+MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat filesize limit
+
 .include <bsd.port.pre.mk>
 
 USE_JAVA=	yes
