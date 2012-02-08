@@ -13,7 +13,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy email delivery and testing for Ruby
 
 RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-mail>=2.3.0:${PORTSDIR}/mail/rubygem-mail
+		rubygem-mail>=2.4.0:${PORTSDIR}/mail/rubygem-mail
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

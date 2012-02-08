@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An implementation of the AMQP protocol for RabbitMQ clients
 
-RUN_DEPENDS=	rubygem-eventmachine>=0.12.4:${PORTSDIR}/devel/rubygem-eventmachine \
+RUN_DEPENDS=	rubygem-eventmachine>=0:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-amq-client>=0.8.3:${PORTSDIR}/net/rubygem-amq-client \
 		rubygem-amq-protocol>=0.8.0:${PORTSDIR}/net/rubygem-amq-protocol
 
