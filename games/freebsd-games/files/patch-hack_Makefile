@@ -1,0 +1,12 @@
+Index: hack/Makefile
+@@ -17,7 +17,9 @@
+ MAN=	hack.6
+ DPADD=	${LIBTERMCAP} ${LIBCOMPAT}
+ LDADD=	-ltermcap -lcompat
+-CFLAGS+= -fwritable-strings -I${.CURDIR} -I.
++CFLAGS+= -DPOSIX -I${.CURDIR} -I.
++BINGRP=games
++BINMODE=2555
+ FILES=	rumors help hh data
+ FILESMODE_rumors=	440
+ FILESGRP=	${BINGRP}
