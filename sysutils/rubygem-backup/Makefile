@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	backup
-PORTVERSION=	3.0.22
+PORTVERSION=	3.0.23
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
