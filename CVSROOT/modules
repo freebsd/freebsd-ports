@@ -5237,6 +5237,7 @@ hastymail2-devel                ports/www/hastymail2-devel
 hatari                          ports/emulators/hatari
 hatop                           ports/sysutils/hatop
 havp                            ports/www/havp
+hawk                            ports/net-mgmt/hawk
 hawknl                          ports/net/hawknl
 hawknl-devel                    ports/net/hawknl-devel
 hawkvoice                       ports/audio/hawkvoice
