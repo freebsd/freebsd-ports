@@ -6,6 +6,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	3.0.11
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -47,8 +48,8 @@ LIB_DEPENDS+=	ev.4:${PORTSDIR}/devel/libev \
 		curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS+=	rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread \
 		rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-daemon_controller>=0.2.5:${PORTSDIR}/devel/rubygem-daemon_controller \
-		rubygem-file-tail>=0:${PORTSDIR}/devel/rubygem-file-tail
+		rubygem-daemon_controller>=0.2.5:${PORTSDIR}/devel/rubygem-daemon_controller
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
 SUB_FILES=	pkg-message
