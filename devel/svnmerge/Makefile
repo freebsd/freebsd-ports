@@ -13,9 +13,7 @@ DISTFILES=	# none
 MAINTAINER=	tom@tomjudge.com
 COMMENT=	A Python script to managing merges in a Subversion repository
 
-RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
-
-BROKEN=		does not install
+RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
@@ -30,7 +28,7 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-SVN_PORTDIR=		${PORTSDIR}/devel/subversion
+SVN_PORTDIR=		${PORTSDIR}/devel/subversion16
 SVN_PORTVERSION!=	cd ${SVN_PORTDIR} && ${MAKE} -V PORTVERSION
 
 do-extract:
