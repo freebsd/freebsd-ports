@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0401
+PORTVERSION=	2.0402
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -36,9 +36,16 @@ BUILD_DEPENDS=	\
 	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+# Do not add devel/p5-Data-Visitor to avoid cyclic dependency in tinderbox
 TEST_DEPENDS=	\
+	p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
+	p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Constraints-Simple \
+	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+	p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \
+	p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
 	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
+	p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
 	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
