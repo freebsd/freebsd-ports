@@ -26,7 +26,6 @@ WANT_PHP_MOD=	yes
 USE_RC_SUBR=	hawk
 
 SUB_LIST=	PERL=${PERL}
-PLIST_SUB+=	WWWDIR_REL="${WWWDIR_REL}"
 
 post-patch:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#' \
