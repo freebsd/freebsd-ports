@@ -68,6 +68,7 @@ post-install:
 .endif
 
 regression-test:
+	@${MKDIR} ${BUILD_WRKSRC}/tmp
 	( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test )
 
