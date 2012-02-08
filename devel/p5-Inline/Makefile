@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Inline
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
@@ -18,7 +18,8 @@ COMMENT=	Write Perl subroutines in other programming languages
 BUILD_DEPENDS=	p5-Parse-RecDescent>=1.800:${PORTSDIR}/devel/p5-Parse-RecDescent
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+TEST_DEPENDS=	p5-Inline-Files>=0:${PORTSDIR}/devel/p5-Inline-Files \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
