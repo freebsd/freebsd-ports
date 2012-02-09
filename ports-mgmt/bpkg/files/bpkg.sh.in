@@ -52,12 +52,14 @@ check_index()
 	else
 		root
 		echo "Downloading INDEX file..."
-		(cd /usr && /usr/bin/cvs -Q -f -z3 -R \
-		    -d:pserver:anoncvs@anoncvs.fr.freebsd.org:/home/ncvs \
-		    checkout -A -T -P -l ports)
-		(cd /usr/ports && /usr/bin/cvs -Q -f -z3 -R \
-		    -d:pserver:anoncvs@anoncvs.fr.freebsd.org:/home/ncvs \
-		    update -A -T -P -d Mk Templates Tools ;
+		(export CVSROOT=:pserver:anoncvs@anoncvs.fr.freebsd.org:2401/home/ncvs
+		echo "Type anoncvs for CVS password"
+		echo ""
+		cvs login
+		cd /usr && /usr/bin/cvs -Q -f -z3 -R \
+		    checkout -A -T -P -l ports
+		cd /usr/ports && /usr/bin/cvs -Q -f -z3 -R \
+		    update -A -T -P -d Mk Templates Tools
 		make fetchindex)
 		return 0
 	fi
@@ -728,7 +730,7 @@ help()
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 |
 	    cut -d' ' -f1`"
 	echo ""
-	echo "Usage: bpkg [-abDdeFfgIijkLMmOopQqrswz] pkg-name ..."
+	echo "Usage: bpkg [-abDdEeFfgIijkLMmOopQqrswz] pkg-name ..."
 	echo "       bpkg [-BCchltvZ]"
 	echo ""
 	echo "Please see the bpkg(8) man page for more information"
