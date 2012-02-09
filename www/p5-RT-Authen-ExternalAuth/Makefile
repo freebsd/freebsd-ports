@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FALCONE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT extension to authenticate users against an external source
 
 LICENSE=	GPLv2

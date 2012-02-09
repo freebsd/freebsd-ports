@@ -13,7 +13,7 @@ CATEGORIES=	net www
 MASTER_SITES=	SF/phpldapadmin/phpldapadmin/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/098//}-${PORTVERSION}
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to administer LDAP over the web
 
 NO_BUILD=	yes

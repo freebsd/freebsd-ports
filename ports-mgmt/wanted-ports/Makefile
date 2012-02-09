@@ -13,7 +13,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Just depend on a configurable, arbitrary set of other ports
 
 LICENSE=	BSD

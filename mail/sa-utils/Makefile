@@ -13,7 +13,7 @@ CATEGORIES=	mail
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	SpamAssassin nightly periodic maintenance
 
 RUN_DEPENDS=	sa-update:${PORTSDIR}/mail/p5-Mail-SpamAssassin

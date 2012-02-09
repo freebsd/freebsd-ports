@@ -16,7 +16,7 @@ MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Sphinx Full-Text Search Engine
 
 LICENSE=	GPLv2
