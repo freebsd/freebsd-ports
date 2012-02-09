@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.265
+PORTVERSION=	2.003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DDUMONT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -26,22 +25,25 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-MouseX-NativeTraits>=0:${PORTSDIR}/devel/p5-MouseX-NativeTraits \
 		p5-MouseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MouseX-StrictConstructor \
 		p5-Parse-RecDescent>=1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		p5-YAML>=0.68:${PORTSDIR}/textproc/p5-YAML \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
 TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents
+		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents \
+		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
 
 PERL_MODBUILD=	yes
 
-MAN1=		config-edit.1
+MAN1=		cme.1 config-edit.1
 MAN3=		Config::Model.3 \
 		Config::Model::Annotation.3 \
 		Config::Model::AnyId.3 \
@@ -96,7 +98,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Debian::Dpkg::Copyright::Content.3 \
 		Config::Model::models::Debian::Dpkg::Copyright::FileLicense.3 \
 		Config::Model::models::Debian::Dpkg::Copyright::GlobalLicense.3 \
-		Config::Model::models::Debian::Dpkg::Copyright::License.3 \
 		Config::Model::models::Debian::Dpkg::Copyright::LicenseSpec.3 \
 		Config::Model::models::Debian::Dpkg::Meta.3 \
 		Config::Model::models::Debian::Dpkg::Patch.3 \
@@ -106,7 +107,6 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Fstab::FsLine.3 \
 		Config::Model::models::LCDd.3 \
 		Config::Model::models::LCDd::CFontz.3 \
-		Config::Model::models::LCDd::CFontz633.3 \
 		Config::Model::models::LCDd::CFontzPacket.3 \
 		Config::Model::models::LCDd::CwLnx.3 \
 		Config::Model::models::LCDd::EyeboxOne.3 \
