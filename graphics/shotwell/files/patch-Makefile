@@ -1,31 +1,22 @@
---- Makefile.orig	2011-06-02 12:11:21.000000000 -0700
-+++ Makefile	2011-08-12 17:33:51.953748181 -0700
-@@ -264,7 +264,6 @@
- 	gstreamer-0.10 \
+--- Makefile.orig	2011-11-03 14:39:05.000000000 -0700
++++ Makefile	2012-02-02 16:27:40.000000000 -0800
+@@ -273,7 +273,6 @@
  	gstreamer-base-0.10 \
+ 	gstreamer-pbutils-0.10 \
  	gtk+-2.0 \
 -	gudev-1.0 \
  	libexif \
  	libgphoto2 \
  	libsoup-2.4 \
-@@ -296,7 +295,6 @@
- 	gstreamer-0.10 >= 0.10.28 \
+@@ -309,7 +308,6 @@
  	gstreamer-base-0.10 >= 0.10.28 \
+ 	gstreamer-pbutils-0.10 >= 0.10.32 \
  	gtk+-2.0 >= 2.18.0 \
 -	gudev-1.0 >= 145 \
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
  	libsoup-2.4 >= 2.26.0 \
-@@ -375,7 +373,7 @@
- 	$(EXPANDED_HELP_FILES) $(EXPANDED_HELP_IMAGES) apport/shotwell.py $(UNIT_RESOURCES) $(UNIT_MKS) \
- 	unitize.mk units.mk $(PC_INPUT) $(PLUGINS_DIST_FILES) \
- 	$(EXPANDED_THUMBNAILER_SRC_FILES)
--	
-+
- 
- DIST_TAR = $(PROGRAM)-$(VERSION).tar
- DIST_TAR_BZ2 = $(DIST_TAR).bz2
-@@ -420,7 +418,7 @@
+@@ -434,7 +432,7 @@
  # if not available.
  LIBRAW_CONFIG=./libraw-config
  
@@ -34,19 +25,7 @@
  	@ ./chkver min $(VALAC_VERSION) $(MIN_VALAC_VERSION) || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 )
  	$(if $(MAX_VALAC_VERSION),\
  		@ ./chkver max $(VALAC_VERSION) $(MAX_VALAC_VERSION) || ( echo 'Shotwell cannot be built by Vala compiler $(MAX_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 ),)
-@@ -561,6 +559,11 @@
- 	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome/help/shotwell/C/figures
- 	$(INSTALL_DATA) $(EXPANDED_HELP_IMAGES) $(DESTDIR)$(PREFIX)/share/gnome/help/shotwell/C/figures
- endif
-+ifndef DISABLE_SCHEMAS_INSTALL
-+	GCONF_CONFIG_SOURCE=xml:merged:/usr/local/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule misc/shotwell.schemas
-+	mkdir -p $(DESTDIR)$(SCHEMA_FILE_DIR)
-+	$(INSTALL_DATA) misc/shotwell.schemas $(DESTDIR)$(SCHEMA_FILE_DIR)
-+endif
- 	-$(foreach lang,$(CORE_SUPPORTED_LANGUAGES),`mkdir -p $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES ; \
- 		$(INSTALL_DATA) $(LOCAL_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo \
- 		$(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo`)
-@@ -638,7 +641,6 @@
+@@ -660,7 +658,6 @@
  
  # EXPANDED_SRC_FILES includes UNITIZE_INITS and UNITIZE_ENTRY
  $(VALA_STAMP): $(EXPANDED_SRC_FILES) $(EXPANDED_VAPI_FILES) $(EXPANDED_SRC_HEADER_FILES)
@@ -54,20 +33,20 @@
  	@echo Compiling Vala code...
  	@mkdir -p $(BUILD_DIR)
  	@$(VALAC) --ccode --directory=$(BUILD_DIR) --basedir=src \
-@@ -655,10 +657,10 @@
+@@ -677,10 +674,10 @@
  	@
  
  $(EXPANDED_OBJ_FILES): %.o: %.c $(CONFIG_IN) Makefile
 -	$(CC) -c $(VALA_CFLAGS) `$(LIBRAW_CONFIG) --cflags` $(CFLAGS) -o $@ $<
-+	$(CC) -c $(VALA_CFLAGS) $(CFLAGS) `pkg-config --cflags libraw` -o $@ $<
++	$(CC) -c $(VALA_CFLAGS) `pkg-config --cflags libraw` -o $@ $<
  
  $(PROGRAM): $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP) $(THUMBNAILER_BIN)
--	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -o $@
-+	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -o $@
+-	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -o $@
++	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -o $@
+ 	glib-compile-schemas misc
  
  $(THUMBNAILER_BIN): $(EXPANDED_THUMBNAILER_SRC_FILES)
- 	$(VALAC) $(EXPANDED_THUMBNAILER_SRC_FILES) $(VALAFLAGS) -o $@ $(foreach pkg,$(THUMBNAILER_PKGS),--pkg=$(pkg))
-@@ -668,7 +670,6 @@
+@@ -691,7 +688,6 @@
  
  .PHONY: $(PLUGINS_DIR)
  $(PLUGINS_DIR): $(PLUGIN_VAPI) $(PLUGIN_HEADER) $(PLUGIN_DEPS)
@@ -75,12 +54,12 @@
  	@$(MAKE) --directory=$@ PLUGINS_VERSION="$(VERSION)" USER_VALAFLAGS="$(USER_VALAFLAGS)" \
  		PLUGIN_CFLAGS="$(PLUGIN_CFLAGS)"
  
-@@ -686,7 +687,7 @@
+@@ -709,7 +705,7 @@
  glade: lib$(PROGRAM).so
  
  lib$(PROGRAM).so: $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP)
--	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -shared -o $@
-+	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) $(LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -shared -o $@
+-	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -shared -o $@
++	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(LDFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -shared -o $@
  
  .PHONY: pkgcheck
  pkgcheck:
