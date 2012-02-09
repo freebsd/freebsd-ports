@@ -47,6 +47,92 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fe1976c2-5317-11e1-9e99-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>17.0.963.46</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote
+cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[73478] Low CVE-2011-3953: Avoid clipboard monitoring after paste
+	    event.  Credit to Daniel Cheng of the Chromium development
+	    community.</p>
+	  <p>[92550] Low CVE-2011-3954: Crash with excessive database usage.
+	    Credit to Collin Payne.</p>
+	  <p>[93106] High CVE-2011-3955: Crash aborting an IndexDB transaction.
+	    Credit to David Grogan of the Chromium development community.</p>
+	  <p>[103630] Low CVE-2011-3956: Incorrect handling of sandboxed origins
+	    inside extensions.  Credit to Devdatta Akhawe, UC Berkeley.</p>
+	  <p>[104056] High CVE-2011-3957: Use-after-free in PDF garbage
+	    collection.  Credit to Aki Helin of OUSPG.</p>
+	  <p>[105459] High CVE-2011-3958: Bad casts with column spans.  Credit
+	    to miaubiz.</p>
+	  <p>[106441] High CVE-2011-3959: Buffer overflow in locale handling.
+	    Credit to Aki Helin of OUSPG.</p>
+	  <p>[108416] Medium CVE-2011-3960: Out-of-bounds read in audio
+	    decoding.  Credit to Aki Helin of OUSPG.</p>
+	  <p>[108871] Critical CVE-2011-3961: Race condition after crash of
+	    utility process.  Credit to Shawn Goertzen.</p>
+	  <p>[108901] Medium CVE-2011-3962: Out-of-bounds read in path clipping.
+	    Credit to Aki Helin of OUSPG.</p>
+	  <p>[109094] Medium CVE-2011-3963: Out-of-bounds read in PDF fax image
+	    handling.  Credit to Atte Kettunen of OUSPG.</p>
+	  <p>[109245] Low CVE-2011-3964: URL bar confusion after drag + drop.
+	    Credit to Code Audit Labs of VulnHunt.com.</p>
+	  <p>[109664] Low CVE-2011-3965: Crash in signature check.  Credit to
+	    Slawomir Blazek.</p>
+	  <p>[109716] High CVE-2011-3966: Use-after-free in stylesheet error
+	    handling.  Credit to Aki Helin of OUSPG.</p>
+	  <p>[109717] Low CVE-2011-3967: Crash with unusual certificate.  Credit
+	    to Ben Carrillo.</p>
+	  <p>[109743] High CVE-2011-3968: Use-after-free in CSS handling.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[110112] High CVE-2011-3969: Use-after-free in SVG layout.  Credit
+	    to Arthur Gerkis.</p>
+	  <p>[110277] Medium CVE-2011-3970: Out-of-bounds read in libxslt.
+	    Credit to Aki Helin of OUSPG.</p>
+	  <p>[110374] High CVE-2011-3971: Use-after-free with mousemove events.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[110559] Medium CVE-2011-3972: Out-of-bounds read in shader
+	    translator.  Credit to Google Chrome Security Team (Inferno).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3953</cvename>
+      <cvename>CVE-2011-3954</cvename>
+      <cvename>CVE-2011-3955</cvename>
+      <cvename>CVE-2011-3956</cvename>
+      <cvename>CVE-2011-3957</cvename>
+      <cvename>CVE-2011-3958</cvename>
+      <cvename>CVE-2011-3959</cvename>
+      <cvename>CVE-2011-3960</cvename>
+      <cvename>CVE-2011-3961</cvename>
+      <cvename>CVE-2011-3962</cvename>
+      <cvename>CVE-2011-3963</cvename>
+      <cvename>CVE-2011-3964</cvename>
+      <cvename>CVE-2011-3965</cvename>
+      <cvename>CVE-2011-3966</cvename>
+      <cvename>CVE-2011-3967</cvename>
+      <cvename>CVE-2011-3968</cvename>
+      <cvename>CVE-2011-3969</cvename>
+      <cvename>CVE-2011-3970</cvename>
+      <cvename>CVE-2011-3971</cvename>
+      <cvename>CVE-2011-3972</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-02-08</discovery>
+      <entry>2012-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="10720fe8-51e0-11e1-91c1-00215c6a37bb">
     <topic>drupal -- multiple vulnerabilities</topic>
     <affects>
