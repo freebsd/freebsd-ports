@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ptpd
-DISTVERSION=	2.1.0
+DISTVERSION=	2.2.0
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -16,8 +16,6 @@ COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
 LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
-
-CFLAGS+=	-DBSD_INTERFACE_FUNCTIONS
 
 PLIST_FILES=	sbin/ptpd2
 PORTDOCS=	*
