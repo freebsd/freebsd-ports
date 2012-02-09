@@ -11,7 +11,7 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Calculate business hours during a time period
 
 BUILD_DEPENDS=	${SITE_PERL}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan

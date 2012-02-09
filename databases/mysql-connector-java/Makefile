@@ -11,7 +11,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Connector-J
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j

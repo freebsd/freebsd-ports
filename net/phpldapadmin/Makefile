@@ -12,7 +12,7 @@ CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to administer LDAP over the web
 
 LICENSE=	GPLv2

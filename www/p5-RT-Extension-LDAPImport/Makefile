@@ -12,7 +12,7 @@ CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT extension to import users from an LDAP store
 
 LICENSE_COMB=	dual

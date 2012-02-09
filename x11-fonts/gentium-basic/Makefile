@@ -13,7 +13,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=GentiumBasic_${PORTVERSION:C@\.@@g}_tar&filename=/
 DISTNAME=	ttf-sil-${PORTNAME}_${PORTVERSION:C@\.[[:digit:]]+$@@}.orig
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Gentium Basic and Gentium Book Basic TrueType fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

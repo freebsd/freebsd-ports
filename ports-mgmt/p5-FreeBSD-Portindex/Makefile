@@ -10,7 +10,7 @@ CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Incremental FreeBSD ports INDEX file generation
 
 LICENSE=	BSD

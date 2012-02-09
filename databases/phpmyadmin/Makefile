@@ -11,7 +11,7 @@ CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
