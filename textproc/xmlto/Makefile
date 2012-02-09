@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.24
+PORTVERSION=	0.0.25
 CATEGORIES=	textproc
 MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/
 
@@ -51,7 +51,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/texmf-local/tex/passivetex/fotex.sty:${PORTSD
 .endif
 
 .if defined(WITH_FOP)
-RUN_DEPENDS+=	${LOCALBASE}/bin/fop:${PORTSDIR}/textproc/fop
+RUN_DEPENDS+=	fop>=0.90:${PORTSDIR}/textproc/fop
 CONFIGURE_ARGS+=	--with-backend=fop
 .endif
 
