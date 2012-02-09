@@ -20,7 +20,8 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Identity>0:${PORTSDIR}/devel/p5-Test-Identity \
 		p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount
+		p5-Test-Refcount>0:${PORTSDIR}/devel/p5-Test-Refcount \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_MODBUILD=	yes
 
