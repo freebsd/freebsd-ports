@@ -1,17 +1,18 @@
---- build/common.gypi.orig	2011-11-10 16:01:45.000000000 +0200
-+++ build/common.gypi	2011-12-01 00:10:48.000000000 +0200
-@@ -403,6 +403,10 @@
+--- build/common.gypi.orig	2012-01-25 10:01:56.000000000 +0200
++++ build/common.gypi	2012-01-29 21:49:50.000000000 +0200
+@@ -406,6 +406,11 @@
      # able to turn it off for remote debugging on Chromium OS
      'linux_disable_pie%': 0,
  
 +    'os_ver%': 0,
 +    'prefix_dir%': '/usr',
 +    'use_system_tcmalloc%': 0,
++    'use_system_libjpeg%': 0,
 +
      # The release channel that this build targets. This is used to restrict
      # channel-specific build options, like which installer packages to create.
      # The default is 'all', which does no channel-specific filtering.
-@@ -615,7 +619,7 @@
+@@ -632,7 +637,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
@@ -20,16 +21,7 @@
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -1242,7 +1246,7 @@
-               ['exclude', '(^|/)(wayland)_[^/]*\\.(h|cc)$'],
-             ],
-           }],
--          ['OS!="linux"', {
-+          ['OS!="linux" and OS!="freebsd"', {
-             'sources/': [
-               ['exclude', '_linux(_unittest)?\\.(h|cc)$'],
-               ['exclude', '(^|/)linux/'],
-@@ -1911,6 +1915,22 @@
+@@ -1973,6 +1978,22 @@
          'ldflags': [
            '-Wl,--no-keep-memory',
          ],
