@@ -37,6 +37,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/ar30.gtab
 %%DATADIR%%/table/ar30-big.gtab
 %%DATADIR%%/table/ar33.gtab
+%%DATADIR%%/table/array-symbols.gtab
 %%DATADIR%%/table/cj-punc.gtab
 %%DATADIR%%/table/cj.gtab
 %%DATADIR%%/table/cj5.gtab
@@ -76,6 +77,7 @@ lib/gcin/libgcin-im-client.so.1
 %%DATADIR%%/table/tsin-1.src
 %%DATADIR%%/table/tsin32
 %%DATADIR%%/table/tsin32.idx
+%%DATADIR%%/table/vocabulary.gtab
 %%DATADIR%%/table/zo.kbm
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
