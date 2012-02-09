@@ -1,3 +1,4 @@
+bin/cme
 bin/config-edit
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/Annotation.pm
@@ -65,7 +66,6 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/FileLicense.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/GlobalLicense.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/GlobalLicense.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pl
@@ -92,8 +92,6 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/LCDd.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/CFontz.pl
 %%SITE_PERL%%/Config/Model/models/LCDd/CFontz.pod
-%%SITE_PERL%%/Config/Model/models/LCDd/CFontz633.pl
-%%SITE_PERL%%/Config/Model/models/LCDd/CFontz633.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/CFontzPacket.pl
 %%SITE_PERL%%/Config/Model/models/LCDd/CFontzPacket.pod
 %%SITE_PERL%%/Config/Model/models/LCDd/CwLnx.pl
