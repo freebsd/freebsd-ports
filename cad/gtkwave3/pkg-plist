@@ -14,17 +14,6 @@ bin/vcd2vzt
 bin/vermin
 bin/vzt2vcd
 bin/vztminer
-share/mime/XMLnamespaces
-share/mime/aliases
-share/mime/generic-icons
-share/mime/globs
-share/mime/globs2
-share/mime/icons
-share/mime/magic
-share/mime/mime.cache
-share/mime/subclasses
-share/mime/treemagic
-share/mime/types
 share/mime/application/vnd.gtkwave-ae2.xml
 share/mime/application/vnd.gtkwave-aet.xml
 share/mime/application/vnd.gtkwave-evcd.xml
