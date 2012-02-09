@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	16.0.912.77
+DISTVERSION=	17.0.963.46
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -37,7 +37,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		cups.2:${PORTSDIR}/print/cups-client \
 		event-1.4:${PORTSDIR}/devel/libevent \
-		vpx:${PORTSDIR}/multimedia/libvpx \
 		tcmalloc.2:${PORTSDIR}/devel/google-perftools
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
@@ -61,7 +60,6 @@ ALL_TARGET=	chrome
 
 # See build/common.gypi for all the available variables.
 GYP_DEFINES+=	use_cups=1 \
-		use_system_vpx=1 \
 		use_system_yasm=1 \
 		use_system_libxml=1 \
 		use_system_ffmpeg=0 \
@@ -181,17 +179,10 @@ post-patch:
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/make-hash-tools.pl
-# http://code.google.com/p/chromium/issues/detail?id=96629
-	@${REINPLACE_CMD} -e "s|'type': 'settings',|'type': 'none',|" \
-		${WRKSRC}/third_party/icu/icu.gyp \
-		${WRKSRC}/third_party/flac/flac.gyp \
-		${WRKSRC}/third_party/speex/speex.gyp \
-		${WRKSRC}/third_party/sqlite/sqlite.gyp \
-		${WRKSRC}/third_party/harfbuzz/harfbuzz.gyp \
-		${WRKSRC}/third_party/libevent/libevent.gyp \
-		${WRKSRC}/third_party/libjpeg_turbo/libjpeg.gyp \
-		${WRKSRC}/tools/gyp/test/settings/settings.gyp \
-		${WRKSRC}/v8/tools/gyp/v8.gyp
+
+pre-configure:
+	@${CP} -R ${WRKSRC}/third_party/libvpx/source/config/linux \
+		${WRKSRC}/third_party/libvpx/source/config/freebsd
 
 do-configure:
 	cd ${WRKSRC} && \

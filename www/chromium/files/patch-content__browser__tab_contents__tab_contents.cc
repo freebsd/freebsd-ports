@@ -1,11 +1,11 @@
---- content/browser/tab_contents/tab_contents.cc.orig	2011-06-24 11:30:32.000000000 +0300
-+++ content/browser/tab_contents/tab_contents.cc	2011-06-26 21:18:24.774780173 +0300
-@@ -1822,7 +1822,7 @@
-   if (!render_view_host->CreateRenderView(string16()))
+--- content/browser/tab_contents/tab_contents.cc.orig	2012-01-18 11:11:38.000000000 +0200
++++ content/browser/tab_contents/tab_contents.cc	2012-01-29 16:23:41.000000000 +0200
+@@ -2021,7 +2021,7 @@
+   if (!render_view_host->CreateRenderView(string16(), max_page_id))
      return false;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_FREEBSD)
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX) || defined(OS_BSD)
    // Force a ViewMsg_Resize to be sent, needed to make plugins show up on
    // linux. See crbug.com/83941.
-   if (RenderWidgetHost* render_widget_host = rwh_view->GetRenderWidgetHost())
+   if (rwh_view) {
