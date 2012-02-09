@@ -20,6 +20,7 @@ LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
+USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx
 
