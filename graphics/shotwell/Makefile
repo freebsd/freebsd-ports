@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	shotwell
-PORTVERSION=	0.10.1
-PORTREVISION=	2
+PORTVERSION=	0.11.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
@@ -20,12 +19,12 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		gee.2:${PORTSDIR}/devel/libgee \
 		json-glib-1.0.0:${PORTSDIR}/devel/json-glib \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		gexiv2.0:${PORTSDIR}/graphics/gexiv2 \
+		gexiv2:${PORTSDIR}/graphics/gexiv2 \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		raw.5:${PORTSDIR}/graphics/libraw
+		raw.2:${PORTSDIR}/graphics/libraw
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -38,7 +37,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CONFIGURE_ENV+=	--define=NO_CAMERA
 INSTALLS_ICONS=	yes
 
-GCONF_SCHEMAS=	shotwell.schemas
+GLIB_SCHEMAS=	org.yorba.shotwell.gschema.xml org.yorba.shotwell-extras.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -E \

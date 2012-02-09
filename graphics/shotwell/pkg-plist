@@ -5,6 +5,7 @@ lib/shotwell/plugins/builtin/flickr.png
 lib/shotwell/plugins/builtin/picasa.png
 lib/shotwell/plugins/builtin/piwigo.png
 lib/shotwell/plugins/builtin/piwigo_authentication_pane.glade
+lib/shotwell/plugins/builtin/piwigo_publishing_options_pane.glade
 lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
 lib/shotwell/plugins/builtin/shotwell-publishing.so
 lib/shotwell/plugins/builtin/shotwell-transitions.so
@@ -209,11 +210,14 @@ share/locale/zh_TW/LC_MESSAGES/shotwell.mo
 %%DATADIR%%/ui/savedsearch.ui
 %%DATADIR%%/ui/search_bar.ui
 %%DATADIR%%/ui/set_background_dialog.glade
+%%DATADIR%%/ui/search_sidebar_context.ui
 %%DATADIR%%/ui/shotwell.glade
 %%DATADIR%%/ui/shotwell.xml
-%%DATADIR%%/ui/sidebar_default.ui
+%%DATADIR%%/ui/sidebar_default_context.ui
+%%DATADIR%%/ui/tag_sidebar_context.ui
 %%DATADIR%%/ui/tags.ui
 %%DATADIR%%/ui/trash.ui
+
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
