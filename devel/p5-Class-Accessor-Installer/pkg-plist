@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Installer/.packlist
+%%SITE_PERL%%/Class/Accessor/Installer.pm
+@dirrmtry %%SITE_PERL%%/Class/Accessor
+@dirrmtry %%SITE_PERL%%/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor/Installer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Accessor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

@@ -1324,6 +1324,7 @@
     SUBDIR += p5-Class-Accessor-Fast-Contained
     SUBDIR += p5-Class-Accessor-Fast-XS
     SUBDIR += p5-Class-Accessor-Grouped
+    SUBDIR += p5-Class-Accessor-Installer
     SUBDIR += p5-Class-Accessor-Lite
     SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-Accessor-Named
