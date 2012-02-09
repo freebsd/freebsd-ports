@@ -174,14 +174,14 @@ apache22_precmd()
 }
 
 apache22_checkfib () {
-	sysctl net.fibs >/dev/null 2>&1
+	$SYSCTL net.fibs >/dev/null 2>&1
 	ret=$? 
  	[ $ret -gt 0 ] && return 0 
 	if [ "x$apache22_fib" != "xNO" ]
 	then 
-		command="setfib -F ${apache22_fib} ${command}"
+		command="/usr/sbin/setfib -F ${apache22_fib} ${command}"
 	else
-		return	0
+		return 0
 	fi
 }
 
