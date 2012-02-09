@@ -1,4 +1,6 @@
+@unexec cmp -s %D/etc/ezjail.conf.sample %D/etc/ezjail.conf && rm -f %D/etc/ezjail.conf || true
 etc/ezjail.conf.sample
+@exec [ -f %B/ezjail.conf ] || cp -p %D/%F %B/ezjail.conf
 etc/rc.d/ezjail
 bin/ezjail-admin
 share/zsh/site-functions/ezjail-admin
