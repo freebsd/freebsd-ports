@@ -225,6 +225,7 @@ R-cran-coda                     ports/math/R-cran-coda
 R-cran-colorspace               ports/graphics/R-cran-colorspace
 R-cran-deldir                   ports/math/R-cran-deldir
 R-cran-diagram                  ports/graphics/R-cran-diagram
+R-cran-dichromat                ports/graphics/R-cran-dichromat
 R-cran-digest                   ports/security/R-cran-digest
 R-cran-eco                      ports/science/R-cran-eco
 R-cran-epicalc                  ports/science/R-cran-epicalc
@@ -236,14 +237,17 @@ R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-inline                   ports/math/R-cran-inline
 R-cran-iterators                ports/devel/R-cran-iterators
 R-cran-itertools                ports/devel/R-cran-itertools
+R-cran-lmtest                   ports/finance/R-cran-lmtest
 R-cran-maptools                 ports/astro/R-cran-maptools
 R-cran-memisc                   ports/math/R-cran-memisc
+R-cran-munsell                  ports/graphics/R-cran-munsell
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-plm                      ports/finance/R-cran-plm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-proto                    ports/devel/R-cran-proto
 R-cran-psych                    ports/math/R-cran-psych
 R-cran-reshape                  ports/devel/R-cran-reshape
+R-cran-reshape2                 ports/devel/R-cran-reshape2
 R-cran-sandwich                 ports/math/R-cran-sandwich
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
@@ -251,9 +255,11 @@ R-cran-sm                       ports/math/R-cran-sm
 R-cran-snow                     ports/science/R-cran-snow
 R-cran-sp                       ports/math/R-cran-sp
 R-cran-spdep                    ports/math/R-cran-spdep
+R-cran-stringr                  ports/textproc/R-cran-stringr
 R-cran-strucchange              ports/finance/R-cran-strucchange
 R-cran-twitteR                  ports/net/R-cran-twitteR
 R-cran-urca                     ports/finance/R-cran-urca
+R-cran-vars                     ports/finance/R-cran-vars
 R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
 R-cran-zoo                      ports/math/R-cran-zoo
@@ -1054,6 +1060,7 @@ biniax2                         ports/games/biniax2
 binkd                           ports/net/binkd
 bins                            ports/www/bins
 binup                           ports/sysutils/binup
+binwalk                         ports/security/binwalk
 bioapi                          ports/security/bioapi
 biococoa                        ports/biology/biococoa
 biojava                         ports/biology/biojava
@@ -3354,6 +3361,7 @@ fceux                           ports/emulators/fceux
 fcgi                            ports/www/fcgi
 fcgiwrap                        ports/www/fcgiwrap
 fcheck                          ports/security/fcheck
+fcitx-keyboard                  ports/textproc/fcitx-keyboard
 fconfig                         ports/sysutils/fconfig
 fconv                           ports/converters/fconv
 fcplay                          ports/audio/fcplay
@@ -9424,6 +9432,7 @@ momspider                       ports/www/momspider
 monast                          ports/www/monast
 mondulkiri                      ports/x11-fonts/mondulkiri
 mongodb                         ports/databases/mongodb
+mongrel2                        ports/www/mongrel2
 monit                           ports/sysutils/monit
 monitord                        ports/sysutils/monitord
 monitorix                       ports/sysutils/monitorix
@@ -11158,6 +11167,7 @@ p5-Catalyst-Model-Memcached     ports/www/p5-Catalyst-Model-Memcached
 p5-Catalyst-Model-Oryx          ports/www/p5-Catalyst-Model-Oryx
 p5-Catalyst-Model-XML-Feed      ports/www/p5-Catalyst-Model-XML-Feed
 p5-Catalyst-Model-Xapian        ports/www/p5-Catalyst-Model-Xapian
+p5-Catalyst-Model-Xapian10      ports/www/p5-Catalyst-Model-Xapian10
 p5-Catalyst-Plugin-AtomServer   ports/www/p5-Catalyst-Plugin-AtomServer
 p5-Catalyst-Plugin-Authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
@@ -11875,6 +11885,7 @@ p5-Devel-ArgNames               ports/devel/p5-Devel-ArgNames
 p5-Devel-Autoflush              ports/devel/p5-Devel-Autoflush
 p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
 p5-Devel-BeginLift              ports/devel/p5-Devel-BeginLift
+p5-Devel-CallChecker            ports/devel/p5-Devel-CallChecker
 p5-Devel-Caller                 ports/devel/p5-Devel-Caller
 p5-Devel-Caller-Perl            ports/devel/p5-Devel-Caller-Perl
 p5-Devel-Callsite               ports/devel/p5-Devel-Callsite
@@ -11984,6 +11995,7 @@ p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
 p5-Dist-CheckConflicts          ports/devel/p5-Dist-CheckConflicts
 p5-Dist-Joseki                  ports/devel/p5-Dist-Joseki
 p5-DocSet                       ports/textproc/p5-DocSet
+p5-DynaLoader-Functions         ports/devel/p5-DynaLoader-Functions
 p5-EBook-Tools                  ports/textproc/p5-EBook-Tools
 p5-EV                           ports/devel/p5-EV
 p5-EasyTCP                      ports/net/p5-EasyTCP
@@ -13092,6 +13104,7 @@ p5-Module-Depends               ports/devel/p5-Module-Depends
 p5-Module-Extract               ports/devel/p5-Module-Extract
 p5-Module-ExtractUse            ports/devel/p5-Module-ExtractUse
 p5-Module-Find                  ports/devel/p5-Module-Find
+p5-Module-Implementation        ports/devel/p5-Module-Implementation
 p5-Module-Info                  ports/devel/p5-Module-Info
 p5-Module-Info-File             ports/devel/p5-Module-Info-File
 p5-Module-Inspector             ports/devel/p5-Module-Inspector
@@ -14056,6 +14069,7 @@ p5-Search-Odeum                 ports/textproc/p5-Search-Odeum
 p5-Search-Saryer                ports/textproc/p5-Search-Saryer
 p5-Search-VectorSpace           ports/textproc/p5-Search-VectorSpace
 p5-Search-Xapian                ports/databases/p5-Search-Xapian
+p5-Search-Xapian10              ports/databases/p5-Search-Xapian10
 p5-Sendmail-AccessDB            ports/mail/p5-Sendmail-AccessDB
 p5-Sendmail-Milter              ports/mail/p5-Sendmail-Milter
 p5-Senna                        ports/textproc/p5-Senna
@@ -15477,6 +15491,7 @@ p5-catalyst-model-ldap          ports/www/p5-Catalyst-Model-LDAP
 p5-catalyst-model-memcached     ports/www/p5-Catalyst-Model-Memcached
 p5-catalyst-model-oryx          ports/www/p5-Catalyst-Model-Oryx
 p5-catalyst-model-xapian        ports/www/p5-Catalyst-Model-Xapian
+p5-catalyst-model-xapian10      ports/www/p5-Catalyst-Model-Xapian10
 p5-catalyst-model-xml-feed      ports/www/p5-Catalyst-Model-XML-Feed
 p5-catalyst-plugin-atomserver   ports/www/p5-Catalyst-Plugin-AtomServer
 p5-catalyst-plugin-authentication  ports/www/p5-Catalyst-Plugin-Authentication
@@ -16301,6 +16316,7 @@ p5-devel-argnames               ports/devel/p5-Devel-ArgNames
 p5-devel-autoflush              ports/devel/p5-Devel-Autoflush
 p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
 p5-devel-beginlift              ports/devel/p5-Devel-BeginLift
+p5-devel-callchecker            ports/devel/p5-Devel-CallChecker
 p5-devel-caller                 ports/devel/p5-Devel-Caller
 p5-devel-caller-perl            ports/devel/p5-Devel-Caller-Perl
 p5-devel-callsite               ports/devel/p5-Devel-Callsite
@@ -16420,6 +16436,7 @@ p5-docset                       ports/textproc/p5-DocSet
 p5-doxygenfilter                ports/devel/p5-doxygenfilter
 p5-dtemplate                    ports/textproc/p5-dTemplate
 p5-dwh_file                     ports/databases/p5-DWH_File
+p5-dynaloader-functions         ports/devel/p5-DynaLoader-Functions
 p5-ePerl                        ports/lang/p5-ePerl
 p5-easytcp                      ports/net/p5-EasyTCP
 p5-ebook-tools                  ports/textproc/p5-EBook-Tools
@@ -17541,6 +17558,7 @@ p5-module-depends               ports/devel/p5-Module-Depends
 p5-module-extract               ports/devel/p5-Module-Extract
 p5-module-extractuse            ports/devel/p5-Module-ExtractUse
 p5-module-find                  ports/devel/p5-Module-Find
+p5-module-implementation        ports/devel/p5-Module-Implementation
 p5-module-info                  ports/devel/p5-Module-Info
 p5-module-info-file             ports/devel/p5-Module-Info-File
 p5-module-inspector             ports/devel/p5-Module-Inspector
@@ -18464,6 +18482,7 @@ p5-search-odeum                 ports/textproc/p5-Search-Odeum
 p5-search-saryer                ports/textproc/p5-Search-Saryer
 p5-search-vectorspace           ports/textproc/p5-Search-VectorSpace
 p5-search-xapian                ports/databases/p5-Search-Xapian
+p5-search-xapian10              ports/databases/p5-Search-Xapian10
 p5-self                         ports/devel/p5-self
 p5-self-init                    ports/devel/p5-self-init
 p5-sendmail-accessdb            ports/mail/p5-Sendmail-AccessDB
@@ -20573,6 +20592,7 @@ pecl-radius                     ports/net/pecl-radius
 pecl-rar                        ports/archivers/pecl-rar
 pecl-rrd                        ports/databases/pecl-rrd
 pecl-runkit                     ports/devel/pecl-runkit
+pecl-scream                     ports/devel/pecl-scream
 pecl-shape                      ports/devel/pecl-shape
 pecl-sphinx                     ports/www/pecl-sphinx
 pecl-spl_types                  ports/devel/pecl-spl_types
@@ -21962,6 +21982,7 @@ py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-appmedia              ports/www/py-django-appmedia
 py-django-caching-app-plugins   ports/www/py-django-caching-app-plugins
 py-django-classy-tags           ports/www/py-django-classy-tags
+py-django-cms                   ports/www/py-django-cms
 py-django-css                   ports/www/py-django-css
 py-django-devel                 ports/www/py-django-devel
 py-django-evolution             ports/www/py-django-evolution
@@ -21976,6 +21997,7 @@ py-django-pipeline              ports/www/py-django-pipeline
 py-django-piston                ports/www/py-django-piston
 py-django-profiles              ports/www/py-django-profiles
 py-django-registration          ports/www/py-django-registration
+py-django-sekizai               ports/www/py-django-sekizai
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
@@ -23364,6 +23386,7 @@ r-cran-dbi                      ports/databases/R-cran-DBI
 r-cran-dcluster                 ports/science/R-cran-DCluster
 r-cran-deldir                   ports/math/R-cran-deldir
 r-cran-diagram                  ports/graphics/R-cran-diagram
+r-cran-dichromat                ports/graphics/R-cran-dichromat
 r-cran-digest                   ports/security/R-cran-digest
 r-cran-eco                      ports/science/R-cran-eco
 r-cran-epi                      ports/science/R-cran-Epi
@@ -23377,8 +23400,10 @@ r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
+r-cran-lmtest                   ports/finance/R-cran-lmtest
 r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-memisc                   ports/math/R-cran-memisc
+r-cran-munsell                  ports/graphics/R-cran-munsell
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-plm                      ports/finance/R-cran-plm
 r-cran-plyr                     ports/devel/R-cran-plyr
@@ -23387,6 +23412,7 @@ r-cran-psych                    ports/math/R-cran-psych
 r-cran-rcolorbrewer             ports/graphics/R-cran-RColorBrewer
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-reshape                  ports/devel/R-cran-reshape
+r-cran-reshape2                 ports/devel/R-cran-reshape2
 r-cran-rfinanceyj               ports/finance/R-cran-RFinanceYJ
 r-cran-rjsonio                  ports/converters/R-cran-RJSONIO
 r-cran-rmysql                   ports/databases/R-cran-RMySQL
@@ -23400,10 +23426,12 @@ r-cran-sm                       ports/math/R-cran-sm
 r-cran-snow                     ports/science/R-cran-snow
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-spdep                    ports/math/R-cran-spdep
+r-cran-stringr                  ports/textproc/R-cran-stringr
 r-cran-strucchange              ports/finance/R-cran-strucchange
 r-cran-suppdists                ports/math/R-cran-SuppDists
 r-cran-twitter                  ports/net/R-cran-twitteR
 r-cran-urca                     ports/finance/R-cran-urca
+r-cran-vars                     ports/finance/R-cran-vars
 r-cran-xml                      ports/textproc/R-cran-XML
 r-cran-xtable                   ports/textproc/R-cran-xtable
 r-cran-xts                      ports/math/R-cran-xts
@@ -23848,6 +23876,7 @@ ru-xmms                         ports/russian/xmms
 ru-xpi-tabextensions            ports/russian/xpi-tabextensions
 ru-xruskb                       ports/russian/xruskb
 rubber                          ports/textproc/rubber
+rubberband                      ports/audio/rubberband
 rubinius                        ports/lang/rubinius
 rubix                           ports/games/rubix
 ruboard                         ports/www/ruboard
@@ -24251,6 +24280,7 @@ rubygem-itextomml               ports/textproc/rubygem-itextomml
 rubygem-jammit                  ports/devel/rubygem-jammit
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
+rubygem-journey                 ports/www/rubygem-journey
 rubygem-jquery-rails            ports/www/rubygem-jquery-rails
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
@@ -24291,6 +24321,7 @@ rubygem-merb-haml               ports/www/rubygem-merb-haml
 rubygem-merb-helpers            ports/www/rubygem-merb-helpers
 rubygem-merb-param-protection   ports/www/rubygem-merb-param-protection
 rubygem-metaid                  ports/devel/rubygem-metaid
+rubygem-method_source           ports/devel/rubygem-method_source
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-minitest                ports/devel/rubygem-minitest
 rubygem-mixlib-authentication   ports/devel/rubygem-mixlib-authentication
@@ -24362,6 +24393,7 @@ rubygem-prawn-js                ports/print/rubygem-prawn-js
 rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-prawn-svg               ports/print/rubygem-prawn-svg
+rubygem-pry                     ports/devel/rubygem-pry
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-public_suffix_service   ports/dns/rubygem-public_suffix_service
 rubygem-puppet-module           ports/sysutils/rubygem-puppet-module
@@ -24454,6 +24486,7 @@ rubygem-simple_form             ports/devel/rubygem-simple_form
 rubygem-simple_oauth            ports/net/rubygem-simple_oauth
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
+rubygem-slop                    ports/devel/rubygem-slop
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
@@ -25184,6 +25217,7 @@ solidcoin                       ports/net-p2p/solidcoin
 solitaire                       ports/math/solitaire
 sonata                          ports/audio/sonata
 sonice                          ports/audio/sonice
+sooperlooper                    ports/audio/sooperlooper
 soothsayer                      ports/textproc/soothsayer
 soprano                         ports/textproc/soprano
 sopwith                         ports/games/sopwith
@@ -26679,6 +26713,7 @@ validator                       ports/www/validator
 valide                          ports/devel/valide
 valknut                         ports/net-p2p/valknut
 vamos                           ports/games/vamos
+vamp-plugin-sdk                 ports/audio/vamp-plugin-sdk
 vamps                           ports/multimedia/vamps
 varconf                         ports/devel/varconf
 varkon                          ports/cad/varkon
@@ -27291,8 +27326,11 @@ xaniroc                         ports/x11/xaniroc
 xantfarm                        ports/x11/xantfarm
 xaos                            ports/graphics/xaos
 xapian-bindings                 ports/databases/xapian-bindings
+xapian-bindings10               ports/databases/xapian-bindings10
 xapian-core                     ports/databases/xapian-core
+xapian-core10                   ports/databases/xapian-core10
 xapian-omega                    ports/www/xapian-omega
+xapian-omega10                  ports/www/xapian-omega10
 xar                             ports/archivers/xar
 xaraya                          ports/www/xaraya
 xarchive                        ports/archivers/xarchive
@@ -28346,6 +28384,7 @@ zh-docproj                      ports/chinese/docproj
 zh-enscript                     ports/chinese/enscript
 zh-eterm                        ports/chinese/eterm
 zh-fcitx                        ports/chinese/fcitx
+zh-fcitx-chewing                ports/chinese/fcitx-chewing
 zh-fcitx-cloudpinyin            ports/chinese/fcitx-cloudpinyin
 zh-fcitx-configtool             ports/chinese/fcitx-configtool
 zh-fcitx-googlepinyin           ports/chinese/fcitx-googlepinyin
@@ -28518,7 +28557,6 @@ zonenotify                      ports/dns/zonenotify
 zoo                             ports/archivers/zoo
 zoom                            ports/games/zoom
 zope                            ports/www/zope
-zope-cmf                        ports/www/zope-cmf
 zope211                         ports/www/zope211
 zope213                         ports/www/zope213
 zorba                           ports/textproc/zorba
