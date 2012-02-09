@@ -2,6 +2,7 @@ bin/nex2text_tree.pl
 bin/nexplot.pl
 bin/nextool.pl
 %%SITE_PERL%%/Bio/NEXUS.pm
+%%SITE_PERL%%/Bio/NEXUS/._UnalignedBlock.pm
 %%SITE_PERL%%/Bio/NEXUS/DataBlock.pm
 %%SITE_PERL%%/Bio/NEXUS/CodonsBlock.pm
 %%SITE_PERL%%/Bio/NEXUS/NotesBlock.pm

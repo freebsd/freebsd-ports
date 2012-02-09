@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-NEXUS
-PORTVERSION=	0.76
+PORTVERSION=	0.77
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An object-oriented Perl API for the NEXUS file format
 
-BUILD_DEPENDS=	p5-Clone-PP>=1.02:${PORTSDIR}/devel/p5-Clone-PP \
-		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep
+BUILD_DEPENDS=	p5-Clone-PP>=1.02:${PORTSDIR}/devel/p5-Clone-PP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
+		p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	yes
 
