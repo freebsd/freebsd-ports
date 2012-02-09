@@ -1,12 +1,12 @@
-# New ports collection makefile for:    raw images library
-# Date created:         26 Apr 2008
-# Whom:                 osa
+# New ports collection makefile for:	raw images library
+# Date created:		26 Apr 2008
+# Whom:			osa
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.13.7
+PORTVERSION=	0.14.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -23,10 +23,10 @@ OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable demosaic pack GPL2" off \
 		LCMS			"Build with lcms" on \
 		OPTIMIZED_CFLAGS	"Enable optimization" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
-USE_PKGCONFIG=  yes
+USE_PKGCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=${PREFIX} --disable-examples
 CFLAGS+=	-fPIC
@@ -65,10 +65,12 @@ PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
 		API-notes-rus.html API-overview-eng.html API-overview-rus.html \
 		Install-LibRaw-eng.html Install-LibRaw-rus.html \
 		Samples-LibRaw-eng.html Samples-LibRaw-rus.html \
-		Why-LibRaw-eng.html Why-LibRaw-rus.html corner-scheme.png \
+		Why-LibRaw-eng.html Why-LibRaw-rus.html \
 		index-eng.html index-rus.html index.html
 
-PORTEXAMPLES=	4channels.cpp dcraw_emu.cpp dcraw_half.c half_mt.c mem_image.cpp \
+PORTEXAMPLES=	Makefile README-samples.rus 4channels.cpp dcraw_emu.cpp \
+		dcraw_half.c half_mt.c mem_image.cpp \
+		multirender_test.cpp postprocessing_benchmark.cpp \
 		raw-identify.cpp simple_dcraw.cpp unprocessed_raw.cpp
 
 do-install:
@@ -78,7 +80,7 @@ do-install:
 	libraw_internal.h libraw_types.h libraw_version.h
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
 .endfor
-.for f in libraw.a libraw_r.a libraw.so.2 libraw_r.so.2
+.for f in libraw.a libraw_r.a libraw.so.5 libraw_r.so.5
 	@${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
 .endfor
 .for f in libraw libraw_r
@@ -99,4 +101,4 @@ do-install:
 	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/samples/,} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
