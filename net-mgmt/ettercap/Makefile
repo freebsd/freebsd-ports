@@ -15,7 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-Lazarus \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A network sniffer/interceptor/injector/logger for switched LANs
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/libnet11-config:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 OPTIONS=	GTK	"Build with GTK2+ GUI" on \
 		ICONV	"Build with support for UTF-8" on \
@@ -40,6 +40,8 @@ MAN8=		ettercap.8 ettercap_curses.8 etterfilter.8 etterlog.8
 DOCS=		AUTHORS CHANGELOG README README.BINARIES README.BUGS \
 		README.GIT README.PLATFORMS THANKS TODO TODO.TESTING \
 		doc/capture doc/decoders doc/dissectors doc/threads
+
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 .include <bsd.port.options.mk>
 
