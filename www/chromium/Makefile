@@ -53,6 +53,7 @@ USE_PYTHON_BUILD=	2.6+
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt pkgconfig
 MAN1=		chrome.1
+WRKSRC=		${WRKDIR}/${DISTNAME}_1
 
 DESKTOP_ENTRIES="Chromium" "${COMMENT}" "${DATADIR}/product_logo_48.png" \
 		"chrome" "Application;Network;WebBrowser;" true
