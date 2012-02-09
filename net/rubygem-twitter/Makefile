@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	rubygem-twitter
 # Date created:			Apr 15, 2007
 # Whom:				ijliao
@@ -7,17 +6,17 @@
 #
 
 PORTNAME=	twitter
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	net rubygems
 MASTER_SITES=   RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
-RUN_DEPENDS=	rubygem-simple_oauth>=0.1:${PORTSDIR}/net/rubygem-simple_oauth \
-		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
+RUN_DEPENDS=	rubygem-activesupport>=2.3.9:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-faraday>=0.7:${PORTSDIR}/www/rubygem-faraday \
-		rubygem-activesupport>=2.3.9:${PORTSDIR}/devel/rubygem-activesupport
+		rubygem-multi_json>=1.0:${PORTSDIR}/devel/rubygem-multi_json \
+		rubygem-simple_oauth>=0.1:${PORTSDIR}/net/rubygem-simple_oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
