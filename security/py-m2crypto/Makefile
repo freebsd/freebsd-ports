@@ -19,7 +19,7 @@ COMMENT=	Crypto and SSL toolkit for Python
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 USE_OPENSSL=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
 PYDISTUTILS_PKGNAME=	M2Crypto
