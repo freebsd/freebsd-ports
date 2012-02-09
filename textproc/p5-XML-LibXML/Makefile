@@ -48,6 +48,6 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::Common.3 XML::LibXML::RegExp.3
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${PERL} -I${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
