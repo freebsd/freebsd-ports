@@ -29,6 +29,7 @@ include/fxt/aux2-all.h
 include/fxt/aux2/copy2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
+include/fxt/bits/bin-to-sl-gray.h
 include/fxt/bits/bit-sl-gray.h
 include/fxt/bits/fibrep-sl.h
 include/fxt/bits/bit-dragon-r4.h
@@ -153,6 +154,9 @@ include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/catalan-subset-lex.h
+include/fxt/comb/dyck-rgs-subset-lex.h
+include/fxt/comb/setpart-rgs-subset-lex.h
 include/fxt/comb/mixedradix-gslex-alt2.h
 include/fxt/comb/mixedradix-naf-sl.h
 include/fxt/comb/paren-string-to-rgs.h
@@ -507,6 +511,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin-to-sl-gray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin-to-sl-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-sl-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-sl-gray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r4-texpic-out.txt
@@ -650,6 +656,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/setpart-rgs-subset-lex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-rgs-subset-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-subset-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/setpart-rgs-subset-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-subset-lex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-rgs-subset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-sl-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-gslex-alt2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-naf-sl-demo.cc
