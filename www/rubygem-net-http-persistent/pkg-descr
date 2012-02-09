@@ -7,3 +7,4 @@ with some API methods but does not handle reconnection gracefully.
 Net::HTTP::Persistent supports reconnection and retry according to RFC 2616.
 
 WWW: https://github.com/drbrain/net-http-persistent
+RG:  https://rubygems.org/gems/net-http-persistent
