@@ -10,7 +10,7 @@ PORTVERSION=	0.11.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
 
 BUILD_DEPENDS=	vala>=0.12.0:${PORTSDIR}/lang/vala
@@ -24,7 +24,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		raw.2:${PORTSDIR}/graphics/libraw
+		raw.5:${PORTSDIR}/graphics/libraw
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
