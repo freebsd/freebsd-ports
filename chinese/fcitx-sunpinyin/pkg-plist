@@ -1,6 +1,7 @@
 lib/fcitx/fcitx-sunpinyin.so
 share/fcitx/addon/fcitx-sunpinyin.conf
 share/fcitx/configdesc/fcitx-sunpinyin.desc
+share/fcitx/inputmethod/sunpinyin.conf
 share/fcitx/skin/classic/sunpinyin.png
 share/fcitx/skin/dark/sunpinyin.png
 share/fcitx/skin/default/sunpinyin.png

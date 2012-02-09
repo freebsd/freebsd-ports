@@ -1,5 +1,6 @@
 lib/fcitx/fcitx-googlepinyin.so
 share/fcitx/addon/fcitx-googlepinyin.conf
 share/fcitx/configdesc/fcitx-googlepinyin.desc
+share/fcitx/inputmethod/googlepinyin.conf
 share/locale/zh_CN/LC_MESSAGES/fcitx-googlepinyin.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-googlepinyin.mo

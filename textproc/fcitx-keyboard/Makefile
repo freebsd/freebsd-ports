@@ -22,7 +22,7 @@ LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
-USE_GNOME=	libxml2
+USE_GNOME=	intltool libxml2
 USE_XORG=	x11 xkbfile
 
 PROJECTHOST=	fcitx
