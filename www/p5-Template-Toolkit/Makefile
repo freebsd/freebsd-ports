@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.23
+PORTVERSION=	2.24
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN \
 		http://www.template-toolkit.org/download/
