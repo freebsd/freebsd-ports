@@ -1,0 +1,10 @@
+--- plugins/tabs/CMakeLists.txt.orig	2012-02-09 22:34:52.000000000 +0100
++++ plugins/tabs/CMakeLists.txt	2012-02-09 22:35:21.000000000 +0100
+@@ -7,6 +7,7 @@
+ 
+ set (KADU_FIND_REQUIRED true)
+ include (FindKadu)
++include_directories (%%LOCALBASE%%/include)
+ 
+ set (SOURCES
+ 	tabs.cpp
