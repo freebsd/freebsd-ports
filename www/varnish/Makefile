@@ -19,8 +19,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	varnish-2.*
 
-BROKEN=		does not build
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON_BUILD=	yes
@@ -28,7 +26,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 CONFIGURE_ENV=	RST2MAN=true
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=  aclocal libtool libtoolize autoheader automake autoconf
+USE_AUTOTOOLS=  aclocal libtool libtoolize automake autoconf
 ACLOCAL_ARGS=	-I m4
 LIBTOOLFLAGS=	--copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
