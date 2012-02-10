@@ -21,6 +21,7 @@ PLIST_SUB+=	X11="@comment "
 .else
 USE_XORG=	x11
 PLIST_SUB+=	X11=""
+MAKE_ARGS+=	-DX11BASE=${LOCALBASE}
 .endif
 MAKE_ARGS+=	MANDIR="${PREFIX}/man/man"
 MAN1=		doscmd.1
