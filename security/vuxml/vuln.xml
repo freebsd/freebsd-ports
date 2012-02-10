@@ -50,17 +50,17 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="7c769c89-53c2-11e1-8e52-00163e22ef61">
     <topic>glpi -- remote attack via crafted POST request</topic>
     <affects>
-        <package>
-            <name>glpi</name>
-            <range><lt>0.80.2</lt></range>
-        </package>
+      <package>
+        <name>glpi</name>
+        <range><lt>0.80.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The GLPI project reports:</p>
-        <blockquote cite="http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=237&amp;lang=en">
-            <p>The autocompletion functionality in GLPI before 0.80.2 does not blacklist certain username and password fields, which allows remote attackers to obtain sensitive information via a crafted POST request.</p>
-        </blockquote>
+	<p>The GLPI project reports:</p>
+	<blockquote cite="http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=237&amp;lang=en">
+	  <p>The autocompletion functionality in GLPI before 0.80.2 does not blacklist certain username and password fields, which allows remote attackers to obtain sensitive information via a crafted POST request.</p>
+	</blockquote>
       </body>
     </description>
     <references>
