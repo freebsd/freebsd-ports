@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../mpqc/
+MASTERDIR=	${.CURDIR}/../mpqc
 
 PKGNAMESUFFIX=	-mpich
 
