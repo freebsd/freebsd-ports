@@ -7,11 +7,12 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.${SVNREVISION}
+PORTEPCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	maho/openoffice
-DISTFILES+=	${OOOSRC} unowinreg.dll
-EXTRACT_ONLY=	${OOOSRC}
+DISTFILES+=	${OOOSRC} ${EXTSRC} unowinreg.dll
+EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 
 #de facto maintainer is maho@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
@@ -32,8 +33,6 @@ USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 MAKE_JOBS_SAFE=	yes
 
-MANUAL_PACKAGE_BUILD=	distfile exceeds pointyhat filesize limit
-
 .include <bsd.port.pre.mk>
 
 USE_JAVA=	yes
@@ -51,9 +50,10 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-OOOSRC?=		ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
+OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
+EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1240439
+SVNREVISION=		1242624
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
