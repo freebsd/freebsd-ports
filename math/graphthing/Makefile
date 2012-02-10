@@ -18,6 +18,8 @@ COMMENT=	A tool that allows you to create, manipulate and study graphs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_BISON=	build
