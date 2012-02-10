@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	pam_google_authenticator
-PORTVERSION=	20110519
+PORTVERSION=	20120119
 CATEGORIES=	security
-MASTER_SITES=	http://www.cs.nctu.edu.tw/~jnlin/distfiles/
+MASTER_SITES=	LOCAL/dumbbell
 DISTNAME=	google-authenticator-${PORTVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	AL2
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/libpam
 
 USE_GMAKE=	yes
 
