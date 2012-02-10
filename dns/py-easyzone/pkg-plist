@@ -1,0 +1,22 @@
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/__init__.py
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/__init__.pyc
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/__init__.pyo
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/easyzone.py
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/easyzone.pyc
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/easyzone.pyo
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/zone_check.py
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/zone_check.pyc
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/zone_check.pyo
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/zone_reload.py
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/zone_reload.pyc
+%%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone/zone_reload.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/easyzone
+@dirrm %%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/easyzone-%%PORTVERSION%%-py%%PYTHON_VER%%.egg

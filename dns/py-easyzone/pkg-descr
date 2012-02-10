@@ -1,0 +1,6 @@
+Easyzone is a package to manage the common record types of a zone file,
+including SOA records. This module sits on top of the dnspython package
+and provides a higher level abstraction for common zone file manipulation
+use cases.
+
+WWW: http://www.psychofx.com/easyzone/
