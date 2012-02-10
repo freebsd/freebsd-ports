@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	Cooperative threading library for OCaml
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_OCAML=		yes
 OCAMLC_DEPEND=		ocaml>=3.10:${OCAMLC_PORT}
 USE_OCAML_FINDLIB=	yes
