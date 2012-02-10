@@ -1,0 +1,4 @@
+To test/use pkg you first needs to upgrade your local package database this,
+just run:
+
+  $ pkg2ng
