@@ -7,6 +7,7 @@
 
 PORTNAME=		postgresql
 PORTVERSION=		08.04.0200
+PORTREVISION=	1
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	odbc/versions/src
@@ -29,7 +30,7 @@ WITH_UNIXODBC=	yes
 
 .if defined(WITH_UNIXODBC)
 # I.e. even if WITH_IODBC is defined
-LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=		unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 .else
