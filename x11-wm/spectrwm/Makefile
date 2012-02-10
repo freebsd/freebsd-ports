@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://opensource.conformal.com/snapshots/scrotwm/
 EXTRACT_SUFX=	.tgz
@@ -25,6 +24,12 @@ USE_XORG=	x11 xproto xrandr xt xtst
 
 MAN1=		scrotwm.1
 USE_LDCONFIG=yes
+PORTEXAMPLES=	scrotwm_cz.conf \
+		scrotwm_es.conf \
+		scrotwm_fr.conf \
+		scrotwm_fr_ch.conf \
+		scrotwm_se.conf \
+		scrotwm_us.conf
 
 RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 
@@ -44,21 +49,20 @@ do-build:
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
 
 do-install:
-	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${PREFIX}/bin
 	${INSTALL_LIB} ${WRKSRC}/libswmhack.so ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/etc/scrotwm.conf.sample
 	@if [ ! -f ${PREFIX}/etc/scrotwm.conf ]; then \
-		${CP} -p ${PREFIX}/etc/scrotwm.conf.sample ${PREFIX}/etc/scrotwm.conf ; \
+		${INSTALL_DATA} ${PREFIX}/etc/scrotwm.conf.sample ${PREFIX}/etc/scrotwm.conf ; \
 	fi
 	${INSTALL_SCRIPT} ${FILESDIR}/startscrotwm ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scrotwm_cz.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scrotwm_es.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scrotwm_fr.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scrotwm_fr_ch.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scrotwm_se.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/scrotwm_us.conf ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+.for conf in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${conf} ${EXAMPLESDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
