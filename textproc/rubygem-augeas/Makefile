@@ -15,6 +15,8 @@ COMMENT=	Ruby bindings for Augeas
 
 LIB_DEPENDS=	augeas.10:${PORTSDIR}/textproc/augeas
 
+PORTSCOUT=	limit:^0.3
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_GNOME=	pkgconfig
