@@ -7,7 +7,7 @@
 
 PORTNAME=	swatch
 PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security sysutils
 MASTER_SITES=	SF
 
@@ -17,7 +17,8 @@ COMMENT=	The Simple WATCHer and filter
 BUILD_DEPENDS=	\
 	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
+	${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
