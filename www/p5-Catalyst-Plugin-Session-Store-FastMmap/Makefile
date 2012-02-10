@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-FastMmap
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Catalyst::Plugin::Session::Store::FastMmap.3
+MAN3=		Catalyst::Plugin::Session::Store::FastMmap.3
 
 .include <bsd.port.mk>
