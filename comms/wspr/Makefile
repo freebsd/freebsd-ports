@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	wspr
-PORTVERSION=	2.00
-PORTREVISION=	3
+DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.physics.princeton.edu/pulsar/K1JT/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
-DISTNAME=	wspr-${PORTVERSION}.r1714
+DISTNAME=	wspr-r${SVN_REV}
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal for HF ham radio communication package
@@ -26,10 +24,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
-BROKEN=		does not build
-
+USE_BZIP2=	yes
 ALL_TARGET=	build
-EXTRACT_SUFX=	.tgz
+USE_GMAKE=	yes
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
@@ -40,16 +37,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	2.5+
 USE_AUTOTOOLS=	libtool
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
-		PORTVERSION=${PORTVERSION}
+		VERSION=${VERSION}
+VERSION=	3.00
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|-Wl.*||' ${WRKSRC}/Makefile
+	cp ${FILESDIR}/wspr ${WRKSRC}
 
 post-install:
 .if	!defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for d in ${WRKSRC}/LICENSE.TXT ${WRKSRC}/WSPR_Announcement.TXT \
-	${WRKSRC}/WSPR_Instructions.TXT ${WRKSRC}/WSPR_Quick_Start.TXT \
+	${WRKSRC}/WSPR0_Instructions.TXT ${WRKSRC}/WSPR_Quick_Start.TXT \
 	${WRKSRC}/supported_rigs.txt
 	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
 .endfor
@@ -59,4 +57,26 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if defined(BOOTSTRAP)
+SVN_REV!=	svn info http://svn.code.sf.net/p/wsjt/code/branches/wspr | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
+.if defined(BOOTSTRAP) || defined(SVN_FETCH)
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} \
+		http://svn.code.sf.net/p/wsjt/code/branches/wspr ${WRKDIR}/wspr-r${SVN_REV}
+	cd ${WRKDIR};rm -f ${DISTNAME}/*.a ${DISTNAME}/*.lib ${DISTNAME}/*.dll;\
+		tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+.if ${USER} == db
+	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
+		freefall.freebsd.org:public_distfiles/
+.endif
+.endif
+
+.include <bsd.port.post.mk>

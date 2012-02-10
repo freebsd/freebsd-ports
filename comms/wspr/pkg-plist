@@ -2,7 +2,7 @@ bin/wspr
 bin/wspr.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/WSPR_Announcement.TXT
-%%PORTDOCS%%%%DOCSDIR%%/WSPR_Instructions.TXT
+%%PORTDOCS%%%%DOCSDIR%%/WSPR0_Instructions.TXT
 %%PORTDOCS%%%%DOCSDIR%%/WSPR_Quick_Start.TXT
 %%PORTDOCS%%%%DOCSDIR%%/supported_rigs.txt
 %%PYTHON_SITELIBDIR%%/WsprMod/w.so
@@ -16,12 +16,20 @@ bin/wspr.py
 %%PYTHON_SITELIBDIR%%/WsprMod/PmwColor.pyc
 %%PYTHON_SITELIBDIR%%/WsprMod/advanced.py
 %%PYTHON_SITELIBDIR%%/WsprMod/advanced.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/hopping.py
+%%PYTHON_SITELIBDIR%%/WsprMod/hopping.pyc
 %%PYTHON_SITELIBDIR%%/WsprMod/g.py
 %%PYTHON_SITELIBDIR%%/WsprMod/g.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/iq.py
+%%PYTHON_SITELIBDIR%%/WsprMod/iq.pyc
 %%PYTHON_SITELIBDIR%%/WsprMod/options.py
 %%PYTHON_SITELIBDIR%%/WsprMod/options.pyc
 %%PYTHON_SITELIBDIR%%/WsprMod/palettes.py
 %%PYTHON_SITELIBDIR%%/WsprMod/palettes.pyc
-%%PYTHON_SITELIBDIR%%/Wspr-WSPR.Version.%%PORTVERSION%%_.by.K1JT-py%%PYVER%%.egg-info
+%%PYTHON_SITELIBDIR%%/WsprMod/smeter.py
+%%PYTHON_SITELIBDIR%%/WsprMod/smeter.pyc
+%%PYTHON_SITELIBDIR%%/WsprMod/specjt.py
+%%PYTHON_SITELIBDIR%%/WsprMod/specjt.pyc
+%%PYTHON_SITELIBDIR%%/Wspr-WSPR.Version.%%VERSION%%_.by.K1JT-py%%PYVER%%.egg-info
 @dirrm %%PYTHON_SITELIBDIR%%/WsprMod
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
