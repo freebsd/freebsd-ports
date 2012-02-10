@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	shared-desktop-ontologies
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/oscaf/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/oscaf/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Interoperability between desktops and collaborative environments
