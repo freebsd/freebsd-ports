@@ -11296,6 +11296,7 @@ p5-Class-Accessor-Complex       ports/devel/p5-Class-Accessor-Complex
 p5-Class-Accessor-Fast-Contained  ports/devel/p5-Class-Accessor-Fast-Contained
 p5-Class-Accessor-Fast-XS       ports/devel/p5-Class-Accessor-Fast-XS
 p5-Class-Accessor-Grouped       ports/devel/p5-Class-Accessor-Grouped
+p5-Class-Accessor-Installer     ports/devel/p5-Class-Accessor-Installer
 p5-Class-Accessor-Lite          ports/devel/p5-Class-Accessor-Lite
 p5-Class-Accessor-Lvalue        ports/devel/p5-Class-Accessor-Lvalue
 p5-Class-Accessor-Named         ports/devel/p5-Class-Accessor-Named
@@ -15699,6 +15700,7 @@ p5-class-accessor-complex       ports/devel/p5-Class-Accessor-Complex
 p5-class-accessor-fast-contained  ports/devel/p5-Class-Accessor-Fast-Contained
 p5-class-accessor-fast-xs       ports/devel/p5-Class-Accessor-Fast-XS
 p5-class-accessor-grouped       ports/devel/p5-Class-Accessor-Grouped
+p5-class-accessor-installer     ports/devel/p5-Class-Accessor-Installer
 p5-class-accessor-lite          ports/devel/p5-Class-Accessor-Lite
 p5-class-accessor-lvalue        ports/devel/p5-Class-Accessor-Lvalue
 p5-class-accessor-named         ports/devel/p5-Class-Accessor-Named
