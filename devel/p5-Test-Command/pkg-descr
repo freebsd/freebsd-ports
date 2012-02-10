@@ -1,0 +1,24 @@
+Test::Command intends to bridge the gap between the well tested functions and
+objects you choose and their usage in your programs. By examining the exit
+status, terminating signal, STDOUT and STDERR of your program you can determine
+if it is behaving as expected.
+
+This includes testing the various combinations and permutations of options and
+arguments as well as the interactions between the various functions and objects
+that make up your program.
+
+The various test functions below can accept either a command string or an array
+reference for the first argument. If the command is expressed as a string it is
+passed to system as is. If the command is expressed as an array reference it is
+dereferenced and passed to system as a list.
+
+The final argument for the test functions, $name, is optional. By default the
+$name is a concatenation of the test function name, the command string and the
+expected value. This construction is generally sufficient for identifying a
+failing test, but you may always specify your own $name if desired.
+
+Any of the test functions can be used as instance methods on a Test::Command
+object. This is done by dropping the initial $cmd argument and instead using
+arrow notation.
+
+WWW: http://search.cpan.org/dist/Test-Command/
