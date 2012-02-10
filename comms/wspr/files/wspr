@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ -e /usr/local/bin/python ] ; then
+	LOCALBASE=/usr/local/
+else
+	LOCALBASE=/usr/
+fi
+if [ ! -e ~/.wspr ] ; then
+	mkdir ~/.wspr
+fi
+cd ~/.wspr
+python ${LOCALBASE}/bin/wspr.py
