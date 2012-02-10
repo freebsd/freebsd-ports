@@ -34,7 +34,7 @@ bin/wsjt.py
 %%PYTHON_SITELIBDIR%%/WsjtMod/smeter.pyc
 %%PYTHON_SITELIBDIR%%/WsjtMod/specjt.py
 %%PYTHON_SITELIBDIR%%/WsjtMod/specjt.pyc
-%%PYTHON_SITELIBDIR%%/Wsjt-WSJT.Version.%%PORTVERSION%%_.by.K1JT-py%%PYVER%%.egg-info
+%%PYTHON_SITELIBDIR%%/Wsjt-WSJT.Version.%%VERSION%%_.by.K1JT-py%%PYVER%%.egg-info
 @dirrm %%PYTHON_SITELIBDIR%%/WsjtMod
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%

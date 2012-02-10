@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wsjt
-PORTVERSION=	7.04
-PORTREVISION=	4
+VERSION=	9.1
+DISTVERSION=	${VERSION}.r${SVN_REV}
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
@@ -24,10 +24,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
-BROKEN=		does not build
-
 ALL_TARGET=	build
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
@@ -38,11 +37,31 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PYTHON=	2.5+
 USE_AUTOTOOLS=	libtool
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
-		PORTVERSION=${PORTVERSION}
+		VERSION=${VERSION}
 
 .include <bsd.port.pre.mk>
-post-configure:
-	@${REINPLACE_CMD} -e 's|-Wl.*||' ${WRKSRC}/Makefile
+
+.if defined(BOOTSTRAP)
+SVN_REV!=	svn info http://svn.code.sf.net/p/wsjt/code/trunk/ | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
+
+.if defined(BOOTSTRAP) || defined(SVN_FETCH)
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} \
+		http://svn.code.sf.net/p/wsjt/code/trunk ${WRKDIR}/wsjt-r${SVN_REV}
+	cd ${WRKDIR};rm -f ${DISTNAME}/*.a ${DISTNAME}/*.lib ${DISTNAME}/*.dll;\
+		tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+.if ${USER} == db
+	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
+		freefall.freebsd.org:public_distfiles/
+.endif
+.endif
 
 post-install:
 .if	!defined(NOPORTDOCS)
@@ -57,27 +76,5 @@ post-install:
 	@${ECHO}
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-.if defined(BOOTSTRAP)
-SVN_REV!=	svn info http://svn.berlios.de/svnroot/repos/wsjt/trunk/ | ${GREP} Revision | cut -d' ' -f2
-.else
-.include "Makefile.svn_rev"
-.endif
-
-.if defined(BOOTSTRAP)
-FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-
-do-fetch:
-	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
-	    http://svn.berlios.de/svnroot/repos/wsjt/trunk ${WRKSRC}
-	cd ${WRKDIR};rm -f ${DISTNAME}/*.a ${DISTNAME}/*.lib ${DISTNAME}/*.dll;\
-		tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
-	echo "SVN_REV=	${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
-.if ${USER} == db
-	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
-	    freefall.freebsd.org:public_distfiles/
-.endif
-.endif
 
 .include <bsd.port.post.mk>
