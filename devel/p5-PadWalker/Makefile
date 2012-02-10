@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PadWalker
-PORTVERSION=	1.92
+PORTVERSION=	1.93
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROBIN
@@ -17,6 +17,6 @@ COMMENT=	PadWalker - play with Perl lexical variables
 
 PERL_CONFIGURE=	yes
 
-MAN3=	PadWalker.3
+MAN3=		PadWalker.3
 
 .include <bsd.port.mk>
