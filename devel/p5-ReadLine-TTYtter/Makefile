@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ReadLine-TTYtter
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Term
@@ -17,7 +16,8 @@ DISTNAME=	Term-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Perl5 module for Term::ReadLine allowing rich editing
 
-LICENSE=	ART20
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
