@@ -1,0 +1,10 @@
+--- plugins/single_window/CMakeLists.txt.orig	2012-02-09 22:31:22.000000000 +0100
++++ plugins/single_window/CMakeLists.txt	2012-02-09 22:33:20.000000000 +0100
+@@ -7,6 +7,7 @@
+ 
+ set (KADU_FIND_REQUIRED true)
+ include (FindKadu)
++include_directories (%%LOCALBASE%%/include)
+ 
+ set (SOURCES
+ 	single-window.cpp

@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	kadu
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
-MASTER_SITES=	http://download.kadu.im/stable/:kadu \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
+		GOOGLE_CODE:kadu \
+		http://download.kadu.im/stable/:kadu \
 		http://download.kadu.im/additions/:additions
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:kadu
 DIST_SUBDIR=	kadu
@@ -52,7 +54,7 @@ INSTALLS_ICONS=	yes
 
 OPTIONS=	GG_EMOTS	"Install GG-compatible emoticons"	off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GG_EMOTS)
 PLIST_SUB+=	GG_EMOTS=""
@@ -64,6 +66,9 @@ PLIST_SUB+=	GG_EMOTS="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/plugins/single_window/CMakeLists.txt \
+		${WRKSRC}/plugins/tabs/CMakeLists.txt
 	@${FIND} ${WRKSRC} -exec ${GREP} -q "#!/bin/bash" {} \; \
 		-exec ${REINPLACE_CMD} -e 's|#!/bin/bash|#!/usr/bin/env bash|g' {} \;
 
@@ -74,4 +79,4 @@ post-patch:
 	cd gg6_compatible && ${TAR} -zxf ${_DISTDIR}/${GG7_EMOTS_DISTFILE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
