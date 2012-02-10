@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	truecrypt
-PORTVERSION=	7.1
+PORTVERSION=	7.1a
 CATEGORIES=	security
 MASTER_SITES=	SF/wxwindows/${WX_VER}/:wxwidgets \
 		ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-11/v2-20/:rsa
@@ -53,10 +53,6 @@ USE_GNOME=	gtk20
 NOGUI=
 .else
 NOGUI=		NOGUI=1
-.endif
-
-.if ${OSVERSION} >= 1000000
-BROKEN=		does not currently build under FreeBSD 10
 .endif
 
 .include <bsd.port.pre.mk>
