@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides a role-based system of OOP (emulates Perl6)
 
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
 PERL_MODBUILD=	yes
 
 MAN3=		Class::Roles.3
