@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
@@ -66,6 +66,7 @@ OPTIONS+=	LIBLZO "Enable external liblzo library" off
 OPTIONS+=	JOYSTICK "Enable joystick support" off
 OPTIONS+=	V4L "Enable Video4Linux TV support" off
 OPTIONS+=	LIBRTMP "Enable RTMPDump Streaming Media support" off
+OPTIONS+=	ENCA "Enable enca charset detection" off
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
@@ -219,6 +220,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 CONFIGURE_ARGS+=--enable-joystick
 .else
 CONFIGURE_ARGS+=--disable-joystick
+.endif
+
+.if defined(WITH_ENCA)
+LIB_DEPENDS+=	enca.5:${PORTSDIR}/converters/enca
+.else
+CONFIGURE_ARGS+=	--disable-enca
 .endif
 
 pre-everything::

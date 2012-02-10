@@ -244,6 +244,8 @@ CONFIGURE_ARGS+=	--disable-libgsm
 .if defined(WITH_V4L)
 BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=		v4l2.0:${PORTSDIR}/multimedia/libv4l
+CONFIGURE_ARGS+=	--enable-tv-v4l1 \
+			--enable-tv-v4l2
 EXTRA_LIBS+=		-lv4l1 -lv4l2
 .else
 CONFIGURE_ARGS+=	--disable-tv-v4l1 \
