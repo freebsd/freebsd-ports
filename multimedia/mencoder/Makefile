@@ -86,6 +86,7 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-joystick \
 			--disable-directfb \
 			--disable-mpg123 \
+			--disable-enca \
 			--disable-musepack
 
 ALL_TARGET=	mencoder
