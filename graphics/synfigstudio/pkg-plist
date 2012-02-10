@@ -130,6 +130,9 @@ share/icons/hicolor/64x64/apps/synfig_icon.png
 share/icons/hicolor/scalable/apps/synfig_icon.svg
 share/pixmaps/sif_icon.png
 share/pixmaps/synfig_icon.png
+share/pixmaps/synfigstudio/animate_pause_icon.png
+share/pixmaps/synfigstudio/animate_loop_icon.png
+share/pixmaps/synfigstudio/interpolation_type_clamped_icon.png
 share/pixmaps/synfigstudio/interpolation_type_tcb_icon.png
 share/pixmaps/synfigstudio/interpolation_type_ease_icon.png
 share/pixmaps/synfigstudio/interpolation_type_const_icon.png
