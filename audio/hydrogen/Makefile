@@ -20,6 +20,8 @@ LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		does not install
+
 MAJORVERSION=	0.9.5
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
