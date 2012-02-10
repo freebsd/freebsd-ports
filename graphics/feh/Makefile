@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	uqs
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	zeising@daemonic.se
 COMMENT=	An image viewer that utilizes Imlib2
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		giblib.1:${PORTSDIR}/graphics/giblib
