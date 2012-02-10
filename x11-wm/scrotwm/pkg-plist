@@ -1,14 +1,7 @@
 bin/scrotwm
+bin/screenshot.sh
 bin/startscrotwm
 lib/libswmhack.so
-%%EXAMPLESDIR%%/screenshot.sh
-%%EXAMPLESDIR%%/scrotwm_cz.conf
-%%EXAMPLESDIR%%/scrotwm_es.conf
-%%EXAMPLESDIR%%/scrotwm_fr.conf
-%%EXAMPLESDIR%%/scrotwm_fr_ch.conf
-%%EXAMPLESDIR%%/scrotwm_se.conf
-%%EXAMPLESDIR%%/scrotwm_us.conf
 @unexec if [ ! -f %D/etc/scrotwm.conf ] || cmp -s %D/etc/scrotwm.conf.sample %D/etc/scrotwm.conf; then rm -f %D/etc/scrotwm.conf; else echo %%PREFIX%%/etc/scrotwm.conf contains changes, remove it manually to delete this package completely.; fi
 etc/scrotwm.conf.sample
 @exec [ -f %D/etc/scrotwm.conf ] || cp -p %D/%F %D/etc/scrotwm.conf
-@dirrm %%EXAMPLESDIR%%
