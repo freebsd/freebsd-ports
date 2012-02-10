@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Float
-PORTVERSION=	0.011
+PORTVERSION=	0.012
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ZEFRAM
@@ -17,6 +17,6 @@ COMMENT=	Details of the floating point data type
 
 PERL_MODBUILD=	yes
 
-MAN3=	Data::Float.3
+MAN3=		Data::Float.3
 
 .include <bsd.port.mk>
