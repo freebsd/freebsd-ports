@@ -73,6 +73,7 @@ www/glpi/ajax/dropdownUnicityFields.php
 www/glpi/ajax/dropdownUsers.php
 www/glpi/ajax/dropdownUsersTracking.php
 www/glpi/ajax/dropdownValue.php
+www/glpi/ajax/dropdownValuesBlacklist.php
 www/glpi/ajax/entity.tabs.php
 www/glpi/ajax/entitytree.php
 www/glpi/ajax/entitytreesons.php
@@ -823,7 +824,7 @@ www/glpi/index.php
 www/glpi/install/index.php
 www/glpi/install/install.php
 www/glpi/install/mysql/.htaccess
-www/glpi/install/mysql/glpi-0.80.1-empty.sql
+www/glpi/install/mysql/glpi-0.80.3-empty.sql
 www/glpi/install/update.php
 www/glpi/install/update_031_04.php
 www/glpi/install/update_042_05.php
@@ -845,6 +846,7 @@ www/glpi/install/update_0781_0782.php
 www/glpi/install/update_0782_080.php
 www/glpi/install/update_078_0781.php
 www/glpi/install/update_07_071.php
+www/glpi/install/update_0801_0803.php
 www/glpi/install/update_080_0801.php
 www/glpi/install/update_content.php
 www/glpi/install/update_to_031.php

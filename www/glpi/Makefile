@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpi
-DISTVERSION=	0.80.2
+DISTVERSION=	0.80.61
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://droidng.free.fr/freebsd/ \
