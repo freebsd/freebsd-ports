@@ -6,10 +6,8 @@
 #
 
 PORTNAME=	octave-forge-tsa
-PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTVERSION=	4.2.1
 CATEGORIES=	math
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
