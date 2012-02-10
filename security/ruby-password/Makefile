@@ -7,7 +7,7 @@
 
 PORTNAME=	password
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
