@@ -18,6 +18,8 @@ COMMENT=	OCaml package manager
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
+MAKE_JOBS_UNSAFE=	yes
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all opt
