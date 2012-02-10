@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpclient
-DISTVERSION=	4.1.2
+DISTVERSION=	4.1.3
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -15,12 +15,12 @@ DISTNAME=	httpcomponents-client-${DISTVERSION}-bin
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing an advanced HTTP client
 
+LICENSE=	AL2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 RUN_DEPENDS=	${JAVAJARDIR}/httpcore.jar:${PORTSDIR}/www/httpcore \
 		${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec
-
-LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
