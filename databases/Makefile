@@ -1,4 +1,4 @@
- $FreeBSD$
+# $FreeBSD$
 #
 
     COMMENT = Databases
