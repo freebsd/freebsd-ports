@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120210:
+  AFFECTS: users of mail/postfix
+  AUTHOR: Sahil Tandon <sahil@FreeBSD.org>
+
+  Postfix 2.9.0 contains several major changes, some of which could
+  result in incompatible or unexpected behavior.  Regardless of the
+  version from which you are upgrading, please carefully review the
+  RELEASE_NOTES before proceeding. 
+
 20120126:
   AFFECTS: users of ftp/proftpd and ftp/proftpd-mysql
   AUTHOR: Martin Matuska <mm@FreeBSD.org>
