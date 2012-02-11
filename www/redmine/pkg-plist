@@ -464,6 +464,7 @@
 %%WWWDIR%%/config/initializers/backtrace_silencers.rb
 %%WWWDIR%%/config/initializers/bigdecimal-segfault-fix.rb
 %%WWWDIR%%/config/initializers/inflections.rb
+%%WWWDIR%%/config/locales/ar.yml
 %%WWWDIR%%/config/locales/bg.yml
 %%WWWDIR%%/config/locales/bs.yml
 %%WWWDIR%%/config/locales/ca.yml
@@ -973,6 +974,7 @@
 %%WWWDIR%%/public/javascripts/application.js
 %%WWWDIR%%/public/javascripts/calendar/calendar-setup.js
 %%WWWDIR%%/public/javascripts/calendar/calendar.js
+%%WWWDIR%%/public/javascripts/calendar/lang/calendar-ar.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-bg.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-bs.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-ca.js
@@ -1021,6 +1023,7 @@
 %%WWWDIR%%/public/javascripts/dragdrop.js
 %%WWWDIR%%/public/javascripts/effects.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
+%%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-bg.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-bs.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ca.js
