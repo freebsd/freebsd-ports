@@ -42,7 +42,8 @@ TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-File-Contents>=0:${PORTSDIR}/devel/p5-Test-File-Contents \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command
 
 PERL_MODBUILD=	yes
 
