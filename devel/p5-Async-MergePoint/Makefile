@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	johan@stromnet.se
 COMMENT=	Perl modules that resynchronise diverged control flow
 
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Async::MergePoint.3
