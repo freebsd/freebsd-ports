@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Allow C/XS libraries to interrupt perl asynchronously
 
+TEST_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Async::Interrupt.3
