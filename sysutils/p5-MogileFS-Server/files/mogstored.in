@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mogstored
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mogstored"
+rcvar=mogstored_enable
+required_files=%%PREFIX%%/etc/mogstored.conf
+
+[ -z "$mogstored_enable" ] && mogstored_enable="NO"
+[ -z "$mogstored_flags" ] && mogstored_flags="-d --config=/usr/local/etc/mogstored.conf"
+
+run_rc_command "$1"
