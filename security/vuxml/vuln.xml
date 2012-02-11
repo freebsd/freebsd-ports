@@ -47,6 +47,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1c4cab30-5468-11e1-9fb7-003067b2972c">
+    <topic> bip -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>bip</name>
+	<range><le>0.8.8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Julien Tinnes reports,</p>
+	<blockquote cite="https://projects.duckcorp.org/issues/269">
+	  <p>Bip doesn't check if fd is equal or larger than FD_SETSIZE.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0806</cvename>
+      <url>https://projects.duckcorp.org/projects/bip/repository/revisions/222a33cb84a2e52ad55a88900b7895bf9dd0262c</url>
+      <url>https://projects.duckcorp.org/issues/269</url>
+    </references>
+    <dates>
+      <discovery>2012-01-07</discovery>
+      <entry>2012-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="039d057e-544e-11e1-9fb7-003067b2972c">
     <topic>surf -- private information disclosure</topic>
     <affects>
