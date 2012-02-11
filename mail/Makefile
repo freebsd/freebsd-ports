@@ -516,6 +516,7 @@
     SUBDIR += postfix25
     SUBDIR += postfix26
     SUBDIR += postfix27
+    SUBDIR += postfix28
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postpals
