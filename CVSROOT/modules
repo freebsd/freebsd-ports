@@ -221,6 +221,7 @@ R-cran-bdsmatrix                ports/math/R-cran-bdsmatrix
 R-cran-bitops                   ports/devel/R-cran-bitops
 R-cran-car                      ports/math/R-cran-car
 R-cran-caret                    ports/devel/R-cran-caret
+R-cran-ccgarch                  ports/finance/R-cran-ccgarch
 R-cran-coda                     ports/math/R-cran-coda
 R-cran-colorspace               ports/graphics/R-cran-colorspace
 R-cran-deldir                   ports/math/R-cran-deldir
@@ -14350,6 +14351,7 @@ p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
+p5-Test-Command                 ports/devel/p5-Test-Command
 p5-Test-Command-Simple          ports/devel/p5-Test-Command-Simple
 p5-Test-Compile                 ports/devel/p5-Test-Compile
 p5-Test-Corpus-Audio-MPD        ports/audio/p5-Test-Corpus-Audio-MPD
@@ -18847,6 +18849,7 @@ p5-test-block                   ports/devel/p5-Test-Block
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-cmd                     ports/devel/p5-Test-Cmd
+p5-test-command                 ports/devel/p5-Test-Command
 p5-test-command-simple          ports/devel/p5-Test-Command-Simple
 p5-test-compile                 ports/devel/p5-Test-Compile
 p5-test-corpus-audio-mpd        ports/audio/p5-Test-Corpus-Audio-MPD
@@ -22165,6 +22168,7 @@ py-ipaddr                       ports/devel/py-ipaddr
 py-iplib                        ports/net/py-iplib
 py-ipy                          ports/net-mgmt/py-ipy
 py-irclib                       ports/irc/py-irclib
+py-isodate                      ports/devel/py-isodate
 py-iterpipes                    ports/devel/py-iterpipes
 py-itools                       ports/devel/py-itools
 py-jabber                       ports/net-im/py-jabber
@@ -23382,6 +23386,7 @@ r-cran-bdsmatrix                ports/math/R-cran-bdsmatrix
 r-cran-bitops                   ports/devel/R-cran-bitops
 r-cran-car                      ports/math/R-cran-car
 r-cran-caret                    ports/devel/R-cran-caret
+r-cran-ccgarch                  ports/finance/R-cran-ccgarch
 r-cran-coda                     ports/math/R-cran-coda
 r-cran-colorspace               ports/graphics/R-cran-colorspace
 r-cran-dbi                      ports/databases/R-cran-DBI
