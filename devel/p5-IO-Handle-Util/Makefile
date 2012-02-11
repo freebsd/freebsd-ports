@@ -19,6 +19,7 @@ RUN_DEPENDS=	\
 	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-asa>0:${PORTSDIR}/devel/p5-asa
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
 
