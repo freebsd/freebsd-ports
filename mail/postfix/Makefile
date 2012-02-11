@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.8.7
+PORTVERSION=	2.9.0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -21,13 +21,9 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.8.5
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-8].* postfix-base-2.[0-8].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.*
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -74,9 +70,9 @@ MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	sendmail.1 qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
-	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
-	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
-	relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
+	header_checks.5 ldap_table.5 master.5 memcache_table.5 mysql_table.5 \
+	nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 \
+	regexp_table.5 relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
@@ -91,6 +87,13 @@ MLINKS=	sendmail.1 mailq.1 \
 
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
+
+.if !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
+OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || true
+.if !empty(OLD_MAILER)
+IS_INTERACTIVE=	yes
+.endif
+.endif
 
 .if ${OSVERSION} >= 800037
 KRB5_EXTR=	-lhx509
@@ -232,6 +235,7 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
+BROKEN=			At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
 PATCHFILES+=		postfix-vda-v10-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
