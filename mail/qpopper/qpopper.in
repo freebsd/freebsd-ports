@@ -1,10 +1,7 @@
 #!/bin/sh
 #
-# $FreeBSD$
-
 # PROVIDE: qpopper
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: SERVERS
 # KEYWORD: shutdown
 
 #
@@ -12,10 +9,10 @@
 # qpopper_enable="YES"
 #
 
+. /etc/rc.subr
+
 qpopper_enable=${qpopper_enable-"NO"}
 qpopper_flags=${qpopper_flags-""}
-
-. /etc/rc.subr
 
 name=qpopper
 rcvar=qpopper_enable
