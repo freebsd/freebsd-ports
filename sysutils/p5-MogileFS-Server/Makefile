@@ -7,6 +7,7 @@
 
 PORTNAME=	MogileFS-Server
 PORTVERSION=	2.57
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -27,6 +28,7 @@ BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_RC_SUBR=	mogilefsd mogstored
 
 MAN1=		mogautomount.1 \
 		mogilefsd.1 \
