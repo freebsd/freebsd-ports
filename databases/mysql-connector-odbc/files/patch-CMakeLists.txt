@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2011-10-04 23:19:00.000000000 +0300
++++ CMakeLists.txt	2011-10-15 11:36:44.000000000 +0300
+@@ -201,7 +201,7 @@
+ ADD_SUBDIRECTORY(dltest)
+ ADD_SUBDIRECTORY(installer)
+ 
+-ADD_SUBDIRECTORY(test)
++# ADD_SUBDIRECTORY(test)
+ 
+ ##############################################################################
+ #
+@@ -281,18 +281,18 @@
+ 
+ ELSE(WIN32)
+ 
+-  INSTALL(FILES ChangeLog    DESTINATION .)
+-  INSTALL(FILES README       DESTINATION .)
+-  INSTALL(FILES README.debug DESTINATION .)
+-  INSTALL(FILES INSTALL      DESTINATION .)
++  INSTALL(FILES ChangeLog    DESTINATION ./share/doc/mysql-connector-odbc/)
++  INSTALL(FILES README       DESTINATION ./share/doc/mysql-connector-odbc/)
++  INSTALL(FILES README.debug DESTINATION ./share/doc/mysql-connector-odbc/)
++  INSTALL(FILES INSTALL      DESTINATION ./share/doc/mysql-connector-odbc/)
+   IF(EXISTS "${CMAKE_SOURCE_DIR}/COPYING")
+-    INSTALL(FILES COPYING       DESTINATION .)
++    INSTALL(FILES COPYING       DESTINATION ./share/doc/mysql-connector-odbc/)
+   ELSE()
+-    INSTALL(FILES LICENSE.mysql DESTINATION .)
++    INSTALL(FILES LICENSE.mysql DESTINATION ./share/doc/mysql-connector-odbc/)
+   ENDIF()
+ 
+ ENDIF(WIN32)
+ 
+-INSTALL(FILES Licenses_for_Third-Party_Components.txt DESTINATION .)
++INSTALL(FILES Licenses_for_Third-Party_Components.txt DESTINATION ./share/doc/mysql-connector-odbc/)
+ 
+ INCLUDE(CPack)
