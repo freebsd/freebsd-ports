@@ -174,7 +174,11 @@ post-install: .SILENT
 # Some applications need this symlink (see PR ports/72877)
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .if ${NVVERSION} >= 1952200
+. if ${OSVERSION} > 800090
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
+. else	# when sed(1) does not support "addr1,+N" ranges, use line numbers
+	${REINPLACE_CMD} -e '26,27d' ${PKGMESSAGE}
+. endif
 .endif
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
