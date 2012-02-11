@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main
 EXTRACT_ONLY=	gcin-${PORTVERSION}.tar.xz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 LICENSE=	LGPL21
@@ -32,7 +32,8 @@ OPTIONS=	ANTHY		"enable Japanese anthy IM module" off \
 
 MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 		gcin-message.1 gcin-tools.1 gtab-merge.1 juyin-learn.1 \
-		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
+		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1 \
+		ts-contribute.1 ts-edit.1
 
 .include <bsd.port.options.mk>
 
