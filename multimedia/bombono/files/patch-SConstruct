@@ -1,6 +1,6 @@
---- SConstruct.orig	2010-11-14 15:09:16.000000000 +0100
-+++ SConstruct	2010-11-14 15:09:36.000000000 +0100
-@@ -143,18 +143,6 @@
+--- SConstruct.orig	2012-02-08 13:19:21.000000000 +0100
++++ SConstruct	2012-02-11 11:16:02.000000000 +0100
+@@ -148,18 +148,6 @@
      #env.Replace (PATH = user_options_dict['PATH'])
      #env.Replace (AR = user_options_dict['AR'])
  
@@ -19,3 +19,11 @@
      # Multithreading, global
      if IsThreadedBuild:
          env.Append(CCFLAGS = ThreadOpt, LINKFLAGS = ThreadOpt)
+@@ -566,7 +554,6 @@
+     BV.InstallDir(mgui_env, data_prefix, src_dir)
+ 
+ InstallDir('share/bombono', "resources")
+-InstallDir('share', "docs/man")
+ 
+ user_options_dict['XGETTEXT_SOURCES'] = []
+ def AddSourcesForXgettext(src_files):

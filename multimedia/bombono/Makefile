@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bombono
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/bombono/bombono-dvd/1.2
-DISTNAME=	bombono-dvd-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dvd/1.2
+DISTNAME=	${PORTNAME}-dvd-${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	DVD authoring program
@@ -33,6 +32,7 @@ USE_GNOME=	gtk20 libxml2
 USE_GCC=	4.2+
 USE_SCONS=	yes
 USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 CXXFLAGS+=	-I${LOCALBASE}/include
@@ -40,7 +40,15 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 SCONS_ARGS=	DVDREAD_LIBPATH=${LOCALBASE}/lib \
 		DVDREAD_INCLUDE=${LOCALBASE}/include LDFLAGS="${LDFLAGS}"
 
+MAN1=		bombono-dvd.1 mpeg2demux.1
+MANDIR=		${MANPREFIX}/man/man1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
+
+post-install:
+	${MKDIR} ${MANDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/bombono-dvd.1  ${MANDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/mpeg2demux.1 ${MANDIR}
 
 .include <bsd.port.mk>
