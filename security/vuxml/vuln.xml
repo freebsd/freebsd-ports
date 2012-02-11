@@ -94,7 +94,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="1c4cab30-5468-11e1-9fb7-003067b2972c">
-    <topic> bip -- buffer overflow</topic>
+    <topic>bip -- buffer overflow</topic>
     <affects>
       <package>
 	<name>bip</name>
@@ -148,8 +148,8 @@ Note:  Please add new entries to the beginning of this file.
     <topic>glpi -- remote attack via crafted POST request</topic>
     <affects>
       <package>
-        <name>glpi</name>
-        <range><lt>0.80.2</lt></range>
+	<name>glpi</name>
+	<range><lt>0.80.2</lt></range>
       </package>
     </affects>
     <description>
