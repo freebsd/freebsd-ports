@@ -7,6 +7,7 @@
     SUBDIR += PDL
     SUBDIR += R
     SUBDIR += R-cran-Formula
+    SUBDIR += R-cran-KFAS
     SUBDIR += R-cran-RSvgDevice
     SUBDIR += R-cran-SuppDists
     SUBDIR += R-cran-Zelig

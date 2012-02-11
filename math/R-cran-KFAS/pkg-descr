@@ -1,0 +1,12 @@
+Package KFAS provides funchtions for Kalman filtering, state,
+disturbance and simulation smoothing, forecasting and simulation
+of state space models. All functions can use exact diffuse
+initialisation when distributions of some or all elements of initial
+state vector are unknown. Filtering, state smoothing and simulation
+functions use sequential processing algorithm, which is faster than
+standard approach, and it also allows singularity of prediction
+error variance matrix. KFAS also contains function for computing
+the likelihood of exponential family state space models and function
+for state smoothing of exponential family state space models.
+
+WWW:	http://cran.r-project.org/web/packages/KFAS/
