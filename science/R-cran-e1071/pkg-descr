@@ -1,0 +1,5 @@
+Functions for latent class analysis, short time Fourier transform,
+fuzzy clustering, support vector machines, shortest path computation,
+bagged clustering, naive Bayes classifier, ...
+
+WWW:	http://cran.r-project.org/web/packages/e1071/
