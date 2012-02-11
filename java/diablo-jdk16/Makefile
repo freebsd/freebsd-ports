@@ -69,7 +69,7 @@ PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
 .if defined(WITH_POLICY) || !defined(WITHOUT_TZUPDATE)
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 .endif
 
 POLICYFILE=	jce_policy-6.zip
