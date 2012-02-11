@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metasploit
-DISTVERSION=	4.0.0
-PORTREVISION=	1
+DISTVERSION=	4.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.metasploit.com/data/releases/
 DISTNAME=	framework-${DISTVERSION}
@@ -18,7 +17,7 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 RUN_DEPENDS=	nasm:${PORTSDIR}/devel/nasm				\
 		nmap:${PORTSDIR}/security/nmap
 
-WRKSRC=		${WRKDIR}/msf3
+WRKSRC=		${WRKDIR}/msf
 SCRIPTS=	msfcli msfconsole msfd msfelfscan msfencode msfmachscan \
 		msfopcode msfpayload msfpescan msfweb
 
@@ -58,6 +57,7 @@ post-install:
 	${ECHO} "bin/${f}" >> ${TMPPLIST}
 .endfor
 	@${FIND} ${DATADIR} -type f | ${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type l | ${SED} 's,${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,${PREFIX}/,, ; s,^,@dirrm ,' >> ${TMPPLIST}
 
