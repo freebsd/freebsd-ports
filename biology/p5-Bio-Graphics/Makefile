@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
-		p5-GD>=2.3:${PORTSDIR}/graphics/p5-GD \
+		p5-GD>=2.30:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-SVG>=0.32:${PORTSDIR}/graphics/p5-GD-SVG \
 		p5-Statistics-Descriptive>=2.6:${PORTSDIR}/math/p5-Statistics-Descriptive \
 		p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl
@@ -93,6 +93,7 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Glyph::rndrect.3 \
 		Bio::Graphics::Glyph::ruler_arrow.3 \
 		Bio::Graphics::Glyph::saw_teeth.3 \
+		Bio::Graphics::Glyph::scale.3 \
 		Bio::Graphics::Glyph::segmented_keyglyph.3 \
 		Bio::Graphics::Glyph::segments.3 \
 		Bio::Graphics::Glyph::so_transcript.3 \
