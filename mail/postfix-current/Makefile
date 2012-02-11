@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.9-20120115
+DISTVERSION=	2.10-20120202
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -22,12 +22,7 @@ MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* \
-		postfix-current-2.[0-8]* postfix-current-base-2.[0-8]* \
 		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -91,6 +86,13 @@ MLINKS=	sendmail.1 mailq.1 \
 
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
+
+.if !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
+OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || true
+.if !empty(OLD_MAILER)
+IS_INTERACTIVE=	yes
+.endif
+.endif
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -168,7 +170,16 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if defined(WITH_SPF)
-BROKEN=			At the moment, SPF support is unavailable for ${PORTNAME}-${DISTVERSION}
+LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
+PATCH_SITES+=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	mm
+PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
+PATCH_DIST_STRIP=	-p1
+POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
+PLIST_SUB+=		SPF=""
+.else
+PLIST_SUB+=		SPF="@comment "
 .endif
 
 .if defined(WITH_BDB)
