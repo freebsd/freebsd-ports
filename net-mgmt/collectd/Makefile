@@ -279,7 +279,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_NGINX)
-USE_NGINX=	yes
+RUN_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--enable-nginx
 PLIST_SUB+=	NGINX=""
