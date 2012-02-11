@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #
 # checkcats.py - verify that master categories in all ports are correct and
 # report any problems.

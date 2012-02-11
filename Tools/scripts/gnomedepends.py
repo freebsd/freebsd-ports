@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 #
 # gnomedepends
 # Analyse pkg/PLIST and give an advice as to which GNOME

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 # ex:ts=4
 #-*- mode: Fundamental; tab-width: 4; -*-
 #
