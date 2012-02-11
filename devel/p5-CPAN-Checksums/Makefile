@@ -7,6 +7,7 @@
 
 PORTNAME=	CPAN-Checksums
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	cm@therek.net
 COMMENT=	Perl module to write a CHECKSUMS file for a directory as on CPAN
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare
-RUN_DEPENDS=	${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare
+BUILD_DEPENDS=	${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
+		p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature
+RUN_DEPENDS=	${SITE_PERL}/Data/Compare.pm:${PORTSDIR}/devel/p5-Data-Compare \
+		p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature
+TEST_DEPENDS=	p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
 
 PERL_CONFIGURE=	YES
 
