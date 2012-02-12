@@ -16,10 +16,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Single interface to deal with file archives
 
-RUN_DEPENDS=	p5-Archive-Zip>=1.07:${PORTSDIR}/archivers/p5-Archive-Zip \
+BUILD_DEPENDS=	p5-Archive-Zip>=1.07:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-File-MMagic>=1.27:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-MIME-Types>=1.16:${PORTSDIR}/mail/p5-MIME-Types \
 		p5-Module-Find>=0.05:${PORTSDIR}/devel/p5-Module-Find
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_MODBUILD=	yes
 
