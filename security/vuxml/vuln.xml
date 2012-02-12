@@ -47,6 +47,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b20fd5f-552e-11e1-9fb7-003067b2972c">
+    <topic>Webcalendar -- Persistent XSS</topic>
+    <affects>
+      <package>
+	<name>WebCalendar</name>
+	<range><lt>1.2.4</lt></range>
+      </package>
+      <package>
+	<name>WebCalendar-devel</name>
+	<range><lt>1.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>tom reports,</p>
+	<blockquote cite="http://seclists.org/bugtraq/2012/Jan/128">
+	  <p>There is no sanitation on the input of the location variable
+	    allowing for persistent XSS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/tracker/?func=detail&amp;amp;aid=3472745&amp;group_id=3870&amp;atid=103870</url>
+    </references>
+    <dates>
+      <discovery>2012-01-11</discovery>
+      <entry>2012-02-12</entry>
+    </dates>
+  </vuln>
   <vuln vid="eba9aa94-549c-11e1-b6b7-0011856a6e37">
     <topic>mozilla -- use after free in nsXBLDocumentInfo::ReadPrototypeBindings</topic>
     <affects>
