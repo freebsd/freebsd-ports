@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -19,16 +19,15 @@ USE_PERL5=	yes
 MAN1=		global.1 globash.1 gozilla.1 gtags.1 gtags-cscope.1 htags.1
 INFO=		global
 
+DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README THANKS
+
 post-patch:
 	${REINPLACE_CMD} -E 's,^(gtags_DATA = )AUTHORS .* THANKS( \\$$),\1\2,' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/global
-.for file in AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README \
-		THANKS
-	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/global
-.endfor
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 
 # This target is only meant to be used by the port maintainer.
