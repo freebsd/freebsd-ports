@@ -1,6 +1,6 @@
-include/%%PYTHON_VERSION%%/papi/papi_atk.h
-include/%%PYTHON_VERSION%%/papi/papi_iaccproxy.h
-include/%%PYTHON_VERSION%%/papi/papi_msaa.h
+%%PYTHON_INCLUDEDIR%%/papi/papi_atk.h
+%%PYTHON_INCLUDEDIR%%/papi/papi_iaccproxy.h
+%%PYTHON_INCLUDEDIR%%/papi/papi_msaa.h
 %%PYTHON_SITELIBDIR%%/papi/__init__.py
 %%PYTHON_SITELIBDIR%%/papi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/papi/__init__.pyo
@@ -20,4 +20,4 @@ include/%%PYTHON_VERSION%%/papi/papi_msaa.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/msaacapi.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/papi
-@dirrm include/%%PYTHON_VERSION%%/papi
+@dirrm %%PYTHON_INCLUDEDIR%%/papi
