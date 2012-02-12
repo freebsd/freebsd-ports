@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Cmd
-PORTVERSION=	0.309
+PORTVERSION=	0.316
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	App::Cmd - Write command line apps with less suffering
 
-BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
+BUILD_DEPENDS=	p5-Capture-Tiny>=0.13:${PORTSDIR}/devel/p5-Capture-Tiny \
+		p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Getopt-Long-Descriptive>=0.084:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-IO-TieCombine>=0:${PORTSDIR}/devel/p5-IO-TieCombine \
 		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-String-RewritePrefix>=0:${PORTSDIR}/textproc/p5-String-RewritePrefix \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
-		p5-String-RewritePrefix>=0:${PORTSDIR}/textproc/p5-String-RewritePrefix
+		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
@@ -35,6 +39,7 @@ MAN3=		App::Cmd.3 \
 		App::Cmd::Subdispatch.3 \
 		App::Cmd::Subdispatch::DashedStyle.3 \
 		App::Cmd::Tester.3 \
+		App::Cmd::Tester::CaptureExternal.3 \
 		App::Cmd::Tutorial.3 \
 
 .include <bsd.port.mk>
