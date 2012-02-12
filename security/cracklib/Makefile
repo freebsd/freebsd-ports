@@ -19,8 +19,11 @@ MAN3=		cracklib.3
 MLINKS=		cracklib.3 FascistCheck.3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-default-dict=${PREFIX}/libdata/${PORTNAME}
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/cracklib.3 ${MAN3PREFIX}/man/man3/.
+	${INSTALL_MAN} ${FILESDIR}/cracklib.3 ${MAN3PREFIX}/man/man3/
+	@${MKDIR} ${PREFIX}/libdata/${PORTNAME}
+	${INSTALL_DATA} ${FILESDIR}/pw_dict* ${PREFIX}/libdata/${PORTNAME}/
 
 .include <bsd.port.mk>
