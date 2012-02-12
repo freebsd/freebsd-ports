@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Starter
-PORTVERSION=	1.54
+PORTVERSION=	1.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple starter kit for any Perl module
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+BUILD_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
+RUN_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
 PERL_CONFIGURE=	yes
 
@@ -22,8 +23,8 @@ MAN1=		module-starter.1
 MAN3=		Module::Starter.3 \
 		Module::Starter::App.3 \
 		Module::Starter::BuilderSet.3 \
-		Module::Starter::Simple.3 \
 		Module::Starter::Plugin.3 \
-		Module::Starter::Plugin::Template.3
+		Module::Starter::Plugin::Template.3 \
+		Module::Starter::Simple.3
 
 .include <bsd.port.mk>
