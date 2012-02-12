@@ -25,6 +25,6 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyao
 
 do-configure:
-	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix "${LOCALBASE}"
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} config_unix.py --prefix "${LOCALBASE}"
 
 .include <bsd.port.mk>
