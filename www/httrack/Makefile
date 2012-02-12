@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.44.4
+PORTVERSION=	3.44.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/ \
@@ -33,7 +33,7 @@ USE_LDCONFIG+=	${PREFIX}/lib/httrack
 post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' \
 		-e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/ install-data-hook/D' ${WRKSRC}/html/Makefile.in
+	@${REINPLACE_CMD} -e '/ install-data-hook/d' ${WRKSRC}/html/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		${WRKSRC}/html/server/div/WebHTTrack.desktop \
 		${WRKSRC}/html/server/div/WebHTTrack-Websites.desktop
@@ -46,7 +46,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${DOCSDIR}/html/httrack.css
+	${INSTALL_DATA} ${WRKSRC}/html/httrack.css ${DOCSDIR}/html/httrack.css
 .endif
 
 .include <bsd.port.mk>
