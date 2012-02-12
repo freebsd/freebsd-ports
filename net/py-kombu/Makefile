@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kombu
-PORTVERSION=	1.5.1
+PORTVERSION=	2.0.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,10 @@ COMMENT=	An AMQP messaging framework for Python
 
 LICENSE=	BSD
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqplib>=1.0:${PORTSDIR}/net/py-amqplib \
+		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.1:${PORTSDIR}/devel/py-anyjson
+
 USE_PYTHON=	2.5+
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
