@@ -6,35 +6,36 @@
 #
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
+MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A probabilistic text search database engine
 
 LICENSE=	GPLv2
 
-OPTIONS=	SSE2 "Use SSE2 for floating point" Off
+OPTIONS=	SSE2	"Use SSE2 for floating point" off
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=	xapian-check.1 \
-	xapian-chert-update.1 \
-	xapian-compact.1 \
-	xapian-config.1 \
-	xapian-inspect.1 \
-	xapian-progsrv.1 \
-	xapian-replicate.1 \
-	xapian-replicate-server.1 \
-	xapian-tcpsrv.1
+MAN1=		xapian-check.1 \
+		xapian-chert-update.1 \
+		xapian-compact.1 \
+		xapian-config.1 \
+		xapian-inspect.1 \
+		xapian-progsrv.1 \
+		xapian-replicate.1 \
+		xapian-replicate-server.1 \
+		xapian-tcpsrv.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_SSE2)
-CONFIGURE_ARGS+=	--disable-sse
+.if !defined(WITH_SSE2)
+CONFIGURE_ARGS+=--disable-sse
 .endif
 
 post-patch:
