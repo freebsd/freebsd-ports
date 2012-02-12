@@ -77,7 +77,8 @@ CONFIGURE_ARGS+=	-system-libtiff -system-libpng -system-libmng \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6/include|${LOCALBASE}/include/X11|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|/usr/X11R6/include|${LOCALBASE}/include/X11|g' \
 		-e 's|/usr/X11R6/lib|${LOCALBASE}/lib|g' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
