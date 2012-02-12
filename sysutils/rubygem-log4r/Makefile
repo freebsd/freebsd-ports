@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log4r
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
