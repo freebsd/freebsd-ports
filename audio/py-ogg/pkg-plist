@@ -1,7 +1,7 @@
-include/%%PYTHON_VERSION%%/pyogg/pyogg.h
-lib/%%PYTHON_VERSION%%/site-packages/ogg/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/ogg/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/ogg/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/ogg/_ogg.so
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/ogg
-@dirrm include/%%PYTHON_VERSION%%/pyogg
+%%PYTHON_INCLUDEDIR%%/pyogg/pyogg.h
+%%PYTHON_SITELIBDIR%%/ogg/__init__.py
+%%PYTHON_SITELIBDIR%%/ogg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ogg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ogg/_ogg.so
+@dirrm %%PYTHON_SITELIBDIR%%/ogg
+@dirrm %%PYTHON_INCLUDEDIR%%/pyogg
