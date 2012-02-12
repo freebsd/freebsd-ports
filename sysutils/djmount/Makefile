@@ -19,8 +19,6 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
-BROKEN=		does not compile
-
 PLIST_FILES=	bin/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
