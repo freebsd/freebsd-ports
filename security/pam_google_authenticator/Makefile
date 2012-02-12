@@ -16,6 +16,8 @@ COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	AL2
 
+BROKEN=		deletes /dev/null
+
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/google-authenticator lib/pam_google_authenticator.so
