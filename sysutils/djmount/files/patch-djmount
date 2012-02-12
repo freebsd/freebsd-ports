@@ -61,3 +61,38 @@ diff -purN djmount/string_util.c djmount/string_util.c
  		res = talloc_size (result_context, size+1);
  		if (res) {
  			rewind (ss->file);
+diff -purN djmount/content_dir.c djmount/content_dir.c
+--- djmount/content_dir.c	2006-08-28 05:12:20.000000000 +0900
++++ djmount/content_dir.c	2012-02-12 21:14:11.000000000 +0900
+@@ -302,7 +302,7 @@ BrowseOrSearchAll (ContentDir* cds,
+ 	// Note: it is allowed to have nb_matched == 0 if it cannot be
+ 	// computed by the CDS.
+ 	int nb_retry = 0;
+-	while (PtrArray_GetSize (objects) < nb_matched && nb_retry++ < 2) {
++	while (PtrArray_GetSize (objects) < nb_matched && ++nb_retry) {
+ 		Log_Printf (LOG_WARNING, 
+ 			    "ContentDir_BrowseId ObjectId=%s : "
+ 			    "got %d results, expected %d. Retry %d ...",
+diff -purN djmount/content_dir.h djmount/content_dir.h
+--- djmount/content_dir.h	2006-08-28 05:12:20.000000000 +0900
++++ djmount/content_dir.h	2012-02-12 21:14:11.000000000 +0900
+@@ -46,7 +46,7 @@ typedef uint_fast32_t ContentDir_Index;
+ 
+ // ContentDirectory ServiceType
+ #define CONTENT_DIR_SERVICE_TYPE \
+-	"urn:schemas-upnp-org:service:ContentDirectory:1"
++	"urn:schemas-upnp-org:service:ContentDirectory:2"
+ 
+ 
+ 
+diff -purN djmount/upnp_util.h djmount/upnp_util.h
+--- djmount/upnp_util.h	2006-08-28 05:12:20.000000000 +0900
++++ djmount/upnp_util.h	2012-02-12 21:14:11.000000000 +0900
+@@ -28,6 +28,7 @@
+ 
+ 
+ #include <upnp/upnptools.h>
++#include <upnp/upnp.h>
+ 
+ 
+ #ifdef __cplusplus
