@@ -24,7 +24,7 @@ BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/fastaudio.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/fastaudio.so
 PLIST_DIRS=
 EXAMPLESDIR=	${LOCALBASE}/share/examples/py-${PORTNAME}
 
