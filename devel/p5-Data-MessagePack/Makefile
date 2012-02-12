@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for MessagePack
 
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--xs
