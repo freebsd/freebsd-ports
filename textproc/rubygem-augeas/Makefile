@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	ruby-augeas
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	http://augeas.net/download/ruby/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for Augeas
 
-LIB_DEPENDS=	augeas.10:${PORTSDIR}/textproc/augeas
-
-PORTSCOUT=	limit:^0.3
+LIB_DEPENDS=	augeas.15:${PORTSDIR}/textproc/augeas
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig libxml2
 RUBYGEM_AUTOPLIST=	yes
+CONFIGURE_ARGS+=	--with-opt-include="${LOCALBASE}/include/libxml2"
 
 .include <bsd.port.mk>
