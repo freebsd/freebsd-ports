@@ -1,22 +1,24 @@
---- Makefile.orig	2009-10-16 19:37:47.000000000 +0400
-+++ Makefile	2009-10-30 00:02:20.000000000 +0300
-@@ -31,13 +31,13 @@
+--- Makefile.orig	2011-07-25 03:56:45.000000000 +0800
++++ Makefile	2011-12-29 17:35:47.379562021 +0800
+@@ -36,7 +36,7 @@
  
- default: seehelp precheck zxid zxidhlo zxididp zxidhlowsf zxidsimple zxidwsctool zxlogview zxidhrxmlwsc zxidhrxmlwsp zxdecode zxcot
+ default: seehelp precheck zxid zxidhlo zxididp zxidhlowsf zxidsimple zxidwsctool zxlogview zxidhrxmlwsc zxidhrxmlwsp zxdecode zxcot zxpasswd zxcall zxencdectest
  
--all: seehelp precheck precheck_apache zxid zxidhlo zxididp zxidsimple zxlogview samlmod phpzxid javazxid apachezxid zxdecode zxcot smime
-+all: seehelp precheck zxid zxidhlo zxididp zxidsimple zxlogview zxdecode zxcot smime
+-all: default precheck_apache samlmod phpzxid javazxid apachezxid smime zxidwspcgi
++all: default smime
  
- ZXIDREL=0.38
- ZXIDVERSION=0x000038
+ ### This is the authorative spot to set version number. Document in Changes file.
+ ### c/zxidvers.h is generated from these, see `make updatevers'
+@@ -44,7 +44,7 @@
+ ZXIDREL=1.02
  
  ### Where package is installed (use `make PREFIX=/your/path' to change)
--PREFIX=/usr/local/zxid/$(ZXIDREL)
-+PREFIX?=/usr/local/zxid/$(ZXIDREL)
+-PREFIX=/var/zxid/$(ZXIDREL)
++PREFIX?=/var/zxid/$(ZXIDREL)
  
  ### Where runtime configuration and temporary data is kept.
  ### If you change the following, be sure to edit zxidconf.h as
-@@ -64,8 +64,8 @@
+@@ -72,8 +72,8 @@
  ###
  
  TOP=$(shell pwd)
@@ -27,32 +29,45 @@
  PHP_CONFIG=php-config
  CSHARP_CONFIG=true
  PY_CONFIG=true
-@@ -82,11 +82,11 @@
+@@ -90,14 +90,14 @@
  SWIG=swig
  AR=ar -crs
  ARX=ar -x
 -CC=gcc
 -LD=gcc
++CC?=gcc
++LD?=gcc
+ GCOV=gcov
+ LCOV=lcov
+ GENHTML=genhtml
 -SHARED_FLAGS=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
 -SHARED_CLOSE=-Wl,-no-whole-archive
 -CFLAGS=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
-+CC?=gcc
-+LD?=gcc
-+SHARED_FLAGS+=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
-+SHARED_CLOSE+=-Wl,-no-whole-archive
-+CFLAGS+=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
++SHARED_FLAGS?=-shared --export-all-symbols -Wl,-whole-archive -Wl,--allow-multiple-definition
++SHARED_CLOSE?=-Wl,-no-whole-archive
++CFLAGS?=-g -fpic -fmessage-length=0 -Wno-unused-label -Wno-unknown-pragmas -fno-strict-aliasing
  #CFLAGS += -Os    # gcc-3.4.6 miscompiles with -Os on ix86
  CFLAGS += -Wall -Wno-parentheses -DMAYBE_UNUSED='__attribute__ ((unused))'
- CFLAGS += -ffunction-sections -fdata-sections
-@@ -1090,11 +1090,6 @@
+ #LDFLAGS += -Wl,--gc-sections
+@@ -1318,7 +1318,7 @@
+ endif
  
- install: zxid libzxid.a libzxid.so.0.0 dir
+ libzxid.so.0.0: $(LIBZXID_A)
+-	$(LD) $(OUTOPT)libzxid.so.0.0 $(SHARED_FLAGS) $^ $(SHARED_CLOSE) -lcurl -lssl -lcrypt
++	$(LD) $(OUTOPT)libzxid.so.0.0 $(SHARED_FLAGS) $^ $(SHARED_CLOSE) $(LIBS) -lcurl -lssl -lcrypt
+ 
+ zxid.dll zxidimp.lib: $(LIBZXID_A)
+ 	$(LD) $(OUTOPT)zxid.dll $(SHARED_FLAGS) -Wl,--output-def,zxid.def,--out-implib,zxidimp.lib $^ $(SHARED_CLOSE) $(WIN_LIBS) -mdll
+@@ -1604,12 +1604,6 @@
+ 
+ install: zxid $(LIBZXID_A) libzxid.so.0.0 dir
  	@$(ECHO) "===== Installing in $(PREFIX) (to change do make install PREFIX=/your/path)"
--	-mkdir -p $(PREFIX) $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include/zxid
--	cp zxidhlo zxididp $(PREFIX)/bin
--	cp libzxid.a libzxid.so* $(PREFIX)/lib
--	cp libzxid.so.0.0 $(PREFIX)/lib
--	cp *.h c/*.h $(PREFIX)/include/zxid
+-	-mkdir -p $(PREFIX) $(PREFIX)/bin $(PREFIX)/lib $(PREFIX)/include/zxid $(PREFIX)/doc
+-	$(CP) zxmkdirs.sh zxcall zxpasswd zxcot zxlogview zxdecode zxencdectest zxcleanlogs.sh zximport-htpasswd.pl zximport-ldif.pl xml-pretty.pl diffy.pl smime send.pl xacml2ldif.pl mockpdp.pl env.cgi zxid-java.sh zxidatsel.pl zxidnewuser.pl zxidcot.pl zxiddash.pl zxidexplo.pl zxidhlo zxidhlo.pl zxidhlo.php zxidhlo.sh zxidhlo-java.sh zxidhlocgi.php zxidhlowsf zxidhrxmlwsc zxidhrxmlwsp zxididp zxidsimple zxidwsctool zxidwspcgi zxtest.pl zxsizeof $(PREFIX)/bin
+-	$(CP) $(LIBZXID_A) libzxid.so* $(PREFIX)/lib
+-	$(CP) libzxid.so.0.0 $(PREFIX)/lib
+-	$(CP) *.h c/*.h $(PREFIX)/include/zxid
+-	$(CP) *.pd *.dia $(PREFIX)/doc
  	@$(ECHO) "You will need to copy zxidhlo binary where your web server can find it and"
  	@$(ECHO) "make sure your web server is configured to recognize zxidhlo as a CGI script."
  	@$(ECHO)
