@@ -1,4 +1,4 @@
-lib/%%PYTHON_VERSION%%/site-packages/pyRXP.so
+%%PYTHON_SITELIBDIR%%/pyRXP.so
 %%PORTDOCS%%%%DOCSDIR%%/PyRXP_Documentation.rml
 %%PORTDOCS%%%%DOCSDIR%%/replogo.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
