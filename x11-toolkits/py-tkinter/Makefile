@@ -18,7 +18,7 @@ MAINTAINER?=	python@FreeBSD.org
 COMMENT=	Python bindings to the Tk widget set
 
 DIST_SUBDIR=	python
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/_tkinter.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_tkinter.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Tkinter

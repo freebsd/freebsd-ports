@@ -43,6 +43,7 @@ CONFIGURE_ARGS=	--with-selinux=no --with-semanage=no \
 		--with-db-path=/var/db/sss --with-pipe-path=/var/run/sss \
 		--with-pubconf-path=/var/run/sss
 CFLAGS+=	-L${LOCALBASE}/lib -fstack-protector-all
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 #DEBUG_FLAGS=	-g
 
 USE_AUTOTOOLS=	autoconf automake
