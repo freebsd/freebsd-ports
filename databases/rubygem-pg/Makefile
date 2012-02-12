@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pg
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=		databases rubygems
 MASTER_SITES=		RG
 
