@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	davical
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES?=	www
 MASTER_SITES=	http://debian.mcmillan.net.nz/packages/davical/ \
 		SF/rscds/${PORTNAME}/${PORTVERSION}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg \
 		${LOCALBASE}/bin/pwgen:${PORTSDIR}/sysutils/pwgen \
-		php-libawl>=0.50:${PORTSDIR}/devel/php-libawl
+		php-libawl>=0.51:${PORTSDIR}/devel/php-libawl
 
 NO_BUILD=	yes
 USE_PGSQL=	yes
