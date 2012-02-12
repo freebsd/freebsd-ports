@@ -5,4 +5,4 @@ This is a hopefully-complete API-compliant interface to MetaCPAN
     * Be lightweight, to allow flexible usage
     * DWIM (Do What I mean)
 
-WWW: http://metacpan.org/release/MetaCPAN-API/
+WWW: http://search.cpan.org/dist/MetaCPAN-API/
