@@ -1,4 +1,4 @@
-@exec mkdir -p %D/lib/%%PYTHON_VERSION%%/site-packages
+@exec mkdir -p %D/%%PYTHON_SITELIBDIR%%
 %%PYTHON_SITELIBDIR%%/kjbuckets.so
 %%PORTDOCS%%share/doc/kjbuckets/COPYRIGHT.txt
 %%PORTDOCS%%share/doc/kjbuckets/kjbuckets.txt
