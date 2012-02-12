@@ -1,5 +1,5 @@
-lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/CSQLRelay.so
-lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/PySQLRClient.py
-lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/PySQLRDB.py
-lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/__init__.py
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/SQLRelay
+%%PYTHON_SITELIBDIR%%/SQLRelay/CSQLRelay.so
+%%PYTHON_SITELIBDIR%%/SQLRelay/PySQLRClient.py
+%%PYTHON_SITELIBDIR%%/SQLRelay/PySQLRDB.py
+%%PYTHON_SITELIBDIR%%/SQLRelay/__init__.py
+@dirrm %%PYTHON_SITELIBDIR%%/SQLRelay

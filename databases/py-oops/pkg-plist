@@ -1,7 +1,7 @@
-lib/%%PYTHON_VERSION%%/site-packages/oops/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/oops/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/oops/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/oops/core.py
-lib/%%PYTHON_VERSION%%/site-packages/oops/core.pyc
-lib/%%PYTHON_VERSION%%/site-packages/oops/core.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/oops
+%%PYTHON_SITELIBDIR%%/oops/__init__.py
+%%PYTHON_SITELIBDIR%%/oops/__init__.pyc
+%%PYTHON_SITELIBDIR%%/oops/__init__.pyo
+%%PYTHON_SITELIBDIR%%/oops/core.py
+%%PYTHON_SITELIBDIR%%/oops/core.pyc
+%%PYTHON_SITELIBDIR%%/oops/core.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/oops
