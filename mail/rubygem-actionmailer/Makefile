@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailer
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
