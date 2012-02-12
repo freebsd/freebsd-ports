@@ -1,9 +1,7 @@
+bin/sdb
+bin/sdb-%%VERSION%%
 bin/snobol4
-bin/snobol4-1.3
-man/man1/snobol4.1
-man/man3/snolib.3
-man/man3/snobol4dbm.3
-man/man3/snobol4tcl.3
+bin/snobol4-%%VERSION%%
 lib/snobol4/README
 lib/snobol4/bq.sno
 lib/snobol4/chars.sno
@@ -23,6 +21,9 @@ lib/snobol4/logic.sno
 lib/snobol4/macros.h
 lib/snobol4/ndbm.sno
 lib/snobol4/not.sno
+lib/snobol4/random.sno
+lib/snobol4/readline.sno
+lib/snobol4/sdb.sno
 lib/snobol4/serv.sno
 lib/snobol4/smtp.sno
 lib/snobol4/snobol4+.sno
@@ -30,8 +31,10 @@ lib/snobol4/snotypes.h
 lib/snobol4/spitbol.sno
 lib/snobol4/stcl.sno
 lib/snobol4/tcp.sno
+lib/snobol4/time.sno
 lib/snobol4/unique.sno
 lib/snobol4/url.sno
 lib/snobol4/utf.sno
+lib/snobol4/version.h
 lib/snobol4/wrapper.sno
 @dirrm lib/snobol4
