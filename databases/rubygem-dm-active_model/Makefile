@@ -16,6 +16,8 @@ COMMENT=	A dm plugin for active_model compliance and thus rails 3 compatibility
 RUN_DEPENDS=	rubygem-activemodel>=3.1.0:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-dm-core>=1.2.0:${PORTSDIR}/databases/rubygem-dm-core
 
+BROKEN=	dm-active_model requires activemodel (~> 3.1.0)
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-delayed_job>=2.1:${PORTSDIR}/devel/rubygem-delayed_job \
 		rubygem-dm-core>=0:${PORTSDIR}/databases/rubygem-dm-core \
 		rubygem-dm-observer>=0:${PORTSDIR}/databases/rubygem-dm-observer
 
+BROKEN=	delayed_job_data_mapper requires delayed_job (~> 2.1)
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
