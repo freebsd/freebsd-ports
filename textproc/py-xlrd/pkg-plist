@@ -1,37 +1,37 @@
 bin/runxlrd.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/biffh.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/biffh.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/biffh.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/compdoc.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/compdoc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/compdoc.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc/compdoc.html
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc/xlrd.html
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/namesdemo.xls
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/xlrdnameAPIdemo.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/xlrdnameAPIdemo.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples/xlrdnameAPIdemo.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/formatting.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/formatting.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/formatting.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/formula.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/formula.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/formula.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/licences.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/licences.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/licences.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/sheet.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/sheet.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/sheet.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/timemachine.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/timemachine.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/timemachine.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd
+%%PYTHON_SITELIBDIR%%/xlrd/__init__.py
+%%PYTHON_SITELIBDIR%%/xlrd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/biffh.py
+%%PYTHON_SITELIBDIR%%/xlrd/biffh.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/biffh.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/compdoc.py
+%%PYTHON_SITELIBDIR%%/xlrd/compdoc.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/compdoc.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/doc/compdoc.html
+%%PYTHON_SITELIBDIR%%/xlrd/doc/xlrd.html
+%%PYTHON_SITELIBDIR%%/xlrd/examples/namesdemo.xls
+%%PYTHON_SITELIBDIR%%/xlrd/examples/xlrdnameAPIdemo.py
+%%PYTHON_SITELIBDIR%%/xlrd/examples/xlrdnameAPIdemo.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/examples/xlrdnameAPIdemo.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/formatting.py
+%%PYTHON_SITELIBDIR%%/xlrd/formatting.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/formatting.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/formula.py
+%%PYTHON_SITELIBDIR%%/xlrd/formula.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/formula.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/licences.py
+%%PYTHON_SITELIBDIR%%/xlrd/licences.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/licences.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/sheet.py
+%%PYTHON_SITELIBDIR%%/xlrd/sheet.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/sheet.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/timemachine.py
+%%PYTHON_SITELIBDIR%%/xlrd/timemachine.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/timemachine.pyo
+%%PYTHON_SITELIBDIR%%/xlrd/xldate.py
+%%PYTHON_SITELIBDIR%%/xlrd/xldate.pyc
+%%PYTHON_SITELIBDIR%%/xlrd/xldate.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/xlrd/examples
+@dirrm %%PYTHON_SITELIBDIR%%/xlrd/doc
+@dirrm %%PYTHON_SITELIBDIR%%/xlrd
