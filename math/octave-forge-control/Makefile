@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-control
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
