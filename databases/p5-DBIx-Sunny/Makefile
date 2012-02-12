@@ -29,9 +29,10 @@ RUN_DEPENDS=	p5-DBI>=1.615:${PORTSDIR}/databases/p5-DBI \
 		p5-DBIx-TransactionManager>=0:${PORTSDIR}/databases/p5-DBIx-TransactionManager \
 		p5-Data-Validator>=0:${PORTSDIR}/devel/p5-Data-Validator
 
-TEST_DEPENDS=	p5-DBD-SQLite>=1.27:${PORTSDIR}/databases/p5-DBD-SQLite \
+TEST_DEPENDS=	p5-DBD-SQLite>=1.31:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-    		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny
+    		p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
+		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
