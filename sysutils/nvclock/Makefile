@@ -7,7 +7,7 @@
 
 PORTNAME=	nvclock
 DISTVERSION=	0.8b4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8%20%28beta4%29
 DISTNAME=	nvclock${DISTVERSION}
@@ -15,16 +15,17 @@ DISTNAME=	nvclock${DISTVERSION}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphic card status and overclocking tool
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/nvclock \
-		bin/smartdimmer
+PLIST_FILES=	bin/nvclock bin/smartdimmer
 MAN1=		nvclock.1
 PORTDOCS=	ABOUT AUTHORS ChangeLog FAQ README
 
 OPTIONS=	NVCONTROL	"Enable NV-CONTROL support"	on \
-		GTK2		"Build GTK user interface"	on \
+		GTK		"Build GTK+ user interface"	on \
 		QT		"Build Qt 3.x user interface"	off
 
 .include <bsd.port.options.mk>
@@ -36,7 +37,7 @@ USE_GNOME=	pkgconfig
 CONFIGURE_ARGS+=	--disable-nvcontrol
 .endif
 
-.if defined(WITH_GTK2)
+.if defined(WITH_GTK)
 USE_GNOME=	gtk20
 PLIST_FILES+=	bin/nvclock_gtk
 .else
@@ -50,8 +51,8 @@ PLIST_FILES+=	bin/nvclock_qt
 .endif
 
 post-patch:
+# Uphold our C[XX]FLAGS except for backend part, it must be compiled with -O0
 	@${REINPLACE_CMD} -E 's|^(C(XX)?FLAGS)=|\1+=|' \
-		${WRKSRC}/src/backend/Makefile.in \
 		${WRKSRC}/src/gtk/Makefile.in \
 		${WRKSRC}/src/qt/Makefile.in \
 		${WRKSRC}/src/nvcontrol/Makefile.in
