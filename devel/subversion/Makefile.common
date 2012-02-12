@@ -9,7 +9,7 @@ PORTVERSION=	1.7.2
 PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}:main \
-		http://svnbook.red-bean.com/en/1.6/:book
+		http://svnbook.red-bean.com/en/1.7/:book
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion17
 MASTER_SITE_SUBDIR=subversion/:main
