@@ -20,10 +20,13 @@ OPTIONS=	IPV6 "Build with IPv6 support" on \
 		MFD_REWRITES "Build with 64-bit Interface Counters" off \
 		PERL "Install additional perl modules" on \
 		PERL_EMBEDDED "Build embedded perl" on \
+		PYTHON "Install additional python modules" off \
 		DUMMY "Enable dummy values as placeholders" on \
 		TKMIB "Install graphical MIB browser" off \
 		DMALLOC "Enable dmalloc debug memory allocator" off \
 		UNPRIVILEGED "Allow unprivileged users to execute net-snmp" off
+
+.include <bsd.port.options.mk>
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -44,6 +47,33 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults
+.endif
+
+.if defined(WITH_PYTHON)
+# borrowed from bsd.python.mk and adapted for our needs
+PYEASYINSTALL_CMD?=		${LOCALBASE}/bin/easy_install-${PYTHON_VER}
+PYEASYINSTALL_BINDIR?=		${PREFIX}/bin
+PYEASYINSTALL_SITELIBDIR?=	${PYTHONPREFIX_SITELIBDIR}
+PYDISTUTILS_PKGNAME?=		netsnmp-python
+PYDISTUTILS_PKGVERSION?=	1.0a1
+PYEASYINSTALL_INSTALLARGS?=	-q -N -S ${PYTHON_SITELIBDIR} \
+				-d ${PYEASYINSTALL_SITELIBDIR} \
+				-s ${PYEASYINSTALL_BINDIR} \
+				${PYDISTUTILS_PKGNAME}==${PYDISTUTILS_PKGVERSION}
+PYEASYUNINSTALL_UNINSTALLARGS?=	-q -N -m -S ${PYTHON_SITELIBDIR} \
+				-d ${PYEASYINSTALL_SITELIBDIR} \
+				-s ${PYEASYINSTALL_BINDIR} \
+				${PYDISTUTILS_PKGNAME}
+USE_PYTHON=	yes
+RUN_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+CONFIGURE_ARGS+=--with-python-modules
+PLIST_SUB+=	WITH_PYTHON="" PYTHON_VER=${PYTHON_VER}
+PLIST_SUB+=	PYDISTUTILS_PKGVERSION=${PYDISTUTILS_PKGVERSION}
+PLIST_SUB+=	PYINSTALL="@exec ${SETENV} PYTHONPATH=${PYEASYINSTALL_SITELIBDIR} ${PYEASYINSTALL_CMD} ${PYEASYINSTALL_INSTALLARGS}"
+PLIST_SUB+=	PYUNINSTALL="@unexec ${PYEASYINSTALL_CMD} ${PYEASYUNINSTALL_UNINSTALLARGS}"
+.else
+PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -247,6 +277,13 @@ post-configure:
 		s!^.*#undef.*(HAVE_${hdr:U:S/./_/g:S/\//_/g}).*$$!#define \1 1!g' \
 			${WRKSRC}/include/net-snmp/net-snmp-config.h
 .endfor
+.if defined(WITH_PYTHON)
+	@(cd ${WRKSRC}/python; \
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg \
+		-o plat-name -s "" --basedir=${WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist \
+		-o plat-name -s "" --basedir=${WRKSRC})
+.endif
 
 post-build:
 .if defined(WITH_PERL)
