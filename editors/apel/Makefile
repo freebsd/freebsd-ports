@@ -35,7 +35,7 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs23")
+.if ${EMACS_VER:C/\..*//} >= 23
 PLIST_SUB+=	EMACS23="" NOEMACS23="@comment "
 .else
 PLIST_SUB+=	EMACS23="@comment " NOEMACS23=""
