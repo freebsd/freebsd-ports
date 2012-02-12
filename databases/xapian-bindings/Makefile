@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	databases
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
+MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
-
-LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
 
 LICENSE=	GPLv2
 
-OPTIONS=	PHP     "Build PHP binding" on \
-		PYTHON  "Build Python binding" on \
-		RUBY    "Build Ruby binding" on
+LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
+
+OPTIONS=	PHP	"Build PHP binding" on \
+		PYTHON	"Build Python binding" on \
+		RUBY	"Build Ruby binding" on
 
 CONFIGURE_ARGS=	--datarootdir="${DATADIR}" --docdir="${DOCSDIR}" \
 		--without-csharp --without-java --without-tcl
 GNU_CONFIGURE=	yes
+
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_PHP)
 CONFIGURE_ARGS+=	--without-php
