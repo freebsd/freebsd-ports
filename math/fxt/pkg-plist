@@ -331,7 +331,6 @@ include/fxt/fht/shortfhtditcore.h
 include/fxt/fht/slowht.h
 include/fxt/fxtalloca.h
 include/fxt/fxtio.h
-include/fxt/fxtiomanip.h
 include/fxt/fxttypes.h
 include/fxt/graph-all.h
 include/fxt/graph/digraph-paths.h
@@ -1200,6 +1199,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/revbin-perm-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/swap-blocks-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/swap-blocks-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206702-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206702-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A080936-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A080936-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206464-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206464-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bracelets-demo.cc
@@ -1230,6 +1235,7 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/unique-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nextarg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/topics.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/seq
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sort
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perm
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mod
