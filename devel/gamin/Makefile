@@ -30,7 +30,8 @@ CONFLICTS=	fam-[0-9]*
 GNU_CONFIGURE=	yes
 
 .if !defined(GAMIN_SLAVE)
-OPTIONS=	GAM_POLLER "Use gamin's poller instead of kqueue's" off
+OPTIONS=	GAM_POLLER "Use gamin's poller instead of kqueue's" off \
+		LIBINOTIFY "Use libinotify as the FAM backend" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -38,6 +39,14 @@ OPTIONS=	GAM_POLLER "Use gamin's poller instead of kqueue's" off
 .if !defined(GAMIN_SLAVE)
 .if defined(WITH_GAM_POLLER)
 CPPFLAGS+=	-DUSE_GAMIN_POLLER=1
+.endif
+
+.if defined(WITH_LIBINOTIFY)
+CONFIGURE_ARGS+=--enable-inotify
+LDFLAGS+=	-L${LOCALBASE}/lib -linotify
+LIB_DEPENDS+=	inotify.0:${PORTSDIR}/devel/libinotify
+.else
+CONFIGURE_ARGS+=--disable-inotify
 .endif
 .endif
 
