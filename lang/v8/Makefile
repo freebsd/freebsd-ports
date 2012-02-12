@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.8.5
+PORTVERSION=	3.9.5
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
@@ -17,7 +17,6 @@ COMMENT=	Google\'s open source JavaScript engine
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_XZ=		yes
-FETCH_ARGS=	-pRr
 USE_SCONS=	yes
 USE_LDCONFIG=	yes
 OPTIONS=	DEBUG "Build in debug mode" Off \
