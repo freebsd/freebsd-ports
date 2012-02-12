@@ -1,7 +1,7 @@
 %%PORTDOCS%%share/doc/py-xmlrpclib/README
-lib/%%PYTHON_VERSION%%/site-packages/xmlrpclib.py
-lib/%%PYTHON_VERSION%%/site-packages/xmlrpclib.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xmlrpclib.pyo
+%%PYTHON_SITELIBDIR%%/xmlrpclib.py
+%%PYTHON_SITELIBDIR%%/xmlrpclib.pyc
+%%PYTHON_SITELIBDIR%%/xmlrpclib.pyo
 share/examples/py-xmlrpclib/xmlrpc_handler.py
 share/examples/py-xmlrpclib/xmlrpcserver.py
 @dirrm share/examples/py-xmlrpclib
