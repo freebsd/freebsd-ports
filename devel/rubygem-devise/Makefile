@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	devise
-PORTVERSION=	1.5.3
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,8 @@ COMMENT=	Flexible authentication solution for Rails with Warden
 
 RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0:${PORTSDIR}/security/rubygem-bcrypt-ruby \
 		rubygem-warden>=1.1:${PORTSDIR}/devel/rubygem-warden \
-		rubygem-orm_adapter>=0.0.3:${PORTSDIR}/devel/rubygem-orm_adapter
+		rubygem-orm_adapter>=0.0.3:${PORTSDIR}/devel/rubygem-orm_adapter \
+		rubygem-railties>=3.1:${PORTSDIR}/www/rubygem-railties
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
