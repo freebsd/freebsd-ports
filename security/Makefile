@@ -853,6 +853,7 @@
     SUBDIR += sshguard-ipfw
     SUBDIR += sshguard-pf
     SUBDIR += sshit
+    SUBDIR += sshpass
     SUBDIR += ssl-admin
     SUBDIR += sslproxy
     SUBDIR += sslscan
