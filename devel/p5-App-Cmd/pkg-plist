@@ -9,11 +9,13 @@
 %%SITE_PERL%%/App/Cmd/Subdispatch.pm
 %%SITE_PERL%%/App/Cmd/Subdispatch/DashedStyle.pm
 %%SITE_PERL%%/App/Cmd/Tester.pm
+%%SITE_PERL%%/App/Cmd/Tester/CaptureExternal.pm
 %%SITE_PERL%%/App/Cmd/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrmtry %%SITE_PERL%%/App/Cmd/Subdispatch
-@dirrmtry %%SITE_PERL%%/App/Cmd/Command
-@dirrmtry %%SITE_PERL%%/App/Cmd
+@dirrm %%SITE_PERL%%/App/Cmd/Tester
+@dirrm %%SITE_PERL%%/App/Cmd/Subdispatch
+@dirrm %%SITE_PERL%%/App/Cmd/Command
+@dirrm %%SITE_PERL%%/App/Cmd
 @dirrmtry %%SITE_PERL%%/App
