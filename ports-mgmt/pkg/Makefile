@@ -7,6 +7,7 @@
 
 PORTNAME=	pkg
 DISTVERSION=	1.0-beta5
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -21,6 +22,7 @@ USE_BZIP2=	yes
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
 .if defined(WITH_PKGNG)
 PKG_DEPENDS=
+.undef INSTALLS_DEPENDS
 .if !exists(${LOCALBASE}/sbin/pkg)
 PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
 .endif
