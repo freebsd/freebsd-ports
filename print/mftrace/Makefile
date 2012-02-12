@@ -38,8 +38,8 @@ MAN1=	mftrace.1
 PLIST_FILES=	\
 		bin/gf2pbm \
 		bin/mftrace \
-		lib/%%PYTHON_VERSION%%/site-packages/afm.py \
-		lib/%%PYTHON_VERSION%%/site-packages/tfm.py
+		%%PYTHON_SITELIBDIR%%/afm.py \
+		%%PYTHON_SITELIBDIR%%/tfm.py
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2pbm ${PREFIX}/bin
