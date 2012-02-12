@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	php-libawl
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel
 MASTER_SITES=	http://debian.mcmillan.net.nz/packages/awl/ \
 		SF/rscds/awl/${PORTVERSION}
