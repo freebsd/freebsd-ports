@@ -1,4 +1,4 @@
-lib/%%PYTHON_VERSION%%/site-packages/psycopgmodule.so
+%%PYTHON_SITELIBDIR%%/psycopgmodule.so
 %%PORTDOCS%%share/doc/py-psycopg/AUTHORS
 %%PORTDOCS%%share/doc/py-psycopg/COPYING
 %%PORTDOCS%%share/doc/py-psycopg/CREDITS

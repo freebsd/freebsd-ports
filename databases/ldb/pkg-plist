@@ -29,5 +29,5 @@ lib/libpyldb-util.so.1.1.0
 libdata/pkgconfig/pyldb-util.pc
 libdata/pkgconfig/ldb.pc
 @dirrmtry libdata/pkgconfig
-lib/%%PYTHON_VERSION%%/site-packages/ldb.so
+%%PYTHON_SITELIBDIR%%/ldb.so
 @dirrmtry lib/ldb
