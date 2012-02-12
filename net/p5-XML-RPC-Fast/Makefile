@@ -1,11 +1,12 @@
 # New ports collection makefile for:	XML-RPC-Fast
 # Whom:					gugu
 # Date created:				08 December 2009
+#
 # $FreeBSD$
-# Generated with App::Pm2Port . Do not edit directly, please
+#
 
 PORTNAME=	XML-RPC-Fast
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,14 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mons@cpan.org
 COMMENT=	Fast and modular implementation for an XML-RPC client and server
 
-BUILD_DEPENDS=	p5-XML-Hash-LX>=0.05:${PORTSDIR}/textproc/p5-XML-Hash-LX \
-		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-WWW-Curl>=0:${PORTSDIR}/www/p5-WWW-Curl \
-		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+		p5-XML-Hash-LX>=0.05:${PORTSDIR}/textproc/p5-XML-Hash-LX \
+		p5-XML-LibXML>=1.58:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+
 PERL_CONFIGURE=	yes
+
 MAN3=		XML::RPC::Enc.3 \
 		XML::RPC::Enc::LibXML.3 \
 		XML::RPC::Fast.3 \
