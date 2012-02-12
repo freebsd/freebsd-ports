@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
-PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/ogg/vorbis.so
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/ogg/vorbis.so
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyvorbis

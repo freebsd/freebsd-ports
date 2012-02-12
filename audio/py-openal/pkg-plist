@@ -1,8 +1,8 @@
-lib/%%PYTHON_VERSION%%/site-packages/pyopenal/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pyopenal/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyopenal/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/_openal.so
+%%PYTHON_SITELIBDIR%%/pyopenal/__init__.py
+%%PYTHON_SITELIBDIR%%/pyopenal/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyopenal/__init__.pyo
+%%PYTHON_SITELIBDIR%%/_openal.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/sword.wav
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyopenal
+@dirrm %%PYTHON_SITELIBDIR%%/pyopenal
