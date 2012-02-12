@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	2.37
+PORTVERSION=	2.40
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DESPAIR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Very simple Perl interface to query raw whois data
 
-RUN_DEPENDS=	${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Net/IDN/Punycode.pm:${PORTSDIR}/textproc/p5-Net-IDN-Encode \
-		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-Net-IDN-Encode>=1:${PORTSDIR}/textproc/p5-Net-IDN-Encode \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::Whois::Raw.3
 MAN1=		pwhois.1
+MAN3=		Net::Whois::Raw.3
 
 .include <bsd.port.mk>
