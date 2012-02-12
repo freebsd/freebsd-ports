@@ -7,7 +7,7 @@
 
 PORTNAME=	sshpass
 PORTVERSION=	1.05
-CATEGORIES=	sysutils
+CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/sshpass/${PORTVERSION}
 
 MAINTAINER=	gaod@hychen.org
