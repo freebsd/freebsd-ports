@@ -3,9 +3,10 @@
 # Whom:					Autrijus Tang <autrijus@autrijus.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	IPC-Run3
-PORTVERSION=	0.044
+PORTVERSION=	0.045
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
