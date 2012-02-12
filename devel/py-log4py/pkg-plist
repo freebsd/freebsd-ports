@@ -1,6 +1,6 @@
-lib/%%PYTHON_VERSION%%/site-packages/log4py.py
-lib/%%PYTHON_VERSION%%/site-packages/log4py.pyc
-lib/%%PYTHON_VERSION%%/site-packages/log4py.pyo
+%%PYTHON_SITELIBDIR%%/log4py.py
+%%PYTHON_SITELIBDIR%%/log4py.pyc
+%%PYTHON_SITELIBDIR%%/log4py.pyo
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

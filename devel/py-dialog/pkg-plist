@@ -1,5 +1,5 @@
-lib/%%PYTHON_VERSION%%/site-packages/dialog.py
-lib/%%PYTHON_VERSION%%/site-packages/dialog.pyc
-lib/%%PYTHON_VERSION%%/site-packages/dialog.pyo
+%%PYTHON_SITELIBDIR%%/dialog.py
+%%PYTHON_SITELIBDIR%%/dialog.pyc
+%%PYTHON_SITELIBDIR%%/dialog.pyo
 %%EXAMPLESDIR%%/demo.py
 @dirrm %%EXAMPLESDIR%%

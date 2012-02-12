@@ -1,4 +1,4 @@
-lib/%%PYTHON_VERSION%%/site-packages/spark.py
+%%PYTHON_SITELIBDIR%%/spark.py
 %%PORTDOCS%%%%DOCSDIR%%/doc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc.tex
 %%PORTDOCS%%%%DOCSDIR%%/paper.ps.gz

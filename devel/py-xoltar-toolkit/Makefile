@@ -17,15 +17,13 @@ COMMENT=	Functional programming, lazy expressions and thread pools for Python
 
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
-INSTALLDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 
 do-build:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@ ${MKDIR} ${INSTALLDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/*.py* ${INSTALLDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/*.py* ${PYTHON_SITELIBDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
