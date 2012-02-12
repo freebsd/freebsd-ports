@@ -17,7 +17,6 @@ COMMENT=	Dynamic Scripting for adaptive AI systems
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	dynrules
 
 post-install:
 .if !defined(NOPORTDOCS)

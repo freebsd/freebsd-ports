@@ -1,13 +1,13 @@
-include/%%PYTHON_VERSION%%/pygame/bitmask.h
-include/%%PYTHON_VERSION%%/pygame/fastevents.h
-include/%%PYTHON_VERSION%%/pygame/ffmovie.h
-include/%%PYTHON_VERSION%%/pygame/font.h
-include/%%PYTHON_VERSION%%/pygame/mixer.h
-include/%%PYTHON_VERSION%%/pygame/pgopengl.h
-include/%%PYTHON_VERSION%%/pygame/pygame.h
-include/%%PYTHON_VERSION%%/pygame/pygamedocs.h
-include/%%PYTHON_VERSION%%/pygame/scrap.h
-include/%%PYTHON_VERSION%%/pygame/surface.h
+%%PYTHON_INCLUDEDIR%%/pygame/bitmask.h
+%%PYTHON_INCLUDEDIR%%/pygame/fastevents.h
+%%PYTHON_INCLUDEDIR%%/pygame/ffmovie.h
+%%PYTHON_INCLUDEDIR%%/pygame/font.h
+%%PYTHON_INCLUDEDIR%%/pygame/mixer.h
+%%PYTHON_INCLUDEDIR%%/pygame/pgopengl.h
+%%PYTHON_INCLUDEDIR%%/pygame/pygame.h
+%%PYTHON_INCLUDEDIR%%/pygame/pygamedocs.h
+%%PYTHON_INCLUDEDIR%%/pygame/scrap.h
+%%PYTHON_INCLUDEDIR%%/pygame/surface.h
 %%PYTHON_SITELIBDIR%%/pygame/gp2x/__init__.py
 %%PYTHON_SITELIBDIR%%/pygame/gp2x/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pygame/gp2x/__init__.pyo
@@ -250,4 +250,4 @@ include/%%PYTHON_VERSION%%/pygame/surface.h
 @dirrm %%PYTHON_SITELIBDIR%%/pygame/gp2x
 @dirrm %%PYTHON_SITELIBDIR%%/pygame/threads
 @dirrm %%PYTHON_SITELIBDIR%%/pygame
-@dirrm include/%%PYTHON_VERSION%%/pygame
+@dirrm %%PYTHON_INCLUDEDIR%%/pygame
