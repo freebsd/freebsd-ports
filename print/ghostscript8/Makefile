@@ -9,7 +9,7 @@ PORTNAME=	ghostscript8
 PORTVERSION=	8.71
 PORTREVISION=	8
 CATEGORIES=	print
-MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
+MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag
@@ -183,7 +183,6 @@ pre-build: pre-build-drivers.mak
 
 pre-su-install:
 	${MKDIR} ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install-docs:
 	${MKDIR} ${WRKSRC}/contrib/japanese
@@ -203,6 +202,7 @@ post-install: post-install-fapi
 .endif
 
 post-install:
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/${PORTVERSION}
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
 	${LN} -sf gsc ${PREFIX}/bin/gs
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
