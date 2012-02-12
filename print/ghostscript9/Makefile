@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghostscript9
-PORTVERSION=	9.04
+PORTVERSION=	9.05
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -23,7 +23,6 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		jasper:${PORTSDIR}/graphics/jasper \
 		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
@@ -32,7 +31,7 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 # XXX: lcms shared lib support is broken
 #		lcms:${PORTSDIR}/graphics/lcms
 
-RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,9,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,9$,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[78]-[0-9]* \
 			ghostscript[78]-*-[0-9]*
@@ -55,18 +54,16 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
-		--with-jasper \
+		--without-jasper \
 		--with-drivers=""
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/lcms/include \
-		-I${WRKSRC}/jasper/src/libjasper/include \
 		-I${LOCALBASE}/include/libpng \
 		-I${LOCALBASE}/include
 XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	${PTHREAD_LIBS}
 
 PLIST_SUB=	GS_VERSION="${PORTVERSION}" \
-		CIDFONTDIR="${CIDFONTDIR:S,^${PREFIX}/,,}" \
 		X11BITS=${X11BITS}
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
@@ -81,16 +78,17 @@ OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \
 		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
-		ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 wftopfa.1
+		ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2pdfwr.1 ps2ps.1 \
+		wftopfa.1
 MLINKS=		gslp.1 gsbj.1 \
 		gslp.1 gsdj.1 \
 		gslp.1 gsdj500.1 \
 		gslp.1 gslj.1 \
 		ps2pdf.1 ps2pdf12.1 \
 		ps2pdf.1 ps2pdf13.1 \
+		ps2pdf.1 ps2pdf14.1 \
 		ps2ps.1 eps2eps.1
 
-CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 
 .include "Makefile.drivers"
@@ -188,7 +186,6 @@ pre-install:
 
 pre-su-install:
 	${MKDIR} ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install-docs:
 	${MKDIR} ${WRKSRC}/contrib/japanese
@@ -199,9 +196,11 @@ post-install-docs:
 		( cd ${DOCSDIR} && ${TAR} -xof - )
 
 post-install:
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/${PORTVERSION}
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
 	${LN} -sf gsc ${PREFIX}/bin/gs
-	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
+	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont \
+		${DATADIR}/${PORTVERSION}/Resource/CIDFont/fonts
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

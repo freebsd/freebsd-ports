@@ -1,6 +1,6 @@
---- base/Makefile.in.orig	2011-03-25 02:26:17.000000000 +0900
-+++ base/Makefile.in	2011-05-17 18:01:52.000000000 +0900
-@@ -47,9 +47,8 @@
+--- base/Makefile.in.orig	2012-02-08 17:48:48.000000000 +0900
++++ base/Makefile.in	2012-02-13 00:28:00.000000000 +0900
+@@ -48,9 +48,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
@@ -12,7 +12,7 @@
  INSTALL_SHARED = @INSTALL_SHARED@
  
  prefix = @prefix@
-@@ -195,7 +194,7 @@
+@@ -201,7 +200,7 @@
  # some older JPEG streams that violate the standard. If the JPEG
  # library built from local sources, the patch will be applied.
  
@@ -21,7 +21,7 @@
  JPEG_NAME=jpeg
  
  # Define the directory where the PNG library sources are stored,
-@@ -203,12 +202,12 @@
+@@ -209,12 +208,12 @@
  # You may need to change this if the libpng version changes.
  # See png.mak for more information.
  
@@ -36,7 +36,7 @@
  TIFFSRCDIR=@LIBTIFFDIR@
  TIFFPLATFORM=unix
  TIFFCONFIG_SUFFIX=
-@@ -217,7 +216,7 @@
+@@ -223,7 +222,7 @@
  # Define the directory where the zlib sources are stored.
  # See zlib.mak for more information.
  
@@ -45,7 +45,7 @@
  ZSRCDIR=@ZLIBDIR@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
-@@ -313,7 +312,7 @@
+@@ -330,7 +329,7 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -54,16 +54,16 @@
  CFLAGS_DEBUG=@DBG_CFLAGS@
  CFLAGS_PROFILE=-pg @OPT_CFLAGS@
  CFLAGS_SO=@DYNAMIC_CFLAGS@
-@@ -362,7 +361,7 @@
+@@ -381,7 +380,7 @@
  # Solaris may need -lnsl -lsocket -lposix4.
  # (Libraries required by individual drivers are handled automatically.)
  
--EXTRALIBS=@LIBS@ @DYNAMIC_LIBS@ @FONTCONFIG_LIBS@
-+EXTRALIBS=@LIBS@ @DYNAMIC_LIBS@ @FONTCONFIG_LIBS@ -Wl,-export-dynamic
+-EXTRALIBS=$(XTRALIBS) @LIBS@ @DYNAMIC_LIBS@ @FONTCONFIG_LIBS@ @FT_LIBS@
++EXTRALIBS=$(XTRALIBS) @LIBS@ @DYNAMIC_LIBS@ @FONTCONFIG_LIBS@ @FT_LIBS@ -Wl,-export-dynamic
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -406,7 +405,7 @@
+@@ -425,7 +424,7 @@
  # the pthread library. Otherwise use SYNC=nosync
  #SYNC=posync
  #SYNC=nosync
@@ -72,7 +72,7 @@
  
  # programs we use
  RM=rm -f
-@@ -494,27 +493,27 @@
+@@ -513,27 +512,27 @@
  #DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
  #DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev
  DEVICE_DEVS=$(DISPLAY_DEV) @X11_DEVS@
@@ -121,7 +121,7 @@
  
  
  # Shared library target to build.
-@@ -550,6 +549,7 @@
+@@ -578,6 +577,7 @@
  # ---------------- End of platform-specific section ---------------- #
  
  INSTALL_CONTRIB=@INSTALL_CONTRIB@

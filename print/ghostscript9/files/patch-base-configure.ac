@@ -1,25 +1,25 @@
---- base/configure.ac.orig	2011-03-30 15:48:01.000000000 +0900
-+++ base/configure.ac	2011-06-10 14:36:19.000000000 +0900
-@@ -1019,7 +1019,7 @@
+--- base/configure.ac.orig	2012-02-08 17:48:48.000000000 +0900
++++ base/configure.ac	2012-02-13 00:31:19.000000000 +0900
+@@ -1244,7 +1244,7 @@
  X_DEVS=""
  X_LIBS=""
  
 -if test x$no_x != xyes; then
 +if test x$with_x != xno; then
- 	if test "$x_libraries" = "/usr/lib"; then
- 		echo "Ignoring X library directory \"$x_libraries\" requested by configure."
- 		x_libraries="NONE"
-@@ -1412,7 +1412,12 @@
- 		DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
- 		;;
- 		*BSD)
--		DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
-+		if test "x$X_DEVS" != x; then
-+			DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
-+			INSTALL_SHARED="install-shared"
-+		else
-+			DYNAMIC_DEVS=""
-+		fi
- 		DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
- 		X11_DEVS=""
- 		OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"
+         if test "$x_libraries" = "/usr/lib"; then
+                 echo "Ignoring X library directory \"$x_libraries\" requested by configure."
+                 x_libraries="NONE"
+@@ -1637,7 +1637,12 @@
+                         DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
+                         ;;
+                         *BSD)
+-                        DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
++	 		if test "x$X_DEVS" != x; then
++	 			DYNAMIC_DEVS="\$(GLOBJDIR)/X11.so"
++				INSTALL_SHARED="install-shared"
++	 		else
++	 			DYNAMIC_DEVS=""
++	 		fi
+                         DYNAMIC_FLAGS="-DGS_DEVS_SHARED -DGS_DEVS_SHARED_DIR=\\\"\$(gssharedir)\\\""
+                         X11_DEVS=""
+                         OPT_CFLAGS="$DYNAMIC_CFLAGS $OPT_CFLAGS"

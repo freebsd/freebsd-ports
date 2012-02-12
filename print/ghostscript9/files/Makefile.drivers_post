@@ -9,7 +9,7 @@ OPTIONS_${D}_DEFAULT=	on
 OPTIONS_${D}_DEFAULT=	off
 .endif
 .endfor
-.for D in SVGALIB CAIRO CUPS GTK
+.for D in SVGALIB CUPS GTK
 .if !defined(WITH_${D})
 OPTIONS_${D}_DEFAULT=	off
 .else
@@ -23,7 +23,6 @@ OPTIONS_X11_DEFAULT=	on
 OPTIONS_GTK_DEFAULT=	on
 OPTIONS_SVGALIB_DEFAULT=on
 OPTIONS_ICONV_DEFAULT=	on
-OPTIONS_CAIRO_DEFAULT=	on
 OPTIONS_CUPS_DEFAULT=	on
 OPTIONS_GS_DEFAULT_ON=	on
 OPTIONS_GS_DEFAULT_OFF=	on
@@ -170,13 +169,14 @@ DEVICE_DEVS3= deskjet.dev djet500.dev laserjet.dev ljetplus.dev	\
 	lj5mono.dev lj5gray.dev cups.dev
 DEVICE_DEVS4= cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev	\
 	pjxl.dev pjxl300.dev ijs.dev
-DEVICE_DEVS5= uniprint.dev omni.dev
+DEVICE_DEVS5= uniprint.dev omni.dev inkcov.dev
 DEVICE_DEVS6= bj10e.dev bj200.dev bjc600.dev bjc800.dev png48.dev	\
 	png16m.dev pnggray.dev pngmono.dev png256.dev png16.dev		\
 	pngalpha.dev
 DEVICE_DEVS7= faxg3.dev faxg32d.dev faxg4.dev
 DEVICE_DEVS8= pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev	\
-	pcxcmyk.dev svgwrite.dev
+	pcxcmyk.dev svgwrite.dev plan.dev planc.dev plang.dev plank.dev \
+	planm.dev plib.dev plibc.dev plibg.dev plibk.dev plibm.dev
 DEVICE_DEVS9= pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev		\
 	pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev	\
 	pkmraw.dev pksm.dev pksmraw.dev
