@@ -7,6 +7,7 @@
 
 PORTNAME=	Class-Accessor-Complex
 PORTVERSION=	1.100880
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Arrays, hashes, booleans, integers, sets and more
 
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Data-Miscellany>=0:${PORTSDIR}/devel/p5-Data-Miscellany \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Class-Accessor-Installer>=0:${PORTSDIR}/devel/p5-Class-Accessor-Installer
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_PERL5_RUN=	5.8.1+
