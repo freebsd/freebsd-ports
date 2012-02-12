@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	xapian-bindings10
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
-DISTNAME=      ${PORTNAME:S/10$//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	xapian-core10>=1.0.22:${PORTSDIR}/databases/xapian-core10
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-LICENSE=	GPLv2
-CONFIGURE_ARGS+=	--datarootdir="${DATADIR}" --docdir="${DOCSDIR}" \
+CONFIGURE_ARGS=	--datarootdir="${DATADIR}" --docdir="${DOCSDIR}" \
 		--without-csharp --without-java --without-tcl
 GNU_CONFIGURE=	yes
 
