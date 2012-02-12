@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Net-SAML
-PORTVERSION=	0.76
+PORTVERSION=	1.05
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:SAMPO
 PKGNAMEPREFIX=	p5-
 DISTNAME=	zxid-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -25,15 +24,15 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/Net
 
+MAN3=		Net::SAML.3
+
 post-patch:
-	${REINPLACE_CMD} -e 's!/apps/openssl/std!${LOCALBASE}!' \
-		${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|/apps/openssl/std|${LOCALBASE}|' ${WRKSRC}/Makefile.PL
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/../zxid.pl    ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/../zxidhlo.pl ${EXAMPLESDIR}
-
-MAN3=		Net::SAML.3
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+	cd ${WRKSRC}/../ && ${INSTALL_SCRIPT} zxid.pl zxidhlo.pl ${EXAMPLESDIR}/
+.endif
 
 .include <bsd.port.mk>
