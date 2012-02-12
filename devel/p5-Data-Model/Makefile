@@ -20,6 +20,11 @@ RUN_DEPENDS=	\
 	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
 	p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Sub-Uplevel>0:${PORTSDIR}/devel/p5-Sub-Uplevel \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
 
