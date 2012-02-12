@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_google_authenticator
 PORTVERSION=	20120119
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/dumbbell
 DISTNAME=	google-authenticator-${PORTVERSION}
@@ -15,8 +16,6 @@ MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	PAM module for two-step authentication from Google
 
 LICENSE=	AL2
-
-BROKEN=		deletes /dev/null
 
 USE_GMAKE=	yes
 
