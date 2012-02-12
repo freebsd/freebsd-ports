@@ -1,5 +1,5 @@
-include/%%PYTHON_VERSION%%/dynrules/compat.h
-include/%%PYTHON_VERSION%%/dynrules/dynrules.h
+%%PYTHON_INCLUDEDIR%%/dynrules/compat.h
+%%PYTHON_INCLUDEDIR%%/dynrules/dynrules.h
 %%PYTHON_SITELIBDIR%%/dynrules/__init__.py
 %%PYTHON_SITELIBDIR%%/dynrules/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dynrules/__init__.pyo
@@ -69,7 +69,7 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules/examples
 @dirrm %%PYTHON_SITELIBDIR%%/dynrules
-@dirrm include/%%PYTHON_VERSION%%/dynrules
+@dirrm %%PYTHON_INCLUDEDIR%%/dynrules
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources/ref
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_static

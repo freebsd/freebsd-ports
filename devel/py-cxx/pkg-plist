@@ -1,17 +1,17 @@
-include/%%PYTHON_VERSION%%/CXX/Config.hxx
-include/%%PYTHON_VERSION%%/CXX/CxxDebug.hxx
-include/%%PYTHON_VERSION%%/CXX/Exception.hxx
-include/%%PYTHON_VERSION%%/CXX/ExtensionModule.hxx
-include/%%PYTHON_VERSION%%/CXX/ExtensionOldType.hxx
-include/%%PYTHON_VERSION%%/CXX/ExtensionType.hxx
-include/%%PYTHON_VERSION%%/CXX/ExtensionTypeBase.hxx
-include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
-include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
-include/%%PYTHON_VERSION%%/CXX/Objects.hxx
-include/%%PYTHON_VERSION%%/CXX/PythonType.hxx
-include/%%PYTHON_VERSION%%/CXX/Version.hxx
-include/%%PYTHON_VERSION%%/CXX/WrapPython.h
-@dirrm include/%%PYTHON_VERSION%%/CXX
+%%PYTHON_INCLUDEDIR%%/CXX/Config.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/CxxDebug.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/Exception.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/ExtensionModule.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/ExtensionOldType.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/ExtensionType.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/ExtensionTypeBase.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/Extensions.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/IndirectPythonInterface.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/Objects.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/PythonType.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/Version.hxx
+%%PYTHON_INCLUDEDIR%%/CXX/WrapPython.h
+@dirrm %%PYTHON_INCLUDEDIR%%/CXX
 %%PYTHON_SITELIBDIR%%/CXX/__init__.py
 %%PYTHON_SITELIBDIR%%/CXX/__init__.pyc
 %%PYTHON_SITELIBDIR%%/CXX/__init__.pyo
