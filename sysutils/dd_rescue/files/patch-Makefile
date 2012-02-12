@@ -1,11 +1,11 @@
---- Makefile-bla	2010-09-17 14:07:46.000000000 +0200
-+++ Makefile	2010-09-17 14:07:58.000000000 +0200
+--- Makefile.orig	2012-01-22 22:48:54.000000000 +0900
++++ Makefile	2012-02-12 23:57:39.000000000 +0900
 @@ -6,9 +6,6 @@
  
  DESTDIR = 
  
 -CC = gcc
--RPM_OPT_FLAGS = -O2 -Wall -g
+-RPM_OPT_FLAGS = -Os -Wall -g
 -CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS)
  INSTALL = install
  INSTALLFLAGS = -s
