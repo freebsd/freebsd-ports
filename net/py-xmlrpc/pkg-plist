@@ -1,10 +1,10 @@
-lib/%%PYTHON_VERSION%%/site-packages/_xmlrpc.so
-lib/%%PYTHON_VERSION%%/site-packages/pyxmlrpclib.py
-lib/%%PYTHON_VERSION%%/site-packages/pyxmlrpclib.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyxmlrpclib.pyo
-lib/%%PYTHON_VERSION%%/site-packages/xmlrpc.py
-lib/%%PYTHON_VERSION%%/site-packages/xmlrpc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/xmlrpc.pyo
+%%PYTHON_SITELIBDIR%%/_xmlrpc.so
+%%PYTHON_SITELIBDIR%%/pyxmlrpclib.py
+%%PYTHON_SITELIBDIR%%/pyxmlrpclib.pyc
+%%PYTHON_SITELIBDIR%%/pyxmlrpclib.pyo
+%%PYTHON_SITELIBDIR%%/xmlrpc.py
+%%PYTHON_SITELIBDIR%%/xmlrpc.pyc
+%%PYTHON_SITELIBDIR%%/xmlrpc.pyo
 %%PORTDOCS%%share/examples/py-xmlrpc/crj/baseClient.py
 %%PORTDOCS%%share/examples/py-xmlrpc/crj/baseControl.py
 %%PORTDOCS%%share/examples/py-xmlrpc/crj/baseServer.py
