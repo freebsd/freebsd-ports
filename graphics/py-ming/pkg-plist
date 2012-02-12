@@ -1,6 +1,6 @@
-lib/%%PYTHON_VERSION%%/site-packages/_mingc.so
-lib/%%PYTHON_VERSION%%/site-packages/ming.py
-lib/%%PYTHON_VERSION%%/site-packages/ming.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mingc.py
-lib/%%PYTHON_VERSION%%/site-packages/mingc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mingc-0.4.3-py2.7.egg-info
+%%PYTHON_SITELIBDIR%%/_mingc.so
+%%PYTHON_SITELIBDIR%%/ming.py
+%%PYTHON_SITELIBDIR%%/ming.pyc
+%%PYTHON_SITELIBDIR%%/mingc.py
+%%PYTHON_SITELIBDIR%%/mingc.pyc
+%%PYTHON_SITELIBDIR%%/mingc-0.4.3-py%%PYTHON_VER%%.egg-info
