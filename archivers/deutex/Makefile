@@ -7,6 +7,7 @@
 
 PORTNAME=	deutex
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	archivers games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/deutex/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -23,7 +24,10 @@ PLIST_FILES=	bin/deusf bin/deutex
 PORTDOCS=	*
 
 post-extract:
+	@${REINPLACE_CMD} -e 's,-mkdir,mkdir -p,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,malloc\.h,stdlib.h,' ${WRKSRC}/src/tools.c
+	@${REINPLACE_CMD} -e '/blockv/s,VOCHEAD,VOCBLOCK1,' \
+		${WRKSRC}/src/sound.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deusf ${WRKSRC}/deutex ${PREFIX}/bin
