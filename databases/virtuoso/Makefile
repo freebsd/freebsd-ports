@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	virtuoso
-PORTVERSION=	6.1.3
-PORTREVISION=	1
+PORTVERSION=	6.1.4
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -15,9 +15,13 @@ DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Universal SQL/Application Server
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		htmldoc:${PORTSDIR}/textproc/htmldoc
-LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc\
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-readline\
