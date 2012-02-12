@@ -14,7 +14,7 @@
 # For development version, please try graphics/p5-Image-ExifTool-devel
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	8.75
+PORTVERSION=	8.77
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
