@@ -20,7 +20,6 @@ USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/pyexif
 DATADIR=	${PREFIX}/share/py-exif
 DOCSDIR=	${PREFIX}/share/doc/py-exif
-INSTALL_SITELIBDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 
 post-patch:
 .for pyfile in exiftool exifinfo.py
@@ -33,10 +32,9 @@ do-build:
 	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib
 
 do-install:
-	@ ${MKDIR} ${INSTALL_SITELIBDIR}
 	@ ${MKDIR} ${PREFIX}/bin
 	@ cd ${WRKSRC}/lib && ${INSTALL_DATA} *.py *.pyc *.pyo \
-	  ${INSTALL_SITELIBDIR}
+	  ${PYTHON_SITELIBDIR}
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/bin/exiftool ${PREFIX}/bin/py-exiftool
 	@ ${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC}/share/exiftool && ${INSTALL_DATA} *.html *.txt \

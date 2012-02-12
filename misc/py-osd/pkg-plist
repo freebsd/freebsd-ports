@@ -1,8 +1,8 @@
-lib/%%PYTHON_VERSION%%/site-packages/_pyosd.so
-lib/%%PYTHON_VERSION%%/site-packages/pyosd/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pyosd/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyosd/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pyosd/daemon.py
-lib/%%PYTHON_VERSION%%/site-packages/pyosd/daemon.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pyosd/daemon.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pyosd
+%%PYTHON_SITELIBDIR%%/_pyosd.so
+%%PYTHON_SITELIBDIR%%/pyosd/__init__.py
+%%PYTHON_SITELIBDIR%%/pyosd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyosd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyosd/daemon.py
+%%PYTHON_SITELIBDIR%%/pyosd/daemon.pyc
+%%PYTHON_SITELIBDIR%%/pyosd/daemon.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyosd

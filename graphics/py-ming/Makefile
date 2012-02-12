@@ -16,6 +16,7 @@ COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
 
 MASTERDIR=	${.CURDIR}/../../graphics/ming
 PLIST=		${.CURDIR}/pkg-plist
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 INSTALL_WRKSRC=		${WRKSRC}/py_ext
 USE_PYTHON=	yes
 #USE_PYDISTUTILS=	yes
