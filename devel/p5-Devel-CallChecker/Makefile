@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-CallChecker
-PORTVERSION=	0.004
+PORTVERSION=	0.005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Custom op checking attached to subroutines
 
-BUILD_DEPENDS=	p5-DynaLoader-Functions>=0:${PORTSDIR}/devel/p5-DynaLoader-Functions
-RUN_DEPENDS=	p5-DynaLoader-Functions>=0:${PORTSDIR}/devel/p5-DynaLoader-Functions
+BUILD_DEPENDS=	p5-DynaLoader-Functions>=0.001:${PORTSDIR}/devel/p5-DynaLoader-Functions
+RUN_DEPENDS=	p5-DynaLoader-Functions>=0.001:${PORTSDIR}/devel/p5-DynaLoader-Functions
 
 TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
