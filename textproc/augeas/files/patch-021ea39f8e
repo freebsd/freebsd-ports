@@ -1,0 +1,13 @@
+diff --git a/src/regexp.c b/src/regexp.c
+index cf0ea5d..811087d 100644
+--- src/regexp.c
++++ src/regexp.c
+@@ -50,7 +50,7 @@
+     ret = fa_restrict_alphabet(r->pattern->str, strlen(r->pattern->str),
+                                &nre, &nre_len, 2, 1);
+     if (ret == 0) {
+-        pat = escape(nre, nre_len);
++        pat = escape(nre, nre_len, RX_ESCAPES);
+         free(nre);
+     }
+ #endif

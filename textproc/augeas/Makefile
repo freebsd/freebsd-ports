@@ -7,35 +7,40 @@
 #
 
 PORTNAME=	augeas
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 
-MAINTAINER=	raj@csub.edu
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration editing tool
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig libxml2
 USE_AUTOTOOLS=	autoconf aclocal autoheader automake libtool
 ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
+
+TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		gsed:${PORTSDIR}/textproc/gsed
 
 MAN1=		augparse.1 augtool.1
 MANCOMPRESSED=	no
 
 LENSESDIR=	${PREFIX}/share/augeas/lenses
 
-post-extract:
-	@${RM} ${WRKSRC}/gnulib/lib/gettext.h
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:$$(libdir)/pkgconfig:${PREFIX}/libdata/pkgconfig:' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's:/bin/bash:/usr/bin/env bash:' ${WRKSRC}/tests/*.sh
+	@${REINPLACE_CMD} -e 's:sed:gsed:' ${WRKSRC}/tests/test-augtool.sh
 
 post-install:
 	${MKDIR} ${LENSESDIR}/tests
 	${INSTALL_DATA} ${FILESDIR}/rcconf.aug ${LENSESDIR}/rcconf.aug
 	${INSTALL_DATA} ${FILESDIR}/test_rcconf.aug ${LENSESDIR}/tests/rcconf.aug
+
+test: install
+	@cd ${WRKSRC}/tests && make check
 
 .include <bsd.port.mk>
