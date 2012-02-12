@@ -1,2 +1,0 @@
-lib/php/%%PHP_EXT_DIR%%/xdebug.so
-@dirrmtry lib/php/%%PHP_EXT_DIR%%
