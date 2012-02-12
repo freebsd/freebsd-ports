@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gitolite
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
 		LOCAL/tdb
