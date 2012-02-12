@@ -24,6 +24,8 @@ share/gtags/BOKIN_MODEL_FAQ
 share/gtags/DONORS
 share/gtags/bless.sh.tmpl
 share/gtags/completion.cgi.tmpl
+share/gtags/elvis-2.2_0.patch
+share/gtags/elvis.rc
 share/gtags/ghtml.cgi.tmpl
 share/gtags/global.cgi.tmpl
 share/gtags/globash.rc
