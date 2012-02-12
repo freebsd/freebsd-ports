@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.4 2012-01-15 08:02:25 hrs Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.5 2012-02-12 18:10:49 hrs Exp $
 bin/dumphint
 bin/dvipdf
 bin/eps2eps
@@ -53,13 +53,10 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78ms-RKSJ-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/83pv-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90ms-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90ms-RKSJ-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90ms-RKSJ-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90msp-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90msp-RKSJ-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90pv-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90pv-RKSJ-UCS2
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90pv-RKSJ-UCS2C
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/90pv-RKSJ-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Add-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Add-RKSJ-H
@@ -72,24 +69,12 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-4
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-5
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-6
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-B5pc
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-ETenms-B5
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-CID
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-Host
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-Mac
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-0
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-1
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-3
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-4
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-5
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-GBK-EUC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-GBpc-EUC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-H-CID
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-H-Host
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-H-Mac
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-GB1-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-0
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-1
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-2
@@ -97,48 +82,22 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-4
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-5
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-6
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-90ms-RKSJ
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-90pv-RKSJ
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-H-CID
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-H-Host
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-H-Mac
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-PS-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-PS-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-UCS2
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Japan2-0
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-0
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-1
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-2
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-H-CID
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-H-Host
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-H-Mac
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-KSCms-UHC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-KSCpc-EUC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-Korea1-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/B5-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/B5-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/B5pc-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/B5pc-UCS2
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/B5pc-UCS2C
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/B5pc-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS-EUC-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS01-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS02-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS03-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS04-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS05-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS06-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS07-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS1-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS1-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS15-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS2-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/CNS2-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETHK-B5-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETHK-B5-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETen-B5-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETen-B5-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETen-B5-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETenms-B5-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/ETenms-B5-V
@@ -151,10 +110,8 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GB-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GB-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GB-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GB-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GB-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBK-EUC-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBK-EUC-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBK-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBK2K-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBK2K-V
@@ -163,16 +120,12 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBT-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBT-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBT-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBT-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBT-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBTpc-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBTpc-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBpc-EUC-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBpc-EUC-UCS2
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBpc-EUC-UCS2C
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/GBpc-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/HK-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/HKdla-B5-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/HKdla-B5-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/HKdlb-B5-H
@@ -187,31 +140,20 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/HKscs-B5-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hankaku
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hiragana
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hojo-EUC-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hojo-EUC-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hojo-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hojo-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Hojo-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Identity-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Identity-UTF16-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Identity-UTF16-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Identity-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-Johab-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-Johab-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSC2-RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-HW-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-HW-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-UCS2
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCpc-EUC-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCpc-EUC-UCS2
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCpc-EUC-UCS2C
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/KSCpc-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Katakana
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/NWP-H
@@ -219,15 +161,6 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/RKSJ-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/RKSJ-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Roman
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/TCVN-RKSJ-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-90ms-RKSJ
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-90pv-RKSJ
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-B5pc
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-ETen-B5
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-GBK-EUC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-GBpc-EUC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-KSCms-UHC
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UCS2-KSCpc-EUC
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniCNS-UCS2-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniCNS-UCS2-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniCNS-UTF16-H
@@ -245,13 +178,6 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniGB-UTF8-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniGB-UTF8-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UCS2-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UCS2-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UTF16-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UTF16-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UTF32-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UTF32-V
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UTF8-H
-%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniHojo-UTF8-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS-UCS2-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS-UCS2-HW-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS-UCS2-HW-V
@@ -352,6 +278,7 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/doc/Deprecated.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Details.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Details8.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/Details9.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Develop.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Devices.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Drivers.htm
@@ -366,6 +293,7 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/doc/History6.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/History7.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/History8.htm
+%%DATADIR%%/%%GS_VERSION%%/doc/History9.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Install.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Issues.htm
 %%DATADIR%%/%%GS_VERSION%%/doc/Language.htm
@@ -680,7 +608,9 @@ lib/libgs.so.%%GS_VERSION%%
 %%GS_pcl3%%%%DATADIR%%/%%GS_VERSION%%/pcl3/margins-EnvDLRotated.ps
 %%GS_pcl3%%%%DATADIR%%/%%GS_VERSION%%/pcl3/margins-Letter.ps
 %%GS_pcl3%%%%DATADIR%%/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
-%%CIDFONTDIR%%/CIDFont
+%%DATADIR%%/%%GS_VERSION%%/Resource/CIDFSubst/DroidSansFallback.ttf
+%%DATADIR%%/%%GS_VERSION%%/Resource/CIDFont/fonts
+%%DATADIR%%/%%GS_VERSION%%/Resource/CIDFont/ArtifexBullet
 %%GS_pcl3%%@dirrm %%DATADIR%%/%%GS_VERSION%%/pcl3
 @dirrm %%DATADIR%%/%%GS_VERSION%%/lib
 @dirrm %%DATADIR%%/%%GS_VERSION%%/examples/cjk
@@ -692,6 +622,8 @@ lib/libgs.so.%%GS_VERSION%%
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CMap
+@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFSubst
+@dirrm %%DATADIR%%/%%GS_VERSION%%/Resource/CIDFont
 @dirrm %%DATADIR%%/%%GS_VERSION%%/Resource
 @dirrmtry %%DATADIR%%/%%GS_VERSION%%
 @dirrmtry %%DATADIR%%

@@ -1,4 +1,4 @@
-# $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/Makefile.drivers,v 1.1 2011-05-23 20:58:46 hrs Exp $
+# $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/Makefile.drivers,v 1.2 2012-02-12 18:10:49 hrs Exp $
 
 OPTIONS_GS_DEFAULT_ON=	on
 OPTIONS_GS_DEFAULT_OFF=	off
@@ -24,15 +24,11 @@ OPTIONS_ICONV= \
 GS_oprp		"D: OpenPrinting Raster driver interface"	${OPTIONS_ICONV_DEFAULT} \
 GS_opvp		"D: OpenPrinting Vecter driver interface"	${OPTIONS_ICONV_DEFAULT}
 
-OPTIONS_CAIRO= \
-GS_cairo	"D: cairo driver for PDF, SVG, EPS or PNG files"	${OPTIONS_CAIRO_DEFAULT}
-
 OPTIONS_CUPS= \
 GS_cups		"D: CUPS driver"	${OPTIONS_CUPS_DEFAULT}
 
 OPTIONS+=	${OPTIONS_X11}
 OPTIONS+=	${OPTIONS_SVGALIB}
-OPTIONS+=	${OPTIONS_CAIRO}
 OPTIONS+=	${OPTIONS_ICONV}
 OPTIONS+=	${OPTIONS_CUPS}
 
@@ -196,7 +192,6 @@ GS_imagen	"D: Imagen ImPress printers"	${OPTIONS_GS_DEFAULT_ON} \
 GS_fs600	"D: Kyocera FS-600 (600 dpi)"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lxm5700m	"D: Lexmark 5700 monotone"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lxm3200	"D: Lexmark 3200/Z12/Z22/Z31/Z32"	${OPTIONS_GS_DEFAULT_ON} \
-GS_lx5000	"D: Lexmark 5000/Z51/Z82"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lex2050	"D: Lexmark 2050"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lex3200	"D: Lexmark 3200"	${OPTIONS_GS_DEFAULT_ON} \
 GS_lex5700	"D: Lexmark 5700"	${OPTIONS_GS_DEFAULT_ON} \
@@ -236,9 +231,6 @@ GS_bmp32b	"D: BMP 32-bit pseudo-.BMP"	${OPTIONS_GS_DEFAULT_ON} \
 GS_bmpsep1	"D: BMP Separated 1-bit CMYK"	${OPTIONS_GS_DEFAULT_ON} \
 GS_bmpsep8	"D: BMP Separated 8-bit CMYK"	${OPTIONS_GS_DEFAULT_ON} \
 GS_ccr		"D: CalComp Raster format"	${OPTIONS_GS_DEFAULT_ON} \
-GS_cgmmono	"D: CGM Monochrome -- LOW LEVEL OUTPUT ONLY"	${OPTIONS_GS_DEFAULT_ON} \
-GS_cgm8		"D: CGM 8-bit 256-color -- DITTO"	${OPTIONS_GS_DEFAULT_ON} \
-GS_cgm24	"D: CGM 24-bit color -- DITTO"	${OPTIONS_GS_DEFAULT_ON} \
 GS_cif		"D: CIF file format for VLSI"	${OPTIONS_GS_DEFAULT_ON} \
 GS_dfaxhigh	"D: DigiBoard, DigiFAX (high res)"	${OPTIONS_GS_DEFAULT_ON} \
 GS_dfaxlow	"D: DigiFAX (normal res)"	${OPTIONS_GS_DEFAULT_ON} \
@@ -271,6 +263,16 @@ GS_psdcmyk	"D: PhotoShop PSD, CMYK"	${OPTIONS_GS_DEFAULT_ON} \
 GS_bit		"D: Plain bits, monochrome"	${OPTIONS_GS_DEFAULT_ON} \
 GS_bitrgb	"D: Plain bits, RGB"	${OPTIONS_GS_DEFAULT_ON} \
 GS_bitcmyk	"D: Plain bits, CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plan		"D: PLANar 24 bit RGB (8 bits per channel)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plang	"D: PLANar 8 bit Grayscale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_planm	"D: PLANar 1 bit Monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_planc	"D: PLANar 32 bit CMYK (8 bits per channel)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plank	"D: PLANar 4 bit CMYK (1 bit per channel)"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plib		"D: PLANar Interlaced Banded 24 bit RGB"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plibg	"D: PLANar Interlaced Banded 8 bit Grayscale"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plibm	"D: PLANar Interlaced Banded 1 bit Monochrome"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plibc	"D: PLANar Interlaced Banded 32 bit CMYK"	${OPTIONS_GS_DEFAULT_ON} \
+GS_plibk	"D: PLANar Interlaced Banded 4 bit CMYK"	${OPTIONS_GS_DEFAULT_ON} \
 GS_plan9bm	"D: Plan 9 bitmap format"	${OPTIONS_GS_DEFAULT_ON} \
 GS_pam		"D: Portable Arbitrary Map file"	${OPTIONS_GS_DEFAULT_ON} \
 GS_pbm		"D: Portable Bitmap, plain"	${OPTIONS_GS_DEFAULT_ON} \
@@ -319,6 +321,4 @@ GS_bbox		"D: Bounding box output"	${OPTIONS_GS_DEFAULT_ON} \
 GS_devicen	"D: DeviceN process color model device"	${OPTIONS_GS_DEFAULT_ON} \
 GS_perm		"D: DeviceN which permutes color components"	${OPTIONS_GS_DEFAULT_ON} \
 GS_spotcmyk	"D: DeviceN with CMYK and spot color support"	${OPTIONS_GS_DEFAULT_ON} \
-GS_imdi		"D: IMDI color converting device"	${OPTIONS_GS_DEFAULT_ON} \
-GS_wtsimdi	"D: WTS halftoning device"	${OPTIONS_GS_DEFAULT_ON} \
-GS_wtscmyk	"D: WTS halftoning CMYK device"	${OPTIONS_GS_DEFAULT_ON}
+GS_inkcov	"D: Compute ink coverage"	${OPTIONS_GS_DEFAULT_ON}
