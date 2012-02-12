@@ -3,19 +3,21 @@
 # Whom:			Henrik Brix Andersen <brix@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	xapian-omega10
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
-DISTNAME=      ${PORTNAME:S/10$//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core10
 
-LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_RUN=	yes

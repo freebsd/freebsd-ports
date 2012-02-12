@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-core10
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/10$//}-${PORTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A probabilistic text search database engine
 
 LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

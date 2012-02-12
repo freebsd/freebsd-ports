@@ -238,6 +238,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_0x76.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_0x77.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_0x7e.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_enum.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_eval.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_0x62.html
@@ -262,12 +263,11 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_0x76.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_0x77.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_func_0x7e.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_rela.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_type.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_func.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_type.html
-%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_defs.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/graph_legend.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/graph_legend.png
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/hierarchy.html
@@ -306,6 +306,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaceXapian_1_1Remote.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaceXapian_1_1Unicode.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_enum.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_func.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_type.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_vars.html
