@@ -1,0 +1,12 @@
+--- ./Makefile.orig	2012-02-12 20:34:01.605839492 +0000
++++ ./Makefile	2012-02-12 20:34:11.541834894 +0000
+@@ -24,8 +24,7 @@
+                 echo ' -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT')              \
+               -fvisibility=hidden $(CFLAGS)
+ DEF_LDFLAGS := $(shell [ `uname` = SunOS ] && echo ' -mimpure-text') $(LDFLAGS)
+-LDL_LDFLAGS := $(shell $(CC) -shared -ldl -xc -o /dev/null /dev/null          \
+-                       >/dev/null 2>&1 && echo ' -ldl')
++LDL_LDFLAGS := $(shell $(CC) -shared -ldl -xc >/dev/null 2>&1 && echo ' -ldl')
+ 
+ all: google-authenticator pam_google_authenticator.so demo                    \
+      pam_google_authenticator_unittest
