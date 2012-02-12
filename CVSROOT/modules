@@ -205,6 +205,7 @@ R-cran-DBI                      ports/databases/R-cran-DBI
 R-cran-DCluster                 ports/science/R-cran-DCluster
 R-cran-Epi                      ports/science/R-cran-Epi
 R-cran-Formula                  ports/math/R-cran-Formula
+R-cran-KFAS                     ports/math/R-cran-KFAS
 R-cran-RColorBrewer             ports/graphics/R-cran-RColorBrewer
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
 R-cran-RFinanceYJ               ports/finance/R-cran-RFinanceYJ
@@ -228,6 +229,7 @@ R-cran-deldir                   ports/math/R-cran-deldir
 R-cran-diagram                  ports/graphics/R-cran-diagram
 R-cran-dichromat                ports/graphics/R-cran-dichromat
 R-cran-digest                   ports/security/R-cran-digest
+R-cran-e1071                    ports/science/R-cran-e1071
 R-cran-eco                      ports/science/R-cran-eco
 R-cran-epicalc                  ports/science/R-cran-epicalc
 R-cran-foreach                  ports/devel/R-cran-foreach
@@ -249,6 +251,7 @@ R-cran-proto                    ports/devel/R-cran-proto
 R-cran-psych                    ports/math/R-cran-psych
 R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-reshape2                 ports/devel/R-cran-reshape2
+R-cran-rgdal                    ports/graphics/R-cran-rgdal
 R-cran-sandwich                 ports/math/R-cran-sandwich
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
@@ -14092,6 +14095,7 @@ p5-Set-Scalar                   ports/devel/p5-Set-Scalar
 p5-Set-Window                   ports/math/p5-Set-Window
 p5-Shape                        ports/devel/p5-Shape
 p5-Shell-Base                   ports/devel/p5-Shell-Base
+p5-Shell-Command                ports/sysutils/p5-Shell-Command
 p5-Shell-EnvImporter            ports/devel/p5-Shell-EnvImporter
 p5-Shell-Parser                 ports/devel/p5-Shell-Parser
 p5-Shell-Perl                   ports/shells/p5-Shell-Perl
@@ -18514,6 +18518,7 @@ p5-sgmlspm                      ports/textproc/p5-SGMLSpm
 p5-sha                          ports/security/p5-SHA
 p5-shape                        ports/devel/p5-Shape
 p5-shell-base                   ports/devel/p5-Shell-Base
+p5-shell-command                ports/sysutils/p5-Shell-Command
 p5-shell-envimporter            ports/devel/p5-Shell-EnvImporter
 p5-shell-parser                 ports/devel/p5-Shell-Parser
 p5-shell-perl                   ports/shells/p5-Shell-Perl
@@ -21447,6 +21452,7 @@ postfix-postfwd                 ports/mail/postfix-postfwd
 postfix25                       ports/mail/postfix25
 postfix26                       ports/mail/postfix26
 postfix27                       ports/mail/postfix27
+postfix28                       ports/mail/postfix28
 postfixadmin                    ports/mail/postfixadmin
 postgis                         ports/databases/postgis
 postgis-jdbc                    ports/databases/postgis-jdbc
@@ -22023,6 +22029,7 @@ py-dsv                          ports/textproc/py-dsv
 py-dtflickr                     ports/www/py-dtflickr
 py-durus                        ports/devel/py-durus
 py-dynrules                     ports/devel/py-dynrules
+py-easyzone                     ports/dns/py-easyzone
 py-editobj                      ports/graphics/py-editobj
 py-elementtree                  ports/devel/py-elementtree
 py-elixir                       ports/databases/py-Elixir
@@ -23395,6 +23402,7 @@ r-cran-deldir                   ports/math/R-cran-deldir
 r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-dichromat                ports/graphics/R-cran-dichromat
 r-cran-digest                   ports/security/R-cran-digest
+r-cran-e1071                    ports/science/R-cran-e1071
 r-cran-eco                      ports/science/R-cran-eco
 r-cran-epi                      ports/science/R-cran-Epi
 r-cran-epicalc                  ports/science/R-cran-epicalc
@@ -23407,6 +23415,7 @@ r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
+r-cran-kfas                     ports/math/R-cran-KFAS
 r-cran-lmtest                   ports/finance/R-cran-lmtest
 r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-memisc                   ports/math/R-cran-memisc
@@ -23421,6 +23430,7 @@ r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-reshape                  ports/devel/R-cran-reshape
 r-cran-reshape2                 ports/devel/R-cran-reshape2
 r-cran-rfinanceyj               ports/finance/R-cran-RFinanceYJ
+r-cran-rgdal                    ports/graphics/R-cran-rgdal
 r-cran-rjsonio                  ports/converters/R-cran-RJSONIO
 r-cran-rmysql                   ports/databases/R-cran-RMySQL
 r-cran-roauth                   ports/security/R-cran-ROAuth
