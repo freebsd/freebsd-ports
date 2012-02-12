@@ -77,7 +77,7 @@ PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 CONFIGURE_ARGS+=	--without-cups
 .else
 CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 
 .ifdef WITH_DOSBOX
