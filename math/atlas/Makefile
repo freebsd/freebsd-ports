@@ -7,6 +7,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.8.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/math-${PORTNAME}/Stable/${PORTVERSION}
@@ -44,6 +45,12 @@ ATLAS_MAXMALLOC?=	67108864
 PICFLAG?=	-fPIC
 .else
 PICFLAG?=	-fpic
+.endif
+
+.if !empty(ARCH:M*64*)
+POINTER?=	64
+.else
+POINTER?=	32
 .endif
 
 .if defined(MAINTAINER_MODE)
@@ -135,7 +142,7 @@ do-configure:
 		../configure --cc="${CC}" --cflags="${CFLAGS}" \
 		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
 		-Ss f77lib " " -Ss pmake "${MAKE} ${_MAKE_JOBS}" \
-		-Fa alg "${STATIC_FLAGS} "
+		-Fa alg "${STATIC_FLAGS} " -b ${POINTER}
 	@${SED} -ne "\|F77FLAGS =|p" ${WRKSRC}/static/Make.inc \
 		>> ${WRKSRC}/saved_flags
 
@@ -162,7 +169,7 @@ do-build:
 		--with-netlib-lapack="${WRKSRC}/${opt}/liblapack_${opt}.a" \
 		--prefix="${PREFIX}" -v 2 $${TIMEFLAG} ${ARCHDEFFLAG} \
 		-Ss f77lib " " -Ss pmake "${MAKE} ${_MAKE_JOBS}" \
-		-Fa alg "${${opt:U}_FLAGS} " ; \
+		-Fa alg "${${opt:U}_FLAGS} " -b ${POINTER} ; \
 	if [ "x${WITH_ARCHDEF}" != "x" ] ; then \
 		if [ "x${ARCHDEF}" != "xNONE" ] ; then \
 			if [ -f ${ARCHDEF} ] ; then \
@@ -196,7 +203,7 @@ post-build:
 .endfor
 .if defined(WITH_SHARED)
 	@${ECHO_CMD} "Building ATLAS shared libraries:"
-	@F77FLAGS=`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ; \
+	@F77FLAGS="`${MAKE} -f ${WRKSRC}/saved_flags -V F77FLAGS` ${EXTRA_FFLAGS}" ; \
 	cd ${WRKSRC}/shared/lib ; \
 	${L1}libatlas.so.2 -o libatlas.so.2 libatlas.a ${L2} ; \
 	${L1}libf77blas.so.2 -o libf77blas.so.2 libf77blas.a ${L2} libatlas.so.2 ; \
