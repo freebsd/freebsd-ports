@@ -1,0 +1,38 @@
+--- ./darcs.cabal.orig	2011-03-13 23:40:47.000000000 +0100
++++ ./darcs.cabal	2011-12-10 15:26:09.000000000 +0100
+@@ -170,7 +170,7 @@
+ 
+     build-depends:   base          < 5,
+                      extensible-exceptions >= 0.1 && < 0.2,
+-                     regex-compat >= 0.71 && < 0.94,
++                     regex-compat >= 0.71,
+                      mtl          >= 1.0 && < 2.1,
+                      parsec       >= 2.0 && < 3.2,
+                      html         == 1.0.*,
+@@ -375,7 +375,7 @@
+ 
+     build-depends:   base          < 5,
+                      extensible-exceptions >= 0.1 && < 0.2,
+-                     regex-compat >= 0.71 && < 0.94,
++                     regex-compat >= 0.71,
+                      mtl          >= 1.0 && < 2.1,
+                      parsec       >= 2.0 && < 3.2,
+                      html         == 1.0.*,
+@@ -523,7 +523,7 @@
+ 
+   build-depends:   base          < 5,
+                    extensible-exceptions >= 0.1 && < 0.2,
+-                   regex-compat >= 0.71 && < 0.94,
++                   regex-compat >= 0.71,
+                    mtl          >= 1.0 && < 2.1,
+                    parsec       >= 2.0 && < 3.2,
+                    html         == 1.0.*,
+@@ -619,7 +619,7 @@
+ 
+     build-depends:   base          < 5,
+                      extensible-exceptions >= 0.1 && < 0.2,
+-                     regex-compat >= 0.71 && < 0.94,
++                     regex-compat >= 0.71,
+                      mtl          >= 1.0 && < 2.1,
+                      parsec       >= 2.0 && < 3.2,
+                      html         == 1.0.*,

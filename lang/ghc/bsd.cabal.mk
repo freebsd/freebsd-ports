@@ -47,7 +47,7 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
-GHC_VERSION?=	7.0.3
+GHC_VERSION?=	7.0.4
 GHC_VERSION_N=	${GHC_VERSION:S/./0/g}
 
 GHC_CMD?=	${LOCALBASE}/bin/ghc
@@ -57,6 +57,11 @@ SETUP_CMD?=	./setup
 ALEX_CMD?=	${LOCALBASE}/bin/alex
 HAPPY_CMD?=	${LOCALBASE}/bin/happy
 HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
+C2HS_CMD?=	${LOCALBASE}/bin/c2hs
+
+.if !defined(DOCUMENTATION)
+CABAL_DIRS+=	${DATADIR} ${EXAMPLESDIR} ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}
+.endif
 
 GHC_HADDOCK_CMD=${LOCALBASE}/bin/haddock-ghc-${GHC_VERSION}
 
@@ -97,6 +102,11 @@ CONFIGURE_ARGS+=	 --with-alex=${ALEX_CMD}
 .if defined(USE_HAPPY)
 BUILD_DEPENDS+=	${HAPPY_CMD}:${PORTSDIR}/devel/hs-happy
 CONFIGURE_ARGS+=	 --with-happy=${HAPPY_CMD}
+.endif
+
+.if defined(USE_C2HS)
+BUILD_DEPENDS+=	${C2HS_CMD}:${PORTSDIR}/devel/hs-c2hs
+CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .endif
 
 .if defined(EXECUTABLE)
@@ -318,12 +328,10 @@ do-install:
 
 .if !target(post-install-script)
 post-install-script:
-.if !defined(DOCUMENTATION)
-	@if [ -d ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} ]; then ${FIND} -ds ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
-		-type f -print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}; fi
-	@if [ -d ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} ]; then ${FIND} -ds ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
-		-type d -print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}; fi
-.endif
+	@for dir in ${CABAL_DIRS}; do if [ -d $${dir} ]; then ${FIND} -ds $${dir} \
+		-type f -print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}; fi ; \
+		if [ -d $${dir} ]; then ${FIND} -ds $${dir} \
+		-type d -print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}; fi ; done
 .if defined(EXECUTABLE)
 .for exe in ${EXECUTABLE}
 	@${ECHO_CMD} 'bin/${exe}' >>${TMPPLIST}
@@ -339,7 +347,7 @@ add-plist-cabal:
 	@if [ -f ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh ]; then \
 		(${ECHO_CMD} '@exec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh'; \
 		 ${ECHO_CMD} '@exec ${RM} -f %D/lib/ghc-${GHC_VERSION}/package.conf.old'; \
-		 ${ECHO_CMD} '@unexec %D/bin/ghc-pkg unregister ${PORTNAME}-${PORTVERSION}'; \
+		 ${ECHO_CMD} '@unexec %D/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}'; \
 		 ${ECHO_CMD} '@unexec ${RM} -f %D/lib/ghc-${GHC_VERSION}/package.conf.old') >> ${TMPPLIST}; fi
 .endif
 .if defined(NOPORTDOCS)
