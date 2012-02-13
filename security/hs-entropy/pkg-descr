@@ -1,0 +1,6 @@
+A platform independent method to obtain cryptographically strong entropy
+(urandom on Linux, CryptAPI on Windows, patches welcome). Users looking
+for cryptographically strong (number-theoretically sound) PRNGs should
+see the DRBG package too!
+
+WWW:	http://trac.haskell.org/crypto-api/wiki
