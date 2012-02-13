@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmpd
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
