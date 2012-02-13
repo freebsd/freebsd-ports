@@ -1,0 +1,63 @@
+%%SITE_PERL%%/Form/Sensible.pm
+%%SITE_PERL%%/Form/Sensible/DelegateConnection.pm
+%%SITE_PERL%%/Form/Sensible/Delegation.pod
+%%SITE_PERL%%/Form/Sensible/FAQ.pod
+%%SITE_PERL%%/Form/Sensible/Field.pm
+%%SITE_PERL%%/Form/Sensible/Field/DateTime.pm
+%%SITE_PERL%%/Form/Sensible/Field/FileSelector.pm
+%%SITE_PERL%%/Form/Sensible/Field/LongText.pm
+%%SITE_PERL%%/Form/Sensible/Field/Number.pm
+%%SITE_PERL%%/Form/Sensible/Field/Select.pm
+%%SITE_PERL%%/Form/Sensible/Field/SubForm.pm
+%%SITE_PERL%%/Form/Sensible/Field/Text.pm
+%%SITE_PERL%%/Form/Sensible/Field/Toggle.pm
+%%SITE_PERL%%/Form/Sensible/Field/Trigger.pm
+%%SITE_PERL%%/Form/Sensible/Form.pm
+%%SITE_PERL%%/Form/Sensible/Overview.pod
+%%SITE_PERL%%/Form/Sensible/Reflector.pm
+%%SITE_PERL%%/Form/Sensible/Renderer.pm
+%%SITE_PERL%%/Form/Sensible/Renderer/HTML.pm
+%%SITE_PERL%%/Form/Sensible/Renderer/HTML/RenderedForm.pm
+%%SITE_PERL%%/Form/Sensible/Validator.pm
+%%SITE_PERL%%/Form/Sensible/Validator/Result.pm
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/datetime.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/field_wrapper.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/fileselector.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/form_end.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/form_messages.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/form_start.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/hidden.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/longtext.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/number.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/password.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/pre_process.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/select.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/subform_end.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/subform_messages.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/subform_start.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/text.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/toggle.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/trigger.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default/unknown.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/field_wrapper.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/form_end.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/form_messages.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/form_start.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/subform_end.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/subform_messages.tt
+%%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table/subform_start.tt
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Form/Sensible/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Form/Sensible
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Form
+@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/table
+@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible/templates/default
+@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible/templates
+@dirrm %%SITE_PERL%%/auto/share/dist/Form-Sensible
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
+@dirrm %%SITE_PERL%%/Form/Sensible/Validator
+@dirrm %%SITE_PERL%%/Form/Sensible/Renderer/HTML
+@dirrm %%SITE_PERL%%/Form/Sensible/Renderer
+@dirrm %%SITE_PERL%%/Form/Sensible/Field
+@dirrm %%SITE_PERL%%/Form/Sensible
+@dirrmtry %%SITE_PERL%%/Form
