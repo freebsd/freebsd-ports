@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmobar
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,12 +14,11 @@ COMMENT=	A minimalistic text based status bar
 LICENSE=	BSD
 
 USE_CABAL=	mtl parsec stm X11>=1.3.0
-USE_XORG=	x11
+USE_XORG=	x11 xrandr
 
 EXECUTABLE=	xmobar
 STANDALONE=	yes
 
-PORTDATA=		*
 INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/samples/xmobar.config ${DATADIR}
 
 OPTIONS=	XFT   "Use Xft to render text (UTF-8 support included)" off \
