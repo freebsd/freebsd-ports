@@ -119,6 +119,7 @@ hxt-regex-xmlschema_port=	textproc/hs-hxt-regex-xmlschema
 hxt-unicode_port=		textproc/hs-hxt-unicode
 json_port=			converters/hs-json
 language-c_port=		devel/hs-language-c
+largeword_port=			devel/hs-largeword
 lazysmallcheck_port=		devel/hs-lazysmallcheck
 lhs2tex_port=			textproc/hs-lhs2tex
 libmpd_port=			audio/hs-libmpd
