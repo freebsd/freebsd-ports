@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smallcheck
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,8 +16,6 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-PORTDATA=		*
-PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
