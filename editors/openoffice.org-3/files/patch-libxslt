@@ -1,0 +1,25 @@
+--- /dev/null	2012-02-11 16:33:00.000000000 -0800
++++ libxslt/libxslt-libexslt-date_c.patch	2012-02-11 16:40:50.000000000 -0800
+@@ -0,0 +1,11 @@
++--- misc/build/libxslt-1.1.26/libexslt/date.c.orig	2009-09-17 07:51:10.000000000 -0700
+++++ misc/build/libxslt-1.1.26/libexslt/date.c	2012-02-11 16:40:48.000000000 -0800
++@@ -29,7 +29,7 @@
++ #endif
++ 
++ #if HAVE_LOCALTIME_R	/* _POSIX_SOURCE required by gnu libc */
++-#ifndef _AIX51		/* but on AIX we're not using gnu libc */
+++#if !defined(_AIX51) && !defined(__FreeBSD__) /* but on AIX or FreeBSD we're not using gnu libc */
++ #define _POSIX_SOURCE
++ #endif
++ #endif
+--- libxslt/makefile.mk.orig	2011-01-18 05:34:25.000000000 -0800
++++ libxslt/makefile.mk	2012-02-11 22:25:14.000000000 -0800
+@@ -55,6 +55,7 @@
+ PATCH_FILES=libxslt-configure.patch \
+             libxslt-win_manifest.patch \
+             libxslt-mingw.patch \
++            libxslt-libexslt-date_c.patch \
+             libxslt-internal-symbols.patch
+ 
+ 
+
