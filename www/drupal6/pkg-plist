@@ -30,6 +30,7 @@
 %%DRUPAL_BASE%%/includes/language.inc
 %%DRUPAL_BASE%%/includes/locale.inc
 %%DRUPAL_BASE%%/includes/lock.inc
+%%DRUPAL_BASE%%/includes/lock-install.inc
 %%DRUPAL_BASE%%/includes/mail.inc
 %%DRUPAL_BASE%%/includes/menu.inc
 %%DRUPAL_BASE%%/includes/module.inc
