@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hoogle
-PORTVERSION=	4.2.5
-PORTREVISION=	3
+PORTVERSION=	4.2.8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,13 +22,5 @@ USE_CABAL=	binary blaze-builder>=0.2 case-insensitive>=0.2 cmdargs>=0.7 \
 
 EXECUTABLE=	hoogle
 
-PORTDATA=	*
-
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
-BROKEN=		does not link on FreeBSD 9.X amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
