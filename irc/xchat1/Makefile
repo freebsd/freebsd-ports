@@ -7,7 +7,7 @@
 
 PORTNAME=		xchat
 PORTVERSION=		1.8.11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -49,12 +49,6 @@ CONFIGURE_ARGS+=	--disable-python
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_SOCKS)
-# Assign with `+=' for slave ports
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--enable-socks
-.endif
 
 .if defined(WITH_TRANSPARENCY)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
