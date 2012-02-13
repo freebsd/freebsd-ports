@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	probability
-PORTVERSION=	0.2.2.1
-PORTREVISION=	2
+PORTVERSION=	0.2.3.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Probabilistic Functional Programming in Haskell
+COMMENT=	Probabilistic Functional Programming
 
 LICENSE=	BSD
 FILE_LICENSE=	COPYRIGHT
 
-USE_CABAL=	transformers>=0.0.1
-
-PORTDATA=	*
+USE_CABAL=	transformers>=0.0.1 utility-ht>=0.0.6
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
