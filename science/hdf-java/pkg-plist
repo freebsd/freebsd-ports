@@ -63,6 +63,132 @@ lib/libjhdf5.so
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/ug05spreadsheet.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/ug06imageview.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide/ug07textview.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFArray.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFChunkInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFConstants.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFDeflateCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFDeprecated.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFIMCOMPCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFJavaException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFJPEGCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFLibrary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFLibraryException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFNativeData.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFNBITChunkInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFNBITCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFNewCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFNotImplementedException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFOldCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFOldRLECompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFRLECompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFSKPHUFFCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFSZIPCompInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/HDFTable.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdflib/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/Callbacks.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/H5D_iterate_cb.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/H5D_iterate_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/H5L_iterate_cb.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/H5L_iterate_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/H5O_iterate_cb.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/H5O_iterate_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5AtomException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5AttributeException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5BtreeException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5DataFiltersException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5DatasetInterfaceException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5DataspaceInterfaceException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5DataStorageException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5DatatypeInterfaceException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5Exception.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5ExternalFileListException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5FileInterfaceException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5FunctionArgumentException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5FunctionEntryExitException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5HeapException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5InternalErrorException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5JavaException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5LibraryException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5LowLevelIOException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5MetaDataCacheException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5ObjectHeaderException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5PropertyListInterfaceException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5ReferenceException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5ResourceUnavailableException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/HDF5SymbolTableException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5_ih_info_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5A_info_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5AC_cache_config_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5G_info_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5L_info_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5O_hdr_info_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/H5O_info_t.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/H5.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/HDF5Constants.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/HDF5GroupInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/HDFArray.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/HDFNativeData.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/Attribute.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/CompoundDS.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/DataFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/Dataset.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/Datatype.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/FileFormat.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/Group.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/HObject.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/Metadata.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/ScalarDS.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/H4Datatype.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/H4File.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/H4GRImage.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/H4Group.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/H4SDS.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/H4Vdata.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h4/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/H5CompoundDS.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/H5Datatype.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/H5File.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/H5Group.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/H5Link.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/H5ScalarDS.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/h5/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/ncsa/hdf/object/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/package-list
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/javadocs/stylesheet.css
 share/java/classes/ext/fitsobj.jar
 share/java/classes/ext/nc2obj.jar
 share/java/classes/fits.jar
@@ -70,11 +196,20 @@ share/java/classes/jhdf5.jar
 share/java/classes/jhdf5obj.jar
 share/java/classes/jhdfobj.jar
 share/java/classes/jhdfview.jar
-share/java/classes/junit.jar
 share/java/classes/netcdf.jar
-@dirrm share/java/classes/ext
+@dirrmtry share/java/classes/ext
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/UsersGuide/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/UsersGuide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/object/h5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/object/h4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/object
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/structs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/exceptions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib/callbacks
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/hdf5lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf/hdflib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa/hdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs/ncsa
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm UsersGuide
-@exec mkdir -p %D/UsersGuide

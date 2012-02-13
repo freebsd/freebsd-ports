@@ -1,28 +1,28 @@
---- configure.orig	2010-11-01 02:54:27.000000000 -0700
-+++ configure	2010-11-01 02:56:20.000000000 -0700
+--- ./configure.orig	2011-12-21 15:16:44.000000000 -0800
++++ ./configure	2011-12-21 15:18:28.000000000 -0800
 @@ -4424,12 +4424,6 @@
- 	if test \( ! -d "$JH45INST" \); then
- 		JH45INST_FOUND=0
- 	fi
--	if test \( ! -w "$JH45INST" \); then
--		{ { echo "$as_me:$LINENO: error:  $JAVINST : not writable " >&5
+   if test \( ! -d "$JH45INST" \); then
+     JH45INST_FOUND=0
+   fi
+-  if test \( ! -w "$JH45INST" \); then
+-    { { echo "$as_me:$LINENO: error:  $JAVINST : not writable " >&5
 -echo "$as_me: error:  $JAVINST : not writable " >&2;}
 -   { (exit 1); exit 1; }; }
--		JH45INST_FOUND=0
--	fi
+-    JH45INST_FOUND=0
+-  fi
  fi
  until test $JH45INST_FOUND -eq 1; do
- 	echo "Please type the directory in which to install the JH45"
+   echo "Please type the directory in which to install the JH45"
 @@ -4438,12 +4432,6 @@
- 	if test \( ! -d "$JH45INST" \); then
- 		JH45INST_FOUND=0
- 	fi
--	if test \( ! -w "$JH45INST" \); then
--		{ { echo "$as_me:$LINENO: error:  $JAVINST : not writable " >&5
+   if test \( ! -d "$JH45INST" \); then
+     JH45INST_FOUND=0
+   fi
+-  if test \( ! -w "$JH45INST" \); then
+-    { { echo "$as_me:$LINENO: error:  $JAVINST : not writable " >&5
 -echo "$as_me: error:  $JAVINST : not writable " >&2;}
 -   { (exit 1); exit 1; }; }
--		JH45INST_FOUND=0
--	fi
+-    JH45INST_FOUND=0
+-  fi
  done
  
  ac_cv_lib_JH45INST=$JH45INST
