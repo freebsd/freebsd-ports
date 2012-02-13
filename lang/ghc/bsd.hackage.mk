@@ -91,6 +91,7 @@ haddock_port=			devel/hs-haddock	# executable
 happy_port=			devel/hs-happy		# executable
 hashable_port=			devel/hs-hashable
 hashed-storage_port=		devel/hs-hashed-storage
+hashtables_port=		devel/hs-hashtables
 haskeline_port=			devel/hs-haskeline
 haskell-src_port=		devel/hs-haskell-src
 haskell-src-exts_port=		devel/hs-haskell-src-exts
