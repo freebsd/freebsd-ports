@@ -66,6 +66,7 @@ distributive_port=		math/hs-distributive
 dlist_port=			devel/hs-dlist
 double-conversion_port=		textproc/hs-double-conversion
 enumerator_port=		devel/hs-enumerator
+epic_port=			lang/hs-epic		# executable
 erf_port=			math/hs-erf
 fastcgi_port=			www/hs-fastcgi		# lib_depends
 feed_port=			textproc/hs-feed
