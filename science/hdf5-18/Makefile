@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.8
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
 #DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
@@ -62,6 +62,7 @@ post-patch:
 		-e 's|/share/hdf5_examples|/${EXAMPLESDIR_REL}|' \
 		-e 's|(INSTALL)|(INSTALL_DATA)|' \
 			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
+	@${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
 .if defined(NOPORTEXAMPLES)
 	@${REINPLACE_CMD} -e '/^install:/ s|install-examples||' ${WRKSRC}/Makefile.in
 .endif
