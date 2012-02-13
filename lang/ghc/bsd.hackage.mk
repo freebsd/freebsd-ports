@@ -55,6 +55,7 @@ cpphs_port=			devel/hs-cpphs		# executable
 cprng-aes_port=			security/hs-cprng-aes
 criterion_port=			benchmarks/hs-criterion
 Crypto_port=			security/hs-Crypto
+crypto-api_port=		security/hs-crypto-api
 csv_port=			textproc/hs-csv
 curl_port=			ftp/hs-curl
 darcs_port=			devel/hs-darcs		# executable
