@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.5.0.1
+PORTVERSION=	0.5.1
 CATEGORIES=	science haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,9 +17,7 @@ LICENSE=	LGPL21
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	binary>=0.4 mtl parallel parsec QuickCheck>=2 tagsoup>=0.8
 
-EXECUTABLE=	fastout flx frecover frename
-
-PORTDATA=	*
+EXECUTABLE=	fastout flx frecover frename flowclip orf rselect-pe
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

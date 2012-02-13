@@ -4,4 +4,4 @@ for building bioinformatics-related tools and utilities.
 Current list of features includes: a Sequence data type supporting
 protein and nucleotide sequences and conversion between them.
 
-WWW: http://blog.malde.org/index.php/the-haskell-bioinformatics-library/
+WWW:	http://biohaskell.org/Libraries/Bio
