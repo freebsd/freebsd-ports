@@ -206,6 +206,7 @@ url_port=			www/hs-url
 utf8-string_port=		devel/hs-utf8-string
 utility-ht_port=		devel/hs-utility-ht
 uuagc_port=			devel/hs-uuagc		# executable
+uuagc-bootstrap_port=		devel/hs-uuagc-bootstrap # executable
 uulib_port=			devel/hs-uulib
 vector_port=			devel/hs-vector
 vector-algorithms_port=		devel/hs-vector-algorithms
