@@ -184,6 +184,7 @@ Stream_port=			devel/hs-Stream
 stringsearch_port=		textproc/hs-stringsearch
 svgcairo_port=			graphics/hs-svgcairo
 syb_port=			devel/hs-syb
+tagged_port=			devel/hs-tagged
 tagsoup_port=			textproc/hs-tagsoup	# executable
 tar_port=			archivers/hs-tar
 Tensor_port=			devel/hs-Tensor
