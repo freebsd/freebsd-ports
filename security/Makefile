@@ -186,7 +186,16 @@
     SUBDIR += hotssh
     SUBDIR += hs-Crypto
     SUBDIR += hs-SHA
+    SUBDIR += hs-clientsession
+    SUBDIR += hs-cprng-aes
+    SUBDIR += hs-crypto-api
+    SUBDIR += hs-crypto-pubkey-types
+    SUBDIR += hs-cryptocipher
+    SUBDIR += hs-cryptohash
     SUBDIR += hs-digest
+    SUBDIR += hs-entropy
+    SUBDIR += hs-pwstore-fast
+    SUBDIR += hs-skein
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra

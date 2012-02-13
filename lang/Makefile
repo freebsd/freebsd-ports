@@ -116,6 +116,7 @@
     SUBDIR += hla
     SUBDIR += hope
     SUBDIR += hs-brainfuck
+    SUBDIR += hs-epic
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += hugs
