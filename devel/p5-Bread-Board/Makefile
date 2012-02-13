@@ -24,7 +24,9 @@ RUN_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Params-Validate>=0.14:${PORTSDIR}/devel/p5-MooseX-Params-Validate \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+TEST_DEPENDS=	p5-Form-Sensible>=0:${PORTSDIR}/devel/p5-Form-Sensible \
+		p5-Log-Dispatch>=0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 OPTIONS=	GRAPHVIZ "Using Graphviz to visualize a Bread::Board system" off
