@@ -1,29 +1,13 @@
---- smallcheck.cabal.orig	2009-12-25 17:11:58.000000000 +0000
-+++ smallcheck.cabal	2009-12-25 17:17:57.000000000 +0000
-@@ -16,17 +16,19 @@
- Build-Depends: base, haskell98
- Build-Type:    Simple
+--- ./smallcheck.cabal.orig	2011-12-11 12:08:40.000000000 +0100
++++ ./smallcheck.cabal	2011-12-16 17:57:48.000000000 +0100
+@@ -27,9 +27,9 @@
+                     examples/numeric/README, examples/logical/README, examples/imperative/README,
+                     examples/listy/README, examples/regular/README, examples/circuits/README,
+                     examples/binarytries/README,
+-                    README.md, CREDITS.md, CHANGES.md,
+                     examples/run-examples.sh
  
--Extra-source-files: examples/numeric/NumProps.hs, examples/logical/LogicProps.hs,
-+Extra-source-files: examples/numeric/NumProps.hs, examples/numeric/README,
-+                    examples/logical/LogicProps.hs, examples/logical/README,
-                     examples/imperative/Interpreter.hs, examples/imperative/Syntax.hs,
-                     examples/imperative/Machine.hs, examples/imperative/Behaviour.hs,
-                     examples/imperative/Properties.hs, examples/imperative/Value.hs,
-                     examples/imperative/StackMap.hs, examples/imperative/Compiler.hs,
--                    examples/listy/ListProps.hs, examples/regular/Regular.hs,
--                    examples/circuits/BitAdd.hs, examples/circuits/Mux.hs, examples/circuits/Sad.hs,
--                    examples/binarytries/BinaryTries.hs
-+                    examples/imperative/README, examples/listy/ListProps.hs,
-+                    examples/listy/README, examples/regular/Regular.hs,
-+                    examples/regular/README, examples/circuits/BitAdd.hs,
-+                    examples/circuits/Mux.hs, examples/circuits/Sad.hs,
-+                    examples/circuits/README, examples/binarytries/BinaryTries.hs,
-+                    examples/binarytries/README
++Data-files:         README.md CREDITS.md CHANGES.md
  
--Data-files:         examples/numeric/README, examples/logical/README, examples/imperative/README,
--                    examples/listy/README, examples/regular/README, examples/circuits/README,
--                    examples/binarytries/README, README
-+Data-files: README
  
- Exposed-modules:    Test.SmallCheck
+ Source-repository head

@@ -3,4 +3,4 @@ instead of testing for a sample of randomly generated values, SmallCheck
 tests properties for all the finitely many values up to some depth,
 progressively increasing the depth used.
 
-WWW: http://hackage.haskell.org/package/smallcheck
+WWW:	https://github.com/feuerbach/smallcheck
