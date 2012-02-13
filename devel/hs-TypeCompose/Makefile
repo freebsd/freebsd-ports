@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	TypeCompose
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Type composition classes and instances for Haskell
+COMMENT=	Type composition classes and instances
 
 LICENSE=	BSD
 
