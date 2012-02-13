@@ -7,6 +7,7 @@
 
 PORTNAME=	rxp
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,13 +27,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/freebsd4/freebsd4", "freebsd5", "freebsd6", "freebsd7", "freebsd8/g' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
