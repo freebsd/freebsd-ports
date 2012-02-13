@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	split
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.4.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
