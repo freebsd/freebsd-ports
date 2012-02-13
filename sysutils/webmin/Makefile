@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.570
+PORTVERSION=	1.580
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 
 USE_PERL5=	yes
+USE_PYTHON=	yes
 USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
@@ -55,6 +56,7 @@ post-patch:
 
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
+	@${FIND} ${WRKSRC} -name "*.pyc" -delete
 
 do-build:
 	@${CC} ${CFLAGS} -o ${WRKSRC}/mount/freebsd-mounts-7 ${WRKSRC}/mount/freebsd-mounts-7.c
@@ -64,8 +66,15 @@ do-install:
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
 
 post-install:
+	@${PYTHON_CMD} -O -mcompileall ${PREFIX}/lib/webmin/ajaxterm/ajaxterm/
+	@${PYTHON_CMD} -mcompileall ${PREFIX}/lib/webmin/ajaxterm/ajaxterm/
+
 	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
 		'{ print "lib/webmin/" $$1 }' > ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type f -name "*.py" | ${SED} -e "s/\\.py/.pyc/" | ${SORT} | ${AWK} \
+		'{ print "lib/webmin/" $$1 }' >> ${WRKDIR}/PLIST.lib-webmin
+	@cd ${WRKSRC} ; ${FIND} * -type f -name "*.py" | ${SED} -e "s/\\.py/.pyo/" | ${SORT} | ${AWK} \
+		'{ print "lib/webmin/" $$1 }' >> ${WRKDIR}/PLIST.lib-webmin
 	@cd ${WRKSRC} ; ${FIND} * -type d -empty | ${SORT} -r | ${AWK} \
 		'{ print "lib/webmin/" $$1 }' | ${SED} -e 's#^#@exec mkdir -p %D/#g' \
 		>> ${WRKDIR}/PLIST.lib-webmin
