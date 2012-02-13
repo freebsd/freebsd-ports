@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	HaXml
-PORTVERSION=	1.20.2
-PORTREVISION=	3
+PORTVERSION=	1.22.5
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,11 +15,11 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	polyparse>=1.2
+USE_CABAL=	polyparse>=1.5
 
 EXECUTABLE=	Canonicalise CanonicaliseLazy \
 		DtdToHaskell MkOneOf Validate \
-		Xtract XtractLazy
+		XsdToHaskell Xtract
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
