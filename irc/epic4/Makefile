@@ -7,6 +7,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -34,7 +35,6 @@ CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
 		PERL    "Perl scripting support" on \
-		SOCKS5	"Enable SOCKS5 proxy support" off \
 		SSL     "Enable SSL support" on \
 		TERMCAP	"Refuse to use terminfo/ncurses" off
 
@@ -67,16 +67,6 @@ USE_PERL5=	yes
 CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VERSION}/mach/CORE
 .else
 CONFIGURE_ARGS+=	--without-perl
-.endif
-
-## WITH_SOCKS5:                enable SOCKS5 support
-#
-.if defined(WITH_SOCKS5)
-.if exists(${LOCALBASE}/lib/libdsocks.so)
-BROKEN=	Optional socks5 support will only build against net/socks5 which conflicts with net/dante
-.endif
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}/include
 .endif
 
 ## WITH_SSL            enable SSL support
