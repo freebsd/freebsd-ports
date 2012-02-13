@@ -7,6 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	ftp haskell
 
 MAINTAINER=	haskell@FreeBSD.org

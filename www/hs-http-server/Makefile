@@ -7,7 +7,7 @@
 
 PORTNAME=	http-server
 PORTVERSION=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -18,7 +18,6 @@ LICENSE=	BSD
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	HTTP>=4000.0.7 mime>=0.3 network>=2 url>=2 utf8-string>=0.3.4
 
-PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/example && \
 			  ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 

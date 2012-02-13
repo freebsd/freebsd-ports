@@ -6,7 +6,7 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://repetae.net/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-

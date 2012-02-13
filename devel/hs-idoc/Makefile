@@ -6,7 +6,7 @@
 
 PORTNAME=	idoc
 PORTVERSION=	0.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 PKGNAMEPREFIX=	hs-

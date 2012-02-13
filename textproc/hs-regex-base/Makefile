@@ -7,7 +7,7 @@
 
 PORTNAME=	regex-base
 PORTVERSION=	0.93.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

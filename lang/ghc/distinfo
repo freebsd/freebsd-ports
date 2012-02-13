@@ -1,5 +1,5 @@
-SHA256 (ghc-7.0.3-src.tar.bz2) = 156169c28dab837922260a0fbfcc873c679940d805a736dc78aeb1b60c13ccd9
-SIZE (ghc-7.0.3-src.tar.bz2) = 24201117
+SHA256 (ghc-7.0.4-src.tar.bz2) = 1a9b78d9d66c9c21de6c0932e36bb87406a4856f1611bf83bd44539bdc6ed0ed
+SIZE (ghc-7.0.4-src.tar.bz2) = 24205070
 SHA256 (hscolour-1.16.tar.gz) = 206fa8c7e2b69d16d401feec2049bf5b392b1ac4c3628baf8b172b00cc7857f5
 SIZE (hscolour-1.16.tar.gz) = 57057
 SHA256 (ghc-paths-0.1.0.6.tar.gz) = 95d8c0e6ce2f182d792e910149b3c81c381b7d2c2052ffc6d96128b071c55243

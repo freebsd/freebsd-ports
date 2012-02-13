@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	7.0.3
-PORTREVISION=	1
+PORTVERSION=	7.0.4
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/} \

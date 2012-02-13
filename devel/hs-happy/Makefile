@@ -6,6 +6,7 @@
 
 PORTNAME=	happy
 PORTVERSION=	1.18.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -23,7 +24,6 @@ EXECUTABLE=	happy
 
 USE_PERL5_BUILD=	5.8+
 
-PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 .if defined(SLAVE)

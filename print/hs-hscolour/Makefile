@@ -7,6 +7,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.19
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 
@@ -19,8 +20,6 @@ FILE_LICENSE=	LICENCE-GPL
 CABAL_SETUP=	Setup.hs
 
 EXECUTABLE=	HsColour
-
-PORTDATA=		*
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

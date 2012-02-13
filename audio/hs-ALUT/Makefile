@@ -7,7 +7,7 @@
 
 PORTNAME=	ALUT
 PORTVERSION=	2.2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,7 +19,6 @@ CABAL_SETUP=	Setup.hs
 USE_CABAL=	OpenAL StateVar
 USE_OPENAL=	al alut
 
-PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
