@@ -124,6 +124,7 @@ lazysmallcheck_port=		devel/hs-lazysmallcheck
 lhs2tex_port=			textproc/hs-lhs2tex
 libmpd_port=			audio/hs-libmpd
 libxml_port=			textproc/hs-libxml
+logict_port=			devel/hs-logict
 math-functions_port=		math/hs-math-functions
 MemoTrie_port=			devel/hs-MemoTrie
 mime_port=			mail/hs-mime
