@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	comonad
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.1.1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +14,7 @@ COMMENT=	Haskell 98 comonads
 
 LICENSE=	BSD
 
-USE_CABAL=	semigroups>=0.7.1 transformers>=0.2.0
+USE_CABAL=	semigroups>=0.8 transformers>=0.2.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
