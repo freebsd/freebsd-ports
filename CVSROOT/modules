@@ -8934,6 +8934,7 @@ mailmgr                         ports/mail/mailmgr
 mailscanner                     ports/mail/mailscanner
 mailsync                        ports/mail/mailsync
 mailtray                        ports/mail/mailtray
+mailutils                       ports/mail/mailutils
 mailx                           ports/mail/mailx
 mailzu                          ports/security/mailzu
 mairix                          ports/mail/mairix
@@ -10722,6 +10723,7 @@ p5-Amazon-SQS-Simple            ports/net/p5-Amazon-SQS-Simple
 p5-Amazon-SimpleDB              ports/databases/p5-Amazon-SimpleDB
 p5-Any-Moose                    ports/devel/p5-Any-Moose
 p5-Any-Moose-Convert            ports/devel/p5-Any-Moose-Convert
+p5-Any-Template                 ports/www/p5-Any-Template
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
@@ -11717,6 +11719,7 @@ p5-Data-Alias                   ports/devel/p5-Data-Alias
 p5-Data-Average                 ports/devel/p5-Data-Average
 p5-Data-Bind                    ports/devel/p5-Data-Bind
 p5-Data-Buffer                  ports/misc/p5-Data-Buffer
+p5-Data-Capture                 ports/devel/p5-Data-Capture
 p5-Data-ClearSilver-HDF         ports/devel/p5-Data-ClearSilver-HDF
 p5-Data-Clone                   ports/devel/p5-Data-Clone
 p5-Data-Compare                 ports/devel/p5-Data-Compare
@@ -15141,6 +15144,7 @@ p5-amazon-sqs-simple            ports/net/p5-Amazon-SQS-Simple
 p5-amf-perl                     ports/www/p5-AMF-Perl
 p5-any-moose                    ports/devel/p5-Any-Moose
 p5-any-moose-convert            ports/devel/p5-Any-Moose-Convert
+p5-any-template                 ports/www/p5-Any-Template
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
@@ -16049,6 +16053,7 @@ p5-data-amf                     ports/converters/p5-Data-AMF
 p5-data-average                 ports/devel/p5-Data-Average
 p5-data-bind                    ports/devel/p5-Data-Bind
 p5-data-buffer                  ports/misc/p5-Data-Buffer
+p5-data-capture                 ports/devel/p5-Data-Capture
 p5-data-clearsilver-hdf         ports/devel/p5-Data-ClearSilver-HDF
 p5-data-clone                   ports/devel/p5-Data-Clone
 p5-data-compare                 ports/devel/p5-Data-Compare
@@ -25464,6 +25469,7 @@ sshguard-ipfilter               ports/security/sshguard-ipfilter
 sshguard-ipfw                   ports/security/sshguard-ipfw
 sshguard-pf                     ports/security/sshguard-pf
 sshit                           ports/security/sshit
+sshpass                         ports/security/sshpass
 ssid                            ports/sysutils/ssid
 ssl-admin                       ports/security/ssl-admin
 ssldump                         ports/net/ssldump
