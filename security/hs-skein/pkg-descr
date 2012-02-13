@@ -1,0 +1,11 @@
+Skein [1] is a family of fast secure cryptographic hash functions.  This
+package uses bindings to the optimized C implementation of Skein.  There
+is a high-level interface provided to some of the Skein use cases, and a
+low-level interface when Skein has to be used in a different way.
+
+Currently Skein is supported as cryptographic hash function as Skein as
+a message authentication code (Skein-MAC).
+
+[1] http://www.skein-hash.info/
+
+WWW:	http://patch-tag.com/r/felipe/skein
