@@ -12,7 +12,7 @@ PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
 
 LICENSE=	GPLv2
