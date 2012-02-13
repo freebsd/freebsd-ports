@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	multimedia haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,8 +21,6 @@ CABAL_SETUP=	Setup.hs
 USE_CABAL=	glib>=0.12 mtl
 
 BUILD_DEPENDS+=	gstreamer-plugins>=0.10:${PORTSDIR}/multimedia/gstreamer-plugins
-
-PORTDATA=	*
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
