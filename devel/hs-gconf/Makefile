@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gconf
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,8 +18,6 @@ FILE_LICENSE=	COPYING
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	glib>=0.12 mtl gtk2hs-buildtools
 USE_GNOME=	gconf2
-
-PORTDATA=	*
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
