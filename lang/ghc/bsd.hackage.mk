@@ -182,6 +182,7 @@ semigroups_port=		math/hs-semigroups
 SHA_port=			security/hs-SHA
 show_port=			devel/hs-show
 simple-sendfile_port=		net/hs-simple-sendfile
+skein_port=			security/hs-skein
 smallcheck_port=		devel/hs-smallcheck
 snap_port=			www/hs-snap
 snap-core_port=			www/hs-snap-core
