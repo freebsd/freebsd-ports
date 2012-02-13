@@ -1,0 +1,5 @@
+Achieves security through AES-CTR encryption and Skein-MAC-512-256
+authentication. Uses Base64 encoding to avoid any issues with
+characters.
+
+WWW:	http://github.com/snoyberg/clientsession/tree/master
