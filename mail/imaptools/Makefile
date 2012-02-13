@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imaptools
-PORTVERSION=	1.120
+PORTVERSION=	1.123
 CATEGORIES=	mail
 MASTER_SITES=	http://www.athensfbc.com/imap_tools/files/
 DISTNAME=	imap_tools_V${PORTVERSION}

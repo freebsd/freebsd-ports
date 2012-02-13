@@ -3,13 +3,14 @@ bin/MboxtoIMAP.pl
 bin/delIMAPdups.pl
 bin/delete_imap_mailboxes.pl
 bin/dumptoIMAP.pl
-bin/imap_to_maildir.pl
 bin/imapCapability.pl
 bin/imapPing.pl
+bin/imap_to_maildir.pl
 bin/imapcopy.pl
 bin/imapdump.pl
 bin/imapfilter.pl
 bin/imapsync.pl
+bin/list_folders.pl
 bin/maildir_to_imap.pl
 bin/mbxIMAPsync.pl
 bin/migrateIMAP-win.pl
