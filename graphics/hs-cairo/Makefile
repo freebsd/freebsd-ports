@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,8 +18,6 @@ FILE_LICENSE=	COPYRIGHT
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	gtk2hs-buildtools mtl
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/cairo-pdf.pc:${PORTSDIR}/graphics/cairo
-
-PORTDATA=	*
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
