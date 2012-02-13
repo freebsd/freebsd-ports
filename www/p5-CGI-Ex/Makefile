@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.32
+PORTVERSION=	2.37
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::Auth.3 CGI::Ex::Conf.3 \
+MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::App::Constants.3 \
+		CGI::Ex::Auth.3 CGI::Ex::Conf.3 \
 		CGI::Ex::Die.3 CGI::Ex::Dump.3 CGI::Ex::Fill.3 \
 		CGI::Ex::JSONDump.3 CGI::Ex::Template.3 CGI::Ex::Validate.3
 

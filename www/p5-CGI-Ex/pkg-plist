@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex/.packlist
+%%SITE_PERL%%/CGI/Ex/App/Constants.pm
 %%SITE_PERL%%/CGI/Ex.pm
 %%SITE_PERL%%/CGI/Ex/App.pm
 %%SITE_PERL%%/CGI/Ex/App.pod
@@ -17,6 +18,7 @@
 %%SITE_PERL%%/CGI/Ex/yaml_load.js
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI/Ex/App
 @dirrmtry %%SITE_PERL%%/CGI/Ex/Template
 @dirrmtry %%SITE_PERL%%/CGI/Ex
 @dirrmtry %%SITE_PERL%%/CGI
