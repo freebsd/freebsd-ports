@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	Graph-ReadWrite
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reading and Writing a variety of graph file formats
 
 BUILD_DEPENDS=	${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
