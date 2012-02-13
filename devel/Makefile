@@ -3193,6 +3193,8 @@
     SUBDIR += py-kss-core
     SUBDIR += py-levenshtein
     SUBDIR += py-libgsf
+    SUBDIR += py-liblarch
+    SUBDIR += py-liblarch_gtk
     SUBDIR += py-ll-core
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile
