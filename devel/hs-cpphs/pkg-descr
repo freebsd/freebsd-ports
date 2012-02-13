@@ -1,10 +1,10 @@
-cpphs is a simplified re-implementation of cpp, the C pre-processor, in
-Haskell.
+Cpphs is a re-implementation of the C pre-processor that is both more
+compatible with Haskell, and itself written in Haskell so that it can be
+distributed with compilers.
 
-This version of the C pre-processor is pretty-much feature-complete, and
-compatible with the -traditional style. It has two modes:
+This version of the C pre-processor is pretty-much feature-complete and
+compatible with traditional (K&R) pre-processors. Additional features
+include: a plain-text mode; an option to unlit literate code files; and
+an option to turn off macro-expansion.
 
-    * conditional compilation only (--nomacro),
-    * and full macro-expansion (default).
-
-WWW: http://www.cs.york.ac.uk/fp/cpphs/
+WWW: http://haskell.org/cpphs/
