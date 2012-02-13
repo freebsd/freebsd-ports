@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	0.3.1.0
-PORTREVISION=	1
+PORTVERSION=	0.3.2.0
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell library for reading/writing/manipulating tar archives
+COMMENT=	Reading, writing and manipulating ".tar" archive files
 
 LICENSE=	BSD
 
