@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	network
-PORTVERSION=	2.3.0.2
-PORTREVISION=	1
+PORTVERSION=	2.3.0.5
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +15,7 @@ COMMENT=	Networking-related facilities
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	parsec
+USE_CABAL=	parsec>=2.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
