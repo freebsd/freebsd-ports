@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of low-level debug facilities
 
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Data::Peek.3 Data::DP.3
