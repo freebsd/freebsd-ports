@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abcl
-PORTVERSION=	0.25.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://common-lisp.net/project/armedbear/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -22,7 +21,7 @@ SUB_LIST+=	JAVAJARDIR="${JAVAJARDIR}"
 SUB_FILES=	abcl
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 do-install:
