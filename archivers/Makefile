@@ -41,6 +41,8 @@
     SUBDIR += hs-tar
     SUBDIR += hs-zip-archive
     SUBDIR += hs-zlib
+    SUBDIR += hs-zlib-bindings
+    SUBDIR += hs-zlib-enum
     SUBDIR += javatar
     SUBDIR += jzip.org
     SUBDIR += jzlib

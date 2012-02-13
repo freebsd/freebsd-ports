@@ -141,10 +141,13 @@
     SUBDIR += guppi
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-executable
+    SUBDIR += hs-NumInstances
     SUBDIR += hs-categories
     SUBDIR += hs-comonad
     SUBDIR += hs-comonad-transformers
     SUBDIR += hs-contravariant
+    SUBDIR += hs-data-lens
+    SUBDIR += hs-data-lens-template
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
     SUBDIR += hs-math-functions

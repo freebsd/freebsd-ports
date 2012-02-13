@@ -585,6 +585,7 @@
     SUBDIR += hs-ansi-terminal
     SUBDIR += hs-ansi-wl-pprint
     SUBDIR += hs-arrows
+    SUBDIR += hs-base16-bytestring
     SUBDIR += hs-base64-bytestring
     SUBDIR += hs-binary
     SUBDIR += hs-blaze-builder
@@ -597,6 +598,7 @@
     SUBDIR += hs-cereal
     SUBDIR += hs-checkers
     SUBDIR += hs-cmdargs
+    SUBDIR += hs-configurator
     SUBDIR += hs-convertible
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
@@ -623,10 +625,12 @@
     SUBDIR += hs-happy
     SUBDIR += hs-hashable
     SUBDIR += hs-hashed-storage
+    SUBDIR += hs-hashtables
     SUBDIR += hs-haskeline
     SUBDIR += hs-haskell-platform
     SUBDIR += hs-haskell-src
     SUBDIR += hs-haskell-src-exts
+    SUBDIR += hs-hastache
     SUBDIR += hs-hat
     SUBDIR += hs-hdoc
     SUBDIR += hs-hint
@@ -636,7 +640,9 @@
     SUBDIR += hs-hslogger
     SUBDIR += hs-idoc
     SUBDIR += hs-language-c
+    SUBDIR += hs-largeword
     SUBDIR += hs-lazysmallcheck
+    SUBDIR += hs-logict
     SUBDIR += hs-mmap
     SUBDIR += hs-monad-par
     SUBDIR += hs-mtl
@@ -654,6 +660,7 @@
     SUBDIR += hs-split
     SUBDIR += hs-stm
     SUBDIR += hs-syb
+    SUBDIR += hs-tagged
     SUBDIR += hs-terminfo
     SUBDIR += hs-test-framework
     SUBDIR += hs-test-framework-hunit
@@ -669,6 +676,8 @@
     SUBDIR += hs-utf8-string
     SUBDIR += hs-utility-ht
     SUBDIR += hs-uuagc
+    SUBDIR += hs-uuagc-bootstrap
+    SUBDIR += hs-uuagc-cabal
     SUBDIR += hs-uulib
     SUBDIR += hs-vector
     SUBDIR += hs-vector-algorithms
