@@ -1,5 +1,5 @@
 --- base/Makefile.in.orig	2012-02-08 17:48:48.000000000 +0900
-+++ base/Makefile.in	2012-02-13 00:28:00.000000000 +0900
++++ base/Makefile.in	2012-02-13 11:01:06.000000000 +0900
 @@ -48,9 +48,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
@@ -45,6 +45,15 @@
  ZSRCDIR=@ZLIBDIR@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
+@@ -250,7 +249,7 @@
+ JPX_LIB=@JPX_DECODER@
+ SHARE_JPX=@SHARE_JPX@
+ JPXSRCDIR=@JPXDIR@
+-JPX_CFLAGS=@JPX_AUTOCONF_CFLAGS@
++JPX_CFLAGS=@JPX_AUTOCONF_CFLAGS@ -ffast-math -DOPJ_STATIC -std=c99
+ 
+ # uncomment the following three lines and one of the last two to
+ # compile in the Luratech lwf_jp2 codec
 @@ -330,7 +329,7 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
