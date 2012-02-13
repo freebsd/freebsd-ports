@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtksourceview2
-PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTVERSION=	0.12.3
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,8 +18,6 @@ FILE_LICENSE=	COPYING
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	glib>=0.12 gtk>=0.12 mtl
 USE_GNOME=	gtksourceview2
-
-PORTDATA=	*
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
