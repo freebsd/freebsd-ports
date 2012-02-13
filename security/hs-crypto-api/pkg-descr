@@ -1,0 +1,9 @@
+A generic interface for cryptographic operations, platform independent quality
+RNG, property tests and known-answer tests (KATs) for common algorithms, and a
+basic benchmark infrastructure. Maintainers of hash and cipher implementations
+are encouraged to add instances for the classes defined in Crypto.Classes.
+Crypto users are similarly encouraged to use the interfaces defined in the
+Classes module.  Any concepts or functions of general use to more than one
+cryptographic algorithm (ex: padding) is within scope of this package.
+
+WWW:	http://trac.haskell.org/crypto-api/wiki
