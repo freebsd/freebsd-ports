@@ -1,0 +1,10 @@
+Epic is a simple functional language which compiles to reasonably efficient C code,
+using the Boehm-Demers-Weiser garbage collector [1].  It is intended as a compiler
+back-end, and is currently used as a back end for Epigram [2] and Idris [3].  It
+can be invoked either as a library or an application.
+
+[1] http://www.hpl.hp.com/personal/Hans_Boehm/gc/
+[2] http://www.e-pig.org/
+[3] http://idris-lang.org/
+
+WWW:	http://www.dcs.st-and.ac.uk/~eb/epic.php
