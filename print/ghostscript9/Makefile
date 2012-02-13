@@ -59,6 +59,8 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/lcms/include \
 		-I${LOCALBASE}/include/libpng \
+		-I${WRKSRC}/openjpeg/libopenjpeg \
+		-I${WRKSRC}/openjpeg \
 		-I${LOCALBASE}/include
 XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	${PTHREAD_LIBS}
