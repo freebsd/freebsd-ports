@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MonadCatchIO-transformers
-PORTVERSION=	0.2.2.2
+PORTVERSION=	0.2.2.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	transformers
+USE_CABAL=	transformers>=0.2
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
