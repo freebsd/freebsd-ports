@@ -34,7 +34,6 @@
 %%XPI_XPIDIR%%/modules/util/getTempFile.js
 %%XPI_XPIDIR%%/modules/util/getUriFromFile.js
 %%XPI_XPIDIR%%/modules/util/hitch.js
-%%XPI_XPIDIR%%/modules/util/installUri.js
 %%XPI_XPIDIR%%/modules/util/isGreasemonkeyable.js
 %%XPI_XPIDIR%%/modules/util/logError.js
 %%XPI_XPIDIR%%/modules/util/memoize.js
