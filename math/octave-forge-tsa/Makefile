@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-tsa
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,10 +16,12 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
+WRKSRC=		${WRKDIR}/${OCTSRC}/src
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
-do-build:
-	@${DO_NADA}
+
+ALL_TARGET=	octave
 
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
