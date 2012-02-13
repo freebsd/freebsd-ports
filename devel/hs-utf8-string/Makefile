@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	utf8-string
-PORTVERSION=	0.3.6
-PORTREVISION=	2
+PORTVERSION=	0.3.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
