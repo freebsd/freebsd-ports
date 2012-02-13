@@ -39,7 +39,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-%%LIB32DIR%%/libracket3m-5.2.so
+%%LIB32DIR%%/libracket3m-5.2.1.so
 %%LIB32DIR%%/libracket3m.a
 %%LIB32DIR%%/libracket3m.la
 %%LIB32DIR%%/libracket3m.so
@@ -52,6 +52,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/2htdp/compiled/image_rkt.zo
 %%LIB32DIR%%/racket/collects/2htdp/compiled/info_rkt.dep
 %%LIB32DIR%%/racket/collects/2htdp/compiled/info_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/compiled/planetcute_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/compiled/planetcute_rkt.zo
 %%LIB32DIR%%/racket/collects/2htdp/compiled/universe-syntax-parse_rkt.dep
 %%LIB32DIR%%/racket/collects/2htdp/compiled/universe-syntax-parse_rkt.zo
 %%LIB32DIR%%/racket/collects/2htdp/compiled/universe_rkt.dep
@@ -59,6 +61,227 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/2htdp/image.rkt
 %%LIB32DIR%%/racket/collects/2htdp/info.rkt
 %%LIB32DIR%%/racket/collects/2htdp/langs.txt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/brown-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/brown-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-boy.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-boy.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-cat-girl.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-cat-girl.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-horn-girl.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-horn-girl.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-pink-girl.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-pink-girl.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-princess-girl.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/character-princess-girl.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/chest-closed.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/chest-closed.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/chest-lid.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/chest-lid.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/chest-open.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/chest-open.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/brown-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/brown-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-boy_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-boy_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-cat-girl_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-cat-girl_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-horn-girl_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-horn-girl_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-pink-girl_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-pink-girl_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-princess-girl_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/character-princess-girl_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/chest-closed_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/chest-closed_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/chest-lid_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/chest-lid_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/chest-open_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/chest-open_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/dirt-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/dirt-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/door-tall-closed_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/door-tall-closed_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/door-tall-open_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/door-tall-open_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/enemy-bug_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/enemy-bug_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/gem-blue_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/gem-blue_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/gem-green_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/gem-green_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/gem-orange_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/gem-orange_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/grass-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/grass-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/heart_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/heart_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/key_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/key_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/plain-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/plain-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-north_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-north_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-south_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-south_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/ramp-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/rock_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/rock_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-north-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-north-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-north-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-north-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-north_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-north_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-south-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-south-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-south-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-south-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-south_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-south_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/roof-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/selector_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/selector_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-north-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-north-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-north-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-north-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-north_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-north_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-side-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-side-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-south-east_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-south-east_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-south-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-south-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-south_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-south_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-west_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/shadow-west_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/speech-bubble_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/speech-bubble_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/stone-block-tall_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/stone-block-tall_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/stone-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/stone-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/tree-short_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/tree-short_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/tree-tall_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/tree-tall_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/tree-ugly_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/tree-ugly_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/wall-block-tall_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/wall-block-tall_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/wall-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/wall-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/water-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/water-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/window-tall_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/window-tall_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/wood-block_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/wood-block_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/yellow-star_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled/yellow-star_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/dirt-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/dirt-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/door-tall-closed.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/door-tall-closed.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/door-tall-open.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/door-tall-open.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/enemy-bug.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/enemy-bug.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/gem-blue.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/gem-blue.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/gem-green.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/gem-green.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/gem-orange.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/gem-orange.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/grass-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/grass-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/heart.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/heart.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/key.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/key.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/plain-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/plain-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-north.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-north.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-south.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-south.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/ramp-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/rock.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/rock.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-north-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-north-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-north-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-north-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-north.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-north.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-south-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-south-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-south-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-south-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-south.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-south.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/roof-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/selector.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/selector.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-north-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-north-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-north-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-north-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-north.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-north.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-side-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-side-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-south-east.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-south-east.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-south-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-south-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-south.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-south.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-west.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/shadow-west.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/speech-bubble.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/speech-bubble.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/stone-block-tall.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/stone-block-tall.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/stone-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/stone-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/tree-short.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/tree-short.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/tree-tall.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/tree-tall.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/tree-ugly.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/tree-ugly.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/wall-block-tall.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/wall-block-tall.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/wall-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/wall-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/water-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/water-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/window-tall.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/window-tall.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/wood-block.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/wood-block.rkt
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/yellow-star.png
+%%LIB32DIR%%/racket/collects/2htdp/planetcute/yellow-star.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/check-aux.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/checked-cell.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/clauses-spec-and-process.rkt
@@ -83,6 +306,10 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/2htdp/private/compiled/last_rkt.zo
 %%LIB32DIR%%/racket/collects/2htdp/private/compiled/launch-many-worlds_rkt.dep
 %%LIB32DIR%%/racket/collects/2htdp/private/compiled/launch-many-worlds_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/private/compiled/pad_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/private/compiled/pad_rkt.zo
+%%LIB32DIR%%/racket/collects/2htdp/private/compiled/planetcute-image-list_rkt.dep
+%%LIB32DIR%%/racket/collects/2htdp/private/compiled/planetcute-image-list_rkt.zo
 %%LIB32DIR%%/racket/collects/2htdp/private/compiled/stop_rkt.dep
 %%LIB32DIR%%/racket/collects/2htdp/private/compiled/stop_rkt.zo
 %%LIB32DIR%%/racket/collects/2htdp/private/compiled/timer_rkt.dep
@@ -103,11 +330,14 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/2htdp/private/csv/permission.txt
 %%LIB32DIR%%/racket/collects/2htdp/private/define-keywords.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/design.txt
+%%LIB32DIR%%/racket/collects/2htdp/private/gamepad.png
 %%LIB32DIR%%/racket/collects/2htdp/private/image-core.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/image-more.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/img-err.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/last.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/launch-many-worlds.rkt
+%%LIB32DIR%%/racket/collects/2htdp/private/pad.rkt
+%%LIB32DIR%%/racket/collects/2htdp/private/planetcute-image-list.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/stop.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/timer.rkt
 %%LIB32DIR%%/racket/collects/2htdp/private/universe-image.rkt
@@ -132,10 +362,14 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/2htdp/tests/lauch-many-worlds-proc.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/mouse-evt.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/mp.rkt
+%%LIB32DIR%%/racket/collects/2htdp/tests/name.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/on-release-no-key.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/on-tick-defined.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/on-tick-universe-with-limit.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/on-tick-with-limit.rkt
+%%LIB32DIR%%/racket/collects/2htdp/tests/pad1-handler.rkt
+%%LIB32DIR%%/racket/collects/2htdp/tests/pad1-in-bsl.rkt
+%%LIB32DIR%%/racket/collects/2htdp/tests/pad1.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/perform-record.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/perform-record.txt
 %%LIB32DIR%%/racket/collects/2htdp/tests/perform-robby.rkt
@@ -147,10 +381,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/2htdp/tests/server-rename.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/stop-when-crash.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/stop.rkt
+%%LIB32DIR%%/racket/collects/2htdp/tests/struct-universe.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/test-docs-complete.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/test-image.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/u.png
 %%LIB32DIR%%/racket/collects/2htdp/tests/ufo-rename.rkt
+%%LIB32DIR%%/racket/collects/2htdp/tests/universe-receive.rkt
 %%LIB32DIR%%/racket/collects/2htdp/tests/world0-stops.rkt
 %%LIB32DIR%%/racket/collects/2htdp/universe-request.txt
 %%LIB32DIR%%/racket/collects/2htdp/universe-syntax-parse.rkt
@@ -352,10 +588,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/compiler/compiled/option_rkt.zo
 %%LIB32DIR%%/racket/collects/compiler/compiled/sig_rkt.dep
 %%LIB32DIR%%/racket/collects/compiler/compiled/sig_rkt.zo
-%%LIB32DIR%%/racket/collects/compiler/compiled/src2src_rkt.dep
-%%LIB32DIR%%/racket/collects/compiler/compiled/src2src_rkt.zo
-%%LIB32DIR%%/racket/collects/compiler/compiled/to-core_rkt.dep
-%%LIB32DIR%%/racket/collects/compiler/compiled/to-core_rkt.zo
 %%LIB32DIR%%/racket/collects/compiler/compiled/xform_rkt.dep
 %%LIB32DIR%%/racket/collects/compiler/compiled/xform_rkt.zo
 %%LIB32DIR%%/racket/collects/compiler/compiled/zo-marshal_rkt.dep
@@ -404,8 +636,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/compiler/find-exe.rkt
 %%LIB32DIR%%/racket/collects/compiler/info.rkt
 %%LIB32DIR%%/racket/collects/compiler/main.rkt
-%%LIB32DIR%%/racket/collects/compiler/mzc.h
-%%LIB32DIR%%/racket/collects/compiler/mzclink.h
 %%LIB32DIR%%/racket/collects/compiler/option-unit.rkt
 %%LIB32DIR%%/racket/collects/compiler/option.rkt
 %%LIB32DIR%%/racket/collects/compiler/private/collects-path.rkt
@@ -421,8 +651,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/compiler/private/compiled/mach-o_rkt.zo
 %%LIB32DIR%%/racket/collects/compiler/private/compiled/windlldir_rkt.dep
 %%LIB32DIR%%/racket/collects/compiler/private/compiled/windlldir_rkt.zo
-%%LIB32DIR%%/racket/collects/compiler/private/compiled/winicon_rkt.dep
-%%LIB32DIR%%/racket/collects/compiler/private/compiled/winicon_rkt.zo
 %%LIB32DIR%%/racket/collects/compiler/private/compiled/winsubsys_rkt.dep
 %%LIB32DIR%%/racket/collects/compiler/private/compiled/winsubsys_rkt.zo
 %%LIB32DIR%%/racket/collects/compiler/private/compiled/winutf16_rkt.dep
@@ -434,13 +662,10 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/compiler/private/macfw.rkt
 %%LIB32DIR%%/racket/collects/compiler/private/mach-o.rkt
 %%LIB32DIR%%/racket/collects/compiler/private/windlldir.rkt
-%%LIB32DIR%%/racket/collects/compiler/private/winicon.rkt
 %%LIB32DIR%%/racket/collects/compiler/private/winsubsys.rkt
 %%LIB32DIR%%/racket/collects/compiler/private/winutf16.rkt
 %%LIB32DIR%%/racket/collects/compiler/private/xform.rkt
 %%LIB32DIR%%/racket/collects/compiler/sig.rkt
-%%LIB32DIR%%/racket/collects/compiler/src2src.rkt
-%%LIB32DIR%%/racket/collects/compiler/to-core.rkt
 %%LIB32DIR%%/racket/collects/compiler/xform.rkt
 %%LIB32DIR%%/racket/collects/compiler/zo-marshal.rkt
 %%LIB32DIR%%/racket/collects/compiler/zo-parse.rkt
@@ -966,6 +1191,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/colored-errors_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/debug_rkt.dep
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/debug_rkt.zo
+%%LIB32DIR%%/racket/collects/drracket/private/compiled/dock-icon_rkt.dep
+%%LIB32DIR%%/racket/collects/drracket/private/compiled/dock-icon_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/drracket-normal_rkt.dep
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/drracket-normal_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/drsig_rkt.dep
@@ -1042,6 +1269,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/recon_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/rep_rkt.dep
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/rep_rkt.zo
+%%LIB32DIR%%/racket/collects/drracket/private/compiled/stack-checkpoint_rkt.dep
+%%LIB32DIR%%/racket/collects/drracket/private/compiled/stack-checkpoint_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/stick-figures_rkt.dep
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/stick-figures_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/syncheck-debug_rkt.dep
@@ -1063,6 +1292,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/unit_rkt.dep
 %%LIB32DIR%%/racket/collects/drracket/private/compiled/unit_rkt.zo
 %%LIB32DIR%%/racket/collects/drracket/private/debug.rkt
+%%LIB32DIR%%/racket/collects/drracket/private/dock-icon.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/drracket-normal.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/drsig.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/eb.rkt
@@ -1107,6 +1337,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/drracket/private/profile-drs.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/recon.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/rep.rkt
+%%LIB32DIR%%/racket/collects/drracket/private/stack-checkpoint.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/stick-figures.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/syncheck-debug.rkt
 %%LIB32DIR%%/racket/collects/drracket/private/syncheck/annotate.rkt
@@ -1512,6 +1743,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/file/compiled/gunzip_rkt.zo
 %%LIB32DIR%%/racket/collects/file/compiled/gzip_rkt.dep
 %%LIB32DIR%%/racket/collects/file/compiled/gzip_rkt.zo
+%%LIB32DIR%%/racket/collects/file/compiled/ico_rkt.dep
+%%LIB32DIR%%/racket/collects/file/compiled/ico_rkt.zo
 %%LIB32DIR%%/racket/collects/file/compiled/md5_rkt.dep
 %%LIB32DIR%%/racket/collects/file/compiled/md5_rkt.zo
 %%LIB32DIR%%/racket/collects/file/compiled/resource_rkt.dep
@@ -1526,6 +1759,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/file/gif.rkt
 %%LIB32DIR%%/racket/collects/file/gunzip.rkt
 %%LIB32DIR%%/racket/collects/file/gzip.rkt
+%%LIB32DIR%%/racket/collects/file/ico.rkt
 %%LIB32DIR%%/racket/collects/file/md5.rkt
 %%LIB32DIR%%/racket/collects/file/private/compiled/octree-quantize_rkt.dep
 %%LIB32DIR%%/racket/collects/file/private/compiled/octree-quantize_rkt.zo
@@ -1544,6 +1778,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/file/scribblings/compiled/gunzip_scrbl.zo
 %%LIB32DIR%%/racket/collects/file/scribblings/compiled/gzip_scrbl.dep
 %%LIB32DIR%%/racket/collects/file/scribblings/compiled/gzip_scrbl.zo
+%%LIB32DIR%%/racket/collects/file/scribblings/compiled/ico_scrbl.dep
+%%LIB32DIR%%/racket/collects/file/scribblings/compiled/ico_scrbl.zo
 %%LIB32DIR%%/racket/collects/file/scribblings/compiled/info_rkt.dep
 %%LIB32DIR%%/racket/collects/file/scribblings/compiled/info_rkt.zo
 %%LIB32DIR%%/racket/collects/file/scribblings/compiled/md5_scrbl.dep
@@ -1561,6 +1797,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/file/scribblings/gif.scrbl
 %%LIB32DIR%%/racket/collects/file/scribblings/gunzip.scrbl
 %%LIB32DIR%%/racket/collects/file/scribblings/gzip.scrbl
+%%LIB32DIR%%/racket/collects/file/scribblings/ico.scrbl
 %%LIB32DIR%%/racket/collects/file/scribblings/info.rkt
 %%LIB32DIR%%/racket/collects/file/scribblings/md5.scrbl
 %%LIB32DIR%%/racket/collects/file/scribblings/resource.scrbl
@@ -1684,6 +1921,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/framework/private/compiled/path-utils_rkt.zo
 %%LIB32DIR%%/racket/collects/framework/private/compiled/preferences_rkt.dep
 %%LIB32DIR%%/racket/collects/framework/private/compiled/preferences_rkt.zo
+%%LIB32DIR%%/racket/collects/framework/private/compiled/racket_rkt.dep
+%%LIB32DIR%%/racket/collects/framework/private/compiled/racket_rkt.zo
 %%LIB32DIR%%/racket/collects/framework/private/compiled/scheme_rkt.dep
 %%LIB32DIR%%/racket/collects/framework/private/compiled/scheme_rkt.zo
 %%LIB32DIR%%/racket/collects/framework/private/compiled/search_rkt.dep
@@ -1719,6 +1958,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/framework/private/pasteboard.rkt
 %%LIB32DIR%%/racket/collects/framework/private/path-utils.rkt
 %%LIB32DIR%%/racket/collects/framework/private/preferences.rkt
+%%LIB32DIR%%/racket/collects/framework/private/racket.rkt
 %%LIB32DIR%%/racket/collects/framework/private/scheme.rkt
 %%LIB32DIR%%/racket/collects/framework/private/search.rkt
 %%LIB32DIR%%/racket/collects/framework/private/sig.rkt
@@ -2790,6 +3030,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/icons/bb-sm-bw.bmp
 %%LIB32DIR%%/racket/collects/icons/bb-small.bmp
 %%LIB32DIR%%/racket/collects/icons/bb.gif
+%%LIB32DIR%%/racket/collects/icons/bomb-32x32.png
 %%LIB32DIR%%/racket/collects/icons/book.gif
 %%LIB32DIR%%/racket/collects/icons/break.png
 %%LIB32DIR%%/racket/collects/icons/bug09.png
@@ -2813,6 +3054,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/icons/left-right-cursor.xbm
 %%LIB32DIR%%/racket/collects/icons/left-right-mask.xbm
 %%LIB32DIR%%/racket/collects/icons/lock.gif
+%%LIB32DIR%%/racket/collects/icons/macro-stepper-32x32.png
 %%LIB32DIR%%/racket/collects/icons/macro-stepper-narrow.png
 %%LIB32DIR%%/racket/collects/icons/macro-stepper.png
 %%LIB32DIR%%/racket/collects/icons/medium-plt.jpg
@@ -2860,6 +3102,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/icons/sk.jpg
 %%LIB32DIR%%/racket/collects/icons/slash-slash.gif
 %%LIB32DIR%%/racket/collects/icons/small-planet.png
+%%LIB32DIR%%/racket/collects/icons/stepper-32x32.png
 %%LIB32DIR%%/racket/collects/icons/stop-16x16.png
 %%LIB32DIR%%/racket/collects/icons/stop-22x22.png
 %%LIB32DIR%%/racket/collects/icons/stop-32x32.png
@@ -2879,6 +3122,113 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/icons/wizard-image.jpg
 %%LIB32DIR%%/racket/collects/icons/xml-box-open.jpg
 %%LIB32DIR%%/racket/collects/icons/xml-box.jpg
+%%LIB32DIR%%/racket/collects/images/compile-time.rkt
+%%LIB32DIR%%/racket/collects/images/compiled/compile-time_rkt.dep
+%%LIB32DIR%%/racket/collects/images/compiled/compile-time_rkt.zo
+%%LIB32DIR%%/racket/collects/images/compiled/gui_rkt.dep
+%%LIB32DIR%%/racket/collects/images/compiled/gui_rkt.zo
+%%LIB32DIR%%/racket/collects/images/compiled/info_rkt.dep
+%%LIB32DIR%%/racket/collects/images/compiled/info_rkt.zo
+%%LIB32DIR%%/racket/collects/images/compiled/logos_rkt.dep
+%%LIB32DIR%%/racket/collects/images/compiled/logos_rkt.zo
+%%LIB32DIR%%/racket/collects/images/gui.rkt
+%%LIB32DIR%%/racket/collects/images/icons/arrow.rkt
+%%LIB32DIR%%/racket/collects/images/icons/compiled/arrow_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/arrow_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/control_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/control_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/file_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/file_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/misc_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/misc_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/stickman_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/stickman_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/style_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/style_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/symbol_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/symbol_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/compiled/tool_rkt.dep
+%%LIB32DIR%%/racket/collects/images/icons/compiled/tool_rkt.zo
+%%LIB32DIR%%/racket/collects/images/icons/control.rkt
+%%LIB32DIR%%/racket/collects/images/icons/file.rkt
+%%LIB32DIR%%/racket/collects/images/icons/misc.rkt
+%%LIB32DIR%%/racket/collects/images/icons/stickman.rkt
+%%LIB32DIR%%/racket/collects/images/icons/style.rkt
+%%LIB32DIR%%/racket/collects/images/icons/symbol.rkt
+%%LIB32DIR%%/racket/collects/images/icons/tool.rkt
+%%LIB32DIR%%/racket/collects/images/info.rkt
+%%LIB32DIR%%/racket/collects/images/logos.rkt
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-parameters_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-parameters_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-render_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-render_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-struct_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-struct_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-untyped-parameters_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap-untyped-parameters_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/deep-flomap_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/draw-predicates_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/draw-predicates_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-blur_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-blur_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-composite_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-composite_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-convert_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-convert_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-effects_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-effects_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-gradient_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-gradient_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-pointwise_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-pointwise_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-resize_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-resize_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-stats_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-stats_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-struct_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-struct_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-transform_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap-transform_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flomap_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/flonum_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/flonum_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/compiled/utils_rkt.dep
+%%LIB32DIR%%/racket/collects/images/private/compiled/utils_rkt.zo
+%%LIB32DIR%%/racket/collects/images/private/deep-flomap-parameters.rkt
+%%LIB32DIR%%/racket/collects/images/private/deep-flomap-render.rkt
+%%LIB32DIR%%/racket/collects/images/private/deep-flomap-struct.rkt
+%%LIB32DIR%%/racket/collects/images/private/deep-flomap-untyped-parameters.rkt
+%%LIB32DIR%%/racket/collects/images/private/deep-flomap.rkt
+%%LIB32DIR%%/racket/collects/images/private/draw-predicates.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-blur.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-composite.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-convert.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-effects.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-gradient.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-pointwise.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-resize.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-stats.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-struct.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap-transform.rkt
+%%LIB32DIR%%/racket/collects/images/private/flomap.rkt
+%%LIB32DIR%%/racket/collects/images/private/flonum.rkt
+%%LIB32DIR%%/racket/collects/images/private/utils.rkt
+%%LIB32DIR%%/racket/collects/images/scribblings/compile-time.scrbl
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/compile-time_scrbl.dep
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/compile-time_scrbl.zo
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/icons_scrbl.dep
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/icons_scrbl.zo
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/images_scrbl.dep
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/images_scrbl.zo
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/logos_scrbl.dep
+%%LIB32DIR%%/racket/collects/images/scribblings/compiled/logos_scrbl.zo
+%%LIB32DIR%%/racket/collects/images/scribblings/icons.scrbl
+%%LIB32DIR%%/racket/collects/images/scribblings/images.scrbl
+%%LIB32DIR%%/racket/collects/images/scribblings/logos.scrbl
+%%LIB32DIR%%/racket/collects/images/tests/icon-tests.rkt
+%%LIB32DIR%%/racket/collects/images/tests/logo-tests.rkt
 %%LIB32DIR%%/racket/collects/info-domain/compiled/cache.rktd
 %%LIB32DIR%%/racket/collects/lang/compiled/debugger-language-interface_rkt.dep
 %%LIB32DIR%%/racket/collects/lang/compiled/debugger-language-interface_rkt.zo
@@ -5098,6 +5448,30 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plai/compiled/web_rkt.dep
 %%LIB32DIR%%/racket/collects/plai/compiled/web_rkt.zo
 %%LIB32DIR%%/racket/collects/plai/datatype.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/collector.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/collector/lang/compiled/reader_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/collector/lang/compiled/reader_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/collector/lang/reader.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/compiled/collector_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/compiled/collector_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/compiled/mutator_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/compiled/mutator_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/mutator.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/mutator/lang/compiled/reader_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/mutator/lang/compiled/reader_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/mutator/lang/reader.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/private/collector-exports.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/collector-exports_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/collector-exports_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/gc-core_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/gc-core_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/gc-gui_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/gc-gui_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/gc-transformer_rkt.dep
+%%LIB32DIR%%/racket/collects/plai/gc2/private/compiled/gc-transformer_rkt.zo
+%%LIB32DIR%%/racket/collects/plai/gc2/private/gc-core.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/private/gc-gui.rkt
+%%LIB32DIR%%/racket/collects/plai/gc2/private/gc-transformer.rkt
 %%LIB32DIR%%/racket/collects/plai/info.rkt
 %%LIB32DIR%%/racket/collects/plai/lang/compiled/reader_rkt.dep
 %%LIB32DIR%%/racket/collects/plai/lang/compiled/reader_rkt.zo
@@ -5235,16 +5609,15 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/planet/terse-info.rkt
 %%LIB32DIR%%/racket/collects/planet/util.rkt
 %%LIB32DIR%%/racket/collects/planet/version.rkt
-%%LIB32DIR%%/racket/collects/plot/common/area.rkt
 %%LIB32DIR%%/racket/collects/plot/common/axis-transform.rkt
-%%LIB32DIR%%/racket/collects/plot/common/compiled/area_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/common/compiled/area_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/axis-transform_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/axis-transform_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/common/compiled/contract-doc_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/common/compiled/contract-doc_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/contract_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/contract_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/currency_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/currency_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/date-time_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/date-time_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/deprecation-warning_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/deprecation-warning_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/draw_rkt.dep
@@ -5255,79 +5628,122 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/common/compiled/format_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/gui_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/gui_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/kde_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/kde_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/legend_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/legend_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/marching-cubes_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/marching-cubes_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/marching-squares_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/marching-squares_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/marching-utils_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/marching-utils_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/math_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/math_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/nonrenderer_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/nonrenderer_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/parameters_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/parameters_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/plot-device_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/plot-device_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/plot-element_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/plot-element_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/sample_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/sample_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/common/compiled/serialize-syntax_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/common/compiled/serialize-syntax_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/samplers_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/samplers_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/common/compiled/snip_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/snip_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/ticks_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/ticks_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/compiled/utils_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/common/compiled/utils_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/common/compiled/vector_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/common/compiled/vector_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/common/contract-doc.rkt
+%%LIB32DIR%%/racket/collects/plot/common/compiled/worker-thread_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/common/compiled/worker-thread_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/common/contract.rkt
+%%LIB32DIR%%/racket/collects/plot/common/currency.rkt
+%%LIB32DIR%%/racket/collects/plot/common/date-time.rkt
 %%LIB32DIR%%/racket/collects/plot/common/deprecation-warning.rkt
 %%LIB32DIR%%/racket/collects/plot/common/draw.rkt
 %%LIB32DIR%%/racket/collects/plot/common/file-type.rkt
 %%LIB32DIR%%/racket/collects/plot/common/format.rkt
 %%LIB32DIR%%/racket/collects/plot/common/gui.rkt
+%%LIB32DIR%%/racket/collects/plot/common/kde.rkt
 %%LIB32DIR%%/racket/collects/plot/common/legend.rkt
 %%LIB32DIR%%/racket/collects/plot/common/marching-cubes.rkt
 %%LIB32DIR%%/racket/collects/plot/common/marching-squares.rkt
+%%LIB32DIR%%/racket/collects/plot/common/marching-utils.rkt
 %%LIB32DIR%%/racket/collects/plot/common/math.rkt
+%%LIB32DIR%%/racket/collects/plot/common/nonrenderer.rkt
 %%LIB32DIR%%/racket/collects/plot/common/parameters.rkt
+%%LIB32DIR%%/racket/collects/plot/common/plot-device.rkt
+%%LIB32DIR%%/racket/collects/plot/common/plot-element.rkt
 %%LIB32DIR%%/racket/collects/plot/common/sample.rkt
-%%LIB32DIR%%/racket/collects/plot/common/serialize-syntax.rkt
+%%LIB32DIR%%/racket/collects/plot/common/samplers.rkt
+%%LIB32DIR%%/racket/collects/plot/common/snip.rkt
 %%LIB32DIR%%/racket/collects/plot/common/ticks.rkt
 %%LIB32DIR%%/racket/collects/plot/common/utils.rkt
-%%LIB32DIR%%/racket/collects/plot/common/vector.rkt
+%%LIB32DIR%%/racket/collects/plot/common/worker-thread.rkt
 %%LIB32DIR%%/racket/collects/plot/compat.rkt
 %%LIB32DIR%%/racket/collects/plot/compiled/compat_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/compiled/compat_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/compiled/custom_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/compiled/custom_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/compiled/deprecated_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/compiled/deprecated_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/compiled/doc_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/compiled/doc_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/compiled/info_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/compiled/info_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/compiled/main_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/compiled/main_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/compiled/utils_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/compiled/utils_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/custom.rkt
-%%LIB32DIR%%/racket/collects/plot/deprecated.rkt
-%%LIB32DIR%%/racket/collects/plot/deprecated/compiled/fit-low-level_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/deprecated/compiled/fit-low-level_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/deprecated/compiled/fit_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/deprecated/compiled/fit_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/axis-transform.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/axis-transform_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/axis-transform_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/date-time_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/date-time_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/draw_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/draw_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/format_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/format_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/kde_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/kde_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/legend_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/legend_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/math_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/math_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/parameters_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/parameters_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/plot-element_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/plot-element_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/sample_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/sample_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/samplers_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/samplers_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/ticks_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/contracted/compiled/ticks_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/contracted/date-time.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/draw.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/format.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/kde.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/legend.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/math.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/parameters.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/plot-element.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/sample.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/samplers.rkt
+%%LIB32DIR%%/racket/collects/plot/contracted/ticks.rkt
+%%LIB32DIR%%/racket/collects/plot/deprecated/compiled/deprecated_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/deprecated/compiled/deprecated_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/deprecated/compiled/math_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/deprecated/compiled/math_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/deprecated/compiled/renderers_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/deprecated/compiled/renderers_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/deprecated/fit-low-level.rkt
-%%LIB32DIR%%/racket/collects/plot/deprecated/fit.rkt
+%%LIB32DIR%%/racket/collects/plot/deprecated/deprecated.rkt
 %%LIB32DIR%%/racket/collects/plot/deprecated/math.rkt
 %%LIB32DIR%%/racket/collects/plot/deprecated/renderers.rkt
+%%LIB32DIR%%/racket/collects/plot/doc.rkt
 %%LIB32DIR%%/racket/collects/plot/info.rkt
 %%LIB32DIR%%/racket/collects/plot/main.rkt
-%%LIB32DIR%%/racket/collects/plot/plot2d/area.rkt
-%%LIB32DIR%%/racket/collects/plot/plot2d/bounds.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/clip.rkt
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/area_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/area_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/bounds_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/bounds_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/clip_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/clip_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/contour_rkt.dep
@@ -5336,37 +5752,28 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/decoration_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/interval_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/interval_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/kde_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/kde_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/line_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/line_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/plot-area_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/plot-area_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/plot_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/plot_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/point_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/point_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/rectangle_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot2d/compiled/rectangle_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/renderer_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/renderer_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/sample_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/sample_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/snip_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/plot2d/compiled/snip_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot2d/contour.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/decoration.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/interval.rkt
-%%LIB32DIR%%/racket/collects/plot/plot2d/kde.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/line.rkt
+%%LIB32DIR%%/racket/collects/plot/plot2d/plot-area.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/plot.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/point.rkt
 %%LIB32DIR%%/racket/collects/plot/plot2d/rectangle.rkt
-%%LIB32DIR%%/racket/collects/plot/plot2d/renderer.rkt
-%%LIB32DIR%%/racket/collects/plot/plot2d/sample.rkt
-%%LIB32DIR%%/racket/collects/plot/plot3d/area.rkt
-%%LIB32DIR%%/racket/collects/plot/plot3d/bounds.rkt
+%%LIB32DIR%%/racket/collects/plot/plot2d/snip.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/clip.rkt
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/area_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/area_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/bounds_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/bounds_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/clip_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/clip_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/contour_rkt.dep
@@ -5377,16 +5784,14 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/line_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/matrix_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/matrix_rkt.zo
+%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/plot-area_rkt.dep
+%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/plot-area_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/plot_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/plot_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/point_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/point_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/rectangle_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/rectangle_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/renderer_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/renderer_rkt.zo
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/sample_rkt.dep
-%%LIB32DIR%%/racket/collects/plot/plot3d/compiled/sample_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/shape_rkt.dep
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/shape_rkt.zo
 %%LIB32DIR%%/racket/collects/plot/plot3d/compiled/snip_rkt.dep
@@ -5397,11 +5802,10 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/plot3d/isosurface.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/line.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/matrix.rkt
+%%LIB32DIR%%/racket/collects/plot/plot3d/plot-area.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/plot.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/point.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/rectangle.rkt
-%%LIB32DIR%%/racket/collects/plot/plot3d/renderer.rkt
-%%LIB32DIR%%/racket/collects/plot/plot3d/sample.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/shape.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/snip.rkt
 %%LIB32DIR%%/racket/collects/plot/plot3d/surface.rkt
@@ -5413,10 +5817,10 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/compat_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/contracts_scrbl.dep
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/contracts_scrbl.zo
-%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/custom_scrbl.dep
-%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/custom_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/intro_scrbl.dep
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/intro_scrbl.zo
+%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/nonrenderer_scrbl.dep
+%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/nonrenderer_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/params_scrbl.dep
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/params_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/plot2d_scrbl.dep
@@ -5431,13 +5835,14 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/renderer2d_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/renderer3d_scrbl.dep
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/renderer3d_scrbl.zo
-%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/todo_scrbl.dep
-%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/todo_scrbl.zo
+%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/ticks_scrbl.dep
+%%LIB32DIR%%/racket/collects/plot/scribblings/compiled/ticks_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/utils_scrbl.dep
 %%LIB32DIR%%/racket/collects/plot/scribblings/compiled/utils_scrbl.zo
 %%LIB32DIR%%/racket/collects/plot/scribblings/contracts.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/custom.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/intro.scrbl
+%%LIB32DIR%%/racket/collects/plot/scribblings/nonrenderer.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/params.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/plot.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/plot2d.scrbl
@@ -5445,14 +5850,22 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/plot/scribblings/porting.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/renderer2d.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/renderer3d.scrbl
-%%LIB32DIR%%/racket/collects/plot/scribblings/todo.scrbl
+%%LIB32DIR%%/racket/collects/plot/scribblings/ticks.scrbl
 %%LIB32DIR%%/racket/collects/plot/scribblings/utils.scrbl
+%%LIB32DIR%%/racket/collects/plot/tests/axis-transform-tests.rkt
 %%LIB32DIR%%/racket/collects/plot/tests/compat-tests.rkt
-%%LIB32DIR%%/racket/collects/plot/tests/fit-test-1.rkt
-%%LIB32DIR%%/racket/collects/plot/tests/fit-test-2.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/doc-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/extreme-bounds-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/isosurface-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/low-level-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/out-file-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/pen-brush-hsv.rkt
 %%LIB32DIR%%/racket/collects/plot/tests/plot2d-tests.rkt
 %%LIB32DIR%%/racket/collects/plot/tests/plot3d-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/selection-tests.rkt
 %%LIB32DIR%%/racket/collects/plot/tests/slideshow-test.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/subdivision-tests.rkt
+%%LIB32DIR%%/racket/collects/plot/tests/tick-tests.rkt
 %%LIB32DIR%%/racket/collects/plot/utils.rkt
 %%LIB32DIR%%/racket/collects/preprocessor/compiled/info_rkt.dep
 %%LIB32DIR%%/racket/collects/preprocessor/compiled/info_rkt.zo
@@ -5709,6 +6122,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/racket/compiled/package_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/compiled/path_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/compiled/path_rkt.zo
+%%LIB32DIR%%/racket/collects/racket/compiled/performance-hint_rkt.dep
+%%LIB32DIR%%/racket/collects/racket/compiled/performance-hint_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/compiled/place_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/compiled/place_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/compiled/port_rkt.dep
@@ -5817,8 +6232,14 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/ds-helpers_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/ds_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/ds_rkt.zo
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/env_rkt.dep
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/env_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/exists_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/exists_rkt.zo
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/generate-base_rkt.dep
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/generate-base_rkt.zo
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/generate_rkt.dep
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/generate_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/guts_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/guts_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/hash_rkt.dep
@@ -5845,13 +6266,20 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/prop_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/provide_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/provide_rkt.zo
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/rand_rkt.dep
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/rand_rkt.zo
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/struct-prop_rkt.dep
+%%LIB32DIR%%/racket/collects/racket/contract/private/compiled/struct-prop_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/struct_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/struct_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/vector_rkt.dep
 %%LIB32DIR%%/racket/collects/racket/contract/private/compiled/vector_rkt.zo
 %%LIB32DIR%%/racket/collects/racket/contract/private/ds-helpers.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/ds.rkt
+%%LIB32DIR%%/racket/collects/racket/contract/private/env.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/exists.rkt
+%%LIB32DIR%%/racket/collects/racket/contract/private/generate-base.rkt
+%%LIB32DIR%%/racket/collects/racket/contract/private/generate.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/guts.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/hash.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/helpers.rkt
@@ -5865,6 +6293,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/racket/contract/private/parametric.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/prop.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/provide.rkt
+%%LIB32DIR%%/racket/collects/racket/contract/private/rand.rkt
+%%LIB32DIR%%/racket/collects/racket/contract/private/struct-prop.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/struct.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/private/vector.rkt
 %%LIB32DIR%%/racket/collects/racket/contract/region.rkt
@@ -6096,6 +6526,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/racket/mpair.rkt
 %%LIB32DIR%%/racket/collects/racket/package.rkt
 %%LIB32DIR%%/racket/collects/racket/path.rkt
+%%LIB32DIR%%/racket/collects/racket/performance-hint.rkt
 %%LIB32DIR%%/racket/collects/racket/place.rkt
 %%LIB32DIR%%/racket/collects/racket/port.rkt
 %%LIB32DIR%%/racket/collects/racket/pretty.rkt
@@ -6687,6 +7118,22 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/examples/delim-cont/test.rkt
 %%LIB32DIR%%/racket/collects/redex/examples/info.rkt
 %%LIB32DIR%%/racket/collects/redex/examples/letrec.rkt
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/README.txt
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/list-machine-typing_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/list-machine-typing_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/list-machine_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/list-machine_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/p-sample_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/p-sample_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/slides_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/slides_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/test_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled/test_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/list-machine-typing.rkt
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/list-machine.rkt
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/p-sample.rkt
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/slides.rkt
+%%LIB32DIR%%/racket/collects/redex/examples/list-machine/test.rkt
 %%LIB32DIR%%/racket/collects/redex/examples/omega.rkt
 %%LIB32DIR%%/racket/collects/redex/examples/pi-calculus.rkt
 %%LIB32DIR%%/racket/collects/redex/examples/r6rs/README
@@ -6756,6 +7203,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/private/compiled/arrow_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/private/compiled/core-layout_rkt.dep
 %%LIB32DIR%%/racket/collects/redex/private/compiled/core-layout_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/private/compiled/cycle-check_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/private/compiled/cycle-check_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/private/compiled/defined-checks_rkt.dep
 %%LIB32DIR%%/racket/collects/redex/private/compiled/defined-checks_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/private/compiled/dot_rkt.dep
@@ -6772,6 +7221,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/private/compiled/loc-wrapper-rt_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/private/compiled/loc-wrapper_rkt.dep
 %%LIB32DIR%%/racket/collects/redex/private/compiled/loc-wrapper_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/private/compiled/match-a-pattern_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/private/compiled/match-a-pattern_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/private/compiled/matcher_rkt.dep
 %%LIB32DIR%%/racket/collects/redex/private/compiled/matcher_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/private/compiled/pict_rkt.dep
@@ -6807,6 +7258,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/private/compiler/match.rkt
 %%LIB32DIR%%/racket/collects/redex/private/compiler/redextomatrix.rkt
 %%LIB32DIR%%/racket/collects/redex/private/core-layout.rkt
+%%LIB32DIR%%/racket/collects/redex/private/cycle-check.rkt
 %%LIB32DIR%%/racket/collects/redex/private/defined-checks.rkt
 %%LIB32DIR%%/racket/collects/redex/private/dot.rkt
 %%LIB32DIR%%/racket/collects/redex/private/error.rkt
@@ -6815,6 +7267,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/private/loc-wrapper-ct.rkt
 %%LIB32DIR%%/racket/collects/redex/private/loc-wrapper-rt.rkt
 %%LIB32DIR%%/racket/collects/redex/private/loc-wrapper.rkt
+%%LIB32DIR%%/racket/collects/redex/private/match-a-pattern.rkt
 %%LIB32DIR%%/racket/collects/redex/private/matcher.rkt
 %%LIB32DIR%%/racket/collects/redex/private/pict.rkt
 %%LIB32DIR%%/racket/collects/redex/private/red-sem-macro-helpers.rkt
@@ -6928,6 +7381,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/tests/compiled/matcher-test_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/tests/compiled/pict-test_rkt.dep
 %%LIB32DIR%%/racket/collects/redex/tests/compiled/pict-test_rkt.zo
+%%LIB32DIR%%/racket/collects/redex/tests/compiled/rewrite-side-condition-test_rkt.dep
+%%LIB32DIR%%/racket/collects/redex/tests/compiled/rewrite-side-condition-test_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/tests/compiled/rg-test_rkt.dep
 %%LIB32DIR%%/racket/collects/redex/tests/compiled/rg-test_rkt.zo
 %%LIB32DIR%%/racket/collects/redex/tests/compiled/run-tests_rkt.dep
@@ -6956,6 +7411,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/redex/tests/lw-test.rkt
 %%LIB32DIR%%/racket/collects/redex/tests/matcher-test.rkt
 %%LIB32DIR%%/racket/collects/redex/tests/pict-test.rkt
+%%LIB32DIR%%/racket/collects/redex/tests/rewrite-side-condition-test.rkt
 %%LIB32DIR%%/racket/collects/redex/tests/rg-test.rkt
 %%LIB32DIR%%/racket/collects/redex/tests/run-err-tests/judgment-form-contracts.rktd
 %%LIB32DIR%%/racket/collects/redex/tests/run-err-tests/judgment-form-ellipses.rktd
@@ -7562,6 +8018,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribble/scribble-common.js
 %%LIB32DIR%%/racket/collects/scribble/scribble-prefix.html
 %%LIB32DIR%%/racket/collects/scribble/scribble-prefix.tex
+%%LIB32DIR%%/racket/collects/scribble/scribble-skull.tex
 %%LIB32DIR%%/racket/collects/scribble/scribble-style.css
 %%LIB32DIR%%/racket/collects/scribble/scribble-style.tex
 %%LIB32DIR%%/racket/collects/scribble/scribble.css
@@ -7877,8 +8334,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/framework/compiled/preferences-text_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/framework/compiled/preferences_scrbl.dep
 %%LIB32DIR%%/racket/collects/scribblings/framework/compiled/preferences_scrbl.zo
-%%LIB32DIR%%/racket/collects/scribblings/framework/compiled/scheme_scrbl.dep
-%%LIB32DIR%%/racket/collects/scribblings/framework/compiled/scheme_scrbl.zo
+%%LIB32DIR%%/racket/collects/scribblings/framework/compiled/racket_scrbl.dep
+%%LIB32DIR%%/racket/collects/scribblings/framework/compiled/racket_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/framework/compiled/splash_scrbl.dep
 %%LIB32DIR%%/racket/collects/scribblings/framework/compiled/splash_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/framework/compiled/test_scrbl.dep
@@ -7910,7 +8367,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/framework/path-utils.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/framework/preferences-text.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/framework/preferences.scrbl
-%%LIB32DIR%%/racket/collects/scribblings/framework/scheme.scrbl
+%%LIB32DIR%%/racket/collects/scribblings/framework/racket.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/framework/splash.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/framework/test.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/framework/text.scrbl
@@ -8518,7 +8975,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/guide/proc-macros.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/guide/qq.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/guide/quote.scrbl
-%%LIB32DIR%%/racket/collects/scribblings/guide/read.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/guide/reader-extension.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/guide/regexp.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/guide/regexps-data.scrbl
@@ -8832,6 +9288,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/cont-marks_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/cont_scrbl.dep
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/cont_scrbl.zo
+%%LIB32DIR%%/racket/collects/scribblings/reference/compiled/contracts-struct-prop_scrbl.dep
+%%LIB32DIR%%/racket/collects/scribblings/reference/compiled/contracts-struct-prop_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/contracts_scrbl.dep
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/contracts_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/control-lib_scrbl.dep
@@ -9030,6 +9488,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/subprocess_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/surrogate_scrbl.dep
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/surrogate_scrbl.zo
+%%LIB32DIR%%/racket/collects/scribblings/reference/compiled/symbols_scrbl.dep
+%%LIB32DIR%%/racket/collects/scribblings/reference/compiled/symbols_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/sync_scrbl.dep
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/sync_scrbl.zo
 %%LIB32DIR%%/racket/collects/scribblings/reference/compiled/syntax-model_scrbl.dep
@@ -9067,6 +9527,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/reference/concurrency.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/cont-marks.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/cont.scrbl
+%%LIB32DIR%%/racket/collects/scribblings/reference/contracts-struct-prop.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/contracts.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/control-lib.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/control.scrbl
@@ -9169,6 +9630,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/scribblings/reference/stx-trans.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/subprocess.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/surrogate.scrbl
+%%LIB32DIR%%/racket/collects/scribblings/reference/symbols.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/sync.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/syntax-model.scrbl
 %%LIB32DIR%%/racket/collects/scribblings/reference/syntax-util.scrbl
@@ -10624,6 +11086,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/syntax/compiled/boundmap_rkt.zo
 %%LIB32DIR%%/racket/collects/syntax/compiled/context_rkt.dep
 %%LIB32DIR%%/racket/collects/syntax/compiled/context_rkt.zo
+%%LIB32DIR%%/racket/collects/syntax/compiled/datum_rkt.dep
+%%LIB32DIR%%/racket/collects/syntax/compiled/datum_rkt.zo
 %%LIB32DIR%%/racket/collects/syntax/compiled/define_rkt.dep
 %%LIB32DIR%%/racket/collects/syntax/compiled/define_rkt.zo
 %%LIB32DIR%%/racket/collects/syntax/compiled/docprovide_rkt.dep
@@ -10680,13 +11144,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/syntax/compiled/toplevel_rkt.zo
 %%LIB32DIR%%/racket/collects/syntax/compiled/trusted-xforms_rkt.dep
 %%LIB32DIR%%/racket/collects/syntax/compiled/trusted-xforms_rkt.zo
-%%LIB32DIR%%/racket/collects/syntax/compiled/zodiac-sig_rkt.dep
-%%LIB32DIR%%/racket/collects/syntax/compiled/zodiac-sig_rkt.zo
-%%LIB32DIR%%/racket/collects/syntax/compiled/zodiac-unit_rkt.dep
-%%LIB32DIR%%/racket/collects/syntax/compiled/zodiac-unit_rkt.zo
-%%LIB32DIR%%/racket/collects/syntax/compiled/zodiac_rkt.dep
-%%LIB32DIR%%/racket/collects/syntax/compiled/zodiac_rkt.zo
 %%LIB32DIR%%/racket/collects/syntax/context.rkt
+%%LIB32DIR%%/racket/collects/syntax/datum.rkt
 %%LIB32DIR%%/racket/collects/syntax/define.rkt
 %%LIB32DIR%%/racket/collects/syntax/doc.txt
 %%LIB32DIR%%/racket/collects/syntax/docprovide.rkt
@@ -10825,6 +11284,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/common_rkt.zo
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/context_scrbl.dep
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/context_scrbl.zo
+%%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/datum_scrbl.dep
+%%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/datum_scrbl.zo
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/define_scrbl.dep
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/define_scrbl.zo
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/docprovide_scrbl.dep
@@ -10885,9 +11346,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/transformer-helpers_scrbl.zo
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/trusted-xforms_scrbl.dep
 %%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/trusted-xforms_scrbl.zo
-%%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/zodiac_scrbl.dep
-%%LIB32DIR%%/racket/collects/syntax/scribblings/compiled/zodiac_scrbl.zo
 %%LIB32DIR%%/racket/collects/syntax/scribblings/context.scrbl
+%%LIB32DIR%%/racket/collects/syntax/scribblings/datum.scrbl
 %%LIB32DIR%%/racket/collects/syntax/scribblings/define.scrbl
 %%LIB32DIR%%/racket/collects/syntax/scribblings/docprovide.scrbl
 %%LIB32DIR%%/racket/collects/syntax/scribblings/flatten-begin.scrbl
@@ -10972,7 +11432,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/syntax/scribblings/toplevel.scrbl
 %%LIB32DIR%%/racket/collects/syntax/scribblings/transformer-helpers.scrbl
 %%LIB32DIR%%/racket/collects/syntax/scribblings/trusted-xforms.scrbl
-%%LIB32DIR%%/racket/collects/syntax/scribblings/zodiac.scrbl
 %%LIB32DIR%%/racket/collects/syntax/srcloc.rkt
 %%LIB32DIR%%/racket/collects/syntax/strip-context.rkt
 %%LIB32DIR%%/racket/collects/syntax/struct.rkt
@@ -10981,9 +11440,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/syntax/to-string.rkt
 %%LIB32DIR%%/racket/collects/syntax/toplevel.rkt
 %%LIB32DIR%%/racket/collects/syntax/trusted-xforms.rkt
-%%LIB32DIR%%/racket/collects/syntax/zodiac-sig.rkt
-%%LIB32DIR%%/racket/collects/syntax/zodiac-unit.rkt
-%%LIB32DIR%%/racket/collects/syntax/zodiac.rkt
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/batch-io.ss
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/compiled/batch-io_ss.dep
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/compiled/batch-io_ss.zo
@@ -10993,6 +11449,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/compiled/universe_ss.zo
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/image.ss
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/2htdp.scrbl
+%%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/PlanetCuteShadowMockup.jpg
+%%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/PlanetCuteShadowTest.png
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/batch-io.scrbl
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/2htdp_scrbl.dep
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/2htdp_scrbl.zo
@@ -11002,6 +11460,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/image-util_rkt.zo
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/image_scrbl.dep
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/image_scrbl.zo
+%%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/planetcute_scrbl.dep
+%%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/planetcute_scrbl.zo
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/port_rkt.dep
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/port_rkt.zo
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/compiled/port_scrbl.dep
@@ -11017,6 +11477,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/io.css
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/io.tex
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/ligature.png
+%%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/planetcute.scrbl
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/port.rkt
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/port.scrbl
 %%LIB32DIR%%/racket/collects/teachpack/2htdp/scribblings/shared.rkt
@@ -11071,6 +11532,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/teachpack/door-real.png
 %%LIB32DIR%%/racket/collects/teachpack/door-sim.png
 %%LIB32DIR%%/racket/collects/teachpack/door.ss
+%%LIB32DIR%%/racket/collects/teachpack/gamepad.png
 %%LIB32DIR%%/racket/collects/teachpack/htdp/arrow-gui.ss
 %%LIB32DIR%%/racket/collects/teachpack/htdp/arrow.ss
 %%LIB32DIR%%/racket/collects/teachpack/htdp/compiled/arrow-gui_ss.dep
@@ -11287,12 +11749,15 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/data/compiled/gvector_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/data/compiled/heap_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/data/compiled/heap_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/data/compiled/order_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/data/compiled/order_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/data/compiled/ordered-dict_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/data/compiled/ordered-dict_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/data/compiled/queue_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/data/compiled/queue_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/data/gvector.rkt
 %%LIB32DIR%%/racket/collects/tests/data/heap.rkt
+%%LIB32DIR%%/racket/collects/tests/data/order.rkt
 %%LIB32DIR%%/racket/collects/tests/data/ordered-dict.rkt
 %%LIB32DIR%%/racket/collects/tests/data/queue.rkt
 %%LIB32DIR%%/racket/collects/tests/datalog/ast.rkt
@@ -11466,12 +11931,18 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/db/db/connection.rkt
 %%LIB32DIR%%/racket/collects/tests/db/db/query.rkt
 %%LIB32DIR%%/racket/collects/tests/db/db/sql-types.rkt
+%%LIB32DIR%%/racket/collects/tests/db/gen/compiled/misc_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/db/gen/compiled/misc_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/db/gen/compiled/query_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/db/gen/compiled/query_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/db/gen/compiled/sql-types_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/db/gen/compiled/sql-types_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/db/gen/misc.rkt
 %%LIB32DIR%%/racket/collects/tests/db/gen/query.rkt
 %%LIB32DIR%%/racket/collects/tests/db/gen/sql-types.rkt
+%%LIB32DIR%%/racket/collects/tests/db/programs/compiled/sl-inserts_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/db/programs/compiled/sl-inserts_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/db/programs/sl-inserts.rkt
 %%LIB32DIR%%/racket/collects/tests/deinprogramm/compiled/image_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/deinprogramm/compiled/image_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/deinprogramm/compiled/run-image-test_rkt.dep
@@ -11506,8 +11977,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/drracket/compiled/language-test_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/drracket/compiled/memory-log_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/drracket/compiled/memory-log_rkt.zo
-%%LIB32DIR%%/racket/collects/tests/drracket/compiled/module-lang-test-utils_rkt.dep
-%%LIB32DIR%%/racket/collects/tests/drracket/compiled/module-lang-test-utils_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/drracket/compiled/module-lang-test_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/drracket/compiled/module-lang-test_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/drracket/compiled/no-write-and-frame-leak_rkt.dep
@@ -11555,16 +12024,18 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/drracket/io.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/language-test.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/memory-log.rkt
-%%LIB32DIR%%/racket/collects/tests/drracket/module-lang-test-utils.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/module-lang-test.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/no-write-and-frame-leak.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/drracket-test-util_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/drracket-test-util_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/module-lang-test-utils_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/module-lang-test-utils_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/randomly-click_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/randomly-click_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/run-example-tool_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/drracket/private/compiled/run-example-tool_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/drracket/private/drracket-test-util.rkt
+%%LIB32DIR%%/racket/collects/tests/drracket/private/module-lang-test-utils.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/private/randomly-click.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/private/run-example-tool.rkt
 %%LIB32DIR%%/racket/collects/tests/drracket/randomly-click-language-dialog.rkt
@@ -11601,6 +12072,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/errortrace/compiled/info_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/errortrace/info.rkt
 %%LIB32DIR%%/racket/collects/tests/errortrace/main.rkt
+%%LIB32DIR%%/racket/collects/tests/errortrace/phase-1.rkt
 %%LIB32DIR%%/racket/collects/tests/errortrace/wrap.rkt
 %%LIB32DIR%%/racket/collects/tests/file/compiled/gzip_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/file/compiled/gzip_rkt.zo
@@ -11637,6 +12109,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/main_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/mem_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/mem_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/framework/compiled/number-snip_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/framework/compiled/number-snip_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/panel-single_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/panel-single_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/panel_rkt.dep
@@ -11645,8 +12119,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/pasteboard_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/prefs_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/prefs_rkt.zo
-%%LIB32DIR%%/racket/collects/tests/framework/compiled/scheme_rkt.dep
-%%LIB32DIR%%/racket/collects/tests/framework/compiled/scheme_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/framework/compiled/racket_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/framework/compiled/racket_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/search_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/search_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/framework/compiled/test-docs-complete_rkt.dep
@@ -11669,11 +12143,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/framework/load.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/main.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/mem.rkt
+%%LIB32DIR%%/racket/collects/tests/framework/number-snip.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/panel-single.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/panel.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/pasteboard.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/prefs.rkt
-%%LIB32DIR%%/racket/collects/tests/framework/scheme.rkt
+%%LIB32DIR%%/racket/collects/tests/framework/racket.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/search.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/test-docs-complete.rkt
 %%LIB32DIR%%/racket/collects/tests/framework/test-suite-utils.rkt
@@ -11707,6 +12182,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/gracket/compiled/info_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/gracket/dc.rktl
 %%LIB32DIR%%/racket/collects/tests/gracket/draw-info.txt
+%%LIB32DIR%%/racket/collects/tests/gracket/draw-mem.rkt
 %%LIB32DIR%%/racket/collects/tests/gracket/draw.rkt
 %%LIB32DIR%%/racket/collects/tests/gracket/editor.rktl
 %%LIB32DIR%%/racket/collects/tests/gracket/flush-stress.rkt
@@ -11731,6 +12207,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/gracket/prog8.mre
 %%LIB32DIR%%/racket/collects/tests/gracket/radiobox-steps.txt
 %%LIB32DIR%%/racket/collects/tests/gracket/random.rktl
+%%LIB32DIR%%/racket/collects/tests/gracket/record-dc.rkt
 %%LIB32DIR%%/racket/collects/tests/gracket/showkey.rkt
 %%LIB32DIR%%/racket/collects/tests/gracket/sixlib.rktl
 %%LIB32DIR%%/racket/collects/tests/gracket/slider-steps.txt
@@ -11849,6 +12326,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/net/compiled/head_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/net/compiled/main_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/net/compiled/main_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/net/compiled/mime_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/net/compiled/mime_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/net/compiled/uri-codec_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/net/compiled/uri-codec_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/net/compiled/url-port_rkt.dep
@@ -11862,6 +12341,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/net/ftp.rkt
 %%LIB32DIR%%/racket/collects/tests/net/head.rkt
 %%LIB32DIR%%/racket/collects/tests/net/main.rkt
+%%LIB32DIR%%/racket/collects/tests/net/mime.rkt
 %%LIB32DIR%%/racket/collects/tests/net/stress/compiled/websocket_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/net/stress/compiled/websocket_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/net/stress/websocket.rkt
@@ -11885,6 +12365,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/openssl/server_key.pem
 %%LIB32DIR%%/racket/collects/tests/plai/compiled/info_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/plai/compiled/info_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/plai/datatype-coverage.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/datatype-exports.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/datatype-state.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/datatype.rkt
@@ -11923,6 +12404,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/proc-list.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/repeat-test.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/student-1.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/student20111116.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/tail-calls.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/test-framework.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators/thunks.rkt
@@ -11932,6 +12414,52 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/plai/gc/other-mutators/quote.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/other-mutators/top.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/gc/run-test.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-collectors/no-collection-collector.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/mut-1.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/mutator0.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/mutator1.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/mutator2.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/mutator3.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/mutator5.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators/void-app.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-collectors/good-collector.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-collectors/trivial-collector.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/andor.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/app.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/bindings.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/by-val.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/case.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/circular.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/classic-error.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/closure-1.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/closure-2.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/cond.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/danny-bug.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/else.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/empty-mutator.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/gc-order.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/global-roots.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/imports.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/kathi-bug-1.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/modpath.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/mutator4.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/mutator6.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/mutator7.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/names.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/proc-list.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/repeat-test.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/student-1.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/student20111116.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/tail-calls.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/test-framework.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators/thunks.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators/begin.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators/error.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators/morse.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators/printing.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators/quote.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators/top.rkt
+%%LIB32DIR%%/racket/collects/tests/plai/gc2/run-test.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/info.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/printer.rkt
 %%LIB32DIR%%/racket/collects/tests/plai/test-harness.rkt
@@ -11969,9 +12497,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/planet/test-docs-complete.rkt
 %%LIB32DIR%%/racket/collects/tests/planet/thread-safe-resolver.rkt
 %%LIB32DIR%%/racket/collects/tests/planet/version.rkt
-%%LIB32DIR%%/racket/collects/tests/plot/compiled/run-tests_rkt.dep
-%%LIB32DIR%%/racket/collects/tests/plot/compiled/run-tests_rkt.zo
-%%LIB32DIR%%/racket/collects/tests/plot/run-tests.rkt
 %%LIB32DIR%%/racket/collects/tests/profile/compiled/main_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/profile/compiled/main_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/profile/compiled/topsort_rkt.dep
@@ -12448,15 +12973,17 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/racket/contract-helpers.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/contract-mzlib-test.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/contract-opt-tests.rkt
+%%LIB32DIR%%/racket/collects/tests/racket/contract-rand-test.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/contract-stress-argmin.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/contract-stress-take-right.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/contract-test.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/control.rktl
+%%LIB32DIR%%/racket/collects/tests/racket/ctool.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/date.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/deep.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/dict.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/embed-in-c.c
-%%LIB32DIR%%/racket/collects/tests/racket/embed-in-c.rktl
+%%LIB32DIR%%/racket/collects/tests/racket/embed-in-c.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-me1.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-me10.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-me11-rd.rkt
@@ -12476,6 +13003,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/racket/embed-me6.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-me8.c
 %%LIB32DIR%%/racket/collects/tests/racket/embed-me9.rkt
+%%LIB32DIR%%/racket/collects/tests/racket/embed-place.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-planet-1/alt.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-planet-1/main.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/embed-planet-1/other.rkt
@@ -12531,11 +13059,13 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/racket/object-old.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/object.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/oe.rktl
+%%LIB32DIR%%/racket/collects/tests/racket/old-make-zo.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/openssl.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/optimize.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/pack.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/package-gen.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/package.rktl
+%%LIB32DIR%%/racket/collects/tests/racket/parallel-build.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/parallel.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/param.rktl
 %%LIB32DIR%%/racket/collects/tests/racket/path.rktl
@@ -12547,9 +13077,11 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/racket/place-channel-fd2.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-channel-ffi.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-channel-fnl.rkt
+%%LIB32DIR%%/racket/collects/tests/racket/place-channel-limits.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-channel-socket.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-channel.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-master-gc.rkt
+%%LIB32DIR%%/racket/collects/tests/racket/place-msg-gc.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-parallel.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-ports.rkt
 %%LIB32DIR%%/racket/collects/tests/racket/place-stdio.rkt
@@ -12781,6 +13313,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/scribble/docs/autobib.txt
 %%LIB32DIR%%/racket/collects/tests/scribble/docs/codeblock-quote.scrbl
 %%LIB32DIR%%/racket/collects/tests/scribble/docs/codeblock-quote.txt
+%%LIB32DIR%%/racket/collects/tests/scribble/docs/codeblock-utf8.scrbl
+%%LIB32DIR%%/racket/collects/tests/scribble/docs/codeblock-utf8.txt
 %%LIB32DIR%%/racket/collects/tests/scribble/docs/cond.scrbl
 %%LIB32DIR%%/racket/collects/tests/scribble/docs/cond.txt
 %%LIB32DIR%%/racket/collects/tests/scribble/docs/eval-false.scrbl
@@ -12958,20 +13492,26 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/stepper/world-test.rktl
 %%LIB32DIR%%/racket/collects/tests/stepper/write-display.rktl
 %%LIB32DIR%%/racket/collects/tests/stress.rkt
+%%LIB32DIR%%/racket/collects/tests/syntax-color/compiled/module-lexer_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/syntax-color/compiled/module-lexer_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/syntax-color/compiled/scheme-lexer_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/syntax-color/compiled/scheme-lexer_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/syntax-color/compiled/scribble-lexer_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/syntax-color/compiled/scribble-lexer_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/syntax-color/module-lexer.rkt
 %%LIB32DIR%%/racket/collects/tests/syntax-color/paren-tree.rktl
 %%LIB32DIR%%/racket/collects/tests/syntax-color/scheme-lexer.rkt
 %%LIB32DIR%%/racket/collects/tests/syntax-color/scribble-lexer.rkt
 %%LIB32DIR%%/racket/collects/tests/syntax-color/token-tree.rktl
+%%LIB32DIR%%/racket/collects/tests/syntax/compiled/datum_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/syntax/compiled/datum_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/syntax/compiled/mzstruct_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/syntax/compiled/mzstruct_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/syntax/compiled/run_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/syntax/compiled/run_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/syntax/compiled/struct_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/syntax/compiled/struct_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/syntax/datum.rkt
 %%LIB32DIR%%/racket/collects/tests/syntax/mzstruct.rkt
 %%LIB32DIR%%/racket/collects/tests/syntax/run.rkt
 %%LIB32DIR%%/racket/collects/tests/syntax/struct.rkt
@@ -13001,6 +13541,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/dead-substruct.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/dup-ann.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/duplicate-ann.rkt
+%%LIB32DIR%%/racket/collects/tests/typed-racket/fail/explicit-fail.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/formal-len-mismatches.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/gadt.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/ht-infer.rkt
@@ -13012,6 +13553,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/non-productive-rec.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/non-productive-rec2.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/nonnegative-float.rkt
+%%LIB32DIR%%/racket/collects/tests/typed-racket/fail/opaque-overlap.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/poly-expect-error.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/port-to-list.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/pr10350.rkt
@@ -13027,7 +13569,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/safe-letrec.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/set-struct.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/set-tests.rkt
-%%LIB32DIR%%/racket/collects/tests/typed-racket/fail/sort.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/struct-provide.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/subtype-int-err.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/fail/tc-error-format.rkt
@@ -13068,6 +13609,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/binary-nonzero-fixnum.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/bounds-check.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/box.rkt
+%%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/case-arrow.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/cross-module-struct.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/cross-module-struct2.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/dead-else.rkt
@@ -13082,6 +13624,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/derived-pair3.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/different-langs.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/double-float.rkt
+%%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/drop-pure-pred.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/exact-inexact.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/false-huh-dead-code.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/fixnum-bounded-expr.rkt
@@ -13138,6 +13681,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/maybe-exact-complex.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/module-path.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/mpair.rkt
+%%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/multi-flcomp.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/n-ary-float-complex.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/n-ary-float.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/optimizer/tests/nested-float-complex.rkt
@@ -13390,6 +13934,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/simple-or.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/simple-poly.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/somesystempath.rkt
+%%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/sort-infer.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/standard-features-base.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/standard-features-no-check-base.rkt
 %%LIB32DIR%%/racket/collects/tests/typed-racket/succeed/standard-features-no-check-scheme-base.rkt
@@ -13471,12 +14016,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/contract_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/debug_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/debug_rkt.zo
-%%LIB32DIR%%/racket/collects/tests/unstable/compiled/define_rkt.dep
-%%LIB32DIR%%/racket/collects/tests/unstable/compiled/define_rkt.zo
-%%LIB32DIR%%/racket/collects/tests/unstable/compiled/dict_rkt.dep
-%%LIB32DIR%%/racket/collects/tests/unstable/compiled/dict_rkt.zo
-%%LIB32DIR%%/racket/collects/tests/unstable/compiled/exn_rkt.dep
-%%LIB32DIR%%/racket/collects/tests/unstable/compiled/exn_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/function_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/function_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/generics_rkt.dep
@@ -13485,6 +14024,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/hash_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/helpers_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/helpers_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/unstable/compiled/latent-contract_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/unstable/compiled/latent-contract_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/list_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/list_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/logging_rkt.dep
@@ -13493,29 +14034,33 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/markparam_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/match_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/match_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/unstable/compiled/parameter-group_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/unstable/compiled/parameter-group_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/planet-syntax_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/planet-syntax_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/port_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/port_rkt.zo
+%%LIB32DIR%%/racket/collects/tests/unstable/compiled/sequence_rkt.dep
+%%LIB32DIR%%/racket/collects/tests/unstable/compiled/sequence_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/set_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/set_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/syntax_rkt.dep
 %%LIB32DIR%%/racket/collects/tests/unstable/compiled/syntax_rkt.zo
 %%LIB32DIR%%/racket/collects/tests/unstable/contract.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/debug.rkt
-%%LIB32DIR%%/racket/collects/tests/unstable/define.rkt
-%%LIB32DIR%%/racket/collects/tests/unstable/dict.rkt
-%%LIB32DIR%%/racket/collects/tests/unstable/exn.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/function.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/generics.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/hash.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/helpers.rkt
+%%LIB32DIR%%/racket/collects/tests/unstable/latent-contract.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/list.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/logging.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/markparam.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/match.rkt
+%%LIB32DIR%%/racket/collects/tests/unstable/parameter-group.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/planet-syntax.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/port.rkt
+%%LIB32DIR%%/racket/collects/tests/unstable/sequence.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/set.rkt
 %%LIB32DIR%%/racket/collects/tests/unstable/srcloc.rktl
 %%LIB32DIR%%/racket/collects/tests/unstable/syntax.rkt
@@ -13628,7 +14173,9 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/tests/web-server/lang/stuff-url-test.rkt
 %%LIB32DIR%%/racket/collects/tests/web-server/lang/web-param-test.rkt
 %%LIB32DIR%%/racket/collects/tests/web-server/managers/all-managers-tests.rkt
+%%LIB32DIR%%/racket/collects/tests/web-server/pr/10546.rkt
 %%LIB32DIR%%/racket/collects/tests/web-server/pr/11125.rkt
+%%LIB32DIR%%/racket/collects/tests/web-server/pr/12183.rkt
 %%LIB32DIR%%/racket/collects/tests/web-server/pr/12271.rkt
 %%LIB32DIR%%/racket/collects/tests/web-server/pr/bsl.rkt
 %%LIB32DIR%%/racket/collects/tests/web-server/pr/compat0.rkt
@@ -14802,6 +15349,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/arm_rkt.zo
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/disarm_rkt.dep
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/disarm_rkt.zo
+%%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/mutated-vars_rkt.dep
+%%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/mutated-vars_rkt.zo
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/require-contract_rkt.dep
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/require-contract_rkt.zo
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/stxclass-util_rkt.dep
@@ -14813,6 +15362,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/utils_rkt.dep
 %%LIB32DIR%%/racket/collects/typed-racket/utils/compiled/utils_rkt.zo
 %%LIB32DIR%%/racket/collects/typed-racket/utils/disarm.rkt
+%%LIB32DIR%%/racket/collects/typed-racket/utils/mutated-vars.rkt
 %%LIB32DIR%%/racket/collects/typed-racket/utils/require-contract.rkt
 %%LIB32DIR%%/racket/collects/typed-racket/utils/stxclass-util.rkt
 %%LIB32DIR%%/racket/collects/typed-racket/utils/syntax-traversal.rkt
@@ -15040,16 +15590,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/compiled/debug_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/define_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/define_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/dict_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/dict_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/dirs_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/dirs_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/exn_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/exn_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/file_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/file_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/find_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/find_rkt.zo
+%%LIB32DIR%%/racket/collects/unstable/compiled/flonum_rkt.dep
+%%LIB32DIR%%/racket/collects/unstable/compiled/flonum_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/function_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/function_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/future_rkt.dep
@@ -15060,6 +15606,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/compiled/hash_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/info_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/info_rkt.zo
+%%LIB32DIR%%/racket/collects/unstable/compiled/latent-contract_rkt.dep
+%%LIB32DIR%%/racket/collects/unstable/compiled/latent-contract_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/lazy-require_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/lazy-require_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/list_rkt.dep
@@ -15070,18 +15618,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/compiled/markparam_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/match_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/match_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/mutated-vars_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/mutated-vars_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/path_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/path_rkt.zo
+%%LIB32DIR%%/racket/collects/unstable/compiled/parameter-group_rkt.dep
+%%LIB32DIR%%/racket/collects/unstable/compiled/parameter-group_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/port_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/port_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/pretty_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/pretty_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/prop-contract_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/prop-contract_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/compiled/require_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/compiled/require_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/sequence_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/compiled/sequence_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/compiled/string_rkt.dep
@@ -15097,16 +15639,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/contract.rkt
 %%LIB32DIR%%/racket/collects/unstable/debug.rkt
 %%LIB32DIR%%/racket/collects/unstable/define.rkt
-%%LIB32DIR%%/racket/collects/unstable/dict.rkt
-%%LIB32DIR%%/racket/collects/unstable/dirs.rkt
-%%LIB32DIR%%/racket/collects/unstable/exn.rkt
 %%LIB32DIR%%/racket/collects/unstable/file.rkt
 %%LIB32DIR%%/racket/collects/unstable/find.rkt
+%%LIB32DIR%%/racket/collects/unstable/flonum.rkt
 %%LIB32DIR%%/racket/collects/unstable/function.rkt
 %%LIB32DIR%%/racket/collects/unstable/future.rkt
 %%LIB32DIR%%/racket/collects/unstable/generics.rkt
-%%LIB32DIR%%/racket/collects/unstable/gui/compiled/language-level_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/gui/compiled/language-level_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/gui/compiled/notify_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/gui/compiled/notify_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/gui/compiled/pict_rkt.dep
@@ -15119,7 +15657,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/gui/compiled/pslide_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/gui/compiled/slideshow_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/gui/compiled/slideshow_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/gui/language-level.rkt
 %%LIB32DIR%%/racket/collects/unstable/gui/notify.rkt
 %%LIB32DIR%%/racket/collects/unstable/gui/pict.rkt
 %%LIB32DIR%%/racket/collects/unstable/gui/ppict.rkt
@@ -15143,16 +15680,19 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/gui/slideshow.rkt
 %%LIB32DIR%%/racket/collects/unstable/hash.rkt
 %%LIB32DIR%%/racket/collects/unstable/info.rkt
+%%LIB32DIR%%/racket/collects/unstable/latent-contract.rkt
+%%LIB32DIR%%/racket/collects/unstable/latent-contract/compiled/defthing_rkt.dep
+%%LIB32DIR%%/racket/collects/unstable/latent-contract/compiled/defthing_rkt.zo
+%%LIB32DIR%%/racket/collects/unstable/latent-contract/compiled/serialize-syntax_rkt.dep
+%%LIB32DIR%%/racket/collects/unstable/latent-contract/compiled/serialize-syntax_rkt.zo
+%%LIB32DIR%%/racket/collects/unstable/latent-contract/defthing.rkt
+%%LIB32DIR%%/racket/collects/unstable/latent-contract/serialize-syntax.rkt
 %%LIB32DIR%%/racket/collects/unstable/lazy-require.rkt
 %%LIB32DIR%%/racket/collects/unstable/list.rkt
 %%LIB32DIR%%/racket/collects/unstable/logging.rkt
 %%LIB32DIR%%/racket/collects/unstable/markparam.rkt
 %%LIB32DIR%%/racket/collects/unstable/match.rkt
-%%LIB32DIR%%/racket/collects/unstable/mutated-vars.rkt
-%%LIB32DIR%%/racket/collects/unstable/net/compiled/url_rkt.dep
-%%LIB32DIR%%/racket/collects/unstable/net/compiled/url_rkt.zo
-%%LIB32DIR%%/racket/collects/unstable/net/url.rkt
-%%LIB32DIR%%/racket/collects/unstable/path.rkt
+%%LIB32DIR%%/racket/collects/unstable/parameter-group.rkt
 %%LIB32DIR%%/racket/collects/unstable/port.rkt
 %%LIB32DIR%%/racket/collects/unstable/pretty.rkt
 %%LIB32DIR%%/racket/collects/unstable/private/class-iop-ct.rkt
@@ -15161,8 +15701,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/private/compiled/notify_rkt.dep
 %%LIB32DIR%%/racket/collects/unstable/private/compiled/notify_rkt.zo
 %%LIB32DIR%%/racket/collects/unstable/private/notify.rkt
-%%LIB32DIR%%/racket/collects/unstable/prop-contract.rkt
-%%LIB32DIR%%/racket/collects/unstable/require.rkt
 %%LIB32DIR%%/racket/collects/unstable/scribblings/bytes.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/class-iop.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/bytes_scrbl.dep
@@ -15175,10 +15713,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/debug_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/define_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/define_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/dict_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/dict_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/exn_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/exn_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/file_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/file_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/find_scrbl.dep
@@ -15203,20 +15737,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/markparam_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/match_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/match_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/mutated-vars_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/mutated-vars_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/net_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/net_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/path_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/path_scrbl.zo
+%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/parameter-group_scrbl.dep
+%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/parameter-group_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/port_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/port_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/pretty_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/pretty_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/prop-contract_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/prop-contract_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/require_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/require_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/sequence_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/sequence_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled/string_scrbl.dep
@@ -15234,16 +15760,12 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/scribblings/contract.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/debug.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/define.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/dict.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/exn.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/file.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/find.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/function.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/future.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/generics.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/language-level_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/language-level_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/notify_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/notify_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/pict_scrbl.dep
@@ -15254,7 +15776,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/pslide_scrbl.zo
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/slideshow_scrbl.dep
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled/slideshow_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/gui/language-level.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/notify.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/pict.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/prefs.scrbl
@@ -15266,16 +15787,9 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/unstable/scribblings/logging.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/markparam.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/match.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/mutated-vars.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/net.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/net/compiled/url_scrbl.dep
-%%LIB32DIR%%/racket/collects/unstable/scribblings/net/compiled/url_scrbl.zo
-%%LIB32DIR%%/racket/collects/unstable/scribblings/net/url.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/path.scrbl
+%%LIB32DIR%%/racket/collects/unstable/scribblings/parameter-group.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/port.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/pretty.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/prop-contract.scrbl
-%%LIB32DIR%%/racket/collects/unstable/scribblings/require.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/sequence.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/string.scrbl
 %%LIB32DIR%%/racket/collects/unstable/scribblings/struct.scrbl
@@ -15749,6 +16263,8 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/managers_scrbl.zo
 %%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/mime-types_scrbl.dep
 %%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/mime-types_scrbl.zo
+%%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/misc-util_scrbl.dep
+%%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/misc-util_scrbl.zo
 %%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/mod-map_scrbl.dep
 %%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/mod-map_scrbl.zo
 %%LIB32DIR%%/racket/collects/web-server/scribblings/compiled/namespace_scrbl.dep
@@ -15829,6 +16345,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/web-server/scribblings/launch.scrbl
 %%LIB32DIR%%/racket/collects/web-server/scribblings/managers.scrbl
 %%LIB32DIR%%/racket/collects/web-server/scribblings/mime-types.scrbl
+%%LIB32DIR%%/racket/collects/web-server/scribblings/misc-util.scrbl
 %%LIB32DIR%%/racket/collects/web-server/scribblings/mod-map.scrbl
 %%LIB32DIR%%/racket/collects/web-server/scribblings/namespace.scrbl
 %%LIB32DIR%%/racket/collects/web-server/scribblings/native.scrbl
@@ -16052,7 +16569,6 @@ include/racket/uconfig.h
 %%LIB32DIR%%/racket/collects/xrepl/saved-values.rkt
 %%LIB32DIR%%/racket/collects/xrepl/xrepl.rkt
 %%LIB32DIR%%/racket/collects/xrepl/xrepl.scrbl
-%%LIB32DIR%%/racket/libfit.so
 %%LIB32DIR%%/racket/mzdyn3m.o
 %%LIB32DIR%%/racket/starter
 share/racket/doc/acks/in.sxref
@@ -16305,6 +16821,7 @@ share/racket/doc/file/doc-index.html
 share/racket/doc/file/gif.html
 share/racket/doc/file/gunzip.html
 share/racket/doc/file/gzip.html
+share/racket/doc/file/ico.html
 share/racket/doc/file/in.sxref
 share/racket/doc/file/index.html
 share/racket/doc/file/md5.html
@@ -16331,6 +16848,7 @@ share/racket/doc/foreign/Pointer_Types.html
 share/racket/doc/foreign/Speculatively_Atomic_Execution.html
 share/racket/doc/foreign/String_Types.html
 share/racket/doc/foreign/ctype.html
+share/racket/doc/foreign/doc-bibliography.html
 share/racket/doc/foreign/doc-index.html
 share/racket/doc/foreign/file-security-guard-checks.html
 share/racket/doc/foreign/foreign_c-only.html
@@ -16348,6 +16866,7 @@ share/racket/doc/foreign/types.html
 share/racket/doc/foreign/winapi.html
 share/racket/doc/framework/Application.html
 share/racket/doc/framework/Autosave.html
+share/racket/doc/framework/Backwards_Compatibility.html
 share/racket/doc/framework/Canvas.html
 share/racket/doc/framework/Color.html
 share/racket/doc/framework/Color_Model.html
@@ -16725,6 +17244,127 @@ share/racket/doc/html/in.sxref
 share/racket/doc/html/index.html
 share/racket/doc/html/out.sxref
 share/racket/doc/html/stamp.sxref
+share/racket/doc/images/Embedding_Bitmaps_in_Compiled_Files.html
+share/racket/doc/images/Icons.html
+share/racket/doc/images/Logos.html
+share/racket/doc/images/in.sxref
+share/racket/doc/images/index.html
+share/racket/doc/images/out.sxref
+share/racket/doc/images/pict.png
+share/racket/doc/images/pict_10.png
+share/racket/doc/images/pict_100.png
+share/racket/doc/images/pict_101.png
+share/racket/doc/images/pict_102.png
+share/racket/doc/images/pict_103.png
+share/racket/doc/images/pict_104.png
+share/racket/doc/images/pict_105.png
+share/racket/doc/images/pict_106.png
+share/racket/doc/images/pict_107.png
+share/racket/doc/images/pict_108.png
+share/racket/doc/images/pict_109.png
+share/racket/doc/images/pict_11.png
+share/racket/doc/images/pict_110.png
+share/racket/doc/images/pict_111.png
+share/racket/doc/images/pict_112.png
+share/racket/doc/images/pict_113.png
+share/racket/doc/images/pict_114.png
+share/racket/doc/images/pict_12.png
+share/racket/doc/images/pict_13.png
+share/racket/doc/images/pict_14.png
+share/racket/doc/images/pict_15.png
+share/racket/doc/images/pict_16.png
+share/racket/doc/images/pict_17.png
+share/racket/doc/images/pict_18.png
+share/racket/doc/images/pict_19.png
+share/racket/doc/images/pict_2.png
+share/racket/doc/images/pict_20.png
+share/racket/doc/images/pict_21.png
+share/racket/doc/images/pict_22.png
+share/racket/doc/images/pict_23.png
+share/racket/doc/images/pict_24.png
+share/racket/doc/images/pict_25.png
+share/racket/doc/images/pict_26.png
+share/racket/doc/images/pict_27.png
+share/racket/doc/images/pict_28.png
+share/racket/doc/images/pict_29.png
+share/racket/doc/images/pict_3.png
+share/racket/doc/images/pict_30.png
+share/racket/doc/images/pict_31.png
+share/racket/doc/images/pict_32.png
+share/racket/doc/images/pict_33.png
+share/racket/doc/images/pict_34.png
+share/racket/doc/images/pict_35.png
+share/racket/doc/images/pict_36.png
+share/racket/doc/images/pict_37.png
+share/racket/doc/images/pict_38.png
+share/racket/doc/images/pict_39.png
+share/racket/doc/images/pict_4.png
+share/racket/doc/images/pict_40.png
+share/racket/doc/images/pict_41.png
+share/racket/doc/images/pict_42.png
+share/racket/doc/images/pict_43.png
+share/racket/doc/images/pict_44.png
+share/racket/doc/images/pict_45.png
+share/racket/doc/images/pict_46.png
+share/racket/doc/images/pict_47.png
+share/racket/doc/images/pict_48.png
+share/racket/doc/images/pict_49.png
+share/racket/doc/images/pict_5.png
+share/racket/doc/images/pict_50.png
+share/racket/doc/images/pict_51.png
+share/racket/doc/images/pict_52.png
+share/racket/doc/images/pict_53.png
+share/racket/doc/images/pict_54.png
+share/racket/doc/images/pict_55.png
+share/racket/doc/images/pict_56.png
+share/racket/doc/images/pict_57.png
+share/racket/doc/images/pict_58.png
+share/racket/doc/images/pict_59.png
+share/racket/doc/images/pict_6.png
+share/racket/doc/images/pict_60.png
+share/racket/doc/images/pict_61.png
+share/racket/doc/images/pict_62.png
+share/racket/doc/images/pict_63.png
+share/racket/doc/images/pict_64.png
+share/racket/doc/images/pict_65.png
+share/racket/doc/images/pict_66.png
+share/racket/doc/images/pict_67.png
+share/racket/doc/images/pict_68.png
+share/racket/doc/images/pict_69.png
+share/racket/doc/images/pict_7.png
+share/racket/doc/images/pict_70.png
+share/racket/doc/images/pict_71.png
+share/racket/doc/images/pict_72.png
+share/racket/doc/images/pict_73.png
+share/racket/doc/images/pict_74.png
+share/racket/doc/images/pict_75.png
+share/racket/doc/images/pict_76.png
+share/racket/doc/images/pict_77.png
+share/racket/doc/images/pict_78.png
+share/racket/doc/images/pict_79.png
+share/racket/doc/images/pict_8.png
+share/racket/doc/images/pict_80.png
+share/racket/doc/images/pict_81.png
+share/racket/doc/images/pict_82.png
+share/racket/doc/images/pict_83.png
+share/racket/doc/images/pict_84.png
+share/racket/doc/images/pict_85.png
+share/racket/doc/images/pict_86.png
+share/racket/doc/images/pict_87.png
+share/racket/doc/images/pict_88.png
+share/racket/doc/images/pict_89.png
+share/racket/doc/images/pict_9.png
+share/racket/doc/images/pict_90.png
+share/racket/doc/images/pict_91.png
+share/racket/doc/images/pict_92.png
+share/racket/doc/images/pict_93.png
+share/racket/doc/images/pict_94.png
+share/racket/doc/images/pict_95.png
+share/racket/doc/images/pict_96.png
+share/racket/doc/images/pict_97.png
+share/racket/doc/images/pict_98.png
+share/racket/doc/images/pict_99.png
+share/racket/doc/images/stamp.sxref
 share/racket/doc/in.sxref
 share/racket/doc/index.html
 share/racket/doc/inside/Bignums__Rationals__and_Complex_Numbers.html
@@ -16913,7 +17553,7 @@ share/racket/doc/mzlib/stamp.sxref
 share/racket/doc/mzscheme/Extra_Libraries.html
 share/racket/doc/mzscheme/Old_Functions.html
 share/racket/doc/mzscheme/Old_Syntactic_Forms.html
-share/racket/doc/mzscheme/Omitted_Functions.html
+share/racket/doc/mzscheme/Omitted_Forms_and_Functions.html
 share/racket/doc/mzscheme/in.sxref
 share/racket/doc/mzscheme/index.html
 share/racket/doc/mzscheme/out.sxref
@@ -16981,10 +17621,10 @@ share/racket/doc/planet/search-order.html
 share/racket/doc/planet/stamp.sxref
 share/racket/doc/plot/compat.html
 share/racket/doc/plot/contracts.html
-share/racket/doc/plot/custom.html
 share/racket/doc/plot/in.sxref
 share/racket/doc/plot/index.html
 share/racket/doc/plot/intro.html
+share/racket/doc/plot/nonrenderer.html
 share/racket/doc/plot/out.sxref
 share/racket/doc/plot/params.html
 share/racket/doc/plot/pict.png
@@ -17041,9 +17681,34 @@ share/racket/doc/plot/pict_55.png
 share/racket/doc/plot/pict_56.png
 share/racket/doc/plot/pict_57.png
 share/racket/doc/plot/pict_58.png
+share/racket/doc/plot/pict_59.png
 share/racket/doc/plot/pict_6.png
+share/racket/doc/plot/pict_60.png
+share/racket/doc/plot/pict_61.png
+share/racket/doc/plot/pict_62.png
+share/racket/doc/plot/pict_63.png
+share/racket/doc/plot/pict_64.png
+share/racket/doc/plot/pict_65.png
+share/racket/doc/plot/pict_66.png
+share/racket/doc/plot/pict_67.png
+share/racket/doc/plot/pict_68.png
+share/racket/doc/plot/pict_69.png
 share/racket/doc/plot/pict_7.png
+share/racket/doc/plot/pict_70.png
+share/racket/doc/plot/pict_71.png
+share/racket/doc/plot/pict_72.png
+share/racket/doc/plot/pict_73.png
+share/racket/doc/plot/pict_74.png
+share/racket/doc/plot/pict_75.png
+share/racket/doc/plot/pict_76.png
+share/racket/doc/plot/pict_77.png
+share/racket/doc/plot/pict_78.png
+share/racket/doc/plot/pict_79.png
 share/racket/doc/plot/pict_8.png
+share/racket/doc/plot/pict_80.png
+share/racket/doc/plot/pict_81.png
+share/racket/doc/plot/pict_82.png
+share/racket/doc/plot/pict_83.png
 share/racket/doc/plot/pict_9.png
 share/racket/doc/plot/plot2d.html
 share/racket/doc/plot/plot3d.html
@@ -17051,7 +17716,7 @@ share/racket/doc/plot/porting.html
 share/racket/doc/plot/renderer2d.html
 share/racket/doc/plot/renderer3d.html
 share/racket/doc/plot/stamp.sxref
-share/racket/doc/plot/todo.html
+share/racket/doc/plot/ticks_and_transforms.html
 share/racket/doc/plot/utils.html
 share/racket/doc/preprocessor/in.sxref
 share/racket/doc/preprocessor/index.html
@@ -17375,18 +18040,14 @@ share/racket/doc/redex/in.sxref
 share/racket/doc/redex/index.html
 share/racket/doc/redex/out.sxref
 share/racket/doc/redex/stamp.sxref
-share/racket/doc/reference/Attaching_Contracts_to_Values.html
 share/racket/doc/reference/Building_New_Contract_Combinators.html
 share/racket/doc/reference/Byte_and_String_Input.html
 share/racket/doc/reference/Byte_and_String_Output.html
 share/racket/doc/reference/Command-Line_Parsing.html
-share/racket/doc/reference/Contract_Utilities.html
-share/racket/doc/reference/Data-structure_Contracts.html
 share/racket/doc/reference/Delayed_Evaluation.html
 share/racket/doc/reference/Exiting.html
 share/racket/doc/reference/Expanding_Top-Level_Forms.html
 share/racket/doc/reference/Filesystem.html
-share/racket/doc/reference/Function_Contracts.html
 share/racket/doc/reference/Generating_A_Unit_from_Context.html
 share/racket/doc/reference/Generators.html
 share/racket/doc/reference/Interactive_Help.html
@@ -17400,11 +18061,13 @@ share/racket/doc/reference/More_Path_Utilities.html
 share/racket/doc/reference/Namespaces.html
 share/racket/doc/reference/Object_and_Class_Contracts.html
 share/racket/doc/reference/Printer_Extension.html
+share/racket/doc/reference/Random_generation.html
 share/racket/doc/reference/Reader_Extension.html
 share/racket/doc/reference/Reading.html
 share/racket/doc/reference/Sandboxed_Evaluation.html
 share/racket/doc/reference/Single-Signature_Modules.html
 share/racket/doc/reference/Structural_Matching.html
+share/racket/doc/reference/Structure_Type_Property_Contracts.html
 share/racket/doc/reference/Surrogates.html
 share/racket/doc/reference/Syntax_Quoting__quote-syntax.html
 share/racket/doc/reference/Transformer_Helpers.html
@@ -17416,6 +18079,7 @@ share/racket/doc/reference/__top.html
 share/racket/doc/reference/all-sync.html
 share/racket/doc/reference/application.html
 share/racket/doc/reference/async-channel.html
+share/racket/doc/reference/attaching-contracts-to-values.html
 share/racket/doc/reference/begin.html
 share/racket/doc/reference/block.html
 share/racket/doc/reference/booleans.html
@@ -17431,6 +18095,7 @@ share/racket/doc/reference/compoundunits.html
 share/racket/doc/reference/concurrency.html
 share/racket/doc/reference/cont.html
 share/racket/doc/reference/contmarks.html
+share/racket/doc/reference/contract-utilities.html
 share/racket/doc/reference/contracts.html
 share/racket/doc/reference/control.html
 share/racket/doc/reference/createclass.html
@@ -17439,6 +18104,7 @@ share/racket/doc/reference/creatingmorestructs.html
 share/racket/doc/reference/creatingunits.html
 share/racket/doc/reference/custodians.html
 share/racket/doc/reference/customport.html
+share/racket/doc/reference/data-structure-contracts.html
 share/racket/doc/reference/data.html
 share/racket/doc/reference/debugging.html
 share/racket/doc/reference/define-sig-form.html
@@ -17460,6 +18126,7 @@ share/racket/doc/reference/finger.png
 share/racket/doc/reference/fixnums.html
 share/racket/doc/reference/flonums.html
 share/racket/doc/reference/for.html
+share/racket/doc/reference/function-contracts.html
 share/racket/doc/reference/futures.html
 share/racket/doc/reference/garbagecollection.html
 share/racket/doc/reference/generic-numbers.html
@@ -17505,6 +18172,7 @@ share/racket/doc/reference/pairs.html
 share/racket/doc/reference/parameters.html
 share/racket/doc/reference/parametric-contracts.html
 share/racket/doc/reference/pathutils.html
+share/racket/doc/reference/performance-hint.html
 share/racket/doc/reference/pipeports.html
 share/racket/doc/reference/places.html
 share/racket/doc/reference/port-buffers.html
@@ -17517,6 +18185,7 @@ share/racket/doc/reference/printing.html
 share/racket/doc/reference/procedures.html
 share/racket/doc/reference/quasiquote.html
 share/racket/doc/reference/quote.html
+share/racket/doc/reference/racket_contract_base.html
 share/racket/doc/reference/reader-procs.html
 share/racket/doc/reference/reader.html
 share/racket/doc/reference/readtables.html
@@ -17935,6 +18604,7 @@ share/racket/doc/syntax-color/in.sxref
 share/racket/doc/syntax-color/index.html
 share/racket/doc/syntax-color/out.sxref
 share/racket/doc/syntax-color/stamp.sxref
+share/racket/doc/syntax/Datum_Pattern_Matching.html
 share/racket/doc/syntax/Debugging_and_Inspection_Tools.html
 share/racket/doc/syntax/Defining_Simple_Macros.html
 share/racket/doc/syntax/Experimental.html
@@ -17966,6 +18636,7 @@ share/racket/doc/syntax/trusted-xforms.html
 share/racket/doc/syntax/uniform-meanings.html
 share/racket/doc/syntax/varied-meanings.html
 share/racket/doc/teachpack/2htdp2htdp.html
+share/racket/doc/teachpack/2htdpPlanet_Cute_Images.html
 share/racket/doc/teachpack/2htdpbatch-io.html
 share/racket/doc/teachpack/2htdphtdp-port.html
 share/racket/doc/teachpack/2htdpimage.html
@@ -17980,6 +18651,7 @@ share/racket/doc/teachpack/door-real.png
 share/racket/doc/teachpack/door-sim.png
 share/racket/doc/teachpack/draw.html
 share/racket/doc/teachpack/elevator.html
+share/racket/doc/teachpack/gamepad.png
 share/racket/doc/teachpack/graphing.html
 share/racket/doc/teachpack/guess-gui.html
 share/racket/doc/teachpack/guess.html
@@ -18037,12 +18709,70 @@ share/racket/doc/teachpack/pict_131.png
 share/racket/doc/teachpack/pict_132.png
 share/racket/doc/teachpack/pict_133.png
 share/racket/doc/teachpack/pict_134.png
+share/racket/doc/teachpack/pict_135.png
+share/racket/doc/teachpack/pict_136.png
+share/racket/doc/teachpack/pict_137.png
+share/racket/doc/teachpack/pict_138.png
+share/racket/doc/teachpack/pict_139.png
 share/racket/doc/teachpack/pict_14.png
+share/racket/doc/teachpack/pict_140.png
+share/racket/doc/teachpack/pict_141.png
+share/racket/doc/teachpack/pict_142.png
+share/racket/doc/teachpack/pict_143.png
+share/racket/doc/teachpack/pict_144.png
+share/racket/doc/teachpack/pict_145.png
+share/racket/doc/teachpack/pict_146.png
+share/racket/doc/teachpack/pict_147.png
+share/racket/doc/teachpack/pict_148.png
+share/racket/doc/teachpack/pict_149.png
 share/racket/doc/teachpack/pict_15.png
+share/racket/doc/teachpack/pict_150.png
+share/racket/doc/teachpack/pict_151.png
+share/racket/doc/teachpack/pict_152.png
+share/racket/doc/teachpack/pict_153.png
+share/racket/doc/teachpack/pict_154.png
+share/racket/doc/teachpack/pict_155.png
+share/racket/doc/teachpack/pict_156.png
+share/racket/doc/teachpack/pict_157.png
+share/racket/doc/teachpack/pict_158.png
+share/racket/doc/teachpack/pict_159.png
 share/racket/doc/teachpack/pict_16.png
+share/racket/doc/teachpack/pict_160.png
+share/racket/doc/teachpack/pict_161.png
+share/racket/doc/teachpack/pict_162.png
+share/racket/doc/teachpack/pict_163.png
+share/racket/doc/teachpack/pict_164.png
+share/racket/doc/teachpack/pict_165.png
+share/racket/doc/teachpack/pict_166.png
+share/racket/doc/teachpack/pict_167.png
+share/racket/doc/teachpack/pict_168.png
+share/racket/doc/teachpack/pict_169.png
 share/racket/doc/teachpack/pict_17.png
+share/racket/doc/teachpack/pict_170.png
+share/racket/doc/teachpack/pict_171.png
+share/racket/doc/teachpack/pict_172.png
+share/racket/doc/teachpack/pict_173.png
+share/racket/doc/teachpack/pict_174.png
+share/racket/doc/teachpack/pict_175.png
+share/racket/doc/teachpack/pict_176.png
+share/racket/doc/teachpack/pict_177.png
+share/racket/doc/teachpack/pict_178.png
+share/racket/doc/teachpack/pict_179.png
 share/racket/doc/teachpack/pict_18.png
+share/racket/doc/teachpack/pict_180.png
+share/racket/doc/teachpack/pict_181.png
+share/racket/doc/teachpack/pict_182.png
+share/racket/doc/teachpack/pict_183.png
+share/racket/doc/teachpack/pict_184.png
+share/racket/doc/teachpack/pict_185.png
+share/racket/doc/teachpack/pict_186.png
+share/racket/doc/teachpack/pict_187.png
+share/racket/doc/teachpack/pict_188.png
+share/racket/doc/teachpack/pict_189.png
 share/racket/doc/teachpack/pict_19.png
+share/racket/doc/teachpack/pict_190.png
+share/racket/doc/teachpack/pict_191.png
+share/racket/doc/teachpack/pict_192.png
 share/racket/doc/teachpack/pict_2.png
 share/racket/doc/teachpack/pict_20.png
 share/racket/doc/teachpack/pict_21.png
@@ -18209,24 +18939,20 @@ share/racket/doc/turtles/index.html
 share/racket/doc/turtles/out.sxref
 share/racket/doc/turtles/stamp.sxref
 share/racket/doc/unstable/Automata__Compiling_State_Machines.html
-share/racket/doc/unstable/Contracts_for_struct_type_properties.html
 share/racket/doc/unstable/Debugging.html
 share/racket/doc/unstable/Definitions.html
-share/racket/doc/unstable/Dictionaries.html
-share/racket/doc/unstable/DrRacket_Language_Levels.html
 share/racket/doc/unstable/Functions.html
 share/racket/doc/unstable/Generics.html
 share/racket/doc/unstable/Hash_Tables.html
 share/racket/doc/unstable/Logging.html
 share/racket/doc/unstable/Mark_Parameters.html
+share/racket/doc/unstable/Parameter_Groups.html
 share/racket/doc/unstable/Ports.html
 share/racket/doc/unstable/Pretty-Printing.html
-share/racket/doc/unstable/Requiring_Modules.html
 share/racket/doc/unstable/Slideshow_Presentations.html
 share/racket/doc/unstable/bytes.html
 share/racket/doc/unstable/class-iop.html
 share/racket/doc/unstable/contract.html
-share/racket/doc/unstable/exn.html
 share/racket/doc/unstable/file.html
 share/racket/doc/unstable/find.html
 share/racket/doc/unstable/future.html
@@ -18238,10 +18964,7 @@ share/racket/doc/unstable/index.html
 share/racket/doc/unstable/lazy-require.html
 share/racket/doc/unstable/list.html
 share/racket/doc/unstable/match.html
-share/racket/doc/unstable/mutated-vars.html
-share/racket/doc/unstable/net.html
 share/racket/doc/unstable/out.sxref
-share/racket/doc/unstable/path.html
 share/racket/doc/unstable/pict.html
 share/racket/doc/unstable/pict.png
 share/racket/doc/unstable/pict_10.png
@@ -18296,7 +19019,6 @@ share/racket/doc/unstable/struct.html
 share/racket/doc/unstable/syntax.html
 share/racket/doc/unstable/temp-c.html
 share/racket/doc/unstable/unstable-gui.html
-share/racket/doc/unstable/url.html
 share/racket/doc/unstable/wrapc.html
 share/racket/doc/version/in.sxref
 share/racket/doc/version/index.html
@@ -18328,6 +19050,7 @@ share/racket/doc/web-server-internal/in.sxref
 share/racket/doc/web-server-internal/index.html
 share/racket/doc/web-server-internal/limit.html
 share/racket/doc/web-server-internal/mime-types.html
+share/racket/doc/web-server-internal/misc-util.html
 share/racket/doc/web-server-internal/mod-map.html
 share/racket/doc/web-server-internal/out.sxref
 share/racket/doc/web-server-internal/private.html
@@ -18430,6 +19153,7 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm share/racket/doc/license
 @dirrm share/racket/doc/lazy
 @dirrm share/racket/doc/inside
+@dirrm share/racket/doc/images
 @dirrm share/racket/doc/html
 @dirrm share/racket/doc/htdp-langs
 @dirrm share/racket/doc/htdp
@@ -18528,16 +19252,14 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/unstable/temp-c/scribblings
 @dirrm %%LIB32DIR%%/racket/collects/unstable/temp-c/compiled
 @dirrm %%LIB32DIR%%/racket/collects/unstable/temp-c
-@dirrm %%LIB32DIR%%/racket/collects/unstable/scribblings/net/compiled
-@dirrm %%LIB32DIR%%/racket/collects/unstable/scribblings/net
 @dirrm %%LIB32DIR%%/racket/collects/unstable/scribblings/gui/compiled
 @dirrm %%LIB32DIR%%/racket/collects/unstable/scribblings/gui
 @dirrm %%LIB32DIR%%/racket/collects/unstable/scribblings/compiled
 @dirrm %%LIB32DIR%%/racket/collects/unstable/scribblings
 @dirrm %%LIB32DIR%%/racket/collects/unstable/private/compiled
 @dirrm %%LIB32DIR%%/racket/collects/unstable/private
-@dirrm %%LIB32DIR%%/racket/collects/unstable/net/compiled
-@dirrm %%LIB32DIR%%/racket/collects/unstable/net
+@dirrm %%LIB32DIR%%/racket/collects/unstable/latent-contract/compiled
+@dirrm %%LIB32DIR%%/racket/collects/unstable/latent-contract
 @dirrm %%LIB32DIR%%/racket/collects/unstable/gui/private/compiled
 @dirrm %%LIB32DIR%%/racket/collects/unstable/gui/private
 @dirrm %%LIB32DIR%%/racket/collects/unstable/gui/compiled
@@ -18771,14 +19493,18 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/tests/r6rs
 @dirrm %%LIB32DIR%%/racket/collects/tests/profile/compiled
 @dirrm %%LIB32DIR%%/racket/collects/tests/profile
-@dirrm %%LIB32DIR%%/racket/collects/tests/plot/compiled
-@dirrm %%LIB32DIR%%/racket/collects/tests/plot
 @dirrm %%LIB32DIR%%/racket/collects/tests/planet/examples/scribblings-package
 @dirrm %%LIB32DIR%%/racket/collects/tests/planet/examples/dummy-package/lang
 @dirrm %%LIB32DIR%%/racket/collects/tests/planet/examples/dummy-package
 @dirrm %%LIB32DIR%%/racket/collects/tests/planet/examples
 @dirrm %%LIB32DIR%%/racket/collects/tests/planet/compiled
 @dirrm %%LIB32DIR%%/racket/collects/tests/planet
+@dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc2/other-mutators
+@dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc2/good-mutators
+@dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc2/good-collectors
+@dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-mutators
+@dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc2/bad-collectors
+@dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc2
 @dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc/other-mutators
 @dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc/good-mutators
 @dirrm %%LIB32DIR%%/racket/collects/tests/plai/gc/good-collectors
@@ -18826,6 +19552,8 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/tests/drracket
 @dirrm %%LIB32DIR%%/racket/collects/tests/deinprogramm/compiled
 @dirrm %%LIB32DIR%%/racket/collects/tests/deinprogramm
+@dirrm %%LIB32DIR%%/racket/collects/tests/db/programs/compiled
+@dirrm %%LIB32DIR%%/racket/collects/tests/db/programs
 @dirrm %%LIB32DIR%%/racket/collects/tests/db/gen/compiled
 @dirrm %%LIB32DIR%%/racket/collects/tests/db/gen
 @dirrm %%LIB32DIR%%/racket/collects/tests/db/db/compiled
@@ -19254,6 +19982,8 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/redex/examples/racket-machine
 @dirrm %%LIB32DIR%%/racket/collects/redex/examples/r6rs/compiled
 @dirrm %%LIB32DIR%%/racket/collects/redex/examples/r6rs
+@dirrm %%LIB32DIR%%/racket/collects/redex/examples/list-machine/compiled
+@dirrm %%LIB32DIR%%/racket/collects/redex/examples/list-machine
 @dirrm %%LIB32DIR%%/racket/collects/redex/examples/delim-cont/compiled
 @dirrm %%LIB32DIR%%/racket/collects/redex/examples/delim-cont
 @dirrm %%LIB32DIR%%/racket/collects/redex/examples/define-judgment-form/compiled
@@ -19359,6 +20089,8 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/plot/plot2d
 @dirrm %%LIB32DIR%%/racket/collects/plot/deprecated/compiled
 @dirrm %%LIB32DIR%%/racket/collects/plot/deprecated
+@dirrm %%LIB32DIR%%/racket/collects/plot/contracted/compiled
+@dirrm %%LIB32DIR%%/racket/collects/plot/contracted
 @dirrm %%LIB32DIR%%/racket/collects/plot/compiled
 @dirrm %%LIB32DIR%%/racket/collects/plot/common/compiled
 @dirrm %%LIB32DIR%%/racket/collects/plot/common
@@ -19381,6 +20113,16 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/plai/mutator
 @dirrm %%LIB32DIR%%/racket/collects/plai/lang/compiled
 @dirrm %%LIB32DIR%%/racket/collects/plai/lang
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/private/compiled
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/private
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/mutator/lang/compiled
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/mutator/lang
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/mutator
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/compiled
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/collector/lang/compiled
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/collector/lang
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2/collector
+@dirrm %%LIB32DIR%%/racket/collects/plai/gc2
 @dirrm %%LIB32DIR%%/racket/collects/plai/compiled
 @dirrm %%LIB32DIR%%/racket/collects/plai/collector/lang/compiled
 @dirrm %%LIB32DIR%%/racket/collects/plai/collector/lang
@@ -19496,6 +20238,15 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/lang
 @dirrm %%LIB32DIR%%/racket/collects/info-domain/compiled
 @dirrm %%LIB32DIR%%/racket/collects/info-domain
+@dirrm %%LIB32DIR%%/racket/collects/images/tests
+@dirrm %%LIB32DIR%%/racket/collects/images/scribblings/compiled
+@dirrm %%LIB32DIR%%/racket/collects/images/scribblings
+@dirrm %%LIB32DIR%%/racket/collects/images/private/compiled
+@dirrm %%LIB32DIR%%/racket/collects/images/private
+@dirrm %%LIB32DIR%%/racket/collects/images/icons/compiled
+@dirrm %%LIB32DIR%%/racket/collects/images/icons
+@dirrm %%LIB32DIR%%/racket/collects/images/compiled
+@dirrm %%LIB32DIR%%/racket/collects/images
 @dirrm %%LIB32DIR%%/racket/collects/icons/private/compiled
 @dirrm %%LIB32DIR%%/racket/collects/icons/private
 @dirrm %%LIB32DIR%%/racket/collects/icons
@@ -19772,6 +20523,8 @@ share/racket/doc/xrepl/stamp.sxref
 @dirrm %%LIB32DIR%%/racket/collects/2htdp/private/csv
 @dirrm %%LIB32DIR%%/racket/collects/2htdp/private/compiled
 @dirrm %%LIB32DIR%%/racket/collects/2htdp/private
+@dirrm %%LIB32DIR%%/racket/collects/2htdp/planetcute/compiled
+@dirrm %%LIB32DIR%%/racket/collects/2htdp/planetcute
 @dirrm %%LIB32DIR%%/racket/collects/2htdp/compiled
 @dirrm %%LIB32DIR%%/racket/collects/2htdp
 @dirrm %%LIB32DIR%%/racket/collects
