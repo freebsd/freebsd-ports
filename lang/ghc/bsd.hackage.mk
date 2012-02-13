@@ -218,3 +218,4 @@ xmonad-contrib_port=		x11-wm/hs-xmonad-contrib
 zip-archive_port=		archivers/hs-zip-archive
 zlib_port=			archivers/hs-zlib
 zlib-bindings_port=		archivers/hs-zlib-bindings
+zlib-enum_port=			archivers/hs-zlib-enum
