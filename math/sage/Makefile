@@ -11,7 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://modular.math.jmu.edu/src/ \
 		http://boxen.math.washington.edu/sage/src/ \
-		http://mirrors.xmission.com/sage/src/
+		http://mirrors.xmission.com/sage/src/ \
+		http://www.sagemath.org/src-old/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	stephen@FreeBSD.org
