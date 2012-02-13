@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Parse-Perl
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Parse::Perl.3 \
 		Parse::Perl::CopHintsHash.3 \
 		Parse::Perl::Environment.3
+
+RUN_DEPENDS=	p5-Devel-CallChecker>=0:${PORTSDIR}/devel/p5-Devel-CallChecker
 
 .include <bsd.port.pre.mk>
 
