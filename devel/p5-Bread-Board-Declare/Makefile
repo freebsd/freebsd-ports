@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bread-Board-Declare
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -16,9 +16,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Create Bread::Board containers as normal Moose objects
 
 BUILD_DEPENDS=	p5-Bread-Board>=0.22:${PORTSDIR}/devel/p5-Bread-Board \
+		p5-Class-Load>=0.07:${PORTSDIR}/devel/p5-Class-Load \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Moose>=2.0200:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	p5-Bread-Board>=0.22:${PORTSDIR}/devel/p5-Bread-Board \
+		p5-Class-Load>=0.07:${PORTSDIR}/devel/p5-Class-Load \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Moose>=2.0200:${PORTSDIR}/devel/p5-Moose
 
