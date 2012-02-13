@@ -52,6 +52,7 @@ configurator_port=		devel/hs-configurator
 contravariant_port=		math/hs-contravariant
 convertible_port=		devel/hs-convertible
 cpphs_port=			devel/hs-cpphs		# executable
+cprng-aes_port=			security/hs-cprng-aes
 criterion_port=			benchmarks/hs-criterion
 Crypto_port=			security/hs-Crypto
 csv_port=			textproc/hs-csv
