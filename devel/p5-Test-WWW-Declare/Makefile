@@ -16,6 +16,7 @@ COMMENT=	Declarative testing for your web app
 
 BUILD_DEPENDS=	p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Tester>=0:${PORTSDIR}/devel/p5-Test-Tester
 
 PERL_CONFIGURE=	yes
 
