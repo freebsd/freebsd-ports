@@ -1,7 +1,0 @@
-@comment $FreeBSD$
-%%DATADIR%%/callbackGen/Signal.chs.template
-%%DATADIR%%/hierarchyGen/Hierarchy.chs.template
-%%DATADIR%%/hierarchyGen/hierarchy.list
-@dirrmtry %%DATADIR%%/callbackGen
-@dirrmtry %%DATADIR%%/hierarchyGen
-@dirrmtry %%DATADIR%%
