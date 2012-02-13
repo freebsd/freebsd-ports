@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snap
-PORTVERSION=	0.5.2
+PORTVERSION=	0.7
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,11 +16,16 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	attoparsec>=0.8.0.2 blaze-builder>=0.2.1.4 bytestring-nums \
-		cereal>=0.3 directory-tree>=0.10 dlist>=0.5 enumerator>=0.4.13.1 \
-		heist>=0.5 hint>=0.3.3.1 MonadCatchIO-transformers>=0.2.1 \
-		mtl>=2 snap-core>=0.5.2 snap-server>=0.5.2 text>=0.11 \
-		unix-compat zlib
+USE_CABAL=	aeson>=0.4 attoparsec>=0.10 cereal>=0.3 \
+		clientsession>=0.7.3.6 configurator>=0.1 Crypto>=4.2 \
+		data-lens>=0.2.0.1 data-lens-template>=2.1 \
+		directory-tree>=0.10 hashable>=1.1 heist>=0.7 \
+		logict>=0.4.2 MonadCatchIO-transformers>=0.2 mtl>2.0 \
+		mwc-random>=0.8 pwstore-fast>=2.2 safe>=0.3 skein>=0.1.0.3 \
+		snap-core>=0.7 snap-server>=0.7 stm>=2.2 syb>=0.1 \
+		text>=0.11 transformers>=0.2 unordered-containers>=0.1.4 \
+		utf8-string>=0.3 vector>=0.7.1 vector-algorithms>=0.4 \
+		xmlhtml>=0.1
 
 EXECUTABLE=	snap
 
