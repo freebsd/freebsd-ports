@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucommon
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	commoncpp
@@ -29,5 +29,9 @@ MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 pdetach.1 \
 post-patch:
 	${REINPLACE_CMD} -e '/HAVE_OPENSSL_FIPS_H/s/define/undef/' \
 	   ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+test:	build
+	cd ${WRKSRC}/test && ${MAKE} check
+	
 
 .include <bsd.port.mk>
