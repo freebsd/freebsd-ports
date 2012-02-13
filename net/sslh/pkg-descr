@@ -1,5 +1,5 @@
-sslh lets one accept both HTTPS and SSH connections on the same port. It makes
-it possible to connect to an SSH server on port 443 (e.g. from inside a
-corporate firewall) while still serving HTTPS on that port.
+sslh accepts HTTPS, SSH, OpenVPN, tinc and XMPP connections on the same port.
+This makes it possible to connect to any of these servers on port 443 while
+ still serving HTTPS on that port.
 
 WWW:	http://www.rutschle.net/tech/sslh.shtml

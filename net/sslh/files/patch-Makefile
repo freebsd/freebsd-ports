@@ -1,7 +1,7 @@
---- Makefile	2010-02-01 19:18:23.000000000 +0800
-+++ Makefile.new	2010-03-29 00:43:42.198577686 +0800
-@@ -4,7 +4,7 @@
- USELIBWRAP=1	# Use libwrap?
+--- Makefile.old	2011-12-02 10:16:46.000000000 +0000
++++ Makefile	2011-12-02 10:18:04.000000000 +0000
+@@ -5,7 +5,7 @@
+ COV_TEST= 	# Perform test coverage?
  PREFIX=/usr/local
  
 -MAN=sslh.8.gz	# man page name
@@ -9,8 +9,8 @@
  
  # End of configuration -- the rest should take care of
  # itself
-@@ -27,7 +27,7 @@
- 	strip sslh
+@@ -46,7 +46,7 @@
+ 	$(CC) $(CFLAGS) -o echosrv echosrv.o common.o $(LIBS)
  
  $(MAN): sslh.pod Makefile
 -	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)

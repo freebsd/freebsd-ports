@@ -14,6 +14,9 @@
 # sslh_enable="YES"
 #
 # You can fine tune others variables too:
+# sslh_mode="fork | select"
+# fork: stable but slow performance
+# select: new but high performance
 # sslh_fib="NONE"
 # sslh_pidfile="/var/run/sslh.pid"
 # sslh_ssltarget="localhost:443"
@@ -40,24 +43,32 @@ sslh_setfib() {
 name="sslh"
 rcvar=sslh_enable
 
-command="%%PREFIX%%/sbin/${name}"
 start_precmd="sslh_setfib"
+stop_postcmd="sslh_postcmd"
 
 load_rc_config $name
 
 sslh_enable=${sslh_enable:-"NO"}
+sslh_mode=${sslh_mode:-"fork"}
 sslh_fib=${sslh_fib:-"NONE"}
 sslh_listening=${sslh_listening:-"0.0.0.0:443"}
 sslh_sshtarget=${sslh_sshtarget:-"localhost:22"}
 sslh_ssltarget=${sslh_ssltarget:-"localhost:8443"}
-sslh_uid=${sslh_uid:-"nobody"}
 sslh_sshtimeout=${sslh_sshtimeout:-"2"}
-sslh_ssltarget=${sslh_ssltarget:-"localhost:8443"}
+sslh_openvpntarget=${sslh_openvpntarget:-"localhost:1193"}
+sslh_xmpptarget=${sslh_xmpptarget:-"localhost:5222"}
+sslh_tinctarget=${sslh_tinctarget:-"localhost:655"}
 
-pidfile=${sslh_pidfile:-"/var/run/sslh.pid"}
-
+pidfile=${sslh_pidfile:-"/var/run/sslh/sslh.pid"}
+command="%%PREFIX%%/sbin/${name}-${sslh_mode}"
 command_args="-t ${sslh_sshtimeout} -p ${sslh_listening} \
-	-l ${sslh_ssltarget} -s ${sslh_sshtarget} -P ${pidfile} \
-	-u ${sslh_uid}"
+	--ssl ${sslh_ssltarget} --ssh ${sslh_sshtarget} -P ${pidfile} \
+	--user nobody --openvpn ${sslh_openvpntarget} \
+	--xmpp ${sslh_xmpptarget} --tinc ${sslh_tinctarget}"
+
+sslh_postcmd()
+{
+    rm -f ${pidfile}
+}
 
 run_rc_command "$1"
