@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	DeepArrow
-PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTVERSION=	0.3.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Haskell arrows for deep application
+COMMENT=	Arrows for "deep application"
 
 LICENSE=	BSD
 
