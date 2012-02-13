@@ -5,4 +5,4 @@ framework.  This library is for situations where the author of the HTML
 is not cooperating with the person trying to extract the information, but
 is also not trying to hide the information.
 
-WWW: http://www-users.cs.york.ac.uk/~ndm/tagsoup/
+WWW:	http://community.haskell.org/~ndm/tagsoup/
