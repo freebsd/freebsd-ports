@@ -7,7 +7,7 @@
 
 PORTNAME=	ncftp
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 
@@ -23,11 +23,6 @@ PLIST_FILES=	bin/${LATEST_LINK}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_getmaxyx=yes ac_cv_lib_readline=yes
 MAN1=		ncftp2.1
-
-.if defined(WITH_SOCKS)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=--enable-socks5
-.endif
 
 pre-fetch:
 	@${ECHO} ""
