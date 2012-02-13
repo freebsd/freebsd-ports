@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gotoblas
-PORTVERSION=	2.${GOTOBLAS2VER}
-PORTREVISION=	3
+PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/gotoblas|} \
 		NL:lapack,lapack_tmg
 MASTER_SITE_SUBDIR=	lapack/:lapack lapack/timing/:lapack_tmg
 DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz \
-		lapack-3.1.1.tgz:lapack \
+		lapack-${LAPACKVER}.tgz:lapack \
 		large.tgz:lapack_tmg timing.tgz:lapack_tmg
 EXTRACT_ONLY=	${GOTOBLAS2_SRCFILE}
 
@@ -21,11 +20,13 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A fast implementation of Basic Linear Algebra Subprograms
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/00License.txt
 
 DIST_SUBDIR=	gotoblas
 GOTOBLAS2VER=	1.13
 GOTOBLAS2_SRCFILE=	GotoBLAS2-${GOTOBLAS2VER}_bsd.tar.gz
-LAPACK_SRCFILE=	lapack-3.1.1.tgz
+LAPACKVER=	3.4.0
+LAPACK_SRCFILE=	lapack-${LAPACKVER}.tgz
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 USE_GMAKE=	yes
@@ -92,6 +93,10 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s+%%FC%%+${FC}+" -e "s+%%CC%%+${CC}+" \
 		${WRKSRC}/Makefile.rule
+	${REINPLACE_CMD} -e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s+%%LAPACKVER%%+${LAPACKVER}+g" \
+		${WRKSRC}/exports/gensymbol
 	${REINPLACE_CMD} -e "s+(ARCH)+(ARCH_)+" \
 		${WRKSRC}/Makefile.rule \
 		${WRKSRC}/Makefile.tail \
