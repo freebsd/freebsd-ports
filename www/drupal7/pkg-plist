@@ -56,6 +56,7 @@
 %%DRUPAL_BASE%%/includes/install.core.inc
 %%DRUPAL_BASE%%/includes/install.inc
 %%DRUPAL_BASE%%/includes/iso.inc
+%%DRUPAL_BASE%%/includes/json-encode.inc
 %%DRUPAL_BASE%%/includes/language.inc
 %%DRUPAL_BASE%%/includes/locale.inc
 %%DRUPAL_BASE%%/includes/lock.inc
@@ -242,6 +243,8 @@
 %%DRUPAL_BASE%%/modules/block/block.tpl.php
 %%DRUPAL_BASE%%/modules/block/tests/block_test.info
 %%DRUPAL_BASE%%/modules/block/tests/block_test.module
+%%DRUPAL_BASE%%/modules/block/tests/themes/block_test_theme/block_test_theme.info
+%%DRUPAL_BASE%%/modules/block/tests/themes/block_test_theme/page.tpl.php
 %%DRUPAL_BASE%%/modules/blog/blog.info
 %%DRUPAL_BASE%%/modules/blog/blog.install
 %%DRUPAL_BASE%%/modules/blog/blog.module
@@ -491,11 +494,11 @@
 %%DRUPAL_BASE%%/modules/openid/tests/openid_test.install
 %%DRUPAL_BASE%%/modules/openid/tests/openid_test.module
 %%DRUPAL_BASE%%/modules/overlay/images/background.png
-%%DRUPAL_BASE%%/modules/overlay/images/close.png
 %%DRUPAL_BASE%%/modules/overlay/images/close-rtl.png
+%%DRUPAL_BASE%%/modules/overlay/images/close.png
+%%DRUPAL_BASE%%/modules/overlay/overlay-child-rtl.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-child.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-child.js
-%%DRUPAL_BASE%%/modules/overlay/overlay-child-rtl.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-parent.css
 %%DRUPAL_BASE%%/modules/overlay/overlay-parent.js
 %%DRUPAL_BASE%%/modules/overlay/overlay.api.php
@@ -628,6 +631,8 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/common_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/common_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/common_test.print.css
+%%DRUPAL_BASE%%/modules/simpletest/tests/common_test_cron_helper.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/common_test_cron_helper.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/common_test_info.txt
 %%DRUPAL_BASE%%/modules/simpletest/tests/database_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/database_test.install
@@ -689,6 +694,14 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/system.base.css
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_dependencies_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_dependencies_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_core_version_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_core_version_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_dependencies_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_module_version_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/tablesort.test
@@ -698,8 +711,14 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.template_test.tpl.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/template.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/test_theme.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/unicode.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/update.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/update_script_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/update_script_test.install
+%%DRUPAL_BASE%%/modules/simpletest/tests/update_script_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_test_1.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_test_1.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_test_1.module
@@ -715,10 +734,15 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.forum.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.locale.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.menu.database.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.node_type_broken.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.translatable.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.upload.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.user-no-password-token.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.user-password-token.database.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.bare.minimal.database.php.gz
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.bare.standard_all.database.php.gz
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.filled.minimal.database.php.gz
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.filled.standard_all.database.php.gz
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.comment.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.filter.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.forum.test
@@ -731,8 +755,6 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.translatable.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.upload.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.user.test
-%%DRUPAL_BASE%%/modules/simpletest/tests/common_test_cron_helper.info
-%%DRUPAL_BASE%%/modules/simpletest/tests/common_test_cron_helper.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.module
@@ -834,6 +856,8 @@
 %%DRUPAL_BASE%%/modules/update/tests/drupal.1.xml
 %%DRUPAL_BASE%%/modules/update/tests/drupal.2-sec.xml
 %%DRUPAL_BASE%%/modules/update/tests/drupal.dev.xml
+%%DRUPAL_BASE%%/modules/update/tests/themes/update_test_basetheme/update_test_basetheme.info
+%%DRUPAL_BASE%%/modules/update/tests/themes/update_test_subtheme/update_test_subtheme.info
 %%DRUPAL_BASE%%/modules/update/tests/update_test.info
 %%DRUPAL_BASE%%/modules/update/tests/update_test.module
 %%DRUPAL_BASE%%/modules/update/tests/update_test_basetheme.1_1-sec.xml
@@ -890,9 +914,12 @@
 %%DRUPAL_BASE%%/scripts/cron-lynx.sh
 %%DRUPAL_BASE%%/scripts/drupal.sh
 %%DRUPAL_BASE%%/scripts/dump-database-d6.sh
+%%DRUPAL_BASE%%/scripts/dump-database-d7.sh
 %%DRUPAL_BASE%%/scripts/generate-d6-content.sh
+%%DRUPAL_BASE%%/scripts/generate-d7-content.sh
 %%DRUPAL_BASE%%/scripts/password-hash.sh
 %%DRUPAL_BASE%%/scripts/run-tests.sh
+%%DRUPAL_BASE%%/scripts/test.script
 %%DRUPAL_BASE%%/sites/all/README.txt
 %%DRUPAL_BASE%%/sites/all/modules/README.txt
 %%DRUPAL_BASE%%/sites/all/themes/README.txt
@@ -968,6 +995,7 @@
 %%DRUPAL_BASE%%/themes/garland/theme-settings.php
 %%DRUPAL_BASE%%/themes/seven/ie.css
 %%DRUPAL_BASE%%/themes/seven/ie6.css
+%%DRUPAL_BASE%%/themes/seven/ie7.css
 %%DRUPAL_BASE%%/themes/seven/images/add.png
 %%DRUPAL_BASE%%/themes/seven/images/arrow-asc.png
 %%DRUPAL_BASE%%/themes/seven/images/arrow-desc.png
@@ -976,17 +1004,16 @@
 %%DRUPAL_BASE%%/themes/seven/images/buttons.png
 %%DRUPAL_BASE%%/themes/seven/images/fc-rtl.png
 %%DRUPAL_BASE%%/themes/seven/images/fc.png
-%%DRUPAL_BASE%%/themes/seven/images/list-item.png
 %%DRUPAL_BASE%%/themes/seven/images/list-item-rtl.png
+%%DRUPAL_BASE%%/themes/seven/images/list-item.png
 %%DRUPAL_BASE%%/themes/seven/images/task-check.png
-%%DRUPAL_BASE%%/themes/seven/images/task-item.png
 %%DRUPAL_BASE%%/themes/seven/images/task-item-rtl.png
+%%DRUPAL_BASE%%/themes/seven/images/task-item.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-222222-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-454545-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-800000-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-888888-256x240.png
 %%DRUPAL_BASE%%/themes/seven/images/ui-icons-ffffff-256x240.png
-%%DRUPAL_BASE%%/themes/seven/ie7.css
 %%DRUPAL_BASE%%/themes/seven/jquery.ui.theme.css
 %%DRUPAL_BASE%%/themes/seven/logo.png
 %%DRUPAL_BASE%%/themes/seven/maintenance-page.tpl.php
@@ -1004,17 +1031,12 @@
 %%DRUPAL_BASE%%/themes/stark/logo.png
 %%DRUPAL_BASE%%/themes/stark/screenshot.png
 %%DRUPAL_BASE%%/themes/stark/stark.info
-%%DRUPAL_BASE%%/themes/tests/README.txt
-%%DRUPAL_BASE%%/themes/tests/test_theme/template.php
-%%DRUPAL_BASE%%/themes/tests/test_theme/test_theme.info
-%%DRUPAL_BASE%%/themes/tests/update_test_basetheme/update_test_basetheme.info
-%%DRUPAL_BASE%%/themes/tests/update_test_subtheme/update_test_subtheme.info
 %%DRUPAL_BASE%%/update.php
 %%DRUPAL_BASE%%/web.config
 %%DRUPAL_BASE%%/xmlrpc.php
 @unexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true
-@dirrm %%DRUPAL_BASE%%/includes/database/pgsql
 @dirrm %%DRUPAL_BASE%%/includes/database/mysql
+@dirrm %%DRUPAL_BASE%%/includes/database/pgsql
 @dirrm %%DRUPAL_BASE%%/includes/database/sqlite
 @dirrm %%DRUPAL_BASE%%/includes/database
 @dirrm %%DRUPAL_BASE%%/includes/filetransfer
@@ -1023,9 +1045,10 @@
 @dirrm %%DRUPAL_BASE%%/misc/ui/images
 @dirrm %%DRUPAL_BASE%%/misc/ui
 @dirrm %%DRUPAL_BASE%%/misc
-@dirrm %%DRUPAL_BASE%%/modules/menu
-@dirrm %%DRUPAL_BASE%%/modules/user/tests
-@dirrm %%DRUPAL_BASE%%/modules/user
+@dirrm %%DRUPAL_BASE%%/modules/aggregator/tests
+@dirrm %%DRUPAL_BASE%%/modules/aggregator
+@dirrm %%DRUPAL_BASE%%/modules/block/tests/themes/block_test_theme
+@dirrm %%DRUPAL_BASE%%/modules/block/tests/themes
 @dirrm %%DRUPAL_BASE%%/modules/block/tests
 @dirrm %%DRUPAL_BASE%%/modules/block
 @dirrm %%DRUPAL_BASE%%/modules/blog
@@ -1038,7 +1061,6 @@
 @dirrm %%DRUPAL_BASE%%/modules/contextual
 @dirrm %%DRUPAL_BASE%%/modules/dashboard
 @dirrm %%DRUPAL_BASE%%/modules/dblog
-@dirrm %%DRUPAL_BASE%%/modules/field/tests
 @dirrm %%DRUPAL_BASE%%/modules/field/modules/field_sql_storage
 @dirrm %%DRUPAL_BASE%%/modules/field/modules/list/tests
 @dirrm %%DRUPAL_BASE%%/modules/field/modules/list
@@ -1046,6 +1068,7 @@
 @dirrm %%DRUPAL_BASE%%/modules/field/modules/options
 @dirrm %%DRUPAL_BASE%%/modules/field/modules/text
 @dirrm %%DRUPAL_BASE%%/modules/field/modules
+@dirrm %%DRUPAL_BASE%%/modules/field/tests
 @dirrm %%DRUPAL_BASE%%/modules/field/theme
 @dirrm %%DRUPAL_BASE%%/modules/field
 @dirrm %%DRUPAL_BASE%%/modules/field_ui
@@ -1061,10 +1084,9 @@
 @dirrm %%DRUPAL_BASE%%/modules/locale/tests/translations
 @dirrm %%DRUPAL_BASE%%/modules/locale/tests
 @dirrm %%DRUPAL_BASE%%/modules/locale
-@dirrm %%DRUPAL_BASE%%/modules/update/tests
-@dirrm %%DRUPAL_BASE%%/modules/update
-@dirrm %%DRUPAL_BASE%%/modules/aggregator/tests
-@dirrm %%DRUPAL_BASE%%/modules/aggregator
+@dirrm %%DRUPAL_BASE%%/modules/menu
+@dirrm %%DRUPAL_BASE%%/modules/node/tests
+@dirrm %%DRUPAL_BASE%%/modules/node
 @dirrm %%DRUPAL_BASE%%/modules/openid/tests
 @dirrm %%DRUPAL_BASE%%/modules/openid
 @dirrm %%DRUPAL_BASE%%/modules/overlay/images
@@ -1077,16 +1099,18 @@
 @dirrm %%DRUPAL_BASE%%/modules/rdf
 @dirrm %%DRUPAL_BASE%%/modules/search/tests
 @dirrm %%DRUPAL_BASE%%/modules/search
-@dirrm %%DRUPAL_BASE%%/modules/syslog
 @dirrm %%DRUPAL_BASE%%/modules/shortcut
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/files
-@dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_compatible_test
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/drupal_system_listing_incompatible_test
+@dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme
+@dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/themes
+@dirrm %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/tests
 @dirrm %%DRUPAL_BASE%%/modules/simpletest
 @dirrm %%DRUPAL_BASE%%/modules/statistics
+@dirrm %%DRUPAL_BASE%%/modules/syslog
 @dirrm %%DRUPAL_BASE%%/modules/system
 @dirrm %%DRUPAL_BASE%%/modules/taxonomy
 @dirrm %%DRUPAL_BASE%%/modules/toolbar
@@ -1095,8 +1119,13 @@
 @dirrm %%DRUPAL_BASE%%/modules/translation
 @dirrm %%DRUPAL_BASE%%/modules/trigger/tests
 @dirrm %%DRUPAL_BASE%%/modules/trigger
-@dirrm %%DRUPAL_BASE%%/modules/node/tests
-@dirrm %%DRUPAL_BASE%%/modules/node
+@dirrm %%DRUPAL_BASE%%/modules/update/tests/themes/update_test_basetheme
+@dirrm %%DRUPAL_BASE%%/modules/update/tests/themes/update_test_subtheme
+@dirrm %%DRUPAL_BASE%%/modules/update/tests/themes
+@dirrm %%DRUPAL_BASE%%/modules/update/tests
+@dirrm %%DRUPAL_BASE%%/modules/update
+@dirrm %%DRUPAL_BASE%%/modules/user/tests
+@dirrm %%DRUPAL_BASE%%/modules/user
 @dirrm %%DRUPAL_BASE%%/modules
 @dirrm %%DRUPAL_BASE%%/profiles/minimal/translations
 @dirrm %%DRUPAL_BASE%%/profiles/minimal
@@ -1115,23 +1144,19 @@
 @dirrm %%DRUPAL_BASE%%/sites/default/files
 @dirrm %%DRUPAL_BASE%%/sites/default
 @dirrm %%DRUPAL_BASE%%/sites
-@dirrm %%DRUPAL_BASE%%/themes/stark
-@dirrm %%DRUPAL_BASE%%/themes/tests/test_theme
-@dirrm %%DRUPAL_BASE%%/themes/tests/update_test_basetheme
-@dirrm %%DRUPAL_BASE%%/themes/tests/update_test_subtheme
-@dirrm %%DRUPAL_BASE%%/themes/tests
-@dirrm %%DRUPAL_BASE%%/themes/engines/phptemplate
-@dirrm %%DRUPAL_BASE%%/themes/engines
-@dirrm %%DRUPAL_BASE%%/themes/bartik/css
 @dirrm %%DRUPAL_BASE%%/themes/bartik/color
+@dirrm %%DRUPAL_BASE%%/themes/bartik/css
 @dirrm %%DRUPAL_BASE%%/themes/bartik/images
 @dirrm %%DRUPAL_BASE%%/themes/bartik/templates
 @dirrm %%DRUPAL_BASE%%/themes/bartik
-@dirrm %%DRUPAL_BASE%%/themes/seven/images
-@dirrm %%DRUPAL_BASE%%/themes/seven
+@dirrm %%DRUPAL_BASE%%/themes/engines/phptemplate
+@dirrm %%DRUPAL_BASE%%/themes/engines
 @dirrm %%DRUPAL_BASE%%/themes/garland/color
 @dirrm %%DRUPAL_BASE%%/themes/garland/images
 @dirrm %%DRUPAL_BASE%%/themes/garland
+@dirrm %%DRUPAL_BASE%%/themes/seven/images
+@dirrm %%DRUPAL_BASE%%/themes/seven
+@dirrm %%DRUPAL_BASE%%/themes/stark
 @dirrm %%DRUPAL_BASE%%/themes
 @dirrmtry %%DRUPAL_BASE%%/sites/all/modules
 @dirrmtry %%DRUPAL_BASE%%/sites/all/themes
