@@ -1,5 +1,3 @@
 A blazingly fast HTML combinator library for the Haskell programming language.
-The Text.Blaze module is a good starting point, as well as this tutorial:
-<http://jaspervdj.be/blaze/tutorial.html>.
 
-WWW: http://jaspervdj.be/blaze
+WWW:	http://jaspervdj.be/blaze
