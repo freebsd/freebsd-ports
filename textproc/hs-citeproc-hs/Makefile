@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	citeproc-hs
-PORTVERSION=	0.3.2
-PORTREVISION=	5
+PORTVERSION=	0.3.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,8 +15,6 @@ COMMENT=	A Citation Style Language implementation in Haskell
 LICENSE=	BSD
 
 USE_CABAL=	json mtl pandoc-types>=1.8 utf8-string xml
-
-PORTDATA=	*
 
 OPTIONS=	BIBUTILS "Use Chris Putnam's Bibutils" on \
 		NETWORK  "Use network and HTTP to retrieve CSL file" on
