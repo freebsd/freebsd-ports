@@ -7,7 +7,7 @@
 
 PORTNAME=	poptop
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptpd/pptpd-${PORTVERSION}
 DISTNAME=	pptpd-${PORTVERSION:S/.b/-b/}
@@ -38,10 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
 		${PREFIX}/etc/pptpd.conf.sample
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
