@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	utility-ht
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.7.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
