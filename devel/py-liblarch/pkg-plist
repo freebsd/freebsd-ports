@@ -1,0 +1,19 @@
+%%PYTHON_SITELIBDIR%%/liblarch/__init__.py
+%%PYTHON_SITELIBDIR%%/liblarch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/filteredtree.py
+%%PYTHON_SITELIBDIR%%/liblarch/filteredtree.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/filteredtree.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/filters_bank.py
+%%PYTHON_SITELIBDIR%%/liblarch/filters_bank.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/filters_bank.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/processqueue.py
+%%PYTHON_SITELIBDIR%%/liblarch/processqueue.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/processqueue.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/tree.py
+%%PYTHON_SITELIBDIR%%/liblarch/tree.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/tree.pyo
+%%PYTHON_SITELIBDIR%%/liblarch/treenode.py
+%%PYTHON_SITELIBDIR%%/liblarch/treenode.pyc
+%%PYTHON_SITELIBDIR%%/liblarch/treenode.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/liblarch
