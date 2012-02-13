@@ -139,6 +139,7 @@ murmur-hash_port=		devel/hs-murmur-hash
 mwc-random_port=		math/hs-mwc-random
 mysql_port=			databases/hs-mysql
 network_port=			net/hs-network
+NumInstances_port=		math/hs-NumInstances
 ObjectName_port=		devel/hs-ObjectName
 oeis_port=			www/hs-oeis
 OpenAL_port=			audio/hs-OpenAL
