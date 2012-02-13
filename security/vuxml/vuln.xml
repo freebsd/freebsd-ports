@@ -69,11 +69,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2012-0846</cvename>
       <url>http://sourceforge.net/tracker/?func=detail&amp;amp;aid=3472745&amp;group_id=3870&amp;atid=103870</url>
     </references>
     <dates>
       <discovery>2012-01-11</discovery>
       <entry>2012-02-12</entry>
+      <modified>2012-02-13</modified>
     </dates>
   </vuln>
   <vuln vid="eba9aa94-549c-11e1-b6b7-0011856a6e37">
