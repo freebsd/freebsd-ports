@@ -69,7 +69,7 @@ $FreeBSD$
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
-@@ -439,21 +421,6 @@
+@@ -439,22 +421,6 @@
  		fi
  	fi
  
@@ -82,6 +82,7 @@ $FreeBSD$
 -			read atbootyn
 -			if [ "$atbootyn" = "y" -o "$atbootyn" = "Y" ]; then
 -				atboot=1
+-				makeboot=1
 -			fi
 -		else
 -			echo "Webmin does not support being started at boot time on your system."
@@ -91,7 +92,7 @@ $FreeBSD$
  	# Copy files to target directory
  	echo "***********************************************************************"
  	if [ "$wadir" != "$srcdir" ]; then
-@@ -575,6 +542,7 @@
+@@ -576,6 +542,7 @@
  	fi
  fi
  
@@ -99,7 +100,7 @@ $FreeBSD$
  if [ "$noperlpath" = "" ]; then
  	echo "Inserting path to perl into scripts.."
  	(find "$wadir" -name '*.cgi' -print ; find "$wadir" -name '*.pl' -print) | $perl "$wadir/perlpath.pl" $perl -
-@@ -585,7 +553,6 @@
+@@ -586,7 +553,6 @@
  echo "Creating start and stop scripts.."
  rm -f $config_dir/stop $config_dir/start $config_dir/restart $config_dir/reload
  echo "#!/bin/sh" >>$config_dir/start
@@ -107,7 +108,7 @@ $FreeBSD$
  echo "trap '' 1" >>$config_dir/start
  echo "LANG=" >>$config_dir/start
  echo "export LANG" >>$config_dir/start
-@@ -733,6 +700,7 @@
+@@ -734,6 +700,7 @@
  	echo passdelay=1 >> $config_dir/miniserv.conf
  fi
  
@@ -115,7 +116,7 @@ $FreeBSD$
  if [ "$nouninstall" = "" ]; then
  	echo "Creating uninstall script $config_dir/uninstall.sh .."
  	cat >$config_dir/uninstall.sh <<EOF
-@@ -822,6 +790,7 @@
+@@ -823,6 +790,7 @@
  	. "$srcdir/setup-post.sh"
  fi
  
