@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vector
-PORTVERSION=	0.7.1
+PORTVERSION=	0.9.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
-USE_CABAL=	primitive>=0.3.1
+USE_CABAL=	primitive>=0.4.0.1
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
