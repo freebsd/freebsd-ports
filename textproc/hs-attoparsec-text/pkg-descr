@@ -1,7 +1,0 @@
-A fast parser combinator library, aimed particularly at dealing efficiently
-with network protocols and complicated text/binary file formats.
-
-This library is basically a translation of the original attoparsec library
-to use text instead of bytestrings.
-
-WWW: http://patch-tag.com/r/felipe/attoparsec-text/home

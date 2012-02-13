@@ -3231,3 +3231,4 @@ science/R-cran-survival||2012-02-03|This CRAN port has been included in math/R
 editors/openoffice.org-3-devel|editors/openoffice-3-devel|2012-02-06|Project was taken over and renamed.
 www/zope-cmf||2012-02-07|Has expired: Doesn't work with modern Zope versions
 chinese/fcitx-keyboard|textproc/fcitx-keyboard|2012-02-07|Moved to more appropriate category
+textproc/hs-attoparsec-text||2012-02-13|Removed: The package is deprecated.
