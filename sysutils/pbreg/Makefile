@@ -16,7 +16,6 @@ COMMENT=	PC-BSD Registry Editor
 
 WRKSRC=		${WRKDIR}/PBReg
 
-USE_QMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
 HAS_CONFIGURE=	yes
