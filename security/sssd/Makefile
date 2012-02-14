@@ -7,6 +7,7 @@
 
 PORTNAME=	sssd
 DISTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 
@@ -24,7 +25,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		cares.2:${PORTSDIR}/dns/c-ares \
 		dbus:${PORTSDIR}/devel/dbus \
 		dhash.1:${PORTSDIR}/devel/ding-libs \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		unistring.1:${PORTSDIR}/devel/libunistring \
 		nss3.1:${PORTSDIR}/security/nss \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \

@@ -7,6 +7,7 @@
 
 PORTNAME=	bsmtrace
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	csjp
@@ -24,7 +25,7 @@ IGNORE=		release 6.2-RELEASE or later is required
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 MAKE_ENV+=	PCRE=1
 .endif
 

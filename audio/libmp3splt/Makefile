@@ -7,6 +7,7 @@
 
 PORTNAME=	libmp3splt
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -48,7 +49,7 @@ PLIST_FILES+=	lib/libmp3splt/libsplt_mp3.a \
 .if defined(WITHOUT_PCRE)
 CONFIGURE_ARGS+=	--disable-pcre
 .else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
 .if defined(WITHOUT_ID3)

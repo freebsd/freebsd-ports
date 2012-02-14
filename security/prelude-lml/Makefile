@@ -6,6 +6,7 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-technologies.com/download/releases/${PORTNAME}/
 
@@ -13,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
 LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

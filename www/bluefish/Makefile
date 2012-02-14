@@ -8,6 +8,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 		http://bluefish.mrball.net/stable/source/ \
@@ -16,7 +17,7 @@ MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/ \
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		gucharmap.7:${PORTSDIR}/deskutils/gucharmap
 

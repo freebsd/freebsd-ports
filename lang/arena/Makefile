@@ -7,6 +7,7 @@
 
 PORTNAME=	arena
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.minimalinux.org/arena/
 
@@ -17,7 +18,7 @@ GNU_CONFIGURE=	yes
 MAN1=		arena.1
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--enable-pcre
 .endif
 

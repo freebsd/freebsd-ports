@@ -7,6 +7,7 @@
 
 PORTNAME=	pcrs
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://distfiles.master.finkmirrors.net/\
 		http://download.mirror.ac.uk/mirror/master.us.finkmirrors.net/distfiles/\
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	wongk@apt.homeunix.net
 COMMENT=	Perl compatible regular expression based substitutions
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

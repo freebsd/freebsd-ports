@@ -7,6 +7,7 @@
 
 PORTNAME=		rmilter
 PORTVERSION=		1.5.37
+PORTREVISION=		1
 CATEGORIES=		mail
 MASTER_SITES=		http://highsecure.ru/
 
@@ -30,7 +31,7 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-sendmail
 .endif
 
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 502102

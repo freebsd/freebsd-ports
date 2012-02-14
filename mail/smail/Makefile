@@ -7,6 +7,7 @@
 
 PORTNAME=	smail
 PORTVERSION=	3.2.0.121
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.planix.com/pub/Smail/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/mail/smail/%SUBDIR%/
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program used for receiving and delivering mail
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	bsmtp-1.* courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* zmailer-2.*
 

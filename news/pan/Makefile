@@ -8,6 +8,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.135
+PORTREVISION=	1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -17,7 +18,7 @@ COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		gmime-2.4.6:${PORTSDIR}/mail/gmime24
 
 USE_BZIP2=	yes

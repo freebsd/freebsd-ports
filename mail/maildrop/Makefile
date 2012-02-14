@@ -21,6 +21,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -41,7 +42,7 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 

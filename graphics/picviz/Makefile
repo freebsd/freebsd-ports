@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?format=raw
 MAINTAINER=	ports@timit.nl
 COMMENT=	Parallel coordinates plotter
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_CMAKE=	yes

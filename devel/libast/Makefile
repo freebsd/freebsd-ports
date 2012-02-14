@@ -7,7 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/ \
 		CRITICAL
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.eterm.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of assorted spiffy things
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack

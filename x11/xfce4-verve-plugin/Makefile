@@ -18,7 +18,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	A command line plugin for Xfce4
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

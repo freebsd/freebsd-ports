@@ -7,7 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}:ezquake \
@@ -23,7 +23,7 @@ COMMENT=	Modern QuakeWorld client
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		png.6:${PORTSDIR}/graphics/png
 
 USE_DOS2UNIX=	*.[ch] Makefile*

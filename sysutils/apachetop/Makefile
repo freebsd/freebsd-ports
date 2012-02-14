@@ -7,7 +7,7 @@
 
 PORTNAME=	apachetop
 PORTVERSION=	0.12.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webta.org/apachetop/
 
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=--with-fam=${LOCALBASE}
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre=${LOCALBASE}
 .endif
 

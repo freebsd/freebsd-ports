@@ -7,14 +7,14 @@
 
 PORTNAME=	sentinel
 PORTVERSION=	1.7b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/smfilter/${PORTNAME}/Sentinel%20${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A sendmail milter API implementation
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

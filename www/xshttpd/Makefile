@@ -7,7 +7,7 @@
 
 PORTNAME=	xshttpd
 DISTVERSION=	3.6g01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=--without-perl
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre=yes
 .else
 CONFIGURE_ARGS+=--with-pcre=no

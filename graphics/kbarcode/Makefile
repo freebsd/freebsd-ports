@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A barcode and label printing application for KDE
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes

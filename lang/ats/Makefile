@@ -7,6 +7,7 @@
 
 PORTNAME=	ats
 PORTVERSION=	${ATS_VER}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-lang/${PORTNAME}-lang/${ATS_IMPL}-${PORTVERSION}
@@ -40,7 +41,7 @@ LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .endif
 
 .if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
 post-configure:

@@ -8,13 +8,14 @@
 
 PORTNAME=	snowlog
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kiza.kcore.de/software/snowlog/download/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A webserver access log browser/analyzer
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 MAN1=		snowlog.1
 DOCS=		INSTALLATION doc/README doc/filters.example

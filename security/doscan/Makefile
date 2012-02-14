@@ -7,14 +7,14 @@
 
 PORTNAME=	doscan
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://static.enyo.de/fw/releases/doscan/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Tool to quickly scan your network for machines listening on a TCP port
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
@@ -17,7 +18,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		idn.17:${PORTSDIR}/dns/libidn \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		botan.0:${PORTSDIR}/security/botan

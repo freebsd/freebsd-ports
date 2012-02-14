@@ -7,6 +7,7 @@
 
 PORTNAME=	ettercap
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-Lazarus \
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-libpcre=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-libpcre

@@ -8,6 +8,7 @@
 
 PORTNAME?=	R
 PORTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -128,7 +129,7 @@ PLIST_SUB+=		NLS="@comment "
 .if defined(WITHOUT_PCRE_PORT)
 CONFIGURE_ARGS+=	--without-system-pcre
 .else
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-system-pcre
 .endif
 

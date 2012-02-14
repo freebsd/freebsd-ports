@@ -7,6 +7,7 @@
 
 PORTNAME=	tintin++
 PORTVERSION=	2.00.8
+PORTREVISION=	1
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	A client program to help playing MUDs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 OPTIONS=	BIG5 "Big5 support" off
 

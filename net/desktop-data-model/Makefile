@@ -7,7 +7,7 @@
 
 PORTNAME=	desktop-data-model
 PORTVERSION=	1.2.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpcre.pc:${PORTSDIR}/devel/pcre 
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
 		${LOCALBASE}/libdata/pkgconfig/sqlite3.pc:${PORTSDIR}/databases/sqlite3 \
 		${LOCALBASE}/libdata/pkgconfig/loudmouth-1.0.pc:${PORTSDIR}/net-im/loudmouth
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \

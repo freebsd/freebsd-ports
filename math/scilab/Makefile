@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -21,7 +21,7 @@ COMMENT=	Scientific software package for numerical computations
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 

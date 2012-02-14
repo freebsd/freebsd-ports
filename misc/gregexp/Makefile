@@ -8,7 +8,7 @@
 
 PORTNAME=	gregexp
 PORTVERSION=	0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc
 MASTER_SITES=	http://dentrassi.de/download/gregexp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical regular expression explorer
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes

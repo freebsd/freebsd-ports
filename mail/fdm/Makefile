@@ -7,13 +7,14 @@
 
 PORTNAME=	fdm
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Fetches and delivers mail
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		tdb.1:${PORTSDIR}/databases/tdb
 
 PLIST_FILES=	bin/fdm

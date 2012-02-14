@@ -7,6 +7,7 @@
 
 PORTNAME=	nmap
 DISTVERSION=	5.61TEST4
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -17,7 +18,7 @@ COMMENT=	Port scanning utility for large networks
 # http://nmap.org/book/man-legal.html
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_LUA=	5.1
 LUA_COMPS=	lua

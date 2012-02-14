@@ -7,6 +7,7 @@
 
 PORTNAME=	varnish
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://repo.varnish-cache.org/source/
 
@@ -15,7 +16,7 @@ COMMENT=	The Varnish high-performance HTTP accelerator
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	varnish-2.*
 

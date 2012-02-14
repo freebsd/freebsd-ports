@@ -7,14 +7,14 @@
 
 PORTNAME=	pop3vscan
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 MAKE_ENV=	_LDFLAGS="${LDFLAGS}"

@@ -7,6 +7,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.39.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
 		CRITICAL
@@ -20,7 +21,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gstreamermm-0.10.2:${PORTSDIR}/multimedia/gstreamermm \
 		enchant.1:${PORTSDIR}/textproc/enchant \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20

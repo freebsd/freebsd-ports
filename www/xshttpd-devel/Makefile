@@ -7,6 +7,7 @@
 
 PORTNAME=	xshttpd
 DISTVERSION=	3.7b21
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -18,7 +19,7 @@ COMMENT=	A webserver with CGI as own user and SSL suport
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
 		ppmtogif:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 CONFLICTS+=	xshttpd-[0-9]*
 

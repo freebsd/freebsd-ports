@@ -7,7 +7,7 @@
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES?=	www
 MASTER_SITES=	http://www.stedee.id.au/files/
 
@@ -17,7 +17,7 @@ COMMENT=	AWFFull is a webserver log analysis tool forked from Webalizer
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		png.6:${PORTSDIR}/graphics/png \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-awffull-[0-9]*

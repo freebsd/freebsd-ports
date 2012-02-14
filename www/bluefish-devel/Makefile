@@ -7,7 +7,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	1.3.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-unstable-${PORTVERSION}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Development release of port bluefish
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		aspell.16:${PORTSDIR}/textproc/aspell
 
 IGNORE=		the devel release are currently suspended, install www/bluefish, new release is 2.0

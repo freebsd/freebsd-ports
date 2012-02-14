@@ -7,13 +7,14 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://highsecure.ru/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		gmime-2.0:${PORTSDIR}/mail/gmime2 \
 		event-1.4:${PORTSDIR}/devel/libevent
 

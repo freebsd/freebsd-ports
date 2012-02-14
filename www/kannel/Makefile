@@ -6,6 +6,7 @@
 
 PORTNAME=	kannel
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	gateway-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAP / SMS Gateway
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_RC_SUBR=	kannel
 USE_GNOME=	libxml2

@@ -7,6 +7,7 @@
 
 PORTNAME=	xapian-omega
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -16,7 +17,7 @@ COMMENT=	CGI search application built on Xapian
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		xapian.26:${PORTSDIR}/databases/xapian-core
 
 OPTIONS=	ICONV	"Enable iconv character set conversion support" on

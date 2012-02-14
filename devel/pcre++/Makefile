@@ -8,13 +8,14 @@
 
 PORTNAME=	pcre++
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/pcre++/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper class around the pcre library
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
 

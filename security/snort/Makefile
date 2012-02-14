@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.9.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://people.rit.edu/rpsfa/distfiles/
@@ -20,7 +20,7 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	daq>=0.6.2:${PORTSDIR}/net/daq \
 		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	daq>=0.6.2:${PORTSDIR}/net/daq \

@@ -7,6 +7,7 @@
 
 PORTNAME=	haproxy
 PORTVERSION=	1.4.18
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
@@ -31,12 +32,12 @@ OPTIONS=	PCRE		"Use PCRE regex library"	On\
 MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC=${CC}
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_PCRE=1"
 .endif
 
 .if defined(WITH_STATIC_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 MAKE_ARGS+=	"USE_STATIC_PCRE=1"
 .endif
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	aifad
 PORTVERSION=	1.0.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 
@@ -18,7 +18,7 @@ COMMENT=	Machine learning system
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		${SA_DIR}/res/res.a:${PORTSDIR}/devel/ocaml-res \
 		${SA_DIR}/cfg/cfg.a:${PORTSDIR}/devel/ocaml-cfg
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

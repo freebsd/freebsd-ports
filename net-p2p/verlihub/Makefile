@@ -7,7 +7,7 @@
 
 PORTNAME=	verlihub
 DISTVERSION=	0.9.8e-r2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/Verlihub/${DISTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	A Direct Connect protocol server (Hub)
 # but otherwise configure script would pick the wrong path
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_RC_SUBR=	verlihub
