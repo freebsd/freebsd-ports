@@ -2282,6 +2282,7 @@
     SUBDIR += p5-Proc-ProcessTable
     SUBDIR += p5-Proc-Queue
     SUBDIR += p5-Proc-Reliable
+    SUBDIR += p5-Proc-SafeExec
     SUBDIR += p5-Proc-Simple
     SUBDIR += p5-Proc-Wait3
     SUBDIR += p5-Proc-WaitStat
