@@ -19,7 +19,6 @@ LIB_DEPENDS=	pcbsd.0:${PORTSDIR}/sysutils/libpcbsd
 
 WRKSRC=		${WRKDIR}/pcbsd-netmanager
 
-USE_QMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs workspace 
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
