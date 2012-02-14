@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.29
+PORTVERSION=	3.32.2
 CATEGORIES=	misc
 MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 
