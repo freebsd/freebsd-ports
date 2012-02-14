@@ -1,23 +1,23 @@
 #!/bin/sh
+
+# $FreeBSD$
 #
 # PROVIDE: qpopper
 # REQUIRE: SERVERS
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable qpopper:
 # qpopper_enable="YES"
-#
 
 . /etc/rc.subr
 
-qpopper_enable=${qpopper_enable-"NO"}
-qpopper_flags=${qpopper_flags-""}
-
 name=qpopper
 rcvar=qpopper_enable
-command=%%PREFIX%%/libexec/qpopper
-command_args="${qpopper_flags}"
 
 load_rc_config $name
+
+qpopper_enable=${qpopper_enable:-"NO"}
+
+command=%%PREFIX%%/libexec/qpopper
+
 run_rc_command "$1"
