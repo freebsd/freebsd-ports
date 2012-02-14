@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120205
+PORTVERSION=	20120213
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	weechat-devel-a2002f6
+DISTNAME=	weechat-devel-${GITREV}
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A lightweight and user friendly ncurse based IRC client
@@ -37,13 +37,13 @@ OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		GUILE		"Guile scripting support"	Off	\
 		CHARSET		"Charset support"		On	\
 		BACKTRACE	"Backtraces"			On	\
-		DEBUG		"Debugging"			On	\
 		ASPELL		"Spell checking"		Off	\
 		GNUTLS		"GNU TLS"			Off	\
 		NLS		"NLS support"			On	\
 		DOCUMENTATION	"Build documentation"		Off
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-a2002f6
+GITREV=	c91a91c
+WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 .include <bsd.port.options.mk>
 
@@ -162,6 +162,6 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
