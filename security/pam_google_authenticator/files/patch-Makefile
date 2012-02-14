@@ -1,12 +1,29 @@
---- ./Makefile.orig	2012-02-12 20:34:01.605839492 +0000
-+++ ./Makefile	2012-02-12 20:34:11.541834894 +0000
-@@ -24,8 +24,7 @@
+--- Makefile.orig	2012-01-18 18:05:11.000000000 +0800
++++ Makefile	2012-02-13 21:43:14.409460968 +0800
+@@ -24,8 +24,6 @@
                  echo ' -D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT')              \
                -fvisibility=hidden $(CFLAGS)
  DEF_LDFLAGS := $(shell [ `uname` = SunOS ] && echo ' -mimpure-text') $(LDFLAGS)
 -LDL_LDFLAGS := $(shell $(CC) -shared -ldl -xc -o /dev/null /dev/null          \
 -                       >/dev/null 2>&1 && echo ' -ldl')
-+LDL_LDFLAGS := $(shell $(CC) -shared -ldl -xc >/dev/null 2>&1 && echo ' -ldl')
  
  all: google-authenticator pam_google_authenticator.so demo                    \
       pam_google_authenticator_unittest
+@@ -60,14 +58,14 @@
+ 	               pam_google_authenticator_unittest
+ 
+ google-authenticator: google-authenticator.o base32.o hmac.o sha1.o
+-	$(CC) -g $(DEF_LDFLAGS) -o $@ $+ $(LDL_LDFLAGS)
++	$(CC) -g $(DEF_LDFLAGS) -o $@ $+
+ 
+ demo: demo.o pam_google_authenticator_demo.o base32.o hmac.o sha1.o
+-	$(CC) -g $(DEF_LDFLAGS) -rdynamic -o $@ $+ $(LDL_LDFLAGS)
++	$(CC) -g $(DEF_LDFLAGS) -rdynamic -o $@ $+
+ 
+ pam_google_authenticator_unittest: pam_google_authenticator_unittest.o        \
+                                    base32.o hmac.o sha1.o
+-	$(CC) -g $(DEF_LDFLAGS) -rdynamic -o $@ $+ -lc $(LDL_LDFLAGS)
++	$(CC) -g $(DEF_LDFLAGS) -rdynamic -o $@ $+ -lc
+ 
+ pam_google_authenticator.so: base32.o hmac.o sha1.o
+ pam_google_authenticator_testing.so: base32.o hmac.o sha1.o
