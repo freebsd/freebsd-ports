@@ -24,16 +24,17 @@ command_interpreter=%%PERL%%
 
 stop_postcmd=${name}_poststop
 
-sqlgrey_poststop()
-{
-	rm -f $pidfile
-}
-
 load_rc_config $name
 
 sqlgrey_enable=${sqlgrey_enable-"NO"}
 required_files=${sqlgrey_config-"%%PREFIX%%/%%ETCDIR%%/sqlgrey.conf"}
+pidfile=${sqlgrey_pidfile-"/var/run/sqlgrey.pid"}
 
-command_args="--configfile=${required_files} --daemonize"
+command_args="--configfile=${required_files} --pidfile=${pidfile} --daemonize"
+
+sqlgrey_poststop()
+{
+	rm -f $pidfile
+}
 
 run_rc_command "$1"

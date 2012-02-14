@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlgrey
-DISTVERSION=	1.8.0-rc2
+PORTVERSION=	1.8.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 
@@ -22,12 +22,12 @@ USE_RC_SUBR=	sqlgrey
 NO_BUILD=	yes
 
 ETCFILES=	clients_fqdn_whitelist clients_ip_whitelist dyn_fqdn.regexp smtp_server.regexp sqlgrey.conf
-SGY_USERNAME?=	sqlgrey
-SGY_GROUPNAME?=	${SGY_USERNAME}
+USERS=		sqlgrey
+GROUPS=		${USERS}
 ETCDIR?=	etc/sqlgrey
 
 SUB_FILES=	pkg-install
-MY_SUB_LIST=	ETCDIR=${ETCDIR} ETCFILES="${ETCFILES}" USER=${SGY_USERNAME} GROUP=${SGY_GROUPNAME} PERL=${PERL}
+MY_SUB_LIST=	ETCDIR=${ETCDIR} ETCFILES="${ETCFILES}" USER=${USERS} GROUP=${GROUPS} PERL=${PERL}
 SUB_LIST+=	${MY_SUB_LIST}
 PLIST_SUB=	TOUCH=${TOUCH} ${MY_SUB_LIST}
 
