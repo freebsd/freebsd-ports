@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1
+MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1
 MAN8=		libvirtd.8
 
 post-patch:

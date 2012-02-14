@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/virsh
+bin/virt-host-validate
 bin/virt-pki-validate
 bin/virt-xml-validate
 @unexec if cmp -s %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; then rm -f %D/%%ETCDIR%%/libvirtd.conf; fi
