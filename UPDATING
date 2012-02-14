@@ -14,7 +14,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -w devel/pcre
   or
-  # portupgrade -w devel/pcre
+  # portupgrade devel/pcre
 
 20120213:
   AFFECTS: users of lang/ghc and */hs-*
