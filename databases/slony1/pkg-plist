@@ -4,6 +4,7 @@ bin/slony_logshipper
 lib/postgresql/slony1_funcs.so
 lib/postgresql/xxid.so
 etc/slon.conf-sample
+%%PERLTOOLS%%etc/slon_tools.conf-sample
 sbin/slon-mkservice
 share/postgresql/slony1_base.sql
 share/postgresql/slony1_base.v74.sql
@@ -27,6 +28,7 @@ share/postgresql/xxid.v84.sql
 %%PERLTOOLS%%sbin/slonik_build_env
 %%PERLTOOLS%%sbin/slonik_create_set
 %%PERLTOOLS%%sbin/slonik_drop_node
+%%PERLTOOLS%%sbin/slonik_drop_sequence
 %%PERLTOOLS%%sbin/slonik_drop_set
 %%PERLTOOLS%%sbin/slonik_drop_table
 %%PERLTOOLS%%sbin/slonik_execute_script
@@ -255,7 +257,6 @@ share/postgresql/xxid.v84.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtupdatefunctions.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/stmtwaitevent.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/subscribenodes.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/supportedplatforms.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-config-lock.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-confirm.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/table.sl-event.html
