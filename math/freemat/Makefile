@@ -8,7 +8,7 @@
 PORTNAME=		FreeMat
 PORTVERSION=		4.0
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		math science
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	freemat/FreeMat4
@@ -20,7 +20,7 @@ MAINTAINER=		glarkin@FreeBSD.org
 COMMENT=		An environment for rapid engineering and scientific processing
 
 LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
-			pcre.0:${PORTSDIR}/devel/pcre
+			pcre.1:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
 LICENSE=		GPLv2

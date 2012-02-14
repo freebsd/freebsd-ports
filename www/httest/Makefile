@@ -7,6 +7,7 @@
 
 PORTNAME=	httest
 PORTVERSION=	2.1.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	htt/htt2.1/${PORTNAME}-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	HTTP Test Tool
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 LICENSE=	AL2
 
