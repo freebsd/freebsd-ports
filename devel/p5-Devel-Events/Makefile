@@ -15,10 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Perl 5 module providing an extensible instrumentation framework
 
-RUN_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-AttributeHelpers>=0.13:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 		p5-Set-Object>=1.19:${PORTSDIR}/devel/p5-Set-Object \
 		p5-Time-HiRes>=0.01:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
+		p5-Sub-Uplevel>=0.18:${PORTSDIR}/devel/p5-Sub-Uplevel
 
 PERL_CONFIGURE=	yes
 
