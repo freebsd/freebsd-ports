@@ -43,7 +43,7 @@ if [ -z "${CONFFILE}" ]; then
 fi
 
 # use only 'egrep -e' else the check works not correct
-if [ ! -n "`egrep -e '^(Load|Add)Module.*dav_module' ${SYSCONFDIR}/${CONFFILE}`" ]; then
+if [ ! -n "`egrep -e '^LoadModule[[:blank:]]+dav_module' ${SYSCONFDIR}/${CONFFILE}`" ]; then
 	if [ -f ${LIBEXECDIR}/mod_dav.so ]; then
 		${APXSCMD} -e -S LIBEXECDIR=${LIBEXECDIR} -a -n dav ${LIBEXECDIR}/mod_dav.so
 	else

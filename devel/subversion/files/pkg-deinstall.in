@@ -3,7 +3,7 @@
 # Try to de-activate mod_dav_svn in the installed httpd.conf and warn
 # if this fails.
 #
-# $FreeBSD: /tmp/pcvs/ports/devel/subversion/files/pkg-deinstall.in,v 1.1 2010-04-19 10:39:12 lev Exp $
+# $FreeBSD: /tmp/pcvs/ports/devel/subversion/files/pkg-deinstall.in,v 1.2 2012-02-14 16:06:21 lev Exp $
 #
 
 if [ "%%MOD_DAV_SVN_INSTALL%%" != "YES" ] ; then
@@ -51,15 +51,12 @@ fi
 
 for i in ${conffile}; do
 	echo -n Removing dav_svn_module, authz_svn_module and dontdothat_module from $i in config dir: ${confdir}...
-	awk '{if (!/^LoadModule dav_svn_module/    && 
-		  !/^AddModule mod_dav_svn.c/      && \
-		  !/^LoadModule authz_svn_module/  && \
-		  !/^AddModule mod_authz_svn.c/    && \
-		  !/^LoadModule dontdothat_module/ && \
-		  !/^AddModule mod_dontdothat.c/    ) \
+	awk '{if (!/LoadModule[[:blank:]]+dav_svn_module/    &&
+		  !/LoadModule[[:blank:]]+authz_svn_module/  &&
+		  !/LoadModule[[:blank:]]+dontdothat_module/ )
 	    print $0}' < "${confdir}/$i" > "${tmpdir}/$i"
 	AWKRC=$?
-	diff "${confdir}/$i" "${tmpdir}/$i" | grep "^[<>]" | grep -Evq "^< (Load|Add)Module "
+	diff "${confdir}/$i" "${tmpdir}/$i" | grep "^[<>]" | sed -e 's/#//g' | grep -Evq "^<[[:blank:]]+LoadModule"
 	GREPRC=$?
 	# last grep should not find anything
 	if [ "x${AWKRC}" = "x0" -a "x${GREPRC}" = "x1"  ] ; then

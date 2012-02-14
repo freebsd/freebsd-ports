@@ -229,13 +229,9 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/client-side/svn-graph.pl
 %%DATADIR%%/client-side/svn-ssl-fingerprints.sh
 %%DATADIR%%/client-side/svn-viewspec.py
-%%DATADIR%%/client-side/svnmucc/.libs/svnmucc
-%%DATADIR%%/client-side/svnmucc/.libs/svnmucc.o
 %%DATADIR%%/client-side/svnmucc/svnmucc
-%%DATADIR%%/client-side/svnmucc/svnmucc-test.py
 %%DATADIR%%/client-side/svnmucc/svnmucc.c
-%%DATADIR%%/client-side/svnmucc/svnmucc.lo
-%%DATADIR%%/client-side/svnmucc/svnmucc.o
+%%DATADIR%%/client-side/svnmucc/svnmucc-test.py
 %%DATADIR%%/client-side/wcfind
 %%DATADIR%%/dev/analyze-svnlogs.py
 %%DATADIR%%/dev/benchmarks/large_dirs/create_bigdir.sh
@@ -276,12 +272,8 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/svn-entries.el
 %%DATADIR%%/dev/svn-merge-revs.py
 %%DATADIR%%/dev/svnqlite3-dump
-%%DATADIR%%/dev/svnraisetreeconflict/.libs/main.o
-%%DATADIR%%/dev/svnraisetreeconflict/.libs/svnraisetreeconflict
-%%DATADIR%%/dev/svnraisetreeconflict/main.c
-%%DATADIR%%/dev/svnraisetreeconflict/main.lo
-%%DATADIR%%/dev/svnraisetreeconflict/main.o
 %%DATADIR%%/dev/svnraisetreeconflict/svnraisetreeconflict
+%%DATADIR%%/dev/svnraisetreeconflict/main.c
 %%DATADIR%%/dev/trails.py
 %%DATADIR%%/dev/unix-build/Makefile.svn
 %%DATADIR%%/dev/unix-build/README
@@ -297,24 +289,12 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/windows-build/document-version.pl
 %%DATADIR%%/dev/windows-build/Makefile
 %%DATADIR%%/dev/windows-build/README
-%%DATADIR%%/diff/.libs/diff
-%%DATADIR%%/diff/.libs/diff.o
-%%DATADIR%%/diff/.libs/diff3
-%%DATADIR%%/diff/.libs/diff3.o
-%%DATADIR%%/diff/.libs/diff4
-%%DATADIR%%/diff/.libs/diff4.o
 %%DATADIR%%/diff/diff
 %%DATADIR%%/diff/diff.c
-%%DATADIR%%/diff/diff.lo
-%%DATADIR%%/diff/diff.o
 %%DATADIR%%/diff/diff3
 %%DATADIR%%/diff/diff3.c
-%%DATADIR%%/diff/diff3.lo
-%%DATADIR%%/diff/diff3.o
 %%DATADIR%%/diff/diff4
 %%DATADIR%%/diff/diff4.c
-%%DATADIR%%/diff/diff4.lo
-%%DATADIR%%/diff/diff4.o
 %%DATADIR%%/dist/backport.pl
 %%DATADIR%%/dist/checksums.py
 %%DATADIR%%/dist/collect_sigs.py
@@ -335,6 +315,7 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/examples/blame.py
 %%DATADIR%%/examples/check-modified.py
 %%DATADIR%%/examples/dumpprops.py
+%%DATADIR%%/examples/info.rb
 %%DATADIR%%/examples/get-location-segments.py
 %%DATADIR%%/examples/getfile.py
 %%DATADIR%%/examples/getlocks_test.c
@@ -370,27 +351,17 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/hook-scripts/verify-po.py
 %%DATADIR%%/po/l10n-report.py
 %%DATADIR%%/po/po-update.sh
-%%DATADIR%%/server-side/.libs/svn-populate-node-origins-index
-%%DATADIR%%/server-side/.libs/svn-populate-node-origins-index.o
-%%DATADIR%%/server-side/.libs/svn-rep-sharing-stats
-%%DATADIR%%/server-side/.libs/svn-rep-sharing-stats.o
-%%DATADIR%%/server-side/.libs/svnauthz-validate
-%%DATADIR%%/server-side/.libs/svnauthz-validate.o
+%%DATADIR%%/server-side/mod_dontdothat/README
+%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.c
 %%DATADIR%%/server-side/fsfs-reshard.py
 %%DATADIR%%/server-side/svn-backup-dumps.py
 %%DATADIR%%/server-side/svn-populate-node-origins-index
 %%DATADIR%%/server-side/svn-populate-node-origins-index.c
-%%DATADIR%%/server-side/svn-populate-node-origins-index.lo
-%%DATADIR%%/server-side/svn-populate-node-origins-index.o
 %%DATADIR%%/server-side/svn-rep-sharing-stats
 %%DATADIR%%/server-side/svn-rep-sharing-stats.c
-%%DATADIR%%/server-side/svn-rep-sharing-stats.lo
-%%DATADIR%%/server-side/svn-rep-sharing-stats.o
 %%DATADIR%%/server-side/svn_server_log_parse.py
 %%DATADIR%%/server-side/svnauthz-validate
 %%DATADIR%%/server-side/svnauthz-validate.c
-%%DATADIR%%/server-side/svnauthz-validate.lo
-%%DATADIR%%/server-side/svnauthz-validate.o
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
@@ -418,20 +389,17 @@ lib/libsvn_wc-1.la
 @dirrm %%DATADIR%%/buildbot/slaves/xp-vc60-ia32
 @dirrm %%DATADIR%%/buildbot/slaves
 @dirrm %%DATADIR%%/buildbot
-@dirrm %%DATADIR%%/client-side/svnmucc/.libs
 @dirrm %%DATADIR%%/client-side/svnmucc
 @dirrm %%DATADIR%%/client-side
 @dirrm %%DATADIR%%/dev/benchmarks/large_dirs
 @dirrm %%DATADIR%%/dev/benchmarks/suite1
 @dirrm %%DATADIR%%/dev/benchmarks
 @dirrm %%DATADIR%%/dev/iz
-@dirrm %%DATADIR%%/dev/svnraisetreeconflict/.libs
 @dirrm %%DATADIR%%/dev/svnraisetreeconflict
 @dirrm %%DATADIR%%/dev/unix-build
 @dirrm %%DATADIR%%/dev/wc-ng
 @dirrm %%DATADIR%%/dev/windows-build
 @dirrm %%DATADIR%%/dev
-@dirrm %%DATADIR%%/diff/.libs
 @dirrm %%DATADIR%%/diff
 @dirrm %%DATADIR%%/dist/templates
 @dirrm %%DATADIR%%/dist
@@ -440,7 +408,7 @@ lib/libsvn_wc-1.la
 @dirrm %%DATADIR%%/hook-scripts/mailer
 @dirrm %%DATADIR%%/hook-scripts
 @dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/server-side/.libs
+@dirrm %%DATADIR%%/server-side/mod_dontdothat
 @dirrm %%DATADIR%%/server-side
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%
