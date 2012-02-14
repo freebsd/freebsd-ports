@@ -1,0 +1,22 @@
+--- connectivity/source/parse/sqlbison.y.orig	2011-01-18 05:32:30.000000000 -0800
++++ connectivity/source/parse/sqlbison.y	2012-02-13 14:03:12.000000000 -0800
+@@ -4334,7 +4334,7 @@
+ }
+ 
+ // -------------------------------------------------------------------------
+-void OSQLParser::error(sal_Char *fmt)
++void OSQLParser::error(const sal_Char *fmt)
+ {
+ 	if(!m_sErrorMessage.getLength())
+ 	{
+--- connectivity/inc/connectivity/sqlparse.hxx.orig	2011-01-18 05:32:29.000000000 -0800
++++ connectivity/inc/connectivity/sqlparse.hxx	2012-02-13 17:06:06.000000000 -0800
+@@ -232,7 +232,7 @@
+         // returns the type for a parameter in a given function name
+         static sal_Int32 getFunctionParameterType(sal_uInt32 _nTokenId,sal_uInt32 _nPos);
+ 
+-		void error(sal_Char *fmt);
++		void error(const sal_Char *fmt);
+ 		int SQLlex();
+ #ifdef YYBISON
+ 		void setParseTree(OSQLParseNode * pNewParseTree);
