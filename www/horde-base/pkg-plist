@@ -296,6 +296,7 @@
 %%HORDIR%%/lib/Horde/Image/svg.php
 %%HORDIR%%/lib/Horde/Image/swf.php
 %%HORDIR%%/lib/Horde/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/Deprecated.php
 %%HORDIR%%/lib/Horde/Kolab/Filter/Base.php
 %%HORDIR%%/lib/Horde/Kolab/Filter/Content.php
 %%HORDIR%%/lib/Horde/Kolab/Filter/Incoming.php
@@ -443,11 +444,27 @@
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/user.php
 %%HORDIR%%/lib/Horde/Kolab/Server/ldap.php
 %%HORDIR%%/lib/Horde/Kolab/Server/test.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Cache.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Folder.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Data.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/List.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Config.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/Shared.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/Other.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/Personal.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/SharedWithPrefix.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Fixed.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Imap.php
+%%HORDIR%%/lib/Horde/Kolab/Storage/Perms.php
+%%HORDIR%%/lib/Horde/Kolab/Storage.php
 %%HORDIR%%/lib/Horde/Kolab/Session.php
 %%HORDIR%%/lib/Horde/Kolab/Test.php
 %%HORDIR%%/lib/Horde/Kolab/Test/Filter.php
 %%HORDIR%%/lib/Horde/Kolab/Test/FreeBusy.php
 %%HORDIR%%/lib/Horde/Kolab/Test/Server.php
+%%HORDIR%%/lib/Horde/Kolab/Test/Storage.php
 %%HORDIR%%/lib/Horde/LDAP.php
 %%HORDIR%%/lib/Horde/Lens.php
 %%HORDIR%%/lib/Horde/Lens/Interface.php
@@ -4245,6 +4262,9 @@
 @dirrm %%HORDIR%%/lib/Horde/Lock
 @dirrm %%HORDIR%%/lib/Horde/Lens
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Test
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage/Namespace
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server/Object
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Resource/Itip/Response/Type
