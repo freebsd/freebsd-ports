@@ -16,7 +16,6 @@ COMMENT=	Convert propiatary .drg file format into SBaGen format
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_SSL=	yes
 
 PLIST_FILES=	bin/drg2sbg
 
