@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120214:
+  AFFECTS: users of devel/pcre
+  AUTHOR: dougb@FreeBSD.org
+
+  Until all dependent ports have been updated you should update pcre in
+  a manner that will preserve its old shared library. For example:
+
+  # portmaster -w devel/pcre
+  or
+  # portupgrade -w devel/pcre
+
 20120213:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: pgj@FreeBSD.org
