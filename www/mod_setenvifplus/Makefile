@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_setenvifplus
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	modsetenvifplus
