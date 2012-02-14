@@ -13,7 +13,6 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	A bsnmpd module that implements parts of UCD-SNMP-MIB
 
-USE_MAKE=	yes
 USE_AUTOTOOLS=	libtool:env
 
 MAN8=		bsnmp-ucd.8
