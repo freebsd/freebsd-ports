@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_auth_openid
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	www
 MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
