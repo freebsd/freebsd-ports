@@ -16,6 +16,9 @@ DISTNAME=	email-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email package for Python 2.3 or upper
 
+DEPRECATED=	Included into all supported python versions
+EXPIRATION_DATE=	2012-03-14
+
 DIST_SUBDIR=	python
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
