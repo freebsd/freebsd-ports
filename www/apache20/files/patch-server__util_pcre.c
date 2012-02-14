@@ -142,10 +142,10 @@
 +
 +if (preg->re_pcre == NULL) return AP_REG_INVARG;
 +
-+preg->re_nsub = pcre_info((const pcre *)preg->re_pcre, NULL, NULL);
++pcre_fullinfo((const pcre *)preg->re_pcre, NULL,
++               PCRE_INFO_CAPTURECOUNT, &(preg->re_nsub));
 +return 0;
 +}
-+
 +
 +
 +
