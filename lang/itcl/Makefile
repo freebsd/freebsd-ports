@@ -7,6 +7,7 @@
 
 PORTNAME=	itcl
 PORTVERSION=	3.4b1
+PORTREVISION=	1
 CATEGORIES=	lang tcl
 MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/3.4
 DISTNAME=	itcl${PORTVERSION}
@@ -34,7 +35,7 @@ WRKSRC=		${WRKDIR}/itcl3.4
 MANCOMPRESSED=	no
 MANN=		body.n class.n code.n configbody.n delete.n ensemble.n find.n
 MANN+=		is.n itcl.n itclvars.n local.n scope.n
-MAN3=		RegisterC.3 Stack.3 Class.3 List.3 Object.3 Preserve.3
+MAN3=		Itcl_RegisterC.3 Itcl_Stack.3 Itcl_Class.3 Itcl_List.3 Itcl_Object.3 Itcl_Preserve.3
 
 ITCL_LIB_FILE=	${ITCL_LIB}.${SHLIB_MAJOR}
 
@@ -46,6 +47,8 @@ post-build test:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.n ${PREFIX}/man/mann/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.3 ${PREFIX}/man/man3/
+.for FILE in ${MAN3}
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE:S/Itcl_//} ${PREFIX}/man/man3/${FILE}
+.endfor
 
 .include <bsd.port.post.mk>
