@@ -22,6 +22,7 @@ OPTIONS=	P4_STYLE_MARKERS	"Perforce-style conflict markers" on \
 		ENHANCED_KEYWORD	"Enhanced svn:keyword support" on \
 		FREEBSD_TEMPLATE	"FreeBSD Project log template" on \
 		MOD_DAV_SVN		"mod_dav_svn module for Apache 2.X" off \
+		MOD_DONTDOTHAT		"mod_dontdothat for Apache 2.X" off \
 		NEON			"WebDAV/Delta-V repo access module (neon)" on \
 		SERF			"WebDAV/Delta-V repo access module (serf)" off \
 		SASL			"SASL2 authorization support" off \
@@ -34,7 +35,6 @@ OPTIONS=	P4_STYLE_MARKERS	"Perforce-style conflict markers" on \
 		KDE_KWALLET		"Build with KDE KWallet auth support" off \
 		BOOK			"Install the Subversion Book" off
 #		ASVN			"Build and install Archive SVN (asvn)" off \
-#		MOD_DONTDOTHAT		"mod_dontdothat for Apache 2.X" off \
 
 .include "Makefile.common"
 
@@ -122,12 +122,12 @@ pre-everything::
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
 .endif
 	@${ECHO_MSG} ""
-#.if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)
-#	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
-#.else
-#	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
-#.endif
-#	@${ECHO_MSG} ""
+.if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)
+	@${ECHO_MSG} "mod_dontdothat module for Apache 2.X enabled."
+.else
+	@${ECHO_MSG} "You can enable the mod_dontdothat module for Apache 2.X"
+.endif
+	@${ECHO_MSG} ""
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${ECHO_MSG} "svnserve wrapper enabled."
 	@${ECHO_MSG} ""
@@ -189,16 +189,17 @@ pre-configure:
 .endif
 
 post-build:
-#.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
-#	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
-#		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
-#.endif
-.if defined(WITH_SVNAUTHZ_VALIDATE)
-	# place binary in ${WRKDIR}, else we install it twice
-	cd ${WRKSRC}/tools/server-side && \
-		${CC} svnauthz-validate.c -o ../../svnauthz-validate -I${WRKSRC}/subversion/include -I${APR_INCLUDE_DIR} \
-		-L${WRKSRC}/subversion/libsvn_repos/.libs -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_repos-1 -lsvn_subr-1
+.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
+	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
 .endif
+# subversion 1.7+ -- it is not optional
+#.if defined(WITH_SVNAUTHZ_VALIDATE)
+#	# place binary in ${WRKDIR}, else we install it twice
+#	cd ${WRKSRC}/tools/server-side && \
+#		${CC} svnauthz-validate.c -o ../../svnauthz-validate -I${WRKSRC}/subversion/include -I${APR_INCLUDE_DIR} \
+#		-L${WRKSRC}/subversion/libsvn_repos/.libs -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_repos-1 -lsvn_subr-1
+#.endif
 
 pre-install:
 .if defined(WITH_MOD_DAV_SVN)
@@ -211,18 +212,18 @@ post-install:	${MKREPOS_TARGET}
 .if defined(WITH_MOD_DAV_SVN)
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
-#.if defined(WITH_MOD_DONTDOTHAT)
-#	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
-#		${APXS} -i -n dontdothat mod_dontdothat.la
-#	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
-#.endif
+.if defined(WITH_MOD_DONTDOTHAT)
+	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+		${APXS} -i -n dontdothat mod_dontdothat.la
+	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
+.endif
 .endif
 .if defined(WITH_SVNAUTHZ_VALIDATE)
-	${INSTALL_PROGRAM} ${WRKSRC}/svnauthz-validate ${PREFIX}/bin
+	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/tools/server-side/svnauthz-validate ${PREFIX}/bin
 .endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
-	  ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${DATADIR} -xf -
+	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' -cf - * | ${TAR} -C ${DATADIR} -xf -
 	@${CHMOD} -R a-st,o+rX ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -243,7 +244,10 @@ post-install:	${MKREPOS_TARGET}
 
 repository:	_mkrepos
 
-_SVNGRPFILES=	dav db locks locks/db.lock locks/db-logs.lock
+_SVNGRPFILES=	db locks locks/db.lock locks/db-logs.lock
+.if defined(WITH_MOD_DAV_SVN)
+_SVNGRPFILES+=	dav
+.endif
 SVNGRPFILES=	${_SVNGRPFILES:S,^,${SVNREPOS}/,}
 
 _mkrepos:	.USE
@@ -277,6 +281,9 @@ _mkrepos:	.USE
 	@${MKDIR} ${SVNREPOS}
 	@${PREFIX}/bin/svnadmin create --fs-type ${SVNFSTYPE} ${SVNREPOS}
 .if defined(WITH_SVNSERVE_WRAPPER)
+.if defined(WITH_MOD_DAV_SVN)
+	@${MKDIR} ${SVNREPOS}/dav
+.endif
 	@${CHOWN} ${SVNUSER}:${SVNGROUP} ${SVNGRPFILES}
 	@${CHMOD} g+w ${SVNGRPFILES}
 	@for i in ${SVNREPOS}/db/* ; do \
