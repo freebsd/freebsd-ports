@@ -10,7 +10,7 @@ include/pcrecpp.h
 lib/libpcre.a
 lib/libpcre.la
 lib/libpcre.so
-lib/libpcre.so.0
+lib/libpcre.so.1
 lib/libpcrecpp.a
 lib/libpcrecpp.la
 lib/libpcrecpp.so
