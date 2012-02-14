@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jtransforms
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	math java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=jtransforms/jtransforms/${PORTVERSION}
@@ -24,6 +24,6 @@ WRKSRC=		${WRKDIR}/JTransforms
 PLIST_FILES=	%%JAVAJARDIR%%/jtransforms.jar
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/jtransforms-2.3.jar ${JAVAJARDIR}/jtransforms.jar
+	@${INSTALL_DATA} ${WRKSRC}/jtransforms-2.4.jar ${JAVAJARDIR}/jtransforms.jar
 
 .include <bsd.port.mk>
