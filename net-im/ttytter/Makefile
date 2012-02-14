@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttytter
-PORTVERSION=	1.2.04
+PORTVERSION=	1.2.05
 CATEGORIES=	net-im perl5
 MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist1/
 DISTNAME=	${PORTVERSION}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5_RUN=	5.8.6+
 
 OPTIONS=	READLINE	"Include rich readline support" on \
 		RLTTYTTER	"Use T::R::TTYtter readline driver (beta!)" off \
@@ -32,7 +32,7 @@ RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 .endif
 
 .if defined(WITH_RLTTYTTER)
-RUN_DEPENDS+=	p5-ReadLine-TTYtter>=0:${PORTSDIR}/devel/p5-ReadLine-TTYtter
+RUN_DEPENDS+=	p5-ReadLine-TTYtter>=1.3:${PORTSDIR}/devel/p5-ReadLine-TTYtter
 .endif
 
 do-extract:
