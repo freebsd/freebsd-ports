@@ -48,27 +48,6 @@ bin/SABnzbd.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/version.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
-%%PORTDOCS%%%%DOCSDIR%%/ABOUT.txt
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
-%%PORTDOCS%%%%DOCSDIR%%/GPL2.txt
-%%PORTDOCS%%%%DOCSDIR%%/GPL3.txt
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
-%%PORTDOCS%%%%DOCSDIR%%/ISSUES.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-CherryPy.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-Python.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-configobj.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-feedparser.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-gntp.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-json.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-kronos.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-listquote.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-msgfmt.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-pynewsleecher.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-rarfile.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-rsslib.txt
-%%PORTDOCS%%%%DOCSDIR%%/License-ssmtplib.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%DATADIR%%/cherrypy/LICENSE.txt
 %%DATADIR%%/cherrypy/VERSION.txt
 %%DATADIR%%/cherrypy/__init__.py
@@ -374,7 +353,6 @@ bin/SABnzbd.py
 %%DATADIR%%/util/__init__.py
 %%DATADIR%%/util/apireg.py
 %%DATADIR%%/util/mailslot.py
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/util
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/po/nsis
@@ -453,3 +431,4 @@ bin/SABnzbd.py
 @dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @exec mkdir -p %D/sabnzbd
+@exec chown _sabnzbd:_sabnzbd %D/sabnzbd
