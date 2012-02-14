@@ -16,8 +16,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
-OPTIONS=	IPV6	"Build IPv6 support" on \
-		X11	"Build X11-enabled mtr" on
+OPTIONS=	IPV6	"Build IPv6 support" on
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -36,9 +35,11 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 .if !defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--with-gtk
+OPTIONS+=	X11	"Build X11-enabled mtr" on
 USE_GNOME=	gtk20
 .else
 CONFIGURE_ARGS+=--without-gtk
+OPTIONS+=	X11	"Build X11-enabled mtr" off
 PKGNAMESUFFIX=	-nox11
 .endif
 
