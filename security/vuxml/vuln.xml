@@ -81,7 +81,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Jan Lieskovsky</p>
+	<p>Jan Lieskovsky reports,</p>
 	<blockquote cite="http://bugs.python.org/issue14001">
 	  <p>A denial of service flaw was found in the way Simple XML-RPC Server
 	    module of Python processed client connections, that were closed
