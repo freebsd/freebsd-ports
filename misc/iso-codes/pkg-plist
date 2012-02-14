@@ -40,6 +40,7 @@ share/locale/bs/LC_MESSAGES/iso_639_3.mo
 share/locale/byn/LC_MESSAGES/iso_3166.mo
 share/locale/byn/LC_MESSAGES/iso_639.mo
 share/locale/byn/LC_MESSAGES/iso_639_3.mo
+share/locale/ca/LC_MESSAGES/iso_15924.mo
 share/locale/ca/LC_MESSAGES/iso_3166.mo
 share/locale/ca/LC_MESSAGES/iso_3166_2.mo
 share/locale/ca/LC_MESSAGES/iso_4217.mo
@@ -66,6 +67,7 @@ share/locale/da/LC_MESSAGES/iso_639.mo
 share/locale/da/LC_MESSAGES/iso_639_3.mo
 share/locale/de/LC_MESSAGES/iso_15924.mo
 share/locale/de/LC_MESSAGES/iso_3166.mo
+share/locale/de/LC_MESSAGES/iso_3166_2.mo
 share/locale/de/LC_MESSAGES/iso_4217.mo
 share/locale/de/LC_MESSAGES/iso_639.mo
 share/locale/de/LC_MESSAGES/iso_639_3.mo
