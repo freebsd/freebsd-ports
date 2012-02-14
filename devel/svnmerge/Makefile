@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	svnmerge
-PORTVERSION=	${SVN_PORTVERSION}
+PORTVERSION=	#  See ../subversion16/Makefile.inc
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	# none
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/subversion-${SVN_PORTVERSION}/contrib/client-side/svnmerge
+WRKSRC=		${WRKDIR}/subversion-${PORTVERSION}/contrib/client-side/svnmerge
 
 PLIST_FILES=	bin/svnmerge
 .if !defined(NOPORTDOCS)
@@ -30,7 +30,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 SVN_PORTDIR=		${PORTSDIR}/devel/subversion16
-SVN_PORTVERSION!=	cd ${SVN_PORTDIR} && ${MAKE} -V PORTVERSION
+.include		"${SVN_PORTDIR}/Makefile.inc"
 
 do-extract:
 	${MKDIR} ${WRKDIR}
