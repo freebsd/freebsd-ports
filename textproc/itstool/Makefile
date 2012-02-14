@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	itstool
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://files.itstool.org/itstool/
 
