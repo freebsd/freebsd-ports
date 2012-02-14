@@ -24,6 +24,7 @@ bin/opengrok
 %%T%%/webapps/opengrok/default/img/bg.png
 %%T%%/webapps/opengrok/default/img/button1.png
 %%T%%/webapps/opengrok/default/img/button2.png
+%%T%%/webapps/opengrok/default/img/combined.png
 %%T%%/webapps/opengrok/default/img/icon.png
 %%T%%/webapps/opengrok/default/img/indicator.gif
 %%T%%/webapps/opengrok/default/img/rss.png
@@ -43,7 +44,7 @@ bin/opengrok
 %%T%%/webapps/opengrok/httpheader.jspf
 %%T%%/webapps/opengrok/index.jsp
 %%T%%/webapps/opengrok/index_body.html
-%%T%%/webapps/opengrok/jquery-1.4.2.min.js
+%%T%%/webapps/opengrok/jquery-1.4.4.min.js
 %%T%%/webapps/opengrok/jquery.autocomplete-1.1.pack.js
 %%T%%/webapps/opengrok/jquery.tooltip-1.3.pack.js
 %%T%%/webapps/opengrok/list.jsp
@@ -55,6 +56,7 @@ bin/opengrok
 %%T%%/webapps/opengrok/offwhite/img/bg.png
 %%T%%/webapps/opengrok/offwhite/img/button1.png
 %%T%%/webapps/opengrok/offwhite/img/button2.png
+%%T%%/webapps/opengrok/offwhite/img/combined.png
 %%T%%/webapps/opengrok/offwhite/img/d.gif
 %%T%%/webapps/opengrok/offwhite/img/do.gif
 %%T%%/webapps/opengrok/offwhite/img/f.gif
@@ -76,12 +78,14 @@ bin/opengrok
 %%T%%/webapps/opengrok/offwhite/print.css
 %%T%%/webapps/opengrok/offwhite/style.css
 %%T%%/webapps/opengrok/opensearch.jsp
+%%T%%/webapps/opengrok/pageconfig.jspf
 %%T%%/webapps/opengrok/pageheader.jspf
 %%T%%/webapps/opengrok/polished/img/Logo.png
 %%T%%/webapps/opengrok/polished/img/b.gif
 %%T%%/webapps/opengrok/polished/img/bg.png
 %%T%%/webapps/opengrok/polished/img/button1.png
 %%T%%/webapps/opengrok/polished/img/button2.png
+%%T%%/webapps/opengrok/polished/img/combined.png
 %%T%%/webapps/opengrok/polished/img/d.gif
 %%T%%/webapps/opengrok/polished/img/do.gif
 %%T%%/webapps/opengrok/polished/img/f.gif
@@ -108,6 +112,7 @@ bin/opengrok
 %%T%%/webapps/opengrok/rss.xsl.xml
 %%T%%/webapps/opengrok/search.jsp
 %%T%%/webapps/opengrok/status.jsp
+%%T%%/webapps/opengrok/utils.js
 @dirrmtry %%T%%/webapps/opengrok/META-INF
 @dirrmtry %%T%%/webapps/opengrok/WEB-INF/lib
 @dirrmtry %%T%%/webapps/opengrok/WEB-INF

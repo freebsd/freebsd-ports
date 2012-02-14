@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	opengrok
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel java
 MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+opengrok/files/
 
 MAINTAINER=	jgh@FreeBSD.org
-COMMENT=	Fast and powerful code search and cross-reference egine
+COMMENT=	Fast and powerful code search and cross-reference engine
 
-LICENSE=	CDDL
+LICENSE=	CDDL AL2
+LICENSE_COMB=	multi
 
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
