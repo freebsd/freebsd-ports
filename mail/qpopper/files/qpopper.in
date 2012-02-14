@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/mail/qpopper/files/qpopper.in,v 1.1 2012-02-14 21:35:43 dougb Exp $
 #
 # PROVIDE: qpopper
 # REQUIRE: SERVERS
