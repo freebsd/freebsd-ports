@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 EXTRACT_SUFX=	-src.tar.gz
