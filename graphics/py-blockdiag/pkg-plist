@@ -148,6 +148,7 @@ bin/blockdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/diagram_attributes_order.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/diagram_orientation.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/edge_attribute.diag
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/edge_datamodels.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/edge_label.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/edge_layout_landscape.diag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/blockdiag/tests/diagrams/edge_layout_portrait.diag
