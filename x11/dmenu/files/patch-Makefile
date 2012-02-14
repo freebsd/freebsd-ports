@@ -1,32 +1,32 @@
---- Makefile.orig	2011-07-19 22:31:28.000000000 +0200
-+++ Makefile	2011-09-01 13:48:57.000000000 +0200
+--- Makefile.orig	2012-01-08 13:18:43.000000000 +0100
++++ Makefile	2012-02-13 16:54:54.000000000 +0100
 @@ -47,20 +47,20 @@
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_run
- 	@chmod 755 ${DESTDIR}${PREFIX}/bin/lsx
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/stest
 -	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man1
 -	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 -	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man1/dmenu.1
--	@sed "s/VERSION/${VERSION}/g" < lsx.1 > ${DESTDIR}${MANPREFIX}/man1/lsx.1
+-	@sed "s/VERSION/${VERSION}/g" < stest.1 > ${DESTDIR}${MANPREFIX}/man1/stest.1
 -	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dmenu.1
--	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/lsx.1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/stest.1
 +	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man/man1
 +	@mkdir -p ${DESTDIR}${MANPREFIX}/man/man1
 +	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
-+	@sed "s/VERSION/${VERSION}/g" < lsx.1 > ${DESTDIR}${MANPREFIX}/man/man1/lsx.1
++	@sed "s/VERSION/${VERSION}/g" < stest.1 > ${DESTDIR}${MANPREFIX}/man/man1/stest.1
 +	@chmod 644 ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
-+	@chmod 644 ${DESTDIR}${MANPREFIX}/man/man1/lsx.1
++	@chmod 644 ${DESTDIR}${MANPREFIX}/man/man1/stest.1
  
  uninstall:
  	@echo removing executables from ${DESTDIR}${PREFIX}/bin
  	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu
  	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu_run
- 	@rm -f ${DESTDIR}${PREFIX}/bin/lsx
+ 	@rm -f ${DESTDIR}${PREFIX}/bin/stest
 -	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 -	@rm -f ${DESTDIR}${MANPREFIX}/man1/dmenu.1
--	@rm -f ${DESTDIR}${MANPREFIX}/man1/lsx.1
+-	@rm -f ${DESTDIR}${MANPREFIX}/man1/stest.1
 +	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man/man1
 +	@rm -f ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
-+	@rm -f ${DESTDIR}${MANPREFIX}/man/man1/lsx.1
++	@rm -f ${DESTDIR}${MANPREFIX}/man/man1/stest.1
  
  .PHONY: all options clean dist install uninstall

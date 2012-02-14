@@ -1,7 +1,7 @@
---- config.mk.orig	2011-05-18 18:02:16.000000000 +0200
-+++ config.mk	2011-05-20 22:58:36.000000000 +0200
+--- config.mk.orig	2012-01-08 13:18:43.000000000 +0100
++++ config.mk	2012-02-13 16:57:04.000000000 +0100
 @@ -2,11 +2,11 @@
- VERSION = 4.3.1
+ VERSION = 4.5
  
  # paths
 -PREFIX = /usr/local
@@ -16,15 +16,16 @@
  
  # Xinerama, comment if you don't want it
  XINERAMALIBS  = -lXinerama
-@@ -17,9 +17,9 @@
+@@ -17,10 +17,10 @@
  LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
--CPPFLAGS = -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
--CFLAGS   = -ansi -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
--LDFLAGS  = -s ${LIBS}
+-CPPFLAGS = -D_BSD_SOURCE -D_POSIX_C_SOURCE=2 -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
 +CPPFLAGS+= -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-+CFLAGS  += -ansi ${INCS} ${CPPFLAGS}
+ #CFLAGS   = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
+-CFLAGS   = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS  = -s ${LIBS}
++CFLAGS  += -std=c99 ${INCS} ${CPPFLAGS}
 +LDFLAGS += ${LIBS}
  
  # compiler and linker
