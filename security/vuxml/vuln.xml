@@ -47,6 +47,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b4f8be9e-56b2-11e1-9fb7-003067b2972c">
+    <topic>Python -- DoS via malformed XML-RPC / HTTP POST request</topic>
+    <affects>
+      <package>
+	<name>python32</name>
+	<range><le>3.2.2_2</le></range>
+      </package>
+      <package>
+	<name>python31</name>
+	<range><le>3.1.4_2</le></range>
+      </package>
+      <package>
+	<name>python27</name>
+	<range><le>2.7.2_3</le></range>
+      </package>
+      <package>
+	<name>python26</name>
+	<range><le>2.6.7_2</le></range>
+      </package>
+      <package>
+	<name>python25</name>
+	<range><le>2.5.6_2</le></range>
+      </package>
+      <package>
+	<name>python24</name>
+	<range><le>2.4.5_8</le></range>
+      </package>
+      <package>
+	<name>python</name>
+	<range><le>2.7,2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jan Lieskovsky</p>
+	<blockquote cite="http://bugs.python.org/issue14001">
+	  <p>A denial of service flaw was found in the way Simple XML-RPC Server
+	    module of Python processed client connections, that were closed
+	    prior the complete request body has been received. A remote attacker
+	    could use this flaw to cause Python Simple XML-RPC based server
+	    process to consume excessive amount of CPU.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0845</cvename>
+      <url>http://bugs.python.org/issue14001</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=789790</url>
+    </references>
+    <dates>
+      <discovery>2012-02-13</discovery>
+      <entry>2012-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b20fd5f-552e-11e1-9fb7-003067b2972c">
     <topic>Webcalendar -- Persistent XSS</topic>
     <affects>
