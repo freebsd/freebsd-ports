@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.17
+PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
 PORTREVISION?=	4
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
@@ -41,6 +41,7 @@ OPTIONS=
 .endif
 
 .include <bsd.port.options.mk>
+.include "Makefile.inc"
 			
 # Default is "on"
 .if !defined(WITHOUT_NEON)
