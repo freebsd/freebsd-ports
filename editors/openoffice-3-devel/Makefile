@@ -26,6 +26,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
+USE_GCC=	4.6+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=	yes
@@ -53,7 +54,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1242624
+SVNREVISION=		1243485
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -162,7 +163,9 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--enable-presenter-console \
 			--enable-wiki-publisher \
 			--enable-dbus \
-			--enable-opengl
+			--enable-opengl \
+			--enable-category-b \
+			--without-stlport
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -194,6 +197,15 @@ pre-everything::
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+
+post-patch:
+.if defined (USE_GCC)
+	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+.else
+	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+.endif
 
 pre-configure:
 	@${LN} -sf ${LOCALBASE}/bin/unzip ${WRKSRC}/solenv/bin/unzip
