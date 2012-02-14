@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.6.11
-PORTREVISION?=	5
+DISTVERSION=	2.6.12
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -47,6 +47,7 @@ INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc \
+		--without-linux-input \
 		--without-print \
 		--disable-python \
 		--with-desktop-dir=${PREFIX}/share \
