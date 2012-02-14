@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.1.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -492,7 +493,7 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nopcre
 CONFIGURE_ARGS+=--without-http_rewrite_module \
 		--without-pcre
 .else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	1.2.101
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -159,7 +160,7 @@ PLIST_SUB+=	NLS="@comment "
 .ifdef WITH_INTPCRE
 CONFIGURE_ARGS+=	--enable-internal-pcre
 .else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
 .ifdef WITH_RRDTOOL

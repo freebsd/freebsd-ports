@@ -7,7 +7,7 @@
 
 PORTNAME=	xcpc
 PORTVERSION=	20070122
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +25,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		dsk.5:${PORTSDIR}/emulators/libdsk
 
 OPTIONS=	MOTIF "With Motif widget set" on \

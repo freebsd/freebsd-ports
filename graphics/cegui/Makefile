@@ -7,7 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.7.5
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library providing windowing and widgets for graphics APIs
 
 LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d

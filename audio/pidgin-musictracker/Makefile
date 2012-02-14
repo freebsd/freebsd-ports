@@ -7,7 +7,7 @@
 
 PORTNAME=	musictracker
 PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	pidgin-
@@ -17,7 +17,7 @@ COMMENT=	Plugin for Pidgin to displays the music track currently playing
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

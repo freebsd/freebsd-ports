@@ -7,7 +7,7 @@
 
 PORTNAME=	logstalgia
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils www
 MASTER_SITES=	GOOGLE_CODE CRITICAL
 
@@ -19,7 +19,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	ftgl:${PORTSDIR}/graphics/ftgl \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image

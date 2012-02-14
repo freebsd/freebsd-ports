@@ -7,6 +7,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +16,7 @@ MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
 
 LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

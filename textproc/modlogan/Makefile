@@ -7,7 +7,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 
@@ -16,7 +16,7 @@ COMMENT=	A modular log file analysis program
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gd.4:${PORTSDIR}/graphics/gd \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libtool

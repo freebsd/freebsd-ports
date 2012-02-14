@@ -6,6 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-${PORTVERSION:R}/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		neon.27:${PORTSDIR}/www/neon29 \
 		magic:${PORTSDIR}/sysutils/file \
 		xar:${PORTSDIR}/archivers/xar \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid \
 		bash:${PORTSDIR}/shells/bash

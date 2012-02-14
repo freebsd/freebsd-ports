@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.gpsdrive.de/packages/ \
 		LOCAL/beech
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.gpsdrive.de/packages/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPS navigation system
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

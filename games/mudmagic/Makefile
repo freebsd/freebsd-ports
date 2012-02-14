@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ based MUD client
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		png.6:${PORTSDIR}/graphics/png \
 		expat:${PORTSDIR}/textproc/expat2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3

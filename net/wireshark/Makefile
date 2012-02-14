@@ -7,6 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -99,7 +100,7 @@ CONFIGURE_ARGS+=	--enable-threads
 .endif
 
 .if !defined(WITHOUT_PCRE) && !defined(LITE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no

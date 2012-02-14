@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--enable-dec-locator
 
 .if defined(WITH_PCRE)
 CONFIGURE_ARGS+=	--with-pcre
-LIB_DEPENDS=		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=		pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
 .if defined(WITH_GNOME)

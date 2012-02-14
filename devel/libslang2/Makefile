@@ -7,6 +7,7 @@
 
 PORTNAME=	libslang2
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${PORTVERSION:R}/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${PORTVERSION:R}/ \
@@ -43,7 +44,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 CONFIGURE_ARGS+=	--without-pcre

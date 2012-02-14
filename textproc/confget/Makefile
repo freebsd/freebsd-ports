@@ -7,6 +7,7 @@
 
 PORTNAME=	confget
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://devel.ringlet.net/textproc/confget/
 
@@ -18,7 +19,7 @@ OPTIONS=	PCRE "Regular expression support" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 .else
 MAKE_ENV+=	PCRE_CFLAGS= PCRE_LIBS=
 .endif

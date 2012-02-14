@@ -7,7 +7,7 @@
 
 PORTNAME=	winefish
 DISTVERSION=	1.3.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	editors print
 MASTER_SITES=	http://download.berlios.de/winefish/ \
 		http://nivi.interfree.it/distfiles/winefish/
@@ -17,7 +17,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A LaTeX editor based on BlueFish
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos \
 		gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX \

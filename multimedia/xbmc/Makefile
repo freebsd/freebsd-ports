@@ -7,6 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0.b2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 DISTNAME=	${PORTNAME}-11.0-Eden_beta2
@@ -45,7 +46,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		modplug:${PORTSDIR}/audio/libmodplug \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		ogg.7:${PORTSDIR}/audio/libogg \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		plist.1:${PORTSDIR}/devel/libplist \
 		png.6:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \

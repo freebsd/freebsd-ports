@@ -7,14 +7,14 @@
 
 PORTNAME=	morebalance
 PORTVERSION=	0.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://morebalance.coolprojects.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular open source user-space load balancing system
 
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		ggz.5:${PORTSDIR}/games/libggz
 

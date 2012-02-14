@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-workbench-oss
 PORTVERSION?=	5.1.16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MySQL Workbench
 
 LIB_DEPENDS+=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		zip:${PORTSDIR}/archivers/libzip \

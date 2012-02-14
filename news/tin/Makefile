@@ -7,6 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -25,7 +26,7 @@ MAINTAINER?=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ COMMENT=	Integrated Development Environment for C and C++
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		gladeui-1.10:${PORTSDIR}/devel/glade3 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl

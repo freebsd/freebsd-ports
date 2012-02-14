@@ -7,7 +7,7 @@
 
 PORTNAME=	xastir
 PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--without-graphicsmagick
 .if defined(WITHOUT_DBFAWK)
 CONFIGURE_ARGS+=	--without-dbfawk
 .else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
 .if !defined(WITHOUT_CURL)

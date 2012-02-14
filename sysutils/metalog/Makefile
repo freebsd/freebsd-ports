@@ -7,6 +7,7 @@
 
 PORTNAME=	metalog
 DISTVERSION=	0.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/old
@@ -17,7 +18,7 @@ COMMENT=	Modern syslogd replacement with PCRE support
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME}

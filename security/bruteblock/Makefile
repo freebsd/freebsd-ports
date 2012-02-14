@@ -7,7 +7,7 @@
 
 PORTNAME=	bruteblock
 PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

@@ -7,6 +7,7 @@
 
 PORTNAME=	cppcheck
 PORTVERSION=	1.53
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -15,7 +16,7 @@ COMMENT=	Static analysis of C/C++ code
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		tinyxml.3:${PORTSDIR}/textproc/tinyxml
 
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	yaf
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Yaf is a php framework, the difference is yaf is a PHP Extension
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config

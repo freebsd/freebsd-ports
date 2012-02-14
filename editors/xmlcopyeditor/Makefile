@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlcopyeditor
 PORTVERSION=	1.2.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 
@@ -33,7 +33,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boos
 LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		aspell.16:${PORTSDIR}/textproc/aspell \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 

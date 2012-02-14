@@ -7,6 +7,7 @@
 
 PORTNAME=	pound
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -38,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-msdav
 .endif
 
 .if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 CFLAGS+=		"-I${LOCALBASE}/include"
 CPPFLAGS+=		"-I${LOCALBASE}/include"
 LDFLAGS+=		"-L${LOCALBASE}/lib"

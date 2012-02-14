@@ -6,6 +6,7 @@
 
 PORTNAME=	ratbox-services
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://services.ratbox.org/download/		\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/	\
@@ -33,7 +34,7 @@ USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc/	\
 		--with-logdir=${LOGDIR}		\

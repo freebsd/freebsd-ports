@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -164,7 +165,7 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
 # You should not need to fiddle with anything below this point.
 
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_LISTMATCH_RHS)
 SEDLIST+=	-e 's,^\# (EXPAND_LISTMATCH_RHS=),\1,'

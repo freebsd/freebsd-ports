@@ -7,7 +7,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 .endif
 
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

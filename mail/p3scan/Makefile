@@ -7,14 +7,14 @@
 
 PORTNAME=	p3scan
 PORTVERSION=	2.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	A transparent POP3-Proxy with virus-scanning capabilities
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 PLIST_FILES=	etc/p3scan/p3scan.conf.sample etc/p3scan/p3scan.mail.sample \
 		sbin/p3scan

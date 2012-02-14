@@ -10,6 +10,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.8.17
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -19,7 +20,7 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_XZ=		yes
 USE_GMAKE=	yes

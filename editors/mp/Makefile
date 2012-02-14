@@ -7,6 +7,7 @@
 
 PORTNAME=	mp
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/
 
@@ -61,7 +62,7 @@ CONFIGURE_ARGS+=	--without-qt4
 .endif
 
 .if !defined(WITHOUT_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre
 .endif
 

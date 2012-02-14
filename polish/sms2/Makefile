@@ -7,7 +7,7 @@
 
 PORTNAME=	sms
 PORTVERSION=	2.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	polish
 MASTER_SITES=	http://ceti.pl/~miki/komputery/download/sms/ \
 		http://radioemiter.pl/~mjd/slackware/sms2/ \
@@ -18,7 +18,7 @@ MAINTAINER=	pyzmen@kam.pl
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		gdbm.4:${PORTSDIR}/databases/gdbm \
 		pcre\\+\\+.0:${PORTSDIR}/devel/pcre++
 

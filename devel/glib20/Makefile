@@ -9,7 +9,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.28.8
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
 		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
@@ -31,7 +31,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool

@@ -7,7 +7,7 @@
 
 PORTNAME=	mboxgrep
 PORTVERSION=	0.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
 
 GNU_CONFIGURE=	yes

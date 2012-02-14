@@ -7,7 +7,7 @@
 
 PORTNAME=	ccze
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://falafel.200ok.org/distfiles/ccze/ \
 		http://200ok.org/distfiles/ccze/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://falafel.200ok.org/distfiles/ccze/ \
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Fast log colorizer
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

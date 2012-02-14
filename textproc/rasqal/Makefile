@@ -8,6 +8,7 @@
 
 PORTNAME=	rasqal
 PORTVERSION=	0.9.28
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
@@ -16,7 +17,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gnomehack lthack pkgconfig
 USE_OPENSSL=	yes

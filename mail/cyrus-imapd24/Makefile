@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -19,7 +19,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].*
 

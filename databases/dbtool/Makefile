@@ -8,14 +8,14 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Store and retrieve data in a key/value format in a hash database
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_BERKELEY_DB)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3

@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -21,7 +22,7 @@ LIB_DEPENDS=	searchclient.0:${PORTSDIR}/deskutils/strigi \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		aspell.16:${PORTSDIR}/textproc/aspell \
 		jasper.4:${PORTSDIR}/graphics/jasper \
-		pcre.0:${PORTSDIR}/devel/pcre \
+		pcre.1:${PORTSDIR}/devel/pcre \
 		avahi-core.7:${PORTSDIR}/net/avahi-app \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		gif.5:${PORTSDIR}/graphics/giflib \

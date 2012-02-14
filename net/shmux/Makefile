@@ -7,6 +7,7 @@
 
 PORTNAME=	shmux
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://web.taranis.org/shmux/dist/
 EXTRACT_SUFX=	.tgz
@@ -32,7 +33,7 @@ RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no

@@ -7,7 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -77,7 +77,7 @@ PLIST_SUB+=		GDBM="@comment "
 
 .if defined(WITH_ZSH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 PLIST_SUB+=		PCRE=""
 .else
 CONFIGURE_ARGS+=	--disable-pcre
