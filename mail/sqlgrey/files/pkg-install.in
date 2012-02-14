@@ -15,23 +15,6 @@ case $2 in
 	    exit 1
 	fi
 
-	# Create group if required
-	if /usr/sbin/pw group show "%%GROUP%%" >/dev/null 2>&1; then
-	    echo "---> Using existing group \"%%GROUP%%\""
-	else
-	    echo "---> Adding group \"%%GROUP%%\""
-	    /usr/sbin/pw groupadd %%GROUP%% || exit 1
-	fi
-
-	# Create user if required
-	if /usr/sbin/pw user show "%%USER%%" >/dev/null 2>&1; then
-	    echo "---> Using existing user \"%%USER%%\""
-	else
-	    echo "---> Adding user \"%%USER%%\""
-	    /usr/sbin/pw useradd "%%USER%%" -g "%%GROUP%%" -h - \
-	    -d "%%DATADIR%%" -s "/sbin/nologin" -c "Sqlgrey Owner" || exit 1
-	fi
-
 	# Create home directory if required
 	if [ -d "%%DATADIR%%" ]; then
 	    echo "---> Using existing Sqlgrey database directory (%%DATADIR%%)"
@@ -47,14 +30,8 @@ case $2 in
 
     POST-DEINSTALL)
 
-	echo "---> Please, remember to remove the user and the group with :"
-	if /usr/sbin/pw user show "%%USER%%" >/dev/null 2>&1; then
-	    echo "       /usr/sbin/pw userdel -n %%USER%%"
-	fi
-	if /usr/sbin/pw group show "%%GROUP%%" >/dev/null 2>&1; then
-	    echo "       /usr/sbin/pw groupdel -n %%GROUP%%"
-	fi
-	echo "     as well as the databases."
+	echo "---> Please, remember to remove the database directory:"
+	echo "     %%DATADIR%%"
 	echo "     If you're only updating, you can leave the things as they are."
     ;;
 

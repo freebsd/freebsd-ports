@@ -109,6 +109,7 @@ hg:*:212:
 drizzle:*:213:
 bs:*:220:
 postgrey:*:225:
+sqlgrey:*:226:
 kismet:*:229:
 aprsd:*:240:
 tnc:*:241:
