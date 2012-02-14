@@ -10,6 +10,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/common/base.py
 %%PYTHON_SITELIBDIR%%/libcloud/common/base.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/common/base.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/common/brightbox.py
+%%PYTHON_SITELIBDIR%%/libcloud/common/brightbox.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/common/brightbox.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/common/cloudstack.py
 %%PYTHON_SITELIBDIR%%/libcloud/common/cloudstack.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/common/cloudstack.pyo
@@ -173,6 +176,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/__init__.py
 %%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/brightbox.py
+%%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/brightbox.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/brightbox.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/cloudstack.py
 %%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/cloudstack.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/loadbalancer/drivers/cloudstack.pyo
@@ -233,6 +239,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/libcloud/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/utils/compression.py
+%%PYTHON_SITELIBDIR%%/libcloud/utils/compression.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/utils/compression.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/utils/files.py
 %%PYTHON_SITELIBDIR%%/libcloud/utils/files.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/utils/files.pyo
