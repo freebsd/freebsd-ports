@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	daemon_controller
-PORTVERSION=	0.2.6
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
