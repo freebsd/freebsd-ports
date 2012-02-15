@@ -13911,6 +13911,7 @@ p5-Proc-PidUtil                 ports/sysutils/p5-Proc-PidUtil
 p5-Proc-ProcessTable            ports/devel/p5-Proc-ProcessTable
 p5-Proc-Queue                   ports/devel/p5-Proc-Queue
 p5-Proc-Reliable                ports/devel/p5-Proc-Reliable
+p5-Proc-SafeExec                ports/devel/p5-Proc-SafeExec
 p5-Proc-Simple                  ports/devel/p5-Proc-Simple
 p5-Proc-Wait3                   ports/devel/p5-Proc-Wait3
 p5-Proc-WaitStat                ports/devel/p5-Proc-WaitStat
@@ -18401,6 +18402,7 @@ p5-proc-pidutil                 ports/sysutils/p5-Proc-PidUtil
 p5-proc-processtable            ports/devel/p5-Proc-ProcessTable
 p5-proc-queue                   ports/devel/p5-Proc-Queue
 p5-proc-reliable                ports/devel/p5-Proc-Reliable
+p5-proc-safeexec                ports/devel/p5-Proc-SafeExec
 p5-proc-simple                  ports/devel/p5-Proc-Simple
 p5-proc-wait3                   ports/devel/p5-Proc-Wait3
 p5-proc-waitstat                ports/devel/p5-Proc-WaitStat
