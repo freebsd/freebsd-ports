@@ -906,6 +906,7 @@
     SUBDIR += tripwire12
     SUBDIR += trousers
     SUBDIR += truecrypt
+    SUBDIR += tsshbatch
     SUBDIR += tthsum
     SUBDIR += tuntun
     SUBDIR += umit
