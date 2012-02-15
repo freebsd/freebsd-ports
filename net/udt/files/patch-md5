@@ -1,0 +1,24 @@
+Use OpenSSL's md5-implementation instead of UDT's own.
+
+Rejected by author because of concerns for Windows computers
+and mobile devices.
+
+--- src/common.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/common.cpp	2012-01-26 17:48:01.000000000 -0500
+@@ -56,5 +56,5 @@
+ 
+ #include <cmath>
+-#include "md5.h"
++#include <openssl/md5.h>
+ #include "common.h"
+ 
+@@ -742,8 +742,4 @@
+ void CMD5::compute(const char* input, unsigned char result[16])
+ {
+-   md5_state_t state;
+-
+-   md5_init(&state);
+-   md5_append(&state, (const md5_byte_t *)input, strlen(input));
+-   md5_finish(&state, result);
++   MD5((const unsigned char *)input, strlen(input), result);
+ }

@@ -1137,6 +1137,7 @@
     SUBDIR += ucarp
     SUBDIR += udptunnel
     SUBDIR += udpxy
+    SUBDIR += udt
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison
