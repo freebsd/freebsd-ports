@@ -44,9 +44,9 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_ESOUND)
-CONFIGURE_ARGS+=	--without-esd
-.else
 USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=	--without-esd
 .endif
 
 post-install:
