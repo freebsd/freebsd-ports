@@ -10,5 +10,5 @@ include/eXosip2/eXosip.h
 lib/libeXosip2.a
 lib/libeXosip2.la
 lib/libeXosip2.so
-lib/libeXosip2.so.6
+lib/libeXosip2.so.%%SHLIB_VER%%
 @dirrm include/eXosip2
