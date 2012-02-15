@@ -26,7 +26,6 @@ OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable demosaic pack GPL2" off \
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
-USE_PKGCONFIG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=${PREFIX} --disable-examples
 CFLAGS+=	-fPIC
