@@ -69,6 +69,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		textcat.0:${PORTSDIR}/textproc/libtextcat \
 		lpsolve55:${PORTSDIR}/math/lp_solve
 
+BROKEN=		does not compile
+
 CONFLICTS_INSTALL=	libreoffice-[0-9]*
 
 LOVERSION=	${PORTVERSION}.1
