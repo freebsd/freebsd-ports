@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.1.14
-PORTREVISION=	1
+PORTVERSION=	1.1.15
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -382,6 +381,7 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_MODULE_VERSION}/:uploadprogress
 DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_MODULE_VERSION}-${GIT_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_MODULE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR) || defined(WITH_SUPERVISORD_MODULE)
