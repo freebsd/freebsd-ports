@@ -1,12 +1,12 @@
 # New ports collection makefile for:	p5-Net-DNS
 # Date created:				April 5th 1997
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
+# Whom:					James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,13 @@ COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 # Warnings during build are harmless, the port does not need these to build
 RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
+TEST_DEPENDS=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
+		${SITE_PERL}/Digest/BubbleBabble.pm:${PORTSDIR}/security/p5-Digest-BubbleBabble
+
 MAKE_JOBS_SAFE=	yes
+
+OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on \
+		IDN "Add support for IDN domain names" off
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-online-tests --no-IPv6-tests
@@ -43,11 +49,11 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
 		Net::DNS::RR::APL.3 Net::DNS::RR::APL::ApItem.3 \
 		Net::DNS::RR::DHCID.3 Net::DNS::Domain.3 \
-		Net::DNS::DomainName.3 \
+		Net::DNS::DomainName.3 Net::DNS::Text.3 Net::DNS::Mailbox.3 \
 		Net::DNS::RR::KX.3 Net::DNS::RR::HIP.3 \
 		Net::DNS::Resolver::Cygwin.3 Net::DNS::RR::SPF.3
 
-OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
@@ -57,6 +63,10 @@ RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
 
 .if !defined(WITHOUT_IPV6)
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
+.endif
+
+.if defined(WITH_IDN)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/LibIDN.pm:${PORTSDIR}/dns/p5-Net-LibIDN
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
