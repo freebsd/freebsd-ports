@@ -2,7 +2,9 @@ bin/clock
 bin/cmdtool
 bin/olwm
 bin/olwmslave
+bin/props
 bin/shelltool
+bin/textedit
 lib/help/workspace.info
 lib/openwin-menu
 lib/openwin-menu-programs

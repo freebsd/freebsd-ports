@@ -18,6 +18,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
+CONFLICTS=	props-1.0
+
 PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:patch
 CONFIGURE_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:configure
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
@@ -27,7 +29,8 @@ USE_XORG=	x11 xext
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
 
-MAN1=		clock.1 cmdtool.1 olwm.1 olwmslave.1 shelltool.1
+MAN1=		clock.1 cmdtool.1 olwm.1 olwmslave.1 props.1 shelltool.1 \
+		textedit.1
 MANCOMPRESSED=	yes
 
 do-install:
