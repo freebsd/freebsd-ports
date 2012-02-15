@@ -163,6 +163,8 @@
 @dirrmtry man/ru
 @dirrmtry man/tr/man1
 @dirrmtry man/tr
+@dirrmtry man/zh_TW/man1
+@dirrmtry man/zh_TW
 @dirrm %%DATADIR%%/skins
 %%WEBSERVER%%@dirrm %%DATADIR%%/webserver/default
 %%WEBSERVER%%@dirrm %%DATADIR%%/webserver
