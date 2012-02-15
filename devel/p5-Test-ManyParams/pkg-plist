@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/ManyParams.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/ManyParams/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/ManyParams
