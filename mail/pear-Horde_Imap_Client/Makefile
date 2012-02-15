@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Imap_Client
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	pear-
 
@@ -19,9 +18,6 @@ OPTIONS=	IMAP "Require PHP imap extension" On \
 
 USE_PHP=	hash
 USE_HORDE_RUN=	Horde_Exception Horde_Mime Horde_Util
-
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mm/horde
 
 .include <bsd.port.pre.mk>
 
