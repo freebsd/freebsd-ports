@@ -1,0 +1,1242 @@
+Accepted by the author already. See:
+
+https://sourceforge.net/tracker/?func=detail&aid=3480627&group_id=115059&atid=670041
+
+--- src/channel.h	2011-12-26 12:09:11.000000000 -0500
++++ src/channel.h	2012-01-27 12:42:46.000000000 -0500
+@@ -51,5 +51,5 @@
+ public:
+    CChannel();
+-   CChannel(const int& version);
++   CChannel(int version);
+    ~CChannel();
+ 
+@@ -106,5 +106,5 @@
+       //    None.
+ 
+-   void setSndBufSize(const int& size);
++   void setSndBufSize(int size);
+ 
+       // Functionality:
+@@ -115,5 +115,5 @@
+       //    None.
+ 
+-   void setRcvBufSize(const int& size);
++   void setRcvBufSize(int size);
+ 
+       // Functionality:
+--- src/channel.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/channel.cpp	2012-01-27 12:41:51.000000000 -0500
+@@ -77,5 +77,5 @@
+ }
+ 
+-CChannel::CChannel(const int& version):
++CChannel::CChannel(int version):
+ m_iIPversion(version),
+ m_iSocket(),
+@@ -209,10 +209,10 @@
+ }
+ 
+-void CChannel::setSndBufSize(const int& size)
++void CChannel::setSndBufSize(int size)
+ {
+    m_iSndBufSize = size;
+ }
+ 
+-void CChannel::setRcvBufSize(const int& size)
++void CChannel::setRcvBufSize(int size)
+ {
+    m_iRcvBufSize = size;
+--- src/ccc.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/ccc.cpp	2012-01-27 11:23:18.000000000 -0500
+@@ -71,18 +71,15 @@
+ }
+ 
+-void CCC::setACKTimer(const int& msINT)
++void CCC::setACKTimer(int msINT)
+ {
+-   m_iACKPeriod = msINT;
+-
+-   if (m_iACKPeriod > m_iSYNInterval)
+-      m_iACKPeriod = m_iSYNInterval;
++   m_iACKPeriod = msINT > m_iSYNInterval ? m_iSYNInterval : msINT;
+ }
+ 
+-void CCC::setACKInterval(const int& pktINT)
++void CCC::setACKInterval(int pktINT)
+ {
+    m_iACKInterval = pktINT;
+ }
+ 
+-void CCC::setRTO(const int& usRTO)
++void CCC::setRTO(int usRTO)
+ {
+    m_bUserDefinedRTO = true;
+@@ -117,35 +114,35 @@
+ }
+ 
+-void CCC::setMSS(const int& mss)
++void CCC::setMSS(int mss)
+ {
+    m_iMSS = mss;
+ }
+ 
+-void CCC::setBandwidth(const int& bw)
++void CCC::setBandwidth(int bw)
+ {
+    m_iBandwidth = bw;
+ }
+ 
+-void CCC::setSndCurrSeqNo(const int32_t& seqno)
++void CCC::setSndCurrSeqNo(int32_t seqno)
+ {
+    m_iSndCurrSeqNo = seqno;
+ }
+ 
+-void CCC::setRcvRate(const int& rcvrate)
++void CCC::setRcvRate(int rcvrate)
+ {
+    m_iRcvRate = rcvrate;
+ }
+ 
+-void CCC::setMaxCWndSize(const int& cwnd)
++void CCC::setMaxCWndSize(int cwnd)
+ {
+    m_dMaxCWndSize = cwnd;
+ }
+ 
+-void CCC::setRTT(const int& rtt)
++void CCC::setRTT(int rtt)
+ {
+    m_iRTT = rtt;
+ }
+ 
+-void CCC::setUserParam(const char* param, const int& size)
++void CCC::setUserParam(const char* param, int size)
+ {
+    delete [] m_pcParam;
+@@ -190,5 +187,5 @@
+ }
+ 
+-void CUDTCC::onACK(const int32_t& ack)
++void CUDTCC::onACK(int32_t ack)
+ {
+    int64_t B = 0;
+@@ -261,5 +258,5 @@
+ }
+ 
+-void CUDTCC::onLoss(const int32_t* losslist, const int&)
++void CUDTCC::onLoss(const int32_t* losslist, int)
+ {
+    //Slow Start stopped, if it hasn't yet
+--- src/ccc.h	2011-12-26 12:09:11.000000000 -0500
++++ src/ccc.h	2012-01-27 11:24:40.000000000 -0500
+@@ -88,5 +88,5 @@
+       //    None.
+ 
+-   virtual void onACK(const int32_t&) {}
++   virtual void onACK(int32_t) {}
+ 
+       // Functionality:
+@@ -98,5 +98,5 @@
+       //    None.
+ 
+-   virtual void onLoss(const int32_t*, const int&) {}
++   virtual void onLoss(const int32_t*, int) {}
+ 
+       // Functionality:
+@@ -147,5 +147,5 @@
+       //    None.
+ 
+-   void setACKTimer(const int& msINT);
++   void setACKTimer(int msINT);
+ 
+       // Functionality:
+@@ -156,5 +156,5 @@
+       //    None.
+ 
+-   void setACKInterval(const int& pktINT);
++   void setACKInterval(int pktINT);
+ 
+       // Functionality:
+@@ -165,5 +165,5 @@
+       //    None.
+ 
+-   void setRTO(const int& usRTO);
++   void setRTO(int usRTO);
+ 
+       // Functionality:
+@@ -193,13 +193,13 @@
+       //    None.
+ 
+-   void setUserParam(const char* param, const int& size);
++   void setUserParam(const char* param, int size);
+ 
+ private:
+-   void setMSS(const int& mss);
+-   void setMaxCWndSize(const int& cwnd);
+-   void setBandwidth(const int& bw);
+-   void setSndCurrSeqNo(const int32_t& seqno);
+-   void setRcvRate(const int& rcvrate);
+-   void setRTT(const int& rtt);
++   void setMSS(int mss);
++   void setMaxCWndSize(int cwnd);
++   void setBandwidth(int bw);
++   void setSndCurrSeqNo(int32_t seqno);
++   void setRcvRate(int rcvrate);
++   void setRTT(int rtt);
+ 
+ protected:
+@@ -258,6 +258,6 @@
+ public:
+    virtual void init();
+-   virtual void onACK(const int32_t&);
+-   virtual void onLoss(const int32_t*, const int&);
++   virtual void onACK(int32_t);
++   virtual void onLoss(const int32_t*, int);
+    virtual void onTimeout();
+ 
+--- src/common.h	2011-12-26 12:09:11.000000000 -0500
++++ src/common.h	2012-01-27 11:52:06.000000000 -0500
+@@ -80,5 +80,5 @@
+       //    None.
+ 
+-   void sleep(const uint64_t& interval);
++   void sleep(uint64_t interval);
+ 
+       // Functionality:
+@@ -89,5 +89,5 @@
+       //    None.
+ 
+-   void sleepto(const uint64_t& nexttime);
++   void sleepto(uint64_t nexttime);
+ 
+       // Functionality:
+@@ -220,11 +220,11 @@
+ {
+ public:
+-   inline static int seqcmp(const int32_t& seq1, const int32_t& seq2)
++   inline static int seqcmp(int32_t seq1, int32_t seq2)
+    {return (abs(seq1 - seq2) < m_iSeqNoTH) ? (seq1 - seq2) : (seq2 - seq1);}
+ 
+-   inline static int seqlen(const int32_t& seq1, const int32_t& seq2)
++   inline static int seqlen(int32_t seq1, int32_t seq2)
+    {return (seq1 <= seq2) ? (seq2 - seq1 + 1) : (seq2 - seq1 + m_iMaxSeqNo + 2);}
+ 
+-   inline static int seqoff(const int32_t& seq1, const int32_t& seq2)
++   inline static int seqoff(int32_t seq1, int32_t seq2)
+    {
+       if (abs(seq1 - seq2) < m_iSeqNoTH)
+@@ -237,11 +237,11 @@
+    }
+ 
+-   inline static int32_t incseq(const int32_t seq)
++   inline static int32_t incseq(int32_t seq)
+    {return (seq == m_iMaxSeqNo) ? 0 : seq + 1;}
+ 
+-   inline static int32_t decseq(const int32_t& seq)
++   inline static int32_t decseq(int32_t seq)
+    {return (seq == 0) ? m_iMaxSeqNo : seq - 1;}
+ 
+-   inline static int32_t incseq(const int32_t& seq, const int32_t& inc)
++   inline static int32_t incseq(int32_t seq, int32_t inc)
+    {return (m_iMaxSeqNo - seq >= inc) ? seq + inc : seq - m_iMaxSeqNo + inc - 1;}
+ 
+@@ -258,5 +258,5 @@
+ {
+ public:
+-   inline static int32_t incack(const int32_t& ackno)
++   inline static int32_t incack(int32_t ackno)
+    {return (ackno == m_iMaxAckSeqNo) ? 0 : ackno + 1;}
+ 
+@@ -272,11 +272,11 @@
+ {
+ public:
+-   inline static int msgcmp(const int32_t& msgno1, const int32_t& msgno2)
++   inline static int msgcmp(int32_t msgno1, int32_t msgno2)
+    {return (abs(msgno1 - msgno2) < m_iMsgNoTH) ? (msgno1 - msgno2) : (msgno2 - msgno1);}
+ 
+-   inline static int msglen(const int32_t& msgno1, const int32_t& msgno2)
++   inline static int msglen(int32_t msgno1, int32_t msgno2)
+    {return (msgno1 <= msgno2) ? (msgno2 - msgno1 + 1) : (msgno2 - msgno1 + m_iMaxMsgNo + 2);}
+ 
+-   inline static int msgoff(const int32_t& msgno1, const int32_t& msgno2)
++   inline static int msgoff(int32_t msgno1, int32_t msgno2)
+    {
+       if (abs(msgno1 - msgno2) < m_iMsgNoTH)
+@@ -289,5 +289,5 @@
+    }
+ 
+-   inline static int32_t incmsg(const int32_t& msgno)
++   inline static int32_t incmsg(int32_t msgno)
+    {return (msgno == m_iMaxMsgNo) ? 0 : msgno + 1;}
+ 
+@@ -301,7 +301,7 @@
+ struct CIPAddress
+ {
+-   static bool ipcmp(const sockaddr* addr1, const sockaddr* addr2, const int& ver = AF_INET);
+-   static void ntop(const sockaddr* addr, uint32_t ip[4], const int& ver = AF_INET);
+-   static void pton(sockaddr* addr, const uint32_t ip[4], const int& ver = AF_INET);
++   static bool ipcmp(const sockaddr* addr1, const sockaddr* addr2, int ver = AF_INET);
++   static void ntop(const sockaddr* addr, uint32_t ip[4], int ver = AF_INET);
++   static void pton(sockaddr* addr, const uint32_t ip[4], int ver = AF_INET);
+ };
+ 
+--- src/common.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/common.cpp	2012-01-27 12:05:46.000000000 -0500
+@@ -157,5 +157,5 @@
+ }
+ 
+-void CTimer::sleep(const uint64_t& interval)
++void CTimer::sleep(uint64_t interval)
+ {
+    uint64_t t;
+@@ -166,5 +166,5 @@
+ }
+ 
+-void CTimer::sleepto(const uint64_t& nexttime)
++void CTimer::sleepto(uint64_t nexttime)
+ {
+    // Use class member such that the method can be interrupted by others
+@@ -674,5 +674,5 @@
+ 
+ //
+-bool CIPAddress::ipcmp(const sockaddr* addr1, const sockaddr* addr2, const int& ver)
++bool CIPAddress::ipcmp(const sockaddr* addr1, const sockaddr* addr2, int ver)
+ {
+    if (AF_INET == ver)
+@@ -702,5 +702,5 @@
+ }
+ 
+-void CIPAddress::ntop(const sockaddr* addr, uint32_t ip[4], const int& ver)
++void CIPAddress::ntop(const sockaddr* addr, uint32_t ip[4], int ver)
+ {
+    if (AF_INET == ver)
+@@ -719,5 +719,5 @@
+ }
+ 
+-void CIPAddress::pton(sockaddr* addr, const uint32_t ip[4], const int& ver)
++void CIPAddress::pton(sockaddr* addr, const uint32_t ip[4], int ver)
+ {
+    if (AF_INET == ver)
+--- src/buffer.h	2011-12-26 12:09:11.000000000 -0500
++++ src/buffer.h	2012-01-27 12:18:55.000000000 -0500
+@@ -51,5 +51,5 @@
+ {
+ public:
+-   CSndBuffer(const int& size = 32, const int& mss = 1500);
++   CSndBuffer(int size = 32, int mss = 1500);
+    ~CSndBuffer();
+ 
+@@ -64,5 +64,5 @@
+       //    None.
+ 
+-   void addBuffer(const char* data, const int& len, const int& ttl = -1, const bool& order = false);
++   void addBuffer(const char* data, int len, int ttl = -1, bool order = false);
+ 
+       // Functionality:
+@@ -74,5 +74,5 @@
+       //    actual size of data added from the file.
+ 
+-   int addBufferFromFile(std::fstream& ifs, const int& len);
++   int addBufferFromFile(std::fstream& ifs, int len);
+ 
+       // Functionality:
+@@ -105,5 +105,5 @@
+       //    None.
+ 
+-   void ackData(const int& offset);
++   void ackData(int offset);
+ 
+       // Functionality:
+@@ -163,5 +163,5 @@
+ {
+ public:
+-   CRcvBuffer(CUnitQueue* queue, const int& bufsize = 65536);
++   CRcvBuffer(CUnitQueue* queue, int bufsize = 65536);
+    ~CRcvBuffer();
+ 
+@@ -184,5 +184,5 @@
+       //    size of data read.
+ 
+-   int readBuffer(char* data, const int& len);
++   int readBuffer(char* data, int len);
+ 
+       // Functionality:
+@@ -194,5 +194,5 @@
+       //    size of data read.
+ 
+-   int readBufferToFile(std::fstream& ofs, const int& len);
++   int readBufferToFile(std::fstream& ofs, int len);
+ 
+       // Functionality:
+@@ -203,5 +203,5 @@
+       //    1 if a user buffer is fulfilled, otherwise 0.
+ 
+-   void ackData(const int& len);
++   void ackData(int len);
+ 
+       // Functionality:
+@@ -230,5 +230,5 @@
+       //    None.
+ 
+-   void dropMsg(const int32_t& msgno);
++   void dropMsg(int32_t msgno);
+ 
+       // Functionality:
+@@ -240,5 +240,5 @@
+       //    actuall size of data read.
+ 
+-   int readMsg(char* data, const int& len);
++   int readMsg(char* data, int len);
+ 
+       // Functionality:
+--- src/buffer.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/buffer.cpp	2012-01-27 12:21:46.000000000 -0500
+@@ -45,5 +45,5 @@
+ using namespace std;
+ 
+-CSndBuffer::CSndBuffer(const int& size, const int& mss):
++CSndBuffer::CSndBuffer(int size, int mss):
+ m_BufLock(),
+ m_pBlock(NULL),
+@@ -118,5 +118,5 @@
+ }
+ 
+-void CSndBuffer::addBuffer(const char* data, const int& len, const int& ttl, const bool& order)
++void CSndBuffer::addBuffer(const char* data, int len, int ttl, bool order)
+ {
+    int size = len / m_iMSS;
+@@ -164,5 +164,5 @@
+ }
+ 
+-int CSndBuffer::addBufferFromFile(fstream& ifs, const int& len)
++int CSndBuffer::addBufferFromFile(fstream& ifs, int len)
+ {
+    int size = len / m_iMSS;
+@@ -266,5 +266,5 @@
+ }
+ 
+-void CSndBuffer::ackData(const int& offset)
++void CSndBuffer::ackData(int offset)
+ {
+    CGuard bufferguard(m_BufLock);
+@@ -344,5 +344,5 @@
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+-CRcvBuffer::CRcvBuffer(CUnitQueue* queue, const int& bufsize):
++CRcvBuffer::CRcvBuffer(CUnitQueue* queue, int bufsize):
+ m_pUnit(NULL),
+ m_iSize(bufsize),
+@@ -389,5 +389,5 @@
+ }
+ 
+-int CRcvBuffer::readBuffer(char* data, const int& len)
++int CRcvBuffer::readBuffer(char* data, int len)
+ {
+    int p = m_iStartPos;
+@@ -426,5 +426,5 @@
+ }
+ 
+-int CRcvBuffer::readBufferToFile(fstream& ofs, const int& len)
++int CRcvBuffer::readBufferToFile(fstream& ofs, int len)
+ {
+    int p = m_iStartPos;
+@@ -465,5 +465,5 @@
+ }
+ 
+-void CRcvBuffer::ackData(const int& len)
++void CRcvBuffer::ackData(int len)
+ {
+    m_iLastAckPos = (m_iLastAckPos + len) % m_iSize;
+@@ -489,5 +489,5 @@
+ }
+ 
+-void CRcvBuffer::dropMsg(const int32_t& msgno)
++void CRcvBuffer::dropMsg(int32_t msgno)
+ {
+    for (int i = m_iStartPos, n = (m_iLastAckPos + m_iMaxPos) % m_iSize; i != n; i = (i + 1) % m_iSize)
+@@ -496,5 +496,5 @@
+ }
+ 
+-int CRcvBuffer::readMsg(char* data, const int& len)
++int CRcvBuffer::readMsg(char* data, int len)
+ {
+    int p, q;
+--- src/cache.h	2011-12-26 12:09:11.000000000 -0500
++++ src/cache.h	2012-01-27 12:31:28.000000000 -0500
+@@ -85,5 +85,5 @@
+ {
+ public:
+-   CCache(const int& size = 1024):
++   CCache(int size = 1024):
+    m_iMaxSize(size),
+    m_iHashSize(size * 3),
+@@ -210,5 +210,5 @@
+       //    None.
+ 
+-   void setSizeLimit(const int& size)
++   void setSizeLimit(int size)
+    {
+       m_iMaxSize = size;
+@@ -287,5 +287,5 @@
+       //    None.
+ 
+-   static void convert(const sockaddr* addr, const int& ver, uint32_t ip[]);
++   static void convert(const sockaddr* addr, int ver, uint32_t ip[]);
+ };
+ 
+--- src/cache.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/cache.cpp	2012-01-27 12:32:11.000000000 -0500
+@@ -110,5 +110,5 @@
+ }
+ 
+-void CInfoBlock::convert(const sockaddr* addr, const int& ver, uint32_t ip[])
++void CInfoBlock::convert(const sockaddr* addr, int ver, uint32_t ip[])
+ {
+    if (ver == AF_INET)
+--- src/core.h	2011-12-26 12:09:11.000000000 -0500
++++ src/core.h	2012-01-27 13:09:26.000000000 -0500
+@@ -94,6 +94,6 @@
+    static int sendmsg(UDTSOCKET u, const char* buf, int len, int ttl = -1, bool inorder = false);
+    static int recvmsg(UDTSOCKET u, char* buf, int len);
+-   static int64_t sendfile(UDTSOCKET u, std::fstream& ifs, int64_t& offset, const int64_t& size, const int& block = 364000);
+-   static int64_t recvfile(UDTSOCKET u, std::fstream& ofs, int64_t& offset, const int64_t& size, const int& block = 7280000);
++   static int64_t sendfile(UDTSOCKET u, std::fstream& ifs, int64_t& offset, int64_t size, int block = 364000);
++   static int64_t recvfile(UDTSOCKET u, std::fstream& ofs, int64_t& offset, int64_t size, int block = 7280000);
+    static int select(int nfds, ud_set* readfds, ud_set* writefds, ud_set* exceptfds, const timeval* timeout);
+    static int selectEx(const std::vector<UDTSOCKET>& fds, std::vector<UDTSOCKET>* readfds, std::vector<UDTSOCKET>* writefds, std::vector<UDTSOCKET>* exceptfds, int64_t msTimeOut);
+@@ -176,5 +176,5 @@
+       //    Actual size of data sent.
+ 
+-   int send(const char* data, const int& len);
++   int send(const char* data, int len);
+ 
+       // Functionality:
+@@ -186,5 +186,5 @@
+       //    Actual size of data received.
+ 
+-   int recv(char* data, const int& len);
++   int recv(char* data, int len);
+ 
+       // Functionality:
+@@ -198,5 +198,5 @@
+       //    Actual size of data sent.
+ 
+-   int sendmsg(const char* data, const int& len, const int& ttl, const bool& inorder);
++   int sendmsg(const char* data, int len, int ttl, bool inorder);
+ 
+       // Functionality:
+@@ -208,5 +208,5 @@
+       //    Actual size of data received.
+ 
+-   int recvmsg(char* data, const int& len);
++   int recvmsg(char* data, int len);
+ 
+       // Functionality:
+@@ -220,5 +220,5 @@
+       //    Actual size of data sent.
+ 
+-   int64_t sendfile(std::fstream& ifs, int64_t& offset, const int64_t& size, const int& block = 366000);
++   int64_t sendfile(std::fstream& ifs, int64_t& offset, int64_t size, int block = 366000);
+ 
+       // Functionality:
+@@ -232,5 +232,5 @@
+       //    Actual size of data received.
+ 
+-   int64_t recvfile(std::fstream& ofs, int64_t& offset, const int64_t& size, const int& block = 7320000);
++   int64_t recvfile(std::fstream& ofs, int64_t& offset, int64_t size, int block = 7320000);
+ 
+       // Functionality:
+@@ -243,5 +243,5 @@
+       //    None.
+ 
+-   void setOpt(UDTOpt optName, const void* optval, const int& optlen);
++   void setOpt(UDTOpt optName, const void* optval, int optlen);
+ 
+       // Functionality:
+@@ -383,5 +383,5 @@
+ 
+ private: // Generation and processing of packets
+-   void sendCtrl(const int& pkttype, void* lparam = NULL, void* rparam = NULL, const int& size = 0);
++   void sendCtrl(int pkttype, void* lparam = NULL, void* rparam = NULL, int size = 0);
+    void processCtrl(CPacket& ctrlpkt);
+    int packData(CPacket& packet, uint64_t& ts);
+--- src/core.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/core.cpp	2012-01-27 13:13:07.000000000 -0500
+@@ -207,5 +207,5 @@
+ }
+ 
+-void CUDT::setOpt(UDTOpt optName, const void* optval, const int&)
++void CUDT::setOpt(UDTOpt optName, const void* optval, int)
+ {
+    if (m_bBroken || m_bClosing)
+@@ -786,6 +786,6 @@
+    m_pCC->m_UDT = m_SocketID;
+    m_pCC->setMSS(m_iMSS);
+-   m_pCC->setMaxCWndSize((int&)m_iFlowWindowSize);
+-   m_pCC->setSndCurrSeqNo((int32_t&)m_iSndCurrSeqNo);
++   m_pCC->setMaxCWndSize(m_iFlowWindowSize);
++   m_pCC->setSndCurrSeqNo(m_iSndCurrSeqNo);
+    m_pCC->setRcvRate(m_iDeliveryRate);
+    m_pCC->setRTT(m_iRTT);
+@@ -886,6 +886,6 @@
+    m_pCC->m_UDT = m_SocketID;
+    m_pCC->setMSS(m_iMSS);
+-   m_pCC->setMaxCWndSize((int&)m_iFlowWindowSize);
+-   m_pCC->setSndCurrSeqNo((int32_t&)m_iSndCurrSeqNo);
++   m_pCC->setMaxCWndSize(m_iFlowWindowSize);
++   m_pCC->setSndCurrSeqNo(m_iSndCurrSeqNo);
+    m_pCC->setRcvRate(m_iDeliveryRate);
+    m_pCC->setRTT(m_iRTT);
+@@ -1013,5 +1013,5 @@
+ }
+ 
+-int CUDT::send(const char* data, const int& len)
++int CUDT::send(const char* data, int len)
+ {
+    if (UDT_DGRAM == m_iSockType)
+@@ -1122,5 +1122,5 @@
+ }
+ 
+-int CUDT::recv(char* data, const int& len)
++int CUDT::recv(char* data, int len)
+ {
+    if (UDT_DGRAM == m_iSockType)
+@@ -1209,5 +1209,5 @@
+ }
+ 
+-int CUDT::sendmsg(const char* data, const int& len, const int& msttl, const bool& inorder)
++int CUDT::sendmsg(const char* data, int len, int msttl, bool inorder)
+ {
+    if (UDT_STREAM == m_iSockType)
+@@ -1312,5 +1312,5 @@
+ }
+ 
+-int CUDT::recvmsg(char* data, const int& len)
++int CUDT::recvmsg(char* data, int len)
+ {
+    if (UDT_STREAM == m_iSockType)
+@@ -1411,5 +1411,5 @@
+ }
+ 
+-int64_t CUDT::sendfile(fstream& ifs, int64_t& offset, const int64_t& size, const int& block)
++int64_t CUDT::sendfile(fstream& ifs, int64_t& offset, int64_t size, int block)
+ {
+    if (UDT_DGRAM == m_iSockType)
+@@ -1504,5 +1504,5 @@
+ }
+ 
+-int64_t CUDT::recvfile(fstream& ofs, int64_t& offset, const int64_t& size, const int& block)
++int64_t CUDT::recvfile(fstream& ofs, int64_t& offset, int64_t size, int block)
+ {
+    if (UDT_DGRAM == m_iSockType)
+@@ -1619,5 +1619,5 @@
+    perf->pktFlowWindow = m_iFlowWindowSize;
+    perf->pktCongestionWindow = (int)m_dCongestionWindow;
+-   perf->pktFlightSize = CSeqNo::seqlen(const_cast<int32_t&>(m_iSndLastAck), CSeqNo::incseq(m_iSndCurrSeqNo)) - 1;
++   perf->pktFlightSize = CSeqNo::seqlen(m_iSndLastAck, CSeqNo::incseq(m_iSndCurrSeqNo)) - 1;
+    perf->msRTT = m_iRTT/1000.0;
+    perf->mbpsBandwidth = m_iBandwidth * m_iPayloadSize * 8.0 / 1000000.0;
+@@ -1725,5 +1725,5 @@
+ }
+ 
+-void CUDT::sendCtrl(const int& pkttype, void* lparam, void* rparam, const int& size)
++void CUDT::sendCtrl(int pkttype, void* lparam, void* rparam, int size)
+ {
+    CPacket ctrlpkt;
+@@ -1960,7 +1960,7 @@
+       {
+          ack = *(int32_t *)ctrlpkt.m_pcData;
+-         if (CSeqNo::seqcmp(ack, const_cast<int32_t&>(m_iSndLastAck)) >= 0)
++         if (CSeqNo::seqcmp(ack, m_iSndLastAck) >= 0)
+          {
+-            m_iFlowWindowSize -= CSeqNo::seqoff(const_cast<int32_t&>(m_iSndLastAck), ack);
++            m_iFlowWindowSize -= CSeqNo::seqoff(m_iSndLastAck, ack);
+             m_iSndLastAck = ack;
+          }
+@@ -1994,5 +1994,5 @@
+       }
+ 
+-      if (CSeqNo::seqcmp(ack, const_cast<int32_t&>(m_iSndLastAck)) >= 0)
++      if (CSeqNo::seqcmp(ack, m_iSndLastAck) >= 0)
+       {
+          // Update Flow Window Size, must update before and together with m_iSndLastAck
+@@ -2004,5 +2004,5 @@
+       CGuard::enterCS(m_AckLock);
+ 
+-      int offset = CSeqNo::seqoff((int32_t&)m_iSndLastDataAck, ack);
++      int offset = CSeqNo::seqoff(m_iSndLastDataAck, ack);
+       if (offset <= 0)
+       {
+@@ -2022,5 +2022,5 @@
+       // update sending variables
+       m_iSndLastDataAck = ack;
+-      m_pSndLossList->remove(CSeqNo::decseq((int32_t&)m_iSndLastDataAck));
++      m_pSndLossList->remove(CSeqNo::decseq(m_iSndLastDataAck));
+ 
+       CGuard::leaveCS(m_AckLock);
+@@ -2117,5 +2117,5 @@
+          if (0 != (losslist[i] & 0x80000000))
+          {
+-            if ((CSeqNo::seqcmp(losslist[i] & 0x7FFFFFFF, losslist[i + 1]) > 0) || (CSeqNo::seqcmp(losslist[i + 1], const_cast<int32_t&>(m_iSndCurrSeqNo)) > 0))
++            if ((CSeqNo::seqcmp(losslist[i] & 0x7FFFFFFF, losslist[i + 1]) > 0) || (CSeqNo::seqcmp(losslist[i + 1], m_iSndCurrSeqNo) > 0))
+             {
+                // seq_a must not be greater than seq_b; seq_b must not be greater than the most recent sent seq
+@@ -2125,8 +2125,8 @@
+ 
+             int num = 0;
+-            if (CSeqNo::seqcmp(losslist[i] & 0x7FFFFFFF, const_cast<int32_t&>(m_iSndLastAck)) >= 0)
++            if (CSeqNo::seqcmp(losslist[i] & 0x7FFFFFFF, m_iSndLastAck) >= 0)
+                num = m_pSndLossList->insert(losslist[i] & 0x7FFFFFFF, losslist[i + 1]);
+-            else if (CSeqNo::seqcmp(losslist[i + 1], const_cast<int32_t&>(m_iSndLastAck)) >= 0)
+-               num = m_pSndLossList->insert(const_cast<int32_t&>(m_iSndLastAck), losslist[i + 1]);
++            else if (CSeqNo::seqcmp(losslist[i + 1], m_iSndLastAck) >= 0)
++               num = m_pSndLossList->insert(m_iSndLastAck, losslist[i + 1]);
+ 
+             m_iTraceSndLoss += num;
+@@ -2135,7 +2135,7 @@
+             ++ i;
+          }
+-         else if (CSeqNo::seqcmp(losslist[i], const_cast<int32_t&>(m_iSndLastAck)) >= 0)
++         else if (CSeqNo::seqcmp(losslist[i], m_iSndLastAck) >= 0)
+          {
+-            if (CSeqNo::seqcmp(losslist[i], const_cast<int32_t&>(m_iSndCurrSeqNo)) > 0)
++            if (CSeqNo::seqcmp(losslist[i], m_iSndCurrSeqNo) > 0)
+             {
+                //seq_a must not be greater than the most recent sent seq
+@@ -2274,5 +2274,5 @@
+       CGuard ackguard(m_AckLock);
+ 
+-      int offset = CSeqNo::seqoff((int32_t&)m_iSndLastDataAck, packet.m_iSeqNo);
++      int offset = CSeqNo::seqoff(m_iSndLastDataAck, packet.m_iSeqNo);
+       if (offset < 0)
+          return 0;
+@@ -2293,5 +2293,5 @@
+ 
+          // skip all dropped packets
+-         if (CSeqNo::seqcmp(const_cast<int32_t&>(m_iSndCurrSeqNo), CSeqNo::incseq(seqpair[1])) < 0)
++         if (CSeqNo::seqcmp(m_iSndCurrSeqNo, CSeqNo::incseq(seqpair[1])) < 0)
+              m_iSndCurrSeqNo = CSeqNo::incseq(seqpair[1]);
+ 
+@@ -2310,10 +2310,10 @@
+       // check congestion/flow window limit
+       int cwnd = (m_iFlowWindowSize < (int)m_dCongestionWindow) ? m_iFlowWindowSize : (int)m_dCongestionWindow;
+-      if (cwnd >= CSeqNo::seqlen(const_cast<int32_t&>(m_iSndLastAck), CSeqNo::incseq(m_iSndCurrSeqNo)))
++      if (cwnd >= CSeqNo::seqlen(m_iSndLastAck, CSeqNo::incseq(m_iSndCurrSeqNo)))
+       {
+          if (0 != (payload = m_pSndBuffer->readData(&(packet.m_pcData), packet.m_iMsgNo)))
+          {
+             m_iSndCurrSeqNo = CSeqNo::incseq(m_iSndCurrSeqNo);
+-            m_pCC->setSndCurrSeqNo((int32_t&)m_iSndCurrSeqNo);
++            m_pCC->setSndCurrSeqNo(m_iSndCurrSeqNo);
+ 
+             packet.m_iSeqNo = m_iSndCurrSeqNo;
+@@ -2618,5 +2618,5 @@
+             // resend all unacknowledged packets on timeout, but only if there is no packet in the loss list
+             int32_t csn = m_iSndCurrSeqNo;
+-            int num = m_pSndLossList->insert(const_cast<int32_t&>(m_iSndLastAck), csn);
++            int num = m_pSndLossList->insert(m_iSndLastAck, csn);
+             m_iTraceSndLoss += num;
+             m_iSndLossTotal += num;
+--- src/api.h	2011-12-26 12:09:11.000000000 -0500
++++ src/api.h	2012-01-27 12:13:11.000000000 -0500
+@@ -131,5 +131,5 @@
+       //    The new UDT socket ID, or INVALID_SOCK.
+ 
+-   UDTSOCKET newSocket(const int& af, const int& type);
++   UDTSOCKET newSocket(int af, int type);
+ 
+       // Functionality:
+@@ -164,9 +164,9 @@
+       // socket APIs
+ 
+-   int bind(const UDTSOCKET u, const sockaddr* name, const int& namelen);
++   int bind(const UDTSOCKET u, const sockaddr* name, int namelen);
+    int bind(const UDTSOCKET u, UDPSOCKET udpsock);
+-   int listen(const UDTSOCKET u, const int& backlog);
++   int listen(const UDTSOCKET u, int backlog);
+    UDTSOCKET accept(const UDTSOCKET listen, sockaddr* addr, int* addrlen);
+-   int connect(const UDTSOCKET u, const sockaddr* name, const int& namelen);
++   int connect(const UDTSOCKET u, const sockaddr* name, int namelen);
+    int close(const UDTSOCKET u);
+    int getpeername(const UDTSOCKET u, sockaddr* name, int* namelen);
+@@ -223,5 +223,5 @@
+    void connect_complete(const UDTSOCKET u);
+    CUDTSocket* locate(const UDTSOCKET u);
+-   CUDTSocket* locate(const sockaddr* peer, const UDTSOCKET& id, const int32_t& isn);
++   CUDTSocket* locate(const sockaddr* peer, const UDTSOCKET id, int32_t isn);
+    void updateMux(CUDTSocket* s, const sockaddr* addr = NULL, const UDPSOCKET* = NULL);
+    void updateMux(CUDTSocket* s, const CUDTSocket* ls);
+--- src/api.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/api.cpp	2012-01-27 13:15:50.000000000 -0500
+@@ -254,5 +254,5 @@
+ }
+ 
+-UDTSOCKET CUDTUnited::newSocket(const int& af, const int& type)
++UDTSOCKET CUDTUnited::newSocket(int af, int type)
+ {
+    if ((type != SOCK_STREAM) && (type != SOCK_DGRAM))
+@@ -497,5 +497,5 @@
+ }
+ 
+-int CUDTUnited::bind(const UDTSOCKET u, const sockaddr* name, const int& namelen)
++int CUDTUnited::bind(const UDTSOCKET u, const sockaddr* name, int namelen)
+ {
+    CUDTSocket* s = locate(u);
+@@ -572,5 +572,5 @@
+ }
+ 
+-int CUDTUnited::listen(const UDTSOCKET u, const int& backlog)
++int CUDTUnited::listen(const UDTSOCKET u, int backlog)
+ {
+    CUDTSocket* s = locate(u);
+@@ -725,5 +725,5 @@
+ }
+ 
+-int CUDTUnited::connect(const UDTSOCKET u, const sockaddr* name, const int& namelen)
++int CUDTUnited::connect(const UDTSOCKET u, const sockaddr* name, int namelen)
+ {
+    CUDTSocket* s = locate(u);
+@@ -1151,5 +1151,5 @@
+ }
+ 
+-CUDTSocket* CUDTUnited::locate(const sockaddr* peer, const UDTSOCKET& id, const int32_t& isn)
++CUDTSocket* CUDTUnited::locate(const sockaddr* peer, const UDTSOCKET id, int32_t isn)
+ {
+    CGuard cg(m_ControlLock);
+@@ -1792,5 +1792,5 @@
+    {
+       CUDT* udt = s_UDTUnited.lookup(u);
+-      return udt->send((char*)buf, len);
++      return udt->send(buf, len);
+    }
+    catch (CUDTException e)
+@@ -1835,5 +1835,5 @@
+    {
+       CUDT* udt = s_UDTUnited.lookup(u);
+-      return udt->sendmsg((char*)buf, len, ttl, inorder);
++      return udt->sendmsg(buf, len, ttl, inorder);
+    }
+    catch (CUDTException e)
+@@ -1873,5 +1873,5 @@
+ }
+ 
+-int64_t CUDT::sendfile(UDTSOCKET u, fstream& ifs, int64_t& offset, const int64_t& size, const int& block)
++int64_t CUDT::sendfile(UDTSOCKET u, fstream& ifs, int64_t& offset, int64_t size, int block)
+ {
+    try
+@@ -1897,5 +1897,5 @@
+ }
+ 
+-int64_t CUDT::recvfile(UDTSOCKET u, fstream& ofs, int64_t& offset, const int64_t& size, const int& block)
++int64_t CUDT::recvfile(UDTSOCKET u, fstream& ofs, int64_t& offset, int64_t size, int block)
+ {
+    try
+--- src/list.h	2011-12-26 12:09:11.000000000 -0500
++++ src/list.h	2012-01-27 13:24:37.000000000 -0500
+@@ -50,5 +50,5 @@
+ {
+ public:
+-   CSndLossList(const int& size = 1024);
++   CSndLossList(int size = 1024);
+    ~CSndLossList();
+ 
+@@ -61,5 +61,5 @@
+       //    number of packets that are not in the list previously.
+ 
+-   int insert(const int32_t& seqno1, const int32_t& seqno2);
++   int insert(int32_t seqno1, int32_t seqno2);
+ 
+       // Functionality:
+@@ -70,5 +70,5 @@
+       //    None.
+ 
+-   void remove(const int32_t& seqno);
++   void remove(int32_t seqno);
+ 
+       // Functionality:
+@@ -112,5 +112,5 @@
+ {
+ public:
+-   CRcvLossList(const int& size = 1024);
++   CRcvLossList(int size = 1024);
+    ~CRcvLossList();
+ 
+@@ -123,5 +123,5 @@
+       //    None.
+ 
+-   void insert(const int32_t& seqno1, const int32_t& seqno2);
++   void insert(int32_t seqno1, int32_t seqno2);
+ 
+       // Functionality:
+@@ -132,5 +132,5 @@
+       //    if the packet is removed (true) or no such lost packet is found (false).
+ 
+-   bool remove(const int32_t& seqno);
++   bool remove(int32_t seqno);
+ 
+       // Functionality:
+@@ -142,5 +142,5 @@
+       //    if the packet is removed (true) or no such lost packet is found (false).
+ 
+-   bool remove(const int32_t& seqno1, const int32_t& seqno2);
++   bool remove(int32_t seqno1, int32_t seqno2);
+ 
+       // Functionality:
+@@ -152,5 +152,5 @@
+       //    True if found; otherwise false.
+ 
+-   bool find(const int32_t& seqno1, const int32_t& seqno2) const;
++   bool find(int32_t seqno1, int32_t seqno2) const;
+ 
+       // Functionality:
+@@ -181,5 +181,5 @@
+       //    None.
+ 
+-   void getLossArray(int32_t* array, int& len, const int& limit);
++   void getLossArray(int32_t* array, int& len, int limit);
+ 
+ private:
+--- src/list.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/list.cpp	2012-01-27 13:24:31.000000000 -0500
+@@ -41,5 +41,5 @@
+ #include "list.h"
+ 
+-CSndLossList::CSndLossList(const int& size):
++CSndLossList::CSndLossList(int size):
+ m_piData1(NULL),
+ m_piData2(NULL),
+@@ -83,5 +83,5 @@
+ }
+ 
+-int CSndLossList::insert(const int32_t& seqno1, const int32_t& seqno2)
++int CSndLossList::insert(int32_t seqno1, int32_t seqno2)
+ {
+    CGuard listguard(m_ListLock);
+@@ -255,5 +255,5 @@
+ }
+ 
+-void CSndLossList::remove(const int32_t& seqno)
++void CSndLossList::remove(int32_t seqno)
+ {
+    CGuard listguard(m_ListLock);
+@@ -420,5 +420,5 @@
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+-CRcvLossList::CRcvLossList(const int& size):
++CRcvLossList::CRcvLossList(int size):
+ m_piData1(NULL),
+ m_piData2(NULL),
+@@ -451,5 +451,5 @@
+ }
+ 
+-void CRcvLossList::insert(const int32_t& seqno1, const int32_t& seqno2)
++void CRcvLossList::insert(int32_t seqno1, int32_t seqno2)
+ {
+    // Data to be inserted must be larger than all those in the list
+@@ -499,5 +499,5 @@
+ }
+ 
+-bool CRcvLossList::remove(const int32_t& seqno)
++bool CRcvLossList::remove(int32_t seqno)
+ {
+    if (0 == m_iLength)
+@@ -629,5 +629,5 @@
+ }
+ 
+-bool CRcvLossList::remove(const int32_t& seqno1, const int32_t& seqno2)
++bool CRcvLossList::remove(int32_t seqno1, int32_t seqno2)
+ {
+    if (seqno1 <= seqno2)
+@@ -647,5 +647,5 @@
+ }
+ 
+-bool CRcvLossList::find(const int32_t& seqno1, const int32_t& seqno2) const
++bool CRcvLossList::find(int32_t seqno1, int32_t seqno2) const
+ {
+    if (0 == m_iLength)
+@@ -680,5 +680,5 @@
+ }
+ 
+-void CRcvLossList::getLossArray(int32_t* array, int& len, const int& limit)
++void CRcvLossList::getLossArray(int32_t* array, int& len, int limit)
+ {
+    len = 0;
+--- src/packet.h	2011-12-26 12:09:11.000000000 -0500
++++ src/packet.h	2012-01-27 13:28:06.000000000 -0500
+@@ -90,5 +90,5 @@
+       //    None.
+ 
+-   void setLength(const int& len);
++   void setLength(int len);
+ 
+       // Functionality:
+@@ -102,5 +102,5 @@
+       //    None.
+ 
+-   void pack(const int& pkttype, void* lparam = NULL, void* rparam = NULL, const int& size = 0);
++   void pack(int pkttype, void* lparam = NULL, void* rparam = NULL, int size = 0);
+ 
+       // Functionality:
+@@ -203,5 +203,5 @@
+ 
+    int serialize(char* buf, int& size);
+-   int deserialize(const char* buf, const int& size);
++   int deserialize(const char* buf, int size);
+ 
+ public:
+--- src/packet.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/packet.cpp	2012-01-27 13:27:57.000000000 -0500
+@@ -178,10 +178,10 @@
+ }
+ 
+-void CPacket::setLength(const int& len)
++void CPacket::setLength(int len)
+ {
+    m_PacketVector[1].iov_len = len;
+ }
+ 
+-void CPacket::pack(const int& pkttype, void* lparam, void* rparam, const int& size)
++void CPacket::pack(int pkttype, void* lparam, void* rparam, int size)
+ {
+    // Set (bit-0 = 1) and (bit-1~15 = type)
+@@ -391,5 +391,5 @@
+ }
+ 
+-int CHandShake::deserialize(const char* buf, const int& size)
++int CHandShake::deserialize(const char* buf, int size)
+ {
+    if (size < m_iContentSize)
+--- src/queue.h	2011-12-26 12:09:11.000000000 -0500
++++ src/queue.h	2012-01-27 13:31:33.000000000 -0500
+@@ -79,5 +79,5 @@
+       //    0: success, -1: failure.
+ 
+-   int init(const int& size, const int& mss, const int& version);
++   int init(int size, int mss, int version);
+ 
+       // Functionality:
+@@ -160,5 +160,5 @@
+       //    None.
+ 
+-   void insert(const int64_t& ts, const CUDT* u);
++   void insert(int64_t ts, const CUDT* u);
+ 
+       // Functionality:
+@@ -170,5 +170,5 @@
+       //    None.
+ 
+-   void update(const CUDT* u, const bool& reschedule = true);
++   void update(const CUDT* u, bool reschedule = true);
+ 
+       // Functionality:
+@@ -201,5 +201,5 @@
+ 
+ private:
+-   void insert_(const int64_t& ts, const CUDT* u);
++   void insert_(int64_t ts, const CUDT* u);
+    void remove_(const CUDT* u);
+ 
+@@ -293,5 +293,5 @@
+       //    None.
+ 
+-   void init(const int& size);
++   void init(int size);
+ 
+       // Functionality:
+@@ -302,5 +302,5 @@
+       //    Pointer to a UDT instance, or NULL if not found.
+ 
+-   CUDT* lookup(const int32_t& id);
++   CUDT* lookup(int32_t id);
+ 
+       // Functionality:
+@@ -321,5 +321,5 @@
+       //    None.
+ 
+-   void remove(const int32_t& id);
++   void remove(int32_t id);
+ 
+ private:
+@@ -346,5 +346,5 @@
+ 
+ public:
+-   void insert(const UDTSOCKET& id, CUDT* u, const int& ipv, const sockaddr* addr, const uint64_t& ttl);
++   void insert(const UDTSOCKET& id, CUDT* u, int ipv, const sockaddr* addr, uint64_t ttl);
+    void remove(const UDTSOCKET& id);
+    CUDT* retrieve(const sockaddr* addr, UDTSOCKET& id);
+@@ -455,5 +455,5 @@
+       //    Data size of the packet
+ 
+-   int recvfrom(const int32_t& id, CPacket& packet);
++   int recvfrom(int32_t id, CPacket& packet);
+ 
+ private:
+@@ -483,5 +483,5 @@
+    void removeListener(const CUDT* u);
+ 
+-   void registerConnector(const UDTSOCKET& id, CUDT* u, const int& ipv, const sockaddr* addr, const uint64_t& ttl);
++   void registerConnector(const UDTSOCKET& id, CUDT* u, int ipv, const sockaddr* addr, uint64_t ttl);
+    void removeConnector(const UDTSOCKET& id);
+ 
+@@ -490,5 +490,5 @@
+    CUDT* getNewEntry();
+ 
+-   void storePkt(const int32_t& id, CPacket* pkt);
++   void storePkt(int32_t id, CPacket* pkt);
+ 
+ private:
+--- src/queue.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/queue.cpp	2012-01-27 13:31:12.000000000 -0500
+@@ -83,5 +83,5 @@
+ }
+ 
+-int CUnitQueue::init(const int& size, const int& mss, const int& version)
++int CUnitQueue::init(int size, int mss, int version)
+ {
+    CQEntry* tempq = NULL;
+@@ -253,5 +253,5 @@
+ }
+ 
+-void CSndUList::insert(const int64_t& ts, const CUDT* u)
++void CSndUList::insert(int64_t ts, const CUDT* u)
+ {
+    CGuard listguard(m_ListLock);
+@@ -280,5 +280,5 @@
+ }
+ 
+-void CSndUList::update(const CUDT* u, const bool& reschedule)
++void CSndUList::update(const CUDT* u, bool reschedule)
+ {
+    CGuard listguard(m_ListLock);
+@@ -353,5 +353,5 @@
+ }
+ 
+-void CSndUList::insert_(const int64_t& ts, const CUDT* u)
++void CSndUList::insert_(int64_t ts, const CUDT* u)
+ {
+    CSNode* n = u->m_pSNode;
+@@ -685,5 +685,5 @@
+ }
+ 
+-void CHash::init(const int& size)
++void CHash::init(int size)
+ {
+    m_pBucket = new CBucket* [size];
+@@ -695,5 +695,5 @@
+ }
+ 
+-CUDT* CHash::lookup(const int32_t& id)
++CUDT* CHash::lookup(int32_t id)
+ {
+    // simple hash function (% hash table size); suitable for socket descriptors
+@@ -722,5 +722,5 @@
+ }
+ 
+-void CHash::remove(const int32_t& id)
++void CHash::remove(int32_t id)
+ {
+    CBucket* b = m_pBucket[id % m_iHashSize];
+@@ -778,5 +778,5 @@
+ }
+ 
+-void CRendezvousQueue::insert(const UDTSOCKET& id, CUDT* u, const int& ipv, const sockaddr* addr, const uint64_t& ttl)
++void CRendezvousQueue::insert(const UDTSOCKET& id, CUDT* u, int ipv, const sockaddr* addr, uint64_t ttl)
+ {
+    CGuard vg(m_RIDVectorLock);
+@@ -1104,5 +1104,5 @@
+ }
+ 
+-int CRcvQueue::recvfrom(const int32_t& id, CPacket& packet)
++int CRcvQueue::recvfrom(int32_t id, CPacket& packet)
+ {
+    CGuard bufferlock(m_PassLock);
+@@ -1179,5 +1179,5 @@
+ }
+ 
+-void CRcvQueue::registerConnector(const UDTSOCKET& id, CUDT* u, const int& ipv, const sockaddr* addr, const uint64_t& ttl)
++void CRcvQueue::registerConnector(const UDTSOCKET& id, CUDT* u, int ipv, const sockaddr* addr, uint64_t ttl)
+ {
+    m_pRendezvousQueue->insert(id, u, ipv, addr, ttl);
+@@ -1227,5 +1227,5 @@
+ }
+ 
+-void CRcvQueue::storePkt(const int32_t& id, CPacket* pkt)
++void CRcvQueue::storePkt(int32_t id, CPacket* pkt)
+ {
+    CGuard bufferlock(m_PassLock);   
+--- src/window.h	2011-12-26 12:09:11.000000000 -0500
++++ src/window.h	2012-01-27 13:39:26.000000000 -0500
+@@ -53,5 +53,5 @@
+ {
+ public:
+-   CACKWindow(const int& size = 1024);
++   CACKWindow(int size = 1024);
+    ~CACKWindow();
+ 
+@@ -64,5 +64,5 @@
+       //    None.
+ 
+-   void store(const int32_t& seq, const int32_t& ack);
++   void store(int32_t seq, int32_t ack);
+ 
+       // Functionality:
+@@ -74,5 +74,5 @@
+       //    RTT.
+ 
+-   int acknowledge(const int32_t& seq, int32_t& ack);
++   int acknowledge(int32_t seq, int32_t& ack);
+ 
+ private:
+@@ -95,5 +95,5 @@
+ {
+ public:
+-   CPktTimeWindow(const int& asize = 16, const int& psize = 16);
++   CPktTimeWindow(int asize = 16, int psize = 16);
+    ~CPktTimeWindow();
+ 
+@@ -132,5 +132,5 @@
+       //    None.
+ 
+-   void onPktSent(const int& currtime);
++   void onPktSent(int currtime);
+ 
+       // Functionality:
+--- src/window.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/window.cpp	2012-01-27 13:40:26.000000000 -0500
+@@ -46,5 +46,5 @@
+ using namespace std;
+ 
+-CACKWindow::CACKWindow(const int& size):
++CACKWindow::CACKWindow(int size):
+ m_piACKSeqNo(NULL),
+ m_piACK(NULL),
+@@ -68,5 +68,5 @@
+ }
+ 
+-void CACKWindow::store(const int32_t& seq, const int32_t& ack)
++void CACKWindow::store(int32_t seq, int32_t ack)
+ {
+    m_piACKSeqNo[m_iHead] = seq;
+@@ -81,5 +81,5 @@
+ }
+ 
+-int CACKWindow::acknowledge(const int32_t& seq, int32_t& ack)
++int CACKWindow::acknowledge(int32_t seq, int32_t& ack)
+ {
+    if (m_iHead >= m_iTail)
+@@ -145,5 +145,5 @@
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+-CPktTimeWindow::CPktTimeWindow(const int& asize, const int& psize):
++CPktTimeWindow::CPktTimeWindow(int asize, int psize):
+ m_iAWSize(asize),
+ m_piPktWindow(NULL),
+@@ -243,5 +243,5 @@
+ }
+ 
+-void CPktTimeWindow::onPktSent(const int& currtime)
++void CPktTimeWindow::onPktSent(int currtime)
+ {
+    int interval = currtime - m_iLastSentTime;

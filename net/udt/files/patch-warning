@@ -1,0 +1,128 @@
+Accepted (largely) by the author already. See:
+
+https://sourceforge.net/tracker/?func=detail&atid=670041&aid=3480628&group_id=115059
+
+--- src/channel.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/channel.cpp	2012-01-27 10:55:29.000000000 -0500
+@@ -252,5 +252,5 @@
+    #ifndef WIN32
+       msghdr mh;
+-      mh.msg_name = (sockaddr*)addr;
++      mh.msg_name = (void *)addr;
+       mh.msg_namelen = m_iSockAddrSize;
+       mh.msg_iov = (iovec*)packet.m_PacketVector;
+--- src/epoll.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/epoll.cpp	2012-01-27 11:56:49.000000000 -0500
+@@ -108,5 +108,9 @@
+ }
+ 
+-int CEPoll::add_ssock(const int eid, const SYSSOCKET& s, const int* events)
++int CEPoll::add_ssock(const int eid, const SYSSOCKET& s, const int*
++#ifdef LINUX
++events /* XXX Only on Linux are we using this parameter currently */
++#endif
++)
+ {
+    CGuard pg(m_EPollLock);
+--- src/queue.cpp	2011-12-26 12:09:11.000000000 -0500
++++ src/queue.cpp	2012-01-27 10:55:29.000000000 -0500
+@@ -488,8 +488,8 @@
+ }
+ 
+-void CSndQueue::init(const CChannel* c, const CTimer* t)
++void CSndQueue::init(CChannel* c, CTimer* t)
+ {
+-   m_pChannel = (CChannel*)c;
+-   m_pTimer = (CTimer*)t;
++   m_pChannel = c;
++   m_pTimer = t;
+    m_pSndUList = new CSndUList;
+    m_pSndUList->m_pWindowLock = &m_WindowLock;
+@@ -710,5 +710,5 @@
+ }
+ 
+-void CHash::insert(const int32_t& id, const CUDT* u)
++void CHash::insert(int32_t id, CUDT* u)
+ {
+    CBucket* b = m_pBucket[id % m_iHashSize];
+@@ -716,5 +716,5 @@
+    CBucket* n = new CBucket;
+    n->m_iID = id;
+-   n->m_pUDT = (CUDT*)u;
++   n->m_pUDT = u;
+    n->m_pNext = b;
+ 
+@@ -938,5 +938,5 @@
+ }
+ 
+-void CRcvQueue::init(const int& qsize, const int& payload, const int& version, const int& hsize, const CChannel* cc, const CTimer* t)
++void CRcvQueue::init(int qsize, int payload, int version, int hsize, CChannel* cc, CTimer* t)
+ {
+    m_iPayloadSize = payload;
+@@ -947,6 +947,6 @@
+    m_pHash->init(hsize);
+ 
+-   m_pChannel = (CChannel*)cc;
+-   m_pTimer = (CTimer*)t;
++   m_pChannel = cc;
++   m_pTimer = t;
+ 
+    m_pRcvUList = new CRcvUList;
+@@ -1021,5 +1021,5 @@
+       {
+          if (NULL != self->m_pListener)
+-            ((CUDT*)self->m_pListener)->listen(addr, unit->m_Packet);
++            self->m_pListener->listen(addr, unit->m_Packet);
+          else if (NULL != (u = self->m_pRendezvousQueue->retrieve(addr, id)))
+          {
+@@ -1160,5 +1160,5 @@
+ }
+ 
+-int CRcvQueue::setListener(const CUDT* u)
++int CRcvQueue::setListener(CUDT* u)
+ {
+    CGuard lslock(m_LSLock);
+@@ -1167,5 +1167,5 @@
+       return -1;
+ 
+-   m_pListener = (CUDT*)u;
++   m_pListener = u;
+    return 0;
+ }
+--- src/queue.h	2011-12-26 12:09:11.000000000 -0500
++++ src/queue.h	2012-01-27 10:55:29.000000000 -0500
+@@ -312,5 +312,5 @@
+       //    None.
+ 
+-   void insert(const int32_t& id, const CUDT* u);
++   void insert(int32_t id, CUDT* u);
+ 
+       // Functionality:
+@@ -385,5 +385,5 @@
+       //    None.
+ 
+-   void init(const CChannel* c, const CTimer* t);
++   void init(CChannel* c, CTimer* t);
+ 
+       // Functionality:
+@@ -445,5 +445,5 @@
+       //    None.
+ 
+-   void init(const int& size, const int& payload, const int& version, const int& hsize, const CChannel* c, const CTimer* t);
++   void init(int size, int payload, int version, int hsize, CChannel* c, CTimer* t);
+ 
+       // Functionality:
+@@ -480,5 +480,5 @@
+ 
+ private:
+-   int setListener(const CUDT* u);
++   int setListener(CUDT* u);
+    void removeListener(const CUDT* u);
+ 
+@@ -494,5 +494,5 @@
+ private:
+    pthread_mutex_t m_LSLock;
+-   volatile CUDT* m_pListener;                          // pointer to the (unique, if any) listening UDT entity
++   CUDT* m_pListener;                          // pointer to the (unique, if any) listening UDT entity
+    CRendezvousQueue* m_pRendezvousQueue;                // The list of sockets in rendezvous mode
+ 
