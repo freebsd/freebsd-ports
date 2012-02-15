@@ -7,7 +7,7 @@
 
 PORTNAME=	paratype
 PORTVERSION=	2.004
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontstock.com/public/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
