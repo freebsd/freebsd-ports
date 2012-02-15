@@ -1413,6 +1413,7 @@
     SUBDIR += webcpp
     SUBDIR += website
     SUBDIR += weka
+    SUBDIR += wiggle
     SUBDIR += word2x
     SUBDIR += wordnet
     SUBDIR += words
