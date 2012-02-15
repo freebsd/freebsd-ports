@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Data-Printer
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Colored pretty-print of Perl data structures and objects
