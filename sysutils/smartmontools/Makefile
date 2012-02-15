@@ -7,7 +7,7 @@
 
 PORTNAME=	smartmontools
 PORTVERSION=	5.42
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -19,8 +19,6 @@ LICENSE=	GPLv2
 CONFLICTS=	smartmontools-devel-[0-9]*
 
 USE_GMAKE=	yes
-# hack to prevent gmake failure on 6.xx
-GMAKE=		make
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-drivedb --enable-sample \
@@ -32,6 +30,8 @@ USE_RC_SUBR=	smartd
 MAN5=		smartd.conf.5
 MAN8=		smartd.8 smartctl.8
 
+PORTDOCS=	*
+
 CFLAGS:=	${CFLAGS:S/-O2/-O/} -Wno-write-strings
 
 post-patch:
@@ -40,7 +40,7 @@ post-patch:
 post-install:
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/smart ${PREFIX}/etc/periodic/daily/smart
-	${INSTALL_SCRIPT} ${WRKSRC}/smartd.freebsd.initd ${PREFIX}/etc/rc.d/smartd
+
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,28 +1,10 @@
-@comment $FreeBSD$
-@unexec /bin/echo "===>" Stopping smartd ...
-@unexec /usr/bin/killall smartd 2>/dev/null || true
+@stopdaemon smartd
 etc/periodic/daily/smart
 etc/smartd.conf.sample
 sbin/smartctl
 sbin/smartd
 sbin/update-smart-drivedb
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/CHANGELOG
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/WARNINGS
-%%DOCSDIR%%/examplescripts/Example1
-%%DOCSDIR%%/examplescripts/Example2
-%%DOCSDIR%%/examplescripts/Example3
-%%DOCSDIR%%/examplescripts/Example4
-%%DOCSDIR%%/examplescripts/README
-%%DOCSDIR%%/smartd.conf
 %%DATADIR%%/drivedb.h
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/examplescripts
-@dirrm %%DOCSDIR%%
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
