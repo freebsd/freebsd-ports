@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -33,6 +33,7 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		PERL_MALLOC	"Use Perl malloc"			off \
 		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
 		THREADS		"Build threaded perl"			off \
+		PTHREAD		"Build with -pthread"			on  \
 		MULTIPLICITY	"Use multiplicity"			off \
 		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
@@ -119,6 +120,7 @@ WITH_PERL_MALLOC=	yes
 #XXX .endif
 CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
+WITH_PTHREAD=		yes
 # it seems perl malloc has problems with threaded perl on FreeBSD
 .undef WITH_PERL_MALLOC
 .else
@@ -189,7 +191,7 @@ post-patch:
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-.if defined(WITH_THREADS)
+.if defined(WITH_PTHREAD)
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
 		${WRKSRC}/hints/freebsd.sh
