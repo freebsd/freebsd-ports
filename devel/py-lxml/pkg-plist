@@ -557,7 +557,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.iterparse-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/capi.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.3.2.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.3.3.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/cssselect.html
@@ -598,6 +598,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/mklatex.py
 %%PORTDOCS%%%%DOCSDIR%%/doc/objectify.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/parsing.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/pdf/pubkey.asc
 %%PORTDOCS%%%%DOCSDIR%%/doc/performance.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/pubkey.asc
 %%PORTDOCS%%%%DOCSDIR%%/doc/resolvers.txt
@@ -635,6 +636,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ep2008
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/licenses
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
