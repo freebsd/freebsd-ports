@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ncdc
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://dev.yorhel.nl/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -24,7 +24,7 @@ USE_GNOME=	glib20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-MAN1=		ncdc.1 ncdc-gen-cert.1 ncdc-db-upgrade.1
+MAN1=		ncdc.1 ncdc-gen-cert.1
 PLIST_FILES=	bin/ncdc bin/ncdc-gen-cert
 
 #force base compiler,linker flags to avoid linking to ncurses from ports
@@ -36,12 +36,10 @@ LDFLAGS+=	-L/usr/lib -L${LOCALBASE}/lib
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
 PLIST_FILES+=	bin/ncdc-db-upgrade
+MAN1+=		ncdc-db-upgrade.1
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's/\(GRegex \*nand\[fl_.*\)\]/\1+1]/' \
-		${WRKSRC}/src/fl_util.c
 .if defined(WITHOUT_GDBM)
 	@${REINPLACE_CMD} \
 		-e '/have_gdbm=yes/d' \
