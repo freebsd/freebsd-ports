@@ -17,7 +17,6 @@ COMMENT=	Utilities of the Tango project
 BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 
-USE_GZIP=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
