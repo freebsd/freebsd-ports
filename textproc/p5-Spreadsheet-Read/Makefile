@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-Read
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -16,18 +16,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read the data from a spreadsheet
 
-BUILD_DEPENDS=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/mach/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Spreadsheet/ReadSXC.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ReadSXC \
-		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel
-RUN_DEPENDS=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/mach/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		${SITE_PERL}/Text/CSV.pm:${PORTSDIR}/textproc/p5-Text-CSV \
-		${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Spreadsheet/ReadSXC.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ReadSXC \
-		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel
+BUILD_DEPENDS=	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Text-CSV_XS>0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
+		p5-Text-CSV>0:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Spreadsheet-ReadSXC>0:${PORTSDIR}/textproc/p5-Spreadsheet-ReadSXC \
+		p5-Spreadsheet-ParseExcel>0:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_CONFIGURE=	yes
 
