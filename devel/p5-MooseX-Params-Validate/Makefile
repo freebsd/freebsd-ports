@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
 		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Devel-Caller>0:${PORTSDIR}/devel/p5-Devel-Caller
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
