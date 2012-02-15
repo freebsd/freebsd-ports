@@ -35,19 +35,19 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/action.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/alphafill.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/animation.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/glyph.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/jpegfill.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/keypress.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/morph.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/shape.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/sound.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/sprite.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/text.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/textfield.cgi
-%%PORTDOCS%%%%EXAMPLESDIR%%/video.cgi
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/action.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/alphafill.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glyph.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jpegfill.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keypress.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/morph.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shape.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sprite.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/textfield.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video.cgi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SWF
