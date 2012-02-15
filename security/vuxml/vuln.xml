@@ -47,6 +47,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f5ff968-5829-11e1-8288-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>17.0.963.56</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote
+cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[105803] High CVE-2011-3015: Integer overflows in PDF codecs.
+	    Credit to Google Chrome Security Team (scarybeasts).</p>
+	  <p>[106336] Medium CVE-2011-3016: Read-after-free with counter nodes.
+	    Credit to miaubiz.</p>
+	  <p>[108695] High CVE-2011-3017: Possible use-after-free in database
+	    handling.  Credit to miaubiz.</p>
+	  <p>[110172] High CVE-2011-3018: Heap overflow in path rendering.
+	    Credit to Aki Helin of OUSPG.</p>
+	  <p>[110849] High CVE-2011-3019: Heap buffer overflow in MKV handling.
+	    Credit to Google Chrome Security Team (scarybeasts) and Mateusz
+	    Jurczyk of the Google Security Team.</p>
+	  <p>[111575] Medium CVE-2011-3020: Native client validator error.
+	    Credit to Nick Bray of the Chromium development community.</p>
+	  <p>[111779] High CVE-2011-3021: Use-after-free in subframe loading.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[112236] Medium CVE-2011-3022: Inappropriate use of http for
+	    translation script.  Credit to Google Chrome Security Team (Jorge
+	    Obes).</p>
+	  <p>[112259] Medium CVE-2011-3023: Use-after-free with drag and drop.
+	    Credit to pa_kt.</p>
+	  <p>[112451] Low CVE-2011-3024: Browser crash with empty x509
+	    certificate.  Credit to chrometot.</p>
+	  <p>[112670] Medium CVE-2011-3025: Out-of-bounds read in h.264
+	    parsing.  Credit to Slawomir Blazek.</p>
+	  <p>[112822] High CVE-2011-3026: Integer overflow / truncation in
+	    libpng.  Credit to Juri Aedla.</p>
+	  <p>[112847] Medium CVE-2011-3027: Bad cast in column handling.
+	    Credit to miaubiz.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3015</cvename>
+      <cvename>CVE-2011-3016</cvename>
+      <cvename>CVE-2011-3017</cvename>
+      <cvename>CVE-2011-3018</cvename>
+      <cvename>CVE-2011-3019</cvename>
+      <cvename>CVE-2011-3020</cvename>
+      <cvename>CVE-2011-3021</cvename>
+      <cvename>CVE-2011-3022</cvename>
+      <cvename>CVE-2011-3023</cvename>
+      <cvename>CVE-2011-3024</cvename>
+      <cvename>CVE-2011-3025</cvename>
+      <cvename>CVE-2011-3026</cvename>
+      <cvename>CVE-2011-3027</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-02-15</discovery>
+      <entry>2012-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4f8be9e-56b2-11e1-9fb7-003067b2972c">
     <topic>Python -- DoS via malformed XML-RPC / HTTP POST request</topic>
     <affects>
