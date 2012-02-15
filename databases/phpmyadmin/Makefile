@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.4.9
+DISTVERSION=	3.4.10
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -16,13 +16,11 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
 
-USE_MYSQL=	compat
 IGNORE_WITH_PHP=	4
-IGNORE_WITH_MYSQL=	41
 USE_XZ=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql session filter mbstring json spl
+USE_PHP=	ctype session filter mbstring json spl
 .endif
 
 # Note: default settings will pull in X11 client support.  If you don't
@@ -32,7 +30,8 @@ USE_PHP=	ctype mysql session filter mbstring json spl
 OPTIONS=	SUPHP	"suPHP support"			      off \
 		BZ2	"bzip2 library support" 	      on  \
 		GD	"GD library support (requires X11)"   on  \
-		MYSQLI	"Improved MySQL support" 	      off \
+		MYSQL	"MySQL support via mysql client"      off \
+		MYSQLI	"Improved MySQL client support"	      off \
 		OPENSSL	"OpenSSL support" 		      on  \
 		PDF	"PDFlib support" 		      on  \
 		ZLIB	"ZLIB support" 			      on  \
@@ -138,4 +137,15 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+# phpMyAdmin can use the mysql native drivers which are available by
+# default when using the lang/php5 port.  If you're using lang/php52
+# then you will need either WITH_MYSQL or WITH_MYSQLI enabled.
+
+.if ${PHP_VER} == "52" && !defined(WITH_MYSQL) && !defined(WITH_MYSQLI)
+BROKEN=	${PKGNAME} needs one of WITH_MYSQL or WITH_MYSQLI in order to work with php-5.2.x
+.endif 
+
+.include <bsd.port.post.mk>
