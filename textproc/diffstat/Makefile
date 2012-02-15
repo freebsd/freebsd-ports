@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	diffstat
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	textproc devel
-MASTER_SITES=	ftp://dickey.his.com/diffstat/
+MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
