@@ -7,6 +7,7 @@
 
 PORTNAME=	phpMyAdmin
 DISTVERSION=	3.4.10
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -31,7 +32,7 @@ OPTIONS=	SUPHP	"suPHP support"			      off \
 		BZ2	"bzip2 library support" 	      on  \
 		GD	"GD library support (requires X11)"   on  \
 		MYSQL	"MySQL support via mysql client"      off \
-		MYSQLI	"Improved MySQL client support"	      off \
+		MYSQLI	"Improved MySQL client support"	      on  \
 		OPENSSL	"OpenSSL support" 		      on  \
 		PDF	"PDFlib support" 		      on  \
 		ZLIB	"ZLIB support" 			      on  \
@@ -40,6 +41,10 @@ OPTIONS=	SUPHP	"suPHP support"			      off \
 		APC	"APC (animated progress bar) support" on
 
 .include <bsd.port.options.mk>
+
+.if !defined(WITH_MYSQL) && !defined(WITH_MYSQLI)
+BROKEN=	${PKGNAME} needs at least one of WITH_MYSQL or WITH_MYSQLI in order to work
+.endif 
 
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 
@@ -137,15 +142,4 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-
-.include <bsd.port.pre.mk>
-
-# phpMyAdmin can use the mysql native drivers which are available by
-# default when using the lang/php5 port.  If you're using lang/php52
-# then you will need either WITH_MYSQL or WITH_MYSQLI enabled.
-
-.if ${PHP_VER} == "52" && !defined(WITH_MYSQL) && !defined(WITH_MYSQLI)
-BROKEN=	${PKGNAME} needs one of WITH_MYSQL or WITH_MYSQLI in order to work with php-5.2.x
-.endif 
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
