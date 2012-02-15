@@ -12,8 +12,6 @@ include/omniORBpy.h
 %%PYTHON_SITELIBDIR%%/PortableServer.pyc
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.py
 %%PYTHON_SITELIBDIR%%/PortableServer__POA.pyc
-%%PYTHON_SITELIBDIR%%/__init__.py
-%%PYTHON_SITELIBDIR%%/__init__.pyc
 %%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so
 %%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.3
 %%PYTHON_SITELIBDIR%%/_omniConnMgmtmodule.so.3.%%SONUM%%
