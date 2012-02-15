@@ -1,4 +1,4 @@
-MANLANG=	"" de es fr hu it ru tr
+MANLANG=	"" de es fr hu it ru tr zh_TW
 
 .if !defined(WITHOUT_NLS)
 . if !defined(WITHOUT_MONOLITHIC)
