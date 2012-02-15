@@ -74,35 +74,35 @@ MAKEINFO_EMACS_FLAGS=	-e texinfo-format-buffer -f save-buffer
 
 pre-build:
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	cd ${MASTERDIR}; ${MAKE} pkg-el-copy
+	@${MAKE} pkg-el-copy
 .endif
 
 post-build:
 .if defined(BUILD_INFO_BY_EMACS) && (${BUILD_INFO_BY_EMACS} == "YES")
-	cd ${MASTERDIR}; ${MAKE} info-build-by-emacs
+	@${MAKE} info-build-by-emacs
 .else
-	cd ${MASTERDIR}; ${MAKE} info-build
+	@${MAKE} info-build
 .endif
 
 pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
-	cd ${MASTERDIR}; ${MAKE} mkdir-site-packages
+	@${MAKE} mkdir-site-packages
 .endif
 .if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	cd ${MASTERDIR}; ${MAKE} pkg-el-install
+	@${MAKE} pkg-el-install
 .endif
 
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/semi
 	@${TOUCH} ${LOCALBASE}/share/semi/${SEMI_COOKIE}
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
-	cd ${MASTERDIR}; ${MAKE} info-package-install
-	cd ${MASTERDIR}; ${MAKE} manifest-install
+	@${MAKE} info-package-install
+	@${MAKE} manifest-install
 .else
-	cd ${MASTERDIR}; ${MAKE} info-install
+	@${MAKE} info-install
 .endif
 .if !defined(NOPORTDOCS)
-	cd ${MASTERDIR}; ${MAKE} doc-install
+	@${MAKE} doc-install
 .endif
 
 ###############################################################################
