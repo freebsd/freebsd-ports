@@ -24,6 +24,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 BUILD_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
 RUN_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
 
+BROKEN=		does not package
+
 OPTIONS=	GHEX "Enable memory view" off
 
 GNU_CONFIGURE=	yes
@@ -38,10 +40,6 @@ INSTALLS_ICONS=	yes
 MAN1=		nemiver.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 604100
-BROKEN=		Does not compile on 6.x
-.endif
 
 .if defined(WITH_GHEX) && !defined(WITHOUT_GHEX)
 CONFIGURE_ARGS+=--enable-memoryview
