@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The OpenLook props application
 
+CONFLICTS=	xview-clients-3.2.1.4.19*
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/props
