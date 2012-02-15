@@ -7,7 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/ \
 		ftp://kucha.ru/pub/misc/oops/
@@ -32,6 +32,11 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
+
+.if ${CC} == "clang" || ${CXX} == "clang++"
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure.in \
+		${PATCHDIR}/extra-patch-src_modules_Makefile.in
+.endif
 
 USERS=		oops
 GROUPS=		nobody
