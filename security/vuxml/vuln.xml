@@ -78,6 +78,12 @@ Note:  Please add new entries to the beginning of this file.
 	<name>python</name>
 	<range><le>2.7,2</le></range>
       </package>
+      <package>
+	<name>pypy</name>
+	<!-- note that it also affects 1.8 but we do not yet have
+	     this version in ports. -->
+	<range><le>1.7</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -95,6 +101,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2012-0845</cvename>
       <url>http://bugs.python.org/issue14001</url>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=789790</url>
+      <url>https://bugs.pypy.org/issue1047</url>
     </references>
     <dates>
       <discovery>2012-02-13</discovery>
