@@ -2531,3 +2531,7 @@ share/pixmaps/scribus.png
 @dirrmtry share/mimelnk
 @dirrmtry share/emacs/site-lisp
 @dirrmtry share/emacs
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
