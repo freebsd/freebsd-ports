@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	nickle
-PORTVERSION=	2.70
+PORTVERSION=	2.72
 CATEGORIES=	lang
 MASTER_SITES=	http://www.nickle.org/release/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A numeric oriented programming language
+
+LICENSE=	MIT
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 # Nickle now has bindings which are likely to pull in libraries that need
-# libpthread.  Link to it now, since it wouldn't work at runtime.
+# libpthread.  Link to it now explicitly, or it wouldn't work at runtime.
 LDFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		nickle.1
