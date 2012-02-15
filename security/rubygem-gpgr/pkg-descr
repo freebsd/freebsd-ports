@@ -1,0 +1,7 @@
+gpgr is a very light interface to the command-line GPG (GNU Privacy
+Guard) tool which is soley concerned with making it as easy as
+possible to encrypt files with one (or more) public keys. It does
+not provide any major key management tools and does not support
+decryption.
+
+WWW: https://github.com/HHRy/gpgr
