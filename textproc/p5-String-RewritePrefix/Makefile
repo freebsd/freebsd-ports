@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Rewrite strings based on a set of known prefixes
 
+TEST_DEPENDS=	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
+
 PERL_CONFIGURE=	yes
 
 MAN3=	String::RewritePrefix.3
