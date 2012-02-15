@@ -16,6 +16,7 @@ COMMENT=	Text-Query-SQL provides query builders for SQL databases
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Query.pm:${PORTSDIR}/textproc/p5-Text-Query
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
