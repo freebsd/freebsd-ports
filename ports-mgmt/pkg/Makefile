@@ -63,8 +63,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-IGNORE=		not supported on 7.x
+.if ${OSVERSION} < 800505
+IGNORE=		not supported on 7.x or early 8.0
 .endif
 
 .include <bsd.port.post.mk>
