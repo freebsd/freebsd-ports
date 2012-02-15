@@ -22,4 +22,10 @@ MAN3=		GSSAPI.3 \
 		GSSAPI::OID::Set.3 \
 		GSSAPI::Status.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		Does not work on FreeBSD 7.x
+.endif
+
+.include <bsd.port.post.mk>
