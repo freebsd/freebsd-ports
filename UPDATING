@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120214:
+  AFFECTS: users of net/libexosip2
+  AUTHOR: jgh@FreeBSD.org
+
+  libexosip2 has been updated with a shared library bump.
+  This requires dependencies to be rebuilt.
+
+  # portmaster -r libexosip2
+  or
+  # portupgrade -rf libexosip2-3.\*
+
+20120214:
   AFFECTS: users of devel/pcre
   AUTHOR: dougb@FreeBSD.org
 
