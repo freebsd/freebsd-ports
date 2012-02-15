@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- src/Makefile.orig	2011-08-23 18:18:27.000000000 +0400
-+++ src/Makefile	2011-08-30 22:32:02.000000000 +0400
+--- Makefile.orig	2012-01-20 17:27:10.000000000 +0400
++++ Makefile	2012-02-14 22:26:16.000000000 +0400
 @@ -56,7 +56,7 @@
  USR = /opt/local
  else
@@ -11,32 +9,36 @@ $FreeBSD$
  endif
  ifeq ($(OS),MINGW32_NT-5.1)
  EXE = .exe
-@@ -112,7 +112,7 @@
- 
- # Flags to enable fast display, using XShm.
+@@ -118,7 +118,7 @@
+ # This requires the presence of the X11 extension include and library files.
+ # (package 'libx11-dev' on Debian).
  XSHM_CFLAGS = -Dcimg_use_xshm
 -XSHM_LDFLAGS = -L$(USR)/X11R6/lib -lXext
 +XSHM_LDFLAGS = -L/usr/X11R6/lib -lXext
  
  # Flags to enable image display, using GDI32.
- GDI32_CFLAGS = -Dcimg_display=2 -Dcimg_appname=\\\"gmic\\\"
-@@ -142,15 +142,6 @@
- ZLIB_CFLAGS = -Dcimg_use_zlib
- ZLIB_LDFLAGS = -lz
- 
--# Flags to enable native support of webcams, using the OpenCV library.
+ # This requires the presence of the GDI32 include and library files.
+@@ -164,13 +164,13 @@
+ # Flags to enable native support of webcams, using the OpenCV library.
+ # This requires the presence of the OpenCV include and library files.
+ # (package 'libcv3-2-dev' on Debian).
 -OPENCV_CFLAGS = -Dcimg_use_opencv -I$(USR)/include/opencv
 -ifeq ($(OS),Darwin)
 -OPENCV_LDFLAGS = -lopencv_core -lopencv_highgui   # Use this for OpenCV 2.2.0 !
 -else
 -OPENCV_LDFLAGS = -lcv -lhighgui
--# OPENCV_LDFLAGS = -lopencv_core -lopencv_highgui   # Use this for OpenCV 2.2.0 !
++#OPENCV_CFLAGS = -Dcimg_use_opencv -I$(USR)/include/opencv
++#ifeq ($(OS),Darwin)
++#OPENCV_LDFLAGS = -lopencv_core -lopencv_highgui   # Use this for OpenCV 2.2.0 !
++#else
++#OPENCV_LDFLAGS = -lcv -lhighgui
+ # OPENCV_LDFLAGS = -lopencv_core -lopencv_highgui   # Use this for OpenCV 2.2.0 !
 -endif
--
++#endif
+ 
  # Flags to enable native support of most classical image file formats, using the GraphicsMagick++ library.
- MAGICK_CFLAGS = -Dcimg_use_magick -I$(USR)/include/GraphicsMagick
- ifeq ($(OS),Darwin)
-@@ -236,6 +227,14 @@
+ # This requires the presence of the GraphicsMagick++ include and library files.
+@@ -271,6 +271,14 @@
  	$(MAKE) gimp
  	$(MAKE) lib
  else
@@ -51,7 +53,7 @@ $FreeBSD$
  ifeq ($(OS),Darwin)
  	@echo "**"
  	@echo "** MacOSX configuration"
-@@ -252,9 +251,10 @@
+@@ -287,9 +295,10 @@
  	$(MAKE) gimp
  endif
  endif
@@ -63,7 +65,7 @@ $FreeBSD$
  
  lib:
  	$(MAKE) "CFLAGS=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_LIB_LDFLAGS)" gmic_lib
-@@ -269,6 +269,9 @@
+@@ -304,6 +313,9 @@
  linux:
  	$(MAKE) "CFLAGS=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
  
@@ -72,3 +74,4 @@ $FreeBSD$
 +
  custom:
  	$(MAKE) "CFLAGS=$(CUST_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(CUST_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
+ 
