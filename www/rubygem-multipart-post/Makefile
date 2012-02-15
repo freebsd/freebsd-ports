@@ -3,9 +3,10 @@
 # Whom:					Cheng-Lung Sung <clsung@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	multipart-post
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
