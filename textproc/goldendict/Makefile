@@ -25,7 +25,6 @@ HAS_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_XORG=	xtst
 USE_QT_VER=	4
-USE_QT4=	linguist
 QT_COMPONENTS=	corelib gui webkit \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
 
