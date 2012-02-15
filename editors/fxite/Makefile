@@ -18,7 +18,7 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
 USE_GETTEXT=	yes
 USE_LUA=	yes
-USE_PKGCONFIG=	yes
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-g -O0 -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
