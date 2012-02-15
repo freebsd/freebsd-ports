@@ -1,5 +1,5 @@
---- examples/init-script.in.orig	2010-06-30 01:50:32.000000000 +0400
-+++ examples/init-script.in	2011-12-14 00:40:09.284988761 +0400
+--- examples/init-script.in.orig	2010-06-29 14:50:32.000000000 -0700
++++ examples/init-script.in	2012-02-14 23:06:37.000000000 -0800
 @@ -39,6 +39,12 @@
  # The socket used by mimedefang to communicate with sendmail
  # SOCKET=$SPOOLDIR/mimedefang.sock
@@ -27,6 +27,15 @@
  
  # If you want to use the "notification" facility, set the appropriate port.
  # See the mimedefang-notify man page for details.
+@@ -183,7 +189,7 @@
+     . /etc/rc.subr
+ 
+     name=$prog
+-    rcvar=`set_rcvar`
++    rcvar=${prog}_enable
+     # default to not enabled, enable in rc.conf
+     eval $rcvar=\${$rcvar:-NO}
+ 
 @@ -193,6 +199,7 @@
      procname=$PROGDIR/$prog-multiplexor
      start_cmd="start_it"
