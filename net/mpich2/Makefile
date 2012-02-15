@@ -33,6 +33,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_NAME=	MPICH
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+BROKEN=		does not package
+
 .if defined(MAINTAINER_MODE)
 WITH_RECV_TIMEOUT?=	100
 .else

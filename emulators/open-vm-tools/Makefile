@@ -17,6 +17,8 @@ COMMENT?=		Open VMware tools for FreeBSD VMware guests
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 
+BROKEN=			does not package
+
 RELEASE_VER=		8.8.0
 BUILD_VER=		471268
 
