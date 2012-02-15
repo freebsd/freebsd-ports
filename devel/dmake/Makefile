@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dmake
-PORTVERSION=	4.12
-PORTREVISION=	3
+PORTVERSION=	4.12.2
 CATEGORIES=	devel
 MASTER_SITES=	http://dmake.apache-extras.org.codespot.com/files/
 
