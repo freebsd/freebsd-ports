@@ -110,15 +110,15 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="2b20fd5f-552e-11e1-9fb7-003067b2972c">
-    <topic>Webcalendar -- Persistent XSS</topic>
+    <topic>WebCalendar -- Persistent XSS</topic>
     <affects>
       <package>
 	<name>WebCalendar</name>
-	<range><lt>1.2.4</lt></range>
+	<range><le>1.2.4</le></range>
       </package>
       <package>
 	<name>WebCalendar-devel</name>
-	<range><lt>1.2.4</lt></range>
+	<range><le>1.2.4</le></range>
       </package>
     </affects>
     <description>
@@ -132,7 +132,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2012-0846</cvename>
-      <url>http://sourceforge.net/tracker/?func=detail&amp;amp;aid=3472745&amp;group_id=3870&amp;atid=103870</url>
+      <url>http://sourceforge.net/tracker/?func=detail&amp;aid=3472745&amp;group_id=3870&amp;atid=103870</url>
     </references>
     <dates>
       <discovery>2012-01-11</discovery>
@@ -140,6 +140,7 @@ Note:  Please add new entries to the beginning of this file.
       <modified>2012-02-13</modified>
     </dates>
   </vuln>
+
   <vuln vid="eba9aa94-549c-11e1-b6b7-0011856a6e37">
     <topic>mozilla -- use after free in nsXBLDocumentInfo::ReadPrototypeBindings</topic>
     <affects>
@@ -275,8 +276,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[73478] Low CVE-2011-3953: Avoid clipboard monitoring after paste
 	    event.  Credit to Daniel Cheng of the Chromium development
 	    community.</p>
@@ -1596,7 +1596,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	    [108006] High CVE-2011-3922: Stack-buffer-overflow in glyph
 	      handling. Credit to Google Chrome Security Team (Cris Neckar).</p>
 	  <p>[107182] Critical CVE-2011-3925: Use-after-free in Safe Browsing
-	      navigation. Credit to Chamal de Silva.></p>
+	      navigation. Credit to Chamal de Silva.</p>
 	</blockquote>
       </body>
     </description>
@@ -32857,7 +32857,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
   </vuln>
 
   <vuln vid="72999d57-d6f6-11db-961b-005056847b26">
-    <topic>webcalendar -- "noSet" variable overwrite vulnerability</topic>
+    <topic>WebCalendar -- "noSet" variable overwrite vulnerability</topic>
     <affects>
       <package>
 	<name>WebCalendar</name>
@@ -38532,7 +38532,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
   </vuln>
 
   <vuln vid="09c92f3a-fd49-11da-995c-605724cdf281">
-    <topic>webcalendar -- information disclosure vulnerability</topic>
+    <topic>WebCalendar -- information disclosure vulnerability</topic>
     <affects>
       <package>
 	<name>WebCalendar</name>
@@ -44312,7 +44312,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
   </vuln>
 
   <vuln vid="60f8fe7b-3cfb-11da-baa2-0004614cc33d">
-    <topic>webcalendar -- remote file inclusion vulnerability</topic>
+    <topic>WebCalendar -- remote file inclusion vulnerability</topic>
     <affects>
       <package>
 	<name>WebCalendar</name>
