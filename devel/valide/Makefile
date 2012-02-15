@@ -17,6 +17,8 @@ LIB_DEPENDS=	gdl-1:${PORTSDIR}/x11-toolkits/gdl
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		clears directories from mtree
+
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 gtksourceview2
