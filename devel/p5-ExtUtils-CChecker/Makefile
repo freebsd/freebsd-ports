@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Configure-time utilities for using C headers, libraries, OS features
 
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+
 PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::CChecker.3
