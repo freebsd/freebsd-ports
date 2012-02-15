@@ -39,4 +39,10 @@ MAN3=	Data::Localize.3 \
 	Data::Localize::Util.3 \
 	Data::Localize::Storage::Hash.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
