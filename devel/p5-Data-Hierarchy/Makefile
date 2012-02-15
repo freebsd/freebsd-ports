@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Handle data in a hierarchical structure
 
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Data::Hierarchy.3
