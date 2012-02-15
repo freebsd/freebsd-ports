@@ -9,25 +9,26 @@ PORTNAME=	ming
 PORTREVISION=	0
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
 
-MASTERDIR=	${.CURDIR}/../../graphics/ming
-PLIST=		${.CURDIR}/pkg-plist
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
-INSTALL_WRKSRC=		${WRKSRC}/py_ext
-USE_PYTHON=	yes
-#USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	mingc
-PYDISTUTILS_PKGVERSION=	0.4.3
-CONFIGURE_ARGS+=	--enable-python
+BUILD_WRKSRC=	${WRKSRC}/py_ext
+CONFIGURE_ARGS=	--enable-python
+INSTALL_WRKSRC=	${WRKSRC}/py_ext
+PATCH_WRKSRC=	${WRKSRC}/py_ext
 PATCHDIR=	${.CURDIR}/files
-SLAVE_PORT=	py
+PLIST=		${.CURDIR}/pkg-plist
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
-#post-patch:
-#	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/setup.py
-#	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/../src
+MASTERDIR=	${.CURDIR}/../../graphics/ming
+SLAVEPORT=	py
+PYDISTUTILS_PKGNAME=	mingc
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py
+	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/src
 
 .include "${MASTERDIR}/Makefile"
