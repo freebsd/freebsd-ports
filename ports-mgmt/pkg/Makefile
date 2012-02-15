@@ -45,6 +45,7 @@ MAN1=	pkg.1 \
 	pkg-repo.1 \
 	pkg-search.1 \
 	pkg-update.1 \
+	pkg-updating.1 \
 	pkg-upgrade.1 \
 	pkg-version.1 \
 	pkg-which.1
