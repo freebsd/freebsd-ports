@@ -25,6 +25,7 @@ OPTIONS=	JIT "Enable Just-In-Time compiling support" on \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--enable-utf8 --enable-unicode-properties
 
 .include <bsd.port.options.mk>
@@ -32,7 +33,8 @@ CONFIGURE_ARGS=	--enable-utf8 --enable-unicode-properties
 .if defined(WITH_LIBEDIT)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedit
 CONFIGURE_ARGS+=	--enable-pcretest-libedit
-USE_AUTOTOOLS+=	autoconf
+GNOME_MAKEFILEIN+=	Makefile.am
+USE_AUTOTOOLS+=	autoconf autoheader automake libtool libtoolize
 .endif
 
 .if !defined(WITHOUT_JIT) && ${ARCH} != "sparc64"
