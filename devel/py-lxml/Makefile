@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxml
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,13 +29,13 @@ PORTDOCS=	CHANGES.txt \
 		CREDITS.txt \
 		LICENSES.txt \
 		TODO.txt \
-		README.txt
+		README.rst
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR}
+	@${INSTALL_MAN} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
