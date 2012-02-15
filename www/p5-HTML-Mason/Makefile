@@ -22,6 +22,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
 		p5-Params-Validate>=0.07:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_MODBUILD=	yes
 
