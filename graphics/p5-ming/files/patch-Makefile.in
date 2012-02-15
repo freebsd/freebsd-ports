@@ -1,6 +1,6 @@
---- perl_ext/Makefile.in.orig	2011-08-07 21:32:30.000000000 +0000
-+++ perl_ext/Makefile.in	2011-08-07 21:32:48.000000000 +0000
-@@ -391,7 +391,7 @@
+--- Makefile.in.orig	2011-10-26 15:30:21.000000000 +0800
++++ Makefile.in	2011-11-20 17:27:39.085225614 +0800
+@@ -431,7 +431,7 @@
  	$(MAKE) -f Makefile.perl
  
  install: Makefile.perl
