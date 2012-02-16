@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis-parser
-DISTVERSION=	0.09rc5
+DISTVERSION=	0.09rc6
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/agentzh/lua-redis-parser/tarball/master/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Redis reply parser and request constructor library for Lua
 
 FETCH_ARGS=	-pRr
 USE_LUA?=	5.1
-GITVERSION=	0-g2040bae
+GITVERSION=	0-g93b0a03
 WRKSRC=		${WRKDIR}/agentzh-lua-redis-parser-${GITVERSION:S/^0-g//}
 
 PLIST_FILES=	%%LUA_MODLIBDIR%%/redis/parser.so
