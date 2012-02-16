@@ -1,0 +1,22 @@
+--- Make.pthread.orig	2009-08-26 00:44:41.000000000 -0500
++++ Make.pthread	2012-02-15 14:04:26.020899861 -0600
+@@ -4,14 +4,14 @@
+ AR=ar
+ AS=no-as-here
+ RANLIB=ranlib
+-X11=/usr/X11R6
+-CC=gcc
+-CFLAGS=-Wall -Wno-missing-braces -ggdb -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) -O2
++X11=$(LOCALBASE)
++CC?=cc
++CFLAGS=-Wall -Wno-missing-braces -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD)
+ O=o
+ OS=posix
+ GUI=x11
+-LDADD=-L$(X11)/lib64 -L$(X11)/lib -lX11 -ggdb
+-LDFLAGS=$(PTHREAD)
++LDADD=-L$(X11)/lib64 -L$(X11)/lib -lX11
++LDFLAGS+=$(PTHREAD)
+ TARG=drawterm
+ # AUDIO=none
+ AUDIO=unix

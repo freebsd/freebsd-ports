@@ -1,0 +1,9 @@
+Drawterm(8) is not a Plan 9 program. It is a program that users of
+non-Plan 9 systems can use to establish graphical cpu(1) connections with
+Plan 9 CPU servers. Just as a real Plan 9 terminal does, drawterm serves
+its local name space as well as some devices (the keyboard, mouse, and
+screen) to a remote CPU server, which mounts this name space on /mnt/term
+and starts a shell. Typically, either explicitly or via the profile, one
+uses the shell to start rio(1).
+
+WWW: http://swtch.com/drawterm/
