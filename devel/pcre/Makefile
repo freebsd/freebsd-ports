@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	8.30
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -26,7 +27,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
-CONFIGURE_ARGS=	--enable-utf8 --enable-unicode-properties
+CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
+		--enable-pcre8 --enable-pcre16
 
 .include <bsd.port.options.mk>
 
