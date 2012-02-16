@@ -16,7 +16,7 @@ MASTER_SITES=	http://ftp.aegisub.org/pub/releases/ \
 		ftp://ftp.aegisub.org/pub/releases/ \
 		ftp://ftp2.aegisub.org/pub/releases/
 
-MAINTAINER=	salfrancl@yahoo.es
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aegisub Project is a cross-platform subtitle editor
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config \
@@ -36,7 +36,6 @@ OPTIONS=	DEBUG 		"Enable debug" Off \
 		LUA		"LUA Scripting" On \
 		PERL		"Perl Scripting" On
 
-USE_FREETYPE2=	yes
 USE_ICONV=	yes
 USE_WX=	2.8
 WX_COMPS=	wx contrib
