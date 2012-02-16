@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.1.20100428
+PORTVERSION=	1.1.20111020
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME:S|^c||}/
@@ -22,7 +22,11 @@ LICENSE=	LGPL21
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME} --with-libtool
+CONFIGURE_ARGS=	--enable-widec \
+		--includedir=${PREFIX}/include/${PORTNAME} \
+		--with-libtool \
+		--with-ncursesw \
+		--with-package=${PORTNAME}
 MAKEFILE=	makefile
 
 MAN1=		cdialog.1
@@ -39,12 +43,4 @@ post-install:
 	cd ${WRKSRC}/samples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 700032
-CONFIGURE_ARGS+=	--with-ncursesw --enable-widec
-.else
-CONFIGURE_ARGS+=	--with-ncurses
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

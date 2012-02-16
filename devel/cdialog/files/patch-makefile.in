@@ -1,56 +1,28 @@
---- makefile.in	2008-03-15 19:55:17.680943499 -0500
-+++ makefile.in	2008-03-15 19:55:36.656135598 -0500
-@@ -102,7 +102,7 @@
- 	dlg_config.h \
- 	dlg_keys.h
+--- makefile.in.orig	2011-10-21 05:03:37.000000000 +0800
++++ makefile.in	2011-12-25 02:59:10.781638649 +0800
+@@ -85,6 +85,7 @@
+ LIBTOOL_LINK	= @LIB_LINK@
+ LIBTOOL_INSTALL	= @LIB_INSTALL@
+ LIBTOOL_UNINSTALL = @LIB_UNINSTALL@
++LIBTOOL_VERSION = @LIBTOOL_VERSION@
  
--LIB	= @LIB_PREFIX@dialog$a
-+LIB	= @LIB_PREFIX@cdialog$a
- PROG	= dialog$x
- ALL	= $(LIB) $(PROG)
- 
-@@ -126,7 +126,7 @@
+ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM	= $(LIBTOOL_INSTALL) @INSTALL_PROGRAM@
+@@ -102,7 +103,7 @@
+ # The library name $(LIB) is set at configure/make time, since it is used as a
+ # makefile target.  Ditto for $(PROG).
+ LIB		= @LIB_PREFIX@@PACKAGE@$a
+-PROG		= dialog$x
++PROG		= @PACKAGE@$x
+ #
+ # Standard .c to .o compile line.
+ #
+@@ -180,7 +181,7 @@
+ 	$(LIBTOOL_CREATE) $(LIB) $(LIB_OBJECT)
  	$(RANLIB) $@
  
- dialog$x : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
--	$(LINK) -o $@ dialog$o -L. -ldialog $(LDFLAGS) $(LIBS)
-+	$(LINK) -o $@ dialog$o -L. -lcdialog $(LDFLAGS) $(LIBS)
+-dialog$x : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
++$(PROG)$x : $(LIB) dialog$o @INTLDIR_MAKE@ @INTLLIBS@
+ 	$(LINK) -o $@ dialog$o -L. -l@PACKAGE@ $(LDFLAGS) $(LIBS)
  
  clean	\
- distclean \
-@@ -159,7 +159,7 @@
- 	@echo "made $@"
- 
- install-strip :: $(PROG) $(BINDIR)
--	$(INSTALL_PROGRAM) -s $(PROG) $(BINDIR)
-+	$(INSTALL_PROGRAM) -s $(PROG) $(BINDIR)/c${PROG}
- 
- uninstall :: uninstall-bin uninstall-man
- 	@echo "made $@"
-@@ -174,7 +174,7 @@
- 	$(RM) $(BINDIR)/$(PACKAGE)$x
- 
- install-man :: $(MAN1DIR)
--	$(INSTALL_DATA) $(srcdir)/dialog.1 $(MAN1DIR)/$(PACKAGE).1
-+	$(INSTALL_DATA) $(srcdir)/dialog.1 $(MAN1DIR)/c$(PACKAGE).1
- 
- uninstall-man ::
- 	$(RM) $(MAN1DIR)/$(PACKAGE).1
-@@ -182,7 +182,7 @@
- # most users do not want/need the library, so the install rules are distinct.
- install-lib :: $(BINDIR) dialog-config
- 	@ echo "** installing config script in $(BINDIR)"
--	@ $(INSTALL_SCRIPT) dialog-config $(BINDIR)
-+	@ $(INSTALL_SCRIPT) dialog-config $(BINDIR)/cdialog-config
- 
- install-lib :: $(LIB_DIRS) $(LIB) headers.sed
- 	@ echo "** installing library in $(LIBDIR)"
-@@ -204,7 +204,7 @@
- 	$(RM) $(INCLUDEDIR)/dlg_config.h
- 
- install-lib :: $(MAN3DIR)
--	$(INSTALL_DATA) $(srcdir)/dialog.3 $(MAN3DIR)/$(PACKAGE).3
-+	$(INSTALL_DATA) $(srcdir)/dialog.3 $(MAN3DIR)/c$(PACKAGE).3
- 
- uninstall-lib ::
- 	$(RM) $(MAN3DIR)/$(PACKAGE).3
