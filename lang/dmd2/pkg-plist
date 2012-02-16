@@ -36,6 +36,7 @@ include/d/druntime/import/core/exception.di
 include/d/druntime/import/core/math.di
 include/d/druntime/import/core/memory.di
 include/d/druntime/import/core/runtime.di
+include/d/druntime/import/core/simd.di
 include/d/druntime/import/core/stdc/complex.di
 include/d/druntime/import/core/stdc/config.di
 include/d/druntime/import/core/stdc/ctype.di
@@ -97,6 +98,7 @@ include/d/druntime/import/core/sys/posix/sys/time.di
 include/d/druntime/import/core/sys/posix/sys/types.di
 include/d/druntime/import/core/sys/posix/sys/uio.di
 include/d/druntime/import/core/sys/posix/sys/un.di
+include/d/druntime/import/core/sys/posix/sys/utsname.di
 include/d/druntime/import/core/sys/posix/sys/wait.di
 include/d/druntime/import/core/sys/posix/termios.di
 include/d/druntime/import/core/sys/posix/time.di
@@ -156,6 +158,7 @@ include/d/phobos2/std/contracts.d
 include/d/phobos2/std/conv.d
 include/d/phobos2/std/cpuid.d
 include/d/phobos2/std/cstream.d
+include/d/phobos2/std/csv.d
 include/d/phobos2/std/ctype.d
 include/d/phobos2/std/date.d
 include/d/phobos2/std/datebase.d
@@ -186,6 +189,7 @@ include/d/phobos2/std/mathspecial.d
 include/d/phobos2/std/md5.d
 include/d/phobos2/std/metastrings.d
 include/d/phobos2/std/mmfile.d
+include/d/phobos2/std/net/curl.d
 include/d/phobos2/std/net/isemail.d
 include/d/phobos2/std/numeric.d
 include/d/phobos2/std/outbuffer.d
