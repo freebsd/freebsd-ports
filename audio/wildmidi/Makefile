@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wildmidi
-PORTVERSION=	0.2.3.4
+PORTVERSION=	0.2.3.5
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -16,7 +16,9 @@ COMMENT=	A simple software midi player and a core softsynth library
 # player: GPLv3, library: LGPL3
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
+MAKE_JOBS_UNSAFE=	yes
 
+USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -28,7 +30,7 @@ MAN3=		WildMidi_GetString.3 WildMidi_Init.3 WildMidi_MasterVolume.3 \
 		WildMidi_Close.3 WildMidi_Shutdown.3
 MAN5=		wildmidi.cfg.5
 PLIST_FILES=	bin/wildmidi include/wildmidi_lib.h \
-		lib/libWildMidi.la lib/libWildMidi.so.1 lib/libWildMidi.so
+		lib/libWildMidi.la lib/libWildMidi.so.2 lib/libWildMidi.so
 
 post-patch:
 		${REINPLACE_CMD} 's@/etc/@${DATADIR}/@' \
