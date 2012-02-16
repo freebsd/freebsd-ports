@@ -1,5 +1,6 @@
 $FreeBSD$
 
+MOVEDlint.awk - checks MOVED for common errors
 ardiff	- compare two archives easily
 addport	- replacement for easy-import
 bump_revision.pl - Small script to bump the PORTREVISION variable of ports
