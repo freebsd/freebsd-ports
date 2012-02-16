@@ -1,5 +1,6 @@
 bin/vpxdec
 bin/vpxenc
+bin/vp8_scalable_patterns
 include/vpx/vp8.h
 include/vpx/vp8cx.h
 include/vpx/vp8dx.h
@@ -15,7 +16,7 @@ include/vpx/vpx_integer.h
 lib/libvpx.a
 libdata/pkgconfig/vpx.pc
 %%SHARED%%lib/libvpx.so
-%%SHARED%%lib/libvpx.so.0
-%%SHARED%%lib/libvpx.so.0.9
-%%SHARED%%lib/libvpx.so.0.9.7
+%%SHARED%%lib/libvpx.so.1
+%%SHARED%%lib/libvpx.so.1.0
+%%SHARED%%lib/libvpx.so.1.0.0
 @dirrm include/vpx
