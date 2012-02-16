@@ -176,7 +176,7 @@ PLIST_SUB+=	X264=""
 .if defined(WITHOUT_VPX)
 CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
 .else
-LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
 .endif
 
 .if defined(WITHOUT_XVID)

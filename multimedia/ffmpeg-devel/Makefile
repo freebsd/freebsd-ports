@@ -427,7 +427,7 @@ CONFIGURE_ARGS+=	--disable-libvorbis
 
 # vp8
 .if !defined(WITHOUT_VP8)
-LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
 CONFIGURE_ARGS+=	--enable-libvpx
 .else
 CONFIGURE_ARGS+=	--disable-libvpx

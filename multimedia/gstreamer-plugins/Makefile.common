@@ -573,7 +573,7 @@ gst_vorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstvorbis.la \
 gst_vorbis_DIST=	base
 
 # vp8
-gst_vp8_LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
+gst_vp8_LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
 gst_vp8_PLIST_FILES=	${GST_LIB_DIR}/libgstvp8.la \
 			${GST_LIB_DIR}/libgstvp8.a \
 			${GST_LIB_DIR}/libgstvp8.so
