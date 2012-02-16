@@ -7,6 +7,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/ \
 		http://dougbarton.us/Downloads/
@@ -35,6 +36,12 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(WITHOUT_IMLIB)
+USE_EFL=	imlib2
+.else
+CONFIGURE_ARGS+=	--disable-imlib2
 .endif
 
 .if !defined(WITHOUT_PANGO)
