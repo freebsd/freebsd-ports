@@ -102,7 +102,7 @@ CONFIGURE_ARGS+=	--disable-theora
 .endif
 
 .if defined(WITH_VPX)
-LIB_DEPENDS+=		vpx.0:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS+=		vpx.1:${PORTSDIR}/multimedia/libvpx
 .else
 CONFIGURE_ARGS+=	--disable-libvpx-lavc
 .endif
