@@ -22,6 +22,9 @@ MASTERDIR=	${.CURDIR}/../../databases/postgresql84-server
 
 BROKEN=		Does not work with PostgreSQL 8.X
 
+DEPRECATED=	Broken for months with no-one caring, superseded by http://pgtclng.sourceforge.net/
+EXPIRATION_DATE=2012/03/16
+
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
