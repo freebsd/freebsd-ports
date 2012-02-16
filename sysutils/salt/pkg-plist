@@ -101,6 +101,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/freebsdpkg.py
 %%PYTHON_SITELIBDIR%%/salt/modules/freebsdpkg.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/freebsdpkg.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/freebsdservice.py
+%%PYTHON_SITELIBDIR%%/salt/modules/freebsdservice.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/freebsdservice.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/gentoo_service.py
 %%PYTHON_SITELIBDIR%%/salt/modules/gentoo_service.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/gentoo_service.pyo
@@ -116,6 +119,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/modules/kmod.py
 %%PYTHON_SITELIBDIR%%/salt/modules/kmod.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/kmod.pyo
+%%PYTHON_SITELIBDIR%%/salt/modules/kvm_hyper.py
+%%PYTHON_SITELIBDIR%%/salt/modules/kvm_hyper.pyc
+%%PYTHON_SITELIBDIR%%/salt/modules/kvm_hyper.pyo
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.py
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.pyc
 %%PYTHON_SITELIBDIR%%/salt/modules/linux_sysctl.pyo
@@ -266,6 +272,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/runners/__init__.py
 %%PYTHON_SITELIBDIR%%/salt/runners/__init__.pyc
 %%PYTHON_SITELIBDIR%%/salt/runners/__init__.pyo
+%%PYTHON_SITELIBDIR%%/salt/runners/jobs.py
+%%PYTHON_SITELIBDIR%%/salt/runners/jobs.pyc
+%%PYTHON_SITELIBDIR%%/salt/runners/jobs.pyo
 %%PYTHON_SITELIBDIR%%/salt/runners/manage.py
 %%PYTHON_SITELIBDIR%%/salt/runners/manage.pyc
 %%PYTHON_SITELIBDIR%%/salt/runners/manage.pyo
@@ -299,6 +308,9 @@ bin/salt-syndic
 %%PYTHON_SITELIBDIR%%/salt/states/mysql_database.py
 %%PYTHON_SITELIBDIR%%/salt/states/mysql_database.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/mysql_database.pyo
+%%PYTHON_SITELIBDIR%%/salt/states/mysql_grants.py
+%%PYTHON_SITELIBDIR%%/salt/states/mysql_grants.pyc
+%%PYTHON_SITELIBDIR%%/salt/states/mysql_grants.pyo
 %%PYTHON_SITELIBDIR%%/salt/states/mysql_user.py
 %%PYTHON_SITELIBDIR%%/salt/states/mysql_user.pyc
 %%PYTHON_SITELIBDIR%%/salt/states/mysql_user.pyo
