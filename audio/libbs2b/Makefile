@@ -13,9 +13,9 @@ MASTER_SITES=	SF/bs2b/bs2b/${PORTVERSION}
 MAINTAINER=	liangtai.s4@gmail.com
 COMMENT=	Bauer Stereophonic-to-Binaural DSP
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_PKGCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
