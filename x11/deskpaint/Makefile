@@ -1,14 +1,14 @@
-# New ports collection makefile for:   deskpaint
-# Date created:        18 October 2009
+# Updated ports collection makefile for:   deskpaint
+# Date modified:       14 Febuary 2012
 # Whom:                Kirn Gill <segin2005@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	deskpaint
-PORTVERSION=	3
+PORTVERSION=	3.1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.gatorgitter.com/~maties/
+MASTER_SITES=	http://www.squidjam.com/matwm/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	sic_zer0@hotmail.com
