@@ -114,6 +114,8 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pmg_tk/Demo.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/PMGApp.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/PMGApp.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/PyMOLMapLoad.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/PyMOLMapLoad.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/SetEditor.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/SetEditor.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/Setting.py
@@ -122,21 +124,21 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pmg_tk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/__init__.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/__init__.py
-%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/SimpleColorChooser.py
-%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/SimpleColorChooser.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/ColorMap.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/ColorMap.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/ColorRampModel.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/ColorRampModel.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/ModalWindow.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/ModalWindow.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/SimpleColorChooser.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/SimpleColorChooser.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/__init__.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/builder.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/builder.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/hist.py
-%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/volume.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/hist.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/volume.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/volume.pyc
 %%PYTHON_SITELIBDIR%%/pmg_tk/startup/__init__.py
 %%PYTHON_SITELIBDIR%%/pmg_tk/startup/__init__.pyc
@@ -146,7 +148,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pmg_tk/startup/remote_pdb_load.pyc
 %%PYTHON_SITELIBDIR%%/pmg_wx/__init__.py
 %%PYTHON_SITELIBDIR%%/pmg_wx/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pymol-1.4.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/pymol-%%PYMOL_VER%%-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/pymol/__init__.py
 %%PYTHON_SITELIBDIR%%/pymol/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pymol/_cmd.so
@@ -170,6 +172,8 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/computing.pyc
 %%PYTHON_SITELIBDIR%%/pymol/constants.py
 %%PYTHON_SITELIBDIR%%/pymol/constants.pyc
+%%PYTHON_SITELIBDIR%%/pymol/constants_palette.py
+%%PYTHON_SITELIBDIR%%/pymol/constants_palette.pyc
 %%PYTHON_SITELIBDIR%%/pymol/contrib/__init__.py
 %%PYTHON_SITELIBDIR%%/pymol/contrib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pymol/controlling.py
@@ -192,10 +196,10 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/fitting.pyc
 %%PYTHON_SITELIBDIR%%/pymol/gui.py
 %%PYTHON_SITELIBDIR%%/pymol/gui.pyc
-%%PYTHON_SITELIBDIR%%/pymol/helping.py
-%%PYTHON_SITELIBDIR%%/pymol/helping.pyc
 %%PYTHON_SITELIBDIR%%/pymol/headering.py
 %%PYTHON_SITELIBDIR%%/pymol/headering.pyc
+%%PYTHON_SITELIBDIR%%/pymol/helping.py
+%%PYTHON_SITELIBDIR%%/pymol/helping.pyc
 %%PYTHON_SITELIBDIR%%/pymol/importing.py
 %%PYTHON_SITELIBDIR%%/pymol/importing.pyc
 %%PYTHON_SITELIBDIR%%/pymol/internal.py
@@ -405,14 +409,33 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pmg_tk/bitmaps/builder/cyc7.gif
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pmg_tk/bitmaps/builder/cyc7.xbm
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/cmyk.png
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/hsv.ppm
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/incentive_splash.png
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/matrices/BLOSUM62
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/splash.old.png
-%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/hsv.ppm
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/splash.png
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/splash_edu.png
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/cylinder.fs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/cylinder.vs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/cylinder_no_ff.fs
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/default.fs
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/default.vs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/default_es.fs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/default_es.vs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/default_es2.fs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/default_es2.vs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/shadertext.txt
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/sphere.fs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/sphere.vs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/sphere_arb_fs.fs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/sphere_arb_vs.vs
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/spheredirect.vs
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/volume.fs
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders/volume.vs
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/tut/1hpv.pdb
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/xray/atomformfactor2.dat
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/xray/atomformfactor5.dat
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/xray/spgbase.dat
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/chempy/generate_amber.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/chempy/generate_mmff.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/cookbook/area_diff.pml
@@ -449,6 +472,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/chempy_model03.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/click_ordered_list.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/count_molecules.py
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/demo.sdf
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/extend_demo01.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/gl01.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/devel/gl02.py
@@ -520,6 +544,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/dat/small03.mol2
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/dat/tiny.pdb
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/dat/water.pdb
+%%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/headerTest.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/inp/B01.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/inp/B02.py
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/inp/B03.py
@@ -773,12 +798,12 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/xwin.pyc
 %%PYTHON_SITELIBDIR%%/web/__init__.py
 %%PYTHON_SITELIBDIR%%/web/__init__.pyc
-%%PYTHON_SITELIBDIR%%/web/pymolhttpd.py
-%%PYTHON_SITELIBDIR%%/web/pymolhttpd.pyc
 %%PYTHON_SITELIBDIR%%/web/examples/__init__.py
 %%PYTHON_SITELIBDIR%%/web/examples/__init__.pyc
 %%PYTHON_SITELIBDIR%%/web/examples/justhttpd.py
 %%PYTHON_SITELIBDIR%%/web/examples/justhttpd.pyc
+%%PYTHON_SITELIBDIR%%/web/pymolhttpd.py
+%%PYTHON_SITELIBDIR%%/web/pymolhttpd.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/web/examples
 @dirrm %%PYTHON_SITELIBDIR%%/web
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/wizard
@@ -795,6 +820,7 @@ bin/pymol
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/cookbook
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/chempy
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples
+@dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/xray
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/tut
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/shaders
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/data/pymol/matrices
