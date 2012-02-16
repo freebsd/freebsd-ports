@@ -541,6 +541,7 @@
     SUBDIR += nctop
     SUBDIR += netdump-server
     SUBDIR += netident
+    SUBDIR += news
     SUBDIR += nitrogen
     SUBDIR += no-login
     SUBDIR += npadmin
