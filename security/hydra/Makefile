@@ -10,7 +10,8 @@ PORTNAME=	hydra
 PORTVERSION=	7.2
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://freeworld.thc.org/releases/
+MASTER_SITES=	http://freeworld.thc.org/releases/ \
+		PACKETSTORM/groups/thc/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	rm@FreeBSD.org
