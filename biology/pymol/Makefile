@@ -18,25 +18,25 @@ RUN_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-VERSION=	1.4.1
-SVNREVISION=	3946
+VERSION=	1.5.0.1
+SVNREVISION=	3978
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GL=		glut glew
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+PLIST_SUB=	PYMOL_VER=${VERSION} PYTHON_VER=${PYTHON_VER}
 
 pre-build:
 	@${REINPLACE_CMD} -e "s+%%LOCALBASE%%+${LOCALBASE}+"  ${WRKSRC}/setup.py
 
+#do build process actually installs some files, so omitted.
 do-build:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install \
-	; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup2.py install)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup2.py install)
 	@${INSTALL_SCRIPT} ${WRKSRC}/pymol ${PREFIX}/bin/pymol
 
 #maintainance
