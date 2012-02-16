@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.140
+PORTVERSION=	1.3.141
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dcc-servers.net/dcc/source/old/ \
 		http://www.rhyolite.com/anti-spam/dcc/source/old/ \
@@ -18,12 +18,17 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	cgreen@sentex.net
 COMMENT=	Distributed Checksum Clearinghouse bulk email detector
 
+.if ! defined(PACKAGE_BUILDING)
+LICENSE=	DCC
+LICENSE_NAME=	DCC
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	no-pkg-sell no-dist-mirror no-pkg-mirror no-dist-sell
+.endif
+
 HAS_CONFIGURE=	yes
 MANCOMPRESSED=	yes
 MAN8=		cdcc.8 dbclean.8 dblist.8 dcc.8 dccd.8 dccifd.8 dccm.8 \
 		dccproc.8 dccsight.8
-
-USE_RC_SUBR=
 
 #
 # ALT_HOME -	DCC keeps its config files in its home directory but writes
@@ -113,7 +118,7 @@ MILTERLIB=	${MILTERBASE}/lib
 CPPFLAGS+=	-I${MILTERINC}
 LDFLAGS+=	-L${MILTERLIB}
 
-CONFIGURE_ARGS+=	--with-sendmail=${MILTERBASE}
+CONFIGURE_ARGS+=	--with-sendmail=yes
 
 PLIST_SUB+=	WITH_DCCM=""
 
