@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
 DISTNAME=	fltk-2.0.x-alpha-${SNAPSHOT}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Light Toolkit version 2 (development snapshot)
 
 LICENSE=	FLTK
