@@ -7,6 +7,7 @@
 
 PORTNAME=	db5
 PORTVERSION=	5.2.36.0
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -87,9 +88,9 @@ post-patch:
 post-install:
 .for i in libdb libdb_cxx libdb_stl ${libdb_sql} ${libdb_java}
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
-	${LN} -s -f ${PORTNAME}/${i}-${BDBMAJ}.so.0 ${PREFIX}/lib
+	${LN} -s -f ${PORTNAME}/${i}-${BDBMAJ}.so ${PREFIX}/lib
 	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
-	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBMAJ}.so
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBMAJ}.so.0
 	${LN} -s -f ${i}-${BDBVER}.a ${PREFIX}/lib/${PORTNAME}/${i}.a
 	${CHMOD} a-w ${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0 \
 		${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.a \
