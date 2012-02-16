@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	font-migmix
-PORTVERSION=	1.0.20110514
+PORTVERSION=	1.0.20111002
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	mix-mplus-ipa/51977
-DISTFILES=	MigMix-1M-20110514${EXTRACT_SUFX} \
-		MigMix-2M-20110514${EXTRACT_SUFX} \
-		MigMix-1P-20110514${EXTRACT_SUFX} \
-		MigMix-2P-20110514${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	mix-mplus-ipa/53388
+DISTFILES=	migmix-1m-20111002${EXTRACT_SUFX} \
+		migmix-2m-20111002${EXTRACT_SUFX} \
+		migmix-1p-20111002${EXTRACT_SUFX} \
+		migmix-2p-20111002${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Mixed Japanese font with IPA Gothic and M-plus outline
@@ -29,29 +29,29 @@ SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt Readme_ipag00303.txt \
-		README_E README_J LICENSE_E LICENSE_J MigMix-README.txt
+		README_E README_J LICENSE_E LICENSE_J migmix-README.txt
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
 
 do-install:
-	cd ${WRKDIR}/MigMix-1M-20110514/ && \
+	cd ${WRKDIR}/migmix-1m-20111002/ && \
 		${INSTALL_DATA} ipag00303/*.txt \
-			mplus-TESTFLIGHT-039/* \
-			MigMix-README.txt \
+			mplus-TESTFLIGHT-043/* \
+			migmix-README.txt \
 			${WRKDIR}
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} \
-		${WRKDIR}/MigMix-1M-20110514/*.ttf \
-		${WRKDIR}/MigMix-2M-20110514/*.ttf \
-		${WRKDIR}/MigMix-1P-20110514/*.ttf \
-		${WRKDIR}/MigMix-2P-20110514/*.ttf \
+		${WRKDIR}/migmix-1m-20111002/*.ttf \
+		${WRKDIR}/migmix-2m-20111002/*.ttf \
+		${WRKDIR}/migmix-1p-20111002/*.ttf \
+		${WRKDIR}/migmix-2p-20111002/*.ttf \
 		${DATADIR}
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/MigMix*.ttf \
+	${LN} -s -f ${DATADIR}/migmix*.ttf \
 		${PREFIX}/${LOCAL_FONTSDIR}/TTF/
 	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/MigMix*.ttf \
+	${LN} -s -f ${DATADIR}/migmix*.ttf \
 		${PREFIX}/${X_FONTSDIR}/TTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-migmix.conf \
 		${FILESDIR}/62-fonts-migmix.conf \

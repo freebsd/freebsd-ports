@@ -1,47 +1,47 @@
 @comment $FreeBSD$
-%%DATADIR%%/Migu-1C-bold.ttf
-%%DATADIR%%/Migu-1C-regular.ttf
-%%DATADIR%%/Migu-1P-bold.ttf
-%%DATADIR%%/Migu-1P-regular.ttf
-%%DATADIR%%/Migu-1M-bold.ttf
-%%DATADIR%%/Migu-1M-regular.ttf
-%%DATADIR%%/Migu-2M-bold.ttf
-%%DATADIR%%/Migu-2M-regular.ttf
-%%DATADIR%%/Migu-1VS-bold.ttf
-%%DATADIR%%/Migu-1VS-regular.ttf
-%%DATADIR%%/Migu-2DS-bold.ttf
-%%DATADIR%%/Migu-2DS-regular.ttf
+%%DATADIR%%/migu-1c-bold.ttf
+%%DATADIR%%/migu-1c-regular.ttf
+%%DATADIR%%/migu-1p-bold.ttf
+%%DATADIR%%/migu-1p-regular.ttf
+%%DATADIR%%/migu-1m-bold.ttf
+%%DATADIR%%/migu-1m-regular.ttf
+%%DATADIR%%/migu-2m-bold.ttf
+%%DATADIR%%/migu-2m-regular.ttf
+%%DATADIR%%/migu-1vs-bold.ttf
+%%DATADIR%%/migu-1vs-regular.ttf
+%%DATADIR%%/migu-2ds-bold.ttf
+%%DATADIR%%/migu-2ds-regular.ttf
 @dirrm %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TTF/Migu-1C-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1C-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1P-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1P-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1M-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1M-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-2M-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-2M-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1VS-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-1VS-regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-2DS-bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/Migu-2DS-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1c-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1c-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1p-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1p-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1m-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1m-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-2m-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-2m-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1vs-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-1vs-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-2ds-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/migu-2ds-regular.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-migu.conf
 etc/fonts/conf.avail/62-fonts-migu.conf
 etc/fonts/conf.d/20-unhint-migu.conf
 etc/fonts/conf.d/62-fonts-migu.conf
-%%X_FONTSDIR%%/TTF/Migu-1C-bold.ttf
-%%X_FONTSDIR%%/TTF/Migu-1C-regular.ttf
-%%X_FONTSDIR%%/TTF/Migu-1P-bold.ttf
-%%X_FONTSDIR%%/TTF/Migu-1P-regular.ttf
-%%X_FONTSDIR%%/TTF/Migu-1M-bold.ttf
-%%X_FONTSDIR%%/TTF/Migu-1M-regular.ttf
-%%X_FONTSDIR%%/TTF/Migu-2M-bold.ttf
-%%X_FONTSDIR%%/TTF/Migu-2M-regular.ttf
-%%X_FONTSDIR%%/TTF/Migu-1VS-bold.ttf
-%%X_FONTSDIR%%/TTF/Migu-1VS-regular.ttf
-%%X_FONTSDIR%%/TTF/Migu-2DS-bold.ttf
-%%X_FONTSDIR%%/TTF/Migu-2DS-regular.ttf
+%%X_FONTSDIR%%/TTF/migu-1c-bold.ttf
+%%X_FONTSDIR%%/TTF/migu-1c-regular.ttf
+%%X_FONTSDIR%%/TTF/migu-1p-bold.ttf
+%%X_FONTSDIR%%/TTF/migu-1p-regular.ttf
+%%X_FONTSDIR%%/TTF/migu-1m-bold.ttf
+%%X_FONTSDIR%%/TTF/migu-1m-regular.ttf
+%%X_FONTSDIR%%/TTF/migu-2m-bold.ttf
+%%X_FONTSDIR%%/TTF/migu-2m-regular.ttf
+%%X_FONTSDIR%%/TTF/migu-1vs-bold.ttf
+%%X_FONTSDIR%%/TTF/migu-1vs-regular.ttf
+%%X_FONTSDIR%%/TTF/migu-2ds-bold.ttf
+%%X_FONTSDIR%%/TTF/migu-2ds-regular.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
