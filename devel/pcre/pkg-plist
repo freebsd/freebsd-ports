@@ -11,6 +11,10 @@ lib/libpcre.a
 lib/libpcre.la
 lib/libpcre.so
 lib/libpcre.so.1
+lib/libpcre16.a
+lib/libpcre16.la
+lib/libpcre16.so
+lib/libpcre16.so.0
 lib/libpcrecpp.a
 lib/libpcrecpp.la
 lib/libpcrecpp.so
@@ -20,5 +24,6 @@ lib/libpcreposix.la
 lib/libpcreposix.so
 lib/libpcreposix.so.0
 libdata/pkgconfig/libpcre.pc
+libdata/pkgconfig/libpcre16.pc
 libdata/pkgconfig/libpcrecpp.pc
 libdata/pkgconfig/libpcreposix.pc
