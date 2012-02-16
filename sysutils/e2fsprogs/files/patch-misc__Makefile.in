@@ -1,15 +1,17 @@
---- a/misc/Makefile.in.orig	2009-08-23 04:44:35.000000000 +0200
-+++ b/misc/Makefile.in	2009-10-11 23:07:27.000000000 +0200
-@@ -25,14 +25,14 @@
+--- ./misc/Makefile.in.orig	2011-09-18 23:14:56.000000000 +0200
++++ ./misc/Makefile.in	2012-02-16 00:35:12.000000000 +0100
+@@ -28,15 +28,15 @@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
  			$(E2IMAGE_PROG) @FSCK_PROG@ e2undo
--USPROGS=	mklost+found filefrag e2freefrag $(UUIDD_PROG)
-+USPROGS=	mklost+found e2freefrag
+-USPROGS=	mklost+found filefrag e2freefrag $(UUIDD_PROG) $(E4DEFRAG_PROG)
++USPROGS=	mklost+found e2freefrag $(E4DEFRAG_PROG)
  SMANPAGES=	tune2fs.8 mklost+found.8 mke2fs.8 dumpe2fs.8 badblocks.8 \
  			e2label.8 $(FINDFS_MAN) $(BLKID_MAN) $(E2IMAGE_MAN) \
--			logsave.8 filefrag.8 e2freefrag.8 e2undo.8 $(UUIDD_MAN) @FSCK_MAN@
-+			logsave.8 e2freefrag.8 e2undo.8 @FSCK_MAN@
+-			logsave.8 filefrag.8 e2freefrag.8 e2undo.8 \
+-			$(UUIDD_MAN) $(E4DEFRAG_MAN) @FSCK_MAN@
++			logsave.8 e2freefrag.8 e2undo.8 \
++			$(E4DEFRAG_MAN) @FSCK_MAN@
  FMANPAGES=	mke2fs.conf.5
  
 -UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
@@ -19,7 +21,7 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -466,34 +466,9 @@
+@@ -475,34 +475,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done

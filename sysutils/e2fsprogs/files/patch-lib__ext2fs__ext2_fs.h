@@ -1,8 +1,8 @@
---- a/lib/ext2fs/ext2_fs.h.orig	Sat Jun 30 16:36:37 2007
-+++ b/lib/ext2fs/ext2_fs.h	Sat Jun 30 16:36:43 2007
-@@ -422,7 +422,7 @@
+--- ./lib/ext2fs/ext2_fs.h.orig	2011-09-25 07:55:10.000000000 +0200
++++ ./lib/ext2fs/ext2_fs.h	2012-02-16 00:35:12.000000000 +0100
+@@ -454,7 +454,7 @@
  
- #define i_size_high	i_dir_acl
+ #define i_dir_acl	i_size_high
  
 -#if defined(__KERNEL__) || defined(__linux__)
 +#if defined(__KERNEL__) || defined(__linux__) || defined(__FreeBSD__)
