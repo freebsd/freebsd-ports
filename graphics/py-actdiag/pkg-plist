@@ -6,12 +6,6 @@ bin/actdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramDraw.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramDraw.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramDraw.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrics.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrics.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/DiagramMetrics.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/__init__.pyo
@@ -21,12 +15,24 @@ bin/actdiag
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/command.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/command.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/command.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/diagparser.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/diagparser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/diagparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/drawer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/drawer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/drawer.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/elements.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/elements.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/elements.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/metrics.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/metrics.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/metrics.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/parser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/parser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/parser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins/autolane.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins/autolane.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins/autolane.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_pep8.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_pep8.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests/test_pep8.pyo
@@ -45,6 +51,7 @@ bin/actdiag
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils/rst
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/utils
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/actdiag
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
