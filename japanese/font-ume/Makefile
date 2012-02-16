@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	font-ume
-PORTVERSION=	0.0.427
+PORTVERSION=	0.0.436
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	ume-font/22212
-DISTNAME=	umefont_427
+DISTNAME=	umefont_436
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ume Japanese TrueType fonts
@@ -19,7 +19,6 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_XZ=		yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/umefont_427
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
