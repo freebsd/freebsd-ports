@@ -14428,6 +14428,7 @@ p5-Test-LoadAllModules          ports/devel/p5-Test-LoadAllModules
 p5-Test-Log4perl                ports/devel/p5-Test-Log4perl
 p5-Test-LongString              ports/devel/p5-Test-LongString
 p5-Test-Manifest                ports/devel/p5-Test-Manifest
+p5-Test-ManyParams              ports/devel/p5-Test-ManyParams
 p5-Test-Memory-Cycle            ports/devel/p5-Test-Memory-Cycle
 p5-Test-Mini                    ports/devel/p5-Test-Mini
 p5-Test-Mini-Unit               ports/devel/p5-Test-Mini-Unit
@@ -18932,6 +18933,7 @@ p5-test-loadallmodules          ports/devel/p5-Test-LoadAllModules
 p5-test-log4perl                ports/devel/p5-Test-Log4perl
 p5-test-longstring              ports/devel/p5-Test-LongString
 p5-test-manifest                ports/devel/p5-Test-Manifest
+p5-test-manyparams              ports/devel/p5-Test-ManyParams
 p5-test-memory-cycle            ports/devel/p5-Test-Memory-Cycle
 p5-test-mini                    ports/devel/p5-Test-Mini
 p5-test-mini-unit               ports/devel/p5-Test-Mini-Unit
@@ -24298,6 +24300,7 @@ rubygem-gettext                 ports/devel/rubygem-gettext
 rubygem-gibbler                 ports/devel/rubygem-gibbler
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
+rubygem-gpgr                    ports/security/rubygem-gpgr
 rubygem-graphviz                ports/graphics/rubygem-graphviz
 rubygem-grit                    ports/devel/rubygem-grit
 rubygem-gruff                   ports/graphics/rubygem-gruff
@@ -26572,6 +26575,7 @@ udns                            ports/dns/udns
 udptunnel                       ports/net/udptunnel
 udpxy                           ports/net/udpxy
 udrawgraph                      ports/graphics/uDrawGraph
+udt                             ports/net/udt
 udunits                         ports/science/udunits
 uebimiau                        ports/mail/uebimiau
 uemacs                          ports/editors/uemacs
