@@ -17,6 +17,8 @@ COMMENT=	Send Log::Any logs to syslog
 RUN_DEPENDS=	p5-Log-Any-Adapter>=0:${PORTSDIR}/devel/p5-Log-Any-Adapter \
 		p5-Unix-Syslog>=0:${PORTSDIR}/sysutils/p5-Unix-Syslog
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule
 
 PERL_CONFIGURE=	yes
 
