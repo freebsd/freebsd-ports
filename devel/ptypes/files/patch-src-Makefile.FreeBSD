@@ -19,7 +19,8 @@
  SOSTRIP = strip
  
  SOEXT = so
- SOINSTOPT = -h $(SOREALNAME)
+-SOINSTOPT = -h $(SOREALNAME)
++SOINSTOPT = -Wl,-soname,$(SOREALNAME)
  
 -PREFIX = /usr/local
 +PREFIX = $(PREFIX)
