@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.94
+PORTVERSION=	1.96.7
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://linuxtesting.org/downloads/ \
+MASTER_SITES=	http://forge.ispras.ru/attachments/download/1433/ \
 		LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
@@ -18,7 +18,7 @@ LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
 NO_BUILD=	yes
-.ifdef(MAINTAINER_MODE)
+.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 USE_PERL5=	yes
 .else
 USE_PERL5_RUN=	yes
@@ -26,10 +26,15 @@ USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/${PORTNAME}.pl
 
-CPPFILT?=	/usr/bin/c++filt
-READELF?=	/usr/bin/readelf
-
 .include <bsd.port.pre.mk>
+
+.if !empty(CC:M*clang*)
+IGNORE =	: this port requires CC to be a version of gcc
+.endif
+
+CPPFILT?=	/usr/bin/c++filt
+GZ?=		/usr/bin/gzip
+READELF?=	/usr/bin/readelf
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
@@ -45,11 +50,13 @@ PORT${w}=	*
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "\|get_CmdPath(\"ar\")|s|\"ar\"|\"${AR}\"|" \
 		-e "\|get_CmdPath(\"c++filt\")|s|\"c++filt\"|\"${CPPFILT}\"|" \
 		-e "\|get_CmdPath(\"gcc\")|s|\"gcc\"|\"${CC}\"|" \
 		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
 		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
+		-e "\|my \$$GzipCmd =|s|=.*|= \"${GZ}\";|" \
+		-e "\|my \$$TarCmd =|s|=.*|= \"${TAR}\";|" \
+		-e "\|TarCmd -xv.*>|{h; s| >.*|\");|; x; s|-xv|-t|; G;}" \
 		-e "s|ACC_MODULES_INSTALL_PATH|${DATADIR}|" \
 		${WRKSRC}/${PORTNAME}.pl
 	@${SED} -i "" -e "\|BuildCmd|s|GCC_PATH.\"|& ${PICFLAG}|" \
@@ -67,9 +74,11 @@ do-install:
 	"modules/Internals modules/*.xml modules/Targets/unix" ${DATADIR})
 .endif
 
-.ifdef(MAINTAINER_MODE)
+.if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 check regression-test test: build
-	@(cd ${WRKSRC}; ${PERL} ./${PORTNAME}.pl -test )
+	cd ${WRKSRC}; \
+	${PERL} ./${PORTNAME}.pl -test; \
+	${PERL} ./${PORTNAME}.pl -test-dump
 
 .endif
 
