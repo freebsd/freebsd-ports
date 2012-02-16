@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120216:
+  AFFECTS: users of multimedia/libvpx
+  AUTHOR: ashish@FreeBSD.org
+
+  libvpx has been updated to version 1.0.0, with a shared library bump.
+  This requires dependencies to be rebuilt.
+
+  # portmaster -r multimedia/libvpx
+  or
+  # portupgrade -r multimedia/libvpx
+
 20120214:
   AFFECTS: users of net/libexosip2
   AUTHOR: jgh@FreeBSD.org
