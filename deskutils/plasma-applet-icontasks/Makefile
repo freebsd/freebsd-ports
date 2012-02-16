@@ -7,6 +7,7 @@
 
 PORTNAME=	icontasks
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

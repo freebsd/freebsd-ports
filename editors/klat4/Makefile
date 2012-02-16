@@ -7,7 +7,7 @@
 
 PORTNAME=	klat4
 PORTVERSION=	0.6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	http://klat.algebraic.ru/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libalkimia
 PORTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	137323-${PORTNAME}-${PORTVERSION}

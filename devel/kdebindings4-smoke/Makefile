@@ -7,6 +7,7 @@
 
 PORTNAME=	kdebindings-smoke
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty

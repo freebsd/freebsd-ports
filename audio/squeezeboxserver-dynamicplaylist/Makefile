@@ -7,6 +7,7 @@
 
 PORTNAME=	dynamicplaylist
 PORTVERSION=	2.8.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.isaksson.info/download/do/downloadapplication?name=slimserver-dynamicplaylist&filename=/
 PKGNAMEPREFIX=	squeezeboxserver-

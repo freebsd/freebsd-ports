@@ -7,6 +7,7 @@
 
 PORTNAME=	showimage
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	143977-${PORTNAME}-${PORTVERSION}

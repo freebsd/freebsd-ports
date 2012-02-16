@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 

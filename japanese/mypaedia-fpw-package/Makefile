@@ -7,7 +7,7 @@
 
 PORTNAME=	mypaedia-fpw-package
 PORTVERSION=	1.0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 

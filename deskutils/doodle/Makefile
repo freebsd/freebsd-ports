@@ -8,7 +8,7 @@
 
 PORTNAME=	doodle
 PORTVERSION=	0.6.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://gnunet.org/doodle/download/
 

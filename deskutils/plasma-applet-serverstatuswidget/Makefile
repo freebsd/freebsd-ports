@@ -7,6 +7,7 @@
 
 PORTNAME=	serverstatuswidget
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.22
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none

@@ -7,7 +7,7 @@
 
 PORTNAME=	avbin
 PORTVERSION=	7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://mirror.amdmi3.ru/distfiles/
