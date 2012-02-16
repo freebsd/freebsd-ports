@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manpages-de
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	german
 MASTER_SITES=	http://www.infodrom.org/projects/manpages-de/download/ \
 		http://wolfram.schneider.org/src/
