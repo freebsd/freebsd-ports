@@ -7,6 +7,7 @@
 
 PORTNAME=	kcachegrind
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kcachegrind.sourceforge.net/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-upnp
 PORTVERSION=	0.0.2a2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/177/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION:S/a/-alpha/}${DISTVERSIONSUFFIX}

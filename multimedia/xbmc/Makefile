@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0.b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 DISTNAME=	${PORTNAME}-11.0-Eden_beta2

@@ -7,6 +7,7 @@
 
 PORTNAME=	fancytasks
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-

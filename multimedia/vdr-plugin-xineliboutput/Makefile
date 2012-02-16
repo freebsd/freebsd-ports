@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20111129.1002
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot

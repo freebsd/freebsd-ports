@@ -7,6 +7,7 @@
 
 PORTNAME=	ksshaskpass
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	50971-${PORTNAME}-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/

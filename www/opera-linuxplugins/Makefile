@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://opera.inode.at/${MASTER_SITES_VER_PATH} \
 		http://gd.tuwien.ac.at/infosys/browsers/opera/${MASTER_SITES_VER_PATH} \

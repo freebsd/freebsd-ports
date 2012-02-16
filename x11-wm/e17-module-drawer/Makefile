@@ -7,6 +7,7 @@
 
 PORTNAME=	drawer
 PORTVERSION=	20110129
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
 PKGNAMEPREFIX=	e17-module-

@@ -7,7 +7,7 @@
 
 PORTNAME=	ultracopier
 PORTVERSION=	0.2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	http://files.first-world.info/ultracopier/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

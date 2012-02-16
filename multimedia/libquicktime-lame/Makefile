@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	libquicktime
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-lame
 PORTREVISION=	1

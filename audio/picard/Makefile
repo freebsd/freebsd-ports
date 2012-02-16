@@ -7,6 +7,7 @@
 
 PORTNAME=	picard
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \

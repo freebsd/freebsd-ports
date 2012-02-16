@@ -7,7 +7,7 @@
 
 PORTNAME=	melodie
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-

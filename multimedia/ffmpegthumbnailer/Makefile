@@ -6,6 +6,7 @@
 
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	GOOGLE_CODE
 
