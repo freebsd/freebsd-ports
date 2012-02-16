@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	font-vlgothic
-PORTVERSION=	20110414
+PORTVERSION=	20120130
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	vlgothic/51670
+MASTER_SITE_SUBDIR=	vlgothic/54725
 DISTNAME=	VLGothic-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -17,7 +17,7 @@ COMMENT=	VLGothic Japanese TrueType fonts
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
