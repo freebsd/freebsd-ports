@@ -7,6 +7,7 @@
 
 PORTNAME=	libraw
 PORTVERSION=	0.14.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -27,7 +28,7 @@ OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable demosaic pack GPL2" off \
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--program-prefix=${PREFIX} --disable-examples
+CONFIGURE_ARGS+=--program-prefix=${PREFIX} --disable-examples --disable-jasper
 CFLAGS+=	-fPIC
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
