@@ -7,6 +7,7 @@
 
 PORTNAME=	mysql
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/336/
 PKGNAMEPREFIX=	ocaml-
@@ -20,7 +21,7 @@ USE_MYSQL=		yes
 
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
-USE_OCAML_FIND_PLIST=	yes
+USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
