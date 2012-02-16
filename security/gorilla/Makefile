@@ -6,38 +6,62 @@
 #
 
 PORTNAME=	gorilla
-PORTVERSION=	1.5.3.4
-DISTVERSIONSUFFIX=	7c3e819
+PORTVERSION=	1.5.3.6
+DISTVERSIONSUFFIX=	a72f9d7
 CATEGORIES=	security
-MASTER_SITES=	LOCAL/crees/gorilla				\
+MASTER_SITES=	LOCAL/crees/gorilla/				\
 		http://www.bayofrum.net/dist/${PORTNAME}/
-DISTNAME=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
+DISTFILES=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}${EXTRACT_SUFX}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Password Gorilla is a cross-platform Password Manager
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	itcl>=3.4:${PORTSDIR}/lang/itcl \
 		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
-LICENSE=	GPLv2
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+GORILLAARCH=	FreeBSD-x86
+DISTFILES+=	gorilla-sha256-${DISTVERSION}${EXTRACT_SUFX}
+.elif ${ARCH} == amd64
+GORILLAARCH=	FreeBSD-${ARCH}
+DISTFILES+=	gorilla-sha256-${DISTVERSION}${EXTRACT_SUFX}
+.else
+GORILLAARCH=	bogus
+WITHOUTSO=	"@comment "
+.endif
+
+PLIST_SUB+=	GORILLAARCH=${GORILLAARCH:L} WITHOUTSO=${WITHOUTSO}
 
 WRKSRC=		${WRKDIR}/zdia-${PORTNAME}-${DISTVERSIONSUFFIX}
 USE_TCL_RUN=	85+
 USE_TK=		85+
-NO_BUILD=	yes
 SUB_FILES=	gorilla
 SUB_LIST=	WISH=${WISH}
 PORTDOCS=	*
 
-SRC_DIRS=	blowfish msgs pics pwsafe sha1 sha256c tooltip twofish
+SRC_DIRS=	blowfish modules msgs pics pwsafe tcllib twofish
 
 post-patch:
 # We don't want Linux/Windows/Darwin binaries thank you
-	${FIND} ${WRKSRC} \( \
-		-name "*.so" \
-		-or -name "*.dll" \
-		-or -name "*.dylib" \
-	   \) -delete
+.for irrelevant in linux-ix86 linux-x86_64 macosx-ix86 \
+		   macosx-x86_64 win32-ix86 win32-x86_64
+	${RM} -r ${WRKSRC}/sources/tcllib/sha256c/${irrelevant}
+.endfor
+.for irrelevant in f32-Darwin-x86.dylib f32-Windows-x86.dll \
+		   f32-Linux-x86.so f32-Linux-x86_64.so
+	${RM} ${WRKSRC}/sources/twofish/${irrelevant}
+.endfor
+
+do-build:
+.if !defined(WITHOUTSO)
+	${MV} ${WRKDIR}/${PORTNAME}-sha256/sha256/${GORILLAARCH}/ \
+		${WRKSRC}/sources/tcllib/sha256c/${GORILLAARCH:L}
+.endif
+
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/gorilla
