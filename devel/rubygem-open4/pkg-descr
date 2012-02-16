@@ -2,3 +2,4 @@ open child process with handles on pid, stdin, stdout, and stderr: manage
 child processes and their io handles easily.
 
 WWW: https://github.com/ahoward/open4
+RG: https://rubygems.org/gems/open4

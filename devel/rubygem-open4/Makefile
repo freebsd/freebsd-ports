@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	open4
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open4 manages child processes and their io handles
 
 USE_RUBY=	yes
