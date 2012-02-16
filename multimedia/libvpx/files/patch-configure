@@ -1,10 +1,10 @@
---- configure.orig	2011-05-03 14:04:54.078494804 +0200
-+++ configure	2011-05-03 14:05:10.689164730 +0200
-@@ -85,6 +85,7 @@
- all_platforms="${all_platforms} armv6-linux-gcc"
- all_platforms="${all_platforms} armv6-none-rvct"
- all_platforms="${all_platforms} armv6-symbian-gcc"
+--- configure.orig
++++ configure
+@@ -125,6 +125,7 @@
+ all_platforms="${all_platforms} x86_64-win64-vs9"
+ all_platforms="${all_platforms} universal-darwin8-gcc"
+ all_platforms="${all_platforms} universal-darwin9-gcc"
 +all_platforms="${all_platforms} ia64-linux-gcc"
- all_platforms="${all_platforms} iwmmxt-linux-rvct"
- all_platforms="${all_platforms} iwmmxt-linux-gcc"
- all_platforms="${all_platforms} iwmmxt2-linux-rvct"
+ all_platforms="${all_platforms} generic-gnu"
+
+ # all_targets is a list of all targets that can be configured
