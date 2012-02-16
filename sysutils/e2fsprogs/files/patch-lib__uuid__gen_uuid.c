@@ -1,9 +1,6 @@
-This patch contributed by Douglas William Thrift to enable libuuid to
-obtain the ethernet hardware address.
-
---- ./lib/uuid/gen_uuid.c.orig	2009-06-30 20:41:09.000000000 -0700
-+++ ./lib/uuid/gen_uuid.c	2009-07-28 06:46:12.380950940 -0700
-@@ -89,6 +89,7 @@
+--- ./lib/uuid/gen_uuid.c.orig	2011-09-18 20:20:44.000000000 +0200
++++ ./lib/uuid/gen_uuid.c	2012-02-16 00:35:12.000000000 +0100
+@@ -91,6 +91,7 @@
  #ifdef HAVE_SYS_RESOURCE_H
  #include <sys/resource.h>
  #endif
@@ -11,7 +8,7 @@ obtain the ethernet hardware address.
  
  #include "uuidP.h"
  #include "uuidd.h"
-@@ -295,6 +296,28 @@
+@@ -297,6 +298,28 @@
  		}
  	}
  	close(sd);

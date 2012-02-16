@@ -1,0 +1,11 @@
+--- ./tests/test_script.in.orig	2012-02-16 00:46:56.000000000 +0100
++++ ./tests/test_script.in	2012-02-16 00:47:07.000000000 +0100
+@@ -39,7 +39,7 @@
+ 
+ . $TEST_CONFIG
+ 
+-TMPFILE=$(mktemp)
++TMPFILE=$(mktemp /tmp/tmp.XXXXXXXXXX)
+ 
+ for test_dir in $TESTS
+ do
