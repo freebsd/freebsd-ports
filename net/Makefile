@@ -1212,7 +1212,6 @@
     SUBDIR += xrdp
     SUBDIR += yaph
     SUBDIR += yate
-    SUBDIR += yate-devel
     SUBDIR += yaz
     SUBDIR += yaz++
     SUBDIR += yazproxy

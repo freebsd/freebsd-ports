@@ -3232,3 +3232,4 @@ www/zope-cmf||2012-02-07|Has expired: Doesn't work with modern Zope versions
 chinese/fcitx-keyboard|textproc/fcitx-keyboard|2012-02-07|Moved to more appropriate category
 textproc/hs-attoparsec-text||2012-02-13|Removed: The package is deprecated.
 devel/hs-hmake||2012-02-13|Removed: Broken, unmaintained upstream.
+net/yate-devel||2012-02-17|Removed, please use net/yate
