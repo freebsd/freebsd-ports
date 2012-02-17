@@ -7,7 +7,7 @@
 
 PORTNAME=	gmt
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/gmt/ \
 		ftp://ftp.iag.usp.br/pub/gmt/ \
@@ -18,8 +18,13 @@ DIST_SUBDIR=	gmt
 EXTRACT_ONLY=	${DISTNAME}_progs${EXTRACT_SUFX} \
 		${DISTNAME}_man${EXTRACT_SUFX}
 
-MAINTAINER=	sec@42.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Generic Mapping Tools data processing and display software package
+
+DEPRECATED=	Hasn't fetched since before 2006
+EXPIRATION_DATE=2012-04-17
+
+BROKEN=		Doesn't fetch
 
 LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
