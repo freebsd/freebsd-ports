@@ -70,9 +70,11 @@ CUPSSYSGRP=	wheel
 
 # UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
 .if defined(CUPS_CLIENT)
+PORTREVISION=	1
 LICENSE=	LGPL21
 CUPS_SUFFIX=	-client
 .elif defined(CUPS_IMAGE)
+PORTREVISION=	0
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
@@ -87,6 +89,7 @@ CONFLICTS+=	cupsddk-*
 COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
+USE_ICONV=	yes
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.client
