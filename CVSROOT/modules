@@ -2607,6 +2607,7 @@ dracmail                        ports/mail/dracmail
 dradis                          ports/security/dradis
 dragon                          ports/devel/dragon
 dragstack                       ports/deskutils/dragstack
+drawterm                        ports/net/drawterm
 dreampie                        ports/devel/dreampie
 drexelsnmp                      ports/java/drexelsnmp
 drg2sbg                         ports/converters/drg2sbg
@@ -10018,6 +10019,7 @@ newfile                         ports/devel/newfile
 newlisp                         ports/lang/newlisp
 newmail                         ports/mail/newmail
 newmat                          ports/math/newmat
+news                            ports/sysutils/news
 newsbeuter                      ports/www/newsbeuter
 newscache                       ports/news/newscache
 newsfetch                       ports/news/newsfetch
@@ -26395,6 +26397,7 @@ tshark-lite                     ports/net/tshark-lite
 tsito                           ports/games/tsito
 tsocks                          ports/net/tsocks
 tss                             ports/sysutils/tss
+tsshbatch                       ports/security/tsshbatch
 tstools                         ports/multimedia/tstools
 tt                              ports/games/tt
 tt-rss                          ports/www/tt-rss
@@ -27147,6 +27150,7 @@ wide-dhcp                       ports/net-mgmt/wide-dhcp
 widelands                       ports/games/widelands
 widentd                         ports/net/widentd
 wifimgr                         ports/net-mgmt/wifimgr
+wiggle                          ports/textproc/wiggle
 wiimms                          ports/sysutils/wiimms
 wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
