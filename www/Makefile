@@ -282,6 +282,7 @@
     SUBDIR += hs-cgi
     SUBDIR += hs-hS3
     SUBDIR += hs-happstack-data
+    SUBDIR += hs-happstack-util
     SUBDIR += hs-heist
     SUBDIR += hs-fastcgi
     SUBDIR += hs-http-server
