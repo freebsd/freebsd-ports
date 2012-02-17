@@ -7,6 +7,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
+PORTEPOCH=		1
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
