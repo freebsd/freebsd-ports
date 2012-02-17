@@ -21,6 +21,7 @@ BUILD_DEPENDS=	p5-autobox>=2.23:${PORTSDIR}/devel/p5-autobox \
 RUN_DEPENDS=	p5-autobox>=2.23:${PORTSDIR}/devel/p5-autobox \
 		p5-Moose>=0.42:${PORTSDIR}/devel/p5-Moose \
 		p5-Perl6-Junction>=1.40000:${PORTSDIR}/devel/p5-Perl6-Junction
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
