@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
 MAINTAINER=	6yearold@gmail.com
-COMMENT=	thg script from TortoiseHG
+COMMENT=	THg script from TortoiseHG
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.3:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=4.8.3:${PORTSDIR}/devel/py-qt4-qscintilla2 \
