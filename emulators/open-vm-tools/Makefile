@@ -4,11 +4,11 @@
 #
 # $FreeBSD$
 #
+
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		1
 CATEGORIES=		emulators kld
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.8.x
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 
 MAINTAINER=		ports@FreeBSD.org
@@ -17,15 +17,12 @@ COMMENT?=		Open VMware tools for FreeBSD VMware guests
 LICENSE=		LGPL21
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-BROKEN=			does not package
-
-RELEASE_VER=		8.8.0
-BUILD_VER=		471268
+RELEASE_VER=		8.6.0
+BUILD_VER=		425873
 
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		automake
 
 CONFIGURE_ARGS+=	--without-procps --sysconfdir=${LOCALBASE}/etc
 .if defined(WITHOUT_X11)
@@ -61,13 +58,6 @@ PLIST_SUB+=	FUSE=""
 PLIST_SUB+=	FUSE="@comment "
 .endif
 
-.if defined(WITH_LOAD_HGFS)
-PLIST_SUB+=	NOLOAD=""
-BROKEN=		remove this line to install broken vmhgfs.ko
-.else
-PLIST_SUB+=	NOLOAD="@comment "
-.endif
-
 CONFLICTS+=		vmware-guestd[0-9]* vmware-tools[0-9]*
 SUB_FILES=		pkg-message
 
@@ -99,9 +89,7 @@ post-install:
 	${MKDIR} ${PREFIX}/lib/vmware-tools/modules/input
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmxnet.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmxnet.ko
-.if defined(WITH_LOAD_HGFS)
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmhgfs.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmhgfs.ko
-.endif
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmblock.ko ${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
 	@-kldxref ${PREFIX}/lib/vmware-tools/modules/drivers 2>/dev/null
 	@${CAT} ${PKGMESSAGE}

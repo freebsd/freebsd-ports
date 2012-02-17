@@ -8,7 +8,4 @@ vmware_guest_vmmemctl_enable="YES"
 vmware_guest_vmxnet_enable="YES"
 vmware_guestd_enable="YES"
 
-NOTE: as of this writting, vmhfgs.ko load module is broken.
-To install and test/debug/fix this module, define WITH_LOAD_HGFS 
-and remove BROKEN in Makefile
 *******************************************************************

@@ -32,7 +32,7 @@ lib/libguestlib.so.0
 libdata/pkgconfig/vmguestlib.pc
 lib/vmware-tools/modules/drivers/linker.hints
 lib/vmware-tools/modules/drivers/vmblock.ko
-%%NOLOAD%%lib/vmware-tools/modules/drivers/vmhgfs.ko
+lib/vmware-tools/modules/drivers/vmhgfs.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
 include/vmGuestLib/includeCheck.h
@@ -41,8 +41,6 @@ include/vmGuestLib/vmSessionId.h
 include/vmGuestLib/vm_basic_types.h
 @exec mkdir -p %D/lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
-sbin/mount_vmblock
-@unexec rm /sbin/mount_vmblock
 %%X11%%bin/vmware-toolbox
 %%X11%%bin/vmware-user-suid-wrapper
 share/vmware-tools/poweroff-vm-default
@@ -59,9 +57,6 @@ share/vmware-tools/scripts/vmware/network
 @unexec if test -f %D/lib/vmware-tools/modules/drivers/linker.hints; then rm -f %D/lib/vmware-tools/modules/drivers/linker.hints; fi
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
 @unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
-%%X11%%etc/xdg/autostart/vmware-user.desktop
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg
 @dirrmtry lib/vmware-tools/modules/drivers
 @dirrmtry lib/vmware-tools/modules/input
 @dirrmtry lib/vmware-tools/modules
