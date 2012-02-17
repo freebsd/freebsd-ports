@@ -21,7 +21,7 @@
  
    if (!(flags & CHDEV_VIRTUAL) && (name != NULL))
      {
-+#if __FreeBSD_version >= 801500
++#if __FreeBSD_version >= 900023
 +      if (make_dev_p (MAKEDEV_CHECKNAME, &bsd_cdev, &oss_cdevsw, NULL,
 +		      UID_ROOT, GID_WHEEL, 0666, name, 0))
 +	{
