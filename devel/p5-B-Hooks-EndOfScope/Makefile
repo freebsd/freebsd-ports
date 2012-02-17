@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Hooks-EndOfScope
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Execute code after a scope finished compilation
 
-RUN_DEPENDS=	p5-Variable-Magic>=0.31:${PORTSDIR}/devel/p5-Variable-Magic \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Variable-Magic>=0.34:${PORTSDIR}/devel/p5-Variable-Magic \
 		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	B::Hooks::EndOfScope.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
