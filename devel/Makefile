@@ -642,6 +642,7 @@
     SUBDIR += hs-language-c
     SUBDIR += hs-largeword
     SUBDIR += hs-lazysmallcheck
+    SUBDIR += hs-lifted-base
     SUBDIR += hs-logict
     SUBDIR += hs-mmap
     SUBDIR += hs-monad-control
