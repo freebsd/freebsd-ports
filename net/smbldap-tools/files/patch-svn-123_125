@@ -1,0 +1,35 @@
+Index: smbldap-useradd.pl
+===================================================================
+--- smbldap-useradd.pl	(revision 123)
++++ smbldap-useradd.pl	(revision 125)
+@@ -514,6 +514,9 @@
+     $modify->code && die "failed to add entry: ", $modify->error;
+ }
+ 
++# Reset adds
++@adds = ();
++
+ # Add Samba user infos
+ if ( defined( $Options{'a'} ) ) {
+     if ( !$config{with_smbpasswd} ) {
+@@ -598,8 +601,6 @@
+     $tmp = defined( $Options{'F'} ) ? $Options{'F'} : $config{userProfile};
+     my $valprofilepath = &subst_user( $tmp, $userName );
+ 
+-    my @adds = ();
+-
+     if ($valhomedrive) {
+         push( @adds, 'sambaHomeDrive' => $valhomedrive );
+     }
+Index: smbldap_tools.pl
+===================================================================
+--- smbldap_tools.pl	(revision 123)
++++ smbldap_tools.pl	(revision 125)
+@@ -106,6 +106,7 @@
+   list_union
+   list_minus
+   account_by_sid
++  user_by_uid
+   user_next_uid
+   user_next_rid
+   group_next_uid
