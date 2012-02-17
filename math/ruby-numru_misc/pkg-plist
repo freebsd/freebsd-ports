@@ -6,6 +6,7 @@
 @dirrm %%RUBY_SITELIBDIR%%/numru/misc
 @dirrmtry %%RUBY_SITELIBDIR%%/numru
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/emath.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/keywordopt.html
