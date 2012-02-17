@@ -18,6 +18,7 @@ COMMENT=	Parse and examine a Perl distribution MANIFEST file
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	YES
 
