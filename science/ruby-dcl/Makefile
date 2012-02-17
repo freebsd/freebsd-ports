@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTVERSION=	1.6.3
 CATEGORIES=	science graphics ruby
-MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/ \
-		http://dennou-h.gfd-dennou.org/arch/ruby/products/ruby-dcl/ \
-		http://dennou-q.gfd-dennou.org/arch/ruby/products/ruby-dcl/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-dcl/release/ \
+		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-dcl/release/ \
+		http://dennou-q.gfd-dennou.org/library/ruby/products/ruby-dcl/release/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A Ruby interface to the scientific graphic library DCL
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 		${LOCALBASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
@@ -31,7 +33,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gd
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-DOCS=		ChangeLog README ToDo
+DOCS=		ChangeLog LICENSE.txt README ToDo
 
 .include <bsd.port.pre.mk>
 
