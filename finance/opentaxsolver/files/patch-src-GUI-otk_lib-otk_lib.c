@@ -1,3 +1,4 @@
+$FreeBSD$
 --- src/GUI/otk_lib/otk_lib.c.orig	Fri Mar 31 21:42:34 2006
 +++ src/GUI/otk_lib/otk_lib.c	Sat Apr  8 11:50:21 2006
 @@ -38,6 +38,10 @@
