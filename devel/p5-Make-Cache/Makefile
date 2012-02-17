@@ -16,6 +16,9 @@ COMMENT=	Caching of object and test run information
 
 BUILD_DEPENDS=	p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource
 
+DEPRECATED=	Removed from CPAN, does not work, unmaintained
+EXPIRATION_DATE=	2012-03-17
+
 PERL_CONFIGURE=	yes
 
 MAN1=		objcache.1
