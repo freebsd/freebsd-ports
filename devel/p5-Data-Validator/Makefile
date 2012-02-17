@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Data-Validator
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GFUJI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,7 +18,8 @@ COMMENT=	Rule based validator on type constraint system
 BUILD_DEPENDS=	p5-Mouse>=0.93:${PORTSDIR}/devel/p5-Mouse
 RUN_DEPENDS=	p5-Mouse>=0.93:${PORTSDIR}/devel/p5-Mouse
 
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
@@ -27,7 +28,8 @@ MAN3=		Data::Validator.3 \
 		Data::Validator::Role::Croak.3 \
 		Data::Validator::Role::Method.3 \
 		Data::Validator::Role::NoThrow.3 \
-		Data::Validator::Role::Sequenced.3
+		Data::Validator::Role::Sequenced.3 \
+		Data::Validator::Role::StrictSequenced.3
 
 .include <bsd.port.pre.mk>
 
