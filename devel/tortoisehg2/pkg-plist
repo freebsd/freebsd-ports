@@ -377,6 +377,7 @@ share/applications/tortoisehg.desktop
 %%NLS%%share/locale/ja/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/jv/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/tortoisehg.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/tortoisehg.mo
@@ -447,9 +448,11 @@ share/pixmaps/tortoisehg/icons/scalable/actions/edit-cut.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/edit-file.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/edit-find.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/go-down.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/go-home.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/go-jump.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/go-next.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/go-previous.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/go-to-rev.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/go-up.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-annotate.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-archive.svg
@@ -557,6 +560,7 @@ share/pixmaps/tortoisehg/icons/svg/recovery.svg
 share/pixmaps/tortoisehg/icons/svg/refresh_overlays.svg
 share/pixmaps/tortoisehg/icons/svg/remove.svg
 share/pixmaps/tortoisehg/icons/svg/repobrowse.svg
+share/pixmaps/tortoisehg/icons/svg/settings_projrc.svg
 share/pixmaps/tortoisehg/icons/svg/shelve.svg
 share/pixmaps/tortoisehg/icons/svg/sync.svg
 share/pixmaps/tortoisehg/icons/svg/thg_logo.svg
@@ -580,8 +584,6 @@ share/pixmaps/tortoisehg/icons/thg_logo_92x50.png
 @dirrm share/pixmaps/tortoisehg
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/oc
 %%NLS%%@dirrmtry share/locale/jv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/jv
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/util
