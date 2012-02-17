@@ -644,6 +644,7 @@
     SUBDIR += hs-lazysmallcheck
     SUBDIR += hs-logict
     SUBDIR += hs-mmap
+    SUBDIR += hs-monad-control
     SUBDIR += hs-monad-par
     SUBDIR += hs-mtl
     SUBDIR += hs-mtl-docs
