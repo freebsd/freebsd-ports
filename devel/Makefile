@@ -664,6 +664,7 @@
     SUBDIR += hs-stm
     SUBDIR += hs-syb
     SUBDIR += hs-syb-with-class
+    SUBDIR += hs-syb-with-class-instances-text
     SUBDIR += hs-tagged
     SUBDIR += hs-terminfo
     SUBDIR += hs-test-framework
