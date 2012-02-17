@@ -6,26 +6,38 @@
 #
 
 PORTNAME=	${UPPORTNAME:L}
-PORTVERSION=	8.05
+PORTVERSION=	9.00
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}/OTS_2010/v${PORTVERSION}
-DISTNAME=	${UPPORTNAME}2010_${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/OTS_${TAXYEAR}/v${PORTVERSION}
+DISTNAME=	${UPPORTNAME}${TAXYEAR}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	US tax prep software
 
+PLIST=		${WRKDIR}/pkg-plist
+SUB_FILES=	pkg-plist
+SUB_LIST=	TAXYEAR=${TAXYEAR}
+TAXYEAR=	2011
+UPPORTNAME=	OpenTaxSolver
+
+.if !defined(WITHOUT_X11)
 USE_GL=		yes
 USE_XORG=	xmu xext x11
-UPPORTNAME=	OpenTaxSolver
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+CPPFLAGS+=	$$(pkg-config --cflags-only-I glu xext xmu)
+LDFLAGS+=	$$(pkg-config --libs-only-L glu xext xmu)
+SUB_LIST+=	X11=
+.else
+MAKE_ENV+=	WITHOUT_X11=yes
+SUB_LIST+=	X11="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%PREFIX%%/${PREFIX:C,/,\/,g}/' \
 	${WRKSRC}/src/GUI/ots_gui.c
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
-	${WRKSRC}/src/GUI/Makefile.linux
 
-# 4.07 distfile has pre-built (linux) binaries we must whack.
+# 9.00 distfile has pre-built (linux) binaries we must whack.
 pre-build:
 	@(cd ${BUILD_WRKSRC}/src && make -f Makefile.unix clean && \
 	cd GUI && make -f Makefile.linux clean)
@@ -45,7 +57,6 @@ do-install:
 	    ${INSTALL_PROGRAM} $${prog} ${PREFIX}/bin/. ; \
 	done && \
 	${MKDIR} ${PREFIX}/share/ots && \
-	${INSTALL_DATA} src/GUI/otslogo.ppm ${PREFIX}/share/ots/. && \
 	for example in $$(${BUILDEXAMPLELISTCMD}); do \
 	    ${MKDIR} ${PREFIX}/share/ots/$$(dirname $${example}) && \
 	    ${INSTALL_DATA} $${example} \
@@ -55,7 +66,6 @@ do-install:
 new-plist:
 	@(cd ${WRKSRC} && \
 	${BUILDPROGLISTCMD} | ${SORT} > ${NEWPLIST} && \
-	${ECHO_CMD} share/ots/otslogo.ppm >> ${NEWPLIST} && \
 	${BUILDEXAMPLELISTCMD} | ${SED} 's,^,share/ots/,' | ${SORT} \
 	    >> ${NEWPLIST} && \
 	for f in $$(${BUILDEXAMPLEDIRLISTCMD} | ${SED} 's,^,share/ots/,' && \
