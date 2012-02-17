@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	fftw3
-PORTVERSION=	0.2
-PORTREVISION=	3
+PORTVERSION=	0.4
 CATEGORIES=	math ruby
-MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-fftw3/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-fftw3/release/ \
+		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-fftw3/release/ \
+		http://dennou-q.gfd-dennou.org/library/ruby/products/ruby-fftw3/release/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -17,13 +18,17 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A Ruby interface to the FFTW ver.3
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-DOCS=		ChangeLog ToDo doc/*
+DOCS=		LICENSE.txt doc/*
 
 post-install:
 .if !defined(NOPORTDOCS)
