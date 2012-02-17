@@ -6,25 +6,22 @@
 #
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/kr/beanstalkd/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
-
+LICENSE=	MIT
 USE_RC_SUBR=	beanstalkd
-USE_GMAKE=		yes
-GNU_CONFIGURE=	yes
-MAKE_ENV+=		EVENT_CFLAGS=-I${LOCALBASE}/include EVENT_LDFLAGS=-L${LOCALBASE}/lib
+USE_GMAKE=	yes
 
 PLIST_FILES=	bin/beanstalkd
+SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-PORTDOCS=		protocol.txt
-MAN1=			beanstalkd.1
+PORTDOCS=	protocol.txt
+MAN1=		beanstalkd.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beanstalkd ${PREFIX}/bin

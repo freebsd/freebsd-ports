@@ -4,6 +4,7 @@
 #
 # PROVIDE: beanstalkd
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to run beanstalkd:
 #
@@ -13,21 +14,93 @@
 #				Default is empty "".
 # beanstalkd_user (user):	Set user to run beanstalkd.
 #				Default is "nobody".
-#
+# beanstalkd_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
 
 . /etc/rc.subr
 
 name="beanstalkd"
 rcvar=beanstalkd_enable
 
+_piddir="/var/run/beanstalkd"
+pidfile="${_piddir}/beanstalkd.pid"
+
 load_rc_config ${name}
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ -n "${beanstalkd_profiles}" ]; then
+		pidfile="${_piddir}/beanstalkd.${profile}.pid"
+		eval beanstalkd_enable="\${beanstalkd_${profile}_enable:-${beanstalkd_enable}}"
+		eval beanstalkd_flags="\${beanstalkd_${profile}_flags:-${beanstalkd_flags}}"
+	else
+		echo "%%PREFIX%%/etc/rc.d/beanstalkd%%RC_SUBR_SUFFIX%%: extra argument ignored"
+	fi
+else
+	if [ -n "${beanstalkd_profiles}" -a -n "$1" ]; then
+		for profile in ${beanstalkd_profiles}; do
+			eval _enable="\${beanstalkd_${profile}_enable}"
+			case "${_enable:-${beanstalkd_enable}}" in
+			[Nn][Oo]|[Ff][Aa][Ll][Ss][Ee]|[Oo][Ff][Ff]|0)
+				continue
+				;;
+			[Yy][Ee][Ss]|[Tt][Rr][Uu][Ee]|[Oo][Nn]|1)
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=beanstalkd_enable
+				else
+					_var=beanstalkd_"${profile}"_enable
+				fi
+				warn "Bad value" \
+				    "'${_enable:-${beanstalkd_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> beanstalkd profile: ${profile}"
+			if %%PREFIX%%/etc/rc.d/beanstalkd%%RC_SUBR_SUFFIX%% $1 ${profile} ; then
+				success="${profile} ${success:-}"
+			else
+				failed="${profile} (${retcode}) ${failed:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
+
+beanstalkd_poststop()
+{
+	if [ -n "${profile}" ]; then
+		[ -e "$pidfile" ] && unlink $pidfile
+	else
+		local file
+
+		for file in ${_piddir}/* ; do
+			case "$file" in
+			*\*)
+				continue ;;
+			esac
+			unlink $file
+		done
+	fi
+}
+
+beanstalkd_prestart()
+{
+	install -d -o $beanstalkd_user -g $beanstalkd_user -m 755 $_piddir
+}
 
 : ${beanstalkd_enable="NO"}
 : ${beanstalkd_user="nobody"}
 
-command=%%PREFIX%%/bin/beanstalkd
-command_args="-d -u ${beanstalkd_user}"
+procname=%%PREFIX%%/bin/beanstalkd
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} ${procname} ${beanstalkd_flags}"
+unset beanstalkd_flags
 
-unset beanstalkd_user
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_poststop"
 
 run_rc_command "$1"
