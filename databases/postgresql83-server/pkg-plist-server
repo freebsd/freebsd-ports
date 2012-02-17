@@ -397,6 +397,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Dushanbe
 %%TZDATA%%share/postgresql/timezone/Asia/Gaza
 %%TZDATA%%share/postgresql/timezone/Asia/Harbin
+%%TZDATA%%share/postgresql/timezone/Asia/Hebron
 %%TZDATA%%share/postgresql/timezone/Asia/Ho_Chi_Minh
 %%TZDATA%%share/postgresql/timezone/Asia/Hong_Kong
 %%TZDATA%%share/postgresql/timezone/Asia/Hovd
