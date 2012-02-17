@@ -6,19 +6,13 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://wiki.qemu.org/download/qemu/:release \
-		LOCAL/nox:release \
+MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
 PKGNAMESUFFIX=	-devel
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release \
-		sgabios-read-only-r8${EXTRACT_SUFX}:snapshot
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 DIST_SUBDIR=	qemu/${PORTVERSION}
-
-PATCH_SITES=	http://code.gns3.net/qemu-patches/raw-file/0b69b9be6a8e/
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
@@ -68,15 +62,13 @@ IGNORE=		bsd-user targets not tested on sparc64
 .endif
 
 .if defined(WITH_GNS3)
-PATCHFILES+=	hw_e1000_c.patch
-#PATCHFILES+=	net_c.patch
-#PATCHFILES+=	net_h.patch
-EXTRA_PATCHES+=	${FILESDIR}/net_c.patch
-EXTRA_PATCHES+=	${FILESDIR}/net_h.patch
-PATCHFILES+=	net_udp_c.patch
-PATCHFILES+=	net_udp_h.patch
-PATCHFILES+=	Makefile_objs.patch
-EXTRA_PATCHES+=	${FILESDIR}/gns3-qemu-options.hx.patch
+EXTRA_PATCHES+=	${FILESDIR}/hw_e1000_c.patch \
+		${FILESDIR}/net_c.patch \
+		${FILESDIR}/net_h.patch \
+		${FILESDIR}/net_udp_c.patch \
+		${FILESDIR}/net_udp_h.patch \
+		${FILESDIR}/Makefile_objs.patch \
+		${FILESDIR}/gns3-qemu-options.hx.patch
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
@@ -216,14 +208,10 @@ post-configure:
 		${WRKSRC}/config-host.mak
 .endif
 
-post-build:
-	@${MAKE_ENV} ${GMAKE} -C${WRKDIR}/sgabios-read-only
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/)
 .endif
-	@${INSTALL_DATA} ${WRKDIR}/sgabios-read-only/sgabios.bin ${DATADIR}
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${PREFIX}/etc
 	@if [ ! -f ${PREFIX}/etc/qemu-ifup ]; then \
