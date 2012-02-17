@@ -1,0 +1,8 @@
+Just pick which parts of your data structures you want indexed using an
+easy to use template-haskell function.  Spare yourself the need to
+write, run, and maintain code that marshalls your data to/from an
+external relational database just for efficient queries.  The
+happstack-ixset relies on generics and TH to spare you the boilerplate
+normally required for such tasks.
+
+WWW:	http://happstack.com/
