@@ -97,6 +97,7 @@ gtk2hs-buildtools_port=		devel/hs-gtk2hs-buildtools # executable
 gtkglext_port=			x11-toolkits/hs-gtkglext
 gtksourceview2_port=		x11-toolkits/hs-gtksourceview2
 haddock_port=			devel/hs-haddock	# executable
+happstack_port=			www/hs-happstack	# executable
 happstack-data_port=		www/hs-happstack-data
 happstack-ixset_port=		www/hs-happstack-ixset
 happstack-server_port=		www/hs-happstack-server
