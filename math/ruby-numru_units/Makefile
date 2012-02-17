@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	numru_units
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	math ruby
-MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/numru-units/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/numru-units/release/ \
+		http://dennou-h.gfd-dennou.org/library/ruby/products/numru-units/release/ \
+		http://dennou-q.gfd-dennou.org/library/ruby/products/numru-units/release/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	numru-units-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -16,10 +18,13 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A class to handle units of physical quantities for Ruby
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-DOCS=		ChangeLog doc/units.html doc/units.rd
+DOCS=		ChangeLog LICENSE.txt doc/units.html doc/units.rd
 
 do-install:
 	@cd ${WRKSRC}/ && ${RUBY} ./install.rb
