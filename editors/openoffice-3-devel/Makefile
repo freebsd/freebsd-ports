@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
+#LICENSE=	AL2
+
 NO_LATEST_LINK=	yes
 
 USE_GNOME=	desktopfileutils gtk20 libxslt libidl gconf2 gnomevfs2 glib20
@@ -54,7 +56,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1243485
+SVNREVISION=		1244320
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -73,7 +75,12 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
+		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
+		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -100,17 +107,17 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
 		imake:${PORTSDIR}/devel/imake \
-		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ant:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
+		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
+		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		epm:${PORTSDIR}/devel/epm \
@@ -133,7 +140,6 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--enable-crashdump \
 			--with-vendor="FreeBSD ports system"	\
 			--with-epm=${LOCALBASE}/bin/epm \
-			--with-gnu-cp=${LOCALBASE}/bin/gcp	\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--with-gperf=${LOCALBASE}/bin/gperf	\
 			--x-includes=${LOCALBASE}/include	\
@@ -152,6 +158,10 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
+			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
+			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
+			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
+			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar	\
 			--with-system-saxon     \
 			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
@@ -171,7 +181,6 @@ OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
-OOOEXTENSIONS+=		report-builder.oxt
 
 ICONS=	${WRKSRC}/sysui/desktop/icons
 
