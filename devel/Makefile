@@ -570,6 +570,7 @@
     SUBDIR += hs-Boolean
     SUBDIR += hs-DeepArrow
     SUBDIR += hs-HUnit
+    SUBDIR += hs-MaybeT
     SUBDIR += hs-MemoTrie
     SUBDIR += hs-MissingH
     SUBDIR += hs-MonadCatchIO-mtl

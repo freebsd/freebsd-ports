@@ -136,6 +136,7 @@ libxml_port=			textproc/hs-libxml
 lifted-base_port=		devel/hs-lifted-base
 logict_port=			devel/hs-logict
 math-functions_port=		math/hs-math-functions
+MaybeT_port=			devel/hs-MaybeT
 MemoTrie_port=			devel/hs-MemoTrie
 mime_port=			mail/hs-mime
 MissingH_port=			devel/hs-MissingH
