@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cwp
-PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTVERSION=	1.5.9
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	plasma-applet-
@@ -18,6 +17,7 @@ COMMENT=	Weather plasma applet for KDE4
 
 LICENSE=	GPLv3
 
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
