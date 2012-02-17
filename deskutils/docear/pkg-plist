@@ -1,6 +1,7 @@
 bin/docear
 share/applications/docear.desktop
 share/docear/docear-icon48x48.png
+@dirrm share/docear
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || :
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 share/java/docear/bzrinfo.txt
