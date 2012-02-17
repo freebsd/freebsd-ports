@@ -281,6 +281,7 @@
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
     SUBDIR += hs-hS3
+    SUBDIR += hs-happstack
     SUBDIR += hs-happstack-data
     SUBDIR += hs-happstack-ixset
     SUBDIR += hs-happstack-server
