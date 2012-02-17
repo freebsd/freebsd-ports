@@ -24,8 +24,6 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 BUILD_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
 RUN_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
 
-BROKEN=		does not package
-
 OPTIONS=	GHEX "Enable memory view" off
 
 GNU_CONFIGURE=	yes
@@ -40,6 +38,20 @@ INSTALLS_ICONS=	yes
 MAN1=		nemiver.1
 
 .include <bsd.port.pre.mk>
+
+.if !exists(${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc)
+CONFIGURE_ARGS+=--enable-gsettings=no
+PLIST_SUB+=	GSETTINGS="@comment " GCONF=""
+GCONF_SCHEMAS=	nemiver-workbench.schemas nemiver-dbgperspective.schemas
+.else
+# Technically, the port is already installed in this case so fill-in
+# BUILD_DEPENDS for the sake of consistency only.
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
+CONFIGURE_ARGS+=--enable-gsettings=yes
+PLIST_SUB+=	GSETTINGS="" GCONF="@comment "
+GLIB_SCHEMAS=	org.nemiver.gschema.xml
+.endif
 
 .if defined(WITH_GHEX) && !defined(WITHOUT_GHEX)
 CONFIGURE_ARGS+=--enable-memoryview
