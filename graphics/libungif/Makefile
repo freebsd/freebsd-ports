@@ -17,6 +17,7 @@ COMMENT=	Tools and library routines for working with GIF images
 
 DEPRECATED=	is replaced by libgif
 CONFLICTS=	giflib-[0-9]*
+EXPIRATION_DATE=	2012-05-30
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
