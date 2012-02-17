@@ -12,7 +12,7 @@ MASTER_SITES=	SF/docear/1.x/${PORTVERSION:S/\.b/_beta/}
 DISTNAME=	docear_linux
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	Mind Mapping tool with Reference and PDF Management
+COMMENT=	Mind Mapping tool with Reference, Library, and PDF Management
 
 LICENSE=	GPLv2
 
