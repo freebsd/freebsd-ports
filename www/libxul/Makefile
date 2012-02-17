@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libxul
-DISTVERSION=	1.9.2.26
+DISTVERSION=	1.9.2.27
 CATEGORIES?=	www devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	firefox/releases/3.6.26/source
-DISTNAME=	firefox-3.6.26.source
+MASTER_SITE_SUBDIR=	firefox/releases/3.6.27/source
+DISTNAME=	firefox-3.6.27.source
 
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
