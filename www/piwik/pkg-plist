@@ -4,6 +4,7 @@
 %%WWWDIR%%/config/global.ini.php
 %%WWWDIR%%/config/manifest.inc.php
 %%WWWDIR%%/core/API/DataTableGenericFilter.php
+%%WWWDIR%%/core/API/DataTableLabelFilter.php
 %%WWWDIR%%/core/API/DocumentationGenerator.php
 %%WWWDIR%%/core/API/Proxy.php
 %%WWWDIR%%/core/API/Request.php
@@ -22,7 +23,9 @@
 %%WWWDIR%%/core/CacheFile.php
 %%WWWDIR%%/core/Common.php
 %%WWWDIR%%/core/Config.php
+%%WWWDIR%%/core/Config/Ini.php
 %%WWWDIR%%/core/Controller.php
+%%WWWDIR%%/core/Controller/Admin.php
 %%WWWDIR%%/core/Cookie.php
 %%WWWDIR%%/core/DataFiles/Countries.php
 %%WWWDIR%%/core/DataFiles/Currencies.php
@@ -36,6 +39,8 @@
 %%WWWDIR%%/core/DataTable/Filter/AddColumnsProcessedMetricsGoal.php
 %%WWWDIR%%/core/DataTable/Filter/AddConstantMetadata.php
 %%WWWDIR%%/core/DataTable/Filter/AddSummaryRow.php
+%%WWWDIR%%/core/DataTable/Filter/BeautifyRangeLabels.php
+%%WWWDIR%%/core/DataTable/Filter/BeautifyTimeRangeLabels.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddColumnQuotient.php
 %%WWWDIR%%/core/DataTable/Filter/ColumnCallbackAddMetadata.php
@@ -102,6 +107,7 @@
 %%WWWDIR%%/core/Period/Year.php
 %%WWWDIR%%/core/Piwik.php
 %%WWWDIR%%/core/Plugin.php
+%%WWWDIR%%/core/Plugin/Config.php
 %%WWWDIR%%/core/PluginsFunctions/Sql.php
 %%WWWDIR%%/core/PluginsFunctions/WidgetsList.php
 %%WWWDIR%%/core/PluginsManager.php
@@ -207,9 +213,11 @@
 %%WWWDIR%%/core/Updates/1.5-rc6.php
 %%WWWDIR%%/core/Updates/1.6-b1.php
 %%WWWDIR%%/core/Updates/1.6-rc1.php
+%%WWWDIR%%/core/Updates/1.7-b1.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
+%%WWWDIR%%/core/View/Interface.php
 %%WWWDIR%%/core/ViewDataTable.php
 %%WWWDIR%%/core/ViewDataTable/Cloud.php
 %%WWWDIR%%/core/ViewDataTable/GenerateGraphData.php
@@ -230,7 +238,6 @@
 %%WWWDIR%%/core/Visualization/Chart/VerticalBar.php
 %%WWWDIR%%/core/Visualization/Cloud.php
 %%WWWDIR%%/core/Visualization/Sparkline.php
-%%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/LICENSE.txt
@@ -263,6 +270,7 @@
 %%WWWDIR%%/lang/ka.php
 %%WWWDIR%%/lang/ko.php
 %%WWWDIR%%/lang/lt.php
+%%WWWDIR%%/lang/lv.php
 %%WWWDIR%%/lang/nb.php
 %%WWWDIR%%/lang/nl.php
 %%WWWDIR%%/lang/nn.php
@@ -862,6 +870,7 @@
 %%WWWDIR%%/libs/jqplot/MIT-LICENSE.txt
 %%WWWDIR%%/libs/jqplot/excanvas.min.js
 %%WWWDIR%%/libs/jqplot/gpl-2.0.txt
+%%WWWDIR%%/libs/jqplot/jqplot-custom.min.js
 %%WWWDIR%%/libs/jqplot/jqplot.axisLabelRenderer.js
 %%WWWDIR%%/libs/jqplot/jqplot.axisTickRenderer.js
 %%WWWDIR%%/libs/jqplot/jqplot.canvasGridRenderer.js
@@ -910,11 +919,15 @@
 %%WWWDIR%%/libs/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/libs/jquery/themes/base/jquery-ui.css
 %%WWWDIR%%/libs/jsmin/jsmin.php
+%%WWWDIR%%/libs/pChart2.1.3/class/pData.class.php
+%%WWWDIR%%/libs/pChart2.1.3/class/pDraw.class.php
+%%WWWDIR%%/libs/pChart2.1.3/class/pPie.class.php
+%%WWWDIR%%/libs/pChart2.1.3/class/pImage.class.php
+%%WWWDIR%%/libs/pChart2.1.3/change.log
+%%WWWDIR%%/libs/pChart2.1.3/GPLv3.txt
+%%WWWDIR%%/libs/pChart2.1.3/readme.txt
+%%WWWDIR%%/libs/pChart2.1.3/index.php
 %%WWWDIR%%/libs/sparkline/CHANGES
-%%WWWDIR%%/libs/pChart.1.27d/Fonts/tahoma.ttf
-%%WWWDIR%%/libs/pChart.1.27d/pChart/pCache.php
-%%WWWDIR%%/libs/pChart.1.27d/pChart/pChart.php
-%%WWWDIR%%/libs/pChart.1.27d/pChart/pData.php
 %%WWWDIR%%/libs/sparkline/DESIGN
 %%WWWDIR%%/libs/sparkline/LICENSE-BSD.txt
 %%WWWDIR%%/libs/sparkline/README
@@ -1024,6 +1037,7 @@
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_cell.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/datatable_js.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/datatable_rowactions.js
 %%WWWDIR%%/plugins/CoreHome/templates/date.js
 %%WWWDIR%%/plugins/CoreHome/templates/graph.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header.tpl
@@ -1031,6 +1045,8 @@
 %%WWWDIR%%/plugins/CoreHome/templates/html_report_body.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/html_report_footer.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/html_report_header.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/iframe_buster_header.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/iframe_buster_body.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/images/bg_header.jpg
 %%WWWDIR%%/plugins/CoreHome/templates/images/bullet1.gif
 %%WWWDIR%%/plugins/CoreHome/templates/images/bullet2.gif
@@ -1092,7 +1108,10 @@
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
 %%WWWDIR%%/plugins/ExampleFeedburner/ExampleFeedburner.php
 %%WWWDIR%%/plugins/ExampleFeedburner/templates/feedburner.tpl
+%%WWWDIR%%/plugins/ExamplePlugin/Controller.php
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
+%%WWWDIR%%/plugins/ExamplePlugin/config/.htaccess
+%%WWWDIR%%/plugins/ExamplePlugin/config/local.config.sample.php
 %%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
 %%WWWDIR%%/plugins/ExamplePlugin/templates/piwikDownloads.tpl
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
@@ -1132,8 +1151,17 @@
 %%WWWDIR%%/plugins/Goals/templates/title_and_evolution_graph.tpl
 %%WWWDIR%%/plugins/ImageGraph/API.php
 %%WWWDIR%%/plugins/ImageGraph/Controller.php
-%%WWWDIR%%/plugins/ImageGraph/ImageGraphObject.php
 %%WWWDIR%%/plugins/ImageGraph/ImageGraph.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Evolution.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/PieGraph.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Pie.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/HorizontalBar.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Exception.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/VerticalBar.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/3DPie.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/GridGraph.php
+%%WWWDIR%%/plugins/ImageGraph/fonts/tahoma.ttf
 %%WWWDIR%%/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
 %%WWWDIR%%/plugins/ImageGraph/templates/index.tpl
 %%WWWDIR%%/plugins/Installation/Controller.php
@@ -1181,9 +1209,7 @@
 %%WWWDIR%%/plugins/Live/templates/index.tpl
 %%WWWDIR%%/plugins/Live/templates/lastVisits.tpl
 %%WWWDIR%%/plugins/Live/templates/live.css
-%%WWWDIR%%/plugins/Live/templates/scripts/MIT-LICENSE.txt
 %%WWWDIR%%/plugins/Live/templates/scripts/live.js
-%%WWWDIR%%/plugins/Live/templates/scripts/spy.js
 %%WWWDIR%%/plugins/Live/templates/totalVisits.tpl
 %%WWWDIR%%/plugins/Live/templates/visitorLog.tpl
 %%WWWDIR%%/plugins/Login/Auth.php
@@ -1199,6 +1225,8 @@
 %%WWWDIR%%/plugins/Login/templates/passwordchanged.tpl
 %%WWWDIR%%/plugins/Login/templates/passwordsent.tpl
 %%WWWDIR%%/plugins/Login/templates/resetPassword.tpl
+%%WWWDIR%%/plugins/MultiSites/API.php
+%%WWWDIR%%/plugins/MultiSites/CalculateEvolutionFilter.php
 %%WWWDIR%%/plugins/MultiSites/Controller.php
 %%WWWDIR%%/plugins/MultiSites/MultiSites.php
 %%WWWDIR%%/plugins/MultiSites/images/arrow_asc.gif
@@ -1252,6 +1280,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogs.icerocket.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/busca.orange.es.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/busca.uol.com.br.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/buscador.terra.es.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/daemon-search.com.png
@@ -1323,6 +1352,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.qip.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.rr.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.seznam.cz.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.softonic.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.tiscali.it.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.winamp.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.www.ee.png
@@ -1361,6 +1391,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.baidu.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.blogdigger.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.blogpulse.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.crawler.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.charter.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.cuil.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.dasoertliche.de.png
@@ -1378,6 +1409,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gnadenmeer.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.interia.pl.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.gomeo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.goyellow.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gulesider.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.highbeam.com.png
@@ -1411,6 +1443,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.skynet.be.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sogou.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.soso.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.startsiden.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.suchmaschine.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.suchnase.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.talktalk.co.uk.png
@@ -1432,6 +1465,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.witch.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.x-recherche.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.yasni.de.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.yatedo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.yougoo.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.zapmeta.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.zoeken.nl.png
@@ -1735,6 +1769,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/tf.png
 %%WWWDIR%%/plugins/UserCountry/flags/tg.png
 %%WWWDIR%%/plugins/UserCountry/flags/th.png
+%%WWWDIR%%/plugins/UserCountry/flags/ti.png
 %%WWWDIR%%/plugins/UserCountry/flags/tj.png
 %%WWWDIR%%/plugins/UserCountry/flags/tk.png
 %%WWWDIR%%/plugins/UserCountry/flags/tl.png
@@ -1864,14 +1899,18 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/W2K.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W61.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W65.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/W75.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W95.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/W98.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WCE.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WI7.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WI8.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WII.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WME.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WMO.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WNT.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WOS.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/WPH.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WP7.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WS3.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/WVI.gif
@@ -1941,6 +1980,8 @@
 %%WWWDIR%%/themes/default/images/arr_r.png
 %%WWWDIR%%/themes/default/images/background-submit.png
 %%WWWDIR%%/themes/default/images/chart_bar.png
+%%WWWDIR%%/themes/default/images/chart_line_edit_bg.png
+%%WWWDIR%%/themes/default/images/chart_line_edit.png
 %%WWWDIR%%/themes/default/images/chart_pie.png
 %%WWWDIR%%/themes/default/images/close.png
 %%WWWDIR%%/themes/default/images/collapsed_arrows.gif
@@ -2074,6 +2115,8 @@
 @dirrm %%WWWDIR%%/plugins/Installation/templates
 @dirrm %%WWWDIR%%/plugins/Installation
 @dirrm %%WWWDIR%%/plugins/ImageGraph/templates
+@dirrm %%WWWDIR%%/plugins/ImageGraph/fonts
+@dirrm %%WWWDIR%%/plugins/ImageGraph/StaticGraph
 @dirrm %%WWWDIR%%/plugins/ImageGraph
 @dirrm %%WWWDIR%%/plugins/Goals/templates
 @dirrm %%WWWDIR%%/plugins/Goals
@@ -2087,6 +2130,7 @@
 @dirrm %%WWWDIR%%/plugins/ExampleRssWidget
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/templates
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin/lang
+@dirrm %%WWWDIR%%/plugins/ExamplePlugin/config
 @dirrm %%WWWDIR%%/plugins/ExamplePlugin
 @dirrm %%WWWDIR%%/plugins/ExampleFeedburner/templates
 @dirrm %%WWWDIR%%/plugins/ExampleFeedburner
@@ -2122,9 +2166,8 @@
 @dirrm %%WWWDIR%%/libs/swfobject
 @dirrm %%WWWDIR%%/libs/sparkline/lib
 @dirrm %%WWWDIR%%/libs/sparkline
-@dirrm %%WWWDIR%%/libs/pChart.1.27d/pChart
-@dirrm %%WWWDIR%%/libs/pChart.1.27d/Fonts
-@dirrm %%WWWDIR%%/libs/pChart.1.27d
+@dirrm %%WWWDIR%%/libs/pChart2.1.3/class
+@dirrm %%WWWDIR%%/libs/pChart2.1.3
 @dirrm %%WWWDIR%%/libs/jsmin
 @dirrm %%WWWDIR%%/libs/jquery/themes/base/images
 @dirrm %%WWWDIR%%/libs/jquery/themes/base
@@ -2289,6 +2332,7 @@
 @dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphHTML
 @dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphData
 @dirrm %%WWWDIR%%/core/ViewDataTable
+@dirrm %%WWWDIR%%/core/View
 @dirrm %%WWWDIR%%/core/Updates
 @dirrm %%WWWDIR%%/core/Unzip
 @dirrm %%WWWDIR%%/core/Tracker/Db/Pdo
@@ -2300,6 +2344,7 @@
 @dirrm %%WWWDIR%%/core/ScheduledTime
 @dirrm %%WWWDIR%%/core/ReportRenderer
 @dirrm %%WWWDIR%%/core/PluginsFunctions
+@dirrm %%WWWDIR%%/core/Plugin
 @dirrm %%WWWDIR%%/core/Period
 @dirrm %%WWWDIR%%/core/Menu
 @dirrm %%WWWDIR%%/core/Log
@@ -2312,6 +2357,8 @@
 @dirrm %%WWWDIR%%/core/DataTable/Filter
 @dirrm %%WWWDIR%%/core/DataTable
 @dirrm %%WWWDIR%%/core/DataFiles
+@dirrm %%WWWDIR%%/core/Controller
+@dirrm %%WWWDIR%%/core/Config
 @dirrm %%WWWDIR%%/core/ArchiveProcessing
 @dirrm %%WWWDIR%%/core/Archive/Array
 @dirrm %%WWWDIR%%/core/Archive
