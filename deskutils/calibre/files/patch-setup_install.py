@@ -5,7 +5,7 @@
  
  HEADER = '''\
 -#!/usr/bin/env python2
-+#!/usr/bin/env python
++#!/usr/bin/env python2.7
  
  """
  This is the standard runscript for all of calibre's tools.
