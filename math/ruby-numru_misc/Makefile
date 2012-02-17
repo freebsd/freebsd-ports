@@ -6,12 +6,17 @@
 #
 
 PORTNAME=	numru_misc
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	math ruby
-MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/numru-misc/
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/numru-misc/release/ \
+		http://dennou-h.gfd-dennou.org/library/ruby/products/numru-misc/release/ \
+		http://dennou-q.gfd-dennou.org/library/ruby/products/numru-misc/release/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	numru-misc-${PORTVERSION}
 DIST_SUBDIR=	ruby
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Collection of misc functions and classes to facilitate programming
@@ -22,7 +27,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-DOCS=		ChangeLog doc/*
+DOCS=		ChangeLog LICENSE.txt doc/*
 
 do-install:
 	@cd ${WRKSRC}/ && ${RUBY} ./install.rb
