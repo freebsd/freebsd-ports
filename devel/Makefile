@@ -663,6 +663,7 @@
     SUBDIR += hs-split
     SUBDIR += hs-stm
     SUBDIR += hs-syb
+    SUBDIR += hs-syb-with-class
     SUBDIR += hs-tagged
     SUBDIR += hs-terminfo
     SUBDIR += hs-test-framework
