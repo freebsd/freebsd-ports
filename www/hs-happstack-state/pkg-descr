@@ -1,0 +1,9 @@
+Unplug your machine and restart and have your app recover to exactly
+where it left off.  Happstack-State spares you the need to deal with all
+the marshalling, consistency, and configuration headache that you would
+have if you used an external DBMS for this purpose.  Its component model
+makes it easy to compose big applications from smaller reliable parts.
+Use event subscription to trigger IO actions and support comet-style or
+irc-bot applications.
+
+WWW:	http://happstack.com/

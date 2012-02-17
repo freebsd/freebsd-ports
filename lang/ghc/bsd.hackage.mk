@@ -100,6 +100,7 @@ haddock_port=			devel/hs-haddock	# executable
 happstack-data_port=		www/hs-happstack-data
 happstack-ixset_port=		www/hs-happstack-ixset
 happstack-server_port=		www/hs-happstack-server
+happstack-state_port=		www/hs-happstack-state
 happstack-util_port=		www/hs-happstack-util
 happy_port=			devel/hs-happy		# executable
 hashable_port=			devel/hs-hashable
