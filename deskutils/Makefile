@@ -37,6 +37,7 @@
     SUBDIR += deskbar-applet
     SUBDIR += displaycalibrator
     SUBDIR += dlume
+    SUBDIR += docear
     SUBDIR += doodle
     SUBDIR += dragstack
     SUBDIR += drivel
