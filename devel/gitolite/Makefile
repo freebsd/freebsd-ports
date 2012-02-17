@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gitolite
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
 		LOCAL/tdb
@@ -55,7 +55,6 @@ post-patch:
 		${WRKSRC}/hooks/common/update
 
 do-build:
-	-@${RM} ${WRKSRC}/src/gl-easy-install
 	-@${RM} ${WRKSRC}/src/gl-system-install
 	@${REINPLACE_CMD} \
 		-E 's%^GL_PACKAGE_CONF=.*%GL_PACKAGE_CONF=${DATADIR}/conf;%' \
