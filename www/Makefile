@@ -284,6 +284,7 @@
     SUBDIR += hs-happstack-data
     SUBDIR += hs-happstack-ixset
     SUBDIR += hs-happstack-server
+    SUBDIR += hs-happstack-state
     SUBDIR += hs-happstack-util
     SUBDIR += hs-heist
     SUBDIR += hs-fastcgi
