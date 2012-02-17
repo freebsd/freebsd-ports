@@ -12,7 +12,7 @@ you update your ports collection, before attempting any port upgrades.
   libvpx has been updated to version 1.0.0, with a shared library bump.
   This requires dependencies to be rebuilt.
 
-  # portmaster -r multimedia/libvpx
+  # portmaster -r libvpx
   or
   # portupgrade -r multimedia/libvpx
 
