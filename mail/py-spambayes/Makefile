@@ -7,7 +7,7 @@
 
 PORTNAME=	spambayes
 PORTVERSION=	1.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Bayesian anti-spam filter written in Python
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
-OPTIONS=	PYTHON26	"Build with Python 2.6 (with unofficial patch)"	off
-
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
+USE_PYTHON=	-2.7
 USE_RC_SUBR=	pyspamd
 LOCALSTATDIR?=	/var/db/spambayes
 DBDIR?=		${LOCALSTATDIR}/dbs
@@ -78,16 +76,5 @@ post-install:
 .endif
 	@${MKDIR} ${CACHEDIR}
 	@${MKDIR} ${DBDIR}
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_PYTHON26)
-USE_PYTHON=		2.6
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
-EXTRA_PATCHES+=		${FILESDIR}/extra-patch-python26
-.else
-USE_PYTHON=		2.5
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py25-bsddb
-.endif
 
 .include <bsd.port.mk>
