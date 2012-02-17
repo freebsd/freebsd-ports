@@ -47,6 +47,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da317bc9-59a6-11e1-bc16-0023ae8e59f0">
+    <topic> piwik -- xss and click-jacking issues </topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><lt>1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Piwik Team reports:</p>
+	<blockquote cite="http://piwik.org/blog/2012/02/7775/">
+	  <p>We would like to thank the following security researchers for
+	    their responsible disclosure of XSS and click-jacking issues:
+	    Piotr Duszynski, Sergey Markov, Mauro Gentile.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	    <url>"http://piwik.org/blog/2012/02/7775/"</url>
+    </references>
+    <dates>
+      <discovery>2012-02-16</discovery>
+      <entry>2012-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d7dbd2db-599c-11e1-a2fb-14dae9ebcf89">
     <topic>mozilla -- heap-buffer overflow</topic>
     <affects>
