@@ -1,0 +1,9 @@
+This package provides libraries for:
+
+ * Deriving instances for your datatypes.
+ * Producing default values of Haskell datatypes.
+ * Normalizing values of Haskell datatypes.
+ * Marshalling Haskell values to and from XML.
+ * Marshalling Haskell values to and from HTML forms.
+
+WWW:	http://happstack.com/
