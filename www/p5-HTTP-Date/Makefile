@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	HTTP-Date
-PORTVERSION=	6.00
+PORTVERSION=	6.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Conversion routines for the HTTP protocol date formats
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 CONFLICTS=	p5-libwww-5*
 
