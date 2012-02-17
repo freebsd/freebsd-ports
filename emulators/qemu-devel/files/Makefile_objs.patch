@@ -1,0 +1,10 @@
+--- qemu-0.14.1/Makefile.objs.orig	Thu Jun 23 17:44:50 2011
++++ qemu-0.14.1/Makefile.objs	Thu Jun 23 17:45:01 2011
+@@ -34,6 +34,7 @@
+ net-nested-y = queue.o checksum.o util.o
+ net-nested-y += socket.o
+ net-nested-y += dump.o
++net-nested-y += udp.o
+ net-nested-$(CONFIG_POSIX) += tap.o
+ net-nested-$(CONFIG_LINUX) += tap-linux.o
+ net-nested-$(CONFIG_WIN32) += tap-win32.o

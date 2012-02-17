@@ -1,0 +1,11 @@
+--- qemu-0.14.1/hw/e1000.c.orig	Thu Jun 23 17:01:19 2011
++++ qemu-0.14.1/hw/e1000.c	Thu Jun 23 17:02:30 2011
+@@ -573,7 +573,7 @@
+     if (rctl & E1000_RCTL_UPE)			// promiscuous
+         return 1;
+ 
+-    if ((buf[0] & 1) && (rctl & E1000_RCTL_MPE))	// promiscuous mcast
++    if (buf[0] & 1)				// promiscuous mcast
+         return 1;
+ 
+     if ((rctl & E1000_RCTL_BAM) && !memcmp(buf, bcast, sizeof bcast))
