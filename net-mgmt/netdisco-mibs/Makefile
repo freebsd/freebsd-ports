@@ -13,11 +13,9 @@ MASTER_SITES=	SF/netdisco/netdisco-mibs/${PORTVERSION}
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Mibs for use with ports-mgmt/netdisco (and snmp)
 
-DATADIR=	${PREFIX}/share/${PORTNAME}
-
 NO_BUILD=	yes
 
-MIBDIRS=allied arista aruba asante cabletron cisco cyclades dell enterasys extreme foundry hp juniper mikrotik net-snmp netgear netscreen nortel packetfront rfc
+.include "bsd.port.netdisco.mk"
 
 do-install:
 	${MKDIR} ${DATADIR}
