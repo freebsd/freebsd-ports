@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ecl
-PORTVERSION=	10.4.1
-PORTREVISION=	1
+PORTVERSION=	12.2.1
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/10.4/
+MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/12.2/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An ANSI Common Lisp implementation
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-gmp --enable-boehm=system
-CFLAGS=		-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
@@ -29,7 +29,9 @@ OPTIONS=	ASDF "Enable ASDF building facility" on \
 		SOCKETS "Enable socket interface" on \
 		THREADS "Enable threading support" off
 
-MAN1=		ecl.1
+MAN1=		ecl.1 ecl-config.1
+
+PLIST_SUB=      VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +50,6 @@ PLIST_SUB+=	ASDF="@comment "
 .if defined(WITH_CLX)
 USE_XORG=	x11
 CONFIGURE_ARGS+=--with-clx=yes
-#INFO+=		clx
 PLIST_SUB+=	CLX=""
 .else
 CONFIGURE_ARGS+=--with-clx=no
@@ -74,10 +75,8 @@ LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 .if defined(WITH_THREADS)
 post-patch:
-	@${REINPLACE_CMD} -e 's|_NP[[:>:]]||' \
-		${WRKSRC}/src/c/package.d ${WRKSRC}/src/c/threads.d
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' \
-		-e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/src/configure
+ 		-e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/src/configure
 .endif
 
 .include <bsd.port.post.mk>
