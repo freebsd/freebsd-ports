@@ -36,7 +36,8 @@ CONFIGURE_ARGS=	--enable-utf --enable-unicode-properties \
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedit
 CONFIGURE_ARGS+=	--enable-pcretest-libedit
 GNOME_MAKEFILEIN+=	Makefile.am
-USE_AUTOTOOLS+=	autoconf autoheader automake libtool libtoolize
+USE_AUTOTOOLS+=	aclocal autoconf autoheader automake libtool libtoolize
+ACLOCAL_ARGS+=	#undefined
 .endif
 
 .if !defined(WITHOUT_JIT) && ${ARCH} != "sparc64"
