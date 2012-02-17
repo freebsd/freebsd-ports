@@ -47,6 +47,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d7dbd2db-599c-11e1-a2fb-14dae9ebcf89">
+    <topic>mozilla -- heap-buffer overflow</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><ge>10.0,1</ge><lt>10.0.2,1</lt></range>
+	<range><ge>3.6.*</ge><lt>3.6.27</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><ge>10.0,1</ge><lt>10.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><ge>2.7</ge><lt>2.7.2</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><ge>10.0</ge><lt>10.0.2</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><ge>2.7</ge><lt>2.7.2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>10.0</ge><lt>10.0.2</lt></range>
+	<range><gt>3.1.*</gt><lt>3.1.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2012-11 libpng integer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-3026</cvename>
+	<url>https://www.mozilla.org/security/announce/2012/mfsa2012-11.html</url>
+    </references>
+    <dates>
+      <discovery>2012-02-16</discovery>
+      <entry>2012-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f5ff968-5829-11e1-8288-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
@@ -316,7 +364,10 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The GLPI project reports:</p>
 	<blockquote cite="http://www.glpi-project.org/spip.php?page=annonce&amp;id_breve=237&amp;lang=en">
-	  <p>The autocompletion functionality in GLPI before 0.80.2 does not blacklist certain username and password fields, which allows remote attackers to obtain sensitive information via a crafted POST request.</p>
+	  <p>The autocompletion functionality in GLPI before 0.80.2 does not
+	    blacklist certain username and password fields, which allows remote
+	    attackers to obtain sensitive information via a crafted POST
+	    request.</p>
 	</blockquote>
       </body>
     </description>
