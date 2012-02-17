@@ -1,27 +1,38 @@
 #!/bin/sh
+
+# $FreeBSD$
 # 
 # PROVIDE: netdisco
-# REQUIRE: DAEMON
-# BEFORE:  LOGIN
+# REQUIRE: DAEMON LOGIN
+# AFTER: postgresql
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
 name="netdisco"
-rcvar=netdisco_enable
 
 load_rc_config $name
 
 : ${netdisco_enable="NO"}
-: ${netdisco_user="netdisco"}
-: ${netdisco_group="netdisco"}
+: ${netdisco_user="%%NETDISCO_USER%%"}
+: ${netdisco_group="%%NETDISCO_GROUP%%"}
 
+start_precmd=${name}_prestart
 start_cmd=${name}_start
 stop_cmd=${name}_stop
 restart_cmd=${name}_restart
 status_cmd=${name}_status
 
 command="%%PREFIX%%/bin/netdisco"
+command_interpreter="/usr/bin/perl"
+pidfile=%%NETDISCO_RUNDIR%%/netdisco_daemon.pid
+
 required_files="%%ETCDIR%%/netdisco.conf"
+
+netdisco_prestart() {
+	test -d %%NETDISCO_RUNDIR%% || install -d -m 0700 -o $netdisco_user -g $netdisco_group %%NETDISCO_RUNDIR%%
+	test -d %%NETDISCO_DBDIR%% || install -d -m 0700 -o $netdisco_user -g $netdisco_group %%NETDISCO_DBDIR%%
+}
 
 netdisco_start() {
 	$command -p start

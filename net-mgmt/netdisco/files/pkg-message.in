@@ -3,28 +3,28 @@ Netdisco has been installed.
 
 In order to get up and running, there are a few more steps to complete:
 
-    1) fetch http://standards.ieee.org/regauth/oui/oui.txt
-       and copy the file oui.txt to %%DATADIR%%
-
-    2) Run the following to create and initialise the netdisco database:
-
-	perl %%DATADIR%%/sql/pg --init
-
-    3) Examine all the configuration files in %%ETCDIR%%,
+    1) Examine all the configuration files in %%ETCDIR%%,
        and modify them to suit your needs.
 
-    4) Add an initial admin user by running 'netdisco -u'
+    2) if you didn't use the port's option for that (OUIDL), 
+       # fetch -o %%DATADIR%%/oui.txt http://standards.ieee.org/regauth/oui/oui.txt
 
-    5) Import the OUI database: netdisco -o
+    3) Run the following to create and initialise the netdisco database:
+       # perl %%DATADIR%%/sql/pg --init
+
+    4) Add an initial admin user: 
+       # su %%NETDISCO_USER%% -c "netdisco -u"
+
+    5) Import the OUI database: 
+       # su %%NETDISCO_USER%% -c "netdisco -o"
 
     6) Edit %%ETCDIR%%/netdisco.crontab and change
        center_network_device to one of your core routers/switches. Then
        install the crontab:
-
-         crontab -u netdisco %%ETCDIR%%/netdisco.crontab
+       # crontab -u %%NETDISCO_USER%% %%ETCDIR%%/netdisco.crontab
 
     7) Add netdisco_enable="YES" to /etc/rc.conf, and then run
-       %%PREFIX%%/etc/rc.d/netdisco to start the admin daemon.
+       # service netdisco start
 
     8) Apache must be stopped/started (a graceful restart won't work)
 ------------------------------------------------------------------------

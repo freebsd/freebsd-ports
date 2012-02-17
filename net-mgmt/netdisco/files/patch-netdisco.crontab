@@ -1,7 +1,7 @@
---- netdisco.crontab.orig	2010-07-04 02:08:01.000000000 +0100
-+++ netdisco.crontab	2010-07-04 02:07:28.000000000 +0100
-@@ -4,34 +4,34 @@
- # $Id: netdisco.crontab,v 1.8 2009/06/10 18:39:03 maxbaker Exp $
+--- netdisco.crontab.orig	2012-02-16 10:15:46.000000000 +0100
++++ netdisco.crontab	2012-02-16 10:17:31.000000000 +0100
+@@ -4,38 +4,38 @@
+ # $Id: netdisco.crontab,v 1.9 2010/08/05 17:45:11 uid343744 Exp $
  
  #MAILTO=max
 -PATH=/bin:/usr/bin:/usr/local/bin
@@ -11,36 +11,41 @@
  
  # Walk network for new devices once a week (Wed @ 14:00)
 -0 14 * * 3      /usr/local/netdisco/netdisco -b -r center_network_device
-+0 14 * * 3      %%PREFIX%%/bin/netdisco -b -r center_network_device
++0 14 * * 3      netdisco -b -r center_network_device
  
  # -- Daily --
  
  # Backup at 1am every day
 -0 1 * * *       /usr/local/netdisco/netdisco -b -B 
-+0 1 * * *       %%PREFIX%%/bin/netdisco -b -B 
++0 1 * * *       netdisco -b -B 
  
  # Restart admin panel daemon nightly
 -0 2 * * *       /usr/local/netdisco/netdisco -b -p restart
-+0 2 * * *       %%PREFIX%%/bin/netdisco -b -p restart
++0 2 * * *       netdisco -b -p restart
  
  # Refresh Graph every day
 -0 3 * * *       /usr/local/netdisco/netdisco -b -g 2>&1 
-+0 3 * * *       %%PREFIX%%/bin/netdisco -b -g 2>&1 
++0 3 * * *       netdisco -b -g 2>&1 
  
  # Refresh Devices at 9:00 every day
 -0 9 * * *      /usr/local/netdisco/netdisco -b -R 
-+0 9 * * *      %%PREFIX%%/bin/netdisco -b -R 
++0 9 * * *      netdisco -b -R 
  
  # -- Hourly --
  
  # Arp Nip every hour on the half hour
 -30 * * * *  /usr/local/netdisco/netdisco -b -a 
-+30 * * * *  %%PREFIX%%/bin/netdisco -b -a 
++30 * * * *  netdisco -b -a 
+ 
+ # Save configs every hour on the hour (only necessary if network includes
+ # devices that do not permanently save SNMP changes, such as Cisco IOS)
+-#0 * * * *  /usr/local/netdisco/netdisco -b -j 61
++#0 * * * *  netdisco -b -j 61
  
  # Mac Suck every 2 hours
 -0 */2 * * * /usr/local/netdisco/netdisco -b -m 
-+0 */2 * * * %%PREFIX%%/bin/netdisco -b -m 
++0 */2 * * * netdisco -b -m 
  
  # Grab NetBios Info from Nodes three times a day
 -0 8,13,21 * * * /usr/local/netdisco/netdisco -b -w
-+0 8,13,21 * * * %%PREFIX%%/bin/netdisco -b -w
++0 8,13,21 * * * netdisco -b -w
