@@ -503,6 +503,7 @@ lib/calibre/calibre/gui2/add.py
 lib/calibre/calibre/gui2/add_wizard/__init__.py
 lib/calibre/calibre/gui2/add_wizard/scan_ui.py
 lib/calibre/calibre/gui2/add_wizard/welcome_ui.py
+lib/calibre/calibre/gui2/auto_add.py
 lib/calibre/calibre/gui2/bars.py
 lib/calibre/calibre/gui2/book_details.py
 lib/calibre/calibre/gui2/catalog/__init__.py
