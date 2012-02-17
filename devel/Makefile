@@ -668,6 +668,7 @@
     SUBDIR += hs-testpack
     SUBDIR += hs-text
     SUBDIR += hs-transformers
+    SUBDIR += hs-transformers-base
     SUBDIR += hs-transformers-docs
     SUBDIR += hs-unamb
     SUBDIR += hs-uniplate
