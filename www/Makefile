@@ -281,6 +281,7 @@
     SUBDIR += hs-HTTP
     SUBDIR += hs-authenticate
     SUBDIR += hs-cgi
+    SUBDIR += hs-cookie
     SUBDIR += hs-css-text
     SUBDIR += hs-fastcgi
     SUBDIR += hs-gitit
