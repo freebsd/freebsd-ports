@@ -100,6 +100,7 @@ fgl_port=			devel/hs-fgl
 filemanip_port=			devel/hs-filemanip
 filestore_port=			devel/hs-filestore
 gconf_port=			devel/hs-gconf
+ghc-events_port=		devel/hs-ghc-events	# executable
 ghc-mtl_port=			devel/hs-ghc-mtl
 ghc-paths_port=			devel/hs-ghc-paths
 gio_port=			devel/hs-gio
