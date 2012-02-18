@@ -279,6 +279,7 @@
     SUBDIR += horde4-wicked
     SUBDIR += hotcrp
     SUBDIR += hs-HTTP
+    SUBDIR += hs-authenticate
     SUBDIR += hs-cgi
     SUBDIR += hs-css-text
     SUBDIR += hs-fastcgi

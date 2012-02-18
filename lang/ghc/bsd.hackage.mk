@@ -23,6 +23,7 @@ asn1-data_port=			devel/hs-asn1-data
 attempt_port=			devel/hs-attempt
 attoparsec_port=		textproc/hs-attoparsec
 attoparsec-enumerator_port=	textproc/hs-attoparsec-enumerator
+authenticate_port=		www/hs-authenticate
 base-unicode-symbols_port=	devel/hs-base-unicode-symbols
 base16-bytestring_port=		devel/hs-base16-bytestring
 base64-bytestring_port=		devel/hs-base64-bytestring
