@@ -20,6 +20,7 @@ ansi-terminal_port=		devel/hs-ansi-terminal
 ansi-wl-pprint_port=		devel/hs-ansi-wl-pprint
 arrows_port=			devel/hs-arrows
 asn1-data_port=			devel/hs-asn1-data
+attempt_port=			devel/hs-attempt
 attoparsec_port=		textproc/hs-attoparsec
 attoparsec-enumerator_port=	textproc/hs-attoparsec-enumerator
 base-unicode-symbols_port=	devel/hs-base-unicode-symbols
