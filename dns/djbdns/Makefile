@@ -7,14 +7,14 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	13
+PORTREVISION?=	14
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
 DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	roam@FreeBSD.org
+MAINTAINER?=	lx@FreeBSD.org
 COMMENT?=	A collection of secure and reliable DNS tools
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
@@ -26,13 +26,15 @@ OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
 		JUMBO		"jumbo patch by Claudiu Costin" off \
 		MAN		"manual pages by Gerritt Pape" on \
 		PERSISTENT_MMAP	"persistent mmap patch by Lennert Buytenhek" off \
-		SRV		"SRV record patch by Michael Handler" off
+		SRV		"SRV record patch by Michael Handler" off \
+		DNSCURVE	"DNSCurve support by Matthew Dempsky" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JUMBO)
-.if defined(WITH_IPV6) || defined(WITH_IGNOREIP) || defined(WITH_SRV)
-BROKEN=		The jumbo patch currently conflicts with the IPv6, ignoreip2, and SRV patches
+.if defined(WITH_IPV6) || defined(WITH_IGNOREIP) || defined(WITH_SRV) || \
+	defined(WITH_DNSCURVE)
+BROKEN=		The jumbo patch currently conflicts with the IPv6, ignoreip2, SRV and DNSCURVE patches
 .endif
 
 PATCH_SITES+=	http://people.FreeBSD.org/~roam/ports/dns/djbdns/:jumbo \
@@ -99,6 +101,18 @@ PATCHFILES+=	srv-patch:srv
 PATCH_DIST_STRIP=	-p1
 .endif
 
+.if defined(WITH_DNSCURVE)
+.if defined(WITH_IPV6)
+BROKEN=	The IPv6 and DNSCurve patches are currently in conflict
+.endif
+PATCH_SITES+=	http://shinobi.dempsky.org/~matthew/patches/:dnscurve
+PATCHFILES+=	djbdns-dnscurve-20090602.patch:dnscurve
+PATCH_DIST_STRIP=	-p1
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+LDFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+BUILD_DEPENDS+=	nacl-sha256:${PORTSDIR}/security/nacl
+.endif
+
 DJBDNS_VER=	1.05
 DJBDNS_V6_VER=	test23
 
@@ -113,7 +127,7 @@ PLIST_SUB+=	WITH_IPV6="@comment "
 
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@echo "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
+	@echo "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 	@echo "${PREFIX}" > ${WRKSRC}/conf-home
 
 .if defined(WITH_MAN)

@@ -14,3 +14,5 @@ SHA256 (tinydns-persistmmap-20040418.patch) = 9c8e685ed628ef80b92611023c09806663
 SIZE (tinydns-persistmmap-20040418.patch) = 920
 SHA256 (srv-patch) = 779546218b09544493c6ba5e23bc29c33c5d284cfc78ac6fa74fa8e050bb3779
 SIZE (srv-patch) = 4508
+SHA256 (djbdns-dnscurve-20090602.patch) = 7efc54bd1981d0eb920de02b97f9b152c57e6add8023c9b82566358dc9525bba
+SIZE (djbdns-dnscurve-20090602.patch) = 26674
