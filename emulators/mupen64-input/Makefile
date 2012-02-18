@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-input
 
 COMMENT=	Input plugin for Mupen64

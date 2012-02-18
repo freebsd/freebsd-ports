@@ -7,7 +7,7 @@
 
 PORTNAME=	viruskiller
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download/viruskiller/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1

@@ -7,7 +7,7 @@
 
 PORTNAME=	pingus
 PORTVERSION=	0.7.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://pingus.seul.org/files/
 

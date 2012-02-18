@@ -1,6 +1,6 @@
 include/SDL/SDL_mixer.h
 lib/libSDL_mixer-1.2.so
-lib/libSDL_mixer-1.2.so.10
+lib/libSDL_mixer-1.2.so.12
 lib/libSDL_mixer.a
 lib/libSDL_mixer.la
 lib/libSDL_mixer.so

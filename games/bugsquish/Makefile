@@ -7,7 +7,7 @@
 
 PORTNAME=	bugsquish
 PORTVERSION=	0.0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/bugsquish/src/
 

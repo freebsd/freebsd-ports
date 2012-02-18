@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl_net
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
@@ -16,6 +16,7 @@ COMMENT=	A small sample cross-platform networking library
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
+USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

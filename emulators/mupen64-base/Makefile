@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION?=	0.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/${MUPEN64VERSION}/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}

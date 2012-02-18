@@ -7,7 +7,7 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://slouken.libsdl.org/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	daimonin
 PORTVERSION=	0.10.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://daimonin.svn.sourceforge.net/viewvc/daimonin/main/client/?view=tar&pathrev=${SVN_REVISION}&file=
 DIST_SUBDIR=	${PORTNAME}

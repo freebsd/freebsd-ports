@@ -7,6 +7,7 @@
 
 PORTNAME=	etcd
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~gahr/distfiles/ \

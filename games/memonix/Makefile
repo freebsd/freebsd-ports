@@ -7,7 +7,7 @@
 
 PORTNAME=	memonix
 PORTVERSION=	1.6.070713
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.viewizard.com/download/ \
 		http://mirror.amdmi3.ru/distfiles/

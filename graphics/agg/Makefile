@@ -7,7 +7,7 @@
 
 PORTNAME=	agg
 PORTVERSION=	2.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
 		http://freebsd.unixfreunde.de/sources/

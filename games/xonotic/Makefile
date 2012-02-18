@@ -7,6 +7,7 @@
 
 PORTNAME=	xonotic
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://dl.xonotic.org/
 

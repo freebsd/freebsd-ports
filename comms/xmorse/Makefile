@@ -7,7 +7,7 @@
 
 PORTNAME=	xmorse
 PORTVERSION=	20041125
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://c2.com/morse/files/SourceCode/ \
 		http://www.525183.com/freebsd/xmorse/ \

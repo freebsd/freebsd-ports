@@ -7,7 +7,7 @@
 
 PORTNAME=	nuclearchess
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/nuclearchess/
 

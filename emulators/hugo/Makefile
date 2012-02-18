@@ -7,7 +7,7 @@
 
 PORTNAME=	hugo
 PORTVERSION=	2.12
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zeograd.com/download/
 
