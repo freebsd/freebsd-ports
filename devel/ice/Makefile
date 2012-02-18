@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.zeroc.com/Ice/3.4/
 
-MAINTAINER=	shoesoft@gmx.net
+MAINTAINER=	freebsd@grem.de
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
