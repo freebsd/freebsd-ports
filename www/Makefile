@@ -311,6 +311,7 @@
     SUBDIR += hs-snap-server
     SUBDIR += hs-url
     SUBDIR += hs-wai
+    SUBDIR += hs-wai-extra
     SUBDIR += hs-warp
     SUBDIR += hs-webkit
     SUBDIR += hs-xss-sanitize
