@@ -105,6 +105,7 @@
     SUBDIR += hk_classes
     SUBDIR += hs-mysql
     SUBDIR += hs-persistent
+    SUBDIR += hs-persistent-template
     SUBDIR += hsqldb
     SUBDIR += hypertable
     SUBDIR += innobackup
