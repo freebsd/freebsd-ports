@@ -597,7 +597,7 @@
     SUBDIR += hs-blaze-builder-enumerator
     SUBDIR += hs-blaze-textual
     SUBDIR += hs-bsd-sysctl
-    SUBDIR += hs-bsd-byteorder
+    SUBDIR += hs-byteorder
     SUBDIR += hs-bytestring-nums
     SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
