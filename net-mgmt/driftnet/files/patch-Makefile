@@ -27,7 +27,7 @@
 -CFLAGS  += `gtk-config --cflags`
 -LDLIBS  += -ljpeg -lungif `gtk-config --libs`
 +CFLAGS  += ${PTHREAD_CFLAGS} `${GTK_CONFIG} --cflags`
-+LDLIBS  += -ljpeg -lungif `${GTK_CONFIG} --libs`
++LDLIBS  += -ljpeg -lgif `${GTK_CONFIG} --libs`
  
  # Alternatively, you can build a version of driftnet which can only be used
  # in `adjunct' mode as the back end for some other image-processing program. To

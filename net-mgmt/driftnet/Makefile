@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ex-parrot.com/~chris/driftnet/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tool to grab images out of (your) TCP connections
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
