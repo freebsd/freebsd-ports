@@ -281,6 +281,7 @@ wai-extra_port=			www/hs-wai-extra
 wai-logger_port=		www/hs-wai-logger
 warp_port=			www/hs-warp
 webkit_port=			www/hs-webkit
+wxcore_port=			x11-toolkits/hs-wxcore		# lib_depends
 wxdirect_port=			x11-toolkits/hs-wxdirect	# executable
 X11_port=			x11/hs-X11		# lib_depends
 X11-xft_port=			x11/hs-X11-xft
