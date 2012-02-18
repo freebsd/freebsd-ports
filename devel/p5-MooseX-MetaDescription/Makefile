@@ -16,6 +16,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A framework for adding additional metadata to Moose classes
 
 RUN_DEPENDS=	p5-Moose>=0.4:${PORTSDIR}/devel/p5-Moose
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
