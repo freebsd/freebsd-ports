@@ -291,6 +291,7 @@
     SUBDIR += hs-happstack-state
     SUBDIR += hs-happstack-util
     SUBDIR += hs-heist
+    SUBDIR += hs-http-enumerator
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
