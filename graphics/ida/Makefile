@@ -24,9 +24,11 @@ OPTIONS=	GIF "Enable GIF support" on \
 		TIFF "Enable TIFF support" on \
 		WEBP "Enable WebP suport" off
 
+USE_ICONV=	yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
+LDFLAGS+=	-liconv
 MAKEFILE=	${WRKSRC}/GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes
 
@@ -39,7 +41,7 @@ PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
 .if defined(WITHOUT_GIF)
 MAKE_ARGS+=	HAVE_LIBUNGIF=no
 .else
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .endif
 
 .if defined(WITH_PCD)
