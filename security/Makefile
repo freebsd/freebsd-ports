@@ -185,6 +185,7 @@
     SUBDIR += horde-jeta
     SUBDIR += hotssh
     SUBDIR += hs-Crypto
+    SUBDIR += hs-HsOpenSSL
     SUBDIR += hs-RSA
     SUBDIR += hs-SHA
     SUBDIR += hs-certificate
