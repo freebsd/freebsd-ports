@@ -231,6 +231,7 @@ testpack_port=			devel/hs-testpack
 texmath_port=			textproc/hs-texmath	# executable
 text_port=			devel/hs-text
 tls_port=			security/hs-tls
+tls-extra_port=			security/hs-tls-extra
 transformers_port=		devel/hs-transformers
 transformers-base_port=		devel/hs-transformers-base
 TypeCompose_port=		devel/hs-TypeCompose

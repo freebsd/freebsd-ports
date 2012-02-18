@@ -200,6 +200,7 @@
     SUBDIR += hs-pwstore-fast
     SUBDIR += hs-skein
     SUBDIR += hs-tls
+    SUBDIR += hs-tls-extra
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra
