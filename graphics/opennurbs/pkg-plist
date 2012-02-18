@@ -1,0 +1,8 @@
+lib/libopenNURBS.a
+libexec/openNURBS/example_brep
+libexec/openNURBS/example_dump
+libexec/openNURBS/example_read
+libexec/openNURBS/example_roundtrip
+libexec/openNURBS/example_userdata
+libexec/openNURBS/example_write
+@dirrm libexec/openNURBS

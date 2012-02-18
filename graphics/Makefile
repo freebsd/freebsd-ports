@@ -588,6 +588,7 @@
     SUBDIR += opengtl
     SUBDIR += openjpeg
     SUBDIR += openjump
+    SUBDIR += opennurbs
     SUBDIR += openrm
     SUBDIR += optar
     SUBDIR += optipng
