@@ -299,6 +299,7 @@
     SUBDIR += hs-oeis
     SUBDIR += hs-recaptcha
     SUBDIR += hs-scgi
+    SUBDIR += hs-shakespeare
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core
     SUBDIR += hs-snap-server
