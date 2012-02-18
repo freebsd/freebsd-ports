@@ -5,7 +5,7 @@ CFLAGS    ?= -g -O2 -Wall
 XROOT     = ${LOCALBASE}
 LROOT	  = ${LOCALBASE}
 INCLUDES  = -I$(XROOT)/include -I$(LROOT)/include
-LIBS      = -lX11 -lXext -ljpeg -lpng -ltiff -lz -lungif -lm -lImlib
+LIBS      = -lX11 -lXext -ljpeg -lpng -ltiff -lz -lgif -lm -lImlib
 LDPATH    = -L$(XROOT)/lib -L$(LROOT)/lib
 
 PROG      = show
