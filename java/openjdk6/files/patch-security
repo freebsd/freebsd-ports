@@ -1,0 +1,785 @@
+--- corba/src/share/classes/com/sun/corba/se/impl/dynamicany/DynAnyFactoryImpl.java	2011-11-14 17:06:00.000000000 -0500
++++ corba/src/share/classes/com/sun/corba/se/impl/dynamicany/DynAnyFactoryImpl.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -82,6 +82,6 @@
+     private String[] __ids = { "IDL:omg.org/DynamicAny/DynAnyFactory:1.0" };
+ 
+     public String[] _ids() {
+-        return __ids;
++        return (String[])__ids.clone();
+     }
+ }
+--- corba/src/share/classes/com/sun/corba/se/impl/dynamicany/DynAnyImpl.java	2011-11-14 17:06:00.000000000 -0500
++++ corba/src/share/classes/com/sun/corba/se/impl/dynamicany/DynAnyImpl.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2003, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -195,6 +195,6 @@
+     private String[] __ids = { "IDL:omg.org/DynamicAny/DynAny:1.0" };
+ 
+     public String[] _ids() {
+-        return __ids;
++        return (String[])__ids.clone();
+     }
+ }
+--- corba/src/share/classes/com/sun/org/omg/SendingContext/_CodeBaseImplBase.java	2011-11-14 17:06:02.000000000 -0500
++++ corba/src/share/classes/com/sun/org/omg/SendingContext/_CodeBaseImplBase.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1999, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1999, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -138,7 +138,7 @@
+ 
+     public String[] _ids ()
+     {
+-        return __ids;
++        return (String[])__ids.clone();
+     }
+ 
+ 
+--- jdk/make/java/java/FILES_java.gmk	2011-11-14 17:11:40.000000000 -0500
++++ jdk/make/java/java/FILES_java.gmk	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ #
+-# Copyright (c) 1996, 2010, Oracle and/or its affiliates. All rights reserved.
++# Copyright (c) 1996, 2011, Oracle and/or its affiliates. All rights reserved.
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ #
+ # This code is free software; you can redistribute it and/or modify it
+@@ -448,6 +448,7 @@
+     sun/misc/MessageUtils.java \
+     sun/misc/GC.java \
+     sun/misc/Service.java \
++    sun/misc/JavaAWTAccess.java \
+     sun/misc/JavaLangAccess.java \
+     sun/misc/JavaIOAccess.java \
+     sun/misc/JavaIODeleteOnExitAccess.java \
+--- jdk/src/share/classes/com/sun/media/sound/DirectAudioDevice.java	2011-11-14 17:11:45.000000000 -0500
++++ jdk/src/share/classes/com/sun/media/sound/DirectAudioDevice.java	2012-02-17 19:14:30.000000000 -0500
+@@ -771,7 +771,7 @@
+             if (off < 0) {
+                 throw new ArrayIndexOutOfBoundsException(off);
+             }
+-            if (off + len > b.length) {
++            if ((long)off + (long)len > (long)b.length) {
+                 throw new ArrayIndexOutOfBoundsException(b.length);
+             }
+ 
+@@ -1000,7 +1000,7 @@
+             if (off < 0) {
+                 throw new ArrayIndexOutOfBoundsException(off);
+             }
+-            if (off + len > b.length) {
++            if ((long)off + (long)len > (long)b.length) {
+                 throw new ArrayIndexOutOfBoundsException(b.length);
+             }
+             if (!isActive() && doIO) {
+--- jdk/src/share/classes/com/sun/media/sound/SoftMixingSourceDataLine.java	2011-11-14 17:11:46.000000000 -0500
++++ jdk/src/share/classes/com/sun/media/sound/SoftMixingSourceDataLine.java	2012-02-17 19:14:30.000000000 -0500
+@@ -130,6 +130,12 @@
+         if (len % framesize != 0)
+             throw new IllegalArgumentException(
+                     "Number of bytes does not represent an integral number of sample frames.");
++        if (off < 0) {
++            throw new ArrayIndexOutOfBoundsException(off);
++        }
++        if ((long)off + (long)len > (long)b.length) {
++            throw new ArrayIndexOutOfBoundsException(b.length);
++        }
+ 
+         byte[] buff = cycling_buffer;
+         int buff_len = cycling_buffer.length;
+--- jdk/src/share/classes/java/awt/KeyboardFocusManager.java	2011-11-14 17:11:48.000000000 -0500
++++ jdk/src/share/classes/java/awt/KeyboardFocusManager.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2000, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -476,14 +476,8 @@
+      */
+     protected Component getGlobalFocusOwner() throws SecurityException {
+         synchronized (KeyboardFocusManager.class) {
+-            if (this == getCurrentKeyboardFocusManager()) {
+-                return focusOwner;
+-            } else {
+-                if (focusLog.isLoggable(Level.FINER)) {
+-                    focusLog.log(Level.FINER, "This manager is " + this + ", current is " + getCurrentKeyboardFocusManager());
+-                }
+-                throw new SecurityException(notPrivileged);
+-            }
++            checkCurrentKFMSecurity();
++            return focusOwner;
+         }
+     }
+ 
+@@ -517,6 +511,7 @@
+ 
+         if (focusOwner == null || focusOwner.isFocusable()) {
+             synchronized (KeyboardFocusManager.class) {
++                checkCurrentKFMSecurity();
+                 oldFocusOwner = getFocusOwner();
+ 
+                 try {
+@@ -566,6 +561,10 @@
+      * @see java.awt.event.FocusEvent#FOCUS_LOST
+      */
+     public void clearGlobalFocusOwner() {
++        synchronized (KeyboardFocusManager.class) {
++             checkCurrentKFMSecurity();
++        } 
++
+         if (!GraphicsEnvironment.isHeadless()) {
+             // Toolkit must be fully initialized, otherwise
+             // _clearGlobalFocusOwner will crash or throw an exception
+@@ -645,14 +644,8 @@
+         throws SecurityException
+     {
+         synchronized (KeyboardFocusManager.class) {
+-            if (this == getCurrentKeyboardFocusManager()) {
+-                return permanentFocusOwner;
+-            } else {
+-                if (focusLog.isLoggable(Level.FINER)) {
+-                    focusLog.log(Level.FINER, "This manager is " + this + ", current is " + getCurrentKeyboardFocusManager());
+-                }
+-                throw new SecurityException(notPrivileged);
+-            }
++            checkCurrentKFMSecurity();
++            return permanentFocusOwner;
+         }
+     }
+ 
+@@ -688,6 +681,7 @@
+ 
+         if (permanentFocusOwner == null || permanentFocusOwner.isFocusable()) {
+             synchronized (KeyboardFocusManager.class) {
++                checkCurrentKFMSecurity();
+                 oldPermanentFocusOwner = getPermanentFocusOwner();
+ 
+                 try {
+@@ -753,14 +747,8 @@
+      */
+     protected Window getGlobalFocusedWindow() throws SecurityException {
+         synchronized (KeyboardFocusManager.class) {
+-            if (this == getCurrentKeyboardFocusManager()) {
+-               return focusedWindow;
+-            } else {
+-                if (focusLog.isLoggable(Level.FINER)) {
+-                    focusLog.log(Level.FINER, "This manager is " + this + ", current is " + getCurrentKeyboardFocusManager());
+-                }
+-                throw new SecurityException(notPrivileged);
+-            }
++            checkCurrentKFMSecurity();
++            return focusedWindow;
+         }
+     }
+ 
+@@ -791,6 +779,7 @@
+ 
+         if (focusedWindow == null || focusedWindow.isFocusableWindow()) {
+             synchronized (KeyboardFocusManager.class) {
++                checkCurrentKFMSecurity();
+                 oldFocusedWindow = getFocusedWindow();
+ 
+                 try {
+@@ -857,14 +846,8 @@
+      */
+     protected Window getGlobalActiveWindow() throws SecurityException {
+         synchronized (KeyboardFocusManager.class) {
+-            if (this == getCurrentKeyboardFocusManager()) {
+-               return activeWindow;
+-            } else {
+-                if (focusLog.isLoggable(Level.FINER)) {
+-                    focusLog.log(Level.FINER, "This manager is " + this + ", current is " + getCurrentKeyboardFocusManager());
+-                }
+-                throw new SecurityException(notPrivileged);
+-            }
++            checkCurrentKFMSecurity();
++            return activeWindow;
+         }
+     }
+ 
+@@ -893,6 +876,7 @@
+     protected void setGlobalActiveWindow(Window activeWindow) {
+         Window oldActiveWindow;
+         synchronized (KeyboardFocusManager.class) {
++            checkCurrentKFMSecurity();
+             oldActiveWindow = getActiveWindow();
+             if (focusLog.isLoggable(Level.FINER)) {
+                 focusLog.log(Level.FINER, "Setting global active window to " + activeWindow + ", old active " + oldActiveWindow);
+@@ -1187,14 +1171,8 @@
+         throws SecurityException
+     {
+         synchronized (KeyboardFocusManager.class) {
+-            if (this == getCurrentKeyboardFocusManager()) {
+-                return currentFocusCycleRoot;
+-            } else {
+-                if (focusLog.isLoggable(Level.FINER)) {
+-                    focusLog.log(Level.FINER, "This manager is " + this + ", current is " + getCurrentKeyboardFocusManager());
+-                }
+-                throw new SecurityException(notPrivileged);
+-            }
++            checkCurrentKFMSecurity();
++            return currentFocusCycleRoot;
+         }
+     }
+ 
+@@ -1218,6 +1196,7 @@
+         Container oldFocusCycleRoot;
+ 
+         synchronized (KeyboardFocusManager.class) {
++            checkCurrentKFMSecurity();
+             oldFocusCycleRoot  = getCurrentFocusCycleRoot();
+             currentFocusCycleRoot = newFocusCycleRoot;
+         }
+@@ -3102,4 +3081,14 @@
+                 : null;
+         }
+     }
++
++     private void checkCurrentKFMSecurity() {
++         if (this != getCurrentKeyboardFocusManager()) {
++             if (focusLog.isLoggable(Level.FINER)) {
++                 focusLog.finer("This manager is " + this +
++                                ", current is " + getCurrentKeyboardFocusManager());
++             }
++             throw new SecurityException(notPrivileged);
++         }
++     }
+ }
+--- jdk/src/share/classes/java/io/ObjectStreamClass.java	2011-11-14 17:11:50.000000000 -0500
++++ jdk/src/share/classes/java/io/ObjectStreamClass.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2010, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -730,7 +730,6 @@
+             InvalidClassException ice =
+                 new InvalidClassException(deserializeEx.classname,
+                                           deserializeEx.getMessage());
+-            ice.initCause(deserializeEx);
+             throw ice;
+         }
+     }
+@@ -745,7 +744,6 @@
+             InvalidClassException ice =
+                 new InvalidClassException(serializeEx.classname,
+                                           serializeEx.getMessage());
+-            ice.initCause(serializeEx);
+             throw ice;
+         }
+     }
+@@ -762,7 +760,6 @@
+             InvalidClassException ice =
+                 new InvalidClassException(defaultSerializeEx.classname,
+                                           defaultSerializeEx.getMessage());
+-            ice.initCause(defaultSerializeEx);
+             throw ice;
+         }
+     }
+--- jdk/src/share/classes/java/util/concurrent/atomic/AtomicReferenceArray.java	2011-11-14 17:11:52.000000000 -0500
++++ jdk/src/share/classes/java/util/concurrent/atomic/AtomicReferenceArray.java	2012-02-17 19:14:30.000000000 -0500
+@@ -34,8 +34,9 @@
+  */
+ 
+ package java.util.concurrent.atomic;
++import java.lang.reflect.Array;
++import java.util.Arrays;
+ import sun.misc.Unsafe;
+-import java.util.*;
+ 
+ /**
+  * An array of object references in which elements may be updated
+@@ -49,15 +50,37 @@
+ public class AtomicReferenceArray<E> implements java.io.Serializable {
+     private static final long serialVersionUID = -6209656149925076980L;
+ 
+-    private static final Unsafe unsafe = Unsafe.getUnsafe();
+-    private static final int base = unsafe.arrayBaseOffset(Object[].class);
+-    private static final int scale = unsafe.arrayIndexScale(Object[].class);
+-    private final Object[] array;
++    private static final Unsafe unsafe;
++    private static final int base;
++    private static final int shift;
++    private static final long arrayFieldOffset;
++    private final Object[] array; // must have exact type Object[]
++
++    static {
++        int scale;
++        try {
++            unsafe = Unsafe.getUnsafe();
++            arrayFieldOffset = unsafe.objectFieldOffset
++                (AtomicReferenceArray.class.getDeclaredField("array"));
++            base = unsafe.arrayBaseOffset(Object[].class);
++            scale = unsafe.arrayIndexScale(Object[].class);
++        } catch (Exception e) {
++            throw new Error(e);
++        }
++        if ((scale & (scale - 1)) != 0)
++            throw new Error("data type scale not a power of two");
++        shift = 31 - Integer.numberOfLeadingZeros(scale);
++    }
+ 
+-    private long rawIndex(int i) {
++    private long checkedByteOffset(int i) {
+         if (i < 0 || i >= array.length)
+             throw new IndexOutOfBoundsException("index " + i);
+-        return base + (long) i * scale;
++
++        return byteOffset(i);
++    }
++
++    private static long byteOffset(int i) {
++        return ((long) i << shift) + base;
+     }
+ 
+     /**
+@@ -66,9 +89,6 @@
+      */
+     public AtomicReferenceArray(int length) {
+         array = new Object[length];
+-        // must perform at least one volatile write to conform to JMM
+-        if (length > 0)
+-            unsafe.putObjectVolatile(array, rawIndex(0), null);
+     }
+ 
+     /**
+@@ -79,18 +99,8 @@
+      * @throws NullPointerException if array is null
+      */
+     public AtomicReferenceArray(E[] array) {
+-        if (array == null)
+-            throw new NullPointerException();
+-        int length = array.length;
+-        this.array = new Object[length];
+-        if (length > 0) {
+-            int last = length-1;
+-            for (int i = 0; i < last; ++i)
+-                this.array[i] = array[i];
+-            // Do the last write as volatile
+-            E e = array[last];
+-            unsafe.putObjectVolatile(this.array, rawIndex(last), e);
+-        }
++        // Visibility guaranteed by final field guarantees
++        this.array = Arrays.copyOf(array, array.length, Object[].class);
+     }
+ 
+     /**
+@@ -109,7 +119,11 @@
+      * @return the current value
+      */
+     public final E get(int i) {
+-        return (E) unsafe.getObjectVolatile(array, rawIndex(i));
++        return getRaw(checkedByteOffset(i));
++    }
++
++    private E getRaw(long offset) {
++        return (E) unsafe.getObjectVolatile(array, offset);
+     }
+ 
+     /**
+@@ -119,7 +133,7 @@
+      * @param newValue the new value
+      */
+     public final void set(int i, E newValue) {
+-        unsafe.putObjectVolatile(array, rawIndex(i), newValue);
++        unsafe.putObjectVolatile(array, checkedByteOffset(i), newValue);
+     }
+ 
+     /**
+@@ -130,7 +144,7 @@
+      * @since 1.6
+      */
+     public final void lazySet(int i, E newValue) {
+-        unsafe.putOrderedObject(array, rawIndex(i), newValue);
++        unsafe.putOrderedObject(array, checkedByteOffset(i), newValue);
+     }
+ 
+ 
+@@ -143,9 +157,10 @@
+      * @return the previous value
+      */
+     public final E getAndSet(int i, E newValue) {
++        long offset = checkedByteOffset(i);
+         while (true) {
+-            E current = get(i);
+-            if (compareAndSet(i, current, newValue))
++            E current = getRaw(offset);
++            if (compareAndSetRaw(offset, current, newValue))
+                 return current;
+         }
+     }
+@@ -153,6 +168,7 @@
+     /**
+      * Atomically sets the element at position {@code i} to the given
+      * updated value if the current value {@code ==} the expected value.
++     *
+      * @param i the index
+      * @param expect the expected value
+      * @param update the new value
+@@ -160,8 +176,11 @@
+      * the actual value was not equal to the expected value.
+      */
+     public final boolean compareAndSet(int i, E expect, E update) {
+-        return unsafe.compareAndSwapObject(array, rawIndex(i),
+-                                         expect, update);
++        return compareAndSetRaw(checkedByteOffset(i), expect, update);
++    }
++
++    private boolean compareAndSetRaw(long offset, E expect, E update) {
++        return unsafe.compareAndSwapObject(array, offset, expect, update);
+     }
+ 
+     /**
+@@ -186,9 +205,33 @@
+      * @return the String representation of the current values of array.
+      */
+     public String toString() {
+-        if (array.length > 0) // force volatile read
+-            get(0);
+-        return Arrays.toString(array);
++        int iMax = array.length - 1;
++        if (iMax == -1)
++            return "[]";
++
++        StringBuilder b = new StringBuilder();
++        b.append('[');
++        for (int i = 0; ; i++) {
++            b.append(getRaw(byteOffset(i)));
++            if (i == iMax)
++                return b.append(']').toString();
++            b.append(',').append(' ');
++        }
++    }
++
++    /**
++     * Reconstitutes the instance from a stream (that is, deserializes it).
++     * @param s the stream
++     */
++    private void readObject(java.io.ObjectInputStream s)
++        throws java.io.IOException, ClassNotFoundException {
++        // Note: This must be changed if any additional fields are defined
++        Object a = s.readFields().get("array", null);
++        if (a == null || !a.getClass().isArray())
++            throw new java.io.InvalidObjectException("Not array type");
++        if (a.getClass() != Object[].class)
++            a = Arrays.copyOf((Object[])a, Array.getLength(a), Object[].class);
++        unsafe.putObjectVolatile(this, arrayFieldOffset, a);
+     }
+ 
+ }
+--- jdk/src/share/classes/java/util/TimeZone.java	2011-11-14 17:11:52.000000000 -0500
++++ jdk/src/share/classes/java/util/TimeZone.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1996, 2005, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1996, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -43,6 +43,8 @@
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
+ import java.util.concurrent.ConcurrentHashMap;
++import sun.misc.SharedSecrets;
++import sun.misc.JavaAWTAccess;
+ import sun.security.action.GetPropertyAction;
+ import sun.util.TimeZoneNameUtility;
+ import sun.util.calendar.ZoneInfo;
+@@ -542,7 +544,7 @@
+      * method doesn't create a clone.
+      */
+     static TimeZone getDefaultRef() {
+-        TimeZone defaultZone = defaultZoneTL.get();
++        TimeZone defaultZone = getDefaultInAppContext();
+         if (defaultZone == null) {
+             defaultZone = defaultTimeZone;
+             if (defaultZone == null) {
+@@ -633,10 +635,53 @@
+         if (hasPermission()) {
+             synchronized (TimeZone.class) {
+                 defaultTimeZone = zone;
+-                defaultZoneTL.set(null);
++                setDefaultInAppContext(null);
+             }
+         } else {
+-            defaultZoneTL.set(zone);
++            setDefaultInAppContext(zone);
++        }
++    }
++
++    /**
++     * Returns the default TimeZone in an AppContext if any AppContext
++     * has ever used. null is returned if any AppContext hasn't been
++     * used or if the AppContext doesn't have the default TimeZone.
++     */
++    private synchronized static TimeZone getDefaultInAppContext() {
++        javaAWTAccess = SharedSecrets.getJavaAWTAccess();
++        if (javaAWTAccess == null) {
++            return mainAppContextDefault;
++        } else {
++            if (!javaAWTAccess.isDisposed()) {
++                TimeZone tz = (TimeZone)
++                    javaAWTAccess.get(TimeZone.class);
++                if (tz == null && javaAWTAccess.isMainAppContext()) {
++                    return mainAppContextDefault;
++                } else {
++                    return tz;
++                }
++            }
++        }
++        return null;
++    }
++
++    /**
++     * Sets the default TimeZone in the AppContext to the given
++     * tz. null is handled special: do nothing if any AppContext
++     * hasn't been used, remove the default TimeZone in the
++     * AppContext otherwise.
++     */
++    private synchronized static void setDefaultInAppContext(TimeZone tz) {
++        javaAWTAccess = SharedSecrets.getJavaAWTAccess();
++        if (javaAWTAccess == null) {
++            mainAppContextDefault = tz;
++        } else {
++            if (!javaAWTAccess.isDisposed()) {
++                javaAWTAccess.put(TimeZone.class, tz);
++                if (javaAWTAccess.isMainAppContext()) {
++                    mainAppContextDefault = null;
++                }
++            }
+         }
+     }
+ 
+@@ -687,12 +732,24 @@
+      */
+     private String           ID;
+     private static volatile TimeZone defaultTimeZone;
+-    private static final InheritableThreadLocal<TimeZone> defaultZoneTL
+-                                        = new InheritableThreadLocal<TimeZone>();
+ 
+     static final String         GMT_ID        = "GMT";
+     private static final int    GMT_ID_LENGTH = 3;
+ 
++    /*
++     * Provides access implementation-private methods without using reflection
++     *
++     * Note that javaAWTAccess may be null if sun.awt.AppContext class hasn't
++     * been loaded. If so, it implies that AWTSecurityManager is not our
++     * SecurityManager and we can use a local static variable.
++     * This works around a build time issue.
++     */
++    private static JavaAWTAccess javaAWTAccess;
++
++    // a static TimeZone we can reference if no AppContext is in place
++    private static TimeZone mainAppContextDefault;
++
++
+     /**
+      * Parses a custom time zone identifier and returns a corresponding zone.
+      * This method doesn't support the RFC 822 time zone format. (e.g., +hhmm)
+--- jdk/src/share/classes/sun/awt/AppContext.java	2011-11-14 17:11:58.000000000 -0500
++++ jdk/src/share/classes/sun/awt/AppContext.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -767,6 +767,27 @@
+         }
+         return changeSupport.getPropertyChangeListeners(propertyName);
+     }
++
++    // Set up JavaAWTAccess in SharedSecrets
++    static {
++        sun.misc.SharedSecrets.setJavaAWTAccess(new sun.misc.JavaAWTAccess() {
++            public Object get(Object key) {
++                return getAppContext().get(key);
++            }
++            public void put(Object key, Object value) {
++                getAppContext().put(key, value);
++            }
++            public void remove(Object key) {
++                getAppContext().remove(key);
++            }
++            public boolean isDisposed() {
++                return getAppContext().isDisposed();
++            }
++            public boolean isMainAppContext() {
++                return (numAppContexts == 1);
++            }
++        });
++    }
+ }
+ 
+ final class MostRecentThreadAppContext {
+--- jdk/src/share/classes/sun/misc/JavaAWTAccess.java	2012-02-17 19:14:30.000000000 -0500
++++ jdk/src/share/classes/sun/misc/JavaAWTAccess.java	2012-02-17 19:14:30.000000000 -0500
+@@ -0,0 +1,32 @@
++/*
++ * Copyright (c) 2011, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.misc;
++
++public interface JavaAWTAccess {
++    public Object get(Object key);
++    public void put(Object key, Object value);
++    public void remove(Object key);
++    public boolean isDisposed();
++    public boolean isMainAppContext();
++}
+--- jdk/src/share/classes/sun/misc/SharedSecrets.java	2011-11-14 17:12:01.000000000 -0500
++++ jdk/src/share/classes/sun/misc/SharedSecrets.java	2012-02-17 19:14:30.000000000 -0500
+@@ -52,6 +52,7 @@
+     private static JavaIOFileDescriptorAccess javaIOFileDescriptorAccess;
+     private static JavaSecurityProtectionDomainAccess javaSecurityProtectionDomainAccess;
+     private static JavaSecurityAccess javaSecurityAccess;
++    private static JavaAWTAccess javaAWTAccess;
+ 
+     public static JavaUtilJarAccess javaUtilJarAccess() {
+         if (javaUtilJarAccess == null) {
+@@ -138,4 +139,14 @@
+         }
+         return javaSecurityAccess;
+     }
++
++    public static void setJavaAWTAccess(JavaAWTAccess jaa) {
++        javaAWTAccess = jaa;
++    }
++
++    public static JavaAWTAccess getJavaAWTAccess() {
++        // this may return null in which case calling code needs to 
++        // provision for.
++        return javaAWTAccess;
++    }
+ }
+--- jdk/src/share/classes/sun/net/httpserver/Request.java	2011-11-14 17:12:01.000000000 -0500
++++ jdk/src/share/classes/sun/net/httpserver/Request.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2005, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -190,6 +190,13 @@
+                 v = new String();
+             else
+                 v = String.copyValueOf(s, keyend, len - keyend);
++
++            if (hdrs.size() >= ServerConfig.getMaxReqHeaders()) {
++                throw new IOException("Maximum number of request headers (" +
++                        "sun.net.httpserver.maxReqHeaders) exceeded, " +
++                        ServerConfig.getMaxReqHeaders() + ".");
++            }
++
+             hdrs.add (k,v);
+         }
+         return hdrs;
+--- jdk/src/share/classes/sun/net/httpserver/ServerConfig.java	2011-11-14 17:12:01.000000000 -0500
++++ jdk/src/share/classes/sun/net/httpserver/ServerConfig.java	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2005, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2005, 2012, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -45,6 +45,8 @@
+     static long defaultIdleInterval = 300 ; // 5 min
+     static long defaultSelCacheTimeout = 120 ;  // seconds
+     static int defaultMaxIdleConnections = 200 ;
++    static int defaultMaxReqHeaders = 200 ;
++
+ 
+     static long defaultDrainAmount = 64 * 1024;
+ 
+@@ -54,6 +56,9 @@
+     static long selCacheTimeout;
+     static long drainAmount;    // max # of bytes to drain from an inputstream
+     static int maxIdleConnections;
++    // The maximum number of request headers allowable
++    private static int maxReqHeaders;
++
+     static boolean debug = false;
+ 
+     static {
+@@ -93,6 +98,11 @@
+                 "sun.net.httpserver.drainAmount",
+                 defaultDrainAmount))).longValue();
+ 
++        maxReqHeaders = ((Integer)java.security.AccessController.doPrivileged(
++                new sun.security.action.GetIntegerAction(
++                "sun.net.httpserver.maxReqHeaders",
++                defaultMaxReqHeaders))).intValue();
++
+         debug = ((Boolean)java.security.AccessController.doPrivileged(
+                 new sun.security.action.GetBooleanAction(
+                 "sun.net.httpserver.debug"))).booleanValue();
+@@ -129,4 +139,8 @@
+     static long getDrainAmount () {
+         return drainAmount;
+     }
++
++    static int getMaxReqHeaders() {
++        return maxReqHeaders;
++    }
+ }
+--- jdk/src/share/native/java/util/zip/zip_util.c	2011-11-14 17:12:11.000000000 -0500
++++ jdk/src/share/native/java/util/zip/zip_util.c	2012-02-17 19:14:30.000000000 -0500
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1995, 2006, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1995, 2011, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -450,7 +450,7 @@
+ {
+     jint count = 0;
+     ptrdiff_t i;
+-    for (i = 0; i + CENHDR < end - beg; i += CENSIZE(beg + i))
++    for (i = 0; i + CENHDR <= end - beg; i += CENSIZE(beg + i))
+         count++;
+     return count;
+ }
