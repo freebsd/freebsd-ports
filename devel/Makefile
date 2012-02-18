@@ -607,6 +607,7 @@
     SUBDIR += hs-configurator
     SUBDIR += hs-control-monad-attempt
     SUBDIR += hs-convertible
+    SUBDIR += hs-convertible-text
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
     SUBDIR += hs-data-default
