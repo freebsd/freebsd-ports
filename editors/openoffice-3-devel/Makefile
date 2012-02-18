@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
-#LICENSE=	AL2
+LICENSE=	AL2
 
 NO_LATEST_LINK=	yes
 
@@ -56,7 +56,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1244320
+SVNREVISION=		1245861
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -76,11 +76,10 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 		${JAVALIBDIR}/commons-httpclient.jar:${PORTSDIR}/java/jakarta-commons-httpclient \
 		${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
-		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
 
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -144,6 +143,7 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-gperf=${LOCALBASE}/bin/gperf	\
 			--x-includes=${LOCALBASE}/include	\
 			--x-libraries=${LOCALBASE}lib	\
+			--with-system-libxml 		\
 			--with-system-libxslt 		\
 			--with-system-cairo --enable-cairo \
 			--with-system-boost 		\
@@ -154,7 +154,6 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-curl		\
 			--with-system-poppler \
 			--with-system-redland \
-			--with-system-hunspell \
 			--with-system-libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
@@ -162,11 +161,7 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
 			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
 			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar	\
-			--with-system-saxon     \
-			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
 			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
-			--with-system-beanshell	\
-			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
 			--with-package-format="archive" \
 			--enable-gstreamer \
 			--enable-minimizer \
@@ -175,7 +170,15 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--enable-dbus \
 			--enable-opengl \
 			--enable-category-b \
+			--with-system-hunspell \
+			--with-system-saxon     \
+			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
+			--with-system-beanshell	\
+			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
 			--without-stlport
+
+#		stlport_gcc.5:${PORTSDIR}/devel/stlport
+#		--with-stlport=${LOCALBASE}
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -262,6 +265,11 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
 	@${ECHO_CMD} "" > ${TMPPLIST}
+	@${ECHO_CMD} "share/licenses/${PKGNAME}/catalog.mk" >> ${TMPPLIST}
+	@${ECHO_CMD} "share/licenses/${PKGNAME}/LICENSE"    >> ${TMPPLIST}
+	@${ECHO_CMD} "share/licenses/${PKGNAME}/AL2"        >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/licenses/${PKGNAME}"     >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/licenses"                >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} \( -type f -or -type l \) >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
