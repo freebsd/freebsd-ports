@@ -12,24 +12,24 @@ etc/sarg/images/datetime.png
 etc/sarg/images/graph.png
 etc/sarg/images/sarg-squidguard-block.png
 etc/sarg/images/sarg.png
-etc/sarg/sarg-php/COPYING
-etc/sarg/sarg-php/INSTALL
-etc/sarg/sarg-php/LANGUAGES
-etc/sarg/sarg-php/language.php
-etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
-etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
-etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.mo
-etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.po
-etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.mo
-etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.po
-etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.mo
-etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.po
-etc/sarg/sarg-php/sarg-block-it.php
-etc/sarg/sarg-php/sarg-realtime.php
-etc/sarg/sarg-php/sarg-squidguard-block.php
-etc/sarg/sarg-php/sarg-squidguard-block2.php
-etc/sarg/sarg-php/style.php
-etc/sarg/sarg-php/translate.this
+%%PHP%%etc/sarg/sarg-php/COPYING
+%%PHP%%etc/sarg/sarg-php/INSTALL
+%%PHP%%etc/sarg/sarg-php/LANGUAGES
+%%PHP%%etc/sarg/sarg-php/language.php
+%%PHP%%etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
+%%PHP%%etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
+%%PHP%%etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.mo
+%%PHP%%etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.po
+%%PHP%%etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.mo
+%%PHP%%etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.po
+%%PHP%%etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.mo
+%%PHP%%etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.po
+%%PHP%%etc/sarg/sarg-php/sarg-block-it.php
+%%PHP%%etc/sarg/sarg-php/sarg-realtime.php
+%%PHP%%etc/sarg/sarg-php/sarg-squidguard-block.php
+%%PHP%%etc/sarg/sarg-php/sarg-squidguard-block2.php
+%%PHP%%etc/sarg/sarg-php/style.php
+%%PHP%%etc/sarg/sarg-php/translate.this
 etc/sarg/user_limit_block
 %%NLS%%share/locale/bg/LC_MESSAGES/sarg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sarg.mo
@@ -55,16 +55,16 @@ etc/sarg/user_limit_block
 %%NLS%%share/locale/tr/LC_MESSAGES/sarg.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/sarg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/sarg.mo
-@dirrm etc/sarg/sarg-php/locale/ru/LC_MESSAGES
-@dirrm etc/sarg/sarg-php/locale/ru
-@dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES
-@dirrm etc/sarg/sarg-php/locale/pt_BR
-@dirrm etc/sarg/sarg-php/locale/fr/LC_MESSAGES
-@dirrm etc/sarg/sarg-php/locale/fr
-@dirrm etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES
-@dirrm etc/sarg/sarg-php/locale/en_EN
-@dirrm etc/sarg/sarg-php/locale
-@dirrm etc/sarg/sarg-php
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/ru/LC_MESSAGES
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/ru
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/pt_BR
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/fr/LC_MESSAGES
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/fr
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES
+%%PHP%%@dirrm etc/sarg/sarg-php/locale/en_EN
+%%PHP%%@dirrm etc/sarg/sarg-php/locale
+%%PHP%%@dirrm etc/sarg/sarg-php
 @dirrm etc/sarg/images
 @dirrm etc/sarg/fonts
 @dirrmtry etc/sarg
