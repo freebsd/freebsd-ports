@@ -3,4 +3,4 @@ This is the libwraster library from x11-wm/windowmaker.
 The purpose of this port is to allow dockapp ports the choice of
 depending on the full Window Maker port, or just the library.
 
-WWW: http://www.windowmaker.info/
+WWW: http://www.windowmaker.org/
