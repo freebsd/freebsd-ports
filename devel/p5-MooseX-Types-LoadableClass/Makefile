@@ -25,7 +25,8 @@ RUN_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
+TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
