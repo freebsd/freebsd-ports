@@ -276,6 +276,7 @@ void_port=			devel/hs-void
 vte_port=			x11-toolkits/hs-vte
 wai_port=			www/hs-wai
 wai-extra_port=			www/hs-wai-extra
+wai-logger_port=		www/hs-wai-logger
 warp_port=			www/hs-warp
 webkit_port=			www/hs-webkit
 X11_port=			x11/hs-X11		# lib_depends
