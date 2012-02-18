@@ -1,0 +1,12 @@
+Shakespeare is a template family for type-safe, efficient templates with
+simple variable interpolation.  Shakespeare templates can be used inline
+with a quasi-quoter or in an external file.  Shakespeare interpolates
+variables according to the type being inserted.  In this case, the
+variable type needs a ToCss instance.
+
+This package contains 2 CSS template languages.  The Cassius language
+uses whitespace to avoid the need for closing brackets and semi-colons.
+Lucius does not care about whitespace and is a strict superset of CSS.
+There are also some significant conveniences added for CSS.
+
+WWW:	http://www.yesodweb.com/book/templates
