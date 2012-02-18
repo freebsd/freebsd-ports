@@ -302,6 +302,7 @@
     SUBDIR += hs-recaptcha
     SUBDIR += hs-scgi
     SUBDIR += hs-shakespeare
+    SUBDIR += hs-shakespeare-css
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core
     SUBDIR += hs-snap-server
