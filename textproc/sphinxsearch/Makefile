@@ -24,7 +24,7 @@ LICENSE=	GPLv2
 # If expat is present on the system and configure finds it, it will
 # unconditionally link the output binary against it.  There's no way
 # of turning this off.  So for consistency, make sure it's always on.
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 OPTIONS=	MYSQL		 "MySQL support"		    on	\
 		PGSQL		 "PostgreSQL support"		    off \
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--enable-id64
 
 .if defined(WITH_UNIXODBC)
 CONFIGURE_ARGS+=	--with-unixodbc
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		odbc:${PORTSDIR}/databases/unixODBC
 .else
 CONFIGURE_ARGS+=	--without-unixodbc
 .endif
