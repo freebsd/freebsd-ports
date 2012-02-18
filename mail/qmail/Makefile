@@ -361,7 +361,7 @@ DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 .endif
 
 .if defined(WITH_SMTP_AUTH_PATCH) && !defined(BARRIER_SMTP_AUTH_PATCH)
-MASTER_SITES+=	http://members.elysium.pl/brush/qmail-smtpd-auth/dist/:smtp_auth \
+MASTER_SITES+=	http://tomclegg.net/qmail/:smtp_auth \
 		${MASTER_SITE_LOCAL:S/$/:smtp_auth/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:smtp_auth
 DISTFILES+=	qmail-smtpd-auth-${SMTP_AUTH_VERSION}.tar.gz:smtp_auth
