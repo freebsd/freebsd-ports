@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic imaging library originally designed for AfterStep
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
@@ -51,8 +51,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS="-O3"||g ; \
-		 s| malloc\.h | |g ; \
-		 s|-lgif|-lungif|g' ${WRKSRC}/configure
+		 s| malloc\.h | |g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/apps/ascompose.man \
