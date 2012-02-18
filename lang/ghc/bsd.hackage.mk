@@ -180,6 +180,7 @@ porte_port=			ports-mgmt/hs-porte	# executable
 primitive_port=			devel/hs-primitive
 probability_port=		math/hs-probability
 PSQueue_port=			devel/hs-PSQueue
+pureMD5_port=			security/hs-pureMD5
 pwstore-fast_port=		security/hs-pwstore-fast
 QuickCheck_port=		devel/hs-QuickCheck
 reactive_port=			devel/hs-reactive
