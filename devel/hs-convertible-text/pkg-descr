@@ -1,0 +1,17 @@
+This is a port of John Goerzen's convertible package, intended to
+distinguish between conversions which are guaranteed to succeed and
+those which might fail.  It uses the attempt package, which in turn uses
+the failure package, so that this package is fully compatible with the
+failure framework.
+
+This package currently contains all of the typeclasses and instances for
+convertible.  However, as these features are ported to the convertible
+package, this package will be left with only the instances for
+converting to and from text types (String, ByteString (lazy and strict)
+and Text (lazy and strict).
+
+Be aware that conversions to and from bytestrings assume UTF-8 encoding.
+If a different encoding is desired, you can use a newtype wrapper and
+declare an instance of ConvertAttempt or ConvertSuccess on it.
+
+WWW:	http://github.com/snoyberg/convertible/tree/text
