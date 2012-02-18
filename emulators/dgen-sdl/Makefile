@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dgen-sdl
-PORTVERSION=	1.28
-PORTREVISION=	1
+PORTVERSION=	1.29
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
@@ -17,8 +16,6 @@ COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 USE_SDL=	sdl
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS+=	--with-extra-opt
 
 PLIST_FILES=	bin/dgen \
 		bin/dgen_tobin
