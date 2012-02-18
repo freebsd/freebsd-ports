@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=--with-icesound=oss
 .endif
 
 .if !defined(WITHOUT_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS+=	Xft:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=--enable-gradients
 .else
 CONFIGURE_ARGS+=--enable-corefonts --disable-xfreetype
