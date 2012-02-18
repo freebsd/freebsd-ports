@@ -305,6 +305,7 @@
     SUBDIR += hs-shakespeare-css
     SUBDIR += hs-shakespeare-i18n
     SUBDIR += hs-shakespeare-js
+    SUBDIR += hs-shakespeare-text
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core
     SUBDIR += hs-snap-server
