@@ -16,7 +16,7 @@ DISTNAME=	evas-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (GIF loader)
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 LICENSE=	BSD
