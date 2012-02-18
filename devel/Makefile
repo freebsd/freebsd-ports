@@ -665,6 +665,7 @@
     SUBDIR += hs-murmur-hash
     SUBDIR += hs-parallel
     SUBDIR += hs-pcre-light
+    SUBDIR += hs-pool
     SUBDIR += hs-primitive
     SUBDIR += hs-ranges
     SUBDIR += hs-reactive
