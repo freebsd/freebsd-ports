@@ -1,5 +1,5 @@
---- ./Makefile.orig	2012-01-30 16:19:10.085737423 -0500
-+++ ./Makefile	2012-01-30 20:58:38.938730750 -0500
+--- ./Makefile.orig	2012-02-18 15:17:14.650207401 -0500
++++ ./Makefile	2012-02-18 15:19:42.390202289 -0500
 @@ -301,8 +301,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
@@ -35,7 +35,7 @@
  
  export prefix bindir sharedir sysconfdir gitwebdir localedir
  
--CC = gcc
+-CC = cc
 -AR = ar
 -RM = rm -f
 -DIFF = diff
@@ -50,7 +50,7 @@
 -PTHREAD_LIBS = -lpthread
 -PTHREAD_CFLAGS =
 -GCOV = gcov
-+CC ?= gcc
++CC ?= cc
 +AR ?= ar
 +RM ?= rm -f
 +DIFF ?= diff
@@ -68,7 +68,7 @@
  
  export TCL_PATH TCLTK_PATH
  
-@@ -1435,9 +1435,9 @@
+@@ -1438,9 +1438,9 @@
  
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
