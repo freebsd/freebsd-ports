@@ -40,7 +40,8 @@ OPTIONS=	APACHE  "Enable Apache support for access denied page" on \
 		KAV     "Enable Kaspersky AV support (testing)" off \
 		NTLM    "Enable NTLM authentication plugin" off \
 		EMAIL   "Enable e-mail reporting support" off \
-		DEBUG   "Enable debug options - not for production use" off
+		DEBUG   "Enable debug options - not for production use" off \
+		SSL     "Enable SSL Cert verify and filtering (experimental)" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
@@ -129,6 +130,12 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/doc/Makefile.in
+.endif
+.if defined(WITH_SSL)
+	@${REINPLACE_CMD} -e 's|ifdef __SSLCERT|ifdef __SSLCERT_ERROR_AUTH|' \
+		${WRKSRC}/src/Auth.cpp
+LDFLAGS+=	-lssl -lcrypto
+CFLAGS+=	-D__SSLMITM -D__SSLCERT
 .endif
 
 post-install:
