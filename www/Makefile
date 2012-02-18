@@ -280,6 +280,7 @@
     SUBDIR += hotcrp
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
+    SUBDIR += hs-css-text
     SUBDIR += hs-hS3
     SUBDIR += hs-happstack
     SUBDIR += hs-happstack-data
