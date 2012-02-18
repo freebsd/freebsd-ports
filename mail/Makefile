@@ -196,6 +196,7 @@
     SUBDIR += hotwayd
     SUBDIR += hs-email-validate
     SUBDIR += hs-mime
+    SUBDIR += hs-mime-mail
     SUBDIR += ifile
     SUBDIR += ilohamail
     SUBDIR += ilohamail-devel
