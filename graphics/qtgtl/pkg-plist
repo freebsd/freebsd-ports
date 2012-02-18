@@ -5,10 +5,10 @@ include/QtShiva/ParametersWidgetBase.h
 include/QtShiva/SourceParametersWidget.h
 lib/libQtGTL.so
 lib/libQtGTL.so.0
-lib/libQtGTL.so.0.9.1
+lib/libQtGTL.so.0.9.2
 lib/libQtShiva.so
 lib/libQtShiva.so.0
-lib/libQtShiva.so.0.9.1
+lib/libQtShiva.so.0.9.2
 libdata/pkgconfig/QtGTL.pc
 libdata/pkgconfig/QtShiva.pc
 @dirrm include/QtShiva
