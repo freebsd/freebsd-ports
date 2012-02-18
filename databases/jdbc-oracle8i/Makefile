@@ -43,7 +43,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${CLASSES}${EXTRACT_SUFX}	\
 .if !exists(${CLASSES:S|^|${_DISTDIR}/|}${EXTRACT_SUFX})	\
  && !exists(${PATCH_FILE:S|^|${_DISTDIR}/|}${EXTRACT_SUFX})	\
  && !exists(${NLS_CHARSET:S|^|${_DISTDIR}/|}${EXTRACT_SUFX})
-IGNORE="Please manually download ${DISTFILES} from http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/index.html Oracle8i 8.1.7 JDBC Drivers for use with JDK 1.2 \(JDBC classes + Oracle8i ${PORTVERSION} Patch + nls_charset12.zip\). Put ${DISTFILES} into the directory ${_DISTDIR} and run make again."
+IGNORE=	Please manually download ${DISTFILES} from http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/index.html Oracle8i 8.1.7 JDBC Drivers for use with JDK 1.2 \(JDBC classes + Oracle8i ${PORTVERSION} Patch + nls_charset12.zip\). Put ${DISTFILES} into the directory ${_DISTDIR} and run make again.
 .endif
 
 pre-patch:
