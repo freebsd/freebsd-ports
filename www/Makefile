@@ -298,6 +298,7 @@
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
+    SUBDIR += hs-path-pieces
     SUBDIR += hs-recaptcha
     SUBDIR += hs-scgi
     SUBDIR += hs-shakespeare
