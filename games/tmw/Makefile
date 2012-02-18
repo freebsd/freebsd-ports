@@ -68,7 +68,7 @@ PLIST_SUB+=	MUSICADDON="@comment "
 CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DWITH_OPENGL:BOOL=ON
-USE_OPENGL=	yes
+USE_GL=		yes
 .endif
 
 post-extract:
