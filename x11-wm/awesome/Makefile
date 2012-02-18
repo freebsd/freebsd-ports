@@ -7,6 +7,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.4.11
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
-		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
+		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		ev.4:${PORTSDIR}/devel/libev \
 		freetype.9:${PORTSDIR}/print/freetype2 \
