@@ -292,6 +292,7 @@
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
+    SUBDIR += hs-recaptcha
     SUBDIR += hs-scgi
     SUBDIR += hs-snap
     SUBDIR += hs-snap-core

@@ -182,6 +182,7 @@ pwstore-fast_port=		security/hs-pwstore-fast
 QuickCheck_port=		devel/hs-QuickCheck
 reactive_port=			devel/hs-reactive
 readline_port=			devel/hs-readline
+recaptcha_port=			www/hs-recaptcha
 regex-base_port=		textproc/hs-regex-base
 regex-compat_port=		textproc/hs-regex-compat
 regex-pcre-builtin_port=	textproc/hs-regex-pcre-builtin
