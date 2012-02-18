@@ -1,0 +1,6 @@
+Shakespeare is a template family for type-safe, efficient templates with
+simple variable interpolation.  Shakespeare templates can be used inline
+with a quasi-quoter or in an external file.  Shakespeare interpolates
+variables according to the type being inserted.
+
+WWW:	http://www.yesodweb.com/book/templates
