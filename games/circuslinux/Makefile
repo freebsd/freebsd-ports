@@ -7,7 +7,7 @@
 
 PORTNAME=	circuslinux
 PORTVERSION=	1.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/circus-linux/src/
 

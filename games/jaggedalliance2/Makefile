@@ -7,6 +7,7 @@
 
 PORTNAME=	ja2
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://tron.homeunix.org/ja2/

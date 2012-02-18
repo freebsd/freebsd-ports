@@ -7,7 +7,7 @@
 
 PORTNAME=	vp
 PORTVERSION=	1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://bzflag.bz/~erik/files/
 

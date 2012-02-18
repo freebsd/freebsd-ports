@@ -7,7 +7,7 @@
 
 PORTNAME=	vultures
 PORTVERSION=	2.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/attachment/wiki/downloads/${PORTVERSION}/
 PKGNAMESUFFIX=	-eye

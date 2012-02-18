@@ -7,7 +7,7 @@
 
 PORTNAME=	xlogical
 PORTVERSION=	1.0p8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://changeling.ixionstudios.com/xlogical/downloads/ \
 		http://freebsd.portsreview.info/downloads/

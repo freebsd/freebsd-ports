@@ -7,7 +7,7 @@
 
 PORTNAME=		dodgindiamond2
 PORTVERSION=		0.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=		games
 MASTER_SITES=		http://www.usebox.net/jjm/dd2/releases/
 DISTNAME=		dd2-${PORTVERSION}

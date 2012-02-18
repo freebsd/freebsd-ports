@@ -7,6 +7,7 @@
 
 PORTNAME=	wxmupen64plus
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://cdn.bitbucket.org/auria/wxmupen64plus/downloads/
 DIST_SUBDIR=	${PORTNAME:S/wx//}

@@ -37,6 +37,7 @@ lib/libSDL-1.2.so.11
 lib/libSDL.la
 lib/libSDL.a
 lib/libSDLmain.a
+lib/libSDLmain.la
 libdata/pkgconfig/sdl.pc
 share/aclocal/sdl.m4
 %%PORTDOCS%%%%DOCSDIR%%/BUGS

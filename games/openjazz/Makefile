@@ -7,6 +7,7 @@
 
 PORTNAME=	openjazz
 PORTVERSION=	20110703
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://alister.eu/jazz/oj/ \
 		LOCAL/martymac

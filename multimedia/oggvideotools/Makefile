@@ -5,7 +5,7 @@
 
 PORTNAME=	oggvideotools
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	oggvideotools/oggvideotools/${DISTNAME}

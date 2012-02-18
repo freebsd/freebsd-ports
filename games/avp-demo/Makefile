@@ -7,6 +7,7 @@
 
 PORTNAME=	avp-demo
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTFILES=	avp_git_20090911.tar.gz avp_data_a03.tar.gz

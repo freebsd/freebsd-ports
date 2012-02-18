@@ -7,7 +7,7 @@
 
 PORTNAME=	modules
 PORTVERSION=	r20091106
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	bennugd-

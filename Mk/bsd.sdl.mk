@@ -66,7 +66,7 @@ _SUBDIR_image=	graphics
 _LIB_image=	SDL_image-1.2
 _REQUIRES_image=sdl
 
-_VERSION_mixer=	10
+_VERSION_mixer=	12
 _SUBDIR_mixer=	audio
 _LIB_mixer=	SDL_mixer-1.2
 _REQUIRES_mixer=sdl
@@ -77,7 +77,7 @@ _LIB_mm=	SDLmm
 _PORTDIR_mm=	sdlmm
 _REQUIRES_mm=	sdl
 
-_VERSION_net=	0
+_VERSION_net=	8
 _SUBDIR_net=	net
 _LIB_net=	SDL_net-1.2
 _REQUIRES_net=	sdl

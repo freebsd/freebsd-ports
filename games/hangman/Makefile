@@ -7,7 +7,7 @@
 
 PORTNAME=	hangman
 PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/hangman/ \
 		http://mirror.amdmi3.ru/distfiles/

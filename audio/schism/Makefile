@@ -7,6 +7,7 @@
 
 PORTNAME=	schism
 PORTVERSION=	20100101
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://schismtracker.org/dl/ \
 		CRITICAL

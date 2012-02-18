@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-paranormal
 PORTVERSION=	0.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/paranormal/old-paranormal-xmms/${PORTVERSION}
 DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}

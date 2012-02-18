@@ -7,6 +7,7 @@
 
 PORTNAME=	mess
 PORTVERSION=	0.139
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aarongiles.com/mirror/releases/:mame \
 		http://www.mess.org/files/:mess \

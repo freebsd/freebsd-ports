@@ -7,6 +7,7 @@
 
 PORTNAME=	engine-sdl
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-05-25/base/

@@ -7,6 +7,7 @@
 
 PORTNAME=	bomns
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/greenridge/Bomns%20for%20Linux/Bomns%20for%20Linux%20${PORTVERSION}
 

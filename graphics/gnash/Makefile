@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/

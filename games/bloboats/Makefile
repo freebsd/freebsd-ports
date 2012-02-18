@@ -7,6 +7,7 @@
 
 PORTNAME=	bloboats
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 		CRITICAL

@@ -7,7 +7,7 @@
 
 PORTNAME=	annelid
 PORTVERSION=	1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.garthgillespie.com/annelid/ \
 		${MASTER_SITE_LOCAL}

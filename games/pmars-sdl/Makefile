@@ -7,7 +7,7 @@
 
 PORTNAME=	pmars
 PORTVERSION=	0.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.helsinki.fi/u/jpihlaja/cw/pmars-sdl/
 PKGNAMESUFFIX=	-sdl

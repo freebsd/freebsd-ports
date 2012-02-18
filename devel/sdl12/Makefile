@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.14
-PORTREVISION=	2
+PORTVERSION=	1.2.15
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack pkgconfig

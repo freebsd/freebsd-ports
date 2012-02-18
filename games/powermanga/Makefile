@@ -7,7 +7,7 @@
 
 PORTNAME=	powermanga
 PORTVERSION=	0.90
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 		http://mirror.amdmi3.ru/distfiles/

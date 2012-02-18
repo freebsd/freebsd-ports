@@ -7,6 +7,7 @@
 
 PORTNAME=	passage
 PORTVERSION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/hcsoftware/Passage/v${PORTVERSION}
 DISTNAME=	Passage_v${PORTVERSION}_UnixSource

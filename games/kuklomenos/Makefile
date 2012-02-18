@@ -7,7 +7,7 @@
 
 PORTNAME=	kuklomenos
 PORTVERSION=	0.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ \
 		http://freebsd.unixfreunde.de/sources/

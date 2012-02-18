@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-softgfx
 
 COMMENT=	Soft gfx plugin for Mupen64
