@@ -620,6 +620,7 @@
     SUBDIR += hs-drift
     SUBDIR += hs-enumerator
     SUBDIR += hs-failure
+    SUBDIR += hs-fast-logger
     SUBDIR += hs-fgl
     SUBDIR += hs-filemanip
     SUBDIR += hs-filestore

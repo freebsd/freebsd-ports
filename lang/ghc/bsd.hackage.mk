@@ -93,6 +93,7 @@ enumerator_port=		devel/hs-enumerator
 epic_port=			lang/hs-epic		# executable
 erf_port=			math/hs-erf
 failure_port=			devel/hs-failure
+fast-logger_port=		devel/hs-fast-logger
 fastcgi_port=			www/hs-fastcgi		# lib_depends
 feed_port=			textproc/hs-feed
 fgl_port=			devel/hs-fgl
