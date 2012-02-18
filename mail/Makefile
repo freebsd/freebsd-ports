@@ -194,6 +194,7 @@
     SUBDIR += horde4-turba
     SUBDIR += horde4-webmail
     SUBDIR += hotwayd
+    SUBDIR += hs-email-validate
     SUBDIR += hs-mime
     SUBDIR += ifile
     SUBDIR += ilohamail

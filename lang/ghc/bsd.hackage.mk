@@ -87,6 +87,7 @@ directory-tree_port=		devel/hs-directory-tree
 distributive_port=		math/hs-distributive
 dlist_port=			devel/hs-dlist
 double-conversion_port=		textproc/hs-double-conversion
+email-validate_port=		mail/hs-email-validate
 entropy_port=			security/hs-entropy
 enumerator_port=		devel/hs-enumerator
 epic_port=			lang/hs-epic		# executable
