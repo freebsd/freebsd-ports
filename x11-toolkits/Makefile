@@ -88,6 +88,7 @@
     SUBDIR += hs-gtksourceview2
     SUBDIR += hs-pango
     SUBDIR += hs-vte
+    SUBDIR += hs-wx
     SUBDIR += hs-wxcore
     SUBDIR += hs-wxdirect
     SUBDIR += irrlicht
