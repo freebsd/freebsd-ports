@@ -286,6 +286,7 @@
     SUBDIR += hs-fastcgi
     SUBDIR += hs-gitit
     SUBDIR += hs-hS3
+    SUBDIR += hs-hamlet
     SUBDIR += hs-happstack
     SUBDIR += hs-happstack-data
     SUBDIR += hs-happstack-ixset
