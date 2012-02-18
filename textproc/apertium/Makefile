@@ -7,6 +7,7 @@
 
 PORTNAME=	apertium
 PORTVERSION=	${APVER}.${APREV}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${APVER}
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt \
 		lttoolbox3:${PORTSDIR}/textproc/lttoolbox \
-		pcre:${PORTSDIR}/devel/pcre
+		pcre.1:${PORTSDIR}/devel/pcre
 
 APVER=	3.2
 APREV=	0
@@ -51,5 +52,8 @@ MAN1=	apertium-deshtml.1 apertium-desodt.1 apertium-despptx.1 \
 	apertium-validate-postchunk.1 apertium-validate-tagger.1\
 		apertium-validate-transfer.1 apertium-unformat.1 \
 	apertium.1 apertium-desmediawiki.1 apertium-remediawiki.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/pcre_info/pcre_fullinfo/g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
