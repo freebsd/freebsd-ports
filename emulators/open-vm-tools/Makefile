@@ -12,7 +12,7 @@ CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/stable-8.6.x
 DISTNAME=		open-vm-tools-${RELEASE_VER}-${BUILD_VER}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		swills@FreeBSD.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
 LICENSE=		LGPL21
