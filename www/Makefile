@@ -318,6 +318,7 @@
     SUBDIR += hs-xss-sanitize
     SUBDIR += hs-yesod-core
     SUBDIR += hs-yesod-form
+    SUBDIR += hs-yesod-json
     SUBDIR += hs-yesod-persistent
     SUBDIR += htdump
     SUBDIR += html2hdml
