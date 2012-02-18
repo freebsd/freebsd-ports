@@ -134,6 +134,7 @@ hslogger_port=			devel/hs-hslogger
 HStringTemplate_port=		textproc/hs-HStringTemplate
 html_port=			textproc/hs-html
 HTTP_port=			www/hs-HTTP
+http-enumerator_port=		www/hs-http-enumerator
 http-server_port=		www/hs-http-server
 http-types_port=		www/hs-http-types
 HUnit_port=			devel/hs-HUnit
