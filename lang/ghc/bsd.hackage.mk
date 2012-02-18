@@ -60,6 +60,7 @@ crypto-api_port=		security/hs-crypto-api
 crypto-pubkey-types_port=	security/hs-crypto-pubkey-types
 cryptocipher_port=		security/hs-cryptocipher
 cryptohash_port=		security/hs-cryptohash
+css-text_port=			www/hs-css-text
 csv_port=			textproc/hs-csv
 curl_port=			ftp/hs-curl
 darcs_port=			devel/hs-darcs		# executable
