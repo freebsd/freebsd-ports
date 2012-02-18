@@ -675,6 +675,7 @@
     SUBDIR += hs-smallcheck
     SUBDIR += hs-split
     SUBDIR += hs-stm
+    SUBDIR += hs-strict
     SUBDIR += hs-syb
     SUBDIR += hs-syb-with-class
     SUBDIR += hs-syb-with-class-instances-text

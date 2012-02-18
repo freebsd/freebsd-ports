@@ -237,6 +237,7 @@ StateVar_port=			devel/hs-StateVar
 statistics_port=		math/hs-statistics
 stm_port=			devel/hs-stm
 Stream_port=			devel/hs-Stream
+strict_port=			devel/hs-strict
 stringsearch_port=		textproc/hs-stringsearch
 svgcairo_port=			graphics/hs-svgcairo
 syb_port=			devel/hs-syb
