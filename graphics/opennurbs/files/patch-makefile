@@ -1,0 +1,27 @@
+--- makefile.orig	2012-01-20 20:19:57.000000000 +0100
++++ makefile	2012-01-20 20:19:57.000000000 +0100
+@@ -446,7 +446,6 @@
+       example_write/example_write.o \
+       example_dump/example_dump.o \
+       example_brep/example_brep.o \
+-      example_fileit/example_fileit.o \
+       example_userdata/example_ud.o \
+       example_userdata/example_userdata.o \
+       example_roundtrip/example_roundtrip.o
+@@ -455,7 +454,6 @@
+       example_write/example_write \
+       example_dump/example_dump \
+       example_brep/example_brep \
+-      example_fileit/example_fileit \
+       example_roundtrip/example_roundtrip \
+       example_userdata/example_userdata
+ 
+@@ -491,8 +489,6 @@
+ example_brep/example_brep : example_brep/example_brep.o $(OPENNURBS_LIB_FILE)
+ 	$(LINK) $(LINKFLAGS) example_brep/example_brep.o -L. -l$(OPENNURBS_LIB_NAME) -lm -o $@
+ 
+-example_fileit/example_fileit : example_fileit/example_fileit.o $(OPENNURBS_LIB_FILE)
+-	$(LINK) $(LINKFLAGS) example_fileit/example_fileit.o -L. -l$(OPENNURBS_LIB_NAME) -lm -o $@
+ 
+ example_dump/example_dump : example_dump/example_dump.o
+ 	$(LINK) $(LINKFLAGS) example_dump/example_dump.o -L. -l$(OPENNURBS_LIB_NAME) -lm -o $@
