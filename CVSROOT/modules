@@ -5426,6 +5426,7 @@ hs-HGL                          ports/graphics/hs-HGL
 hs-HTTP                         ports/www/hs-HTTP
 hs-HUnit                        ports/devel/hs-HUnit
 hs-HaXml                        ports/textproc/hs-HaXml
+hs-MaybeT                       ports/devel/hs-MaybeT
 hs-MemoTrie                     ports/devel/hs-MemoTrie
 hs-MissingH                     ports/devel/hs-MissingH
 hs-MonadCatchIO-mtl             ports/devel/hs-MonadCatchIO-mtl
@@ -5453,6 +5454,7 @@ hs-ansi-wl-pprint               ports/devel/hs-ansi-wl-pprint
 hs-arrows                       ports/devel/hs-arrows
 hs-attoparsec                   ports/textproc/hs-attoparsec
 hs-attoparsec-enumerator        ports/textproc/hs-attoparsec-enumerator
+hs-base-unicode-symbols         ports/devel/hs-base-unicode-symbols
 hs-base16-bytestring            ports/devel/hs-base16-bytestring
 hs-base64-bytestring            ports/devel/hs-base64-bytestring
 hs-binary                       ports/devel/hs-binary
@@ -5535,6 +5537,12 @@ hs-gtksourceview2               ports/x11-toolkits/hs-gtksourceview2
 hs-hS3                          ports/www/hs-hS3
 hs-haddock                      ports/devel/hs-haddock
 hs-haddock-docs                 ports/devel/hs-haddock-docs
+hs-happstack                    ports/www/hs-happstack
+hs-happstack-data               ports/www/hs-happstack-data
+hs-happstack-ixset              ports/www/hs-happstack-ixset
+hs-happstack-server             ports/www/hs-happstack-server
+hs-happstack-state              ports/www/hs-happstack-state
+hs-happstack-util               ports/www/hs-happstack-util
 hs-happy                        ports/devel/hs-happy
 hs-hashable                     ports/devel/hs-hashable
 hs-hashed-storage               ports/devel/hs-hashed-storage
@@ -5576,12 +5584,15 @@ hs-lazysmallcheck               ports/devel/hs-lazysmallcheck
 hs-lhs2tex                      ports/textproc/hs-lhs2tex
 hs-libmpd                       ports/audio/hs-libmpd
 hs-libxml                       ports/textproc/hs-libxml
+hs-lifted-base                  ports/devel/hs-lifted-base
 hs-logict                       ports/devel/hs-logict
 hs-math-functions               ports/math/hs-math-functions
+hs-maybet                       ports/devel/hs-MaybeT
 hs-memotrie                     ports/devel/hs-MemoTrie
 hs-mime                         ports/mail/hs-mime
 hs-missingh                     ports/devel/hs-MissingH
 hs-mmap                         ports/devel/hs-mmap
+hs-monad-control                ports/devel/hs-monad-control
 hs-monad-par                    ports/devel/hs-monad-par
 hs-monadcatchio-mtl             ports/devel/hs-MonadCatchIO-mtl
 hs-monadcatchio-transformers    ports/devel/hs-MonadCatchIO-transformers
@@ -5640,6 +5651,8 @@ hs-stream                       ports/devel/hs-Stream
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-svgcairo                     ports/graphics/hs-svgcairo
 hs-syb                          ports/devel/hs-syb
+hs-syb-with-class               ports/devel/hs-syb-with-class
+hs-syb-with-class-instances-text  ports/devel/hs-syb-with-class-instances-text
 hs-tagged                       ports/devel/hs-tagged
 hs-tagsoup                      ports/textproc/hs-tagsoup
 hs-tar                          ports/archivers/hs-tar
@@ -5652,6 +5665,7 @@ hs-testpack                     ports/devel/hs-testpack
 hs-texmath                      ports/textproc/hs-texmath
 hs-text                         ports/devel/hs-text
 hs-transformers                 ports/devel/hs-transformers
+hs-transformers-base            ports/devel/hs-transformers-base
 hs-transformers-docs            ports/devel/hs-transformers-docs
 hs-typecompose                  ports/devel/hs-TypeCompose
 hs-unamb                        ports/devel/hs-unamb
@@ -9955,6 +9969,7 @@ netcdf4                         ports/science/netcdf4
 netclasses                      ports/net/netclasses
 netcomponents                   ports/java/netcomponents
 netdisco                        ports/net-mgmt/netdisco
+netdisco-mibs                   ports/net-mgmt/netdisco-mibs
 netdude                         ports/net/netdude
 netdump-server                  ports/sysutils/netdump-server
 netembryo                       ports/net/netembryo
