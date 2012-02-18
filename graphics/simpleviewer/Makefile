@@ -19,7 +19,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 
 USE_BZIP2=	yes
 USE_EFL=	imlib2
@@ -32,9 +32,8 @@ PLIST_FILES=	bin/sviewgl
 .include <bsd.port.pre.mk>
 
 post-patch:
-# Respect CFLAGS, prefer more widely used libungif instead of giflib
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS}, ; s,/usr,${LOCALBASE},g ; \
-		s,=-s,=-L${LOCALBASE}/lib, ; s,lgif,lungif,' ${WRKSRC}/Makefile
+		s,=-s,=-L${LOCALBASE}/lib,' ${WRKSRC}/Makefile
 .if ${OSVERSION} < 800501
 	@${REINPLACE_CMD} -e 's,const struct dirent,struct dirent,' \
 		${WRKSRC}/src/fileslist.*
