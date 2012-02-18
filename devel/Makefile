@@ -605,6 +605,7 @@
     SUBDIR += hs-checkers
     SUBDIR += hs-cmdargs
     SUBDIR += hs-configurator
+    SUBDIR += hs-control-monad-attempt
     SUBDIR += hs-convertible
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
