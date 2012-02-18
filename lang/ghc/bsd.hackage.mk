@@ -221,6 +221,7 @@ SHA_port=			security/hs-SHA
 shakespeare_port=		www/hs-shakespeare
 shakespeare-css_port=		www/hs-shakespeare-css
 shakespeare-i18n_port=		www/hs-shakespeare-i18n
+shakespeare-js_port=		www/hs-shakespeare-js
 show_port=			devel/hs-show
 simple-sendfile_port=		net/hs-simple-sendfile
 skein_port=			security/hs-skein
