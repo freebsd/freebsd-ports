@@ -165,6 +165,7 @@ math-functions_port=		math/hs-math-functions
 MaybeT_port=			devel/hs-MaybeT
 MemoTrie_port=			devel/hs-MemoTrie
 mime_port=			mail/hs-mime
+mime-mail_port=			mail/hs-mime-mail
 MissingH_port=			devel/hs-MissingH
 mmap_port=			devel/hs-mmap
 monad-control_port=		devel/hs-monad-control
