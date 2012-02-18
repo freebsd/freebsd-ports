@@ -302,6 +302,7 @@
     SUBDIR += hs-wai
     SUBDIR += hs-warp
     SUBDIR += hs-webkit
+    SUBDIR += hs-xss-sanitize
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
