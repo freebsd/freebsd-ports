@@ -1,0 +1,5 @@
+These objects show up in different places, e.g.  JSON, Yaml.  By
+providing a representation in a separate repository, other libraries can
+share a single representation of these structures.
+
+WWW:	http://github.com/snoyberg/data-object/tree/master
