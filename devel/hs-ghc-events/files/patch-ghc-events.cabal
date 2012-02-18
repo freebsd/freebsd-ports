@@ -1,0 +1,11 @@
+--- ./ghc-events.cabal.orig	2012-01-14 03:14:39.000000000 +0100
++++ ./ghc-events.cabal	2012-01-21 14:21:48.000000000 +0100
+@@ -40,7 +40,7 @@
+                     GHC.RTS.Events.Analysis.Thread
+   other-modules:    GHC.RTS.EventParserUtils,
+                     GHC.RTS.EventTypes
+-  extensions:	    RecordWildCards, NamedFieldPuns, BangPatterns, PatternGuards
++  extensions:	    CPP, RecordWildCards, NamedFieldPuns, BangPatterns, PatternGuards
+ 
+ executable ghc-events
+   main-is:          GhcEvents.hs
