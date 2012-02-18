@@ -587,6 +587,7 @@
     SUBDIR += hs-ansi-terminal
     SUBDIR += hs-ansi-wl-pprint
     SUBDIR += hs-arrows
+    SUBDIR += hs-asn1-data
     SUBDIR += hs-base-unicode-symbols
     SUBDIR += hs-base16-bytestring
     SUBDIR += hs-base64-bytestring
