@@ -281,6 +281,7 @@
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
     SUBDIR += hs-css-text
+    SUBDIR += hs-fastcgi
     SUBDIR += hs-hS3
     SUBDIR += hs-happstack
     SUBDIR += hs-happstack-data
@@ -289,7 +290,6 @@
     SUBDIR += hs-happstack-state
     SUBDIR += hs-happstack-util
     SUBDIR += hs-heist
-    SUBDIR += hs-fastcgi
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
