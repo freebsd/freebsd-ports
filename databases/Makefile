@@ -104,6 +104,7 @@
     SUBDIR += hiredis
     SUBDIR += hk_classes
     SUBDIR += hs-mysql
+    SUBDIR += hs-persistent
     SUBDIR += hsqldb
     SUBDIR += hypertable
     SUBDIR += innobackup
