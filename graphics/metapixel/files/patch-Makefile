@@ -52,7 +52,7 @@
  
  metapixel-imagesize : $(IMAGESIZE_OBJS) librwimg
 -	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
-+	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) rwimg/librwimg.a -lpng -ljpeg -lungif -lm -lz
++	$(CC) $(LDOPTS) -o metapixel-imagesize $(IMAGESIZE_OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
  
 -zoom : zoom.c librwimg
 -	$(CC) -o zoom $(OPTIMIZE) $(PROFILE) $(MACOS_CCOPTS) -DTEST_ZOOM zoom.c $(MACOS_LDOPTS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
