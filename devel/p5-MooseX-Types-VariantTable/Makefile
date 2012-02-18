@@ -17,6 +17,7 @@ COMMENT=	Type constraint based variant table
 RUN_DEPENDS=	p5-MooseX-Types-Structured>=0.12:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
 		p5-MooseX-Clone>=0.03:${PORTSDIR}/devel/p5-MooseX-Clone
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
