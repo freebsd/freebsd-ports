@@ -316,6 +316,7 @@
     SUBDIR += hs-warp
     SUBDIR += hs-webkit
     SUBDIR += hs-xss-sanitize
+    SUBDIR += hs-yesod-auth
     SUBDIR += hs-yesod-core
     SUBDIR += hs-yesod-form
     SUBDIR += hs-yesod-json

@@ -291,6 +291,7 @@ xmonad_port=			x11-wm/hs-xmonad	# executable
 xmonad-contrib_port=		x11-wm/hs-xmonad-contrib
 xss-sanitize_port=		www/hs-xss-sanitize
 yaml_port=			textproc/hs-yaml
+yesod-auth_port=		www/hs-yesod-auth
 yesod-core_port=		www/hs-yesod-core
 yesod-form_port=		www/hs-yesod-form
 yesod-json_port=		www/hs-yesod-json
