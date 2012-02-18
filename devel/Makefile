@@ -687,6 +687,7 @@
     SUBDIR += hs-test-framework-quickcheck2
     SUBDIR += hs-testpack
     SUBDIR += hs-text
+    SUBDIR += hs-threadscope
     SUBDIR += hs-transformers
     SUBDIR += hs-transformers-base
     SUBDIR += hs-transformers-docs
