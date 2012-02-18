@@ -72,7 +72,7 @@ CATEGORIES+=	ipv6
 .endif
 
 .if !defined(WITHOUT_LIBUNGIF)
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
