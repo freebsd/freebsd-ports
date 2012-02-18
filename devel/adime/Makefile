@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Generate Allegro dialogs in a very simple way
 
-LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg:${PORTSDIR}/devel/allegro
 
 USE_GMAKE=	yes
 
