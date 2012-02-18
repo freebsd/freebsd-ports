@@ -1,0 +1,5 @@
+Provides high-level conversions based on the data-object package.
+Parsing and emitting is handled by the yaml package, which in turn uses
+the libyaml C library.
+
+WWW:	http://github.com/snoyberg/data-object-yaml

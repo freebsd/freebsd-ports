@@ -612,6 +612,7 @@
     SUBDIR += hs-darcs
     SUBDIR += hs-data-default
     SUBDIR += hs-data-object
+    SUBDIR += hs-data-object-yaml
     SUBDIR += hs-datetime
     SUBDIR += hs-deepseq
     SUBDIR += hs-directory-tree
