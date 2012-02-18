@@ -271,6 +271,7 @@
     SUBDIR += hs-xml-enumerator
     SUBDIR += hs-xml-types
     SUBDIR += hs-xmlhtml
+    SUBDIR += hs-yaml
     SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
