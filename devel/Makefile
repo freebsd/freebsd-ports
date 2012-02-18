@@ -614,6 +614,7 @@
     SUBDIR += hs-enumerator
     SUBDIR += hs-fgl
     SUBDIR += hs-filemanip
+    SUBDIR += hs-filestore
     SUBDIR += hs-gconf
     SUBDIR += hs-ghc-mtl
     SUBDIR += hs-ghc-paths
