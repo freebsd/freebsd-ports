@@ -19,10 +19,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-OPTIONS=	GIFLIB "Enable LZW-compressed GIF support" off \
-		LCMS2 "Enable ICC color management support" on \
+OPTIONS=	LCMS2 "Enable ICC color management support" on \
 		OPENJPEG "Enable OpenJPEG support" on \
 		NLS "Enable Native Language support" on
 
@@ -32,20 +32,12 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--localedir=${PREFIX}/share/locale \
-		gtk2 cflags asneeded ft jpeg tiff man
+		gtk2 cflags asneeded ft jpeg tiff man GIF
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		${PORTNAME}.1
 
 .include <bsd.port.options.mk>
-
-.if defined(WITH_GIFLIB)
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-CONFIGURE_ARGS+=GIF
-.else
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
-CONFIGURE_ARGS+=gif
-.endif
 
 .if defined(WITHOUT_LCMS2)
 CONFIGURE_ARGS+=nolcms
