@@ -50,6 +50,10 @@ OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 900000 && ${ARCH} == "amd64"
+BROKEN=		segfaults during build
+.endif
+
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lf77blas
