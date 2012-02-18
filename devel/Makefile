@@ -665,6 +665,7 @@
     SUBDIR += hs-parallel
     SUBDIR += hs-pcre-light
     SUBDIR += hs-primitive
+    SUBDIR += hs-ranges
     SUBDIR += hs-reactive
     SUBDIR += hs-readline
     SUBDIR += hs-safe
