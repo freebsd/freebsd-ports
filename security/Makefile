@@ -199,6 +199,7 @@
     SUBDIR += hs-pureMD5
     SUBDIR += hs-pwstore-fast
     SUBDIR += hs-skein
+    SUBDIR += hs-tls
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra
