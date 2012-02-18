@@ -188,6 +188,7 @@ pandoc-types_port=		textproc/hs-pandoc-types
 pango_port=			x11-toolkits/hs-pango
 parallel_port=			devel/hs-parallel
 parsec_port=			textproc/hs-parsec
+path-pieces_port=		www/hs-path-pieces
 pcap_port=			net/hs-pcap
 pcre-light_port=		devel/hs-pcre-light	# lib_depends
 polyparse_port=			textproc/hs-polyparse
