@@ -48,6 +48,7 @@ clientsession_port=		security/hs-clientsession
 cmdargs_port=			devel/hs-cmdargs
 comonad_port=			math/hs-comonad
 comonad-transformers_port=	math/hs-comonad-transformers
+ConfigFile_port=		devel/hs-ConfigFile
 configurator_port=		devel/hs-configurator
 contravariant_port=		math/hs-contravariant
 convertible_port=		devel/hs-convertible

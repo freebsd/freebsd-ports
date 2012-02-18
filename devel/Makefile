@@ -568,6 +568,7 @@
     SUBDIR += hp48xgcc
     SUBDIR += hs-BNFC
     SUBDIR += hs-Boolean
+    SUBDIR += hs-ConfigFile
     SUBDIR += hs-DeepArrow
     SUBDIR += hs-HUnit
     SUBDIR += hs-MaybeT
