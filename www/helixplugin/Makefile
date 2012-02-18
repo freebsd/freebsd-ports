@@ -18,7 +18,7 @@ USE_DOS2UNIX	 =	yes
 MAKEFILE	 =	${FILESDIR}/BSDmakefile
 USE_GECKO	 =	libxul
 MAKE_ENV	+=	TOP="${WRKSRC}" GECKO=${GECKO}
-MAKE_JOBS_SAFE	 =	yes
+MAKE_JOBS_UNSAFE =	yes
 
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=helix.so nphelix.xpt
