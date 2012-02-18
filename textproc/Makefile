@@ -234,6 +234,7 @@
     SUBDIR += hil-aspell
     SUBDIR += hr-aspell
     SUBDIR += hs-Diff
+    SUBDIR += hs-HStringTemplate
     SUBDIR += hs-HaXml
     SUBDIR += hs-attoparsec
     SUBDIR += hs-attoparsec-enumerator

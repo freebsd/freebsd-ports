@@ -124,6 +124,7 @@ hs-bibutils_port=		textproc/hs-hs-bibutils
 hS3_port=			www/hs-hS3		# executable
 hscolour_port=			print/hs-hscolour	# executable
 hslogger_port=			devel/hs-hslogger
+HStringTemplate_port=		textproc/hs-HStringTemplate
 html_port=			textproc/hs-html
 HTTP_port=			www/hs-HTTP
 http-server_port=		www/hs-http-server
