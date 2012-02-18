@@ -16,7 +16,7 @@ COMMENT=	A photomosaic generator
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I.
