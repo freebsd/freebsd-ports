@@ -17,7 +17,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehack
