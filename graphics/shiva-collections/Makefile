@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shiva-collections
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.opengtl.org/
 
