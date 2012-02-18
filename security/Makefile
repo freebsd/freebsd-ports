@@ -187,6 +187,7 @@
     SUBDIR += hs-Crypto
     SUBDIR += hs-RSA
     SUBDIR += hs-SHA
+    SUBDIR += hs-certificate
     SUBDIR += hs-clientsession
     SUBDIR += hs-cprng-aes
     SUBDIR += hs-crypto-api

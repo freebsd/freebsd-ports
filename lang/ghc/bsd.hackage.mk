@@ -43,6 +43,7 @@ cereal_port=			devel/hs-cereal
 cairo_port=			graphics/hs-cairo
 case-insensitive_port=		textproc/hs-case-insensitive
 categories_port=		math/hs-categories
+certificate_port=		security/hs-certificate
 cgi_port=			www/hs-cgi
 checkers_port=			devel/hs-checkers
 citeproc-hs_port=		textproc/hs-citeproc-hs
