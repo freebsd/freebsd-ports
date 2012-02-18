@@ -3,24 +3,27 @@
 # Whom:					Brian Handy <handy@physics.montana.edu>
 #
 # $FreeBSD$
-#
 
-PORTNAME=	windowmaker
-PORTVERSION=	0.92.0
-PORTREVISION=	10
+PORTNAME?=	windowmaker
+PORTVERSION=	0.95.2
+PORTREVISION?=	0
 CATEGORIES=	x11-wm windowmaker
-MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
+MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/ \
 		http://dougbarton.us/Downloads/
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	GNUstep-compliant NeXTstep window manager clone
+COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+
+.if !defined(LWR_SLAVE)
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
+USE_PERL5=	yes
+.endif
 
 MAKE_JOBS_SAFE=	yes
 
@@ -28,7 +31,6 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_XORG=	xpm xft
-USE_PERL5=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -38,65 +40,33 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-libs-from="-L${LOCALBASE}/lib" \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-gnustepdir="${PREFIX}/GNUstep" \
+		--enable-modelock --enable-xrandr \
+		--enable-xinerama --enable-usermenu \
 		--disable-debug
 USE_LDCONFIG=	yes
 
+.if !defined(LWR_SLAVE)
 CONFLICTS=	libwraster-0.*
 
-MANLANG=	"" sk
+MANLANG=	"" cs ru sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
-PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ INSTALL NEWS README \
-		README.definable-cursor TODO
+PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ FAQ.I18N INSTALL \
+		INSTALL-WMAKER NEWS README README.definable-cursor TODO
 
-OPTIONS=	WM_SINGLE_CLICK "Add single-click option to WPrefs menu" on \
-		XINERAMA "Enable xinerama support" off \
-		XKB_STATUS "XKB keyboard language status support" off \
-		WM_LINGUAS "Enable support for additional locales" off \
-		DOCKHOTKEYS "Enable support for hotkeys on docks" off
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
-.endif
-
-.if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-xinerama
-.endif
-
-.if defined(WITH_XKB_STATUS) || defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-modelock
-.endif
-
-.if !defined(WITHOUT_WM_SINGLE_CLICK) || defined(PACKAGE_BUILDING)
-EXTRA_PATCHES+=		${WRKSRC}/contrib/single_click.diff
-.endif
-
-.if defined(WITH_WM_LINGUAS) || defined(PACKAGE_BUILDING)
-LINGUAS!=	${CAT} ${FILESDIR}/LINGUAS
+LINGUAS=	be bg bs ca cs da de el es et fi fr gl hr hu hy it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW
 CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
-PLIST_SUB=	WM_LINGUAS=""
-.else
-PLIST_SUB=	WM_LINGUAS="@comment "
-.endif
 
-.if defined(WITH_DOCKHOTKEYS)
-EXTRA_PATCHES+=	${FILESDIR}/extra_dockhotkeys.patch
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
-	@${REINPLACE_CMD} -e "s|%%PERL%%|${PERL}|g" ${WRKSRC}/util/wm-oldmenu2new
-	@${REINPLACE_CMD} -e "s|Trebuchet MS,Luxi Sans|sans|g" ${WRKSRC}/WindowMaker/Defaults/WMGLOBAL
-	@${REINPLACE_CMD} -e "s|/usr/local/GNUstep|${PREFIX}/GNUstep|g" \
-		${WRKSRC}/WindowMaker/*menu*
-	@(for file in `grep -rl windowmaker\.org ${WRKSRC}`; do \
-	${REINPLACE_CMD} -e "s|windowmaker\.org|windowmaker\.info|g" $$file; \
-	done)
+pre-patch:
+.for f in WINGs/wapplication.c WPrefs.app/Menu.c WPrefs.app/Paths.c \
+    WindowMaker/*menu*
+	${REINPLACE_CMD} -e "s#/usr/local#${PREFIX}#g" ${WRKSRC}/${f}
+.endfor
+	${REINPLACE_CMD} -e "s#/usr/include/X11#${PREFIX}/share#" ${WRKSRC}/WPrefs.app/Paths.c
 
 post-install:
+	@${MKDIR} ${PREFIX}/GNUstep/Applications/WPrefs.app/xpm
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -106,5 +76,6 @@ post-install:
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
 		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
