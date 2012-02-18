@@ -721,6 +721,7 @@ share/ppd/HP/hp-color_laserjet_cm6040_mfp-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm6049_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm6049_mfp-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp1215-hpijs.ppd.gz
+share/ppd/HP/hp-color_laserjet_cp1217-hpijs.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp1514n-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp1514n-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp1515n-hpijs-pcl3.ppd.gz
@@ -1228,10 +1229,15 @@ share/ppd/HP/hp-laserjet_professional_m1216nfh_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_m1217nfw_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_m1219nf_mfp-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p1102-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_professional_p1102s-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p1102w-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_professional_p1106-hpijs.ppd.gz
+share/ppd/HP/hp-laserjet_professional_p1108-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p1566-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p1606dn-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_professional_p_1102w-hpijs.ppd.gz
+share/ppd/HP/hp-lj_300_400_color_m351_m451-ps.ppd.gz
+share/ppd/HP/hp-lj_300_400_color_mfp_m375_m475-ps.ppd.gz
 share/ppd/HP/hp-mopier_240-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-mopier_240-ps.ppd.gz
 share/ppd/HP/hp-mopier_320-hpijs-pcl3.ppd.gz
