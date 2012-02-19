@@ -1,16 +1,36 @@
 bin/mame
 libexec/mame/chdman
+libexec/mame/jedutil
 libexec/mame/ldresample
 libexec/mame/ldverify
 libexec/mame/romcmp
 libexec/mame/testkeys
 libexec/mame/unidasm
+%%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/hlsl.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0145.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mame.ini
+%%DATADIR%%/artwork/aperture.png
+%%DATADIR%%/artwork/white.png
+%%DATADIR%%/hash/megatech.xml
+%%DATADIR%%/hash/neogeo.xml
+%%DATADIR%%/hash/softwarelist.dtd
+%%DATADIR%%/hash/stv.xml
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
 %%DATADIR%%/keymaps/km-de.txt
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
 %%DATADIR%%/keymaps/km_it.txt
-@dirrm %%DATADIR%%/keymaps/
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%/keymaps
+@dirrm %%DATADIR%%/hash
+@dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/mame
