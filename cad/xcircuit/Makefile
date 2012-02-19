@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.26
+PORTVERSION=	3.7.27
 PORTEPOCH=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
+MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
+		http://fossies.org/unix/misc/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_XORG=	xpm xt
 USE_TCL=	85
@@ -27,6 +31,7 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
+MAKE_JOBS_SAFE=	yes
 
 CFLAGS+=	-fPIC
 
