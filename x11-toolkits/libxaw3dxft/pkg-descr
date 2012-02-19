@@ -1,0 +1,17 @@
+Xaw3dxft is a Xaw (Athena Widget Set) replacement that looks
+three-dimensional.
+
+Xaw3dxft is an extended version of xaw3d with support for UTF8 input
+and UTF8 encoding of text, and rendering text with the Freetype 
+library and Truetype fonts. It should be mostly compatible with the
+original xaw3d library, except for font management : everything 
+using the old X11 core font routines should be replaced by their
+freetype equivalents.
+
+The main advantage of using libxaw3dxft over libxaw3d or libxaw is
+that all text will appear nicely antialiasedd when using truetype fonts
+in the menu widgets. Also, the use of UTF8 makes it easier to
+internationalize applications in arbitrary languages.
+
+
+WWW: http://sf-xpaint.sourceforge.net/

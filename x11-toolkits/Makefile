@@ -116,6 +116,7 @@
     SUBDIR += libsexymm
     SUBDIR += libwnck
     SUBDIR += libwnck-reference
+    SUBDIR += libxaw3dxft
     SUBDIR += libxfce4gui
     SUBDIR += libzvt
     SUBDIR += linux-f10-blt
