@@ -6,83 +6,94 @@
 #
 
 PORTNAME=	mess
-PORTVERSION=	0.139
-PORTREVISION=	1
+PORTVERSION=	0.145
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.aarongiles.com/mirror/releases/:mame \
-		http://www.mess.org/files/:mess \
-		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
-DISTFILES=	mame${PORTVERSION:S/.//}s.zip:mame \
-		mess${PORTVERSION:S/.//}s.zip:mess
+MASTER_SITES=	http://www.mess.org/_media/downloads:/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}s
+DIST_SUBDIR=	mame
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The popular MESS (Multiple Emulator Super System)
 
-BROKEN=		does not compile
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
+
+OPTIONS=	BUILTIN_DEBUGGER "Enable builtin debugger support" off
+
+ONLY_FOR_ARCHS=	i386 amd64
+
+NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
-USE_XORG=	xext xrender xinerama xi
+USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
-USE_GNOME?=	gtk20 gconf2
-USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" TARGET=mess
-USE_SDL=	sdl
+USE_SDL=	sdl ttf
 USE_GCC=	4.4+
+USE_GMAKE=	yes
+MAKE_ENV=	NOWERROR=1 OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}"
 MAKEFILE=	makefile
-ONLY_FOR_ARCHS=	i386 amd64
+MAKE_JOBS_SAFE=	yes
+
+CXXFLAGS+=	-fpermissive
+
 SUB_FILES=	pkg-message
-USE_DOS2UNIX=	sdl.mak debugcpu.c makefile
 
-OPTIONS=	DEBUG "Build mess debugger" off
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITH_DEBUG)
-USE_GNOME=		#
-EXTRA_PATCHES+=		${FILESDIR}/sdl.mak.patch
+.if defined(WITH_BUILTIN_DEBUGGER)
+USE_GNOME=	gtk20 gconf2
+MAKE_ENV+=	GTK_INCPATH="$$(pkg-config --cflags-only-I gtk+-2.0 gconf-2.0)" \
+		GTK_CCOMFLAGS="$$(pkg-config --cflags-only-other gtk+-2.0 gconf-2.0)" \
+		GTK_LIBS="$$(pkg-config --libs gtk+-2.0 gconf-2.0)"
+.else
+MAKE_ENV+=	NO_DEBUGGER=1 \
+		GTK_INCPATH="" \
+		GTK_CCOMFLAGS="" \
+		GTK_LIBS=""
 .endif
 
-MAKE_JOBS_SAFE=	yes
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 MAKE_ENV+=	PTR64=1
 .endif
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-post-extract:
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/mame.zip ${EXTRACT_AFTER_ARGS}
-	@${RM} -f ${WRKDIR}/mame.zip
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|ui.bdf|${DATADIR}/ui.bdf|g" ${WRKSRC}/src/emu/ui.c
+	@${REINPLACE_CMD} -e \
+		's|^BUILD_EXPAT|# BUILD_EXPAT| ; \
+		 s|^BUILD_ZLIB|# BUILD_ZLIB| ; \
+		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
+		 s| = @gcc| := $$(CC)| ; \
+		 s| = @g++| := $$(CXX)| ; \
+		 s|^FULLNAME =.*|FULLNAME = $$(NAME)|' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		'/-system/s|/usr/local/|${LOCALBASE}/| ; \
+		 /--cflags-only-I gtk+-2.0/s|=.*|= $$(GTK_INCPATH)| ; \
+		 /--cflags-only-other gtk+-2.0/s|=.*|= $$(GTK_CCOMFLAGS)| ; \
+		 /--libs gtk+-2.0/s|=.*|= $$(GTK_LIBS)| ; \
+		 /X11R6/s|^|#|' ${WRKSRC}/src/osd/sdl/sdl.mak
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/imgtool ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/jedutil ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/ldresample ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/ldverify ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/testkeys ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/unidasm ${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+.for FILE in castool chdman imgtool jedutil ldresample ldverify romcmp \
+	testkeys unidasm
+	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/libexec/${PORTNAME}
+.endfor
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${DATADIR})
+	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps ${DATADIR})
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs ${DOCSDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
 .endif
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/hash ${DATADIR}/
-	${CP} -R ${WRKSRC}/artwork ${DATADIR}/
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${FILESDIR}/mess.ini ${EXAMPLESDIR}
-
-post-install:
-	@${ECHO_CMD}
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/mess.ini ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
