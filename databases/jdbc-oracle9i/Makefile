@@ -35,7 +35,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${CLASSES}	\
 
 .if !exists(${CLASSES:S|^|${_DISTDIR}/|}})	\
  && !exists(${OCRS_FILE:S|^|${_DISTDIR}/|})
-IGNORE="Please manually download ${DISTFILES} from http://www.oracle.com/technetwork/database/enterprise-edition/jdbc9201-092698.html Oracle9i ${PORTVERSION} JDBC Drivers for use with JDK 1.4 \(JDBC classes + Additional RowSet support\). Put ${DISTFILES} into the directory ${_DISTDIR} and run make again."
+IGNORE=Please manually download ${DISTFILES} from http://www.oracle.com/technetwork/database/enterprise-edition/jdbc9201-092698.html Oracle9i ${PORTVERSION} JDBC Drivers for use with JDK 1.4 \(JDBC classes + Additional RowSet support\). Put ${DISTFILES} into the directory ${_DISTDIR} and run make again.
 .endif
 
 do-install:
