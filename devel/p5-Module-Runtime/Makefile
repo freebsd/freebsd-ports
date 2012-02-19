@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Runtime
-PORTVERSION=	0.011
+PORTVERSION=	0.013
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,6 @@ COMMENT=	Perl module for runtime module handling
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-
-BUILD_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent \
-		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
