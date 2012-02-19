@@ -50,6 +50,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/collection.rb
 %%RUBY_SITELIBDIR%%/facter/util/config.rb
 %%RUBY_SITELIBDIR%%/facter/util/confine.rb
+%%RUBY_SITELIBDIR%%/facter/util/ec2.rb
 %%RUBY_SITELIBDIR%%/facter/util/fact.rb
 %%RUBY_SITELIBDIR%%/facter/util/ip.rb
 %%RUBY_SITELIBDIR%%/facter/util/loader.rb
@@ -57,6 +58,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/macosx.rb
 %%RUBY_SITELIBDIR%%/facter/util/manufacturer.rb
 %%RUBY_SITELIBDIR%%/facter/util/memory.rb
+%%RUBY_SITELIBDIR%%/facter/util/monkey_patches.rb
 %%RUBY_SITELIBDIR%%/facter/util/netmask.rb
 %%RUBY_SITELIBDIR%%/facter/util/plist.rb
 %%RUBY_SITELIBDIR%%/facter/util/plist/generator.rb
