@@ -34,6 +34,9 @@ UNITKIT_PORT?=	devel/etoile-unitkit
 ONIGURUMA4_PORT?=	devel/oniguruma4
 ONIGURUMA5_PORT?=	devel/oniguruma5
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ONIGURUMA4)
