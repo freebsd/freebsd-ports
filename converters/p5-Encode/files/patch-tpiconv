@@ -1,0 +1,13 @@
+--- t/piconv.t
++++ t/piconv.t
+@@ -27,8 +27,8 @@ sub run_cmd (;$$);
+ 
+ my $blib =
+   File::Spec->rel2abs(
+-    File::Spec->catdir( $FindBin::RealBin, File::Spec->updir, 'blib' ) );
+-my $script = File::Spec->catdir($blib, 'script', 'piconv');
++    File::Spec->catdir( $FindBin::RealBin, File::Spec->updir ) );
++my $script = File::Spec->catdir($blib, 'bin', 'piconv');
+ my @base_cmd = ( $^X, "-Mblib=$blib", $script );
+ 
+ plan tests => 5;
