@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--with-python=${PREFIX}
 CONFIGURE_ARGS+=	--enable-shared-python=yes
 CONFIGURE_ARGS+=	--enable-pygtk
 PLIST_SUB+=		PYSUPPORT=""
-USE_PYTHON=		26 27
+USE_PYTHON=		2.6-2.7
 BUILD_DEPENDS+=		py2[67]-gtk>=2.22:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=		py2[67]-gtk>=2.22:${PORTSDIR}/x11-toolkits/py-gtk2
 PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
