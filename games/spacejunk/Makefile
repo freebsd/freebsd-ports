@@ -38,7 +38,7 @@ DESKTOP_ENTRIES=	"Spacejunk" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Doesn't compile on sparc64"
+BROKEN=		Doesn't compile on sparc64
 .endif
 
 AUTOTOOLSFILES=	aclocal.m4
