@@ -9,7 +9,7 @@ PORTVERSION=	0.9d
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/AIM%20Sniff/${PORTVERSION}
 
-MAINTAINER=	andrew@amrx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AOL Instant Messanger Sniffing and Reading Tool
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap\
@@ -32,7 +32,7 @@ PLIST_FILES=	bin/aimsniff
 .include <bsd.port.pre.mk>
 
 .if !exists(${LOCALBASE}/lib/perl5/${PERL_VERSION}/${PERL_ARCH}/GDBM_File.pm)
-#IGNORE=		"You need perl compiled with GDBM support"
+#IGNORE=		You need perl compiled with GDBM support
 .endif
 
 do-install:
