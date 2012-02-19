@@ -2,4 +2,4 @@
 +++ include/net-snmp/system/freebsd10.h	2009-09-11 10:02:17.000000000 -0400
 @@ -0,0 +1,2 @@
 +#include "freebsd9.h"
-+#define freebsd9 freebsd9
++#define freebsd10 freebsd10
