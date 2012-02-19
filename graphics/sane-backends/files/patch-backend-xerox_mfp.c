@@ -9,8 +9,8 @@ Subject: [PATCH] keep usb device by default (correct for bug introduced by tcp s
 
 diff --git a/backend/xerox_mfp.c b/backend/xerox_mfp.c
 index e08b50f..d4672a7 100644
---- a/backend/xerox_mfp.c
-+++ b/backend/xerox_mfp.c
+--- backend/xerox_mfp.c.orig
++++ backend/xerox_mfp.c
 @@ -37,10 +37,10 @@
  static const SANE_Device **devlist = NULL;	/* sane_get_devices array */
  static struct device *devices_head = NULL;	/* sane_get_devices list */
