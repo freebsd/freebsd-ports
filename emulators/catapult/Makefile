@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	catapult
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	emulators
 MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
@@ -15,10 +15,10 @@ DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for openMSX
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
-
-LICENSE=	GPLv2
 
 USE_GNOME=	libxml2
 USE_WX=		2.6+
@@ -50,9 +50,9 @@ CATAPULT_STRIP=	true
 post-patch:
 	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' \
 		${WRKSRC}/build/info2code.mk
-.for file in build/main.mk build/probe.mk
+.for FILE in build/main.mk build/probe.mk
 	@${REINPLACE_CMD} 's|@$$(CXX)|$$(CXX)| ; \
-		 s|wx-config|${WX_CONFIG}|g' ${WRKSRC}/${file}
+		 s|wx-config|${WX_CONFIG}|g' ${WRKSRC}/${FILE}
 .endfor
 	@${ECHO_CMD} > ${WRKSRC}/build/flavour-portbld.mk
 	@${ECHO_CMD} 'CXXFLAGS+=${CXXFLAGS}' \
