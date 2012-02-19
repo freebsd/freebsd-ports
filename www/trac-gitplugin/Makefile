@@ -18,7 +18,7 @@ DISTNAME=	hvr-trac-git-plugin-v${PORTVERSION}-20-g${GITPLUGIN_HASH}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Git plugin for Trac
 
-LICENSE=	GPLv2
+LICENSE=	BSD
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 		tracd:${PORTSDIR}/www/trac
