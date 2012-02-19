@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>plib</name>
-	<range><le>1.8.5</le></range>
+	<range><le>1.8.5_3</le></range>
       </package>
     </affects>
     <description>
