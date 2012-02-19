@@ -36,7 +36,8 @@ PGSQL_VER=	${DEFAULT_PGSQL_VER}
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--with-perl
 
-BUILD_DIRS=	src/pl/plperl
+BUILD_DIRS=	src/backend src/pl/plperl
+INSTALL_DIRS=	src/pl/plperl
 SLAVE_ONLY=	yes
 
 .include "${MASTERDIR}/Makefile"
