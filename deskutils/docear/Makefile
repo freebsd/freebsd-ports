@@ -9,7 +9,7 @@ PORTNAME=	docear
 PORTVERSION=	1.0.0.b01
 PORTREVISION=	1
 CATEGORIES=	deskutils java
-MASTER_SITES=	SF/docear/1.x/${PORTVERSION:S/\.b/_beta/}
+MASTER_SITES=	SF/docear/1.x/${PORTVERSION:S/.b/_beta/}
 DISTNAME=	docear_linux
 
 MAINTAINER=	mandree@FreeBSD.org
