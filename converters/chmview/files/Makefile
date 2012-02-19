@@ -1,27 +1,16 @@
-#
 # $FreeBSD$
-#
-OBJDIR = .
-EXEDIR = .
-EXENAME = $(EXEDIR)/chmview
 
-CFLAGS += -DUNIX
+BINDIR?=	${PREFIX}/bin
 
-all: $(EXENAME)
+CFLAGS+=	-DUNIX -I${LOCALBASE}/include
+LDADD+=		-L${LOCALBASE}/lib -lchm
 
-OBJS = $(OBJDIR)/chmview.o \
-       $(OBJDIR)/chm_lib.o \
-       $(OBJDIR)/lzx.o \
-       $(OBJDIR)/utf8.o
+WARNS?=		6
 
-$(OBJDIR)/chmview.o: chmview.c chm_lib.h
-$(OBJDIR)/chm_lib.o: chm_lib.c chm_lib.h lzx.h
-$(OBJDIR)/utf8.o: utf8.c utf8.h
-$(OBJDIR)/lzx.o: lzx.c lzx.h
+NO_MAN=		yes
 
-.c.o:
-	$(CC) $(CFLAGS) -c ${.IMPSRC}
+PROG=		chmview
 
-$(EXENAME): $(OBJS)
-	echo $(OBJS)
-	$(CC) $(LFLAGS) -o $(EXENAME) ${.ALLSRC}
+SRCS=		chmview.c utf8.h utf8.c
+
+.include <bsd.prog.mk>
