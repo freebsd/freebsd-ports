@@ -81,6 +81,10 @@ FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not build fully (cups) on FreeBSD 7.X
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp
 	${REINPLACE_CMD} -e "s,ac_cups_share_test=.*,ac_cups_share_test=,g" \
