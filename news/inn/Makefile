@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--without-kerberos
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=		YES
+USE_PYTHON=		yes
 CONFIGURE_ARGS+=	--with-python
 .    include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif

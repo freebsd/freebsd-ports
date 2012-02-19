@@ -18,8 +18,8 @@ PROJECTHOST=	sitemap-generators
 
 NO_WRKSUBDIR=
 
-USE_PYTHON=	YES
-USE_PYDISTUTILS=YES
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	sitemap_gen
 
 .include <bsd.port.mk>

@@ -24,11 +24,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simpl
 
 CONFLICTS=	rabbitmq-c-[0-9]*
 
-USE_BZIP2=	YES
-USE_GMAKE=	YES
-USE_PYTHON=	YES
-USE_LDCONFIG=	YES
-GNU_CONFIGURE=	YES
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_PYTHON=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf automake autoheader libtool
 AUTOMAKE_ARGS=	-i --add-missing
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
