@@ -32,4 +32,7 @@ USE_GNUSTEP_MAKE_DIRS+=	Frameworks/EtoileUI
 FOUNDATION_PORT?=	devel/etoile-foundation
 COREOBJECT_PORT?=	devel/etoile-coreobject
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
+
 .include <bsd.port.mk>
