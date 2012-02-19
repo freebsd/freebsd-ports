@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Negotiate
-PORTVERSION=	6.00
+PORTVERSION=	6.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of the HTTP content negotiation algorithm
 
+BUILD_DEPENDS=	p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message
 RUN_DEPENDS=	p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message
-BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
