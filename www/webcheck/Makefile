@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tar.gz
 MAINTAINER=	reed@reedmedia.net
 COMMENT=	View structure of a web site, get a list of problems like broken links
 
-USE_PYTHON=	YES
-NO_BUILD=	YES
+USE_PYTHON=	yes
+NO_BUILD=	yes
 
 MAN1=		webcheck.1
 

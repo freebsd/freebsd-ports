@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Replacement for htpasswd
 
-USE_PYTHON=	YES
-USE_XZ=		YES
+USE_PYTHON=	yes
+USE_XZ=		yes
 
 PLIST_FILES=	bin/${PORTNAME}.py
 
-NO_BUILD=	YES
-NO_WRKSUBDIR=	YES
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 post-patch:
 	${SED} -I.orig -e 's|^#!/usr/bin/python|#!/usr/bin/env python|' ${WRKDIR}/${PORTNAME}.py

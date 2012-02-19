@@ -20,7 +20,7 @@ LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python
-USE_PYTHON=	YES
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
