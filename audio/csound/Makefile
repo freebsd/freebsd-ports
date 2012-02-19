@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	5.15.0
+PORTVERSION=	5.16.6
 CATEGORIES=	audio lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R} \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}${PORTVERSION:R}/manual:manual
 DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	csound
 
 MAINTAINER=	ports@FreeBSD.org
@@ -135,7 +136,7 @@ SCONS_ARGS+=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
 .endif
 
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS+=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 DISTFILES+=	Csound${PORTVERSION:R}_manual_html.zip:manual
 .endif
 
@@ -143,6 +144,12 @@ DISTFILES+=	Csound${PORTVERSION:R}_manual_html.zip:manual
 
 .if ${ARCH} == amd64 || ${ARCH} == sparc64 || ${ARCH} == ia64
 CMAKE_ARGS+=	Word64=1
+.endif
+
+post-extract:
+.if !defined(NOPORTDOCS)
+	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -qo \
+		Csound${PORTVERSION:R}_manual_html.zip -d ${WRKDIR})
 .endif
 
 post-patch:
@@ -188,12 +195,11 @@ post-patch:
 		${WRKSRC}/frontends/CsoundAC/Counterpoint.hpp
 
 post-install:
-	@${LN} -s libcsound64.so.5 ${PREFIX}/lib/libcsound64.so
+	@${LN} -sf libcsound64.so.5 ${PREFIX}/lib/libcsound64.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${ECHO_MSG} " Installing the manual."
-	@(cd ${WRKDIR}/Csound${PORTVERSION:R}_manual_html \
-		&& ${COPYTREE_SHARE} . ${DOCSDIR})
+	@(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${DOCSDIR})
 	@${ECHO_MSG} " Done."
 .endif
 	@${CAT} ${PKGMESSAGE}
