@@ -154,6 +154,8 @@ include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/motzkin-path-lex.h
+include/fxt/comb/is-motzkin-path.h
 include/fxt/comb/catalan-subset-lex.h
 include/fxt/comb/dyck-rgs-subset-lex.h
 include/fxt/comb/setpart-rgs-subset-lex.h
@@ -655,6 +657,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/motzkin-path-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/motzkin-path-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/setpart-rgs-subset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-rgs-subset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-subset-lex-out.txt
@@ -1205,6 +1209,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A080936-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206464-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206464-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A207018-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A207018-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bitstring-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/equivclass-bracelets-demo.cc
