@@ -8,7 +8,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.4.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -30,5 +30,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's, *UTF-8 support, *UTF-8 .*support,g' \
+	${WRKSRC}/configure
 
 .include <bsd.port.mk>
