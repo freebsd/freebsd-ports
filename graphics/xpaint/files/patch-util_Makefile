@@ -1,0 +1,57 @@
+--- util/Makefile.bak	2012-02-05 15:14:24.000000000 +0100
++++ util/Makefile	2012-02-18 23:14:26.000000000 +0100
+@@ -1,13 +1,11 @@
+-GCC = gcc
+-CPP = g++ -fpermissive
+ 
+ all: pdfconcat ppmtops pgf2pnm
+ 
+ pdfconcat:
+-	$(GCC) -O3 -s -DNDEBUG=1 -DNO_CONFIG=1 -ansi -pedantic -Wunused -Wall -W -Wstrict-prototypes -Wtraditional -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wmissing-prototypes -Wmissing-declarations pdfconcat.c -o pdfconcat
++	$(CC) $(CFLAGS) -s -DNDEBUG=1 -DNO_CONFIG=1 -ansi -pedantic -Wunused -Wall -W -Wstrict-prototypes -Wtraditional -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wmissing-prototypes -Wmissing-declarations pdfconcat.c -o pdfconcat
+ 
+ ppmtops:
+-	$(GCC) ppmtops.c -o ppmtops
++	$(CC) $(CFLAGS) ppmtops.c -o ppmtops
+ 
+ pgf2pnm: main.cpp pnm.cpp
+ 	@if [ -x /usr/include/libpgf ] ; then \
+@@ -15,25 +13,25 @@
+ 	$(CPP) -c pnm.cpp -o pnm.o -I/usr/include/libpgf ; \
+ 	$(CPP) -o pgf2pnm main.o pnm.o -lpgf ; \
+ 	else \
+-	@echo "libpgf not installed !!" ; \
++	echo "libpgf not installed !!" ; \
+ 	fi
+ 
+ install:
+ 	@if [ -x pdfconcat ] ; then \
+-	mkdir -p $(DESTDIR)/usr/bin ; \
+-	install -c pdfconcat $(DESTDIR)/usr/bin ; \
+-	echo "install -c pdfconcat $(DESTDIR)/usr/bin" ; \
+-	mkdir -p $(DESTDIR)/usr/share/man/man1 ; \
+-	install -c -m 644 pdfconcat.1 $(DESTDIR)/usr/share/man/man1 ; \
+-	echo "install -c pdfconcat.1 $(DESTDIR)/usr/share/man/man1" ; fi
++	mkdir -p $(PREFIX)/bin ; \
++	install -c pdfconcat $(PREFIX)/bin ; \
++	echo "install -c pdfconcat $(PREFIX)/bin" ; \
++	mkdir -p $(PREFIX)/man/man1 ; \
++	install -c -m 644 pdfconcat.1 $(PREFIX)/man/man1 ; \
++	echo "install -c pdfconcat.1 $(PREFIX)/man/man1" ; fi
+ 	@if [ -x ppmtops ] ; then \
+-	mkdir -p $(DESTDIR)/usr/bin ; \
+-	install -c ppmtops $(DESTDIR)/usr/bin ; \
+-	echo "install -c ppmtops $(DESTDIR)/usr/bin" ; fi
++	mkdir -p $(PREFIX)/bin ; \
++	install -c ppmtops $(PREFIX)/bin ; \
++	echo "install -c ppmtops $(PREFIX)/bin" ; fi
+ 	@if [ -x pgf2pnm ] ; then \
+-	mkdir -p $(DESTDIR)/usr/bin ; \
+-	install -c pgf2pnm $(DESTDIR)/usr/bin ; \
+-	echo "install -c pgf2pnm $(DESTDIR)/usr/bin" ; fi
++	mkdir -p $(PREFIX)/bin ; \
++	install -c pgf2pnm $(PREFIX)/bin ; \
++	echo "install -c pgf2pnm $(PREFIX)/bin" ; fi
+ 
+ clean:
+ 	rm -f core *~ *.o pdfconcat ppmtops pgf2pnm

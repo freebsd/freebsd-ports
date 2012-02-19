@@ -1,6 +1,6 @@
-@comment $FreeBSD$
 bin/imgmerge
 bin/pdfconcat
+bin/ppmtops
 bin/xpaint
 lib/X11/app-defaults/XPaint
 lib/X11/app-defaults/XPaint_es
@@ -108,6 +108,7 @@ lib/X11/app-defaults/XPaint_fr
 %%DATADIR%%/include/rc.h
 %%DATADIR%%/include/region.h
 %%DATADIR%%/include/text.h
+%%DATADIR%%/include/version.h
 %%DATADIR%%/include/xpaint.h
 %%DATADIR%%/messages/Messages
 %%DATADIR%%/messages/Messages_es
