@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	GitHub Command Tools
 
+BUILD_DEPENDS=	p5-JSON-XS>=2.3:${PORTSDIR}/converters/p5-JSON-XS \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-Net-GitHub>=0.12:${PORTSDIR}/net/p5-Net-GitHub
 RUN_DEPENDS=	p5-JSON-XS>=2.3:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Net-GitHub>=0.12:${PORTSDIR}/net/p5-Net-GitHub
