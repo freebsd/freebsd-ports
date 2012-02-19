@@ -476,7 +476,6 @@
     SUBDIR += p5-TokyoCabinet
     SUBDIR += p5-hp200lx-db
     SUBDIR += p5-mysql-genocide
-    SUBDIR += p5-postgresql-plperl
     SUBDIR += p5-qdbm
     SUBDIR += p5-tokyotyrant
     SUBDIR += pear-DB
@@ -628,15 +627,19 @@
     SUBDIR += postgresql82-server
     SUBDIR += postgresql83-client
     SUBDIR += postgresql83-contrib
+    SUBDIR += postgresql83-plperl
     SUBDIR += postgresql83-server
     SUBDIR += postgresql84-client
     SUBDIR += postgresql84-contrib
+    SUBDIR += postgresql84-plperl
     SUBDIR += postgresql84-server
     SUBDIR += postgresql90-client
     SUBDIR += postgresql90-contrib
+    SUBDIR += postgresql90-plperl
     SUBDIR += postgresql90-server
     SUBDIR += postgresql91-client
     SUBDIR += postgresql91-contrib
+    SUBDIR += postgresql91-plperl
     SUBDIR += postgresql91-server
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
