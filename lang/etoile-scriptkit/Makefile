@@ -31,4 +31,8 @@ USE_GNUSTEP_MAKE_DIRS+=	Frameworks/ScriptKit
 
 FOUNDATION_PORT?=	devel/etoile-foundation
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make \
+		${WRKSRC}/Frameworks/ScriptKit/GNUmakefile
+
 .include <bsd.port.mk>
