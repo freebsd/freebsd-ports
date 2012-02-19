@@ -3,7 +3,7 @@
 # options available.  --gcrootfinder=asmgcc does not work under FreeBSD/amd64.
 
 PYPY_DEFAULT_NAME?=		pypy
-PYPY_DEFAULT_TRANSLATE_ARGS?=	--thread
+PYPY_DEFAULT_TRANSLATE_ARGS?=
 PYPY_DEFAULT_OPT?=		jit
 PYPY_DEFAULT_OBJSPACE_ARGS?=
 

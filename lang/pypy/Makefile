@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pypy
-DISTVERSION=	1.7
+DISTVERSION=	1.8
 CATEGORIES=	lang python
 MASTER_SITES=	https://bitbucket.org/pypy/pypy/get/
 DISTNAME=	release-${DISTVERSION}
@@ -29,7 +29,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-WRKSRC=		${WRKDIR}/pypy-pypy-release-${DISTVERSION}
+WRKSRC=		${WRKDIR}/pypy-pypy-2346207d9946
 
 PYPYDIRS=	include lib-python lib_pypy site-packages
 PYPYPREFIX?=	${PREFIX}/${PORTNAME}-${DISTVERSION}
@@ -65,7 +65,11 @@ WITH_BOEHM_GC=	yes
 # Use pypy if it is installed, else use python (to translate)
 .if !defined(PY)
 .if !defined(PYPY)
+.if ${PYPY_PRIMARY} == pypy
 PYPY!=		${WHICH} ${PYPY_PRIMARY} 2> /dev/null || true
+.else
+PYPY!=		${WHICH} ${PYPY_PRIMARY} 2> /dev/null || ${WHICH} pypy 2> /dev/null || true
+.endif
 .endif
 .if exists(${PYPY})
 PY=		${PYPY}
@@ -136,6 +140,9 @@ pre-fetch:
 	@${ECHO} "however an average machine takes in excess of 4 hours, per instance."
 	@sleep 1
 
+post-patch:
+	@${RM} -f ${WRKSRC}/lib-python/2.7/SimpleXMLRPCServer.py.orig
+
 do-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%PYPYPREFIX%%|${PYPYPREFIX}|g' \
@@ -146,8 +153,8 @@ do-configure:
 	${ECHO} "all: ${PYPY_NAMES}" > ${WRKDIR}/Makefile
 	${ECHO} >> ${WRKDIR}/Makefile
 .for inst in ${PYPY_INST}
-	${ECHO} "${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-unknown-0/testing_1/pypy-c" >> ${WRKDIR}/Makefile
-	${ECHO} "	${CP} build_${PYPY_${inst}_NAME}/usession-unknown-0/testing_1/pypy-c ${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
+	${ECHO} "${PYPY_${inst}_NAME}: build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c" >> ${WRKDIR}/Makefile
+	${ECHO} "	${CP} build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c ${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
 	${ECHO} >> ${WRKDIR}/Makefile
 	${ECHO} ".done_translate_${PYPY_${inst}_NAME}:" >> ${WRKDIR}/Makefile
 	${ECHO} "	${RM} -rf build_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
@@ -158,9 +165,9 @@ do-configure:
 					targetpypystandalone.py ${PYPY_${inst}_OBJSPACE_ARGS} )" >> ${WRKDIR}/Makefile
 	${ECHO} "	${TOUCH} .done_translate_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
 	${ECHO} >> ${WRKDIR}/Makefile
-	${ECHO} "build_${PYPY_${inst}_NAME}/usession-unknown-0/testing_1/pypy-c: .done_translate_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
-	${ECHO} "	${REINPLACE_CMD} -e 's|^%.o: %.c\$$\$$|.c.o:|g' build_${PYPY_${inst}_NAME}/usession-unknown-0/testing_1/Makefile" >> ${WRKDIR}/Makefile
-	${ECHO} "	${MAKE} -C build_${PYPY_${inst}_NAME}/usession-unknown-0/testing_1 pypy-c" >> ${WRKDIR}/Makefile
+	${ECHO} "build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/pypy-c: .done_translate_${PYPY_${inst}_NAME}" >> ${WRKDIR}/Makefile
+	${ECHO} "	${REINPLACE_CMD} -e 's|^%.o: %.c\$$\$$|.c.o:|g' build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1/Makefile" >> ${WRKDIR}/Makefile
+	${ECHO} "	${MAKE} -C build_${PYPY_${inst}_NAME}/usession-release-${DISTVERSION}-0/testing_1 pypy-c" >> ${WRKDIR}/Makefile
 	${ECHO} >> ${WRKDIR}/Makefile
 .endfor
 
@@ -172,8 +179,8 @@ do-install:
 .for dir in ${PYPYDIRS}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${PYPYPREFIX}
 .endfor
-.for file in LICENSE README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PYPYPREFIX}/${file}
+.for f in LICENSE README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PYPYPREFIX}/${f}
 .endfor
 .for name in ${PYPY_NAMES:O}
 	${INSTALL_PROGRAM} ${WRKDIR}/${name} ${PYPYPREFIX}/bin/${name}
@@ -201,8 +208,8 @@ pkg-plist: build
 	cd ${WRKSRC} && ${FIND} ${dir} -type f >> ${WRKDIR}/.plist-files-gen
 	cd ${WRKSRC} && ${FIND} ${dir} -type d >> ${WRKDIR}/.plist-dirs-gen
 .endfor
-.for file in LICENSE README
-	${ECHO} ${file} >> ${WRKDIR}/.plist-files-gen
+.for f in LICENSE README
+	${ECHO} ${f} >> ${WRKDIR}/.plist-files-gen
 .endfor
 	${ECHO} 'bin' >> ${WRKDIR}/.plist-dirs-gen
 	${REINPLACE_CMD} -e 's|^|%%PYPYPREFIX%%/|g' -e 's|${PYPY_ARCH}|%%PYPY_ARCH%%|g' ${WRKDIR}/.plist-files-gen

@@ -1252,6 +1252,8 @@
 %%PYPYPREFIX%%/lib-python/2.7/lib2to3/PatternGrammar.txt
 %%PYPYPREFIX%%/lib-python/2.7/lib2to3/__init__.py
 %%PYPYPREFIX%%/lib-python/2.7/lib2to3/__init__.pyc
+%%PYPYPREFIX%%/lib-python/2.7/lib2to3/__main__.py
+%%PYPYPREFIX%%/lib-python/2.7/lib2to3/__main__.pyc
 %%PYPYPREFIX%%/lib-python/2.7/lib2to3/btm_matcher.py
 %%PYPYPREFIX%%/lib-python/2.7/lib2to3/btm_matcher.pyc
 %%PYPYPREFIX%%/lib-python/2.7/lib2to3/btm_utils.py
@@ -2182,8 +2184,32 @@
 %%PYPYPREFIX%%/lib-python/2.7/test/buffer_tests.pyc
 %%PYPYPREFIX%%/lib-python/2.7/test/cfgparser.1
 %%PYPYPREFIX%%/lib-python/2.7/test/check_soundcard.vbs
-%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings_test.py
-%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings_test.pyc
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/big5-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/big5.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/big5hkscs-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/big5hkscs.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/cp949-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/cp949.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/euc_jisx0213-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/euc_jisx0213.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/euc_jp-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/euc_jp.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/euc_kr-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/euc_kr.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/gb18030-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/gb18030.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/gb2312-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/gb2312.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/gbk-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/gbk.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/hz-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/hz.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/johab-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/johab.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/shift_jis-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/shift_jis.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/shift_jisx0213-utf8.txt
+%%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings/shift_jisx0213.txt
 %%PYPYPREFIX%%/lib-python/2.7/test/cmath_testcases.txt
 %%PYPYPREFIX%%/lib-python/2.7/test/crashers/README
 %%PYPYPREFIX%%/lib-python/2.7/test/crashers/bogus_code_obj.py
@@ -2438,6 +2464,8 @@
 %%PYPYPREFIX%%/lib-python/2.7/test/ssl_key.pem
 %%PYPYPREFIX%%/lib-python/2.7/test/string_tests.py
 %%PYPYPREFIX%%/lib-python/2.7/test/string_tests.pyc
+%%PYPYPREFIX%%/lib-python/2.7/test/subprocessdata/sigchild_ignore.py
+%%PYPYPREFIX%%/lib-python/2.7/test/subprocessdata/sigchild_ignore.pyc
 %%PYPYPREFIX%%/lib-python/2.7/test/svn_python_org_https_cert.pem
 %%PYPYPREFIX%%/lib-python/2.7/test/test_MimeWriter.py
 %%PYPYPREFIX%%/lib-python/2.7/test/test_MimeWriter.pyc
@@ -2872,6 +2900,8 @@
 %%PYPYPREFIX%%/lib-python/2.7/test/test_module.pyc
 %%PYPYPREFIX%%/lib-python/2.7/test/test_modulefinder.py
 %%PYPYPREFIX%%/lib-python/2.7/test/test_modulefinder.pyc
+%%PYPYPREFIX%%/lib-python/2.7/test/test_msilib.py
+%%PYPYPREFIX%%/lib-python/2.7/test/test_msilib.pyc
 %%PYPYPREFIX%%/lib-python/2.7/test/test_multibytecodec.py
 %%PYPYPREFIX%%/lib-python/2.7/test/test_multibytecodec.pyc
 %%PYPYPREFIX%%/lib-python/2.7/test/test_multibytecodec_support.py
@@ -3743,113 +3773,6 @@
 %%PYPYPREFIX%%/lib-python/modified-2.7/distutils/version.pyc
 %%PYPYPREFIX%%/lib-python/modified-2.7/distutils/versionpredicate.py
 %%PYPYPREFIX%%/lib-python/modified-2.7/distutils/versionpredicate.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/__init__.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/__init__.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/_parseaddr.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/_parseaddr.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/base64mime.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/base64mime.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/charset.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/charset.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/encoders.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/encoders.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/errors.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/errors.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/feedparser.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/feedparser.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/generator.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/generator.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/header.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/header.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/iterators.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/iterators.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/message.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/message.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/__init__.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/__init__.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/application.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/application.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/audio.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/audio.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/base.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/base.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/image.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/image.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/message.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/message.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/multipart.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/multipart.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/nonmultipart.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/nonmultipart.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/text.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/mime/text.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/parser.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/parser.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/quoprimime.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/quoprimime.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/__init__.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/__init__.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/PyBanner048.gif
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/audiotest.au
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_01.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_02.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_03.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_04.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_05.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_06.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_07.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_08.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_09.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_10.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_11.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_12.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_12a.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_13.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_14.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_15.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_16.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_17.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_18.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_19.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_20.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_21.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_22.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_23.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_24.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_25.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_26.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_27.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_28.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_29.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_30.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_31.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_32.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_33.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_34.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_35.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_36.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_37.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_38.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_39.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_40.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_41.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_42.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_43.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_44.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_45.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data/msg_46.txt
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_codecs.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_codecs.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_codecs_renamed.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_codecs_renamed.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_renamed.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_renamed.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_torture.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/test/test_email_torture.pyc
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/utils.py
-%%PYPYPREFIX%%/lib-python/modified-2.7/email/utils.pyc
 %%PYPYPREFIX%%/lib-python/modified-2.7/heapq.py
 %%PYPYPREFIX%%/lib-python/modified-2.7/heapq.pyc
 %%PYPYPREFIX%%/lib-python/modified-2.7/httplib.py
@@ -4469,6 +4392,8 @@
 %%PYPYPREFIX%%/lib-python/modified-2.7/test/test_sort.pyc
 %%PYPYPREFIX%%/lib-python/modified-2.7/test/test_ssl.py
 %%PYPYPREFIX%%/lib-python/modified-2.7/test/test_ssl.pyc
+%%PYPYPREFIX%%/lib-python/modified-2.7/test/test_str.py
+%%PYPYPREFIX%%/lib-python/modified-2.7/test/test_str.pyc
 %%PYPYPREFIX%%/lib-python/modified-2.7/test/test_struct.py
 %%PYPYPREFIX%%/lib-python/modified-2.7/test/test_struct.pyc
 %%PYPYPREFIX%%/lib-python/modified-2.7/test/test_subprocess.py
@@ -4677,6 +4602,7 @@
 %%PYPYPREFIX%%/lib_pypy/distributed/protocol.py
 %%PYPYPREFIX%%/lib_pypy/distributed/protocol.pyc
 %%PYPYPREFIX%%/lib_pypy/distributed/socklayer.py
+%%PYPYPREFIX%%/lib_pypy/distributed/socklayer.pyc
 %%PYPYPREFIX%%/lib_pypy/distributed/support.py
 %%PYPYPREFIX%%/lib_pypy/distributed/support.pyc
 %%PYPYPREFIX%%/lib_pypy/distributed/test/__init__.py
@@ -4701,6 +4627,20 @@
 %%PYPYPREFIX%%/lib_pypy/marshal.pyc
 %%PYPYPREFIX%%/lib_pypy/msvcrt.py
 %%PYPYPREFIX%%/lib_pypy/msvcrt.pyc
+%%PYPYPREFIX%%/lib_pypy/numpy.py
+%%PYPYPREFIX%%/lib_pypy/numpy.pyc
+%%PYPYPREFIX%%/lib_pypy/numpypy/__init__.py
+%%PYPYPREFIX%%/lib_pypy/numpypy/__init__.pyc
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/__init__.py
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/__init__.pyc
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/_methods.py
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/_methods.pyc
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/arrayprint.py
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/arrayprint.pyc
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/fromnumeric.py
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/fromnumeric.pyc
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/numeric.py
+%%PYPYPREFIX%%/lib_pypy/numpypy/core/numeric.pyc
 %%PYPYPREFIX%%/lib_pypy/pwd.py
 %%PYPYPREFIX%%/lib_pypy/pwd.pyc
 %%PYPYPREFIX%%/lib_pypy/pyexpat.py
@@ -4840,6 +4780,8 @@
 @dirrm %%PYPYPREFIX%%/lib_pypy/pyrepl/test
 @dirrm %%PYPYPREFIX%%/lib_pypy/pyrepl
 @dirrm %%PYPYPREFIX%%/lib_pypy/pypy_test
+@dirrm %%PYPYPREFIX%%/lib_pypy/numpypy/core
+@dirrm %%PYPYPREFIX%%/lib_pypy/numpypy
 @dirrm %%PYPYPREFIX%%/lib_pypy/distributed/test
 @dirrm %%PYPYPREFIX%%/lib_pypy/distributed/demo
 @dirrm %%PYPYPREFIX%%/lib_pypy/distributed
@@ -4863,10 +4805,6 @@
 @dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/json
 @dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/idlelib/Icons
 @dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/idlelib
-@dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/email/test/data
-@dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/email/test
-@dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/email/mime
-@dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/email
 @dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/distutils/tests
 @dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/distutils/command
 @dirrm %%PYPYPREFIX%%/lib-python/modified-2.7/distutils
@@ -4884,10 +4822,12 @@
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/unittest
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test/xmltestdata
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test/tracedmodules
+@dirrm %%PYPYPREFIX%%/lib-python/2.7/test/subprocessdata
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test/leakers
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test/decimaltestdata
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test/data
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test/crashers
+@dirrm %%PYPYPREFIX%%/lib-python/2.7/test/cjkencodings
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/test
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/sqlite3/test
 @dirrm %%PYPYPREFIX%%/lib-python/2.7/sqlite3
