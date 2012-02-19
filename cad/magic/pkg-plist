@@ -232,9 +232,11 @@ lib/magic/doc/tuttcl3.ps
 lib/magic/doc/tuttcl4.ps
 lib/magic/doc/tuttcl5.ps
 lib/magic/doc/tutwrl1.ps
+lib/magic/sys/.magicrc
 lib/magic/sys/bw.glyphs
 lib/magic/sys/color.glyphs
 lib/magic/sys/gdsquery.tech
+lib/magic/sys/magicps.pro
 lib/magic/sys/minimum.tech
 lib/magic/sys/mos.24bit.dstyle
 lib/magic/sys/mos.24bit.std.cmap
@@ -255,6 +257,11 @@ lib/magic/sys/windows11.glyphs
 lib/magic/sys/windows14.glyphs
 lib/magic/sys/windows22.glyphs
 lib/magic/sys/windows7.glyphs
+lib/magic/tcl/bitmaps/down.xbm
+lib/magic/tcl/bitmaps/left.xbm
+lib/magic/tcl/bitmaps/right.xbm
+lib/magic/tcl/bitmaps/up.xbm
+lib/magic/tcl/bitmaps/zoom.xbm
 lib/magic/tcl/console.tcl
 lib/magic/tcl/exttosim.so
 lib/magic/tcl/exttospice.so
@@ -263,6 +270,7 @@ lib/magic/tcl/magicdnull
 lib/magic/tcl/magicexec
 lib/magic/tcl/mazeroute.tcl
 lib/magic/tcl/strip_reflibs.tcl
+lib/magic/tcl/tclmagic.so
 lib/magic/tcl/techbuilder.tcl
 lib/magic/tcl/tkcon.tcl
 lib/magic/tcl/tkshell.tcl

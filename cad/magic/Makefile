@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	magic
-PORTVERSION=	7.5.213
+PORTVERSION=	7.5.214
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive editor for VLSI layouts
 
-LIB_DEPENDS+=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
+LICENSE=	BSD
+
+LIB_DEPENDS=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
 
@@ -29,7 +31,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 ALL_TARGET=	tcllibrary
-MAKE_JOBS_UNSAFE=yes
+MAKE_JOBS_SAFE=yes
 
 MAN1=		ext2sim.1 ext2spice.1 extcheck.1 magic.1
 MAN5=		cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 mag.5 \
@@ -37,6 +39,8 @@ MAN5=		cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 mag.5 \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTSCOUT=	limit:^7\.
 
 .include <bsd.port.pre.mk>
 
@@ -55,5 +59,9 @@ post-patch:
 		's|^#!.*|#!${TCLSH}|' ${WRKSRC}/tcltk/strip_reflibs.tcl
 	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${WISH}|' ${WRKSRC}/tcltk/tkshell.tcl
+
+pre-build:
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} database/database.h)
 
 .include <bsd.port.post.mk>
