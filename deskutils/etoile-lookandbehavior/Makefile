@@ -30,4 +30,8 @@ USE_GNUSTEP_MAKE_DIRS+=	Services/User/LookAndBehavior
 
 PANEKIT_PORT?=	deskutils/etoile-panekit
 
+post-patch:
+	${MKDIR} ${WRKSRC}/Services/User/LookAndBehavior/PreferencesKit
+	${TOUCH} ${WRKSRC}/Services/User/LookAndBehavior/PreferencesKit/PreferencesKit.h
+
 .include <bsd.port.mk>
