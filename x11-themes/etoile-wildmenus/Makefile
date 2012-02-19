@@ -27,4 +27,8 @@ SNAPSHOT=	20061221
 WRKSRC=	${WRKDIR}/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Bundles/WildMenus
 
+post-patch:
+	${REINPLACE_CMD} -e 's|AppKit/NSDictionary.h|Foundation/NSDictionary.h|' \
+		${WRKSRC}/Bundles/WildMenus/GSHorizontalMenuItemCell.m
+
 .include <bsd.port.mk>
