@@ -15,6 +15,10 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible X utility for managing many image files
 
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png.6:${PORTSDIR}/graphics/png \
+		gif.5:${PORTSDIR}/graphics/giflib
+
 USE_XORG=	x11 xt
 USE_GNOME=	imlib
 CFLAGS:=	${CFLAGS} -I${LOCALBASE}/include
