@@ -714,6 +714,11 @@
 %%WWWDIR%%/language/en_UK/install.lang.php
 %%WWWDIR%%/language/en_UK/iso.txt
 %%WWWDIR%%/language/en_UK/upgrade.lang.php
+%%WWWDIR%%/language/eo_EO/about.html
+%%WWWDIR%%/language/eo_EO/admin.lang.php
+%%WWWDIR%%/language/eo_EO/common.lang.php
+%%WWWDIR%%/language/eo_EO/eo_EO.jpg
+%%WWWDIR%%/language/eo_EO/iso.txt
 %%WWWDIR%%/language/es_AR/about.html
 %%WWWDIR%%/language/es_AR/common.lang.php
 %%WWWDIR%%/language/es_AR/es_AR.jpg
@@ -986,6 +991,7 @@
 %%WWWDIR%%/language/ka_GE/ka_GE.jpg
 %%WWWDIR%%/language/ka_GE/upgrade.lang.php
 %%WWWDIR%%/language/km_KH/about.html
+%%WWWDIR%%/language/km_KH/admin.lang.php
 %%WWWDIR%%/language/km_KH/common.lang.php
 %%WWWDIR%%/language/km_KH/index.php
 %%WWWDIR%%/language/km_KH/iso.txt
@@ -2297,6 +2303,7 @@
 @dirrm %%WWWDIR%%/language/es_ES/help
 @dirrm %%WWWDIR%%/language/es_ES
 @dirrm %%WWWDIR%%/language/es_AR
+@dirrm %%WWWDIR%%/language/eo_EO
 @dirrm %%WWWDIR%%/language/en_UK/help
 @dirrm %%WWWDIR%%/language/en_UK
 @dirrm %%WWWDIR%%/language/el_GR
