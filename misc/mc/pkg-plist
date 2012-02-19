@@ -60,6 +60,7 @@ libexec/mc/fish/mv
 libexec/mc/fish/rmdir
 libexec/mc/fish/send
 libexec/mc/fish/unlink
+libexec/mc/fish/utime
 libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
@@ -71,6 +72,7 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/cs/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/de_CH/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/el/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mc.mo
@@ -221,6 +223,8 @@ libexec/mc/mc.sh
 %%NLS%%@dirrmtry share/locale/ia
 %%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi_FI
+%%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_CH
 @dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc
