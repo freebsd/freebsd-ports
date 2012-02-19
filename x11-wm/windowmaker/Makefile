@@ -16,9 +16,10 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	GNUstep-compliant NeXTstep window manager clone
 
-LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
+		png:${PORTSDIR}/graphics/png \
+		jbig:${PORTSDIR}/graphics/jbigkit \
+		tiff:${PORTSDIR}/graphics/tiff
 
 .if !defined(LWR_SLAVE)
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
@@ -30,7 +31,7 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_XORG=	xpm xft
+USE_XORG=	xft xinerama xmu xpm xrandr
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,7 +43,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-gnustepdir="${PREFIX}/GNUstep" \
 		--enable-modelock --enable-xrandr \
 		--enable-xinerama --enable-usermenu \
-		--disable-debug
+		--with-x
 USE_LDCONFIG=	yes
 
 .if !defined(LWR_SLAVE)
