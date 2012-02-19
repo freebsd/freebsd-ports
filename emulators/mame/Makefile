@@ -6,42 +6,44 @@
 #
 
 PORTNAME=	mame
-PATCHLEVEL=	2
-PORTVERSION=	0.143${PATCHSUFFIX}
-PORTREVISION=	1
+PORTVERSION=	0.145${PATCHSUFFIX}
 CATEGORIES=	emulators
-MASTER_SITES=	http://mame.mirrors.zippykid.com/releases/:src \
-		http://emumovies.com/aarongiles/releases/:src \
-		http://mamedev.mameworld.info/releases/:src \
-		http://mamedev.thiswebhost.com/releases/:src \
-		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/:src \
+MASTER_SITES=	http://mame.mirrors.zippykid.com/releases/ \
+		http://emumovies.com/aarongiles/releases/ \
+		http://mamedev.mameworld.info/releases/ \
+		http://mamedev.thiswebhost.com/releases/ \
 		http://mamedev.org/updates/:patchsets
-DISTFILES=	\
-	${PORTNAME}${PORTVERSION:S/.//:C/\.p[0-9]*$//}s${EXTRACT_SUFX}:src \
-	${UPDATE_PATCHES:C/$/.zip:patchsets/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:C/\.p[0-9]*$//}s
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${UPDATE_PATCHES:C/$/.zip:patchsets/}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The popular MAME (Multi Arcade Machine Emulator)
 
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
+
+OPTIONS=	BUILTIN_DEBUGGER "Enable builtin debugger support" off
+
+ONLY_FOR_ARCHS=	i386 amd64
+
+NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
-USE_XORG=	xext xrender xinerama xi
+USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
-USE_GNOME?=	gtk20 gconf2
-USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_SDL=	sdl ttf
-USE_GCC=	4.2+
+USE_GCC=	4.4+
+USE_GMAKE=	yes
+MAKE_ENV=	NOWERROR=1 OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}"
 MAKEFILE=	makefile
-ONLY_FOR_ARCHS=	i386 amd64
-SUB_FILES=	pkg-message
-USE_DOS2UNIX=	makefile sdl.mak debugcpu.c *.c *.h
+MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+SUB_FILES=	pkg-message
+
+PATCHLEVEL=	# none
 
 .if defined(PATCHLEVEL) && ${PATCHLEVEL}
 PATCHSUFFIX=	.p${PATCHLEVEL}
@@ -50,22 +52,24 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 		${PATCHLEVEL} 1 ${PATCHLEVEL}
 .endif
 
-OPTIONS=	DEBUG "Build mame debugger" off
+.include <bsd.port.options.mk>
+
+.if defined(WITH_BUILTIN_DEBUGGER)
+USE_GNOME=	gtk20 gconf2
+MAKE_ENV+=	GTK_INCPATH="$$(pkg-config --cflags-only-I gtk+-2.0 gconf-2.0)" \
+		GTK_CCOMFLAGS="$$(pkg-config --cflags-only-other gtk+-2.0 gconf-2.0)" \
+		GTK_LIBS="$$(pkg-config --libs gtk+-2.0 gconf-2.0)"
+.else
+MAKE_ENV+=	NO_DEBUGGER=1 \
+		GTK_INCPATH="" \
+		GTK_CCOMFLAGS="" \
+		GTK_LIBS=""
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_DEBUG)
-USE_GNOME=		#
-EXTRA_PATCHES+=		${PATCHDIR}/sdl.mak.patch
-.endif
-
-MAKE_JOBS_SAFE=	yes
-
 .if ${ARCH} == "amd64"
 MAKE_ENV+=	PTR64=1
-.endif
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
 .endif
 
 post-extract:
@@ -81,35 +85,43 @@ post-extract:
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|ui.bdf|${DATADIR}/ui.bdf|g" ${WRKSRC}/src/emu/ui.c
-	@${REINPLACE_CMD} -e "s|int getc()|int getcf()|g" ${WRKSRC}/src/emu/fileio.h
-	@${REINPLACE_CMD} -e "s|::getc()|::getcf()|g" ${WRKSRC}/src/emu/fileio.c
+	@${REINPLACE_CMD} -e \
+		's|^BUILD_EXPAT|# BUILD_EXPAT| ; \
+		 s|^BUILD_ZLIB|# BUILD_ZLIB| ; \
+		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
+		 s| = @gcc| := $$(CC)| ; \
+		 s| = @g++| := $$(CXX)| ; \
+		 s|^FULLNAME =.*|FULLNAME = $$(NAME)|' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		'/-system/s|/usr/local/|${LOCALBASE}/| ; \
+		 /--cflags-only-I gtk+-2.0/s|=.*|= $$(GTK_INCPATH)| ; \
+		 /--cflags-only-other gtk+-2.0/s|=.*|= $$(GTK_CCOMFLAGS)| ; \
+		 /--libs gtk+-2.0/s|=.*|= $$(GTK_LIBS)| ; \
+		 /X11R6/s|^|#|' ${WRKSRC}/src/osd/sdl/sdl.mak
+	@${REINPLACE_CMD} -e \
+		's|int getc()|int getcf()|g' ${WRKSRC}/src/emu/fileio.h
+	@${REINPLACE_CMD} -e \
+		's|::getc()|::getcf()|g' ${WRKSRC}/src/emu/fileio.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/chdman ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/ldresample ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/ldverify ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/romcmp ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/testkeys ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/unidasm ${PREFIX}/libexec/${PORTNAME}
-
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+.for FILE in chdman jedutil ldresample ldverify romcmp testkeys unidasm
+	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/libexec/${PORTNAME}
+.endfor
+	@${MKDIR} ${DATADIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${DATADIR})
+	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps ${DATADIR})
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs ${DOCSDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
 .endif
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/src/osd/sdl/ && ${COPYTREE_SHARE} keymaps ${DATADIR})
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/mame.ini ${EXAMPLESDIR}
 .endif
-
-post-install:
-	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
