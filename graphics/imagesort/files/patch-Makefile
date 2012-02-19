@@ -10,7 +10,7 @@
  # is compiled.  We default to including all of the extras supported by
  # imlib 1.9
 -LIBS = -lX11 -lXext -lImlib -ljpeg -lm -lpng -ltiff -lz -lgif
-+LIBS = -lX11 -lXext -lImlib -ljpeg -lm -lpng -ltiff -lz -lungif
++LIBS = -lX11 -lXext -lImlib -ljpeg -lm -lpng -ltiff -lz -lgif
  #LIBS = -lImlib -lX11 -lXext -ljpeg -lgif -lm
  
 -CFLAGS = -g -L$(XDIR)/lib -I$(XDIR)/include 
