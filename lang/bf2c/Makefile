@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bf2c
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	lang
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
