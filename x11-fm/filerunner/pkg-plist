@@ -19,6 +19,10 @@ lib/FileRunner/bitmaps/pgdown.bit
 lib/FileRunner/bitmaps/pgup.bit
 lib/FileRunner/bitmaps/right.bit
 lib/FileRunner/bitmaps/smaller.bit
+lib/FileRunner/bitmaps/small-equ.bit
+lib/FileRunner/bitmaps/small-noeq.bit
+lib/FileRunner/bitmaps/small-right.bit
+lib/FileRunner/bitmaps/small-left.bit
 lib/FileRunner/bitmaps/toggle.bit
 lib/FileRunner/bitmaps/tree.bit
 lib/FileRunner/bitmaps/up.bit
@@ -39,5 +43,6 @@ lib/FileRunner/ftpcore.tcl
 lib/FileRunner/http.tcl
 lib/FileRunner/icon.xpm
 lib/FileRunner/tclIndex
+lib/FileRunner/tclmultilistbox.tcl
 @dirrm lib/FileRunner/bitmaps
 @dirrm lib/FileRunner
