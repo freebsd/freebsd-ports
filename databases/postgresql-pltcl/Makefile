@@ -44,7 +44,8 @@ CONFIGURE_ARGS=	--with-tcl --without-tk \
 CONFIGURE_ENV+=	TCLSH="${TCLSH}"
 MAKE_ENV+=	TCL_INCDIR="${TCL_INCLUDEDIR}"
 
-BUILD_DIRS=	src/pl/tcl
+BUILD_DIRS=	src/backend src/pl/tcl
+INSTALL_DIRS=	src/pl/tcl
 SLAVE_ONLY=	yes
 
 .include "${MASTERDIR}/Makefile"
