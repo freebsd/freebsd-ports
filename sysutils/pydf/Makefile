@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/pydf etc/pydfrc.sample
 
-USE_PYTHON=	true
+USE_PYTHON=	yes
 NO_BUILD=	yes
 
 MAN1=		pydf.1
