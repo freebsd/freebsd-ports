@@ -36,6 +36,7 @@ USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
+EXPLICIT_PACKAGE_DEPENDS=	yes
 
 PLIST_FILES=	lib/opera/operapluginwrapper.linux
 

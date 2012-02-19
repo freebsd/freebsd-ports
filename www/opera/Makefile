@@ -39,6 +39,7 @@ MAN1=		opera.1 opera-widget-manager.1
 MANCOMPRESSED=	yes
 
 NO_BUILD=	yes
+EXPLICIT_PACKAGE_DEPENDS=	yes
 
 OPTIONS=	CUPS	"Enable support for printing (requires CUPS)"		on \
 		VIDEO	"Enable support for HTML5 video (requires GStreamer)"	on \
