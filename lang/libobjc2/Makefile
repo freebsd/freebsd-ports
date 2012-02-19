@@ -46,13 +46,9 @@ CPPFLAGS+=	-DGNUSTEP
 .if defined(CC) && ${CC:T:Mclang}
 # all done
 .else
-.if defined(GNUSTEP_WITH_CLANG)
+# force clang
 CC=	${LOCALBASE}/bin/clang
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
-.else
-USE_GCC=	4.6+
-BROKEN=		does not compile
-.endif
 .endif
 .endif
 
