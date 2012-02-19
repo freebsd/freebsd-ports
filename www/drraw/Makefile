@@ -34,7 +34,7 @@ PLIST_SUB+=	CONFDIR=${CONFDIR}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ZOOM_PATCH)
-PATCH_SITES+=	http://pero.blogs.aprilmayjune.org/files/2009/09/
+PATCH_SITES+=	http://aprilmayjune.org/wp-content/uploads/2009/09/
 PATCHFILES+=	drraw.cgi.zoom_patch
 .endif
 
