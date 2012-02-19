@@ -13,8 +13,6 @@ MASTER_SITES=	http://hyperelliptic.org/nacl/
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	High speed cryptography library
 
-BROKEN=		does not install
-
 ALL_TARGET=	do
 USE_BZIP2=	YES
 MAKE_JOBS_UNSAFE=	YES
@@ -31,9 +29,9 @@ do-install:
 		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/bin/nacl-sha512 \
 		${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/lib/${ARCH}/* \
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/lib/*/* \
 		${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/include/${ARCH}/* \
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/include/*/* \
 		${PREFIX}/include
 
 .include <bsd.port.post.mk>
