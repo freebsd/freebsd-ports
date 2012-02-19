@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	20111030
+PORTVERSION=	20120110
 CATEGORIES=	irc
 MASTER_SITES=	http://bsdcrew.de/distfiles/
 PKGNAMESUFFIX=	-devel
