@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90007
+PORTVERSION=	5.90010
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -52,7 +52,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message
 
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+# Do not add p5-Catalyst-Engine-PSGI and p5-CatalystX-LeakChecker to TEST_DEPENDS to avoid cyclic dependencies in tinderbox
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module
 
 PERL_CONFIGURE=	yes
 
