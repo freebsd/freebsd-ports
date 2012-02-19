@@ -7,6 +7,7 @@
 
 PORTNAME=	HTTP-Message
 PORTVERSION=	6.03
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Representation of HTTP style messages
 
-RUN_DEPENDS=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
-		p5-Encode-Locale>=1:${PORTSDIR}/converters/p5-Encode-Locale \
+BUILD_DEPENDS=	p5-Encode-Locale>=1:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTTP-Date>=6:${PORTSDIR}/www/p5-HTTP-Date \
-		p5-IO-Compress>=2.021:${PORTSDIR}/archivers/p5-IO-Compress \
 		p5-LWP-MediaTypes>=6:${PORTSDIR}/www/p5-LWP-MediaTypes \
 		p5-URI>=1.10:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-libwww-5*
 
@@ -36,4 +35,16 @@ MAN3=		HTTP::Config.3 \
 		HTTP::Response.3 \
 		HTTP::Status.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+RUN_DEPENDS+=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-IO-Compress>=2.021:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-IO-Compress>=2.021:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>
