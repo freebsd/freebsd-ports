@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: saned
-# REQUIRE: netif routing mountcritlocal
+# REQUIRE: LOGIN netif routing mountcritlocal
 # BEFORE:  NETWORKING
 #
 # A sample saned startup script.
