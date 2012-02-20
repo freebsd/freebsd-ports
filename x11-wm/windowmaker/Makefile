@@ -62,16 +62,16 @@ CONFIGURE_ENV+=	LINGUAS="${LINGUAS}"
 pre-patch:
 .for f in WINGs/wapplication.c WPrefs.app/Menu.c WPrefs.app/Paths.c \
     WindowMaker/*menu*
-	${REINPLACE_CMD} -e "s#/usr/local#${PREFIX}#g" ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e "s#/usr/local#${PREFIX}#g" ${WRKSRC}/${f}
 .endfor
-	${REINPLACE_CMD} -e '/\/usr\/X11R6\/include\/X11\/pixmaps/d' \
+	@${REINPLACE_CMD} -e '/\/usr\/X11R6\/include\/X11\/pixmaps/d' \
 	    -e '/\/usr\/share\/pixmaps/d' \
 	    -e "s#\"/usr/local/share/pixmaps\",#\"${PREFIX}/share/pixmaps\"#" \
 	    -e "s#/usr/share/icons#${PREFIX}/share/icons#" \
 	    ${WRKSRC}/WindowMaker/Defaults/WindowMaker.in
-	${REINPLACE_CMD} -e "s#/usr/include/X11#${PREFIX}/share#" \
+	@${REINPLACE_CMD} -e "s#/usr/include/X11#${PREFIX}/share#" \
 	    ${WRKSRC}/WPrefs.app/Paths.c
-	${REINPLACE_CMD} -e "s#WPrefs#${PREFIX}/GNUstep/Applications/WPrefs.app/WPrefs#" \
+	@${REINPLACE_CMD} -e "s#WPrefs#${PREFIX}/GNUstep/Applications/WPrefs.app/WPrefs#" \
 	    ${WRKSRC}/util/wmgenmenu.c
 
 post-install:
