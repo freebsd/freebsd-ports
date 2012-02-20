@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	glpi
-DISTVERSION=	0.80.61
-PORTREVISION=	1
+PORTVERSION=	0.80.7
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://droidng.free.fr/freebsd/ \
 		http://glpi-project.org/IMG/gz/
