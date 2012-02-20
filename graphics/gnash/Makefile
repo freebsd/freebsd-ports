@@ -18,7 +18,7 @@ COMMENT=	GNU Flash movie player
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		speex.1:${PORTSDIR}/audio/speex
 
 CONFLICTS=	gnash-devel-[0-9]*
