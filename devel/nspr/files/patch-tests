@@ -1517,15 +1517,6 @@
      PR_ResumeAll();
  
      /* Wait for all threads to exit */
-@@ -212,6 +214,8 @@
-     CreateThreadsUU();
-     CreateThreadsKU();
-     PR_Cleanup();
-+
-+    return 0;
- }
- 
- #endif /* XP_BEOS */
 --- ../pr/tests/testfile.c	Tue Jun 20 17:46:54 2000
 +++ ../pr/tests/testfile.c	Mon Jul 25 22:36:39 2005
 @@ -69,4 +69,7 @@
