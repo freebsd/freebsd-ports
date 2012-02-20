@@ -28,6 +28,7 @@ include/vamos/geometry/Linear_Interpolator.h
 include/vamos/geometry/Material.h
 include/vamos/geometry/Numeric.h
 include/vamos/geometry/PID.h
+include/vamos/geometry/Parameter.h
 include/vamos/geometry/Rectangle.h
 include/vamos/geometry/Spline.h
 include/vamos/geometry/Three_Matrix.h
@@ -173,6 +174,7 @@ lib/libvamos-world.so.0
 %%DATADIR%%/tracks/Road_Atlanta.xml
 %%DATADIR%%/tracks/Sepang.xml
 %%DATADIR%%/tracks/Shanghai.xml
+%%DATADIR%%/tracks/Silverstone-2010.xml
 %%DATADIR%%/tracks/Silverstone-2011.xml
 %%DATADIR%%/tracks/Silverstone.xml
 %%DATADIR%%/tracks/Spa.xml
