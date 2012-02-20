@@ -7,12 +7,15 @@
 #
 
 PORTNAME=	stowES
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://os.inf.tu-dresden.de/~adam/stowES/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	stow Enhancement Script
+COMMENT=	Stow enhancement script
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
 
