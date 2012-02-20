@@ -1,6 +1,19 @@
---- waitress.egg-info/SOURCES.txt.orig	2012-01-31 07:27:50.000000000 +0100
-+++ waitress.egg-info/SOURCES.txt	2012-01-31 14:39:27.000000000 +0100
-@@ -36,26 +36,3 @@
+--- waitress.egg-info/SOURCES.txt.orig	2012-02-13 17:23:17.000000000 +0100
++++ waitress.egg-info/SOURCES.txt	2012-02-13 20:57:58.000000000 +0100
+@@ -1,4 +1,3 @@
+-.gitignore
+ CHANGES.txt
+ COPYRIGHT.txt
+ LICENSE.txt
+@@ -7,7 +6,6 @@
+ setup.cfg
+ setup.py
+ tox.ini
+-docs/.gitignore
+ docs/Makefile
+ docs/api.rst
+ docs/arguments.rst
+@@ -36,28 +34,3 @@
  waitress.egg-info/not-zip-safe
  waitress.egg-info/requires.txt
  waitress.egg-info/top_level.txt
@@ -23,8 +36,10 @@
 -waitress/tests/fixtureapps/echo.py
 -waitress/tests/fixtureapps/error.py
 -waitress/tests/fixtureapps/filewrapper.py
+-waitress/tests/fixtureapps/getline.py
 -waitress/tests/fixtureapps/groundhog1.jpg
 -waitress/tests/fixtureapps/nocl.py
+-waitress/tests/fixtureapps/sleepy.py
 -waitress/tests/fixtureapps/toolarge.py
 -waitress/tests/fixtureapps/writecb.py
 \ No newline at end of file
