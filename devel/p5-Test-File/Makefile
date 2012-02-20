@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-File
-PORTVERSION=	1.31
+PORTVERSION=	1.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,6 @@ TEST_DEPENDS=	p5-Test-Manifest>=1.14:${PORTSDIR}/devel/p5-Test-Manifest
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Test::File.3
+MAN3=		Test::File.3
 
 .include <bsd.port.mk>
