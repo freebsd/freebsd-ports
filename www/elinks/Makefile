@@ -49,7 +49,8 @@ OPTIONS=	88COLORS	"Enable 88 color support"	on \
 		RUBYSCRIPT	"Enable Ruby scripting support" off \
 		LUASCRIPT	"Enable Lua scripting support" off \
 		GUILESCRIPT	"Enable Guile scripting support" off \
-		ICONV		"Enable iconv support" off
+		ICONV		"Enable iconv support" off \
+		MOUSE		"Enable mouse support" on
 
 .include <bsd.port.pre.mk>
 
@@ -154,6 +155,12 @@ CONFIGURE_ARGS+=	--disable-bittorrent
 CONFIGURE_ARGS+=	--enable-gopher
 .else
 CONFIGURE_ARGS+=	--disable-gopher
+.endif
+
+.if defined(WITH_MOUSE)
+CONFIGURE_ARGS+=	--enable-mouse
+.else
+CONFIGURE_ARGS+=	--disable-mouse
 .endif
 
 .if defined(WITH_FINGER)
