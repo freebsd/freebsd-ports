@@ -85,6 +85,12 @@ CONFLICTS+=	cupsddk-*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+# the openssl in base of FreeBSD 7.x is too old
+WITH_OPENSSL_PORT?=	yes
+.endif
+
+
 .if defined(CUPS_CLIENT)
 COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
