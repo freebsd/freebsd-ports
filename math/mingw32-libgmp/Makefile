@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libgmp
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.4
 CATEGORIES=	math devel
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	gmp
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	gmp-${PORTVERSION}
@@ -19,6 +19,7 @@ COMMENT=	Library for arbitrary precision arithmetic (MinGW32)
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 
+USE_BZIP2=	yes
 GMP_TARG=	${PKGNAMEPREFIX:S/-$//}
 GNU_CONFIGURE=	yes
 CC=		${PKGNAMEPREFIX}gcc
