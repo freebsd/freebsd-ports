@@ -126,7 +126,7 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 _REQUIRE=		LOGIN cleanvar
 
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .else
