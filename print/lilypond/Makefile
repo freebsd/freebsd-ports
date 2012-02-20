@@ -46,6 +46,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pango
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		FLEX=${FLEX} \
