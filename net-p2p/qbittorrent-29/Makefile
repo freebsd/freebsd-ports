@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.5
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -13,6 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
+# lib versions specified on purpose
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 
