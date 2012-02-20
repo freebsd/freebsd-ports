@@ -81,17 +81,14 @@
  
 --- lib/softoken/legacydb/config.mk.orig	2009-08-31 12:39:49.000000000 +0200
 +++ lib/softoken/legacydb/config.mk	2009-08-31 12:40:03.000000000 +0200
-@@ -40,10 +40,6 @@
+@@ -40,7 +40,6 @@
  
- EXTRA_LIBS +=	$(CRYPTOLIB) 
+ EXTRA_LIBS += \
+ 	$(CRYPTOLIB) \
+-	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) \
+ 	$(NULL)
  
--ifndef NSS_DISABLE_DBM
--EXTRA_LIBS +=	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) 
--endif
--
  # can't do this in manifest.mn because OS_TARGET isn't defined there.
- ifeq (,$(filter-out WIN%,$(OS_TARGET)))
- 
 --- lib/certdb/xauthkid.c.orig	2009-08-31 12:43:13.000000000 +0200
 +++ lib/certdb/xauthkid.c	2009-08-31 12:44:21.000000000 +0200
 @@ -39,7 +39,7 @@

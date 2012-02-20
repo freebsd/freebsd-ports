@@ -7,11 +7,10 @@
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
-DISTNAME=	nss-${PORTVERSION}.with.ckbi.${CKBI_VER}
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
+DISTNAME=	nss-${PORTVERSION}
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
@@ -23,9 +22,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 
 _MAJOR=	3
 _MINOR=	13
-_PATCH=	1
-
-CKBI_VER=	1.88
+_PATCH=	2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/mozilla/security/nss
 
