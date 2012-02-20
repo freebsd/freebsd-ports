@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	GNU Binutils for Windows cross-development
 
-BINUTILVERSION=	2.21
+BINUTILVERSION=	2.22
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -62,7 +62,7 @@ post-install:
 add-plist-post:
 	@${ECHO_CMD} "@unexec ${RMDIR} -p %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} -p %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
-.if (defined(PREFIX) && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
+.if (defined(PREFIX) && ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != "/usr")
 	@${ECHO_CMD} "@unexec ${RMDIR} %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
