@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Hide and store warnings while running test scripts
 
+TEST_DEPENDS=	p5-Test-Tester>=0:${PORTSDIR}/devel/p5-Test-Tester
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Test::NoWarnings.3
