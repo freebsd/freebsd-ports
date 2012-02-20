@@ -1,0 +1,28 @@
+--- src/CMakeLists.txt.orig	2011-08-26 22:17:26.000000000 +0200
++++ src/CMakeLists.txt	2012-02-17 11:06:58.000000000 +0100
+@@ -1,7 +1,7 @@
+ include_directories("${carve_SOURCE_DIR}/include")
+ include_directories("${carve_SOURCE_DIR}/external/GLOOP/include")
+-include_directories("${carve_SOURCE_DIR}/external/GLEW/include")
+-include_directories("${carve_SOURCE_DIR}/external/GLUI/include")
++#include_directories("${carve_SOURCE_DIR}/external/GLEW/include")
++#include_directories("${carve_SOURCE_DIR}/external/GLUI/include")
+ include_directories("${carve_SOURCE_DIR}/common")
+ include_directories(${OPENGL_INCLUDE_DIR})
+ 
+@@ -20,7 +20,7 @@
+ if(CARVE_WITH_GUI)
+   add_executable       (view   view.cpp)
+   target_link_libraries(view   carve_fileformats carve_misc carve_ui carve gloop_model glui ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES})
+-  install(TARGETS view RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
++  install(TARGETS view RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/carve")
+ endif(CARVE_WITH_GUI)
+ 
+ add_executable       (triangulate triangulate.cpp)
+@@ -43,5 +43,5 @@
+ 
+ foreach(tgt intersect triangulate convert)
+   install(TARGETS ${tgt}
+-          RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
++          RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin/carve")
+ endforeach(tgt)
