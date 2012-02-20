@@ -360,6 +360,7 @@ lib/node_modules/npm/lib/utils/exec.js
 lib/node_modules/npm/lib/utils/fetch.js
 lib/node_modules/npm/lib/utils/find-prefix.js
 lib/node_modules/npm/lib/utils/find.js
+lib/node_modules/npm/lib/utils/gently-rm.js
 lib/node_modules/npm/lib/utils/get-agent.js
 lib/node_modules/npm/lib/utils/get.js
 lib/node_modules/npm/lib/utils/ini.js
@@ -588,7 +589,6 @@ lib/node_modules/npm/node_modules/request/vendor/cookie/jar.js
 lib/node_modules/npm/node_modules/rimraf/AUTHORS
 lib/node_modules/npm/node_modules/rimraf/LICENSE
 lib/node_modules/npm/node_modules/rimraf/README.md
-lib/node_modules/npm/node_modules/rimraf/fiber.js
 lib/node_modules/npm/node_modules/rimraf/package.json
 lib/node_modules/npm/node_modules/rimraf/rimraf.js
 lib/node_modules/npm/node_modules/semver/LICENSE
