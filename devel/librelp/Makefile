@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	Reliable event logging protocol library
 
 USE_GNOME=	gnomehack pkgconfig
