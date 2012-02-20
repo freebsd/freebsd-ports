@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	20120212
+PORTVERSION=	20120219
 CATEGORIES=	polish textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/ \
 		LOCAL/sunpoet/${PORTNAME}
