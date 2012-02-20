@@ -14,13 +14,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tag a class as a runnable application
 
-RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Getopt>=0:${PORTSDIR}/devel/p5-MooseX-Getopt \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-TableDriven>=0:${PORTSDIR}/devel/p5-Test-TableDriven \
+		p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
 
