@@ -29,9 +29,21 @@ do-install:
 		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/bin/nacl-sha512 \
 		${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/lib/*/* \
+.if ${ARCH} == "i386"
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/lib/x86/* \
 		${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/include/*/* \
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/include/x86/* \
 		${PREFIX}/include
+.elif ${ARCH} == "powerpc"
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/lib/ppc/* \
+		${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/include/ppc/* \
+		${PREFIX}/include
+.else
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/lib/${ARCH}/* \
+		${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/build/`${HOSTNAME_CMD} -s`/include/${ARCH}/* \
+		${PREFIX}/include
+.endif
 
 .include <bsd.port.post.mk>
