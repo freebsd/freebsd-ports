@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	decibel-audio-player
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	audio multimedia gnome python
 MASTER_SITES=	http://decibel.silent-blade.org/uploads/Main/
 
