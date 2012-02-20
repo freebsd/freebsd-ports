@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:S/./,/}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automotive simulation framework
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
@@ -24,14 +26,22 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	ac_cv_header_boost_test_unit_test_hpp=no \
 		ac_cv_lib_freeglut_glutGetModifiers=no
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 INFO=		vamos
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+post-extract:
+	@${CHMOD} ${BINMODE} ${WRKSRC}/config/install-sh
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-pedantic -O2 -g||g'
+		'/^AM_CXXFLAGS/s| -pedantic|| ; \
+		 /^AM_CXXFLAGS/s| -O[[:alnum:]]|| ; \
+		 /^AM_CXXFLAGS/s| -g|| ; \
+		 /^AM_CXXFLAGS/s| -DBOOST_TEST_DYN_LINK|| ; \
+		 /^AM_CXXFLAGS/s| -L/usr/lib/boost||'
 
 .include <bsd.port.mk>
