@@ -8,7 +8,7 @@
 
 PORTNAME=	imlib
 PORTVERSION=	1.9.15
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -18,7 +18,7 @@ COMMENT=	A graphic library for enlightenment package
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
