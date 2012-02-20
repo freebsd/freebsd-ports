@@ -20,6 +20,8 @@ BUILD_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
 RUN_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 LICENSE=	ART20
 
