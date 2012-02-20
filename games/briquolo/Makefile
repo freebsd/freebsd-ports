@@ -32,7 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 #.if defined(WITHOUT_NLS)
-#BROKEN=	"Unsupported: wants to link against libintl anyway"
+#BROKEN=	Unsupported: wants to link against libintl anyway
 #CONFIGURE_ARGS+=	--disable-nls
 #PLIST_SUB+=	NLS="@comment "
 #.else
