@@ -14,7 +14,8 @@ MASTER_SITES=	http://gbib.seul.org/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
-IGNORE=		Master site has disappeared
+DEPRECATE=	Master site has been offline for one year
+EXPIRATION_DATE=2012-03-20
 
 USE_GNOME=	gnomelibs
 USE_GMAKE=	yes
