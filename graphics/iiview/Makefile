@@ -14,7 +14,6 @@ MAINTAINER=	martin.sugioarto@udo.edu
 COMMENT=	Thumb viewer application
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png \
-		${LOCALBASE}/lib/libungif.a:${PORTSDIR}/graphics/libungif \
 		${LOCALBASE}/lib/libtiff.a:${PORTSDIR}/graphics/tiff \
 		${LOCALBASE}/lib/libjpeg.a:${PORTSDIR}/graphics/jpeg
 
