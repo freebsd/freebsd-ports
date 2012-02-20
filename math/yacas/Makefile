@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
@@ -17,6 +17,8 @@ COMMENT=	Yet Another Computer Algebra System
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+OPTIONS=	TESTS "Run bundled self-tests after build" on
+
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -24,17 +26,28 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--enable-html-doc --with-html-dir=${DOCSDIR}
 .else
 CONFIGURE_ARGS+=	--disable-html-doc
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
+.if !defined(WITHOUT_TESTS)
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 
-test:	build
-	@cd ${WRKSRC} && ${GMAKE} test
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's| /bin/bash| ${LOCALBASE}/bin/bash|' ${WRKSRC}/tests/test-yacas
+
+post-build:
+.if !defined(WITHOUT_TESTS)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} check ${MAKE_ARGS})
+.endif
 
 .include <bsd.port.post.mk>
