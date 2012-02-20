@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME client for Hotline
 
+DEPRECATED=	Hotline services does not exists anymore
+EXPIRATION_DATE=	2012-03-20
+
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
