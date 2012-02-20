@@ -56,7 +56,7 @@
  	;;
      gnomeui)
 -	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@"
-+	the_libs="$the_libs @GNOME_LIBDIR@ -lXpm -ljpeg -lpng -lz -ltiff -lungif @GNOMEUI_LIBS@"
++	the_libs="$the_libs @GNOME_LIBDIR@ -lXpm -ljpeg -lpng -lz -ltiff -lgif @GNOMEUI_LIBS@"
  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
      gtkxmhtml)
