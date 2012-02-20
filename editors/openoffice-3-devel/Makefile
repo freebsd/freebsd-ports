@@ -28,7 +28,6 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-USE_GCC=	4.6+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=	yes
@@ -56,7 +55,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1245861
+SVNREVISION=		1290975
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -174,11 +173,7 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-saxon     \
 			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
 			--with-system-beanshell	\
-			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
-			--without-stlport
-
-#		stlport_gcc.5:${PORTSDIR}/devel/stlport
-#		--with-stlport=${LOCALBASE}
+			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
