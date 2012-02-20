@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	froxlor
-PORTVERSION=	0.9.22
-PORTREVISION=	3
+DISTVERSION=	0.9.26
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -33,7 +32,8 @@ OPTIONS=	APACHE "Use Apache (2.2) as http server" On \
 		POWERDNS "Use Powerdns as dns server" Off \
 		LIBNSS "Use Libnss-mysql for authentication (impl. MySQL)" Off \
 		WEBALIZER "Use webalizer" On \
-		AWSTATS "Use awstats" Off
+		AWSTATS "Use awstats" Off \
+		LOGROTATE "Use logrotate" Off
 
 .include <bsd.port.options.mk>
 
@@ -75,6 +75,10 @@ RUN_DEPENDS+=	webalizer:${PORTSDIR}/www/webalizer
 
 .if defined(WITH_AWSTATS)
 RUN_DEPENDS+=	awstats>=6.8:${PORTSDIR}/www/awstats
+.endif
+
+.if defined(WITH_LOGROTATE)
+RUN_DEPENDS+=	logrotate:${PORTSDIR}/sysutils/logrotate
 .endif
 
 do-install:

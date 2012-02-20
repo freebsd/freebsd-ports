@@ -19,6 +19,7 @@ www/froxlor/actions/admin/settings/200.aps.php
 www/froxlor/actions/admin/settings/210.security.php
 www/froxlor/actions/admin/settings/215.backup.php
 www/froxlor/actions/admin/settings/220.quota.php
+www/froxlor/actions/admin/settings/225.logrotate.php
 www/froxlor/admin_admins.php
 www/froxlor/admin_aps.php
 www/froxlor/admin_configfiles.php
@@ -36,6 +37,8 @@ www/froxlor/admin_tickets.php
 www/froxlor/admin_traffic.php
 www/froxlor/admin_updates.php
 www/froxlor/cache/.keep
+www/froxlor/css/jquery.jqplot.css
+www/froxlor/css/jquery.jqplot.min.css
 www/froxlor/customer_aps.php
 www/froxlor/customer_autoresponder.php
 www/froxlor/customer_domains.php
@@ -214,6 +217,7 @@ www/froxlor/images/Froxlor/traffic_blue.gif
 www/froxlor/images/Froxlor/traffic_green.gif
 www/froxlor/images/Froxlor/traffic_red.gif
 www/froxlor/images/Froxlor/traffic_yellow.gif
+www/froxlor/images/favicon.ico
 www/froxlor/index.php
 www/froxlor/install/froxlor.sql
 www/froxlor/install/install.php
@@ -234,6 +238,63 @@ www/froxlor/install/updates/syscp/1.2/update_1.2-beta1_1.2.19.inc.php
 www/froxlor/install/updates/syscp/1.2/update_1.2.19_1.4.inc.php
 www/froxlor/install/updates/syscp/1.4/update_1.4.inc.php
 www/froxlor/install/updatesql.php
+www/froxlor/js/excanvas.min.js
+www/froxlor/js/jquery.jqplot.min.js
+www/froxlor/js/jquery.min.js
+www/froxlor/js/jquery.tablesorter.min.js
+www/froxlor/js/plugins/jqplot.BezierCurveRenderer.js
+www/froxlor/js/plugins/jqplot.BezierCurveRenderer.min.js
+www/froxlor/js/plugins/jqplot.barRenderer.js
+www/froxlor/js/plugins/jqplot.barRenderer.min.js
+www/froxlor/js/plugins/jqplot.blockRenderer.js
+www/froxlor/js/plugins/jqplot.blockRenderer.min.js
+www/froxlor/js/plugins/jqplot.bubbleRenderer.js
+www/froxlor/js/plugins/jqplot.bubbleRenderer.min.js
+www/froxlor/js/plugins/jqplot.canvasAxisLabelRenderer.js
+www/froxlor/js/plugins/jqplot.canvasAxisLabelRenderer.min.js
+www/froxlor/js/plugins/jqplot.canvasAxisTickRenderer.js
+www/froxlor/js/plugins/jqplot.canvasAxisTickRenderer.min.js
+www/froxlor/js/plugins/jqplot.canvasOverlay.js
+www/froxlor/js/plugins/jqplot.canvasOverlay.min.js
+www/froxlor/js/plugins/jqplot.canvasTextRenderer.js
+www/froxlor/js/plugins/jqplot.canvasTextRenderer.min.js
+www/froxlor/js/plugins/jqplot.categoryAxisRenderer.js
+www/froxlor/js/plugins/jqplot.categoryAxisRenderer.min.js
+www/froxlor/js/plugins/jqplot.ciParser.js
+www/froxlor/js/plugins/jqplot.ciParser.min.js
+www/froxlor/js/plugins/jqplot.cursor.js
+www/froxlor/js/plugins/jqplot.cursor.min.js
+www/froxlor/js/plugins/jqplot.dateAxisRenderer.js
+www/froxlor/js/plugins/jqplot.dateAxisRenderer.min.js
+www/froxlor/js/plugins/jqplot.donutRenderer.js
+www/froxlor/js/plugins/jqplot.donutRenderer.min.js
+www/froxlor/js/plugins/jqplot.dragable.js
+www/froxlor/js/plugins/jqplot.dragable.min.js
+www/froxlor/js/plugins/jqplot.enhancedLegendRenderer.js
+www/froxlor/js/plugins/jqplot.enhancedLegendRenderer.min.js
+www/froxlor/js/plugins/jqplot.funnelRenderer.js
+www/froxlor/js/plugins/jqplot.funnelRenderer.min.js
+www/froxlor/js/plugins/jqplot.highlighter.js
+www/froxlor/js/plugins/jqplot.highlighter.min.js
+www/froxlor/js/plugins/jqplot.json2.js
+www/froxlor/js/plugins/jqplot.json2.min.js
+www/froxlor/js/plugins/jqplot.logAxisRenderer.js
+www/froxlor/js/plugins/jqplot.logAxisRenderer.min.js
+www/froxlor/js/plugins/jqplot.mekkoAxisRenderer.js
+www/froxlor/js/plugins/jqplot.mekkoAxisRenderer.min.js
+www/froxlor/js/plugins/jqplot.mekkoRenderer.js
+www/froxlor/js/plugins/jqplot.mekkoRenderer.min.js
+www/froxlor/js/plugins/jqplot.meterGaugeRenderer.js
+www/froxlor/js/plugins/jqplot.meterGaugeRenderer.min.js
+www/froxlor/js/plugins/jqplot.ohlcRenderer.js
+www/froxlor/js/plugins/jqplot.ohlcRenderer.min.js
+www/froxlor/js/plugins/jqplot.pieRenderer.js
+www/froxlor/js/plugins/jqplot.pieRenderer.min.js
+www/froxlor/js/plugins/jqplot.pointLabels.js
+www/froxlor/js/plugins/jqplot.pointLabels.min.js
+www/froxlor/js/plugins/jqplot.trendline.js
+www/froxlor/js/plugins/jqplot.trendline.min.js
+www/froxlor/js/traffic.js
 www/froxlor/lib/classes/Smarty
 www/froxlor/lib/classes/Smarty-3.0.8/COPYING.lib
 www/froxlor/lib/classes/Smarty-3.0.8/README
@@ -717,8 +778,9 @@ www/froxlor/lib/configfiles/gentoo.inc.php
 www/froxlor/lib/configfiles/hardy.inc.php
 www/froxlor/lib/configfiles/lenny.inc.php
 www/froxlor/lib/configfiles/lucid.inc.php
+www/froxlor/lib/configfiles/sle10.inc.php
 www/froxlor/lib/configfiles/squeeze.inc.php
-www/froxlor/lib/configfiles/suse10.inc.php
+www/froxlor/lib/configfiles/suse11.inc.php
 www/froxlor/lib/configfiles_index.inc.php
 www/froxlor/lib/cron_init.php
 www/froxlor/lib/cron_shutdown.php
@@ -808,6 +870,8 @@ www/froxlor/lib/functions/formfields/function.validateFormDefinition.php
 www/froxlor/lib/functions/formfields/function.validateFormField.php
 www/froxlor/lib/functions/formfields/hidden/function.getFormFieldOutputHidden.php
 www/froxlor/lib/functions/formfields/hidden/function.validateFormFieldHidden.php
+www/froxlor/lib/functions/formfields/hiddenstring/function.getFormFieldOutputString.php
+www/froxlor/lib/functions/formfields/hiddenstring/function.validateFormFieldString.php
 www/froxlor/lib/functions/formfields/int/function.getFormFieldDataInt.php
 www/froxlor/lib/functions/formfields/int/function.getFormFieldOutputInt.php
 www/froxlor/lib/functions/formfields/int/function.validateFormFieldInt.php
@@ -887,6 +951,7 @@ www/froxlor/lib/functions/system/function.checklastguid.php
 www/froxlor/lib/functions/validate/function.appendOpenbasedirPath.php
 www/froxlor/lib/functions/validate/function.buildValidMailFrom.php
 www/froxlor/lib/functions/validate/function.checkFcgidPhpFpm.php
+www/froxlor/lib/functions/validate/function.checkHostname.php
 www/froxlor/lib/functions/validate/function.checkMysqlAccessHost.php
 www/froxlor/lib/functions/validate/function.checkPathConflicts.php
 www/froxlor/lib/functions/validate/function.checkUsername.php
@@ -925,6 +990,7 @@ www/froxlor/lng/swedish.lng.php
 www/froxlor/lng/zh-cn.lng.php
 www/froxlor/locales/de/LC_MESSAGES/default.mo
 www/froxlor/locales/de/LC_MESSAGES/default.po
+www/froxlor/locales/en/LC_MESSAGES/default.po
 www/froxlor/packages/.keep
 www/froxlor/scripts/cron_apsinstaller.php
 www/froxlor/scripts/cron_apsupdater.php
@@ -964,12 +1030,9 @@ www/froxlor/templates/Classic/admin/aps/footer.tpl
 www/froxlor/templates/Classic/admin/aps/header.tpl
 www/froxlor/templates/Classic/admin/aps/infobox.tpl
 www/froxlor/templates/Classic/admin/aps/manage_instances.tpl
-www/froxlor/templates/Classic/admin/aps/manage_instances_error.tpl
-www/froxlor/templates/Classic/admin/aps/manage_instances_install.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_detail.tpl
 www/froxlor/templates/Classic/admin/aps/manage_instances_package.tpl
-www/froxlor/templates/Classic/admin/aps/manage_instances_success.tpl
-www/froxlor/templates/Classic/admin/aps/manage_instances_taskactive.tpl
-www/froxlor/templates/Classic/admin/aps/manage_instances_uninstall.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_status.tpl
 www/froxlor/templates/Classic/admin/aps/manage_packages.tpl
 www/froxlor/templates/Classic/admin/aps/manage_packages_detail.tpl
 www/froxlor/templates/Classic/admin/aps/manage_packages_download.tpl
@@ -1129,13 +1192,13 @@ www/froxlor/templates/Classic/customer/traffic/traffic_traffic.tpl
 www/froxlor/templates/Classic/footer.tpl
 www/froxlor/templates/Classic/formfields/bool.tpl
 www/froxlor/templates/Classic/formfields/hidden.tpl
+www/froxlor/templates/Classic/formfields/hiddenstring.tpl
 www/froxlor/templates/Classic/formfields/label.tpl
 www/froxlor/templates/Classic/formfields/option.tpl
 www/froxlor/templates/Classic/formfields/string.tpl
 www/froxlor/templates/Classic/formfields/text.tpl
 www/froxlor/templates/Classic/header.tpl
 www/froxlor/templates/Classic/js/froxlor.js
-www/froxlor/templates/Classic/js/jquery.min.js
 www/froxlor/templates/Classic/login/fpwd.tpl
 www/froxlor/templates/Classic/login/login.tpl
 www/froxlor/templates/Classic/main.css
@@ -1164,12 +1227,9 @@ www/froxlor/templates/Froxlor/admin/aps/footer.tpl
 www/froxlor/templates/Froxlor/admin/aps/header.tpl
 www/froxlor/templates/Froxlor/admin/aps/infobox.tpl
 www/froxlor/templates/Froxlor/admin/aps/manage_instances.tpl
-www/froxlor/templates/Froxlor/admin/aps/manage_instances_error.tpl
-www/froxlor/templates/Froxlor/admin/aps/manage_instances_install.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_detail.tpl
 www/froxlor/templates/Froxlor/admin/aps/manage_instances_package.tpl
-www/froxlor/templates/Froxlor/admin/aps/manage_instances_success.tpl
-www/froxlor/templates/Froxlor/admin/aps/manage_instances_taskactive.tpl
-www/froxlor/templates/Froxlor/admin/aps/manage_instances_uninstall.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_status.tpl
 www/froxlor/templates/Froxlor/admin/aps/manage_packages.tpl
 www/froxlor/templates/Froxlor/admin/aps/manage_packages_detail.tpl
 www/froxlor/templates/Froxlor/admin/aps/manage_packages_download.tpl
@@ -1332,6 +1392,7 @@ www/froxlor/templates/Froxlor/customer/traffic/traffic_traffic.tpl
 www/froxlor/templates/Froxlor/footer.tpl
 www/froxlor/templates/Froxlor/formfields/bool.tpl
 www/froxlor/templates/Froxlor/formfields/hidden.tpl
+www/froxlor/templates/Froxlor/formfields/hiddenstring.tpl
 www/froxlor/templates/Froxlor/formfields/label.tpl
 www/froxlor/templates/Froxlor/formfields/option.tpl
 www/froxlor/templates/Froxlor/formfields/string.tpl
@@ -1341,7 +1402,6 @@ www/froxlor/templates/Froxlor/froxlor_ie.css
 www/froxlor/templates/Froxlor/header.tpl
 www/froxlor/templates/Froxlor/index.tpl
 www/froxlor/templates/Froxlor/js/froxlor.js
-www/froxlor/templates/Froxlor/js/jquery.min.js
 www/froxlor/templates/Froxlor/login/fpwd.tpl
 www/froxlor/templates/Froxlor/login/login.tpl
 www/froxlor/templates/Froxlor/login/login_ftp.tpl
@@ -1372,7 +1432,6 @@ www/froxlor/templates/Froxlor/webftp/webftp_main_link_row.tpl
 www/froxlor/templates/Froxlor/webftp/webftp_main_multiple.tpl
 www/froxlor/templates/Froxlor/webftp/webftp_main_prompt.tpl
 www/froxlor/templates/Froxlor/webftp/webftp_main_rename.tpl
-www/froxlor/templates/jquery.tablesorter.min.js
 www/froxlor/templates/misc/awstatsmodel/awstats.froxlor.model.conf
 www/froxlor/templates/misc/awstatsmodel/awstats.froxlor.model_log_sql.conf
 www/froxlor/templates/misc/configfiles/debian_lenny/apache2/etc_apache2_mods-enabled_fastcgi.conf
@@ -1528,20 +1587,48 @@ www/froxlor/templates/misc/configfiles/gentoo/postfix_mxaccess/etc_postfix_mx_ac
 www/froxlor/templates/misc/configfiles/gentoo/proftpd/etc_proftpd_proftpd.conf
 www/froxlor/templates/misc/configfiles/gentoo/pureftpd/etc_conf.d_pure-ftpd
 www/froxlor/templates/misc/configfiles/gentoo/pureftpd/etc_pureftpd-mysql.conf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authdaemonrc
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authmysqlrc
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/cron/etc_cron.d_froxlor
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/dkim/dkim-filter.conf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_main.cf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_alias_maps.cf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_sender_permissions.cf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix/usr_lib_sasl2_smtpd.conf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix_mxaccess/etc_postfix_main.cf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix_mxaccess/etc_postfix_mx_access
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_modules.conf
-www/froxlor/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/courier/etc_authlib_authdaemonrc
+www/froxlor/templates/misc/configfiles/opensuse_11_x/courier/etc_authlib_authmysqlrc
+www/froxlor/templates/misc/configfiles/opensuse_11_x/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/opensuse_11_x/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/dovecot/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/dovecot/etc_dovecot_dovecot.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
+www/froxlor/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_auth_30_froxlor-config
+www/froxlor/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
+www/froxlor/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_router_180_froxlor-config
+www/froxlor/templates/misc/configfiles/opensuse_11_x/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix/etc_sasl2_smtpd.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_master.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/opensuse_11_x/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd.conf
+www/froxlor/templates/misc/configfiles/opensuse_11_x/pure-ftpd/etc_pure-ftpd_mysql.conf
+www/froxlor/templates/misc/configfiles/sle_10/courier/etc_authlib_authdaemonrc
+www/froxlor/templates/misc/configfiles/sle_10/courier/etc_authlib_authmysqlrc
+www/froxlor/templates/misc/configfiles/sle_10/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/sle_10/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/sle_10/postfix/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/sle_10/postfix/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/sle_10/postfix/usr_lib_sasl2_smtpd.conf
+www/froxlor/templates/misc/configfiles/sle_10/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/sle_10/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/sle_10/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/sle_10/proftpd/etc_proftpd_proftpd.conf
 www/froxlor/templates/misc/configfiles/ubuntu_hardy/apache2/etc_apache2_mods-enabled_fastcgi.conf
 www/froxlor/templates/misc/configfiles/ubuntu_hardy/courier/etc_courier_authdaemonrc
 www/froxlor/templates/misc/configfiles/ubuntu_hardy/courier/etc_courier_authmysqlrc
@@ -1606,6 +1693,9 @@ www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql-root.co
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nss-mysql.conf
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss/etc_nsswitch.conf
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/lighttpd/etc_lighttpd.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/nginx/etc_init.d_php-fcgi
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/nginx/etc_nginx_fastcgi.conf
+www/froxlor/templates/misc/configfiles/ubuntu_lucid/nginx/etc_nginx_nginx.conf
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_main.cf
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
@@ -1646,6 +1736,7 @@ www/froxlor/webftp.php
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_mxaccess
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_dovecot
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/postfix_courier
+@dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/nginx
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/lighttpd
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/libnss
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/exim4
@@ -1671,13 +1762,24 @@ www/froxlor/webftp.php
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/courier
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy/apache2
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_hardy
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/proftpd
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix_mxaccess
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/postfix
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/dkim
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/cron
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0/courier
-@dirrm www/froxlor/templates/misc/configfiles/suse_linux_10_0
+@dirrm www/froxlor/templates/misc/configfiles/sle_10/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/sle_10/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/sle_10/postfix
+@dirrm www/froxlor/templates/misc/configfiles/sle_10/dkim
+@dirrm www/froxlor/templates/misc/configfiles/sle_10/cron
+@dirrm www/froxlor/templates/misc/configfiles/sle_10/courier
+@dirrm www/froxlor/templates/misc/configfiles/sle_10
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/pure-ftpd
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix_dovecot
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/postfix
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/exim4
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/dkim
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/cron
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x/courier
+@dirrm www/froxlor/templates/misc/configfiles/opensuse_11_x
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/pureftpd
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/proftpd
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/postfix_mxaccess
@@ -1813,6 +1915,8 @@ www/froxlor/webftp.php
 @dirrm www/froxlor/scripts/jobs
 @dirrm www/froxlor/scripts
 @dirrm www/froxlor/packages
+@dirrm www/froxlor/locales/en/LC_MESSAGES
+@dirrm www/froxlor/locales/en
 @dirrm www/froxlor/locales/de/LC_MESSAGES
 @dirrm www/froxlor/locales/de
 @dirrm www/froxlor/locales
@@ -1831,6 +1935,7 @@ www/froxlor/webftp.php
 @dirrm www/froxlor/lib/functions/formfields/option
 @dirrm www/froxlor/lib/functions/formfields/label
 @dirrm www/froxlor/lib/functions/formfields/int
+@dirrm www/froxlor/lib/functions/formfields/hiddenstring
 @dirrm www/froxlor/lib/functions/formfields/hidden
 @dirrm www/froxlor/lib/functions/formfields/date
 @dirrm www/froxlor/lib/functions/formfields/bool
@@ -1910,6 +2015,8 @@ www/froxlor/webftp.php
 @dirrm www/froxlor/lib/classes/Smarty-3.0.8
 @dirrm www/froxlor/lib/classes
 @dirrm www/froxlor/lib
+@dirrm www/froxlor/js/plugins
+@dirrm www/froxlor/js
 @dirrm www/froxlor/install/updates/syscp/1.4
 @dirrm www/froxlor/install/updates/syscp/1.2
 @dirrm www/froxlor/install/updates/syscp/1.0
@@ -1926,6 +2033,7 @@ www/froxlor/webftp.php
 @dirrm www/froxlor/images/Froxlor
 @dirrm www/froxlor/images/Classic
 @dirrm www/froxlor/images
+@dirrm www/froxlor/css
 @dirrm www/froxlor/cache
 @dirrm www/froxlor/actions/admin/settings
 @dirrm www/froxlor/actions/admin
