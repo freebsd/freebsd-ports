@@ -9,7 +9,7 @@ PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -28,10 +28,8 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  www/apache13-modssl.  Please DO NOT submit patches for    !!!
 # !!!  new versions until they have been committed there first.  !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.13.1
-CKBI_VER=	1.88
+VERSION_NSS=	3.13.2
 VERSION_APACHE=	1.3.41
-NSS_SUFFIX=	.with.ckbi.${CKBI_VER}
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/mozilla/security/nss/lib/ckfw/builtins/certdata.txt
 BUNDLE_PROCESSOR=	MAca-bundle.pl
 
