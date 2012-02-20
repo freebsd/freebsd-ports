@@ -24,10 +24,12 @@ share/desktop-directories/xfce-development.directory
 share/desktop-directories/xfce-education.directory
 share/desktop-directories/xfce-games.directory
 share/desktop-directories/xfce-graphics.directory
+share/desktop-directories/xfce-hardware.directory
 share/desktop-directories/xfce-multimedia.directory
 share/desktop-directories/xfce-network.directory
 share/desktop-directories/xfce-office.directory
 share/desktop-directories/xfce-other.directory
+share/desktop-directories/xfce-personal.directory
 share/desktop-directories/xfce-screensavers.directory
 share/desktop-directories/xfce-settings.directory
 share/desktop-directories/xfce-system.directory
@@ -49,7 +51,6 @@ share/desktop-directories/xfce-system.directory
 %%APIDOCS%%share/gtk-doc/html/garcon/garcon-menus.html
 %%APIDOCS%%share/gtk-doc/html/garcon/garcon-miscellaneous.html
 %%APIDOCS%%share/gtk-doc/html/garcon/garcon-parsing.html
-%%APIDOCS%%share/gtk-doc/html/garcon/garcon.devhelp
 %%APIDOCS%%share/gtk-doc/html/garcon/garcon.devhelp2
 %%APIDOCS%%share/gtk-doc/html/garcon/home.png
 %%APIDOCS%%share/gtk-doc/html/garcon/index.html
@@ -61,6 +62,7 @@ share/desktop-directories/xfce-system.directory
 %%APIDOCS%%share/gtk-doc/html/garcon/style.css
 %%APIDOCS%%share/gtk-doc/html/garcon/up.png
 %%NLS%%share/locale/ar/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/garcon.mo
@@ -77,9 +79,11 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/hr/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/id/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/is/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/it/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/garcon.mo
@@ -87,6 +91,7 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/nb/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/garcon.mo
