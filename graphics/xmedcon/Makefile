@@ -6,12 +6,17 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.10.7
+PORTVERSION=	0.11.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A medical image conversion utility and library
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 OPTIONS=	X11 "With X11" on \
 		GLIB "With Glib" on \
