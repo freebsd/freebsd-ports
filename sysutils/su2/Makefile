@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	ftp://ftp.ccs.neu.edu/pub/sysadmin/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gd@rambler-co.ru
 COMMENT=	An enhanced su, allows users to su with own password + more
 
 NO_CDROM=	Don't sell for profit
