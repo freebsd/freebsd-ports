@@ -10,7 +10,7 @@ PORTVERSION=	2.2.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
-MAINTAINER=	mark_sf@kikg.ifmo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
@@ -102,7 +102,7 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if defined(WITHOUT_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_SQLITE)
-IGNORE="requires at least one database backend selected. Run 'make config'"
+IGNORE=	requires at least one database backend selected. Run 'make config'
 .endif
 
 post-patch:
