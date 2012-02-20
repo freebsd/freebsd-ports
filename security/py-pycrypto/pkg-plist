@@ -5,6 +5,12 @@
 %%PYTHON_SITELIBDIR%%/Crypto/Cipher/CAST.so
 %%PYTHON_SITELIBDIR%%/Crypto/Cipher/DES.so
 %%PYTHON_SITELIBDIR%%/Crypto/Cipher/DES3.so
+%%PYTHON_SITELIBDIR%%/Crypto/Cipher/PKCS1_OAEP.py
+%%PYTHON_SITELIBDIR%%/Crypto/Cipher/PKCS1_OAEP.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Cipher/PKCS1_OAEP.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Cipher/PKCS1_v1_5.py
+%%PYTHON_SITELIBDIR%%/Crypto/Cipher/PKCS1_v1_5.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Cipher/PKCS1_v1_5.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Cipher/XOR.so
 %%PYTHON_SITELIBDIR%%/Crypto/Cipher/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/Cipher/__init__.pyc
@@ -12,28 +18,40 @@
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/HMAC.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/HMAC.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/HMAC.pyo
-%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD2.so
-%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD4.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD2.py
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD2.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD2.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD4.py
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD4.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/MD4.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/MD5.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/MD5.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/MD5.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/RIPEMD.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/RIPEMD.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/RIPEMD.pyo
-%%PYTHON_SITELIBDIR%%/Crypto/Hash/RIPEMD160.so
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA224.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA224.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA224.pyo
-%%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA256.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA256.py
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA256.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA256.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA384.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA384.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA384.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA512.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA512.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/SHA512.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_MD2.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_MD4.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_RIPEMD160.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_SHA224.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_SHA256.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_SHA384.so
+%%PYTHON_SITELIBDIR%%/Crypto/Hash/_SHA512.so
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Hash/__init__.pyo
@@ -43,6 +61,9 @@
 %%PYTHON_SITELIBDIR%%/Crypto/Protocol/Chaffing.py
 %%PYTHON_SITELIBDIR%%/Crypto/Protocol/Chaffing.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Protocol/Chaffing.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Protocol/KDF.py
+%%PYTHON_SITELIBDIR%%/Crypto/Protocol/KDF.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Protocol/KDF.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Protocol/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/Protocol/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Protocol/__init__.pyo
@@ -140,6 +161,12 @@
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_XOR.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_XOR.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_XOR.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_pkcs1_15.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_pkcs1_15.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_pkcs1_15.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_pkcs1_oaep.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Cipher/test_pkcs1_oaep.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Hash/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Hash/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Hash/__init__.pyo
@@ -182,6 +209,9 @@
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_AllOrNothing.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_AllOrNothing.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_AllOrNothing.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_KDF.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_KDF.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_KDF.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_chaffing.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_chaffing.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Protocol/test_chaffing.pyo
@@ -239,6 +269,15 @@
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test_rpoolcompat.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test_rpoolcompat.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/test_rpoolcompat.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/__init__.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/test_pkcs1_15.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/test_pkcs1_15.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/test_pkcs1_15.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/test_pkcs1_pss.py
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/test_pkcs1_pss.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature/test_pkcs1_pss.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Util/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Util/__init__.pyo
@@ -260,6 +299,15 @@
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/st_common.py
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/st_common.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/st_common.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/PKCS1_PSS.py
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/PKCS1_PSS.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/PKCS1_PSS.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/PKCS1_v1_5.py
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/PKCS1_v1_5.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/PKCS1_v1_5.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/__init__.py
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Signature/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/Util/Counter.py
 %%PYTHON_SITELIBDIR%%/Crypto/Util/Counter.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Util/Counter.pyo
@@ -292,6 +340,9 @@
 %%PYTHON_SITELIBDIR%%/Crypto/Util/winrandom.py
 %%PYTHON_SITELIBDIR%%/Crypto/Util/winrandom.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/Util/winrandom.pyo
+%%PYTHON_SITELIBDIR%%/Crypto/Util/wrapper.py
+%%PYTHON_SITELIBDIR%%/Crypto/Util/wrapper.pyc
+%%PYTHON_SITELIBDIR%%/Crypto/Util/wrapper.pyo
 %%PYTHON_SITELIBDIR%%/Crypto/__init__.py
 %%PYTHON_SITELIBDIR%%/Crypto/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/__init__.pyo
@@ -299,7 +350,9 @@
 %%PYTHON_SITELIBDIR%%/Crypto/pct_warnings.pyc
 %%PYTHON_SITELIBDIR%%/Crypto/pct_warnings.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Crypto/Util
+@dirrm %%PYTHON_SITELIBDIR%%/Crypto/Signature
 @dirrm %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Util
+@dirrm %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Signature
 @dirrm %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/OSRNG
 @dirrm %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random/Fortuna
 @dirrm %%PYTHON_SITELIBDIR%%/Crypto/SelfTest/Random

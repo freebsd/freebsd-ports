@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycrypto
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	security python
 MASTER_SITES=	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
