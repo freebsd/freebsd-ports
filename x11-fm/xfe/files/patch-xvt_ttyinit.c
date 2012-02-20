@@ -1,5 +1,5 @@
 --- xvt/ttyinit.c.orig	2010-09-15 16:32:26.000000000 +0200
-+++ xvt/ttyinit.c	2011-11-28 12:45:51.000000000 +0100
++++ xvt/ttyinit.c	2012-02-20 09:30:28.000000000 +0100
 @@ -37,7 +37,12 @@
  #include <unistd.h>
  #include <signal.h>
@@ -14,6 +14,15 @@
  #include <grp.h>
  #include <pwd.h>
  #include <errno.h>
+@@ -134,7 +139,7 @@
+ #endif /* LINUX */
+ 
+ /* GNU KFREEBSD */
+-#if defined (__FreeBSD_kernel__)
++#if defined (__FreeBSD_kernel__) && !defined (__FreeBSD__)
+ #include <sys/ioctl.h>
+ #include <pty.h>
+ #define BSD_PTY
 @@ -175,7 +180,9 @@
  #ifdef BSD_UTMP
  static int tslot = -1;		/* index to our slot in the utmp file */
