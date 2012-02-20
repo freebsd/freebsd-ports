@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.11
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Doppelkopf
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
@@ -22,6 +25,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
