@@ -5541,6 +5541,7 @@ hs-filemanip                    ports/devel/hs-filemanip
 hs-filestore                    ports/devel/hs-filestore
 hs-frantk                       ports/x11-toolkits/hs-frantk
 hs-gconf                        ports/devel/hs-gconf
+hs-ghc-events                   ports/devel/hs-ghc-events
 hs-ghc-mtl                      ports/devel/hs-ghc-mtl
 hs-ghc-paths                    ports/devel/hs-ghc-paths
 hs-ghc-paths-docs               ports/devel/hs-ghc-paths-docs
@@ -5689,6 +5690,7 @@ hs-statevar                     ports/devel/hs-StateVar
 hs-statistics                   ports/math/hs-statistics
 hs-stm                          ports/devel/hs-stm
 hs-stream                       ports/devel/hs-Stream
+hs-strict                       ports/devel/hs-strict
 hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-svgcairo                     ports/graphics/hs-svgcairo
 hs-syb                          ports/devel/hs-syb
@@ -5705,6 +5707,7 @@ hs-test-framework-quickcheck2   ports/devel/hs-test-framework-quickcheck2
 hs-testpack                     ports/devel/hs-testpack
 hs-texmath                      ports/textproc/hs-texmath
 hs-text                         ports/devel/hs-text
+hs-threadscope                  ports/devel/hs-threadscope
 hs-tls                          ports/security/hs-tls
 hs-tls-extra                    ports/security/hs-tls-extra
 hs-transformers                 ports/devel/hs-transformers
@@ -5733,6 +5736,9 @@ hs-wai-extra                    ports/www/hs-wai-extra
 hs-wai-logger                   ports/www/hs-wai-logger
 hs-warp                         ports/www/hs-warp
 hs-webkit                       ports/www/hs-webkit
+hs-wx                           ports/x11-toolkits/hs-wx
+hs-wxcore                       ports/x11-toolkits/hs-wxcore
+hs-wxdirect                     ports/x11-toolkits/hs-wxdirect
 hs-x11                          ports/x11/hs-X11
 hs-x11-xft                      ports/x11/hs-X11-xft
 hs-xhtml                        ports/textproc/hs-xhtml
@@ -8412,6 +8418,7 @@ libx86                          ports/devel/libx86
 libxalloc                       ports/devel/libxalloc
 libxau                          ports/x11/libXau
 libxaw                          ports/x11-toolkits/libXaw
+libxaw3dxft                     ports/x11-toolkits/libxaw3dxft
 libxcb                          ports/x11/libxcb
 libxcomposite                   ports/x11/libXcomposite
 libxcursor                      ports/x11/libXcursor
@@ -18448,7 +18455,6 @@ p5-poex-role-tcpserver          ports/net/p5-POEx-Role-TCPServer
 p5-poex-types                   ports/devel/p5-POEx-Types
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
-p5-postgresql-plperl            ports/databases/p5-postgresql-plperl
 p5-postgresql-plperl-call       ports/databases/p5-PostgreSQL-PLPerl-Call
 p5-postgresql-plperl-trace      ports/databases/p5-PostgreSQL-PLPerl-Trace
 p5-postscript                   ports/print/p5-PostScript
@@ -21584,15 +21590,19 @@ postgresql82-contrib            ports/databases/postgresql82-contrib
 postgresql82-server             ports/databases/postgresql82-server
 postgresql83-client             ports/databases/postgresql83-client
 postgresql83-contrib            ports/databases/postgresql83-contrib
+postgresql83-plperl             ports/databases/postgresql83-plperl
 postgresql83-server             ports/databases/postgresql83-server
 postgresql84-client             ports/databases/postgresql84-client
 postgresql84-contrib            ports/databases/postgresql84-contrib
+postgresql84-plperl             ports/databases/postgresql84-plperl
 postgresql84-server             ports/databases/postgresql84-server
 postgresql90-client             ports/databases/postgresql90-client
 postgresql90-contrib            ports/databases/postgresql90-contrib
+postgresql90-plperl             ports/databases/postgresql90-plperl
 postgresql90-server             ports/databases/postgresql90-server
 postgresql91-client             ports/databases/postgresql91-client
 postgresql91-contrib            ports/databases/postgresql91-contrib
+postgresql91-plperl             ports/databases/postgresql91-plperl
 postgresql91-server             ports/databases/postgresql91-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
