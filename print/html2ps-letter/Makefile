@@ -6,32 +6,52 @@
 #
 
 PORTNAME=	html2ps
-DISTVERSION=	1.0b5
-PORTREVISION=	4
+DISTVERSION=	1.0b7
 PORTEPOCH=	1
 CATEGORIES=	print www perl5
-MASTER_SITES=	http://user.it.uu.se/~jan/
+MASTER_SITES=	http://user.it.uu.se/~jan/ \
+		http://fossies.org/unix/www/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to PostScript converter
 
-USE_GHOSTSCRIPT_BUILD=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		weblint:${PORTSDIR}/www/weblint
 
-USE_PERL5=	YES
-NO_BUILD=	YES
+NO_BUILD=	yes
+USE_PERL5=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 
-PAPERSIZE?=	letter
+SUB_FILES=	html2psrc
+SUB_LIST=	PAPERSIZE="${PAPERSIZE}"
 
 MAN1=		html2ps.1
 MAN5=		html2psrc.5
-SCRIPTS_ENV+=	PERL=${PERL} PAPERSIZE=${PAPERSIZE}
+PLIST_FILES=	bin/html2ps \
+		%%DATADIR%%/html2ps.html \
+		%%DATADIR%%/html2psrc \
+		%%DATADIR%%/hyphen.tex
+PLIST_DIRS=	%%DATADIR%%
+
+PAPERSIZE?=	letter
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|exec perl|exec ${PERL}| ; \
+		 s|/it/sw/share/www/lib/html2ps|${DATADIR}|' ${WRKSRC}/html2ps
 
 do-install:
-	@cd ${WRKSRC}; ${PERL} install
+	${INSTALL_SCRIPT} ${WRKSRC}/html2ps ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/html2ps.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/html2psrc.5 ${MAN5PREFIX}/man/man5
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/html2psrc ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/html2ps.html ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/hyphen.tex ${DATADIR}
 
 .include <bsd.port.mk>
