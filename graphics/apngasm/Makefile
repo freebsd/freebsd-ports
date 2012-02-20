@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apngasm
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
@@ -19,8 +19,8 @@ LICENSE_COMB=	dual
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
 USE_DOS2UNIX=	yes
+USE_ZIP=	yes
 
 CPPFLAGS+=	`libpng-config --I_opts`
 LDFLAGS+=	`libpng-config --ldflags`
