@@ -116,7 +116,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="da317bc9-59a6-11e1-bc16-0023ae8e59f0">
-    <topic> piwik -- xss and click-jacking issues </topic>
+    <topic>piwik -- xss and click-jacking issues</topic>
     <affects>
       <package>
 	<name>piwik</name>
