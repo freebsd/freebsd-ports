@@ -803,6 +803,7 @@
     SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
+    SUBDIR += samba-virusfilter
     SUBDIR += samhain
     SUBDIR += samhain-client
     SUBDIR += samhain-server
