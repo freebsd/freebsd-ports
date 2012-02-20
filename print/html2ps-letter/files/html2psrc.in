@@ -1,0 +1,23 @@
+/* Global configuration file for html2ps */
+
+@html2ps {
+  package {
+    ImageMagick: 1;
+    PerlMagick: 1;
+    djpeg: 1;
+    TeX: 1;
+    dvips: 1;
+    Ghostscript: 1;
+    check: weblint;
+    libwww-perl: 1;
+    path: "%%LOCALBASE%%/bin";
+  }
+  paper {
+    type: %%PAPERSIZE%%;
+  }
+  hyphenation {
+    en {
+      file: "%%DATADIR%%/hyphen.tex";
+    }
+  }
+}
