@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.3/
 
-MAINTAINER=	mark_sf@kikg.ifmo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
@@ -112,7 +112,7 @@ NO_INSTALL_MANPAGES=yes
 .endif
 
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_SQLITE)
-IGNORE="requires at least one database backend selected. Run 'make config'"
+IGNORE=	requires at least one database backend selected. Run 'make config'
 .endif
 
 post-patch:
