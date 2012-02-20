@@ -3528,6 +3528,7 @@
     SUBDIR += readline
     SUBDIR += regexx
     SUBDIR += regexxer
+    SUBDIR += remake
     SUBDIR += replay
     SUBDIR += rhtvision
     SUBDIR += ri-emacs
