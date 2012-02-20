@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	igor
-PORTVERSION=	1.170
+PORTVERSION=	1.224
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
@@ -20,10 +20,10 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
-
-.include <bsd.port.pre.mk>
+MAN1=		${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
