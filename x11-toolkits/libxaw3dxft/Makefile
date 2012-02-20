@@ -7,7 +7,7 @@
 
 PORTNAME=	libxaw3dxft
 PORTVERSION=	1.3.3
-CATEGORIES=	graphics
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/sf-xpaint/${PORTNAME}
 
 MAINTAINER=	johans@FreeBSD.org
