@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2011-08-26 22:17:26.000000000 +0200
++++ CMakeLists.txt	2012-02-17 18:00:25.000000000 +0100
+@@ -33,7 +33,7 @@
+ set(HAVE_BOOST_UNORDERED_COLLECTIONS FALSE)
+ 
+ if(CARVE_SYSTEM_BOOST)
+-  find_package(BOOST 1.40)
++  find_package(Boost 1.40)
+   if(Boost_FOUND)
+     include_directories(${Boost_INCLUDE_DIRS})
+     message(STATUS "Using system boost")
+@@ -94,8 +94,8 @@
+       add_definitions(-DGLUI_USE_STATIC_LIB)
+       add_definitions(-DGLEW_STATIC)
+     endif(WIN32)
+-    add_subdirectory(external/GLEW) 
+-    add_subdirectory(external/GLUI) 
++    #add_subdirectory(external/GLEW) 
++    #add_subdirectory(external/GLUI) 
+ 
+   endif(NOT OPENGL_FOUND)
+ 
+@@ -110,6 +110,8 @@
+ )
+ include_directories(${carve_BINARY_DIR}/include)
+ 
++configure_file( ${CMAKE_SOURCE_DIR}/include/carve/cmake-config.h.in ${CMAKE_SOURCE_DIR}/include/carve/config.h)
++
+ add_subdirectory(lib) 
+ add_subdirectory(include) 
+ add_subdirectory(common) 

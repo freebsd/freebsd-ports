@@ -54,6 +54,7 @@
     SUBDIR += calcoo
     SUBDIR += calctool
     SUBDIR += cantor
+    SUBDIR += carve
     SUBDIR += cblas
     SUBDIR += ccmath
     SUBDIR += cgal
