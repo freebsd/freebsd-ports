@@ -59,11 +59,6 @@ MAN3=		SWF.3 \
 		SWF::TextField.3 \
 		SWF::VideoStream.3
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${PATCH_WRKSRC}/Makefile.PL ${PATCH_WRKSRC}/mkdoc
-	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${PATCH_WRKSRC}/Exports.c
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${PATCH_WRKSRC}/examples/*.cgi
-
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/
