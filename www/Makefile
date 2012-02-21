@@ -361,6 +361,7 @@
     SUBDIR += jinzora
     SUBDIR += joomla
     SUBDIR += joomla15
+    SUBDIR += joomla25
     SUBDIR += jspacker
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
