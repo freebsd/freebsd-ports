@@ -1,3 +1,6 @@
-The x86info utility displays information about each of the systems 80x86
-processors. Cache info, flags, registers, and processor name/family/model
-are all displayed.
+The x86info utility displays information about each of the x86 CPUs found in
+the system.  Cache information, flags, registers, frequency, processor name,
+family, and model are all displayed.  It works with all Intel, AMD, Centaur,
+Cyrix, VIA processors.
+
+WWW: http://codemonkey.org.uk/projects/x86info/
