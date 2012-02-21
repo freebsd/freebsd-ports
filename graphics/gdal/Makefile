@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=	--with-geotiff=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_GIF)
-LIB_DEPENDS+=		ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=		gif.5:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--with-gif=${LOCALBASE}
 .endif
 
@@ -276,9 +276,6 @@ pre-build:
 .endif
 
 post-patch:
-.if !defined(WITHOUT_GIF)
-	@${REINPLACE_CMD} -e 's|lgif|lungif|' ${WRKSRC}/configure
-.endif
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e '\
 		s,%%MAKE_ENV%%,${MAKE_ENV},; \
