@@ -7,7 +7,7 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}-p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -15,8 +15,12 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+
 USE_AUTOTOOLS=	automake autoconf
 USE_GMAKE=	yes
+
+CONFLICTS_INSTALL=	kBuild-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
@@ -36,6 +40,7 @@ PORTDOCS=	QuickReference-kmk.html \
 
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Config.kmk
 
 # Override autotools
 run-autotools:
