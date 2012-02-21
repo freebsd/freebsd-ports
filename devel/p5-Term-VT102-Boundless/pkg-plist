@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/Boundless/.packlist
+%%SITE_PERL%%/Term/VT102/Boundless.pm
+@dirrmtry %%SITE_PERL%%/Term/VT102
+@dirrmtry %%SITE_PERL%%/Term
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102/Boundless
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term/VT102
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Term
