@@ -30,6 +30,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/asn1.properties
 %%DATADIR%%/au3.properties
 %%DATADIR%%/ave.properties
+%%DATADIR%%/avs.properties
 %%DATADIR%%/baan.properties
 %%DATADIR%%/blitzbasic.properties
 %%DATADIR%%/bullant.properties
