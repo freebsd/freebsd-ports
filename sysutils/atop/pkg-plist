@@ -1,4 +1,3 @@
 bin/atop
 bin/atopsar
-@exec /bin/ln -sf %D/bin/atop %D/bin/atopsar
 @unexec rmdir %%LOGDIR%% 2> /dev/null || true
