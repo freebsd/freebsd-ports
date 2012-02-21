@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120221:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: decke@FreeBSD.org
+
+  virtualbox-ose has been updated to 4.1.8 and requires the latest
+  devel/kBuild-devel now. It is only a build dependency so it is safe
+  to remove it before updating.
+
+  # pkg_delete -f kBuild-\*
+
 20120220:
   AFFECTS: users of graphics/libungif
   AUTHOR: dinoex@FreeBSD.org
