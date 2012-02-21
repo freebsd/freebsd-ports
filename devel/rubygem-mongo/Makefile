@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for mongo
 
-RUN_DEPENDS=	rubygem-bson>=1.5.2:${PORTSDIR}/databases/rubygem-bson
+RUN_DEPENDS=	rubygem-bson>=1.5.2:${PORTSDIR}/devel/rubygem-bson
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
