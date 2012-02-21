@@ -1,5 +1,5 @@
---- ./TelepathyQt4/optional-interface-factory.h.orig	2012-01-13 15:03:15.336883448 +0100
-+++ ./TelepathyQt4/optional-interface-factory.h	2012-01-13 15:03:58.296892805 +0100
+--- ./TelepathyQt/optional-interface-factory.h.orig	2012-01-13 15:03:15.336883448 +0100
++++ ./TelepathyQt/optional-interface-factory.h	2012-01-13 15:03:58.296892805 +0100
 @@ -97,7 +97,7 @@
              InterfaceSupportedChecking check = CheckInterfaceSupported) const
      {
