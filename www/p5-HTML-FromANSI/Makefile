@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mark up ANSI sequences as HTML
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Term/VT102.pm:${PORTSDIR}/devel/p5-Term-VT102
+		${SITE_PERL}/Term/VT102/Boundless.pm:${PORTSDIR}/devel/p5-Term-VT102-Boundless
 
 PERL_CONFIGURE=	yes
 
