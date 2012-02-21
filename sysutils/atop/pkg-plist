@@ -1,9 +1,4 @@
 bin/atop
 bin/atopsar
-%%PORTDOCS%%%%DOCSDIR%%/AUTHOR
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.FreeBSD
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec /bin/ln -sf %D/bin/atop %D/bin/atopsar
 @unexec rmdir %%LOGDIR%% 2> /dev/null || true
