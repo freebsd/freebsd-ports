@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
+MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
+DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	High-level Qt 4 binding for Telepathy
@@ -37,15 +38,16 @@ pre-configure:
 	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
 		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e '/^add_dependencies(doxygen-doc / d' \
-		${WRKSRC}/TelepathyQt4/CMakeLists.txt
+		${WRKSRC}/TelepathyQt/CMakeLists.txt
 .ifdef(NOPORTEXAMPLES)
 	${REINPLACE_CMD} -e '/add_subdirectory(examples)/ d' \
 		${WRKSRC}/CMakeLists.txt
 .endif
-	${REINPLACE_CMD} -e '/TelepathyQt4.*\.pc/ s|pkgconfig|../libdata/pkgconfig|' \
-		${WRKSRC}/TelepathyQt4/CMakeLists.txt
+	${REINPLACE_CMD} -e '/TelepathyQt.*\.pc/ s|pkgconfig|../libdata/pkgconfig|' \
+		${WRKSRC}/TelepathyQt/CMakeLists.txt \
+		${WRKSRC}/TelepathyQt/Farsight/CMakeLists.txt
 	${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s|$$| ${LOCALBASE}/include|' \
-		${WRKSRC}/TelepathyQt4/Farsight/CMakeLists.txt
+		${WRKSRC}/TelepathyQt/Farsight/CMakeLists.txt
 
 pre-install:
 .ifndef(NOPORTDOCS)
