@@ -19,7 +19,7 @@ LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -77,7 +77,10 @@ post-patch:
 		 /LIB/s|-lpthread|${PTHREAD_LIBS}|g ; \
 		 /LIB/s|-lc_r|${PTHREAD_LIBS}|g ; \
 		 /CFLAGS/s|-pthread|${PTHREAD_CFLAGS}|g ; \
-		 /DLOPEN/s|-ldl||g' ${WRKSRC}/configure
+		 /DLOPEN/s|-ldl||g ; \
+		 s|-lungif|-lgif|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lungif|-lgif|' \
+		${WRKSRC}/lib/avcodec/config.mak
 	@${REINPLACE_CMD} -e \
 		'/enfle -N/s|^|#|g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
