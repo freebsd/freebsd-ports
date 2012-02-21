@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twitteR
-PORTVERSION=	0.99.18
+PORTVERSION=	0.99.19
 CATEGORIES=	net
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	R based Twitter client
 LICENSE=	ART20
 
 RUN_DEPENDS=	R-cran-RCurl>0:${PORTSDIR}/ftp/R-cran-RCurl \
-		R-cran-RJSONIO>0:${PORTSDIR}/converters/R-cran-RJSONIO \
+		R-cran-rjson>0:${PORTSDIR}/converters/R-cran-rjson \
 		R-cran-ROAuth>=0.9.0:${PORTSDIR}/security/R-cran-ROAuth
 
 USE_R_MOD=	yes
