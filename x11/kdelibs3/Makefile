@@ -82,7 +82,9 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
 .if ${OSVERSION} < 800000
+.if !defined(WITHOUT_CUPS)
 BROKEN=		does not build fully (cups) on FreeBSD 7.X
+.endif
 .endif
 
 pre-configure:
