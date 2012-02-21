@@ -24,19 +24,6 @@
  ETAGS = etags
  CTAGS = ctags
  DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-@@ -217,10 +215,10 @@
- 	$(am__append_10)
- fuser_SOURCES = fuser.c comm.h signals.c signals.h i18n.h fuser.h
- killall_SOURCES = killall.c comm.h signals.c signals.h i18n.h
--killall_LDADD = @SELINUX_LIB@
-+killall_LDADD =
- peekfd_SOURCES = peekfd.c
- pstree_SOURCES = pstree.c comm.h i18n.h
--pstree_LDADD = @TERMCAP_LIB@ @SELINUX_LIB@
-+pstree_LDADD = @TERMCAP_LIB@
- prtstat_SOURCES = prtstat.c prtstat.h
- BUILT_SOURCES = signames.h
- EXTRA_DIST = signames.c 
 @@ -299,19 +297,19 @@
  	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
  fuser$(EXEEXT): $(fuser_OBJECTS) $(fuser_DEPENDENCIES) 

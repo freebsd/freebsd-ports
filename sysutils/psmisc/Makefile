@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psmisc
-PORTVERSION=	22.14
+PORTVERSION=	22.15
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
@@ -41,6 +41,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^#define COMM_LEN / s|16|254|' ${WRKSRC}/src/comm.h
 
 post-install:
-	@${LN} -fs killall ${PREFIX}/bin/pidof
+	@${LN} -fs ${PREFIX}/bin/killall ${PREFIX}/bin/pidof
 
 .include <bsd.port.mk>
