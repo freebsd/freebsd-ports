@@ -2,21 +2,21 @@ TEA is powerful text editor for Unix-like systems.  It depends on Qt4 and,
 optionally, GNU Aspell.  With an ultimately small size, TEA provides
 hundreds of functions.  Some of the features include:
 
-    - Built-in MC-like file manager (with support for archived files)
-    - Spellchecker (using the Aspell or/and Hunspell)
-    - Tabbed layout engine
-    - Syntax highlighting for C, C++, shell, C#, Fortran, Java, LilyPond,
-      Lua, NASM, NSIS, Pascal, Perl, PHP, PO (gettext), Seed7, TeX/LaTeX,
-      Vala, Verilog, XML, HTML, XHTML, etc.
-    - Multiple encodings support, hotkeys customizations, bookmarks, Morse
-      code generator, screenshot utility, calendar with organizer
-    - Code snippets, sessions, and templates support
-    - Miscellaneous HTML tools; preview in external browsers
-    - Wikipedia, DocBook, LaTeX, Lout editing support
-    - String-handling functions such as sorting, reverse, format killing,
-      trimming, filtering, conversions, etc.
-    - Drag'n'drop support (with text files and pictures)
-    - Built-in image viewer (PNG, JPEG, GIF, WBMP, BMP, SVG, TIFF, TGA,
-      etc.), converter, and resizer
+  - Built-in MC-like file manager (with support for archived files)
+  - Spellchecker (using the Aspell or/and Hunspell)
+  - Tabbed layout engine
+  - Syntax highlighting for C, C++, shell, C#, Fortran, Java, LilyPond,
+    Lua, NASM, NSIS, Pascal, Perl, PHP, PO (gettext), Seed7, TeX/LaTeX,
+    Vala, Verilog, XML, HTML, XHTML, etc.
+  - Multiple encodings support, hotkeys customizations, bookmarks, Morse
+    code generator, screenshot utility, calendar with organizer
+  - Code snippets, sessions, and templates support
+  - Miscellaneous HTML tools; preview in external browsers
+  - Wikipedia, DocBook, LaTeX, Lout editing support
+  - String-handling functions such as sorting, reverse, format killing,
+    trimming, filtering, conversions, etc.
+  - Drag'n'drop support (with text files and pictures)
+  - Built-in image viewer (PNG, JPEG, GIF, WBMP, BMP, SVG, TIFF, TGA,
+    etc.), converter, and resizer
 
 WWW: http://tea-editor.sourceforge.net/
