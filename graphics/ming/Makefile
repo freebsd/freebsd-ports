@@ -7,20 +7,21 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.4.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Releases/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Flash 4/5 movie output library with many languages support
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		gif.5:${PORTSDIR}/graphics/giflib \
+		png.6:${PORTSDIR}/graphics/png
 
 CONFLICTS=	ja-ming-[0-9]*
 
-CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/ming
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include/ming
 CPPFLAGS+=	-I. -I.. -I${LOCALBASE}/include
 LDFLAGS+=	-L. -L.. -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -36,6 +37,18 @@ DOCS_UTIL=	README TIPS TODO swftoperl.html
 .if defined(SLAVEPORT)
 LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ungif|gif|g' ${WRKSRC}/configure ${WRKSRC}/docs/man/Makefile \
+		${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/py_ext/setup.py.in
+# patch for graphics/p5-ming
+	@${REINPLACE_CMD} -e 's|\.3pm|.3|g' ${WRKSRC}/perl_ext/Makefile.PL ${WRKSRC}/perl_ext/mkdoc
+	@${REINPLACE_CMD} -e 's|GvCV(\(.*\)) = \(.*\);|GvCV_set(\1, \2);|' ${WRKSRC}/perl_ext/Exports.c
+	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/perl_ext/examples/*.cgi
+# patch for graphics/py-ming
+	@${REINPLACE_CMD} -e 's| --root ".*"||' ${WRKSRC}/py_ext/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py.in
+	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/src
 
 .if !target(post-install)
 post-install:
