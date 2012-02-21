@@ -1,5 +1,7 @@
 %%RUBY_SITELIBDIR%%/narray_miss.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/narray_miss.html
+%%RUBY_SITELIBDIR%%/narray_miss/narray_miss.rb
+%%RUBY_SITELIBDIR%%/narray_miss/version.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.rdoc
+@dirrm %%RUBY_SITELIBDIR%%/narray_miss
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
