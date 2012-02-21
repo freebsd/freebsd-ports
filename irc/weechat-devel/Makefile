@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120213
+PORTVERSION=	20120219
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -42,7 +42,7 @@ OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		NLS		"NLS support"			On	\
 		DOCUMENTATION	"Build documentation"		Off
 
-GITREV=	c91a91c
+GITREV=	8d63064
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 .include <bsd.port.options.mk>
