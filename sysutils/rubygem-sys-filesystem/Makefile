@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	sys-filesystem
-PORTVERSION=	0.3.4
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	A Ruby interface for getting filesystem information
+
+RUN_DEPENDS=	rubygem-ffi>=1.0.0:${PORTSDIR}/devel/rubygem-ffi
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
