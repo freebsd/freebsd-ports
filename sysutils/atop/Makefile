@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	atop
-PORTVERSION=	1.26.b7
+PORTVERSION=	1.26.b8
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=atop-freebsd
 DISTNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
 
@@ -29,6 +29,12 @@ PLIST_SUB+=	LOGDIR="${LOGDIR}"
 SUB_FILES=	pkg-message
 SUB_LIST=	LOGDIR="${LOGDIR}"
 
+PORTDOCS=	AUTHOR \
+		ChangeLog \
+		ChangeLog.FreeBSD \
+		README \
+		README.FreeBSD
+
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/atop ${PREFIX}/bin
 		@${LN} -sf ${PREFIX}/bin/atop ${PREFIX}/bin/atopsar
@@ -39,9 +45,9 @@ do-install:
 		@${MKDIR} ${LOGDIR}
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
-		${INSTALL_MAN} ${WRKSRC}/AUTHOR ${WRKSRC}/ChangeLog \
-		${WRKSRC}/ChangeLog.FreeBSD ${WRKSRC}/README.FreeBSD \
-		${WRKSRC}/README ${DOCSDIR}
+.for i in ${PORTDOCS}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 		@${CAT} ${PKGMESSAGE}
 
