@@ -1413,6 +1413,7 @@ caps-plugins                    ports/audio/caps-plugins
 cardpics                        ports/games/cardpics
 caribbeanstud                   ports/games/CaribbeanStud
 cartotheque                     ports/deskutils/cartotheque
+carve                           ports/math/carve
 cas                             ports/www/cas
 cascade                         ports/cad/cascade
 cassandra                       ports/databases/cassandra
@@ -6537,6 +6538,7 @@ ja-ruby-usersguide              ports/japanese/ruby-usersguide
 ja-rubygem-jpmobile             ports/japanese/rubygem-jpmobile
 ja-rubygem-jpmobile-ipaddresses  ports/japanese/rubygem-jpmobile-ipaddresses
 ja-rubygem-jpmobile-terminfo    ports/japanese/rubygem-jpmobile-terminfo
+ja-rubygem-myrurema             ports/japanese/rubygem-myrurema
 ja-ryaku-fpw                    ports/japanese/ryaku-fpw
 ja-scim-anthy                   ports/japanese/scim-anthy
 ja-scim-canna                   ports/japanese/scim-canna
@@ -23715,6 +23717,7 @@ relay-ctrl                      ports/mail/relay-ctrl
 relayd                          ports/net/relayd
 relaydb                         ports/mail/relaydb
 relpath                         ports/sysutils/relpath
+remake                          ports/devel/remake
 remarp                          ports/net-mgmt/remarp
 remember.el                     ports/deskutils/remember.el
 remind                          ports/deskutils/remind
@@ -24776,6 +24779,7 @@ samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
 samba-pdbsql                    ports/net/samba-pdbsql
 samba-smbclient                 ports/net/samba-smbclient
+samba-virusfilter               ports/security/samba-virusfilter
 samba34                         ports/net/samba34
 samba35                         ports/net/samba35
 samba36                         ports/net/samba36
