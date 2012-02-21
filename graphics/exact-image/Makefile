@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	exact-image
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast image processing library
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	swig>=1.3.32:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	agg.2:${PORTSDIR}/graphics/agg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -44,22 +46,24 @@ PLIST_FILES=	${BINS:S|^|bin/|} \
 		%%SITE_PERL%%/ExactImage.pm \
 		%%PYTHON_SITELIBDIR%%/ExactImage.py \
 		%%PYTHON_SITELIBDIR%%/_ExactImage.so
-LICENSE=	GPLv2
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/agg-2.4/
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|;s|/usr/local|${LOCALBASE}|;\
+		s|libungif|giflib|; s|LIBUNGIF|GIFLIB|; \
 		/parse_options/d;s| cc | ${CC} |;s| c++ | ${CXX} |;\
 		s|python -V|${PYTHON_CMD} -V|;\
 		/PYTHONINCS/s|=.*$$|=-I${PYTHON_INCLUDEDIR}|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^Q =/d;s|$$[(]COMPILE.cc[)]|${CXX} $${CPPFLAGS} -c|;\
 		s|$$[(]CXX[)]|${CXX}|;s|$$[(]COMPILE.c[)]|${CC} $${CPPFLAGS} -c|'\
-			${WRKSRC}/build/bottom.make
+		${WRKSRC}/build/bottom.make
 	@${REINPLACE_CMD} -e '/^CFLAGS =/d;/^CXXFLAGS =/d;/march=/d;\
 		/mtune=/d;/call cc-option/d;' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-lungif|-lgif|; s|LIBUNGIF|GIFLIB|' \
+		${WRKSRC}/codecs/Makefile
 	@${REINPLACE_CMD} -e '/CFLAGS=/s|".*"|"${CFLAGS} -I${LOCALBASE}/include"|;\
 		/LIBS=/s|".*"|"-L${LOCALBASE}/lib -lX11"|' ${WRKSRC}/config/pkgcheck-x11.c
 	@${REINPLACE_CMD} -e 's|$$prg|$$prg ${CPPFLAGS} -I${LOCALBASE}/include|;\
