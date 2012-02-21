@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://supermmx.org/resources/linux/mac/ CENKES
 DISTNAME=	${PORTNAME}-3.99-u4-b5
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Monkey's Audio lossless codec
 
 USE_AUTOTOOLS=	libtool
@@ -27,6 +27,8 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/nRetVal = 0/s|int|intptr_t|' \
+		${WRKSRC}/src/MACLib/APEDecompress.cpp
 
 post-install:
 	cd ${WRKSRC}/src/MACLib && ${INSTALL_DATA} BitArray.h \
