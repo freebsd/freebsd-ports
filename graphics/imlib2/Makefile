@@ -7,6 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -80,13 +81,8 @@ PLIST_SUB+=	TIFF="@comment "
 .endif
 
 .if !defined(WITHOUT_GIF)
-. if exists(${LOCALBASE}/lib/libgif.so)
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 PLIST_SUB+=	GIF=""
-. else
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
-PLIST_SUB+=	GIF=""
-. endif
 .else
 CONFIGURE_ARGS+=	--without-gif
 PLIST_SUB+=	GIF="@comment "
