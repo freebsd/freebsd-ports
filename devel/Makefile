@@ -3700,6 +3700,7 @@
     SUBDIR += rubygem-mkrf
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
+    SUBDIR += rubygem-mongo
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-mutter
