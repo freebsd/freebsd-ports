@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Sub-Uplevel
-PORTVERSION=	0.2200
+PORTVERSION=	0.2400
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sub::Uplevel - apparently run a function in a higher stack frame
