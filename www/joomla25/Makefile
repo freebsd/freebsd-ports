@@ -5,16 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	1.7.5
+PORTVERSION=	2.5.1
 CATEGORIES=	www
-MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/2/0/72049/
+MASTER_SITES=	http://downloads.joomlacode.org/frsrelease/7/2/0/72038/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A dynamic web content management system (CMS)
 
+CONFLICTS=	joomla-1.*.*
+LATEST_LINK=	joomla25
+
 NO_BUILD=	yes
-FETCH_ARGS=	-apR
 USE_ZIP=	yes
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre xml zlib session gd pdf json mbstring \
