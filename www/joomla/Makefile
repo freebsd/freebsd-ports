@@ -13,6 +13,8 @@ DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A dynamic web content management system (CMS)
 
+CONFLICTS=	joomla-2.*.*
+
 NO_BUILD=	yes
 FETCH_ARGS=	-apR
 USE_ZIP=	yes
