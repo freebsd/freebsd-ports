@@ -1,7 +1,7 @@
---- src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c.orig	2010-12-01 18:09:43.000000000 +0100
-+++ src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c	2011-06-27 16:13:16.000000000 +0200
-@@ -163,17 +163,26 @@
-     /* Will panic if no rendezvouing cpus, so check up front. */
+--- src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c.orig	2011-05-16 12:33:52.000000000 -0400
++++ src/VBox/Runtime/r0drv/freebsd/mp-r0drv-freebsd.c	2011-06-24 13:57:31.000000000 -0400
+@@ -163,17 +163,26 @@ RTDECL(int) RTMpOnOthers(PFNRTMPWORKER p
+     /* Will panic if no rendezvousing cpus, so check up front. */
      if (RTMpGetOnlineCount() > 1)
      {
 -#if  __FreeBSD_version >= 700000
@@ -30,7 +30,7 @@
          smp_rendezvous_cpus(Mask, NULL, rtmpOnOthersFreeBSDWrapper, smp_no_rendevous_barrier, &Args);
  #else
          smp_rendezvous(NULL, rtmpOnOthersFreeBSDWrapper, NULL, &Args);
-@@ -203,8 +212,10 @@
+@@ -203,8 +212,10 @@ static void rtmpOnSpecificFreeBSDWrapper
  
  RTDECL(int) RTMpOnSpecific(RTCPUID idCpu, PFNRTMPWORKER pfnWorker, void *pvUser1, void *pvUser2)
  {
@@ -43,7 +43,7 @@
  #endif
      RTMPARGS    Args;
  
-@@ -218,7 +229,11 @@
+@@ -218,7 +229,11 @@ RTDECL(int) RTMpOnSpecific(RTCPUID idCpu
      Args.idCpu = idCpu;
      Args.cHits = 0;
  #if __FreeBSD_version >= 700000
@@ -55,7 +55,7 @@
      smp_rendezvous_cpus(Mask, NULL, rtmpOnSpecificFreeBSDWrapper, smp_no_rendevous_barrier, &Args);
  #else
      smp_rendezvous(NULL, rtmpOnSpecificFreeBSDWrapper, NULL, &Args);
-@@ -242,13 +257,21 @@
+@@ -242,13 +257,21 @@ static void rtmpFreeBSDPokeCallback(void
  
  RTDECL(int) RTMpPokeCpu(RTCPUID idCpu)
  {
@@ -65,7 +65,7 @@
      cpumask_t   Mask;
 +#endif
  
-     /* Will panic if no rendezvouing cpus, so make sure the cpu is online. */
+     /* Will panic if no rendezvousing cpus, so make sure the cpu is online. */
      if (!RTMpIsCpuOnline(idCpu))
          return VERR_CPU_NOT_FOUND;
  

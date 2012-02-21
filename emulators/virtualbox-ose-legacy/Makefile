@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.12
-PORTREVISION=	4
+DISTVERSION=	4.0.16
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://disasterarea.chruetertee.ch/ \
 		http://dlc.sun.com/virtualbox/${VBOX_GUEST_VER}/:guestadditions
 PKGNAMESUFFIX=	-legacy
-DISTFILES=	VirtualBox-${DISTVERSION}-OSE${EXTRACT_SUFX} ${GADISTFILES}
-EXTRACT_ONLY=	VirtualBox-${DISTVERSION}-OSE${EXTRACT_SUFX}
+DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
+EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
 
 #for discussion please use emulation@FreeBSD.org
 MAINTAINER=	vbox@FreeBSD.org
@@ -35,6 +34,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 ONLY_FOR_ARCHS=	i386 amd64
+USE_CDRTOOLS=	yes
 USE_GNOME=	libidl
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -48,6 +48,7 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]*
+CONFLICTS_BUILD=	kBuild-devel-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
 VBOXUSER?=	vboxusers
@@ -185,7 +186,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if !exists(/usr/lib32)
+.if !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
 	@${ECHO} 'Do: cd /usr/src; make build32 install32; /etc/rc.d/ldconfig restart'
 	@${FALSE}
@@ -210,6 +211,9 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 .if defined(WITH_VNC)
 	@${ECHO} 'VBOX_WITH_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${OSVERSION} < 800069
+	@${ECHO} 'VBOX_WITH_USB=' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if defined(WITH_WEBSERVICE)
 	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
@@ -241,7 +245,7 @@ do-install:
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/include && ${COPYTREE_SHARE} "*" ${PREFIX}/include/virtualbox)
 
 	${MKDIR} ${PREFIX}/lib/virtualbox
-	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components" ${PREFIX}/lib/virtualbox)
+	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin && ${COPYTREE_SHARE} "*.so *.gc *.r0 *.fd components VBoxExtPackHelperApp" ${PREFIX}/lib/virtualbox)
 
 .if !defined(WITHOUT_NLS)
 	${MKDIR} ${DATADIR}/nls
@@ -258,7 +262,7 @@ do-install:
 	${CHMOD} 4511 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
-.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD
+.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp 
 	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
@@ -283,7 +287,7 @@ do-install:
 	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
 
 post-install:
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
+.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp ${VBOX_FRONTENDS}
 	${CHOWN} root:${VBOXGROUP} ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
@@ -300,3 +304,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
+

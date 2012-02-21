@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.12
-PORTREVISION=	3
+DISTVERSION=	4.0.16
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://disasterarea.chruetertee.ch/
 PKGNAMESUFFIX=	-kmod-legacy
-DISTNAME=	VirtualBox-${DISTVERSION}-OSE
+DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox kernel module for FreeBSD
@@ -38,9 +37,11 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
+CONFLICTS_BUILD=	kBuild-devel-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-[3,4]* virtualbox-ose-kmod-devel-[3,4]*
 
-OPTIONS=	DEBUG "Build with debugging symbols" off
+OPTIONS=	DEBUG "Build with debugging symbols" off \
+		VIMAGE "VIMAGE virtual networking support" off
 
 .include <bsd.port.options.mk>
 
@@ -72,11 +73,18 @@ IGNORE=		requires kernel sources
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800500 && defined(WITH_VIMAGE)
+IGNORE=		newer kernel is required to build with VIMAGE
+.endif
+
 post-patch:
 	@${ECHO} 'VBOX_WITH_VBOXDRV = 1' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_NETFLT = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_NETADP = 1' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_ADDITIONS =' >> ${WRKSRC}/LocalConfig.kmk
+.if defined(WITH_VIMAGE)
+	@${ECHO} 'VBOX_WITH_NETFLT_VIMAGE = 1' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk \
 		${WRKSRC}/configure

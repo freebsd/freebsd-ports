@@ -1,5 +1,5 @@
---- src/VBox/Main/freebsd/HostHardwareFreeBSD.cpp.cpp.orig	2011-05-16 12:33:46.000000000 -0400
-+++ src/VBox/Main/freebsd/HostHardwareFreeBSD.cpp	2011-06-24 16:03:37.000000000 -0400
+--- src/VBox/Main/src-server/freebsd/HostHardwareFreeBSD.cpp.orig	2011-05-16 12:33:46.000000000 -0400
++++ src/VBox/Main/src-server/freebsd/HostHardwareFreeBSD.cpp	2011-06-24 16:03:37.000000000 -0400
 @@ -35,6 +35,7 @@
  #include <iprt/string.h>
  
