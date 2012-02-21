@@ -154,6 +154,7 @@ MASTER_SITE_DEBIAN+=	\
 MASTER_SITE_DEBIAN_NON_US+=	\
 	ftp://ftp.au.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.bg.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.br.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.cl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.cz.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.de.debian.org/debian-non-US/%SUBDIR%/ \
@@ -178,7 +179,10 @@ MASTER_SITE_DEBIAN_NON_US+=	\
 	ftp://ftp.sk.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.uk.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.wa.au.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp2.de.debian.org/debian-non-US/%SUBDIR%/
+	ftp://ftp2.de.debian.org/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.snt.utwente.nl/pub/linux/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.df.lth.se/pub/debian-non-US/%SUBDIR%/ \
+	ftp://ftp.acc.umu.se/debian-non-US/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN_POOL)
