@@ -15,7 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A subclass to emulate boundless DEC VT102 terminal
 
-RUN_DEPENDS=	${SITE_PERL}/Term/VT102.pm:${PORTSDIR}/devel/p5-Term-VT102
+BUILD_DEPENDS=	p5-Term-VT102>=0:${PORTSDIR}/devel/p5-Term-VT102
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
 
