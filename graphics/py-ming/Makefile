@@ -19,16 +19,12 @@ INSTALL_WRKSRC=	${WRKSRC}/py_ext
 PATCH_WRKSRC=	${WRKSRC}/py_ext
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
 MASTERDIR=	${.CURDIR}/../../graphics/ming
 SLAVEPORT=	py
 PYDISTUTILS_PKGNAME=	mingc
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py
-	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/src
 
 .include "${MASTERDIR}/Makefile"
