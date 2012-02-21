@@ -25,8 +25,17 @@ bin/kDepPre
 bin/kObjCache
 bin/kmk_ash
 %%DATADIR%%/footer.kmk
+%%DATADIR%%/footer-inherit-uses-tools.kmk
+%%DATADIR%%/footer-misc.kmk
+%%DATADIR%%/footer-pass1.kmk
+%%DATADIR%%/footer-pass2-compiling-targets.kmk
+%%DATADIR%%/footer-pass2-fetches.kmk
+%%DATADIR%%/footer-pass2-installs.kmk
+%%DATADIR%%/footer-pass2-patches.kmk
+%%DATADIR%%/footer-passes.kmk
 %%DATADIR%%/header.kmk
 %%DATADIR%%/msgstyles/brief.kmk
+%%DATADIR%%/msgstyles/brief2.kmk
 %%DATADIR%%/rules.kmk
 %%DATADIR%%/sdks/DXSDK.kmk
 %%DATADIR%%/sdks/DXSDKAMD64.kmk
@@ -92,6 +101,9 @@ bin/kmk_ash
 %%DATADIR%%/tools/VCC80.kmk
 %%DATADIR%%/tools/VCC80AMD64.kmk
 %%DATADIR%%/tools/VCC80X86.kmk
+%%DATADIR%%/tools/VCC100.kmk
+%%DATADIR%%/tools/VCC100AMD64.kmk
+%%DATADIR%%/tools/VCC100X86.kmk
 %%DATADIR%%/tools/WATCOMC11C-16.kmk
 %%DATADIR%%/tools/WATCOMC11C-WL.kmk
 %%DATADIR%%/tools/WATCOMC11C.kmk

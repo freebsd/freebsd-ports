@@ -6,21 +6,26 @@
 #
 
 PORTNAME=	kBuild
-DISTVERSION=	${KBUILD_VERSION}-p2
-PORTREVISION=	1
+DISTVERSION=	${KBUILD_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
+MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/ \
+		http://home.bluelife.at/ports/distfiles/
+PKGNAMESUFFIX=  -devel
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+
 USE_AUTOTOOLS=	automake autoconf
 USE_GMAKE=	yes
 
+CONFLICTS_INSTALL=	kBuild-[0-9]*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-KBUILD_VERSION=	0.1.5
+KBUILD_VERSION=	0.1.9998
 KBUILD_ARCH=	${MACHINE_ARCH:S/i386/x86/}
 KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTOMAKE=${AUTOMAKE} \
@@ -36,6 +41,7 @@ PORTDOCS=	QuickReference-kmk.html \
 
 post-patch:
 	${REINPLACE_CMD} -e '11269d;11274d' ${WRKSRC}/src/sed/configure
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Config.kmk
 
 # Override autotools
 run-autotools:
@@ -49,14 +55,14 @@ do-build:
 
 do-install:
 .for bin in ${KBUILD_BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/bin/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/bin/${bin} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
+	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
