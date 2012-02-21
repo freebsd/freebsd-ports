@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.0.14
+DISTVERSION=	4.1.8
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -19,7 +19,7 @@ COMMENT=	VirtualBox additions for FreeBSD guests
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
-		kmk:${PORTSDIR}/devel/kBuild
+		kmk:${PORTSDIR}/devel/kBuild-devel
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -38,11 +38,11 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
+CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
 		X11 "Build with X11 support" on \
-		HAL "Install HAL policy file for additions" on \
 		OPENGL "Build with OpenGL support" off
 
 .include <bsd.port.options.mk>
@@ -70,18 +70,8 @@ VBOX_WITH_X11=	1
 USE_XORG=	xcursor xmu inputproto xrandr
 PLIST_SUB+=	X11=""
 .else
-.if !defined(WITHOUT_HAL)
-BROKEN=		HAL requires X11 support. Run 'make config' again!
-.endif
 VBOX_WITH_X11=
 PLIST_SUB+=	X11="@comment "
-.endif
-
-.if !defined(WITHOUT_HAL)
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-PLIST_SUB+=	HAL=""
-.else
-PLIST_SUB+=	HAL="@comment "
 .endif
 
 .if defined(WITHOUT_OPENGL)
@@ -108,7 +98,7 @@ EXTRA_PATCHES=	${FILESDIR}/extrapatch-include-iprt-string.h
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if !exists(/usr/lib32)
+.if !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
 	@${ECHO} 'Do: cd /usr/src; make build32 install32; ldconfig -v -m -R /usr/lib32'
 	@${FALSE}
@@ -169,11 +159,6 @@ do-install:
 
 	${MKDIR} ${INPUTDIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_17.so ${INPUTDIR}/vboxmouse_drv.so
-.endif
-
-.if !defined(WITHOUT_HAL)
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/linux/installer/90-vboxguest.fdi \
-		${PREFIX}/share/hal/fdi/policy/10osvendor/
 .endif
 
 post-install:

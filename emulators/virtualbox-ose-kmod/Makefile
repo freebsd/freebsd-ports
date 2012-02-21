@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.0.14
+DISTVERSION=	4.1.8
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
-		kmk:${PORTSDIR}/devel/kBuild
+		kmk:${PORTSDIR}/devel/kBuild-devel
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
+CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-[3,4]* virtualbox-ose-kmod-legacy-[3,4]*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
@@ -71,6 +72,10 @@ IGNORE=		requires kernel sources
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		Does not compile on FreeBSD 7.x
+.endif
 
 .if ${OSVERSION} < 800500 && defined(WITH_VIMAGE)
 IGNORE=		newer kernel is required to build with VIMAGE

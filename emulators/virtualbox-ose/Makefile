@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.0.14
-PORTREVISION=	1
+DISTVERSION=	4.1.8
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -23,7 +22,8 @@ COMMENT=	A general-purpose full virtualizer for x86 hardware
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		kmk:${PORTSDIR}/devel/kBuild
+		kmk:${PORTSDIR}/devel/kBuild-devel \
+		gtar:${PORTSDIR}/archivers/gtar
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.6:${PORTSDIR}/ftp/curl
@@ -48,6 +48,7 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]*
+CONFLICTS_BUILD=	kBuild-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
 VBOXUSER?=	vboxusers
@@ -64,6 +65,7 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 		DBUS "Build with D-Bus and HAL support" on \
 		PULSEAUDIO "Build with PulseAudio" off \
 		X11 "Build with X11 support" on \
+		UDPTUNNEL "Build with UDP tunnel support" on \
 		VDE "Build with VDE support" off \
 		VNC "Build with VNC support" off \
 		WEBSERVICE "Build Webservice" off \
@@ -175,17 +177,21 @@ PLIST_SUB+=	I386="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		Does not compile on FreeBSD 7.x
+.endif
+
 .if ${OSVERSION} > 900012
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
 .endif
 
-.if ${OSVERSION} > 900020 || ${OSVERSION} < 900000 && ${OSVERSION} > 801500
+.if ${OSVERSION} < 900000 && ${OSVERSION} > 801500
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 .endif
 
 pre-everything::
 .if ${ARCH} == "amd64"
-.if !exists(/usr/lib32)
+.if !exists(/usr/lib32/libc.so)
 	@${ECHO} 'Requires 32-bit libraries installed under /usr/lib32.'
 	@${ECHO} 'Do: cd /usr/src; make build32 install32; /etc/rc.d/ldconfig restart'
 	@${FALSE}
@@ -213,6 +219,9 @@ post-patch:
 .endif
 .if ${OSVERSION} < 800069
 	@${ECHO} 'VBOX_WITH_USB=' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if defined(WITH_UDPTUNNEL)
+	@${ECHO} 'VBOX_WITH_UDPTUNNEL = 1' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 .if defined(WITH_WEBSERVICE)
 	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
@@ -252,7 +261,7 @@ do-install:
 .endif
 
 	${MKDIR} ${PREFIX}/bin
-.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS} ${VBOX_WEB}
+.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxBalloonCtrl ${VBOX_FRONTENDS} ${VBOX_WEB}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
 .endfor
@@ -261,7 +270,7 @@ do-install:
 	${CHMOD} 4511 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
-.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp 
+.for f in VBoxManage VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl
 	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
@@ -286,7 +295,7 @@ do-install:
 	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
 
 post-install:
-.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp ${VBOX_FRONTENDS}
+.for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl ${VBOX_FRONTENDS}
 	${CHOWN} root:${VBOXGROUP} ${PREFIX}/lib/virtualbox/${f}
 .endfor
 
