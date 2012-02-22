@@ -3,18 +3,9 @@
 #
 # $FreeBSD$
 #
-PKGNG_MAINTAINER=	portmgr@FreeBSD.org
 
-PKG_BIN?=		${LOCALBASE}/sbin/pkg
-PKG_CMD=		${PKG_BIN} register
-PKG_DELETE=		${PKG_BIN} delete -y
-PKG_INFO=		${PKG_BIN} info -g
-PKG_VERSION=		${PKG_BIN} version
-PKG_CREATE=		${PKG_BIN} create
-PKG_ADD=		${PKG_BIN} add
-PKG_QUERY=		${PKG_BIN} query
-
-PKG_SUFX=		.txz
+.if defined(_POSTMKINCLUDED)
+PKGNG_Include_MAINTAINER=	portmgr@FreeBSD.org
 
 METADIR=		${WRKDIR}/.metadir
 MANIFESTF=		${METADIR}/+MANIFEST
@@ -276,3 +267,4 @@ deinstall:
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
 
+.endif # defined(_POSTMKINCLUDED)
