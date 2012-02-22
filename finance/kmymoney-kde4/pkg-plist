@@ -415,8 +415,12 @@ share/apps/kmymoney/kmymoneyui.rc
 share/apps/kmymoney/misc/financequote.pl
 share/apps/kmymoney/pics/l10n/de/startlogo.png
 share/apps/kmymoney/pics/l10n/es/startlogo.png
+share/apps/kmymoney/pics/l10n/hu/startlogo.png
+share/apps/kmymoney/pics/l10n/it/startlogo.png
+share/apps/kmymoney/pics/l10n/pt_BR/startlogo.png
 share/apps/kmymoney/pics/l10n/ro/startlogo.png
 share/apps/kmymoney/pics/l10n/ru/startlogo.png
+share/apps/kmymoney/pics/l10n/sv/startlogo.png
 share/apps/kmymoney/pics/l10n/uk/startlogo.png
 share/apps/kmymoney/pics/startlogo.png
 share/apps/kmymoney/pics/titlelabel_background.png
@@ -811,11 +815,11 @@ share/doc/HTML/en/kmymoney/accwiz10.png
 share/doc/HTML/en/kmymoney/accwiz2.png
 share/doc/HTML/en/kmymoney/accwiz6.png
 share/doc/HTML/en/kmymoney/accwiz7.png
-share/doc/HTML/en/kmymoney/accwiz8.1.png
-share/doc/HTML/en/kmymoney/accwiz8.2.png
-share/doc/HTML/en/kmymoney/accwiz8.3.png
-share/doc/HTML/en/kmymoney/accwiz8.4.png
-share/doc/HTML/en/kmymoney/accwiz8.5.png
+share/doc/HTML/en/kmymoney/accwiz8_1.png
+share/doc/HTML/en/kmymoney/accwiz8_2.png
+share/doc/HTML/en/kmymoney/accwiz8_3.png
+share/doc/HTML/en/kmymoney/accwiz8_4.png
+share/doc/HTML/en/kmymoney/accwiz8_5.png
 share/doc/HTML/en/kmymoney/accwiz9.png
 share/doc/HTML/en/kmymoney/budgets_view.png
 share/doc/HTML/en/kmymoney/calendarview.png
@@ -1341,8 +1345,12 @@ share/mime/packages/x-kmymoney.xml
 @dirrm share/apps/kmymoney/templates/C
 @dirrm share/apps/kmymoney/templates
 @dirrm share/apps/kmymoney/pics/l10n/uk
+@dirrm share/apps/kmymoney/pics/l10n/sv
 @dirrm share/apps/kmymoney/pics/l10n/ru
 @dirrm share/apps/kmymoney/pics/l10n/ro
+@dirrm share/apps/kmymoney/pics/l10n/pt_BR
+@dirrm share/apps/kmymoney/pics/l10n/it
+@dirrm share/apps/kmymoney/pics/l10n/hu
 @dirrm share/apps/kmymoney/pics/l10n/es
 @dirrm share/apps/kmymoney/pics/l10n/de
 @dirrm share/apps/kmymoney/pics/l10n
