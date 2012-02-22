@@ -352,6 +352,7 @@ share/locale/zh_TW/LC_MESSAGES/WindowMaker.mo
 @dirrm include/WINGs
 @dirrm man/sk/man1
 @dirrm man/sk
+@dirrmtry share/locale/hy/LC_MESSAGES
 @dirrm share/WINGs
 @dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker/IconSets
