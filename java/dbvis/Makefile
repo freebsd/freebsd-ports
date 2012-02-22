@@ -34,6 +34,6 @@ post-install:
 	${FIND} ${DATADIR} -not -type d \
 	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
 	${FIND} -d ${DATADIR} -type d \
-	  | ${SED} -ne 's,^${PREFIX},@dirrm ,p' >> ${TMPPLIST}
+	  | ${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
