@@ -131,10 +131,8 @@ lib/calibre/calibre/ebooks/BeautifulSoup.py
 lib/calibre/calibre/ebooks/__init__.py
 lib/calibre/calibre/ebooks/azw4/__init__.py
 lib/calibre/calibre/ebooks/azw4/reader.py
-lib/calibre/calibre/ebooks/azw4/input.py
 lib/calibre/calibre/ebooks/chardet.py
 lib/calibre/calibre/ebooks/chm/__init__.py
-lib/calibre/calibre/ebooks/chm/input.py
 lib/calibre/calibre/ebooks/chm/metadata.py
 lib/calibre/calibre/ebooks/chm/reader.py
 lib/calibre/calibre/ebooks/comic/__init__.py
@@ -148,45 +146,73 @@ lib/calibre/calibre/ebooks/conversion/config.py
 lib/calibre/calibre/ebooks/conversion/plumber.py
 lib/calibre/calibre/ebooks/conversion/preprocess.py
 lib/calibre/calibre/ebooks/conversion/utils.py
+lib/calibre/calibre/ebooks/conversion/plugins/pml_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/htmlz_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/tcr_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/chm_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/odt_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/mobi_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/lrf_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdb_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/epub_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdf_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/lit_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/djvu_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/snb_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/tcr_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/rtf_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/fb2_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/__init__.py
+lib/calibre/calibre/ebooks/conversion/plugins/snb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/azw4_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/pdf_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/mobi_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/fb2_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/rb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/htmlz_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/txt_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/html_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/comic_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/rtf_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/lit_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/pml_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/html_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/lrf_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/oeb_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/recipe_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/txt_output.py
+lib/calibre/calibre/ebooks/conversion/plugins/epub_input.py
+lib/calibre/calibre/ebooks/conversion/plugins/rb_input.py
 lib/calibre/calibre/ebooks/cssselect.py
 lib/calibre/calibre/ebooks/djvu/__init__.py
 lib/calibre/calibre/ebooks/djvu/djvubzzdec.py
 lib/calibre/calibre/ebooks/djvu/djvu.py
-lib/calibre/calibre/ebooks/djvu/input.py
 lib/calibre/calibre/ebooks/epub/__init__.py
 lib/calibre/calibre/ebooks/epub/fix/__init__.py
 lib/calibre/calibre/ebooks/epub/fix/container.py
 lib/calibre/calibre/ebooks/epub/fix/epubcheck.py
 lib/calibre/calibre/ebooks/epub/fix/main.py
 lib/calibre/calibre/ebooks/epub/fix/unmanifested.py
-lib/calibre/calibre/ebooks/epub/input.py
-lib/calibre/calibre/ebooks/epub/output.py
 lib/calibre/calibre/ebooks/epub/pages.py
 lib/calibre/calibre/ebooks/epub/periodical.py
 lib/calibre/calibre/ebooks/fb2/__init__.py
 lib/calibre/calibre/ebooks/fb2/fb2ml.py
-lib/calibre/calibre/ebooks/fb2/input.py
-lib/calibre/calibre/ebooks/fb2/output.py
 lib/calibre/calibre/ebooks/html/__init__.py
 lib/calibre/calibre/ebooks/html/input.py
 lib/calibre/calibre/ebooks/html/meta.py
-lib/calibre/calibre/ebooks/html/output.py
 lib/calibre/calibre/ebooks/html/to_zip.py
 lib/calibre/calibre/ebooks/htmlz/__init__.py
 lib/calibre/calibre/ebooks/htmlz/oeb2html.py
-lib/calibre/calibre/ebooks/htmlz/output.py
-lib/calibre/calibre/ebooks/htmlz/input.py
 lib/calibre/calibre/ebooks/hyphenate.py
 lib/calibre/calibre/ebooks/iterator/__init__.py
 lib/calibre/calibre/ebooks/lit/__init__.py
 lib/calibre/calibre/ebooks/lit/from_any.py
-lib/calibre/calibre/ebooks/lit/input.py
 lib/calibre/calibre/ebooks/lit/lzx.py
 lib/calibre/calibre/ebooks/lit/maps/__init__.py
 lib/calibre/calibre/ebooks/lit/maps/html.py
 lib/calibre/calibre/ebooks/lit/maps/opf.py
 lib/calibre/calibre/ebooks/lit/mssha1.py
-lib/calibre/calibre/ebooks/lit/output.py
 lib/calibre/calibre/ebooks/lit/reader.py
 lib/calibre/calibre/ebooks/lit/writer.py
 lib/calibre/calibre/ebooks/lrf/__init__.py
@@ -203,7 +229,6 @@ lib/calibre/calibre/ebooks/lrf/lrs/__init__.py
 lib/calibre/calibre/ebooks/lrf/lrs/convert_from.py
 lib/calibre/calibre/ebooks/lrf/meta.py
 lib/calibre/calibre/ebooks/lrf/objects.py
-lib/calibre/calibre/ebooks/lrf/output.py
 lib/calibre/calibre/ebooks/lrf/pylrs/__init__.py
 lib/calibre/calibre/ebooks/lrf/pylrs/elements.py
 lib/calibre/calibre/ebooks/lrf/pylrs/pylrf.py
@@ -285,10 +310,8 @@ lib/calibre/calibre/ebooks/metadata/zip.py
 lib/calibre/calibre/ebooks/mobi/__init__.py
 lib/calibre/calibre/ebooks/mobi/debug.py
 lib/calibre/calibre/ebooks/mobi/huffcdic.py
-lib/calibre/calibre/ebooks/mobi/input.py
 lib/calibre/calibre/ebooks/mobi/langcodes.py
 lib/calibre/calibre/ebooks/mobi/mobiml.py
-lib/calibre/calibre/ebooks/mobi/output.py
 lib/calibre/calibre/ebooks/mobi/reader.py
 lib/calibre/calibre/ebooks/mobi/utils.py
 lib/calibre/calibre/ebooks/mobi/writer.py
@@ -301,7 +324,6 @@ lib/calibre/calibre/ebooks/odt/input.py
 lib/calibre/calibre/ebooks/oeb/__init__.py
 lib/calibre/calibre/ebooks/oeb/base.py
 lib/calibre/calibre/ebooks/oeb/iterator.py
-lib/calibre/calibre/ebooks/oeb/output.py
 lib/calibre/calibre/ebooks/oeb/parse_utils.py
 lib/calibre/calibre/ebooks/oeb/reader.py
 lib/calibre/calibre/ebooks/oeb/stylizer.py
@@ -334,8 +356,6 @@ lib/calibre/calibre/ebooks/pdb/ereader/writer.py
 lib/calibre/calibre/ebooks/pdb/formatreader.py
 lib/calibre/calibre/ebooks/pdb/formatwriter.py
 lib/calibre/calibre/ebooks/pdb/header.py
-lib/calibre/calibre/ebooks/pdb/input.py
-lib/calibre/calibre/ebooks/pdb/output.py
 lib/calibre/calibre/ebooks/pdb/palmdoc/__init__.py
 lib/calibre/calibre/ebooks/pdb/palmdoc/reader.py
 lib/calibre/calibre/ebooks/pdb/palmdoc/writer.py
@@ -348,7 +368,6 @@ lib/calibre/calibre/ebooks/pdb/ztxt/reader.py
 lib/calibre/calibre/ebooks/pdb/ztxt/writer.py
 lib/calibre/calibre/ebooks/pdf/__init__.py
 lib/calibre/calibre/ebooks/pdf/from_comic.py
-lib/calibre/calibre/ebooks/pdf/input.py
 lib/calibre/calibre/ebooks/pdf/manipulate/__init__.py
 lib/calibre/calibre/ebooks/pdf/manipulate/cli.py
 lib/calibre/calibre/ebooks/pdf/manipulate/crop.py
@@ -359,20 +378,15 @@ lib/calibre/calibre/ebooks/pdf/manipulate/merge.py
 lib/calibre/calibre/ebooks/pdf/manipulate/reverse.py
 lib/calibre/calibre/ebooks/pdf/manipulate/rotate.py
 lib/calibre/calibre/ebooks/pdf/manipulate/split.py
-lib/calibre/calibre/ebooks/pdf/output.py
 lib/calibre/calibre/ebooks/pdf/pageoptions.py
 lib/calibre/calibre/ebooks/pdf/pdftohtml.py
 lib/calibre/calibre/ebooks/pdf/reflow.py
 lib/calibre/calibre/ebooks/pdf/verify.py
 lib/calibre/calibre/ebooks/pdf/writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
-lib/calibre/calibre/ebooks/pml/input.py
-lib/calibre/calibre/ebooks/pml/output.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
 lib/calibre/calibre/ebooks/pml/pmlml.py
 lib/calibre/calibre/ebooks/rb/__init__.py
-lib/calibre/calibre/ebooks/rb/input.py
-lib/calibre/calibre/ebooks/rb/output.py
 lib/calibre/calibre/ebooks/rb/rbml.py
 lib/calibre/calibre/ebooks/rb/reader.py
 lib/calibre/calibre/ebooks/rb/writer.py
@@ -383,7 +397,6 @@ lib/calibre/calibre/ebooks/readability/htmls.py
 lib/calibre/calibre/ebooks/readability/readability.py
 lib/calibre/calibre/ebooks/rtf/__init__.py
 lib/calibre/calibre/ebooks/rtf/input.py
-lib/calibre/calibre/ebooks/rtf/output.py
 lib/calibre/calibre/ebooks/rtf/preprocess.py
 lib/calibre/calibre/ebooks/rtf/rtfml.py
 lib/calibre/calibre/ebooks/rtf2xml/ParseRtf.py
@@ -437,21 +450,15 @@ lib/calibre/calibre/ebooks/rtf2xml/table_info.py
 lib/calibre/calibre/ebooks/rtf2xml/tokenize.py
 lib/calibre/calibre/ebooks/sgmllib.py
 lib/calibre/calibre/ebooks/snb/__init__.py
-lib/calibre/calibre/ebooks/snb/input.py
-lib/calibre/calibre/ebooks/snb/output.py
 lib/calibre/calibre/ebooks/snb/snbfile.py
 lib/calibre/calibre/ebooks/snb/snbml.py
 lib/calibre/calibre/ebooks/tcr/__init__.py
-lib/calibre/calibre/ebooks/tcr/input.py
-lib/calibre/calibre/ebooks/tcr/output.py
 lib/calibre/calibre/ebooks/textile/__init__.py
 lib/calibre/calibre/ebooks/textile/functions.py
 lib/calibre/calibre/ebooks/textile/unsmarten.py
 lib/calibre/calibre/ebooks/txt/__init__.py
-lib/calibre/calibre/ebooks/txt/input.py
 lib/calibre/calibre/ebooks/txt/markdownml.py
 lib/calibre/calibre/ebooks/txt/newlines.py
-lib/calibre/calibre/ebooks/txt/output.py
 lib/calibre/calibre/ebooks/txt/processor.py
 lib/calibre/calibre/ebooks/txt/textileml.py
 lib/calibre/calibre/ebooks/txt/txtml.py
@@ -858,7 +865,12 @@ lib/calibre/calibre/gui2/wizard/stanza_ui.py
 lib/calibre/calibre/library/__init__.py
 lib/calibre/calibre/library/add_to_library.py
 lib/calibre/calibre/library/caches.py
-lib/calibre/calibre/library/catalog.py
+lib/calibre/calibre/library/catalogs/bibtex.py
+lib/calibre/calibre/library/catalogs/epub_mobi_builder.py
+lib/calibre/calibre/library/catalogs/epub_mobi.py
+lib/calibre/calibre/library/catalogs/__init__.py
+lib/calibre/calibre/library/catalogs/csv_xml.py
+lib/calibre/calibre/library/catalogs/utils.py
 lib/calibre/calibre/library/check_library.py
 lib/calibre/calibre/library/cli.py
 lib/calibre/calibre/library/coloring.py
@@ -1001,7 +1013,6 @@ lib/calibre/calibre/utils/zipfile.py
 lib/calibre/calibre/web/__init__.py
 lib/calibre/calibre/web/feeds/__init__.py
 lib/calibre/calibre/web/feeds/feedparser.py
-lib/calibre/calibre/web/feeds/input.py
 lib/calibre/calibre/web/feeds/news.py
 lib/calibre/calibre/web/feeds/recipes/__init__.py
 lib/calibre/calibre/web/feeds/recipes/collection.py
@@ -1523,6 +1534,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/manual/plugin_examples
 @dirrm lib/calibre/calibre/manual
 @dirrm lib/calibre/calibre/library/server
+@dirrm lib/calibre/calibre/library/catalogs
 @dirrm lib/calibre/calibre/library
 @dirrm lib/calibre/calibre/gui2/wizard
 @dirrm lib/calibre/calibre/gui2/viewer
@@ -1591,6 +1603,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/ebooks/epub/fix
 @dirrm lib/calibre/calibre/ebooks/epub
 @dirrm lib/calibre/calibre/ebooks/djvu
+@dirrm lib/calibre/calibre/ebooks/conversion/plugins
 @dirrm lib/calibre/calibre/ebooks/conversion
 @dirrm lib/calibre/calibre/ebooks/compression
 @dirrm lib/calibre/calibre/ebooks/comic
