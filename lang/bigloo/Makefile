@@ -7,6 +7,7 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	3.7a.2
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/indes/fp/Bigloo/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}-${PORTVERSION:E}

@@ -7,7 +7,7 @@
 
 PORTNAME=	muse
 PORTVERSION=	3.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		${MASTER_SITE_LOCAL} \
