@@ -7,7 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.8.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION}/source/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -41,7 +41,7 @@ PORTSCOUT=	limitw:1,even
 OPTIONS=	CURL     "Support for cURL"                 off \
 		FREETYPE "Support for FreeType"             on \
 		GDAL     "Support for GDAL"                 off \
-		GIF      "Support for libungif"             on \
+		GIF      "Support for giflib"               on \
 		INVENTOR "Support for SGI OpenInventor"     off \
 		JASPER   "Support for JPEG2000"             off \
 		XINE     "Support for Xine"                 off \
@@ -94,7 +94,7 @@ PLIST_SUB+=	GDAL="@comment "
 
 .if defined(WITH_GIF)
 FORCE_REQUIRE+=	GIFLIB
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 PLIST_SUB+=	GIF=""
 .else
 FORCE_IGNORE+=	GIFLIB
