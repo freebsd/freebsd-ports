@@ -7,7 +7,7 @@
 
 PORTNAME=	pencil
 PORTVERSION=	0.4.4b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
@@ -22,7 +22,6 @@ LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		iconv:${PORTSDIR}/converters/libiconv \
-		ungif:${PORTSDIR}/graphics/libungif \
 		expat:${PORTSDIR}/textproc/expat2 \
 		pcre:${PORTSDIR}/devel/pcre \
 		drm:${PORTSDIR}/graphics/libdrm
