@@ -1,19 +1,19 @@
 bin/instead
 bin/sdl-instead
 share/applications/instead.desktop
-%%DATADIR%%/games/tutorial3/main-it.lua
-%%DATADIR%%/games/tutorial3/ua.png
 %%DATADIR%%/games/tutorial3/es.png
-%%DATADIR%%/games/tutorial3/it.png
 %%DATADIR%%/games/tutorial3/gb.png
-%%DATADIR%%/games/tutorial3/ramparts.mod
-%%DATADIR%%/games/tutorial3/main-ru.lua
-%%DATADIR%%/games/tutorial3/ru.png
-%%DATADIR%%/games/tutorial3/main-en.lua
 %%DATADIR%%/games/tutorial3/instead.png
-%%DATADIR%%/games/tutorial3/main.lua
-%%DATADIR%%/games/tutorial3/main-ua.lua
+%%DATADIR%%/games/tutorial3/it.png
+%%DATADIR%%/games/tutorial3/main-en.lua
 %%DATADIR%%/games/tutorial3/main-es.lua
+%%DATADIR%%/games/tutorial3/main-it.lua
+%%DATADIR%%/games/tutorial3/main-ru.lua
+%%DATADIR%%/games/tutorial3/main-ua.lua
+%%DATADIR%%/games/tutorial3/main.lua
+%%DATADIR%%/games/tutorial3/ru.png
+%%DATADIR%%/games/tutorial3/sv_ttt.xm
+%%DATADIR%%/games/tutorial3/ua.png
 %%DATADIR%%/lang/en.ini
 %%DATADIR%%/lang/es.ini
 %%DATADIR%%/lang/it.ini
@@ -23,7 +23,6 @@ share/applications/instead.desktop
 %%DATADIR%%/stead/dash.lua
 %%DATADIR%%/stead/dbg.lua
 %%DATADIR%%/stead/format.lua
-%%DATADIR%%/stead/goto.lua
 %%DATADIR%%/stead/gui.lua
 %%DATADIR%%/stead/hideinv.lua
 %%DATADIR%%/stead/hotkeys.lua
@@ -40,6 +39,7 @@ share/applications/instead.desktop
 %%DATADIR%%/stead/theme.lua
 %%DATADIR%%/stead/timer.lua
 %%DATADIR%%/stead/vars.lua
+%%DATADIR%%/stead/walk.lua
 %%DATADIR%%/stead/xact.lua
 %%DATADIR%%/themes/arctic/adown.png
 %%DATADIR%%/themes/arctic/aup.png
@@ -72,10 +72,10 @@ share/applications/instead.desktop
 %%DATADIR%%/themes/default/cursor-use.png
 %%DATADIR%%/themes/default/cursor.png
 %%DATADIR%%/themes/default/menu.png
-%%DATADIR%%/themes/default/sans.ttf
-%%DATADIR%%/themes/default/sans-i.ttf
 %%DATADIR%%/themes/default/sans-b.ttf
 %%DATADIR%%/themes/default/sans-bi.ttf
+%%DATADIR%%/themes/default/sans-i.ttf
+%%DATADIR%%/themes/default/sans.ttf
 %%DATADIR%%/themes/default/theme.ini
 %%DATADIR%%/themes/default/use.png
 %%DATADIR%%/themes/fantasy/bg.png
@@ -85,7 +85,9 @@ share/applications/instead.desktop
 %%DATADIR%%/themes/fantasy/up.png
 %%DATADIR%%/themes/original/theme.ini
 %%DATADIR%%/themes/wide/theme.ini
+share/pixmaps/sdl_instead.ico
 share/pixmaps/sdl_instead.png
+share/pixmaps/sdl_instead_1.png
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/themes/wide
 @dirrm %%DATADIR%%/themes/original
