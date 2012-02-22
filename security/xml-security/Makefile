@@ -51,7 +51,7 @@ do-install:
 .if !defined(NOPORTEXAMPLES)
 	@${ECHO} -n ">> Installing examples in ${EXAMPLESDIR}..."
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} javax org ${EXAMPLESDIR})
+	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} "javax org" ${EXAMPLESDIR})
 	@${ECHO} " [ DONE ]"
 .endif
 
