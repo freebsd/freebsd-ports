@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.4300
+PORTVERSION=	0.4400
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GBARR
+MASTER_SITE_SUBDIR=	CPAN:MARSCHAP
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
@@ -33,8 +33,10 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP.3 \
 		Net::LDAP::Constant.3 \
 		Net::LDAP::Control.3 \
+		Net::LDAP::Control::Assertion.3 \
 		Net::LDAP::Control::EntryChange.3 \
 		Net::LDAP::Control::ManageDsaIT.3 \
+		Net::LDAP::Control::MatchedValues.3 \
 		Net::LDAP::Control::Paged.3 \
 		Net::LDAP::Control::PasswordPolicy.3 \
 		Net::LDAP::Control::PersistentSearch.3 \
@@ -51,6 +53,7 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP::DSML.3 \
 		Net::LDAP::Entry.3 \
 		Net::LDAP::Examples.3 \
+		Net::LDAP::Extension::Cancel.3 \
 		Net::LDAP::Extension::Refresh.3 \
 		Net::LDAP::Extension::SetPassword.3 \
 		Net::LDAP::Extension::WhoAmI.3 \
