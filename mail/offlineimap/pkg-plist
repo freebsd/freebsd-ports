@@ -47,9 +47,6 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/__init__.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/Blinkenlights.py
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/Blinkenlights.pyc
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/Blinkenlights.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Curses.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Curses.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/Curses.pyo
