@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# PROVIDE: carbon
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# carbon_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# carbon_conf_dir:	Directory where sabnzbd configuration
+#			data is stored.
+#			Default: /usr/local/sabnzbd
+# carbon_user:	    	The user account sabnzbd daemon runs as what
+#			you want it to be. It uses 'www' user by
+#			default. Do not sets it as empty or it will run
+#			as root.
+# carbon_group:    	The group account sabnzbd daemon runs as what
+#			you want it to be. It uses 'www' group by
+#			default. Do not sets it as empty or it will run
+#			as wheel.
+
+. /etc/rc.subr
+
+name="carbon"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${carbon_enable:="NO"}
+: ${carbon_user:="root"}
+: ${carbon_group:="wheel"}
+: ${carbon_conf:="/usr/local/etc/carbon/carbon.conf"}
+: ${carbon_debug:="NO"}
+: ${carbon_logdir:="/usr/local/graphite/storage/log"}
+: ${carbon_pidfile:="/var/run/carbon.pid"}
+
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
+
+command_interpreter="/usr/local/bin/python2.7"
+command="/usr/local/bin/carbon-cache.py"
+command_args="--config=${carbon_conf} --logdir ${carbon_logdir} --pidfile ${carbon_pidfile} start"
+
+carbon_stop() {
+    echo "Stopping $name"
+
+    /usr/local/bin/carbon-cache.py --config=${carbon_conf} --pidfile ${carbon_pidfile} stop
+}
+
+carbon_status() {
+    /usr/local/bin/carbon-cache.py --config=${carbon_conf} --pidfile ${carbon_pidfile} status
+
+}
+
+run_rc_command "$1"
+

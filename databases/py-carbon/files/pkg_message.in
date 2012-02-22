@@ -1,0 +1,19 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+This port now includes an rc script:
+
+%%PREFIX%%/etc/rc.d/carbon
+
+Add:
+
+carbon_enable="YES"
+
+to /etc/rc.conf, then start it via:
+
+%%PREFIX%%/etc/rc.d/carbon start
+
+Once started, finish setting up Graphite
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
