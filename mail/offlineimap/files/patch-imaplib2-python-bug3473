@@ -1,0 +1,37 @@
+From b28b53c1367352eb9f634d4f23d13142b9bbbd4d Mon Sep 17 00:00:00 2001
+From: Eygene Ryabinkin <rea@codelabs.ru>
+Date: Sun, 19 Feb 2012 17:35:28 +0400
+Subject: [PATCH] Imaplib2: work around the Python bug 3473
+
+It was not possible to pass anything, but (*args, **kwargs)
+before the following bug was solved,
+  http://bugs.python.org/issue3473
+so we can't say (*args, key1 = value1, key2 = value2), but we
+should pack keys and values to the dictionary and pass it
+with **kwargs.
+
+Python <= 2.5 have this unfixed, so we should fix this in our code.
+
+Signed-off-by: Eygene Ryabinkin <rea@codelabs.ru>
+---
+ offlineimap/imaplib2.py |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+diff --git a/offlineimap/imaplib2.py b/offlineimap/imaplib2.py
+index ffa2676..ed978be 100644
+--- a/offlineimap/imaplib2.py
++++ b/offlineimap/imaplib2.py
+@@ -1591,7 +1591,9 @@ class IMAP4(object):
+     def _simple_command(self, name, *args, **kw):
+ 
+         if 'callback' in kw:
+-            self._command(name, *args, callback=self._command_completer, cb_arg=kw, cb_self=True)
++            # http://bugs.python.org/issue3473
++            kwargs = {'callback':self._command_completer, 'cb_arg':kw, 'cb_self':True}
++            self._command(name, *args, **kwargs)
+             return (None, None)
+         return self._command_complete(self._command(name, *args), kw)
+ 
+-- 
+1.7.9
+

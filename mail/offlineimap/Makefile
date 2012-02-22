@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	offlineimap
-DISTVERSION=	6.4.0
+DISTVERSION=	6.5.2.1
 CATEGORIES=	mail python
-MASTER_SITES=	http://download.github.com/ \
-		http://dist.codelabs.ru/fbsd/offlineimap/ \
-		LOCAL/rea/offlineimap
-DISTNAME=	${GITHUB_USER}-${PORTNAME}-v${DISTVERSION}-${GITHUB_VER_SUFX}
+MASTER_SITES=	http://cloud.github.com/downloads/spaetz/offlineimap/ \
+		http://dist.codelabs.ru/fbsd/offlineimap/
+DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
@@ -23,14 +22,11 @@ LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 
 OPTIONS=	HTMLDOCS "Generate HTML documentation" Off
 
-WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_SRC_SUFX}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
+PATCH_STRIP=	-p1
 
-GITHUB_USER=	nicolas33
-GITHUB_VER_SUFX=	0-gc1120c9
-GITHUB_SRC_SUFX=	b1bff15
-
-USE_PYTHON=	yes
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
 DOCS=		Changelog.rst README.rst SubmittingPatches.rst \
@@ -52,13 +48,6 @@ SUB_LIST+=	PORTEXAMPLES="@comment "
 .else
 SUB_LIST+=	PORTEXAMPLES=""
 .endif
-
-pre-fetch:
-	# get github download ticket
-	if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-		${FETCH_BINARY} -s >/dev/null \
-			http://github.com/${GITHUB_USER}/${PORTNAME}/tarball/v${DISTVERSION}; \
-	fi
 
 post-build:
 .if !defined(NOPORTDOCS) && defined(WITH_HTMLDOCS)
