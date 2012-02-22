@@ -13,9 +13,6 @@ PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A popular ICQ-compatible plugin-based program
 
-.if defined(WITH_SOCKS)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-.endif
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
@@ -30,17 +27,6 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -liconv -Wl,--export-dynamic
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wl,--export-dynamic
-
-.if defined(WITH_SOCKS)
-SOCKS_SUFFIX=	-socks
-CONFIGURE_ARGS+=--enable-socks5
-CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFLICTS?=	licq-base-1.*
-BROKEN=		does not compile
-.else
-CONFLICTS?=	licq-base-socks-1.*
-.endif
 
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	yes
