@@ -63,6 +63,9 @@ MAN8=	enadis.cgi.8 xymon-mailack.8 xymoncgimsg.cgi.8 xymond.8 \
 	xymond_hostdata.8 xymond_rrd.8 xymond_sample.8 xymonfetch.8 \
 	xymonlaunch.8 xymonproxy.8 msgcache.8 trimhistory.8
 
+OPTIONS=	LDAP	"Enable LDAP support" off \
+		SNMP	"Enable Net-SNMP support" off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LDAP)
