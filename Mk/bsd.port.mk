@@ -1404,10 +1404,6 @@ LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
-.if defined(WITH_PKGNG)
-.include "${PORTSDIR}/Mk/bsd.pkgng.mk"
-.endif
-
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -2440,7 +2436,11 @@ PKG_ARGS+=		-C "${CONFLICTS_INSTALL}"
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
+.if defined(WITH_PKGNG)
+PKG_SUFX?=		.txz
+.else
 PKG_SUFX?=		.tbz
+.endif
 .endif
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		/var/db/pkg
@@ -3397,8 +3397,13 @@ check-deprecated:
 
 # Check if the port is listed in the vulnerability database
 
+.if defined(WITH_PKGNG)
+AUDITFILE?=		${PKG_DBDIR}/auditfile
+_EXTRACT_AUDITFILE=	${CAT} "${AUDITFILE}"
+.else
 AUDITFILE?=		/var/db/portaudit/auditfile.tbz
 _EXTRACT_AUDITFILE=	${TAR} -jxOf "${AUDITFILE}" auditfile
+.endif
 
 check-vulnerable:
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
@@ -3409,12 +3414,16 @@ check-vulnerable:
 		if [ "$$audit_created" -lt "$$audit_expiry" ]; then \
 			${ECHO_MSG} "===>  WARNING: Vulnerability database out of date, checking anyway"; \
 		fi; \
-		vlist=`${_EXTRACT_AUDITFILE} | ${GREP} "${PORTNAME}" | \
-			${AWK} -F\| ' /^[^#]/ { \
-				if (!system("${PKG_VERSION} -T \"${PKGNAME}\" \"" $$1 "\"")) \
-					print "=> " $$3 ".\n   Reference: " $$2 \
-			} \
-		'`; \
+		if [ -n "${WITH_PKGNG}" ]; then \
+			vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+		else \
+			vlist=`${_EXTRACT_AUDITFILE} | ${GREP} "${PORTNAME}" | \
+				${AWK} -F\| ' /^[^#]/ { \
+					if (!system("${PKG_VERSION} -T \"${PKGNAME}\" \"" $$1 "\"")) \
+						print "=> " $$3 ".\n   Reference: " $$2 \
+				} \
+			'`; \
+		fi; \
 		if [ -n "$$vlist" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
 			${ECHO_MSG} "$$vlist"; \
