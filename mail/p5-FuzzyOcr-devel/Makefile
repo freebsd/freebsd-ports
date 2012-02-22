@@ -21,7 +21,7 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		gifsicle:${PORTSDIR}/graphics/gifsicle			\
 		gocr:${PORTSDIR}/graphics/gocr				\
 		ocrad:${PORTSDIR}/graphics/ocrad			\
-		gif2ps:${PORTSDIR}/graphics/libungif			\
+		gif2ps:${PORTSDIR}/graphics/giflib			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM	\
 		${SITE_PERL}/MLDBM/Sync.pm:${PORTSDIR}/databases/p5-MLDBM-Sync \
