@@ -24,6 +24,9 @@ PKGNAMESUFFIX=	-mysql
 MAINTAINER?=	zi@FreeBSD.org
 COMMENT?=	A free RADIUS server implementation
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
@@ -229,6 +232,9 @@ CONFIGURE_ARGS+=	--with-pic
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|timestamp(14)|timestamp|g' \
+		${WRKSRC}/doc/examples/mysql.sql
+	@${RM} ${WRKSRC}/doc/examples/mysql.sql.bak
 # Patch Makefile / Makefile.in throughout the source tree to install raddb
 # contents in ${EXAMPLESDIR}/raddb rather than the raddbdir from configure
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?$$' -exec \
