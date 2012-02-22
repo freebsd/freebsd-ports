@@ -17,9 +17,9 @@ share/locale/bg/LC_MESSAGES/kkbswitch.mo
 %%DOCSDIR%%/flag_style.png
 %%DOCSDIR%%/index.docbook
 %%DOCSDIR%%/index.cache.bz2
+%%DOCSDIR%%/common
 %%LAYOUT%%lib/X11/xkb/symbols/ru_ua
 @dirrm share/apps/kkbswitch
-@dirrm %%DOCSDIR%%/common
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applnk/Utilities
 @dirrmtry share/applnk
