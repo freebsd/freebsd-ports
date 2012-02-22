@@ -22,6 +22,7 @@ include/clang/AST/Attr.h
 include/clang/AST/AttrImpl.inc
 include/clang/AST/Attrs.inc
 include/clang/AST/BaseSubobject.h
+include/clang/AST/BuiltinTypes.def
 include/clang/AST/CXXInheritance.h
 include/clang/AST/CanonicalType.h
 include/clang/AST/CharUnits.h
@@ -74,8 +75,10 @@ include/clang/AST/UsuallyTinyPtrVector.h
 include/clang/AST/VTTBuilder.h
 include/clang/AST/VTableBuilder.h
 include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
+include/clang/Analysis/Analyses/Dominators.h
 include/clang/Analysis/Analyses/FormatString.h
 include/clang/Analysis/Analyses/LiveVariables.h
+include/clang/Analysis/Analyses/PostOrderCFGView.h
 include/clang/Analysis/Analyses/PseudoConstantAnalysis.h
 include/clang/Analysis/Analyses/ReachableCode.h
 include/clang/Analysis/Analyses/ThreadSafety.h
@@ -101,6 +104,7 @@ include/clang/Basic/AttrList.inc
 include/clang/Basic/Builtins.def
 include/clang/Basic/Builtins.h
 include/clang/Basic/BuiltinsARM.def
+include/clang/Basic/BuiltinsHexagon.def
 include/clang/Basic/BuiltinsPPC.def
 include/clang/Basic/BuiltinsPTX.def
 include/clang/Basic/BuiltinsX86.def
@@ -119,6 +123,7 @@ include/clang/Basic/DiagnosticIndexName.inc
 include/clang/Basic/DiagnosticLexKinds.inc
 include/clang/Basic/DiagnosticParseKinds.inc
 include/clang/Basic/DiagnosticSemaKinds.inc
+include/clang/Basic/DiagnosticSerializationKinds.inc
 include/clang/Basic/ExceptionSpecificationType.h
 include/clang/Basic/ExpressionTraits.h
 include/clang/Basic/FileManager.h
@@ -126,10 +131,12 @@ include/clang/Basic/FileSystemOptions.h
 include/clang/Basic/FileSystemStatCache.h
 include/clang/Basic/IdentifierTable.h
 include/clang/Basic/LLVM.h
+include/clang/Basic/Lambda.h
 include/clang/Basic/LangOptions.def
 include/clang/Basic/LangOptions.h
 include/clang/Basic/Linkage.h
 include/clang/Basic/MacroBuilder.h
+include/clang/Basic/Module.h
 include/clang/Basic/OnDiskHashTable.h
 include/clang/Basic/OpenCL.h
 include/clang/Basic/OpenCLExtensions.def
@@ -156,6 +163,7 @@ include/clang/Basic/arm_neon.inc
 include/clang/CodeGen/BackendUtil.h
 include/clang/CodeGen/CodeGenAction.h
 include/clang/CodeGen/ModuleBuilder.h
+include/clang/Config/config.h
 include/clang/Driver/Action.h
 include/clang/Driver/Arg.h
 include/clang/Driver/ArgList.h
@@ -166,7 +174,6 @@ include/clang/Driver/CC1Options.inc
 include/clang/Driver/Compilation.h
 include/clang/Driver/Driver.h
 include/clang/Driver/DriverDiagnostic.h
-include/clang/Driver/HostInfo.h
 include/clang/Driver/Job.h
 include/clang/Driver/ObjCRuntime.h
 include/clang/Driver/OptSpecifier.h
@@ -185,12 +192,14 @@ include/clang/Frontend/ASTUnit.h
 include/clang/Frontend/Analyses.def
 include/clang/Frontend/AnalyzerOptions.h
 include/clang/Frontend/ChainedDiagnosticConsumer.h
+include/clang/Frontend/ChainedIncludesSource.h
 include/clang/Frontend/CodeGenOptions.h
 include/clang/Frontend/CommandLineSourceLoc.h
 include/clang/Frontend/CompilerInstance.h
 include/clang/Frontend/CompilerInvocation.h
 include/clang/Frontend/DependencyOutputOptions.h
 include/clang/Frontend/DiagnosticOptions.h
+include/clang/Frontend/DiagnosticRenderer.h
 include/clang/Frontend/FrontendAction.h
 include/clang/Frontend/FrontendActions.h
 include/clang/Frontend/FrontendDiagnostic.h
@@ -199,10 +208,14 @@ include/clang/Frontend/FrontendPluginRegistry.h
 include/clang/Frontend/HeaderSearchOptions.h
 include/clang/Frontend/LangStandard.h
 include/clang/Frontend/LangStandards.def
+include/clang/Frontend/LayoutOverrideSource.h
 include/clang/Frontend/LogDiagnosticPrinter.h
+include/clang/Frontend/MigratorOptions.h
 include/clang/Frontend/MultiplexConsumer.h
 include/clang/Frontend/PreprocessorOptions.h
 include/clang/Frontend/PreprocessorOutputOptions.h
+include/clang/Frontend/SerializedDiagnosticPrinter.h
+include/clang/Frontend/TextDiagnostic.h
 include/clang/Frontend/TextDiagnosticBuffer.h
 include/clang/Frontend/TextDiagnosticPrinter.h
 include/clang/Frontend/Utils.h
@@ -232,6 +245,7 @@ include/clang/Lex/Lexer.h
 include/clang/Lex/LiteralSupport.h
 include/clang/Lex/MacroInfo.h
 include/clang/Lex/ModuleLoader.h
+include/clang/Lex/ModuleMap.h
 include/clang/Lex/MultipleIncludeOpt.h
 include/clang/Lex/PPCallbacks.h
 include/clang/Lex/PTHLexer.h
@@ -258,6 +272,7 @@ include/clang/Rewrite/Rewriter.h
 include/clang/Rewrite/Rewriters.h
 include/clang/Rewrite/TokenRewriter.h
 include/clang/Sema/AnalysisBasedWarnings.h
+include/clang/Sema/AttrTemplateInstantiate.inc
 include/clang/Sema/AttributeList.h
 include/clang/Sema/CXXFieldCollector.h
 include/clang/Sema/CodeCompleteConsumer.h
@@ -292,10 +307,10 @@ include/clang/Serialization/ASTReader.h
 include/clang/Serialization/ASTWriter.h
 include/clang/Serialization/AttrPCHRead.inc
 include/clang/Serialization/AttrPCHWrite.inc
-include/clang/Serialization/ChainedIncludesSource.h
 include/clang/Serialization/ContinuousRangeMap.h
 include/clang/Serialization/Module.h
 include/clang/Serialization/ModuleManager.h
+include/clang/Serialization/SerializationDiagnostic.h
 include/clang/StaticAnalyzer/Checkers/ClangCheckers.h
 include/clang/StaticAnalyzer/Checkers/DereferenceChecker.h
 include/clang/StaticAnalyzer/Checkers/LocalCheckers.h
@@ -318,11 +333,11 @@ include/clang/StaticAnalyzer/Core/PathSensitive/CoreEngine.h
 include/clang/StaticAnalyzer/Core/PathSensitive/Environment.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ExplodedGraph.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ExprEngine.h
-include/clang/StaticAnalyzer/Core/PathSensitive/ExprEngineBuilders.h
 include/clang/StaticAnalyzer/Core/PathSensitive/MemRegion.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ObjCMessage.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ProgramState.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ProgramStateTrait.h
+include/clang/StaticAnalyzer/Core/PathSensitive/ProgramState_Fwd.h
 include/clang/StaticAnalyzer/Core/PathSensitive/SValBuilder.h
 include/clang/StaticAnalyzer/Core/PathSensitive/SVals.h
 include/clang/StaticAnalyzer/Core/PathSensitive/Store.h
@@ -330,21 +345,24 @@ include/clang/StaticAnalyzer/Core/PathSensitive/StoreRef.h
 include/clang/StaticAnalyzer/Core/PathSensitive/SubEngine.h
 include/clang/StaticAnalyzer/Core/PathSensitive/SummaryManager.h
 include/clang/StaticAnalyzer/Core/PathSensitive/SymbolManager.h
+include/clang/StaticAnalyzer/Core/PathSensitive/TaintManager.h
+include/clang/StaticAnalyzer/Core/PathSensitive/TaintTag.h
 include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
 include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
 include/clang/StaticAnalyzer/Frontend/FrontendActions.h
-lib/clang/3.0/include/arm_neon.h
-lib/clang/3.0/include/emmintrin.h
-lib/clang/3.0/include/immintrin.h
-lib/clang/3.0/include/mm3dnow.h
-lib/clang/3.0/include/mm_malloc.h
-lib/clang/3.0/include/mmintrin.h
-lib/clang/3.0/include/nmmintrin.h
-lib/clang/3.0/include/pmmintrin.h
-lib/clang/3.0/include/smmintrin.h
-lib/clang/3.0/include/tmmintrin.h
-lib/clang/3.0/include/wmmintrin.h
-lib/clang/3.0/include/xmmintrin.h
+lib/clang/3.1/include/arm_neon.h
+lib/clang/3.1/include/emmintrin.h
+lib/clang/3.1/include/immintrin.h
+lib/clang/3.1/include/mm3dnow.h
+lib/clang/3.1/include/mm_malloc.h
+lib/clang/3.1/include/mmintrin.h
+lib/clang/3.1/include/module.map
+lib/clang/3.1/include/nmmintrin.h
+lib/clang/3.1/include/pmmintrin.h
+lib/clang/3.1/include/smmintrin.h
+lib/clang/3.1/include/tmmintrin.h
+lib/clang/3.1/include/wmmintrin.h
+lib/clang/3.1/include/xmmintrin.h
 lib/libclang.a
 lib/libclang.so
 lib/libclangARCMigrate.a
@@ -367,6 +385,7 @@ lib/libclangStaticAnalyzerFrontend.a
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
+%%PORTDOCS%%%%DOCSDIR%%/html/AddressSanitizer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AnalyzerRegions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/AutomaticReferenceCounting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/DriverInternals.html
@@ -374,6 +393,7 @@ lib/libclangStaticAnalyzerFrontend.a
 %%PORTDOCS%%%%DOCSDIR%%/html/LanguageExtensions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PCHInternals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PTHInternals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/UsersManual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/clang.html
 %%PORTDOCS%%%%DOCSDIR%%/html/clang/manpage.css
@@ -385,8 +405,8 @@ lib/libclangStaticAnalyzerFrontend.a
 %%PYTHON_SITELIBDIR%%/Resources/bugcatcher.ico
 %%PYTHON_SITELIBDIR%%/ScanView.py
 %%PYTHON_SITELIBDIR%%/startfile.py
-@dirrm lib/clang/3.0/include
-@dirrm lib/clang/3.0
+@dirrm lib/clang/3.1/include
+@dirrm lib/clang/3.1
 @dirrm lib/clang
 @dirrm include/clang/StaticAnalyzer/Frontend
 @dirrm include/clang/StaticAnalyzer/Core/PathSensitive
@@ -403,6 +423,7 @@ lib/libclangStaticAnalyzerFrontend.a
 @dirrm include/clang/FrontendTool
 @dirrm include/clang/Frontend
 @dirrm include/clang/Driver
+@dirrm include/clang/Config
 @dirrm include/clang/CodeGen
 @dirrm include/clang/Basic
 @dirrm include/clang/Analysis/Visitors
