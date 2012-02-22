@@ -1,37 +1,37 @@
---- build.xml.orig	2010-11-11 10:38:24.000000000 +0100
-+++ build.xml	2010-12-14 13:05:00.000000000 +0100
-@@ -276,7 +276,7 @@
-         <javac target="1.4" source="1.4" srcdir="${dir.src}"
+--- build.xml.orig	2012-02-22 13:02:34.000000000 +0100
++++ build.xml	2012-02-22 13:05:16.000000000 +0100
+@@ -221,7 +221,7 @@
+         <javac target="1.5" source="1.5" srcdir="${dir.src}"
                 destdir="${dir.build.bin}"
                 debug="${build.compile.debug}"
 -               includeAntRuntime="false">
 +               includeAntRuntime="yes">
+             <compilerarg value="-XDignore.symbol.file" />
              <classpath refid="id.classpath" />
              <include name="**/org/apache/xml/security/**/*.java" />
-             <include name="**/javax/xml/crypto/**/*.java" />
-@@ -789,6 +789,19 @@
- 	</jar>
+@@ -667,6 +667,19 @@
+         </manifest>
      </target>
  
 +    <target name="jar"
-+            depends="manifest,build.src">
++	    depends="manifest,build.src">
 +
-+        <!-- Main Library -->
-+        <jar basedir="${dir.build.bin}"
-+             excludes="org/apache/xml/security/temp/**"
-+             includes="org/apache/**, org/jcp/**, javax/xml/crypto/**"
-+             destfile="${jar.library}"
-+             manifest="${jar.manifest}">
-+          <metainf file="${dir.manifest}/*.txt"/>
-+        </jar>
++	<!-- Main Library -->
++	<jar basedir="${dir.build.bin}"
++	     excludes="org/apache/xml/security/temp/**"
++	     includes="org/apache/**, javax/xml/crypto/**"
++	     destfile="${jar.library}" 
++	     manifest="${jar.manifest}">
++	  <metainf file="${dir.manifest}/*.txt"/>
++	</jar>
 +    </target>
 +
-     <target name="build.src.jar"
- 	    depends="manifest,build.src">
+     <target name="build.jar"
+ 	    depends="manifest,build.src,build.test,build.samples">
  
-@@ -811,7 +824,6 @@
+@@ -719,7 +732,6 @@
+     <target name="compile"          depends="build.src" />
      <target name="docs"             depends="build.docs" />
-     <target name="xdocs"            depends="build.xdocs" />
      <target name="javadoc"          depends="build.docs" />
 -    <target name="jar"              depends="build.jar" />
      <target name="dist"             depends="build.dist" />
