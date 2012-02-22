@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	3.0.r${SVN_REV}
+DISTVERSION=	3.1.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -30,12 +30,15 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
+USE_PYTHON_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
 
 # Suggested tweaks from http://llvm.org/docs/Packaging.html
 # Commented out ones are currently broken.
 MAKE_ARGS+=		REQUIRES_RTTI=1
-#CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ARGS+=	--enable-shared
+LIBNAME=		libLLVM-${DISTVERSION:C/\.r[0-9]*//}svn.so
+PLIST_FILES+=		lib/${LIBNAME} lib/${LIBNAME}.0
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -46,13 +49,14 @@ CONFIGURE_ARGS+=	--enable-optimized
 CONFIGURE_ARGS+=	--enable-bindings=none
 
 OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off
+#		LTOPLUGIN "Build LTO plugin (requires gold)" off
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
 
-MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
-		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
+		llvm-bcanalyzer.1 llvm-cov.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 opt.1 tblgen.1
 
@@ -85,6 +89,13 @@ CONFIGURE_ARGS+=	--enable-assertions
 CONFIGURE_ARGS+=	--disable-assertions
 .endif
 
+.ifdef(WITH_LTOPLUGIN)
+BUILD_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+RUN_DEPENDS+=		ld.gold:${PORTSDIR}/devel/binutils
+CONFIGURE_ARGS+=	--with-binutils-include=${LOCALBASE}/include
+PLIST_FILES+=		lib/LLVMgold.so
+.endif
+
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
@@ -109,15 +120,19 @@ post-patch:
 .if defined(NOPORTDOCS)
 post-build:
 	@cd ${WRKSRC}/docs/CommandGuide && ${GMAKE} ${MAN1}
+.endif
 
 post-install:
+	mv ${PREFIX}/lib/${LIBNAME} ${PREFIX}/lib/${LIBNAME}.0
+	ln -s ${LIBNAME}.0 ${PREFIX}/lib/${LIBNAME}
+.if defined(NOPORTDOCS)
 .for man in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/docs/CommandGuide/${man} \
 	     ${MANPREFIX}/man/man1/
 .endfor
 .endif
 
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
+TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
 	if [ `${ID} -u` = 0 ]; then \
 		${CHOWN} -R nobody ${WRKSRC}/test; \
@@ -134,7 +149,6 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/opt \
 			lib/LLVMHello.so \
 			lib/BugpointPasses.so \
-			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libprofile_rt.so \
@@ -145,6 +159,7 @@ build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
+	    ${SED} -e 's|${PORTVERSION}|%%PORTVERSION%%|' | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
