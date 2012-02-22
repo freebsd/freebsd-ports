@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	sterm
-PORTVERSION=	0.0.20110401
+PORTVERSION=	0.2
 CATEGORIES=	x11
-MASTER_SITES=	http://kitchetech.com/port/distfile/ \
-		LOCAL/martymac
+MASTER_SITES=	http://dl.suckless.org/st/
+DISTNAME=	st-${PORTVERSION}
 
-MAINTAINER=	kitchetech@gmail.com
+MAINTAINER=	kitche@kitchetech.com
 COMMENT=	A simple X terminal
-
-RUN_DEPENDS=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_XORG=	x11
+RUN_DEPENDS=	${LOCALBASE}/share/misc/terminfo.db:${PORTSDIR}/devel/ncurses
 
+USE_XORG=	x11
 MAN1=	st.1
 PLIST_FILES=	bin/st
 
