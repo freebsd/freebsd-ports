@@ -17,6 +17,8 @@ COMMENT=	Smart filtering HTTP proxy
 LIB_DEPENDS=	ACE.6:${PORTSDIR}/devel/ace \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
