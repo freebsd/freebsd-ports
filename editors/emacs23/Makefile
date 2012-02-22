@@ -7,12 +7,10 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION?=	6
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}a
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
@@ -26,7 +24,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-24.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-EMACS_VER=	23.3
+EMACS_VER=	23.4
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -145,11 +143,7 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .if defined(WITHOUT_GIF)
 CONFIGURE_ARGS+=	--without-gif
 .else
-. if exists(${LOCALBASE}/lib/libgif.so)
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-. else
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
-. endif
 .endif
 
 .if defined(WITHOUT_PNG)
