@@ -43,7 +43,7 @@
 -
 -metapixel.1 : metapixel.xml
 -	xsltproc --nonet $(MANPAGE_XSL) metapixel.xml
-+	$(CC) $(LDOPTS) -o metapixel $(OBJS) rwimg/librwimg.a -lpng -ljpeg -lungif $(LIBFFM) -lm -lz
++	$(CC) $(LDOPTS) -o metapixel $(OBJS) rwimg/librwimg.a -lpng -ljpeg -lgif $(LIBFFM) -lm -lz
  
 -convert : $(CONVERT_OBJS)
 -	$(CC) $(LDOPTS) -o convert $(CONVERT_OBJS)
@@ -57,7 +57,7 @@
 -zoom : zoom.c librwimg
 -	$(CC) -o zoom $(OPTIMIZE) $(PROFILE) $(MACOS_CCOPTS) -DTEST_ZOOM zoom.c $(MACOS_LDOPTS) rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
 +metapixel-zoom : zoom.c librwimg
-+	$(CC) $(CCOPTS) $(LDOPTS) -o $@ -DTEST_ZOOM zoom.c rwimg/librwimg.a -lpng -ljpeg -lungif -lm -lz
++	$(CC) $(CCOPTS) $(LDOPTS) -o $@ -DTEST_ZOOM zoom.c rwimg/librwimg.a -lpng -ljpeg -lgif -lm -lz
  
  %.o : %.c
 -	$(CC) $(CCOPTS) $(FORMATDEFS) -c $<
