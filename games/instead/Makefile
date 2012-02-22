@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	instead
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
-		http://209.44.102.205/FreeBSD/distfiles/
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	instead_${PORTVERSION}
 
 MAINTAINER=	neuroworker@gmail.com
@@ -23,15 +22,15 @@ USE_SDL=	sdl image ttf mixer
 USE_ICONV=	yes
 
 CONFIGURE_SCRIPT=	configure.sh
+CONFIGURE_ENV=	PREFIX="${PREFIX}"
 
 WRKSRC=		${WRKDIR}/instead-${PORTVERSION}
 MAN6=		instead.6
 
 PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|port_install_prefix|${PREFIX}|' ${WRKSRC}/configure.sh
 .if defined(NOPORTDOCS)
+post-patch:
 	@${REINPLACE_CMD} -e '/INSTALL.*DOCPATH/ d' ${WRKSRC}/doc/Makefile
 .endif
 
