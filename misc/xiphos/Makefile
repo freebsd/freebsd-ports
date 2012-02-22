@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xiphos
-PORTVERSION=	3.1.4
-PORTREVISION=	2
+PORTVERSION=	3.1.5
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -26,12 +25,12 @@ USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomehack gnomeprefix gtkhtml3 \
-		intlhack libgsf
+USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgsf
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./waf configure \
-		--prefix=${PREFIX} --enable-gtkhtml --debug-level=optimized
+		--prefix=${PREFIX} --destdir=${PREFIX} \
+		--backend gtkhtml --gtk=2
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build
