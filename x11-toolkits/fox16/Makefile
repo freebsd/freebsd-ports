@@ -8,10 +8,7 @@
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
-		ftp://ftp.fox-toolkit.org/pub/ \
-		http://fresh.t-systems-sfr.com/unix/src/misc/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://ftp.fox-toolkit.org/pub/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
@@ -32,7 +29,7 @@ PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 USE_GNOME=	lthack gnomehack
 USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-opengl --with-x --enable-threadsafe
+CONFIGURE_ARGS=	--with-opengl --with-x
 USE_LDCONFIG=	yes
 
 MAN1=		shutterbug.1 reswrap.1
@@ -70,9 +67,6 @@ CONFIGURE_ARGS+=	--with-xshm=yes
 #
 .if defined(WITH_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
-CONFIGURE_ARGS+=	--enable-cups
-.else
-CONFIGURE_ARGS+=	--disable-cups
 .endif
 #
 .if defined(WITH_DEBUG)
@@ -101,7 +95,7 @@ CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/fox.pc.in
+	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|; s|"||g' ${WRKSRC}/fox.pc.in
 # CXXFLAGS safeness
 	@${REINPLACE_CMD} -E -e \
 		's|-O2|${CXXFLAGS}|g ; \
