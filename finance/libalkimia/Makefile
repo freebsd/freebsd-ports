@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libalkimia
-PORTVERSION=	4.3.1
-PORTREVISION=	1
+PORTVERSION=	4.3.2
 CATEGORIES=	finance kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	137323-${PORTNAME}-${PORTVERSION}
@@ -33,9 +32,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 post-patch:
 
 	@${REINPLACE_CMD} -e 's|pkgconfig|../libdata/pkgconfig|' \
-			  -e 's|KDE4_DATA_DIR|DATA_INSTALL_DIR|g' \
-			  -e 's|KDE4_LIB_DIR|LIB_INSTALL_DIR|g' \
-				${WRKSRC}/CMakeLists.txt \
-				${WRKSRC}/libalkimia.pc.in
+		${WRKSRC}/${PORTNAME}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|KDE4_LIB_DIR|LIB_INSTALL_DIR|g' \
+		${WRKSRC}/${PORTNAME}/libalkimia.pc.in
 
 .include <bsd.port.mk>
