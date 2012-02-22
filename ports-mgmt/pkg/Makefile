@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta6
+DISTVERSION=	1.0-beta7
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -18,37 +18,28 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 
-#define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
-.if defined(WITH_PKGNG)
-PKG_DEPENDS=
-.undef INSTALLS_DEPENDS
-.if !exists(${LOCALBASE}/sbin/pkg)
-PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
-.endif
-.endif
-
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
 MAKE_ENV+=	WITHOUT_PROFILE=yes
 
-MAN1=	pkg.1 \
-	pkg-add.1 \
-	pkg-autoremove.1 \
-	pkg-backup.1 \
-	pkg-create.1 \
-	pkg-delete.1 \
-	pkg-info.1 \
-	pkg-install.1 \
-	pkg-query.1 \
-	pkg-register.1 \
-	pkg-repo.1 \
-	pkg-search.1 \
-	pkg-update.1 \
-	pkg-updating.1 \
-	pkg-upgrade.1 \
-	pkg-version.1 \
-	pkg-which.1
+MAN8=	pkg.8 \
+	pkg-add.8 \
+	pkg-autoremove.8 \
+	pkg-backup.8 \
+	pkg-create.8 \
+	pkg-delete.8 \
+	pkg-info.8 \
+	pkg-install.8 \
+	pkg-query.8 \
+	pkg-register.8 \
+	pkg-repo.8 \
+	pkg-search.8 \
+	pkg-update.8 \
+	pkg-updating.8 \
+	pkg-upgrade.8 \
+	pkg-version.8 \
+	pkg-which.8
 MAN5=	pkg.conf.5
 
 PLIST_FILES=	sbin/pkg \
@@ -59,13 +50,22 @@ PLIST_FILES=	sbin/pkg \
 		lib/libpkg.so \
 		lib/libpkg.a
 
-post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
-
 .include <bsd.port.pre.mk>
+
+#define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
+.if defined(WITH_PKGNG)
+PKG_DEPENDS=
+.undef INSTALLS_DEPENDS
+.if !exists(${LOCALBASE}/sbin/pkg)
+PKG_BIN=	${WRKSRC}/pkg-static/pkg-static
+.endif
+.endif
 
 .if ${OSVERSION} < 800505
 IGNORE=		not supported on 7.x or early 8.0
 .endif
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 
 .include <bsd.port.post.mk>
