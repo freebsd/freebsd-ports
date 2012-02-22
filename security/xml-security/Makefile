@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xml-security
-PORTVERSION=	1.4.6
+PORTVERSION=	1.5.0
 CATEGORIES=	security java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	santuario/java-library
+MASTER_SITE_SUBDIR=	santuario/java-library/1_5_0
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -17,8 +17,7 @@ COMMENT=	A Java library for XML Signature and Encryption
 
 BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
-RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
+RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -52,7 +51,7 @@ do-install:
 .if !defined(NOPORTEXAMPLES)
 	@${ECHO} -n ">> Installing examples in ${EXAMPLESDIR}..."
 	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/src_samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} javax org ${EXAMPLESDIR})
 	@${ECHO} " [ DONE ]"
 .endif
 
