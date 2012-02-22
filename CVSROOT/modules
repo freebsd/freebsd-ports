@@ -252,6 +252,7 @@ R-cran-psych                    ports/math/R-cran-psych
 R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-reshape2                 ports/devel/R-cran-reshape2
 R-cran-rgdal                    ports/graphics/R-cran-rgdal
+R-cran-rjson                    ports/converters/R-cran-rjson
 R-cran-sandwich                 ports/math/R-cran-sandwich
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
@@ -6826,6 +6827,7 @@ jomp                            ports/java/jomp
 jools                           ports/games/jools
 joomla                          ports/www/joomla
 joomla15                        ports/www/joomla15
+joomla25                        ports/www/joomla25
 josm                            ports/astro/josm
 jove                            ports/editors/jove
 jovie                           ports/accessibility/jovie
@@ -6914,6 +6916,7 @@ k8temp                          ports/sysutils/k8temp
 k9copy                          ports/multimedia/k9copy
 k9copy-kde4                     ports/multimedia/k9copy-kde4
 kBuild                          ports/devel/kBuild
+kBuild-devel                    ports/devel/kBuild-devel
 kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffeine                        ports/multimedia/kaffeine
 kaffeine-mozilla                ports/multimedia/kaffeine-mozilla
@@ -6960,6 +6963,7 @@ kblticker                       ports/deskutils/kblticker
 kbproto                         ports/x11/kbproto
 kbruch                          ports/math/kbruch
 kbuild                          ports/devel/kBuild
+kbuild-devel                    ports/devel/kBuild-devel
 kcachegrind                     ports/devel/kcachegrind
 kcd                             ports/misc/kcd
 kcdlabel                        ports/print/kcdlabel
@@ -14455,6 +14459,7 @@ p5-Term-Sk                      ports/devel/p5-Term-Sk
 p5-Term-Title                   ports/devel/p5-Term-Title
 p5-Term-UI                      ports/devel/p5-Term-UI
 p5-Term-VT102                   ports/devel/p5-Term-VT102
+p5-Term-VT102-Boundless         ports/devel/p5-Term-VT102-Boundless
 p5-Term-Visual                  ports/devel/p5-Term-Visual
 p5-Test-Aggregate               ports/devel/p5-Test-Aggregate
 p5-Test-Assertions              ports/devel/p5-Test-Assertions
@@ -18960,6 +18965,7 @@ p5-term-title                   ports/devel/p5-Term-Title
 p5-term-ui                      ports/devel/p5-Term-UI
 p5-term-visual                  ports/devel/p5-Term-Visual
 p5-term-vt102                   ports/devel/p5-Term-VT102
+p5-term-vt102-boundless         ports/devel/p5-Term-VT102-Boundless
 p5-test-aggregate               ports/devel/p5-Test-Aggregate
 p5-test-assertions              ports/devel/p5-Test-Assertions
 p5-test-base                    ports/devel/p5-Test-Base
@@ -23553,6 +23559,7 @@ r-cran-reshape                  ports/devel/R-cran-reshape
 r-cran-reshape2                 ports/devel/R-cran-reshape2
 r-cran-rfinanceyj               ports/finance/R-cran-RFinanceYJ
 r-cran-rgdal                    ports/graphics/R-cran-rgdal
+r-cran-rjson                    ports/converters/R-cran-rjson
 r-cran-rjsonio                  ports/converters/R-cran-RJSONIO
 r-cran-rmysql                   ports/databases/R-cran-RMySQL
 r-cran-roauth                   ports/security/R-cran-ROAuth
@@ -24264,6 +24271,7 @@ rubygem-benelux                 ports/devel/rubygem-benelux
 rubygem-bigrecord               ports/databases/rubygem-bigrecord
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
+rubygem-bson                    ports/devel/rubygem-bson
 rubygem-bugspots                ports/devel/rubygem-bugspots
 rubygem-builder                 ports/devel/rubygem-builder
 rubygem-bundler                 ports/sysutils/rubygem-bundler
@@ -25142,6 +25150,7 @@ simd-viterbi                    ports/math/simd-viterbi
 simdock                         ports/x11/simdock
 simgear                         ports/devel/simgear
 simh                            ports/emulators/simh
+simian                          ports/devel/simian
 simlib                          ports/science/simlib
 simple-ccsm                     ports/x11-wm/simple-ccsm
 simpleagenda                    ports/deskutils/simpleagenda
