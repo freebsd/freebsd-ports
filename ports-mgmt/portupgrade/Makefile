@@ -13,6 +13,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	pkgtools-${DISTVERSION}
 
+# note: ruby@ prefers not to have PRs about portupgrade assigned to them
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FreeBSD ports/packages administration and management tool suite
 
