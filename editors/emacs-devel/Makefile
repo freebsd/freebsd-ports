@@ -7,7 +7,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
@@ -27,8 +26,8 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-EMACS_VER=	24.0.90
-EMACS_REV=	106240
+EMACS_VER=	24.0.93
+EMACS_REV=	107364
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NCURSES=	yes
@@ -157,11 +156,7 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .if defined(WITHOUT_GIF)
 CONFIGURE_ARGS+=	--without-gif
 .else
-. if exists(${LOCALBASE}/lib/libgif.so)
 LIB_DEPENDS+=   gif.5:${PORTSDIR}/graphics/giflib
-. else
-LIB_DEPENDS+=   ungif.5:${PORTSDIR}/graphics/libungif
-. endif
 .endif
 
 .if defined(WITHOUT_PNG)

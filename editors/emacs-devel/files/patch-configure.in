@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- configure.in.orig
 +++ configure.in
-@@ -1167,39 +1167,10 @@
+@@ -1169,39 +1169,10 @@
    AC_CHECK_LIB(ossaudio, _oss_ioctl, LIBSOUND=-lossaudio, LIBSOUND=)
    AC_SUBST(LIBSOUND)
  
@@ -12,9 +12,9 @@ $FreeBSD$
 -  PKG_CHECK_MODULES(ALSA, $ALSA_MODULES, HAVE_ALSA=yes, HAVE_ALSA=no)
 -  if test $HAVE_ALSA = yes; then
 -    SAVE_CFLAGS="$CFLAGS"
--    SAVE_LDFLAGS="$LDFLAGS"
+-    SAVE_LIBS="$LIBS"
 -    CFLAGS="$ALSA_CFLAGS $CFLAGS"
--    LDFLAGS="$ALSA_LIBS $LDFLAGS"
+-    LIBS="$ALSA_LIBS $LIBS"
 -    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <asoundlib.h>]], [[snd_lib_error_set_handler (0);]])],
 -                    emacs_alsa_normal=yes,
 -	            emacs_alsa_normal=no)
@@ -30,7 +30,7 @@ $FreeBSD$
 -    fi
 -
 -    CFLAGS="$SAVE_CFLAGS"
--    LDFLAGS="$SAVE_LDFLAGS"
+-    LIBS="$SAVE_LIBS"
 -    LIBSOUND="$LIBSOUND $ALSA_LIBS"
 -    CFLAGS_SOUND="$CFLAGS_SOUND $ALSA_CFLAGS"
 -    AC_DEFINE(HAVE_ALSA, 1, [Define to 1 if ALSA is available.])
@@ -44,7 +44,7 @@ $FreeBSD$
       case "$opsys" in
         dnl defined __FreeBSD__ || defined __NetBSD__ || defined __linux__
         gnu-linux|freebsd|netbsd)
-@@ -1216,7 +1187,7 @@
+@@ -1218,7 +1189,7 @@
    linux/version.h sys/systeminfo.h \
    stdio_ext.h fcntl.h coff.h pty.h sys/mman.h \
    sys/vlimit.h sys/resource.h locale.h sys/_mbstate_t.h \

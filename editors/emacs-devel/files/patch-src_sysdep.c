@@ -3,21 +3,28 @@ $FreeBSD$
 
 --- src/sysdep.c.orig
 +++ src/sysdep.c
-@@ -37,6 +37,13 @@
+@@ -37,6 +37,20 @@
  #include "sysselect.h"
  #include "blockinput.h"
  
 +#ifdef __FreeBSD__
 +#include <sys/sysctl.h>
++/* machine/frame.h in Sparc has 'struct frame' which conflicts with Emacs' 'struct frame', so rename it */
++#ifdef __sparc__ 
++#define frame freebsd_sparc_frame
++#endif
 +#include <sys/user.h>
-+#include <sys/resource.h> */
++#ifdef __sparc__ 
++#undef frame
++#endif
++#include <sys/resource.h>
 +#include <math.h>
 +#endif
 +
  #ifdef WINDOWSNT
  #define read sys_read
  #define write sys_write
-@@ -2529,6 +2536,40 @@
+@@ -2529,6 +2543,40 @@
    return proclist;
  }
  
@@ -58,7 +65,7 @@ $FreeBSD$
  /* The WINDOWSNT implementation is in w32.c.
     The MSDOS implementation is in dosfns.c.  */
  #elif !defined (WINDOWSNT) && !defined (MSDOS)
-@@ -3079,6 +3120,176 @@
+@@ -3079,6 +3127,176 @@
    return attrs;
  }
  
