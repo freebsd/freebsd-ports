@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dmitry@karasik.eu.org
 COMMENT=	An extensible Perl toolkit for multi-platform GUI development
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
