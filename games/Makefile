@@ -712,6 +712,7 @@
     SUBDIR += qstat
     SUBDIR += qtv
     SUBDIR += quackle
+    SUBDIR += quadra
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
     SUBDIR += quake-extras
