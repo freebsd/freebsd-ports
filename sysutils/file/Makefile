@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	5.10
+PORTVERSION=	5.11
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
