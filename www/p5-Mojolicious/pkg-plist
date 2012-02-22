@@ -62,8 +62,6 @@
 %%SITE_PERL%%/Mojolicious/Command/eval.pm
 %%SITE_PERL%%/Mojolicious/Command/generate.pm
 %%SITE_PERL%%/Mojolicious/Command/generate/app.pm
-%%SITE_PERL%%/Mojolicious/Command/generate/gitignore.pm
-%%SITE_PERL%%/Mojolicious/Command/generate/hypnotoad.pm
 %%SITE_PERL%%/Mojolicious/Command/generate/lite_app.pm
 %%SITE_PERL%%/Mojolicious/Command/generate/makefile.pm
 %%SITE_PERL%%/Mojolicious/Command/generate/plugin.pm

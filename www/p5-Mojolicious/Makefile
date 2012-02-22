@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	2.46
+PORTVERSION=	2.51
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -86,8 +86,6 @@ MAN3=		Mojo.3 \
 		Mojolicious::Command::eval.3 \
 		Mojolicious::Command::generate.3 \
 		Mojolicious::Command::generate::app.3 \
-		Mojolicious::Command::generate::gitignore.3 \
-		Mojolicious::Command::generate::hypnotoad.3 \
 		Mojolicious::Command::generate::lite_app.3 \
 		Mojolicious::Command::generate::makefile.3 \
 		Mojolicious::Command::generate::plugin.3 \
