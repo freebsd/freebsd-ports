@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for exceptions that don\'t hurt
 
+TEST_DEPENDS=	p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Ouch.3
