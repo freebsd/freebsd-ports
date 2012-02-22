@@ -1,4 +1,5 @@
 lib/kde4/plasma_applet_adjustableclock.so
+share/apps/adjustableclock/themes.xml
 share/kde4/services/plasma-applet-adjustableclock.desktop
 share/locale/de/LC_MESSAGES/plasma_applet_adjustableclock.mo
 share/locale/et/LC_MESSAGES/plasma_applet_adjustableclock.mo
@@ -8,3 +9,4 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_adjustableclock.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_adjustableclock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_adjustableclock.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_adjustableclock.mo
+@dirrm share/apps/adjustableclock
