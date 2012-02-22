@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	radns
-PORTVERSION=	20110809
+PORTVERSION=	20110809.2
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 CATEGORIES=	dns
 MASTER_SITES=	http://hack.org/mc/hacks/radns/
 
@@ -28,22 +29,15 @@ MAN8=		radns.8
 
 PORTDOCS=	LICENSE README README.FreeBSD NEWS
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/NEWS ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
