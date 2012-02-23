@@ -7,6 +7,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 
@@ -20,7 +21,7 @@ NO_CDROM=	cannot be redistributed for more than the cost of duplication
 NO_PACKAGE=	requires local database to be built
 USE_PERL5_BUILD=yes
 
-TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
+TWCONFIG?=	${FILESDIR}/tw.conf.freebsd8
 
 post-extract:
 	@ (cd ${WRKDIR}; tar xpf T1.2.tar)
@@ -33,9 +34,7 @@ post-patch:
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
-	@ ${SED} s%/kernel%`/sbin/sysctl -bn kern.bootfile`% \
-		< ${TWCONFIG} \
-		> ${WRKSRC}/configs/tw.conf.freebsd2
+	@ ${cp} ${TWCONFIG} ${WRKSRC}/configs/tw.conf.freebsd8
 
 post-install:
 	@ ${MKDIR} /var/adm/tcheck
