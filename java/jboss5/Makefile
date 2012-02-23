@@ -33,9 +33,7 @@ USE_RC_SUBR=	jboss5.sh
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 
 PORTDATA=	*
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
 VAR_DIR?=	/var
 LOG_DIR?=	${VAR_DIR}/log/${UNIQUENAME}
