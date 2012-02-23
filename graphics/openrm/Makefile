@@ -21,6 +21,8 @@ COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		does not build
+
 WRKSRC=		${WRKDIR}/rm${PORTVERSION:S/.//g}
 .ifdef (WITH_DEMOS)
 WRKSRC2=	${WRKDIR}/rmdemo
