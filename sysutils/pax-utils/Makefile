@@ -27,6 +27,12 @@ PORTDOCS=	BUGS README TODO
 
 MAN1=		dumpelf.1 pspax.1 scanelf.1 scanmacho.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800076
+BROKEN=	Does not build
+.endif
+
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
