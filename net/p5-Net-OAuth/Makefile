@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Net-OAuth
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,8 +24,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN3=	Net::OAuth.3 \
+	Net::OAuth::AccessToken.3 \
 	Net::OAuth::AccessTokenRequest.3 \
 	Net::OAuth::AccessTokenResponse.3 \
+	Net::OAuth::Client.3 \
 	Net::OAuth::ConsumerRequest.3 \
 	Net::OAuth::Message.3 \
 	Net::OAuth::ProtectedResourceRequest.3 \
@@ -35,6 +36,7 @@ MAN3=	Net::OAuth.3 \
 	Net::OAuth::RequestTokenResponse.3 \
 	Net::OAuth::Response.3 \
 	Net::OAuth::SignatureMethod::HMAC_SHA1.3 \
+	Net::OAuth::SignatureMethod::HMAC_SHA256.3 \
 	Net::OAuth::SignatureMethod::PLAINTEXT.3 \
 	Net::OAuth::SignatureMethod::RSA_SHA1.3 \
 	Net::OAuth::UserAuthRequest.3 \
