@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Net/OAuth.pm
+%%SITE_PERL%%/Net/OAuth/AccessToken.pm
 %%SITE_PERL%%/Net/OAuth/AccessTokenRequest.pm
 %%SITE_PERL%%/Net/OAuth/AccessTokenResponse.pm
+%%SITE_PERL%%/Net/OAuth/Client.pm
 %%SITE_PERL%%/Net/OAuth/ConsumerRequest.pm
 %%SITE_PERL%%/Net/OAuth/Message.pm
 %%SITE_PERL%%/Net/OAuth/ProtectedResourceRequest.pm
@@ -9,6 +11,7 @@
 %%SITE_PERL%%/Net/OAuth/RequestTokenResponse.pm
 %%SITE_PERL%%/Net/OAuth/Response.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
+%%SITE_PERL%%/Net/OAuth/SignatureMethod/HMAC_SHA256.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/PLAINTEXT.pm
 %%SITE_PERL%%/Net/OAuth/SignatureMethod/RSA_SHA1.pm
 %%SITE_PERL%%/Net/OAuth/UserAuthRequest.pm
