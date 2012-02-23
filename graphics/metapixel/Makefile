@@ -18,7 +18,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		gif.5:${PORTSDIR}/graphics/giflib
 
-BROKEN		does not build with giflib
+BROKEN=		does not build with giflib
 
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I.
