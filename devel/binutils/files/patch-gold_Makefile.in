@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- gold/Makefile.in.orig
++++ gold/Makefile.in
+@@ -368,7 +368,6 @@
+ 	@INCINTL@
+ 
+ LIBIBERTY = ../libiberty/libiberty.a
+-@PLUGINS_TRUE@LIBDL = -ldl
+ @THREADS_TRUE@THREADSLIB = -lpthread
+ AM_YFLAGS = -d

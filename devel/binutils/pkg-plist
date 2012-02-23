@@ -6,6 +6,7 @@ bin/elfedit
 bin/gprof
 bin/ld
 bin/ld.bfd
+%%GOLD%%bin/ld.gold
 bin/nm
 bin/objcopy
 bin/objdump
@@ -18,6 +19,7 @@ include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
 include/dis-asm.h
+%%GOLD%%include/plugin-api.h
 include/symcat.h
 lib/libbfd.a
 lib/libbfd.la
