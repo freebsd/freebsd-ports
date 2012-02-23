@@ -54,8 +54,10 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HEADERS_MORE_MODULE	"3rd party headers_more module" off \
 		HTTP_ACCEPT_LANGUAGE	"3rd party accept_language module" off \
 		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
+		HTTP_AUTH_DIGEST_MODULE	"3rd party http_authdigest module" off \
 		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
 		HTTP_AUTH_REQ_MODULE	"3rd party http_auth_request module" off \
+		HTTP_DAV_EXT_MODULE	"3rd party webdav_ext module" off \
 		HTTP_EVAL_MODULE	"3rd party eval module" off \
 		HTTP_FANCYINDEX_MODULE	"3rd party http_fancyindex module" off \
 		HTTP_GUNZIP_FILTER	"3rd party http_gunzip_filter module" off \
@@ -189,6 +191,14 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_
 CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
+.if defined(WITH_HTTP_AUTH_DIGEST_MODULE)
+GIT_AUTH_DIGEST_MODULE_VERSION=	bd1c86a
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/samizdatco/nginx-http-auth-digest/tarball/master/:auth_digest
+DISTFILES+=	samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_MODULE_VERSION}.tar.gz:auth_digest
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/samizdatco-nginx-http-auth-digest-${GIT_AUTH_DIGEST_MODULE_VERSION}
+.endif
+
 .if defined(WITH_HTTP_AUTH_PAM_MODULE)
 NGINX_AUTH_PAM_MODULE_VERSION=	1.2
 MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
@@ -234,6 +244,16 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_H
 
 .if defined(WITH_HTTP_DAV_MODULE)
 CONFIGURE_ARGS+=--with-http_dav_module
+.endif
+
+.if defined(WITH_HTTP_DAV_EXT_MODULE)
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+NGINX_DAV_EXT_MODULE_VERSION=	0.0.2
+GIT_DAV_EXT_MODULE_VERSION=	0-g0e07a3e
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/arut/nginx-dav-ext-module/tarball/v${NGINX_DAV_EXT_MODULE_VERSION}/:dav_ext
+DISTFILES+=	arut-nginx-dav-ext-module-v${NGINX_DAV_EXT_MODULE_VERSION}-${GIT_DAV_EXT_MODULE_VERSION}.tar.gz:dav_ext
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-dav-ext-module-${GIT_DAV_EXT_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_HTTP_EVAL_MODULE)
