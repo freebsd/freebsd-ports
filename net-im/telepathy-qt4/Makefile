@@ -35,6 +35,8 @@ PORTEXAMPLES=	Makefile accounts contact-messenger extensions \
 		file-transfer protocols roster stream-tubes
 
 pre-configure:
+	${REINPLACE_CMD} -e '/FIND_PROGRAM/ s/qmake //' \
+		${WRKSRC}/cmake/modules/FindQt.cmake
 	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
 		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e '/^add_dependencies(doxygen-doc / d' \
