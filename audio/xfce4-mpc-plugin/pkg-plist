@@ -1,4 +1,6 @@
-libexec/xfce4/panel-plugins/xfce4-mpc-plugin
+lib/xfce4/panel/plugins/libmpc.a
+lib/xfce4/panel/plugins/libmpc.la
+lib/xfce4/panel/plugins/libmpc.so
 share/locale/ar/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-mpc-plugin.mo
@@ -16,10 +18,11 @@ share/locale/id/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-mpc-plugin.mo
-share/locale/ru/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/ru/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-mpc-plugin.mo
@@ -29,7 +32,8 @@ share/locale/uk/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mpc-plugin.mo
-share/xfce4/panel-plugins/xfce4-mpc-plugin.desktop
+share/locale/zh_TW/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/xfce4/panel/plugins/xfce4-mpc-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
