@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO_SWF
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	graphics www pear
 MASTER_SITES=	http://openpear.org/get/ \
 		LOCAL
@@ -61,7 +61,8 @@ EXAMPLES=	get_bitmapsize.php jpeg_dump.php \
 		swfdecompile.php swfdeformeshape.php \
 		swfdeleteaction.php swfdump.php swfframerate.php \
 		swfgeteditstring.php swfgetmovieclip.php \
-		swfheader.php swflistmovieclip.php swfrebuild.php \
+		swfheader.php swflistaction.php \
+		swflistmovieclip.php swfrebuild.php \
 		swfreplaceactionstrings.php \
 		swfreplacebitmapdata.php swfreplaceeditstring.php \
 		swfreplacemovieclip.php swfselectbycids.php \
