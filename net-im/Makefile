@@ -173,10 +173,10 @@
     SUBDIR += tkabber-devel
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur
-    SUBDIR += turpial
     SUBDIR += tmsnc
     SUBDIR += trix
     SUBDIR += ttytter
+    SUBDIR += turpial
     SUBDIR += twirssi
     SUBDIR += twitmail
     SUBDIR += vacuum-im

@@ -3780,8 +3780,8 @@
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-test
     SUBDIR += rubygem-test-unit
-    SUBDIR += rubygem-thrift
     SUBDIR += rubygem-thor
+    SUBDIR += rubygem-thrift
     SUBDIR += rubygem-tilt
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-transactionsimple
