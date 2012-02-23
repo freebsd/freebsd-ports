@@ -20,9 +20,9 @@ etc/davmail.properties.sample
 %%JAVASHAREDIR%%/davmail/lib/htmlcleaner-2.1.jar
 %%JAVASHAREDIR%%/davmail/lib/xercesImpl-2.8.1.jar
 %%JAVASHAREDIR%%/davmail/lib/commons-httpclient-3.1.jar
-%%JAVASHAREDIR%%/davmail/lib/woodstox-core-asl-4.0.9.jar
+%%JAVASHAREDIR%%/davmail/lib/woodstox-core-asl-4.1.2.jar
 %%JAVASHAREDIR%%/davmail/lib/stax-api-1.0.1.jar
-%%JAVASHAREDIR%%/davmail/lib/stax2-api-3.0.3.jar
+%%JAVASHAREDIR%%/davmail/lib/stax2-api-3.1.1.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/classes/davmail.properties
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/davmail.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/libgrowl-0.2.jar
@@ -43,8 +43,8 @@ etc/davmail.properties.sample
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-codec-1.3.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-logging-1.0.4.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/stax-api-1.0.1.jar
-%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/stax2-api-3.0.3.jar
-%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/woodstox-core-asl-4.0.9.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/stax2-api-3.1.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/woodstox-core-asl-4.1.2.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/web.xml
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/MacOS/davmail
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/activation-1.1.1.jar
@@ -67,8 +67,8 @@ etc/davmail.properties.sample
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/xercesImpl-2.8.1.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/davmail.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/stax-api-1.0.1.jar
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/stax2-api-3.0.3.jar
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/woodstox-core-asl-4.0.9.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/stax2-api-3.1.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/woodstox-core-asl-4.1.2.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/tray.icns
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Info.plist
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/PkgInfo
