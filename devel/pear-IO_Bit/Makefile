@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO_Bit
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=     devel pear
 MASTER_SITES=	http://openpear.org/get/ \
 		LOCAL
