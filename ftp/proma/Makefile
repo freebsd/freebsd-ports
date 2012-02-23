@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Administrate a ProFTPd server storing users in a MySQL database
 
+BROKEN=		define an @exec depending on %F and %B before any files defined
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
