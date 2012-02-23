@@ -1003,4 +1003,3 @@ lib/ocaml/weak.mli
 @dirrm lib/ocaml/camlp4
 @dirrm lib/ocaml/caml
 @comment lib/ocaml will be added by Makefile
-@dirrmtry lib/ocaml

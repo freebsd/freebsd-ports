@@ -192,5 +192,6 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/compiler-lib" >> ${TMPPLIST}
 .endif
+	@${ECHO_CMD} "@unexec rmdir "%D/lib/ocaml" 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
