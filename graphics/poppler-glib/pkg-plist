@@ -29,6 +29,7 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/api-index-0-12.html
 %%DOCSDIR%%/poppler/api-index-0-14.html
 %%DOCSDIR%%/poppler/api-index-0-16.html
+%%DOCSDIR%%/poppler/api-index-0-18.html
 %%DOCSDIR%%/poppler/api-index-deprecated.html
 %%DOCSDIR%%/poppler/api-index-full.html
 %%DOCSDIR%%/poppler/ch01.html
@@ -39,7 +40,6 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/poppler-PopplerAction.html
 %%DOCSDIR%%/poppler/poppler-Version-and-Features-Information.html
 %%DOCSDIR%%/poppler/poppler-poppler.html
-%%DOCSDIR%%/poppler/poppler.devhelp
 %%DOCSDIR%%/poppler/poppler.devhelp2
 %%DOCSDIR%%/poppler/right.png
 %%DOCSDIR%%/poppler/style.css
