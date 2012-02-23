@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	suricata
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
-MAINTAINER=	eksffa@freebsdbrasil.com.br
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Open Source next generation IDS/IPS engine by OISF
 
 LICENSE=	GPLv2
