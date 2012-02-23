@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pastebinit
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	misc python
-MASTER_SITES=	http://launchpadlibrarian.net/63157878/
+MASTER_SITES=	https://launchpadlibrarian.net/93013084/
 
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A command line utility for pastebing
@@ -27,12 +27,6 @@ OPTIONS=	PASTEBINS	"Install default pastebins" on
 .if defined(WITH_PASTEBINS)
 PORTDATA=	pastebin.d
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' \
-	${WRKSRC}/${PORTNAME}
-	@${REINPLACE_CMD} -e 's#/etc/#${DATADIR}/#g' \
-	${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
