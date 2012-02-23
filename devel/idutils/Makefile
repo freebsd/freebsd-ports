@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	idutils
-PORTVERSION=	4.5
+PORTVERSION=	4.6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -16,7 +16,6 @@ COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 CONFLICTS=	coreutils-[0-9]* linux-gid-[0-9]* sh-utils-[0-9]*
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
