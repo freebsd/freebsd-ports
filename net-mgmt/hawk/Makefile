@@ -63,6 +63,9 @@ post-install:
 	@${ECHO} '******************************************************************************' > ${PKGMESSAGE}
 	@${ECHO} '***    See ${PREFIX}/share/doc/hawk/create_hawk* for instructions on	   ***' >> ${PKGMESSAGE}
 	@${ECHO} '***    creating the database and user that the PHP code expects.	   ***' >> ${PKGMESSAGE}
+	@${ECHO} '***									   ***' >> ${PKGMESSAGE}
+	@${ECHO} '***    Copy daemon.conf.sample and php.conf.sample to their non-sample     ***' >> ${PKGMESSAGE}
+	@${ECHO} '***    names in ${PREFIX}/etc/hawk, and configure local networks, etc.    ***' >> ${PKGMESSAGE}
 	@${ECHO} '******************************************************************************' >> ${PKGMESSAGE}
 
 	@${CAT} ${PKGMESSAGE}
