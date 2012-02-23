@@ -49,6 +49,7 @@
     SUBDIR += apr1
     SUBDIR += apr2
     SUBDIR += arduino
+    SUBDIR += arduino-mk
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
