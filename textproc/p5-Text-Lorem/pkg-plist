@@ -1,0 +1,6 @@
+bin/lorem
+%%SITE_PERL%%/Text/Lorem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Lorem/.packlist
+@dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Lorem
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
