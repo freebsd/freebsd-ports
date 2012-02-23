@@ -1,0 +1,20 @@
+%%FONTDIR%%/Roboto-Black.ttf
+%%FONTDIR%%/Roboto-BlackItalic.ttf
+%%FONTDIR%%/Roboto-Bold.ttf
+%%FONTDIR%%/Roboto-BoldCondensed.ttf
+%%FONTDIR%%/Roboto-BoldCondensedItalic.ttf
+%%FONTDIR%%/Roboto-BoldItalic.ttf
+%%FONTDIR%%/Roboto-Condensed.ttf
+%%FONTDIR%%/Roboto-CondensedItalic.ttf
+%%FONTDIR%%/Roboto-Italic.ttf
+%%FONTDIR%%/Roboto-Light.ttf
+%%FONTDIR%%/Roboto-LightItalic.ttf
+%%FONTDIR%%/Roboto-Medium.ttf
+%%FONTDIR%%/Roboto-MediumItalic.ttf
+%%FONTDIR%%/Roboto-Regular.ttf
+%%FONTDIR%%/Roboto-Thin.ttf
+%%FONTDIR%%/Roboto-ThinItalic.ttf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTDIR%%
