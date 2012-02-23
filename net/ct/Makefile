@@ -10,10 +10,14 @@ PORTVERSION=	2.1.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/ct/
 
-MAINTAINER=	Yukiyo.Akisada@jp.yokogawa.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=		IPv6 Conformance Test Kit
 
 RUN_DEPENDS=	${LOCALBASE}/v6eval/bin/pktbuf:${PORTSDIR}/net/v6eval
+
+RESTRICTED=	permission to use withdrawn by authors; contact portmgr for details
+DEPRECATED=	${RESTRICTED}
+EXPIRATION_DATE=	2012-03-14
 
 USE_PERL5=      yes
 NO_BUILD=	yes
