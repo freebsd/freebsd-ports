@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	audio kde
 MASTER_SITES=	http://zyzstar.kosoru.com/projects/creox/downloads/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time sound processor
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_KDELIBS_VER=	3
+USE_KDELIBS_VER=3
 INSTALLS_ICONS=	yes
 
 post-patch:
