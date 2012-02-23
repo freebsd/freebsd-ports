@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://sites.google.com/site/daemonwizard/
 DISTNAME=	gwt-dev-plugin-${PORTVERSION}-partial
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Web Toolkit Developer Plugin for Firefox
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
