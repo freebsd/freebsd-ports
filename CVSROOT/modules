@@ -22053,6 +22053,7 @@ py-bsddb3                       ports/databases/py-bsddb3
 py-bulksms                      ports/comms/py-bulksms
 py-bytecodeassembler            ports/devel/py-BytecodeAssembler
 py-cairo                        ports/graphics/py-cairo
+py-carbon                       ports/databases/py-carbon
 py-cclib                        ports/devel/py-cclib
 py-cdb                          ports/databases/py-cdb
 py-cddb                         ports/audio/py-cddb
@@ -22256,6 +22257,7 @@ py-gozerbot                     ports/irc/py-gozerbot
 py-graph                        ports/graphics/py-graph
 py-graph-core                   ports/graphics/py-graph-core
 py-graph-dot                    ports/graphics/py-graph-dot
+py-graphite-web                 ports/www/py-graphite-web
 py-graphtool                    ports/math/py-graphtool
 py-graphviz                     ports/graphics/py-graphviz
 py-graphy                       ports/graphics/py-graphy
@@ -23430,6 +23432,7 @@ qtstalker                       ports/finance/qtstalker
 qtv                             ports/games/qtv
 qu-aspell                       ports/textproc/qu-aspell
 quackle                         ports/games/quackle
+quadra                          ports/games/quadra
 quagga                          ports/net/quagga
 quagga-re                       ports/net/quagga-re
 quake-data                      ports/games/quake-data
@@ -24481,6 +24484,7 @@ rubygem-mkrf                    ports/devel/rubygem-mkrf
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-moneta                  ports/devel/rubygem-moneta
 rubygem-money                   ports/finance/rubygem-money
+rubygem-mongo                   ports/devel/rubygem-mongo
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
@@ -24605,6 +24609,7 @@ rubygem-ruby-mp3info            ports/audio/rubygem-ruby-mp3info
 rubygem-ruby-ole                ports/devel/rubygem-ruby-ole
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
 rubygem-ruby-sdl-ffi            ports/devel/rubygem-ruby-sdl-ffi
+rubygem-ruby-statsd             ports/devel/rubygem-ruby-statsd
 rubygem-ruby-termios            ports/comms/rubygem-ruby-termios
 rubygem-ruby2ruby               ports/devel/rubygem-ruby2ruby
 rubygem-ruby_parser             ports/devel/rubygem-ruby_parser
