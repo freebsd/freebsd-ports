@@ -26,6 +26,8 @@ CONFIGURE_ARGS+=	--with-editres	\
 .if ${ARCH} != "i386"
 USE_GCC=4.2+
 IGNORE=		fails to run with: XCreateImage failed
+.else
+BROKEN=		does not build
 .endif
 
 .include <bsd.port.post.mk>
