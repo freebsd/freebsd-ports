@@ -7,6 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.12.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
@@ -21,12 +22,12 @@ COMMENT?=	The Objective Caml compiler and programming environment
 USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 ALL_TARGET=	world.opt
 STRIP=
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ARGS=	-prefix ${PREFIX}
+CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" -cc "${CC}" -as "${AS}" \
+		-aspp "${CC} -c" -partialld "${LD} -r"
 OPTIONS=	X11	"Build with X11 support" on \
 		TK	"Build LablTk library (requires X11 support)" on \
 		THREADS	"Build with Posix threads support" on \
@@ -52,8 +53,6 @@ PLIST_SUB+=	PROF=""
 
 .if !defined(WITHOUT_THREADS)
 PLIST_SUB+=	THREADS=""
-DEPENDS_ARGS+=	WITH_THREADS=yes
-CONFIGURE_ARGS+=-with-pthread
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD=		${PTHREAD_LIBS}
 .else
@@ -77,17 +76,24 @@ CONFIGURE_ARGS+=-no-x11
 
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "
+.if !defined(WITHOUT_X11)
 SFX=		-notk
 CONFLICTS+=	ocaml-[0-9]* ocaml-nox11-[0-9]*
+.endif
 CONFIGURE_ARGS+=-no-tk
 .else
 USE_TK=		84+
+INVALID_TK_VER =	86
+.if defined(WITH_THREADS)
+USE_TK_THREADS =	yes
+.endif
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 PLIST_SUB+=	TK=""
 CONFLICTS+=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
 CONFIGURE_ARGS+=	-tkdefs \
 			"-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} ${THR_CPP}" \
-			-tklibs "-L${LOCALBASE}/lib ${THR_LD}"
+			-tklibs "-L${LOCALBASE}/lib -ltk${TK_VER:S|.||}${_TCL_THREADS_SUFFIX} \
+			-ltcl${TCL_VER:S|.||}${_TCL_THREADS_SUFFIX} ${THR_LD}"
 .endif
 
 .if ${ARCH} == sparc64
@@ -99,13 +105,30 @@ post-extract:
 	${MV} ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e '\|MKLIB=|s|ar rc|${AR} rc|' \
+		-e '\|RANLIB|s|ranlib|${RANLIB}|' \
+		-e '\|bytecclinkopts=|s|""|"${LDFLAGS}"|' \
+		-e "\|nativecclinkopts=|s|''|\"${LDFLAGS:C/-Wl,//}\"|" \
+		-e '\|mksharedlib=|s|$$bytecc|& $$bytecclinkopts|' \
+		-e 's|-lbfd -ldl|-lbfd $$dllib|' \
+		${WRKSRC}/configure
+# don't hardcode gcc for depend target
+	@${REINPLACE_CMD} -e 's|gcc|$$(CC)|' \
+		${WRKSRC}/*/Makefile \
+		${WRKSRC}/*/*/Makefile
+.if defined(WITH_TK)
+	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|' \
+		${WRKSRC}/otherlibs/labltk/examples_labltk/hello.tcl
+.endif
+
 post-configure:
 # CFLAGS safeness
 	@${REINPLACE_CMD} -E \
 		-e 's|(BYTECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS} ${THR_CPP}|' \
 		-e 's|(NATIVECCCOMPOPTS[ \t]*=.*)|\1 ${CFLAGS} ${THR_CPP}|' \
 		-e '/^PTHREAD_LINK/s,-pthread,${THR_LD},g' \
-		-e 's|gcc|${CC}|g'	\
 		${WRKSRC}/config/Makefile
 
 # INSTALL* safeness (which preserves the correct permissions despite
@@ -117,6 +140,12 @@ post-configure:
 		-e 's,^(${PATTERN}+.*BINDIR),\1\$${BSD_INSTALL_PROGRAM} \4,' \
 		-e 's,^(${PATTERN}+.*LIBDIR),\1\$${BSD_INSTALL_DATA} \4,' \
 		-e 's,(${PATTERN}+.*(MANDIR|MANODIR|MANEXT)),\1\$${BSD_INSTALL_MAN} \4,'
+
+check test: install
+	@cd ${WRKSRC}/testsuite; ${RM} -f _log; for d in tests/* ; do \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} one DIR=$${d} \
+	2>&1 | tee -a _log || ${TRUE} ; done ; \
+	${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} report
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/ocaml/ocamldoc/custom/.keep
@@ -163,6 +192,5 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/compiler-lib" >> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} "@unexec rmdir "%D/lib/ocaml" 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
