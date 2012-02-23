@@ -7,6 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -14,9 +15,8 @@ MASTER_SITE_SUBDIR=	binutils/releases
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	GNU binary tools
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
@@ -25,14 +25,18 @@ CONFLICTS=	libbfd-[0-9]*
 
 OPTIONS=	NLS "Enable National Language Support" off
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
+
+USE_BISON=	build
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-system-zlib \
+			--with-sysroot=/ \
 			--disable-werror \
 			--with-gmp=${LOCALBASE} \
 			--with-mpfr=${LOCALBASE}
@@ -67,6 +71,14 @@ INFO=		as \
 
 .include <bsd.port.pre.mk>
 
+# Actual earliest version may differ slightly
+.if ${OSVERSION} >= 900044
+CONFIGURE_ARGS+=	--enable-gold --enable-plugins
+PLIST_SUB+=	GOLD=""
+.else
+PLIST_SUB+=	GOLD="@comment "
+.endif
+
 .if defined(WITH_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -80,6 +92,9 @@ ARCH=		x86_64
 .endif
 
 post-install:
+.if ${OSVERSION} >= 900044
+	${INSTALL_DATA} ${WRKSRC}/include/plugin-api.h ${PREFIX}/include/
+.endif
 	@${FIND} -ds ${PREFIX}/${CONFIGURE_TARGET} ! -type d | \
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${PREFIX}/${CONFIGURE_TARGET} -type d | \
