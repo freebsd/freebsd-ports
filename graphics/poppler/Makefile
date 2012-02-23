@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.4
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -102,6 +102,8 @@ LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-version-info 19:0:0|-version-info 18:0:0|g' \
+		${WRKSRC}/poppler/Makefile.in
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="qt4"
 	@${REINPLACE_CMD} -e 's|MOCQT4=`.*|MOCQT4="${LOCALBASE}/bin/moc-qt4"|' \
 		${WRKSRC}/configure
