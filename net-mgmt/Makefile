@@ -157,8 +157,8 @@
     SUBDIR += net-snmp
     SUBDIR += netams
     SUBDIR += netams-front
-    SUBDIR += netdisco-mibs
     SUBDIR += netdisco
+    SUBDIR += netdisco-mibs
     SUBDIR += netleak
     SUBDIR += netmask
     SUBDIR += netmond

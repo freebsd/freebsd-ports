@@ -1708,8 +1708,8 @@
     SUBDIR += rubygem-typhoeus
     SUBDIR += rubygem-uglifier
     SUBDIR += rubygem-unicorn
-    SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-url-mount
+    SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-yapra

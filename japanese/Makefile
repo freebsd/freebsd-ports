@@ -156,8 +156,8 @@
     SUBDIR += less
     SUBDIR += libicq
     SUBDIR += libjcode
-    SUBDIR += libslang
     SUBDIR += libskk
+    SUBDIR += libslang
     SUBDIR += libtomoe-gtk
     SUBDIR += lipsf
     SUBDIR += lookup
