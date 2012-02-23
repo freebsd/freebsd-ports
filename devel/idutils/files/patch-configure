@@ -1,20 +1,47 @@
---- configure.old	2011-03-28 08:15:17.000000000 +1100
-+++ configure	2011-03-28 08:15:47.000000000 +1100
-@@ -8239,7 +8239,7 @@
-                   || close (fd) != 0
-                   || stat (file, &st1) != 0
-                   || st0.st_atime != st1.st_atime)
--                status |= 64;
-+                status |= 0;
-             }
-             return status;
-   ;
-@@ -14722,8 +14722,6 @@
-            linux*) # On linux between 2008-07-27 and 2009-05-11, dup2 of a
-                    # closed fd may yield -EBADF instead of -1 / errno=EBADF.
-              gl_cv_func_dup2_works=no;;
--           freebsd*) # on FreeBSD 6.1, dup2(1,1000000) gives EMFILE, not EBADF.
--             gl_cv_func_dup2_works=no;;
-            *) gl_cv_func_dup2_works=yes;;
-          esac
- else
+--- configure.old	2012-02-03 21:41:35.000000000 +1100
++++ configure	2012-02-11 11:08:46.027072843 +1100
+@@ -8935,7 +8935,7 @@
+                                  # Guess yes on glibc systems.
+            *-gnu*)               gl_cv_func_printf_sizes_c99="guessing yes";;
+                                  # Guess yes on FreeBSD >= 5.
+-           freebsd[1-4]*)        gl_cv_func_printf_sizes_c99="guessing no";;
++           freebsd[1-4].*)       gl_cv_func_printf_sizes_c99="guessing no";;
+            freebsd* | kfreebsd*) gl_cv_func_printf_sizes_c99="guessing yes";;
+                                  # Guess yes on MacOS X >= 10.3.
+            darwin[1-6].*)        gl_cv_func_printf_sizes_c99="guessing no";;
+@@ -9077,7 +9077,7 @@
+                                  # Guess yes on glibc systems.
+            *-gnu*)               gl_cv_func_printf_infinite="guessing yes";;
+                                  # Guess yes on FreeBSD >= 6.
+-           freebsd[1-5]*)        gl_cv_func_printf_infinite="guessing no";;
++           freebsd[1-5].*)       gl_cv_func_printf_infinite="guessing no";;
+            freebsd* | kfreebsd*) gl_cv_func_printf_infinite="guessing yes";;
+                                  # Guess yes on MacOS X >= 10.3.
+            darwin[1-6].*)        gl_cv_func_printf_infinite="guessing no";;
+@@ -9476,7 +9476,7 @@
+                                          # Guess yes on glibc systems.
+                    *-gnu*)               gl_cv_func_printf_infinite_long_double="guessing yes";;
+                                          # Guess yes on FreeBSD >= 6.
+-                   freebsd[1-5]*)        gl_cv_func_printf_infinite_long_double="guessing no";;
++                   freebsd[1-5].*)       gl_cv_func_printf_infinite_long_double="guessing no";;
+                    freebsd* | kfreebsd*) gl_cv_func_printf_infinite_long_double="guessing yes";;
+                                          # Guess yes on HP-UX >= 11.
+                    hpux[7-9]* | hpux10*) gl_cv_func_printf_infinite_long_double="guessing no";;
+@@ -9904,7 +9904,7 @@
+                                  # Guess yes on glibc systems.
+            *-gnu*)               gl_cv_func_printf_directive_f="guessing yes";;
+                                  # Guess yes on FreeBSD >= 6.
+-           freebsd[1-5]*)        gl_cv_func_printf_directive_f="guessing no";;
++           freebsd[1-5].*)       gl_cv_func_printf_directive_f="guessing no";;
+            freebsd* | kfreebsd*) gl_cv_func_printf_directive_f="guessing yes";;
+                                  # Guess yes on MacOS X >= 10.3.
+            darwin[1-6].*)        gl_cv_func_printf_directive_f="guessing no";;
+@@ -11264,7 +11264,7 @@
+                                  # Guess yes on glibc systems.
+            *-gnu*)               gl_cv_func_snprintf_retval_c99="guessing yes";;
+                                  # Guess yes on FreeBSD >= 5.
+-           freebsd[1-4]*)        gl_cv_func_snprintf_retval_c99="guessing no";;
++           freebsd[1-4].*)       gl_cv_func_snprintf_retval_c99="guessing no";;
+            freebsd* | kfreebsd*) gl_cv_func_snprintf_retval_c99="guessing yes";;
+                                  # Guess yes on MacOS X >= 10.3.
+            darwin[1-6].*)        gl_cv_func_snprintf_retval_c99="guessing no";;
