@@ -2516,6 +2516,7 @@
     SUBDIR += p5-Test-Inter
     SUBDIR += p5-Test-JSON
     SUBDIR += p5-Test-Kwalitee
+    SUBDIR += p5-Test-Lazy
     SUBDIR += p5-Test-LeakTrace
     SUBDIR += p5-Test-LectroTest
     SUBDIR += p5-Test-LoadAllModules
