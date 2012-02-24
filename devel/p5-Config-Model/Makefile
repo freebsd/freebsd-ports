@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.004
+PORTVERSION=	2.005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,7 +45,7 @@ TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.10+
 
 MAN1=		cme.1 config-edit.1
 MAN3=		Config::Model.3 \
@@ -164,4 +164,11 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Multistrap::Section.3 \
 		Config::Model::models::PopCon.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
+RUN_DEPENDS+=	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
+.endif
+
+.include <bsd.port.post.mk>
