@@ -18,6 +18,10 @@ COMMENT=	A Ruby library to use LV's encoding conversion engine
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${LV_PORT}:configure
 
+DEPRECATED=	upstream no longer has this
+EXPIRATION_DATE=	2012-03-14
+BROKEN=	has not patched in quite some time
+
 LV_PORT=	misc/lv
 LV_WRKSRC_CMD=	cd ${PORTSDIR}/${LV_PORT} && ${MAKE} -V WRKSRC
 
