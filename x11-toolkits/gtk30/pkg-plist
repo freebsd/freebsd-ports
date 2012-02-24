@@ -648,7 +648,7 @@ share/themes/Raleigh/gtk-3.0/gtk.css
 @dirrmtry lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @dirrmtry lib/gtk-3.0/%%GTK3_VERSION%%
 @dirrmtry lib/gtk-3.0
-@exec %D/bin/gtk-query-immodules-3.0 > /dev/null 2>&1 && %D/bin/gtk-query-immodules-3.0 > %D/lib/gkt-3.0/%%GTK3_VERSION%%/immodules.cache 2>/dev/null || /usr/bin/true
+@exec %D/bin/gtk-query-immodules-3.0 > /dev/null 2>&1 && %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache 2>/dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES
