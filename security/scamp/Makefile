@@ -5,24 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	scamp
-PORTVERSION=	5.3a
+PORTVERSION=	5.3b
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Download & Install additional definition files for Clamav
 
-RUN_DEPENDS=	bash>=4.1.9:${PORTSDIR}/shells/bash \
-		clamav>=0.96.4:${PORTSDIR}/security/clamav \
-		gnupg>=2.0.16_2:${PORTSDIR}/security/gnupg \
-		rsync>=3.0.7:${PORTSDIR}/net/rsync
-
 LICENSE=	BSD
 
+RUN_DEPENDS=	bash>=4.2.20:${PORTSDIR}/shells/bash \
+		clamav>=0.97.3_1:${PORTSDIR}/security/clamav \
+		gnupg>=2.0.18_1:${PORTSDIR}/security/gnupg \
+		rsync>=3.0.9:${PORTSDIR}/net/rsync
+
 .if exists (${LOCALBASE}/bin/wget) && ! exists (${LOCALBASE}/bin/curl)
-RUN_DEPENDS+=	wget>=1.12_2:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	wget>=1.13.4_1:${PORTSDIR}/ftp/wget
 .else
-RUN_DEPENDS+=	curl>=7.21.1:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl>=7.21.3_2:${PORTSDIR}/ftp/curl
 .endif
 
 NO_BUILD=	yes
