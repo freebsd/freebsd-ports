@@ -61,7 +61,7 @@ PLIST_FILES=	bin/dvbcut
 #		${RM} ${WRKSRC}/src/mplayererrorbase.h
 
 pre-patch:
-		cd ${WRKSRC} && uudecode -o /dev/stdout ${FILESDIR}/use-qt4.diff.bz2.uu | ${BZCAT} | ${PATCH} -p2
+		cd ${WRKSRC} && ${BZCAT} ${FILESDIR}/use-qt4.diff.bz2 | ${PATCH} -p2
 .endif
 
 do-install:
