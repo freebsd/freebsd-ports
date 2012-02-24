@@ -7,7 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	65
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
@@ -134,7 +134,7 @@ CONFIGURE_ARGS+=	--disable-avahi
 
 .if !defined(WITHOUT_LIBBLURAY)
 CONFIGURE_ARGS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray.0:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray.1:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-libbluray
 .endif

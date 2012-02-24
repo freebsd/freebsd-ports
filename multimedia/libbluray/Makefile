@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libbluray
-PORTVERSION=	0.2.20110219
+PORTVERSION=	0.2.1
+PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/libbluray/0.2.1/
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Blu-Ray discs playback library for media players
@@ -20,6 +21,7 @@ LIB_DEPENDS+=	aacs.0:${PORTSDIR}/multimedia/libaacs
 # libiconv.so.3
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 
 HAS_CONFIGURE=	yes

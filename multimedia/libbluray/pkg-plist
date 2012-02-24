@@ -1,4 +1,6 @@
+include/libbluray/bluray-version.h
 include/libbluray/bluray.h
+include/libbluray/clpi_data.h
 include/libbluray/filesystem.h
 include/libbluray/keys.h
 include/libbluray/log_control.h
@@ -7,6 +9,6 @@ include/libbluray/overlay.h
 lib/libbluray.a
 lib/libbluray.la
 lib/libbluray.so
-lib/libbluray.so.0
+lib/libbluray.so.1
 libdata/pkgconfig/libbluray.pc
 @dirrm include/libbluray
