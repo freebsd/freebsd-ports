@@ -182,7 +182,8 @@ MASTER_SITE_DEBIAN_NON_US+=	\
 	ftp://ftp2.de.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.snt.utwente.nl/pub/linux/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.df.lth.se/pub/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.acc.umu.se/debian-non-US/%SUBDIR%/
+	ftp://ftp.acc.umu.se/debian-non-US/%SUBDIR%/ \
+	ftp://mirror.symnds.com/debian-non-US/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN_POOL)
