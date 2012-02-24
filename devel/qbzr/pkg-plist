@@ -105,6 +105,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/i18n.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/i18n.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/i18n.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ignore.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ignore.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ignore.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/info.pyo
@@ -189,6 +192,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/compatibility.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/compatibility.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/compatibility.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.pyo
@@ -345,6 +351,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/tab_width_selector.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/tab_width_selector.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/tab_width_selector.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/texteditaccessory.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/texteditaccessory.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/texteditaccessory.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/toolbars.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/toolbars.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/widgets/toolbars.pyo
