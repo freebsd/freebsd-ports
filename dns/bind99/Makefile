@@ -11,7 +11,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind99
-PORTVERSION=	9.9.0.rc3
+PORTVERSION=	9.9.0.rc4
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
@@ -25,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and DNS64
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.0rc3
+ISCVERSION=	9.9.0rc4
 
 MAKE_JOBS_UNSAFE=	yes
 
