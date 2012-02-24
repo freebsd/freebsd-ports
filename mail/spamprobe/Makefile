@@ -7,14 +7,14 @@
 # Available options for this port:
 # WITHOUT_PBL   - disable support for PBL database storage
 # WITHOUT_BDB   - disable support for BDB database storage
-# WITHOUT_UNGIF - disable analysis of image attachments using libungif
+# WITHOUT_GIF   - disable analysis of image attachments using giflib
 # WITHOUT_PNG   - disable analysis of image attachments using libpng
 # WITHOUT_JPEG  - disable analysis of image attachments using libjpeg
 #
 
 PORTNAME=	spamprobe
 PORTVERSION=	1.4d
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -43,11 +43,11 @@ CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -DUSE_DB=1
 LDFLAGS+=	-L${LOCALBASE}/lib -l${BDB_LIB_NAME}
 .endif
 
-# libungif support
+# giflib support
 .if defined(WITHOUT_UNGIF)
 CONFIGURE_ARGS+=	--without-gif
 .else
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
