@@ -86,17 +86,6 @@ _USE_KDE4_ALL=	akonadi automoc4 baseapps kdebase kdehier kdelibs kdeprefix \
 		oxygen pimlibs pimruntime pykde4 pykdeuic4 runtime \
 		sharedmime workspace
 
-# We need to set it here (and not at the bottom) because PREFIX and
-# NO_MTREE have to be defined in pre-makefile section.
-.if ${USE_KDE4:Mkdeprefix} != ""
-. if ${.MAKEFLAGS:MPREFIX=*} == ""
-PREFIX=		${KDE4_PREFIX}
-.  if ${KDE4_PREFIX} != ${LOCALBASE}
-NO_MTREE=	yes
-.  endif
-. endif
-.endif
-
 akonadi_LIB_DEPENDS=		akonadiprotocolinternals.1:${PORTSDIR}/databases/akonadi
 
 automoc4_BUILD_DEPENDS=		${LOCALBASE}/bin/automoc4:${PORTSDIR}/devel/automoc4
@@ -107,6 +96,8 @@ kdebase_LIB_DEPENDS=		${baseapps_LIB_DEPENDS}
 kdehier_RUN_DEPENDS=		kdehier4>=1:${PORTSDIR}/misc/kdehier4
 
 kdelibs_LIB_DEPENDS=		kimproxy.5:${PORTSDIR}/x11/kdelibs4
+
+kdeprefix_PREFIX=		${KDE4_PREFIX}
 
 oxygen_RUN_DEPENDS=		${KDE4_PREFIX}/share/icons/oxygen/index.theme:${PORTSDIR}/x11-themes/kde4-icons-oxygen
 
@@ -173,6 +164,14 @@ Kde_Post_Include=	bsd.kde4.mk
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
 LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+.  if defined(${component}_PREFIX)
+.   if ${.MAKEFLAGS:MPREFIX=*}==""
+PREFIX=	${${component}_PREFIX}
+.    if ${KDE4_PREFIX} != ${LOCALBASE}
+NO_MTREE=	yes
+.    endif
+.   endif
+.  endif
 . else
 IGNORE=	cannot install: Unknown component ${component}
 . endif
