@@ -16,14 +16,14 @@ MASTER_SITES=	http://www.swftools.org/ \
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-
-LICENSE=	GPLv2
 
 OPTIONS=	LAME "LAME MP3 audio encoder support" off \
 		PDF "PDFlib support" off
