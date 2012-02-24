@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/importlib/__init__.py
+%%PYTHON_SITELIBDIR%%/importlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/importlib/__init__.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/importlib
