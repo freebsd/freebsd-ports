@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	parallel
-PORTVERSION=	20120122
+PORTVERSION=	20120222
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -24,7 +24,8 @@ USE_PERL5=	yes
 
 MAN1=		parallel.1 sem.1 sql.1 niceload.1
 PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
-PORTDOCS=	parallel.html sem.html sql.html niceload.html
+PORTDOCS=	parallel.html sem.html sql.html niceload.html \
+		parallel.texi sem.texi sql.texi niceload.texi
 
 post-patch:
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/src/parallel
