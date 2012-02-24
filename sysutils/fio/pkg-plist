@@ -3,6 +3,7 @@ bin/fio_generate_plots
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/1mbs_clients
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aio-read
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flow
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fsx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iometer-file-access-server
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netio
