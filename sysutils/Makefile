@@ -936,6 +936,7 @@
     SUBDIR += vimpager
     SUBDIR += virtualmin
     SUBDIR += vlogger
+    SUBDIR += vmdktool
     SUBDIR += vobcopy
     SUBDIR += volman
     SUBDIR += vordog
