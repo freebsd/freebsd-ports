@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay/Handle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.bs
@@ -34,6 +35,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/http_cat.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/https_cat.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/httpx_cat.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/initialize.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/make_form.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/make_headers.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/new_x_ctx.al
