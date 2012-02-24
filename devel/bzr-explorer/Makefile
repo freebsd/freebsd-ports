@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	bzr-explorer
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/76564477/ \
+MASTER_SITES=	https://launchpadlibrarian.net/93535508/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Desktop application for using bzr
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bzrlib/plugins/qbzr/__init__.py:${PORTSDIR}/devel/qbzr \
 		bzr:${PORTSDIR}/devel/bazaar-ng
-
-LICENSE=	GPLv2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

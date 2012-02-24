@@ -103,6 +103,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/tools.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/tools.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/tools.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/filesystemwatcher.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/filesystemwatcher.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/filesystemwatcher.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/helpers.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/helpers.pyo
@@ -145,6 +148,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/parameter_parser.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/parameter_parser.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/parameter_parser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/qbzr.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/qbzr.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/qbzr.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/script_engine.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/script_engine.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/script_engine.pyo
@@ -235,6 +241,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_history_manager.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_history_manager.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_history_manager.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_new.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_new.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_new.pyo
