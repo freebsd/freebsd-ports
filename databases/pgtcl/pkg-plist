@@ -3,6 +3,7 @@ lib/pgtcl/pkgIndex.tcl
 @dirrm lib/pgtcl
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/legalnotice.html
+%%PORTDOCS%%%%DOCSDIR%%/pg-backend-pid.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-blocking.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-cancelrequest.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-conndefaults.html
@@ -39,8 +40,9 @@ lib/pgtcl/pkgIndex.tcl
 %%PORTDOCS%%%%DOCSDIR%%/pg-result.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-select.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-sendquery-params.html
-%%PORTDOCS%%%%DOCSDIR%%/pg-sendquery.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-sendquery-prepared.html
+%%PORTDOCS%%%%DOCSDIR%%/pg-sendquery.html
+%%PORTDOCS%%%%DOCSDIR%%/pg-server-version.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-transaction-status.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-unescape-bytea.html
 %%PORTDOCS%%%%DOCSDIR%%/pgtcl-example-async.html

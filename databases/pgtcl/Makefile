@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgtcl
-PORTVERSION=	1.9.0
+PORTVERSION=	2.0.0
 CATEGORIES=	databases tcl
-MASTER_SITES=	SF/pgtclng/pgtclng/${PORTVERSION}:src	\
-		SF/pgtclng/Manual/20110321:doc
+MASTER_SITES=	SF/pgtclng/pgtclng/${PORTVERSION}:src
 MASTER_SITE_SUBDIR=	pgtclng
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
@@ -25,11 +24,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR}
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+MANUALREL=	20110918
+
 .if !defined(NOPORTDOCS)
 EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
-DISTFILES+=	pgtcldocs-20110321.zip:doc
-MASTER_SITES+=	http://pgfoundry.org/frs/download.php/2836/:doc
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+DISTFILES+=	pgtcldocs-${MANUALREL}.zip:doc
+MASTER_SITES+=	SF/pgtclng/Manual/${MANUALREL}:doc
 .endif
 
 post-configure:
@@ -42,7 +42,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl	\
 		${WRKSRC}/libpgtcl${PORTVERSION}.so ${LIBDIR}
 .if !defined(NOPORTDOCS)
-	${UNZIP_CMD} -oj ${DISTDIR}/${_DISTFILES:M*.zip} -d ${DOCSDIR}
+	${MKDIR} -p ${DOCSDIR}
+	${TAR} -xf ${DISTDIR}/${_DISTFILES:M*.zip} -C ${DOCSDIR} \
+		--strip-components 1 --no-same-permission --no-same-owner
+	${CHMOD} ${SHAREMODE} ${DOCSDIR}/*
 .endif
 
 .include <bsd.port.mk>
