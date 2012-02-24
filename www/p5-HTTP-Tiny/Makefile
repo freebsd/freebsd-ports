@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Tiny
-PORTVERSION=	0.016
+PORTVERSION=	0.017
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ MAN3=		HTTP::Tiny.3
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_HTTPS)
+BUILD_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 .endif
 
