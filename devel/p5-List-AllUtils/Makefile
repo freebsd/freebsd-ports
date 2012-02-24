@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	List-AllUtils
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Combines List::Util and List::MoreUtils in one bite-sized package
 
-RUN_DEPENDS=	p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils
+BUILD_DEPENDS=	p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS=	p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils
 
 PERL_CONFIGURE=	yes
 
@@ -22,8 +23,8 @@ MAN3=		List::AllUtils.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.if ${PERL_LEVEL} < 501000
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
