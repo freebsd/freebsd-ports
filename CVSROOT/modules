@@ -636,6 +636,7 @@ archmage                        ports/textproc/archmage
 archmbox                        ports/mail/archmbox
 ardour                          ports/audio/ardour
 arduino                         ports/devel/arduino
+arduino-mk                      ports/devel/arduino-mk
 areca-cli                       ports/sysutils/areca-cli
 arena                           ports/lang/arena
 ares                            ports/dns/ares
@@ -19847,6 +19848,7 @@ pcf2bdf                         ports/x11-fonts/pcf2bdf
 pcfclock                        ports/sysutils/pcfclock
 pcgen                           ports/games/pcgen
 pchar                           ports/net/pchar
+pchecker                        ports/ports-mgmt/pchecker
 pciids                          ports/misc/pciids
 pciutils                        ports/sysutils/pciutils
 pcl                             ports/devel/pcl
@@ -23837,6 +23839,7 @@ robocode                        ports/games/robocode
 roboctl                         ports/devel/roboctl
 robodoc                         ports/devel/robodoc
 robotfindskitten                ports/games/robotfindskitten
+roboto-fonts-ttf                ports/x11-fonts/roboto-fonts-ttf
 rockdodger                      ports/games/rockdodger
 rocksndiamonds                  ports/games/rocksndiamonds
 rocs                            ports/math/rocs
