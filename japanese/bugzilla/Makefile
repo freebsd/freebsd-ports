@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/4.0/ \
 		LOCAL
