@@ -1,5 +1,6 @@
 bin/bzr-receive-pack
 bin/bzr-upload-pack
+bin/git-remote-bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/__init__.pyo
@@ -21,6 +22,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/dir.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/dir.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/dir.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/directory.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/directory.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/directory.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/errors.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/errors.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/errors.pyo
@@ -30,6 +34,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/filegraph.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/filegraph.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/filegraph.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/git_remote_helper.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/git_remote_helper.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/git_remote_helper.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.pyo
@@ -90,6 +97,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_git_remote_helper.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_git_remote_helper.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_git_remote_helper.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_mapping.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_mapping.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_mapping.pyo
