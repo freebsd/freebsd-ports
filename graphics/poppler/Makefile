@@ -57,6 +57,7 @@ CONFIGURE_ARGS+=--disable-poppler-glib
 
 .if ${SLAVEPORT}=="qt4"
 CONFIGURE_ARGS+=--enable-poppler-qt4
+CONFIGURE_ENV+=	ac_cv_prog_MOCQT4=${LOCALBASE}/bin/moc-qt4
 USE_QT_VER+=	4
 QT_COMPONENTS=	gui corelib xml qtestlib moc_build
 # It requires poppler/splash to be built unless you disable splash backend
