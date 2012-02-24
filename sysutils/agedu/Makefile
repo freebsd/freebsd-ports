@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	agedu
-PORTVERSION=	9394
+PORTVERSION=	9417
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/ \
 		LOCAL/sunpoet
