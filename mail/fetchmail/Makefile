@@ -11,12 +11,12 @@
 # want fetchmailconf to work, define the X11 option.
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.20
-PORTREVISION=	2
+PORTVERSION=	6.3.21
 CATEGORIES=	mail ipv6
-MASTER_SITES=	BERLIOS/fetchmail/ \
-		http://mandree.home.pages.de/fetchmail/ \
-		SUNSITE/system/mail/pop/fetchmail/
+MASTER_SITES=	BERLIOS/${PORTNAME}/ \
+		SF/${PORTNAME}/branch_6.3/ \
+		http://mandree.home.pages.de/${PORTNAME}/ \
+		SUNSITE/system/mail/pop/${PORTNAME}/
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
