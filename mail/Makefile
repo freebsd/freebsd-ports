@@ -152,6 +152,7 @@
     SUBDIR += fetchmail
     SUBDIR += fetchyahoo
     SUBDIR += filtermail
+    SUBDIR += findmaildirs
     SUBDIR += firemime
     SUBDIR += firepay
     SUBDIR += firetray
