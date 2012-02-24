@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -16,9 +17,9 @@ MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
-LIB_DEPENDS=	botan.0:${PORTSDIR}/security/botan
+LIB_DEPENDS=	botan.0:${PORTSDIR}/security/botan \
+		boost_serialization.[4-9]:${PORTSDIR}/devel/boost-libs
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
