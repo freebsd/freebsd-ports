@@ -1,0 +1,6 @@
+obfsproxy is a tool that attempts to circumvent censorship, by transforming the
+Tor traffic between the client and the bridge. This way, censors, who usually
+monitor traffic between the client and the bridge, will see innocent-looking
+transformed traffic instead of the actual Tor traffic.
+
+WWW: https://www.torproject.org/projects/obfsproxy.html.en
