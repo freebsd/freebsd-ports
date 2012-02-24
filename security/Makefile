@@ -321,6 +321,7 @@
     SUBDIR += nmapsi4
     SUBDIR += nss
     SUBDIR += oath-toolkit
+    SUBDIR += obfsproxy
     SUBDIR += ocaml-cryptgps
     SUBDIR += ocaml-cryptokit
     SUBDIR += ocaml-ssl
