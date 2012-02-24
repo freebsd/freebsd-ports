@@ -23,6 +23,8 @@ RUN_DEPENDS=	p5-Path-Abstract>0:${PORTSDIR}/devel/p5-Path-Abstract \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
+TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most \
+		p5-Test-Lazy>=0:${PORTSDIR}/devel/p5-Test-Lazy
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
