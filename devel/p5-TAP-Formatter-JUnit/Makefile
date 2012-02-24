@@ -20,6 +20,8 @@ RUN_DEPENDS=	\
 	p5-XML-Generator>0:${PORTSDIR}/textproc/p5-XML-Generator \
 	p5-Test-Harness>3.12:${PORTSDIR}/devel/p5-Test-Harness
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 
 PERL_MODBUILD=	yes
 
