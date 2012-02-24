@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/check-release.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/check-release.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/check-release.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/commands.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/commands.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/commands.pyo
