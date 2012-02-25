@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.43
+PORTVERSION=	4.52
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -27,6 +27,7 @@ LICENSE_COMB=	dual
 
 USE_AUTOTOOLS=	libtool
 USE_RC_SUBR=	stunnel
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/tmp \
@@ -36,14 +37,20 @@ CONFIGURE_ARGS=	--localstatedir=/var/tmp \
 MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
 .endif
 
-OPTIONS=	FORK	"use the fork(3) threading model"	off \
-		PTHREAD	"use the pthread(3) threading model (default)"	on \
-		UCONTEXT	"use the ucontext(3) threading model"	off \
-		IPV6	"enable IPv6 support" off \
-		LIBWRAP	"use TCP wrappers" on \
-		SSL_PORT	"use OpenSSL from the Ports Collection" on
+OPTIONS=	FORK	"Ese the fork(3) threading model" off \
+		PTHREAD	"Ese the pthread(3) threading model (default)" on \
+		UCONTEXT	"Ese the ucontext(3) threading model" off \
+		IPV6	"Enable IPv6 support" off \
+		LIBWRAP	"Use TCP wrappers" on \
+		SSL_PORT	"Use OpenSSL from the Ports Collection" off
 
 .include <bsd.port.options.mk>
+
+STUNNEL_USER?=	stunnel
+STUNNEL_GROUP?=	stunnel
+
+USERS=		${STUNNEL_USER}
+GROUPS=		${STUNNEL_GROUP}
 
 .if defined(WITH_SSL_PORT)
 USE_OPENSSL=	YES
@@ -93,6 +100,8 @@ post-patch:
 	${REINPLACE_CMD} -E -e 's|\$$\(prefix\)/var/run/stunnel/stunnel.pid|$$(localstatedir)/stunnel.pid|' \
 		${WRKSRC}/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
+	@${REINPLACE_CMD} -E -e 's|install-confDATA install-data-local|install-confDATA|g' \
+		${WRKSRC}/tools/Makefile.in
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \
 		${WRKSRC}/Makefile.in
@@ -101,20 +110,11 @@ post-patch:
 .endif
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ""
 	@${ECHO} "**************************************************************************"
 	@${ECHO} "To create and install a new certificate, type \"make cert\""
 	@${ECHO} ""
 	@${ECHO} "And don't forget to check out the FAQ at http://www.stunnel.org/"
-	@${ECHO} "**************************************************************************"
-	@${ECHO} ""
-	@${ECHO} "*********************** WARNING! WARNING! WARNING! ***********************"
-	@${ECHO} "The stunnel startup script has been converted to rc_subr"
-	@${ECHO} "format now.  You have to set at least the stunnel_enable"
-	@${ECHO} "variable, and maybe also stunnel_config and stunnel_pidfile,"
-	@${ECHO} "if you want stunnel to be started automatically at boot time!"
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
 
@@ -125,24 +125,5 @@ cert:
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
 	@(cd ${WRKSRC}/tools/; make install-data-local)
-
-.if !defined(WITH_STUNNEL_SSL_ENGINE)
-EXTRA_PATCHES=	${FILESDIR}/ssl-noengine.patch
-pre-patch:
-	@${ECHO} "*************************************************************************"
-	@${ECHO} "Note: you have to explicitly define WITH_STUNNEL_SSL_ENGINE to activate"
-	@${ECHO} "the OpenSSL ENGINE code on FreeBSD 5.x or 6.x."
-	@${ECHO} "There are known reliability issues with stunnel and the OpenSSL ENGINE"
-	@${ECHO} "code, so you are advised not to enable it."
-	@${ECHO} "*************************************************************************"
-.else
-pre-patch:
-	@${ECHO} "*************************************************************************"
-	@${ECHO} "Note: you have defined WITH_STUNNEL_SSL_ENGINE.  Now stunnel will activate"
-	@${ECHO} "the OpenSSL ENGINE code even on FreeBSD 5.x."
-	@${ECHO} "There are known reliability issues with stunnel and the OpenSSL ENGINE"
-	@${ECHO} "code.  You have enabled it at your own risk."
-	@${ECHO} "*************************************************************************"
-.endif
 
 .include <bsd.port.post.mk>
