@@ -1,6 +1,6 @@
---- configure.in.orig	2011-10-09 06:17:20.000000000 -0700
-+++ configure.in	2011-11-04 00:52:17.000000000 -0700
-@@ -1112,11 +1112,11 @@
+--- configure.in.orig	2012-02-15 19:26:09.000000000 -0500
++++ configure.in	2012-02-16 22:28:27.617422641 -0500
+@@ -1118,11 +1118,11 @@
  [superux*], [	ac_cv_func_setitimer=no
  		],
  [	LIBS="-lm $LIBS"])
@@ -17,7 +17,7 @@
  if test "${enable_win95}" = maybe; then
      AC_HAVE_LIBRARY(unicows, [enable_win95=yes], [enable_win95=no])
  fi
-@@ -1808,7 +1808,7 @@
+@@ -1815,7 +1815,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,11 +26,11 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -1822,6 +1822,7 @@
- 	[c],    [],
- 	[root], [],
- 	[c_r],  [MAINLIBS="-pthread $MAINLIBS"],
+@@ -1823,6 +1823,7 @@
+     if test x"$rb_with_pthread" = xyes; then
+ 	AC_DEFINE(_REENTRANT)
+ 	AC_DEFINE(_THREAD_SAFE)
 +	[pthread],  [MAINLIBS="-pthread $MAINLIBS"],
- 	        [LIBS="-l$pthread_lib $LIBS"])
-     else
- 	AC_MSG_WARN("Don't know how to find pthread library on your system -- thread support disabled")
+ 	AC_DEFINE(HAVE_LIBPTHREAD)
+ 	AC_CHECK_HEADERS(pthread_np.h, [], [], [@%:@include <pthread.h>])
+ 	AS_CASE([$pthread_lib],
