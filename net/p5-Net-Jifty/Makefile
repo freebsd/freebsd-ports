@@ -15,18 +15,26 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl interface to online Jifty applications
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \
-		${SITE_PERL}/Hash/Merge.pm:${PORTSDIR}/textproc/p5-Hash-Merge \
-		${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class \
-		${SITE_PERL}/Any/Moose.pm:${PORTSDIR}/devel/p5-Any-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-Email-Address>=0:${PORTSDIR}/mail/p5-Email-Address \
+		p5-Hash-Merge>=0:${PORTSDIR}/textproc/p5-Hash-Merge \
+		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
+		p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Jifty.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+RUN_DEPENDS+=	p5-Encode>=2.41:${PORTSDIR}/converters/p5-Encode
+BUILD_DEPENDS+=	p5-Encode>=2.41:${PORTSDIR}/converters/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>
