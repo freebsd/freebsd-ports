@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/misc/unquote/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Execute a command with safely quoted arguments
 
 MAN1=		unquote.1
