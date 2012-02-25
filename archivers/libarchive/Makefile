@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.8.5
+PORTVERSION=	3.0.3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -13,9 +13,14 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
+OPTIONS=	LIBXML2 "Support writing xar via libxml2" On \
+		NETTLE "Use nettle instad of OpenSSL" Off
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack libxml2
+USE_GNOME=	gnomehack
+
+CONFIGURE_ARGS+=	--without-expat
 
 PLIST_FILES=	bin/bsdcpio \
 		bin/bsdtar \
@@ -24,18 +29,26 @@ PLIST_FILES=	bin/bsdcpio \
 		lib/libarchive.a \
 		lib/libarchive.la \
 		lib/libarchive.so \
-		lib/libarchive.so.10 \
+		lib/libarchive.so.12 \
 		libdata/pkgconfig/libarchive.pc
 
 MANCOMPRESSED=	no
 MAN1=		bsdcpio.1 \
 		bsdtar.1
 MAN3=		archive_entry.3 \
+		archive_entry_acl.3 \
+		archive_entry_linkify.3 \
+		archive_entry_paths.3 \
+		archive_entry_perms.3 \
+		archive_entry_stat.3 \
+		archive_entry_time.3 \
 		archive_read.3 \
 		archive_read_disk.3 \
+		archive_read_set_options.3 \
 		archive_util.3 \
 		archive_write.3 \
 		archive_write_disk.3 \
+		archive_write_set_options.3 \
 		libarchive.3 \
 		libarchive_internals.3
 MAN5=		cpio.5 \
@@ -47,13 +60,32 @@ CFLAGS+=	"-I${LOCALBASE}/include"
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-check:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_LIBXML2)
+USE_GNOME+=	libxml2
+CONFIGURE_ARGS+=	--with-xml2
+.else
+CFLAGS+=	-DHAVE_BSDXML_H=1
+LDFLAGS+=	-lbsdxml
+CONFIGURE_ARGS+=	--without-xml2
+.endif
+
+.if defined(WITH_NETTLE)
+LIB_DEPENDS+=	nettle.4:${PORTSDIR}/security/nettle
+CONFIGURE_ARGS+=	--without-openssl --with-nettle
+.else
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-openssl --without-nettle
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
+
+check:
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
 
 .include <bsd.port.post.mk>
