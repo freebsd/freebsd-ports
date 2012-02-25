@@ -147,7 +147,7 @@ post-extract:
 PHP_VERS=	${PHP_VERSION:S/.//g}
 
 .if defined(PHP_VERS) && ${PHP_VERS} < 406
-#IGNORE=		"You need PHP 4.0.6 or later to install PEAR::I18Nv2"
+#IGNORE=		You need PHP 4.0.6 or later to install PEAR::I18Nv2
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"

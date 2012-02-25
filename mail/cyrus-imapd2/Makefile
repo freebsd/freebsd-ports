@@ -51,7 +51,7 @@ USE_BDB_VER=	41
 .if ${USE_BDB_VER} == 4
 USE_BDB=	40
 .elif ${USE_BDB_VER} != 41
-IGNORE=		"cannot install: WITH_BDB_VER must be 4 or 41"
+IGNORE=		cannot install: WITH_BDB_VER must be 4 or 41
 .endif
 USE_BDB?=	${USE_BDB_VER}
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${USE_BDB_VER} \
