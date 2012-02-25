@@ -210,7 +210,7 @@ lib/libstorage.a
 %%EXAMPLESDIR%%/sasl.conf
 %%EXAMPLESDIR%%/storage.conf
 %%EXAMPLESDIR%%/subscriptions
-@exec mkdir %%ETCDIR%%
+@exec mkdir -p %%ETCDIR%%
 @exec for f in %%ETCFILES%%; do [ -f %%ETCDIR%%/${f} ] || cp -fp %D/%%EXAMPLESDIR%%/${f} %%ETCDIR%%/${f}; done
 @comment --------------------------------------------------------------
 @dirrm %%EXAMPLESDIR%%/db
@@ -231,7 +231,7 @@ lib/libstorage.a
 @unexec rm -R  %%NEWSBASE%%/include
 @unexec rmdir  %%ETCDIR%%                 2>/dev/null || true
 @unexec rm -Rf %%NEWSBASE%%/doc
-@unexec rmdir  %%DBDIR%%
+@unexec rmdir  %%DBDIR%%                  2>/dev/null || true
 @unexec rm -Rf %%NEWSBASE%%/bin/rnews.libexec
 @unexec rm -Rf %%NEWSBASE%%/bin/filter
 @unexec rm -Rf %%NEWSBASE%%/bin/control

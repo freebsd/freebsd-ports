@@ -54,7 +54,7 @@ INN_NEWSSPOOL?=		${PREFIX}/news/spool
 
 .for sub in NEWSBASE ETCDIR RUNDIR LOGDIR DBDIR TMPDIR NEWSSPOOL
 PLIST_SUB+=		${sub}="${INN_${sub}:C,^${PREFIX},%D,}"
-SUB_LIST+=		${sub}="${INN_${sub}:C,^${PREFIX},\\$\\${PREFIX},}"
+SUB_LIST+=		${sub}="${INN_${sub}:C,^${PREFIX},${PREFIX},}"
 .endfor
 
 PLIST_SUB+=		CWDNEWSBASE="@cwd ${INN_NEWSBASE}"
