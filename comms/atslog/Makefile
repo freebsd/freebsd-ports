@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=--localstatedir=/var
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL"
+IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
 .endif
 
 .if !defined(WITHOUT_WWW)

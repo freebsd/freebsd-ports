@@ -32,7 +32,7 @@ PLATFORM_SUFX=	x86
 .elif ${ARCH} == amd64
 PLATFORM_SUFX=	x86_64
 .else
-IGNORE=		"Unsupported platform, sorry."
+IGNORE=		Unsupported platform, sorry.
 .endif
 
 TAR_FILES=	p4api.tgz

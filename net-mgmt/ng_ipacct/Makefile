@@ -15,9 +15,9 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Netgraph IP accounting
 
 .ifndef PACKAGE_BUILDING
-NO_PACKAGE=	"Depends on kernel"
+NO_PACKAGE=	Depends on kernel
 .else
-IGNORE=		"Depends on kernel"
+IGNORE=		Depends on kernel
 .endif
 
 OPTIONS=	MEM_ZONE "Use UMA zone allocator (>= 5.x only)" on

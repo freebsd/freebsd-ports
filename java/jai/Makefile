@@ -41,7 +41,7 @@ PORTDOCS=	\
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		"You must manually fetch from the \"Java Advanced Imaging API 1.1.3 Download Page\", the \"Java (no native acceleration)\" distribution \(${DISTNAME}${EXTRACT_SUFX}\) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again"
+IGNORE=		You must manually fetch from the \"Java Advanced Imaging API 1.1.3 Download Page\", the \"Java (no native acceleration)\" distribution \(${DISTNAME}${EXTRACT_SUFX}\) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
