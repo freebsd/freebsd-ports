@@ -18,7 +18,7 @@ COMMENT=	Active-DVI viewer
 
 BUILD_DEPENDS=	${CI_DEPEND}:${PORTSDIR}/graphics/ocaml-images \
 		kpsewhich:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
