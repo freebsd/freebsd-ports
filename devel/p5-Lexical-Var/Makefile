@@ -9,7 +9,7 @@ PORTNAME=	Lexical-Var
 PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-#MASTER_SITE_SUBDIR=	CPAN:ZEFRAM
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for static variables without namespace pollution
