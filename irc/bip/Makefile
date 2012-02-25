@@ -7,6 +7,7 @@
 
 PORTNAME=	bip
 PORTVERSION=	0.8.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://projects.duckcorp.org/attachments/download/39/
 
@@ -14,6 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A simple IRC proxy with SSL support
 
 LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
@@ -21,6 +23,7 @@ INSTALL_TARGET=	SUBDIR=src install-exec
 
 USE_OPENSSL=	yes
 
+PATCH_STRIP=	-p1
 PLIST_FILES=	bin/bip bin/bipmkpw
 SUB_FILES=	pkg-message
 MAN1=		bip.1 bipmkpw.1
