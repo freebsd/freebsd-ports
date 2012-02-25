@@ -258,7 +258,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/coverage.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/curses.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/date_core.so
-%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dbm.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/bubblebabble.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/md5.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/rmd160.so

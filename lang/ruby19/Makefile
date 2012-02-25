@@ -19,7 +19,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT?=	An object-oriented interpreted scripting language
 
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
-		yaml-0.2:${PORTSDIR}/textproc/libyaml
+		yaml-0.2:${PORTSDIR}/textproc/libyaml \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
