@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	dns
-MASTER_SITES=	http://c-ares.haxx.se/
+MASTER_SITES=	http://c-ares.haxx.se/download/ \
+		http://obsd.isc.org/pub/OpenBSD/distfiles/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
 
 LICENSE=	MIT
 
-OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" ON \
-		DEBUG		"Build with debug information" OFF \
-		HIDE_SYMBOLS	"Hide internal library symbols" ON \
-		OPTIMIZED_CFLAGS	"Build with compiler optimizations" OFF
+OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" on \
+		DEBUG		"Build with debug information" off \
+		HIDE_SYMBOLS	"Hide internal library symbols" on \
+		OPTIMIZED_CFLAGS	"Build with compiler optimizations" off
 
 CONFLICTS=	ares-1.*
 
