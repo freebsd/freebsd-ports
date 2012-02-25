@@ -15,7 +15,7 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 MASTER_SITE_SUBDIR=	curl
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 LICENSE=	MIT

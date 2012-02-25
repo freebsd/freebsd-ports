@@ -13,7 +13,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://rrette.com/files/curlpp/curlpp-${PORTVERSION:R}/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
