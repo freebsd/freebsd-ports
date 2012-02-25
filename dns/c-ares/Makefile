@@ -10,7 +10,7 @@ PORTVERSION=	1.7.4
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
 
 LICENSE=	MIT
