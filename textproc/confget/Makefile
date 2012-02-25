@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://devel.ringlet.net/textproc/confget/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read variables from INI-style configuration files
 
 OPTIONS=	PCRE "Regular expression support" on
