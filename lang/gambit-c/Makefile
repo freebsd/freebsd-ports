@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gambit-c
-DISTVERSION=	v4_6_2
+DISTVERSION=	v4_6_4
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.6/source/

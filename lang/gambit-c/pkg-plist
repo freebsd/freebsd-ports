@@ -10,8 +10,11 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six
 bin/six-script
-%%GSI_INC%%/gambit-not406002.h
+%%GSI_INC%%/gambit-not406004.h
 %%GSI_INC%%/gambit.h
+%%GSI_LIB%%/_asm#.scm
+%%GSI_LIB%%/_assert#.scm
+%%GSI_LIB%%/_codegen#.scm
 %%GSI_LIB%%/_eval#.scm
 %%GSI_LIB%%/_gambc.c
 %%GSI_LIB%%/_gambcgsc.c
@@ -25,6 +28,7 @@ bin/six-script
 %%GSI_LIB%%/_std#.scm
 %%GSI_LIB%%/_system#.scm
 %%GSI_LIB%%/_thread#.scm
+%%GSI_LIB%%/_x86#.scm
 %%GSI_LIB%%/digest#.scm
 %%GSI_LIB%%/digest.scm
 %%GSI_LIB%%/gambit#.scm
