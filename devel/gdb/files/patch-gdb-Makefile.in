@@ -1,5 +1,5 @@
---- gdb/Makefile.in	2011-03-30 08:55:39.000000000 +0200
-+++ gdb/Makefile.in	2011-09-12 17:40:33.000000000 +0200
+--- gdb/Makefile.in.orig	2011-03-30 07:55:39.000000000 +0100
++++ gdb/Makefile.in	2011-10-29 08:02:29.600973609 +0100
 @@ -571,7 +571,7 @@
  	xstormy16-tdep.o \
  	xtensa-config.o xtensa-tdep.o xtensa-linux-tdep.o \
@@ -9,6 +9,15 @@
  	nbsd-tdep.o obsd-tdep.o \
  	sol2-tdep.o \
  	solib-frv.o solib-irix.o solib-svr4.o solib-target.o \
+@@ -758,7 +758,7 @@
+ osf-share/cma_deb_core.h osf-share/AT386/cma_thread_io.h \
+ osf-share/cma_sched.h proc-utils.h arm-tdep.h ax-gdb.h ppcnbsd-tdep.h \
+ cli-out.h gdb_expat.h breakpoint.h infcall.h obsd-tdep.h \
+-exec.h m32r-tdep.h osabi.h gdbcore.h solib-som.h \
++exec.h m32r-tdep.h osabi.h gdbcore.h solib-som.h amd64bsd-nat.h \
+ i386bsd-nat.h xml-support.h xml-tdesc.h alphabsd-tdep.h gdb_obstack.h \
+ ia64-tdep.h ada-lang.h varobj.h frv-tdep.h nto-tdep.h serial.h \
+ c-lang.h d-lang.h frame.h event-loop.h block.h cli/cli-setshow.h	\
 @@ -782,7 +782,7 @@
  gnulib/stdint.in.h remote.h gdb.h sparc-nat.h \
  gdbthread.h dwarf2-frame.h dwarf2-frame-tailcall.h nbsd-nat.h dcache.h \

@@ -8,6 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -47,9 +48,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS=	DEBUG "Build with debugging symbols" off \
 		EXPAT "Enable XML parsing for metadata" off \
 		PYTHON "Enable Python support" off \
-		THREAD "Enable Thread support" on
+		THREAD "Enable Thread support" on \
+		GDB_LINK "Create the gdb link" on
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_GDB_LINK)
+PLIST_SUB+=	GDB_LINK=true
+.else
+PLIST_SUB+=	GDB_LINK=false
+.endif
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	2.5-2.7
@@ -84,10 +92,13 @@ post-patch:
 .if !defined(WITHOUT_THREAD)
 	@${CP} ${FILESDIR}/fbsd-threads.c ${WRKSRC}/gdb/
 .endif
+	@${CP} ${FILESDIR}/amd64bsd-nat.h ${WRKSRC}/gdb
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
-
+.if defined(WITH_GDB_LINK)
+	${LN} -s ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdb
+.endif
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- gdb/amd64fbsd-nat.c.orig	2010-10-13 14:53:14.425152000 -0400
-+++ gdb/amd64fbsd-nat.c	2010-10-13 15:15:01.080198000 -0400
+--- gdb/amd64fbsd-nat.c.orig	2010-02-03 15:30:25.000000000 +0000
++++ gdb/amd64fbsd-nat.c	2011-09-23 03:08:51.942111416 +0100
 @@ -27,6 +27,7 @@
  #include <signal.h>
  #include <stddef.h>
@@ -8,7 +8,16 @@
  #include <sys/ptrace.h>
  #include <sys/sysctl.h>
  #include <machine/reg.h>
-@@ -92,6 +93,47 @@
+@@ -34,6 +35,8 @@
+ #include "fbsd-nat.h"
+ #include "amd64-tdep.h"
+ #include "amd64-nat.h"
++#include "amd64bsd-nat.h"
++#include "i386-nat.h"
+ 
+ 
+ /* Offset in `struct reg' where MEMBER is stored.  */
+@@ -92,6 +95,47 @@
  };
  
  
@@ -56,3 +65,23 @@
  /* Support for debugging kernel virtual memory images.  */
  
  #include <sys/types.h>
+@@ -155,6 +199,19 @@
+ 
+   /* Add some extra features to the common *BSD/i386 target.  */
+   t = amd64bsd_target ();
++
++#ifdef HAVE_PT_GETDBREGS
++
++  i386_use_watchpoints (t);
++
++  i386_dr_low.set_control = amd64bsd_dr_set_control;
++  i386_dr_low.set_addr = amd64bsd_dr_set_addr;
++  i386_dr_low.reset_addr = amd64bsd_dr_reset_addr;
++  i386_dr_low.get_status = amd64bsd_dr_get_status;
++  i386_set_debug_register_length (8);
++
++#endif /* HAVE_PT_GETDBREGS */
++
+   t->to_pid_to_exec_file = fbsd_pid_to_exec_file;
+   t->to_find_memory_regions = fbsd_find_memory_regions;
+   t->to_make_corefile_notes = fbsd_make_corefile_notes;

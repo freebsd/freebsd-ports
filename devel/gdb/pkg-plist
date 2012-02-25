@@ -1,2 +1,3 @@
 bin/gdb%%VER%%
 bin/gdbtui%%VER%%
+@unexec if $( %%GDB_LINK%% ) ; then rm -f %%PREFIX%%/bin/gdb; fi

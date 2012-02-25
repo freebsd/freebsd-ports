@@ -1,0 +1,10 @@
+--- gdb/config/i386/fbsd64.mh.orig	2011-09-23 03:15:43.254648862 +0100
++++ gdb/config/i386/fbsd64.mh	2011-09-23 03:14:06.843804785 +0100
+@@ -1,6 +1,6 @@
+ # Host: FreeBSD/amd64
+ NATDEPFILES= fork-child.o inf-ptrace.o \
+-	fbsd-nat.o amd64-nat.o amd64bsd-nat.o amd64fbsd-nat.o \
++	fbsd-nat.o i386-nat.o amd64-nat.o amd64bsd-nat.o amd64fbsd-nat.o \
+ 	bsd-kvm.o
+ 
+ LOADLIBES= -lkvm
