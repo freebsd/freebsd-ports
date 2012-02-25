@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-MIME-CreateHTML
 PORTVERSION=	1.030
+PORTREVISION=	1
 CATEGORIES=	mail www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +22,10 @@ BUILD_DEPENDS=	${SITE_PERL}/File/Slurp/WithinPolicy.pm:${PORTSDIR}/devel/p5-File
 		p5-HTML-TokeParser-Simple>0:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-Log-Trace>0:${PORTSDIR}/devel/p5-Log-Trace \
 		p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
-		p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 
 PERL_CONFIGURE=	yes
 
