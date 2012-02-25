@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duo
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	security
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}security/${PORTNAME}_unix/
 DISTNAME=	${PORTNAME}_unix-${PORTVERSION}
