@@ -1964,6 +1964,7 @@
     SUBDIR += p5-Jonk
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Persistence
+    SUBDIR += p5-Lexical-SealRequireHints
     SUBDIR += p5-Lingua-JA-Fold
     SUBDIR += p5-List-AllUtils
     SUBDIR += p5-List-Cycle
