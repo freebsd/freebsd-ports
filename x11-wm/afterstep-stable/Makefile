@@ -10,7 +10,6 @@ PORTVERSION=	2.2.11
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		SF/${PORTNAME}/AfterStep/${PORTVERSION}
-
 DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -24,7 +23,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		rplay.1:${PORTSDIR}/audio/rplay \
 		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
@@ -32,6 +31,7 @@ USE_GNOME=	glib20 gtk20 pango
 USE_ICONV=	yes
 USE_XORG+=	ice sm x11 xcursor xext xfixes xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS+=--disable-ascp \
 		--enable-i18n \
 		--disable-send-postcard-to-developer \
