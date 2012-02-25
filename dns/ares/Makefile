@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://curl.haxx.se/dev/ \
 		ftp://athena-dist.mit.edu/pub/ATHENA/ares/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
 
 CONFLICTS=	c-ares-1.*

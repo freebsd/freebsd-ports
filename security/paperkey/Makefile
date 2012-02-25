@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.jabberwocky.com/software/paperkey/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Extract just the secret information out of OpenPGP secret keys
 
 GNU_CONFIGURE=	yes
