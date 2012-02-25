@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A nonsense text generator
 
 NO_BUILD=	defined

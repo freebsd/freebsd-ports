@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/stalepid/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Check for stale pid files and remove them
 
 RUN_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error

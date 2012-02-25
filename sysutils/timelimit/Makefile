@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
 
 LICENSE=	BSD

@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Append data to files using a temporary copy
 
 .if !defined(WITHOUT_TEST_POD_COVERAGE)
