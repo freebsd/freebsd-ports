@@ -24,6 +24,9 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+DEPRECATED=	asterisk 1.6.2.* will be EOLed on 2012-04-21
+EXPIRATION_DATE=	2012-05-31
+
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 GNU_CONFIGURE=	yes
