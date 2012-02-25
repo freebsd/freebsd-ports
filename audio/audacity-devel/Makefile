@@ -15,8 +15,10 @@ DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}-beta
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
-LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
-		sndfile.1:${PORTSDIR}/audio/libsndfile
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 CONFLICTS=	audacity-[0-9]*
 
@@ -38,11 +40,12 @@ MANCOMPRESSED=	yes
 OPTIONS=	FFMPEG		"Use ffmpeg for import and export support" on \
 		FLAC		"Use libFLAC for FLAC support" on \
 		ID3TAG		"Use libid3tag for mp3 id3 tag support" on \
+		JACK		"Use JACK audio server" on \
 		LADSPA		"LADSPA plug-in support" on \
 		MAD		"Use libmad for mp2/3 decoding support"	on \
 		NYQUIST		"Nyquist plug-in support" on \
 		PORTMIXER	"Compile with PortMixer" on \
-		SAMPLERATE	"Use libresample for sample rate conversion" on \
+		SAMPLERATE	"Use libsamplerate for sample rate conversion" on \
 		SBSMS		"Use libsbsms for pitch and tempo changing" on \
 		SOUNDTOUCH 	"Use libSoundTouch for pitch and tempo changing" on\
 		TAGLIB		"Use TagLib for metadata support" on \
@@ -76,25 +79,35 @@ CONFIGURE_ARGS+=	--with-portaudio
 CONFIGURE_ARGS+=	--enable-unicode
 
 .if defined(WITH_FFMPEG)
+RUN_DEPENDS+=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
 .endif
 
 .if defined(WITH_FLAC)
+LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=	--with-libflac
 .else
 CONFIGURE_ARGS+=	--without-libflac
 .endif
 
 .if defined(WITH_ID3TAG)
-LIB_DEPENDS+=		id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=		id3tag.0:${PORTSDIR}/audio/libid3tag
 CONFIGURE_ARGS+=	--with-libid3tag
 .else
 CONFIGURE_ARGS+=	--without-libid3tag
 .endif
 
+.if defined(WITH_JACK)
+LIB_DEPENDS+=		jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=	--with-jack
+.else
+CONFIGURE_ARGS+=	--without-jack
+.endif
+
 .if defined(WITH_LADSPA)
+RUN_DEPENDS+=		listplugins:${PORTSDIR}/audio/ladspa
 CONFIGURE_ARGS+=	--enable-ladspa
 .else
 CONFIGURE_ARGS+=	--disable-ladspa
@@ -120,9 +133,10 @@ CONFIGURE_ARGS+=	--without-portmixer
 .endif
 
 .if defined(WITH_SAMPLERATE)
-CONFIGURE_ARGS+=	--with-libresample
+LIB_DEPENDS+=		samplerate.1:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=	--with-libsamplerate
 .else
-CONFIGURE_ARGS+=	--without-libresample
+CONFIGURE_ARGS+=	--without-libsamplerate
 .endif
 
 .if defined(WITH_SBSMS)
@@ -132,21 +146,21 @@ CONFIGURE_ARGS+=	--without-sbsms
 .endif
 
 .if defined(WITH_SOUNDTOUCH)
-LIB_DEPENDS+=		SoundTouch:${PORTSDIR}/audio/soundtouch
+LIB_DEPENDS+=		SoundTouch.0:${PORTSDIR}/audio/soundtouch
 CONFIGURE_ARGS+=	--with-soundtouch
 .else
 CONFIGURE_ARGS+=	--without-soundtouch
 .endif
 
 .if defined(WITH_TWOLAME)
-LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
+LIB_DEPENDS+=		twolame.0:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--with-libtwolame
 .else
 CONFIGURE_ARGS+=	--without-libtwolame
 .endif
 
 .if defined(WITH_TAGLIB)
-LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=		tag.1:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--without-taglib
@@ -159,9 +173,23 @@ CONFIGURE_ARGS+=	--without-libvamp
 .endif
 
 .if defined(WITH_VORBIS)
+LIB_DEPENDS+=		vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-libvorbis
 .else
 CONFIGURE_ARGS+=	--without-libvorbis
+.endif
+
+post-patch:
+#audacity links to some dependencies if present, even if explicitly disabled.
+#these must be patched out for the case when they are installed but
+#option-disabled to avoid unrecorded dependencies.
+
+.if defined(WITHOUT_JACK)
+	@${REINPLACE_CMD} -e 's|PKG_CHECK_MODULES(JACK, jack, have_jack=yes, have_jack=no)|have_jack=no|' ${WRKSRC}/configure.in
+.endif
+
+.if defined(WITHOUT_SAMPLERATE)
+	@${REINPLACE_CMD} -e 's|libresample.a -lsamplerate $(LIBS)|libresample.a $(LIBS)|' ${WRKSRC}/lib-src/libresample/Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
