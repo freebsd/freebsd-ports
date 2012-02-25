@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. obsolete/4.x
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 # FIXME: IMHO, there really ought to be a GPL-2+ option or some such.
