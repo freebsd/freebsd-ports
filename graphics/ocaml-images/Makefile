@@ -33,6 +33,7 @@ OCAML_PKGDIRS=	camlimages
 USE_OCAML_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PNG "Enable PNG support" on \
 		JPEG "Enable JPEG support" on \
@@ -75,7 +76,7 @@ CONFIGURE_ARGS+=	--without-xpm
 .endif
 
 .if !defined(WITHOUT_GIF)
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 CONFIGURE_ARGS+=	--with-gif
 .else
 CONFIGURE_ARGS+=	--without-gif
