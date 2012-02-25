@@ -3471,6 +3471,7 @@ finch                           ports/net-im/finch
 finchtv                         ports/biology/finchtv
 find-zlib                       ports/security/find-zlib
 findhier                        ports/cad/findhier
+findmaildirs                    ports/mail/findmaildirs
 findmtu                         ports/net/findmtu
 findutils                       ports/misc/findutils
 finfo                           ports/sysutils/finfo
@@ -10309,6 +10310,7 @@ oath-toolkit                    ports/security/oath-toolkit
 obby                            ports/devel/obby
 obconf                          ports/x11-wm/obconf
 obexapp                         ports/comms/obexapp
+obfsproxy                       ports/security/obfsproxy
 obfuscatejs                     ports/devel/obfuscatejs
 objc                            ports/lang/objc
 objcunit                        ports/devel/objcunit
@@ -14510,6 +14512,7 @@ p5-Test-Inline                  ports/devel/p5-Test-Inline
 p5-Test-Inter                   ports/devel/p5-Test-Inter
 p5-Test-JSON                    ports/devel/p5-Test-JSON
 p5-Test-Kwalitee                ports/devel/p5-Test-Kwalitee
+p5-Test-Lazy                    ports/devel/p5-Test-Lazy
 p5-Test-LeakTrace               ports/devel/p5-Test-LeakTrace
 p5-Test-LectroTest              ports/devel/p5-Test-LectroTest
 p5-Test-LoadAllModules          ports/devel/p5-Test-LoadAllModules
@@ -14650,6 +14653,7 @@ p5-Text-Iconv                   ports/converters/p5-Text-Iconv
 p5-Text-Language-Guess          ports/textproc/p5-Text-Language-Guess
 p5-Text-Levenshtein             ports/devel/p5-Text-Levenshtein
 p5-Text-LevenshteinXS           ports/devel/p5-Text-LevenshteinXS
+p5-Text-Lorem                   ports/textproc/p5-Text-Lorem
 p5-Text-Markdown                ports/textproc/p5-Text-Markdown
 p5-Text-Match-FastAlternatives  ports/textproc/p5-Text-Match-FastAlternatives
 p5-Text-Metaphone               ports/textproc/p5-Text-Metaphone
@@ -19015,6 +19019,7 @@ p5-test-inline                  ports/devel/p5-Test-Inline
 p5-test-inter                   ports/devel/p5-Test-Inter
 p5-test-json                    ports/devel/p5-Test-JSON
 p5-test-kwalitee                ports/devel/p5-Test-Kwalitee
+p5-test-lazy                    ports/devel/p5-Test-Lazy
 p5-test-leaktrace               ports/devel/p5-Test-LeakTrace
 p5-test-lectrotest              ports/devel/p5-Test-LectroTest
 p5-test-loadallmodules          ports/devel/p5-Test-LoadAllModules
@@ -19157,6 +19162,7 @@ p5-text-iconv                   ports/converters/p5-Text-Iconv
 p5-text-language-guess          ports/textproc/p5-Text-Language-Guess
 p5-text-levenshtein             ports/devel/p5-Text-Levenshtein
 p5-text-levenshteinxs           ports/devel/p5-Text-LevenshteinXS
+p5-text-lorem                   ports/textproc/p5-Text-Lorem
 p5-text-markdown                ports/textproc/p5-Text-Markdown
 p5-text-match-fastalternatives  ports/textproc/p5-Text-Match-FastAlternatives
 p5-text-metaphone               ports/textproc/p5-Text-Metaphone
@@ -22296,6 +22302,7 @@ py-igraph                       ports/math/py-igraph
 py-imaging                      ports/graphics/py-imaging
 py-imdbpy                       ports/www/py-imdbpy
 py-impacket                     ports/net/py-impacket
+py-importlib                    ports/devel/py-importlib
 py-iniparse                     ports/devel/py-iniparse
 py-initgroups                   ports/devel/py-initgroups
 py-inlineegg                    ports/devel/py-InlineEgg
