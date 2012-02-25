@@ -10,7 +10,7 @@ PORTVERSION=	1.24
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Network monitoring library with TCP/IP reassembly
 
 LICENSE=	GPLv2
