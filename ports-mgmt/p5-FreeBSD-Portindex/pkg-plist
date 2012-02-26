@@ -1,15 +1,20 @@
 bin/cache-init
 bin/cache-update
 bin/find-updated
+bin/make-readmes
 bin/portindex
 bin/portdepends
 @unexec if cmp -s %D/etc/portindex.cfg.sample %D/etc/portindex.cfg ; then rm -f %D/etc/portindex.cfg ; fi
 etc/portindex.cfg.sample
 @exec [ ! -f %B/portindex.cfg ] && cp -p %B/%f %B/portindex.cfg || true
-%%SITE_PERL%%/FreeBSD/Portindex/Config.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Category.pm
+%%SITE_PERL%%/FreeBSD/Portindex/Config.pm
+%%SITE_PERL%%/FreeBSD/Portindex/FileObject.pm
 %%SITE_PERL%%/FreeBSD/Portindex/GraphViz.pm
+%%SITE_PERL%%/FreeBSD/Portindex/ListVal.pm
+%%SITE_PERL%%/FreeBSD/Portindex/Makefile.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Port.pm
+%%SITE_PERL%%/FreeBSD/Portindex/PortsTreeObject.pm
 %%SITE_PERL%%/FreeBSD/Portindex/Tree.pm
 %%SITE_PERL%%/FreeBSD/Portindex/TreeObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Portindex/.packlist
