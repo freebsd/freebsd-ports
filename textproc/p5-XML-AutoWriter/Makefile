@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for DOCTYPE based XML output
 
+TEST_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::AutoWriter.3 \
