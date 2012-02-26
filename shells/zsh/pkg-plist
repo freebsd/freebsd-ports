@@ -529,6 +529,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_socket
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sort
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_spamassassin
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sqlite
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sqsh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ssh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_stgit
@@ -577,6 +578,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_users
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_users_on
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_uzbl
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vcsh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vim
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vorbis
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vorbiscomment
@@ -639,8 +641,10 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_x_visual
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_x_window
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xauth
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xclip
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xdvi
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xfig
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xft_fonts
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xloadimage
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xmodmap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xournal
@@ -740,6 +744,12 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_zsh-mime-handler
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_zstyle
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_ztodo
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE.zwc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_SuSEconfig
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_hwinfo
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_osc
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_yast2
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE/_zypper
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/bashcompinit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/compaudit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/compdump
@@ -970,6 +980,7 @@ bin/zsh-%%ZSH_VER%%
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Base
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/AIX
+@dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion/openSUSE
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Completion
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Calendar
 @dirrm %%DATADIR%%/%%ZSH_VER%%/functions/Chpwd
