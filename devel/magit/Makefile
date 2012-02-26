@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	magit
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://cloud.github.com/downloads/philjackson/magit/
+		http://cloud.github.com/downloads/magit/magit/
 MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
