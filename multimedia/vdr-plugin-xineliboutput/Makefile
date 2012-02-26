@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-xineliboutput
 PORTVERSION=	1.0.90s20111129.1002
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot
@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - xineliboutput plugin/viewer
 
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		vdpau.1:${PORTSDIR}/multimedia/libvdpau
@@ -36,9 +36,8 @@ WRKSRC=		${WRKDIR}/vdr-${PLUGIN}
 
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
 
-# libbluray in ports is too old
-# OPTIONS=	LIBBLURAY	"Enable libbluray support"		on
-OPTIONS=	LIBEXTRACTOR	"Enable libextractor support"		off
+OPTIONS=	LIBBLURAY	"Enable libbluray support"		off \
+		LIBEXTRACTOR	"Enable libextractor support"		off
 
 .include <bsd.port.pre.mk>
 

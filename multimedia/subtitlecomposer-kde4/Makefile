@@ -34,7 +34,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if defined(WITH_XINE)
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 .else
 CMAKE_ARGS+=	-DWITH_Xine:Bool=Off
 .endif

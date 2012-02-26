@@ -1,0 +1,38 @@
+
+# HG changeset patch
+# User Darren Salt <linux@youmustbejoking.demon.co.uk>
+# Date 1328739143 0
+# Node ID 4bf51c8a7dad7e5ad0432e572749ea5a9bcb6124
+# Parent  1717c420e39340173eda3a4b45f95d7a6160e7cf
+Fix DVB CRC checking (was wrong endianness).
+
+#diff -r 1717c420e393 -r 4bf51c8a7dad ChangeLog
+#--- ChangeLog.orig	Sun Feb 05 19:32:30 2012 +0000
+#+++ ChangeLog	Wed Feb 08 22:12:23 2012 +0000
+#@@ -1,6 +1,7 @@
+# xine-lib (1.2.1.1) 2012-??-??
+#   * Fix musepack decoder compilation if libmpcdec headers aren't available.
+#   * Configure tests for xinerama & VideoCD support now soft-fail properly.
+#+  * The DVB plugin is working again.
+# 
+# xine-lib (1.2.1) 2012-02-04
+#   * The "I'm at Tyneside LUG" release.
+diff -r 1717c420e393 -r 4bf51c8a7dad src/input/input_dvb.c
+--- src/input/input_dvb.c.orig	Sun Feb 05 19:32:30 2012 +0000
++++ src/input/input_dvb.c	Wed Feb 08 22:12:23 2012 +0000
+@@ -2470,10 +2470,10 @@
+ 
+       crc = av_crc(this->class->av_crc, 0xffffffff, originalPkt+1, 12);
+ 
+-      originalPkt[13]=(crc>>24) & 0xff;
+-      originalPkt[14]=(crc>>16) & 0xff;
+-      originalPkt[15]=(crc>>8) & 0xff;
+-      originalPkt[16]=crc & 0xff;
++      originalPkt[13]=(crc    ) & 0xff;
++      originalPkt[14]=(crc>> 8) & 0xff;
++      originalPkt[15]=(crc>>16) & 0xff;
++      originalPkt[16]=(crc>>24) & 0xff;
+       memset(originalPkt+17,0xFF,PKT_SIZE-21); /* stuff the remainder */
+ 
+     }
+

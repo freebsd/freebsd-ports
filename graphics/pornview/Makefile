@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--enable-xine
 .elif defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer

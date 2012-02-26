@@ -8,7 +8,7 @@
 
 PORTNAME=	emotion
 PORTVERSION=	0.2.0.56361
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
@@ -40,7 +40,7 @@ IGNORE=	is useless without playback library. Please run 'make config' and choose
 .endif
 
 .if !defined(WITHOUT_XINE)
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-xine
 PLIST_SUB+=	XINE=""
 .else

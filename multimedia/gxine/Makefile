@@ -7,14 +7,14 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.905
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An alternative GUI for the Xine media player
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool

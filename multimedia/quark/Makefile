@@ -6,14 +6,14 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://hsgg.github.com/quark/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio player, for geeks, by geeks
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

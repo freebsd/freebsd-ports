@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.19
-PORTREVISION=	11
+PORTVERSION=	1.2.1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
 DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	makc
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -34,7 +30,10 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad \
 		dca.0:${PORTSDIR}/multimedia/libdca \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		faad.2:${PORTSDIR}/audio/faad
+		faad.2:${PORTSDIR}/audio/faad \
+		vdpau.1:${PORTSDIR}/multimedia/libvdpau
+
+BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 
 .if !defined(PACKAGE_BUILDING)
 LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
@@ -65,11 +64,12 @@ CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
 		--with-external-ffmpeg \
 		--with-external-libfaad \
 		--disable-v4l \
-		--without-alsa
+		--without-alsa \
+		--disable-musepack \
+		--enable-dvb
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	ARTS "Enable aRts support" off \
-		CACA "Enable libcaca support" off \
+OPTIONS=	CACA "Enable libcaca support" off \
 		ESOUND "Enable EsounD support" off \
 		JACK "Enable JACK support" off \
 		GNOMEVFS2 "Enable GnomeVFS2 support" off \
@@ -81,13 +81,13 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		GTK2 "Enable gdkpixbuf support" off \
 		WAVPACK "Enable WavPack support" off \
 		VAAPI "Enable VAAPI support" off \
-		VDPAU "Enable VDPAU support" on
+		LIBBLURAY "Enable libbluray support" off
 
-MAN1=	xine-config.1 xine-list-1.1.1
+MAN1=	xine-config.1 xine-list-1.2.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.29"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/2.1"
 
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
@@ -114,15 +114,6 @@ PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-PLIST_SUB+=	WITH_ARTS=""
-CONFIGURE_ARGS+=	--with-arts --enable-artstest
-.else
-PLIST_SUB+=	WITH_ARTS="@comment "
-CONFIGURE_ARGS+=	--disable-arts --disable-artstest
 .endif
 
 .if defined(WITH_CACA)
@@ -224,13 +215,13 @@ CONFIGURE_ARGS+=	--without-wavpack
 LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
 .endif
 
-.if defined(WITH_VDPAU)
-PATCHFILES+=	xine-vdpau.bz2
-USE_AUTOTOOLS=	autoconf
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
-PLIST_SUB+=	VDPAU=""
+.if defined(WITH_LIBBLURAY)
+CONFIGURE_OPTS+=	--enable-bluray
+LIB_DEPENDS+=	bluray.1:${PORTSDIR}/multimedia/libbluray
+PLIST_SUB+=	LIBBLURAY=""
 .else
-PLIST_SUB+=	VDPAU="@comment "
+CONFIGURE_OPTS+=	--disable-bluray
+PLIST_SUB+=	LIBBLURAY="@comment "
 .endif
 
 .if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
@@ -248,12 +239,7 @@ CONFIGURE_ARGS+=	--disable-vidix
 
 post-patch:
 .if defined(WITH_VAAPI)
-	${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.1.19-initerrorhack.diff
-.endif
-.if defined(WITH_VDPAU)
-	for i in `${LS} ${FILESDIR}/extrapatch-vdpau*`; do \
-		${PATCH} ${PATCH_DIST_ARGS} <$$i ;\
-	done
+	${PATCH} ${PATCH_DIST_ARGS} <${FILESDIR}/ffmpeg-vaapi_xine-lib-1.2.1-defaultoff.diff
 .endif
 .for f in libtool ltmain.sh
 	@${REINPLACE_CMD} -e \
@@ -283,9 +269,8 @@ pre-configure:
 	@${REINPLACE_CMD} -e \
 		 's|-malign-loops|-falign-loops|g ; \
 		  s|-malign-jumps|-falign-jumps|g ; \
-		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
-
-pre-build:
-	@${CP} -p ${LOCALBASE}/include/dts.h ${WRKSRC}/src/libdts/
+		  s|-malign-functions|-falign-functions|g ; \
+		  s|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

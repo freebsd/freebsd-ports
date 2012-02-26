@@ -7,7 +7,7 @@
 
 PORTNAME=	eaglemode
 PORTVERSION=	0.82.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -31,7 +31,7 @@ BUILD_ARGS+=	${lib}-inc-dir="${LOCALBASE}/include" \
 		${lib}-lib-dir="${LOCALBASE}/lib"
 .endfor
 
-OPTIONS=	XINE "Video playback support through libxine" on \
+OPTIONS=	XINE "Video playback support through libxine" off \
 		RSVG "SVG support throute librsvg" on
 
 .include <bsd.port.options.mk>
@@ -41,10 +41,11 @@ BROKEN=		Does not build on 6.x
 .endif
 
 .if !defined(WITHOUT_XINE)
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 		xine-lib-dir="${LOCALBASE}/lib"
 PLIST_SUB+=	EMAV=""
+BROKEN=		does not build with libxine 1.2.x
 .else
 PLIST_SUB+=	EMAV="@comment "
 .endif

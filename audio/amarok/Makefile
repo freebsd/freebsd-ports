@@ -7,7 +7,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.10
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -18,7 +18,7 @@ COMMENT=	Media player for KDE
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
-		xine.1:${PORTSDIR}/multimedia/libxine
+		xine.2:${PORTSDIR}/multimedia/libxine
 
 MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
 

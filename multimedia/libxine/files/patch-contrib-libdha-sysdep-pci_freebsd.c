@@ -1,5 +1,5 @@
---- src/video_out/libdha/sysdep/pci_freebsd.c.orig	Sun May 28 22:49:02 2006
-+++ src/video_out/libdha/sysdep/pci_freebsd.c	Sun May 28 22:50:59 2006
+--- contrib/libdha/sysdep/pci_freebsd.c.orig
++++ contrib/libdha/sysdep/pci_freebsd.c
 @@ -8,7 +8,7 @@
  /* machine/console.h seems to be outdated by recent FreeBSD *
   * however pcvt_ioctl.h seems to exist for very long time   */

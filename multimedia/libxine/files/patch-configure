@@ -1,30 +1,11 @@
---- ./configure.orig	2010-03-06 22:36:24.000000000 +0300
-+++ ./configure	2010-06-19 02:21:36.862142625 +0400
-@@ -17061,9 +17061,6 @@
+--- configure.orig
++++ configure
+@@ -26197,7 +26197,7 @@ fi
  
- done
- 
--   if test "$ac_cv_header_ffmpeg_avutil_h" = "yes" && test "$ac_cv_header_libavutil_avutil_h" = "yes"; then
--     as_fn_error "old & new ffmpeg headers found - you need to clean up!" "$LINENO" 5
--   fi
- 
-    { $as_echo "$as_me:${as_lineno-$LINENO}: result: using external ffmpeg" >&5
- $as_echo "using external ffmpeg" >&6; }
-@@ -23234,6 +23231,8 @@
-       fi
-        CFLAGS="$ac_save_CFLAGS"
-        LIBS="$ac_save_LIBS"
-+else
-+no_theora=yes
-   fi
- 
-   if test "x$no_libFLAC" = "x" ; then
-@@ -29752,7 +29751,7 @@
- 
- xinelibdir='${libdir}/xine'
- xinedatadir='${datadir}/xine'
--pkgconfigdir='${libdir}/pkgconfig'
-+pkgconfigdir='${prefix}/libdata/pkgconfig'
- 
- 
- 
+     if test x"$enable_dvb" != x"no"; then
+         case "$host_os" in
+-            linux*) have_dvb=yes ;;
++            linux*|freebsd*) have_dvb=yes ;;
+             *) have_dvb=no ;;
+         esac
+         if test x"$hard_enable_dvb" = x"yes" && test x"$have_dvb" != x"yes"; then
