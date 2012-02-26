@@ -1,0 +1,144 @@
+commit 8c0d263b2672df6727e1d0be3fecfdef3df8c1eb
+Author: unknown <Glen@.(none)>
+Date:   Sun Feb 12 10:42:37 2012 +1100
+
+    FIXES: #263
+    Desc: Customers Address details not showing on HTML Invoices.
+
+diff --git a/templates/invoice/print_html.tpl b/templates/invoice/print_html.tpl
+index 2b79b32..eeeb2e1 100644
+--- a/templates/invoice/print_html.tpl
++++ b/templates/invoice/print_html.tpl
+@@ -7,15 +7,12 @@
+     <body>
+ 
+ <!-- BOF Top Row Section -->
+-        <table  width="700" height="125" border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
++        <table  width="800px" height="125" border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
+             <tr>
+                 <!-- COMPANY DETAILS -->
+-                <td valign="top" align="left" width="35%">
++                <td valign="top" align="left" width="200px">
+                     {foreach item=item from=$company}
+                     <table border="0" cellpadding="0" cellspacing="0">
+-                        <!--<tr>
+-                            <td colspan="2"><b>{$item.COMPANY_NAME}</b></td>
+-                            </tr>-->
+                         <tr>
+                             <td valign="top"><b>{$translate_invoice_prn_address} :&nbsp;</b></td>
+                             <td>{$item.COMPANY_ADDRESS|nl2br|regex_replace:"/[\r\t\n]/":" "}<br />{$item.COMPANY_CITY},<br />{$item.COMPANY_STATE},<br />{$item.COMPANY_ZIP}</td>
+@@ -37,21 +34,21 @@
+ 		</td>
+ 
+                 <!-- LOGO and Company Name-->
+-                <td valign="top" align="center" width="30%">
++                <td valign="top" align="center" width="300px">
+                     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+                         <tr>
+-                            <td width="100%">
+-                                <a><img src="images/logo.jpg" alt="" border="0"></a>
++                            <td width="100%" align="center">
++                                <img src="images/logo.jpg" height="100px" alt="" border="0">
+                             </td>
+                         </tr>
+                         <tr>
+-                            <td style="text-align:center"><font size="+0"><b>{$item.COMPANY_NAME}</b></font></td>
++                            <td style="text-align:center"><b>{$item.COMPANY_NAME}</b></td>
+                         </tr>
+                     </table>
+                 </td>
+ 
+                 <!-- Invoice details -->
+-                <td valign="top" align="right" width="35%">
++                <td valign="top" align="right" width="200px">
+                     <table border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
+                         <tr>
+                             <td valign="top" width="90%" align="right">
+@@ -80,17 +77,17 @@
+         </table>
+ <!-- EOF Top Row Section - NB This table ends exactly where the envelope window starts-->
+     <br />
+-<!-- BOF Address Row
+-        <table  width="700" border="0" cellpadding="3" cellspacing="0" >
++<!-- BOF Address Row -->
++        <table  width="800" border="0" cellpadding="3" cellspacing="0" >
+             <tr>
+                 <td valign="top" width="10%" align="left"></td>
+                 <td>
+-                    <!- - <font size="-1"><b>{$translate_invoice_prn_bill_to} :</b></font><br /> - - >
++                    <p style="font:12px bold;">{$translate_invoice_prn_bill_to} :</p>
+ 			{foreach item=item from=$customer_details}
+-                    <font size="+0">{$item.CUSTOMER_DISPLAY_NAME}</font><br />
+-                    <font size="+0">{$item.CUSTOMER_ADDRESS|nl2br|regex_replace:"/[\r\t\n]/":" "}</font><br />
+-                    <font size="+0">{$item.CUSTOMER_CITY},</font><br />
+-                    <font size="+0">{$item.CUSTOMER_STATE} {$item.CUSTOMER_ZIP}</font>
++                    {$item.CUSTOMER_DISPLAY_NAME}<br />
++                    {$item.CUSTOMER_ADDRESS|nl2br|regex_replace:"/[\r\t\n]/":" "}<br />
++                    {$item.CUSTOMER_CITY},<br />
++                    {$item.CUSTOMER_STATE} {$item.CUSTOMER_ZIP}
+ 			{/foreach}
+                 </td>
+             </tr>
+@@ -98,7 +95,8 @@
+ <!-- EOF Address Row -->
+ 
+ <!-- BOF Work Order Row -->
+-        <table  width="700" border="0" cellpadding="3" cellspacing="0" >
++{if $wo_description > NULL}
++        <table  width="800" border="0" cellpadding="3" cellspacing="0" >
+             <tr>
+                 <td><b>{$translate_invoice_prn_work_order}</b></td>
+                 <td><b>{$translate_invoice_prn_work_order_resolution}</b></td>
+@@ -108,10 +106,11 @@
+                 <td width="50%" valign="top" style="border-left: 1px solid;">{$wo_resolution}</td>
+             </tr>
+         </table>
++{/if}
+ <!-- EOF Work Order Row -->
+         <br />
+ <!-- BOF Invoice Details Row -->
+-        <table width="700" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
++        <table width="800" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+             <tr>
+                 <td align="center" class="olotd5" ><font size="+2">{$translate_invoice_prn_invoice_details} {$item.CUSTOMER_DISPLAY_NAME}</font></td>
+             </tr>
+@@ -120,7 +119,7 @@
+         <br />
+ <!-- BOF Items Table Section -->
+         <!-- Labour Table -->
+-        <table width="700" border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
++        <table width="800" border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
+             <tr>
+                 <td width="40" class="olohead"><b>{$translate_invoice_prn_qty}</b></td>
+                 <td class="olohead"><b>{$translate_invoice_prn_labour_items}</b></td>
+@@ -143,7 +142,7 @@
+         <br />
+ 
+          <!-- Parts Table -->
+-        <table width="700" border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
++        <table width="800" border="1" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
+             <tr>
+                 <td width="40" class="olohead"><b>{$translate_invoice_prn_qty}</b></td>
+                 <td class="olohead"><b>{$translate_invoice_prn_parts_items}</b></td>
+@@ -166,10 +165,10 @@
+ <!-- BOF Items Table Section -->
+          <br />
+ <!-- BOF Totals Box and Payments Section Row -->
+-        <table width="700" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
++        <table width="800" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+             <tr>
+                 <td colspan="1" valign="TOP">
+-                    <table width="500" border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
++                    <table width="600" border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
+                         <tr>
+                             <td align="left" ><font size="-1"><b>{$translate_invoice_prn_payment_instructions}</b></font></td>
+                         </tr>
+@@ -259,7 +258,7 @@
+ <br />
+ <br />
+ {if $thank_you > ''}
+-<table width="700" border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
++<table width="800" border="0" cellpadding="3" cellspacing="0" style="border-collapse: collapse;">
+     <tr>
+         <td  align="center"><font size="-1">{$thank_you}</font></td>
+     </tr>
