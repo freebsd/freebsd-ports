@@ -39,7 +39,7 @@ R_INS=		${R_COMMAND} CMD INSTALL
 
 do-install:
 .if defined(USE_R_MOD)
-	@cd ${WRKDIR} && ${R_INS} ${PORTNAME}
+	@cd ${WRKDIR} && ${SETENV} ${MAKE_ENV} ${R_INS} ${PORTNAME}
 .endif
 
 .if defined(USE_R_MOD) && defined(R_MOD_AUTOPLIST)
