@@ -36,12 +36,12 @@ lib/libpcp.so.0
 %%EXAMPLESDIR%%/pgpool_remote_start
 share/postgresql/contrib/pgpool-recovery.sql
 share/postgresql/contrib/pgpool-regclass.sql
-@comment share/postgresql/contrib/pgpool-walrecrunning.sql
+%%PGSQL9%%share/postgresql/contrib/pgpool-walrecrunning.sql
 share/postgresql/contrib/uninstall_pgpool-recovery.sql
 share/postgresql/contrib/uninstall_pgpool-regclass.sql
 lib/postgresql/pgpool-recovery.so
 lib/postgresql/pgpool-regclass.so
-@comment lib/postgresql/pgpool-walrecrunning.so
+%%PGSQL9%%lib/postgresql/pgpool-walrecrunning.so
 @dirrmtry share/postgresql/contrib
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
