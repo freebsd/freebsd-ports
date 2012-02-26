@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
