@@ -200,6 +200,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/sorter.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/sorter.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/sorter.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/status.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/status.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/status.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/task.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/task.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/domain/task/task.pyo
@@ -242,6 +245,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/templates.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/templates.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/templates.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/xfce4warning.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/version.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/version.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/version.pyo
@@ -890,9 +896,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/windows.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/windows.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/windows.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/flatnotebook.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/flatnotebook.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/flatnotebook.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/guid.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/guid.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/guid.pyo
@@ -1082,6 +1085,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/exception.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/exception.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/exception.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.pyo
