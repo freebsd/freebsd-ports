@@ -1,19 +1,21 @@
---- Makefile.orig	2011-03-27 19:21:55.979108451 +0900
-+++ Makefile	2011-03-27 19:50:02.674705215 +0900
-@@ -37,11 +37,11 @@
- install: all
- 	mkdir -p $(DESTDIR)/$(PREFIX)/share/emacs/site-lisp
- 	install -m 644 $(ELS) $(ELCS) $(DESTDIR)/$(PREFIX)/share/emacs/site-lisp
--	mkdir -p $(DESTDIR)/$(PREFIX)/share/info
--	install -m 644 magit.info $(DESTDIR)/$(PREFIX)/share/info
--	install-info --info-dir=$(DESTDIR)/$(PREFIX)/share/info $(DESTDIR)/$(PREFIX)/share/info/magit.info
--	mkdir -p $(DESTDIR)/etc/emacs/site-start.d
--	install -m 644 50magit.el $(DESTDIR)/etc/emacs/site-start.d/50magit.el
-+	mkdir -p $(DESTDIR)/$(PREFIX)/info
-+	install -m 644 magit.info $(DESTDIR)/$(PREFIX)/info
-+	install-info --info-dir=$(DESTDIR)/$(PREFIX)/info $(DESTDIR)/$(PREFIX)/info/magit.info
-+	mkdir -p $(DESTDIR)/$(PREFIX)/etc/emacs/site-start.d
-+	install -m 644 50magit.el $(DESTDIR)/$(PREFIX)/etc/emacs/site-start.d/50magit.el
+--- Makefile.orig	2012-02-25 20:11:08.159711102 +0900
++++ Makefile	2012-02-25 20:13:34.152398624 +0900
+@@ -61,13 +61,13 @@
+ install_core: core
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
+ 	install -m 644 $(ELS) $(ELCS) $(DESTDIR)$(PREFIX)/share/emacs/site-lisp
+-	mkdir -p $(DESTDIR)$(SYSCONFDIR)/emacs/site-start.d
+-	install -m 644 50magit.el $(DESTDIR)$(SYSCONFDIR)/emacs/site-start.d/50magit.el
++	mkdir -p $(DESTDIR)$(PREFIX)$(SYSCONFDIR)/emacs/site-start.d
++	install -m 644 50magit.el $(DESTDIR)$(PREFIX)$(SYSCONFDIR)/emacs/site-start.d/50magit.el
  
- clean:
- 	rm -fr magit-pkg.el magit.spec magit.info $(ELCS) *.tar.gz magit-$(VERSION)
+ install_docs: docs
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/info
+-	install -m 644 magit.info $(DESTDIR)$(PREFIX)/share/info
+-	install-info --info-dir=$(DESTDIR)$(PREFIX)/share/info $(DESTDIR)$(PREFIX)/share/info/magit.info
++	mkdir -p $(DESTDIR)$(PREFIX)/info
++	install -m 644 magit.info $(DESTDIR)$(PREFIX)/info
++	install-info --info-dir=$(DESTDIR)$(PREFIX)/info $(DESTDIR)$(PREFIX)/info/magit.info
+ 
+ install_contrib: contrib
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/emacs/site-lisp

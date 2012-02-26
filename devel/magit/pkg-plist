@@ -1,6 +1,10 @@
 etc/emacs/site-start.d/50magit.el
+share/emacs/site-lisp/magit-bisect.el
+share/emacs/site-lisp/magit-bisect.elc
 share/emacs/site-lisp/magit-key-mode.el
 share/emacs/site-lisp/magit-key-mode.elc
+share/emacs/site-lisp/magit-stgit.el
+share/emacs/site-lisp/magit-stgit.elc
 share/emacs/site-lisp/magit-svn.el
 share/emacs/site-lisp/magit-svn.elc
 share/emacs/site-lisp/magit-topgit.el
