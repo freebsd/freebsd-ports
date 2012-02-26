@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	apache22
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
 LICENSE=	AL2
