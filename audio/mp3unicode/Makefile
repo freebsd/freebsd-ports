@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ID3 tags charset converter
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib/
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
