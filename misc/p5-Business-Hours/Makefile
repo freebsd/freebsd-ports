@@ -16,6 +16,8 @@ COMMENT=	Calculate business hours during a time period
 
 BUILD_DEPENDS=	${SITE_PERL}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Pod>-1.0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
