@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	#none
 DISTFILES=	#none
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert QuickTime movie files to streamable format
 
 PLIST_FILES=	bin/qt-faststart
