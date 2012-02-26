@@ -7,7 +7,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -19,7 +19,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		notify.4:${PORTSDIR}/devel/libnotify \
-		xine.1:${PORTSDIR}/multimedia/libxine \
+		xine.2:${PORTSDIR}/multimedia/libxine \
 		qjson.0:${PORTSDIR}/devel/qjson
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 

@@ -1,6 +1,6 @@
---- src/xfmedia-xine.c.orig	Thu Nov 30 17:49:55 2006
-+++ src/xfmedia-xine.c	Thu Nov 30 17:50:48 2006
-@@ -38,14 +38,14 @@
+--- src/xfmedia-xine.c.orig
++++ src/xfmedia-xine.c
+@@ -38,15 +38,15 @@
  #ifdef HAVE_MATH_H
  #include <math.h>
  #endif
@@ -12,9 +12,20 @@
  #endif
  #ifdef HAVE_SYS_TIME_H
  #include <sys/time.h>
--#endif
+ #endif
 -#ifdef HAVE_SYS_TYPES_H
 -#include <sys/types.h>
- #endif
+-#endif
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
+ #endif
+@@ -1457,7 +1457,8 @@ xfmedia_xine_trick_mode(XfmediaXine * xf
+     g_return_val_if_fail(XFMEDIA_IS_XINE(xfx), 0);
+     g_return_val_if_fail(xfx->priv->stream != NULL, 0);
+ 
+-    return xine_trick_mode(xfx->priv->stream, mode, value);
++    //return xine_trick_mode(xfx->priv->stream, mode, value);
++    return 0;
+ }
+ 
+ gboolean

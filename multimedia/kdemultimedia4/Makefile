@@ -6,7 +6,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -22,7 +22,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
-		xine.1:${PORTSDIR}/multimedia/libxine \
+		xine.2:${PORTSDIR}/multimedia/libxine \
 		swscale.1:${PORTSDIR}/multimedia/ffmpeg
 
 .if !defined(PACKAGE_BUILDING)

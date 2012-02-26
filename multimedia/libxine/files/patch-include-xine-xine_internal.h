@@ -1,5 +1,5 @@
---- src/xine-engine/xine_internal.h.orig	Sat Apr 22 00:46:33 2006
-+++ src/xine-engine/xine_internal.h	Thu Sep 28 16:13:27 2006
+--- include/xine/xine_internal.h.orig
++++ include/xine/xine_internal.h
 @@ -72,6 +72,124 @@
  #  include <xine/alphablend.h>
  #endif

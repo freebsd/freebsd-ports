@@ -131,7 +131,7 @@ PLIST_SUB+=	OPENVRML="@comment "
 
 .if defined(WITH_XINE)
 FORCE_REQUIRE+=	Xine
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
 .else
 FORCE_IGNORE+=	Xine

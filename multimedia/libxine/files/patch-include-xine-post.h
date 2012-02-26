@@ -1,6 +1,6 @@
---- src/xine-engine/post.h.orig	2010-06-03 15:54:12.000000000 +0200
-+++ src/xine-engine/post.h	2010-06-03 15:59:20.000000000 +0200
-@@ -377,7 +377,7 @@ static xine_post_api_parameter_t temp_p[
+--- include/xine/post.h.orig
++++ include/xine/post.h
+@@ -397,7 +397,7 @@ static xine_post_api_parameter_t temp_p[
  
  #define PARAM_ITEM( param_type, var, enumv, min, max, readonly, descr ) \
  { param_type, #var, sizeof(temp_s.var), \

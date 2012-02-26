@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.2
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight media player for Xfce4 based on the xine engine
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

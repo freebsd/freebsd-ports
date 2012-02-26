@@ -153,7 +153,7 @@ CMAKE_ARGS+=	-DWITH_V4L:BOOL=Off
 .endif
 
 .if defined(WITH_XINE)
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.2:${PORTSDIR}/multimedia/libxine
 CMAKE_ARGS+=	-DWITH_XINE:BOOL=On
 .else
 CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off

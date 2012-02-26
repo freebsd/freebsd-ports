@@ -7,7 +7,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	0.12.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +17,7 @@ COMMENT=	Music collection manager and player
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine \
 		tag.1:${PORTSDIR}/audio/taglib	\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
