@@ -1,55 +1,33 @@
---- astrolog.h.orig	1998-12-23 23:29:05.000000000 +0000
-+++ astrolog.h	2011-11-30 16:32:47.000000000 +0000
-@@ -52,7 +52,7 @@
- 
- /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
- 
--#define X11 /* Comment out this #define if you don't have X windows, or */
-+/*#define X11 /* Comment out this #define if you don't have X windows, or */
-             /* else have them and don't wish to compile in X graphics.  */
- 
- /*#define WIN /* Comment out this #define if you don't have MS Windows, or */
-@@ -69,9 +69,11 @@
+--- astrolog.h.orig	2002-04-27 22:50:39.000000000 +0400
++++ astrolog.h	2012-02-25 21:25:04.000000000 +0400
+@@ -72,9 +72,11 @@
  /*#define MACG /* Comment out this #define if you don't have a Mac, or else  */
               /* have one and don't wish to compile in Mac screen graphics. */
  
+-/*#define MOUSE /* Comment out this #define if you don't have a mouse, or    */
 +#if defined(X11) || defined(WIN) || defined(MSG) || defined(BGI) || defined(MACG)
- #define MOUSE /* Comment out this #define if you don't have a mouse, or    */
++#define MOUSE /* Comment out this #define if you don't have a mouse, or    */
                /* don't wish to compile in mouse tracking features. This is */
                /* only valid if X11, WIN, MSG, BGI, or MACG above are set.  */
 +#endif
  
  #define TIME /* Comment out this #define if your compiler can't take the  */
               /* calls to the 'time' or 'localtime' functions as in time.h */
-@@ -86,7 +88,7 @@
-              /* 'atof' and related functions aren't defined in stdio.h, */
-              /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
- 
--/*#define PROTO /* Comment out this #define if you have an older compiler   */
-+#define PROTO /* Comment out this #define if you have an older compiler   */
-               /* which doesn't allow full Ansi function prototypes. This  */
-               /* is for programmers only and has no effect on executable. */
- 
-@@ -131,7 +133,9 @@
+@@ -138,9 +140,13 @@
  */
  
  #ifndef PC
 +#ifndef DEFAULT_DIR
  #define DEFAULT_DIR "~/astrolog"
-+#endif
+ #define EPHE_DIR "~/astrolog/ephe"
  #else
++#define EPHE_DIR DEFAULT_DIR
++#endif
++#else
  #define DEFAULT_DIR "C:\\ASTROLOG"
+ #define EPHE_DIR DEFAULT_DIR
  #endif
-@@ -271,7 +275,7 @@
- #endif
- #include <math.h>
- #ifdef PC
--#include <malloc.h>
-+#include <stdlib.h>
- #endif
- #ifdef TIME
- #include <time.h>
-@@ -281,6 +285,8 @@
+@@ -292,6 +298,8 @@
  #define ISG
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
@@ -58,7 +36,7 @@
  #endif
  #ifdef WIN
  #define ISG
-@@ -1046,9 +1052,9 @@
+@@ -1068,9 +1076,9 @@
  */
  
  #define byte  unsigned char

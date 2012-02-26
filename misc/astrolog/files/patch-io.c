@@ -1,14 +1,14 @@
---- io.c.orig	1998-12-23 23:29:21.000000000 +0300
-+++ io.c	2007-06-26 15:35:03.000000000 +0400
-@@ -35,6 +35,7 @@
- ** Last code change made 12/20/1998.
+--- io.c.orig	2002-04-27 22:35:30.000000000 +0400
++++ io.c	2012-02-26 11:44:42.000000000 +0400
+@@ -38,6 +38,7 @@
+ ** Modifications from version 5.40 to 5.41 are by Alois Treindl.
  */
  
 +#include <ctype.h>
  #include "astrolog.h"
- 
- 
-@@ -139,12 +140,12 @@
+ #include <string.h>
+ /*
+@@ -141,12 +142,12 @@
    }
  
    loop {
@@ -23,7 +23,24 @@
        ;
      szLine[i] = chNull;
      argc = NParseCommandLine(szLine, argv);
-@@ -675,7 +676,7 @@
+@@ -432,7 +433,7 @@
+ /* so we have to distinguish them from new strings with two dots. VA.    */
+ 
+   newstyle = fTrue;
+-  if (pm == pmTim || pm == pmLon || pm == pmLat) {
++  if (pm == pmTim || pm == pmLon || pm == pmLat || pm == pmZon) {
+     havedot = 0; dot1 = 0; dot2 = 0;
+     for (i = 0; i < cch; i++) {
+       chdot = sz[i];
+@@ -453,6 +454,7 @@
+ /* it to the old style.                                              */
+ 
+     if (newstyle) {
++      memset(minutes, chNull, sizeof(minutes));
+       for (i = dot1+1; i < cch; i++) {
+         j = i - (dot1 + 1);
+         if (sz[i] >= '.' && sz[i] <= '9' && sz[i] != '/')
+@@ -724,7 +726,7 @@
        /* them. Be prepared to skip over them in old files for compatibility. */
  
        if (i == oVtx) {
