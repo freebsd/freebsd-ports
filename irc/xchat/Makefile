@@ -36,8 +36,7 @@ OPTIONS=	DBUS "Enable DBUS support" on \
 		NOTIFY "Depend on libnotify for notifications" off \
 		PERL "Enable Perl support" on \
 		PYTHON "Enable Python support" off \
-		TCL "Enable TCL support" off \
-		SOCKS "Build with socks5 support" off
+		TCL "Enable TCL support" off
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
@@ -111,12 +110,6 @@ PLIST_SUB+=	TCL=""
 .else
 CONFIGURE_ARGS+=--enable-tcl=no
 PLIST_SUB+=	TCL="@comment "
-.endif
-
-.if defined(WITH_SOCKS)
-ONLY_FOR_ARCHS=	i386
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=--enable-socks
 .endif
 
 post-patch:
