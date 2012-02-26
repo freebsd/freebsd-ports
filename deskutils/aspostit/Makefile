@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	apps/aspostit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An AfterStep dockable version of XPostIt
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg/
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm xaw xext x11
 USE_GMAKE=	yes

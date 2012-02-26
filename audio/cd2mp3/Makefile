@@ -16,7 +16,7 @@ MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
 MAINTAINER=	mark@foster.cc
 COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 
-RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame/ \
+RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		dagrab:${PORTSDIR}/audio/dagrab
 
 NO_BUILD=	yes

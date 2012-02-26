@@ -16,9 +16,9 @@ DISTNAME=	caudium-${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A free webserver based on the Roxen Challenger 1.3 code base
 
-BUILD_DEPENDS=	pike76:${PORTSDIR}/lang/pike76/
-LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron/
-RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof/
+BUILD_DEPENDS=	pike76:${PORTSDIR}/lang/pike76
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
+RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
