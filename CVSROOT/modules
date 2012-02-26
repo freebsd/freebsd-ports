@@ -12898,6 +12898,8 @@ p5-Layout-Manager               ports/graphics/p5-Layout-Manager
 p5-Lchown                       ports/sysutils/p5-Lchown
 p5-Lexical-Alias                ports/devel/p5-Lexical-Alias
 p5-Lexical-Persistence          ports/devel/p5-Lexical-Persistence
+p5-Lexical-SealRequireHints     ports/devel/p5-Lexical-SealRequireHints
+p5-Lexical-Var                  ports/devel/p5-Lexical-Var
 p5-Lingua-Conjunction           ports/textproc/p5-Lingua-Conjunction
 p5-Lingua-EN-AddressParse       ports/textproc/p5-Lingua-EN-AddressParse
 p5-Lingua-EN-Fathom             ports/textproc/p5-Lingua-EN-Fathom
@@ -17348,6 +17350,8 @@ p5-lchown                       ports/sysutils/p5-Lchown
 p5-lego-rcx                     ports/misc/p5-LEGO-RCX
 p5-lexical-alias                ports/devel/p5-Lexical-Alias
 p5-lexical-persistence          ports/devel/p5-Lexical-Persistence
+p5-lexical-sealrequirehints     ports/devel/p5-Lexical-SealRequireHints
+p5-lexical-var                  ports/devel/p5-Lexical-Var
 p5-lib-abs                      ports/devel/p5-lib-abs
 p5-libalarm                     ports/devel/p5-libalarm
 p5-libapreq2                    ports/www/p5-libapreq2
