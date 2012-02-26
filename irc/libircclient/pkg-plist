@@ -11,18 +11,20 @@ lib/libircclient.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ircftp.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/irctest.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spammer.c
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/ircmud
-%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/classes.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/files.html
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_0x6c.html
 %%PORTDOCS%%%%DOCSDIR%%/globals_defs.html
 %%PORTDOCS%%%%DOCSDIR%%/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/group__colors.html
 %%PORTDOCS%%%%DOCSDIR%%/group__common.html
 %%PORTDOCS%%%%DOCSDIR%%/group__conndisc.html
 %%PORTDOCS%%%%DOCSDIR%%/group__contexts.html
@@ -47,9 +49,13 @@ lib/libircclient.a
 %%PORTDOCS%%%%DOCSDIR%%/libirc__events_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/libirc__options_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/libirc__rfcnumeric_8h.html
-%%PORTDOCS%%%%DOCSDIR%%/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/libircclient_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/pagefaq.html
+%%PORTDOCS%%%%DOCSDIR%%/pages.html
 %%PORTDOCS%%%%DOCSDIR%%/structirc__callbacks__t.html
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/tab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/tab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/tab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/tabs.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

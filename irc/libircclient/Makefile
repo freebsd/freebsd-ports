@@ -6,17 +6,27 @@
 #
 
 PORTNAME=	libircclient
-PORTVERSION=	1.3
+PORTVERSION=	1.6
 CATEGORIES=	irc devel
 MASTER_SITES=	SF
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	An IRC library to create IRC clients
 
+OPTIONS=	SSL	"Build with SSL Support" on \
+		IPV6	"Build with IPv6 Support" on
+
+BUILD_WRKSRC=	${WRKSRC}/src
 GNU_CONFIGURE=	yes
 
-do-build:
-	@${MAKE} -C ${WRKSRC}/src/
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=	--enable-openssl
+USE_OPENSSL=	yes
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/include/libircclient.h ${PREFIX}/include
