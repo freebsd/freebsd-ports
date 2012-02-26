@@ -92,6 +92,7 @@ include/ImageMagick/magick/magick-config.h
 include/ImageMagick/magick/magick-type.h
 include/ImageMagick/magick/matrix.h
 include/ImageMagick/magick/memory_.h
+include/ImageMagick/magick/method-attribute.h
 include/ImageMagick/magick/methods.h
 include/ImageMagick/magick/mime.h
 include/ImageMagick/magick/module.h
@@ -145,6 +146,7 @@ include/ImageMagick/wand/magick-image.h
 include/ImageMagick/wand/magick-property.h
 include/ImageMagick/wand/magick_wand.h
 include/ImageMagick/wand/magick-wand.h
+include/ImageMagick/wand/method-attribute.h
 include/ImageMagick/wand/mogrify.h
 include/ImageMagick/wand/montage.h
 include/ImageMagick/wand/pixel-iterator.h
