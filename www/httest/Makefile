@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	httest
-PORTVERSION=	2.1.12
-PORTREVISION=	1
+PORTVERSION=	2.1.16
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	htt/htt2.1/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Test Tool
 
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1 \
@@ -34,6 +33,6 @@ CONFIGURE_ARGS+=--with-apr="${LOCALBASE}/bin" \
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-MAN1=		httest.1 htproxy.1 htntlm.1 htremote.1 hturlext.1 htx2b.1
+MAN1=		httest.1 htproxy.1 htntlm.1 htremote.1
 
 .include <bsd.port.mk>
