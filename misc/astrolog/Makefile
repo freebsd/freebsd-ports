@@ -7,20 +7,20 @@
 #
 
 PORTNAME=	astrolog
-PORTVERSION=    5.41g
-CATEGORIES=     misc astro
-MASTER_SITES=   ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
+PORTVERSION=	5.41g
+CATEGORIES=	misc astro
+MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
 		http://astrolog.offline.ee/astrolog/changed/:dist
-DISTFILES=      a541gsrc.tar.gz:dist ${EPHE}
+DISTFILES=	a541gsrc.tar.gz:dist ${EPHE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
 # Swiss Ephemeris GPLv2 licensed, see
 # http://www.astro.com/ftp/swisseph/LICENSE.TXT
-LICENSE=        GPLv2 # (or later)
+LICENSE=	GPLv2 # (or later)
 
-EPHE=           sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
+EPHE=		sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
 		sweph_12.tar.gz:ephe sweph_18.tar.gz:ephe \
 		sweph_24.tar.gz:ephe sweph_30.tar.gz:ephe \
 		sweph_36.tar.gz:ephe sweph_42.tar.gz:ephe \
@@ -36,10 +36,10 @@ MAKE_ARGS=	-DX11
 .endif
 DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
-MAKEFILE=       makefile
+MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
 
-DOCS=           helpfile.540 readme.541 changes.txt
+DOCS=		helpfile.540 readme.541 changes.txt
 
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
