@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	greed
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	games
 MASTER_SITES=	http://catb.org/~esr/greed/ CENKES
 PKGNAMESUFFIX=	-game
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A text puzzle game with the aim of clearing the game field
 
 MAN6=		greed.6
