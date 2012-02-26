@@ -1,6 +1,4 @@
 # New ports collection makefile for:    astrolog
-# See some useful stuff at:
-# http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
 #
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
@@ -9,46 +7,44 @@
 #
 
 PORTNAME=	astrolog
-PORTVERSION=	5.40
-PORTREVISION=	12
-CATEGORIES=	misc
-MASTER_SITES=	http://www.astrolog.org/ftp/ephem/:ephem \
-		http://www.astrolog.org/ftp/:dist
-DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
-EXTRACT_ONLY=	ast54unx.shr
+PORTVERSION=    5.41g
+CATEGORIES=     misc astro
+MASTER_SITES=   ftp://ftp.astro.com/pub/swisseph/ephe/archive_gzip/:ephe \
+		http://astrolog.offline.ee/astrolog/changed/:dist
+DISTFILES=      a541gsrc.tar.gz:dist ${EPHE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
-EPHEM=		ephemall.zip
+# Swiss Ephemeris GPLv2 licensed, see
+# http://www.astro.com/ftp/swisseph/LICENSE.TXT
+LICENSE=        GPLv2 # (or later)
 
-USE_ZIP=	yes
-USE_DOS2UNIX=	ephem/EPHINDEX.TXT
+EPHE=           sweph_00.tar.gz:ephe sweph_06.tar.gz:ephe \
+		sweph_12.tar.gz:ephe sweph_18.tar.gz:ephe \
+		sweph_24.tar.gz:ephe sweph_30.tar.gz:ephe \
+		sweph_36.tar.gz:ephe sweph_42.tar.gz:ephe \
+		sweph_48.tar.gz:ephe swephm06.tar.gz:ephe \
+		swephm12.tar.gz:ephe swephm18.tar.gz:ephe \
+		swephm24.tar.gz:ephe swephm30.tar.gz:ephe \
+		swephm36.tar.gz:ephe swephm42.tar.gz:ephe \
+		swephm48.tar.gz:ephe swephm54.tar.gz:ephe
+
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
 MAKE_ARGS=	-DX11
 .endif
-EXTRACT_CMD=	${SH}
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
 DIST_SUBDIR=	astrolog
 ALL_TARGET=	astrolog
+MAKEFILE=       makefile
 NO_WRKSUBDIR=	yes
 
-DOCS=		Helpfile.540 Update.540 README.540
-
-post-extract:
-	-@${MKDIR} ${WRKDIR}/ephem
-	${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EPHEM} -d ${WRKDIR}/ephem
-
-post-patch:
-	@${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g" \
-		${WRKSRC}/astrolog.h ${WRKSRC}/placalc.h
+DOCS=           helpfile.540 readme.541 changes.txt
 
 do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
-	cd ${WRKDIR}/ephem && \
-		${INSTALL_DATA} * ${PREFIX}/lib/astrolog
+	cd ${WRKDIR} && \
+		${INSTALL_DATA} fixstars.ast *.se1 ${PREFIX}/lib/astrolog
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
 		if [ ! -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
@@ -62,7 +58,7 @@ do-install:
 .endfor
 .endif
 	@${ECHO_MSG}
-	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/Helpfile.540 for help"
+	@${ECHO_MSG} "See the file ${PREFIX}/share/doc/astrolog/helpfile.540 for help"
 	@${ECHO_MSG} "and tune ${PREFIX}/lib/astrolog/astrolog.dat"
 
 .include <bsd.port.mk>

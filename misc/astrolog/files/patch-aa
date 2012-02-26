@@ -1,11 +1,10 @@
---- Makefile.orig	Wed Dec 23 23:29:57 1998
-+++ Makefile	Thu Jan 26 06:18:04 2006
-@@ -23,8 +23,13 @@
-  charts0.o charts1.o charts2.o charts3.o intrpret.o\
-  xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
- # If you don't have X windows, delete the "-lX11" part from the line below:
--LIBS = -lm -lX11
--CFLAGS = -O
+--- makefile.orig	2002-04-27 22:48:52.000000000 +0400
++++ makefile	2012-02-25 22:50:00.000000000 +0400
+@@ -28,9 +28,15 @@
+ # LIBS = -lm -lX11
+ # with Debian Linux and X windows worked 
+ # LIBS = -lm -L/usr/X11R6/lib -lX11
+-LIBS= -lm
 +.if defined(X11)
 +LIBS = -L${LOCALBASE}/lib -lX11 -lm
 +CFLAGS += -DX11 -I${LOCALBASE}/include -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
@@ -13,6 +12,9 @@
 +LIBS = -lm
 +CFLAGS += -DDEFAULT_DIR=\"${PREFIX}/lib/astrolog\"
 +.endif
- 
- astrolog:: $(OBJ)
- 	cc -o $(NAME) $(OBJ) $(LIBS)
+ #
+-CFLAGS = -O -DHPUX_SOURCE
++#CFLAGS = -O -DHPUX_SOURCE
+ #
+ # CFLAGS from 5.41 original sources
+ # CFLAGS = -g -Aa -DHPUX_SOURCE
