@@ -7,7 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese graphics
 MASTER_SITES=	http://dist.bsdlab.org/
 #MASTER_SITES=	http://blue.ribbon.to/~harpy/ming/jaming/
@@ -17,7 +17,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	LGPL'ed Flash 4/5 movie output library with Japanese languages support
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 
 CONFLICTS=	ming-*
 
@@ -55,9 +55,9 @@ post-build:
 	cd ${WRKSRC}/../util && \
 	${CC} ${CFLAGS} -I${PREFIX}/include -I${PREFIX}/include/ming -c *.c
 	cd ${WRKSRC}/../util && \
-	${CC} ${CFLAGS} -L${PREFIX}/lib -o gif2dbl gif2dbl.o -lm -lz -lungif
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o gif2dbl gif2dbl.o -lm -lz -lgif
 	cd ${WRKSRC}/../util && \
-	${CC} ${CFLAGS} -L${PREFIX}/lib -o gif2mask gif2mask.o -lm -lz -lungif
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o gif2mask gif2mask.o -lm -lz -lgif
 	cd ${WRKSRC}/../util && \
 	${CC} ${CFLAGS} -L${PREFIX}/lib -o listfdb listfdb.o blocktypes.o
 	cd ${WRKSRC}/../util && \
