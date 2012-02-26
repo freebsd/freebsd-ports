@@ -1,7 +1,7 @@
----------------------------------------------------------------------------------------------
-Installation has successfully completed!
----------------------------------------------------------------------------------------------
-MyITCRM is now installed in documentoroot: %%WWWDIR%%. 
+----------------------------------------------------------------------------
+Post installation instructions:
+----------------------------------------------------------------------------
+MyITCRM is now installed in documentroot: %%WWWDIR%%. 
 
 1) Create user, MySQL database and set privileges:
 
@@ -17,12 +17,16 @@ Now you can try http://your-server/myitcrm/install and setup your database.
 Full Path: %%WWWDIR%%
 Site Name: http://your-server/myitcrm
 
-3) Finally remove installation folder:
+3) Finally move the installation folder or you will not be able to login:
 
-rm -rf %%WWWDIR%%/install
+mkdir -p $HOME/backup/myitcrm
+mv %%WWWDIR%%/install $HOME/backup/myitcrm
 
-NOTE: These may not be necessary but should be used as a guide only.
+If you need to reinstall MyITCRM, move the directory back and go back to
+step 2.
+
+Recommended php.ini settings:
 - memory_limit=32M
 - register_globals=off
 - safe_mode=off
----------------------------------------------------------------------------------------------
+============================================================================

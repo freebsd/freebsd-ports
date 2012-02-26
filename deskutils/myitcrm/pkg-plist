@@ -1,8 +1,7 @@
-%%WWWDIR%%/LICENSE.txt
+@unexec if cmp -s %D/%%WWWDIR%%/conf.php %D/%%WWWDIR%%/conf-default.php; then rm -f %D/%%WWWDIR%%/conf.php; fi
 %%WWWDIR%%/backup/.htaccess
 %%WWWDIR%%/backup/bigdump.php
 %%WWWDIR%%/cache/index.php
-%%WWWDIR%%/changelog.txt
 %%WWWDIR%%/conf-default.php
 %%WWWDIR%%/cron/.htaccess
 %%WWWDIR%%/cron/backup.php
@@ -48,10 +47,11 @@
 %%WWWDIR%%/images/icons/16x16/small_edit.gif
 %%WWWDIR%%/images/icons/16x16/small_edit_employees.gif
 %%WWWDIR%%/images/icons/16x16/small_new_customer.gif
+%%WWWDIR%%/images/icons/16x16/small_new_invoice_only.gif
 %%WWWDIR%%/images/icons/16x16/small_new_work_order.gif
 %%WWWDIR%%/images/icons/16x16/stop.gif
 %%WWWDIR%%/images/icons/16x16/up.gif
-%%WWWDIR%%/images/icons/16x16/view+.gif
+%%WWWDIR%%/images/icons/16x16/view.gif
 %%WWWDIR%%/images/icons/16x16/viewmag.gif
 %%WWWDIR%%/images/icons/3floppy_mount.png
 %%WWWDIR%%/images/icons/bookmark.png
@@ -133,6 +133,7 @@
 %%WWWDIR%%/images/paymate/paymate_cc.gif
 %%WWWDIR%%/images/paypal/Thumbs.db
 %%WWWDIR%%/images/paypal/cc_paypal.gif
+%%WWWDIR%%/images/paypal/donate.gif
 %%WWWDIR%%/images/paypal/pay_now.gif
 %%WWWDIR%%/images/paypal/pay_now.png
 %%WWWDIR%%/images/rate_upload.PNG
@@ -350,6 +351,18 @@
 %%WWWDIR%%/include/SMARTY/plugins/shared.make_timestamp.php
 %%WWWDIR%%/include/acl.php
 %%WWWDIR%%/include/auth.php
+%%WWWDIR%%/include/dhtmlxcombo/dhtmlxcombo.css
+%%WWWDIR%%/include/dhtmlxcombo/dhtmlxcombo.js
+%%WWWDIR%%/include/dhtmlxcombo/dhtmlxcommon.js
+%%WWWDIR%%/include/dhtmlxcombo/ext/dhtmlxcombo_extra.js
+%%WWWDIR%%/include/dhtmlxcombo/ext/dhtmlxcombo_group.js
+%%WWWDIR%%/include/dhtmlxcombo/ext/dhtmlxcombo_whp.js
+%%WWWDIR%%/include/dhtmlxcombo/imgs/bg_selection.gif
+%%WWWDIR%%/include/dhtmlxcombo/imgs/blank.gif
+%%WWWDIR%%/include/dhtmlxcombo/imgs/combo_select.gif
+%%WWWDIR%%/include/dhtmlxcombo/imgs/combo_select_dhx_black.gif
+%%WWWDIR%%/include/dhtmlxcombo/imgs/combo_select_dhx_blue.gif
+%%WWWDIR%%/include/dhtmlxcombo/imgs/combo_select_dhx_skyblue.gif
 %%WWWDIR%%/include/fpdf/font/courier.php
 %%WWWDIR%%/include/fpdf/font/desktop.ini
 %%WWWDIR%%/include/fpdf/font/helvetica.php
@@ -444,7 +457,6 @@
 %%WWWDIR%%/include/jscalendar/lang/calendar-zh.js
 %%WWWDIR%%/include/jscalendar/lang/cn_utf8.js
 %%WWWDIR%%/include/jscalendar/menuarrow.gif
-%%WWWDIR%%/include/phpinfo.php
 %%WWWDIR%%/include/session.php
 %%WWWDIR%%/include/swift/lib/classes/Swift.php
 %%WWWDIR%%/include/swift/lib/classes/Swift/Attachment.php
@@ -587,7 +599,6 @@
 %%WWWDIR%%/include/swift/lib/swift_init.php
 %%WWWDIR%%/include/swift/lib/swift_required.php
 %%WWWDIR%%/include/swift/lib/swift_required_pear.php
-%%WWWDIR%%/include/tinymce/changelog.txt
 %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/license.txt
 %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
@@ -846,38 +857,9 @@
 %%WWWDIR%%/js/sdmenu.js
 %%WWWDIR%%/js/submit.js
 %%WWWDIR%%/js/tabs.js
-%%WWWDIR%%/language/asset/english.xml
-%%WWWDIR%%/language/billing/english.xml
-%%WWWDIR%%/language/billing/english_US.xml
-%%WWWDIR%%/language/control/english.xml
-%%WWWDIR%%/language/control/english_US.xml
-%%WWWDIR%%/language/core/english.xml
-%%WWWDIR%%/language/core/english_US.xml
-%%WWWDIR%%/language/core/french.xml
-%%WWWDIR%%/language/core/german.xml
-%%WWWDIR%%/language/customer/english.xml
-%%WWWDIR%%/language/customer/english_US.xml
-%%WWWDIR%%/language/customer/french.xml
-%%WWWDIR%%/language/customer/german.xml
-%%WWWDIR%%/language/customer/spanish.xml
-%%WWWDIR%%/language/employees/english.xml
-%%WWWDIR%%/language/employees/english_US.xml
 %%WWWDIR%%/language/english.xml
 %%WWWDIR%%/language/english_US.xml
-%%WWWDIR%%/language/error/english.xml
-%%WWWDIR%%/language/error/english_US.xml
 %%WWWDIR%%/language/index.php
-%%WWWDIR%%/language/invoice/english.xml
-%%WWWDIR%%/language/invoice/english_US.xml
-%%WWWDIR%%/language/parts/english.xml
-%%WWWDIR%%/language/parts/english_US.xml
-%%WWWDIR%%/language/portuguese.xml
-%%WWWDIR%%/language/schedule/english.xml
-%%WWWDIR%%/language/schedule/english_US.xml
-%%WWWDIR%%/language/stats/english.xml
-%%WWWDIR%%/language/stats/english_US.xml
-%%WWWDIR%%/language/workorder/english.xml
-%%WWWDIR%%/language/workorder/english_US.xml
 %%WWWDIR%%/log/access.log
 %%WWWDIR%%/log/index.php
 %%WWWDIR%%/login.php
@@ -936,7 +918,6 @@
 %%WWWDIR%%/modules/core/include/display_work_orders.php
 %%WWWDIR%%/modules/core/main.php
 %%WWWDIR%%/modules/core/navagation.php
-%%WWWDIR%%/modules/core/tool_bar.php
 %%WWWDIR%%/modules/core/translate.php
 %%WWWDIR%%/modules/customer/customer_details.php
 %%WWWDIR%%/modules/customer/delete.php
@@ -962,11 +943,11 @@
 %%WWWDIR%%/modules/expense/new.php
 %%WWWDIR%%/modules/expense/search.php
 %%WWWDIR%%/modules/index.php
+%%WWWDIR%%/modules/invoice/delete.php
 %%WWWDIR%%/modules/invoice/include.php
 %%WWWDIR%%/modules/invoice/index.php
 %%WWWDIR%%/modules/invoice/main.php
 %%WWWDIR%%/modules/invoice/new.php
-%%WWWDIR%%/modules/invoice/pdf.php
 %%WWWDIR%%/modules/invoice/print.php
 %%WWWDIR%%/modules/invoice/view.php
 %%WWWDIR%%/modules/invoice/view_paid.php
@@ -996,6 +977,7 @@
 %%WWWDIR%%/modules/schedule/view.php
 %%WWWDIR%%/modules/stats/hit_stats.php
 %%WWWDIR%%/modules/stats/hit_stats_view.php
+%%WWWDIR%%/modules/stats/include.php
 %%WWWDIR%%/modules/stats/index.php
 %%WWWDIR%%/modules/stats/main.php
 %%WWWDIR%%/modules/supplier/delete.php
@@ -1019,8 +1001,6 @@
 %%WWWDIR%%/modules/workorder/print.php
 %%WWWDIR%%/modules/workorder/view.php
 %%WWWDIR%%/modules/workorder/view_closed.php
-%%WWWDIR%%/password.php
-%%WWWDIR%%/submit.php
 %%WWWDIR%%/templates/asset/index.php
 %%WWWDIR%%/templates/asset/view.tpl
 %%WWWDIR%%/templates/billing/display_gift.tpl
@@ -1053,13 +1033,11 @@
 %%WWWDIR%%/templates/core/password.tpl
 %%WWWDIR%%/templates/core/submit.tpl
 %%WWWDIR%%/templates/customer/customer_details.tpl
-%%WWWDIR%%/templates/customer/directions.tpl
-%%WWWDIR%%/templates/customer/edit.js
 %%WWWDIR%%/templates/customer/edit.tpl
 %%WWWDIR%%/templates/customer/email.tpl
 %%WWWDIR%%/templates/customer/index.php
+%%WWWDIR%%/templates/customer/javascripts.js
 %%WWWDIR%%/templates/customer/memo.tpl
-%%WWWDIR%%/templates/customer/new.js
 %%WWWDIR%%/templates/customer/new.tpl
 %%WWWDIR%%/templates/customer/search.tpl
 %%WWWDIR%%/templates/employees/delete.tpl
@@ -1078,10 +1056,15 @@
 %%WWWDIR%%/templates/expense/new.tpl
 %%WWWDIR%%/templates/expense/search.tpl
 %%WWWDIR%%/templates/index.php
+%%WWWDIR%%/templates/invoice/address-only-print_html.tpl
+%%WWWDIR%%/templates/invoice/delete.php
 %%WWWDIR%%/templates/invoice/index.php
+%%WWWDIR%%/templates/invoice/javascripts.js
 %%WWWDIR%%/templates/invoice/main.tpl
 %%WWWDIR%%/templates/invoice/new.tpl
-%%WWWDIR%%/templates/invoice/print.tpl
+%%WWWDIR%%/templates/invoice/print_html.tpl
+%%WWWDIR%%/templates/invoice/print_html.tpl.orig
+%%WWWDIR%%/templates/invoice/print_pdf_tpl.php
 %%WWWDIR%%/templates/invoice/view.tpl
 %%WWWDIR%%/templates/invoice/view_paid.tpl
 %%WWWDIR%%/templates/invoice/view_unpaid.tpl
@@ -1154,6 +1137,10 @@
 %%WWWDIR%%/upgrade/0281_0290/sql.php
 %%WWWDIR%%/upgrade/0290_0291/index.php
 %%WWWDIR%%/upgrade/0290_0291/sql.php
+%%WWWDIR%%/upgrade/0291_0292/index.php
+%%WWWDIR%%/upgrade/0291_0292/sql.php
+%%WWWDIR%%/upgrade/0292_0293/index.php
+%%WWWDIR%%/upgrade/0292_0293/sql.php
 %%WWWDIR%%/upgrade/index.html
 %%WWWDIR%%/upgrade/inv.php
 %%WWWDIR%%/upgrade/validate.js
@@ -1161,8 +1148,9 @@
 %%WWWDIR%%/upload/index.php
 %%WWWDIR%%/upload/rate_upload.csv
 %%WWWDIR%%/version.php
-%%WWWDIR%%/conf.php
 @dirrm %%WWWDIR%%/upload
+@dirrm %%WWWDIR%%/upgrade/0292_0293
+@dirrm %%WWWDIR%%/upgrade/0291_0292
 @dirrm %%WWWDIR%%/upgrade/0290_0291
 @dirrm %%WWWDIR%%/upgrade/0281_0290
 @dirrm %%WWWDIR%%/upgrade
@@ -1199,19 +1187,7 @@
 @dirrm %%WWWDIR%%/modules/billing
 @dirrm %%WWWDIR%%/modules/asset
 @dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/log
-@dirrm %%WWWDIR%%/language/workorder
-@dirrm %%WWWDIR%%/language/stats
-@dirrm %%WWWDIR%%/language/schedule
-@dirrm %%WWWDIR%%/language/parts
-@dirrm %%WWWDIR%%/language/invoice
-@dirrm %%WWWDIR%%/language/error
-@dirrm %%WWWDIR%%/language/employees
-@dirrm %%WWWDIR%%/language/customer
-@dirrm %%WWWDIR%%/language/core
-@dirrm %%WWWDIR%%/language/control
-@dirrm %%WWWDIR%%/language/billing
-@dirrm %%WWWDIR%%/language/asset
+@dirrmtry %%WWWDIR%%/log
 @dirrm %%WWWDIR%%/language
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/install
@@ -1301,7 +1277,6 @@
 @dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/contextmenu
 @dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/bbcode
 @dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/langs
-@dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/images
 @dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autoresize
 @dirrm %%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/advlist
@@ -1354,6 +1329,9 @@
 @dirrm %%WWWDIR%%/include/fpdf/font/makefont
 @dirrm %%WWWDIR%%/include/fpdf/font
 @dirrm %%WWWDIR%%/include/fpdf
+@dirrm %%WWWDIR%%/include/dhtmlxcombo/imgs
+@dirrm %%WWWDIR%%/include/dhtmlxcombo/ext
+@dirrm %%WWWDIR%%/include/dhtmlxcombo
 @dirrm %%WWWDIR%%/include/SMARTY/plugins
 @dirrm %%WWWDIR%%/include/SMARTY/internals
 @dirrm %%WWWDIR%%/include/SMARTY
@@ -1379,7 +1357,6 @@
 @dirrm %%WWWDIR%%/fonts
 @dirrm %%WWWDIR%%/css
 @dirrm %%WWWDIR%%/cron
-@dirrm %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%/backup
-@dirrmtry %%WWWDIR%%/
-@exec mkdir -p %D/%%WWWDIR%%/include/tinymce/jscripts/tiny_mce/plugins/autosave/images
+@exec if [ ! -f %D/%%WWWDIR%%/conf.php ]; then cp -p %D/%%WWWDIR%%/conf-default.php %D/%%WWWDIR%%/conf.php; fi
