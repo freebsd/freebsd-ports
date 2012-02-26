@@ -26,9 +26,11 @@ bin/sfscandiff
 %%DATADIR%%/assets/sf_name.png
 %%DATADIR%%/dictionaries/README-FIRST
 %%DATADIR%%/dictionaries/complete.wl
+%%DATADIR%%/dictionaries/complete-fast.wl
 %%DATADIR%%/dictionaries/medium.wl
 %%DATADIR%%/dictionaries/extensions-only.wl
 %%DATADIR%%/dictionaries/minimal.wl
+%%DATADIR%%/dictionaries/test.wl
 @dirrm %%DATADIR%%/dictionaries
 @dirrm %%DATADIR%%/assets
 @dirrm %%DATADIR%%
