@@ -22,6 +22,7 @@
     SUBDIR += R-cran-dichromat
     SUBDIR += R-cran-ggplot2
     SUBDIR += R-cran-munsell
+    SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-rgdal
     SUBDIR += R-cran-rtiff
     SUBDIR += R-cran-shape
