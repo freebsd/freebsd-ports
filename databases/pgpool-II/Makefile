@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	3.1
+PORTVERSION=	3.1.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/3114/
+MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
@@ -30,8 +30,15 @@ PORTDOCShtml+=	tutorial-en.html tutorial-ja.html
 
 MAN8=		pgpool.8
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/postgresql/server/replication/walreceiver.h)
+FUNCTIONS=	pgpool-recovery pgpool-regclass pgpool-walrecrunning
+PLIST_SUB=	PGSQL9=""
+.else
 FUNCTIONS=	pgpool-recovery pgpool-regclass
-#FUNCTIONS+=	pgpool-walrecrunning
+PLIST_SUB=	PGSQL9="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
@@ -65,4 +72,4 @@ post-install:
 PORTDOCS+=	${PORTDOCShtml}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
