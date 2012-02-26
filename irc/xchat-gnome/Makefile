@@ -47,11 +47,6 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
-.if defined(WITH_SOCKS)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--enable-socks
-.endif
-
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
