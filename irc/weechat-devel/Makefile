@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	20120219
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -29,6 +30,10 @@ WANT_PERL=	yes
 
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 
+# Please note: the DEBUG option is *NOT* empty, it is utilised by
+# bsd.cmake.mk to set the cmake build type to Debug instead of 
+# Release.
+
 OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		PYTHON		"Python scripting support"	Off	\
 		PERL		"Perl scripting support"	Off	\
@@ -37,6 +42,7 @@ OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		GUILE		"Guile scripting support"	Off	\
 		CHARSET		"Charset support"		On	\
 		BACKTRACE	"Backtraces"			On	\
+		DEBUG		"Debugging"			On	\
 		ASPELL		"Spell checking"		Off	\
 		GNUTLS		"GNU TLS"			Off	\
 		NLS		"NLS support"			On	\
