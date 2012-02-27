@@ -131,6 +131,7 @@
     SUBDIR += nagios-check_tftp
     SUBDIR += nagios-devel
     SUBDIR += nagios-geom
+    SUBDIR += nagios-openldap-plugins
     SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-portaudit
