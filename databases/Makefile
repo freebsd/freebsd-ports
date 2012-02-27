@@ -182,6 +182,7 @@
     SUBDIR += mariadb-scripts
     SUBDIR += mariadb-server
     SUBDIR += mdbtools
+    SUBDIR += mdcached
     SUBDIR += memcached
     SUBDIR += memcached12
     SUBDIR += memcachedb
