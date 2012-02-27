@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	roam
 DISTFILES=	nsping.tar.gz
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS "ping"
 
 MAN8=		nsping.8

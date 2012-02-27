@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl interface to the Akismet comment and trackback spam blocker
 
 BUILD_DEPENDS=	p5-libwww>=5.09:${PORTSDIR}/www/p5-libwww

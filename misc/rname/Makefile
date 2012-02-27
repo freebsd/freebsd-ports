@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://devel.ringlet.net/sysutils/rname/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Execute a program with a fake name
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

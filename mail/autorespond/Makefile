@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.inter7.com/devel/
 PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/patches/mail/
 PATCHFILES=	${DISTNAME}-conf-strcasestr.patch
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple autoresponder for qmail
 
 MAN1=		autorespond.1

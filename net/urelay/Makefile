@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://devel.ringlet.net/net/urelay/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An UCSPI-based TCP forwarder
 
 MAN1=		urelay.1

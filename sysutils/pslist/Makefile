@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/pslist/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to view or send signals to processes with all their children
 
 USE_PERL5_RUN=	yes

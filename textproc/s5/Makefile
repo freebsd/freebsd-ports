@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://meyerweb.com/eric/tools/s5/v/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple HTML-based presentation system
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

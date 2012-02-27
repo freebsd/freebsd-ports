@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl binding interface for curl
 
 LICENSE=	MIT

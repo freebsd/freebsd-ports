@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
 LICENSE=	PD

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://fph.altervista.org/prog/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses Tetris clone which is harder than every other Tetris
 
 USE_GMAKE=	yes

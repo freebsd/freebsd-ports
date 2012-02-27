@@ -12,7 +12,7 @@ MASTER_SITES=	SF/gh-tool/gh-tool/1
 DISTNAME=	ghmain.c
 EXTRACT_SUFX=
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line interface to the resolver library
 
 WRKSRC=		${WRKDIR}

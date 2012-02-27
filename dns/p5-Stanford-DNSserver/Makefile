@@ -11,7 +11,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	http://www.stanford.edu/~riepel/lbnamed/Stanford-DNSserver/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DNS name server framework with a Perl backend
 
 PERL_CONFIGURE=	yes

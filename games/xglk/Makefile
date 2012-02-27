@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ifarchive.org/if-archive/programming/glk/implementation
 DISTNAME=	${PORTNAME}-0${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Windows Implementation of the Glk API
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

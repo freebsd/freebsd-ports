@@ -14,7 +14,7 @@ MASTER_SITES=	http://jeenyus.net/~budney/linux/software/safecat/ \
 		http://people.FreeBSD.org/~roam/ports/sysutils/safecat/
 MASTER_SITE_SUBDIR=	utils/file
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safely write data to a directory using D. J. Bernstein's Maildir ideology
 
 MAN1=		safecat.1 maildir.1

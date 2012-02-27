@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.neuro-tech.net/files/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A history cleaner for Netscape Navigator and Communicator
 
 WANT_GNOME=	yes

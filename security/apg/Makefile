@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
 MASTER_SITE_SUBDIR=	UNIX/misc
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated password generator
 
 OPTIONS=	CRACKLIB "CrackLib support for password quality" off

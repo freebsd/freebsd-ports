@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://cbothamy.free.fr/projects/id3ren/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mpeg Audio Layer 3 util: rename files, edit tags, search, etc
 
 PLIST_FILES=	bin/id3ren

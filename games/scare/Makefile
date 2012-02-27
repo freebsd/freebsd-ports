@@ -10,7 +10,7 @@ PORTVERSION=	1.3.7
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ADRIFT-compatible interactive games interpreter
 
 OPTIONS=	XGLK "Use the xglk graphics library" off

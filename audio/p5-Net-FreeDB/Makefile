@@ -12,7 +12,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Get the CDID of an audio CD and query the FreeDB servers
 
 BUILD_DEPENDS=	${SITE_PERL}/CDDB/File.pm:${PORTSDIR}/audio/p5-CDDB-File

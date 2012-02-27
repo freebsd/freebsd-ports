@@ -12,7 +12,7 @@ MASTER_SITES=	http://ess4.engr.uvic.ca/proj/histring/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	roam/misc
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to highlight strings using the ANSI terminal escape sequences
 
 GNU_CONFIGURE=	yes

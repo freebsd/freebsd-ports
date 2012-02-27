@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF/${PORTNAME}/KBE%20Dictionary/${PORTVERSION}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An English-Bulgarian-English dictionary
 
 USE_GMAKE=	yes
