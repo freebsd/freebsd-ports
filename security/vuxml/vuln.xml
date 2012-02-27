@@ -47,6 +47,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57f1a624-6197-11e1-b98c-bcaec565249c">
+    <topic>libxml2 -- heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.7.8_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google chrome team reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.com/2012/01/stable-channel-update.html">
+	  <p>Heap-based buffer overflow in libxml2, allows remote attackers to
+             cause a denial of service or possibly have unspecified other 
+             impact via unknown vectors.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3919</cvename>
+      <url>http://googlechromereleases.blogspot.com/2012/01/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2012-01-05</discovery>
+      <entry>2012-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba51c2f7-5b43-11e1-8288-00262d5ed8ee">
     <topic>plib -- remote code execution via buffer overflow</topic>
     <affects>
