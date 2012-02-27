@@ -25,7 +25,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 USE_GETTEXT=	yes
-WANT_GSTREAMER=	yes
+USE_GSTREAMER=	yes
 MAKE_JOBS_SAFE=	yes
 USE_XORG=	xt xrender
 USE_BISON=	build
@@ -48,17 +48,9 @@ GLIB_SCHEMAS=	org.webkitgtk-1.0.gschema.xml
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
 #_BROWSER_PLUGINS_DIR=	${BROWSER_PLUGINS_DIR:S|^/|"|:S|/|", "|g}",
 
-OPTIONS=	VIDEO "Enable video support" on \
-		DEBUG "Build with debug support" off
+OPTIONS=	DEBUG "Build with debug support" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_VIDEO)
-USE_GSTREAMER+=	yes
-CONFIGURE_ARGS+=--enable-video
-.else
-CONFIGURE_ARGS+=--disable-video
-.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
