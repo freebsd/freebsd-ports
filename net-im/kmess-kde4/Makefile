@@ -7,15 +7,14 @@
 
 PORTNAME=	kmess
 PORTVERSION=	2.0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde
 MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 
 MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		qca.2:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
 BUILD_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
