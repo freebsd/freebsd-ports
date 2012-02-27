@@ -11,7 +11,7 @@ PORTEPOCH=	2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 
 # vpopmail installation directory

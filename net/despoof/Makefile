@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.bindview.com/Resources/RAZOR/Files/ \
 MASTER_SITE_SUBDIR=	UNIX/misc
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line anti-spoofing detection utility
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10

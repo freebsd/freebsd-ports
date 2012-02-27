@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.eekim.com/software/cgihtml/ \
 		ftp://www.eekim.com/pub/users/eekim/cgihtml/ \
 		ftp://hcs.harvard.edu/pub/web/tools/cgihtml/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that simplifies the task of writing CGI programs in C
 
 USE_LDCONFIG=	yes

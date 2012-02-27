@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}.tgz:main,ringlet \
 PATCHFILES=	${DISTNAME}-roam-02.patch
 PATCH_SITES=	http://devel.ringlet.net/textproc/bomstrip/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Strip Byte-Order Marks (BOM) from UTF-8 text
 
 USE_GMAKE=	yes

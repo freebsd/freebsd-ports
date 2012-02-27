@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mr511.de/software/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
 OPTIONS=	EXTENDED	"ELF format extensions" on \

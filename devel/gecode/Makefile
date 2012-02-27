@@ -10,7 +10,7 @@ PORTVERSION=	3.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Constraint Development Environment
 
 BUILD_DEPENDS=	bison>=2.3:${PORTSDIR}/devel/bison \

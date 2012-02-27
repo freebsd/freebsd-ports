@@ -10,7 +10,7 @@ PORTVERSION=	0.04
 CATEGORIES=	net
 MASTER_SITES=	http://daveb.net/bsdproxy/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A TCP proxy, demonstrating use of the kevent(2)/kqueue(2) API
 
 GNU_CONFIGURE=	yes

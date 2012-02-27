@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-demo
 DISTNAME=	chaosl-${PORTVERSION}
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An unusual and spectacular shoot-em-up for the PC
 
 USE_ZIP=	yes

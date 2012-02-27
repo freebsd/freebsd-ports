@@ -10,7 +10,7 @@ PORTVERSION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.volny.cz/nakamura/gnarr/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for generating battle cries
 
 MAN6=		gnarr.6

@@ -15,7 +15,7 @@ PATCH_SITES=	http://devel.ringlet.net/security/aescrypt/patches/ \
 		http://people.FreeBSD.org/~roam/ports/patches/security/aescrypt/
 PATCHFILES=	aescrypt-0.7-roam-whopper-01.patch.gz
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line AES encryption/decryption suite
 
 GNU_CONFIGURE=	yes

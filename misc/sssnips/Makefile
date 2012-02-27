@@ -10,7 +10,7 @@ PORTVERSION=	0.04
 CATEGORIES=	misc
 MASTER_SITES=	http://devel.ringlet.net/misc/sssnips/
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell script snippets written by Peter Pentchev
 
 LICENSE=	BSD

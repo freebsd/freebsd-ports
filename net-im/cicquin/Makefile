@@ -14,7 +14,7 @@ MASTER_SITES=	\
 		http://people.FreeBSD.org/~roam/misc/cicquin/
 MASTER_SITE_SUBDIR=	roam/misc/cicquin
 
-MAINTAINER=	roam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Look up users in the CenterICQ user database
 
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP}
