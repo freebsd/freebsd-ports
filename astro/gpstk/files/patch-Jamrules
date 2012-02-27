@@ -1,5 +1,10 @@
---- Jamrules.orig	2008-03-12 00:48:21.000000000 +0900
-+++ Jamrules	2009-05-08 23:57:05.000000000 +0900
+$FreeBSD$
+
+- make sure link pulls in libstdc++ (jam link invoked as cc instead of c++)
+- don't name shlib files with extra trailing .0
+
+--- Jamrules.orig	2011-02-22 09:10:30.000000000 -0700
++++ Jamrules	2012-02-09 17:14:48.000000000 -0700
 @@ -33,6 +33,10 @@
        case CYGWIN :
           LINKLIBS += -lstdc++ ;
@@ -11,7 +16,7 @@
        case LINUX :
           LINKLIBS += -lstdc++ ;
           CCSHARE_FLAGS = -fPIC ;
-@@ -115,7 +119,7 @@
+@@ -133,7 +137,7 @@
  # compiler specific stuff - this is probably actually pretty clumsy
  if ( $(CC) != gcc )
  {
@@ -20,12 +25,12 @@
  }
  
  if $(PREFIX)
-@@ -215,7 +219,7 @@
-    if $(UNIX) && $(OS) != CYGWIN && $(OS) != MACOSX
+@@ -238,7 +242,7 @@
+    if $(UNIX) && $(OS) != CYGWIN
     {
-       soname = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
--      shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR).$(GPSTK_SO_VERSION).0) ;
-+      shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
-       shrobjs = $(>:S=$(SUFOBJ2)) ;
-       ObjectCcFlags $(shrobjs) : $(CCSHARE_FLAGS) ;
-       ObjectC++Flags $(shrobjs) : $(CCSHARE_FLAGS) ;
+      soname = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
+-     shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR).$(GPSTK_SO_VERSION).0) ;
++     shlib = $(LIBPREFIX)$(<:S=$(SUFLIBSHR)).$(GPSTK_SO_VERSION) ;
+      shrobjs = $(>:S=$(SUFOBJ2)) ;
+      ObjectCcFlags $(shrobjs) : $(CCSHARE_FLAGS) ;
+      ObjectC++Flags $(shrobjs) : $(CCSHARE_FLAGS) ;
