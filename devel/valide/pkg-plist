@@ -46,19 +46,8 @@ share/locale/ru/LC_MESSAGES/valide.mo
 share/locale/tr/LC_MESSAGES/valide.mo
 share/locale/vec/LC_MESSAGES/valide.mo
 share/locale/zh_CN/LC_MESSAGES/valide.mo
-share/mime/XMLnamespaces
-share/mime/aliases
 share/mime/application/x-vide.xml
-share/mime/generic-icons
-share/mime/globs
-share/mime/globs2
-share/mime/icons
-share/mime/magic
-share/mime/mime.cache
 share/mime/packages/x-vide.xml
-share/mime/subclasses
-share/mime/treemagic
-share/mime/types
 share/pixmaps/valide/icone-16.xpm
 share/pixmaps/valide/icone-32.xpm
 share/pixmaps/valide/icone-48.xpm
@@ -160,6 +149,7 @@ share/vala/vapi/waf.vapi
 @dirrm share/pixmaps/valide/symbols
 @dirrm share/pixmaps/valide/plugins
 @dirrm share/pixmaps/valide
+@dirrmtry share/locale/vec/LC_MESSAGES
 @dirrm share/applications
 @dirrm lib/valide/plugins/waf
 @dirrm lib/valide/plugins/todo
