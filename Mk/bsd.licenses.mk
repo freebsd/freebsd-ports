@@ -141,6 +141,7 @@ _LICENSE_LIST_PORT_VARS=	PERMS NAME GROUPS
 #
 # _LICENSE_DIR		- Directory to install licenses
 # _LICENSE_DIR_REL	- Same as above, without ${PREFIX}
+# _LICENSE_STORE	- Store for known license files
 # _LICENSE_CATALOG	- License catalog (make include file) to be created (dst)
 # _LICENSE_CATALOG_TMP	- Same as above, but in WRKDIR (src)
 # _LICENSE_REPORT	- License summary, shows licenses and how they are combined (dst)
@@ -151,6 +152,7 @@ _LICENSE_LIST_PORT_VARS=	PERMS NAME GROUPS
 
 _LICENSE_DIR?=		${PREFIX}/share/licenses/${PKGNAME}
 _LICENSE_DIR_REL?=	share/licenses/${PKGNAME}
+_LICENSE_STORE?=	${PORTSDIR}/Templates/Licenses
 _LICENSE_CATALOG?=	${_LICENSE_DIR}/catalog.mk
 _LICENSE_CATALOG_TMP?=	${WRKDIR}/.license-catalog.mk
 _LICENSE_REPORT?=	${_LICENSE_DIR}/LICENSE
@@ -228,9 +230,13 @@ _LICENSE_${var}=	${_LICENSE_${var}_${lic}}
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
 .			if !defined(LICENSE_FILE)
 .				if !defined(LICENSE_TEXT)
-# XXX Until we have a license pool under /usr/ports/Licenses use this
+.					if exists(${_LICENSE_STORE}/${lic})
+_LICENSE_FILE=		${_LICENSE_STORE}/${lic}
+.					else
+# No license file in /usr/ports/Templates/Licenses
 _LICENSE_TEXT=		The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please read from the web.
 _LICENSE_FILE=		${WRKDIR}/${lic}
+.					endif
 .				else
 _LICENSE_ERROR?=	defining LICENSE_TEXT is not allowed for known licenses
 .				endif
@@ -303,11 +309,15 @@ _LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
 .			if !defined(LICENSE_FILE_${lic})
 .				if !defined(LICENSE_TEXT_${lic})
-# XXX Until we have a license pool under /usr/ports/Licenses use this
+.					if exists(${_LICENSE_STORE}/${lic})
+_LICENSE_FILE_${lic}=		${_LICENSE_STORE}/${lic}
+.					else
+#  No license file in /usr/ports/Templates/Licenses
 _LICENSE_TEXT_${lic}=	The license: ${lic} (${_LICENSE_NAME_${lic}}) is standard, please read from the web.
 _LICENSE_FILE_${lic}=	${WRKDIR}/${lic}
+.					endif
 .				else
-_LICENSE_ERROR?=		defining LICENSE_TEXT_${lic} is not allowed for known licenses
+_LICENSE_ERROR?=	defining LICENSE_TEXT_${lic} is not allowed for known licenses
 .				endif
 .			else
 _LICENSE_FILE_${lic}=	${LICENSE_FILE_${lic}}
@@ -596,7 +606,7 @@ ${_LICENSE_COOKIE}:
 .	if !defined(NO_LICENSES_DIALOGS)
 # Dialog interface
 .		if ${_LICENSE_COMB} == "single"
-	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
+	@trap '${RM} -f $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	while true; do \
 		${DIALOG} --menu "License for ${PKGNAME} (${_LICENSE})" 21 70 15 accept "Accept license" reject "Reject license" view "View license" 2>"$${tmpfile}"; \
@@ -613,7 +623,7 @@ ${_LICENSE_COOKIE}:
 .			for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
-	@menu_cmd="${DIALOG} --title \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
+	@menu_cmd="${DIALOG} --hline \"This port requires you to accept at least one license\" --menu \"License for ${PKGNAME} (dual)\" 21 70 15"; \
 	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
@@ -639,7 +649,7 @@ ${_LICENSE_COOKIE}:
 .			for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .			endfor
-	@menu_cmd="${DIALOG} --title \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
+	@menu_cmd="${DIALOG} --hline \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
 	trap '${RM} -f $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
