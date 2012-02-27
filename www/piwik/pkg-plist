@@ -1022,6 +1022,8 @@
 %%WWWDIR%%/plugins/CoreAdminHome/templates/styles.css
 %%WWWDIR%%/plugins/CoreHome/Controller.php
 %%WWWDIR%%/plugins/CoreHome/CoreHome.php
+%%WWWDIR%%/plugins/CoreHome/DataTableAction/MultiRowEvolution.php
+%%WWWDIR%%/plugins/CoreHome/DataTableAction/RowEvolution.php
 %%WWWDIR%%/plugins/CoreHome/templates/autocomplete.js
 %%WWWDIR%%/plugins/CoreHome/templates/broadcast.js
 %%WWWDIR%%/plugins/CoreHome/templates/calendar.js
@@ -1757,6 +1759,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/sn.png
 %%WWWDIR%%/plugins/UserCountry/flags/so.png
 %%WWWDIR%%/plugins/UserCountry/flags/sr.png
+%%WWWDIR%%/plugins/UserCountry/flags/ss.png
 %%WWWDIR%%/plugins/UserCountry/flags/st.png
 %%WWWDIR%%/plugins/UserCountry/flags/su.png
 %%WWWDIR%%/plugins/UserCountry/flags/sv.png
@@ -2027,6 +2030,7 @@
 %%WWWDIR%%/themes/default/images/sites_selection.png
 %%WWWDIR%%/themes/default/images/sort_subtable_asc.png
 %%WWWDIR%%/themes/default/images/sort_subtable_desc.png
+%%WWWDIR%%/themes/default/images/sort_subtable_desc_light.png
 %%WWWDIR%%/themes/default/images/sortasc.png
 %%WWWDIR%%/themes/default/images/sortdesc.png
 %%WWWDIR%%/themes/default/images/success_medium.png
@@ -2144,6 +2148,7 @@
 @dirrm %%WWWDIR%%/plugins/CoreUpdater
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin/templates
 @dirrm %%WWWDIR%%/plugins/CorePluginsAdmin
+@dirrm %%WWWDIR%%/plugins/CoreHome/DataTableAction
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates/images
 @dirrm %%WWWDIR%%/plugins/CoreHome/templates
 @dirrm %%WWWDIR%%/plugins/CoreHome
