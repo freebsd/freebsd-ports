@@ -229,8 +229,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[105803] High CVE-2011-3015: Integer overflows in PDF codecs.
 	    Credit to Google Chrome Security Team (scarybeasts).</p>
 	  <p>[106336] Medium CVE-2011-3016: Read-after-free with counter nodes.
@@ -2583,7 +2582,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>Organizations across the Internet reported crashes interrupting service
 	    on BIND 9 nameservers performing recursive queries. Affected servers
 	    crashed after logging an error in query.c with the following message:
-	    &quot;INSIST(! dns_rdataset_isassociated(sigrdataset))&quot;
+	    "INSIST(! dns_rdataset_isassociated(sigrdataset))"
 	    Multiple versions were reported being affected, including all
 	    currently supported release versions of ISC BIND 9.</p>
 	  <p>Because it may be possible to trigger this bug even on networks
@@ -66570,6 +66569,6 @@ misc.c:
       <entry>2005-09-29</entry>
     </dates>
   </vuln>
-</vuxml>
+</vuxml><!-- EOF -->
 <!-- Note:  Please add new entries to the beginning of this file. -->
 <!-- ex: set ts=8 tw=80 sw=2: -->
