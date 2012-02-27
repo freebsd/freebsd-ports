@@ -58,23 +58,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dmx.pc:${PORTSDIR}/x11/libdmx \
 		${LOCALBASE}/libdata/pkgconfig/xxf86misc.pc:${PORTSDIR}/x11/libXxf86misc \
 		${LOCALBASE}/libdata/pkgconfig/xxf86vm.pc:${PORTSDIR}/x11/libXxf86vm
 
-.if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING) && exists(/usr/X11R6)
-pre-everything::
-	@if [ ! -L /usr/X11R6 ]; then \
-	    echo -n "/usr/X11R6 exists, but it is not a symlink. "; \
-	    echo "Installation cannot proceed."; \
-	    echo -n "This looks like an incompletely removed old version "; \
-	    echo -n "of X.  In the current version, /usr/X11R6 must be "; \
-	    echo -n "a symlink if it exists at all."; \
-	    echo -n "Please read ${PORTSDIR}/UPDATING (entry of 20070519) "; \
-	    echo -n "for the procedure to upgrade X.org related ports."; \
-	    /usr/bin/false; \
-	fi
-.elif !exists(/usr/X11R6) && !defined(WITHOUT_X11R6_SYMLINK)
-pre-install::
-	${LN} -s ${LOCALBASE} /usr/X11R6 || ${TRUE}
-.endif
-
 do-install:
 		${MKDIR} ${PREFIX}/libdata/xorg
 		${TOUCH} ${PREFIX}/libdata/xorg/libraries
