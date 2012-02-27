@@ -17,8 +17,8 @@ DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}-${RPMVERSION}
 MAINTAINER=	port_maintainer@herveybayaustralia.com.au
 COMMENT=	RFC 2307 NSS Module (Linux Fedora 10)
 
-LICENSE=	GPLv2
-NO_LICENSES_INSTALL=yes	# license framework does not rm the "share" directory
+#LICENSE=	GPLv2
+#NO_LICENSES_INSTALL=yes	# license framework does not rm the "share" directory
 
 NSS_LDAP_VERSION=264
 

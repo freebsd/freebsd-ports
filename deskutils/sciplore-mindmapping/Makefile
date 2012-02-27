@@ -20,7 +20,7 @@ EXPIRATION_DATE=	2012-05-31
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference and PDF Management
 
-LICENSE=	GPLv2
+#LICENSE=	GPLv2
 
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
