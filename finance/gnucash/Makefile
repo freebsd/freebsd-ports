@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.4.7
-PORTREVISION=	3
+PORTVERSION=	2.4.9
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -50,7 +49,6 @@ CONFIGURE_ARGS=	--disable-error-on-warning \
 		--disable-doxygen
 
 MAN1=		gnucash.1
-INFO=		gnucash-design
 
 GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 		apps_gnucash_dialog_commodities.schemas \

@@ -2,7 +2,6 @@ bin/gnc-fq-check
 bin/gnc-fq-dump
 bin/gnc-fq-helper
 bin/gnc-fq-update
-bin/gnc-test-env
 bin/gnucash
 bin/gnucash-env
 bin/gnucash-make-guids
@@ -683,6 +682,7 @@ share/gnucash/accounts/zh_CN/acctchrt_spouseretire.gnucash-xea
 share/gnucash/checks/deluxe.chk
 share/gnucash/checks/liberty.chk
 share/gnucash/checks/quicken.chk
+share/gnucash/checks/quicken_check_21.chk
 share/gnucash/checks/quicken_wallet.chk
 share/gnucash/checks/voucher.chk
 share/gnucash/doc/AUTHORS
@@ -800,6 +800,7 @@ share/gnucash/guile-modules/gnucash/price-quotes.scm
 share/gnucash/guile-modules/gnucash/printf.scm
 share/gnucash/guile-modules/gnucash/report/aging.scm
 share/gnucash/guile-modules/gnucash/report/balsheet-eg.css
+share/gnucash/guile-modules/gnucash/report/balsheet-eg.scm
 share/gnucash/guile-modules/gnucash/report/balsheet-eg.eguile.scm
 share/gnucash/guile-modules/gnucash/report/business-reports.scm
 share/gnucash/guile-modules/gnucash/report/customer-summary.scm
@@ -824,7 +825,6 @@ share/gnucash/guile-modules/gnucash/report/standard-reports/account-summary.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/advanced-portfolio.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/average-balance.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/balance-sheet.scm
-share/gnucash/guile-modules/gnucash/report/standard-reports/balsheet-eg.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/budget-balance-sheet.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/budget-barchart.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/budget-flow.scm
@@ -838,6 +838,7 @@ share/gnucash/guile-modules/gnucash/report/standard-reports/general-journal.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/general-ledger.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/income-statement.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/net-barchart.scm
+share/gnucash/guile-modules/gnucash/report/standard-reports/net-linechart.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/portfolio.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/price-scatter.scm
 share/gnucash/guile-modules/gnucash/report/standard-reports/register.scm
