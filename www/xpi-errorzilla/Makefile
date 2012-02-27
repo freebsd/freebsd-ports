@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	errorzilla
-PORTVERSION=	0.40
+PORTVERSION=	0.42
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -22,6 +22,7 @@ XPI_FILES=	chrome/content/about.xul \
 		chrome/content/images/firefox_logo2.gif \
 		chrome/content/lib.js \
 		chrome/content/netError.css \
+		chrome/content/netError.dtd \
 		chrome/content/netError.js \
 		chrome/content/netError.xhtml \
 		chrome/content/overlay.xul \
