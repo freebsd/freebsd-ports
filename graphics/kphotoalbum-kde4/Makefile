@@ -37,7 +37,7 @@ OPTIONS=	MARBLE "Geolocation support (requires astro/marble)" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MARBLE)
-LIB_DEPENDS+=	marblewidget.11:${PORTSDIR}/astro/marble
+LIB_DEPENDS+=	marblewidget.12:${PORTSDIR}/astro/marble
 .else
 CMAKE_ARGS+=	-DWITH_Marble:BOOL=Off
 .endif
