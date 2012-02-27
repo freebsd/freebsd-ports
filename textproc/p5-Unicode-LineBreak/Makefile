@@ -7,6 +7,7 @@
 
 PORTNAME=	Unicode-LineBreak
 PORTVERSION=	1.008.2
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 # blanket update approval granted.
 MAINTAINER=	Olivier.Girard@univ-angers.fr
 COMMENT=	Unicode-LineBreak package
+
+BUILD_DEPENDS=	p5-MIME-Charset>=0:${PORTSDIR}/mail/p5-MIME-Charset
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	5.8.0+
