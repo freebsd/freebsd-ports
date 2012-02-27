@@ -1,3 +1,4 @@
 bin/RetroShare
+%%NOGUI%%bin/retroshare-nogui
 %%DATADIR%%/bdboot.txt
 @dirrm %%DATADIR%%
