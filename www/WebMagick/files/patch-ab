@@ -2,11 +2,19 @@ Index: webmagickrc.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagickrc.in,v
 retrieving revision 1.16
-retrieving revision 1.23
-diff -u -r1.16 -r1.23
+retrieving revision 1.24
+diff -u -r1.16 -r1.24
 --- webmagickrc.in	4 Dec 2001 19:36:57 -0000	1.16
-+++ webmagickrc.in	22 Jan 2012 16:46:16 -0000	1.23
-@@ -83,6 +83,7 @@
++++ webmagickrc.in	27 Feb 2012 17:59:21 -0000	1.24
+@@ -15,6 +15,7 @@
+ 				# Relative path under rootpath / prefixpath
+ # $opt_iconbase = '';
+ 				# Global icons base URL, if not empty
++# $opt_imgprefixpath    = '';   # Add to any image URL
+ 
+ #
+ # Server-side imagemap settings
+@@ -83,6 +84,7 @@
  # $opt_ignore		= 0;	# Do not webmagick this directory
  				#    but still recurse into sub-directories
  # $opt_ignorefp		= 1;	# Ignore /_[a-z] directories (FrontPage)
@@ -14,7 +22,7 @@ diff -u -r1.16 -r1.23
  # $opt_srcdir		= '.';	# Source directory path (current directory)
  # $opt_verbose		= 0;	# Verbose flag (default off)
  # $opt_forcecache		= 0;	# Force update of cached thumbnails
-@@ -90,30 +91,49 @@
+@@ -90,30 +92,49 @@
  # $opt_forcemontage	= 0;	# Force montage (default off)
  # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
  # $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
@@ -64,7 +72,7 @@ diff -u -r1.16 -r1.23
  # $opt_allowconfig	 = 0; # allow user to configure table and framestyle
  
  #				
-@@ -199,8 +219,7 @@
+@@ -199,8 +220,7 @@
  # $opt_frames           = 1;            # Use frames
  # $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  # $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
@@ -74,7 +82,7 @@ diff -u -r1.16 -r1.23
  # $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -245,6 +264,7 @@
+@@ -245,6 +265,7 @@
  # $opt_icons{'next_gray'}		= 'gray_next.gif';	# Next (grayed out)
  # $opt_icons{'up'}		= 'blue_up.gif';  	# Up
  # $opt_icons{'help'}		= 'blue_readme.gif';	# Help Readme File
