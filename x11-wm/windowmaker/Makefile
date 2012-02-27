@@ -6,7 +6,7 @@
 
 PORTNAME?=	windowmaker
 PORTVERSION=	0.95.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/ \
 		http://dougbarton.us/Downloads/
@@ -73,8 +73,6 @@ pre-patch:
 	    ${WRKSRC}/WPrefs.app/Paths.c
 	@${REINPLACE_CMD} -e "s#WPrefs#${PREFIX}/GNUstep/Applications/WPrefs.app/WPrefs#" \
 	    ${WRKSRC}/util/wmgenmenu.c
-	@${REINPLACE_CMD} -e "764s#wPreferences.flags.restarting == 0#!wPreferences.flags.restarting#" \
-	    ${WRKSRC}/src/startup.c
 
 post-install:
 	@${MKDIR} ${PREFIX}/GNUstep/Applications/WPrefs.app/xpm

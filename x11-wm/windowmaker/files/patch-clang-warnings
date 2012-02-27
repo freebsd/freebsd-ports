@@ -1,0 +1,94 @@
+diff -ur ../WindowMaker-0.95.2-pre-clang/src/actions.c ./src/actions.c
+--- ../WindowMaker-0.95.2-pre-clang/src/actions.c	2012-02-14 11:36:01.000000000 -0800
++++ ./src/actions.c	2012-02-25 02:29:30.000000000 -0800
+@@ -60,6 +60,9 @@
+ 				  unsigned int *new_width, unsigned int *new_height);
+ static void save_old_geometry(WWindow *wwin);
+ 
++/* In usermenu.c */
++void wUserMenuRefreshInstances(WMenu * menu, WWindow * wwin);
++
+ /******* Local Variables *******/
+ static struct {
+ 	int steps;
+diff -ur ../WindowMaker-0.95.2-pre-clang/src/event.c ./src/event.c
+--- ../WindowMaker-0.95.2-pre-clang/src/event.c	2012-02-14 11:36:01.000000000 -0800
++++ ./src/event.c	2012-02-25 02:30:58.000000000 -0800
+@@ -130,9 +130,11 @@
+ static void handleFocusIn(XEvent *event);
+ static void handleMotionNotify(XEvent *event);
+ static void handleVisibilityNotify(XEvent *event);
+-static void handle_inotify_events(int fd, int wd);
+ static void wdelete_death_handler(WMagicNumber id);
+ 
++#ifdef HAVE_INOTIFY
++static void handle_inotify_events(int fd, int wd);
++#endif
+ 
+ #ifdef SHAPE
+ static void handleShapeNotify(XEvent *event);
+diff -ur ../WindowMaker-0.95.2-pre-clang/src/osdep_bsd.c ./src/osdep_bsd.c
+--- ../WindowMaker-0.95.2-pre-clang/src/osdep_bsd.c	2012-02-14 11:36:01.000000000 -0800
++++ ./src/osdep_bsd.c	2012-02-25 02:31:25.000000000 -0800
+@@ -85,7 +85,7 @@
+ 		mib[0] = CTL_KERN;
+ 		mib[1] = KERN_ARGMAX;
+ 		mib[2] = 0;
+-		mib[4] = 0;
++		mib[3] = 0;
+ 
+ 		count = sizeof(argmax);
+ 		if (sysctl(mib, 2, &argmax, &count, NULL, 0) == -1)
+diff -ur ../WindowMaker-0.95.2-pre-clang/src/usermenu.c ./src/usermenu.c
+--- ../WindowMaker-0.95.2-pre-clang/src/usermenu.c	2012-02-14 11:36:01.000000000 -0800
++++ ./src/usermenu.c	2012-02-25 02:37:25.000000000 -0800
+@@ -82,6 +82,9 @@
+ /*** var ***/
+ extern WPreferences wPreferences;
+ 
++/* In xmodifier.c */
++int wXModifierFromKey(char *key);
++
+ typedef struct {
+ 	WScreen *screen;
+ 	WShortKey *key;
+@@ -133,7 +136,6 @@
+ 	WUserMenuData *data;
+ 	KeySym ksym;
+ 	char *k;
+-	char *buffer;
+ 	char buf[MAX_SHORTCUT_LENGTH], *b;
+ 	int keycount, i, j, mod;
+ 
+@@ -283,7 +285,6 @@
+ 
+ void wUserMenuRefreshInstances(WMenu * menu, WWindow * wwin)
+ {
+-	WMenuEntry *entry;
+ 	int i, j, count, paintflag;
+ 
+ 	paintflag = 0;
+@@ -324,13 +325,11 @@
+ static WMenu *readUserMenuFile(WScreen * scr, char *file_name)
+ {
+ 	WMenu *menu;
+-	char *mtitle;
+-	WMPropList *plum, *elem, *title, *command, *params;
+-	int count, i;
++	WMPropList *plum;
+ 
+ 	menu = NULL;
+ 	plum = WMReadPropListFromFile(file_name);
+-	 /**/ if (plum) {
++	if (plum) {
+ 		menu = configureUserMenu(scr, plum);
+ 		WMReleasePropList(plum);
+ 	}
+@@ -340,7 +339,6 @@
+ WMenu *wUserMenuGet(WScreen * scr, WWindow * wwin)
+ {
+ 	WMenu *menu = NULL;
+-	char buffer[100];
+ 	char *path = NULL;
+ 	char *tmp;
+ 	if (wwin->wm_instance && wwin->wm_class) {
