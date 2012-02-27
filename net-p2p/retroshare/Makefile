@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	retroshare
-PORTVERSION=	0.5.2a
+PORTVERSION=	0.5.3a
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}/${BINARY}/${PORTVERSION}
@@ -29,35 +29,53 @@ QT_COMPONENTS=	corelib gui network xml script designer_build uic_build \
 		qmake_build moc_build rcc_build
 HAS_CONFIGURE=	yes
 BINARY=		RetroShare
+BINARY_NOGUI=	retroshare-nogui
+MAKE_JOBS_UNSAFE=yes
 
 DESKTOP_ENTRIES="${BINARY}" "${COMMENT}" "" "${BINARY}" \
 		"Network;FileTransfer;" true
 
-CFLAGS+=	-I${LOCALBASE}/include/gpgme
+OPTIONS=	NOGUI "Also build nogui binary" Off
 
-USE_DOS2UNIX=	retroshare-gui/src/${BINARY}.pro
+.include <bsd.port.options.mk>
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} PREFIX=${PREFIX} ${BINARY}.pro
 
 post-patch:
-	${CP} ${FILESDIR}/rsinit.h ${WRKSRC}/libretroshare/src/rsserver
+	@${REINPLACE_CMD} -e 's|plugins|#plugins|' ${WRKSRC}/${BINARY}.pro
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/libretroshare/src/libretroshare.pro
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/retroshare-gui/src/RetroShare.pro
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/retroshare-nogui/src/retroshare-nogui.pro
+	@${REINPLACE_CMD} -e 's|/usr/local/share/retroshare|${DATADIR}|' \
+		${WRKSRC}/libretroshare/src/rsserver/rsinit.cc
+.if defined(WITHOUT_NOGUI)
+	@${REINPLACE_CMD} -e 's|retroshare-nogui|#retroshare-nogui|' \
+		${WRKSRC}/${BINARY}.pro
+	@${REINPLACE_CMD} -e 's|RetroShare.pro \\|RetroShare.pro|' \
+		${WRKSRC}/${BINARY}.pro
+.else
+	@${REINPLACE_CMD} -e 's|retroshare-nogui.pro \\|retroshare-nogui.pro|' \
+		${WRKSRC}/${BINARY}.pro
+.endif
+
+pre-install:
+.if defined(WITHOUT_NOGUI)
+PLIST_SUB+=	NOGUI="@comment "
+.else
+PLIST_SUB+=	NOGUI=""
+.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/retroshare-gui/src/${BINARY} ${PREFIX}/bin
+.if defined(WITH_NOGUI)
+	${INSTALL_PROGRAM} ${WRKSRC}/retroshare-nogui/src/${BINARY_NOGUI} ${PREFIX}/bin
+.endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/libbitdht/src/example/bdboot.txt ${DATADIR}
-	@${ECHO_MSG} "**************************************************"
-	@${ECHO_MSG} "*               POST INSTALL                     *"
-	@${ECHO_MSG} "**************************************************"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "After you have created an account, you should copy"
-	@${ECHO_MSG} "${DATADIR}/bdboot.txt into your"
-	@${ECHO_MSG} "~/.retroshare/YOURCERT/ directory to seed DHT with"
-	@${ECHO_MSG} "initial nodes. UPnP does not work right now, you"
-	@${ECHO_MSG} "have to use port forwarding to connect to others."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "**************************************************"
 
 .include <bsd.port.mk>
