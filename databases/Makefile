@@ -547,6 +547,7 @@
     SUBDIR += pgtune
     SUBDIR += pgworksheet
     SUBDIR += php-adodb-ext
+    SUBDIR += php-mdcached
     SUBDIR += php-sqlite3
     SUBDIR += php-sqlrelay
     SUBDIR += php4-dba
