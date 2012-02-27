@@ -284,10 +284,6 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	<range><le>2.4.5_8</le></range>
       </package>
       <package>
-	<name>python</name>
-	<range><le>2.7,2</le></range>
-      </package>
-      <package>
 	<name>pypy</name>
 	<!-- note that it also affects 1.8 but we do not yet have
 	     this version in ports. -->
@@ -315,6 +311,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
     <dates>
       <discovery>2012-02-13</discovery>
       <entry>2012-02-14</entry>
+      <modified>2012-02-26</modified>
     </dates>
   </vuln>
 
