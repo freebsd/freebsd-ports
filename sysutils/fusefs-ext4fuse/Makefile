@@ -25,6 +25,9 @@ USE_GMAKE=	yes
 
 MAKE_JOBS_SAFE=	yes
 
+# explicitly empty to fix a cross compiling related issue (PR: 165480)
+MAKE_ENV+=	TARGET_ARCH=
+
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/ext4fuse
