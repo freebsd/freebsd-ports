@@ -63,7 +63,8 @@ do-install:
 	${MKDIR} ${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${PREFIX}/${CERTDIR}
 .if !defined(WITHOUT_ETCSYMLINK)
-	${LN} -s ${PREFIX}/${CERTDIR}/ca-root-nss.crt /etc/ssl/cert.pem
+	${TEST} -e /etc/ssl/cert.pem ||	\
+		${LN} -s ${PREFIX}/${CERTDIR}/ca-root-nss.crt /etc/ssl/cert.pem
 .endif
 
 .include <bsd.port.post.mk>
