@@ -1,0 +1,14 @@
+--- bin/idl2tcl.orig	2012-02-24 16:14:22.000000000 +0100
++++ bin/idl2tcl	2012-02-24 16:14:42.000000000 +0100
+@@ -35,8 +35,9 @@
+ }
+ 
+ if {[catch {package require kill} oops]} {
+-    puts stderr "Error: Failed to find the required \"kill\" package."
+-    exit 1
++    proc kill {pid} {
++        exec kill $pid
++    }
+ }
+ 
+ if {[catch {set argv [eval corba::init $argv]} res]} {

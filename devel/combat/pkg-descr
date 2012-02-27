@@ -1,0 +1,18 @@
+Combat is a CORBA Object Request Broker that allows the implementation of CORBA
+clients and servers in the Tcl programming language.
+
+On the client side, Combat is not only useful to easily test-drive existing
+CORBA servers, including the ability for rapid prototyping or to interactively
+interface with servers from a console, but makes Tcl an exciting language for
+distributed programming. Also, Tk allows to quickly develop attractive user
+interfaces accessing CORBA services. Server-side scripting using [incr Tcl]
+classes also offers a wide range of possibilities.
+
+Combat is compatible with the CORBA 3.0 specification including the IIOP
+protocol, and has been tested to interoperate with a wide range of open-source
+and commercial ORBs, including MICO, TAO and ORBexpress.
+
+Combat is written in pure Tcl, allowing it to run on all platforms supported by
+Tcl, which is a much wider range than supported by any other ORB.
+
+WWW: http://www.fpx.de/Combat/
