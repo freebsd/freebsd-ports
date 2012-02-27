@@ -1,0 +1,7 @@
+Bullet Cache is a memory database intended to be used much like memcached,
+but offering much higher flexibility through use of record tags which can be
+used to perform bulk operations on sets of records. It has its own binary
+network protocol which is accessible through Unix domain sockets and through
+TCP. It is indended to be accessed through a high-performance C library.
+
+WWW: http://mdcached.sourceforge.net/
