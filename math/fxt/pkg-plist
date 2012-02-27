@@ -154,6 +154,8 @@ include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/catalan-gslex.h
+include/fxt/comb/check-setpart-rgs.h
 include/fxt/comb/motzkin-path-lex.h
 include/fxt/comb/is-motzkin-path.h
 include/fxt/comb/catalan-subset-lex.h
@@ -657,6 +659,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-gslex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-gslex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/motzkin-path-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/motzkin-path-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/setpart-rgs-subset-lex-demo.cc
