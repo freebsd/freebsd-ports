@@ -1,0 +1,11 @@
+--- configure.orig	2012-01-11 01:22:04.000000000 +0100
++++ configure	2012-01-24 13:21:07.245448698 +0100
+@@ -21160,7 +21160,7 @@
+   CUSTOM_GNC_DBD_DIR_FALSE=
+ fi
+ 
+- if test "x$ac_cv_header_dbi_dbi_h" != xno; then
++ if test "x$ac_cv_header_dbi_dbi_h" = xyes; then
+   WITH_DBI_TRUE=
+   WITH_DBI_FALSE='#'
+ else
