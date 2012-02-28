@@ -577,7 +577,7 @@ EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module::config
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
-NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.6
+NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.7
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
