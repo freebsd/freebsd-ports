@@ -21,6 +21,7 @@ COMMENT=	QEMU CPU Emulator - development version
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
+USE_PYTHON_BUILD=	yes
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
@@ -37,7 +38,6 @@ OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		SASL "cyrus-sasl dependency (vnc encryption)" On \
 		JPEG "jpeg dependency (vnc lossy compression)" On \
 		PNG "png dependency (vnc compression)" On \
-		GA "python build dependency (guest agent)" On \
 		CURL "libcurl dependency (remote images)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		PCAP "pcap dependency (networking with bpf)" On \
@@ -108,14 +108,6 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--disable-vnc-png
 .else
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
-.endif
-
-.if defined(WITHOUT_GA)
-CONFIGURE_ARGS+=	--disable-guest-agent --python="${NONEXISTENT}"
-PLIST_SUB+=	GA="@comment "
-.else
-USE_PYTHON_BUILD=	yes
-PLIST_SUB+=	GA=""
 .endif
 
 .if defined(WITHOUT_CURL)
