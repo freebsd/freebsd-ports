@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mix-in inheritance, an alternative to multiple inheritance
 
+TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
+
 PERL_MODBUILD=	yes
 
 MAN3=		mixin.3 mixin::with.3
