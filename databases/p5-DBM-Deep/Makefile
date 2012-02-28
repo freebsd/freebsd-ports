@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBM-Deep
-PORTVERSION=	2.0002
+PORTVERSION=	2.0004
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A pure perl persistent multi-level hash/array DBM
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/${PERL_ARCH}/FileHandle/Fmode.pm:${PORTSDIR}/devel/p5-FileHandle-Fmode \
-		p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-IO-stringy>=0.01:${PORTSDIR}/devel/p5-IO-stringy
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/${PERL_ARCH}/FileHandle/Fmode.pm:${PORTSDIR}/devel/p5-FileHandle-Fmode \
-		p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-IO-stringy>=0.01:${PORTSDIR}/devel/p5-IO-stringy
-TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+BUILD_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-FileHandle-Fmode>=0:${PORTSDIR}/devel/p5-FileHandle-Fmode
+RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-FileHandle-Fmode>=0:${PORTSDIR}/devel/p5-FileHandle-Fmode
+
+TEST_DEPENDS=	p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Warn>=0.08:${PORTSDIR}/devel/p5-Test-Warn
+
+PERL_CONFIGURE=	yes
 
 MAN3=		DBM::Deep.3 DBM::Deep::Cookbook.3 DBM::Deep::Internals.3 \
 		DBM::Deep::Iterator::File::BucketList.3 \
@@ -33,6 +32,10 @@ MAN3=		DBM::Deep.3 DBM::Deep::Cookbook.3 DBM::Deep::Internals.3 \
 		DBM::Deep::Iterator::File::Index.3 DBM::Deep::Null.3 \
 		DBM::Deep::Engine::File.3 DBM::Deep::Sector::File.3
 
-PERL_CONFIGURE=	yes
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
