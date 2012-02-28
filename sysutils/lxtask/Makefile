@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxtask
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%20${PORTVERSION}
 
