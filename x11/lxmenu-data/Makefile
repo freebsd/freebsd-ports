@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxmenu-data
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/lxmenu-data%20%28desktop%20menu%29/lxmenu-data%20${PORTVERSION}
 
