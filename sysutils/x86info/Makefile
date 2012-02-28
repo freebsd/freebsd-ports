@@ -1,6 +1,6 @@
 # New ports collection makefile for:	x86info
-# Date created:			26 Aug 2001
-# Whom:				Erik Greenwald <erik@smluc.org>
+# Date created:				26 Aug 2001
+# Whom:					Erik Greenwald <erik@smluc.org>
 #
 # $FreeBSD$
 #
@@ -8,36 +8,27 @@
 PORTNAME=	x86info
 PORTVERSION=	1.30
 CATEGORIES=	sysutils
-MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utility to display information about the systems x86 processor(s)
+COMMENT=	An x86 CPU identification utility
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
 
-USE_GNOME=	pkgconfig
-USE_PYTHON_BUILD=yes
+ONLY_FOR_ARCHS=	i386 amd64
+
 USE_GMAKE=	yes
 ALL_TARGET=	x86info lsmsr
+USE_GNOME=	pkgconfig
+USE_PYTHON_BUILD=yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		x86info.1
 MAN8=		lsmsr.8
 PLIST_FILES=	bin/lsmsr bin/x86info
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^CFLAGS/s| =| +=|g ; \
-		 /^CFLAGS/s| -g|| ; \
-		 /^CFLAGS/s| -O2|| ; \
-		 /^CFLAGS/s| -Werror|| ; \
-		 /^CC/s| =| ?=|' ${WRKSRC}/Makefile
 
 .include <bsd.port.pre.mk>
 
