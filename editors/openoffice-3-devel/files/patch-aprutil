@@ -1,0 +1,12 @@
+--- ../ext_libraries/apr-util/prj/d.lst	2012-02-27 20:08:44.000000000 +0900
++++ ../ext_libraries/apr-util/prj/d.lst	2012-02-27 20:08:52.000000000 +0900
+@@ -8,7 +8,9 @@
+ 
+ # Linux
+ ..\%__SRC%\lib\libaprutil-1.so.*.* %_DEST%\lib%_EXT%
++..\%__SRC%\lib\libaprutil-1.so.* %_DEST%\lib%_EXT%
+ linklib: libaprutil-1.so.*.*
++linklib: libaprutil-1.so.*
+ 
+ # Mac
+ ..\%__SRC%\lib\libaprutil-1.*dylib %_DEST%\lib%_EXT%

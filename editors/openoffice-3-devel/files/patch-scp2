@@ -1,0 +1,29 @@
+--- scp2/source/ooo/file_library_ooo.scp	2012-02-26 13:38:09.000000000 +0900
++++ scp2/source/ooo/file_library_ooo.scp	2012-02-28 21:04:25.000000000 +0900
+@@ -2006,6 +2006,8 @@
+ 	// part of the suffix.  An error?
+ 	#ifdef MACOSX
+             Name = STRING(CONCAT6(libapr-1,.0.,APR_MINOR,.,APR_MICRO,UNXSUFFIX));
++	#elif FREEBSD
++            Name = STRING(CONCAT3(libapr-1,UNXSUFFIX,.4));
+         #else
+             Name = STRING(CONCAT6(libapr-1,UNXSUFFIX,.0.,APR_MINOR,.,APR_MICRO));
+         #endif
+@@ -2021,6 +2023,8 @@
+ 	// part of the suffix.  An error?
+ 	#ifdef MACOSX
+             Name = STRING(CONCAT6(libaprutil-1,.0.,APR_UTIL_MINOR,.,APR_UTIL_MICRO,UNXSUFFIX));
++	#elif FREEBSD
++            Name = STRING(CONCAT3(libaprutil-1,UNXSUFFIX,.4));
+ 	#else
+             Name = STRING(CONCAT6(libaprutil-1,UNXSUFFIX,.0.,APR_UTIL_MINOR,.,APR_UTIL_MICRO));
+ 	#endif
+@@ -2036,6 +2040,8 @@
+ 	// part of the suffix.  An error?
+ 	#ifdef MACOSX
+             Name = STRING(CONCAT6(libserf-1,.0.,SERF_MINOR,.,SERF_MICRO,UNXSUFFIX));
++	#elif FREEBSD
++            Name = STRING(CONCAT3(libserf-1,UNXSUFFIX,.0));
+ 	#else
+             Name = STRING(CONCAT6(libserf-1,UNXSUFFIX,.0.,SERF_MINOR,.,SERF_MICRO));
+ 	#endif

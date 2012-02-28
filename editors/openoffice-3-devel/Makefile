@@ -56,7 +56,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1291759
+SVNREVISION=		1294611
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -208,18 +208,15 @@ post-extract:
 
 post-patch:
 .if defined (USE_GCC)
-	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	@${REINPLACE_CMD} -e "s+%%RPATH%%+-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}+" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .else
-	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
-	${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
+	@${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/inc/unxfbsd.mk
+	@${REINPLACE_CMD} -e "s+%%RPATH%%++" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
 
 pre-configure:
 	@${LN} -sf ${LOCALBASE}/bin/unzip ${WRKSRC}/solenv/bin/unzip
-.if defined(WITH_KDE4)
-	@${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/solenv/bin/moc
-.endif
 
 do-build:
 	@cd ${WRKDIR}/ooo ; ${PRINTF} "[repositories]\n" > source_config
@@ -229,18 +226,18 @@ do-build:
 	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
-	cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
-	${RM} -Rf ${WRKDIR}/tmp
-	${MKDIR} ${WRKDIR}/tmp
-	for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
+	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES
+	@${RM} -Rf ${WRKDIR}/tmp
+	@${MKDIR} ${WRKDIR}/tmp
+	@for i in `${CAT} ${WRKDIR}/INSTALLFILES`; do \
 		${ECHO_CMD} "extracting $$i" ; \
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/$$i ; \
 	done
-	${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	cd ${WRKDIR}/tmp/OO*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/OO*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 
-	${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";

@@ -1,0 +1,10 @@
+--- ../ext_libraries/serf/prj/d.lst	2012-02-26 13:47:28.000000000 +0900
++++ ../ext_libraries/serf/prj/d.lst	2012-02-28 10:24:47.000000000 +0900
+@@ -7,5 +7,6 @@
+ 
+ # Linux, BSD, et al
+ ..\%__SRC%\lib\libserf-1.so.*.* %_DEST%\lib%_EXT%
++..\%__SRC%\lib\libserf-1.so.* %_DEST%\lib%_EXT%
+ linklib: libserf-1.so.*.*
+-
++linklib: libserf-1.so.*
