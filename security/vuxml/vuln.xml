@@ -47,6 +47,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f63bf080-619d-11e1-91af-003067b2972c">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.1r102.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb12-03.html">
+	  <p>These vulnerabilities could cause a crash and potentially allow an
+	  attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0751</cvename>
+      <cvename>CVE-2012-0752</cvename>
+      <cvename>CVE-2012-0753</cvename>
+      <cvename>CVE-2012-0754</cvename>
+      <cvename>CVE-2012-0755</cvename>
+      <cvename>CVE-2012-0756</cvename>
+      <cvename>CVE-2012-0767</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb12-03.html</url>
+    </references>
+    <dates>
+      <discovery>2012-02-15</discovery>
+      <entry>2012-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57f1a624-6197-11e1-b98c-bcaec565249c">
     <topic>libxml2 -- heap buffer overflow</topic>
     <affects>
