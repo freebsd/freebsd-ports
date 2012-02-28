@@ -9,16 +9,16 @@ PORTNAME=	paratype
 PORTVERSION=	2.004
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.fontstock.com/public/
+MASTER_SITES=	http://paratype.0xdc.ru/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
-DISTFILES=	PTSansOFL.zip PTSerifOFL.zip PTMonoOFL.zip
+DISTFILES=	PTSansOFL-2.004.zip PTSerifOFL-1.000.zip PTMonoOFL-1.002.zip
 
 MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	ParaType font collection for the languages of Russia
 
 LICENSE=	OFL
-LICENSE_FILE=	${WRKSRC}/PTSansPTSerifOFL.txt
 LICENSE_NAME=	SIL Open Font License (OFL)
+LICENSE_FILE=	${WRKSRC}/PTSansPTSerifOFL.txt
 LICENSE_PERMS=	auto-accept
 
 INSTALLS_TTF=	yes
