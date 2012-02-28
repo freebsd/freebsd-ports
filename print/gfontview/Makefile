@@ -18,6 +18,8 @@ COMMENT=	An outline font viewer
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		gif.5:${PORTSDIR}/graphics/giflib
 
+BROKEN=		does not build with giflib
+
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
