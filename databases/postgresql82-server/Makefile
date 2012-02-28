@@ -11,6 +11,7 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	crees@FreeBSD.org
 
+FORBIDDEN=	Vulnerable http://www.postgresql.org/about/news/1377/
 DEPRECATED=	No longer supported by upstream-- upgrade to later version
 EXPIRATION_DATE=2012-03-27
 
