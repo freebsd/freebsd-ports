@@ -1,0 +1,17 @@
+=== Configuration details ===
+You can mostly follow the guide at:
+http://observium.org/wiki/FreeBSD_SVN_Installation
+
+with the following notes:
+- Installation directory is %%WWWDIR%%
+- $config['fping'] should be set to '%%FPING%%'
+- The following lines should be added to /etc/crontab:
+
+33	*/6	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h all > /dev/null 2>&1
+*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% discovery.php -h new > /dev/null 2>&1
+*/5	*	*	*	*	www	cd %%WWWDIR%% && %%PHP%% poller.php -h all > /dev/null 2>&1
+
+Notes:
+- Setting $config['snmp']['intenal'] to true is not recommended. The
+  php function snmp_set_quick_print() used by Observium leaves units like
+  kB in the value and Observium currently does not deal with that correctly.
