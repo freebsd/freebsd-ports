@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.taz
 
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
-MAINTAINER=	eugen@grosbein.pp.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Openlink UDBC SDK
 
 NO_WRKSUBDIR=	yes
@@ -25,6 +25,7 @@ USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	'Downloading and redistribution terms are unclear'
+BROKEN=		does not fetch
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/udbcsdk/examples/udbctest ${PREFIX}/bin
