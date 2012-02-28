@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-io
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.17
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
