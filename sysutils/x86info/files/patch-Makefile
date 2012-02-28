@@ -1,17 +1,17 @@
 --- Makefile.orig	2011-09-15 15:43:52.000000000 -0700
 +++ Makefile	2011-09-15 15:44:01.000000000 -0700
-@@ -1,8 +1,9 @@
- VERSION=1.29
+@@ -1,8 +1,8 @@
+ VERSION=1.30
  
- CFLAGS = -g -O2 -Werror -Wall -Wshadow -Wextra -Wmissing-declarations -Wdeclaration-after-statement -Wredundant-decls
-+CFLAGS+= `pkg-config --cflags libpci`
+-CFLAGS = -g -O2 -Werror -Wall -Wshadow -Wextra -Wmissing-declarations -Wdeclaration-after-statement -Wredundant-decls
++CFLAGS += -Wall -Wshadow -Wextra -Wmissing-declarations -Wdeclaration-after-statement -Wredundant-decls `pkg-config --cflags libpci`
  LDFLAGS = -Wl,-z,relro,-z,now
 -CC = gcc
 +CC ?= gcc
  
  SHELL = /bin/sh
  
-@@ -88,7 +89,7 @@
+@@ -91,7 +91,7 @@
  X86INFO_OBJS = $(X86INFO_SRC:%.c=%.o)
  
  x86info: $(X86INFO_OBJS)
