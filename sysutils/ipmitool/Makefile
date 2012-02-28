@@ -7,7 +7,7 @@
 
 PORTNAME=	ipmitool
 PORTVERSION=	1.8.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -19,20 +19,29 @@ DOS2UNIX=	ipmi_fwum.c
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
+CONFIGURE_ARGS+=--enable-intf-lan --enable-intf-lanplus \
 		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc
-PLIST_FILES=	bin/ipmitool sbin/ipmievd share/ipmitool/oem_ibm_sel_map
+PLIST_FILES=	bin/ipmitool sbin/ipmievd share/ipmitool/oem_ibm_sel_map \
+		${PERIODIC_DIR}/400.status-ipmi
 PLIST_DIRS=	share/ipmitool
+PLIST_DIRSTRY=	${PERIODIC_DIR}
+SUB_FILES=	status-ipmi.sh
 PORTDOCS=	AUTHORS COPYING ChangeLog README
 
 MAN1+=		${PORTNAME}.1
 MAN8+=		ipmievd.8
+
+PERIODIC_DIR=	etc/periodic/daily
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-ggdb -Wall
 .endif
 
 .include <bsd.port.pre.mk>
+
+post-install:
+	@${MKDIR} ${PREFIX}/${PERIODIC_DIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/status-ipmi.sh ${PREFIX}/${PERIODIC_DIR}/400.status-ipmi
 
 .if exists(/usr/include/sys/ipmi.h)
 CONFIGURE_ARGS+=	--enable-intf-open
