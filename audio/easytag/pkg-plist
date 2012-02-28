@@ -2,7 +2,7 @@ bin/easytag
 share/applications/easytag.desktop
 share/easytag/ChangeLog
 share/easytag/EasyTAG_logo.xpm
-share/pixmaps/EasyTAG.xpm
+share/pixmaps/EasyTAG_icon.xpm
 share/locale/bg/LC_MESSAGES/easytag.mo
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
@@ -10,6 +10,7 @@ share/locale/de/LC_MESSAGES/easytag.mo
 share/locale/el/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
 share/locale/fr/LC_MESSAGES/easytag.mo
+share/locale/he/LC_MESSAGES/easytag.mo
 share/locale/hu/LC_MESSAGES/easytag.mo
 share/locale/it/LC_MESSAGES/easytag.mo
 share/locale/ja/LC_MESSAGES/easytag.mo
@@ -18,9 +19,12 @@ share/locale/pl/LC_MESSAGES/easytag.mo
 share/locale/pt_BR/LC_MESSAGES/easytag.mo
 share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
+share/locale/sr/LC_MESSAGES/easytag.mo
+share/locale/sr@Latn/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
+share/locale/zh_TW/LC_MESSAGES/easytag.mo
 @dirrm share/easytag
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
