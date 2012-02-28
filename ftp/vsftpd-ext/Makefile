@@ -7,6 +7,7 @@
 
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://vsftpd.devnet.ru/files/${UPSTREAMVERSION}/ext.${EXTVERSION}/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -49,9 +50,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 
 do-configure:
-	${REINPLACE_CMD} -e "s|vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
-		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
-	${REINPLACE_CMD} -e "s|/etc/vsftpd|${PREFIX}/etc/vsftpd|" \
+	${REINPLACE_CMD} -e "s|/etc/vsftpd|${PREFIX}/etc|" \
 		${WRKSRC}/builddefs.h
 	${REINPLACE_CMD} \
 		-e '/^CC/s/=/?=/' \
