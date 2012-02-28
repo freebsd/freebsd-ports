@@ -66,6 +66,59 @@ lib/libfm.so.1
 libdata/pkgconfig/libfm-gtk.pc
 libdata/pkgconfig/libfm.pc
 share/applications/libfm-pref-apps.desktop
+share/gtk-doc/html/libfm/FmBookmarks.html
+share/gtk-doc/html/libfm/FmCellRendererPixbuf.html
+share/gtk-doc/html/libfm/FmCellRendererText.html
+share/gtk-doc/html/libfm/FmConfig.html
+share/gtk-doc/html/libfm/FmDeepCountJob.html
+share/gtk-doc/html/libfm/FmDirListJob.html
+share/gtk-doc/html/libfm/FmDirTreeModel.html
+share/gtk-doc/html/libfm/FmDndSrc.html
+share/gtk-doc/html/libfm/FmDummyMonitor.html
+share/gtk-doc/html/libfm/FmFileInfoJob.html
+share/gtk-doc/html/libfm/FmFileOpsJob.html
+share/gtk-doc/html/libfm/FmFolder.html
+share/gtk-doc/html/libfm/FmFolderModel.html
+share/gtk-doc/html/libfm/FmFolderView.html
+share/gtk-doc/html/libfm/FmJob.html
+share/gtk-doc/html/libfm/FmNavHistory.html
+share/gtk-doc/html/libfm/FmPathEntry.html
+share/gtk-doc/html/libfm/FmPlacesView.html
+share/gtk-doc/html/libfm/FmSimpleJob.html
+share/gtk-doc/html/libfm/FmTabLabel.html
+share/gtk-doc/html/libfm/api-index-full.html
+share/gtk-doc/html/libfm/home.png
+share/gtk-doc/html/libfm/index.html
+share/gtk-doc/html/libfm/index.sgml
+share/gtk-doc/html/libfm/left.png
+share/gtk-doc/html/libfm/libfm-FmDndDest.html
+share/gtk-doc/html/libfm/libfm-fm-app-chooser-combo-box.html
+share/gtk-doc/html/libfm/libfm-fm-app-chooser-dlg.html
+share/gtk-doc/html/libfm/libfm-fm-app-menu-view.html
+share/gtk-doc/html/libfm/libfm-fm-archiver.html
+share/gtk-doc/html/libfm/libfm-fm-clipboard.html
+share/gtk-doc/html/libfm/libfm-fm-file-info.html
+share/gtk-doc/html/libfm/libfm-fm-file-launcher.html
+share/gtk-doc/html/libfm/libfm-fm-file-menu.html
+share/gtk-doc/html/libfm/libfm-fm-file-properties.html
+share/gtk-doc/html/libfm/libfm-fm-gtk-utils.html
+share/gtk-doc/html/libfm/libfm-fm-gtk.html
+share/gtk-doc/html/libfm/libfm-fm-icon-pixbuf.html
+share/gtk-doc/html/libfm/libfm-fm-icon.html
+share/gtk-doc/html/libfm/libfm-fm-list.html
+share/gtk-doc/html/libfm/libfm-fm-mime-type.html
+share/gtk-doc/html/libfm/libfm-fm-monitor.html
+share/gtk-doc/html/libfm/libfm-fm-path.html
+share/gtk-doc/html/libfm/libfm-fm-progress-dlg.html
+share/gtk-doc/html/libfm/libfm-fm-thumbnail.html
+share/gtk-doc/html/libfm/libfm-fm-utils.html
+share/gtk-doc/html/libfm/libfm-fm.html
+share/gtk-doc/html/libfm/libfm.devhelp2
+share/gtk-doc/html/libfm/libfm.html
+share/gtk-doc/html/libfm/object-tree.html
+share/gtk-doc/html/libfm/right.png
+share/gtk-doc/html/libfm/style.css
+share/gtk-doc/html/libfm/up.png
 share/libfm/archivers.list
 share/libfm/ui/app-chooser.ui
 share/libfm/ui/ask-rename.ui
@@ -140,6 +193,7 @@ share/mime/packages/libfm.xml
 @dirrmtry lib/gio
 @dirrmtry libdata/pkgconfig
 @dirrmtry share/applications
+@dirrmtry share/gtk-doc/html/libfm
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrmtry share/locale/bn/LC_MESSAGES
