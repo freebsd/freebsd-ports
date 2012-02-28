@@ -1,5 +1,5 @@
---- qca-tls.cpp.orig	Fri Aug 26 10:47:35 2005
-+++ qca-tls.cpp	Fri Aug 26 10:51:07 2005
+--- qca-tls.cpp.orig	2003-12-10 19:53:57.000000000 +0300
++++ qca-tls.cpp	2012-02-28 14:06:08.000000000 +0400
 @@ -454,7 +454,11 @@
  			if(!r) {
  				// try this other public function, for whatever reason
@@ -24,3 +24,15 @@
  		if(!t)
  			return false;
  		fromX509(t);
+@@ -945,7 +953,11 @@
+ 	RSAKeyContext *key;
+ 
+ 	SSL *ssl;
++#if OPENSSL_VERSION_NUMBER >= 0x10000000L
++	const SSL_METHOD *method;
++#else
+ 	SSL_METHOD *method;
++#endif
+ 	SSL_CTX *context;
+ 	BIO *rbio, *wbio;
+ 	CertContext cc;
