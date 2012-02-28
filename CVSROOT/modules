@@ -245,6 +245,7 @@ R-cran-maptools                 ports/astro/R-cran-maptools
 R-cran-memisc                   ports/math/R-cran-memisc
 R-cran-munsell                  ports/graphics/R-cran-munsell
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
+R-cran-pixmap                   ports/graphics/R-cran-pixmap
 R-cran-plm                      ports/finance/R-cran-plm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-proto                    ports/devel/R-cran-proto
@@ -253,6 +254,7 @@ R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-reshape2                 ports/devel/R-cran-reshape2
 R-cran-rgdal                    ports/graphics/R-cran-rgdal
 R-cran-rjson                    ports/converters/R-cran-rjson
+R-cran-rtiff                    ports/graphics/R-cran-rtiff
 R-cran-sandwich                 ports/math/R-cran-sandwich
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
@@ -1811,6 +1813,7 @@ colorize                        ports/sysutils/colorize
 colortail                       ports/misc/colortail
 colt                            ports/science/colt
 columns                         ports/games/columns
+combat                          ports/devel/combat
 comclear                        ports/www/comclear
 comconsole                      ports/sysutils/comconsole
 comical                         ports/graphics/comical
@@ -9166,6 +9169,7 @@ md5coll                         ports/security/md5coll
 md5deep                         ports/security/md5deep
 mdbconv                         ports/palm/mdbconv
 mdbtools                        ports/databases/mdbtools
+mdcached                        ports/databases/mdcached
 mdcp                            ports/sysutils/mdcp
 mdcrack                         ports/security/mdcrack
 mdds                            ports/devel/mdds
@@ -9907,6 +9911,7 @@ nagios-check_smartmon           ports/net-mgmt/nagios-check_smartmon
 nagios-check_tftp               ports/net-mgmt/nagios-check_tftp
 nagios-devel                    ports/net-mgmt/nagios-devel
 nagios-geom                     ports/net-mgmt/nagios-geom
+nagios-openldap-plugins         ports/net-mgmt/nagios-openldap-plugins
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
 nagios-plugins                  ports/net-mgmt/nagios-plugins
 nagios-portaudit                ports/net-mgmt/nagios-portaudit
@@ -20890,6 +20895,7 @@ php-java-bridge                 ports/devel/php-java-bridge
 php-libawl                      ports/devel/php-libawl
 php-libpuzzle                   ports/graphics/php-libpuzzle
 php-magickwand                  ports/graphics/php-magickwand
+php-mdcached                    ports/databases/php-mdcached
 php-mode.el                     ports/lang/php-mode.el
 php-plurk-api                   ports/www/php-plurk-api
 php-screw                       ports/www/php-screw
@@ -23565,6 +23571,7 @@ r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-memisc                   ports/math/R-cran-memisc
 r-cran-munsell                  ports/graphics/R-cran-munsell
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
+r-cran-pixmap                   ports/graphics/R-cran-pixmap
 r-cran-plm                      ports/finance/R-cran-plm
 r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-proto                    ports/devel/R-cran-proto
@@ -23581,6 +23588,7 @@ r-cran-rmysql                   ports/databases/R-cran-RMySQL
 r-cran-roauth                   ports/security/R-cran-ROAuth
 r-cran-rpad                     ports/www/R-cran-Rpad
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
+r-cran-rtiff                    ports/graphics/R-cran-rtiff
 r-cran-sandwich                 ports/math/R-cran-sandwich
 r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-shape                    ports/graphics/R-cran-shape
