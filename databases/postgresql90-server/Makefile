@@ -6,6 +6,7 @@
 #
 
 DISTVERSION?=	9.0.7
+PORTREVISION=	1
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	crees@FreeBSD.org
