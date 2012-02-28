@@ -1,0 +1,12 @@
+--- ../ext_libraries/apr/prj/d.lst	2012-02-27 20:07:36.000000000 +0900
++++ ../ext_libraries/apr/prj/d.lst	2012-02-27 20:07:44.000000000 +0900
+@@ -16,7 +16,9 @@
+ 
+ # Linux
+ ..\%__SRC%\lib\libapr-1.so.*.* %_DEST%\lib%_EXT%
++..\%__SRC%\lib\libapr-1.so.* %_DEST%\lib%_EXT%
+ linklib: libapr-1.so.*.*
++linklib: libapr-1.so.*
+ 
+ # Mac
+ ..\%__SRC%\lib\libapr-1.*dylib %_DEST%\lib%_EXT%
