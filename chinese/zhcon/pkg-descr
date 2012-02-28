@@ -1,9 +1,7 @@
-Zhcon is a fast Linux Console Chinese System which supports
-framebuffer device.It can display Chinese,Japanese or Korean
-double byte characters.Supported language encodings include:
-GB2312,GBK,BIG5,JIS and KSC. UTF-8 is also supported.
+Zhcon is fast CJK (Chinese/Japanese/Korean) virtual console, it can display
+Chinese, Japanese, or Korean double byte characters.  Supported language
+encodings include: GB2312, GBK, Big5, JIS, and KSC; UTF-8 is also supported.
 
-It can also use input methods(table based) from M$pwin98 and
-UCDOS for M$-DOG.
+It can use input methods (table based) from M$ Pwin98 and UCDOS for M$-DOG.
 
 WWW: http://sourceforge.net/projects/zhcon/
