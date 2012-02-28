@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	graphite2
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/silgraphite/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Rendering capabilities for complex non-Roman writing systems
 
 USE_CMAKE=	yes
