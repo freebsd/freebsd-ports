@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# Check status of IPMI sensors and System Event Log
+#
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+sdr_list_args=${daily_status_ipmi_sdr_list_args:-}
+sel_list_args=${daily_status_ipmi_sel_list_args:-}
+sel_cap_warn_pct=${daily_status_ipmi_sel_cap_warn_pct:-80}
+
+ipmitool=%%PREFIX%%/bin/ipmitool
+
+rc=0
+
+case "${daily_status_ipmi_enable}" in
+    [Yy][Ee][Ss])
+        if [ ! -x $ipmitool ]; then
+          echo "\$daily_status_ipmi_enable is set but ${ipmitool}" \
+               "isn't executable"
+          exit 2
+        fi
+
+        echo ""
+        echo "Checking IPMI sensors:"
+
+        $ipmitool sdr list $sdr_list_args && rc=1 || rc=3
+
+        echo ""
+        echo "Checking IPMI System Event Log:"
+
+        info=`$ipmitool sel info` || exit 3
+        used=$(echo "${info}" | awk '/Percent Used/{print 0 + $4}')
+        entries=$(echo "${info}" | awk '/Entries/{print 0 + $3}')
+
+        if [ $used -gt $sel_cap_warn_pct ]; then
+           echo "  SEL is at ${used}% capacity"
+           rc=3
+        fi
+
+        last=`cat /var/db/ipmi-sel-count 2>/dev/null || echo 0`
+
+        if [ $entries -gt $last ]; then
+          echo $entries > /var/db/ipmi-sel-count
+          echo ""
+          $ipmitool sel list $sel_list_args
+          rc=3
+        fi
+        ;;
+    *)
+        rc=0
+        ;;
+esac
+
+exit $rc
