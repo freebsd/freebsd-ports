@@ -31,6 +31,7 @@ RUN_DEPENDS=	\
 	p5-YAML-Syck>=0.26:${PORTSDIR}/textproc/p5-YAML-Syck \
 	p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite
 
 PERL_CONFIGURE=	yes
 
