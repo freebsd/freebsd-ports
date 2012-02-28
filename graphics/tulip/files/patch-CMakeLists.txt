@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2011-08-03 09:12:07.000000000 +0200
-+++ CMakeLists.txt	2011-08-03 09:14:33.000000000 +0200
-@@ -230,8 +230,8 @@
+--- CMakeLists.txt.orig	2012-02-21 12:23:29.000000000 +0100
++++ CMakeLists.txt	2012-02-24 14:05:03.000000000 +0100
+@@ -266,8 +266,8 @@
  SET(TulipBitmapInstallDir ${TulipShareInstallDir}/bitmaps/)
  SET(TulipAppleResourcesDir ${TulipAppleContentsDir}Resources/)
  ELSE()
@@ -11,3 +11,16 @@
  SET(TulipBinInstallDir bin/)
  SET(TulipIncludeInstallDir include/)
  SET(TulipShareInstallDir share/tulip)
+@@ -395,6 +395,12 @@
+   STRING(COMPARE EQUAL "${UNAME_OUT}" "ia64" I64)
+ ENDIF(NOT I64)
+ IF(NOT I64)
++  STRING(COMPARE EQUAL "${UNAME_OUT}" "amd64" I64)
++ENDIF(NOT I64)
++IF(NOT I64)
++  STRING(COMPARE EQUAL "${UNAME_OUT}" "sparc64" I64)
++ENDIF(NOT I64)
++IF(NOT I64)
+   STRING(COMPARE EQUAL "${UNAME_OUT}" "Power Macintosh" MACPPC)
+ ENDIF(NOT I64)
+ IF(I64)

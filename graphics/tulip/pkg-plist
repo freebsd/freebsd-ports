@@ -41,6 +41,7 @@ include/tulip/ColorScaleConfigDialogData.h
 include/tulip/ColorScaleWidget.h
 include/tulip/ConcatIterator.h
 include/tulip/ConnectedTest.h
+include/tulip/ConsoleUtils.h
 include/tulip/Controller.h
 include/tulip/ControllerAlgorithmTools.h
 include/tulip/ControllerPluginsManager.h
@@ -97,6 +98,7 @@ include/tulip/GlConvexGraphHull.h
 include/tulip/GlConvexHull.h
 include/tulip/GlCubicBSplineInterpolation.h
 include/tulip/GlCurve.h
+include/tulip/GlCylinder.h
 include/tulip/GlDisplayListManager.h
 include/tulip/GlEdge.h
 include/tulip/GlEntity.h
@@ -214,7 +216,6 @@ include/tulip/PluginProgress.h
 include/tulip/PluginProgressWidget.h
 include/tulip/PluginProgressWidgetData.h
 include/tulip/PreferenceManager.h
-include/tulip/PropertyAlgorithm.h
 include/tulip/PropertyCreationDialog.h
 include/tulip/PropertyCreationDialogData.h
 include/tulip/PropertyDialog.h
@@ -271,6 +272,7 @@ include/tulip/TlpQtTools.h
 include/tulip/TlpTools.h
 include/tulip/TreeTest.h
 include/tulip/TriconnectedTest.h
+include/tulip/TulipException.h
 include/tulip/TulipPlugin.h
 include/tulip/TulipRelease.h
 include/tulip/TulipSettings.h
@@ -307,6 +309,7 @@ lib/tlp/glyphs/libCube-%%TULIP_VERSION%%.so
 lib/tlp/glyphs/libCubeOutlinedTransparent-%%TULIP_VERSION%%.so
 lib/tlp/glyphs/libCylinder-%%TULIP_VERSION%%.so
 lib/tlp/glyphs/libDiamond-%%TULIP_VERSION%%.so
+lib/tlp/glyphs/libGlowSphere-%%TULIP_VERSION%%.so
 lib/tlp/glyphs/libHalfCylinder-%%TULIP_VERSION%%.so
 lib/tlp/glyphs/libHexagone-%%TULIP_VERSION%%.so
 lib/tlp/glyphs/libPentagone-%%TULIP_VERSION%%.so
@@ -356,6 +359,8 @@ lib/tlp/libGrid-%%TULIP_VERSION%%.so
 lib/tlp/libHierarchicalClustering-%%TULIP_VERSION%%.so
 lib/tlp/libHierarchicalGraph-%%TULIP_VERSION%%.so
 lib/tlp/libIdMetric-%%TULIP_VERSION%%.so
+lib/tlp/libImportPajek-%%TULIP_VERSION%%.so
+lib/tlp/libImportUCINET-%%TULIP_VERSION%%.so
 lib/tlp/libImprovedWalker-%%TULIP_VERSION%%.so
 lib/tlp/libInducedSubGraphSelection-%%TULIP_VERSION%%.so
 lib/tlp/libKruskal-%%TULIP_VERSION%%.so
@@ -389,6 +394,7 @@ lib/tlp/libTreeRadial-%%TULIP_VERSION%%.so
 lib/tlp/libTreeReingoldAndTilforExtended-%%TULIP_VERSION%%.so
 lib/tlp/libTutte-%%TULIP_VERSION%%.so
 lib/tlp/libWebImport-%%TULIP_VERSION%%.so
+lib/tlp/libdelaunay-%%TULIP_VERSION%%.so
 lib/tlp/libftgl.so
 lib/tlp/libgzstream.so
 lib/tlp/libogdfballoon-%%TULIP_VERSION%%.so
@@ -410,7 +416,6 @@ lib/tlp/libogdfsugiyama-%%TULIP_VERSION%%.so
 lib/tlp/libogdftree-%%TULIP_VERSION%%.so
 lib/tlp/libogdfupwardplanarization-%%TULIP_VERSION%%.so
 lib/tlp/libogdfvisibility-%%TULIP_VERSION%%.so
-lib/tlp/libqscintilla2.so
 lib/tlp/libtulip-%%TULIP_VERS%%.so
 lib/tlp/libtulip-ogdf-%%TULIP_VERS%%.so
 lib/tlp/libtulip-ogl-%%TULIP_VERS%%.so
@@ -461,13 +466,13 @@ lib/tlp/view/libpythonscriptview-%%TULIP_VERSION%%.so
 %%DATADIR%%/bitmaps/logo32x32.ico
 %%DATADIR%%/bitmaps/logolabri.jpg
 %%DATADIR%%/bitmaps/logotulip.jpg
+%%DATADIR%%/bitmaps/radialGradientTexture.png
 %%DATADIR%%/bitmaps/roundTexture.png
-%%DATADIR%%/bitmaps/startup.gif
 %%DATADIR%%/bitmaps/tex_back.png
 %%DATADIR%%/bitmaps/titlebarGradient.png
 %%DATADIR%%/bitmaps/welcomelogo.bmp
-%%DATADIR%%/tulip361.qch
-%%DATADIR%%/tulip361.qhc
+%%DATADIR%%/tulip370.qch
+%%DATADIR%%/tulip370.qhc
 @dirrm %%DATADIR%%/bitmaps/colorscales
 @dirrm %%DATADIR%%/bitmaps
 @dirrm %%DATADIR%%/apiFiles
