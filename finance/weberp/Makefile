@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weberp
-PORTVERSION=	4.03.5
+PORTVERSION=	4.07.1
 CATEGORIES=	finance www
 MASTER_SITES=	SF/web-erp/
 DISTNAME=	webERP${PORTVERSION}
@@ -19,7 +19,7 @@ PORTSCOUT=	skipv:3.12
 USE_ZIP=	yes
 USE_PHP=	mysql gettext
 USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/webERP
+WRKSRC=		${WRKDIR}/webERP${PORTVERSION}
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
