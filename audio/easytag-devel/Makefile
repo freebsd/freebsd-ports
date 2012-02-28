@@ -20,6 +20,9 @@ LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
 		FLAC:${PORTSDIR}/audio/flac \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 
+DEPRECATED=	older than the current stable version
+EXPIRATION_DATE=	2012-03-06
+
 MAN1=		easytag.1
 CONFLICTS=	easytag-[0-9]*
 
