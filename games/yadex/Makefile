@@ -16,12 +16,14 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A WAD-file editor, for games like Doom and Hexen
 
-USE_GMAKE=	yes
-USE_PERL5_BUILD= yes
-USE_XORG=	x11
-MAKEFILE=	GNUmakefile
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CXX="${CXX}" PREFIX="${PREFIX}"
+USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
+USE_XORG=	x11
+MAKEFILE=	GNUmakefile
 
 MAN6=		yadex.6
 
@@ -56,8 +58,8 @@ PATCHFILES+=	${PATCH_PREFIX}_Tools${PATCH_SUFFIX}
 PATCHFILES+=	${PATCH_PREFIX}_Keys${PATCH_SUFFIX}
 .endif
 
-.if defined(WITH_WHITE_BG)
 post-patch:
+.if defined(WITH_WHITE_BG)
 	@${REINPLACE_CMD} -E 's,^#(CXXFLAGS \+= -DWHITE_BACKGROUND)$$,\1,' \
 		${WRKSRC}/${MAKEFILE}
 .endif
