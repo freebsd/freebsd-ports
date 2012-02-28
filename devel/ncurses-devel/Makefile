@@ -7,6 +7,7 @@
 
 PORTNAME=	ncurses
 PORTVERSION=	${RELEASE}.${PATCHDATE}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -186,8 +187,7 @@ post-install:
 .endif
 
 .if !defined(WITHOUT_TERMINFO)
-	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -print0	|	\
-		${XARGS} -0 ${PREFIX}/bin/tic
+	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -exec ${PREFIX}/bin/tic {} \;
 .endif
 
 .if !defined(NOPORTDOCS)

@@ -96,6 +96,6 @@ lib/libtinfo.so.%%REL_VER%%
 %%TERMINFO%%share/misc/tabset/vt100
 %%TERMINFO%%share/misc/tabset/vt300
 %%TERMINFO%%share/misc/terminfo.db
-%%TERMINFO%%@exec find %D/share/misc -name "*.terminfo" -print0	| xargs -0 %D/bin/tic
+%%TERMINFO%%@exec find %D/share/misc -name "*.terminfo" -exec %D/bin/tic {} \;
 %%TERMINFO%%@dirrmtry share/misc/tabset
 @dirrm include/ncurses
