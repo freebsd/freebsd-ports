@@ -9,18 +9,17 @@
  ADD_LIBRARY(${LibTulipQtName} SHARED ${tulip-qt_UI_SRCS} ${tulip-qt_MOC_SRCS} ${tulip-qt_RCC_SRCS} ${tulip-qt_LIB_SRCS})
  TARGET_LINK_LIBRARIES(${LibTulipQtName} ${GLEW_LIBRARY})
  TARGET_LINK_LIBRARIES(${LibTulipQtName} ${OPENGL_glu_LIBRARY})
---- software/tulip/src/CMakeLists.txt.orig	2011-08-04 11:05:06.000000000 +0200
-+++ software/tulip/src/CMakeLists.txt	2011-08-04 11:05:19.000000000 +0200
-@@ -33,7 +33,8 @@
+--- software/tulip/src/CMakeLists.txt.orig	2012-02-22 16:57:38.000000000 +0100
++++ software/tulip/src/CMakeLists.txt	2012-02-22 16:58:06.000000000 +0100
+@@ -33,7 +33,7 @@
  TULIP_QT4_WRAP_CPP(tulip_MOC_SRCS ${tulip_MOC} OPTIONS "-DQT_MINOR_REL=${QT_VERSION_MINOR}")
  QT4_ADD_RESOURCES(tulip_RCC_SRCS ${tulip_RCC})
  
 -INCLUDE_DIRECTORIES(../include/ ${TulipBuildInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip ${PROJECT_BINARY_DIR}/software/tulip/include ${TulipInclude} ${TulipQtInclude} ${TulipOGLInclude} ${TulipPluginsManagerInclude})
-+INCLUDE_DIRECTORIES(../include/ ${TulipBuildInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip ${PROJECT_BINARY_DIR}/software/tulip/include ${TulipInclude} ${TulipQtInclude} ${TulipOGLInclude} ${TulipPluginsManagerInclude}
-+	${OPENGL_INCLUDE_DIR})
++INCLUDE_DIRECTORIES(../include/ ${TulipBuildInclude} ${TulipQtBuildInclude} ${PROJECT_BINARY_DIR}/library/tulip-qt/include/tulip ${PROJECT_BINARY_DIR}/software/tulip/include ${TulipInclude} ${TulipQtInclude} ${TulipOGLInclude} ${TulipPluginsManagerInclude} ${OPENGL_INCLUDE_DIR})
+ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/software/crash_handling)
  
  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQT_MINOR_REL=${QT_VERSION_MINOR}")
- 
 --- plugins/colors/CMakeLists.txt.orig	2011-08-04 11:14:55.000000000 +0200
 +++ plugins/colors/CMakeLists.txt	2011-08-04 11:15:05.000000000 +0200
 @@ -1,4 +1,4 @@
@@ -39,17 +38,17 @@
  
  SET(spreadsheet_LIB_SRCS
      SpreadView.cpp 
---- plugins/view/pythonscriptview/CMakeLists.txt.orig	2011-08-04 12:08:47.000000000 +0200
-+++ plugins/view/pythonscriptview/CMakeLists.txt	2011-08-04 12:09:00.000000000 +0200
+--- plugins/view/pythonscriptview/CMakeLists.txt.orig	2012-02-22 16:59:26.000000000 +0100
++++ plugins/view/pythonscriptview/CMakeLists.txt	2012-02-22 16:59:54.000000000 +0100
 @@ -6,7 +6,7 @@
- SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQSCINTILLA_DLL")
+ INCLUDE("${PROJECT_SOURCE_DIR}/${TulipUseFile}")
  
- # Force to use SIP and QScintilla headers located in thirdparty and not those installed in the system
--INCLUDE_DIRECTORIES(BEFORE ${qscintilla2Include} ${SIP_INCLUDE_DIR})
-+INCLUDE_DIRECTORIES(BEFORE ${qscintilla2Include} ${SIP_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR})
+ # Force to use SIP headers located in thirdparty and not those installed in the system
+-INCLUDE_DIRECTORIES(BEFORE ${SIP_INCLUDE_DIR})
++INCLUDE_DIRECTORIES(BEFORE ${SIP_INCLUDE_DIR} ${OPENGL_INCLUDE_DIR})
  INCLUDE_DIRECTORIES(${TulipInclude} ${TulipBuildInclude} ${TulipOGLInclude} ${TulipQtInclude} ${QT_INCLUDE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${PYTHON_INCLUDE_DIR} ${PYTHON_INCLUDE_PATH})
  
- SET(QT_USE_QTWEBKIT true)
+ SET(pythonscriptview_LIB_SRCS
 --- plugins/interactor/CMakeLists.txt.orig	2011-08-04 12:22:38.000000000 +0200
 +++ plugins/interactor/CMakeLists.txt	2011-08-04 12:22:48.000000000 +0200
 @@ -1,4 +1,4 @@

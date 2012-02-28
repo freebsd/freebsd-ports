@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -48,10 +48,6 @@ CFLAGS+=	-fPIC
 .if ${OSVERSION} < 800000
 BROKEN=		does not compile on FreeBSD 7.X
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|;s|<qlocale.h>|<QtCore/qlocale.h>|' \
-	    ${WRKSRC}/software/tulip/src/main.cpp
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-html.tar.bz2
