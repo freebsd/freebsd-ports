@@ -34,8 +34,7 @@ BROKEN=		Does not build on ia64
 
 .if defined(WITH_SVN)
 PLIST_SUB+=	SVN=""
-LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion \
-		apr-1:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 CFLAGS+=	-I${LOCALBASE}/include/subversion-1 -I${LOCALBASE}/include/apr-1
 .else
 CONFIGURE_ARGS+=	--enable-module-svn=no
