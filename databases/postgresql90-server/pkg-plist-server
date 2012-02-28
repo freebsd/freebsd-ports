@@ -106,6 +106,8 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_controldata-9.0.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_ctl-9.0.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog-9.0.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/plpgsql-9.0.mo
+%%GETTEXT%%share/locale/ru/LC_MESSAGES/postgres-9.0.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/initdb-9.0.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata-9.0.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl-9.0.mo

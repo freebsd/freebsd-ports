@@ -8,7 +8,7 @@
 # See Mk/bsd.databases.mk for more info
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-client
 
 COMMENT=	PostgreSQL database (client)
