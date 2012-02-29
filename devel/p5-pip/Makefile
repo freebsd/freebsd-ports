@@ -24,6 +24,9 @@ BUILD_DEPENDS=	p5-Archive-Zip>=1.29:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-LWP-Online>=0:${PORTSDIR}/www/p5-LWP-Online \
+		p5-Test-Script>=0:${PORTSDIR}/devel/p5-Test-Script \
+		p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2
 
 PERL_CONFIGURE=	YES
 
