@@ -1,6 +1,6 @@
---- ./modules/h323chan.cpp.orig	2011-03-31 14:30:48.000000000 +0400
-+++ ./modules/h323chan.cpp	2011-04-13 15:25:28.000000000 +0400
-@@ -646,7 +646,7 @@
+--- ./modules/h323chan.cpp.orig	2011-11-03 21:57:19.000000000 +0400
++++ ./modules/h323chan.cpp	2012-02-29 19:31:18.000000000 +0400
+@@ -725,7 +725,7 @@
  static void ListRegisteredCaps(int level)
  {
      PFactory<H323Capability>::KeyList_T list = PFactory<H323Capability>::GetKeyList();

@@ -6,12 +6,18 @@ bin/yate-config
 @unexec if cmp -s %D/%%ETCDIR%%/analog.conf.sample %D/%%ETCDIR%%/analog.conf; then rm -f %D/%%ETCDIR%%/analog.conf; fi
 %%ETCDIR%%/analog.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/analog.conf ] ; then cp -p %D/%F %B/analog.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cache.conf.sample %D/%%ETCDIR%%/cache.conf; then rm -f %D/%%ETCDIR%%/cache.conf; fi
+%%ETCDIR%%/cache.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/cache.conf ] ; then cp -p %D/%F %B/cache.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/callcounters.conf.sample %D/%%ETCDIR%%/callcounters.conf; then rm -f %D/%%ETCDIR%%/callcounters.conf; fi
 %%ETCDIR%%/callcounters.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/callcounters.conf ] ; then cp -p %D/%F %B/callcounters.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/callfork.conf.sample %D/%%ETCDIR%%/callfork.conf; then rm -f %D/%%ETCDIR%%/callfork.conf; fi
 %%ETCDIR%%/callfork.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/callfork.conf ] ; then cp -p %D/%F %B/callfork.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/camel_map.conf.sample %D/%%ETCDIR%%/camel_map.conf; then rm -f %D/%%ETCDIR%%/camel_map.conf; fi
+%%ETCDIR%%/camel_map.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/camel_map.conf ] ; then cp -p %D/%F %B/camel_map.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/ccongestion.conf.sample %D/%%ETCDIR%%/ccongestion.conf; then rm -f %D/%%ETCDIR%%/ccongestion.conf; fi
 %%ETCDIR%%/ccongestion.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/ccongestion.conf ] ; then cp -p %D/%F %B/ccongestion.conf; fi
@@ -60,6 +66,9 @@ bin/yate-config
 @unexec if cmp -s %D/%%ETCDIR%%/jabberserver.conf.sample %D/%%ETCDIR%%/jabberserver.conf; then rm -f %D/%%ETCDIR%%/jabberserver.conf; fi
 %%ETCDIR%%/jabberserver.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/jabberserver.conf ] ; then cp -p %D/%F %B/jabberserver.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/javascript.conf.sample %D/%%ETCDIR%%/javascript.conf; then rm -f %D/%%ETCDIR%%/javascript.conf; fi
+%%ETCDIR%%/javascript.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/javascript.conf ] ; then cp -p %D/%F %B/javascript.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/jbfeatures.conf.sample %D/%%ETCDIR%%/jbfeatures.conf; then rm -f %D/%%ETCDIR%%/jbfeatures.conf; fi
 %%ETCDIR%%/jbfeatures.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/jbfeatures.conf ] ; then cp -p %D/%F %B/jbfeatures.conf; fi
@@ -126,6 +135,9 @@ bin/yate-config
 @unexec if cmp -s %D/%%ETCDIR%%/sipfeatures.conf.sample %D/%%ETCDIR%%/sipfeatures.conf; then rm -f %D/%%ETCDIR%%/sipfeatures.conf; fi
 %%ETCDIR%%/sipfeatures.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/sipfeatures.conf ] ; then cp -p %D/%F %B/sipfeatures.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ss7_lnp_ansi.conf.sample %D/%%ETCDIR%%/ss7_lnp_ansi.conf; then rm -f %D/%%ETCDIR%%/ss7_lnp_ansi.conf; fi
+%%ETCDIR%%/ss7_lnp_ansi.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ss7_lnp_ansi.conf ] ; then cp -p %D/%F %B/ss7_lnp_ansi.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/subscription.conf.sample %D/%%ETCDIR%%/subscription.conf; then rm -f %D/%%ETCDIR%%/subscription.conf; fi
 %%ETCDIR%%/subscription.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/subscription.conf ] ; then cp -p %D/%F %B/subscription.conf; fi
@@ -187,14 +199,16 @@ include/yate/yatengine.h
 include/yate/yatephone.h
 include/yate/yateversn.h
 lib/libyate.so
-lib/libyate.so.3
-lib/libyate.so.3.3.2
+lib/libyate.so.4
+lib/libyate.so.4.0.0
 lib/libyatejabber.so
-lib/libyatejabber.so.3.3.2
+lib/libyatejabber.so.4.0.0
 lib/libyatemgcp.so
-lib/libyatemgcp.so.3.3.2
+lib/libyatemgcp.so.4.0.0
+lib/libyatescript.so
+lib/libyatescript.so.4.0.0
 lib/libyatesig.so
-lib/libyatesig.so.3.3.2
+lib/libyatesig.so.4.0.0
 lib/yate/analyzer.yate
 lib/yate/callfork.yate
 lib/yate/callgen.yate
@@ -214,6 +228,7 @@ lib/yate/gsmcodec.yate
 %%WITH_ILBC%%lib/yate/ilbccodec.yate
 lib/yate/jabber/jabberserver.yate
 lib/yate/jabber/jbfeatures.yate
+lib/yate/javascript.yate
 lib/yate/moh.yate
 lib/yate/msgsniff.yate
 lib/yate/mux.yate
@@ -224,6 +239,7 @@ lib/yate/rmanager.yate
 lib/yate/server/accfile.yate
 lib/yate/server/analog.yate
 lib/yate/server/analogdetect.yate
+lib/yate/server/cache.yate
 lib/yate/server/callcounters.yate
 lib/yate/server/ccongestion.yate
 lib/yate/server/ciscosm.yate
@@ -232,7 +248,6 @@ lib/yate/server/cpuload.yate
 lib/yate/server/dbpbx.yate
 lib/yate/server/dbwave.yate
 lib/yate/server/heartbeat.yate
-lib/yate/server/isupmangler.yate
 lib/yate/server/lateroute.yate
 %%WITH_SCTP%%lib/yate/server/lksctp.yate
 lib/yate/server/mgcpca.yate
@@ -256,6 +271,9 @@ lib/yate/server/yradius.yate
 lib/yate/server/ysigchan.yate
 lib/yate/server/ysnmpagent.yate
 %%WITH_DAHDI%%lib/yate/server/zapcard.yate
+lib/yate/sig/camel_map.yate
+lib/yate/sig/isupmangler.yate
+lib/yate/sig/ss7_lnp_ansi.yate
 lib/yate/sip/sip_cnam_lnp.yate
 lib/yate/speexcodec.yate
 lib/yate/tonedetect.yate
@@ -297,47 +315,110 @@ libdata/pkgconfig/yate.pc
 %%DATADIR%%/scripts/route.php
 %%DATADIR%%/scripts/voicemail.php
 %%DATADIR%%/skins/default/account.ui
+%%DATADIR%%/skins/default/account_title.png
 %%DATADIR%%/skins/default/accountlist.ui
+%%DATADIR%%/skins/default/accountlist_title.png
 %%DATADIR%%/skins/default/accountwizard.ui
+%%DATADIR%%/skins/default/accountwizard_title.png
+%%DATADIR%%/skins/default/activ.png
+%%DATADIR%%/skins/default/add.png
+%%DATADIR%%/skins/default/add_hover.png
+%%DATADIR%%/skins/default/add_menu.png
+%%DATADIR%%/skins/default/add_pressed.png
 %%DATADIR%%/skins/default/addaccount.png
+%%DATADIR%%/skins/default/addaccount_menu.png
 %%DATADIR%%/skins/default/addaccountwiz.png
+%%DATADIR%%/skins/default/addaccountwiz_menu.png
 %%DATADIR%%/skins/default/addchatroom.png
+%%DATADIR%%/skins/default/addchatroom_menu.png
 %%DATADIR%%/skins/default/addcontact.png
 %%DATADIR%%/skins/default/addrbook.ui
+%%DATADIR%%/skins/default/addrbook_title.png
 %%DATADIR%%/skins/default/answer.png
 %%DATADIR%%/skins/default/answer_20.png
+%%DATADIR%%/skins/default/answer_20_hover.png
+%%DATADIR%%/skins/default/answer_20_pressed.png
 %%DATADIR%%/skins/default/arch_contact_item.ui
 %%DATADIR%%/skins/default/arch_room_item.ui
 %%DATADIR%%/skins/default/arch_roompriv_item.ui
 %%DATADIR%%/skins/default/arch_session_item.ui
 %%DATADIR%%/skins/default/archive.png
 %%DATADIR%%/skins/default/archive.ui
+%%DATADIR%%/skins/default/archive_hover.png
+%%DATADIR%%/skins/default/archive_menu.png
+%%DATADIR%%/skins/default/archive_pressed.png
+%%DATADIR%%/skins/default/archive_title.png
 %%DATADIR%%/skins/default/ask.png
 %%DATADIR%%/skins/default/ask_32.png
 %%DATADIR%%/skins/default/bell.png
 %%DATADIR%%/skins/default/book.png
 %%DATADIR%%/skins/default/book_32.png
+%%DATADIR%%/skins/default/call.png
+%%DATADIR%%/skins/default/call_hover.png
+%%DATADIR%%/skins/default/call_pressed.png
+%%DATADIR%%/skins/default/calls_tab.png
+%%DATADIR%%/skins/default/calls_tab_hover.png
+%%DATADIR%%/skins/default/calls_tab_pressed.png
+%%DATADIR%%/skins/default/cancel.png
+%%DATADIR%%/skins/default/cancel_hover.png
+%%DATADIR%%/skins/default/cancel_pressed.png
+%%DATADIR%%/skins/default/cancel_transfer_20.png
+%%DATADIR%%/skins/default/cancel_transfer_20_hover.png
+%%DATADIR%%/skins/default/cancel_transfer_20_pressed.png
+%%DATADIR%%/skins/default/cb_arrow.png
 %%DATADIR%%/skins/default/cdr.png
 %%DATADIR%%/skins/default/cdr_32.png
+%%DATADIR%%/skins/default/cdr_tab.png
+%%DATADIR%%/skins/default/cdr_tab_hover.png
+%%DATADIR%%/skins/default/cdr_tab_pressed.png
 %%DATADIR%%/skins/default/chan_idle.png
 %%DATADIR%%/skins/default/chan_progress.png
 %%DATADIR%%/skins/default/chan_ringing.png
 %%DATADIR%%/skins/default/chan_routed.png
+%%DATADIR%%/skins/default/channel_conf_add.ui
+%%DATADIR%%/skins/default/channel_conf_item.ui
+%%DATADIR%%/skins/default/channel_item.ui
+%%DATADIR%%/skins/default/channel_transfer_item.ui
+%%DATADIR%%/skins/default/channel_transfer_start.ui
 %%DATADIR%%/skins/default/chat.png
 %%DATADIR%%/skins/default/chat.ui
+%%DATADIR%%/skins/default/chat_menu.png
+%%DATADIR%%/skins/default/chat_tab.png
+%%DATADIR%%/skins/default/chat_tab_hover.png
+%%DATADIR%%/skins/default/chat_tab_pressed.png
+%%DATADIR%%/skins/default/chat_title.png
 %%DATADIR%%/skins/default/chatroomedit.ui
+%%DATADIR%%/skins/default/chatroomedit_title.png
+%%DATADIR%%/skins/default/checkbox_off.png
+%%DATADIR%%/skins/default/checkbox_on.png
+%%DATADIR%%/skins/default/checkmark_menu.png
 %%DATADIR%%/skins/default/clear.png
+%%DATADIR%%/skins/default/clear_hover.png
+%%DATADIR%%/skins/default/clear_pressed.png
 %%DATADIR%%/skins/default/close.png
 %%DATADIR%%/skins/default/collapsed.png
+%%DATADIR%%/skins/default/conf_bg.png
 %%DATADIR%%/skins/default/conference.png
 %%DATADIR%%/skins/default/conference_20.png
+%%DATADIR%%/skins/default/conference_20_hover.png
+%%DATADIR%%/skins/default/conference_20_pressed.png
 %%DATADIR%%/skins/default/configure.png
+%%DATADIR%%/skins/default/configure_menu.png
 %%DATADIR%%/skins/default/confirm.ui
 %%DATADIR%%/skins/default/contactedit.ui
+%%DATADIR%%/skins/default/contactedit_title.png
 %%DATADIR%%/skins/default/contactinfo.ui
-%%DATADIR%%/skins/default/contactlist_chatroom.ui
-%%DATADIR%%/skins/default/contactlist_contact.ui
-%%DATADIR%%/skins/default/contactlist_group.ui
+%%DATADIR%%/skins/default/contactinfo_title.png
+%%DATADIR%%/skins/default/contacts_tab.png
+%%DATADIR%%/skins/default/contacts_tab_hover.png
+%%DATADIR%%/skins/default/contacts_tab_pressed.png
+%%DATADIR%%/skins/default/delete.png
+%%DATADIR%%/skins/default/delete_hover.png
+%%DATADIR%%/skins/default/delete_menu.png
+%%DATADIR%%/skins/default/delete_pressed.png
+%%DATADIR%%/skins/default/dialpad_20.png
+%%DATADIR%%/skins/default/dialpad_20_hover.png
+%%DATADIR%%/skins/default/dialpad_20_pressed.png
 %%DATADIR%%/skins/default/digit0.png
 %%DATADIR%%/skins/default/digit0_hover.png
 %%DATADIR%%/skins/default/digit0_pressed.png
@@ -375,14 +456,25 @@ libdata/pkgconfig/yate.pc
 %%DATADIR%%/skins/default/digitstar_hover.png
 %%DATADIR%%/skins/default/digitstar_pressed.png
 %%DATADIR%%/skins/default/dockedchat.ui
+%%DATADIR%%/skins/default/dockedchat_title.png
 %%DATADIR%%/skins/default/down.png
 %%DATADIR%%/skins/default/down_active.png
+%%DATADIR%%/skins/default/down_small.png
+%%DATADIR%%/skins/default/down_small_off.png
 %%DATADIR%%/skins/default/edit.png
+%%DATADIR%%/skins/default/edit_hover.png
+%%DATADIR%%/skins/default/edit_menu.png
+%%DATADIR%%/skins/default/edit_pressed.png
 %%DATADIR%%/skins/default/events.png
 %%DATADIR%%/skins/default/events.ui
+%%DATADIR%%/skins/default/events_menu.png
+%%DATADIR%%/skins/default/events_title.png
 %%DATADIR%%/skins/default/expanded.png
+%%DATADIR%%/skins/default/file_trans.png
+%%DATADIR%%/skins/default/file_trans_menu.png
 %%DATADIR%%/skins/default/fileprogress.ui
 %%DATADIR%%/skins/default/fileprogress_item.ui
+%%DATADIR%%/skins/default/fileprogress_title.png
 %%DATADIR%%/skins/default/find.png
 %%DATADIR%%/skins/default/findnext.png
 %%DATADIR%%/skins/default/findprev.png
@@ -390,16 +482,32 @@ libdata/pkgconfig/yate.pc
 %%DATADIR%%/skins/default/handshake_x.png
 %%DATADIR%%/skins/default/hangup.png
 %%DATADIR%%/skins/default/hangup_20.png
+%%DATADIR%%/skins/default/hangup_20_hover.png
+%%DATADIR%%/skins/default/hangup_20_pressed.png
 %%DATADIR%%/skins/default/help.ui
+%%DATADIR%%/skins/default/help_title.png
 %%DATADIR%%/skins/default/hold.png
 %%DATADIR%%/skins/default/hold_20.png
+%%DATADIR%%/skins/default/hold_20_hover.png
+%%DATADIR%%/skins/default/hold_20_pressed.png
 %%DATADIR%%/skins/default/home.png
+%%DATADIR%%/skins/default/home_hover.png
+%%DATADIR%%/skins/default/home_pressed.png
+%%DATADIR%%/skins/default/incoming.png
 %%DATADIR%%/skins/default/info.png
 %%DATADIR%%/skins/default/info_32.png
+%%DATADIR%%/skins/default/info_menu.png
 %%DATADIR%%/skins/default/input.ui
+%%DATADIR%%/skins/default/inputacccred.ui
+%%DATADIR%%/skins/default/inputacccred_title.png
 %%DATADIR%%/skins/default/inputpwd.ui
+%%DATADIR%%/skins/default/inputpwd_title.png
 %%DATADIR%%/skins/default/joinmucwizard.ui
+%%DATADIR%%/skins/default/joinmucwizard_title.png
 %%DATADIR%%/skins/default/keyboard.png
+%%DATADIR%%/skins/default/left.png
+%%DATADIR%%/skins/default/left_hover.png
+%%DATADIR%%/skins/default/left_pressed.png
 %%DATADIR%%/skins/default/message.ui
 %%DATADIR%%/skins/default/messages_generic.ui
 %%DATADIR%%/skins/default/messages_header.ui
@@ -408,48 +516,105 @@ libdata/pkgconfig/yate.pc
 %%DATADIR%%/skins/default/minus.png
 %%DATADIR%%/skins/default/muc.png
 %%DATADIR%%/skins/default/muc_16.png
+%%DATADIR%%/skins/default/muc_hover.png
+%%DATADIR%%/skins/default/muc_menu.png
+%%DATADIR%%/skins/default/muc_pressed.png
 %%DATADIR%%/skins/default/mucchat.ui
 %%DATADIR%%/skins/default/mucinvite.ui
 %%DATADIR%%/skins/default/mucprivchat.ui
 %%DATADIR%%/skins/default/mucs.ui
+%%DATADIR%%/skins/default/mucs_title.png
 %%DATADIR%%/skins/default/next.png
+%%DATADIR%%/skins/default/notif.png
+%%DATADIR%%/skins/default/notif_menu.png
 %%DATADIR%%/skins/default/null_team-16.png
 %%DATADIR%%/skins/default/null_team-32.png
 %%DATADIR%%/skins/default/null_team-48.png
 %%DATADIR%%/skins/default/ok.png
+%%DATADIR%%/skins/default/ok_hover.png
+%%DATADIR%%/skins/default/ok_pressed.png
+%%DATADIR%%/skins/default/outgoing.png
 %%DATADIR%%/skins/default/phone.png
 %%DATADIR%%/skins/default/phone_32.png
+%%DATADIR%%/skins/default/phone_menu.png
+%%DATADIR%%/skins/default/phone_tab.png
+%%DATADIR%%/skins/default/phone_tab_hover.png
+%%DATADIR%%/skins/default/phone_tab_pressed.png
 %%DATADIR%%/skins/default/plus.png
+%%DATADIR%%/skins/default/pointer.png
 %%DATADIR%%/skins/default/prev.png
 %%DATADIR%%/skins/default/progress.gif
 %%DATADIR%%/skins/default/qt4client.rc
 %%DATADIR%%/skins/default/qt4client.ui
 %%DATADIR%%/skins/default/quest.png
+%%DATADIR%%/skins/default/quest_hover.png
+%%DATADIR%%/skins/default/quest_pressed.png
+%%DATADIR%%/skins/default/quit.png
+%%DATADIR%%/skins/default/radio_off.png
+%%DATADIR%%/skins/default/radio_on.png
+%%DATADIR%%/skins/default/right.png
+%%DATADIR%%/skins/default/right_hover.png
+%%DATADIR%%/skins/default/right_pressed.png
 %%DATADIR%%/skins/default/room_member.ui
+%%DATADIR%%/skins/default/room_subject.png
+%%DATADIR%%/skins/default/room_subject_hover.png
+%%DATADIR%%/skins/default/room_subject_pressed.png
 %%DATADIR%%/skins/default/save.png
+%%DATADIR%%/skins/default/save_hover.png
+%%DATADIR%%/skins/default/save_pressed.png
+%%DATADIR%%/skins/default/scroll_down.png
+%%DATADIR%%/skins/default/scroll_left.png
+%%DATADIR%%/skins/default/scroll_right.png
+%%DATADIR%%/skins/default/scroll_up.png
+%%DATADIR%%/skins/default/search.png
+%%DATADIR%%/skins/default/send_transfer_20.png
+%%DATADIR%%/skins/default/send_transfer_20_hover.png
+%%DATADIR%%/skins/default/send_transfer_20_pressed.png
 %%DATADIR%%/skins/default/sendchat.png
-%%DATADIR%%/skins/default/sendchat_32.png
+%%DATADIR%%/skins/default/sendchat_hover.png
+%%DATADIR%%/skins/default/sendchat_pressed.png
 %%DATADIR%%/skins/default/sendfile.png
+%%DATADIR%%/skins/default/sendfile_menu.png
 %%DATADIR%%/skins/default/settings.ui
+%%DATADIR%%/skins/default/settings_title.png
 %%DATADIR%%/skins/default/speaker.png
 %%DATADIR%%/skins/default/speaker_x.png
 %%DATADIR%%/skins/default/status_away.png
+%%DATADIR%%/skins/default/status_away_menu.png
 %%DATADIR%%/skins/default/status_busy.png
+%%DATADIR%%/skins/default/status_busy_menu.png
 %%DATADIR%%/skins/default/status_connecting.png
 %%DATADIR%%/skins/default/status_dnd.png
+%%DATADIR%%/skins/default/status_dnd_menu.png
 %%DATADIR%%/skins/default/status_offline.png
+%%DATADIR%%/skins/default/status_offline_menu.png
 %%DATADIR%%/skins/default/status_online.png
+%%DATADIR%%/skins/default/status_online_menu.png
 %%DATADIR%%/skins/default/status_xa.png
+%%DATADIR%%/skins/default/status_xa_menu.png
+%%DATADIR%%/skins/default/stylesheet.css
+%%DATADIR%%/skins/default/stylesheet_mac.css
+%%DATADIR%%/skins/default/stylesheet_oswindows.css
+%%DATADIR%%/skins/default/trans_bg.png
 %%DATADIR%%/skins/default/transfer.png
 %%DATADIR%%/skins/default/transfer_20.png
+%%DATADIR%%/skins/default/transfer_20_hover.png
+%%DATADIR%%/skins/default/transfer_20_pressed.png
 %%DATADIR%%/skins/default/tray_incomingcall.png
 %%DATADIR%%/skins/default/tray_incomingchat.png
+%%DATADIR%%/skins/default/tray_info.png
 %%DATADIR%%/skins/default/tray_notification.png
 %%DATADIR%%/skins/default/up.png
 %%DATADIR%%/skins/default/up_active.png
+%%DATADIR%%/skins/default/up_small.png
+%%DATADIR%%/skins/default/up_small_off.png
 %%DATADIR%%/skins/default/update.png
 %%DATADIR%%/skins/default/updater.ui
 %%DATADIR%%/skins/default/user.png
+%%DATADIR%%/skins/default/user_hover.png
+%%DATADIR%%/skins/default/user_menu.png
+%%DATADIR%%/skins/default/user_pressed.png
+%%DATADIR%%/sounds/ring.au
 %%DATADIR%%/sounds/ring.wav
 %%DATADIR%%/sounds/tone.wav
 @dirrm %%DATADIR%%/sounds
@@ -462,6 +627,7 @@ libdata/pkgconfig/yate.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/yate/sip
+@dirrm lib/yate/sig
 @dirrm lib/yate/server
 @dirrm lib/yate/qt4
 @dirrm lib/yate/jabber

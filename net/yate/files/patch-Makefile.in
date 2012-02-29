@@ -1,15 +1,15 @@
---- ./Makefile.in.orig	2011-03-18 22:46:29.000000000 +0300
-+++ ./Makefile.in	2011-04-13 15:25:28.000000000 +0400
+--- ./Makefile.in.orig	2012-02-10 19:22:46.000000000 +0400
++++ ./Makefile.in	2012-02-29 19:31:18.000000000 +0400
 @@ -20,7 +20,7 @@
  MKDEPS := ./config.status
  PROGS:= yate
  YLIB := libyate.so.@PACKAGE_VERSION@
 -SLIBS:= $(YLIB) libyate.so \
-+SLIBS:= $(YLIB) libyate.so libyate.so.3 \
++SLIBS:= $(YLIB) libyate.so libyate.so.4 \
+ 	libyatescript.so.@PACKAGE_VERSION@ libyatescript.so \
  	libyatesig.so.@PACKAGE_VERSION@ libyatesig.so \
  	libyatemgcp.so.@PACKAGE_VERSION@ libyatemgcp.so \
- 	libyatejabber.so.@PACKAGE_VERSION@ libyatejabber.so
-@@ -47,7 +47,7 @@
+@@ -48,7 +48,7 @@
  libdir = @libdir@
  incdir = @includedir@/yate
  mandir = @mandir@
@@ -18,7 +18,7 @@
  vardir = @localstatedir@/lib/yate
  moddir = @libdir@/yate
  shrdir = $(datadir)/yate
-@@ -221,7 +221,7 @@
+@@ -222,7 +222,7 @@
  	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
  	done
  	@mkdir -p "$(DESTDIR)$(libdir)/pkgconfig/" && \
@@ -27,7 +27,7 @@
  	@mkdir -p "$(DESTDIR)$(incdir)/" && \
  	for i in $(INCS) ; do \
  	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \
-@@ -249,7 +249,7 @@
+@@ -250,7 +250,7 @@
  	@-for i in $(PROGS) yate-config ; do \
  	    rm "$(DESTDIR)$(bindir)/$$i" ; \
  	done
@@ -36,11 +36,11 @@
  	    rmdir $(DESTDIR)$(libdir)/pkgconfig
  	@-for i in $(INCS) $(GENS) ; do \
  	    rm "$(DESTDIR)$(incdir)/$$i" ; \
-@@ -324,6 +324,7 @@
+@@ -325,6 +325,7 @@
  
  libyate.so: $(YLIB)
  	ln -sf $^ $@
-+	ln -sf $^ $@\.3
++	ln -sf $^ $@\.4
  
  .PHONY: library
  library $(YLIB): yatepaths.h
