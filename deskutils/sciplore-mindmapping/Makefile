@@ -14,16 +14,19 @@ DISTNAME=	SciPlore_MindMapping_AllOS_v${PORTVERSION:S/0.b//}b
 # we use the binary distribution - it's 25% smaller than the source .zip
 # and does not depend on devel/apache-ant
 
-DEPRECATED=	Discontinued and slated to be replaced by Docear
-EXPIRATION_DATE=	2012-05-31
-
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference and PDF Management
 
+# commented out to assist with tabthorpe's license framework changes
 #LICENSE=	GPLv2
 
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+
+DEPRECATED=	Discontinued, use deskutils/docear instead
+EXPIRATION_DATE=	2012-05-31
+
+NO_PACKAGE=	Deprecated and replaced by deskutils/docear.
 
 USE_ZIP=	yes
 USE_JAVA=	yes
