@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	user_agent_switcher
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 
