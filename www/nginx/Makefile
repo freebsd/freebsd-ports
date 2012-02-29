@@ -435,8 +435,7 @@ CONFIGURE_ARGS+=--with-http_xslt_module
 
 .if defined(WITH_HTTP_ZIP_MODULE)
 NGINX_ZIP_MODULE_VERSION=	1.1.6
-MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE}:zip
-PROJECTHOST=	mod-zip
+MASTER_SITES+=	http://mod-zip.googlecode.com/files/:zip
 DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
@@ -509,9 +508,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODU
 
 .if defined(WITH_NAXSI_MODULE)
 NGINX_NAXSI_MODULE_VERSION=	0.43
-FETCH_ARGS=	-pRr
-MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE}:naxsi
-PROJECTHOST=	naxsi
+MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
 DISTFILES+=	naxsi-${NGINX_NAXSI_MODULE_VERSION}.tar.gz:naxsi
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_MODULE_VERSION}/naxsi_src
 .endif
