@@ -4,6 +4,7 @@
 %%SITE_PERL%%/auto/Data/Validate/URI/is_http_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/is_https_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/is_web_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/is_tel_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/_split_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/URI/.packlist
