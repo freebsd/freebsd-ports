@@ -35,7 +35,7 @@ OPTIONS=	SSL	"build with OpenSSL support" off
 
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	--ssl
-RUN_DEPENDS+=		p5-security/p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
+RUN_DEPENDS+=		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 .endif
 
 .include <bsd.port.mk>
