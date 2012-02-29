@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	2.0.16
-PORTREVISION=	1
+PORTVERSION=	2.0.18
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
