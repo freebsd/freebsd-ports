@@ -477,7 +477,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 .endif
 
 .if defined(WITH_LUA_MODULE)
-LIB_DEPENDS=	luajit-5.1.2:${PORTSDIR}/lang/luajit
+LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
@@ -500,7 +500,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODU
 .endif
 
 .if defined(WITH_NAXSI_MODULE)
-NGINX_NAXSI_MODULE_VERSION=	0.42
+NGINX_NAXSI_MODULE_VERSION=	0.43
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	${MASTER_SITE_GOOGLE_CODE}:naxsi
 PROJECTHOST=	naxsi
