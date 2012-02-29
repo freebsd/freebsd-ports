@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -27,7 +27,6 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		idn:${PORTSDIR}/dns/libidn \
 		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
 		jpeg:${PORTSDIR}/graphics/jpeg \
-		paper:${PORTSDIR}/print/libpaper \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
@@ -58,7 +57,6 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-dynamic \
 		--with-ijs \
 		--with-libidn \
-		--with-libpaper \
 		--without-jasper \
 		--with-drivers=""
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
@@ -77,9 +75,10 @@ SUB_LIST=	DATADIR=${DATADIR} PORTVERSION=${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 DATADIR=	${PREFIX}/share/${PORTNAME:S,9$,,}
 
-OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
+OPTIONS=	A4SIZE	"Set A4 (not Letter) as the default paper size"	off \
 		CUPS	"Enable CUPS support"	on \
 		FONTCONFIG	"fontconfig support"	on \
+		LIBPAPER	"libpaper support"	off \
 		GTK	"GTK frontend"	off \
 		X11	"X11 support"	on
 
@@ -115,6 +114,13 @@ PLIST_SUB+=	GS_${D}="@comment "
 XCFLAGS+=	-DA4
 MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
 .endif
+.endif
+
+.if !defined(WITHOUT_LIBPAPER)
+LIB_DEPENDS+=	paper:${PORTSDIR}/print/libpaper
+CONFIGURE_ARGS+=	--with-libpaper
+.else
+CONFIGURE_ARGS+=	--without-libpaper
 .endif
 
 .if !defined(WITHOUT_FONTCONFIG)
