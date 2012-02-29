@@ -6,40 +6,42 @@
 #
 
 PORTNAME=	confget
-PORTVERSION=	1.02
-PORTREVISION=	1
+PORTVERSION=	1.03
 CATEGORIES=	textproc
-MASTER_SITES=	http://devel.ringlet.net/textproc/confget/
+MASTER_SITES=	http://devel.ringlet.net/textproc/confget/ \
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Read variables from INI-style configuration files
 
 OPTIONS=	PCRE "Regular expression support" on
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PCRE)
-LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
-.else
-MAKE_ENV+=	PCRE_CFLAGS= PCRE_LIBS=
-.endif
-
+MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
 USE_GMAKE=	yes
-
-MAKE_ENV+=	CFLAGS_CONF=-DHAVE_FGETLN
 
 MAN1=		confget.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/confget
+PORTEXAMPLES=	t1.ini t2.ini
 
-.if defined(NOPORTEXAMPLES)
-post-patch:
-		${REINPLACE_CMD} -E -e 's/([^n])install-examples/\1/' \
-			${WRKSRC}/Makefile
-.else
+.if !defined(NOPORTEXAMPLES)
 MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 .endif
 
-test:		build
-		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+.include <bsd.port.options.mk>
 
-.include <bsd.port.post.mk>
+.if !defined(WITHOUT_PCRE)
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.else
+MAKE_ENV+=	PCRE_CFLAGS="" PCRE_LIBS=""
+.endif
+
+post-patch:
+.if defined(NOPORTEXAMPLES)
+	@${REINPLACE_CMD} -e '/^install:/ s| install-examples||' ${WRKSRC}/Makefile
+.endif
+
+regression-test test: build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+
+.include <bsd.port.mk>
