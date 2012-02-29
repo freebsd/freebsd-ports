@@ -1,6 +1,6 @@
---- SConstruct.orig	2011-12-16 18:02:27.000000000 +0100
-+++ SConstruct	2011-12-17 04:39:19.000000000 +0100
-@@ -702,7 +702,10 @@
+--- SConstruct.orig	2012-02-29 18:18:35.000000000 +0100
++++ SConstruct	2012-02-29 18:30:34.000000000 +0100
+@@ -714,7 +714,10 @@
  
      #make scons colorgcc friendly
      env['ENV']['HOME'] = os.environ['HOME']
@@ -12,7 +12,7 @@
  
      if linux and has_option( "sharedclient" ):
          env.Append( LINKFLAGS=" -Wl,--as-needed -Wl,-zdefs " )
-@@ -785,8 +788,9 @@
+@@ -797,8 +800,9 @@
      options_topass["nix"] = nix
      
      if has_option( "use-system-" + shortName ) or has_option( "use-system-all" ):
@@ -24,7 +24,7 @@
      else:
          myModule.configure( env , fileLists , options_topass )
  
-@@ -1446,7 +1450,7 @@
+@@ -1481,7 +1485,7 @@
      fullInstallName = installDir + "/bin/" + name
  
      allBinaries += [ name ]

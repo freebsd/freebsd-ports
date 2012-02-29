@@ -209,6 +209,7 @@ bin/mongotop
 %%DEVEL%%include/mongo/util/processinfo.h
 %%DEVEL%%include/mongo/util/queue.h
 %%DEVEL%%include/mongo/util/ramlog.h
+%%DEVEL%%include/mongo/util/scopeguard.h
 %%DEVEL%%include/mongo/util/signal_handlers.h
 %%DEVEL%%include/mongo/util/stringutils.h
 %%DEVEL%%include/mongo/util/text.h
