@@ -50,7 +50,6 @@ bin/pg_test_fsync
 lib/postgresql/auth_delay.so
 lib/postgresql/dummy_seclabel.so
 lib/postgresql/file_fdw.so
-@dirrmtry share/postgresql/extension
 share/doc/postgresql/extension/autoinc.example
 share/doc/postgresql/extension/insert_username.example
 share/doc/postgresql/extension/moddatetime.example
@@ -174,6 +173,7 @@ share/postgresql/extension/xml2.control
 share/postgresql/tsearch_data/unaccent.rules
 share/postgresql/tsearch_data/xsyn_sample.rules
 @dirrmtry share/postgresql/tsearch_data
+@dirrmtry share/postgresql/extension
 @dirrmtry share/postgresql
 @dirrmtry %%DOCSDIR%%/extension
 @dirrmtry %%DOCSDIR%%
