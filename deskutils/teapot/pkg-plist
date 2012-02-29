@@ -26,7 +26,6 @@ bin/teapot
 %%PORTDOCS%%%%DOCSDIR%%/html/node22.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node23.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node24.html
-%%PORTDOCS%%%%DOCSDIR%%/html/footnote.html
 %%PORTDOCS%%%%DOCSDIR%%/html/img1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/img2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
