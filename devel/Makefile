@@ -2180,6 +2180,7 @@
     SUBDIR += p5-OOTools
     SUBDIR += p5-Object-Accessor
     SUBDIR += p5-Object-Array
+    SUBDIR += p5-Object-Authority
     SUBDIR += p5-Object-Declare
     SUBDIR += p5-Object-Destroyer
     SUBDIR += p5-Object-Enum
