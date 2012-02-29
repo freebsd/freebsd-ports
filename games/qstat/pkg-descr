@@ -1,9 +1,9 @@
-QStat is a command-line program that displays information about Internet
-game servers.  The servers are either down, non-responsive, or running a
-a game.  For servers running a game, the server name, map name, current
-number of players, and response time are displayed.  Server rules and
-player information may also be displayed.  Can output templates for
-automatic HTML generation.  Also has raw display mode for integration
+QStat is a command-line program that displays real-time information about
+Internet game servers.  The servers can be either down, non-responding, or
+running a game.  For servers running a game, the server name, map name,
+current number of players, and response time are displayed.  Server rules
+and player information may also be displayed.  It can output templates for
+automatic HTML generation, and also has raw display mode for integration
 with custom server browsers.  Incomplete list of supported games includes:
 
     - old Quake (NetQuake)
