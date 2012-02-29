@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Getopt/Compact/WithCmd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact/WithCmd/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact/WithCmd
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Compact
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
+@dirrmtry %%SITE_PERL%%/Getopt/Compact
+@dirrmtry %%SITE_PERL%%/Getopt
