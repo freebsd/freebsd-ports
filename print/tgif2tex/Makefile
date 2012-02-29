@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif2tex
 PORTVERSION=	2.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	print
 MASTER_SITES=	http://www.cs.hiroshima-u.ac.jp/~nakano/tgif2tex/
 
@@ -17,8 +17,7 @@ COMMENT=	Converting texts in figure by tgif to LaTeX commands
 USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/tgif2tex
-PORTDOCS= 	how-to-use.aux how-to-use.dvi \
-		how-to-use.log how-to-use.ps how-to-use.tex \
+PORTDOCS= 	how-to-use.dvi how-to-use.ps how-to-use.tex \
 		example.obj example.tex \
 		original.dps original.tps \
 		pythagoras.dps pythagoras.tps \
@@ -26,8 +25,7 @@ PORTDOCS= 	how-to-use.aux how-to-use.dvi \
 		sample2.1.dps sample2.1.tps \
 		sample2.2.dps sample2.2.tps \
 		sample2.3.dps sample2.3.tps \
-		sample2.aux sample2.dvi sample2.log \
-		sample2.tex sample2.obj sample2.ps
+		sample2.dvi sample2.tex sample2.obj sample2.ps
 
 do-build:
 	${REINPLACE_CMD} \
