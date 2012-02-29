@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}-plainzip
 DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
@@ -22,7 +22,6 @@ JAVA_VERSION=	1.6+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 SUB_FILES=	squirrel-sql
-PKGMESSAGE=	pkg-messages
 
 DATADIR=	${PREFIX}/share/java/${UNIQUENAME}
 
