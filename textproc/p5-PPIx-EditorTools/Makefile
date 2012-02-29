@@ -18,6 +18,8 @@ COMMENT=	Utility methods and base class for manipulating Perl via PPI
 BUILD_DEPENDS=	p5-Class-XSAccessor>=1.02:${PORTSDIR}/devel/p5-Class-XSAccessor \
 		p5-PPI>=1.203:${PORTSDIR}/textproc/p5-PPI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most
 
 PERL_CONFIGURE=	yes
 
