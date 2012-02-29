@@ -1,0 +1,7 @@
+%%SITE_PERL%%/POE/Component/Client/DNS/Recursive.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNS/Recursive/.packlist
+@dirrmtry %%SITE_PERL%%/POE/Component/Client/DNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNS/Recursive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
