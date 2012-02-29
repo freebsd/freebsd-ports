@@ -108,30 +108,34 @@ share/java/squirrel-sql/lib/asm-attrs.jar
 share/java/squirrel-sql/lib/asm.jar
 share/java/squirrel-sql/lib/autocomplete.jar
 share/java/squirrel-sql/lib/axis-jaxrpc.jar
+share/java/squirrel-sql/lib/axis-saaj.jar
+share/java/squirrel-sql/lib/axis-wsdl4j.jar
 share/java/squirrel-sql/lib/axis.jar
 share/java/squirrel-sql/lib/cglib.jar
 share/java/squirrel-sql/lib/common.jar
 share/java/squirrel-sql/lib/commons-cli.jar
 share/java/squirrel-sql/lib/commons-codec.jar
 share/java/squirrel-sql/lib/commons-collections.jar
+share/java/squirrel-sql/lib/commons-discovery.jar
 share/java/squirrel-sql/lib/commons-httpclient.jar
+share/java/squirrel-sql/lib/commons-lang.jar
 share/java/squirrel-sql/lib/commons-logging.jar
+share/java/squirrel-sql/lib/core.jar
 share/java/squirrel-sql/lib/forms.jar
 share/java/squirrel-sql/lib/fw.jar
 share/java/squirrel-sql/lib/hibernate-annotations.jar
 share/java/squirrel-sql/lib/hibernate-commons-annotations.jar
 share/java/squirrel-sql/lib/hibernate-entitymanager.jar
 share/java/squirrel-sql/lib/hibernate.jar
+share/java/squirrel-sql/lib/icu4j.jar
+share/java/squirrel-sql/lib/javahelp.jar
+share/java/squirrel-sql/lib/jide-oss.jar
+share/java/squirrel-sql/lib/jmeld.jar
 share/java/squirrel-sql/lib/jxl.jar
 share/java/squirrel-sql/lib/log4j.jar
 share/java/squirrel-sql/lib/nanoxml.jar
-share/java/squirrel-sql/lib/openide-loaders.jar
-share/java/squirrel-sql/lib/openide.jar
-share/java/squirrel-sql/lib/org-netbeans-modules-editor-fold.jar
-share/java/squirrel-sql/lib/org-netbeans-modules-editor-lib.jar
-share/java/squirrel-sql/lib/org-netbeans-modules-editor-util.jar
-share/java/squirrel-sql/lib/org-netbeans-modules-editor.jar
-share/java/squirrel-sql/lib/ostermiller-syntax.jar
+share/java/squirrel-sql/lib/org.eclipse.equinox.common.jar
+share/java/squirrel-sql/lib/osgi.jar
 share/java/squirrel-sql/lib/rsyntaxtextarea.jar
 share/java/squirrel-sql/lib/rtext.jar
 share/java/squirrel-sql/lib/spring-beans.jar
@@ -151,8 +155,11 @@ share/java/squirrel-sql/lib/squirrel-sql_pt_BR.jar
 share/java/squirrel-sql/lib/squirrel-sql_ru.jar
 share/java/squirrel-sql/lib/squirrel-sql_zh_CN.jar
 share/java/squirrel-sql/lib/stringtemplate.jar
+share/java/squirrel-sql/lib/swing-worker.jar
 share/java/squirrel-sql/lib/treetable.jar
 share/java/squirrel-sql/lib/versioncheck.jar
+share/java/squirrel-sql/lib/x86.jar
+share/java/squirrel-sql/lib/xml-apis.jar
 share/java/squirrel-sql/log4j.properties
 share/java/squirrel-sql/plugins/codecompletion.jar
 share/java/squirrel-sql/plugins/codecompletion/changes.txt
@@ -187,6 +194,7 @@ share/java/squirrel-sql/plugins/dbcopy/Compatibility_with_1.2beta6.txt
 share/java/squirrel-sql/plugins/dbcopy/RemainingTimeCalculator.txt
 share/java/squirrel-sql/plugins/dbcopy/TODO.txt
 share/java/squirrel-sql/plugins/dbcopy/changes.txt
+share/java/squirrel-sql/plugins/dbcopy/command-line.html
 share/java/squirrel-sql/plugins/dbcopy/copy_small.JPG
 share/java/squirrel-sql/plugins/dbcopy/database_jdbc_properties/axion.html
 share/java/squirrel-sql/plugins/dbcopy/database_jdbc_properties/daffodil.html
@@ -278,6 +286,10 @@ share/java/squirrel-sql/plugins/graph/licence.txt
 share/java/squirrel-sql/plugins/graph/readme.html
 share/java/squirrel-sql/plugins/graph/readme.txt
 share/java/squirrel-sql/plugins/graph/zoomprint.png
+share/java/squirrel-sql/plugins/greenplum.jar
+share/java/squirrel-sql/plugins/greenplum/changes.txt
+share/java/squirrel-sql/plugins/greenplum/greenplum-sources.jar
+share/java/squirrel-sql/plugins/greenplum/licence.txt
 share/java/squirrel-sql/plugins/h2.jar
 share/java/squirrel-sql/plugins/h2/changes.txt
 share/java/squirrel-sql/plugins/h2/h2-sources.jar
@@ -489,6 +501,9 @@ share/java/squirrel-sql/plugins/sqlscript/creattable.jpg
 share/java/squirrel-sql/plugins/sqlscript/licence.txt
 share/java/squirrel-sql/plugins/sqlscript/readme.html
 share/java/squirrel-sql/plugins/sqlscript/readme.txt
+share/java/squirrel-sql/plugins/sqlscript/sql2file.jpg
+share/java/squirrel-sql/plugins/sqlscript/sql2file_exportController.jpg
+share/java/squirrel-sql/plugins/sqlscript/sql2file_progress.jpg
 share/java/squirrel-sql/plugins/sqlscript/sqlscript-sources.jar
 share/java/squirrel-sql/plugins/sqlscript/toolspopup.jpg
 share/java/squirrel-sql/plugins/sqlval.jar
@@ -512,10 +527,13 @@ share/java/squirrel-sql/plugins/syntax/readme.html
 share/java/squirrel-sql/plugins/syntax/standard-nbm-license.txt
 share/java/squirrel-sql/plugins/syntax/syntax-sources.jar
 share/java/squirrel-sql/plugins/syntax/toolspopup.jpg
+share/java/squirrel-sql/plugins/wikiTableConfigurations.jar
+share/java/squirrel-sql/plugins/wikiTableConfigurations/wikiTableConfigurations-sources.jar
 share/java/squirrel-sql/squirrel-sql.jar
 share/java/squirrel-sql/update-log4j.properties
 share/java/squirrel-sql/update/release.xml
 @dirrm share/java/squirrel-sql/update
+@dirrm share/java/squirrel-sql/plugins/wikiTableConfigurations
 @dirrm share/java/squirrel-sql/plugins/syntax
 @dirrm share/java/squirrel-sql/plugins/sybase
 @dirrm share/java/squirrel-sql/plugins/sqlval
@@ -561,6 +579,7 @@ share/java/squirrel-sql/update/release.xml
 @dirrm share/java/squirrel-sql/plugins/hibernate
 @dirrm share/java/squirrel-sql/plugins/h2/images
 @dirrm share/java/squirrel-sql/plugins/h2
+@dirrm share/java/squirrel-sql/plugins/greenplum
 @dirrm share/java/squirrel-sql/plugins/graph
 @dirrm share/java/squirrel-sql/plugins/firebirdmanager/images
 @dirrm share/java/squirrel-sql/plugins/firebirdmanager
