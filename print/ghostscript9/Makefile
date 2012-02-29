@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.05
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -23,8 +24,10 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 9.x PostScript interpreter
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+		idn:${PORTSDIR}/dns/libidn \
 		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
 		jpeg:${PORTSDIR}/graphics/jpeg \
+		paper:${PORTSDIR}/print/libpaper \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
 
@@ -54,6 +57,8 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
+		--with-libidn \
+		--with-libpaper \
 		--without-jasper \
 		--with-drivers=""
 CPPFLAGS+=	-DUPD_SIGNAL=0 -I. \
