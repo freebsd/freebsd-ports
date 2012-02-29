@@ -18,6 +18,8 @@ COMMENT=	Full-screen curses based spread sheet program
 
 USE_CMAKE=	yes
 
+MANPREFIX=	${PREFIX}/share
+NO_MANCOMPRESS=	no
 MAN1=	teapot.1
 
 # We download the prebuilt binary tarball for Linux in order to avoid
