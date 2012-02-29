@@ -320,9 +320,11 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
 .endif
 
 .if defined(WITH_HTTP_NOTICE_MODULE)
-MASTER_SITES+=	http://xph.us/dist/nginx-notice/:notice2
-DISTFILES+=	nginx-notice-2.tar.gz:notice2
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-notice-2
+GIT_NOTICE_MODULE_VERSION=	0-g3c95966
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/kr/nginx-notice/tarball/master/:notice
+DISTFILES+=	kr-nginx-notice-${GIT_NOTICE_MODULE_VERSION}.tar.gz:notice
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/kr-nginx-notice-${GIT_NOTICE_MODULE_VERSION:S/^0-g//}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .endif
 
