@@ -42,6 +42,9 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} '/^SUBDIR/s/ po//' ${WRKSRC}/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|g' -e 's|==|=|g' \
 		${WRKSRC}/rules/merge.sh
 
