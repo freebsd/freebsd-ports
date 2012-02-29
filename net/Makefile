@@ -578,6 +578,7 @@
     SUBDIR += p5-Net-HTTP
     SUBDIR += p5-Net-Hiveminder
     SUBDIR += p5-Net-INET6Glue
+    SUBDIR += p5-Net-IP-Minimal
     SUBDIR += p5-Net-IP-RangeCompare
     SUBDIR += p5-Net-IPTrie
     SUBDIR += p5-Net-IRR
