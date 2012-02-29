@@ -2188,6 +2188,7 @@
     SUBDIR += p5-Object-MultiType
     SUBDIR += p5-Object-Pluggable
     SUBDIR += p5-Object-Realize-Later
+    SUBDIR += p5-Object-Role
     SUBDIR += p5-Object-Signature
     SUBDIR += p5-Object-Simple
     SUBDIR += p5-Object-Tiny
