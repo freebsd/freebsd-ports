@@ -24,6 +24,9 @@ PLIST_FILES=	bin/Xwrapper
 XSERVER=	-DXSERVER_PATH=\"${LOCALBASE}/bin/Xorg\"
 PKGNAMEPREFIX=	xorg-
 
+DEPRECATED=	not needed anymore
+EXPIRATION_DATE=	2012-03-28
+
 do-fetch:
 	@${DO_NADA}
 
