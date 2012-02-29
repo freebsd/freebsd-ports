@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Marpa-XS
-PORTVERSION=	1.002000
+PORTVERSION=	1.004000
 CATEGORIES=	lang textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JKEGL
@@ -56,8 +56,5 @@ BUILD_DEPENDS+=	p5-Data-Dumper>=2.125:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS+=	p5-Data-Dumper>=2.125:${PORTSDIR}/devel/p5-Data-Dumper
 TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/Test::Weaken->VERSION/ s|!=|<|' ${WRKSRC}/t/weaken.t
 
 .include <bsd.port.post.mk>
