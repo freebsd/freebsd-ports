@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	yate
-PORTVERSION=	3.3.2.p1
-PORTREVISION=	1
+PORTVERSION=	4.0.0.p1
 CATEGORIES=	net
-MASTER_SITES=	http://yate.null.ro/tarballs/yate3/
-DISTNAME=	yate-3.3.2-1
+MASTER_SITES=	http://yate.null.ro/tarballs/yate4/
+DISTNAME=	yate-4.0.0-1
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Yet Another Telephony Engine
