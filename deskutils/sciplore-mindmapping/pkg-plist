@@ -1,6 +1,5 @@
 bin/sciplore-mindmapping
 share/applications/sciplore-mindmapping.desktop
-share/java/sciplore-mindmapping/GPLv2
 share/java/sciplore-mindmapping/SciploreMindMapping.sh
 share/java/sciplore-mindmapping/accessories/LICENSE.MIT
 share/java/sciplore-mindmapping/accessories/freemind2applet.xsl
