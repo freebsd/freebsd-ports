@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A sophisticated exporter for custom-built routines
 
-RUN_DEPENDS=	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install \
-		p5-Data-OptList>=0.100:${PORTSDIR}/devel/p5-Data-OptList \
-		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Data-OptList>=0.100:${PORTSDIR}/devel/p5-Data-OptList \
+		p5-Params-Util>=0.14:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Sub-Install>=0.920:${PORTSDIR}/devel/p5-Sub-Install
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
