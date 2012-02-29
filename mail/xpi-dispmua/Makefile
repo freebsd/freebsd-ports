@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dispmua
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	mail
 DISTNAME=	display_mail_user_agent-${DISTVERSION}-tb+sm
 
