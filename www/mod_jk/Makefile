@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/jk/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
 MAKE_JOBS_SAFE=	yes
