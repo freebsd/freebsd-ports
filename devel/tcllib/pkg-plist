@@ -232,6 +232,8 @@ lib/tcllib/jpeg/pkgIndex.tcl
 lib/tcllib/json/json.tcl
 lib/tcllib/json/json_write.tcl
 lib/tcllib/json/pkgIndex.tcl
+lib/tcllib/lambda/lambda.tcl
+lib/tcllib/lambda/pkgIndex.tcl
 lib/tcllib/ldap/ldap.tcl
 lib/tcllib/ldap/ldapx.tcl
 lib/tcllib/ldap/pkgIndex.tcl
@@ -255,6 +257,7 @@ lib/tcllib/math/calculus.tcl
 lib/tcllib/math/classic_polyns.tcl
 lib/tcllib/math/combinatorics.tcl
 lib/tcllib/math/constants.tcl
+lib/tcllib/math/decimal.tcl
 lib/tcllib/math/elliptic.tcl
 lib/tcllib/math/exponential.tcl
 lib/tcllib/math/fourier.tcl
@@ -311,6 +314,8 @@ lib/tcllib/nntp/nntp.tcl
 lib/tcllib/nntp/pkgIndex.tcl
 lib/tcllib/ntp/pkgIndex.tcl
 lib/tcllib/ntp/time.tcl
+lib/tcllib/ooutil/ooutil.tcl
+lib/tcllib/ooutil/pkgIndex.tcl
 lib/tcllib/otp/otp.tcl
 lib/tcllib/otp/pkgIndex.tcl
 lib/tcllib/page/analysis_peg_emodes.tcl
@@ -322,7 +327,9 @@ lib/tcllib/page/gen_peg_canon.tcl
 lib/tcllib/page/gen_peg_cpkg.tcl
 lib/tcllib/page/gen_peg_hb.tcl
 lib/tcllib/page/gen_peg_me.tcl
+lib/tcllib/page/gen_peg_me.template
 lib/tcllib/page/gen_peg_mecpu.tcl
+lib/tcllib/page/gen_peg_mecpu.template
 lib/tcllib/page/gen_peg_ser.tcl
 lib/tcllib/page/gen_tree_text.tcl
 lib/tcllib/page/parse_lemon.tcl
@@ -540,6 +547,8 @@ lib/tcllib/treeql/pkgIndex.tcl
 lib/tcllib/treeql/treeql.tcl
 lib/tcllib/treeql/treeql84.tcl
 lib/tcllib/treeql/treeql85.tcl
+lib/tcllib/try/pkgIndex.tcl
+lib/tcllib/try/try.tcl
 lib/tcllib/uev/pkgIndex.tcl
 lib/tcllib/uev/uevent.tcl
 lib/tcllib/uev/uevent_onidle.tcl
@@ -550,6 +559,22 @@ lib/tcllib/uri/uri.tcl
 lib/tcllib/uri/urn-scheme.tcl
 lib/tcllib/uuid/pkgIndex.tcl
 lib/tcllib/uuid/uuid.tcl
+lib/tcllib/valtype/cc_amex.tcl
+lib/tcllib/valtype/cc_discover.tcl
+lib/tcllib/valtype/cc_mastercard.tcl
+lib/tcllib/valtype/cc_visa.tcl
+lib/tcllib/valtype/ean13.tcl
+lib/tcllib/valtype/iban.tcl
+lib/tcllib/valtype/imei.tcl
+lib/tcllib/valtype/isbn.tcl
+lib/tcllib/valtype/luhn.tcl
+lib/tcllib/valtype/luhn5.tcl
+lib/tcllib/valtype/pkgIndex.tcl
+lib/tcllib/valtype/usnpi.tcl
+lib/tcllib/valtype/valtype.tcl
+lib/tcllib/valtype/verhoeff.tcl
+lib/tcllib/virtchannel_base/cat.tcl
+lib/tcllib/virtchannel_base/facade.tcl
 lib/tcllib/virtchannel_base/fifo.tcl
 lib/tcllib/virtchannel_base/fifo2.tcl
 lib/tcllib/virtchannel_base/halfpipe.tcl
@@ -559,6 +584,7 @@ lib/tcllib/virtchannel_base/nullzero.tcl
 lib/tcllib/virtchannel_base/pkgIndex.tcl
 lib/tcllib/virtchannel_base/random.tcl
 lib/tcllib/virtchannel_base/randseed.tcl
+lib/tcllib/virtchannel_base/std.tcl
 lib/tcllib/virtchannel_base/string.tcl
 lib/tcllib/virtchannel_base/textwindow.tcl
 lib/tcllib/virtchannel_base/variable.tcl
@@ -591,10 +617,12 @@ lib/tcllib/yaml/yaml.tcl
 @dirrm lib/tcllib/virtchannel_transform
 @dirrm lib/tcllib/virtchannel_core
 @dirrm lib/tcllib/virtchannel_base
+@dirrm lib/tcllib/valtype
 @dirrm lib/tcllib/uuid
 @dirrm lib/tcllib/uri
 @dirrm lib/tcllib/units
 @dirrm lib/tcllib/uev
+@dirrm lib/tcllib/try
 @dirrm lib/tcllib/treeql
 @dirrm lib/tcllib/transfer
 @dirrm lib/tcllib/tiff
@@ -629,6 +657,7 @@ lib/tcllib/yaml/yaml.tcl
 @dirrm lib/tcllib/page/plugins
 @dirrm lib/tcllib/page
 @dirrm lib/tcllib/otp
+@dirrm lib/tcllib/ooutil
 @dirrm lib/tcllib/ntp
 @dirrm lib/tcllib/nntp
 @dirrm lib/tcllib/nns
@@ -646,6 +675,7 @@ lib/tcllib/yaml/yaml.tcl
 @dirrm lib/tcllib/log/msgs
 @dirrm lib/tcllib/log
 @dirrm lib/tcllib/ldap
+@dirrm lib/tcllib/lambda
 @dirrm lib/tcllib/json
 @dirrm lib/tcllib/jpeg
 @dirrm lib/tcllib/javascript
