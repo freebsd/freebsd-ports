@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.0
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
@@ -28,10 +28,8 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
-MAN8=		opendkim-genkey.8 opendkim-genzone.8 \
-		opendkim-testadsp.8 opendkim-testkey.8
-
-SUB_FILES=	pkg-message
+MAN8=		opendkim-genkey.8 opendkim-genzone.8 opendkim-testadsp.8 \
+		opendkim-testkey.8 opendkim-testmsg.8
 
 OPTIONS=	\
 	ARLIB		"Asynchronous thread-safe DNS library"	On  \
@@ -54,6 +52,7 @@ USE_RC_SUBR=	milter-opendkim
 MAN5+=		opendkim.conf.5
 MAN8+=		opendkim.8
 PLIST_SUB+=		FILTER=""
+SUB_FILES=		pkg-message
 WITHOUT_MILTER_CFLAGS=	yes
 WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
@@ -103,9 +102,6 @@ LIB_DEPENDS+=		unbound:${PORTSDIR}/dns/unbound
 PLIST_SUB+=		ARLIB="@comment "
 .else
 .if defined(WITH_ARLIB)
-. if ${CC} == "clang"
-BROKEN=		ARLIB option does not compile with clang
-. endif
 PLIST_SUB+=		ARLIB=""
 CONFIGURE_ARGS+=	--enable-arlib
 MAN3=			ar.3
@@ -150,6 +146,11 @@ post-install:
 .endif
 	@${MKDIR} ${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample ${PREFIX}/etc/mail/
+.if !defined(WITHOUT_FILTER)
 	@${CAT} ${PKGMESSAGE}
+.endif
+
+regression-test: build
+	cd ${WRKSRC} ; ${MAKE} check
 
 .include <bsd.port.post.mk>
