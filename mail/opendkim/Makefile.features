@@ -18,6 +18,10 @@ CONFIGURE_ARGS+=	--enable-allsymbols
 .if defined(WITH_ATPS) && !defined(WITHOUT_ATPS)
 WITH_XTAGS=		yes
 CONFIGURE_ARGS+=	--enable-atps
+MAN8+=			opendkim-atpszone.8
+PLIST_SUB+=		ATPS=""
+.else
+PLIST_SUB+=		ATPS="@comment "
 .endif
 
 .if defined(WITH_CODECOVERAGE) && !defined(WITHOUT_CODECOVERAGE)
@@ -39,6 +43,10 @@ LIB_DEPENDS+=		tre:${PORTSDIR}/textproc/libtre
 
 .if defined(WITH_DKIM_REPUTATION) && !defined(WITHOUT_DKIM_REPUTATION)
 CONFIGURE_ARGS+=	--enable-dkim_reputation
+MAN3+=			dkim-rep.3
+PLIST_SUB+=		DKIMREP=""
+.else
+PLIST_SUB+=		DKIMREP="@comment "
 .endif
 
 .if defined(WITH_IDENTITY_HEADER) && !defined(WITHOUT_IDENTITY_HEADER)
@@ -52,6 +60,7 @@ CONFIGURE_ARGS+=	--enable-ldap_caching
 
 .if defined(WITH_LUA_GLOBALS) && !defined(WITHOUT_LUA_GLOBALS)
 CONFIGURE_ARGS+=	--enable-lua_globals
+WITH_LUA=		yes
 .endif
 
 .if defined(WITH_OVERSIGN) && !defined(WITHOUT_OVERSIGN)
@@ -59,7 +68,6 @@ CONFIGURE_ARGS+=	--enable-oversign
 .endif
 
 .if defined(WITH_PARSE_TIME) && !defined(WITHOUT_PARSE_TIME)
-BROKEN=		The feature ``_FFR_PARSE_TIME'' is incomplete, does not work
 CONFIGURE_ARGS+=	--enable-parsetime
 .endif
 
@@ -67,12 +75,16 @@ CONFIGURE_ARGS+=	--enable-parsetime
 CONFIGURE_ARGS+=	--enable-postgres_reconnect_hack
 .endif
 
-.if defined(WITH_RATE_LIMIT) && !defined(WITHOUT_RATE_LIMIT)
+.if defined(WITH_RATE_LIMIT) || defined(WITH_RESIGN)
 CONFIGURE_ARGS+=	--enable-rate_limit
 .endif
 
 .if defined(WITH_RBL) && !defined(WITHOUT_RBL)
 CONFIGURE_ARGS+=	--enable-rbl
+MAN3+=			rbl.3
+PLIST_SUB+=		RBL=""
+.else
+PLIST_SUB+=		RBL="@comment "
 .endif
 
 .if defined(WITH_REDIRECT) && !defined(WITHOUT_REDIRECT)
@@ -83,8 +95,17 @@ CONFIGURE_ARGS+=	--enable-redirect
 CONFIGURE_ARGS+=	--enable-replace_rules
 .endif
 
-.if defined(WITH_REPORT_INTERVALS) && !defined(WITHOUT_REPORT_INTERVALS)
-CONFIGURE_ARGS+=	--enable-report_intervals
+.if defined(WITH_REPUTATION) && !defined(WITHOUT_REPUTATION)
+CONFIGURE_ARGS+=	--enable-reputation
+MAN3+=			ut.3
+MAN8+=			opendkim-genrates.8 opendkim-modtotals.8
+PLIST_SUB+=		REPUTE=""
+.else
+PLIST_SUB+=		REPUTE="@comment "
+.endif
+
+.if defined(WITH_REPUTATION_CACHE) && !defined(WITHOUT_REPUTATION_CACHE)
+CONFIGURE_ARGS+=	--enable-reputation_cache
 .endif
 
 .if defined(WITH_RESIGN) && !defined(WITHOUT_RESIGN)
@@ -105,6 +126,7 @@ CONFIGURE_ARGS+=	--enable-sender_macro
 
 .if defined(WITH_STATS) || defined(WITH_STATSEXT)
 CONFIGURE_ARGS+=	--enable-stats
+MAN1+=			opendkim-spam.1
 MAN8+=			opendkim-stats.8
 PLIST_SUB+=		STATS=""
 .else
@@ -117,6 +139,10 @@ CONFIGURE_ARGS+=	--enable-statsext
 
 .if defined(WITH_VBR) && !defined(WITHOUT_VBR)
 CONFIGURE_ARGS+=	--enable-vbr
+MAN3+=			vbr.3
+PLIST_SUB+=		VBR=""
+.else
+PLIST_SUB+=		VBR="@comment "
 .endif
 
 .if defined(WITH_XTAGS) && !defined(WITHOUT_XTAGS)
