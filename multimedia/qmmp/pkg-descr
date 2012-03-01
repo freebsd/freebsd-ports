@@ -2,21 +2,21 @@ This program is an audio-player, written with help of Qt library.
 Supported formats:
 	MPEG1 layer 2/3, Ogg Vorbis, Native FLAC, Ogg FLAC, Musepack, WavePack,
 	tracker modules (mod, s3m, it, xm, etc.), ADTS AAC, CD Audio, MIDI,
-	WMA-Monkey's Audio (and other formats provided by FFmpeg library),
-	PCM Wave (and other formats provided by libsndfile library), and
-	chiptune formats (AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
+	WMA-Monkey's Audio (and other formats provided by FFmpeg library), PCM
+	Wave (and other formats provided by libsndfile library), and Chiptune
+	formats (AY, GBS, GYM, HES, KSS, NSF, NSFE, SAP, SPC, VGM, VGZ, VTX)
 DSP effects:
 	Bauer Stereophonic-to-Binaural effect, sample rate conversion,
-    LADSPA effects, extra stereo effect, and crossfade effect
+	LADSPA effects, extra stereo effect, and crossfade effect
 Visual effects:
 	Spectrum Analyzer, and projectM audio visulaliser
 Output system support:
 	PulseAudio, OSS, OSS4, jack, and ALSA
 Other features:
-	10-band equalizer, Last.fm/Libre.fm scrobbler, MMS support, global hotkey,
+	10-band equalizer, Last.fm/Libre.fm scrobbler, global hotkey, MPRIS,
 	streaming (MP3, Vorbis, AAC, AAC+ via IceCast/ShoutCast), CDDB support,
-	removable device detection (via HAL or UDisks), MPRIS, cover art support,
-	multiple playlists, ReplayGain support, CUE sheet support,
+	removable device detection (via HAL or UDisks), cover art support,
+	multiple playlists, ReplayGain support, CUE sheet support, MMS support,
 	embedded CUE support (for FLAC and WavPack), MPRIS (1.0 and 2.0),
 	automatic charset detection for cue files and ShoutCast metadata,
 	video playback via Mplayer, lyrics (using lyrics.wikia.com), and

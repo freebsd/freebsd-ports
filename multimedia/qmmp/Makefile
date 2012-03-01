@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmmp
-PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTVERSION=	0.5.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -31,7 +30,7 @@ OPTIONS=	SKINNEDUI	"Skinned GUI" on \
 		OSS	"Support the OSS output" on \
 		OSS4	"Support the OSS4 output" off \
 		JACK	"Support the JACK output" on \
-		NULLOUT "Support a null output" on \
+		NULLOUT	"Support a null output" on \
 		FLAC	"Support to playback FLAC files" on \
 		MUSEPACK	"Support to playback MPC files" on \
 		FFMPEG	"Support to playback FFMPEG files" on \
@@ -40,13 +39,13 @@ OPTIONS=	SKINNEDUI	"Skinned GUI" on \
 		GME	"Support video game music files" on \
 		MAD	"Support to playback MAD files" on \
 		VORBIS	"Support to playback Vorbis/OGG files" on \
-		SNDFILE "Support to playback Sndfile files" on \
-		WAVPACK "Support to playback WAVPack files" on \
+		SNDFILE	"Support to playback Sndfile files" on \
+		WAVPACK	"Support to playback WAVPack files" on \
 		CUE	"Support to CUE sheets" on \
 		CDIO	"Support to playback compact discs" on \
 		FAAD	"Support to playback through FAAD decoder" on \
 		LADSPA	"Support the LADSPA effect" on \
-		CROSSFADE "Support cross-fade effect" on \
+		CROSSFADE	"Support cross-fade effect" on \
 		BS2B	"Support the Bauer stereophonic2binaural effect" on \
 		STEREO	"Support stereo effect" on \
 		SRCONV 	"Support the sample rate converter" on \
@@ -65,7 +64,7 @@ OPTIONS=	SKINNEDUI	"Skinned GUI" on \
 		FILEOPS	"Support file operation" on \
 		COVER	"Support to show cover images" on \
 		KDENOTIFY	"Support to popup notifier for KDE" on \
-		HAL "Support removable disc detection using HAL" on \
+		HAL	"Support removable disc detection using HAL" on \
 		UDISKS	"Support removable disc detection using UDisks" on \
 		QMMP_DIALOG	"An original dialog" on
 
@@ -149,8 +148,12 @@ PLUGIN_OPTIONS_CMAKE+=	-DUSE_GME:BOOL=FALSE
 
 .ifndef(WITHOUT_FFMPEG)
 PLIST_SUB+=	FFMPEG=""
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFMPEG:BOOL=TRUE
+. if exists(${LOCALBASE}/include/libavcodec/vda.h)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+. else
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+. endif
 .else
 PLIST_SUB+=	FFMPEG="@comment "
 PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFMPEG:BOOL=FALSE
@@ -456,11 +459,10 @@ INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	${PLUGIN_OPTIONS_CMAKE} \
 	-DCMAKE_REQUIRED_INCLUDES:PATH=${LOCALBASE}/include
 CMAKE_OUTSOURCE=yes
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	${REINPLACE_CMD} -e 's| -ldl| $${CMAKE_DL_LIBS}|' \
-		${WRKSRC}/src/plugins/Effect/ladspa/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|/usr/|${LOCALBASE}/|g' \
 		${WRKSRC}/src/plugins/Output/oss4/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|DESTINATION bin|DESTINATION libexec|' \
@@ -488,9 +490,9 @@ post-install:
 	cd ${WRKSRC}/doc/html/search && \
 		${INSTALL_MAN} *.html *.png *.css *.js ${DOCSDIR}/html/search ; \
 	${RM} -f ${WRKDIR}/PLIST.doc ; \
-	${FIND} ${DOCSDIR}/html -type f | ${SED} 's|${LOCALBASE}/||' \
+	${FIND} ${DOCSDIR}/html -type f | ${SED} 's|${PREFIX}/||' \
 		>> ${WRKDIR}/PLIST.doc ; \
-	${FIND} ${DOCSDIR}/html -type d | ${SED} 's|${LOCALBASE}/|@dirrm |' \
+	${FIND} ${DOCSDIR}/html -type d | ${SED} 's|${PREFIX}/|@dirrm |' \
 		| ${SORT} -r >> ${WRKDIR}/PLIST.doc ; \
 	cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST}
 .endif
