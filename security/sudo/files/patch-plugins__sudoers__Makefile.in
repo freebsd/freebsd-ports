@@ -2,12 +2,12 @@
 +++ ./plugins/sudoers/Makefile.in	2011-04-17 09:38:29.349385961 -0400
 @@ -358,9 +358,8 @@
  install-sudoers: install-dirs
- 	$(INSTALL) -d -O $(sudoers_uid) -G $(sudoers_gid) -M 0750 \
+ 	$(INSTALL) -d -O $(sudoers_uid) -G $(sudoers_gid) -m 0750 \
  	    $(DESTDIR)$(sudoersdir)/sudoers.d
 -	test -r $(DESTDIR)$(sudoersdir)/sudoers || \
--	    $(INSTALL) -O $(sudoers_uid) -G $(sudoers_gid) -M $(sudoers_mode) \
+-	    $(INSTALL) -O $(sudoers_uid) -G $(sudoers_gid) -m $(sudoers_mode) \
 -		sudoers $(DESTDIR)$(sudoersdir)/sudoers
-+	$(INSTALL) -O $(sudoers_uid) -G $(sudoers_gid) -M $(sudoers_mode) \
++	$(INSTALL) -O $(sudoers_uid) -G $(sudoers_gid) -m $(sudoers_mode) \
 +		sudoers $(DESTDIR)$(sudoersdir)/sudoers.sample
  
  uninstall:
