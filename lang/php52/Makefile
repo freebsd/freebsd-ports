@@ -16,8 +16,9 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	admin@lissyara.su
 COMMENT=	PHP Scripting Language
 
-DEPRECATED=		PHP 5.2 series is not supported anymore, migrate now
-EXPIRATION_DATE=	2012-03-01
+DEPRECATED=		PHP 5.2 series is strongly discouraged for new \
+			installations, migrate now
+EXPIRATION_DATE=	2013-03-01
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
