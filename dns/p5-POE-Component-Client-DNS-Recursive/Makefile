@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	POE-Component-Client-DNS-Recursive
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
-#MASTER_SITE_SUBDIR=	CPAN:BINGOS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A recursive DNS client for POE
 
-BUILD_DEPENDS=	p5-POE>=1.004:${PORTSDIR}/devel/p5-POE \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-Net-IP-Minimal>=0:${PORTSDIR}/net/p5-Net-IP-Minimal
+BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Net-IP-Minimal>=0:${PORTSDIR}/net/p5-Net-IP-Minimal \
+		p5-POE>=1.004:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	POE::Component::Client::DNS::Recursive.3
+MAN3=		POE::Component::Client::DNS::Recursive.3
 
 .include <bsd.port.mk>
