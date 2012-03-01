@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.57
-PORTREVISION=	2
+PORTVERSION=	2.58
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -55,8 +54,8 @@ MAN3=		MogileFS::Class.3 \
 
 post-install:
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
