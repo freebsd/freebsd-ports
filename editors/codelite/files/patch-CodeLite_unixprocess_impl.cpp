@@ -1,7 +1,7 @@
---- CodeLite/unixprocess_impl.cpp.orig	2010-11-11 11:14:08.000000000 +0000
-+++ CodeLite/unixprocess_impl.cpp	2010-11-11 11:14:57.000000000 +0000
-@@ -12,8 +12,14 @@
- #include <sys/wait.h>
+--- CodeLite/unixprocess_impl.cpp.orig	2011-10-11 18:58:27.000000000 +0200
++++ CodeLite/unixprocess_impl.cpp	2012-02-17 17:14:25.000000000 +0100
+@@ -15,8 +15,14 @@
+ #include "procutils.h"
  
  #ifdef __WXGTK__
 +#ifdef __FreeBSD__
