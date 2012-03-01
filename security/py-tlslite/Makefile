@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	tlslite
-PORTVERSION=	0.3.8
+PORTVERSION=	0.4.0
 CATEGORIES=	security python
-MASTER_SITES=	http://trevp.net/tlslite/
+MASTER_SITES=	http://cloud.github.com/downloads/trevp/tlslite/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module implenting SSL 3.0, TLS 1.0 and TLS 1.1
 
-USE_PYTHON=	yes
+USE_PYTHON=		2.6-2.7
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
