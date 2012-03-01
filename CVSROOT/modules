@@ -12456,6 +12456,7 @@ p5-Getargs-Long                 ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile              ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Attribute             ports/devel/p5-Getopt-Attribute
 p5-Getopt-Compact               ports/devel/p5-Getopt-Compact
+p5-Getopt-Compact-WithCmd       ports/devel/p5-Getopt-Compact-WithCmd
 p5-Getopt-Declare               ports/devel/p5-Getopt-Declare
 p5-Getopt-Euclid                ports/devel/p5-Getopt-Euclid
 p5-Getopt-GUI-Long              ports/devel/p5-Getopt-GUI-Long
@@ -13493,6 +13494,7 @@ p5-Net-INET6Glue                ports/net/p5-Net-INET6Glue
 p5-Net-IP                       ports/net-mgmt/p5-Net-IP
 p5-Net-IP-Match-Regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-Net-IP-Match-XS              ports/net-mgmt/p5-Net-IP-Match-XS
+p5-Net-IP-Minimal               ports/net/p5-Net-IP-Minimal
 p5-Net-IP-RangeCompare          ports/net/p5-Net-IP-RangeCompare
 p5-Net-IP-Resolver              ports/net-mgmt/p5-Net-IP-Resolver
 p5-Net-IPTrie                   ports/net/p5-Net-IPTrie
@@ -13719,6 +13721,7 @@ p5-POE-API-Hooks                ports/devel/p5-POE-API-Hooks
 p5-POE-API-Peek                 ports/devel/p5-POE-API-Peek
 p5-POE-Component-Child          ports/devel/p5-POE-Component-Child
 p5-POE-Component-Client-DNS     ports/dns/p5-POE-Component-Client-DNS
+p5-POE-Component-Client-DNS-Recursive  ports/dns/p5-POE-Component-Client-DNS-Recursive
 p5-POE-Component-Client-FTP     ports/ftp/p5-POE-Component-Client-FTP
 p5-POE-Component-Client-HTTP    ports/www/p5-POE-Component-Client-HTTP
 p5-POE-Component-Client-Ident   ports/net/p5-POE-Component-Client-Ident
@@ -16905,6 +16908,7 @@ p5-getargs-long                 ports/devel/p5-Getargs-Long
 p5-getopt-argvfile              ports/devel/p5-Getopt-ArgvFile
 p5-getopt-attribute             ports/devel/p5-Getopt-Attribute
 p5-getopt-compact               ports/devel/p5-Getopt-Compact
+p5-getopt-compact-withcmd       ports/devel/p5-Getopt-Compact-WithCmd
 p5-getopt-declare               ports/devel/p5-Getopt-Declare
 p5-getopt-euclid                ports/devel/p5-Getopt-Euclid
 p5-getopt-gui-long              ports/devel/p5-Getopt-GUI-Long
@@ -17973,6 +17977,7 @@ p5-net-interface                ports/net/p5-Net-Interface
 p5-net-ip                       ports/net-mgmt/p5-Net-IP
 p5-net-ip-match-regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-net-ip-match-xs              ports/net-mgmt/p5-Net-IP-Match-XS
+p5-net-ip-minimal               ports/net/p5-Net-IP-Minimal
 p5-net-ip-rangecompare          ports/net/p5-Net-IP-RangeCompare
 p5-net-ip-resolver              ports/net-mgmt/p5-Net-IP-Resolver
 p5-net-iptrie                   ports/net/p5-Net-IPTrie
@@ -18387,6 +18392,7 @@ p5-poe-api-hooks                ports/devel/p5-POE-API-Hooks
 p5-poe-api-peek                 ports/devel/p5-POE-API-Peek
 p5-poe-component-child          ports/devel/p5-POE-Component-Child
 p5-poe-component-client-dns     ports/dns/p5-POE-Component-Client-DNS
+p5-poe-component-client-dns-recursive  ports/dns/p5-POE-Component-Client-DNS-Recursive
 p5-poe-component-client-ftp     ports/ftp/p5-POE-Component-Client-FTP
 p5-poe-component-client-http    ports/www/p5-POE-Component-Client-HTTP
 p5-poe-component-client-ident   ports/net/p5-POE-Component-Client-Ident
