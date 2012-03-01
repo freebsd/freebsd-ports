@@ -1,0 +1,3 @@
+%%SITE_PERL%%/POE/Component/Client/DNSBL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNSBL/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/DNSBL
