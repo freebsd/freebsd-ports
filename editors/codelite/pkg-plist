@@ -39,12 +39,12 @@ bin/codelite_xterm
 %%DATADIR%%/plugins/cscope.so
 %%DATADIR%%/plugins/debuggers/Debugger.so
 %%DATADIR%%/plugins/git.so
-%%DATADIR%%/plugins/libcodeliteu.so
-%%DATADIR%%/plugins/libdblayersqliteu.so
-%%DATADIR%%/plugins/libpluginu.so
-%%DATADIR%%/plugins/libwxscintillau.so
-%%DATADIR%%/plugins/libwxshapeframeworku.so
-%%DATADIR%%/plugins/libwxsqlite3u.so
+%%DATADIR%%/plugins/libcodeliteud.so
+%%DATADIR%%/plugins/libdblayersqliteud.so
+%%DATADIR%%/plugins/libpluginud.so
+%%DATADIR%%/plugins/libwxscintillaud.so
+%%DATADIR%%/plugins/libwxshapeframeworkud.so
+%%DATADIR%%/plugins/libwxsqlite3ud.so
 %%DATADIR%%/plugins/resources/abbrev.png
 %%DATADIR%%/plugins/resources/abbreviation.accelerators
 %%DATADIR%%/plugins/resources/compfile.png
@@ -165,6 +165,9 @@ bin/codelite_xterm
 %%DATADIR%%/templates/projects/vc-static-lib/icon.png
 %%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
 %%DATADIR%%/templates/qmake/qmake.project
+%%CLANG%%%%DATADIR%%/plugins/libclang.so
+%%MYSQL%%%%DATADIR%%/plugins/libdblayermysqlud.so
+%%POSTGRES%%%%DATADIR%%/plugins/libdblayerpostgresud.so
 share/applications/codelite.desktop
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/templates/qmake

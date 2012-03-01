@@ -1,6 +1,6 @@
---- Plugin/wxterminal.cpp.orig	2011-01-03 17:42:09.000000000 +0100
-+++ Plugin/wxterminal.cpp	2011-01-03 17:43:05.000000000 +0100
-@@ -21,7 +21,13 @@
+--- Plugin/wxterminal.cpp.orig	2011-06-09 22:23:36.000000000 +0200
++++ Plugin/wxterminal.cpp	2012-02-17 17:15:06.000000000 +0100
+@@ -22,7 +22,13 @@
  #endif
  
  #if defined(__WXGTK__)

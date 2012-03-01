@@ -1,6 +1,6 @@
---- sdk/codelite_indexer/utils.cpp.orig	2009-12-07 16:27:20.000000000 +0100
-+++ sdk/codelite_indexer/utils.cpp	2009-12-07 16:26:55.000000000 +0100
-@@ -11,6 +11,15 @@
+--- sdk/codelite_indexer/utils.cpp.orig	2010-08-02 08:43:19.000000000 +0200
++++ sdk/codelite_indexer/utils.cpp	2012-02-17 17:18:13.000000000 +0100
+@@ -17,6 +17,15 @@
  #    include <signal.h>
  #endif
  
