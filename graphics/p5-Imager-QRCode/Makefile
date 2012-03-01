@@ -18,6 +18,8 @@ COMMENT=	Generate QR Code with Imager using libqrencode
 BUILD_DEPENDS=	p5-Imager>=0.55:${PORTSDIR}/graphics/p5-Imager
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
