@@ -19,6 +19,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}/graphics/p5-Imager 
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Image::Compare.3 \
