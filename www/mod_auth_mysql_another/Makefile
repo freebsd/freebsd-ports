@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/modauthmysql/modauthmysql/${PORTVERSION}
 PKGNAMESUFFIX=	_another
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
 MAKE_JOBS_SAFE=	yes
