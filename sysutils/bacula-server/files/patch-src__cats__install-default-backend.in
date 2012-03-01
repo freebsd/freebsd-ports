@@ -1,5 +1,5 @@
---- ./src/cats/install-default-backend.in.orig	2011-11-26 18:08:12.000000000 +0400
-+++ ./src/cats/install-default-backend.in	2011-12-03 13:27:09.000000000 +0400
+--- src/cats/install-default-backend.in.orig	2012-02-21 16:59:33.000000000 +0100
++++ src/cats/install-default-backend.in	2012-02-22 19:23:12.041489960 +0100
 @@ -22,19 +22,19 @@
     exit 1
  fi
@@ -17,7 +17,7 @@
     # As all backends are in the same directory anyhow this should
     # always work.
     #
--   ln -s libbaccats-${default_backend}-${library_version}${SHLIB_EXT} \
+-   ln -s libbaccats-${default_backend}${SHLIB_EXT} \
 -         ${install_dir}/libbaccats-${library_version}${SHLIB_EXT}
 +   ln -s libbaccats-${default_backend}${SHLIB_EXT}.5 \
 +         ${install_dir}/libbaccats${SHLIB_EXT}.5

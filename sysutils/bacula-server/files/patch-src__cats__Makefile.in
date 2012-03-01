@@ -1,6 +1,6 @@
---- ./src/cats/Makefile.in.orig	2011-11-26 18:08:12.000000000 +0400
-+++ ./src/cats/Makefile.in	2011-12-03 13:08:11.000000000 +0400
-@@ -142,23 +142,23 @@
+--- src/cats/Makefile.in.orig	2012-02-22 18:25:23.737400137 +0100
++++ src/cats/Makefile.in	2012-02-22 19:11:42.503509829 +0100
+@@ -142,25 +142,25 @@
  
  libbacsql.la: Makefile $(LIBBACSQL_LOBJS)
  	@echo "Making $@ ..."	  
@@ -14,18 +14,20 @@
  
  libbaccats-mysql.la: Makefile $(MYSQL_LOBJS)
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(MYSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) $(MYSQL_LIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(MYSQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 $(MYSQL_LIBS)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(MYSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) \
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(MYSQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 \
+                                                            -soname libbaccats-$(LIBBACCATS_LT_RELEASE).so $(MYSQL_LIBS)
  
  libbaccats-postgresql.la: Makefile $(POSTGRESQL_LOBJS)
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(POSTGRESQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) $(POSTGRESQL_LIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(POSTGRESQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 $(POSTGRESQL_LIBS)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(POSTGRESQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) \
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(POSTGRESQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 \
+                                                            -soname libbaccats-$(LIBBACCATS_LT_RELEASE).so $(POSTGRESQL_LIBS)
  
  libbaccats-sqlite3.la: Makefile $(SQLITE_LOBJS)
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(SQLITE_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) $(SQLITE_LIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(SQLITE_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 $(SQLITE_LIBS)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(SQLITE_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCATS_LT_RELEASE) \
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(SQLITE_LOBJS) -export-dynamic -rpath $(libdir) -version-info 5 \
+                                                            -soname libbaccats-$(LIBBACCATS_LT_RELEASE).so $(SQLITE_LIBS)
  
  #libbaccats-ingres.la: Makefile $(INGRES_LOBJS)
- #	 @echo "Making $@ ..."
