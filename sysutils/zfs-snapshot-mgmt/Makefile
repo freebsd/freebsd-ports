@@ -7,7 +7,7 @@
 
 PORTNAME=	zfs-snapshot-mgmt
 PORTVERSION=	20090201
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://marcin.studio4plus.com/files/
 
@@ -16,6 +16,7 @@ COMMENT=	Automatic ZFS snapshot management tool
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
+RUBY_SHEBANG_FILES=	zfs-snapshot-mgmt
 
 NO_BUILD=	yes
 MAN8=		zfs-snapshot-mgmt.8
@@ -24,9 +25,7 @@ SUB_FILES=	pkg-message
 
 post-patch:	.SILENT
 	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
-		-e 's|/usr/local|${PREFIX}|g' \
-		-e 's|${PREFIX}\(/bin/ruby\)|${LOCALBASE}\1|g' \
-		{} +
+		-e 's|/usr/local|${PREFIX}|g' {} +
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
