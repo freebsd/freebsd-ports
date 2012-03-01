@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Util
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,8 @@ MAN3=		Params::Util.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500805
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.2700:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 .endif
 
 .include <bsd.port.post.mk>
