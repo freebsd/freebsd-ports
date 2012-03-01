@@ -3233,3 +3233,4 @@ textproc/hs-attoparsec-text||2012-02-13|Removed: The package is deprecated.
 devel/hs-hmake||2012-02-13|Removed: Broken, unmaintained upstream.
 net/yate-devel||2012-02-17|Removed, please use net/yate
 databases/p5-postgresql-plperl|databases/postgresql84-plperl|2012-02-19|Split into versioned ports
+devel/p5-Version-Requirements||2012-03-01|Removed: deprecated, use CPAN::Meta::Requirements (devel/p5-CPAN-Meta >= 2.113640) instead
