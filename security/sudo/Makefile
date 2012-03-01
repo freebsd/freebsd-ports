@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTVERSION=	1.8.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 DISTNAME=	sudo-${PORTVERSION}p2
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
+
+LICENSE=	sudo
+LICENSE_NAME=	Sudo license
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
