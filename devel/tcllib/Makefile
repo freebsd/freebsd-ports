@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tcllib
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A collection of utility modules for Tcl
 
 USE_TCL_BUILD=	82+
@@ -34,10 +34,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's,test run,test run -l testlog,' \
 		-e 's,$$(libdir)/@PACKAGE@@VERSION@,$$(libdir)/@PACKAGE@,' \
 		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},'	\
-		${WRKSRC}/apps/dtplite ${WRKSRC}/apps/page	\
-		${WRKSRC}/apps/tcldocstrip ${WRKSRC}/apps/nns	\
-		${WRKSRC}/apps/nnsd
+	${FIND} ${WRKSRC}/apps -type f ! -name "*.man" | ${XARGS} \
+	   ${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},'
 
 RUNTEST=	${SETENV} LANG=C DISPLAY= ${MAKE} -C ${WRKSRC} test
 MYID	!=	${ID} -u

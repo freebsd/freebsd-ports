@@ -47,6 +47,7 @@ MANN=		S3.n \
 		cvs.n \
 		dacceptor.n \
 		ddest.n \
+		decimal.n \
 		deleg_method.n \
 		deleg_proc.n \
 		des.n \
@@ -120,6 +121,7 @@ MANN=		S3.n \
 		jpeg.n \
 		json.n \
 		json_write.n \
+		lambda.n \
 		ldap.n \
 		ldapx.n \
 		linalg.n \
@@ -173,6 +175,7 @@ MANN=		S3.n \
 		nroff_manmacros.n \
 		ntp_time.n \
 		numtheory.n \
+		ooutil.n \
 		optimize.n \
 		otp.n \
 		page.n \
@@ -300,6 +303,7 @@ MANN=		S3.n \
 		traverse.n \
 		treeql.n \
 		trim.n \
+		try.n \
 		uevent.n \
 		uevent_onidle.n \
 		unicode.n \
