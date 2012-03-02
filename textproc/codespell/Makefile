@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	codespell
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
 		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
+EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Source code spelling checker
@@ -17,6 +18,7 @@ COMMENT=	Source code spelling checker
 LICENSE=	GPLv2
 
 USE_PYTHON=	3.1+
+USE_XZ=		yes
 
 PLIST_FILES=	bin/codespell
 PORTDOCS=	COPYING README TODO
