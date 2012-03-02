@@ -16,6 +16,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+# Please update libxine PLUGINSDIR as well (see below)
 LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine \
 		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
@@ -49,6 +50,7 @@ OPTIONS=	CACA "Enable libcaca output" off \
 		XFT "Enable Xft support" on
 
 DOCSDIR=	${PREFIX}/share/doc/xine-ui
+XINE_PLUGINSDIR=	lib/xine/plugins/2.1
 
 .include <bsd.port.pre.mk>
 
@@ -91,7 +93,6 @@ CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
 .if defined(WITH_CACA)
-XINE_PLUGINSDIR=	lib/xine/plugins/1.29
 .if !exists(${LOCALBASE}/${XINE_PLUGINSDIR}/xineplug_vo_out_caca.so)
 IGNORE=		libxine should be compiled with caca support
 .endif
