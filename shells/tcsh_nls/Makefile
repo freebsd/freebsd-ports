@@ -61,12 +61,6 @@ NLS_CATALOGS=	de_DE.ISO8859-1:de_AT.UTF-8 \
 		uk_UA.KOI8-U:uk_UA.ISO8859-5 \
 		uk_UA.KOI8-U:uk_UA.UTF-8 \
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 700000 && ${OSVERSION} < 700014) || ${OSVERSION} < 600105
-IGNORE=		needs FreeBSD 6.1 or 7
-.endif
-
 do-fetch:
 	@${DO_NADA}
 
@@ -76,4 +70,4 @@ do-install:
 			${PREFIX}/share/nls/$${i##*:}/tcsh.cat; \
 	done
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
