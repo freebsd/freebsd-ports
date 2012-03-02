@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	x11
 DISTFILES=
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Simple screenshot program for X11
 
 RUN_DEPENDS=	xwd:${PORTSDIR}/x11/xwd \

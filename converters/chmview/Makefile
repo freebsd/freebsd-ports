@@ -11,7 +11,7 @@ CATEGORIES=	converters textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	CHMView_${DISTVERSION}
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Extractor from .chm files
 
 LICENSE=	GPLv2

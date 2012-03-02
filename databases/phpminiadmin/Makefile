@@ -10,7 +10,7 @@ DISTVERSION=	1.5.091221
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Lightweight alternative to phpMyAdmin
 
 USE_ZIP=	yes

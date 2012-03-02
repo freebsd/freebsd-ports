@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.kuzbass.ru/pub/unix/util/arcers/
 DISTNAME=	ha0999
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	The HA archiver using the HSC compression method
 
 NO_WRKSUBDIR=	yes
