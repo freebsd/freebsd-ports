@@ -1,4 +1,0 @@
-@cwd %%KMODDIR%%
-%%DRIVERNAME%%_bss.ko
-%%DRIVERNAME%%_ibss.ko
-%%DRIVERNAME%%_monitor.ko

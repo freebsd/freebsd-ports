@@ -3234,3 +3234,7 @@ devel/hs-hmake||2012-02-13|Removed: Broken, unmaintained upstream.
 net/yate-devel||2012-02-17|Removed, please use net/yate
 databases/p5-postgresql-plperl|databases/postgresql84-plperl|2012-02-19|Split into versioned ports
 devel/p5-Version-Requirements||2012-03-01|Removed: deprecated, use CPAN::Meta::Requirements (devel/p5-CPAN-Meta >= 2.113640) instead
+net/ipw-firmware||2012-03-02|Removed: is already included in base system
+net/ipw-firmware-kmod||2012-03-02|Removed: is already included in base system
+net/iwi-firmware||2012-03-02|Removed: is already included in base system
+net/iwi-firmware-kmod||2012-03-02|Removed: is already included in base system

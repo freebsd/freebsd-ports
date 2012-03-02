@@ -249,8 +249,6 @@
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
-    SUBDIR += ipw-firmware
-    SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
     SUBDIR += isc-dhcp41-client
     SUBDIR += isc-dhcp41-relay
@@ -260,8 +258,6 @@
     SUBDIR += isc-dhcp42-server
     SUBDIR += iscsi-target
     SUBDIR += istgt
-    SUBDIR += iwi-firmware
-    SUBDIR += iwi-firmware-kmod
     SUBDIR += jags
     SUBDIR += jakarta-commons-net
     SUBDIR += java-beepcore
