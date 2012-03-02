@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	qjail
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	qjail@a1poweruser.com
-COMMENT=	Utility to quickly deploy and manage large numbers of jails
+COMMENT=	Utility to quickly deploy and manage jails
 
 LICENSE=	BSD
 
@@ -30,15 +29,17 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/qjail2 ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${WRKSRC}/qjail-jail2 ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA}   ${WRKSRC}/qjail.conf.sample ${PREFIX}/etc
-	@${INSTALL_MAN}    ${WRKSRC}/qjail.8 ${MAN8PREFIX}/man/man8
-	@${INSTALL_MAN}    ${WRKSRC}/qjail-intro.8 ${MAN8PREFIX}/man/man8
-	@${INSTALL_MAN}    ${WRKSRC}/qjail.conf.8 ${MAN8PREFIX}/man/man8
+.for i in qjail qjail-intro qjail.conf
+	@${INSTALL_MAN}    ${WRKSRC}/${i}.8 ${MAN8PREFIX}/man/man8
+.endfor
 # note examples are mandatory. qjail will not function without them
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples/ \
 	    && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 post-install:
+	@${ECHO_MSG} "#"
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} "#"
 
 .include <bsd.port.mk>
