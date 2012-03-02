@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.714
+PORTVERSION=	3.0.715
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://unix4lyfe.org/darkstat/
 
