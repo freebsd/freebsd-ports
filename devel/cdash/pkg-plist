@@ -18,12 +18,14 @@ www/CDash/ajax/showbuildupdategraph.php
 www/CDash/ajax/showcoveragegraph.php
 www/CDash/ajax/showprojectupdategraph.php
 www/CDash/ajax/showtestfailuregraph.php
+www/CDash/ajax/showtestmeasurementdatagraph.php
 www/CDash/ajax/showtestpassinggraph.php
 www/CDash/ajax/showtesttimegraph.php
 www/CDash/api/api.php
 www/CDash/api/api_build.php
 www/CDash/api/api_coverage.php
 www/CDash/api/api_project.php
+www/CDash/api/api_repository.php
 www/CDash/api/api_user.php
 www/CDash/api/getbuildid.php
 www/CDash/api/getuserid.php
@@ -54,10 +56,13 @@ www/CDash/cdash/dailyupdates.php
 www/CDash/cdash/dailyupdatescurl.php
 www/CDash/cdash/defines.php
 www/CDash/cdash/do_submit.php
+www/CDash/cdash/fnProcessFile.php
 www/CDash/cdash/log.php
 www/CDash/cdash/pdo.php
 www/CDash/cdash/pdocore.php
+www/CDash/cdash/processfile.php
 www/CDash/cdash/processsubmissions.php
+www/CDash/cdash/repository.php
 www/CDash/cdash/sendemail.php
 www/CDash/cdash/version.php
 www/CDash/createProject.php
@@ -77,10 +82,9 @@ www/CDash/header.xsl
 www/CDash/headeradminproject.xsl
 www/CDash/headerback.xsl
 www/CDash/headscripts.xsl
-www/CDash/images/Alert.gif
+www/CDash/help.html
 www/CDash/images/Calendar.gif
 www/CDash/images/Closed.gif
-www/CDash/images/Document.gif
 www/CDash/images/DownBlack.gif
 www/CDash/images/Generator.png
 www/CDash/images/Info.png
@@ -90,6 +94,7 @@ www/CDash/images/New.gif
 www/CDash/images/Open.gif
 www/CDash/images/Plus.gif
 www/CDash/images/RightBlack.gif
+www/CDash/images/activity-level.png
 www/CDash/images/advanced.png
 www/CDash/images/asc.gif
 www/CDash/images/bg.gif
@@ -102,8 +107,13 @@ www/CDash/images/cancel.png
 www/CDash/images/cdash-60.gif
 www/CDash/images/cdash.gif
 www/CDash/images/check.gif
+www/CDash/images/cleardot.gif
+www/CDash/images/clock.png
+www/CDash/images/console.png
 www/CDash/images/delete.png
 www/CDash/images/desc.gif
+www/CDash/images/disk.png
+www/CDash/images/document.png
 www/CDash/images/edit.png
 www/CDash/images/edit2.png
 www/CDash/images/edit_group.png
@@ -128,6 +138,11 @@ www/CDash/images/menub2.gif
 www/CDash/images/new_project.png
 www/CDash/images/next.png
 www/CDash/images/note.png
+www/CDash/images/package.png
+www/CDash/images/platform_freebsd.png
+www/CDash/images/platform_linux.png
+www/CDash/images/platform_mac.png
+www/CDash/images/platform_windows.png
 www/CDash/images/previous.png
 www/CDash/images/progressbar.gif
 www/CDash/images/progressbg_green.gif
@@ -179,7 +194,6 @@ www/CDash/iphone/project.xsl
 www/CDash/iphone/section.gif
 www/CDash/iphone/user.php
 www/CDash/iphone/user.xsl
-www/CDash/javascript/DashboardMap.js
 www/CDash/javascript/OptionTransfer.js
 www/CDash/javascript/cdashAddNote.js
 www/CDash/javascript/cdashBuildError.js
@@ -198,32 +212,46 @@ www/CDash/javascript/cdashTableSorter.js
 www/CDash/javascript/cdashTestGraph.js
 www/CDash/javascript/cdashUpdateGraph.js
 www/CDash/javascript/cdashUpgrade.js
+www/CDash/javascript/cdashUploadFilesSorter.js
 www/CDash/javascript/cdashUser.js
 www/CDash/javascript/cdashUserLabels.js
-www/CDash/javascript/cdashmenu.css
 www/CDash/javascript/cdashmenu.js
 www/CDash/javascript/excanvas.js
+www/CDash/javascript/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png
+www/CDash/javascript/images/ui-bg_flat_15_cd0a0a_40x100.png
+www/CDash/javascript/images/ui-bg_glass_100_e4f1fb_1x400.png
+www/CDash/javascript/images/ui-bg_glass_50_3baae3_1x400.png
+www/CDash/javascript/images/ui-bg_glass_80_d7ebf9_1x400.png
+www/CDash/javascript/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png
+www/CDash/javascript/images/ui-bg_highlight-hard_70_000000_1x100.png
+www/CDash/javascript/images/ui-bg_highlight-soft_100_deedf7_1x100.png
+www/CDash/javascript/images/ui-bg_highlight-soft_25_ffef8f_1x100.png
+www/CDash/javascript/images/ui-icons_2694e8_256x240.png
+www/CDash/javascript/images/ui-icons_2e83ff_256x240.png
+www/CDash/javascript/images/ui-icons_3d80b3_256x240.png
+www/CDash/javascript/images/ui-icons_72a7cf_256x240.png
+www/CDash/javascript/images/ui-icons_ffffff_256x240.png
 www/CDash/javascript/jqModal.css
 www/CDash/javascript/jqModal.js
+www/CDash/javascript/jquery-1.6.2.js
+www/CDash/javascript/jquery-ui-1.8.16.css
+www/CDash/javascript/jquery-ui-1.8.16.min.js
 www/CDash/javascript/jquery.cookie.js
 www/CDash/javascript/jquery.flot.min.js
 www/CDash/javascript/jquery.flot.pie.js
 www/CDash/javascript/jquery.flot.selection.min.js
-www/CDash/javascript/jquery.js
 www/CDash/javascript/jquery.metadata.js
+www/CDash/javascript/jquery.qtip.min.css
+www/CDash/javascript/jquery.qtip.min.js
 www/CDash/javascript/jquery.tablesorter.js
 www/CDash/javascript/jtip.js
-www/CDash/javascript/menu.js
-www/CDash/javascript/rounded.js
 www/CDash/javascript/tableheader.js
 www/CDash/javascript/tooltip.js
 www/CDash/javascript/tree.js
 www/CDash/javascript/tree_init.js
-www/CDash/javascript/ui.datepicker.css
-www/CDash/javascript/ui.datepicker.js
 www/CDash/javascript/ui.tabs.js
-www/CDash/key.html
 www/CDash/local/README.txt
+www/CDash/local/cdash.local.css
 www/CDash/local/footer.xsl
 www/CDash/local/header.xsl
 www/CDash/local/headeradminproject.xsl
@@ -296,8 +324,10 @@ www/CDash/models/subproject.php
 www/CDash/models/test.php
 www/CDash/models/testimage.php
 www/CDash/models/testmeasurement.php
+www/CDash/models/uploadfile.php
 www/CDash/models/user.php
 www/CDash/models/userproject.php
+www/CDash/monitor.php
 www/CDash/prepend_coverage.php
 www/CDash/queryTests.php
 www/CDash/queryTests.xsl
@@ -321,6 +351,8 @@ www/CDash/sql/mysql/cdash-upgrade-1.0-1.2.sql
 www/CDash/sql/mysql/cdash-upgrade-1.2-1.4.sql
 www/CDash/sql/mysql/cdash-upgrade-1.4-1.6.sql
 www/CDash/sql/mysql/cdash-upgrade-1.6-1.8.sql
+www/CDash/sql/mysql/cdash-upgrade-1.8-2.0.sql
+www/CDash/sql/mysql/cdash-upgrade-2.0-2.1.sql
 www/CDash/sql/mysql/cdash.sql
 www/CDash/sql/mysqlcompat.patch
 www/CDash/sql/pgsql/cdash-upgrade-0-0.8.sql
@@ -329,6 +361,8 @@ www/CDash/sql/pgsql/cdash-upgrade-1.0-1.2.sql
 www/CDash/sql/pgsql/cdash-upgrade-1.2-1.4.sql
 www/CDash/sql/pgsql/cdash-upgrade-1.4-1.6.sql
 www/CDash/sql/pgsql/cdash-upgrade-1.6-1.8.sql
+www/CDash/sql/pgsql/cdash-upgrade-1.8-2.0.sql
+www/CDash/sql/pgsql/cdash-upgrade-2.0-2.1.sql
 www/CDash/sql/pgsql/cdash.ext.sql
 www/CDash/sql/pgsql/cdash.sql
 www/CDash/submit.php
@@ -346,6 +380,7 @@ www/CDash/tests/CMakeLists.txt
 www/CDash/tests/append_coverage.php.in
 www/CDash/tests/autoremovebuilds/CMakeLists.txt
 www/CDash/tests/cdash_test_case.php
+www/CDash/tests/config.test.local.php
 www/CDash/tests/config.test.php
 www/CDash/tests/ctest/CMakeLists.txt
 www/CDash/tests/ctest/CTestSubmitLargeOutput/CMakeLists.txt
@@ -369,6 +404,158 @@ www/CDash/tests/ctest/simple2/simple.ctest.in
 www/CDash/tests/ctest/simple2/simple.cxx
 www/CDash/tests/ctest/simple2/test.cmake.in
 www/CDash/tests/ctest/unittest.cmake.in
+www/CDash/tests/data/ActualTrilinosSubmission/TrilinosDriver_hut11.kitware_Windows_NT-TDD-hut11.kitware_20110722-1514-Experimental_131134764623_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/TrilinosDriver_hut11.kitware_Windows_NT-TDD-hut11.kitware_20110722-1514-Experimental_131134764640_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/TrilinosDriver_hut11.kitware_Windows_NT-TDD-hut11.kitware_20110722-1514-Experimental_131134764660_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/TrilinosDriver_hut11.kitware_Windows_NT-TDD-hut11.kitware_20110722-1514-Experimental_131134909154_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_131134773144_Project.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134775158_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134775226_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134775278_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134775308_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134779746_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134779786_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134781834_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134781848_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134790580_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134790610_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134792091_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134792106_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134792194_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134792228_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134792249_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134792265_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134794978_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134794993_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134795192_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134821193_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134822732_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134822862_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134824287_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134824301_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134824318_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134825741_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134825756_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134825775_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134827646_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134827663_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134830307_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134832828_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134832859_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134832881_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134834527_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134834541_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134835059_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134835776_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134835818_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134835837_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134837291_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134837305_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134837323_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134838992_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134839009_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134840530_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134840733_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134840756_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134840774_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134842268_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134842283_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134842300_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134843783_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134843798_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134843815_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134845279_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134845293_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134845622_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134847305_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134847320_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134847450_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134847511_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134847536_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134847553_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134849252_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134849271_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134849397_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134849620_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134849642_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134849657_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134851465_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134851481_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134852631_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134853288_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134853315_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134853329_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134854886_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134854901_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134854920_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134856441_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134856454_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134856473_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134857997_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134858016_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134858035_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134859555_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134859579_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134859612_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134861852_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134861889_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134863956_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134865882_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134865918_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134865953_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134867542_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134867559_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134867581_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134869117_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134869132_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134869151_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134870717_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134870732_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134870754_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134872312_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134872327_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134872345_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134873889_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134873904_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134873923_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134875466_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134875481_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134875500_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134877043_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134877057_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134877076_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134880239_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134880254_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134880504_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134880730_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134880752_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134880767_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134882306_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134882321_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134882342_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134883904_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134883919_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134883937_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134885525_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134885542_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134885561_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134887139_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134887154_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134887173_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134889433_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134889448_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134889496_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134891784_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134891813_Test.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134891836_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134894205_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134894219_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134907377_Build.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134907415_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134909033_Configure.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134909048_Notes.xml
+www/CDash/tests/data/ActualTrilinosSubmission/Trilinos_hut11.kitware_Windows_NT-MSVC10-SERIAL_DEBUG_DEV_20110722-1515-Experimental_131134909069_Update.xml
+www/CDash/tests/data/ActualTrilinosSubmission/orderedFileList.txt
 www/CDash/tests/data/BatchmakeNightlyExample/BatchMake_Nightly_Build.xml
 www/CDash/tests/data/BatchmakeNightlyExample/BatchMake_Nightly_Configure.xml
 www/CDash/tests/data/BatchmakeNightlyExample/BatchMake_Nightly_Notes.xml
@@ -378,14 +565,18 @@ www/CDash/tests/data/CompressedTest.xml
 www/CDash/tests/data/EmailProjectExample/1_build.xml
 www/CDash/tests/data/EmailProjectExample/1_configure.xml
 www/CDash/tests/data/EmailProjectExample/1_test.xml
+www/CDash/tests/data/EmailProjectExample/1_upload.xml
 www/CDash/tests/data/EmailProjectExample/2_build.xml
 www/CDash/tests/data/EmailProjectExample/2_dynamicanalysis.xml
 www/CDash/tests/data/EmailProjectExample/2_test.xml
 www/CDash/tests/data/EmailProjectExample/2_update.xml
+www/CDash/tests/data/EmailProjectExample/3_test.xml
+www/CDash/tests/data/EmailProjectExample/3_update.xml
 www/CDash/tests/data/EmailProjectExample/cdash_1.log
 www/CDash/tests/data/EmailProjectExample/cdash_2.log
 www/CDash/tests/data/EmailProjectExample/cdash_3.log
 www/CDash/tests/data/EmailProjectExample/cdash_autoremove.log
+www/CDash/tests/data/EmailProjectExample/cdash_committeremail.log
 www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_Build.xml
 www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_Configure.xml
 www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_Coverage.xml
@@ -393,6 +584,11 @@ www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_CoverageLog
 www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_DynamicAnalysis.xml
 www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_Notes.xml
 www/CDash/tests/data/InsightExperimentalExample/Insight_Experimental_Test.xml
+www/CDash/tests/data/ProjectXmlSequence/Trilinos_129273760744.57_Project.xml
+www/CDash/tests/data/ProjectXmlSequence/Trilinos_129273770005.15_Project.xml
+www/CDash/tests/data/ProjectXmlSequence/Trilinos_129273771745.07_Project.xml
+www/CDash/tests/data/ProjectXmlSequence/Trilinos_129273989317.97_Project.xml
+www/CDash/tests/data/ProjectXmlSequence/Trilinos_129274192973.58_Project.xml
 www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71/2005-07-19-0514-Experimental/XML/Build.xml
 www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71/2005-07-19-0514-Experimental/XML/Configure.xml
 www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71/2005-07-19-0514-Experimental/XML/NoteCollection.xml
@@ -421,6 +617,7 @@ www/CDash/tests/data/SubProjectExample/cdash_2.log
 www/CDash/tests/data/authors.txt
 www/CDash/tests/data/camelot.cdash.xml
 www/CDash/tests/data/git-Update.xml
+www/CDash/tests/data/git-Update2.xml
 www/CDash/tests/data/smile.gif
 www/CDash/tests/data/smile2.gif
 www/CDash/tests/kwtest/kw_db.php
@@ -520,6 +717,7 @@ www/CDash/tests/selenium/test_subproject2.php
 www/CDash/tests/simple.php
 www/CDash/tests/simple2.php
 www/CDash/tests/singletest.php
+www/CDash/tests/test_actualtrilinossubmission.php
 www/CDash/tests/test_api.php
 www/CDash/tests/test_autoremovebuilds.php
 www/CDash/tests/test_autoremovebuilds_on_submit.php
@@ -532,6 +730,7 @@ www/CDash/tests/test_buildmodel.php
 www/CDash/tests/test_buildoverview.php
 www/CDash/tests/test_buildtestdiff.php
 www/CDash/tests/test_buildusernote.php
+www/CDash/tests/test_committerinfo.php
 www/CDash/tests/test_compressedtest.php
 www/CDash/tests/test_createpublicdashboard.php
 www/CDash/tests/test_customclientscript.php
@@ -563,6 +762,8 @@ www/CDash/tests/test_processsubmissions.php
 www/CDash/tests/test_projectindb.php
 www/CDash/tests/test_projectmodel.php
 www/CDash/tests/test_projectwebpage.php
+www/CDash/tests/test_projectxmlsequence.php
+www/CDash/tests/test_properclientprocessing.php.in
 www/CDash/tests/test_pubproject.php
 www/CDash/tests/test_querytests.php
 www/CDash/tests/test_recoverpassword.php
@@ -576,6 +777,7 @@ www/CDash/tests/test_testenv.php
 www/CDash/tests/test_testmodel.php
 www/CDash/tests/test_testoverview.php
 www/CDash/tests/test_upgrade.php
+www/CDash/tests/test_uploadfile.php
 www/CDash/tests/test_user.php
 www/CDash/tests/test_userstatistics.php
 www/CDash/tests/test_viewbuilderror.php
@@ -589,6 +791,7 @@ www/CDash/tests/test_viewmap.php
 www/CDash/tests/test_viewsubprojectdependencies.php
 www/CDash/upgrade.php
 www/CDash/upgrade.xsl
+www/CDash/upload/.htaccess
 www/CDash/user.php
 www/CDash/user.xsl
 www/CDash/userStatistics.php
@@ -609,6 +812,8 @@ www/CDash/viewDynamicAnalysisFile.php
 www/CDash/viewDynamicAnalysisFile.xsl
 www/CDash/viewErrorLog.php
 www/CDash/viewErrorLog.xsl
+www/CDash/viewFiles.php
+www/CDash/viewFiles.xsl
 www/CDash/viewIssues.php
 www/CDash/viewIssues.xsl
 www/CDash/viewMap.php
@@ -636,7 +841,9 @@ www/CDash/xml_handlers/sax_handler.php
 www/CDash/xml_handlers/stack.php
 www/CDash/xml_handlers/testing_handler.php
 www/CDash/xml_handlers/update_handler.php
+www/CDash/xml_handlers/upload_handler.php
 @dirrm www/CDash/xml_handlers
+@dirrm www/CDash/upload
 @dirrm www/CDash/tests/selenium
 @dirrm www/CDash/tests/kwtest/simpletest
 @dirrm www/CDash/tests/kwtest
@@ -647,9 +854,11 @@ www/CDash/xml_handlers/update_handler.php
 @dirrm www/CDash/tests/data/Sites/VOGON.kitware/Win32-nmake71
 @dirrm www/CDash/tests/data/Sites/VOGON.kitware
 @dirrm www/CDash/tests/data/Sites
+@dirrm www/CDash/tests/data/ProjectXmlSequence
 @dirrm www/CDash/tests/data/InsightExperimentalExample
 @dirrm www/CDash/tests/data/EmailProjectExample
 @dirrm www/CDash/tests/data/BatchmakeNightlyExample
+@dirrm www/CDash/tests/data/ActualTrilinosSubmission
 @dirrm www/CDash/tests/data
 @dirrm www/CDash/tests/ctest/simple2
 @dirrm www/CDash/tests/ctest/simple
@@ -665,6 +874,7 @@ www/CDash/xml_handlers/update_handler.php
 @dirrm www/CDash/rss
 @dirrm www/CDash/models
 @dirrm www/CDash/local
+@dirrm www/CDash/javascript/images
 @dirrm www/CDash/javascript
 @dirrm www/CDash/iphone
 @dirrm www/CDash/images
