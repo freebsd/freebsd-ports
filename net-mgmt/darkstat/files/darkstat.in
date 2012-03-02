@@ -14,7 +14,7 @@
 #
 # Optional configuration flags:
 #
-# darkstat_dir="/var/run/darkstat"
+# darkstat_dir="/var/db/darkstat"
 # darkstat_pidname="darkstat.pid"
 # darkstat_dropuser="nobody"
 # darkstat_flags
@@ -39,7 +39,7 @@ start_precmd=darkstat_prestart
 
 load_rc_config $name
 : ${darkstat_enable="NO"}
-: ${darkstat_dir="/var/run/darkstat"}
+: ${darkstat_dir="/var/db/darkstat"}
 : ${darkstat_pidname="darkstat.pid"}
 : ${darkstat_dropuser="nobody"}
 pidfile="${darkstat_dir}/${darkstat_pidname}"
