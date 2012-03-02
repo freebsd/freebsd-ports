@@ -100,7 +100,3 @@ lib/ruby/gems/%%RUBY_VER%%/doc/.keep_this
 @dirrm %%RUBY_SITELIBDIR%%/rbconfig
 @dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
-@dirrmtry lib/ruby/gems/%%RUBY_VER%%/doc
-@dirrmtry lib/ruby/gems/%%RUBY_VER%%
-@dirrmtry lib/ruby/gems
-@dirrmtry lib/ruby
