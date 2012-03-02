@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_${ARCH_SUFX}
 EXTRACT_SUFX=	.tar.gz
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Real-time signal analysis and time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	A qt psk31 client
 
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
