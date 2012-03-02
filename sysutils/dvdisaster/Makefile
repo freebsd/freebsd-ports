@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.72.2
+PORTVERSION=	0.72.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF \
 		http://dvdisaster.net/downloads/
