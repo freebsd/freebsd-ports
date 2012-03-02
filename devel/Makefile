@@ -3183,6 +3183,7 @@
     SUBDIR += py-flakes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
+    SUBDIR += py-foolscap
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
     SUBDIR += py-fudge
