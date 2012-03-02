@@ -17,6 +17,4 @@ COMMENT=	Better living through Python with decorators
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
 .include <bsd.port.mk>
