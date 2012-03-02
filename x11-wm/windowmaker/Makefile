@@ -46,7 +46,14 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-x
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
 .if !defined(LWR_SLAVE)
+
+.if ${ARCH} == amd64 && ${OSVERSION} < 800000
+CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
+.endif
+
 CONFLICTS=	libwraster-0.*
 
 MANLANG=	"" cs ru sk
@@ -87,4 +94,4 @@ update-LINGUAS: extract
 		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
