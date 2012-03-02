@@ -13672,6 +13672,7 @@ p5-ORLite                       ports/databases/p5-ORLite
 p5-ORLite-Migrate               ports/databases/p5-ORLite-Migrate
 p5-Object-Accessor              ports/devel/p5-Object-Accessor
 p5-Object-Array                 ports/devel/p5-Object-Array
+p5-Object-Authority             ports/devel/p5-Object-Authority
 p5-Object-Declare               ports/devel/p5-Object-Declare
 p5-Object-Destroyer             ports/devel/p5-Object-Destroyer
 p5-Object-Enum                  ports/devel/p5-Object-Enum
@@ -13680,6 +13681,7 @@ p5-Object-InsideOut             ports/devel/p5-Object-InsideOut
 p5-Object-MultiType             ports/devel/p5-Object-MultiType
 p5-Object-Pluggable             ports/devel/p5-Object-Pluggable
 p5-Object-Realize-Later         ports/devel/p5-Object-Realize-Later
+p5-Object-Role                  ports/devel/p5-Object-Role
 p5-Object-Signature             ports/devel/p5-Object-Signature
 p5-Object-Simple                ports/devel/p5-Object-Simple
 p5-Object-Tiny                  ports/devel/p5-Object-Tiny
@@ -13722,6 +13724,7 @@ p5-POE-API-Peek                 ports/devel/p5-POE-API-Peek
 p5-POE-Component-Child          ports/devel/p5-POE-Component-Child
 p5-POE-Component-Client-DNS     ports/dns/p5-POE-Component-Client-DNS
 p5-POE-Component-Client-DNS-Recursive  ports/dns/p5-POE-Component-Client-DNS-Recursive
+p5-POE-Component-Client-DNSBL   ports/dns/p5-POE-Component-Client-DNSBL
 p5-POE-Component-Client-FTP     ports/ftp/p5-POE-Component-Client-FTP
 p5-POE-Component-Client-HTTP    ports/www/p5-POE-Component-Client-HTTP
 p5-POE-Component-Client-Ident   ports/net/p5-POE-Component-Client-Ident
@@ -14906,7 +14909,6 @@ p5-Validation-Class             ports/devel/p5-Validation-Class
 p5-Validator-Custom             ports/textproc/p5-Validator-Custom
 p5-Variable-Magic               ports/devel/p5-Variable-Magic
 p5-Verilog-Perl                 ports/cad/p5-Verilog-Perl
-p5-Version-Requirements         ports/devel/p5-Version-Requirements
 p5-Video-Info                   ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime          ports/multimedia/p5-Video-OpenQuicktime
 p5-Vimana                       ports/editors/p5-Vimana
@@ -18150,6 +18152,7 @@ p5-number-witherror-latex       ports/math/p5-Number-WithError-LaTeX
 p5-oai-harvester                ports/net/p5-OAI-Harvester
 p5-object-accessor              ports/devel/p5-Object-Accessor
 p5-object-array                 ports/devel/p5-Object-Array
+p5-object-authority             ports/devel/p5-Object-Authority
 p5-object-declare               ports/devel/p5-Object-Declare
 p5-object-destroyer             ports/devel/p5-Object-Destroyer
 p5-object-enum                  ports/devel/p5-Object-Enum
@@ -18158,6 +18161,7 @@ p5-object-insideout             ports/devel/p5-Object-InsideOut
 p5-object-multitype             ports/devel/p5-Object-MultiType
 p5-object-pluggable             ports/devel/p5-Object-Pluggable
 p5-object-realize-later         ports/devel/p5-Object-Realize-Later
+p5-object-role                  ports/devel/p5-Object-Role
 p5-object-signature             ports/devel/p5-Object-Signature
 p5-object-simple                ports/devel/p5-Object-Simple
 p5-object-tiny                  ports/devel/p5-Object-Tiny
@@ -18393,6 +18397,7 @@ p5-poe-api-peek                 ports/devel/p5-POE-API-Peek
 p5-poe-component-child          ports/devel/p5-POE-Component-Child
 p5-poe-component-client-dns     ports/dns/p5-POE-Component-Client-DNS
 p5-poe-component-client-dns-recursive  ports/dns/p5-POE-Component-Client-DNS-Recursive
+p5-poe-component-client-dnsbl   ports/dns/p5-POE-Component-Client-DNSBL
 p5-poe-component-client-ftp     ports/ftp/p5-POE-Component-Client-FTP
 p5-poe-component-client-http    ports/www/p5-POE-Component-Client-HTTP
 p5-poe-component-client-ident   ports/net/p5-POE-Component-Client-Ident
@@ -19427,7 +19432,6 @@ p5-vcs-cvs                      ports/devel/p5-VCS-CVS
 p5-vcs-lite                     ports/devel/p5-VCS-Lite
 p5-verilog-perl                 ports/cad/p5-Verilog-Perl
 p5-version                      ports/devel/p5-version
-p5-version-requirements         ports/devel/p5-Version-Requirements
 p5-video-info                   ports/multimedia/p5-Video-Info
 p5-video-openquicktime          ports/multimedia/p5-Video-OpenQuicktime
 p5-vimana                       ports/editors/p5-Vimana
