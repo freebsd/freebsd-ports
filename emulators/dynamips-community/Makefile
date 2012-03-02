@@ -62,19 +62,6 @@ BROKEN=		Does not compile: uses i386 asm
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
-# It required libpcap version 0.9.4 or is higher.
-.if ${OSVERSION} < 602100 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700021)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
-MAKE_ENV+=	PCAP_LIB=${LOCALBASE}/lib/libpcap.a
-#.warning Do not overlook, make libpcap with LIBPCAP_OVERWRITE_BASE parameter, for use with shared library.
-#LIB_DEPENDS+=	pcap.\(0.9.\)?[2-9]:${PORTSDIR}/net/libpcap
-#MAKE_ENV+=	PCAP_LIB=-lpcap.2
-.endif
-
-.if ${OSVERSION} < 700013
-MAKE_ENV+=	HAS_POSIX_MEMALIGN=0
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.${DYNAMIPS_CODE} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/${DYNAMIPS_CODE}/nvram_export ${PREFIX}/bin

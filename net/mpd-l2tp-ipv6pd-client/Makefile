@@ -66,10 +66,6 @@ PLIST_SUB=	CONF_DIR=${CONF_DIR} \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if ${OSVERSION} < 602106 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700031)
-IGNORE=		does not work with old ng_ksocket
-.endif
-
 do-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/setting
 	@${DIALOG} --clear

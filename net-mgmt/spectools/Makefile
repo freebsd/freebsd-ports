@@ -48,12 +48,6 @@ PLIST_SUB+=	NCURSES="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 602101
-IGNORE=	is unsupported on systems prior to FreeBSD v602101
-.elif ${OSVERSION} > 700000 && ${OSVERSION} < 700027
-IGNORE=	is unsupported on systems prior to FreeBSD v700027
-.endif
-
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 .endif
