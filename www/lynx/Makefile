@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-nested-tables --enable-gzip-help \
+		--with-screen=ncursesw
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -34,12 +35,6 @@ OPTIONS=	SSL		"SSL support" on \
 		NLS 		"Native language support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
-CONFIGURE_ARGS+=	--with-screen=ncurses
-.else
-CONFIGURE_ARGS+=	--with-screen=ncursesw
-.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls

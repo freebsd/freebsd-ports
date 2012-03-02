@@ -20,6 +20,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--have-resn
 USE_RC_SUBR=	spamilter.sh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -55,10 +56,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libspf.a:${PORTSDIR}/mail/libspf
 CONFIGURE_ARGS+=	--with-libspf ${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.if ${OSVERSION} >= 700015 || (${OSVERSION} < 700000 && ${OSVERSION} >= 601103)
-CONFIGURE_ARGS+=	--have-resn
 .endif
 
 PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \

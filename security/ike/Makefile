@@ -68,15 +68,7 @@ post-patch:
 . if ${OSVERSION} < 800000
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> WARNING: You will need to patch your kernel for NAT-T functionality!"
-.  if ${OSVERSION} < 600000
-	@${ECHO_MSG} "===>   There is no known NAT-T patch for FreeBSD 1 - 5!!!"
-.  endif
-.  if ${OSVERSION} > 600000 && ${OSVERSION} < 699999
-	@${ECHO_MSG} "===>   http://ipsec-tools.sf.net/freebsd6-natt.diff"
-.  endif
-.  if ${OSVERSION} > 700000 && ${OSVERSION} < 799999
 	@${ECHO_MSG} "===>   http://people.freebsd.org/~vanhu/NAT-T/patch-natt-7.2-2009-05-12.diff"
-.  endif
 	@${ECHO_MSG} "===> You may need to edit the patch if it fails to apply cleanly."
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@sleep 3

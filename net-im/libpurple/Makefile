@@ -27,6 +27,7 @@ CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-nm
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIB="${PTHREAD_LIBS}"
+CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .if !defined(PIDGIN_SLAVE)
@@ -92,10 +93,6 @@ PLIST_SUB+=		TCL:="@comment not installed: "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
-CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
-.endif
 
 .if !defined(PIDGIN_SLAVE)
 .if ${HAVE_GNOME:Mgconf2}!="" || exists(${LOCALBASE}/bin/gconftool-2)

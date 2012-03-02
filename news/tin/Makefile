@@ -34,6 +34,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 TIN_EDITOR?=	/usr/bin/ee
+TIN_SCREEN?=	ncursesw
 
 OPTIONS=	GNUPG	"Enable message signing via GnuPG" On \
 		ISPELL	"Enable spell checking via ispell" On \
@@ -42,12 +43,6 @@ OPTIONS=	GNUPG	"Enable message signing via GnuPG" On \
 		NNTP_ONLY "Only read news via NNTP (no spool dir support)" Off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
-TIN_SCREEN?=	ncurses
-.else
-TIN_SCREEN?=	ncursesw
-.endif
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.

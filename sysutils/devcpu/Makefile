@@ -38,10 +38,6 @@ MAN8=		cpu_microcode_tool.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 601000
-IGNORE=		not supported
-.endif
-
 .if ${OSVERSION} >= 701102
 IGNORE=		already included into base system
 .endif

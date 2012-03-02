@@ -33,7 +33,9 @@ CONFIGURE_ARGS= --with-zlib --libdir="${L_LIB}" \
 		--enable-idna \
 		--enable-ipv6 \
 		--with-mime-libdir=${PREFIX}/etc \
-		--with-libiconv-prefix=${LOCALBASE}
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-screen=ncursesw
+
 MAKE_JOBS_UNSAFE=	yes
 
 .ifndef NO_OPENSSL
@@ -41,12 +43,6 @@ USE_OPENSSL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
-CONFIGURE_ARGS+=	--with-screen=ncurses
-.else
-CONFIGURE_ARGS+=	--with-screen=ncursesw
-.endif
 
 .ifdef USE_OPENSSL
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
