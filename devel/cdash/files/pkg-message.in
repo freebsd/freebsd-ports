@@ -1,5 +1,5 @@
 Your CDash configuration file is located at
-%%PREFIX%%/www/cdash/cdash/config.local.php.
+%%PREFIX%%/www/CDash/cdash/config.local.php.
 
 Please create the %%DB_TYPE%% username 'cdash' and
 grant him privileges over a database named 'cdash'.
