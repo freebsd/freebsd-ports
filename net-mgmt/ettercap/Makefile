@@ -83,6 +83,12 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=--without-openssl
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
@@ -108,4 +114,4 @@ post-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
