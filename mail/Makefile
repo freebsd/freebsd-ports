@@ -317,6 +317,7 @@
     SUBDIR += nocc
     SUBDIR += nohtml
     SUBDIR += normalizemime
+    SUBDIR += notmuch
     SUBDIR += nullmailer
     SUBDIR += nullpop
     SUBDIR += offlineimap
