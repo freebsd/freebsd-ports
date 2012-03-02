@@ -52,6 +52,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/escape.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/escape.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/escape.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/loc_compat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/loc_compat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/loc_compat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/platform.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/platform.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/platform.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/properties.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/properties.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/keyring/util/properties.pyo
