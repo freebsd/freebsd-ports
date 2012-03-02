@@ -7,6 +7,7 @@
 
 PORTNAME=	bxpkg
 DISTVERSION=	0.0.4_0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://bxpkg.bsdroot.lv/files/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
@@ -25,7 +26,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
-LIB_DEPENDS+=	archive.10:${PORTSDIR}/archivers/libarchive
+LIB_DEPENDS+=	archive.12:${PORTSDIR}/archivers/libarchive
 .endif
 
 .include <bsd.port.post.mk>
