@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.vtwm.org/downloads/
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
 USE_XORG=	xpm xmu

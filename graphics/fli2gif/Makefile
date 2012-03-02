@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://jeff.bovine.net/download/fli2gif/
 DISTNAME=	${PORTNAME}b
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Automatic Flic to animated GIF convertor
 
 NO_WRKSUBDIR=	yes

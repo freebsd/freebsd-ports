@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	A command-line utility for downloading books from Google Books
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

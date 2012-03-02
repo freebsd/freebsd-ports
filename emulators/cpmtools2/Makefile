@@ -10,7 +10,7 @@ PORTVERSION=	2.13
 CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Tools to access CP/M disks and disk images
 
 LATEST_LINK=	cpmtools2

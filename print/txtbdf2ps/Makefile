@@ -13,7 +13,7 @@ MASTER_SITES=	http://src4.narod.ru/ \
 		http://oldrus-ispell.sourceforge.net/
 EXTRACT_SUFX=	.txt
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translator TXT + BDF to PS
 
 PLIST_FILES=	bin/txtbdf2ps

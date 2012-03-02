@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	A tool that checks the ports tree for various errors
 
 LICENSE=	BSD

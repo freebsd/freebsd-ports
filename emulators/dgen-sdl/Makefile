@@ -10,7 +10,7 @@ PORTVERSION=	1.29
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dgen/dgen/${PORTVERSION}
 
-MAINTAINER=	spam@rm-rf.kiev.ua
+MAINTAINER=	ak@FreeBSD.org
 COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 
 USE_SDL=	sdl
