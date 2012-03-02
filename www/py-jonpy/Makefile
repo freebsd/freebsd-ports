@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python FastCGI interface library
 
 USE_PYTHON=		yes
