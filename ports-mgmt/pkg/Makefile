@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta7
+DISTVERSION=	1.0-beta8
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -35,6 +35,7 @@ MAN8=	pkg.8 \
 	pkg-register.8 \
 	pkg-repo.8 \
 	pkg-search.8 \
+	pkg-set.8 \
 	pkg-update.8 \
 	pkg-updating.8 \
 	pkg-upgrade.8 \
@@ -67,5 +68,6 @@ IGNORE=		not supported on 7.x or early 8.0
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
