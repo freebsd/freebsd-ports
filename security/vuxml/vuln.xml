@@ -52,6 +52,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="46aeba13-64a1-11e1-bc16-0023ae8e59f0">
+    <topic> openx -- security issue</topic>
+    <affects>
+      <package>
+	<name>openx</name>
+	<range><lt>2.8.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenX Reports:</p>
+	<blockquote cite="http://blog.openx.org/12/security-matters-3/">
+	  <p>Recently we became aware of a security issue with OpenX Source
+	  v. 2.8.7 and, in response, we’ve now issued and released OpenXSource
+	  v. 2.8.8 to address it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.openx.org/12/security-matters-3</url>
+    </references>
+    <dates>
+      <discovery>2011-12-01</discovery>
+      <entry>2012-03-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="174b8864-6237-11e1-be18-14dae938ec40">
     <topic>databases/postgresql*-client -- multiple vulnerabilities</topic>
     <affects>
