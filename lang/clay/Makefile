@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clay
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/jckarter/${PORTNAME}/tarball/v${PORTVERSION}/
 DISTNAME=	jckarter-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
@@ -18,7 +18,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	llvm>=3.0:${PORTSDIR}/devel/llvm
 
-GITVERSION=	0dcc5de
+GITVERSION=	850c5c9
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/jckarter-${PORTNAME}-${GITVERSION}
 
@@ -27,12 +27,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-G "Unix Makefiles" -DBUILD_FIX=false
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
 CC=		clang
 CXX=		clang++
-.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900044
 BUILD_DEPENDS+=	clang>=3.0:${PORTSDIR}/lang/clang
