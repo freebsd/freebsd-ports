@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.007
+PORTVERSION=	2.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,7 +45,7 @@ TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Test-Command>=0:${PORTSDIR}/devel/p5-Test-Command
 
-PERL_MODBUILD=	5.10+
+PERL_MODBUILD=	5.10.1+
 
 MAN1=		cme.1 config-edit.1
 MAN3=		Config::Model.3 \
