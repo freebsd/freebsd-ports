@@ -13,7 +13,6 @@ include/Inventor/Xt/devices/SoXtDevice.h
 include/Inventor/Xt/devices/SoXtKeyboard.h
 include/Inventor/Xt/devices/SoXtLinuxJoystick.h
 include/Inventor/Xt/devices/SoXtMouse.h
-include/Inventor/Xt/devices/SoXtSpaceball.h
 include/Inventor/Xt/editors/SoXtColorEditor.h
 include/Inventor/Xt/editors/SoXtMaterialEditor.h
 include/Inventor/Xt/nodes/SoGuiColorEditor.h
@@ -27,7 +26,8 @@ include/Inventor/Xt/viewers/SoXtViewer.h
 include/Inventor/Xt/widgets/SoXtPopupMenu.h
 lib/libSoXt.la
 lib/libSoXt.so
-lib/libSoXt.so.2
+lib/libSoXt.so.23
+libdata/pkgconfig/SoXt.pc
 share/Coin/conf/soxt-default.cfg
 share/aclocal/soxt.m4
 @dirrm include/Inventor/Xt/widgets
