@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	openx
-PORTVERSION=	2.8.7
+PORTVERSION=	2.8.8
 CATEGORIES=	www
 MASTER_SITES=	http://download.openx.org/
-LICENSE=	GPLv2
 
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Free, opensource ad server in PHP
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -34,6 +35,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
 
 .include <bsd.port.post.mk>
