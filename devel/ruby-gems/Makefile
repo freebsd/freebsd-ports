@@ -59,9 +59,9 @@ post-install:
 	    ${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${PREFIX}/${GEMS_DOC_DIR}/ -type d -mindepth 1 | \
 	    ${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${GEMS_DOC_DIR}" >> ${TMPPLIST}
 .endif
 
-	@${ECHO_CMD} "@dirrm ${GEMS_DOC_DIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER}/doc 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems/${RUBY_VER} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/lib/ruby/gems 2>/dev/null || true" >> ${TMPPLIST}
