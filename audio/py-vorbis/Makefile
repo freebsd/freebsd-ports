@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyvorbis-${PORTVERSION}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented Python bindings for the vorbis library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/_ogg.so:${PORTSDIR}/audio/py-ogg

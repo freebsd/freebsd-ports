@@ -14,7 +14,7 @@ MASTER_SITES=	http://ekyo.nerim.net/software/pyogg/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyao-${PORTVERSION}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python wrapper for ao, an audio device abstraction library
 
 LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
