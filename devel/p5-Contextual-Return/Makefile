@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	Contextual-Return
-PORTVERSION=	0.2.1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.004.002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DCONWAY
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create context-senstive return values
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Want.pm:${PORTSDIR}/devel/p5-Want \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want
+RUN_DEPENDS=	p5-Want>=0:${PORTSDIR}/devel/p5-Want
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Contextual::Return.3 Contextual::Return::Failure.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>
