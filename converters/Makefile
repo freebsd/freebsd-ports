@@ -134,6 +134,7 @@
     SUBDIR += py-pisa
     SUBDIR += py-svglib
     SUBDIR += py-unidecode
+    SUBDIR += py-zfec
     SUBDIR += rcctools
     SUBDIR += recode
     SUBDIR += ruby-bsdconv

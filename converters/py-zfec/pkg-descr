@@ -1,0 +1,10 @@
+A fast erasure codec which can be used with the command-line, C,
+Python, or Haskell.
+
+Fast, portable, programmable erasure coding a.k.a. "forward error
+correction": the generation of redundant blocks of information such
+that if some blocks are lost then the original data can be recovered
+from the remaining blocks. The zfec package includes command-line
+tools, C API, Python API, and Haskell API.
+
+WWW: http://pypi.python.org/pypi/zfec/
