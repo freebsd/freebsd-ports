@@ -317,7 +317,6 @@
     SUBDIR += dits
     SUBDIR += djgpp-binutils
     SUBDIR += djgpp-crx
-    SUBDIR += dklibs
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += dmucs
