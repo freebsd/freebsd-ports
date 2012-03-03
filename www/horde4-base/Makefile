@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	4.0.13
+PORTVERSION=	4.0.14
 PKGNAMEPREFIX=
 CATEGORIES=	www pear
 
@@ -75,7 +75,7 @@ USE_HORDE_RUN+=	Horde_Service_Twitter
 .endif
 
 .if defined(WITH_WEATHER)
-RUN_DEPENDS+=	${PEARDIR}/Services/Weather.php:${PORTSDIR}/misc/pear-Services_Weather
+USE_HORDE_RUN+=	Horde_Service_Weather
 .endif
 
 .include <bsd.port.pre.mk>
