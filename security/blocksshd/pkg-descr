@@ -1,4 +1,0 @@
-BlockSSHD protects computers from SSH brute force attacks by
-dynamically blocking IP addresses by adding iptables rules.
-
-WWW:	http://sourceforge.net/projects/blocksshd/
