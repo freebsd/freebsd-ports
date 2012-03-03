@@ -42,7 +42,6 @@
     SUBDIR += binwalk
     SUBDIR += bioapi
     SUBDIR += blindelephant
-    SUBDIR += blocksshd
     SUBDIR += botan
     SUBDIR += bro
     SUBDIR += bruteblock
