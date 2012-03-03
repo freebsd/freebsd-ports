@@ -1,0 +1,5 @@
+Extension of the Horde_Autoloader that implements caching of class-file-maps.
+The caching method is determined automatically from the list of supported cache
+backends: APC, XCache, eAccelerator, local file system.
+
+WWW: http://pear.horde.org
