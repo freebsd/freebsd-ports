@@ -3238,3 +3238,4 @@ net/ipw-firmware||2012-03-02|Removed: is already included in base system
 net/ipw-firmware-kmod||2012-03-02|Removed: is already included in base system
 net/iwi-firmware||2012-03-02|Removed: is already included in base system
 net/iwi-firmware-kmod||2012-03-02|Removed: is already included in base system
+devel/kdevelop||2012-03-03|Has expired
