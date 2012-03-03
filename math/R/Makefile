@@ -7,8 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.14.1
-PORTREVISION=	2
+PORTVERSION=	2.14.2
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -169,8 +168,10 @@ PLIST_SUB+=		LIBR=""
 
 .if defined(WITHOUT_PANGOCAIRO)
 CONFIGURE_ARGS+=	--without-cairo
+PLIST_SUB+=		PANGOCAIRO="@comment "
 .else
 USE_GNOME+=		pango
+PLIST_SUB+=		PANGOCAIRO=""
 .endif
 
 .if defined(WITHOUT_PNG)
@@ -234,10 +235,6 @@ post-patch:
 		${WRKSRC}/src/extra/tzone/tzfile.h \
 		${WRKSRC}/src/scripts/javareconf
 .if !defined(LIBRMATH_SLAVEPORT)
-.if defined(WITH_PCRE_PORT)
-	@${REINPLACE_CMD} -e 's|_pcre_valid_utf8|_pcre_valid_utf|' \
-		${WRKSRC}/src/main/util.c
-.endif
 .if defined(WITHOUT_NLS)
 	@(cd ${WRKSRC}/src/library/Recommended; \
 	for tarfile in *.tgz *.tar.gz ; do \
