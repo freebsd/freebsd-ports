@@ -7,6 +7,7 @@
 
 PORTNAME=	bmeps
 PORTVERSION=	2.2.22
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
