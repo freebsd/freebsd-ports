@@ -1915,6 +1915,7 @@ cparser                         ports/lang/cparser
 cpdup                           ports/sysutils/cpdup
 cphone                          ports/net/cphone
 cpige                           ports/audio/cpige
+cpipe                           ports/benchmarks/cpipe
 cplanet                         ports/www/cplanet
 cplay                           ports/audio/cplay
 cpmemu                          ports/emulators/cpmemu
@@ -6123,8 +6124,6 @@ ipsumdump                       ports/net/ipsumdump
 ipsvd                           ports/net/ipsvd
 ipv6calc                        ports/net-mgmt/ipv6calc
 ipv6gen                         ports/net-mgmt/ipv6gen
-ipw-firmware                    ports/net/ipw-firmware
-ipw-firmware-kmod               ports/net/ipw-firmware-kmod
 ipython                         ports/devel/ipython
 irc                             ports/irc/irc
 irc2dc                          ports/irc/irc2dc
@@ -6227,8 +6226,6 @@ iw-kde3-i18n                    ports/hebrew/kde3-i18n
 iw-kde4-l10n                    ports/hebrew/kde4-l10n
 iw-koffice-i18n                 ports/hebrew/koffice-i18n
 iwebcal                         ports/www/iwebcal
-iwi-firmware                    ports/net/iwi-firmware
-iwi-firmware-kmod               ports/net/iwi-firmware-kmod
 iwidgets                        ports/x11-toolkits/iwidgets
 ixlib                           ports/devel/ixlib
 j2sdkee13                       ports/java/j2sdkee13
@@ -10221,6 +10218,7 @@ notftp                          ports/www/notftp
 notification-daemon             ports/deskutils/notification-daemon
 notify-osd                      ports/deskutils/notify-osd
 notify-sharp                    ports/devel/notify-sharp
+notmuch                         ports/mail/notmuch
 nova                            ports/astro/nova
 noweb                           ports/devel/noweb
 npadmin                         ports/sysutils/npadmin
@@ -22235,6 +22233,7 @@ py-fltk                         ports/x11-toolkits/py-fltk
 py-flup                         ports/www/py-flup
 py-fngrab                       ports/net-p2p/py-fngrab
 py-fonttools                    ports/print/py-fonttools
+py-foolscap                     ports/devel/py-foolscap
 py-forgetsql                    ports/databases/py-forgetsql
 py-formalchemy                  ports/www/py-formalchemy
 py-formencode                   ports/www/py-formencode
@@ -23058,6 +23057,7 @@ py-zclockfile                   ports/devel/py-zclockfile
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
 py-zexceptions                  ports/devel/py-zExceptions
+py-zfec                         ports/converters/py-zfec
 py-zfs                          ports/sysutils/py-zfs
 py-zlog                         ports/devel/py-zLOG
 py-zope.annotation              ports/devel/py-zope.annotation
