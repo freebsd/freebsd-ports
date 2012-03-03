@@ -1,0 +1,4 @@
+#!/bin/sh
+
+read -p "Query: " query
+exec mu find "$@" $query
