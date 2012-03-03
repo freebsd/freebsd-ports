@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cx88
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -17,7 +17,7 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	tuner.1:${PORTSDIR}/multimedia/libtuner
 BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
-		libtuner>=1.0.7:${PORTSDIR}/multimedia/libtuner
+		libtuner>=1.0.8:${PORTSDIR}/multimedia/libtuner
 
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
@@ -30,7 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIB_DEPENDS+= cuse4bsd.1:${PORTSDIR}/multimedia/cuse4bsd-kmod
 BUILD_DEPENDS+= v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
 		cuse4bsd-kmod>=0.1.12:${PORTSDIR}/multimedia/cuse4bsd-kmod
-MAKE_ARGS+= -D WITH_LINUX_DVB
+MAKE_ARGS+= -D WITH_LINUX_COMPAT
 .endif
 
 .if (${OSVERSION} < 704000) || ((${OSVERSION} >= 800000) && (${OSVERSION} < 801000))
