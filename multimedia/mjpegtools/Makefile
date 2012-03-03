@@ -100,9 +100,11 @@ CONFIGURE_ARGS+=--without-libdv
 .endif # DV
 
 .if defined(WITH_QUICKTIME)
+PLIST_SUB+=	QUICKTIME=""
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=--with-libquicktime
 .else
+PLIST_SUB+=	QUICKTIME="@comment "
 CONFIGURE_ARGS+=--without-libquicktime
 .endif # QUICKTIME
 

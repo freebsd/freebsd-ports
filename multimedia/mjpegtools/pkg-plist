@@ -22,6 +22,7 @@ bin/pgmtoy4m
 %%GTK2:%%%%PNG:%%bin/png2yuv
 bin/pnmtoy4m
 bin/ppmtoy4m
+%%QUICKTIME%%bin/qttoy4m
 bin/transist.flt
 bin/y4mblack
 bin/y4mcolorbars
@@ -34,6 +35,7 @@ bin/y4mspatialfilter
 bin/y4mstabilizer
 bin/y4mtopnm
 bin/y4mtoppm
+%%QUICKTIME%%bin/y4mtoqt
 bin/y4mtoyuv
 bin/y4munsharp
 bin/ypipe
