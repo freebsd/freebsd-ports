@@ -32,6 +32,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-blogs.html
 %%DOCSDIR%%/flickcurl-section-category.html
 %%DOCSDIR%%/flickcurl-section-collections.html
+%%DOCSDIR%%/flickcurl-section-config.html
 %%DOCSDIR%%/flickcurl-section-comment.html
 %%DOCSDIR%%/flickcurl-section-commons.html
 %%DOCSDIR%%/flickcurl-section-contact.html
@@ -62,7 +63,6 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-upload.html
 %%DOCSDIR%%/flickcurl-section-urls.html
 %%DOCSDIR%%/flickcurl-section-video.html
-%%DOCSDIR%%/flickcurl.devhelp
 %%DOCSDIR%%/flickcurl.devhelp2
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
