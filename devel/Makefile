@@ -2489,6 +2489,7 @@
     SUBDIR += p5-Test-Block
     SUBDIR += p5-Test-Class
     SUBDIR += p5-Test-ClassAPI
+    SUBDIR += p5-Test-Classy
     SUBDIR += p5-Test-Cmd
     SUBDIR += p5-Test-Command
     SUBDIR += p5-Test-Command-Simple
