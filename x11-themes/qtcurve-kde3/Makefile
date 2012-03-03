@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	QtCurve-KDE3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	QtCurve KDE3 widget style
 
 USE_BZIP2=	yes
