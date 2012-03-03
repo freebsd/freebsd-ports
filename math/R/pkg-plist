@@ -197,9 +197,6 @@ lib/R/library/Matrix/doc/Announce.txt
 lib/R/library/Matrix/doc/Comparisons.R
 lib/R/library/Matrix/doc/Comparisons.Rnw
 lib/R/library/Matrix/doc/Comparisons.pdf
-lib/R/library/Matrix/doc/DSC2009_abstract.pdf
-lib/R/library/Matrix/doc/DSC2009_abstract.tex
-lib/R/library/Matrix/doc/DSC2009_abstract.txt
 lib/R/library/Matrix/doc/Design-issues.R
 lib/R/library/Matrix/doc/Design-issues.Rnw
 lib/R/library/Matrix/doc/Design-issues.pdf
@@ -216,9 +213,7 @@ lib/R/library/Matrix/doc/UFsparse/COLAMD.txt
 lib/R/library/Matrix/doc/UFsparse/SPQR.txt
 lib/R/library/Matrix/doc/UFsparse/UFconfig.txt
 lib/R/library/Matrix/doc/UFsparse/UserGuides.txt
-lib/R/library/Matrix/doc/fullpage.sty
 lib/R/library/Matrix/doc/index.html
-lib/R/library/Matrix/doc/myVignette.sty
 lib/R/library/Matrix/doc/sparseModels.R
 lib/R/library/Matrix/doc/sparseModels.Rnw
 lib/R/library/Matrix/doc/sparseModels.pdf
@@ -576,7 +571,7 @@ lib/R/library/grDevices/html/00Index.html
 lib/R/library/grDevices/html/R.css
 lib/R/library/grDevices/icc/srgb
 lib/R/library/grDevices/icc/srgb.flate
-lib/R/library/grDevices/libs/cairo.so
+%%PANGOCAIRO%%lib/R/library/grDevices/libs/cairo.so
 lib/R/library/grDevices/libs/grDevices.so
 %%NLS%%lib/R/library/grDevices/po/de/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/de/LC_MESSAGES/grDevices.mo
@@ -1096,6 +1091,7 @@ lib/R/library/stats/libs/stats.so
 %%NLS%%lib/R/library/stats/po/tr/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/zh_CN/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/zh_CN/LC_MESSAGES/stats.mo
+lib/R/library/survival/CITATION
 lib/R/library/survival/DESCRIPTION
 lib/R/library/survival/INDEX
 lib/R/library/survival/Meta/Rd.rds
@@ -1113,14 +1109,11 @@ lib/R/library/survival/R/survival.rdx
 lib/R/library/survival/data/Rdata.rdb
 lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
-lib/R/library/survival/doc/cgd.dat
-lib/R/library/survival/doc/d3.rda
 lib/R/library/survival/doc/index.html
-lib/R/library/survival/doc/raheart.rda
 lib/R/library/survival/doc/timedep.Rnw
 lib/R/library/survival/doc/timedep.pdf
 lib/R/library/survival/doc/timedep.R
-lib/R/library/survival/doc/validate.tex
+lib/R/library/survival/doc/validate.pdf
 lib/R/library/survival/help/AnIndex
 lib/R/library/survival/help/aliases.rds
 lib/R/library/survival/help/paths.rds
@@ -1135,9 +1128,9 @@ lib/R/library/tcltk/Meta/Rd.rds
 lib/R/library/tcltk/Meta/demo.rds
 lib/R/library/tcltk/Meta/hsearch.rds
 lib/R/library/tcltk/Meta/links.rds
-%%TCLTK%%lib/R/library/tcltk/Meta/nsInfo.rds
+lib/R/library/tcltk/Meta/nsInfo.rds
 lib/R/library/tcltk/Meta/package.rds
-%%TCLTK%%lib/R/library/tcltk/NAMESPACE
+lib/R/library/tcltk/NAMESPACE
 lib/R/library/tcltk/R/tcltk
 %%TCLTK%%lib/R/library/tcltk/R/tcltk.rdb
 %%TCLTK%%lib/R/library/tcltk/R/tcltk.rdx
