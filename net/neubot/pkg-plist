@@ -38,6 +38,12 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/bittorrent/server.pyc
 %%DATADIR%%/bittorrent/stream.py
 %%DATADIR%%/bittorrent/stream.pyc
+%%DATADIR%%/browser.py
+%%DATADIR%%/browser.pyc
+%%DATADIR%%/browser_nt.py
+%%DATADIR%%/browser_nt.pyc
+%%DATADIR%%/browser_null.py
+%%DATADIR%%/browser_null.pyc
 %%DATADIR%%/compat.py
 %%DATADIR%%/compat.pyc
 %%DATADIR%%/config.py
@@ -122,6 +128,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/notifier/macos.pyc
 %%DATADIR%%/notifier/unix.py
 %%DATADIR%%/notifier/unix.pyc
+%%DATADIR%%/notifier_browser.py
+%%DATADIR%%/notifier_browser.pyc
 %%DATADIR%%/notify.py
 %%DATADIR%%/notify.pyc
 %%DATADIR%%/privacy.py
