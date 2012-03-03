@@ -121,9 +121,6 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/path.py
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/path.pyo
-%%PYTHON_SITELIBDIR%%/duplicity/pexpect.py
-%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyc
-%%PYTHON_SITELIBDIR%%/duplicity/pexpect.pyo
 %%PYTHON_SITELIBDIR%%/duplicity/robust.py
 %%PYTHON_SITELIBDIR%%/duplicity/robust.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/robust.pyo
