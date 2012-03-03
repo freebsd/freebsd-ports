@@ -1,0 +1,21 @@
+--- port.1.orig	2009-09-09 21:59:59.000000000 +0200
++++ port.1	2009-10-25 20:01:28.000000000 +0100
+@@ -125,6 +125,9 @@
+ .Bl -tag -width ".Pa suffix"
+ .It CVS
+ diff against CVS repository (default).
++.It CVSauto
++diff against CVS repository, no cvs add/delete required.
++Useful with read-only CVS servers that don't support add/delete.
+ .It Pa dir
+ diff against original version of the port in the Ports tree with root at
+ .Pa dir
+@@ -215,6 +218,8 @@
+ .Bl -tag -width ".Fl s Ar severity"
+ .It Fl h
+ display usage summary for this command.
++.It Fl d Ar mode
++select diff generation mode - see the port diff command above for details.
+ .It Fl m Ar mode
+ Overrides automatic detection of operation mode:
+ .Bl -tag -width update
