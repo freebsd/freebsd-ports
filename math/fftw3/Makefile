@@ -6,8 +6,8 @@
 #    $MCom: ports-experimental/math/fftw3/Makefile,v 1.1 2006/03/28 00:08:57 ahze Exp $
 
 PORTNAME=	fftw3
-PORTVERSION=	3.3
-PORTREVISION?=	1
+PORTVERSION=	3.3.1
+PORTREVISION?=	0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
@@ -17,7 +17,7 @@ DISTNAME=	fftw-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
-# current flavors: default, float, and long
+#current flavors: default, float, long, and quad
 FFTW3_FLAVOR?=	default
 FFTW3_SUFX=
 
@@ -65,18 +65,22 @@ CFLAGS+=	-malign-double
 WITHOUT_NO_STRICT_ALIASING=	yes
 .endif # end WITH_OPTIMIZED_CFLAGS
 
+#Users must add altivec and avx to MACHINE_CPU when desired:
+#this is not currently done in bsd.cpu.mk
 .if ${FFTW3_FLAVOR} == "default"
-.  if !empty(MACHINE_CPU:Msse2)
+.  if !empty(MACHINE_CPU:Mavx)
+CONFIGURE_ARGS+=--enable-avx
+.  elif !empty(MACHINE_CPU:Msse2)
 CONFIGURE_ARGS+=--enable-sse2
 .  endif
 .elif ${FFTW3_FLAVOR} == "float"
 FFTW3_SUFX=	f
 FFTW3_PKGNAMESUFFIX=	-float
 CONFIGURE_ARGS+=--enable-float
-.  if !empty(MACHINE_CPU:Msse)
+.  if !empty(MACHINE_CPU:Mavx)
+CONFIGURE_ARGS+=--enable-avx
+.  elif !empty(MACHINE_CPU:Msse)
 CONFIGURE_ARGS+=--enable-sse
-#Unfortunately, the user must add altivec to MACHINE_CPU when desired,
-#because this is not currently done in bsd.cpu.mk
 .  elif !empty(ARCH:Mpowerpc*) && !empty(MACHINE_CPU:Maltivec)
 CONFIGURE_ARGS+=--enable-altivec
 .  endif
