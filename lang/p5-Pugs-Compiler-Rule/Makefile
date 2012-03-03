@@ -22,6 +22,7 @@ RUN_DEPENDS=	p5-Cache-Cache>=1.05:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp \
 		p5-YAML-Syck>=0.60:${PORTSDIR}/textproc/p5-YAML-Syck
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-File-Slurp>0:${PORTSDIR}/devel/p5-File-Slurp
 
 PERL_CONFIGURE=	yes
 
