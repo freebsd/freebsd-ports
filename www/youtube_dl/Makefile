@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2012.01.08b
+PORTVERSION=	2012.02.27
 CATEGORIES=	www
 MASTER_SITES=	https://raw.github.com/rg3/youtube-dl/${PORTVERSION}/
 DISTNAME=	youtube-dl
