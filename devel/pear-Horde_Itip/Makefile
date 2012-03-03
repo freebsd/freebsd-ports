@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Itip
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org
