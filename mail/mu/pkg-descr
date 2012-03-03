@@ -1,0 +1,7 @@
+mu is a tool for dealing with e-mail messages stored
+in the Maildir-format, on Unix-like systems.
+mu's main purpose is to help you to find the messages
+you need, quickly; in addition, it allows you to view messages,
+extract attachments, create new maildirs, ...
+
+WWW: http://www.djcbsoftware.nl/code/mu/
