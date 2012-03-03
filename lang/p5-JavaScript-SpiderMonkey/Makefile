@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl interface to Mozilla JavaScript implementation
 
+TEST_DEPENDS=	p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl
 LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey
 
 PERL_CONFIGURE=	yes
