@@ -18,6 +18,7 @@
     SUBDIR += kports-qt4
     SUBDIR += lsknobs
     SUBDIR += managepkg
+    SUBDIR += mkreadmes
     SUBDIR += p5-App-Pm2Port
     SUBDIR += p5-FreeBSD-Pkgs
     SUBDIR += p5-FreeBSD-Pkgs-FindUpdates
