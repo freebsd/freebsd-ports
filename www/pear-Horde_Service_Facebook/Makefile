@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_Facebook
-DISTVERSION=	1.1.2
+PORTVERSION=	1.1.2
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org

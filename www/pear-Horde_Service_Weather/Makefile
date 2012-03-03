@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_Weather
-DISTVERSION=	1.1.0
+PORTVERSION=	1.1.0
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
