@@ -1,0 +1,152 @@
+--- ./util_diff.in.orig	2009-09-09 21:59:59.000000000 +0200
++++ ./util_diff.in	2011-11-28 21:54:50.000000000 +0100
+@@ -37,49 +37,122 @@
+ 	fi
+ 	cd ${SAVE_CWD}
+ else
+-	# Default to CVS diff mode
+-	[ "${DIFF_MODE}" = "" ] && DIFF_MODE="CVS"
+-
+-	# If there is no CVS subdirectory then
+-	# fallback to diffing against /usr/ports tree 
+-	if [ "${DIFF_MODE}" = "CVS" -a ! -d CVS ]
++	# Determine the default diff mode
++	if [ "${DIFF_MODE}" = "" ]
+ 	then
+-		DIFF_MODE="/usr/ports"
++		if [ -d CVS ]
++		then
++			if grep -iq ":pserver:anoncvs@anoncvs.fr.FreeBSD.org:" CVS/Root
++			then
++				DIFF_MODE="CVSauto"
++			else
++				DIFF_MODE="CVS"
++			fi
++		else
++			DIFF_MODE="/usr/ports"
++		fi
++		echo "Default diff mode is ${DIFF_MODE}"
++	elif [ "${DIFF_MODE}" = "CVS" -o "${DIFF_MODE}" = "CVSauto" ]
++	then
++		# If there is no CVS subdirectory then
++		# fallback to diffing against /usr/ports tree
++		if [ ! -d CVS ]
++		then
++			echo "Diff mode was set to ${DIFF_MODE}, but there's no CVS subdirectory"
++			echo -n "Trying /usr/ports ... "
++			if [ -d /usr/ports ]
++			then
++				DIFF_MODE="/usr/ports"
++				echo "found"
++			else
++				echo "not found - please choose an approriate diff mode"
++				rm -rf ${TEMPROOT}
++				exit 1
++			fi
++		fi
+ 	fi
+ 
+-	if [ "${DIFF_MODE}" = "CVS" ]
++	if [ "${DIFF_MODE}" = "CVS" -o "${DIFF_MODE}" = "CVSauto" ]
+ 	then
++		DIFF_TYPE=${DIFF_MODE}
+ 		# Test for ~/.cvspass and create if necessary
+ 		test -f ${HOME}/.cvspass || touch ${HOME}/.cvspass
+ 
+ 		# Run 'cvs update' first
+ 		echo "===> Updating from CVS"
+-		cvs -R update -Pd
+-		if [ $? -ne 0 ]
++		if [ "${DIFF_MODE}" = "CVSauto" ]
++		then
++			cvs -R update -Pd 2> ${TEMPROOT}/.cvs.err > ${TEMPROOT}/.cvs.out
++			status=$?
++			cat ${TEMPROOT}/.cvs.err ${TEMPROOT}/.cvs.out
++		else
++			cvs -R update -Pd
++			status=$?
++		fi
++		if [ $status -ne 0 ]
+ 		then
+ 			echo "Error updating CVS"
+ 			rm -rf ${TEMPROOT}
+ 			exit 1
+ 		fi
+-
+-		DIFF_CMD="cvs -R diff -uN"
++		PORTBASENAME=`sed -E -e 's%.*/([^/]+)$%\1%' CVS/Repository`
++		if [ "${DIFF_MODE}" = "CVSauto" ]
++		then
++			sort -k 2,666 ${TEMPROOT}/.cvs.out | \
++			sed -nE	-e 's/^[?A] (.*)$/echo "diff -uN \1.orig \1" \&\& diff -uN "\1.orig" "\1" /p' \
++				-e 's/^U (.*)$/mv "\1" "\1.orig" \&\& echo "diff -uN \1.orig \1" \&\& diff -uN "\1.orig" "\1" ; rm "\1.orig"/p' \
++				-e 's/^R (.*)$/cvs -R -q update -p "\1" > "\1.orig" \&\& echo "diff -uN \1.orig \1" \&\& diff -uN "\1.orig" "\1" ; rm "\1.orig"/p' \
++				-e 's/^M (.*)$/cvs -R diff -u "\1"/p' \
++				> ${TEMPROOT}/.cvs.diff_cmd
++			DIFF_CMD="sh -x ${TEMPROOT}/.cvs.diff_cmd"
++		else
++			DIFF_CMD="cvs -R diff -uN"
++		fi
+ 	else 
+ 		# Non-CVS modes
++		DIRBASENAME=`basename \`pwd\``
++		PORTBASENAME_HEADER=`sed -n -E -e '1,/^($|[^#].*$)|\\$FreeBSD: /tmp/pcvs/ports/ports-mgmt/porttools/files/patch-util_diff.in,v 1.5 2012-03-03 13:31:02 crees Exp $FreeBSD:[[:space:]]*ports/([^/]+)/([^/]+)/Makefile.*$%\2%p' Makefile`
++		if [ "${DIRBASENAME}" != "${PORTBASENAME_HEADER}" ]
++		then
++			echo "Warning: current directory name differs from Makefile header:"
++			echo "	${DIRBASENAME}" != "${PORTBASENAME_HEADER}"
++		fi
++		PYTHON_SUFFIX="`make -V PYTHON_SUFFIX`"
++		RUBY_SUFFIX="`make -V RUBY_SUFFIX`"
++		PKGNAMEPREFIX="`make -V PKGNAMEPREFIX | sed -E "s,py${PYTHON_SUFFIX}-,py-," | sed -E "s,ruby${RUBY_SUFFIX}-,ruby-,"`"
++		PKGNAMESUFFIX="`make -V PKGNAMESUFFIX`"
++		PORTNAME="${PKGNAMEPREFIX}`make -V PORTNAME`${PKGNAMESUFFIX}"
+ 		if [ -d ${DIFF_MODE} ]
+ 		then
+ 			# -d <dir> have been specified
+ 			# it should be Ports tree location
++			DIFF_TYPE="ports"
+ 			CATEGORY="`make -V CATEGORIES | sed -E 's/^([^ ]+).*$/\1/'`"
+-			PYTHON_SUFFIX="`make -V PYTHON_SUFFIX`"
+-			RUBY_SUFFIX="`make -V RUBY_SUFFIX`"
+-			PKGNAMEPREFIX="`make -V PKGNAMEPREFIX | sed -E "s,py${PYTHON_SUFFIX}-,py-," | sed -E "s,ruby${RUBY_SUFFIX}-,ruby-,"`"
+-			PKGNAMESUFFIX="`make -V PKGNAMESUFFIX`"
+-			PORTNAME="${PKGNAMEPREFIX}`make -V PORTNAME`${PKGNAMESUFFIX}"
+ 			ORIG_DIR="${DIFF_MODE}/${CATEGORY}/${PORTNAME}"
++			if [ ! -d ${ORIG_DIR} ]
++			then
++				echo "Original version does not exist at ${ORIG_DIR}"
++				if [ -d "${DIFF_MODE}/${CATEGORY}/${PORTBASENAME}" ]
++				then
++					PORTBASENAME=${DIRBASENAME}
++					ORIG_DIR="${DIFF_MODE}/${CATEGORY}/${PORTBASENAME}"
++				elif [ -d "${DIFF_MODE}/${CATEGORY}/${PORTBASENAME_HEADER}" ]
++				then
++					PORTBASENAME=${PORTBASENAME_HEADER}
++					ORIG_DIR="${DIFF_MODE}/${CATEGORY}/${PORTBASENAME}"
++				fi
++				[ -d ${ORIG_DIR} ] && echo "Using ${ORIG_DIR} instead"
++			fi
+ 		else 
+ 			# -d <pattern> have been specified
+ 			# <pattern> is used to determine original port location
+-			ORIG_DIR="`pwd`${DIFF_MODE}"
++			DIFF_TYPE="suffix"
++			ORIG_DIR="../${DIRBASENAME}${DIFF_MODE}"
++			if [ "${DIRBASENAME}" != "${PORTNAME}" -a "${DIRBASENAME}" = "${PORTBASENAME_HEADER}" ]
++			then
++				PORTBASENAME=${DIRBASENAME}
++				echo "Using ${PORTBASENAME} instead of ${PORTNAME} as the port's directory name"
++			fi
+ 		fi
+ 
+ 		# Check to see if the original version of port exist 
+@@ -90,7 +163,7 @@
+ 			exit 1
+ 		fi
+ 		
+-		DIFF_CMD="diff -ruN --exclude=CVS ${ORIG_DIR} `pwd`"
++		DIFF_CMD="diff -ruN --exclude=CVS ${ORIG_DIR} ."
+ 	fi
+ 
+ 	# Generate patch

@@ -1,0 +1,29 @@
+--- ./Makefile.orig	2009-09-09 21:59:59.000000000 +0200
++++ ./Makefile	2011-11-23 23:11:14.000000000 +0100
+@@ -9,6 +9,15 @@
+ PORTNAME?=	porttools
+ PORTVERSION?=	0.99
+ DISTNAME?=	${PORTNAME}-${PORTVERSION}
++.if defined(PORTREVISION) && defined(PORTEPOCH)
++VERSIONSTRING=	${PORTVERSION}_${PORTREVISION},${PORTEPOCH}
++.elif defined(PORTREVISION)
++VERSIONSTRING=	${PORTVERSION}_${PORTREVISION}
++.elif defined(PORTEPOCH)
++VERSIONSTRING=	${PORTVERSION},${PORTEPOCH}
++.else
++VERSIONSTRING=	${PORTVERSION}
++.endif
+ 
+ PROGRAMS=	port
+ SCRIPTS=	cmd_commit cmd_create cmd_diff cmd_fetch cmd_getpr cmd_help \
+@@ -31,8 +40,8 @@
+ 
+ .SUFFIXES: .in
+ 
+-.in: 
+-	sed -e 's,__VERSION__,${PORTVERSION},;s,__PREFIX__,${PREFIX},' \
++.in:
++	sed -e 's%__VERSION__%${VERSIONSTRING}%;s,__PREFIX__,${PREFIX},' \
+ 		inc_header.in ${.IMPSRC} > ${.TARGET}
+ 	chmod a+x ${.TARGET}
+ 
