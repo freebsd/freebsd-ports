@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_Stream_Wrapper
-DISTVERSION=	1.0.0
+PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	horde@FreeBSD.org

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Service_UrlShortener
-DISTVERSION=	1.0.0
+PORTVERSION=	1.0.0
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
