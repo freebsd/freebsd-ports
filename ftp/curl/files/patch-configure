@@ -6,9 +6,9 @@ Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
 Last-Update: 2010-12-19
 
---- a/configure
-+++ b/configure
-@@ -14201,10 +14201,10 @@
+--- configure.orig	2012-02-26 17:52:21.904908587 +0800
++++ configure	2012-02-26 17:52:21.929909948 +0800
+@@ -15049,10 +15049,10 @@
      flags_dbg_all="$flags_dbg_all -gdwarf-2"
      flags_dbg_all="$flags_dbg_all -gvms"
      flags_dbg_yes="-g"
@@ -21,7 +21,7 @@ Last-Update: 2010-12-19
    else
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
  $as_echo "no" >&6; }
-@@ -15041,6 +15041,9 @@
+@@ -15892,6 +15892,9 @@
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
  
@@ -31,7 +31,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -15071,6 +15074,7 @@
+@@ -15922,6 +15925,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -39,7 +39,7 @@ Last-Update: 2010-12-19
  
      #
      if test "$want_debug" = "yes"; then
-@@ -15283,6 +15287,9 @@
+@@ -16139,6 +16143,9 @@
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -49,7 +49,7 @@ Last-Update: 2010-12-19
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -15313,6 +15320,7 @@
+@@ -16169,6 +16176,7 @@
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -57,7 +57,7 @@ Last-Update: 2010-12-19
  
        if test "$want_optimize" = "yes"; then
          { $as_echo "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -19224,7 +19232,8 @@
+@@ -20137,7 +20145,8 @@
          PKGTEST="no"
      PREFIX_OPENSSL=$OPT_SSL
  
@@ -66,8 +66,8 @@ Last-Update: 2010-12-19
 +                OPENSSL_PCDIR="$LOCALBASE/libdata/pkgconfig"
      { $as_echo "$as_me:${as_lineno-$LINENO}: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&5
  $as_echo "$as_me: PKG_CONFIG_LIBDIR will be set to \"$OPENSSL_PCDIR\"" >&6;}
-     if test -e "$OPENSSL_PCDIR/openssl.pc"; then
-@@ -21264,29 +21273,30 @@
+     if test -f "$OPENSSL_PCDIR/openssl.pc"; then
+@@ -23231,29 +23240,30 @@
      ;;
    off)
          LIB_RTMP="-lrtmp"
