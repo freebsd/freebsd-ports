@@ -9,7 +9,6 @@ include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/typecheck-gcc.h
-include/curl/types.h
 @dirrm include/curl
 lib/libcurl.a
 lib/libcurl.la
@@ -165,6 +164,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/curlx.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/debug.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evhiperfifo.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalsocket.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileupload.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fopen.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftp-wildcard.c
@@ -183,6 +183,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpcustomheader.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpput.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/https.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imap.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/makefile.dj
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-app.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-debugcallback.c
@@ -192,16 +193,24 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multithread.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/opensslthreadlock.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/persistant.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3s.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pop3slist.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/post-callback.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postit2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/progressfunc.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolve.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtsp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sampleconv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sepheaders.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendrecv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplepost.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplesmtp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simplessl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smooth-gtk-thread.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp-multi.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smtp-tls.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/synctime.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threaded-ssl.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/url2file.c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
