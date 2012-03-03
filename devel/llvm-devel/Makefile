@@ -48,8 +48,8 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off
-#		LTOPLUGIN "Build LTO plugin (requires gold)" off
+OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off \
+		LTOPLUGIN "Build LTO plugin (requires gold)" off
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
