@@ -1,4 +1,4 @@
-bin/sndfile-resample
+%%PORTEXAMPLES%%bin/sndfile-resample
 include/samplerate.h
 lib/libsamplerate.a
 lib/libsamplerate.la
