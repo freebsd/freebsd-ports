@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.37
+PORTVERSION=	2.38
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	CGI utility suite - makes powerful application writing fun and easy
 
+BUILD_DEPENDS=	p5-Template-Alloy>=1.004:${PORTSDIR}/www/p5-Template-Alloy
 RUN_DEPENDS=	p5-Template-Alloy>=1.004:${PORTSDIR}/www/p5-Template-Alloy
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -24,17 +24,15 @@ MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::App::Constants.3 \
 		CGI::Ex::Die.3 CGI::Ex::Dump.3 CGI::Ex::Fill.3 \
 		CGI::Ex::JSONDump.3 CGI::Ex::Template.3 CGI::Ex::Validate.3
 
-.if !defined(NOPORTEXAMPLES)
-
 PORTEXAMPLES=	*
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
 .for i in app benchmark devel
 	${MKDIR} ${EXAMPLESDIR}/${i}
 .endfor
-	${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}
-
+	${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
