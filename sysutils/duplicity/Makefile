@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.17
+PORTVERSION=	0.6.18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
