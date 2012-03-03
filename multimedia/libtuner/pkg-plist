@@ -11,6 +11,7 @@ include/libtuner/fmd1216me.h
 include/libtuner/lg3303.h
 include/libtuner/lgh064f.h
 include/libtuner/mt2131.h
+include/libtuner/nxt2004.h
 include/libtuner/or51132.h
 include/libtuner/pll_driver.h
 include/libtuner/s5h1411.h
@@ -22,12 +23,14 @@ include/libtuner/tuner_device.h
 include/libtuner/tuner_devnode_device.h
 include/libtuner/tuner_driver.h
 include/libtuner/tuner_firmware.h
+include/libtuner/tuv1236d.h
 include/libtuner/xc3028.h
 include/libtuner/xc5000.h
 %%DATADIR%%/license.txt
 %%DATADIR%%/xc5000-1.6.114.fw
 %%DATADIR%%/or51132_vsb.fw
 %%DATADIR%%/or51132_qam.fw
+%%DATADIR%%/nxt2004.fw
 @dirrm lib/libtuner
 @dirrm include/libtuner
 @dirrm %%DATADIR%%
