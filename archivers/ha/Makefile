@@ -9,12 +9,14 @@ PORTNAME=	ha
 PORTVERSION=	0.999b
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kuzbass.ru/pub/unix/util/arcers/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	ha0999
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	The HA archiver using the HSC compression method
+
+PROJECTHOST=	ak-various-projects
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
