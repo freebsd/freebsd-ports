@@ -29,12 +29,16 @@ PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-ldl||' ${BUILD_WRKSRC}/Premake4.make
+	${REINPLACE_CMD} -e 's|debug|release|' ${WRKSRC}/tests/test
 
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/release/premake4 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/release/premake4 ${PREFIX}/bin
+
+regression-test: build
+	cd ${WRKSRC}/tests && ./test
 
 .include <bsd.port.post.mk>
