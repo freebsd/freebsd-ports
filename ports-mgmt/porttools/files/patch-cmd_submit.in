@@ -1,6 +1,6 @@
---- ./cmd_submit.in.orig	2009-09-09 21:59:59.000000000 +0200
-+++ ./cmd_submit.in	2011-11-26 15:37:51.000000000 +0100
-@@ -26,6 +26,7 @@
+--- cmd_submit.in.orig	2009-09-09 20:59:59.000000000 +0100
++++ cmd_submit.in	2012-03-04 12:02:36.697273154 +0000
+@@ -26,10 +26,12 @@
  		update - updating a port to newer version
  	-d <diff mode> - Select diff generation mode:
  		CVS - against CVS
@@ -8,7 +8,35 @@
  		<dir> - against Ports tree in <dir>
  		<pattern> - against original port in <pwd><pattern>
  	-s <severity> - Set PR's severity to <severity>
-@@ -126,6 +127,15 @@
+ 	-p <priority> - Set PR's priority to <priority>
++	-P	- Don't send the PR; print to stdout (see -P in send-pr(1))
+ 	-c	- committer mode: more portlint(1) checks
+ 	-L	- Skip running portlint(1)
+ EOF
+@@ -41,9 +43,10 @@
+ PRIORITY="low"
+ COMMITTER="no"
+ RUN_PORTLINT="yes"
++SENDPR_ARGS=
+ 
+ # Parse command line arguments
+-ARGS=`/usr/bin/getopt hm:d:s:p:cL $*`
++ARGS=`/usr/bin/getopt hm:d:s:p:cLP $*`
+ if [ $? != 0 ]
+ then
+ 	echo "Error: invalid arguments"
+@@ -116,6 +119,10 @@
+ 	-L)
+ 		RUN_PORTLINT="no"
+ 		;;
++	# print to stdout instead of sending
++	-P)
++		SENDPR_ARGS="${SENDPR_ARGS} -P"
++		;;
+ 	esac
+ 	shift
+ done
+@@ -126,6 +133,15 @@
  	[ "`grep '\$FreeBSD: ' Makefile`" ] || MODE="new"
  fi
  
@@ -24,7 +52,7 @@
  # Run portlint(1) to validate port's sanity
  if [ "${RUN_PORTLINT}" = "yes" ]
  then
-@@ -133,10 +143,24 @@
+@@ -133,10 +149,24 @@
  	FLAGS="-${PORTLINT_FLAGS:-abt}"
  	[ "${COMMITTER}" = "yes" ] && FLAGS="${FLAGS} -c"
  	[ "${MODE}" = "new" ] && FLAGS="${FLAGS} -N"
@@ -51,7 +79,7 @@
  		exit 1
  	fi
  else
-@@ -146,6 +170,12 @@
+@@ -146,6 +176,12 @@
  # Collect information about the port
  PORTNAME="`make -V PKGNAMEPREFIX``make -V PORTNAME``make -V PKGNAMESUFFIX`"
  PORTVERSION="`make -V PORTVERSION`"
@@ -64,7 +92,7 @@
  PKGNAME="`make -V PKGNAME`"
  CATEGORY="`make -V CATEGORIES | sed -E 's/^([^ ]+).*$/\1/'`"
  MAINTAINER="`make -V MAINTAINER`"
-@@ -155,9 +185,6 @@
+@@ -155,9 +191,6 @@
  RELEASE="`uname -srp`"
  SYSTEM="`uname -a | cut -d ' ' -f 1-12`"
  
@@ -74,7 +102,7 @@
  CC=""
  if [ "${MODE}" = "new" ]
  then
-@@ -194,10 +221,10 @@
+@@ -194,10 +227,10 @@
  		# Override some parameters if submitting an update to a newer
  		# version of an existing port
  		CLASS="update"
@@ -88,7 +116,7 @@
  	# Check to see if maintainership was requested
  	MAINT_CHANGE="`grep '^[+-]MAINTAINER' ${PATCH} | wc -l`"
  	if [ ${MAINT_CHANGE} -eq 2 ]
-@@ -242,7 +269,12 @@
+@@ -242,7 +275,12 @@
  fi
  
  # Generate Synopsis line
@@ -102,7 +130,7 @@
  
  echo "===> Generating PR form"
  PR_FORM="${TEMPROOT}/PR"
-@@ -266,9 +298,10 @@
+@@ -266,9 +304,10 @@
  	SEND-PR: 	[ low | medium | high ]
  	>Category:	ports 
  	SEND-PR: <choose from the list of categories below (one line)>
@@ -116,7 +144,7 @@
  	>Class:		${CLASS}
  	SEND-PR: [ sw-bug | doc-bug | change-request | update | maintainer-update ]
  	>Release:	${RELEASE}
-@@ -277,24 +310,33 @@
+@@ -277,24 +316,33 @@
  	>Description:
  EOF
  
@@ -156,7 +184,7 @@
  	fi
  
  	if [ -n "${FILES_ADD}" ]
-@@ -326,7 +368,7 @@
+@@ -326,14 +374,14 @@
  
  cat >> ${PR_FORM} <<- EOF
  
@@ -165,3 +193,11 @@
  	>How-To-Repeat:
  	>Fix:
  EOF
+ 
+ # Invoke send-pr(1)
+ echo "===> Invoking send-pr(1) to submit a PR"
+-PR_FORM="${PR_FORM}" /usr/bin/send-pr -a ${PATCH}
++PR_FORM="${PR_FORM}" /usr/bin/send-pr -a ${PATCH} ${SENDPR_ARGS}
+ if [ $? -ne 0 ]
+ then
+ 	echo "Error submitting PR"
