@@ -10,7 +10,7 @@ PORTREVISION=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-contrib
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \

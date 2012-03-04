@@ -9,7 +9,7 @@ PORTNAME=	postgresql
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX=	-plperl
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
 MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server

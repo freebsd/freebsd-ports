@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-contrib
 CATEGORIES=	databases
 PORTREVISION=	0
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 USE_PGSQL=	yes

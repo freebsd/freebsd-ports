@@ -8,7 +8,7 @@
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-plperl
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
 WANT_PGSQL_VER=	84

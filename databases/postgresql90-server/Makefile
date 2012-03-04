@@ -9,7 +9,7 @@ DISTVERSION?=	9.0.7
 PORTREVISION=	1
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER?=	crees@FreeBSD.org
+MAINTAINER?=	pgsql@FreeBSD.org
 
 ICU_PATCHFILE?=	pg-900-icu-2010-09-19.diff.gz
 ICU_EXTRAPATCH=	${FILESDIR}/extra-patch-icu4
