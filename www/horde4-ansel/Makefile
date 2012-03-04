@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ansel
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www pear graphics
 PKGNAMEPREFIX=	horde-
 
