@@ -1,6 +1,5 @@
 bin/awale
 %%GUI%%bin/xawale
-%%DATADIR%%/Awale.gif
 %%DATADIR%%/AwaleBanner.bmp
 %%DATADIR%%/README
 %%DATADIR%%/Trou00.gif
@@ -21,6 +20,7 @@ bin/awale
 %%DATADIR%%/Trou15.gif
 %%DATADIR%%/awale.ico
 %%DATADIR%%/awale.png
+%%DATADIR%%/board.gif
 %%DATADIR%%/copyright.gif
 %%DATADIR%%/fr.gif
 %%DATADIR%%/sp.gif
