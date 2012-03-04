@@ -4,58 +4,70 @@
 #
 # $FreeBSD$
 #
-# Based on git checkout from git://gitorious.org/dma/dma.git rather than
-# from Dragonfly.
+# Based on a tarball from https://github.com/corecode/dma/tarball/<version>
+# rather than from Dragonfly.
 #
 
-PORTNAME=	dma
-# commit f54b5114efc65d0e31c7b612bd59cc1b7c8cd8dc
-PORTVERSION=	20101004
-PORTREVISION=	2
-CATEGORIES=	mail ipv6
-MASTER_SITES=   LOCAL/bz
+PORTNAME=		dma
+PORTVERSION=		v0.7
+PORTEPOCH=		1
+CATEGORIES=		mail ipv6
+#MASTER_SITES=		https://github.com/		# 302 temp move
+MASTER_SITES=		https://nodeload.github.com/${GITHUB_USER}/${PORTNAME}/tarball/
+DISTNAME=		${PORTVERSION}
+EXTRACT_SUFX=
+DIST_SUBDIR=		${PORTNAME}
 
 MAINTAINER=	bz@FreeBSD.org
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
-USE_BZIP2=	yes
-USE_OPENSSL=	yes
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_HASH}
+
+USE_OPENSSL=	yes
 
 MAN8=		dma.8
 
-CFLAGS+=	-I${OPENSSLINC}
+GITHUB_HASH=		db9a42b
+GITHUB_USER=		corecode
+
+CFLAGS+=	-I${OPENSSLINC} \
+		-DCONF_PATH='\"${PREFIX}/etc/dma\"' \
+		-DDMA_ROOT_USER='\"mailnull\"' \
+		-DDMA_GROUP='\"mail\"'
 LDFLAGS+=	-L${OPENSSLLIB}
 
 USE_RC_SUBR=	dma_flushq
 SUB_FILES=	pkg-message
 
+# Allow subports to extend.
+CONFFILES+=	dma.conf auth.conf
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 700000
-BROKEN=	Does not build on 6.X
-.endif
+pre-patch:
+	@${MKDIR} ${WRKSRC}/dma ${WRKSRC}/dma-mbox-create
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dma,${PREFIX}/etc/dma,g' \
-		${WRKSRC}/dma.8 \
-		${WRKSRC}/dma.h
+		${WRKSRC}/dma.8
 	@${REINPLACE_CMD} -e 's, /etc/dma, ${PREFIX}/etc/dma,g' \
 		${WRKSRC}/dma.conf
-	@${MV} ${WRKSRC}/BSDmakefile ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/dma ${PREFIX}/libexec
+	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/dma/dma ${PREFIX}/libexec
+	${INSTALL} -o root -g mail -m 4550 \
+		${WRKSRC}/dma-mbox-create/dma-mbox-create ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/dma.8 ${PREFIX}/man/man8/
 	${MKDIR} ${PREFIX}/etc/dma
-.for i in dma.conf
+.for i in ${CONFFILES}
 	${INSTALL_DATA} -m 0644 ${WRKSRC}/${i} ${PREFIX}/etc/dma/${i}.sample
 .endfor
-	${INSTALL} -o root -g mail -m 0640 ${WRKSRC}/auth.conf \
-		${PREFIX}/etc/dma/auth.conf.sample
-.for i in dma.conf auth.conf
+	${CHMOD} o-r ${PREFIX}/etc/dma/auth.conf.sample
+.for i in ${CONFFILES}
 	if [ ! -f ${PREFIX}/etc/dma/${i} ]; then \
 		${CP} -p ${PREFIX}/etc/dma/${i}.sample \
 			${PREFIX}/etc/dma/${i} ; \

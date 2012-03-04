@@ -1,11 +1,11 @@
---- ./mail.c.orig	2010-10-04 21:03:33.000000000 +0200
-+++ ./mail.c	2010-10-18 13:34:03.222470911 +0200
-@@ -415,7 +415,7 @@
- 					snprintf(line, sizeof(line), "Message-Id: <%"PRIxMAX".%s.%"PRIxMAX"@%s>\n",
- 						 (uintmax_t)time(NULL),
- 						 queue->id,
--						 random(),
-+						 (uintmax_t)random(),
- 						 hostname());
- 				} else if (!had_from) {
- 					had_from = 1;
+--- ./mail.c.orig	2012-01-03 13:54:05.000000000 +0000
++++ ./mail.c	2012-01-24 22:57:41.000000000 +0000
+@@ -332,7 +332,7 @@
+ 	ps->pos = 0;
+ 	addr = strdup(ps->addr);
+ 	if (addr == NULL)
+-		errlog(1, NULL);
++		errlog(1, "strdup failed");
+ 
+ 	if (add_recp(queue, addr, EXPAND_WILDCARD) != 0)
+ 		errlogx(1, "invalid recipient `%s'", addr);
