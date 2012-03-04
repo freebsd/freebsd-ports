@@ -1,11 +1,4 @@
 etc/rc.d/hk_classes.sh
-bin/hk_actionquery
-bin/hk_dbcopy
-bin/hk_exportcsv
-bin/hk_exporthtml
-bin/hk_exportxml
-bin/hk_importcsv
-bin/hk_report
 include/hk_classes/hk_actionquery.h
 include/hk_classes/hk_button.h
 include/hk_classes/hk_class.h
@@ -41,6 +34,7 @@ include/hk_classes/hk_interpreter.h
 include/hk_classes/hk_key.h
 include/hk_classes/hk_label.h
 include/hk_classes/hk_mimetype.h
+include/hk_classes/hk_module.h
 include/hk_classes/hk_presentation.h
 include/hk_classes/hk_qbe.h
 include/hk_classes/hk_referentialintegrity.h
@@ -60,6 +54,10 @@ include/hk_classes/hk_visible.h
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.la
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so.3
+%%DBASE%%lib/hk_classes/drivers/libhk_dbasedriver.a
+%%DBASE%%lib/hk_classes/drivers/libhk_dbasedriver.la
+%%DBASE%%lib/hk_classes/drivers/libhk_dbasedriver.so
+%%DBASE%%lib/hk_classes/drivers/libhk_dbasedriver.so.0
 %%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.a
 %%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.la
 %%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.so
@@ -86,7 +84,7 @@ include/hk_classes/hk_visible.h
 lib/hk_classes/libhk_classes.a
 lib/hk_classes/libhk_classes.la
 lib/hk_classes/libhk_classes.so
-lib/hk_classes/libhk_classes.so.13
+lib/hk_classes/libhk_classes.so.15
 @dirrm lib/hk_classes/drivers
 @dirrm lib/hk_classes
 @dirrm include/hk_classes
