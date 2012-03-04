@@ -9,19 +9,18 @@ PORTNAME=	icons-tango
 PORTVERSION=	0.8.90
 PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://tango.freedesktop.org/releases/ \
-		${MASTER_SITE_GENTOO}
+MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	tango-icon-theme-${PORTVERSION}
 
-MAINTAINER=	pneumann@gmail.com
+MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	A basic set of icons for the most common usage
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/icon-naming-utils \
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack gnomehack
 INSTALLS_ICONS=	yes
