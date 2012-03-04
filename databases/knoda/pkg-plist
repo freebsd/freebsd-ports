@@ -36,6 +36,9 @@ include/hk_kdelabel.h
 include/hk_kdelineedit.h
 include/hk_kdememo.h
 include/hk_kdemessages.h
+include/hk_kdemodule.h
+include/hk_kdemodulepart.h
+include/hk_kdemodulepartfactory.h
 include/hk_kdenewpassworddialog.h
 include/hk_kdenewpassworddialogbase.h
 include/hk_kdepassworddialog.h
@@ -85,6 +88,9 @@ lib/kde3/libhk_kdegridpart.so
 lib/kde3/libhk_kdeqbepart.a
 lib/kde3/libhk_kdeqbepart.la
 lib/kde3/libhk_kdeqbepart.so
+lib/kde3/libhk_kdemodulepart.a
+lib/kde3/libhk_kdemodulepart.la
+lib/kde3/libhk_kdemodulepart.so
 lib/kde3/libhk_kdequerypart.a
 lib/kde3/libhk_kdequerypart.la
 lib/kde3/libhk_kdequerypart.so
@@ -106,6 +112,8 @@ share/apps/hk_kdeclasses/hk_kdeformpartview.rc
 share/apps/hk_kdeclasses/hk_kdegridpart.rc
 share/apps/hk_kdeclasses/hk_kdeinterpreterdialog.rc
 share/apps/hk_kdeclasses/hk_kdeqbepart.rc
+share/apps/hk_kdeclasses/hk_kdemodule.rc
+share/apps/hk_kdeclasses/hk_kdemodulepart.rc
 share/apps/hk_kdeclasses/hk_kdequery.rc
 share/apps/hk_kdeclasses/hk_kdequerypart.rc
 share/apps/hk_kdeclasses/hk_kdequerypartqbe.rc
@@ -120,6 +128,7 @@ share/apps/hk_kdeclasses/pics/add.png
 share/apps/hk_kdeclasses/pics/boolean22x22.png
 share/apps/hk_kdeclasses/pics/button.png
 share/apps/hk_kdeclasses/pics/combobox22x22.png
+share/apps/hk_kdeclasses/pics/datebutton.png
 share/apps/hk_kdeclasses/pics/dbdesigner.png
 share/apps/hk_kdeclasses/pics/delete.png
 share/apps/hk_kdeclasses/pics/designmode.png
@@ -172,6 +181,7 @@ share/doc/HTML/en/knoda/formdatasource4.png
 share/doc/HTML/en/knoda/formdesign.png
 share/doc/HTML/en/knoda/formdesign1.png
 share/doc/HTML/en/knoda/formdesign2.png
+share/doc/HTML/en/knoda/formfilter.png
 share/doc/HTML/en/knoda/formreport.png
 share/doc/HTML/en/knoda/formreportproperty.png
 share/doc/HTML/en/knoda/gridcolumndefinition.png
@@ -225,6 +235,7 @@ share/locale/es/LC_MESSAGES/knoda.mo
 share/locale/fr/LC_MESSAGES/knoda.mo
 share/locale/hu/LC_MESSAGES/knoda.mo
 share/locale/ru/LC_MESSAGES/knoda.mo
+share/locale/uk/LC_MESSAGES/knoda.mo
 share/mimelnk/application/x-hk_classes-sqlite2.desktop
 share/mimelnk/application/x-hk_classes-sqlite3.desktop
 share/mimelnk/application/x-hk_connection.desktop
@@ -234,6 +245,7 @@ share/services/hk_kdedbdesignerpart.desktop
 share/services/hk_kdeformpart.desktop
 share/services/hk_kdegridpart.desktop
 share/services/hk_kdeqbepart.desktop
+share/services/hk_kdemodulepart.desktop
 share/services/hk_kdequerypart.desktop
 share/services/hk_kdereportpart.desktop
 share/services/hk_kdetablepart.desktop
