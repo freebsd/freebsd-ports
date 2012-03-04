@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	urllib3
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,11 @@ COMMENT=	Enhance HTTP Python's standard library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+
+post-patch:
+	@cd ${WRKSRC} && \
+		${FIND} . -type f -name '*.orig' -exec ${RM} -f \{\} \;
 
 .include <bsd.port.mk>
