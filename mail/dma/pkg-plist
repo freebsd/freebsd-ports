@@ -1,4 +1,5 @@
 libexec/dma
+libexec/dma-mbox-create
 @unexec if cmp -s %D/etc/dma/dma.conf.sample %D/etc/dma/dma.conf; then rm -f %D/etc/dma/dma.conf; fi
 etc/dma/dma.conf.sample
 @exec if [ ! -f %B/dma.conf ] ; then cp -p %B/%f %B/dma.conf; fi
@@ -7,4 +8,4 @@ etc/dma/auth.conf.sample
 @exec if [ ! -f %B/auth.conf ] ; then cp -p %B/%f %B/auth.conf; fi
 @dirrmtry etc/dma
 @exec install -d -o root -g mail -m 770 /var/spool/dma
-@dirrmtry /var/spool/dma
+@dirrmtry rmdir /var/spool/dma
