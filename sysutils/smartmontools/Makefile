@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-drivedb --enable-sample \
-		--with-docdir=${DOCSDIR} --with-initscriptdir=${PREFIX}/etc/rc.d
+		--with-initscriptdir=${PREFIX}/etc/rc.d
 
 SUB_FILES=	pkg-message smart
 USE_RC_SUBR=	smartd
@@ -31,6 +31,12 @@ MAN5=		smartd.conf.5
 MAN8=		smartd.8 smartctl.8
 
 PORTDOCS=	*
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--without-docdir --without-exampledir
+.else
+CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
+.endif
 
 CFLAGS:=	${CFLAGS:S/-O2/-O/} -Wno-write-strings
 
