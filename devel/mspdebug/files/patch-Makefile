@@ -1,17 +1,8 @@
---- Makefile.orig	2011-06-14 11:27:10.000000000 +1000
-+++ Makefile	2011-07-29 05:26:08.226244817 +1000
-@@ -16,7 +16,7 @@
- # along with this program; if not, write to the Free Software
- # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- 
--CC = gcc
-+CC ?= gcc
- INSTALL = /usr/bin/install
- PREFIX ?= /usr/local
- LDFLAGS ?= -s
-@@ -38,8 +38,14 @@
+--- Makefile.orig	2011-11-08 08:11:49.000000000 +1100
++++ Makefile	2012-02-25 09:33:44.098219483 +1100
+@@ -43,8 +43,14 @@
  	PORTS_CFLAGS = `pkg-config --cflags libusb`
- 	PORTS_LDFLAGS = `pkg-config --libs libusb` -ltermcap
+ 	PORTS_LDFLAGS = `pkg-config --libs libusb` -ltermcap -pthread
    else
 +    ifeq ($(UNAME),FreeBSD) # FreeBSD Ports stuff
 +# This is only needed prior to FreeBSD 8.x to find libusb
