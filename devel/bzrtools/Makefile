@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/80894766/
+MASTER_SITES=	https://launchpadlibrarian.net/90479443/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extensions to devel/bazaar-ng
@@ -21,6 +21,7 @@ OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" off \
 WRKSRC=	${WRKDIR}/bzrtools
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=	2.5.0
 PYDISTUTILS_PKGNAME=	BzrTools
 
 .include <bsd.port.pre.mk>
