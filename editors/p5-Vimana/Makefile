@@ -7,6 +7,7 @@
 
 PORTNAME=	Vimana
 PORTVERSION=	2010.09303
+PORTREVISION=	1
 CATEGORIES=	editors perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORNELIUS
@@ -27,7 +28,7 @@ RUN_DEPENDS=	vim>=0:${PORTSDIR}/editors/vim \
 		p5-Exporter-Lite>=0.2:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-Digest-MD5>=2.39:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON-PP>=0:${PORTSDIR}/converters/p5-JSON-PP \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-HTTP-Lite>=0:${PORTSDIR}/www/p5-HTTP-Lite \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
