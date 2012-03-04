@@ -3730,6 +3730,7 @@
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-ptreloaded
+    SUBDIR += rubygem-racc
     SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
