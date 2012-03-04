@@ -9,12 +9,14 @@
 PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
 CATEGORIES=	print
-MASTER_SITES=	http://src4.narod.ru/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://oldrus-ispell.sourceforge.net/
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translator TXT + BDF to PS
+
+PROJECTHOST=	ak-various-projects
 
 PLIST_FILES=	bin/txtbdf2ps
 USE_PERL5=	yes
