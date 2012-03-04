@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	adms
-PORTVERSION=	2.2.9
+PORTVERSION=	2.3.0
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	SF/mot-${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}
@@ -23,5 +23,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
+
+MAN1=		admsXml.1
 
 .include <bsd.port.mk>

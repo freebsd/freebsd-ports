@@ -1,4 +1,3 @@
-bin/admsCheck
 bin/admsXml
 lib/libadmsAdmstpath.a
 lib/libadmsAdmstpath.la
