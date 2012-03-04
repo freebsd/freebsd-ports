@@ -1,26 +1,20 @@
---- configure.orig	Tue May 29 08:40:19 2007
-+++ configure	Tue May 29 08:41:29 2007
-@@ -4584,43 +4584,6 @@
-   am__fastdepCXX_FALSE=
+--- configure.orig	2011-05-13 09:26:24.000000000 +0200
++++ configure	2012-02-18 20:13:24.549495741 +0100
+@@ -4811,37 +4811,6 @@
+ $as_echo "no, using $LN_S" >&6; }
  fi
  
 -
--
--
 -#force use of flex/bison
 -if test "x$LEX" != "xflex"; then
--  { echo "$as_me:$LINENO: WARNING: Program flex not found (found $LEX)" >&5
--echo "$as_me: WARNING: Program flex not found (found $LEX)" >&2;}
--  { { echo "$as_me:$LINENO: error: Please install gnu flex from http://www.gnu.org/software/flex/" >&5
--echo "$as_me: error: Please install gnu flex from http://www.gnu.org/software/flex/" >&2;}
--   { (exit 1); exit 1; }; }
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Program flex not found (found $LEX)" >&5
+-$as_echo "$as_me: WARNING: Program flex not found (found $LEX)" >&2;}
+-  as_fn_error $? "Please install gnu flex from http://www.gnu.org/software/flex/" "$LINENO" 5
 -fi
 -if test "x$YACC" != "xbison -y"; then
--  { echo "$as_me:$LINENO: WARNING: Program bison not found (found $YACC)" >&5
--echo "$as_me: WARNING: Program bison not found (found $YACC)" >&2;}
--  { { echo "$as_me:$LINENO: error: Please install gnu bison from http://www.gnu.org/software/bison/" >&5
--echo "$as_me: error: Please install gnu bison from http://www.gnu.org/software/bison/" >&2;}
--   { (exit 1); exit 1; }; }
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Program bison not found (found $YACC)" >&5
+-$as_echo "$as_me: WARNING: Program bison not found (found $YACC)" >&2;}
+-  as_fn_error $? "Please install gnu bison from http://www.gnu.org/software/bison/" "$LINENO" 5
 -fi
 -
 -#advice use of gcc
@@ -33,14 +27,14 @@
 -    CFLAGS="$CFLAGS -Wall"
 -  esac
 -else
--  { echo "$as_me:$LINENO: WARNING: Seems that the selected C-compiler is not gnu gcc C-compiler" >&5
--echo "$as_me: WARNING: Seems that the selected C-compiler is not gnu gcc C-compiler" >&2;}
--  { echo "$as_me:$LINENO: WARNING: We advice you to use gcc as C-compiler" >&5
--echo "$as_me: WARNING: We advice you to use gcc as C-compiler" >&2;}
--  { echo "$as_me:$LINENO: WARNING: You can install it from http://www.gnu.org/software/gcc/" >&5
--echo "$as_me: WARNING: You can install it from http://www.gnu.org/software/gcc/" >&2;}
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Seems that the selected C-compiler is not gnu gcc C-compiler" >&5
+-$as_echo "$as_me: WARNING: Seems that the selected C-compiler is not gnu gcc C-compiler" >&2;}
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: We advice you to use gcc as C-compiler" >&5
+-$as_echo "$as_me: WARNING: We advice you to use gcc as C-compiler" >&2;}
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: You can install it from http://www.gnu.org/software/gcc/" >&5
+-$as_echo "$as_me: WARNING: You can install it from http://www.gnu.org/software/gcc/" >&2;}
 -fi
 -
- # Checks for header files.
- 
- { echo "$as_me:$LINENO: checking for grep that handles long lines and -e" >&5
+ # Libtool initialisation.
+ # Make sure we can run config.sub.
+ $SHELL "$ac_aux_dir/config.sub" sun4 >/dev/null 2>&1 ||
