@@ -6,63 +6,57 @@
 #
 
 PORTNAME=	enma
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ENMA/${PORTVERSION}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A sender authentication milter supporting SPF and Sender ID
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/dns/bind97:checksum
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
-CONF_SUB=	${REINPLACE_CMD} -e '/milter\.postfix/s/false/true/' ${WRKSRC}/enma/etc/enma.conf.sample
-.if defined(WITH_POSTFIX_CURRENT)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
-.endif
-.endif
-
-BIND_PATH_CMD=	cd ${PORTSDIR}/dns/bind97 && ${MAKE} -V WRKSRC
-BIND_SRC_DIR=	${BASENAME} $$(${BIND_PATH_CMD})
+OPTIONS=	LIBBIND	"Link against dns/libbind instead of dns/ldns"	Off
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${PREFIX}/man \
-			--with-libbind=${WRKSRC}/build/tmp_build
+			--with-ssl-incdir=${OPENSSLINC} --with-ssl-libdir=${OPENSSLLIB}
 USE_RC_SUBR=	milter-enma
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 MANLANG=	"" ja_JP.UTF-8
 MAN1=		enma.1
 MANCOMPRESSED=	no
-PLIST_FILES=	libexec/enma bin/sidfquery etc/enma.conf.sample
-PORTDOCS=	ChangeLog INSTALL LICENSE README TODO
+PLIST_FILES=	bin/sidfquery etc/enma.conf.sample lib/libsauth.a lib/libsauth.la \
+		lib/libsauth.so lib/libsauth.so.0 libexec/enma
+PORTDOCS=	ChangeLog INSTALL LICENSE README
 SUB_FILES=	milter-enma
+
+.if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
+CONF_SUB=	${REINPLACE_CMD} -e '/milter\.postfix/s/false/true/' ${WRKSRC}/enma/etc/enma.conf.sample
+. if defined(WITH_POSTFIX_CURRENT)
+RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-current
+. else
+RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
+. endif
+.endif
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-USE_OPENSSL=	yes
-.if ${OSVERSION} < 700000
-WITH_OPENSSL_PORT=	yes
+.if defined(WITH_LIBBIND)
+CONFIGURE_ARGS+=	--with-resolver=libbind \
+			--with-libbind-incdir=${LOCALBASE}/include/bind \
+			--with-libbind-libdir=${LOCALBASE}/lib
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libbind.a:${PORTSDIR}/dns/libbind
+.else
+CONFIGURE_ARGS+=	--with-resolver=ldns
+LIB_DEPENDS+=	ldns.1:${PORTSDIR}/dns/ldns
 .endif
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 pre-configure:
-	cd ${PORTSDIR}/dns/bind97 && ${MAKE} -DBATCH patch && \
-	${LN} -s $$(${BIND_PATH_CMD}) ${WRKSRC}/build && \
-	cd ${WRKSRC}/build/$$(${BIND_SRC_DIR}) && \
-	./configure --prefix=${WRKSRC}/build/tmp_build --enable-threads && \
-	cd ${WRKSRC}/build/$$(${BIND_SRC_DIR})/lib/dns && \
-	${MAKE} include/dns/enumtype.h include/dns/enumclass.h && \
-	cd ${WRKSRC}/build/$$(${BIND_SRC_DIR})/lib/bind9 && \
-	${MAKE} && ${MAKE} install
-	${REINPLACE_CMD} -e 's/-lbind/-lbind9/' ${WRKSRC}/configure \
-	${WRKSRC}/enma/bin/Makefile.in ${WRKSRC}/enma/src/Makefile.in
 	$$(${CONF_SUB})
 
 post-install:
