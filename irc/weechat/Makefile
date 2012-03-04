@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -20,10 +20,11 @@ CONFLICTS=	weechat-devel-0.*
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_NCURSES=	yes
-WITH_NCURSES_BASE=	yes
 USE_CMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
+
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 
 OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		PYTHON		"Python scripting support"	Off	\
@@ -122,7 +123,7 @@ PLIST_SUB+=	LUA="@comment "
 
 .if defined(WITH_DOCUMENTATION)
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc
-BUILD_DEPENDS+=	source-highlight:${PORTSDIR}/textproc/source-highlight
+BUILD_DEPENDS+=	source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
 PLIST_SUB+=	DOCUMENTATION=""
 .else
 CMAKE_ARGS+=	-DENABLE_DOC=no
@@ -146,6 +147,6 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

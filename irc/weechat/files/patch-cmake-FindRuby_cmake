@@ -1,5 +1,5 @@
---- cmake/FindRuby.cmake.orig	2011-01-18 19:54:43.825973597 +0000
-+++ cmake/FindRuby.cmake	2011-01-18 19:57:33.943672013 +0000
+--- cmake/FindRuby.cmake.orig	2011-11-21 17:12:47.000000000 +0000
++++ cmake/FindRuby.cmake	2011-11-22 21:04:12.114830585 +0000
 @@ -32,13 +32,12 @@
  ENDIF(RUBY_FOUND)
  
@@ -11,8 +11,8 @@
  
  IF(RUBY_EXECUTABLE)
    EXECUTE_PROCESS(
--    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubyhdrdir'] || Config::CONFIG['archdir']"
-+    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubyhdrdir'] || Config::CONFIG['topdir']"
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['rubyhdrdir'] || RbConfig::CONFIG['archdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['rubyhdrdir'] || RbConfig::CONFIG['topdir']"
      OUTPUT_VARIABLE RUBY_ARCH_DIR
      )
  
@@ -20,14 +20,14 @@
      )
  
    EXECUTE_PROCESS(
--    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['libdir']"
-+    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::TOPDIR + '/lib'"
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['libdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::TOPDIR + '/lib'"
      OUTPUT_VARIABLE RUBY_POSSIBLE_LIB_PATH
      )
-   
+ 
    EXECUTE_PROCESS(
--    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubylibdir']"
-+    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::TOPDIR + '/lib/ruby/' + Config::CONFIG['ruby_version']"
+-    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::CONFIG['rubylibdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts RbConfig::TOPDIR + '/lib/ruby/' + RbConfig::CONFIG['ruby_version']"
      OUTPUT_VARIABLE RUBY_RUBY_LIB_PATH
      )
  
