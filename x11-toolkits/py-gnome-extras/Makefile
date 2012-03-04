@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-extras
 PORTVERSION=	2.25.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -23,7 +23,6 @@ LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		gksu2.0:${PORTSDIR}/sysutils/libgksu \
 #		gdl-1.2:${PORTSDIR}/x11-toolkits/gdl
 
-USE_GECKO=	libxul
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
@@ -43,15 +42,7 @@ DOCSDIR=	${WRKSRC}/share/doc/py-gnome-extras
 
 .include <bsd.port.pre.mk>
 
-.if defined(GECKO)
-CONFIGURE_ARGS+=	--with-gtkmozembed=${GECKO}
-.endif
-
 post-patch:
-.if ${GECKO}=="libxul"
-	@${REINPLACE_CMD} -e 's|xulrunner|libxul|' \
-		${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e 's|$mozpackage-gtkmozembed|$mozpackage|' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/docs -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
