@@ -9,31 +9,14 @@ PORTNAME=	postgresql
 PORTREVISION=	0
 PKGNAMESUFFIX=	-docs
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
-MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
 
-DEFAULT_PGSQL_VER?=84
+USE_PGSQL=	yes
+WANT_PGSQL_VER?=84
 
-# can't include <bsd.port.pre.mk> in a slave port
-# so set these instead:
-LOCALBASE?=	/usr/local
-SED?=		/usr/bin/sed
-
-CONFLICTS=	postgresql-docs
-
-# Setting/finding PostgreSQL version we want.
-.if exists(${LOCALBASE}/bin/pg_config)
-PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\).*/\1\2/p'
-.else
-PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.endif
-
-.if (${PGSQL_VER} == 90) || (${PGSQL_VER} == 91)
-BROKEN=		"not implemented yet"
-.endif
- 
 NO_BUILD=	YES
 SLAVE_ONLY=	YES
 PATCHDIR=	mustnotexist
