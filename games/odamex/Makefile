@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	odamex
-PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTVERSION=	0.5.6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
@@ -48,7 +47,7 @@ post-patch:
 .endif
 
 do-install:
-.for f in odamaster odamex odasrv
+.for f in odamex odasrv
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 .if defined(WITH_LAUNCHER)

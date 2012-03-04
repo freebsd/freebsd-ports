@@ -1,11 +1,11 @@
---- ./server/src/d_main.cpp.orig	2009-03-08 00:28:11.000000000 -0500
-+++ ./server/src/d_main.cpp	2009-05-18 16:40:24.000000000 -0400
-@@ -597,6 +597,8 @@
- 	AddSearchDir(dirs, Args.CheckValue("-waddir"), separator);
- 	AddSearchDir(dirs, getenv("DOOMWADDIR"), separator);
- 	AddSearchDir(dirs, getenv("DOOMWADPATH"), separator);
-+    AddSearchDir(dirs, "%%DATADIR%%", separator);
-+    AddSearchDir(dirs, "%%DMDIR%%", separator);
-     AddSearchDir(dirs, getenv("HOME"), separator);
+--- server/src/d_main.cpp.orig	2011-11-05 04:59:48.000000000 +0100
++++ server/src/d_main.cpp	2011-12-01 05:33:47.423967844 +0100
+@@ -627,6 +627,8 @@
+ 	D_AddSearchDir(dirs, Args.CheckValue("-waddir"), separator);
+ 	D_AddSearchDir(dirs, getenv("DOOMWADDIR"), separator);
+ 	D_AddSearchDir(dirs, getenv("DOOMWADPATH"), separator);
++    D_AddSearchDir(dirs, "/usr/local/share/odamex", separator);
++    D_AddSearchDir(dirs, "/usr/local/share/doom", separator);
+     D_AddSearchDir(dirs, getenv("HOME"), separator);
+     D_AddSearchDir(dirs, waddirs.cstring(), separator);
  
- 	dirs.erase(std::unique(dirs.begin(), dirs.end()), dirs.end());
