@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	10.0.4
+PORTVERSION=	10.0.7
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://dd1.aquafold.com/download/v${PORTVERSION:R}.0/java/
 DISTNAME=	ads-java-novm-${PORTVERSION}
