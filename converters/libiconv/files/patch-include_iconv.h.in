@@ -1,0 +1,43 @@
+diff --git include/iconv.h.in include/iconv.h.in
+--- include/iconv.h.in
++++ include/iconv.h.in
+@@ -89,6 +89,11 @@ extern size_t iconv (iconv_t cd, @ICONV_CONST@ char* * inbuf, size_t *inbyteslef
+ extern int iconv_close (iconv_t cd);
+ 
+ 
++#ifdef __cplusplus
++}
++#endif
++
++
+ #ifndef LIBICONV_PLUG
+ 
+ /* Nonstandard extensions. */
+@@ -106,6 +111,10 @@ extern int iconv_close (iconv_t cd);
+ #include <wchar.h>
+ #endif
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ /* A type that holds all memory needed by a conversion descriptor.
+    A pointer to such an object can be used as an iconv_t. */
+ typedef struct {
+@@ -223,12 +232,11 @@ extern const char * iconv_canonicalize (const char * name);
+ extern void libiconv_set_relocation_prefix (const char *orig_prefix,
+                                             const char *curr_prefix);
+ 
+-#endif
+-
+-
+ #ifdef __cplusplus
+ }
+ #endif
+ 
++#endif
++
+ 
+ #endif /* _LIBICONV_H */
+-- 
+1.7.2.5
