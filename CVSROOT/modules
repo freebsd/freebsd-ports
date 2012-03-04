@@ -7204,7 +7204,6 @@ kdetoys4                        ports/x11-clocks/kdetoys4
 kdeutils3                       ports/misc/kdeutils3
 kdeutils4                       ports/misc/kdeutils4
 kdeutils4-printer-applet        ports/print/kdeutils4-printer-applet
-kdevelop                        ports/devel/kdevelop
 kdevelop-kde4                   ports/devel/kdevelop-kde4
 kdevelop-pg-qt                  ports/devel/kdevelop-pg-qt
 kdevelop-php                    ports/devel/kdevelop-php
@@ -9401,6 +9400,7 @@ mkitalic                        ports/x11-fonts/mkitalic
 mknbi                           ports/net/mknbi
 mknmz-wwwoffle                  ports/www/mknmz-wwwoffle
 mkntpwd                         ports/sysutils/mkntpwd
+mkreadmes                       ports/ports-mgmt/mkreadmes
 mksh                            ports/shells/mksh
 mksunbootcd                     ports/sysutils/mksunbootcd
 mktool                          ports/sysutils/mktool
@@ -9732,6 +9732,7 @@ mtrace                          ports/net-mgmt/mtrace
 mtrxmath                        ports/math/mtrxmath
 mtx                             ports/misc/mtx
 mtxorbd                         ports/sysutils/mtxorbd
+mu                              ports/mail/mu
 mu-conference                   ports/net-im/mu-conference
 mucommander                     ports/x11-fm/mucommander
 mudmagic                        ports/games/mudmagic
@@ -14483,6 +14484,7 @@ p5-Test-BinaryData              ports/devel/p5-Test-BinaryData
 p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
+p5-Test-Classy                  ports/devel/p5-Test-Classy
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
 p5-Test-Command                 ports/devel/p5-Test-Command
 p5-Test-Command-Simple          ports/devel/p5-Test-Command-Simple
@@ -18997,6 +18999,7 @@ p5-test-binarydata              ports/devel/p5-Test-BinaryData
 p5-test-block                   ports/devel/p5-Test-Block
 p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
+p5-test-classy                  ports/devel/p5-Test-Classy
 p5-test-cmd                     ports/devel/p5-Test-Cmd
 p5-test-command                 ports/devel/p5-Test-Command
 p5-test-command-simple          ports/devel/p5-Test-Command-Simple
@@ -20038,6 +20041,7 @@ pear-Horde_Alarm                ports/devel/pear-Horde_Alarm
 pear-Horde_Argv                 ports/devel/pear-Horde_Argv
 pear-Horde_Auth                 ports/security/pear-Horde_Auth
 pear-Horde_Autoloader           ports/devel/pear-Horde_Autoloader
+pear-Horde_Autoloader_Cache     ports/devel/pear-Horde_Autoloader_Cache
 pear-Horde_Browser              ports/www/pear-Horde_Browser
 pear-Horde_Cache                ports/devel/pear-Horde_Cache
 pear-Horde_Cli                  ports/devel/pear-Horde_Cli
@@ -20092,6 +20096,8 @@ pear-Horde_Secret               ports/security/pear-Horde_Secret
 pear-Horde_Serialize            ports/devel/pear-Horde_Serialize
 pear-Horde_Service_Facebook     ports/www/pear-Horde_Service_Facebook
 pear-Horde_Service_Twitter      ports/www/pear-Horde_Service_Twitter
+pear-Horde_Service_UrlShortener  ports/www/pear-Horde_Service_UrlShortener
+pear-Horde_Service_Weather      ports/www/pear-Horde_Service_Weather
 pear-Horde_SessionHandler       ports/www/pear-Horde_SessionHandler
 pear-Horde_Share                ports/security/pear-Horde_Share
 pear-Horde_SpellChecker         ports/textproc/pear-Horde_SpellChecker
@@ -20104,6 +20110,7 @@ pear-Horde_Text_Diff            ports/textproc/pear-Horde_Text_Diff
 pear-Horde_Text_Filter          ports/textproc/pear-Horde_Text_Filter
 pear-Horde_Text_Filter_Csstidy  ports/textproc/pear-Horde_Text_Filter_Csstidy
 pear-Horde_Text_Flowed          ports/textproc/pear-Horde_Text_Flowed
+pear-Horde_Thrift               ports/devel/pear-Horde_Thrift
 pear-Horde_Token                ports/devel/pear-Horde_Token
 pear-Horde_Translation          ports/devel/pear-Horde_Translation
 pear-Horde_Tree                 ports/devel/pear-Horde_Tree
@@ -20382,6 +20389,7 @@ pear-horde_alarm                ports/devel/pear-Horde_Alarm
 pear-horde_argv                 ports/devel/pear-Horde_Argv
 pear-horde_auth                 ports/security/pear-Horde_Auth
 pear-horde_autoloader           ports/devel/pear-Horde_Autoloader
+pear-horde_autoloader_cache     ports/devel/pear-Horde_Autoloader_Cache
 pear-horde_browser              ports/www/pear-Horde_Browser
 pear-horde_cache                ports/devel/pear-Horde_Cache
 pear-horde_cli                  ports/devel/pear-Horde_Cli
@@ -20436,6 +20444,8 @@ pear-horde_secret               ports/security/pear-Horde_Secret
 pear-horde_serialize            ports/devel/pear-Horde_Serialize
 pear-horde_service_facebook     ports/www/pear-Horde_Service_Facebook
 pear-horde_service_twitter      ports/www/pear-Horde_Service_Twitter
+pear-horde_service_urlshortener  ports/www/pear-Horde_Service_UrlShortener
+pear-horde_service_weather      ports/www/pear-Horde_Service_Weather
 pear-horde_sessionhandler       ports/www/pear-Horde_SessionHandler
 pear-horde_share                ports/security/pear-Horde_Share
 pear-horde_spellchecker         ports/textproc/pear-Horde_SpellChecker
@@ -20448,6 +20458,7 @@ pear-horde_text_diff            ports/textproc/pear-Horde_Text_Diff
 pear-horde_text_filter          ports/textproc/pear-Horde_Text_Filter
 pear-horde_text_filter_csstidy  ports/textproc/pear-Horde_Text_Filter_Csstidy
 pear-horde_text_flowed          ports/textproc/pear-Horde_Text_Flowed
+pear-horde_thrift               ports/devel/pear-Horde_Thrift
 pear-horde_token                ports/devel/pear-Horde_Token
 pear-horde_translation          ports/devel/pear-Horde_Translation
 pear-horde_tree                 ports/devel/pear-Horde_Tree
