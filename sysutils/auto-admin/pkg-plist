@@ -1,0 +1,18 @@
+sbin/auto-append-line
+sbin/auto-ask
+sbin/auto-clean-ports
+sbin/auto-disable-service
+sbin/auto-enable-service
+sbin/auto-fastest-mirror
+sbin/auto-install-packages
+sbin/auto-ipfw-gateway-setup
+sbin/auto-ldap-adduser
+sbin/auto-ldap-client-setup
+sbin/auto-package-installed
+sbin/auto-replace-file
+sbin/auto-service-enabled
+sbin/auto-update-port-framework
+sbin/auto-update-xorg.conf
+sbin/auto-xdm-toggle
+%%DATADIR%%/ipfw-rules.sh
+@dirrm %%DATADIR%%
