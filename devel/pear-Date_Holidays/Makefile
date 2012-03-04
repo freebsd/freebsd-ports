@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.21.5
+PORTVERSION=	0.21.6
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
