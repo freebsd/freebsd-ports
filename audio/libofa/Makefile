@@ -14,6 +14,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	The Open Fingerprint Architecture Library
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		curl.6:${PORTSDIR}/ftp/curl
@@ -27,8 +30,5 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.mk>
