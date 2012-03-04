@@ -9,7 +9,7 @@ DISTVERSION?=	8.2.23
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER?=	crees@FreeBSD.org
+MAINTAINER?=	pgsql@FreeBSD.org
 
 FORBIDDEN=	Vulnerable http://www.postgresql.org/about/news/1377/
 DEPRECATED=	No longer supported by upstream-- upgrade to later version

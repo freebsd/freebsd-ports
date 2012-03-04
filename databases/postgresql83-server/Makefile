@@ -9,7 +9,7 @@ DISTVERSION?=	8.3.18
 PORTREVISION?=	0
 PKGNAMESUFFIX?=	-server
 
-MAINTAINER?=	crees@FreeBSD.org
+MAINTAINER?=	pgsql@FreeBSD.org
 
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 
