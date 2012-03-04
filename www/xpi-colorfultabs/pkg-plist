@@ -18,6 +18,10 @@
 %%XPI_XPIDIR%%/chrome/skin/options.css
 %%XPI_XPIDIR%%/chrome/skin/seamonkey-bg.png
 %%XPI_XPIDIR%%/chrome/skin/seamonkey.png
+%%XPI_XPIDIR%%/chrome/skin/tab-border-image-pinned-hover6.png
+%%XPI_XPIDIR%%/chrome/skin/tab-border-image-pinned6.png
+%%XPI_XPIDIR%%/chrome/skin/tab-bottom-normal-active.png
+%%XPI_XPIDIR%%/chrome/skin/tab-bottom-pinned-mac.png
 %%XPI_XPIDIR%%/chrome/skin/tab-left-bkgnd.png
 %%XPI_XPIDIR%%/chrome/skin/tab-middle-bkgnd.png
 %%XPI_XPIDIR%%/chrome/skin/tab-original.png
@@ -25,7 +29,11 @@
 %%XPI_XPIDIR%%/chrome/skin/tab-pinned-white.png
 %%XPI_XPIDIR%%/chrome/skin/tab-pinned.png
 %%XPI_XPIDIR%%/chrome/skin/tab-right-bkgnd.png
+%%XPI_XPIDIR%%/chrome/skin/tab-top-normal-active.png
+%%XPI_XPIDIR%%/chrome/skin/tab-top-normal-pinned-mac.png
+%%XPI_XPIDIR%%/chrome/skin/tab-top-normal-standout-mac.png
 %%XPI_XPIDIR%%/chrome/skin/tab.png
+%%XPI_XPIDIR%%/chrome/skin/tabbar-top-bg-inactive.png
 %%XPI_XPIDIR%%/chrome/skin.png
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/defaults/preferences/defaults.js
