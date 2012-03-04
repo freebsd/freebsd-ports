@@ -1,9 +1,9 @@
---- utilities/Makefile.in.orig	Sat Jul 22 12:09:44 2006
-+++ utilities/Makefile.in	Sat Jul 22 12:11:59 2006
-@@ -237,22 +237,22 @@
+--- utilities/Makefile.in.orig	2006-12-17 15:27:52.000000000 +0100
++++ utilities/Makefile.in	2012-02-19 19:21:04.761495232 +0100
+@@ -248,22 +248,22 @@
  target_alias = @target_alias@
  INCLUDES = -I../hk_classes
- AM_CXXFLAGS = -Wall   -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings
+ AM_CXXFLAGS = -Wall   -W -Wconversion -Wshadow -Wcast-qual -Wwrite-strings -I@XMLINCLUDE@ @BITARCHITECTURE@
 -hk_report_LDADD = ../hk_classes/libhk_classes.la -ldl
 +hk_report_LDADD = ../hk_classes/libhk_classes.la -largp ${LIBPTHREAD}
  hk_report_SOURCES = hk_reportutility.cpp

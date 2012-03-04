@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hk_classes
-PORTVERSION=	0.8.1
-PORTREVISION=	6
+PORTVERSION=	0.8.3
 CATEGORIES=	databases
 MASTER_SITES=	SF/hk-classes/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Library for rapid development of database applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -43,11 +43,8 @@ OPTIONS=	MYSQL		"Build MySQL driver"		on  \
 		ODBC		"Build unixODBC driver"		off \
 		PARADOX		"Build Paradox driver"		off \
 		SQLITE2		"Build with sqlite2 driver"	off \
-		SQLITE3		"Build with sqlite3 driver"	off
-
-MAN1=		hk_report.1man hk_actionquery.1man hk_exportxml.1man \
-		hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man \
-		hk_dbcopy.1man
+		SQLITE3		"Build with sqlite3 driver"	off \
+		DBASE		"Build with dbase driver"	off
 
 .include <bsd.port.pre.mk>
 
@@ -62,6 +59,13 @@ PLIST_SUB+=	MYSQL=""
 .else
 CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if !defined(WITH_DBASE)
+CONFIGURE_ARGS+=	--without-dbase
+PLIST_SUB+=	DBASE="@comment "
+.else
+PLIST_SUB+=	DBASE=""
 .endif
 
 .if defined(WITH_POSTGRESQL)
@@ -129,6 +133,15 @@ PLIST_SUB+=	SQLITE3=""
 CONFIGURE_ARGS+=	--without-sqlite3
 PLIST_SUB+=	SQLITE3="@comment "
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s|INCLUDES = -I../hk_classes \
+		-I./pxlib|INCLUDES = -I../hk_classes -I./pxlib \
+		-I${LOCALBASE}/include|g" \
+		${WRKSRC}/hk_paradoxclasses/Makefile.in
+
+post-configure:
+	${REINPLACE_CMD} -e "s| -I|','|g" ${WRKSRC}/python/setup.py
 
 post-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#' ${FILESDIR}/hk_classes.sh > \
