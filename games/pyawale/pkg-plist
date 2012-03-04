@@ -69,9 +69,12 @@ bin/pyawale
 %%DATADIR%%/src/images/awale_south_7.png
 %%DATADIR%%/src/images/awale_south_8.png
 %%DATADIR%%/src/images/awale_south_9.png
+%%DATADIR%%/src/images/freesansbold.ttf
 %%DATADIR%%/docs/awale_algos.rest
 %%DATADIR%%/docs/awale_module.rest
+%%DATADIR%%/docs/pyawale.desktop
 %%DATADIR%%/docs/pyawale.html
+%%DATADIR%%/docs/pyawale.png
 %%DATADIR%%/docs/pyawale.rest
 %%DATADIR%%/docs/pyawale_end.jpg
 %%DATADIR%%/docs/pyawale_gui.jpg
@@ -82,7 +85,6 @@ bin/pyawale
 %%DATADIR%%/src/__init__.py
 %%DATADIR%%/src/__init__.pyc
 %%DATADIR%%/src/__init__.pyo
-%%DATADIR%%/src/pyawale
 %%DATADIR%%/src/pyawale.py
 %%DATADIR%%/src/pyawale.pyc
 %%DATADIR%%/src/pyawale.pyo

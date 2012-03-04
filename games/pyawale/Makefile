@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pyawale
-PORTVERSION=	0.3.8
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/pyawale/ CENKES
 
