@@ -82,9 +82,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/blackbox.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/is_clean.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/is_clean.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/is_clean.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/shelf_tests.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/shelf_tests.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/shelf_tests.pyo
@@ -112,9 +109,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_patch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_patch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_patch.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.pyo
