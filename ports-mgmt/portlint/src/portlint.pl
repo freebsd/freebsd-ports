@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.237 2011/12/27 01:22:45 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.241 2012/03/04 18:40:53 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 8;
+my $micro = 9;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -518,7 +518,7 @@ if ($committer) {
 		unless $newport;
 
 	# Check for ports that may break INDEX
-	my $indexerr = `env LOCALBASE=/nonexistentlocal X11BASE=/nonexistentx make $makeenv describe 2>&1 >/dev/null`;
+	my $indexerr = `env LOCALBASE=/nonexistentlocal make $makeenv describe 2>&1 >/dev/null`;
 	chomp $indexerr;
 	$indexerr =~ tr/\n/ /s;
 	&perror("FATAL", "", -1, "breaks INDEX ($indexerr).")
@@ -1318,8 +1318,7 @@ sub check_depends_syntax {
 			if ($m{'dep'} =~ /\${PREFIX}/) {
 				&perror("FATAL", $file, -1, "\${PREFIX} must not be ".
 					"contained in *_DEPENDS. ".
-					"use \${LOCALBASE} or ".
-					"\${X11BASE} instead.");
+					"use \${LOCALBASE} instead.");
 			}
 
 			# Check for direct dependency on apache.
@@ -2078,6 +2077,15 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
+	# whole file: check for reassignment of ECHO_MSG
+	#
+	if ($whole =~ /^ECHO_MSG[?:]?=\s*(.*)$/m) {
+		&perror("FATAL", $file, -1, "Re-assigning ECHO_MSG can break ".
+			"``make readme''.  Consider using \${PRINTF} directly instead ".
+			"for custom message output.");
+	}
+
+	#
 	# whole file: check for --build, --mandir, and --infodir
 	# when GNU_CONFIGURE
 	#
@@ -2317,7 +2325,7 @@ EOF
 	&checkorder('PORTNAME', $tmp, $file, qw(
 PORTNAME PORTVERSION DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
 PORTREVISION PORTEPOCH CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PROJECTHOST PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
 DIST_SUBDIR EXTRACT_ONLY
 	));
 
@@ -2435,7 +2443,7 @@ DIST_SUBDIR EXTRACT_ONLY
 		if (2 <= @cat && $cat[1] eq "x11") {
 			&perror("WARN", $file, -1, "only specific kind of apps should ".
 				"specify \"x11\" in CATEGORIES. ".
-				"Do you mean just USE_XLIB? ".
+				"Do you mean just USE_XORG? ".
 				"Then remove \"x11\" from CATEGORIES.");
 		}
 	}
@@ -2829,8 +2837,9 @@ MAINTAINER COMMENT
 
 	if ($makevar{LICENSE}) {
 		&checkorder('LICENSE', $tmp, $file, qw(
-			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME(_\w+)?
-			LICENSE_TEXT(_\w+)? LICENSE_FILE LICENSE_PERMS(_\w+)?
+			LICENSE LICENSE_COMB LICENSE_GROUPS(_\w+)? LICENSE_NAME(_\w+)?
+			LICENSE_TEXT(_\w+)? LICENSE_FILE(_\w+)? LICENSE_PERMS(_\w+)?
+			LICENSE_DISTFILES(_\w+)?
 		));
 
 		# check LICENSE
@@ -3081,27 +3090,6 @@ FETCH_DEPENDS DEPENDS_TARGET
 			"you do not need $1.");
 	}
 
-	# check USE_X11 and USE_IMAKE
-	if ($tmp =~ /\nUSE_IMAKE[?+]?=/
-	 && $tmp =~ /\n(USE_X11)[?+]?=/) {
-		&perror("WARN", $file, -1, "since you already have USE_IMAKE, ".
-			"you don't need $1.");
-	}
-
-	# check USE_X11 and USE_IMAKE
-	if ($newxdef && $tmp =~ /\nUSE_IMAKE[?+]?=/
-	 && $tmp =~ /\n(USE_X_PREFIX)[?+]?=/) {
-		&perror("WARN", $file, -1, "since you already have USE_IMAKE, ".
-			"you don't need $1.");
-	}
-
-	# check USE_X11 and USE_X_PREFIX
-	if ($newxdef && $tmp =~ /\nUSE_X11[?+]?=/
-	 && $tmp !~ /\nUSE_X_PREFIX[?+]?=/) {
-		&perror("FATAL", $file, -1, "meaning of USE_X11 was changed in Aug 1998. ".
-			"use USE_X_PREFIX instead.");
-	}
-
 	# check direct use of important make targets.
 	if ($tmp =~ /\n(fetch|extract|patch|configure|build|install):/) {
 		&perror("FATAL", $file, -1, "direct redefinition of make target \"$1\" ".
@@ -3341,7 +3329,6 @@ sub abspathname {
 /usr/opt	\${PORTSDIR} instead
 $portsdir	\${PORTSDIR} instead
 $localbase	\${PREFIX} or \${LOCALBASE}, as appropriate
-/usr/X11	\${PREFIX} or \${X11BASE}, as appropriate
 EOF
 	foreach my $i (keys %cmdnames) {
 		if ($str =~ /$i/) {
