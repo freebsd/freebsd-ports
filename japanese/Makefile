@@ -17,6 +17,7 @@
     SUBDIR += acroread8
     SUBDIR += acroread9
     SUBDIR += ajaxzip2-core
+    SUBDIR += ajaxzip2-data
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
