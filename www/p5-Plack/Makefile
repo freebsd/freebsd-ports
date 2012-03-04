@@ -7,6 +7,7 @@
 
 PORTNAME=	Plack
 PORTVERSION=	0.9985
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -27,7 +28,9 @@ RUN_DEPENDS=	\
 	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
 	p5-URI>0:${PORTSDIR}/net/p5-URI \
 	p5-parent>0:${PORTSDIR}/devel/p5-parent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
@@ -110,8 +113,5 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Test::Suite.3 \
 	Plack::Util.3 \
 	Plack::Util::Accessor.3
-
-post-extract:
-	${RM} ${WRKSRC}/share/\#foo
 
 .include <bsd.port.mk>
