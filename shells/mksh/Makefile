@@ -27,7 +27,7 @@ do-extract:
 	${GZCAT} ${DISTDIR}/${DISTFILES} | ${CPIO} -id
 
 do-build:
-	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r -combine
+	cd ${WRKSRC} && CFLAGS="${CFLAGS}" CC="${CC}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" SHELL=${SH} ${SH} ${WRKSRC}/Build.sh -r -c lto
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mksh ${PREFIX}/bin
