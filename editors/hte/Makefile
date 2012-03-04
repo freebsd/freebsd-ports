@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/ht-source
 DISTNAME=	ht-${PORTVERSION}
@@ -15,18 +15,20 @@ DISTNAME=	ht-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A file editor/viewer/analyzer for executables
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ht
 
-OPTIONS=	LZO2	"Enable external lzo2 compresssion support"	off
+OPTIONS=	LZO2	"Enable external lzo2 compresssion support"	off	\
+		X11	"Build X11 textmode support"			on
 
-.include <bsd.port.pre.mk>
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON=	does not build on ia64
 
-.if ${ARCH} == "ia64"
-BROKEN=	Does not build on ia64
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_LZO2)
 LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
@@ -45,6 +47,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README
+INFO=		ht
 .endif
 
 post-patch:
@@ -58,6 +61,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/hthelp.info ${PREFIX}/${INFO_PATH}/ht.info
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
