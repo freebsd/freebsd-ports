@@ -1,5 +1,5 @@
---- port.1.orig	2009-09-09 21:59:59.000000000 +0200
-+++ port.1	2009-10-25 20:01:28.000000000 +0100
+--- port.1.orig	2009-09-09 20:59:59.000000000 +0100
++++ port.1	2012-03-04 12:04:12.799204352 +0000
 @@ -125,6 +125,9 @@
  .Bl -tag -width ".Pa suffix"
  .It CVS
@@ -19,3 +19,14 @@
  .It Fl m Ar mode
  Overrides automatic detection of operation mode:
  .Bl -tag -width update
+@@ -245,6 +250,10 @@
+ Skips running
+ .Xr portlint 1 .
+ Using this option will generate a warning and it strongly discouraged.
++.It Fl P
++Don't send the PR.
++Just print to stdout (see -P in
++.Xr send-pr 1) .
+ .El
+ .It Ar test
+ Automates the process of testing a new port (or a port update) 
