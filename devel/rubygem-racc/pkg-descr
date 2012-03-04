@@ -1,0 +1,6 @@
+Racc is an LALR(1) parser generator for Ruby.  It is written in Ruby
+and generates Ruby code.  Almost all functions of yacc(1) is
+implemented.
+
+Author:	Minero Aoki <aamine@loveruby.net>
+WWW:	http://rubyforge.org/frs/?group_id=7299
