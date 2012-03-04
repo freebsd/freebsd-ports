@@ -22,6 +22,7 @@
 %%SITE_PERL%%/Devel/ebug/Plugin/Run.pm
 %%SITE_PERL%%/Devel/ebug/Plugin/StackTrace.pm
 bin/ebug
+bin/ebug_backend_perl
 bin/ebug_client
 bin/ebug_server
 @dirrmtry %%SITE_PERL%%/Devel/ebug/Plugin
