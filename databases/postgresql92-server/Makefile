@@ -333,7 +333,7 @@ pre-everything::
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
-.if !defined(NO_BUILD)
+.if !defined(NO_BUILD) && !target(do-build)
 
 do-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
@@ -349,9 +349,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
 PLIST_SUB+=	PG_USER=$(PG_USER)
 .  endif
-.endif
 
-.if !defined(NO_BUILD)
 post-patch:
 .  if defined(WITH_ICU)
 	@${REINPLACE_CMD} -E -e \
