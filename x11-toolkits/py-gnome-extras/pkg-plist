@@ -15,8 +15,6 @@ include/pygda-4.0/pygdavalue_conversions.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2/_gksu2.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkmozembed.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkmozembed.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.so
 libdata/pkgconfig/gnome-python-extras-2.0.pc
@@ -38,7 +36,6 @@ share/pygtk/2.0/argtypes/gda-arg-types.pyc
 share/pygtk/2.0/argtypes/gda-arg-types.pyo
 share/pygtk/2.0/defs/gda.defs
 share/pygtk/2.0/defs/gtkhtml2.defs
-share/pygtk/2.0/defs/gtkmozembed.defs
 share/pygtk/2.0/defs/trayicon.defs
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gtkspell
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gtkhtml2
