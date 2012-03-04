@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Lite
-PORTVERSION=	1.031
+PORTVERSION=	1.032
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Cache-Memcached>=1.27:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-DBIx-ContextualFetch>=0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
-		p5-Ima-DBI-Contextual>=1.001:${PORTSDIR}/databases/p5-Ima-DBI-Contextual \
+		p5-Ima-DBI-Contextual>=1.004:${PORTSDIR}/databases/p5-Ima-DBI-Contextual \
 		p5-SQL-Abstract>=0:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0:${PORTSDIR}/databases/p5-SQL-Abstract-Limit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
