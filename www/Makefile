@@ -421,7 +421,6 @@
     SUBDIR += mathopd
     SUBDIR += mawstats
     SUBDIR += mediawiki
-    SUBDIR += mediawiki116
     SUBDIR += mergelog
     SUBDIR += metacafe_dl
     SUBDIR += mgstat
