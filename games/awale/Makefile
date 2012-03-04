@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awale
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -15,7 +15,7 @@ COMMENT=	African board game
 
 OPTIONS=	GUI "Installs Tcl/Tk GUI" on
 
-MAN1=		${PORTNAME}.1
+MAN6=		${PORTNAME}.6
 
 .include <bsd.port.pre.mk>
 
@@ -24,7 +24,7 @@ PLIST_SUB+=	GUI="@comment "
 .else
 USE_TK_WRAPPER=	yes
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
-MAN1+=		x${PORTNAME}.1
+MAN6+=		x${PORTNAME}.6
 PLIST_SUB+=	GUI=""
 .endif
 
@@ -38,14 +38,14 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.6 ${MANPREFIX}/man/man6
 	@${MKDIR} ${DATADIR}
 .for f in README *.bmp *.gif *.ico *.png
 	${INSTALL_DATA} ${WRKSRC}/src/${f} ${DATADIR}
 .endfor
 .if !defined(WITHOUT_X11)
 	${INSTALL_SCRIPT} ${WRKSRC}/src/x${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.6 ${MANPREFIX}/man/man6
 	${INSTALL_SCRIPT} ${WRKSRC}/src/xawale.tcl ${DATADIR}
 .endif
 .if !defined(NOPORTDOCS)
