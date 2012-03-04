@@ -18,6 +18,8 @@ RUN_DEPENDS=	\
 	p5-B-Hooks-OP-Check-EntersubForCV>=0.03:${PORTSDIR}/devel/p5-B-Hooks-OP-Check-EntersubForCV
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		does not build
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Devel::BeginLift.3
