@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	games net
 MASTER_SITES=	http://mahjong.julianbradfield.org/Source/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Old
