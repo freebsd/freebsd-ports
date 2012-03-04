@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	udmsearch
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.1.7
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://udmsearch.real-time.com/Download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Full featured SQL-based hypertext search engine
 
 OPTIONS=	MSQL "MSQL support" off \
