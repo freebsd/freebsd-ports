@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Ima-DBI-Contextual
-PORTVERSION=	1.001
+PORTVERSION=	1.005
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JOHND
@@ -18,8 +18,10 @@ COMMENT=	Liteweight context-aware dbi handle cache and utility methods
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=1.614:${PORTSDIR}/databases/p5-DBI
+
+TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 PERL_CONFIGURE=	yes
 
