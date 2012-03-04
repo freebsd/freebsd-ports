@@ -1,0 +1,52 @@
+#! /bin/sh
+#
+# $FreeBSD$
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+DEINSTALL)
+  echo "---> Starting deinstall script:"
+
+  if /usr/bin/crontab -u "%%USER%%" -l | \
+      /usr/bin/diff - %%MAILMANDIR%%/cron/crontab.in >/dev/null 2>&1 ; then
+      echo "---> Zeroing crontab for \"%%USER%%\""
+      /usr/bin/crontab -u "%%USER%%" /dev/null
+      if [ -e /var/cron/allow ]; then
+         grep -v %%USER%% /var/cron/allow > /var/cron/allow.new
+         mv /var/cron/allow.new /var/cron/allow
+      fi
+  else
+      echo "---> Crontab for \"%%USER%%\" not removed: please deinstall"
+      echo "---> manually if you no-longer wish to use Mailman. eg:"
+      echo "--->     /usr/bin/crontab -u "%%USER%%" -r"
+  fi
+
+  echo "---> Preserving the \"last_mailman_version\" file"
+  /bin/cp -f %%MAILMANDIR%%/data/last_mailman_version /var/tmp/
+
+  # If the errorlog is the only existing logfile, delete it.  (If Mailman's
+  # qrunner had not been running, then the process of trying to stop the
+  # qrunner (above) will cause the errorlog to be written to.  Hence, even if
+  # the Mailman port/package is installed and immediately deinstalled, the
+  # errorlog will exist.)
+  if [ "`echo %%MAILMANDIR%%/logs/*`" = "%%MAILMANDIR%%/logs/error" ]; then
+    echo "---> Deleting errorlog (It is the only existing logfile.)"
+    /bin/rm -f %%MAILMANDIR%%/logs/error
+  fi
+  ;;
+
+POST-DEINSTALL)
+  echo "---> Starting post-deinstall script:"
+
+  if [ -d %%MAILMANDIR%% ]; then
+    echo '---> %%MAILMANDIR%% is not empty - this installation may have active lists!'
+    echo "---> Restoring \"last_mailman_version\" file"
+    [ -d %%MAILMANDIR%%/data ] || /bin/mkdir %%MAILMANDIR%%/data
+    /bin/mv -f /var/tmp/last_mailman_version %%MAILMANDIR%%/data/
+  fi
+
+  ;;
+
+esac
