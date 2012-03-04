@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	soprano
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Soprano/${PORTVERSION}
 
@@ -16,8 +16,6 @@ LIB_DEPENDS=	raptor2.0:${PORTSDIR}/textproc/raptor2 \
 		rdf.0:${PORTSDIR}/textproc/redland \
 		iodbc.3:${PORTSDIR}/databases/libiodbc
 
-OPTIONS=	SESAME2 "Use Sesame2 as storage backend (requires Java)" off
-
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus qtestlib network \
@@ -25,21 +23,8 @@ QT_COMPONENTS=	corelib dbus qtestlib network \
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS+=	-DSOPRANO_DISABLE_CLUCENE_INDEX=yes
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_SESAME2)
-CATEGORIES+=	java
-CMAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-JAVA_OS=	native
-PLIST_SUB+=	SESAME2=""
-.else
-CMAKE_ARGS+=	-DSOPRANO_DISABLE_SESAME2_BACKEND=yes
-PLIST_SUB+=	SESAME2="@comment "
-.endif
+CMAKE_ARGS+=	-DSOPRANO_DISABLE_CLUCENE_INDEX=yes \
+		-DSOPRANO_DISABLE_SESAME2_BACKEND=yes
 
 .include <bsd.port.pre.mk>
 
