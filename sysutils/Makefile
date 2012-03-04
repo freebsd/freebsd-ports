@@ -44,6 +44,7 @@
     SUBDIR += ataidle
     SUBDIR += atitvout
     SUBDIR += atop
+    SUBDIR += auto-admin
     SUBDIR += automounter
     SUBDIR += autopsy
     SUBDIR += avfs
