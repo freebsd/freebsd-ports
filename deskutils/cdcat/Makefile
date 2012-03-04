@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdcat
-PORTVERSION=	1.5
+PORTVERSION=	1.8
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		GOOGLE_CODE:lib7zip
@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/archivers/p7zip:patch \
-		${NONEXISTENT}:${PORTSDIR}/multimedia/mediainfo:patch
+		${NONEXISTENT}:${PORTSDIR}/multimedia/mediainfo:build
 LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar
 
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -35,8 +35,15 @@ MAKE_JOBS_SAFE=	yes
 
 QMAKEFLAGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		INCLUDEPATH+="${MIF_WRKSRC}/MediaInfoLib/Source" \
-		LIBS+="${L7Z_WRKSRC}/Lib7Zip/lib7zip.a"
+		INCLUDEPATH+="${MIF_WRKSRC}/ZenLib/Source" \
+		LIBS+="${L7Z_WRKSRC}/Lib7Zip/lib7zip.a" \
+		LIBS+="${MIF_WRKSRC}/MediaInfoLib/Project/GNU/Library/.libs/libmediainfo.a" \
+		LIBS+="${MIF_WRKSRC}/ZenLib/Project/GNU/Library/.libs/libzen.a" \
+		DEFINES+="MEDIAINFO_STATIC"
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
+
+# spoof tinderbox: build deps for multimedia/mediainfo
+USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
 
 PORTDOCS=	Authors ChangeLog README TRANSLATORS_README
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.png
@@ -60,8 +67,18 @@ post-extract:
 	@${LN} -sf ${L7Z_NAME}-${L7Z_VERSION} ${L7Z_WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl .*||g' ${BUILD_WRKSRC}/${PORTNAME}.pro
-	@${REINPLACE_CMD} -e 's|-ldl||g' ${L7Z_WRKSRC}/Test7Zip/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/lib7zip.a/s|^|#| ; \
+		 /-lmediainfo/s|^|#| ; \
+		 /libmediainfo/s|^|#| ; \
+		 s|-ldl|| ; \
+		 s|-std=c++0x || ; \
+		 s|-g || ; \
+		 s|-O2 ||' ${BUILD_WRKSRC}/${PORTNAME}.pro
+	@${REINPLACE_CMD} -e \
+		's|/dev/sr0|/dev/cd0|' ${BUILD_WRKSRC}/config.cpp
+	@${REINPLACE_CMD} -e \
+		's|-ldl||' ${L7Z_WRKSRC}/Test7Zip/Makefile.in
 
 pre-configure:
 	@cd ${L7Z_WRKSRC} && ./configure --disable-shared \
