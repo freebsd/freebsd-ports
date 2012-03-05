@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI.pm
-PORTVERSION=	3.58
+PORTVERSION=	3.59
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Simple Common Gateway Interface Class for Perl
-
-TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
@@ -48,4 +46,10 @@ post-install:
 post-patch:
 	@${REINPLACE_CMD} -e '/require 5\.6/d; /INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
