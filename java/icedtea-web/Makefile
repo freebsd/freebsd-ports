@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icedtea-web
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.classpath.org/download/source/
 

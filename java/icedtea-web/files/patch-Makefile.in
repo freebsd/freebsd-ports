@@ -1,6 +1,6 @@
---- Makefile.in.orig	2011-06-08 17:59:15.371244000 -0400
-+++ Makefile.in	2011-07-12 18:44:48.000000000 -0400
-@@ -275,14 +275,14 @@
+--- Makefile.in.orig	2012-03-05 12:06:46.333970000 -0500
++++ Makefile.in	2012-03-05 18:07:03.000000000 -0500
+@@ -292,14 +292,14 @@
  
  
  # binary names
@@ -16,8 +16,8 @@
 +  -e 's|[@]JAVAWS_BIN_LOCATION[@]|$(bindir)/$(itweb_javaws)|g' \
    -e 's|[@]ITWEB_SETTINGS_BIN_LOCATION[@]|$(bindir)/$(itweb_settings)|g' \
    -e 's|[@]JAVA[@]|$(JAVA)|g' \
-   -e 's|[@]JRE[@]|$(JRE)|g'
-@@ -621,8 +621,8 @@
+   -e 's|[@]JRE[@]|$(SYSTEM_JRE_DIR)|g'
+@@ -638,8 +638,8 @@
  # Top-Level Targets
  # =================
  
@@ -28,7 +28,7 @@
  
  check-local: $(RHINO_TESTS) $(JUNIT_TESTS)
  
-@@ -642,24 +642,26 @@
+@@ -659,24 +659,26 @@
  @ENABLE_PLUGIN_TRUE@	${INSTALL_PROGRAM} $(PLUGIN_DIR)/IcedTeaPlugin.so $(DESTDIR)$(libdir)
  @ENABLE_PLUGIN_TRUE@	${INSTALL_DATA} $(abs_top_builddir)/liveconnect/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/plugin.jar
  	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
@@ -60,7 +60,7 @@
  @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 done)
  
  uninstall-local:
-@@ -668,8 +670,8 @@
+@@ -685,8 +687,8 @@
  	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
  	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jnlp
  	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jar
@@ -71,7 +71,7 @@
  	rm -f $(DESTDIR)$(bindir)/$(itweb_settings)
  	rm -rf $(DESTDIR)$(htmldir)
  
-@@ -758,7 +760,7 @@
+@@ -776,7 +778,7 @@
  
  netx-source-files.txt:
  	find $(NETX_SRCDIR) -name '*.java' | sort > $@
@@ -80,7 +80,7 @@
  
  stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
  	mkdir -p $(NETX_DIR)
-@@ -770,7 +772,8 @@
+@@ -788,7 +790,8 @@
  	(cd $(NETX_RESOURCE_DIR); \
  	 for files in $$(find . -type f); \
  	 do \
@@ -90,7 +90,7 @@
  	   $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}; \
  	 done)
  	cp -a $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
-@@ -798,10 +801,10 @@
+@@ -816,10 +819,10 @@
  	rm -f stamps/netx.stamp
  
  clean-desktop-files:
@@ -103,7 +103,7 @@
  extra-source-files.txt:
  	find $(abs_top_srcdir)/extra -name '*.java' | sort > $@
  
-@@ -813,7 +816,8 @@
+@@ -831,7 +834,8 @@
  	(cd $(NETX_EXTRA_DIR); \
  	 for files in $$(find . -type f); \
  	 do \
@@ -113,7 +113,7 @@
  	   $(NETX_EXTRA_DIST_DIR)/$${files}; \
  	 done)
  	mkdir -p stamps
-@@ -827,7 +831,7 @@
+@@ -845,7 +849,7 @@
  extra-lib/about.jar: stamps/extra-class-files.stamp
  	$(BOOT_DIR)/bin/jar cf $@ -C extra-lib net ;
  
@@ -122,7 +122,7 @@
  	mkdir -p launcher.build
  	$(edit_launcher_script) < $< > $@
  
-@@ -836,14 +840,14 @@
+@@ -854,14 +858,14 @@
  	$(edit_launcher_script) < $< > $@
  
  clean-launchers:
@@ -140,7 +140,7 @@
  
  itweb-settings.desktop: $(srcdir)/itweb-settings.desktop.in
  	sed "s#PATH_TO_ITWEB_SETTINGS#$(bindir)/$(itweb_settings)#" \
-@@ -897,8 +901,8 @@
+@@ -915,8 +919,8 @@
  	fi
  
  check-pac-functions: stamps/bootstrap-directory.stamp
@@ -151,13 +151,26 @@
  
  junit-runner-source-files.txt:
  	find $(JUNIT_RUNNER_SRCDIR) -name '*.java' | sort > $@
-@@ -926,10 +930,11 @@
- 
- run-netx-unit-tests: stamps/netx-unit-tests-compile.stamp \
-  $(JUNIT_RUNNER_JAR)
--	cp {$(NETX_UNIT_TEST_SRCDIR),$(NETX_UNIT_TEST_DIR)}/net/sourceforge/jnlp/basic.jnlp
-+	cp $(NETX_UNIT_TEST_SRCDIR)/net/sourceforge/jnlp/basic.jnlp \
-+	  $(NETX_UNIT_TEST_DIR)/net/sourceforge/jnlp/basic.jnlp
+@@ -958,7 +962,7 @@
+ 	    notSrcFiles=`find . -mindepth 1 -type f \! -name "*.java" | sed "s/.\/*//"` ; \
+ 	    $(BOOT_DIR)/bin/javac -d  "$(JNLP_TESTS_DIR)/$$dir/" $$srcFiles ; \
+ 	    if [ -n "$$notSrcFiles" ] ; then \
+-	      cp -R --parents "$$notSrcFiles" "$(JNLP_TESTS_DIR)/$$dir/" ; \
++	      tar -c -f - "$$notSrcFiles" | tar -x -f - -C "$(JNLP_TESTS_DIR)/$$dir/" ; \
+ 	    fi ; \
+ 	    cd "$(JNLP_TESTS_DIR)/$$dir/" ; \
+ 	    $(BOOT_DIR)/bin/jar cf "$(JNLP_TESTS_SERVER_DEPLOYDIR)/$$dir.jar" * ; \
+@@ -1015,7 +1019,7 @@
+ $(REPRODUCERS_CLASS_NAMES):
+ 	cd $(JNLP_TESTS_ENGINE_DIR) ; \
+ 	class_names= ; \
+-	for test in `find -type f` ; do \
++	for test in `find . -type f` ; do \
+ 	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
+ 	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
+ 	  class_names="$$class_names $$class_name" ; \
+@@ -1059,7 +1063,7 @@
+ $(UNIT_CLASS_NAMES):
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names= ; \
 -	for test in `find -type f` ; do \
@@ -165,7 +178,19 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  class_names="$$class_names $$class_name" ; \
-@@ -963,9 +968,7 @@
+@@ -1070,10 +1074,7 @@
+  $(TESTS_DIR)/$(REPORT_STYLES_DIRNAME)  $(UNIT_CLASS_NAMES)
+ 	filename=" " ; \
+ 	cd $(NETX_UNIT_TEST_SRCDIR) ; \
+-	for file in `find . -type f \! -iname "*.java"`; do\
+-		filename=`echo $$file `; \
+-		cp --parents $$filename $(NETX_UNIT_TEST_DIR) ; \
+-	done ; \
++	tar -c -f - `find . -type f \! -iname "*.java"` | tar -x -f - -C $(NETX_UNIT_TEST_DIR) ; \
+ 	cd $(NETX_UNIT_TEST_DIR) ; \
+ 	class_names=`cat $(UNIT_CLASS_NAMES)` ; \
+ 	CLASSPATH=$(NETX_DIR)/lib/classes.jar:$(JUNIT_JAR):$(JUNIT_RUNNER_JAR):. \
+@@ -1302,9 +1303,7 @@
  @ENABLE_PLUGIN_TRUE@	 $(PLUGIN_TEST_SRCS) ;
  @ENABLE_PLUGIN_TRUE@	$(BOOT_DIR)/bin/jar cf plugin/tests/LiveConnect/PluginTest.jar \
  @ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect/*.class ;
