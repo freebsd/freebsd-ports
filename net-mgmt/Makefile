@@ -181,6 +181,7 @@
     SUBDIR += nsca
     SUBDIR += nsca-client
     SUBDIR += nstreams
+    SUBDIR += observium
     SUBDIR += ocsinventory-agent
     SUBDIR += ocsinventory-ng
     SUBDIR += openlldp
