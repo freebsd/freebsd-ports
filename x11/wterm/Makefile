@@ -16,6 +16,8 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
+BROKEN=		does not compile
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-transparency --enable-xpm-background \
