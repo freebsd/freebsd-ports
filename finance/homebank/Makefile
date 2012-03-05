@@ -7,6 +7,7 @@
 
 PORTNAME=	homebank
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
@@ -32,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .if defined(WITHOUT_OFX)
 CONFIGURE_ARGS+=--without-ofx
 .else
-LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+LIB_DEPENDS+=	ofx.5:${PORTSDIR}/finance/libofx
 CONFIGURE_ARGS+=--with-ofx
 .endif
 

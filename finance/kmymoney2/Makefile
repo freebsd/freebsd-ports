@@ -7,6 +7,7 @@
 
 PORTNAME=	kmymoney2
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/KMyMoney/${PORTVERSION}
 
@@ -15,9 +16,8 @@ COMMENT=	KDE-based personal finance assistant
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
-LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
-
-LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp \
+		ofx.5:${PORTSDIR}/finance/libofx
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

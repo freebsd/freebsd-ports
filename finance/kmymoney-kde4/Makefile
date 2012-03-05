@@ -7,6 +7,7 @@
 
 PORTNAME=	kmymoney
 PORTVERSION=	4.6.2
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
@@ -59,7 +60,7 @@ PLIST_SUB+=	WITH_KBANKING="@comment "
 .endif
 
 .if defined(WITH_OFX)
-LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+LIB_DEPENDS+=	ofx.5:${PORTSDIR}/finance/libofx
 CMAKE_ARGS+=	-DENABLE_LIBOFX:BOOL=ON
 PLIST_SUB+=	WITH_OFX=""
 .else
