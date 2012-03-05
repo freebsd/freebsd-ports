@@ -5,24 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	opendkim
-PORTVERSION=	2.5.0
-CATEGORIES=	mail security
-MASTER_SITES=	SF
+PORTNAME=		opendkim
+PORTVERSION=		2.5.0.1
+CATEGORIES=		mail security
+MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			${PORTNAME}/Previous%20Releases
 
-MAINTAINER=	umq@ueo.co.jp
-COMMENT=	DKIM library and milter implementation
+MAINTAINER=		umq@ueo.co.jp
+COMMENT=		DKIM library and milter implementation
 
-LICENSE=	BSD SENDMAIL
-LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=		BSD SENDMAIL
+LICENSE_COMB=		multi
+LICENSE_FILE=		${WRKSRC}/LICENSE
 
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1$$//}
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -48,9 +50,9 @@ MAKE_ARGS+=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FILTER) && !defined(WITHOUT_FILTER)
-USE_RC_SUBR=	milter-opendkim
-MAN5+=		opendkim.conf.5
-MAN8+=		opendkim.8
+USE_RC_SUBR=		milter-opendkim
+MAN5+=			opendkim.conf.5
+MAN8+=			opendkim.8
 PLIST_SUB+=		FILTER=""
 SUB_FILES=		pkg-message
 WITHOUT_MILTER_CFLAGS=	yes
@@ -63,7 +65,7 @@ PLIST_SUB+=		FILTER="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
