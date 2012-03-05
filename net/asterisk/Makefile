@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.9.3
+PORTVERSION=	1.8.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -59,7 +59,6 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		SQLITE          "Enable SQLITE support" on \
 		GSM		"Enable GSM codec" on \
 		CURL		"Enable CURL support" on \
-		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off \
 		EXCHANGE	"Enable Exchange calendar support" off \
 		NEWG711		"Enable new G711 Codec" off	\
@@ -215,13 +214,6 @@ LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2 \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 .endif
 
-.if !defined(WITH_ILBC)
-PLIST_SUB+=	WITH_ILBC="@comment "
-.else
-PLIST_SUB+=	WITH_ILBC=""
-EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
-.endif
-
 .if !defined(WITH_GSM)
 PLIST_SUB+=	WITH_GSM="@comment "
 CONFIGURE_ARGS+=	--without-gsm
@@ -278,14 +270,13 @@ PLIST_SUB+=	WITH_LUA="@comment "
 .endif
 
 post-extract:
-	${MKDIR} ${WRKSRC}/codecs/ilbc
 	${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-configure:
-.if defined(WITH_MYSQL) || defined(WITH_NEWG711) || defined(WITH_ILBC)
+.if defined(WITH_MYSQL) || defined(WITH_NEWG711)
 	@cd ${WRKSRC} && make menuselect.makeopts
 .if defined(WITH_MYSQL)
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
@@ -294,9 +285,6 @@ post-configure:
 .endif
 .if defined(WITH_NEWG711)
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
-.endif
-.if defined(WITH_ILBC)
-	@cd ${WRKSRC} && ./menuselect/menuselect --enable  codec_ilbc menuselect.makeopts
 .endif
 .endif
 

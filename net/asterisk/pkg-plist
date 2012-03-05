@@ -561,7 +561,7 @@ lib/asterisk/modules/codec_adpcm.so
 lib/asterisk/modules/codec_alaw.so
 lib/asterisk/modules/codec_g726.so
 %%WITH_GSM%%lib/asterisk/modules/codec_gsm.so
-%%WITH_ILBC%%lib/asterisk/modules/codec_ilbc.so
+lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_speex.so
 lib/asterisk/modules/codec_ulaw.so
@@ -659,9 +659,9 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.21
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.21
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.21
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.22
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.22
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.22
 share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
 share/asterisk/sounds/en/conf-extended.gsm
@@ -671,8 +671,53 @@ share/asterisk/sounds/en/conf-now-recording.gsm
 share/asterisk/sounds/en/conf-now-unmuted.gsm
 share/asterisk/sounds/en/conf-roll-callcomplete.gsm
 share/asterisk/sounds/en/conf-usermenu-162.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-a.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-b.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-c.gsm
+share/asterisk/sounds/en/confbridge-begin-leader.gsm
+share/asterisk/sounds/en/confbridge-conf-begin.gsm
+share/asterisk/sounds/en/confbridge-conf-end.gsm
+share/asterisk/sounds/en/confbridge-dec-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-dec-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-dec-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-dec-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-has-joined.gsm
+share/asterisk/sounds/en/confbridge-has-left.gsm
+share/asterisk/sounds/en/confbridge-inc-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-inc-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-inc-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-inc-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-invalid.gsm
 share/asterisk/sounds/en/confbridge-join.gsm
+share/asterisk/sounds/en/confbridge-leave-in.gsm
+share/asterisk/sounds/en/confbridge-leave-out.gsm
 share/asterisk/sounds/en/confbridge-leave.gsm
+share/asterisk/sounds/en/confbridge-lock-extended.gsm
+share/asterisk/sounds/en/confbridge-lock-in.gsm
+share/asterisk/sounds/en/confbridge-lock-no-join.gsm
+share/asterisk/sounds/en/confbridge-lock-out.gsm
+share/asterisk/sounds/en/confbridge-locked.gsm
+share/asterisk/sounds/en/confbridge-menu-exit-in.gsm
+share/asterisk/sounds/en/confbridge-menu-exit-out.gsm
+share/asterisk/sounds/en/confbridge-mute-extended.gsm
+share/asterisk/sounds/en/confbridge-mute-in.gsm
+share/asterisk/sounds/en/confbridge-mute-out.gsm
+share/asterisk/sounds/en/confbridge-muted.gsm
+share/asterisk/sounds/en/confbridge-only-one.gsm
+share/asterisk/sounds/en/confbridge-only-participant.gsm
+share/asterisk/sounds/en/confbridge-participants.gsm
+share/asterisk/sounds/en/confbridge-pin-bad.gsm
+share/asterisk/sounds/en/confbridge-pin.gsm
+share/asterisk/sounds/en/confbridge-remove-last-in.gsm
+share/asterisk/sounds/en/confbridge-remove-last-out.gsm
+share/asterisk/sounds/en/confbridge-removed.gsm
+share/asterisk/sounds/en/confbridge-rest-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-rest-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-rest-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-rest-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-there-are.gsm
+share/asterisk/sounds/en/confbridge-unlocked.gsm
+share/asterisk/sounds/en/confbridge-unmuted.gsm
 share/asterisk/sounds/en/descending-2tone.gsm
 share/asterisk/sounds/en/spy-dahdi.gsm
 share/asterisk/sounds/en/vm-Urgent.gsm
@@ -1116,7 +1161,7 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.21
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.22
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
@@ -1147,11 +1192,7 @@ share/asterisk/static-http/mantest.html
 @dirrm share/asterisk/sounds/en/followme
 @dirrm share/asterisk/sounds/en/digits
 @dirrm share/asterisk/sounds/en/dictate
-@dirrm share/asterisk/sounds/en_AU
 @dirrm share/asterisk/sounds/en
-@dirrm share/asterisk/sounds/es
-@dirrm share/asterisk/sounds/fr
-@dirrm share/asterisk/sounds/ru
 @dirrm share/asterisk/sounds
 @dirrm share/asterisk/phoneprov
 @dirrm share/asterisk/moh
@@ -1172,10 +1213,6 @@ share/asterisk/static-http/mantest.html
 @exec mkdir -p %D/share/asterisk/images
 @exec mkdir -p %D/share/asterisk/firmware/iax
 @exec mkdir -p %D/share/asterisk/documentation/thirdparty
-@exec mkdir -p %D/share/asterisk/sounds/es
-@exec mkdir -p %D/share/asterisk/sounds/fr
-@exec mkdir -p %D/share/asterisk/sounds/en_AU
-@exec mkdir -p %D/share/asterisk/sounds/ru
 @cwd %%VARDIR%%
 spool/asterisk/voicemail/default/1234/en/busy.gsm
 spool/asterisk/voicemail/default/1234/en/unavail.gsm
