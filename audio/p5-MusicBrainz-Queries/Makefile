@@ -16,6 +16,9 @@ COMMENT=	A Perl module that provides the musicbrainz query constants
 
 BUILD_DEPENDS=	${LOCALBASE}/include/musicbrainz/queries.h:${PORTSDIR}/audio/libmusicbrainz
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-04-05
+
 PERL_CONFIGURE=	yes
 
 MAN3=		MusicBrainz::Queries.3
