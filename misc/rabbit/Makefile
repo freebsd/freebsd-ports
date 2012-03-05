@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbit
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://rabbit-shockers.org/download/ \
 		LOCAL
