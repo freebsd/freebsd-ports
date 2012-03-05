@@ -7,6 +7,7 @@
 
 PORTNAME=	Log-Dispatch-Colorful
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for logging to screen
 
-RUN_DEPENDS=	\
-	p5-Filter>0:${PORTSDIR}/devel/p5-Filter \
-	p5-Log-Dispatch>0:${PORTSDIR}/devel/p5-Log-Dispatch \
-	p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Filter>0:${PORTSDIR}/devel/p5-Filter \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Log-Dispatch>0:${PORTSDIR}/devel/p5-Log-Dispatch \
+		p5-Params-Validate>0:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
