@@ -112,6 +112,7 @@ lib/node_modules/npm/doc/api/restart.md
 lib/node_modules/npm/doc/api/root.md
 lib/node_modules/npm/doc/api/run-script.md
 lib/node_modules/npm/doc/api/search.md
+lib/node_modules/npm/doc/api/shrinkwrap.md
 lib/node_modules/npm/doc/api/start.md
 lib/node_modules/npm/doc/api/stop.md
 lib/node_modules/npm/doc/api/submodule.md
@@ -165,6 +166,7 @@ lib/node_modules/npm/doc/cli/run-script.md
 lib/node_modules/npm/doc/cli/scripts.md
 lib/node_modules/npm/doc/cli/search.md
 lib/node_modules/npm/doc/cli/semver.md
+lib/node_modules/npm/doc/cli/shrinkwrap.md
 lib/node_modules/npm/doc/cli/star.md
 lib/node_modules/npm/doc/cli/start.md
 lib/node_modules/npm/doc/cli/stop.md
@@ -212,6 +214,7 @@ lib/node_modules/npm/html/api/root.html
 lib/node_modules/npm/html/api/run-script.html
 lib/node_modules/npm/html/api/search.html
 lib/node_modules/npm/html/api/set.html
+lib/node_modules/npm/html/api/shrinkwrap.html
 lib/node_modules/npm/html/api/start.html
 lib/node_modules/npm/html/api/stop.html
 lib/node_modules/npm/html/api/style.css
@@ -277,6 +280,7 @@ lib/node_modules/npm/html/doc/scripts.html
 lib/node_modules/npm/html/doc/search.html
 lib/node_modules/npm/html/doc/semver.html
 lib/node_modules/npm/html/doc/set.html
+lib/node_modules/npm/html/doc/shrinkwrap.html
 lib/node_modules/npm/html/doc/star.html
 lib/node_modules/npm/html/doc/start.html
 lib/node_modules/npm/html/doc/stop.html
@@ -335,6 +339,7 @@ lib/node_modules/npm/lib/root.js
 lib/node_modules/npm/lib/run-script.js
 lib/node_modules/npm/lib/search.js
 lib/node_modules/npm/lib/set.js
+lib/node_modules/npm/lib/shrinkwrap.js
 lib/node_modules/npm/lib/star.js
 lib/node_modules/npm/lib/start.js
 lib/node_modules/npm/lib/stop.js
@@ -361,7 +366,6 @@ lib/node_modules/npm/lib/utils/fetch.js
 lib/node_modules/npm/lib/utils/find-prefix.js
 lib/node_modules/npm/lib/utils/find.js
 lib/node_modules/npm/lib/utils/gently-rm.js
-lib/node_modules/npm/lib/utils/get-agent.js
 lib/node_modules/npm/lib/utils/get.js
 lib/node_modules/npm/lib/utils/ini.js
 lib/node_modules/npm/lib/utils/lifecycle.js
@@ -442,6 +446,7 @@ lib/node_modules/npm/man/man1/scripts.1
 lib/node_modules/npm/man/man1/search.1
 lib/node_modules/npm/man/man1/semver.1
 lib/node_modules/npm/man/man1/set.1
+lib/node_modules/npm/man/man1/shrinkwrap.1
 lib/node_modules/npm/man/man1/star.1
 lib/node_modules/npm/man/man1/start.1
 lib/node_modules/npm/man/man1/stop.1
@@ -488,6 +493,7 @@ lib/node_modules/npm/man/man3/root.3
 lib/node_modules/npm/man/man3/run-script.3
 lib/node_modules/npm/man/man3/search.3
 lib/node_modules/npm/man/man3/set.3
+lib/node_modules/npm/man/man3/shrinkwrap.3
 lib/node_modules/npm/man/man3/start.3
 lib/node_modules/npm/man/man3/stop.3
 lib/node_modules/npm/man/man3/submodule.3
@@ -583,6 +589,7 @@ lib/node_modules/npm/node_modules/request/main.js
 lib/node_modules/npm/node_modules/request/mimetypes.js
 lib/node_modules/npm/node_modules/request/oauth.js
 lib/node_modules/npm/node_modules/request/package.json
+lib/node_modules/npm/node_modules/request/tunnel.js
 lib/node_modules/npm/node_modules/request/uuid.js
 lib/node_modules/npm/node_modules/request/vendor/cookie/index.js
 lib/node_modules/npm/node_modules/request/vendor/cookie/jar.js
@@ -655,12 +662,16 @@ lib/node_modules/npm/test/packages/npm-test-missing-bindir/package.json
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
 lib/node_modules/npm/test/packages/npm-test-optional-deps/package.json
 lib/node_modules/npm/test/packages/npm-test-private/package.json
+lib/node_modules/npm/test/packages/npm-test-shrinkwrap/npm-shrinkwrap.json
+lib/node_modules/npm/test/packages/npm-test-shrinkwrap/package.json
+lib/node_modules/npm/test/packages/npm-test-shrinkwrap/test.sh
 lib/node_modules/npm/test/packages/npm-test-test-package/package.json
 lib/node_modules/npm/test/packages/npm-test-url-dep/package.json
 lib/node_modules/npm/test/run.js
 lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-url-dep
 @dirrm lib/node_modules/npm/test/packages/npm-test-test-package
+@dirrm lib/node_modules/npm/test/packages/npm-test-shrinkwrap
 @dirrm lib/node_modules/npm/test/packages/npm-test-private
 @dirrm lib/node_modules/npm/test/packages/npm-test-optional-deps
 @dirrm lib/node_modules/npm/test/packages/npm-test-missing-bindir
