@@ -8,8 +8,7 @@
 PORTNAME=	quagga
 PORTVERSION=	0.99.17.6
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	quagga/Quagga-RE
+MASTER_SITES=	http://cloud.github.com/downloads/Quagga-RE/quagga-RE/
 PKGNAMESUFFIX=	-re
 
 MAINTAINER=	sem@FreeBSD.org
