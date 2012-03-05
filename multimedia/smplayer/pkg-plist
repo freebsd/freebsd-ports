@@ -7,7 +7,6 @@ share/icons/hicolor/32x32/apps/smplayer.png
 share/icons/hicolor/64x64/apps/smplayer.png
 %%DATADIR%%/input.conf
 %%DATADIR%%/shortcuts/default.keys
-%%DATADIR%%/shortcuts/sda.keys
 %%DATADIR%%/translations/smplayer_ar_SY.qm
 %%DATADIR%%/translations/smplayer_bg.qm
 %%DATADIR%%/translations/smplayer_ca.qm
@@ -22,6 +21,7 @@ share/icons/hicolor/64x64/apps/smplayer.png
 %%DATADIR%%/translations/smplayer_fi.qm
 %%DATADIR%%/translations/smplayer_fr.qm
 %%DATADIR%%/translations/smplayer_gl.qm
+%%DATADIR%%/translations/smplayer_hr.qm
 %%DATADIR%%/translations/smplayer_hu.qm
 %%DATADIR%%/translations/smplayer_it.qm
 %%DATADIR%%/translations/smplayer_ja.qm
