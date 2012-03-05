@@ -72,7 +72,6 @@ post-extract:
 .endif
 
 post-install:
-	@${RM} ${PREFIX}/GPLv2	# somehow installed by LICENSE framework
 	@${CAT} ${PKGMESSAGE};
 
 .include <bsd.port.mk>
