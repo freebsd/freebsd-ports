@@ -13,11 +13,13 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+
+BROKEN=		Does not build with wmaker 0.95.2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
