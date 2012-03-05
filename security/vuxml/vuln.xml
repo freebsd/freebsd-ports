@@ -52,6 +52,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="99aef698-66ed-11e1-8288-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>17.0.963.65</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote
+cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[105867] High CVE-2011-3031: Use-after-free in v8 element wrapper.
+	    Credit to Chamal de Silva.</p>
+	  <p>[108037] High CVE-2011-3032: Use-after-free in SVG value handling.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[108406] [115471] High CVE-2011-3033: Buffer overflow in the Skia
+	    drawing library.  Credit to Aki Helin of OUSPG.</p>
+	  <p>[111748] High CVE-2011-3034: Use-after-free in SVG document
+	    handling.  Credit to Arthur Gerkis.</p>
+	  <p>[112212] High CVE-2011-3035: Use-after-free in SVG use handling.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[113258] High CVE-2011-3036: Bad cast in line box handling. Credit
+	    to miaubiz.</p>
+	  <p>[113439] [114924] [115028] High CVE-2011-3037: Bad casts in
+	    anonymous block splitting.  Credit to miaubiz.</p>
+	  <p>[113497] High CVE-2011-3038: Use-after-free in multi-column
+	    handling.  Credit to miaubiz.</p>
+	  <p>[113707] High CVE-2011-3039: Use-after-free in quote handling.
+	    Credit to miaubiz.</p>
+	  <p>[114054] High CVE-2011-3040: Out-of-bounds read in text handling.
+	    Credit to miaubiz.</p>
+	  <p>[114068] High CVE-2011-3041: Use-after-free in class attribute
+	    handling.  Credit to miaubiz.</p>
+	  <p>[114219] High CVE-2011-3042: Use-after-free in table section
+	    handling.  Credit to miaubiz.</p>
+	  <p>[115681] High CVE-2011-3043: Use-after-free in flexbox with floats.
+	    Credit to miaubiz.</p>
+	  <p>[116093] High CVE-2011-3044: Use-after-free with SVG animation
+	    elements.  Credit to Arthur Gerkis.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3031</cvename>
+      <cvename>CVE-2011-3032</cvename>
+      <cvename>CVE-2011-3033</cvename>
+      <cvename>CVE-2011-3034</cvename>
+      <cvename>CVE-2011-3035</cvename>
+      <cvename>CVE-2011-3036</cvename>
+      <cvename>CVE-2011-3037</cvename>
+      <cvename>CVE-2011-3038</cvename>
+      <cvename>CVE-2011-3039</cvename>
+      <cvename>CVE-2011-3040</cvename>
+      <cvename>CVE-2011-3041</cvename>
+      <cvename>CVE-2011-3042</cvename>
+      <cvename>CVE-2011-3043</cvename>
+      <cvename>CVE-2011-3044</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-03-04</discovery>
+      <entry>2012-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eba70db4-6640-11e1-98af-00262d8b701d">
     <topic>dropbear -- arbitrary code execution</topic>
     <affects>
