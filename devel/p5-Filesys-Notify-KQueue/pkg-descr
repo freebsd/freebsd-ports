@@ -1,0 +1,4 @@
+Filesys::Notify::KQueue is IO::KQueue wrapper for watching file
+system.
+
+WWW: http://search.cpan.org/dist/Filesys-Notify-KQueue/

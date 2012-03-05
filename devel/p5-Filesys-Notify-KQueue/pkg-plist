@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Notify/KQueue/.packlist
+%%SITE_PERL%%/Filesys/Notify/KQueue.pm
+%%SITE_PERL%%/Filesys/Notify/README.pod
+@dirrmtry %%SITE_PERL%%/Filesys/Notify
+@dirrmtry %%SITE_PERL%%/Filesys
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Notify/KQueue
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Notify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
