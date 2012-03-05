@@ -11,9 +11,9 @@ Layer 3 redirection happens at the packet level; to configure it, relayd
 communicates with pf(4). 
 
 The following relayd functionality is not (yet) implemented in FreeBSD:
-carp
-routers
-snmp
+- carp demote
+- modifying routing tables
+- snmp traps
 
 The relayctl program controls the relayd(8) daemon.
 
