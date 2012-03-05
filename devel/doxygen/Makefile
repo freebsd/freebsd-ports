@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.7.6.1
+PORTVERSION=	1.8.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -41,8 +41,7 @@ EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
 PLIST=		${WRKDIR}/plist
 TMPDOCDEST=	${WRKDIR}/tmpdocdest
 
-PLIST_FILES=	bin/doxygen \
-		bin/doxytag
+PLIST_FILES=	bin/doxygen
 
 OPTIONS=	DOXYWIZARD "Enable doxywizard" on \
 		LATEX "Enable LaTeX support" on
@@ -125,7 +124,6 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin/
 .if !defined(WITHOUT_DOXYWIZARD)
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin/
 .endif # !defined(WITHOUT_DOXYWIZARD)
