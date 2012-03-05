@@ -7,6 +7,7 @@
 
 PORTNAME=	DateTime-Calendar-Japanese-Era
 PORTVERSION=	0.08001
+PORTREVISION=	1
 CATEGORIES=	japanese devel perl5
 MASTER_SITES=	CPAN
 
@@ -17,8 +18,10 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
+		p5-YAML-Tiny>=1.38:${PORTSDIR}/textproc/p5-YAML-Tiny
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes
 
