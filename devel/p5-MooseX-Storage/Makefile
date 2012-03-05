@@ -7,20 +7,23 @@
 
 PORTNAME=	MooseX-Storage
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An serialization framework for Moose classes
 
 BUILD_DEPENDS=	p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-JSON>=0.06:${PORTSDIR}/devel/p5-Test-JSON \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
 
 PERL_CONFIGURE=	yes
 
