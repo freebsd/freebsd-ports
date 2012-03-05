@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkreadmes
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,8 @@ MAINTAINER=	conrads@cox.net
 COMMENT=	A speedy substitute for "make readmes"
 
 USE_BZIP2=	yes
+MAN1=	mkreadmes.1
+MANCOMPRESSED=	maybe
 
 PLIST_FILES=	sbin/${PORTNAME}
 PORTDATA=	*
@@ -33,8 +35,5 @@ post-extract:
 # of ${PREFIX}
 	@${EGREP} -q 'default ${PREFIX}' ${WRKSRC}/main.c || \
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/main.c
-
-post-install:
-	@${CAT} pkg-message
 
 .include <bsd.port.mk>
