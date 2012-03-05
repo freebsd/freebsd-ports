@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ggplot2
-PORTVERSION=	0.8.9
-PORTREVISION=	4
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -16,12 +15,12 @@ COMMENT=	An implementation of the Grammar of Graphics
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-reshape>=0.8.0:${PORTSDIR}/devel/R-cran-reshape \
-		R-cran-proto>0:${PORTSDIR}/devel/R-cran-proto \
-		R-cran-plyr>0:${PORTSDIR}/devel/R-cran-plyr \
-		R-cran-RColorBrewer>0:${PORTSDIR}/graphics/R-cran-RColorBrewer \
-		R-cran-digest>0:${PORTSDIR}/security/R-cran-digest \
-		R-cran-colorspace>0:${PORTSDIR}/graphics/R-cran-colorspace
+RUN_DEPENDS=	R-cran-plyr>=1.0:${PORTSDIR}/devel/R-cran-plyr \
+		R-cran-digest>=0:${PORTSDIR}/security/R-cran-digest \
+		R-cran-reshape2>=0:${PORTSDIR}/devel/R-cran-reshape2 \
+		R-cran-scales>=0:${PORTSDIR}/graphics/R-cran-scales \
+		R-cran-memoise>=0:${PORTSDIR}/devel/R-cran-memoise \
+		R-cran-proto>=0:${PORTSDIR}/devel/R-cran-proto
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
