@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
@@ -14,12 +14,15 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
+LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/deve/libexecinfo
+
 FETCH_ARGS?= 	-pRr
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS=	--with-memcached=no --disable-libevent --without-libevent-prefix
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off
 
