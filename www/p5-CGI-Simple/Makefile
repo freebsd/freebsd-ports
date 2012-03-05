@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A simple totally OO CGI interface that is CGI.pm compliant
 
+TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
+
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Simple.3 \
