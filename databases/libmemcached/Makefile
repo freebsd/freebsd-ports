@@ -14,7 +14,7 @@ MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
-LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/deve/libexecinfo
+LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 FETCH_ARGS?= 	-pRr
 USE_GMAKE=	yes
