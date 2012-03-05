@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	File-Dir-Dumper
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	tolid@tolid.eu.org
-COMMENT=	Perl5 module to dump directory structures' meta-data
+COMMENT=	Perl5 module to dump directory structures meta-data
 
-BUILD_DEPENDS=	${SITE_PERL}/File/Find/Object.pm:${PORTSDIR}/devel/p5-File-Find-Object \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON
+BUILD_DEPENDS=	p5-File-Find-Object>0:${PORTSDIR}/devel/p5-File-Find-Object \
+		p5-IO-String>0:${PORTSDIR}/devel/p5-IO-String \
+		p5-JSON>0:${PORTSDIR}/converters/p5-JSON \
+		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Devel-CheckOS>0:${PORTSDIR}/devel/p5-Devel-CheckOS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
