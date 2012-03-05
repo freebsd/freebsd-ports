@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	relayd
-PORTVERSION=	5.0.20110907
+PORTVERSION=	5.1.20120305
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/downloads/mmatuska/relayd/
 
