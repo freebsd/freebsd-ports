@@ -25,6 +25,7 @@
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-rgdal
     SUBDIR += R-cran-rtiff
+    SUBDIR += R-cran-scales
     SUBDIR += R-cran-shape
     SUBDIR += SciPlot
     SUBDIR += a2png
