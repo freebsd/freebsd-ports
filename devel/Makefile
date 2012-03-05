@@ -1831,6 +1831,7 @@
     SUBDIR += p5-File-pushd
     SUBDIR += p5-FileHandle-Fmode
     SUBDIR += p5-FileHandle-Unget
+    SUBDIR += p5-Filesys-Notify-KQueue
     SUBDIR += p5-Filesys-Notify-Simple
     SUBDIR += p5-Filesys-Virtual
     SUBDIR += p5-Filesys-Virtual-Plain
