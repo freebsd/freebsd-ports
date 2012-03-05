@@ -1,5 +1,5 @@
---- configure.orig	2010-06-15 04:00:19.000000000 -0400
-+++ configure	2010-06-15 07:48:37.000000000 -0400
+--- configure.orig	2012-02-24 11:46:04.000000000 -0500
++++ configure	2012-03-04 13:58:53.000000000 -0500
 @@ -269,7 +269,7 @@
      echo "  QTDIR environment variable not set!"
      echo -n "  Checking for Qt..."
@@ -43,13 +43,13 @@
 -       echo "	\$(MAKE) -C libmd5" >> $DST
         echo "	\$(MAKE) -C src" >> $DST
         if test $f_wizard = YES; then
-          echo "	\$(MAKE) -C addon/doxywizard" >> $DST
-@@ -626,7 +625,7 @@
-      echo "  Created $DST from $SRC..."
- done
+          echo "	\$(MAKE) MAN1DIR=\$(MAN1DIR) -C addon/doxywizard" >> $DST
+@@ -629,7 +628,7 @@
+ cat src/libdoxycfg.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" > src/libdoxycfg.t
+ cat src/libdoxygen.t.in | sed -e "s|%%FLEX%%|$f_flex|g" -e "s|%%BISON%%|$f_bison|g" > src/libdoxygen.t
  
--f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in src/doxytag.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libmd5/libmd5.pro.in addon/doxyapp/doxyapp.pro.in" 
-+f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in src/doxytag.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in addon/doxyapp/doxyapp.pro.in" 
+-f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libmd5/libmd5.pro.in addon/doxyapp/doxyapp.pro.in" 
++f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in addon/doxyapp/doxyapp.pro.in" 
  
  for i in $f_inprofiles ; do
       SRC=$i
