@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomcat-native
-PORTVERSION=	1.1.22
+PORTVERSION=	1.1.23
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
@@ -16,11 +16,12 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Tomcat native library
 
 LICENSE=	AL2
-LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
+
+OPTIONS=	OCSP "Enable OCSP verification support" off
 
 USE_OPENSSL=	yes
 USE_JAVA=	yes
@@ -30,5 +31,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-java-home=${JAVA_HOME} \
 		--with-ssl=${SSLBASE}
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_OCSP)
+CONFIGURE_ARGS+=--enable-ocsp
+.endif
 
 .include <bsd.port.mk>
