@@ -8,3 +8,5 @@
 @dirrm %%SITE_PERL%%/Munin
 @exec mkdir -p %%LOGDIR%%
 @unexec /bin/rmdir %%LOGDIR%% 2>/dev/null || /usr/bin/true
+@exec mkdir -p %%STATEDIR%%
+@unexec /bin/rmdir %%STATEDIR%% 2>/dev/null || /usr/bin/true
