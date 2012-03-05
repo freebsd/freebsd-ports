@@ -1,0 +1,4 @@
+libexec/xmonad-log-applet
+share/dbus-1/services/org.gnome.panel.applet.XmonadLogAppletFactory.service
+share/gnome-panel/applets/org.gnome.panel.XmonadLogApplet.panel-applet
+share/icons/hicolor/48x48/apps/xmonad-log-applet.png
