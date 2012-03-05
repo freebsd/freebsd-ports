@@ -6,7 +6,7 @@
 
 PORTNAME=	Module-CPANTS-Analyse
 PORTVERSION=	0.85
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Generate Kwalitee ratings for a distribution
 
-RUN_DEPENDS=	p5-Archive-Any>=0.06:${PORTSDIR}/archivers/p5-Archive-Any \
+BUILD_DEPENDS=	p5-Archive-Any>=0.06:${PORTSDIR}/archivers/p5-Archive-Any \
 		p5-Array-Diff>=0.04:${PORTSDIR}/misc/p5-Array-Diff \
 		p5-CPAN-DistnameInfo>=0.06:${PORTSDIR}/devel/p5-CPAN-DistnameInfo \
 		p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -24,11 +24,16 @@ RUN_DEPENDS=	p5-Archive-Any>=0.06:${PORTSDIR}/archivers/p5-Archive-Any \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Module-ExtractUse>=0.18:${PORTSDIR}/devel/p5-Module-ExtractUse \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
+		p5-Software-License>=0:${PORTSDIR}/misc/p5-Software-License \
 		p5-Test-YAML-Meta>=0.06:${PORTSDIR}/devel/p5-Test-YAML-Meta \
 		p5-Text-CSV_XS>=0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-YAML-Syck>=0.95:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-version>=0.73:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_MODBUILD=	yes
 
