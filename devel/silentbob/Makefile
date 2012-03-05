@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silentbob
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${PORTNAME}-2.4/
 
@@ -22,6 +22,7 @@ PORTDOCS=	*
 PLIST_FILES=	bin/bob
 
 post-patch:
+	@${RM} ${WRKSRC}/CMakeCache.txt
 	@${REINPLACE_CMD} -e 's|/usr/lib/silent_bob/|${PREFIX}/lib/silent_bob/|' \
 		${WRKSRC}/src/init.cxx
 
