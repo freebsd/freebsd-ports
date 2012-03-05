@@ -1963,6 +1963,7 @@
     SUBDIR += p5-Java
     SUBDIR += p5-Jonk
     SUBDIR += p5-Lexical-Alias
+    SUBDIR += p5-Lexical-Import
     SUBDIR += p5-Lexical-Persistence
     SUBDIR += p5-Lexical-SealRequireHints
     SUBDIR += p5-Lexical-Var
