@@ -1,0 +1,24 @@
+Lexical::Import allows functions and other items, from a separate module, to be
+imported into the lexical namespace (as implemented by Lexical::Var), when the
+exporting module exports non-lexically to a package in the traditional manner.
+This is a translation layer, to help code written in the new way to use modules
+written in the old way.
+
+A lexically-imported item takes effect from the end of the definition statement
+up to the end of the immediately enclosing block, except where it is shadowed
+within a nested block. This is the same lexical scoping that the my, our, and
+state keywords supply. Within its scope, any use of the single-part name of the
+item (e.g., "$foo") refers directly to that item, regardless of what is in any
+package. Explicitly package-qualified names (e.g., "$main::foo") still refer to
+the package. There is no conflict between a lexical name definition and the same
+name in any package.
+
+This mechanism only works on Perl 5.11.2 and later. Prior to that, it is
+impossible for lexical subroutine imports to work for bareword subroutine calls.
+(See "BUGS" in Lexical::Var for details.) Other kinds of lexical importing are
+possible on earlier Perls, but because this is such a critical kind of usage in
+most code, this module will ensure that it works, for convenience. If the
+limited lexical importing is desired on earlier Perls, use Lexical::Var
+directly.
+
+WWW: http://search.cpan.org/dist/Lexical-Import/
