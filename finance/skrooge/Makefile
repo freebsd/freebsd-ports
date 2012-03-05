@@ -7,14 +7,14 @@
 
 PORTNAME=	skrooge
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance kde
 MASTER_SITES=	http://skrooge.org/files/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A personal finances manager for KDE
 
-LIB_DEPENDS=	ofx.4:${PORTSDIR}/finance/libofx \
+LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		qca.2:${PORTSDIR}/devel/qca \
 		grantlee_gui.0:${PORTSDIR}/devel/grantlee

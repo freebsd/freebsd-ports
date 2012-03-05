@@ -8,6 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.4.9
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -82,7 +83,7 @@ PLIST_SUB+=	AQBANKING="@comment "
 
 .if defined(WITH_OFX)
 CONFIGURE_ARGS+=--enable-ofx
-LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+LIB_DEPENDS+=	ofx.5:${PORTSDIR}/finance/libofx
 PLIST_SUB+=	OFX=""
 .else
 CONFIGURE_ARGS+=--disable-ofx
