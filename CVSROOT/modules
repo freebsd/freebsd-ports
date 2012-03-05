@@ -815,6 +815,7 @@ august                          ports/www/august
 aumix                           ports/audio/aumix
 aureal-kmod                     ports/audio/aureal-kmod
 authforce                       ports/security/authforce
+auto-admin                      ports/sysutils/auto-admin
 autobackupmysql                 ports/databases/autobackupmysql
 autobench                       ports/benchmarks/autobench
 autobook                        ports/devel/autobook
@@ -1122,7 +1123,6 @@ block                           ports/games/block
 blockade                        ports/games/blockade
 blockout                        ports/games/blockout
 blocksolve95                    ports/math/blocksolve95
-blocksshd                       ports/security/blocksshd
 blogbench                       ports/benchmarks/blogbench
 blogsum                         ports/www/blogsum
 blogtk                          ports/deskutils/blogtk
@@ -2480,7 +2480,6 @@ dk-milter                       ports/mail/dk-milter
 dkfilter                        ports/mail/dkfilter
 dkftpbench                      ports/benchmarks/dkftpbench
 dkimproxy                       ports/mail/dkimproxy
-dklibs                          ports/devel/dklibs
 dkns                            ports/editors/dkns
 dlint                           ports/dns/dlint
 dlume                           ports/deskutils/dlume
@@ -6242,6 +6241,8 @@ ja-a2ps                         ports/japanese/a2ps
 ja-ack                          ports/japanese/ack
 ja-acroread8                    ports/japanese/acroread8
 ja-acroread9                    ports/japanese/acroread9
+ja-ajaxzip2-core                ports/japanese/ajaxzip2-core
+ja-ajaxzip2-data                ports/japanese/ajaxzip2-data
 ja-alias-fonts                  ports/japanese/alias-fonts
 ja-another-htmllint             ports/japanese/another-htmllint
 ja-anthy                        ports/japanese/anthy
@@ -9184,7 +9185,6 @@ mediainfo                       ports/multimedia/mediainfo
 mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
-mediawiki116                    ports/www/mediawiki116
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
 medusa                          ports/security/medusa
@@ -13600,7 +13600,6 @@ p5-Net-Services                 ports/net/p5-Net-Services
 p5-Net-SinFP                    ports/security/p5-Net-SinFP
 p5-Net-Stomp                    ports/net-im/p5-Net-Stomp
 p5-Net-Subnet                   ports/net/p5-Net-Subnet
-p5-Net-Subnets                  ports/net/p5-Net-Subnets
 p5-Net-TCLink                   ports/net/p5-Net-TCLink
 p5-Net-TcpDumpLog               ports/net/p5-Net-TcpDumpLog
 p5-Net-Telnet                   ports/net/p5-Net-Telnet
@@ -18084,7 +18083,6 @@ p5-net-ssleay                   ports/security/p5-Net-SSLeay
 p5-net-stf-client               ports/www/p5-Net-STF-Client
 p5-net-stomp                    ports/net-im/p5-Net-Stomp
 p5-net-subnet                   ports/net/p5-Net-Subnet
-p5-net-subnets                  ports/net/p5-Net-Subnets
 p5-net-tclink                   ports/net/p5-Net-TCLink
 p5-net-tcpdumplog               ports/net/p5-Net-TcpDumpLog
 p5-net-telnet                   ports/net/p5-Net-Telnet
@@ -24594,6 +24592,7 @@ rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-public_suffix_service   ports/dns/rubygem-public_suffix_service
 rubygem-puppet-module           ports/sysutils/rubygem-puppet-module
 rubygem-qmail                   ports/mail/rubygem-qmail
+rubygem-racc                    ports/devel/rubygem-racc
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-rack-cache              ports/www/rubygem-rack-cache
 rubygem-rack-mount              ports/www/rubygem-rack-mount
