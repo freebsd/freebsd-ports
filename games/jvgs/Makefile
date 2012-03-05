@@ -7,7 +7,7 @@
 
 PORTNAME=	jvgs
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -29,6 +29,8 @@ SUB_FILES=	${PORTNAME}
 NO_CDROM=	contains data under CC-by-NC-SA
 
 PORTDOCS=	AUTHORS
+
+PORTDCOUT=	ignore:0.5 # unplayable due to broken double jump
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|main.lua|${DATADIR}/&|' ${WRKSRC}/src/main.cpp
