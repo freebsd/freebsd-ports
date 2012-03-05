@@ -7,6 +7,7 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -17,7 +18,8 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
     		talloc.2:${PORTSDIR}/devel/talloc
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
-		bison:${PORTSDIR}/devel/bison
+		bison:${PORTSDIR}/devel/bison \
+		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
 CONFLICTS=	mesagl-mangled-*
 
@@ -26,6 +28,7 @@ USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig gnomehack
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-driver=osmesa --with-osmesa-bits=32 \
 		--with-gallium-drivers= --disable-asm \
