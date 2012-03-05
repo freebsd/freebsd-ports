@@ -25,7 +25,16 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=  yes
 PYEASYINSTALL_ARCHDEP=  yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+.if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+.endif
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|share/doc|${DOCSDIR}|g' ${WRKSRC}/setup.py
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -35,4 +44,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
