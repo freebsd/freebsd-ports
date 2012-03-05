@@ -21,7 +21,6 @@ USE_GNOME=	gnomehack libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
-		--with-pkg-config=${LOCALBASE}/bin/pkg-config \
 		--with-xml-parser=libxml --with-www=curl
 CONFIGURE_ENV+=	DOC_MODULE_VERSION=1
 MAKE_ENV+=	DOC_MODULE_VERSION=1
