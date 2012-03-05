@@ -5,13 +5,6 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql
-PKGNAMESUFFIX=	-plperl
-
-MAINTAINER=	pgsql@FreeBSD.org
-COMMENT=	Write SQL functions for PostgreSQL using Perl5
-
 WANT_PGSQL_VER=	84
-USE_PERL5=	yes
 
 .include "${.CURDIR}/../postgresql90-plperl/Makefile"

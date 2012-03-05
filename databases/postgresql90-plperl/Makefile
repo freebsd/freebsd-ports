@@ -12,9 +12,9 @@ PKGNAMESUFFIX=	-plperl
 MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
-MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
-
 RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${WANT_PGSQL_VER}-server
+
+MASTERDIR=	${.CURDIR}/../../databases/postgresql${WANT_PGSQL_VER}-server
 
 WANT_PGSQL_VER?=90
 

@@ -29,14 +29,14 @@ ICU_PATCHFILE?=	pg-910-icu-2011-09-22.diff.gz
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 .else # Contrib has different options from -client/-server
-UNIQUENAME?=    ${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
+UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}${PKGNAMESUFFIX}
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}
 .endif
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
-USE_BZIP2=	YES
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 .if defined(NO_BUILD)
 .undef USE_GMAKE
 .undef GNU_CONFIGURE
@@ -146,7 +146,7 @@ PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
 .    if ${OSVERSION} < 900021
-IGNORE=	Need userland DTrace support found in FreeBSD 9.0
+IGNORE=	need userland DTrace support found in FreeBSD 9.0
 .    endif
 .  endif
 
@@ -157,7 +157,7 @@ CONFIGURE_ARGS+=--with-pam
 .  if defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-ldap
 .    if defined (SERVER_ONLY)
-USE_OPENLDAP=	YES
+USE_OPENLDAP=	yes
 .    endif
 .  endif
 
@@ -180,7 +180,7 @@ CONFIGURE_ARGS+=--disable-integer-datetimes
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
-USE_GETTEXT=	YES
+USE_GETTEXT=	yes
 .  else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
@@ -228,7 +228,7 @@ CONFIGURE_ARGS+=--with-krb5
 .  endif
 
 .  if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
-IGNORE=	has OPTIONS for MIT's and Heimdal Kerberos, which are mutually exclusive.  Please choose one or the other.
+IGNORE=	has OPTIONS for MIT's and Heimdal Kerberos, which are mutually exclusive.  Please choose one or the other
 .  endif
 
 .endif # !SLAVE_ONLY
@@ -322,11 +322,11 @@ MAN7+=		ABORT.7 ALTER_AGGREGATE.7 ALTER_CONVERSION.7		      \
 		SAVEPOINT.7 VALUES.7 WITH.7
 .endif
 
-PLIST_SUB+=	PG_USER=$(PG_USER) \
-		PG_GROUP=$(PG_GROUP)
-SUB_LIST+=	PG_GROUP=$(PG_GROUP) \
-		PG_USER=$(PG_USER) \
-		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=${PG_USER} \
+		PG_GROUP=${PG_GROUP}
+SUB_LIST+=	PG_GROUP=${PG_GROUP} \
+		PG_USER=${PG_USER} \
+		PG_UID=${PG_UID}
 
 .if defined(SERVER_ONLY)
 pre-everything::
@@ -347,7 +347,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
 SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
-PLIST_SUB+=	PG_USER=$(PG_USER)
+PLIST_SUB+=	PG_USER=${PG_USER}
 .  endif
 
 post-patch:
