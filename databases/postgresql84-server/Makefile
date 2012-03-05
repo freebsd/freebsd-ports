@@ -29,9 +29,9 @@ UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
-USE_BZIP2=	YES
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 .if defined(NO_BUILD)
 .undef USE_GMAKE
 .undef GNU_CONFIGURE
@@ -66,8 +66,8 @@ USE_PGSQL=	yes
 WANT_PGSQL_VER=	${DISTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 USERS=		${PG_USER}
 . if ${USERS} != "pgsql"
-UID_FILES+=     ${WRKDIR}/pguid
-GID_FILES+=     ${WRKDIR}/pggid
+UID_FILES+=	${WRKDIR}/pguid
+GID_FILES+=	${WRKDIR}/pggid
 . endif
 GROUPS=		${PG_GROUP}
 SUB_FILES+=	502.pgsql
@@ -138,7 +138,7 @@ PATCH_DIST_STRIP=-p1
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=	-lelf
 .    if ${OSVERSION} < 900021
-IGNORE=	Need userland DTrace support found in FreeBSD 9.0
+IGNORE=	need userland DTrace support found in FreeBSD 9.0
 .    endif
 .  endif
 
@@ -148,7 +148,7 @@ CONFIGURE_ARGS+=--with-pam
 
 .  if defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-ldap
-USE_OPENLDAP=	YES
+USE_OPENLDAP=	yes
 .  endif
 
 .  if defined(WITH_XML)
@@ -172,7 +172,7 @@ CONFIGURE_ARGS+=--enable-integer-datetimes
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	GETTEXT=""
-USE_GETTEXT=	YES
+USE_GETTEXT=	yes
 .  else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT="@comment "
@@ -296,11 +296,11 @@ MAN7+=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 		savepoint.7 values.7
 .endif
 
-PLIST_SUB+=	PG_USER=$(PG_USER) \
-		PG_GROUP=$(PG_GROUP)
-SUB_LIST+=	PG_GROUP=$(PG_GROUP) \
-		PG_USER=$(PG_USER) \
-		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=${PG_USER} \
+		PG_GROUP=${PG_GROUP}
+SUB_LIST+=	PG_GROUP=${PG_GROUP} \
+		PG_USER=${PG_USER} \
+		PG_UID=${PG_UID}
 
 .if defined(SERVER_ONLY)
 pre-everything::
@@ -320,7 +320,7 @@ pre-configure:
 pre-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
 .endif
-	
+
 do-build:
 	@ for dir in ${BUILD_DIRS}; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
@@ -332,7 +332,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
 SUB_FILES+=	pkg-install${PKGNAMESUFFIX}
-PLIST_SUB+=	PG_USER=$(PG_USER)
+PLIST_SUB+=	PG_USER=${PG_USER}
 .  endif
 .endif
 
