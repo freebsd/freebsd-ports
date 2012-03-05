@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	2.0.0b4.8
+PORTVERSION=	2.0.0b5
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b4p8/
+MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b5/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	free-sa-2.0.0b4p8
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
+
+LICENSE=	GPLv3
 
 MAKE_JOBS_SAFE=	yes
 CONFLICTS=	free-sa-[0-9]*
@@ -40,7 +41,7 @@ MAKE_ARGS+=	PREFIX="${PREFIX}" \
 		LARGEFILE=yes \
 		SATSEP="'" \
 		HAVE_STRL="1" \
-		ADDLDFLAGS="${LDFLAGS} --relax -mrelax" \
+		ADDLDFLAGS="${LDFLAGS} -mrelax" \
 		MANDIR="${MANPREFIX}/man"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Build with distribution-recommended CFLAGS"	off \

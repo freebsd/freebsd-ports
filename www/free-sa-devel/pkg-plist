@@ -84,6 +84,6 @@ bin/free-sa
 @dirrm %%WWWDIR%%/themes/blues
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/cgi-bin
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
 @dirrm %%DATADIR%%
 @dirrmtry %%ETCDIR%%
