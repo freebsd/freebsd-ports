@@ -24,6 +24,9 @@ CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include' LIBS'-L${LOCALBASE}/lib'
 
 MAN3=		Getopt::Popt.3
 
+DEPRECATED=	"Gone from CPAN"
+EXPIRATION_DATE=	2012-04-04
+
 post-patch:
 	@${MKDIR} ${WRKSRC}/ex
 	@${MV} ${WRKSRC}/example.pl ${WRKSRC}/ex
