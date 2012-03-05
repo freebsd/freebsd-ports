@@ -2,7 +2,8 @@
 
 mkdir -p ~/.jvgs
 cd ~/.jvgs
-if [ ! -e 'resources' ]; then
+if [ ! -e 'resources' -o "`readlink resources`" != %%DATADIR%%/resources ]; then
+	rm -f resources
 	ln -s %%DATADIR%%/resources
 fi
 exec %%PREFIX%%/libexec/jvgs
