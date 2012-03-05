@@ -176,6 +176,10 @@ PLIST_SUB+=	I386="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 .if ${OSVERSION} > 900012
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
 .endif
