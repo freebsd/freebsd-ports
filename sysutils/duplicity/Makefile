@@ -7,6 +7,7 @@
 
 PORTNAME=	duplicity
 PORTVERSION=	0.6.18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
@@ -16,7 +17,9 @@ COMMENT=	Backup tool that uses rsync and GnuPG
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		ncftp>=3.2.2:${PORTSDIR}/ftp/ncftp3 \
-		lftp>=3.7.15:${PORTSDIR}/ftp/lftp
+		lftp>=3.7.15:${PORTSDIR}/ftp/lftp \
+		${PYTHON_PKGNAMEPREFIX}paramiko>=1.7.7.1:${PORTSDIR}/security/py-paramiko \
+		${PYTHON_PKGNAMEPREFIX}boto>=1.6b:${PORTSDIR}/devel/py-boto
 
 OPTIONS=	NLS "National Language Support" on
 
