@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-Ezmlm
 PORTVERSION=	0.08.2
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,9 @@ DISTNAME=	Ezmlm-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Perl module to allow object methods for ezmlm-idx mailing lists
 
-BUILD_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
+BUILD_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
+		p5-Crypt-GPG>=0:${PORTSDIR}/security/p5-Crypt-GPG
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 EZMLM_DIR?=	${LOCALBASE}
 
