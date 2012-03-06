@@ -21,11 +21,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
-BUILD_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
-RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
-
 USE_BZIP2=	yes
-USE_PGSQL=	yes
+USE_PGSQL=	server
+WANT_PGSQL_VER=	84-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
