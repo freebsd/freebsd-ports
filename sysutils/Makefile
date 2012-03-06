@@ -927,6 +927,7 @@
     SUBDIR += usermin
     SUBDIR += userneu
     SUBDIR += userneu-devel
+    SUBDIR += userspace-rcu
     SUBDIR += usrinfo
     SUBDIR += utcount
     SUBDIR += vbetool
