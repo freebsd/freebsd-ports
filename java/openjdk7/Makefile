@@ -7,9 +7,8 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
-PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
+MASTER_SITES=	http://download.java.net/openjdk/jdk7u2/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
 		http://icedtea.classpath.org/download/drops/:jaxp \
 		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk7/:jaxws \
@@ -36,10 +35,10 @@ USE_ZIP=	YES
 MAKE_JOBS_UNSAFE=	YES
 
 JDK_MAJOR_VERSION=	7
-JDK_MINOR_VERSION=	0
-JDK_BUILD_NUMBER=	147
-JDK_BUILD_DATE=		27_jun_2011
-JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
+JDK_MINOR_VERSION=	2
+JDK_BUILD_NUMBER=	13
+JDK_BUILD_DATE=		17_nov_2011
+JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
 ANT_VERSION=		1.8.2
@@ -53,7 +52,7 @@ USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_JOBS_UNSAFE=	yes
 
 JAXPFILE=	jaxp145_01.zip
-JAXWSFILE=	jdk7-jaxws2_2_4-b03-2011_05_27.zip
+JAXWSFILE=	jdk7-jaxws2_2_4-b04-2011_06_01.zip
 JAFFILE=	jdk7-jaf-2010_08_19.zip
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
@@ -93,7 +92,9 @@ MAKE_ENV+=	LANG="C" \
 		SKIP_FASTDEBUG_BUILD="true" \
 		SKIP_DEBUG_BUILD="true" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		MILESTONE="fcs"
+		MILESTONE="fcs" \
+		JDK_MICRO_VERSION="0_0${JDK_MINOR_VERSION}" \
+		BUILD_NUMBER="b${JDK_BUILD_NUMBER}"
 
 .if !defined(DISABLE_MAKE_JOBS)
 .if defined(MAKE_JOBS_NUMBER)
