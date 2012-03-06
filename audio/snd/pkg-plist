@@ -302,9 +302,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanhsininteg.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tanhsum.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/title.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/toc-blank.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/toc-minus.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/toc-plus.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/toolbar.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/tritri.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/uppergrf.png
@@ -321,9 +318,7 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/xex.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/zramp.png
 %%PORTDOCS%%%%DOCSDIR%%/quick.html
-%%PORTDOCS%%%%DOCSDIR%%/snd-contents.html
 %%PORTDOCS%%%%DOCSDIR%%/snd.html
-%%PORTDOCS%%%%DOCSDIR%%/snd1.html
 %%PORTDOCS%%%%DOCSDIR%%/sndclm.html
 %%PORTDOCS%%%%DOCSDIR%%/sndlib.html
 %%PORTDOCS%%%%DOCSDIR%%/sndscm.html
