@@ -20,6 +20,9 @@ COMMENT=	MusicBrainz bindings for Python
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-04-05
+
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 EXAMPLES=	cd2trm.py cdid.py cdlookup.py fileinfolookup.py findartist.py \
 		findtrack.py generatetrm.py getalbum.py getcdtracklengths.py \
