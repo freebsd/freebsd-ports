@@ -7,7 +7,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.10
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
-		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
 		xine.2:${PORTSDIR}/multimedia/libxine
 
@@ -44,6 +43,7 @@ OPTIONS=	GPOD "iPod support" on \
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=--without-exscalibar \
+		--without-musicbrainz \
 		--with-mp4v2 \
 		--with-mp4v2-dir=${PREFIX}
 

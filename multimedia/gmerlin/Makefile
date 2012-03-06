@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -20,7 +20,6 @@ OPTIONS=	PULSEAUDIO "Enable PulseAudio support" on \
 		QUICKTIME "Enable QuickTime support" on \
 		VISUAL "Enable libvisual support" on \
 		CDIO	"Enable libcdio support" on \
-		MUSICBRAINZ "Enable MusicBrainz support" on \
 		CDDB	"Enable CDDB support" on \
 		ESOUND	"Enable ESounD support" off \
 		JACK	"Enable Jack support" on \
@@ -43,7 +42,7 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-v4l --disable-v4l2 \
 		--disable-camelot --disable-alsamixer --disable-v4lconvert \
-		--without-doxygen --without-cpuflags
+		--without-doxygen --without-cpuflags --disable-musicbrainz
 USE_LDCONFIG=	yes
 INSTALL_ICONS=	yes
 
@@ -83,12 +82,6 @@ PLIST_SUB+=	CDIO=""
 .else
 CONFIGURE_ARGS+=--disable-libcdio
 PLIST_SUB+=	CDIO="@comment "
-.endif
-
-.if !defined(WITHOUT_MUSICBRAINZ)
-LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
-.else
-CONFIGURE_ARGS+=--disable-musicbrainz
 .endif
 
 .if !defined(WITHOUT_CDDB)

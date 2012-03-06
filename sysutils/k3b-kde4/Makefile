@@ -7,7 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -22,7 +22,8 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF
+CMAKE_ARGS=	-DK3B_BUILD_K3BSETUP:BOOL=OFF \
+		-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_CDRTOOLS=	yes
 USE_QT_VER=	4
@@ -45,7 +46,6 @@ OPTIONS=	CDRDAO "Burning: Use cdrdao" ON \
 		SOX "Encoder: various (audio/sox)" OFF \
 		VORBIS_ENC "Encoder: ogg/vorbis" ON \
 		LIBDVDREAD "Misc: libdvdread (video dvd ripping)" ON \
-		MUSICBRAINZ "Misc: Musicbrainz (audio metadata lookup)" ON \
 		NORMALIZE "Misc: Normalize (adjust audio to a std. level)" OFF \
 		TAGLIB "Misc: taglib (reading/writing audio metadata)" ON \
 		TRANSCODE "Misc: Transcode (for DVD ripping)" OFF
@@ -147,14 +147,6 @@ PLIST_SUB+=	LIBDVDREAD=""
 .else
 CMAKE_ARGS+=	-DK3B_ENABLE_DVD_RIPPING:BOOL=OFF
 PLIST_SUB+=	LIBDVDREAD="@comment "
-.endif
-
-.if defined(WITH_MUSICBRAINZ)
-LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
-PLIST_SUB+=	MUSICBRAINZ=""
-.else
-CMAKE_ARGS+=	-DK3B_ENABLE_MUSICBRAINZ:BOOL=OFF
-PLIST_SUB+=	MUSICBRAINZ="@comment "
 .endif
 
 .if defined(WITH_NORMALIZE)

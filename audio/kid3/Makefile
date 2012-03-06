@@ -7,6 +7,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -17,7 +18,6 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 
 USE_KDELIBS_VER=3
@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-musicbrainz
 MAKE_JOBS_SAFE=	yes
 
 post-configure:
