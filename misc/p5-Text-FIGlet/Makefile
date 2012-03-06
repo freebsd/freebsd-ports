@@ -15,6 +15,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to provide FIGlet abilities, akin to banner
 
 RUN_DEPENDS=	${LOCALBASE}/bin/figlet:${PORTSDIR}/misc/figlet
+TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	yes
 
