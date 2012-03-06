@@ -7,7 +7,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/packs/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
@@ -55,7 +55,7 @@ USE_APACHE=	20+
 
 .if defined (WITH_PGSQL)
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	84
+WANT_PGSQL_VER=	84+
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 

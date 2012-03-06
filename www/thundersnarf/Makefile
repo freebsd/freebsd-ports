@@ -7,7 +7,7 @@
 
 PORTNAME=	thundersnarf
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
@@ -33,7 +33,7 @@ USE_APACHE=	20+
 
 .if defined (WITH_PGSQL)
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	84
+WANT_PGSQL_VER=	84+
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 
