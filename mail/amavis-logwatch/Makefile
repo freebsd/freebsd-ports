@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amavis-logwatch
-PORTVERSION=	1.51.01
+PORTVERSION=	1.51.02
 CATEGORIES=	mail
 MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
