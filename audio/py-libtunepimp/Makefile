@@ -17,6 +17,9 @@ COMMENT=	Python bindings for libtunepimp
 
 LIB_DEPENDS=	tunepimp.5:${PORTSDIR}/audio/libtunepimp
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-04-05
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	tunepimp
