@@ -7,7 +7,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -23,6 +23,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	svg gui network dbus xml \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
+CMAKE_ARGS=	-DWITH_TUNEPIMP=OFF
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -30,8 +31,7 @@ OPTIONS=	FLAC "Support for FLAC files" on \
 		ID3LIB "Support for mp3 files" on \
 		MP4V2 "Support for mp4 files" on \
 		VORBIS "Support for Ogg/Vorbis files" on \
-		TAGLIB "Support for various audio formats" on \
-		TUNEPIMP "Support for MusicBrainz service" on
+		TAGLIB "Support for various audio formats" on
 
 .include <bsd.port.options.mk>
 
@@ -69,13 +69,6 @@ CMAKE_ARGS+=	-DWITH_TAGLIB=OFF
 .else
 CMAKE_ARGS+=	-DWITH_TAGLIB=ON
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
-.endif
-
-.if defined(WITHOUT_TUNEPIMP)
-CMAKE_ARGS+=	-DWITH_TUNEPIMP=OFF
-.else
-CMAKE_ARGS+=	-DWITH_TUNEPIMP=ON
-LIB_DEPENDS+=	tunepimp.5:${PORTSDIR}/audio/libtunepimp
 .endif
 
 pre-configure:

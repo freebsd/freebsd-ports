@@ -6,7 +6,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -21,7 +21,6 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		tag.1:${PORTSDIR}/audio/taglib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
-		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
 		xine.2:${PORTSDIR}/multimedia/libxine \
 		swscale.1:${PORTSDIR}/multimedia/ffmpeg
 
@@ -38,6 +37,7 @@ QT_COMPONENTS=	dbus qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
+CMAKE_ARGS=	-DWITH_TunePimp:BOOL=OFF
 
 OPTIONS=	ALSA "Build with ALSA compatibility library" off \
 		PULSEAUDIO "KMix control for PulseAudio" off
