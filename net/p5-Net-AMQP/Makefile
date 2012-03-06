@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
     		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
     		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
     		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	yes
 
