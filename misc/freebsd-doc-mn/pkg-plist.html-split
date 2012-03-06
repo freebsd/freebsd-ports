@@ -97,6 +97,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-news.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-linux.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-apps.html
@@ -113,6 +114,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
