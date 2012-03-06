@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	11.0.b2
-PORTREVISION=	4
+PORTVERSION=	11.0.rc1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
-DISTNAME=	${PORTNAME}-11.0-Eden_beta2
+DISTNAME=	${PORTNAME}-11.0-Eden_rc1
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	XBMC is an award winning media center application
@@ -26,8 +25,7 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		nasm:${PORTSDIR}/devel/nasm \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
 		gtk-update-icon-cache:${PORTSDIR}/x11-toolkits/gtk20
-LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
-		ass.5:${PORTSDIR}/multimedia/libass \
+LIB_DEPENDS=	ass.5:${PORTSDIR}/multimedia/libass \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		cdio.13:${PORTSDIR}/sysutils/libcdio	\
 		curl.6:${PORTSDIR}/ftp/curl \
@@ -54,8 +52,7 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		yajl:${PORTSDIR}/devel/yajl
-RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
@@ -67,7 +64,7 @@ USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xrandr xtst
 USE_GL=		glu
-USE_SDL=	image mixer sdl
+USE_SDL=	image sdl
 USE_MYSQL=	yes
 USE_PYTHON=	2.5+
 MAKE_JOBS_SAFE=	yes
@@ -75,13 +72,12 @@ NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
-PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/python//:S/.//g}"
-
 OPTIONS=	AVAHI		"Enable Avahi support"			on \
 		LIBBLURAY	"Enable libbluray support"		on \
 		HAL		"Enable HAL support"			on \
 		LIRC		"Enable lirc support"			off \
 		NONFREE		"Enable non-free components (rar, ccx, ffmpeg)"	off \
+		OSS		"Enable experimental OSS support"	off \
 		PULSE		"Enable PulseAudio support"		off \
 		RTMP		"RTMP support via librtmp"		off \
 		VAAPI		"Enable VAAPI support"			off \
@@ -144,6 +140,17 @@ NO_PACKAGE=	${NO_CDROM}
 CONFIGURE_ARGS+=	--disable-non-free
 .endif
 
+.if defined(WITH_OSS)
+.if ${OSVERSION} <= 800096
+IGNORE=	requires sound rewrite from 8.0-RELEASE or later
+.endif
+CONFIGURE_ARGS+=	--disable-alsa
+.else
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+USE_SDL+=	mixer
+.endif
+
 .if defined(WITH_PULSE)
 CONFIGURE_ARGS+=	--enable-pulse
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
@@ -175,10 +182,8 @@ CONFIGURE_ARGS+=	--disable-vdpau
 .if defined(WITH_WEBSERVER)
 CONFIGURE_ARGS+=	--enable-webserver
 LIB_DEPENDS+=	microhttpd.23:${PORTSDIR}/www/libmicrohttpd
-PLIST_SUB+=	HTTPD=""
 .else
 CONFIGURE_ARGS+=	--disable-webserver
-PLIST_SUB+=	HTTPD="@comment "
 .endif
 
 .if ${CC} == "clang" || ${CXX} == "clang++"
@@ -186,6 +191,14 @@ CONFIGURE_ARGS+=	--disable-rsxs
 PLIST_SUB+=	RSXS="@comment "
 .else
 PLIST_SUB+=	RSXS=""
+.endif
+
+post-patch:
+.if defined(WITH_OSS)
+	@(cd ${WRKSRC}; \
+	${BZCAT} ${FILESDIR}/extra-patch-oss.bz2 | ${PATCH} ${PATCH_DIST_ARGS})
+	@${RM} ${WRKSRC}/language/English/strings.xml.orig
+	@${RM} ${WRKSRC}/addons/skin.confluence/sounds/sounds.xml.orig
 .endif
 
 pre-configure:
