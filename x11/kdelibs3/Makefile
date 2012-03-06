@@ -49,6 +49,8 @@ CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes
