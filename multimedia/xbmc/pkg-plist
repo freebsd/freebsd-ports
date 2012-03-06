@@ -297,6 +297,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/fonts/DejaVuSans.ttf
 %%DATADIR%%/addons/skin.confluence/icon.png
 %%DATADIR%%/addons/skin.confluence/language/Afrikaans/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Arabic/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Bulgarian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Catalan/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)/strings.xml
@@ -751,6 +752,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/weather.wunderground/changelog.txt
 %%DATADIR%%/addons/weather.wunderground/default.py
 %%DATADIR%%/addons/weather.wunderground/icon.png
+%%DATADIR%%/addons/weather.wunderground/resources/language/Chinese (Simple)/strings.xml
+%%DATADIR%%/addons/weather.wunderground/resources/language/Dutch/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/English/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/German/strings.xml
@@ -790,6 +793,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/xbmc.python/script.xsd
 %%DATADIR%%/language/Afrikaans/langinfo.xml
 %%DATADIR%%/language/Afrikaans/strings.xml
+%%DATADIR%%/language/Arabic/langinfo.xml
+%%DATADIR%%/language/Arabic/strings.xml
 %%DATADIR%%/language/Basque/langinfo.xml
 %%DATADIR%%/language/Basque/strings.xml
 %%DATADIR%%/language/Bosnian/langinfo.xml
@@ -1051,6 +1056,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/language/Bulgarian
 @dirrm %%DATADIR%%/language/Bosnian
 @dirrm %%DATADIR%%/language/Basque
+@dirrm %%DATADIR%%/language/Arabic
 @dirrm %%DATADIR%%/language/Afrikaans
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%/addons/xbmc.python
@@ -1067,6 +1073,8 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/German
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/English
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Dutch
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Chinese (Simple)
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/lib
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources
@@ -1187,6 +1195,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Catalan
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Bulgarian
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Arabic
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Afrikaans
 @dirrm %%DATADIR%%/addons/skin.confluence/language
 @dirrm %%DATADIR%%/addons/skin.confluence/fonts
