@@ -10322,6 +10322,7 @@ objectivelib                    ports/devel/objectivelib
 obliterate                      ports/sysutils/obliterate
 obmenu                          ports/x11-wm/obmenu
 obpager                         ports/x11-wm/obpager
+observium                       ports/net-mgmt/observium
 ocaml                           ports/lang/ocaml
 ocaml-annexlib                  ports/devel/ocaml-annexlib
 ocaml-autoconf                  ports/lang/ocaml-autoconf
@@ -12320,6 +12321,7 @@ p5-Filesys-DfPortable           ports/sysutils/p5-Filesys-DfPortable
 p5-Filesys-DiskFree             ports/sysutils/p5-Filesys-DiskFree
 p5-Filesys-DiskSpace            ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-DiskUsage            ports/sysutils/p5-Filesys-DiskUsage
+p5-Filesys-Notify-KQueue        ports/devel/p5-Filesys-Notify-KQueue
 p5-Filesys-Notify-Simple        ports/devel/p5-Filesys-Notify-Simple
 p5-Filesys-SmbClient            ports/net/p5-Filesys-SmbClient
 p5-Filesys-Statvfs              ports/sysutils/p5-Filesys-Statvfs
@@ -12902,6 +12904,7 @@ p5-LaTeX-ToUnicode              ports/textproc/p5-LaTeX-ToUnicode
 p5-Layout-Manager               ports/graphics/p5-Layout-Manager
 p5-Lchown                       ports/sysutils/p5-Lchown
 p5-Lexical-Alias                ports/devel/p5-Lexical-Alias
+p5-Lexical-Import               ports/devel/p5-Lexical-Import
 p5-Lexical-Persistence          ports/devel/p5-Lexical-Persistence
 p5-Lexical-SealRequireHints     ports/devel/p5-Lexical-SealRequireHints
 p5-Lexical-Var                  ports/devel/p5-Lexical-Var
@@ -16781,6 +16784,7 @@ p5-filesys-dfportable           ports/sysutils/p5-Filesys-DfPortable
 p5-filesys-diskfree             ports/sysutils/p5-Filesys-DiskFree
 p5-filesys-diskspace            ports/sysutils/p5-Filesys-DiskSpace
 p5-filesys-diskusage            ports/sysutils/p5-Filesys-DiskUsage
+p5-filesys-notify-kqueue        ports/devel/p5-Filesys-Notify-KQueue
 p5-filesys-notify-simple        ports/devel/p5-Filesys-Notify-Simple
 p5-filesys-smbclient            ports/net/p5-Filesys-SmbClient
 p5-filesys-statvfs              ports/sysutils/p5-Filesys-Statvfs
@@ -17359,6 +17363,7 @@ p5-layout-manager               ports/graphics/p5-Layout-Manager
 p5-lchown                       ports/sysutils/p5-Lchown
 p5-lego-rcx                     ports/misc/p5-LEGO-RCX
 p5-lexical-alias                ports/devel/p5-Lexical-Alias
+p5-lexical-import               ports/devel/p5-Lexical-Import
 p5-lexical-persistence          ports/devel/p5-Lexical-Persistence
 p5-lexical-sealrequirehints     ports/devel/p5-Lexical-SealRequireHints
 p5-lexical-var                  ports/devel/p5-Lexical-Var
@@ -21613,7 +21618,6 @@ postfix28                       ports/mail/postfix28
 postfixadmin                    ports/mail/postfixadmin
 postgis                         ports/databases/postgis
 postgis-jdbc                    ports/databases/postgis-jdbc
-postgresql-docs                 ports/databases/postgresql-docs
 postgresql-jdbc                 ports/databases/postgresql-jdbc
 postgresql-libpgeasy            ports/databases/postgresql-libpgeasy
 postgresql-libpq++              ports/databases/postgresql-libpq++
@@ -21633,18 +21637,22 @@ postgresql82-contrib            ports/databases/postgresql82-contrib
 postgresql82-server             ports/databases/postgresql82-server
 postgresql83-client             ports/databases/postgresql83-client
 postgresql83-contrib            ports/databases/postgresql83-contrib
+postgresql83-docs               ports/databases/postgresql83-docs
 postgresql83-plperl             ports/databases/postgresql83-plperl
 postgresql83-server             ports/databases/postgresql83-server
 postgresql84-client             ports/databases/postgresql84-client
 postgresql84-contrib            ports/databases/postgresql84-contrib
+postgresql84-docs               ports/databases/postgresql84-docs
 postgresql84-plperl             ports/databases/postgresql84-plperl
 postgresql84-server             ports/databases/postgresql84-server
 postgresql90-client             ports/databases/postgresql90-client
 postgresql90-contrib            ports/databases/postgresql90-contrib
+postgresql90-docs               ports/databases/postgresql90-docs
 postgresql90-plperl             ports/databases/postgresql90-plperl
 postgresql90-server             ports/databases/postgresql90-server
 postgresql91-client             ports/databases/postgresql91-client
 postgresql91-contrib            ports/databases/postgresql91-contrib
+postgresql91-docs               ports/databases/postgresql91-docs
 postgresql91-plperl             ports/databases/postgresql91-plperl
 postgresql91-server             ports/databases/postgresql91-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
@@ -28067,6 +28075,7 @@ xmmsctrl                        ports/audio/xmmsctrl
 xmodmap                         ports/x11/xmodmap
 xmolwt                          ports/biology/xmolwt
 xmon                            ports/x11/xmon
+xmonad-log-applet               ports/misc/xmonad-log-applet
 xmoontool                       ports/astro/xmoontool
 xmore                           ports/x11/xmore
 xmorph                          ports/graphics/xmorph
