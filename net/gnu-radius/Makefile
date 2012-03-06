@@ -124,6 +124,7 @@ post-patch:
 		${WRKSRC}/include/radiusd.h
 	${REINPLACE_CMD} -e 's|int getline|ssize_t getline|' \
 	    ${WRKSRC}/radtest/input.l ${WRKSRC}/radtest/input.c
+	${REINPLACE_CMD}  -e '889s,], || 1 ],' ${WRKSRC}/raddb/Makefile.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
