@@ -7,6 +7,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	java www
 MASTER_SITES=	http://icedtea.classpath.org/download/source/
 
@@ -37,6 +38,7 @@ PORTDOCS=	netx
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config
+RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
 
@@ -78,6 +80,10 @@ BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 .else
 CONFIGURE_ARGS+=--with-junit=no
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    ${WRKSRC}/launcher/javaws.in
 
 pre-extract:
 	@${ECHO_MSG}
