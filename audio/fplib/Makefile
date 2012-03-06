@@ -7,6 +7,7 @@
 
 PORTNAME=	fplib
 PORTVERSION=	20100712
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -14,6 +15,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Last.fm fingerprint library
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		mad:${PORTSDIR}/audio/libmad \
 		samplerate:${PORTSDIR}/audio/libsamplerate \
