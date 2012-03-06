@@ -7,7 +7,7 @@
 
 PORTNAME=	prokyon3
 PORTVERSION=	0.9.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/d
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad \
-		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		tag.1:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin
@@ -32,7 +31,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-other-includes=${LOCALBASE}/include \
 		--with-other-libs=${LOCALBASE}/lib \
-		--without-mixxx --without-musicextras
+		--without-mixxx --without-musicextras \
+		--without-musicbrainz
 MAKE_ARGS=	LIBS="-lqt-mt ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		normalize:${PORTSDIR}/audio/normalize \
 		bash:${PORTSDIR}/shells/bash
-PLIST_FILES+=	BURN=""
+PLIST_SUB+=	BURN=""
 .else
 PLIST_SUB+=	BURN="@comment "
 .endif
