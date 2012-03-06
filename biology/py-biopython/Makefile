@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.57
+PORTVERSION=	1.59
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +15,11 @@ MAINTAINER=	mauricio@arareko.net
 COMMENT=	A collection of Python modules for bioinformatics
 
 BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYNUMPY}
 
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=yes
+USE_PYTHON=		2.5-2.7
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
 
 .if !defined(WITHOUT_REPORTLAB)
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab
