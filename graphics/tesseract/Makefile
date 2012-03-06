@@ -62,7 +62,7 @@ post-patch:
 
 post-install:
 .ifndef NOPORTDATA
-	@${INSTALL_DATA} -d ${DATADIR}
+	@${MKDIR} ${DATADIR}
 .for f in ${PORTDATA:R}
 	@${TAR} --strip-components 2 -C ${DATADIR} \
 	-xf ${_DISTDIR}/tesseract-ocr-3.01.${f}.tar.gz *.traineddata
@@ -71,11 +71,11 @@ post-install:
 	${CHMOD} ${SHAREMODE} ${PORTDATA}
 .endif
 .ifndef NOPORTDOCS
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .ifndef NOPORTEXAMPLES
-	@${INSTALL_DATA} -d ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 	@${ECHO_MSG} ""

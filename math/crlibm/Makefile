@@ -63,7 +63,7 @@ check regression-test test: build
 PORTDOCS=	${DISTFILES:C|\:.*||:M*.pdf}
 
 post-install:
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 
 .endif

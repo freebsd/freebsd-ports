@@ -76,7 +76,7 @@ test-${l}: build
 PORTDOCS=	guide toc
 
 post-install:
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 
 .endif
