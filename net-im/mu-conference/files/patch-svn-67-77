@@ -1,7 +1,7 @@
 Index: include/lib.h
 ===================================================================
 --- include/lib.h	(revision 67)
-+++ include/lib.h	(working copy)
++++ include/lib.h	(revision 77)
 @@ -1,6 +1,7 @@
  
  #include <string.h>
@@ -35,7 +35,7 @@ Index: include/lib.h
 Index: include/conference.h
 ===================================================================
 --- include/conference.h	(revision 67)
-+++ include/conference.h	(working copy)
++++ include/conference.h	(revision 77)
 @@ -258,6 +258,7 @@
  							/* Adds extended presence info to a presence packet */
  void add_status_code(xmlnode presence, char *status); /* add a muc status code to a presence stanza */
@@ -47,7 +47,7 @@ Index: include/conference.h
 Index: src/utils.c
 ===================================================================
 --- src/utils.c	(revision 67)
-+++ src/utils.c	(working copy)
++++ src/utils.c	(revision 77)
 @@ -136,6 +136,45 @@
    }
  }
@@ -235,7 +235,7 @@ Index: src/utils.c
 Index: src/conference_room.c
 ===================================================================
 --- src/conference_room.c	(revision 67)
-+++ src/conference_room.c	(working copy)
++++ src/conference_room.c	(revision 77)
 @@ -1018,7 +1018,7 @@
  
        if( nick == NULL)
@@ -261,7 +261,35 @@ Index: src/conference_room.c
          key = j_strdup(jid_full(jid_user(jid_fix(id))));
          g_hash_table_insert(room->member, key, (void*)item);
        }
-@@ -1498,7 +1507,7 @@
+@@ -1143,7 +1152,8 @@
+     if (cont == 0)
+       jutil_delay(node, jid_full(room->id));
+ 
+-    if(room->master->history > 0)
++    /* check if stanza contains a body tag and if history is activated */
++    if(xmlnode_get_tag_data(node,"body")!=NULL && room->master->history > 0) 
+     {
+ 
+       hist_p = pool_new();
+@@ -1426,7 +1436,7 @@
+   /* Create pool for room struct */
+   p = pool_new(); 
+   room = pmalloco(p, sizeof(_cnr));
+-  log_debug(NAME, "[%s] Malloc: _cnr = %d", FZONE, sizeof(_cnr));
++  log_debug(NAME, "[%s] Malloc: _cnr = %lu", FZONE, sizeof(_cnr));
+   room->p = p;
+   room->master = master;
+ 
+@@ -1448,7 +1458,7 @@
+ 
+   /* Initialise room history */
+   room->history = pmalloco(p, sizeof(_cnh) * master->history); /* make array of xmlnodes */
+-  log_debug(NAME, "[%s] Malloc: history = %d", FZONE, sizeof(_cnh) * master->history);
++  log_debug(NAME, "[%s] Malloc: history = %lu", FZONE, sizeof(_cnh) * master->history);
+ 
+   /* Room time */
+   room->start = now;
+@@ -1498,7 +1508,7 @@
  
      room->creator = jid_new(room->p, jid_full(jid_user(admin->realid)));
  
@@ -273,7 +301,7 @@ Index: src/conference_room.c
 Index: src/roles.c
 ===================================================================
 --- src/roles.c	(revision 67)
-+++ src/roles.c	(working copy)
++++ src/roles.c	(revision 77)
 @@ -73,14 +73,37 @@
    xmlnode old;
    xmlnode store;
@@ -401,7 +429,7 @@ Index: src/roles.c
 Index: src/conference.c
 ===================================================================
 --- src/conference.c	(revision 67)
-+++ src/conference.c	(working copy)
++++ src/conference.c	(revision 77)
 @@ -538,6 +538,15 @@
        xmlnode_hide_attrib(jp->x, "type");
      }
@@ -427,10 +455,186 @@ Index: src/conference.c
        log_debug(NAME, "[%s] Nicknames locked - Requested nick %s doesn't match required username %s",
            FZONE, jp->to->resource, jp->from->user);
  
+@@ -1079,7 +1088,7 @@
+   tp = pool_new();
+ 
+   /* Allocate space for cni struct and link to instance */
+-  log_debug(NAME, "[%s] Malloc: _cni=%d", FZONE, sizeof(_cni));
++  log_debug(NAME, "[%s] Malloc: _cni=%lu", FZONE, sizeof(_cni));
+   master = pmalloco(i->p, sizeof(_cni));
+ 
+   master->i = i;
+Index: src/jcomp/jcr_log.c
+===================================================================
+--- src/jcomp/jcr_log.c	(revision 67)
++++ src/jcomp/jcr_log.c	(revision 77)
+@@ -79,8 +79,8 @@
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
++  va_end(ap);
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_CRITICAL, "%s: %s", zone, logmsg);
+-  va_end(ap);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -92,8 +92,8 @@
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
++  va_end(ap);
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_ERROR, "%s: %s", zone, logmsg);
+-  va_end(ap);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -105,8 +105,8 @@
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
++  va_end(ap);
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_MESSAGE, "%s: %s", zone, logmsg);
+-  va_end(ap);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -118,8 +118,8 @@
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
++  va_end(ap);
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_WARNING, "%s: %s", zone, logmsg);
+-  va_end(ap);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+ 
+@@ -131,7 +131,7 @@
+   g_static_mutex_lock(&_jcr_log_lock);
+   va_start(ap, fmt);
+   vsnprintf(logmsg, 512, fmt, ap);
++  va_end(ap);
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "%s: %s", zone, logmsg);
+-  va_end(ap);
+   g_static_mutex_unlock(&_jcr_log_lock);
+ }
+Index: src/jcomp/jcr_base_connect.c
+===================================================================
+--- src/jcomp/jcr_base_connect.c	(revision 67)
++++ src/jcomp/jcr_base_connect.c	(revision 77)
+@@ -84,7 +84,7 @@
+   if (rc != G_IO_STATUS_NORMAL) {
+     log_warn(JDBG, "Opening XML stream failed, rc=%d", rc);
+   } else {
+-    log_debug(JDBG, "Opening XML stream: sent %d bytes", bytes);
++    log_debug(JDBG, "Opening XML stream: sent %lu bytes", bytes);
+   }
+ 
+ }
+Index: src/jcomp/jcr_main_stream_error.c
+===================================================================
+--- src/jcomp/jcr_main_stream_error.c	(revision 67)
++++ src/jcomp/jcr_main_stream_error.c	(revision 77)
+@@ -31,6 +31,7 @@
+ 
+   jcr->stream_state = _STREAM_INIT_STATE;
+   jcr->parser = XML_ParserCreate(NULL);
++  XML_SetDefaultHandler(jcr->parser, NULL);
+   XML_SetElementHandler(jcr->parser, (void *)jcr_start_element, (void *)jcr_end_element);
+   XML_SetCharacterDataHandler(jcr->parser, (void *)jcr_cdata);
+   XML_SetUserData(jcr->parser, NULL);
+@@ -60,7 +61,6 @@
+   g_source_remove(jcr->gmain_watch_source);
+   g_io_channel_shutdown(jcr->gio, TRUE, NULL);
+   g_io_channel_unref(jcr->gio);
+-  g_io_channel_unref(jcr->gio);
+   close(jcr->fd);
+   
+ 
+Index: src/jcomp/jcr_deliver.c
+===================================================================
+--- src/jcomp/jcr_deliver.c	(revision 67)
++++ src/jcomp/jcr_deliver.c	(revision 77)
+@@ -33,7 +33,7 @@
+     sleep(1);
+   }
+ 
+-  log_debug(JDBG, "queued %d bytes : >>> %s <<<", strlen(xmlnode2str(d->x)), xmlnode2str(d->x));
++  log_debug(JDBG, "queued %lu bytes : >>> %s <<<", strlen(xmlnode2str(d->x)), xmlnode2str(d->x));
+   g_async_queue_push(jcr->dqueue, d);
+ }
+ 
+@@ -90,7 +90,7 @@
+         log_warn(JDBG, "Send packet failed, dropping packet");
+       }
+ 
+-      log_debug(JDBG, "wrote %d packets of %d bytes", pkts, bytes);
++      log_debug(JDBG, "wrote %d packets of %lu bytes", pkts, bytes);
+       //    fprintf(stderr, "wrote %d packets of %d bytes\n", pkts, bytes);
+       if (left==0){
+         //queue is empty, flushing the socket
+@@ -99,7 +99,7 @@
+     }
+   }
+   log_warn(JDBG, "packet delivery thread exiting.");
+-  log_warn(JDBG, "  Last DvryQ Buffer='%.*s'", buffer->len, buffer->str);
++  log_warn(JDBG, "  Last DvryQ Buffer='%.*s'", (int)buffer->len, buffer->str);
+   g_string_free(buffer, TRUE);
+ }
+ 
+Index: src/jcomp/jcr_elements.c
+===================================================================
+--- src/jcomp/jcr_elements.c	(revision 67)
++++ src/jcomp/jcr_elements.c	(revision 77)
+@@ -172,7 +172,7 @@
+     if (rc != G_IO_STATUS_NORMAL) {
+       if (gerr != NULL) {
+         log_warn(JDBG, "Main Channel Error: rc=%d, %d '%s' '%s'", rc,
+-          gerr->code, gerr->domain, gerr->message);
++          gerr->code, g_quark_to_string(gerr->domain), gerr->message);
+         g_error_free(gerr);
+       } else {
+         log_warn(JDBG, "Main Channel Error: rc=%d", rc);
+@@ -186,7 +186,7 @@
+ 
+     if (XML_Parse(jcr->parser, jcr->recv_buffer, bytes_read, 0) == 0) {
+       log_warn(JDBG, "XML Parsing Error: '%s'", (char *)XML_ErrorString(XML_GetErrorCode(jcr->parser)));
+-      log_warn(JDBG, "   Last Rcvd Buffer='%.*s'", bytes_read, jcr->recv_buffer);
++      log_warn(JDBG, "   Last Rcvd Buffer='%.*s'", (int)bytes_read, jcr->recv_buffer);
+       jcr_main_close_stream();
+       return FALSE;
+     }
+Index: src/jabberd/expat.c
+===================================================================
+--- src/jabberd/expat.c	(revision 67)
++++ src/jabberd/expat.c	(revision 77)
+@@ -95,6 +95,7 @@
+ 
+     *x = NULL; /* pointer to NULL */
+     p = XML_ParserCreate(NULL);
++    XML_SetDefaultHandler(p, NULL);
+     XML_SetUserData(p, x);
+     XML_SetElementHandler(p, expat_startElement, expat_endElement);
+     XML_SetCharacterDataHandler(p, expat_charData);
+@@ -128,6 +129,7 @@
+ 
+     *x = NULL; /* pointer to NULL */
+     p = XML_ParserCreate(NULL);
++    XML_SetDefaultHandler(p, NULL);
+     XML_SetUserData(p, x);
+     XML_SetElementHandler(p, expat_startElement, expat_endElement);
+     XML_SetCharacterDataHandler(p, expat_charData);
+@@ -165,6 +167,7 @@
+         return "unable to open file";
+ 
+     p = XML_ParserCreate(NULL);
++    XML_SetDefaultHandler(p, NULL);
+     while(1)
+     {
+         len = read(fd, buf, BUFSIZ);
 Index: src/jabberd/str.c
 ===================================================================
 --- src/jabberd/str.c	(revision 67)
-+++ src/jabberd/str.c	(working copy)
++++ src/jabberd/str.c	(revision 77)
 @@ -65,11 +65,15 @@
      if(a == NULL || b == NULL)
          return -1;
@@ -453,7 +657,7 @@ Index: src/jabberd/str.c
 Index: src/jabberd/sha.c
 ===================================================================
 --- src/jabberd/sha.c	(revision 67)
-+++ src/jabberd/sha.c	(working copy)
++++ src/jabberd/sha.c	(revision 77)
 @@ -50,7 +50,7 @@
     */
    for (i = 0; i < len; i++) {
