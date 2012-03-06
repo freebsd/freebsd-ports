@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JE
-PORTVERSION=	0.055
+PORTVERSION=	0.058
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPROUT
@@ -32,6 +32,7 @@ MAN3=		JE::Object.3 JE::_FieldHash.3 JE::String.3 \
 		JE::Object::Math.3 JE::Scope.3 JE::Undefined.3 \
 		JE::Object::Error::ReferenceError.3 \
 		JE::Object::RegExp.3 JE::Object::String.3 JE::Object::Proxy.3 \
-		JE::Types.3 JE::Object::Array.3 JE::Object::Function.3 JE.3
+		JE::Types.3 JE::Object::Array.3 JE::Object::Function.3 JE.3 \
+		JE::Destroyer.3
 
 .include <bsd.port.mk>
