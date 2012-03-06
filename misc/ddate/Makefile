@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddate
-PORTVERSION=	2.19
+PORTVERSION=	2.21
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/v${PORTVERSION}/ \
