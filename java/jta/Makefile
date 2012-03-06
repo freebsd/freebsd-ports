@@ -20,7 +20,7 @@ JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 NO_CDROM=	See the license
-DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=7286-jta-${PORTVERSION}-spec-oth-JSpec@CDS-CDS_Developer
+DOWNLOAD_URL=	http://download.oracle.com/otndocs/jcp/7286-jta-${PORTVERSION}-spec-oth-JSpec/?submit=Download
 
 PORTDOCS=	${DISTNAME}.pdf javadocs
 
