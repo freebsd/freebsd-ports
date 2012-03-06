@@ -53,6 +53,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/pref-license.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/rules.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/ssh.guide.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/subversion-primer.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/vcs.operations.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/compiz-fusion.html
@@ -635,6 +636,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets-model.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets-protocols.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/sockets.html
+%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/testing-tinderbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/testing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/tools-compiling.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/tools-intro.html
@@ -847,6 +849,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-glabel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-mirror.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-raid3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom-striping.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/geom.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/getting-started.html
