@@ -8,7 +8,7 @@
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz

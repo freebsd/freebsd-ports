@@ -1,6 +1,19 @@
---- scripts/xdg-open.orig        2009-08-15 13:22:26.000000000 -0400
-+++ scripts/xdg-open        2009-08-15 13:26:02.000000000 -0400
-@@ -364,7 +364,9 @@ open_generic()
+--- scripts/xdg-open.orig
++++ scripts/xdg-open
+@@ -31,6 +31,12 @@
+ #
+ #---------------------------------------------
+ 
++# If we are started from a Linux app with LD_PRELOAD set unset that
++# so native apps (like browers) won't fail to start.
++if [ "x$(uname)" = "xLinux" ]; then
++	unset LD_PRELOAD
++fi
++
+ manualpage()
+ {
+ cat << _MANUALPAGE
+@@ -364,7 +370,9 @@ open_generic()
      for browser in $BROWSER; do
          if [ x"$browser" != x"" ]; then
  
