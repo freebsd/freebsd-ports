@@ -26,6 +26,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		tinyxml:${PORTSDIR}/textproc/tinyxml
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
+BROKEN=		does not compile
+
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
