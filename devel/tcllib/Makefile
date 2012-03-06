@@ -36,6 +36,12 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	${FIND} ${WRKSRC}/apps -type f ! -name "*.man" | ${XARGS} \
 	   ${REINPLACE_CMD} -e 's,exec tclsh,exec ${TCLSH},'
+	#
+	# patch(1) adds a newline at eof, so we need to remove it here
+	#
+	${AWK} 'NR > 1 { print h } { h = $$0 } END { ORS = ""; print h }' \
+	   ${WRKSRC}/modules/doctools/tests/text/04 > ${WRKSRC}/modules/doctools/tests/text/04.new
+	${MV} ${WRKSRC}/modules/doctools/tests/text/04.new ${WRKSRC}/modules/doctools/tests/text/04
 
 RUNTEST=	${SETENV} LANG=C DISPLAY= ${MAKE} -C ${WRKSRC} test
 MYID	!=	${ID} -u
