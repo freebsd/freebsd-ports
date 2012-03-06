@@ -27,6 +27,8 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		ofa:${PORTSDIR}/audio/libofa \
 		mpcdec:${PORTSDIR}/audio/musepack
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
