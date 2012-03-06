@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdcached
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	php-
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	The PHP client library for Bullet Cache (mdcached)
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	mdcached.1:${PORTSDIR}/databases/mdcached
 

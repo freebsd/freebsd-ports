@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	mdcached
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	databases net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	A high performance cache server similar to memcached
+
+LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 MAKE_JOBS_SAFE=	yes
