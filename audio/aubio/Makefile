@@ -7,7 +7,7 @@
 
 PORTNAME=	aubio
 PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
@@ -17,6 +17,7 @@ COMMENT=	Library for audio labelling
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		jack.0:${PORTSDIR}/audio/jack \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		lash.2:${PORTSDIR}/audio/lash
 
