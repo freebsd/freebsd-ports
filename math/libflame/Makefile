@@ -313,11 +313,11 @@ do-install:
 	${MAKE_ARGS} install-libs
 .endif
 .ifndef(NOPORTDOCS)
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${DOCSDIR}
 .endif
 .ifndef(NOPORTEXAMPLES)
-	@${INSTALL_DATA} -d ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples; ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
 

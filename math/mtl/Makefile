@@ -42,7 +42,6 @@ fulltest: build
 	@cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} QUICK= test summary
 
-
 .include <bsd.port.pre.mk>
 
 .if defined(USE_GCC) || !empty(CXX:M*g++4*)
@@ -53,7 +52,7 @@ CXXFLAGS+=	-fpermissive
 PORTEXAMPLES=	*
 
 post-install:
-	@${INSTALL_DATA} -d ${EXAMPLESDIR}/doubledouble
+	@${MKDIR} ${EXAMPLESDIR}/doubledouble
 	@${INSTALL_DATA} ${WRKSRC}/contrib/examples/*  ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/contrib/doubledouble/*  ${EXAMPLESDIR}/doubledouble
 

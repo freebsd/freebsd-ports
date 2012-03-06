@@ -99,11 +99,11 @@ do-install:
 	libkktdirect.so.0 ${PREFIX}/lib
 	@${LN} -sf libkktdirect.so.0 ${PREFIX}/lib/libkktdirect.so
 .ifndef(NOPORTDOCS)
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .ifndef(NOPORTEXAMPLES)
-	@${INSTALL_DATA} -d ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 

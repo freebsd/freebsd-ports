@@ -66,14 +66,14 @@ post-extract:
 		${WRKSRC}/Makefile
 
 post-install:
-	@${INSTALL_DATA} -d ${PREFIX}/${HDIR}
+	@${MKDIR} ${PREFIX}/${HDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/${HDIR}
 .ifndef(NOPORTDOCS)
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${_DISTDIR}/${PORTDOCS} ${DOCSDIR}
 .endif
 .ifndef(NOPORTEXAMPLES)
-	@${INSTALL_DATA} -d ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 

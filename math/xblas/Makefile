@@ -87,7 +87,7 @@ build-static: patch
 .endif
 
 do-install:
-	@${INSTALL_DATA} -d ${PREFIX}/${HDIR}
+	@${MKDIR} ${PREFIX}/${HDIR}
 	@cd ${WRKSRC}/src; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/${HDIR}
 .ifdef(WITH_SHARED)
 	@cd ${WRKSRC}; ${INSTALL_DATA} libxblas_pic.a \
@@ -98,7 +98,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}_STATIC/libxblas.a ${PREFIX}/lib
 .endif
 .ifndef(NOPORTDOCS)
-	@${INSTALL_DATA} -d ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/report.ps ${DOCSDIR}
 .endif
 
