@@ -21,6 +21,7 @@
 %%SITE_PERL%%/JE/Object/RegExp.pm
 %%SITE_PERL%%/JE/Object/String.pm
 %%SITE_PERL%%/JE/Object/Number/maxvalue.pl
+%%SITE_PERL%%/JE/Destroyer.pm
 %%SITE_PERL%%/JE/Parser.pm
 %%SITE_PERL%%/JE/Scope.pm
 %%SITE_PERL%%/JE/String.pm
