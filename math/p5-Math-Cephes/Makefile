@@ -11,8 +11,10 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the cephes math library
+
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	pmath.1
 MAN3=	Math::Cephes.3 \
