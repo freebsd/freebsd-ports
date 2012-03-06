@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	agedu
-PORTVERSION=	9417
+PORTVERSION=	9424
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/ \
 		LOCAL/sunpoet
@@ -19,5 +19,8 @@ GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_&|' ${WRKSRC}/httpd.c
 
 .include <bsd.port.mk>
