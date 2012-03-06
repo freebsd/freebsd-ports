@@ -7,7 +7,7 @@
 
 PORTNAME=	liblastfm
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	swills
@@ -17,6 +17,7 @@ MAINTAINER=	datahead4@gmail.com
 COMMENT=	Collection of libraries to help integrate Last.fm services
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float
 
 USE_RUBY=	yes
