@@ -148,11 +148,11 @@
     SUBDIR += ratpoison
     SUBDIR += sapphire
     SUBDIR += sawfish
-    SUBDIR += scrotwm
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
     SUBDIR += skippy
     SUBDIR += skippy-xd
+    SUBDIR += spectrwm
     SUBDIR += stumpwm
     SUBDIR += swm
     SUBDIR += tinywm

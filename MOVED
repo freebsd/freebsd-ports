@@ -3245,3 +3245,4 @@ net/p5-Net-Subnets||2012-03-03|Has expired: Disappeared from CPAN
 www/mediawiki116||2012-03-04|Has expired: Unsupport Upstream
 databases/postgresql-docs|databases/postgresql84-docs|2012-03-04|Split into versioned ports
 databases/postgresql-pltcl|databases/postgresql84-pltcl|2012-03-05|Split into versioned ports
+x11-wm/scrotwm|x11-wm/spectrwm|2012-03-05|Project renamed
