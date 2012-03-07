@@ -39,10 +39,6 @@ NLS=	""
 .endif
 PLIST_SUB+=	NLS=${NLS}
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+= ${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-.endif
-
 pre-configure:
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e 's|add_subdirectory( po )|#add_subdirectory( po )|'     \

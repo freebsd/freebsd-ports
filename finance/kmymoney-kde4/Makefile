@@ -17,7 +17,6 @@ COMMENT=	KDE 4.x-based personal finance manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	boost_graph.4:${PORTSDIR}/devel/boost-libs \
 		alkimia.4:${PORTSDIR}/finance/libalkimia
 

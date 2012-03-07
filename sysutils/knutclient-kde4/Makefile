@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A visual client for UPS system NUT
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 USE_CMAKE=	yes

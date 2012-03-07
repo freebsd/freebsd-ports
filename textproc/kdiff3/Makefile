@@ -14,8 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	brucec@FreeBSD.org
 COMMENT=	A KDE4 graphical frontend for diff
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-
 USE_KDE4=	kdebase kdeprefix kdehier automoc4
 USE_CMAKE=	yes
 USE_QT_VER=	4

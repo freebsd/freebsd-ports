@@ -15,8 +15,7 @@ MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
-BUILD_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+BUILD_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 LATEST_LINK=	${PORTNAME}-kde4

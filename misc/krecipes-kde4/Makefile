@@ -14,7 +14,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Recipe database for KDE4
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 LATEST_LINK=	${PORTNAME}-kde4
