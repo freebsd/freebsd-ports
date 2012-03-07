@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dhcprelya
-PORTVERSION=	4.0
+PORTVERSION=	4.2
 CATEGORIES=	net
-MASTER_SITES=	http://people.yandex-team.ru/~sem/
+MASTER_SITES=	http://semmy.ru/~sem/
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Lightweigh DHCP relay agent. Yandex edition
