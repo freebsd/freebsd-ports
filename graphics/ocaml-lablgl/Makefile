@@ -6,35 +6,48 @@
 #
 
 PORTNAME=	lablgl
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	20120306
 CATEGORIES=	graphics
-MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/
+MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
 
-WRKSRC=		${WRKDIR}/lablGL-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+LICENSE=	BSD
+
+WRKSRC=		${WRKDIR}/lablGL
 USE_GL=		glut
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
-USE_TK=		84+
 MAKE_JOBS_UNSAFE=	yes
 
-MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
+OPTIONS=	THREADS "Use a threaded Tcl/Tk (must match lang/ocaml)" on
+
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
 DOCSDIR=	${PREFIX}/share/doc/ocaml/lablgl
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/lablgl
 
+CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
+
 .include <bsd.port.pre.mk>
+
+USE_TK=		84+
+INVALID_TK_VER =	86
+.if defined(WITH_THREADS)
+USE_TK_THREADS =	yes
+THR_CPP=	${PTHREAD_CFLAGS}
+THR_LD =	${PTHREAD_LIBS}
+.endif
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.freebsd ${WRKSRC}/Makefile.config
 
+post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/X11R6,${LOCALBASE},g" \
 		-e "s,/usr/local,${LOCALBASE},g" \
 		-e "s,^\(BINDIR[ \t]*=\).*,\1${PREFIX}/bin,g" \
@@ -42,12 +55,13 @@ post-extract:
 		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
 		-e "/^TKINCLUDES/s,=.*$$,= -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}," \
-		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE} -ltcl${TCL_VER:S/.//} -ltk${TK_VER:S/.//}," \
+		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_VER:S/.//}${_TCL_THREADS_SUFFIX}\
+		-ltcl${TCL_VER:S/.//}${_TCL_THREADS_SUFFIX} ${THR_LD}," \
 		${WRKSRC}/Makefile.config
 
 	@${REINPLACE_CMD} \
 		-e "s,^\(INSTALLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/lablGL,g" \
-		-e "s,^\(COPTS[ \t]*=\).*,\1-c ${CFLAGS},g" \
+		-e "s!^\(COPTS[ \t]*=\).*!\1-c ${CFLAGS} ${THR_CPP}!g" \
 		${WRKSRC}/Makefile.common ${WRKSRC}/Makefile
 
 	@${REINPLACE_CMD} -E \
@@ -62,20 +76,19 @@ pre-install:
 # XXX: for incorrect PREFIX. Really should be done in bsd.ocaml.mk...
 #
 .if !exists(${PREFIX}/lib/ocaml/stublibs)
-	${MKDIR} ${PREFIX}/lib/ocaml/stublibs
+	@${MKDIR} ${PREFIX}/lib/ocaml/stublibs
 .endif
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}/lablglut
-	${MKDIR} ${EXAMPLESDIR}/togl
+	@${MKDIR} ${EXAMPLESDIR}/lablglut
+	@${MKDIR} ${EXAMPLESDIR}/togl
 	@(cd ${WRKSRC}/LablGlut/examples && ${COPYTREE_SHARE} \* \
 		${EXAMPLESDIR}/lablglut '! -name Makefile')
 	@(cd ${WRKSRC}/Togl/examples && ${COPYTREE_SHARE} \* \
 		${EXAMPLESDIR}/togl '! -name Makefile')
-
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

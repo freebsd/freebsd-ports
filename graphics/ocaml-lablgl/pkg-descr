@@ -8,3 +8,5 @@ ease of retrieving, both GL and GLU are cut in smaller modules of
 related functions.
 
 Please see ${PREFIX}/share/doc/ocaml/lablgl/README for further information.
+
+WWW:	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/lablgl.html
