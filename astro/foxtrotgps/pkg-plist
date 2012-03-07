@@ -2,6 +2,8 @@ bin/convert2gpx
 bin/convert2osm
 bin/foxtrotgps
 bin/georss2foxtrotgps-poi
+bin/osb2foxtrot
+bin/poi2osm
 lib/locale/bg/LC_MESSAGES/foxtrotgps.mo
 lib/locale/cs/LC_MESSAGES/foxtrotgps.mo
 lib/locale/de/LC_MESSAGES/foxtrotgps.mo
@@ -12,6 +14,8 @@ lib/locale/hu/LC_MESSAGES/foxtrotgps.mo
 lib/locale/nl/LC_MESSAGES/foxtrotgps.mo
 lib/locale/ru/LC_MESSAGES/foxtrotgps.mo
 lib/locale/sk/LC_MESSAGES/foxtrotgps.mo
+lib/locale/ja/LC_MESSAGES/foxtrotgps.mo
+lib/locale/sr/LC_MESSAGES/foxtrotgps.mo
 share/applications/foxtrotgps.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
@@ -21,6 +25,7 @@ share/applications/foxtrotgps.desktop
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
+%%DOCSDIR%%/README.osb2foxtrot
 %%DATADIR%%/foxtrotgps.glade
 share/pixmaps/foxtrotgps-friend.png
 share/pixmaps/foxtrotgps-myposition.png
@@ -51,4 +56,8 @@ share/pixmaps/foxtrotgps.png
 @dirrmtry lib/locale/cs
 @dirrmtry lib/locale/bg/LC_MESSAGES
 @dirrmtry lib/locale/bg
+@dirrmtry lib/locale/ja/LC_MESSAGES
+@dirrmtry lib/locale/ja
+@dirrmtry lib/locale/sr/LC_MESSAGES
+@dirrmtry lib/locale/sr
 @dirrmtry lib/locale
