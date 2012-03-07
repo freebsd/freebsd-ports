@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Libdnet interface
 
+BUILD_DEPENDS=	p5-Class-Gomor>=0:${PORTSDIR}/devel/p5-Class-Gomor
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 PERL_CONFIGURE=	yes
