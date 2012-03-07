@@ -43,10 +43,6 @@ NLS=		""
 .endif
 PLIST_SUB+=	NLS=${NLS}
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-.endif
-
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
 .endif

@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Movie player based on mplayer
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 LATEST_LINK=	${PORTNAME}-kde4

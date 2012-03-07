@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.rsibreak.org/files/
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	A KDE RSI prevention tool
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes

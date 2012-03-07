@@ -16,7 +16,6 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE frontend to Phonon / KDE4
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer

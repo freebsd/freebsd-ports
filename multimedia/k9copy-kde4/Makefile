@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	egoliveira@gmail.com
 COMMENT=	A DVD-9 to DVD-5 shrinking application for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	xine:${PORTSDIR}/multimedia/libxine \
 		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg

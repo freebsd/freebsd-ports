@@ -14,8 +14,6 @@ MASTER_SITES=	http://dl.dropbox.com/u/2888238/Knights/
 MAINTAINER=	syncer@gmail.com
 COMMENT=	A KDE4 chess interface
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	kdegames.5:${PORTSDIR}/games/kdegames4
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 

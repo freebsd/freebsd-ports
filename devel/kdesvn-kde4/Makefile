@@ -32,10 +32,6 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-.endif
-
 post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
 .if defined(NOPORTDOCS)
