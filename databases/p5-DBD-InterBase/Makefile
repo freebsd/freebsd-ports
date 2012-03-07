@@ -27,4 +27,8 @@ post-patch:
 
 MAN3=		DBD::InterBase.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} > 501400
+BROKEN=	does not compile, project moved or dead, no releases since 2003
+.endif
+.include <bsd.port.post.mk>
