@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.3
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/ \
-		http://denkrobat.de/minecraft/:minecraft \
+		http://denkrobat.de/minecraft/ \
 		http://www.minecraftwiki.net/images/f/f7/:icon
 DISTNAME=	minecraft_server
-DISTFILES=	minecraft_server.jar:minecraft \
+DISTFILES=	minecraft_server.jar \
 		Bookshelf.png:icon
-EXTRACT_ONLY=
+EXTRACT_ONLY=	#empty
 
 MAINTAINER=	freebsd@rakor-net.de
 COMMENT=	Server for the block building game
@@ -38,6 +38,12 @@ SUB_FILES=	pkg-deinstall \
 
 SUB_LIST+=	USERS=${USERS} \
 		GROUPS=${GROUPS}
+
+CONFIG_FILES=	banned-ips.txt \
+		banned-players.txt \
+		ops.txt \
+		server.properties \
+		white-list.txt
 
 .if !defined(WITHOUT_X11)
 DESKTOP_ENTRIES="Minecraft-Server" "Block building game (server)" "${DATADIR}/Bookshelf.png" "minecraft-server" "Application;Game;" false
@@ -68,48 +74,16 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-nogui ${PREFIX}/bin/
 	${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/server.properties.sample ${DATADIR}/server.properties.sample
-	${INSTALL_DATA} ${FILESDIR}/ops.txt.sample ${DATADIR}/ops.txt.sample
-	${INSTALL_DATA} ${FILESDIR}/white-list.txt.sample ${DATADIR}/white-list.txt.sample
-	${INSTALL_DATA} ${FILESDIR}/banned-ips.txt.sample ${DATADIR}/banned-ips.txt.sample
-	${INSTALL_DATA} ${FILESDIR}/banned-players.txt.sample ${DATADIR}/banned-players.txt.sample
-	if [ ! -f ${ETCDIR}/server.properties ]; then \
-		${CP} -p ${DATADIR}/server.properties.sample ${ETCDIR}/server.properties ; \
+.for file in ${CONFIG_FILES}
+	${INSTALL_DATA} ${FILESDIR}/${file}.sample ${DATADIR}
+	if [ ! -f ${ETCDIR}/${file} ]; then \
+		${CP} -p ${DATADIR}/${file}.sample ${ETCDIR}/${file} ; \
 	fi
-	if [ ! -f ${ETCDIR}/ops.txt ]; then \
-		${CP} -p ${DATADIR}/ops.txt.sample ${ETCDIR}/ops.txt ; \
-	fi
-	if [ ! -f ${ETCDIR}/white-list.txt ]; then \
-		${CP} -p ${DATADIR}/white-list.txt.sample ${ETCDIR}/white-list.txt ; \
-	fi
-	if [ ! -f ${ETCDIR}/banned-ips.txt ]; then \
-		${CP} -p ${DATADIR}/banned-ips.txt.sample ${ETCDIR}/banned-ips.txt ; \
-	fi
-	if [ ! -f ${ETCDIR}/banned-players.txt ]; then \
-		${CP} -p ${DATADIR}/banned-players.txt.sample ${ETCDIR}/banned-players.txt ; \
-	fi
-	${LN} -s ${ETCDIR}/server.properties ${DATADIR}/server.properties
-	${LN} -s ${ETCDIR}/ops.txt ${DATADIR}/ops.txt
-	${LN} -s ${ETCDIR}/white-list.txt ${DATADIR}/white-list.txt
-	${LN} -s ${ETCDIR}/banned-ips.txt ${DATADIR}/banned-ips.txt
-	${LN} -s ${ETCDIR}/banned-players.txt ${DATADIR}/banned-players.txt
+	${CHMOD} 644 ${DATADIR}/${file}* ${ETCDIR}/${file}
+	${LN} -s ${ETCDIR}/${file} ${DATADIR}/${file}
+.endfor
 	${CHOWN} -R ${USERS}:${GROUPS} ${DATADIR}
 	${CHOWN} -R ${USERS}:${GROUPS} ${ETCDIR}
-	${CHMOD} -R 644 ${DATADIR}/banned-ips.txt
-	${CHMOD} -R 644 ${DATADIR}/banned-players.txt
-	${CHMOD} -R 644 ${DATADIR}/ops.txt
-	${CHMOD} -R 644 ${DATADIR}/white-list.txt
-	${CHMOD} -R 644 ${DATADIR}/server.properties
-	${CHMOD} -R 644 ${DATADIR}/banned-ips.txt.sample
-	${CHMOD} -R 644 ${DATADIR}/banned-players.txt.sample
-	${CHMOD} -R 644 ${DATADIR}/ops.txt.sample
-	${CHMOD} -R 644 ${DATADIR}/white-list.txt.sample
-	${CHMOD} -R 644 ${DATADIR}/server.properties.sample
-	${CHMOD} -R 644 ${ETCDIR}/banned-ips.txt
-	${CHMOD} -R 644 ${ETCDIR}/banned-players.txt
-	${CHMOD} -R 644 ${ETCDIR}/ops.txt
-	${CHMOD} -R 644 ${ETCDIR}/white-list.txt
-	${CHMOD} -R 644 ${ETCDIR}/server.properties
 
 post-install:
 	${CAT} ${PKGMESSAGE}
