@@ -1,5 +1,5 @@
 --- Makefile.orig	2011-11-03 14:39:05.000000000 -0700
-+++ Makefile	2012-02-02 16:27:40.000000000 -0800
++++ Makefile	2012-03-07 11:47:18.000000000 -0800
 @@ -273,7 +273,6 @@
  	gstreamer-base-0.10 \
  	gstreamer-pbutils-0.10 \
@@ -25,6 +25,17 @@
  	@ ./chkver min $(VALAC_VERSION) $(MIN_VALAC_VERSION) || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 )
  	$(if $(MAX_VALAC_VERSION),\
  		@ ./chkver max $(VALAC_VERSION) $(MAX_VALAC_VERSION) || ( echo 'Shotwell cannot be built by Vala compiler $(MAX_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 ),)
+@@ -556,8 +554,8 @@
+ 	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+ endif
+ ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
+-	mkdir -p $(DESTDIR)/usr/share/GConf/gsettings
+-	$(INSTALL_DATA) misc/shotwell.convert $(DESTDIR)/usr/share/GConf/gsettings
++	mkdir -p $(DESTDIR)$(PREFIX)/share/GConf/gsettings
++	$(INSTALL_DATA) misc/shotwell.convert $(DESTDIR)$(PREFIX)/share/GConf/gsettings
+ endif
+ ifndef DISABLE_ICON_UPDATE
+ 	-gtk-update-icon-cache -t -f $(DESTDIR)$(PREFIX)/share/icons/hicolor || :
 @@ -660,7 +658,6 @@
  
  # EXPANDED_SRC_FILES includes UNITIZE_INITS and UNITIZE_ENTRY
