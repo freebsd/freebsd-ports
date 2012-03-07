@@ -1,0 +1,13 @@
+--- ./configure.orig	2012-03-07 11:14:14.000000000 +0100
++++ ./configure	2012-03-07 11:16:07.000000000 +0100
+@@ -19695,8 +19695,9 @@
+ ac_config_headers="$ac_config_headers config.h"
+ 
+ 
+-ac_config_files="$ac_config_files disk-utils/Makefile fdisk/Makefile fsck/Makefile getopt/Makefile hwclock/Makefile include/Makefile lib/Makefile login-utils/Makefile Makefile man/ru/Makefile misc-utils/chkdupexe:misc-utils/chkdupexe.pl misc-utils/Makefile mount/Makefile partx/Makefile po/Makefile.in schedutils/Makefile libblkid/blkid.pc libblkid/Makefile libblkid/docs/Makefile libblkid/docs/version.xml libblkid/src/Makefile libblkid/src/blkid.h libblkid/src/superblocks/Makefile libblkid/src/topology/Makefile libblkid/src/partitions/Makefile libblkid/samples/Makefile libmount/mount.pc libmount/Makefile libmount/src/Makefile libmount/src/libmount.h libmount/docs/Makefile libmount/docs/version.xml libuuid/uuid.pc libuuid/Makefile libuuid/man/Makefile libuuid/src/Makefile sys-utils/Makefile term-utils/Makefile tests/commands.sh tests/helpers/Makefile tests/Makefile text-utils/Makefile"
++#ac_config_files="$ac_config_files disk-utils/Makefile fdisk/Makefile fsck/Makefile getopt/Makefile hwclock/Makefile include/Makefile lib/Makefile login-utils/Makefile Makefile man/ru/Makefile misc-utils/chkdupexe:misc-utils/chkdupexe.pl misc-utils/Makefile mount/Makefile partx/Makefile po/Makefile.in schedutils/Makefile libblkid/blkid.pc libblkid/Makefile libblkid/docs/Makefile libblkid/docs/version.xml libblkid/src/Makefile libblkid/src/blkid.h libblkid/src/superblocks/Makefile libblkid/src/topology/Makefile libblkid/src/partitions/Makefile libblkid/samples/Makefile libmount/mount.pc libmount/Makefile libmount/src/Makefile libmount/src/libmount.h libmount/docs/Makefile libmount/docs/version.xml libuuid/uuid.pc libuuid/Makefile libuuid/man/Makefile libuuid/src/Makefile sys-utils/Makefile term-utils/Makefile tests/commands.sh tests/helpers/Makefile tests/Makefile text-utils/Makefile"
+ 
++ac_config_files="$ac_config_files include/Makefile lib/Makefile misc-utils/Makefile"
+ 
+ 
+ cat >confcache <<\_ACEOF
