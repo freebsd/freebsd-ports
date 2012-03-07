@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
 		p5-SOAP-Lite>0.55:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 
 PERL_MODBUILD=	yes
 
