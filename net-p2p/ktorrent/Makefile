@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	ktorrent
-DISTVERSION=	4.1.3
-PORTREVISION=	1
+DISTVERSION=	4.2.0
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		qca.2:${PORTSDIR}/devel/qca \
-		tag.1:${PORTSDIR}/audio/taglib \
-		ktorrent.3:${PORTSDIR}/net-p2p/libktorrent
+LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
+		ktorrent.4:${PORTSDIR}/net-p2p/libktorrent
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 pimlibs workspace
@@ -30,8 +27,10 @@ MAKE_JOBS_SAFE=	yes
 
 CONFLICTS_BUILD=	ktorrent-2*
 
-SHLIB_VER=	12.0.2
+SHLIB_VER=	13.0.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} \
 		SHLIB_SHVER=${SHLIB_VER:R:R}
+
+CMAKE_ARGS+=	-DENABLE_KIO_MAGNET=1
 
 .include <bsd.port.mk>

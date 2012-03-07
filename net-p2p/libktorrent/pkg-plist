@@ -68,14 +68,15 @@ include/libktorrent/migrate/ccmigrate.h
 include/libktorrent/migrate/migrate.h
 include/libktorrent/mse/bigint.h
 include/libktorrent/mse/encryptedauthenticate.h
+include/libktorrent/mse/encryptedpacketsocket.h
 include/libktorrent/mse/encryptedserverauthenticate.h
 include/libktorrent/mse/functions.h
 include/libktorrent/mse/rc4encryptor.h
-include/libktorrent/mse/streamsocket.h
 include/libktorrent/net/address.h
-include/libktorrent/net/bufferedsocket.h
+include/libktorrent/net/addressresolver.h
 include/libktorrent/net/downloadthread.h
 include/libktorrent/net/networkthread.h
+include/libktorrent/net/packetsocket.h
 include/libktorrent/net/poll.h
 include/libktorrent/net/portlist.h
 include/libktorrent/net/reverseresolver.h
@@ -86,6 +87,8 @@ include/libktorrent/net/socketgroup.h
 include/libktorrent/net/socketmonitor.h
 include/libktorrent/net/socks.h
 include/libktorrent/net/speed.h
+include/libktorrent/net/streamsocket.h
+include/libktorrent/net/trafficshapedsocket.h
 include/libktorrent/net/uploadthread.h
 include/libktorrent/net/wakeuppipe.h
 include/libktorrent/peer/accessmanager.h
@@ -94,7 +97,6 @@ include/libktorrent/peer/authenticatebase.h
 include/libktorrent/peer/authenticationmonitor.h
 include/libktorrent/peer/chunkcounter.h
 include/libktorrent/peer/packetreader.h
-include/libktorrent/peer/packetwriter.h
 include/libktorrent/peer/peer.h
 include/libktorrent/peer/peerconnector.h
 include/libktorrent/peer/peerdownloader.h
@@ -134,6 +136,7 @@ include/libktorrent/upnp/upnprouter.h
 include/libktorrent/util/array.h
 include/libktorrent/util/autorotatelogjob.h
 include/libktorrent/util/bitset.h
+include/libktorrent/util/bufferpool.h
 include/libktorrent/util/circularbuffer.h
 include/libktorrent/util/compressfilejob.h
 include/libktorrent/util/constants.h
@@ -158,6 +161,7 @@ include/libktorrent/util/win32.h
 include/libktorrent/utp/connection.h
 include/libktorrent/utp/delaywindow.h
 include/libktorrent/utp/localwindow.h
+include/libktorrent/utp/packetbuffer.h
 include/libktorrent/utp/pollpipe.h
 include/libktorrent/utp/remotewindow.h
 include/libktorrent/utp/timevalue.h
@@ -174,6 +178,7 @@ share/locale/ar/LC_MESSAGES/libktorrent.mo
 share/locale/ast/LC_MESSAGES/libktorrent.mo
 share/locale/be/LC_MESSAGES/libktorrent.mo
 share/locale/bg/LC_MESSAGES/libktorrent.mo
+share/locale/bs/LC_MESSAGES/libktorrent.mo
 share/locale/ca/LC_MESSAGES/libktorrent.mo
 share/locale/ca@valencia/LC_MESSAGES/libktorrent.mo
 share/locale/cs/LC_MESSAGES/libktorrent.mo
