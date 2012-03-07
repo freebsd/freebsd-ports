@@ -45,6 +45,10 @@ lib/ocaml/lablGL/glPix.cmi
 lib/ocaml/lablGL/glPix.cmx
 lib/ocaml/lablGL/glPix.ml
 lib/ocaml/lablGL/glPix.mli
+lib/ocaml/lablGL/glShader.cmi
+lib/ocaml/lablGL/glShader.cmx
+lib/ocaml/lablGL/glShader.ml
+lib/ocaml/lablGL/glShader.mli
 lib/ocaml/lablGL/glTex.cmi
 lib/ocaml/lablGL/glTex.cmx
 lib/ocaml/lablGL/glTex.ml
@@ -102,6 +106,8 @@ lib/ocaml/stublibs/dlltogl.so
 %%EXAMPLESDIR%%/lablglut/caml-images/OCamlMakefile
 %%EXAMPLESDIR%%/lablglut/caml-images/main.ml
 %%EXAMPLESDIR%%/lablglut/caml-images/ppm.ppm
+%%EXAMPLESDIR%%/lablglut/etc/draw2d.ml
+%%EXAMPLESDIR%%/lablglut/etc/in-progress/scene_graph.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/README
 %%EXAMPLESDIR%%/lablglut/lablGL/checker.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/gears.ml
@@ -109,6 +115,7 @@ lib/ocaml/stublibs/dlltogl.so
 %%EXAMPLESDIR%%/lablglut/lablGL/planet.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/scene.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/simple.ml
+%%EXAMPLESDIR%%/lablglut/lablGL/test_glsl.ml
 %%EXAMPLESDIR%%/lablglut/lablGL/texturesurf.ml
 %%EXAMPLESDIR%%/lablglut/nehe/lesson2.ml
 %%EXAMPLESDIR%%/lablglut/nehe/lesson3.ml
@@ -129,6 +136,8 @@ lib/ocaml/stublibs/dlltogl.so
 @dirrm %%EXAMPLESDIR%%/togl
 @dirrm %%EXAMPLESDIR%%/lablglut/nehe
 @dirrm %%EXAMPLESDIR%%/lablglut/lablGL
+@dirrm %%EXAMPLESDIR%%/lablglut/etc/in-progress
+@dirrm %%EXAMPLESDIR%%/lablglut/etc
 @dirrm %%EXAMPLESDIR%%/lablglut/caml-images
 @dirrm %%EXAMPLESDIR%%/lablglut
 @dirrm %%EXAMPLESDIR%%
