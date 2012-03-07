@@ -243,6 +243,7 @@ R-cran-itertools                ports/devel/R-cran-itertools
 R-cran-lmtest                   ports/finance/R-cran-lmtest
 R-cran-maptools                 ports/astro/R-cran-maptools
 R-cran-memisc                   ports/math/R-cran-memisc
+R-cran-memoise                  ports/devel/R-cran-memoise
 R-cran-munsell                  ports/graphics/R-cran-munsell
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-pixmap                   ports/graphics/R-cran-pixmap
@@ -256,6 +257,7 @@ R-cran-rgdal                    ports/graphics/R-cran-rgdal
 R-cran-rjson                    ports/converters/R-cran-rjson
 R-cran-rtiff                    ports/graphics/R-cran-rtiff
 R-cran-sandwich                 ports/math/R-cran-sandwich
+R-cran-scales                   ports/graphics/R-cran-scales
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
 R-cran-sm                       ports/math/R-cran-sm
@@ -14568,6 +14570,7 @@ p5-Test-Requires                ports/devel/p5-Test-Requires
 p5-Test-Script                  ports/devel/p5-Test-Script
 p5-Test-Script-Run              ports/devel/p5-Test-Script-Run
 p5-Test-SharedFork              ports/devel/p5-Test-SharedFork
+p5-Test-Signature               ports/devel/p5-Test-Signature
 p5-Test-Simple                  ports/devel/p5-Test-Simple
 p5-Test-Singleton               ports/devel/p5-Test-Singleton
 p5-Test-Spec                    ports/devel/p5-Test-Spec
@@ -19086,6 +19089,7 @@ p5-test-requires                ports/devel/p5-Test-Requires
 p5-test-script                  ports/devel/p5-Test-Script
 p5-test-script-run              ports/devel/p5-Test-Script-Run
 p5-test-sharedfork              ports/devel/p5-Test-SharedFork
+p5-test-signature               ports/devel/p5-Test-Signature
 p5-test-simple                  ports/devel/p5-Test-Simple
 p5-test-singleton               ports/devel/p5-Test-Singleton
 p5-test-spec                    ports/devel/p5-Test-Spec
@@ -21628,7 +21632,6 @@ postgresql-pllua                ports/databases/postgresql-pllua
 postgresql-plproxy              ports/databases/postgresql-plproxy
 postgresql-plpython             ports/databases/postgresql-plpython
 postgresql-plruby               ports/databases/postgresql-plruby
-postgresql-pltcl                ports/databases/postgresql-pltcl
 postgresql-relay                ports/databases/postgresql-relay
 postgresql-repmgr               ports/databases/postgresql-repmgr
 postgresql-tcltk                ports/databases/postgresql-tcltk
@@ -21639,21 +21642,25 @@ postgresql83-client             ports/databases/postgresql83-client
 postgresql83-contrib            ports/databases/postgresql83-contrib
 postgresql83-docs               ports/databases/postgresql83-docs
 postgresql83-plperl             ports/databases/postgresql83-plperl
+postgresql83-pltcl              ports/databases/postgresql83-pltcl
 postgresql83-server             ports/databases/postgresql83-server
 postgresql84-client             ports/databases/postgresql84-client
 postgresql84-contrib            ports/databases/postgresql84-contrib
 postgresql84-docs               ports/databases/postgresql84-docs
 postgresql84-plperl             ports/databases/postgresql84-plperl
+postgresql84-pltcl              ports/databases/postgresql84-pltcl
 postgresql84-server             ports/databases/postgresql84-server
 postgresql90-client             ports/databases/postgresql90-client
 postgresql90-contrib            ports/databases/postgresql90-contrib
 postgresql90-docs               ports/databases/postgresql90-docs
 postgresql90-plperl             ports/databases/postgresql90-plperl
+postgresql90-pltcl              ports/databases/postgresql90-pltcl
 postgresql90-server             ports/databases/postgresql90-server
 postgresql91-client             ports/databases/postgresql91-client
 postgresql91-contrib            ports/databases/postgresql91-contrib
 postgresql91-docs               ports/databases/postgresql91-docs
 postgresql91-plperl             ports/databases/postgresql91-plperl
+postgresql91-pltcl              ports/databases/postgresql91-pltcl
 postgresql91-server             ports/databases/postgresql91-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
@@ -23596,6 +23603,7 @@ r-cran-kfas                     ports/math/R-cran-KFAS
 r-cran-lmtest                   ports/finance/R-cran-lmtest
 r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-memisc                   ports/math/R-cran-memisc
+r-cran-memoise                  ports/devel/R-cran-memoise
 r-cran-munsell                  ports/graphics/R-cran-munsell
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-pixmap                   ports/graphics/R-cran-pixmap
@@ -23617,6 +23625,7 @@ r-cran-rpad                     ports/www/R-cran-Rpad
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-rtiff                    ports/graphics/R-cran-rtiff
 r-cran-sandwich                 ports/math/R-cran-sandwich
+r-cran-scales                   ports/graphics/R-cran-scales
 r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-shape                    ports/graphics/R-cran-shape
 r-cran-sm                       ports/math/R-cran-sm
@@ -24972,7 +24981,6 @@ scrobbler                       ports/audio/scrobbler
 scrollkeeper                    ports/textproc/scrollkeeper
 scrollz                         ports/irc/scrollz
 scrot                           ports/graphics/scrot
-scrotwm                         ports/x11-wm/scrotwm
 scrypt                          ports/security/scrypt
 scsh                            ports/lang/scsh
 scsh-install-lib                ports/devel/scsh-install-lib
@@ -25479,6 +25487,7 @@ species                         ports/games/species
 specimen                        ports/audio/specimen
 spectcl                         ports/devel/SpecTcl
 spectools                       ports/net-mgmt/spectools
+spectrwm                        ports/x11-wm/spectrwm
 speech-dispatcher               ports/accessibility/speech-dispatcher
 speedbar                        ports/editors/speedbar
 speedcrunch                     ports/math/speedcrunch
