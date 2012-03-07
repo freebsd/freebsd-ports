@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkreadmes
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MAINTAINER=	conrads@cox.net
 COMMENT=	A speedy substitute for "make readmes"
 
 USE_BZIP2=	yes
-MAN1=	mkreadmes.1
+MAN1=		mkreadmes.1
 MANCOMPRESSED=	maybe
 
 PLIST_FILES=	sbin/${PORTNAME}
