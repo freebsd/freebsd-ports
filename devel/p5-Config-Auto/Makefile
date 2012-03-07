@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Auto
-PORTVERSION=	0.38
+PORTVERSION=	0.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BINGOS
@@ -30,5 +30,8 @@ RUN_DEPENDS+=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 .endif
 
 MAN3=		Config::Auto.3
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.post.mk>
