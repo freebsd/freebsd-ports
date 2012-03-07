@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	3.9
+PORTVERSION=	4.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,5 +28,8 @@ RUN_DEPENDS+=	p5-PathTools>=3.0:${PORTSDIR}/devel/p5-PathTools
 
 post-patch:
 	@${PERL} -pi -e '$$_="" if /INST_LIB/' ${WRKSRC}/Makefile.PL
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.post.mk>
