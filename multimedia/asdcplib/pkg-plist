@@ -1,4 +1,8 @@
+bin/asdcp-info
 bin/asdcp-test
+bin/asdcp-unwrap
+bin/asdcp-util
+bin/asdcp-wrap
 bin/blackwave
 bin/j2c-test
 bin/klvwalk
