@@ -1,4 +1,4 @@
-# New ports collection makefile for:    Net-Rendezvous
+# Nw ports collection makefile for:    Net-Rendezvous
 # Date created:                         Fri Feb 20 17:39:48 EST 2004
 # Whom:                                 Michael Johnson <ahze@ahze.net>
 #
@@ -16,6 +16,9 @@ COMMENT=	A set of perl modules to utilize mDNS for service discovery
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+DEPRECATED=	Superceeded by dns/p5-Net-Bonjour
+EXPIRATION_DATE=	2012-04-07
 
 PERL_CONFIGURE=	yes
 
