@@ -26,44 +26,22 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		ddate.1
 
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may define the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      US_FORMAT   if you wish to use the US format for"
-	@${ECHO} "                  aneristic dates (m-d-y), as opposed to"
-	@${ECHO} "                  the Commonwealth format"
-	@${ECHO} ""
-	@${ECHO} "      PRAISE_BOB  if you wish ddate to contain SubGenius"
-	@${ECHO} "                  slogans"
-	@${ECHO} ""
-	@${ECHO} "      KILL_BOB    if you are ideologically, theologically or"
-	@${ECHO} "                  otherwise opposed to the Church of the"
-	@${ECHO} "                  SubGenius and do not wish your copy of"
-	@${ECHO} "                  ddate to contain code for counting down"
-	@${ECHO} "                  to X-Day"
-	@${ECHO} ""
-	@${ECHO} "      OLD_FORMAT  if you wish ddate to print the date in the"
-	@${ECHO} "                  same format as Druel's original ddate when"
-	@${ECHO} "                  called in immediate mode"
-	@${ECHO} ""
+OPTIONS=	USFORMAT  "Use US time format" off \
+		PRAISEBOB "Use SubGenius slogans" off \
+		KILLBOB   "Use countdown to X-Day" on
 
-post-patch:
-.if defined(US_FORMAT)
-	@${REINPLACE_CMD} -e 's/^\/\*\ \(#define\ US_FORMAT\)\ \*\//\1/' \
-		${WRKSRC}/misc-utils/ddate.c
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_USFORMAT)
+CFLAGS+=	-DUS_FORMAT=\"1\"
 .endif
-.if defined(PRAISE_BOB)
-	@${REINPLACE_CMD} -e 's/^\/\*\(#define\ PRAISE_BOB\ 13013\)\*\//\1/' \
-		${WRKSRC}/misc-utils/ddate.c
+
+.if defined(WITH_PRAISEBOB)
+CFLAGS+=	-DPRAISE_BOB=\"13013\"
 .endif
-.if defined(KILL_BOB)
-	@${REINPLACE_CMD} -e 's/^\(#define\ KILL_BOB\ 13013\)/\/* \1 *\//' \
-		${WRKSRC}/misc-utils/ddate.c
-.endif
-.if !defined(OLD_FORMAT)
-	@${REINPLACE_CMD} -e 's/^\(#define\ OLD_IMMEDIATE_FMT\)/\/* \1 *\//' \
-		${WRKSRC}/misc-utils/ddate.c
+
+.if defined(WITH_KILLBOB)
+CFLAGS+=	-DKILL_BOB=\"13013\"
 .endif
 
 do-build:
@@ -71,7 +49,7 @@ do-build:
 		-o ${WRKSRC}/misc-utils/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} -m 0555 ${WRKSRC}/misc-utils/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/misc-utils/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/misc-utils/ddate.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
