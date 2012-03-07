@@ -60,6 +60,8 @@ USE_SDL+=	mixer
 post-patch:
 	@${REINPLACE_CMD} -e 's|-mt||; s|EXEC_PROGRAM.*OLXVER)|SET(OLXVER "${DISTVERSION}")|; \
 		s|/usr/local|${LOCALBASE}|' ${WRKSRC}/CMakeOlxCommon.cmake
+	@${FIND} ${WRKSRC} \( -name "*.cpp" -o -name "*.h" -o -name "*.cc" \) -print0 | ${XARGS} -0 -n1 \
+		${REINPLACE_CMD} -e '/include.*curl\/types.h/ d'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/openlierox ${PREFIX}/bin/
