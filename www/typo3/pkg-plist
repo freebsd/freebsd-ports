@@ -2014,7 +2014,6 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/jsfunc.tbe_editor.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/listframe_loader.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/login_frameset.php
-%%WWWDIR%%_src-%%PORTVERSION%%/typo3/logomenu.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/logout.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/md5.js
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/mod.php
