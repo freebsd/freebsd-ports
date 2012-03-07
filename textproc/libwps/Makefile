@@ -21,6 +21,8 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack gnomeprefix ltverhack
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
+
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--without-docs
 .else
