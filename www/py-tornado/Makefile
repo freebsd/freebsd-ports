@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tornado
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://github.com/downloads/facebook/tornado/
