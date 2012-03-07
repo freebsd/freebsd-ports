@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	Test-Block
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Specify fine granularity test plans
+DEPRECATED=	Marked as depreciated upstream
 
 BUILD_DEPENDS=	p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple
@@ -22,5 +23,8 @@ USE_PERL5=	5.6.1+
 PERL_CONFIGURE=	yes
 
 MAN3=	Test::Block.3
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
