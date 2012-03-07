@@ -1185,6 +1185,7 @@
     SUBDIR += oniguruma4
     SUBDIR += oniguruma5
     SUBDIR += open-beagle
+    SUBDIR += open-usp-tukubai
     SUBDIR += opencvs
     SUBDIR += opengrok
     SUBDIR += openocd
