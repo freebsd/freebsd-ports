@@ -26,3 +26,4 @@ MAN3=		DBZ_File.3
 .if ${PERL_LEVEL} > 501400
 BROKEN=	POLLUTE=1 is gone, does not compile, has not been released since 1997
 .endif
+.include <bsd.port.post.mk>
