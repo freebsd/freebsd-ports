@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-Base
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,5 +16,8 @@ COMMENT=	Useful base class for deriving other modules
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::Base.3
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
 .include <bsd.port.mk>
