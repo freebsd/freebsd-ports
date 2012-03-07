@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# This script sets ownership for various files required by the netdot
+# package.
+#
+
+WWWDIR=%%WWWDIR%%
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
+CHOWN=%%CHOWN%%
+CHMOD=%%CHMOD%%
+
+case $2 in
+POST-INSTALL)
+	for changedir in \
+		doc/manual htdocs/img/graphs htdocs/masondata \
+		htdocs/masondata/cache htdocs/masondata/obj \
+		tmp tmp/sessions tmp/sessions/locks \
+		export/bind export/cacti export/dhcpd \
+		export/docs export/ethers export/nagios \
+		export/rancid export/sysmon \
+	; do
+		${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/${changedir}
+		${CHMOD} 0755 ${WWWDIR}/${changedir}
+	done
+
+	# Restrict world read access to these dirs
+	${CHMOD} 0750 ${WWWDIR}/tmp
+	${CHMOD} 0750 ${WWWDIR}/htdocs/img/graphs
+esac

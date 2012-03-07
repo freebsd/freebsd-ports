@@ -160,6 +160,7 @@
     SUBDIR += netams-front
     SUBDIR += netdisco
     SUBDIR += netdisco-mibs
+    SUBDIR += netdot
     SUBDIR += netleak
     SUBDIR += netmask
     SUBDIR += netmond
