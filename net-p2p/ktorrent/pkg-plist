@@ -223,6 +223,7 @@ share/locale/ar/LC_MESSAGES/ktorrent.mo
 share/locale/ast/LC_MESSAGES/ktorrent.mo
 share/locale/be/LC_MESSAGES/ktorrent.mo
 share/locale/bg/LC_MESSAGES/ktorrent.mo
+share/locale/bs/LC_MESSAGES/ktorrent.mo
 share/locale/ca/LC_MESSAGES/ktorrent.mo
 share/locale/ca@valencia/LC_MESSAGES/ktorrent.mo
 share/locale/cs/LC_MESSAGES/ktorrent.mo
@@ -246,6 +247,7 @@ share/locale/is/LC_MESSAGES/ktorrent.mo
 share/locale/it/LC_MESSAGES/ktorrent.mo
 share/locale/ja/LC_MESSAGES/ktorrent.mo
 share/locale/km/LC_MESSAGES/ktorrent.mo
+share/locale/ku/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/lv/LC_MESSAGES/ktorrent.mo
 share/locale/mai/LC_MESSAGES/ktorrent.mo
@@ -264,6 +266,7 @@ share/locale/se/LC_MESSAGES/ktorrent.mo
 share/locale/si/LC_MESSAGES/ktorrent.mo
 share/locale/sk/LC_MESSAGES/ktorrent.mo
 share/locale/sl/LC_MESSAGES/ktorrent.mo
+share/locale/sq/LC_MESSAGES/ktorrent.mo
 share/locale/sr/LC_MESSAGES/ktorrent.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ktorrent.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktorrent.mo
