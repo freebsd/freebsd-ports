@@ -15,31 +15,31 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Component Object Model for BBS systems
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/GOST.pm:${PORTSDIR}/security/p5-Crypt-GOST \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/IDEA.pm:${PORTSDIR}/security/p5-Crypt-IDEA \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Rijndael.pm:${PORTSDIR}/security/p5-Crypt-Rijndael \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/TEA.pm:${PORTSDIR}/security/p5-Crypt-TEA \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish.pm:${PORTSDIR}/security/p5-Crypt-Twofish \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/Twofish2.pm:${PORTSDIR}/security/p5-Crypt-Twofish2 \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/Crypt/Blowfish_PP.pm:${PORTSDIR}/security/p5-Crypt-Blowfish_PP \
-		${SITE_PERL}/Crypt/DES_PP.pm:${PORTSDIR}/security/p5-Crypt-DES_PP \
-		${SITE_PERL}/Crypt/Rijndael_PP.pm:${PORTSDIR}/security/p5-Crypt-Rijndael_PP \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
-		${SITE_PERL}/Hook/LexWrap.pm:${PORTSDIR}/devel/p5-Hook-LexWrap \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Mail/Box.pm:${PORTSDIR}/mail/p5-Mail-Box \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Net/Daemon.pm:${PORTSDIR}/net/p5-Net-Daemon \
-		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
-		${SITE_PERL}/OurNet/BBSAgent.pm:${PORTSDIR}/net/p5-OurNet-BBSAgent \
-		${SITE_PERL}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC \
-		${SITE_PERL}/enum.pm:${PORTSDIR}/devel/p5-enum
+BUILD_DEPENDS=	p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker \
+		p5-Crypt-Blowfish>=0:${PORTSDIR}/security/p5-Crypt-Blowfish \
+		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
+		p5-Crypt-GOST>=0:${PORTSDIR}/security/p5-Crypt-GOST \
+		p5-Crypt-IDEA>=0:${PORTSDIR}/security/p5-Crypt-IDEA \
+		p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael \
+		p5-Crypt-TEA>=0:${PORTSDIR}/security/p5-Crypt-TEA \
+		p5-Crypt-Twofish>=0:${PORTSDIR}/security/p5-Crypt-Twofish \
+		p5-Crypt-Twofish2>=0:${PORTSDIR}/security/p5-Crypt-Twofish2 \
+		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Crypt-Blowfish_PP>=0:${PORTSDIR}/security/p5-Crypt-Blowfish_PP \
+		p5-Crypt-DES_PP>=0:${PORTSDIR}/security/p5-Crypt-DES_PP \
+		p5-Crypt-Rijndael_PP>=0:${PORTSDIR}/security/p5-Crypt-Rijndael_PP \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
+		p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
+		p5-Hook-LexWrap>=0:${PORTSDIR}/devel/p5-Hook-LexWrap \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-Mail-Box>=0:${PORTSDIR}/mail/p5-Mail-Box \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		p5-Net-Daemon>=0:${PORTSDIR}/net/p5-Net-Daemon \
+		p5-Net-Telnet>=0:${PORTSDIR}/net/p5-Net-Telnet \
+		p5-OurNet-BBSAgent>=0:${PORTSDIR}/net/p5-OurNet-BBSAgent \
+		p5-PlRPC>=0:${PORTSDIR}/net/p5-PlRPC \
+		p5-enum>=0:${PORTSDIR}/devel/p5-enum
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.67
