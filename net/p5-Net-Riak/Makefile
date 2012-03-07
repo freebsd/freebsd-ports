@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Riak
-PORTVERSION=	0.15.01
+PORTVERSION=	0.15.02
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ COMMENT=	Interface to Riak
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
+BUILD_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Google-ProtocolBuffers>=0:${PORTSDIR}/devel/p5-Google-ProtocolBuffers \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
@@ -28,6 +28,7 @@ RUN_DEPENDS=	p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-MooseX-Types-Structured>=0:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
