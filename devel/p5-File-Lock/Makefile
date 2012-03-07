@@ -17,4 +17,8 @@ COMMENT=	Perl5 module for file locking (flock,fcntl)
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	POLLUTE=1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} > 501400
+BROKEN=	does not compile POLLUTE is gone, no release since 1996, net/netdisco depends on me
+.endif
+.include <bsd.port.post.mk>
