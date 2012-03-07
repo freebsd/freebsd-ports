@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foxtrotgps
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -27,6 +27,8 @@ USE_GETTEXT=	yes
 USE_GNOME=	gtk20 gconf2 libxml2 intltool pkgconfig libglade2
 USE_SQLITE=	3
 INSTALLS_ICONS=	yes
+
+GCONF_SCHEMAS= apps_foxtrotgps.schemas
 
 MAN1=	foxtrotgps.1 convert2gpx.1 convert2osm.1
 
