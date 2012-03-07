@@ -52,6 +52,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9448a82f-6878-11e1-865f-00e0814cab4e">
+    <topic>jenkins -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.453</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2012-03-05">
+	  <p>A XSS vulnerability was found in Jenkins core, which allows an
+	     attacker to inject malicious HTMLs to pages served by Jenkins.
+	     This allows an attacker to escalate his privileges by hijacking
+	     sessions of other users. This vulnerability affects all versions</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2012-03-05</url>
+    </references>
+    <dates>
+      <discovery>2012-03-05</discovery>
+      <entry>2012-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="99aef698-66ed-11e1-8288-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
