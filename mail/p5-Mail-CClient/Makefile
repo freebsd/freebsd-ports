@@ -69,4 +69,8 @@ post-patch:
 		     -e 's/ -lpam_misc//g;' \
 		 ${WRKSRC}/Makefile.PL
 
+.if ${PERL_LEVEL} > 501400
+BROKEN=	does not compile, no release since 2004
+.endif
+
 .include <bsd.port.post.mk>
