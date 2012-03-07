@@ -7,6 +7,7 @@
 
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.25
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
@@ -34,9 +35,16 @@ MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \
 PORTDOCS=	AUTHORS ChangeLog NEWS README libsndfile.css \
 		new_file_type.HOWTO libsndfile.jpg *.html
 
-OPTIONS=	EXTERNAL "Enable FLAC and Ogg Vorbis support" on
+OPTIONS=	CPU_CLIP "Allow machine-dependent clipping" off \
+		EXTERNAL "Enable FLAC and Ogg Vorbis support" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_CPU_CLIP)
+CONFIGURE_ARGS+=	--disable-cpu-clip
+.else
+MANUAL_PACKAGE_BUILD=	WITH_CPU_CLIP may customize the package for the build machine
+.endif
 
 .if defined(WITHOUT_EXTERNAL)
 CONFIGURE_ARGS+=--disable-external-libs
@@ -47,6 +55,10 @@ LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/ doc / /g' ${WRKSRC}/Makefile.in
+
+check regression-test test: build
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
+	check
 
 post-install:
 .if !defined(NOPORTDOCS)
