@@ -26,6 +26,7 @@ RUN_DEPENDS=	p5-Digest-MD5-File>=0:${PORTSDIR}/security/p5-Digest-MD5-File \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
