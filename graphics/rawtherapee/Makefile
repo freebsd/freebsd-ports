@@ -60,8 +60,8 @@ CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 .endif
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64" || ${ARCH} == "i386"
+BROKEN=		Does not compile on i386, ia64, powerpc, or sparc64
 .endif
 
 .if !defined(WITHOUT_OPENMP)
