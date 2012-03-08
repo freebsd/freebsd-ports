@@ -8,6 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.8.0
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -105,7 +106,7 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 .if defined(WITH_OSMESA)
-LIB_DEPENDS+=	OSMesa32.7:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	OSMesa32.8:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa32.so
