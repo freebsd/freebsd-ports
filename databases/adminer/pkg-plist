@@ -34,6 +34,7 @@
 %%WWWDIR%%/adminer/lang/en.inc.php
 %%WWWDIR%%/adminer/lang/es.inc.php
 %%WWWDIR%%/adminer/lang/et.inc.php
+%%WWWDIR%%/adminer/lang/fa.inc.php
 %%WWWDIR%%/adminer/lang/fr.inc.php
 %%WWWDIR%%/adminer/lang/hu.inc.php
 %%WWWDIR%%/adminer/lang/it.inc.php
@@ -61,22 +62,8 @@
 %%WWWDIR%%/designs/konya/adminer.css
 %%WWWDIR%%/designs/paranoiq/adminer.css
 %%WWWDIR%%/designs/pilot/adminer.css
+%%WWWDIR%%/designs/pokorny/adminer.css
 %%WWWDIR%%/designs/readme.txt
-%%WWWDIR%%/plugins/dump-xml.php
-%%WWWDIR%%/plugins/dump-zip.php
-%%WWWDIR%%/plugins/edit-calendar.php
-%%WWWDIR%%/plugins/edit-textarea.php
-%%WWWDIR%%/plugins/file-upload.php
-%%WWWDIR%%/plugins/foreign-system.php
-%%WWWDIR%%/plugins/frames.php
-%%WWWDIR%%/plugins/login-servers.php
-%%WWWDIR%%/plugins/login-table.php
-%%WWWDIR%%/plugins/plugin.php
-%%WWWDIR%%/plugins/readme.txt
-%%WWWDIR%%/plugins/slugify.php
-%%WWWDIR%%/plugins/tinymce.php
-%%WWWDIR%%/plugins/translation.php
-%%WWWDIR%%/plugins/version-noverify.php
 %%WWWDIR%%/adminer/privileges.inc.php
 %%WWWDIR%%/adminer/procedure.inc.php
 %%WWWDIR%%/adminer/processlist.inc.php
@@ -118,6 +105,7 @@
 %%WWWDIR%%/externals/jush/jush.js
 %%WWWDIR%%/lang.php
 %%WWWDIR%%/readme.txt
+%%WWWDIR%%/plugins/database-hide.php
 %%WWWDIR%%/plugins/dump-xml.php
 %%WWWDIR%%/plugins/dump-zip.php
 %%WWWDIR%%/plugins/edit-calendar.php
@@ -184,6 +172,7 @@
 @dirrm %%WWWDIR%%/designs/konya
 @dirrm %%WWWDIR%%/designs/paranoiq
 @dirrm %%WWWDIR%%/designs/pilot
+@dirrm %%WWWDIR%%/designs/pokorny
 @dirrm %%WWWDIR%%/designs
 @dirrm %%WWWDIR%%/editor/include
 @dirrm %%WWWDIR%%/editor/static
