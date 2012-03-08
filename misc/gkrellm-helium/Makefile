@@ -28,5 +28,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/gkrellm2/plugins|${PREFIX}/libexec/gkrellm2/plugins| ; \
 		s|CFLAGS =|CFLAGS?=| ; s|-lcurl|-lcurl -L${LOCALBASE}/lib|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|ulong|u_long|' ${WRKSRC}/*.c
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/http_net.c
 
 .include <bsd.port.mk>

@@ -37,5 +37,13 @@ MAN8=	nepenthes.8
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 	${REINPLACE_CMD} -e 's,-Werror,,'
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
+		${WRKSRC}/modules/download-curl/download-curl.hpp \
+		${WRKSRC}/modules/submit-http/HTTPSession.hpp \
+		${WRKSRC}/modules/submit-http/HTTPSession.cpp \
+		${WRKSRC}/modules/submit-http/submit-http.hpp \
+		${WRKSRC}/modules/submit-mwserv/TransferSession.hpp \
+		${WRKSRC}/modules/submit-mwserv/submit-mwserv.hpp \
+		${WRKSRC}/modules/submit-norman/submit-norman.hpp
 
 .include <bsd.port.mk>

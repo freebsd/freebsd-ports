@@ -40,5 +40,6 @@ post-patch:
 		's|<SDL/SDL_mixer.h>|"SDL_mixer.h"|g' ${WRKSRC}/SDL_mixer/load_ogg.c
 	@${REINPLACE_CMD} -e \
 		'/^sounds_DATA/s|Makefile.am||g' ${WRKSRC}/sounds/Makefile.in
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/net.cc
 
 .include <bsd.port.post.mk>

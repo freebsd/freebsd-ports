@@ -34,4 +34,7 @@ USE_APACHE=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/mod_flickr.c
+
 .include <bsd.port.mk>

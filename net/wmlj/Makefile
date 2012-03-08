@@ -22,4 +22,7 @@ USE_GNOME=	gtk12
 MAN1=		wmlj.1
 PLIST_FILES=	bin/wmlj
 
+post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/network.c
+
 .include <bsd.port.mk>

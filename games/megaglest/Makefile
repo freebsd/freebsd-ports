@@ -45,6 +45,10 @@ PLIST_SUB+=	EDITOR=""
 PLIST_SUB+=	EDITOR="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
+		${WRKSRC}/source/shared_lib/sources/platform/posix/miniftpclient.cpp
+
 do-install:
 	${STRIP_CMD} ${WRKSRC}/mk/linux/megaglest
 	@${MKDIR} ${DATADIR}

@@ -62,5 +62,9 @@ post-patch:
 		's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e '/#include.*features.h/d' \
 		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
+		${WRKSRC}/lib/curl_transport/curltransaction.c \
+		${WRKSRC}/lib/curl_transport/xmlrpc_curl_transport.c \
+		${WRKSRC}/lib/curl_transport/curlmulti.c
 
 .include <bsd.port.post.mk>

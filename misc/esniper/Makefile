@@ -25,6 +25,9 @@ PLIST_FILES=	bin/esniper
 
 PORTEXAMPLES=	sample_auction.txt sample_config.txt
 
+post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/http.c
+
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}

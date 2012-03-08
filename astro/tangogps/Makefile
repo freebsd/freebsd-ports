@@ -28,4 +28,7 @@ USE_GNOME=	gtk20 gconf2 libxml2
 USE_SQLITE=	3
 INSTALLS_ICONS=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/tile_management.c ${WRKSRC}/src/util.h ${WRKSRC}/src/friends.c
+
 .include <bsd.port.mk>
