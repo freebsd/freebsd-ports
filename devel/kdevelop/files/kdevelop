@@ -1,0 +1,7 @@
+#!/bin/sh
+
+export PATH=%%LOCALBASE%%/gnu-autotools/bin:${PATH}
+export ACLOCAL_FLAGS="-I %%LOCALBASE%%/share/aclocal ${ACLOCAL_FLAGS}"
+export PTHREAD_LIBS=%%PTHREAD_LIBS%%
+
+exec "%%PREFIX%%/bin/kdevelop-bin" "$@"
