@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freecol
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,7 +14,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An open source version of Colonization
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_ZIP=	yes
 NO_BUILD=	yes
