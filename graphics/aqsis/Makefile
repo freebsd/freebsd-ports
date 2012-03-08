@@ -7,27 +7,33 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTVERSION=	1.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
+DISTNAME=	Aqsis-${PORTVERSION}-Source
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A photorealistic rendering system
 
+LICENSE=	BSD GPLv2
+LICENSE_COMB=	multi
+
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
+		xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
     		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		xsltproc:${PORTSDIR}/textproc/libxslt
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=	yes
+CMAKE_VERBOSE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	opengl qmake moc rcc uic
+PLIST_SUB+=	LIBVERS=${PORTVERSION:R}
 
 INSTALLS_ICONS=	yes
 
