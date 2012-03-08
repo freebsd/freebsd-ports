@@ -177,6 +177,7 @@
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
+    SUBDIR += ruby-netcdf
     SUBDIR += rubygem-ai4r
     SUBDIR += silo
     SUBDIR += simlib

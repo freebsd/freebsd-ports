@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	0.6.5
-CATEGORIES=	math ruby
-MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-netcdf/
+PORTVERSION=	0.6.6
+CATEGORIES=	science ruby
+MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-netcdf/release/ \
+		http://dennou-h.gfd-dennou.org/library/ruby/products/ruby-netcdf/release/ \
+		http://dennou-q.gfd-dennou.org/library/ruby/products/ruby-netcdf/release/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
