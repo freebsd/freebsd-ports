@@ -1,5 +1,4 @@
 bin/serpentine
-%%MUINE%%lib/muine/plugins/SerpentinePlugin.dll
 %%PYTHON_SITELIBDIR%%/serpentine/__init__.py
 %%PYTHON_SITELIBDIR%%/serpentine/__init__.pyc
 %%PYTHON_SITELIBDIR%%/serpentine/__init__.pyo
@@ -86,4 +85,3 @@ share/applications/serpentine.desktop
 @dirrm %%PYTHON_SITELIBDIR%%/serpentine
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
-%%MUINE%%@dirrmtry lib/muine/plugins
