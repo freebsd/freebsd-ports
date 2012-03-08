@@ -26,16 +26,4 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::OpenID::Association.3 Net::OpenID::ClaimedIdentity.3 \
 		Net::OpenID::Consumer.3 Net::OpenID::VerifiedIdentity.3
 
-.if defined(MAINTAINER_MODE)
-regression-test: build
-	cd ${WRKSRC} && ${MAKE} test
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

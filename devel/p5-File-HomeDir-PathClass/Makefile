@@ -22,14 +22,8 @@ RUN_DEPENDS=	p5-File-HomeDir>=0.93:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
 
-PERL_MODBUILD=	5.10.0+
+PERL_MODBUILD=	yes
 
 MAN3=		File::HomeDir::PathClass.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

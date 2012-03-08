@@ -32,11 +32,4 @@ PERL_CONFIGURE=	yes
 MAN1=		pod2projdocs.1
 MAN3=		Pod::ProjectDocs.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500808
-BUILD_DEPENDS+=	p5-Pod-Parser>=1.32:${PORTSDIR}/textproc/p5-Pod-Parser
-RUN_DEPENDS+=	p5-Pod-Parser>=1.32:${PORTSDIR}/textproc/p5-Pod-Parser
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

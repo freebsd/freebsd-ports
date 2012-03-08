@@ -29,13 +29,4 @@ PERL_CONFIGURE=	yes
 MAN3=		POE::Component::Resolver.3 \
 		POE::Component::Resolver::Sidecar.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Storable>=2.18:${PORTSDIR}/devel/p5-Storable \
-		p5-Time-HiRes>=1.9711:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS+=	p5-Storable>=2.18:${PORTSDIR}/devel/p5-Storable \
-		p5-Time-HiRes>=1.9711:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

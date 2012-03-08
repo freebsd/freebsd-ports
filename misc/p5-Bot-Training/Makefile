@@ -31,7 +31,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.10+
+PERL_CONFIGURE=	yes
 
 MAN1=	bot-training.1
 

@@ -44,10 +44,4 @@ MAN3=		Perlanet.3 \
 		Perlanet::Trait::Tidy.3 \
 		Perlanet::Trait::YAMLConfig.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 508000
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

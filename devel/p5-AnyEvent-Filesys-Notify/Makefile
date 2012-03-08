@@ -33,10 +33,4 @@ MAN3=	AnyEvent::Filesys::Notify.3 \
 	AnyEvent::Filesys::Notify::Role::Linux.3 \
 	AnyEvent::Filesys::Notify::Role::Mac.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-autodie>0:${PORTSDIR}/devel/p5-autodie
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

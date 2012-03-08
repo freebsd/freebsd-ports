@@ -33,9 +33,4 @@ MAN3=		MetaCPAN::API.3 MetaCPAN::API::Author.3 \
 		MetaCPAN::API::Release.3 \
 		MetaCPAN::API::Source.3
 
-.if defined(MAINTAINER_MODE)
-regression-test: build
-	cd ${WRKSRC} && ${PERL5} ${PL_BUILD} test
-.endif
-
 .include <bsd.port.mk>

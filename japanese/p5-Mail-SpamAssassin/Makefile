@@ -74,16 +74,6 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
-		p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness
-.endif
-
 .if defined (WITH_SPAMC)
 CONFIGURE_ARGS+=	BUILD_SPAMC=yes
 .else
@@ -125,21 +115,12 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 
 .if defined(WITH_RAZOR)
 RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
-.else
-.if   ${PERL_LEVEL} < 501000
-.if !defined(WITH_DKIM)
-RUN_DEPENDS+=	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
-.endif
-.endif
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
-. if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
-. endif
-RUN_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
-RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+    p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM \
+    p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 .endif
 
 .if defined(WITH_SACOMPILE)

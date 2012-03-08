@@ -42,10 +42,4 @@ MAN3=		pp.3 \
 		PAR::Packer.3 \
 		PAR::StrippedPARL::Base.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

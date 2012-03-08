@@ -31,7 +31,4 @@ post-install:
 	@${ECHO_MSG} "===> Example installed in ${EXAMPLESDIR}."
 .endif
 
-regression-test: build
-	cd ${WRKSRC}/ && ./Build test
-
 .include <bsd.port.mk>

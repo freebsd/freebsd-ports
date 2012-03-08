@@ -24,10 +24,4 @@ MAN3=		Pod::Man.3 Pod::ParseLink.3 Pod::Text.3 Pod::Text::Color.3 \
 post-patch:
 	${REINPLACE_CMD} -e '/pod2text/d;s/man1pod.*pod2man.*//' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-RUN_DEPENDS+=	p5-Pod-Simple>=3.06:${PORTSDIR}/textproc/p5-Pod-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Wx::Perl::ProcessStream.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

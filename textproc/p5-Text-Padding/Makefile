@@ -22,14 +22,8 @@ RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Has-Sugar>=0:${PORTSDIR}/devel/p5-MooseX-Has-Sugar \
 		p5-Text-Truncate>=0:${PORTSDIR}/textproc/p5-Text-Truncate
 
-PERL_MODBUILD=	5.12.0+
+PERL_MODBUILD=	yes
 
 MAN3=		Text::Padding.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

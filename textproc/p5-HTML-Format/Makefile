@@ -20,8 +20,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Font-AFM>=0:${PORTSDIR}/x11-fonts/p5-Font-AFM \
 		p5-HTML-Tree>=3.15:${PORTSDIR}/www/p5-HTML-Tree
-RUN_DEPENDS=	p5-Font-AFM>=0:${PORTSDIR}/x11-fonts/p5-Font-AFM \
-		p5-HTML-Tree>=3.15:${PORTSDIR}/www/p5-HTML-Tree
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 
 PERL_MODBUILD=	yes

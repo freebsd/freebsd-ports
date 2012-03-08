@@ -46,10 +46,4 @@ BUILD_DEPENDS+=	p5-B-Hooks-OP-Check>=0.18:${PORTSDIR}/devel/p5-B-Hooks-OP-Check 
 		p5-B-Hooks-OP-PPAddr>=0.03:${PORTSDIR}/devel/p5-B-Hooks-OP-PPAddr
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

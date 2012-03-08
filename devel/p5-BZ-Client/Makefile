@@ -22,7 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601
 
-PERL_CONFIGURE=	5.10.1+
+PERL_CONFIGURE=	yes
 
 MAN3=		BZ::Client.3 BZ::Client::API.3 BZ::Client::Bug.3 \
 		BZ::Client::Bugzilla.3 BZ::Client::Exception.3 \

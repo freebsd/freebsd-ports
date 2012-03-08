@@ -21,10 +21,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Markup::Perl.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500805
-RUN_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -33,11 +33,4 @@ MAN3=		CGI::Application::Dispatch.3 \
 		CGI::Application::Dispatch::PSGI.3 \
 		CGI::Application::Dispatch::Regexp.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-version>=0.82:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS+=	p5-version>=0.82:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

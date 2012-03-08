@@ -28,7 +28,4 @@ INSTALL_TARGET=	pure_install
 
 MAN3=		POE::API::Peek.3
 
-regression-test:
-	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
-
 .include <bsd.port.mk>

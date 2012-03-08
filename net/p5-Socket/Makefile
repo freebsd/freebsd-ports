@@ -21,10 +21,6 @@ MAN3=		Socket.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-.endif
-
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-ExtUtils-Constant>=0.23:${PORTSDIR}/devel/p5-ExtUtils-Constant
 .endif

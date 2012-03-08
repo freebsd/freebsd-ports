@@ -71,7 +71,4 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Util::Semaphore.3 \
 		Log::Log4perl::Util::TimeTracker.3
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
-
 .include <bsd.port.mk>

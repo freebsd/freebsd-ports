@@ -36,14 +36,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500806
-RUN_DEPENDS+=	p5-PathTools>=3:${PORTSDIR}/devel/p5-PathTools
-.endif
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-parent>=0.223:${PORTSDIR}/devel/p5-parent
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

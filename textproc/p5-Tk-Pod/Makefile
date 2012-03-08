@@ -33,11 +33,4 @@ MAN3=		Tk::More.3 \
 		Tk::Pod::Util.3 \
 		Tk::Pod_usage.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple
-RUN_DEPENDS+=	p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

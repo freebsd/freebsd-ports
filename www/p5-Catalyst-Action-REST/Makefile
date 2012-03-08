@@ -48,10 +48,4 @@ MAN3=		Catalyst::Action::Deserialize.3 \
 		Catalyst::TraitFor::Request::REST.3 \
 		Catalyst::TraitFor::Request::REST::ForBrowsers.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

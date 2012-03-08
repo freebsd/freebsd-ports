@@ -39,15 +39,4 @@ MAN3=		Feersum.3 \
 		Feersum::Runner.3 \
 		Plack::Handler::Feersum.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-.endif
-
-.if ${PERL_LEVEL} < 501200
-TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

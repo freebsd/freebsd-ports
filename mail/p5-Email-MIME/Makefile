@@ -28,7 +28,4 @@ MAN3=		Email::MIME.3 \
 		Email::MIME::Header.3 \
 		Email::MIME::Modifier.3
 
-regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
-
 .include <bsd.port.mk>
