@@ -25,20 +25,4 @@ USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	2.4+
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player" Off
-.endif
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_MUINE)
-BUILD_DEPENDS+=	muine:${PORTSDIR}/audio/muine
-RUN_DEPENDS+=	muine:${PORTSDIR}/audio/muine
-PLIST_SUB+=	MUINE=""
-CONFIGURE_ARGS+=	--enable-muine
-.else
-PLIST_SUB+=	MUINE="@comment "
-.endif
-
 .include <bsd.port.post.mk>
