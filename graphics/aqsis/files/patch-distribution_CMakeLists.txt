@@ -1,0 +1,22 @@
+--- distribution/CMakeLists.txt.orig	2012-03-05 13:59:34.000000000 +0100
++++ distribution/CMakeLists.txt	2012-03-05 13:59:57.000000000 +0100
+@@ -111,11 +111,11 @@
+ # By moving it here, we guarantee it happens after the files are installed, as this
+ # is add_subdirectory'd last, and I arbitrarily choose piqsl, as if QT is enabled,
+ # all QT apps are build anyway at the moment.
+-if(AQSIS_USE_QT)
+-  set(DIRS "${QT_BINARY_DIR}" "${Boost_LIBRARY_DIRS}")
+-  set(APPS "\${CMAKE_INSTALL_PREFIX}/${BINDIR}/piqsl${CMAKE_EXECUTABLE_SUFFIX}")
+-  INSTALL(CODE "
+-    include(BundleUtilities)
+-    fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
+-    " COMPONENT main)
+-endif()
++#if(AQSIS_USE_QT)
++#  set(DIRS "${QT_BINARY_DIR}" "${Boost_LIBRARY_DIRS}")
++#  set(APPS "\${CMAKE_INSTALL_PREFIX}/${BINDIR}/piqsl${CMAKE_EXECUTABLE_SUFFIX}")
++#  INSTALL(CODE "
++#    include(BundleUtilities)
++#    fixup_bundle(\"${APPS}\"   \"\"   \"${DIRS}\")
++#    " COMPONENT main)
++#endif()
