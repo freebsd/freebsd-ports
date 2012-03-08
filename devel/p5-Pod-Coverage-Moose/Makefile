@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Pod-Coverage-Moose
-PORTVERSION=	0.02
-PORTREVISION=	2
+PORTVERSION=	0.03
 CATEGORIES=	devel textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +19,8 @@ BUILD_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Pod-Coverage \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers
 
 PERL_CONFIGURE=	yes
 
