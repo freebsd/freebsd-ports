@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmp
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.4
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -15,7 +15,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
 LICENSE=	LGPL3
-LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 OPTIONS=	CPU_OPTS "Enable assembly optimizations for your CPU" off
 
