@@ -10549,6 +10549,7 @@ open-axiom                      ports/math/open-axiom
 open-beagle                     ports/devel/open-beagle
 open-cobol                      ports/lang/open-cobol
 open-motif                      ports/x11-toolkits/open-motif
+open-usp-tukubai                ports/devel/open-usp-tukubai
 open-vm-tools                   ports/emulators/open-vm-tools
 open-vm-tools-nox11             ports/emulators/open-vm-tools-nox11
 openacs                         ports/www/openacs
@@ -13768,6 +13769,7 @@ p5-POE-Component-LaDBI          ports/databases/p5-POE-Component-LaDBI
 p5-POE-Component-Logger         ports/devel/p5-POE-Component-Logger
 p5-POE-Component-Pcap           ports/net/p5-POE-Component-Pcap
 p5-POE-Component-Pluggable      ports/devel/p5-POE-Component-Pluggable
+p5-POE-Component-PubSub         ports/net/p5-POE-Component-PubSub
 p5-POE-Component-RRDTool        ports/databases/p5-POE-Component-RRDTool
 p5-POE-Component-RSS            ports/devel/p5-POE-Component-RSS
 p5-POE-Component-RSSAggregator  ports/devel/p5-POE-Component-RSSAggregator
@@ -18444,6 +18446,7 @@ p5-poe-component-ladbi          ports/databases/p5-POE-Component-LaDBI
 p5-poe-component-logger         ports/devel/p5-POE-Component-Logger
 p5-poe-component-pcap           ports/net/p5-POE-Component-Pcap
 p5-poe-component-pluggable      ports/devel/p5-POE-Component-Pluggable
+p5-poe-component-pubsub         ports/net/p5-POE-Component-PubSub
 p5-poe-component-resolver       ports/dns/p5-POE-Component-Resolver
 p5-poe-component-rrdtool        ports/databases/p5-POE-Component-RRDTool
 p5-poe-component-rss            ports/devel/p5-POE-Component-RSS
@@ -26894,6 +26897,7 @@ usermatic                       ports/sysutils/usermatic
 usermin                         ports/sysutils/usermin
 userneu                         ports/sysutils/userneu
 userneu-devel                   ports/sysutils/userneu-devel
+userspace-rcu                   ports/sysutils/userspace-rcu
 ushare                          ports/net/ushare
 usogres                         ports/databases/usogres
 usrinfo                         ports/sysutils/usrinfo
