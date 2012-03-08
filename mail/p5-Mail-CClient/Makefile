@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=		CClient
+PORTNAME=		Mail-CClient
 PORTVERSION=		1.12
 PORTREVISION=		1
 CATEGORIES=		mail perl5
 MASTER_SITES=		CPAN
 MASTER_SITE_SUBDIR=	CPAN:HDIAS
 PKGNAMEPREFIX=		p5-
-DISTNAME=		Mail-Cclient-${PORTVERSION}
 
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl interface to the c-client mailbox API

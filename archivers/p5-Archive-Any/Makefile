@@ -29,10 +29,4 @@ PERL_MODBUILD=	yes
 MAN3=		Archive::Any.3 Archive::Any::Plugin.3 \
 		Archive::Any::Plugin::Tar.3 Archive::Any::Plugin::Zip.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-Archive-Tar>=0.22:${PORTSDIR}/archivers/p5-Archive-Tar
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

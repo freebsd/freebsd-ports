@@ -28,10 +28,4 @@ PERL_CONFIGURE=	yes
 MAN3=		Test::Spec.3 \
 		Test::Spec::Mocks.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	Test-Harness>=0:${PORTSDIR}/devel/p5-Test-Harness
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

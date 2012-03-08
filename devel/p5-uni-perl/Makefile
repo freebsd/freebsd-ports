@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Encode>=2.37:${PORTSDIR}/converters/p5-Encode \
 		p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.10.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	uni::perl.3
 

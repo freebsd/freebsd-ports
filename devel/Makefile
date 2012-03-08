@@ -1298,7 +1298,6 @@
     SUBDIR += p5-B-Hooks-Parser
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-OPCheck
-    SUBDIR += p5-B-Size
     SUBDIR += p5-B-Utils
     SUBDIR += p5-BFD
     SUBDIR += p5-BS-Event
@@ -1645,7 +1644,6 @@
     SUBDIR += p5-Debug-Client
     SUBDIR += p5-Decision-ACL
     SUBDIR += p5-Declare-Constraints-Simple
-    SUBDIR += p5-Devel-Arena
     SUBDIR += p5-Devel-ArgNames
     SUBDIR += p5-Devel-Autoflush
     SUBDIR += p5-Devel-Backtrace

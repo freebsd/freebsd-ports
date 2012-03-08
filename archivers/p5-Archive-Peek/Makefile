@@ -26,7 +26,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Archive::Peek.3
 
-regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
-
 .include <bsd.port.mk>

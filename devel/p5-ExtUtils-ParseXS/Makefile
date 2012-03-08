@@ -25,13 +25,7 @@ MAN3=		ExtUtils::ParseXS.3 \
 		ExtUtils::Typemaps::OutputMap.3 \
 		ExtUtils::Typemaps::Type.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

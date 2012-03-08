@@ -113,9 +113,6 @@ MAN3=		SQL::Translator.3 \
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DIAGRAM)

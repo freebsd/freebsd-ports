@@ -41,7 +41,4 @@ MAN3=		SVN::S4.3 \
 		SVN::S4::ViewSpec.3 \
 		SVN::S4::WorkProp.3
 
-regression-test:
-	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
-
 .include <bsd.port.mk>

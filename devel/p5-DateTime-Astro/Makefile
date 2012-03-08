@@ -31,17 +31,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAN3=		DateTime::Astro.3 \
 		DateTime::Event::SolarTerm.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort
-.endif
-
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
-.endif
-
 post-configure:
 	@${REINPLACE_CMD} -e '/^INC = / s|$$| -I${LOCALBASE}/include|' ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

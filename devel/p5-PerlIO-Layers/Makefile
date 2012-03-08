@@ -21,15 +21,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		PerlIO::Layers.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
-		p5-Module-Build>=0.2800:${PORTSDIR}/devel/p5-Module-Build
-.endif
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.82:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,7 +27,4 @@ MAN3=		Sys::Info::Base.3 \
 		Sys::Info::Driver.3 \
 		Sys::Info::OS.3
 
-regression-test test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test
-
 .include <bsd.port.mk>

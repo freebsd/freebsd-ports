@@ -33,10 +33,4 @@ MAN3=		WWW::Mechanize::Pluggable.3 \
 		WWW::Mechanize::Plugin::Cookbook.3 \
 		WWW::Mechanize::Plugin::HelloWorld.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

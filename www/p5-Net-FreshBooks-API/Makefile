@@ -55,10 +55,6 @@ MAN3=		Net::FreshBooks::API.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501200
-BUILD_DEPENDS+=	p5-Module-Build>=0.3601:${PORTSDIR}/devel/p5-Module-Build
-.endif
-
 .if ${PERL_LEVEL} < 501400
 RUN_DEPENDS+=	p5-parent>=0.224:${PORTSDIR}/devel/p5-parent
 TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple

@@ -30,7 +30,4 @@ MAN3=	POE::Component::DirWatch.3 \
 	POE::Component::DirWatch::Role::Signatures.3 \
 	POE::Component::DirWatch::Unmodified.3
 
-regression-test:
-	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
-
 .include <bsd.port.mk>

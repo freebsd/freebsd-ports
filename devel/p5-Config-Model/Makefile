@@ -164,11 +164,4 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Multistrap::Section.3 \
 		Config::Model::models::PopCon.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
-RUN_DEPENDS+=	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,7 +27,4 @@ MAN3=		Audio::M4P.3 \
 		Audio::M4P::Decrypt.3 \
 		Audio::M4P::QuickTime.3
 
-regression-test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} test
-
 .include <bsd.port.mk>

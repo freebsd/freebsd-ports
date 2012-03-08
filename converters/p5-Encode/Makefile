@@ -43,7 +43,4 @@ post-configure:
 	@${FIND} ${WRKSRC}/ -name Makefile -exec \
 		${REINPLACE_CMD} -e 's,^CC =,CC ?=,' {} \;
 
-regression-test:
-	cd ${WRKSRC} && ${MAKE} test
-
 .include <bsd.port.mk>

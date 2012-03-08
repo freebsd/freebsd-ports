@@ -19,7 +19,7 @@ COMMENT=	Reverse-resolve IP in Apache log files
 RUN_DEPENDS=	p5-Compress-Bzip2>=0:${PORTSDIR}/archivers/p5-Compress-Bzip2 \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN1=		reslog.1
@@ -28,10 +28,4 @@ PLIST_FILES=	bin/reslog \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/reslog/.packlist
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/reslog
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

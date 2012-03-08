@@ -28,11 +28,4 @@ MAN3=	Geo::Parse::OSM.3 \
 	Geo::Parse::OSM::Multipass.3 \
 	Geo::Parse::OSM::Singlepass.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500903
-BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

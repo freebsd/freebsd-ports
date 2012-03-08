@@ -19,7 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN1=		b2g.pl.1 g2b.pl.1
 
-regression-test:
-	cd ${WRKSRC} && ${MAKE} test
-
 .include <bsd.port.mk>

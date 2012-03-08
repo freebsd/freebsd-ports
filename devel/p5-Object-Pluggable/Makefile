@@ -27,12 +27,6 @@ MAN3=		Object::Pluggable.3 \
 		Object::Pluggable::Constants.3 \
 		Object::Pluggable::Pipeline.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Pod-Parser>=1.36:${PORTSDIR}/textproc/p5-Pod-Parser
-.endif
-
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
@@ -40,4 +34,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

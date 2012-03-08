@@ -25,7 +25,4 @@ MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 
 MAN3=		Crypt::OpenSSL::RSA.3
 
-regression-test: build
-	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
-
 .include <bsd.port.mk>

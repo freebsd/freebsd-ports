@@ -42,10 +42,4 @@ MAN3=	MooseX::Getopt.3 \
 	MooseX::Getopt::ProcessedArgv.3 \
 	MooseX::Getopt::Strict.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

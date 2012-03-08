@@ -22,10 +22,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Config::Std.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500900
-RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

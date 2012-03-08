@@ -28,7 +28,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Plugin::Session::FastMmap.3
 
-regression-test: build
-	cd ${WRKSRC}/ && ${MAKE} test
-
 .include <bsd.port.mk>

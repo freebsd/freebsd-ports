@@ -42,10 +42,4 @@ MAN3=		MooseX::MethodAttributes.3 \
 		MooseX::MethodAttributes::Role::Meta::Role::Application.3 \
 		MooseX::MethodAttributes::Role::Meta::Role::Application::Summation.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

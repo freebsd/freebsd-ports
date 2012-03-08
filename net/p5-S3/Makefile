@@ -31,10 +31,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/S3.pm ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_SCRIPT} ${WRKSRC}/s3-*.pl ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500703
-RUN_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

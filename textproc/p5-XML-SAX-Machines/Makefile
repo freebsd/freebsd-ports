@@ -26,9 +26,6 @@ MAN3=		XML::Filter::Distributor.3 XML::Filter::DocSplitter.3 \
 		XML::SAX::Machines.3 XML::SAX::Machines::ConfigHelper.3 \
 		XML::SAX::Manifold.3 XML::SAX::Pipeline.3 XML::SAX::Tap.3
 
-regression-test: build
-	${MAKE} -C ${WRKSRC} test
-
 post-install:
 .ifndef(NOPORTEXAMPLES)
 		@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"

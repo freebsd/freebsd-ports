@@ -24,10 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Template::Plugin::Filter::Minify::JavaScript.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500808
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.30:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

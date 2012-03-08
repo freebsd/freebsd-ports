@@ -21,13 +21,4 @@ MAN3=		bigint.3 \
 		bignum.3 \
 		bigrat.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS+=	p5-Math-BigInt>=1.880:${PORTSDIR}/math/p5-Math-BigInt \
-		p5-Math-BigRat>=0.21:${PORTSDIR}/math/p5-Math-BigRat
-RUN_DEPENDS+=	p5-Math-BigInt>=1.880:${PORTSDIR}/math/p5-Math-BigInt \
-		p5-Math-BigRat>=0.21:${PORTSDIR}/math/p5-Math-BigRat
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

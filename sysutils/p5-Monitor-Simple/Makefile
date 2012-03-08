@@ -38,11 +38,4 @@ MAN3=		Monitor::Simple.3 \
 		Monitor::Simple::UserAgent.3 \
 		Monitor::Simple::Utils.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501001
-BUILD_DEPENDS+=	p5-Getopt-Long>=2.38:${PORTSDIR}/devel/p5-Getopt-Long
-RUN_DEPENDS+=	p5-Getopt-Long>=2.38:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
