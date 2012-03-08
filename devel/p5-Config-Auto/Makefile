@@ -31,7 +31,4 @@ RUN_DEPENDS+=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
 MAN3=		Config::Auto.3
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
-
 .include <bsd.port.post.mk>
