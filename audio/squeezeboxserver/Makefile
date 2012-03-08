@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-32171-noCPAN
 RUN_DEPENDS+=	${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
 		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/URI/Find.pm:${PORTSDIR}/textproc/p5-URI-Find \
-		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50 \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
@@ -59,6 +59,7 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 USE_MYSQL=	server
+WANT_MYSQL_VER=	50
 
 .if !defined(WITHOUT_APE)
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
