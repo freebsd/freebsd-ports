@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Encrypt and decrypt Juniper $9$ secrets
 
+TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Juniper.3
