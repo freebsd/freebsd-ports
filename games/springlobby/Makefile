@@ -53,6 +53,9 @@ CMAKE_ARGS+=	-DOPTION_SOUND:BOOL=OFF
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' \
+		${WRKSRC}/src/utils/curlhelper.h \
+		${WRKSRC}/src/utils/downloader.cpp
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install.*FILES.*share\/doc/ d' \
 		${WRKSRC}/CMakeLists.txt

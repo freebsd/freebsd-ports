@@ -43,6 +43,7 @@ post-patch:
 		 s|@INSTALL@ -m 0775|@INSTALL_PROGRAM@|g ; \
 		 s|cp -p|@INSTALL_DATA@|g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/src/mdh.c
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/curl.c
 
 post-install:
 .if !defined(NOPORTDOCS)

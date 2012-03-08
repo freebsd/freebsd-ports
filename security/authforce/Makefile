@@ -30,5 +30,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/#include <malloc.h>/d' ${WRKSRC}/src/methods.c ${WRKSRC}/src/misc.c
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>|#include <stdlib.h>|' ${WRKSRC}/src/extract.c
 	@${REINPLACE_CMD} -e '/^pwlistsdir = / s|/data$$||' ${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/http.c
 
 .include <bsd.port.mk>

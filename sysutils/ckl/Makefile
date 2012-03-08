@@ -22,6 +22,9 @@ USE_BZIP2=	yes
 
 PORTDOCS=	CHANGES LICENSE NOTICE README
 
+post-patch:
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/ckl.h
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ckl ${PREFIX}/bin
 

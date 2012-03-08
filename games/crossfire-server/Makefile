@@ -48,6 +48,7 @@ post-patch:
 		 s|-ldl||g ; \
 		 s|python[{].*[}]|${PYTHON_VERSION}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/socket/metaserver.c
 
 post-install:
 	@${MKDIR} ${DATADIR}/maps

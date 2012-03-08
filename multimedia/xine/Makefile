@@ -117,6 +117,7 @@ post-patch:
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/xitk/download.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

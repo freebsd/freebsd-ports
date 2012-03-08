@@ -49,5 +49,6 @@ PLIST_SUB+=	NLS="@comment "
 
 post-patch:
 	@${LN} -sf ${LOCALBASE}/share/intltool/Makefile.in.in ${WRKSRC}/po/Makefile.in.in
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/gimmix-covers.c ${WRKSRC}/src/gimmix-lyrics.c
 
 .include <bsd.port.mk>

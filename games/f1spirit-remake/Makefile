@@ -34,6 +34,7 @@ post-patch:
 		-e 's|"demos"|"${DATADIR}/demos"|g; s|designs/|${DATADIR}/&|g; \
 		s|f1spirit2.cfg|${DATADIR}/&|g; s|graphics/|${DATADIR}/&|g; \
 		s|sound/|${DATADIR}/&|g; s|tracks/|${DATADIR}/&|g'
+	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/sources/F1Shttp.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/f1s ${PREFIX}/bin
