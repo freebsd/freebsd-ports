@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphViz2
-PORTVERSION=	1.12
+PORTVERSION=	2.01
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -19,6 +19,8 @@ COMMENT=	A wrapper for AT&T Graphviz
 BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-Algorithm-Dependency>=1.110:${PORTSDIR}/devel/p5-Algorithm-Dependency \
 		p5-Capture-Tiny>=0.10:${PORTSDIR}/devel/p5-Capture-Tiny \
+		p5-Class-ISA>=0.36:${PORTSDIR}/devel/p5-Class-ISA \
+		p5-Class-Load>=0.17:${PORTSDIR}/devel/p5-Class-Load \
 		p5-DBI>=1.616:${PORTSDIR}/databases/p5-DBI \
 		p5-Data-Section-Simple>=0.02:${PORTSDIR}/devel/p5-Data-Section-Simple \
 		p5-File-Which>=1.09:${PORTSDIR}/sysutils/p5-File-Which \

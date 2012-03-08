@@ -46,6 +46,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.graph.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sub.sub.graph.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/trivial.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8.test.pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz2
 @dirrm %%SITE_PERL%%/GraphViz2/Parse
