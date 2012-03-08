@@ -559,7 +559,6 @@
     SUBDIR += ruby-gsl
     SUBDIR += ruby-narray
     SUBDIR += ruby-narray_miss
-    SUBDIR += ruby-netcdf
     SUBDIR += ruby-numru_misc
     SUBDIR += ruby-numru_units
     SUBDIR += saga

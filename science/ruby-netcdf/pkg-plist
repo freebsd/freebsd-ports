@@ -1,8 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/numru/netcdfraw.so
-@unexec rmdir %B 2>/dev/null || true
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%/numru
 %%RUBY_SITELIBDIR%%/numru/netcdf.rb
 %%RUBY_SITELIBDIR%%/numru/netcdf_miss.rb
-@unexec rmdir %B 2>/dev/null || true
+@dirrmtry %%RUBY_SITELIBDIR%%/numru
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo1-create-alt.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo1-create.rb
