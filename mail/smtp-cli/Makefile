@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smtp
-PORTVERSION=	2.8
+PORTVERSION=	3.0
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.logix.cz/michal/devel/smtp-cli/
 PKGNAMESUFFIX=	-cli
