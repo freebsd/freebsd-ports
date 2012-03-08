@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Select
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,9 +16,11 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML
+PEAR_CATSRC=	yes
 FILES=		Select.php
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/HTML
+EXAMPLES=	attributes.php example.php \
+		grouped.php multiple.php
+_EXAMPLESDIR=	docs
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
