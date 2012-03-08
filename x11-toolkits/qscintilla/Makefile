@@ -5,11 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla
-PORTVERSION=	${QSCI1_VERSION}
+PORTVERSION=	1.7.1
 PORTREVISION=	7
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITES_QSCI1}
-DISTNAME=	${QSCI1_DISTNAME}
+MASTER_SITES=	http://www.riverbankcomputing.com/static/Downloads/QScintilla1/ \
+		http://ns.ael.ru/~fluffy.khv/pyqt/QScintilla1/
+DISTNAME=	QScintilla-1.71-gpl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT port of the Scintilla C++ editor class
@@ -32,7 +33,6 @@ QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 PLUGINDIR=	${LOCALBASE}/lib/plugins/designer
 
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)

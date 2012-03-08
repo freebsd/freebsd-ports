@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	${PYQT3_VERSION}
+PORTVERSION=	3.18.2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	${MASTER_SITES_PYQT3}
+MASTER_SITES=	http://www.riverbankcomputing.com/static/Downloads/PyQt3/ \
+		http://ns.ael.ru/~fluffy.khv/pyqt/PyQt3/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PYQT3_DISTNAME}
+DISTNAME=	PyQt-x11-gpl-${PORTVERSION}-snapshot-20091119
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the Qt toolkit
@@ -36,7 +37,6 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHON_SITELIBDIR}\
 		-o ${LOCALBASE}/lib -v ${DATADIR}
 MODULES=	qt qtcanvas qtnetwork qttable qtxml qtui qtsql qtext
 
-.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
