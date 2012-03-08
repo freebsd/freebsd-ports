@@ -308,4 +308,3 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
-
