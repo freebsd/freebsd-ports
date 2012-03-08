@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120308:
+  AFFECTS: users of lang/perl5.8 and lang/perl.10
+  AUTHOR: pgollucci@FreeBSD.org
+
+  lang/perl5.8 and lang/perl5.10 have been removed since they've
+  been EOL upstream for 3yrs and 2yrs respectively.  The default
+  of lang/perl5.12 has not changed (yet).  Conditional checks for
+  perl < 5.12 have been removed.  UNLESS you have PERL_VERSION=5.8.x
+  or PERL_VERSION=5.10.x in /etc/make.conf you need take no action.
+  If you do, you will been to recompile all perl dependant ports after
+  updating your ports/ tree.  Please see entry 20110517 for help.
+
 20120225:
   AFFECTS: users of archivers/libarchive
   AUTHOR: glewis@FreeBSD.org
