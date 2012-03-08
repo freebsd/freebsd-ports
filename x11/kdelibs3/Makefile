@@ -49,8 +49,6 @@ CONFLICTS+=	kdelibs-nocups-[0-9]*
 LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
-BROKEN=		does not compile
-
 USE_BZIP2=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes
@@ -86,6 +84,8 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .if ${OSVERSION} < 800000
 .if !defined(WITHOUT_CUPS)
 BROKEN=		does not build fully (cups) on FreeBSD 7.X
+.else
+BROKEN=		does not compile
 .endif
 .endif
 
