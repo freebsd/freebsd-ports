@@ -1,5 +1,14 @@
 --- src/conky.c.orig	2010-10-06 00:29:36.000000000 +0300
-+++ src/conky.c	2010-10-10 00:06:31.000000000 +0300
++++ src/conky.c	2012-03-05 01:03:43.000000000 +0200
+@@ -119,7 +119,7 @@
+ #include "openbsd.h"
+ #endif
+ 
+-#if defined(__FreeBSD_kernel__)
++#if defined(__FreeBSD_kernel__) && (__FreeBSD_kernel__ + 0)
+ #include <bsd/bsd.h>
+ #endif
+ 
 @@ -2072,9 +2072,11 @@
  			OBJ(xmms2_percent) {
  				snprintf(p, p_max_size, "%2.0f", cur->xmms2.progress * 100);

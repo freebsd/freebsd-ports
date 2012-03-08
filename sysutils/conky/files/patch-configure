@@ -1,6 +1,22 @@
 --- configure.orig
 +++ configure
-@@ -11645,7 +11645,7 @@
+@@ -1002,6 +1002,7 @@
+ enable_xft
+ enable_nvidia
+ enable_alsa
++enable_inotify
+ enable_debug
+ enable_testing
+ enable_profiling
+@@ -1729,6 +1730,7 @@
+   --enable-nvidia         enable if you want nvidia support [default=no]
+   --disable-alsa          disable if you do not want ALSA support
+                           [default=yes]
++  --enable-inotify        enable if you want inotify support [default=no]
+   --enable-debug          compile with debug symbols [default=no]
+   --enable-testing        use strict compiler flags for testing [default=no]
+   --enable-profiling      specify compiler flags for use with gprof and gcov
+@@ -11647,7 +11649,7 @@
  
  
  if test x$want_apcupsd = xyes; then
@@ -18,3 +34,87 @@
        { $as_echo "$as_me:${as_lineno-$LINENO}: iostats not supported on $uname... disabling" >&5
  $as_echo "$as_me: iostats not supported on $uname... disabling" >&6;}
        want_iostats="not supported on $uname"
+@@ -16071,20 +16073,65 @@
+ 
+ done
+ 
+-# check if we have inotify support
+-for ac_header in sys/inotify.h
+-do :
+-  ac_fn_c_check_header_mongrel "$LINENO" "sys/inotify.h" "ac_cv_header_sys_inotify_h" "$ac_includes_default"
+-if test "x$ac_cv_header_sys_inotify_h" = x""yes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_SYS_INOTIFY_H 1
+-_ACEOF
+ 
++# Check whether --enable-inotify was given.
++if test "${enable_inotify+set}" = set; then :
++  enableval=$enable_inotify; want_inotify="$enableval"
++else
++  want_inotify=no
+ fi
+ 
+-done
++if test x$want_inotify = xyes; then
++    ac_fn_c_check_header_mongrel "$LINENO" "sys/inotify.h" "ac_cv_header_sys_inotify_h" "$ac_includes_default"
++if test "x$ac_cv_header_sys_inotify_h" = xyes; then :
++ 
++else
++  want_inotify=no
++fi
+ 
+ 
++fi
++if test x$want_inotify = xyes; then
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for inotify_init in -linotify" >&5
++$as_echo_n "checking for inotify_init in -linotify... " >&6; }
++if ${ac_cv_lib_inotify_inotify_init+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-linotify  $LIBS"
++cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++#include <sys/inotify.h>
++
++char inotify_init ();
++int
++main ()
++{
++return inotify_init ();
++  ;
++  return 0;
++}
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++  ac_cv_lib_inotify_inotify_init=yes
++else
++  ac_cv_lib_inotify_inotify_init=no
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_inotify_inotify_init" >&5
++$as_echo "$ac_cv_lib_inotify_inotify_init" >&6; }
++if test "x$ac_cv_lib_inotify_inotify_init" = xyes; then :
++  conky_LIBS="$conky_LIBS -linotify"
++else
++  want_inotify=yes
++fi
++
++fi
++
+ 
+ 
+ $as_echo "#define DEFAULTNETDEV \"eth0\"" >>confdefs.h
+@@ -16102,7 +16153,7 @@
+ $as_echo "#define DEFAULT_TEXT_BUFFER_SIZE 256" >>confdefs.h
+ 
+ 
+-$as_echo "#define MAX_NET_INTERFACES 16" >>confdefs.h
++$as_echo "#define MAX_NET_INTERFACES 64" >>confdefs.h
+ 
+ 
+ 

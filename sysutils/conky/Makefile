@@ -7,7 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -39,6 +39,7 @@ PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 
 OPTIONS+=	APCUPSD "Enable APCUPSD support" Off \
 		AUDACIOUS "Enable Audacious support" Off \
+		INOTIFY "Enable inotify support" Off \
 		MPD "Enable MPD support" Off \
 		NCURSES "Enable ncurses support" Off \
 		RSS "Enable RSS support" Off \
@@ -80,6 +81,13 @@ LIB_DEPENDS+=		audclient.2:${PORTSDIR}/multimedia/audacious
 CONFIGURE_ARGS+=	--enable-audacious
 .else
 CONFIGURE_ARGS+=	--disable-audacious
+.endif
+
+.if defined(WITH_INOTIFY)
+LIB_DEPENDS+=		inotify.0:${PORTSDIR}/devel/libinotify
+CONFIGURE_ARGS+=	--enable-inotify
+.else
+CONFIGURE_ARGS+=	--disable-inotify
 .endif
 
 .if defined(WITH_LUA) || defined(WITH_LUA_CAIRO) || defined(WITH_LUA_IMLIB2)
