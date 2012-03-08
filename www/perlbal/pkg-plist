@@ -1,13 +1,4 @@
-@comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/config-guide.txt
-%%PORTDOCS%%%%DOCSDIR%%/hacking/classes.txt
-%%PORTDOCS%%%%DOCSDIR%%/hacking/hooks.txt
-%%PORTDOCS%%%%DOCSDIR%%/hacking/todo.txt
-%%PORTDOCS%%%%DOCSDIR%%/http-versions.txt
-%%PORTDOCS%%%%DOCSDIR%%/pool-parameters.txt
-%%PORTDOCS%%%%DOCSDIR%%/reproxying.txt
-%%PORTDOCS%%%%DOCSDIR%%/service-parameters.txt
+bin/perlbal
 %%SITE_PERL%%/Perlbal.pm
 %%SITE_PERL%%/Perlbal/AIO.pm
 %%SITE_PERL%%/Perlbal/BackendHTTP.pm
@@ -18,12 +9,33 @@
 %%SITE_PERL%%/Perlbal/ClientManage.pm
 %%SITE_PERL%%/Perlbal/ClientProxy.pm
 %%SITE_PERL%%/Perlbal/CommandContext.pm
+%%SITE_PERL%%/Perlbal/FAQ.pod
+%%SITE_PERL%%/Perlbal/Fields.pm
 %%SITE_PERL%%/Perlbal/HTTPHeaders.pm
 %%SITE_PERL%%/Perlbal/ManageCommand.pm
+%%SITE_PERL%%/Perlbal/Manual.pod
+%%SITE_PERL%%/Perlbal/Manual/Configuration.pod
+%%SITE_PERL%%/Perlbal/Manual/Contributing.pod
+%%SITE_PERL%%/Perlbal/Manual/Credits.pod
+%%SITE_PERL%%/Perlbal/Manual/Debugging.pod
+%%SITE_PERL%%/Perlbal/Manual/FailOver.pod
+%%SITE_PERL%%/Perlbal/Manual/HighPriority.pod
+%%SITE_PERL%%/Perlbal/Manual/Hooks.pod
+%%SITE_PERL%%/Perlbal/Manual/Install.pod
+%%SITE_PERL%%/Perlbal/Manual/Internals.pod
+%%SITE_PERL%%/Perlbal/Manual/LoadBalancer.pod
+%%SITE_PERL%%/Perlbal/Manual/Logging.pod
+%%SITE_PERL%%/Perlbal/Manual/Management.pod
+%%SITE_PERL%%/Perlbal/Manual/Plugins.pod
+%%SITE_PERL%%/Perlbal/Manual/ReverseProxy.pod
+%%SITE_PERL%%/Perlbal/Manual/Roles.pod
+%%SITE_PERL%%/Perlbal/Manual/Selector.pod
+%%SITE_PERL%%/Perlbal/Manual/WebServer.pod
 %%SITE_PERL%%/Perlbal/Plugin/AccessControl.pm
 %%SITE_PERL%%/Perlbal/Plugin/AutoRemoveLeadingDir.pm
 %%SITE_PERL%%/Perlbal/Plugin/Cgilike.pm
 %%SITE_PERL%%/Perlbal/Plugin/EchoService.pm
+%%SITE_PERL%%/Perlbal/Plugin/FlvStreaming.pm
 %%SITE_PERL%%/Perlbal/Plugin/Highpri.pm
 %%SITE_PERL%%/Perlbal/Plugin/Include.pm
 %%SITE_PERL%%/Perlbal/Plugin/LazyCDN.pm
@@ -33,44 +45,35 @@
 %%SITE_PERL%%/Perlbal/Plugin/Queues.pm
 %%SITE_PERL%%/Perlbal/Plugin/Redirect.pm
 %%SITE_PERL%%/Perlbal/Plugin/Stats.pm
+%%SITE_PERL%%/Perlbal/Plugin/Throttle.pm
 %%SITE_PERL%%/Perlbal/Plugin/Vhosts.pm
 %%SITE_PERL%%/Perlbal/Plugin/Vpaths.pm
+%%SITE_PERL%%/Perlbal/Plugin/XFFExtras.pm
 %%SITE_PERL%%/Perlbal/Pool.pm
 %%SITE_PERL%%/Perlbal/ReproxyManager.pm
 %%SITE_PERL%%/Perlbal/Service.pm
-%%SITE_PERL%%/Perlbal/SocketSSL.pm
 %%SITE_PERL%%/Perlbal/Socket.pm
+%%SITE_PERL%%/Perlbal/SocketSSL.pm
 %%SITE_PERL%%/Perlbal/TCPListener.pm
 %%SITE_PERL%%/Perlbal/Test.pm
 %%SITE_PERL%%/Perlbal/Test/WebClient.pm
 %%SITE_PERL%%/Perlbal/Test/WebServer.pm
 %%SITE_PERL%%/Perlbal/UploadListener.pm
 %%SITE_PERL%%/Perlbal/Util.pm
-%%SITE_PERL%%/Perlbal/Manual/Credits.pod
-%%SITE_PERL%%/Perlbal/Manual/Roles.pod
-%%SITE_PERL%%/Perlbal/Manual/Management.pod
-%%SITE_PERL%%/Perlbal/Manual/Hooks.pod
-%%SITE_PERL%%/Perlbal/Manual/FailOver.pod
-%%SITE_PERL%%/Perlbal/Manual/Plugins.pod
-%%SITE_PERL%%/Perlbal/Manual/ReverseProxy.pod
-%%SITE_PERL%%/Perlbal/Manual/Logging.pod
-%%SITE_PERL%%/Perlbal/Manual/LoadBalancer.pod
-%%SITE_PERL%%/Perlbal/Manual/HighPriority.pod
-%%SITE_PERL%%/Perlbal/Manual/Debugging.pod
-%%SITE_PERL%%/Perlbal/Manual/Selector.pod
-%%SITE_PERL%%/Perlbal/Manual/Contributing.pod
-%%SITE_PERL%%/Perlbal/Manual/WebServer.pod
-%%SITE_PERL%%/Perlbal/Manual/Configuration.pod
-%%SITE_PERL%%/Perlbal/Manual/Internals.pod
-%%SITE_PERL%%/Perlbal/Manual/Install.pod
-%%SITE_PERL%%/Perlbal/Manual.pod
-%%SITE_PERL%%/Perlbal/FAQ.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal/.packlist
-bin/perlbal
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/config-guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/hacking/classes.txt
+%%PORTDOCS%%%%DOCSDIR%%/hacking/hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/hacking/todo.txt
+%%PORTDOCS%%%%DOCSDIR%%/http-versions.txt
+%%PORTDOCS%%%%DOCSDIR%%/pool-parameters.txt
+%%PORTDOCS%%%%DOCSDIR%%/reproxying.txt
+%%PORTDOCS%%%%DOCSDIR%%/service-parameters.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hacking
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perlbal
 @dirrm %%SITE_PERL%%/Perlbal/Test
 @dirrm %%SITE_PERL%%/Perlbal/Plugin
 @dirrm %%SITE_PERL%%/Perlbal/Manual
 @dirrm %%SITE_PERL%%/Perlbal
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/hacking
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
