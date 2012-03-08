@@ -59,7 +59,4 @@ PLIST_SUB+=	WITH_SX="@comment "
 TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
-
 .include <bsd.port.post.mk>

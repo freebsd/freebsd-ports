@@ -23,7 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::DAAP::DMAP.3
 
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
-
 .include <bsd.port.mk>
