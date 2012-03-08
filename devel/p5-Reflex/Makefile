@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Reflex
-PORTVERSION=	0.092
+PORTVERSION=	0.095
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -20,9 +20,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-POE>=1.294:${PORTSDIR}/devel/p5-POE \
 		p5-Moose>=2.0203:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-Role-Parameterized>=0.23:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
-		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-MooseX-Role-Parameterized>=0.23:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -80,8 +78,8 @@ MAN3=		Reflex.3 \
 		Reflex::Role::Decoding::Datagram.3 \
 		Reflex::Role::Decoding::Stream.3 \
 		Reflex::Role::Encoding.3 \
-		Reflex::Role::Interval.3 \
 		Reflex::Role::InStreaming.3 \
+		Reflex::Role::Interval.3 \
 		Reflex::Role::OutStreaming.3 \
 		Reflex::Role::PidCatcher.3 \
 		Reflex::Role::Reactive.3 \
@@ -104,20 +102,26 @@ MAN3=		Reflex.3 \
 		Reflex::Wakeup.3
 
 post-install:
-.ifndef(NOPORTEXAMPLES)
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}"
-	@${MKDIR} ${EXAMPLESDIR}/proto
-	@${MKDIR} ${EXAMPLESDIR}/ttl
-	@${INSTALL_SCRIPT} ${WRKSRC}/eg/*.pl ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/eg/*.pm ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/eg/ttl && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/ttl)
-	@(cd ${WRKSRC}/eg/proto && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/proto)
-.endif
-
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
 .endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/proto/ ${EXAMPLESDIR}/ttl/
+	${INSTALL_SCRIPT} ${WRKSRC}/eg/*.pl ${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/eg/*.pm ${EXAMPLESDIR}/
+	cd ${WRKSRC}/eg/proto/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/proto/
+	cd ${WRKSRC}/eg/ttl/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/ttl/
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}"
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
