@@ -7,6 +7,7 @@
 
 PORTNAME=	PGP-Sign
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,16 +30,18 @@ MAN3=		PGP::Sign.3
 # GPG  - Gnu Privacy Guard
 
 .ifndef DEFAULTPGP
-DEFAULTPGP=	PGP2
+DEFAULTPGP=	GPG
 .endif
 
 .if (${DEFAULTPGP} == PGP2 )
+BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 PGPSTYLE?=	PGP2
 .ifndef PGP
 PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
 .endif
 .elif (${DEFAULTPGP} == PGP5 )
+BUILD_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
 RUN_DEPENDS=	pgps:${PORTSDIR}/security/pgp5
 PGPSTYLE?=	PGP5
 .ifndef PGPS
@@ -51,6 +54,7 @@ PGPV!=	which pgpv || ${ECHO} ${PREFIX}/bin/pgpv
 PGP!=	which pgp || ${ECHO} ${PREFIX}/bin/pgp
 .endif
 .elif (${DEFAULTPGP} == GPG)
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 PGPSTYLE?=	GPG
 .ifndef PGP
