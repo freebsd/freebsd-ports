@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://disasterarea.chruetertee.ch/ \
-		http://dlc.sun.com/virtualbox/${VBOX_GUEST_VER}/:guestadditions
+		http://download.virtualbox.org/virtualbox/${VBOX_GUEST_VER}/:guestadditions
 PKGNAMESUFFIX=	-legacy
 DISTFILES=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX} ${GADISTFILES}
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}${EXTRACT_SUFX}
