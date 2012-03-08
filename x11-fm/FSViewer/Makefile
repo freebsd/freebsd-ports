@@ -20,6 +20,8 @@ COMMENT=	X11 file manager using WINGS library. Dockable in WindowMaker
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
+BROKEN=		does not configure
+
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
