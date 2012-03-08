@@ -7,6 +7,7 @@
 
 PORTNAME=	gphys
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	science ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/gphys/ \
@@ -20,7 +21,7 @@ COMMENT=	A multi-purpose class to handle gridded physical quantities
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 		${RUBY_SITELIBDIR}/narray_miss.rb:${PORTSDIR}/math/ruby-narray_miss \
 		${RUBY_SITEARCHLIBDIR}/numru/dcl_raw.so:${PORTSDIR}/science/ruby-dcl \
-		${RUBY_SITEARCHLIBDIR}/numru/netcdfraw.so:${PORTSDIR}/math/ruby-netcdf \
+		${RUBY_SITEARCHLIBDIR}/numru/netcdfraw.so:${PORTSDIR}/science/ruby-netcdf \
 		${RUBY_SITEARCHLIBDIR}/numru/fftw3.so:${PORTSDIR}/math/ruby-fftw3 \
 		${RUBY_SITELIBDIR}/numru/misc.rb:${PORTSDIR}/math/ruby-numru_misc \
 		${RUBY_SITELIBDIR}/numru/units.rb:${PORTSDIR}/math/ruby-numru_units
