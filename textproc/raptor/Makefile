@@ -34,7 +34,4 @@ post-extract:
 	${REINPLACE_CMD} -e 's|utils ||' \
 		${WRKSRC}/Makefile.in
 
-post-patch:
-	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/raptor_internal.h
-
 .include <bsd.port.mk>
