@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -25,6 +25,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
+		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-system-readline \
 		--without-libunwind \
@@ -78,8 +79,10 @@ CONFIGURE_ARGS+=	--without-expat
 
 .if defined(WITH_PYTHON)
 CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
+PLIST_SUB+=		PYTHON=""
 .else
 CONFIGURE_ARGS+=	--without-python
+PLIST_SUB+=		PYTHON="@comment "
 .endif
 
 .if ${ARCH} == "amd64"
@@ -98,7 +101,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
+.if defined(WITH_PYTHON)
+	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
+	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
+.endif
 .if defined(WITH_GDB_LINK)
 	${LN} -s ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdb
 .endif
+
 .include <bsd.port.post.mk>
