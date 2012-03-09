@@ -10,8 +10,6 @@ bin/pcsxr
 %%NLS%%@dirrmtry share/locale/hu_HU
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU
-share/pcsxr/dfbinimage.glade2
-share/pcsxr/gxvideo.glade
 share/pcsxr/peopsxgl.ui
 share/pcsxr/dfinput.ui
 share/pcsxr/dfnet.ui
@@ -40,7 +38,6 @@ lib/pcsxr/cfgDFInput
 lib/pcsxr/cfgDFCdrom
 lib/pcsxr/cfgDFSound
 lib/pcsxr/cfgDFNet
-lib/pcsxr/cfgGXVideo
 lib/pcsxr/cfgBladeSio1
 lib/pcsxr/libDFXVideo.a
 lib/pcsxr/libDFXVideo.la
@@ -57,15 +54,9 @@ lib/pcsxr/libDFSound.so
 lib/pcsxr/libDFCdrom.a
 lib/pcsxr/libDFCdrom.la
 lib/pcsxr/libDFCdrom.so
-lib/pcsxr/libDFBinImage2.a
-lib/pcsxr/libDFBinImage2.la
-lib/pcsxr/libDFBinImage2.so
 lib/pcsxr/libDFNet.a
 lib/pcsxr/libDFNet.la
 lib/pcsxr/libDFNet.so
-lib/pcsxr/libGXVideo.a
-lib/pcsxr/libGXVideo.la
-lib/pcsxr/libGXVideo.so
 lib/pcsxr/libBladeSio1.a
 lib/pcsxr/libBladeSio1.la
 lib/pcsxr/libBladeSio1.so

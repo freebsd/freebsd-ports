@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	pcsxr
-PORTVERSION=	1.9.92.r68256
-PORTREVISION=	4
+PORTVERSION=	1.9.92.r76026
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Playstation (PSX) emulator
@@ -66,11 +63,6 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-# Extract dfbinimage2 plugin
-post-extract:
-	@(cd ${WRKSRC} && \
-		${TAR} -xjf ${DISTDIR}/pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX})
 
 # Add ${PREFIX} to plugins' lookup directories and set default CDROM device
 post-patch:

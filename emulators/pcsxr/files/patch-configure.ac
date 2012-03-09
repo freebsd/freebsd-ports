@@ -8,11 +8,3 @@
  AM_PROG_CC_C_O
  AC_PROG_INSTALL
  AC_STDC_HEADERS
-@@ -46,6 +47,7 @@
- plugins/dfxvideo/Makefile
- plugins/gxvideo/Makefile
- plugins/dfcdrom/Makefile
-+plugins/dfbinimage2/Makefile
- plugins/dfnet/Makefile
- plugins/bladesio1/Makefile
- pixmaps/Makefile
