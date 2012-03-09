@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	hardlink
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://jak-linux.org/projects/hardlink/ \
-		http://apt.douglasthrift.net/files/${PORTNAME}/ \
-		http://code.douglasthrift.net/files/${PORTNAME}/
+		DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	douglas@douglasthrift.net
@@ -22,13 +21,15 @@ MAN1=		hardlink.1
 NO_BUILD=	yes
 PLIST_FILES=	bin/hardlink
 USE_PYTHON=	2.5+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+
+PORTSCOUT=	limit:~rc[0-9]+$$
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/hardlink.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/hardlink.py ${PREFIX}/bin/hardlink
-	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${PREFIX}/man/man1/hardlink.1
+	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${MAN1PREFIX}/man/man1/hardlink.1
 
 .include <bsd.port.mk>
