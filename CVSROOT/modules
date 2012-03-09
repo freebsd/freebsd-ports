@@ -7207,6 +7207,7 @@ kdetoys4                        ports/x11-clocks/kdetoys4
 kdeutils3                       ports/misc/kdeutils3
 kdeutils4                       ports/misc/kdeutils4
 kdeutils4-printer-applet        ports/print/kdeutils4-printer-applet
+kdevelop                        ports/devel/kdevelop
 kdevelop-kde4                   ports/devel/kdevelop-kde4
 kdevelop-pg-qt                  ports/devel/kdevelop-pg-qt
 kdevelop-php                    ports/devel/kdevelop-php
@@ -9739,7 +9740,6 @@ mu-conference                   ports/net-im/mu-conference
 mucommander                     ports/x11-fm/mucommander
 mudmagic                        ports/games/mudmagic
 muh                             ports/irc/muh
-muine                           ports/audio/muine
 mulberry                        ports/mail/mulberry
 mule-ucs                        ports/converters/mule-ucs
 multi-aterm                     ports/x11/multi-aterm
@@ -10045,6 +10045,7 @@ netclasses                      ports/net/netclasses
 netcomponents                   ports/java/netcomponents
 netdisco                        ports/net-mgmt/netdisco
 netdisco-mibs                   ports/net-mgmt/netdisco-mibs
+netdot                          ports/net-mgmt/netdot
 netdude                         ports/net/netdude
 netdump-server                  ports/sysutils/netdump-server
 netembryo                       ports/net/netembryo
@@ -11028,7 +11029,6 @@ p5-B-Hooks-OP-PPAddr            ports/devel/p5-B-Hooks-OP-PPAddr
 p5-B-Hooks-Parser               ports/devel/p5-B-Hooks-Parser
 p5-B-Keywords                   ports/devel/p5-B-Keywords
 p5-B-OPCheck                    ports/devel/p5-B-OPCheck
-p5-B-Size                       ports/devel/p5-B-Size
 p5-B-Utils                      ports/devel/p5-B-Utils
 p5-BBS-Client                   ports/net/p5-BBS-Client
 p5-BBS-UserInfo                 ports/net/p5-BBS-UserInfo
@@ -12008,7 +12008,6 @@ p5-Debug-Client                 ports/devel/p5-Debug-Client
 p5-Decision-ACL                 ports/devel/p5-Decision-ACL
 p5-Declare-Constraints-Simple   ports/devel/p5-Declare-Constraints-Simple
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
-p5-Devel-Arena                  ports/devel/p5-Devel-Arena
 p5-Devel-ArgNames               ports/devel/p5-Devel-ArgNames
 p5-Devel-Autoflush              ports/devel/p5-Devel-Autoflush
 p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
@@ -13370,7 +13369,6 @@ p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-DiscID           ports/audio/p5-MusicBrainz-DiscID
 p5-MusicBrainz-Queries          ports/audio/p5-MusicBrainz-Queries
 p5-MySQL-Diff                   ports/databases/p5-MySQL-Diff
-p5-Mysql                        ports/databases/p5-Mysql
 p5-NEXT                         ports/devel/p5-NEXT
 p5-NNML                         ports/news/p5-NNML
 p5-NNTPClient                   ports/news/p5-NNTPClient
@@ -13507,6 +13505,7 @@ p5-Net-IPv4Addr                 ports/net-mgmt/p5-Net-IPv4Addr
 p5-Net-IPv6Addr                 ports/net-mgmt/p5-Net-IPv6Addr
 p5-Net-IRR                      ports/net/p5-Net-IRR
 p5-Net-Ident                    ports/net/p5-Net-Ident
+p5-Net-Ifconfig-Wrapper         ports/net/p5-Net-Ifconfig-Wrapper
 p5-Net-Interface                ports/net/p5-Net-Interface
 p5-Net-Jabber                   ports/net-im/p5-Net-Jabber
 p5-Net-Jaiku                    ports/net/p5-Net-Jaiku
@@ -15472,7 +15471,6 @@ p5-b-hooks-op-ppaddr            ports/devel/p5-B-Hooks-OP-PPAddr
 p5-b-hooks-parser               ports/devel/p5-B-Hooks-Parser
 p5-b-keywords                   ports/devel/p5-B-Keywords
 p5-b-opcheck                    ports/devel/p5-B-OPCheck
-p5-b-size                       ports/devel/p5-B-Size
 p5-b-utils                      ports/devel/p5-B-Utils
 p5-badger                       ports/devel/p5-Badger
 p5-base                         ports/devel/p5-base
@@ -16461,7 +16459,6 @@ p5-debug-client                 ports/devel/p5-Debug-Client
 p5-decision-acl                 ports/devel/p5-Decision-ACL
 p5-declare-constraints-simple   ports/devel/p5-Declare-Constraints-Simple
 p5-delimmatch                   ports/textproc/p5-DelimMatch
-p5-devel-arena                  ports/devel/p5-Devel-Arena
 p5-devel-argnames               ports/devel/p5-Devel-ArgNames
 p5-devel-autoflush              ports/devel/p5-Devel-Autoflush
 p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
@@ -17855,7 +17852,6 @@ p5-music-audioscrobbler-mpd     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-music-audioscrobbler-submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-musicbrainz-discid           ports/audio/p5-MusicBrainz-DiscID
 p5-musicbrainz-queries          ports/audio/p5-MusicBrainz-Queries
-p5-mysql                        ports/databases/p5-Mysql
 p5-mysql-diff                   ports/databases/p5-MySQL-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
 p5-nagios-object                ports/net-mgmt/p5-Nagios-Object
@@ -17979,6 +17975,7 @@ p5-net-icq2000                  ports/net-im/p5-Net-ICQ2000
 p5-net-ident                    ports/net/p5-Net-Ident
 p5-net-idn-encode               ports/textproc/p5-Net-IDN-Encode
 p5-net-idn-nameprep             ports/converters/p5-Net-IDN-Nameprep
+p5-net-ifconfig-wrapper         ports/net/p5-Net-Ifconfig-Wrapper
 p5-net-imap-client              ports/mail/p5-Net-IMAP-Client
 p5-net-imap-server              ports/mail/p5-Net-IMAP-Server
 p5-net-imap-simple              ports/mail/p5-Net-IMAP-Simple
@@ -20821,10 +20818,8 @@ percona-toolkit                 ports/databases/percona-toolkit
 perdition                       ports/mail/perdition
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
-perl5.10                        ports/lang/perl5.10
 perl5.12                        ports/lang/perl5.12
 perl5.14                        ports/lang/perl5.14
-perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
 perlconsole                     ports/devel/perlconsole
 perldap                         ports/net/perldap
@@ -24218,7 +24213,7 @@ ruby-narray                     ports/math/ruby-narray
 ruby-narray_miss                ports/math/ruby-narray_miss
 ruby-ncurses                    ports/devel/ruby-ncurses
 ruby-net-geoip                  ports/net/ruby-net-geoip
-ruby-netcdf                     ports/math/ruby-netcdf
+ruby-netcdf                     ports/science/ruby-netcdf
 ruby-nora                       ports/www/ruby-nora
 ruby-numru_misc                 ports/math/ruby-numru_misc
 ruby-numru_units                ports/math/ruby-numru_units
