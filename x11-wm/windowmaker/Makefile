@@ -6,7 +6,7 @@
 
 PORTNAME?=	windowmaker
 PORTVERSION=	0.95.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/ \
 		http://dougbarton.us/Downloads/
@@ -24,6 +24,8 @@ LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
 .if !defined(LWR_SLAVE)
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 USE_PERL5=	yes
+
+OPTIONS=	XRANDR "xrandr support (EXPERIMENTAL)" off
 .endif
 
 MAKE_JOBS_SAFE=	yes
@@ -31,7 +33,7 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
-USE_XORG=	xft xinerama xmu xpm xrandr
+USE_XORG=	xft xinerama xmu xpm
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -41,7 +43,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-libs-from="-L${LOCALBASE}/lib" \
 		--with-incs-from="-I${LOCALBASE}/include" \
 		--with-gnustepdir="${PREFIX}/GNUstep" \
-		--enable-modelock --enable-xrandr \
+		--enable-modelock \
 		--enable-xinerama --enable-usermenu \
 		--with-x
 USE_LDCONFIG=	yes
@@ -52,6 +54,11 @@ USE_LDCONFIG=	yes
 
 .if ${ARCH} == amd64 && ${OSVERSION} < 800000
 CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
+.endif
+
+.if defined(WITH_XRANDR)
+USE_XORG+=	xrandr
+CONFIGURE_ARGS+=	--enable-xrandr
 .endif
 
 CONFLICTS=	libwraster-0.*
@@ -94,6 +101,6 @@ post-install:
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
 		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
-.endif
+.endif	# .if !defined(LWR_SLAVE)
 
 .include <bsd.port.post.mk>
