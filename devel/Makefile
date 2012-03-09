@@ -3690,6 +3690,7 @@
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-jammit
+    SUBDIR += rubygem-jeweler
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
     SUBDIR += rubygem-json146
