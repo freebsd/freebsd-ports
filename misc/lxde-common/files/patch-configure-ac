@@ -1,0 +1,18 @@
+--- configure.ac.orig	2011-07-29 10:04:03.000000000 -0400
++++ configure.ac	2012-03-09 16:09:36.000000000 -0500
+@@ -23,6 +23,15 @@
+         [xsesspath="\${datarootdir}/xsessions"])
+ AC_SUBST(xsesspath)
+ 
++# xdg data of path
++AC_ARG_WITH([xdg-path],
++    AS_HELP_STRING(
++        [--with-xdg-path=PATH],
++        [set the install path of xdg data [[DATAROOTDIR/applications]]]),
++        [test x$withval != x && xdgpath="$withval"],
++        [xdgpath="\${datarootdir}/applications"])
++AC_SUBST(xdgpath)
++
+ 
+ if test x"$enable_man" = x"yes"; then
+ 	AC_PATH_PROG([XSLTPROC], [xsltproc])
