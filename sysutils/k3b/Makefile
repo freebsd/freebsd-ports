@@ -7,7 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
@@ -23,7 +23,8 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-k3bsetup=no \
 			--without-resmgr \
 			--without-hal \
-			--without-musepack
+			--without-musepack \
+			--without-musicbrainz
 USE_GMAKE=	yes
 USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
@@ -36,7 +37,6 @@ OPTIONS=	ALSA "Add audio/alsa-lib support" Off \
 		FLAC "Add audio/flac decoder" On \
 		LAME "Add audio/lame encoder (for mp3 files)" On \
 		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On \
-		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
 		NORMALIZE "Add Normalize (adjust audio to a std. level)" Off \
 		SOX "Add SoX (more audio encoding formats)" Off \
 		TRANSCODE "Add Transcode (for DVD ripping)" Off \
@@ -83,14 +83,6 @@ LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
 .else
 PLIST_SUB+=	FFMPEG="@comment "
 CONFIGURE_ARGS+=	--without-ffmpeg
-.endif
-
-.if defined(WITH_MUSICBRAINZ)
-PLIST_SUB+=	MUSICBRAINZ=""
-LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
-.else
-PLIST_SUB+=	MUSICBRAINZ="@comment "
-CONFIGURE_ARGS+=	--without-musicbrainz
 .endif
 
 .if defined(WITH_LIBDVDREAD)
