@@ -7,6 +7,7 @@
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://s3.amazonaws.com/MinecraftDownload/launcher/ \
 		http://denkrobat.de/minecraft/ \
