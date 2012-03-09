@@ -20,7 +20,7 @@
 +        char* dir_path = cache->files[idx]+1;
 +        int len = strlen(dir_path);
 +        char* base_name = changed_file + len + 1;
-+        gboolean in_cache = is_desktop_file_in_cache(cache, idx, base_name);
++        gboolean in_cache = is_desktop_file_in_cache(cache, idx, g_file_get_path(gf));
 +        if( ! in_cache ) { /* Means this file was already deleted, no need to refresh cache */
 +          DEBUG("files are changed, but no re-generation is needed.");
 +          return;
