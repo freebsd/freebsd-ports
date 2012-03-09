@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slock
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
