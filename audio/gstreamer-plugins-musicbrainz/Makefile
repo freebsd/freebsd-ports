@@ -11,6 +11,9 @@ CATEGORIES=	audio
 
 COMMENT=	Gstreamer CD index/audio metadata plugin
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-04-07
+
 GST_PLUGIN=	musicbrainz
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
