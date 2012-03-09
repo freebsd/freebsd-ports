@@ -7,6 +7,7 @@
 
 PORTNAME=	CoinMP
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/CoinMP/
 EXTRACT_SUFX=	.tgz
@@ -21,7 +22,7 @@ LICENSE_PERMS=	auto-accept
 
 CONFLICTS=	clp-[0-9]*
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -46,6 +47,11 @@ post-patch::
 		${WRKSRC}/Clp/Makefile.in ${WRKSRC}/Osi/Makefile.in \
 		${WRKSRC}/Cbc/Makefile.in ${WRKSRC}/Cgl/Makefile.in \
 		${WRKSRC}/CoinUtils/Makefile.in ${WRKSRC}/CoinMP/Makefile.in
+
+pre-build:
+.for dir in Cbc Cgl Clp CoinMP CoinUtils Osi
+	${CP} ${LTMAIN} ${WRKSRC}/${dir}
+.endfor
 
 post-install:
 .ifndef NOPORTDOCS
