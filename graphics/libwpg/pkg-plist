@@ -44,6 +44,7 @@ libdata/pkgconfig/libwpg-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/WPGraphics_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
+%%PORTDOCS%%%%DOCSDIR%%/html/bdwn.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser.png
