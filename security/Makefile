@@ -555,6 +555,7 @@
     SUBDIR += p5-OpenCA-CRR
     SUBDIR += p5-OpenCA-PKCS7
     SUBDIR += p5-OpenCA-REQ
+    SUBDIR += p5-OpenCA-X509
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-POE-Component-SSLify
