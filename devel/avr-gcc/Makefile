@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -39,13 +40,13 @@ USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	build
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
-BROKEN=		does not package
 .endif
 
 CONFLICTS=	avr-gcc-3* avr-gcc-42*
