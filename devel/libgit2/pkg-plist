@@ -14,8 +14,6 @@ include/git2/indexer.h
 include/git2/odb_backend.h
 include/git2/repository.h
 include/git2/status.h
-include/git2/thread-utils.h
-include/git2/transport.h
 include/git2/types.h
 include/git2/object.h
 include/git2/tag.h
@@ -28,7 +26,7 @@ include/git2/errors.h
 include/git2/blob.h
 include/git2/inttypes.h
 include/git2/stdint.h
-lib/libgit2.so.0.15.0
+lib/libgit2.so.0.16.0
 lib/libgit2.so.0
 lib/libgit2.so
 libdata/pkgconfig/libgit2.pc
