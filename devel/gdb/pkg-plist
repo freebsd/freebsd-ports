@@ -1,3 +1,14 @@
 bin/gdb%%VER%%
 bin/gdbtui%%VER%%
+%%PYTHON%%share/gdb%%VER%%/python/gdb/__init__.py
+%%PYTHON%%share/gdb%%VER%%/python/gdb/types.py
+%%PYTHON%%share/gdb%%VER%%/python/gdb/printing.py
+%%PYTHON%%share/gdb%%VER%%/python/gdb/prompt.py
+%%PYTHON%%share/gdb%%VER%%/python/gdb/command/__init__.py
+%%PYTHON%%share/gdb%%VER%%/python/gdb/command/pretty_printers.py
+%%PYTHON%%share/gdb%%VER%%/python/gdb/command/prompt.py
+%%PYTHON%%@dirrm share/gdb%%VER%%/python/gdb/command
+%%PYTHON%%@dirrm share/gdb%%VER%%/python/gdb
+%%PYTHON%%@dirrm share/gdb%%VER%%/python
+%%PYTHON%%@dirrm share/gdb%%VER%%
 @unexec if $( %%GDB_LINK%% ) ; then rm -f %%PREFIX%%/bin/gdb; fi
