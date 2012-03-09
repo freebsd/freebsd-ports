@@ -24,7 +24,7 @@ CONFIGURE_ARGS+=--enable-intf-lan --enable-intf-lanplus \
 PLIST_FILES=	bin/ipmitool sbin/ipmievd share/ipmitool/oem_ibm_sel_map \
 		${PERIODIC_DIR}/400.status-ipmi
 PLIST_DIRS=	share/ipmitool
-PLIST_DIRSTRY=	${PERIODIC_DIR}
+PLIST_DIRSTRY=	${PERIODIC_DIR} etc/periodic
 SUB_FILES=	status-ipmi.sh
 PORTDOCS=	AUTHORS COPYING ChangeLog README
 
