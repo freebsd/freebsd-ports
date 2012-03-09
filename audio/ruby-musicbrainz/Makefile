@@ -18,6 +18,9 @@ COMMENT=	MusicBrainz bindings for Ruby
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-04-05
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
