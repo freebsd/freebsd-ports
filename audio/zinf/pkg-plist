@@ -14,7 +14,6 @@ lib/zinf/plugins/kjofol.ftf
 lib/zinf/plugins/lcd.ui
 lib/zinf/plugins/local.pmi
 lib/zinf/plugins/m3u.plf
-lib/zinf/plugins/mbcd.mdf
 lib/zinf/plugins/misc.mdf
 lib/zinf/plugins/mpg123.ui
 lib/zinf/plugins/musicbrowser.ui
