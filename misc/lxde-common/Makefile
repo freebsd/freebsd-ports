@@ -7,7 +7,7 @@
 
 PORTNAME=	lxde-common
 PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/LXDE%20Common%20${PORTVERSION}
 
@@ -22,7 +22,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
-		--with-xsession-path=${PREFIX}/share/xsessions
+		--with-xsession-path=${PREFIX}/share/xsessions \
+		--with-xdg-path=${PREFIX}/share/applications
 
 DATADIR=	${PREFIX}/share/lxde
 INSTALLS_ICONS=	YES
