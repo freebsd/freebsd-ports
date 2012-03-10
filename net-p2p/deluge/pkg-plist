@@ -453,11 +453,11 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/AutoAdd-1.03-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/AutoAdd-1.04-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Blocklist-1.2-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Execute-1.2-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Extractor-0.1-py%%PYTHON_VER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Label-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Label-0.2-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Notifications-0.1-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Scheduler-0.2-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/WebUi-0.1-py%%PYTHON_VER%%.egg
@@ -872,15 +872,12 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/editor/tb-sprite.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/checkbox.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/clear-trigger.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/date-trigger - Copy.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/date-trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/error-tip-corners.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/exclamation.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/radio.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/search-trigger - Copy.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/search-trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/text-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/trigger - Copy.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/trigger-tpl.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/form/trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/grid/arrow-left-white.gif
@@ -947,7 +944,6 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/left-right.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/light-hd.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/tool-sprite-tpl.gif
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/tool-sprites - Copy.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/tool-sprites.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/tools-sprites-trans.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/access/panel/top-bottom.gif
@@ -1061,6 +1057,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/form/radio.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/form/search-trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/form/text-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/form/trigger-square.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/form/trigger-tpl.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/form/trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/gradient-bg.gif
@@ -1083,6 +1080,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/grid3-hd-btn.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/grid3-hrow-over.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/grid3-hrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/grid3-rowheader.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/grid3-special-col-bg.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/grid3-special-col-sel-bg.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/group-by.gif
@@ -1109,6 +1107,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/page-prev-disabled.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/page-prev.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/pick-button.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/refresh-disabled.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/refresh.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/row-check-sprite.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/default/grid/row-expand-sprite.gif
@@ -1252,6 +1251,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/form/clear-trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/form/date-trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/form/search-trigger.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/form/trigger-square.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/form/trigger.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/gradient-bg.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/col-move-bottom.gif
@@ -1273,6 +1273,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/page-prev.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/refresh.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/row-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/sort-hd.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/sort_asc.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/grid/sort_desc.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/gray/menu/group-checked.gif
@@ -1391,6 +1392,218 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/tabs/tab-sprite.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/toolbar/gray-bg.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/toolbar/tb-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/corners-blue.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/corners.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/l-blue.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/l.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/r-blue.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/r.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/tb-blue.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box/tb.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/arrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/btn.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/group-cs.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/group-lr.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/group-tb.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/s-arrow-b-noline.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/s-arrow-b.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/s-arrow-bo.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/s-arrow-noline.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/s-arrow-o.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button/s-arrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/dd/drop-add.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/dd/drop-no.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/dd/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/editor/tb-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/checkbox.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/clear-trigger.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/date-trigger.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/error-tip-corners.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/exclamation.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/radio.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/search-trigger.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/text-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/trigger-square.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/trigger-tpl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form/trigger.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/arrow-left-white.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/arrow-right-white.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/col-move-bottom.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/col-move-top.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/columns.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/dirty.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/done.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/drop-no.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/footer-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid-blue-hd.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid-blue-split.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid-hrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid-loading.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid-split.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid-vista-hd.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid3-hd-btn.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid3-hrow-over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid3-hrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid3-special-col-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/grid3-special-col-sel-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/group-by.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/group-collapse.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/group-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/group-expand.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hd-pop.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hmenu-asc.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hmenu-desc.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hmenu-lock.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hmenu-lock.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hmenu-unlock.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/hmenu-unlock.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/invalid_line.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/loading.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/mso-hd.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/nowait.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-first-disabled.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-first.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-last-disabled.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-last.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-next-disabled.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-next.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-prev-disabled.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/page-prev.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/pick-button.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/refresh.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/row-check-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/row-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/row-over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/row-sel.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/sort-hd.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/sort_asc.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/sort_desc.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid/wait.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/collapse.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/expand.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/mini-bottom.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/mini-left.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/mini-right.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/mini-top.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/ns-collapse.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/ns-expand.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/panel-close.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/panel-title-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/panel-title-light-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/stick.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/stuck.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/tab-close-on.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout/tab-close.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu/checked.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu/group-checked.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu/item-over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu/menu-parent.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu/menu.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu/unchecked.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/left-right.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/light-hd.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/tool-sprite-tpl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/tool-sprites.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/tools-sprites-trans.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/top-bottom.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/top-bottom.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/white-corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/white-left-right.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel/white-top-bottom.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/progress/progress-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/qtip/bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/qtip/close.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/qtip/tip-anchor-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/qtip/tip-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/s.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shadow-c.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shadow-lr.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shadow.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/blue-loading.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/calendar.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/glass-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/hd-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/large-loading.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/left-btn.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/loading-balls.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/right-btn.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared/warning.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/e-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/e-handle.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/ne-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/ne-handle.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/nw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/nw-handle.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/s-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/s-handle.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/se-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/se-handle.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/square.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/sw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer/sw-handle.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/slider/slider-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/slider/slider-thumb.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/slider/slider-v-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/slider/slider-v-thumb.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/scroll-left.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/scroll-right.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/scroller-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-btm-inactive-left-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-btm-inactive-right-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-btm-left-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-btm-over-left-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-btm-over-right-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-btm-right-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-close.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-strip-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-strip-bg.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tab-strip-btm-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs/tabs-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/btn-arrow-light.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/btn-arrow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/btn-over-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/gray-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/more.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/tb-bg.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/tb-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/tb-xl-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar/tb-xl-sep.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/arrows.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/drop-add.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/drop-between.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/drop-no.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/drop-over.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/drop-under.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-end-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-end-minus.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-end-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-end-plus.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-end.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-line.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-minus.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow-plus.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/elbow.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/folder-open.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/folder.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/leaf.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/loading.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree/s.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/icon-error.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/icon-info.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/icon-question.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/icon-warning.gif
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/left-corners.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/left-right.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/right-corners.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window/top-bottom.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.pyo
@@ -1439,6 +1652,25 @@ share/pixmaps/deluge.xpm
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/window
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tree
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/tabs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/slider
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/sizer
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/shared
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/qtip
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/progress
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/panel
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/menu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/layout
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/grid
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/form
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/editor
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/dd
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/button
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme/box
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/yourtheme
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/toolbar
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/tabs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/sizer

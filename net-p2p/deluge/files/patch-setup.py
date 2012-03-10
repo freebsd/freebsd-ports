@@ -1,15 +1,23 @@
---- setup.py.orig	2011-07-22 22:12:47.000000000 +0400
-+++ setup.py	2011-07-24 23:08:20.000000000 +0400
-@@ -210,7 +210,7 @@
+--- setup.py.orig	2012-03-05 04:41:43.000000000 +0400
++++ setup.py	2012-03-10 14:17:07.000000000 +0400
+@@ -206,7 +206,6 @@
+ _ext_modules = []
+ 
+ # Check for a system libtorrent and if found, then do not build the libtorrent extension
+-build_libtorrent = True
  try:
      from deluge._libtorrent import lt
  except ImportError:
--    build_libtorrent = True
-+    build_libtorrent = False
+@@ -214,6 +213,8 @@
  else:
      build_libtorrent = False
  
-@@ -474,31 +474,8 @@
++build_libtorrent = False
++
+ if build_libtorrent:
+     got_libtorrent = False
+     if not os.path.exists("libtorrent"):
+@@ -487,31 +488,8 @@
  
  # Data files to be installed to the system
  _data_files = [
@@ -35,9 +43,9 @@
 -        'docs/man/deluge-console.1'])
  ]
  
--if not windows_check():
--    _data_files.append(('share/applications', ['deluge/data/share/applications/deluge.desktop']))
--    
+-if not windows_check() and os.path.exists(desktop_data):
+-    _data_files.append(('share/applications', [desktop_data]))
+-
  entry_points = {
      "console_scripts": [
          "deluge-console = deluge.ui.console:start",
