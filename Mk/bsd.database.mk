@@ -35,8 +35,8 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # MYSQL_VER
 #				- Detected MySQL version.
 ##
-# USE_PGSQL		- Add PostgreSQL client dependency.  Server can be depended on
-#				  using USE_PGSQL=server.
+# USE_PGSQL		- Add PostgreSQL client dependency.  Components can be depended
+#				  on using USE_PGSQL=	server pltcl
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
@@ -250,6 +250,9 @@ LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${P
 .  if ${USE_PGSQL:Mserver}
 BUILD_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 RUN_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+.  endif
+.  if ${USE_PGSQL:Mpltcl}
+LIB_DEPENDS+=	pgtcl:${PORTSDIR}/databases/postgresql${PGSQL_VER}-pltcl
 .  endif
 .else
 IGNORE?=		cannot install: unknown PostgreSQL version: ${PGSQL_VER}
