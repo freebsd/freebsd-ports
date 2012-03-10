@@ -18,6 +18,7 @@ lib32/compat/libobjc.so.4
 lib32/compat/libopie.so.6
 lib32/compat/libpcap.so.7
 lib32/compat/librtld_db.so.1
+lib32/compat/libsbuf.so.5
 lib32/compat/libtacplus.so.4
 lib32/compat/libufs.so.5
 lib32/compat/libutil.so.8
