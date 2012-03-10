@@ -1,11 +1,385 @@
 bin/mosh
-%%DATADIR%%/all-tests.scm
-%%DATADIR%%/psyntax.scm
-%%DATADIR%%/repl.scm
-%%DATADIR%%/lib/srfi/%3A8.ss
-%%DATADIR%%/lib/srfi/%3A98.ss
-%%DATADIR%%/lib/mosh/test.ss
-@dirrmtry %%DATADIR%%/lib/srfi
-@dirrmtry %%DATADIR%%/lib/mosh
-@dirrmtry %%DATADIR%%/lib
-@dirrmtry %%DATADIR%%
+bin/mosh_config
+bin/nmosh
+lib/mosh/all-tests.scm
+lib/mosh/lib/clos/bootstrap/generic-functions.ss
+lib/mosh/lib/clos/bootstrap/standard-classes.ss
+lib/mosh/lib/clos/core.ss
+lib/mosh/lib/clos/helpers.ss
+lib/mosh/lib/clos/introspection.ss
+lib/mosh/lib/clos/private/allocation.ikarus.ss
+lib/mosh/lib/clos/private/allocation.ss
+lib/mosh/lib/clos/private/compat.ss
+lib/mosh/lib/clos/private/core-class-layout.ss
+lib/mosh/lib/clos/private/fast-method-cache.ikarus.ss
+lib/mosh/lib/clos/private/method-cache.ikarus.ss
+lib/mosh/lib/clos/private/method-cache.ss
+lib/mosh/lib/clos/private/slow-method-cache.ss
+lib/mosh/lib/clos/private/top-sort.ss
+lib/mosh/lib/clos/slot-access.ss
+lib/mosh/lib/clos/std-protocols/add-method.ss
+lib/mosh/lib/clos/std-protocols/allocate-instance.ss
+lib/mosh/lib/clos/std-protocols/class-initialization.ss
+lib/mosh/lib/clos/std-protocols/generic-invocation.ss
+lib/mosh/lib/clos/std-protocols/initialize.ss
+lib/mosh/lib/clos/std-protocols/make.ss
+lib/mosh/lib/clos/std-protocols/print-object.ss
+lib/mosh/lib/clos/user.ss
+lib/mosh/lib/config/library-config.scm
+lib/mosh/lib/facebook.ss
+lib/mosh/lib/http.ss
+lib/mosh/lib/irregex.ss
+lib/mosh/lib/json.ss
+lib/mosh/lib/lambda/wiki.ss
+lib/mosh/lib/match.ss
+lib/mosh/lib/mecab.ss
+lib/mosh/lib/memcached.ss
+lib/mosh/lib/monapi.ss
+lib/mosh/lib/mosh.nmosh.ss
+lib/mosh/lib/mosh/c-type.ss
+lib/mosh/lib/mosh/c-type/helper.ss
+lib/mosh/lib/mosh/cgi.ss
+lib/mosh/lib/mosh/concurrent.ss
+lib/mosh/lib/mosh/control.ss
+lib/mosh/lib/mosh/dbd/mysql.ss
+lib/mosh/lib/mosh/dbi.ss
+lib/mosh/lib/mosh/ffi.ss
+lib/mosh/lib/mosh/file.ss
+lib/mosh/lib/mosh/io/conditions.ss
+lib/mosh/lib/mosh/irc/client.ss
+lib/mosh/lib/mosh/pp.ss
+lib/mosh/lib/mosh/process.ss
+lib/mosh/lib/mosh/queue.ss
+lib/mosh/lib/mosh/shell.ss
+lib/mosh/lib/mosh/shell/repl.ss
+lib/mosh/lib/mosh/socket.ss
+lib/mosh/lib/mosh/test.ss
+lib/mosh/lib/nmosh.nmosh.ss
+lib/mosh/lib/nmosh/aio/platform/bsd.nmosh.sls
+lib/mosh/lib/nmosh/aio/platform/win32.nmosh.sls
+lib/mosh/lib/nmosh/bootstrap/util.nmosh.ss
+lib/mosh/lib/nmosh/bsd/kqueue.nmosh.sls
+lib/mosh/lib/nmosh/canvas/platform/win32.nmosh.sls
+lib/mosh/lib/nmosh/config.nmosh.sls
+lib/mosh/lib/nmosh/debugger.nmosh.sls
+lib/mosh/lib/nmosh/debugger/condition-printer.nmosh.sls
+lib/mosh/lib/nmosh/debugger/core.nmosh.sls
+lib/mosh/lib/nmosh/ffi/box.mosh.sls
+lib/mosh/lib/nmosh/ffi/pffi.mosh.sls
+lib/mosh/lib/nmosh/ffi/stublib.mosh.sls
+lib/mosh/lib/nmosh/finalizers.nmosh.sls
+lib/mosh/lib/nmosh/gc.nmosh.sls
+lib/mosh/lib/nmosh/global-flags.mosh.sls
+lib/mosh/lib/nmosh/gui/win32.nmosh.sls
+lib/mosh/lib/nmosh/io/core.sls
+lib/mosh/lib/nmosh/io/master-queue.nmosh.sls
+lib/mosh/lib/nmosh/process.nmosh.sls
+lib/mosh/lib/nmosh/process/mosh.mosh.sls
+lib/mosh/lib/nmosh/process/win32.mosh.sls
+lib/mosh/lib/nmosh/process/win32.nmosh.sls
+lib/mosh/lib/nmosh/stubs/aio-win32.mosh.sls
+lib/mosh/lib/nmosh/stubs/boehmgc-stubs.mosh.sls
+lib/mosh/lib/nmosh/stubs/kqueue-stubs.mosh.sls
+lib/mosh/lib/nmosh/stubs/ptrace-common.mosh.sls
+lib/mosh/lib/nmosh/stubs/sqlite3.mosh.sls
+lib/mosh/lib/nmosh/stubs/terminal.mosh.sls
+lib/mosh/lib/nmosh/stubs/win32-gui.mosh.sls
+lib/mosh/lib/nmosh/stubs/win32-misc.mosh.sls
+lib/mosh/lib/nmosh/ui/deco.nmosh.sls
+lib/mosh/lib/nmosh/util/define-macro.sls
+lib/mosh/lib/nmosh/util/lisp-transformer.sls
+lib/mosh/lib/nmosh/util/multy-invoke.sls
+lib/mosh/lib/nmosh/util/syntax-error.sls
+lib/mosh/lib/nmosh/weak-vectors.nmosh.sls
+lib/mosh/lib/nmosh/win32/aio.nmosh.sls
+lib/mosh/lib/nmosh/win32/gui.nmosh.sls
+lib/mosh/lib/nmosh/win32/handle.nmosh.sls
+lib/mosh/lib/nmosh/win32/misc.nmosh.sls
+lib/mosh/lib/nmosh/win32/named-pipe.nmosh.sls
+lib/mosh/lib/nmosh/win32/util.nmosh.sls
+lib/mosh/lib/packrat.ss
+lib/mosh/lib/rbtree.ss
+lib/mosh/lib/shorten.ss
+lib/mosh/lib/shorten/helper.ss
+lib/mosh/lib/srfi/%3a0.mosh.sls
+lib/mosh/lib/srfi/%3a0/cond-expand.sls
+lib/mosh/lib/srfi/%3a1.mosh.sls
+lib/mosh/lib/srfi/%3a1/lists.sls
+lib/mosh/lib/srfi/%3a11.mosh.sls
+lib/mosh/lib/srfi/%3a11/let-values.sls
+lib/mosh/lib/srfi/%3a13.mosh.sls
+lib/mosh/lib/srfi/%3a13/strings.sls
+lib/mosh/lib/srfi/%3a14.mosh.sls
+lib/mosh/lib/srfi/%3a14/char-sets.sls
+lib/mosh/lib/srfi/%3a16.mosh.sls
+lib/mosh/lib/srfi/%3a16/case-lambda.sls
+lib/mosh/lib/srfi/%3a19.mosh.sls
+lib/mosh/lib/srfi/%3a19/time.sls
+lib/mosh/lib/srfi/%3a19/time/compat.ikarus.sls
+lib/mosh/lib/srfi/%3a19/time/compat.larceny.sls
+lib/mosh/lib/srfi/%3a19/time/compat.mosh.sls
+lib/mosh/lib/srfi/%3a19/time/compat.mzscheme.sls
+lib/mosh/lib/srfi/%3a19/time/compat.ypsilon.sls
+lib/mosh/lib/srfi/%3a2.mosh.sls
+lib/mosh/lib/srfi/%3a2/and-let%2a.sls
+lib/mosh/lib/srfi/%3a2/and-let-star.sls
+lib/mosh/lib/srfi/%3a2/and-let.larceny.sls
+lib/mosh/lib/srfi/%3a23.mosh.sls
+lib/mosh/lib/srfi/%3a23/error.sls
+lib/mosh/lib/srfi/%3a26.mosh.sls
+lib/mosh/lib/srfi/%3a26/cut.sls
+lib/mosh/lib/srfi/%3a27.mosh.sls
+lib/mosh/lib/srfi/%3a27/random-bits.sls
+lib/mosh/lib/srfi/%3a31.mosh.sls
+lib/mosh/lib/srfi/%3a31/rec.sls
+lib/mosh/lib/srfi/%3a37.mosh.sls
+lib/mosh/lib/srfi/%3a37/args-fold.sls
+lib/mosh/lib/srfi/%3a38.mosh.sls
+lib/mosh/lib/srfi/%3a38/with-shared-structure.ikarus.sls
+lib/mosh/lib/srfi/%3a38/with-shared-structure.mosh.sls
+lib/mosh/lib/srfi/%3a38/with-shared-structure.ypsilon.sls
+lib/mosh/lib/srfi/%3a39.mosh.sls
+lib/mosh/lib/srfi/%3a39/parameters.ikarus.sls
+lib/mosh/lib/srfi/%3a39/parameters.mosh.sls
+lib/mosh/lib/srfi/%3a39/parameters.mzscheme.sls
+lib/mosh/lib/srfi/%3a39/parameters.sls
+lib/mosh/lib/srfi/%3a39/parameters.ypsilon.sls
+lib/mosh/lib/srfi/%3a41.mosh.sls
+lib/mosh/lib/srfi/%3a41/streams.mosh.sls
+lib/mosh/lib/srfi/%3a41/streams/derived.sls
+lib/mosh/lib/srfi/%3a41/streams/primitive.sls
+lib/mosh/lib/srfi/%3a42.mosh.sls
+lib/mosh/lib/srfi/%3a42/eager-comprehensions.sls
+lib/mosh/lib/srfi/%3a43.mosh.sls
+lib/mosh/lib/srfi/%3a43/vectors.sls
+lib/mosh/lib/srfi/%3a48.mosh.sls
+lib/mosh/lib/srfi/%3a48/intermediate-format-strings.sls
+lib/mosh/lib/srfi/%3a48/intermediate-format-strings/compat.ikarus.sls
+lib/mosh/lib/srfi/%3a48/intermediate-format-strings/compat.larceny.sls
+lib/mosh/lib/srfi/%3a48/intermediate-format-strings/compat.mosh.sls
+lib/mosh/lib/srfi/%3a48/intermediate-format-strings/compat.mzscheme.sls
+lib/mosh/lib/srfi/%3a48/intermediate-format-strings/compat.ypsilon.sls
+lib/mosh/lib/srfi/%3a6.mosh.sls
+lib/mosh/lib/srfi/%3a6/basic-string-ports.mzscheme.sls
+lib/mosh/lib/srfi/%3a6/basic-string-ports.sls
+lib/mosh/lib/srfi/%3a6/basic-string-ports/compat.ikarus.sls
+lib/mosh/lib/srfi/%3a6/basic-string-ports/compat.larceny.sls
+lib/mosh/lib/srfi/%3a6/basic-string-ports/compat.mosh.sls
+lib/mosh/lib/srfi/%3a6/basic-string-ports/compat.ypsilon.sls
+lib/mosh/lib/srfi/%3a61.mosh.sls
+lib/mosh/lib/srfi/%3a61/cond.sls
+lib/mosh/lib/srfi/%3a64.mosh.sls
+lib/mosh/lib/srfi/%3a64/testing.sls
+lib/mosh/lib/srfi/%3a67.mosh.sls
+lib/mosh/lib/srfi/%3a67/compare-procedures.sls
+lib/mosh/lib/srfi/%3a78.mosh.sls
+lib/mosh/lib/srfi/%3a78/lightweight-testing.sls
+lib/mosh/lib/srfi/%3a78/lightweight-testing/compat.ikarus.sls
+lib/mosh/lib/srfi/%3a78/lightweight-testing/compat.larceny.sls
+lib/mosh/lib/srfi/%3a78/lightweight-testing/compat.mosh.sls
+lib/mosh/lib/srfi/%3a78/lightweight-testing/compat.mzscheme.sls
+lib/mosh/lib/srfi/%3a78/lightweight-testing/compat.ypsilon.sls
+lib/mosh/lib/srfi/%3a8.mosh.sls
+lib/mosh/lib/srfi/%3a8/receive.sls
+lib/mosh/lib/srfi/%3a9.mosh.sls
+lib/mosh/lib/srfi/%3a9/records.sls
+lib/mosh/lib/srfi/%3a98.mosh.sls
+lib/mosh/lib/srfi/%3a98/os-environment-variables.sls
+lib/mosh/lib/srfi/%3a99.mosh.sls
+lib/mosh/lib/srfi/%3a99/records.mosh.sls
+lib/mosh/lib/srfi/%3a99/records/helper.sls
+lib/mosh/lib/srfi/%3a99/records/inspection.larceny.sls
+lib/mosh/lib/srfi/%3a99/records/inspection.sls
+lib/mosh/lib/srfi/%3a99/records/procedural.larceny.sls
+lib/mosh/lib/srfi/%3a99/records/procedural.sls
+lib/mosh/lib/srfi/%3a99/records/syntactic.larceny.sls
+lib/mosh/lib/srfi/%3a99/records/syntactic.sls
+lib/mosh/lib/srfi/13/srfi-13.scm
+lib/mosh/lib/srfi/14/srfi-14.scm
+lib/mosh/lib/srfi/19/srfi-19.scm
+lib/mosh/lib/srfi/26/cut.scm
+lib/mosh/lib/srfi/27/random.ss
+lib/mosh/lib/srfi/37/srfi-37-reference.scm
+lib/mosh/lib/srfi/42/design.scm
+lib/mosh/lib/srfi/42/ec.scm
+lib/mosh/lib/srfi/42/extension.scm
+lib/mosh/lib/srfi/42/timing.scm
+lib/mosh/lib/srfi/43/vector-lib.scm
+lib/mosh/lib/srfi/64/testing.scm
+lib/mosh/lib/srfi/67/compare.ss
+lib/mosh/lib/srfi/78/check.scm
+lib/mosh/lib/srfi/compile-all.ikarus.sps
+lib/mosh/lib/srfi/private/OS-id-features.sls
+lib/mosh/lib/srfi/private/include.sls
+lib/mosh/lib/srfi/private/include/compat.ikarus.sls
+lib/mosh/lib/srfi/private/include/compat.larceny.sls
+lib/mosh/lib/srfi/private/include/compat.mosh.sls
+lib/mosh/lib/srfi/private/include/compat.mzscheme.sls
+lib/mosh/lib/srfi/private/include/compat.nmosh.sls
+lib/mosh/lib/srfi/private/include/compat.ypsilon.sls
+lib/mosh/lib/srfi/private/let-opt.sls
+lib/mosh/lib/srfi/private/make-aliased-libraries.sps
+lib/mosh/lib/srfi/private/platform-features.ikarus.sls
+lib/mosh/lib/srfi/private/platform-features.larceny.sls
+lib/mosh/lib/srfi/private/platform-features.mosh.sls
+lib/mosh/lib/srfi/private/platform-features.mzscheme.sls
+lib/mosh/lib/srfi/private/platform-features.ypsilon.sls
+lib/mosh/lib/srfi/private/registry.sls
+lib/mosh/lib/system.nmosh.ss
+lib/mosh/lib/template.ss
+lib/mosh/lib/uri.ss
+lib/mosh/lib/yuni/binary/bitstream.sls
+lib/mosh/lib/yuni/binary/macro/bitwise.sls
+lib/mosh/lib/yuni/binary/macro/octet.sls
+lib/mosh/lib/yuni/binary/packunpack/bit.ss
+lib/mosh/lib/yuni/binary/packunpack/octet.ss
+lib/mosh/lib/yuni/compat/file-ops.mosh.sls
+lib/mosh/lib/yuni/compat/gensym.sls
+lib/mosh/lib/yuni/compat/simple-struct.mosh.sls
+lib/mosh/lib/yuni/core.sls
+lib/mosh/lib/yuni/impl/hyperprism/core-scheme.sls
+lib/mosh/lib/yuni/impl/hyperprism/quasiquote.sls
+lib/mosh/lib/yuni/impl/hyperprism/scheme-syntax.sls
+lib/mosh/lib/yuni/lib/ssax/html.sls
+lib/mosh/lib/yuni/lib/ssax/parsing.sls
+lib/mosh/lib/yuni/lib/ssax/private/define-opt.sls
+lib/mosh/lib/yuni/lib/ssax/private/error.sls
+lib/mosh/lib/yuni/lib/ssax/private/input-parse.sls
+lib/mosh/lib/yuni/lib/ssax/private/look-for-str.sls
+lib/mosh/lib/yuni/lib/ssax/private/misc.sls
+lib/mosh/lib/yuni/lib/ssax/private/output.sls
+lib/mosh/lib/yuni/lib/ssax/private/to-html-ext.sls
+lib/mosh/lib/yuni/lib/ssax/private/to-html.sls
+lib/mosh/lib/yuni/lib/ssax/private/util.sls
+lib/mosh/lib/yuni/lib/ssax/raise.sls
+lib/mosh/lib/yuni/lib/ssax/sxpath.sls
+lib/mosh/lib/yuni/lib/ssax/tree-trans.sls
+lib/mosh/lib/yuni/miniobj.sls
+lib/mosh/lib/yuni/miniobj/base.sls
+lib/mosh/lib/yuni/miniobj/minitype.sls
+lib/mosh/lib/yuni/miniobj/rnrs.sls
+lib/mosh/lib/yuni/text/config.sls
+lib/mosh/lib/yuni/text/config/reader.sls
+lib/mosh/lib/yuni/text/config/template.sls
+lib/mosh/lib/yuni/text/config/writer.sls
+lib/mosh/lib/yuni/text/decorate/sexp.sls
+lib/mosh/lib/yuni/text/peg.sls
+lib/mosh/lib/yuni/text/styler.sls
+lib/mosh/lib/yuni/transformer/cirs/writer.sls
+lib/mosh/lib/yuni/transformer/llvm/bitcode-decoder.sls
+lib/mosh/lib/yuni/transformer/llvm/bitcode-dict.sls
+lib/mosh/lib/yuni/transformer/llvm/bitcode.sls
+lib/mosh/lib/yuni/ui/terminal/color-sequence.sls
+lib/mosh/lib/yuni/util/binding-constructs.sls
+lib/mosh/lib/yuni/util/combinators.sls
+lib/mosh/lib/yuni/util/files.sls
+lib/mosh/lib/yuni/util/html.sls
+lib/mosh/lib/yuni/util/inline.sls
+lib/mosh/lib/yuni/util/invalid-form.sls
+lib/mosh/lib/yuni/util/library-files.sls
+lib/mosh/lib/yuni/util/library-writer.sls
+lib/mosh/lib/yuni/util/lists.sls
+lib/mosh/lib/yuni/util/messages.sls
+lib/mosh/lib/yuni/util/tables.sls
+lib/mosh/lib/yuni/util/tables/internal.sls
+lib/mosh/lib/yuni/util/tables/scheme.sls
+@dirrm lib/mosh/lib/yuni/util/tables
+@dirrm lib/mosh/lib/yuni/util
+@dirrm lib/mosh/lib/yuni/ui/terminal
+@dirrm lib/mosh/lib/yuni/ui
+@dirrm lib/mosh/lib/yuni/transformer/llvm
+@dirrm lib/mosh/lib/yuni/transformer/cirs
+@dirrm lib/mosh/lib/yuni/transformer
+@dirrm lib/mosh/lib/yuni/text/decorate
+@dirrm lib/mosh/lib/yuni/text/config
+@dirrm lib/mosh/lib/yuni/text
+@dirrm lib/mosh/lib/yuni/miniobj
+@dirrm lib/mosh/lib/yuni/lib/ssax/private
+@dirrm lib/mosh/lib/yuni/lib/ssax
+@dirrm lib/mosh/lib/yuni/lib
+@dirrm lib/mosh/lib/yuni/impl/hyperprism
+@dirrm lib/mosh/lib/yuni/impl
+@dirrm lib/mosh/lib/yuni/compat
+@dirrm lib/mosh/lib/yuni/binary/packunpack
+@dirrm lib/mosh/lib/yuni/binary/macro
+@dirrm lib/mosh/lib/yuni/binary
+@dirrm lib/mosh/lib/yuni
+@dirrm lib/mosh/lib/srfi/private/include
+@dirrm lib/mosh/lib/srfi/private
+@dirrm lib/mosh/lib/srfi/78
+@dirrm lib/mosh/lib/srfi/67
+@dirrm lib/mosh/lib/srfi/64
+@dirrm lib/mosh/lib/srfi/43
+@dirrm lib/mosh/lib/srfi/42
+@dirrm lib/mosh/lib/srfi/37
+@dirrm lib/mosh/lib/srfi/27
+@dirrm lib/mosh/lib/srfi/26
+@dirrm lib/mosh/lib/srfi/19
+@dirrm lib/mosh/lib/srfi/14
+@dirrm lib/mosh/lib/srfi/13
+@dirrm lib/mosh/lib/srfi/%3a99/records
+@dirrm lib/mosh/lib/srfi/%3a99
+@dirrm lib/mosh/lib/srfi/%3a98
+@dirrm lib/mosh/lib/srfi/%3a9
+@dirrm lib/mosh/lib/srfi/%3a8
+@dirrm lib/mosh/lib/srfi/%3a78/lightweight-testing
+@dirrm lib/mosh/lib/srfi/%3a78
+@dirrm lib/mosh/lib/srfi/%3a67
+@dirrm lib/mosh/lib/srfi/%3a64
+@dirrm lib/mosh/lib/srfi/%3a61
+@dirrm lib/mosh/lib/srfi/%3a6/basic-string-ports
+@dirrm lib/mosh/lib/srfi/%3a6
+@dirrm lib/mosh/lib/srfi/%3a48/intermediate-format-strings
+@dirrm lib/mosh/lib/srfi/%3a48
+@dirrm lib/mosh/lib/srfi/%3a43
+@dirrm lib/mosh/lib/srfi/%3a42
+@dirrm lib/mosh/lib/srfi/%3a41/streams
+@dirrm lib/mosh/lib/srfi/%3a41
+@dirrm lib/mosh/lib/srfi/%3a39
+@dirrm lib/mosh/lib/srfi/%3a38
+@dirrm lib/mosh/lib/srfi/%3a37
+@dirrm lib/mosh/lib/srfi/%3a31
+@dirrm lib/mosh/lib/srfi/%3a27
+@dirrm lib/mosh/lib/srfi/%3a26
+@dirrm lib/mosh/lib/srfi/%3a23
+@dirrm lib/mosh/lib/srfi/%3a2
+@dirrm lib/mosh/lib/srfi/%3a19/time
+@dirrm lib/mosh/lib/srfi/%3a19
+@dirrm lib/mosh/lib/srfi/%3a16
+@dirrm lib/mosh/lib/srfi/%3a14
+@dirrm lib/mosh/lib/srfi/%3a13
+@dirrm lib/mosh/lib/srfi/%3a11
+@dirrm lib/mosh/lib/srfi/%3a1
+@dirrm lib/mosh/lib/srfi/%3a0
+@dirrm lib/mosh/lib/srfi
+@dirrm lib/mosh/lib/shorten
+@dirrm lib/mosh/lib/nmosh/win32
+@dirrm lib/mosh/lib/nmosh/util
+@dirrm lib/mosh/lib/nmosh/ui
+@dirrm lib/mosh/lib/nmosh/stubs
+@dirrm lib/mosh/lib/nmosh/process
+@dirrm lib/mosh/lib/nmosh/io
+@dirrm lib/mosh/lib/nmosh/gui
+@dirrm lib/mosh/lib/nmosh/ffi
+@dirrm lib/mosh/lib/nmosh/debugger
+@dirrm lib/mosh/lib/nmosh/canvas/platform
+@dirrm lib/mosh/lib/nmosh/canvas
+@dirrm lib/mosh/lib/nmosh/bsd
+@dirrm lib/mosh/lib/nmosh/bootstrap
+@dirrm lib/mosh/lib/nmosh/aio/platform
+@dirrm lib/mosh/lib/nmosh/aio
+@dirrm lib/mosh/lib/nmosh
+@dirrm lib/mosh/lib/mosh/shell
+@dirrm lib/mosh/lib/mosh/irc
+@dirrm lib/mosh/lib/mosh/io
+@dirrm lib/mosh/lib/mosh/dbd
+@dirrm lib/mosh/lib/mosh/c-type
+@dirrm lib/mosh/lib/mosh
+@dirrm lib/mosh/lib/lambda
+@dirrm lib/mosh/lib/config
+@dirrm lib/mosh/lib/clos/std-protocols
+@dirrm lib/mosh/lib/clos/private
+@dirrm lib/mosh/lib/clos/bootstrap
+@dirrm lib/mosh/lib/clos
+@dirrm lib/mosh/lib
+@dirrm lib/mosh

@@ -6,41 +6,41 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	0.0.7
-PORTREVISION=	1
+PORTVERSION=	0.2.7
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	katsuji.ishikawa@gmail.com
+MAINTAINER=	mjt@cltn.org
 COMMENT=	A Fast R6RS Scheme interpreter
 
-PROJECTHOST=	mosh-scheme
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
+		onig.2:${PORTSDIR}/devel/oniguruma5
 
-GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
-ONLY_FOR_ARCHS=	i386
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
+MAKE_JOBS_SAFE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-SCMS=		all-tests.scm repl.scm tools/psyntax-r6rs/rev10_to_10/psyntax.scm
-SS1=		lib/srfi/%3A8.ss lib/srfi/%3A98.ss
-SS2=		lib/mosh/test.ss
+PROJECTHOST=	mosh-scheme
+MAN1=	mosh.1 mosh_config.1
 
-do-install:
-	${MKDIR} ${DATADIR}/lib
-	${MKDIR} ${DATADIR}/lib/srfi
-	${MKDIR} ${DATADIR}/lib/mosh
+.include <bsd.port.pre.mk>
 
-.for F in ${SCMS}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DATADIR}/
-.endfor
+.if ${OSVERSION} < 800000
+BROKEN=	Does not build on FreeBSD 7.x
+.endif
 
-.for F in ${SS1}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DATADIR}/lib/srfi/
-.endfor
+post-patch:
+	${REINPLACE_CMD} 's|mosh-$$PACKAGE_VERSION|mosh|' ${WRKSRC}/configure
 
-.for F in ${SS2}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DATADIR}/lib/mosh/
-.endfor
+x-generate-plist:
+	@${ECHO} bin/mosh > pkg-plist.new
+	@${ECHO} bin/mosh_config >> pkg-plist.new
+	@${ECHO} bin/nmosh >> pkg-plist.new
+	@${FIND} ${LOCALBASE}/lib/mosh -type f | ${SORT} | ${SED} 's|${LOCALBASE}/||' >> pkg-plist.new
+	@${FIND} ${LOCALBASE}/lib/mosh -type d | ${SORT} -r | ${SED} 's|${LOCALBASE}/|@dirrm |' >> pkg-plist.new
 
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
