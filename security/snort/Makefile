@@ -227,17 +227,18 @@ pre-install:
 post-install:
 	@${LIBTOOL} --finish ${LOCALBASE}/lib/snort/dynamicpreprocessor
 	[ -d ${CONFIG_DIR} ] || ${MKDIR} ${CONFIG_DIR}
-	[ -d ${EXAMPLESDIR} ] || ${MKDIR} ${EXAMPLESDIR}
 	[ -d ${RULES_DIR} ] || ${MKDIR} ${RULES_DIR}
 	[ -d ${LOGS_DIR} ] || ${MKDIR} ${LOGS_DIR}
+.if !defined(NOPORTEXAMPLES)
+	[ -d ${EXAMPLESDIR} ] || ${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/schemas/create* ${EXAMPLESDIR}
+.endif
 .for f in ${CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${CONFIG_DIR}/${f}-sample
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${EXAMPLESDIR}/${f}-sample
 	@if [ ! -f ${CONFIG_DIR}/${f} ]; then \
 		${CP} -p ${CONFIG_DIR}/${f}-sample ${CONFIG_DIR}/${f} ; \
 	fi
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/schemas/create* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
