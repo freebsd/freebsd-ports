@@ -216,6 +216,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/misc/fileopen16.png
 %%DATADIR%%/data/gfx/gui/misc/rating.png
 %%DATADIR%%/data/gfx/gui/misc/startwindowbg.png
+%%DATADIR%%/data/gfx/gui/misc/startwindowbg_800x480.png
 %%DATADIR%%/data/gfx/gui/misc/welcomepokerth.png
 %%DATADIR%%/data/gfx/gui/misc/windowicon.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/bigblindPuck.png
@@ -294,6 +295,44 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default/smallblindPuck.png
 %%DATADIR%%/data/gfx/gui/table/default/table.png
 %%DATADIR%%/data/gfx/gui/table/default/toolboxbg.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/bigblindPuck.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/cardholder_flop.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/cardholder_river.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/cardholder_turn.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/dealerPuck.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/defaulttablestyle_800x480.xml
+%%DATADIR%%/data/gfx/gui/table/default_800x480/genereticAvatar.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/handranking.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/handranking_template.xcf
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatActive.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playerSeatInactive.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue_checked.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue_checked_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_blue_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_green.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_green_checked.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_green_checked_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_green_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_orange.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_orange_checked.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_orange_checked_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_orange_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_purple.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_purple_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_red.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_red_checked.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_red_checked_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/playeraction_red_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/preview.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/radiobutton_checked.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/radiobutton_checked_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/radiobutton_pressed.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/radiobutton_unchecked.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/radiobutton_unchecked_hover.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/smallblindPuck.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/table.png
+%%DATADIR%%/data/gfx/gui/table/default_800x480/toolboxbg.png
 %%DATADIR%%/data/misc/agpl.html
 %%DATADIR%%/data/sounds/default/allin.wav
 %%DATADIR%%/data/sounds/default/bet.wav
@@ -348,6 +387,7 @@ share/pixmaps/pokerth.png
 @dirrm %%DATADIR%%/data/sounds/default
 @dirrm %%DATADIR%%/data/sounds
 @dirrm %%DATADIR%%/data/misc
+@dirrm %%DATADIR%%/data/gfx/gui/table/default_800x480
 @dirrm %%DATADIR%%/data/gfx/gui/table/default
 @dirrm %%DATADIR%%/data/gfx/gui/table/danuxi1
 @dirrm %%DATADIR%%/data/gfx/gui/table
