@@ -20,6 +20,9 @@ HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_OPENSSL=		yes
 
+DEPRECATED=	unsupported upstream, consider www/resin3
+EXPIRATION_DATE=	2012-04-10
+
 # Customizable settings
 RUNASUSER?=		www
 RUNASUID?=		80
