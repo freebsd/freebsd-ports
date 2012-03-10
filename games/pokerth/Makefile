@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -25,8 +24,6 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		gsasl.15:${PORTSDIR}/security/gsasl \
 		tinyxml:${PORTSDIR}/textproc/tinyxml
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
-
-BROKEN=		does not compile
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
@@ -48,7 +45,7 @@ post-patch:
 		-e 's|(-lcurl)|\1 -liconv|g' \
 		-e 's:boost_([a-z]+)-[-|a-z|0-9|_]*:boost_\1:g' \
 		-e 's|LIB_DIRS =.*|LIB_DIRS = ${LOCALBASE}/lib|g' \
-		-e '/^QMAKE_CXXFLAGS.*/d' \
+		-e '/.*QMAKE_CXXFLAGS.*/d' \
 		${WRKSRC}/*.pro
 
 do-configure:
