@@ -22,7 +22,8 @@ COMMENT=	Free open-source disk encryption software
 BUILD_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \
 		nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
+RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \
+		sudo:${PORTSDIR}/security/sudo
 
 WRKSRC=		${WRKDIR}/truecrypt-${PORTVERSION}-source
 
