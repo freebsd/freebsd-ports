@@ -90,8 +90,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[117226] [117230] Critical CVE-2011-3046: UXSS and bad history
 	    navigation. Credit to Sergey Glazunov.</p>
 	</blockquote>
@@ -146,8 +145,7 @@ cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[105867] High CVE-2011-3031: Use-after-free in v8 element wrapper.
 	    Credit to Chamal de Silva.</p>
 	  <p>[108037] High CVE-2011-3032: Use-after-free in SVG value handling.
