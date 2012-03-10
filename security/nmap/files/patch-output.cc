@@ -8,12 +8,3 @@
  #include <sstream>
  
  /* Workaround for lack of namespace std on HP-UX 11.00 */
-@@ -940,7 +941,7 @@
-   case LOG_MACHINE:
-   case LOG_SKID:
-   case LOG_XML:
--#ifdef WIN32
-+#if defined(WIN32) || (defined(FREEBSD) && (__FreeBSD_version < 500000))
-     apcopy = ap;
- #else
-     va_copy(apcopy, ap); /* Needed in case we need to do a second vsnprintf */
