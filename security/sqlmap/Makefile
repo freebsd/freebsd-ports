@@ -6,30 +6,27 @@
 #
 
 PORTNAME=	sqlmap
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	security python
 MASTER_SITES=	SF
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	An automatic SQL injection tool
 
-USE_PYTHON=	2.5+
-USE_BZIP2=	YES
+LICENSE=	GPLv2
+
+USE_PYTHON=	-2.7
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
-OPTIONS=	MSF "Enable Metasploit Framework integration" off \
-		PSY "Enable Psyco optimizer (recommended)" on
+OPTIONS=	MSF "Enable Metasploit Framework integration" off
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MSF)
 RUN_DEPENDS+=	${LOCALBASE}/bin/msfcli:${PORTSDIR}/security/metasploit
-.endif
-.if defined(WITH_PSY)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/core.py:${PORTSDIR}/devel/py-psyco
 .endif
 
 post-patch:
@@ -43,16 +40,16 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 	${MKDIR} ${WRKDIR}/build/extra/
 	${MV} ${WRKSRC}/doc/ ${WRKDIR}/build/
-.	for F in msfauxmod runcmd udfhack
-		${MV} ${WRKSRC}/extra/${F} ${WRKDIR}/build/extra/${F}
-.	endfor
+.for F in msfauxmod runcmd udfhack
+	${MV} ${WRKSRC}/extra/${F} ${WRKDIR}/build/extra/${F}
+.endfor
 
 do-install:
-.	if !defined(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.	for F in AUTHORS COPYING ChangeLog README.html README.pdf THANKS
-		${INSTALL_DATA} ${WRKDIR}/build/doc/${F} ${DOCSDIR}/
-.	endfor
+.for F in AUTHORS ChangeLog README.html README.pdf THANKS
+	${INSTALL_DATA} ${WRKDIR}/build/doc/${F} ${DOCSDIR}/
+.endfor
 .endif
 
 	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/extra
