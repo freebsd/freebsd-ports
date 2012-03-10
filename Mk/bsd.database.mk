@@ -183,10 +183,12 @@ PGSQL91_LIBVER=		5
 # Setting/finding PostgreSQL version we want.
 .  if exists(${LOCALBASE}/bin/pg_config)
 _PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)[^0-9].*/\1\2/p'
-.	 if defined(WITH_PGSQL_VER) && ${WITH_PGSQL_VER} != ${_PGSQL_VER}
+WITH_PGSQL_VER?=	${_PGSQL_VER}
+.	 if ${WITH_PGSQL_VER} != ${_PGSQL_VER}
 IGNORE?=		cannot install: you have set WITH_PGSQL_VER=${WITH_PGSQL_VER} in make.conf, but you have postgresql${_PGSQL_VER}-client installed
 .	 endif
-WITH_PGSQL_VER?=	${_PGSQL_VER}
+.  else
+WITH_PGSQL_VER?=	${DEFAULT_PGSQL_VER}
 .  endif
 
 .  if defined(WANT_PGSQL_VER)
@@ -204,44 +206,30 @@ _WANT_PGSQL_VER+=${version}
 .      endfor
 .    endif
 _WANT_PGSQL_VER?=	${WANT_PGSQL_VER}
-
-.    if defined(WITH_PGSQL_VER) && !empty(_WANT_PGSQL_VER)
-.      for version in ${_WANT_PGSQL_VER}
-.        if ${WITH_PGSQL_VER} == ${version} 
-PGSQL_VER=	${WITH_PGSQL_VER}
-.        endif
-.      endfor
-
-# Take highest allowed version, but take default if allowed
-.    elif !empty(_WANT_PGSQL_VER)
-.      for ver in ${_WANT_PGSQL_VER}
-.        if ${DEFAULT_PGSQL_VER} == ${ver}
-PGSQL_VER=	${ver}
-.        else
-_PGSQL_VER_HIGHEST=	${ver}
-.        endif
-.      endfor
-PGSQL_VER?=	${_PGSQL_VER_HIGHEST}
-.    elif defined(WITH_PGSQL_VER)
-PGSQL_VER=	${WITH_PGSQL_VER}
 .  endif
-.  else
-.    if defined(_PGSQL_VER)
-PGSQL_VER=	${_PGSQL_VER}
-.    else
-PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.    endif
-.  endif # WANT_PGSQL_VER
 
-.      if empty(PGSQL_VER)
-IGNORE?=	cannot install: the port wants postgresql-client version ${WANT_PGSQL_VER} and you have set WITH_PGSQL_VER=${WITH_PGSQL_VER} in make.conf or have postgresql${WITH_PGSQL_VER}-client installed
+.  if !empty(_WANT_PGSQL_VER)
+.    for version in ${_WANT_PGSQL_VER}
+.      if ${WITH_PGSQL_VER} == ${version} 
+PGSQL_VER=	${WITH_PGSQL_VER}
 .      endif
+.    endfor
+.    if !defined(PGSQL_VER)
+.	   if ${WITH_PGSQL_VER} == ${DEFAULT_PGSQL_VER}
+IGNORE?=	cannot install: the port wants postgresql-client version ${WANT_PGSQL_VER} and the port does not work with the default version (${WITH_PGSQL_VER}).  Try installing postgresql-client version ${WANT_PGSQL_VER}
+.	   else
+IGNORE?=	cannot install: the port wants postgresql-client version ${WANT_PGSQL_VER} and you have version ${WITH_PGSQL_VER} installed or set in make.conf
+.	   endif
+.    endif
+.  endif
+
+PGSQL_VER?=	${WITH_PGSQL_VER}
 
 # And now we are checking if we can use it
 .if defined(PGSQL${PGSQL_VER}_LIBVER)
 .if defined(IGNORE_WITH_PGSQL)
-.	for VER in ${IGNORE_WITH_PGSQL}
-.		if (${PGSQL_VER} == "${VER}")
+.	for ver in ${IGNORE_WITH_PGSQL}
+.		if (${PGSQL_VER} == ${ver})
 IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER}-client (PostgresSQL ${IGNORE_WITH_PGSQL} not supported)
 .		endif
 .	endfor
