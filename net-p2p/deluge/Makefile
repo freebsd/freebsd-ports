@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-DISTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -16,7 +16,6 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.15.1:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
@@ -32,24 +31,18 @@ USE_XZ=		yes
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_TWISTED_RUN=	web
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_BUILD_TARGET=	build bdist_egg
 
-OPTIONS=	PYGTK "Enable GUI and gtk dep (GUI files always installed)" on \
-		PSYCO "Enable devel/py-psyco optimization (i386 only)" off
+OPTIONS=	PYGTK "Enable GUI and gtk dep (GUI files always installed)" on
 
 MAN1=		deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" || ${PYTHON_REL} > 260
-.undef WITH_PSYCO
-WITHOUT_PSYCO=	yes
-.endif
 
 # things that happen when PREFIX differs from LOCALBASE
 .if ${PREFIX} != ${LOCALBASE}
@@ -67,19 +60,6 @@ PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/${file}
 .endfor
 .endif
 
-.if ${PYTHON_REL} < 260
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
-.endif
-
-.if defined(WITH_PSYCO)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
-
-EXTRA_PATCHES+=	${FILESDIR}/extra-psyco-patch-deluge__main.py \
-		${FILESDIR}/extra-psyco-patch-deluge__ui__console__main.py \
-		${FILESDIR}/extra-psyco-patch-deluge__ui__gtkui__gtkui.py \
-		${FILESDIR}/extra-psyco-patch-deluge__ui__web__web.py
-.endif
-
 .if !defined(WITHOUT_PYGTK)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}game>=1.8.1:${PORTSDIR}/devel/py-game \
@@ -94,13 +74,13 @@ PLIST_SUB+=	PYGTK="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/"new_release_check":/s|True,|False,|g ; \
+	@${REINPLACE_CMD} -e '/"new_release_check":/s|True,|False,|g ; \
 		/"geoip_db_location":/s|/usr/share/GeoIP/GeoIP.dat|${LOCALBASE}/share/GeoIP/GeoIP.dat|g' \
 			${WRKSRC}/deluge/core/preferencesmanager.py
-	${REINPLACE_CMD} -e '/"check_new_releases":/s|True,|False,|g ; \
+	@${REINPLACE_CMD} -e '/"check_new_releases":/s|True,|False,|g ; \
 		/"show_new_releases":/s|True,|False,|g' \
 			${WRKSRC}/deluge/ui/gtkui/gtkui.py
-	${REINPLACE_CMD} -e 's|GTK|GTK;|' \
+	@${REINPLACE_CMD} -e 's|GTK|GTK;|' \
 		${WRKSRC}/deluge/data/share/applications/deluge.desktop.in
 
 post-install:
