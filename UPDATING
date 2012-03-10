@@ -14,8 +14,8 @@ you update your ports collection, before attempting any port upgrades.
   of lang/perl5.12 has not changed (yet).  Conditional checks for
   perl < 5.12 have been removed.  UNLESS you have PERL_VERSION=5.8.x
   or PERL_VERSION=5.10.x in /etc/make.conf you need take no action.
-  If you do, you will been to recompile all perl dependant ports after
-  updating your ports/ tree.  Please see entry 20110517 for help.
+  If you do, you will have to recompile all perl dependant ports after
+  updating your ports tree.  Please see entry 20110517 for help.
 
 20120225:
   AFFECTS: users of archivers/libarchive
