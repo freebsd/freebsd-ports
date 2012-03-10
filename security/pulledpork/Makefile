@@ -7,22 +7,24 @@
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules
 
-RUN_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-LWP-Protocol-https>=6.00:${PORTSDIR}/www/p5-LWP-Protocol-https \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-PLIST_DIRS=	%%ETCDIR%% \
-		%%DATADIR%%
+PLIST_DIRSTRY=	%%ETCDIR%%
+PLIST_DIRS=	%%DATADIR%%
 
 PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/disablesid.conf.sample \
@@ -34,12 +36,6 @@ PLIST_FILES=	bin/pulledpork.pl \
 		%%DATADIR%%/oink-conv.pl
 
 SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if (${PERL_LEVEL} < 501000)
-RUN_DEPENDS+=	p5-Archive-Tar>=1.52:${PORTSDIR}/archivers/p5-Archive-Tar
-.endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE README README.CATEGORIES README.CHANGES README.RULESET README.SHAREDOBJECTS
@@ -54,6 +50,9 @@ post-patch:
 		-e "s|/usr/local/lib/snort_dynamicrules/|${PREFIX}/etc/snort/so_rules/|g" \
 		${WRKSRC}/etc/pulledpork.conf
 	@${REINPLACE_CMD} -e "s| /usr/bin/perl|${PERL}|" ${WRKSRC}/contrib/oink-conv.pl
+# pulledpork bug id:110
+	@${REINPLACE_CMD} -e 's|distro=FreeBSD-8.0|distro=FreeBSD-8-1|g' \
+		${WRKSRC}/etc/pulledpork.conf
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${PREFIX}/bin
@@ -80,4 +79,4 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
