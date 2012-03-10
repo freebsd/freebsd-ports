@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	11.1r102.62
+PORTVERSION=	11.1r102.63
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/pdc/${PORTVERSION:C/r/\./}/:plugin \
-		ftp://ftp.ipt.ru/pub/download/:suplib \
 		LOCAL/nox:suplib
 PKGNAMEPREFIX=	linux-f10-
 DISTFILES=	install_flash_player_11_linux.i386.tar.gz:plugin \
