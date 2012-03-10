@@ -25,6 +25,8 @@ USE_GMAKE=	yes
 USE_SDL=	gfx image mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=2
+
 OPTIONS=	FLEETS "Install additional fleets" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 

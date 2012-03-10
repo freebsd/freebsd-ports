@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
 		--disable-static --disable-rpath --enable-network-trav
 USE_GMAKE=	yes
 
+CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=2
+
 .if ${PORTNAME:M*XGP}
 LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 PLIST_SUB=	YGP="@comment " XGP=""
