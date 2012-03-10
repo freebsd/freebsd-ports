@@ -7,7 +7,7 @@
 
 PORTNAME=	llnlxftp
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	https://computing.llnl.gov/resources/xdir/
 DISTNAME=	llnlxftp2.1
