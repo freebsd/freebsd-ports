@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.20
-PORTREVISION?=	1
+PORTVERSION=	2.20.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gpodder.org/src/ \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
@@ -36,7 +35,7 @@ OPTIONS=	COVERART "Cover Art syncing support" off \
 		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off \
 		SHOWNOTES "HTML episode shownotes support" off
 
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	-2.7
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
