@@ -61,11 +61,8 @@ export JAVA_VERSION=1.6
 
 cassandra_prestop() {
 	$CASSANDRA_HOME/bin/nodetool -h localhost disablegossip
-	sleep 13
-	$CASSANDRA_HOME/bin/nodetool -h localhost disablethrift
-	sleep 2
+	sleep 15
 	$CASSANDRA_HOME/bin/nodetool -h localhost drain 
-	sleep 5
 	return 0
 }
 
