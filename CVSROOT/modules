@@ -13694,8 +13694,10 @@ p5-Olson-Abbreviations          ports/devel/p5-Olson-Abbreviations
 p5-Oogly                        ports/devel/p5-Oogly
 p5-OpenCA-CRL                   ports/security/p5-OpenCA-CRL
 p5-OpenCA-CRR                   ports/security/p5-OpenCA-CRR
+p5-OpenCA-OpenSSL               ports/security/p5-OpenCA-OpenSSL
 p5-OpenCA-PKCS7                 ports/security/p5-OpenCA-PKCS7
 p5-OpenCA-REQ                   ports/security/p5-OpenCA-REQ
+p5-OpenCA-X509                  ports/security/p5-OpenCA-X509
 p5-OpenGL                       ports/graphics/p5-OpenGL
 p5-OpenOffice-OODoc             ports/textproc/p5-OpenOffice-OODoc
 p5-Oryx                         ports/databases/p5-Oryx
@@ -18179,8 +18181,10 @@ p5-oogly                        ports/devel/p5-Oogly
 p5-ootools                      ports/devel/p5-OOTools
 p5-openca-crl                   ports/security/p5-OpenCA-CRL
 p5-openca-crr                   ports/security/p5-OpenCA-CRR
+p5-openca-openssl               ports/security/p5-OpenCA-OpenSSL
 p5-openca-pkcs7                 ports/security/p5-OpenCA-PKCS7
 p5-openca-req                   ports/security/p5-OpenCA-REQ
+p5-openca-x509                  ports/security/p5-OpenCA-X509
 p5-opengl                       ports/graphics/p5-OpenGL
 p5-openoffice-oodoc             ports/textproc/p5-OpenOffice-OODoc
 p5-openxpki                     ports/security/p5-openxpki
@@ -24488,6 +24492,7 @@ rubygem-itextomml               ports/textproc/rubygem-itextomml
 rubygem-jammit                  ports/devel/rubygem-jammit
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
+rubygem-jeweler                 ports/devel/rubygem-jeweler
 rubygem-journey                 ports/www/rubygem-journey
 rubygem-jquery-rails            ports/www/rubygem-jquery-rails
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
