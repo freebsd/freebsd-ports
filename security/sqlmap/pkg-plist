@@ -4,6 +4,12 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform/clientform.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform/clientform.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform/clientform.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/cloak/README.txt
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/cloak/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/cloak/__init__.pyc
@@ -12,21 +18,109 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/cloak/cloak.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/cloak/cloak.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/README.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/dbgtool.py
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/dbgtool.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool/dbgtool.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt/fcrypt.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt/fcrypt.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt/fcrypt.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot/gprof2dot.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot/gprof2dot.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot/gprof2dot.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/README.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh-m.c
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh-m.pl
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh-s.c
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh.exe
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh_m.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh_m.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh/icmpsh_m.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive/keepalive.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive/keepalive.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive/keepalive.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/magic/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/magic/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/magic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/magic/magic.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/magic/magic.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/magic/magic.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/mssqlsig/update.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/mssqlsig/update.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/mssqlsig/update.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart/multipartpost.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart/multipartpost.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart/multipartpost.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/odict/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/odict/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/odict/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/odict/odict.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/odict/odict.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/odict/odict.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank/pagerank.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank/pagerank.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank/pagerank.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint/prettyprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint/prettyprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint/prettyprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes/pyDes.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes/pyDes.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes/pyDes.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/blanks.sh
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/duplicates.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/duplicates.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/duplicates.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/id.sh
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/pylint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/pylint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils/pylint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest/sqlharvest.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest/sqlharvest.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest/sqlharvest.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot/xdot.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot/xdot.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot/xdot.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject/xmlobject.py
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject/xmlobject.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject/xmlobject.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/magic.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/magic.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/magic.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/multipartpost.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/multipartpost.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/multipartpost.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/upx/doc/LICENSE
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/upx/doc/README
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/upx/doc/upx.html
@@ -67,9 +161,15 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/datatype.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/datatype.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/datatype.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/dicts.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/dicts.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/dicts.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/dump.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/dump.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/dump.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/enums.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/enums.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/enums.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/exception.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/exception.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/exception.pyo
@@ -79,12 +179,21 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/optiondict.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/optiondict.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/optiondict.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/profiling.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/profiling.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/profiling.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/progress.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/progress.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/progress.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/readlineng.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/readlineng.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/readlineng.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/replication.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/replication.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/replication.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/revision.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/revision.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/revision.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/session.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/session.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/session.pyo
@@ -100,12 +209,21 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/target.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/target.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/target.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/testing.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/testing.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/testing.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/threads.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/threads.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/threads.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/unescaper.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/unescaper.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/unescaper.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/update.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/update.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/core/update.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/xmldump.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/xmldump.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/core/xmldump.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/__init__.pyo
@@ -127,15 +245,18 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/html.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/html.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/html.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/queriesfile.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/queriesfile.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/queriesfile.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/payloads.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/payloads.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/parse/payloads.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/basic.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/basic.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/basic.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/basicauthhandler.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/basicauthhandler.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/basicauthhandler.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/certhandler.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/certhandler.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/certhandler.pyo
@@ -145,18 +266,36 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/connect.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/connect.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/connect.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/direct.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/direct.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/direct.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/inject.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/inject.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/inject.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/methodrequest.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/methodrequest.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/methodrequest.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/proxy.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/proxy.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/request/proxy.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/rangehandler.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/rangehandler.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/rangehandler.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/redirecthandler.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/redirecthandler.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/redirecthandler.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/templates.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/templates.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/request/templates.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/abstraction.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/abstraction.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/abstraction.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/icmpsh.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/icmpsh.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/icmpsh.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/metasploit.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/metasploit.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover/metasploit.pyo
@@ -184,9 +323,18 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind/inference.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind/inference.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind/inference.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind/timebased.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind/timebased.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind/timebased.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute/use.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute/use.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute/use.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error/use.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error/use.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error/use.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/__init__.pyo
@@ -199,51 +347,228 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/union/use.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/union/use.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/union/use.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband/stacked.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband/stacked.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband/stacked.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/detection.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/detection.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/detection.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/checkpayload.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/checkpayload.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/checkpayload.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/getch.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/getch.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/getch.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/google.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/google.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/google.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/parenthesis.py
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/parenthesis.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/parenthesis.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/hash.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/hash.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/hash.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/resume.py
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/resume.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/resume.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/timeout.py
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/timeout.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/lib/utils/timeout.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver.py
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql.py
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle.py
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle.pyo
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql.py
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql.pyc
-%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite/takeover.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/connector.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/enumeration.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/enumeration.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/enumeration.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/filesystem.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/fingerprint.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/fingerprint.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/syntax.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/takeover.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/takeover.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase/takeover.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/connector.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/connector.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/connector.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/enumeration.py
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/enumeration.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/enumeration.pyo
@@ -256,6 +581,9 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/misc.py
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/misc.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/misc.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/syntax.py
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/syntax.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/syntax.pyo
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/takeover.py
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/takeover.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic/takeover.pyo
@@ -265,24 +593,65 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/shell/backdoor.jsp_
 %%PYTHON_SITELIBDIR%%/sqlmap/shell/backdoor.php_
 %%PYTHON_SITELIBDIR%%/sqlmap/shell/runcmd.exe_
-%%PYTHON_SITELIBDIR%%/sqlmap/shell/uploader.asp_
-%%PYTHON_SITELIBDIR%%/sqlmap/shell/uploader.aspx.vb_
-%%PYTHON_SITELIBDIR%%/sqlmap/shell/uploader.aspx_
-%%PYTHON_SITELIBDIR%%/sqlmap/shell/uploader.php_
+%%PYTHON_SITELIBDIR%%/sqlmap/shell/stager.asp_
+%%PYTHON_SITELIBDIR%%/sqlmap/shell/stager.aspx_
+%%PYTHON_SITELIBDIR%%/sqlmap/shell/stager.jsp_
+%%PYTHON_SITELIBDIR%%/sqlmap/shell/stager.php_
 %%PYTHON_SITELIBDIR%%/sqlmap/sqlmap.conf
 %%PYTHON_SITELIBDIR%%/sqlmap/sqlmap.py
 %%PYTHON_SITELIBDIR%%/sqlmap/sqlmap.pyc
 %%PYTHON_SITELIBDIR%%/sqlmap/sqlmap.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/__init__.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/between.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/between.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/between.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/charencode.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/charencode.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/charencode.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/charunicodeencode.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/charunicodeencode.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/charunicodeencode.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/ifnull2ifisnull.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/ifnull2ifisnull.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/ifnull2ifisnull.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/randomcase.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/randomcase.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/randomcase.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/randomcomments.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/randomcomments.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/randomcomments.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2comment.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2comment.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2comment.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2plus.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2plus.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2plus.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2randomblank.py
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2randomblank.pyc
+%%PYTHON_SITELIBDIR%%/sqlmap/tamper/space2randomblank.pyo
+%%PYTHON_SITELIBDIR%%/sqlmap/txt/common-columns.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/txt/common-outputs.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/txt/common-tables.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/txt/keywords.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/txt/oracle-default-passwords.txt
 %%PYTHON_SITELIBDIR%%/sqlmap/txt/user-agents.txt
+%%PYTHON_SITELIBDIR%%/sqlmap/txt/wordlist.txt
 %%PYTHON_SITELIBDIR%%/sqlmap/udf/README.txt
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/linux/lib_mysqludf_sys.so
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/windows/lib_mysqludf_sys.dll
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/8.2/lib_postgresqludf_sys.so
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/8.3/lib_postgresqludf_sys.so
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/8.4/lib_postgresqludf_sys.so
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/8.2/lib_postgresqludf_sys.dll
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/8.3/lib_postgresqludf_sys.dll
-%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/8.4/lib_postgresqludf_sys.dll
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/linux/32/lib_mysqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/linux/64/lib_mysqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/windows/32/lib_mysqludf_sys.dll
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/windows/64/lib_mysqludf_sys.dll
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32/8.2/lib_postgresqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32/8.3/lib_postgresqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32/8.4/lib_postgresqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64/8.2/lib_postgresqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64/8.3/lib_postgresqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64/8.4/lib_postgresqludf_sys.so
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32/8.2/lib_postgresqludf_sys.dll
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32/8.3/lib_postgresqludf_sys.dll
+%%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32/8.4/lib_postgresqludf_sys.dll
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner/cookie.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner/generic.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner/mssql.xml
@@ -294,17 +663,19 @@ bin/sqlmap
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner/sharepoint.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner/x-aspnet-version.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner/x-powered-by.xml
-%%PYTHON_SITELIBDIR%%/sqlmap/xml/detection.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/errors.xml
+%%PYTHON_SITELIBDIR%%/sqlmap/xml/livetests.xml
+%%PYTHON_SITELIBDIR%%/sqlmap/xml/payloads.xml
+%%PYTHON_SITELIBDIR%%/sqlmap/xml/phpids_rules.xml
 %%PYTHON_SITELIBDIR%%/sqlmap/xml/queries.xml
+%%PYTHON_SITELIBDIR%%/sqlmap/xml/sqlmap.xsd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.pdf
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%DATADIR%%/msfauxmod/README.txt
-%%DATADIR%%/msfauxmod/wmap_sqlmap.rb
+%%DATADIR%%/msfauxmod/sqlmap.rb
 %%DATADIR%%/runcmd/README.txt
 %%DATADIR%%/runcmd/windows/README.txt
 %%DATADIR%%/runcmd/windows/runcmd.sln
@@ -313,29 +684,51 @@ bin/sqlmap
 %%DATADIR%%/runcmd/windows/runcmd/stdafx.cpp
 %%DATADIR%%/runcmd/windows/runcmd/stdafx.h
 %%DATADIR%%/udfhack/README.txt
+%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/Makefile
+%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/install.sh
+%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/lib_mysqludf_sys.c
+%%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys/lib_mysqludf_sys.sql
+%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/Makefile
+%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/install.sh
+%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/lib_postgresqludf_sys.c
+%%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
+%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/Makefile
+%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/install.sh
+%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/lib_mysqludf_sys.c
+%%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys/lib_mysqludf_sys.sql
+%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/Makefile
+%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/install.sh
+%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/lib_postgresqludf_sys.c
+%%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
 %%DATADIR%%/udfhack/linux/README.txt
-%%DATADIR%%/udfhack/linux/lib_mysqludf_sys/Makefile
-%%DATADIR%%/udfhack/linux/lib_mysqludf_sys/install.sh
-%%DATADIR%%/udfhack/linux/lib_mysqludf_sys/lib_mysqludf_sys.c
-%%DATADIR%%/udfhack/linux/lib_mysqludf_sys/lib_mysqludf_sys.sql
-%%DATADIR%%/udfhack/linux/lib_postgresqludf_sys/Makefile
-%%DATADIR%%/udfhack/linux/lib_postgresqludf_sys/install.sh
-%%DATADIR%%/udfhack/linux/lib_postgresqludf_sys/lib_postgresqludf_sys.c
-%%DATADIR%%/udfhack/linux/lib_postgresqludf_sys/lib_postgresqludf_sys.sql
+%%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys.sln
+%%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
+%%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
+%%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys.sln
+%%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.c
+%%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.vcproj
+%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys.sln
+%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/__exec_payload.asm
+%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
+%%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
+%%DATADIR%%/udfhack/windows/64/lib_postgresqludf_sys/README.txt
 %%DATADIR%%/udfhack/windows/README.txt
-%%DATADIR%%/udfhack/windows/lib_mysqludf_sys/lib_mysqludf_sys.sln
-%%DATADIR%%/udfhack/windows/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.c
-%%DATADIR%%/udfhack/windows/lib_mysqludf_sys/lib_mysqludf_sys/lib_mysqludf_sys.vcproj
-%%DATADIR%%/udfhack/windows/lib_postgresqludf_sys/lib_postgresqludf_sys.sln
-%%DATADIR%%/udfhack/windows/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.c
-%%DATADIR%%/udfhack/windows/lib_postgresqludf_sys/lib_postgresqludf_sys/lib_postgresqludf_sys.vcproj
-@dirrm %%DATADIR%%/udfhack/windows/lib_postgresqludf_sys/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/lib_mysqludf_sys/lib_mysqludf_sys
-@dirrm %%DATADIR%%/udfhack/windows/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/64/lib_postgresqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/64/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/64
+@dirrm %%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys/lib_postgresqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/32/lib_postgresqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/32/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/windows/32
 @dirrm %%DATADIR%%/udfhack/windows
-@dirrm %%DATADIR%%/udfhack/linux/lib_postgresqludf_sys
-@dirrm %%DATADIR%%/udfhack/linux/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/linux/64/lib_postgresqludf_sys
+@dirrm %%DATADIR%%/udfhack/linux/64/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/linux/64
+@dirrm %%DATADIR%%/udfhack/linux/32/lib_postgresqludf_sys
+@dirrm %%DATADIR%%/udfhack/linux/32/lib_mysqludf_sys
+@dirrm %%DATADIR%%/udfhack/linux/32
 @dirrm %%DATADIR%%/udfhack/linux
 @dirrm %%DATADIR%%/udfhack
 @dirrm %%DATADIR%%/runcmd/windows/runcmd
@@ -346,28 +739,53 @@ bin/sqlmap
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/xml/banner
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/xml
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/8.4
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/8.3
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/8.2
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/64/8.4
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/64/8.3
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/64/8.2
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/64
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32/8.4
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32/8.3
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32/8.2
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows/32
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/windows
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/8.4
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/8.3
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/8.2
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64/8.4
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64/8.3
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64/8.2
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/64
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32/8.4
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32/8.3
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32/8.2
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux/32
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql/linux
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/postgresql
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/windows/64
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/windows/32
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/windows
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/linux/64
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/linux/32
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql/linux
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf/mysql
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/udf
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/txt
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/tamper
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/shell
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/generic
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sybase
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/sqlite
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/postgresql
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/oracle
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mysql
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/mssqlserver
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/maxdb
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/firebird
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms/access
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins/dbms
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/utils
-@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/outband
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband/union
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/inband
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/error
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/brute
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques/blind
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/techniques
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/takeover
@@ -382,7 +800,23 @@ bin/sqlmap
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib/upx
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/lib
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/xmlobject
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/xdot
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/sqlharvest
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/shutils
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/pydes
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/prettyprint
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/pagerank
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/odict
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/multipart
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/mssqlsig
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/magic
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/keepalive
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/icmpsh
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/gprof2dot
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/fcrypt
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/dbgtool
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/cloak
+@dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra/clientform
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap/extra
 @dirrm %%PYTHON_SITELIBDIR%%/sqlmap
