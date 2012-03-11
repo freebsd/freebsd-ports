@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.1
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
 
-USE_PERL5=	5.8+
+USE_PERL5=	5.12+
 MAN5=		monitorix.conf.5
 MAN8=		monitorix.8
 MANCOMPRESSED=	no
@@ -32,7 +32,7 @@ NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 CGIDIR?=	www/cgi-bin
-CGIPATH?=	cgi-bin
+CGIPATH?=	/cgi-bin
 WWW_OWNER?=	${WWWOWN}
 WWW_GROUP?=	${WWWGRP}
 REPORT_LANG=	ca de en it
