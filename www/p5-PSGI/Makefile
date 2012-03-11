@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PSGI
-PORTVERSION=	1.03
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -17,7 +17,8 @@ COMMENT=	Pod documentation for Perl Web Server Gateway Interface Specification
 
 PERL_CONFIGURE=	yes
 
-MAN3=	PSGI::FAQ.3 \
+MAN3=	PSGI::Extensions.3 \
+	PSGI::FAQ.3 \
 	PSGI.3
 
 .include <bsd.port.mk>
