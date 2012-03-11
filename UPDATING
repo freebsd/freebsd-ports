@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120311:
+  AFFECTS: users of lang/perl5.8 and lang/perl5.10
+  AUTHOR: linimon@FreeBSD.org
+
+  lang/perl5.8 and lang/perl5.10 have been restored from the Attic
+  in order to give a FreeBSD-style deprecation cycle.  However, users
+  are advised to upgrade to perl5.12 as soon as feasible.
+
 20120308:
   AFFECTS: users of lang/perl5.8 and lang/perl5.10
   AUTHOR: pgollucci@FreeBSD.org
