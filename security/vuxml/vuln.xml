@@ -63,8 +63,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[117620] [117656] Critical CVE-2011-3047: Errant plug-in load and
 	    GPU process memory corruption.  Credit to PinkiePie.</p>
 	</blockquote>
