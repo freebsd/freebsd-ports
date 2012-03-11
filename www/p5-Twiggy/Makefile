@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Twiggy
-PORTVERSION=	0.1010
+PORTVERSION=	0.1020
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -21,6 +21,9 @@ RUN_DEPENDS=	\
 	p5-Plack>=0.99:${PORTSDIR}/www/p5-Plack \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
