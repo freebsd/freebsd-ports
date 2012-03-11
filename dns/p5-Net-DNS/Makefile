@@ -53,7 +53,9 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::KX.3 Net::DNS::RR::HIP.3 \
 		Net::DNS::Resolver::Cygwin.3 Net::DNS::RR::SPF.3
 
-PORTDOCS=	*
+PORTDOCS=	Changes README TODO
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_IPV6)
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
@@ -64,12 +66,11 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/LibIDN.pm:${PORTSDIR}/dns/p5-Net-Lib
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
-DOCS=		Changes README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
