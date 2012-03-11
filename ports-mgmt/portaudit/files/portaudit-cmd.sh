@@ -1,6 +1,7 @@
 #!/bin/sh -efu
 #
 # Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
+# Copyright (c) 2012 Michael Gmelin <freebsd@grem.de>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -48,33 +49,61 @@ portaudit_confs()
 	: ${portaudit_fetch_cmd:="fetch -1mp"}
 
 	: ${portaudit_sites:="http://portaudit.FreeBSD.org/"}
+	: ${portaudit_pubkey:="%%PREFIX%%/etc/portaudit.pubkey"}
 
 	: ${portaudit_fixed=""}
 }
 
-extract_auditfile()
+extract_auditfile_raw()
 {
 	%%BZIP2_CMD%% -dc -- "$portaudit_dir/$portaudit_filename" | \
 		tar -xOf - auditfile
 }
 
+extract_auditfile()
+{
+	extract_auditfile_raw | egrep "^[a-zA-Z0-9*+,.<=>_{}-]+[|][a-zA-Z0-9 %:/._?-]+[|][^|]+$"
+}
+
 checksum_auditfile()
 {
-	chksum1=`extract_auditfile |
+	chksum1=`extract_auditfile_raw |
 		sed -nE -e '$s/^#CHECKSUM: *MD5 *([0-9a-f]{32})$/\1/p'`
-	chksum2=`extract_auditfile | sed -e '$d' | md5`
+	chksum2=`extract_auditfile_raw | sed -e '$d' | md5`
 	[ "$chksum1" = "$chksum2" ];
+}
+
+checksignature_auditfile()
+{
+	local TMPFILE=`mktemp -t portaudit`
+
+	extract_auditfile_raw | egrep "^#SIGNATURE: " | sed "s/^#SIGNATURE: //g" \
+		| openssl enc -d -a >$TMPFILE
+	signatureresult=`extract_auditfile_raw | egrep -v "^#SIGNATURE: " \
+	    | egrep -v "^#CHECKSUM: " \
+	    | openssl dgst -sha256 -verify ${portaudit_pubkey} -signature $TMPFILE`
+	if [ -n "$TMPFILE" ]; then
+		rm "$TMPFILE"
+	fi
+	[ "$signatureresult" = "Verified OK" ]
+}
+
+validate_auditfile()
+{
+	hash1=`extract_auditfile_raw | egrep -v "^(#|\$)" | sha256`
+	hash2=`extract_auditfile | egrep -v "^(#|\$)" | sha256`
+	[ "$hash1" = "$hash2" ];
 }
 
 getcreated_auditfile()
 {
-	extract_auditfile |
+	extract_auditfile_raw |
 		sed -nE -e '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}) *([0-9]{2}):?([0-9]{2}):?([0-9]{2}).*$/\1-\2-\3 \4:\5:\6/p'
 }
 
 gettimestamp_auditfile()
 {
-	extract_auditfile |
+	extract_auditfile_raw |
 		sed -nE -e '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$/\1\2\3/p'
 }
 
@@ -119,6 +148,15 @@ portaudit_prerequisites()
 		return 2
 	elif ! checksum_auditfile; then
 		echo "portaudit: Corrupt database." >&2
+		return 2
+	elif [ ! -r "$portaudit_pubkey" ]; then
+		echo "portaudit: Public key $portaudit_pubkey not found." >&2
+		return 2
+	elif ! checksignature_auditfile; then
+		echo "portaudit: Database contains invalid signature." >&2
+		return 2
+	elif ! validate_auditfile; then
+		echo "portaudit: Invalid database." >&2
 		return 2
 	elif ! checkexpiry_auditfile 14; then
 		echo "portaudit: Database too old." >&2
@@ -316,6 +354,10 @@ fetch_auditfile()
 		echo "portaudit: No database." >&2
 	elif ! checksum_auditfile; then
 		echo "portaudit: Database corrupt." >&2
+	elif ! checksignature_auditfile; then
+		echo "portaudit: Database contains invalid signature." >&2
+	elif ! validate_auditfile; then
+		echo "portaudit: Invalid database." >&2
 	elif ! checkexpiry_auditfile 7; then
 		echo "portaudit: Database too old." >&2
 	else
@@ -424,11 +466,28 @@ if $opt_dbversion; then
 		echo "portaudit: Database corrupt." >&2
 		exit 2
 	fi
+	if ! checksignature_auditfile; then
+		echo "portaudit: Database contains invalid signature." >&2
+		exit 2
+	fi
+	if ! validate_auditfile; then
+		echo "portaudit: Invalid database." >&2
+		exit 2
+	fi
 	created=`getcreated_auditfile`
 	echo "Database created: `date -j -f '%Y-%m-%d %H:%M:%S %Z' \"$created GMT\"`"
 fi
 
 prerequisites_checked=false
+
+
+SANITIZETYPE_AWK='
+	function sanitize_type(type) {
+		retval = type;
+		gsub(/[^ a-zA-Z0-9%()#&.+\/\[\]:<>=@_-]/, " ", retval);
+		return retval;
+	}
+	'
 
 if $opt_quiet; then
 	PRINTAFFECTED_AWK='
@@ -437,11 +496,11 @@ if $opt_quiet; then
 		}
 		'
 elif $opt_verbose; then
-	PRINTAFFECTED_AWK='
+	PRINTAFFECTED_AWK="$SANITIZETYPE_AWK"'
 		function print_affected(apkg, note) {
 			split(apkg, thepkg)
 			print "Affected package: " thepkg[1] " (matched by " $1 ")"
-			print "Type of problem: " $3 "."
+			print "Type of problem: " sanitize_type($3) "."
 			split($2, ref, / /)
 			for (r in ref)
 				print "Reference: " ref[r]
@@ -451,11 +510,11 @@ elif $opt_verbose; then
 		}
 		'
 else
-	PRINTAFFECTED_AWK='
+	PRINTAFFECTED_AWK="$SANITIZETYPE_AWK"'
 		function print_affected(apkg, note) {
 			split(apkg, thepkg)
 			print "Affected package: " thepkg[1]
-			print "Type of problem: " $3 "."
+			print "Type of problem: " sanitize_type($3) "."
 			split($2, ref, / /)
 			for (r in ref)
 				print "Reference: " ref[r]
