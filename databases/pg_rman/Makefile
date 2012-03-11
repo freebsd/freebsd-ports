@@ -14,14 +14,10 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Online backup and restore tool for PostgreSQL
 
 USE_GMAKE=	yes
-USE_PGSQL=	YES
-WANT_PGSQL_VER?=83
+USE_PGSQL=	client server
+WANT_PGSQL_VER=	83
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	USE_PGXS=1
 PLIST_FILES=	bin/pg_rman
 
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
