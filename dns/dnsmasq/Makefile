@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.59
+DISTVERSION=	2.60
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		${MASTER_SITE_LOCAL}/
+#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
 MASTER_SITE_SUBDIR=	mandree
 EXTRACT_SUFX=	.tar.lzma
 
@@ -27,14 +28,15 @@ SUB_FILES=	pkg-message
 
 USE_XZ=		yes
 MAKE_JOBS_SAFE=	yes
-MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}" COPTS="${CFLAGS}"
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
+CFLAGS+=	-Wall -Wno-unused-value
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
 OPTIONS=	IPV6 "IPv6 support" on
 OPTIONS+=	DBUS "DBUS support" off
 OPTIONS+=	NLS  "National Language Support (NLS, enables IDN)" on
 OPTIONS+=	IDN  "International Domain Names (IDN) WITHOUT NLS" off
 # unfortunately, NLS always enables IDN in dnsmasq 2.57
+OPTIONS+=	LUA  "Support lease-change scripts in LUA" off
 
 .include <bsd.port.options.mk>
 
@@ -52,7 +54,7 @@ USE_GMAKE=	yes
 .else
 PLIST_SUB+=	NLS="@comment "
 .if defined(WITH_IDN)
-MAKE_ARGS+=	COPTS=-DHAVE_IDN
+CFLAGS+=	-DHAVE_IDN
 LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
 .endif
 .endif
@@ -63,9 +65,17 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 CFLAGS+=	-DHAVE_DBUS
 .endif
 
+.if defined(WITH_LUA)
+CFLAGS+=	-DHAVE_LUASCRIPT
+USE_LUA=	5.1
+.endif
+
 USE_RC_SUBR=	dnsmasq.sh
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s/lua5\.1/lua-5.1/" ${WRKSRC}/Makefile
 
 pre-configure:
 	@:
