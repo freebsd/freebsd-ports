@@ -3408,21 +3408,14 @@ _EXTRACT_AUDITFILE=	${TAR} -jxOf "${AUDITFILE}" auditfile
 check-vulnerable:
 .if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
 	@if [ -f "${AUDITFILE}" ]; then \
-		audit_created=`${_EXTRACT_AUDITFILE} | \
-			${SED} -nEe "1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$$/\1\2\3/p"`; \
-		audit_expiry=`/bin/date -u -v-14d "+%Y%m%d"`; \
-		if [ "$$audit_created" -lt "$$audit_expiry" ]; then \
-			${ECHO_MSG} "===>  WARNING: Vulnerability database out of date, checking anyway"; \
-		fi; \
 		if [ -n "${WITH_PKGNG}" ]; then \
 			vlist=`${PKG_BIN} audit "${PKGNAME}"`; \
+		elif [ -x "${LOCALBASE}/sbin/portaudit" ]; then \
+			vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
+				2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
+				|| true`; \
 		else \
-			vlist=`${_EXTRACT_AUDITFILE} | ${GREP} "${PORTNAME}" | \
-				${AWK} -F\| ' /^[^#]/ { \
-					if (!system("${PKG_VERSION} -T \"${PKGNAME}\" \"" $$1 "\"")) \
-						print "=> " $$3 ".\n   Reference: " $$2 \
-				} \
-			'`; \
+			${ECHO_MSG} "===>  portaudit database exist, but portaudit not found!"; \
 		fi; \
 		if [ -n "$$vlist" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
@@ -3430,8 +3423,6 @@ check-vulnerable:
 			${ECHO_MSG} "=> Please update your ports tree and try again."; \
 			exit 1; \
 		fi; \
-	else \
-		${ECHO_MSG} "===>  Vulnerability check disabled, database not found"; \
 	fi
 .endif
 
