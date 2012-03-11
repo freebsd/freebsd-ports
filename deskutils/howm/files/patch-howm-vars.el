@@ -1,11 +1,11 @@
---- howm-vars.el.orig	2010-01-18 00:13:34.830023820 +0900
-+++ howm-vars.el	2010-01-18 00:13:50.346324312 +0900
-@@ -657,7 +657,7 @@
+--- howm-vars.el.orig	2011-08-23 20:48:27.000000000 +0900
++++ howm-vars.el	2012-03-11 22:18:42.730947048 +0900
+@@ -679,7 +679,7 @@
+   "*Command name for fgrep.
  This variable is obsolete and may be removed in future.")
  (defvar howm-view-grep-default-option
-   (concat "-Hnr "
--          (mapconcat (lambda (d) (concat "--exclude-dir=" d))
-+          (mapconcat (lambda (d) (concat "--exclude=" d))
-                      howm-excluded-dirs " ")))
- (howm-defcustom-risky howm-view-grep-option howm-view-grep-default-option
-   "*Common grep option for howm."
+-  (labels ((ed (d) (concat "--exclude-dir=" d)))
++  (labels ((ed (d) (concat "--exclude=" d)))
+     (let* ((has-ed (condition-case nil
+                        (eq 0 (call-process howm-view-grep-command nil nil nil
+                                            (ed "/") "--version"))
