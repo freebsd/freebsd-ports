@@ -4,6 +4,7 @@
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Dad.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator/Deprecated.pm
+%%SITE_PERL%%/DBIx/Class/DeploymentHandler/DeployMethod/SQL/Translator/ScriptHelpers.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/Deprecated.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesDeploy.pm
 %%SITE_PERL%%/DBIx/Class/DeploymentHandler/HandlesVersionStorage.pm
