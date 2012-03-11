@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Session
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -22,9 +22,10 @@ RUN_DEPENDS=	\
 	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1 \
 	p5-HTML-StickyQuery>0:${PORTSDIR}/www/p5-HTML-StickyQuery \
 	p5-libwww>=5.818:${PORTSDIR}/www/p5-libwww \
-	p5-UNIVERSAL-require>=0.05:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+	p5-Module-Runtime>=0.011:${PORTSDIR}/devel/p5-Module-Runtime \
 	p5-URI>=1.38:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
