@@ -175,18 +175,12 @@ etc/snort/preproc_rules/sensitive-data.rules-sample
 %%DYNAMIC%%lib/snort/dynamicpreprocessor/lib_sfdynamic_preprocessor_example.la
 %%DYNAMIC%%@dirrmtry lib/snort/dynamicpreprocessor
 %%DYNAMIC%%@dirrmtry lib/snort
-%%EXAMPLESDIR%%/classification.config-sample
-%%EXAMPLESDIR%%/create_db2
-%%EXAMPLESDIR%%/create_mssql
-%%EXAMPLESDIR%%/create_mysql
-%%EXAMPLESDIR%%/create_oracle.sql
-%%EXAMPLESDIR%%/create_postgresql
-%%EXAMPLESDIR%%/gen-msg.map-sample
-%%EXAMPLESDIR%%/reference.config-sample
-%%EXAMPLESDIR%%/snort.conf-sample
-%%EXAMPLESDIR%%/threshold.conf-sample
-%%EXAMPLESDIR%%/unicode.map-sample
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_db2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_mssql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_oracle.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/create_postgresql
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
