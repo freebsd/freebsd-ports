@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Fixtures
-PORTVERSION=	1.001013
+PORTVERSION=	1.001015
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJNAPIORK
@@ -31,10 +31,13 @@ RUN_DEPENDS=	\
 	p5-YAML-Syck>=0.26:${PORTSDIR}/textproc/p5-YAML-Syck \
 	p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class
 BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite
+TEST_DEPENDS=	\
+	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
+	p5-DBIx-Class-InflateColumn-FS>0:${PORTSDIR}/databases/p5-DBIx-Class-InflateColumn-FS
 
 PERL_CONFIGURE=	yes
 
-MAN3=	DBIx::Class::Fixtures.3
+MAN3=	DBIx::Class::Fixtures.3 \
+	DBIx::Class::Fixtures::External::File.3
 
 .include <bsd.port.mk>
