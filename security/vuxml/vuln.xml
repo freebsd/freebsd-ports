@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
 <!--
-Copyright 2003-2011 Jacques Vidrine and contributors
+Copyright 2003-2012 Jacques Vidrine and contributors
 
 Redistribution and use in source (VuXML) and 'compiled' forms (SGML,
 HTML, PDF, PostScript, RTF and so forth) with or without modification,
@@ -52,6 +52,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6d329b64-6bbb-11e1-9166-001e4f0fb9b1">
+    <topic>portaudit -- auditfile remote code execution</topic>
+    <affects>
+      <package>
+	<name>portaudit</name>
+	<range><lt>0.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Gmelin and Jörg Scheinert has reported a remote
+	  command execution vulnerability in portaudit.</p>
+	<p>An attacker who can get the user to use a specially crafted
+	  audit file will be able to run commands on the users system,
+	  with the privileges of the user running running portaudit
+	  (often root).</p>
+	<p>The attach could e.g. happen through DNS hijacking or a man
+	  in the middle attack.</p>
+	<p>Note that if the user has set up portaudit to run from
+	  periodic this attack could happen without direct user
+	  interaction.</p>
+	<p>In the FreeBSD Ports Collection (bsd.port.mk) the check for
+	  vulnerable ports at install-time directly operates on the
+	  auditfile and has the same vulnerability as portaudit.  As
+	  the Ports Collection infrastructure does not have a version
+	  number just be sure to have a Ports Collection new enough to
+	  contain the fix for portaudit.  Note that this
+	  is <em>only</em> a problem for users which has portaudit
+	  installed, as they will not have the audit database
+	  installed or downloaded otherwise.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://cvsweb.FreeBSD.org/ports/ports-mgmt/portaudit/Makefile#rev1.30</url>
+      <url>http://cvsweb.FreeBSD.org/ports/Mk/bsd.port.mk#rev1.707</url>
+    </references>
+    <dates>
+      <discovery>2012-03-11</discovery>
+      <entry>2012-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab1f515d-6b69-11e1-8288-00262d5ed8ee">
     <topic>chromium -- Errant plug-in load and GPU process memory corruption</topic>
     <affects>
