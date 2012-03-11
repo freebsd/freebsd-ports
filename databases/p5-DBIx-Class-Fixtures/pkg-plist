@@ -3,7 +3,9 @@
 %%SITE_PERL%%/DBIx/Class/Fixtures/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Fixtures/DBI/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Fixtures/DBI/mysql.pm
+%%SITE_PERL%%/DBIx/Class/Fixtures/External/File.pm
 %%SITE_PERL%%/DBIx/Class/Fixtures/Schema.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Fixtures/External
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Fixtures/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Fixtures
 @dirrmtry %%SITE_PERL%%/DBIx/Class
