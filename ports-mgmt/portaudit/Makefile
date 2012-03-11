@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.5.17
+PORTVERSION=	0.6.0
 CATEGORIES=	ports-mgmt security
 DISTFILES=
 
@@ -55,6 +55,7 @@ pre-install:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit-cmd.sh ${PREFIX}/sbin/portaudit
 	@${INSTALL_DATA} ${WRKDIR}/portaudit.conf ${PREFIX}/etc/portaudit.conf.sample
+	@${INSTALL_DATA} ${FILESDIR}/portaudit.pubkey ${PREFIX}/etc
 	@${INSTALL_MAN} ${WRKDIR}/portaudit.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${PERIODICDIR}/security
 	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit.sh ${PERIODICDIR}/security/410.portaudit
