@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	howm
-PORTVERSION=	1.3.9.1
-PORTREVISION=	4
+PORTVERSION=	1.3.9.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 
