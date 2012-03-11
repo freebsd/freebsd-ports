@@ -36,14 +36,14 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				- Detected MySQL version.
 ##
 # USE_PGSQL		- Add PostgreSQL client dependency.  Components can be depended
-#				  on using USE_PGSQL=	server pltcl
+#				  on using USE_PGSQL=	component[:target].  For the full list
+#				  use make -V _USE_PGSQL_DEP
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
 #				  necessary (PostgreSQL-9.0 = 90).
 # DEFAULT_PGSQL_VER
-#				- PostgreSQL default version.  Can be overridden within a
-#				  port.  Default: 90.
+#				- PostgreSQL default version, currently 90.
 # WANT_PGSQL_VER
 #				- Maintainer can set an arbitrary version of PostgreSQL to
 #				  always build this port with (overrides WITH_PGSQL_VER).
@@ -187,8 +187,6 @@ WITH_PGSQL_VER?=	${_PGSQL_VER}
 .	 if ${WITH_PGSQL_VER} != ${_PGSQL_VER}
 IGNORE?=		cannot install: you have set WITH_PGSQL_VER=${WITH_PGSQL_VER} in make.conf, but you have postgresql${_PGSQL_VER}-client installed
 .	 endif
-.  else
-WITH_PGSQL_VER?=	${DEFAULT_PGSQL_VER}
 .  endif
 
 .  if defined(WANT_PGSQL_VER)
@@ -210,20 +208,24 @@ _WANT_PGSQL_VER?=	${WANT_PGSQL_VER}
 
 .  if !empty(_WANT_PGSQL_VER)
 .    for version in ${_WANT_PGSQL_VER}
-.      if ${WITH_PGSQL_VER} == ${version} 
+.      if defined(WITH_PGSQL_VER)
+.        if ${WITH_PGSQL_VER} == ${version}
 PGSQL_VER=	${WITH_PGSQL_VER}
+.        endif
+.      else
+PGSQL_VER=	${version}
 .      endif
 .    endfor
-.    if !defined(PGSQL_VER)
-.	   if ${WITH_PGSQL_VER} == ${DEFAULT_PGSQL_VER}
-IGNORE?=	cannot install: the port wants postgresql-client version ${WANT_PGSQL_VER} and the port does not work with the default version (${WITH_PGSQL_VER}).  Try installing postgresql-client version ${WANT_PGSQL_VER}
-.	   else
+.    if empty(PGSQL_VER)
 IGNORE?=	cannot install: the port wants postgresql-client version ${WANT_PGSQL_VER} and you have version ${WITH_PGSQL_VER} installed or set in make.conf
-.	   endif
 .    endif
 .  endif
 
+.if !empty(WITH_PGSQL_VER)
 PGSQL_VER?=	${WITH_PGSQL_VER}
+.else
+PGSQL_VER?=	${DEFAULT_PGSQL_VER}
+.endif
 
 # And now we are checking if we can use it
 .if defined(PGSQL${PGSQL_VER}_LIBVER)
@@ -234,14 +236,24 @@ IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER}-client (Post
 .		endif
 .	endfor
 .endif # IGNORE_WITH_PGSQL
+
 LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
-.  if ${USE_PGSQL:Mserver}
-BUILD_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-RUN_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
-.  endif
-.  if ${USE_PGSQL:Mpltcl}
-LIB_DEPENDS+=	pgtcl:${PORTSDIR}/databases/postgresql${PGSQL_VER}-pltcl
-.  endif
+
+_USE_PGSQL_DEP=			contrib docs pltcl plperl server
+_USE_PGSQL_DEP_contrib=	pgbench
+_USE_PGSQL_DEP_docs=	postgresql-docs>0
+_USE_PGSQL_DEP_pltcl=	postgresql-pltcl>0
+_USE_PGSQL_DEP_plperl=	postgresql-plperl>0
+_USE_PGSQL_DEP_server=	postgres
+.  for depend in ${_USE_PGSQL_DEP}
+.    if ${USE_PGSQL:M${depend}}
+BUILD_DEPENDS+=	${_USE_PGSQL_DEP_${depend}}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-${depend}
+RUN_DEPENDS+=	${_USE_PGSQL_DEP_${depend}}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-${depend}
+.    elif ${USE_PGSQL:M${depend}\:*}
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql${PGSQL_VER}-${depend}:${USE_PGSQL:M${depend}\:*:C,^[^:]*\:,,}
+.    endif
+.  endfor
+
 .else
 IGNORE?=		cannot install: unknown PostgreSQL version: ${PGSQL_VER}
 .endif # Check for correct version
