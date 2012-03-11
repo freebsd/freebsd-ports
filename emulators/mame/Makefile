@@ -35,7 +35,7 @@ USE_ZIP=	yes
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
 USE_SDL=	sdl ttf
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 USE_GMAKE=	yes
 MAKE_ENV=	NOWERROR=1 OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}"
 MAKEFILE=	makefile
