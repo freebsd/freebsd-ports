@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Any-Adapter
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Perl extension to log anywhere
 
 RUN_DEPENDS=	\
 	p5-Log-Any>=0.10:${PORTSDIR}/devel/p5-Log-Any \
-	p5-Scope-Guard>0:${PORTSDIR}/devel/p5-Scope-Guard \
+	p5-Guard>0:${PORTSDIR}/devel/p5-Guard \
 	p5-Devel-GlobalDestruction>0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
