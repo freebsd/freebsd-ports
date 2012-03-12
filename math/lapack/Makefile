@@ -7,7 +7,7 @@
 
 PORTNAME?=	lapack
 PORTVERSION=	3.4.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/ \
 		http://service-spi.web.cern.ch/service-spi/external/tarFiles/
