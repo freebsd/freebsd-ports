@@ -7,6 +7,7 @@
 
 PORTNAME=	graid5
 PORTVERSION=	${MAINVERSION}.${VERSIONDATE}
+PORTREVISION=	1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/graid5/
 
@@ -22,6 +23,8 @@ VERSIONDATE=20110927.40
 
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
+SUB_LIST=	KMODDIR=${KMODDIR}
+SUB_FILES=	pkg-deinstall
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 MANCOMPRESSED=	yes
@@ -34,9 +37,6 @@ IGNORE=	requires sbin source files
 .endif
 
 post-install:
-	kldxref ${KMODDIR}
-
-post-deinstall:
 	kldxref ${KMODDIR}
 
 .include <bsd.port.mk>
