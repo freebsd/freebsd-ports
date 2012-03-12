@@ -13,8 +13,11 @@ MASTER_SITES=	http://skillcoder.narod.ru/wow/antrix/ \
 		http://wtq.ru/wow/antrix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	skillcoder@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free stable dedicated-server for World of Warcraft
+
+DEPRECATED=	no more public distfiles, abandoned upstream
+EXPIRATION_DATE=	2012-06-01
 
 BUILD_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
