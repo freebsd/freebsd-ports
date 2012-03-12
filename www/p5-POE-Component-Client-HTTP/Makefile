@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-HTTP
-PORTVERSION=	0.9440
+PORTVERSION=	0.9450
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -22,11 +22,11 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-POE>=1.312:${PORTSDIR}/devel/p5-POE \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
-		p5-POE-Component-Client-Keepalive>=0.2680:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
-		p5-Test-POE-Server-TCP>=1.14:${PORTSDIR}/devel/p5-Test-POE-Server-TCP \
-		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-POE-Component-Client-Keepalive>=0.2690:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive \
 		p5-Socket-GetAddrInfo>=0.19:${PORTSDIR}/net/p5-Socket-GetAddrInfo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-POE-Server-TCP>=1.14:${PORTSDIR}/devel/p5-Test-POE-Server-TCP
 
 PERL_CONFIGURE=	yes
 
@@ -35,4 +35,10 @@ MAN3=		POE::Component::Client::HTTP.3 \
 		POE::Component::Client::HTTP::RequestFactory.3 \
 		POE::Filter::HTTPChunk.3 POE::Filter::HTTPHead.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
