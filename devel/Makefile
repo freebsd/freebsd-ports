@@ -1726,6 +1726,7 @@
     SUBDIR += p5-Errno
     SUBDIR += p5-Eval-Closure
     SUBDIR += p5-Eval-Context
+    SUBDIR += p5-Eval-LineNumbers
     SUBDIR += p5-Event
     SUBDIR += p5-Event-ExecFlow
     SUBDIR += p5-Event-Join

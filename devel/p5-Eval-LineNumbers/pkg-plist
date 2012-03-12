@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Eval/LineNumbers.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/LineNumbers/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval/LineNumbers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Eval
+@dirrmtry %%SITE_PERL%%/Eval
