@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.350
+PORTVERSION=	1.351
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -19,9 +19,17 @@ LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
-		p5-POE-Test-Loops>=1.350:${PORTSDIR}/devel/p5-POE-Test-Loops
+		p5-POE-Test-Loops>=1.351:${PORTSDIR}/devel/p5-POE-Test-Loops
 RUN_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
-		p5-POE-Test-Loops>=1.350:${PORTSDIR}/devel/p5-POE-Test-Loops
+		p5-POE-Test-Loops>=1.351:${PORTSDIR}/devel/p5-POE-Test-Loops
+
+TEST_DEPENDS=	p5-Curses>=1.08:${PORTSDIR}/devel/p5-Curses \
+		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-Socket-GetAddrInfo>=0.20:${PORTSDIR}/net/p5-Socket-GetAddrInfo \
+		p5-Term-ReadKey>=2.21:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-Term-Size>=0:${PORTSDIR}/devel/p5-Term-Size \
+		p5-URI>=1.30:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=5.79:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default
