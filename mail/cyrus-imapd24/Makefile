@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.13
-PORTREVISION=	2
+PORTVERSION=	2.4.14
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
