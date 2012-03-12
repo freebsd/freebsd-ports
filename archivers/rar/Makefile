@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.1
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
@@ -14,6 +14,11 @@ DISTNAME=	rarbsd-${PORTVERSION}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
+
+LICENSE=	RAR
+LICENSE_NAME=	RAR license
+LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
