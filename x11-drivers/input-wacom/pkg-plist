@@ -1,12 +1,4 @@
-lib/libwacomcfg.so.0
-lib/libwacomcfg.so
-lib/libwacomcfg.la
-lib/libwacomcfg.a
-bin/wacdump
-bin/xidump
 bin/xsetwacom
-include/wacomcfg/wacomcfg.h
-@dirrm include/wacomcfg
 %%XINPUTMODDIR%%/wacom_drv.so
 @dirrmtry %%XINPUTMODDIR%%
 @cwd %%KMODDIR%%
