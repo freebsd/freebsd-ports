@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	7.1
+PORTVERSION=	7.1.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
-DISTNAME=	netbeans-${PORTVERSION}-201112071828-ml
+DISTNAME=	netbeans-${PORTVERSION}-201203012225-ml
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
