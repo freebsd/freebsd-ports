@@ -26,7 +26,7 @@ bin/mp3info2
 @dirrm %%SITE_PERL%%/Normalize/Text/Music_Fields
 @dirrm %%SITE_PERL%%/Normalize/Text
 @dirrm %%SITE_PERL%%/Normalize
-@dirrm %%SITE_PERL%%/Encode
+@dirrmtry %%SITE_PERL%%/Encode
 @dirrm %%SITE_PERL%%/MP3/Tag
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
