@@ -34,7 +34,6 @@ OPTIONS=	ESOUND	"Enable EsounD support"			off \
 		IPV6	"Enable IPv6 support"			off \
 		LATIN	"Recommended for an ISO-8859-1 display"	off \
 		PLUGINS	"Build handful of BitchX plugins"	off \
-		SOCKS5	"Enable SOCKS5 proxy support"		off \
 		SSL	"Enable SSL support"			off \
 		XMMS	"Build XMMS plugin"			off
 
@@ -69,11 +68,6 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
-.endif
-
-.if defined(WITH_SOCKS5)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 .endif
 
 .if defined(WITH_PLUGINS)
