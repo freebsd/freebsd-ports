@@ -68,7 +68,7 @@ Note:  Please add new entries to the beginning of this file.
 	  audit file will be able to run commands on the users system,
 	  with the privileges of the user running running portaudit
 	  (often root).</p>
-	<p>The attach could e.g. happen through DNS hijacking or a man
+	<p>The attack could e.g. happen through DNS hijacking or a man
 	  in the middle attack.</p>
 	<p>Note that if the user has set up portaudit to run from
 	  periodic this attack could happen without direct user
