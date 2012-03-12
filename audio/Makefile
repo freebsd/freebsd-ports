@@ -132,7 +132,6 @@
     SUBDIR += dumb-allegro
     SUBDIR += dvda-author
     SUBDIR += easytag
-    SUBDIR += easytag-devel
     SUBDIR += eawpats
     SUBDIR += eawplus
     SUBDIR += ecasound
