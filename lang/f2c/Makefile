@@ -24,6 +24,9 @@ GUNZIP_CMD=	minigzip -d
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+OPTIONS=	LEAD_0 "Print with leading zeros" Off
+
+
 # Set FCNAME to the name of the Fortran 77 / F2C wrapper.
 FCNAME?=	fc
 PLIST_SUB=	FCNAME=${FCNAME}
@@ -50,6 +53,12 @@ pre-patch:
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/fc
+.if !defined(WITHOUT_LEAD_0)
+	${REINPLACE_CMD} -e 's|CFLAGS += -fPIC|CFLAGS += -fPIC -DWANT_LEAD_0|' ${WRKSRC}/libf2c/Makefile
+	${REINPLACE_CMD} -e 's|#CFLAGS = -O|CFLAGS = -O -DWANT_LEAD_0|' ${WRKSRC}/src/Makefile
+.endif
+
+
 
 do-build:
 	@${ECHO_MSG} "===> Building f2c..."
