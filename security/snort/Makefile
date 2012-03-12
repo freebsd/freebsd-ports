@@ -143,8 +143,8 @@ CONFIGURE_ARGS+=	--enable-sourcefire
 CONFIGURE_ARGS+=	--enable-perfprofiling --enable-ppm
 .endif
 
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITH_GRE)
