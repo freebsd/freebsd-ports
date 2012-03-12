@@ -1,0 +1,64 @@
+Index: pkg_cutleaves.1
+===================================================================
+RCS file: /home/ncvs/ports/ports-mgmt/pkg_cutleaves/files/pkg_cutleaves.1,v
+retrieving revision 1.2
+diff -u -r1.2 pkg_cutleaves.1
+--- pkg_cutleaves.1	25 Mar 2008 18:55:30 -0000	1.2
++++ pkg_cutleaves.1	6 Mar 2012 14:14:47 -0000
+@@ -8,14 +8,14 @@
+ .Nd deinstall 'leaf' packages
+ .Sh SYNOPSIS
+ .Nm
+-.Op Fl cFglRVx
++.Op Fl cglRVx
+ .Sh DESCRIPTION
+ .Nm pkg_cutleaves
+ finds installed 
+ .Dq Li "leaf"
+ packages, i.e. packages that are not referenced by any other installed package,
+ and lets you decide for each one if you want to keep or deinstall it (via
+-pkg_delete(1)). Once the packages marked for removal have been
++pkg-delete(1)). Once the packages marked for removal have been
+ flushed/deinstalled, you'll be asked if you want to do another run (i.e. to see
+ packages that have become 'leaves' now because you've deinstalled the package(s)
+ that depended on them.
+@@ -24,10 +24,6 @@
+ .Fl R
+ below to bypass interactive dependency removal). In every run you will be shown 
+ only packages that you haven't marked for keeping, yet.
+-.Pp
+-Note that your package registry database should be up to date for this
+-to work properly, so it might be a good idea to run pkgdb(1) before
+-running
+ .Nm .
+ .Sh OPTIONS
+ .Pp
+@@ -40,16 +36,6 @@
+ .Fl l
+ parameter is given, too.
+ .Pp
+-.It Fl F
+-Run
+-.Dq Li "pkgdb -F"
+-after each deinstallation run, to make sure the package registry database 
+-is up to date. (
+-.Ar Note:
+-This is mostly for convenience; it shouldn't be necessary to run
+-.Dq Li "pkgdb -F"
+-after each run, but it doesn't hurt, either.)
+-.Pp
+ .It Fl L
+ Interpret exclude file as a list of leaf packages that
+ .Ar should
+@@ -147,8 +133,9 @@
+ .Xr vi 1 .
+ .El
+ .Sh SEE ALSO
+-.Xr pkg_deinstall 1 ,
+-.Xr pkgdb 1 ,
++.Xr pkg 8 ,
++.Xr pkg-info 8 ,
++.Xe pkg-delete 8 ,
+ .Xr portsclean 1
+ .Sh AUTHOR
+ .An Stefan Walter <sw@gegenunendlich.de>

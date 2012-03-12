@@ -23,6 +23,11 @@ MAN1=		pkg_cutleaves.1
 
 PLIST_FILES=	sbin/pkg_cutleaves
 
+.if defined(WITH_PKGNG)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-pkg_cutleaves \
+		${FILESDIR}/extra-patch-pkg_cutleaves.1
+.endif
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${FILESDIR}/pkg_cutleaves ${FILESDIR}/pkg_cutleaves.1 ${WRKSRC}
@@ -31,6 +36,14 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
 	  ${WRKSRC}/pkg_cutleaves.1
+.if defined(WITH_PKGNG)
+	@${REINPLACE_CMD} \
+	  -e 's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
+	  -e 's,/usr/local/sbin/pkg delete -y,${PKG_DELETE},' \
+	  -e 's,/usr/local/sbin/pkg query,${PKG_QUERY},' \
+	  -e 's,/usr/bin/perl,${PERL},' \
+	  ${WRKSRC}/pkg_cutleaves
+.else
 	@${REINPLACE_CMD} \
 	  -e 's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
 	  -e 's,/usr/sbin/pkg_delete,${PKG_DELETE},' \
@@ -38,6 +51,7 @@ post-patch:
 	  -e 's,/var/db/pkg,${PKG_DBDIR},' \
 	  -e 's,/usr/bin/perl,${PERL},' \
 	  ${WRKSRC}/pkg_cutleaves
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg_cutleaves ${PREFIX}/sbin/pkg_cutleaves
