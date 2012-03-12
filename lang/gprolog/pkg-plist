@@ -26,6 +26,7 @@ gprolog-%%GPROLOG_VER%%/lib/liblinedit.a
 gprolog-%%GPROLOG_VER%%/COPYING
 gprolog-%%GPROLOG_VER%%/VERSION
 gprolog-%%GPROLOG_VER%%/NEWS
+gprolog-%%GPROLOG_VER%%/README
 gprolog-%%GPROLOG_VER%%/ChangeLog
 @dirrm gprolog-%%GPROLOG_VER%%/lib
 @dirrm gprolog-%%GPROLOG_VER%%/include

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gprolog
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	1.4.0
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gprolog.org/
 
-MAINTAINER=	n.smoot@gmail.com
+MAINTAINER=	nsmoot@make.sh
 COMMENT=	A free Prolog compiler
 
 ONLY_FOR_ARCHS=	i386 amd64
