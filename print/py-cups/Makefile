@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.9.60
+PORTVERSION=	1.9.61
 CATEGORIES=	print python
 MASTER_SITES=	http://cyberelk.net/tim/data/pycups/ \
 		LOCAL/sunpoet
