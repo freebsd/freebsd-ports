@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	obfsproxy
-DISTVERSION=	20120216
+DISTVERSION=	0.1.1
+PORTEPOCH=	1
 CATEGORIES=	security net
 MASTER_SITES=	https://www.c-s.li/ports/
 
