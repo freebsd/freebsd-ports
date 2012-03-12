@@ -1,0 +1,117 @@
+Index: pkg_cutleaves
+===================================================================
+RCS file: /home/ncvs/ports/ports-mgmt/pkg_cutleaves/files/pkg_cutleaves,v
+retrieving revision 1.3
+diff -u -r1.3 pkg_cutleaves
+--- pkg_cutleaves	12 Aug 2009 17:50:48 -0000	1.3
++++ pkg_cutleaves	6 Mar 2012 12:39:29 -0000
+@@ -28,10 +28,9 @@
+ 
+ # Interactive script for deinstalling "leaf" packages
+ #
+-# Syntax: pkg_cutleaves [-cFgLlRVx]
++# Syntax: pkg_cutleaves [-cgLlRVx]
+ # Options:
+ #   -c: Show comments, too; only works with '-l' (ignored otherwise)
+-#   -F: Fix package db after each deinstallation run (via 'pkgdb -F')
+ #   -g: Generate exclude list from kept/installed leaf packages
+ #   -L: Interpret exclude file as list of packages that *should* be installed
+ #   -l: List leaf packages only, don't ask if they should be deinstalled
+@@ -43,15 +42,14 @@
+ use Getopt::Std;
+ use strict;
+ 
+-my $dbdir = "/var/db/pkg";
+ my $excludefile = "/usr/local/etc/pkg_leaves.exclude";
+-my $pkgdeinstall = "/usr/sbin/pkg_delete";
+-my @pkgdb_args = ("/usr/local/sbin/pkgdb", "-F");
++my @pkgdeinstall = (qw{/usr/local/sbin/pkg delete -y});
++my @pkgquery = (qw{/usr/local/sbin/pkg query});
+ my $exclpattern; 
+ my %leavestokeep;
+ my %opt;
+ 
+-getopts('cFgLlRVx', \%opt);
++getopts('cgLlRVx', \%opt);
+ set_excl_pattern();
+ 
+ # LIST MODE
+@@ -77,7 +75,7 @@
+     my ($file, $required) = @$pkg;
+     # Clobber any exclude patterns that match this package
+     for (my $i = 0; $i < @excludes; $i++) {
+-      if ($file =~ /\Q@excludes[$i]\E/) {
++      if ($file =~ /\Q$excludes[$i]\E/) {
+         splice(@excludes, $i--, 1);
+       }
+     }
+@@ -219,7 +217,7 @@
+     foreach my $leaf (sort keys %leavestocut) {
+       $noff++;
+       print "Deleting $leaf (package $noff of $ncuts).\n";
+-      my @deinstall_args = ($pkgdeinstall, $leaf);
++      my @deinstall_args = (@pkgdeinstall, $leaf);
+       if ((my $status = system(@deinstall_args) >> 8) != 0) {
+         print STDERR "\n\n$0: pkg_deinstall returned $status - exiting, fix this first.\n\n";
+         last ROUND;
+@@ -227,15 +225,6 @@
+       push @cutleaves, $leaf;
+     }
+ 
+-    # Run 'pkgdb -F' if requested
+-    if ($opt{F}) {
+-      print "Running 'pkgdb -F'.\n";
+-      if ((my $status = system(@pkgdb_args) >> 8) != 0) {
+-        print STDERR "\n\n$0: pkgdb returned $status - exiting, fix this first.\n\n";
+-        last ROUND;
+-      }
+-    }
+-
+     # Get new list of leaf packages and put them into a hash
+     %leaves = get_leaves();
+ 
+@@ -328,15 +317,13 @@
+ #
+ sub get_packages {
+   my @pkgs;
+-  opendir(DBDIR, $dbdir)
+-    or die "Can't open package db directory $dbdir!";
+-  while (defined(my $file = readdir(DBDIR))) {
+-    my $path = join('/', $dbdir, $file);
+-    unless ($file =~ /^\.+$/o || !(-d $path)) {
+-      push @pkgs, [$file, -s $path . '/+REQUIRED_BY', join('/', $path, '+COMMENT')];
+-    }
++  open(PKGQUERY, '-|', @pkgquery, '-a', '%n-%v\t%?r\t%c')
++    or die "Couldn't read output from $pkgquery[0]!";
++  while (my $p = <PKGQUERY>) {
++    chomp($p);
++    push(@pkgs, [ split(/\t/, $p) ]);
+   }
+-  closedir DBDIR;
++  close PKGQUERY;
+   return @pkgs;
+ }
+ 
+@@ -347,19 +334,14 @@
+   my %leaves;
+   my @pkgs = get_packages(); 
+   foreach my $pkg (@pkgs) {
+-    my ($file, $required, $commentfile) = @$pkg;
++    my ($file, $required, $comment) = @$pkg;
+     unless ($required) {
+       if ($file =~ $exclpattern) {
+         $leavestokeep{$file} = 1;
+       }
+       else {
+-        # Read package's short description/comment
+-        my $comment;
+-        if ((-s $commentfile) && (open(COMMENT, $commentfile))) {
+-          chomp($comment = <COMMENT>);
+-        }
+-        else {
+-          $comment = 'No short description';
++        unless($comment) {
++	  $comment = 'No short description';
+         }
+         $leaves{$file} = $comment;
+       }
