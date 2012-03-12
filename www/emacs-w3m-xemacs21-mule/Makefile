@@ -11,6 +11,8 @@ USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule
 COMMENT=	Simple front-end to w3m for xemacs21-mule
 
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages
+
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aclocal.m4
 CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
 			--with-packagedir=${PREFIX}/${EMACS_PACKAGESDIR}

@@ -317,6 +317,7 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-zeit-de.elc
 %%SHIMBUN%%%%LISPDIR%%/shimbun.el
 %%SHIMBUN%%%%LISPDIR%%/shimbun.elc
+%%LISPDIR%%/bookmark-w3m.el
 %%LISPDIR%%/w3m-antenna.el
 %%LISPDIR%%/w3m-antenna.elc
 %%LISPDIR%%/w3m-bookmark.el
