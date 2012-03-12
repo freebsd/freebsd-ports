@@ -17,23 +17,20 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 MAINTAINER?=	scheidell@FreeBSD.org
 COMMENT?=	A highly efficient mail filter for identifying spam
 
-RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
+LICENSE=	AL2
+
 BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]*
 
 PERL_CONFIGURE=	yes
-USE_PERL5_RUN=	5.8.8+
+USE_PERL5_RUN=	5.12+
 USE_LDCONFIG=	yes
 DBDIR?=		/var/db
 CONTACT_ADDRESS?=	The administrator of that system
@@ -65,14 +62,8 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
-.endif
-
-.if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
-		p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness
+.if ${PERL_LEVEL} < 501200
+IGNORE=		requires perl version ${USE_PERL5_RUN}. See ${PORTSDIR}/UPDATING, entry 20120311
 .endif
 
 .if defined (WITH_SPAMC)
@@ -153,7 +144,7 @@ RUN_DEPENDS+=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
-DOCS=		CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
+DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
 DOCSLDAP=	README README.testing sa_test.ldif
 PORTDOCS=	${DOCS} sql ldap
