@@ -2345,7 +2345,7 @@ include/vtk-%%VER2%%/vtkX3DExporterFIWriter.h
 include/vtk-%%VER2%%/vtkX3DExporterWriter.h
 include/vtk-%%VER2%%/vtkX3DExporterXMLWriter.h
 include/vtk-%%VER2%%/vtkXGMLReader.h
-include/vtk-%%VER2%%/vtkXGPUInfoList.h
+%%X11%%include/vtk-%%VER2%%/vtkXGPUInfoList.h
 include/vtk-%%VER2%%/vtkXMLCompositeDataReader.h
 include/vtk-%%VER2%%/vtkXMLCompositeDataWriter.h
 include/vtk-%%VER2%%/vtkXMLDataElement.h
@@ -2406,8 +2406,8 @@ include/vtk-%%VER2%%/vtkXMLUnstructuredGridWriter.h
 include/vtk-%%VER2%%/vtkXMLUtilities.h
 include/vtk-%%VER2%%/vtkXMLWriter.h
 include/vtk-%%VER2%%/vtkXMLWriterC.h
-include/vtk-%%VER2%%/vtkXOpenGLRenderWindow.h
-include/vtk-%%VER2%%/vtkXRenderWindowInteractor.h
+%%X11%%include/vtk-%%VER2%%/vtkXOpenGLRenderWindow.h
+%%X11%%include/vtk-%%VER2%%/vtkXRenderWindowInteractor.h
 include/vtk-%%VER2%%/vtkXYPlotActor.h
 include/vtk-%%VER2%%/vtkXYPlotWidget.h
 include/vtk-%%VER2%%/vtkXYZMolReader.h
