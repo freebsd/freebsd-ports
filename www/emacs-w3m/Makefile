@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.4.423.b.${SNAPDATE}
-PORTREVISION=	4
+PORTVERSION=	1.4.471.b.${SNAPDATE}
 CATEGORIES=	www elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nobutaka
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-1.4.423-${SNAPDATE}
+DISTNAME=	${PORTNAME}-1.4.471-${SNAPDATE}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Simple front-end to w3m for emacs
@@ -23,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_EMACS=	yes
 
-SNAPDATE=	20101224
+SNAPDATE=	20120306
 
 CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
 			--with-lispdir=${PREFIX}/${LISPDIR} \
@@ -58,7 +57,7 @@ SHIMBUN=	""
 
 .include <bsd.port.pre.mk>
 
-.if (${EMACS_PORT_NAME} == "emacs23")
+.if ${EMACS_NAME} == "emacs" && ${EMACS_VER:C/\..*//} >= 23
 FLIM_PORT=	${PORTSDIR}/editors/flim
 SEMI_PORT=	${PORTSDIR}/editors/semi
 INSTALL_TARGET= install install-icons
@@ -67,11 +66,11 @@ PLIST_SUB+=	EMACS23=""
 PLIST_SUB+= EMACS23="@comment "
 .endif
 
-.if (${EMACS_PORT_NAME} == "emacs22")
+.if ${EMACS_PORT_NAME} == "emacs22"
 INSTALL_TARGET= install install-icons
 .endif
 
-.if (${EMACS_PORT_NAME} == "emacs21")
+.if ${EMACS_NAME} == "emacs" && ${EMACS_VER:C/\..*//} < 22
 MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
 INSTALL_TARGET= install install-icons
 .endif
@@ -87,8 +86,8 @@ SEMI_PORT?=	${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}
 MULE_UCS_PORT?=	${PORTSDIR}/converters/mule-ucs-${EMACS_PORT_NAME}
 MULE_UCS_ELISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs/un-define.el
 
-BUILD_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n
-RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n
+BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
+RUN_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
 .if !defined(WITHOUT_SHIMBUN)
 BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
@@ -97,8 +96,7 @@ RUN_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
 RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
 		wvHtml:${PORTSDIR}/textproc/wv \
 		xlhtml:${PORTSDIR}/textproc/xlhtml
-
-.if (${EMACS_PORT_NAME} != "emacs22") && (${EMACS_PORT_NAME} != "emacs23")
+.if ${EMACS_NAME} == "emacs" && ${EMACS_VER:C/\..*//} < 22
 RUN_DEPENDS+=	${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
 .endif
 .endif

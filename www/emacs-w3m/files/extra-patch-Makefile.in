@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2012-03-07 00:42:29.000000000 +0900
++++ Makefile.in	2012-03-07 00:42:39.000000000 +0900
+@@ -92,14 +92,6 @@
+ 	      $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/s$$p";\
+ 	    fi;\
+ 	  done;\
+-	  for p in `cd shimbun && echo *.el`; do\
+-	    echo "$(INSTALL_DATA) shimbun/$$p \"$(DESTDIR)$(lispdir)/$$p\"";\
+-	    $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/$$p";\
+-	  done;\
+-	  for p in `cd shimbun && echo *.elc`; do\
+-	    echo "$(INSTALL_DATA) shimbun/$$p \"$(DESTDIR)$(lispdir)/$$p\"";\
+-	    $(INSTALL_DATA) shimbun/$$p "$(DESTDIR)$(lispdir)/$$p";\
+-	  done;\
+ 	fi
+ 
+ install-icons:
