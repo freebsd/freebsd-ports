@@ -6,7 +6,7 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
@@ -30,8 +30,6 @@ QT_COMPONENTS=	gui dbus xml phonon \
 		qmake_build moc_build rcc_build uic_build
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}
-
-BROKEN=		deprecated upstream; refuses to build with libxine 1.2.x
 
 pre-su-install:
 	${MKDIR} ${QT_PLUGINDIR}/phonon_backend

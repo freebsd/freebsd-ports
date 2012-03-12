@@ -1,5 +1,14 @@
---- ./xine/CMakeLists.txt.orig	2009-01-08 17:47:18.000000000 +0300
-+++ ./xine/CMakeLists.txt	2009-02-21 01:19:39.000000000 +0300
+--- ./xine/CMakeLists.txt.orig	2011-01-19 20:20:53.000000000 +0100
++++ ./xine/CMakeLists.txt	2012-03-12 11:12:12.244132405 +0100
+@@ -42,7 +42,7 @@
+         endif(XINE_BUGFIX_VERSION LESS 9)
+     endif(XINE_BUGFIX_VERSION LESS 7)
+ else(XINE_MINOR_VERSION LESS 2 AND XINE_BUGFIX_VERSION LESS 90)
+-    message(FATAL_ERROR "xine-lib v${XINE_VERSION} was found on your system. This version contains major changes compared to 1.1.x and has not been tested properly for use with this backend. Consider downgrading to version 1.1.9." "http://sourceforge.net/project/showfiles.php?group_id=9655&package_id=9732")
++#    message(FATAL_ERROR "xine-lib v${XINE_VERSION} was found on your system. This version contains major changes compared to 1.1.x and has not been tested properly for use with this backend. Consider downgrading to version 1.1.9." "http://sourceforge.net/project/showfiles.php?group_id=9655&package_id=9732")
+ endif(XINE_MINOR_VERSION LESS 2 AND XINE_BUGFIX_VERSION LESS 90)
+ 
+ set(phonon_xine_SRCS
 @@ -88,9 +88,7 @@
     SET(XINEWIDGET_FOUND FALSE)
  endif(XCB_FOUND)
