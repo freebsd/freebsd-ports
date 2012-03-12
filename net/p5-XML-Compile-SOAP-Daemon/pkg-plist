@@ -1,5 +1,7 @@
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon.pod
+%%SITE_PERL%%/XML/Compile/SOAP/Daemon/AnyDaemon.pm
+%%SITE_PERL%%/XML/Compile/SOAP/Daemon/AnyDaemon.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/CGI.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/CGI.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/LWPutil.pm
