@@ -30,6 +30,8 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 MANCOMPRESSED=	yes
 MAN8=		${PORTNAME}.8
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files
 .elif !exists(${SRC_BASE}/sbin/geom/Makefile)
@@ -39,4 +41,4 @@ IGNORE=	requires sbin source files
 post-install:
 	kldxref ${KMODDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
