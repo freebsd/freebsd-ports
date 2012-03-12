@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django-extensions
-PORTVERSION=	0.6
+PORTVERSION=	0.8
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,6 @@ COMMENT=	Global custom management extensions for the Django Framework
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=easy_install
 
 .include <bsd.port.mk>
