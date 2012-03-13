@@ -190,7 +190,7 @@ pre-configure:
 
 post-build:
 .if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
-	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+	cd ${WRKSRC}/tools/server-side/mod_dontdothat && \
 		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
 .endif
 # subversion 1.7+ -- it is not optional
@@ -213,7 +213,7 @@ post-install:	${MKREPOS_TARGET}
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
 .if defined(WITH_MOD_DONTDOTHAT)
-	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
+	cd ${WRKSRC}/tools/server-side/mod_dontdothat && \
 		${APXS} -i -n dontdothat mod_dontdothat.la
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
 .endif
