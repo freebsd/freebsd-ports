@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120313:
+  AFFECTS: users of x11-toolkits/qt4-gui
+  AUTHOR: kde@FreeBSD.org
+
+  MIT-SHM problem (blank windows in Marble and KDE-Games) has been
+  fixed, kern.ipc.shm_allow_removed=1 is not needed anymore to
+  workaround it.
+
 20120311:
   AFFECTS: users of lang/perl5.8 and lang/perl5.10
   AUTHOR: linimon@FreeBSD.org
