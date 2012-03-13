@@ -471,6 +471,7 @@
     SUBDIR += mod_fcgid
     SUBDIR += mod_fileiri
     SUBDIR += mod_flickr
+    SUBDIR += mod_ftp
     SUBDIR += mod_geoip2
     SUBDIR += mod_gnutls
     SUBDIR += mod_gzip2
