@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	db5
-PORTVERSION=	5.2.36.0
-PORTREVISION=	1
+PORTVERSION=	5.2.42.0
+PORTREVISION=	0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
