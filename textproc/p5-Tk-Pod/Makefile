@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tk-Pod
-PORTVERSION=	0.9939
+PORTVERSION=	0.9940
 CATEGORIES=	textproc tk perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,4 +33,11 @@ MAN3=		Tk::More.3 \
 		Tk::Pod::Util.3 \
 		Tk::Pod_usage.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Pod-Simple>=2.05:${PORTSDIR}/textproc/p5-Pod-Simple
+RUN_DEPENDS+=	p5-Pod-Simple>=2.05:${PORTSDIR}/textproc/p5-Pod-Simple
+.endif
+
+.include <bsd.port.post.mk>
