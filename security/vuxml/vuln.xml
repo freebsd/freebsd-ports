@@ -4832,7 +4832,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>libXfont</name>
-	<range><lt>1.4.4,1</lt></range>
+	<range><lt>1.4.4_1,1</lt></range>
       </package>
     </affects>
     <description>
@@ -4854,6 +4854,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-07-26</discovery>
       <entry>2011-08-11</entry>
+      <modified>2012-03-13</modified>
     </dates>
   </vuln>
 
