@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/KDE3%20${PORTNAME}-stable/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very powerful batch file renamer for KDE3
 
+PORTSCOUT=	limit:^3\.
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool

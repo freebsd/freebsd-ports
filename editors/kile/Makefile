@@ -18,6 +18,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		identify:${PORTSDIR}/graphics/ImageMagick
 
 CONFLICTS=	kile-i18n-[0-9]*
+PORTSCOUT=	limit:^2\.0\.
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
