@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,15 +14,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An serialization framework for Moose classes
 
-BUILD_DEPENDS=	p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
-		p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
+BUILD_DEPENDS=	p5-JSON-Any>=1.15:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-JSON>=0.06:${PORTSDIR}/devel/p5-Test-JSON \
+
+TEST_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-JSON>=0.06:${PORTSDIR}/devel/p5-Test-JSON \
+		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes
 
@@ -48,4 +51,10 @@ MAN3=		MooseX::Storage.3 \
 		MooseX::Storage::Traits::OnlyWhenBuilt.3 \
 		MooseX::Storage::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
