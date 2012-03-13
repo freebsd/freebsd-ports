@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	winstonw@lavabit.com
 COMMENT=	Plan9 cpu client
 
+# Additionally the Lucent Public License
+LICENSE=	MIT
+
 USE_XORG=	x11 xt
 
 PLIST_FILES=	bin/drawterm

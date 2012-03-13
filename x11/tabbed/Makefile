@@ -13,6 +13,8 @@ MASTER_SITES=	http://dl.suckless.org/tools/
 MAINTAINER=	winstonw@lavabit.com
 COMMENT=	Simple generic tabbed fronted to xembed aware applications
 
+LICENSE=	MIT
+
 USE_XORG=	x11
 
 MAN1=		tabbed.1
