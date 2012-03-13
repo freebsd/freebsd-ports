@@ -1,0 +1,11 @@
+Net::HTTPS::NB provides same interface as Net::HTTPS but it will never try
+multiple reads when the read_response_headers() or read_entity_body() methods
+are invoked. In addition allows non-blocking connect.
+
+If read_response_headers() did not see enough data to complete the headers an
+empty list is returned.
+
+If read_entity_body() did not see new entity data in its read the value -1 is
+returned.
+
+WWW: http://search.cpan.org/dist/Net-HTTPS-NB/
