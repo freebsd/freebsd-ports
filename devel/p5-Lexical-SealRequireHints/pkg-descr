@@ -1,3 +1,20 @@
 Perl module to prevent leakage of lexical hints
 
-WWW:	http://search.cpan.org/dist/Lexical-SealRequireHints/
+Lexical::SealRequireHints works around two historical bugs in Perl's handling of
+the %^H (lexical hints) variable. One bug causes lexical state in one file to
+leak into another that is required/used from it. This bug, [perl #68590], was
+present from Perl 5.6 up to Perl 5.10, fixed in Perl 5.11.0. The second bug
+causes lexical state (normally a blank %^H once the first bug is fixed) to leak
+outwards from utf8.pm, if it is automatically loaded during Unicode regular
+expression matching, into whatever source is compiling at the time of the regexp
+match. This bug, [perl #73174], was present from Perl 5.8.7 up to Perl 5.11.5,
+fixed in Perl 5.12.0.
+
+Both of these bugs seriously damage the usability of any module relying on %^H
+for lexical scoping, on the affected Perl versions. It is in practice essential
+to work around these bugs when using such modules. On versions of Perl that
+require such a workaround, this module globally changes the behaviour of
+require, including use and the implicit require performed in Unicode regular
+expression matching, so that it no longer exhibits these bugs.
+
+WWW: http://search.cpan.org/dist/Lexical-SealRequireHints/

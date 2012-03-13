@@ -1,3 +1,15 @@
 Perl module for static variables without namespace pollution
 
-WWW:	http://search.cpan.org/dist/Lexical-Var/
+Lexical::Var and Lexical::Sub implement lexical scoping of static variables and
+subroutines. Although it can be used directly, it is mainly intended to be
+infrastructure for modules that export particular objects.
+
+Lexical::Var only manages variables of static duration (the kind of duration
+that our and state variables have). To get a fresh variable for each invocation
+of a function, use my.
+
+Lexical::Sub is implemented through the mechanism of Lexical::Var. Its distinct
+name and declaration syntax exist to make lexical subroutine declarations
+clearer.
+
+WWW: http://search.cpan.org/dist/Lexical-Var/
