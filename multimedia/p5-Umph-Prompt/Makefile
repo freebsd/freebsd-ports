@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An interactive prompt module for umph and similar programs
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.1+
 
 PROJECTHOST=	umph
 

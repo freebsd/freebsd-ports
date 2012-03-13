@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-CPANPLUS>=0:${PORTSDIR}/devel/p5-CPANPLUS \
 		subversion>=0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.0+
 MAN1=		pm2port.1
 MAN3=		App::Pm2Port.3
 

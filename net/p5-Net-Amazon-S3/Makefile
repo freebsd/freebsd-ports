@@ -58,4 +58,10 @@ MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3 \
 		Net::Amazon::S3::Request.3 \
 		Net::Amazon::S3::Request::CreateBucket.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500904
+RUN_DEPENDS+=	p5-IO>=1.14:${PORTSDIR}/devel/p5-IO
+.endif
+
+.include <bsd.port.post.mk>

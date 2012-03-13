@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
 RUN_DEPENDS=	p5-HTML-Parser>=3.64:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-PPI>=1.206:${PORTSDIR}/textproc/p5-PPI
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.0+
 
 MAN3=		Marpa::Advanced::Algorithm.3 \
 		Marpa::Advanced::Bibliography.3 \
@@ -38,4 +38,10 @@ MAN3=		Marpa::Advanced::Algorithm.3 \
 		Marpa::Support.3 \
 		Marpa::Tracing.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

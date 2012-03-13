@@ -25,4 +25,10 @@ LICENSE_COMB=	dual
 
 MAN3=		Mojolicious::Plugin::Mongodb.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>

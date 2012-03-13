@@ -83,4 +83,11 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::CheckOS.3 \
 		Devel::CheckOS::Families.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} == 501000
+BUILD_DEPENDS+=	p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0.19:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>

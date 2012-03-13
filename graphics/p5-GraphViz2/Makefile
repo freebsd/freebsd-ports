@@ -58,6 +58,15 @@ MAN3=		GraphViz2.3 \
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-File-Temp>=0.22:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0.22:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-HTTP-Tiny>=0.012:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-PathTools>=3.3300:${PORTSDIR}/devel/p5-PathTools \

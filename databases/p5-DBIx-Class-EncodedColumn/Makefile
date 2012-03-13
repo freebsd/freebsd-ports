@@ -33,10 +33,20 @@ MAN3=	DBIx::Class::EncodedColumn.3 \
 	DBIx::Class::EncodedColumn::Crypt::OpenPGP.3 \
 	DBIx::Class::EncodedColumn::Digest.3
 
+post-extract:
+	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL
+
 OPTIONS=	SHA "Digest::SHA Support" On \
 		BLOWFISH "Blowfish Support?" On \
 		OPENPGP "Crypt::OpenPGP (gpg) Support" On
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SHA)
+. if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+. endif
+.endif
 .if defined(WITH_BLOWFISH)
 RUN_DEPENDS+=	p5-Crypt-Eksblowfish>=0:${PORTSDIR}/security/p5-Crypt-Eksblowfish
 .endif
@@ -45,7 +55,4 @@ RUN_DEPENDS+=	p5-Crypt-OpenPGP>=0:${PORTSDIR}/security/p5-Crypt-OpenPGP \
 		p5-Crypt-CAST5_PP>=0:${PORTSDIR}/security/p5-Crypt-CAST5_PP
 .endif
 
-post-extract:
-	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

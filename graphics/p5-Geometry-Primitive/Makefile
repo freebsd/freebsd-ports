@@ -37,4 +37,10 @@ MAN3=		Geometry::Primitive.3 \
 		Geometry::Primitive::Rectangle.3 \
 		Geometry::Primitive::Shape.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+RUN_DEPENDS+=	p5-Math-Complex>=1.56:${PORTSDIR}/math/p5-Math-Complex
+.endif
+
+.include <bsd.port.post.mk>

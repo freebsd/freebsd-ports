@@ -62,10 +62,6 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501200
-IGNORE=		requires perl version ${USE_PERL5_RUN}. See ${PORTSDIR}/UPDATING, entry 20120311
-.endif
-
 .if defined (WITH_SPAMC)
 CONFIGURE_ARGS+=	BUILD_SPAMC=yes
 .else

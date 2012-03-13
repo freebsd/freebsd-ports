@@ -24,4 +24,10 @@ MAN3=		Net::Domain::ExpireDate.3
 post-patch:
 		@${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece
+.endif
+
+.include <bsd.port.post.mk>

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	RFC 2553 getaddrinfo and getnameinfo functions
+COMMENT=	RFC 2553's getaddrinfo and getnameinfo functions
 
 BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0.06:${PORTSDIR}/devel/p5-ExtUtils-CChecker
 
@@ -26,6 +26,10 @@ MAN3=		Socket::GetAddrInfo.3 \
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
+.endif
 
 .if ${PERL_LEVEL} < 501400
 PLIST_SUB+=	OLD_PERL="" NEW_PERL="@comment "

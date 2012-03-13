@@ -45,7 +45,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Script-Run>=0.04:${PORTSDIR}/devel/p5-Test-Script-Run \
 		p5-Test-Synopsis>=0.06:${PORTSDIR}/devel/p5-Test-Synopsis
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.0+
 
 MAN1=		hailo.1
 

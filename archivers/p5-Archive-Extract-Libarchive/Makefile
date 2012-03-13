@@ -25,4 +25,10 @@ PERL_MODBUILD=	yes
 
 MAN3=		Archive::Extract::Libarchive.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
+
+.include <bsd.port.post.mk>

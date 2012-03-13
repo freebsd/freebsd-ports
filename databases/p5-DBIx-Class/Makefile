@@ -187,4 +187,15 @@ MAN3=	DBIx::Class.3 \
 RUN_DEPENDS+=	p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-File-Temp>=0.22:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Path>=2.07:${PORTSDIR}/devel/p5-File-Path
+.endif
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

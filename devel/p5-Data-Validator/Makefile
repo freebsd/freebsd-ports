@@ -31,4 +31,10 @@ MAN3=		Data::Validator.3 \
 		Data::Validator::Role::Sequenced.3 \
 		Data::Validator::Role::StrictSequenced.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

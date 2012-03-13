@@ -38,4 +38,9 @@ MAN3=		Net::OpenID::Common.3 \
 		Net::OpenID::Yadis.3 \
 		Net::OpenID::Yadis::Service.3
 
+.if defined(MAINTAINER_MODE)
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} test
+.endif
+
 .include <bsd.port.mk>

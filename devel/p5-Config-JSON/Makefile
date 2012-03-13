@@ -25,4 +25,10 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 PERL_CONFIGURE=	Yes
 MAN3=		Config::JSON.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-version>=0.72.03:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>

@@ -56,4 +56,11 @@ MAN3=		Excel::Template.3 \
 		Excel::Template::Iterator.3 \
 		Excel::Template::TextObject.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
+CONFIGURE_ARGS+=	USE_UNICODE=1
+.endif
+
+.include <bsd.port.post.mk>

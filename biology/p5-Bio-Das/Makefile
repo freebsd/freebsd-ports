@@ -34,4 +34,10 @@ MAN3=	Bio::Das.3 Bio::Das::AGPServer::Config.3 Bio::Das::AGPServer::Daemon.3 \
 	Bio::Das::Request::Types.3 Bio::Das::Segment.3 Bio::Das::Stylesheet.3 \
 	Bio::Das::Type.3 Bio::Das::TypeHandler.3 Bio::Das::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

@@ -56,4 +56,15 @@ MAN3=		Module::CPANTS::Analyse.3 \
 		Module::CPANTS::Kwalitee::Uses.3 \
 		Module::CPANTS::Kwalitee::Version.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple \
+		p5-Archive-Tar>=1.30:${PORTSDIR}/archivers/p5-Archive-Tar
+.endif
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Module-Pluggable>=2.96:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>

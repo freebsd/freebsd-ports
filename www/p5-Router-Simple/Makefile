@@ -26,4 +26,12 @@ MAN3=		Router::Simple.3 \
 		Router::Simple::Route.3 \
 		Router::Simple::SubMapper.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

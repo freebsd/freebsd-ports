@@ -18,4 +18,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		FileHandle::Unget.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500805
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>

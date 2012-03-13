@@ -18,4 +18,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		lib::abs.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500808
+BUILD_DEPENDS+=	p5-PathTools>=3.12:${PORTSDIR}/devel/p5-PathTools
+RUN_DEPENDS+=	p5-PathTools>=3.12:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.include <bsd.port.post.mk>

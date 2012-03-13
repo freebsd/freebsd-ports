@@ -24,6 +24,10 @@ PERL_MODBUILD=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500809
+BUILD_DEPENDS+=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
 .if defined(WITH_UNICODE)
 WX_UNICODE=	yes
 WX_UNI=		uni_

@@ -24,4 +24,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Devel::CallChecker.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+TEST_DEPENDS+=	p5-ExtUtils-CBuilder>=0.1500:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
+
+.include <bsd.port.post.mk>

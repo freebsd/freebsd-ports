@@ -30,4 +30,15 @@ MAN3=		CPAN::YACSmoke.3 \
 		CPAN::YACSmoke::Plugin::SmokeDB.3 \
 		CPAN::YACSmoke::Plugin::Recent.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500806
+RUN_DEPENDS+=	p5-PathTools>=0.88:${PORTSDIR}/devel/p5-PathTools
+.endif
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-CPANPLUS>=0:${PORTSDIR}/devel/p5-CPANPLUS \
+		p5-Module-Pluggable>=2.5:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>

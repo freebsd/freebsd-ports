@@ -24,4 +24,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		SMS::Send::TW::Socket2Air.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+IGNORE=		perl 5.10 or above is required
+.endif
+
+.include <bsd.port.post.mk>

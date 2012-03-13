@@ -18,4 +18,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Digest::SHA1.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500803
+BUILD_DEPENDS+=	p5-Digest>=1.00:${PORTSDIR}/security/p5-Digest
+RUN_DEPENDS+=	p5-Digest>=1.00:${PORTSDIR}/security/p5-Digest
+.endif
+
+.include <bsd.port.post.mk>

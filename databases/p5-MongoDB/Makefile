@@ -53,4 +53,10 @@ MAN3=		MongoDB.3 \
 		MongoDB::Timestamp.3 \
 		MongoDB::Tutorial.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500809
+TEST_DEPENDS+=	p5-File-Temp>=0.17:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>

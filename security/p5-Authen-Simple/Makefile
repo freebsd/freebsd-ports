@@ -29,4 +29,10 @@ MAN3=	Authen::Simple.3 \
 
 PERL_MODBUILD=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.include <bsd.port.post.mk>

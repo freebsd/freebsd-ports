@@ -79,7 +79,7 @@ WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 USE_DISPLAY=	yes
 PERL_CONFIGURE=	yes
-USE_PERL5=	yes
+USE_PERL5=	5.8.5+
 USE_GETTEXT=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -92,6 +92,26 @@ IGNORE=		needs a threaded Perl, build with WITH_THREADS=yes flag and try again
 .endif
 .else
 IGNORE=		needs an existing installation of Perl built with WITH_THREADS=yes
+.endif
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Pod-Simple>=3.07:${PORTSDIR}/textproc/p5-Pod-Simple
+.endif
+
+.if ${PERL_LEVEL} >= 501000 && ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
+		p5-Thread-Queue>=2.11:${PORTSDIR}/devel/p5-Thread-Queue \
+		p5-threads>=1.71:${PORTSDIR}/devel/p5-threads \
+		p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
+RUN_DEPENDS+=	p5-Encode>=2.26:${PORTSDIR}/converters/p5-Encode \
+		p5-Thread-Queue>=2.11:${PORTSDIR}/devel/p5-Thread-Queue \
+		p5-threads>=1.71:${PORTSDIR}/devel/p5-threads \
+		p5-threads-shared>=1.26:${PORTSDIR}/devel/p5-threads-shared
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.56:${PORTSDIR}/devel/p5-ExtUtils-Manifest
+RUN_DEPENDS+=	p5-ExtUtils-Manifest>=1.56:${PORTSDIR}/devel/p5-ExtUtils-Manifest
 .endif
 
 MAN3=		Padre.3 \

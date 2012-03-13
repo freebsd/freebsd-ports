@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-File-ShareDir-Install>=0:${PORTSDIR}/devel/p5-File-ShareDir-In
 RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-Bot-Training>=0:${PORTSDIR}/misc/p5-Bot-Training
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.0+
 
 MAN3=	Bot::Training::MegaHAL.3
 

@@ -37,4 +37,9 @@ MAN3=		Devel::GraphVizProf.3 \
 		GraphViz::Small.3 \
 		GraphViz::XML.3
 
+.if defined(MAINTAINER_MODE)
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} test
+.endif
+
 .include <bsd.port.mk>

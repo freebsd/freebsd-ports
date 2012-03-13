@@ -17,7 +17,8 @@ COMMENT=	MogileFS tools
 
 BUILD_DEPENDS=	p5-MogileFS-Client>=1.14:${PORTSDIR}/sysutils/p5-MogileFS-Client \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-MogileFS-Client>=1.14:${PORTSDIR}/sysutils/p5-MogileFS-Client \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
@@ -34,7 +35,13 @@ MAN1=		mogadm.1 \
 		mogupload.1
 MAN3=		MogileFS::Utils.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|MogileFS-Utils|MogileFS::Utils|' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -50,6 +50,12 @@ PLIST_FILES=	${SA_CONFIGDIR}/FuzzyOcr.pm				\
 		%%EXAMPLESDIR%%/FuzzyOcr.cf %%EXAMPLESDIR%%/FuzzyOcr.words
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,g'		\
 	                  -e 's,/bin/grep,/usr/bin/grep,g'		\
@@ -76,4 +82,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

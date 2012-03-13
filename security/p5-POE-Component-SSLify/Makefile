@@ -28,4 +28,16 @@ MAN3=		POE::Component::SSLify.3 \
 		POE::Component::SSLify::ClientHandle.3 \
 		POE::Component::SSLify::ServerHandle.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500809
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.31:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.31:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-IO>=1.28:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS+=	p5-IO>=1.28:${PORTSDIR}/devel/p5-IO
+.endif
+
+.include <bsd.port.post.mk>

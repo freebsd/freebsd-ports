@@ -243,4 +243,11 @@ RUN_DEPENDS+=	p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
 RUN_DEPENDS+=	p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+RUN_DEPENDS+=	p5-Encode>=2.31:${PORTSDIR}/converters/p5-Encode \
+		p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>

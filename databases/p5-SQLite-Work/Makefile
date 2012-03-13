@@ -35,4 +35,10 @@ MAN1=		sqlw_mail.1 \
 post-patch:
 		${CHMOD} u+w ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500807
+RUN_DEPENDS+=	p5-CGI.pm>=3.10:${PORTSDIR}/www/p5-CGI.pm
+.endif
+
+.include <bsd.port.post.mk>

@@ -20,4 +20,11 @@ PERL_MODBUILD=	yes
 
 MAN3=		Getopt::Euclid.3 Getopt::Euclid::HierDemo.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500900
+BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>

@@ -20,4 +20,21 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Hash::FieldHash.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat
+RUN_DEPENDS+=	p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-parent>=0.221:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0.221:${PORTSDIR}/devel/p5-parent
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
+.include <bsd.port.post.mk>

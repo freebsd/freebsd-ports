@@ -34,4 +34,10 @@ MAN3=		Apache::RPC::Server.3 \
 		RPC::XML::Procedure.3 \
 		RPC::XML::Server.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

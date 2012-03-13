@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/Math/Vec.pm:${PORTSDIR}/math/p5-Math-Vec \
 		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
 		${SITE_PERL}/Stream/FileInputStream.pm:${PORTSDIR}/devel/p5-Stream \
 		${SITE_PERL}/Math/Geometry/Planar.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=	CAD::Drawing.3 \
 	CAD::Drawing::Calculate.3 \
@@ -38,4 +38,10 @@ MAN3=	CAD::Drawing.3 \
 
 PERL_MODBUILD=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

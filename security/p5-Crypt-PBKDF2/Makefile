@@ -30,4 +30,14 @@ MAN3=		Crypt::PBKDF2.3 \
 		Crypt::PBKDF2::Hash::HMACSHA1.3 \
 		Crypt::PBKDF2::Hash::HMACSHA2.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.if ${PERL_LEVEL} < 501001
+RUN_DEPENDS+=	p5-Digest>=1.16:${PORTSDIR}/security/p5-Digest
+.endif
+
+.include <bsd.port.post.mk>

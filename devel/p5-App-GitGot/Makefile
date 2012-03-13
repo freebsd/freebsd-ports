@@ -64,4 +64,10 @@ MAN3=		App::GitGot.3 \
 		App::GitGot::Repo.3 \
 		App::GitGot::Repo::Git.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+RUN_DEPENDS+=	p5-autodie>=0:${PORTSDIR}/devel/p5-autodie
+.endif
+
+.include <bsd.port.post.mk>

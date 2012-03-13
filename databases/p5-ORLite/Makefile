@@ -27,4 +27,16 @@ PERL_CONFIGURE=	yes
 
 MAN3=		ORLite.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-File-Temp>=0.20:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	p5-File-Temp>=0.20:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-File-Path>=2.08:${PORTSDIR}/devel/p5-File-Path
+RUN_DEPENDS+=	p5-File-Path>=2.08:${PORTSDIR}/devel/p5-File-Path
+.endif
+
+.include <bsd.port.post.mk>
