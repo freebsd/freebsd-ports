@@ -18,7 +18,10 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
+		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
+		tag:${PORTSDIR}/audio/taglib
+
+PORTSCOUT=	limit:^1\.
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
