@@ -1,7 +1,13 @@
 bin/suricata
-etc/suricata/suricata.yaml
+@unexec if cmp  -s %D/etc/suricata/suricata.yaml-sample %D/etc/suricata/suricata.yaml; then rm -f %D/etc/suricata/suricata.yaml; fi
 etc/suricata/suricata.yaml-sample
+@exec if [ ! -f %D/etc/suricata/suricata.yaml ] ; then cp -p %D/%F %B/suricata.yaml; fi
+@unexec if cmp  -s %D/etc/suricata/classification.config-sample %D/etc/suricata/classification.config; then rm -f %D/etc/suricata/classification.config; fi
 etc/suricata/classification.config-sample
-etc/suricata/classification.config
-@unexec /bin/rmdir %D/etc/suricata/rules 2>/dev/null || true
-@unexec /bin/rmdir %D/etc/suricata 2>/dev/null || true
+@exec if [ ! -f %D/etc/suricata/classification.config ] ; then cp -p %D/%F %B/classification.config; fi
+@unexec if cmp  -s %D/etc/suricata/reference.config-sample %D/etc/suricata/reference.config; then rm -f %D/etc/suricata/reference.config; fi
+etc/suricata/reference.config-sample
+@exec if [ ! -f %D/etc/suricata/reference.config ] ; then cp -p %D/%F %B/reference.config; fi
+@dirrmtry etc/suricata/rules
+@dirrmtry etc/suricata
+@unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/suricata`` to remove any configuration files left."; fi

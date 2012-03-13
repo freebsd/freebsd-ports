@@ -1,7 +1,7 @@
 =========================================================================
 If you want to run Suricata in IDS mode, add to /etc/rc.conf:
 
-	suricata_enable="YES" 
+	suricata_enable="YES"
 	suricata_interface="<if>"
 
 NOTE: Declaring suricata_interface is MANDATORY for Suricata in IDS Mode.
@@ -11,7 +11,7 @@ However, if you wanna run Suricata in Inline IPS Mode, add to /etc/rc.conf:
 	suricata_enable="YES"
 	suricata_divertport="8000"
 
-NOTA BENE:
+NOTE:
 	Suricata won't start in IDS mode without an interface configured.
 	Therefore if you omit suricata_interface from rc.conf, FreeBSD's
 	rc.d/suricata will automatically try to start Suricata in IPS Mode
