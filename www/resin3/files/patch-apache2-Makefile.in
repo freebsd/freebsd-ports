@@ -1,6 +1,6 @@
---- modules/c/src/apache2/Makefile.in.orig	Thu Sep  1 12:32:43 2005
-+++ modules/c/src/apache2/Makefile.in	Thu Sep  1 12:32:49 2005
-@@ -35,11 +35,6 @@
+--- ./modules/c/src/apache2/Makefile.in.orig	2012-03-06 09:59:32.000000000 -0800
++++ ./modules/c/src/apache2/Makefile.in	2012-03-06 09:59:45.000000000 -0800
+@@ -36,11 +36,6 @@
  	$(CC) -c $(INCLUDES) $(CFLAGS) $<
  
  install	: mod_caucho.la
@@ -11,4 +11,4 @@
 -	   -resin_home $(resin_home)
  
  clean	:
- 	- rm *.o *.lo *.la *.so .libs
+ 	- rm -r *.o *.lo *.la *.so .libs

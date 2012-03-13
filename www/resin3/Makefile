@@ -6,12 +6,16 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.1.9
+PORTVERSION=		3.1.11
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		5u623l20@gmail.com
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
+
+OPTIONS=	APACHE22	"Use Apache 2.2" off
+
+.include <bsd.port.options.mk>
 
 USE_JAVA=		yes
 JAVA_VERSION=		1.5+
@@ -21,11 +25,12 @@ USE_OPENSSL=		yes
 USE_AUTOTOOLS=		libtool
 USE_LDCONFIG=		yes
 
+USERS=	www
+GROUPS=	www
+SHAREOWN=	www
+SHAREGRP=	www
+
 # Customizable settings
-RUNASUSER?=		www
-RUNASUID?=		80
-GROUP?=			${RUNASUSER}
-GID?=			${RUNASUID}
 PORT?=			8080
 # Do not use PKGNAMESUFFIX here because version info is already in PORTVERSION
 # If we used PKGNAMESUFFIX, the package name would be resin2-2.1.11
@@ -33,38 +38,15 @@ APP_NAME_SUFFIX=	${PORTVERSION:C/\..*$//}
 APP_NAME?=		${PORTNAME}${APP_NAME_SUFFIX}
 LATEST_LINK=		${APP_NAME}
 APP_HOME?=		${PREFIX}/${APP_NAME}
-WITH_APACHE?=		NO
-WITH_APACHE2?=		NO
 PID_FILE?=		${APP_HOME}/${APP_NAME}.pid
 LOG_FILE?=		${APP_HOME}/${APP_NAME}.log
 
 # Other settings
 APXS?=			${LOCALBASE}/sbin/apxs
-PKGINSTALL=		${WRKDIR}/pkg-install
-PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
-PKGMESSAGE=		${WRKDIR}/pkg-message
-REINPLACE_FILES=	${WRKSRC}/modules/c/src/apache1/Makefile.in \
-			${WRKSRC}/modules/c/src/apache2/Makefile.in
-REPLACE_FILES=		${FILESDIR}/pkg-install \
-			${FILESDIR}/pkg-deinstall \
-			${FILESDIR}/install.sh \
-			${FILESDIR}/pkg-message.in \
-			${FILESDIR}/pkg-message-advanced.in \
-			${WRKSRC}/conf/resin.conf \
-			${FILESDIR}/resinctl \
-			${FILESDIR}/resin.sh.in
+SUB_FILES=		pkg-message resin3ctl
+USE_RC_SUBR=	resin3.sh
 
 .include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
-COPYDIRS=		lib libexec64 webapps
-CFLAGS+=		-fPIC
-CONFIGURE_ARGS+=	--enable-64bit
-RESIN_LIBEXEC=		libexec64
-.else
-COPYDIRS=		lib libexec webapps
-RESIN_LIBEXEC=		libexec
-.endif
 
 # Pass JAVA_HOME as determined by bsd.java.mk
 CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
@@ -76,22 +58,10 @@ LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS="${PTHREAD_LIBS}" LIBTOOL=${LIBTOOL}
 
 # Install the Apache plugin if needed
-.if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
-#
-# Apache 1.3
-#
-BUILD_DEPENDS+=		${APXS}:${PORTSDIR}/www/apache13
+.if defined(WITH_APACHE22)
+BUILD_DEPENDS+=		${APXS}:${PORTSDIR}/www/apache22
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
-PLIST_SUB+=		MOD_DIR=libexec/apache
-# Allow apxs invocations
-PLIST_SUB+=		APACHE=""
-.elif defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES)
-#
-# Apache 2
-#
-BUILD_DEPENDS+=		${APXS}:${PORTSDIR}/www/apache20
-CONFIGURE_ARGS+=	--with-apxs=${APXS}
-PLIST_SUB+=		MOD_DIR=libexec/apache2
+PLIST_SUB+=		MOD_DIR=libexec/apache22
 # Allow apxs invocations
 PLIST_SUB+=		APACHE=""
 .else
@@ -100,66 +70,53 @@ PLIST_SUB+=		MOD_DIR="@comment "
 PLIST_SUB+=		APACHE="@comment "
 .endif
 
-PLIST_SUB+=		APP_NAME=${APP_NAME}
-PLIST_SUB+=		APXS=${APXS}
-PLIST_SUB+=		RESIN_LIBEXEC=${RESIN_LIBEXEC}
+PLIST_SUB+=	APP_NAME=${APP_NAME} \
+		APXS=${APXS} \
+		GROUPS=${GROUPS} \
+		USERS=${USERS}
 
-SUBSTITUTIONS=		-e "s|%%APP_HOME%%|${APP_HOME}|g" \
-			-e "s|%%APP_NAME%%|${APP_NAME}|g" \
-			-e "s|%%APXS%%|${APXS}|g" \
-			-e "s|%%COPYDIRS%%|${COPYDIRS}|g" \
-			-e "s|%%FILESDIR%%|${FILESDIR}|g" \
-			-e "s|%%GID%%|${GID}|g" \
-			-e "s|%%GROUP%%|${GROUP}|g" \
-			-e "s|%%JAVA%%|${JAVA}|g" \
-			-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
-			-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-			-e "s|%%LOG_FILE%%|${LOG_FILE}|g" \
-			-e "s|%%PID_FILE%%|${PID_FILE}|g" \
-			-e "s|%%PORT%%|${PORT}|g" \
-			-e "s|%%PORTNAME%%|${PORTNAME}|g" \
-			-e "s|%%PREFIX%%|${PREFIX}|g" \
-			-e "s|%%PYTHON_CMD%%|${PYTHON_CMD}|g" \
-			-e "s|%%RUNASUID%%|${RUNASUID}|g" \
-			-e "s|%%RUNASUSER%%|${RUNASUSER}|g" \
-			-e "s|%%WRKDIR%%|${WRKDIR}|g" \
-			-e "s|%%WRKSRC%%|${WRKSRC}|g"
+SUB_LIST=	APP_HOME=${APP_HOME} \
+		APP_NAME=${APP_NAME} \
+		GROUPS=${GROUPS} \
+		LOCALBASE=${LOCALBASE} \
+		LOG_FILE=${LOG_FILE} \
+		PID_FILE=${PID_FILE} \
+		PORT=${PORT} \
+		PREFIX=${PREFIX} \
+		PYTHON_CMD=${PYTHON_CMD} \
+		USERS=${USERS}
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/webapps/resin-doc
+	@${TAR} xf ${WRKSRC}/webapps/resin-doc.war -C ${WRKSRC}/webapps/resin-doc && ${RM} ${WRKSRC}/webapps/resin-doc.war
 
 post-patch:
-	@${REINPLACE_CMD} ${SUBSTITUTIONS} ${REINPLACE_FILES}
-	@for FILE in ${REPLACE_FILES} ; do \
-	    ${SED} ${SUBSTITUTIONS} $${FILE} > ${WRKDIR}/`basename $${FILE}` ; \
-	    done
-	@${FMT} -w 80 < ${WRKDIR}/pkg-message.in > ${PKGMESSAGE}
-	@${CAT} < ${WRKDIR}/pkg-message-advanced.in >> ${PKGMESSAGE}
-.if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES) || \
-defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
-	@${ECHO_CMD} >> ${PKGMESSAGE}
-	@${ECHO_CMD} The Resin Apache module mod_caucho has been activated \
-	    in the Apache configuration file, where you should also \
-	    add a line to specify the location of the Resin configuration \
-	    server, for example: | ${FMT} -w 80 >> ${PKGMESSAGE}
-	@${ECHO_CMD} >> ${PKGMESSAGE}
-	@${ECHO_CMD} "<IfModule mod_caucho.c>" >> ${PKGMESSAGE}
-	@${ECHO_CMD} "    ResinConfigServer localhost 6802" >> ${PKGMESSAGE}
-	@${ECHO_CMD} "</IfModule>" >> ${PKGMESSAGE}
-.endif
-	@${REINPLACE_CMD} -e 's,libexec/,${RESIN_LIBEXEC}/,' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$${resin.home}/conf/app-default.xml|${PREFIX}/etc/${APP_NAME}/app-default.xml|' \
+		${WRKSRC}/conf/resin.conf
 
 post-build:
 	cd ${WRKSRC}/modules/c/src/resin_os && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
 
 # Resin does not handle installation, so proceed now
 do-install:
-	@${SETENV} RUNASUSER=${RUNASUSER} GROUP=${GROUP} ${SH} ${WRKDIR}/install.sh
-.if (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES))
+.for i in ${APP_HOME} ${APP_HOME}/lib ${PREFIX}/etc/${APP_NAME}
+	@install -d -g ${WWWOWN} -o ${WWWGRP} ${i}
+.endfor
+	if [ ! -e ${PREFIX}/etc/${APP_NAME}/resin.xml ]; then \
+			${ECHO_MSG} "   Installing local configuration file: ${PREFIX}/etc/${APP_NAME}/resin.xml" ;\
+			${INSTALL_DATA} ${WRKSRC}/conf/resin.conf ${PREFIX}/etc/${APP_NAME}/resin.xml ;\
+	else \
+		${ECHO_MSG} "   Preserving local configuration file: ${PREFIX}/etc/${APP_NAME}/resin.xml" ;\
+	fi
+	${INSTALL_DATA} ${WRKSRC}/conf/resin.conf ${PREFIX}/etc/${APP_NAME}/resin.xml-dist
+	${INSTALL_DATA} ${WRKSRC}/conf/app-default.xml ${PREFIX}/etc/${APP_NAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/resin3ctl ${PREFIX}/sbin
+	cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} \* ${APP_HOME}/webapps
+	cd ${WRKSRC}/lib  && ${COPYTREE_SHARE} \* ${APP_HOME}/lib
+
+.if defined(WITH_APACHE22)
 	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache2/.libs/mod_caucho.so
 .endif
-.if (defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES))
-	${APXS} -i -n caucho -a ${WRKSRC}/modules/c/src/apache1/.libs/mod_caucho.so
-.endif
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${ECHO_MSG} "********************************************************************************"
 	@${CAT} ${PKGMESSAGE}

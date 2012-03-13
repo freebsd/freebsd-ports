@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/www/resin3/files/Attic/resin3.sh.in,v 1.1 2012-03-13 16:29:23 jgh Exp $
 #
 
 # PROVIDE: %%APP_NAME%%
@@ -25,8 +25,8 @@ pidfile=%%PID_FILE%%
 # set defaults
 
 %%APP_NAME%%_enable=${%%APP_NAME%%_enable:-"NO"}
-%%APP_NAME%%_user=${%%APP_NAME%%_user:-"www"}
-%%APP_NAME%%_group=${%%APP_NAME%%_group:-"www"}
+%%APP_NAME%%_user=${%%APP_NAME%%_user:-"%%USERS%%"}
+%%APP_NAME%%_group=${%%APP_NAME%%_group:-"%%GROUPS%%"}
 
 load_rc_config ${name}
 
