@@ -28,4 +28,15 @@ PERL_MODBUILD=	yes
 MAN3=		Attribute::Params::Validate.3 \
 		Params::Validate.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers
+RUN_DEPENDS+=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers
+.endif
+
+.if ${PERL_LEVEL} < 501000
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>

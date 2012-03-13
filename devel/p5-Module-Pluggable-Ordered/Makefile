@@ -22,4 +22,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Module::Pluggable::Ordered.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Module-Pluggable>=1.9:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>

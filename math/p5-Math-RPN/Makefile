@@ -21,4 +21,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Math::RPN.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.50:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>

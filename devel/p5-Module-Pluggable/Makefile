@@ -20,7 +20,13 @@ MAN3=		Devel::InnerPackage.3 \
 		Module::Pluggable.3 \
 		Module::Pluggable::Object.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500806
+RUN_DEPENDS+=	p5-PathTools>=3.0:${PORTSDIR}/devel/p5-PathTools
+.endif
+
 post-patch:
 	@${PERL} -pi -e '$$_="" if /INST_LIB/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

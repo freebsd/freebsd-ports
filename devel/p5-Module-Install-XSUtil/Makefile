@@ -23,4 +23,16 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Module::Install::XSUtil.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Devel-PPPort>=3.19:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-XSLoader>=0.10:${PORTSDIR}/devel/p5-XSLoader
+.endif
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
+.include <bsd.port.post.mk>

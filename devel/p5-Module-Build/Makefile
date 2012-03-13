@@ -54,6 +54,24 @@ PORTDOCS=	Changes INSTALL README
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness
+MAN1=		config_data.1
+PLIST_FILES=	bin/config_data
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
+RUN_DEPENDS+=	p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+RUN_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-CPAN-Meta>=2.110420:${PORTSDIR}/devel/p5-CPAN-Meta \
 		p5-CPAN-Meta-YAML>=0.003:${PORTSDIR}/devel/p5-CPAN-Meta-YAML \
@@ -70,9 +88,11 @@ RUN_DEPENDS+=	p5-CPAN-Meta>=2.110420:${PORTSDIR}/devel/p5-CPAN-Meta \
 .endif
 
 post-patch:
+.if ${PERL_LEVEL} >= 501000
 	@${RM} -f ${WRKSRC}/bin/config_data
 	@${REINPLACE_CMD} -e '/script_files/d' ${WRKSRC}/Build.PL
 	@${REINPLACE_CMD} -e '/^bin\/config_data/d' ${WRKSRC}/MANIFEST
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

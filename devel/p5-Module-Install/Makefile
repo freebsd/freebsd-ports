@@ -46,4 +46,22 @@ MAN3=		inc::Module::Install.3 \
 		Module::Install::Share.3 \
 		Module::Install::With.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} == 501000
+BUILD_DEPENDS+=	p5-Module-CoreList>=2.17:${PORTSDIR}/devel/p5-Module-CoreList
+RUN_DEPENDS+=	p5-Module-CoreList>=2.17:${PORTSDIR}/devel/p5-Module-CoreList
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Archive-Tar>=1.44:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Devel-PPPort>=3.16:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-Module-Build>=0.29:${PORTSDIR}/devel/p5-Module-Build \
+		p5-Parse-CPAN-Meta>=1.39:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
+RUN_DEPENDS+=	p5-Archive-Tar>=1.44:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Devel-PPPort>=3.16:${PORTSDIR}/devel/p5-Devel-PPPort \
+		p5-Module-Build>=0.29:${PORTSDIR}/devel/p5-Module-Build \
+		p5-Parse-CPAN-Meta>=1.39:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
+.endif
+
+.include <bsd.port.post.mk>

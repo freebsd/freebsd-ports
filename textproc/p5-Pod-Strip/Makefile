@@ -20,4 +20,11 @@ PERL_MODBUILD=	yes
 
 MAN3=		Pod::Strip.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-Pod-Simple>=3.00:${PORTSDIR}/textproc/p5-Pod-Simple
+BUILD_DEPENDS+=	${RUN_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>

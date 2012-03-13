@@ -28,4 +28,11 @@ PERL_CONFIGURE=	yes
 MAN1=		dcget.1 dcshare.1
 MAN3=		Net::DirectConnect.3 Net::DirectConnect::filelist.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

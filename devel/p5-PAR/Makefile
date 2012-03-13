@@ -29,4 +29,13 @@ MAN3=		PAR.3 \
 		PAR::SetupProgname.3 \
 		PAR::SetupTemp.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
+
+.include <bsd.port.post.mk>

@@ -49,4 +49,11 @@ MAN3=	Net::OAuth.3 \
 	Net::OAuth::XauthAccessTokenRequest.3 \
 	Net::OAuth::YahooAccessTokenRefreshRequest.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Encode>=2.35:${PORTSDIR}/converters/p5-Encode
+RUN_DEPENDS+=	p5-Encode>=2.35:${PORTSDIR}/converters/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>

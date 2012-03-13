@@ -38,4 +38,14 @@ MAN3=		Net::BitTorrent.3 \
 		Net::BitTorrent::Util.3 \
 		Net::BitTorrent::Version.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Digest-SHA>=5.45:${PORTSDIR}/security/p5-Digest-SHA \
+		p5-Module-Build>=0.3:${PORTSDIR}/devel/p5-Module-Build \
+		p5-version>=0.74:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-Digest-SHA>=5.45:${PORTSDIR}/security/p5-Digest-SHA \
+		p5-version>=0.74:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>

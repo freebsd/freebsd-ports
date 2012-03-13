@@ -82,4 +82,11 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::Schema.3 \
 	Jifty::DBI::SchemaGenerator.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>

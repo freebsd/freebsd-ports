@@ -36,4 +36,11 @@ MAN3=		Graph::Reader.3 \
 post-patch:
 	@${REINPLACE_CMD} -e 's|Graph-ReadWrite|Graph::ReadWrite|' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>

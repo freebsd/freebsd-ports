@@ -26,6 +26,11 @@ MAN3=		Getopt::Compact::WithCmd.3
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Getopt-Long>=2.38:${PORTSDIR}/devel/p5-Getopt-Long
+RUN_DEPENDS+=	p5-Getopt-Long>=2.38:${PORTSDIR}/devel/p5-Getopt-Long
+.endif
+
 .if ${PERL_LEVEL} < 501400
 TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 .endif

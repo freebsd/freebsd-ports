@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-File-Sync>=0:${PORTSDIR}/devel/p5-File-Sync \
 		p5-IO-stringy>=1.126:${PORTSDIR}/devel/p5-IO-stringy
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV+=	NOCONF=1
 PERL_CONFIGURE=	yes
@@ -55,6 +55,12 @@ DOCS=	FAQ README TODO doc/*
 PORTDOCS=	*
 PORTEXAMPLES=	ftpd.conf
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \
@@ -75,4 +81,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

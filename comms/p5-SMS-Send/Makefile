@@ -26,4 +26,10 @@ MAN3=		SMS::Send.3 \
 		SMS::Send::Driver.3 \
 		SMS::Send::Test.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Module-Pluggable>=2.5:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>

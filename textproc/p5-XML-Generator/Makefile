@@ -23,4 +23,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		XML::Generator.3 XML::Generator::DOM.3
 
+regression-test test:
+	@(cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test)
+
 .include <bsd.port.mk>

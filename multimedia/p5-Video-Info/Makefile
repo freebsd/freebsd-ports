@@ -23,4 +23,11 @@ MANCOMPRESSED=	no
 
 MAN3=		Video::Info.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PERL_LEVEL} < 500803
+	${PERL} -pi -e '$$_="" if m{5.008|warnings}' ${WRKSRC}/Makefile.PL ${WRKSRC}/lib/Video/Info.pm
+.endif
+
+.include <bsd.port.post.mk>

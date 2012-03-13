@@ -26,4 +26,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		AnyEvent::Twitter.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.include <bsd.port.post.mk>

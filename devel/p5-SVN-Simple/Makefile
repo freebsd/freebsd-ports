@@ -22,6 +22,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		SVN::Simple::Edit.3 SVN::Simple::Editor.3
 
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

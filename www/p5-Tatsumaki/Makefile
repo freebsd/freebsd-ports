@@ -35,4 +35,10 @@ PERL_CONFIGURE=	yes
 MAN3=		Tatsumaki.3 \
 		Tatsumaki::MessageQueue.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>

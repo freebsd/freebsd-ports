@@ -82,4 +82,9 @@ MAN3=		Math::GSL.3 \
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0.77:${PORTSDIR}/devel/p5-version
+.endif
+
 .include <bsd.port.post.mk>

@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for logging queries for DBI
 
-RUN_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	\
+	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 

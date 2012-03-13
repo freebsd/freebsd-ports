@@ -32,6 +32,11 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
+RUN_DEPENDS+=	p5-IPC-Cmd>=0:${PORTSDIR}/devel/p5-IPC-Cmd
+.endif
+
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-Perl-OSType>=0:${PORTSDIR}/devel/p5-Perl-OSType
 RUN_DEPENDS+=	p5-Perl-OSType>=0:${PORTSDIR}/devel/p5-Perl-OSType

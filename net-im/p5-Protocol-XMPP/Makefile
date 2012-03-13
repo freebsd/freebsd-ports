@@ -54,4 +54,11 @@ MAN3=		Protocol::XMPP.3 \
 		Protocol::XMPP::TextElement.3 \
 		Protocol::XMPP::User.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Module-Load>=0:${PORTSDIR}/devel/p5-Module-Load \
+		p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>

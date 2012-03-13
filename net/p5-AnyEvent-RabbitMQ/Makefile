@@ -31,4 +31,9 @@ PERL_CONFIGURE=	yes
 MAN3=		AnyEvent::RabbitMQ.3 \
     		AnyEvent::RabbitMQ::Channel.3
 
+.if defined(MAINTAINER_MODE)
+regression-test: build
+	cd ${WRKSRC} && ${MAKE} test
+.endif
+
 .include <bsd.port.mk>

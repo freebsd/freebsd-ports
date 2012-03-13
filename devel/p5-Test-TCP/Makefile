@@ -15,8 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for testing TCP program
 
-RUN_DEPENDS=	p5-Test-SharedFork>=0.19:${PORTSDIR}/devel/p5-Test-SharedFork
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS=	\
+	p5-Test-SharedFork>=0.19:${PORTSDIR}/devel/p5-Test-SharedFork
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

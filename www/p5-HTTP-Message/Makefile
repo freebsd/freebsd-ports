@@ -35,4 +35,16 @@ MAN3=		HTTP::Config.3 \
 		HTTP::Response.3 \
 		HTTP::Status.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+RUN_DEPENDS+=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-IO-Compress>=2.021:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-IO-Compress>=2.021:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

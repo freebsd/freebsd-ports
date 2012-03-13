@@ -95,4 +95,11 @@ MAN3=	Prophet::Web::Result.3 \
 	Prophet::Replica::sqlite.3 \
 	Prophet::Meta::Types.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.include <bsd.port.post.mk>

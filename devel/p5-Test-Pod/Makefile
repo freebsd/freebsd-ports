@@ -19,4 +19,10 @@ PERL_MODBUILD=	yes
 
 MAN3=		Test::Pod.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Pod-Simple>=3.05:${PORTSDIR}/textproc/p5-Pod-Simple
+.endif
+
+.include <bsd.port.post.mk>

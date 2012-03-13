@@ -32,4 +32,10 @@ MAN3=		Crypt::OpenSSL::CA.3 \
 		Crypt::OpenSSL::CA::Inline::C.3 \
 		Crypt::OpenSSL::CA::Resources.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Module-Build>=0.2900:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.include <bsd.port.post.mk>

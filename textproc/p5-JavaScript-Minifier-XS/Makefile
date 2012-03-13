@@ -18,4 +18,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		JavaScript::Minifier::XS.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-Module-Build>=0.3500:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.include <bsd.port.post.mk>

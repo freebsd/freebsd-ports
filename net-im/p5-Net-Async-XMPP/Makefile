@@ -27,4 +27,10 @@ MAN3=		Net::Async::XMPP.3 \
 		Net::Async::XMPP::Protocol.3 \
 		Net::Async::XMPP::Server.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>

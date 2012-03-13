@@ -18,4 +18,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Params::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.2700:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
+
+.include <bsd.port.post.mk>

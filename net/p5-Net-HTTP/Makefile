@@ -29,4 +29,13 @@ MAN3=		Net::HTTP.3 \
 		Net::HTTPS.3 \
 		Net::HTTP::NB.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

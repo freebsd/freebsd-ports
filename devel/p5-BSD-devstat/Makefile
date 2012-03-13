@@ -19,4 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=	BSD::devstat.3
 
+regression-test:
+	cd ${WRKSRC} && make test
+
 .include <bsd.port.mk>

@@ -42,4 +42,10 @@ MAN3=		Apache::ASP.3 \
 		Bundle::Apache::ASP.3 \
 		Bundle::Apache::ASP::Extra.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

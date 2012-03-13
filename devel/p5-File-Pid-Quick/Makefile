@@ -19,4 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=	File::Pid::Quick.3
 
+regression-test:
+	cd ${WRKSRC} && ${MAKE} test
+
 .include <bsd.port.mk>

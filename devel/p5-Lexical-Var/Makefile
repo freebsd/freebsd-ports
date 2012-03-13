@@ -18,7 +18,20 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Lexical::Sub.3 Lexical::Var.3
 
-post-patch:
-	@${REINPLACE_CMD} -e '/Lexical::SealRequireHints/d' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Lexical/Var.pm
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.1500:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-Lexical-SealRequireHints>=0.006:${PORTSDIR}/devel/p5-Lexical-SealRequireHints
+RUN_DEPENDS+=	p5-Lexical-SealRequireHints>=0.006:${PORTSDIR}/devel/p5-Lexical-SealRequireHints
+.endif
+
+post-patch:
+.if ${PERL_LEVEL} >= 501200
+	@${REINPLACE_CMD} -e '/Lexical::SealRequireHints/d' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Lexical/Var.pm
+.endif
+
+.include <bsd.port.post.mk>

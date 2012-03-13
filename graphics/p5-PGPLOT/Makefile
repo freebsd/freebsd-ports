@@ -33,4 +33,10 @@ post-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} LICENSE test* ${EXAMPLESDIR}/
 .endif
 
+.if defined(MAINTAINER_MODE) && !defined(BATCH)
+check regression-test test: build
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+	${_MAKE_JOBS} ${MAKE_ARGS} test
+.endif
+
 .include <bsd.port.mk>

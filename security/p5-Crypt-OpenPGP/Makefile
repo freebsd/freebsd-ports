@@ -48,7 +48,13 @@ MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
 		Crypt::OpenPGP::Trust.3 Crypt::OpenPGP::Certificate.3 \
 		Crypt::OpenPGP::Message.3 Crypt::OpenPGP::KeyServer.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/Crypt/OpenPGP/Ciphertext.pm.orig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

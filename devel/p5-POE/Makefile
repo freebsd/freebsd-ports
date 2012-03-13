@@ -56,6 +56,12 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 		POE::Wheel::ReadWrite.3 POE::Wheel::Run.3 \
 		POE::Wheel::SocketFactory.3
 
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-IO>=1.24:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS+=	p5-IO>=1.24:${PORTSDIR}/devel/p5-IO
+.endif
+
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
@@ -63,4 +69,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+test: build
+	@(cd ${WRKSRC}; make test)
+
+.include <bsd.port.post.mk>
