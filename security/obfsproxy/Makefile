@@ -9,7 +9,8 @@ PORTNAME=	obfsproxy
 DISTVERSION=	0.1.1
 PORTEPOCH=	1
 CATEGORIES=	security net
-MASTER_SITES=	https://www.c-s.li/ports/
+MASTER_SITES=	https://www.torproject.org/dist/obfsproxy/ \
+		https://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Tool to obfuscate Tor traffic
