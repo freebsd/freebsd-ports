@@ -6,52 +6,57 @@
 #
 
 PORTNAME=	qmc2
-PORTVERSION=	0.2.b8
-PORTREVISION=	4
+PORTVERSION=	0.35
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt 4 based UNIX MAME/MESS frontend supporting MAME/SDLMESS
+COMMENT=	Qt 4 based UNIX MAME/MESS frontend
 
-RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame
-RUN_DEPENDS+=	mess:${PORTSDIR}/emulators/mess
+RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame \
+		mess:${PORTSDIR}/emulators/mess
+
+NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GL=		yes
-USE_SDL=	sdl
-USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build gui qtestlib xml phonon opengl
 USE_XORG=	xmu
-MAKE_ENV=	QTDIR="${QTDIR}" QMAKE="${QMAKE}" SYSCONFDIR="${PREFIX}/etc"
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GL=		glu
+USE_QT_VER=	4
+QT_COMPONENTS=	gui opengl phonon qtestlib webkit xml \
+		moc_build qmake_build rcc_build uic_build
+USE_SDL=	sdl
+USE_GMAKE=	yes
+MAKE_ARGS=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}" \
+		SYSCONFDIR="${PREFIX}/etc" ARCH="${OPSYS}" \
+		CC_FLAGS="${CFLAGS}" CXX_FLAGS="${CXXFLAGS}" \
+		CC="${CC}" CXX="${CXX}" LINK="${CXX}"
+MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.pre.mk>
+post-extract:
+	@${MKDIR} ${WRKSRC}/qmc2-sdlmess
+	@(cd ${WRKSRC}/qmc2; ${COPYTREE_SHARE} . ../qmc2-sdlmess)
+	@${FIND} ${WRKSRC} -name "*.sh" | ${XARGS} ${CHMOD} ${BINMODE}
 
 post-patch:
-	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.qmc2
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@(cd ${WRKSRC}/qmc2/inst; ${SED} -e 's|DATADIR|${PREFIX}/share|' \
+		< qmc2.ini.template > qmc2.ini)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/qmc2-sdlmame ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/qmc2-sdlmess ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/qmc2/
-	${MKDIR} ${PREFIX}/share/qmc2/lng/
-	${CP} ${WRKSRC}/data/lng/qmc2_*.qm ${PREFIX}/share/qmc2/lng/
-	${CP} -r ${WRKSRC}/data/opt ${PREFIX}/share/qmc2/
-	${CP} -r ${WRKSRC}/data/img ${PREFIX}/share/qmc2/
-	${MKDIR} ${PREFIX}/etc/qmc2/
-	${REINPLACE_CMD} -e 's|DATADIR|${PREFIX}/share|' ${WRKSRC}/inst/qmc2.ini.template
-	${CP} ${WRKSRC}/inst/qmc2.ini.template ${PREFIX}/etc/qmc2/qmc2.ini
+	${INSTALL_PROGRAM} ${WRKSRC}/qmc2/qmc2-sdlmame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/qmc2-sdlmess/qmc2-sdlmess ${PREFIX}/bin
+	@${MKDIR} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/qmc2/inst/qmc2.ini ${ETCDIR}
+	@${MKDIR} ${DATADIR}/img
+	@(cd ${WRKSRC}/qmc2/data/img; ${COPYTREE_SHARE} . ${DATADIR}/img)
+	@${MKDIR} ${DATADIR}/lng
+	${INSTALL_DATA} ${WRKSRC}/qmc2/data/lng/qmc2_*.qm ${DATADIR}/lng
+	@${MKDIR} ${DATADIR}/opt
+	@(cd ${WRKSRC}/qmc2/data/opt; ${COPYTREE_SHARE} . ${DATADIR}/opt)
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/data/doc/html ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/html
+	@(cd ${WRKSRC}/qmc2/data/doc/html; ${COPYTREE_SHARE} . ${DOCSDIR}/html)
 .endif
-
-post-install:
-	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

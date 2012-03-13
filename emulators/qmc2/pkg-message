@@ -6,7 +6,7 @@ You can download game preview images (screenshots) and flyer images here:
 
 http://www.mameworld.net/mamecat/download.html
 
-Extract them to a directory (like "~/.qmc/prv" and "~/.qmc/fly") and tell the
-program where to find them in the path configuration.
+Extract them to a directory (like "~/.qmc2/prv" and "~/.qmc2/fly") and tell
+the program where to find them in the path configuration.
 
 ==============================================================================

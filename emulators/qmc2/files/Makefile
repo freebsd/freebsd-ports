@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-all:
-	gmake -f Makefile.qmc2 EMULATOR=SDLMAME
-	mkdir bin
-	mv qmc2-sdlmame bin/
-	gmake -f Makefile.qmc2 EMULATOR=SDLMAME clean
-	gmake -f Makefile.qmc2 EMULATOR=SDLMESS
-	mv qmc2-sdlmess bin/
+all:	qmc2/qmc2-sdlmame qmc2-sdlmess/qmc2-sdlmess
 
+qmc2/qmc2-sdlmame:
+	${MAKE} -C qmc2 EMULATOR=SDLMAME
+
+qmc2-sdlmess/qmc2-sdlmess:
+	${MAKE} -C qmc2-sdlmess EMULATOR=SDLMESS
