@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
