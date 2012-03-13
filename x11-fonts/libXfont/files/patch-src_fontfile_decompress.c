@@ -10,12 +10,10 @@ no good reason. It's derived from a change in libarchive from 2004.
 
 Signed-off-by: Matthieu Herrb <matthieu.herrb@laas.fr>
 Reviewed-by: Tomas Hoger <thoger@redhat.com>
----
-diff --git a/src/fontfile/decompress.c b/src/fontfile/decompress.c
-index 0f28c3f..6405d76 100644
---- src/fontfile/decompress.c
-+++ src/fontfile/decompress.c
-@@ -97,7 +97,7 @@ static char_type magic_header[] = { "\037\235" };	/* 1F 9D */
+
+--- src/fontfile/decompress.c.orig	2011-08-10 22:22:01.000000000 +0200
++++ src/fontfile/decompress.c	2012-03-13 12:55:35.000000000 +0100
+@@ -97,7 +97,7 @@ static char_type magic_header[] = { "\03
  #define FIRST	257	/* first free entry */
  #define	CLEAR	256	/* table clear output code */
  
@@ -50,7 +48,7 @@ index 0f28c3f..6405d76 100644
  	code = getcode (file);
  	if (code == -1)
  	    break;
-@@ -241,26 +236,34 @@ BufCompressedFill (BufFilePtr f)
+@@ -241,26 +236,35 @@ BufCompressedFill (BufFilePtr f)
  	    for ( code = 255; code >= 0; code-- )
  	    	file->tab_prefix[code] = 0;
  	    file->clear_flg = 1;
@@ -73,13 +71,15 @@ index 0f28c3f..6405d76 100644
  	    *stackp++ = finchar;
  	    code = oldcode;
      	}
+-    
++
 +	/*
 +	 * The above condition ensures that code < free_ent.
 +	 * The construction of tab_prefixof in turn guarantees that
 +	 * each iteration decreases code and therefore stack usage is
 +	 * bound by 1 << BITS - 256.
 +	 */
- 
++
      	/*
       	 * Generate output characters in reverse order
       	 */
@@ -90,7 +90,7 @@ index 0f28c3f..6405d76 100644
  	    *stackp++ = file->tab_suffix[code];
  	    code = file->tab_prefix[code];
      	}
-@@ -270,7 +273,7 @@ BufCompressedFill (BufFilePtr f)
+@@ -270,7 +274,7 @@ BufCompressedFill (BufFilePtr f)
      	/*
       	 * Generate the new entry.
       	 */
@@ -99,5 +99,3 @@ index 0f28c3f..6405d76 100644
  	    file->tab_prefix[code] = (unsigned short)oldcode;
  	    file->tab_suffix[code] = finchar;
  	    file->free_ent = code+1;
---
-cgit v0.9.0.2-2-gbebe
