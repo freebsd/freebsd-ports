@@ -26,13 +26,13 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		expat:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
+PORTSCOUT=	limit:^0\.10\.
+
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
 USE_GNOME=	atk glib20 gtk20 libxml2 pango # See above
-WANT_GSTREAMER=	yes # Can't be set after bsd.port.pre.mk
 USE_XORG=	xv
 
 OPTIONS=	ARTS	  "ARts audio system support" on \
@@ -47,7 +47,7 @@ post-patch:
 	${REINPLACE_CMD} -E -e 's|^(SUBDIRS.*)mimetypes|\1|'\
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_ARTS)
 CONFIGURE_ARGS+=--without-arts
@@ -77,8 +77,6 @@ pre-patch:
 	${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|'\
 		${WRKDIR}/tubestuff/tubestuff-patch-kmplayerpartbase.cpp.in &&\
 		cd ${WRKDIR}/tubestuff && ./make_patch
-
-do-patch:
 	cd ${WRKSRC} && ${PATCH} <\
 		${WRKDIR}/tubestuff/patch-kmplayerpartbase.cpp-tubestuff
 
@@ -111,4 +109,4 @@ PLIST_FILES+=	share/apps/kmplayer/tubestuff/altertube-dl \
 		"@dirrm share/apps/kmplayer/tubestuff"
 .endif # WITH_TUBESTUFF
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
