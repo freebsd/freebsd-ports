@@ -7,6 +7,7 @@
 
 PORTNAME=	libgit2
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/libgit2/libgit2/
 
