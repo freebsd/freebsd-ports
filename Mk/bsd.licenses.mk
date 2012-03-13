@@ -96,7 +96,7 @@ Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
 # pkg-mirror	- No free redistribution of package (like FTP upload; NO_PACKAGE).
 # pkg-sell		- No selling of package (like in CD-ROM; NO_CDROM).
 # auto-accept	- If license is accepted by default, without presented
-# 				  agreement, at least the user defines LICENSES_ASK.
+# 				  agreement, unless the user defines LICENSES_ASK.
 #
 # Notes about permissions:
 # - Permissions use a default-deny policy.
