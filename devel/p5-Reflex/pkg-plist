@@ -131,6 +131,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-41-signal-twice.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-42-reflex-in-poe.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-43-promise-and-session.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-45-sigdie.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-50-timeout.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-51-wakeup.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-60-collection-promise.pl
