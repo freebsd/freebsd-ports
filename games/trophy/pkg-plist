@@ -1,4 +1,6 @@
 bin/trophy
+share/applications/trophy.desktop
+share/pixmaps/trophy.png
 %%DATADIR%%/cars/dust.tga
 %%DATADIR%%/cars/flash2/surface.tga
 %%DATADIR%%/cars/flash2/surface3d.tga
@@ -42,12 +44,14 @@ bin/trophy
 %%DATADIR%%/misc/checkflag.tga
 %%DATADIR%%/misc/cross.tga
 %%DATADIR%%/misc/dust.tga
+%%DATADIR%%/misc/flag.tga
 %%DATADIR%%/misc/fog.tga
 %%DATADIR%%/misc/gunfire.tga
 %%DATADIR%%/misc/hitpoint.tga
 %%DATADIR%%/misc/info.tga
 %%DATADIR%%/misc/light.tga
 %%DATADIR%%/misc/verticalbar.tga
+%%DATADIR%%/panel/bullets.tga
 %%DATADIR%%/panel/button.tga
 %%DATADIR%%/panel/death.tga
 %%DATADIR%%/panel/infoview.tga
@@ -114,6 +118,25 @@ bin/trophy
 %%DATADIR%%/tracks/Zurich/fmap.tga
 %%DATADIR%%/tracks/Zurich/thumb.tga
 %%DATADIR%%/tracks/Zurich/vmap.tga
+%%DATADIR%%/upgrades/armors/armor_1.tga
+%%DATADIR%%/upgrades/armors/armor_2.tga
+%%DATADIR%%/upgrades/armors/armor_3.tga
+%%DATADIR%%/upgrades/armors/armor_4.tga
+%%DATADIR%%/upgrades/armors/armor_5.tga
+%%DATADIR%%/upgrades/motors/motor_1.tga
+%%DATADIR%%/upgrades/motors/motor_2.tga
+%%DATADIR%%/upgrades/motors/motor_3.tga
+%%DATADIR%%/upgrades/motors/motor_4.tga
+%%DATADIR%%/upgrades/motors/motor_5.tga
+%%DATADIR%%/upgrades/tires/tires_1.tga
+%%DATADIR%%/upgrades/tires/tires_2.tga
+%%DATADIR%%/upgrades/tires/tires_3.tga
+%%DATADIR%%/upgrades/tires/tires_4.tga
+%%DATADIR%%/upgrades/tires/tires_5.tga
+@dirrm %%DATADIR%%/upgrades/tires
+@dirrm %%DATADIR%%/upgrades/motors
+@dirrm %%DATADIR%%/upgrades/armors
+@dirrm %%DATADIR%%/upgrades
 @dirrm %%DATADIR%%/tracks/Zurich
 @dirrm %%DATADIR%%/tracks/Zigzag
 @dirrm %%DATADIR%%/tracks/Snake
@@ -136,3 +159,4 @@ bin/trophy
 @dirrm %%DATADIR%%/cars/flash2
 @dirrm %%DATADIR%%/cars
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

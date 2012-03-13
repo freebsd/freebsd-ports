@@ -1,38 +1,38 @@
 # New ports collection makefile for:	trophy
-# Date created:			22 Jan 2004
+# Date created:			2004-01-24
 # Whom:				Jean-Yves Lefort <jylefort@brutele.be>
 #
-# $Carpetsmoker: ports/games/trophy/Makefile,v 1.3 2007/08/04 03:36:57 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	trophy
-PORTVERSION=	1.1.7
+PORTVERSION=	2.0.3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A single player racing game
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 
-HAS_CONFIGURE=	yes
-PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --exec-prefix="${PREFIX}"
 
-DESKTOP_ENTRIES="Trophy" "${COMMENT}" "" "trophy" "Application;Game;" false
+MAN6=	trophy.6
+
+PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
+
+pre-configure:
+	${REINPLACE_CMD} -e "/^icondir =/s,icons,pixmaps," \
+		${WRKSRC}/resources/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR} && \
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
