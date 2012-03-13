@@ -10,13 +10,6 @@ by the Navy's Space and Naval Warfare Systems Command (SPAWAR), as well as
 through the very generous support of the members of the OISF Consortium.
 
 More information about the Consortium is available, as well as a list of our
-current Consortium Members. 
-
-The Suricata Engine and the HTP Library are available to use under the GPLv2. 
-
-The HTP Library is an HTTP normalizer and parser written by Ivan Ristic of
-Mod Security fame for the OISF. This integrates and provides very advanced
-processing of HTTP streams for Suricata. The HTP library is required by the
-engine but may also be used independently in a range of applications and tools. 
+current Consortium Members.
 
 WWW: http://openinfosecfoundation.org

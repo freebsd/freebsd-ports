@@ -7,6 +7,7 @@
 
 PORTNAME=	suricata
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 
@@ -18,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		yaml:${PORTSDIR}/textproc/libyaml \
-		pcap.1:${PORTSDIR}/net/libpcap \
 		htp-0.2.1:${PORTSDIR}/devel/libhtp
 
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
@@ -32,17 +32,25 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 OPTIONS=	IPFW "Enable IPFW/IPDIVERT for IPS usage" on \
 		PRELUDE "Enable Prelude NIDS integration" off \
+		PORTS_PCAP "Use libpcap from ports" off \
 		DAG "Enable Endace DAG Support" off
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+.include <bsd.port.options.mk>
 
 SUB_FILES=	pkg-message
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS+=--enable-non-bundled-htp --enable-gccprotect \
+		--with-libpcre-includes=${LOCALBASE}/include \
+		--with-libpcre-libraries=${LOCALBASE}/lib \
+		--with-libyaml-includes=${LOCALBASE}/include \
+		--with-libyaml-libraries=${LOCALBASE}/lib \
+		--with-libnet-includes=${LOCALBASE}/include/libnet11 \
+		--with-libnet-libraries=${LOCALBASE}/lib/libnet11
 
 CONFIG_DIR?=	${PREFIX}/etc/suricata
-CONFIG_FILES=	suricata.yaml classification.config
+CONFIG_FILES=	suricata.yaml classification.config reference.config
 RULES_DIR=	${PREFIX}/etc/suricata/rules
 LOGS_DIR=	/var/log/suricata
 
@@ -54,7 +62,8 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 
 .if defined(WITH_PRELUDE)
 LIB_DEPENDS+=		prelude.20:${PORTSDIR}/security/libprelude
-CONFIGURE_ARGS+=	--enable-prelude
+CONFIGURE_ARGS+=	--enable-prelude \
+			--with-libprelude-prefix=${LOCALBASE}
 PLIST_SUB+=		PRELUDE=""
 .endif
 
@@ -62,8 +71,19 @@ PLIST_SUB+=		PRELUDE=""
 CONFIGURE_ARGS+=	--enable-ipfw
 .endif
 
+.if defined(WITH_PORTS_PCAP)
+LIB_DEPENDS+=		pcap.1:${PORTSDIR}/net/libpcap
+CONFIGURE_ARGS+=	--with-libpcap-includes=${LOCALBASE}/include \
+			--with-libpcap-libraries=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--with-libpcap-includes=/usr/include \
+			--with-libpcap-libraries=/usr/lib
+.endif
+
 .if defined(WITH_DAG)
-CONFIGURE_ARGS+=	--enable-dag
+CONFIGURE_ARGS+=	--enable-dag \
+			--with-dag-includes=${LOCALBASE}/include \
+			--with-dag-libraries=${LOCALBASE}/lib
 .endif
 
 post-patch:
