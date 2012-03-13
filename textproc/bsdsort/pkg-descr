@@ -1,6 +1,6 @@
-This is the BSD-licensed version of the well-known sort utility, obtained from
-OpenBSD. It lacks some features of GNU sort. It is a proposed project idea
-to replace the GNU sort with this one, but it needs to be completed first.
-Patches are highly appreciated.
-
-WWW: http://www.freebsd.org/projects/ideas/#p-bsdtexttools
+This a BSD-licensed version of the well-known sort utility that has been
+rewritten from scratch by Gabor Kovesdan <gabor@FreeBSD.org> and later
+developed by Oleg Moskalenko <oleg.moskalenko@citrix.com>.  This
+implementation is meant to be a replacement of GNU sort for FreeBSD.
+Currently, it seems to be quite feature-complete but performance needs
+some improvements.
