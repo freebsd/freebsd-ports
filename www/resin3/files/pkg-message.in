@@ -6,7 +6,7 @@ You may want to activate it in /etc/rc.conf:
 
 Then start it:
 
-env - %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh start
+env - %%PREFIX%%/etc/rc.d/%%APP_NAME%% start
 
 For this control script to run seamlessly, it is recommended to increase the
 maximum length of commands displayed by ps(1).  Please append the following
@@ -27,6 +27,37 @@ Once Resin is started, point your web browser to the default home page at
 http://localhost:%%PORT%%/ to read the documentation and test the samples.
 
 Resin configuration is located at %%PREFIX%%/etc/%%APP_NAME%%/resin.xml
-
-
 Enjoy!
+
+--------------------------------------------------------------------------------
+ADVANCED USAGE
+
+If you need to pass special options to Java, please set the
+%%APP_NAME%%_flags option in /etc/rc.conf, see examples below:
+
+  # Prevent Java from opening an X11 display
+
+  %%APP_NAME%%_flags="-Djava.awt.headless=true"
+
+  # Increase memory limit of the Java virtual machine
+
+  %%APP_NAME%%_flags="-Xms32m -Xmx256m"
+
+  # Run Java with remote debugging turned on on port 8000
+
+  %%APP_NAME%%_flags="-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000"
+
+To specify the java version to use, please use %%APP_NAME%%_java_version:
+
+  %%APP_NAME%%_java_version="1.4"
+
+-------------------------------------------------------------------------------
+
+APACHE MODULE
+
+If you have enabled the mod_caucho module, you may activate it in the following
+manner by adding it to your Apache configuration file:
+
+<IfModule mod_caucho.c>"
+		ResinConfigServer localhost 6802"
+</IfModule>"
