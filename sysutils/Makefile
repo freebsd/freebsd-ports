@@ -799,6 +799,7 @@
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
+    SUBDIR += schedutils
     SUBDIR += scprotect
     SUBDIR += screen
     SUBDIR += screenie
