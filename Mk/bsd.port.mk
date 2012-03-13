@@ -3415,7 +3415,7 @@ check-vulnerable:
 				2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
 				|| true`; \
 		else \
-			${ECHO_MSG} "===>  portaudit database exist, but portaudit not found!"; \
+			${ECHO_MSG} "===>  portaudit database exists, however, portaudit is not installed!"; \
 		fi; \
 		if [ -n "$$vlist" ]; then \
 			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
