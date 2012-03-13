@@ -72,6 +72,8 @@
 %%SITE_PERL%%/HTML/DOM/NodeList/Magic.pm
 %%SITE_PERL%%/HTML/DOM/NodeList/Radio.pod
 %%SITE_PERL%%/HTML/DOM/Text.pm
+%%SITE_PERL%%/HTML/DOM/_TreeBuilder.pm
+%%SITE_PERL%%/HTML/DOM/_Element.pm
 %%SITE_PERL%%/HTML/DOM/View.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/DOM/.packlist
 @dirrm %%SITE_PERL%%/HTML/DOM/NodeList
