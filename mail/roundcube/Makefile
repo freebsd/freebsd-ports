@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION:U}
@@ -16,7 +16,6 @@ MAINTAINER?=	ale@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_BUILD=	yes
 CONFLICTS=	ja-roundcube-[0-9]*
