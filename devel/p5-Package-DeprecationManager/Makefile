@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Package-DeprecationManager
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,8 +24,7 @@ RUN_DEPENDS=	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Spelling>0:${PORTSDIR}/devel/p5-Test-Spelling
+		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
