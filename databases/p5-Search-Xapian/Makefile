@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.8.0
+PORTVERSION=	1.2.9.0
 CATEGORIES=	databases perl5
-MASTER_SITES=	CPAN \
-		http://oligarchy.co.uk/xapian/${PORTVERSION:R}/
+MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
+		LOCAL/sunpoet \
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
