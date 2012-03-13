@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.46
+PORTVERSION=	0.48
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
@@ -18,18 +17,20 @@ COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
+BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Mail>=0:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
 		p5-DateTime-Format-W3CDTF>=0:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
 		p5-Feed-Find>=0:${PORTSDIR}/www/p5-Feed-Find \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
-		p5-XML-Atom>=0.23:${PORTSDIR}/textproc/p5-XML-Atom \
+		p5-XML-Atom>=0.38:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
-		p5-XML-RSS>=1.37:${PORTSDIR}/textproc/p5-XML-RSS \
+		p5-XML-RSS>=1.47:${PORTSDIR}/textproc/p5-XML-RSS \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-XML-RSS-LibXML>=0:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
 
 PERL_CONFIGURE=	yes
 
