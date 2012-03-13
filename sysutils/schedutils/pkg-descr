@@ -1,0 +1,6 @@
+Sched-utils are a collection of tools related to realtime scheduling,
+working much like 'nice' and 'renice', except they change the priority
+and scheduler. This enables a process to run insoft realtime, as
+specified by POSIX.1b.
+
+WWW:	http://sourceforge.net/projects/schedutils/
