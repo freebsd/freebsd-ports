@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gdisk
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gptfdisk/gptfdisk/${PORTVERSION}
 DISTNAME=	gptfdisk-${PORTVERSION}
 
@@ -71,7 +71,7 @@ post-patch:
 do-install:
 .for i in ${PROGRAM_LIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${i}.8 ${MAN8PREFIX}/man/man8
 .endfor
 
 post-install:
