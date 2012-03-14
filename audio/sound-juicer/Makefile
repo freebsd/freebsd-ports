@@ -16,8 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clean, mean and lean CD ripper for GNOME2
 
-LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-    		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
+LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		cdio.13:${PORTSDIR}/sysutils/libcdio \
     		tag.1:${PORTSDIR}/audio/taglib \
