@@ -1,0 +1,44 @@
+--- SRC/Makefile.orig	2006-01-06 00:09:14.000000000 +0100
++++ SRC/Makefile	2012-03-13 15:14:50.000000000 +0100
+@@ -89,28 +89,31 @@
+ 	zcolumn_dfs.o zcolumn_bmod.o zpivotL.o zpruneL.o \
+ 	zmemory.o zutil.o zmyblas2.o
+ 
+-all:    single double complex complex16
++all:    single double complex complex16 shared
+ 
+ single: $(SLUSRC) $(ALLAUX) $(LAAUX) $(SLASRC) $(SCLAUX)
+-	$(ARCH) $(ARCHFLAGS) ../$(SUPERLULIB) \
++	$(ARCMD) $(ARCHFLAGS) ../$(SUPERLULIB) \
+ 		$(SLUSRC) $(ALLAUX) $(LAAUX) $(SLASRC) $(SCLAUX)
+ 	$(RANLIB) ../$(SUPERLULIB)
+ 
+ double: $(DLUSRC) $(ALLAUX) $(LAAUX) $(DLASRC) $(DZLAUX)
+-	$(ARCH) $(ARCHFLAGS) ../$(SUPERLULIB) \
++	$(ARCMD) $(ARCHFLAGS) ../$(SUPERLULIB) \
+                 $(DLUSRC) $(ALLAUX) $(LAAUX) $(DLASRC) $(DZLAUX)
+ 	$(RANLIB) ../$(SUPERLULIB)
+ 
+ complex: $(CLUSRC) $(ALLAUX) $(LAAUX) $(CLASRC) $(SCLAUX)
+-	$(ARCH) $(ARCHFLAGS) ../$(SUPERLULIB) \
++	$(ARCMD) $(ARCHFLAGS) ../$(SUPERLULIB) \
+ 		$(CLUSRC) $(ALLAUX) $(LAAUX) $(CLASRC) $(SCLAUX)
+ 	$(RANLIB) ../$(SUPERLULIB)
+ 
+ complex16: $(ZLUSRC) $(ALLAUX) $(LAAUX) $(ZLASRC) $(DZLAUX)
+-	$(ARCH) $(ARCHFLAGS) ../$(SUPERLULIB) \
++	$(ARCMD) $(ARCHFLAGS) ../$(SUPERLULIB) \
+ 		$(ZLUSRC) $(ALLAUX) $(LAAUX) $(ZLASRC) $(DZLAUX)
+ 	$(RANLIB) ../$(SUPERLULIB)
+ 
++shared:	single double complex complex16
++	$(CC) -shared -Wl,-soname=$(SUPERLULIB_SHARED) -o ../$(SUPERLULIB_SHARED) ../$(SUPERLULIB)
++
+ 
+ ##################################
+ # Do not optimize these routines #
+@@ -125,3 +128,4 @@
+ 
+ clean:	
+ 	rm -f *.o ../libsuperlu_3.0.a
++	rm -f *.o ../libsuperlu_3.0.so
