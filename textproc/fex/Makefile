@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fex
-PORTVERSION=	1.20111017.1
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://semicomplete.com/files/${PORTNAME}/ \
+MASTER_SITES=	http://semicomplete.googlecode.com/files/ \
 		http://people.rit.edu/rpsfa/distfiles/
 
 MAINTAINER=	zi@FreeBSD.org
@@ -16,7 +16,10 @@ COMMENT=	A powerful field extraction tool
 
 LICENSE=	AL2
 
+MAKE_ENV+=	INSTALLMAN=${PREFIX}/man
+
 PLIST_FILES=	bin/fex
+MAN1=		fex.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=gcc|CC=${CC}|g' ${WRKSRC}/Makefile
