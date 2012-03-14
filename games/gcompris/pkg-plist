@@ -652,6 +652,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/clockgame.svg
 %%DATADIR%%/boards/clockgame.xml
 %%DATADIR%%/boards/clockgame/clockgame-bg.svgz
+%%DATADIR%%/boards/clockgame/clockgame-bg0.svgz
 %%DATADIR%%/boards/colors.svg
 %%DATADIR%%/boards/colors.xml
 %%DATADIR%%/boards/colors/activity.desktop
@@ -1916,6 +1917,20 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/instruments/violin.svg
 %%DATADIR%%/boards/keyboard.svg
 %%DATADIR%%/boards/keyboard.xml
+%%DATADIR%%/boards/lang.svg
+%%DATADIR%%/boards/lang.xml
+%%DATADIR%%/boards/lang/lang.xml
+%%DATADIR%%/boards/lang/numbers/banana.svg
+%%DATADIR%%/boards/lang/numbers/empty.svg
+%%DATADIR%%/boards/lang/numbers/lemon.svg
+%%DATADIR%%/boards/lang/numbers/mango.svg
+%%DATADIR%%/boards/lang/numbers/one.svg
+%%DATADIR%%/boards/lang/numbers/orange.svg
+%%DATADIR%%/boards/lang/numbers/peach.svg
+%%DATADIR%%/boards/lang/numbers/pear.svg
+%%DATADIR%%/boards/lang/numbers/pineapples.svg
+%%DATADIR%%/boards/lang/numbers/raspberries.svg
+%%DATADIR%%/boards/lang/numbers/strawberries.svg
 %%DATADIR%%/boards/leftright.svg
 %%DATADIR%%/boards/leftright.xml
 %%DATADIR%%/boards/leftright/leftright-bg.svgz
@@ -2719,7 +2734,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/railroad/wagon7.png
 %%DATADIR%%/boards/railroad/wagon8.png
 %%DATADIR%%/boards/railroad/wagon9.png
-%%DATADIR%%/boards/read_colors.svg
 %%DATADIR%%/boards/reading.svg
 %%DATADIR%%/boards/reading.xml
 %%DATADIR%%/boards/readingh.svg
@@ -9391,6 +9405,9 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/hangman.py
 %%DATADIR%%/python/hexagon.py
 %%DATADIR%%/python/hydroelectric.py
+%%DATADIR%%/python/lang.py
+%%DATADIR%%/python/langFindit.py
+%%DATADIR%%/python/langLib.py
 %%DATADIR%%/python/lightsoff.py
 %%DATADIR%%/python/login.py
 %%DATADIR%%/python/louis_braille.py
@@ -9732,7 +9749,6 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/redraw_symmetrical
 @dirrm %%DATADIR%%/boards/redraw
 @dirrm %%DATADIR%%/boards/readingh
-@dirrm %%DATADIR%%/boards/read_colors
 @dirrm %%DATADIR%%/boards/railroad
 @dirrm %%DATADIR%%/boards/planegame
 @dirrm %%DATADIR%%/boards/photohunter
@@ -9754,6 +9770,8 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/login
 @dirrm %%DATADIR%%/boards/lightsoff
 @dirrm %%DATADIR%%/boards/leftright
+@dirrm %%DATADIR%%/boards/lang/numbers
+@dirrm %%DATADIR%%/boards/lang
 @dirrm %%DATADIR%%/boards/instruments
 @dirrm %%DATADIR%%/boards/imagename
 @dirrm %%DATADIR%%/boards/imageid
