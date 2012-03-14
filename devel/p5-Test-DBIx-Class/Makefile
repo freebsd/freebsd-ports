@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 
@@ -16,7 +16,7 @@ COMMENT=	Easier test cases for your DBIx::Class applications
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-SHARED_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
+BUILD_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
 		p5-DBIx-Class>=0.08123:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-DBIx-Class-TimeStamp>=0.13:${PORTSDIR}/databases/p5-DBIx-Class-TimeStamp \
 		p5-DBIx-Class-UUIDColumns>=0.02005:${PORTSDIR}/databases/p5-DBIx-Class-UUIDColumns \
@@ -29,14 +29,11 @@ SHARED_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
 		p5-MooseX-Types>=0.23:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Path-Class>=0.21:${PORTSDIR}/devel/p5-Path-Class \
 		p5-SQL-Translator>=0.11006:${PORTSDIR}/databases/p5-SQL-Translator \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-DBIx-Class-Schema-PopulateMore>=0.16:${PORTSDIR}/databases/p5-DBIx-Class-Schema-PopulateMore
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BUILD_DEPENDS:=	${SHARED_DEPENDS}
-RUN_DEPENDS:=	${SHARED_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	yes
@@ -65,4 +62,12 @@ MAN3=	Test::DBIx::Class.3 \
 	Test::DBIx::Class::SchemaManager::Trait::Testpostgresql.3 \
 	Test::DBIx::Class::Types.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
