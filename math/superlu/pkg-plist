@@ -11,7 +11,7 @@ include/superlu/slu_zdefs.h
 include/superlu/supermatrix.h
 lib/libsuperlu.a
 lib/libsuperlu.so
-lib/libsuperlu.so.3
+lib/libsuperlu.so.4
 @dirrm include/superlu
 %%PORTDOCS%%%%DOCSDIR%%/SLU_general.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/simax95.ps.gz
