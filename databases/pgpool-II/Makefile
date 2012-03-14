@@ -8,7 +8,9 @@
 PORTNAME=	pgpool-II
 PORTVERSION=	3.1.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.pgpool.net/mediawiki/images/
+MASTER_SITE_LOCAL=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL

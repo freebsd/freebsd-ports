@@ -39,6 +39,7 @@ share/postgresql/contrib/pgpool-regclass.sql
 %%PGSQL9%%share/postgresql/contrib/pgpool-walrecrunning.sql
 share/postgresql/contrib/uninstall_pgpool-recovery.sql
 share/postgresql/contrib/uninstall_pgpool-regclass.sql
+%%PGSQL9%%share/postgresql/contrib/uninstall_pgpool-walrecrunning.sql
 lib/postgresql/pgpool-recovery.so
 lib/postgresql/pgpool-regclass.so
 %%PGSQL9%%lib/postgresql/pgpool-walrecrunning.so
