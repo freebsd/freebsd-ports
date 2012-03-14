@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kile
-DISTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 CATEGORIES=	editors kde
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${DISTVERSION}
 
@@ -32,7 +31,7 @@ OPTIONS=	OKULAR "Use Okular for viewing" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_OKULAR)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/okular:${PORTSDIR}/graphics/kdegraphics4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/okular:${PORTSDIR}/graphics/okular
 .endif
 
 .include <bsd.port.mk>
