@@ -1,5 +1,5 @@
 --- Makefile.orig	2011-11-03 14:39:05.000000000 -0700
-+++ Makefile	2012-03-07 11:47:18.000000000 -0800
++++ Makefile	2012-03-14 14:07:24.000000000 -0700
 @@ -273,7 +273,6 @@
  	gstreamer-base-0.10 \
  	gstreamer-pbutils-0.10 \
@@ -36,6 +36,15 @@
  endif
  ifndef DISABLE_ICON_UPDATE
  	-gtk-update-icon-cache -t -f $(DESTDIR)$(PREFIX)/share/icons/hicolor || :
+@@ -640,7 +638,7 @@
+ 	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+ endif
+ ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
+-	rm -f $(DESTDIR)/usr/share/GConf/gsettings/shotwell.convert
++	rm -f $(DESTDIR)$(PREFIX)/share/GConf/gsettings/shotwell.convert
+ endif
+ 
+ $(PC_FILE): $(PC_INPUT) $(MAKE_FILES)
 @@ -660,7 +658,6 @@
  
  # EXPANDED_SRC_FILES includes UNITIZE_INITS and UNITIZE_ENTRY
