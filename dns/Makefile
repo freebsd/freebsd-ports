@@ -60,6 +60,7 @@
     SUBDIR += idnkit2
     SUBDIR += inadyn
     SUBDIR += ipcheck
+    SUBDIR += knot
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += ldnsm

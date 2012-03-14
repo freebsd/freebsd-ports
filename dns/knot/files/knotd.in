@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: knot
+# REQUIRE: SERVERS cleanvar
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable knot:
+#
+# knot_enable="YES":	Set to NO by default.
+#			Set it to YES to enable knot.
+# knot_config="":	Set to %%PREFIX%%/etc/knot/knot.conf
+#			by default.
+
+. /etc/rc.subr
+
+name=knot
+rcvar=knot_enable
+
+extra_commands="reload compile"
+compile_cmd="${name}_compile"
+reload_cmd="${name}_reload"
+start_precmd="${name}_compile"
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
+
+load_rc_config ${name}
+
+: ${knot_enable:="NO"}
+: ${knot_config="%%PREFIX%%/etc/knot/knot.conf"}
+
+command=%%PREFIX%%/sbin/${name}c
+procname=%%PREFIX%%/sbin/${name}d
+pidfile=/var/run/${name}.pid
+
+command_args="-c ${knot_config} -w start"
+required_files=${knot_config}
+
+knot_compile() {
+	echo "Compiling zone(s)..."
+	${command} -c ${knot_config} compile
+	}
+knot_reload() {
+	echo "Reloading ${name}."
+	${command} -c ${knot_config} -a reload
+	}
+knot_status() {
+	${command} -c ${knot_config} running
+	}
+knot_stop() {
+	echo "Stopping ${name}."
+	${command} -c ${knot_config} stop
+	}
+
+run_rc_command "$1"

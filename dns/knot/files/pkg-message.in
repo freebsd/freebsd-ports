@@ -1,0 +1,29 @@
+
+####################################################################
+#
+# To start using Knot DNS, you should complete the following tasks:
+#
+# ----- configure --------------------------------------------------
+#
+  $EDITOR %%PREFIX%%/etc/knot/knot.conf       
+#
+# For all option have a look at the contents of
+# %%PREFIX%%/etc/knot/knot.sample.conf
+#
+# For example, under "system" you might like to add
+#    user "bind.bind";
+# to not have knotd run as root/wheel
+#
+# ----- prepare ----------------------------------------------------
+#
+# required:
+  echo knot_enable=\"YES\" >> /etc/rc.conf
+# for customization if desired:
+# echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf" >> /etc/rc.conf
+#
+# ----- startup ----------------------------------------------------
+#
+  %%PREFIX%%/etc/rc.d/knot start
+#
+####################################################################
+
