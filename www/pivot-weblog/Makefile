@@ -27,6 +27,9 @@ SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	BLOGURL=${BLOGURL} BLOGDIR=${BLOGDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PLIST_SUB=	BLOGDIR=${BLOGDIR}
 
+DEPRECATED=	unsupported upstream, consider www/pivotx
+EXPIRATION=	2012-04-15
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/pivot/default-data/
 .for OBJECT in pivot/db pivot/templates pivot/pv_cfg_settings.php pivot/pv_cfg_weblogs.php
@@ -56,8 +59,5 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.mk>
