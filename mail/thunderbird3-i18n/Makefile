@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird3-i18n
-PORTVERSION=	3.1.19
+PORTVERSION=	3.1.20
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -20,6 +20,7 @@ COMMENT=	Localized interface for Thunderbird
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
+DEPRECATED=     will be unsupported by when Thunderbird 12 is release, migrate to mail/thunderbird-i18n now
 NO_BUILD=	yes
 USE_THUNDERBIRD=	31
 USE_XPI=	thunderbird3
