@@ -7,7 +7,7 @@
 
 PORTNAME=	netxms
 PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
@@ -168,9 +168,5 @@ pre-install:
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-
-post-deinstall:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>
