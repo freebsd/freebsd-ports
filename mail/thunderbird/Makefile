@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	10.0.2
+DISTVERSION=	10.0.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -60,7 +60,7 @@ OPTIONS=	LIGHTNING	"Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-release
+WRKSRC=		${WRKDIR}/comm-esr10
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ${ARCH} == powerpc64
