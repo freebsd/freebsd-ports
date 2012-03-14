@@ -34,7 +34,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-oss --enable-plugins --with-expat-dir="${LOCALBASE}"
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-OPTIONS=	ODBC		"Use ODBC" On \
+OPTIONS=	ODBC		"Use ODBC" Off \
 		ALSA		"Use ALSA (experimental)" Off \
 		V4L		"Use Video4Linux" Off \
 		BSDVIDEO	"Enable BSD video support" On \
