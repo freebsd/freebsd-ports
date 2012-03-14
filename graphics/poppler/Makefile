@@ -103,6 +103,9 @@ LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .endif
 
 post-patch:
+.if ${CXX:M*clang*} && ${CXXFLAGS:M-stdlib=libc++}
+	@${REINPLACE_CMD} '/CXXFLAGS.*-ansi/d' ${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|-version-info 19:0:0|-version-info 18:0:0|g' \
 		${WRKSRC}/poppler/Makefile.in
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="qt4"
