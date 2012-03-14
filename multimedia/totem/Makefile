@@ -17,8 +17,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
-		gdata.7:${PORTSDIR}/devel/libgdata \
+LIB_DEPENDS=	gdata.7:${PORTSDIR}/devel/libgdata \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
