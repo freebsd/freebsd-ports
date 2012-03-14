@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses based spread sheet program
 
+BROKEN=		leaves empty directories on deinstall
+
 USE_CMAKE=	yes
 
 MANPREFIX=	${PREFIX}/share
