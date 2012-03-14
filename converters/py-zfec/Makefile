@@ -6,6 +6,7 @@
 
 PORTNAME=	zfec
 PORTVERSION=	1.4.22
+PORTREVISION=	1
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +31,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/doc|${DOCSDIR}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|share/doc|${DOCSDIR}|g ; \
+		s#(doc_loc, data_fnames)##g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
