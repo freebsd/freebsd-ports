@@ -32,4 +32,12 @@ PLIST_SUB=	SOVERSION=${SOVERSION}
 # chase graphics/jpeg
 SOVERSION=	11
 
+OPTIONS+=	PIC "Static library with PIC (required for VirtualGL)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PIC)
+CONFIGURE_ARGS+=--with-pic
+.endif
+
 .include <bsd.port.mk>
