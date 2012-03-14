@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	10.0.2
+DISTVERSION=	10.0.3
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -57,7 +57,7 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-release
+WRKSRC:=	${WRKDIR}/mozilla-esr10
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
@@ -74,6 +74,7 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 .endif
 
 .if defined(WITH_PGO)
+BROKEN=		does not build
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 USE_PYTHON_BUILD=	yes
 USE_DISPLAY=		yes
