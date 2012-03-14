@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.6.27
+DISTVERSION=	3.6.28
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -18,6 +18,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8.6:${PORTSDIR}/devel/nspr
 
+DEPRECATED=	will be unsupported by when Firefox 12 is release, migrate to www/firefox now
 USE_AUTOTOOLS=	autoconf213
 LATEST_LINK=	firefox36
 USE_GECKO=	gecko

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox36-i18n
-PORTVERSION=	3.6.27
+PORTVERSION=	3.6.28
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,6 +16,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Firefox 3.6
 
+DEPRECATED=	will be unsupported by when Firefox 12 is release, migrate to www/firefox-i18n now
 USE_FIREFOX=	36
 USE_XPI=	firefox3
 
