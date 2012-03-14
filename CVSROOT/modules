@@ -9486,6 +9486,7 @@ mod_fastcgi                     ports/www/mod_fastcgi
 mod_fcgid                       ports/www/mod_fcgid
 mod_fileiri                     ports/www/mod_fileiri
 mod_flickr                      ports/www/mod_flickr
+mod_ftp                         ports/www/mod_ftp
 mod_geoip2                      ports/www/mod_geoip2
 mod_gnutls                      ports/www/mod_gnutls
 mod_gzip2                       ports/www/mod_gzip2
@@ -13485,6 +13486,7 @@ p5-Net-Growl                    ports/net/p5-Net-Growl
 p5-Net-GrowlClient              ports/net/p5-Net-GrowlClient
 p5-Net-HL7                      ports/net/p5-Net-HL7
 p5-Net-HTTP                     ports/net/p5-Net-HTTP
+p5-Net-HTTPS-NB                 ports/net/p5-Net-HTTPS-NB
 p5-Net-Hiveminder               ports/net/p5-Net-Hiveminder
 p5-Net-ICQ2000                  ports/net-im/p5-Net-ICQ2000
 p5-Net-IDN-Encode               ports/textproc/p5-Net-IDN-Encode
@@ -17974,6 +17976,7 @@ p5-net-growlclient              ports/net/p5-Net-GrowlClient
 p5-net-hiveminder               ports/net/p5-Net-Hiveminder
 p5-net-hl7                      ports/net/p5-Net-HL7
 p5-net-http                     ports/net/p5-Net-HTTP
+p5-net-https-nb                 ports/net/p5-Net-HTTPS-NB
 p5-net-icq2000                  ports/net-im/p5-Net-ICQ2000
 p5-net-ident                    ports/net/p5-Net-Ident
 p5-net-idn-encode               ports/textproc/p5-Net-IDN-Encode
@@ -24931,6 +24934,7 @@ sccmilter                       ports/mail/sccmilter
 scdp                            ports/net-mgmt/scdp
 sceptre                         ports/cad/sceptre
 scew                            ports/textproc/scew
+schedutils                      ports/sysutils/schedutils
 scheme48                        ports/lang/scheme48
 schemetoc                       ports/lang/schemetoc
 schism                          ports/audio/schism
