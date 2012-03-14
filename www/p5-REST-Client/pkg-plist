@@ -1,0 +1,5 @@
+%%SITE_PERL%%/REST/Client.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Client/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST
+@dirrmtry %%SITE_PERL%%/REST
