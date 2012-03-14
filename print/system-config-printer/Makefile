@@ -8,7 +8,7 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.1.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}/
 
