@@ -85,7 +85,7 @@ PLIST_SUB+=		GPHOTO2="@comment "
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS=		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
