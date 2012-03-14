@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to generate and test check digits
 
+TEST_DEPENDS=	p5-Probe-Perl>=0:${PORTSDIR}/sysutils/p5-Probe-Perl
+
 PERL_CONFIGURE=	yes
 
 MAN1=	checkdigits.pl.1
