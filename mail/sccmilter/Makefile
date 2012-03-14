@@ -7,7 +7,7 @@
 
 PORTNAME=	sccmilter
 PORTVERSION=	0.95.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail sysutils
 MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/ports/ \
 		http://citycat4.land.ru/
@@ -20,7 +20,6 @@ IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
 
 USE_BZIP2=		yes
-USE_RC_SUBR=		yes
 USE_AUTOTOOLS=	autoconf
 
 GNU_CONFIGURE=		yes
@@ -54,11 +53,5 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Do not forget delete filter description from /etc/mail/freebsd.mc"
-	@${ECHO_MSG} "and rebuild sendmail.cf file!"
-	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
