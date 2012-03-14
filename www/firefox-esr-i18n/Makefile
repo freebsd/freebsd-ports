@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	10.0.2
+PORTVERSION=	10.0.3
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
+MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
@@ -84,7 +84,7 @@ post-patch:
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
 
 List-Langs:
-	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}/linux-i686/xpi"|\
+	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}esr/linux-i686/xpi"|\
 		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1\n"}' |\
 		${AWK} 'BEGIN{ORS=" "}{print $1}END{printf "\nNumber of languages: %d\n",NR}'
 

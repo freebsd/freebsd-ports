@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	10.0.2
+PORTVERSION=	10.0.3
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}/linux-i686/en-US
+MASTER_SITE_SUBDIR?=	firefox/releases/${PORTVERSION}esr/linux-i686/en-US
+DISTNAME=	${PORTNAME}-${DISTVERSION}esr
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
