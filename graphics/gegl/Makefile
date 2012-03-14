@@ -40,11 +40,12 @@ NOPORTDOCS=	yes
 USE_GNOME=	gtk20 glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gegl-0.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-vala
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
+LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lintl
 
 GEGL_MINOR=	107
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
