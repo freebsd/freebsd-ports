@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormHandler-Model-DBIC
-PORTVERSION=	0.16
+PORTVERSION=	0.18
 CATEGORIES=	databases perl5 www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Model class for FormHandler unsing DBIx::Class
 
 BUILD_DEPENDS=	p5-DBIx-Class>0:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-DBIx-Class-ResultSet-RecursiveUpdate>=0.21:${PORTSDIR}/databases/p5-DBIx-Class-ResultSet-RecursiveUpdate \
-		p5-HTML-FormHandler>=0.35005:${PORTSDIR}/www/p5-HTML-FormHandler \
+		p5-HTML-FormHandler>=0.34001:${PORTSDIR}/www/p5-HTML-FormHandler \
 		p5-Moose>=2.0007:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
