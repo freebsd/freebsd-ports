@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcompris
-PORTVERSION=	11.09
-PORTREVISION=	1
+PORTVERSION=	12.01
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -15,7 +14,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 		gnuchess:${PORTSDIR}/games/gnuchess \
