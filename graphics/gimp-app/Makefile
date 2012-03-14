@@ -192,6 +192,8 @@ post-patch:
 		s|%%GIMP_THUMB_LIBS%%|${GIMP_THUMB_LIBS}|; \
 		s|%%GIMP_UI_LIBS%%|${GIMP_UI_LIBS}|' \
 			${WRKSRC}/plug-ins/pygimp/Makefile.in
+	@${REINPLACE_CMD} -e 's/-u /-Wl,-u,/' \
+		${WRKSRC}/app/Makefile.in
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng14"|' \
 	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
