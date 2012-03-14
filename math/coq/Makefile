@@ -19,6 +19,8 @@ COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
+BROKEN=		does not build
+
 COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USE_OCAML=	yes
 USE_GMAKE=	yes
