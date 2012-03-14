@@ -7,6 +7,7 @@
 
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	download
@@ -50,11 +51,7 @@ do-install:
 	@cd ${WRKSRC} && ${JAM} install
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
-
 
 .include <bsd.port.post.mk>
