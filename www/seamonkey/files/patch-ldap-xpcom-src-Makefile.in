@@ -1,6 +1,6 @@
---- ldap/xpcom/src/Makefile.in.orig	2009-11-22 03:44:31.000000000 +0100
-+++ ldap/xpcom/src/Makefile.in	2009-11-26 13:06:53.000000000 +0100
-@@ -97,6 +97,10 @@
+--- ldap/xpcom/src/Makefile.in.orig	2012-03-12 10:25:35.000000000 +0100
++++ ldap/xpcom/src/Makefile.in	2012-03-12 10:26:09.000000000 +0100
+@@ -89,6 +89,10 @@
  		$(NULL)
  endif
  
@@ -8,6 +8,6 @@
 +EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -lpthread
 +endif
 +
- EXTRA_DSO_LDOPTS += $(MOZ_COMPONENT_LIBS) $(LDAP_LIBS)
- 
- include $(topsrcdir)/config/rules.mk
+ EXTRA_DSO_LDOPTS += $(LDAP_LIBS)
+ ifndef MOZ_INCOMPLETE_EXTERNAL_LINKAGE
+ EXTRA_DSO_LDOPTS += $(MOZ_COMPONENT_LIBS)
