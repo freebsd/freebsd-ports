@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	superlu
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSION=	${P_VERSION}.20060201
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
@@ -43,6 +43,7 @@ BLAS=		-lptf77blas
 .endif
 
 USE_FORTRAN=	yes
+USE_LDCONFIG=	yes
 
 P_VERSION=	3.0
 WRKSRC=		${WRKDIR}/SuperLU_${P_VERSION}
@@ -65,6 +66,10 @@ pre-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libsuperlu_${P_VERSION}.a \
 		${PREFIX}/lib/libsuperlu.a
+	${INSTALL_DATA} ${WRKSRC}/libsuperlu_${P_VERSION}.so \
+		${PREFIX}/lib/libsuperlu.so.${PORTREVISION}
+	${LN} -s ${PREFIX}/lib/libsuperlu.so.${PORTREVISION} \
+		${PREFIX}/lib/libsuperlu.so
 	@${MKDIR} ${PREFIX}/include/superlu
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${PREFIX}/include/superlu
 .if !defined(NOPORTDOCS)
