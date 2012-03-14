@@ -24,6 +24,8 @@ SCONS_ARGS=	prefix=${PREFIX} SONAME="libtolua++-${LUA_VER}.so"
 CFLAGS+=	-I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 
+PORTSCOUT=	limit:1\.0\.92
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua++ ${LUA_BINDIR}
 	${LN} -sf ${LUA_SUBDIR}/tolua++ ${PREFIX}/bin/tolua++-${LUA_VER}
