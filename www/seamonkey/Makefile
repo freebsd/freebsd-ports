@@ -6,7 +6,7 @@
 #.1
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.7.2
+DISTVERSION=	2.8
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -84,7 +84,8 @@ LIB_DEPENDS+=	glitz.1:${PORTSDIR}/graphics/glitz
 .endif
 
 .if defined(WITHOUT_MAILNEWS)
-EXTRA_PATCHES+=	${FILESDIR}/extra-mailnews-patch-bridge-bridge.mk
+EXTRA_PATCHES+=	${FILESDIR}/extra-mailnews-patch-bridge-bridge.mk \
+		${FILESDIR}/extra-patch-configure.in
 MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .else
 # mail and news desired, but not LDAP
