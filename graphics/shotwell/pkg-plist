@@ -54,6 +54,7 @@ share/gnome/help/shotwell/C/share-upload.page
 share/gnome/help/shotwell/C/view-displaying.page
 share/gnome/help/shotwell/C/view-information.page
 share/gnome/help/shotwell/C/view-sidebar.page
+share/GConf/gsettings/shotwell.convert
 share/icons/hicolor/16x16/apps/shotwell.svg
 share/icons/hicolor/24x24/apps/shotwell.svg
 share/icons/hicolor/scalable/apps/shotwell.svg
