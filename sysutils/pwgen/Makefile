@@ -10,7 +10,9 @@ PORTVERSION=	1.15
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.tricknology.org/ports/
+MASTER_SITES=	http://people.rit.edu/rpsfa/distfiles/ \
+		http://ns.ael.ru/ports/distfiles/ \
+		http://www.gnu-darwin.org/distfiles/
 
 MAINTAINER=	oddbjorn@tricknology.org
 COMMENT=	A simple password generator
