@@ -16,8 +16,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
-LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
-		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -38,10 +37,9 @@ MAKE_ENV=	HOME=${WRKDIR}
 
 MAN1=		g-ir-compiler.1 g-ir-generate.1 g-ir-scanner.1
 
-.include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|'cc'|'${CC:Q}'|g' \
+	@${REINPLACE_CMD} -e "s|'cc'|'${CC:Q:C/[[:space:]]+/', '/g}'|g" \
 		${WRKSRC}/giscanner/sourcescanner.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
