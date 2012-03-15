@@ -16,6 +16,9 @@ COMMENT=	An X11 based previewer for groff output
 
 MAN1=		gxditview.1
 PLIST_FILES=	bin/gxditview lib/X11/app-defaults/GXditview
+NO_PACKAGE=	requires system sources in sync
+
+.include <bsd.port.options.mk>
 
 .if !exists(${SRC_BASE}/contrib/groff/src)
 IGNORE=		requires ${SRC_BASE}/contrib/groff/src to build
