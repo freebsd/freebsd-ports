@@ -41,7 +41,7 @@ CC=		clang
 CXX=		clang++
 CONFIGURE_ARGS+=	--enable-clang
 .else
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 .endif
 
 .if !defined(WITHOUT_CARGO)
