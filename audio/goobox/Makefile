@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	goobox
-PORTVERSION=	1.9.2
-PORTREVISION=	7
+PORTVERSION=	2.2.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,15 +15,19 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD player and ripper for GNOME Desktop environment
 
-LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+LIB_DEPENDS=	discid.0:${PORTSDIR}/audio/libdiscid \
+		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
+		brasero-media.3:${PORTSDIR}/sysutils/brasero \
+		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
+RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XORG=	x11
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libglade2 libbonobo \
-		gnomedocutils nautiluscdburner
-USE_GSTREAMER=	cdparanoia gconf core
+USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 desktopfileutils
+USE_GSTREAMER=	cdparanoia gconf core gio
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -43,5 +46,8 @@ CONFIGURE_ARGS+=	--enable-notification
 .else
 CONFIGURE_ARGS+=	--disable-notification
 .endif
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,26 @@
+diff --git a/src/main.c b/src/main.c
+index 9c982d7..4286740 100644
+--- src/main.c
++++ src/main.c
+@@ -37,6 +37,9 @@
+ 
+ #ifdef ENABLE_NOTIFICATION
+ #include <libnotify/notify.h>
++#ifndef NOTIFY_CHECK_VERSION
++#define NOTIFY_CHECK_VERSION(x,y,z) 0
++#endif
+ static NotifyNotification *notification = NULL;
+ #endif /* ENABLE_NOTIFICATION */
+ 
+@@ -591,7 +594,11 @@ system_notify (GooWindow  *window,
+ 			g_list_free (caps);
+ 		}
+ 
++#if NOTIFY_CHECK_VERSION (0, 7, 0)
++		notification = notify_notification_new (title, msg, "goobox");
++#else
+ 		notification = notify_notification_new_with_status_icon (title, msg, "goobox", status_icon);
++#endif
+ 		notify_notification_set_urgency (notification, NOTIFY_URGENCY_LOW);
+ 
+ 		if (supports_actions) {

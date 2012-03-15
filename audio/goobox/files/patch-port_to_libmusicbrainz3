@@ -1,0 +1,773 @@
+--- configure.orig	2012-03-14 12:11:24.000000000 -0500
++++ configure	2012-03-14 13:33:57.000000000 -0500
+@@ -14820,7 +14820,7 @@
+ GTK_REQUIRED=2.18
+ GSTREAMER_REQUIRED=0.10.12
+ LIBNOTIFY_REQUIRED=0.4.3
+-LIBMUSICBRAINZ_REQUIRED=2.1.0
++LIBMUSICBRAINZ3_REQUIRED=3.0.0
+ 
+ 
+ 
+@@ -14932,7 +14932,8 @@
+ 	gtk+-2.0 >= \$GTK_REQUIRED
+ 	gstreamer-0.10 >= \$GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= \$LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= \$LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ \""; } >&5
+@@ -14942,7 +14943,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ ") 2>&5
+@@ -14955,7 +14957,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ " 2>/dev/null`
+@@ -14977,7 +14980,8 @@
+ 	gtk+-2.0 >= \$GTK_REQUIRED
+ 	gstreamer-0.10 >= \$GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= \$LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= \$LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ \""; } >&5
+@@ -14987,7 +14991,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ ") 2>&5
+@@ -15000,7 +15005,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ " 2>/dev/null`
+@@ -15028,7 +15034,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ "`
+@@ -15039,7 +15046,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ "`
+@@ -15053,7 +15061,8 @@
+ 	gtk+-2.0 >= $GTK_REQUIRED
+ 	gstreamer-0.10 >= $GSTREAMER_REQUIRED
+ 	libbrasero-media
+-	libmusicbrainz >= $LIBMUSICBRAINZ_REQUIRED
++	libmusicbrainz3 >= $LIBMUSICBRAINZ3_REQUIRED
++	libdiscid
+ 	gconf-2.0
+ 	unique-1.0
+ ) were not met:
+diff --git a/data/ui/properties.ui b/data/ui/properties.ui
+index b28d921..83aaf21 100644
+--- data/ui/properties.ui
++++ data/ui/properties.ui
+@@ -344,7 +344,7 @@
+                                     <property name="can_focus">False</property>
+                                     <property name="spacing">6</property>
+                                     <child>
+-                                      <object class="GtkImage" id="image2">
++                                      <object class="GtkImage" id="info_icon">
+                                         <property name="visible">True</property>
+                                         <property name="can_focus">False</property>
+                                         <property name="stock">gtk-dialog-warning</property>
+diff --git a/src/album-info.c b/src/album-info.c
+index 10c3bc8..7effa35 100644
+--- src/album-info.c
++++ src/album-info.c
+@@ -26,6 +26,7 @@
+ #include "album-info.h"
+ #include "glib-utils.h"
+ #include "gth-user-dir.h"
++#include "track-info.h"
+ 
+ 
+ #define MBI_VARIOUS_ARTIST_ID  "89ad4ac3-39f7-470e-963a-56509c546377"
+@ -226,18 +227,21 @@ album_info_set_tracks (AlbumInfo  *album,
+ 		       GList      *tracks)
+ {
+ 	GList *scan;
+-	
++
+ 	if (album->tracks == tracks)
+ 		return;
+-	
++
+ 	track_list_free (album->tracks);
+ 	album->tracks = track_list_dup (tracks);
+-	
++
+ 	album->n_tracks = 0;
+ 	album->total_length = 0;
+ 	for (scan = album->tracks; scan; scan = scan->next) {
+ 		TrackInfo *track = scan->data;
+-		
++
++		if ((album->artist != NULL) && (track->artist == NULL))
++			track_info_set_artist (track, album->artist, album->artist_id);
++
+ 		album->n_tracks++;
+ 		album->total_length += track->length;
+ 	}
+diff --git a/src/dlg-properties.c b/src/dlg-properties.c
+index de56ecd..7cf0d2a 100644
+--- src/dlg-properties.c
++++ src/dlg-properties.c
+@@ -218,49 +218,54 @@ remove_incompatible_albums (GList     *albums,
+ 		else
+ 			scan = scan->next;
+ 	}
+-	
++
+ 	return albums;
+ }
+ 
+ 
+ static void
+-search_cb (GtkWidget  *widget, 
++search_cb (GtkWidget  *widget,
+ 	   DialogData *data)
+ {
+-	musicbrainz_t  mb;
+-	char          *mb_args[2];
+-	
+-	mb = mb_New ();
+-	mb_UseUTF8 (mb, TRUE);
+-	mb_SetDepth (mb, 4);
+-	/*mb_SetMaxItems(mb, 10);*/
+-	
+-	mb_args[0] = (char*) gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("title_entry")));
+-	mb_args[1] = NULL;
+-	if (! mb_QueryWithArgs (mb, MBQ_FindAlbumByName, mb_args)) {
+-		char  mb_error[1024];
+-		char *s;
+-		
+-	        mb_GetQueryError (mb, mb_error, sizeof (mb_error));
+-	        s = g_strdup_printf (_("Search failed: %s\n"), mb_error);
+-        	gtk_label_set_text (GTK_LABEL (GET_WIDGET ("info_label")), s);
+-        	g_free (s);
+-	}
+-	else {	
+-		data->albums = get_album_list (mb);
+-		data->albums = remove_incompatible_albums (data->albums, goo_window_get_album (data->window));
+-		data->n_albums = g_list_length (data->albums);
+-	
+-		if (data->n_albums == 0) { 
+-			gtk_label_set_text (GTK_LABEL (GET_WIDGET ("info_label")), _("No album found"));
+-			gtk_widget_show (GET_WIDGET ("info_box"));
+-			gtk_widget_hide (GET_WIDGET ("navigation_box"));
+-		} 
+-		else 
+-			show_album (data, 0);
++	MbReleaseFilter  filter;
++	MbQuery          query;
++	MbResultList     list;
++
++	gtk_image_set_from_stock (GTK_IMAGE (GET_WIDGET ("info_icon")), GTK_STOCK_FIND, GTK_ICON_SIZE_BUTTON);
++	gtk_label_set_text (GTK_LABEL (GET_WIDGET ("info_label")), _("Searching disc info..."));
++	gtk_widget_show (GET_WIDGET ("info_box"));
++	gtk_widget_hide (GET_WIDGET ("navigation_box"));
++
++	/*
++	metadata_search_album_by_title (gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("title_entry"))),
++					data->cancellable,
++					G_CALLBACK (search_album_by_title_ready_cb),
++					data);
++	*/
++
++	filter = mb_release_filter_new ();
++	mb_release_filter_title (filter, gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("title_entry"))));
++
++	query = mb_query_new (NULL, NULL);
++	list = mb_query_get_releases (query, filter);
++
++	data->albums = get_album_list (list);
++	get_track_info_for_album_list (data->albums);
++	data->albums = remove_incompatible_albums (data->albums, goo_window_get_album (data->window));
++	data->n_albums = g_list_length (data->albums);
++
++	if (data->n_albums == 0) {
++		gtk_image_set_from_stock (GTK_IMAGE (GET_WIDGET ("info_icon")), GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_BUTTON);
++		gtk_label_set_text (GTK_LABEL (GET_WIDGET ("info_label")), _("No album found"));
++		gtk_widget_show (GET_WIDGET ("info_box"));
++		gtk_widget_hide (GET_WIDGET ("navigation_box"));
+ 	}
++	else
++		show_album (data, 0);
+ 
+-	mb_Delete (mb);
++	mb_result_list_free (list);
++	mb_query_free (query);
++	mb_release_filter_free (filter);
+ }
+ 
+ 
+diff --git a/src/goo-player.c b/src/goo-player.c
+index 050d1d2..6de4a9a 100644
+--- src/goo-player.c
++++ src/goo-player.c
+@@ -25,8 +25,8 @@
+ #include <string.h>
+ #include <glib/gi18n.h>
+ #include <gst/gst.h>
+-#include <musicbrainz/queries.h>
+-#include <musicbrainz/mb_c.h>
++#include <discid/discid.h>
++#include <musicbrainz3/mb_c.h>
+ #include "goo-player.h"
+ #include "goo-marshal.h"
+ #include "glib-utils.h"
+@@ -74,6 +74,7 @@
+ 	gboolean         exiting;
+ 
+ 	char            *rdf;
++	GList           *albums;
+ };
+ 
+ enum {
+@@ -348,6 +349,7 @@
+ 	self->priv->current_track_n = -1;
+ 	self->priv->volume_value = 1.0;
+ 	self->priv->update_progress_id = 0;
++	self->priv->albums = NULL;
+ }
+ 
+ 
+@@ -457,6 +459,9 @@
+ }
+ 
+ 
++#if 0
++
++
+ static void
+ set_cd_metadata_from_rdf (GooPlayer *self,
+ 			  char      *rdf)
+@@ -552,13 +557,16 @@
+ }
+ 
+ 
++#endif
++
++
+ static int
+ check_get_cd_metadata (gpointer data)
+ {
+ 	GooPlayer *player = data;
+ 	gboolean   done, exiting;
+-	char      *rdf;
+-				
++	GList     *albums;
++
+ 	/* Remove the check. */
+ 
+         g_source_remove (player->priv->check_id);
+@@ -587,45 +595,51 @@
+ 	/**/
+ 
+ 	g_mutex_lock (player->priv->yes_or_no);
+-	rdf = player->priv->rdf;
+-	player->priv->rdf = NULL;
++	albums = player->priv->albums;
++	player->priv->albums = NULL;
+ 	g_mutex_unlock (player->priv->yes_or_no);
+-	
+-	if (rdf != NULL) { 
+-		set_cd_metadata_from_rdf (player, rdf);
+-		save_rdf_to_cache (player, rdf);
++
++	if (albums != NULL) {
++		AlbumInfo *first_album = albums->data;
++
++		/* FIXME: ask the user which album to use if the query
++		 * returned more than one album. */
++
++		goo_player_set_album (player, first_album);
+ 		album_info_save_to_cache (player->priv->album, player->priv->discid);
+-		g_free (rdf);
++
++		album_list_free (albums);
+ 	}
+-	
+-	return FALSE;			
++
++	return FALSE;		
+ }
+ 
+ 
+ static void * 
+ get_cd_metadata (void *thread_data)
+ {
+-	GooPlayer     *player = thread_data;
+-	musicbrainz_t  mb;
+-	char          *rdf = NULL;
+-	
+-	mb = mb_New ();
+-	mb_UseUTF8 (mb, TRUE);
+-	if (mb_Query (mb, MBQ_GetCDInfo)) {
+-		int rdf_len;
+-	
+-		rdf_len = mb_GetResultRDFLen (mb);
+-		rdf = g_malloc (rdf_len + 1);
+-		mb_GetResultRDF (mb, rdf, rdf_len);
+-	}
+-	mb_Delete (mb);
++	GooPlayer       *player = thread_data;
++	MbReleaseFilter  filter;
++	MbQuery          query;
++	MbResultList     list;
++
++	filter = mb_release_filter_new ();
++	mb_release_filter_disc_id (filter, player->priv->discid);
++	mb_release_filter_limit (filter, 1);
++
++	query = mb_query_new (NULL, NULL);
++	list = mb_query_get_releases (query, filter);
+ 
+ 	g_mutex_lock (player->priv->yes_or_no);
+-	g_free (player->priv->rdf);
+-	player->priv->rdf = rdf;
++	album_list_free (player->priv->albums);
++	player->priv->albums = get_album_list (list);
+ 	player->priv->thread = NULL;
+ 	g_mutex_unlock (player->priv->yes_or_no);
+ 
++	mb_result_list_free (list);
++	mb_query_free (query);
++	mb_release_filter_free (filter);
++
+ 	g_thread_exit (NULL);
+ 
+ 	return NULL;
+@@ -638,8 +652,7 @@
+ 	GooPlayer *player = data;
+ 	gboolean   done;
+ 	gboolean   exiting;
+-	char      *rdf;
+-	
++
+ 	/* Remove the check. */
+ 
+         g_source_remove (player->priv->check_id);
+@@ -680,13 +693,13 @@
+ 		action_done (player, GOO_PLAYER_ACTION_METADATA);
+ 		return FALSE;
+ 	}
+-		
+-	rdf = read_cached_rdf (player); 
+-	if (rdf != NULL) {
+-		set_cd_metadata_from_rdf (player, rdf);
+-		g_free (rdf);
+-		return FALSE;
+-	}
++
++	/*
++	metadata_get_album_info_from_disc_id (player->priv->discid,
++					      data->cancellable,
++					      G_CALLBACK (album_info_from_disc_id_ready_cb),
++					      data);
++	*/
+ 
+ 	g_mutex_lock (player->priv->yes_or_no);
+ 	player->priv->thread = g_thread_create (get_cd_metadata, player, FALSE, NULL);
+@@ -701,45 +714,45 @@
+ static void * 
+ get_cd_tracks (void *thread_data)
+ {
+-	GooPlayer     *player = thread_data;
+-	GList         *tracks = NULL;
+-	musicbrainz_t  mb;
+-	
++	GooPlayer *player = thread_data;
++	GList     *tracks = NULL;
++	DiscId    *disc;
++
+ 	if (player->priv->pipeline != NULL)
+ 		gst_element_set_state (player->priv->pipeline, GST_STATE_PAUSED);
+ 
+ 	g_free (player->priv->discid);
+ 	player->priv->discid = NULL;
+ 
+-	mb = mb_New ();
+-	mb_UseUTF8 (mb, TRUE);
+-	mb_SetDevice (mb, (char *) goo_player_get_device (player));
+-	if (mb_Query (mb, MBQ_GetCDTOC)) {
+-		char data[256];
+-		int  n_tracks, i;
+-		
+-		mb_GetResultData(mb, MBE_TOCGetCDIndexId, data, sizeof (data));
+-		player->priv->discid = g_strdup (data);	
++	disc = discid_new ();
++	if (discid_read (disc, goo_player_get_device (player))) {
++		int first_track;
++		int last_track;
++		int i;
++
++		player->priv->discid = g_strdup (discid_get_id (disc));
+ 		debug (DEBUG_INFO, "==> [MB] DISC ID: %s\n", player->priv->discid);
+-			
+-		debug (DEBUG_INFO, "==> [MB] FIRST TRACK: %d\n", mb_GetResultInt (mb, MBE_TOCGetFirstTrack));
+-		
+-		n_tracks = mb_GetResultInt (mb, MBE_TOCGetLastTrack);
+-		debug (DEBUG_INFO, "==> [MB] LAST TRACK: %d\n", n_tracks);
+-		
+-		for (i = 0; i < n_tracks; i++) {
++
++		first_track = discid_get_first_track_num (disc);
++		debug (DEBUG_INFO, "==> [MB] FIRST TRACK: %d\n", first_track);
++
++		last_track = discid_get_last_track_num (disc);
++		debug (DEBUG_INFO, "==> [MB] LAST TRACK: %d\n", last_track);
++
++		for (i = first_track; i <= last_track; i++) {
+ 			gint64 from_sector;
+ 			gint64 n_sectors;
+-			
+-			from_sector = mb_GetResultInt1 (mb, MBE_TOCGetTrackSectorOffset, i + 2);
+-			n_sectors = mb_GetResultInt1 (mb, MBE_TOCGetTrackNumSectors, i + 2);
+-			
++
++			from_sector = discid_get_track_offset (disc, i);
++			n_sectors = discid_get_track_length (disc, i);
++
+ 			debug (DEBUG_INFO, "==> [MB] Track %d: [%"G_GINT64_FORMAT", %"G_GINT64_FORMAT"]\n", i, from_sector, from_sector + n_sectors);
+-			
+-			tracks = g_list_prepend (tracks, track_info_new (i, from_sector, from_sector + n_sectors));
++
++			tracks = g_list_prepend (tracks, track_info_new (i - first_track, from_sector, from_sector + n_sectors));
+ 		}
+ 	}
+-	mb_Delete (mb);
++
++	discid_free (disc);
+ 
+ 	tracks = g_list_reverse (tracks);
+ 	album_info_set_tracks (player->priv->album, tracks);
+@@ -821,7 +834,14 @@
+ 	goo_player_empty_list (player);
+ 	goo_player_set_is_busy (player, TRUE);
+ 	create_pipeline (player);
+-	
++
++	/* FIXME
++	metadata_read_cd_info_from_device (goo_player_get_device (player),
++					   data->cancellable,
++					   G_CALLBACK (cd_info_from_device_ready_cb),
++					   data);
++	*/
++
+ 	g_mutex_lock (player->priv->yes_or_no);
+ 	player->priv->thread = g_thread_create (get_cd_tracks, player, FALSE, NULL);
+ 	g_mutex_unlock (player->priv->yes_or_no);
+diff --git a/src/metadata.c b/src/metadata.c
+index d5289e7..47d0f5d 100644
+--- src/metadata.c
++++ src/metadata.c
+@@ -22,124 +22,163 @@
+ 
+ #include <config.h>
+ #include <stdio.h>
+-#include <musicbrainz/queries.h>
+-#include <musicbrainz/mb_c.h>
++#include <string.h>
++#include <musicbrainz3/mb_c.h>
+ #include "glib-utils.h"
+ #include "metadata.h"
+ #include "album-info.h"
+ 
+ 
+-static AlbumInfo* 
+-get_album_info (musicbrainz_t mb,
+-		int           n_album)
++static TrackInfo *
++get_track_info (MbTrack mb_track,
++		int     n_track)
++{
++	TrackInfo *track;
++	char       data[1024];
++	char       data2[1024];
++	MbArtist   mb_artist;
++
++	track = track_info_new (n_track, 0, 0);
++
++	mb_track_get_title (mb_track, data, 1024);
++	track_info_set_title (track, data);
++
++	debug (DEBUG_INFO, "==> [MB] TRACK %d: %s\n", n_track, data);
++
++	mb_artist = mb_track_get_artist (mb_track);
++	if (mb_artist != NULL) {
++		mb_artist_get_unique_name (mb_artist, data, 1024);
++		mb_artist_get_id (mb_artist, data2, 1024);
++		track_info_set_artist (track, data, data2);
++	}
++
++	return track;
++}
++
++
++static AlbumInfo *
++get_album_info (MbRelease release)
+ {
+ 	AlbumInfo *album;
+ 	char       data[1024];
+-	int        n_track, n_tracks;   
+-	GList     *tracks = NULL;       
+-	
+-	/*mb_Select (mb, MBS_Rewind);*/  
+-	if (! mb_Select1 (mb, MBS_SelectAlbum, n_album))
+-		return NULL;
++	int        i;
++	MbArtist   artist;
++	char       data2[1024];
++	GList     *tracks = NULL;
++	int        n_tracks;
+ 
+ 	album = album_info_new ();
+-	
+-	if (mb_GetResultData (mb, MBE_AlbumGetAlbumId, data, sizeof (data))) {
+-		char data2[1024];
+-		mb_GetIDFromURL (mb, data, data2, sizeof (data2));
+-		debug (DEBUG_INFO, "==> [MB] ALBUM_ID: %s (%s)\n", data, data2);
+-		album_info_set_id (album, data2);
+-	}
+-	else
+-		return album;
+-	
+- 	if (mb_GetResultData (mb, MBE_AlbumGetAlbumName, data, sizeof (data))) {
+-		album_info_set_title (album, data);
+-		debug (DEBUG_INFO, "==> [MB] ALBUM NAME: %s\n", data);
+- 	}
+-
+-	if (mb_GetResultData (mb, MBE_AlbumGetAmazonAsin, data, sizeof (data))) {
+-		album_info_set_asin (album, data);
+-		debug (DEBUG_INFO, "==> [MB] ASIN: %s\n", data);
+-	}
+-		
+- 	if (mb_GetResultInt (mb, MBE_AlbumGetNumReleaseDates) >= 1) {
+- 		int y = 0, m = 0, d = 0;
+- 		
+-		mb_Select1 (mb, MBS_SelectReleaseDate, 1);
+- 		
+-		mb_GetResultData (mb, MBE_ReleaseGetDate, data, sizeof (data));
++
++	mb_release_get_id (release, data, 1024);
++	debug (DEBUG_INFO, "==> [MB] ALBUM_ID: %s\n", data);
++	album_info_set_id (album, strrchr (data, '/') + 1);
++
++	mb_release_get_title (release, data, 1024);
++	debug (DEBUG_INFO, "==> [MB] ALBUM NAME: %s\n", data);
++	album_info_set_title (album, data);
++
++	mb_release_get_asin (release, data, 1024);
++	debug (DEBUG_INFO, "==> [MB] ASIN: %s\n", data);
++	album_info_set_asin (album, data);
++
++	for (i = 0; i < mb_release_get_num_release_events (release); i++) {
++		MbReleaseEvent event;
++		int            y = 0, m = 0, d = 0;
++
++		event = mb_release_get_release_event (release, i);
++		mb_release_event_get_date (event, data, 1024);
+ 		debug (DEBUG_INFO, "==> [MB] RELEASE DATE: %s\n", data);
+ 		if (sscanf (data, "%d-%d-%d", &y, &m, &d) > 0) {
+ 			GDate *date;
+-		
++
+ 			date = g_date_new_dmy ((d > 0) ? d : 1, (m > 0) ? m : 1, (y > 0) ? y : 1);
+ 			album_info_set_release_date (album, date);
+ 			g_date_free (date);
+ 		}
+- 		
+-		mb_GetResultData (mb, MBE_ReleaseGetCountry, data, sizeof (data));
+-		debug (DEBUG_INFO, "==> [MB] RELEASE COUNTRY: %s\n", data);
+- 		
+-		mb_Select (mb, MBS_Back);
+- 	}
+- 
+-	if (mb_GetResultData (mb, MBE_AlbumGetAlbumArtistName, data, sizeof (data))) {
+-		char data2[1024], data3[1024];
+-		
+-		mb_GetResultData (mb, MBE_AlbumGetArtistId, data2, sizeof (data2));
+-		mb_GetIDFromURL (mb, data2, data3, sizeof (data3));
+-		
+-		debug (DEBUG_INFO, "==> [MB] ARTIST_ID: %s (%s)\n", data2, data3);
+-		
+-		album_info_set_artist (album, data, data3);
+ 	}
+-	
++
++	artist = mb_release_get_artist (release);
++	mb_artist_get_unique_name (artist, data, 1024);
++	mb_artist_get_id (artist, data2, 1024);
++	album_info_set_artist (album, data, data2);
++
+ 	tracks = NULL;
+-	n_tracks = mb_GetResultInt (mb, MBE_AlbumGetNumTracks);
++	n_tracks = mb_release_get_num_tracks (release);
+ 	debug (DEBUG_INFO, "==> [MB] N TRACKS: %d\n", n_tracks);
+-	for (n_track = 1; n_track <= n_tracks; n_track++) {
++	for (i = 0; i < n_tracks; i++) {
++		MbTrack    mb_track;
+ 		TrackInfo *track;
+-		
+-		track = track_info_new (n_track - 1, 0, 0);
++
++		mb_track = mb_release_get_track (release, i);
++		track = get_track_info (mb_track, i);
++		if (album->artist == NULL)
++			album_info_set_artist (album, track->artist, KEEP_PREVIOUS_VALUE);
+ 		tracks = g_list_prepend (tracks, track);
+-		
+-		if (mb_GetResultData1 (mb, MBE_AlbumGetTrackName, data, sizeof (data), n_track))
+-			track_info_set_title (track, data);
+-		
+-		debug (DEBUG_INFO, "==> [MB] TRACK %d: %s\n", n_track, data);
+-			
+-		if (mb_GetResultData1 (mb, MBE_AlbumGetArtistName, data, sizeof (data), n_track)) {
+-		    	char data2[1024], data3[1024];
+-		
+-			mb_GetResultData1 (mb, MBE_AlbumGetArtistId, data2, sizeof (data2), n_track);
+-			mb_GetIDFromURL (mb, data2, data3, sizeof (data3));
+-			track_info_set_artist (track, data, data3);
+-			
+-			if (album->artist == NULL)
+-				album_info_set_artist (album, data, KEEP_PREVIOUS_VALUE);
+-		}
+ 	}
+-	mb_Select (mb, MBS_Back);
+-	
++
+ 	tracks = g_list_reverse (tracks);
+ 	album_info_set_tracks (album, tracks);
+-	
++
+ 	return album;
+ }
+ 
+ 
+-GList* 
+-get_album_list (musicbrainz_t mb)
++GList *
++get_album_list (MbResultList list)
+ {
+ 	GList *albums = NULL;
+-	int    n_albums, i;
+-		
+-	n_albums = mb_GetResultInt (mb, MBE_GetNumAlbums);
++	int    n_albums;
++	int    i;
++
++	n_albums = mb_result_list_get_size (list);
+ 	g_print ("[MB] Num Albums: %d\n", n_albums);
+-	
+-	for (i = 1; i <= n_albums; i++)
+-		albums = g_list_prepend (albums, get_album_info (mb, i));
+-	
++
++	for (i = 0; i < n_albums; i++) {
++		MbRelease release;
++
++		release = mb_result_list_get_release (list, i);
++		albums = g_list_prepend (albums, get_album_info (release));
++	}
++
+ 	return g_list_reverse (albums);
+ }
++
++
++void
++get_track_info_for_album_list (GList *albums)
++{
++	GList *scan;
++
++	for (scan = albums; scan; scan = scan->next) {
++		AlbumInfo     *album = scan->data;
++		MbTrackFilter  filter;
++		GList         *tracks;
++		MbQuery        query;
++		MbResultList   list;
++		int            i;
++
++		filter = mb_track_filter_new ();
++		mb_track_filter_release_id (filter, album->id);
++		query = mb_query_new (NULL, NULL);
++		list = mb_query_get_tracks (query, filter);
++
++		tracks = NULL;
++		for (i = 0; i < mb_result_list_get_size (list); i++) {
++			MbTrack    mb_track;
++			TrackInfo *track;
++
++			mb_track = mb_result_list_get_track (list, i);
++			track = get_track_info (mb_track, i);
++			if ((album->artist == NULL) && (track->artist != NULL))
++				album_info_set_artist (album, track->artist, KEEP_PREVIOUS_VALUE);
++			tracks = g_list_prepend (tracks, track);
++		}
++
++		tracks = g_list_reverse (tracks);
++		album_info_set_tracks (album, tracks);
++
++		mb_result_list_free (list);
++		mb_query_free (query);
++		mb_track_filter_free (filter);
++	}
++}
+diff --git a/src/metadata.h b/src/metadata.h
+index 725de33..45526aa 100644
+--- src/metadata.h
++++ src/metadata.h
+@@ -24,8 +24,9 @@
+ #define METADATA_H
+ 
+ #include <glib.h>
+-#include <musicbrainz/mb_c.h>
++#include <musicbrainz3/mb_c.h>
+ 
+-GList* get_album_list (musicbrainz_t mb);
++GList * get_album_list (MbResultList list);
++void    get_track_info_for_album_list (GList *albums);
+ 
+ #endif /* METADATA_H */
