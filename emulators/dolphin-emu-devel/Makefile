@@ -7,7 +7,6 @@
 
 PORTNAME=	dolphin-emu
 PORTVERSION=	3.0.r${REVDATE}
-PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -25,8 +24,9 @@ LIB_DEPENDS=	avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 		lzo2.2:${PORTSDIR}/archivers/lzo2 \
 		sfml-network.1:${PORTSDIR}/devel/sfml
 
-REVDATE=	20111213
+REVDATE=	20120307
 
+USE_ICONV=	yes
 USE_GNOME=	pkgconfig
 USE_SDL=	sdl
 USE_OPENAL=	yes
@@ -34,12 +34,14 @@ USE_XORG=	ice xext x11 xrandr
 USE_WX=	2.8
 USE_GL=	gl glew glu
 
+USE_GCC=	4.6+
 USE_CMAKE=	yes
 CMAKE_BUILD_TYPE=	Release
 # Disable ao (seems buggy) and ALSA (emulated)
 CMAKE_ARGS+=	-DDISABLE_AO:BOOL=ON \
 		-DDISABLE_ALSA:BOOL=ON \
-		-DDISABLE_BLUEZ:BOOL=ON
+		-DDISABLE_BLUEZ:BOOL=ON \
+		-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
 
 ## Un-comment the following to build with debug symbols
 #INSTALL_TARGET=	install
