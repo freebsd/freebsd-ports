@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A suit of XML tools with Antlers
 
-RUN_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
+BUILD_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
 		p5-Devel-PackagePath>=0.01:${PORTSDIR}/devel/p5-Devel-PackagePath \
 		p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Aliases>=0:${PORTSDIR}/devel/p5-MooseX-Aliases \
@@ -28,9 +28,11 @@ RUN_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
 		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/Test-Exception \
-		p5-Test-XML>=0:${PORTSDIR}/devel/Test-XML
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-XML>=0:${PORTSDIR}/devel/p5-Test-XML
 
 PERL_CONFIGURE=	yes
 
