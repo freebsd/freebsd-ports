@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	2.51
+PORTVERSION=	2.61
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	A high level MVC web framework written in Perl
 
 LICENSE=	ART20
-
-LICENSE_FILES=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PERL_CONFIGURE=	5.10.1+
 
@@ -98,7 +97,6 @@ MAN3=		Mojo.3 \
 		Mojolicious::Commands.3 \
 		Mojolicious::Controller.3 \
 		Mojolicious::Guides.3 \
-		Mojolicious::Guides::Cheatsheet.3 \
 		Mojolicious::Guides::CodingGuidelines.3 \
 		Mojolicious::Guides::Cookbook.3 \
 		Mojolicious::Guides::FAQ.3 \

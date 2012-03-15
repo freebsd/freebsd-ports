@@ -74,7 +74,6 @@
 %%SITE_PERL%%/Mojolicious/Commands.pm
 %%SITE_PERL%%/Mojolicious/Controller.pm
 %%SITE_PERL%%/Mojolicious/Guides.pod
-%%SITE_PERL%%/Mojolicious/Guides/Cheatsheet.pod
 %%SITE_PERL%%/Mojolicious/Guides/CodingGuidelines.pod
 %%SITE_PERL%%/Mojolicious/Guides/Cookbook.pod
 %%SITE_PERL%%/Mojolicious/Guides/FAQ.pod
