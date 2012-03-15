@@ -21,9 +21,10 @@ RUN_DEPENDS=	p5-Pragmatic>=0:${PORTSDIR}/devel/p5-Pragmatic \
 		p5-XML-LibXML>=1.62:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
+TEST_DEPENDS=	p5-Test-Warn>=0.20:${PORTSDIR}/devel/p5-Test-Warn
+
 PERL_CONFIGURE=	5.10.0+
 
 MAN3=		XML::LibXML::PrettyPrint.3
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
