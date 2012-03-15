@@ -155,7 +155,7 @@
 +#AQSISOBJS =
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
  #AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR} -lstdc++
++AQSISOBJS = $(AQSISDIR)/lib/libaqsis_core.so $(AQSISLIBDIR)/libaqsis_shadervm.so $(AQSISLIBDIR)/libaqsis_slxargs.so -L${AQSISLIBDIR} -lstdc++
 +
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
