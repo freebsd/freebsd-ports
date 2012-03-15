@@ -14042,6 +14042,7 @@ p5-RDF-Notation3                ports/textproc/p5-RDF-Notation3
 p5-RDF-Simple                   ports/textproc/p5-RDF-Simple
 p5-RDFStore                     ports/textproc/p5-RDFStore
 p5-REST-Application             ports/net/p5-REST-Application
+p5-REST-Client                  ports/www/p5-REST-Client
 p5-REST-Google                  ports/net/p5-REST-Google
 p5-REST-Google-Apps-Provisioning  ports/www/p5-REST-Google-Apps-Provisioning
 p5-RPC-Simple                   ports/net/p5-RPC-Simple
@@ -18593,6 +18594,7 @@ p5-resourcepool-resource-net-ldap  ports/net/p5-ResourcePool-Resource-Net-LDAP
 p5-resourcepool-resource-soap-lite  ports/net/p5-ResourcePool-Resource-SOAP-Lite
 p5-resources                    ports/devel/p5-Resources
 p5-rest-application             ports/net/p5-REST-Application
+p5-rest-client                  ports/www/p5-REST-Client
 p5-rest-google                  ports/net/p5-REST-Google
 p5-rest-google-apps-provisioning  ports/www/p5-REST-Google-Apps-Provisioning
 p5-return-value                 ports/devel/p5-Return-Value
