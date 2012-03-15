@@ -1,0 +1,5 @@
+File::KeePass is an interface to KeePassX and KeePass V1 database files.
+It supports only Rijndael encryption and only bases which were secured
+via passkeys (key files not supported).
+
+WWW: http://search.cpan.org/dist/File-KeePass/
