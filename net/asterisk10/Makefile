@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	10.2.0
+PORTVERSION=	10.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
