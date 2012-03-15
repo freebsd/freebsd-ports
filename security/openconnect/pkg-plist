@@ -1,9 +1,7 @@
-bin/openconnect
+sbin/openconnect
 include/openconnect.h
+lib/libopenconnect.a
 lib/libopenconnect.la
 lib/libopenconnect.so
 lib/libopenconnect.so.1
 libdata/pkgconfig/openconnect.pc
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/openconnect.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
