@@ -52,6 +52,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60eb344e-6eb1-11e1-8ad7-00e0815b8da8">
+    <topic>OpenSSL -- CMS and S/MIME Bleichenbacher attack</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.0_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Team reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20120312.txt">
+	  <p>A weakness in the OpenSSL CMS and PKCS #7 code can be exploited
+	    using Bleichenbacher's attack on PKCS #1 v1.5 RSA padding
+	    also known as the million message attack (MMA).</p>
+	  <p>Only users of CMS, PKCS #7, or S/MIME decryption operations are
+	    affected. A successful attack needs on average 2^20 messages. In
+	    practice only automated systems will be affected as humans will
+	    not be willing to process this many messages.</p>
+	  <p>SSL/TLS applications are *NOT* affected by this problem since
+	    the SSL/TLS code does not use the PKCS#7 or CMS decryption
+	    code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-0884</cvename>
+	<url>http://www.openssl.org/news/secadv_20120312.txt</url>
+    </references>
+    <dates>
+      <discovery>2012-03-12</discovery>
+      <entry>2012-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="29194cb8-6e9f-11e1-8376-f0def16c5c1b">
     <topic>nginx -- potential information leak</topic>
     <affects>
