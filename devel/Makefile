@@ -2280,6 +2280,7 @@
     SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
+    SUBDIR += p5-Perl-Critic-Deprecated
     SUBDIR += p5-Perl-Metrics-Lite
     SUBDIR += p5-Perl-Metrics-Simple
     SUBDIR += p5-Perl-OSType
