@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ecrist@secure-computing.net
+MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch meta-port to pull in all the components
 
 RUN_DEPENDS=	${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
