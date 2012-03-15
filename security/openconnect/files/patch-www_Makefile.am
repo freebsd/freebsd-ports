@@ -1,0 +1,10 @@
+--- www/Makefile.am.orig	2012-03-12 20:25:28.000000000 -0700
++++ www/Makefile.am	2012-03-12 20:25:34.000000000 -0700
+@@ -25,6 +25,6 @@
+ 
+ manual.html: openconnect.8.inc
+ openconnect.8.inc: $(top_srcdir)/openconnect.8
+-	groff -t -K UTF-8 -mandoc -Txhtml $^ | sed -e '1,/<body>/d' -e '/<\/body>/,$$d' > $@
++	groff -t -mandoc -Thtml $^ | sed -e '1,/<body>/d' -e '/<\/body>/,$$d' > $@
+ 
+ EXTRA_DIST = $(patsubst %.html,%.xml,$(ALL_PAGES)) menu1.xml menu2*.xml html.py
