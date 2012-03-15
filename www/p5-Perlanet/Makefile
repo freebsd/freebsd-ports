@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Perlanet
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAVECROSS
@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A program for creating programs that aggregate web feeds
 
-RUN_DEPENDS=	p5-CHI>=0:${PORTSDIR}/devel/p5-CHI \
+BUILD_DEPENDS=	p5-CHI>=0:${PORTSDIR}/devel/p5-CHI \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy \
 		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
-		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-ConfigFromFile>=0:${PORTSDIR}/devel/p5-MooseX-ConfigFromFile \
 		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
@@ -28,6 +27,7 @@ RUN_DEPENDS=	p5-CHI>=0:${PORTSDIR}/devel/p5-CHI \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -46,8 +46,9 @@ MAN3=		Perlanet.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 508000
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 .include <bsd.port.post.mk>
