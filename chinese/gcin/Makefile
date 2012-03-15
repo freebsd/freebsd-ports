@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 PORTREVISION=	0
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~cp76/gcin/download/:main
@@ -78,7 +78,7 @@ post-patch:
 		s,-ldl,,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; \
-		s,/usr/lib64/qt4/bin/moc,${LOCALBASE}/bin/moc-qt4,; \
+		s,/usr/bin/moc,${LOCALBASE}/bin/moc-qt4,; \
 		1, 300 s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,; \
 		/GCIN_DEBUG/ d' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,;' \
