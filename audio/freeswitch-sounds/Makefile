@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://files.freeswitch.org/
 DIST_SUBDIR=	freeswitch-sounds
 
-MAINTAINER=	ecrist@secure-computing.net
+MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch Sounds (All Bitrates)
 
 PLIST=		${WRKDIR}/plist

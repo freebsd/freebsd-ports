@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://files.freeswitch.org/
 DIST_SUBDIR=	freeswitch-music
 
-MAINTAINER=	ecrist@secure-computing.net
+MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch Music - All Bitrates
 
 NO_WRKSUBDIR=	yes
