@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	dragonfly
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	On-the-fly Rack-based image handling framework
 
 RUN_DEPENDS+=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
