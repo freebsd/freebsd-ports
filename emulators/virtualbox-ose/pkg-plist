@@ -240,6 +240,8 @@ include/virtualbox/VBoxCAPI_v2_2.h
 include/virtualbox/VBoxCAPI_v3_0.h
 include/virtualbox/VBoxCAPI_v3_1.h
 include/virtualbox/VBoxCAPI_v3_2.h
+include/virtualbox/VBoxCAPI_v4_0.h
+include/virtualbox/VBoxCAPI_v4_1.h
 include/virtualbox/VirtualBox_XPCOM.h
 include/virtualbox/ipcIClientObserver.h
 include/virtualbox/ipcIDConnectService.h

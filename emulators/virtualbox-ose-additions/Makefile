@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.8
+DISTVERSION=	4.1.10
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -25,7 +25,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
