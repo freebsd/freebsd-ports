@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.8
-PORTREVISION=	1
+DISTVERSION=	4.1.10
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -33,7 +32,7 @@ RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
 USE_CDRTOOLS=	yes
 USE_GNOME=	libidl

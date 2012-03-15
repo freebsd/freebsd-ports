@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.8
-PORTREVISION=	2
+DISTVERSION=	4.1.10
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -26,7 +25,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		kmk:${PORTSDIR}/devel/kBuild-devel
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
