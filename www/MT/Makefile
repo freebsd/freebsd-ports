@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	5.12
+PORTVERSION=	5.13
 CATEGORIES?=	www
-MASTER_SITES?=	http://movabletype.org/downloads/stable/
+MASTER_SITES?=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
 
 MAINTAINER?=	takefu@airport.fm
@@ -77,8 +77,8 @@ PLIST_SUB+=	LANG_${_L:U}="@comment "
 .endif
 .endfor
 
-MT_DOCS_URL?=	http://movabletype.org/documentation/
-MT_UPGRADE_URL?=http://movabletype.org/documentation/upgrade/
+MT_DOCS_URL?=	http://www.movabletype.org/documentation/
+MT_UPGRADE_URL?=http://www.movabletype.org/documentation/installation/upgrade-movable-type.html
 
 .include <bsd.port.pre.mk>
 
