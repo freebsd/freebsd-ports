@@ -2298,6 +2298,7 @@
     SUBDIR += p5-PerlIO-Layers
     SUBDIR += p5-PerlIO-Util
     SUBDIR += p5-PerlIO-eol
+    SUBDIR += p5-PerlIO-locale
     SUBDIR += p5-PerlIO-via-MD5
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
