@@ -52,6 +52,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0d530174-6eef-11e1-afd6-14dae9ebcf89">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk14</name>
+	<range><gt>1.4.*</gt><lt>1.4.44</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><gt>1.6.*</gt><lt>1.6.2.23</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.10.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk10</name>
+	<range><gt>10.*</gt><lt>10.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>Stack Buffer Overflow in HTTP Manager</p>
+	  <p>Remote Crash Vulnerability in Milliwatt Application</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2012-002.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2012-003.html</url>
+    </references>
+    <dates>
+      <discovery>2012-03-15</discovery>
+      <entry>2012-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60eb344e-6eb1-11e1-8ad7-00e0815b8da8">
     <topic>OpenSSL -- CMS and S/MIME Bleichenbacher attack</topic>
     <affects>
