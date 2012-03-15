@@ -52,6 +52,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="29194cb8-6e9f-11e1-8376-f0def16c5c1b">
+    <topic>nginx -- potential information leak</topic>
+    <affects>
+      <package>
+	<name>nginx</name>
+	<range><lt>1.0.14,1</lt></range>
+      </package>
+      <package>
+	<name>nginx-devel</name>
+	<range><lt>1.1.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>nginx development team reports:</p>
+	<blockquote cite="http://nginx.net/CHANGES">
+	  <p>Matthew Daley recently discovered a security problem
+	    which may lead to a disclosure of previously freed memory
+	    on specially crafted response from an upstream server,
+	    potentially resulting in sensitive information leak.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<url>http://nginx.net/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2012-03-15</discovery>
+      <entry>2012-03-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a1050b8b-6db3-11e1-8b37-0011856a6e37">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
