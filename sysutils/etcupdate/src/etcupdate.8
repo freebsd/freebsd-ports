@@ -1,4 +1,4 @@
-.\" Copyright (c) 2010 Advanced Computing Technologies LLC
+.\" Copyright (c) 2010-2012 Advanced Computing Technologies LLC
 .\" Written by: John H. Baldwin <jhb@FreeBSD.org>
 .\" All rights reserved.
 .\"
@@ -70,6 +70,7 @@
 .Nm
 .Cm status
 .Op Fl d Ar workdir
+.Op Fl D Ar destdir
 .Sh DESCRIPTION
 The
 .Nm
@@ -360,7 +361,7 @@ and
 .Dq previous
 trees as well as unresolved conflicts.
 The default work directory is
-.Pa /var/db/etcupdate .
+.Pa <destdir>/var/db/etcupdate .
 .It Fl A Ar patterns
 Always install the new version of any files that match any of the patterns
 listed in
