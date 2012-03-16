@@ -41,6 +41,7 @@ MAN3=		Net::Server.3 \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_IPV6)
+RUN_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ipv6-support
 .endif
 
