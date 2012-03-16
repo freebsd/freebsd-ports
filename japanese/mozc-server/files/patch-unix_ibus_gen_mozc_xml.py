@@ -1,4 +1,4 @@
---- unix/ibus/gen_mozc_xml.py.orig	2012-01-29 13:42:31.153806065 +0900
+--- unix/ibus/gen_mozc_xml.py.orig	2012-03-16 10:48:02.015738213 +0900
 +++ unix/ibus/gen_mozc_xml.py	2012-01-29 13:49:15.972806246 +0900
 @@ -39,6 +39,7 @@
  
