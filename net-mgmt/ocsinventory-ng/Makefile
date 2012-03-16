@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	ocsinventory-ng
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://launchpad.net/ocsinventory-server/stable-${PORTVERSION}/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpadlibrarian.net/91230684/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Open Computer and Software Inventory Next Generation
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
@@ -23,15 +24,13 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 		${SITE_PERL}/XML/Entities.pm:${PORTSDIR}/textproc/p5-XML-Entities
 
-FETCH_ARGS=
-LICENSE=	GPLv2
 USE_APACHE=	20+
 USE_MYSQL=	41+
 USE_PERL5=	5.8.0+
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	3
-USE_PHP=	mysql pcre zlib session xml gd zip
+USE_PHP=	mysql pcre zlib session xml gd zip openssl mbstring
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
