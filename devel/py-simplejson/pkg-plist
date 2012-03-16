@@ -17,6 +17,9 @@
 %%PYTHON_SITELIBDIR%%/simplejson/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_bigint_as_string.py
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_bigint_as_string.pyc
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_bigint_as_string.pyo
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_check_circular.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_check_circular.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_check_circular.pyo
