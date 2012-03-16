@@ -69,7 +69,7 @@ usage: etcupdate [-nBF] [-d workdir] [-r | -s source | -t tarball] [-A patterns]
        etcupdate extract [-B] [-d workdir] [-s source | -t tarball] [-L logfile]
                  [-M options]
        etcupdate resolve [-d workdir] [-D destdir] [-L logfile]
-       etcupdate status [-d workdir]
+       etcupdate status [-d workdir] [-D destdir]
 EOF
 	exit 1
 }
@@ -1494,9 +1494,6 @@ fi
 
 # Set default variable values.
 
-# Where the "old" and "new" trees are stored.
-WORKDIR=/var/db/etcupdate
-
 # The path to the source tree used to build trees.
 SRCDIR=/usr/src
 
@@ -1613,6 +1610,9 @@ if [ -n "$ignore" ]; then
 	IGNORE_FILES="$ignore"
 fi
 set +o noglob
+
+# Where the "old" and "new" trees are stored.
+WORKDIR=${WORKDIR:-$DESTDIR/var/db/etcupdate}
 
 # Log file for verbose output from program that are run.  The log file
 # is opened on fd '3'.
