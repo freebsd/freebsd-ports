@@ -28,16 +28,19 @@ COMMENT?=	XML parser library for GNOME
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS?=--with-iconv=${LOCALBASE} \
-		--with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS?=---with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--without-python
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.if !defined(WITHOUT_ICONV)
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
+.endif
 
 .if !defined(MASTERDIR)
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
