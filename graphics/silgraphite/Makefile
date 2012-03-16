@@ -18,7 +18,6 @@ OPTIONS=	FREETYPE "Build with Freetype support" on
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	"-I${LOCALBASE}/include" "-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-xft --without-pangographite
 
 .include <bsd.port.pre.mk>
