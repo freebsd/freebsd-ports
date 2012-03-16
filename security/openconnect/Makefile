@@ -30,9 +30,16 @@ PORTDOCS=	*
 
 MAN8=		openconnect.8
 
-OPTIONS=	PROXY "Enable automatic proxy configuratio via libproxy"   off
+OPTIONS=	PROXY "Enable automatic proxy configuratio via libproxy" off \
+		OPENSSLPORT "Use OpenSSL from ports" off
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_OPENSSLPORT)
+WITH_OPENSSL_PORT=	yes
+.else
+WITH_OPENSSL_BASE=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
