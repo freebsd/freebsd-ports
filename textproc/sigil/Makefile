@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sigil
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	Sigil-${PORTVERSION}-Code
@@ -15,22 +14,27 @@ DISTNAME=	Sigil-${PORTVERSION}-Code
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
 
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
+		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
+		pcre.1:${PORTSDIR}/devel/pcre
+
 USE_ZIP=	yes
 USE_CMAKE=	yes
-USE_DOS2UNIX=	DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
+USE_DOS2UNIX=	CMakeLists.txt DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake gui svg webkit xml moc uic rcc imageformats
+NO_WRKSUBDIR=	yes
+QT_COMPONENTS=	qmake gui svg webkit xml moc uic rcc imageformats linguist
 
 DESKTOP_ENTRIES="Sigil Editor" \
 		"${COMMENT}" \
-		"${DATADIR}/sigil.png" \
+		"${PREFIX}/share/pixmaps/sigil.png" \
 		"sigil" \
 		"Application;" \
 		${FALSE}
 
-post-install:
-		${MKDIR} ${DATADIR}
-		${INSTALL_DATA} ${WRKSRC}/src/Sigil/Resource_Files/icon/app_icon_48.png ${DATADIR}/sigil.png
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.pre.mk>
 
