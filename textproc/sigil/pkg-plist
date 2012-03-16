@@ -1,3 +1,37 @@
 bin/sigil
-share/sigil/sigil.png
+share/pixmaps/sigil.png
+share/sigil/dictionaries/About.txt
+share/sigil/dictionaries/de_DE.aff
+share/sigil/dictionaries/de_DE.dic
+share/sigil/dictionaries/en_GB.aff
+share/sigil/dictionaries/en_GB.dic
+share/sigil/dictionaries/en_US.aff
+share/sigil/dictionaries/en_US.dic
+share/sigil/dictionaries/es.aff
+share/sigil/dictionaries/es.dic
+share/sigil/dictionaries/fr.aff
+share/sigil/dictionaries/fr.dic
+share/sigil/dictionaries/hyph_de_DE.dic
+share/sigil/dictionaries/hyph_en_GB.dic
+share/sigil/dictionaries/hyph_en_US.dic
+share/sigil/dictionaries/hyph_es.dic
+share/sigil/dictionaries/hyph_fr.dic
+share/sigil/translations/sigil_cs.qm
+share/sigil/translations/sigil_da_DK.qm
+share/sigil/translations/sigil_de.qm
+share/sigil/translations/sigil_en.qm
+share/sigil/translations/sigil_es_ES.qm
+share/sigil/translations/sigil_fr.qm
+share/sigil/translations/sigil_it.qm
+share/sigil/translations/sigil_ja.qm
+share/sigil/translations/sigil_nl.qm
+share/sigil/translations/sigil_pl.qm
+share/sigil/translations/sigil_pt_BR.qm
+share/sigil/translations/sigil_ru.qm
+share/sigil/translations/sigil_sk.qm
+share/sigil/translations/sigil_tr_TR.qm
+share/sigil/translations/sigil_zh_CN.qm
+share/sigil/translations/sigil_zh_TW.qm
+@dirrm share/sigil/translations
+@dirrm share/sigil/dictionaries
 @dirrm share/sigil
