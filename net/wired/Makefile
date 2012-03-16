@@ -7,7 +7,7 @@
 
 PORTNAME=	wired
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://mirror.mcx2.org/
 
@@ -27,28 +27,11 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@if [ ! -f ${PREFIX}/wired/etc/wired.conf ]; then \
-		${CP} -p ${PREFIX}/wired/etc/wired.conf.sample ${PREFIX}/wired/etc/wired.conf ; \
+.for i in etc/wired.conf etc/resolv.conf banlist groups news users
+	@if [ ! -f ${PREFIX}/wired/${i} ]; then \
+		${CP} -p ${PREFIX}/wired/${i}.sample ${PREFIX}/wired/${i} ; \
 	fi
-	@if [ ! -f ${PREFIX}/wired/etc/resolv.conf ]; then \
-		${CP} -p ${PREFIX}/wired/etc/resolv.conf.sample ${PREFIX}/wired/etc/resolv.conf ; \
-	fi
-	@if [ ! -f ${PREFIX}/wired/banlist ]; then \
-		${CP} -p ${PREFIX}/wired/banlist.sample ${PREFIX}/wired/banlist ; \
-	fi
-	@if [ ! -f ${PREFIX}/wired/groups ]; then \
-		${CP} -p ${PREFIX}/wired/groups.sample ${PREFIX}/wired/groups ; \
-	fi
-	@if [ ! -f ${PREFIX}/wired/news ]; then \
-		${CP} -p ${PREFIX}/wired/news.sample ${PREFIX}/wired/news ; \
-	fi
-	@if [ ! -f ${PREFIX}/wired/users ]; then \
-		${CP} -p ${PREFIX}/wired/users.sample ${PREFIX}/wired/users ; \
-	fi
+.endfor
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-post-deinstall:
-	${RM} -f ${PREFIX}/wired/etc/certificate.pem.sample
-	PKG_PREFIX=${PREFIX} ${SH} pkg-deinstall ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.mk>
