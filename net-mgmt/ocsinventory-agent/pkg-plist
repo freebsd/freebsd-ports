@@ -1,5 +1,4 @@
 bin/ocsinventory-agent
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ocsinventory/Agent/.packlist
 %%SITE_PERL%%/Ocsinventory/Agent.pm
 %%SITE_PERL%%/Ocsinventory/Agent/AccountConfig.pm
 %%SITE_PERL%%/Ocsinventory/Agent/AccountInfo.pm
@@ -195,9 +194,11 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/File.pm
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/Stderr.pm
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/Syslog.pm
-%%SITE_PERL%%/Ocsinventory/postinst.pl
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ocsinventory/Agent
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ocsinventory
+%%SITE_PERL%%/Ocsinventory/Unix/postinst.pl
+%%SITE_PERL%%/mach/auto/Ocsinventory/Unix/Agent/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Ocsinventory/Unix/Agent
+@dirrm %%SITE_PERL%%/mach/auto/Ocsinventory/Unix
+@dirrm %%SITE_PERL%%/mach/auto/Ocsinventory
 @dirrm %%SITE_PERL%%/Ocsinventory/Agent/Backend/IpDiscover
 @dirrm %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/AIX
 @dirrm %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/BSD/Archs
@@ -233,4 +234,5 @@ bin/ocsinventory-agent
 @dirrm %%SITE_PERL%%/Ocsinventory/Agent/XML
 @dirrm %%SITE_PERL%%/Ocsinventory/Agent
 @dirrm %%SITE_PERL%%/Ocsinventory/LoggerBackend
+@dirrm %%SITE_PERL%%/Ocsinventory/Unix
 @dirrm %%SITE_PERL%%/Ocsinventory
