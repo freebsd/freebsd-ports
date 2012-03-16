@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozc
-PORTVERSION=	1.3.975.102
-PORTREVISION?=	0
+PORTVERSION=	1.4.1003.102
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -73,6 +72,7 @@ BUILD_CMD=	${SETENV} ${MAKE_ENV} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${WRKSRC}/mozcmake" \
 		PYTHONPATH=${WRKSRC}/third_party/gyp/local/lib/python${PYTHON_VER}/site-packages \
+		MOZC_SERVER_DIRECTORY="${PREFIX}/bin" GYP_DEFINES="use_libprotobuf=1" \
 		${PYTHON_CMD} build_mozc.py
 BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP}
 
@@ -87,7 +87,7 @@ pre-build:
 	${BUILD_GYP_CMD} ${PYDISTUTILS_CONFIGURE_TARGET} ${PYDISTUTILS_CONFIGUREARGS}
 	${BUILD_GYP_CMD} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS}
 	${BUILD_GYP_CMD} ${PYDISTUTILS_INSTALL_TARGET} --prefix=${WRKSRC}/third_party/gyp/local
-	${BUILD_MOZC_CMD} gyp --gypdir=${WRKSRC}/third_party/gyp/local/bin
+	${BUILD_MOZC_CMD} gyp --gypdir=${WRKSRC}/third_party/gyp/local/bin --channel_dev=0
 	${BUILD_MOZC_CMD} build_tools -c ${BUILD_MODE}
 
 # mozc_server
