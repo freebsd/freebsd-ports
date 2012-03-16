@@ -79,6 +79,8 @@ lib/node_modules/npm/AUTHORS
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
 lib/node_modules/npm/README.md
+lib/node_modules/npm/bin/node-gyp-bin/node-gyp
+lib/node_modules/npm/bin/node-gyp-bin/node-gyp.cmd
 lib/node_modules/npm/bin/npm
 lib/node_modules/npm/bin/npm-cli.js
 lib/node_modules/npm/bin/npm-get-uid-gid.js
@@ -366,7 +368,6 @@ lib/node_modules/npm/lib/utils/fetch.js
 lib/node_modules/npm/lib/utils/find-prefix.js
 lib/node_modules/npm/lib/utils/find.js
 lib/node_modules/npm/lib/utils/gently-rm.js
-lib/node_modules/npm/lib/utils/get.js
 lib/node_modules/npm/lib/utils/ini.js
 lib/node_modules/npm/lib/utils/lifecycle.js
 lib/node_modules/npm/lib/utils/link.js
@@ -386,7 +387,6 @@ lib/node_modules/npm/lib/utils/promise-chain.js
 lib/node_modules/npm/lib/utils/read-installed.js
 lib/node_modules/npm/lib/utils/read-json.js
 lib/node_modules/npm/lib/utils/relativize.js
-lib/node_modules/npm/lib/utils/set.js
 lib/node_modules/npm/lib/utils/sha.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/utils/uid-number.js
@@ -564,6 +564,97 @@ lib/node_modules/npm/node_modules/mkdirp/LICENSE
 lib/node_modules/npm/node_modules/mkdirp/README.markdown
 lib/node_modules/npm/node_modules/mkdirp/index.js
 lib/node_modules/npm/node_modules/mkdirp/package.json
+lib/node_modules/npm/node_modules/node-gyp/.npmignore
+lib/node_modules/npm/node_modules/node-gyp/README.md
+lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
+lib/node_modules/npm/node_modules/node-gyp/legacy/common.gypi
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/addon.gypi
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/.npmignore
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/AUTHORS
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/DEPS
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/LICENSE
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/MANIFEST
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/OWNERS
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/PRESUBMIT.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/buildbot/buildbot_run.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/codereview.settings
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/gyp
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/gyp.bat
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/gyp_dummy.c
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/gyptest.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSNew.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSProject.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSSettings.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSSettings_test.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSToolFile.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSUserFile.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/MSVSVersion.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/SCons.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/__init__.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/common.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/easy_xml.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/easy_xml_test.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/__init__.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/dump_dependency_json.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/gypd.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/gypsh.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/make.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/msvs.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/msvs_test.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/ninja.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/ninja_test.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/scons.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator/xcode.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/input.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/mac_tool.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/ninja_syntax.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/sun_tool.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/system_test.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/xcode_emulation.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/xcodeproj_file.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/xml_fix.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylintrc
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/samples/samples
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/samples/samples.bat
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/setup.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/README
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode/README
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode/Specifications/gyp.pbfilespec
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode/Specifications/gyp.xclangspec
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/graphviz.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/pretty_gyp.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/pretty_sln.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/pretty_vcproj.py
+lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp_addon
+lib/node_modules/npm/node_modules/node-gyp/lib/build.js
+lib/node_modules/npm/node_modules/node-gyp/lib/clean.js
+lib/node_modules/npm/node_modules/node-gyp/lib/configure.js
+lib/node_modules/npm/node_modules/node-gyp/lib/install.js
+lib/node_modules/npm/node_modules/node-gyp/lib/list.js
+lib/node_modules/npm/node_modules/node-gyp/lib/node-gyp.js
+lib/node_modules/npm/node_modules/node-gyp/lib/rebuild.js
+lib/node_modules/npm/node_modules/node-gyp/lib/remove.js
+lib/node_modules/npm/node_modules/node-gyp/lib/util/asyncEmit.js
+lib/node_modules/npm/node_modules/node-gyp/lib/util/hook.js
+lib/node_modules/npm/node_modules/node-gyp/lib/util/mkdirp.js
+lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/.npmignore
+lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/README.md
+lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/lib/ansi.js
+lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/nodejs.png
+lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/package.json
+lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/server.js
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/.npmignore
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/.travis.yml
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/README.md
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/glob.js
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/.travis.yml
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/LICENSE
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/README.md
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/minimatch.js
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/package.json
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/package.json
+lib/node_modules/npm/node_modules/node-gyp/package.json
+lib/node_modules/npm/node_modules/node-gyp/updateLegacy.sh
 lib/node_modules/npm/node_modules/node-uuid/.npmignore
 lib/node_modules/npm/node_modules/node-uuid/LICENSE.md
 lib/node_modules/npm/node_modules/node-uuid/README.md
@@ -642,8 +733,11 @@ lib/node_modules/npm/scripts/release.sh
 lib/node_modules/npm/test/common.js
 lib/node_modules/npm/test/packages/npm-test-blerg/package.json
 lib/node_modules/npm/test/packages/npm-test-blerg/test.js
+lib/node_modules/npm/test/packages/npm-test-bundled-git/minimatch-expected.json
+lib/node_modules/npm/test/packages/npm-test-bundled-git/package.json
+lib/node_modules/npm/test/packages/npm-test-bundled-git/test.js
 lib/node_modules/npm/test/packages/npm-test-env-reader/package.json
-lib/node_modules/npm/test/packages/npm-test-env-reader/test.sh
+lib/node_modules/npm/test/packages/npm-test-env-reader/test.js
 lib/node_modules/npm/test/packages/npm-test-files/.npmignore
 lib/node_modules/npm/test/packages/npm-test-files/include4
 lib/node_modules/npm/test/packages/npm-test-files/package.json
@@ -661,6 +755,9 @@ lib/node_modules/npm/test/packages/npm-test-ignore/test.sh
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/package.json
 lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
 lib/node_modules/npm/test/packages/npm-test-optional-deps/package.json
+lib/node_modules/npm/test/packages/npm-test-optional-deps/test.js
+lib/node_modules/npm/test/packages/npm-test-platform-all/package.json
+lib/node_modules/npm/test/packages/npm-test-platform/package.json
 lib/node_modules/npm/test/packages/npm-test-private/package.json
 lib/node_modules/npm/test/packages/npm-test-shrinkwrap/npm-shrinkwrap.json
 lib/node_modules/npm/test/packages/npm-test-shrinkwrap/package.json
@@ -673,6 +770,8 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-test-package
 @dirrm lib/node_modules/npm/test/packages/npm-test-shrinkwrap
 @dirrm lib/node_modules/npm/test/packages/npm-test-private
+@dirrm lib/node_modules/npm/test/packages/npm-test-platform-all
+@dirrm lib/node_modules/npm/test/packages/npm-test-platform
 @dirrm lib/node_modules/npm/test/packages/npm-test-optional-deps
 @dirrm lib/node_modules/npm/test/packages/npm-test-missing-bindir
 @dirrm lib/node_modules/npm/test/packages/npm-test-ignore/sub
@@ -680,6 +779,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/test/packages/npm-test-files/sub
 @dirrm lib/node_modules/npm/test/packages/npm-test-files
 @dirrm lib/node_modules/npm/test/packages/npm-test-env-reader
+@dirrm lib/node_modules/npm/test/packages/npm-test-bundled-git
 @dirrm lib/node_modules/npm/test/packages/npm-test-blerg
 @dirrm lib/node_modules/npm/test/packages
 @dirrm lib/node_modules/npm/test
@@ -703,6 +803,27 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/nopt/bin
 @dirrm lib/node_modules/npm/node_modules/nopt
 @dirrm lib/node_modules/npm/node_modules/node-uuid
+@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch
+@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules
+@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/glob
+@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/lib
+@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi
+@dirrm lib/node_modules/npm/node_modules/node-gyp/node_modules
+@dirrm lib/node_modules/npm/node_modules/node-gyp/lib/util
+@dirrm lib/node_modules/npm/node_modules/node-gyp/lib
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode/Specifications
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools/Xcode
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/tools
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/samples
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp/generator
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib/gyp
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/pylib
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp/buildbot
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools/gyp
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy/tools
+@dirrm lib/node_modules/npm/node_modules/node-gyp/legacy
+@dirrm lib/node_modules/npm/node_modules/node-gyp/bin
+@dirrm lib/node_modules/npm/node_modules/node-gyp
 @dirrm lib/node_modules/npm/node_modules/mkdirp
 @dirrm lib/node_modules/npm/node_modules/minimatch
 @dirrm lib/node_modules/npm/node_modules/lru-cache/lib
@@ -730,6 +851,7 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/doc/cli
 @dirrm lib/node_modules/npm/doc/api
 @dirrm lib/node_modules/npm/doc
+@dirrm lib/node_modules/npm/bin/node-gyp-bin
 @dirrm lib/node_modules/npm/bin
 @dirrm lib/node_modules/npm
 @dirrm lib/node_modules
