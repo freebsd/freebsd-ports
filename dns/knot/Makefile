@@ -21,8 +21,6 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	urcu.1:${PORTSDIR}/sysutils/userspace-rcu
 
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	will not configure. See ports/165798
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
