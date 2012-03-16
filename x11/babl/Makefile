@@ -38,4 +38,8 @@ CONFIGURE_ARGS+=--disable-mmx \
 		--disable-altivec
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|x86_64|amd64|g' \
+		${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
