@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	polib
-PORTVERSION=	0.4.1
+PORTVERSION=	0.7.0
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://cdn.bitbucket.org/izi/polib/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yzlin@FreeBSD.org
