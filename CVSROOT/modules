@@ -7341,6 +7341,7 @@ knights-kde4                    ports/games/knights-kde4
 knock                           ports/security/knock
 knocker                         ports/security/knocker
 knoda                           ports/databases/knoda
+knot                            ports/dns/knot
 knowit                          ports/deskutils/knowit
 knutclient                      ports/sysutils/knutclient
 knutclient-kde4                 ports/sysutils/knutclient-kde4
@@ -12264,6 +12265,7 @@ p5-File-HomeDir                 ports/devel/p5-File-HomeDir
 p5-File-HomeDir-PathClass       ports/devel/p5-File-HomeDir-PathClass
 p5-File-Inplace                 ports/textproc/p5-File-Inplace
 p5-File-Iterator                ports/devel/p5-File-Iterator
+p5-File-KeePass                 ports/security/p5-File-KeePass
 p5-File-Listing                 ports/sysutils/p5-File-Listing
 p5-File-Lock                    ports/devel/p5-File-Lock
 p5-File-Log                     ports/sysutils/p5-File-Log
@@ -13893,6 +13895,7 @@ p5-Penguin                      ports/devel/p5-Penguin
 p5-Penguin-Easy                 ports/devel/p5-Penguin-Easy
 p5-Perl-Critic                  ports/textproc/p5-Perl-Critic
 p5-Perl-Critic-Bangs            ports/textproc/p5-Perl-Critic-Bangs
+p5-Perl-Critic-Deprecated       ports/devel/p5-Perl-Critic-Deprecated
 p5-Perl-Metrics-Lite            ports/devel/p5-Perl-Metrics-Lite
 p5-Perl-Metrics-Simple          ports/devel/p5-Perl-Metrics-Simple
 p5-Perl-MinimumVersion          ports/textproc/p5-Perl-MinimumVersion
@@ -13915,6 +13918,7 @@ p5-PerlIO-Layers                ports/devel/p5-PerlIO-Layers
 p5-PerlIO-Util                  ports/devel/p5-PerlIO-Util
 p5-PerlIO-eol                   ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip                  ports/archivers/p5-PerlIO-gzip
+p5-PerlIO-locale                ports/devel/p5-PerlIO-locale
 p5-PerlIO-via-Bzip2             ports/archivers/p5-PerlIO-via-Bzip2
 p5-PerlIO-via-MD5               ports/devel/p5-PerlIO-via-MD5
 p5-PerlIO-via-Unidecode         ports/converters/p5-PerlIO-via-Unidecode
@@ -16734,6 +16738,7 @@ p5-file-homedir-pathclass       ports/devel/p5-File-HomeDir-PathClass
 p5-file-hstore                  ports/devel/p5-File-HStore
 p5-file-inplace                 ports/textproc/p5-File-Inplace
 p5-file-iterator                ports/devel/p5-File-Iterator
+p5-file-keepass                 ports/security/p5-File-KeePass
 p5-file-listing                 ports/sysutils/p5-File-Listing
 p5-file-lock                    ports/devel/p5-File-Lock
 p5-file-log                     ports/sysutils/p5-File-Log
@@ -18282,6 +18287,7 @@ p5-penguin                      ports/devel/p5-Penguin
 p5-penguin-easy                 ports/devel/p5-Penguin-Easy
 p5-perl-critic                  ports/textproc/p5-Perl-Critic
 p5-perl-critic-bangs            ports/textproc/p5-Perl-Critic-Bangs
+p5-perl-critic-deprecated       ports/devel/p5-Perl-Critic-Deprecated
 p5-perl-ldap                    ports/net/p5-perl-ldap
 p5-perl-metrics-lite            ports/devel/p5-Perl-Metrics-Lite
 p5-perl-metrics-simple          ports/devel/p5-Perl-Metrics-Simple
@@ -18307,6 +18313,7 @@ p5-perlfm                       ports/x11-fm/p5-PerlFM
 p5-perlio-eol                   ports/devel/p5-PerlIO-eol
 p5-perlio-gzip                  ports/archivers/p5-PerlIO-gzip
 p5-perlio-layers                ports/devel/p5-PerlIO-Layers
+p5-perlio-locale                ports/devel/p5-PerlIO-locale
 p5-perlio-util                  ports/devel/p5-PerlIO-Util
 p5-perlio-via-bzip2             ports/archivers/p5-PerlIO-via-Bzip2
 p5-perlio-via-dynamic           ports/devel/p5-PerlIO-via-dynamic
