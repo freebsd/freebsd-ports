@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	2.0
+PORTVERSION=	2.0.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-${PORTVERSION}/${PORTVERSION}/+download/
-PKGNAMESUFFIX=	-Agent
+MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-2.0/${PORTVERSION}/+download/
+PKGNAMESUFFIX=	-Unix-Agent
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
