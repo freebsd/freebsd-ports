@@ -7,6 +7,7 @@
 
 PORTNAME=	Text-Unaccent
 PORTVERSION=	1.08
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +19,6 @@ MAN3=	Text::Unaccent.3
 
 USE_ICONV=	yes
 PERL_CONFIGURE=	yes
+CFLAGS+=	-DICONV_CONST=const
 
 .include <bsd.port.mk>
