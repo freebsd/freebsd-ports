@@ -4,8 +4,8 @@ lib/merkaartor/plugins/background/libMYahooBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMYahooTiledBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMCadastreFranceBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
-%%GDAL%%lib/merkaartor/plugins/background/libMGdalBackgroundPlugin.so
-%%GDAL%%lib/merkaartor/plugins/background/libMGeoTiffBackgroundPlugin.so
+lib/merkaartor/plugins/background/libMGdalBackgroundPlugin.so
+lib/merkaartor/plugins/background/libMGeoTiffBackgroundPlugin.so
 lib/merkaartor/plugins/styles/libskulpture.so
 share/applications/merkaartor.desktop
 share/icons/hicolor/48x48/apps/merkaartor.png
@@ -31,7 +31,6 @@ share/icons/hicolor/48x48/apps/merkaartor.png
 %%NLS%%%%DATADIR%%/translations/merkaartor_et.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_hr.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_hu.qm
-%%DATADIR%%/world_background.osb
 %%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/48x48/apps
