@@ -109,7 +109,6 @@
 %%DATADIR%%/ocsreports/files/ocsbase.sql
 %%DATADIR%%/ocsreports/files/ocsbase_new.sql
 %%DATADIR%%/ocsreports/files/oui.txt
-%%DATADIR%%/ocsreports/fonts/verdana.ttf
 %%DATADIR%%/ocsreports/image/Gest_admin1.png
 %%DATADIR%%/ocsreports/image/Gest_admin2.png
 %%DATADIR%%/ocsreports/image/activer.png
@@ -177,197 +176,10 @@
 %%DATADIR%%/ocsreports/js/slider.js
 %%DATADIR%%/ocsreports/js/timer.js
 %%DATADIR%%/ocsreports/js/tooltip.js
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Area2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Bar2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Candlestick.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Column2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Column3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Doughnut2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Funnel.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Gantt.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Line.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSArea2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSBar2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn2DLineDY.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn3DLineDY.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSLine.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Pie2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Pie3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedArea2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedBar2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedColumn2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedColumn3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Area2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Column2D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Column3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Line.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_MSColumn3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_MSColumn3DLineDY.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Pie3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_StackedColumn3D.swf
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FusionCharts.js
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/Combination.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/MultiSeries.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/SingleSeries.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/Stacked.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/BasicChart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/BasicDataXML.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/Data/Data.xml
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/MultiChart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/SimpleChart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/dataXML.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB/MS_SQL_Script.sql
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB/UTFExampleTablesCreation.sql
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB/dump.sql
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample/BasicDBExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample/Detailed.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_DrillDown/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_DrillDown/Detailed.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_JS/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_dataURL/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_dataURL/PieData.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Default.htm
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/FormBased/Chart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/FormBased/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes/DBConn.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes/FC_Colors.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes/FusionCharts.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/NoChart.html
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/Data/FrenchData.xml
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/Data/JapaneseData.xml
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/FrenchDBExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/FrenchXMLFileExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/JapaneseDBExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/JapaneseXMLFileExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/PieDataFrench.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/PieDataJapanese.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/_notes/dwsync.xml
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/Combination.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/MultiSeries.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/SingleSeries.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/Stacked.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/CreateChartFromExtData.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/Data/Data.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/FirstChart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/MultiChart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/SimpleChart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB/MS_SQL_Script.sql
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB/UTFExampleTablesCreation.sql
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB/dump.sql
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DBExample/BasicDBExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_DrillDown/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_DrillDown/Detailed.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_dataURL/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_dataURL/PieData.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Default.htm
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/FormBased/Chart.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/FormBased/Default.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes/DBConn.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes/FusionCharts.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes/FusionCharts_Gen.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/NoChart.html
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/Data/DataFrench.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/Data/DataJapanese.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/FrenchDBExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/FrenchXMLFileExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/JapaneseDBExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/JapaneseXMLFileExample.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/PieDataFrench.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/PieDataJapanese.php
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/_notes/dwsync.xml
-%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Readme.txt
+%%DATADIR%%/ocsreports/js/graph/jquery-1.6.2.js
+%%DATADIR%%/ocsreports/js/graph/elycharts.js
+%%DATADIR%%/ocsreports/js/graph/raphael.js
 %%DATADIR%%/ocsreports/libraries/gz.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/README
-%%DATADIR%%/ocsreports/libraries/jpgraph/VERSION
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp/barcode_image.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp/barcode_menu.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp/index.html
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_errhandling_ex0.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex0.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex1.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex2.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex3.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex4.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_usps_example.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/mkbarcode.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/flag_mapping
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags.dat
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags_thumb100x100.dat
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags_thumb35x35.dat
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags_thumb60x60.dat
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans-Bold.ttf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans-BoldOblique.ttf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans-Oblique.ttf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans.ttf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT0-Bold.gdf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT0.gdf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT1-Bold.gdf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT1.gdf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT2-Bold.gdf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT2.gdf
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/gd_image.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imageSmoothArc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_balls.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_bevels.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_diamonds.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_pushpins.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_squares.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_stars.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpg-config.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_antispam-digits.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_antispam.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_bar.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_canvas.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_canvtools.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_contour.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_date.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_errhandler.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_error.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_flags.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_gantt.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_gb2312.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_gradient.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_iconplot.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_imgtrans.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_led.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_legend.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_line.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_log.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_meshinterpolate.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_mgraph.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_pie.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_pie3d.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_plotband.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_plotline.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_plotmark.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_polar.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_radar.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_regstat.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_rgb.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_scatter.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_stock.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_table.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_text.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_theme.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_ttf.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_utils.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_windrose.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/lang/de.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/lang/en.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/lang/prod.inc.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/AquaTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/GreenTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/OceanTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/OrangeTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/PastelTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/RoseTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/SoftyTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/UniversalTheme.class.php
-%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/VividTheme.class.php
 %%DATADIR%%/ocsreports/libraries/zip.lib.php
 %%DATADIR%%/ocsreports/plugins/computer_detail/cd_admininfo/cd_admininfo.php
 %%DATADIR%%/ocsreports/plugins/computer_detail/cd_bios/cd_bios.php
@@ -531,6 +343,8 @@
 %%DATADIR%%/ocsreports/plugins/main_sections/img/ms_multi_search_a.png
 %%DATADIR%%/ocsreports/plugins/main_sections/img/ms_pass.png
 %%DATADIR%%/ocsreports/plugins/main_sections/img/ms_pass_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_plugins.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_plugins_a.png
 %%DATADIR%%/ocsreports/plugins/main_sections/img/ms_regconfig.png
 %%DATADIR%%/ocsreports/plugins/main_sections/img/ms_regconfig_a.png
 %%DATADIR%%/ocsreports/plugins/main_sections/img/ms_repart_tag.png
@@ -564,6 +378,7 @@
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_doubles/ms_doubles.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_export/ms_csv.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_export/ms_soft_csv.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_export/ms_export_ocs.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_groups/ms_custom_groups.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_groups/ms_group_show.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_groups/ms_groups.php
@@ -577,6 +392,7 @@
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_custom_sup.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_custom_tag.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_multi_search.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_plugins/ms_plugins.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig/ms_regconfig.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig/require/function_regconfig.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_repart_tag/ms_repart_tag.php
@@ -590,9 +406,6 @@
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/ms_snmp.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/ms_snmp_detail.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/require/function_snmp.php
-%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/jp_activity_stats.php
-%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/jp_teledeploy_speed_stats.php
-%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/jp_teledeploy_stats.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/ms_stats.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/ms_stats_connexion.php
 %%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_custom_pack.php
@@ -660,6 +473,7 @@
 %%DATADIR%%/ocsreports/require/function_opt_param.php
 %%DATADIR%%/ocsreports/require/function_rules.php
 %%DATADIR%%/ocsreports/require/function_search.php
+%%DATADIR%%/ocsreports/require/function_section_html.php
 %%DATADIR%%/ocsreports/require/function_server.php
 %%DATADIR%%/ocsreports/require/function_ssl.php
 %%DATADIR%%/ocsreports/require/function_stats.php
@@ -713,6 +527,7 @@
 @dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_repart_tag
 @dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig/require
 @dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_plugins
 @dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search
 @dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_logs
 @dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover/require
@@ -774,49 +589,10 @@
 @dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_admininfo
 @dirrm %%DATADIR%%/ocsreports/plugins/computer_detail
 @dirrm %%DATADIR%%/ocsreports/plugins
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/themes
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/lang
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src
-@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/_notes
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/Data
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/FormBased
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_dataURL
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_DrillDown
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DBExample
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/Data
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/_notes
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/Data
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/FormBased
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_dataURL
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_JS
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_DrillDown
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/Data
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts
-@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree
 @dirrm %%DATADIR%%/ocsreports/libraries
+@dirrm %%DATADIR%%/ocsreports/js/graph
 @dirrm %%DATADIR%%/ocsreports/js
 @dirrm %%DATADIR%%/ocsreports/image
-@dirrm %%DATADIR%%/ocsreports/fonts
 @dirrm %%DATADIR%%/ocsreports/files
 @dirrm %%DATADIR%%/ocsreports/css
 @dirrm %%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages
