@@ -23,6 +23,7 @@ OPTIONS=	MYSQL		"Build with MySQL support" on \
 		SIEVE		"Build w. support for Sieve mail sorting language" off \
 		LDAP		"Build with support for LDAP authentication" off
 
+LATEST_LINK=	dbmail22
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	YES
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
