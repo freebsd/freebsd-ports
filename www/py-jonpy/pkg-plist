@@ -34,6 +34,9 @@
 %%PYTHON_SITELIBDIR%%/jon/mime.pyo
 %%PYTHON_SITELIBDIR%%/jon/modpy.pyo
 %%PYTHON_SITELIBDIR%%/jon/session.pyo
+%%PYTHON_SITELIBDIR%%/jon/wsgi.py
+%%PYTHON_SITELIBDIR%%/jon/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/jon/wsgi.pyo
 %%EXAMPLESDIR%%/wt/.htaccess
 %%EXAMPLESDIR%%/wt/printenv.html.py
 %%EXAMPLESDIR%%/cgi-bin/wt.py
