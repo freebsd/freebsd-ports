@@ -31,7 +31,7 @@ MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME?=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS?=---with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--with-html-subdir=${PORTNAME} \
 		--without-python
 CPPFLAGS+=	-I${LOCALBASE}/include
