@@ -49,6 +49,7 @@ bin/ubic-watchdog
 %%SITE_PERL%%/Ubic/Settings.pm
 %%SITE_PERL%%/Ubic/Settings/ConfigFile.pm
 %%SITE_PERL%%/Ubic/SingletonLock.pm
+%%SITE_PERL%%/Ubic/UA.pm
 %%SITE_PERL%%/Ubic/Watchdog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ubic/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ubic
