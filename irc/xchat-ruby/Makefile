@@ -20,6 +20,7 @@ RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 LICENSE=	GPLv2
 
 USE_RUBY=	yes
+USE_LIBRUBY=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCSRC=		${WRKDIR}/${DISTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -27,6 +28,13 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_FILES=	lib/xchat/plugins/xchat-ruby.so
 PORTDOCS=	README ChangeLog
 PORTEXAMPLES=	embedify.rb TimerSample.rb JFilter.rb JBanner.rb
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|^RUBY=.*|RUBY=${RUBY}|' \
+		-e 's|-lruby$$|-l${RUBY_NAME}|' \
+		-e 's|^ARCHDIR=.*|ARCHDIR=`$$(RUBY) ${FILESDIR}/rubypath.rb`|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xchat-ruby.so \
@@ -46,8 +54,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
