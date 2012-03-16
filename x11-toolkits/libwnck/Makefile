@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_GETTEXT=	yes
@@ -35,6 +34,17 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+OPTIONS= STARTUP	"Enable startup notification support"	on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_STARTUP)
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+CONFIGURE_ARGS+=--enable-startup-notification
+.else
+CONFIGURE_ARGS+=--disable-startup-notification
+.endif
+
+.include <bsd.port.post.mk>
 
 .endif
