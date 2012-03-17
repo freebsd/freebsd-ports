@@ -45,6 +45,8 @@ CONFIGURE_ARGS =	--enable-memory-profiling rdocdir=${DOCSDIR} \
 CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
 			INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
 		ICU		"Use ICU for collation in multibyte locales" on \
 		NLS		"Build with NLS support" on \
@@ -73,7 +75,6 @@ USE_LDCONFIG=		${PREFIX}/lib/R/lib
 .endif # !LIBR_SLAVEPORT
 WANT_GNOME=		yes
 .endif # LIBRMATH_SLAVEPORT
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 R_SOVERSION=		0
