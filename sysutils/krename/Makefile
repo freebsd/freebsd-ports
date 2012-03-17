@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF/${PORTNAME}/KDE3%20${PORTNAME}-stable/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Very powerful batch file renamer for KDE3
 
 PORTSCOUT=	limit:^3\.
