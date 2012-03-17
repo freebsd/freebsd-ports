@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-FormatText-WithLinks
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	loader@freebsdmall.com
 COMMENT=	Perl5 module to convert HTML to text with links as footnotes
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format
-RUN_DEPENDS=	${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format
+BUILD_DEPENDS=	p5-HTML-Format>=0:${PORTSDIR}/textproc/p5-HTML-Format \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=		HTML::FormatText::WithLinks.3
