@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.28.4
+PORTVERSION=	1.29.2
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/garga/xmlrpc-c
 PKGNAMESUFFIX=	-devel
@@ -82,5 +82,7 @@ post-patch:
 		's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e '/#include.*features.h/d' \
 		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
+	@${REINPLACE_CMD} -e 's/s6_addr16/s6_addr/g' \
+		${WRKSRC}/lib/abyss/src/socket_unix.c
 
 .include <bsd.port.post.mk>
