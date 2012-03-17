@@ -2220,6 +2220,7 @@ dblatex                         ports/textproc/dblatex
 dbmail                          ports/mail/dbmail
 dbmail20                        ports/mail/dbmail20
 dbmail21                        ports/mail/dbmail21
+dbmail22                        ports/mail/dbmail22
 dbmail23                        ports/mail/dbmail23
 dbow                            ports/databases/dbow
 dboxfe                          ports/emulators/dboxfe
