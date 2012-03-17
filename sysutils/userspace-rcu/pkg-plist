@@ -1,9 +1,6 @@
-include/urcu
 include/urcu/urcu_ref.h
 include/urcu/config.h
-include/urcu/uatomic
 include/urcu/uatomic/generic.h
-include/urcu/static
 include/urcu/static/urcu-bp.h
 include/urcu/static/rculfqueue.h
 include/urcu/static/urcu.h
@@ -16,7 +13,6 @@ include/urcu/futex.h
 include/urcu/system.h
 include/urcu/ref.h
 include/urcu/wfqueue.h
-include/urcu/arch
 include/urcu/arch/generic.h
 include/urcu/cds.h
 include/urcu/wfstack.h
@@ -30,7 +26,6 @@ include/urcu/rculfstack.h
 include/urcu/uatomic.h
 include/urcu/rculfqueue.h
 include/urcu/rculist.h
-include/urcu/map
 include/urcu/map/urcu-qsbr.h
 include/urcu/map/urcu.h
 include/urcu/map/urcu-bp.h
