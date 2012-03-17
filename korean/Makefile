@@ -42,7 +42,6 @@
     SUBDIR += scim-tables
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
-    SUBDIR += unfonts-ttf
     SUBDIR += uniksc
     SUBDIR += unzip
     SUBDIR += xpdf
