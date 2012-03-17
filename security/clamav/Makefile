@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.97.3
-PORTREVISION=	1
+PORTVERSION=	0.97.4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
+
+LICENSE=	GPLv2
 
 OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
@@ -33,8 +34,6 @@ MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 CLAM_CONF_FILES=	clamd freshclam
-
-LICENSE=	GPLv2
 
 PORTDOCS=	*
 
@@ -138,6 +137,10 @@ CONFIGURE_ARGS+=--with-iconv
 USE_ICONV=	yes
 .else
 CONFIGURE_ARGS+=--without-iconv
+.endif
+
+.if defined(WITH_LLVM_PORTS)
+BROKEN=		Does not build with LLVM 3.0
 .endif
 
 .if (defined(WITH_LLVM) || defined(WITH_LLVM_PORTS)) && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
