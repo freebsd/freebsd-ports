@@ -59,6 +59,7 @@
     SUBDIR += arm-rtems-gcc
     SUBDIR += arm-rtems-gdb
     SUBDIR += aros-sdk
+    SUBDIR += art
     SUBDIR += as31
     SUBDIR += asdlgen
     SUBDIR += asl
