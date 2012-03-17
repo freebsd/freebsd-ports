@@ -28,7 +28,15 @@ AUTOMAKE_ARGS=	--add-missing
 GNU_CONFIGURE_PREFIX=	${PREFIX}/share/xbmc
 CONFLICTS=	xbmc-[0-9]*
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+.endif
+
 post-patch:
 	(cd ${WRKSRC} && ${TOUCH} ./NEWS ./AUTHORS ./ChangeLog)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
