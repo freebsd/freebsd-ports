@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	20100929
-PORTREVISION=	2
+PORTVERSION=	20110918
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
+		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -28,9 +28,9 @@ CONFIGURE_ENV+=	INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREM
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
-PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.gif	\
-	puller.gif thermal.gif pad.png puller.png thermal.png examples	\
-	tutorial
+PORTDOCS= pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
+	examples tutorial gcode.png gcode_control_img.png		\
+	gcode_tool_path.png
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-gui
