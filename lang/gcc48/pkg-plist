@@ -49,7 +49,7 @@ share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.7.pc
+%%JAVA%%libdata/pkgconfig/libgcj-4.8.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 @exec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
