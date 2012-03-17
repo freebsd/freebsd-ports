@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "${DISPLAY}" ]
+then
+	echo "$0: Starting X server"
+	exec xinit $( which scrotwm )
+else
+	echo "$0: X server already running on display ${DISPLAY}"
+	$( which scrotwm )
+fi
