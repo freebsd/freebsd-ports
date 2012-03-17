@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.05
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -78,7 +78,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME:S,9$,,}
 OPTIONS=	A4SIZE	"Set A4 (not Letter) as the default paper size"	off \
 		CUPS	"Enable CUPS support"	on \
 		FONTCONFIG	"fontconfig support"	on \
-		LIBPAPER	"libpaper support"	off \
+		LIBPAPER	"libpaper support"	on \
 		GTK	"GTK frontend"	off \
 		X11	"X11 support"	on
 
@@ -111,14 +111,19 @@ PLIST_SUB+=	GS_${D}="@comment "
 
 .if !defined(WITH_LETTERSIZE)
 .if defined(A4) || defined(WITH_A4SIZE)
+DEFAULTPAPERSIZE?=	a4
 XCFLAGS+=	-DA4
 MSG_PAPERSIZE=	"NOTE: Default paper size will be A4."
 .endif
 .endif
+DEFAULTPAPERSIZE?=	letter
 
 .if !defined(WITHOUT_LIBPAPER)
 LIB_DEPENDS+=	paper:${PORTSDIR}/print/libpaper
 CONFIGURE_ARGS+=	--with-libpaper
+.if ${DEFAULTPAPERSIZE:L} == a4
+RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
+.endif
 .else
 CONFIGURE_ARGS+=	--without-libpaper
 .endif
