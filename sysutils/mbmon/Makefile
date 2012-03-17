@@ -12,8 +12,10 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/xmbmon/
 DISTNAME=	xmbmon${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT?=	A tty motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
+
+PORTSCOUT=	limit:^[0-9]+$
 
 ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes

@@ -11,13 +11,15 @@ PORTREVISION=	5
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A two window file-manager for KDE, like midnight or norton commander
 
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+
+PORTSCOUT=	ignore:1
 
 QTDIR?=${QT_PREFIX}/bin
 KDEDIR?=${LOCALBASE}/bin

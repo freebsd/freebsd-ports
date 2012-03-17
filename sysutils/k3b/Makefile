@@ -11,14 +11,14 @@ PORTREVISION=	14
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A CD/DVD recording GUI for KDE
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
-PORTSCOUT=	limit:^1\.
+PORTSCOUT=	ignore:1
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
