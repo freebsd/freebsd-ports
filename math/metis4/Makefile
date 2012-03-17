@@ -16,7 +16,6 @@ COMMENT=	A package for unstructured graph partitioning
 
 CONFLICTS=	metis-edf-[0-9]*
 
-ALL_TARGET=
 USE_LDCONFIG=	yes
 
 PROGRAMS=	graphchk kmetis mesh2dual mesh2nodal	\
@@ -30,16 +29,23 @@ PICFLAG?=	-fpic
 .endif
 
 post-patch:
-	${MKDIR} ${WRKSRC}_SHARED ; ${CP} -r ${WRKSRC}/* ${WRKSRC}_SHARED
+	${CP} -R ${WRKSRC} ${WRKSRC}_SHARED
 
 do-build:
-	cd ${WRKSRC} ; ${MAKE}
-	cd ${WRKSRC}_SHARED ; ${SETENV} CFLAGS="${CFLAGS} ${PICFLAG}" ${MAKE} ; ld -Bshareable -o libmetis.so.1 -x -soname libmetis.so.1 --whole-archive libmetis.a
+	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} \
+	COPTIONS="${CFLAGS}" LDOPTIONS="${LDFLAGS}" \
+	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS}
+	@cd ${WRKSRC}_SHARED ; ${SETENV} ${MAKE_ENV} \
+	COPTIONS="${CFLAGS} ${PICFLAG}" LDOPTIONS="${LDFLAGS} ${PICFLAG}" \
+	${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ; \
+	${LD} -Bshareable -o libmetis.so.1 -x -soname libmetis.so.1 \
+	--whole-archive libmetis.a --no-whole-archive
+
+check regression-test test: build
+	cd ${WRKSRC}/Graphs ; ./mtest 4elt.graph
 
 do-install:
-.for p in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin
-.endfor
+	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/include/metis
 	${INSTALL_DATA} ${WRKSRC}/Lib/*.h    ${PREFIX}/include/metis
 	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
