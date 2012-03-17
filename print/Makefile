@@ -207,6 +207,8 @@
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
     SUBDIR += panda
+    SUBDIR += papersize-default-a4
+    SUBDIR += papersize-default-letter
     SUBDIR += paps
     SUBDIR += passivetex
     SUBDIR += pcal
