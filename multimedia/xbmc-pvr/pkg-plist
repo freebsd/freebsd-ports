@@ -6,6 +6,7 @@ lib/xbmc/addons/library.xbmc.pvr/libXBMC_pvr-%%ARCH%%-freebsd.so
 lib/xbmc/addons/library.xbmc.addon/libXBMC_addon-%%ARCH%%-linux.so
 lib/xbmc/addons/library.xbmc.gui/libXBMC_gui-%%ARCH%%-linux.so
 lib/xbmc/addons/library.xbmc.pvr/libXBMC_pvr-%%ARCH%%-linux.so
+lib/xbmc/addons/pvr.demo/XBMC_demo.pvr
 lib/xbmc/addons/pvr.hts/XBMC_Tvheadend.pvr
 lib/xbmc/addons/pvr.mythtv/XBMC_Mythtv.pvr
 lib/xbmc/addons/pvr.team-mediaportal.tvserver/XBMC_MPTV.pvr
@@ -30,7 +31,7 @@ lib/xbmc/system/players/paplayer/nosefart-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/stsoundlibrary-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/timidity-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/paplayer/vgmstream-%%ARCH%%-freebsd.so
-lib/xbmc/xbmc-xrandr
+%%XRANDR%%lib/xbmc/xbmc-xrandr
 lib/xbmc/xbmc.bin
 %%DOCSDIR%%/LICENSE.GPL
 %%DOCSDIR%%/README.linux
@@ -143,6 +144,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Swedish/strings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/resources/settings.xml
 %%DATADIR%%/addons/metadata.yahoomusic.com/yahoomusic.xml
+%%DATADIR%%/addons/pvr.demo/addon.xml
 %%DATADIR%%/addons/pvr.hts/addon.xml
 %%DATADIR%%/addons/pvr.hts/icon.png
 %%DATADIR%%/addons/pvr.hts/resources/language/Dutch/strings.xml
@@ -355,6 +357,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/fonts/DejaVuSans.ttf
 %%DATADIR%%/addons/skin.confluence/icon.png
 %%DATADIR%%/addons/skin.confluence/language/Afrikaans/strings.xml
+%%DATADIR%%/addons/skin.confluence/language/Arabic/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Bulgarian/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Catalan/strings.xml
 %%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)/strings.xml
@@ -667,6 +670,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/ogg.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm_bluray.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/truehd.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/vorbis.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wav.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wavpack.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wma.png
@@ -841,6 +845,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/weather.wunderground/changelog.txt
 %%DATADIR%%/addons/weather.wunderground/default.py
 %%DATADIR%%/addons/weather.wunderground/icon.png
+%%DATADIR%%/addons/weather.wunderground/resources/language/Chinese (Simple)/strings.xml
+%%DATADIR%%/addons/weather.wunderground/resources/language/Dutch/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/English/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/Finnish/strings.xml
 %%DATADIR%%/addons/weather.wunderground/resources/language/German/strings.xml
@@ -880,6 +886,8 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/xbmc.python/script.xsd
 %%DATADIR%%/language/Afrikaans/langinfo.xml
 %%DATADIR%%/language/Afrikaans/strings.xml
+%%DATADIR%%/language/Arabic/langinfo.xml
+%%DATADIR%%/language/Arabic/strings.xml
 %%DATADIR%%/language/Basque/langinfo.xml
 %%DATADIR%%/language/Basque/strings.xml
 %%DATADIR%%/language/Bosnian/langinfo.xml
@@ -978,6 +986,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/sounds/Bursting Bubbles/sounds.xml
 %%DATADIR%%/system/IRSSmap.xml
 %%DATADIR%%/system/Lircmap.xml
+%%DATADIR%%/system/PVRDemoAddonSettings.xml
 %%DATADIR%%/system/X10-Lola-IRSSmap.xml
 %%DATADIR%%/system/asound.conf
 %%DATADIR%%/system/colors.xml
@@ -1100,6 +1109,7 @@ share/xsessions/XBMC.desktop
 @dirrm lib/xbmc/addons/pvr.team-mediaportal.tvserver
 @dirrm lib/xbmc/addons/pvr.mythtv
 @dirrm lib/xbmc/addons/pvr.hts
+@dirrm lib/xbmc/addons/pvr.demo
 @dirrm lib/xbmc/addons/library.xbmc.pvr
 @dirrm lib/xbmc/addons/library.xbmc.gui
 @dirrm lib/xbmc/addons/library.xbmc.addon
@@ -1167,6 +1177,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/language/Bulgarian
 @dirrm %%DATADIR%%/language/Bosnian
 @dirrm %%DATADIR%%/language/Basque
+@dirrm %%DATADIR%%/language/Arabic
 @dirrm %%DATADIR%%/language/Afrikaans
 @dirrm %%DATADIR%%/language
 @dirrm %%DATADIR%%/addons/xbmc.python
@@ -1184,6 +1195,8 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/German
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Finnish
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/English
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Dutch
+@dirrm %%DATADIR%%/addons/weather.wunderground/resources/language/Chinese (Simple)
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources/language
 @dirrm %%DATADIR%%/addons/weather.wunderground/resources
 @dirrm %%DATADIR%%/addons/weather.wunderground
@@ -1304,6 +1317,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Chinese (Simple)
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Catalan
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Bulgarian
+@dirrm %%DATADIR%%/addons/skin.confluence/language/Arabic
 @dirrm %%DATADIR%%/addons/skin.confluence/language/Afrikaans
 @dirrm %%DATADIR%%/addons/skin.confluence/language
 @dirrm %%DATADIR%%/addons/skin.confluence/fonts
@@ -1388,6 +1402,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/pvr.hts/resources/language
 @dirrm %%DATADIR%%/addons/pvr.hts/resources
 @dirrm %%DATADIR%%/addons/pvr.hts
+@dirrm %%DATADIR%%/addons/pvr.demo
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Swedish
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/metadata.yahoomusic.com/resources/language/Polish

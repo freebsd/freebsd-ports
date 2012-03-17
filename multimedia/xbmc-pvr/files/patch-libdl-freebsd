@@ -21,12 +21,12 @@
  
 --- xbmc/pvrclients/tvheadend/Makefile.in.orig
 +++ xbmc/pvrclients/tvheadend/Makefile.in
-@@ -6,7 +6,7 @@
+@@ -5,7 +5,7 @@
+ # how to reach the author.
  #
  
- LIBS   = @abs_top_srcdir@/lib/libTcpSocket/libTcpSocket.a \
--	@abs_top_srcdir@/lib/libhts/libhts.a -ldl
-+	@abs_top_srcdir@/lib/libhts/libhts.a
+-LIBS   = @abs_top_srcdir@/lib/libhts/libhts.a -ldl
++LIBS   = @abs_top_srcdir@/lib/libhts/libhts.a
  LIBDIR = @abs_top_srcdir@/addons/pvr.hts
  LIB    = @abs_top_srcdir@/addons/pvr.hts/XBMC_Tvheadend.pvr
  
@@ -36,8 +36,19 @@
  # how to reach the author.
  #
  
--LIBS   = @abs_top_srcdir@/lib/libTcpSocket/libTcpSocket.a -ldl -lpthread
-+LIBS   = @abs_top_srcdir@/lib/libTcpSocket/libTcpSocket.a -lpthread
+-LIBS   = -ldl
++#LIBS   = -ldl
  LIBDIR = @abs_top_srcdir@/addons/pvr.vdr.vnsi
  LIB    = @abs_top_srcdir@/addons/pvr.vdr.vnsi/XBMC_VDR_vnsi.pvr
+ 
+--- xbmc/pvrclients/pvr-demo/Makefile.in.orig
++++ xbmc/pvrclients/pvr-demo/Makefile.in
+@@ -5,7 +5,7 @@
+ # how to reach the author.
+ #
+ 
+-LIBS   = @abs_top_srcdir@/lib/tinyXML/tinyxml.a -ldl
++LIBS   = @abs_top_srcdir@/lib/tinyXML/tinyxml.a
+ LIBDIR = @abs_top_srcdir@/addons/pvr.demo
+ LIB    = @abs_top_srcdir@/addons/pvr.demo/XBMC_demo.pvr
  
