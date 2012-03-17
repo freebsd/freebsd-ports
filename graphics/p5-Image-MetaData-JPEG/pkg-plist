@@ -1,23 +1,40 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/JPEG/.packlist
 %%SITE_PERL%%/Image/MetaData/JPEG.pm
 %%SITE_PERL%%/Image/MetaData/JPEG.pod
 %%SITE_PERL%%/Image/MetaData/JPEG/Backtrace.pm
-%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_app13.pl
-%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_app1_exif.pl
-%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_comments.pl
-%%SITE_PERL%%/Image/MetaData/JPEG/JPEG_various.pl
 %%SITE_PERL%%/Image/MetaData/JPEG/MakerNotes.pod
 %%SITE_PERL%%/Image/MetaData/JPEG/Record.pm
 %%SITE_PERL%%/Image/MetaData/JPEG/Segment.pm
-%%SITE_PERL%%/Image/MetaData/JPEG/Segment_dumpers.pl
-%%SITE_PERL%%/Image/MetaData/JPEG/Segment_parsers.pl
 %%SITE_PERL%%/Image/MetaData/JPEG/Structures.pod
-%%SITE_PERL%%/Image/MetaData/JPEG/Tables.pm
-%%SITE_PERL%%/Image/MetaData/JPEG/Tables_makernotes.pl
 %%SITE_PERL%%/Image/MetaData/JPEG/TagLists.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/JPEG/.packlist
+%%SITE_PERL%%/Image/MetaData/JPEG/access/app13.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/access/app1_exif.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/access/comments.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/access/various.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/data/Makernotes.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/data/Tables.pm
+%%SITE_PERL%%/Image/MetaData/JPEG/dumpers/app1.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/dumpers/app13.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/dumpers/app1_exif.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/dumpers/dumpers.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app0.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app1.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app12.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app13.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app14.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app1_exif.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app1_xmp.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app2.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/app3.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/image.pl
+%%SITE_PERL%%/Image/MetaData/JPEG/parsers/parsers.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/JPEG
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/MetaData/JPEG/access
+@dirrmtry %%SITE_PERL%%/Image/MetaData/JPEG/data
+@dirrmtry %%SITE_PERL%%/Image/MetaData/JPEG/dumpers
+@dirrmtry %%SITE_PERL%%/Image/MetaData/JPEG/parsers
 @dirrmtry %%SITE_PERL%%/Image/MetaData/JPEG
 @dirrmtry %%SITE_PERL%%/Image/MetaData
 @dirrmtry %%SITE_PERL%%/Image
