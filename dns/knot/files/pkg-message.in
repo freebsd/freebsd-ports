@@ -5,14 +5,10 @@
 #
 # ----- configure --------------------------------------------------
 #
-  $EDITOR %%PREFIX%%/etc/knot/knot.conf       
+  $EDITOR %%ETCDIR%%/knot.conf       
 #
 # For all option have a look at the contents of
-# %%PREFIX%%/etc/knot/knot.sample.conf
-#
-# For example, under "system" you might like to add
-#    user "bind.bind";
-# to not have knotd run as root/wheel
+# %%PREFIX%%/etc/knot/knot.full.conf
 #
 # ----- prepare ----------------------------------------------------
 #
@@ -23,7 +19,7 @@
 #
 # ----- startup ----------------------------------------------------
 #
-  %%PREFIX%%/etc/rc.d/knot start
+  %%PREFIX%%/etc/rc.d/knotd start
 #
 ####################################################################
 

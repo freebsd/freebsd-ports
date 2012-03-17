@@ -7,6 +7,7 @@
 
 PORTNAME=	knot
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://public.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
@@ -38,6 +39,7 @@ PORTDOCS=	AUTHORS ChangeLog CodingStyle COPYING \
 post-install:
 	@${MKDIR} ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/knot.min.conf ${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/samples/knot.full.conf ${ETCDIR}
 	@if [ ! -f ${ETCDIR}/knot.conf ]; then \
 		${INSTALL_DATA} ${ETCDIR}/knot.min.conf ${ETCDIR}/knot.conf; \
 	fi
@@ -45,5 +47,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
+	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>
