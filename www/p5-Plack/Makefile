@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9985
-PORTREVISION=	1
+PORTVERSION=	0.9986
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -26,11 +25,25 @@ RUN_DEPENDS=	\
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny \
 	p5-libwww>=5.814:${PORTSDIR}/www/p5-libwww \
-	p5-URI>0:${PORTSDIR}/net/p5-URI \
-	p5-parent>0:${PORTSDIR}/devel/p5-parent
+	p5-URI>0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
+
+TEST_DEPENDS=  \
+	p5-Authen-Simple-Passwd>0:${PORTSDIR}/security/p5-Authen-Simple-Passwd \
+	p5-CGI-Compile>0:${PORTSDIR}/www/p5-CGI-Compile \
+	p5-CGI-Emulate-PSGI>0:${PORTSDIR}/www/p5-CGI-Emulate-PSGI \
+	p5-FCGI>0:${PORTSDIR}/www/p5-FCGI \
+	p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager \
+	p5-HTTP-Request-AsCGI>0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+	p5-HTTP-Server-Simple-PSGI>0:${PORTSDIR}/www/p5-HTTP-Server-Simple-PSGI \
+	p5-IO-Handle-Util>0:${PORTSDIR}/devel/p5-IO-Handle-Util \
+	p5-LWP-Protocol-http10>0:${PORTSDIR}/www/p5-LWP-Protocol-http10 \
+	p5-Log-Dispatch-Array>0:${PORTSDIR}/devel/p5-Log-Dispatch-Array \
+	p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
+	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
+	p5-Module-Refresh>0:${PORTSDIR}/devel/p5-Module-Refresh \
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
