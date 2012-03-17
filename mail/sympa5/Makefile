@@ -14,26 +14,33 @@ MASTER_SITES?=	http://www.sympa.org/distribution/
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Sympa is an electronic mailing list manager
 
-BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
-		${SITE_PERL}/MIME/EncWords.pm:${PORTSDIR}/mail/p5-MIME-EncWords \
-		${SITE_PERL}/File/NFSLock.pm:${PORTSDIR}/devel/p5-File-NFSLock \
-		${SITE_PERL}/Locale/TextDomain.pm:${PORTSDIR}/devel/p5-Locale-libintl \
-		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/Crypt/CipherSaber.pm:${PORTSDIR}/security/p5-Crypt-CipherSaber \
-		${SITE_PERL}/mach/Crypt/OpenSSL/X509.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-X509 \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc
+BUILD_DEPENDS+=	\
+	p5-Archive-Zip>0:${PORTSDIR}/archivers/p5-Archive-Zip \
+	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
+	p5-SOAP-Lite>0:${PORTSDIR}/net/p5-SOAP-Lite \
+	p5-MIME-EncWords>0:${PORTSDIR}/mail/p5-MIME-EncWords \
+	p5-File-NFSLock>0:${PORTSDIR}/devel/p5-File-NFSLock \
+	p5-Locale-libintl>0:${PORTSDIR}/devel/p5-Locale-libintl \
+	p5-Regexp-Common>0:${PORTSDIR}/textproc/p5-Regexp-Common \
+	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit \
+	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML \
+	p5-Crypt-CipherSaber>0:${PORTSDIR}/security/p5-Crypt-CipherSaber \
+	p5-Crypt-OpenSSL-X509>0:${PORTSDIR}/security/p5-Crypt-OpenSSL-X509 \
+	p5-perl-ldap>0:${PORTSDIR}/net/p5-perl-ldap \
+	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
+	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+	${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USERS=		sympa
+GROUPS=		sympa
+SUB_FILES=	pkg-install
+SUB_LIST=	DB_TYPE=${DB_TYPE}
 
 LATEST_LINK=	sympa5
 USE_APACHE=	20+
 HAS_CONFIGURE=	yes
-USE_PERL5=	5.8.6+
+USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
@@ -76,6 +83,7 @@ PLIST_SUB+=	NLS=""
 .if !defined(WITHOUT_FASTCGI)
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+SUB_LIST+=	WITH_FASTCGI=yes
 .endif
 
 .if ${DB_TYPE} == "Oracle"
@@ -120,18 +128,12 @@ post-patch:
 .endif
 	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
-	 ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${INSTALL_MAN} ${WRKSRC}/doc/man8/alias_manager.8 ${MAN8PREFIX}/man/man8/
 	@${INSTALL_MAN} ${WRKSRC}/doc/man8/archived.8 ${MAN8PREFIX}/man/man8/
 	@${INSTALL_MAN} ${WRKSRC}/doc/man8/bounced.8 ${MAN8PREFIX}/man/man8/
 	@${INSTALL_MAN} ${WRKSRC}/doc/man8/sympa.8 ${MAN8PREFIX}/man/man8/
-
-post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>
