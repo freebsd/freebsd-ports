@@ -14,9 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interactive peeking into a running POE application
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/API/Peek.pm:${PORTSDIR}/devel/p5-POE-API-Peek
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-API-Peek>=0:${PORTSDIR}/devel/p5-POE-API-Peek
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Distribution>=0:${PORTSDIR}/devel/p5-Test-Distribution
 
 PERL_CONFIGURE=	yes
 
