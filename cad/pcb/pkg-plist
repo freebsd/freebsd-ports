@@ -2,6 +2,8 @@
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 bin/pcb
+include/gts.h
+lib/libgts.a
 share/applications/pcb.desktop
 share/icons/hicolor/16x16/mimetypes/application-x-excellon-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-gerber-16.png
@@ -56,183 +58,6 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/default_font
 %%DATADIR%%/gpcb-menu.res
 %%DATADIR%%/pcb-menu.res
-%%DATADIR%%/pcblib-newlib/pci/PCI5V_AVE_HEIGHT.fp
-%%DATADIR%%/pcblib-newlib/pci/PCI5V_MIN_HEIGHT.fp
-%%DATADIR%%/pcblib-newlib/pci/PCI5V_MAX_HEIGHT.fp
-%%DATADIR%%/pcblib-newlib/pci/PCI5V_SMALL_HEIGHT.fp
-%%DATADIR%%/pcblib-newlib/pci/index.html
-%%DATADIR%%/pcblib-newlib/optek/index.html
-%%DATADIR%%/pcblib-newlib/optek/OPTEK_OVSRWACR6.fp
-%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1229.fp
-%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1230.fp
-%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1231.fp
-%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1232.fp
-%%DATADIR%%/pcblib-newlib/amphenol/index.html
-%%DATADIR%%/pcblib-newlib/connector/2.fp
-%%DATADIR%%/pcblib-newlib/connector/4.fp
-%%DATADIR%%/pcblib-newlib/connector/6.fp
-%%DATADIR%%/pcblib-newlib/connector/8.fp
-%%DATADIR%%/pcblib-newlib/connector/10.fp
-%%DATADIR%%/pcblib-newlib/connector/12.fp
-%%DATADIR%%/pcblib-newlib/connector/14.fp
-%%DATADIR%%/pcblib-newlib/connector/15.fp
-%%DATADIR%%/pcblib-newlib/connector/16.fp
-%%DATADIR%%/pcblib-newlib/connector/18.fp
-%%DATADIR%%/pcblib-newlib/connector/20.fp
-%%DATADIR%%/pcblib-newlib/connector/50.fp
-%%DATADIR%%/pcblib-newlib/connector/abc48f.fp
-%%DATADIR%%/pcblib-newlib/connector/abc48m.fp
-%%DATADIR%%/pcblib-newlib/connector/ab64f.fp
-%%DATADIR%%/pcblib-newlib/connector/ab64m.fp
-%%DATADIR%%/pcblib-newlib/connector/ac64f.fp
-%%DATADIR%%/pcblib-newlib/connector/ac64m.fp
-%%DATADIR%%/pcblib-newlib/connector/abc96f.fp
-%%DATADIR%%/pcblib-newlib/connector/abc96m.fp
-%%DATADIR%%/pcblib-newlib/connector/10l.fp
-%%DATADIR%%/pcblib-newlib/connector/10s.fp
-%%DATADIR%%/pcblib-newlib/connector/14l.fp
-%%DATADIR%%/pcblib-newlib/connector/14s.fp
-%%DATADIR%%/pcblib-newlib/connector/16l.fp
-%%DATADIR%%/pcblib-newlib/connector/16s.fp
-%%DATADIR%%/pcblib-newlib/connector/18l.fp
-%%DATADIR%%/pcblib-newlib/connector/18s.fp
-%%DATADIR%%/pcblib-newlib/connector/20l.fp
-%%DATADIR%%/pcblib-newlib/connector/20s.fp
-%%DATADIR%%/pcblib-newlib/connector/22l.fp
-%%DATADIR%%/pcblib-newlib/connector/22s.fp
-%%DATADIR%%/pcblib-newlib/connector/24l.fp
-%%DATADIR%%/pcblib-newlib/connector/24s.fp
-%%DATADIR%%/pcblib-newlib/connector/26l.fp
-%%DATADIR%%/pcblib-newlib/connector/26s.fp
-%%DATADIR%%/pcblib-newlib/connector/34l.fp
-%%DATADIR%%/pcblib-newlib/connector/34s.fp
-%%DATADIR%%/pcblib-newlib/connector/40l.fp
-%%DATADIR%%/pcblib-newlib/connector/40s.fp
-%%DATADIR%%/pcblib-newlib/connector/50l.fp
-%%DATADIR%%/pcblib-newlib/connector/50s.fp
-%%DATADIR%%/pcblib-newlib/connector/64l.fp
-%%DATADIR%%/pcblib-newlib/connector/64s.fp
-%%DATADIR%%/pcblib-newlib/connector/9f.fp
-%%DATADIR%%/pcblib-newlib/connector/PC-centronics.fp
-%%DATADIR%%/pcblib-newlib/connector/PC-RS232.fp
-%%DATADIR%%/pcblib-newlib/connector/single-ended SCSI.fp
-%%DATADIR%%/pcblib-newlib/connector/9m.fp
-%%DATADIR%%/pcblib-newlib/connector/15f.fp
-%%DATADIR%%/pcblib-newlib/connector/15m.fp
-%%DATADIR%%/pcblib-newlib/connector/25f.fp
-%%DATADIR%%/pcblib-newlib/connector/25m.fp
-%%DATADIR%%/pcblib-newlib/connector/1.fp
-%%DATADIR%%/pcblib-newlib/connector/30.fp
-%%DATADIR%%/pcblib-newlib/connector/40.fp
-%%DATADIR%%/pcblib-newlib/connector/60.fp
-%%DATADIR%%/pcblib-newlib/connector/68.fp
-%%DATADIR%%/pcblib-newlib/connector/70.fp
-%%DATADIR%%/pcblib-newlib/connector/80.fp
-%%DATADIR%%/pcblib-newlib/connector/90.fp
-%%DATADIR%%/pcblib-newlib/connector/100.fp
-%%DATADIR%%/pcblib-newlib/connector/120.fp
-%%DATADIR%%/pcblib-newlib/connector/140.fp
-%%DATADIR%%/pcblib-newlib/connector/160.fp
-%%DATADIR%%/pcblib-newlib/connector/180.fp
-%%DATADIR%%/pcblib-newlib/connector/200.fp
-%%DATADIR%%/pcblib-newlib/connector/240.fp
-%%DATADIR%%/pcblib-newlib/connector/index.html
-%%DATADIR%%/pcblib-newlib/crystal/8MHZ.fp
-%%DATADIR%%/pcblib-newlib/crystal/1MHz.fp
-%%DATADIR%%/pcblib-newlib/crystal/index.html
-%%DATADIR%%/pcblib-newlib/crystal/crystal.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 8.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 8.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 14.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 14.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 16.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 16.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 18.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 18.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 20.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 20.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 24.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 24.fp
-%%DATADIR%%/pcblib-newlib/generic/W-DIL 24.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD-W 24.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 28.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD 28.fp
-%%DATADIR%%/pcblib-newlib/generic/W-DIL 28.fp
-%%DATADIR%%/pcblib-newlib/generic/SMD-W 28.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 32.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 40.fp
-%%DATADIR%%/pcblib-newlib/generic/DIL 64.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 44.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 44 socket.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 52.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 52 socket.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 68.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 68 socket.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 84.fp
-%%DATADIR%%/pcblib-newlib/generic/PLCC 84 socket.fp
-%%DATADIR%%/pcblib-newlib/generic/QFP 44.fp
-%%DATADIR%%/pcblib-newlib/generic/QFP 44 OLD.fp
-%%DATADIR%%/pcblib-newlib/generic/QFP 208.fp
-%%DATADIR%%/pcblib-newlib/generic/QFP 80.fp
-%%DATADIR%%/pcblib-newlib/generic/ZIF 16.fp
-%%DATADIR%%/pcblib-newlib/generic/ZIF 20.fp
-%%DATADIR%%/pcblib-newlib/generic/300.fp
-%%DATADIR%%/pcblib-newlib/generic/ZIP 20.fp
-%%DATADIR%%/pcblib-newlib/generic/ZIP 24.fp
-%%DATADIR%%/pcblib-newlib/generic/ZIP 28.fp
-%%DATADIR%%/pcblib-newlib/generic/ZIP 40.fp
-%%DATADIR%%/pcblib-newlib/generic/400.fp
-%%DATADIR%%/pcblib-newlib/generic/500.fp
-%%DATADIR%%/pcblib-newlib/generic/600.fp
-%%DATADIR%%/pcblib-newlib/generic/800.fp
-%%DATADIR%%/pcblib-newlib/generic/1 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/2 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/4 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/5 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/200.fp
-%%DATADIR%%/pcblib-newlib/generic/8 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/10 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/12 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/16 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/20 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/24 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/32 MHz OSC.fp
-%%DATADIR%%/pcblib-newlib/generic/Resistor.fp
-%%DATADIR%%/pcblib-newlib/generic/Capacitor.fp
-%%DATADIR%%/pcblib-newlib/generic/603.fp
-%%DATADIR%%/pcblib-newlib/generic/805.fp
-%%DATADIR%%/pcblib-newlib/generic/1206.fp
-%%DATADIR%%/pcblib-newlib/generic/EIA A.fp
-%%DATADIR%%/pcblib-newlib/generic/EIA B.fp
-%%DATADIR%%/pcblib-newlib/generic/EIA C.fp
-%%DATADIR%%/pcblib-newlib/generic/EIA D.fp
-%%DATADIR%%/pcblib-newlib/generic/XT8BIT.fp
-%%DATADIR%%/pcblib-newlib/generic/SOT-23.fp
-%%DATADIR%%/pcblib-newlib/generic/SOT-323.fp
-%%DATADIR%%/pcblib-newlib/generic/SOT-NE19.fp
-%%DATADIR%%/pcblib-newlib/generic/index.html
-%%DATADIR%%/pcblib-newlib/gtag/cy7c64603.fp
-%%DATADIR%%/pcblib-newlib/gtag/conn_usb.fp
-%%DATADIR%%/pcblib-newlib/gtag/conn_jtag.fp
-%%DATADIR%%/pcblib-newlib/gtag/sm0805.fp
-%%DATADIR%%/pcblib-newlib/gtag/sm1206.fp
-%%DATADIR%%/pcblib-newlib/gtag/index.html
-%%DATADIR%%/pcblib-newlib/optical/green.fp
-%%DATADIR%%/pcblib-newlib/optical/red.fp
-%%DATADIR%%/pcblib-newlib/optical/blue.fp
-%%DATADIR%%/pcblib-newlib/optical/6N136.fp
-%%DATADIR%%/pcblib-newlib/optical/6N137.fp
-%%DATADIR%%/pcblib-newlib/optical/index.html
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_3_5p4.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_4_5p4.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_5_5p4.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_6p3_5p4.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_6p3_5p8.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_6p3_7p7.fp
-%%DATADIR%%/pcblib-newlib/nichicon/index.html
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_8_5p4.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_8_10.fp
-%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_10_10.fp
 %%DATADIR%%/pcblib-newlib/amp/AMP_MICTOR_767054_1.fp
 %%DATADIR%%/pcblib-newlib/amp/AMP_MICTOR_767054_2.fp
 %%DATADIR%%/pcblib-newlib/amp/AMP_MICTOR_767054_3.fp
@@ -241,15 +66,94 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/amp/AMP_MICTOR_767054_6.fp
 %%DATADIR%%/pcblib-newlib/amp/AMP_MICTOR_767054_7.fp
 %%DATADIR%%/pcblib-newlib/amp/index.html
+%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1229.fp
+%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1230.fp
+%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1231.fp
+%%DATADIR%%/pcblib-newlib/amphenol/AMPHENOL_ARFX1232.fp
+%%DATADIR%%/pcblib-newlib/amphenol/index.html
 %%DATADIR%%/pcblib-newlib/bourns/BOURNS_3224G.fp
 %%DATADIR%%/pcblib-newlib/bourns/BOURNS_3224J.fp
 %%DATADIR%%/pcblib-newlib/bourns/BOURNS_3224W.fp
 %%DATADIR%%/pcblib-newlib/bourns/BOURNS_3224X.fp
 %%DATADIR%%/pcblib-newlib/bourns/index.html
-%%DATADIR%%/pcblib-newlib/candk/CANDK_ES02MSABE.fp
+%%DATADIR%%/pcblib-newlib/broken.html
 %%DATADIR%%/pcblib-newlib/candk/CANDK_ES01MSABE.fp
-%%DATADIR%%/pcblib-newlib/candk/index.html
+%%DATADIR%%/pcblib-newlib/candk/CANDK_ES02MSABE.fp
 %%DATADIR%%/pcblib-newlib/candk/CANDK_ES03MSABE.fp
+%%DATADIR%%/pcblib-newlib/candk/index.html
+%%DATADIR%%/pcblib-newlib/connector/BNC_LAY.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 1 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 10 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 2 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 25 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 3 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 4 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 4 3.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 5 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 5 3.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 6 3.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 7 2.fp
+%%DATADIR%%/pcblib-newlib/connector/CONNECTOR 8 2.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612FEMALE ab.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612FEMALE abc.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612FEMALE ac.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612FEMALE_SMALL.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612MALE ab.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612MALE abc.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612MALE ac.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_612MALE_SMALL.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 10.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 14.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 16.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 18.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 20.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 22.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 24.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 26.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 34.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 40.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 50.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651LAY 64.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 10.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 14.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 16.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 18.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 20.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 22.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 24.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 26.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 34.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 40.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 50.fp
+%%DATADIR%%/pcblib-newlib/connector/DIN41_651STAND 64.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 100.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 120.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 140.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 160.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 180.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 20.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 200.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 240.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 30.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 40.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 50.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 60.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 68.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 70.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 80.fp
+%%DATADIR%%/pcblib-newlib/connector/MOLEX_025 90.fp
+%%DATADIR%%/pcblib-newlib/connector/MTA_156 2.fp
+%%DATADIR%%/pcblib-newlib/connector/NANOENGINE.fp
+%%DATADIR%%/pcblib-newlib/connector/SMA_VERT.fp
+%%DATADIR%%/pcblib-newlib/connector/SUBD_FEMALE_LAY 15.fp
+%%DATADIR%%/pcblib-newlib/connector/SUBD_FEMALE_LAY 25.fp
+%%DATADIR%%/pcblib-newlib/connector/SUBD_FEMALE_LAY 9.fp
+%%DATADIR%%/pcblib-newlib/connector/SUBD_MALE_LAY 15.fp
+%%DATADIR%%/pcblib-newlib/connector/SUBD_MALE_LAY 25.fp
+%%DATADIR%%/pcblib-newlib/connector/SUBD_MALE_LAY 9.fp
+%%DATADIR%%/pcblib-newlib/connector/index.html
+%%DATADIR%%/pcblib-newlib/crystal/CRYSTAL 300.fp
+%%DATADIR%%/pcblib-newlib/crystal/index.html
 %%DATADIR%%/pcblib-newlib/cts/CTS_742C_04.fp
 %%DATADIR%%/pcblib-newlib/cts/CTS_742C_08.fp
 %%DATADIR%%/pcblib-newlib/cts/CTS_742C_16.fp
@@ -262,33 +166,461 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/cts/CTS_745X_10.fp
 %%DATADIR%%/pcblib-newlib/cts/CTS_746X_10.fp
 %%DATADIR%%/pcblib-newlib/cts/index.html
-%%DATADIR%%/pcblib-newlib/geda/DIP6.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP8.fp
+%%DATADIR%%/pcblib-newlib/geda/01005.fp
+%%DATADIR%%/pcblib-newlib/geda/0201.fp
+%%DATADIR%%/pcblib-newlib/geda/0402.fp
+%%DATADIR%%/pcblib-newlib/geda/0603.fp
+%%DATADIR%%/pcblib-newlib/geda/0805.fp
+%%DATADIR%%/pcblib-newlib/geda/1008.fp
+%%DATADIR%%/pcblib-newlib/geda/1206.fp
+%%DATADIR%%/pcblib-newlib/geda/1210.fp
+%%DATADIR%%/pcblib-newlib/geda/1806.fp
+%%DATADIR%%/pcblib-newlib/geda/1825.fp
+%%DATADIR%%/pcblib-newlib/geda/2706.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY100.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1000.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1000P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY100P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1100.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1100P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1200.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1200P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1300.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1300P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1400.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1400P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY150.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1500.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1500P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY150P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1600.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY1600P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY200.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY200P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY300.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY300P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY400.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY400P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY500.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY500P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY600.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY600P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY700.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY700P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY800.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY800P.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY900.fp
+%%DATADIR%%/pcblib-newlib/geda/ACY900P.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF1000.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF300.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF400.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF500.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF600.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF700.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF800.fp
+%%DATADIR%%/pcblib-newlib/geda/ALF900.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC0402L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC0402M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC0402N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC0603L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC0603M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC0603N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC1005L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC1005M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC1005N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC1608L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC1608M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC1608N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC2012L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC2012M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC2012N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC3216L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC3216M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC3216N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC3225L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC3225M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC3225N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC4532L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC4532M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC4532N.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC4564L.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC4564M.fp
+%%DATADIR%%/pcblib-newlib/geda/CAPC4564N.fp
+%%DATADIR%%/pcblib-newlib/geda/DB15F.fp
+%%DATADIR%%/pcblib-newlib/geda/DB15M.fp
+%%DATADIR%%/pcblib-newlib/geda/DB25F.fp
+%%DATADIR%%/pcblib-newlib/geda/DB25M.fp
+%%DATADIR%%/pcblib-newlib/geda/DB37F.fp
+%%DATADIR%%/pcblib-newlib/geda/DB37M.fp
+%%DATADIR%%/pcblib-newlib/geda/DB9F.fp
+%%DATADIR%%/pcblib-newlib/geda/DB9M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C64F.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C64FS.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C64M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C64MS.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C96F.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C96FS.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C96M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41612C96MS.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_10.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_10S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_14.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_14S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_16.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_16S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_20.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_20S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_26.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_26S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_34.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_34S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_40.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_40S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_50.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_50S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_60.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_60S.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_64.fp
+%%DATADIR%%/pcblib-newlib/geda/DIN41651_64S.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP14.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP16.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP18.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP20.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP22.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP24N.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP28N.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP8M.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP14M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP16.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP16M.fp
-%%DATADIR%%/pcblib-newlib/geda/SIP1.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP18.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP18M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP20.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP20M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP22.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP22M.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP24M.fp
-%%DATADIR%%/pcblib-newlib/geda/DIP28M.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP24.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP24M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP24N.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP28.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP28M.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP28N.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP32.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP36.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP40.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP42.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP44.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP48.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP6.fp
 %%DATADIR%%/pcblib-newlib/geda/DIP64.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP8.fp
+%%DATADIR%%/pcblib-newlib/geda/DIP8M.fp
+%%DATADIR%%/pcblib-newlib/geda/DO214.fp
+%%DATADIR%%/pcblib-newlib/geda/DO214AB.fp
+%%DATADIR%%/pcblib-newlib/geda/EIA3216.fp
+%%DATADIR%%/pcblib-newlib/geda/EIA3528.fp
+%%DATADIR%%/pcblib-newlib/geda/EIA6032.fp
+%%DATADIR%%/pcblib-newlib/geda/EIA7343.fp
+%%DATADIR%%/pcblib-newlib/geda/EMI0603.fp
+%%DATADIR%%/pcblib-newlib/geda/EMI0805.fp
+%%DATADIR%%/pcblib-newlib/geda/EMI1206.fp
+%%DATADIR%%/pcblib-newlib/geda/EMI1806.fp
+%%DATADIR%%/pcblib-newlib/geda/HC49.fp
+%%DATADIR%%/pcblib-newlib/geda/HC49U.fp
+%%DATADIR%%/pcblib-newlib/geda/HC49UH.fp
+%%DATADIR%%/pcblib-newlib/geda/HC49U_3.fp
+%%DATADIR%%/pcblib-newlib/geda/HC49U_3H.fp
+%%DATADIR%%/pcblib-newlib/geda/HC51U.fp
+%%DATADIR%%/pcblib-newlib/geda/HC51UH.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER10_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER10_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER12_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER12_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER14_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER14_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER16_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER16_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER18_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER18_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER20_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER20_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER22_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER22_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER24_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER24_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER26_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER26_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER28_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER28_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER2_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER2_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER30_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER30_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER32_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER32_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER34_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER34_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER36_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER36_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER38_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER38_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER40_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER40_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER42_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER42_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER44_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER44_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER46_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER46_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER48_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER48_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER4_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER4_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER50_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER50_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER52_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER52_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER54_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER54_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER56_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER56_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER58_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER58_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER60_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER60_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER62_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER62_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER64_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER64_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER6_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER6_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER80_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER80_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER8_1.fp
+%%DATADIR%%/pcblib-newlib/geda/HEADER8_2.fp
+%%DATADIR%%/pcblib-newlib/geda/HEPTAWATT.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC0402L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC0402M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC0402N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC1005L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC1005M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC1005N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC1608L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC1608M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC1608N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC2012L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC2012M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC2012N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC2520L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC2520M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC2520N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC3216L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC3216M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC3216N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC3225L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC3225M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC3225N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC4509L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC4509M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC4509N.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC4532L.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC4532M.fp
+%%DATADIR%%/pcblib-newlib/geda/INDC4532N.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER1.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER10.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER11.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER12.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER13.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER14.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER15.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER16.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER17.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER18.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER19.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER2.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER20.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER21.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER22.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER23.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER24.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER25.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER26.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER3.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER4.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER5.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER6.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER7.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER8.fp
+%%DATADIR%%/pcblib-newlib/geda/JUMPER9.fp
+%%DATADIR%%/pcblib-newlib/geda/LED3.fp
+%%DATADIR%%/pcblib-newlib/geda/LED5.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP100_10.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP100_14.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP112_20.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP120_16.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP128_14.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP128_14_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP128_R.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP144_20.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP160_24.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP176_24.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP24_4.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP32_5.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP32_7.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP44_10.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP48_12.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP48_7.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP52_10.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP64_10.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP64_14.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP64_7.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP72_10.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP80_12.fp
+%%DATADIR%%/pcblib-newlib/geda/LQFP80_14.fp
+%%DATADIR%%/pcblib-newlib/geda/MPAK.fp
+%%DATADIR%%/pcblib-newlib/geda/MSOP10.fp
+%%DATADIR%%/pcblib-newlib/geda/MSOP8.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_10.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_11.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_12.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_13.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_14.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_15.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_2.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_3.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_4.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_5.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_6.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_7.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_8.fp
+%%DATADIR%%/pcblib-newlib/geda/MTA100_9.fp
+%%DATADIR%%/pcblib-newlib/geda/MULTIWATT11.fp
+%%DATADIR%%/pcblib-newlib/geda/MULTIWATT15.fp
+%%DATADIR%%/pcblib-newlib/geda/MULTIWATT8.fp
+%%DATADIR%%/pcblib-newlib/geda/OSC14.fp
+%%DATADIR%%/pcblib-newlib/geda/PENTAWATT.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC20.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC20X.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC28.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC28X.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC32.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC32X.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC44.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC44X.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC52.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC52X.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC68.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC68X.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC84.fp
+%%DATADIR%%/pcblib-newlib/geda/PLCC84X.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN12_4.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN12_4_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN16_3.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN16_3_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN16_4.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN16_4_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN16_5.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN16_5_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN20_4.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN20_4_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN20_5.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN20_5_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN24_4.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN24_4_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN28_5.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN28_5_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN32_5.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN32_5_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN32_7.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN32_7_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN36_6.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN36_6_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN40_6.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN40_6_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN44_7.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN44_7_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN48_7.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN48_7_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN56_8.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN56_8_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN68_10.fp
+%%DATADIR%%/pcblib-newlib/geda/QFN68_10_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP100_14.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP100_R.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP120_28.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP128_28.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP128_R.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP144_28.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP160_28.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP208_28.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP240_32.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP304_40.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP32_7.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP44_10.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP52_10.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP64_14.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP64_R.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP80_14.fp
+%%DATADIR%%/pcblib-newlib/geda/QFP80_R.fp
+%%DATADIR%%/pcblib-newlib/geda/QSOP16.fp
+%%DATADIR%%/pcblib-newlib/geda/QSOP20.fp
+%%DATADIR%%/pcblib-newlib/geda/QSOP24.fp
+%%DATADIR%%/pcblib-newlib/geda/QSOP28.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY100.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY1000.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY1000P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY100P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY1100.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY1100P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY1200.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY1200P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY150.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY150P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY200.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY200P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY250.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY250P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY300.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY300P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY350.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY350P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY400.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY400P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY500.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY500P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY600.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY600P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY700.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY700P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY800.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY800P.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY900.fp
+%%DATADIR%%/pcblib-newlib/geda/RCY900P.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC0402L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC0402M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC0402N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC0603L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC0603M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC0603N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC1005L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC1005M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC1005N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC1608L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC1608M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC1608N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC2012L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC2012M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC2012N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC3216L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC3216M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC3216N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC3225L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC3225M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC3225N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC4532L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC4532M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC4532N.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC4564L.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC4564M.fp
+%%DATADIR%%/pcblib-newlib/geda/RESC4564N.fp
+%%DATADIR%%/pcblib-newlib/geda/SC70_3.fp
+%%DATADIR%%/pcblib-newlib/geda/SC70_4.fp
+%%DATADIR%%/pcblib-newlib/geda/SC70_5.fp
+%%DATADIR%%/pcblib-newlib/geda/SC70_6.fp
+%%DATADIR%%/pcblib-newlib/geda/SC90.fp
 %%DATADIR%%/pcblib-newlib/geda/SDIP18.fp
 %%DATADIR%%/pcblib-newlib/geda/SDIP20.fp
 %%DATADIR%%/pcblib-newlib/geda/SDIP22.fp
@@ -296,6 +628,11 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/geda/SDIP30.fp
 %%DATADIR%%/pcblib-newlib/geda/SDIP32.fp
 %%DATADIR%%/pcblib-newlib/geda/SDIP42.fp
+%%DATADIR%%/pcblib-newlib/geda/SIP1.fp
+%%DATADIR%%/pcblib-newlib/geda/SIP10.fp
+%%DATADIR%%/pcblib-newlib/geda/SIP11.fp
+%%DATADIR%%/pcblib-newlib/geda/SIP12.fp
+%%DATADIR%%/pcblib-newlib/geda/SIP13.fp
 %%DATADIR%%/pcblib-newlib/geda/SIP2.fp
 %%DATADIR%%/pcblib-newlib/geda/SIP3.fp
 %%DATADIR%%/pcblib-newlib/geda/SIP4.fp
@@ -304,100 +641,114 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/geda/SIP7.fp
 %%DATADIR%%/pcblib-newlib/geda/SIP8.fp
 %%DATADIR%%/pcblib-newlib/geda/SIP9.fp
-%%DATADIR%%/pcblib-newlib/geda/SIP10.fp
-%%DATADIR%%/pcblib-newlib/geda/SIP11.fp
-%%DATADIR%%/pcblib-newlib/geda/SIP12.fp
-%%DATADIR%%/pcblib-newlib/geda/SIP13.fp
-%%DATADIR%%/pcblib-newlib/geda/US8.fp
-%%DATADIR%%/pcblib-newlib/geda/US14.fp
-%%DATADIR%%/pcblib-newlib/geda/US16.fp
-%%DATADIR%%/pcblib-newlib/geda/SO8.fp
+%%DATADIR%%/pcblib-newlib/geda/SME10.fp
+%%DATADIR%%/pcblib-newlib/geda/SME3.fp
+%%DATADIR%%/pcblib-newlib/geda/SME4.fp
+%%DATADIR%%/pcblib-newlib/geda/SME5.fp
+%%DATADIR%%/pcblib-newlib/geda/SME6.fp
+%%DATADIR%%/pcblib-newlib/geda/SME8.fp
 %%DATADIR%%/pcblib-newlib/geda/SO14.fp
+%%DATADIR%%/pcblib-newlib/geda/SO14W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO16.fp
-%%DATADIR%%/pcblib-newlib/geda/SO18N.fp
-%%DATADIR%%/pcblib-newlib/geda/SO20N.fp
-%%DATADIR%%/pcblib-newlib/geda/SO8M.fp
+%%DATADIR%%/pcblib-newlib/geda/SO16W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO18M.fp
+%%DATADIR%%/pcblib-newlib/geda/SO18N.fp
+%%DATADIR%%/pcblib-newlib/geda/SO18W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO20M.fp
+%%DATADIR%%/pcblib-newlib/geda/SO20N.fp
+%%DATADIR%%/pcblib-newlib/geda/SO20W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO22M.fp
 %%DATADIR%%/pcblib-newlib/geda/SO24M.fp
-%%DATADIR%%/pcblib-newlib/geda/SO8W.fp
-%%DATADIR%%/pcblib-newlib/geda/SO14W.fp
-%%DATADIR%%/pcblib-newlib/geda/SO16W.fp
-%%DATADIR%%/pcblib-newlib/geda/SO18W.fp
-%%DATADIR%%/pcblib-newlib/geda/SO20W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO24W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO28.fp
-%%DATADIR%%/pcblib-newlib/geda/SO32.fp
 %%DATADIR%%/pcblib-newlib/geda/SO28W.fp
+%%DATADIR%%/pcblib-newlib/geda/SO32.fp
 %%DATADIR%%/pcblib-newlib/geda/SO32W.fp
 %%DATADIR%%/pcblib-newlib/geda/SO44.fp
+%%DATADIR%%/pcblib-newlib/geda/SO8.fp
+%%DATADIR%%/pcblib-newlib/geda/SO8M.fp
+%%DATADIR%%/pcblib-newlib/geda/SO8W.fp
+%%DATADIR%%/pcblib-newlib/geda/SOD106A.fp
+%%DATADIR%%/pcblib-newlib/geda/SOD110.fp
+%%DATADIR%%/pcblib-newlib/geda/SOD123.fp
+%%DATADIR%%/pcblib-newlib/geda/SOD323.fp
+%%DATADIR%%/pcblib-newlib/geda/SOD80.fp
+%%DATADIR%%/pcblib-newlib/geda/SOD87.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ14_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ16_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ18_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ20_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ22_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ24_300.fp
-%%DATADIR%%/pcblib-newlib/geda/ZIP9.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ26_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ28_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ30_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ32_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ34_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ36_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ38_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ40_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ42_300.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ44_300.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ14_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ16_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ18_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ20_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ22_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ24_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ26_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ28_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ30_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ32_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ34_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ36_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ38_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ40_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ42_350.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ44_350.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ14_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ16_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ18_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ20_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ22_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ24_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ26_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ28_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ30_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ32_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ34_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ36_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ38_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ40_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ42_400.fp
-%%DATADIR%%/pcblib-newlib/geda/SOJ44_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ14_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ16_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ16_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ16_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ16_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ18_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ18_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ18_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ18_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ20_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ20_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ20_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ20_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ22_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ22_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ22_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ22_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ24_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ24_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ24_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ24_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ26_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ26_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ26_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ26_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ28_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ28_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ28_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ28_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ30_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ30_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ30_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ30_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ32_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ32_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ32_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ32_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ34_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ34_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ34_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ34_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ36_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ36_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ36_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ36_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ38_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ38_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ38_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ38_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ40_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ40_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ40_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ40_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ42_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ42_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ42_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ42_450.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ44_300.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ44_350.fp
+%%DATADIR%%/pcblib-newlib/geda/SOJ44_400.fp
 %%DATADIR%%/pcblib-newlib/geda/SOJ44_450.fp
-%%DATADIR%%/pcblib-newlib/geda/SSOP8.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT143.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT223.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT23.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT23D.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT25.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT26.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT323.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT323D.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT325.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT326.fp
+%%DATADIR%%/pcblib-newlib/geda/SOT89.fp
 %%DATADIR%%/pcblib-newlib/geda/SSOP14.fp
 %%DATADIR%%/pcblib-newlib/geda/SSOP16.fp
 %%DATADIR%%/pcblib-newlib/geda/SSOP20.fp
@@ -406,144 +757,72 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/geda/SSOP48W.fp
 %%DATADIR%%/pcblib-newlib/geda/SSOP56W.fp
 %%DATADIR%%/pcblib-newlib/geda/SSOP64W.fp
-%%DATADIR%%/pcblib-newlib/geda/MSOP8.fp
-%%DATADIR%%/pcblib-newlib/geda/MSOP10.fp
-%%DATADIR%%/pcblib-newlib/geda/QSOP16.fp
-%%DATADIR%%/pcblib-newlib/geda/QSOP20.fp
-%%DATADIR%%/pcblib-newlib/geda/QSOP24.fp
-%%DATADIR%%/pcblib-newlib/geda/QSOP28.fp
-%%DATADIR%%/pcblib-newlib/geda/TSOP28.fp
-%%DATADIR%%/pcblib-newlib/geda/TSOP32A.fp
-%%DATADIR%%/pcblib-newlib/geda/TSOP32B.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP8.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP10.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP8W.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP14.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP16.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP20.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP24.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP28.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP38N.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP48N.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP56N.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP32.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP48.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP56.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP64.fp
-%%DATADIR%%/pcblib-newlib/geda/TSSOP80.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC20.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC28.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC32.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC44.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC52.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC68.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC84.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC20X.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC28X.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC32X.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC44X.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC52X.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC68X.fp
-%%DATADIR%%/pcblib-newlib/geda/PLCC84X.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN16_3.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN16_3.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN16_3_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN16_3_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN12_4.fp
+%%DATADIR%%/pcblib-newlib/geda/SSOP8.fp
+%%DATADIR%%/pcblib-newlib/geda/TANT_A.fp
+%%DATADIR%%/pcblib-newlib/geda/TANT_B.fp
+%%DATADIR%%/pcblib-newlib/geda/TANT_C.fp
+%%DATADIR%%/pcblib-newlib/geda/TANT_D.fp
+%%DATADIR%%/pcblib-newlib/geda/TO126.fp
+%%DATADIR%%/pcblib-newlib/geda/TO126S.fp
+%%DATADIR%%/pcblib-newlib/geda/TO126SW.fp
+%%DATADIR%%/pcblib-newlib/geda/TO126W.fp
+%%DATADIR%%/pcblib-newlib/geda/TO18.fp
+%%DATADIR%%/pcblib-newlib/geda/TO218.fp
+%%DATADIR%%/pcblib-newlib/geda/TO220.fp
+%%DATADIR%%/pcblib-newlib/geda/TO220ACS.fp
+%%DATADIR%%/pcblib-newlib/geda/TO220ACSTAND.fp
+%%DATADIR%%/pcblib-newlib/geda/TO220S.fp
+%%DATADIR%%/pcblib-newlib/geda/TO220SW.fp
+%%DATADIR%%/pcblib-newlib/geda/TO220W.fp
+%%DATADIR%%/pcblib-newlib/geda/TO247.fp
+%%DATADIR%%/pcblib-newlib/geda/TO247_2.fp
+%%DATADIR%%/pcblib-newlib/geda/TO251.fp
+%%DATADIR%%/pcblib-newlib/geda/TO264.fp
+%%DATADIR%%/pcblib-newlib/geda/TO39.fp
+%%DATADIR%%/pcblib-newlib/geda/TO92.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN12_4.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN12_4_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN16_4.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN12_4_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN16_3.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN16_3_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN16_4.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN16_4_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN16_4_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN20_4.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN20_4.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN20_4_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN20_4_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN24_4.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN24_4.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN24_4_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/HC49.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN24_4_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN16_5.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN16_5.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN16_5_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN16_5_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN20_5.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN20_4.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN20_4_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN20_5.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN20_5_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN20_5_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN28_5.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN24_4.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN24_4_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN28_5.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN32_5.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN28_5_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN28_5_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN32_5.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN32_5_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN32_5_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN36_6.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN36_6.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN36_6_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN36_6_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN40_6.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN40_6.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN40_6_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFN40_6_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN32_7.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN32_7.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN32_7_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN32_7_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN44_7.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN36_6.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN36_6_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN40_6.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFN40_6_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN44_7.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN44_7_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN44_7_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN48_7.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN48_7.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN48_7_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN48_7_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN56_8.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN56_8.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN56_8_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN56_8_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN68_10.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN68_10.fp
-%%DATADIR%%/pcblib-newlib/geda/QFN68_10_EP.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFN68_10_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP24_4.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP32_5.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP32_7.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP44_10.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP48_7.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP48_12.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP52_10.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP64_7.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP64_10.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP64_14.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP72_10.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP80_12.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP80_14.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP100_10.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP100_14.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP112_20.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP120_16.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP128_14.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP144_20.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP160_24.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP176_24.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP32_7.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP44_10.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP52_10.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP64_14.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP80_14.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP100_14.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP120_28.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP128_28.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP144_28.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP160_28.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP208_28.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP240_32.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP304_40.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP100_12.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP100_14.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP120_28.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_14.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_14_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP128_28.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP144_28.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP160_28.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP208_28.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP240_32.fp
+%%DATADIR%%/pcblib-newlib/geda/TQFP304_40.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFP32_7.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFP44_10.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFP52_10.fp
@@ -551,23 +830,32 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/geda/TQFP64_14.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFP80_12.fp
 %%DATADIR%%/pcblib-newlib/geda/TQFP80_14.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP100_12.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP100_14.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP120_28.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP128_28.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP144_28.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP160_28.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP208_28.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP240_32.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP304_40.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP64_R.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP80_R.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP100_R.fp
-%%DATADIR%%/pcblib-newlib/geda/QFP128_R.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP128_R.fp
-%%DATADIR%%/pcblib-newlib/geda/LQFP128_14_EP.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP128_14.fp
-%%DATADIR%%/pcblib-newlib/geda/TQFP128_14_EP.fp
+%%DATADIR%%/pcblib-newlib/geda/TSOP28.fp
+%%DATADIR%%/pcblib-newlib/geda/TSOP32A.fp
+%%DATADIR%%/pcblib-newlib/geda/TSOP32B.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP10.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP14.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP16.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP20.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP24.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP28.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP32.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP38N.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP48.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP48N.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP56.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP56N.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP64.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP8.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP80.fp
+%%DATADIR%%/pcblib-newlib/geda/TSSOP8W.fp
+%%DATADIR%%/pcblib-newlib/geda/UM1.fp
+%%DATADIR%%/pcblib-newlib/geda/UM1H.fp
+%%DATADIR%%/pcblib-newlib/geda/UM1_3.fp
+%%DATADIR%%/pcblib-newlib/geda/UM1_3H.fp
+%%DATADIR%%/pcblib-newlib/geda/US14.fp
+%%DATADIR%%/pcblib-newlib/geda/US16.fp
+%%DATADIR%%/pcblib-newlib/geda/US8.fp
 %%DATADIR%%/pcblib-newlib/geda/ZIP12.fp
 %%DATADIR%%/pcblib-newlib/geda/ZIP16.fp
 %%DATADIR%%/pcblib-newlib/geda/ZIP18.fp
@@ -575,314 +863,128 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/geda/ZIP24.fp
 %%DATADIR%%/pcblib-newlib/geda/ZIP28.fp
 %%DATADIR%%/pcblib-newlib/geda/ZIP40.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY300.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY400.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY500.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY600.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY800.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY1000.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY300P.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY400P.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY500P.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY600P.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY800P.fp
-%%DATADIR%%/pcblib-newlib/geda/ACY1000P.fp
-%%DATADIR%%/pcblib-newlib/geda/ALF300.fp
-%%DATADIR%%/pcblib-newlib/geda/ALF400.fp
-%%DATADIR%%/pcblib-newlib/geda/ALF500.fp
-%%DATADIR%%/pcblib-newlib/geda/ALF600.fp
-%%DATADIR%%/pcblib-newlib/geda/ALF800.fp
-%%DATADIR%%/pcblib-newlib/geda/ALF1000.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY100.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY200.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY300.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY400.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY500.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY600.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY800.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY1000.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY100P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY200P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY300P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY400P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY500P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY600P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY800P.fp
-%%DATADIR%%/pcblib-newlib/geda/RCY1000P.fp
-%%DATADIR%%/pcblib-newlib/geda/OSC14.fp
-%%DATADIR%%/pcblib-newlib/geda/LED3.fp
-%%DATADIR%%/pcblib-newlib/geda/LED5.fp
-%%DATADIR%%/pcblib-newlib/geda/TO18.fp
-%%DATADIR%%/pcblib-newlib/geda/TO39.fp
-%%DATADIR%%/pcblib-newlib/geda/TO92.fp
-%%DATADIR%%/pcblib-newlib/geda/TO126.fp
-%%DATADIR%%/pcblib-newlib/geda/TO126S.fp
-%%DATADIR%%/pcblib-newlib/geda/TO126W.fp
-%%DATADIR%%/pcblib-newlib/geda/DB9F.fp
-%%DATADIR%%/pcblib-newlib/geda/TO126SW.fp
-%%DATADIR%%/pcblib-newlib/geda/TO220.fp
-%%DATADIR%%/pcblib-newlib/geda/TO220S.fp
-%%DATADIR%%/pcblib-newlib/geda/TO220W.fp
-%%DATADIR%%/pcblib-newlib/geda/TO220SW.fp
-%%DATADIR%%/pcblib-newlib/geda/TO220ACS.fp
-%%DATADIR%%/pcblib-newlib/geda/TO218.fp
-%%DATADIR%%/pcblib-newlib/geda/TO247.fp
-%%DATADIR%%/pcblib-newlib/geda/TO247_2.fp
-%%DATADIR%%/pcblib-newlib/geda/TO264.fp
-%%DATADIR%%/pcblib-newlib/geda/TO251.fp
-%%DATADIR%%/pcblib-newlib/geda/TO220ACSTAND.fp
-%%DATADIR%%/pcblib-newlib/geda/DB9M.fp
-%%DATADIR%%/pcblib-newlib/geda/PENTAWATT.fp
-%%DATADIR%%/pcblib-newlib/geda/HEPTAWATT.fp
-%%DATADIR%%/pcblib-newlib/geda/MULTIWATT8.fp
-%%DATADIR%%/pcblib-newlib/geda/MULTIWATT11.fp
-%%DATADIR%%/pcblib-newlib/geda/MULTIWATT15.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER1.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER2.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER3.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER4.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER5.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER6.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER7.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER8.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER9.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER10.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER11.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER12.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER14.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER16.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER18.fp
-%%DATADIR%%/pcblib-newlib/geda/JUMPER20.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_2.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_3.fp
-%%DATADIR%%/pcblib-newlib/geda/2706.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_4.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_5.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_6.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_7.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_8.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_9.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_10.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_11.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_12.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_13.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_14.fp
-%%DATADIR%%/pcblib-newlib/geda/MTA100_15.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER2_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER4_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER6_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER8_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER10_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER12_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER14_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER16_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER18_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER20_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER22_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER26_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER30_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER34_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER40_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER50_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER64_1.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER2_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER4_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER6_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER8_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER10_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER12_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER14_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER16_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER18_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER20_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER22_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER26_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER30_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER34_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER40_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER50_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER60_2.fp
-%%DATADIR%%/pcblib-newlib/geda/HEADER64_2.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_10.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_14.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_16.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_20.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_26.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_34.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_40.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_50.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_60.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_64.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_10S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_14S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_16S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_20S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_26S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_34S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_40S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_50S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_60S.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41651_64S.fp
-%%DATADIR%%/pcblib-newlib/geda/DB15F.fp
-%%DATADIR%%/pcblib-newlib/geda/DB25F.fp
-%%DATADIR%%/pcblib-newlib/geda/DB37F.fp
-%%DATADIR%%/pcblib-newlib/geda/DB15M.fp
-%%DATADIR%%/pcblib-newlib/geda/DB25M.fp
-%%DATADIR%%/pcblib-newlib/geda/DB37M.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C96F.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C96M.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C64F.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C64M.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C96FS.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C96MS.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C64FS.fp
-%%DATADIR%%/pcblib-newlib/geda/DIN41612C64MS.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC0402L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC0402N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC0402M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC0402L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC0402N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC0402M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC3216M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC0402L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC0402N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC0402M.fp
-%%DATADIR%%/pcblib-newlib/geda/01005.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC0603L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC0603N.fp
-%%DATADIR%%/pcblib-newlib/geda/0201.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC0603M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC0603L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC0603N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC0603M.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC1005L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC1005N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC1005M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC1005L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC1005N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC1005M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC1005L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC1005N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC1005M.fp
-%%DATADIR%%/pcblib-newlib/geda/0402.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC1608L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC1608N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC1608M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC1608L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC1608N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC1608M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC1608L.fp
-%%DATADIR%%/pcblib-newlib/geda/0603.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC1608N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC1608M.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC2012L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC2012N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC2012M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC2012L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC2012N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC2012M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC2012L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC2012N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC2012M.fp
-%%DATADIR%%/pcblib-newlib/geda/0805.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC2520L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC2520N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC2520M.fp
-%%DATADIR%%/pcblib-newlib/geda/1008.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC3216L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC3216N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC3216M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC3216L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC3216N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC3216M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC3216L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC3216N.fp
-%%DATADIR%%/pcblib-newlib/geda/1206.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC3225L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC3225N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC3225M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC3225L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC3225N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC3225M.fp
-%%DATADIR%%/pcblib-newlib/geda/1210.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC3225L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC3225N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC3225M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC4509L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC4509N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC4509M.fp
-%%DATADIR%%/pcblib-newlib/geda/1806.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC4532L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC4532N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC4532M.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC4532L.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC4532N.fp
-%%DATADIR%%/pcblib-newlib/geda/INDC4532M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC4532L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC4532N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC4532M.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC4564L.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC4564N.fp
-%%DATADIR%%/pcblib-newlib/geda/CAPC4564M.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC4564L.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC4564N.fp
-%%DATADIR%%/pcblib-newlib/geda/RESC4564M.fp
-%%DATADIR%%/pcblib-newlib/geda/1825.fp
-%%DATADIR%%/pcblib-newlib/geda/EMI0603.fp
-%%DATADIR%%/pcblib-newlib/geda/EMI0805.fp
-%%DATADIR%%/pcblib-newlib/geda/EMI1206.fp
-%%DATADIR%%/pcblib-newlib/geda/EMI1806.fp
-%%DATADIR%%/pcblib-newlib/geda/EIA3216.fp
-%%DATADIR%%/pcblib-newlib/geda/EIA3528.fp
-%%DATADIR%%/pcblib-newlib/geda/EIA6032.fp
-%%DATADIR%%/pcblib-newlib/geda/EIA7343.fp
-%%DATADIR%%/pcblib-newlib/geda/TANT_A.fp
-%%DATADIR%%/pcblib-newlib/geda/TANT_B.fp
-%%DATADIR%%/pcblib-newlib/geda/TANT_C.fp
-%%DATADIR%%/pcblib-newlib/geda/TANT_D.fp
-%%DATADIR%%/pcblib-newlib/geda/SME3.fp
-%%DATADIR%%/pcblib-newlib/geda/SME4.fp
-%%DATADIR%%/pcblib-newlib/geda/SME5.fp
-%%DATADIR%%/pcblib-newlib/geda/SME6.fp
-%%DATADIR%%/pcblib-newlib/geda/SME8.fp
-%%DATADIR%%/pcblib-newlib/geda/SME10.fp
-%%DATADIR%%/pcblib-newlib/geda/SOD80.fp
-%%DATADIR%%/pcblib-newlib/geda/SOD87.fp
-%%DATADIR%%/pcblib-newlib/geda/SOD106A.fp
-%%DATADIR%%/pcblib-newlib/geda/SOD110.fp
-%%DATADIR%%/pcblib-newlib/geda/SOD123.fp
-%%DATADIR%%/pcblib-newlib/geda/SOD323.fp
-%%DATADIR%%/pcblib-newlib/geda/DO214.fp
-%%DATADIR%%/pcblib-newlib/geda/DO214AB.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT23D.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT323D.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT23.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT323.fp
-%%DATADIR%%/pcblib-newlib/geda/SC90.fp
-%%DATADIR%%/pcblib-newlib/geda/SC70_3.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT89.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT143.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT223.fp
-%%DATADIR%%/pcblib-newlib/geda/SC70_4.fp
-%%DATADIR%%/pcblib-newlib/geda/MPAK.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT25.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT325.fp
-%%DATADIR%%/pcblib-newlib/geda/SC70_5.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT26.fp
-%%DATADIR%%/pcblib-newlib/geda/SOT326.fp
-%%DATADIR%%/pcblib-newlib/geda/SC70_6.fp
+%%DATADIR%%/pcblib-newlib/geda/ZIP9.fp
 %%DATADIR%%/pcblib-newlib/geda/index.html
+%%DATADIR%%/pcblib-newlib/generic/208_LQFP.fp
+%%DATADIR%%/pcblib-newlib/generic/AXIAL_LAY 300.fp
+%%DATADIR%%/pcblib-newlib/generic/AXIAL_LAY 400.fp
+%%DATADIR%%/pcblib-newlib/generic/AXIAL_LAY 500.fp
+%%DATADIR%%/pcblib-newlib/generic/AXIAL_LAY 600.fp
+%%DATADIR%%/pcblib-newlib/generic/AXIAL_LAY 800.fp
+%%DATADIR%%/pcblib-newlib/generic/D 14.fp
+%%DATADIR%%/pcblib-newlib/generic/D 16.fp
+%%DATADIR%%/pcblib-newlib/generic/D 18.fp
+%%DATADIR%%/pcblib-newlib/generic/D 20.fp
+%%DATADIR%%/pcblib-newlib/generic/D 24.fp
+%%DATADIR%%/pcblib-newlib/generic/D 28.fp
+%%DATADIR%%/pcblib-newlib/generic/D 8.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 14 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 16 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 18 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 20 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 24 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 24 600.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 28 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 28 600.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 32 600.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 40 600.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 64 900.fp
+%%DATADIR%%/pcblib-newlib/generic/DIL 8 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIODE_LAY 300.fp
+%%DATADIR%%/pcblib-newlib/generic/DIODE_LAY 400.fp
+%%DATADIR%%/pcblib-newlib/generic/DIODE_LAY 500.fp
+%%DATADIR%%/pcblib-newlib/generic/DIODE_LAY 600.fp
+%%DATADIR%%/pcblib-newlib/generic/DIODE_LAY 800.fp
+%%DATADIR%%/pcblib-newlib/generic/DW 24.fp
+%%DATADIR%%/pcblib-newlib/generic/DW 28.fp
+%%DATADIR%%/pcblib-newlib/generic/ISA8.fp
+%%DATADIR%%/pcblib-newlib/generic/N 14 300.fp
+%%DATADIR%%/pcblib-newlib/generic/N 16 300.fp
+%%DATADIR%%/pcblib-newlib/generic/N 18 300.fp
+%%DATADIR%%/pcblib-newlib/generic/N 20 300.fp
+%%DATADIR%%/pcblib-newlib/generic/N 24 300.fp
+%%DATADIR%%/pcblib-newlib/generic/N 24 600.fp
+%%DATADIR%%/pcblib-newlib/generic/N 28 300.fp
+%%DATADIR%%/pcblib-newlib/generic/N 28 600.fp
+%%DATADIR%%/pcblib-newlib/generic/N 32 600.fp
+%%DATADIR%%/pcblib-newlib/generic/N 40 600.fp
+%%DATADIR%%/pcblib-newlib/generic/N 64 900.fp
+%%DATADIR%%/pcblib-newlib/generic/N 8 300.fp
+%%DATADIR%%/pcblib-newlib/generic/NEC19.fp
+%%DATADIR%%/pcblib-newlib/generic/OLD_QFP 44 150.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 1.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 10.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 12.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 16.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 2.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 20.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 24.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 32.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 4.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 5.fp
+%%DATADIR%%/pcblib-newlib/generic/OSC 8.fp
+%%DATADIR%%/pcblib-newlib/generic/OVEN_OSC 5.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC 44 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC 52 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC 68 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC 84 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC_SOCKET 44 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC_SOCKET 52 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC_SOCKET 68 150.fp
+%%DATADIR%%/pcblib-newlib/generic/PLCC_SOCKET 84 150.fp
+%%DATADIR%%/pcblib-newlib/generic/QFP 44 150.fp
+%%DATADIR%%/pcblib-newlib/generic/QFP2 80 150.fp
+%%DATADIR%%/pcblib-newlib/generic/R025.fp
+%%DATADIR%%/pcblib-newlib/generic/RADIAL_CAN 200.fp
+%%DATADIR%%/pcblib-newlib/generic/RADIAL_CAN 300.fp
+%%DATADIR%%/pcblib-newlib/generic/RADIAL_CAN 400.fp
+%%DATADIR%%/pcblib-newlib/generic/RADIAL_CAN 500.fp
+%%DATADIR%%/pcblib-newlib/generic/RADIAL_CAN 600.fp
+%%DATADIR%%/pcblib-newlib/generic/SD 20.fp
+%%DATADIR%%/pcblib-newlib/generic/SD 24.fp
+%%DATADIR%%/pcblib-newlib/generic/SD 28.fp
+%%DATADIR%%/pcblib-newlib/generic/SD 40.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_CHIP 1206.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_CHIP 1210.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_CHIP 402.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_CHIP 603.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_CHIP 805.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_DIODE 120 60.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_DIODE 60 30.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_DIODE 80 50.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 120 50.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 120 60.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 140 90.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 240 90.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 280 100.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 60 30.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_POLAR 80 50.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_SIMPLE 120 60.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_SIMPLE 60 30.fp
+%%DATADIR%%/pcblib-newlib/generic/SMD_SIMPLE 80 50.fp
+%%DATADIR%%/pcblib-newlib/generic/SOT23.fp
+%%DATADIR%%/pcblib-newlib/generic/SOT323.fp
+%%DATADIR%%/pcblib-newlib/generic/ZIF 16.fp
+%%DATADIR%%/pcblib-newlib/generic/ZIF 20.fp
+%%DATADIR%%/pcblib-newlib/generic/index.html
+%%DATADIR%%/pcblib-newlib/gtag/CONN_JTAG.fp
+%%DATADIR%%/pcblib-newlib/gtag/CONN_USB.fp
+%%DATADIR%%/pcblib-newlib/gtag/PQFP52_10X10 52.fp
+%%DATADIR%%/pcblib-newlib/gtag/SM0805.fp
+%%DATADIR%%/pcblib-newlib/gtag/SM1206.fp
+%%DATADIR%%/pcblib-newlib/gtag/index.html
+%%DATADIR%%/pcblib-newlib/index.html
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN12_4.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN16_4.fp
-%%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN20_4.fp
-%%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN24_4.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN16_5.fp
+%%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN20_4.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN20_5.fp
+%%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN24_4.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN28_5.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN32_5.fp
+%%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN32_7.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN36_6.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN40_6.fp
-%%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN32_7.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN44_7.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN48_7.fp
 %%DATADIR%%/pcblib-newlib/johnstech/JOHNSTECH_QFN56_8.fp
@@ -897,18 +999,37 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 %%DATADIR%%/pcblib-newlib/minicircuits/MINICIRCUITS_CD637.fp
 %%DATADIR%%/pcblib-newlib/minicircuits/MINICIRCUITS_KK81.fp
 %%DATADIR%%/pcblib-newlib/minicircuits/index.html
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_10_10.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_3_5p4.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_4_5p4.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_5_5p4.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_6p3_5p4.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_6p3_5p8.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_6p3_7p7.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_8_10.fp
+%%DATADIR%%/pcblib-newlib/nichicon/NICHICON_WT_CAP_8_5p4.fp
+%%DATADIR%%/pcblib-newlib/nichicon/index.html
+%%DATADIR%%/pcblib-newlib/optek/OPTEK_OVSRWACR6.fp
+%%DATADIR%%/pcblib-newlib/optek/index.html
+%%DATADIR%%/pcblib-newlib/optical/LED 100.fp
+%%DATADIR%%/pcblib-newlib/optical/LED 60.fp
+%%DATADIR%%/pcblib-newlib/optical/N 8 300.fp
+%%DATADIR%%/pcblib-newlib/optical/index.html
 %%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB14V.fp
 %%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB24V.fp
 %%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB28V.fp
-%%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXBV4V.fp
-%%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXBV8V.fp
+%%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB2HV.fp
 %%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB34V.fp
 %%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB38V.fp
 %%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXBS8V.fp
-%%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXB2HV.fp
+%%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXBV4V.fp
+%%DATADIR%%/pcblib-newlib/panasonic/PANASONIC_EXBV8V.fp
 %%DATADIR%%/pcblib-newlib/panasonic/index.html
-%%DATADIR%%/pcblib-newlib/index.html
-%%DATADIR%%/pcblib-newlib/broken.html
+%%DATADIR%%/pcblib-newlib/pci/PCI5V_AVE_HEIGHT.fp
+%%DATADIR%%/pcblib-newlib/pci/PCI5V_MAX_HEIGHT.fp
+%%DATADIR%%/pcblib-newlib/pci/PCI5V_MIN_HEIGHT.fp
+%%DATADIR%%/pcblib-newlib/pci/PCI5V_SMALL_HEIGHT.fp
+%%DATADIR%%/pcblib-newlib/pci/index.html
 %%DATADIR%%/pcblib
 %%DATADIR%%/pcblib.contents
 %%DATADIR%%/qfp.dat
