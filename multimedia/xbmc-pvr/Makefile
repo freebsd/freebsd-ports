@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	65
-PORTREVISION=	4
+PORTVERSION=	70
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox
 PKGNAMESUFFIX=	-pvr-ppa-odk
-DISTNAME=	opdenkamp-${PORTNAME}-Eden-pvr_beta2-0-g${GITHASH}
+DISTNAME=	opdenkamp-${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION}-0-g${GITHASH}
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	XBMC is an award winning media center application - PVR branch
@@ -55,7 +54,8 @@ LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib	\
 		ass.5:${PORTSDIR}/multimedia/libass \
 		wavpack.2:${PORTSDIR}/audio/wavpack \
 		yajl:${PORTSDIR}/devel/yajl \
-		plist:${PORTSDIR}/devel/libplist
+		plist:${PORTSDIR}/devel/libplist \
+		iconv:${PORTSDIR}/converters/libiconv
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
@@ -63,14 +63,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-GITHASH=	cbe2cf3
+GITHASH=	9023e39
 WRKSRC=		${WRKDIR}/opdenkamp-${PORTNAME}-${GITHASH}
 FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
-USE_XORG=	xinerama xt xmu xrandr xtst
+USE_XORG=	xinerama xt xmu xtst
 USE_GL=		glu
 USE_SDL=	image mixer sdl
 USE_MYSQL=	yes
@@ -97,6 +97,7 @@ OPTIONS=	AVAHI		"Enable Avahi support"			on \
 		RTMP		"RTMP support via librtmp"		off \
 		VAAPI		"Enable VAAPI support"			off \
 		VDPAU		"Enable VDPAU support"			off \
+		XRANDR		"Enable xrandr support"			on \
 		WEBSERVER	"Build Internal Webserver"		off
 
 DESKTOP_ENTRIES="XBMC" \
@@ -207,6 +208,15 @@ PLIST_SUB+=	HTTPD=""
 .else
 CONFIGURE_ARGS+=	--disable-webserver
 PLIST_SUB+=	HTTPD="@comment "
+.endif
+
+.if defined(WITH_XRANDR)
+CONFIGURE_ARGS+=	--enable-xrandr
+USE_XORG+=	xrandr
+PLIST_SUB+=	XRANDR=""
+.else
+CONFIGURE_ARGS+=	--disable-xrandr
+PLIST_SUB+=	XRANDR="@comment "
 .endif
 
 post-patch:
