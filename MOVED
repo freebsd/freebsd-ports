@@ -3249,3 +3249,4 @@ databases/p5-Mysql||2012-03-07|no release in 11 years, doesn't work with mysql 4
 audio/muine||2012-03-08|Removed
 audio/easytag-devel||2012-03-12|Outdated development version
 korean/unfonts-ttf||2012-03-16|Was divided into korean/unfonts-core and korean/unfonts-extra
+net/v6eval||2012-03-17|Has expired: permission to use withdrawn by authors; contact portmgr for details
