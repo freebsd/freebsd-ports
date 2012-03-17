@@ -87,7 +87,6 @@
     SUBDIR += cryptcat
     SUBDIR += csocks
     SUBDIR += csync2
-    SUBDIR += ct
     SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
