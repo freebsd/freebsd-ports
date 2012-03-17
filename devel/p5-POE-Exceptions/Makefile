@@ -16,6 +16,8 @@ COMMENT=	POE class for handling exceptions
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+DEPRECATED=	included in devel/p5-POE and not needed according to configure message
+EXPIRATION_DATE=	2012-04-17
 
 PERL_CONFIGURE=	yes
 
