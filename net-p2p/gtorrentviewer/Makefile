@@ -13,8 +13,10 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/GTorrentViewer/${PORTVERSION}
 DISTNAME=	GTorrentViewer-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
+
+PORTSCOUT=	skipv:0.2	# older than current version
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 

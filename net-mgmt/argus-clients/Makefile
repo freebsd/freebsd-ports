@@ -12,8 +12,10 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Client programs for the argus IP network transaction auditing tool
+
+PORTSCOUT=	ignore:1	# This is the last version of 2.0.x branch
 
 CONFLICTS=	argus-clients-3* argus-clients-sasl-3*
 
@@ -25,7 +27,7 @@ USE_BISON=	build
 GNU_CONFIGURE=	true
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 .if defined(WITH_SASL)
-CONFIGURE_ARGS+= --with-sasl=${PREFIX}
+CONFIGURE_ARGS+=	--with-sasl=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include/sasl
 .endif
 

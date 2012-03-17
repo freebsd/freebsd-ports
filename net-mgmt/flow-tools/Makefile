@@ -11,8 +11,10 @@ PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.eng.oar.net/pub/flow-tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Suite of tools and library to work with netflow data
+
+PORTSCOUT=	skipv:0.411
 
 OPTIONS=	MYSQL	"Enable MySQL support"		off \
 		OPENSSL	"Enable OpenSSL support"	off \

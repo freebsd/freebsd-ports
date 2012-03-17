@@ -17,8 +17,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	reportlab-${PORTVERSION}.tar.gz \
 		rl_accel-3004.tgz:accel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Library to create PDF documents using the Python language
+
+PORTSCOUT=	ignore:1	# Last version of 1.X branch
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
