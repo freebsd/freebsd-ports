@@ -16,6 +16,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
+LICENSE=	BSD
+
 OPTIONS=	IPV6 "Build with IPv6 support" on \
 		MFD_REWRITES "Build with 64-bit Interface Counters" off \
 		PERL "Install additional perl modules" on \
@@ -24,6 +26,8 @@ OPTIONS=	IPV6 "Build with IPv6 support" on \
 		DUMMY "Enable dummy values as placeholders" on \
 		TKMIB "Install graphical MIB browser" off \
 		DMALLOC "Enable dmalloc debug memory allocator" off \
+		MYSQL "Enable logging of traps to MySQL" off \
+		AX_SOCKONLY "Disable UDP/TCP transports for agentx" off \
 		UNPRIVILEGED "Allow unprivileged users to execute net-snmp" off
 
 .include <bsd.port.options.mk>
@@ -112,6 +116,17 @@ PLIST_SUB+=	WITH_PERL="@comment "
 .if defined(WITH_DMALLOC)
 LIB_DEPENDS+=	dmalloc:${PORTSDIR}/devel/dmalloc
 CONFIGURE_ARGS+=--with-dmalloc=${LOCALBASE}
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-mysql
+CONFIGURE_ENV+=	MYSQLCONFIG=${LOCALBASE}/bin/mysql_config
+.endif
+
+.if defined(WITH_AX_SOCKONLY)
+CONFIGURE_ARGS+=--enable-agentx-dom-sock-only
 .endif
 
 .if defined(WITH_IPV6)
