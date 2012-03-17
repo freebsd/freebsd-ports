@@ -37,7 +37,7 @@ LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		gsl.16:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
-USE_GCC=	4.5+
+USE_GCC=	4.6+
 USE_WX=		2.8
 GNU_CONFIGURE=	yes
 # Disable ncurses and readline from ports
