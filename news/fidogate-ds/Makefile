@@ -12,8 +12,10 @@ MASTER_SITES=		SF/rus${PORTNAME}/${PORTNAME}-stable/${PORTNAME}%20${PORTVERSION}
 PKGNAMESUFFIX=		-ds
 DISTNAME=		fidogate${PORTVERSION}ds
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		5u623l20@gmail.com
 COMMENT=		Fido-Internet Gateway and Tosser
+
+PORTSCOUT=		limit:^5\.[^2] # 5.2.X is development branch
 
 .if !defined(WITHOUT_INN)
 BUILD_DEPENDS=		${LOCALBASE}/news/bin/innconfval:${PORTSDIR}/news/inn

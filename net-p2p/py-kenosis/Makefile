@@ -11,8 +11,10 @@ CATEGORIES=	net-p2p python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A fully-distributed p2p RPC system built on top of XMLRPC
+
+PORTSCOUT=	skipv:0.941 # Older version than the current one
 
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib
 

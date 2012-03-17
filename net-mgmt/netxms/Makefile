@@ -11,11 +11,13 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Network monitoring system
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
+
+PORTSCOUT=	limit:^1\.0\.[0-9]* 	# 1.1.X branch is Development Branch
 
 OPTIONS=	SERVER "Install NetXMS server & agent" off \
 		CLIENT "Install NetXMS client" on \

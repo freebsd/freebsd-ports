@@ -10,8 +10,10 @@ PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A gnutella client
+
+PORTSCOUT=	skipv:0.05	# older than current one
 
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
