@@ -7,6 +7,7 @@
 
 PORTNAME=	libpaper
 PORTVERSION=	1.1.24
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libp/libpaper
@@ -38,5 +39,13 @@ pre-configure:
 post-configure:
 	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|g' ${WRKSRC}/config.h \
 			${WRKSRC}/src/paperconfig
+
+pre-build:
+	${ECHO_CMD} a4 > ${WRKDIR}/papersize.a4
+	${ECHO_CMD} letter > ${WRKDIR}/papersize.letter
+
+post-install:
+	cd ${WRKDIR} && \
+		${INSTALL_DATA} papersize.a4 papersize.letter ${PREFIX}/etc
 
 .include <bsd.port.mk>
