@@ -5,13 +5,13 @@
 #
 
 PORTNAME=	sshfs
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/fuse/${PORTNAME}-fuse/${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-fuse-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Mount remote directories over ssh
 
 KMODDIR?=	${LOCALBASE}/modules
