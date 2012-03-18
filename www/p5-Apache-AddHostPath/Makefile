@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface for transforming a requested URI based on host/port
 
+DEPRECATED=	Only works with mod_perl 1 which is removed
+EXPIRATION_DATE=	2012-04-18
+
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes
