@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	jstrack
-PORTVERSION=	3.1.0
+PORTVERSION=	3.3.3a
 CATEGORIES=	science
 MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A freeware hurricane tracking program
+
+LICENSE=	JStrack
+LICENSE_NAME=	JStrack
+LICENSE_TEXT=	It is and always will be free, and [Jim Graham] wrote it...\
+		so don't charge money for it, and don't claim that you wrote it
+LICENSE_PERMS=	dist-sell pkg-sell auto-accept
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 		img.1:${PORTSDIR}/graphics/libimg
 RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
-
-LICENSE=	JStrack
-LICENSE_NAME=	JStrack
-LICENSE_PERMS=	dist-sell pkg-sell auto-accept
-LICENSE_TEXT=	It is and always will be free, and [Jim Graham] wrote it...\
-		so don't charge money for it, and don't claim that you wrote it
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_TCL_RUN=	84
@@ -36,7 +36,7 @@ PORTDOCS=	00-README_FIRST.txt HISTORY install.txt jstrackdoc.pdf
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-.for f in filt ftpfilt tracker
+.for f in filt httpfilt tracker
 	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${f} ${PREFIX}/lib/${PORTNAME}/ \
 		'! -path *windows_bin*')
 .endfor
@@ -51,7 +51,7 @@ post-install:
 .	endfor
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/${PORTNAME}
-.for d in filt ftpfilt ftpfilt/support tracker tracker/lib tracker/storms
+.for d in filt httpfilt tracker tracker/lib tracker/storms/old/2007 tracker/storms/old/2008 tracker/storms/old/2009 tracker/storms/old/2010
 	@${CHMOD} ugo+rx ${PREFIX}/lib/${PORTNAME}/${d}/*.t*
 .endfor
 	@(cd ${PREFIX}/lib/${PORTNAME} && ${TCLSH} autoconfig.tcl && ${RM} paths.tcl.old)
