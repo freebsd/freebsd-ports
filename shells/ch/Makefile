@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ch
-PORTVERSION=	5.1.0
-PORTREVISION=	2
+PORTVERSION=	7.0.0
 CATEGORIES=	shells
 MASTER_SITES=	http://www.softintegration.com/download/software/release/FreeBSD/
 DISTNAME=	chstandard-${PORTVERSION}.freebsd5.1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	An embeddable C/C++ interpreter/shell
 
 IA32_BINARY_PORT=	yes
@@ -21,6 +20,10 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
+
+MAN1=		installpkg.1 strconcat.1 strjoin.1. strputc.1 pkginstall.1 strgetc.1 gnuplot.1 str2mat.1 createpkg.1 str2ascii.1 strrep.1 splint.1 ch.1 foreach.1 stradd.1
+MAN1PREFIX=	${PREFIX}/${PORTNAME}/docs
+MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
