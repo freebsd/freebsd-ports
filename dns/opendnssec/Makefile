@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 

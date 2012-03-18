@@ -20,8 +20,8 @@ load_rc_config $name
 
 opendnssec_enable=${opendnssec_enable:-"NO"}
 
-start_cmd="${name}_run $1"
-stop_cmd="${name}_run $1"
+start_cmd="${name}_run start"
+stop_cmd="${name}_run stop"
 extra_commands="reload ksm hsm signer enforcer"
 
 procname=${opendnssec_procname}
