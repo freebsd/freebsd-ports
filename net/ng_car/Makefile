@@ -10,10 +10,13 @@ PORTVERSION=	0.6
 CATEGORIES=	net kld
 MASTER_SITES=	SF/mpd/misc/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mav@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netgraph committed access rate node
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
+
+DEPRECATED=	In base for all supported versions of FreeBSD
+EXPIRATION_DATE=2012-05-15
 
 KMODDIR?=	/boot/modules
 PLIST_SUB=	KMODDIR=${KMODDIR}
@@ -22,11 +25,11 @@ MAKE_ENV+=	KMODDIR="${KMODDIR}"
 MAN4=		ng_car.4
 MANCOMPRESSED=	yes
 
+.include <bsd.port.options.mk>
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	this port requires kernel sources
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700041
 IGNORE=	already exists in base system
@@ -35,4 +38,4 @@ IGNORE=	already exists in base system
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
