@@ -12,9 +12,10 @@ MASTER_SITES=		SF/pywebsvcs/SOAP.py/${PORTVERSION}
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		SOAPpy-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		5u623l20@gmail.com
 COMMENT=		A SOAP implementation
 
+PORTSCOUT=		skipv:0.12.0	# This is a release candidate and is ports tree py*-soappy-devel
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	SOAPpy
