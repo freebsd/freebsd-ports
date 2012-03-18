@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	taglib
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	audio
-MASTER_SITES=	http://developer.kde.org/~wheeler/files/src/ \
-		http://cloud.github.com/downloads/taglib/taglib/ \
+MASTER_SITES=	http://cloud.github.com/downloads/taglib/taglib/ \
+		http://developer.kde.org/~wheeler/files/src/ \
 		http://launchpad.net/taglib/trunk/${PORTVERSION}/+download/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Library for manipulating ID3 tags and Ogg comments
 
-USE_CMAKE=	yes
-USE_LDCONFIG=	yes
-MAKE_JOBS_SAFE=	yes
-
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
+
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL=	${WRKSRC}/COPYING.MPL
 
+USE_CMAKE=	yes
 CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 		-DWITH_MP4:BOOL=ON
+MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	RCC "Build with RusXMMS librcc patches (experimental)" off
 
