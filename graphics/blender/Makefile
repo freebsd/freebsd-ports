@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.61
-PORTREVISION=	2
+PORTVERSION=	2.62
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -29,12 +28,13 @@ MAKE_JOBS_SAFE=	yes
 
 CMAKE_OUTSOURCE=	yes
 CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF \
-		-DWITH_LIBMV:BOOL=OFF
+		-DWITH_LIBMV:BOOL=OFF -DWITH_CYCLES:BOOL=OFF \
+		-DWITH_CARVE:BOOL=OFF
 
 SUB_FILES=	blender blenderplayer
 MAN1=		blender.1
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.61
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.62
 
 LANG=		ar bg ca cs de el es es_ES es_MX fa fi fr id it ja ne pl pt_BR \
 		ru sr sr@latin sv zh_CN zh_TW

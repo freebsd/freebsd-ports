@@ -6,14 +6,14 @@ bin/blender-thumbnailer.py
 %%MENU%%share/applications/blender.desktop
 share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_curve_aceous_galore.py
-%%DATADIR%%/scripts/addons/add_curve_torus_knots.py
 %%DATADIR%%/scripts/addons/add_curve_ivygen.py
-%%DATADIR%%/scripts/addons/add_curve_sapling/presets/quaking_aspen.py
-%%DATADIR%%/scripts/addons/add_curve_sapling/presets/ca_black_oak.py
-%%DATADIR%%/scripts/addons/add_curve_sapling/presets/black_tupelo.py
-%%DATADIR%%/scripts/addons/add_curve_sapling/presets/weeping_willow.py
 %%DATADIR%%/scripts/addons/add_curve_sapling/__init__.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/black_tupelo.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/ca_black_oak.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/quaking_aspen.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/weeping_willow.py
 %%DATADIR%%/scripts/addons/add_curve_sapling/utils.py
+%%DATADIR%%/scripts/addons/add_curve_torus_knots.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/Boltfactory.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/__init__.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/createMesh.py
@@ -25,6 +25,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/presets/M5.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/presets/M6.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/presets/M8.py
+%%DATADIR%%/scripts/addons/add_mesh_ant_landscape.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/__init__.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_3d_function_surface.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_extra_objects.py
@@ -34,7 +35,6 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_pyramid.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_supertoroid.py
 %%DATADIR%%/scripts/addons/add_mesh_extra_objects/add_mesh_twisted_torus.py
-%%DATADIR%%/scripts/addons/add_mesh_ant_landscape.py
 %%DATADIR%%/scripts/addons/add_mesh_pipe_joint.py
 %%DATADIR%%/scripts/addons/add_mesh_solid.py
 %%DATADIR%%/scripts/addons/animation_add_corrective_shape_key.py
@@ -52,8 +52,8 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/io_anim_c3d/import_c3d.py
 %%DATADIR%%/scripts/addons/io_anim_camera.py
 %%DATADIR%%/scripts/addons/io_anim_nuke_chan/__init__.py
-%%DATADIR%%/scripts/addons/io_anim_nuke_chan/import_nuke_chan.py
 %%DATADIR%%/scripts/addons/io_anim_nuke_chan/export_nuke_chan.py
+%%DATADIR%%/scripts/addons/io_anim_nuke_chan/import_nuke_chan.py
 %%DATADIR%%/scripts/addons/io_coat3D/__init__.py
 %%DATADIR%%/scripts/addons/io_coat3D/coat.py
 %%DATADIR%%/scripts/addons/io_coat3D/tex.py
@@ -108,12 +108,12 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/io_shape_mdd/import_mdd.py
 %%DATADIR%%/scripts/addons/light_field_tools/__init__.py
 %%DATADIR%%/scripts/addons/light_field_tools/light_field_tools.py
+%%DATADIR%%/scripts/addons/mesh_bsurfaces.py
 %%DATADIR%%/scripts/addons/mesh_inset/__init__.py
 %%DATADIR%%/scripts/addons/mesh_inset/geom.py
 %%DATADIR%%/scripts/addons/mesh_inset/model.py
 %%DATADIR%%/scripts/addons/mesh_inset/offset.py
 %%DATADIR%%/scripts/addons/mesh_inset/triquad.py
-%%DATADIR%%/scripts/addons/mesh_bsurfaces.py
 %%DATADIR%%/scripts/addons/mesh_looptools.py
 %%DATADIR%%/scripts/addons/mesh_relax.py
 %%DATADIR%%/scripts/addons/mocap/__init__.py
@@ -123,21 +123,49 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/modules/add_utils.py
 %%DATADIR%%/scripts/addons/modules/constants_utils.py
 %%DATADIR%%/scripts/addons/modules/cursor_utils.py
-%%DATADIR%%/scripts/addons/modules/geometry_utils.py
-%%DATADIR%%/scripts/addons/modules/misc_utils.py
-%%DATADIR%%/scripts/addons/modules/ui_utils.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/__init__.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/ui.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/util.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/validate.py
+%%DATADIR%%/scripts/addons/modules/geometry_utils.py
+%%DATADIR%%/scripts/addons/modules/misc_utils.py
+%%DATADIR%%/scripts/addons/modules/selection_utils.py
+%%DATADIR%%/scripts/addons/modules/ui_utils.py
 %%DATADIR%%/scripts/addons/netrender/__init__.py
+%%DATADIR%%/scripts/addons/netrender/baking.py
 %%DATADIR%%/scripts/addons/netrender/balancing.py
 %%DATADIR%%/scripts/addons/netrender/client.py
+%%DATADIR%%/scripts/addons/netrender/css/images/themes-preview.gif
+%%DATADIR%%/scripts/addons/netrender/css/images/themes.gif
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_flat_30_cccccc_40x100.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_glass_20_555555_1x400.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_glass_40_0078a3_1x400.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_glass_40_ffc73d_1x400.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_gloss-wave_25_333333_500x100.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_inset-soft_25_000000_1x100.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-bg_inset-soft_30_f58400_1x100.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-icons_222222_256x240.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-icons_4b8e0b_256x240.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-icons_a83300_256x240.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-icons_cccccc_256x240.png
+%%DATADIR%%/scripts/addons/netrender/css/images/ui-icons_ffffff_256x240.png
+%%DATADIR%%/scripts/addons/netrender/css/jquery-ui.css
+%%DATADIR%%/scripts/addons/netrender/css/jquery.themes.css
+%%DATADIR%%/scripts/addons/netrender/js/jquery-ui.js
+%%DATADIR%%/scripts/addons/netrender/js/jquery.js
+%%DATADIR%%/scripts/addons/netrender/js/jquery.themes.js
+%%DATADIR%%/scripts/addons/netrender/js/netrender-action.js
+%%DATADIR%%/scripts/addons/netrender/js/netrender-widget.js
+%%DATADIR%%/scripts/addons/netrender/js/netrender.js
+%%DATADIR%%/scripts/addons/netrender/js/netrender_balance.js
 %%DATADIR%%/scripts/addons/netrender/master.py
 %%DATADIR%%/scripts/addons/netrender/master_html.py
 %%DATADIR%%/scripts/addons/netrender/model.py
 %%DATADIR%%/scripts/addons/netrender/netrender.css
 %%DATADIR%%/scripts/addons/netrender/netrender.js
+%%DATADIR%%/scripts/addons/netrender/newui.html
 %%DATADIR%%/scripts/addons/netrender/operators.py
 %%DATADIR%%/scripts/addons/netrender/repath.py
 %%DATADIR%%/scripts/addons/netrender/slave.py
@@ -148,12 +176,16 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/object_add_chain.py
 %%DATADIR%%/scripts/addons/object_animrenderbake.py
 %%DATADIR%%/scripts/addons/object_cloud_gen.py
-%%DATADIR%%/scripts/addons/object_grease_scatter.py
 %%DATADIR%%/scripts/addons/object_fracture/__init__.py
 %%DATADIR%%/scripts/addons/object_fracture/data.blend
 %%DATADIR%%/scripts/addons/object_fracture/fracture_ops.py
 %%DATADIR%%/scripts/addons/object_fracture/fracture_setup.py
+%%DATADIR%%/scripts/addons/object_grease_scatter.py
 %%DATADIR%%/scripts/addons/paint_palette.py
+%%DATADIR%%/scripts/addons/render_copy_settings/__init__.py
+%%DATADIR%%/scripts/addons/render_copy_settings/operator.py
+%%DATADIR%%/scripts/addons/render_copy_settings/panel.py
+%%DATADIR%%/scripts/addons/render_copy_settings/presets.py
 %%DATADIR%%/scripts/addons/render_povray/__init__.py
 %%DATADIR%%/scripts/addons/render_povray/render.py
 %%DATADIR%%/scripts/addons/render_povray/ui.py
@@ -232,42 +264,43 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/modules/keyingsets_utils.py
 %%DATADIR%%/scripts/modules/rna_info.py
 %%DATADIR%%/scripts/modules/rna_prop_ui.py
+%%DATADIR%%/scripts/modules/rna_xml.py
 %%DATADIR%%/scripts/modules/sys_info.py
+%%DATADIR%%/scripts/presets/camera/APS-C_DSLR.py
 %%DATADIR%%/scripts/presets/camera/Blender.py
-%%DATADIR%%/scripts/presets/camera/Canon_5D.py
-%%DATADIR%%/scripts/presets/camera/Canon_1DS.py
-%%DATADIR%%/scripts/presets/camera/Canon_7D.py
-%%DATADIR%%/scripts/presets/camera/Canon_60D.py
-%%DATADIR%%/scripts/presets/camera/Canon_1D.py
-%%DATADIR%%/scripts/presets/camera/Canon_550D.py
-%%DATADIR%%/scripts/presets/camera/Canon_500D.py
 %%DATADIR%%/scripts/presets/camera/Canon_1100D.py
+%%DATADIR%%/scripts/presets/camera/Canon_1D.py
+%%DATADIR%%/scripts/presets/camera/Canon_1DS.py
+%%DATADIR%%/scripts/presets/camera/Canon_500D.py
+%%DATADIR%%/scripts/presets/camera/Canon_550D.py
+%%DATADIR%%/scripts/presets/camera/Canon_5D.py
 %%DATADIR%%/scripts/presets/camera/Canon_600D.py
-%%DATADIR%%/scripts/presets/camera/Nikon_D3S.py
+%%DATADIR%%/scripts/presets/camera/Canon_60D.py
+%%DATADIR%%/scripts/presets/camera/Canon_7D.py
 %%DATADIR%%/scripts/presets/camera/Nikon_D300S.py
 %%DATADIR%%/scripts/presets/camera/Nikon_D3100.py
+%%DATADIR%%/scripts/presets/camera/Nikon_D3S.py
 %%DATADIR%%/scripts/presets/camera/Nikon_D5000.py
 %%DATADIR%%/scripts/presets/camera/Nikon_D5100.py
 %%DATADIR%%/scripts/presets/camera/Nikon_D7000.py
 %%DATADIR%%/scripts/presets/camera/Nikon_D90.py
-%%DATADIR%%/scripts/presets/camera/Red_One_3K.py
 %%DATADIR%%/scripts/presets/camera/Red_Epic.py
 %%DATADIR%%/scripts/presets/camera/Red_One_2K.py
+%%DATADIR%%/scripts/presets/camera/Red_One_3K.py
 %%DATADIR%%/scripts/presets/camera/Red_One_4K.py
 %%DATADIR%%/scripts/presets/camera/Sony_A55.py
-%%DATADIR%%/scripts/presets/camera/super_35_film.py
-%%DATADIR%%/scripts/presets/camera/micro_four_thirds.py
-%%DATADIR%%/scripts/presets/camera/APS-C_DSLR.py
-%%DATADIR%%/scripts/presets/camera/super_16_film.py
 %%DATADIR%%/scripts/presets/camera/full_frame_35mm_film.py
+%%DATADIR%%/scripts/presets/camera/micro_four_thirds.py
+%%DATADIR%%/scripts/presets/camera/super_16_film.py
+%%DATADIR%%/scripts/presets/camera/super_35_film.py
 %%DATADIR%%/scripts/presets/cloth/cotton.py
 %%DATADIR%%/scripts/presets/cloth/denim.py
 %%DATADIR%%/scripts/presets/cloth/leather.py
 %%DATADIR%%/scripts/presets/cloth/rubber.py
+%%DATADIR%%/scripts/presets/cloth/silk.py
 %%DATADIR%%/scripts/presets/cycles/integrator/direct_light.py
 %%DATADIR%%/scripts/presets/cycles/integrator/full_global_illumination.py
 %%DATADIR%%/scripts/presets/cycles/integrator/limited_global_illumination.py
-%%DATADIR%%/scripts/presets/cloth/silk.py
 %%DATADIR%%/scripts/presets/ffmpeg/DV.py
 %%DATADIR%%/scripts/presets/ffmpeg/DVD.py
 %%DATADIR%%/scripts/presets/ffmpeg/SVCD.py
@@ -286,6 +319,11 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/presets/framerate/Custom.py
 %%DATADIR%%/scripts/presets/interaction/blender.py
 %%DATADIR%%/scripts/presets/interaction/maya.py
+%%DATADIR%%/scripts/presets/interface_theme/back_to_black.xml
+%%DATADIR%%/scripts/presets/interface_theme/blender_24x.xml
+%%DATADIR%%/scripts/presets/interface_theme/elsyiun.xml
+%%DATADIR%%/scripts/presets/interface_theme/hexagon.xml
+%%DATADIR%%/scripts/presets/interface_theme/ubuntu_ambiance.xml
 %%DATADIR%%/scripts/presets/keyconfig/maya.py
 %%DATADIR%%/scripts/presets/render/DVCPRO_HD_1080p.py
 %%DATADIR%%/scripts/presets/render/DVCPRO_HD_720p.py
@@ -311,34 +349,35 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/presets/sunsky/classic.py
 %%DATADIR%%/scripts/presets/sunsky/desert.py
 %%DATADIR%%/scripts/presets/sunsky/mountain.py
-%%DATADIR%%/scripts/presets/tracking_track_color/default.py
-%%DATADIR%%/scripts/presets/tracking_track_color/far_plane.py
-%%DATADIR%%/scripts/presets/tracking_track_color/near_plane.py
 %%DATADIR%%/scripts/presets/tracking_camera/Blender.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_5D.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_1DS.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_7D.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_60D.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_1D.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_550D.py
-%%DATADIR%%/scripts/presets/tracking_camera/Canon_500D.py
 %%DATADIR%%/scripts/presets/tracking_camera/Canon_1100D.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_1D.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_1DS.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_500D.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_550D.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_5D.py
 %%DATADIR%%/scripts/presets/tracking_camera/Canon_600D.py
-%%DATADIR%%/scripts/presets/tracking_camera/Nikon_D35.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_60D.py
+%%DATADIR%%/scripts/presets/tracking_camera/Canon_7D.py
 %%DATADIR%%/scripts/presets/tracking_camera/Nikon_D300S.py
 %%DATADIR%%/scripts/presets/tracking_camera/Nikon_D3100.py
+%%DATADIR%%/scripts/presets/tracking_camera/Nikon_D35.py
 %%DATADIR%%/scripts/presets/tracking_camera/Nikon_D5000.py
 %%DATADIR%%/scripts/presets/tracking_camera/Nikon_D5100.py
 %%DATADIR%%/scripts/presets/tracking_camera/Nikon_D7000.py
 %%DATADIR%%/scripts/presets/tracking_camera/Nikon_D90.py
+%%DATADIR%%/scripts/presets/tracking_camera/Red_Epic.py
 %%DATADIR%%/scripts/presets/tracking_camera/Red_One_2K.py
 %%DATADIR%%/scripts/presets/tracking_camera/Red_One_3K.py
 %%DATADIR%%/scripts/presets/tracking_camera/Red_One_4K.py
-%%DATADIR%%/scripts/presets/tracking_camera/Red_Epic.py
 %%DATADIR%%/scripts/presets/tracking_camera/Sony_A55.py
-%%DATADIR%%/scripts/presets/tracking_settings/default.py
 %%DATADIR%%/scripts/presets/tracking_settings/blurry_footage.py
+%%DATADIR%%/scripts/presets/tracking_settings/default.py
 %%DATADIR%%/scripts/presets/tracking_settings/fast_motion.py
+%%DATADIR%%/scripts/presets/tracking_track_color/default.py
+%%DATADIR%%/scripts/presets/tracking_track_color/far_plane.py
+%%DATADIR%%/scripts/presets/tracking_track_color/near_plane.py
+%%DATADIR%%/scripts/presets/tracking_track_color/object.py
 %%DATADIR%%/scripts/startup/bl_operators/__init__.py
 %%DATADIR%%/scripts/startup/bl_operators/add_mesh_torus.py
 %%DATADIR%%/scripts/startup/bl_operators/anim.py
@@ -376,6 +415,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/startup/bl_ui/properties_material.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_object.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_object_constraint.py
+%%DATADIR%%/scripts/startup/bl_ui/properties_paint_common.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_particle.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_physics_cloth.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_physics_common.py
@@ -388,8 +428,8 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/startup/bl_ui/properties_scene.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_texture.py
 %%DATADIR%%/scripts/startup/bl_ui/properties_world.py
-%%DATADIR%%/scripts/startup/bl_ui/space_console.py
 %%DATADIR%%/scripts/startup/bl_ui/space_clip.py
+%%DATADIR%%/scripts/startup/bl_ui/space_console.py
 %%DATADIR%%/scripts/startup/bl_ui/space_dopesheet.py
 %%DATADIR%%/scripts/startup/bl_ui/space_filebrowser.py
 %%DATADIR%%/scripts/startup/bl_ui/space_graph.py
@@ -450,6 +490,7 @@ share/pixmaps/blender.svg
 %%NLS%%%%DATADIR%%/datafiles/locale/sv/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/datafiles/locale/zh_CN/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/datafiles/locale/zh_TW/LC_MESSAGES/blender.mo
+
 @dirrm %%DATADIR%%/scripts/templates
 @dirrm %%DATADIR%%/scripts/startup/bl_ui
 @dirrm %%DATADIR%%/scripts/startup/bl_operators
@@ -461,11 +502,12 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/presets/sss
 @dirrm %%DATADIR%%/scripts/presets/render
 @dirrm %%DATADIR%%/scripts/presets/keyconfig
+@dirrm %%DATADIR%%/scripts/presets/interface_theme
 @dirrm %%DATADIR%%/scripts/presets/interaction
 @dirrm %%DATADIR%%/scripts/presets/framerate
 @dirrm %%DATADIR%%/scripts/presets/ffmpeg
 @dirrm %%DATADIR%%/scripts/presets/cycles/integrator
-@dirrm %%DATADIR%%/scripts/presets/cycles/
+@dirrm %%DATADIR%%/scripts/presets/cycles
 @dirrm %%DATADIR%%/scripts/presets/cloth
 @dirrm %%DATADIR%%/scripts/presets/camera
 @dirrm %%DATADIR%%/scripts/presets
@@ -485,7 +527,11 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/addons/rigify/metarigs
 @dirrm %%DATADIR%%/scripts/addons/rigify
 @dirrm %%DATADIR%%/scripts/addons/render_povray
+@dirrm %%DATADIR%%/scripts/addons/render_copy_settings
 @dirrm %%DATADIR%%/scripts/addons/object_fracture
+@dirrm %%DATADIR%%/scripts/addons/netrender/js
+@dirrm %%DATADIR%%/scripts/addons/netrender/css/images
+@dirrm %%DATADIR%%/scripts/addons/netrender/css
 @dirrm %%DATADIR%%/scripts/addons/netrender
 @dirrm %%DATADIR%%/scripts/addons/modules/extensions_framework
 @dirrm %%DATADIR%%/scripts/addons/modules
@@ -549,14 +595,14 @@ share/pixmaps/blender.svg
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/fi
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/fa/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/fa
-%%NLS%%@dirrm %%DATADIR%%/datafiles/locale/el/LC_MESSAGES
-%%NLS%%@dirrm %%DATADIR%%/datafiles/locale/el
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/es_MX/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/es_MX
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/es_ES/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/es_ES
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/es/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/es
+%%NLS%%@dirrm %%DATADIR%%/datafiles/locale/el/LC_MESSAGES
+%%NLS%%@dirrm %%DATADIR%%/datafiles/locale/el
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/de/LC_MESSAGES
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/de
 %%NLS%%@dirrm %%DATADIR%%/datafiles/locale/cs/LC_MESSAGES
