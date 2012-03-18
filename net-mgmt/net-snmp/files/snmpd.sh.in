@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
 # PROVIDE: snmpd
@@ -9,72 +9,57 @@
 #
 # snmpd_enable="YES"
 # snmpd_flags="<set as needed>"
-#
-
-snmpd_enable=${snmpd_enable-"NO"}
-snmpd_pidfile=${snmpd_pidfile-"/var/run/snmpd.pid"}
-snmpd_conffile=${snmpd_conffile-""}
-snmpd_flush_cache=${snmpd_flush_cache-"NO"}
+# snmpd_conffile="<set as needed>"
 
 . /etc/rc.subr
-
-load_rc_config net_snmpd
-
-if [ ! -z "$net_snmpd_enable" ]; then
-    echo "Warning: \$net_snmpd_enable is obsoleted."
-    echo "         Use \$snmpd_enable instead."
-    snmpd_enable="$net_snmpd_enable"
-    [ ! -z "$net_snmpd_flags" ] && snmpd_flags="$net_snmpd_flags"
-fi
 
 name=snmpd
 rcvar=snmpd_enable
 
+load_rc_config snmpd
+
+snmpd_enable=${snmpd_enable:-"NO"}
+snmpd_flush_cache=${snmpd_flush_cache-"NO"}
+
+pidfile=${snmpd_pidfile:-"/var/run/net_snmpd.pid"}
+
 command=%%PREFIX%%/sbin/${name}
-pidfile=${snmpd_pidfile}
-start_precmd=snmpd_precmd
 
-load_rc_config ${name}
+start_precmd=net_snmpd_precmd
 
-snmpd_precmd () {
-    if checkyesno snmpd_flush_cache; then
-	rm -vf /var/net-snmp/.snmp-exec-cache
-    fi
-}
+net_snmpd_precmd () {
+	local flag conffile snmpd_conffile_set
 
-case "${snmpd_flags}" in
-*-p\ *)
-	echo "Warning: \$snmpd_flags includes -p option." \
-		"Please use \$snmpd_pidfile instead."
-	;;
-*)
-	snmpd_flags="-p ${snmpd_pidfile} ${snmpd_flags}"
-	;;
-esac
+	if checkyesno snmpd_flush_cache; then
+		rm -vf /var/net-snmp/.snmp-exec-cache
+	fi
 
-for conffile in ${snmpd_conffile}; do
-	if [ ! -z ${conffile} -a -f ${conffile} ]; then
-	       if [ -z ${snmpd_conffile_set} ]; then
-		       snmpd_conffile_set="${conffile}"
-	       else
+	for flag in ${snmpd_flags}; do
+		case "${flag}" in
+		-p*)
+			err 1 "\$snmpd_flags includes -p option." \
+				"Please use \$snmpd_pidfile instead."
+			;;
+		-c*)
+			err 1 "\$snmpd_flags includes -c option." \
+				"Please use \$snmpd_conffile instead."
+			;;
+		esac
+	done
+
+	for conffile in ${snmpd_conffile}; do
+		if [ -f "${conffile}" -a -s "${conffile}" ]; then
 		       snmpd_conffile_set="${snmpd_conffile_set},${conffile}"
-	       fi
-	else
-	       echo "snmpd configuration file $conffile not set or not found."
-	       exit 1
-	fi
-done
+		else
+		       err 1 "snmpd configuration file $conffile not found."
+		fi
+	done
 
-case "${snmpd_flags}" in
-*-c\ *)
-	echo "Warning: \$snmpd_flags includes -c option." \
-		"Please use \$snmpd_conffile instead."
-	;;
-*)
-	if [ ! -z "${snmpd_conffile_set}" ]; then
-		snmpd_flags="-c ${snmpd_conffile_set} ${snmpd_flags}"
+	# snmpd syntax requires that the listening address (if defined) be the last argument
+	if [ -n "${snmpd_conffile_set}" ]; then
+		rc_flags="-c ${snmpd_conffile_set#,} ${rc_flags}"
 	fi
-	;;
-esac
+	rc_flags="-p ${pidfile} ${rc_flags}"
+}
 
 run_rc_command "$1"
