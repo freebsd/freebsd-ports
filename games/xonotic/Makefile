@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xonotic
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	games
-MASTER_SITES=	http://dl.xonotic.org/
+MASTER_SITES=	http://hagger.rbi.informatik.uni-frankfurt.de/xonotic/ \
+		http://dl.xonotic.org/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
