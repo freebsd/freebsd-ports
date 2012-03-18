@@ -1,9 +1,9 @@
 bin/avidemux2_cli
-lib/libADM5avcodec.so.52
-lib/libADM5avformat.so.52
-lib/libADM5avutil.so.50
+lib/libADM5avcodec.so.53
+lib/libADM5avformat.so.53
+lib/libADM5avutil.so.51
 lib/libADM5postproc.so.51
-lib/libADM5swscale.so.0
+lib/libADM5swscale.so.2
 lib/libADM_UICli.so
 lib/libADM_core.so
 lib/libADM_coreAudio.so
