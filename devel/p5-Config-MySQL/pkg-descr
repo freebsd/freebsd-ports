@@ -1,0 +1,7 @@
+This module extends Config::INI to support reading and writing
+MySQL-style configuration files.  Although deceptively similar to
+standard .INI files, they can include bare boolean options with no
+value assignment and additional features like !include and
+!includedir.
+
+WWW: http://search.cpan.org/dist/Config-MySQL/

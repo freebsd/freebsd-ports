@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MySQL/.packlist
+%%SITE_PERL%%/Config/MySQL.pm
+%%SITE_PERL%%/Config/MySQL/Reader.pm
+%%SITE_PERL%%/Config/MySQL/Writer.pm
+@dirrm %%SITE_PERL%%/Config/MySQL
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/MySQL
