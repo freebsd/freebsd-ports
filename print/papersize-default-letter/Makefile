@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${PORTSDIR}/print/papersize-default-a4
+MASTERDIR=	${.CURDIR}/../../print/papersize-default-a4
 DEFAULTPAPERSIZE=	letter
 
 .include "${MASTERDIR}/Makefile"
