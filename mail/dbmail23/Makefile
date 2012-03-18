@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.dbmail.org/download/2.3/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
+DEPRECATED=	No more supported upstream. No ports depend on this
+EXPIRATION_DATE=	2012-04-18
+
 LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
 LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash

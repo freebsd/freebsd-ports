@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.dbmail.org/download/2.1/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
+DEPRECATED=	No more supported upstream. No ports depend on this
+EXPIRATION_DATE=	2012-04-18
+
 CONFLICTS=	dbmail-*-2.0.* dbmail-2.2.*
 
 OPTIONS=	MYSQL		"Build with MySQL support" on \
