@@ -37,7 +37,7 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 2. fill in the template
 3. use 'make validate' to verify syntax correctness (you might need to install
    textproc/libxml2 for parser, and this port for catalogs)
-4. run 'make tidy' and then diff vuln.xml and vuln.xml.tidy - there should be 
+4. run 'make tidy' and then diff vuln.xml and vuln.xml.tidy - there should be
    no difference.
 5. ???
 6. profit!
@@ -314,7 +314,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb12-05.html">
 	  <p>These vulnerabilities could cause a crash and potentially allow an
-	  attacker to take control of the affected system.</p>
+	    attacker to take control of the affected system.</p>
 	</blockquote>
       </body>
     </description>
@@ -369,9 +369,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Jenkins Security Advisory reports:</p>
 	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2012-03-05">
 	  <p>A XSS vulnerability was found in Jenkins core, which allows an
-	     attacker to inject malicious HTMLs to pages served by Jenkins.
-	     This allows an attacker to escalate his privileges by hijacking
-	     sessions of other users. This vulnerability affects all versions</p>
+	    attacker to inject malicious HTMLs to pages served by Jenkins.
+	    This allows an attacker to escalate his privileges by hijacking
+	    sessions of other users. This vulnerability affects all versions</p>
 	</blockquote>
       </body>
     </description>
@@ -463,10 +463,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Dropbear project reports:</p>
 	<blockquote cite="http://xforce.iss.net/xforce/xfdb/73444">
 	  <p>Dropbear SSH Server could allow a remote authenticated attacker
-	     to execute arbitrary code on the system, caused by a use-after-free
-	     error. If a command restriction is enforced, an attacker could
-	     exploit this vulnerability to execute arbitrary code on the system
-	     with root privileges.</p>
+	    to execute arbitrary code on the system, caused by a use-after-free
+	    error. If a command restriction is enforced, an attacker could
+	    exploit this vulnerability to execute arbitrary code on the system
+	    with root privileges.</p>
 	</blockquote>
       </body>
     </description>
@@ -495,8 +495,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>OpenX Reports:</p>
 	<blockquote cite="http://blog.openx.org/12/security-matters-3/">
 	  <p>Recently we became aware of a security issue with OpenX Source
-	  v. 2.8.7 and, in response, we've now issued and released OpenXSource
-	  v. 2.8.8 to address it.</p>
+	    v. 2.8.7 and, in response, we've now issued and released OpenXSource
+	    v. 2.8.8 to address it.</p>
 	</blockquote>
       </body>
     </description>
@@ -525,10 +525,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The PostgreSQL Global Development Group reports:</p>
 	<blockquote cite="http://www.postgresql.org/about/news/1377/">
 	  <p>These vulnerabilities could allow users to define triggers that
-	  execute functions on which the user does not have EXECUTE
-	  permission, allow SSL certificate spoofing and allow line breaks
-	  in object names to be exploited to execute code when loading a
-	  pg_dump file.</p>
+	    execute functions on which the user does not have EXECUTE
+	    permission, allow SSL certificate spoofing and allow line breaks
+	    in object names to be exploited to execute code when loading a
+	    pg_dump file.</p>
 	</blockquote>
       </body>
     </description>
@@ -556,7 +556,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb12-03.html">
 	  <p>These vulnerabilities could cause a crash and potentially allow an
-	  attacker to take control of the affected system.</p>
+	    attacker to take control of the affected system.</p>
 	</blockquote>
       </body>
     </description>
@@ -589,8 +589,8 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Google chrome team reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/2012/01/stable-channel-update.html">
 	  <p>Heap-based buffer overflow in libxml2, allows remote attackers to
-             cause a denial of service or possibly have unspecified other 
-             impact via unknown vectors.</p>
+	    cause a denial of service or possibly have unspecified other
+	    impact via unknown vectors.</p>
 	</blockquote>
       </body>
     </description>
@@ -1192,14 +1192,14 @@ Note:  Please add new entries to the beginning of this file.
 	      could try to confuse other users and be added to bugs he
 	      shouldn't have access to.</li>
 	    <li>Cross-Site Request Forgery:
-	     Due to a lack of validation of the Content-Type header
-             when making POST requests to jsonrpc.cgi, a possible
-             CSRF vulnerability was discovered. If a user visits an
-             HTML page with some malicious JS code in it, an attacker
-             could make changes to a remote Bugzilla installation on
-             behalf of the victim's account by using the JSON-RPC API.
-             The user would have had to be already logged in to the
-             target site for the vulnerability to work.</li>
+	       Due to a lack of validation of the Content-Type head
+	       when making POST requests to jsonrpc.cgi, a possible
+	       CSRF vulnerability was discovered. If a user visits an
+	       HTML page with some malicious JS code in it, an attacker
+	       could make changes to a remote Bugzilla installation on
+	       behalf of the victim's account by using the JSON-RPC API.
+	       The user would have had to be already logged in to the
+	       target site for the vulnerability to work.</li>
 	  </ul>
 	  <p>All affected installations are encouraged to upgrade as soon as
 	    possible.</p>
@@ -1264,7 +1264,7 @@ Note:  Please add new entries to the beginning of this file.
         <p>Michiel Boland reports:</p>
         <blockquote cite="http://www.mathopd.org/security.html">
           <p>The software has a vulnerability that could lead to directory
-             traversal if the '*' construct for mass virtual hosting is used.</p>
+	    traversal if the '*' construct for mass virtual hosting is used.</p>
         </blockquote>
       </body>
     </description>
