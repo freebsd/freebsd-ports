@@ -88,7 +88,7 @@
     SUBDIR += dbmail
     SUBDIR += dbmail20
     SUBDIR += dbmail21
-#    SUBDIR += dbmail22
+    SUBDIR += dbmail22
     SUBDIR += dbmail23
     SUBDIR += dcc-dccd
     SUBDIR += delatt
