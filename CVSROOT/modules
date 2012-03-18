@@ -2009,7 +2009,6 @@ csv2latex                       ports/textproc/csv2latex
 csv2xml                         ports/textproc/csv2xml
 csvdiff                         ports/textproc/csvdiff
 csync2                          ports/net/csync2
-ct                              ports/net/ct
 ctcs                            ports/net-p2p/ctcs
 ctemplate                       ports/www/ctemplate
 cthumb                          ports/graphics/cthumb
@@ -2220,7 +2219,6 @@ dblatex                         ports/textproc/dblatex
 dbmail                          ports/mail/dbmail
 dbmail20                        ports/mail/dbmail20
 dbmail21                        ports/mail/dbmail21
-dbmail22                        ports/mail/dbmail22
 dbmail23                        ports/mail/dbmail23
 dbow                            ports/databases/dbow
 dboxfe                          ports/emulators/dboxfe
@@ -7390,7 +7388,6 @@ ko-scim-hangul                  ports/korean/scim-hangul
 ko-scim-tables                  ports/korean/scim-tables
 ko-unfonts-core                 ports/korean/unfonts-core
 ko-unfonts-extra                ports/korean/unfonts-extra
-ko-unfonts-ttf                  ports/korean/unfonts-ttf
 ko-uniksc                       ports/korean/uniksc
 ko-unzip                        ports/korean/unzip
 ko-xpdf                         ports/korean/xpdf
@@ -22228,7 +22225,6 @@ py-easyzone                     ports/dns/py-easyzone
 py-editobj                      ports/graphics/py-editobj
 py-elementtree                  ports/devel/py-elementtree
 py-elixir                       ports/databases/py-Elixir
-py-email                        ports/mail/py-email
 py-empy                         ports/textproc/py-empy
 py-enchant                      ports/textproc/py-enchant
 py-enthoughtbase                ports/devel/py-EnthoughtBase
@@ -26937,7 +26933,6 @@ uzbl                            ports/www/uzbl
 v                               ports/x11-toolkits/v
 v4l-utils                       ports/multimedia/v4l-utils
 v4l_compat                      ports/multimedia/v4l_compat
-v6eval                          ports/net/v6eval
 v7sh                            ports/shells/v7sh
 v8                              ports/lang/v8
 vMac                            ports/emulators/vMac
