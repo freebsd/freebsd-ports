@@ -3484,6 +3484,7 @@
     SUBDIR += py-zope.viewlet
     SUBDIR += py_static_check
     SUBDIR += pybaz
+    SUBDIR += pybugz
     SUBDIR += pychecker
     SUBDIR += pycount
     SUBDIR += pylint

@@ -1,0 +1,16 @@
+Many find Bugzilla's web-based UI inefficient.  PyBugz is a command-line based
+interface that was written by Alastair Tse in order to improve his interaction
+with Gentoo Bugzilla
+
+Features
+--------
+* Searching bugzilla
+* Listing details of a bug including comments and attachments
+* Downloading/viewing attachments from bugzilla
+* Posting bugs, comments, and making changes to an existing bug.
+* Adding attachments to a bug.
+
+There is extensive help in `bugz --help` and `bugz <subcommand>
+--help` for additional options.
+
+WWW:	https://github.com/williamh/pybugz
