@@ -14,8 +14,6 @@ COMMENT=	X.Org bitmaps data
 
 LICENSE=	MIT
 
-CONFLICTS=	xorg-libraries-6.*
-
 USE_GNOME=	gnomehack
 
 XORG_CAT=	data
