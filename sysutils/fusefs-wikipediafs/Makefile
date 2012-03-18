@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	wikipediafs
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Mount mediawikis
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
@@ -25,10 +25,6 @@ MAN1=		mount.${PORTNAME}.1
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/doc/*gz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|0.1|${PORTVERSION}|;/data_files/d'\
-		${WRKSRC}/setup.py
 
 post-install:
 	@cd ${WRKSRC}/doc/&&${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1/
