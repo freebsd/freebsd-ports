@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/mail/dbmail/files/dbmail-imapd.in,v 1.1 2012-03-18 19:17:12 rm Exp $
 #
 
 # PROVIDE: dbmail-imapd
@@ -22,7 +22,7 @@ name=dbmail_imapd
 rcvar=dbmail_imapd_enable
 
 command=%%PREFIX%%/sbin/dbmail-imapd
-pidfile=/var/run/dbmail-imapd.pid
+pidfile=/var/run/dbmail/dbmail-imapd.pid
 required_files=%%PREFIX%%/etc/dbmail.conf
 
 # read settings, set default values

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/mail/dbmail/files/dbmail-pop3d.in,v 1.1 2012-03-18 19:17:12 rm Exp $
 #
 
 # PROVIDE: dbmail-pop3d
@@ -22,7 +22,7 @@ name=dbmail_pop3d
 rcvar=dbmail_pop3d_enable
 
 command=%%PREFIX%%/sbin/dbmail-pop3d
-pidfile=/var/run/dbmail-pop3d.pid
+pidfile=/var/run/dbmail/dbmail-pop3d.pid
 required_files=%%PREFIX%%/etc/dbmail.conf
 
 # read settings, set default values

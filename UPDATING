@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120318:
+  AFFECTS: users of mail/dbmail
+  AUTHOR: rm@FreeBSD.org
+
+  dbmail 3.0 is now available.
+
+  There are a number of significant changes including Dependencies,
+  Config, Schema and Server changes.
+
+  Without required modifications, dbmail will not run and you will
+  no longer have access to your emails. See UPGRADING for details.
+  Don't forget to backup and fully test before upgrading.
+
+  To stick with version 2.2.x run:
+  # portupgrade -o mail/dbmail22 mail/dbmail
+  or
+  # portmaster -o mail/dbmail22 mail/dbmail
+
 20120313:
   AFFECTS: users of x11-toolkits/qt4-gui
   AUTHOR: kde@FreeBSD.org
