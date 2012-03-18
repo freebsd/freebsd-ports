@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	elog
-DISTVERSION=	2.6.3-1
+DISTVERSION=	2.9.1-1
 CATEGORIES=	www
 MASTER_SITES=	http://midas.psi.ch/elog/download/tar/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A fast and lightweight, extremly customizable weblog
 
 MAN1=		elog.1 elconv.1
@@ -19,11 +19,13 @@ USE_RC_SUBR=	elogd
 SUB_FILES=		pkg-install pkg-deinstall
 SUB_LIST=		LOGBOOKDIR=${LOGBOOKDIR}
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 LOGBOOKDIR?=	www/elog
 PLIST_SUB+=	LOGBOOKDIR=${LOGBOOKDIR}
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/elog-2.6.3
+WRKSRC=		${WRKDIR}/elog-2.9.1
 MAKE_ENV=	LOGBOOKDIR=${LOGBOOKDIR}
 
 pre-fetch:
