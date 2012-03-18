@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	stow
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	GNU version of Carnegie Mellon's "Depot" program
 
 LICENSE=	GPLv2
