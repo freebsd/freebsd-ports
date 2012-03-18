@@ -3,11 +3,12 @@ $FreeBSD$
 
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -28,7 +28,6 @@
- 		    'File::Temp' => 0,
- 		    'File::Spec::Functions' => 0,
- 		   },
--    'EXE_FILES' => [qw( perldoc )],
+@@ -33,8 +33,6 @@
+             'warnings'                  => '0',
+            },
  
-     ( $EUMM_VERSION > 6.31 ? (
-         'LICENSE' => 'perl',
+-    'EXE_FILES' => [qw( perldoc )],
+-
+ 	'META_MERGE' => {
+ 		no_index => {
+ 			directory => 'corpus',
