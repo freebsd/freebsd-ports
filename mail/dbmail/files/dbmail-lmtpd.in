@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/mail/dbmail/files/dbmail-lmtpd.in,v 1.1 2012-03-18 19:17:12 rm Exp $
 #
 
 # PROVIDE: dbmail-lmtpd
@@ -22,7 +22,7 @@ name=dbmail_lmtpd
 rcvar=dbmail_lmtpd_enable
 
 command=%%PREFIX%%/sbin/dbmail-lmtpd
-pidfile=/var/run/dbmail-lmtpd.pid
+pidfile=/var/run/dbmail/dbmail-lmtpd.pid
 required_files=%%PREFIX%%/etc/dbmail.conf
 
 # read settings, set default values
