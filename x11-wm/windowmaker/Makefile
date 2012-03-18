@@ -56,6 +56,10 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
 .endif
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 .if defined(WITH_XRANDR)
 USE_XORG+=	xrandr
 CONFIGURE_ARGS+=	--enable-xrandr
