@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	bubblemon2
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.17
 PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SAVANNAH/bubblemon
 DISTNAME=	bubblemon-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A system CPU and memory load monitor for GNOME2
 
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop

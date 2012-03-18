@@ -20,13 +20,13 @@ share/locale/hu/LC_MESSAGES/bubblemon.mo
 share/locale/is/LC_MESSAGES/bubblemon.mo
 share/locale/it/LC_MESSAGES/bubblemon.mo
 share/locale/ko/LC_MESSAGES/bubblemon.mo
+share/locale/nl/LC_MESSAGES/bubblemon.mo
 share/locale/no/LC_MESSAGES/bubblemon.mo
 share/locale/pl/LC_MESSAGES/bubblemon.mo
 share/locale/pt/LC_MESSAGES/bubblemon.mo
 share/locale/pt_BR/LC_MESSAGES/bubblemon.mo
 share/locale/ro/LC_MESSAGES/bubblemon.mo
 share/locale/ru/LC_MESSAGES/bubblemon.mo
-share/locale/sh/LC_MESSAGES/bubblemon.mo
 share/locale/sv/LC_MESSAGES/bubblemon.mo
 @dirrmtry share/locale/sh/LC_MESSAGES
 @dirrmtry share/locale/sh
