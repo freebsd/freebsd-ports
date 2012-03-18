@@ -16,7 +16,7 @@ COMMENT=	An Efficient Image Processing Library for Python
 
 BUILD_DEPENDS+=	${PYNUMPY}
 
-USE_GCC=	4.5+
+USE_GCC=	4.6+
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
