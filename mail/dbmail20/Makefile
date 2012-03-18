@@ -12,8 +12,11 @@ MASTER_SITES=	http://www.dbmail.org/download/2.0/
 PKGNAMESUFFIX=	-${DATABASE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mark_sf@kikg.ifmo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
+
+DEPRECATED=	No more supported upstream. No ports depend on this
+EXPIRATION_DATE=	2012-04-18
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
