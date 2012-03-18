@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	asmon
-PORTVERSION=	0.60
+PORTVERSION=	0.61
 PORTREVISION=	2
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asmon
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
 
 USE_XORG=	xpm x11
@@ -28,7 +28,6 @@ PLIST_FILES=	bin/asmon
 
 post-patch:
 	${REINPLACE_CMD} -e 's:gcc:${CC} ${CFLAGS}:' ${BUILD_WRKSRC}/Makefile
-	${RM} ${WRKSRC}/wmgeneral/*.o $(BUILD_WRKSRC}/asmon
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g kmem -m 2755 ${WRKSRC}/asmon/asmon ${PREFIX}/bin
