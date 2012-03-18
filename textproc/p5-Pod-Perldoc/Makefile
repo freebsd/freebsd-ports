@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-Perldoc
-PORTVERSION=	3.15
+PORTVERSION=	3.17
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,6 +28,8 @@ MAN3=		Pod::Perldoc::ToNroff.3 \
 		Pod::Perldoc::GetOptsOO.3 \
 		Pod::Perldoc::ToChecker.3 \
 		Pod::Perldoc::ToPod.3 \
-		Pod::Perldoc::ToXml.3
+		Pod::Perldoc::ToXml.3 \
+		Pod::Perldoc::ToTerm.3 \
+		Pod::Perldoc::ToANSI.3
 
 .include <bsd.port.mk>
