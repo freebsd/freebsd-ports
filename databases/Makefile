@@ -709,7 +709,6 @@
     SUBDIR += py-swift
     SUBDIR += py-sybase
     SUBDIR += py-whisper
-    SUBDIR += py25-bsddb
     SUBDIR += pydbdesigner
     SUBDIR += pydbx
     SUBDIR += pymongo
