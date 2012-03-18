@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.9
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		RINGSERVER/graphics/freetype/freetype2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Demo programs for FreeType2
 
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
