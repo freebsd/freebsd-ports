@@ -8,7 +8,8 @@
 PORTNAME=	lablgl
 PORTVERSION=	20120306
 CATEGORIES=	graphics
-MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/
+MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/dist/ \
+		https://forge.ocamlcore.org/frs/download.php/816/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	bf@FreeBSD.org
