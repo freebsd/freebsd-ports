@@ -1,5 +1,8 @@
 @exec /bin/ln -s %%PREFIX%%/bin/sort %%PREFIX%%/bin/bsdsort
-@exec /bin/ln -s /usr/bin/sort %%PREFIX%%/bin/gnusort
+%%NO_OVERWRITE_BASE%%@exec /bin/ln -s /usr/bin/sort %%PREFIX%%/bin/gnusort
+%%OVERWRITE_BASE%%@exec /bin/mv %%PREFIX%%/bin/sort %%PREFIX%%/bin/gnusort || true
+%%OVERWRITE_BASE%%@unexec /bin/cp %%PREFIX%%/bin/gnusort %%PREFIX%%/bin/sort || true
 bin/bsdsort
 bin/gnusort
-bin/sort
+%%NO_OVERWRITE_BASE%%bin/sort
+%%NLS%%share/nls/hu_HU.ISO8859-2/sort.cat
