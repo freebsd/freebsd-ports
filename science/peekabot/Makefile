@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	peekabot
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
-
-BROKEN=		does not compile
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`fltk-config --cflags`
