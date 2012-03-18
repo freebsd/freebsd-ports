@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.X/${PORTVERSION} \
 		http://www1.corest.com/download/msyslog/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Flexible and easy to integrate syslog daemon
 
 OPTIONS=	MYSQL	"With MySQL Support"	off \
@@ -27,6 +27,8 @@ USE_RC_SUBR=	msyslogd.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
+
+PORTSCOUT=	skipv:1.09d
 
 .include <bsd.port.pre.mk>
 
