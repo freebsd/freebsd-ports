@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://people.debian.org/~godisch/latrine/
 
-MAINTAINER=	nox@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based LAnguage TRaINEr
 
 GNU_CONFIGURE=	yes
