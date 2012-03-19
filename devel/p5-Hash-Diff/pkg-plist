@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Diff/.packlist
+%%SITE_PERL%%/Hash/Diff.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Diff
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash
+@dirrmtry %%SITE_PERL%%/Hash

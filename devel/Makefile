@@ -1882,6 +1882,7 @@
     SUBDIR += p5-Hash-AsObject
     SUBDIR += p5-Hash-AutoHash
     SUBDIR += p5-Hash-Case
+    SUBDIR += p5-Hash-Diff
     SUBDIR += p5-Hash-FieldHash
     SUBDIR += p5-Hash-Flatten
     SUBDIR += p5-Hash-Merge-Simple
