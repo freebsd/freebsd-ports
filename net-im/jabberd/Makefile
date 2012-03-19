@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.2.14
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://codex.xiaoka.com/pub/jabberd2/releases/
 DIST_SUBDIR=	jabber
