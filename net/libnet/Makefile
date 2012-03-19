@@ -34,8 +34,10 @@ EXAMPLES=	sample/*.c
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
 		${PREFIX}/bin/libnet${PKGNAMESUFFIX}-config
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
