@@ -9,8 +9,7 @@
 # See http://www.infracaninophile.co.uk/articles/sphinxse.html
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 DISTNAME=	sphinx-${PORTVERSION}-release
