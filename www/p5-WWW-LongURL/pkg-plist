@@ -1,0 +1,5 @@
+%%SITE_PERL%%/WWW/LongURL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/LongURL/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/LongURL
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW
