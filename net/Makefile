@@ -699,6 +699,7 @@
     SUBDIR += p5-Queue-Beanstalk
     SUBDIR += p5-REST-Application
     SUBDIR += p5-REST-Google
+    SUBDIR += p5-RPC-EPC-Service
     SUBDIR += p5-RPC-Simple
     SUBDIR += p5-RPC-XML
     SUBDIR += p5-ResourcePool-Resource-Net-LDAP
