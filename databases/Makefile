@@ -32,6 +32,7 @@
     SUBDIR += credis
     SUBDIR += cyrus-imspd
     SUBDIR += dalmp
+    SUBDIR += datamodeler
     SUBDIR += db
     SUBDIR += db4
     SUBDIR += db41

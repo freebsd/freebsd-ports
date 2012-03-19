@@ -1,0 +1,7 @@
+#!%%LOCALBASE%%/bin/bash
+#
+# $FreeBSD$
+#
+
+cd %%DATADIR%%/datamodeler/bin
+TMZ="GMT" JAVA_HOME="%%JAVA_HOME%%" exec %%LOCALBASE%%/bin/bash datamodeler $*
