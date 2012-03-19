@@ -384,7 +384,10 @@ setup_chroot ()
 		eval "safe_copy \${${name}_conffile} \${_dhcpd_conffile}"
 		eval "safe_copy \${${name}_etcdir}/\$_hconf \${_dhcpd_etcdir}/\$_hconf"
 		eval "safe_copy \${${name}_etcdir}/\$_hosts \${_dhcpd_etcdir}/\$_hosts"
-		eval "safe_copy \${${name}_etcdir}/\$_ltime \${_dhcpd_etcdir}/\$_ltime"
+		# copy localtime only if it exists
+		if eval "[ -f \"\${${name}_etcdir}/\$_ltime\" ]"; then
+			eval "safe_copy \${${name}_etcdir}/\$_ltime \${_dhcpd_etcdir}/\$_ltime"
+		fi
 		eval "safe_copy \${${name}_etcdir}/\$_rconf \${_dhcpd_etcdir}/\$_rconf"
 		# copy dhcpd_includedir if defined and available
 		if eval "[ -d \"\${${name}_includedir}\" ]"; then
@@ -476,6 +479,13 @@ dhcpd_postcmd ()
 	cleanup_chroot
 }
 
+dhcpd_restartprecmd ()
+{
+	setup_chroot
+	setup_flags
+	dhcpd_checkconfig
+}
+
 dhcpd_checkconfig ()
 {
         local rc_flags_mod
@@ -508,8 +518,9 @@ pidfile=${_dhcpd_pidfile}
 eval "required_files=\${${name}_conf}"
 start_precmd=dhcpd_precmd
 stop_postcmd=dhcpd_postcmd
-restart_precmd="dhcpd_checkconfig"
+restart_precmd="dhcpd_restartprecmd"
 uninstall_cmd=dhcpd_uninstall
-extra_commands="uninstall"
+configtest_cmd="dhcpd_restartprecmd"
+extra_commands="uninstall configtest"
 
 run_rc_command "$1"
