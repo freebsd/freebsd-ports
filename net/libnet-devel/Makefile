@@ -65,11 +65,13 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin/${SHORT_NAME}-config
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 	@cd ${PREFIX}/lib && \
 		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.7 && \
 		${LN} -sf libnet-${PORTVERSION}.so.7 libnet-${PORTVERSION}.so
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
