@@ -17,6 +17,9 @@ COMMENT=	Perl module that creates a menu to allow perusal of tarball contents
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	Requires mod_perl 1 which is gone
+EXPIRATION_DATE=	2012-04-19
+
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes
