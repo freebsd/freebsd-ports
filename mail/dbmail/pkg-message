@@ -1,0 +1,13 @@
+
+************************************************************************
+
+See INSTALL for Installation instructions
+
+IMPORTANT NOTE FOR ADMINS UPGRADING FROM A PREVIOUS RELEASE
+
+There are a number of significant changes including Dependencies,
+Config, Schema and Server changes. See UPGRADING for details.
+
+Don't forget to backup and fully test before upgrading.
+
+************************************************************************
