@@ -21,6 +21,8 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.71001:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Object-Signature>=0:${PORTSDIR}/devel/p5-Object-Signature \
 		p5-namespace-clean>=0.10:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
