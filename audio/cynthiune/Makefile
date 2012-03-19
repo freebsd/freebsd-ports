@@ -7,7 +7,7 @@
 
 PORTNAME=	cynthiune
 PORTVERSION=	0.9.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/c/cynthiune.app
@@ -16,14 +16,13 @@ DISTNAME=	cynthiune.app_${PORTVERSION}.orig
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Romantic music player for GNUstep
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
-LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
-
-LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
