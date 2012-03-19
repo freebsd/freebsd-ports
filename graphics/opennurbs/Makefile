@@ -32,5 +32,9 @@ do-install:
 .for i in brep dump read roundtrip userdata write
 	@${INSTALL_PROGRAM} ${WRKSRC}/example_${i}/example_${i} ${EXAMPLESDIR}
 .endfor
+	@${MKDIR} ${PREFIX}/include/openNURBS
+	@${MKDIR} ${PREFIX}/include/openNURBS/zlib
+	@${MV} ${WRKSRC}/*.h ${PREFIX}/include/openNURBS/
+	@${MV} ${WRKSRC}/zlib/*.h ${PREFIX}/include/openNURBS/zlib
 
 .include <bsd.port.mk>
