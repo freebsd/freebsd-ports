@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	gemrb
-PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	GemRB (Game engine made with preRendered Background)
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
+
 USE_CMAKE=	yes
-USE_SDL=	sdl mixer
+USE_SDL=	sdl mixer ttf
 USE_OPENAL=	al alut
 USE_LDCONFIG=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 CMAKE_C_FLAGS=	${CFLAGS}
-CMAKE_ARGS=	-DDOC_DIR="${LOCALBASE}/share/doc/gemrb" -DMAN_DIR="${LOCALBASE}/man/man6" -DDISABLE_WERROR=1
-
-MAN6=	gemrb.6
+CMAKE_ARGS=	-DDOC_DIR="${DOCSDIR}" -DMAN_DIR="${MAN6PREFIX}/man/man6/" -DDISABLE_WERROR=1 -DINSOURCEBUILD=1
 
 .include <bsd.port.pre.mk>
+
+.if !defined(NO_INSTALL_MANPAGES)
+MAN6=		gemrb.6
+.endif
 
 post-patch:
 .if defined(NOPORTDOCS)
