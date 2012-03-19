@@ -20,6 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		xml2.5:${PORTSDIR}/textproc/libxml2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 MAKE_JOBS_UNSAFE=	yes
 
