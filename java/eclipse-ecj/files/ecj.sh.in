@@ -1,0 +1,3 @@
+#!/bin/sh
+
+%%JAVAC%% -classpath %%JAVAJARDIR%%/ecj.jar $1

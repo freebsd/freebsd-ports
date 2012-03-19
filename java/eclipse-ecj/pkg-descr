@@ -1,0 +1,5 @@
+An incremental Java compiler. Implemented as an Eclipse builder, it is based on
+technology evolved from VisualAge for Java compiler. In particular, it allows to
+run and debug code which still contains unresolved errors.
+
+WWW: http://www.eclipse.org/

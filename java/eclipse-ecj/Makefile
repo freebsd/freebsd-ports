@@ -1,0 +1,39 @@
+# New ports collection:		eclipse-ecj
+# Date created:			17 March 2012
+# Whom:				Jason Helfman
+#
+# $FreeBSD$
+
+PORTNAME=	ecj
+PORTVERSION=	3.7.2
+CATEGORIES=	java devel
+MASTER_SITES=	ECLIPSE
+MASTER_SITE_SUBDIR=	R-${PORTVERSION}-${DROPDATE}
+PKGNAMEPREFIX=	eclipse-
+DISTNAME=	ecjsrc-${PORTVERSION}
+EXTRACT_SUFX=	.jar
+
+MAINTAINER=	jgh@FreeBSD.org
+COMMENT=	Eclipse Java Compiler
+
+LICENSE=	EPL
+
+EXTRACT_CMD=	${TAR}
+EXTRACT_BEFORE_ARGS=	xf
+EXTRACT_AFTER_ARGS=	-C ${WRKDIR}
+
+USE_ANT=	yes
+USE_JAVA=	yes
+BUILD_WRKSRC=	${WRKDIR}
+SUB_FILES=	ecj.sh
+SUB_LIST=	JAVAC=${JAVAC}
+
+DROPDATE=	201202080800
+PLIST_FILES=	bin/${PORTNAME}.sh \
+		%%JAVAJARDIR%%/${PORTNAME}.jar
+
+do-install:
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/ecj.sh ${PREFIX}/bin
+
+.include <bsd.port.mk>
