@@ -1,0 +1,8 @@
+--- editor/ppmquantall.orig	2012-03-09 22:16:02.000000000 +0900
++++ editor/ppmquantall	2012-03-09 22:16:29.000000000 +0900
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ #
+ # ppmquantall - run ppmquant on a bunch of files all at once, so they share
+ #               a common colormap
