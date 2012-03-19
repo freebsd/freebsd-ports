@@ -45,7 +45,8 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS instead of OpenSSL" off \
 		PHP		"Build PHP support" off \
 		PYTHON		"Build PYTHON support" off \
 		LIBPAPER	"Build with libpaper support" off \
-		DNSSD		"Build with DNS_SD (avahi) support" off \
+		AVAHI		"Build with avahi support" off \
+		MDNSRESPONDER	"Build with mDNSResponder support" off \
 		PAM		"Build with PAM support" off \
 		LDAP		"Build with LDAP support" off \
 		DBUS		"Build with DBUS support" off \
@@ -89,7 +90,6 @@ CONFLICTS+=	cupsddk-*
 # the openssl in base of FreeBSD 7.x is too old
 WITH_OPENSSL_PORT?=	yes
 .endif
-
 
 .if defined(CUPS_CLIENT)
 COMMENT2=	Library cups
@@ -183,14 +183,24 @@ CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		paper.2:${PORTSDIR}/print/libpaper
 .endif
 
-.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_DNSSD)
+.if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && ( defined(WITH_AVAHI) || defined(WITH_MDNSRESPONDER) )
 CONFIGURE_ARGS+=	--enable-dnssd \
-			--with-dnssd-libs=${LOCALBASE}/lib/ \
-			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
+			--with-dnssd-libs=${LOCALBASE}/lib/
+.if defined(WITH_MDNSRESPONDER)
+LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/mDNSResponder
+CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include
+PLIST_SUB+=		WITH_MDNSRESPONDER=""
+.if defined(WITH_AVAHI)
+IGNORE=			You can only have one dns_sd provider: AHAVI or MDNSRESPONDER
+.endif
+.else
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+CONFIGURE_ARGS+=	--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
 BROKEN=			missing function, see http://www.avahi.org/ticket/303
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-dnssd
+PLIST_SUB+=		WITH_MDNSRESPONDER="@comment "
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_PAM)

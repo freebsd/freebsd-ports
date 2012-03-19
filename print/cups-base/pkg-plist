@@ -83,6 +83,8 @@ libexec/cups/backend/serial
 libexec/cups/backend/snmp
 libexec/cups/backend/socket
 libexec/cups/backend/usb
+%%WITH_MDNSRESPONDER%%libexec/cups/backend/dnssd
+%%WITH_MDNSRESPONDER%%libexec/cups/backend/mdns
 libexec/cups/cgi-bin/admin.cgi
 libexec/cups/cgi-bin/classes.cgi
 libexec/cups/cgi-bin/help.cgi
