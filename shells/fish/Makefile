@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.23.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -77,11 +77,5 @@ post-install:
 	else \
 		${ECHO_CMD} '${PREFIX}/bin/${PORTNAME}' >> /etc/shells; \
 	fi
-
-post-deinstall:
-	${CP} /etc/shells /etc/shells.bak
-	${GREP} -v '${PREFIX}/bin/${PORTNAME}' /etc/shells.bak \
-		>> /etc/shells
-	${RM} -f /etc/shells.bak
 
 .include <bsd.port.post.mk>
