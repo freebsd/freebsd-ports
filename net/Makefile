@@ -1149,6 +1149,7 @@
     SUBDIR += uriparser
     SUBDIR += urlendec
     SUBDIR += usbredir
+    SUBDIR += userfw
     SUBDIR += ushare
     SUBDIR += utftpd
     SUBDIR += vblade
