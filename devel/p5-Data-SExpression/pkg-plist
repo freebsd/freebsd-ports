@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/SExpression/.packlist
+%%SITE_PERL%%/Data/SExpression.pm
+%%SITE_PERL%%/Data/SExpression/Cons.pm
+%%SITE_PERL%%/Data/SExpression/Parser.pm
+%%SITE_PERL%%/Data/SExpression/Parser.yp
+%%SITE_PERL%%/Data/SExpression/Symbol.pm
+@dirrm %%SITE_PERL%%/Data/SExpression
+@dirrmtry %%SITE_PERL%%/Data
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/SExpression
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
