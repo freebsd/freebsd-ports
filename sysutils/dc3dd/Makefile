@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dc3dd
-PORTVERSION=	7.0.0
+PORTVERSION=	7.1.614
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/7.1.0
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dd program useful for computer forensics
