@@ -6,42 +6,33 @@
 #
 
 PORTNAME=	p0f
-PORTVERSION=	2.0.8
+PORTVERSION=	3.03b
 PORTREVISION=	1
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	http://lcamtuf.coredump.cx/p0f/ \
-		http://farrokhi.net/distfiles/
+MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
-USE_GMAKE=	yes
-ALL_TARGET=	all p0fq tools
-PORTDOCS=	COPYING CREDITS ChangeLog KNOWN_BUGS README TODO win-memleak.txt
-MAN1=		p0f.1
-WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_FILES=	bin/p0f bin/p0f-client bin/p0f-sendsyn \
+		bin/p0f-sendsyn6 etc/p0f.fp
+PORTDOCS=	COPYING ChangeLog README TODO existential-notes.txt extra-sigs.txt
 
 post-patch:
-.for f in config.h doc/README
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/${f}
-.endfor
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/README
+	@${REINPLACE_CMD} -e 's|p0f.fp|${PREFIX}/etc/p0f.fp|g' ${WRKSRC}/config.h
 
 do-install:
-.for ii in p0f test/p0fq test/sendack test/sendack2 test/sendsyn
+.for ii in p0f tools/p0f-client tools/p0f-sendsyn tools/p0f-sendsyn6
 	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${PREFIX}/bin
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/p0frep ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/etc/p0f
-.for ii in . a. o. r.
-	${INSTALL_DATA} ${WRKSRC}/p0f${ii}fp ${PREFIX}/etc/p0f
-.endfor
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc/
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for ii in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${ii} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${ii} ${DOCSDIR}
 .endfor
 .endif
 
