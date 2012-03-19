@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.2.17
+PORTVERSION=	2.2.18
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
-CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.*
+CONFLICTS=	dbmail-*-2.0.* dbmail-2.1.* dbmail-3.*
 
 OPTIONS=	MYSQL		"Build with MySQL support" on \
 		POSTGRESQL	"Build with PostgreSQL support"	off \
@@ -25,11 +27,11 @@ OPTIONS=	MYSQL		"Build with MySQL support" on \
 
 LATEST_LINK=	dbmail22
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	YES
+USE_GMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
 USE_RC_SUBR=	dbmail-pop3d.sh dbmail-lmtpd.sh dbmail-imapd.sh dbmail-timsieved.sh
 USE_GNOME=	glib20 pkgconfig
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -61,7 +63,7 @@ PLIST_SUB+=	PORTDOCS=""
 
 .if !defined(WITHOUT_MYSQL)
 CONFIGURE_ARGS+=--with-mysql
-USE_MYSQL=	YES
+USE_MYSQL=	yes
 DATABASE+=	mysql
 PLIST_SUB+=	MYSQL=""
 .else
@@ -108,7 +110,7 @@ IGNORE="requires at least one database backend selected. Run 'make config'"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -fr
-	@${FIND} ${WRKSRC} -name *.orig -type f | ${XARGS} ${RM} -fr
+	@${FIND} ${WRKSRC} -name *.orig -type f -delete
 
 post-configure:
 	@${REINPLACE_CMD} -i.orig 's!/etc/dbmail.conf!${PREFIX}/etc/dbmail.conf!g' \
