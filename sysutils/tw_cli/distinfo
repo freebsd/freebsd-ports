@@ -1,4 +1,2 @@
-SHA256 (tw_cli-freebsd-x86-9.5.3.tgz) = 546e5193de8cdaa267c1b29643f64865ebba04796d2c741d0b37a053402bb6b5
-SIZE (tw_cli-freebsd-x86-9.5.3.tgz) = 793534
-SHA256 (tw_cli-freebsd-x86_64-9.5.3.tgz) = bcc33f688c57899c95b18aa8125363f1f7f1821a3e98cf189f4b2e86247ce0af
-SIZE (tw_cli-freebsd-x86_64-9.5.3.tgz) = 806466
+SHA256 (cli_freebsd_10.2.1_9.5.4.zip) = 9305397eb23320cc65186d33ee68a49d01d0e8e46283f12fa7e99664620eda06
+SIZE (cli_freebsd_10.2.1_9.5.4.zip) = 1550003
