@@ -10,7 +10,7 @@ PORTVERSION=	2.2.17
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
-MAINTAINER=	mark_sf@kikg.ifmo.ru
+MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 LIB_DEPENDS=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
