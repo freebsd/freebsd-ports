@@ -684,6 +684,7 @@ arprelease                      ports/net/arprelease
 arpscan                         ports/net-mgmt/arpscan
 arpwatch                        ports/net-mgmt/arpwatch
 arss                            ports/audio/arss
+art                             ports/devel/art
 artemis                         ports/biology/artemis
 artha                           ports/textproc/artha
 arts                            ports/audio/arts
@@ -2219,6 +2220,7 @@ dblatex                         ports/textproc/dblatex
 dbmail                          ports/mail/dbmail
 dbmail20                        ports/mail/dbmail20
 dbmail21                        ports/mail/dbmail21
+dbmail22                        ports/mail/dbmail22
 dbmail23                        ports/mail/dbmail23
 dbow                            ports/databases/dbow
 dboxfe                          ports/emulators/dboxfe
@@ -4146,6 +4148,7 @@ gcc42                           ports/lang/gcc42
 gcc44                           ports/lang/gcc44
 gcc46                           ports/lang/gcc46
 gcc47                           ports/lang/gcc47
+gcc48                           ports/lang/gcc48
 gccmakedep                      ports/devel/gccmakedep
 gcdmaster                       ports/sysutils/gcdmaster
 gcfilms                         ports/multimedia/gcfilms
@@ -11576,6 +11579,7 @@ p5-Config-JSON                  ports/devel/p5-Config-JSON
 p5-Config-MVP                   ports/devel/p5-Config-MVP
 p5-Config-MVP-Reader-INI        ports/devel/p5-Config-MVP-Reader-INI
 p5-Config-Model                 ports/devel/p5-Config-Model
+p5-Config-MySQL                 ports/devel/p5-Config-MySQL
 p5-Config-Objective             ports/devel/p5-Config-Objective
 p5-Config-Options               ports/devel/p5-Config-Options
 p5-Config-Perl-V                ports/devel/p5-Config-Perl-V
@@ -12297,6 +12301,7 @@ p5-File-ShareDir                ports/devel/p5-File-ShareDir
 p5-File-ShareDir-Install        ports/devel/p5-File-ShareDir-Install
 p5-File-ShareDir-PAR            ports/devel/p5-File-ShareDir-PAR
 p5-File-ShareDir-PathClass      ports/devel/p5-File-ShareDir-PathClass
+p5-File-ShareDir-ProjectDistDir  ports/devel/p5-File-ShareDir-ProjectDistDir
 p5-File-Signature               ports/sysutils/p5-File-Signature
 p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
@@ -16008,6 +16013,7 @@ p5-config-json                  ports/devel/p5-Config-JSON
 p5-config-model                 ports/devel/p5-Config-Model
 p5-config-mvp                   ports/devel/p5-Config-MVP
 p5-config-mvp-reader-ini        ports/devel/p5-Config-MVP-Reader-INI
+p5-config-mysql                 ports/devel/p5-Config-MySQL
 p5-config-objective             ports/devel/p5-Config-Objective
 p5-config-options               ports/devel/p5-Config-Options
 p5-config-perl-v                ports/devel/p5-Config-Perl-V
@@ -16771,6 +16777,7 @@ p5-file-sharedir                ports/devel/p5-File-ShareDir
 p5-file-sharedir-install        ports/devel/p5-File-ShareDir-Install
 p5-file-sharedir-par            ports/devel/p5-File-ShareDir-PAR
 p5-file-sharedir-pathclass      ports/devel/p5-File-ShareDir-PathClass
+p5-file-sharedir-projectdistdir  ports/devel/p5-File-ShareDir-ProjectDistDir
 p5-file-signature               ports/sysutils/p5-File-Signature
 p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
@@ -19830,6 +19837,8 @@ pantomime                       ports/mail/pantomime
 pantry                          ports/misc/pantry
 papercut                        ports/news/papercut
 paperkey                        ports/security/paperkey
+papersize-default-a4            ports/print/papersize-default-a4
+papersize-default-letter        ports/print/papersize-default-letter
 papi                            ports/devel/papi
 paprefs                         ports/audio/paprefs
 paps                            ports/print/paps
@@ -23195,7 +23204,6 @@ py-zope.viewlet                 ports/devel/py-zope.viewlet
 py-zopeundo                     ports/devel/py-ZopeUndo
 py-zpt                          ports/textproc/py-zpt
 py-zsi                          ports/net/py-zsi
-py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
 py31-tkinter                    ports/x11-toolkits/py31-tkinter
 py_static_check                 ports/devel/py_static_check
@@ -23206,6 +23214,7 @@ pyblosxom                       ports/www/pyblosxom
 pybook                          ports/textproc/pybook
 pybookreader                    ports/deskutils/pybookreader
 pybrain                         ports/science/pybrain
+pybugz                          ports/devel/pybugz
 pycdf                           ports/science/pycdf
 pychecker                       ports/devel/pychecker
 pyching                         ports/games/pyching
