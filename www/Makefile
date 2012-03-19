@@ -1209,6 +1209,7 @@
     SUBDIR += p5-WWW-IMDb
     SUBDIR += p5-WWW-Instapaper-Client
     SUBDIR += p5-WWW-Link
+    SUBDIR += p5-WWW-LongURL
     SUBDIR += p5-WWW-Mechanize
     SUBDIR += p5-WWW-Mechanize-CGI
     SUBDIR += p5-WWW-Mechanize-Cached
