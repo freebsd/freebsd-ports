@@ -209,3 +209,4 @@ sbin/logtail2
 @dirrmtry %%DBDIR%%
 @exec mkdir -p %%RUNDIR%%
 @dirrmtry %%RUNDIR%%
+@cwd
