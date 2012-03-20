@@ -1,31 +1,31 @@
---- make.inc.orig	2010-10-01 17:17:25.000000000 +0900
-+++ make.inc	2010-12-06 20:00:25.000000000 +0900
-@@ -47,20 +47,20 @@
+--- make.inc.orig	2011-11-10 07:56:15.000000000 +0900
++++ make.inc	2011-12-03 20:22:18.000000000 +0900
+@@ -47,20 +47,19 @@
  #                  LDFLAGS = -nofor-main
  # - gfortran, set: LINKER = gfortran
  #
--CC = icc
--CFLAGS = -O3
+-CC = gcc
+-CFLAGS =
+-LINKER = gfortran
+-LDFLAGS =
 +CC = %%CC%%
 +CFLAGS = %%CFLAGS%%
- LINKER = $(CC)
--LDFLAGS =
++LINKER = $(CC)
 +LDFLAGS = %%LDFLAGS%%
  #
  # The name of the libraries to be created/linked to
  # Ensure that the libraries have the same data model (LP64/ILP64).
  #
 -LAPACKE = lapacke.a
--LIBS = ../../../lapack-3.2.1/lapack.a ../../../lapack-3.2.1/blas.a -lm
-+LAPACKE = ./lib/liblapacke.a
+-LIBS =  /Users/julie/Documents/Boulot/lapack-dev/lapack/trunk/lapack_LINUX.a \
+-        /Users/julie/Documents/Boulot/lapack-dev/lapack/trunk/blas_LINUX.a  -lm
++LAPACKE = ./lib%%LAPACKE_LIBNAME%%.a
 +LIBS = %%LAPACK%% %%BLAS%%
- #
  #  The archiver and the flag(s) to use when building archive (library)
  #  If your system has no ranlib, set RANLIB = echo.
  #
 -ARCH         = ar
--ARCHFLAGS    = cr
--RANLIB       = ranlib
 +ARCH_        = %%AR%%
-+ARCH_FLAGS   = cr
+ ARCHFLAGS    = cr
+-RANLIB       = ranlib
 +RANLIB       = %%RANLIB%%
