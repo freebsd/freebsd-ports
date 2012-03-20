@@ -3253,3 +3253,4 @@ net/v6eval||2012-03-17|Has expired: permission to use withdrawn by authors; cont
 mail/py-email||2012-03-17|Has expired: Included into all supported python versions
 net/ct||2012-03-17|Has expired: permission to use withdrawn by authors; contact portmgr for details
 databases/py25-bsddb||2012-03-18|Has expired: This was only needed for mail/py-spambayes. Now it's not
+www/p5-Apache-AddHostPath||2012-03-20|Has expired: Only works with mod_perl 1 which is removed
