@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	flashrom
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 
-MAINTAINER=	avl@FreeBSD.org
+MAINTAINER=	nukama@gmail.com
 COMMENT=	A utility for reading, writing, verifying and erasing flash ROM chips
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
 
@@ -20,14 +23,13 @@ OPTIONS=	DMIDECODE	"Use dmidecode to gather DMI information"	on \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+CPPFLAGS+=      -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=       -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lc
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 PORTDOCS=	ChangeLog COPYING README
 PLIST_FILES=	bin/${PORTNAME}
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN8=		${PORTNAME}.8
@@ -36,12 +38,12 @@ MAN8=		${PORTNAME}.8
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_DMIDECODE)
-RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 .endif
 
 .if defined(WITH_FTDI)
 USE_GNOME=	pkgconfig
-LIB_DEPENDS+=	ftdi.18:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=	ftdi.19:${PORTSDIR}/devel/libftdi
 .endif
 
 post-patch:
