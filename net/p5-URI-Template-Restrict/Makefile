@@ -15,10 +15,14 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for restricted URI Templates handler
 
 RUN_DEPENDS=	\
+	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Unicode-Normalize>0:${PORTSDIR}/textproc/p5-Unicode-Normalize \
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	\
+	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
+	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-Unicode-Normalize>0:${PORTSDIR}/textproc/p5-Unicode-Normalize \
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
