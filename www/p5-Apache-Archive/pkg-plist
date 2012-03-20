@@ -1,8 +1,0 @@
-%%SITE_PERL%%/Apache/Archive.pm
-%%SITE_PERL%%/auto/Apache/Archive/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Archive/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Archive
-@dirrm %%SITE_PERL%%/auto/Apache/Archive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/auto/Apache
-@dirrmtry %%SITE_PERL%%/Apache

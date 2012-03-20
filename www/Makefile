@@ -588,7 +588,6 @@
     SUBDIR += p5-AnyEvent-SCGI
     SUBDIR += p5-Apache-ASP
     SUBDIR += p5-Apache-Admin-Config
-    SUBDIR += p5-Apache-Archive
     SUBDIR += p5-Apache-AuthCookie
     SUBDIR += p5-Apache-AuthTicket
     SUBDIR += p5-Apache-Clean2
