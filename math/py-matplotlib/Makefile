@@ -86,7 +86,7 @@ PLIST_SUB+=	TKAGGBACKEND="@comment "
 
 .if defined(WITH_WXAGGBACKEND)
 USE_WX=		2.8+
-WX_COMPS=	python
+WX_COMPS=	python:lib
 CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
 WXAGG_BACKEND=	True
