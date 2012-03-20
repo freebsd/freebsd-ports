@@ -1,12 +1,12 @@
 --- configure.orig	2011-09-12 19:17:15.000000000 -0300
 +++ configure	2011-09-12 19:17:40.000000000 -0300
-@@ -7307,73 +7317,56 @@
+@@ -7319,73 +7320,56 @@
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $lyx_cv_with_included_boost" >&5
  $as_echo "$lyx_cv_with_included_boost" >&6; }
  	if test x$lyx_cv_with_included_boost != xyes ; then
 -		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lboost_signals" >&5
 -$as_echo_n "checking for main in -lboost_signals... " >&6; }
--if test "${ac_cv_lib_boost_signals_main+set}" = set; then :
+-if ${ac_cv_lib_boost_signals_main+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
 -  ac_check_lib_save_LIBS=$LIBS
@@ -47,13 +47,13 @@
 -fi
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_boost_signals_main" >&5
 -$as_echo "$ac_cv_lib_boost_signals_main" >&6; }
--if test "x$ac_cv_lib_boost_signals_main" = x""yes; then :
+-if test "x$ac_cv_lib_boost_signals_main" = xyes; then :
 -  lyx_boost_underscore=yes
 -fi
 -
 -		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lboost_signals-mt" >&5
 -$as_echo_n "checking for main in -lboost_signals-mt... " >&6; }
--if test "${ac_cv_lib_boost_signals_mt_main+set}" = set; then :
+-if ${ac_cv_lib_boost_signals_mt_main+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
 -  ac_check_lib_save_LIBS=$LIBS
@@ -87,7 +87,7 @@
 -fi
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_boost_signals_mt_main" >&5
 -$as_echo "$ac_cv_lib_boost_signals_mt_main" >&6; }
--if test "x$ac_cv_lib_boost_signals_mt_main" = x""yes; then :
+-if test "x$ac_cv_lib_boost_signals_mt_main" = xyes; then :
 -  lyx_boost_underscore_mt=yes
 -fi
 +
