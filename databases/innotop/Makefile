@@ -7,6 +7,7 @@
 
 PORTNAME=	innotop
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,7 +24,6 @@ RUN_DEPENDS=	p5-DBD-mysql>=3:${PORTSDIR}/databases/p5-DBD-mysql \
 		p5-DBI>=1.46:${PORTSDIR}/databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
 
-USE_MYSQL=	yes
 PERL_CONFIGURE=	yes
 
 MAN1=		innotop.1
