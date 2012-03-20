@@ -2188,6 +2188,7 @@ dasher                          ports/accessibility/dasher
 databases_flare                 ports/databases/flare
 datadesigner                    ports/devel/datadesigner
 datadraw                        ports/devel/datadraw
+datamodeler                     ports/databases/datamodeler
 datapipe                        ports/net/datapipe
 dataplot                        ports/graphics/dataplot
 davical                         ports/www/davical
@@ -11899,6 +11900,7 @@ p5-Data-Report                  ports/textproc/p5-Data-Report
 p5-Data-Rmap                    ports/devel/p5-Data-Rmap
 p5-Data-RoundRobin              ports/devel/p5-Data-RoundRobin
 p5-Data-Rx                      ports/devel/p5-Data-Rx
+p5-Data-SExpression             ports/devel/p5-Data-SExpression
 p5-Data-Section                 ports/devel/p5-Data-Section
 p5-Data-Section-Simple          ports/devel/p5-Data-Section-Simple
 p5-Data-Serializer              ports/devel/p5-Data-Serializer
@@ -12712,6 +12714,7 @@ p5-Hailo                        ports/textproc/p5-Hailo
 p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-AutoHash                ports/devel/p5-Hash-AutoHash
 p5-Hash-Case                    ports/devel/p5-Hash-Case
+p5-Hash-Diff                    ports/devel/p5-Hash-Diff
 p5-Hash-FieldHash               ports/devel/p5-Hash-FieldHash
 p5-Hash-Flatten                 ports/devel/p5-Hash-Flatten
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
@@ -14052,6 +14055,7 @@ p5-REST-Application             ports/net/p5-REST-Application
 p5-REST-Client                  ports/www/p5-REST-Client
 p5-REST-Google                  ports/net/p5-REST-Google
 p5-REST-Google-Apps-Provisioning  ports/www/p5-REST-Google-Apps-Provisioning
+p5-RPC-EPC-Service              ports/net/p5-RPC-EPC-Service
 p5-RPC-Simple                   ports/net/p5-RPC-Simple
 p5-RPC-XML                      ports/net/p5-RPC-XML
 p5-RRD-Simple                   ports/databases/p5-RRD-Simple
@@ -14963,6 +14967,7 @@ p5-WWW-Hotmail                  ports/mail/p5-WWW-Hotmail
 p5-WWW-IMDb                     ports/www/p5-WWW-IMDb
 p5-WWW-Instapaper-Client        ports/www/p5-WWW-Instapaper-Client
 p5-WWW-Link                     ports/www/p5-WWW-Link
+p5-WWW-LongURL                  ports/www/p5-WWW-LongURL
 p5-WWW-Mechanize                ports/www/p5-WWW-Mechanize
 p5-WWW-Mechanize-CGI            ports/www/p5-WWW-Mechanize-CGI
 p5-WWW-Mechanize-Cached         ports/www/p5-WWW-Mechanize-Cached
@@ -16261,6 +16266,7 @@ p5-data-rx                      ports/devel/p5-Data-Rx
 p5-data-section                 ports/devel/p5-Data-Section
 p5-data-section-simple          ports/devel/p5-Data-Section-Simple
 p5-data-serializer              ports/devel/p5-Data-Serializer
+p5-data-sexpression             ports/devel/p5-Data-SExpression
 p5-data-showtable               ports/devel/p5-Data-ShowTable
 p5-data-spreadpagination        ports/textproc/p5-Data-SpreadPagination
 p5-data-stag                    ports/devel/p5-Data-Stag
@@ -17012,6 +17018,7 @@ p5-hailo                        ports/textproc/p5-Hailo
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-autohash                ports/devel/p5-Hash-AutoHash
 p5-hash-case                    ports/devel/p5-Hash-Case
+p5-hash-diff                    ports/devel/p5-Hash-Diff
 p5-hash-fieldhash               ports/devel/p5-Hash-FieldHash
 p5-hash-flatten                 ports/devel/p5-Hash-Flatten
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
@@ -18622,6 +18629,7 @@ p5-rose-html-objects            ports/www/p5-Rose-HTML-Objects
 p5-rose-object                  ports/devel/p5-Rose-Object
 p5-rose-uri                     ports/net/p5-Rose-URI
 p5-router-simple                ports/www/p5-Router-Simple
+p5-rpc-epc-service              ports/net/p5-RPC-EPC-Service
 p5-rpc-simple                   ports/net/p5-RPC-Simple
 p5-rpc-xml                      ports/net/p5-RPC-XML
 p5-rpm-build-perl               ports/devel/p5-rpm-build-perl
@@ -19533,6 +19541,7 @@ p5-www-imdb                     ports/www/p5-WWW-IMDb
 p5-www-instapaper-client        ports/www/p5-WWW-Instapaper-Client
 p5-www-itunesconnect            ports/www/p5-WWW-iTunesConnect
 p5-www-link                     ports/www/p5-WWW-Link
+p5-www-longurl                  ports/www/p5-WWW-LongURL
 p5-www-mechanize                ports/www/p5-WWW-Mechanize
 p5-www-mechanize-cached         ports/www/p5-WWW-Mechanize-Cached
 p5-www-mechanize-cgi            ports/www/p5-WWW-Mechanize-CGI
@@ -26912,6 +26921,7 @@ usbutils                        ports/sysutils/usbutils
 uschedule                       ports/sysutils/uschedule
 usendmail                       ports/mail/usendmail
 useracc                         ports/databases/useracc
+userfw                          ports/net/userfw
 userinfo                        ports/sysutils/userinfo
 userlist                        ports/sysutils/userlist
 usermanager                     ports/www/usermanager
