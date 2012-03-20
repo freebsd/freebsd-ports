@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI-EncryptForm
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARAL
@@ -14,6 +15,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Implement trusted stateful CGI Form Data using cryptography
+
+BUILD_DEPENDS=	p5-Crypt-HCE_SHA>=0:${PORTSDIR}/security/p5-Crypt-HCE_SHA \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
