@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Net/LDAP/Server/Test.pm
+%%SITE_PERL%%/mach/auto/Net/LDAP/Server/Test/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Net/LDAP/Server/Test
+@dirrmtry %%SITE_PERL%%/Net/LDAP/Server
