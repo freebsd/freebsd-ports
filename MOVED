@@ -3259,3 +3259,4 @@ editors/openoffice.org-3-RC||2012-03-20|Removed
 graphics/vrml2pov||2012-03-21|Has expired: "unfetchable"
 net-p2p/fidelio||2012-03-21|Has expired: Hotline services does not exists anymore
 japanese/postgresql-tcltk||2012-03-21|Has expired: Broken for months with no-one caring, superseded by http://pgtclng.sourceforge.net/
+databases/postgresql-tcltk|databases/pgtcl|2012-03-21|Has expired: Broken for months with no-one caring, superseded by http://pgtclng.sourceforge.net/
