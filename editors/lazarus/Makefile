@@ -36,8 +36,10 @@ SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+.if !defined(WITHOUT_LAZARUS_OPTIONS)
 OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	on \
 		QT4	"Use qt4 interface" off
+.endif
 
 .include <bsd.port.pre.mk>
 
