@@ -3,16 +3,19 @@ mysqlbackup: create MySQL-database servers backup easy
 Why mysqlbackup?
 
 1. Requires minimum coding to create everyday MySQL-backups with some
-additional functions.
+   additional functions.
 
 2. Backups can be compressed on-the-fly and automatically rotated after
-specified number of a days past.
+   specified number of a days past.
 
-3. Includes basic database maintenance: check, optimize tables before
-backup creation.
+3. "Slave mode" feature - stop slave, save it's status and then create backup.
+   Start slave afterwards.
 
-4. It can be safely used on a large MySQL installations (1000+ databases).
+4. Includes basic database maintenance: check, optimize tables before backup
+   creation.
 
-5. It is written in sh - code interpreter available in a base system.
+5. It can be safely used on a large MySQL installations (1000+ databases).
+
+6. It is written in sh - code interpreter available in a base system.
 
 WWW: https://mysqlbackup.googlecode.com
