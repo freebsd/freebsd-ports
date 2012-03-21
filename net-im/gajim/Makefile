@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.14.4
+PORTVERSION=	0.15
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.gajim.org/downloads/0.14/
+MASTER_SITES=	http://www.gajim.org/downloads/0.15/
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -16,22 +16,25 @@ COMMENT=	Gajim is a Jabber client based on a plugin system
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_PORTVERSION}:${PORTSDIR}/databases/py-sqlite3
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
 
+FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pygtk2
-USE_PYTHON=	2.5+
+USE_GNOME=	pygnomedesktop pygtk2
+USE_PYTHON=	-2.7
 USE_XORG=	x11 xext xscrnsaver
 
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	DBUS "Adds support for D-Bus (Desktop Bus)" On \
+OPTIONS=	CRYPTO "End to end encryption support" Off \
+		DBUS "Adds support for D-Bus (Desktop Bus)" On \
 		NLS "Native Language Support via gettext utilities" On
 
 .include <bsd.port.options.mk>
@@ -45,14 +48,14 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_DBUS)
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 .endif
 
-MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
+.if defined(WITH_CRYPTO)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
+.endif
 
-EMOTICONS=	animated static static-big tango
-ICONSETS=	dcraven gnome goojim gota jabberbulb sun transports wroop
+MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
 
 pre-build:
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
