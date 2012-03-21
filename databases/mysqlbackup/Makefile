@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mysqlbackup
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+MASTER_SITES=	GOOGLE_CODE \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
