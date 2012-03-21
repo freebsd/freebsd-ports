@@ -100,6 +100,7 @@ DarwinStreamingSrvr*-Source.tar net/DarwinStreamingServer Server License
 						restrictions, see
 						http://www.opensource.apple.com/apsl/
 darwinia-demo		games/linux-darwinia-demo Redistribution limited
+datamodeler		databases/datmodeler	Packaging prohibited by Oracle license
 dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
