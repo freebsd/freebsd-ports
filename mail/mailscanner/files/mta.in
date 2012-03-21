@@ -23,7 +23,7 @@
 #			  to "/var/run/sendmail.pid" or "/var/run/exim.pid"
 #
 #
-# ATTENTION: All of the above entries are necessary in order for mta.sh to work correctly!
+# ATTENTION: All of the above entries are necessary in order for mta to work correctly!
 #
 
 #

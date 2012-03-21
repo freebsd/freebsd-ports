@@ -1,3 +1,9 @@
+Version 4.84.5_1
+================
+- Added patch for TNEF.pm bug
+- Fixed creation of mailscanner.cf symlink
+- Minor doc updates
+
 Version 4.84.5
 ==============
 - Upgrade to 4.84.5

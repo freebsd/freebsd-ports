@@ -1,4 +1,4 @@
-.TH "MailScanner" "8" "4.52.2" "Julian Field" "Mail"
+.TH "MailScanner" "8" "%%PORTVERSION%%" "Julian Field" "Mail"
 .SH "NAME"
 .LP 
 MailScanner \- Virus/Spam Scanner for Sendmail, Exim and Postfix
