@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -49,10 +49,6 @@ OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		UMFPACK "Build with umfpack" OFF
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 900000 && ${ARCH} == "amd64"
-BROKEN=		segfaults during build
-.endif
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
@@ -140,7 +136,8 @@ USE_XORG=	x11
 
 CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook \
-			--enable-build-help
+			--enable-build-help \
+			--enable-build-swig
 PLIST_SUB+=		WITHOUT_GUI="@comment "
 .endif
 
@@ -201,6 +198,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"x=" ==|"x" =|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"x" ==|"x" =|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sparc64-\*-netbsd\*|amd64-\*-freebsd\*|' ${WRKSRC}/configure
 	@# Build fixes
 	@${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
 	@${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
@@ -234,6 +232,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/scilab|${DATADIR}|' ${WRKSRC}/desktop/scilab.desktop
 	@${REINPLACE_CMD} -e 's|/usr/share/scilab-cli|${DATADIR}|' \
 		${WRKSRC}/desktop/scilab-adv-cli.desktop ${WRKSRC}/desktop/scilab-cli.desktop
+.if ${OSVERSION} < 900000 && ${ARCH} == "amd64"
+	@# Avoids segfault when building help
+	@${REINPLACE_CMD} 's|JIT|NONE|' ${WRKSRC}/etc/jvm_options.xml
+.endif
 .else
 	@${REINPLACE_CMD} -e '/^check-local:/,/^$$/s/scilab-adv-cli/scilab-cli/g' \
 		${WRKSRC}/Makefile.in
