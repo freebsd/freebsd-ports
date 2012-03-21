@@ -152,10 +152,12 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/runner_clnt.pyc
 %%DATADIR%%/runner_core.py
 %%DATADIR%%/runner_core.pyc
-%%DATADIR%%/runner_lst.py
-%%DATADIR%%/runner_lst.pyc
 %%DATADIR%%/runner_rendezvous.py
 %%DATADIR%%/runner_rendezvous.pyc
+%%DATADIR%%/runner_tests.py
+%%DATADIR%%/runner_tests.pyc
+%%DATADIR%%/runner_updates.py
+%%DATADIR%%/runner_updates.pyc
 %%DATADIR%%/server.py
 %%DATADIR%%/server.pyc
 %%DATADIR%%/simplejson/__init__.py
@@ -188,6 +190,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/system/win32.pyc
 %%DATADIR%%/updater/unix.py
 %%DATADIR%%/updater/unix.pyc
+%%DATADIR%%/updater_install.py
+%%DATADIR%%/updater_install.pyc
 %%DATADIR%%/utils/__init__.py
 %%DATADIR%%/utils/__init__.pyc
 %%DATADIR%%/utils/blocks.py
@@ -271,3 +275,4 @@ share/icons/hicolor/scalable/apps/neubot.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry %%STATEDIR%%
