@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.84.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -51,10 +52,11 @@ PATCHLEVEL=	2
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_FILES=	MailScanner.8 pkg-message pkg-install pkg-deinstall
 SUB_LIST=	DATADIR=${DATADIR} \
 		PERL=${PERL} \
 		PKGVERSION=${PKGVERSION} \
+		PORTVERSION=${PORTVERSION} \
 		ETC_FILES="${ETC_FILES}" \
 		MCP_FILES="${MCP_FILES}"
 
@@ -79,10 +81,12 @@ PLIST_SUB+=	SPAMASSASSIN="@comment "
 WITHOUT_SPAMASSASSIN_SYMLINK=${NO_SPAMASSASSIN_SYMLINK}
 .endif
 
-.if defined(WITHOUT_SPAMASSASSIN_SYMLINK)
+.if defined(WITHOUT_SPAMASSASSIN_SYMLINK) || defined(WITHOUT_SPAMASSASSIN)
 PLIST_SUB+=	SPAMASSASSIN_SYMLINK="@comment "
+SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=yes
 .else
 PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
+SUB_LIST+=	WITHOUT_SPAMASSASSIN_SYMLINK=no
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
@@ -272,18 +276,13 @@ do-install:
 .else
 	@${ECHO_MSG} -n ">> Installing manpage..."
 .endif
-	@cd ${FILESDIR} && \
+	@cd ${WRKDIR} && \
 		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
 	@${ECHO_MSG} " [DONE]"
 
 post-install:
-.if defined(WITH_SPAMASSASSIN) && !defined(WITHOUT_SPAMASSASSIN_SYMLINK)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.else
-	@${SETENV} PKG_PREFIX=${PREFIX} WITHOUT_SPAMASSASSIN_SYMLINK=yes \
-	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
