@@ -2867,6 +2867,7 @@ eclipse-clay-core               ports/java/eclipse-clay-core
 eclipse-datatools               ports/java/eclipse-datatools
 eclipse-devel                   ports/java/eclipse-devel
 eclipse-drjava                  ports/java/eclipse-drjava
+eclipse-ecj                     ports/java/eclipse-ecj
 eclipse-eclemma                 ports/devel/eclipse-eclemma
 eclipse-emf                     ports/java/eclipse-emf
 eclipse-epic                    ports/java/eclipse-EPIC
@@ -10646,8 +10647,6 @@ openobex                        ports/comms/openobex
 openocd                         ports/devel/openocd
 openoffice-3-devel              ports/editors/openoffice-3-devel
 openoffice.org-3                ports/editors/openoffice.org-3
-openoffice.org-3-RC             ports/editors/openoffice.org-3-RC
-openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
 openoffice.org-vcltesttool      ports/editors/openoffice.org-vcltesttool
 openospfd                       ports/net/openospfd
 openpgpsdk                      ports/security/openpgpsdk
@@ -10878,9 +10877,7 @@ p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-AnyMQ                        ports/devel/p5-AnyMQ
 p5-AnyMQ-AMQP                   ports/net/p5-AnyMQ-AMQP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
-p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config          ports/www/p5-Apache-Admin-Config
-p5-Apache-Archive               ports/www/p5-Apache-Archive
 p5-Apache-AuthCookie            ports/www/p5-Apache-AuthCookie
 p5-Apache-AuthTicket            ports/www/p5-Apache-AuthTicket
 p5-Apache-Clean2                ports/www/p5-Apache-Clean2
@@ -15327,9 +15324,7 @@ p5-anyevent-twitter-stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-anymq                        ports/devel/p5-AnyMQ
 p5-anymq-amqp                   ports/net/p5-AnyMQ-AMQP
-p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
-p5-apache-archive               ports/www/p5-Apache-Archive
 p5-apache-asp                   ports/www/p5-Apache-ASP
 p5-apache-authcookie            ports/www/p5-Apache-AuthCookie
 p5-apache-authticket            ports/www/p5-Apache-AuthTicket
