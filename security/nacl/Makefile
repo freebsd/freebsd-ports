@@ -17,8 +17,6 @@ ALL_TARGET=	do
 USE_BZIP2=	YES
 MAKE_JOBS_UNSAFE=	YES
 
-BROKEN=		fails to install
-
 .include <bsd.port.pre.mk>
 
 HOSTNAME_CMD?=	/bin/hostname
