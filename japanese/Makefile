@@ -252,7 +252,6 @@
     SUBDIR += platex-jsclasses
     SUBDIR += platex-otf
     SUBDIR += platex209
-    SUBDIR += postgresql-tcltk
     SUBDIR += postgresql73-man
     SUBDIR += postgresql74-man
     SUBDIR += postgresql80-man
