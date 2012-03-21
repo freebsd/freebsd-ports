@@ -7,16 +7,19 @@
 
 PORTNAME=	pgaccess
 PORTVERSION=	0.99.0.20040219
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases tcl tk
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgsql@FreeBSD.org
 COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
 
-LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk
+BUILD_DEPENDS+=	${RUN_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:${PORTSDIR}/databases/pgtcl
+
+USE_PGSQL=	server:extract
 
 TCLVERSION?=	8.4
 DOCSDIR=	${PREFIX}/share/doc/postgresql/${PORTNAME}
