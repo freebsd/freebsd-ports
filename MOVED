@@ -3256,3 +3256,5 @@ databases/py25-bsddb||2012-03-18|Has expired: This was only needed for mail/py-s
 www/p5-Apache-AddHostPath||2012-03-20|Has expired: Only works with mod_perl 1 which is removed
 www/p5-Apache-Archive||2012-03-20|Has expired: Requires mod_perl 1 which is gone
 editors/openoffice.org-3-RC||2012-03-20|Removed
+graphics/vrml2pov||2012-03-21|Has expired: "unfetchable"
+net-p2p/fidelio||2012-03-21|Has expired: Hotline services does not exists anymore
