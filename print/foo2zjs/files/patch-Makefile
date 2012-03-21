@@ -1,6 +1,6 @@
---- Makefile.orig	2011-06-09 18:07:08.000000000 +0400
-+++ Makefile	2011-06-19 21:14:01.911619475 +0400
-@@ -17,9 +17,7 @@ SYSNAME := $(shell uname -n)
+--- Makefile.orig	2011-06-09 15:07:08.000000000 +0100
++++ Makefile	2012-03-21 19:59:55.548558697 +0000
+@@ -17,9 +17,7 @@
  VERSION=0.0
  
  # Installation prefix...
@@ -11,7 +11,7 @@
  
  # Pathnames for this package...
  BIN=$(PREFIX)/bin
-@@ -31,13 +29,14 @@ SHARELAVA=$(PREFIX)/share/foo2lava
+@@ -31,13 +29,14 @@
  SHAREQPDL=$(PREFIX)/share/foo2qpdl
  SHARESLX=$(PREFIX)/share/foo2slx
  SHAREHC=$(PREFIX)/share/foo2hiperc
@@ -29,7 +29,7 @@
  
  # User ID's
  LPuid=-oroot
-@@ -282,7 +281,7 @@ endif
+@@ -282,7 +281,7 @@
  
  # Compiler flags
  #CFLAGS +=	-O2 -Wall -Wno-unused-but-set-variable
@@ -38,7 +38,7 @@
  #CFLAGS +=	-g
  
  #
-@@ -556,10 +555,9 @@ command2foo2lava-pjl.o: command2foo2lava
+@@ -556,10 +555,9 @@
  #
  # Installation rules
  #
@@ -52,7 +52,7 @@
  	#
  	# If you use CUPS, then restart the spooler:
  	#	make cups
-@@ -595,7 +593,7 @@ install-test:
+@@ -595,7 +593,7 @@
  	#
      
  
@@ -61,7 +61,7 @@
  
  install-prog:
  	#
-@@ -625,20 +623,13 @@ install-foo:
+@@ -625,20 +623,13 @@
  	#
  	# Remove obsolete foomatic database files from previous versions
  	#
@@ -85,7 +85,7 @@
  		echo install -d $(FOODB)/$$dir/; \
  		$(INSTALL) -d $(FOODB)/$$dir/; \
  		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
-@@ -655,15 +646,6 @@ install-foo:
+@@ -655,15 +646,6 @@
  	    echo "*** ... wherever foomatic is stashed on your machine."; \
  	    echo "***"; \
  	fi
@@ -101,7 +101,7 @@
  
  install-icc2ps:
  	#
-@@ -783,9 +765,9 @@ install-extra:
+@@ -783,9 +765,9 @@
  	    fi; \
  	done
  
@@ -114,15 +114,15 @@
  VARPPD=/var/lp/ppd
  install-ppd:
  	#
-@@ -819,6 +801,7 @@ install-ppd:
+@@ -819,6 +801,7 @@
  	fi
  	#
  	export PATH=$$PATH:`pwd`:; \
-+	mkdir -p $(MODEL)
++	mkdir -p $(MODEL) ; \
  	if [ -d $(MODEL) ]; then \
  	    rm -f $(MODEL)/KonicaMinolta*; \
  	    cd PPD; \
-@@ -835,9 +818,9 @@ install-ppd:
+@@ -835,9 +818,9 @@
  	    done; \
  	fi
  
@@ -135,7 +135,7 @@
  
  install-desktop:
  	#
-@@ -1344,38 +1327,38 @@ install-man: man
+@@ -1344,38 +1327,38 @@
  	#
  	# Install manual pages
  	#
