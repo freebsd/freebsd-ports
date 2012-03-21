@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.7.1
-PORTREVISION=	1
+PORTVERSION=	2.8.7.2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
+MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:R}rel.${PORTVERSION:E}
 
 MAINTAINER=	jharris@widomaker.com
@@ -60,22 +59,32 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=--enable-default-colors
 .endif
 
-MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
-MAKEFILE=	makefile
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=--disable-local-docs
+INSTALL_TARGET=	install
+DOCSDIR=
+L_HELP=
+.else
 INSTALL_TARGET=	install-full
+L_HELP=		${PREFIX}/share/lynx_help
+MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
+.endif
+
+MAKEFILE=	makefile
 MAN1=		lynx.1
 
 L_LIB=		${PREFIX}/etc
-L_HELP=		${PREFIX}/share/lynx_help
 
 SUB_FILES=	pkg-message
 
-post-patch:
-	@${RM} -f ${WRKSRC}/CHANGES.orig
-
 post-install:
+.if defined(NOPORTDOCS)
+	[ -f ${L_LIB}/lynx.cfg ] || ${INSTALL} ${L_LIB}/lynx.cfg.sample ${L_LIB}/lynx.cfg
+	[ -f ${L_LIB}/lynx.lss ] || ${INSTALL} ${L_LIB}/lynx.lss.sample ${L_LIB}/lynx.lss
+.else
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
+.endif
 	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
 
 .include <bsd.port.post.mk>
