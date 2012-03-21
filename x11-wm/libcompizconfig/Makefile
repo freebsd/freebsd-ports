@@ -7,7 +7,7 @@
 
 PORTNAME=	libcompizconfig
 PORTVERSION=	0.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -27,14 +27,7 @@ USE_GNOME=	gnomehack intltool libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-post-patch:
-	echo ${OSVERSION}
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
-		${WRKSRC}/src/main.c			\
-		${WRKSRC}/src/lists.c			\
-		${WRKSRC}/src/filewatch.c		\
-		${WRKSRC}/src/ini.c			\
-		${WRKSRC}/backend/ini.c
+OPTIONS=	INOTIFY "Enable inotify support" on
 
 .include <bsd.port.pre.mk>
 
@@ -42,5 +35,22 @@ post-patch:
     ((${OSVERSION} >= 900000) && (${OSVERSION} < 900006))
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-compiz.cpp
 .endif
+
+.if !defined(WITHOUT_INOTIFY)
+LIB_DEPENDS+=	inotify.0:${PORTSDIR}/devel/libinotify
+LDFLAGS+=	-linotify
+.endif
+
+post-patch:
+.if defined(WITHOUT_INOTIFY)
+	@${REINPLACE_CMD} -e 's|sys/inotify.h||' ${WRKSRC}/configure
+.endif
+	@echo "OSVERSION=${OSVERSION}"
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
+		${WRKSRC}/src/main.c			\
+		${WRKSRC}/src/lists.c			\
+		${WRKSRC}/src/filewatch.c		\
+		${WRKSRC}/src/ini.c			\
+		${WRKSRC}/backend/ini.c
 
 .include <bsd.port.post.mk>
