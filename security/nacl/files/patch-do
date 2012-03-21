@@ -1,5 +1,14 @@
---- do.old	2012-02-18 18:05:07.000000000 -0800
-+++ do	2012-02-18 18:06:49.000000000 -0800
+--- do.orig	2011-02-20 17:49:34.000000000 -0800
++++ do	2012-03-20 16:49:10.324256193 -0700
+@@ -6,7 +6,7 @@
+ 
+ version=`cat version`
+ project=nacl
+-shorthostname=`hostname | sed 's/\..*//' | tr -cd '[a-z][A-Z][0-9]'`
++shorthostname=`hostname -s`
+ 
+ top="`pwd`/build/$shorthostname"
+ bin="$top/bin"
 @@ -38,8 +38,8 @@
  mkdir -p "$lib"
  mkdir -p "$include"
