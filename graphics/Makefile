@@ -975,7 +975,6 @@
     SUBDIR += visionworkbench
     SUBDIR += visprint
     SUBDIR += vp
-    SUBDIR += vrml2pov
     SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune

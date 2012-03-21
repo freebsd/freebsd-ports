@@ -26,7 +26,6 @@
     SUBDIR += eiskaltdcpp-gtk
     SUBDIR += eiskaltdcpp-lib
     SUBDIR += eiskaltdcpp-qt
-    SUBDIR += fidelio
     SUBDIR += frost
     SUBDIR += gkremldk
     SUBDIR += gnewtellium

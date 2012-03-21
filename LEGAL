@@ -496,7 +496,6 @@ VTK-*			math/vtk		Portions contain patented
 vtkmpeg2encode.tar.gz	multimedia/vtkmpeg2encode	The MPEG2 format and
 						all software that uses it is
 						subject to patent restrictions
-vrml2pov-src*		graphics/vrml2pov	Redistribution is not allowed
 waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not
 						free
 warsow/*		games/linux-warsow	Redistribution is limited, art
