@@ -6,18 +6,18 @@ FEATURES:
  * Tabbed chat window
  * Group chat support (with MUC protocol)
  * Emoticons, Avatars, File transfer, Room Bookmarks
+ * Audio / video conferences
  * Metacontacts Support
  * Trayicon, Speller, extented chat history functionalities
- * TLS and GPG support (with SSL legacy support)
+ * TLS, GPG and End-To-End encryption support (with SSL legacy support)
  * Transport Registration support
  * Service Discovery including Nodes
  * Wikipedia, dictionary and search engine lookup
  * Multiple accounts support
- * DBus Capabilities.
+ * DBus Capabilities
  * XML Console
- * Gajim is available in 16 languages
+ * Link local (bonjour / zeroconf), BOSH
+ * Other features via plugins
+ * Gajim is available in 25 languages
 
-You might want to install deskutils/notification-daemon for pretty
-pop-ups or devel/py-psyco for improved Python performance.
-
-WWW: http://www.gajim.org/
+WWW:	http://www.gajim.org/

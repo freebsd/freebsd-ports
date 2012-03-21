@@ -2,13 +2,6 @@ bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
 share/applications/gajim.desktop
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.html
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/THANKS.artists
 %%DATADIR%%/data/activities/default/doing_chores/buying_groceries.png
 %%DATADIR%%/data/activities/default/doing_chores/category.png
 %%DATADIR%%/data/activities/default/doing_chores/cleaning.png
@@ -275,7 +268,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/gui/adhoc_commands_window.ui
 %%DATADIR%%/data/gui/advanced_configuration_window.ui
 %%DATADIR%%/data/gui/advanced_menuitem_menu.ui
-%%DATADIR%%/data/gui/advanced_notifications_window.ui
+%%DATADIR%%/data/gui/archiving_preferences_window.ui
 %%DATADIR%%/data/gui/atom_entry_window.ui
 %%DATADIR%%/data/gui/blocked_contacts_window.ui
 %%DATADIR%%/data/gui/change_activity_dialog.ui
@@ -302,6 +295,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/gui/history_window.ui
 %%DATADIR%%/data/gui/input_dialog.ui
 %%DATADIR%%/data/gui/input_text_dialog.ui
+%%DATADIR%%/data/gui/item_archiving_preferences_window.ui
 %%DATADIR%%/data/gui/join_groupchat_window.ui
 %%DATADIR%%/data/gui/manage_bookmarks_window.ui
 %%DATADIR%%/data/gui/manage_pep_services_window.ui
@@ -309,6 +303,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/gui/manage_sounds_window.ui
 %%DATADIR%%/data/gui/message_window.ui
 %%DATADIR%%/data/gui/passphrase_dialog.ui
+%%DATADIR%%/data/gui/plugins_window.ui
 %%DATADIR%%/data/gui/popup_notification_window.ui
 %%DATADIR%%/data/gui/preferences_window.ui
 %%DATADIR%%/data/gui/privacy_list_window.ui
@@ -881,6 +876,10 @@ share/applications/gajim.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-warning.png
 %%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
+%%DATADIR%%/plugins/plugin_installer/__init__.py
+%%DATADIR%%/plugins/plugin_installer/config_dialog.ui
+%%DATADIR%%/plugins/plugin_installer/manifest.ini
+%%DATADIR%%/plugins/plugin_installer/plugin_installer.py
 %%DATADIR%%/src/adhoc_commands.py
 %%DATADIR%%/src/adhoc_commands.pyc
 %%DATADIR%%/src/adhoc_commands.pyo
@@ -899,9 +898,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/command_system/__init__.py
 %%DATADIR%%/src/command_system/__init__.pyc
 %%DATADIR%%/src/command_system/__init__.pyo
-%%DATADIR%%/src/command_system/dispatching.py
-%%DATADIR%%/src/command_system/dispatching.pyc
-%%DATADIR%%/src/command_system/dispatching.pyo
+%%DATADIR%%/src/command_system/dispatcher.py
+%%DATADIR%%/src/command_system/dispatcher.pyc
+%%DATADIR%%/src/command_system/dispatcher.pyo
 %%DATADIR%%/src/command_system/errors.py
 %%DATADIR%%/src/command_system/errors.pyc
 %%DATADIR%%/src/command_system/errors.pyo
@@ -914,6 +913,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/command_system/implementation/custom.py
 %%DATADIR%%/src/command_system/implementation/custom.pyc
 %%DATADIR%%/src/command_system/implementation/custom.pyo
+%%DATADIR%%/src/command_system/implementation/execute.py
+%%DATADIR%%/src/command_system/implementation/execute.pyc
+%%DATADIR%%/src/command_system/implementation/execute.pyo
 %%DATADIR%%/src/command_system/implementation/hosts.py
 %%DATADIR%%/src/command_system/implementation/hosts.pyc
 %%DATADIR%%/src/command_system/implementation/hosts.pyo
@@ -926,12 +928,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/command_system/mapping.py
 %%DATADIR%%/src/command_system/mapping.pyc
 %%DATADIR%%/src/command_system/mapping.pyo
-%%DATADIR%%/src/common/GnuPG.py
-%%DATADIR%%/src/common/GnuPG.pyc
-%%DATADIR%%/src/common/GnuPG.pyo
-%%DATADIR%%/src/common/GnuPGInterface.py
-%%DATADIR%%/src/common/GnuPGInterface.pyc
-%%DATADIR%%/src/common/GnuPGInterface.pyo
+%%DATADIR%%/src/command_system/tools.py
+%%DATADIR%%/src/command_system/tools.pyc
+%%DATADIR%%/src/command_system/tools.pyo
 %%DATADIR%%/src/common/__init__.py
 %%DATADIR%%/src/common/__init__.pyc
 %%DATADIR%%/src/common/__init__.pyo
@@ -944,6 +943,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/caps_cache.py
 %%DATADIR%%/src/common/caps_cache.pyc
 %%DATADIR%%/src/common/caps_cache.pyo
+%%DATADIR%%/src/common/check_X509.py
+%%DATADIR%%/src/common/check_X509.pyc
+%%DATADIR%%/src/common/check_X509.pyo
 %%DATADIR%%/src/common/check_paths.py
 %%DATADIR%%/src/common/check_paths.pyc
 %%DATADIR%%/src/common/check_paths.pyo
@@ -962,6 +964,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/connection_handlers.py
 %%DATADIR%%/src/common/connection_handlers.pyc
 %%DATADIR%%/src/common/connection_handlers.pyo
+%%DATADIR%%/src/common/connection_handlers_events.py
+%%DATADIR%%/src/common/connection_handlers_events.pyc
+%%DATADIR%%/src/common/connection_handlers_events.pyo
 %%DATADIR%%/src/common/contacts.py
 %%DATADIR%%/src/common/contacts.pyc
 %%DATADIR%%/src/common/contacts.pyo
@@ -977,6 +982,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/defs.py
 %%DATADIR%%/src/common/defs.pyc
 %%DATADIR%%/src/common/defs.pyo
+%%DATADIR%%/src/common/demandimport.py
+%%DATADIR%%/src/common/demandimport.pyc
+%%DATADIR%%/src/common/demandimport.pyo
 %%DATADIR%%/src/common/dh.py
 %%DATADIR%%/src/common/dh.pyc
 %%DATADIR%%/src/common/dh.pyo
@@ -995,6 +1003,12 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/ged.py
 %%DATADIR%%/src/common/ged.pyc
 %%DATADIR%%/src/common/ged.pyo
+%%DATADIR%%/src/common/gnupg.py
+%%DATADIR%%/src/common/gnupg.pyc
+%%DATADIR%%/src/common/gnupg.pyo
+%%DATADIR%%/src/common/gpg.py
+%%DATADIR%%/src/common/gpg.pyc
+%%DATADIR%%/src/common/gpg.pyo
 %%DATADIR%%/src/common/helpers.py
 %%DATADIR%%/src/common/helpers.pyc
 %%DATADIR%%/src/common/helpers.pyo
@@ -1034,9 +1048,15 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/logging_helpers.py
 %%DATADIR%%/src/common/logging_helpers.pyc
 %%DATADIR%%/src/common/logging_helpers.pyo
+%%DATADIR%%/src/common/message_archiving.py
+%%DATADIR%%/src/common/message_archiving.pyc
+%%DATADIR%%/src/common/message_archiving.pyo
 %%DATADIR%%/src/common/multimedia_helpers.py
 %%DATADIR%%/src/common/multimedia_helpers.pyc
 %%DATADIR%%/src/common/multimedia_helpers.pyo
+%%DATADIR%%/src/common/nec.py
+%%DATADIR%%/src/common/nec.pyc
+%%DATADIR%%/src/common/nec.pyo
 %%DATADIR%%/src/common/optparser.py
 %%DATADIR%%/src/common/optparser.pyc
 %%DATADIR%%/src/common/optparser.pyo
@@ -1115,6 +1135,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/xmpp/simplexml.py
 %%DATADIR%%/src/common/xmpp/simplexml.pyc
 %%DATADIR%%/src/common/xmpp/simplexml.pyo
+%%DATADIR%%/src/common/xmpp/smacks.py
+%%DATADIR%%/src/common/xmpp/smacks.pyc
+%%DATADIR%%/src/common/xmpp/smacks.pyo
 %%DATADIR%%/src/common/xmpp/stringprepare.py
 %%DATADIR%%/src/common/xmpp/stringprepare.pyc
 %%DATADIR%%/src/common/xmpp/stringprepare.pyo
@@ -1229,9 +1252,30 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/notify.py
 %%DATADIR%%/src/notify.pyc
 %%DATADIR%%/src/notify.pyo
+%%DATADIR%%/src/plugins/__init__.py
+%%DATADIR%%/src/plugins/__init__.pyc
+%%DATADIR%%/src/plugins/__init__.pyo
+%%DATADIR%%/src/plugins/gui.py
+%%DATADIR%%/src/plugins/gui.pyc
+%%DATADIR%%/src/plugins/gui.pyo
+%%DATADIR%%/src/plugins/helpers.py
+%%DATADIR%%/src/plugins/helpers.pyc
+%%DATADIR%%/src/plugins/helpers.pyo
+%%DATADIR%%/src/plugins/plugin.py
+%%DATADIR%%/src/plugins/plugin.pyc
+%%DATADIR%%/src/plugins/plugin.pyo
+%%DATADIR%%/src/plugins/pluginmanager.py
+%%DATADIR%%/src/plugins/pluginmanager.pyc
+%%DATADIR%%/src/plugins/pluginmanager.pyo
+%%DATADIR%%/src/plugins/plugins_i18n.py
+%%DATADIR%%/src/plugins/plugins_i18n.pyc
+%%DATADIR%%/src/plugins/plugins_i18n.pyo
 %%DATADIR%%/src/profile_window.py
 %%DATADIR%%/src/profile_window.pyc
 %%DATADIR%%/src/profile_window.pyo
+%%DATADIR%%/src/pycallgraph.py
+%%DATADIR%%/src/pycallgraph.pyc
+%%DATADIR%%/src/pycallgraph.pyo
 %%DATADIR%%/src/remote_control.py
 %%DATADIR%%/src/remote_control.pyc
 %%DATADIR%%/src/remote_control.pyo
@@ -1253,6 +1297,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/tooltips.py
 %%DATADIR%%/src/tooltips.pyc
 %%DATADIR%%/src/tooltips.pyo
+%%DATADIR%%/src/upower_listener.py
+%%DATADIR%%/src/upower_listener.pyc
+%%DATADIR%%/src/upower_listener.pyo
 %%DATADIR%%/src/vcard.py
 %%DATADIR%%/src/vcard.pyc
 %%DATADIR%%/src/vcard.pyo
@@ -1290,11 +1337,13 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gajim.mo
+@dirrmtry share/applications
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrm %%DATADIR%%/src/plugins
 @dirrm %%DATADIR%%/src/common/zeroconf
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common/protocol
@@ -1302,6 +1351,8 @@ share/icons/hicolor/scalable/apps/gajim.svg
 @dirrm %%DATADIR%%/src/command_system/implementation
 @dirrm %%DATADIR%%/src/command_system
 @dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/plugins/plugin_installer
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor/64x64/apps
@@ -1415,4 +1466,3 @@ share/icons/hicolor/scalable/apps/gajim.svg
 @dirrm %%DATADIR%%/data/activities
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
