@@ -34,7 +34,7 @@ do-install:
 .endfor
 	@${MKDIR} ${PREFIX}/include/openNURBS
 	@${MKDIR} ${PREFIX}/include/openNURBS/zlib
-	@${MV} ${WRKSRC}/*.h ${PREFIX}/include/openNURBS/
-	@${MV} ${WRKSRC}/zlib/*.h ${PREFIX}/include/openNURBS/zlib
+	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/openNURBS/
+	@${INSTALL_DATA} ${WRKSRC}/zlib/*.h ${PREFIX}/include/openNURBS/zlib
 
 .include <bsd.port.mk>
