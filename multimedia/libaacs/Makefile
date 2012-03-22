@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libaacs
-PORTVERSION=	0.1.20110218
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	multimedia
-MASTER_SITES=	CRITICAL
+MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
+		http://blu.opsec.eu/
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Advanced Access Content System implementation
@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 USE_BISON=	build
