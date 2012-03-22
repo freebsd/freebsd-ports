@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/3085/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3197/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Lightweight connection pooler for PostgreSQL
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
