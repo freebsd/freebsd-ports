@@ -7,6 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.15/
 
@@ -15,7 +16,6 @@ COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pygnomedesktop pygtk2
+USE_GNOME=	pygtk2
 USE_PYTHON=	-2.7
 USE_XORG=	x11 xext xscrnsaver
 
@@ -35,7 +35,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	CRYPTO "End to end encryption support" Off \
 		DBUS "Adds support for D-Bus (Desktop Bus)" On \
-		NLS "Native Language Support via gettext utilities" On
+		KEYRING "Gnome Keyring support" Off \
+		NLS "Native Language Support via gettext utilities" On \
+		SPELL "Spell checking support" On
 
 .include <bsd.port.options.mk>
 
@@ -53,6 +55,14 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 
 .if defined(WITH_CRYPTO)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto
+.endif
+
+.if defined(WITH_KEYRING)
+USE_GNOME+=	pygnomedesktop
+.endif
+
+.if defined(WITH_SPELL)
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 .endif
 
 MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
