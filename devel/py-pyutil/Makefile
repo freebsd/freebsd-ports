@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyutil
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.7
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0.8.0:${PORTSDIR}/devel/py-argpa
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=easy_install
+
+post-extract:
+	${RM} -f ${WRKSRC}/pyutil/*.py~
 
 .include <bsd.port.pre.mk>
 
