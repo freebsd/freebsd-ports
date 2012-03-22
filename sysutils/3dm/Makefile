@@ -6,17 +6,29 @@
 #
 
 PORTNAME=	3dm
-PORTREVISION=	1
+PORTVERSION=	2.11.00.019
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/ \
-		http://vivi.cat.pdx.edu/3dm2/
+MASTER_SITES=	http://shibboleet.com/3dm2/ \
+		http://b.aranea.brtsvcs.net/3dm2/
+DISTFILES=	tdmCliBSD_${PORTVERSION}.tar.gz
+DIST_SUBDIR=	3dm2
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2.sh
-USE_ZIP=	yes
+
+OPTIONS=	SSLFIX "Install KB16625-patched binaries" On
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SSLFIX)
+DISTFILES+=	kb16625_${PORTVERSION}.tar.gz
+BINPREFIX=	${WRKSRC}/kb16625
+.else
+BINPREFIX=	${WRKSRC}
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -25,14 +37,10 @@ NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes
 
-.if ${OSVERSION} < 800000
-PORTVERSION=	2.11.00.009
-DISTFILES=	3DM2_CLI-FreeBSD-10.1.zip
-BINSRC=		${WRKSRC}
+.if ${OSVERSION} > 700000
+BINSRC=		${BINPREFIX}/7x
 .else
-PORTVERSION=	2.09.01.004
-DISTFILES=	3DM2_CLI-Linux-non-java-installer-9.5.3.zip
-BINSRC=		${WRKSRC}/7x
+BINSRC=		${BINPREFIX}/6x
 .endif
 
 .if ${ARCH} == "i386"
@@ -48,7 +56,6 @@ ETCDIR=		${PREFIX}/etc/3dm2
 MSGDIR=		${ETCDIR}/msg
 
 post-extract:
-	${TAR} zxf ${WRKSRC}/tdmCliBSD.tgz -C ${WRKSRC}
 	${TAR} zxf ${WRKSRC}/tdm2Help.tgz -C ${WRKSRC}
 	${TAR} zxf ${WRKSRC}/tdm2Msg.tgz -C ${WRKSRC}
 
@@ -85,9 +92,9 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} ""
 	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "        Don't forget to edit '${PREFIX}/etc/3dm2/3dm2.conf'		"
+	@${ECHO} "        Don't forget to edit '${PREFIX}/etc/3dm2/3dm2.conf'"
 	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO} "             Visit https://`hostname`:888/		"
+	@${ECHO} "             Visit https://`hostname`:888/"
 	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO} ""
 	@${ECHO} ""
