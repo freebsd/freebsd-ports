@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -35,6 +35,6 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/need_charset_alias=/s|true|false|g' ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e \
-		's|@pkgdatadir@/dotzile-extra.el|${DOCSDIR}/dotzile.sample|' ${WRKSRC}/doc/zile.1.in
+		's|@pkgdatadir@|${DOCSDIR}|' ${WRKSRC}/doc/zile.1.in
 
 .include <bsd.port.mk>
