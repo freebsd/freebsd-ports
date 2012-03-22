@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pure
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.52
 CATEGORIES=	lang
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
 
@@ -44,6 +43,11 @@ PLIST_SUB+=	ELC=""
 .else
 CONFIGURE_ARGS+=	--without-elisp
 PLIST_SUB+=	ELC="@comment "
+.endif
+
+# automatically disable readline support if editline support is available
+.if exists(/usr/include/edit/readline/readline.h)
+CONFIGURE_ARGS+=	--without-readline
 .endif
 
 .if ${ARCH} == "amd64"
