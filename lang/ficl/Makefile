@@ -6,54 +6,41 @@
 #
 
 PORTNAME=	ficl
-PORTVERSION=	4.0.31
-PORTREVISION=	1
-CATEGORIES=	lang devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-all/${PORTNAME}${PORTVERSION}
-DISTNAME=	${PORTNAME}${PORTVERSION}
+PORTVERSION=	4.1.0
+CATEGORIES=	lang
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-all/${PORTNAME}${PORTVERSION:C/([[:digit:]]+\.[[:digit:]]+)\.0/\1/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Forth Inspired Command Language
 
-NO_WRKSUBDIR=	defined
-NOMAN=		defined
+LICENSE=	unknown
+LICENSE_NAME=	BSD-style
+LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://ficl.sourceforge.net/license.html
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
-ONLY_FOR_ARCHS=	i386
+MAKE_JOBS_UNSAFE=	YES
 
-USE_GMAKE=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	this port is not tested on anything other than i386 and amd64
 
-ALL_TARGET=	everything
+USE_LDCONFIG=	YES
 
-DOCS=	releases.html parsesteps.html oop.html locals.html links.html \
-	license.html index.html api.html ficl.html favicon.ico dpans.html \
-	debugger.html upgrading.html
+ALL_TARGET=	lib ${PORTNAME}
 
-DOCS_ARTICLES=	sigplan9906.doc oo_in_c.html jwsforml.pdf ficlddj.pdf
-DOCS_GRAPHICS=	sourceforge.jpg ficl_top.jpg ficl_oop.jpg ficl.4.96.jpg \
-		ficl.4.64.jpg ficl.4.128.jpg 4ring.gif
-DOCS_SOURCE=	upgrading.ht releases.ht parsesteps.ht oop.ht locals.ht \
-		links.ht license.ht index.ht generate.py ficl.ht dpans.ht \
-		debugger.ht api.ht
+PLIST_FILES=	bin/${PORTNAME} lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.${PORTVERSION} lib/lib${PORTNAME}.a
+
+PORTDOCS=	*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ficl ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/libficl.so.4 ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libficl.a ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.a ${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib${PORTNAME}.so.${PORTVERSION} ${PREFIX}/lib
+	cd ${PREFIX}/lib && ${LN} -sf lib${PORTNAME}.so.${PORTVERSION} lib${PORTNAME}.so
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/source ${DOCSDIR}/articles ${DOCSDIR}/graphics
-.for doc in ${DOCS}
-	${INSTALL_MAN} ${WRKSRC}/doc/${doc} ${DOCSDIR}
-.endfor
-.for doc in ${DOCS_ARTICLES}
-	${INSTALL_MAN} ${WRKSRC}/doc/articles/${doc} ${DOCSDIR}/articles
-.endfor
-.for doc in ${DOCS_GRAPHICS}
-	${INSTALL_MAN} ${WRKSRC}/doc/graphics/${doc} ${DOCSDIR}/graphics
-.endfor
-.for doc in ${DOCS_SOURCE}
-	${INSTALL_MAN} ${WRKSRC}/doc/source/${doc} ${DOCSDIR}/source
-.endfor
+	${INSTALL_DATA} -d -m 0755 ${DOCSDIR} ${DOCSDIR}/articles ${DOCSDIR}/graphics
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.ico ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/articles/* ${DOCSDIR}/articles
+	${INSTALL_DATA} ${WRKSRC}/doc/graphics/* ${DOCSDIR}/graphics
 .endif
 
 .include <bsd.port.mk>
