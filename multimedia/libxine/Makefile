@@ -217,7 +217,7 @@ LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
 
 .if defined(WITH_LIBBLURAY)
 CONFIGURE_OPTS+=	--enable-bluray
-LIB_DEPENDS+=	bluray.1:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray.2:${PORTSDIR}/multimedia/libbluray
 PLIST_SUB+=	LIBBLURAY=""
 .else
 CONFIGURE_OPTS+=	--disable-bluray

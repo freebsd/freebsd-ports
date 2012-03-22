@@ -50,7 +50,7 @@ CONFIGURE_OPTS+=	--disable-libextractor
 
 .if defined(WITH_LIBBLURAY)
 CONFIGURE_OPTS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray.1:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray.2:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_OPTS+=	--disable-libbluray
 .endif

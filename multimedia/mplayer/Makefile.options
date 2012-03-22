@@ -151,7 +151,7 @@ CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
 .if defined(WITH_BLURAY)
-LIB_DEPENDS+=		bluray.1:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=		bluray.2:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-bluray
 .endif

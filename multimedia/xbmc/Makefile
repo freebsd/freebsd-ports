@@ -7,6 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0.rc1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 DISTNAME=	${PORTNAME}-11.0-Eden_rc1
@@ -116,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-avahi
 
 .if !defined(WITHOUT_LIBBLURAY)
 CONFIGURE_ARGS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray.1:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray.2:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-libbluray
 .endif
