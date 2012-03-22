@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Profiles time seconds needed for every request
 
+BUILD_DEPENDS=	mp2bug:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS=	mp2bug:${PORTSDIR}/www/mod_perl2
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Profiler.3 Apache2::Profiler.3
