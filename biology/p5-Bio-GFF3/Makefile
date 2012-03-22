@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Bio-GFF3
-PORTVERSION=	0.7
+PORTVERSION=	1.0
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast, low-level functions for parsing and formatting GFF3
 
 BUILD_DEPENDS=	p5-File-ReadBackwards>=0:${PORTSDIR}/devel/p5-File-ReadBackwards \
@@ -26,6 +26,7 @@ MAN1=		gff3_insert_sync_directives.1 \
 		gff3_from_fasta.1
 MAN3=		Bio::GFF3::Transform::SyncDirectives.3 \
 		Bio::GFF3::LowLevel.3 \
+		Bio::GFF3::LowLevel::Parser.3 \
 		Bio::GFF3::Transform::FromFasta.3
 
 .include <bsd.port.mk>

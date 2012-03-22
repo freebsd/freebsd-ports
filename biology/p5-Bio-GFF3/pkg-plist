@@ -2,10 +2,12 @@ bin/gff3_from_fasta
 bin/gff3_insert_sync_directives
 %%SITE_PERL%%/Bio/GFF3/Transform/SyncDirectives.pm
 %%SITE_PERL%%/Bio/GFF3/Transform/FromFasta.pm
+%%SITE_PERL%%/Bio/GFF3/LowLevel/Parser.pm
 %%SITE_PERL%%/Bio/GFF3/LowLevel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/GFF3/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/GFF3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio
 @dirrmtry %%SITE_PERL%%/Bio/GFF3/Transform
+@dirrmtry %%SITE_PERL%%/Bio/GFF3/LowLevel
 @dirrmtry %%SITE_PERL%%/Bio/GFF3
 @dirrmtry %%SITE_PERL%%/Bio
