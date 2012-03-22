@@ -365,6 +365,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/configure.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/de-default.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/de-default.po
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/i18n/tests/en-alt.mo
