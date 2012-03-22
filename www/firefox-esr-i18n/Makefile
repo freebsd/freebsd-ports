@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox-i18n
 PORTVERSION=	10.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -27,6 +28,10 @@ WDIR=	langpack-*@firefox.mozilla.org
 
 XPI_DISTNAMES=	${FIREFOX_I18N_}
 
+PLIST?=		${WRKDIR}/plist
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
+
 .include "${.CURDIR}/Makefile.option"
 .include <bsd.port.pre.mk>
 
@@ -40,8 +45,6 @@ FIREFOX_I18N_?=	${FIREFOX_I18N}
 
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@firefox.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
-XPI_DIRS_${dist}=	chrome
 .endfor
 
 pre-everything::
@@ -56,11 +59,14 @@ do-extract:
 		then \
 			exit 1; \
 		fi; \
-		cd ${WRKSRC}/langpack-$$lang@firefox.mozilla.org/chrome/$$lang; \
-		${LOCALBASE}/bin/zip -r ../$$lang.jar locale; \
-		cd ..; ${RM} -rf $$lang; cd ..; \
-		${REINPLACE_CMD} -i "" "s,chrome/$$lang,jar:chrome/$$lang.jar!," chrome.manifest; \
+		cd ${WRKSRC}/langpack-$$lang@firefox.mozilla.org/; \
+		${FIND} -H -s * ! -type d | \
+		${SED} -e "s|^|lib/xpi/langpack-$$lang@firefox.mozilla.org/|" >> ${PLISTF} && \
+		${FIND} -d * -type d | \
+		${SED} -e "s|^|@dirrm lib/xpi/langpack-$$lang@firefox.mozilla.org/|" >> ${PLISTD}; \
 	done
+	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
+	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
 .if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
 pre-configure: config
