@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	libbluray
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/libbluray/0.2.1/
+MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
+		http://blu.opsec.eu/
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Blu-Ray discs playback library for media players
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 # dlopen dependencies, libbdplus not yet available
-LIB_DEPENDS+=	aacs.0:${PORTSDIR}/multimedia/libaacs
+LIB_DEPENDS+=	aacs.1:${PORTSDIR}/multimedia/libaacs
 
-# libiconv.so.3
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes

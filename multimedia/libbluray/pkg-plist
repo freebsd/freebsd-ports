@@ -9,6 +9,6 @@ include/libbluray/overlay.h
 lib/libbluray.a
 lib/libbluray.la
 lib/libbluray.so
-lib/libbluray.so.1
+lib/libbluray.so.2
 libdata/pkgconfig/libbluray.pc
 @dirrm include/libbluray
