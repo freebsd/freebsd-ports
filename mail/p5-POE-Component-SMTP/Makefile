@@ -7,20 +7,27 @@
 
 PORTNAME=	POE-Component-SMTP
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	SMTP Protocol Implementation
 
-RUN_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/POE/Session/MultiDispatch.pm:${PORTSDIR}/devel/p5-POE-Session-MultiDispatch
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Session-MultiDispatch>=0:${PORTSDIR}/devel/p5-POE-Session-MultiDispatch \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		POE::Component::Server::SMTP.3 POE::Filter::SMTP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
