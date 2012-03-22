@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swaks
-PORTVERSION=	20111230.0
+PORTVERSION=	20120320.0
 CATEGORIES=	mail
 MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
