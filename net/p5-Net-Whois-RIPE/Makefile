@@ -16,7 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Implementation of RIPE Whois
 
-RUN_DEPENDS=	p5-Iterator-Util>=0:${PORTSDIR}/devel/p5-Iterator-Util
+BUILD_DEPENDS=	p5-Iterator-Util>=0:${PORTSDIR}/devel/p5-Iterator-Util
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
