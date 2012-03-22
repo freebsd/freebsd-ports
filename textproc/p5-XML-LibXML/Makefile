@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	1.88
+PORTVERSION=	1.96
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -30,8 +30,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/00.$//}
 
 CONFLICTS=	p5-XML-LibXML-XPathContext-[0-9]* p5-XML-LibXML-Common-[0-9]*
 
-MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
+MAN3=		XML::LibXML.3 XML::LibXML::AttributeHash.3 \
+		XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
+		XML::LibXML::Devel.3 \
 		XML::LibXML::DOM.3 XML::LibXML::Document.3 \
 		XML::LibXML::DocumentFragment.3 XML::LibXML::Dtd.3 \
 		XML::LibXML::Element.3 XML::LibXML::ErrNo.3 \
