@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
 MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	Dynamic IP routing daemon (IPv4 version)
 
+LICENSE=	GPLv2
+
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	FIBS		"Enable multiple fib support" Off \
-		FIREWALL	"Enable firewall protocol" Off
+		FIREWALL	"Enable firewall protocol" Off \
+		AGG		"Enable aggregation protocol (EXPERIMENTAL)" Off
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -32,6 +35,10 @@ EXTRA_PATCHES+=	${FILESDIR}/fibs.diff
 
 .if defined(WITH_FIREWALL)
 EXTRA_PATCHES+=	${FILESDIR}/firewall_support.patch
+.endif
+
+.if defined(WITH_AGG)
+EXTRA_PATCHES+=	${FILESDIR}/agg_support.patch
 .endif
 
 post-install:
