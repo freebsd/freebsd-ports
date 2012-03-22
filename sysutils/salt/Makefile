@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	salt
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
