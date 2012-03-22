@@ -25,6 +25,7 @@ load_rc_config $name
 : ${chef_client_splay="0"}
 : ${chef_client_logfile="/var/log/chef-client.log"}
 : ${chef_client_loglevel="info"}
+: ${chef_client_pidfile="/var/run/chef-client.pid"}
 
 if [ -n "$chef_client_nodename" ]
 	then
@@ -42,7 +43,8 @@ fi
 
 command="%%PREFIX%%/bin/chef-client"
 command_interpreter="%%RUBY%%"
-chef_client_flags="-c ${chef_client_configfile} ${nodename}${server}-d -i ${chef_client_interval} -s ${chef_client_splay} -L ${chef_client_logfile} -l ${chef_client_loglevel}"
+pidfile=${chef_client_pidfile}
+chef_client_flags="-c ${chef_client_configfile} ${nodename}${server}-d -i ${chef_client_interval} -s ${chef_client_splay} -L ${chef_client_logfile} -l ${chef_client_loglevel} -P ${chef_client_pidfile}"
 
 load_rc_config $name
 run_rc_command "$1"
