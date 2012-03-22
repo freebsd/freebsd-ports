@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey-i18n
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -17,6 +18,10 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
+PLIST?=		${WRKDIR}/plist
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
 
 USE_SEAMONKEY=	28
 USE_XPI=	seamonkey linux-seamonkey
@@ -39,8 +44,6 @@ SEAMONKEY_I18N_?=	${SEAMONKEY_I18N}
 
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@seamonkey.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
-XPI_DIRS_${dist}=	chrome
 .endfor
 
 pre-everything::
@@ -55,11 +58,14 @@ do-extract:
 		then \
 			exit 1; \
 		fi; \
-		cd ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org/chrome/$$lang; \
-		${LOCALBASE}/bin/zip -r ../$$lang.jar locale; \
-		cd ..; ${RM} -rf $$lang; cd ..; \
-		${REINPLACE_CMD} -i "" "s,chrome/$$lang,jar:chrome/$$lang.jar!," chrome.manifest; \
+		cd ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org/; \
+		${FIND} -H -s * ! -type d | \
+		${SED} -e "s|^|lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTF} && \
+		${FIND} -d * -type d | \
+		${SED} -e "s|^|@dirrm lib/xpi/langpack-$$lang@seamonkey.mozilla.org/|" >> ${PLISTD}; \
 	done
+	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
+	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
 do-install:
 	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}

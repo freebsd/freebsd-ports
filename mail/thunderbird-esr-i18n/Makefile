@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird-i18n
 PORTVERSION=	10.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -17,6 +18,10 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
+PLIST?=		${WRKDIR}/plist
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
 
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
@@ -46,8 +51,6 @@ WDIR=	langpack-*@thunderbird.mozilla.org
 XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
-XPI_DIRS_${dist}=	chrome
 .endfor
 
 do-extract:
@@ -58,11 +61,14 @@ do-extract:
 		then \
 			exit 1; \
 		fi; \
-		cd ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org/chrome/$$lang; \
-		${LOCALBASE}/bin/zip -r ../$$lang.jar locale; \
-		cd ..; ${RM} -rf $$lang; cd ..; \
-		${REINPLACE_CMD} -i "" "s,chrome/$$lang,jar:chrome/$$lang.jar!," chrome.manifest; \
+		cd ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org/; \
+		${FIND} -H -s * ! -type d | \
+		${SED} -e "s|^|lib/xpi/langpack-$$lang@thunderbird.mozilla.org/|" >> ${PLISTF} && \
+		${FIND} -d * -type d | \
+		${SED} -e "s|^|@dirrm lib/xpi/langpack-$$lang@thunderbird.mozilla.org/|" >> ${PLISTD}; \
 	done
+	${CAT} ${PLISTF} | ${SORT} >> ${PLIST}
+	${CAT} ${PLISTD} | ${SORT} -r >> ${PLIST}
 
 do-install:
 	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
