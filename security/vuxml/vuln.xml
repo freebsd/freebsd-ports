@@ -52,6 +52,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="330106da-7406-11e1-a1d7-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>17.0.963.83</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote
+cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[113902] High CVE-2011-3050: Use-after-free with first-letter
+	    handling.  Credit to miaubiz.</p>
+	  <p>[116162] High CVE-2011-3045: libpng integer issue from upstream.
+	    Credit to Glenn Randers-Pehrson of the libpng project.</p>
+	  <p>[116461] High CVE-2011-3051: Use-after-free in CSS cross-fade
+	    handling.  Credit to Arthur Gerkis.</p>
+	  <p>[116637] High CVE-2011-3052: Memory corruption in WebGL canvas
+	    handling. Credit to Ben Vanik of Google.</p>
+	  <p>[116746] High CVE-2011-3053: Use-after-free in block splitting.
+	    Credit to miaubiz.</p>
+	  <p>[117418] Low CVE-2011-3054: Apply additional isolations to webui
+	    privileges.  Credit to Sergey Glazunov.</p>
+	  <p>[117736] Low CVE-2011-3055: Prompt in the browser native UI for
+	    unpacked extension installation. Credit to PinkiePie.</p>
+	  <p>[117550] High CVE-2011-3056: Cross-origin violation with "magic
+	    iframe".  Credit to Sergey Glazunov.</p>
+	  <p>[117794] Medium CVE-2011-3057: Invalid read in v8. Credit to
+	    Christian Holler.</p>
+	  <p>[108648] Low CVE-2011-3049: Extension web request API can interfere
+	    with system requests. Credit to Michael Gundlach. Fixed in an
+	    earlier release.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3045</cvename>
+      <cvename>CVE-2011-3049</cvename>
+      <cvename>CVE-2011-3050</cvename>
+      <cvename>CVE-2011-3051</cvename>
+      <cvename>CVE-2011-3052</cvename>
+      <cvename>CVE-2011-3053</cvename>
+      <cvename>CVE-2011-3054</cvename>
+      <cvename>CVE-2011-3055</cvename>
+      <cvename>CVE-2011-3056</cvename>
+      <cvename>CVE-2011-3057</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-03-21</discovery>
+      <entry>2012-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e7e9072-73a0-11e1-a883-001cc0a36e12">
     <topic>libtasn1 -- ASN.1 length decoding vulnerability</topic>
     <affects>
