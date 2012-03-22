@@ -3451,7 +3451,6 @@ fi-acroread8                    ports/print/fi-acroread8
 fi-aspell                       ports/textproc/fi-aspell
 fib                             ports/devel/fib
 ficl                            ports/lang/ficl
-fidelio                         ports/net-p2p/fidelio
 fidogate                        ports/news/fidogate
 fidogate-ds                     ports/news/fidogate-ds
 fig2sxd                         ports/graphics/fig2sxd
@@ -6511,7 +6510,6 @@ ja-platex-japanese              ports/japanese/platex-japanese
 ja-platex-jsclasses             ports/japanese/platex-jsclasses
 ja-platex-otf                   ports/japanese/platex-otf
 ja-platex209                    ports/japanese/platex209
-ja-postgresql-tcltk             ports/japanese/postgresql-tcltk
 ja-postgresql73-man             ports/japanese/postgresql73-man
 ja-postgresql74-man             ports/japanese/postgresql74-man
 ja-postgresql80-man             ports/japanese/postgresql80-man
@@ -13523,6 +13521,7 @@ p5-Net-LDAP-Express             ports/net/p5-Net-LDAP-Express
 p5-Net-LDAP-LDAPhash            ports/net/p5-Net-LDAP-LDAPhash
 p5-Net-LDAP-Makepath            ports/net/p5-Net-LDAP-Makepath
 p5-Net-LDAP-Server              ports/net/p5-Net-LDAP-Server
+p5-Net-LDAP-Server-Test         ports/net/p5-Net-LDAP-Server-Test
 p5-Net-LDAP-posixAccount        ports/net/p5-Net-LDAP-posixAccount
 p5-Net-LDAP-posixGroup          ports/net/p5-Net-LDAP-posixGroup
 p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
@@ -18022,6 +18021,7 @@ p5-net-ldap-makepath            ports/net/p5-Net-LDAP-Makepath
 p5-net-ldap-posixaccount        ports/net/p5-Net-LDAP-posixAccount
 p5-net-ldap-posixgroup          ports/net/p5-Net-LDAP-posixGroup
 p5-net-ldap-server              ports/net/p5-Net-LDAP-Server
+p5-net-ldap-server-test         ports/net/p5-Net-LDAP-Server-Test
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
 p5-net-liblo                    ports/audio/p5-Net-LibLO
@@ -27173,7 +27173,6 @@ vqcc-gtk                        ports/net-im/vqcc-gtk
 vqregister                      ports/mail/vqregister
 vrflash                         ports/comms/vrflash
 vrfy                            ports/mail/vrfy
-vrml2pov                        ports/graphics/vrml2pov
 vserver                         ports/net/vserver
 vsftpd                          ports/ftp/vsftpd
 vsftpd-ext                      ports/ftp/vsftpd-ext
