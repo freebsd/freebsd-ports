@@ -7,20 +7,19 @@
 
 PORTNAME=	Nmap-Scanner
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perform and manipulate nmap scans using perl
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/Class/Generate.pm:${PORTSDIR}/devel/p5-Class-Generate \
-		nmap:${PORTSDIR}/security/nmap
-RUN_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/Class/Generate.pm:${PORTSDIR}/devel/p5-Class-Generate \
-		nmap:${PORTSDIR}/security/nmap
+BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap \
+		p5-Class-Generate>=0:${PORTSDIR}/devel/p5-Class-Generate \
+		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
