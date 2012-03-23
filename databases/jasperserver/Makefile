@@ -46,7 +46,9 @@ OPTIONS=	TOMCAT5 "Enable Tomcat 5.x support"	off \
 		TOMCAT6 "Enable Tomcat 6.x support"	on \
 		TOMCAT7 "Enable Tomcat 7.x support"	off \
 		MYSQL   "Enable Mysql 5.x support"	off \
-		POSTGRESQL "Enable PostgreSQL 9.x support" on
+		POSTGRESQL "Enable PostgreSQL 9.x support" on \
+		XLS "Alternative Patches for XLS Spreadsheets" off
+
 
 REPLACE_FILES=	${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml
 REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
@@ -174,11 +176,17 @@ post-patch:
 	@${ECHO_MSG} -n ">> Customizing `basename ${file}`..."
 	@${SED} ${REPLACE_LIST_TEMP} ${file} > ${WRKDIR}/`basename ${file}`
 	@${ECHO_MSG} " [ DONE ]"
-	@( if [ -f ${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml.orig ] ; then \
-		${RM} ${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml.orig ; \
-	else ${FALSE}; \
-	fi )
 .endfor
+.if defined(WITH_XLS)
+	@${ECHO} "Applying alternative patches for Xls."
+	@cd ${PATCH_WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/alt-patch-jasperserver__common__shared-config__applicationContext.xml
+	@cd ${PATCH_WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/alt-patch-jasperserver__jasperserver-war__src__main__webappAdditions__WEB-INF__classes__jasperreports.properties
+.endif
+
+post-patch-script:
+	@${ECHO_MSG} -n ">> Removing unneeded patched files..."
+	@${FIND} ${WRKDIR} -type f \( -name '*.orig' \) -delete
+	@${ECHO_MSG} " [ DONE ]"
 
 post-extract-script:
 	@${LN} -fs ${WRKDIR}/.m2 ~/.m2 && ${UNZIP_CMD} -qq ${DISTDIR}/${JSMAVENARCH} -d ${WRKDIR}/.m2
