@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-HTML5-Parser
-PORTVERSION=	0.108
+PORTVERSION=	0.110
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	p5-Error>0:${PORTSDIR}/lang/p5-Error \
 		p5-HTML-Encoding>=0.55:${PORTSDIR}/www/p5-HTML-Encoding \
 		p5-HTML-HTML5-Entities>=0.001:${PORTSDIR}/textproc/p5-HTML-HTML5-Entities \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-XML-LibXML>=1.60:${PORTSDIR}/textproc/p5-XML-LibXML
+		p5-XML-LibXML>=1.90:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
