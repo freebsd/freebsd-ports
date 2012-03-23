@@ -9,11 +9,14 @@ PORTNAME=	dnsflood
 PORTVERSION=	1.12
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.adotout.com/
+MASTER_SITES=	http://www.adotout.com/ \
+		http://mirrors.rit.edu/zi/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	DNS flood detector
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/dns_flood_detector
 
