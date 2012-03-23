@@ -8,7 +8,7 @@ PORTNAME=	check_email_delivery
 PORTVERSION=	0.7.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
-		http://people.rit.edu/rpsfa/
+		http://mirrors.rit.edu/zi/
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org

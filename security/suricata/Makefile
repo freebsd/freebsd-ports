@@ -9,7 +9,8 @@ PORTNAME=	suricata
 PORTVERSION=	1.2.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.openinfosecfoundation.org/download/
+MASTER_SITES=	http://www.openinfosecfoundation.org/download/ \
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Open Source next generation IDS/IPS engine by OISF

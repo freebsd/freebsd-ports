@@ -10,7 +10,7 @@ DISTVERSION=	0.12.5
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
-		http://people.rit.edu/rpsfa/
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic

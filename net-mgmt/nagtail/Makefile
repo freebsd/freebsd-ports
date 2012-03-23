@@ -9,7 +9,7 @@ PORTNAME=	nagtail
 PORTVERSION=	0.0.31
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.vanheusden.com/nagtail/ \
-		http://people.rit.edu/rpsfa/
+		http://mirrors.rit.edu/zi/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zi@FreeBSD.org

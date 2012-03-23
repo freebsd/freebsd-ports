@@ -8,7 +8,7 @@ PORTNAME=	check_hp_bladechassis
 PORTVERSION=	1.0.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://folk.uio.no/trondham/software/files/ \
-		http://people.rit.edu/rpsfa/distfiles/
+		http://mirrors.rit.edu/zi/
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org

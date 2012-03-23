@@ -9,7 +9,8 @@ PORTNAME=	logsurfer+
 PORTVERSION=	1.7
 CATEGORIES=	misc
 MASTER_SITES=	http://kerryt.orconhosting.net.nz/ \
-		http://www.crypt.gen.nz/logsurfer/
+		http://www.crypt.gen.nz/logsurfer/ \
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Process logfiles and conditionally perform certain actions

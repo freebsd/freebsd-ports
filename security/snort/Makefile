@@ -10,7 +10,7 @@ PORTVERSION=	2.9.2.1
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
-		http://people.rit.edu/rpsfa/distfiles/
+		http://mirrors.rit.edu/zi/
 
 PATCH_DIST_STRIP=	-p1
 

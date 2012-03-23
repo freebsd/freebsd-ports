@@ -9,7 +9,7 @@ PORTNAME=	fex
 PORTVERSION=	2.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://semicomplete.googlecode.com/files/ \
-		http://people.rit.edu/rpsfa/distfiles/
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A powerful field extraction tool

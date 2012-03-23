@@ -9,7 +9,7 @@ PORTNAME=	openconnect
 PORTVERSION=	3.15
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
-		http://people.rit.edu/rpsfa/distfiles/
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A client for Cisco's AnyConnect SSL VPN
