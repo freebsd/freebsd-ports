@@ -1,0 +1,29 @@
+--- ./jasperserver/common/shared-config/applicationContext.xml.orig	2012-03-22 12:35:55.000000000 -0700
++++ ./jasperserver/common/shared-config/applicationContext.xml	2012-03-22 12:36:00.000000000 -0700
+@@ -1092,14 +1092,14 @@
+     
+     <bean id="xlsExportParameters" class="com.jaspersoft.jasperserver.api.engine.jasperreports.common.XlsExportParametersBean">
+         <property name="detectCellType" value="true"/>
+-        <property name="onePagePerSheet" value="false"/>
+-        <property name="removeEmptySpaceBetweenRows" value="true"/>
++        <property name="onePagePerSheet" value="true"/>
++        <property name="removeEmptySpaceBetweenRows" value="false"/>
+         <property name="removeEmptySpaceBetweenColumns" value="true"/>
+         <property name="whitePageBackground" value="false"/>
+         <property name="ignoreGraphics" value="true"/>
+         <property name="collapseRowSpan" value="true"/>
+         <property name="ignoreCellBorder" value="true"/>
+-        <property name="fontSizeFixEnabled" value="true"/>
++        <property name="fontSizeFixEnabled" value="false"/>
+         <property name="maximumRowsPerSheet" value="0"/>
+         <property name="xlsFormatPatternsMap" ref="formatPatternsMap"/>
+     </bean>
+@@ -1124,6 +1124,8 @@
+     
+     <util:map id="formatPatternsMap">
+         <!-- entry key="¤ #,##0.00" value="$ #,##0.00"/-->
++	<entry key="" value="0"/>
++	<entry key="M/d/yyyy h:mm aa" value="m/d/yyyy h:mm"/>
+     </util:map> 
+ 
+     <!-- end export parameters -->
