@@ -6,15 +6,11 @@ Features:
   dictionary, completion, numeric conversion, abbrev mode, kuten input, 
   hankaku-katakana input, Lisp expression evaluation (concat 
   only), and re-conversion.
-
 * Support various typing rules including romaji-to-kana, AZIK, TUT-Code,
   and NICOLA.
-
 * Support various dictionary types including file dictionary (such as
   SKK-JISYO.[SML]), user dictionary, skkserv, and CDB format dictionary.
-
 * GObject based API with gobject-introspection support.
-
 * Experimental support for intelligent kana-to-kanji conversion based
   on Viterbi algorithm.
 
