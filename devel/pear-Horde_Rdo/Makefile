@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Rdo
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.horde.org/get/
 
