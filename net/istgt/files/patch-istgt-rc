@@ -1,0 +1,25 @@
+--- etc/istgt.sh.in.orig	2011-08-31 11:53:08.000000000 -0700
++++ etc/istgt.sh.in	2012-03-07 17:12:49.615160257 -0800
+@@ -9,6 +9,7 @@
+ 
+ name="istgt"
+ rcvar=`set_rcvar`
++reload_cmd="istgt_reload"
+ extra_commands="reload"
+ 
+ load_rc_config $name
+@@ -18,6 +19,14 @@
+ : ${istgt_pidfile="/var/run/istgt.pid"}
+ : ${istgt_flags=""}
+ 
++#
++# Refresh configuration
++#
++istgt_reload()
++{
++	%%BINDIR%%/istgtcontrol refresh
++}
++
+ required_files="${istgt_config}"
+ pidfile="${istgt_pidfile}"
+ command="%%BINDIR%%/istgt"
