@@ -21662,7 +21662,6 @@ postgresql-plpython             ports/databases/postgresql-plpython
 postgresql-plruby               ports/databases/postgresql-plruby
 postgresql-relay                ports/databases/postgresql-relay
 postgresql-repmgr               ports/databases/postgresql-repmgr
-postgresql-tcltk                ports/databases/postgresql-tcltk
 postgresql82-client             ports/databases/postgresql82-client
 postgresql82-contrib            ports/databases/postgresql82-contrib
 postgresql82-server             ports/databases/postgresql82-server
