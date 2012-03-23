@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_ActiveSync
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	comms www pear
 
 MAINTAINER=	horde@FreeBSD.org
