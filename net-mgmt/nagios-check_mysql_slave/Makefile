@@ -8,7 +8,7 @@ PORTNAME=	check_mysql_slave
 PORTVERSION=	0.1.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://buhacoff.net/2009/products/check_mysql_slave/archive/ \
-		http://people.rit.edu/rpsfa/
+		http://mirrors.rit.edu/zi/
 PKGNAMEPREFIX=	nagios-
 
 MAINTAINER=	zi@FreeBSD.org

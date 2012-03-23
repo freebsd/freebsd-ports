@@ -8,7 +8,8 @@
 PORTNAME=	duo
 PORTVERSION=	1.8
 CATEGORIES=	security
-MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}security/${PORTNAME}_unix/
+MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}security/${PORTNAME}_unix/ \
+		http://mirrors.rit.edu/zi/
 DISTNAME=	${PORTNAME}_unix-${PORTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org

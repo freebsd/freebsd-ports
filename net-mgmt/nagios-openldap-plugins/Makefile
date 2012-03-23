@@ -8,7 +8,7 @@ PORTNAME=	openldap-plugins
 PORTVERSION=	0.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.ltb-project.org/attachments/download/152/ \
-		http://people.rit.edu/rpsfa/
+		http://mirrors.rit.edu/zi/
 PKGNAMEPREFIX=	nagios-
 DISTNAME=	ltb-project-nagios-plugins-${PORTVERSION}
 

@@ -9,7 +9,7 @@ PORTNAME=	le
 PORTVERSION=	1.14.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/ \
-		http://people.rit.edu/~rpsfa/distfiles/
+		http://mirrors.rit.edu/zi/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	zi@FreeBSD.org

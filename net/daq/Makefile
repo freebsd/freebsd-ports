@@ -8,7 +8,8 @@
 PORTNAME=	daq
 PORTVERSION=	0.6.2
 CATEGORIES=	net
-MASTER_SITES=	SF/snort/snort
+MASTER_SITES=	SF/snort/snort \
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Data Acquisition abstraction library for snort 2.9+
