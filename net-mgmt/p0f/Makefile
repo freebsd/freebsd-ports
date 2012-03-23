@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Passive OS fingerprinting tool
 
 PLIST_FILES=	bin/p0f bin/p0f-client bin/p0f-sendsyn \
