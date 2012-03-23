@@ -7,7 +7,7 @@
 
 PORTNAME=	ushare
 PORTVERSION=	1.1a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
@@ -25,12 +25,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CFLAGS+=	-I${LOCALBASE}/include -I${WRKSRC}
 
-PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample etc/rc.d/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
 OPTIONS=	LIBDLNA "Enable DLNA (PS3) support" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_LIBDLNA)
 LIB_DEPENDS+=	dlna:${PORTSDIR}/devel/libdlna
@@ -39,8 +38,13 @@ CONFIGURE_ARGS=	--enable-dlna
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${CP} ${WRKSRC}/scripts/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
+	${CP} ${WRKSRC}/scripts/${PORTNAME}.conf \
+		${PREFIX}/etc/${PORTNAME}.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${PORTNAME} ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+post-install:
+	${CP} -np ${PREFIX}/etc/${PORTNAME}.conf.sample \
+		${PREFIX}/etc/${PORTNAME}.conf
+
+.include <bsd.port.mk>
