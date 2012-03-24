@@ -6,33 +6,31 @@
 #
 
 PORTNAME=	smtp-gated
-PORTVERSION=	1.4.16.3
-PORTREVISION=	1
+PORTVERSION=	1.4.18.8
 CATEGORIES=	mail
 MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This software block SMTP sessions used by e-mail worms and viruses
+COMMENT=	Proxy for SMTP sessions with virus and spam scan
 
-HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader
+LICENSE=	GPLv2
 
 OPTIONS=	NAT "NAT transparent proxy code" On \
 		CHUNKING "Enable support for SMTP CHUNKING extension" Off \
-		ECONNRESET "Be quiet about Connection reset by peer message" Off
+		ECONNRESET "Be quiet about Connection reset by peer message" Off \
+		PCRE "Enable support for PCRE" On
 
-PLIST_FILES=	sbin/smtp-gated
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAN5=		smtp-gated.conf.5
 MAN8=		smtp-gated.8
+PLIST_FILES=	sbin/smtp-gated
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: cannot determine endianness
-.endif
-
-post-patch:
-	${REINPLACE_CMD} -e 's,install-man: install-man5 install-man8 install-manh,install-man: install-man5 install-man8,' ${WRKSRC}/doc/Makefile.in
+.include <bsd.port.options.mk>
 
 .if defined(WITH_NAT)
 CONFIGURE_ARGS+=	--enable-nat
@@ -46,6 +44,18 @@ CONFIGURE_ARGS+=	--enable-chunking
 
 .if defined(WITH_ECONNRESET)
 CONFIGURE_ARGS+=	--enable-silent-econnreset
+.endif
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+.else
+CONFIGURE_ARGS+=	--disable-pcre
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: cannot determine endianness
 .endif
 
 .include <bsd.port.post.mk>
