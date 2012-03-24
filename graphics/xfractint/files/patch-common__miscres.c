@@ -1,10 +1,11 @@
---- ./common/miscres.c.orig	2007-05-02 20:32:43.000000000 -0400
-+++ ./common/miscres.c	2010-01-27 13:52:46.000000000 -0500
-@@ -5,7 +5,6 @@
- #include <string.h>
- #include <ctype.h>
+--- common/miscres.c.orig	2011-05-08 10:19:52.000000000 -0500
++++ common/miscres.c	2012-03-10 16:58:44.000000000 -0500
+@@ -7,7 +7,7 @@
  #include <time.h>
--#include <malloc.h>
+ #ifdef __APPLE__
+ #include <malloc/malloc.h>
+-#else
++#elif !defined(BIG_ANSI_C)
+ #include <malloc.h>
+ #endif
  
- #ifndef XFRACT
- #include <io.h>

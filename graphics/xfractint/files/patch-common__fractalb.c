@@ -1,9 +1,9 @@
---- ./common/fractalb.c.orig	2008-09-17 21:52:35.000000000 -0400
-+++ ./common/fractalb.c	2010-01-27 13:52:46.000000000 -0500
-@@ -10,7 +10,7 @@
- #include <string.h>
- #ifdef __TURBOC__
+--- common/fractalb.c.orig	2011-05-07 15:31:02.000000000 -0500
++++ common/fractalb.c	2012-03-10 16:31:30.000000000 -0500
+@@ -12,7 +12,7 @@
  #include <alloc.h>
+ #elif defined(__APPLE__)
+ #include <malloc/malloc.h>
 -#elif !defined(__386BSD__)
 +#elif !defined(BIG_ANSI_C)
  #include <malloc.h>

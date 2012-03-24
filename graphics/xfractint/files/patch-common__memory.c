@@ -1,9 +1,11 @@
---- ./common/memory.c.orig	2006-12-17 12:06:05.000000000 -0500
-+++ ./common/memory.c	2010-01-27 13:52:46.000000000 -0500
-@@ -1,6 +1,5 @@
- #include <string.h>
+--- common/memory.c.orig	2012-03-10 16:57:05.000000000 -0500
++++ common/memory.c	2012-03-10 16:57:36.000000000 -0500
+@@ -2,7 +2,7 @@
  #include <limits.h>
--#include <malloc.h>
+ #ifdef __APPLE__
+ #include <malloc/malloc.h>
+-#else
++#elif !defined(BIG_ANSI_C)
+ #include <malloc.h>
+ #endif
  
- #if (!defined(XFRACT) && !defined(WINFRACT))
- #include <io.h>
