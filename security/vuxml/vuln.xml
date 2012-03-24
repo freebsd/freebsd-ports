@@ -52,6 +52,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="acab2f88-7490-11e1-865f-00e0814cab4e">
+    <topic>Apache Traffic Server -- heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>trafficserver</name>
+	<range><lt>3.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CERT-FI reports:</p>
+	<blockquote cite="https://www.cert.fi/en/reports/2012/vulnerability612884.html">
+	  <p>A heap overflow vulnerability has been found in the HTTP
+	    (Hypertext Transfer Protocol) protocol handling of Apache
+	    Traffic Server. The vulnerability allows an attacker to cause
+	    a denial of service or potentially to execute his own code by
+	    sending a specially modified HTTP message to an affected server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0256</cvename>
+    </references>
+    <dates>
+      <discovery>2012-03-22</discovery>
+      <entry>2012-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="330106da-7406-11e1-a1d7-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
