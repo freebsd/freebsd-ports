@@ -52,6 +52,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="42a2c82a-75b9-11e1-89b4-001ec9578670">
+    <topic>quagga -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.99.20.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CERT reports:</p>
+	<blockquote cite="http://www.kb.cert.org/vuls/id/551715">
+	  <p>The ospfd implementation of OSPF in Quagga allows a remote attacker
+	     (on a local network segment with OSPF enabled) to cause a denial of
+	     service (daemon aborts due to an assert) with a malformed OSPF
+	     LS-Update message.</p>
+	  <p>The ospfd implementation of OSPF in Quagga allows a remote attacker
+	     (on a local network segment with OSPF enabled) to cause a denial of
+	     service (daemon crash) with a malformed OSPF Network-LSA message.</p>
+	  <p>The bgpd implementation of BGP in Quagga allows remote attackers to
+	     cause a denial of service (daemon aborts due to an assert) via BGP
+	     Open message with an invalid AS4 capability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0249</cvename>
+      <cvename>CVE-2012-0250</cvename>
+      <cvename>CVE-2012-0255</cvename>
+      <url>http://www.kb.cert.org/vuls/id/551715</url>
+    </references>
+    <dates>
+      <discovery>2012-03-23</discovery>
+      <entry>2012-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="acab2f88-7490-11e1-865f-00e0814cab4e">
     <topic>Apache Traffic Server -- heap overflow vulnerability</topic>
     <affects>
