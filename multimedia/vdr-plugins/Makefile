@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -37,6 +37,7 @@ OPTIONS=	CONTROL "telnet control" On \
 		SLEEPTIMER "sleep timer plugin" On \
 		XVDR "XVDR plugin (for connecting XBMC PVR)" On \
 		EEPG "extended EPG plugin (for UK/NL/etc.)" On \
+		VDRMANAGER "plugin for VDR-Manager Android clients" On \
 		VNSISERVER "VNSI server (for XBMC PVR branch - old)" Off \
 		SOFTDEVICE "softdevice (broken?)" Off \
 		MARKAD "MarkAd plugin" Off
@@ -108,6 +109,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vnsiserver.so.${PORTVERSION}:${PORTSDI
 .endif
 .if defined(WITH_MARKAD)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-markad.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-markad
+.endif
+.if defined(WITH_VDRMANAGER)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vdrmanager.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-vdrmanager
 .endif
 
 do-install:	# empty
