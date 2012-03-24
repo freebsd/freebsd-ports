@@ -1,6 +1,6 @@
---- configure.orig	Mon Aug  9 03:23:18 2004
-+++ configure	Thu Aug 26 16:17:40 2004
-@@ -19632,8 +19632,8 @@
+--- configure.orig	2011-12-25 13:46:41.000000000 +0900
++++ configure	2012-02-14 22:39:36.000000000 +0900
+@@ -15737,8 +15737,8 @@
  then
  
  	HAVE_PTHREAD=""
@@ -11,7 +11,16 @@
  
  	if ( test "$cross_compiling" = "yes" )
  	then
-@@ -19667,9 +19667,6 @@
+@@ -15757,7 +15757,7 @@
+ 
+ 	else
+ 
+-		for i in "pthread" "c_r" "thread"
++		for i in "thread"
+ 		do
+ 
+ 
+@@ -15774,9 +15774,6 @@
  STATIC=""
  HEADERSANDLIBSPATH=""
  
@@ -21,9 +30,9 @@
  eval "PTHREADSTATIC=\"\""
  if ( test -n "" )
  then
-@@ -20293,9 +20290,6 @@
- INCLUDESTRING=`echo $INCLUDESTRING | sed -e "s|-I/usr/include$||g" -e "s|-I/usr/include ||g"`
+@@ -16244,9 +16241,6 @@
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
+ LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib64$||g" -e "s|-L/lib64$||g" -e "s|-L/usr/lib64 ||g" -e "s|-L/lib64 ||g"`
  
 -eval "PTHREADINCLUDES=\"$INCLUDESTRING\""
 -eval "PTHREADLIB=\"$LIBSTRING\""
@@ -31,6 +40,3 @@
  eval "PTHREADSTATIC=\"$STATIC\""
  if ( test -n "" )
  then
- 
- 
- 

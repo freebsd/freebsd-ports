@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
+
+LICENSE=	LGPL20
 
 USE_GNOME=	pkgconfig
 USE_OPENSSL=	yes
@@ -23,34 +25,28 @@ CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
 		--with-ssl-libs=-L${OPENSSLLIB} \
 		--disable-pcre
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		rudiments-config.1
 
-ROOTDIRS=	classes css programming programming/parts
-
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/bin/perl,${PREFIX}/bin/perl,g' \
-		${WRKSRC}/doc/programming/insert.pl
+	@${REINPLACE_CMD} -e \
+		'/pkgconfig/s|$$(libdir)/|$$(prefix)/libdata/| ; \
+		 /^install:/s| install-doc | |' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/doc/programming/insert.pl
+	@${REINPLACE_CMD} -e \
+		's| -release $$(RUDIMENTS_VERSION)||' ${WRKSRC}/src/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for dirs in ${ROOTDIRS}
-	@${MKDIR} ${DOCSDIR}/${dirs}
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/doc/classes/*.html \
-		${DOCSDIR}/classes
-	@${INSTALL_DATA} ${WRKSRC}/doc/css/*.css \
-		${DOCSDIR}/css
-	@${INSTALL_DATA} ${WRKSRC}/doc/programming/*.html \
-		${DOCSDIR}/programming
-	@${INSTALL_SCRIPT} ${WRKSRC}/doc/programming/*.pl \
-		${DOCSDIR}/programming
-	@${INSTALL_DATA} ${WRKSRC}/doc/programming/parts/*.html \
-		${DOCSDIR}/programming/parts
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html \
-		${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.gif \
-		${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@(${TAR} -C ${WRKSRC}/doc --exclude CVS --exclude "Makefile" \
+		--exclude "*.bak" --exclude "*.in" -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -)
+	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
 .include <bsd.port.mk>
