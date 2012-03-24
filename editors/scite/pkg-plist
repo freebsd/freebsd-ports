@@ -42,6 +42,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/csound.properties
 %%DATADIR%%/css.properties
 %%DATADIR%%/d.properties
+%%DATADIR%%/ecl.properties
 %%DATADIR%%/eiffel.properties
 %%DATADIR%%/erlang.properties
 %%DATADIR%%/escript.properties
