@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	wmpuzzle
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://people.debian.org/~godisch/wmpuzzle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable puzzle game for WindowMaker and AfterStep
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
