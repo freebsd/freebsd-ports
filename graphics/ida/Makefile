@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	ida
-PORTVERSION=	2.08
+PORTVERSION=	2.09
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kraxel.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small and fast motif-based image viewer and editor
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		exif.12:${PORTSDIR}/graphics/libexif
@@ -24,19 +27,21 @@ OPTIONS=	GIF "Enable GIF support" on \
 		TIFF "Enable TIFF support" on \
 		WEBP "Enable WebP suport" off
 
-USE_ICONV=	yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=yes
+USE_ICONV=	yes
 USE_GMAKE=	yes
-LDFLAGS+=	-liconv
-MAKEFILE=	${WRKSRC}/GNUmakefile
+MAKEFILE=	GNUmakefile
 MAKE_ARGS=	JPEG_VER=80 verbose=yes
+MAKE_JOBS_SAFE=	yes
+
+LDFLAGS+=	-liconv
 
 MAN1=		exiftran.1 ida.1
 PORTDOCS=	README TODO INSTALL
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_GIF)
 MAKE_ARGS+=	HAVE_LIBUNGIF=no
@@ -75,7 +80,6 @@ MAKE_ARGS+=	HAVE_LIBWEBP=no
 .endif
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/exiftran ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for a in ${PORTDOCS}
@@ -83,4 +87,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
