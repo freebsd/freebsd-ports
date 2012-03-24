@@ -17,13 +17,12 @@ OPTIONS=	GUI "Installs Tcl/Tk GUI" on
 
 MAN6=		${PORTNAME}.6
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_GUI)
 PLIST_SUB+=	GUI="@comment "
 .else
 USE_TK_WRAPPER=	yes
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN6+=		x${PORTNAME}.6
 PLIST_SUB+=	GUI=""
 .endif
@@ -38,14 +37,14 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.6 ${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.6 ${MAN6PREFIX}/man/man6
 	@${MKDIR} ${DATADIR}
 .for f in README *.bmp *.gif *.ico *.png
 	${INSTALL_DATA} ${WRKSRC}/src/${f} ${DATADIR}
 .endfor
-.if !defined(WITHOUT_X11)
+.if !defined(WITHOUT_GUI)
 	${INSTALL_SCRIPT} ${WRKSRC}/src/x${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.6 ${MANPREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/man/x${PORTNAME}.6 ${MAN6PREFIX}/man/man6
 	${INSTALL_SCRIPT} ${WRKSRC}/src/xawale.tcl ${DATADIR}
 .endif
 .if !defined(NOPORTDOCS)
@@ -55,4 +54,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
