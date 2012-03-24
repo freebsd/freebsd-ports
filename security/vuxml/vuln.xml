@@ -129,8 +129,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[113902] High CVE-2011-3050: Use-after-free with first-letter
 	    handling.  Credit to miaubiz.</p>
 	  <p>[116162] High CVE-2011-3045: libpng integer issue from upstream.
