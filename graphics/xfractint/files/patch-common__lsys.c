@@ -1,9 +1,9 @@
---- ./common/lsys.c.orig	2005-12-21 21:15:40.000000000 -0500
-+++ ./common/lsys.c	2010-01-27 13:52:46.000000000 -0500
-@@ -2,7 +2,7 @@
- #include <string.h>
- #ifdef __TURBOC__
+--- common/lsys.c.orig	2011-05-07 15:34:46.000000000 -0500
++++ common/lsys.c	2012-03-10 16:37:40.000000000 -0500
+@@ -4,7 +4,7 @@
  #include <alloc.h>
+ #elif defined(__APPLE__)
+ #include <malloc/malloc.h>
 -#else
 +#elif !defined(BIG_ANSI_C)
  #include <malloc.h>

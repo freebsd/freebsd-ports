@@ -1,16 +1,15 @@
---- ./common/soi.c.orig	2004-11-23 08:13:37.000000000 -0500
-+++ ./common/soi.c	2010-01-27 13:52:46.000000000 -0500
-@@ -13,7 +13,9 @@
-  */
- #include <time.h>
+--- common/soi.c.orig	2011-05-07 15:36:36.000000000 -0500
++++ common/soi.c	2012-03-10 17:08:47.000000000 -0500
+@@ -15,7 +15,7 @@
  #include <string.h>
-+#ifndef BIG_ANSI_C
+ #ifdef __APPLE__
+ #include <malloc/malloc.h>
+-#else
++#elif !defined(BIG_ANSI_C)
  #include <malloc.h>
-+#endif
+ #endif
  #include "port.h"
- #include "prototyp.h"
- 
-@@ -21,7 +23,7 @@
+@@ -25,7 +25,7 @@
  #define FABS(x)  fabsl(x)
  /* the following needs to be changed back to frexpl once the portability
     issue has been addressed JCO */

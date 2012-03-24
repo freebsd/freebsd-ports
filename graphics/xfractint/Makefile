@@ -6,31 +6,37 @@
 #
 
 PORTNAME=	xfractint
-PORTVERSION=	20.04p09
+PORTVERSION=	20.04p12
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.fractint.org/ftp/current/linux/ \
+MASTER_SITES=	http://www.fractint.org/ftp/current/linux/	\
 		http://twegner.dyndns.org/fractint/ftp/current/linux/
 
 MAINTAINER=	onemda@gmail.com
 COMMENT=	The Unix port of fractint
 
 USE_GMAKE=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xft
 
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		${PORTNAME}.1
 
+DESKTOP_ENTRIES+="Xfracint" "${COMMENT}" "" "${PORTNAME}" "" "false"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+EXTRA_PATCHES+=	${FILESDIR}/extra-unix__fpu087.c
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/xfractint ${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/unix/xfractint.man ${PREFIX}/man/man1/${MAN1}
 	@${MKDIR} ${DATADIR}
-	@${CP} ${WRKSRC}/fractint.hlp ${DATADIR}
-	@${CP} ${WRKSRC}/sstools.ini ${DATADIR}
-	@${CP} -R ${WRKSRC}/formulas ${DATADIR}
-	@${CP} -R ${WRKSRC}/ifs ${DATADIR}
-	@${CP} -R ${WRKSRC}/lsystem ${DATADIR}
-	@${CP} -R ${WRKSRC}/maps ${DATADIR}
-	@${CP} -R ${WRKSRC}/pars ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/fractint.hlp ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/sstools.ini ${DATADIR}
+.for dir in formulas ifs lsystem maps pars
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR}
+.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
