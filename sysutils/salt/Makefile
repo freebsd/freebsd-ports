@@ -7,6 +7,7 @@
 
 PORTNAME=	salt
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -16,6 +17,13 @@ COMMENT=	Distributed, remote execution and configuration management system
 LICENSE=	AL2
 
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
+		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2 \
+		${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.9:${PORTSDIR}/devel/py-msgpack \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:${PORTSDIR}/security/py-m2crypto
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 FETCH_ARGS=	-pRr
 USE_PYTHON=	2.6-2.7
@@ -39,15 +47,6 @@ MAN1=		salt-call.1 \
 		salt.1
 
 MAN7=		salt.7
-
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.9:${PORTSDIR}/devel/py-pyzmq \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:${PORTSDIR}/security/py-pycrypto \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=0.1.9:${PORTSDIR}/devel/py-msgpack \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>=0:${PORTSDIR}/security/py-m2crypto
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-patch:
 .for file in conf/minion.template conf/master.template doc/man/salt-key.1 \
