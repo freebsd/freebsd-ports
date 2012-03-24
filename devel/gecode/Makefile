@@ -6,52 +6,22 @@
 #
 
 PORTNAME=	gecode
-PORTVERSION=	3.5.0
+PORTVERSION=	3.7.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Constraint Development Environment
 
-BUILD_DEPENDS=	bison>=2.3:${PORTSDIR}/devel/bison \
-		flex>=2.5.35:${PORTSDIR}/textproc/flex
-
 LICENSE=	MIT
+
+OPTIONS=	GIST "Interactive Search Tool (requires Qt)" Off
+
+USE_PERL5_BUILD=yes
+USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes
-
-MAKE_JOBS_UNSAFE=	yes
-PATCH_STRIP=	-p1
-
-OPTIONS=	GIST "Interactive Search Tool" off \
-		QT "QT interface" off
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_QT)
-CONFIGURE_ARGS+=	--enable-qt
-USE_QT_VER=		4
-QT_COMPONENTS=		corelib gui moc_build qmake_build
-.else
-CONFIGURE_ARGS+=	--disable-qt
-.endif
-
-.if defined(WITH_GIST)
-.if !defined(WITH_QT)
-IGNORE=			Building GIST requires enabling the QT interface
-.else
-CONFIGURE_ARGS+=	--enable-gist
-PLIST_SUB+=		GIST=""
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-gist
-PLIST_SUB+=		GIST="@comment "
-.endif
-
-CONFIGURE_ARGS+=\
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--enable-shared \
 		--disable-doc-dot \
 		--disable-doc-tagfile \
@@ -63,5 +33,28 @@ CONFIGURE_ARGS+=\
 		--disable-examples \
 		--enable-minimodel \
 		--enable-search
+USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=yes
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GIST)
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc_build qmake_build
+CONFIGURE_ARGS+=--enable-gist --enable-qt
+PLIST_SUB+=	GIST=""
+.else
+CONFIGURE_ARGS+=--disable-gist --disable-qt
+PLIST_SUB+=	GIST="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^ARR/s|^|#| ; \
+		 /^PACKAGE_VERSION_NUMBER/s|^|#| ; \
+		 /_vendor/s| == | = | ; \
+		 /host_os/s| == | = | ; \
+		 /gcc_optimize_flag/s|-O3|| ; \
+		 /="-ggdb/s|^|#|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
