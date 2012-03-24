@@ -7,21 +7,24 @@
 
 PORTNAME=	Mojolicious-Plugin-Database
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Handling of DBI based connections in Mojolicious
 
-RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
-		p5-Mojolicious>=1:${PORTSDIR}/www/p5-Mojolicious
-
-PERL_CONFIGURE=	yes
-
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Mojolicious>=1:${PORTSDIR}/www/p5-Mojolicious
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Mojolicious::Plugin::Database.3
 
