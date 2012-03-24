@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-LoadableClass
-PORTVERSION=	0.007
+PORTVERSION=	0.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
@@ -25,8 +25,7 @@ RUN_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 
 PERL_CONFIGURE=	yes
 
