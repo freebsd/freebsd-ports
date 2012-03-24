@@ -11,6 +11,7 @@ etc/x10rt_standalone.properties
 include/x10_x10rt_MessageHandlers.h
 include/x10_x10rt_TeamSupport.h
 include/x10_x10rt_X10RT.h
+include/x10_x10rt_X10RT_State.h
 include/x10rt_cpp.h
 include/x10rt_cuda.h
 include/x10rt_front.h
