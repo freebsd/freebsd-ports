@@ -6,44 +6,65 @@
 #
 
 PORTNAME=	scare
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.10
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/
+MASTER_SITES=	http://ifarchive.flavorplex.com/%SUBDIR%/ \
+		http://ifarchive.heanet.ie/%SUBDIR%/ \
+		http://ifarchive.jmac.org/%SUBDIR%/ \
+		http://ifarchive.plover.net/%SUBDIR%/ \
+		http://ifarchive.wurb.com/%SUBDIR%/ \
+		http://www.ifarchive.org/%SUBDIR%/ \
+		ftp://ftp.ifarchive.org/%SUBDIR%/
+MASTER_SITE_SUBDIR=	if-archive/programming/adrift
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ADRIFT-compatible interactive games interpreter
 
+LICENSE=	GPLv2
+
 OPTIONS=	XGLK "Use the xglk graphics library" off
 
 USE_ZIP=	yes
+MAKE_JOBS_SAFE=yes
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/scare
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-BINFILES=	scare
+.include <bsd.port.options.mk>
 
 .if defined(WITH_XGLK)
-PKGNAMESUFFIX=	-glk
-
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
 RUN_DEPENDS+=	${LOCALBASE}/lib/libxglk.a:${PORTSDIR}/games/xglk
-
-ALL_TARGET=	all glkscare
-
-EXTRA_PATCHES=	${FILESDIR}/xglk.patch
-
-BINFILES+=	glkscare
-.else
-EXTRA_PATCHES=	${FILESDIR}/no-xglk.patch
+ALL_TARGET=	scare glkscare
+PLIST_FILES+=	bin/glkscare
 .endif
 
-PLIST_FILES=	${BINFILES:S,^,bin/,}
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^CC/s|= |?= | ; \
+		 /^CFLAGS/s|= -O2|+= | ; \
+		 /^CFLAGS/s|-fPIC|| ; \
+		 /^LDLIBS/s|=.*|= -lz| ; \
+		 /-D__unix/s|^#|| ; \
+		 s|^sinclude.*|.include "$$(GLKPATH)/Make.$$(GLK)"| ; \
+		 s| $$(ZOBJECTS)||' ${WRKSRC}/source/Makefile
+
+do-configure:
+	@${MKDIR} ${WRKDIR}/xglk
+.if defined(WITH_XGLK)
+	@${LN} -sf ${LOCALBASE}/include/xglk/*.h ${WRKDIR}/xglk
+	@${LN} -sf ${LOCALBASE}/share/xglk/Make.xglk ${WRKDIR}/xglk
+.else
+	@${TOUCH} ${WRKDIR}/xglk/Make.xglk
+.endif
 
 do-install:
-		${INSTALL_PROGRAM} ${BINFILES:S,^,${WRKSRC}/source/,} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/source/scare ${PREFIX}/bin
+.if defined(WITH_XGLK)
+	${INSTALL_PROGRAM} ${WRKSRC}/source/glkscare ${PREFIX}/bin
+.endif
 
 test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
