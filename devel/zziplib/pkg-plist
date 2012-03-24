@@ -10,6 +10,8 @@ bin/zzdir
 bin/zzxorcat
 bin/zzxorcopy
 bin/zzxordir
+%%SDL%%include/SDL_rwops_zzip/SDL_rwops_zzip.c
+%%SDL%%include/SDL_rwops_zzip/SDL_rwops_zzip.h
 include/zzip-io.h
 include/zzip.h
 include/zziplib.h
@@ -48,6 +50,7 @@ lib/libzzipwrap.a
 lib/libzzipwrap.la
 lib/libzzipwrap.so
 lib/libzzipwrap.so.13
+%%SDL%%libdata/pkgconfig/SDL_rwops_zzip.pc
 libdata/pkgconfig/zzip-zlib-config.pc
 libdata/pkgconfig/zzipfseeko.pc
 libdata/pkgconfig/zziplib.pc
@@ -55,3 +58,4 @@ libdata/pkgconfig/zzipmmapped.pc
 libdata/pkgconfig/zzipwrap.pc
 share/aclocal/zziplib.m4
 @dirrm include/zzip
+%%SDL%%@dirrm include/SDL_rwops_zzip

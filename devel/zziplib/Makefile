@@ -6,22 +6,27 @@
 #
 
 PORTNAME=	zziplib
-PORTVERSION=	0.13.60
+PORTVERSION=	0.13.62
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to provide transparent read access to zipped files
 
+LICENSE=	LGPL21 MPL
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
+OPTIONS=	SDL "Enable SDL support" off
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
-CONFIGURE_ARGS=	--disable-sdl
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open.3 \
 		zzip_close.3 zzip_closedir.3 zzip_compr_str.3 zzip_dir_alloc.3 \
@@ -50,6 +55,16 @@ MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open
 		zzip_tell32.3 zzip_telldir.3 zzip_telldir32.3
 
 PORTSCOUT=	limit:^0\.
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SDL)
+USE_SDL=	sdl
+CONFIGURE_ARGS+=--enable-sdl
+PLIST_SUB+=	SDL=""
+.else
+PLIST_SUB+=	SDL="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
