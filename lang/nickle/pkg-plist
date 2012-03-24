@@ -10,6 +10,36 @@ include/nickle/opcode.h
 include/nickle/ref.h
 include/nickle/stack.h
 include/nickle/value.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/COPYING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cribbage.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/erat.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fourfours.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/initializer.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/is-prime.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kaiser.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/menace2.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/miller-rabin.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mutextest.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numbers.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polynomial.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prime.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/qbrating.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/randtest.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/restart.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/roman.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa-demo.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsa.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/skiplisttest.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/COPYING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/context.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/generate.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/parse.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smlng/test.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/COPYING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/snowflake.5c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/snowflake.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle/turtle.5c
 %%DATADIR%%/COPYING
 %%DATADIR%%/abort.5c
 %%DATADIR%%/arc4.5c
@@ -17,53 +47,25 @@ include/nickle/value.h
 %%DATADIR%%/command.5c
 %%DATADIR%%/ctype.5c
 %%DATADIR%%/factorial.5c
-%%DATADIR%%/prime_sieve.5c
-%%DATADIR%%/examples/COPYING
-%%DATADIR%%/examples/comb.5c
-%%DATADIR%%/examples/cribbage.5c
-%%DATADIR%%/examples/erat.5c
-%%DATADIR%%/examples/initializer.5c
-%%DATADIR%%/examples/is-prime.5c
-%%DATADIR%%/examples/kaiser.5c
-%%DATADIR%%/examples/menace2.5c
-%%DATADIR%%/examples/miller-rabin.5c
-%%DATADIR%%/examples/mutextest.5c
-%%DATADIR%%/examples/numbers.5c
-%%DATADIR%%/examples/polynomial.5c
-%%DATADIR%%/examples/prime.5c
-%%DATADIR%%/examples/qbrating.5c
-%%DATADIR%%/examples/randtest.5c
-%%DATADIR%%/examples/restart.5c
-%%DATADIR%%/examples/roman.5c
-%%DATADIR%%/examples/rsa-demo.5c
-%%DATADIR%%/examples/rsa.5c
-%%DATADIR%%/examples/skiplist.5c
-%%DATADIR%%/examples/skiplisttest.5c
-%%DATADIR%%/examples/smlng/COPYING
-%%DATADIR%%/examples/smlng/context.5c
-%%DATADIR%%/examples/smlng/generate.5c
-%%DATADIR%%/examples/smlng/parse.5c
-%%DATADIR%%/examples/smlng/test.5c
-%%DATADIR%%/examples/sort.5c
-%%DATADIR%%/examples/turtle/COPYING
-%%DATADIR%%/examples/turtle/snowflake.5c
-%%DATADIR%%/examples/turtle/snowflake.tex
-%%DATADIR%%/examples/turtle/turtle.5c
-%%DATADIR%%/examples/fourfours.5c
 %%DATADIR%%/file.5c
+%%DATADIR%%/gamma.5c
 %%DATADIR%%/history.5c
+%%DATADIR%%/list.5c
 %%DATADIR%%/math.5c
 %%DATADIR%%/mutex.5c
 %%DATADIR%%/parse-args.5c
+%%DATADIR%%/prime_sieve.5c
 %%DATADIR%%/printf.5c
 %%DATADIR%%/prng.5c
 %%DATADIR%%/process.5c
 %%DATADIR%%/scanf.5c
+%%DATADIR%%/skiplist.5c
 %%DATADIR%%/socket.5c
+%%DATADIR%%/sort.5c
 %%DATADIR%%/string.5c
 %%DATADIR%%/svg.5c
-@dirrm %%DATADIR%%/examples/turtle
-@dirrm %%DATADIR%%/examples/smlng
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turtle
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smlng
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/nickle
