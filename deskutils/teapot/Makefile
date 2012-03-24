@@ -16,17 +16,21 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen curses based spread sheet program
 
-BROKEN=		leaves empty directories on deinstall
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_CMAKE=	yes
 
-MANPREFIX=	${PREFIX}/share
 NO_MANCOMPRESS=	no
 MAN1=	teapot.1
 
 # We download the prebuilt binary tarball for Linux in order to avoid
 # having to generate the pdf and html docs from the LyX sourcecode.
 WRKSRC_DOCS=	${WRKDIR}/${DISTNAME:C/^./T/}-Linux/share/doc/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
