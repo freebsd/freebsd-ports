@@ -1,0 +1,15 @@
+--- cpp.orig/src/Glacier2/RouterI.cpp	2011-06-15 21:43:58.000000000 +0200
++++ cpp/src/Glacier2/RouterI.cpp	2012-03-04 19:39:27.000000000 +0100
+@@ -98,6 +98,12 @@
+             _session->destroy_async(amiCB);
+         }
+     }
++
++    _clientBlobject->destroy();
++    if(_serverBlobject)
++    {
++        _serverBlobject->destroy();
++    }
+ }
+ 
+ ObjectPrx
