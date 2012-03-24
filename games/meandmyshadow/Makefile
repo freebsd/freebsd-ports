@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	meandmyshadow
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -27,7 +26,7 @@ PORTDOCS=	*
 
 DESKTOP_ENTRIES="Me and My Shadow" \
 		"Puzzle/platform game" \
-		"${DATADIR}/meandmyshadow.ico" \
+		"meandmyshadow.png" \
 		"meandmyshadow" \
 		"Game;LogicGame;" \
 		false
@@ -37,8 +36,9 @@ post-patch:
 		${WRKSRC}/cmake/Modules/FindSDL_gfx.cmake
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/windows-icon/meandmyshadow.ico \
-		${DATADIR}/
+	${MKDIR} -p ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/icons/64x64/meandmyshadow.png \
+		${PREFIX}/share/pixmaps/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Controls.txt ${DOCSDIR}/
