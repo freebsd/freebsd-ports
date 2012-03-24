@@ -8,7 +8,7 @@
 
 PORTNAME=	graphthing
 PORTVERSION=	1.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
@@ -21,16 +21,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_BISON=	build
-USE_GMAKE=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/graphthing bin/gt
 
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|@@CXX@|@CXX@|' ${WRKSRC}/src/GNUmakefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/graphthing ${PREFIX}/bin
