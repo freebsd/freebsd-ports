@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmusicbrowser
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	audio
 MASTER_SITES=	http://gmusicbrowser.org/download/
 
