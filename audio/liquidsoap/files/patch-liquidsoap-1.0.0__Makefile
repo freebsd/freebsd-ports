@@ -1,6 +1,6 @@
---- ./liquidsoap-0.9.3/Makefile.orig	2010-10-31 15:06:48.616074307 -0400
-+++ ./liquidsoap-0.9.3/Makefile	2010-10-31 15:07:23.378069324 -0400
-@@ -64,8 +64,8 @@
+--- ./liquidsoap-1.0.0/Makefile.orig	2012-02-27 21:26:08.000000000 +0200
++++ ./liquidsoap-1.0.0/Makefile	2012-02-27 21:26:44.000000000 +0200
+@@ -76,8 +76,8 @@
  endif
  	$(INSTALL_DIRECTORY) $(bindir)
  	$(INSTALL_DIRECTORY) $(libdir)/liquidsoap/$(libs_dir_version)
@@ -8,6 +8,6 @@
 -	$(INSTALL_PROGRAM) scripts/extract-replaygain $(libdir)/liquidsoap/$(libs_dir_version)
 +	$(INSTALL_SCRIPT) scripts/liquidtts $(libdir)/liquidsoap/$(libs_dir_version)
 +	$(INSTALL_SCRIPT) scripts/extract-replaygain $(libdir)/liquidsoap/$(libs_dir_version)
- 	$(INSTALL_DATA) scripts/utils.liq $(libdir)/liquidsoap/$(libs_dir_version)
- 	$(INSTALL_DIRECTORY) ${sysconfdir}/liquidsoap
- 	$(INSTALL_DATA) examples/radio.liq \
+ 	for l in externals.liq lastfm.liq utils.liq shoutcast.liq flows.liq video_text.liq \
+ 		       http.liq http_codes.liq pervasives.liq ; \
+ 	do \
