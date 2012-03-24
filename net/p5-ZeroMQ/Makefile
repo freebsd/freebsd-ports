@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZeroMQ
-PORTVERSION=	0.18
+PORTVERSION=	0.21
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DMAKI
@@ -23,9 +23,9 @@ BUILD_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
+		p5-Test-TCP>=1.08:${PORTSDIR}/devel/p5-Test-TCP
 
 USE_GNOME=	pkgconfig
 
