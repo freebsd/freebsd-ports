@@ -1,6 +1,6 @@
---- configure.orig	2009-08-27 16:33:21.000000000 +0200
-+++ configure	2009-08-27 16:33:21.000000000 +0200
-@@ -2271,7 +2271,7 @@ $as_echo "$as_me: toplevel srcdir alread
+--- configure.orig	2012-03-11 23:21:53.000000000 +0900
++++ configure	2012-03-12 17:46:25.000000000 +0900
+@@ -2608,7 +2608,7 @@
    else
      test ".$ax_enable_builddir" = "."  && ax_enable_builddir="."
      test ".$ax_enable_builddir" = ".no"  && ax_enable_builddir="."
@@ -8,26 +8,26 @@
 +    test ".$BUILD" = "." && BUILD=./build
      test ".$ax_enable_builddir" = ".yes" && ax_enable_builddir="$BUILD"
      if test ".$ax_enable_builddir" != ".." ; then    # we know where to go and
-       { as_dir=$ax_enable_builddir
-@@ -12133,7 +12133,7 @@ $as_echo_n "checking out linker version 
+       as_dir=$ax_enable_builddir; as_fn_mkdir_p
+@@ -11452,7 +11452,7 @@
    if test "_$MICRO_VERSION" = "_" ; then MICRO_VERSION="0" ; fi
    if test "_$MINOR_VERSION" = "_" ; then MINOR_VERSION="$MAJOR_VERSION" ; MAJOR_VERSION="0" ; fi
    MINOR_VERSION=`echo "$MINOR_VERSION" | sed -e 's/[^0-9].*//'`
 -  RELEASE_INFO="-release $MAJOR_VERSION"
 +  RELEASE_INFO=""
    VERSION_INFO="-version-info $MINOR_VERSION:$MICRO_VERSION"
- { $as_echo "$as_me:$LINENO: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: /$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&5
  $as_echo "/$MAJOR_VERSION/$MINOR_VERSION:$MICRO_VERSION (-$MAJOR_VERSION.so.$MINOR_VERSION.0.$MICRO_VERSION)" >&6; }
-@@ -13713,7 +13713,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking link options" >&5
- $as_echo_n "checking link options... " >&6; }
- ZZIPLIB_LDFLAGS=""
--test ".$can_build_shared" != ".no" && ZZIPLIB_LDFLAGS="--export-dynamic"
-+test ".$can_build_shared" != ".no" && ZZIPLIB_LDFLAGS="${wl}--export-dynamic"
- RESOLVES=" # "
- case "$host_os" in mingw*)
-     ZZIPLIB_LDFLAGS="-no-undefined -export-all-symbols -mconsole"
-@@ -19280,7 +19280,7 @@ s/:.*/:/
+@@ -13733,7 +13733,7 @@
+ ;; *)
+     if test ".$can_build_shared" != ".no" ; then
+       ZZIPLIB_LDFLAGS="-export-dynamic"
+-      if test ".$lt_cv_prog_gnu_ld" == ".yes" ; then
++      if test ".$lt_cv_prog_gnu_ld" = ".yes" ; then
+          ZZIPLIB_LDFLAGS="${wl}--export-dynamic"
+          # TODO: that is for backward compatibility only
+       fi
+@@ -16590,7 +16590,7 @@
  _EOF
      test ".$USE_MAINTAINER_MODE" = ".no" || \
    	cp "$tmp/conftemp.sed" "$ac_top_srcdir/makefile.sed~"            ## DEBUGGING
