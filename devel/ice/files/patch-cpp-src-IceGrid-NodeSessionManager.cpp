@@ -1,0 +1,17 @@
+--- cpp.orig/src/IceGrid/NodeSessionManager.cpp	2011-06-15 21:43:59.000000000 +0200
++++ cpp/src/IceGrid/NodeSessionManager.cpp	2012-03-04 19:55:44.000000000 +0100
+@@ -110,6 +110,14 @@
+         }
+         exception.reset(ex.ice_clone());
+     }
++    catch(const PermissionDeniedException& ex)
++    {
++        if(traceLevels)
++        { 
++            traceLevels->logger->error("connection to the the registry `" + _name + "' was denied:\n" + ex.reason);
++        }
++        exception.reset(ex.ice_clone());
++    }
+     catch(const Ice::Exception& ex)
+     {
+         exception.reset(ex.ice_clone());

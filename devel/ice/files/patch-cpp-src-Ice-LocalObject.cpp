@@ -1,0 +1,11 @@
+--- cpp.orig/src/Ice/LocalObject.cpp	2011-06-15 21:43:58.000000000 +0200
++++ cpp/src/Ice/LocalObject.cpp	2012-03-04 20:14:52.000000000 +0100
+@@ -13,7 +13,7 @@
+ using namespace Ice;
+ using namespace IceInternal;
+ 
+-IceUtil::Shared* IceInternal::upCast(LocalObject* obj) { return obj; }
++IceUtil::Shared* Ice::upCast(LocalObject* obj) { return obj; }
+ 
+ bool
+ Ice::LocalObject::operator==(const LocalObject& r) const

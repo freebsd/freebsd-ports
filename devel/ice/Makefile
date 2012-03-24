@@ -7,7 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.zeroc.com/Ice/3.4/
 
@@ -16,6 +16,15 @@ COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		mcpp.3:${PORTSDIR}/devel/mcpp
+
+OPTIONS=	TESTS "Build and run tests (requires lang/python)" on \
+		DEMOS "Build demos" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_TESTS)
+USE_PYTHON_BUILD=	yes
+.endif
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -45,6 +54,14 @@ BROKEN=		fails to link
 MAKE_ENV=	LP64=yes
 .endif
 
+.if !defined(WITH_TESTS)
+MAKE_ENV+=	NOTESTS=yes
+.endif
+
+.if !defined(WITH_DEMOS)
+MAKE_ENV+=	NODEMOS=yes
+.endif
+
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
@@ -68,5 +85,13 @@ post-patch:
 		${WRKSRC}/cpp/src/ca/Makefile
 	${REINPLACE_CMD} '/LICENSE/s/prefix/install_slicedir/' \
 		${WRKSRC}/config/Make.common.rules
+
+.if defined(WITH_TESTS)
+TEST_CMD=	@cd ${BUILD_WRKSRC} && ${PYTHON_CMD} ./allTests.py
+post-build:
+	${TEST_CMD}
+regression-test test: build
+	${TEST_CMD}
+.endif
 
 .include <bsd.port.post.mk>
