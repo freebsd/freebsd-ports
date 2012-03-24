@@ -26,8 +26,6 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Object-oriented parallal programming language
 
-BROKEN=		incomplete plist
-
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
