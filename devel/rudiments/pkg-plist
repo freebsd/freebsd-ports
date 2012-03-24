@@ -140,8 +140,8 @@ include/rudiments/private/serversocket.h
 include/rudiments/private/serversocketincludes.h
 include/rudiments/private/serviceentry.h
 include/rudiments/private/serviceentryincludes.h
-include/rudiments/private/shadowentryincludes.h
 include/rudiments/private/shadowentry.h
+include/rudiments/private/shadowentryincludes.h
 include/rudiments/private/sharedmemory.h
 include/rudiments/private/sharedmemoryincludes.h
 include/rudiments/private/shmfile.h
@@ -287,6 +287,7 @@ libdata/pkgconfig/rudiments.pc
 %%PORTDOCS%%%%DOCSDIR%%/invisible.gif
 %%PORTDOCS%%%%DOCSDIR%%/programming/baseclasses.html
 %%PORTDOCS%%%%DOCSDIR%%/programming/insert.pl
+%%PORTDOCS%%%%DOCSDIR%%/programming/utilclasses.html
 %%PORTDOCS%%%%DOCSDIR%%/programming/parts/character.C.html
 %%PORTDOCS%%%%DOCSDIR%%/programming/parts/charstring.C.html
 %%PORTDOCS%%%%DOCSDIR%%/programming/parts/chat.C.html
@@ -356,12 +357,11 @@ libdata/pkgconfig/rudiments.pc
 %%PORTDOCS%%%%DOCSDIR%%/programming/parts/xattr.C.html
 %%PORTDOCS%%%%DOCSDIR%%/programming/parts/xmld.C.html
 %%PORTDOCS%%%%DOCSDIR%%/programming/parts/xmls.C.html
-%%PORTDOCS%%%%DOCSDIR%%/programming/utilclasses.html
 %%PORTDOCS%%%%DOCSDIR%%/reference.html
-@dirrm include/rudiments/private
-@dirrm include/rudiments
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programming/parts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programming
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/classes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/rudiments/private
+@dirrm include/rudiments
