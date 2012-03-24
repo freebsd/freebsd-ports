@@ -18,17 +18,20 @@ PKGNAMESUFFIX=	${FFTW_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
+LICENSE=	GPLv2
+
 # current flavors: default, float
 FFTW_FLAVOR?=	default
 FFTW_SUFIX=
 
-USE_AUTOTOOLS=	libtool
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:env libtool
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
 PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
 
 .include <bsd.port.pre.mk>
@@ -47,7 +50,7 @@ PLIST_SUB+=	DEF=""
 CONFIGURE_ARGS+=	--enable-i386-hacks
 .endif
 
-.if ${ARCH} == "i386" || ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		does not build
 .endif
 
@@ -56,6 +59,9 @@ post-patch:
 .if ${FFTW_FLAVOR}=="float"
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 .endif
+
+pre-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF})
 
 post-install:
 .if ${FFTW_FLAVOR}=="default"
