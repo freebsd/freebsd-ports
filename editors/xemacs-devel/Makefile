@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=	--with-athena=3d
 #		--with-xpm=no
 # doesn't work with gtk12?
 #USE_GNOME=	gtk20
-#USE_XPM=	no
+#USE_XORG+=	xpm
 #.endif
 
 # Drop faces (libcompface) and offix (libDnd) if building package,
