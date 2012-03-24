@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mpiexec
-PORTVERSION=	0.83
+PORTVERSION=	0.84
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.osc.edu/~djohnson/mpiexec/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A tool to run a parallel job from within a PBS environment
 
 LIB_DEPENDS=	torque.2:${PORTSDIR}/sysutils/torque
