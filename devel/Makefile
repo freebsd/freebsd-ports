@@ -3146,6 +3146,7 @@
     SUBDIR += py-boto-devel
     SUBDIR += py-cclib
     SUBDIR += py-celementtree
+    SUBDIR += py-celery
     SUBDIR += py-cfgparse
     SUBDIR += py-cheetah
     SUBDIR += py-ciphon

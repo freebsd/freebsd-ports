@@ -1,0 +1,17 @@
+Celery is an open source asynchronous task queue/job queue based on distributed
+message passing. It is focused on real-time operation, but supports scheduling
+as well.
+
+The execution units, called tasks, are executed concurrently on one
+or more worker nodes. Tasks can execute asynchronously (in the
+background) or synchronously (wait until ready).
+
+Celery is written in Python, but the protocol can be implemented
+in any language. It can also operate with other languages using
+webhooks.
+
+The recommended message broker is RabbitMQ, but limited support for Redis,
+Beanstalk, MongoDB, CouchDB, and databases (using SQLAlchemy or the Django
+ORM) is also available.
+
+WWW:   http://pypi.python.org/pypi/celery/
