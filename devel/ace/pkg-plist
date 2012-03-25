@@ -200,6 +200,11 @@ include/ace/Codeset_IBM1047.h
 include/ace/Codeset_Registry.h
 include/ace/Codeset_Registry.inl
 include/ace/Codeset_Symbols.h
+include/ace/Compression/ACE_Compression_export.h
+include/ace/Compression/Compressor.h
+include/ace/Compression/Compressor.inl
+include/ace/Compression/rle/ACE_RLECompression_export.h
+include/ace/Compression/rle/RLECompressor.h
 include/ace/Condition_Recursive_Thread_Mutex.h
 include/ace/Condition_T.cpp
 include/ace/Condition_T.h
@@ -1116,6 +1121,7 @@ include/ace/config-vxworks6.5.h
 include/ace/config-vxworks6.6.h
 include/ace/config-vxworks6.7.h
 include/ace/config-vxworks6.8.h
+include/ace/config-vxworks6.9.h
 include/ace/config-win32-cegcc.h
 include/ace/config-win32-common.h
 include/ace/config-win32-dmc.h
@@ -1241,6 +1247,9 @@ lib/libACEXML_Parser.so.%%VERSION%%
 lib/libACEXML_XML_Svc_Conf_Parser.so
 lib/libACEXML_XML_Svc_Conf_Parser.so.6
 lib/libACEXML_XML_Svc_Conf_Parser.so.%%VERSION%%
+lib/libACE_Compression.so
+lib/libACE_Compression.so.6
+lib/libACE_Compression.so.%%VERSION%%
 lib/libACE_ETCL.so
 lib/libACE_ETCL.so.6
 lib/libACE_ETCL.so.%%VERSION%%
@@ -1265,6 +1274,9 @@ lib/libACE_Monitor_Control.so.%%VERSION%%
 %%QT%%lib/libACE_QtReactor.so
 %%QT%%lib/libACE_QtReactor.so.6
 %%QT%%lib/libACE_QtReactor.so.%%VERSION%%
+lib/libACE_RLECompression.so
+lib/libACE_RLECompression.so.6
+lib/libACE_RLECompression.so.%%VERSION%%
 lib/libACE_RMCast.so
 lib/libACE_RMCast.so.6
 lib/libACE_RMCast.so.%%VERSION%%
@@ -1320,6 +1332,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_athena.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_athena3d.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_bzip2.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/ace_compressionlib.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_etcl.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_etcl_parser.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_fl.mpb
@@ -1338,6 +1351,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_qt.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_qt4.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_qt4reactor.mpb
+%%DATADIR%%/bin/MakeProjectCreator/config/ace_rlecompressionlib.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_tk.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_tkreactor.mpb
 %%DATADIR%%/bin/MakeProjectCreator/config/ace_unicode.mpb
@@ -1497,6 +1511,7 @@ libdata/pkgconfig/Kokyu.pc
 %%DATADIR%%/include/makeinclude/platform_vxworks6.6.GNU
 %%DATADIR%%/include/makeinclude/platform_vxworks6.7.GNU
 %%DATADIR%%/include/makeinclude/platform_vxworks6.8.GNU
+%%DATADIR%%/include/makeinclude/platform_vxworks6.9.GNU
 %%DATADIR%%/include/makeinclude/platform_win32_dmc.GNU
 %%DATADIR%%/include/makeinclude/platform_win32_icc.GNU
 %%DATADIR%%/include/makeinclude/platform_win32_interix.GNU
@@ -1539,6 +1554,8 @@ libdata/pkgconfig/Kokyu.pc
 @dirrm include/ace/HTBP
 %%FLTK%%@dirrm include/ace/FlReactor
 @dirrm include/ace/ETCL
+@dirrm include/ace/Compression/rle
+@dirrm include/ace/Compression
 @dirrm include/ace
 @dirrm include/Kokyu
 @dirrm include/JAWS/server

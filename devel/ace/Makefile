@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ace
-PORTVERSION=	6.0.8
+PORTVERSION=	6.1.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
