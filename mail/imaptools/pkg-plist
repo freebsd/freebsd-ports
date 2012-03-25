@@ -11,6 +11,7 @@ bin/imapdump.pl
 bin/imapfilter.pl
 bin/imapsync.pl
 bin/list_folders.pl
+bin/list_imap_folders.pl
 bin/maildir_to_imap.pl
 bin/mbxIMAPsync.pl
 bin/migrateIMAP-win.pl
