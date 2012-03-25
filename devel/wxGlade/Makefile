@@ -5,14 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTVERSION=	0.6.5
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GUI builder for wxPython/wxWindows written in Python
+COMMENT=	GUI builder for wxPython/wxWidgets written in Python
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
 
@@ -22,6 +24,10 @@ WX_COMPS=	python
 
 MAN1=		wxglade.1
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"s|docs_path, 'html'|docs_path, 'doc', 'html'|" ${WRKSRC}/wxglade.py
+
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD} 'exec ${PYTHON_CMD} \
 		${PYTHON_SITELIBDIR}/${PORTNAME}/${PORTNAME}.py \
@@ -29,15 +35,29 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/wxglade.1 ${MAN1PREFIX}/man/man1
+	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}/${PORTNAME}
 .for f in codegen edit_sizers icons res widgets
-	${CP} -R ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	@(cd ${WRKSRC} \
+		&& ${COPYTREE_SHARE} ${f} ${PYTHON_SITELIBDIR}/${PORTNAME})
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/debian/wxglade.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/epydoc.conf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/man/*.xml ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/src/*.xml ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}/doc
+	@${MKDIR} ${DOCSDIR}/doc/html
+	${INSTALL_DATA} ${WRKSRC}/docs/html/*.* ${DOCSDIR}/doc/html
+	@${MKDIR} ${DOCSDIR}/doc/img
+	${INSTALL_DATA} ${WRKSRC}/docs/img/*.* ${DOCSDIR}/doc/img
+	@${MKDIR} ${DOCSDIR}/doc/pdf
+	${INSTALL_DATA} ${WRKSRC}/docs/pdf/*.pdf ${DOCSDIR}/doc/pdf
+	@${LN} -sf ${DOCSDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/docs
 .endif
 
 .include <bsd.port.mk>
