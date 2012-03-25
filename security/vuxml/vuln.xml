@@ -52,6 +52,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60f81af3-7690-11e1-9423-00235a5f2c9a">
+    <topic>raptor/raptor2 -- XXE in RDF/XML File Interpretation</topic>
+    <affects>
+      <package>
+	<name>raptor2</name>
+	<range><lt>2.0.7</lt></range>
+      </package>
+      <package>
+	<name>raptor</name>
+	<range><lt>1.4.21_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Timothy D. Morgan reports:</p>
+	<blockquote cite="http://www.vsecurity.com/resources/advisory/20120324-1/">
+	  <p>In December 2011, VSR identified a vulnerability in multiple open
+	    source office products (including OpenOffice, LibreOffice, KOffice,
+	    and AbiWord) due to unsafe interpretation of XML files with custom
+	    entity declarations. Deeper analysis revealed that the vulnerability
+	    was caused by acceptance of external entities by the libraptor
+	    library, which is used by librdf and is in turn used by these office
+	    products.</p>
+	  <p>In the context of office applications, these vulnerabilities could
+	    allow for XML External Entity (XXE) attacks resulting in file theft
+	    and a loss of user privacy when opening potentially malicious ODF
+	    documents.  For other applications which depend on librdf or
+	    libraptor, potentially serious consequences could result from
+	    accepting RDF/XML content from untrusted sources, though the impact
+	    may vary widely depending on the context.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0037</cvename>
+      <url>http://seclists.org/fulldisclosure/2012/Mar/281</url>
+      <url>http://www.vsecurity.com/resources/advisory/20120324-1/</url>
+    </references>
+    <dates>
+      <discovery>2012-03-24</discovery>
+      <entry>2012-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="42a2c82a-75b9-11e1-89b4-001ec9578670">
     <topic>quagga -- multiple vulnerabilities</topic>
     <affects>
