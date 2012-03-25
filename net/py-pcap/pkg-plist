@@ -1,4 +1,0 @@
-%%PYTHON_SITELIBDIR%%/_pcapmodule.so
-%%PYTHON_SITELIBDIR%%/pcap.py
-%%PYTHON_SITELIBDIR%%/pcap.pyc
-%%PYTHON_SITELIBDIR%%/pcap.pyo
