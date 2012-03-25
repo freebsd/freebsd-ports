@@ -27,6 +27,7 @@ DISTVERSION2=	8b
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
+MAKE_JOBS_SAFE=	yes
 
 ADDITIONAL_HEADER=	jinclude.h jpegint.h
 
@@ -43,6 +44,11 @@ post-extract:
 
 post-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o jpegexiforient jpegexiforient.c
+
+test: build
+	${SETENV} LD_LIBRARY_PATH=${WRKSRC}/.libs ${MAKE} -C ${WRKSRC} test
+
+regression-test:	test
 
 post-install:
 .if !defined(NOPORTDOCS)
