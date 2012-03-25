@@ -16,15 +16,28 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast implementation of the xmlrpc spec for Python
 
+LICENSE=	LGPL21 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	py-xmlrpc
-EXAMPLESDIR=	${PREFIX}/share/examples/py-xmlrpc
+PYDISTUTILS_PKGNAME=	py-${PORTNAME}
 
-.if !defined(NOPORTDOCS)
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+
+PORTEXAMPLES=	*
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_xmlrpc.so \
+		%%PYTHON_SITELIBDIR%%/pyxmlrpclib.py \
+		%%PYTHON_SITELIBDIR%%/pyxmlrpclib.pyc \
+		%%PYTHON_SITELIBDIR%%/pyxmlrpclib.pyo \
+		%%PYTHON_SITELIBDIR%%/xmlrpc.py \
+		%%PYTHON_SITELIBDIR%%/xmlrpc.pyc \
+		%%PYTHON_SITELIBDIR%%/xmlrpc.pyo
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/examples -cf- . | ${TAR} -C ${EXAMPLESDIR} -xpf-
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
