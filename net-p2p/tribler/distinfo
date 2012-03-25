@@ -1,2 +1,4 @@
-SHA256 (Tribler_4.0.4_src.zip) = 9560c2f9466a75b965fb03eac53343485368c15b3309ac6e29fca294df738fcc
-SIZE (Tribler_4.0.4_src.zip) = 1456630
+SHA256 (tribler_5.5.20-1ubuntu1_all.deb) = 7519214feb56aa2d2eb0e31e454e1258e7a04506049a6a45dbaafedab0748b59
+SIZE (tribler_5.5.20-1ubuntu1_all.deb) = 2315674
+SHA256 (apsw-3.7.10-r1.zip) = 5a2be6baeb3dc58df53169979a5c27cea8a1db24ca9b174f8e18b81a46bd2406
+SIZE (apsw-3.7.10-r1.zip) = 619967
