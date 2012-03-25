@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	sobby
-PORTVERSION=	0.4.7
-PORTREVISION=	3
+PORTVERSION=	0.4.8
 CATEGORIES=	net
 MASTER_SITES=	http://releases.0x539.de/sobby/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A standalone obby server
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		obby-0.4.1:${PORTSDIR}/devel/obby \
