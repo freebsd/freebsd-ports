@@ -1,15 +1,18 @@
 bin/gsculpt
+lib/gSculpt/libBackgroundMesh.so
 lib/gSculpt/libBrush.so
 lib/gSculpt/libCompGeometry.so
 lib/gSculpt/libFileIO.so
 lib/gSculpt/libGraphViewHelper.so
 lib/gSculpt/libGraphics.so
 lib/gSculpt/libGroup.so
+lib/gSculpt/libImportExportFilterObjImport.so
 lib/gSculpt/libLogGrid.so
 lib/gSculpt/libMath.so
 lib/gSculpt/libMesh.so
 lib/gSculpt/libModel.so
 lib/gSculpt/libPainter.so
+lib/gSculpt/libPlatformSpecific.so
 lib/gSculpt/libPolyBlend.so
 lib/gSculpt/libPolyline.so
 lib/gSculpt/libProduct.so
@@ -18,7 +21,12 @@ lib/gSculpt/libTransformation.so
 lib/gSculpt/libUVMap.so
 lib/gSculpt/libUtil.so
 lib/gSculpt/libView.so
-%%PYTHON_SITELIBDIR%%/gsculpt.py
+%%PYTHON_SITELIBDIR%%/Britefury/Background/BackgroundMesh.so
+%%PYTHON_SITELIBDIR%%/Britefury/Background/BackgroundModelFileChooser.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Background/BackgroundModelFileRef.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Background/BackgroundModelFileRefCell.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Background/BackgroundModelFileRefFieldEditor.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/Background/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/Brush/Brush.so
 %%PYTHON_SITELIBDIR%%/Britefury/Brush/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/Cache/GSCache.pyc
@@ -77,6 +85,11 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/Event/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/FileIO/IOXml.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/FileIO/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GL/GL.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GL/GLU.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/GL/_GL.so
+%%PYTHON_SITELIBDIR%%/Britefury/GL/_GLU.so
+%%PYTHON_SITELIBDIR%%/Britefury/GL/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/GraphView/GraphViewHelper.so
 %%PYTHON_SITELIBDIR%%/Britefury/GraphView/SheetGraphView.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/GraphView/SheetGraphViewDisplayTable.pyc
@@ -98,8 +111,11 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/GroupTools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/I18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/I18n/i18n.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/Obj/ObjImport.so
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/Obj/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/ObjExport.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/ObjImport.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/STL.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/ToolImportedModel.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/VrmlExport.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/__init__.pyc
@@ -289,6 +305,8 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/Painter/RequestPainter.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/Painter/RequestViewportPainter.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/Painter/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/PlatformSpecific/PlatformSpecific.so
+%%PYTHON_SITELIBDIR%%/Britefury/PlatformSpecific/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/PolyBlend/PolyBlend.so
 %%PYTHON_SITELIBDIR%%/Britefury/PolyBlend/PolyBlendComponent.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/PolyBlend/__init__.pyc
@@ -416,6 +434,7 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/UI/PopupWindow.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/UI/RadioGroup.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/UI/TestWindow.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/UI/ThreadMontiorProgressDialog.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/UI/ToggleButton.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/UI/ToggleGroup.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/UI/UIAction.pyc
@@ -430,6 +449,9 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundImage.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundImageCommandTracker.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundImageTool.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundModel.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundModelCommandTracker.pyc
+%%PYTHON_SITELIBDIR%%/Britefury/View/BackgroundModelTool.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/View/DrawingPlane.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/View/DrawingTemplate.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/View/FocusTool.pyc
@@ -463,54 +485,57 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/gSculptConfig.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/gSculptUserConfig.pyc
-%%DATADIR%%/gsimages/gSculpt_splash_screen_mouse_over_by_Gary_Rose.png
-%%DATADIR%%/gsimages/gridx.png
-%%DATADIR%%/gsimages/graphview_zoomextentsselected.png
-%%DATADIR%%/gsimages/graphview_zoom.png
-%%DATADIR%%/gsimages/rendering_small.png
-%%DATADIR%%/gsimages/vp_notebook_newvp.png
+%%PYTHON_SITELIBDIR%%/gsculpt.py
+%%DATADIR%%/gsimages/background_images.png
+%%DATADIR%%/gsimages/background_models.png
+%%DATADIR%%/gsimages/draw_backg_transparent.png
+%%DATADIR%%/gsimages/draw_backgroundimages.png
+%%DATADIR%%/gsimages/draw_markedfaces.png
+%%DATADIR%%/gsimages/draw_smooth.png
+%%DATADIR%%/gsimages/draw_solid.png
+%%DATADIR%%/gsimages/draw_textured.png
 %%DATADIR%%/gsimages/draw_vertices.png
+%%DATADIR%%/gsimages/draw_wireframe.png
+%%DATADIR%%/gsimages/drawing_plane.png
+%%DATADIR%%/gsimages/drawing_template.png
+%%DATADIR%%/gsimages/falloff_cubicscurve.png
+%%DATADIR%%/gsimages/falloff_flat.png
+%%DATADIR%%/gsimages/falloff_gaussian.png
+%%DATADIR%%/gsimages/falloff_linear.png
+%%DATADIR%%/gsimages/falloff_spherical.png
+%%DATADIR%%/gsimages/focus_tool.png
+%%DATADIR%%/gsimages/function_button.png
+%%DATADIR%%/gsimages/gSculpt_Glass_Master_by_Gary_Rose.png
+%%DATADIR%%/gsimages/gSculpt_splash_screen_by_Gary_Rose.png
+%%DATADIR%%/gsimages/gSculpt_splash_screen_mouse_over_by_Gary_Rose.png
+%%DATADIR%%/gsimages/graphview_1to1.png
+%%DATADIR%%/gsimages/graphview_origin.png
+%%DATADIR%%/gsimages/graphview_zoom.png
+%%DATADIR%%/gsimages/graphview_zoomextentsall.png
+%%DATADIR%%/gsimages/graphview_zoomextentsselected.png
+%%DATADIR%%/gsimages/grid_toggle.png
+%%DATADIR%%/gsimages/grida.png
+%%DATADIR%%/gsimages/gridx.png
+%%DATADIR%%/gsimages/gridy.png
+%%DATADIR%%/gsimages/gridz.png
+%%DATADIR%%/gsimages/group.png
+%%DATADIR%%/gsimages/layers.png
+%%DATADIR%%/gsimages/mesh_primitives.png
+%%DATADIR%%/gsimages/meshedit_body.png
+%%DATADIR%%/gsimages/meshedit_edges.png
+%%DATADIR%%/gsimages/meshedit_faces.png
+%%DATADIR%%/gsimages/meshedit_mesh.png
+%%DATADIR%%/gsimages/meshedit_vertices.png
+%%DATADIR%%/gsimages/node_view_settings.png
+%%DATADIR%%/gsimages/red_x.png
+%%DATADIR%%/gsimages/rendering_small.png
 %%DATADIR%%/gsimages/snap_settings.png
 %%DATADIR%%/gsimages/vp_notebook.png
-%%DATADIR%%/gsimages/drawing_template.png
-%%DATADIR%%/gsimages/graphview_1to1.png
-%%DATADIR%%/gsimages/draw_textured.png
-%%DATADIR%%/gsimages/background_images.png
-%%DATADIR%%/gsimages/gSculpt_Glass_Master_by_Gary_Rose.png
-%%DATADIR%%/gsimages/drawing_plane.png
-%%DATADIR%%/gsimages/meshedit_faces.png
-%%DATADIR%%/gsimages/meshedit_body.png
-%%DATADIR%%/gsimages/draw_markedfaces.png
-%%DATADIR%%/gsimages/falloff_cubicscurve.png
-%%DATADIR%%/gsimages/draw_smooth.png
+%%DATADIR%%/gsimages/vp_notebook_newvp.png
 %%DATADIR%%/gsimages/vp_quad.png
 %%DATADIR%%/gsimages/vp_single.png
-%%DATADIR%%/gsimages/falloff_linear.png
-%%DATADIR%%/gsimages/falloff_gaussian.png
-%%DATADIR%%/gsimages/meshedit_vertices.png
-%%DATADIR%%/gsimages/focus_tool.png
-%%DATADIR%%/gsimages/meshedit_mesh.png
-%%DATADIR%%/gsimages/falloff_spherical.png
-%%DATADIR%%/gsimages/function_button.png
-%%DATADIR%%/gsimages/grida.png
-%%DATADIR%%/gsimages/meshedit_edges.png
-%%DATADIR%%/gsimages/graphview_origin.png
-%%DATADIR%%/gsimages/grid_toggle.png
-%%DATADIR%%/gsimages/falloff_flat.png
-%%DATADIR%%/gsimages/gridz.png
-%%DATADIR%%/gsimages/node_view_settings.png
-%%DATADIR%%/gsimages/mesh_primitives.png
-%%DATADIR%%/gsimages/draw_wireframe.png
-%%DATADIR%%/gsimages/graphview_zoomextentsall.png
-%%DATADIR%%/gsimages/draw_backgroundimages.png
-%%DATADIR%%/gsimages/draw_solid.png
-%%DATADIR%%/gsimages/group.png
-%%DATADIR%%/gsimages/gridy.png
-%%DATADIR%%/gsimages/draw_backg_transparent.png
-%%DATADIR%%/gsimages/gSculpt_splash_screen_by_Gary_Rose.png
-%%DATADIR%%/gsimages/red_x.png
-%%DATADIR%%/gsimages/layers.png
-@dirrm lib/gSculpt
+@dirrm %%DATADIR%%/gsimages
+@dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/extlibs/pyconsole
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/extlibs/greenlet
@@ -534,6 +559,7 @@ lib/gSculpt/libView.so
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/ProceduralCore
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/PrimitiveTools
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/PolyBlend
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/PlatformSpecific
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Painter
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/ModelTools
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Model
@@ -553,12 +579,14 @@ lib/gSculpt/libView.so
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/MainApp
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/LogGrid
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Kernel
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter/Obj
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/ImportExportFilter
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/I18n
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/GroupTools
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Group
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Graphics
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/GraphView
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/GL
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/FileIO
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Event
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Editor
@@ -568,6 +596,6 @@ lib/gSculpt/libView.so
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Cell
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Cache
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury/Brush
+@dirrm %%PYTHON_SITELIBDIR%%/Britefury/Background
 @dirrm %%PYTHON_SITELIBDIR%%/Britefury
-@dirrm %%DATADIR%%/gsimages
-@dirrm %%DATADIR%%
+@dirrm lib/gSculpt
