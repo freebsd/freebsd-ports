@@ -15,9 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to fetch movie info from www.imdb.com
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
-		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+DEPRECATED=	Removed from CPAN
+EXPIRATION_DATE=	2012-04-25
+
+BUILD_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
