@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
-USE_GCC=	4.4+
+USE_GCC=	4.6+
 USE_WX=		2.8+
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
