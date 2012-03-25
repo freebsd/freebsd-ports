@@ -1126,6 +1126,7 @@
     SUBDIR += py-paragrep
     SUBDIR += py-pss
     SUBDIR += py-pygments
+    SUBDIR += py-pystache
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml
     SUBDIR += py-qt4-xmlpatterns
