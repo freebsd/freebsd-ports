@@ -1,11 +1,19 @@
-bin/amd-setup
-bin/desktop-installer
+sbin/amd-setup
+sbin/desktop-installer
 %%DATADIR%%/Gnome/Xsession
 %%DATADIR%%/Gnome/xinitrc
 %%DATADIR%%/KDE3/Xsession
 %%DATADIR%%/KDE3/xinitrc
 %%DATADIR%%/KDE4/Xsession
 %%DATADIR%%/KDE4/xinitrc
+%%DATADIR%%/LXDE/GiveConsole
+%%DATADIR%%/LXDE/Xsession
+%%DATADIR%%/LXDE/Xsetup_0
+%%DATADIR%%/LXDE/Xstartup
+%%DATADIR%%/LXDE/beastie.xpm
+%%DATADIR%%/LXDE/bsd_background.jpg
+%%DATADIR%%/LXDE/xdmshutdown
+%%DATADIR%%/LXDE/xinitrc
 %%DATADIR%%/PolicyKit.conf
 %%DATADIR%%/Scripts/battery_shutdown.sh
 %%DATADIR%%/XFCE4/GiveConsole
@@ -16,6 +24,7 @@ bin/desktop-installer
 %%DATADIR%%/XFCE4/bsd_background.jpg
 %%DATADIR%%/XFCE4/xdmshutdown
 %%DATADIR%%/XFCE4/xinitrc
+%%DATADIR%%/fstab
 %%DATADIR%%/gcc45/Makefile
 %%DATADIR%%/gcc45/distinfo
 %%DATADIR%%/gcc45/files/gcc-4.5-r170893-freebsd-ppc.diff
@@ -28,12 +37,15 @@ bin/desktop-installer
 %%DATADIR%%/gcc45/pkg-descr
 %%DATADIR%%/gcc45/pkg-plist
 %%DATADIR%%/ntp.conf
+%%DATADIR%%/org.freedesktop.consolekit.pkla
 %%DATADIR%%/splash.bmp
 %%DATADIR%%/todo
+%%DATADIR%%/vbox
 @dirrm %%DATADIR%%/gcc45/files
 @dirrm %%DATADIR%%/gcc45
 @dirrm %%DATADIR%%/XFCE4
 @dirrm %%DATADIR%%/Scripts
+@dirrm %%DATADIR%%/LXDE
 @dirrm %%DATADIR%%/KDE4
 @dirrm %%DATADIR%%/KDE3
 @dirrm %%DATADIR%%/Gnome

@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	desktop-installer
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
+		http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Quickly configure a FreeBSD desktop system
+
+RUN_DEPENDS=	auto-append-line:${PORTSDIR}/sysutils/auto-admin
 
 NO_BUILD=	yes
 
 MAN1=		${PORTNAME}.1 amd-setup.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/amd-setup ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/amd-setup ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/Doc/${PORTNAME}.man \
 		${PREFIX}/man/man1/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/Doc/amd-setup.man \
