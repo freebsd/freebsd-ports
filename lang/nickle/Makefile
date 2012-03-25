@@ -26,16 +26,18 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAN1=		nickle.1
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS/s|examples|| ; \
-		 s| -O2||' ${WRKSRC}/Makefile.in
+# Do not descend into "examples" subdirectory to prevent them being installed
+# under DATADIR (instead, we manually install them later in post-install into
+# EXAMPLESDIR; also remove extra -O2 since we provide our own CFLAGS.
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|examples|| ; s| -O2||' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NIPORTEXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${FIND} . ! \( -name "*Makefile*" -or \
-		-name "*.sgml" \) | ${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} \
-		${EXAMPLESDIR})
+		-name "*.sgml" \) | ${CPIO} -pdm -LR ${SHAREOWN}:${SHAREGRP} \
+			${EXAMPLESDIR})
 	@${FIND} ${EXAMPLESDIR} -type d | ${XARGS} ${CHMOD} a+rx
 	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
