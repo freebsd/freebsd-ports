@@ -7,19 +7,19 @@
 
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/libvncserver/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VNC server for use with real X displays
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		dbus:${PORTSDIR}/devel/dbus \
 		xcb:${PORTSDIR}/x11/libxcb \
-		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		avahi-common:${PORTSDIR}/net/avahi-app
-
-LICENSE=	GPLv2
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs
 
 USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordproto
 
@@ -27,14 +27,26 @@ USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordp
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
 USE_ICONV=	yes
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-.endif
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		x11vnc.1
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
+
+OPTIONS=	NLS "Build with gettext support" on \
+		AVAHI "Enable AVAHI (ZeroConf)" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.endif
+
+.if !defined(WITHOUT_AVAHI)
+LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
+.else
+CONFIGURE_ARGS+=	--without-avahi
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
@@ -49,4 +61,4 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
