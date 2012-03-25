@@ -58,6 +58,8 @@ bin/CorsixTH
 %%DATADIR%%/Levels/example.level
 %%DATADIR%%/Levels/original05.level
 %%DATADIR%%/Levels/original07.level
+%%DATADIR%%/Levels/original11.level
+%%DATADIR%%/Levels/original12.level
 %%DATADIR%%/Lua/api_version.lua
 %%DATADIR%%/Lua/app.lua
 %%DATADIR%%/Lua/audio.lua
@@ -75,50 +77,50 @@ bin/CorsixTH
 %%DATADIR%%/Lua/diagnosis/diag_ward.lua
 %%DATADIR%%/Lua/diagnosis/diag_x_ray.lua
 %%DATADIR%%/Lua/dialogs/adviser.lua
-%%DATADIR%%/Lua/dialogs/annual_report.lua
-%%DATADIR%%/Lua/dialogs/bank_manager.lua
 %%DATADIR%%/Lua/dialogs/bottom_panel.lua
 %%DATADIR%%/Lua/dialogs/build_room.lua
-%%DATADIR%%/Lua/dialogs/calls_dispatcher.lua
-%%DATADIR%%/Lua/dialogs/cheats.lua
 %%DATADIR%%/Lua/dialogs/confirm_dialog.lua
-%%DATADIR%%/Lua/dialogs/custom_game.lua
-%%DATADIR%%/Lua/dialogs/directory_browser.lua
-%%DATADIR%%/Lua/dialogs/drug_casebook.lua
 %%DATADIR%%/Lua/dialogs/edit_room.lua
-%%DATADIR%%/Lua/dialogs/fax.lua
-%%DATADIR%%/Lua/dialogs/file_browser.lua
 %%DATADIR%%/Lua/dialogs/fullscreen.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/annual_report.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/bank_manager.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/drug_casebook.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/fax.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/graphs.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/hospital_policy.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/progress_report.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/research_policy.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/staff_management.lua
+%%DATADIR%%/Lua/dialogs/fullscreen/town_map.lua
 %%DATADIR%%/Lua/dialogs/furnish_corridor.lua
-%%DATADIR%%/Lua/dialogs/graphs.lua
 %%DATADIR%%/Lua/dialogs/hire_staff.lua
-%%DATADIR%%/Lua/dialogs/hospital_policy.lua
 %%DATADIR%%/Lua/dialogs/information.lua
 %%DATADIR%%/Lua/dialogs/jukebox.lua
-%%DATADIR%%/Lua/dialogs/load_game.lua
-%%DATADIR%%/Lua/dialogs/lua_console.lua
 %%DATADIR%%/Lua/dialogs/machine_dialog.lua
-%%DATADIR%%/Lua/dialogs/main_menu.lua
-%%DATADIR%%/Lua/dialogs/make_debug_patient.lua
 %%DATADIR%%/Lua/dialogs/map_editor.lua
 %%DATADIR%%/Lua/dialogs/menu.lua
-%%DATADIR%%/Lua/dialogs/menu_list_dialog.lua
 %%DATADIR%%/Lua/dialogs/message.lua
-%%DATADIR%%/Lua/dialogs/new_game.lua
-%%DATADIR%%/Lua/dialogs/options.lua
 %%DATADIR%%/Lua/dialogs/patient.lua
 %%DATADIR%%/Lua/dialogs/place_objects.lua
 %%DATADIR%%/Lua/dialogs/place_staff.lua
-%%DATADIR%%/Lua/dialogs/progress_report.lua
 %%DATADIR%%/Lua/dialogs/queue_dialog.lua
-%%DATADIR%%/Lua/dialogs/research_policy.lua
 %%DATADIR%%/Lua/dialogs/resizable.lua
-%%DATADIR%%/Lua/dialogs/save_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/calls_dispatcher.lua
+%%DATADIR%%/Lua/dialogs/resizables/cheats.lua
+%%DATADIR%%/Lua/dialogs/resizables/directory_browser.lua
+%%DATADIR%%/Lua/dialogs/resizables/file_browser.lua
+%%DATADIR%%/Lua/dialogs/resizables/file_browsers/load_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/file_browsers/save_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/lua_console.lua
+%%DATADIR%%/Lua/dialogs/resizables/main_menu.lua
+%%DATADIR%%/Lua/dialogs/resizables/menu_list_dialog.lua
+%%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs/custom_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs/make_debug_patient.lua
+%%DATADIR%%/Lua/dialogs/resizables/new_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/options.lua
+%%DATADIR%%/Lua/dialogs/resizables/tip_of_the_day.lua
 %%DATADIR%%/Lua/dialogs/staff_dialog.lua
-%%DATADIR%%/Lua/dialogs/staff_management.lua
 %%DATADIR%%/Lua/dialogs/staff_rise.lua
-%%DATADIR%%/Lua/dialogs/tip_of_the_day.lua
-%%DATADIR%%/Lua/dialogs/town_map.lua
 %%DATADIR%%/Lua/dialogs/tree_ctrl.lua
 %%DATADIR%%/Lua/dialogs/watch.lua
 %%DATADIR%%/Lua/diseases/alien_dna.lua
@@ -170,10 +172,13 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/call_checkpoint.lua
 %%DATADIR%%/Lua/humanoid_actions/check_watch.lua
 %%DATADIR%%/Lua/humanoid_actions/die.lua
+%%DATADIR%%/Lua/humanoid_actions/falling.lua
+%%DATADIR%%/Lua/humanoid_actions/get_up.lua
 %%DATADIR%%/Lua/humanoid_actions/idle.lua
 %%DATADIR%%/Lua/humanoid_actions/knock_door.lua
 %%DATADIR%%/Lua/humanoid_actions/meander.lua
 %%DATADIR%%/Lua/humanoid_actions/multi_use_object.lua
+%%DATADIR%%/Lua/humanoid_actions/on_ground.lua
 %%DATADIR%%/Lua/humanoid_actions/pee.lua
 %%DATADIR%%/Lua/humanoid_actions/pickup.lua
 %%DATADIR%%/Lua/humanoid_actions/queue.lua
@@ -181,6 +186,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/seek_room.lua
 %%DATADIR%%/Lua/humanoid_actions/seek_staffroom.lua
 %%DATADIR%%/Lua/humanoid_actions/seek_toilets.lua
+%%DATADIR%%/Lua/humanoid_actions/shake_fist.lua
 %%DATADIR%%/Lua/humanoid_actions/spawn.lua
 %%DATADIR%%/Lua/humanoid_actions/staff_reception.lua
 %%DATADIR%%/Lua/humanoid_actions/sweep_floor.lua
@@ -188,8 +194,10 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/use_object.lua
 %%DATADIR%%/Lua/humanoid_actions/use_screen.lua
 %%DATADIR%%/Lua/humanoid_actions/use_staffroom.lua
+%%DATADIR%%/Lua/humanoid_actions/vip_go_to_next_room.lua
 %%DATADIR%%/Lua/humanoid_actions/vomit.lua
 %%DATADIR%%/Lua/humanoid_actions/walk.lua
+%%DATADIR%%/Lua/humanoid_actions/yawn.lua
 %%DATADIR%%/Lua/key_mapping.lua
 %%DATADIR%%/Lua/languages/czech.lua
 %%DATADIR%%/Lua/languages/danish.lua
@@ -319,6 +327,10 @@ bin/CorsixTH
 @dirrm %%DATADIR%%/Lua/humanoid_actions
 @dirrm %%DATADIR%%/Lua/entities
 @dirrm %%DATADIR%%/Lua/diseases
+@dirrm %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialogs
+@dirrm %%DATADIR%%/Lua/dialogs/resizables/file_browsers
+@dirrm %%DATADIR%%/Lua/dialogs/resizables
+@dirrm %%DATADIR%%/Lua/dialogs/fullscreen
 @dirrm %%DATADIR%%/Lua/dialogs
 @dirrm %%DATADIR%%/Lua/diagnosis
 @dirrm %%DATADIR%%/Lua
