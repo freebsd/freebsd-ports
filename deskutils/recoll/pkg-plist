@@ -1,8 +1,8 @@
-bin/recoll
+%%QT%%bin/recoll
 bin/recollindex
-share/applications/recoll-searchgui.desktop
-share/icons/hicolor/48x48/apps/recoll.png
-share/pixmaps/recoll.png
+%%QT%%share/applications/recoll-searchgui.desktop
+%%QT%%share/icons/hicolor/48x48/apps/recoll.png
+%%QT%%share/pixmaps/recoll.png
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/fields
@@ -37,10 +37,10 @@ share/pixmaps/recoll.png
 %%DATADIR%%/filters/rclogg
 %%DATADIR%%/filters/rclopxml
 %%DATADIR%%/filters/rclpdf
-%%DATADIR%%/filters/rclpurple
-%%DATADIR%%/filters/rclpython
 %%DATADIR%%/filters/rclppt
 %%DATADIR%%/filters/rclps
+%%DATADIR%%/filters/rclpurple
+%%DATADIR%%/filters/rclpython
 %%DATADIR%%/filters/rclrar
 %%DATADIR%%/filters/rclrtf
 %%DATADIR%%/filters/rclscribus
@@ -70,30 +70,30 @@ share/pixmaps/recoll.png
 %%DATADIR%%/images/postscript.png
 %%DATADIR%%/images/presentation.png
 %%DATADIR%%/images/sidux-book.png
+%%DATADIR%%/images/soffice.png
 %%DATADIR%%/images/source.png
 %%DATADIR%%/images/sownd.png
-%%DATADIR%%/images/soffice.png
 %%DATADIR%%/images/spreadsheet.png
 %%DATADIR%%/images/text-x-python.png
 %%DATADIR%%/images/txt.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_cs.qm
+%%DATADIR%%/translations/recoll_de.qm
 %%DATADIR%%/translations/recoll_fr.qm
 %%DATADIR%%/translations/recoll_it.qm
 %%DATADIR%%/translations/recoll_lt.qm
-%%DATADIR%%/translations/recoll_de.qm
-%%DATADIR%%/translations/recoll_uk.qm
 %%DATADIR%%/translations/recoll_ru.qm
 %%DATADIR%%/translations/recoll_tr.qm
+%%DATADIR%%/translations/recoll_uk.qm
 %%DATADIR%%/translations/recoll_xx.qm
-@dirrm %%DATADIR%%/doc
-@dirrm %%DATADIR%%/examples
-@dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/filters
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/applications

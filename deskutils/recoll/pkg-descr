@@ -1,24 +1,19 @@
-Recoll is a personal full text search package with a QT graphical
-interface. It is based on a very strong backend (Xapian), for which it
-provides an easy to use and feature-rich interface.
+Recoll is a personal full text search package. It is based on a very
+strong backend (Xapian), for which it provides an easy to use and
+feature-rich interface.
 
 Features:
     * Free, GPL license.
-    * QT-based GUI.
-    * Supports the following document types (and their compressed versions): 
-      - Natively: text, html, OpenOffice files, maildir and mailbox 
-        (Mozilla and Thunderbird mail ok) with attachments, gaim log files.
-      - With external helpers:  pdf (pdftotext), postscript (ghostscript),
-        msword (antiword), excel, ppt (catdoc), rtf (unrtf), 
-    * Powerful query facilities, with boolean searches, phrases, filter on
-      file types and directory tree. 
-    * Support for multiple charsets. Internal processing and storage uses
-      Unicode UTF-8. 
-    * Stemming performed at query time (can switch stemming language after
-      indexing) 
-    * Easy installation. No database daemon, web server or exotic language
-      necessary. 
-    * An indexer which runs either as a thread inside the GUI or as an
-      external, cron'able program. 
+    * Easy installation, few dependancies. No database daemon, web server,
+      desktop environment or exotic language necessary.
+    * Will run on most Unix-based systems
+    * Qt 4 GUI, plus command line.
+    * Searches most common document types, emails and their attachments.
+      Transparently handles decompression (gzip, bzip2).
+    * Powerful query facilities, with boolean searches, phrases, proximity,
+      wildcards, filter on file types and directory tree.
+    * Multi-language and multi-character set with Unicode based internals.
+    * Extensive documentation, with a complete user manual and manual pages
+      for each command.
 
 WWW: http://www.lesbonscomptes.com/recoll/
