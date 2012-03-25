@@ -9,11 +9,12 @@ PORTNAME=	emms
 PORTVERSION=	3.0
 PORTREVISION=	9
 CATEGORIES=	audio elisp
-MASTER_SITES=	http://www.gnu.org/software/emms/download/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	EMMS is the Emacs Multi-Media System
+COMMENT=	The Emacs Multi-Media System
+
+LICENSE=	GPLv3
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
