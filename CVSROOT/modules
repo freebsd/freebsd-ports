@@ -22135,6 +22135,7 @@ py-cclib                        ports/devel/py-cclib
 py-cdb                          ports/databases/py-cdb
 py-cddb                         ports/audio/py-cddb
 py-celementtree                 ports/devel/py-celementtree
+py-celery                       ports/devel/py-celery
 py-cerealizer                   ports/security/py-cerealizer
 py-certify                      ports/security/py-certify
 py-cfgparse                     ports/devel/py-cfgparse
@@ -27011,6 +27012,7 @@ vdr-plugin-softdevice           ports/multimedia/vdr-plugin-softdevice
 vdr-plugin-streamdev            ports/multimedia/vdr-plugin-streamdev
 vdr-plugin-ttxtsubs             ports/multimedia/vdr-plugin-ttxtsubs
 vdr-plugin-upnp                 ports/multimedia/vdr-plugin-upnp
+vdr-plugin-vdrmanager           ports/multimedia/vdr-plugin-vdrmanager
 vdr-plugin-vnsiserver           ports/multimedia/vdr-plugin-vnsiserver
 vdr-plugin-wirbelscan           ports/multimedia/vdr-plugin-wirbelscan
 vdr-plugin-xineliboutput        ports/multimedia/vdr-plugin-xineliboutput
