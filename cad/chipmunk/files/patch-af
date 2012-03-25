@@ -1,5 +1,5 @@
---- mosis/Makefile.orig	Tue Nov  4 22:19:13 2003
-+++ mosis/Makefile	Tue Dec  9 17:44:45 2003
+--- mosis/Makefile.orig	2011-09-08 03:38:27.000000000 +0900
++++ mosis/Makefile	2012-02-22 16:51:46.000000000 +0900
 @@ -23,6 +23,8 @@
  #
  #
@@ -12,23 +12,23 @@
 @@ -47,7 +49,7 @@
  ##
  
- 
--CC = gcc
-+CC ?= gcc
+ CHIPMUNKCC = gcc -O3
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
  
  ##
- ## (2) If X isn't in the include path (the case for many MachTen and Linux 
-@@ -62,7 +64,7 @@
- ## or some other directory, depending on your installation. Use the
- ## first one for OS X.
+ ## If X isn't in the include path, change XINCLUDEDIR:
+@@ -67,7 +69,7 @@
+ ## For most versions of UNIX, one of the above directories
+ ## will be the correct one to use on the line below:
  
 -XINCLUDEDIR = .
 +XINCLUDEDIR = ${LOCALBASE}/include
  
- ##
- ## If X isn't in the library path (the case for many MachTen and Linux 
-@@ -77,7 +79,7 @@
- ## depending on your installation. Use the second one for OS X.
+ ## 
+ ## If X isn't in the library path, change LIBX11 to reflect this:
+@@ -92,7 +94,7 @@
+ ## LIBX11= -lX11 -s
  ##
  
 -LIBX11 = -lX11
@@ -36,7 +36,7 @@
  
  ##
  ## (3) Adding appropriate flags
-@@ -115,7 +117,7 @@
+@@ -133,7 +135,7 @@
  
  CHIPMUNKFLAGS = 
  
@@ -45,7 +45,7 @@
  
  ##
  ## (4) Library additions
-@@ -123,7 +125,7 @@
+@@ -141,7 +143,7 @@
  ##
  ## on some systems, -ldl must be added to the following line
  
@@ -54,8 +54,8 @@
  
  ##
  ##
-@@ -136,7 +138,7 @@
- 	$(CC) -o mosis mosis.o  $(LDFLAGS)
+@@ -154,7 +156,7 @@
+ 	$(CC) $(CFLAGS) -o mosis mosis.o  $(LDFLAGS)
  
  install: mosis
 -	cp mosis ../bin/mosis

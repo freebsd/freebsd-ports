@@ -6,31 +6,32 @@
 #
 
 PORTNAME=	chipmunk
-PORTVERSION=	5.64
-PORTREVISION=	3
+PORTVERSION=	5.65
 CATEGORIES=	cad
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
-DISTFILES=	psys-1.59.tar.gz log-5.64.tar.gz netcmp-1.13.tar.gz \
-		mosis-1.14.tar.gz wol-1.14.tar.gz wolcomp-1.14.tar.gz \
-		until-1.14.tar.gz util-1.11.tar.gz view-1.14.tar.gz \
+DISTFILES=	psys-1.60.tar.gz log-5.65.tar.gz netcmp-1.14.tar.gz \
+		mosis-1.15.tar.gz wol-1.15.tar.gz wolcomp-1.15.tar.gz \
+		until-1.15.tar.gz util-1.12.tar.gz view-1.15.tar.gz \
 		Makefile
 DIST_SUBDIR=	chipmunk
-EXTRACT_ONLY=	psys-1.59.tar.gz log-5.64.tar.gz netcmp-1.13.tar.gz \
-		mosis-1.14.tar.gz wol-1.14.tar.gz wolcomp-1.14.tar.gz \
-		until-1.14.tar.gz util-1.11.tar.gz view-1.14.tar.gz
+EXTRACT_ONLY=	psys-1.60.tar.gz log-5.65.tar.gz netcmp-1.14.tar.gz \
+		mosis-1.15.tar.gz wol-1.15.tar.gz wolcomp-1.15.tar.gz \
+		until-1.15.tar.gz util-1.12.tar.gz view-1.15.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An electronic CAD system
 
+LICENSE=	GPLv2
+
 NO_WRKSUBDIR=	yes
+
 USE_XORG=	x11
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Broken pkg-plist on alpha
-.elif ${ARCH} == "sparc64"
+.if ${ARCH} == "sparc64"
 BROKEN=		Fails to install
 .endif
 
