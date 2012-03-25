@@ -7,7 +7,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/ \
 		http://dougbarton.us/Downloads/
@@ -48,6 +48,12 @@ CONFIGURE_ARGS+=	--disable-imlib2
 USE_GNOME+=	pango
 .else
 CONFIGURE_ARGS+=	--disable-pango
+.endif
+
+.if !defined(WITHOUT_STARTUP_NOTIFICATION)
+LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+.else
+CONFIGURE_ARGS+=	--disable-startup-notification
 .endif
 
 post-configure:
