@@ -1,15 +1,15 @@
---- log/src/ana/Makefile.orig	Sat May 18 12:02:28 2002
-+++ log/src/ana/Makefile	Sat May 18 12:46:53 2002
-@@ -25,7 +25,7 @@
+--- log/src/ana/Makefile.orig	2011-10-21 07:26:01.000000000 +0900
++++ log/src/ana/Makefile	2011-11-26 22:33:01.000000000 +0900
+@@ -45,7 +45,7 @@
+ ## For most versions of UNIX, one of the above directories
+ ## will be the correct one to use on the line below:
  
- 
- LOCINC = ../../../psys/include
 -XINCLUDEDIR = .
 +XINCLUDEDIR = ${LOCALBASE}/include
  
  ##
  ##  (1) Choosing your compiler
-@@ -46,7 +46,7 @@
+@@ -66,7 +66,7 @@
  CHIPMUNKCC = gcc -O3
  
  
@@ -17,8 +17,8 @@
 +CC ?= $(CHIPMUNKCC) 
  
  ##
- ## (2) Adding appropriate flags
-@@ -84,7 +84,7 @@
+ ## (4) Adding appropriate flags
+@@ -108,7 +108,7 @@
  
  CHIPMUNKFLAGS = 
  

@@ -1,5 +1,5 @@
---- psys/src/Makefile.orig	Sat Mar  2 06:39:14 2002
-+++ psys/src/Makefile	Sat May 18 13:25:17 2002
+--- psys/src/Makefile.orig	2011-10-21 07:23:19.000000000 +0900
++++ psys/src/Makefile	2011-11-26 22:40:45.000000000 +0900
 @@ -30,8 +30,8 @@
  ## to be made for different systems. Its a good idea to look over each
  ## block and make necessary changes before doing a "make install"
@@ -11,16 +11,16 @@
  
  
  LIB = ../libp2c.a
-@@ -51,7 +51,7 @@
- ## or some other directory, depending on your installation.
- ##
+@@ -56,7 +56,7 @@
+ ## For most versions of UNIX, one of the above directories
+ ## will be the correct one to use on the line below:
  
 -XINCLUDEDIR = . 
 +XINCLUDEDIR = ${LOCALBASE}/include
  
  ##
  ##  (1) Choosing your compiler
-@@ -101,7 +101,7 @@
+@@ -105,7 +105,7 @@
  LIBSTUFF = texstuff.ps untilstuff.ps plot.font
  
  
@@ -29,18 +29,18 @@
  
  
  ##
-@@ -149,7 +149,7 @@
+@@ -178,7 +178,7 @@
  
  CHIPMUNKFLAGS = 
  
--CFLAGS = $(CHIPMUNKFLAGS) -I$(LOCINC) -I$(XINCLUDEDIR) -DCHIPLIB=\"`$(CD) $(LIBDIR); pwd`\"
-+CFLAGS += -DBSD -DF_OK -I$(LOCINC) -I$(XINCLUDEDIR) -DCHIPLIB=\"$(LIBDIR)\"
+-CFLAGS = $(CHIPMUNKFLAGS) $(FONTS) -I$(LOCINC) -I$(XINCLUDEDIR) -DCHIPLIB=\"`$(CD) $(LIBDIR); pwd`\"
++CFLAGS += -DBSD -DF_OK $(FONTS) -I$(LOCINC) -I$(XINCLUDEDIR) -DCHIPLIB=\"$(LIBDIR)\"
  
  P2CFLAGS = -DLOCAL_INIT=_local_p2c_init
  
-@@ -165,7 +165,7 @@
- ## below; however the "-" allows this to be non-fatal and thus not essential
+@@ -201,7 +201,7 @@
  ## to delete
+ 
  
 -all: setup libp2c.a
 +all: libp2c.a

@@ -1,16 +1,16 @@
---- view/Makefile.orig	Sat May 18 12:02:28 2002
-+++ view/Makefile	Sat May 18 12:59:50 2002
-@@ -40,7 +40,7 @@
- ## or some other directory, depending on your installation.
- ##
+--- view/Makefile.orig	2011-10-21 07:29:27.000000000 +0900
++++ view/Makefile	2011-11-26 22:47:47.000000000 +0900
+@@ -45,7 +45,7 @@
+ ## For most versions of UNIX, one of the above directories
+ ## will be the correct one to use on the line below:
  
 -XINCLUDEDIR = .
 +XINCLUDEDIR = ${LOCALBASE}/include
  
- ##
- ## If X isn't in the library path (the case for many MachTen and Linux 
-@@ -55,7 +55,7 @@
- ## depending on your installation. 
+ 
+ ## 
+@@ -71,7 +71,7 @@
+ ## LIBX11= -lX11 -s
  ##
  
 -LIBX11 = -lX11
@@ -18,7 +18,7 @@
  
  LIBP2C = ../psys/src/libp2c.a
  
-@@ -67,7 +67,7 @@
+@@ -83,7 +83,7 @@
  ##
  ## on Sun Solaris 2.X, -lsocket -lnsl must be added to OTHERLIBS
  
@@ -27,7 +27,7 @@
  
  ##
  ## (2) IEEE library directory
-@@ -114,7 +114,7 @@
+@@ -128,7 +128,7 @@
  
  CHIPMUNKCC = gcc -O3
  
@@ -36,10 +36,10 @@
  
  ##
  ## (4) Adding appropriate flags
-@@ -172,11 +172,11 @@
+@@ -173,11 +173,11 @@
  
  CHIPMUNKFLAGS = 
-   
+ 
 -CFLAGS= $(CHIPMUNKFLAGS) -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
 +CFLAGS += -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
  
@@ -50,7 +50,7 @@
  
  OBJS =			\
  	viewfit.o	\
-@@ -244,7 +244,7 @@
+@@ -245,7 +245,7 @@
  	(chdir mt;	make; chdir ..; chdir tek2430; make; chdir ..; make mtlink)
  
  install: view

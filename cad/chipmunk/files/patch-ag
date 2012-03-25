@@ -1,5 +1,5 @@
---- netcmp/Makefile.orig	Sat Aug 18 07:49:31 2001
-+++ netcmp/Makefile	Sat May 18 14:46:26 2002
+--- netcmp/Makefile.orig	2011-10-21 07:35:56.000000000 +0900
++++ netcmp/Makefile	2012-02-22 16:42:56.000000000 +0900
 @@ -22,7 +22,7 @@
  #
  # netcmp makefile
@@ -18,7 +18,7 @@
  
  ##
  ## (2) Adding appropriate flags
-@@ -90,15 +90,17 @@
+@@ -77,15 +77,17 @@
  ## -ansi
  ##
  
@@ -30,8 +30,8 @@
 +CFLAGS += -DBSD -DF_OK
  
  netcmp:     main.o parser.o datastruct.o compare.o
--	$(CC)  parser.o datastruct.o compare.o main.o -o netcmp
-+	$(CC)  parser.o datastruct.o compare.o main.o $(OTHERLIBS) -o netcmp
+-	$(CC) $(CFLAGS) parser.o datastruct.o compare.o main.o -o netcmp
++	$(CC) $(CFLAGS) parser.o datastruct.o compare.o main.o $(OTHERLIBS) -o netcmp
  
  install:    netcmp
 -	cp netcmp $(BINDIR)  
