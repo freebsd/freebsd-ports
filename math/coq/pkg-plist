@@ -130,6 +130,7 @@ lib/coq/lib/tries.cmi
 lib/coq/lib/unicodetable.cmi
 lib/coq/lib/util.cmi
 lib/coq/libcoqrun.a
+lib/coq/library/assumptions.cmi
 lib/coq/library/decl_kinds.cmi
 lib/coq/library/declare.cmi
 lib/coq/library/declaremods.cmi

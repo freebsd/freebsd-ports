@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.3.2
-PORTREVISION=	1
+PORTVERSION=	8.3.3
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${COQVERSION}/files/ \
@@ -19,8 +18,6 @@ COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	camlp5:${PORTSDIR}/devel/ocaml-camlp5
 
-BROKEN=		does not build
-
 COQVERSION=	${PORTVERSION:R}pl${PORTVERSION:E}
 USE_OCAML=	yes
 USE_GMAKE=	yes
@@ -31,7 +28,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 CONFIGURE_ARGS+=--emacslib ${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ARGS+=--opt
-PATCH_STRIP=	-p1
 
 .ifdef	NOPORTDOCS
 CONFIGURE_ARGS+=--with-doc none
