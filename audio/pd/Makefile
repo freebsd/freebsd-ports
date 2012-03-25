@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pd
-DISTVERSION=	0.43-0
+DISTVERSION=	0.43-1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
@@ -15,6 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 LICENSE=	BSD
+
+OPTIONS=	ALSA "Enable ALSA support" off \
+		JACK "Enable JACK support" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S;.src;/src;}
 PATCH_WRKSRC=	${WRKSRC}/..
@@ -29,8 +32,24 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
 
-CPPFLAGS+=	-I${TCL_INCLUDEDIR}
+CPPFLAGS+=	-I${TCL_INCLUDEDIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=	--enable-alsa
+.else
+CONFIGURE_ARGS+=	--disable-alsa
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=	--enable-jack
+.else
+CONFIGURE_ARGS+=	--disable-jack
+.endif
 
 post-patch:
 	@${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -43,6 +62,7 @@ post-patch:
 		 s|-ltcl8[0-9]|-ltcl${USE_TCL}|g ; \
 		 s|-ltk8[0-9]|-ltk${USE_TK}|g ; \
 		 s|s_midi_oss.c ||g ; \
+		 /SYSSRC/s|s_midi_alsa.c||g ; \
 		 /uname/s|Linux|${OPSYS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		's|$$(WARN_CFLAGS)||g ; \
@@ -80,8 +100,8 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@${FIND} ${DOCSDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-.for file in LICENSE.txt README.txt
-	${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
+.for i in LICENSE.txt README.txt
+	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
 	@${LN} -sf ${DOCSDIR} ${PREFIX}/lib/pd/doc
 .endif
