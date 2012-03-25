@@ -109,6 +109,7 @@ lib/pd/tcl/opt_parser.tcl
 lib/pd/tcl/pd-gui.tcl
 lib/pd/tcl/pd_bindings.tcl
 lib/pd/tcl/pd_connect.tcl
+lib/pd/tcl/pd_guiprefs.tcl
 lib/pd/tcl/pd_menucommands.tcl
 lib/pd/tcl/pd_menus.tcl
 lib/pd/tcl/pdtk_array.tcl
