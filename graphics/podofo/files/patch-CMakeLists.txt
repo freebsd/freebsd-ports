@@ -1,6 +1,69 @@
---- CMakeLists.txt.orig	2011-04-26 20:02:47.000000000 +0200
-+++ CMakeLists.txt	2011-12-02 18:44:04.974966708 +0100
-@@ -485,7 +485,7 @@
+--- CMakeLists.txt.orig	2011-04-27 03:02:47.000000000 +0900
++++ CMakeLists.txt	2012-03-03 04:27:15.000000000 +0900
+@@ -309,6 +309,7 @@
+ FIND_PACKAGE(ZLIB REQUIRED)
+ MESSAGE("Found zlib headers in ${ZLIB_INCLUDE_DIR}, library at ${ZLIB_LIBRARIES}")
+ 
++IF(WANT_LIBJPEG)
+ FIND_PACKAGE(LIBJPEG)
+ 
+ IF(LIBJPEG_FOUND)
+@@ -318,7 +319,9 @@
+ ELSE(LIBJPEG_FOUND)
+   MESSAGE("Libjpeg not found. JPEG support will be disabled")
+ ENDIF(LIBJPEG_FOUND)
++ENDIF(WANT_LIBJPEG)
+ 
++IF(WANT_TIFF)
+ FIND_PACKAGE(TIFF)
+ 
+ IF(TIFF_FOUND)
+@@ -328,7 +331,9 @@
+ ELSE(TIFF_FOUND)
+   MESSAGE("Libtiff not found. TIFF support will be disabled")
+ ENDIF(TIFF_FOUND)
++ENDIF(WANT_TIFF)
+ 
++IF(WANT_PNG)
+ FIND_PACKAGE(PNG)
+ 
+ IF(PNG_FOUND)
+@@ -338,8 +343,10 @@
+ ELSE(PNG_FOUND)
+   MESSAGE("LibPng not found. PNG support will be disabled")
+ ENDIF(PNG_FOUND)
++ENDIF(WANT_PNG)
+ 
+ 
++IF(WANT_CppUnit)
+ FIND_PACKAGE(CppUnit)
+ 
+ IF(CppUnit_FOUND)
+@@ -348,6 +355,7 @@
+ ELSE(CppUnit_FOUND)
+   MESSAGE("Cppunit not found. No unit tests will be built.")
+ ENDIF(CppUnit_FOUND)
++ENDIF(WANT_CppUnit)
+ 
+ FIND_PACKAGE(OpenSSL)
+ 
+@@ -407,6 +415,7 @@
+ 	ENDIF(NOT WIN32)
+ ENDIF(DEFINED JPEG_RUNTIME_COMPATIBLE)
+ 
++IF(WANT_LUA)
+ FIND_PACKAGE(LUA)
+ IF(LUA_FOUND)
+ 	# If we have lua, we can build podofoimpose.
+@@ -418,6 +427,7 @@
+ ELSE(LUA_FOUND)
+ 	MESSAGE("Lua not found - PoDoFoImpose and PoDoFoColor will be built without Lua support")
+ ENDIF(LUA_FOUND)
++ENDIF(WANT_LUA)
+ 
+ 
+ # Check if we should build a multithreaded version of PoDoFo
+@@ -485,7 +495,7 @@
  #
  # Setup directories we will need
  #
@@ -9,11 +72,3 @@
  
  # Create the config file. It'll be appended to as the subdirs run though
  # then dependency information will be written to it at the end of the
-@@ -503,7 +503,6 @@
- IF(NOT PODOFO_BUILD_LIB_ONLY)
- ADD_SUBDIRECTORY(test)
- ADD_SUBDIRECTORY(tools)
--ADD_SUBDIRECTORY(examples)
- ADD_SUBDIRECTORY(debian)
- ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
- 
