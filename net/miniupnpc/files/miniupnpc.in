@@ -1,6 +1,7 @@
 #!/bin/sh
 # PROVIDE: miniupnpc
 # REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
