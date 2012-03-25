@@ -7,51 +7,46 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.4.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	databases geography
-MASTER_SITES=	http://grass.itc.it/grass64/source/ \
-		ftp://grass.itc.it/pub/grass/grass64/source/ \
-		http://grass.ibiblio.org/grass64/source/\
-		ftp://www.ibiblio.org/pub/packages/gis/grass/grass64/source/\
-		http://www.geog.uni-hannover.de/grass/grass64/source/\
-		http://grass.meteo.uni.wroc.pl/grass64/source/ \
-		http://grass.ru.ac.za/grass64/source/\
-		http://wgrass.media.osaka-cu.ac.jp/grassh/grass64/source/\
-		http://public.planetmirror.com/pub/grass/grass64/source/\
-		ftp://ftp.planetmirror.com/pub/grass/grass64/source/\
-		http://gulus.usherbrooke.ca/pub/appl/grass/grass64/source/\
-		http://ludique.u-bourgogne.fr/grass/grass64/source/
+MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
+		http://wgbis.ces.iisc.ernet.in/grass/%SUBDIR%/ \
+		http://grass.bergenheim.net/%SUBDIR%/ \
+		http://grass.cict.fr/%SUBDIR%/ \
+		http://www.phygeo.uni-hannover.de/grass/%SUBDIR%/ \
+		http://grass.fbk.eu/%SUBDIR%/ \
+		http://grass.gis-lab.info/%SUBDIR%/ \
+		http://mirrors.ibiblio.org/grass/%SUBDIR%/
+MASTER_SITE_SUBDIR=	grass64/source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
 
-BUILD_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		gdal-config:${PORTSDIR}/graphics/gdal \
-		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
-		${LOCALBASE}/bin/wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28
-RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		gdal-config:${PORTSDIR}/graphics/gdal \
-		bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.6:${PORTSDIR}/graphics/png \
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	gdal.16:${PORTSDIR}/graphics/gdal \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		png.6:${PORTSDIR}/graphics/png \
+		proj.6:${PORTSDIR}/graphics/proj \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw3.6:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_GL=		glut
-USE_FREETYPE=	yes
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
 USE_TK=		yes
 USE_TK_BUILD=	yes
 USE_PYTHON=	yes
 USE_WX=		2.8
-WX_COMPS=	python:run
+WX_COMPS=	wx:build python:run
 PATCH_TCL_SCRIPTS=lib/init/init.sh
 PATCH_TK_SCRIPTS=lib/init/init.sh
 
@@ -70,12 +65,14 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-curses \
 		--enable-largefile \
 		--with-python=${LOCALBASE}/bin/python-config \
-		--with-wxwidgets=${LOCALBASE}/bin/wxgtk2-2.8-config
+		--with-wxwidgets=${WX_CONFIG}
 
 PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR} \
 		VERSION=${PORTVERSION} \
 		VER=${PORTVERSION:R:C/\.//}
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
+
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MYSQL	"Enable MySQL support" Off \
 		ODBC	"Enable ODBC support" Off \
