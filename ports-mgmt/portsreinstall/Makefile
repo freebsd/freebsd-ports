@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	portsreinstall
-PORTVERSION=	0.9.4
+PORTVERSION=	1.0.0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SFJP/${PORTNAME}/50628/
+MASTER_SITES=	SFJP/${PORTNAME}/55243/
 MASTER_SITES+=	http://www.mwghennndo.com/softwares/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@samurai.mwghennn.net
@@ -16,9 +16,15 @@ COMMENT=	Ports upgrading utility for massive forced reinstalltion
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkgdb:${PORTSDIR}/ports-mgmt/portupgrade
-
 MAN8=	${PORTNAME}.8
 MANCOMPRESSED=	yes
+
+post-install:
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} "This software invokes some installed files of portupgrade(1)"
+	@${ECHO_MSG} "when parsing pkgtools.conf(5) although dependency to it is intendedly"
+	@${ECHO_MSG} "refrained. If you fail to parse pkgtools.conf(5), try to upgrade"
+	@${ECHO_MSG} "this port first."
+	@${ECHO_MSG} "====================================================================="
 
 .include <bsd.port.mk>
