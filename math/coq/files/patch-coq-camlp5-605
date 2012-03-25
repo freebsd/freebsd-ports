@@ -1,0 +1,357 @@
+Fix compilation with camlp5 6.05
+Patch from the official coq svn repository (revision 15025)
+
+Index: checker/checker.ml
+===================================================================
+--- checker/checker.ml	(revision 15024)
++++ checker/checker.ml	(revision 15025)
+@@ -274,7 +274,7 @@
+ (*      let ctx = Check.get_env() in
+       hov 0
+         (str "Error:" ++ spc () ++ Himsg.explain_inductive_error ctx e)*)
+-  | Stdpp.Exc_located (loc,exc) ->
++  | Compat.Exc_located (loc,exc) ->
+       hov 0 ((if loc = dummy_loc then (mt ())
+                else (str"At location " ++ print_loc loc ++ str":" ++ fnl ()))
+                ++ explain_exn exc)
+Index: lib/compat.ml4
+===================================================================
+--- lib/compat.ml4	(revision 15024)
++++ lib/compat.ml4	(revision 15025)
+@@ -15,6 +15,7 @@
+ IFDEF CAMLP5 THEN
+ module M = struct
+ type loc = Stdpp.location
++exception Exc_located = Ploc.Exc
+ let dummy_loc = Stdpp.dummy_loc
+ let make_loc = Stdpp.make_loc
+ let unloc loc = Stdpp.first_pos loc, Stdpp.last_pos loc
+@@ -26,6 +27,7 @@
+ end
+ ELSE IFDEF OCAML308 THEN
+ module M = struct
++exception Exc_located = Stdpp.Exc_located
+ type loc = Token.flocation
+ let dummy_loc = Token.dummy_loc
+ let make_loc loc = Token.make_loc loc
+@@ -45,6 +47,7 @@
+ end
+ ELSE
+ module M = struct
++exception Exc_located = Stdpp.Exc_located
+ type loc = int * int
+ let dummy_loc = (0,0)
+ let make_loc x = x
+@@ -59,6 +62,7 @@
+ END
+ 
+ type loc = M.loc
++exception Exc_located = M.Exc_located
+ let dummy_loc = M.dummy_loc
+ let make_loc = M.make_loc
+ let unloc = M.unloc
+Index: pretyping/pretype_errors.ml
+===================================================================
+--- pretyping/pretype_errors.ml	(revision 15024)
++++ pretyping/pretype_errors.ml	(revision 15025)
+@@ -45,7 +45,7 @@
+ 
+ let precatchable_exception = function
+   | Util.UserError _ | TypeError _ | PretypeError _
+-  | Stdpp.Exc_located(_,(Util.UserError _ | TypeError _ |
++  | Compat.Exc_located(_,(Util.UserError _ | TypeError _ |
+     Nametab.GlobalizationError _ | PretypeError _)) -> true
+   | _ -> false
+ 
+Index: pretyping/cases.ml
+===================================================================
+--- pretyping/cases.ml	(revision 15024)
++++ pretyping/cases.ml	(revision 15025)
+@@ -100,7 +100,7 @@
+   | h::t ->
+       try f h
+       with UserError _ | TypeError _ | PretypeError _
+-	| Stdpp.Exc_located (_,(UserError _ | TypeError _ | PretypeError _)) ->
++	| Compat.Exc_located (_,(UserError _ | TypeError _ | PretypeError _)) ->
+ 	    list_try_compile f t
+ 
+ let force_name =
+Index: pretyping/typeclasses_errors.ml
+===================================================================
+--- pretyping/typeclasses_errors.ml	(revision 15024)
++++ pretyping/typeclasses_errors.ml	(revision 15025)
+@@ -47,7 +47,7 @@
+       raise (TypeClassError (env, UnsatisfiableConstraints (evd, None)))
+   | Some ev ->
+       let loc, kind = Evd.evar_source ev evd in
+-	raise (Stdpp.Exc_located (loc, TypeClassError
++	raise (Compat.Exc_located (loc, TypeClassError
+ 	  (env, UnsatisfiableConstraints (evd, Some (ev, kind)))))
+ 
+ let mismatched_ctx_inst env c n m = typeclass_error env (MismatchedContextInstance (c, n, m))
+@@ -55,5 +55,5 @@
+ let rec unsatisfiable_exception exn =
+   match exn with
+   | TypeClassError (_, UnsatisfiableConstraints _) -> true
+-  | Stdpp.Exc_located(_, e) -> unsatisfiable_exception e
++  | Compat.Exc_located(_, e) -> unsatisfiable_exception e
+   | _ -> false
+Index: plugins/subtac/subtac_obligations.ml
+===================================================================
+--- plugins/subtac/subtac_obligations.ml	(revision 15024)
++++ plugins/subtac/subtac_obligations.ml	(revision 15025)
+@@ -485,8 +485,8 @@
+ 	      true
+ 	  else false
+ 	with
+-	| Stdpp.Exc_located(_, Proof_type.LtacLocated (_, Refiner.FailError (_, s)))
+-	| Stdpp.Exc_located(_, Refiner.FailError (_, s))
++	| Compat.Exc_located(_, Proof_type.LtacLocated (_, Refiner.FailError (_, s)))
++	| Compat.Exc_located(_, Refiner.FailError (_, s))
+ 	| Refiner.FailError (_, s) ->
+ 	    user_err_loc (fst obl.obl_source, "solve_obligation", Lazy.force s)
+ 	| e -> false
+Index: toplevel/cerrors.ml
+===================================================================
+--- toplevel/cerrors.ml	(revision 15024)
++++ toplevel/cerrors.ml	(revision 15025)
+@@ -81,7 +81,7 @@
+       hov 0 (str "Syntax error: Undefined token.")
+   | Lexer.Error (Bad_token s) ->
+       hov 0 (str "Syntax error: Bad token" ++ spc () ++ str s ++ str ".")
+-  | Stdpp.Exc_located (loc,exc) ->
++  | Compat.Exc_located (loc,exc) ->
+       hov 0 ((if loc = dummy_loc then (mt ())
+                else (str"At location " ++ print_loc loc ++ str":" ++ fnl ()))
+                ++ explain_exn_default_aux anomaly_string report_fn exc)
+@@ -156,8 +156,8 @@
+   | Proof_type.LtacLocated (s,exc) ->
+       EvaluatedError (hov 0 (Himsg.explain_ltac_call_trace s ++ fnl()),
+         Some (process_vernac_interp_error exc))
+-  | Stdpp.Exc_located (loc,exc) ->
+-      Stdpp.Exc_located (loc,process_vernac_interp_error exc)
++  | Compat.Exc_located (loc,exc) ->
++      Compat.Exc_located (loc,process_vernac_interp_error exc)
+   | exc ->
+       exc
+ 
+Index: toplevel/vernac.ml
+===================================================================
+--- toplevel/vernac.ml	(revision 15024)
++++ toplevel/vernac.ml	(revision 15025)
+@@ -41,14 +41,14 @@
+     match re with
+       | Error_in_file (_, (b,f,loc), e) when loc <> dummy_loc ->
+           ((b, f, loc), e)
+-      | Stdpp.Exc_located (loc, e) when loc <> dummy_loc ->
++      | Compat.Exc_located (loc, e) when loc <> dummy_loc ->
+           ((false,file, loc), e)
+-      | Stdpp.Exc_located (_, e) | e -> ((false,file,cmdloc), e)
++      | Compat.Exc_located (_, e) | e -> ((false,file,cmdloc), e)
+   in
+   raise (Error_in_file (file, inner, disable_drop inex))
+ 
+ let real_error = function
+-  | Stdpp.Exc_located (_, e) -> e
++  | Compat.Exc_located (_, e) -> e
+   | Error_in_file (_, _, e) -> e
+   | e -> e
+ 
+Index: toplevel/toplevel.ml
+===================================================================
+--- toplevel/toplevel.ml	(revision 15024)
++++ toplevel/toplevel.ml	(revision 15025)
+@@ -274,7 +274,7 @@
+ let rec is_pervasive_exn = function
+   | Out_of_memory | Stack_overflow | Sys.Break -> true
+   | Error_in_file (_,_,e) -> is_pervasive_exn e
+-  | Stdpp.Exc_located (_,e) -> is_pervasive_exn e
++  | Compat.Exc_located (_,e) -> is_pervasive_exn e
+   | DuringCommandInterp (_,e) -> is_pervasive_exn e
+   | _ -> false
+ 
+@@ -290,7 +290,7 @@
+   in
+   let (locstrm,exc) =
+     match exc with
+-      | Stdpp.Exc_located (loc, ie) ->
++      | Compat.Exc_located (loc, ie) ->
+           if valid_buffer_loc top_buffer dloc loc then
+             (print_highlight_location top_buffer loc, ie)
+           else
+@@ -325,7 +325,7 @@
+ let rec discard_to_dot () =
+   try
+     Gram.Entry.parse parse_to_dot top_buffer.tokens
+-  with Stdpp.Exc_located(_,(Token.Error _|Lexer.Error _)) ->
++  with Compat.Exc_located(_,(Token.Error _|Lexer.Error _)) ->
+     discard_to_dot()
+ 
+ 
+Index: tactics/extratactics.ml4
+===================================================================
+--- tactics/extratactics.ml4	(revision 15024)
++++ tactics/extratactics.ml4	(revision 15025)
+@@ -580,7 +580,7 @@
+     try 
+       Pretyping.Default.understand sigma env t_hole
+     with 
+-    | Stdpp.Exc_located (loc,Pretype_errors.PretypeError (_, Pretype_errors.UnsolvableImplicit _)) -> 
++    | Compat.Exc_located (loc,Pretype_errors.PretypeError (_, Pretype_errors.UnsolvableImplicit _)) -> 
+         resolve_hole (subst_hole_with_term (fst (unloc loc)) c_raw t_hole)
+   in
+   let t_constr = resolve_hole (subst_var_with_hole occ id t_raw) in
+Index: tactics/class_tactics.ml4
+===================================================================
+--- tactics/class_tactics.ml4	(revision 15024)
++++ tactics/class_tactics.ml4	(revision 15025)
+@@ -219,7 +219,7 @@
+ 
+ let rec catchable = function
+   | Refiner.FailError _ -> true
+-  | Stdpp.Exc_located (_, e) -> catchable e
++  | Compat.Exc_located (_, e) -> catchable e
+   | e -> Logic.catchable_exception e
+ 
+ let is_dep gl gls =
+Index: tactics/rewrite.ml4
+===================================================================
+--- tactics/rewrite.ml4	(revision 15024)
++++ tactics/rewrite.ml4	(revision 15025)
+@@ -1057,7 +1057,7 @@
+ 	      else tclIDTAC
+ 	    in tclTHENLIST [evartac; rewtac] gl
+ 	  with
+-	  | Stdpp.Exc_located (_, TypeClassError (env, (UnsatisfiableConstraints _ as e)))
++	  | Compat.Exc_located (_, TypeClassError (env, (UnsatisfiableConstraints _ as e)))
+ 	  | TypeClassError (env, (UnsatisfiableConstraints _ as e)) ->
+ 	      Refiner.tclFAIL_lazy 0
+ 		(lazy (str"setoid rewrite failed: unable to satisfy the rewriting constraints."
+Index: tactics/tacinterp.ml
+===================================================================
+--- tactics/tacinterp.ml	(revision 15024)
++++ tactics/tacinterp.ml	(revision 15025)
+@@ -93,15 +93,15 @@
+ let catch_error call_trace tac g =
+   if call_trace = [] then tac g else try tac g with
+   | LtacLocated _ as e -> raise e
+-  | Stdpp.Exc_located (_,LtacLocated _) as e -> raise e
++  | Compat.Exc_located (_,LtacLocated _) as e -> raise e
+   | e ->
+     let (nrep,loc',c),tail = list_sep_last call_trace in
+-    let loc,e' = match e with Stdpp.Exc_located(loc,e) -> loc,e | _ ->dloc,e in
++    let loc,e' = match e with Compat.Exc_located(loc,e) -> loc,e | _ ->dloc,e in
+     if tail = [] then
+       let loc = if loc = dloc then loc' else loc in
+-      raise (Stdpp.Exc_located(loc,e'))
++      raise (Compat.Exc_located(loc,e'))
+     else
+-      raise (Stdpp.Exc_located(loc',LtacLocated((nrep,c,tail,loc),e')))
++      raise (Compat.Exc_located(loc',LtacLocated((nrep,c,tail,loc),e')))
+ 
+ (* Signature for interpretation: val_interp and interpretation functions *)
+ type interp_sign =
+@@ -1979,14 +1979,14 @@
+ 	VRTactic (catch_error trace tac goal)
+     | a -> a)
+   with
+-    | FailError (0,s) | Stdpp.Exc_located(_, FailError (0,s))
+-    | Stdpp.Exc_located(_,LtacLocated (_,FailError (0,s))) ->
++    | FailError (0,s) | Compat.Exc_located(_, FailError (0,s))
++    | Compat.Exc_located(_,LtacLocated (_,FailError (0,s))) ->
+ 	raise (Eval_fail (Lazy.force s))
+     | FailError (lvl,s) -> raise (FailError (lvl - 1, s))
+-    | Stdpp.Exc_located(s,FailError (lvl,s')) ->
+-	raise (Stdpp.Exc_located(s,FailError (lvl - 1, s')))
+-    | Stdpp.Exc_located(s,LtacLocated (s'',FailError (lvl,s'))) ->
+-	raise (Stdpp.Exc_located(s,LtacLocated (s'',FailError (lvl - 1, s'))))
++    | Compat.Exc_located(s,FailError (lvl,s')) ->
++	raise (Compat.Exc_located(s,FailError (lvl - 1, s')))
++    | Compat.Exc_located(s,LtacLocated (s'',FailError (lvl,s'))) ->
++	raise (Compat.Exc_located(s,LtacLocated (s'',FailError (lvl - 1, s'))))
+ 
+ (* Interprets the clauses of a recursive LetIn *)
+ and interp_letrec ist gl llc u =
+Index: ide/coq.ml
+===================================================================
+--- ide/coq.ml	(revision 15024)
++++ ide/coq.ml	(revision 15025)
+@@ -112,7 +112,7 @@
+     | _ -> true
+ 
+ let user_error_loc l s =
+-  raise (Stdpp.Exc_located (l, Util.UserError ("CoqIde", s)))
++  raise (Compat.Exc_located (l, Util.UserError ("CoqIde", s)))
+ 
+ type printing_state = {
+   mutable printing_implicit : bool;
+@@ -443,7 +443,7 @@
+ let rec is_pervasive_exn = function
+   | Out_of_memory | Stack_overflow | Sys.Break -> true
+   | Error_in_file (_,_,e) -> is_pervasive_exn e
+-  | Stdpp.Exc_located (_,e) -> is_pervasive_exn e
++  | Compat.Exc_located (_,e) -> is_pervasive_exn e
+   | DuringCommandInterp (_,e) -> is_pervasive_exn e
+   | _ -> false
+ 
+@@ -456,7 +456,7 @@
+   in
+   let (loc,exc) =
+     match exc with
+-      | Stdpp.Exc_located (loc, ie) -> (Some loc),ie
++      | Compat.Exc_located (loc, ie) -> (Some loc),ie
+       | Error_in_file (s, (_,fname, loc), ie) -> None, ie
+       | _ -> dloc,exc
+   in
+Index: parsing/ppvernac.ml
+===================================================================
+--- parsing/ppvernac.ml	(revision 15024)
++++ parsing/ppvernac.ml	(revision 15025)
+@@ -781,7 +781,7 @@
+       (if i = 1 then mt() else int i ++ str ": ") ++
+       pr_raw_tactic tac
+       ++ (try if deftac & Pfedit.get_end_tac() <> None then str ".." else mt ()
+-      with UserError _|Stdpp.Exc_located _ -> mt())
++      with UserError _|Compat.Exc_located _ -> mt())
+ 
+   | VernacSolveExistential (i,c) ->
+       str"Existential " ++ int i ++ pr_lconstrarg c
+Index: proofs/refiner.ml
+===================================================================
+--- proofs/refiner.ml	(revision 15024)
++++ proofs/refiner.ml	(revision 15025)
+@@ -494,15 +494,15 @@
+ let catch_failerror e =
+   if catchable_exception e then check_for_interrupt ()
+   else match e with
+-  | FailError (0,_) | Stdpp.Exc_located(_, FailError (0,_))
+-  | Stdpp.Exc_located(_, LtacLocated (_,FailError (0,_)))  ->
++  | FailError (0,_) | Compat.Exc_located(_, FailError (0,_))
++  | Compat.Exc_located(_, LtacLocated (_,FailError (0,_)))  ->
+       check_for_interrupt ()
+   | FailError (lvl,s) -> raise (FailError (lvl - 1, s))
+-  | Stdpp.Exc_located(s,FailError (lvl,s')) ->
+-      raise (Stdpp.Exc_located(s,FailError (lvl - 1, s')))
+-  | Stdpp.Exc_located(s,LtacLocated (s'',FailError (lvl,s')))  ->
++  | Compat.Exc_located(s,FailError (lvl,s')) ->
++      raise (Compat.Exc_located(s,FailError (lvl - 1, s')))
++  | Compat.Exc_located(s,LtacLocated (s'',FailError (lvl,s')))  ->
+       raise
+-       (Stdpp.Exc_located(s,LtacLocated (s'',FailError (lvl - 1,s'))))
++       (Compat.Exc_located(s,LtacLocated (s'',FailError (lvl - 1,s'))))
+   | e -> raise e
+ 
+ (* ORELSE0 t1 t2 tries to apply t1 and if it fails, applies t2 *)
+Index: proofs/logic.ml
+===================================================================
+--- proofs/logic.ml	(revision 15024)
++++ proofs/logic.ml	(revision 15025)
+@@ -48,7 +48,7 @@
+ open Pretype_errors
+ 
+ let rec catchable_exception = function
+-  | Stdpp.Exc_located(_,e) -> catchable_exception e
++  | Compat.Exc_located(_,e) -> catchable_exception e
+   | LtacLocated(_,e) -> catchable_exception e
+   | Util.UserError _ | TypeError _
+   | RefinerError _ | Indrec.RecursionSchemeError _
