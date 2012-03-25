@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 CFLAGS+=	-fPIC
+USE_RC_SUBR=	miniupnpc
 
 .include <bsd.port.pre.mk>
 
