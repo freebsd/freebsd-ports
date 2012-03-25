@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	x-tile
-PORTVERSION=	2.1
+PORTVERSION=	2.2.1
 CATEGORIES=	deskutils devel python
-MASTER_SITES=	http://www.giuspen.com/software/ \
-		http://www.sawp.com.br/share/xtile/
+MASTER_SITES=	http://www.giuspen.com/software/
 
 MAINTAINER=	sawp@sawp.com.br
 COMMENT=	A GNOME applet to tile the opened windows
@@ -25,7 +24,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/x-tile ${WRKSRC}/linux/x-tile.desktop \
 		${WRKSRC}/modules/cons.py
-
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

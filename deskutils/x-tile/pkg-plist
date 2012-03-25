@@ -32,7 +32,6 @@ share/pixmaps/x-tile.svg
 %%DATADIR%%/glade/toolbar.png
 %%DATADIR%%/glade/unmaximize-checked-windows.svg
 %%DATADIR%%/glade/x-tile.glade
-%%DATADIR%%/glade/x-tile.glade.h
 %%DATADIR%%/glade/x-tile.svg
 %%DATADIR%%/modules/cons.py
 %%DATADIR%%/modules/core.py
