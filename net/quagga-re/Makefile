@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.17.6
+PORTVERSION=	0.99.17.8
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://cloud.github.com/downloads/Quagga-RE/quagga-RE/
 PKGNAMESUFFIX=	-re
