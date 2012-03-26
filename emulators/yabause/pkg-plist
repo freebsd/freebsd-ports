@@ -8,7 +8,6 @@ bin/yabause
 %%DATADIR%%/yts/pt_BR.yts
 %%DATADIR%%/yts/sv.yts
 share/pixmaps/yabause.png
-share/applications/yabause.desktop
 @dirrmtry share/yabause/yts
 @dirrmtry share/yabause
 @dirrmtry share/applications
