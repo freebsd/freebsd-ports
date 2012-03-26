@@ -3262,3 +3262,4 @@ japanese/postgresql-tcltk||2012-03-21|Has expired: Broken for months with no-one
 databases/postgresql-tcltk|databases/pgtcl|2012-03-21|Has expired: Broken for months with no-one caring, superseded by http://pgtclng.sourceforge.net/
 devel/p5-Make-Cache||2012-03-25|Has expired: Removed from CPAN, does not work, unmaintained
 databases/gbib||2012-03-26|Has expired
+sysutils/syscp|sysutils/froxlor|2012-03-26|Has expired: Long ditched, possibly dangerous and replaced with sysutils/froxlor
