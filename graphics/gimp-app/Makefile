@@ -197,6 +197,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"libpng"|"libpng14"|' \
 	    	-e 's|x86_64|amd64|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/curl.types.h/d' ${WRKSRC}/plug-ins/file-uri/uri-backend-libcurl.c
 
 post-install:
 	@-update-desktop-database
