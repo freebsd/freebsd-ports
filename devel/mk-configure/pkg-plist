@@ -43,6 +43,7 @@ share/mkc-mk/mkc_imp.lib.mk
 share/mkc-mk/mkc_imp.links.mk
 share/mkc-mk/mkc_imp.lua.mk
 share/mkc-mk/mkc_imp.man.mk
+share/mkc-mk/mkc_imp.objdir.mk
 share/mkc-mk/mkc_imp.own.mk
 share/mkc-mk/mkc_imp.pkg-config.mk
 share/mkc-mk/mkc_imp.platform.sys.mk
