@@ -166,7 +166,7 @@ post-install:
 	@uudecode -p ${FILESDIR}/powerlogo.gif.uue > \
 	  ${PREFIX}/${IMGDIR}/powerlogo.gif
 .if !defined(NOPORTDOCS)
-	@${MV} ${WRKSRC}/doc/* ${WRKSRC}/
+	@${CP} -R ${WRKSRC}/doc/* ${WRKSRC}/
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/FreeBSD-post-install-notes ${DOCSDIR}
 .for docfile in ${PORTDOCS:NFreeBSD-post-install-notes}
