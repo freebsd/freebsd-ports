@@ -1,2 +1,4 @@
-SHA256 (commons-daemon-1.0.3-src.tar.gz) = 7bf530e4202e695decb4c6005d5155daa2c578a03276e968ea3550f1f1b18393
-SIZE (commons-daemon-1.0.3-src.tar.gz) = 213815
+SHA256 (commons-daemon-1.0.10-native-src.tar.gz) = 015b79922da3ae181f15cce9154a4fe021aa59e828844fafa4cb69059df02a73
+SIZE (commons-daemon-1.0.10-native-src.tar.gz) = 202519
+SHA256 (commons-daemon-1.0.10-bin.tar.gz) = d069cf8e0297ff76ecaf0f45b8c03cfa3466407576dd57665f74e9d4caa9998d
+SIZE (commons-daemon-1.0.10-bin.tar.gz) = 229356
