@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mk-configure
-PORTVERSION=	0.21.2
+PORTVERSION=	0.22.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	trociny@freebsd.org
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Lightweight, easy to use replacement for GNU autotools
 
 LICENSE=	BSD
