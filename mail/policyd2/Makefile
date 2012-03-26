@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	policyd2
-PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTVERSION=	2.0.11
 CATEGORIES=	mail
-MASTER_SITES=	SF/policyd/2.0.x%20%28Stable%29/v${PORTVERSION}
+MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/187/
 DISTNAME=	cluebringer-${PORTVERSION}
 
 MAINTAINER=	chifeng@gmail.com
@@ -24,10 +23,10 @@ USE_PERL5=	yes
 USE_PHP=	yes
 NO_BUILD=	yes
 USE_RC_SUBR=	policyd2.sh
-SUB_FILES=	pkg-message
+BINMODE=	0755
 
 WEBUIDIR=	${PREFIX}/www/policyd
-PORTDOCS=	AUTHORS CHANGELOG INSTALL TODO WISHLIST
+PORTDOCS=	AUTHORS ChangeLog INSTALL TODO WISHLIST
 PORTDATA=	*
 
 OPTIONS=	MYSQL "Use MySQL support" On \
@@ -47,21 +46,20 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpadmin
-	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpolicyd
+	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpadmin \
+		${WRKSRC}/cbpolicyd
 
 do-install:
-	@${INSTALL} -d ${WEBUIDIR}
-	@cd ${WRKSRC} && ${CP} -Rpf webui/ ${WEBUIDIR}
-	@cd ${WRKSRC} && ${CP} -Rpf cbp ${SITE_PERL}
-	${INSTALL_SCRIPT} -m 0755 ${WRKSRC}/cbpadmin ${PREFIX}/bin
-	${INSTALL_SCRIPT} -m 0755 ${WRKSRC}/cbpolicyd ${PREFIX}/bin
-	${INSTALL_DATA} -m 0644 ${WRKSRC}/cluebringer.conf ${PREFIX}/etc/cluebringer.conf.sample
+	@${INSTALL} -d ${WEBUIDIR} ${SITE_PERL}/cbp
+	@cd ${WRKSRC}/webui && ${COPYTREE_SHARE} \* ${WEBUIDIR}
+	@cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${SITE_PERL}/cbp
+	${INSTALL_SCRIPT} ${WRKSRC}/cbpadmin ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cbpolicyd ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf ${PREFIX}/etc/cluebringer.conf.sample
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/cluebringer.conf ]; then \
-		${CP} -p ${PREFIX}/etc/cluebringer.conf.sample ${PREFIX}/etc/cluebringer.conf ; \
-		${CHMOD} +w ${PREFIX}/etc/cluebringer.conf ; \
+		${INSTALL_DATA} -m 666 ${PREFIX}/etc/cluebringer.conf.sample ${PREFIX}/etc/cluebringer.conf ;\
 	fi
 
 .if !defined(NOPORTDATA)
@@ -74,5 +72,9 @@ post-install:
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Please check INSTALL file to configure!"
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
