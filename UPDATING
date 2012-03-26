@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120326:
+  AFFECTS: users of www/tomcat7
+  AUTHOR: ale@FreeBSD.org
+
+  Tomcat 7 startup script now uses 'jsvc' to monitor the daemon's process.
+  A few rc.conf variables has been changed, be sure to adapt your
+  configuration, if needed.
+
 20120318:
   AFFECTS: users of mail/dbmail
   AUTHOR: rm@FreeBSD.org
