@@ -91,6 +91,7 @@
     SUBDIR += php-tclink
     SUBDIR += php4-pfpro
     SUBDIR += prestashop
+    SUBDIR += py-vatnumber
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
