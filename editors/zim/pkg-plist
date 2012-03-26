@@ -29,12 +29,18 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/formats/__init__.py
 %%PYTHON_SITELIBDIR%%/zim/formats/__init__.pyc
 %%PYTHON_SITELIBDIR%%/zim/formats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/__main__.py
+%%PYTHON_SITELIBDIR%%/zim/formats/__main__.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/__main__.pyo
 %%PYTHON_SITELIBDIR%%/zim/formats/html.py
 %%PYTHON_SITELIBDIR%%/zim/formats/html.pyc
 %%PYTHON_SITELIBDIR%%/zim/formats/html.pyo
 %%PYTHON_SITELIBDIR%%/zim/formats/latex.py
 %%PYTHON_SITELIBDIR%%/zim/formats/latex.pyc
 %%PYTHON_SITELIBDIR%%/zim/formats/latex.pyo
+%%PYTHON_SITELIBDIR%%/zim/formats/markdown.py
+%%PYTHON_SITELIBDIR%%/zim/formats/markdown.pyc
+%%PYTHON_SITELIBDIR%%/zim/formats/markdown.pyo
 %%PYTHON_SITELIBDIR%%/zim/formats/plain.py
 %%PYTHON_SITELIBDIR%%/zim/formats/plain.pyc
 %%PYTHON_SITELIBDIR%%/zim/formats/plain.pyo
@@ -167,6 +173,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/spell.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/spell.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/spell.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/tableofcontents.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/tableofcontents.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/tableofcontents.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/tags.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/tags.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/tags.pyo
@@ -191,9 +200,6 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/stores/files.py
 %%PYTHON_SITELIBDIR%%/zim/stores/files.pyc
 %%PYTHON_SITELIBDIR%%/zim/stores/files.pyo
-%%PYTHON_SITELIBDIR%%/zim/stores/gjots.py
-%%PYTHON_SITELIBDIR%%/zim/stores/gjots.pyc
-%%PYTHON_SITELIBDIR%%/zim/stores/gjots.pyo
 %%PYTHON_SITELIBDIR%%/zim/stores/memory.py
 %%PYTHON_SITELIBDIR%%/zim/stores/memory.pyc
 %%PYTHON_SITELIBDIR%%/zim/stores/memory.pyo
@@ -203,6 +209,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/templates.py
 %%PYTHON_SITELIBDIR%%/zim/templates.pyc
 %%PYTHON_SITELIBDIR%%/zim/templates.pyo
+%%PYTHON_SITELIBDIR%%/zim/utils.py
+%%PYTHON_SITELIBDIR%%/zim/utils.pyc
+%%PYTHON_SITELIBDIR%%/zim/utils.pyo
 %%PYTHON_SITELIBDIR%%/zim/www.py
 %%PYTHON_SITELIBDIR%%/zim/www.pyc
 %%PYTHON_SITELIBDIR%%/zim/www.pyo
@@ -311,6 +320,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Plugins/Link_Map.txt
 %%DATADIR%%/manual/Plugins/Quick_Note.txt
 %%DATADIR%%/manual/Plugins/Spell_Checker.txt
+%%DATADIR%%/manual/Plugins/Table_Of_Contents.txt
 %%DATADIR%%/manual/Plugins/Tags.txt
 %%DATADIR%%/manual/Plugins/Task_List.txt
 %%DATADIR%%/manual/Plugins/Tray_Icon.txt
@@ -350,11 +360,13 @@ share/pixmaps/zim.png
 %%DATADIR%%/templates/latex/Article.tex
 %%DATADIR%%/templates/latex/Part.tex
 %%DATADIR%%/templates/latex/Report.tex
+%%DATADIR%%/templates/markdown/Default.markdown
 %%DATADIR%%/templates/wiki/Calendar.txt
 %%DATADIR%%/templates/wiki/Default.txt
 %%DATADIR%%/urls.list
 %%DATADIR%%/zim.png
 @dirrm %%DATADIR%%/templates/wiki
+@dirrm %%DATADIR%%/templates/markdown
 @dirrm %%DATADIR%%/templates/latex
 @dirrm %%DATADIR%%/templates/html
 @dirrm %%DATADIR%%/templates
