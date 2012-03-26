@@ -1,7 +1,0 @@
-Bazaar (bzr) is a decentralized revision control system, designed to be
-easy for developers and end users alike.  Bazaar is part of the GNU
-project to develop a complete free operating systemand a project of
-Canonical.  Bazaar directly supports both central version control (like
-cvs/svn) and distributed version control (like git/hg).
-
-WWW: http://bazaar.canonical.com/

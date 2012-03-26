@@ -1,6 +1,0 @@
-Wine implements its own version of Internet Explorer which is based on a
-custom version of Mozilla's Gecko Layout Engine.  This engine is downloaded
-automatically the first time a web page is loaded unless, as done by this
-port, the engine is pre-installed on the user's system.
-
-WWW: http://wiki.winehq.org/Gecko
