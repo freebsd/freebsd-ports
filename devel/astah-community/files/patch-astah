@@ -1,5 +1,5 @@
---- astah.orig	2011-03-29 13:25:03.000000000 +0900
-+++ astah	2011-04-30 20:22:19.000000000 +0900
+--- astah.orig	2012-03-19 00:16:44.000000000 +0900
++++ astah	2012-03-25 21:33:58.000000000 +0900
 @@ -3,13 +3,14 @@
  #Remove "#" from following two lines, if you'd like to use j2sdk.
  #JAVA_HOME=/usr/lib/j2sdk1.4/;export JAVA_HOME
@@ -17,4 +17,4 @@
  JAVA_OPTS="-Xms16m -Xmx384m"
  
 -java $JAVA_OPTS -jar $ASTAH_HOME/$ASTAH_JAR  $1 $2 $3
-+LD_LIBRARY_PATH=%%JAVA_HOME%%/jre/lib/i386/jli %%JAVA_HOME%%/bin/java $JAVA_OPTS -jar $ASTAH_HOME/$ASTAH_JAR  $1 $2 $3
++%%JAVA_HOME%%/bin/java $JAVA_OPTS -jar $ASTAH_HOME/$ASTAH_JAR  $1 $2 $3

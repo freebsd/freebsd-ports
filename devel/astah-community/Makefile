@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astah
-PORTVERSION=	6.5.1
+PORTVERSION=	6.6
 CATEGORIES=	devel java
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-community
@@ -22,7 +22,7 @@ USE_ZIP=	yes
 JAVA_VERSION=	1.6+
 
 USE_JAVA=	yes
-JAVA_OS=	linux
+JAVA_OS=	native
 NO_BUILD=	yes
 
 RESTRICTED=	See http://astah.net/faq/community/enduser-license-agreement
@@ -50,7 +50,6 @@ PORTDOCS=	API_sample_program_license_agreement-e.txt \
 		API_sample_program_license_agreement.txt \
 		CommandRunner-e.html CommandRunner.html \
 		ProductInformation.txt \
-		ReleaseNote-e.html ReleaseNote.html \
 		api
 .endif
 
