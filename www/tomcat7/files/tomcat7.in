@@ -14,32 +14,37 @@
 #   Set to "NO" by default.
 #   Set it to "YES" to enable tomcat7
 #
-# tomcat7_flags (str):
-#   Set to "" by default.
-#   Extra flags passed to start command
-#
 # tomcat7_catalina_base (str)
 #   Set to "%%TOMCAT_HOME%%" by default.
 #   Set the CATALINA_BASE variable for the Tomcat process
 #
 # tomcat7_catalina_tmpdir (str)
-#   Set to "%%TOMCAT_HOME%%/temp" by default.
+#   Set to "${catalina.base}/temp" by default.
 #   Set the CATALINA_TMPDIR variable for the Tomcat process
 #
-# tomcat7_catalina_log (str)
-#   Set to ">> %%TOMCAT_HOME%%/logs/catalina.out 2>&1" by default.
-#   Set the Tomcat Console logger
+# tomcat7_stdout (str)
+#   Set to "${catalina.base}/logs/catalina.out" by default.
+#   Set the stdout redirection. It may also be '/dev/null', '&1' or '&2'
 #
-# tomcat7_stop_timeout (num)
-#   Set to "10" by default.
-#   Sets the timeout in seconds to allow tomcat to shutdown.
-#   After the timeout has elapsed, tomcat will be killed.
+# tomcat7_stderr (str)
+#   Set to "&1" by default.
+#   Set the stderr redirection. It may also be '/dev/null', '&1' or '&2'
+#
+# tomcat7_pipe_cmd (str):
+#   Set to "" by default.
+#   Set a piped command to process stdout/stderr when passthru
+#
+# tomcat7_logging_manager (str):
+#   Set to "org.apache.juli.ClassLoaderLogManager" by default.
+#   Set the JUL log manager
+#
+# tomcat7_logging_config (str):
+#   Set to "${catalina.base}/conf/logging.properties" by default.
+#   Set the JUL config file 
 #
 # tomcat7_java_home (str):
-# tomcat7_java_vendor (str):
-# tomcat7_java_version (str):
-# tomcat7_java_os (str):
-#   Specify the requirements of the Java VM to use. See javavm(1).
+#   Set to "%%JAVA_HOME%%" by default.
+#   Specify the Java VM to use.
 #
 # tomcat7_classpath (str):
 #   Set to "" by default.
@@ -49,141 +54,66 @@
 #   Set to "" by default.
 #   Java VM args to use.
 #
-
-tomcat7_enable="${tomcat7_enable:-"NO"}"
-tomcat7_java_version="${tomcat7_java_version:-"%%JAVA_VERSION%%"}"
-tomcat7_user="${tomcat7_user:-"%%TOMCAT_USER%%"}"
-tomcat7_catalina_home="%%TOMCAT_HOME%%"
-tomcat7_catalina_base="${tomcat7_catalina_base:-"%%TOMCAT_HOME%%"}"
-tomcat7_catalina_tmpdir="${tomcat7_catalina_tmpdir:-"%%TOMCAT_HOME%%/temp"}"
-tomcat7_catalina_log="${tomcat7_catalina_log:-">> %%TOMCAT_HOME%%/logs/catalina.out 2>&1"}"
-tomcat7_stop_timeout="${tomcat7_stop_timeout:-"10"}"
+# You may symlink this script with other names to run multiple
+# instances of tomcat7 with different configurations.
+#
 
 . /etc/rc.subr
 
-name="tomcat7"
-rcvar=tomcat7_enable
-pidfile="/var/run/tomcat7.pid"
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/}
+rcvar=${name}_enable
 
 load_rc_config "${name}"
 
-if [ -n "${tomcat7_java_home}" ] ; then
-	export JAVA_HOME="${tomcat7_java_home}"
-fi
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "_tomcat_java_home=\${${name}_java_home:-'%%JAVA_HOME%%'}"
+eval "_tomcat_catalina_user=\${${name}_catalina_user:-'%%TOMCAT_USER%%'}"
+eval "_tomcat_catalina_home='%%TOMCAT_HOME%%'"
+eval "_tomcat_catalina_base=\${${name}_catalina_base:-'%%TOMCAT_HOME%%'}"
+eval "_tomcat_catalina_tmpdir=\${${name}_catalina_tmpdir:-'${_tomcat_catalina_base}/temp'}"
+eval "_tomcat_stdout=\${${name}_stdout:-'${_tomcat_catalina_base}/logs/catalina.out'}"
+eval "_tomcat_stderr=\${${name}_stderr:-'&1'}"
+eval "_tomcat_pipe_cmd=\${${name}_pipe_cmd:-''}"
+eval "_tomcat_logging_manager=\${${name}_logging_manager:-'org.apache.juli.ClassLoaderLogManager'}"
+eval "_tomcat_logging_config=\${${name}_logging_config:-'${_tomcat_catalina_base}/conf/logging.properties'}"
+eval "_tomcat_classpath=\${${name}_classpath:-''}"
+eval "_tomcat_java_opts=\${${name}_java_opts:-''}"
 
-if [ -n "${tomcat7_java_version}" ] ; then
-	export JAVA_VERSION="${tomcat7_java_version}"
-fi
+pidfile="/var/run/${name}.pid"
 
-if [ -n "${tomcat7_java_vendor}" ] ; then
-	export JAVA_VENDOR="${tomcat7_java_vendor}"
-fi
+required_files="${_tomcat_catalina_base}/conf/server.xml"
+required_dirs="${_tomcat_catalina_tmpdir}"
 
-if [ -n "${tomcat7_java_os}" ] ; then
-	export JAVA_OS="${tomcat7_java_os}"
-fi
+extra_commands="reload"
 
-java_class="org.apache.catalina.startup.Bootstrap"
-java_command="%%LOCALBASE%%/bin/java \
-	${tomcat7_java_opts} \
-	-Djava.endorsed.dirs=%%TOMCAT_HOME%%/endorsed \
-	-classpath %%TOMCAT_HOME%%/bin/bootstrap.jar:%%TOMCAT_HOME%%/bin/tomcat-juli.jar${tomcat7_classpath} \
-	-Dcatalina.home=${tomcat7_catalina_home} \
-	-Dcatalina.base=${tomcat7_catalina_base} \
-	-Djava.io.tmpdir=${tomcat7_catalina_tmpdir} \
-	${java_class}"
-
-required_files="${tomcat7_catalina_base}/conf/server.xml"
-
-command="/usr/sbin/daemon"
-flags="-p ${pidfile} ${java_command} start ${tomcat7_flags} ${tomcat7_catalina_log}"
-
-start_precmd="pid_touch"
-stop_cmd="tomcat_stop"
-status_cmd="tomcat_status"
-poll_cmd="tomcat_poll"
-
-pid_touch() {
-	touch $pidfile
-	chown $tomcat7_user $pidfile
-}
-
-tomcat_stop() {
-	rc_pid=$(tomcat_check_pidfile $pidfile)
-
-	if [ -z "$rc_pid" ]; then
-		[ -n "$rc_fast" ] && return 0
-		echo "${name} not running? (check $pidfile)."
-		return 1
-	fi
-	
-	echo "Stopping ${name}."
-	${java_command} stop
-	tomcat_wait_max_for_pid ${tomcat7_stop_timeout} ${rc_pid}
-	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
-	rm -f ${pidfile}
-}
-
-tomcat_status() {
-	rc_pid=$(tomcat_check_pidfile $pidfile)
-
-	if [ -n "$rc_pid" ]; then
-		echo "${name} is running as pid $rc_pid."
-	else
-		echo "${name} is not running."
-		return 1
-	fi
-}
-
-tomcat_poll() {
-	rc_pid=$(tomcat_check_pidfile $pidfile)
-
-	_prefix=
-	while (true) ; do
-		[ -z "$rc_pid" ] && break
-		echo -n ${_prefix:-"Waiting for PIDS: "}$rc_pid
-		_prefix=", "
-		sleep 2
-	done
-	if [ -n "$_prefix" ]; then
-	echo "."
-	fi
-}
-
-tomcat_check_pidfile() {
-	_pidfile=$1
-	if [ -z "$_pidfile" ]; then
-		err 3 'USAGE: tomcat_check_pidfile pidfile'
-	fi
-	if [ ! -f $_pidfile ]; then
-		debug "pid file ($_pidfile): not readable."
-		return
-	fi
-	read _pid _junk < $_pidfile
-	if [ -z "$_pid" ]; then
-		debug "pid file ($_pidfile): no pid in file."
-		return
-	fi
-	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid $java_class\$"`" ]; then
-		echo -n $_pid
-	fi
-}
-
-tomcat_wait_max_for_pid() {
-	_timeout=$1
-	shift
-	_pid=$1
-	_prefix=
-	while [ $_timeout -gt 0 ] ; do
-		echo -n ${_prefix:-"Waiting (max $_timeout secs) for PIDS: "}$_pid
-		_prefix=", "
-		sleep 2
-		kill -0 $_pid 2> /dev/null || break
-		_timeout=$(($_timeout-2))
-	done
-	if [ -n "$_prefix" ]; then
-		echo "."
-	fi
-}
+command="%%LOCALBASE%%/bin/jsvc"
+command_args="-java-home '${_tomcat_java_home}' \
+	-server \
+	-user ${_tomcat_catalina_user} \
+	-pidfile '${pidfile}' \
+	-wait 10 \
+	-outfile '${_tomcat_stdout}' \
+	-errfile '${_tomcat_stderr}' \
+	-classpath '%%TOMCAT_HOME%%/bin/bootstrap.jar:%%LOCALBASE%%/share/java/classes/commons-daemon.jar:%%TOMCAT_HOME%%/bin/tomcat-juli.jar${_tomcat_classpath}' \
+	-Djava.util.logging.manager=${_tomcat_logging_manager} \
+	-Djava.util.logging.config.file='${_tomcat_logging_config}' \
+	${_tomcat_java_opts} \
+	-Djava.endorsed.dirs='%%TOMCAT_HOME%%/endorsed' \
+	-Dcatalina.home='${_tomcat_catalina_home}' \
+	-Dcatalina.base='${_tomcat_catalina_base}' \
+	-Djava.io.tmpdir='${_tomcat_catalina_tmpdir}' \
+	org.apache.catalina.startup.Bootstrap \
+	${_tomcat_pipe_cmd}"
 
 run_rc_command "$1"

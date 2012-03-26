@@ -7,6 +7,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	7.0.26
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-7/v${PORTVERSION}/bin
@@ -16,7 +17,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 7.x branch
 
 LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	jsvc:${PORTSDIR}/devel/jakarta-commons-daemon
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -35,7 +37,8 @@ PLIST_SUB=	T=${TOMCAT_SUBDIR} CONF_EXT=${CONF_EXT} \
 LATEST_LINK=	${APP_SHORTNAME}
 
 SUB_LIST=	TOMCAT_HOME=${TOMCAT_HOME} \
-		TOMCAT_USER=${WWWOWN}
+		TOMCAT_USER=${WWWOWN} \
+		JAVA_HOME=${JAVA_HOME}
 
 .include <bsd.port.pre.mk>
 
