@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	java mail
 MASTER_SITES=	http://kenai.com/downloads/javamail/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
