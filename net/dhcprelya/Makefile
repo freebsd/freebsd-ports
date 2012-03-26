@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcprelya
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://semmy.ru/~sem/
 
