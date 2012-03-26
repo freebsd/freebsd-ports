@@ -7,6 +7,7 @@
 
 PORTNAME=	ch
 PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.softintegration.com/download/software/release/FreeBSD/
 DISTNAME=	chstandard-${PORTVERSION}.freebsd9.0

@@ -1,6 +1,7 @@
 @exec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/ch /etc/shells.bak; echo %D/bin/ch) >/etc/shells; rm -f /etc/shells.bak
 @unexec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/ch /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/ch
+%%DATADIR%%/docs/images/softIntegration.gif
 %%DATADIR%%/docs/README
 %%DATADIR%%/docs/index.html
 %%DATADIR%%/docs/chsdk.pdf
@@ -9,8 +10,15 @@ bin/ch
 %%DATADIR%%/docs/chref.pdf
 %%DATADIR%%/docs/qanimate.pdf
 %%DATADIR%%/docs/chide.pdf
+%%DATADIR%%/docs/jp/chide.pdf
+%%DATADIR%%/docs/jp/chguide.pdf
+%%DATADIR%%/docs/jp/chref.pdf
+%%DATADIR%%/docs/jp/qanimate.pdf
+%%DATADIR%%/docs/cn/chide.pdf
+@dirrmtry %%DATADIR%%/docs/cn
+@dirrmtry %%DATADIR%%/docs/jp
+@dirrmtry %%DATADIR%%/docs/jp
+@dirrmtry %%DATADIR%%/docs/images
 @dirrmtry %%DATADIR%%/docs/man/man1
 @dirrmtry %%DATADIR%%/docs/man
 @dirrmtry %%DATADIR%%/docs
-@unexec  rmdir %D/ch/docs
-@dirrmtry %%DATADIR%
