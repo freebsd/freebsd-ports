@@ -86,7 +86,6 @@
     SUBDIR += frontbase
     SUBDIR += frontbase-jdbc
     SUBDIR += gadfly
-    SUBDIR += gbib
     SUBDIR += gdbm
     SUBDIR += gdl2
     SUBDIR += geoserver-mysql-plugin
