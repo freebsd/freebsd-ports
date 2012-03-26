@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fengoffice
-PORTVERSION=	1.7.5
+PORTVERSION=	2.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/opengoo/${PORTNAME}/${PORTNAME}_${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,6 +22,7 @@ IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 
 FENGOFFICE_DIR=		www/${PORTNAME}
@@ -30,6 +31,18 @@ FENGOFFICE_WWWDIR=	${PREFIX}/${FENGOFFICE_DIR}
 post-extract:
 	@${MKDIR} ${WRKDIR}/${PORTNAME}-docs
 	@${MV} ${WRKSRC}/readme.txt ${WRKDIR}/${PORTNAME}-docs/README
+
+pre-install:
+	@${RM} -f ${PLIST}
+
+	@cd ${WRKSRC} && \
+		${FIND} . -type f | ${SORT} | ${SED} -e 's|^|www/fengoffice/|' -e 's|\./||g' >> ${PLIST} && \
+			${FIND} . -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm www/fengoffice|' -e 's|\.||g' >> ${PLIST}
+
+.	if !defined(NOPORTDOCS)
+		@${ECHO_CMD} "%%PORTDOCS%%%%DOCSDIR%%/README" >> ${PLIST}
+		@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
+.	endif
 
 do-install:
 	@${MKDIR} ${FENGOFFICE_WWWDIR}
