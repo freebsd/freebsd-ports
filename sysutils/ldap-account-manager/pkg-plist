@@ -4,6 +4,7 @@
 @exec if [ ! -f %D/%%WWWDIR%%/config/lam.conf ] ; then cp -p %D/%F %B/lam.conf; fi
 @unexec unlink %D/%%WWWDIR%%/config/shells
 %%WWWDIR%%/tmp/.htaccess
+%%WWWDIR%%/tmp/internal/.htaccess
 %%WWWDIR%%/templates/tree/treeViewContainer.php
 %%WWWDIR%%/templates/tools.php
 %%WWWDIR%%/templates/tests/schemaTest.php
@@ -13,10 +14,8 @@
 %%WWWDIR%%/templates/schema/schema.php
 %%WWWDIR%%/templates/profedit/profilepage.php
 %%WWWDIR%%/templates/profedit/profilemain.php
-%%WWWDIR%%/templates/profedit/profiledelete.php
 %%WWWDIR%%/templates/pdfedit/pdfpage.php
 %%WWWDIR%%/templates/pdfedit/pdfmain.php
-%%WWWDIR%%/templates/pdfedit/pdfdelete.php
 %%WWWDIR%%/templates/ou_edit.php
 %%WWWDIR%%/templates/misc/ajax.php
 %%WWWDIR%%/templates/masscreate.php
@@ -35,6 +34,190 @@
 %%WWWDIR%%/templates/lib/130_jquery-dropmenu-1.1.3.js
 %%WWWDIR%%/templates/lib/110_jquery-ui-1.8.2.custom.min.js
 %%WWWDIR%%/templates/lib/100_jquery-1.4.2.min.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/af.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/bg.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ar.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ca.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/bn.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/bs.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/da.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/de.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/cs.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/cy.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/el.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/fa.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/en.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/eo.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/es.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/fi.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/et.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/eu.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/fo.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/fr.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/gl.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/he.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/hi.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/gu.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/hr.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/hu.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ja.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/is.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/it.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ka.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/km.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ko.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/lt.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/lv.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/nb.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/mn.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ms.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/nl.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/no.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/pl.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/pt.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ro.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/ru.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/sk.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/sl.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/sr.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/th.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/sv.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/tr.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/uk.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/vi.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/zh.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/pt-br.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/zh-cn.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/en-au.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/en-ca.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/en-gb.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/fr-ca.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/sr-latn.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/lang/_languages.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/templates.css
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/skin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/dialog.css
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/dialog_sides_rtl.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/sprites.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/mini.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/sprites_ie6.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/dialog_sides.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/dialog_sides.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images/noimage.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/icons.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/editor.css
+%%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/icons_rtl.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/config.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/ckeditor.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/div/dialogs/div.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/xml/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/ajax/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/find/dialogs/find.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/link/dialogs/link.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/link/images/anchor.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/about/dialogs/about.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/flash/dialogs/flash.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/flash/images/placeholder.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/select.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/textfield.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/checkbox.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/hiddenfield.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/radio.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/button.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/form.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs/textarea.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/image/dialogs/image.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/scayt/dialogs/toolbar.css
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/scayt/dialogs/options.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/table/dialogs/table.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/autogrow/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pastetext/dialogs/pastetext.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/bbcode/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframedialog/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/a11yhelp/lang/en.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/a11yhelp/lang/he.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_p.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_h1.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_h2.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_h3.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_h4.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_h5.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_h6.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_div.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_blockquote.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images/block_address.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframe/dialogs/iframe.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframe/images/placeholder.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/stylesheetparser/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/assets/picker_mask.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/assets/hue_thumb.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/assets/yui.css
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/assets/hue_bg.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/assets/picker_thumb.png
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/yui.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/lang/en.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/lang/he.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/dialogs/uicolor.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/uicolor.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/lang/en.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/lang/he.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/dialogs/placeholder.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/placeholder.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/specialchar/lang/en.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/dialogs/smiley.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/sad_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/embaressed_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/shades_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/tounge_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/envelope.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/wink_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/angry_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/heart.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/regular_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/thumbs_down.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/kiss.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/confused_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/whatchutalkingabout_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/lightbulb.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/broken_heart.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/thumbs_up.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/omg_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/teeth_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/devil_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/cry_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images/angel_smile.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/styles/styles/default.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/liststyle/dialogs/liststyle.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/adobeair/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/devtools/lang/en.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/devtools/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/tableresize/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/docprops/dialogs/docprops.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/docprops/plugin.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/templates/images/template1.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/templates/images/template2.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/templates/default.js
+%%WWWDIR%%/templates/lib/extra/ckeditor/contents.css
 %%WWWDIR%%/templates/initsuff.php
 %%WWWDIR%%/templates/help.php
 %%WWWDIR%%/templates/delete.php
@@ -490,6 +673,7 @@
 %%WWWDIR%%/style/images/ui-bg_flat_75_ffffff_40x100.png
 %%WWWDIR%%/style/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/style/images/ui-anim_basic_16x16.gif
+%%WWWDIR%%/style/images/pbar-ani.gif
 %%WWWDIR%%/style/.htaccess
 %%WWWDIR%%/style/jquery-validationEngine.css
 %%WWWDIR%%/sess/.htaccess
@@ -497,6 +681,8 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/sk_SK/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/sk_SK/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
@@ -558,8 +744,6 @@
 %%WWWDIR%%/lib/modules/quota.inc
 %%WWWDIR%%/lib/modules/posixGroup.inc
 %%WWWDIR%%/lib/modules/posixAccount.inc
-%%WWWDIR%%/lib/modules/phpGroupwareUser.inc
-%%WWWDIR%%/lib/modules/phpGroupwareGroup.inc
 %%WWWDIR%%/lib/modules/nisnetgroup.inc
 %%WWWDIR%%/lib/modules/nisMailAlias.inc
 %%WWWDIR%%/lib/modules/ldapPublicKey.inc
@@ -656,7 +840,6 @@
 %%WWWDIR%%/graphics/profiles.png
 %%WWWDIR%%/graphics/process.png
 %%WWWDIR%%/graphics/plus.png
-%%WWWDIR%%/graphics/phpGroupware.png
 %%WWWDIR%%/graphics/pdf.png
 %%WWWDIR%%/graphics/pass.png
 %%WWWDIR%%/graphics/ou.png
@@ -759,7 +942,93 @@
 %%WWWDIR%%/config/config.cfg_sample
 %%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/VERSION
+@dirrm %%WWWDIR%%/tmp/internal
 @dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/skins/office2003
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/skins
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/div/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/div
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/wsc/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/wsc
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/xml
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/ajax
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/find/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/find
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/link/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/link/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/link
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/about/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/about
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/flash/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/flash/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/flash
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/forms
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/image/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/image
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/scayt/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/scayt
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/table/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/table
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/colordialog/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/colordialog
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/autogrow
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pastetext/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pastetext
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pagebreak/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pagebreak
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/bbcode
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/tabletools
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframedialog
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/dialog
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/a11yhelp/lang
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/a11yhelp/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/a11yhelp
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/showblocks
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframe/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframe/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/iframe
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/stylesheetparser
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui/assets
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/yui
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/lang
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/uicolor
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/placeholder
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/specialchar/lang
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/specialchar
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/smiley
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/styles/styles
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/styles
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/liststyle/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/liststyle
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/adobeair
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/devtools/lang
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/devtools
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pastefromword/filter
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/pastefromword
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/clipboard
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/tableresize
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/docprops/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/docprops
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/templates/images
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/dialogs
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates/templates
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins/templates
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/plugins
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor/lang
+@dirrm %%WWWDIR%%/templates/lib/extra/ckeditor
+@dirrm %%WWWDIR%%/templates/lib/extra
 @dirrm %%WWWDIR%%/templates/tree
 @dirrm %%WWWDIR%%/templates/tests
 @dirrm %%WWWDIR%%/templates/schema
@@ -799,6 +1068,8 @@
 @dirrm %%WWWDIR%%/locale/zh_TW
 @dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/zh_CN
+@dirrm %%WWWDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/sk_SK
 @dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/ru_RU
 @dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
