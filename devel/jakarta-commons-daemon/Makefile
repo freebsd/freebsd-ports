@@ -6,42 +6,39 @@
 #
 
 PORTNAME=	commons-daemon
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.10
 CATEGORIES=	devel java
-MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
+MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE:S,$,:src,} \
+		${MASTER_SITE_APACHE_COMMONS_BINARIES:S,$,:bin,}
+MASTER_SITE_SUBDIR=	daemon/:src daemon/:bin
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-${PORTVERSION}-native-src${EXTRACT_SUFX}:src \
+		${PORTNAME}-${PORTVERSION}-bin${EXTRACT_SUFX}:bin
 
-MAINTAINER=	ronald@echteman.nl
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Wrapper code to start/stop a Java application as a daemon
+
+LICENSE=	AL2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
-JAVA_BUILD=	jdk
-NEED_JAVAC=	yes
-USE_ANT=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-java=${JAVA_HOME}
 
-ALL_TARGET=dist
+WRKSRC=		${WRKDIR}/${DISTNAME}-native-src/unix
+WRKBIN=		${WRKDIR}/${DISTNAME}
 
-CONFIGURE_WRKSRC=	${WRKSRC}/src/native/unix/
-INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
+PLIST_FILES=	bin/jsvc %%JAVAJARDIR%%/${PORTNAME}.jar
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/jsvc
-
-.include <bsd.port.pre.mk>
-
-post-build:
-	cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
-	${MV} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${WRKSRC}/dist/${PORTNAME}.jar
+PORTDOCS=	*
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/jsvc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/jsvc ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKBIN}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKBIN} && ${COPYTREE_SHARE} apidocs ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
