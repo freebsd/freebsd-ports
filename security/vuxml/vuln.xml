@@ -103,6 +103,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>quagga</name>
 	<range><lt>0.99.20.1</lt></range>
       </package>
+      <package>
+	<name>quagga-re</name>
+	<range><lt>0.99.17.8</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -130,6 +134,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-03-23</discovery>
       <entry>2012-03-24</entry>
+      <modified>2012-03-26</modified>
     </dates>
   </vuln>
 
