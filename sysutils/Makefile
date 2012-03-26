@@ -852,7 +852,6 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
-    SUBDIR += syscp
     SUBDIR += sysgather
     SUBDIR += sysinfo
     SUBDIR += syslinux
