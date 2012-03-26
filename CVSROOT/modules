@@ -22772,6 +22772,7 @@ py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
 py-pyshapelib                   ports/devel/py-pyshapelib
+py-pystache                     ports/textproc/py-pystache
 py-pytc                         ports/databases/py-pytc
 py-pytemplate                   ports/devel/py-pytemplate
 py-pytest                       ports/devel/py-pytest
