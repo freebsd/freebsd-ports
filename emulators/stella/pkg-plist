@@ -22,6 +22,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/select_romdir.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/secret_quest.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/logs.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/launcher_filter.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/console.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/rominfo_2x_small.png
