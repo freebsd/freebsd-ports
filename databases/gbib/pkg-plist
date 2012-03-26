@@ -1,7 +1,0 @@
-bin/gbib
-share/gbib/gbib.rc
-share/gbib/lyx.xpm
-share/gbib/gbib48.xpm
-share/locale/fr/LC_MESSAGES/gbib.mo
-share/locale/pt_BR/LC_MESSAGES/gbib.mo
-@dirrm share/gbib
