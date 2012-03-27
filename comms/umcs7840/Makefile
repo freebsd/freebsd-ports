@@ -7,6 +7,7 @@
 
 PORTNAME=	umcs7840
 PORTVERSION=	${MAINVERSION}.${VERSIONDATE}
+PORTREVISION=	1
 CATEGORIES=	comms kld
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/umcs7840/
 PKGNAMESUFFIX=	-kmod
@@ -23,6 +24,8 @@ VERSIONDATE=20101210.57
 
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
+SUB_LIST=	KMODDIR=${KMODDIR}
+SUB_FILES=	pkg-deinstall
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 MANCOMPRESSED=	yes
@@ -37,9 +40,6 @@ IGNORE=	requires FreeBSD 8.0 or later, please try driver from vendor site
 .endif
 
 post-install:
-	kldxref ${KMODDIR}
-
-post-deinstall:
 	kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>
