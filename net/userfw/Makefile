@@ -26,6 +26,12 @@ CMAKE_OUTSOURCE=	yes
 KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.x
+.endif
+
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
 .endif
@@ -33,4 +39,4 @@ IGNORE=		requires kernel source files
 CMAKE_ARGS+=	-DDOMAIN_STUB:BOOL=OFF
 CMAKE_ARGS+=	-DOPCODE_VERIFICATION:BOOL=OFF
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
