@@ -11,7 +11,7 @@ CATEGORIES=	www
 #MASTER_SITES=	SF/orsochpasswd/orsochpasswd/chpasswd-2.2.4/
 MASTER_SITES=	SF/orso${PORTNAME}/orso${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mad@madpilot.net
 COMMENT=	Allow users to change their Squid or Web password using the browser
 
 HAS_CONFIGURE=	yes
