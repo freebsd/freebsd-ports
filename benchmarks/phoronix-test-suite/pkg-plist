@@ -1,8 +1,8 @@
 bin/phoronix-test-suite
 %%BASH_COMPLETIONS%%etc/bash_completion.d/phoronix-test-suite
 %%X11%%share/applications/phoronix-test-suite.desktop
+%%X11%%share/applications/phoronix-test-suite-launcher.desktop
 %%X11%%share/icons/hicolor/48x48/apps/phoronix-test-suite.png
-%%X11%%share/icons/hicolor/64x64/apps/openbenchmarking.png
 %%X11%%share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
 %%X11%%share/icons/hicolor/64x64/mimetypes/gnome-mime-application-x-openbenchmarking.png
 %%X11%%share/mime/application/x-openbenchmarking.xml
@@ -107,7 +107,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/external-test-dependencies/xml/arch-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/fedora-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/freebsd-packages.xml
-%%DATADIR%%/pts-core/external-test-dependencies/xml/freebsd-packages.xml.bak
 %%DATADIR%%/pts-core/external-test-dependencies/xml/generic-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/gentoo-packages.xml
 %%DATADIR%%/pts-core/external-test-dependencies/xml/mandrivalinux-packages.xml
@@ -138,18 +137,38 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_jpg_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_png_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer.php
-%%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer.php.bak
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_renderer_web.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svg_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_svgz_renderer.php
 %%DATADIR%%/pts-core/objects/bilde_renderer/bilde_swf_renderer.php
-%%DATADIR%%/pts-core/objects/display_modes/pts_basic_display_mode.php
-%%DATADIR%%/pts-core/objects/display_modes/pts_concise_display_mode.php
-%%DATADIR%%/pts-core/objects/display_modes/pts_display_mode_interface.php
+%%DATADIR%%/pts-core/objects/client/display_modes/pts_basic_display_mode.php
+%%DATADIR%%/pts-core/objects/client/display_modes/pts_concise_display_mode.php
+%%DATADIR%%/pts-core/objects/client/display_modes/pts_display_mode_interface.php
+%%DATADIR%%/pts-core/objects/client/pts_argument_check.php
+%%DATADIR%%/pts-core/objects/client/pts_client.php
+%%DATADIR%%/pts-core/objects/client/pts_config.php
+%%DATADIR%%/pts-core/objects/client/pts_documentation.php
+%%DATADIR%%/pts-core/objects/client/pts_download_speed_manager.php
+%%DATADIR%%/pts-core/objects/client/pts_external_dependencies.php
+%%DATADIR%%/pts-core/objects/client/pts_installed_test.php
+%%DATADIR%%/pts-core/objects/client/pts_module.php
+%%DATADIR%%/pts-core/objects/client/pts_module_interface.php
+%%DATADIR%%/pts-core/objects/client/pts_module_manager.php
+%%DATADIR%%/pts-core/objects/client/pts_module_option.php
+%%DATADIR%%/pts-core/objects/client/pts_openbenchmarking_client.php
+%%DATADIR%%/pts-core/objects/client/pts_option_interface.php
+%%DATADIR%%/pts-core/objects/client/pts_phoroscript_interpreter.php
+%%DATADIR%%/pts-core/objects/client/pts_test_execution.php
+%%DATADIR%%/pts-core/objects/client/pts_test_file_download.php
+%%DATADIR%%/pts-core/objects/client/pts_test_install_manager.php
+%%DATADIR%%/pts-core/objects/client/pts_test_install_request.php
+%%DATADIR%%/pts-core/objects/client/pts_test_installer.php
+%%DATADIR%%/pts-core/objects/client/pts_test_notes_manager.php
+%%DATADIR%%/pts-core/objects/client/pts_test_run_manager.php
+%%DATADIR%%/pts-core/objects/client/pts_tests.php
 %%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlWriter.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_config_nye_XmlReader.php
-%%DATADIR%%/pts-core/objects/nye_Xml/pts_graph_config_nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_parse_results_nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_results_nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_suite_nye_XmlReader.php
@@ -221,49 +240,30 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_TestCountPassGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_VerticalBarGraph.php
 %%DATADIR%%/pts-core/objects/pts_Graph/pts_graph_ir_value.php
-%%DATADIR%%/pts-core/objects/pts_argument_check.php
 %%DATADIR%%/pts-core/objects/pts_arrays.php
 %%DATADIR%%/pts-core/objects/pts_c.php
-%%DATADIR%%/pts-core/objects/pts_client.php
-%%DATADIR%%/pts-core/objects/pts_client.php.bak
-%%DATADIR%%/pts-core/objects/pts_compatibility.php
 %%DATADIR%%/pts-core/objects/pts_compression.php
-%%DATADIR%%/pts-core/objects/pts_config.php
-%%DATADIR%%/pts-core/objects/pts_documentation.php
-%%DATADIR%%/pts-core/objects/pts_download_speed_manager.php
-%%DATADIR%%/pts-core/objects/pts_external_dependencies.php
 %%DATADIR%%/pts-core/objects/pts_file_io.php
 %%DATADIR%%/pts-core/objects/pts_flags.php
 %%DATADIR%%/pts-core/objects/pts_html_template.php
 %%DATADIR%%/pts-core/objects/pts_image.php
-%%DATADIR%%/pts-core/objects/pts_installed_test.php
 %%DATADIR%%/pts-core/objects/pts_math.php
 %%DATADIR%%/pts-core/objects/pts_merge.php
-%%DATADIR%%/pts-core/objects/pts_module.php
-%%DATADIR%%/pts-core/objects/pts_module_interface.php
-%%DATADIR%%/pts-core/objects/pts_module_manager.php
-%%DATADIR%%/pts-core/objects/pts_module_option.php
 %%DATADIR%%/pts-core/objects/pts_network.php
 %%DATADIR%%/pts-core/objects/pts_openbenchmarking.php
-%%DATADIR%%/pts-core/objects/pts_openbenchmarking_client.php
-%%DATADIR%%/pts-core/objects/pts_option_interface.php
 %%DATADIR%%/pts-core/objects/pts_pdf_template.php
-%%DATADIR%%/pts-core/objects/pts_phoroscript_interpreter.php
 %%DATADIR%%/pts-core/objects/pts_render.php
 %%DATADIR%%/pts-core/objects/pts_result_file.php
 %%DATADIR%%/pts-core/objects/pts_result_file_analyze_manager.php
 %%DATADIR%%/pts-core/objects/pts_result_file_analyzer.php
 %%DATADIR%%/pts-core/objects/pts_result_file_merge_manager.php
+%%DATADIR%%/pts-core/objects/pts_result_file_output.php
 %%DATADIR%%/pts-core/objects/pts_result_file_writer.php
 %%DATADIR%%/pts-core/objects/pts_result_merge_select.php
 %%DATADIR%%/pts-core/objects/pts_storage_object.php
 %%DATADIR%%/pts-core/objects/pts_strings.php
-%%DATADIR%%/pts-core/objects/pts_test_execution.php
-%%DATADIR%%/pts-core/objects/pts_test_file_download.php
-%%DATADIR%%/pts-core/objects/pts_test_install_manager.php
-%%DATADIR%%/pts-core/objects/pts_test_install_request.php
-%%DATADIR%%/pts-core/objects/pts_test_installer.php
-%%DATADIR%%/pts-core/objects/pts_test_notes_manager.php
+%%DATADIR%%/pts-core/objects/pts_svg_dom.php
+%%DATADIR%%/pts-core/objects/pts_svg_dom_gd.php
 %%DATADIR%%/pts-core/objects/pts_test_option.php
 %%DATADIR%%/pts-core/objects/pts_test_profile.php
 %%DATADIR%%/pts-core/objects/pts_test_profile_downloads_writer.php
@@ -271,22 +271,21 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_test_profile_writer.php
 %%DATADIR%%/pts-core/objects/pts_test_result.php
 %%DATADIR%%/pts-core/objects/pts_test_result_buffer.php
+%%DATADIR%%/pts-core/objects/pts_test_result_buffer_extra.php
 %%DATADIR%%/pts-core/objects/pts_test_result_buffer_item.php
 %%DATADIR%%/pts-core/objects/pts_test_result_parser.php
 %%DATADIR%%/pts-core/objects/pts_test_result_parser_writer.php
 %%DATADIR%%/pts-core/objects/pts_test_result_regression_marker.php
-%%DATADIR%%/pts-core/objects/pts_test_run_manager.php
 %%DATADIR%%/pts-core/objects/pts_test_run_options.php
 %%DATADIR%%/pts-core/objects/pts_test_suite.php
 %%DATADIR%%/pts-core/objects/pts_test_suite_parser.php
 %%DATADIR%%/pts-core/objects/pts_test_suite_writer.php
-%%DATADIR%%/pts-core/objects/pts_tests.php
 %%DATADIR%%/pts-core/objects/pts_tracker.php
 %%DATADIR%%/pts-core/objects/pts_types.php
 %%DATADIR%%/pts-core/objects/pts_user_io.php
 %%DATADIR%%/pts-core/objects/pts_validation.php
 %%DATADIR%%/pts-core/objects/pts_virtual_test_suite.php
-%%DATADIR%%/pts-core/openbenchmarking.org/openbenchmarking-mime.xml
+%%DATADIR%%/pts-core/objects/pts_web.php
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/result-file.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/results-parser.xsd
 %%DATADIR%%/pts-core/openbenchmarking.org/schemas/test-profile-downloads.xsd
@@ -303,7 +302,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/results-viewer/pts-header.png
 %%DATADIR%%/pts-core/results-viewer/pts-results-viewer.xsl
 %%DATADIR%%/pts-core/results-viewer/pts.js
-%%DATADIR%%/pts-core/static/bash_completion
 %%DATADIR%%/pts-core/static/certificates/openbenchmarking-server.pem
 %%DATADIR%%/pts-core/static/certificates/phoromatic-com.pem
 %%DATADIR%%/pts-core/static/examples/apt-full-upgrade
@@ -312,9 +310,13 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/static/examples/phoromatic-tracker-update-kernel
 %%DATADIR%%/pts-core/static/examples/update-kernel-from-ubuntu-daily-ppa
 %%DATADIR%%/pts-core/static/examples/update-ubuntu-aptitude-full
-%%DATADIR%%/pts-core/static/graph-config-defaults.xml
-%%DATADIR%%/pts-core/static/images/openbenchmarking.png
 %%DATADIR%%/pts-core/static/images/phoronix-test-suite.png
+%%DATADIR%%/pts-core/static/images/ob-10x16.png
+%%DATADIR%%/pts-core/static/images/ob-fulltext-183x32.png
+%%DATADIR%%/pts-core/static/images/pts-77x40-white.png
+%%DATADIR%%/pts-core/static/images/pts-80x42.png
+%%DATADIR%%/pts-core/static/images/pts-80x42-white.png
+%%DATADIR%%/pts-core/static/images/pts-160x83.png
 %%DATADIR%%/pts-core/static/images/pts-106x55.png
 %%DATADIR%%/pts-core/static/images/pts-158x82.jpg
 %%DATADIR%%/pts-core/static/images/pts-158x82.png
@@ -345,7 +347,8 @@ bin/phoronix-test-suite
 @dirrm %%DATADIR%%/pts-core/objects/phodevi/components
 @dirrm %%DATADIR%%/pts-core/objects/phodevi
 @dirrm %%DATADIR%%/pts-core/objects/nye_Xml
-@dirrm %%DATADIR%%/pts-core/objects/display_modes
+@dirrm %%DATADIR%%/pts-core/objects/client/display_modes
+@dirrm %%DATADIR%%/pts-core/objects/client
 @dirrm %%DATADIR%%/pts-core/objects/bilde_renderer
 @dirrm %%DATADIR%%/pts-core/objects
 @dirrm %%DATADIR%%/pts-core/modules
