@@ -1,16 +1,13 @@
 bin/drush
 %%DATADIR%%/README.txt
-%%DATADIR%%/commands/core/clear.cache.inc
 %%DATADIR%%/commands/core/core.drush.inc
 %%DATADIR%%/commands/core/docs.drush.inc
 %%DATADIR%%/commands/core/drupal/batch_6.inc
 %%DATADIR%%/commands/core/drupal/batch.inc
-%%DATADIR%%/commands/core/drupal/environment_5.inc
 %%DATADIR%%/commands/core/drupal/environment_6.inc
 %%DATADIR%%/commands/core/drupal/environment.inc
 %%DATADIR%%/commands/core/drupal/site_install_6.inc
 %%DATADIR%%/commands/core/drupal/site_install.inc
-%%DATADIR%%/commands/core/drupal/update_5.inc
 %%DATADIR%%/commands/core/drupal/update_6.inc
 %%DATADIR%%/commands/core/drupal/update.inc
 %%DATADIR%%/commands/core/field.drush.inc
@@ -23,29 +20,50 @@ bin/drush
 %%DATADIR%%/commands/core/sitealias.drush.inc
 %%DATADIR%%/commands/core/test.drush.inc
 %%DATADIR%%/commands/core/topic.drush.inc
-%%DATADIR%%/commands/core/upgrade.drush.inc
 %%DATADIR%%/commands/core/variable.drush.inc
 %%DATADIR%%/commands/core/watchdog.drush.inc
-%%DATADIR%%/commands/pm/package_handler/cvs.inc
+%%DATADIR%%/commands/core/drupal/update_7.inc
+%%DATADIR%%/commands/core/usage.drush.inc
+%%DATADIR%%/commands/core/queue.drush.inc
+%%DATADIR%%/commands/core/ssh.drush.inc
+%%DATADIR%%/commands/core/shellalias.drush.inc
+%%DATADIR%%/commands/core/cache.drush.inc
+%%DATADIR%%/commands/core/archive.drush.inc
+%%DATADIR%%/commands/pm/release_info/updatexml.inc
+%%DATADIR%%/commands/pm/download.pm.inc
+%%DATADIR%%/commands/pm/info.pm.inc
 %%DATADIR%%/commands/pm/package_handler/git_drupalorg.inc
 %%DATADIR%%/commands/pm/package_handler/wget.inc
 %%DATADIR%%/commands/pm/pm.drush.inc
-%%DATADIR%%/commands/pm/update_info/drupal_5.inc
 %%DATADIR%%/commands/pm/update_info/drupal_6.inc
 %%DATADIR%%/commands/pm/update_info/drupal.inc
 %%DATADIR%%/commands/pm/updatecode.pm.inc
 %%DATADIR%%/commands/pm/version_control/backup.inc
 %%DATADIR%%/commands/pm/version_control/bzr.inc
 %%DATADIR%%/commands/pm/version_control/svn.inc
+%%DATADIR%%/commands/runserver/runserver-prepend.php
+%%DATADIR%%/commands/runserver/runserver-drupal.inc
+%%DATADIR%%/commands/runserver/runserver.drush.inc
+%%DATADIR%%/commands/make/make.download.inc
+%%DATADIR%%/commands/make/make.drush.inc
+%%DATADIR%%/commands/make/README.txt
+%%DATADIR%%/commands/make/EXAMPLE.make
+%%DATADIR%%/commands/make/generate.make.inc
+%%DATADIR%%/commands/make/make.utilities.inc
+%%DATADIR%%/commands/make/make.project.inc
 %%DATADIR%%/commands/sql/sql.drush.inc
 %%DATADIR%%/commands/sql/sync.sql.inc
 %%DATADIR%%/commands/user/user.drush.inc
+%%DATADIR%%/docs/strict-options.html
+%%DATADIR%%/docs/shellaliases.html
+%%DATADIR%%/docs/bastion.html
+%%DATADIR%%/docs/cron.html
 %%DATADIR%%/docs/bootstrap.html
 %%DATADIR%%/docs/commands.html
 %%DATADIR%%/docs/context.html
 %%DATADIR%%/docs/drush.api.php
 %%DATADIR%%/docs/shellscripts.html
-%%DATADIR%%/docs/upgrade.html
+%%DATADIR%%/drush.complete.sh
 %%DATADIR%%/drush.info
 %%DATADIR%%/drush.php
 %%DATADIR%%/drush
@@ -60,6 +78,9 @@ bin/drush
 %%DATADIR%%/examples/sandwich.drush.inc
 %%DATADIR%%/examples/sandwich.txt
 %%DATADIR%%/examples/xkcd.drush.inc
+%%DATADIR%%/examples/sync_enable.drush.inc
+%%DATADIR%%/examples/sync_via_http.drush.inc
+%%DATADIR%%/examples/sandwich-nocolor.txt
 %%DATADIR%%/includes/backend.inc
 %%DATADIR%%/includes/batch.inc
 %%DATADIR%%/includes/command.inc
@@ -67,9 +88,56 @@ bin/drush
 %%DATADIR%%/includes/drush.inc
 %%DATADIR%%/includes/environment.inc
 %%DATADIR%%/includes/sitealias.inc
-%%DATADIR%%/commands/core/cache.drush.inc
-%%DATADIR%%/commands/core/archive.drush.inc
-%%DATADIR%%/tests/siteUpgradeTest.php
+%%DATADIR%%/includes/bootstrap.inc
+%%DATADIR%%/includes/cache.inc
+%%DATADIR%%/includes/dbtng.inc
+%%DATADIR%%/includes/complete.inc
+%%DATADIR%%/includes/drupal.inc
+%%DATADIR%%/includes/filesystem.inc
+%%DATADIR%%/includes/exec.inc
+%%DATADIR%%/includes/output.inc
+%%DATADIR%%/lib/README.txt
+%%DATADIR%%/tests/siteIntallD6Test.php
+%%DATADIR%%/tests/completeTest.php
+%%DATADIR%%/tests/makefiles/contrib-destination.make
+%%DATADIR%%/tests/makefiles/svn.make
+%%DATADIR%%/tests/makefiles/translations-inside7.make
+%%DATADIR%%/tests/makefiles/recursion.make
+%%DATADIR%%/tests/makefiles/included2.make
+%%DATADIR%%/tests/makefiles/translations.make
+%%DATADIR%%/tests/makefiles/git.make
+%%DATADIR%%/tests/makefiles/translations-inside.make
+%%DATADIR%%/tests/makefiles/subtree.make
+%%DATADIR%%/tests/makefiles/included.make
+%%DATADIR%%/tests/makefiles/limited-projects-libraries.make
+%%DATADIR%%/tests/makefiles/md5-fail.make
+%%DATADIR%%/tests/makefiles/git-simple.make
+%%DATADIR%%/tests/makefiles/file-extract.make
+%%DATADIR%%/tests/makefiles/include.make
+%%DATADIR%%/tests/makefiles/bzr.make
+%%DATADIR%%/tests/makefiles/file.make
+%%DATADIR%%/tests/makefiles/get.make
+%%DATADIR%%/tests/makefiles/patches.make
+%%DATADIR%%/tests/makefiles/md5-succeed.make
+%%DATADIR%%/tests/queueTest.php
+%%DATADIR%%/tests/siteSetTest.php
+%%DATADIR%%/tests/commandUnitTest.php
+%%DATADIR%%/tests/hooks/magic_help_alter/magic.drush.inc
+%%DATADIR%%/tests/resources/example.profile
+%%DATADIR%%/tests/resources/create_node_types.php
+%%DATADIR%%/tests/resources/queue_script.php
+%%DATADIR%%/tests/siteSetUnitTest.php
+%%DATADIR%%/tests/watchdogTest.php
+%%DATADIR%%/tests/commandSpecificTest.php
+%%DATADIR%%/tests/generateMakeTest.php
+%%DATADIR%%/tests/imageTest.php
+%%DATADIR%%/tests/makeTest.php
+%%DATADIR%%/tests/cacheCommandTest.php
+%%DATADIR%%/tests/shellAliasTest.php
+%%DATADIR%%/tests/batchTest.php
+%%DATADIR%%/tests/siteSshTest.php
+%%DATADIR%%/tests/sqlConnectTest.php
+%%DATADIR%%/tests/releaseInfoTest.php
 %%DATADIR%%/tests/sqlSyncTest.php
 %%DATADIR%%/tests/variableTest.php
 %%DATADIR%%/tests/siteAliasTest.php
@@ -93,14 +161,22 @@ bin/drush
 @dirrm %%DATADIR%%/includes
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/commands/user
 @dirrm %%DATADIR%%/commands/sql
 @dirrm %%DATADIR%%/commands/pm/version_control
 @dirrm %%DATADIR%%/commands/pm/update_info
 @dirrm %%DATADIR%%/commands/pm/package_handler
+@dirrm %%DATADIR%%/commands/pm/release_info
 @dirrm %%DATADIR%%/commands/pm
 @dirrm %%DATADIR%%/commands/core/drupal
 @dirrm %%DATADIR%%/commands/core
+@dirrm %%DATADIR%%/commands/make
+@dirrm %%DATADIR%%/commands/runserver
 @dirrm %%DATADIR%%/commands
+@dirrm %%DATADIR%%/tests/resources
+@dirrm %%DATADIR%%/tests/makefiles
+@dirrm %%DATADIR%%/tests/hooks/magic_help_alter
+@dirrm %%DATADIR%%/tests/hooks
 @dirrm %%DATADIR%%/tests
 @dirrm %%DATADIR%%
