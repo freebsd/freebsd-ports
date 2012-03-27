@@ -205,6 +205,9 @@ lib/libgphoto2/%%VERSION%%/topfield.so
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.a
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.la
 lib/libgphoto2/%%VERSION%%/toshiba_pdrm11.so
+lib/libgphoto2/%%VERSION%%/tp6801.a
+lib/libgphoto2/%%VERSION%%/tp6801.la
+lib/libgphoto2/%%VERSION%%/tp6801.so
 lib/libgphoto2/print-camera-list
 lib/libgphoto2_port/%%VERSION_PORT%%/disk.a
 lib/libgphoto2_port/%%VERSION_PORT%%/disk.la
@@ -276,8 +279,11 @@ share/doc/libgphoto2/camlibs/README.sq905
 share/doc/libgphoto2/camlibs/README.st2205
 share/doc/libgphoto2/camlibs/README.st2205-compression
 share/doc/libgphoto2/camlibs/README.toshiba-pdrm11
+share/doc/libgphoto2/camlibs/README.tp6801
 share/doc/libgphoto2/camlibs/README.905C
 share/doc/libgphoto2/camlibs/README.9050
+share/doc/libgphoto2/camlibs/README.9051
+share/doc/libgphoto2/camlibs/README.9052
 share/doc/libgphoto2/camlibs/README.913C
 share/doc/libgphoto2/camlibs/README.913D
 share/doc/libgphoto2_port/AUTHORS
