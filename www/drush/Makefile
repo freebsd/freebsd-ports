@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drush
-PORTVERSION=	4.5
+PORTVERSION=	5.0
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drush-7.x-${PORTVERSION}
@@ -15,7 +15,6 @@ MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Drupal command line and scripting interface
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table
 
