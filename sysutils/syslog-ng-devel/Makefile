@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 # temporary workaround: git snapshot
 # as alpha1 release crashes on start on FreeBSD
 MASTER_SITES=	http://people.balabit.hu/czanik/
+PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
 DISTFILES=	$(PORTNAME)-$(DISTVERSION).tar.gz
 
