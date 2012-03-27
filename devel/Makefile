@@ -554,6 +554,7 @@
     SUBDIR += hachoir-core
     SUBDIR += hachoir-parser
     SUBDIR += hachoir-regex
+    SUBDIR += hadoop
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hcs12mem
