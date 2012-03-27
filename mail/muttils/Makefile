@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muttils
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail python
 MASTER_SITES=	https://bitbucket.org/blacktrash/${PORTNAME}/get/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,11 @@ DISTNAME=	${PORTVERSION}
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Python utilities for console mail clients (eg. mutt)
 
-CHANGESET=	977f2e350221
+CHANGESET=	42b380758b70
 WRKSRC=		${WRKDIR}/blacktrash-${PORTNAME}-${CHANGESET}
 USE_PYTHON_BUILD=	yes
 USE_PYTHON_RUN=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFO=	${PORTNAME}-unknown-${PYTHON_VERSION:S/thon//}.egg-info
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}

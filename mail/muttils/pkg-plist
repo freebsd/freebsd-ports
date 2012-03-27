@@ -7,6 +7,9 @@ bin/wrap
 %%PYTHON_SITELIBDIR%%/muttils/__init__.py
 %%PYTHON_SITELIBDIR%%/muttils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/muttils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/muttils/__version__.py
+%%PYTHON_SITELIBDIR%%/muttils/__version__.pyc
+%%PYTHON_SITELIBDIR%%/muttils/__version__.pyo
 %%PYTHON_SITELIBDIR%%/muttils/iterm.py
 %%PYTHON_SITELIBDIR%%/muttils/iterm.pyc
 %%PYTHON_SITELIBDIR%%/muttils/iterm.pyo
