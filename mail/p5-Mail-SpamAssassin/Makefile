@@ -206,7 +206,7 @@ pre-su-install:
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${PREFIX}/include
 
-post-install:
+post-install::
 .if defined (WITH_SPAMC)
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
 .endif
