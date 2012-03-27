@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120219
-PORTREVISION=	1
+PORTVERSION=	20120326
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	weechat-devel-${GITREV}
 
 MAINTAINER=	freebsd@beardz.net
-COMMENT=	A lightweight and user friendly ncurse based IRC client
+COMMENT=	A lightweight and user friendly ncurses based IRC client
 
 LICENSE=	GPLv3
 
@@ -31,7 +30,7 @@ WANT_PERL=	yes
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
-# bsd.cmake.mk to set the cmake build type to Debug instead of 
+# bsd.cmake.mk to set the cmake build type to Debug instead of
 # Release.
 
 OPTIONS=	RUBY		"Ruby scripting support"	Off	\
@@ -48,7 +47,7 @@ OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		NLS		"NLS support"			On	\
 		DOCUMENTATION	"Build documentation"		Off
 
-GITREV=	8d63064
+GITREV=	272046d
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 .include <bsd.port.options.mk>
