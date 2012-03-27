@@ -17,6 +17,12 @@ COMMENT=	Horde Native Language Support
 
 USE_HORDE_RUN=	Horde_Translation Horde_Util
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GEOIP)
+USE_PHP=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GEOIP)
