@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	3.6.1
+PORTVERSION=	3.8.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -60,8 +60,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
 				${WRKSRC}/phoronix-test-suite \
 				${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php \
-				${WRKSRC}/pts-core/objects/pts_client.php \
+				${WRKSRC}/pts-core/objects/client/pts_client.php \
 				${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml
+	@${RM} ${WRKSRC}/phoronix-test-suite.bak \
+		${WRKSRC}/pts-core/objects/bilde_renderer/bilde_renderer.php.bak \
+		${WRKSRC}/pts-core/objects/client/pts_client.php.bak \
+		${WRKSRC}/pts-core/external-test-dependencies/xml/freebsd-packages.xml.bak
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_OPTS} ./install-sh ${PREFIX}

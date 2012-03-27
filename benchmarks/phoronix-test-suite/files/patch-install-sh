@@ -1,14 +1,13 @@
---- install-sh.orig	2011-02-15 19:34:54.000000000 +0100
-+++ install-sh	2011-03-15 23:12:11.058903759 +0100
-@@ -45,33 +45,34 @@
+--- install-sh.orig	2012-01-04 17:43:26.000000000 +0100
++++ install-sh	2012-03-27 11:05:34.486846351 +0200
+@@ -47,33 +47,34 @@
  fi
  
  rm -rf $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
 -rm -rf $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
  
  mkdir -p $DESTDIR$INSTALL_PREFIX/bin/
-+if [ -z "$WITHOUT_X11" ]
-+then
++if [ -z "$WITHOUT_X11" ]; then
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/applications/
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/
 +fi
@@ -16,7 +15,7 @@
  mkdir -p $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
 -mkdir -p $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
 -mkdir -p $DESTDIR$INSTALL_PREFIX/../etc/bash_completion.d/
--
+ 
 -cp CHANGE-LOG $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
 -cp COPYING $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
 -cp AUTHORS $DESTDIR$INSTALL_PREFIX/share/doc/phoronix-test-suite/
@@ -39,26 +38,29 @@
 +if [ -z "$WITHOUT_X11" ]
 +then
  cp pts-core/static/images/phoronix-test-suite.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/48x48/apps/phoronix-test-suite.png
- cp pts-core/static/images/openbenchmarking.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/64x64/apps/openbenchmarking.png
  cp pts-core/static/phoronix-test-suite.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
+ cp pts-core/static/phoronix-test-suite-launcher.desktop $DESTDIR$INSTALL_PREFIX/share/applications/
 +fi
  
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts/etc/scripts/package-build-*
 -cp -r pts-core/ $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
 +cp -r pts-core $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/
  rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/phoronix-test-suite.desktop
- 
- sed 's:PTS_DIR=`pwd`:PTS_DIR='"$INSTALL_PREFIX"'\/share\/phoronix-test-suite:g' phoronix-test-suite > $DESTDIR$INSTALL_PREFIX/bin/phoronix-test-suite
-@@ -79,14 +80,16 @@
+ rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/static/phoronix-test-suite-launcher.desktop
+ rm -f $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/openbenchmarking.org/openbenchmarking-mime.xml
+@@ -87,6 +88,8 @@
  
  # sed 's:\$url = PTS_PATH . \"documentation\/index.html\";:\$url = \"'"$INSTALL_PREFIX"'\/share\/doc\/packages\/phoronix-test-suite\/index.html\";:g' pts-core/commands/gui_gtk.php > $DESTDIR$INSTALL_PREFIX/share/phoronix-test-suite/pts-core/commands/gui_gtk.php
  
 +if [ -z "$WITHOUT_X11" ]
 +then
  # XDG MIME OpenBenchmarking support
- xdg-mime install pts-core/openbenchmarking.org/openbenchmarking-mime.xml
- xdg-mime default phoronix-test-suite.desktop application/x-openbenchmarking
- xdg-icon-resource install --context mimetypes --size 64 pts-core/static/images/openbenchmarking.png application-x-openbenchmarking
+ if [ "X$DESTDIR" = "X" ]
+ then
+@@ -101,10 +104,10 @@
+ 	cp pts-core/static/images/openbenchmarking.png $DESTDIR$INSTALL_PREFIX/share/icons/hicolor/64x64/mimetypes/application-x-openbenchmarking.png
+ 
+ fi
 +fi
  
  echo -e "\nPhoronix Test Suite Installation Completed\n
