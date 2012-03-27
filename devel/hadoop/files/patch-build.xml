@@ -1,0 +1,80 @@
+--- build.xml.orig	2011-05-04 08:30:16.000000000 +0200
++++ build.xml	2011-08-08 00:08:22.000000000 +0200
+@@ -372,7 +372,7 @@
+   <!-- ====================================================== -->
+   <!-- Compile the Java files                                 -->
+   <!-- ====================================================== -->
+-  <target name="record-parser" depends="init" if="javacc.home">
++  <target name="record-parser" if="javacc.home">
+       <javacc
+           target="${core.src.dir}/org/apache/hadoop/record/compiler/generated/rcc.jj"
+           outputdirectory="${core.src.dir}/org/apache/hadoop/record/compiler/generated"
+@@ -539,7 +539,7 @@
+     </antcall> 
+   </target>
+ 
+-  <target name="compile-core-native" depends="compile-core-classes"
++  <target name="compile-core-native"
+           if="compile.native">
+   	
+     <mkdir dir="${build.native}/lib"/>
+@@ -1669,7 +1669,7 @@
+ <!-- librecordio targets.                                               -->
+ <!-- ================================================================== -->		
+ 
+-  <target name="compile-librecordio" depends="init" if="librecordio" >
++  <target name="compile-librecordio" if="librecordio" >
+      <mkdir dir="${build.librecordio}"/>
+      <exec dir="${librecordio.src}" executable="${make.cmd}" failonerror="true">
+         <env key="XERCESCROOT" value="${xercescroot}"/>
+@@ -1703,7 +1703,7 @@
+     </chmod>
+   </target>
+  
+-  <target name="create-c++-configure" depends="init" if="compile.c++">
++  <target name="create-c++-configure" if="compile.c++">
+     <exec executable="autoreconf" dir="${c++.utils.src}" searchpath="yes" 
+           failonerror="yes">
+        <arg value="-if"/>
+@@ -1726,7 +1726,7 @@
+     </exec>
+   </target>
+ 
+-  <target name="check-c++-makefiles" depends="init" if="compile.c++">
++  <target name="check-c++-makefiles" if="compile.c++">
+     <condition property="need.c++.utils.makefile">
+        <not> <available file="${build.c++.utils}/Makefile"/> </not>
+     </condition>
+@@ -1747,7 +1747,7 @@
+     </condition>
+   </target>
+ 
+-  <target name="check-c++-makefile-libhdfs" depends="init,check-c++-libhdfs" if="islibhdfs">
++  <target name="check-c++-makefile-libhdfs" depends="check-c++-libhdfs" if="islibhdfs">
+     <condition property="need.c++.libhdfs.makefile">
+        <not> <available file="${build.c++.libhdfs}/Makefile"/> </not>
+     </condition>
+@@ -2326,5 +2326,23 @@
+       <fileset file="${jsvc.install.dir}/jsvc"/>
+     </chmod>
+  </target>
++  <target name="FreeBSD-dist" >
++    <mkdir dir="${dist.dir}"/>
++    <mkdir dir="${dist.dir}/lib"/>
++    <mkdir dir="${dist.dir}/contrib"/>
++    <mkdir dir="${dist.dir}/bin"/>
++
++    <copy todir="${dist.dir}/lib" includeEmptyDirs="false">
++      <fileset dir="lib">
++        <exclude name="**/native/**"/>
++      </fileset>
++    </copy>
+ 
++        <exec dir="${basedir}" executable="sh" failonerror="true">
++          <env key="BASE_NATIVE_LIB_DIR" value="${basedir}/lib/native"/>
++          <env key="BUILD_NATIVE_DIR" value="${build.dir}/native"/>
++          <env key="DIST_LIB_DIR" value="${basedir}/lib/native"/>
++          <arg line="${native.src.dir}/packageNativeHadoop.sh"/>
++    </exec>
++</target>
+ </project>

@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: namenode
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# namenode_enable (bool):     Set to NO by default.
+#                                Set it to YES to enable namenode.
+# namenode_user (str):        Set to %%HADOOP_USER%% by default.
+#                                Set to a valid user to change default 
+#                                namenode user.
+# namenode_java_home (str):	 Unset by default.
+#                                Switch to another JVM.
+#
+# namenode_log_dir (str):	 Unset by default.
+# namenode_pid_dir (str):	 Unset by default.
+#
+
+. /etc/rc.subr
+
+name=namenode
+rcvar=namenode_enable
+
+load_rc_config "${name}"
+
+: ${namenode_enable:=NO}
+: ${namenode_user:=%%HADOOP_USER%%}
+: ${namenode_group:=%%HADOOP_GROUP%%}
+
+command="%%HADOOP_HOME%%/bin/hadoop-daemon.sh"
+command_args='--config ${HADOOP_CONF_DIR} start namenode'
+
+start_precmd=namenode_init
+stop_precmd=namenode_init
+stop_cmd=namenode_stop
+
+
+namenode_init()
+{
+	if [ -n "${namenode_java_home}" ]
+	then
+		export JAVA_HOME="${namenode_java_home}"
+	fi
+
+	for f in %%HADOOP_ETC%%/envvars.d/*.env
+	do
+		. ${f}
+	done
+	if [ -n "${namenode_log_dir}" ]
+	then
+		HADOOP_LOG_DIR=${namenode_log_dir}
+	fi		
+
+	if [ -n "${namenode_pid_dir}" ]
+	then
+		HADOOP_LOG_DIR=${namenode_pid_dir}
+	fi		
+
+	install -d -m 755 -o ${namenode_user} -g ${namenode_group} ${HADOOP_PID_DIR}
+	install -d -m 755 -o ${namenode_user} -g ${namenode_group} ${HADOOP_LOG_DIR}
+}
+
+namenode_stop ()
+{
+	su -m ${namenode_user} -c "${command} --config ${HADOOP_CONF_DIR} stop namenode"
+}
+
+run_rc_command "$1"
