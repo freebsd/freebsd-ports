@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.2.1
-PORTREVISION=	2
+PORTVERSION=	2.9.2.2
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort \
 		http://mirrors.rit.edu/zi/
@@ -176,6 +175,7 @@ CONFIGURE_ARGS+=	--enable-react
 .endif
 
 .if defined(WITH_SNORTSAM)
+BROKEN=		current snortsam patch results in build failures
 USE_AUTOTOOLS+=	automake
 USE_GNOME=	pkgconfig
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
