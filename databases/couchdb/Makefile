@@ -69,7 +69,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
-
 .include <bsd.port.mk>
