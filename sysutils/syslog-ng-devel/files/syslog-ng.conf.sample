@@ -4,6 +4,8 @@
 # This sample configuration file is essentially equilivent to the stock
 # FreeBSD /etc/syslog.conf file.
 #
+# $FreeBSD$
+#
 
 #
 # options

@@ -1,5 +1,4 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
-etc/modules.conf
 etc/scl.conf
 @exec test -f %D/etc/syslog-ng.conf || cp -p %D/etc/syslog-ng.conf.sample %D/etc/syslog-ng.conf
 @unexec if cmp -s %D/etc/syslog-ng.conf %D/etc/syslog-ng.conf.dist; then rm -f %D/etc/syslog-ng.conf; fi
@@ -15,7 +14,6 @@ include/syslog-ng/alarms.h
 include/syslog-ng/apphook.h
 include/syslog-ng/atomic.h
 include/syslog-ng/block-ref-parser.h
-include/syslog-ng/center.h
 include/syslog-ng/cfg-grammar.h
 include/syslog-ng/cfg-lexer.h
 include/syslog-ng/cfg-parser.h
@@ -24,7 +22,6 @@ include/syslog-ng/children.h
 include/syslog-ng/compat.h
 include/syslog-ng/control.h
 include/syslog-ng/crypto.h
-include/syslog-ng/dgroup.h
 include/syslog-ng/dnscache.h
 include/syslog-ng/driver.h
 include/syslog-ng/filter-expr-parser.h
@@ -37,7 +34,6 @@ include/syslog-ng/logmpx.h
 include/syslog-ng/logmsg.h
 include/syslog-ng/logparser.h
 include/syslog-ng/logpipe.h
-include/syslog-ng/logprocess.h
 include/syslog-ng/logproto.h
 include/syslog-ng/logqueue-fifo.h
 include/syslog-ng/logqueue.h
@@ -58,8 +54,8 @@ include/syslog-ng/persist-state.h
 include/syslog-ng/plugin.h
 include/syslog-ng/pragma-parser.h
 include/syslog-ng/rewrite-expr-parser.h
+include/syslog-ng/scratch-buffers.h
 include/syslog-ng/serialize.h
-include/syslog-ng/sgroup.h
 include/syslog-ng/stats.h
 include/syslog-ng/str-format.h
 include/syslog-ng/syslog-names.h
@@ -72,9 +68,13 @@ include/syslog-ng/tlscontext.h
 include/syslog-ng/tlstransport.h
 include/syslog-ng/utils.h
 include/syslog-ng/value-pairs.h
+include/syslog-ng/cfg-tree.h
+include/syslog-ng/file-perms.h
+include/syslog-ng/uuid.h
+include/syslog-ng/vptransform.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
-lib/libsyslog-ng-3.3.1.so
+lib/libsyslog-ng-3.4.0alpha1.so
 libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
@@ -91,8 +91,6 @@ lib/syslog-ng/libbasicfuncs.la
 lib/syslog-ng/libbasicfuncs.so
 lib/syslog-ng/libconfgen.la
 lib/syslog-ng/libconfgen.so
-lib/syslog-ng/libconvertfuncs.la
-lib/syslog-ng/libconvertfuncs.so
 lib/syslog-ng/libcsvparser.la
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdbparser.la
@@ -103,6 +101,14 @@ lib/syslog-ng/libsyslog-ng-crypto.la
 lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
+lib/syslog-ng/libtfuuid.so
+lib/syslog-ng/libtfuuid.la
+@comment XXX upline says these are installed regardless of optoins selected
+lib/syslog-ng/libafsmtp.la
+lib/syslog-ng/libafsmtp.so
+lib/syslog-ng/libtfjson.la
+lib/syslog-ng/libtfjson.so
+@comment XXX
 share/include/scl/pacct/plugin.conf
 share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk

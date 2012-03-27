@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.3.1
-PORTREVISION=	2
+PORTVERSION=	3.4.0a1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.3.1/source/
-PKGNAMESUFFIX=	-devel
-DISTFILES=	$(PORTNAME)_3.3.1.tar.gz
+# MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(DISTVERSOIN)/source/
+# temporary workaround: git snapshot
+# as alpha1 release crashes on start on FreeBSD
+MASTER_SITES=	http://people.balabit.hu/czanik/
+DISTVERSION=	$(PORTVERSION:S/a/alpha/)
+DISTFILES=	$(PORTNAME)-$(DISTVERSION).tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
-IGNORE=		Development branch not currently active
-
-CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.1
+CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
+		syslog-ng-devel-[0-9]*
+WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(DISTVERSION)
 
 OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		PORTS_SSL "Build with OpenSSL support (from ports)" off \
@@ -46,7 +47,8 @@ USE_GNOME=	glib20 gnomehack
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
-		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
+		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin \
+		--enable-debug
 CFLAGS+=	`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS+=	`${LIBNET_CONFIG} --libs`
 
@@ -58,7 +60,7 @@ BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
 USE_OPENSSL=            yes
 CONFIGURE_ARGS+=        --enable-ssl
 CONFIGURE_ENV+=         OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
-                        OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
+			OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
 PLIST_FILES+=           lib/syslog-ng/libafsocket-tls.la lib/syslog-ng/libafsocket-tls.so
 .else
 CONFIGURE_ARGS+=        --disable-ssl
@@ -92,7 +94,8 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+# LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
@@ -112,12 +115,15 @@ BROKEN=		JSON_C and JSON_GLIB are mutually exclusive
 
 .if defined(WITH_JSON_GLIB)
 LIB_DEPENDS+=		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
-CONFIGURE_ARGS+=        --enable-json --with-json=json-glib
-PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
+CONFIGURE_ARGS+=        --with-json=json-glib
+# XXX Tarball brokenness
+# XXX PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 .elif defined(WITH_JSON_C)
 LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
-CONFIGURE_ARGS+=        --enable-json --with-json=json-c
-PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
+CONFIGURE_ARGS+=        --with-json=json-c
+# XXX Tarball brokenness
+# XXX PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so \
+PLIST_FILES+= 		lib/syslog-ng/libjsonparser.so lib/syslog-ng/libjsonparser.la
 .else
 CONFIGURE_ARGS+=        --disable-json
 .endif
@@ -136,7 +142,6 @@ post-patch:
 		${WRKSRC}/configure ${WRKSRC}/modules/afuser/afuser.c \
 		${WRKSRC}/lib/utils.c ${WRKSRC}/lib/utils.h
 .endif
-
 
 post-install:
 .if !defined(NOPORTDOCS)
