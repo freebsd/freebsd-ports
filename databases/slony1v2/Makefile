@@ -35,7 +35,7 @@ CONFLICTS?=	slony1-1*
 
 .include <bsd.port.pre.mk>
 
-IGNORE_WITH_PGSQL=	73 74 80 81 82
+IGNORE_WITH_PGSQL=	82
 
 CONFIGURE_ENV=	FLEX=${LOCALBASE}/bin/flex
 
