@@ -4131,7 +4131,6 @@ gazpacho                        ports/devel/gazpacho
 gbase                           ports/converters/gbase
 gbe                             ports/emulators/gbe
 gbemol                          ports/audio/gbemol
-gbib                            ports/databases/gbib
 gbirthday                       ports/deskutils/gbirthday
 gbottler                        ports/games/gbottler
 gbrainy                         ports/games/gbrainy
@@ -13107,7 +13106,6 @@ p5-Mail-Verify                  ports/mail/p5-Mail-Verify
 p5-Mail-Verp                    ports/mail/p5-Mail-Verp
 p5-Mail-Webmail-Gmail           ports/mail/p5-Mail-Webmail-Gmail
 p5-Make                         ports/devel/p5-Make
-p5-Make-Cache                   ports/devel/p5-Make-Cache
 p5-Makefile-DOM                 ports/textproc/p5-Makefile-DOM
 p5-Makefile-Parser              ports/textproc/p5-Makefile-Parser
 p5-Markapl                      ports/textproc/p5-Markapl
@@ -17568,7 +17566,6 @@ p5-mail-verify                  ports/mail/p5-Mail-Verify
 p5-mail-verp                    ports/mail/p5-Mail-Verp
 p5-mail-webmail-gmail           ports/mail/p5-Mail-Webmail-Gmail
 p5-make                         ports/devel/p5-Make
-p5-make-cache                   ports/devel/p5-Make-Cache
 p5-makefile-dom                 ports/textproc/p5-Makefile-DOM
 p5-makefile-parser              ports/textproc/p5-Makefile-Parser
 p5-marc                         ports/textproc/p5-MARC
@@ -23021,6 +23018,7 @@ py-urwid                        ports/devel/py-urwid
 py-usb                          ports/devel/py-usb
 py-utidy                        ports/www/py-utidy
 py-utils                        ports/devel/py-utils
+py-vatnumber                    ports/finance/py-vatnumber
 py-venusian                     ports/devel/py-venusian
 py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
@@ -25934,7 +25932,6 @@ synfigstudio                    ports/graphics/synfigstudio
 synonym                         ports/mail/synonym
 sysbench                        ports/benchmarks/sysbench
 sysconftool                     ports/devel/sysconftool
-syscp                           ports/sysutils/syscp
 sysfsutils                      ports/devel/sysfsutils
 sysgather                       ports/sysutils/sysgather
 sysinfo                         ports/sysutils/sysinfo
