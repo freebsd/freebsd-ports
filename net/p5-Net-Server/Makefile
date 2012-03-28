@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A configurable base class for writing internet servers in Perl
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex
+BUILD_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
+RUN_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
 
 PERL_CONFIGURE=	yes
 
@@ -41,8 +42,14 @@ MAN3=		Net::Server.3 \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_IPV6)
+BUILD_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ipv6-support
+.endif
+
+post-patch:
+.if defined(WITH_IPV6)
+	@cd ${WRKSRC}/ && ${FIND} . -name '*.orig' -delete
 .endif
 
 .include <bsd.port.mk>
