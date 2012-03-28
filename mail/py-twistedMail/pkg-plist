@@ -78,6 +78,9 @@ bin/mailmail
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_pop3client.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_pop3client.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_pop3client.pyo
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/test_scripts.py
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/test_scripts.pyc
+%%PYTHON_SITELIBDIR%%/twisted/mail/test/test_scripts.pyo
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_smtp.py
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_smtp.pyc
 %%PYTHON_SITELIBDIR%%/twisted/mail/test/test_smtp.pyo
@@ -88,3 +91,4 @@ bin/mailmail
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/mail/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/mail/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/mail
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
