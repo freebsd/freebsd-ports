@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Utils
-PORTVERSION=	0.19
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JJORE
@@ -20,11 +20,9 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.301:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+PERL_CONFIGURE=	yes
 
 MAN3=		B::Utils.3 B::Utils::OP.3
-
-PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
