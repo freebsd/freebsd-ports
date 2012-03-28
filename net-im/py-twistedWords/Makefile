@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedWords
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	net-im devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Words/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWords-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Twisted Words has more chat than you can handle
 
 LICENSE=	MIT
