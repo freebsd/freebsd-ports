@@ -5233,6 +5233,7 @@ hachoir-urwid                   ports/sysutils/hachoir-urwid
 hachoir-wx                      ports/sysutils/hachoir-wx
 hackbot                         ports/security/hackbot
 hackedbox                       ports/x11-wm/hackedbox
+hadoop                          ports/devel/hadoop
 hal                             ports/sysutils/hal
 hal-info                        ports/sysutils/hal-info
 hamachi                         ports/security/hamachi
