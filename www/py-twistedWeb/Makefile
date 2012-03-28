@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedWeb
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	www devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Web/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWeb-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	An HTTP protocol implementation together with clients and servers
 
 LICENSE=	MIT
