@@ -194,3 +194,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/web/_auth
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/web
 @dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
