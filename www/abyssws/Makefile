@@ -7,6 +7,7 @@
 
 PORTNAME=	abyssws
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.aprelium.com/data/
 DISTNAME=	abwsx1-freebsd
@@ -18,7 +19,6 @@ COMMENT=	Abyss Web Server is a compact and easy to use web server
 WRKSRC=		${WRKDIR}/abyssws
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-PKGDEINSTALL=	${PKGINSTALL}
 
 USE_RC_SUBR=	abyssws.sh
 
@@ -49,9 +49,5 @@ post-install:
 	fi
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-
-post-deinstall:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>
