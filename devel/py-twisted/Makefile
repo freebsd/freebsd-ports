@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	devel net python
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,6 +45,10 @@ do-install:
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
 .endif
 
+.if !defined(WITHOUT_LORE)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
+.endif
+
 .if !defined(WITHOUT_MAIL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail
 .endif
@@ -63,10 +67,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/pair/__init__.py:${PORTSDIR}/net/py-t
 
 .if !defined(WITHOUT_RUNNER)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/runner/__init__.py:${PORTSDIR}/devel/py-twistedRunner
-.endif
-
-.if !defined(WITHOUT_LORE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/twisted/lore/__init__.py:${PORTSDIR}/textproc/py-twistedLore
 .endif
 
 .if !defined(WITHOUT_WEB)
