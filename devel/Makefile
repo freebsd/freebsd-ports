@@ -2103,6 +2103,7 @@
     SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moo
+    SUBDIR += p5-MooX-Types-MooseLike
     SUBDIR += p5-Moose
     SUBDIR += p5-Moose-Autobox
     SUBDIR += p5-Moose-Policy
