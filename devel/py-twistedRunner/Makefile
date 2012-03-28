@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedRunner
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Runner/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedRunner-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Runner has process management, including an inetd replacement
 
 LICENSE=	MIT
