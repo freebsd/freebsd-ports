@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedMail
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	mail devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Mail/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedMail-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	An SMTP, IMAP and POP protocol implementation with clients and servers
 
 LICENSE=	MIT
