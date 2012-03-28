@@ -1,3 +1,6 @@
+%%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_runner.py
+%%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_runner.pyc
+%%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_runner.pyo
 %%PYTHON_SITELIBDIR%%/twisted/runner/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/runner/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/runner/__init__.pyo
@@ -18,12 +21,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/runner/procmon.py
 %%PYTHON_SITELIBDIR%%/twisted/runner/procmon.pyc
 %%PYTHON_SITELIBDIR%%/twisted/runner/procmon.pyo
-%%PYTHON_SITELIBDIR%%/twisted/runner/procutils.py
-%%PYTHON_SITELIBDIR%%/twisted/runner/procutils.pyc
-%%PYTHON_SITELIBDIR%%/twisted/runner/procutils.pyo
-%%PYTHON_SITELIBDIR%%/twisted/runner/procmontap.pyo
 %%PYTHON_SITELIBDIR%%/twisted/runner/procmontap.py
 %%PYTHON_SITELIBDIR%%/twisted/runner/procmontap.pyc
+%%PYTHON_SITELIBDIR%%/twisted/runner/procmontap.pyo
 %%PYTHON_SITELIBDIR%%/twisted/runner/test/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/runner/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/runner/test/__init__.pyo
@@ -33,9 +33,7 @@
 %%PYTHON_SITELIBDIR%%/twisted/runner/test/test_procmontap.py
 %%PYTHON_SITELIBDIR%%/twisted/runner/test/test_procmontap.pyc
 %%PYTHON_SITELIBDIR%%/twisted/runner/test/test_procmontap.pyo
-%%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_runner.py
-%%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_runner.pyc
-%%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_runner.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/runner/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/runner
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
