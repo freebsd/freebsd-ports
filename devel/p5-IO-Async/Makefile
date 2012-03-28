@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Async
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Async-MergePoint>=0.03:${PORTSDIR}/devel/p5-Async-MergePoint \
 		p5-CPS>=0:${PORTSDIR}/devel/p5-CPS \
-		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap
+		p5-Heap>=0.80:${PORTSDIR}/devel/p5-Heap \
+		p5-Socket>=1.95:${PORTSDIR}/net/p5-Socket
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
@@ -62,11 +63,4 @@ MAN3=		IO::Async.3 \
 		IO::Async::Timer::Countdown.3 \
 		IO::Async::Timer::Periodic.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-Socket>=1.93:${PORTSDIR}/net/p5-Socket
-RUN_DEPENDS+=	p5-Socket>=1.93:${PORTSDIR}/net/p5-Socket
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
