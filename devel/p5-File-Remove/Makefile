@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Remove
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
@@ -18,7 +18,7 @@ COMMENT=	Perl5 module to easily removes files and directories
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		File::Remove.3
 
