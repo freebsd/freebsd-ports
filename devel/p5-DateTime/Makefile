@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.72
+PORTVERSION=	0.74
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -30,12 +30,12 @@ MAN3=		DateTime.3 DateTime::Duration.3 \
 		DateTime::Infinite.3 \
 		DateTime::LeapSecond.3
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	CREDITS Changes TODO
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
