@@ -52,6 +52,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b8f0a391-7910-11e1-8a43-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>18.0.1025.142</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote
+cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[109574] Medium CVE-2011-3058: Bad interaction possibly leading to
+	    XSS in EUC-JP. Credit to Masato Kinugawa.</p>
+	  <p>[112317] Medium CVE-2011-3059: Out-of-bounds read in SVG text
+	    handling. Credit to Arthur Gerkis.</p>
+	  <p>[114056] Medium CVE-2011-3060: Out-of-bounds read in text fragment
+	    handling. Credit to miaubiz.</p>
+	  <p>[116398] Medium CVE-2011-3061: SPDY proxy certificate checking
+	    error. Credit to Leonidas Kontothanassis of Google.</p>
+	  <p>[116524] High CVE-2011-3062: Off-by-one in OpenType Sanitizer.
+	    Credit to Mateusz Jurczyk of the Google Security Team.</p>
+	  <p>[117417] Low CVE-2011-3063: Validate navigation requests from the
+	    renderer more carefully. Credit to kuzzcc, Sergey Glazunov,
+	    PinkiePie and scarybeasts (Google Chrome Security Team).</p>
+	  <p>[117471] High CVE-2011-3064: Use-after-free in SVG clipping. Credit	    to Atte Kettunen of OUSPG.</p>
+	  <p>[117588] High CVE-2011-3065: Memory corruption in Skia. Credit to
+	    Omair.</p>
+	  <p>[117794] Medium CVE-2011-3057: Invalid read in v8. Credit to
+	    Christian Holler.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3057</cvename>
+      <cvename>CVE-2011-3058</cvename>
+      <cvename>CVE-2011-3059</cvename>
+      <cvename>CVE-2011-3060</cvename>
+      <cvename>CVE-2011-3061</cvename>
+      <cvename>CVE-2011-3062</cvename>
+      <cvename>CVE-2011-3063</cvename>
+      <cvename>CVE-2011-3064</cvename>
+      <cvename>CVE-2011-3065</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-03-28</discovery>
+      <entry>2012-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60f81af3-7690-11e1-9423-00235a5f2c9a">
     <topic>raptor/raptor2 -- XXE in RDF/XML File Interpretation</topic>
     <affects>
