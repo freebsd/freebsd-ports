@@ -9,6 +9,7 @@ PORTNAME=	Test-DBIx-Class
 PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easier test cases for your DBIx::Class applications
