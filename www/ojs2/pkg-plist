@@ -1,5 +1,4 @@
 @exec mkdir -p %D/%%WWWDIR%%/cache/_db
-%%WWWDIR%%/cache/fc-locale-list.php
 @exec mkdir -p %D/%%WWWDIR%%/cache/t_cache
 @exec mkdir -p %D/%%WWWDIR%%/cache/t_compile
 @exec mkdir -p %D/%%WWWDIR%%/cache/t_config
@@ -4345,5 +4344,5 @@
 @unexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_compile 2>/dev/null || true
 @unexec /bin/rm -rf %D/%%WWWDIR%%/cache/t_cache 2>/dev/null || true
 @unexec /bin/rm -rf %D/%%WWWDIR%%/cache/_db 2>/dev/null || true
-@dirrm %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%

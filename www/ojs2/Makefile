@@ -7,6 +7,7 @@
 
 PORTNAME=	ojs2
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pkp.sfu.ca/ojs/download/ \
 		http://socpvs.org/pkp/ \
@@ -72,6 +73,7 @@ DOCS=		docs
 .endif
 
 PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
+SUB_FILES=	pkg-deinstall
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${NONDOCS}" ${WWWDIR}
@@ -96,8 +98,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@${RM} -rf ${WWWDIR}/cache
 
 .include <bsd.port.post.mk>
