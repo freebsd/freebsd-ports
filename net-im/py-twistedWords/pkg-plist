@@ -190,3 +190,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words/im
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/words
 @dirrmtry %%PYTHON_SITELIBDIR%%/twisted/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
