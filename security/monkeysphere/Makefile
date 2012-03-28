@@ -69,7 +69,4 @@ post-install:
 	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-post-deinstall:
-	@${SETENV} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
-
 .include <bsd.port.mk>
