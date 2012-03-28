@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Geo-Distance
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	math perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,4 +21,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Geo::Distance.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
