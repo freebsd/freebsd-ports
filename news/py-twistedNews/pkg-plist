@@ -33,3 +33,4 @@
 %%PYTHON_SITELIBDIR%%/twisted/plugins/twisted_news.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/news/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/news
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
