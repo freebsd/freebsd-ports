@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.2.73
+PORTVERSION=	1.2.74
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet

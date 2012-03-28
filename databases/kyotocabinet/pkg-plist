@@ -37,7 +37,7 @@ include/kcutil.h
 lib/libkyotocabinet.a
 lib/libkyotocabinet.so
 lib/libkyotocabinet.so.16
-lib/libkyotocabinet.so.16.10.0
+lib/libkyotocabinet.so.16.11.0
 libdata/pkgconfig/kyotocabinet.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
