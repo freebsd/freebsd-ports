@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedNames
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	dns devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Names/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedNames-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	A DNS protocol implementation with client and server
 
 LICENSE=	MIT
