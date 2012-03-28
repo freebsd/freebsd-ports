@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.79
-PORTREVISION=	1
+PORTVERSION=	0.82
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +17,10 @@ COMMENT=	Code coverage metrics for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit \
+BUILD_DEPENDS=	p5-PPI-HTML>=1.07:${PORTSDIR}/textproc/p5-PPI-HTML \
+		p5-Parallel-Iterator>=0:${PORTSDIR}/devel/p5-Parallel-Iterator \
 		p5-Pod-Coverage>=0.06:${PORTSDIR}/devel/p5-Pod-Coverage \
-		p5-PPI-HTML>=1.07:${PORTSDIR}/textproc/p5-PPI-HTML \
-		p5-Parallel-Iterator>=0:${PORTSDIR}/devel/p5-Parallel-Iterator
+		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
@@ -61,17 +60,18 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Report::Text2.3 \
 		Devel::Cover::Statement.3 \
 		Devel::Cover::Subroutine.3 \
+		Devel::Cover::Test.3 \
 		Devel::Cover::Time.3 \
 		Devel::Cover::Truth_Table.3 \
 		Devel::Cover::Tutorial.3 \
 		Devel::Cover::Web.3
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
