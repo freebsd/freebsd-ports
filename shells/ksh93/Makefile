@@ -17,7 +17,6 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${KSHVERSION:S/-//g}
-PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTFILES=	INIT.${INITVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
@@ -25,6 +24,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
+
+LICENSE=	EPL
 
 OPTIONS=	STATIC	"Static linking" off
 
@@ -37,8 +38,8 @@ NO_WRKSUBDIR=	yes
 
 MAN1=		ksh93.1
 
-INITVERSION=	2012-01-01
-KSHVERSION=	2011-02-08
+INITVERSION=	2012-02-29
+KSHVERSION=	2012-02-29
 
 .include <bsd.port.options.mk>
 
@@ -51,7 +52,7 @@ post-patch:
 		${WRKSRC}/bin/package ${WRKSRC}/src/cmd/INIT/package.sh
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
+	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${PREFIX}/bin/ksh93
@@ -67,7 +68,7 @@ post-install:
 	@${ECHO} ${PREFIX}/bin/ksh93 >> /etc/shells
 
 test: build
-	@cd ${WRKSRC}/src/cmd/ksh93/tests && \
+	@cd ${WRKSRC}/src/cmd/ksh93/tests/ && \
 		${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests
 
 .include <bsd.port.mk>
