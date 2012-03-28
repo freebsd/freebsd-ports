@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libquvi-scripts
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
