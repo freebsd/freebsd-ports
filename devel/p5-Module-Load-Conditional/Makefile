@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.46
+PORTVERSION=	0.48
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,30 +17,30 @@ COMMENT=	Looking up Perl modules information/loading at runtime
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Module-CoreList>=2.22:${PORTSDIR}/devel/p5-Module-CoreList
 RUN_DEPENDS=	p5-Module-CoreList>=2.22:${PORTSDIR}/devel/p5-Module-CoreList
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Module::Load::Conditional.3
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load
-.endif
-
-.if ${PERL_LEVEL} < 500905
+BUILD_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load \
+		p5-Params-Check>=0:${PORTSDIR}/devel/p5-Params-Check \
+		p5-version>=0.69:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Module-Load>=0.11:${PORTSDIR}/devel/p5-Module-Load \
 		p5-Params-Check>=0:${PORTSDIR}/devel/p5-Params-Check \
 		p5-version>=0.69:${PORTSDIR}/devel/p5-version
 .endif
