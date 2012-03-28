@@ -512,13 +512,9 @@ lib/node_modules/npm/node_modules/abbrev/package.json
 lib/node_modules/npm/node_modules/block-stream/README.md
 lib/node_modules/npm/node_modules/block-stream/block-stream.js
 lib/node_modules/npm/node_modules/block-stream/package.json
-lib/node_modules/npm/node_modules/fast-list/.npmignore
-lib/node_modules/npm/node_modules/fast-list/.travis.yml
-lib/node_modules/npm/node_modules/fast-list/README.md
-lib/node_modules/npm/node_modules/fast-list/fast-list.js
-lib/node_modules/npm/node_modules/fast-list/package.json
 lib/node_modules/npm/node_modules/fstream/.npmignore
 lib/node_modules/npm/node_modules/fstream/.travis.yml
+lib/node_modules/npm/node_modules/fstream/LICENCE
 lib/node_modules/npm/node_modules/fstream/README.md
 lib/node_modules/npm/node_modules/fstream/fstream.js
 lib/node_modules/npm/node_modules/fstream/lib/abstract.js
@@ -645,6 +641,7 @@ lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/package.json
 lib/node_modules/npm/node_modules/node-gyp/node_modules/ansi/server.js
 lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/.npmignore
 lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/.travis.yml
+lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/LICENCE
 lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/README.md
 lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/glob.js
 lib/node_modules/npm/node_modules/node-gyp/node_modules/glob/node_modules/minimatch/.travis.yml
@@ -833,7 +830,6 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/node_modules/graceful-fs
 @dirrm lib/node_modules/npm/node_modules/fstream/lib
 @dirrm lib/node_modules/npm/node_modules/fstream
-@dirrm lib/node_modules/npm/node_modules/fast-list
 @dirrm lib/node_modules/npm/node_modules/block-stream
 @dirrm lib/node_modules/npm/node_modules/abbrev/lib
 @dirrm lib/node_modules/npm/node_modules/abbrev
