@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedPair
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	net devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/Pair/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedPair-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Twisted Pair can do low level TCP work
 
 LICENSE=	MIT
