@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	twistedNews
-PORTVERSION=	11.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	news devel python
 MASTER_SITES=	http://twistedmatrix.com/Releases/News/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedNews-${PORTVERSION}
 
-MAINTAINER=	neal@nelson.name
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	An NNTP protocol implementation with client and server
 
 LICENSE=	MIT
