@@ -33,3 +33,4 @@
 %%PYTHON_SITELIBDIR%%/twisted/pair/tuntap.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/pair/test
 @dirrm %%PYTHON_SITELIBDIR%%/twisted/pair
+@dirrmtry %%PYTHON_SITELIBDIR%%/twisted
