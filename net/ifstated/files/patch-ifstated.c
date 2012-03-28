@@ -1,5 +1,5 @@
---- ifstated.c.orig	2010-06-11 12:20:08.000000000 -0500
-+++ ifstated.c	2010-07-30 21:55:03.045444649 -0500
+--- ifstated.c.orig	2011-07-03 23:34:14.000000000 -0500
++++ ifstated.c	2012-03-23 14:32:56.412119431 -0500
 @@ -26,9 +26,11 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
@@ -66,7 +66,7 @@
  		case 'v':
  			if (opts & IFSD_OPT_VERBOSE)
  				opts |= IFSD_OPT_VERBOSE2;
-@@ -159,7 +168,6 @@
+@@ -156,7 +165,6 @@
  startup_handler(int fd, short event, void *arg)
  {
  	int rt_fd;
@@ -74,7 +74,7 @@
  
  	if ((rt_fd = socket(PF_ROUTE, SOCK_RAW, 0)) < 0)
  		err(1, "no routing socket");
-@@ -169,11 +177,24 @@
+@@ -166,11 +174,24 @@
  		exit(1);
  	}
  
@@ -104,16 +104,15 @@
  	event_set(&rt_msg_ev, rt_fd, EV_READ|EV_PERSIST, rt_msg_handler, NULL);
  	event_add(&rt_msg_ev, NULL);
  
-@@ -406,6 +427,8 @@
+@@ -403,6 +424,7 @@
  	}
  }
  
-+#define	LINK_STATE_IS_UP(_s)						\
-+  ((_s) >= LINK_STATE_UP)
- #define	LINK_STATE_IS_DOWN(_s)						\
- 	(!LINK_STATE_IS_UP((_s)) && (_s) != LINK_STATE_UNKNOWN)
++#define LINK_STATE_IS_UP(_s)		((_s) >= LINK_STATE_UP)
+ #define	LINK_STATE_IS_DOWN(_s)		(!LINK_STATE_IS_UP((_s)))
  
-@@ -584,6 +607,44 @@
+ int
+@@ -580,6 +602,44 @@
  	}
  }
  
@@ -158,7 +157,7 @@
  /*
   * Fetch the current link states.
   */
-@@ -593,26 +654,31 @@
+@@ -589,26 +649,31 @@
  	struct ifaddrs *ifap, *ifa;
  	char *oname = NULL;
  	int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -198,7 +197,7 @@
  	}
  	freeifaddrs(ifap);
  	close(sock);
-@@ -707,3 +773,13 @@
+@@ -703,3 +768,13 @@
  	}
  	free(expression);
  }
