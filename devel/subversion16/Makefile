@@ -290,11 +290,6 @@ _mkrepos:	.USE
 .endif
 .endif
 
-post-deinstall:
-.if defined(WITH_MOD_DAV_SVN)
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
-.endif
-
 svn-build-outputs-hack:
 	cd ${WRKSRC} && ./gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc
 	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk
