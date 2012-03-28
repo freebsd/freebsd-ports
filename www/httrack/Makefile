@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.44.5
+PORTVERSION=	3.45.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.httrack.com/ \
 		http://mirror.httrack.com/ \
