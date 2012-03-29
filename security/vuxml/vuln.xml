@@ -95,8 +95,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
-	<blockquote
-cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
 	  <p>[109574] Medium CVE-2011-3058: Bad interaction possibly leading to
 	    XSS in EUC-JP. Credit to Masato Kinugawa.</p>
 	  <p>[112317] Medium CVE-2011-3059: Out-of-bounds read in SVG text
