@@ -5,12 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	luckybackup
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	QT4 frontend to the backup utility rsync
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
@@ -21,9 +23,6 @@ MAKE_JOBS_SAFE=	yes
 
 MAN8=		luckybackup.8
 MANCOMPRESSED=	yes
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/license/gpl.txt
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr||g' -e '/INSTALLS/s|debianmenu ||' \
