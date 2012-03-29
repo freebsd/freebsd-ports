@@ -11,4 +11,4 @@ $FreeBSD$
 +
  #include "otk_lib.h"
  
- int Otk_verbose=0;
+ // #include "scz_compress/scz.h"              /* Optionally, include self-contained decompression library. */

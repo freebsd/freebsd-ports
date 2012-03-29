@@ -106,12 +106,3 @@ $FreeBSD$
   invocation_path = strdup(argv[0]);
   k = strlen(invocation_path)-1;
   while ((k>0) && (invocation_path[k]!=slashchr)) k--;
-@@ -1436,7 +1436,7 @@
-   OtkMakeImagePanel_ImgPtr( subpanel, logo_image, 1.5, 5.0, 96.8, 89.85 );
-  }
- #else
-- sprintf(tmpstr,"%s..%csrc%cGUI%cotslogo.ppm", invocation_path, slashchr, slashchr, slashchr );
-+ snprintf(tmpstr, sizeof(tmpstr), "%%PREFIX%%/share/ots/otslogo.ppm");
-  testfile = fopen(tmpstr,"r");	/* External image-file. */
-  if (testfile!=0)
-   { /* Only attempt to show image if image-file is where we expect to find it. */
