@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.18
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -703,6 +703,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module::config
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+USERS?=	${WWWOWN}
+GROUPS?=${WWWGRP}
 
 .include <bsd.port.pre.mk>
 
