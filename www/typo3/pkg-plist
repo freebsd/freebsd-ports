@@ -3194,6 +3194,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Security/Exception.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Security/Exception/InvalidArgumentForHashGeneration.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Security/Exception/InvalidArgumentForRequestHashGeneration.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Security/Exception/InvalidHash.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Security/Exception/SyntacticallyWrongRequestHash.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Service/CacheService.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/extbase/Classes/Service/ExtensionService.php
