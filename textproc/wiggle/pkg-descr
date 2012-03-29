@@ -1,1 +1,15 @@
-intentionally empty
+The main function of wiggle is to apply a patch to a file in a similar
+manner to the patch(1) program.
+
+The distinctive difference of wiggle is that it will attempt to apply a
+patch even if the "before" part of the patch doesn't match the target
+file perfectly. This is achieved by breaking the file and patch into
+words and finding the best alignment of words in the file with words in
+the patch. Once this alignment has been found, any differences (word-
+wise) in the patch are applied to the file as best as possible.
+
+Also, wiggle will (in some cases) detect changes that have already been
+applied, and will ignore them.
+							-- Neil Brown
+
+WWW:	http://neil.brown.name/git?p=wiggle;a=summary
