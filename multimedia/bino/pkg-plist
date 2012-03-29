@@ -1,0 +1,61 @@
+@comment $FreeBSD$
+bin/bino
+share/applications/bino.desktop
+@dirrmtry share/applications
+%%DOCSDIR%%/bino.html
+%%DOCSDIR%%/multi-display-vrlab.jpg
+%%DOCSDIR%%/multi-display-rotated.jpg
+%%DOCSDIR%%/gamma-pattern-tb.png
+%%DOCSDIR%%/crosstalk-pattern-tb.png
+%%DOCSDIR%%/input-layout-mono.png
+%%DOCSDIR%%/input-layout-separate-left-right.png
+%%DOCSDIR%%/input-layout-separate-right-left.png
+%%DOCSDIR%%/input-layout-top-bottom.png
+%%DOCSDIR%%/input-layout-top-bottom-half.png
+%%DOCSDIR%%/input-layout-bottom-top.png
+%%DOCSDIR%%/input-layout-bottom-top-half.png
+%%DOCSDIR%%/input-layout-left-right.png
+%%DOCSDIR%%/input-layout-left-right-half.png
+%%DOCSDIR%%/input-layout-right-left.png
+%%DOCSDIR%%/input-layout-right-left-half.png
+%%DOCSDIR%%/input-layout-even-odd-rows.png
+%%DOCSDIR%%/input-layout-odd-even-rows.png
+%%DOCSDIR%%/output-type-mono-left.png
+%%DOCSDIR%%/output-type-mono-right.png
+%%DOCSDIR%%/output-type-top-bottom.png
+%%DOCSDIR%%/output-type-top-bottom-half.png
+%%DOCSDIR%%/output-type-left-right.png
+%%DOCSDIR%%/output-type-left-right-half.png
+%%DOCSDIR%%/output-type-even-odd-rows.png
+%%DOCSDIR%%/output-type-even-odd-columns.png
+%%DOCSDIR%%/output-type-checkerboard.png
+%%DOCSDIR%%/output-type-hdmi-frame-pack.png
+%%DOCSDIR%%/output-type-red-cyan.png
+%%DOCSDIR%%/output-type-green-magenta.png
+%%DOCSDIR%%/output-type-amber-blue.png
+%%DOCSDIR%%/output-type-red-green.png
+%%DOCSDIR%%/output-type-red-blue.png
+%%DOCSDIR%%/output-type-stereo.png
+@dirrm %%DOCSDIR%%
+share/icons/hicolor/16x16/apps/bino.png
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+share/icons/hicolor/32x32/apps/bino.png
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+share/icons/hicolor/48x48/apps/bino.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+share/icons/hicolor/64x64/apps/bino.png
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+share/icons/hicolor/scalable/apps/bino.svg
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+%%NLS%%share/locale/cs/LC_MESSAGES/bino.mo
+%%NLS%%share/locale/de/LC_MESSAGES/bino.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/bino.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/bino.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bino.mo
