@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-skype
-PORTVERSION=	0.0.0.612
+PORTVERSION=	0.0.0.628
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mandree
 DISTFILES=	pidgin-skype-svn-r${PORTVERSION:E}.tar.xz
