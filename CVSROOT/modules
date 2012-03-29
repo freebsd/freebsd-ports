@@ -13290,6 +13290,7 @@ p5-Mon                          ports/net-mgmt/p5-Mon
 p5-MongoDB                      ports/databases/p5-MongoDB
 p5-Monitor-Simple               ports/sysutils/p5-Monitor-Simple
 p5-Moo                          ports/devel/p5-Moo
+p5-MooX-Types-MooseLike         ports/devel/p5-MooX-Types-MooseLike
 p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
@@ -17841,6 +17842,7 @@ p5-moosex-types-set-object      ports/devel/p5-MooseX-Types-Set-Object
 p5-moosex-types-signal          ports/devel/p5-MooseX-Types-Signal
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
 p5-moosex-types-varianttable    ports/devel/p5-MooseX-Types-VariantTable
+p5-moox-types-mooselike         ports/devel/p5-MooX-Types-MooseLike
 p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-app-cmd               ports/devel/p5-MouseX-App-Cmd
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
