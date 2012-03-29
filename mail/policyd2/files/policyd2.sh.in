@@ -19,7 +19,7 @@ name="policyd2"
 rcvar=policyd2_enable
 
 command="%%LOCALBASE%%/bin/cbpolicyd"
-command_interpreter="%%LOCALBASE%%/bin/perl"
+command_interpreter="/usr/bin/perl"
 
 load_rc_config $name
 

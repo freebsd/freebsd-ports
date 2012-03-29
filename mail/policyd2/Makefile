@@ -7,6 +7,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/187/
 DISTNAME=	cluebringer-${PORTVERSION}
