@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	1.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -20,6 +20,9 @@ BUILD_DEPENDS=	reformime:${PORTSDIR}/mail/maildrop \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
+
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	qmail-scanner-2.*
@@ -160,11 +163,6 @@ do-install:
 		${PREFIX}/share/examples/qs2mrtg
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you're not updating this port, you can delete directory '${SPOOLDIR}'."
-	@${ECHO_MSG} ""
 
 test:
 	@${WRKSRC}/contrib/test_installation.sh -doit
