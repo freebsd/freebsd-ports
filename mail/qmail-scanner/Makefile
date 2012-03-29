@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	2.01
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -60,7 +60,7 @@ OPTIONS=	TNEF "Mark Simpson's Patch (Recommended)" on \
 		NORMALIZE "Decode encoded headers per MIME Base64" off \
 		CWRAPPER "use C wrapper (no suid perl script needed)" on
 
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST+=	QS_USER=${QS_USER} \
 		QS_ID=${QS_ID} \
 		SPOOLDIR=${SPOOLDIR}
@@ -263,11 +263,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/quarantine-events.txt ${SPOOLDIR}/quarantine-events.txt.sample
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you're not updating this port, you can delete directory '${SPOOLDIR}'."
-	@${ECHO_MSG} ""
 
 test:
 	@${WRKSRC}/contrib/test_installation.sh -doit
