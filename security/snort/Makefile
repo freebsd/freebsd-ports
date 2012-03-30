@@ -191,7 +191,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/dynamic-preprocessors/libs/Makefile.in
 	@${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
-.if !defined(WITH_IPV6)
+.if defined(WITHOUT_IPV6)
 	@${REINPLACE_CMD} -e 's|^ipvar |var |' ${WRKSRC}/etc/snort.conf
 	@${REINPLACE_CMD} -e '/normalize_ip6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
 	@${REINPLACE_CMD} -e '/normalize_icmp6/s/^preprocessor/#preprocessor/'  ${WRKSRC}/etc/snort.conf
