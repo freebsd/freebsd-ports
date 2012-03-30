@@ -73,8 +73,8 @@ IGNORE=		requires kernel sources
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		Does not compile on FreeBSD 7.x
+.if ${OSVERSION} < 802000
+BROKEN=		Does not compile on FreeBSD < 8.2
 .endif
 
 .if ${OSVERSION} < 800500 && defined(WITH_VIMAGE)
