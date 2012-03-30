@@ -60,7 +60,6 @@ if checkyesno slapd_cn_config; then
   required_files="%%PREFIX%%/etc/openldap/slapd.d/cn=config.ldif"
   DATABASEDIR=`grep olcDbDirectory %%PREFIX%%/etc/openldap/slapd.d/cn=config/olcDatabase=* | awk '{ print $2 }'`
 else
-  required_dirs="%%LDAP_RUN_DIR%%"
   required_files="%%PREFIX%%/etc/openldap/slapd.conf"
   DATABASEDIR=`awk '$1 == "directory" { print $2 }' "%%PREFIX%%/etc/openldap/slapd.conf" 2>&1 /dev/null`
 fi
