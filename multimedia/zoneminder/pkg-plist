@@ -1,4 +1,3 @@
-@comment file listing
 bin/zma
 bin/zmaudit.pl
 bin/zmc
@@ -7,8 +6,8 @@ bin/zmdc.pl
 bin/zmf
 bin/zmfilter.pl
 bin/zmfix
-bin/zmstreamer
 bin/zmpkg.pl
+bin/zmstreamer
 bin/zmtrack.pl
 bin/zmtrigger.pl
 bin/zmu
@@ -18,7 +17,6 @@ bin/zmwatch.pl
 bin/zmx10.pl
 @unexec if cmp -s %D/etc/zm.conf.sample %D/etc/zm.conf; then rm -f %D/etc/zm.conf; fi
 etc/zm.conf.sample
-@exec if [ ! -f %D/etc/zm.conf ] ; then cp -p %D/%F %B/zm.conf; fi
 lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/ZoneMinder.pm
 %%SITE_PERL%%/ZoneMinder/Base.pm
@@ -33,8 +31,8 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/ZoneMinder/Control/Visca.pm
 %%SITE_PERL%%/ZoneMinder/Control/mjpgStreamer.pm
 %%SITE_PERL%%/ZoneMinder/Database.pm
-%%SITE_PERL%%/ZoneMinder/Debug.pm
 %%SITE_PERL%%/ZoneMinder/General.pm
+%%SITE_PERL%%/ZoneMinder/Logger.pm
 %%SITE_PERL%%/ZoneMinder/Memory.pm
 %%SITE_PERL%%/ZoneMinder/Memory/Mapped.pm
 %%SITE_PERL%%/ZoneMinder/Memory/Shared.pm
@@ -48,274 +46,274 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/ZoneMinder/Trigger/Connection.pm
 %%SITE_PERL%%/ZoneMinder/Trigger/Connection/Example.pm
 %%SITE_PERL%%/mach/auto/ZoneMinder/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%WWWDIR_REL%%/cgi-bin/nph-zms
-%%WWWDIR_REL%%/cgi-bin/zms
-%%WWWDIR_REL%%/data/ajax/alarm.php
-%%WWWDIR_REL%%/data/ajax/control.php
-%%WWWDIR_REL%%/data/ajax/event.php
-%%WWWDIR_REL%%/data/ajax/status.php
-%%WWWDIR_REL%%/data/ajax/stream.php
-%%WWWDIR_REL%%/data/ajax/zone.php
-%%WWWDIR_REL%%/data/css/reset.css
-%%WWWDIR_REL%%/data/graphics/favicon.ico
-%%WWWDIR_REL%%/data/graphics/transparent.gif
-%%WWWDIR_REL%%/data/includes/actions.php
-%%WWWDIR_REL%%/data/includes/config.php
-%%WWWDIR_REL%%/data/includes/control_functions.php
-%%WWWDIR_REL%%/data/includes/database.php
-%%WWWDIR_REL%%/data/includes/functions.php
-%%WWWDIR_REL%%/data/includes/lang.php
-%%WWWDIR_REL%%/data/index.php
-%%WWWDIR_REL%%/data/js/mootools.ext.js
-%%WWWDIR_REL%%/data/lang/big5_big5.php
-%%WWWDIR_REL%%/data/lang/cn_zh.php
-%%WWWDIR_REL%%/data/lang/cs_cz.php
-%%WWWDIR_REL%%/data/lang/de_de.php
-%%WWWDIR_REL%%/data/lang/dk_dk.php
-%%WWWDIR_REL%%/data/lang/en_gb.php
-%%WWWDIR_REL%%/data/lang/en_us.php
-%%WWWDIR_REL%%/data/lang/es_ar.php
-%%WWWDIR_REL%%/data/lang/et_ee.php
-%%WWWDIR_REL%%/data/lang/fr_fr.php
-%%WWWDIR_REL%%/data/lang/he_il.php
-%%WWWDIR_REL%%/data/lang/hu_hu.php
-%%WWWDIR_REL%%/data/lang/it_it.php
-%%WWWDIR_REL%%/data/lang/ja_jp.php
-%%WWWDIR_REL%%/data/lang/nl_nl.php
-%%WWWDIR_REL%%/data/lang/pl_pl.php
-%%WWWDIR_REL%%/data/lang/pt_br.php
-%%WWWDIR_REL%%/data/lang/ro_ro.php
-%%WWWDIR_REL%%/data/lang/ru_ru.php
-%%WWWDIR_REL%%/data/lang/se_se.php
-%%WWWDIR_REL%%/data/skins/classic/css/control.css
-%%WWWDIR_REL%%/data/skins/classic/css/export.css
-%%WWWDIR_REL%%/data/skins/classic/css/skin.css
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-d.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-dl.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-dr.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-l-d.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-l-u.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-l.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-r.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-u.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-ul.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/arrow-ur.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/center.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/point-g.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/point-o.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/point-r.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/seq-d.gif
-%%WWWDIR_REL%%/data/skins/classic/graphics/seq-u.gif
-%%WWWDIR_REL%%/data/skins/classic/includes/config.php
-%%WWWDIR_REL%%/data/skins/classic/includes/control_functions.php
-%%WWWDIR_REL%%/data/skins/classic/includes/export_functions.php
-%%WWWDIR_REL%%/data/skins/classic/includes/functions.php
-%%WWWDIR_REL%%/data/skins/classic/includes/init.php
-%%WWWDIR_REL%%/data/skins/classic/includes/timeline_functions.php
-%%WWWDIR_REL%%/data/skins/classic/js/skin.js
-%%WWWDIR_REL%%/data/skins/classic/js/skin.js.php
-%%WWWDIR_REL%%/data/skins/classic/skin.php
-%%WWWDIR_REL%%/data/skins/classic/views/Makefile.am
-%%WWWDIR_REL%%/data/skins/classic/views/bandwidth.php
-%%WWWDIR_REL%%/data/skins/classic/views/blank.php
-%%WWWDIR_REL%%/data/skins/classic/views/console.php
-%%WWWDIR_REL%%/data/skins/classic/views/control.php
-%%WWWDIR_REL%%/data/skins/classic/views/controlcap.php
-%%WWWDIR_REL%%/data/skins/classic/views/controlcaps.php
-%%WWWDIR_REL%%/data/skins/classic/views/controlpreset.php
-%%WWWDIR_REL%%/data/skins/classic/views/css/console.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/control.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/controlcaps.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/devices.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/event.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/events.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/export.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/filter.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/frame.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/frames.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/groups.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/monitor.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/montage.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/montage_2wide.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/montage_3wide.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/montage_3wide50enlarge.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/montage_4wide.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/montage_freeform.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/options.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/stats.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/timeline.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/timeline.css.php
-%%WWWDIR_REL%%/data/skins/classic/views/css/video.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/watch.css
-%%WWWDIR_REL%%/data/skins/classic/views/css/zone.css
-%%WWWDIR_REL%%/data/skins/classic/views/cycle.php
-%%WWWDIR_REL%%/data/skins/classic/views/device.php
-%%WWWDIR_REL%%/data/skins/classic/views/devices.php
-%%WWWDIR_REL%%/data/skins/classic/views/donate.php
-%%WWWDIR_REL%%/data/skins/classic/views/error.php
-%%WWWDIR_REL%%/data/skins/classic/views/event.php
-%%WWWDIR_REL%%/data/skins/classic/views/eventdetail.php
-%%WWWDIR_REL%%/data/skins/classic/views/events.php
-%%WWWDIR_REL%%/data/skins/classic/views/export.php
-%%WWWDIR_REL%%/data/skins/classic/views/filter.php
-%%WWWDIR_REL%%/data/skins/classic/views/filtersave.php
-%%WWWDIR_REL%%/data/skins/classic/views/frame.php
-%%WWWDIR_REL%%/data/skins/classic/views/frames.php
-%%WWWDIR_REL%%/data/skins/classic/views/function.php
-%%WWWDIR_REL%%/data/skins/classic/views/group.php
-%%WWWDIR_REL%%/data/skins/classic/views/groups.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/Makefile.am
-%%WWWDIR_REL%%/data/skins/classic/views/js/console.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/console.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/control.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/controlpreset.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/controlpreset.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/cycle.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/cycle.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/devices.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/donate.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/donate.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/event.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/event.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/events.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/events.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/export.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/export.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/filter.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/filter.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/group.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/groups.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/login.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/monitor.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/monitor.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/monitorpreset.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/monitorprobe.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/montage.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/montage.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/options.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/postlogin.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/state.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/state.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/timeline.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/timeline.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/user.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/version.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/version.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/video.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/video.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/watch.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/watch.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/js/zone.js
-%%WWWDIR_REL%%/data/skins/classic/views/js/zone.js.php
-%%WWWDIR_REL%%/data/skins/classic/views/login.php
-%%WWWDIR_REL%%/data/skins/classic/views/logout.php
-%%WWWDIR_REL%%/data/skins/classic/views/monitor.php
-%%WWWDIR_REL%%/data/skins/classic/views/monitorpreset.php
-%%WWWDIR_REL%%/data/skins/classic/views/monitorprobe.php
-%%WWWDIR_REL%%/data/skins/classic/views/montage.php
-%%WWWDIR_REL%%/data/skins/classic/views/none.php
-%%WWWDIR_REL%%/data/skins/classic/views/optionhelp.php
-%%WWWDIR_REL%%/data/skins/classic/views/options.php
-%%WWWDIR_REL%%/data/skins/classic/views/postlogin.php
-%%WWWDIR_REL%%/data/skins/classic/views/settings.php
-%%WWWDIR_REL%%/data/skins/classic/views/state.php
-%%WWWDIR_REL%%/data/skins/classic/views/stats.php
-%%WWWDIR_REL%%/data/skins/classic/views/status.php
-%%WWWDIR_REL%%/data/skins/classic/views/timeline.php
-%%WWWDIR_REL%%/data/skins/classic/views/user.php
-%%WWWDIR_REL%%/data/skins/classic/views/version.php
-%%WWWDIR_REL%%/data/skins/classic/views/video.php
-%%WWWDIR_REL%%/data/skins/classic/views/watch.php
-%%WWWDIR_REL%%/data/skins/classic/views/zone.php
-%%WWWDIR_REL%%/data/skins/classic/views/zones.php
-%%WWWDIR_REL%%/data/skins/mobile/css/skin.css
-%%WWWDIR_REL%%/data/skins/mobile/includes/config.php
-%%WWWDIR_REL%%/data/skins/mobile/includes/control_functions.php
-%%WWWDIR_REL%%/data/skins/mobile/includes/functions.php
-%%WWWDIR_REL%%/data/skins/mobile/includes/init.php
-%%WWWDIR_REL%%/data/skins/mobile/skin.php
-%%WWWDIR_REL%%/data/skins/mobile/views/console.php
-%%WWWDIR_REL%%/data/skins/mobile/views/css/console.css
-%%WWWDIR_REL%%/data/skins/mobile/views/devices.php
-%%WWWDIR_REL%%/data/skins/mobile/views/error.php
-%%WWWDIR_REL%%/data/skins/mobile/views/event.php
-%%WWWDIR_REL%%/data/skins/mobile/views/eventdetails.php
-%%WWWDIR_REL%%/data/skins/mobile/views/events.php
-%%WWWDIR_REL%%/data/skins/mobile/views/filter.php
-%%WWWDIR_REL%%/data/skins/mobile/views/frame.php
-%%WWWDIR_REL%%/data/skins/mobile/views/function.php
-%%WWWDIR_REL%%/data/skins/mobile/views/login.php
-%%WWWDIR_REL%%/data/skins/mobile/views/montage.php
-%%WWWDIR_REL%%/data/skins/mobile/views/state.php
-%%WWWDIR_REL%%/data/skins/mobile/views/video.php
-%%WWWDIR_REL%%/data/skins/mobile/views/watch.php
-%%WWWDIR_REL%%/data/skins/xml/includes/config.php
-%%WWWDIR_REL%%/data/skins/xml/includes/functions.php
-%%WWWDIR_REL%%/data/skins/xml/includes/init.php
-%%WWWDIR_REL%%/data/skins/xml/skin.php
-%%WWWDIR_REL%%/data/skins/xml/views/actions.php
-%%WWWDIR_REL%%/data/skins/xml/views/console.php
-%%WWWDIR_REL%%/data/skins/xml/views/none.php
-%%WWWDIR_REL%%/data/skins/xml/views/notfound.png
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5-core-nc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5-core-yc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5.1-more-nc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5.1-more-yc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-core.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-more.js
-%%WWWDIR_REL%%/data/views/file.php
-%%WWWDIR_REL%%/data/views/image.php
-@comment non-empty directory listing in revers order
-@dirrm %%WWWDIR_REL%%/data/views
-@dirrm %%WWWDIR_REL%%/data/tools/mootools
-@dirrm %%WWWDIR_REL%%/data/tools
-@dirrm %%WWWDIR_REL%%/data/temp
-@dirrm %%WWWDIR_REL%%/data/sounds
-@dirrm %%WWWDIR_REL%%/data/skins/xml/views
-@dirrm %%WWWDIR_REL%%/data/skins/xml/includes
-@dirrm %%WWWDIR_REL%%/data/skins/xml
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/views/css
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/views
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/lang
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/includes
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/graphics
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/css
-@dirrm %%WWWDIR_REL%%/data/skins/mobile/ajax
-@dirrm %%WWWDIR_REL%%/data/skins/mobile
-@dirrm %%WWWDIR_REL%%/data/skins/classic/views/js
-@dirrm %%WWWDIR_REL%%/data/skins/classic/views/css
-@dirrm %%WWWDIR_REL%%/data/skins/classic/views
-@dirrm %%WWWDIR_REL%%/data/skins/classic/lang
-@dirrm %%WWWDIR_REL%%/data/skins/classic/js
-@dirrm %%WWWDIR_REL%%/data/skins/classic/includes
-@dirrm %%WWWDIR_REL%%/data/skins/classic/graphics
-@dirrm %%WWWDIR_REL%%/data/skins/classic/css
-@dirrm %%WWWDIR_REL%%/data/skins/classic/ajax
-@dirrm %%WWWDIR_REL%%/data/skins/classic
-@dirrm %%WWWDIR_REL%%/data/skins
-@dirrm %%WWWDIR_REL%%/data/lang
-@dirrm %%WWWDIR_REL%%/data/js
-@dirrm %%WWWDIR_REL%%/data/includes
-@dirrm %%WWWDIR_REL%%/data/images
-@dirrm %%WWWDIR_REL%%/data/graphics
-@dirrm %%WWWDIR_REL%%/data/events
-@dirrm %%WWWDIR_REL%%/data/css
-@dirrm %%WWWDIR_REL%%/data/ajax
-@dirrm %%WWWDIR_REL%%/data
-@dirrm %%WWWDIR_REL%%/cgi-bin
-@dirrm %%WWWDIR_REL%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WWWDIR%%/cgi-bin/nph-zms
+%%WWWDIR%%/cgi-bin/zms
+%%WWWDIR%%/data/ajax/alarm.php
+%%WWWDIR%%/data/ajax/control.php
+%%WWWDIR%%/data/ajax/event.php
+%%WWWDIR%%/data/ajax/log.php
+%%WWWDIR%%/data/ajax/status.php
+%%WWWDIR%%/data/ajax/stream.php
+%%WWWDIR%%/data/ajax/zone.php
+%%WWWDIR%%/data/css/overlay.css
+%%WWWDIR%%/data/css/reset.css
+%%WWWDIR%%/data/css/spinner.css
+%%WWWDIR%%/data/graphics/favicon.ico
+%%WWWDIR%%/data/graphics/spinner.gif
+%%WWWDIR%%/data/graphics/transparent.gif
+%%WWWDIR%%/data/includes/actions.php
+%%WWWDIR%%/data/includes/config.php
+%%WWWDIR%%/data/includes/control_functions.php
+%%WWWDIR%%/data/includes/database.php
+%%WWWDIR%%/data/includes/functions.php
+%%WWWDIR%%/data/includes/lang.php
+%%WWWDIR%%/data/includes/logger.php
+%%WWWDIR%%/data/index.php
+%%WWWDIR%%/data/js/logger.js
+%%WWWDIR%%/data/js/mootools.ext.js
+%%WWWDIR%%/data/js/overlay.js
+%%WWWDIR%%/data/lang/big5_big5.php
+%%WWWDIR%%/data/lang/cn_zh.php
+%%WWWDIR%%/data/lang/cs_cz.php
+%%WWWDIR%%/data/lang/de_de.php
+%%WWWDIR%%/data/lang/dk_dk.php
+%%WWWDIR%%/data/lang/en_gb.php
+%%WWWDIR%%/data/lang/en_us.php
+%%WWWDIR%%/data/lang/es_ar.php
+%%WWWDIR%%/data/lang/et_ee.php
+%%WWWDIR%%/data/lang/fr_fr.php
+%%WWWDIR%%/data/lang/he_il.php
+%%WWWDIR%%/data/lang/hu_hu.php
+%%WWWDIR%%/data/lang/it_it.php
+%%WWWDIR%%/data/lang/ja_jp.php
+%%WWWDIR%%/data/lang/nl_nl.php
+%%WWWDIR%%/data/lang/pl_pl.php
+%%WWWDIR%%/data/lang/pt_br.php
+%%WWWDIR%%/data/lang/ro_ro.php
+%%WWWDIR%%/data/lang/ru_ru.php
+%%WWWDIR%%/data/lang/se_se.php
+%%WWWDIR%%/data/skins/classic/css/control.css
+%%WWWDIR%%/data/skins/classic/css/export.css
+%%WWWDIR%%/data/skins/classic/css/skin.css
+%%WWWDIR%%/data/skins/classic/graphics/arrow-d.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-dl.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-dr.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-l-d.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-l-u.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-l.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-r.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-s-d.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-s-u.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-u.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-ul.gif
+%%WWWDIR%%/data/skins/classic/graphics/arrow-ur.gif
+%%WWWDIR%%/data/skins/classic/graphics/center.gif
+%%WWWDIR%%/data/skins/classic/graphics/point-g.gif
+%%WWWDIR%%/data/skins/classic/graphics/point-o.gif
+%%WWWDIR%%/data/skins/classic/graphics/point-r.gif
+%%WWWDIR%%/data/skins/classic/graphics/seq-d.gif
+%%WWWDIR%%/data/skins/classic/graphics/seq-u.gif
+%%WWWDIR%%/data/skins/classic/includes/config.php
+%%WWWDIR%%/data/skins/classic/includes/control_functions.php
+%%WWWDIR%%/data/skins/classic/includes/export_functions.php
+%%WWWDIR%%/data/skins/classic/includes/functions.php
+%%WWWDIR%%/data/skins/classic/includes/init.php
+%%WWWDIR%%/data/skins/classic/includes/timeline_functions.php
+%%WWWDIR%%/data/skins/classic/js/skin.js
+%%WWWDIR%%/data/skins/classic/js/skin.js.php
+%%WWWDIR%%/data/skins/classic/skin.php
+%%WWWDIR%%/data/skins/classic/views/Makefile.am
+%%WWWDIR%%/data/skins/classic/views/bandwidth.php
+%%WWWDIR%%/data/skins/classic/views/blank.php
+%%WWWDIR%%/data/skins/classic/views/console.php
+%%WWWDIR%%/data/skins/classic/views/control.php
+%%WWWDIR%%/data/skins/classic/views/controlcap.php
+%%WWWDIR%%/data/skins/classic/views/controlcaps.php
+%%WWWDIR%%/data/skins/classic/views/controlpreset.php
+%%WWWDIR%%/data/skins/classic/views/css/console.css
+%%WWWDIR%%/data/skins/classic/views/css/control.css
+%%WWWDIR%%/data/skins/classic/views/css/controlcaps.css
+%%WWWDIR%%/data/skins/classic/views/css/devices.css
+%%WWWDIR%%/data/skins/classic/views/css/event.css
+%%WWWDIR%%/data/skins/classic/views/css/events.css
+%%WWWDIR%%/data/skins/classic/views/css/export.css
+%%WWWDIR%%/data/skins/classic/views/css/filter.css
+%%WWWDIR%%/data/skins/classic/views/css/frame.css
+%%WWWDIR%%/data/skins/classic/views/css/frames.css
+%%WWWDIR%%/data/skins/classic/views/css/groups.css
+%%WWWDIR%%/data/skins/classic/views/css/log.css
+%%WWWDIR%%/data/skins/classic/views/css/monitor.css
+%%WWWDIR%%/data/skins/classic/views/css/montage.css
+%%WWWDIR%%/data/skins/classic/views/css/montage_2wide.css
+%%WWWDIR%%/data/skins/classic/views/css/montage_3wide.css
+%%WWWDIR%%/data/skins/classic/views/css/montage_3wide50enlarge.css
+%%WWWDIR%%/data/skins/classic/views/css/montage_4wide.css
+%%WWWDIR%%/data/skins/classic/views/css/montage_freeform.css
+%%WWWDIR%%/data/skins/classic/views/css/options.css
+%%WWWDIR%%/data/skins/classic/views/css/stats.css
+%%WWWDIR%%/data/skins/classic/views/css/timeline.css
+%%WWWDIR%%/data/skins/classic/views/css/timeline.css.php
+%%WWWDIR%%/data/skins/classic/views/css/video.css
+%%WWWDIR%%/data/skins/classic/views/css/watch.css
+%%WWWDIR%%/data/skins/classic/views/css/zone.css
+%%WWWDIR%%/data/skins/classic/views/cycle.php
+%%WWWDIR%%/data/skins/classic/views/device.php
+%%WWWDIR%%/data/skins/classic/views/devices.php
+%%WWWDIR%%/data/skins/classic/views/donate.php
+%%WWWDIR%%/data/skins/classic/views/error.php
+%%WWWDIR%%/data/skins/classic/views/event.php
+%%WWWDIR%%/data/skins/classic/views/eventdetail.php
+%%WWWDIR%%/data/skins/classic/views/events.php
+%%WWWDIR%%/data/skins/classic/views/export.php
+%%WWWDIR%%/data/skins/classic/views/filter.php
+%%WWWDIR%%/data/skins/classic/views/filtersave.php
+%%WWWDIR%%/data/skins/classic/views/frame.php
+%%WWWDIR%%/data/skins/classic/views/frames.php
+%%WWWDIR%%/data/skins/classic/views/function.php
+%%WWWDIR%%/data/skins/classic/views/group.php
+%%WWWDIR%%/data/skins/classic/views/groups.php
+%%WWWDIR%%/data/skins/classic/views/js/Makefile.am
+%%WWWDIR%%/data/skins/classic/views/js/console.js
+%%WWWDIR%%/data/skins/classic/views/js/console.js.php
+%%WWWDIR%%/data/skins/classic/views/js/control.js
+%%WWWDIR%%/data/skins/classic/views/js/controlpreset.js
+%%WWWDIR%%/data/skins/classic/views/js/controlpreset.js.php
+%%WWWDIR%%/data/skins/classic/views/js/cycle.js
+%%WWWDIR%%/data/skins/classic/views/js/cycle.js.php
+%%WWWDIR%%/data/skins/classic/views/js/devices.js
+%%WWWDIR%%/data/skins/classic/views/js/donate.js
+%%WWWDIR%%/data/skins/classic/views/js/donate.js.php
+%%WWWDIR%%/data/skins/classic/views/js/event.js
+%%WWWDIR%%/data/skins/classic/views/js/event.js.php
+%%WWWDIR%%/data/skins/classic/views/js/events.js
+%%WWWDIR%%/data/skins/classic/views/js/events.js.php
+%%WWWDIR%%/data/skins/classic/views/js/export.js
+%%WWWDIR%%/data/skins/classic/views/js/export.js.php
+%%WWWDIR%%/data/skins/classic/views/js/filter.js
+%%WWWDIR%%/data/skins/classic/views/js/filter.js.php
+%%WWWDIR%%/data/skins/classic/views/js/group.js
+%%WWWDIR%%/data/skins/classic/views/js/groups.js
+%%WWWDIR%%/data/skins/classic/views/js/log.js
+%%WWWDIR%%/data/skins/classic/views/js/login.js
+%%WWWDIR%%/data/skins/classic/views/js/monitor.js
+%%WWWDIR%%/data/skins/classic/views/js/monitor.js.php
+%%WWWDIR%%/data/skins/classic/views/js/monitorpreset.js
+%%WWWDIR%%/data/skins/classic/views/js/monitorprobe.js
+%%WWWDIR%%/data/skins/classic/views/js/montage.js
+%%WWWDIR%%/data/skins/classic/views/js/montage.js.php
+%%WWWDIR%%/data/skins/classic/views/js/options.js.php
+%%WWWDIR%%/data/skins/classic/views/js/postlogin.js
+%%WWWDIR%%/data/skins/classic/views/js/state.js
+%%WWWDIR%%/data/skins/classic/views/js/state.js.php
+%%WWWDIR%%/data/skins/classic/views/js/timeline.js
+%%WWWDIR%%/data/skins/classic/views/js/timeline.js.php
+%%WWWDIR%%/data/skins/classic/views/js/user.js
+%%WWWDIR%%/data/skins/classic/views/js/version.js
+%%WWWDIR%%/data/skins/classic/views/js/version.js.php
+%%WWWDIR%%/data/skins/classic/views/js/video.js
+%%WWWDIR%%/data/skins/classic/views/js/video.js.php
+%%WWWDIR%%/data/skins/classic/views/js/watch.js
+%%WWWDIR%%/data/skins/classic/views/js/watch.js.php
+%%WWWDIR%%/data/skins/classic/views/js/zone.js
+%%WWWDIR%%/data/skins/classic/views/js/zone.js.php
+%%WWWDIR%%/data/skins/classic/views/log.php
+%%WWWDIR%%/data/skins/classic/views/login.php
+%%WWWDIR%%/data/skins/classic/views/logout.php
+%%WWWDIR%%/data/skins/classic/views/monitor.php
+%%WWWDIR%%/data/skins/classic/views/monitorpreset.php
+%%WWWDIR%%/data/skins/classic/views/monitorprobe.php
+%%WWWDIR%%/data/skins/classic/views/montage.php
+%%WWWDIR%%/data/skins/classic/views/none.php
+%%WWWDIR%%/data/skins/classic/views/optionhelp.php
+%%WWWDIR%%/data/skins/classic/views/options.php
+%%WWWDIR%%/data/skins/classic/views/postlogin.php
+%%WWWDIR%%/data/skins/classic/views/settings.php
+%%WWWDIR%%/data/skins/classic/views/state.php
+%%WWWDIR%%/data/skins/classic/views/stats.php
+%%WWWDIR%%/data/skins/classic/views/status.php
+%%WWWDIR%%/data/skins/classic/views/timeline.php
+%%WWWDIR%%/data/skins/classic/views/user.php
+%%WWWDIR%%/data/skins/classic/views/version.php
+%%WWWDIR%%/data/skins/classic/views/video.php
+%%WWWDIR%%/data/skins/classic/views/watch.php
+%%WWWDIR%%/data/skins/classic/views/zone.php
+%%WWWDIR%%/data/skins/classic/views/zones.php
+%%WWWDIR%%/data/skins/mobile/css/skin.css
+%%WWWDIR%%/data/skins/mobile/includes/config.php
+%%WWWDIR%%/data/skins/mobile/includes/control_functions.php
+%%WWWDIR%%/data/skins/mobile/includes/functions.php
+%%WWWDIR%%/data/skins/mobile/includes/init.php
+%%WWWDIR%%/data/skins/mobile/skin.php
+%%WWWDIR%%/data/skins/mobile/views/console.php
+%%WWWDIR%%/data/skins/mobile/views/css/console.css
+%%WWWDIR%%/data/skins/mobile/views/devices.php
+%%WWWDIR%%/data/skins/mobile/views/error.php
+%%WWWDIR%%/data/skins/mobile/views/event.php
+%%WWWDIR%%/data/skins/mobile/views/eventdetails.php
+%%WWWDIR%%/data/skins/mobile/views/events.php
+%%WWWDIR%%/data/skins/mobile/views/filter.php
+%%WWWDIR%%/data/skins/mobile/views/frame.php
+%%WWWDIR%%/data/skins/mobile/views/function.php
+%%WWWDIR%%/data/skins/mobile/views/login.php
+%%WWWDIR%%/data/skins/mobile/views/montage.php
+%%WWWDIR%%/data/skins/mobile/views/state.php
+%%WWWDIR%%/data/skins/mobile/views/video.php
+%%WWWDIR%%/data/skins/mobile/views/watch.php
+%%WWWDIR%%/data/skins/xml/includes/config.php
+%%WWWDIR%%/data/skins/xml/includes/functions.php
+%%WWWDIR%%/data/skins/xml/includes/init.php
+%%WWWDIR%%/data/skins/xml/skin.php
+%%WWWDIR%%/data/skins/xml/views/actions.php
+%%WWWDIR%%/data/skins/xml/views/console.php
+%%WWWDIR%%/data/skins/xml/views/none.php
+%%WWWDIR%%/data/skins/xml/views/notfound.png
+%%WWWDIR%%/data/tools/mootools/mootools-core-1.3.2-nc.js
+%%WWWDIR%%/data/tools/mootools/mootools-core-1.3.2-yc.js
+%%WWWDIR%%/data/tools/mootools/mootools-core.js
+%%WWWDIR%%/data/tools/mootools/mootools-more-1.3.2.1-nc.js
+%%WWWDIR%%/data/tools/mootools/mootools-more-1.3.2.1-yc.js
+%%WWWDIR%%/data/tools/mootools/mootools-more.js
+%%WWWDIR%%/data/views/file.php
+%%WWWDIR%%/data/views/image.php
+@dirrm %%WWWDIR%%/data/views
+@dirrm %%WWWDIR%%/data/tools/mootools
+@dirrm %%WWWDIR%%/data/tools
+@dirrm %%WWWDIR%%/data/temp
+@dirrm %%WWWDIR%%/data/sounds
+@dirrm %%WWWDIR%%/data/skins/xml/views
+@dirrm %%WWWDIR%%/data/skins/xml/includes
+@dirrm %%WWWDIR%%/data/skins/xml
+@dirrm %%WWWDIR%%/data/skins/mobile/views/css
+@dirrm %%WWWDIR%%/data/skins/mobile/views
+@dirrm %%WWWDIR%%/data/skins/mobile/lang
+@dirrm %%WWWDIR%%/data/skins/mobile/includes
+@dirrm %%WWWDIR%%/data/skins/mobile/graphics
+@dirrm %%WWWDIR%%/data/skins/mobile/css
+@dirrm %%WWWDIR%%/data/skins/mobile/ajax
+@dirrm %%WWWDIR%%/data/skins/mobile
+@dirrm %%WWWDIR%%/data/skins/classic/views/js
+@dirrm %%WWWDIR%%/data/skins/classic/views/css
+@dirrm %%WWWDIR%%/data/skins/classic/views
+@dirrm %%WWWDIR%%/data/skins/classic/lang
+@dirrm %%WWWDIR%%/data/skins/classic/js
+@dirrm %%WWWDIR%%/data/skins/classic/includes
+@dirrm %%WWWDIR%%/data/skins/classic/graphics
+@dirrm %%WWWDIR%%/data/skins/classic/css
+@dirrm %%WWWDIR%%/data/skins/classic/ajax
+@dirrm %%WWWDIR%%/data/skins/classic
+@dirrm %%WWWDIR%%/data/skins
+@dirrm %%WWWDIR%%/data/lang
+@dirrm %%WWWDIR%%/data/js
+@dirrm %%WWWDIR%%/data/includes
+@dirrm %%WWWDIR%%/data/images
+@dirrm %%WWWDIR%%/data/graphics
+@dirrm %%WWWDIR%%/data/events
+@dirrm %%WWWDIR%%/data/css
+@dirrm %%WWWDIR%%/data/ajax
+@dirrm %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/cgi-bin
+@dirrm %%WWWDIR%%
 @dirrm %%SITE_PERL%%/mach/auto/ZoneMinder
-@dirrmtry %%SITE_PERL%%/mach/auto
-@dirrmtry %%SITE_PERL%%/mach
 @dirrm %%SITE_PERL%%/ZoneMinder/Trigger/Connection
 @dirrm %%SITE_PERL%%/ZoneMinder/Trigger/Channel
 @dirrm %%SITE_PERL%%/ZoneMinder/Trigger
