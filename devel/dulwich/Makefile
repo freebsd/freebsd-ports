@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dulwich
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
 		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
