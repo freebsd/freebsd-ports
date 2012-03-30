@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta8
+DISTVERSION=	1.0-beta9
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -16,7 +16,7 @@ COMMENT=	New generation package manager
 
 LICENSE=	BSD
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
@@ -43,14 +43,6 @@ MAN8=	pkg.8 \
 	pkg-which.8
 MAN5=	pkg.conf.5
 
-PLIST_FILES=	sbin/pkg \
-		sbin/pkg-static \
-		sbin/pkg2ng \
-		include/pkg.h \
-		lib/libpkg.so.0 \
-		lib/libpkg.so \
-		lib/libpkg.a
-
 .include <bsd.port.pre.mk>
 
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
@@ -67,6 +59,9 @@ IGNORE=		not supported on 7.x or early 8.0
 .endif
 
 post-install:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/scripts/periodic/410.pkg-audit
+	@${MKDIR} ${PREFIX}/etc/periodic/security
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/410.pkg-audit ${PREFIX}/etc/periodic/security
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
 	@${CAT} ${PKGMESSAGE}
 
