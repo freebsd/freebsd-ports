@@ -184,6 +184,7 @@
     SUBDIR += doom-wolfendoom
     SUBDIR += doomlegacy
     SUBDIR += dopewars
+    SUBDIR += drcreep
     SUBDIR += drm
     SUBDIR += dsnake
     SUBDIR += duel
