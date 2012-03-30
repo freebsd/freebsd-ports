@@ -9,6 +9,8 @@ PORTNAME=	lazarus-qt4
 
 MAINTAINER=	bbtruk@users.sourceforge.net
 
+BROKEN=		Creates duplicate index.
+
 MASTERDIR=	${.CURDIR}/../lazarus
 
 WITHOUT_GTK2=	yes
