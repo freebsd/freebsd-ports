@@ -1,15 +1,14 @@
 # New ports collection makefile for:	rawtherapee
-# Date created:		01/10/2010
-# Whom:			stas
+# Date created:				01/10/2010
+# Whom:					stas
 #
 # $FreeBSD$
 #
 
 PORTNAME=	rawtherapee
-PORTVERSION=	4.0.2
-PORTREVISION=	0
+PORTVERSION=	4.0.7
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful RAW image processing application
@@ -25,7 +24,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 USE_CMAKE=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GNOME=	gtk20 glib20 pkgconfig
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
@@ -44,7 +43,7 @@ SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
 
-RTDIR=	${PREFIX}/libdata/${PORTNAME}
+RTDIR=		${PREFIX}/libdata/${PORTNAME}
 
 OPTIONS=	OPTIMIZED_CFLAGS "Use optimized CFLAGS" on \
 		OPENMP "Enable multicore processing using OpenMP" on
@@ -60,8 +59,8 @@ CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 .endif
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64" || ${ARCH} == "i386"
-BROKEN=		Does not compile on i386, ia64, powerpc, or sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if !defined(WITHOUT_OPENMP)

@@ -1,9 +1,9 @@
---- rtengine/myfile.h.orig	2011-07-30 14:05:38.000000000 -0700
-+++ rtengine/myfile.h	2011-07-31 19:27:22.000000000 -0700
+--- ./rtengine/myfile.h.orig	2012-01-31 05:00:05.000000000 +0400
++++ ./rtengine/myfile.h	2012-03-29 19:28:04.000000000 +0400
 @@ -22,6 +22,8 @@
  #include <glib/gstdio.h>
- #include <stdio.h>
- #include <string.h>
+ #include <cstdio>
+ #include <cstring>
 +#undef feof
 +#undef getc
  struct IMFILE {

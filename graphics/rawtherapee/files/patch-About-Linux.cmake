@@ -1,5 +1,5 @@
---- About-Linux.cmake.orig	2011-09-07 23:50:07.000000000 -0700
-+++ About-Linux.cmake	2011-09-07 23:51:21.000000000 -0700
+--- ./About-Linux.cmake.orig	2012-01-31 05:00:05.000000000 +0400
++++ ./About-Linux.cmake	2012-03-29 19:28:04.000000000 +0400
 @@ -1,27 +1,8 @@
  # cmakefile executed within a makefile target
  
