@@ -1,11 +1,11 @@
 # New ports collection makefile for:	ldapmodule
-# Date created:		05.Jul 2000
-# Whom:			dirk.meyer@dinoex.sub.org
+# Date created:				05.Jul 2000
+# Whom:					dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.4.8
+PORTVERSION=	2.4.9
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +15,10 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	An LDAP module for python, for OpenLDAP2
 
 LICENSE=	PSFL
-LICENSE_FILE=	${WRKSRC}/LICENCE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1-modules>=0:${PORTSDIR}/devel/py-asn1-modules
 
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_OPENLDAP=	yes
 PYDISTUTILS_PKGNAME=	python-ldap
