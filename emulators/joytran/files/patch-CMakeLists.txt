@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2012-03-29 01:34:41.000000000 -0700
++++ CMakeLists.txt	2012-03-29 13:24:33.000000000 -0700
+@@ -2,7 +2,6 @@
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+ 
+ ## On means use clang, off means use gcc
+-OPTION(USE_CLANG "build with clang" ON) # On is the default
+ OPTION(INSTALL_DOCUMENTATION "install documentation" ON) # On is the default
+ 
+ ## Files that will be included in the build-release target
+@@ -151,11 +150,6 @@
+   MESSAGE(WARNING "If you want to build the X11 plugin, please install X11.")
+ ENDIF(X11_X11_INCLUDE_PATH)
+ 
+-IF(USE_CLANG)
+-  MESSAGE(STATUS "Using clang as a compiler")
+-  SET(CMAKE_C_COMPILER "clang")
+-ENDIF(USE_CLANG)
+-
+ ## add include directories build project in src
+ INCLUDE_DIRECTORIES(${CMAKE_INCLUDE_PATH} src)
+ ADD_SUBDIRECTORY(src)
