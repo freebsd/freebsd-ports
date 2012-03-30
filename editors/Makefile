@@ -154,7 +154,6 @@
     SUBDIR += komodo-ide
     SUBDIR += kxmleditor
     SUBDIR += lazarus
-    SUBDIR += lazarus-gtk2
     SUBDIR += le
     SUBDIR += leafpad
     SUBDIR += led
