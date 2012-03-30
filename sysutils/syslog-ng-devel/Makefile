@@ -95,8 +95,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_PCRE)
 CONFIGURE_ARGS+=	--enable-pcre
-# LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
