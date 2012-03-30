@@ -47,7 +47,7 @@ reset PATH=$CCACHE_PATH and try again.
 --
 
 Make sure you run 'ccache-update-links' after you install/uninstall
-additional compiers in order to create/remove compiler links.
+additional compilers in order to create/remove compiler links.
 
 Clang will return a lot of 'unused argument' warnings: they are harmless.
 Just add this to /etc/make.conf if you want to hide them:
