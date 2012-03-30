@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.18.1
+PORTVERSION=	1.18.2
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -15,6 +15,7 @@ COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.1[0-7].*
 
+FETCH_ARGS=	-pr
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
@@ -32,7 +33,7 @@ OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
 .else
-USE_MYSQL=	yes
+USE_MYSQL=	server
 USE_PHP+=	mysql
 .endif
 
