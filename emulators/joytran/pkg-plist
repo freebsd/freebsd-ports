@@ -1,0 +1,18 @@
+bin/joytran
+%%DATADIR%%/profiles/Ever_17
+%%DATADIR%%/profiles/Ever_17-reverse
+%%DATADIR%%/profiles/GundeadliGne
+%%DATADIR%%/profiles/Gundemonium_Recollection
+%%DATADIR%%/profiles/Last_Remnant
+%%DATADIR%%/profiles/Mass_Effect
+%%DATADIR%%/profiles/Perfect_Cherry_Blossom
+%%DATADIR%%/profiles/Scarlet_Meister
+%%DATADIR%%/profiles/Steins_Gate
+%%DATADIR%%/profiles/Trouble_Witches
+%%DATADIR%%/profiles/default
+%%DATADIR%%/profiles/default-one_player
+%%PORTDOCS%%%%DOCSDIR%%/0203121918-diagram.jpg
+%%PORTDOCS%%%%DOCSDIR%%/manual.htm
+@dirrmtry %%DATADIR%%/profiles
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
