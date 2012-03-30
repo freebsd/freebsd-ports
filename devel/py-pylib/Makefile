@@ -1,6 +1,6 @@
 # New ports collection makefile for:	py-pylib
-# Date created:		2008-09-16
-# Whom:			Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
+# Date created:				2008-09-16
+# Whom:					Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
 #
 # $FreeBSD$
 #
@@ -34,10 +34,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-IGNORE=		has not yet been ported to sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
