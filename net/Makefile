@@ -433,6 +433,7 @@
     SUBDIR += nusoap
     SUBDIR += nxproxy
     SUBDIR += nxserver
+    SUBDIR += nyancat
     SUBDIR += nylon
     SUBDIR += ohphone
     SUBDIR += olsrd
