@@ -9,6 +9,8 @@ PORTNAME=	lazarus-gtk2
 
 MAINTAINER=	bbtruk@users.sourceforge.net
 
+BROKEN=		Conflicts with master port in location of binary and INDEX.
+
 MASTERDIR=	${.CURDIR}/../lazarus
 
 WITH_GTK2=	yes
