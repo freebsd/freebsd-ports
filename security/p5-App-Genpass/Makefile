@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Genpass
-PORTVERSION=	2.20
+PORTVERSION=	2.30
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -18,11 +18,8 @@ COMMENT=	Quickly and easily create secure passwords
 BUILD_DEPENDS=	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-List-AllUtils>=0:${PORTSDIR}/devel/p5-List-AllUtils \
-		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
-		p5-MouseX-ConfigFromFile>=0:${PORTSDIR}/devel/p5-MouseX-ConfigFromFile \
-		p5-MouseX-Getopt>=0:${PORTSDIR}/devel/p5-MouseX-Getopt \
-		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
+		p5-MooX-Types-MooseLike>=0:${PORTSDIR}/devel/p5-MooX-Types-MooseLike \
 		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
