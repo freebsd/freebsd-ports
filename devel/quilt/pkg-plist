@@ -2,7 +2,6 @@ bin/guards
 bin/quilt
 etc/bash_completion.d/quilt
 etc/quilt.quiltrc
-lib/quilt/backup-files
 share/emacs/site-lisp/quilt.el
 %%NLS%%share/locale/de/LC_MESSAGES/quilt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/quilt.mo
@@ -38,11 +37,13 @@ share/emacs/site-lisp/quilt.el
 %%DATADIR%%/top
 %%DATADIR%%/unapplied
 %%DATADIR%%/upgrade
+%%DATADIR%%/scripts/backup-files
 %%DATADIR%%/scripts/dependency-graph
 %%DATADIR%%/scripts/edmail
 %%DATADIR%%/scripts/inspect
 %%DATADIR%%/scripts/patchfns
 %%DATADIR%%/scripts/remove-trailing-ws
+%%DATADIR%%/scripts/utilfns
 %%DATADIR%%/wrapper/patch
 %%DATADIR%%/compat/awk
 %%DATADIR%%/compat/cp
