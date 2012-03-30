@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2011-09-06 23:56:26.000000000 -0700
-+++ CMakeLists.txt	2011-09-07 01:05:07.000000000 -0700
-@@ -224,7 +224,6 @@
+--- ./CMakeLists.txt.orig	2012-01-31 05:00:05.000000000 +0400
++++ ./CMakeLists.txt	2012-03-29 19:28:04.000000000 +0400
+@@ -230,7 +230,6 @@
                -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Windows.cmake
        COMMENT "Creating the about file"
      )
@@ -8,7 +8,7 @@
  
    elseif (APPLE)
   
-@@ -244,7 +243,6 @@
+@@ -250,7 +249,6 @@
                -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Apple.cmake
        COMMENT "Creating the about file"
      )
@@ -16,7 +16,7 @@
      find_file(HG_CMD hg)
  
    else (WIN32)
-@@ -265,18 +263,11 @@
+@@ -271,18 +269,11 @@
                -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Linux.cmake
        COMMENT "Creating the about file"
      )
