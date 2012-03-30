@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quilt
-PORTVERSION=	0.51
+PORTVERSION=	0.60
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	quilt
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 MAN1=		guards.1 quilt.1
 PORTDOCS=	README README.MAIL quilt.pdf
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_RPMBUILD)
 BUILD_DEPENDS+=	rpm:${PORTSDIR}/archivers/rpm
@@ -71,4 +71,4 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|$$(docdir)/$$(PACKAGE)-$$(VERSION)|$$(docdir)/$$(PACKAGE)|g' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
