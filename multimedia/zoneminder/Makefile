@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	zoneminder
-PORTVERSION=	1.24.4
-PORTREVISION=	14
+PORTVERSION=	1.25.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
 DISTNAME=	ZoneMinder-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pakhom706@gmail.com
 COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
@@ -61,7 +60,14 @@ DB_NAME?=	zm
 DB_USER?=	zmuser
 DB_PASS?=	zmpass
 
-PLIST_SUB=	WWWDIR_REL=${WWWDIR_REL}
+PORTDOCS=	AUTHORS \
+		COPYING \
+		ChangeLog \
+		INSTALL \
+		NEWS \
+		README \
+		README.FreeBSD \
+		TODO
 
 MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		ZoneMinder::Trigger::Connection.3 \
@@ -86,9 +92,19 @@ MAN3=		ZoneMinder::Trigger::Connection.3 \
 		ZoneMinder::Control.3 \
 		ZoneMinder::General.3 \
 		ZoneMinder::Trigger::Channel::Handle.3 \
-		ZoneMinder::Debug.3 \
 		ZoneMinder::ConfigAdmin.3 \
-		ZoneMinder::ConfigData.3
+		ZoneMinder::ConfigData.3 \
+		ZoneMinder::Logger.3
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}=="i386"
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-scripts_ZoneMinder_lib_ZoneMinder_Memory.pm.in
+.endif
+
+.if ${OSVERSION} < 900000
+BROKEN=	does not compile on 7.X and 8.X
+.endif
 
 post-configure:
 	${MV} ${WRKSRC}/zm.conf ${WRKSRC}/zm.conf.sample
@@ -103,28 +119,15 @@ pre-build:
 	${CP} ${FILESDIR}/videodev.h ${WRKSRC}/src
 	${CP} ${FILESDIR}/zm_fbsd_camera.cpp ${WRKSRC}/src
 	${TOUCH} ${WRKSRC}/src/zm_fbsd_camera.h
+	${CP} ${FILESDIR}/README.FreeBSD ${WRKSRC}
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/zm.conf ]; then \
-		${CP} -p ${PREFIX}/etc/zm.conf.sample ${PREFIX}/etc/zm.conf  ; \
-	fi
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/AUTHORS   ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/COPYING   ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/INSTALL   ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/NEWS      ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README    ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/TODO      ${DOCSDIR}
-	${INSTALL_MAN} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+.endfor
 .endif
 	${CAT} ${FILESDIR}/README.FreeBSD
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH}=="i386"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-scripts_ZoneMinder_lib_ZoneMinder_Memory.pm.in
-.endif
 
 .include <bsd.port.post.mk>

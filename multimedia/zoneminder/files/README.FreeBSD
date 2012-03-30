@@ -210,4 +210,7 @@ probably a good idea.
 
 * kern.ipc.shm_use_phys=1
 
+== Modify php.ini ===
+Change in php.ini short_open_tag to On (short_open_tag = On)
+
 That's all folks!
