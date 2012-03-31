@@ -27,11 +27,6 @@ PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}
 SUB_FILES=	pkg-message
 BUILD_WRKSRC=	${WRKSRC}/source/Irrlicht
 
-CPPFLAGS+=	-DNO_IRR_USE_NON_SYSTEM_JPEG_LIB_ \
-		-DNO_IRR_USE_NON_SYSTEM_LIB_PNG_ \
-		-DNO_IRR_USE_NON_SYSTEM_ZLIB_ \
-		-DNO_IRR_COMPILE_WITH_BZIP2_
-
 SHARED_LIB_VER=	1
 EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserInterface \
 		06.2DGraphics 07.Collision 08.SpecialFX 09.Meshviewer 10.Shaders \
@@ -73,6 +68,11 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/source/Irrlicht/CImageLoaderPNG.cpp
+	@${REINPLACE_CMD} -e '/#define.*_IRR_USE_NON_SYSTEM_JPEG_LIB_/ d' \
+		-e '/#define.*_IRR_USE_NON_SYSTEM_LIB_PNG_/ d' \
+		-e '/#define.*_IRR_USE_NON_SYSTEM_ZLIB_/ d' \
+		-e '/#define.*_IRR_USE_NON_SYSTEM_BZLIB_/ d' \
+		${WRKSRC}/include/IrrCompileConfig.h
 .if !defined(HAVE_JOYSTICK)
 	@${REINPLACE_CMD} -e '/define.*_IRR_COMPILE_WITH_JOYSTICK_EVENTS_/ d' \
 		${WRKSRC}/include/IrrCompileConfig.h
