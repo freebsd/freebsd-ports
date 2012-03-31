@@ -1,24 +1,24 @@
 # New ports collection makefile for:	paratype-fonts
-# Date created:		05 March 2011
-# Whom:			Alexey Illarionov <littlesavage@rambler.ru>
+# Date created:				05 March 2011
+# Whom:					Alexey Illarionov <littlesavage@rambler.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	paratype
 PORTVERSION=	2.004
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://paratype.0xdc.ru/
 MASTER_SITE_SUBDIR=	#prevent bsd.xorg.mk from setting a default subdirectory
-DISTFILES=	PTSansOFL-2.004.zip PTSerifOFL-1.000.zip PTMonoOFL-1.002.zip
+DISTFILES=	PTSansOFL-2.004.zip PTSerifOFL-1.000.zip PTMonoOFL-1.002_1.zip
 
 MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	ParaType font collection for the languages of Russia
 
 LICENSE=	OFL
 LICENSE_NAME=	SIL Open Font License (OFL)
-LICENSE_FILE=	${WRKSRC}/PTSansPTSerifOFL.txt
+LICENSE_FILE=	${WRKSRC}/PTSSM_OFL.txt
 LICENSE_PERMS=	auto-accept
 
 INSTALLS_TTF=	yes
