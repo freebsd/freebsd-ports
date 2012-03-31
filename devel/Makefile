@@ -2351,6 +2351,7 @@
     SUBDIR += p5-Return-Value
     SUBDIR += p5-Role-HasMessage
     SUBDIR += p5-Role-Identifiable
+    SUBDIR += p5-Role-Tiny
     SUBDIR += p5-Rose-DateTime
     SUBDIR += p5-Rose-Object
     SUBDIR += p5-RunApp
