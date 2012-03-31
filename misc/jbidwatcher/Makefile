@@ -6,29 +6,27 @@
 #
 
 PORTNAME=	jbidwatcher
-DISTVERSION=	2.5
+PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	misc java
 MASTER_SITES=	http://www.jbidwatcher.com/download/
-DISTNAME=	JBidwatcher-${DISTVERSION}
-EXTRACT_SUFX=	.jar
-EXTRACT_ONLY=
 
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	A Java-based application allowing you to monitor eBay auctions
 
+USE_BZIP2=	yes
 USE_JAVA=	yes
+USE_ANT=	yes
+ALL_TARGET=	jar
 JAVA_VERSION=	1.5+
-NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
+SUB_FILES=	jbidwatcher
+SUB_LIST+=	PORTVERSION=${PORTVERSION}
+PLIST_FILES=	%%JAVAJARDIR%%/JBidwatcher-${PORTVERSION}.jar \
 		bin/${PORTNAME}
 
 do-install:
-	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/${PORTNAME}.jar
-	@${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
-		-e "s:%%JAVAJARDIR%%:${JAVAJARDIR}:" \
-		${FILESDIR}/jbidwatcher.sh > ${PREFIX}/bin/${PORTNAME}
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} a+rx ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/JBidwatcher-${PORTVERSION}.jar ${JAVAJARDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
