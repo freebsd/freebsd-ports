@@ -1800,7 +1800,6 @@ share/applications/freeciv-server.desktop
 %%DATADIR%%/multiplayer/ai_effects.ruleset
 %%DATADIR%%/multiplayer/buildings.ruleset
 %%DATADIR%%/multiplayer/cities.ruleset
-%%DATADIR%%/multiplayer/default.lua
 %%DATADIR%%/multiplayer/effects.ruleset
 %%DATADIR%%/multiplayer/script.lua
 %%DATADIR%%/multiplayer/game.ruleset
