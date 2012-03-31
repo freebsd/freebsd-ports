@@ -7,5 +7,3 @@ share/festival/lib/voices/spanish/el_diphone/festvox/spanint.scm
 share/festival/lib/voices/spanish/el_diphone/festvox/sptoken.scm
 @dirrm share/festival/lib/voices/spanish/el_diphone/festvox
 @dirrm share/festival/lib/voices/spanish/el_diphone
-@dirrmtry share/festival/lib/voices/spanish
-@dirrmtry share/festival/lib/voices
