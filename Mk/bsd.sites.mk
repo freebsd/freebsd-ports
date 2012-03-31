@@ -746,7 +746,7 @@ MASTER_SITE_MOZDEV+= \
 #
 .if !defined(IGNORE_MASTER_SITE_MOZILLA)
 MASTER_SITE_MOZILLA+= \
-	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	https://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	http://mirror3.mirrors.tds.net/pub/mozilla.org/%SUBDIR%/ \
 	http://mozilla.isc.org/pub/mozilla.org/%SUBDIR%/ \
 	http://releases.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
