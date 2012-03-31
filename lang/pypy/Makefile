@@ -41,6 +41,10 @@ MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE}
 .include <${.CURDIR}/files/bsd.pypy.inst.mk>
 .include <bsd.port.options.mk>
 
+.if defined(PACKAGE_BUILDING)
+MANUAL_PACKAGE_BUILD=	fails to finish compilation on pointyhat, reason unknown
+.endif
+
 # List of PyPy instances
 .if !defined(PYPY_INST)
 PYPY_INST=	DEFAULT
