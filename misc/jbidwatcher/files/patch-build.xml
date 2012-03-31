@@ -1,0 +1,13 @@
+--- ./build.xml.orig	2012-03-18 11:35:38.000000000 -0700
++++ ./build.xml	2012-03-25 16:08:00.000000000 -0700
+@@ -125,10 +125,6 @@
+     <echo level="info" message="Building primary .jar file." />
+     <copy todir="help/" file="COPYING.html" />
+ 
+-    <exec executable="git" outputproperty="GITVERSION">
+-      <arg line="describe --tags --long"/>
+-    </exec>
+-
+     <mkdir dir="META-INF"/>
+ 
+     <manifest file="${MANIFEST}">
