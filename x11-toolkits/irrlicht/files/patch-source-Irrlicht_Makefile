@@ -59,7 +59,7 @@
  #staticlib sharedlib: LDFLAGS += --no-export-all-symbols --add-stdcall-alias
 -sharedlib: LDFLAGS += -L/usr/X11R6/lib$(LIBSELECT) -lGL -lXxf86vm
 -staticlib sharedlib: CXXINCS += -I/usr/X11R6/include
-+sharedlib: LDFLAGS += -L${LOCALBASE}/lib -lGL -lXxf86vm -lpng -ljpeg
++sharedlib: LDFLAGS += -L${LOCALBASE}/lib -lGL -lXxf86vm -lpng -ljpeg -lbz2
 +staticlib sharedlib: CXXINCS += -I${LOCALBASE}/include
  
  #OSX specific options
