@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -26,8 +25,8 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${PREFIX} --program-transform-name=
 INSTALLS_ICONS=	yes
 
 MAN6=		freeciv-server.6 freeciv-client.6 \
-		freeciv-xaw.6 freeciv-win32.6 freeciv-sdl.6 freeciv-gtk2.6 \
-		freeciv-ftwl.6 freeciv-modpack.6
+		freeciv-xaw.6 freeciv-sdl.6 freeciv-gtk2.6 \
+		freeciv-modpack.6
 
 .ifndef WITHOUT_X11
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
