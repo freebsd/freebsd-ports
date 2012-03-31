@@ -84,6 +84,7 @@
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-getopt
+    SUBDIR += java-zoneinfo
     SUBDIR += java3d
     SUBDIR += javahelp
     SUBDIR += javamail
