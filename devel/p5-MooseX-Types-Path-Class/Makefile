@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-Path-Class
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,4 +26,10 @@ MAN3=	MooseX::Types::Path::Class.3
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
