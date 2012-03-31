@@ -9,4 +9,3 @@ share/festival/lib/dicts/oald/oald2ft.tar.gz
 share/festival/lib/dicts/oald/oald-0.4.out
 share/festival/lib/dicts/oald/COPYING
 @dirrm share/festival/lib/dicts/oald
-@dirrm share/festival/lib/dicts
