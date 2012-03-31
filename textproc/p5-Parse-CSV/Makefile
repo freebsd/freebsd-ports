@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Parse-CSV
-PORTVERSION=	1.00
+PORTVERSION=	2.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Highly flexible CVS parser for large files
 
-RUN_DEPENDS=	p5-Text-CSV_XS>=0.23:${PORTSDIR}/textproc/p5-Text-CSV_XS \
-		p5-Params-Util>=0.17:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	p5-Params-Util>=0.22:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Text-CSV_XS>=0.42:${PORTSDIR}/textproc/p5-Text-CSV_XS
+RUN_DEPENDS=	p5-Params-Util>=0.22:${PORTSDIR}/devel/p5-Params-Util \
+		p5-Text-CSV_XS>=0.42:${PORTSDIR}/textproc/p5-Text-CSV_XS
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Parse::CSV.3
+MAN3=		Parse::CSV.3
 
 .include <bsd.port.mk>
