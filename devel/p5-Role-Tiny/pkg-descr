@@ -1,0 +1,13 @@
+Role composition can be thought of as much more clever and meaningful multiple
+inheritance. The basics of this implementation of roles is:
+- If a method is already defined on a class, that method will not be composed in
+  from the role.
+- If a method that the role "requires" to be implemented is not implemented,
+  role application will fail loudly.
+
+Unlike Class::C3, where the last class inherited from "wins," role composition
+is the other way around, where first wins. In a more complete system (see Moose)
+roles are checked to see if they clash. The goal of this is to be much simpler,
+hence disallowing composition of multiple roles at once.
+
+WWW: http://search.cpan.org/dist/Role-Tiny/
