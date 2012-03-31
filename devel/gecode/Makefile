@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gecode
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gecode.org/download/
 
