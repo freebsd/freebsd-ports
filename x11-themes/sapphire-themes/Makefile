@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for sapphire
 
+BROKEN=		depends on conflicting packages (xli and xloadimage both installs bin/xsetbg)
+
 RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \
 		xloadimage:${PORTSDIR}/x11/xloadimage \
 		sapphire:${PORTSDIR}/x11-wm/sapphire

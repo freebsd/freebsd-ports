@@ -16,6 +16,7 @@ DISTNAME=	xli_${PORTVERSION}+${XLI_SNAPVER:C/-//g}.orig
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Utilities to display images in X11
 
+CONFLICTS_INSTALL=	xloadimage-*
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
