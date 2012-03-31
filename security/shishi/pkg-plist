@@ -5,7 +5,7 @@ sbin/keytab2shishi
 sbin/shishid
 etc/shishi/shisa.conf
 etc/shishi/shishi.conf
-etc/shishi/shishi.keys
+@rmtry etc/shishi/shishi.keys
 etc/shishi/shishi.skel
 include/shisa.h
 include/shishi-int.h
@@ -24,6 +24,7 @@ lib/security/pam_shishi.a
 libdata/pkgconfig/shishi.pc
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/shishi.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/shishi.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/shishi.mo
