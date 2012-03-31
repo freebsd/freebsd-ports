@@ -7,6 +7,7 @@
 
 PORTNAME=	tesseract-data
 PORTVERSION=	3.01
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${TESSERACT_LANGS_300:O:u:S|$|.traineddata.gz|} \
@@ -43,8 +44,10 @@ TESSERACT_LANGS_300+=	${LANGS_300:M${l}}
 TESSERACT_LANGS_301+=	${LANGS_301:M${l}}
 .endfor
 
-PLIST_DIRSTRY=	share/tessdata
-PLIST_FILES=	${TESSERACT_LANGS:O:u:S|$|.traineddata|:S|^|share/tessdata/|}
+.ifndef NOPORTDATA
+DATADIR=	${PREFIX}/share/tessdata
+PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
+.endif
 
 pre-fetch:
 	@${ECHO_MSG} ""
@@ -53,15 +56,17 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 do-install:
-	@${INSTALL_DATA} -d ${PREFIX}/share/tessdata
+.ifndef NOPORTDATA
+	@${MKDIR} ${DATADIR}
 .for l in ${TESSERACT_LANGS_300:O:u:S|$|.traineddata|}
-	@${GUNZIP_CMD} -c ${_DISTDIR}/${l}.gz > ${PREFIX}/share/tessdata/${l}
+	@${GUNZIP_CMD} -c ${_DISTDIR}/${l}.gz > ${DATADIR}/${l}
 .endfor
 .for l in ${TESSERACT_LANGS_301:O:u}
-	@${TAR} --strip-components 2 -C ${PREFIX}/share/tessdata \
+	@${TAR} --strip-components 2 -C ${DATADIR} \
 	-xf ${_DISTDIR}/tesseract-ocr-3.01.${l}.tar.gz *.traineddata
 .endfor
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/tessdata
-	@${CHMOD} -R ${SHAREMODE} ${PREFIX}/share/tessdata
+	@cd ${DATADIR} ; ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PORTDATA} ; \
+	${CHMOD} ${BINMODE} ${PORTDATA}
+.endif
 
 .include <bsd.port.mk>
