@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Lisp reference manual
 
+BROKEN=		overwrites files owned by editors/emacs: info/elisp.info
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}
 GNU_CONFIGURE=	yes
 ALL_TARGET=	elisp
