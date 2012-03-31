@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jbidwatcher
-DISTVERSION=	2.1.6
+DISTVERSION=	2.5
 CATEGORIES=	misc java
 MASTER_SITES=	http://www.jbidwatcher.com/download/
 DISTNAME=	JBidwatcher-${DISTVERSION}
