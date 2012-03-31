@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	irrlicht
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	1.7.3
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.7/${PORTVERSION}
 
@@ -27,6 +26,11 @@ MAKE_ENV+=	SHLIB_VER=${SHARED_LIB_VER}
 PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}
 SUB_FILES=	pkg-message
 BUILD_WRKSRC=	${WRKSRC}/source/Irrlicht
+
+CPPFLAGS+=	-DNO_IRR_USE_NON_SYSTEM_JPEG_LIB_ \
+		-DNO_IRR_USE_NON_SYSTEM_LIB_PNG_ \
+		-DNO_IRR_USE_NON_SYSTEM_ZLIB_ \
+		-DNO_IRR_COMPILE_WITH_BZIP2_
 
 SHARED_LIB_VER=	1
 EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserInterface \
@@ -62,6 +66,9 @@ HAVE_JOYSTICK=	true
 .if !defined(WITH_DEBUG)
 MAKE_ENV+=	NDEBUG=1
 .endif
+
+post-extract:
+	@${RM} ${WRKSRC}/media/Thumbs.db
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
