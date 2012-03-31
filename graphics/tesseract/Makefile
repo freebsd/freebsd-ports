@@ -7,7 +7,7 @@
 
 PORTNAME=	tesseract
 PORTVERSION=	3.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(NOPORTDATA) || make(makesum)
@@ -68,7 +68,7 @@ post-install:
 	-xf ${_DISTDIR}/tesseract-ocr-3.01.${f}.tar.gz *.traineddata
 .endfor
 	@cd ${DATADIR}; ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PORTDATA}; \
-	${CHMOD} ${SHAREMODE} ${PORTDATA}
+	${CHMOD} ${BINMODE} ${PORTDATA}
 .endif
 .ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
