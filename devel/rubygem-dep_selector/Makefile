@@ -6,6 +6,7 @@
 
 PORTNAME=	dep_selector
 PORTVERSION=	0.0.8
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
