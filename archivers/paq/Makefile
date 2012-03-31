@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20120202
+PORTVERSION=	20120326
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	libzpaq501.zip wbpe110.zip zpaq403.zip zpipe.201.zip
+DISTFILES=	libzpaq501.zip wbpe110.zip zpaq404.zip zpipe.201.zip
 .if !defined(NOPORTDATA) || make(makesum)
 DISTFILES+=	bmp_j4a.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 		calgarytest.zpaq calgarytest2.zpaq exe_j1.zip fast.cfg \
