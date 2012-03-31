@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moo
-PORTVERSION=	0.009012
+PORTVERSION=	0.009014
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTROUT
@@ -15,19 +15,28 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Minimalist Object Orientation (with Moose compatiblity)
 
-BUILD_DEPENDS=	p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures \
-		p5-Class-Method-Modifiers>=1.05:${PORTSDIR}/devel/p5-Class-Method-Modifiers
-RUN_DEPENDS=	p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures \
-		p5-Class-Method-Modifiers>=1.05:${PORTSDIR}/devel/p5-Class-Method-Modifiers
-TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
+BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.07:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+		p5-Module-Runtime>=0.013:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Role-Tiny>=1:${PORTSDIR}/devel/p5-Role-Tiny \
+		p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures
+RUN_DEPENDS=	p5-Class-Method-Modifiers>=1.07:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+		p5-Module-Runtime>=0.013:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Role-Tiny>=1:${PORTSDIR}/devel/p5-Role-Tiny \
+		p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures
+
+TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Moo.3 \
-	Moo::Role.3 \
-	Role::Tiny.3 \
-	Role::Tiny::With.3 \
-	Sub::Defer.3 \
-	Sub::Quote.3
+MAN3=		Moo.3 \
+		Moo::Role.3 \
+		Sub::Defer.3 \
+		Sub::Quote.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
