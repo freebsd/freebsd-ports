@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	adamw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A golf course theme for Tux Racer
 
+BROKEN=		overwrite a file owned by tuxracer: share/tuxracer/courses/common/buttprint.rgb
+
 RUN_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer
 
 NO_WRKSUBDIR=	yes
