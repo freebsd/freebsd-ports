@@ -1070,6 +1070,7 @@ bindgraph                       ports/dns/bindgraph
 bindtest                        ports/net/bindtest
 biniax2                         ports/games/biniax2
 binkd                           ports/net/binkd
+bino                            ports/multimedia/bino
 bins                            ports/www/bins
 binup                           ports/sysutils/binup
 binwalk                         ports/security/binwalk
@@ -2619,6 +2620,7 @@ dradis                          ports/security/dradis
 dragon                          ports/devel/dragon
 dragstack                       ports/deskutils/dragstack
 drawterm                        ports/net/drawterm
+drcreep                         ports/games/drcreep
 dreampie                        ports/devel/dreampie
 drexelsnmp                      ports/java/drexelsnmp
 drg2sbg                         ports/converters/drg2sbg
@@ -10305,6 +10307,7 @@ nxserver                        ports/net/nxserver
 nxt-python                      ports/devel/nxt-python
 nxtvepg                         ports/multimedia/nxtvepg
 ny-aspell                       ports/textproc/ny-aspell
+nyancat                         ports/net/nyancat
 nyh-hoc                         ports/math/nyh-hoc
 nylon                           ports/net/nylon
 nzbget                          ports/news/nzbget
