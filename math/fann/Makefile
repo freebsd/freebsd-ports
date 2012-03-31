@@ -6,17 +6,24 @@
 #
 
 PORTNAME=	fann
-PORTVERSION=	2.1.0b
+PORTVERSION=	2.2.0
 CATEGORIES=	math science
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}eta
-DISTNAME=	fann-2.1.0beta
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+DISTNAME=	FANN-2.2.0-Source
 
 MAINTAINER=	tzhuan@csie.org
 COMMENT=	A free open source neural network library
 
-WRKSRC=		${WRKDIR}/fann-2.1.0
+WRKSRC=		${WRKDIR}/FANN-2.2.0-Source
+
+USE_CMAKE=	yes
 USE_ZIP=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/lib/pkgconfig|/libdata/pkgconfig|g' ${WRKSRC}/CMakeLists.txt
+
+post-configure:
+	${ENV} CPP=${CPP} CC=${CC} CXX=${CXX} ${CMAKE_BIN} ${WRKSRC} -DCMAKE_INSTALL_PREFIX=${PREFIX}
 
 .include <bsd.port.mk>
