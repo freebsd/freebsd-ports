@@ -23,7 +23,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_SCRIPT=	updateminiupnpcstrings.sh
 MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 CFLAGS+=	-fPIC
-USE_RC_SUBR=	miniupnpc
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +32,7 @@ CFLAGS+=	-DDEBUG
 
 .if ${SLAVE_PORT} == no
 MAN3=		miniupnpc.3
+USE_RC_SUBR=	miniupnpc
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man3/miniupnpc.3 ${PREFIX}/man/man3/
