@@ -3,6 +3,9 @@ bin/cmail
 share/icons/hicolor/48x48/apps/xboard.png
 share/icons/hicolor/scalable/apps/xboard.svg
 share/applications/xboard.desktop
+share/applications/xboard-fen-viewer.desktop
+share/applications/xboard-pgn-viewer.desktop
+share/applications/xboard-tourney.desktop
 share/games/xboard/bitmaps/default/a33o.bm
 share/games/xboard/bitmaps/default/a33s.bm
 share/games/xboard/bitmaps/default/a37o.bm
@@ -383,6 +386,10 @@ share/games/xboard/bitmaps/default/ws72o.bm
 share/games/xboard/bitmaps/default/ws72s.bm
 share/games/xboard/pixmaps/textures/wood_d.xpm
 share/games/xboard/pixmaps/textures/wood_l.xpm
+share/games/xboard/pixmaps/textures/board32.xpm
+share/games/xboard/pixmaps/textures/board48.xpm
+share/games/xboard/pixmaps/textures/cross32.xpm
+share/games/xboard/pixmaps/textures/cross48.xpm
 share/games/xboard/sounds/cymbal.wav
 share/games/xboard/sounds/ding1.wav
 share/games/xboard/sounds/gong.wav
@@ -393,6 +400,20 @@ share/games/xboard/sounds/phone.wav
 share/games/xboard/sounds/pop2.wav
 share/games/xboard/sounds/slap.wav
 share/games/xboard/sounds/woodthunk.wav
+share/mime/packages/xboard.xml
+%%NLS%%share/locale/da/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/xboard.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xboard.mo
+%%NLS%%@dirrmtry share/locale/zh_HK
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/scalable/apps
@@ -400,6 +421,8 @@ share/games/xboard/sounds/woodthunk.wav
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrm share/games/xboard/bitmaps/default
 @dirrm share/games/xboard/bitmaps
 @dirrm share/games/xboard/pixmaps/textures

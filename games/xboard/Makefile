@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.5.3
+PORTVERSION=	4.6.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
@@ -56,6 +56,13 @@ RUN_DEPENDS+=	KnightCap:${PORTSDIR}/games/KnightCap
 .ifdef WITH_PHALANX
 RUN_DEPENDS+=	phalanx:${PORTSDIR}/games/phalanx
 .endif
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +77,6 @@ post-patch:
 		${WRKSRC}/engineoutput.c ${WRKSRC}/uci.c
 	@${REINPLACE_CMD} -e 's:INSTALL.*sysconfdir):&/$$$$files.dist:' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's/^SendString/void &/' ${WRKSRC}/xoptions.c
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/
