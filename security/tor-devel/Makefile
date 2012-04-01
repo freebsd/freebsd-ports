@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.12-alpha
+DISTVERSION=	0.2.3.13-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
 		ftp://ftp.fodt.it/pub/mirror/tor/dist/ \
-		ftp://key-server.org/tor/dist/ \
 		http://cyberside.net.ee/tor/ \
 		http://ftp.bit.nl/mirror/tor/ \
+		http://mirror.hessmo.com/tor/dist/ \
 		http://mirror.host4site.co.il/torproject.org/dist/ \
 		http://mirror.open-networx.org/torproject.org/dist/ \
 		http://mirror.tor.hu/dist/ \
+		https://mirror.torland.me/torproject.org/dist/ \
 		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
 		http://onion.anonymo.us.org/dist/ \
 		http://theonionrouter.com/dist/ \
@@ -24,24 +25,29 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.askapache.com/dist/ \
 		http://tor.beme-it.de/dist/ \
 		http://tor.blingblingsquad.net/dist/ \
+		http://tor.borgmann.tv/dist/ \
 		http://tor.ccc.de/dist/ \
 		http://tor.cyberarmy.at/dist/ \
+		http://tor.dont-know-me.at/dist/ \
 		http://tor.factor.cc/dist/ \
 		http://tor.fodt.it/dist/ \
-		http://tor.freie-re.de/dist/ \
 		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
+		http://tor.myrl.net/dist/ \
 		http://tor.kamagurka.org/dist/ \
-		http://tor.key-server.org/dist/ \
 		http://tor.searchprivate.com/dist/ \
+		http://tor.spline.de/dist/ \
 		http://tor.taiga-san.net/dist/ \
+		http://tor.unregistered.eu/dist/ \
 		http://tor.vesta.nu/dist/ \
 		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
 		https://torproject.antagonism.org/dist/ \
 		https://torproject.crypto.is/dist/ \
 		http://torproject.is/dist/ \
+		http://torproject.jcsh.it/dist/ \
 		http://torproject.nwlinux.us/dist/ \
+		http://torproject.ph3x.at/dist/ \
 		http://torua.reactor-xg.kiev.ua/dist/ \
 		https://www.coevoet.nl/tor/dist/ \
 		http://www.oignon.net/dist/ \
@@ -99,7 +105,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 .if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
 (${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
-(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:M*gcc4*)
+(${OSVERSION} >= 900003) ) && !defined(USE_GCC) && empty(CC:M*gcc4*) && \
+!defined(WITH_STATIC_TOR)
 CONFIGURE_ARGS+=	--enable-gcc-hardening
 .endif
 
