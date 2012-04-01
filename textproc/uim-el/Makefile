@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim-el
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -18,8 +17,8 @@ COMMENT?=	Emacs lisp for uim input method library
 
 PROJECTHOST=	uim
 CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
-	uim-el-emacs22-[0-9]* \
-	uim-el-emacs21-[0-9]*
+		uim-el-emacs22-[0-9]* \
+		uim-el-emacs21-[0-9]*
 
 RUN_DEPENDS=	uim-el-agent:${PORTSDIR}/textproc/uim
 

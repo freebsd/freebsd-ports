@@ -5,4 +5,3 @@ bin/uim-toolbar-qt
 libexec/uim-candwin-qt
 %%DATADIR%%/helperdata/bushu.t
 @dirrmtry %%DATADIR%%/helperdata
-share/locale/ja/LC_MESSAGES/uim-chardict-qt.mo

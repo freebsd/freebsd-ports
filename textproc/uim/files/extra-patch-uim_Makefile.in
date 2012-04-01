@@ -1,48 +1,35 @@
---- uim/Makefile.in.orig	2010-08-11 16:30:58.000000000 +0900
-+++ uim/Makefile.in	2010-10-17 13:04:46.000000000 +0900
-@@ -125,8 +125,6 @@
- @EB_TRUE@am_lib_eb_static_la_OBJECTS = lib_eb_static_la-uim-eb.lo
- lib_eb_static_la_OBJECTS = $(am_lib_eb_static_la_OBJECTS)
- @EB_TRUE@am_lib_eb_static_la_rpath =
+--- uim/Makefile.in.orig	2012-04-01 06:38:21.000000000 +0900
++++ uim/Makefile.in	2012-04-01 06:50:03.000000000 +0900
+@@ -117,8 +117,7 @@
+ 	"$(DESTDIR)$(pkgincludedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES) \
+ 	$(uim_plugin_LTLIBRARIES)
 -@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_DEPENDENCIES = libuim-scm.la \
 -@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@	libuim.la
++@ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_DEPENDENCIES = 
  am__libuim_anthy_utf8_la_SOURCES_DIST = anthy-utf8.c
  @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@am_libuim_anthy_utf8_la_OBJECTS = libuim_anthy_utf8_la-anthy-utf8.lo
  libuim_anthy_utf8_la_OBJECTS = $(am_libuim_anthy_utf8_la_OBJECTS)
-@@ -136,8 +134,6 @@
+@@ -128,8 +127,7 @@
  @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@am_libuim_anthy_utf8_la_rpath =  \
  @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@	-rpath \
  @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@	$(uim_plugindir)
 -@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_DEPENDENCIES =  \
 -@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@	libuim-scm.la libuim.la
++@ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_DEPENDENCIES = 
  am__libuim_anthy_la_SOURCES_DIST = anthy.c
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@am_libuim_anthy_la_OBJECTS = libuim_anthy_la-anthy.lo
  libuim_anthy_la_OBJECTS = $(am_libuim_anthy_la_OBJECTS)
-@@ -230,7 +226,6 @@
+@@ -222,7 +220,7 @@
  libuim_look_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libuim_look_la_LDFLAGS) $(LDFLAGS) -o $@
 -@M17NLIB_TRUE@libuim_m17nlib_la_DEPENDENCIES = libuim-scm.la libuim.la
++@M17NLIB_TRUE@libuim_m17nlib_la_DEPENDENCIES = 
  am__libuim_m17nlib_la_SOURCES_DIST = m17nlib.c
  @M17NLIB_TRUE@am_libuim_m17nlib_la_OBJECTS =  \
  @M17NLIB_TRUE@	libuim_m17nlib_la-m17nlib.lo
-@@ -239,7 +234,6 @@
- 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(libuim_m17nlib_la_LDFLAGS) $(LDFLAGS) -o $@
- @M17NLIB_TRUE@am_libuim_m17nlib_la_rpath = -rpath $(uim_plugindir)
--@MANA_TRUE@libuim_mana_la_DEPENDENCIES = libuim-scm.la libuim.la
- am__libuim_mana_la_SOURCES_DIST = mana.c
- @MANA_TRUE@am_libuim_mana_la_OBJECTS = libuim_mana_la-mana.lo
- libuim_mana_la_OBJECTS = $(am_libuim_mana_la_OBJECTS)
-@@ -299,7 +293,6 @@
- 	$(libuim_sqlite3_la_LDFLAGS) $(LDFLAGS) -o $@
- @SQLITE3_TRUE@am_libuim_sqlite3_la_rpath = -rpath $(uim_plugindir)
- am__DEPENDENCIES_1 =
--@WNN_TRUE@libuim_wnn_la_DEPENDENCIES = libuim.la $(am__DEPENDENCIES_1)
- am__libuim_wnn_la_SOURCES_DIST = wnnlib.h wnnlib.c
- @WNN_TRUE@am_libuim_wnn_la_OBJECTS = libuim_wnn_la-wnnlib.lo
- libuim_wnn_la_OBJECTS = $(am_libuim_wnn_la_OBJECTS)
-@@ -763,47 +756,47 @@
+@@ -767,7 +765,7 @@
  libuim_process_la_CPPFLAGS = -I$(top_srcdir)
  libuim_custom_la_SOURCES = uim-custom.c
  @M17NLIB_TRUE@libuim_m17nlib_la_SOURCES = m17nlib.c
@@ -51,13 +38,7 @@
  @M17NLIB_TRUE@libuim_m17nlib_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @M17NLIB_TRUE@libuim_m17nlib_la_CPPFLAGS = -I$(top_srcdir) @M17NLIB_CFLAGS@
  @SCIM_TRUE@libuim_scim_la_SOURCES = scim.cpp
--@SCIM_TRUE@libuim_scim_la_LIBADD = @SCIM_LIBS@ libuim-scm.la libuim.la
-+@SCIM_TRUE@libuim_scim_la_LIBADD = @SCIM_LIBS@ -luim-scm -luim
- @SCIM_TRUE@libuim_scim_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @SCIM_TRUE@libuim_scim_la_CXXFLAGS = -I$(top_srcdir) @SCIM_CFLAGS@
- @WNN_TRUE@libuim_wnn_la_SOURCES = wnnlib.h wnnlib.c
--@WNN_TRUE@libuim_wnn_la_LIBADD = libuim.la $(WNN_LIBS) -lwnn @WNN_LIBADD@
-+@WNN_TRUE@libuim_wnn_la_LIBADD = -luim $(WNN_LIBS) -lwnn @WNN_LIBADD@
+@@ -779,11 +777,11 @@
  @WNN_TRUE@libuim_wnn_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @WNN_TRUE@libuim_wnn_la_CPPFLAGS = -I$(top_srcdir) $(WNN_CPPFLAGS)
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@libuim_anthy_la_SOURCES = anthy.c
@@ -71,33 +52,3 @@
  @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
  @ANTHY_UTF8_TRUE@@ENABLE_ANTHY_UTF8_STATIC_FALSE@libuim_anthy_utf8_la_CPPFLAGS = -I$(top_srcdir) @ANTHY_UTF8_CFLAGS@
  @MANA_TRUE@libuim_mana_la_SOURCES = mana.c
--@MANA_TRUE@libuim_mana_la_LIBADD = libuim-scm.la libuim.la
-+@MANA_TRUE@libuim_mana_la_LIBADD = -luim-scm -luim
- @MANA_TRUE@libuim_mana_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @MANA_TRUE@libuim_mana_la_CPPFLAGS = -I$(top_srcdir)
- @CURL_TRUE@libuim_curl_la_SOURCES = curl.c
--@CURL_TRUE@libuim_curl_la_LIBADD = @CURL_LIBS@ libuim.la
-+@CURL_TRUE@libuim_curl_la_LIBADD = @CURL_LIBS@ -luim
- @CURL_TRUE@libuim_curl_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @CURL_TRUE@libuim_curl_la_CPPFLAGS = -I$(top_srcdir) @CURL_CFLAGS@
- @EXPAT_TRUE@libuim_expat_la_SOURCES = expat.c
--@EXPAT_TRUE@libuim_expat_la_LIBADD = @EXPAT_LIBS@ libuim.la
-+@EXPAT_TRUE@libuim_expat_la_LIBADD = @EXPAT_LIBS@ -luim
- @EXPAT_TRUE@libuim_expat_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @EXPAT_TRUE@libuim_expat_la_CPPFLAGS = -I$(top_srcdir) @EXPAT_CFLAGS@
- @OPENSSL_TRUE@libuim_openssl_la_SOURCES = openssl.c
--@OPENSSL_TRUE@libuim_openssl_la_LIBADD = @OPENSSL_LIBS@ libuim.la
-+@OPENSSL_TRUE@libuim_openssl_la_LIBADD = @OPENSSL_LIBS@ -luim
- @OPENSSL_TRUE@libuim_openssl_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @OPENSSL_TRUE@libuim_openssl_la_CPPFLAGS = -I$(top_srcdir) @OPENSSL_CPPFLAGS@
- @SQLITE3_TRUE@libuim_sqlite3_la_SOURCES = sqlite3.c
--@SQLITE3_TRUE@libuim_sqlite3_la_LIBADD = @SQLITE3_LIBS@ libuim.la
-+@SQLITE3_TRUE@libuim_sqlite3_la_LIBADD = @SQLITE3_LIBS@ -luim
- @SQLITE3_TRUE@libuim_sqlite3_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @SQLITE3_TRUE@libuim_sqlite3_la_CPPFLAGS = -I$(top_srcdir) @SQLITE3_CFLAGS@
- @FFI_TRUE@libuim_ffi_la_SOURCES = ffi.c
--@FFI_TRUE@libuim_ffi_la_LIBADD = @FFI_LIBS@ libuim.la
-+@FFI_TRUE@libuim_ffi_la_LIBADD = @FFI_LIBS@ -luim
- @FFI_TRUE@libuim_ffi_la_LDFLAGS = -rpath $(uim_plugindir) -avoid-version -module
- @FFI_TRUE@libuim_ffi_la_CPPFLAGS = -I$(top_srcdir) @FFI_CFLAGS@
- @EB_TRUE@lib_eb_static_la_SOURCES = uim-eb.c uim-eb.h
