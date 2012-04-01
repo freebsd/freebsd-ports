@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	dfc
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://projects.gw-computing.net/attachments/download/30/
+MASTER_SITES=	http://projects.gw-computing.net/attachments/download/39/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Display file system space usage using graph and colors
 
 LICENSE=	BSD
+
+USE_GMAKE=	yes
 
 PLIST_FILES=	bin/dfc
 MAN1=		dfc.1
