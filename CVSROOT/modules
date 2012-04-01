@@ -6723,6 +6723,7 @@ java-findbugs                   ports/devel/java-findbugs
 java-getopt                     ports/java/java-getopt
 java-mybatis                    ports/databases/java-mybatis
 java-util-concurrent            ports/devel/java-util-concurrent
+java-zoneinfo                   ports/java/java-zoneinfo
 java2html                       ports/textproc/java2html
 java3d                          ports/java/java3d
 java_jgraph                     ports/java/jgraph
@@ -14107,6 +14108,7 @@ p5-Resources                    ports/devel/p5-Resources
 p5-Return-Value                 ports/devel/p5-Return-Value
 p5-Role-HasMessage              ports/devel/p5-Role-HasMessage
 p5-Role-Identifiable            ports/devel/p5-Role-Identifiable
+p5-Role-Tiny                    ports/devel/p5-Role-Tiny
 p5-Roman                        ports/math/p5-Roman
 p5-Rose-DB                      ports/databases/p5-Rose-DB
 p5-Rose-DB-Object               ports/databases/p5-Rose-DB-Object
@@ -18617,6 +18619,7 @@ p5-rest-google-apps-provisioning  ports/www/p5-REST-Google-Apps-Provisioning
 p5-return-value                 ports/devel/p5-Return-Value
 p5-role-hasmessage              ports/devel/p5-Role-HasMessage
 p5-role-identifiable            ports/devel/p5-Role-Identifiable
+p5-role-tiny                    ports/devel/p5-Role-Tiny
 p5-roman                        ports/math/p5-Roman
 p5-rose-datetime                ports/devel/p5-Rose-DateTime
 p5-rose-db                      ports/databases/p5-Rose-DB
