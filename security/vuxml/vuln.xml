@@ -52,6 +52,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7289214f-7c55-11e1-ab3b-000bcdf0a03b">
+    <topic>libpurple -- Remote DoS via an MSN OIM message that lacks UTF-8 encoding</topic>
+    <affects>
+      <package>
+	<name>libpurple</name>
+	<range><lt>2.10.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT reports:</p>
+	<blockquote cite="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-1178">
+	  <p>The msn_oim_report_to_user function in oim.c in the MSN protocol
+	    plugin in libpurple in Pidgin before 2.10.2 allows remote servers to
+	    cause a denial of service (application crash) via an OIM message
+	    that lacks UTF-8 encoding.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1178</cvename>
+    </references>
+    <dates>
+      <discovery>2012-03-15</discovery>
+      <entry>2012-04-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a81161d2-790f-11e1-ac16-e0cb4e266481">
     <topic>phpMyAdmin -- Path disclosure due to missing verification of file presence</topic>
     <affects>
