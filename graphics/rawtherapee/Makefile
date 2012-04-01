@@ -24,6 +24,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
 
 USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20 pkgconfig
 USE_LDCONFIG=	yes
