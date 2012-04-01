@@ -1,0 +1,22 @@
+lib/libcidr.so
+lib/libcidr.so.0
+bin/cidrcalc
+include/libcidr.h
+%%PORTDOCS%%%%DOCSDIR%%/libcidr-big.html
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.dvi
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.ps
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.rtf
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.txt
+%%PORTDOCS%%%%DOCSDIR%%/codelibrary-html.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.inc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/cidrcalc.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/acl.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/acl.example
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/Makefile
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cidrcalc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/acl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
