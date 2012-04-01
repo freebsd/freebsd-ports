@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	17.0.963.83
+DISTVERSION=	18.0.1025.142
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -19,6 +19,8 @@ COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
 
 LICENSE=	BSD LGPL21 MPL
 LICENSE_COMB=	multi
+
+CFLAGS+=	-Wno-error
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
@@ -76,7 +78,7 @@ GYP_DEFINES+=	use_cups=1 \
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 		GCONF	"Use GConf2 for preferences"			on \
 		PULSEAUDIO	"Enable Pulse Audio support"		off \
-		CLANG	"Build Chromium with Clang"			off \
+		CLANG	"Build Chromium with Clang"			on \
 		GCC46	"Build Chromium with GCC 4.6+"			off \
 		DEBUG	"Compile with debug symbols and verbose output"	off
 
@@ -111,6 +113,10 @@ GYP_DEFINES+=	use_pulseaudio=0
 
 .if ! ${MACHINE_CPU:Msse2}
 GYP_DEFINES+=	disable_sse2=1
+.endif
+
+.if !defined(WITH_GCC46) && !defined(WITH_CLANG)
+IGNORE=	does not compile with base gcc
 .endif
 
 .if defined(WITH_GCC46) && defined(WITH_CLANG)
@@ -173,8 +179,7 @@ post-patch:
 		${WRKSRC}/third_party/WebKit/Source/WebCore/bindings/scripts/IDLParser.pm \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/dom/make_names.pl
 	@${REINPLACE_CMD} -e "s|'flex'|'${LOCALBASE}/bin/flex'|" \
-		${WRKSRC}/third_party/angle/src/build_angle.gyp \
-		${WRKSRC}/third_party/WebKit/Source/WebCore/WebCore.gyp/scripts/action_maketokenizer.py
+		${WRKSRC}/third_party/angle/src/build_angle.gyp
 	@${REINPLACE_CMD} -e 's|gperf --key-positions|${LOCALBASE}/bin/gperf --key-positions|' \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makeprop.pl \
 		${WRKSRC}/third_party/WebKit/Source/WebCore/css/makevalues.pl \

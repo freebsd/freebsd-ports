@@ -1,11 +1,11 @@
---- ppapi/proxy/serialized_structs.h.orig	2011-06-27 23:46:48.860441060 +0300
-+++ ppapi/proxy/serialized_structs.h	2011-06-27 23:46:52.210441968 +0300
-@@ -115,7 +115,7 @@
+--- ppapi/proxy/serialized_structs.h.orig	2012-02-21 10:34:02.000000000 +0200
++++ ppapi/proxy/serialized_structs.h	2012-02-27 18:19:15.000000000 +0200
+@@ -111,7 +111,7 @@
  
  #if defined(OS_WIN)
  typedef HANDLE ImageHandle;
--#elif defined(OS_MACOSX)
-+#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+-#elif defined(OS_MACOSX) || defined(OS_ANDROID)
++#elif defined(OS_MACOSX) || defined(OS_ANDROID) || defined(OS_FREEBSD)
  typedef base::SharedMemoryHandle ImageHandle;
  #else
  // On X Windows this is a SysV shared memory key.
