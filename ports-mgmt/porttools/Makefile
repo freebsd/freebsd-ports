@@ -7,7 +7,7 @@
 
 PORTNAME=	porttools
 PORTVERSION=	0.99
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 
@@ -17,10 +17,6 @@ COMMENT=	Tools for testing and submitting port updates and new ports
 RUN_DEPENDS=	portlint:${PORTSDIR}/ports-mgmt/portlint \
 		cdiff:${PORTSDIR}/textproc/cdiff \
 		sudo:${PORTSDIR}/security/sudo
-
-.if !defined(WITHOUT_NEWFILE)
-RUN_DEPENDS+=	newfile:${PORTSDIR}/devel/newfile
-.endif
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-docs
@@ -39,5 +35,13 @@ MAKE_ENV+=	PORTEPOCH="${PORTEPOCH}"
 
 MAN1=		port.1
 MAN5=		porttools.5
+
+OPTIONS=	NEWFILE "Enable newfile support" on
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_NEWFILE)
+RUN_DEPENDS+=	newfile:${PORTSDIR}/devel/newfile
+.endif
 
 .include <bsd.port.mk>
