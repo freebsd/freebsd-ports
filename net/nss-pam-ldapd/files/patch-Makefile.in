@@ -1,18 +1,19 @@
---- Makefile.in.orig	2010-06-29 23:25:51.000000000 +0400
-+++ Makefile.in	2010-06-29 23:26:53.000000000 +0400
-@@ -759,13 +759,14 @@
+--- Makefile.in.orig	2012-03-02 12:50:47.000000000 -0900
++++ Makefile.in	2012-03-02 13:01:13.000000000 -0900
+@@ -774,6 +774,7 @@
  
  # install a default configuration file if it is not already there
  install-nslcd_conf:
-+	$(INSTALL_DATA) $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH).sample
++	$(INSTALL_DATA) $(srcdir)/nslcd.conf $(DESTDIR)/$(NSLCD_CONF_PATH).sample
  	@if [ -f $(DESTDIR)$(NSLCD_CONF_PATH) ]; then \
  	  echo "$(DESTDIR)$(NSLCD_CONF_PATH) already exists, install will not overwrite"; \
  	else \
- 	  $(INSTALL_DATA) $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH) || true; \
+@@ -781,7 +782,7 @@
+ 	  $(INSTALL_DATA) $(srcdir)/nslcd.conf $(DESTDIR)$(NSLCD_CONF_PATH); \
  	fi
  uninstall-nslcd_conf:
 -	-rm -f $(DESTDIR)$(NSLCD_CONF_PATH)
 +	-rm -f $(DESTDIR)$(NSLCD_CONF_PATH).sample
  
- # target for easily creating a Debian package
- # the find is an ugly hack to fix a bug if being built on an nfs filesystem
+ # fix permissions before distributing
+ dist-hook:
