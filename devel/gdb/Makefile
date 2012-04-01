@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -104,9 +104,6 @@ do-install:
 .if defined(WITH_PYTHON)
 	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
 	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
-.endif
-.if defined(WITH_GDB_LINK)
-	${LN} -s ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdb
 .endif
 
 .include <bsd.port.post.mk>
