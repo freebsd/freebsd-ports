@@ -1,5 +1,5 @@
---- ./misc/Makefile.in.orig	2011-09-18 23:14:56.000000000 +0200
-+++ ./misc/Makefile.in	2012-02-16 00:35:12.000000000 +0100
+--- ./misc/Makefile.in.orig	2012-03-27 06:36:20.000000000 +0200
++++ ./misc/Makefile.in	2012-04-01 17:17:10.000000000 +0200
 @@ -28,15 +28,15 @@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
@@ -21,18 +21,36 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -475,34 +475,9 @@
+@@ -123,14 +123,14 @@
+ 
+ mke2fs.conf: $(srcdir)/mke2fs.conf.in
+ 	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
+-		cp $(srcdir)/mke2fs.conf.custom.in mke2fs.conf; \
++		cp $(srcdir)/mke2fs.conf.custom.in mke2fs.conf.dist; \
+ 	else \
+-		cp $(srcdir)/mke2fs.conf.in mke2fs.conf; \
++		cp $(srcdir)/mke2fs.conf.in mke2fs.conf.dist; \
+ 	fi
+ 
+ default_profile.c: mke2fs.conf $(srcdir)/profile-to-c.awk
+ 	$(E) "	PROFILE_TO_C mke2fs.conf"
+-	$(Q) $(AWK) -f $(srcdir)/profile-to-c.awk < mke2fs.conf \
++	$(Q) $(AWK) -f $(srcdir)/profile-to-c.awk < mke2fs.conf.dist \
+ 		>  default_profile.c
+ profile.o:
+ 	$(E) "	CC $<"
+@@ -482,34 +482,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done
 -	$(Q) if test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
 -		if cmp -s $(DESTDIR)$(root_sysconfdir)/mke2fs.conf \
--			$(srcdir)/mke2fs.conf; then \
+-			mke2fs.conf; then \
 -			true; \
 -		else \
 -			if grep -q ext4dev $(DESTDIR)$(root_sysconfdir)/mke2fs.conf ; then \
 -				echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf.e2fsprogs-new"; \
--				$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
+-				$(INSTALL_DATA) mke2fs.conf \
 -					$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-new; \
 -				echo "Warning: installing mke2fs.conf in $(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-new"; \
 -				echo "Check to see if you need to update your $(root_sysconfdir)/mke2fs.conf"; \
@@ -40,7 +58,7 @@
 -				echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
 -				mv $(DESTDIR)$(root_sysconfdir)/mke2fs.conf \
 -				   $(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-old; \
--				$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
+-				$(INSTALL_DATA) mke2fs.conf \
 -					$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
 -				echo "Your mke2fs.conf is too old.  Backing up old version in"; \
 -				echo "$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.e2fsprogs-old.  Please check to see"; \
@@ -50,10 +68,11 @@
 -		fi; \
 -	else \
 -		echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
-+	$(Q) echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
- 		$(INSTALL_DATA) $(srcdir)/mke2fs.conf \
+-		$(INSTALL_DATA) mke2fs.conf \
 -			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf; \
 -	fi
++	$(Q) echo "	INSTALL_DATA $(root_sysconfdir)/mke2fs.conf"; \
++		$(INSTALL_DATA) mke2fs.conf.dist \
 +			$(DESTDIR)$(root_sysconfdir)/mke2fs.conf.dist
  
  install-strip: install

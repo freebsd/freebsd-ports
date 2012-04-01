@@ -1,5 +1,5 @@
---- ./e2fsck/unix.c.orig	2011-11-14 16:55:54.000000000 +0100
-+++ ./e2fsck/unix.c	2012-02-16 00:35:12.000000000 +0100
+--- ./e2fsck/unix.c.orig	2012-03-23 14:15:37.000000000 +0100
++++ ./e2fsck/unix.c	2012-04-01 17:15:48.000000000 +0200
 @@ -9,8 +9,6 @@
   * %End-Header%
   */
@@ -9,7 +9,7 @@
  #include "config.h"
  #include <stdio.h>
  #ifdef HAVE_STDLIB_H
-@@ -543,6 +541,24 @@
+@@ -560,6 +558,24 @@
  	return 0;
  }
  
@@ -34,7 +34,7 @@
  #define PATH_SET "PATH=/sbin"
  
  /*
-@@ -575,6 +591,17 @@
+@@ -592,6 +608,17 @@
  	ctx->progress = e2fsck_update_progress;
  }
  
@@ -52,7 +52,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -932,6 +959,8 @@
+@@ -960,6 +987,8 @@
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
