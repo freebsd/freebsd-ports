@@ -6,13 +6,12 @@
 #
 
 PORTNAME=		nss-pam-ldapd
-PORTVERSION=		0.7.13
-PORTREVISION=		2
+PORTVERSION=		0.8.6
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/
 
-MAINTAINER=		melifaro@ipfw.ru
+MAINTAINER=		rflynn@acsalaska.net
 COMMENT=		Advanced fork of nss_ldap
 
 LICENSE=		LGPL21 LGPL3
@@ -22,6 +21,8 @@ GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
+PAM_LDAP_SHMAJOR=	1
+NSS_LDAP_SHMAJOR=	1
 
 NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
@@ -32,11 +33,7 @@ OPTIONS=		SASL		"Enable SASL" off \
 USERS=			nslcd
 GROUPS=			nslcd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-EXTRA_PATCHES+=		${FILESDIR}/rtld_nss__nslcd.c
-.endif
+.include <bsd.port.options.mk>
 
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
@@ -44,7 +41,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-nslcd-pidfile=${NSLCD_PIDFILE} \
 			--with-nslcd-socket=${NSLCD_SOCKET} \
 			--with-ldap-lib=openldap --disable-kerberos \
-			--with-nss-ldap-soname=nss_ldap.so.1
+			--with-nss-ldap-soname=nss_ldap.so.${NSS_LDAP_SHMAJOR}
 
 CONFIG_FILE=		"nslcd.conf"
 CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
@@ -58,7 +55,9 @@ CONFIGURE_ARGS+=	--disable-sasl
 .endif
 
 .if defined(WITH_PAM)
-CONFIGURE_ARGS+=	--enable-pam
+CONFIGURE_ARGS+=	--enable-pam \
+			--with-pam-seclib-dir=${PREFIX}/lib \
+			--with-pam-ldap-soname=pam_ldap.so.${PAM_LDAP_SHMAJOR}
 MAN8+=			pam_ldap.8
 CONFLICTS+=		pam_ldap-1.*
 PLIST_SUB+=		PAM=""
@@ -88,12 +87,19 @@ MAN8+=			nslcd.8
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
-	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/' ${WRKSRC}/nss/Makefile.in
 
 post-configure:
 	${REINPLACE_CMD} -e 's/^\(CFLAGS.*\) \-O2 \(.*\)$$/\1 -O0 \2/' ${WRKSRC}/nss/Makefile
 
 post-install:
+.if !defined(WITHOUT_NSS)
+	@cd ${PREFIX}/lib && ${LN} -fs nss_ldap.so.${NSS_LDAP_SHMAJOR} \
+		nss_ldap.so
+.endif
+.if !defined(WITHOUT_PAM)
+	@cd ${PREFIX}/lib && ${LN} -fs pam_ldap.so.${PAM_LDAP_SHMAJOR} \
+		pam_ldap.so
+.endif
 	@${ECHO_MSG}
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
@@ -108,4 +114,4 @@ post-install:
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

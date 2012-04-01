@@ -10,15 +10,31 @@
 #
 # nslcd_enable="YES"
 #
-
-nslcd_enable=${nslcd_enable-"NO"}
+# Optional:
+# nslcd_debug="NO" - start nslcd in debugging mode (does not daemonize).
+#
 
 . /etc/rc.subr
 
 name=nslcd
 rcvar=nslcd_enable
 
+load_rc_config ${name}
+
+: ${nslcd_enable="NO"}
+: ${nslcd_debug="NO"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+start_precmd="nslcd_prestart"
 start_postcmd="nslcd_poststart"
+
+nslcd_prestart () {
+	if checkyesno nslcd_debug
+	then
+		command_args="-d"
+	fi
+}
 
 nslcd_poststart () {
        until $(%%PREFIX%%/sbin/${name} -c); do
@@ -27,8 +43,5 @@ nslcd_poststart () {
        done
 }
 
-command="%%PREFIX%%/sbin/${name}"
-pidfile="/var/run/${name}.pid"
 
-load_rc_config ${name}
 run_rc_command "$1"

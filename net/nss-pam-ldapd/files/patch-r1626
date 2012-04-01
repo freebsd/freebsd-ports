@@ -1,0 +1,50 @@
+Modified: compat/ldap_compat.h
+==============================================================================
+--- compat/ldap_compat.h	Wed Feb 29 22:44:31 2012	(r1625)
++++ compat/ldap_compat.h	Mon Mar  5 22:53:54 2012	(r1626)
+@@ -62,4 +62,12 @@
+ #define LDAP_SASL_QUIET 2U
+ #endif /* not LDAP_SASL_QUIET */
+ 
++/* on some systems LDAP_OPT_DIAGNOSTIC_MESSAGE isn't there but
++   LDAP_OPT_ERROR_STRING is */
++#ifndef LDAP_OPT_DIAGNOSTIC_MESSAGE
++#ifdef LDAP_OPT_ERROR_STRING
++#define LDAP_OPT_DIAGNOSTIC_MESSAGE LDAP_OPT_ERROR_STRING
++#endif /* LDAP_OPT_ERROR_STRING */
++#endif /* not LDAP_OPT_DIAGNOSTIC_MESSAGE */
++
+ #endif /* COMPAT__LDAP_COMPAT_H */
+
+Modified: nslcd/myldap.c
+==============================================================================
+--- nslcd/myldap.c	Wed Feb 29 22:44:31 2012	(r1625)
++++ nslcd/myldap.c	Mon Mar  5 22:53:54 2012	(r1626)
+@@ -378,6 +378,7 @@
+ static int do_bind(LDAP *ld,const char *binddn,const char *bindpw,const char *uri)
+ {
+   int rc;
++  char *msg=NULL;
+ #ifdef HAVE_LDAP_SASL_INTERACTIVE_BIND_S
+ #ifndef HAVE_SASL_INTERACT_T
+   struct berval cred;
+@@ -392,9 +393,16 @@
+     rc=ldap_start_tls_s(ld,NULL,NULL);
+     if (rc!=LDAP_SUCCESS)
+     {
+-      log_log(LOG_WARNING,"ldap_start_tls_s() failed: %s%s%s (uri=\"%s\")",
+-                          ldap_err2string(rc),(errno==0)?"":": ",
+-                          (errno==0)?"":strerror(errno),uri);
++#ifdef LDAP_OPT_DIAGNOSTIC_MESSAGE
++      ldap_get_option(ld,LDAP_OPT_DIAGNOSTIC_MESSAGE,&msg);
++#endif /* LDAP_OPT_DIAGNOSTIC_MESSAGE */
++      log_log(LOG_WARNING,"ldap_start_tls_s() failed: %s%s%s%s%s (uri=\"%s\")",
++                          ldap_err2string(rc),
++                          (msg==NULL)?"":": ",(msg==NULL)?"":msg,
++                          (errno==0)?"":": ",(errno==0)?"":strerror(errno),
++                          uri);
++      if (msg)
++        ldap_memfree(msg);
+       return rc;
+     }
+   }
