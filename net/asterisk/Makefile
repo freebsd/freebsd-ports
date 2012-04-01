@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.10.1
+PORTVERSION=	1.8.11.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -61,9 +61,12 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		CURL		"Enable CURL support" on \
 		SPANDSP		"Enable Spandsp faxing support" off \
 		EXCHANGE	"Enable Exchange calendar support" off \
-		NEWG711		"Enable new G711 Codec" off	\
-		SRTP		"Enable SecureRTP support" off	\
-		LUA		"Enable LUA extensions support" off
+		NEWG711		"Enable new G711 Codec" off \
+		SRTP		"Enable SecureRTP support" off \
+		LUA		"Enable LUA extensions support" off \
+		LDAP		"Enable Ldap support" off
+
+PORTSCOUT=	limit:^1\.8\.
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -267,6 +270,15 @@ PLIST_SUB+=	WITH_LUA=""
 .else
 CONFIGURE_ARGS+=	--without-lua
 PLIST_SUB+=	WITH_LUA="@comment "
+.endif
+
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--with-ldap
+USE_OPENLDAP=	yes
+PLIST_SUB+=	WITH_LDAP=""
+.else
+CONFIGURE_ARGS+=	--without-ldap
+PLIST_SUB+=	WITH_LDAP="@comment "
 .endif
 
 post-extract:
