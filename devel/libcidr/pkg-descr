@@ -1,0 +1,13 @@
+libcidr is a library that provides a number of functions to input, output,
+manipulate, compare, multilate, and otherwise play with, IP addresses and
+netblocks.
+
+It supports both IPv4 and IPv6, and provides sufficiently diverse functions
+to be useful for everything from log processes to network client and server
+programs. It parses addresses in a wide variety of common formats.  It also
+provides a plethora of options for formatting them on the output as well.
+
+It can compare them in various ways and give you some useful statistics
+about the netblocks in which tey reside.
+
+WWW: http://www.over-yonder.net/~fullermd/projects/libcidr
