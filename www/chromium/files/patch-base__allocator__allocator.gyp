@@ -1,6 +1,12 @@
---- base/allocator/allocator.gyp.orig	2012-01-05 10:01:52.000000000 +0200
-+++ base/allocator/allocator.gyp	2012-01-09 22:00:51.000000000 +0200
-@@ -7,326 +7,198 @@
+--- base/allocator/allocator.gyp.orig	2012-03-28 00:39:56.000000000 +0300
++++ base/allocator/allocator.gyp	2012-03-28 00:41:11.709398120 +0300
+@@ -1,4 +1,4 @@
+-# Copyright (c) 2012 The Chromium Authors. All rights reserved.
++# Copyright (c) 2009 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+ 
+@@ -7,331 +7,203 @@
      'jemalloc_dir': '../../third_party/jemalloc/chromium',
      'tcmalloc_dir': '../../third_party/tcmalloc/chromium',
    },
@@ -8,6 +14,11 @@
 -    {
 -      'target_name': 'allocator',
 -      'type': 'static_library',
+-      # Make sure the allocation library is optimized to
+-      # the hilt in official builds.
+-      'variables': {
+-        'optimize': 'max',
+-      },
 -      'include_dirs': [
 -        '.',
 -        '<(tcmalloc_dir)/src/base',
@@ -301,6 +312,11 @@
 +        {
 +          'target_name': 'allocator',
 +          'type': 'static_library',
++          # Make sure the allocation library is optimized to
++          # the hilt in official builds.
++          'variables': {
++            'optimize': 'max',
++          },
            'include_dirs': [
 -            '<(tcmalloc_dir)/src/windows',
 -          ],
@@ -498,7 +514,7 @@
              # jemalloc files
              '<(jemalloc_dir)/jemalloc.c',
              '<(jemalloc_dir)/jemalloc.h',
-@@ -334,85 +206,236 @@
+@@ -339,87 +211,238 @@
              '<(jemalloc_dir)/qr.h',
              '<(jemalloc_dir)/rb.h',
  
@@ -529,14 +545,18 @@
 -          ]},
 -        }],
 -        [ 'linux_use_debugallocation==1', {
-+          # sources! means that these are not compiled directly.
-           'sources!': [
+-          'sources!': [
 -            # debugallocation.cc #includes tcmalloc.cc,
 -            # so only one of them should be used.
 -            '<(tcmalloc_dir)/src/tcmalloc.cc',
 -          ],
--          'cflags': [
--            '-DTCMALLOC_FOR_DEBUGALLOCATION',
+-          'defines': [
+-            'TCMALLOC_FOR_DEBUGALLOCATION',
+-          ],
+-        }, { # linux_use_debugallocation != 1
++          # sources! means that these are not compiled directly.
+           'sources!': [
+-            '<(tcmalloc_dir)/src/debugallocation.cc',
 +            # Included by allocator_shim.cc for maximal inlining.
 +            'generic_allocators.cc',
 +            'win_allocator.cc',
@@ -598,18 +618,17 @@
 +            '<(tcmalloc_dir)/src/windows/preamble_patcher.h',
 +            '<(tcmalloc_dir)/src/windows/preamble_patcher_with_stub.cc',
            ],
--        }, { # linux_use_debugallocation != 1
--          'sources!': [
--            '<(tcmalloc_dir)/src/debugallocation.cc',
-+          'dependencies': [
-+            '../third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
-           ],
 -        }],
 -        [ 'linux_keep_shadow_stacks==1', {
 -          'sources': [
 -            '<(tcmalloc_dir)/src/linux_shadow_stacks.cc',
 -            '<(tcmalloc_dir)/src/linux_shadow_stacks.h',
 -            '<(tcmalloc_dir)/src/stacktrace_shadow-inl.h',
++          'dependencies': [
++            '../third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
+           ],
+-          'cflags': [
+-            '-finstrument-functions',
 +          'msvs_settings': {
 +            # TODO(sgk):  merge this with build/common.gypi settings
 +            'VCLibrarianTool': {
@@ -718,8 +737,8 @@
 +                # so only one of them should be used.
 +                '<(tcmalloc_dir)/src/tcmalloc.cc',
 +              ],
-+              'cflags': [
-+                '-DTCMALLOC_FOR_DEBUGALLOCATION',
++              'defines': [
++                'TCMALLOC_FOR_DEBUGALLOCATION',
 +              ],
 +            }, { # linux_use_debugallocation != 1
 +              'sources!': [
@@ -734,7 +753,9 @@
 +              ],
 +              'cflags': [
 +                '-finstrument-functions',
-+                '-DKEEP_SHADOW_STACKS',
++              ],
++              'defines': [
++                'KEEP_SHADOW_STACKS',
 +              ],
 +            }],
 +            [ 'linux_use_heapchecker==0', {
@@ -744,14 +765,13 @@
 +                '<(tcmalloc_dir)/src/heap-checker.cc',
 +              ],
 +              # Disable the heap checker in tcmalloc.
-+              'cflags': [
-+                '-DNO_HEAP_CHECK',
++              'defines': [
++                'NO_HEAP_CHECK',
 +              ],
 +            }],
            ],
--          'cflags': [
--            '-finstrument-functions',
--            '-DKEEP_SHADOW_STACKS',
+-          'defines': [
+-            'KEEP_SHADOW_STACKS',
 +        },
 +        {
 +          'target_name': 'allocator_unittests',
@@ -773,8 +793,8 @@
 +            '../..',
            ],
 -          # Disable the heap checker in tcmalloc.
--          'cflags': [
--            '-DNO_HEAP_CHECK',
+-          'defines': [
+-            'NO_HEAP_CHECK',
 +          'sources': [
 +            'allocator_unittests.cc',
            ],

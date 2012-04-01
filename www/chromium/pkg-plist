@@ -35,6 +35,7 @@ bin/chrome
 %%DATADIR%%/locales/lv.pak
 %%DATADIR%%/locales/ml.pak
 %%DATADIR%%/locales/mr.pak
+%%DATADIR%%/locales/ms.pak
 %%DATADIR%%/locales/nb.pak
 %%DATADIR%%/locales/nl.pak
 %%DATADIR%%/locales/pl.pak
@@ -87,6 +88,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/disclosureTriangleSmallRightDownBlack.png
 %%DATADIR%%/resources/inspector/Images/disclosureTriangleSmallRightDownWhite.png
 %%DATADIR%%/resources/inspector/Images/disclosureTriangleSmallRightWhite.png
+%%DATADIR%%/resources/inspector/Images/domain.png
 %%DATADIR%%/resources/inspector/Images/errorIcon.png
 %%DATADIR%%/resources/inspector/Images/errorMediumIcon.png
 %%DATADIR%%/resources/inspector/Images/errorRedDot.png
@@ -222,6 +224,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/profilesPanel.css
 %%DATADIR%%/resources/inspector/auditsPanel.css
 %%DATADIR%%/resources/inspector/timelinePanel.css
+%%DATADIR%%/resources/inspector/tabbedPane.css
+%%DATADIR%%/resources/inspector/filteredItemSelectionDialog.css
 %%DATADIR%%/resources/inspector/scriptsPanel.css
 %%DATADIR%%/resources/inspector/dataGrid.css
 %%DATADIR%%/resources/inspector/inspectorCommon.css
