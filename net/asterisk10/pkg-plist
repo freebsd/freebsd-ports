@@ -473,7 +473,7 @@ lib/asterisk/modules/res_ael_share.so
 lib/asterisk/modules/res_clialiases.so
 %%WITH_CURL%%lib/asterisk/modules/res_curl.so
 %%WITH_CURL%%lib/asterisk/modules/res_config_curl.so
-%%WITH_H323%%lib/asterisk/modules/res_config_ldap.so
+%%WITH_LDAP%%lib/asterisk/modules/res_config_ldap.so
 %%WITH_SQLITE%%lib/asterisk/modules/res_config_sqlite.so
 lib/asterisk/modules/res_format_attr_celt.so
 lib/asterisk/modules/res_format_attr_silk.so
