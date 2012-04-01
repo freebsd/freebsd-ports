@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 PORTREVISION?=	0
 CATEGORIES+=	devel
-MASTER_SITES=	${MASTER_SITE_APACHE}:main \
-		http://svnbook.red-bean.com/en/1.7/:book
+MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
+		${MASTER_SITE_LOCAL:S/$/:book/}
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion17
-MASTER_SITE_SUBDIR=subversion/:main
+MASTER_SITE_SUBDIR=	subversion/:main \
+			lev/:book
 
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
@@ -74,11 +75,11 @@ PLIST_SUB+=	MOD_DAV_SVN=""
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
 SVNGROUP?=	www
 SVNUSER?=	www
-#.if defined(WITH_MOD_DONTDOTHAT)
-#PLIST_SUB+=	MOD_DONTDOTHAT=""
-#.else
+.if defined(WITH_MOD_DONTDOTHAT)
+PLIST_SUB+=	MOD_DONTDOTHAT=""
+.else
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-#.endif
+.endif
 .else
 CONFIGURE_ARGS+=--with-apxs=no
 PLIST_SUB+=	MOD_DAV_SVN="@comment "
@@ -170,6 +171,16 @@ PLIST_SUB+=	KDE_KWALLET="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+pre-everything::
+.if defined(SVN_BUILD_BINDINGS)
+.if defined(WITH_STATIC)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! bindings and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.endif
 
 post-patch:
 .if ${PREFIX} != "/usr"
