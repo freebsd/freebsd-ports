@@ -79,6 +79,7 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%APIDOCS%%share/gtk-doc/html/tumbler/up.png
 %%NLS%%share/locale/ar/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tumbler.mo
@@ -99,10 +100,12 @@ share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 %%NLS%%share/locale/ja/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/tumbler.mo
