@@ -353,6 +353,8 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/po/po-update.sh
 %%DATADIR%%/server-side/mod_dontdothat/README
 %%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.c
+%%MOD_DONTDOTHAT%%%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.la
+%%MOD_DONTDOTHAT%%%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.slo
 %%DATADIR%%/server-side/fsfs-reshard.py
 %%DATADIR%%/server-side/svn-backup-dumps.py
 %%DATADIR%%/server-side/svn-populate-node-origins-index

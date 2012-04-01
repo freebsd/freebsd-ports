@@ -43,6 +43,8 @@ SVNFSTYPE?=	fsfs
 
 SUB_FILES=	pkg-install \
 		pkg-deinstall
+		
+BOOK_VERSION=	4259
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -73,8 +75,8 @@ SUB_LIST+=	SVNSERVE_BIN_EXT=""
 .endif
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
-BOOK_HTML=	svn-book-html.tar.bz2
-BOOK_PDF=	svn-book.pdf
+BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
+BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf.bz2
 DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
 PLIST_SUB+=	BOOK=""
 .else
@@ -91,6 +93,14 @@ PLIST_SUB+=	ASVN="@comment "
 SCRIPTS=
 
 SCRIPTS_DATA=
+
+.ifdef (WITH_STATIC)
+USE_GETTEXT=		build
+BDB_BUILD_DEPENDS=	yes
+OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/lib!:C!(\.[0-9]+)?:!.a:!}
+BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
+LIB_DEPENDS=
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -111,12 +121,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_MOD_DAV_SVN)
-.if defined(WITH_STATIC)
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
@@ -133,12 +137,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_SVNAUTHZ_VALIDATE)
-.if defined(WITH_STATIC)
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! svnauthz-validate and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
 	@${ECHO_MSG} "svnauthz-validate enabled."
 	@${ECHO_MSG} ""
 .endif
@@ -169,6 +167,30 @@ pre-everything::
 #	@${ECHO_MSG} ""
 #.endif
 .if defined(WITH_STATIC)
+.if defined(WITH_MOD_DAV_SVN)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.if defined(WITH_SVNAUTHZ_VALIDATE)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! svnauthz_validate and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.if defined(WITH_GNOME_KEYRING)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! Gnome Keyring and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.if defined(WITH_KDE_WALLET)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! KDE Wallet and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
 	@${ECHO_MSG} "Static binaries will be built."
 .endif
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
