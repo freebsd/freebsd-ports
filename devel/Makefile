@@ -801,7 +801,6 @@
     SUBDIR += lexi
     SUBDIR += lfc
     SUBDIR += lfcxml
-    SUBDIR += libcidr
     SUBDIR += libIDL
     SUBDIR += libPropList
     SUBDIR += libXGP
@@ -827,6 +826,7 @@
     SUBDIR += libcfg
     SUBDIR += libcheck
     SUBDIR += libchipcard
+    SUBDIR += libcidr
     SUBDIR += libcii
     SUBDIR += libclaw
     SUBDIR += libcli
