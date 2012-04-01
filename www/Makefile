@@ -1037,6 +1037,7 @@
     SUBDIR += p5-Mozilla-CA
     SUBDIR += p5-Net-Akismet
     SUBDIR += p5-Net-Amazon-AWIS
+    SUBDIR += p5-Net-Async-FastCGI
     SUBDIR += p5-Net-FastCGI
     SUBDIR += p5-Net-FireEagle
     SUBDIR += p5-Net-Flickr-API
