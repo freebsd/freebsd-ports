@@ -1,0 +1,22 @@
+--- ./Makefile.orig	2012-03-31 16:22:26.000000000 +0200
++++ ./Makefile	2012-04-01 10:18:51.224657259 +0200
+@@ -1,5 +1,5 @@
+ CC	?= gcc
+-CFLAGS = -O2 -std=c89
++CFLAGS ?= -O2 -std=c89
+ LDFLAGS +=
+ CFDEBUG = -g3 -pedantic -Wall -Wunused-parameter -Wlong-long\
+ 		  -Wsign-conversion -Wconversion -Wimplicit-function-declaration
+@@ -18,10 +18,10 @@
+ 	${CC} ${LDFLAGS} -o ${EXEC} ${OBJS}
+ 
+ install-main: dfc
+-	install -Dm755 dfc ${DESTDIR}${BINDIR}/dfc
++	install -m755 dfc ${DESTDIR}${BINDIR}/dfc
+ 
+ install-data: dfc.1
+-	install -Dm644 dfc.1 ${DESTDIR}${MANDIR}/man1/dfc.1
++	install -m644 dfc.1 ${DESTDIR}${MANDIR}/man1/dfc.1
+ 
+ install: all install-main install-data
+ 

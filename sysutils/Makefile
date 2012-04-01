@@ -160,6 +160,7 @@
     SUBDIR += devcpu
     SUBDIR += devcpu-data
     SUBDIR += devstat
+    SUBDIR += dfc
     SUBDIR += di
     SUBDIR += dim
     SUBDIR += dircomp
