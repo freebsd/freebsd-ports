@@ -32,13 +32,13 @@ CONFIGURE_ARGS+=	--with-gtk2 --enable-dict
 UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-uim_Makefile.in \
-		${PATCHDIR}/extra-patch-helper_Makefile.in
+		${PATCHDIR}/extra-patch-gtk2_dict_Makefile.in
 
 do-build:
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy.la)
 	(cd ${WRKSRC}/uim && ${GMAKE} libuim-anthy-utf8.la)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/helper && ${GMAKE} uim-dict-gtk)
+	(cd ${WRKSRC}/gtk2/dict && ${GMAKE} uim-dict-gtk)
 .endif
 
 do-install:
@@ -46,7 +46,7 @@ do-install:
 	${GMAKE} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES && \
 	${GMAKE} uim_plugin_LTLIBRARIES=libuim-anthy-utf8.la install-uim_pluginLTLIBRARIES)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/helper && ${GMAKE} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
+	(cd ${WRKSRC}/gtk2/dict && ${GMAKE} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
 .endif
 
 post-install:

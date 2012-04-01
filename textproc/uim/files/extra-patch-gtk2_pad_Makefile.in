@@ -1,0 +1,24 @@
+--- gtk2/pad/Makefile.in.orig	2012-04-01 03:20:14.000000000 +0900
++++ gtk2/pad/Makefile.in	2012-04-01 03:21:13.000000000 +0900
+@@ -63,9 +63,7 @@
+ @GTK2_TRUE@am_uim_input_pad_ja_OBJECTS =  \
+ @GTK2_TRUE@	uim_input_pad_ja-ja.$(OBJEXT)
+ uim_input_pad_ja_OBJECTS = $(am_uim_input_pad_ja_OBJECTS)
+-@GTK2_TRUE@uim_input_pad_ja_DEPENDENCIES =  \
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim.la
++@GTK2_TRUE@uim_input_pad_ja_DEPENDENCIES = 
+ uim_input_pad_ja_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_input_pad_ja_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -353,8 +351,8 @@
+ top_srcdir = @top_srcdir@
+ uim_pixmapsdir = @uim_pixmapsdir@
+ @GTK2_TRUE@uim_input_pad_ja_SOURCES = ja.c
+-@GTK2_TRUE@uim_input_pad_ja_LDADD = @GTK2_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-@GTK2_TRUE@			    $(top_builddir)/uim/libuim.la
++@GTK2_TRUE@uim_input_pad_ja_LDADD = @GTK2_LIBS@ -luim-scm \
++@GTK2_TRUE@			    -luim
+ 
+ @GTK2_TRUE@uim_input_pad_ja_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ @GTK2_TRUE@uim_input_pad_ja_CFLAGS = @GTK2_CFLAGS@

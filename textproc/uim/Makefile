@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8.0
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -86,19 +86,23 @@ post-patch:
 
 do-build:
 .if !defined(UIM_SLAVE)
-.for d in replace sigscheme uim scm xim po fep emacs pixmaps
+.for d in replace sigscheme uim scm xim po fep emacs pixmaps tables
 	cd ${WRKSRC}/${d} && ${GMAKE}
 .endfor
-	cd ${WRKSRC}/helper && ${GMAKE}
+.if !defined(WITHOUT_X11)
+	cd ${WRKSRC}/gtk2/candwin && ${GMAKE}
+.endif
 .endif
 
 do-install:
 .if !defined(UIM_SLAVE)
 	cd ${WRKSRC} && ${GMAKE} install-data-am
-.for d in sigscheme uim scm xim po fep emacs pixmaps
+.for d in sigscheme uim scm xim po fep emacs pixmaps tables
 	cd ${WRKSRC}/${d} && ${GMAKE} install
 .endfor
-	cd ${WRKSRC}/helper && ${GMAKE} install-libexecPROGRAMS
+.if !defined(WITHOUT_X11)
+	cd ${WRKSRC}/gtk2/candwin && ${GMAKE} install
+.endif
 .endif
 
 .if !defined(UIM_SLAVE)

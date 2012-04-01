@@ -21,17 +21,17 @@ CONFIGURE_ARGS=	--with-gtk2 --enable-gnome-applet
 
 UIM_SLAVE=	yes
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-helper_Makefile.in
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk2_toolbar_Makefile.in
 
 .if defined(WITHOUT_X11)
 IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/helper && ${GMAKE})
+	(cd ${WRKSRC}/gtk2/toolbar && ${GMAKE})
 
 do-install:
-	(cd ${WRKSRC}/helper && \
-	${GMAKE} am__EXEEXT_3="" install-serverDATA install-libexecPROGRAMS)
+	(cd ${WRKSRC}/gtk2/toolbar && \
+	${GMAKE} install-serverDATA install-libexecPROGRAMS)
 
 .include "${MASTERDIR}/Makefile"

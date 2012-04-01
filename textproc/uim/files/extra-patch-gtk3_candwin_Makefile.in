@@ -1,7 +1,7 @@
---- gtk3/candwin/Makefile.in.orig	2011-08-06 17:58:24.000000000 +0900
-+++ gtk3/candwin/Makefile.in	2011-08-06 17:58:27.000000000 +0900
-@@ -67,9 +67,6 @@
- @GTK3_TRUE@	uim_candwin_gtk3-candwin-gtk.$(OBJEXT) \
+--- gtk3/candwin/Makefile.in.orig	2012-03-30 22:02:18.000000000 +0900
++++ gtk3/candwin/Makefile.in	2012-04-01 04:53:52.000000000 +0900
+@@ -68,9 +68,6 @@
+ @GTK3_TRUE@	uim_candwin_gtk3-gtk.$(OBJEXT) \
  @GTK3_TRUE@	uim_candwin_gtk3-caret-state-indicator.$(OBJEXT)
  uim_candwin_gtk3_OBJECTS = $(am_uim_candwin_gtk3_OBJECTS)
 -@GTK3_TRUE@uim_candwin_gtk3_DEPENDENCIES =  \
@@ -10,8 +10,19 @@
  uim_candwin_gtk3_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_candwin_gtk3_CFLAGS) \
  	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -81,9 +78,6 @@
- @GTK3_TRUE@	uim_candwin_tbl_gtk3-candwin-tbl-gtk.$(OBJEXT) \
+@@ -82,9 +79,7 @@
+ @GTK3_TRUE@	uim_candwin_horizontal_gtk3-caret-state-indicator.$(OBJEXT)
+ uim_candwin_horizontal_gtk3_OBJECTS =  \
+ 	$(am_uim_candwin_horizontal_gtk3_OBJECTS)
+-@GTK3_TRUE@uim_candwin_horizontal_gtk3_DEPENDENCIES =  \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim.la
++@GTK3_TRUE@uim_candwin_horizontal_gtk3_DEPENDENCIES = 
+ uim_candwin_horizontal_gtk3_LINK = $(LIBTOOL) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(uim_candwin_horizontal_gtk3_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+@@ -96,9 +91,6 @@
+ @GTK3_TRUE@	uim_candwin_tbl_gtk3-tbl-gtk.$(OBJEXT) \
  @GTK3_TRUE@	uim_candwin_tbl_gtk3-caret-state-indicator.$(OBJEXT)
  uim_candwin_tbl_gtk3_OBJECTS = $(am_uim_candwin_tbl_gtk3_OBJECTS)
 -@GTK3_TRUE@uim_candwin_tbl_gtk3_DEPENDENCIES =  \
@@ -20,9 +31,9 @@
  uim_candwin_tbl_gtk3_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
  	$(uim_candwin_tbl_gtk3_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
-@@ -373,8 +367,8 @@
- @GTK3_TRUE@			   ../../gtk/caret-state-indicator.c \
- @GTK3_TRUE@			   ../../gtk/caret-state-indicator.h
+@@ -394,8 +386,8 @@
+ @GTK3_TRUE@			   ../../gtk2/immodule/caret-state-indicator.c \
+ @GTK3_TRUE@			   ../../gtk2/immodule/caret-state-indicator.h
  
 -@GTK3_TRUE@uim_candwin_gtk3_LDADD = @GTK3_LIBS@ $(top_builddir)/uim/libuim-scm.la \
 -@GTK3_TRUE@			   $(top_builddir)/uim/libuim.la
@@ -31,9 +42,9 @@
  
  @GTK3_TRUE@uim_candwin_gtk3_CPPFLAGS = -I$(top_srcdir)
  @GTK3_TRUE@uim_candwin_gtk3_CFLAGS = @GTK3_CFLAGS@
-@@ -382,8 +376,8 @@
- @GTK3_TRUE@			   ../../gtk/caret-state-indicator.c \
- @GTK3_TRUE@			   ../../gtk/caret-state-indicator.h
+@@ -403,8 +395,8 @@
+ @GTK3_TRUE@			   ../../gtk2/immodule/caret-state-indicator.c \
+ @GTK3_TRUE@			   ../../gtk2/immodule/caret-state-indicator.h
  
 -@GTK3_TRUE@uim_candwin_tbl_gtk3_LDADD = @GTK3_LIBS@ $(top_builddir)/uim/libuim-scm.la \
 -@GTK3_TRUE@			   $(top_builddir)/uim/libuim.la
@@ -42,3 +53,14 @@
  
  @GTK3_TRUE@uim_candwin_tbl_gtk3_CPPFLAGS = -I$(top_srcdir)
  @GTK3_TRUE@uim_candwin_tbl_gtk3_CFLAGS = @GTK3_CFLAGS@
+@@ -412,8 +404,8 @@
+ @GTK3_TRUE@			   ../../gtk2/immodule/caret-state-indicator.c \
+ @GTK3_TRUE@			   ../../gtk2/immodule/caret-state-indicator.h
+ 
+-@GTK3_TRUE@uim_candwin_horizontal_gtk3_LDADD = @GTK3_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-@GTK3_TRUE@			   $(top_builddir)/uim/libuim.la
++@GTK3_TRUE@uim_candwin_horizontal_gtk3_LDADD = @GTK3_LIBS@ -luim-scm \
++@GTK3_TRUE@			   -luim
+ 
+ @GTK3_TRUE@uim_candwin_horizontal_gtk3_CPPFLAGS = -I$(top_srcdir)
+ @GTK3_TRUE@uim_candwin_horizontal_gtk3_CFLAGS = @GTK3_CFLAGS@

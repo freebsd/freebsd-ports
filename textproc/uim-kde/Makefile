@@ -28,16 +28,16 @@ LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 CXXFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 UIM_SLAVE=	yes
 
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt_Makefile.in
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-qt3_toolbar_Makefile.in
 
 .if defined(WITHOUT_X11)
 IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} uim_panelapplet.la)
+	(cd ${WRKSRC}/qt3/toolbar && ${SETENV} ${MAKE_ENV} ${GMAKE} uim_panelapplet.la)
 
 do-install:
-	(cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${GMAKE} install-appletLTLIBRARIES install-lnkDATA)
+	(cd ${WRKSRC}/qt3/toolbar && ${SETENV} ${MAKE_ENV} ${GMAKE} install-appletLTLIBRARIES install-lnkDATA)
 
 .include "${MASTERDIR}/Makefile"

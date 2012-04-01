@@ -60,6 +60,7 @@ lib/uim/plugin/libuim-socket.so
 libdata/pkgconfig/gcroots.pc
 libdata/pkgconfig/uim.pc
 %%X11%%libexec/uim-candwin-gtk
+%%X11%%libexec/uim-candwin-horizontal-gtk
 %%X11%%libexec/uim-candwin-tbl-gtk
 libexec/uim-helper-server
 share/applications/uim.desktop
@@ -75,15 +76,20 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/ajax-ime-custom.scm
 %%DATADIR%%/ajax-ime-key-custom.scm
 %%DATADIR%%/ajax-ime.scm
+%%DATADIR%%/annotation-custom.scm
 %%DATADIR%%/annotation-dict.scm
 %%DATADIR%%/annotation-eb.scm
 %%DATADIR%%/annotation-filter.scm
+%%DATADIR%%/annotation-osx-dcs.scm
 %%DATADIR%%/annotation.scm
 %%DATADIR%%/anthy-custom.scm
 %%DATADIR%%/anthy-key-custom.scm
 %%DATADIR%%/anthy-utf8-custom.scm
 %%DATADIR%%/anthy-utf8.scm
 %%DATADIR%%/anthy.scm
+%%DATADIR%%/baidu-olime-jp-custom.scm
+%%DATADIR%%/baidu-olime-jp-key-custom.scm
+%%DATADIR%%/baidu-olime-jp.scm
 %%DATADIR%%/byeoru-custom.scm
 %%DATADIR%%/byeoru-key-custom.scm
 %%DATADIR%%/byeoru-symbols.scm
@@ -111,6 +117,9 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/generic-key-custom.scm
 %%DATADIR%%/generic-predict.scm
 %%DATADIR%%/generic.scm
+%%DATADIR%%/google-cgiapi-jp-custom.scm
+%%DATADIR%%/google-cgiapi-jp-key-custom.scm
+%%DATADIR%%/google-cgiapi-jp.scm
 %%DATADIR%%/hangul.scm
 %%DATADIR%%/hangul2.scm
 %%DATADIR%%/hangul3.scm
@@ -132,6 +141,8 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/japanese-kana.scm
 %%DATADIR%%/japanese-kzik.scm
 %%DATADIR%%/japanese.scm
+%%DATADIR%%/json-parser-expanded.scm
+%%DATADIR%%/json.scm
 %%DATADIR%%/key.scm
 %%DATADIR%%/latin.scm
 %%DATADIR%%/lazy-load.scm
@@ -151,6 +162,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/look-custom.scm
 %%DATADIR%%/look.scm
 %%DATADIR%%/m17nlib.scm
+%%DATADIR%%/m17nlib-custom.scm
 %%DATADIR%%/mana-custom.scm
 %%DATADIR%%/mana-key-custom.scm
 %%DATADIR%%/mana.scm
@@ -158,10 +170,13 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/ng-action.scm
 %%DATADIR%%/ng-key.scm
 %%DATADIR%%/openssl.scm
+%%DATADIR%%/packrat.scm
 %%DATADIR%%/pinyin-big5.scm
 %%DATADIR%%/pixmaps/ajax-ime.png
 %%DATADIR%%/pixmaps/ajax-ime.svg
 %%DATADIR%%/pixmaps/anthy.png
+%%DATADIR%%/pixmaps/baidu-olime-jp.png
+%%DATADIR%%/pixmaps/baidu-olime-jp.svg
 %%DATADIR%%/pixmaps/byeoru.png
 %%DATADIR%%/pixmaps/byeoru.svg
 %%DATADIR%%/pixmaps/canna.png
@@ -175,6 +190,8 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/direct_input_dark_background.svg
 %%DATADIR%%/pixmaps/elatin.png
 %%DATADIR%%/pixmaps/elatin.svg
+%%DATADIR%%/pixmaps/google-cgiapi-jp.png
+%%DATADIR%%/pixmaps/google-cgiapi-jp.svg
 %%DATADIR%%/pixmaps/hangul2.png
 %%DATADIR%%/pixmaps/hangul2.svg
 %%DATADIR%%/pixmaps/hangul3.png
@@ -318,6 +335,8 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/zm.svg
 %%DATADIR%%/pixmaps/zm_dark_background.png
 %%DATADIR%%/pixmaps/zm_dark_background.svg
+%%DATADIR%%/tables/wb86.table
+%%DATADIR%%/tables/zm.table
 %%DATADIR%%/plugin.scm
 %%DATADIR%%/predict-custom.scm
 %%DATADIR%%/predict-google-suggest.scm
@@ -391,4 +410,5 @@ share/locale/ko/LC_MESSAGES/uim.mo
 @dirrm %%DATADIR%%/helperdata
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/tables
 @dirrm %%DATADIR%%
