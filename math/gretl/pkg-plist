@@ -194,7 +194,7 @@ lib/gretl-gtk2/vif.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.la
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.2
+lib/libgretl-1.0.so.3
 libdata/pkgconfig/gretl.pc
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%%%DATADIR%%/COPYING
@@ -463,6 +463,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/kmenta.inp
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp
+%%DATADIR%%/scripts/misc/mle-advanced.inp
 %%DATADIR%%/scripts/misc/mrw.inp
 %%DATADIR%%/scripts/misc/mrw_qr.inp
 %%DATADIR%%/scripts/misc/murder_rates.inp
