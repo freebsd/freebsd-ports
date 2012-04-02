@@ -2368,6 +2368,7 @@ devilspie                       ports/x11-wm/devilspie
 devisor                         ports/science/devisor
 devstat                         ports/sysutils/devstat
 devtodo                         ports/devel/devtodo
+dfc                             ports/sysutils/dfc
 dfileserver                     ports/www/dfileserver
 dfm                             ports/x11-fm/dfm
 dfu-programmer                  ports/comms/dfu-programmer
@@ -7846,6 +7847,7 @@ libchamplain                    ports/graphics/libchamplain
 libcheck                        ports/devel/libcheck
 libchipcard                     ports/devel/libchipcard
 libchk                          ports/sysutils/libchk
+libcidr                         ports/devel/libcidr
 libcii                          ports/devel/libcii
 libclaw                         ports/devel/libclaw
 libcli                          ports/devel/libcli
@@ -13407,6 +13409,7 @@ p5-Net-Amazon-Thumbnail         ports/net/p5-Net-Amazon-Thumbnail
 p5-Net-Analysis                 ports/net/p5-Net-Analysis
 p5-Net-Appliance-Phrasebook     ports/net/p5-Net-Appliance-Phrasebook
 p5-Net-Appliance-Session        ports/net/p5-Net-Appliance-Session
+p5-Net-Async-FastCGI            ports/www/p5-Net-Async-FastCGI
 p5-Net-Async-XMPP               ports/net-im/p5-Net-Async-XMPP
 p5-Net-BGP                      ports/net/p5-Net-BGP
 p5-Net-BitTorrent               ports/net-p2p/p5-Net-BitTorrent
@@ -17904,6 +17907,7 @@ p5-net-aolim                    ports/net-im/p5-Net-AOLIM
 p5-net-appliance-phrasebook     ports/net/p5-Net-Appliance-Phrasebook
 p5-net-appliance-session        ports/net/p5-Net-Appliance-Session
 p5-net-arp                      ports/net/p5-Net-ARP
+p5-net-async-fastcgi            ports/www/p5-Net-Async-FastCGI
 p5-net-async-xmpp               ports/net-im/p5-Net-Async-XMPP
 p5-net-bgp                      ports/net/p5-Net-BGP
 p5-net-bittorrent               ports/net-p2p/p5-Net-BitTorrent
