@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
