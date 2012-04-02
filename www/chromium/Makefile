@@ -157,9 +157,9 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build Chromium, you should have around 1 GB of memory"
 .if defined(WITH_DEBUG)
-	@${ECHO_MSG} "and lots of free diskspace (~ 7GB)."
+	@${ECHO_MSG} "and lots of free diskspace (~ 8.5GB)."
 .else
-	@${ECHO_MSG} "and a fair amount of free diskspace (~ 1.5GB)."
+	@${ECHO_MSG} "and a fair amount of free diskspace (~ 1.8GB)."
 .endif
 	@${ECHO_MSG}
 
