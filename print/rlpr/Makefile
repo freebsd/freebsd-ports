@@ -7,12 +7,16 @@
 
 PORTNAME=	rlpr
 PORTVERSION=	2.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print net
-MASTER_SITES=	http://truffula.com/rlpr/
+MASTER_SITES=	http://fossies.org/unix/misc/old/	\
+		http://linuxfocus.org/~guido/	\
+		http://truffula.com/rlpr/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 # rlpr supports gettext/libintl, but does not currently come with ANY
@@ -21,6 +25,7 @@ GNU_CONFIGURE=	yes
 #USE_GETTEXT=	yes
 #CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
 CONFIGURE_ARGS=	--disable-nls --without-catgets
+PLIST_FILES=	bin/rlpr bin/rlpq bin/rlprm bin/rlprd
 
 post-patch:
 	# Replacing references to /etc/rlprrc to ${PREFIX}/etc/rlprrc
@@ -31,7 +36,7 @@ post-patch:
 post-install:
 	# Making the installed binaries suid,\
 		      for the remote lpds to talk to them"
-	${CHMOD} 4511 ${PREFIX}/bin/rlpq ${PREFIX}/bin/rlpr ${PREFIX}/bin/rlprm
+	${CHMOD} 4555 ${PREFIX}/bin/rlpq ${PREFIX}/bin/rlpr ${PREFIX}/bin/rlprm
 
 MAN1=	rlpr.1 rlpq.1 rlprm.1
 MAN5=	rlprrc.5

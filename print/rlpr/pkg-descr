@@ -6,4 +6,5 @@ Gettext  (-lintl) is  not used by  this port  because  it adds  bloat
 without functionality -- there are  no language files supplied with this
 package yet. May be in future versions.
 
+WWW: http://freecode.com/projects/rlpr
 WWW: http://truffula.com/rlpr/
