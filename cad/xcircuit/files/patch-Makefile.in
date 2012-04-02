@@ -28,6 +28,6 @@
  		${xcircuit_OBJECTS} ${xcircuit_LDADD} ${SHLIB_LIB_SPECS} \
 -		${LDFLAGS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS} \
 +		${LDFLAGS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} ${LIBS} \
- 		${EXTRA_LIB_SPECS}
+ 		${LIB_SPECS} ${EXTRA_LIB_SPECS}
  
  xcircexec$(EXEEXT): xcircexec.o

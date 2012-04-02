@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.7.33
+PORTVERSION=	3.7.39
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/ \
@@ -32,6 +32,8 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 MAKE_JOBS_SAFE=	yes
+DESKTOP_ENTRIES="Xcircuit" "${COMMENT}" "${DATADIR}/pixmaps/xcircuit.gif" \
+		"${PORTNAME}" "" "false"
 
 CFLAGS+=	-fPIC
 
