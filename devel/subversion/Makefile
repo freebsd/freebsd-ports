@@ -76,7 +76,7 @@ SUB_LIST+=	SVNSERVE_BIN_EXT=""
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
 BOOK_HTML=	svn-book-html-r${BOOK_VERSION}.tar.bz2
-BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf.bz2
+BOOK_PDF=	svn-book-r${BOOK_VERSION}.pdf
 DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
 PLIST_SUB+=	BOOK=""
 .else
