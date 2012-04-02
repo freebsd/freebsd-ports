@@ -1,0 +1,16 @@
+Support contacting IP-addresses, rather than only the hostnames.
+
+PR:	http://www.freebsd.org/cgi/query-pr.cgi?pr=166583
+Submited by:	Norbert Koch
+--- src/util.c	Thu Oct 28 08:40:13 1999
++++ src/util.c	Mon Apr  2 09:19:43 2012
+@@ -73,6 +73,9 @@
+     sin->sin_port	= port_hbo ? htons(port_hbo) : 0;
+ 
+     if (host != 0) {
++        if (inet_aton (host, &sin->sin_addr) == 1) {
++            return 1;
++        }
+ 
+ 	if ((hp = gethostbyname(host)) == 0) {
+ 	    msg(R_ERROR, 0, "gethostbyname(%s): %s", host, h_strerror());
