@@ -1342,6 +1342,7 @@
     SUBDIR += p5-Cairo-GObject
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Capture-Tiny
+    SUBDIR += p5-Carp
     SUBDIR += p5-Carp-Always
     SUBDIR += p5-Carp-Always-Color
     SUBDIR += p5-Carp-Assert
