@@ -19,9 +19,11 @@ share/locale/be/LC_MESSAGES/transmission-gtk.mo
 share/locale/be@latin/LC_MESSAGES/transmission-gtk.mo
 share/locale/bg/LC_MESSAGES/transmission-gtk.mo
 share/locale/bn/LC_MESSAGES/transmission-gtk.mo
+share/locale/bo/LC_MESSAGES/transmission-gtk.mo
 share/locale/br/LC_MESSAGES/transmission-gtk.mo
 share/locale/bs/LC_MESSAGES/transmission-gtk.mo
 share/locale/ca/LC_MESSAGES/transmission-gtk.mo
+share/locale/ca@valencia/LC_MESSAGES/transmission-gtk.mo
 share/locale/ceb/LC_MESSAGES/transmission-gtk.mo
 share/locale/ckb/LC_MESSAGES/transmission-gtk.mo
 share/locale/cs/LC_MESSAGES/transmission-gtk.mo
@@ -46,7 +48,9 @@ share/locale/gv/LC_MESSAGES/transmission-gtk.mo
 share/locale/he/LC_MESSAGES/transmission-gtk.mo
 share/locale/hi/LC_MESSAGES/transmission-gtk.mo
 share/locale/hr/LC_MESSAGES/transmission-gtk.mo
+share/locale/hy/LC_MESSAGES/transmission-gtk.mo
 share/locale/hu/LC_MESSAGES/transmission-gtk.mo
+share/locale/ia/LC_MESSAGES/transmission-gtk.mo
 share/locale/id/LC_MESSAGES/transmission-gtk.mo
 share/locale/is/LC_MESSAGES/transmission-gtk.mo
 share/locale/it/LC_MESSAGES/transmission-gtk.mo
@@ -86,6 +90,7 @@ share/locale/tr/LC_MESSAGES/transmission-gtk.mo
 share/locale/ug/LC_MESSAGES/transmission-gtk.mo
 share/locale/uk/LC_MESSAGES/transmission-gtk.mo
 share/locale/ur/LC_MESSAGES/transmission-gtk.mo
+share/locale/uz/LC_MESSAGES/transmission-gtk.mo
 share/locale/vi/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_CN/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_TW/LC_MESSAGES/transmission-gtk.mo
@@ -118,6 +123,8 @@ share/pixmaps/transmission.png
 @dirrmtry share/locale/ckb
 @dirrmtry share/locale/ceb/LC_MESSAGES
 @dirrmtry share/locale/ceb
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/ast/LC_MESSAGES
