@@ -17,6 +17,7 @@ DISTFILES=		# none
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		LaTeX format files with large limits
 
+BROKEN=			overwrite files owned by teTex-Base which it already depends on
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
 NO_BUILD=		yes
