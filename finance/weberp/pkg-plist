@@ -346,10 +346,6 @@
 %%WWWDIR%%/build/TruncateAuditTrail.sql
 %%WWWDIR%%/build/check_syntax.sh
 %%WWWDIR%%/build/make_release.sh
-%%WWWDIR%%/companies/weberp408/FormDesigns/GoodsReceived.xml
-%%WWWDIR%%/companies/weberp408/FormDesigns/PickingList.xml
-%%WWWDIR%%/companies/weberp408/FormDesigns/PurchaseOrder.xml
-%%WWWDIR%%/companies/weberp408/logo.jpg
 %%WWWDIR%%/companies/weberpdemo/EDI_Incoming_Orders/Order1.edi
 %%WWWDIR%%/companies/weberpdemo/EDI_Sent/EDI_INV_67.edi
 %%WWWDIR%%/companies/weberpdemo/EDI_Sent/EDI_INV_68.edi
@@ -407,6 +403,7 @@
 %%WWWDIR%%/css/aguapop/images/reports.gif
 %%WWWDIR%%/css/aguapop/images/reports.png
 %%WWWDIR%%/css/aguapop/images/sales.png
+%%WWWDIR%%/css/aguapop/images/security.png
 %%WWWDIR%%/css/aguapop/images/stripe.png
 %%WWWDIR%%/css/aguapop/images/supplier.png
 %%WWWDIR%%/css/aguapop/images/tab_bg.png
@@ -1510,6 +1507,10 @@
 %%WWWDIR%%/sql/mysql/upgrade4.05-4.06.sql
 %%WWWDIR%%/sql/mysql/upgrade4.06-4.07.sql
 %%WWWDIR%%/sql/mysql/upgrade4.07-4.07.1.sql
+%%WWWDIR%%/sql/mysql/upgrade4.07.1-4.07.2.sql
+%%WWWDIR%%/sql/mysql/upgrade4.07.2-4.07.3
+%%WWWDIR%%/sql/mysql/upgrade4.07.2-4.07.3.sql
+%%WWWDIR%%/sql/mysql/upgrade4.07-4.08.sql
 %%WWWDIR%%/sql/mysql/weberp-demo.sql
 %%WWWDIR%%/sql/mysql/weberp-new.sql
 %%WWWDIR%%/xmlrpc/ChangeLog
@@ -1588,15 +1589,6 @@
 %%WWWDIR%%/xmlrpc/test/verify_compat.php
 @dirrm %%WWWDIR%%/api
 @dirrm %%WWWDIR%%/build
-@dirrm %%WWWDIR%%/companies/weberp408/EDI_Incoming_Orders
-@dirrm %%WWWDIR%%/companies/weberp408/EDI_Pending
-@dirrm %%WWWDIR%%/companies/weberp408/EDI_Sent
-@dirrm %%WWWDIR%%/companies/weberp408/FormDesigns
-@dirrm %%WWWDIR%%/companies/weberp408/part_pics
-@dirrm %%WWWDIR%%/companies/weberp408/pdf_append
-@dirrm %%WWWDIR%%/companies/weberp408/reports
-@dirrm %%WWWDIR%%/companies/weberp408/reportwriter
-@dirrm %%WWWDIR%%/companies/weberp408
 @dirrm %%WWWDIR%%/companies/weberpdemo/EDI_Incoming_Orders
 @dirrm %%WWWDIR%%/companies/weberpdemo/EDI_MsgPending
 @dirrm %%WWWDIR%%/companies/weberpdemo/EDI_Sent
