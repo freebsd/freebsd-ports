@@ -3246,7 +3246,6 @@ databases/postgresql-docs|databases/postgresql84-docs|2012-03-04|Split into vers
 databases/postgresql-pltcl|databases/postgresql84-pltcl|2012-03-05|Split into versioned ports
 x11-wm/scrotwm|x11-wm/spectrwm|2012-03-05|Project renamed
 databases/p5-Mysql||2012-03-07|no release in 11 years, doesn't work with mysql 4.0+, unmaintained
-audio/muine||2012-03-08|Removed
 audio/easytag-devel||2012-03-12|Outdated development version
 korean/unfonts-ttf||2012-03-16|Was divided into korean/unfonts-core and korean/unfonts-extra
 net/v6eval||2012-03-17|Has expired: permission to use withdrawn by authors; contact portmgr for details
