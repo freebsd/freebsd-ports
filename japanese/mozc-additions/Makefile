@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	daichi
+PKGNAMEPREFIX?=	ja-
 
 MAINTAINER=	daichi@FreeBSD.org
 COMMENT=	Additional tools and images for Mozc Japanese Input Method

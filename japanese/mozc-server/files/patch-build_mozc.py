@@ -1,6 +1,6 @@
---- build_mozc.py.orig	2012-03-16 10:48:09.087711537 +0900
-+++ build_mozc.py	2012-03-16 10:59:56.396715771 +0900
-@@ -70,7 +70,7 @@
+--- build_mozc.py.orig	2012-04-02 08:17:58.918726529 +0900
++++ build_mozc.py	2012-04-02 08:38:43.715726567 +0900
+@@ -76,7 +76,7 @@
  
  def IsLinux():
    """Returns true if the platform is Linux."""

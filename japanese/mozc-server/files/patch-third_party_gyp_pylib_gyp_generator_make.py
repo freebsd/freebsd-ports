@@ -1,4 +1,4 @@
---- third_party/gyp/pylib/gyp/generator/make.py.orig	2012-03-16 10:48:02.039723886 +0900
+--- third_party/gyp/pylib/gyp/generator/make.py.orig	2012-04-02 08:17:52.711727455 +0900
 +++ third_party/gyp/pylib/gyp/generator/make.py	2012-01-30 15:37:51.791889791 +0900
 @@ -1998,6 +1998,9 @@
      srcdir_prefix = '$(srcdir)/'
