@@ -2,6 +2,7 @@ bin/mogautomount
 bin/mogdbsetup
 bin/mogilefsd
 bin/mogstored
+%%SITE_PERL%%/MogileFS/Checksum.pm
 %%SITE_PERL%%/MogileFS/Class.pm
 %%SITE_PERL%%/MogileFS/Config.pm
 %%SITE_PERL%%/MogileFS/Connection/Client.pm
@@ -55,7 +56,9 @@ bin/mogstored
 %%SITE_PERL%%/Mogstored/HTTPServer/Perlbal.pm
 %%SITE_PERL%%/Mogstored/SideChannelClient.pm
 %%SITE_PERL%%/Mogstored/SideChannelListener.pm
+%%SITE_PERL%%/Mogstored/TaskQueue.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/checksums.txt
 %%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
 %%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt

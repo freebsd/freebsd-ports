@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.59
+PORTVERSION=	2.60
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -32,7 +32,8 @@ USE_RC_SUBR=	mogilefsd mogstored
 MAN1=		mogautomount.1 \
 		mogilefsd.1 \
 		mogstored.1
-MAN3=		MogileFS::Class.3 \
+MAN3=		MogileFS::Checksum.3 \
+		MogileFS::Class.3 \
 		MogileFS::DevFID.3 \
 		MogileFS::Device.3 \
 		MogileFS::Domain.3 \
