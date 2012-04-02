@@ -7,6 +7,7 @@
 
 PORTNAME=		resin
 PORTVERSION=		3.1.12
+PORTREVISION=	1
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -44,7 +45,7 @@ LOG_FILE?=		${APP_HOME}/${APP_NAME}.log
 # Other settings
 APXS?=			${LOCALBASE}/sbin/apxs
 SUB_FILES=		pkg-message resin3ctl
-USE_RC_SUBR=	resin3.sh
+USE_RC_SUBR=	resin3
 
 .include <bsd.port.pre.mk>
 
