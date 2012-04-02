@@ -37,7 +37,7 @@ post-patch: general-patch
 		${WRKSRC}/qt/qtr.pro
 
 post-build:
-	@(cd ${WRKSRC}/qt ; ${QMAKE} ${QMAKEFLAGS} qtr.pro ; gmake)
+	@(cd ${WRKSRC}/qt ; ${QMAKE} ${QMAKEFLAGS} qtr.pro ; ${GMAKE})
 
 do-install:
 	@(cd ${WRKSRC}/qt ; ${SETENV} INSTALL_ROOT=${PREFIX} ${MAKE} install)
