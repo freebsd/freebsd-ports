@@ -2,5 +2,5 @@ SHA256 (subversion17/subversion-1.7.4.tar.bz2) = c4c736f5d94a93b5862d1d245235314
 SIZE (subversion17/subversion-1.7.4.tar.bz2) = 5978020
 SHA256 (subversion17/svn-book-html-r4259.tar.bz2) = f02b64ad255b507325a960586225d721e086ec6f2a1843214202814e7fee3ac3
 SIZE (subversion17/svn-book-html-r4259.tar.bz2) = 467637
-SHA256 (subversion17/svn-book-r4259.pdf.bz2) = 784ea29e47202a78edf038545fee3319da701a61c467b8efa59be39362662ff5
-SIZE (subversion17/svn-book-r4259.pdf.bz2) = 1202957
+SHA256 (subversion17/svn-book-r4259.pdf) = c091c598b2964f9692f3b3ffb7585c14f7d4e70793dd7e0fb862e30d9a98d289
+SIZE (subversion17/svn-book-r4259.pdf) = 1921400
