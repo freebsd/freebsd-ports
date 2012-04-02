@@ -10,6 +10,3 @@ lib/libx2.a
 lib/libx3.a
 lib/usrlib.a
 lib/modellib.dat
-%%PORTDOCS%%%%DOCSDIR%%/doc_en.pdf
-%%PORTDOCS%%%%DOCSDIR%%/doc_ger.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
