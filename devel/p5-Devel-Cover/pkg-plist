@@ -31,6 +31,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Sort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Vim.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Statement.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Subroutine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Test.pm
