@@ -1,6 +1,6 @@
---- configure.orig	2012-01-14 12:14:14.987155483 +0900
-+++ configure	2012-01-14 12:24:25.699154843 +0900
-@@ -17010,7 +17010,7 @@
+--- configure.orig	2012-04-02 08:48:25.122728365 +0900
++++ configure	2012-04-02 08:51:09.119726936 +0900
+@@ -17123,7 +17123,7 @@
  if test $ac_have_decl = 1; then :
  
  else
@@ -9,7 +9,7 @@
  fi
  ac_fn_c_check_decl "$LINENO" "NTH_KATAKANA_CANDIDATE" "ac_cv_have_decl_NTH_KATAKANA_CANDIDATE" "#include <anthy/anthy.h>
  "
-@@ -17026,7 +17026,7 @@
+@@ -17139,7 +17139,7 @@
  if test $ac_have_decl = 1; then :
  
  else
@@ -18,7 +18,7 @@
  fi
  ac_fn_c_check_decl "$LINENO" "NTH_HIRAGANA_CANDIDATE" "ac_cv_have_decl_NTH_HIRAGANA_CANDIDATE" "#include <anthy/anthy.h>
  "
-@@ -17042,7 +17042,7 @@
+@@ -17155,7 +17155,7 @@
  if test $ac_have_decl = 1; then :
  
  else
@@ -27,7 +27,7 @@
  fi
  ac_fn_c_check_decl "$LINENO" "NTH_HALFKANA_CANDIDATE" "ac_cv_have_decl_NTH_HALFKANA_CANDIDATE" "#include <anthy/anthy.h>
  "
-@@ -17058,7 +17058,7 @@
+@@ -17171,7 +17171,7 @@
  if test $ac_have_decl = 1; then :
  
  else

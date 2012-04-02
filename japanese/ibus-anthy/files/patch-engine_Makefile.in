@@ -1,11 +1,11 @@
---- engine/Makefile.in.orig	2012-01-14 12:14:14.982155825 +0900
-+++ engine/Makefile.in	2012-01-14 12:24:25.982156733 +0900
-@@ -795,7 +795,7 @@
+--- engine/Makefile.in.orig	2012-04-02 08:48:25.099728584 +0900
++++ engine/Makefile.in	2012-04-02 08:52:58.086727281 +0900
+@@ -835,7 +835,7 @@
  
  
- anthy.py anthy_wrap.c: anthy.i
--	$(SWIG) -python $(ANTHY_CFLAGS) -I/usr/include -o anthy_wrap.c $(srcdir)/anthy.i
-+	$(SWIG) -python -I@@INCLUDEDIR@@ ${ANTHY_CFLAGS} -o anthy_wrap.c $(srcdir)/anthy.i
+ @HAVE_PYGTK2_ANTHY_TRUE@anthy.py anthy_wrap.c: anthy.i
+-@HAVE_PYGTK2_ANTHY_TRUE@	$(SWIG) -python $(ANTHY_CFLAGS) -I/usr/include -o anthy_wrap.c $(srcdir)/anthy.i
++@HAVE_PYGTK2_ANTHY_TRUE@	$(SWIG) -python -I@@INCLUDEDIR@@ $(ANTHY_CFLAGS) -o anthy_wrap.c $(srcdir)/anthy.i
  
  anthy.xml: anthy.xml.in
  	( \
