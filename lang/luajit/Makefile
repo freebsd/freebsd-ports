@@ -7,7 +7,7 @@
 
 PORTNAME=	luajit
 DISTVERSION=	2.0.0-beta9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://luajit.org/download/
 DISTNAME=	LuaJIT-${DISTVERSION}
@@ -27,9 +27,6 @@ CFLAGS+=	"-I../"
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		luajit.1
 .endif
-
-pre-build:
-	${CP} ${FILESDIR}/unwind.h ${WRKSRC}
 
 post-install:
 	${LN} -sf ${PREFIX}/bin/${PORTNAME}-${DISTVERSION} \
