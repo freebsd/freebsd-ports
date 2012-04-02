@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	taskwarrior
-PORTVERSION=	1.9.4
+DISTVERSION=	2.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://taskwarrior.org/download/
-DISTNAME=	task-${PORTVERSION}
+DISTNAME=	task-${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A framework for supercharged task and contact management
 
 OPTIONS=	LUA "Enable LUA extensions" off
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/task-${DISTVERSION}
 
 .include <bsd.port.options.mk>
 

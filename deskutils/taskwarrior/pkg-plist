@@ -1,18 +1,14 @@
 bin/task
 %%DATADIR%%/AUTHORS
-%%DATADIR%%/ChangeLog
 %%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
 %%DATADIR%%/INSTALL
 %%DATADIR%%/NEWS
 %%DATADIR%%/README
-%%DATADIR%%/i18n/strings.de-DE
-%%DATADIR%%/i18n/strings.en-US
-%%DATADIR%%/i18n/strings.es-ES
-%%DATADIR%%/i18n/strings.fr-FR
-%%DATADIR%%/i18n/strings.nl-NL
-%%DATADIR%%/i18n/strings.sv-SE
 %%DATADIR%%/i18n/tips.de-DE
 %%DATADIR%%/i18n/tips.en-US
+%%DATADIR%%/i18n/tips.it-IT
+%%DATADIR%%/i18n/tips.ja-JP
 %%DATADIR%%/i18n/tips.sv-SE
 %%DATADIR%%/rc/dark-16.theme
 %%DATADIR%%/rc/dark-256.theme
@@ -22,28 +18,46 @@ bin/task
 %%DATADIR%%/rc/dark-red-256.theme
 %%DATADIR%%/rc/dark-violets-256.theme
 %%DATADIR%%/rc/dark-yellow-green.theme
-%%DATADIR%%/rc/holidays-AT.rc
-%%DATADIR%%/rc/holidays-CA.rc
-%%DATADIR%%/rc/holidays-DE.rc
-%%DATADIR%%/rc/holidays-DK.rc
-%%DATADIR%%/rc/holidays-ES.rc
-%%DATADIR%%/rc/holidays-FR.rc
-%%DATADIR%%/rc/holidays-IT.rc
-%%DATADIR%%/rc/holidays-NL.rc
-%%DATADIR%%/rc/holidays-NO.rc
-%%DATADIR%%/rc/holidays-NZ.rc
-%%DATADIR%%/rc/holidays-SE.rc
-%%DATADIR%%/rc/holidays-UK.rc
-%%DATADIR%%/rc/holidays-US.rc
+%%DATADIR%%/rc/holidays.be-BY.rc
+%%DATADIR%%/rc/holidays.cs-CZ.rc
+%%DATADIR%%/rc/holidays.da-DK.rc
+%%DATADIR%%/rc/holidays.de-AT.rc
+%%DATADIR%%/rc/holidays.de-DE.rc
+%%DATADIR%%/rc/holidays.en-CA.rc
+%%DATADIR%%/rc/holidays.en-GB.rc
+%%DATADIR%%/rc/holidays.en-NZ.rc
+%%DATADIR%%/rc/holidays.en-US.rc
+%%DATADIR%%/rc/holidays.es-ES.rc
+%%DATADIR%%/rc/holidays.fr-FR.rc
+%%DATADIR%%/rc/holidays.it-IT.rc
+%%DATADIR%%/rc/holidays.jp-JP.rc
+%%DATADIR%%/rc/holidays.nb-NO.rc
+%%DATADIR%%/rc/holidays.nl-NL.rc
+%%DATADIR%%/rc/holidays.sv-SE.rc
 %%DATADIR%%/rc/light-16.theme
 %%DATADIR%%/rc/light-256.theme
+%%DATADIR%%/rc/refresh
+%%DATADIR%%/rc/solarized-dark-256.theme
+%%DATADIR%%/rc/solarized-light-256.theme
 %%DATADIR%%/scripts/add-ons/export-csv.pl
+%%DATADIR%%/scripts/add-ons/export-html.pl
 %%DATADIR%%/scripts/add-ons/export-ical.pl
+%%DATADIR%%/scripts/add-ons/export-sql.py
 %%DATADIR%%/scripts/add-ons/export-xml.pl
 %%DATADIR%%/scripts/add-ons/export-xml.py
 %%DATADIR%%/scripts/add-ons/export-xml.rb
+%%DATADIR%%/scripts/add-ons/export-yad.pl
 %%DATADIR%%/scripts/add-ons/export-yaml.pl
+%%DATADIR%%/scripts/add-ons/import-todo.sh.pl
+%%DATADIR%%/scripts/add-ons/import-yaml.pl
+%%DATADIR%%/scripts/add-ons/update-holidays.pl
 %%DATADIR%%/scripts/bash/task_completion.sh
+%%DATADIR%%/scripts/extensions/command.lua
+%%DATADIR%%/scripts/extensions/dom.lua
+%%DATADIR%%/scripts/extensions/format.lua
+%%DATADIR%%/scripts/extensions/program_hook.lua
+%%DATADIR%%/scripts/extensions/task_hook.lua
+%%DATADIR%%/scripts/extensions/uda.lua
 %%DATADIR%%/scripts/fish/task.fish
 %%DATADIR%%/scripts/vim/README
 %%DATADIR%%/scripts/vim/ftdetect/task.vim
@@ -51,11 +65,13 @@ bin/task
 %%DATADIR%%/scripts/vim/syntax/taskedit.vim
 %%DATADIR%%/scripts/vim/syntax/taskrc.vim
 %%DATADIR%%/scripts/zsh/_task
+%%DATADIR%%/task-ref.pdf
 @dirrm %%DATADIR%%/scripts/zsh
 @dirrm %%DATADIR%%/scripts/vim/syntax
 @dirrm %%DATADIR%%/scripts/vim/ftdetect
 @dirrm %%DATADIR%%/scripts/vim
 @dirrm %%DATADIR%%/scripts/fish
+@dirrm %%DATADIR%%/scripts/extensions
 @dirrm %%DATADIR%%/scripts/bash
 @dirrm %%DATADIR%%/scripts/add-ons
 @dirrm %%DATADIR%%/scripts
