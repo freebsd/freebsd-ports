@@ -1,6 +1,6 @@
---- unix/ibus/mozc_engine.cc.orig	2012-03-16 10:48:02.015738213 +0900
-+++ unix/ibus/mozc_engine.cc	2012-03-16 12:46:11.976711448 +0900
-@@ -192,14 +192,14 @@
+--- unix/ibus/mozc_engine.cc.orig	2012-04-02 08:17:52.706728426 +0900
++++ unix/ibus/mozc_engine.cc	2012-04-02 08:24:23.981727483 +0900
+@@ -226,14 +226,14 @@
  
    COMPILE_ASSERT(sizeof(int64) > sizeof(guint), int64_guint_check);
    const int64 kInt32AbsMax =
@@ -18,7 +18,7 @@
      return false;
    }
  
-@@ -1360,7 +1360,7 @@
+@@ -1598,7 +1598,7 @@
        //     on size_t, not uint32.
        string selection_text;
        const uint32 selection_start = min(cursor_pos, anchor_pos);

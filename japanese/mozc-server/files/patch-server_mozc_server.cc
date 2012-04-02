@@ -1,5 +1,5 @@
---- server/mozc_server.cc.orig	2012-03-16 10:48:02.074712300 +0900
-+++ server/mozc_server.cc	2012-01-29 13:49:16.896805385 +0900
+--- server/mozc_server.cc.orig	2012-04-02 08:17:52.743727333 +0900
++++ server/mozc_server.cc	2012-04-02 08:24:24.633727039 +0900
 @@ -32,6 +32,9 @@
  #ifdef OS_WINDOWS
  #include <windows.h>
@@ -10,7 +10,7 @@
  
  #include "base/base.h"
  #include "base/process.h"
-@@ -50,6 +53,23 @@
+@@ -49,6 +52,23 @@
  mozc::SessionServer *g_session_server = NULL;
  }
  
@@ -34,7 +34,7 @@
  namespace mozc {
  namespace {
  
-@@ -132,6 +152,12 @@
+@@ -127,6 +147,12 @@
        return -1;
      }
  
