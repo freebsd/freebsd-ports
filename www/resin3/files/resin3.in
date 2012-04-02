@@ -1,10 +1,11 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/resin3/files/Attic/resin3.sh.in,v 1.1 2012-03-13 16:29:23 jgh Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/resin3/files/resin3.in,v 1.1 2012-04-02 23:51:25 jgh Exp $
 #
 
 # PROVIDE: %%APP_NAME%%
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN NETWORKING SERVERS
+# BEFORE: DAEMON
 # KEYWORD: shutdown
 
 #
@@ -13,22 +14,21 @@
 # %%APP_NAME%%_enable="YES"
 #
 
+
+%%APP_NAME%%_enable=${%%APP_NAME%%_enable:-"NO"}
+%%APP_NAME%%_user=${%%APP_NAME%%_user:"www"}
+%%APP_NAME%%_group=${%%APP_NAME%%_group:"www"}
+
 . /etc/rc.subr
 
 name=%%APP_NAME%%
 rcvar=%%APP_NAME%%_enable
 
+load_rc_config ${name}
+
 command="%%PREFIX%%/sbin/%%APP_NAME%%ctl"
 command_args="start"
 pidfile=%%PID_FILE%%
-
-# set defaults
-
-%%APP_NAME%%_enable=${%%APP_NAME%%_enable:-"NO"}
-%%APP_NAME%%_user=${%%APP_NAME%%_user:-"%%USERS%%"}
-%%APP_NAME%%_group=${%%APP_NAME%%_group:-"%%GROUPS%%"}
-
-load_rc_config ${name}
 
 if test -n "${%%APP_NAME%%_java_version}" ; then
     JAVA_HOME=$(JAVA_VERSION="${%%APP_NAME%%_java_version}" JAVAVM_DRYRUN=1 %%LOCALBASE%%/bin/java | grep JAVA_HOME | cut -d= -f2)
