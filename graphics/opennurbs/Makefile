@@ -6,6 +6,7 @@
 
 PORTNAME=	opennurbs
 PORTVERSION=	20111122
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://files.na.mcneel.com/opennurbs/5.0/2011-11-22/
 MASTER_SITE_SUBDIR=${PORTNAME}_${PORTVERSION}
@@ -27,12 +28,11 @@ pre-build:
 	@${MV} ${WRKSRC}/opennurbs_version.h.tmp ${WRKSRC}/opennurbs_version.h
 
 do-install:
-	@${INSTALL_LIB} ${WRKSRC}/libopenNURBS.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/libopenNURBS.a ${PREFIX}/lib
 	@${MKDIR} ${EXAMPLESDIR}
 .for i in brep dump read roundtrip userdata write
 	@${INSTALL_PROGRAM} ${WRKSRC}/example_${i}/example_${i} ${EXAMPLESDIR}
 .endfor
-	@${MKDIR} ${PREFIX}/include/openNURBS
 	@${MKDIR} ${PREFIX}/include/openNURBS/zlib
 	@${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/openNURBS/
 	@${INSTALL_DATA} ${WRKSRC}/zlib/*.h ${PREFIX}/include/openNURBS/zlib
