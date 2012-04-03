@@ -351,7 +351,7 @@ CONFIGURE_ARGS+=--with-http_realip_module
 .endif
 
 .if defined(WITH_HTTP_REDIS_MODULE)
-NGINX_REDIS_MODULE_VERSION=	0.3.5
+NGINX_REDIS_MODULE_VERSION=	0.3.6
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:redis/}
 MASTER_SITE_SUBDIR+=	osa/:redis
 DISTFILES+=	ngx_http_redis-${NGINX_REDIS_MODULE_VERSION}.tar.gz:redis
@@ -710,6 +710,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-calio-iconv-nginx-module::config
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+USERS?=	${WWWOWN}
+GROUPS?=${WWWGRP}
 
 .include <bsd.port.pre.mk>
 
