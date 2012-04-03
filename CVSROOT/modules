@@ -9747,6 +9747,7 @@ mu-conference                   ports/net-im/mu-conference
 mucommander                     ports/x11-fm/mucommander
 mudmagic                        ports/games/mudmagic
 muh                             ports/irc/muh
+muine                           ports/audio/muine
 mulberry                        ports/mail/mulberry
 mule-ucs                        ports/converters/mule-ucs
 multi-aterm                     ports/x11/multi-aterm
@@ -11255,6 +11256,7 @@ p5-Calendar-Simple              ports/devel/p5-Calendar-Simple
 p5-Captcha-reCAPTCHA            ports/graphics/p5-Captcha-reCAPTCHA
 p5-Captcha-reCAPTCHA-Mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
 p5-Capture-Tiny                 ports/devel/p5-Capture-Tiny
+p5-Carp                         ports/devel/p5-Carp
 p5-Carp-Always                  ports/devel/p5-Carp-Always
 p5-Carp-Always-Color            ports/devel/p5-Carp-Always-Color
 p5-Carp-Assert                  ports/devel/p5-Carp-Assert
@@ -15614,6 +15616,7 @@ p5-capitalization               ports/devel/p5-capitalization
 p5-captcha-recaptcha            ports/graphics/p5-Captcha-reCAPTCHA
 p5-captcha-recaptcha-mailhide   ports/graphics/p5-Captcha-reCAPTCHA-Mailhide
 p5-capture-tiny                 ports/devel/p5-Capture-Tiny
+p5-carp                         ports/devel/p5-Carp
 p5-carp-always                  ports/devel/p5-Carp-Always
 p5-carp-always-color            ports/devel/p5-Carp-Always-Color
 p5-carp-assert                  ports/devel/p5-Carp-Assert
