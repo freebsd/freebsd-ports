@@ -20,6 +20,7 @@ RUN_DEPENDS=	\
 	p5-Plack>=0.992:${PORTSDIR}/www/p5-Plack \
 	p5-Server-Starter>=0.06:${PORTSDIR}/net/p5-Server-Starter
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
