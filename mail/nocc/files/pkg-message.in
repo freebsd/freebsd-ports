@@ -1,5 +1,5 @@
 ****************************************************************
 Nocc has been installed in %%PREFIX%%/www/nocc directory.
-Change into this directory and make changes to the config
-file (config/conf.php). The file is fairly well documented.
+Change into this directory and create/modify the config file
+(config/conf.php). The sample file is fairly well documented.
 ****************************************************************

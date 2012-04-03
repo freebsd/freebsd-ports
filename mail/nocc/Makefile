@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	nocc
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	A web-based e-mail system which access POP3 and IMAP mail servers
+COMMENT=	A webmail system which access POP3 and IMAP mail servers
 
 USE_PHP=	iconv imap mbstring pcre session
 WANT_PHP_WEB=	yes
@@ -20,24 +20,29 @@ SUB_FILES=	pkg-message
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+NOCCCOMP=	.htaccess favicon.ico robots.txt \
+		action.php common.php contacts.php contacts_manager.php \
+		delete.php down_mail.php download.php get_img.php \
+		help.php index.php logout.php rss.php send.php \
+		ckeditor classes config html js lang themes utils
+
 PORTDOCS=	*
 
 do-install:
-	${MKDIR} ${PREFIX}/www/nocc
-	${CP} -Rp ${WRKSRC}/ckeditor ${WRKSRC}/classes ${WRKSRC}/config \
-		${WRKSRC}/html ${WRKSRC}/js ${WRKSRC}/lang ${WRKSRC}/themes \
-		${WRKSRC}/utils \
-		${PREFIX}/www/nocc
-	${CP} -p ${WRKSRC}/*.php ${WRKSRC}/*.ico ${PREFIX}/www/nocc
-	@if [ ! -f ${PREFIX}/www/nocc/config/conf.php ]; then \
-		${CP} ${PREFIX}/www/nocc/config/conf.php.dist \
-			${PREFIX}/www/nocc/config/conf.php; \
-	fi
-	${CHOWN} -R www:www ${PREFIX}/www/nocc
+	@${MKDIR} ${WWWDIR}
+.for i in ${NOCCCOMP}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
+.endfor
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
+	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -not -type d) | ${SORT} | \
+		${SED} -ne 's,^,${WWWDIR_REL}/,p' >> ${TMPPLIST}
+	@(cd ${WRKSRC}; ${FIND} ${NOCCCOMP} -type d) | ${SORT} -r | \
+		${SED} -ne 's,^,@dirrm ${WWWDIR_REL}/,p' >> ${TMPPLIST}
+	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
