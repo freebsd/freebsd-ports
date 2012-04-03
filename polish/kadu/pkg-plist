@@ -435,7 +435,6 @@ include/kadu/plugins/gadu_protocol/gadu-id-validator.h
 include/kadu/plugins/gadu_protocol/gadu-protocol-factory.h
 include/kadu/plugins/gadu_protocol/gadu-protocol-plugin.h
 include/kadu/plugins/gadu_protocol/gadu-protocol.h
-include/kadu/plugins/gadu_protocol/gadu-resolver.h
 include/kadu/plugins/gadu_protocol/gadu-search-record.h
 include/kadu/plugins/gadu_protocol/gadu-search-result.h
 include/kadu/plugins/gadu_protocol/gadu-url-handler.h
