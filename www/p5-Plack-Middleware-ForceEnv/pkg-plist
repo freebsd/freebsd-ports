@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Plack/Middleware/ForceEnv.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ForceEnv/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ForceEnv
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack
