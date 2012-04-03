@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Method-Modifiers
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,6 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Class::Method::Modifiers.3
+MAN3=		Class::Method::Modifiers.3
 
 .include <bsd.port.mk>
