@@ -542,6 +542,7 @@
     SUBDIR += p5-JavaScript-Minifier-XS
     SUBDIR += p5-JavaScript-Packer
     SUBDIR += p5-KinoSearch
+    SUBDIR += p5-KinoSearch1
     SUBDIR += p5-Kwalify
     SUBDIR += p5-LaTeX-Driver
     SUBDIR += p5-LaTeX-Encode

@@ -1,0 +1,101 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1/KinoSearch1.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1/KinoSearch1.so
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/Analyzer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/LCNormalizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/PolyAnalyzer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/Stemmer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/Stopalizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/Token.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/TokenBatch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis/Tokenizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Docs/FileFormat.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Docs/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Document/Doc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Document/Field.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight/Encoder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight/Formatter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight/Highlighter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight/SimpleHTMLEncoder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight/SimpleHTMLFormatter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/CompoundFileReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/CompoundFileWriter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/DelDocs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/FieldInfos.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/FieldsReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/FieldsWriter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/IndexFileNames.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/IndexReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/MultiReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/MultiTermDocs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/NormsReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/PostingsWriter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/SegInfos.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/SegReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/SegTermDocs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/SegTermEnum.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/SegWriter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/Term.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermBuffer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermDocs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermEnum.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermInfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermInfosReader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermInfosWriter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index/TermVector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/InvIndexer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/QueryParser/QueryParser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/BooleanClause.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/BooleanQuery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/BooleanScorer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Hit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/HitCollector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/HitQueue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Hits.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/MultiSearcher.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/PhraseQuery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/PhraseScorer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/QueryFilter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/SearchClient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/SearchServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Scorer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Searchable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Similarity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/TermQuery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/TermScorer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search/Weight.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Searcher.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/FSInvIndex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/FSLock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/InStream.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/InvIndex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/Lock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/OutStream.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/RAMInvIndex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store/RAMLock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/BitVector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/ByteBuf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/CClass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/Carp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/Class.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/IntMap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/MathUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/MemManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/PriorityQueue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/SortExternal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/StringHelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/ToStringUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/ToolSet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util/VerifyArgs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Analysis
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Docs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Document
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Highlight
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Index
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/QueryParser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Search
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Store
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1/Util
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/KinoSearch1
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KinoSearch1
