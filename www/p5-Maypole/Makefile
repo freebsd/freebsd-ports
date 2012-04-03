@@ -37,6 +37,8 @@ BUILD_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 PORTSCOUT=	skipv:2.121
 
