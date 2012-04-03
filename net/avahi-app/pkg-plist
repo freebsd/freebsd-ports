@@ -158,7 +158,6 @@ share/locale/zh_TW/LC_MESSAGES/avahi.mo
 @dirrmtry share/locale/en_NZ/LC_MESSAGES
 @dirrmtry share/locale/en_NZ
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/avahi
 @dirrm include/avahi-gobject
 @dirrm include/avahi-glib

@@ -1,6 +1,6 @@
---- avahi-ui/Makefile.in.orig	2010-07-25 00:35:38.000000000 -0400
-+++ avahi-ui/Makefile.in	2010-07-25 02:52:46.000000000 -0400
-@@ -119,9 +117,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
+--- avahi-ui/Makefile.in.orig	2012-04-03 18:30:32.000000000 +0200
++++ avahi-ui/Makefile.in	2012-04-03 18:33:59.000000000 +0200
+@@ -119,9 +119,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  	"$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(avahiincludedir)"
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
@@ -11,7 +11,7 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_ui_gtk3_la_SOURCES_DIST = avahi-ui.h avahi-ui.c \
-@@ -142,9 +138,7 @@ libavahi_ui_gtk3_la_LINK = $(LIBTOOL) $(
+@@ -142,9 +140,7 @@ libavahi_ui_gtk3_la_LINK = $(LIBTOOL) $(
  	$(libavahi_ui_gtk3_la_LDFLAGS) $(LDFLAGS) -o $@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@am_libavahi_ui_gtk3_la_rpath = -rpath \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	$(libdir)
@@ -22,23 +22,20 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_ui_la_SOURCES_DIST = avahi-ui.h avahi-ui.c \
-@@ -166,13 +160,9 @@ am__bssh_SOURCES_DIST = bssh.c
+@@ -166,12 +162,8 @@ am__bssh_SOURCES_DIST = bssh.c
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@am_bssh_OBJECTS = bssh-bssh.$(OBJEXT)
  bssh_OBJECTS = $(am_bssh_OBJECTS)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@bssh_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 -@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@	../avahi-client/libavahi-client.la \
 -@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@	../avahi-common/libavahi-common.la \
--@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@	libavahi-ui.la
-+@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@	libavahi-ui.la
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@	libavahi-ui.la
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@bssh_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 -@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	../avahi-client/libavahi-client.la \
 -@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	../avahi-common/libavahi-common.la \
--@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	libavahi-ui-gtk3.la
-+@HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	libavahi-ui-gtk3.la
+ @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	libavahi-ui-gtk3.la
  bssh_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(bssh_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -478,9 +468,7 @@ EXTRA_DIST = $(desktop_DATA_in_in)
+@@ -482,9 +474,7 @@ EXTRA_DIST = $(desktop_DATA_in_in)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_5) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_10)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@libavahi_ui_la_LIBADD = $(AM_LDADD) \
@@ -49,7 +46,7 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(GTK20_LIBS) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_6)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@libavahi_ui_la_LDFLAGS = $(AM_LDFLAGS)  -version-info $(LIBAVAHI_UI_VERSION_INFO)
-@@ -490,17 +478,15 @@ EXTRA_DIST = $(desktop_DATA_in_in)
+@@ -494,17 +484,15 @@ EXTRA_DIST = $(desktop_DATA_in_in)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_7) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_11)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@libavahi_ui_gtk3_la_LIBADD = $(AM_LDADD) \
@@ -70,3 +67,12 @@
  CLEANFILES = $(desktop_DATA) $(desktop_DATA_in)
  all: all-am
  
+@@ -713,7 +701,7 @@ clean-libtool:
+ 	-rm -rf .libs _libs
+ install-desktopDATA: $(desktop_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(desktopdir)" || $(MKDIR_P) "$(DESTDIR)$(desktopdir)"
++@HAVE_GTK_TRUE@	test -z "$(desktopdir)" || $(MKDIR_P) "$(DESTDIR)$(desktopdir)"
+ 	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
+ 	for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
