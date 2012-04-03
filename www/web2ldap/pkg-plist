@@ -6,17 +6,21 @@
 %%DATADIR%%/etc/dumpasn1.cfg
 %%DATADIR%%/etc/httpd/sample-mod_fastcgi.conf
 %%DATADIR%%/etc/httpd/sample-mod_fcgid.conf
-%%DATADIR%%/etc/httpd/sample-mod_scgi.conf
 %%DATADIR%%/etc/init.d/web2ldap
+%%DATADIR%%/etc/systemd/web2ldap.service
 %%DATADIR%%/etc/web2ldap/ldapoidreg.py
 %%DATADIR%%/etc/web2ldap/ldapoidreg.pyc
 %%DATADIR%%/etc/web2ldap/localschema.ldif
+%%DATADIR%%/etc/web2ldap/properties/attribute_select_gender.properties
+%%DATADIR%%/etc/web2ldap/properties/attribute_select_gender.properties.de
 %%DATADIR%%/etc/web2ldap/ssl/crt/trusted-certs.crt
 %%DATADIR%%/etc/web2ldap/templates/add_group.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_msorganization.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_msperson.ldif
-%%DATADIR%%/etc/web2ldap/templates/add_olcBdbConfig_AddressBook.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcHdbConfig_AddressBook.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_olcHdbConfig_UnixUsers.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcHdbConfig_accesslog.ldif
+%%DATADIR%%/etc/web2ldap/templates/add_olcLdapConfig.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_olcSchemaConfig.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_organization.ldif
 %%DATADIR%%/etc/web2ldap/templates/add_orgunit.ldif
@@ -24,34 +28,54 @@
 %%DATADIR%%/etc/web2ldap/templates/add_user.ldif
 %%DATADIR%%/etc/web2ldap/templates/inputform_account.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_eduPerson.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_germanBankArrangement.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_germanBankArrangement.html.de
 %%DATADIR%%/etc/web2ldap/templates/inputform_inetOrgPerson.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_inetOrgPerson.html.de
 %%DATADIR%%/etc/web2ldap/templates/inputform_msOrganization.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_msOrganization.html.de
 %%DATADIR%%/etc/web2ldap/templates/inputform_msPerson.html
-%%DATADIR%%/etc/web2ldap/templates/inputform_olcBdbConfig.html
-%%DATADIR%%/etc/web2ldap/templates/inputform_olcHdbConfig.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_msPerson.html.de
+%%DATADIR%%/etc/web2ldap/templates/inputform_musician.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_musician.html.de
+%%DATADIR%%/etc/web2ldap/templates/inputform_olcDatabaseConfig.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_olcGlobal.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_organization.html
 %%DATADIR%%/etc/web2ldap/templates/inputform_posixAccount.html
+%%DATADIR%%/etc/web2ldap/templates/inputform_pwdPolicy.html
 %%DATADIR%%/etc/web2ldap/templates/login.html
+%%DATADIR%%/etc/web2ldap/templates/login.html.de
 %%DATADIR%%/etc/web2ldap/templates/print_organization.html
 %%DATADIR%%/etc/web2ldap/templates/print_organizationalUnit.html
 %%DATADIR%%/etc/web2ldap/templates/print_person.html
 %%DATADIR%%/etc/web2ldap/templates/read_account.html
 %%DATADIR%%/etc/web2ldap/templates/read_bankArrangement.html
+%%DATADIR%%/etc/web2ldap/templates/read_changeLogEntry.html
 %%DATADIR%%/etc/web2ldap/templates/read_eduPerson.html
+%%DATADIR%%/etc/web2ldap/templates/read_germanBankArrangement.html
+%%DATADIR%%/etc/web2ldap/templates/read_germanBankArrangement.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html
 %%DATADIR%%/etc/web2ldap/templates/read_inetOrgPerson.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_msOrganization.html
+%%DATADIR%%/etc/web2ldap/templates/read_msOrganization.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_msPerson.html
+%%DATADIR%%/etc/web2ldap/templates/read_msPerson.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_musician.html
 %%DATADIR%%/etc/web2ldap/templates/read_musician.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_operationalattrs.html
 %%DATADIR%%/etc/web2ldap/templates/read_operationalattrs.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_organization.html
+%%DATADIR%%/etc/web2ldap/templates/read_organization.html.de
 %%DATADIR%%/etc/web2ldap/templates/read_posixAccount.html
+%%DATADIR%%/etc/web2ldap/templates/read_pwdPolicy.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_Base.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_Base.html.de
+%%DATADIR%%/etc/web2ldap/templates/searchform_accesslog.html
+%%DATADIR%%/etc/web2ldap/templates/searchform_changelog.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_orga.html
 %%DATADIR%%/etc/web2ldap/templates/searchform_persons.html
+%%DATADIR%%/etc/web2ldap/templates/searchform_search_options.html
+%%DATADIR%%/etc/web2ldap/templates/searchform_search_options.html.de
 %%DATADIR%%/etc/web2ldap/templates/searchform_users.html
 %%DATADIR%%/etc/web2ldap/templates/vcard_organization.txt
 %%DATADIR%%/etc/web2ldap/templates/vcard_person.txt
@@ -69,8 +93,6 @@
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/monitor.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/plugins/__init__.pyc
-%%DATADIR%%/etc/web2ldap/web2ldapcnf/scgi.py
-%%DATADIR%%/etc/web2ldap/web2ldapcnf/scgi.pyc
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.py
 %%DATADIR%%/etc/web2ldap/web2ldapcnf/standalone.pyc
 %%DATADIR%%/fcgi/web2ldap.py
@@ -85,6 +107,8 @@
 %%DATADIR%%/pylib/ldaputil/__init__.pyc
 %%DATADIR%%/pylib/ldaputil/base.py
 %%DATADIR%%/pylib/ldaputil/base.pyc
+%%DATADIR%%/pylib/ldaputil/extldapurl.py
+%%DATADIR%%/pylib/ldaputil/extldapurl.pyc
 %%DATADIR%%/pylib/ldaputil/modlist2.py
 %%DATADIR%%/pylib/ldaputil/modlist2.pyc
 %%DATADIR%%/pylib/ldaputil/passwd.py
@@ -149,6 +173,8 @@
 %%DATADIR%%/pylib/w2lapp/conninfo.pyc
 %%DATADIR%%/pylib/w2lapp/core.py
 %%DATADIR%%/pylib/w2lapp/core.pyc
+%%DATADIR%%/pylib/w2lapp/dds.py
+%%DATADIR%%/pylib/w2lapp/dds.pyc
 %%DATADIR%%/pylib/w2lapp/delete.py
 %%DATADIR%%/pylib/w2lapp/delete.pyc
 %%DATADIR%%/pylib/w2lapp/form.py
@@ -159,6 +185,8 @@
 %%DATADIR%%/pylib/w2lapp/gui.pyc
 %%DATADIR%%/pylib/w2lapp/handler.py
 %%DATADIR%%/pylib/w2lapp/handler.pyc
+%%DATADIR%%/pylib/w2lapp/ldapparams.py
+%%DATADIR%%/pylib/w2lapp/ldapparams.pyc
 %%DATADIR%%/pylib/w2lapp/locate.py
 %%DATADIR%%/pylib/w2lapp/locate.pyc
 %%DATADIR%%/pylib/w2lapp/login.py
@@ -183,8 +211,12 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/acp133.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/activedirectory.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/activedirectory.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/apple.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/apple.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/asn1objects.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/asn1objects.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/dds.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/dds.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dhcp.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dhcp.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/dirx.py
@@ -215,12 +247,16 @@
 %%DATADIR%%/pylib/w2lapp/schema/plugins/opends.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/openldap.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/openldap.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/opensshlpk.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/opensshlpk.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pgpkeysrv.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pgpkeysrv.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pilotperson.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pilotperson.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pkcschema.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/pkcschema.pyc
+%%DATADIR%%/pylib/w2lapp/schema/plugins/posixautogen.py
+%%DATADIR%%/pylib/w2lapp/schema/plugins/posixautogen.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ppolicy.py
 %%DATADIR%%/pylib/w2lapp/schema/plugins/ppolicy.pyc
 %%DATADIR%%/pylib/w2lapp/schema/plugins/quirks.py
@@ -257,8 +293,6 @@
 %%DATADIR%%/sbin/compile.pyc
 %%DATADIR%%/sbin/web2ldap.py
 %%DATADIR%%/sbin/web2ldap.pyc
-%%DATADIR%%/scgi/web2ldap.py
-%%DATADIR%%/scgi/web2ldap.pyc
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/.htaccess
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.10.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-0.11.html
@@ -275,20 +309,26 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes-ancient.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/compability.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap.de-screen.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/default.css
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/fixed.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/hippie.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/print.css
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/css/web2ldap/terminal.css
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/demo.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/docs.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/download.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/download/.htaccess
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/download/redirect-to-download.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/download.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/features.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/feedback.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/files.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/img/ldif_template_select_list.jpg
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/install.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_debian.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_opensuse.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_rhel.html
+%%PORTDOCS%%%%DOCSDIR%%/htdocs/install_windows.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/news.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/related.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/roadmap.html
@@ -309,7 +349,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_hosts.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_misc.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_monitor.html
-%%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_scgi.html
 %%PORTDOCS%%%%DOCSDIR%%/htdocs/web2ldapcnf_standalone.html
 @comment directories in revers order
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htdocs/ssi
@@ -324,7 +363,6 @@
 @dirrm %%DATADIR%%/var/run
 @dirrm %%DATADIR%%/var/log
 @dirrm %%DATADIR%%/var
-@dirrm %%DATADIR%%/scgi
 @dirrm %%DATADIR%%/sbin
 @dirrm %%DATADIR%%/pylib/w2lapp/schema/plugins
 @dirrm %%DATADIR%%/pylib/w2lapp/schema
@@ -339,7 +377,9 @@
 @dirrm %%DATADIR%%/etc/web2ldap/templates
 @dirrm %%DATADIR%%/etc/web2ldap/ssl/crt
 @dirrm %%DATADIR%%/etc/web2ldap/ssl
+@dirrm %%DATADIR%%/etc/web2ldap/properties
 @dirrm %%DATADIR%%/etc/web2ldap
+@dirrm %%DATADIR%%/etc/systemd
 @dirrm %%DATADIR%%/etc/init.d
 @dirrm %%DATADIR%%/etc/httpd
 @dirrm %%DATADIR%%/etc

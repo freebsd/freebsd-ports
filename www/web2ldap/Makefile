@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	web2ldap
-PORTVERSION=	1.0.29
-PORTREVISION=	1
+PORTVERSION=	1.1.10
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
-		ftp://ftp.ipt.ru/pub/download/ \
 		http://www.sfr-fresh.com/unix/www/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.1:${PORTSDIR}/net/py-ldap2 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.4.0:${PORTSDIR}/net/py-ldap2 \
 		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:${PORTSDIR}/www/pyweblib \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
