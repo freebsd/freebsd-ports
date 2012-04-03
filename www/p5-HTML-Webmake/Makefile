@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML-WebMake
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	http://webmake.sourceforge.net/released/ \
 		http://webmake.taint.org/released/
@@ -16,10 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple perl based website content management system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Text/EtText.pm:${PORTSDIR}/textproc/p5-Text-EtText \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${SITE_PERL}/${PERL_ARCH}/XML/Sablotron.pm:${PORTSDIR}/textproc/p5-XML-Sablotron
+BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-Text-EtText>=0:${PORTSDIR}/textproc/p5-Text-EtText \
+		p5-XML-Sablotron>=0:${PORTSDIR}/textproc/p5-XML-Sablotron \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
