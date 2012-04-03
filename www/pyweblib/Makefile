@@ -8,10 +8,9 @@
 PORTNAME=	pyweblib
 PORTVERSION=	1.3.8
 CATEGORIES=	www
-MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
-		ftp://ftp.ipt.ru/pub/download/
+MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/
 
-MAINTAINER=	bsam@ipt.ru
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Yet another web programming framework for Python
 
 LICENSE=	GPLv2
