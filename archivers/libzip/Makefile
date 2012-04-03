@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzip
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.nih.at/libzip/
 
