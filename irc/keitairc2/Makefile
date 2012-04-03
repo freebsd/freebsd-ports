@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/47485
 
 #PATCH_SITES=		http://home.jp.FreeBSD.org/~matusita/keitairc2/
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=IRC proxy for mobilephone that have a web interface
 
 RUN_DEPENDS=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \

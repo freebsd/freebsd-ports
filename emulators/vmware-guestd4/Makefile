@@ -13,7 +13,7 @@ MASTER_SITES=	# bundled with VMware itself
 PKGNAMESUFFIX?=	-guestd
 DISTNAME=	vmware-freebsd-tools
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=VMware time synchronization daemon for FreeBSD guest OS (for VMware 4.x)
 
 .if defined(VMWARE_X_PORTS)

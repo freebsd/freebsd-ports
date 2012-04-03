@@ -13,7 +13,7 @@ MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
 DISTNAME=	vmware-freebsd-tools
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=VMware guest OS supporting daemon (VMware Workstation 6.x, FreeBSD version)
 
 .if defined(VMWARE_X_PORTS)

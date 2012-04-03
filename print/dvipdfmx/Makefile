@@ -13,7 +13,7 @@ MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/latest/ \
 		http://project.ktug.or.kr/dvipdfmx/snapshot/archive/
 DIST_SUBDIR=	dvipdfmx
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX-base

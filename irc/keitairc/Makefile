@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= ${PORTNAME}/27571
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	#empty
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=IRC proxy for mobilephone that have a web interface
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/Japanese.pm:${PORTSDIR}/japanese/p5-Unicode-Japanese \
