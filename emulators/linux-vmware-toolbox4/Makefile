@@ -13,7 +13,7 @@ MASTER_SITES=	# bundled with VMware itself
 PKGNAMEPREFIX=	linux-
 DISTNAME=	vmware-linux-tools
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (for VMware 4.x, Linux version)
 
 DISTDIR=	${MOUNT_PT}

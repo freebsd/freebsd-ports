@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR= "":master matusita/${PORTNAME}/:backup
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 DISTFILES=	${DISTNAME}.tgz:master,backup
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC client for Emacs, derived from irchat
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc

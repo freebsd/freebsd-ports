@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #DISTVERSIONSUFFIX=
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Yet another dictionary server for SKK
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcdb.a:${PORTSDIR}/databases/tinycdb

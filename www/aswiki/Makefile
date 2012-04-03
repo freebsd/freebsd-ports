@@ -11,7 +11,7 @@ PORTREVISION=		3
 CATEGORIES=		www ruby
 MASTER_SITES=		SF
 
-MAINTAINER=		matusita@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		WikiWikiWeb clone written in Ruby
 
 RUN_DEPENDS=		${RUBY_SITELIBDIR}/amrita/xml.rb:${PORTSDIR}/textproc/ruby-amrita \

@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://getpopfile.org/downloads/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Automatic mail classification tool, acts as a POP3 proxy
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \

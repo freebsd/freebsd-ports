@@ -15,7 +15,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/skk/tools/ \
 MASTER_SITE_SUBDIR=	text/elisp/skk/tools
 DISTNAME=	skktools-${PORTVERSION}
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=Jisyo-tools for the SKK Japanese-input software
 
 .if defined(WITHOUT_GNOME)
