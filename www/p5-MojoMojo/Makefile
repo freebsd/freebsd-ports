@@ -7,6 +7,7 @@
 
 PORTNAME=	MojoMojo
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
@@ -50,6 +51,7 @@ RUN_DEPENDS=	\
 	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 	p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 	p5-DateTime-Format-Mail>=0:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
+	p5-Directory-Scratch>=0.14:${PORTSDIR}/devel/p5-Directory-Scratch \
 	p5-DBD-SQLite>=1.08:${PORTSDIR}/databases/p5-DBD-SQLite \
 	p5-DBIx-Class>=0.08:${PORTSDIR}/databases/p5-DBIx-Class \
 	p5-DBIx-Class-DateTime-Epoch>=0.04:${PORTSDIR}/databases/p5-DBIx-Class-DateTime-Epoch \
@@ -68,7 +70,7 @@ RUN_DEPENDS=	\
 	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 	p5-Image-Math-Constrain>=0:${PORTSDIR}/graphics/p5-Image-Math-Constrain \
 	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
-	p5-KinoSearch>=0.165:${PORTSDIR}/textproc/p5-KinoSearch \
+	p5-KinoSearch1>=1.00:${PORTSDIR}/textproc/p5-KinoSearch1 \
 	p5-Module-Pluggable-Ordered>=1.4:${PORTSDIR}/devel/p5-Module-Pluggable-Ordered \
 	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 	p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat \
@@ -80,9 +82,13 @@ RUN_DEPENDS=	\
 	p5-Text-Password-Pronounceable>=0:${PORTSDIR}/security/p5-Text-Password-Pronounceable \
 	p5-Text-Textile>=0:${PORTSDIR}/textproc/p5-Text-Textile \
 	p5-URI>=1.37:${PORTSDIR}/net/p5-URI \
+	p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
+	p5-WWW-Mechanize>=1.54:${PORTSDIR}/www/p5-WWW-Mechanize \
+	p5-WWW-Mechanize-TreeBuilder>=1.10000:${PORTSDIR}/www/p5-WWW-Mechanize-TreeBuilder \
 	p5-YAML>=0.36:${PORTSDIR}/textproc/p5-YAML \
 	p5-Term-Prompt>=0:${PORTSDIR}/devel/p5-Term-Prompt
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst
 
 PERL_CONFIGURE=	yes
 
