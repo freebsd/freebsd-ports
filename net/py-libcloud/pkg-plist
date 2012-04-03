@@ -85,6 +85,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/ibm_sbc.py
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/ibm_sbc.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/ibm_sbc.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/libvirt_driver.py
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/libvirt_driver.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/libvirt_driver.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/linode.py
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/linode.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/linode.pyo
@@ -103,6 +106,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rackspace.py
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rackspace.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rackspace.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rackspacenova.py
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rackspacenova.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rackspacenova.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rimuhosting.py
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rimuhosting.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/compute/drivers/rimuhosting.pyo
@@ -143,12 +149,6 @@
 %%PYTHON_SITELIBDIR%%/libcloud/dns/base.py
 %%PYTHON_SITELIBDIR%%/libcloud/dns/base.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/dns/base.pyo
-%%PYTHON_SITELIBDIR%%/libcloud/dns/providers.py
-%%PYTHON_SITELIBDIR%%/libcloud/dns/providers.pyc
-%%PYTHON_SITELIBDIR%%/libcloud/dns/providers.pyo
-%%PYTHON_SITELIBDIR%%/libcloud/dns/types.py
-%%PYTHON_SITELIBDIR%%/libcloud/dns/types.pyc
-%%PYTHON_SITELIBDIR%%/libcloud/dns/types.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/dns/drivers/__init__.py
 %%PYTHON_SITELIBDIR%%/libcloud/dns/drivers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/dns/drivers/__init__.pyo
@@ -164,6 +164,12 @@
 %%PYTHON_SITELIBDIR%%/libcloud/dns/drivers/zerigo.py
 %%PYTHON_SITELIBDIR%%/libcloud/dns/drivers/zerigo.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/dns/drivers/zerigo.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/dns/providers.py
+%%PYTHON_SITELIBDIR%%/libcloud/dns/providers.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/dns/providers.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/dns/types.py
+%%PYTHON_SITELIBDIR%%/libcloud/dns/types.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/dns/types.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/httplib_ssl.py
 %%PYTHON_SITELIBDIR%%/libcloud/httplib_ssl.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/httplib_ssl.pyo
@@ -209,9 +215,6 @@
 %%PYTHON_SITELIBDIR%%/libcloud/storage/base.py
 %%PYTHON_SITELIBDIR%%/libcloud/storage/base.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/storage/base.pyo
-%%PYTHON_SITELIBDIR%%/libcloud/storage/types.py
-%%PYTHON_SITELIBDIR%%/libcloud/storage/types.pyc
-%%PYTHON_SITELIBDIR%%/libcloud/storage/types.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/storage/drivers/__init__.py
 %%PYTHON_SITELIBDIR%%/libcloud/storage/drivers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/storage/drivers/__init__.pyo
@@ -236,6 +239,9 @@
 %%PYTHON_SITELIBDIR%%/libcloud/storage/providers.py
 %%PYTHON_SITELIBDIR%%/libcloud/storage/providers.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/storage/providers.pyo
+%%PYTHON_SITELIBDIR%%/libcloud/storage/types.py
+%%PYTHON_SITELIBDIR%%/libcloud/storage/types.pyc
+%%PYTHON_SITELIBDIR%%/libcloud/storage/types.pyo
 %%PYTHON_SITELIBDIR%%/libcloud/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/libcloud/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/libcloud/utils/__init__.pyo
