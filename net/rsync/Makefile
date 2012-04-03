@@ -43,7 +43,8 @@ OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		ATIMES    "Preserve access times, adds --atimes" off \
 		ACL       "Add backward-compatibility for the --acls option" off \
 		ICONV     "Add iconv support" off \
-		TIMELIMIT "Time limit patch" off
+		TIMELIMIT "Time limit patch" off \
+		RENAMED   "Add support for renamed file detection" on
 
 .include <bsd.port.pre.mk>
 
@@ -66,7 +67,7 @@ IGNORE=		flags and atimes can't be enabled simultaneously. Please rerun 'make co
 .endif
 .endif
 
-.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT) || defined(WITH_ATIMES)
+.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum) || defined(WITH_TIMELIMIT) || defined(WITH_ATIMES) || defined(WITH_RENAMED)
 DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
@@ -85,6 +86,11 @@ CONFIGURE_ENV+=		ac_cv_header_iconv_h=no
 .if defined(WITH_FLAGS)
 PATCH_STRIP=	-p1
 EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
+.endif
+
+.if defined(WITH_RENAMED)
+PATCH_STRIP=	-p1
+EXTRA_PATCHES+=	${WRKSRC}/patches/detect-renamed.diff
 .endif
 
 .if defined(WITH_ACL)
