@@ -7,7 +7,7 @@
 
 PORTNAME=	MasonX-WebApp
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,14 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Works with HTML::Mason to do processing before Mason is invoked
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
-		${SITE_PERL}/Apache/Session/Wrapper.pm:${PORTSDIR}/www/p5-Apache-Session-Wrapper \
-		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util
-
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+BUILD_DEPENDS=	mp2bug:${PORTSDIR}/www/mod_perl2 \
+		p5-HTML-Mason>=0:${PORTSDIR}/www/p5-HTML-Mason \
+		p5-Apache-Session-Wrapper>=0:${PORTSDIR}/www/p5-Apache-Session-Wrapper \
+		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-Class-Factory-Util>=0:${PORTSDIR}/devel/p5-Class-Factory-Util \
+		p5-URI>0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output
 
 USE_APACHE_RUN=	20+
 PERL_MODBUILD=	yes
