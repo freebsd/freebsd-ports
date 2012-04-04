@@ -12,7 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind98
-PORTVERSION=	9.8.1.1
+PORTVERSION=	9.8.2
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -25,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and DNS64
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.8.1-P1
+ISCVERSION=	9.8.2
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -210,6 +210,7 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
+PORTDOCS=	*
 PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
 PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:
