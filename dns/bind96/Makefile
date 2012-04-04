@@ -12,7 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind96
-PORTVERSION=	9.6.3.1.ESV.R5.1
+PORTVERSION=	9.6.3.1.ESV.R6
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -25,7 +25,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.6-ESV-R5-P1
+ISCVERSION=	9.6-ESV-R6
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -200,21 +200,19 @@ post-patch:
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
 
+PORTDOCS=	*
+PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
 PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
 		${BIND_DESTETC}/rndc.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
-	${INSTALL_DATA} ${WRKSRC}/RELEASE-NOTES-BIND-9.6-ESV.* ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/release-notes.css ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-	    ${WRKSRC}/NSEC3-NOTES ${WRKSRC}/README ${WRKSRC}/README.idnkit \
-	    ${WRKSRC}/README.pkcs11 \
-	    ${DOCSDIR}/
+	    ${WRKSRC}/NSEC3-NOTES ${WRKSRC}/README* ${DOCSDIR}/
 .endif
 .if !defined(WITHOUT_LINKS) && !defined(WITH_REPLACE_BASE)
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
