@@ -210,6 +210,7 @@ post-patch:
 		${WRKSRC}/bin/named/Makefile.in.Dist > \
 		${WRKSRC}/bin/named/Makefile.in
 
+PORTDOCS=	*
 PKGMESSAGE=	${.CURDIR}/../bind97/pkg-message
 PKGINSTALL=	${.CURDIR}/../bind97/pkg-install
 post-install:
