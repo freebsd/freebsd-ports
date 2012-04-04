@@ -7,6 +7,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/commands.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/commands.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/formats.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/formats.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/formats.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_io.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_io.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_io.pyo
@@ -40,6 +43,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/version.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/version.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
