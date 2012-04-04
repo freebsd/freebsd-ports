@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	obfsproxy
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.3
 PORTEPOCH=	1
 CATEGORIES=	security net
-MASTER_SITES=	https://www.torproject.org/dist/obfsproxy/ \
+MASTER_SITES=	https://archive.torproject.org/tor-package-archive/obfsproxy/ \
+		https://www.torproject.org/dist/obfsproxy/ \
 		https://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
