@@ -23,8 +23,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
-CONFIGURE_ARGS=	--without-libssh2 \
-		--without-sasl \
+CONFIGURE_ARGS=	--without-sasl \
 		--without-yajl \
 		--without-avahi \
 		--without-polkit \
