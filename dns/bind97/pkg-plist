@@ -103,6 +103,7 @@ include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
 include/isc/hmacmd5.h
+include/isc/hmacsha.h
 include/isc/httpd.h
 include/isc/int.h
 include/isc/interfaceiter.h
@@ -218,61 +219,6 @@ sbin/named-journalprint
 sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
-%%PORTDOCS%%%%DOCSDIR%%/Bv9ARM.pdf
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.xml
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE-NOTES-BIND-9.7.4.html
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE-NOTES-BIND-9.7.4.pdf
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE-NOTES-BIND-9.7.4.txt
-%%PORTDOCS%%%%DOCSDIR%%/release-notes.css
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch03.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch04.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch05.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch06.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch07.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch08.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch09.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch10.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.arpaname.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.ddns-confgen.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dig.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-dsfromkey.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-keyfromlabel.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-keygen.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-revoke.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-settime.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.dnssec-signzone.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.genrandom.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.host.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.isc-hmac-fixup.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkconf.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.named-checkzone.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.named-journalprint.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.named.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.nsec3hash.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.nsupdate.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc-confgen.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc.conf.html
-%%PORTDOCS%%%%DOCSDIR%%/arm/man.rndc.html
-%%PORTDOCS%%%%DOCSDIR%%/misc/dnssec
-%%PORTDOCS%%%%DOCSDIR%%/misc/format-options.pl
-%%PORTDOCS%%%%DOCSDIR%%/misc/ipv6
-%%PORTDOCS%%%%DOCSDIR%%/misc/migration
-%%PORTDOCS%%%%DOCSDIR%%/misc/migration-4to9
-%%PORTDOCS%%%%DOCSDIR%%/misc/options
-%%PORTDOCS%%%%DOCSDIR%%/misc/rfc-compliance
-%%PORTDOCS%%%%DOCSDIR%%/misc/roadmap
-%%PORTDOCS%%%%DOCSDIR%%/misc/sdb
-%%PORTDOCS%%%%DOCSDIR%%/misc/sort-options.pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%LINKS%%@unexec rm -f /var/named/%D/etc/named.conf
 %%LINKS%%@unexec rm -f /var/named/%D/etc/rndc.key
 %%LINKS%%@unexec rm -rf /var/named/%D
