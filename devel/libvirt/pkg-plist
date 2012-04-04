@@ -168,6 +168,8 @@ share/gtk-doc/html/libvirt/right.png
 share/gtk-doc/html/libvirt/style.css
 share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map.xml
+%%DATADIR%%/api/libvirt-api.xml
+%%DATADIR%%/api/libvirt-qemu-api.xml
 %%DATADIR%%/schemas/basictypes.rng
 %%DATADIR%%/schemas/capability.rng
 %%DATADIR%%/schemas/domain.rng
@@ -274,8 +276,9 @@ share/gtk-doc/html/libvirt/up.png
 @dirrm share/gtk-doc/html/libvirt
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrm share/libvirt/schemas
-@dirrm share/libvirt
+@dirrm %%DATADIR%%/api
+@dirrm %%DATADIR%%/schemas
+@dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/zu/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zu
 %%NLS%%@dirrmtry share/locale/vi_VN/LC_MESSAGES
