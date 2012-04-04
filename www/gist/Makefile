@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gist
-PORTVERSION=	2.0.3
+PORTVERSION=	3.1.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/defunkt/${PORTNAME}/raw/v${PORTVERSION}/
 DISTNAME=	gist
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	A gist pastebin posting command
 
 CONFLICTS=	p5-App-gist-[0-9]*
