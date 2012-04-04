@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -18,7 +18,8 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnutls.47:${PORTSDIR}/security/gnutls
+		gnutls.47:${PORTSDIR}/security/gnutls \
+		ssh2.1:${PORTSDIR}/security/libssh2
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake autoconf
@@ -30,8 +31,11 @@ CONFIGURE_ARGS=	--without-libssh2 \
 		--without-hal \
 		--without-udev \
 		--without-netcf \
-		--without-network
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+		--without-network \
+		--with-libssh2
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
@@ -64,5 +68,8 @@ post-patch:
 	@${MV} ${WRKSRC}/src/libvirt.conf ${WRKSRC}/src/libvirt.conf.sample
 	@${REINPLACE_CMD} -e 's|conf_DATA = libvirt.conf|conf_DATA = libvirt.conf.sample|' \
 		${WRKSRC}/src/Makefile.am
+
+regression-test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
 
 .include <bsd.port.mk>
