@@ -27,7 +27,7 @@ BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]*
+CONFLICTS?=	(ja-)?p5-Mail-SpamAssassin-(devel-)?[0-9]*
 
 PERL_CONFIGURE=	yes
 USE_PERL5_RUN=	5.12+
