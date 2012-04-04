@@ -44,7 +44,7 @@ OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		ACL       "Add backward-compatibility for the --acls option" off \
 		ICONV     "Add iconv support" off \
 		TIMELIMIT "Time limit patch" off \
-		RENAMED   "Add support for renamed file detection" on
+		RENAMED   "Add support for renamed file detection" off
 
 .include <bsd.port.pre.mk>
 
