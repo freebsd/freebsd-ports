@@ -9,6 +9,7 @@ PORTNAME=	libcidr
 DISTVERSION=	1.1
 CATEGORIES=	devel dns
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/${PORTNAME}/ \
+		http://distfiles.over-yonder.net/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
