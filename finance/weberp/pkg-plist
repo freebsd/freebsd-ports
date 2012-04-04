@@ -1357,6 +1357,8 @@
 %%WWWDIR%%/locale/vi_VN.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_CN.utf8/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_TW.utf8/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_TW.utf8/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualAPIFunctions.php
 %%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARInquiries.html
 %%WWWDIR%%/locale/zh_CN.utf8/Manual/ManualARReports.html
@@ -1694,6 +1696,8 @@
 @dirrm %%WWWDIR%%/locale/zh_HK.utf8/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/zh_HK.utf8/Manual
 @dirrm %%WWWDIR%%/locale/zh_HK.utf8
+@dirrm %%WWWDIR%%/locale/zh_TW.utf8/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_TW.utf8
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/reportwriter/admin/forms
 @dirrm %%WWWDIR%%/reportwriter/admin
