@@ -12553,6 +12553,7 @@ p5-HTML-Diff                    ports/www/p5-HTML-Diff
 p5-HTML-Display                 ports/www/p5-HTML-Display
 p5-HTML-Element-Extended        ports/www/p5-HTML-Element-Extended
 p5-HTML-Element-Library         ports/www/p5-HTML-Element-Library
+p5-HTML-Element-Replacer        ports/www/p5-HTML-Element-Replacer
 p5-HTML-Email-Obfuscate         ports/security/p5-HTML-Email-Obfuscate
 p5-HTML-Encoding                ports/www/p5-HTML-Encoding
 p5-HTML-Entities-ImodePictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
@@ -12892,6 +12893,7 @@ p5-Jifty-Plugin-Authentication-Ldap  ports/net/p5-Jifty-Plugin-Authentication-Ld
 p5-Jifty-Plugin-OpenID          ports/security/p5-Jifty-Plugin-OpenID
 p5-Jonk                         ports/devel/p5-Jonk
 p5-KinoSearch                   ports/textproc/p5-KinoSearch
+p5-KinoSearch1                  ports/textproc/p5-KinoSearch1
 p5-Kwalify                      ports/textproc/p5-Kwalify
 p5-Kwiki                        ports/www/p5-Kwiki
 p5-KyotoCabinet                 ports/databases/p5-KyotoCabinet
@@ -13375,6 +13377,7 @@ p5-MouseX-Traits                ports/devel/p5-MouseX-Traits
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
 p5-Mozilla-CA                   ports/www/p5-Mozilla-CA
+p5-Mozilla-PublicSuffix         ports/dns/p5-Mozilla-PublicSuffix
 p5-Multiplex-CMD                ports/devel/p5-Multiplex-CMD
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
@@ -13966,6 +13969,7 @@ p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-Plack-Middleware-Expires     ports/www/p5-Plack-Middleware-Expires
 p5-Plack-Middleware-File-Sass   ports/www/p5-Plack-Middleware-File-Sass
+p5-Plack-Middleware-ForceEnv    ports/www/p5-Plack-Middleware-ForceEnv
 p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
 p5-Plack-Middleware-IEnosniff   ports/www/p5-Plack-Middleware-IEnosniff
 p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
@@ -17059,6 +17063,7 @@ p5-html-display                 ports/www/p5-HTML-Display
 p5-html-dom                     ports/www/p5-HTML-DOM
 p5-html-element-extended        ports/www/p5-HTML-Element-Extended
 p5-html-element-library         ports/www/p5-HTML-Element-Library
+p5-html-element-replacer        ports/www/p5-HTML-Element-Replacer
 p5-html-email-obfuscate         ports/security/p5-HTML-Email-Obfuscate
 p5-html-encoding                ports/www/p5-HTML-Encoding
 p5-html-entities-imodepictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
@@ -17379,6 +17384,7 @@ p5-json-xs                      ports/converters/p5-JSON-XS
 p5-json-xs-versiononeandtwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-json1                        ports/converters/p5-JSON1
 p5-kinosearch                   ports/textproc/p5-KinoSearch
+p5-kinosearch1                  ports/textproc/p5-KinoSearch1
 p5-kwalify                      ports/textproc/p5-Kwalify
 p5-kwiki                        ports/www/p5-Kwiki
 p5-kyotocabinet                 ports/databases/p5-KyotoCabinet
@@ -17866,6 +17872,7 @@ p5-mousex-traits                ports/devel/p5-MouseX-Traits
 p5-mousex-types                 ports/devel/p5-MouseX-Types
 p5-mousex-types-path-class      ports/devel/p5-MouseX-Types-Path-Class
 p5-mozilla-ca                   ports/www/p5-Mozilla-CA
+p5-mozilla-publicsuffix         ports/dns/p5-Mozilla-PublicSuffix
 p5-mp3-find                     ports/audio/p5-MP3-Find
 p5-mp3-id3v1tag                 ports/audio/p5-MP3-ID3v1Tag
 p5-mp3-info                     ports/audio/p5-MP3-Info
@@ -18375,6 +18382,7 @@ p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-plack-middleware-expires     ports/www/p5-Plack-Middleware-Expires
 p5-plack-middleware-file-sass   ports/www/p5-Plack-Middleware-File-Sass
+p5-plack-middleware-forceenv    ports/www/p5-Plack-Middleware-ForceEnv
 p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
 p5-plack-middleware-ienosniff   ports/www/p5-Plack-Middleware-IEnosniff
 p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
