@@ -12,6 +12,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -205,7 +206,7 @@ LIBS_GROUP?=	wheel
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 
-CONFIGURE_ARGS=	--enable-layout=${RT_LAYOUT} \
+CONFIGURE_ARGS+=	--enable-layout=${RT_LAYOUT} \
 	--with-web-user=${WEB_USER} \
 	--with-web-group=${WEB_GROUP} \
 	--with-libs-group=${LIBS_GROUP} \
