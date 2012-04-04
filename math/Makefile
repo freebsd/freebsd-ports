@@ -44,6 +44,7 @@
     SUBDIR += atlas
     SUBDIR += atlas-devel
     SUBDIR += bamg
+    SUBDIR += bargraph
     SUBDIR += biggles
     SUBDIR += bihar
     SUBDIR += blacs
