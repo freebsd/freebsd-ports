@@ -16,6 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A pure perl, pluggable, lightweight web application framework
 
+DEPRECATED=	depends on mod_perl 1 which is gone
+
 BUILD_DEPENDS=	${PM_DEPENDS}
 RUN_DEPENDS=	${PM_DEPENDS}
 
