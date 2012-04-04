@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 PORTREVISION=
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.scrollz.com/download/ \
-		http://scrollz.multihomed.net/
+		http://www.netraam.net/scrollz/download/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	mdv@unsavoury.net
