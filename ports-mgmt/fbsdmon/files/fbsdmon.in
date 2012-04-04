@@ -21,10 +21,7 @@ rcvar=fbsdmon_enable
 load_rc_config "$name"
 : ${fbsdmon_enable="NO"}
 
-pidfile="/var/run/$name.pid"
-procname="%%PREFIX%%/sbin/$name"
-command="/usr/sbin/daemon"
-command_args="-c -f -p $pidfile $procname"
-stop_postcmd="/bin/rm -f $pidfile"
+command="%%PREFIX%%/sbin/$name"
+command_args="-D"
 
 run_rc_command "$1"
