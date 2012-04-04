@@ -7,7 +7,7 @@
 
 PORTNAME=	cracklib
 PORTVERSION=	2.8.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -16,14 +16,24 @@ COMMENT=	Password-checking library
 
 LICENSE=	LGPL21
 
-MAN3=		cracklib.3
-MLINKS=		cracklib.3 FascistCheck.3
+MAN3=		${PORTNAME}.3
+MLINKS=		${PORTNAME}.3 FascistCheck.3
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-default-dict=${PREFIX}/libdata/${PORTNAME}
 
+.ifdef(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--with-python
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=	--without-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/cracklib.3 ${MAN3PREFIX}/man/man3/
+	${INSTALL_MAN} ${FILESDIR}/${MAN3} ${MAN3PREFIX}/man/man3/
 	@${MKDIR} ${PREFIX}/libdata/${PORTNAME}
 	${INSTALL_DATA} ${FILESDIR}/pw_dict* ${PREFIX}/libdata/${PORTNAME}/
 
