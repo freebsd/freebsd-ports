@@ -308,13 +308,22 @@ lib/calibre/calibre/ebooks/metadata/worker.py
 lib/calibre/calibre/ebooks/metadata/xisbn.py
 lib/calibre/calibre/ebooks/metadata/zip.py
 lib/calibre/calibre/ebooks/mobi/__init__.py
-lib/calibre/calibre/ebooks/mobi/debug.py
+lib/calibre/calibre/ebooks/mobi/debug/main.py
+lib/calibre/calibre/ebooks/mobi/debug/__init__.py
+lib/calibre/calibre/ebooks/mobi/debug/mobi6.py
+lib/calibre/calibre/ebooks/mobi/debug/headers.py
+lib/calibre/calibre/ebooks/mobi/debug/mobi8.py
 lib/calibre/calibre/ebooks/mobi/huffcdic.py
 lib/calibre/calibre/ebooks/mobi/langcodes.py
 lib/calibre/calibre/ebooks/mobi/mobiml.py
-lib/calibre/calibre/ebooks/mobi/reader.py
+lib/calibre/calibre/ebooks/mobi/reader/index.py
+lib/calibre/calibre/ebooks/mobi/reader/markup.py
+lib/calibre/calibre/ebooks/mobi/reader/ncx.py
+lib/calibre/calibre/ebooks/mobi/reader/__init__.py
+lib/calibre/calibre/ebooks/mobi/reader/mobi6.py
+lib/calibre/calibre/ebooks/mobi/reader/headers.py
+lib/calibre/calibre/ebooks/mobi/reader/mobi8.py
 lib/calibre/calibre/ebooks/mobi/utils.py
-lib/calibre/calibre/ebooks/mobi/writer.py
 lib/calibre/calibre/ebooks/mobi/writer2/__init__.py
 lib/calibre/calibre/ebooks/mobi/writer2/main.py
 lib/calibre/calibre/ebooks/mobi/writer2/indexer.py
@@ -769,7 +778,6 @@ lib/calibre/calibre/gui2/store/stores/oreilly_plugin.py
 lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
 lib/calibre/calibre/gui2/store/stores/archive_org_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/wizards_tower_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/bewrite_plugin.py
 lib/calibre/calibre/gui2/store/stores/baen_webscription_plugin.py
 lib/calibre/calibre/gui2/store/stores/__init__.py
@@ -1209,6 +1217,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/builtin_recipes.xml
 %%DATADIR%%/builtin_recipes.zip
 %%DATADIR%%/calibre-portable.bat
+%%DATADIR%%/calibre-portable.sh
 %%DATADIR%%/catalog/DefaultCover.jpg
 %%DATADIR%%/catalog/mastheadImage.gif
 %%DATADIR%%/catalog/section_list_templates.py
@@ -1280,6 +1289,7 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 %%DATADIR%%/fonts/prs500/tt0003m_.ttf
 %%DATADIR%%/fonts/prs500/tt0011m_.ttf
 %%DATADIR%%/fonts/prs500/tt0419m_.ttf
+%%DATADIR%%/fonts/calibreSymbols.otf
 %%DATADIR%%/images.qrc
 %%DATADIR%%/images/add_book.png
 %%DATADIR%%/images/arrow-down.png
@@ -1583,6 +1593,8 @@ share/gnome/apps/calibre-ebook-viewer.desktop
 @dirrm lib/calibre/calibre/ebooks/oeb
 @dirrm lib/calibre/calibre/ebooks/odt
 @dirrm lib/calibre/calibre/ebooks/mobi/writer2
+@dirrm lib/calibre/calibre/ebooks/mobi/reader
+@dirrm lib/calibre/calibre/ebooks/mobi/debug
 @dirrm lib/calibre/calibre/ebooks/mobi
 @dirrm lib/calibre/calibre/ebooks/metadata/sources
 @dirrm lib/calibre/calibre/ebooks/metadata/book

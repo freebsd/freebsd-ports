@@ -2,7 +2,7 @@
 
 NOTE: Calibre requires Hal to be running for access to devices.  The user who
 is running Calibre also needs to be able to mount devices.  For non-root users,
-this means modifying /usr/local/etc/PolicyKit/PolicyKit.conf and adding the
+this means modifying %%PREFIX%%/etc/PolicyKit/PolicyKit.conf and adding the
 policy there.
 
 To allow a single user named "example" to mount removable devices, add the
