@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fbsdmon
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.91
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://files.roorback.net/
 
@@ -15,7 +14,7 @@ MAINTAINER=	magik@roorback.net
 COMMENT=	Sumbit system and ports statistics to fbsdmon.org
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		jansson.7:${PORTSDIR}/devel/jansson \
+		jansson.7:${PORTSDIR}/devel/jansson
 
 SUB_FILES=	600.fbsdmon pkg-message
 USE_RC_SUBR=	fbsdmon

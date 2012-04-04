@@ -16,7 +16,7 @@ case "$weekly_fbsdmon_enable" in
         echo ""
         echo "Sending statistic to fbsdmon.org"
 
-        %%PREFIX%%/sbin/fbsdmon
+        %%PREFIX%%/sbin/fbsdmon -D -s
         rc=$?;;
 
     *)  rc=0;;
