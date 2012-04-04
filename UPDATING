@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120404:
+  AFFECTS: users of net-mgmt/net-snmp
+  AUTHOR: zi@FreeBSD.org
+
+  The net-snmp startup script now specifies a new pid_file to avoid a
+  conflict that existed with bsnmpd.  As a result, the startup script
+  cannot find currently running versions of snmpd.
+
+  You will need to either stop the daemon before upgrading or locate the
+  PID of snmpd and manually kill it after upgrade.  Then, start the daemon
+  as you normally would.
+
 20120326:
   AFFECTS: users of www/tomcat7
   AUTHOR: ale@FreeBSD.org
