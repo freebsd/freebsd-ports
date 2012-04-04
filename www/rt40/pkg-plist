@@ -1264,7 +1264,7 @@ share/rt40/po/zh_TW.po
 @exec mkdir -p %D/share/rt40/etc
 @exec mkdir -p %D/share/rt40/lib
 @exec mkdir -p %D/share/rt40/plugins
-@dirrm share/rt40/plugins
+@dirrmtry share/rt40/plugins
 @dirrmtry share/rt40/lib
 @dirrm share/rt40/html/m/tickets
 @dirrm share/rt40/html/m/ticket
