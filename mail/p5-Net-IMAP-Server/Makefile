@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-IMAP-Server
-PORTVERSION=	1.29
+PORTVERSION=	1.31
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	p5-Net-Server-Coro>=0.6:${PORTSDIR}/net/p5-Net-Server-Coro \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME
+		p5-Email-MIME>=0:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
