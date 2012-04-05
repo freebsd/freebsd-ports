@@ -1,0 +1,13 @@
+--- modules/Makefile.in.orig	2012-04-05 10:46:11.219706762 -0700
++++ modules/Makefile.in	2012-04-05 12:45:02.702508603 -0700
+@@ -265,7 +265,9 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = afsocket afsql afstreams affile afprog afuser afmongodb afsmtp csvparser confgen syslogformat pacctformat basicfuncs dbparser tfjson tfuuid jsonparser
++# XXX Temporarily afsmtp build temporarily broken
++# XXX SUBDIRS = afsocket afsql afstreams affile afprog afuser afmongodb afsmtp csvparser confgen syslogformat pacctformat basicfuncs dbparser tfjson tfuuid jsonparser
++SUBDIRS = afsocket afsql afstreams affile afprog afuser afmongodb csvparser confgen syslogformat pacctformat basicfuncs dbparser tfjson tfuuid jsonparser
+ all: all-recursive
+ 
+ .SUFFIXES:

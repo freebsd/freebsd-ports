@@ -95,20 +95,12 @@ lib/syslog-ng/libcsvparser.la
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdbparser.la
 lib/syslog-ng/libdbparser.so
-lib/syslog-ng/libdummy.la
-lib/syslog-ng/libdummy.so
 lib/syslog-ng/libsyslog-ng-crypto.la
 lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libtfuuid.so
 lib/syslog-ng/libtfuuid.la
-@comment XXX upline says these are installed regardless of optoins selected
-lib/syslog-ng/libafsmtp.la
-lib/syslog-ng/libafsmtp.so
-lib/syslog-ng/libtfjson.la
-lib/syslog-ng/libtfjson.so
-@comment XXX
 share/include/scl/pacct/plugin.conf
 share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk
