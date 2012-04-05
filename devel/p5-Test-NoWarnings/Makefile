@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-NoWarnings
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Hide and store warnings while running test scripts
 
-TEST_DEPENDS=	p5-Test-Tester>=0:${PORTSDIR}/devel/p5-Test-Tester
+BUILD_DEPENDS=	p5-Test-Tester>=0.107:${PORTSDIR}/devel/p5-Test-Tester \
+		p5-Test-Simple>=0.47:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
 
 PERL_CONFIGURE=	yes
 
