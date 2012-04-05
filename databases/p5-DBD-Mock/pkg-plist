@@ -1,5 +1,16 @@
+%%SITE_PERL%%/DBD/Mock/Pool/db.pm
+%%SITE_PERL%%/DBD/Mock/StatementTrack/Iterator.pm
+%%SITE_PERL%%/DBD/Mock/db.pm
+%%SITE_PERL%%/DBD/Mock/StatementTrack.pm
+%%SITE_PERL%%/DBD/Mock/st.pm
+%%SITE_PERL%%/DBD/Mock/dr.pm
+%%SITE_PERL%%/DBD/Mock/Session.pm
+%%SITE_PERL%%/DBD/Mock/Pool.pm
 %%SITE_PERL%%/DBD/Mock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Mock/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Mock
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
+@dirrmtry %%SITE_PERL%%/DBD/Mock/StatementTrack
+@dirrmtry %%SITE_PERL%%/DBD/Mock/Pool
+@dirrmtry %%SITE_PERL%%/DBD/Mock
 @dirrmtry %%SITE_PERL%%/DBD
