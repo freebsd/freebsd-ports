@@ -131,7 +131,7 @@ post-patch:
 .if defined(WITH_SQLMOD)
 	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch
 .endif
-
+	@${REINPLACE_CMD} -e "/Your system does not support IPv6/ s|as_fn_error|echo|" ${WRKSRC}/configure
 do-install:
 	${INSTALL} -m 0700 ${WRKSRC}/src/ircd ${PREFIX}/libexec/ircd
 	${MKDIR} ${MODULESDIR}
