@@ -4,4 +4,4 @@
 #
 
 cd %%PATH%%
-exec %%JAVA_CMD%% -jar -Xmx256m %%BURP%% "$@"
+exec %%JAVA_CMD%% -jar -Xmx512m %%BURP%% "$@"

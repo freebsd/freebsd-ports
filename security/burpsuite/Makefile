@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	burpsuite
-PORTVERSION=	1.3.03
+PORTVERSION=	1.4.01
 CATEGORIES=	security java
-MASTER_SITES=	http://www.portswigger.net/suite/
+MASTER_SITES=	http://www.portswigger.net/burp/ \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,sbz,}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Burp Suite is an integrated platform for testing web applications
 
 USE_ZIP=	YES
@@ -20,17 +21,21 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-PLIST_FILES=	bin/${PORTNAME} %%JAVAJARDIR%%/${DISTNAME}.jar
+PLIST_FILES=	bin/${PORTNAME} \
+		%%JAVAJARDIR%%/${DISTNAME}.jar
 
-#.if !defined(NOPORTDOCS)
-PORTDOCS=	readme_-_running_burp.txt terms_and_conditions.txt
-#.endif
+PORTDOCS=	readme_-_running_burp.txt
 
 .include <bsd.port.pre.mk>
 
+# Get BSFEL agreement
+.if !defined(PACKAGE_BUILDING)
+pre-extract:
+	@${SH} ${FILESDIR}/license.sh
+.endif
+
 post-extract:
-	${MV} ${WRKSRC}/readme\ -\ running\ burp.txt ${WRKSRC}/readme_-_running_burp.txt
-	${MV} ${WRKSRC}/terms\ and\ conditions.txt ${WRKSRC}/terms_and_conditions.txt
+	@${MV} ${WRKSRC}/readme\ -\ running\ burp.txt ${WRKSRC}/readme_-_running_burp.txt
 
 pre-install:
 	@${SED} -e 's:%%PATH%%:${JAVAJARDIR}/:' \
@@ -44,7 +49,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme_-_running_burp.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/terms_and_conditions.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
