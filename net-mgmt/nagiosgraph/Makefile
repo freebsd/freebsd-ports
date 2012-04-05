@@ -7,6 +7,7 @@
 
 PORTNAME=	nagiosgraph
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -68,8 +69,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${NAGIOSWWWDIR}/stylesheets
 .endfor
 
-	${MV} ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif.bak
-	${INSTALL_DATA} ${WRKSRC}/share/graph.gif ${PREFIX}/${NAGIOSWWWDIR}/images/action.gif
+	${INSTALL_DATA} ${WRKSRC}/share/graph.gif ${PREFIX}/${NAGIOSWWWDIR}/images/action-nagiosgraph.gif
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
