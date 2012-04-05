@@ -7,10 +7,9 @@
 
 PORTNAME=	pdksh
 PORTVERSION=	5.2.14p2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
-MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
-		http://gd.tuwien.ac.at/utils/shells/pdksh/ \
+MASTER_SITES=	http://gd.tuwien.ac.at/utils/shells/pdksh/ \
 		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
 		ftp://ftp.demon.net/pub/mirrors/pdksh/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/p.*//}
@@ -23,8 +22,13 @@ MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	The Public Domain Korn Shell
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDSTATIC=-static
 MAN1=		ksh.1
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_STATIC)
+CONFIGURE_ENV+=	LDSTATIC=-static
+.endif
 
 post-patch:
 	@(${ECHO_CMD} ",s/v${PORTVERSION:C/p.*//}/v${PORTVERSION:S/p/./}/"; \
