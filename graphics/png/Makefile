@@ -17,6 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKE_JOBS_SAFE=	yes
+FROBIDDEN=	Vulnerable http://www.libpng.org/pub/png/libpng.html
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes
