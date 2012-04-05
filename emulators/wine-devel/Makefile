@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.4
+DISTVERSION=	1.5.0
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://ibiblio.org/pub/linux/system/emulators/wine/
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
+COMMENT=	Microsoft Windows compatibility environment
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
@@ -34,8 +34,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --with-glu \
 		--without-gphoto --without-gsm --without-gstreamer \
-		--with-opengl --without-mpg123 --with-oss \
-		--without-sane --without-tiff \
+		--with-opengl --without-mpg123 --without-opencl \
+		--with-oss --without-sane --without-tiff \
 		--without-v4l --without-xcomposite --without-xinerama \
 		--with-xinput2 --with-xrandr
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"

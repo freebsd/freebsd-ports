@@ -410,6 +410,8 @@ include/wine/windows/mshtml.h
 include/wine/windows/mshtml.idl
 include/wine/windows/msi.h
 include/wine/windows/msidefs.h
+include/wine/windows/msident.h
+include/wine/windows/msident.idl
 include/wine/windows/msinkaut.h
 include/wine/windows/msinkaut.idl
 include/wine/windows/msiquery.h
@@ -1044,6 +1046,7 @@ lib/wine/fakedlls/mcicda.dll
 lib/wine/fakedlls/mciqtz32.dll
 lib/wine/fakedlls/mciseq.dll
 lib/wine/fakedlls/mciwave.dll
+lib/wine/fakedlls/mgmtapi.dll
 lib/wine/fakedlls/midimap.dll
 lib/wine/fakedlls/mlang.dll
 lib/wine/fakedlls/mmcndmgr.dll
@@ -1073,6 +1076,7 @@ lib/wine/fakedlls/mshta.exe
 lib/wine/fakedlls/mshtml.dll
 lib/wine/fakedlls/mshtml.tlb
 lib/wine/fakedlls/msi.dll
+lib/wine/fakedlls/msident.dll
 lib/wine/fakedlls/msiexec.exe
 lib/wine/fakedlls/msimg32.dll
 lib/wine/fakedlls/msimsg.dll
@@ -1263,6 +1267,7 @@ lib/wine/fakedlls/w32skrnl.dll
 lib/wine/fakedlls/w32sys.dll16
 lib/wine/fakedlls/wbemprox.dll
 lib/wine/fakedlls/wer.dll
+lib/wine/fakedlls/wevtapi.dll
 lib/wine/fakedlls/wiaservc.dll
 lib/wine/fakedlls/win32s16.dll16
 lib/wine/fakedlls/win87em.dll16
@@ -1321,6 +1326,7 @@ lib/wine/fakedlls/wsock32.dll
 lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
 lib/wine/fakedlls/wuaueng.dll
+lib/wine/fakedlls/wusa.exe
 lib/wine/fakedlls/xapofx1_1.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
@@ -1548,6 +1554,7 @@ lib/wine/mcicda.dll.so
 lib/wine/mciqtz32.dll.so
 lib/wine/mciseq.dll.so
 lib/wine/mciwave.dll.so
+lib/wine/mgmtapi.dll.so
 lib/wine/midimap.dll.so
 lib/wine/mlang.dll.so
 lib/wine/mmcndmgr.dll.so
@@ -1577,6 +1584,7 @@ lib/wine/mshta.exe.so
 lib/wine/mshtml.dll.so
 lib/wine/mshtml.tlb.so
 lib/wine/msi.dll.so
+lib/wine/msident.dll.so
 lib/wine/msiexec.exe.so
 lib/wine/msimg32.dll.so
 lib/wine/msimsg.dll.so
@@ -1767,6 +1775,7 @@ lib/wine/w32skrnl.dll.so
 lib/wine/w32sys.dll16.so
 lib/wine/wbemprox.dll.so
 lib/wine/wer.dll.so
+lib/wine/wevtapi.dll.so
 lib/wine/wiaservc.dll.so
 lib/wine/win32s16.dll16.so
 lib/wine/win87em.dll16.so
@@ -1825,6 +1834,7 @@ lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
 lib/wine/wuaueng.dll.so
+lib/wine/wusa.exe.so
 lib/wine/xapofx1_1.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
