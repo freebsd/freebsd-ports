@@ -56,7 +56,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1299554
+SVNREVISION=		1308242
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -102,7 +102,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		rdf.0:${PORTSDIR}/textproc/redland \
 		textcat.0:${PORTSDIR}/textproc/libtextcat \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		graphite.3:${PORTSDIR}/graphics/silgraphite
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -120,7 +121,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh \
 		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel \
 		epm:${PORTSDIR}/devel/epm \
-		dmake:${PORTSDIR}/devel/dmake
+		dmake:${PORTSDIR}/devel/dmake \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 USE_AUTOTOOLS=	autoconf
 USE_BISON=	build
@@ -155,6 +157,7 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-poppler \
 			--with-system-redland \
 			--with-system-libtextcat \
+			--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
 			--with-system-vigra \
 			--with-system-stdlibs \
 			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
@@ -176,6 +179,7 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-beanshell	\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar
 
+#			--with-system-graphite
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 #OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
@@ -234,7 +238,7 @@ do-install:
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/OO*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
