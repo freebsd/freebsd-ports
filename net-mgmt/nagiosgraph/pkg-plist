@@ -43,9 +43,7 @@ libexec/%%PORTNAME%%/insert.pl
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showhost.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showservice.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/testcolor.cgi
-@exec mv %D/%%NAGIOSWWWDIR%%%/images/action.gif %D/%%NAGIOSWWWDIR%%/images/action.gif.bak
-%%NAGIOSWWWDIR%%/images/action.gif
-@unexec mv %D/%%NAGIOSWWWDIR%%%/images/action.gif.bak %D/%%NAGIOSWWWDIR%%/images/action.gif
+%%NAGIOSWWWDIR%%/images/action-nagiosgraph.gif
 %%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.css
 %%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.js
 %%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.ssi
