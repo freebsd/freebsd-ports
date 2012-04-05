@@ -186,6 +186,7 @@
     SUBDIR += vmware-tools6
     SUBDIR += vxtools
     SUBDIR += wine
+    SUBDIR += wine-devel
     SUBDIR += wine-doors
     SUBDIR += wine-gecko
     SUBDIR += wxmupen64plus
