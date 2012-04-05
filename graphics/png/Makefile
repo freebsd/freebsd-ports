@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTVERSION=	1.4.11
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}14/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -17,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKE_JOBS_SAFE=	yes
-FROBIDDEN=	Vulnerable http://www.libpng.org/pub/png/libpng.html
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes
@@ -35,22 +33,24 @@ MANCOMPRESSED=	maybe
 
 OPTIONS=	APNG "Animated PNG support" On
 
+APNGDISTNAME=	${DISTNAME}-apng.patch
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APNG) || make(makesum) || defined(FETCH_ALL)
-MASTER_SITES+=	SF/lib${PORTNAME}-apng/libpng-master/${PORTVERSION}:apng
-DISTFILES+=	${DISTNAME}-apng.patch.gz:apng
+MASTER_SITES+=	SF/apng/libpng/libpng14:apng
+DISTFILES+=	${APNGDISTNAME}.gz:apng
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 .if !defined(WITHOUT_APNG)
-EXTRA_PATCHES=	${WRKSRC}/${DISTNAME}-apng.patch
+EXTRA_PATCHES=	${WRKSRC}/${APNGDISTNAME}
 .endif
 
 post-extract:
 .if !defined(WITHOUT_APNG)
 	@${LN} -sf ${WRKSRC} ${WRKSRC}/
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}-apng.patch.gz ${WRKSRC}/
-	${GZIP_CMD} -d ${WRKSRC}/${DISTNAME}-apng.patch.gz
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${APNGDISTNAME}.gz ${WRKSRC}/
+	${GZIP_CMD} -d ${WRKSRC}/${APNGDISTNAME}.gz
 .endif
 
 pre-su-install:
