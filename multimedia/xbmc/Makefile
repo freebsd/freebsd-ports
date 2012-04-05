@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xbmc
-PORTVERSION=	11.0.rc1
-PORTREVISION=	1
+PORTVERSION=	11.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
-DISTNAME=	${PORTNAME}-11.0-Eden_rc1
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	XBMC is an award winning media center application

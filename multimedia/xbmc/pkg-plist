@@ -151,6 +151,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovenian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish/strings.xml
@@ -167,6 +168,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Hungarian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Polish/strings.xml
+%%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Slovenian/strings.xml
 %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Spanish/strings.xml
@@ -581,6 +583,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/ogg.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/pcm_bluray.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/truehd.png
+%%DATADIR%%/addons/skin.confluence/media/flagging/audio/vorbis.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wav.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wavpack.png
 %%DATADIR%%/addons/skin.confluence/media/flagging/audio/wma.png
@@ -699,6 +702,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Hungarian/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Polish/strings.xml
+%%DATADIR%%/addons/visualization.glspectrum/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian/strings.xml
 %%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish/strings.xml
@@ -739,6 +743,7 @@ share/icons/hicolor/48x48/apps/xbmc.png
 %%DATADIR%%/addons/visualization.projectm/resources/language/Korean/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Polish/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Portuguese/strings.xml
+%%DATADIR%%/addons/visualization.projectm/resources/language/Romanian/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Russian/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian/strings.xml
 %%DATADIR%%/addons/visualization.projectm/resources/language/Spanish/strings.xml
@@ -1084,6 +1089,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Russian
+@dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Polish
 @dirrm %%DATADIR%%/addons/visualization.projectm/resources/language/Korean
@@ -1123,6 +1129,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Russian
+@dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Polish
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Korean
 @dirrm %%DATADIR%%/addons/visualization.glspectrum/resources/language/Hungarian
@@ -1215,6 +1222,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Russian
+@dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Polish
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Korean
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.slideshow/resources/language/Hungarian
@@ -1231,6 +1239,7 @@ share/xsessions/XBMC.desktop
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Spanish
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Slovenian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Russian
+@dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Romanian
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Portuguese
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Polish
 @dirrm %%DATADIR%%/addons/screensaver.xbmc.builtin.dim/resources/language/Korean
