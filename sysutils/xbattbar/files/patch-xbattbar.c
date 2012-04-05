@@ -1,6 +1,15 @@
---- xbattbar.c.orig	Fri Feb  2 13:25:29 2001
-+++ xbattbar.c	Wed Dec 13 00:35:49 2006
-@@ -501,6 +501,10 @@
+--- xbattbar.c.orig	2001-02-02 06:25:29.000000000 +0100
++++ xbattbar.c	2012-04-04 17:47:34.000000000 +0200
+@@ -29,6 +29,8 @@ static char *ReleaseVersion="1.4.2";
+ #include <sys/time.h>
+ #include <signal.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
+@@ -501,6 +503,10 @@ void battery_check(void)
  
  #ifdef __FreeBSD__
  
@@ -11,7 +20,7 @@
  #include <machine/apm_bios.h>
  
  #define APMDEV21       "/dev/apm0"
-@@ -515,54 +519,90 @@
+@@ -515,54 +521,90 @@ void battery_check(void)
  #define        APM_STAT_BATT_LOW       1
  #define        APM_STAT_BATT_CRITICAL  2
  #define        APM_STAT_BATT_CHARGING  3
