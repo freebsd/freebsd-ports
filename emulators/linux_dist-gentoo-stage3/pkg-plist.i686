@@ -1137,6 +1137,7 @@
 %%PREFIX_SUBDIR%%usr/bin/gcc-4.5.3
 %%PREFIX_SUBDIR%%usr/bin/gcc-config
 %%PREFIX_SUBDIR%%usr/bin/gcov
+%%PREFIX_SUBDIR%%usr/bin/gcov-4.5.3
 %%PREFIX_SUBDIR%%usr/bin/gdbus
 %%PREFIX_SUBDIR%%usr/bin/gdiffmk
 %%PREFIX_SUBDIR%%usr/bin/gencat
@@ -1202,6 +1203,8 @@
 %%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-g++-4.5.3
 %%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gcc
 %%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gcc-4.5.3
+%%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gcov
+%%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gcov-4.5.3
 %%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gfortran
 %%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gfortran-4.5.3
 %%PREFIX_SUBDIR%%usr/bin/i686-pc-linux-gnu-gprof
@@ -1514,6 +1517,7 @@
 %%PREFIX_SUBDIR%%usr/bin/unlzma
 %%PREFIX_SUBDIR%%usr/bin/unshare
 %%PREFIX_SUBDIR%%usr/bin/unxz
+%%PREFIX_SUBDIR%%usr/bin/update-mime-database
 %%PREFIX_SUBDIR%%usr/bin/uptime
 %%PREFIX_SUBDIR%%usr/bin/users
 %%PREFIX_SUBDIR%%usr/bin/utmpdump
@@ -1607,6 +1611,7 @@
 %%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/gcc-bin/4.5.3/i686-pc-linux-gnu-g++
 %%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/gcc-bin/4.5.3/i686-pc-linux-gnu-gcc
 %%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/gcc-bin/4.5.3/i686-pc-linux-gnu-gcc-4.5.3
+%%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/gcc-bin/4.5.3/i686-pc-linux-gnu-gcov
 %%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/gcc-bin/4.5.3/i686-pc-linux-gnu-gfortran
 %%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/lib/ldscripts
 %%PREFIX_SUBDIR%%usr/i686-pc-linux-gnu/lib/libbfd-2.21.1.so
@@ -6884,7 +6889,6 @@
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/IO/Socket/SSL.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/Net/SMTP/SSL.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/Digest/MD5.pm
-%%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/Digest/SHA1.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/List/Util.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/List/Util/PP.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/List/Util/XS.pm
@@ -6893,7 +6897,6 @@
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/Scalar/Util.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/Scalar/Util/PP.pm
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Digest/MD5/MD5.so
-%%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Digest/SHA1/SHA1.so
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/List/Util/Util.so
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Net/SSLeay/SSLeay.so
 %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Net/SSLeay/autosplit.ix
@@ -7136,16 +7139,13 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/PackageUninstall.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/PackageVirtualDbapi.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/PipeReader.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/PollConstants.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/PollScheduler.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/PollSelectAdapter.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/ProgressHandler.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/QueueScheduler.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/RootConfig.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/Scheduler.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/SequentialTaskQueue.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/SetArg.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/SlotObject.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/SpawnProcess.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/SubProcess.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/Task.py
@@ -7247,12 +7247,8 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PackageVirtualDbapi.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PipeReader.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PipeReader.cpython-32.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PollConstants.cpython-32.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PollConstants.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PollScheduler.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PollScheduler.cpython-32.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PollSelectAdapter.cpython-32.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/PollSelectAdapter.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/ProgressHandler.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/ProgressHandler.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/QueueScheduler.cpython-32.pyc
@@ -7265,8 +7261,6 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SequentialTaskQueue.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SetArg.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SetArg.cpython-32.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SlotObject.cpython-32.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SlotObject.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SpawnProcess.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SpawnProcess.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/__pycache__/SubProcess.cpython-32.pyc
@@ -7691,9 +7685,12 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/runTests
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/update.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/ExtractKernelVersion.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/SlotObject.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__init__.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/ExtractKernelVersion.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/ExtractKernelVersion.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/SlotObject.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/SlotObject.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/__init__.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/__init__.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__/_pty.cpython-32.pyc
@@ -7721,6 +7718,24 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_dyn_libs/__pycache__/PreservedLibsRegistry.cpython-32.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_dyn_libs/__pycache__/__init__.cpython-32.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_dyn_libs/__pycache__/__init__.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/EventLoop.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/GlibEventLoop.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/PollConstants.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/PollSelectAdapter.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__init__.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/EventLoop.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/EventLoop.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/GlibEventLoop.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/GlibEventLoop.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/PollConstants.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/PollConstants.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/PollSelectAdapter.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/PollSelectAdapter.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/__init__.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/__init__.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/global_event_loop.cpython-32.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__/global_event_loop.cpython-32.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/global_event_loop.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_pty.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/digraph.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/env_update.py
@@ -11267,14 +11282,11 @@
 %%PREFIX_SUBDIR%%usr/share/consoletrans/zero
 %%PREFIX_SUBDIR%%usr/share/dict/cracklib-small
 %%PREFIX_SUBDIR%%usr/share/doc/Authen-SASL-2.150.0/Changes.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.01-r1/Changes.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.01-r1/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.01-r1/rfc2104.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.30.0/Changes.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.30.0/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/Digest-MD5-2.510.0/Changes.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/Digest-MD5-2.510.0/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/Digest-MD5-2.510.0/rfc1321.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/Digest-SHA1-2.12/Changes.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/Digest-SHA1-2.12/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/Error-0.170.160/ChangeLog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/Error-0.170.160/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/IO-Socket-SSL-1.440.0/Changes.bz2
@@ -11298,14 +11310,14 @@
 %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.46-r1/PORTING.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.46-r1/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/baselayout-2.0.3/ChangeLog.svn.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/CHANGES.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/COMPAT.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/FAQ.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/INTRO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/Y2K.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/AUTHORS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/CHANGES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/COMPAT.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/FAQ.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/INTRO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20/Y2K.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.21.1-r1/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.21.1-r1/bfd/ChangeLog-0001.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.21.1-r1/bfd/ChangeLog-0203.bz2
@@ -11974,11 +11986,11 @@
 %%PREFIX_SUBDIR%%usr/share/doc/man-1.6g/README.IRIX.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-1.6g/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-1.6g/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.35/Changes.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.35/Changes.old.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.35/README.Gentoo.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.35/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.35/man-pages-3.35.Announce.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.36/Changes.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.36/Changes.old.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.36/README.Gentoo.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.36/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.36/man-pages-3.36.Announce.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a/Changes.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a/man-pages-posix-2003-a.Announce.bz2
@@ -12027,19 +12039,19 @@
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/README.tun.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/sshd_config.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/CHANGES.SSLeay.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/CHANGES.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/FAQ.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/c-indentation.el.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/fingerprints.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/html/openssl_button.gif
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/html/openssl_button.html
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/openssl-shared.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/openssl.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/ssleay.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/standards.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/CHANGES.SSLeay.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/CHANGES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/FAQ.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/c-indentation.el.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/fingerprints.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/html/openssl_button.gif
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/html/openssl_button.html
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/openssl-shared.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/openssl.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/ssleay.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/standards.txt.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/CHANGELOG.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/ChangeLog.bz2
@@ -12213,9 +12225,9 @@
 %%PREFIX_SUBDIR%%usr/share/doc/perl-5.12.4-r1/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/popt-1.16-r1/CHANGES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/popt-1.16-r1/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.44/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.44/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.44/RELEASE-NOTES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.49/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.49/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.49/RELEASE-NOTES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8_p11/BUGS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8_p11/HACKING.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8_p11/NEWS.bz2
@@ -12271,6 +12283,10 @@
 %%PREFIX_SUBDIR%%usr/share/doc/shadow-4.1.4.3/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/shadow-4.1.4.3/WISHLIST.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/shadow-4.1.4.3/console.c.spec.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/shared-mime-info-1.0/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/shared-mime-info-1.0/HACKING.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/shared-mime-info-1.0/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/shared-mime-info-1.0/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/sysvinit-2.88-r3/Changelog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/sysvinit-2.88-r3/Install.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/sysvinit-2.88-r3/Propaganda.bz2
@@ -14134,12 +14150,14 @@
 %%PREFIX_SUBDIR%%usr/share/locale/am/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ar/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ar/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ar/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/as/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/as/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/as/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ast/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ast/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/az/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/az/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/gettext-runtime.mo
@@ -14151,6 +14169,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be@latin/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/be@latin/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/findutils.mo
@@ -14160,14 +14179,17 @@
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/libc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/psmisc.mo
+%%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bg/man
+%%PREFIX_SUBDIR%%usr/share/locale/bg_BG/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bn/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bn_IN/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bn_IN/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bn_IN/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/bn_IN/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bs/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/bs/LC_MESSAGES/shadow.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/Linux-PAM.mo
@@ -14185,11 +14207,13 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca@valencia/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ca@valencia/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/coreutils.mo
@@ -14208,6 +14232,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_MESSAGES/util-linux.mo
@@ -14216,6 +14241,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/man
 %%PREFIX_SUBDIR%%usr/share/locale/cy/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/cy/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/cracklib.mo
@@ -14232,6 +14258,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/util-linux.mo
@@ -14258,6 +14285,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/util-linux.mo
@@ -14281,6 +14309,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_TIME/coreutils.mo
@@ -14298,6 +14327,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/en_CA/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/en_GB/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/en_GB/LC_MESSAGES/libc.mo
+%%PREFIX_SUBDIR%%usr/share/locale/en_GB/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/en_GB/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/en_US/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/bash.mo
@@ -14309,6 +14339,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/sed.mo
+%%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_TIME/coreutils.mo
@@ -14329,6 +14360,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/util-linux.mo
@@ -14355,11 +14387,13 @@
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fa/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/fa_IR/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/coreutils.mo
@@ -14376,11 +14410,13 @@
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/man
+%%PREFIX_SUBDIR%%usr/share/locale/fo/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/coreutils.mo
@@ -14401,6 +14437,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/util-linux.mo
@@ -14419,6 +14456,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/make.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/sed.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_TIME/coreutils.mo
@@ -14434,6 +14472,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/gl/LC_MESSAGES/wget.mo
@@ -14450,11 +14489,13 @@
 %%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/make.mo
 %%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hi/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hi/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hi/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/hi/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/grep.mo
@@ -14478,6 +14519,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/util-linux.mo
@@ -14501,6 +14543,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/wget.mo
@@ -14524,6 +14567,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/wget.mo
@@ -14547,6 +14591,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/util-linux.mo
@@ -14558,6 +14603,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/kk/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/kk/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/kk/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/kk/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/kk/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/km/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/km/LC_MESSAGES/shadow.mo
@@ -14577,6 +14623,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/man
@@ -14595,11 +14642,13 @@
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/libc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/make.mo
+%%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/popt.mo
+%%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/mai/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/mg/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/mk/LC_MESSAGES/glib20.mo
@@ -14615,6 +14664,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/Linux-PAM.mo
@@ -14628,6 +14678,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/wget.mo
@@ -14654,6 +14705,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/util-linux.mo
@@ -14664,6 +14716,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/nn/LC_MESSAGES/gettext-tools.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nn/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nn/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/nn/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/oc/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/or/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/or/LC_MESSAGES/cracklib.mo
@@ -14671,6 +14724,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pa/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pa/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pa/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/pa/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/coreutils.mo
@@ -14690,6 +14744,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/util-linux.mo
@@ -14710,6 +14765,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_TIME/coreutils.mo
@@ -14731,6 +14787,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/wget.mo
@@ -14749,6 +14806,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/wget.mo
@@ -14770,6 +14828,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/util-linux.mo
@@ -14780,6 +14839,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/libc.mo
+%%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/si/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/si/LC_MESSAGES/glib20.mo
@@ -14796,6 +14856,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_TIME/coreutils.mo
@@ -14807,6 +14868,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/sed.mo
+%%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/wget.mo
@@ -14815,6 +14877,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sl_SI/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sq/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sq/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/sq/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/findutils.mo
@@ -14823,10 +14886,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/sed.mo
+%%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr@ije/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr@latin/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sr@latin/LC_MESSAGES/glib20.mo
+%%PREFIX_SUBDIR%%usr/share/locale/sr@latin/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/coreutils.mo
@@ -14845,6 +14910,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/util-linux.mo
@@ -14879,6 +14945,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/util-linux.mo
@@ -14887,6 +14954,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/tt/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ug/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/Linux-PAM.mo
+%%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/findutils.mo
@@ -14899,6 +14967,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/util-linux.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/wget.mo
@@ -14921,6 +14990,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/util-linux.mo
@@ -14928,9 +14998,11 @@
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/wa/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/wa/LC_MESSAGES/popt.mo
+%%PREFIX_SUBDIR%%usr/share/locale/wa/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/xh/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/yi/LC_MESSAGES/glib20.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/Linux-PAM.mo
+%%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/diffutils.mo
@@ -14948,6 +15020,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/util-linux.mo
@@ -14970,6 +15043,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/psmisc.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/sed.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/shadow.mo
+%%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/util-linux.mo
@@ -16140,6 +16214,7 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/unlzma.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/unshare.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/unxz.1.bz2
+%%PREFIX_SUBDIR%%usr/share/man/man1/update-mime-database.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/uptime.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/users.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/utmpdump.1.bz2
@@ -16665,6 +16740,7 @@
 %%PREFIX_SUBDIR%%usr/share/man/man2/send.2.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man2/sendfile.2.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man2/sendfile64.2.bz2
+%%PREFIX_SUBDIR%%usr/share/man/man2/sendmmsg.2.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man2/sendmsg.2.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man2/sendto.2.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man2/set_mempolicy.2.bz2
@@ -22372,6 +22448,680 @@
 %%PREFIX_SUBDIR%%usr/share/man/zh_TW/man8/useradd.8.bz2
 %%PREFIX_SUBDIR%%usr/share/man/zh_TW/man8/userdel.8.bz2
 %%PREFIX_SUBDIR%%usr/share/man/zh_TW/man8/usermod.8.bz2
+%%PREFIX_SUBDIR%%usr/share/mime/XMLnamespaces
+%%PREFIX_SUBDIR%%usr/share/mime/aliases
+%%PREFIX_SUBDIR%%usr/share/mime/application/andrew-inset.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/annodex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/atom+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/dicom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/docbook+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/ecmascript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/epub+zip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/gnunet-directory.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/illustrator.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/javascript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/mac-binhex40.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/mathematica.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/mathml+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/mbox.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/metalink+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/metalink4+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/msword-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/msword.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/mxf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/octet-stream.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/oda.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/oxps.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pgp-encrypted.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pgp-keys.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pgp-signature.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkcs10.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkcs7-mime.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkcs7-signature.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkcs8.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkix-cert.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkix-crl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/pkix-pkipath.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/postscript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/prs.plucker.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/ram.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/rdf+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/relax-ng-compact-syntax.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/rss+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/rtf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/sdp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/sieve.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/smil.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.android.package-archive.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.apple.mpegurl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.corel-draw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.emusic-emusic_package.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.google-earth.kml+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.google-earth.kmz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.hp-hpgl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.hp-pcl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.iccprofile.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.lotus-1-2-3.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.mozilla.xul+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-access.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-cab-compressed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-excel.addin.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-excel.sheet.binary.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-excel.sheet.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-excel.template.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-excel.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-htmlhelp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-powerpoint.addin.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-powerpoint.presentation.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-powerpoint.slide.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-powerpoint.slideshow.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-powerpoint.template.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-powerpoint.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-tnef.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-word.document.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-word.template.macroEnabled.12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-works.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.ms-wpl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.chart-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.chart.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.database.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.formula-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.formula.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.graphics-flat-xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.graphics-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.graphics.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.image.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.presentation-flat-xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.presentation-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.presentation.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.spreadsheet-flat-xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.spreadsheet-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.spreadsheet.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.text-flat-xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.text-master.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.text-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.text-web.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.oasis.opendocument.text.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openofficeorg.extension.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.presentationml.presentation.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.presentationml.slide.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.presentationml.slideshow.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.presentationml.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.document.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.rn-realmedia.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.calc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.chart.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.draw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.impress.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.mail.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.math.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.stardivision.writer.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.calc.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.calc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.draw.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.draw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.impress.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.impress.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.math.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.writer.global.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.writer.template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.sun.xml.writer.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.symbian.install.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.tcpdump.pcap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.visio.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/vnd.wordperfect.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-7z-compressed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-abiword.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ace.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-alz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-amipro.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-aportisdoc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-apple-diskimage.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-applix-spreadsheet.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-applix-word.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-arc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-archive.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-arj.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-asp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-awk.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bcpio.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bittorrent.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-blender.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bzdvi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bzip-compressed-tar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bzip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bzpdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-bzpostscript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cb7.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cbr.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cbt.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cbz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cd-image.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cdrdao-toc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-chess-pgn.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cisco-vpn-settings.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-class-file.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-compress.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-compressed-tar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-core.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cpio-compressed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cpio.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-csh.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-cue.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-dar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-dbf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-dc-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-deb.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-designer.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-desktop.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-dia-diagram.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-dia-shape.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-dvi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-e-theme.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-egon.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-executable.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-fictionbook+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-fluid.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-afm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-bdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-dos.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-framemaker.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-libgrx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-linux-psf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-otf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-pcf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-speedo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-sunos-news.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-tex-tfm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-tex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-ttf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-ttx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-type1.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-font-vfont.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-frame.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gameboy-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gba-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gdbm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gedcom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-genesis-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gettext-translation.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-glade.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gmc-link.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gnucash.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gnumeric.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gnuplot.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-go-sgf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-graphite.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gtktalog.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gz-font-linux-psf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gzdvi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gzip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gzpdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-gzpostscript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-hdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-hwp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-hwt.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ica.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ipod-firmware.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-it87.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-java-archive.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-java-jce-keystore.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-java-jnlp-file.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-java-keystore.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-java-pack200.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-java.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-jbuilder-project.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-karbon.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kchart.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kexi-connectiondata.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kexiproject-shortcut.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kexiproject-sqlite2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kexiproject-sqlite3.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kformula.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-killustrator.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kivio.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kontour.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kpovmodeler.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kpresenter.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-krita.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kspread-crypt.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kspread.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ksysv-package.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kugar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kword-crypt.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-kword.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lha.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lhz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lrzip-compressed-tar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lrzip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lyx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lzip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lzma-compressed-tar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lzma.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-lzop.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-m4.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-macbinary.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-magicpoint.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-markaby.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-matroska.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-mif.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-mobipocket-ebook.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-mozilla-bookmarks.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ms-dos-executable.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ms-wim.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-msi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-mswinurl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-mswrite.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-msx-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-n64-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-nautilus-link.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-navi-animation.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-nes-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-netcdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-netshow-channel.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-nintendo-ds-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-nzb.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-object.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ole-storage.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-oleo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-pak.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-palm-database.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-par2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-pef-executable.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-perl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-php.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-pkcs12.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-pkcs7-certificates.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-planperfect.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-pocket-word.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-profile.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-pw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-python-bytecode.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-quattropro.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-quicktime-media-link.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-qw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-rar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-rpm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ruby.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sami.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-shar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-shared-library-la.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sharedlib.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-shellscript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-shockwave-flash.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-shorten.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-siag.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-slp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-smaf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sms-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-snes-rom.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-spss-por.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-spss-sav.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sqlite2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sqlite3.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-stuffit.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-subrip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sv4cpio.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-sv4crc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-t602.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-tar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-tarz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-tex-gf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-tex-pk.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-tgif.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-theme.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-toutdoux.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-trash.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-troff-man-compressed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-troff-man.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-tzo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ufraw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-ustar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-wais-source.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-windows-themepack.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-wpg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-wwf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-x509-ca-cert.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-xbel.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-xliff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-xpinstall.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-xz-compressed-tar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-xz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-xzpdf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-yaml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-zerosize.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/x-zoo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/xhtml+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/xml-dtd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/xml-external-parsed-entity.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/xslt+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/xspf+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/application/zip.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/AMR-WB.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/AMR.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/ac3.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/annodex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/basic.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/flac.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/midi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/mp2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/mp4.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/mpeg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/prs.sid.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/vnd.rn-realaudio.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/webm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-adpcm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-aifc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-aiff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-aiffc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-ape.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-flac+ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-gsm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-iriver-pla.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-it.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-m4b.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-matroska.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-minipsf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-mo3.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-mod.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-mpegurl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-ms-asx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-ms-wma.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-musepack.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-psf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-psflib.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-riff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-s3m.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-scpls.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-speex+ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-speex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-stm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-tta.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-voc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-vorbis+ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-wav.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-wavpack-correction.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-wavpack.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-xi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-xm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/audio/x-xmf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/generic-icons
+%%PREFIX_SUBDIR%%usr/share/mime/globs
+%%PREFIX_SUBDIR%%usr/share/mime/globs2
+%%PREFIX_SUBDIR%%usr/share/mime/icons
+%%PREFIX_SUBDIR%%usr/share/mime/image/bmp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/cgm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/dpx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/fax-g3.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/fits.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/g3fax.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/gif.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/ief.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/jp2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/jpeg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/openraster.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/png.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/rle.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/svg+xml-compressed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/svg+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/tiff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.adobe.photoshop.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.djvu.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.dwg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.dxf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.microsoft.icon.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.ms-modi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.rn-realpix.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/vnd.wap.wbmp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-3ds.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-adobe-dng.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-applix-graphics.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-bzeps.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-canon-cr2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-canon-crw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-cmu-raster.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-compressed-xcf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-dcraw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-dds.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-dib.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-emf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-eps.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-exr.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-fpx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-fuji-raf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-gzeps.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-icns.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-iff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-ilbm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-jng.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-kodak-dcr.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-kodak-k25.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-kodak-kdc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-lwo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-lws.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-macpaint.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-minolta-mrw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-msod.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-niff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-nikon-nef.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-olympus-orf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-panasonic-raw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-panasonic-raw2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-pcx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-pentax-pef.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-photo-cd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-pict.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-portable-anymap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-portable-bitmap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-portable-graymap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-portable-pixmap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-quicktime.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-rgb.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-sgi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-sigma-x3f.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-skencil.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-sony-arw.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-sony-sr2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-sony-srf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-sun-raster.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-tga.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-win-bitmap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-wmf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-xbitmap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-xcf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-xcursor.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-xfig.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-xpixmap.xml
+%%PREFIX_SUBDIR%%usr/share/mime/image/x-xwindowdump.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/blockdevice.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/chardevice.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/directory.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/fifo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/mount-point.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/socket.xml
+%%PREFIX_SUBDIR%%usr/share/mime/inode/symlink.xml
+%%PREFIX_SUBDIR%%usr/share/mime/magic
+%%PREFIX_SUBDIR%%usr/share/mime/message/delivery-status.xml
+%%PREFIX_SUBDIR%%usr/share/mime/message/disposition-notification.xml
+%%PREFIX_SUBDIR%%usr/share/mime/message/external-body.xml
+%%PREFIX_SUBDIR%%usr/share/mime/message/news.xml
+%%PREFIX_SUBDIR%%usr/share/mime/message/partial.xml
+%%PREFIX_SUBDIR%%usr/share/mime/message/rfc822.xml
+%%PREFIX_SUBDIR%%usr/share/mime/message/x-gnu-rmail.xml
+%%PREFIX_SUBDIR%%usr/share/mime/mime.cache
+%%PREFIX_SUBDIR%%usr/share/mime/model/vrml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/alternative.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/appledouble.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/digest.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/encrypted.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/mixed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/related.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/report.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/signed.xml
+%%PREFIX_SUBDIR%%usr/share/mime/multipart/x-mixed-replace.xml
+%%PREFIX_SUBDIR%%usr/share/mime/packages/freedesktop.org.xml
+%%PREFIX_SUBDIR%%usr/share/mime/subclasses
+%%PREFIX_SUBDIR%%usr/share/mime/text/cache-manifest.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/calendar.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/css.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/csv.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/enriched.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/html.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/htmlh.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/plain.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/rfc822-headers.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/richtext.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/sgml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/spreadsheet.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/tab-separated-values.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/troff.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vcard.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vnd.graphviz.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vnd.rn-realtext.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vnd.sun.j2me.app-descriptor.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vnd.trolltech.linguist.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vnd.wap.wml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vnd.wap.wmlscript.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/vtt.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-adasrc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-authors.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-bibtex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-c++hdr.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-c++src.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-changelog.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-chdr.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-cmake.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-cobol.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-copying.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-credits.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-csharp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-csrc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-dcl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-dsl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-dsrc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-eiffel.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-emacs-lisp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-erlang.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-fortran.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-gettext-translation-template.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-gettext-translation.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-go.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-google-video-pointer.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-haskell.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-iMelody.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-idl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-install.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-iptables.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-java.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-ldif.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-lilypond.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-literate-haskell.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-log.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-lua.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-makefile.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-markdown.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-matlab.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-microdvd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-moc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-mof.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-mpsub.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-mrml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-ms-regedit.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-mup.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-nfo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-objcsrc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-ocaml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-ocl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-ooc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-opml+xml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-pascal.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-patch.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-python.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-qml.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-readme.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-reject.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-rpm-spec.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-scala.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-scheme.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-setext.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-sql.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-ssa.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-subviewer.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-svhdr.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-svsrc.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-tcl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-tex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-texinfo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-troff-me.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-troff-mm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-troff-ms.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-txt2tags.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-uil.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-uri.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-vala.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-verilog.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-vhdl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-xmi.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/x-xslfo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/text/xmcd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/treemagic
+%%PREFIX_SUBDIR%%usr/share/mime/types
+%%PREFIX_SUBDIR%%usr/share/mime/version
+%%PREFIX_SUBDIR%%usr/share/mime/video/3gpp.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/3gpp2.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/annodex.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/dv.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/isivideo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/mp2t.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/mp4.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/mpeg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/quicktime.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/vivo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/vnd.mpegurl.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/vnd.rn-realvideo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/wavelet.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/webm.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-anim.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-flic.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-flv.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-javafx.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-matroska.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-mng.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-ms-asf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-ms-wmv.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-msvideo.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-nsv.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-ogm+ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-sgi-movie.xml
+%%PREFIX_SUBDIR%%usr/share/mime/video/x-theora+ogg.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/audio-cdda.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/audio-dvd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/audio-player.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/blank-bd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/blank-cd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/blank-dvd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/blank-hddvd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/ebook-reader.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/image-dcf.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/image-picturecd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/software.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/unix-software.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/video-bluray.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/video-dvd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/video-hddvd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/video-svcd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/video-vcd.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-content/win32-software.xml
+%%PREFIX_SUBDIR%%usr/share/mime/x-epoc/x-sisx-app.xml
 %%PREFIX_SUBDIR%%usr/share/misc/magic.mgc
 %%PREFIX_SUBDIR%%usr/share/nano/asm.nanorc
 %%PREFIX_SUBDIR%%usr/share/nano/awk.nanorc
@@ -22427,6 +23177,7 @@
 %%PREFIX_SUBDIR%%usr/share/openrc/runlevels/sysinit/devfs
 %%PREFIX_SUBDIR%%usr/share/openrc/runlevels/sysinit/dmesg
 %%PREFIX_SUBDIR%%usr/share/pixmaps/sandbox.svg
+%%PREFIX_SUBDIR%%usr/share/pkgconfig/shared-mime-info.pc
 %%PREFIX_SUBDIR%%usr/share/pkgconfig/udev.pc
 %%PREFIX_SUBDIR%%usr/share/portage/config/make.conf.example
 %%PREFIX_SUBDIR%%usr/share/portage/config/make.globals
@@ -27258,36 +28009,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/app-misc/pax-utils-0.2.3/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/app-misc/pax-utils-0.2.3/pax-utils-0.2.3.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/app-misc/pax-utils-0.2.3/repository
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/PF
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/USE
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/bash-4.1_p9.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9/repository
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/PF
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/USE
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/bash-4.2_p20.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20/repository
 %%PREFIX_SUBDIR%%var/db/pkg/dev-lang/perl-5.12.4-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/dev-lang/perl-5.12.4-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/dev-lang/perl-5.12.4-r1/CATEGORY
@@ -27588,38 +28339,38 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4/mpfr-3.0.1_p4.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4/repository
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CC
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/PDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/PF
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/USE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/openssl-1.0.0g.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g/repository
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CC
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/PDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/PF
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/USE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/openssl-1.0.0h.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h/repository
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1/CATEGORY
@@ -27678,64 +28429,34 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Authen-SASL-2.150.0/USE
 %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Authen-SASL-2.150.0/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Authen-SASL-2.150.0/repository
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/Digest-HMAC-1.01-r1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/Digest-SHA1-2.12.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/PF
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/USE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12/repository
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/Digest-HMAC-1.30.0.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/PF
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/USE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0/repository
 %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Error-0.170.160/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Error-0.170.160/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Error-0.170.160/CATEGORY
@@ -28533,34 +29254,34 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-1.6g/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-1.6g/man-1.6g.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-1.6g/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/PDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/RESTRICT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/man-pages-3.35.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/PDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/RESTRICT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/man-pages-3.36.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a/CATEGORY
@@ -28681,35 +29402,35 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.9.8.4/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.9.8.4/openrc-0.9.8.4.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.9.8.4/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/PDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/portage-2.1.10.44.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/PDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/portage-2.1.10.49.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.5/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.5/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.5/CATEGORY
@@ -29971,6 +30692,25 @@
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.510.0-r1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.510.0-r1/perl-Digest-MD5-2.510.0-r1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.510.0-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/PF
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/USE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/perl-Digest-SHA-5.47.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47/repository
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/CATEGORY
@@ -30028,6 +30768,25 @@
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/perl-libnet-1.220.0-r1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/PF
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/USE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/repository
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0/shadow-0.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/CATEGORY
@@ -30047,6 +30806,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/repository
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/ssh-0.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/PF
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/USE
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/repository
+%%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0/shared-mime-info-1.0.ebuild
 %%PREFIX_SUBDIR%%var/empty/.keep
 %%PREFIX_SUBDIR%%var/empty/.keep_net-misc_openssh-0
 %%PREFIX_SUBDIR%%var/lib/.keep
@@ -30076,10 +30865,14 @@
 @dirrm %%PREFIX_SUBDIR%%var/lib/gentoo
 @dirrm %%PREFIX_SUBDIR%%var/lib
 @dirrm %%PREFIX_SUBDIR%%var/empty
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/x11-misc/shared-mime-info-1.0
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/x11-misc
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/shadow-0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-SHA-5.47
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.510.0-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/pam-0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/pager-0
@@ -30135,12 +30928,12 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/shadow-4.1.4.3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sed-4.2.1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.5
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.44
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.49
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.9.8.4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.35
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.36
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-1.6g
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/less-444
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/kbd-1.15.3
@@ -30172,12 +30965,11 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Net-SMTP-SSL-1.10.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/IO-Socket-SSL-1.440.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Error-0.170.160
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-SHA1-2.12
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.01-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Digest-HMAC-1.30.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Authen-SASL-2.150.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0g
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0h
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpc-0.8.2
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r5
@@ -30190,7 +30982,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-lang/python-3.2.2
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-lang/perl-5.12.4-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-lang
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.1_p9
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-shells/bash-4.2_p20
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-shells
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-misc/pax-utils-0.2.3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-misc/mime-types-8
@@ -30365,6 +31157,19 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/nano/man-html
 @dirrm %%PREFIX_SUBDIR%%usr/share/nano
 @dirrm %%PREFIX_SUBDIR%%usr/share/misc
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/x-epoc
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/x-content
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/video
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/text
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/packages
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/multipart
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/model
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/message
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/inode
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/image
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/audio
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime/application
+@dirrm %%PREFIX_SUBDIR%%usr/share/mime
 @dirrm %%PREFIX_SUBDIR%%usr/share/man/zh_TW/man8
 @dirrm %%PREFIX_SUBDIR%%usr/share/man/zh_TW/man5
 @dirrm %%PREFIX_SUBDIR%%usr/share/man/zh_TW/man1
@@ -30657,9 +31462,13 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_TIME
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fr
+@dirrm %%PREFIX_SUBDIR%%usr/share/locale/fo/LC_MESSAGES
+@dirrm %%PREFIX_SUBDIR%%usr/share/locale/fo
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_TIME
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fi
+@dirrm %%PREFIX_SUBDIR%%usr/share/locale/fa_IR/LC_MESSAGES
+@dirrm %%PREFIX_SUBDIR%%usr/share/locale/fa_IR
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fa/LC_MESSAGES
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/fa
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_TIME
@@ -30718,6 +31527,8 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/bn_IN
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/bn/LC_MESSAGES
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/bn
+@dirrm %%PREFIX_SUBDIR%%usr/share/locale/bg_BG/LC_MESSAGES
+@dirrm %%PREFIX_SUBDIR%%usr/share/locale/bg_BG
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_TIME
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/bg/LC_MESSAGES
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/bg
@@ -30895,6 +31706,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/tcp-wrappers-7.6-r8
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/tar-1.26
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/sysvinit-2.88-r3
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/shared-mime-info-1.0
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/shadow-4.1.4.3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/sed-4.2.1/examples
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/sed-4.2.1
@@ -30907,7 +31719,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/python-3.2.2
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/psmisc-22.14
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8_p11
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.44
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.49
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/popt-1.16-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/perl-5.12.4-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pax-utils-0.2.3
@@ -30915,8 +31727,8 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/modules
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g/html
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0g
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h/html
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0h
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.9.8.4
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728
@@ -30927,7 +31739,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/mpc-0.8.2
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.35
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.36
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-1.6g
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/make-3.82-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r5
@@ -30982,7 +31794,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.21.1-r1/binutils
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.21.1-r1/bfd
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.21.1-r1
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/bash-4.2_p20
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/baselayout-2.0.3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.46-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/acl-2.2.51
@@ -30991,9 +31803,8 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/Net-SMTP-SSL-1.10.0
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/IO-Socket-SSL-1.440.0
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/Error-0.170.160
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/Digest-SHA1-2.12
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/Digest-MD5-2.510.0
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.01-r1
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/Digest-HMAC-1.30.0
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/Authen-SASL-2.150.0
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc
 @dirrm %%PREFIX_SUBDIR%%usr/share/dict
@@ -31185,6 +31996,8 @@
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/repoman
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/xml/__pycache__
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/xml
+@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop/__pycache__
+@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_eventloop
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_dyn_libs/__pycache__
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_dyn_libs
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/__pycache__
@@ -31235,7 +32048,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Net
 @dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/List/Util
 @dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/List
-@dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Digest/SHA1
 @dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Digest/MD5
 @dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto/Digest
 @dirrm %%PREFIX_SUBDIR%%usr/lib/perl5/vendor_perl/5.12.4/i686-linux/auto
