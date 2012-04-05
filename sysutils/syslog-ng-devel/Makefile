@@ -7,11 +7,14 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.0a1
+PORTREVISION=   1
 CATEGORIES=	sysutils
-# MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(DISTVERSOIN)/source/
+# MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(DISTVERSOIN)/source/ \
 # temporary workaround: git snapshot
 # as alpha1 release crashes on start on FreeBSD
-MASTER_SITES=	http://people.balabit.hu/czanik/
+MASTER_SITES=	http://people.balabit.hu/czanik/ \
+		http://komquats.com/distfiles/ \
+		http://people.freebsd.org/~cy/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
 DISTFILES=	$(PORTNAME)-$(DISTVERSION).tar.gz
@@ -30,6 +33,7 @@ OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		SPOOF "Build with spoof source support" off \
 		IPV6 "Build with IPV6 support" on \
 		PCRE "Build with PCRE support" on \
+		SMTP "Build with SMTP support" off \
 		JSON_C "Build with JSON-C support" off \
 		JSON_GLIB "Build with JSON-GLIB support" off \
 
@@ -100,6 +104,15 @@ LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
+.if defined(WITH_SMTP)
+CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/lib
+LIB_DEPENDS+=		esmtp.6:${PORTSDIR}/mail/libesmtp
+PLIST_FILES+=		lib/syslog-ng/libafsmtp.la lib/syslog-ng/libafsmtp.so
+BROKEN=                 "smtp support does not work currently"
+.else
+CONFIGURE_ARGS+=	--without-libesmtp
+.endif
+
 .if defined(WITH_SQL)
 LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
@@ -116,13 +129,11 @@ BROKEN=		JSON_C and JSON_GLIB are mutually exclusive
 .if defined(WITH_JSON_GLIB)
 LIB_DEPENDS+=		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 CONFIGURE_ARGS+=        --with-json=json-glib
-# XXX Tarball brokenness
-# XXX PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
+PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 .elif defined(WITH_JSON_C)
 LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=        --with-json=json-c
-# XXX Tarball brokenness
-# XXX PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so \
+PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
 PLIST_FILES+= 		lib/syslog-ng/libjsonparser.so lib/syslog-ng/libjsonparser.la
 .else
 CONFIGURE_ARGS+=        --disable-json
