@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	18.0.1025.142
+DISTVERSION=	18.0.1025.151
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -78,8 +78,8 @@ GYP_DEFINES+=	use_cups=1 \
 OPTIONS=	CODECS	"Compile and enable patented codecs like H.264"	on \
 		GCONF	"Use GConf2 for preferences"			on \
 		PULSEAUDIO	"Enable Pulse Audio support"		off \
-		CLANG	"Build Chromium with Clang"			on \
-		GCC46	"Build Chromium with GCC 4.6+"			off \
+		CLANG	"Build Chromium with Clang"			off \
+		GCC46	"Build Chromium with GCC 4.6+"			on \
 		DEBUG	"Compile with debug symbols and verbose output"	off
 
 .include <bsd.port.options.mk>
@@ -120,7 +120,7 @@ IGNORE=	does not compile with base gcc
 .endif
 
 .if defined(WITH_GCC46) && defined(WITH_CLANG)
-IGNORE=	conflicting options (CLANG or GCC46)
+IGNORE=	conflicting options (CLANG and GCC46)
 .endif
 
 .if defined(WITH_GCC46)
