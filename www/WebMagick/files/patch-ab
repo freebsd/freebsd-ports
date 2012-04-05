@@ -2,10 +2,10 @@ Index: webmagickrc.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagickrc.in,v
 retrieving revision 1.16
-retrieving revision 1.25
-diff -u -r1.16 -r1.25
+retrieving revision 1.27
+diff -u -r1.16 -r1.27
 --- webmagickrc.in	4 Dec 2001 19:36:57 -0000	1.16
-+++ webmagickrc.in	31 Mar 2012 19:07:43 -0000	1.25
++++ webmagickrc.in	5 Apr 2012 09:12:18 -0000	1.27
 @@ -15,6 +15,7 @@
  				# Relative path under rootpath / prefixpath
  # $opt_iconbase = '';
@@ -22,7 +22,7 @@ diff -u -r1.16 -r1.25
  # $opt_srcdir		= '.';	# Source directory path (current directory)
  # $opt_verbose		= 0;	# Verbose flag (default off)
  # $opt_forcecache		= 0;	# Force update of cached thumbnails
-@@ -90,30 +92,50 @@
+@@ -90,30 +92,51 @@
  # $opt_forcemontage	= 0;	# Force montage (default off)
  # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
  # $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
@@ -30,6 +30,7 @@ diff -u -r1.16 -r1.25
 +# $opt_forceuplink      = 0;    # Force there to be an uplink in directory index list
 +				#  (i.e. even if we didn't generate ../index.html)
  # $opt_jpegquality      = 70;   # Quality of JPEG imagemaps
++# $opt_unsharp          = '0.64x0.64'; # Unsharp for all images
  # $opt_help		= 0;	# Display usage message
  # $opt_version		= 0;	# Display version info
  # $opt_htmlext            = '.html'; # Use .shtml for SSI
@@ -73,7 +74,7 @@ diff -u -r1.16 -r1.25
  # $opt_allowconfig	 = 0; # allow user to configure table and framestyle
  
  #				
-@@ -199,8 +221,7 @@
+@@ -199,8 +222,7 @@
  # $opt_frames           = 1;            # Use frames
  # $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  # $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
@@ -83,7 +84,7 @@ diff -u -r1.16 -r1.25
  # $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -245,6 +266,7 @@
+@@ -245,6 +267,7 @@
  # $opt_icons{'next_gray'}		= 'gray_next.gif';	# Next (grayed out)
  # $opt_icons{'up'}		= 'blue_up.gif';  	# Up
  # $opt_icons{'help'}		= 'blue_readme.gif';	# Help Readme File

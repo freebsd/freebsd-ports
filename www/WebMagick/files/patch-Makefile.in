@@ -1,0 +1,11 @@
+--- Makefile.in.bak	2002-10-23 20:20:54.000000000 +0400
++++ Makefile.in	2012-04-05 11:53:19.000000000 +0400
+@@ -375,7 +375,7 @@
+ 	  $(INSTALL_SCRIPT) $$file $(ICON_INSTALL_DIR) ; \
+ 	done
+ 	$(mkinstalldirs) $(ETC_INSTALL_DIR)
+-	$(INSTALL_DATA) webmagickrc $(ETC_INSTALL_DIR)/webmagickrc
++#        $(INSTALL_DATA) webmagickrc $(ETC_INSTALL_DIR)/webmagickrc
+ 
+ # Generate webmagick.lsm from webmagick.lsm.in at dist time.
+ webmagick.lsm : webmagick.lsm.in configure.in
