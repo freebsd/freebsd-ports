@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.8d9
+PORTVERSION=	2.8.8d12
 PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}2.8.8dev.9
+DISTNAME=	${PORTNAME}2.8.8dev.12
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
