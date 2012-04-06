@@ -7,6 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \

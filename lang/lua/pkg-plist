@@ -13,10 +13,10 @@ lib/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 %%LUA_LIBDIR%%/liblua.a
 %%LUA_LIBDIR%%/liblua.so
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
-@dirrm %%DATADIR%%/%%LUA_VER%%
+@dirrmtry %%DATADIR%%/%%LUA_VER%%
 @dirrmtry %%DATADIR%%
 @dirrm %%LUA_LIBDIR%%
-@dirrm lib/lua/%%LUA_VER%%
+@dirrmtry lib/lua/%%LUA_VER%%
 @dirrmtry lib/lua
 @dirrm %%LUA_INCDIR%%
 @dirrm %%LUA_BINDIR%%
