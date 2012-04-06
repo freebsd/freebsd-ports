@@ -935,6 +935,7 @@ bar                             ports/textproc/bar
 barbecue                        ports/graphics/barbecue
 barcode                         ports/graphics/barcode
 bareftp                         ports/ftp/bareftp
+bargraph                        ports/math/bargraph
 barnyard2                       ports/security/barnyard2
 barnyard2-sguil                 ports/security/barnyard2-sguil
 barrage                         ports/games/barrage
