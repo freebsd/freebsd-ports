@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dfu-programmer
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	byu17@uclive.ac.nz
 COMMENT=	Device Firmware Update based USB programmer for Atmel chips
 
 GNU_CONFIGURE=	yes
