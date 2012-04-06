@@ -7,6 +7,7 @@
 
 PORTNAME=	signing-party
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Various OpenPGP related tools
 
-RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1 \
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
 		${SITE_PERL}/Mail/Util.pm:${PORTSDIR}/mail/p5-Mail-Tools \
