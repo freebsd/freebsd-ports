@@ -1,0 +1,26 @@
+--- ./Makefile.orig	2012-04-06 15:11:08.000000000 +0200
++++ ./Makefile	2012-04-06 15:11:27.000000000 +0200
+@@ -16,8 +16,12 @@
+ CP = /bin/cp -f
+ 
+ CFLAGS = -Wc,-W -Wc,-Wall
++.if defined(WITH_DEBUG)
+ CFLAGS+= -DDEBUG
++.endif
++.if defined(WITH_PHP)
+ CFLAGS+= -DWITH_PHP
++.endif
+ #CFLAGS+= -DWITH_PHP -DWITH_UID_GID -DWITH_CACHE
+ LDFLAGS = 
+ 
+@@ -28,8 +32,8 @@
+ $(APACHE_MODULE): $(SRCS)
+ 	$(APXS) -c $(CFLAGS) $(LDFLAGS) $(SRCS)
+ 
+-install: all
+-	$(APXS) -i -a -n $(NAME) $(MODULE_LA)
++install: $(MODULE_LA)
++	$(APXS) -i -A -n $(NAME) $(MODULE_LA)
+ 
+ clean:
+ 	$(RM) $(OBJS) $(APACHE_MODULE) *.slo *.lo mod_myvhost.la .libs

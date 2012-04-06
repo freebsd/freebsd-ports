@@ -494,6 +494,7 @@
     SUBDIR += mod_memcache
     SUBDIR += mod_mono
     SUBDIR += mod_musicindex
+    SUBDIR += mod_myvhost
     SUBDIR += mod_ntlm2
     SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
