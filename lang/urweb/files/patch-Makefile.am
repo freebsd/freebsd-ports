@@ -1,0 +1,8 @@
+--- src/c/Makefile.am.orig	2012-03-29 08:09:43.000000000 -0700
++++ src/c/Makefile.am	2012-04-04 00:52:39.000000000 -0700
+@@ -7,4 +7,4 @@
+ liburweb_static_la_SOURCES = static.c
+ 
+ AM_CPPFLAGS = -I../../include @OPENSSL_INCLUDES@
+-AM_CFLAGS = -Wimplicit -Wall -Werror -Wno-format-security -Wno-deprecated-declarations
++AM_CFLAGS = -Wimplicit -Wall -Wno-format-security -Wno-deprecated-declarations

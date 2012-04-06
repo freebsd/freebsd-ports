@@ -366,6 +366,7 @@
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
     SUBDIR += ucc
+    SUBDIR += urweb
     SUBDIR += v8
     SUBDIR += vala
     SUBDIR += vala-vapigen

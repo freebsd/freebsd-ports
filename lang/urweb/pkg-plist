@@ -1,0 +1,53 @@
+bin/urweb
+include/urweb/config.h
+include/urweb/queue.h
+include/urweb/request.h
+include/urweb/types.h
+include/urweb/urweb.h
+lib/liburweb.a
+lib/liburweb.la
+lib/liburweb.so
+lib/liburweb.so.0
+lib/liburweb_cgi.a
+lib/liburweb_cgi.la
+lib/liburweb_cgi.so
+lib/liburweb_cgi.so.0
+lib/liburweb_fastcgi.a
+lib/liburweb_fastcgi.la
+lib/liburweb_fastcgi.so
+lib/liburweb_fastcgi.so.0
+lib/liburweb_http.a
+lib/liburweb_http.la
+lib/liburweb_http.so
+lib/liburweb_http.so.0
+lib/liburweb_static.a
+lib/liburweb_static.la
+lib/liburweb_static.so
+lib/liburweb_static.so.0
+lib/urweb/js/urweb.js
+lib/urweb/ur/basis.urs
+lib/urweb/ur/char.ur
+lib/urweb/ur/char.urs
+lib/urweb/ur/list.ur
+lib/urweb/ur/list.urs
+lib/urweb/ur/listPair.ur
+lib/urweb/ur/listPair.urs
+lib/urweb/ur/monad.ur
+lib/urweb/ur/monad.urs
+lib/urweb/ur/option.ur
+lib/urweb/ur/option.urs
+lib/urweb/ur/string.ur
+lib/urweb/ur/string.urs
+lib/urweb/ur/top.ur
+lib/urweb/ur/top.urs
+%%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-compat.el
+%%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-defs.el
+%%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-mode-startup.el
+%%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-mode.el
+%%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-move.el
+%%ELISP%%share/emacs/site-lisp/urweb-mode/urweb-util.el
+%%ELISP%%@dirrm share/emacs/site-lisp/urweb-mode
+@dirrm lib/urweb/ur
+@dirrm lib/urweb/js
+@dirrm lib/urweb
+@dirrm include/urweb
