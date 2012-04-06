@@ -52,6 +52,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="462e2d6c-8017-11e1-a571-bcaec565249c">
+    <topic>freetype -- multiple vulnability</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Freetype project reports:</p>
+	<blockquote cite="https://sourceforge.net/projects/freetype/files/freetype2/2.4.9/README/view">
+	  <p>Another round of fixes to better handle invalid fonts. Many of
+             them are vulnerabilities.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1126</cvename>
+      <cvename>CVE-2012-1127</cvename>
+      <cvename>CVE-2012-1128</cvename>
+      <cvename>CVE-2012-1129</cvename>
+      <cvename>CVE-2012-1130</cvename>
+      <cvename>CVE-2012-1131</cvename>
+      <cvename>CVE-2012-1132</cvename>
+      <cvename>CVE-2012-1133</cvename>
+      <cvename>CVE-2012-1134</cvename>
+      <cvename>CVE-2012-1135</cvename>
+      <cvename>CVE-2012-1136</cvename>
+      <cvename>CVE-2012-1137</cvename>
+      <cvename>CVE-2012-1138</cvename>
+      <cvename>CVE-2012-1139</cvename>
+      <cvename>CVE-2012-1140</cvename>
+      <cvename>CVE-2012-1141</cvename>
+      <cvename>CVE-2012-1142</cvename>
+      <cvename>CVE-2012-1143</cvename>
+      <cvename>CVE-2012-1144</cvename>
+      <url>https://sourceforge.net/projects/freetype/files/freetype2/2.4.9/README/view</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=806270</url>
+    </references>
+    <dates>
+      <discovery>2012-03-08</discovery>
+      <entry>2012-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="49314321-7fd4-11e1-9582-001b2134ef46">
     <topic>mutt-devel -- failure to check SMTP TLS server certificate</topic>
     <affects>
