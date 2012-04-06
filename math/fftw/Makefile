@@ -18,8 +18,6 @@ PKGNAMESUFFIX=	${FFTW_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
-BROKEN=		does not configure
-
 LICENSE=	GPLv2
 
 # current flavors: default, float
@@ -28,7 +26,7 @@ FFTW_SUFIX=
 
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:env libtool
+USE_AUTOTOOLS=	autoconf:env automake:env libtool
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
