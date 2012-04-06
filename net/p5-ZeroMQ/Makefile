@@ -25,7 +25,9 @@ LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq \
 
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-TCP>=1.08:${PORTSDIR}/devel/p5-Test-TCP
+		p5-Test-TCP>=1.08:${PORTSDIR}/devel/p5-Test-TCP \
+		p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-JSON>=2.00:${PORTSDIR}/converters/p5-JSON
 
 USE_GNOME=	pkgconfig
 
@@ -40,7 +42,13 @@ MAN3=	\
 	ZeroMQ::Poller.3 \
 	ZeroMQ::Message.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s/lib => 'zmq',//" ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
