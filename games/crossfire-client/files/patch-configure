@@ -1,0 +1,11 @@
+--- ./configure.orig	2011-01-28 00:21:09.000000000 -0600
++++ ./configure	2012-03-17 14:18:37.000000000 -0500
+@@ -868,7 +868,7 @@
+ psdir='${docdir}'
+ libdir='${exec_prefix}/lib'
+ localedir='${datarootdir}/locale'
+-mandir='${datarootdir}/man'
++mandir='${prefix}/man'
+ 
+ ac_prev=
+ ac_dashdash=
