@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.14.31
+PORTVERSION=	1.15.8.12
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
@@ -13,12 +13,13 @@ DISTNAME=	dpkg_${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Debian package maintenance system
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch
 
-LICENSE=	GPLv2
-
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -33,208 +34,12 @@ SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST+=	DPKGDIR=${DPKGDIR}
 
 CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
-		--program-transform-name="" --with-libintl-prefix=${LOCALBASE}
+		--program-transform-name="" --with-libintl-prefix=${LOCALBASE} \
+		--disable-compiler-warnings
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
 .if !defined(WITHOUT_NLS)
 MANLANG=	"" de fr hu ja pl sv
-.endif
-
-MAN1_EN=	822-date.1 \
-		dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
-		dpkg-checkbuilddeps.1 \
-		dpkg-deb.1 \
-		dpkg-distaddfile.1 \
-		dpkg-genchanges.1 \
-		dpkg-gencontrol.1 \
-		dpkg-gensymbols.1 \
-		dpkg-name.1 \
-		dpkg-parsechangelog.1 \
-		dpkg-query.1 \
-		dpkg-scanpackages.1 \
-		dpkg-scansources.1 \
-		dpkg-shlibdeps.1 \
-		dpkg-source.1 \
-		dpkg-split.1 \
-		dpkg-trigger.1 \
-		dpkg.1 \
-		dselect.1
-MAN5_EN=	deb-control.5 \
-		deb-old.5 \
-		deb-override.5 \
-		deb-shlibs.5 \
-		deb-substvars.5 \
-		deb-symbols.5 \
-		deb-triggers.5 \
-		deb-version.5 \
-		deb.5 \
-		dpkg.cfg.5 \
-		dselect.cfg.5
-MAN8_EN=	cleanup-info.8 \
-		dpkg-divert.8 \
-		dpkg-statoverride.8 \
-		install-info.8 \
-		start-stop-daemon.8 \
-		update-alternatives.8
-
-.if !defined(WITHOUT_NLS)
-MAN1_DE=	822-date.1 \
-		dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
-		dpkg-checkbuilddeps.1 \
-		dpkg-deb.1 \
-		dpkg-distaddfile.1 \
-		dpkg-genchanges.1 \
-		dpkg-gencontrol.1 \
-		dpkg-name.1 \
-		dpkg-parsechangelog.1 \
-		dpkg-query.1 \
-		dpkg-scanpackages.1 \
-		dpkg-scansources.1 \
-		dpkg-shlibdeps.1 \
-		dpkg-source.1 \
-		dpkg-split.1 \
-		dpkg-trigger.1 \
-		dpkg.1 \
-		dselect.1
-MAN5_DE=	deb-control.5 \
-		deb-old.5 \
-		deb-override.5 \
-		deb-shlibs.5 \
-		deb-substvars.5 \
-		deb-symbols.5 \
-		deb-triggers.5 \
-		deb-version.5 \
-		deb.5 \
-		dpkg.cfg.5 \
-		dselect.cfg.5
-MAN8_DE=	cleanup-info.8 \
-		dpkg-divert.8 \
-		dpkg-statoverride.8 \
-		install-info.8 \
-		start-stop-daemon.8 \
-		update-alternatives.8
-
-MAN1_FR=	822-date.1 \
-		dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
-		dpkg-checkbuilddeps.1 \
-		dpkg-deb.1 \
-		dpkg-distaddfile.1 \
-		dpkg-genchanges.1 \
-		dpkg-gencontrol.1 \
-		dpkg-name.1 \
-		dpkg-parsechangelog.1 \
-		dpkg-query.1 \
-		dpkg-scanpackages.1 \
-		dpkg-scansources.1 \
-		dpkg-shlibdeps.1 \
-		dpkg-source.1 \
-		dpkg-split.1 \
-		dpkg-trigger.1 \
-		dpkg.1 \
-		dselect.1
-MAN5_FR=	deb-control.5 \
-		deb-old.5 \
-		deb-override.5 \
-		deb-shlibs.5 \
-		deb-substvars.5 \
-		deb-symbols.5 \
-		deb-triggers.5 \
-		deb-version.5 \
-		deb.5 \
-		dpkg.cfg.5 \
-		dselect.cfg.5
-MAN8_FR=	cleanup-info.8 \
-		dpkg-divert.8 \
-		dpkg-statoverride.8 \
-		install-info.8 \
-		start-stop-daemon.8 \
-		update-alternatives.8
-
-MAN5_HU=	dpkg.cfg.5 \
-		dselect.cfg.5
-
-MAN1_JA=	dselect.1
-MAN5_JA=	deb-old.5 \
-		deb.5
-MAN8_JA=	update-alternatives.8
-
-MAN1_PL=	822-date.1 \
-		dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
-		dpkg-checkbuilddeps.1 \
-		dpkg-deb.1 \
-		dpkg-distaddfile.1 \
-		dpkg-genchanges.1 \
-		dpkg-gencontrol.1 \
-		dpkg-name.1 \
-		dpkg-parsechangelog.1 \
-		dpkg-query.1 \
-		dpkg-scanpackages.1 \
-		dpkg-scansources.1 \
-		dpkg-shlibdeps.1 \
-		dpkg-source.1 \
-		dpkg-split.1 \
-		dpkg-trigger.1 \
-		dpkg.1 \
-		dselect.1
-MAN5_PL=	deb-control.5 \
-		deb-old.5 \
-		deb-override.5 \
-		deb-shlibs.5 \
-		deb-substvars.5 \
-		deb-symbols.5 \
-		deb-triggers.5 \
-		deb-version.5 \
-		deb.5 \
-		dpkg.cfg.5 \
-		dselect.cfg.5
-MAN8_PL=	cleanup-info.8 \
-		dpkg-divert.8 \
-		dpkg-statoverride.8 \
-		install-info.8 \
-		start-stop-daemon.8 \
-		update-alternatives.8
-
-MAN1_SV=	822-date.1 \
-		dpkg-architecture.1 \
-		dpkg-buildpackage.1 \
-		dpkg-checkbuilddeps.1 \
-		dpkg-deb.1 \
-		dpkg-distaddfile.1 \
-		dpkg-genchanges.1 \
-		dpkg-gencontrol.1 \
-		dpkg-name.1 \
-		dpkg-parsechangelog.1 \
-		dpkg-query.1 \
-		dpkg-scanpackages.1 \
-		dpkg-scansources.1 \
-		dpkg-shlibdeps.1 \
-		dpkg-source.1 \
-		dpkg-split.1 \
-		dpkg-trigger.1 \
-		dpkg.1 \
-		dselect.1
-MAN5_SV=	deb-control.5 \
-		deb-old.5 \
-		deb-override.5 \
-		deb-shlibs.5 \
-		deb-substvars.5 \
-		deb-symbols.5 \
-		deb-triggers.5 \
-		deb-version.5 \
-		deb.5 \
-		dpkg.cfg.5 \
-		dselect.cfg.5
-MAN8_SV=	cleanup-info.8 \
-		dpkg-divert.8 \
-		dpkg-statoverride.8 \
-		install-info.8 \
-		start-stop-daemon.8 \
-		update-alternatives.8
-
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
@@ -242,12 +47,10 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.include "Makefile.man"
+
 post-patch:
-	${REINPLACE_CMD} -e 's|ncursesw/||g' \
-		${WRKSRC}/dselect/Makefile.in \
-		${WRKSRC}/dselect/dselect.h \
-		${WRKSRC}/dselect/main.cc \
-		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|ncursesw/||g' ${WRKSRC}/dselect/main.cc
 
 post-install:
 	${MV} ${PREFIX}/sbin/install-info ${PREFIX}/sbin/dpkg-install-info

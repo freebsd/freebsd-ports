@@ -1,25 +1,25 @@
---- dselect/Makefile.in.orig	2009-11-12 06:30:16.000000000 +0800
-+++ dselect/Makefile.in	2009-11-12 06:30:34.000000000 +0800
-@@ -63,8 +63,7 @@
+--- dselect/Makefile.in.orig	2011-11-10 07:23:41.000000000 +0100
++++ dselect/Makefile.in	2012-03-16 22:18:30.000000000 +0100
+@@ -67,8 +67,7 @@
  	pkgsublist.$(OBJEXT) pkgtop.$(OBJEXT)
  dselect_OBJECTS = $(am_dselect_OBJECTS)
  am__DEPENDENCIES_1 =
--dselect_DEPENDENCIES = ../libcompat/libcompat.a $(am__DEPENDENCIES_1) \
--	$(am__DEPENDENCIES_1) ../lib/libdpkg.a
-+dselect_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) ../lib/libdpkg.a ../libcompat/libcompat.a
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+-dselect_DEPENDENCIES = $(am__DEPENDENCIES_1) ../lib/dpkg/libdpkg.a \
+-	../lib/compat/libcompat.a $(am__DEPENDENCIES_1)
++dselect_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) ../lib/dpkg/libdpkg.a ../lib/compat/libcompat.a
+ DEFAULT_INCLUDES = 
+ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
  am__depfiles_maybe = depfiles
-@@ -248,11 +247,7 @@
+@@ -320,11 +319,7 @@
  	pkgsublist.cc \
  	pkgtop.cc
  
 -dselect_LDADD = \
--	../libcompat/libcompat.a \
--	$(LIBINTL) \
 -	$(CURSES_LIBS) \
--	../lib/libdpkg.a
-+dselect_LDADD = $(LIBINTL) $(CURSES_LIBS) ../lib/libdpkg.a ../libcompat/libcompat.a
+-	../lib/dpkg/libdpkg.a \
+-	../lib/compat/libcompat.a \
+-	$(LIBINTL)
++dselect_LDADD = $(LIBINTL) $(CURSES_LIBS) -ltinfow ../lib/dpkg/libdpkg.a ../lib/compat/libcompat.a
  
  EXTRA_DIST = keyoverride mkcurkeys.pl
  CLEANFILES = curkeys.h
