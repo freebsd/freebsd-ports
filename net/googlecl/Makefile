@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	googlecl
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	0.9.13
 CATEGORIES=	net www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Command line tools for the Google Data APIs
+
+LICENSE=	AL2
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdata/__init__.py:${PORTSDIR}/devel/py-gdata
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-LICENSE=	AL2
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		google.1
@@ -29,10 +28,10 @@ PORTDOCS=	*
 
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/man/google.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MANPREFIX}/man/man1
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
 .endif
 
