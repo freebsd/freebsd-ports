@@ -7,6 +7,7 @@
 
 PORTNAME=	drcreep
 PORTVERSION=	394
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/creep/
 
@@ -18,6 +19,12 @@ LICENSE=	GPLv3
 USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/head
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 801000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_stdafx.cpp
+.endif
 
 do-build:
 	cd ${WRKSRC} && ${CXX} -DFREEBSD -o ${PORTNAME} ${CXXFLAGS} \
@@ -40,4 +47,4 @@ do-install:
 	@echo ''
 	@echo ''
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
