@@ -1,0 +1,9 @@
+--- libqrencode.pc.in.orig	2012-01-19 14:51:34.000000000 +0800
++++ libqrencode.pc.in	2012-01-19 15:02:43.000000000 +0800
+@@ -6,5 +6,5 @@ includedir=@includedir@
+ Name: libqrencode
+ Description: A QR Code encoding library
+ Version: @VERSION@
+-Libs: -L${libdir} -lqrencode @LIBPTHREAD@
++Libs: -L${libdir} -lqrencode
+ Cflags: -I${includedir}
