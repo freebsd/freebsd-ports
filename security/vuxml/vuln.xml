@@ -52,6 +52,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="49314321-7fd4-11e1-9582-001b2134ef46">
+    <topic>mutt-devel -- failure to check SMTP TLS server certificate</topic>
+    <affects>
+      <package>
+	<name>mutt-devel</name>
+	<range><lt>1.5.21_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dave B reports on Full Disclosure:</p>
+	<blockquote cite="http://seclists.org/fulldisclosure/2011/Mar/87">
+	  <p>It seems that mutt fails to check the validity of a SMTP
+	    servers certificate during a TLS connection. [...]
+	    This means that an attacker could potentially MITM a
+	    mutt user connecting to their SMTP server even when the
+	    user has forced a TLS connection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1429</cvename>
+      <url>http://seclists.org/fulldisclosure/2011/Mar/87</url>
+    </references>
+    <dates>
+      <discovery>2012-03-08</discovery>
+      <entry>2012-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="057130e6-7f61-11e1-8a43-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
