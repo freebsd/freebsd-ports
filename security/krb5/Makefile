@@ -7,7 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.9.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
@@ -24,7 +24,6 @@ CONFLICTS=		heimdal-[0-9]* srp-[0-9]*
 
 LATEST_LINK=		${PORTNAME}-19
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
-USE_OPENSSL=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
@@ -47,15 +46,30 @@ LDFLAGS+=		-rpath=${KRB5_HOME}/lib
 .endif
 
 .include <bsd.port.pre.mk>
+
 .if defined(WITH_DNS_FOR_REALM)
 CONFIGURE_ARGS+=	--enable-dns-for-realm
 .endif
+
+USE_OPENSSL=		yes
 
 .if defined(WITH_KRB5_DOC)
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
 INFO=			krb5-admin krb5-install krb5-user
+
+# pointyhat kludge - tetex drags in port-OpenSSL on 7.X, but only as a build
+# dependency. Yet this triggers autodetection code in bsd.openssl.mk and
+# OpenSSL dependency is registered with the resulting package, creating a
+# discord between INDEX and actual package. Work around by explicitly recording
+# the dependency in a way that INDEX build will see.
+.if ${OSVERSION} < 800000
+WITH_OPENSSL_PORT=	yes
 .endif
+
+.endif
+
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 MAN1=			k5srvutil.1 kadmin.1 krb5-send-pr.1 krb5-config.1 \
 			kpasswd.1 klist.1 kinit.1 kdestroy.1 ksu.1 ktutil.1 \
