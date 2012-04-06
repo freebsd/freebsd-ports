@@ -1,0 +1,11 @@
+--- ./common/Makefile.in.orig	2011-01-28 00:21:10.000000000 -0600
++++ ./common/Makefile.in	2012-03-17 13:43:59.000000000 -0500
+@@ -280,7 +280,7 @@
+ 	item-types \
+ 	items.pl
+ 
+-AM_CFLAGS = $(PTHREAD_CFLAGS) -finstrument-functions
++AM_CFLAGS = $(PTHREAD_CFLAGS)
+ all: $(BUILT_SOURCES) config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 

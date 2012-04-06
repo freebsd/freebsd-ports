@@ -1,0 +1,19 @@
+bin/cfsndserv
+bin/crossfire-client-gtk2
+%%DATADIR%%/glade-gtk2/caelestis.glade
+%%DATADIR%%/glade-gtk2/chthonic.glade
+%%DATADIR%%/glade-gtk2/dialogs.glade
+%%DATADIR%%/glade-gtk2/eureka.glade
+%%DATADIR%%/glade-gtk2/gtk-v1.glade
+%%DATADIR%%/glade-gtk2/gtk-v2.glade
+%%DATADIR%%/glade-gtk2/lobotomy.glade
+%%DATADIR%%/glade-gtk2/meflin.glade
+%%DATADIR%%/glade-gtk2/oroboros.glade
+%%DATADIR%%/glade-gtk2/sixforty.glade
+%%DATADIR%%/glade-gtk2/un-deux.glade
+%%DATADIR%%/glade-gtk2/v1-redux.glade
+%%DATADIR%%/themes/Black
+%%DATADIR%%/themes/Standard
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/glade-gtk2
+@dirrm %%DATADIR%%
