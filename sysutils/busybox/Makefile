@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.19.3
+PORTVERSION=	1.19.4
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
