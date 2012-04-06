@@ -91,6 +91,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Lang/en_ca.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/en_gb.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/es.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/fi.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/fr.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/it.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/ja.pm
@@ -138,6 +139,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Photoshop.pm
 %%SITE_PERL%%/Image/ExifTool/PostScript.pm
 %%SITE_PERL%%/Image/ExifTool/PrintIM.pm
+%%SITE_PERL%%/Image/ExifTool/Qualcomm.pm
 %%SITE_PERL%%/Image/ExifTool/QuickTime.pm
 %%SITE_PERL%%/Image/ExifTool/README
 %%SITE_PERL%%/Image/ExifTool/RIFF.pm
@@ -258,6 +260,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Photoshop.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PostScript.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/PrintIM.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Qualcomm.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/QuickTime.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RSRC.html
