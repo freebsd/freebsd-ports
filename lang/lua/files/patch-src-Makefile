@@ -33,7 +33,7 @@
 +	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(MYLDFLAGS) -shared -Wl,-soname=$(LUA_SONAME) $?
 +
  $(LUA_A): $(CORE_O) $(LIB_O)
--	$(AR) $@ $?
+-	$(AR) $@ $(CORE_O) $(LIB_O)	# DLL needs all object files
 +	$(AR) $(ARFLAGS) $@ $?
  	$(RANLIB) $@
  

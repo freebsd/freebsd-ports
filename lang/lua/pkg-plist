@@ -1,5 +1,3 @@
-@exec mkdir -p %D/share/lua/%%LUA_VER%%
-@exec mkdir -p %D/lib/lua/%%LUA_VER%%
 bin/lua-%%LUA_VER%%
 %%LUA_BINDIR%%/lua
 %%LUA_BINDIR%%/luac
@@ -11,14 +9,16 @@ bin/luac-%%LUA_VER%%
 %%LUA_INCDIR%%/lualib.h
 lib/liblua-%%LUA_VER%%.so
 lib/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
+%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 %%LUA_LIBDIR%%/liblua.a
 %%LUA_LIBDIR%%/liblua.so
-%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.so.%%LUA_VER_SH%%
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
-@dirrm share/lua/%%LUA_VER%%
-@dirrmtry share/lua
+@dirrm %%DATADIR%%/%%LUA_VER%%
+@dirrmtry %%DATADIR%%
 @dirrm %%LUA_LIBDIR%%
 @dirrm lib/lua/%%LUA_VER%%
 @dirrmtry lib/lua
 @dirrm %%LUA_INCDIR%%
 @dirrm %%LUA_BINDIR%%
+@exec mkdir -p %D/%%DATADIR%%/%%LUA_VER%%
+@exec mkdir -p %D/lib/lua/%%LUA_VER%%

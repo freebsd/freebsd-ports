@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	5.1.4
-PORTREVISION=	6
+PORTVERSION=	5.1.5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
-
-PATCH_SITES=	http://www.lua.org/ftp/
-PATCHFILES=	patch-lua-5.1.4-3
 
 MAINTAINER=	lua@FreeBSD.org
 COMMENT=	Small, compilable scripting language providing easy access to C code
