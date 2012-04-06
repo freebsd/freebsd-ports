@@ -602,10 +602,8 @@
     SUBDIR += py-fastaudio
     SUBDIR += py-id3
     SUBDIR += py-karaoke
-    SUBDIR += py-libtunepimp
     SUBDIR += py-mad
     SUBDIR += py-mpd
-    SUBDIR += py-musicbrainz
     SUBDIR += py-musicbrainz2
     SUBDIR += py-mutagen
     SUBDIR += py-ogg
