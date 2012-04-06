@@ -1,0 +1,20 @@
+--- configure.orig	2012-03-29 08:09:43.000000000 -0700
++++ configure	2012-04-04 03:59:35.000000000 -0700
+@@ -12583,14 +12583,14 @@
+ 
+ 
+ if test -z $PGHEADER; then
+-   for ac_header in postgresql/libpq-fe.h
++   for ac_header in libpq-fe.h
+ do :
+-  ac_fn_c_check_header_mongrel "$LINENO" "postgresql/libpq-fe.h" "ac_cv_header_postgresql_libpq_fe_h" "$ac_includes_default"
++  ac_fn_c_check_header_mongrel "$LINENO" "libpq-fe.h" "ac_cv_header_postgresql_libpq_fe_h" "$ac_includes_default"
+ if test "x$ac_cv_header_postgresql_libpq_fe_h" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_POSTGRESQL_LIBPQ_FE_H 1
+ _ACEOF
+- PGHEADER=postgresql/libpq-fe.h
++ PGHEADER=libpq-fe.h
+ fi
+ 
+ done

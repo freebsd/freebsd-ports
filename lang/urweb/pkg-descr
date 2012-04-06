@@ -1,0 +1,22 @@
+Ur is a programming language in the tradition of ML and Haskell, but featuring
+a significantly richer type system. Ur is functional, pure, statically-typed,
+and strict. Ur supports a powerful kind of metaprogramming based on row types.
+
+Ur/Web is Ur plus a special standard library and associated rules for parsing
+and optimization. Ur/Web supports construction of dynamic web applications
+backed by SQL databases. The signature of the standard library is such that
+well-typed Ur/Web programs "don't go wrong" in a very broad sense. Not only do
+they not crash during particular page generations, but they also may not:
+
+  * Suffer from any kinds of code-injection attacks
+  * Return invalid HTML
+  * Contain dead intra-application links
+  * Have mismatches between HTML forms and the fields expected by their
+    handlers
+  * Include client-side code that makes incorrect assumptions about the
+  * "AJAX"-style services that the remote web server provides
+  * Attempt invalid SQL queries
+  * Use improper marshaling or unmarshaling in communication with SQL databases
+    or between browsers and web servers
+
+WWW: http://www.impredicative.com/ur/
