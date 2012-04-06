@@ -3970,6 +3970,7 @@
     SUBDIR += ucommon
     SUBDIR += ucpp
     SUBDIR += udis86
+    SUBDIR += ultragetopt
     SUBDIR += umem
     SUBDIR += umlgraph
     SUBDIR += universalindentgui

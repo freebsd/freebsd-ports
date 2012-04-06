@@ -1,0 +1,7 @@
+UltraGetopt is a versatile and customizable implementation of getopt() with
+support for many common extensions, MS-DOS formatted option strings, and much
+more.  It can function as a drop-in replacement for getopt() on systems with or
+without existing vendor-provided implementations and also as a separate
+co-existing function.
+
+WWW: http://kevinlocke.name/programs/ultragetopt.php
