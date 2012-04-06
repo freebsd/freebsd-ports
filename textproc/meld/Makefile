@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.4
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	GNOME 2 visual diff and merge tool
 
-OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off
+LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-LICENSE=	GPLv2
+
+OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off
 
 .if defined(WITHOUT_NLS)
 EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
@@ -46,10 +47,10 @@ post-patch:
 		 s|$$(LANG)|$$(LANG_)|g' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_PYGNOMEDESKTOP)
 USE_GNOME+=	pygnomedesktop
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
