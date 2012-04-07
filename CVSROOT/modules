@@ -9517,6 +9517,7 @@ mod_macro22                     ports/www/mod_macro22
 mod_memcache                    ports/www/mod_memcache
 mod_mono                        ports/www/mod_mono
 mod_musicindex                  ports/www/mod_musicindex
+mod_myvhost                     ports/www/mod_myvhost
 mod_ntlm2                       ports/www/mod_ntlm2
 mod_pagespeed                   ports/www/mod_pagespeed
 mod_perl2                       ports/www/mod_perl2
@@ -13659,6 +13660,7 @@ p5-Net-Z3950-SimpleServer       ports/net/p5-Net-Z3950-SimpleServer
 p5-Net-Z3950-ZOOM               ports/net/p5-Net-Z3950-ZOOM
 p5-Net-eBay                     ports/www/p5-Net-eBay
 p5-Net-ext                      ports/net/p5-Net-ext
+p5-Net-sFlow                    ports/net/p5-Net-sFlow
 p5-Net-uFTP                     ports/net/p5-Net-uFTP
 p5-Net-vCard                    ports/misc/p5-Net-vCard
 p5-NetAddr-IP                   ports/net-mgmt/p5-NetAddr-IP
@@ -18108,6 +18110,7 @@ p5-net-server-mail              ports/mail/p5-Net-Server-Mail
 p5-net-server-mail-esmtp-auth   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
 p5-net-server-ss-prefork        ports/net/p5-Net-Server-SS-PreFork
 p5-net-services                 ports/net/p5-Net-Services
+p5-net-sflow                    ports/net/p5-Net-sFlow
 p5-net-sftp                     ports/net/p5-Net-SFTP
 p5-net-sftp-foreign             ports/net/p5-Net-SFTP-Foreign
 p5-net-sinfp                    ports/security/p5-Net-SinFP
@@ -26839,6 +26842,7 @@ uk-postcodes                    ports/misc/uk-postcodes
 uk-webalizer                    ports/ukrainian/webalizer
 ultimatestunts                  ports/games/ultimatestunts
 ultracopier                     ports/x11-fm/ultracopier
+ultragetopt                     ports/devel/ultragetopt
 ulxmlrpcpp                      ports/net/ulxmlrpcpp
 umark                           ports/games/umark
 umatrix                         ports/math/umatrix
@@ -26928,6 +26932,7 @@ urlendec                        ports/net/urlendec
 urlgfe                          ports/ftp/urlgfe
 urlview                         ports/textproc/urlview
 urt                             ports/graphics/urt
+urweb                           ports/lang/urweb
 urwfonts                        ports/x11-fonts/urwfonts
 urwfonts-ttf                    ports/x11-fonts/urwfonts-ttf
 us-zipcodes                     ports/misc/us-zipcodes
@@ -27374,6 +27379,7 @@ windowlab                       ports/x11-wm/windowlab
 windowmaker                     ports/x11-wm/windowmaker
 windstille                      ports/games/windstille
 wine                            ports/emulators/wine
+wine-devel                      ports/emulators/wine-devel
 wine-doors                      ports/emulators/wine-doors
 wine-gecko                      ports/emulators/wine-gecko
 winefish                        ports/editors/winefish
