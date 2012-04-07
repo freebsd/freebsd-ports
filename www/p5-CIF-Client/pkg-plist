@@ -1,0 +1,29 @@
+bin/cif
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CIF/Client/.packlist
+%%SITE_PERL%%/CIF/Client.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Raw.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Pcapfilter.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Csv.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Table.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Snort.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Parser.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Html.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Output.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Group.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Bgp.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Url.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Service.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/ShareWith.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Ipv4.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Email.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Malware.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iodef/Domain.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Bindzone.pm
+%%SITE_PERL%%/CIF/Client/Plugin/Iptables.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CIF/Client
+@dirrm %%SITE_PERL%%/CIF/Client/Plugin/Iodef
+@dirrm %%SITE_PERL%%/CIF/Client/Plugin
+@dirrm %%SITE_PERL%%/CIF/Client
+@dirrmtry %%SITE_PERL%%/CIF
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CIF
