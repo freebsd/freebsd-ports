@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-S4
-PORTVERSION=	1.053
+PORTVERSION=	1.054
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for subversion program
 
+LICENSE=	ART20 LGPL3
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
 RUN_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO \
 		p5-subversion>=0:${PORTSDIR}/devel/p5-subversion
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 LGPL3
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
