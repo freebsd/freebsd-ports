@@ -1,0 +1,7 @@
+bin/ros
+include/routeros_version.h
+include/routeros_api.h
+lib/librouteros.so.2
+lib/librouteros.so
+lib/librouteros.la
+lib/librouteros.a
