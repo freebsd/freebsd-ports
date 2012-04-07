@@ -98,5 +98,3 @@ libdata/pkgconfig/phonon.pc
 @dirrmtry lib/qt4
 @dirrm include/qt4/phonon
 @dirrmtry include/qt4
-@exec mkdir -p %%QT_PLUGINDIR_REL%%/phonon_backend
-@dirrmtry %%QT_PLUGINDIR_REL%%/phonon_backend

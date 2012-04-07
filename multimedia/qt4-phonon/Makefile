@@ -7,6 +7,7 @@
 
 PORTNAME=	phonon
 DISTVERSION=	${QT4_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	multimedia
 PKGNAMEPREFIX=	qt4-
 
@@ -19,7 +20,6 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build corelib dbus gui xml
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
-USE_KDE4=	#dummy, we need to know KDE4_PREFIX
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
@@ -46,8 +46,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-.include <bsd.port.pre.mk>
-
 .if defined(PACKAGE_BUILDING)
 WITH_QT_PHONON=	yes
 .endif
@@ -66,11 +64,10 @@ pre-install:
 		-e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
+		-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/phonon.pc
 
 post-install:
-	${MKDIR} ${QT_PLUGINDIR}/phonon_backend
 	${LN} -sf ${PREFIX}/include/qt4/phonon ${PREFIX}/include/qt4/Phonon
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
