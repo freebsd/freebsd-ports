@@ -169,9 +169,6 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/util/statistics.py
 %%PYTHON_SITELIBDIR%%/rednotebook/util/statistics.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/util/statistics.pyo
-%%PYTHON_SITELIBDIR%%/rednotebook/util/unicode.py
-%%PYTHON_SITELIBDIR%%/rednotebook/util/unicode.pyc
-%%PYTHON_SITELIBDIR%%/rednotebook/util/unicode.pyo
 %%PYTHON_SITELIBDIR%%/rednotebook/util/utils.py
 %%PYTHON_SITELIBDIR%%/rednotebook/util/utils.pyc
 %%PYTHON_SITELIBDIR%%/rednotebook/util/utils.pyo
