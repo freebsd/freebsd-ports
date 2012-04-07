@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		SF/pureftpd/Pure-FTPd/${PORTVERSION}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 SUB_FILES=	pkg-message
