@@ -23,4 +23,7 @@ PYDISTUTILS_PKGVERSION=		2.0rc1
 
 CONFLICTS=	p5-Net-Amazon-Route53-[0-9]* py2[0-9]-boto-[0-9]*
 
+DEPRECATED=	Upstream does not provide development snapshots anymore
+EXPIRATION_DATE=2012-05-08
+
 .include <bsd.port.mk>
