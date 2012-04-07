@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.2
-PORTREVISION?=	6
+PORTREVISION?=	6		# committer: please bump PORTREVISION on Slaves
 CATEGORIES?=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -30,9 +30,10 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 CONFLICTS?=	(ja-)?p5-Mail-SpamAssassin-(devel-)?[0-9]*
 
 PERL_CONFIGURE=	yes
-USE_PERL5_RUN=	5.12+
+USE_PERL5=	5.12+
 USE_LDCONFIG=	yes
 DBDIR?=		/var/db
+ETCDIR?=	${PREFIX}/etc/mail/spamassassin
 CONTACT_ADDRESS?=	The administrator of that system
 USERS?=		spamd
 GROUPS?=	spamd
@@ -210,22 +211,22 @@ post-install::
 .if defined (WITH_SPAMC)
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
 .endif
-	@[ -f ${PREFIX}/etc/mail/spamassassin/init.pre ] || \
-		${CP} ${PREFIX}/etc/mail/spamassassin/init.pre.sample \
-			${PREFIX}/etc/mail/spamassassin/init.pre
-	@[ -f ${PREFIX}/etc/mail/spamassassin/v310.pre ] || \
-		${CP} ${PREFIX}/etc/mail/spamassassin/v310.pre.sample \
-			${PREFIX}/etc/mail/spamassassin/v310.pre
-	@[ -f ${PREFIX}/etc/mail/spamassassin/v312.pre ] || \
-		${CP} ${PREFIX}/etc/mail/spamassassin/v312.pre.sample \
-			${PREFIX}/etc/mail/spamassassin/v312.pre
-	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
-		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
-			${PREFIX}/etc/mail/spamassassin/v320.pre
+	@[ -f ${ETCDIR}/init.pre ] || \
+		${INSTALL_DATA} ${ETCDIR}/init.pre.sample \
+			${ETCDIR}/init.pre
+	@[ -f ${ETCDIR}/v310.pre ] || \
+		${INSTALL_DATA} ${ETCDIR}/v310.pre.sample \
+			${ETCDIR}/v310.pre
+	@[ -f ${ETCDIR}/v312.pre ] || \
+		${INSTALL_DATA} ${ETCDIR}/v312.pre.sample \
+			${ETCDIR}/v312.pre
+	@[ -f ${ETCDIR}/v320.pre ] || \
+		${INSTALL_DATA} ${ETCDIR}/v320.pre.sample \
+			${ETCDIR}/v320.pre
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@[ -f ${PREFIX}/etc/mail/spamassassin/v330.pre ] || \
-		${CP} ${PREFIX}/etc/mail/spamassassin/v330.pre.sample \
-			${PREFIX}/etc/mail/spamassassin/v330.pre
+	@[ -f ${ETCDIR}/v330.pre ] || \
+		${INSTALL_DATA} ${ETCDIR}/v330.pre.sample \
+			${ETCDIR}/v330.pre
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/ldap
