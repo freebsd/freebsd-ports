@@ -1,15 +1,15 @@
---- src/libcore/f32.rs.orig	2012-02-02 09:20:38.079803515 +0800
-+++ src/libcore/f32.rs	2012-02-02 09:20:53.241930085 +0800
-@@ -9,6 +9,8 @@
+--- src/libcore/f32.rs.orig	2012-04-01 10:40:20.915606509 +0800
++++ src/libcore/f32.rs	2012-04-01 10:43:43.847606825 +0800
+@@ -5,6 +5,8 @@
  import cmath::c_float::*;
  import cmath::c_float_targ_consts::*;
  
 +import cmath::c_double;
 +
- type t = f32;
+ // FIXME find out why these have to be exported explicitly
  
- // These are not defined inside consts:: for consistency with
-@@ -247,6 +249,10 @@
+ export add, sub, mul, div, rem, lt, le, gt, eq, eq, ne;
+@@ -176,6 +178,10 @@
      ret ln(n) / consts::ln_2;
  }
  
