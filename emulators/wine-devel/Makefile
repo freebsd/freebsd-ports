@@ -1,13 +1,13 @@
 # Ports collection makefile for:  wine-devel
 # Date created:  2012-04-05
 # Whom:  Gerald Pfeifer <gerald@FreeBSD.org>
-
 #
 # $FreeBSD$
 #
 
 PORTNAME=	wine
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -30,6 +30,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 
 CONFLICTS_INSTALL=	wine-1.4*
 
+LATEST_LINK=	wine-devel
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
