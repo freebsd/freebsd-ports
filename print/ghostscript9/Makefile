@@ -95,7 +95,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf14.1 \
 		ps2ps.1 eps2eps.1
 
-EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
+EXCLUDE_DIRS=	freetype jbig2dec jpeg expat jasper libpng tiff zlib
 
 .include "Makefile.drivers"
 .include <bsd.port.pre.mk>
@@ -137,8 +137,7 @@ CONFIGURE_ARGS+=	--disable-fontconfig
 
 # FT_BRIDGE=1 by default
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
-CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
+MAKE_ENV+=	FT_BRIDGE=1
 
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
@@ -187,16 +186,6 @@ pre-build-drivers.mak:
 pre-build: pre-build-drivers.mak
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-.if defined(WITH_FT_BRIDGE)
-	${MKDIR} ${WRKSRC}/freetype/include
-	${LN} -s -f ${LOCALBASE}/include/ft2build.h \
-		${WRKSRC}/freetype/include/ft2build.h
-	${LN} -s -f ${LOCALBASE}/include/freetype2/freetype \
-		${WRKSRC}/freetype/include/freetype
-	${MKDIR} ${WRKSRC}/freetype/objs
-	${LN} -s -f ${LOCALBASE}/lib/libfreetype.so \
-		${WRKSRC}/freetype/objs/freetype214MT_D.so
-.endif
 
 pre-install:
 	cd ${WRKSRC}/Resource/Init && ${RM} -f \
