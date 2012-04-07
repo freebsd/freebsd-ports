@@ -1,0 +1,1148 @@
+diff -uNr lib/Mail/SpamAssassin/HTML.pm lib/Mail/SpamAssassin/HTML.pm
+--- lib/Mail/SpamAssassin/HTML.pm	2011-06-07 08:59:17.000000000 +0900
++++ lib/Mail/SpamAssassin/HTML.pm	2011-07-14 22:35:46.000000000 +0900
+@@ -84,7 +84,7 @@
+ $ok_attributes{span}{$_} = 1 for qw( style );
+ 
+ sub new {
+-  my ($class) = @_;
++  my ($class, $opts) = @_;
+   my $self = $class->SUPER::new(
+ 		api_version => 3,
+ 		handlers => [
+@@ -97,6 +97,7 @@
+ 			declaration => ["html_declaration", "self,text"],
+ 		],
+ 		marked_sections => 1);
++  $self->{normalize} = $opts->{'normalize'} || 0;
+ 
+   $self;
+ }
+@@ -672,7 +673,14 @@
+     }
+   }
+   else {
+-    $text =~ s/[ \t\n\r\f\x0b\xa0]+/ /g;
++    if ($self->{normalize}) {
++      $text =~ s/\xc2\xa0/ /g;           # no-break space
++      $text =~ s/\xe3\x80\x80/ /g;       # ideographicspace
++      $text =~ s/[ \t\n\r\f\x0b]+/ /g;
++    }
++    else {
++      $text =~ s/[ \t\n\r\f\x0b\xa0]+/ /g;
++    }
+     # trim leading whitespace if previous element was whitespace 
+     # and current element is not invisible
+     if (@{ $self->{text} } && !$display{invisible} &&
+diff -uNr lib/Mail/SpamAssassin/Message/Node.pm lib/Mail/SpamAssassin/Message/Node.pm
+--- lib/Mail/SpamAssassin/Message/Node.pm	2011-06-07 08:59:17.000000000 +0900
++++ lib/Mail/SpamAssassin/Message/Node.pm	2011-07-14 22:35:46.000000000 +0900
+@@ -42,6 +42,7 @@
+ use Mail::SpamAssassin::Constants qw(:sa);
+ use Mail::SpamAssassin::HTML;
+ use Mail::SpamAssassin::Logger;
++use Mail::SpamAssassin::Util::Charset;
+ 
+ =item new()
+ 
+@@ -387,27 +388,10 @@
+ 
+ sub _normalize {
+   my ($self, $data, $charset) = @_;
+-  return $data unless $self->{normalize};
++  return wantarray ? ($data, $charset) : $data unless $self->{normalize};
+ 
+-  my $detected = Encode::Detect::Detector::detect($data);
+-
+-  my $converter;
+-
+-  if ($charset && $charset !~ /^us-ascii$/i &&
+-      ($detected || 'none') !~ /^(?:UTF|EUC|ISO-2022|Shift_JIS|Big5|GB)/i) {
+-      dbg("message: Using labeled charset $charset");
+-      $converter = Encode::find_encoding($charset);
+-  }
+-
+-  $converter = Encode::find_encoding($detected) unless $converter || !defined($detected);
+-
+-  return $data unless $converter;
+-
+-  dbg("message: Converting...");
+-
+-  my $rv = $converter->decode($data, 0);
+-  utf8::downgrade($rv, 1);
+-  return $rv
++  my ($decoded_data, $detected_charset) = normalize_charset($data, $charset);
++  return wantarray ? ($decoded_data, $detected_charset) : $decoded_data;
+ }
+ 
+ =item rendered()
+@@ -430,8 +414,12 @@
+     # text/x-aol is ignored here, but looks like text/html ...
+     return(undef,undef) unless ( $self->{'type'} =~ /^text\/(?:plain|html)$/i );
+ 
+-    my $text = $self->_normalize($self->decode(), $self->{charset});
++    my ($text, $charset) = $self->_normalize($self->decode(), $self->{charset});
+     my $raw = length($text);
++    if ($self->{normalize}) {
++      $self->{charset} = $charset;
++      $self->{language} = get_language($text, $charset);
++    }
+ 
+     # render text/html always, or any other text|text/plain part as text/html
+     # based on a heuristic which simulates a certain common mail client
+@@ -441,7 +429,7 @@
+     {
+       $self->{rendered_type} = 'text/html';
+ 
+-      my $html = Mail::SpamAssassin::HTML->new();	# object
++      my $html = Mail::SpamAssassin::HTML->new({normalize=>$self->{normalize}});       # object
+       $html->parse($text);				# parse+render text
+       $self->{rendered} = $html->get_rendered_text();
+       $self->{visible_rendered} = $html->get_rendered_text(invisible => 0);
+diff -uNr lib/Mail/SpamAssassin/Message.pm lib/Mail/SpamAssassin/Message.pm
+--- lib/Mail/SpamAssassin/Message.pm	2011-06-07 08:59:17.000000000 +0900
++++ lib/Mail/SpamAssassin/Message.pm	2011-07-14 22:35:46.000000000 +0900
+@@ -559,6 +559,8 @@
+   delete $self->{'pristine_headers'};
+   delete $self->{'line_ending'};
+   delete $self->{'missing_head_body_separator'};
++  delete $self->{'charset'};
++  delete $self->{'language'};
+ 
+   my @toclean = ( $self );
+ 
+@@ -585,6 +587,8 @@
+     delete $part->{'invisible_rendered'};
+     delete $part->{'type'};
+     delete $part->{'rendered_type'};
++    delete $self->{'charset'};
++    delete $self->{'language'};
+ 
+     # if there are children nodes, add them to the queue of nodes to clean up
+     if (exists $part->{'body_parts'}) {
+@@ -1014,7 +1018,14 @@
+ 
+   # whitespace handling (warning: small changes have large effects!)
+   $text =~ s/\n+\s*\n+/\f/gs;		# double newlines => form feed
+-  $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
++  if ($self->{normalize}) {
++    $text =~ s/\xc2\xa0/ /g;		# no-break space => space
++    $text =~ s/\xe3\x80\x80/ /g;	# ideographicspace => space
++    $text =~ tr/ \t\n\r\x0b/ /s;	# whitespace => space
++  }
++  else {
++    $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
++  }
+   $text =~ tr/\f/\n/;			# form feeds => newline
+   
+   # warn "message: $text";
+@@ -1071,7 +1082,14 @@
+ 
+   # whitespace handling (warning: small changes have large effects!)
+   $text =~ s/\n+\s*\n+/\f/gs;		# double newlines => form feed
+-  $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
++  if ($self->{normalize}) {
++    $text =~ s/\xc2\xa0/ /g;		# no-break space => space
++    $text =~ s/\xe3\x80\x80/ /g;	# ideographicspace => space
++    $text =~ tr/ \t\n\r\x0b/ /s;	# whitespace => space
++  }
++  else {
++    $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
++  }
+   $text =~ tr/\f/\n/;			# form feeds => newline
+ 
+   my @textary = split_into_array_of_short_lines ($text);
+@@ -1122,7 +1140,14 @@
+ 
+   # whitespace handling (warning: small changes have large effects!)
+   $text =~ s/\n+\s*\n+/\f/gs;		# double newlines => form feed
+-  $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
++  if ($self->{normalize}) {
++    $text =~ s/\xc2\xa0/ /g;		# no-break space => space
++    $text =~ s/\xe3\x80\x80/ /g;	# ideographicspace => space
++    $text =~ tr/ \t\n\r\x0b/ /s;	# whitespace => space
++  }
++  else {
++    $text =~ tr/ \t\n\r\x0b\xa0/ /s;	# whitespace => space
++  }
+   $text =~ tr/\f/\n/;			# form feeds => newline
+ 
+   my @textary = split_into_array_of_short_lines ($text);
+@@ -1198,6 +1223,28 @@
+ 
+ # ---------------------------------------------------------------------------
+ 
++sub get_language {
++  my ($self) = @_;
++
++  if (defined $self->{language}) { return $self->{language}; }
++  my @parts = $self->find_parts(qr/^(?:text|message)\b/i,1);
++  return '' unless @parts;
++
++  # Go through each part
++  my @langs;
++  for(my $pt = 0 ; $pt <= $#parts ; $pt++ ) {
++    my $p = $parts[$pt];
++    my $lang = $p->{language};
++    next unless ($lang);
++    push(@langs, $lang) unless (grep(/^$lang$/, @langs))
++  }
++  $self->{language} = scalar(@langs) ? join(' ', @langs) : '';
++  return $self->{language};
++}
++
++# ---------------------------------------------------------------------------
++
++
+ 1;
+ 
+ =back
+diff -uNr lib/Mail/SpamAssassin/PerMsgStatus.pm lib/Mail/SpamAssassin/PerMsgStatus.pm
+--- lib/Mail/SpamAssassin/PerMsgStatus.pm	2011-06-07 08:59:17.000000000 +0900
++++ lib/Mail/SpamAssassin/PerMsgStatus.pm	2011-07-14 22:35:46.000000000 +0900
+@@ -53,6 +53,7 @@
+ use warnings;
+ use re 'taint';
+ 
++use Encode;
+ use Time::HiRes qw(time);
+ 
+ use Mail::SpamAssassin::Constants qw(:sa);
+@@ -733,19 +734,41 @@
+ 
+   # the report charset
+   my $report_charset = "; charset=iso-8859-1";
+-  if ($self->{conf}->{report_charset}) {
+-    $report_charset = "; charset=" . $self->{conf}->{report_charset};
+-  }
+ 
+   # the SpamAssassin report
+   my $report = $self->get_report();
++  if ($self->{conf}->{report_charset}) {
++    $report_charset = "; charset=" . $self->{conf}->{report_charset};
++  }
+ 
+   # If there are any wide characters, need to MIME-encode in UTF-8
+   # TODO: If $report_charset is something other than iso-8859-1/us-ascii, then
+   # we could try converting to that charset if possible
+-  unless ($] < 5.008 || utf8::downgrade($report, 1)) {
++  my $is_utf8 = 0;
++  if ($self->{conf}->{normalize_charset}) {
++    $report = Encode::decode_utf8($report);
++    $is_utf8 = 1;
++  }
++  else {
++    if ($self->{msg}->{charset}) {
++      eval {
++        my $scratch = $report;
++        $report = Encode::decode($self->{msg}->{charset},$scratch,Encode::FB_CROAK);
++        $is_utf8 = 1;
++      };
++    }
++  }
++  if ($is_utf8) {
++    $is_utf8 = 1;
++    eval {
++      my $scratch = $report;
++      $report = Encode::encode($self->{conf}->{report_charset},$scratch,Encode::FB_CROAK);
++      $is_utf8 = 0;
++    };
++    if ($is_utf8) {
++      $report = Encode::encode_utf8($report);
+       $report_charset = "; charset=utf-8";
+-      utf8::encode($report);
++    }
+   }
+ 
+   # get original headers, "pristine" if we can do it
+diff -uNr lib/Mail/SpamAssassin/Plugin/Bayes.pm lib/Mail/SpamAssassin/Plugin/Bayes.pm
+--- lib/Mail/SpamAssassin/Plugin/Bayes.pm	2011-06-07 08:59:17.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Bayes.pm	2011-07-14 22:35:46.000000000 +0900
+@@ -223,6 +223,15 @@
+ # will require a longer token than English ones.)
+ use constant MAX_TOKEN_LENGTH => 15;
+ 
++# Skip if a token is too short.
++our $SKIP_UTF8_SHORT_TOKENS_RE = qr{(?:
++    [\x00-\x7F]                # 1 byte
++  | [\xC0-\xDF][\x80-\xBF]     # 2 bytes
++  | [\xE0-\xEF][\x80-\xBF]{2}  # 3 bytes
++  | [\xF0-\xF7][\x80-\xBF]{3}  # 4 bytes
++  | (?:\xE3[\x81-\x83][\x80-\xBF]){2} # 2 characters of Hiragana and Katakana
++)}x;
++
+ ###########################################################################
+ 
+ sub new {
+@@ -983,9 +992,28 @@
+   $msgdata->{bayes_token_body} = $msg->{msg}->get_visible_rendered_body_text_array();
+   $msgdata->{bayes_token_inviz} = $msg->{msg}->get_invisible_rendered_body_text_array();
+   @{$msgdata->{bayes_token_uris}} = $msg->get_uri_list();
++  if ($self->{conf}->{normalize_charset}) {
++    my $tokenizer = $self->get_tokenizer($msg);
++    if (ref($tokenizer)) {
++      $msgdata->{bayes_token_body} = $tokenizer->tokenize($msgdata->{bayes_token_body});
++      $msgdata->{bayes_token_inviz} = $tokenizer->tokenize($msgdata->{bayes_token_inviz});
++    }
++  }
+   return $msgdata;
+ }
+ 
++sub get_tokenizer {
++  my ($self, $msg) = @_;
++
++  my $tokenizer;
++  my @languages = split(/\s+/, $msg->{msg}->get_language());
++  foreach my $lang (@languages) {
++    $tokenizer = $self->{'conf'}->{'tokenizer'}->{$lang};
++    last if (ref($tokenizer));
++  }
++  return $tokenizer;
++}
++
+ ###########################################################################
+ 
+ # The calling functions expect a uniq'ed array of tokens ...
+@@ -1039,7 +1067,7 @@
+   # include quotes, .'s and -'s for URIs, and [$,]'s for Nigerian-scam strings,
+   # and ISO-8859-15 alphas.  Do not split on @'s; better results keeping it.
+   # Some useful tokens: "$31,000,000" "www.clock-speed.net" "f*ck" "Hits!"
+-  tr/-A-Za-z0-9,\@\*\!_'"\$.\241-\377 / /cs;
++  tr/-A-Za-z0-9,\@\*\!_'"\$.\200-\377 / /cs;
+ 
+   # DO split on "..." or "--" or "---"; common formatting error resulting in
+   # hapaxes.  Keep the separator itself as a token, though, as long ones can
+@@ -1068,6 +1096,11 @@
+     #
+     next if ( defined $magic_re && $token =~ /$magic_re/ );
+ 
++    # Skip short UTF-8 tokens.
++    if ($self->{conf}->{normalize_charset}) {
++      next if ($token =~ /^$SKIP_UTF8_SHORT_TOKENS_RE$/o);
++    }
++
+     # *do* keep 3-byte tokens; there's some solid signs in there
+     my $len = length($token);
+ 
+@@ -1096,14 +1129,16 @@
+     # the domain ".net" appeared in the To header.
+     #
+     if ($len > MAX_TOKEN_LENGTH && $token !~ /\*/) {
+-      if (TOKENIZE_LONG_8BIT_SEQS_AS_TUPLES && $token =~ /[\xa0-\xff]{2}/) {
+-	# Matt sez: "Could be asian? Autrijus suggested doing character ngrams,
+-	# but I'm doing tuples to keep the dbs small(er)."  Sounds like a plan
+-	# to me! (jm)
+-	while ($token =~ s/^(..?)//) {
+-	  push (@rettokens, "8:$1");
+-	}
+-	next;
++      unless ($self->{conf}->{normalize_charset}) {
++        if (TOKENIZE_LONG_8BIT_SEQS_AS_TUPLES && $token =~ /[\xa0-\xff]{2}/) {
++	  # Matt sez: "Could be asian? Autrijus suggested doing character ngrams,
++	  # but I'm doing tuples to keep the dbs small(er)."  Sounds like a plan
++	  # to me! (jm)
++	  while ($token =~ s/^(..?)//) {
++	    push (@rettokens, "8:$1");
++	  }
++	  next;
++        }
+       }
+ 
+       if (($region == 0 && HDRS_TOKENIZE_LONG_TOKENS_AS_SKIPS)
+diff -uNr lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
+--- lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm	2011-07-14 22:29:19.000000000 +0900
+@@ -0,0 +1,84 @@
++# <@LICENSE>
++# Copyright 2004 Apache Software Foundation
++# 
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++# 
++#     http://www.apache.org/licenses/LICENSE-2.0
++# 
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++# </@LICENSE>
++
++=head1 NAME
++
++Tokenizer::MeCab - Japanese tokenizer with MeCab
++
++=head1 SYNOPSIS
++
++loadplugin     Mail::SpamAssassin::Plugin::Tokenizer::MeCab
++
++=head1 DESCRIPTION
++
++This plugin tokenizes a Japanese string with MeCab that is 
++the morphological analysis engine. 
++
++Text::MeCab 0.12 or over is required.
++
++=cut
++
++package Mail::SpamAssassin::Plugin::Tokenizer::MeCab;
++
++use strict;
++use warnings;
++use Mail::SpamAssassin::Plugin::Tokenizer;
++
++use vars qw(@ISA);
++@ISA = qw(Mail::SpamAssassin::Plugin::Tokenizer);
++
++# Have to do this so that RPM doesn't find these as required perl modules
++BEGIN { require MeCab; }
++our $language = 'ja';
++our $mecab = new MeCab::Tagger(-Ochasen);
++
++sub new {
++  my $class = shift;
++  my $mailsaobject = shift;
++
++  $class = ref($class) || $class;
++  my $self = $class->SUPER::new($mailsaobject, $language);
++  bless ($self, $class);
++
++  return $self;
++}
++
++sub tokenize {
++  my $self = shift;
++  my $text_array = shift;
++
++  my @tokenized_array;
++  foreach my $text (@$text_array) {
++    next unless ($text);
++    $text =~ s/([\x80-\xFF]{3,})/&_tokenize($1)/eg;
++    push(@tokenized_array, $text);
++  }
++  return \@tokenized_array;
++}
++
++sub _tokenize {
++  my $text = shift;
++
++  my @buf;
++  for (my $node = $mecab->parseToNode($text); $node->{next}; $node = $node->{next}) {
++    push(@buf, $node->{surface});
++  }
++  my $tokenized = join(' ', @buf) . ' ';
++  return $tokenized;
++}
++
++1;
++
+diff -uNr lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
+--- lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm	2011-07-14 22:29:19.000000000 +0900
+@@ -0,0 +1,111 @@
++# <@LICENSE>
++# Copyright 2004 Apache Software Foundation
++# 
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++# 
++#     http://www.apache.org/licenses/LICENSE-2.0
++# 
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++# </@LICENSE>
++
++=head1 NAME
++
++Tokenizer::SimpleJA - simple Japanese tokenizer
++
++=head1 SYNOPSIS
++
++loadplugin     Mail::SpamAssassin::Plugin::Tokenizer::SimpleJA
++
++=head1 DESCRIPTION
++
++This plugin simply tokenizes a Japanese string by characters other than 
++the alphabet, the Chinese character, and the katakana. 
++
++=cut
++
++package Mail::SpamAssassin::Plugin::Tokenizer::SimpleJA;
++
++use strict;
++use warnings;
++use Mail::SpamAssassin::Plugin::Tokenizer;
++
++use vars qw(@ISA);
++@ISA = qw(Mail::SpamAssassin::Plugin::Tokenizer);
++
++our $language = 'ja';
++
++our $RE = qr{(
++  # Hiragana
++    (?:
++        \xE3\x81[\x80-\xBF]
++      | \xE3\x82[\x80-\x9F]
++    )+
++  # Katakana
++  | (?:
++        \xE3\x82[\xA0-\xBF]
++      | \xE3\x83[\x80-\xBF]
++    )+
++  # Kanji
++  | (?:
++        \xE3[\x90-\xBF][\x80-\xBF]
++      | [\xE4-\xE9][\x80-\xBF]{2}
++      | \xEF[\xA4-\xAB][\x80-\xBF]
++    )+
++  # Fullwidth
++  | (?:
++        \xEF\xBC[\x80-\xBF]
++      | \xEF\xBD[\x80-\x9F]
++    )+
++  # Others
++  | [\xC0-\xDF][\x80-\xBF]
++  | [\xE0-\xE2][\x80-\xBF]{2}
++  | \xE3\x80[\x80-\xBF]
++  | \xE3[\x84-\x8F][\x80-\xBF]
++  | [\xEA-\xEE][\x80-\xBF]{2}
++  | \xEF[\x80-\xA3][\x80-\xBF]
++  | \xEF[\xAC-\xBB][\x80-\xBF]
++  | \xEF\xBD[\xA0-\xBF]
++  | \xEF[\xBE-\xBF][\x80-\xBF]
++  | [\xF0-\xF7][\x80-\xBF]{3}
++)}x;
++
++sub new {
++  my $class = shift;
++  my $mailsaobject = shift;
++
++  $class = ref($class) || $class;
++  my $self = $class->SUPER::new($mailsaobject, $language);
++  bless ($self, $class);
++
++  return $self;
++}
++
++sub tokenize {
++  my $self = shift;
++  my $text_array = shift;
++
++  my @tokenized_array;
++  foreach my $text (@$text_array) {
++    next unless ($text);
++    $text =~ s/([\x80-\xFF]{3,})/&_tokenize($1)/eg;
++    push(@tokenized_array, $text);
++  }
++  return \@tokenized_array;
++}
++
++sub _tokenize {
++  my $text = shift;
++
++  $text =~ s/$RE/$1 /og;
++  $text = ' ' . $text;
++  return $text;
++}
++
++1;
++
+diff -uNr lib/Mail/SpamAssassin/Plugin/Tokenizer.pm lib/Mail/SpamAssassin/Plugin/Tokenizer.pm
+--- lib/Mail/SpamAssassin/Plugin/Tokenizer.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Plugin/Tokenizer.pm	2011-07-14 22:35:46.000000000 +0900
+@@ -0,0 +1,115 @@
++# <@LICENSE>
++# Copyright 2004 Apache Software Foundation
++# 
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++# 
++#     http://www.apache.org/licenses/LICENSE-2.0
++# 
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++# </@LICENSE>
++
++=head1 NAME
++
++Mail::SpamAssassin::Plugin::Tokenizer - Tokenizer plugin base class
++
++=head1 SYNOPSIS
++
++=head2 SpamAssassin configuration:
++
++  loadplugin MyTokenizerPlugin /path/to/MyTokenizerPlugin.pm
++
++=head2 Perl code:
++
++  use Mail::SpamAssassin::Plugin::Tokenizer;
++  use vars qw(@ISA);
++  @ISA = qw(Mail::SpamAssassin::Plugin::Tokenizer);
++  # language to use this plugin
++  our $language = 'ja';
++
++  # constructor: register language
++  sub new {
++    my $class = shift;
++    my $mailsaobject = shift;
++
++    # some boilerplate...
++    $class = ref($class) || $class;
++    my $self = $class->SUPER::new($mailsaobject, $language);
++    bless ($self, $class);
++
++    return $self;
++  }
++
++  # tokenize function
++  sub tokenize {
++    my $self = shift;
++    my $text_array_ref = shift;
++
++    ......
++
++    return $tokenized_array_ref;
++  }
++
++
++=head1 DESCRIPTION
++
++This plugin is the base class of tokenizer plugin.
++You must define tokenize() and $language
++
++=head1 INTERFACE
++
++  sub tokenize {
++    my $self = shift;
++    my $text_array_ref = shift;
++
++    ......
++ 
++    return $tokenized_array_ref;
++  }
++
++=cut
++
++package Mail::SpamAssassin::Plugin::Tokenizer;
++
++use Mail::SpamAssassin::Plugin;
++use Mail::SpamAssassin::Logger;
++use strict;
++use warnings;
++use bytes;
++
++use vars qw(@ISA);
++@ISA = qw(Mail::SpamAssassin::Plugin);
++
++sub new {
++  my $class = shift;
++  my $mailsaobject = shift;
++  my $language = shift;
++
++  # some boilerplate...
++  $class = ref($class) || $class;
++  my $self = $class->SUPER::new($mailsaobject);
++  bless ($self, $class);
++
++  if ($language) {
++    $self->{main}->{conf}->{tokenizer}->{$language} = $self;
++  }
++  else {
++    dbg("plugin: $self: \$language is not defined");
++  }
++
++  return $self;
++}
++
++sub tokenize {
++  my ($self, $ref) = @_;
++
++  return $ref;
++}
++
++1;
++
+diff -uNr lib/Mail/SpamAssassin/Util/Charset.pm lib/Mail/SpamAssassin/Util/Charset.pm
+--- lib/Mail/SpamAssassin/Util/Charset.pm	1970-01-01 09:00:00.000000000 +0900
++++ lib/Mail/SpamAssassin/Util/Charset.pm	2011-07-14 22:29:19.000000000 +0900
+@@ -0,0 +1,471 @@
++# <@LICENSE>
++# Copyright 2006 Apache Software Foundation
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++# </@LICENSE>
++
++
++=head1 NAME
++
++  Mail::SpamAssassin::Util::Charset.pm - Utility for charset and language
++
++=head1 SYNOPSIS
++
++  my ($decoded, $detected) = Mail::SpamAssassin::Util::Charset::normalize_charset($str, $charset);
++  my $language = Mail::SpamAssassin::Util::Charset::get_language($str, $charset);
++
++=head1 DESCRIPTION
++
++This module implements utility methods for charset and language.
++
++=cut
++
++package Mail::SpamAssassin::Util::Charset;
++
++use strict;
++use warnings;
++use Encode;
++use Encode::Guess;
++use Encode::Alias;
++
++use vars qw (
++  @ISA @EXPORT
++);
++
++require Exporter;
++
++@ISA = qw(Exporter);
++@EXPORT = qw(normalize_charset get_language);
++
++###########################################################################
++
++use constant HAS_ENCODE_DETECT => eval { require Encode::Detect::Detector; };
++use constant HAS_ENCODE_HANEXTRA => eval { require Encode::HanExtra; };
++use constant HAS_ENCODE_EUCJPMS => eval { require Encode::EUCJPMS; };
++
++###########################################################################
++
++our $KANA_HAN_RE = qr{
++  # Hiragana and Katakana
++    \xE3[\x81-\x83][\x80-\xBF]
++  # Han
++  | \xE3[\x90-\xBF][\x80-\xBF]
++  | [\xE4-\xE9][\x80-\xBF]{2}
++  | \xEF[\xA4-\xAB][\x80-\xBF]
++}x;
++
++our %enc2lang;
++our %lang2enc;
++our %scr2lang;
++our %cjkscr2lang;
++our @scrorder;
++
++BEGIN {
++
++  # See the following URL about this map:
++  #   http://czyborra.com/charsets/iso8859.html
++  #   http://czyborra.com/charsets/codepages.html
++  #   http://czyborra.com/charsets/cyrillic.html
++  #   http://en.wikipedia.org/wiki/ISO_8859
++  #   http://www.w3.org/International/O-charset-lang.html
++  %enc2lang = (
++    # buint-in Encodings and Encode::Byte
++    #   N. America
++    'ascii'         => 'en',
++    'cp437'         => 'en',
++    'cp863'         => 'weurope',
++
++    #   W. Europe (Latin1, Latin9)
++    #       fr es ca eu pt it sq rm nl de da sv no fi fo is ga gd en af
++    'iso-8859-1'    => 'weurope',
++    'iso-8859-15'   => 'weurope',
++    'cp850'         => 'weurope',
++    'cp860'         => 'weurope',
++    'cp1252'        => 'weurope',
++    'MacRoman'      => 'weurope',
++
++    #   Cntrl. Europe / Latin2 / Latin10
++    #       hr cs hu pl sr sk sl
++    'iso-8859-2'    => 'ceurope',
++    'cp852'         => 'ceurope',
++    'cp1250'        => 'ceurope',
++    'MacCentralEurRoman' => 'ceurope',
++    'MacCroatian'   => 'ceurope',
++    'iso-8859-16'   => 'ceurope',
++    'MacRomanian'   => 'ceurope',
++
++    #   Latin3 (Esperanto, Maltese, and Turkish. Turkish is now on 8859-9.)
++    #       eo mt
++    'iso-8859-3'    => 'seurope',
++
++    #   Baltics (Latin4, Latin7)
++    #       lv lt
++    'iso-8859-4'    => 'neurope',
++    'iso-8859-13'   => 'baltic',
++    'cp1257'        => 'baltic',
++
++    #   Nordics (Latin6)
++    #       et kl iu se
++    'iso-8859-10'   => 'nordic',
++
++    #   Cyrillics
++    #       bg be uk sr mk ru
++    'iso-8859-5'    => 'ru',
++    'cp855'         => 'ru',
++    'cp1251'        => 'ru',
++    'cp866'         => 'ru',
++    'MacCyrillic'   => 'ru',
++    'koi8-r'        => 'ru',
++    'MacUkrainian'  => 'uk',
++    'koi8-u'        => 'uk',
++
++    #   Arabic
++    'iso-8859-6'    => 'ar',
++    'cp864'         => 'ar',
++    'cp1256'        => 'ar',
++    'MacArabic'     => 'ar',
++    'cp1006'        => 'fa',
++    'MacFarsi'      => 'fa',
++
++    #   Greek
++    'iso-8859-7'    => 'el',
++    'cp1253'        => 'el',
++    'MacGreek'      => 'el',
++
++    #   Hebrew
++    #       he yi
++    'iso-8859-8'    => 'he',
++    'cp862'         => 'he',
++    'cp1255'        => 'he',
++    'MacHebrew'     => 'he',
++
++    #   Turkish
++    'iso-8859-9'    => 'tr',
++    'cp857'         => 'tr',
++    'cp1254'        => 'tr',
++    'MacTurkish'    => 'tr',
++
++    #   Thai
++    'iso-8859-11'   => 'th',
++    'cp874'         => 'th',
++
++    #   Celtics (Latin8)
++    #       gd cy br
++    'iso-8859-14'   => 'celtic',
++
++    #   Vietnamese
++    'viscii'        => 'vi',
++    'cp1258'        => 'vi',
++
++    # Encode::CN
++    'euc-cn'        => 'zh',
++    'cp936'         => 'zh',
++    'hz'            => 'zh',
++
++    # Encode::TW
++    'big5-eten'     => 'zh',
++    'big5-hkscs'    => 'zh',
++    'cp950'         => 'zh',
++
++    # Encode::JP
++    'euc-jp'        => 'ja',
++    'shiftjis'      => 'ja',
++    '7bit-jis'      => 'ja',
++    'iso-2022-jp'   => 'ja',
++    'iso-2022-jp-1' => 'ja',
++    'cp932'         => 'ja',
++
++    # Encode::KR
++    'euc-kr'        => 'ko',
++    'cp949'         => 'ko',
++    'johab'         => 'ko',
++    'iso-2022-kr'   => 'ko',
++
++    # Encode::HanExtra
++    'euc-tw'        => 'zh',
++    'gb18030'       => 'zh',
++
++    # Encode::JIS2K
++    'euc-jisx0213'  => 'ja',
++    'shiftjisx0123' => 'ja',
++    'iso-2022-jp-3' => 'ja',
++
++    # Encode::EUCJPMS
++    'eucJP-ms'      => 'ja',
++    'cp51932'       => 'ja',
++    'cp50220'       => 'ja',
++    'cp50221'       => 'ja',
++
++  );
++
++  %lang2enc = (
++    # Latin1
++    'en' => ['ascii'],
++    'weurope' => ['cp1252'],
++
++    # Latin2
++    'ceurope' => ['cp1250'],
++
++    # Latin3
++    'seurope' => ['iso-8859-3'],
++
++    # Latin4
++    'neurope' => ['iso-8859-4'],
++
++    # Latin5
++    'tr' => ['cp1254'],
++
++    # Latin6
++    'nordic' => ['iso-8859-10'],
++
++    # Latin7
++    'baltic' => ['cp1257'],
++
++    # Latin8
++    'celtic' => ['iso-8859-14'],
++
++    # Non Latin
++    'ru' => ['koi8-r', 'cp1251'],
++    'uk' => ['koi8-u'],
++
++    'ar' => ['cp1256'],
++    'el' => ['cp1253'],
++    'he' => ['cp1255'],
++    'th' => ['cp874'],
++    'vi' => ['viscii', 'cp1258'],
++    'zh' => ['euc-cn', 'cp950'],
++    'ja' => ['euc-jp', 'cp932'],
++    'ko' => ['euc-kr', 'cp949'],
++
++  );
++
++  %scr2lang = (
++    'InLatin1Supplement' => ['weurope'],
++    'InLatinExtendedA' => [
++      'ceurope',
++      'seurope',
++      'tr',
++      'vi'
++    ],
++    'InLatinExtendedB' => [
++      'nordic',
++      'baltic',
++      'celtic'
++    ],
++    'Thai'   => ['th'],
++    'Cyrillic' => ['ru', 'uk'],
++    'Arabic' => ['ar'],
++    'Greek'  => ['el'],
++    'Hebrew' => ['he'],
++  );
++
++  # better detection for CJK
++  @scrorder = ('Hiragana','Katakana','Hangul','Han',keys(%scr2lang));
++  %cjkscr2lang = (
++    'Hiragana' => ['ja'],
++    'Katakana' => ['ja'],
++    'Hangul' => ['ko'],
++    'Han'    => ['zh', 'ja', 'ko'],
++  );
++
++  unless (HAS_ENCODE_HANEXTRA) {
++    Encode::Alias::define_alias( qr/^gb18030$/i => ' "euc-cn"' );
++  }
++  Encode::Alias::define_alias( qr/^unicode-1-1-(.+)$/i => ' "$1"' );
++  Encode::Alias::define_alias( qr/^TIS-620$/i => ' "iso-8859-11"' );
++  Encode::Alias::define_alias( qr/^x-mac-(.+)$/i => ' "Mac$1"' );
++  Encode::Alias::define_alias( qr/^Shift_JIS$/i => ' "cp932"' );
++  if (HAS_ENCODE_EUCJPMS) {
++    Encode::Alias::define_alias( qr/^iso-2022-jp$/i => ' "cp50221"' );
++  }
++}
++
++sub get_language {
++  my $str = shift; # $str must be UTF-8 encoding
++  my $charset = shift;
++
++  return 'en' unless $charset;
++  if ($charset !~ /^utf/i) {
++    return $enc2lang{$charset};
++  } elsif (defined($str)) {
++    $str =~ s/[\x00-\x7F]//g; # remove ASCII characters
++    return 'en' if ($str eq '');
++
++    my %handled;
++    $str = Encode::decode_utf8($str) unless (Encode::is_utf8($str));
++    foreach my $scr (@scrorder) {
++      next if ($str !~ /\p{$scr}/);
++      my $scrlangs = exists($cjkscr2lang{$scr}) ? $cjkscr2lang{$scr} : $scr2lang{$scr};
++      foreach my $lang (@$scrlangs) {
++        next if (exists($handled{$lang}));
++        foreach my $enc (@{$lang2enc{$lang}}) {
++          my $scratch = $str;
++          Encode::encode($enc, $scratch, Encode::FB_QUIET);
++          return $lang if ($scratch eq '');
++        }
++        $handled{$lang} = 1;
++      }
++    }
++  } 
++  return 'en';
++}
++
++# TEST 1: try conversion to use the specified charset. 
++# TEST 2: try conversion to use Encode::Detect.
++# TEST 3: try conversion to use Encode::Guess.
++sub normalize_charset {
++  my $str = shift;
++  my $charset = shift;
++
++  return wantarray ? ($str, 'ascii')  : $str unless ($str);
++
++  my $decoded;
++  my $detected;
++
++  if ($charset) {
++    ($decoded, $detected) = _specified_encoding($str, $charset);
++  }
++  unless ($detected) {
++    ($decoded, $detected) = _encode_detect($str);
++  }
++  unless ($detected) {
++    ($decoded, $detected) = _encode_guess($str);
++  }
++  unless ($detected) {
++    return ($str, undef);
++  }
++  $decoded =~ s/^\x{feff}//g;
++  $decoded = Encode::encode_utf8($decoded);
++
++  # unfold hiragana, katakana and han
++  if ($detected =~ /^(?:UTF|EUC|BIG5|GB|SHIFTJIS|ISO-2022|CP969$|CP932$|CP949|CP50221$)/i) {
++    $decoded =~ s/($KANA_HAN_RE)\012($KANA_HAN_RE)/$1$2/og;
++  }
++  return wantarray ? ($decoded, $detected) : $decoded;
++}
++
++sub _specified_encoding {
++  my $str = shift;
++  my $encoding = shift;
++
++  my $detected;
++  my $decoded;
++
++  return (undef, undef) unless ($encoding);
++
++  # note: ISO-2022-* is not deistinguish from US-ASCII
++  return (undef, undef) if ($str =~ /\e/ and $encoding !~ /^ISO-2022/i);
++
++  # UTF-16|32 encoding without BOM cannot be trusted.
++  return (undef, undef) if ($encoding =~ /^UTF-32$/i and $str !~ /^(?:\xFF\xFE\x00\x00|\x00\x00\xFE\xFF)/);
++  return (undef, undef) if ($encoding =~ /^UTF-16$/i and $str !~ /^(?:\xFF\xFE|\xFE\xFF)/);
++
++  #$encoding = _get_alias($encoding);
++  my $encoder = Encode::find_encoding($encoding);
++  if (ref($encoder)) {
++    $decoded = $encoder->decode($str,Encode::FB_QUIET);
++    $detected = $encoder->name if ($str eq '');
++  }
++  return ($decoded, $detected);
++}
++
++sub _encode_detect {
++  return undef unless HAS_ENCODE_DETECT;
++  my $str = shift;
++
++  # UTF-16|32 encoding without BOM cannot be trusted.
++  return (undef, undef) if ($str =~ /\x00\x00/ and $str !~ /^(?:\xFF\xFE\x00\x00|\x00\x00\xFE\xFF)/);
++  return (undef, undef) if ($str =~ /\x00/ and $str !~ /^(?:\xFF\xFE|\xFE\xFF)/);
++
++  my $decoded;
++  my $detected = Encode::Detect::Detector::detect($str);
++  if ($detected) {
++    $detected = _get_alias($detected);
++    my $encoder = Encode::find_encoding($detected);
++    if (ref($encoder)) {
++      $decoded = $encoder->decode($str);
++      $detected = $decoded ? $encoder->name : undef;
++    }
++    else {
++      $detected = undef;
++    }
++  }
++  return ($decoded, $detected);
++}
++
++sub _encode_guess {
++  my $str = shift;
++
++  my $detected;
++  my $decoded;
++  my $encoder;
++
++  # Step 1: Examine ISO-2022-*.
++  if ($str =~ /\e/) {
++    $Encode::Guess::NoUTFAutoGuess = 1;
++    $encoder = Encode::Guess::guess_encoding($str,
++        qw/cp50221 7bit-jis iso-2022-kr/);
++    $Encode::Guess::NoUTFAutoGuess = 0;
++  }
++
++  # Step 2: Examine US-ASCII/UTF-(8|16|32)
++  unless (ref($encoder)) {
++    $Encode::Guess::NoUTFAutoGuess = 0;
++    $encoder = Encode::Guess::guess_encoding($str);
++  }
++
++  # Step 3: Examine other encodings
++  unless (ref($encoder)) {
++    $Encode::Guess::NoUTFAutoGuess = 1;
++    eval {
++      if ($str =~ /[\x80-\xFF]{4}/) {
++        $encoder = Encode::Guess::guess_encoding($str,
++          qw/euc-cn big5-eten euc-jp cp932 euc-kr cp949/);
++      }
++      else {
++        $encoder = Encode::Guess::guess_encoding($str,
++          qw/iso-8859-1 cp1252/);
++      }
++    };
++    $Encode::Guess::NoUTFAutoGuess = 0;
++  }
++  if (ref($encoder)) {
++    $detected = $encoder->name;
++    if ($detected) {
++      $decoded = $encoder->decode($str);
++    }
++  }
++  return ($decoded, $detected);
++}
++
++sub _get_alias {
++  my $encoding = shift;
++
++  unless (HAS_ENCODE_HANEXTRA) {
++    $encoding =~ s/^gb18030$/euc-cn/i;
++  }
++  $encoding =~ s/^unicode-1-1-(.+)$/$1/i;
++  $encoding =~ s/^TIS-620$/iso-8859-11/i;
++  $encoding =~ s/x-mac-(.+)$/Mac$1/i;
++  $encoding =~ s/^Shift_JIS$/cp932/i;
++  if (HAS_ENCODE_EUCJPMS) {
++    $encoding =~ s/^iso-2022-jp$/cp50221/i;
++    $encoding =~ s/^euc-jp$/cp51932/i;
++  }
++
++  return $encoding;
++}
++
++
++1;
++

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
+@dirrm %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/Charset.pm
+@unexec if cmp -s %%PREFIX%%/%%ETCDIR%%/%%TOKENIZER_PRE%%.sample %%PREFIX%%/%%ETCDIR%%/%%TOKENIZER_PRE%%; then rm -f %%PREFIX%%/%%ETCDIR%%/%%TOKENIZER_PRE%%; fi
+%%ETCDIR%%/%%TOKENIZER_PRE%%.sample

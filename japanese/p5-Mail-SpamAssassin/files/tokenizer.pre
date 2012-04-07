@@ -1,0 +1,8 @@
+
+# Tokenizer::SimpleJA
+#
+loadplugin Mail::SpamAssassin::Plugin::Tokenizer::SimpleJA
+
+# Tokenizer::MeCab
+#
+#loadplugin Mail::SpamAssassin::Plugin::Tokenizer::MeCab
