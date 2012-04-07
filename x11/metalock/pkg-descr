@@ -1,0 +1,16 @@
+Metalock is an enhanced screen locker for the X11 windowing system. It is
+designed to be used with a background screen daemon, such as xidle.
+
+Current features include:
+	- Support for pixmap (image) xpm background and login box.
+	- It gives visual feedback as you type the password (Shows username and
+	  * for each character of password typed.)
+	- Bind arbitrary commands to key combinations (allows tasks such as
+	  pause/un-pause music without unlocking the screen)
+	- Optional XFT support for anti-aliased fonts. (This is optional in case
+	  greater security is desired)
+	- Optional Imlib2 support for use of png or jpg formats, which are more
+	  appropriate for photos or high-color images than xpm.
+	- Portable to most UNIX-like operating systems, developed on FreeBSD.
+
+WWW: http://chiselapp.com/user/beyert/repository/metalock/

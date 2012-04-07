@@ -1,0 +1,7 @@
+bin/metalock
+%%DATADIR%%/themes/Blue_Marble/bg.xpm.gz
+%%DATADIR%%/themes/Blue_Marble/box.xpm.gz
+%%DATADIR%%/themes/Blue_Marble/metadata.mk
+@dirrmtry %%DATADIR%%/themes/Blue_Marble
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%
