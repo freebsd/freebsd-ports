@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta9
-PORTREVISION=	2
+DISTVERSION=	1.0-beta10
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
