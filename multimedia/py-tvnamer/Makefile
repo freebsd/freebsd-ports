@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tvnamer
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,15 +15,13 @@ COMMENT=	Automatically names downloaded/recorded TV-episode
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}tvdb_api>=1.5:${PORTSDIR}/www/py-tvdb_api
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tvdb_api>=1.5:${PORTSDIR}/www/py-tvdb_api
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tvdb_api>=1.5:${PORTSDIR}/www/py-tvdb_api
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-PLIST_FILES=	\
-		bin/${PORTNAME} \
+PLIST_FILES=	bin/${PORTNAME} \
 		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
