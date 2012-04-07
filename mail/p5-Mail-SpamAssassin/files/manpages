@@ -1,5 +1,5 @@
 # $FreeBSD$
-MAN3=		Mail::SpamAssassin.3 \
+MAN3+=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::AICache.3 \
 		Mail::SpamAssassin::ArchiveIterator.3 \
 		Mail::SpamAssassin::AsyncLoop.3 \
@@ -66,6 +66,6 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::Util::RegistrarBoundaries.3 \
 		spamassassin-run.3
 
-MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
+MAN1+=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
 		spamassassin-run.1 sa-compile.1 sa-awl.1
 
