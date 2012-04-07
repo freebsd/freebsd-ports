@@ -1,0 +1,11 @@
+--- tkcron.tcl	Sat Aug  3 17:53:42 1996
++++ tkcron.tcl	Sat Aug  3 17:52:03 1996
+@@ -281,6 +281,7 @@
+ 
+ # Return the crontab string as a list
+ proc parseCrontabFile {str} {
++    set result ""
+     set crontablist [split $str \n]
+     set listlength [llength $crontablist]
+     for {set i 0} {$i < $listlength} {incr i 1} {
+

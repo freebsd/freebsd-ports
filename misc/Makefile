@@ -520,6 +520,7 @@
     SUBDIR += teseq
     SUBDIR += tet
     SUBDIR += thailocale
+    SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkman
     SUBDIR += tkregexp
