@@ -325,6 +325,7 @@
     SUBDIR += libproxy-perl
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit
+    SUBDIR += librouteros
     SUBDIR += librsync
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
