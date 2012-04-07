@@ -205,6 +205,7 @@
     SUBDIR += p5-Net-ACL
     SUBDIR += p5-Net-Abuse-Utils
     SUBDIR += p5-Net-CIDR
+    SUBDIR += p5-Net-ILO
     SUBDIR += p5-Net-IP
     SUBDIR += p5-Net-IP-Match-Regexp
     SUBDIR += p5-Net-IP-Match-XS
