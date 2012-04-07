@@ -39,8 +39,8 @@ as root. To change this, also add this to rc.conf:
 spamd_flags="-u spamd -H /var/spool/spamd"
 
 ************************************************************************
-For Japanese users, see document in
-PREFIX/share/doc/ja-p5-Mail-SpamAssassin/
+For Japanese users, see documents in
+http://emaillab.jp/spamassassin/ja-patch/
 
 Tokenizer::MeCab uses UTF-8 encoding.  You may have to manually
 (re)install the following ports with the build options for UTF-8:
