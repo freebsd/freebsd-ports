@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
-BROKEN=		Does not build with wmaker 0.95.2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -48,5 +48,7 @@ post-patch:
 .for file in data/po/ja.po po/ja.po
 	@${REINPLACE_CMD} -e 's|JISX-0208-1983-0|euc-jp|g' ${WRKSRC}/${file}
 .endfor
+	@${FIND} ${WRKSRC}/src -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		'/WMWritePropListToFile/s|,[[:space:]]YES||g'
 
 .include <bsd.port.mk>
