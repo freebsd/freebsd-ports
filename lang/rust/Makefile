@@ -6,23 +6,14 @@
 #
 
 PORTNAME=	rust
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	lang
-MASTER_SITES=	http://dl.rust-lang.org/dist/:source \
-		http://people.cs.nctu.edu.tw/~jyyou/rust/:boot
-DISTFILES=	${RUST_SOURCE}:source \
-		${RUST_BOOT}:boot
-EXTRACT_ONLY=	${RUST_SOURCE}
+MASTER_SITES=	http://dl.rust-lang.org/dist/
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	A language with a focus on memory safety and concurrency
 
-OPTIONS=	CARGO	"Build with package manager" off
-
-RUST_SOURCE=	${DISTNAME}${EXTRACT_SUFX}
-RUST_BOOT=	rust-${PORTVERSION}-boot-${CC}.tar.bz2
-RUST_TARGET=	x86_64-unknown-freebsd
+OPTIONS=	CARGO	"Build with package manager" on
 
 ONLY_FOR_ARCHS=	amd64
 HAS_CONFIGURE=	yes
@@ -48,6 +39,9 @@ USE_GCC=	4.6+
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		git:${PORTSDIR}/devel/git \
 		gpg:${PORTSDIR}/security/gnupg
+PLIST_SUB+=	CARGO=""
+.else
+PLIST_SUB+=	CARGO="@comment "
 .endif
 
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
@@ -55,26 +49,20 @@ LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 MAKE_ARGS+=		CC=${CC} CXX=${CXX} ARCH=x86_64
 CONFIGURE_ARGS+=	--disable-valgrind --disable-docs
 
-post-extract:
-	${MKDIR} ${WRKSRC}/${RUST_TARGET} && \
-	cd ${WRKSRC}/${RUST_TARGET} && \
-	    tar xf ${DISTDIR}/${RUST_BOOT} && \
-	    ${MV} rust-stage0 stage0
-
 post-patch:
 	${REINPLACE_CMD} \
 	    -e '/probe_need CFG_CURL/d' \
 	    ${WRKSRC}/configure
 	${REINPLACE_CMD} \
-	    -e '/src\/etc\/get-snapshot.py $$(CFG_HOST_TRIPLE)/d' \
-	    ${WRKSRC}/mk/stage0.mk
+	    -e 's|subprocess.call(\["curl"|subprocess.call(["fetch"|' \
+	    ${WRKSRC}/src/etc/snapshot.py
 	${REINPLACE_CMD} \
-	    -e 's|\$$(PREFIX_ROOT)/share/man|${MANPREFIX}/man|g' \
+	    -e 's|$$(PREFIX_ROOT)/share/man|${MANPREFIX}/man|' \
 	    ${WRKSRC}/mk/install.mk
-.if ${OSVERSION} >= 900044
+.if defined(WITHOUT_CARGO)
 	${REINPLACE_CMD} \
-	    -e 's|prog: str = "gcc"|prog: str = "clang"|' \
-	    ${WRKSRC}/src/comp/back/link.rs
+	    -e '/$$(Q)$$(call INSTALL,$$(HB3),$$(PHB),cargo$$(X))/d' \
+	    ${WRKSRC}/mk/install.mk
 .endif
 
 .include <bsd.port.post.mk>
