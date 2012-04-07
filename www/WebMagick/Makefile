@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	WebMagick
-PORTVERSION=	2.03p3
-PORTREVISION=	53
+PORTVERSION=	2.03p4
 PORTEPOCH=	1
 CATEGORIES=	www graphics
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/2.03pre3
-DISTNAME=	${PORTNAME}-2.03pre3
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/2.03pre4
+DISTNAME=	${PORTNAME}-2.03pre4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	MagickWand.5:${PORTSDIR}/graphics/ImageMagick
 
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=  autoconf aclocal automake
+AUTOMAKE_ARGS+=	--add-missing
 INFO=		webmagick
 CONFIGURE_ENV=	webmagick_cv_rootpath=${PREFIX}/www/data \
 		webmagick_cv_iconpath=webmagick \
