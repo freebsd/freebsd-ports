@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Math/String/Charset/Nested.pm
+%%SITE_PERL%%/Math/String/Charset/Grouped.pm
+%%SITE_PERL%%/Math/String/Charset.pm
+%%SITE_PERL%%/Math/String/Sequence.pm
+%%SITE_PERL%%/Math/String.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/String/.packlist
+@dirrmtry %%SITE_PERL%%/Math/String/Charset
+@dirrmtry %%SITE_PERL%%/Math/String
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/String
