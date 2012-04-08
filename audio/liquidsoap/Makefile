@@ -37,7 +37,7 @@ OPTIONS=	AACPLUS		"AAC+ encoding"	On	\
 		FESTIVAL	"speech synthesis (say)"	On	\
 		FLAC		"flac format decoding and encoding" Off	\
 		GAVL		"converts from and to many formats"	Off \
-		GSREAMER	"used to provide V4l inputs"	Off \
+		GSTREAMER	"used to provide V4l inputs"	Off \
 		JACK		"audio connection kit, designed for low latency"	On \
 		LADSPA		"audio plugins providing sound effects"	Off \
 		LO		"OSC protocol to have external controls"	Off	\
@@ -115,6 +115,9 @@ LIB_DEPENDS_ao=		ao.4:${PORTSDIR}/audio/libao
 BUILD_DEPENDS_dssi=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 LIB_DEPENDS_faad=	faad.2:${PORTSDIR}/audio/faad
 LIB_DEPENDS_gavl=	gavl.1:${PORTSDIR}/multimedia/gavl
+BUILD_DEPENDS_gstreamer=${LOCALBASE}/lib/ocaml/libcamlidl.a:${PORTSDIR}/lang/ocaml-camlidl
+LIB_DEPENDS_gstreamer=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
+			gstapp-0.10.0:${PORTSDIR}/multimedia/gstreamer-plugins
 BUILD_DEPENDS_ladspa=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS_lame=	mp3lame.0:${PORTSDIR}/audio/lame
 LIB_DEPENDS_mad=	mad.2:${PORTSDIR}/audio/libmad
