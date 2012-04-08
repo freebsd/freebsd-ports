@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 PORTEPOCH=	2
 CATEGORIES=	mail www pear
 
@@ -18,8 +18,7 @@ LICENSE=	BSD
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CATEGORY=	Mail
-FILES=		mime.php mimePart.php
+FILES=		Mail/mime.php Mail/mimePart.php
 SCRIPTFILES=	phail.php
 
 TESTS=		class-filename.phpt encoding_case.phpt \
