@@ -1,6 +1,8 @@
 bin/sieve-dump
+bin/sieve-filter
 bin/sieve-test
 bin/sievec
+include/dovecot/sieve/edit-mail.h
 include/dovecot/sieve/pigeonhole-config.h
 include/dovecot/sieve/rfc2822.h
 include/dovecot/sieve/sieve-actions.h
@@ -62,6 +64,7 @@ libexec/dovecot/managesieve
 libexec/dovecot/managesieve-login
 share/doc/dovecot/example-config/conf.d/20-managesieve.conf
 share/doc/dovecot/example-config/conf.d/90-sieve.conf
+@dirrmtry libdata/ldconfig/dovecot-pigeonhole
 @dirrmtry share/doc/dovecot/example-config/conf.d
 @dirrmtry share/doc/dovecot/example-config
 @dirrmtry share/doc/dovecot
