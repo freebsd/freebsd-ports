@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	bzr-upload
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/60433187/ \
+MASTER_SITES=	http://launchpadlibrarian.net/96912507/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Bzr plugin to incrementally upload changes to a dumb server
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
