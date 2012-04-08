@@ -117,11 +117,11 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${PREFIX}/${ELISPDIR}
 .endif
 .if ${INTERFACE} == "xaw"
-	@${MKDIR} ${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults
+	@${MKDIR} ${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults
 	${INSTALL_DATA} ${WRKSRC}/TiMidity.ad \
-		${X11BASE}/lib/X11/app-defaults/TiMidity
+		${PREFIX}/lib/X11/app-defaults/TiMidity
 	${INSTALL_DATA} ${WRKSRC}/TiMidity-uj.ad \
-		${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
+		${PREFIX}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
 .endif
 .if defined(LINK)
 	${LN} -sf ${PREFIX}/bin/timidity ${PREFIX}/bin/${LINK}
