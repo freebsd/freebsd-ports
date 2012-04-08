@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.2.6
+PORTVERSION=	0.3.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 BUILD_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
 RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
 
-DOVECOTVERSION=	2.0
+DOVECOTVERSION=	2.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib/dovecot
 
-MAN1=		sieve-dump.1 sieve-test.1 sievec.1 sieved.1
+MAN1=		sieve-dump.1 sieve-filter.1 sieve-test.1 sievec.1 sieved.1
 MAN7=		pigeonhole.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-/\//}
