@@ -7,31 +7,41 @@
 
 PORTNAME=	peekabot
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}.x
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Distributed real-time 3D visualization tool for robotics researchers
 
+LICENSE=	BSL GPLv3
+LICENSE_COMB=	multi
+
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
 		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	`fltk-config --cflags`
-LDFLAGS+=	`fltk-config --ldflags`
-USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack
-#Internal compiler error with < 4.4
-USE_GCC=	4.4+
+USE_GCC=	4.6+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		does not compile with boost on sparc64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"/names_next_round/s|'xerces-c'|'xerces-c-3.1'|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		"/^AM_/s|-O2||" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
