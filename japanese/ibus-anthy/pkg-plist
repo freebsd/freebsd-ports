@@ -1,10 +1,10 @@
+%%PYTHON_SITELIBDIR%%/_anthy.la
+%%PYTHON_SITELIBDIR%%/_anthy.so
+%%PYTHON_SITELIBDIR%%/anthy.py
 libexec/ibus-engine-anthy
 libexec/ibus-setup-anthy
 %%DATADIR%%/dicts/oldchar.t
 %%DATADIR%%/dicts/symbol.t
-%%DATADIR%%/engine/_config.py
-%%DATADIR%%/engine/_config.pyc
-%%DATADIR%%/engine/_config.pyo
 %%DATADIR%%/engine/engine.py
 %%DATADIR%%/engine/engine.pyc
 %%DATADIR%%/engine/engine.pyo
@@ -33,9 +33,6 @@ libexec/ibus-setup-anthy
 %%DATADIR%%/engine/thumb.pyc
 %%DATADIR%%/engine/thumb.pyo
 %%DATADIR%%/icons/ibus-anthy.png
-%%DATADIR%%/setup/_config.py
-%%DATADIR%%/setup/_config.pyc
-%%DATADIR%%/setup/_config.pyo
 %%DATADIR%%/setup/anthyprefs.py
 %%DATADIR%%/setup/anthyprefs.pyc
 %%DATADIR%%/setup/anthyprefs.pyo
@@ -45,7 +42,7 @@ libexec/ibus-setup-anthy
 %%DATADIR%%/setup/prefs.py
 %%DATADIR%%/setup/prefs.pyc
 %%DATADIR%%/setup/prefs.pyo
-%%DATADIR%%/setup/setup.ui
+%%DATADIR%%/setup/setup.glade
 share/ibus/component/anthy.xml
 share/locale/fr/LC_MESSAGES/ibus-anthy.mo
 share/locale/ja/LC_MESSAGES/ibus-anthy.mo
