@@ -69,7 +69,7 @@ maint=$(awk '{print $2}' < .latest_full | sort -ui | tr '\n' ',')
 
 if [ "${NOMAIL}" = "0" ]; then
   for i in ${maint}; do
-    mail -s "Ports with duplicate LATEST_LINKS" $i < .latest_mail
+    mail -s "Ports with duplicate LATEST_LINKs" $i < .latest_mail
   done
 else
   cat .latest_mail
