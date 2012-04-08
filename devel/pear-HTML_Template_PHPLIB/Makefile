@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_PHPLIB
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	joehorn@gmail.com
@@ -29,6 +29,7 @@ TESTS=		AllTests.php HTML_Template_PHPLIBTest.php \
 		HTML_Template_PHPLIB_GeneratorTest.php \
 		HTML_Template_PHPLIB_HelperTest.php \
 		HTML_Template_PHPLIB_ValidatorTest.php \
+		helper.inc \
 		templates/block.tpl templates/block2.tpl templates/block3.tpl \
 		templates/simple.tpl templates/simple2.tpl
 
