@@ -38,7 +38,8 @@ OPTIONS=	APPLETALK	"Enable AppleTalk protocol support" on \
 		PAM		"Enable PAM support" off \
 		TIMELORD	"Enable Timelord network time service" off \
 		KRB5		"Enable Kerberos V UAM" off \
-		ZEROCONF	"Enable Zeroconf (Bonjour) support" on
+		ZEROCONF	"Enable Zeroconf (Bonjour) support" on \
+		LDAP		"Enable LDAP support" off
 
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
@@ -108,6 +109,14 @@ USE_GNOME+=		pkgconfig
 SUB_LIST+=		ZEROCONF="avahi_daemon"
 .else
 SUB_LIST+=		ZEROCONF=""
+.endif
+
+.if defined (WITH_LDAP)
+CONFIGURE_ARGS+=	--with-ldap
+CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+USE_OPENLDAP=		yes
+.else
+CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if ${OSVERSION} < 800031
