@@ -8281,6 +8281,7 @@ libretto-config                 ports/sysutils/libretto-config
 librfc822                       ports/mail/librfc822
 librmath                        ports/math/libRmath
 libroadnav                      ports/astro/libroadnav
+librouteros                     ports/net/librouteros
 libroxml                        ports/textproc/libroxml
 librsvg2                        ports/graphics/librsvg2
 librsync                        ports/net/librsync
@@ -9264,6 +9265,7 @@ metakit                         ports/databases/metakit
 metalink-checker                ports/misc/metalink-checker
 metalink-editor                 ports/misc/metalink-editor
 metalink-tools                  ports/misc/metalink-tools
+metalock                        ports/x11/metalock
 metalog                         ports/sysutils/metalog
 metamail                        ports/mail/metamail
 metaocaml                       ports/lang/metaocaml
@@ -11209,6 +11211,7 @@ p5-CGI.pm                       ports/www/p5-CGI.pm
 p5-CGI_Lite                     ports/www/p5-CGI_Lite
 p5-CGP-CLI                      ports/mail/p5-CGP-CLI
 p5-CHI                          ports/devel/p5-CHI
+p5-CIF-Client                   ports/www/p5-CIF-Client
 p5-CLASS                        ports/devel/p5-CLASS
 p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
@@ -13509,6 +13512,7 @@ p5-Net-Hiveminder               ports/net/p5-Net-Hiveminder
 p5-Net-ICQ2000                  ports/net-im/p5-Net-ICQ2000
 p5-Net-IDN-Encode               ports/textproc/p5-Net-IDN-Encode
 p5-Net-IDN-Nameprep             ports/converters/p5-Net-IDN-Nameprep
+p5-Net-ILO                      ports/net-mgmt/p5-Net-ILO
 p5-Net-IMAP-Client              ports/mail/p5-Net-IMAP-Client
 p5-Net-IMAP-Server              ports/mail/p5-Net-IMAP-Server
 p5-Net-IMAP-Simple              ports/mail/p5-Net-IMAP-Simple
@@ -15864,6 +15868,7 @@ p5-chi                          ports/devel/p5-CHI
 p5-child                        ports/devel/p5-Child
 p5-chklinks                     ports/www/p5-chklinks
 p5-chooser                      ports/devel/p5-Chooser
+p5-cif-client                   ports/www/p5-CIF-Client
 p5-cisco-hash                   ports/security/p5-Cisco-Hash
 p5-cisco-ipphone                ports/net/p5-Cisco-IPPhone
 p5-cisco-reconfig               ports/net-mgmt/p5-Cisco-Reconfig
@@ -18018,6 +18023,7 @@ p5-net-ident                    ports/net/p5-Net-Ident
 p5-net-idn-encode               ports/textproc/p5-Net-IDN-Encode
 p5-net-idn-nameprep             ports/converters/p5-Net-IDN-Nameprep
 p5-net-ifconfig-wrapper         ports/net/p5-Net-Ifconfig-Wrapper
+p5-net-ilo                      ports/net-mgmt/p5-Net-ILO
 p5-net-imap-client              ports/mail/p5-Net-IMAP-Client
 p5-net-imap-server              ports/mail/p5-Net-IMAP-Server
 p5-net-imap-simple              ports/mail/p5-Net-IMAP-Simple
@@ -22452,7 +22458,6 @@ py-liblzma                      ports/archivers/py-liblzma
 py-libnet                       ports/net/py-libnet
 py-librtfcomp                   ports/archivers/py-librtfcomp
 py-libtre                       ports/textproc/py-libtre
-py-libtunepimp                  ports/audio/py-libtunepimp
 py-libxml2                      ports/textproc/py-libxml2
 py-libxslt                      ports/textproc/py-libxslt
 py-lightbox                     ports/www/py-Lightbox
@@ -22509,7 +22514,6 @@ py-msrplib                      ports/net/py-msrplib
 py-mssql                        ports/databases/py-mssql
 py-mt                           ports/www/py-mt
 py-multimapping                 ports/devel/py-MultiMapping
-py-musicbrainz                  ports/audio/py-musicbrainz
 py-musicbrainz2                 ports/audio/py-musicbrainz2
 py-mutagen                      ports/audio/py-mutagen
 py-mwlib                        ports/devel/py-mwlib
@@ -26334,6 +26338,7 @@ tkabber-devel                   ports/net-im/tkabber-devel
 tkabber-plugins                 ports/net-im/tkabber-plugins
 tkabbur                         ports/net-im/tkabbur
 tkcon                           ports/devel/tkcon
+tkcron                          ports/misc/tkcron
 tkcvs                           ports/devel/tkcvs
 tkdesk                          ports/x11-fm/tkdesk
 tkdiff                          ports/textproc/tkdiff
