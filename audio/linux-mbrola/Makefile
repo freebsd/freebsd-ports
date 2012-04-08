@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mbrolavox:${PORTSDIR}/audio/mbrolavox
 
 CONFLICTS=	mbrola-*
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	alpha amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_ZIP=	yes
 RESTRICTED=	for non-commercial, non-military applications only
@@ -36,23 +36,14 @@ PLIST_FILES+=	share/doc/mbrola/readme.txt
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.zip -d ${WRKSRC}
-
-do-patch:
-	@${RM} -f ${WRKSRC}/mbrola-FreeBSD-i386-aout
-
-.include <bsd.port.pre.mk>
+	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.zip -d ${WRKSRC}
 
 do-install:
-.if (${ARCH} == "alpha")
-	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-alpha ${PREFIX}/bin/mbrola
-.else
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${PREFIX}/bin/mbrola
-.endif
-	@${CHMOD} +x ${PREFIX}/bin/mbrola
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
