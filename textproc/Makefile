@@ -499,6 +499,7 @@
     SUBDIR += p5-Data-Report
     SUBDIR += p5-Data-SpreadPagination
     SUBDIR += p5-DelimMatch
+    SUBDIR += p5-Dev-Bollocks
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
     SUBDIR += p5-EBook-Tools
