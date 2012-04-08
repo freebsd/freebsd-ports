@@ -52,8 +52,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="262b92fe-81c8-11e1-8899-001ec9578670">
+    <topic>png -- memory corruption/possible remote code execution</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><lt>1.4.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PNG project reports:</p>
+	<blockquote cite="http://www.libpng.org/pub/png/libpng.html">
+	  <p>libpng fails to correctly handle malloc() failures for text chunks
+	     (in png_set_text_2()), which can lead to memory corruption and the
+	     possibility of remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3048</cvename>
+      <url>http://www.libpng.org/pub/png/libpng.html</url>
+    </references>
+    <dates>
+      <discovery>2012-03-29</discovery>
+      <entry>2012-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="462e2d6c-8017-11e1-a571-bcaec565249c">
-    <topic>freetype -- multiple vulnability</topic>
+    <topic>freetype -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>freetype2</name>
@@ -64,8 +92,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Freetype project reports:</p>
 	<blockquote cite="https://sourceforge.net/projects/freetype/files/freetype2/2.4.9/README/view">
-	  <p>Another round of fixes to better handle invalid fonts. Many of
-             them are vulnerabilities.</p>
+	  <p>Multiple vulnerabilities exist in freetype that can result in
+	     application crashes and remote code execution.  Please review the
+	     details in each of the CVEs for additional information.</p>
 	</blockquote>
       </body>
     </description>
