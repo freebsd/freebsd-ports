@@ -424,6 +424,7 @@
     SUBDIR += p5-Math-SigFigs
     SUBDIR += p5-Math-SimpleVariable
     SUBDIR += p5-Math-Spline
+    SUBDIR += p5-Math-String
     SUBDIR += p5-Math-Symbolic
     SUBDIR += p5-Math-Symbolic-Custom-CCompiler
     SUBDIR += p5-Math-Symbolic-Custom-Contains
