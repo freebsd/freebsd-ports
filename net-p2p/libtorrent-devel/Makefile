@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent-devel
-PORTVERSION=	0.13.0
+PORTVERSION=	0.13.1
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org

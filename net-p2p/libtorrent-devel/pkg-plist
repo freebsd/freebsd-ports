@@ -44,7 +44,6 @@ include/torrent/poll_epoll.h
 include/torrent/poll_kqueue.h
 include/torrent/poll_select.h
 include/torrent/rate.h
-include/torrent/thread_base.h
 include/torrent/throttle.h
 include/torrent/torrent.h
 include/torrent/tracker.h
@@ -52,10 +51,13 @@ include/torrent/tracker_controller.h
 include/torrent/tracker_list.h
 include/torrent/utils/extents.h
 include/torrent/utils/log.h
+include/torrent/utils/log_buffer.h
 include/torrent/utils/log_files.h
 include/torrent/utils/option_strings.h
 include/torrent/utils/ranges.h
 include/torrent/utils/resume.h
+include/torrent/utils/signal_bitfield.h
+include/torrent/utils/thread_base.h
 lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
