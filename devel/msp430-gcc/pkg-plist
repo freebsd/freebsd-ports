@@ -9,7 +9,6 @@ bin/%%GCC_TARG%%-cpp
 bin/%%GCC_TARG%%-gcc
 bin/%%GCC_TARG%%-gcc-%%GCC_REV%%
 bin/%%GCC_TARG%%-g++
-bin/%%GCC_TARG%%-gccbug
 bin/%%GCC_TARG%%-gcov
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crt0ivtbl16.o
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crt0ivtbl32.o
@@ -66,8 +65,9 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/basic-block.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/bitmap.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/builtins.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/bversion.h
-lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-common.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-common.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-family/c-common.def
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-objc.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-pragma.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-pretty-print.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/cfghooks.h
@@ -90,12 +90,14 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/debug.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/defaults.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/diagnostic.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/diagnostic.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/diagnostic-core.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/double-int.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/emit-rtl.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/except.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/filenames.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/fixed-value.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/flags.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/flag-types.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/function.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/gcc-plugin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/genrtl.h
@@ -116,6 +118,8 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/insn-modes.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/insn-notes.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/intl.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/ipa-prop.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/ipa-ref-inline.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/ipa-ref.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/ipa-reference.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/ipa-utils.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/langhooks.h
@@ -131,10 +135,10 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/opts.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/output.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/params.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/params.h
-lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/partition.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/plugin-version.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/plugin.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/plugin.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/plugin-api.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/pointer-set.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/predict.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/predict.h
@@ -151,6 +155,7 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/statistics.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/symtab.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/sync-builtins.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/system.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/target.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/target.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/timevar.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/timevar.h
@@ -171,13 +176,16 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/tree-ssa-sccvn.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/tree.def
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/tree.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/treestruct.def
-lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/varray.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/vec.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/vecir.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/vecprim.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/version.h
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/cc1
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/cc1plus
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/collect2
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/liblto_plugin.la
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/liblto_plugin.so
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/liblto_plugin.so.0
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/lto-wrapper
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/lto1
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkheaders
@@ -191,6 +199,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/mcpu-430x/mmpy-16
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/mcpu-430x
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/mmpy-16
+@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/c-family
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/config/%%GCC_TARG%%
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/config
 @dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/plugin/include/cp
@@ -205,3 +214,6 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 @dirrmtry libexec/gcc
 @dirrmtry %%GCC_TARG%%/bin
 @dirrmtry %%GCC_TARG%%/info
+@dirrmtry %%GCC_TARG%%/lib/mcpu-430x/mmpy-16
+@dirrmtry %%GCC_TARG%%/lib/mcpu-430x
+@dirrmtry %%GCC_TARG%%/lib/mmpy-16
