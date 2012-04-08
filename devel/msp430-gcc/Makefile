@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${LTSVERSION}
-PORTREVISION=	5
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
@@ -39,10 +39,10 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 
 CONFLICTS=	msp430-gcc-3.*
 
-GCCVERSION=	4.5.3
-LTSVERSION=	20110716
-PATCHVERSION=	20110706
-BUGS_FIXED=	3370978 3390964 3394176 3396639 3409864 3431602 3433730
+GCCVERSION=	4.6.3
+LTSVERSION=	20120406
+PATCHVERSION=	20120406
+BUGS_FIXED=	# For future use
 LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PKGNAMEPREFIX}${PORTNAME}-${GCCVERSION}-${PATCHVERSION}-sf$${bugid}.patch ; done
 
 SRCDIR=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
@@ -60,6 +60,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../${SRCDIR:S/${WRKDIR}\///}/configure
 CONFIGURE_ARGS+=--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-languages=c,c++ \
+		--enable-lto \
 		--with-gmp=${LOCALBASE} --with-mpfr=${LOCALBASE} \
 		--with-mpc=${LOCALBASE} --with-libiconv-prefix=${LOCALBASE} \
 		--with-system-zlib --disable-nls \
@@ -72,12 +73,18 @@ MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 \
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCCVERSION}
 
-INFO=		cpp cppinternals gcc gccinstall gccint
+INFO=		cpp cppinternals gcc gccinstall gccint libquadmath
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 BINARIES=	gcc gcc-${GCCVERSION} c++ g++ gcov cpp
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
 
 pre-patch:
 	@cd ${SRCDIR} && ${PATCH} -s -p1 < ../mspgcc-${LTSVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${GCCVERSION}-${PATCHVERSION}.patch
