@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
