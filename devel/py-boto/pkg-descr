@@ -21,4 +21,4 @@ offered by Amazon Web Services. Currently, this includes:
   * Flexible Payment Service (FPS)
   * CloudFormation
 
-WWW: http://code.google.com/p/boto
+WWW:	https://github.com/boto/boto
