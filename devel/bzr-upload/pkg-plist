@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/cmds.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/cmds.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/cmds.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/upload/info.pyo
