@@ -20,6 +20,9 @@ RUN_DEPENDS=	rubygem-terminal-table>=1.4.2:${PORTSDIR}/textproc/rubygem-terminal
 
 LICENSE=	MIT
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		Needs older rubygem-json_pure
 
 USE_RUBY=	yes

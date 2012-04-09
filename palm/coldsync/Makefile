@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.coldsync.org/download/
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
 COMMENT=	Synchronize a PalmPilot with a Unix workstation
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--without-i18n
 PLIST_SUB+=	NLS="@comment "

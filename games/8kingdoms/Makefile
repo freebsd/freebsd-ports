@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME:S/k/K/}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D turn-based fantasy strategic game
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GMAKE=	yes

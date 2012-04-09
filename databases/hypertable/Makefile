@@ -27,6 +27,9 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		ant:${PORTSDIR}/devel/apache-ant
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build
 
 OPTIONS=	TCMALLOC	"Use Tcmalloc"			on  \

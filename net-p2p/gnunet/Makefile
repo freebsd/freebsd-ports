@@ -27,6 +27,9 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		extractor.3:${PORTSDIR}/textproc/libextractor \
 		microhttpd.23:${PORTSDIR}/www/libmicrohttpd
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not configure
 
 OPTIONS=	MYSQL	"Enable MySQL support"		on \

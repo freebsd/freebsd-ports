@@ -13,6 +13,9 @@ DISTNAME=	Komodo-Edit-${PORTVERSION}-8334-linux-libcpp6-x86
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not package
 
 CONFLICTS=	komodo-ide-*

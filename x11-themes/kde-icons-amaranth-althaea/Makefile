@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^.//}
 
 COMMENT=	KDE iconset like Crystal SVG, but simpler and with more shadows
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=	Does not fetch
 WRKSRC=		"${WRKDIR}/Altheae"
 

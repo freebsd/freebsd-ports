@@ -22,6 +22,9 @@ LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		Doesn't build with vala-0.10
 
 PROJECTHOST=	pino-twitter

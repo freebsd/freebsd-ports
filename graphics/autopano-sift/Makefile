@@ -16,6 +16,9 @@ COMMENT=	Automatic panorama control point generation tool
 
 RESTRICTED=	May be covered by patents
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		unfetchable
 
 LIB_DEPENDS=	gdiplus:${PORTSDIR}/x11-toolkits/libgdiplus

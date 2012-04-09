@@ -21,6 +21,9 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not compile
 
 WRKSRC=		${WRKDIR}/magicolor2430DL-${PORTVERSION}

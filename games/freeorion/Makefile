@@ -22,6 +22,9 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 RUN_DEPENDS=	${LOCALBASE}/lib/libLinearMath.a:${PORTSDIR}/devel/bullet
 BUILD_DEPENDS=	${LOCALBASE}/lib/libLinearMath.a:${PORTSDIR}/devel/bullet
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build
 
 USE_GCC=	4.4+

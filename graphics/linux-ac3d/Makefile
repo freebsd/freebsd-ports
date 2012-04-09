@@ -25,6 +25,9 @@ USE_LINUX_APPS+=dri
 
 RESTRICTED=	no distribution permitted
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not fetch
 
 ONLY_FOR_ARCHS=	i386 amd64

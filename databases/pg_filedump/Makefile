@@ -17,6 +17,9 @@ COMMENT=	Utility to format PostgreSQL heap, index, etc into human-readable form
 BUILD_DEPENDS=	\
 	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0

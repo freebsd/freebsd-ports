@@ -19,6 +19,9 @@ COMMENT=	A Device manager plugin.
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
 	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		Does not work with Xfce 4.8
 
 USE_BZIP2=	yes

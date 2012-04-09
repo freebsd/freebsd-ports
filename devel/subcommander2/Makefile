@@ -20,6 +20,9 @@ LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \
 		svn_client-1.0:${PORTSDIR}/devel/subversion \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not link
 
 LATEST_LINK=	subcommander2

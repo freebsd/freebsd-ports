@@ -21,6 +21,9 @@ LIB_DEPENDS=	kyotocabinet:${PORTSDIR}/databases/kyotocabinet
 
 LICENSE=	GPLv3
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=	does not compile
 
 RUBY_VER=	1.9
