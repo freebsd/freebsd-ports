@@ -52,6 +52,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20923a0d-82ba-11e1-8d7b-003067b2972c">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.228</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb12-07.html">
+	  <p>Multiple Priority 2 vulnerabilities could cause a crash and potentially
+	    allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0724</cvename>
+      <cvename>CVE-2012-0725</cvename>
+      <cvename>CVE-2012-0772</cvename>
+      <cvename>CVE-2012-0773</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb12-07.html</url>
+    </references>
+    <dates>
+      <discovery>2012-04-05</discovery>
+      <entry>2012-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="262b92fe-81c8-11e1-8899-001ec9578670">
     <topic>png -- memory corruption/possible remote code execution</topic>
     <affects>
