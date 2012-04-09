@@ -2672,6 +2672,7 @@ drupal6-webform                 ports/www/drupal6-webform
 drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
 drupal6-zeropoint               ports/www/drupal6-zeropoint
 drupal7                         ports/www/drupal7
+drupal7-vulnscan                ports/www/drupal7-vulnscan
 drupal7-wysiwyg                 ports/www/drupal7-wysiwyg
 drush                           ports/www/drush
 dsbl-testers                    ports/mail/dsbl-testers
@@ -11219,6 +11220,7 @@ p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
 p5-CPAN-Meta-YAML               ports/devel/p5-CPAN-Meta-YAML
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
+p5-CPAN-Perl-Releases           ports/devel/p5-CPAN-Perl-Releases
 p5-CPAN-Recent-Uploads          ports/devel/p5-CPAN-Recent-Uploads
 p5-CPAN-Reporter                ports/devel/p5-CPAN-Reporter
 p5-CPAN-Reporter-Smoker         ports/devel/p5-CPAN-Reporter-Smoker
@@ -12022,6 +12024,7 @@ p5-Debug-Client                 ports/devel/p5-Debug-Client
 p5-Decision-ACL                 ports/devel/p5-Decision-ACL
 p5-Declare-Constraints-Simple   ports/devel/p5-Declare-Constraints-Simple
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
+p5-Dev-Bollocks                 ports/textproc/p5-Dev-Bollocks
 p5-Devel-ArgNames               ports/devel/p5-Devel-ArgNames
 p5-Devel-Autoflush              ports/devel/p5-Devel-Autoflush
 p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
@@ -12063,6 +12066,7 @@ p5-Devel-ObjectTracker          ports/devel/p5-Devel-ObjectTracker
 p5-Devel-PPPort                 ports/devel/p5-Devel-PPPort
 p5-Devel-PackagePath            ports/devel/p5-Devel-PackagePath
 p5-Devel-PartialDump            ports/devel/p5-Devel-PartialDump
+p5-Devel-PatchPerl              ports/devel/p5-Devel-PatchPerl
 p5-Devel-Pointer                ports/devel/p5-Devel-Pointer
 p5-Devel-Profile                ports/devel/p5-Devel-Profile
 p5-Devel-Profiler               ports/devel/p5-Devel-Profiler
@@ -13199,6 +13203,7 @@ p5-Math-Series                  ports/math/p5-Math-Series
 p5-Math-SigFigs                 ports/math/p5-Math-SigFigs
 p5-Math-SimpleVariable          ports/math/p5-Math-SimpleVariable
 p5-Math-Spline                  ports/math/p5-Math-Spline
+p5-Math-String                  ports/math/p5-Math-String
 p5-Math-Symbolic                ports/math/p5-Math-Symbolic
 p5-Math-Symbolic-Custom-CCompiler  ports/math/p5-Math-Symbolic-Custom-CCompiler
 p5-Math-Symbolic-Custom-Contains  ports/math/p5-Math-Symbolic-Custom-Contains
@@ -16084,6 +16089,7 @@ p5-cpan-listchanges             ports/devel/p5-cpan-listchanges
 p5-cpan-meta                    ports/devel/p5-CPAN-Meta
 p5-cpan-meta-yaml               ports/devel/p5-CPAN-Meta-YAML
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
+p5-cpan-perl-releases           ports/devel/p5-CPAN-Perl-Releases
 p5-cpan-recent-uploads          ports/devel/p5-CPAN-Recent-Uploads
 p5-cpan-reporter                ports/devel/p5-CPAN-Reporter
 p5-cpan-reporter-smoker         ports/devel/p5-CPAN-Reporter-Smoker
@@ -16497,6 +16503,7 @@ p5-debug-client                 ports/devel/p5-Debug-Client
 p5-decision-acl                 ports/devel/p5-Decision-ACL
 p5-declare-constraints-simple   ports/devel/p5-Declare-Constraints-Simple
 p5-delimmatch                   ports/textproc/p5-DelimMatch
+p5-dev-bollocks                 ports/textproc/p5-Dev-Bollocks
 p5-devel-argnames               ports/devel/p5-Devel-ArgNames
 p5-devel-autoflush              ports/devel/p5-Devel-Autoflush
 p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
@@ -16538,6 +16545,7 @@ p5-devel-nytprof                ports/devel/p5-Devel-NYTProf
 p5-devel-objecttracker          ports/devel/p5-Devel-ObjectTracker
 p5-devel-packagepath            ports/devel/p5-Devel-PackagePath
 p5-devel-partialdump            ports/devel/p5-Devel-PartialDump
+p5-devel-patchperl              ports/devel/p5-Devel-PatchPerl
 p5-devel-pointer                ports/devel/p5-Devel-Pointer
 p5-devel-ppport                 ports/devel/p5-Devel-PPPort
 p5-devel-profile                ports/devel/p5-Devel-Profile
@@ -17676,6 +17684,7 @@ p5-math-series                  ports/math/p5-Math-Series
 p5-math-sigfigs                 ports/math/p5-Math-SigFigs
 p5-math-simplevariable          ports/math/p5-Math-SimpleVariable
 p5-math-spline                  ports/math/p5-Math-Spline
+p5-math-string                  ports/math/p5-Math-String
 p5-math-symbolic                ports/math/p5-Math-Symbolic
 p5-math-symbolic-custom-ccompiler  ports/math/p5-Math-Symbolic-Custom-CCompiler
 p5-math-symbolic-custom-contains  ports/math/p5-Math-Symbolic-Custom-Contains
