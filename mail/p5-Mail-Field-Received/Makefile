@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	freebsd@netfence.it
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 modules for parsing of `Received' headers in e-mails.
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Field.pm:${PORTSDIR}/mail/p5-Mail-Tools
