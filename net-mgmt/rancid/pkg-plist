@@ -36,6 +36,8 @@ libexec/rancid/lgform.cgi
 libexec/rancid/mrancid
 libexec/rancid/mrvlogin
 libexec/rancid/mrvrancid
+libexec/rancid/mtlogin
+libexec/rancid/mtrancid
 libexec/rancid/nlogin
 libexec/rancid/nrancid
 libexec/rancid/nxrancid
@@ -75,6 +77,7 @@ etc/rancid/rancid.conf.sample
 %%DATADIR%%/index.html
 %%DATADIR%%/lg.conf.sample
 %%DATADIR%%/lgnotes.html
+%%DATADIR%%/rancid-cvspurge
 %%DATADIR%%/rancid.conf.sample
 %%DATADIR%%/rtrfilter
 @dirrm %%DATADIR%%
