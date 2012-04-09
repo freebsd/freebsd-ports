@@ -18,6 +18,8 @@ COMMENT=	A number of tools and scripts for use with IMAP servers
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKDIR}/license.txt
 
+CONFLICTS=	imaputils-[0-9]*
+
 USE_PERL5_RUN=	yes
 
 do-build:

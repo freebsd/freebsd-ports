@@ -16,6 +16,8 @@ COMMENT=	A number of tools and scripts for use with IMAP servers
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+CONFLICTS=	imaptools-[0-9]*
+
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
