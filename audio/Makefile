@@ -555,7 +555,6 @@
     SUBDIR += p5-Music-Audioscrobbler-MPD
     SUBDIR += p5-Music-Audioscrobbler-Submit
     SUBDIR += p5-MusicBrainz-DiscID
-    SUBDIR += p5-MusicBrainz-Queries
     SUBDIR += p5-Net-DAAP-Client
     SUBDIR += p5-Net-DAAP-DMAP
     SUBDIR += p5-Net-FreeDB
@@ -645,7 +644,6 @@
     SUBDIR += ruby-freedb
     SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
-    SUBDIR += ruby-musicbrainz
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
     SUBDIR += ruby-vorbisfile

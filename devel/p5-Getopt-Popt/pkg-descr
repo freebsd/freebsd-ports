@@ -1,5 +1,0 @@
-This module provides an interface to (most of) the functions available
-in the popt library.  See the popt(3) man page for more details about
-what the popt library can do.
-
-WWW: http://search.cpan.org/dist/Getopt-Popt/

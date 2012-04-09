@@ -625,7 +625,6 @@
     SUBDIR += p5-Net-Random
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-RawSock
-    SUBDIR += p5-Net-Rendezvous
     SUBDIR += p5-Net-Rendezvous-Publish
     SUBDIR += p5-Net-Riak
     SUBDIR += p5-Net-Rsh
