@@ -8,7 +8,8 @@
 PORTNAME=	imaptools
 PORTVERSION=	1.135
 CATEGORIES=	mail
-MASTER_SITES=	http://www.athensfbc.com/imap_tools/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	bsam
 DISTNAME=	imap_tools_V${PORTVERSION}
 
 MAINTAINER=	bsam@FreeBSD.org
@@ -17,7 +18,6 @@ COMMENT=	A number of tools and scripts for use with IMAP servers
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKDIR}/license.txt
 
-FETCH_ARGS=	-pRr
 USE_PERL5_RUN=	yes
 
 do-build:
