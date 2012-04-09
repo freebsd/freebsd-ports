@@ -207,6 +207,7 @@
     SUBDIR += imapfilter
     SUBDIR += imapsync
     SUBDIR += imaptools
+    SUBDIR += imaputils
     SUBDIR += isbg
     SUBDIR += isoqlog
     SUBDIR += isync
