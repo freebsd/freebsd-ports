@@ -130,8 +130,6 @@ mp3_DEPENDS=	audio/gstreamer-plugins-mp3
 
 musepack_DEPENDS=	audio/gstreamer-plugins-musepack
 
-musicbrainz_DEPENDS=	audio/gstreamer-plugins-musicbrainz
-
 nas_DEPENDS=	audio/gstreamer-plugins-nas
 
 neon_DEPENDS=	www/gstreamer-plugins-neon
