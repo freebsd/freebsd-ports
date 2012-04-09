@@ -2,7 +2,6 @@ bin/mc
 bin/mcdiff
 %%EDITOR%%bin/mcedit
 bin/mcview
-etc/mc/cedit.menu
 %%EDITOR%%etc/mc/edit.indent.rc
 %%EDITOR%%etc/mc/edit.spell.rc
 etc/mc/filehighlight.ini
@@ -12,6 +11,7 @@ etc/mc/mc.keymap.default
 etc/mc/mc.keymap.emacs
 etc/mc/mc.menu
 etc/mc/mc.menu.sr
+etc/mc/mcedit.menu
 etc/mc/sfs.ini
 libexec/mc/extfs.d/README
 libexec/mc/extfs.d/README.extfs
@@ -19,15 +19,18 @@ libexec/mc/extfs.d/a+
 libexec/mc/extfs.d/apt+
 libexec/mc/extfs.d/audio
 libexec/mc/extfs.d/bpp
+libexec/mc/extfs.d/changesetfs
 libexec/mc/extfs.d/deb
 libexec/mc/extfs.d/deba
 libexec/mc/extfs.d/debd
 libexec/mc/extfs.d/dpkg+
+libexec/mc/extfs.d/gitfs+
 libexec/mc/extfs.d/hp48+
 libexec/mc/extfs.d/iso9660
 libexec/mc/extfs.d/lslR
 libexec/mc/extfs.d/mailfs
 libexec/mc/extfs.d/patchfs
+libexec/mc/extfs.d/patchsetfs
 libexec/mc/extfs.d/rpm
 libexec/mc/extfs.d/rpms+
 libexec/mc/extfs.d/s3+
@@ -72,7 +75,6 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/cs/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/de_CH/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/el/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mc.mo
@@ -111,6 +113,13 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/wa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mc.mo
+%%DATADIR%%/examples/macros.d/macro.0.sh
+%%DATADIR%%/examples/macros.d/macro.1.sh
+%%DATADIR%%/examples/macros.d/macro.3.sh
+%%DATADIR%%/examples/macros.d/macro.4.sh
+%%DATADIR%%/examples/macros.d/macro.5.sh
+%%DATADIR%%/examples/macros.d/macro.6.sh
+%%DATADIR%%/examples/macros.d/macro.7.sh
 %%DATADIR%%/help/mc.hlp
 %%NLS%%%%DATADIR%%/help/mc.hlp.es
 %%NLS%%%%DATADIR%%/help/mc.hlp.hu
@@ -139,9 +148,12 @@ libexec/mc/mc.sh
 %%DATADIR%%/skins/gotar.ini
 %%DATADIR%%/skins/mc46.ini
 %%DATADIR%%/skins/nicedark.ini
+%%DATADIR%%/skins/sand256.ini
+%%DATADIR%%/skins/xoria256.ini
 %%EDITOR%%%%DATADIR%%/syntax/PKGBUILD.syntax
 %%EDITOR%%%%DATADIR%%/syntax/Syntax
 %%EDITOR%%%%DATADIR%%/syntax/ada95.syntax
+%%EDITOR%%%%DATADIR%%/syntax/as.syntax
 %%EDITOR%%%%DATADIR%%/syntax/aspx.syntax
 %%EDITOR%%%%DATADIR%%/syntax/assembler.syntax
 %%EDITOR%%%%DATADIR%%/syntax/awk.syntax
@@ -214,6 +226,8 @@ libexec/mc/mc.sh
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/hints
 @dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/examples/macros.d
+@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
@@ -223,8 +237,6 @@ libexec/mc/mc.sh
 %%NLS%%@dirrmtry share/locale/ia
 %%NLS%%@dirrmtry share/locale/fi_FI/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi_FI
-%%NLS%%@dirrmtry share/locale/de_CH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_CH
 @dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc
