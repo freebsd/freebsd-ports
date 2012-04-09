@@ -140,7 +140,6 @@
     SUBDIR += ruby-bsdconv
     SUBDIR += ruby-dump.rb
     SUBDIR += ruby-iconv
-    SUBDIR += ruby-lv
     SUBDIR += shftool
     SUBDIR += showkey
     SUBDIR += ta2as

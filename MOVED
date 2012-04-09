@@ -3264,3 +3264,8 @@ databases/gbib||2012-03-26|Has expired
 sysutils/syscp|sysutils/froxlor|2012-03-26|Has expired: Long ditched, possibly dangerous and replaced with sysutils/froxlor
 audio/py-libtunepimp||2012-04-07|Has expired: MusicBrainz RDF webservice no longer functions
 audio/py-musicbrainz||2012-04-07|Has expired: MusicBrainz RDF webservice no longer functions
+audio/p5-MusicBrainz-Queries||2012-04-09|Has expired: MusicBrainz RDF webservice no longer functions
+audio/ruby-musicbrainz||2012-04-09|Has expired: MusicBrainz RDF webservice no longer functions
+converters/ruby-lv||2012-04-09|Has expired: upstream no longer has this
+devel/p5-Getopt-Popt||2012-04-09|Has expired: "Gone from CPAN"
+net/p5-Net-Rendezvous||2012-04-09|Has expired: Superceeded by dns/p5-Net-Bonjour
