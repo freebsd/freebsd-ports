@@ -1,5 +1,6 @@
 sbin/amd-setup
 sbin/desktop-installer
+%%DATADIR%%/90-vboxguest.fdi
 %%DATADIR%%/Gnome/Xsession
 %%DATADIR%%/Gnome/xinitrc
 %%DATADIR%%/KDE3/Xsession
