@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.symmetrixtech.com/ids/
 
-MAINTAINER=	freebsd@netfence.it
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on module for snort to generate real-time web reports
 
 .if !defined(WITHOUT_JPGRAPH)
