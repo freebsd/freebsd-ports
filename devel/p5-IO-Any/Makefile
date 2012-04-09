@@ -17,8 +17,8 @@ COMMENT=	IO::Any opens anything
 BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
-TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/Test-Differences \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/Test-Exception
+TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
