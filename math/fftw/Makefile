@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared
+INFO=		fftw
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -42,7 +43,6 @@ FFTW_SUFX=		s
 FFTW_PKGNAMESUFFIX=	-float
 PLIST_SUB+=	DEF="@comment "
 .else
-INFO=			fftw
 PLIST_SUB+=	DEF=""
 .endif
 
