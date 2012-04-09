@@ -48,9 +48,16 @@
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.0-2012-01-10.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.0-2012-01-14.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.1-2012-01-26.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.2-2012-03-05.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.3-2012-03-13.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.4-2012-03-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/2.5.4-2012-03-19.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql/index.html
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.2-2012-03-05.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.3-2012-03-13.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-18.sql
+%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/2.5.4-2012-03-19.sql
 %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure/index.html
-%%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlsrv/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/index.html
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl/index.html
@@ -426,6 +433,8 @@
 %%WWWDIR%%/administrator/components/com_installer/controllers/install.php
 %%WWWDIR%%/administrator/components/com_installer/controllers/manage.php
 %%WWWDIR%%/administrator/components/com_installer/controllers/update.php
+%%WWWDIR%%/administrator/components/com_installer/helpers/html/index.html
+%%WWWDIR%%/administrator/components/com_installer/helpers/html/manage.php
 %%WWWDIR%%/administrator/components/com_installer/helpers/index.html
 %%WWWDIR%%/administrator/components/com_installer/helpers/installer.php
 %%WWWDIR%%/administrator/components/com_installer/index.html
@@ -479,6 +488,29 @@
 %%WWWDIR%%/administrator/components/com_installer/views/warnings/tmpl/default.php
 %%WWWDIR%%/administrator/components/com_installer/views/warnings/tmpl/index.html
 %%WWWDIR%%/administrator/components/com_installer/views/warnings/view.html.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/config.xml
+%%WWWDIR%%/administrator/components/com_joomlaupdate/controller.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/controllers/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/controllers/update.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/helpers/download.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/helpers/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/helpers/joomlaupdate.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/helpers/select.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/joomlaupdate.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/joomlaupdate.xml
+%%WWWDIR%%/administrator/components/com_joomlaupdate/models/default.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/models/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/restore.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/tmpl/default.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/tmpl/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/view.html.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/update/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/update/tmpl/default.php
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/update/tmpl/index.html
+%%WWWDIR%%/administrator/components/com_joomlaupdate/views/update/view.html.php
 %%WWWDIR%%/administrator/components/com_languages/config.xml
 %%WWWDIR%%/administrator/components/com_languages/controller.php
 %%WWWDIR%%/administrator/components/com_languages/controllers/index.html
@@ -1137,6 +1169,8 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_finder.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_installer.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_installer.sys.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.com_joomlaupdate.ini
+%%WWWDIR%%/administrator/language/en-GB/en-GB.com_joomlaupdate.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_languages.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_languages.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.com_login.ini
@@ -1265,8 +1299,6 @@
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_cache.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_debug.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_debug.sys.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_finder.ini
-%%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_finder.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_highlight.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_highlight.sys.ini
 %%WWWDIR%%/administrator/language/en-GB/en-GB.plg_system_languagecode.ini
@@ -1432,6 +1464,7 @@
 %%WWWDIR%%/administrator/templates/bluestork/images/admin/icon-16-deny.png
 %%WWWDIR%%/administrator/templates/bluestork/images/admin/icon-16-denyinactive.png
 %%WWWDIR%%/administrator/templates/bluestork/images/admin/icon-16-notice-note.png
+%%WWWDIR%%/administrator/templates/bluestork/images/admin/icon-16-protected.png
 %%WWWDIR%%/administrator/templates/bluestork/images/admin/index.html
 %%WWWDIR%%/administrator/templates/bluestork/images/admin/menu_divider.png
 %%WWWDIR%%/administrator/templates/bluestork/images/admin/note_add_16.png
@@ -1918,6 +1951,7 @@
 %%WWWDIR%%/administrator/templates/hathor/images/admin/icon-16-deny.png
 %%WWWDIR%%/administrator/templates/hathor/images/admin/icon-16-denyinactive.png
 %%WWWDIR%%/administrator/templates/hathor/images/admin/icon-16-notice-note.png
+%%WWWDIR%%/administrator/templates/hathor/images/admin/icon-16-protected.png
 %%WWWDIR%%/administrator/templates/hathor/images/admin/index.html
 %%WWWDIR%%/administrator/templates/hathor/images/admin/menu_divider.png
 %%WWWDIR%%/administrator/templates/hathor/images/admin/note_add_16.png
@@ -2795,6 +2829,9 @@
 %%WWWDIR%%/installation/language/sk-SK/index.html
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.ini
 %%WWWDIR%%/installation/language/sk-SK/sk-SK.xml
+%%WWWDIR%%/installation/language/sq-AL/index.html
+%%WWWDIR%%/installation/language/sq-AL/sq-AL.ini
+%%WWWDIR%%/installation/language/sq-AL/sq-AL.xml
 %%WWWDIR%%/installation/language/sr-RS/index.html
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.ini
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.xml
@@ -2861,15 +2898,14 @@
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta15.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16beta2.sql
 %%WWWDIR%%/installation/sql/mysql/joomla_update_16ga.sql
+%%WWWDIR%%/installation/sql/mysql/sample_blog.sql
+%%WWWDIR%%/installation/sql/mysql/sample_brochure.sql
 %%WWWDIR%%/installation/sql/mysql/sample_data.sql
 %%WWWDIR%%/installation/sql/sqlazure/index.html
 %%WWWDIR%%/installation/sql/sqlazure/joomla.sql
+%%WWWDIR%%/installation/sql/sqlazure/sample_blog.sql
+%%WWWDIR%%/installation/sql/sqlazure/sample_brochure.sql
 %%WWWDIR%%/installation/sql/sqlazure/sample_data.sql
-%%WWWDIR%%/installation/sql/sqlsrv/diff_15_to_16.sql
-%%WWWDIR%%/installation/sql/sqlsrv/index.html
-%%WWWDIR%%/installation/sql/sqlsrv/joomla.sql
-%%WWWDIR%%/installation/sql/sqlsrv/joomla_update_16beta2.sql
-%%WWWDIR%%/installation/sql/sqlsrv/sample_data.sql
 %%WWWDIR%%/installation/template/body.php
 %%WWWDIR%%/installation/template/css/ie7.css
 %%WWWDIR%%/installation/template/css/index.html
@@ -3014,12 +3050,15 @@
 %%WWWDIR%%/libraries/cms/cmsloader.php
 %%WWWDIR%%/libraries/cms/form/field/captcha.php
 %%WWWDIR%%/libraries/cms/form/field/index.html
+%%WWWDIR%%/libraries/cms/form/field/templatestyle.php
 %%WWWDIR%%/libraries/cms/form/index.html
 %%WWWDIR%%/libraries/cms/form/rule/captcha.php
 %%WWWDIR%%/libraries/cms/form/rule/index.html
 %%WWWDIR%%/libraries/cms/html/icons.php
 %%WWWDIR%%/libraries/cms/html/index.html
 %%WWWDIR%%/libraries/cms/index.html
+%%WWWDIR%%/libraries/cms/language/index.html
+%%WWWDIR%%/libraries/cms/language/multilang.php
 %%WWWDIR%%/libraries/cms/schema/changeitem.php
 %%WWWDIR%%/libraries/cms/schema/changeitemmysql.php
 %%WWWDIR%%/libraries/cms/schema/changeitemsqlazure.php
@@ -3098,6 +3137,8 @@
 %%WWWDIR%%/libraries/joomla/client/helper.php
 %%WWWDIR%%/libraries/joomla/client/index.html
 %%WWWDIR%%/libraries/joomla/client/ldap.php
+%%WWWDIR%%/libraries/joomla/crypt/crypt.php
+%%WWWDIR%%/libraries/joomla/crypt/index.html
 %%WWWDIR%%/libraries/joomla/database/database/index.html
 %%WWWDIR%%/libraries/joomla/database/database/mysql.php
 %%WWWDIR%%/libraries/joomla/database/database/mysqlexporter.php
@@ -3228,7 +3269,6 @@
 %%WWWDIR%%/libraries/joomla/form/fields/spacer.php
 %%WWWDIR%%/libraries/joomla/form/fields/sql.php
 %%WWWDIR%%/libraries/joomla/form/fields/tel.php
-%%WWWDIR%%/libraries/joomla/form/fields/templatestyle.php
 %%WWWDIR%%/libraries/joomla/form/fields/text.php
 %%WWWDIR%%/libraries/joomla/form/fields/textarea.php
 %%WWWDIR%%/libraries/joomla/form/fields/timezone.php
@@ -3501,6 +3541,10 @@
 %%WWWDIR%%/media/com_finder/js/index.html
 %%WWWDIR%%/media/com_finder/js/indexer.js
 %%WWWDIR%%/media/com_finder/js/sliderfilter.js
+%%WWWDIR%%/media/com_joomlaupdate/default.js
+%%WWWDIR%%/media/com_joomlaupdate/encryption.js
+%%WWWDIR%%/media/com_joomlaupdate/json2.js
+%%WWWDIR%%/media/com_joomlaupdate/update.js
 %%WWWDIR%%/media/contacts/images/con_address.png
 %%WWWDIR%%/media/contacts/images/con_fax.png
 %%WWWDIR%%/media/contacts/images/con_info.png
@@ -3550,7 +3594,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css/advhr.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/js/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advhr/js/rule.js
@@ -3560,7 +3603,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/advimage.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/image.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/img/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advimage/img/sample.gif
@@ -3572,7 +3614,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/css/advlink.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/js/advlink.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/js/index.html
@@ -3580,30 +3621,22 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlink/link.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/advlist/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autolink/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autoresize/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/en.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/autosave/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/bbcode/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/contextmenu/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/directionality/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/directionality/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/emotions.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/img/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-cool.gif
@@ -3630,7 +3663,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/fullpage.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/js/fullpage.js
@@ -3638,15 +3670,12 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullpage/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/fullscreen.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/fullscreen/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/iespell/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/iespell/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img/button.gif
@@ -3661,18 +3690,14 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/skins/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/inlinepopups/template.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/insertdatetime/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/layer/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/lists/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/css/media.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/js/index.html
@@ -3682,16 +3707,12 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/media.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/media/moxieplayer.swf
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/nonbreaking/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/noneditable/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/pagebreak/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/js/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/js/pastetext.js
@@ -3701,22 +3722,18 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/pastetext.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/paste/pasteword.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/example.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/jscripts/embed.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/jscripts/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/preview/preview.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/print/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/save/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/js/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
@@ -3726,14 +3743,12 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/css/content.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/img/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/img/wline.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/spellchecker/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/css/props.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/js/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/js/props.js
@@ -3741,7 +3756,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/style/props.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/tabfocus/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/tabfocus/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/cell.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/css/cell.css
@@ -3749,7 +3763,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/css/row.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/css/table.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/js/cell.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/table/js/index.html
@@ -3765,7 +3778,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/css/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/css/template.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/js/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/js/template.js
@@ -3773,10 +3785,8 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/langs/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/template/template.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/visualchars/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/visualchars/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/wordcount/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/wordcount/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/abbr.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/acronym.htm
@@ -3787,7 +3797,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/css/popup.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/del.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/editor_plugin_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/ins.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/js/abbr.js
@@ -3805,7 +3814,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/charmap.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/color_picker.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/img/flash.gif
@@ -3862,7 +3870,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/advanced/source_editor.htm
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/editor_template.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/editor_template_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/img/icons.gif
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/img/index.html
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/index.html
@@ -3879,7 +3886,6 @@
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/themes/simple/skins/o2k7/ui.css
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce_popup.js
-%%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/tiny_mce_src.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/utils/editable_selects.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/utils/form_utils.js
 %%WWWDIR%%/media/editors/tinymce/jscripts/tiny_mce/utils/index.html
@@ -4033,6 +4039,7 @@
 %%WWWDIR%%/media/mod_languages/images/tw.gif
 %%WWWDIR%%/media/mod_languages/images/uk.gif
 %%WWWDIR%%/media/mod_languages/images/ur.gif
+%%WWWDIR%%/media/mod_languages/images/us.gif
 %%WWWDIR%%/media/mod_languages/images/uz.gif
 %%WWWDIR%%/media/mod_languages/images/vi.gif
 %%WWWDIR%%/media/mod_languages/images/zh.gif
@@ -4818,7 +4825,6 @@
 @dirrm %%WWWDIR%%/administrator/components/com_admin/models
 @dirrm %%WWWDIR%%/administrator/components/com_admin/sql/updates/mysql
 @dirrm %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlazure
-@dirrm %%WWWDIR%%/administrator/components/com_admin/sql/updates/sqlsrv
 @dirrm %%WWWDIR%%/administrator/components/com_admin/sql/updates
 @dirrm %%WWWDIR%%/administrator/components/com_admin/sql
 @dirrm %%WWWDIR%%/administrator/components/com_admin/views/help/tmpl
@@ -4950,6 +4956,7 @@
 @dirrm %%WWWDIR%%/administrator/components/com_finder/views
 @dirrm %%WWWDIR%%/administrator/components/com_finder
 @dirrm %%WWWDIR%%/administrator/components/com_installer/controllers
+@dirrm %%WWWDIR%%/administrator/components/com_installer/helpers/html
 @dirrm %%WWWDIR%%/administrator/components/com_installer/helpers
 @dirrm %%WWWDIR%%/administrator/components/com_installer/models/fields
 @dirrm %%WWWDIR%%/administrator/components/com_installer/models/forms
@@ -4970,6 +4977,15 @@
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views/warnings
 @dirrm %%WWWDIR%%/administrator/components/com_installer/views
 @dirrm %%WWWDIR%%/administrator/components/com_installer
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/controllers
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/helpers
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/models
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/views/default/tmpl
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/views/default
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/views/update/tmpl
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/views/update
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate/views
+@dirrm %%WWWDIR%%/administrator/components/com_joomlaupdate
 @dirrm %%WWWDIR%%/administrator/components/com_languages/controllers
 @dirrm %%WWWDIR%%/administrator/components/com_languages/helpers/html
 @dirrm %%WWWDIR%%/administrator/components/com_languages/helpers
@@ -5480,6 +5496,7 @@
 @dirrm %%WWWDIR%%/installation/language/ro-RO
 @dirrm %%WWWDIR%%/installation/language/ru-RU
 @dirrm %%WWWDIR%%/installation/language/sk-SK
+@dirrm %%WWWDIR%%/installation/language/sq-AL
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-YU
 @dirrm %%WWWDIR%%/installation/language/sv-SE
@@ -5500,7 +5517,6 @@
 @dirrm %%WWWDIR%%/installation/sql/migration
 @dirrm %%WWWDIR%%/installation/sql/mysql
 @dirrm %%WWWDIR%%/installation/sql/sqlazure
-@dirrm %%WWWDIR%%/installation/sql/sqlsrv
 @dirrm %%WWWDIR%%/installation/sql
 @dirrm %%WWWDIR%%/installation/template/css
 @dirrm %%WWWDIR%%/installation/template/images
@@ -5532,6 +5548,7 @@
 @dirrm %%WWWDIR%%/libraries/cms/form/rule
 @dirrm %%WWWDIR%%/libraries/cms/form
 @dirrm %%WWWDIR%%/libraries/cms/html
+@dirrm %%WWWDIR%%/libraries/cms/language
 @dirrm %%WWWDIR%%/libraries/cms/schema
 @dirrm %%WWWDIR%%/libraries/cms/version
 @dirrm %%WWWDIR%%/libraries/cms
@@ -5548,6 +5565,7 @@
 @dirrm %%WWWDIR%%/libraries/joomla/cache/storage
 @dirrm %%WWWDIR%%/libraries/joomla/cache
 @dirrm %%WWWDIR%%/libraries/joomla/client
+@dirrm %%WWWDIR%%/libraries/joomla/crypt
 @dirrm %%WWWDIR%%/libraries/joomla/database/database
 @dirrm %%WWWDIR%%/libraries/joomla/database/table
 @dirrm %%WWWDIR%%/libraries/joomla/database
@@ -5619,6 +5637,7 @@
 @dirrm %%WWWDIR%%/media/com_finder/images
 @dirrm %%WWWDIR%%/media/com_finder/js
 @dirrm %%WWWDIR%%/media/com_finder
+@dirrm %%WWWDIR%%/media/com_joomlaupdate
 @dirrm %%WWWDIR%%/media/contacts/images
 @dirrm %%WWWDIR%%/media/contacts
 @dirrm %%WWWDIR%%/media/editors/codemirror/css
