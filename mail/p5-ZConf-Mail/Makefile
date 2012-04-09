@@ -7,6 +7,7 @@
 
 PORTNAME=	ZConf-Mail
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -15,19 +16,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Misc mail client functions backed by ZConf
 
-RUN_DEPENDS=	${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
-		${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
-		${SITE_PERL}/Mail/IMAPTalk.pm:${PORTSDIR}/mail/p5-Mail-IMAPTalk \
-		${SITE_PERL}/Mail/POP3Client.pm:${PORTSDIR}/mail/p5-Mail-POP3Client \
-		${SITE_PERL}/Net/SMTP_auth.pm:${PORTSDIR}/mail/p5-Net-SMTP_auth \
-		${SITE_PERL}/Net/SMTP/TLS.pm:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
-		${SITE_PERL}/Mail/Box.pm:${PORTSDIR}/mail/p5-Mail-Box \
-		${SITE_PERL}/IO/MultiPipe.pm:${PORTSDIR}/devel/p5-IO-MultiPipe \
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
-		${SITE_PERL}/File/MimeInfo/Magic.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		${SITE_PERL}/Email/Date.pm:${PORTSDIR}/mail/p5-Email-Date \
-		${SITE_PERL}/ZConf/GUI.pm:${PORTSDIR}/devel/p5-ZConf-GUI \
-		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny
+BUILD_DEPENDS=	p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Email-Date>=0:${PORTSDIR}/mail/p5-Email-Date \
+		p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple \
+		p5-File-MimeInfo>=0:${PORTSDIR}/devel/p5-File-MimeInfo \
+		p5-IO-MultiPipe>=0:${PORTSDIR}/devel/p5-IO-MultiPipe \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
+		p5-Mail-Box>=0:${PORTSDIR}/mail/p5-Mail-Box \
+		p5-Mail-IMAPTalk>=0:${PORTSDIR}/mail/p5-Mail-IMAPTalk \
+		p5-Mail-POP3Client>=0:${PORTSDIR}/mail/p5-Mail-POP3Client \
+		p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \
+		p5-Net-SMTP_auth>=0:${PORTSDIR}/mail/p5-Net-SMTP_auth \
+		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat \
+		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
+		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
