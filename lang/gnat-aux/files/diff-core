@@ -290,7 +290,7 @@
 +#define UINTPTR_TYPE      (LONG_TYPE_SIZE == 64 ? UINT64_TYPE : UINT32_TYPE)
 --- /dev/null
 +++ gcc/config/dragonfly.h
-@@ -0,0 +1,141 @@
+@@ -0,0 +1,139 @@
 +/* Base configuration file for all DragonFly targets.
 +   Copyright (C) 1999, 2000, 2001, 2007, 2008 Free Software Foundation, Inc.
 +   Copyright (C) 2010-2012 John R. Marino <www.dragonlace.net>
@@ -388,12 +388,10 @@
 +#undef  LINK_SPEC
 +#define LINK_SPEC DFBSD_LINK_SPEC
 +
-+#define	DFBSD_DYNAMIC_LINKER \
-+  "/usr/libexec/ld-elf.so.2"
++#define	DFBSD_DYNAMIC_LINKER "/usr/libexec/ld-elf.so.2"
 +
 +#if defined(HAVE_LD_EH_FRAME_HDR)
-+#define LINK_EH_SPEC \
-+  "%{!static:--eh-frame-hdr}"
++#define LINK_EH_SPEC "--eh-frame-hdr"
 +#endif
 +
 +/* Use --as-needed -lgcc_s for eh support.  */
@@ -1157,11 +1155,11 @@
  
  /* Put all *tf routines in libgcc.  */
  #undef LIBGCC2_HAS_TF_MODE
-@@ -147,3 +148,39 @@
- #if FBSD_MAJOR >= 6
+@@ -148,5 +149,38 @@
  #define SUBTARGET32_DEFAULT_CPU "i486"
  #endif
-+
+ 
+-#define TARGET_ASM_FILE_END file_end_indicate_exec_stack
 +/* Define location of OS-specific unwind support configuration. */
 +#define MD_UNWIND_SUPPORT "config/i386/freebsd-unwind.h"
 +
@@ -1196,7 +1194,7 @@
 +  (void) mprotect (page, ends - page, perms);            \
 +}
 +
-+
+ 
 --- gcc/config/i386/netbsd-elf.h.orig
 +++ gcc/config/i386/netbsd-elf.h
 @@ -2,6 +2,7 @@
@@ -1787,7 +1785,7 @@
  
  #This file is part of GCC.
  
-@@ -166,6 +167,8 @@
+@@ -157,6 +158,8 @@
    ;;
  *-*-openbsd*)
    ;;
@@ -1796,7 +1794,7 @@
  *-*-rtems*)
    ;;
  *-*-vxworks*)
-@@ -287,6 +290,14 @@
+@@ -278,6 +281,14 @@
  x86_64-*-freebsd*)
  	tmake_file="${tmake_file} i386/t-freebsd"
  	;;
@@ -1811,7 +1809,7 @@
  i[34567]86-*-netbsdelf*)
  	;;
  i[34567]86-*-netbsd*)
-@@ -297,6 +308,8 @@
+@@ -288,6 +299,8 @@
  	;;
  i[34567]86-*-openbsd*)
  	;;
@@ -1820,7 +1818,7 @@
  i[34567]86-*-linux* | i[34567]86-*-kfreebsd*-gnu | i[34567]86-*-knetbsd*-gnu | i[34567]86-*-gnu*)
  	extra_parts="$extra_parts crtprec32.o crtprec64.o crtprec80.o crtfastmath.o"
  	tmake_file="${tmake_file} i386/t-crtpc i386/t-crtfm"
-@@ -628,6 +641,9 @@
+@@ -619,6 +632,9 @@
  		tmake_file="${tmake_file} t-softfp i386/${host_address}/t-fprules-softfp"
  	fi
  	;;
@@ -1837,7 +1835,7 @@
 +SHLIB_MAPFILES += $(srcdir)/config/i386/libgcc-bsd.ver
 --- gcc/configure.orig
 +++ gcc/configure
-@@ -25843,6 +25843,20 @@
+@@ -25833,6 +25833,20 @@
        gcc_cv_target_dl_iterate_phdr=no
      fi
      ;;
@@ -1890,9 +1888,38 @@
  
  $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7 installdirs
  	-rm -f $@
+--- libiberty/getpagesize.c.orig
++++ libiberty/getpagesize.c
+@@ -20,6 +20,7 @@
+ 
+ */
+ 
++#ifndef __ANDROID__
+ #ifndef VMS
+ 
+ #include "config.h"
+@@ -88,3 +89,4 @@
+ }
+ 
+ #endif /* VMS */
++#endif /* __ANDROID__ */
+--- libiberty/setproctitle.c.orig
++++ libiberty/setproctitle.c
+@@ -40,9 +40,11 @@
+ void
+ setproctitle (const char *name ATTRIBUTE_UNUSED, ...)
+ {
++#ifndef __ANDROID__
+ #ifdef PR_SET_NAME
+   /* On Linux this sets the top visible "comm", but not necessarily
+      the name visible in ps. */
+   prctl (PR_SET_NAME, name);
+ #endif
++#endif
+ }
 --- configure.orig
 +++ configure
-@@ -14200,7 +14200,7 @@
+@@ -14196,7 +14196,7 @@
  _ACEOF
  if ac_fn_c_try_compile "$LINENO"; then :
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
