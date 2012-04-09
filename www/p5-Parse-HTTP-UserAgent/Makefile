@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Parse-HTTP-UserAgent
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parser for the User Agent string
+
+TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
