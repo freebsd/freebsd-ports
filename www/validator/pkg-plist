@@ -1,11 +1,8 @@
 www/validator/htdocs/about.html
 www/validator/htdocs/accesskeys.html
-www/validator/htdocs/base.css
-www/validator/htdocs/base.css.gz
 www/validator/htdocs/charset-select.html
 www/validator/htdocs/config/charset.cfg
 www/validator/htdocs/config/tidy.conf
-www/validator/htdocs/config/tips.cfg
 www/validator/htdocs/config/types.conf
 www/validator/htdocs/config/validator.conf.sample
 www/validator/htdocs/contribute.html
@@ -140,8 +137,6 @@ www/validator/htdocs/dev/tests/xhtml_mathml_svg_newlines.xhtml
 www/validator/htdocs/dev/tests/xhtml_rdfa.xhtml
 www/validator/htdocs/dev/tests/xml-nodoctype-notwf.xml
 www/validator/htdocs/dev/tests/xml-nodoctype-wf.xml
-www/validator/htdocs/docs.css
-www/validator/htdocs/docs.css.gz
 www/validator/htdocs/docs/api.html
 www/validator/htdocs/docs/devel.html
 www/validator/htdocs/docs/errors.html
@@ -157,8 +152,6 @@ www/validator/htdocs/favelets.html
 www/validator/htdocs/file-upload.html
 www/validator/htdocs/footer.html
 www/validator/htdocs/fragment-upload.html
-www/validator/htdocs/handheld.css
-www/validator/htdocs/handheld.css.gz
 www/validator/htdocs/header.html
 www/validator/htdocs/images/arrow-closed.png
 www/validator/htdocs/images/arrow-down.gif
@@ -174,15 +167,11 @@ www/validator/htdocs/images/csupporter.gif
 www/validator/htdocs/images/csupporter.png
 www/validator/htdocs/images/double.png
 www/validator/htdocs/images/ellipsis.gif
-www/validator/htdocs/images/footer.jpg
-www/validator/htdocs/images/footer.png
 www/validator/htdocs/images/grad.png
 www/validator/htdocs/images/head-bl.png
 www/validator/htdocs/images/head-br.png
 www/validator/htdocs/images/head-tl.png
 www/validator/htdocs/images/head-tr.png
-www/validator/htdocs/images/header.jpg
-www/validator/htdocs/images/header.png
 www/validator/htdocs/images/info_icons/README
 www/validator/htdocs/images/info_icons/eastshores_Warning_Notification.svg
 www/validator/htdocs/images/info_icons/error.png
@@ -344,27 +333,24 @@ www/validator/htdocs/images/w3c.png
 www/validator/htdocs/index.html
 www/validator/htdocs/intro.html
 www/validator/htdocs/misc/compaq-logo.gif
-www/validator/htdocs/navbar.css
-www/validator/htdocs/navbar.css.gz
-www/validator/htdocs/no_referer.asis
-www/validator/htdocs/print.css
-www/validator/htdocs/print.css.gz
-www/validator/htdocs/results.css
-www/validator/htdocs/results.css.gz
 www/validator/htdocs/robots.txt
 www/validator/htdocs/scripts/combined.js
 www/validator/htdocs/scripts/combined.js.gz
 www/validator/htdocs/scripts/mootools-1.2.5-core-nc.js
 www/validator/htdocs/scripts/mootools-1.2.5.1-more.js
 www/validator/htdocs/scripts/w3c-validator.js
-www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Level_1.dtd
-www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict-Level_1.dtd
-www/validator/htdocs/sgml-lib/IETF/HTML-2_0-Strict.dtd
-www/validator/htdocs/sgml-lib/IETF/HTML-2_0.dtd
-www/validator/htdocs/sgml-lib/IETF/HTML-i18n.dtd
+www/validator/htdocs/sgml-lib/CR-wai-aria-20110118/aria-attributes-1.mod
+www/validator/htdocs/sgml-lib/CR-wai-aria-20110118/html4-aria-1.dtd
+www/validator/htdocs/sgml-lib/CR-wai-aria-20110118/xhtml-aria-1.dtd
 www/validator/htdocs/sgml-lib/IETF/ISOlat1.ent
+www/validator/htdocs/sgml-lib/IETF/html-1.dtd
+www/validator/htdocs/sgml-lib/IETF/html-1s.dtd
+www/validator/htdocs/sgml-lib/IETF/html-s.dtd
+www/validator/htdocs/sgml-lib/IETF/html.dtd
+www/validator/htdocs/sgml-lib/IETF/html2070.dtd
 www/validator/htdocs/sgml-lib/ISO-HTML/15445.dcl
 www/validator/htdocs/sgml-lib/ISO-HTML/15445.dtd
+www/validator/htdocs/sgml-lib/NOTE-xhtml-role-20101216/xhtml-role-qname-1.mod
 www/validator/htdocs/sgml-lib/REC-MathML3-20101021/README.txt
 www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsa.ent
 www/validator/htdocs/sgml-lib/REC-MathML3-20101021/isoamsb.ent
@@ -431,67 +417,60 @@ www/validator/htdocs/sgml-lib/REC-SMIL3-20081201/smil-framework-1.mod
 www/validator/htdocs/sgml-lib/REC-SMIL3-20081201/smil-profile-model-1.mod
 www/validator/htdocs/sgml-lib/REC-SMIL3-20081201/smil-qname-1.mod
 www/validator/htdocs/sgml-lib/REC-SVG-20010904/svg10.dtd
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-animation.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-animevents-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-clip.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-filter.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-font.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-graphics-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-paint-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-structure.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-basic-text.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-clip.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-conditional.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-container-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-core-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-cursor.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-datatypes.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-docevents-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-extensibility.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-extresources-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-filter.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-font.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-framework.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-gradient.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-graphevents-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-graphics-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-hyperlink.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-image.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-marker.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-mask.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-opacity-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-paint-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-pattern.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-profile.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-qname.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-script.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-shape.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-structure.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-style.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-text.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-view.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-viewport-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg-xlink-attrib.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-attribs.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-basic-attribs.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-basic-model.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-basic.dtd
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-model.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-tiny-attribs.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-tiny-model.mod
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11-tiny.dtd
-www/validator/htdocs/sgml-lib/REC-SVG11-20030114/svg11.dtd
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-animation.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-animevents-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-clip.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-filter.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-font.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-graphics-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-paint-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-structure.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-basic-text.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-clip.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-conditional.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-container-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-core-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-cursor.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-datatypes.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-docevents-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-extensibility.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-extresources-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-filter.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-font.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-framework.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-gradient.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-graphevents-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-graphics-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-hyperlink.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-image.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-marker.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-mask.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-opacity-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-paint-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-pattern.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-profile.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-qname.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-script.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-shape.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-structure.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-style.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-text.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-view.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-viewport-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg-xlink-attrib.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-attribs.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-basic-attribs.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-basic-model.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-basic.dtd
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-model.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-tiny-attribs.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-tiny-model.mod
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11-tiny.dtd
+www/validator/htdocs/sgml-lib/REC-SVG11-20110816/svg11.dtd
 www/validator/htdocs/sgml-lib/REC-html32-19970114/HTML32.dtd
-www/validator/htdocs/sgml-lib/REC-html40-19980424/HTML4.cat
-www/validator/htdocs/sgml-lib/REC-html40-19980424/HTML4.decl
-www/validator/htdocs/sgml-lib/REC-html40-19980424/HTMLlat1.ent
-www/validator/htdocs/sgml-lib/REC-html40-19980424/HTMLspecial.ent
-www/validator/htdocs/sgml-lib/REC-html40-19980424/HTMLsymbol.ent
 www/validator/htdocs/sgml-lib/REC-html40-19980424/frameset.dtd
 www/validator/htdocs/sgml-lib/REC-html40-19980424/loose.dtd
 www/validator/htdocs/sgml-lib/REC-html40-19980424/strict.dtd
-www/validator/htdocs/sgml-lib/REC-html401-19991224/HTML4.cat
-www/validator/htdocs/sgml-lib/REC-html401-19991224/HTML4.decl
 www/validator/htdocs/sgml-lib/REC-html401-19991224/HTMLlat1.ent
 www/validator/htdocs/sgml-lib/REC-html401-19991224/HTMLspecial.ent
 www/validator/htdocs/sgml-lib/REC-html401-19991224/HTMLsymbol.ent
@@ -517,6 +496,8 @@ www/validator/htdocs/sgml-lib/REC-smil20-20050107/smil-datatypes-1.mod
 www/validator/htdocs/sgml-lib/REC-smil20-20050107/smil-framework-1.mod
 www/validator/htdocs/sgml-lib/REC-smil20-20050107/smil-model-1.mod
 www/validator/htdocs/sgml-lib/REC-smil20-20050107/smil-qname-1.mod
+www/validator/htdocs/sgml-lib/REC-voicexml20-20040316/vxml.dtd
+www/validator/htdocs/sgml-lib/REC-voicexml21-20070619/vxml.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-basic10-model-1.mod
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219/xhtml-basic10.dtd
 www/validator/htdocs/sgml-lib/REC-xhtml-basic-20101123/xhtml-basic11-model-1.mod
@@ -616,9 +597,10 @@ www/validator/htdocs/sgml-lib/Specification/xmlspec-v21.dtd
 www/validator/htdocs/sgml-lib/Specification/xmlspec.dtd
 www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-basic-svg-tiny.dtd
 www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/xhtml-math-svg.dtd
-www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109/xhtml-metaAttributes-2.mod
-www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109/xhtml-rdfa-2.dtd
-www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109/xhtml-rdfa-model-2.mod
+www/validator/htdocs/sgml-lib/WD-rdfa-in-html-20110525/html401-rdfa11-1.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20120131/xhtml-metaAttributes-2.mod
+www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20120131/xhtml-rdfa-2.dtd
+www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20120131/xhtml-rdfa-model-2.mod
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/README.txt
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879/isoamsa.ent
 www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879/isoamsb.ent
@@ -668,8 +650,6 @@ www/validator/htdocs/style/base.css
 www/validator/htdocs/style/base.css.gz
 www/validator/htdocs/style/results.css
 www/validator/htdocs/style/results.css.gz
-www/validator/htdocs/tips.css
-www/validator/htdocs/tips.css.gz
 www/validator/htdocs/todo.html
 www/validator/htdocs/validator-news.xsl
 www/validator/htdocs/whatsnew.html
@@ -705,7 +685,6 @@ www/validator/share/templates/en_US/soap_fault.tmpl
 www/validator/share/templates/en_US/soap_output.tmpl
 www/validator/share/templates/en_US/soap_warnings.tmpl
 www/validator/share/templates/en_US/table.tmpl
-www/validator/share/templates/en_US/tip.tmpl
 www/validator/share/templates/en_US/ucn_fault.tmpl
 www/validator/share/templates/en_US/ucn_output.tmpl
 www/validator/share/templates/en_US/ucn_warnings.tmpl
@@ -722,7 +701,8 @@ www/validator/share/templates/en_US/warnings.tmpl
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso9573-13
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879
 @dirrm www/validator/htdocs/sgml-lib/XX-MathML2-20031104
-@dirrm www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20101109
+@dirrm www/validator/htdocs/sgml-lib/WD-xhtml-rdfa-20120131
+@dirrm www/validator/htdocs/sgml-lib/WD-rdfa-in-html-20110525
 @dirrm www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
 @dirrm www/validator/htdocs/sgml-lib/Specification
 @dirrm www/validator/htdocs/sgml-lib/REC-xml-entity-names-20100401
@@ -732,19 +712,23 @@ www/validator/share/templates/en_US/warnings.tmpl
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20100729
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20101123
 @dirrm www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
+@dirrm www/validator/htdocs/sgml-lib/REC-voicexml21-20070619
+@dirrm www/validator/htdocs/sgml-lib/REC-voicexml20-20040316
 @dirrm www/validator/htdocs/sgml-lib/REC-smil20-20050107
 @dirrm www/validator/htdocs/sgml-lib/REC-smil-19980615
 @dirrm www/validator/htdocs/sgml-lib/REC-rdfa-syntax-20081014
 @dirrm www/validator/htdocs/sgml-lib/REC-html401-19991224
 @dirrm www/validator/htdocs/sgml-lib/REC-html40-19980424
 @dirrm www/validator/htdocs/sgml-lib/REC-html32-19970114
-@dirrm www/validator/htdocs/sgml-lib/REC-SVG11-20030114
+@dirrm www/validator/htdocs/sgml-lib/REC-SVG11-20110816
 @dirrm www/validator/htdocs/sgml-lib/REC-SVG-20010904
 @dirrm www/validator/htdocs/sgml-lib/REC-SMIL3-20081201
 @dirrm www/validator/htdocs/sgml-lib/REC-SMIL2-20051213
 @dirrm www/validator/htdocs/sgml-lib/REC-MathML3-20101021
+@dirrm www/validator/htdocs/sgml-lib/NOTE-xhtml-role-20101216
 @dirrm www/validator/htdocs/sgml-lib/ISO-HTML
 @dirrm www/validator/htdocs/sgml-lib/IETF
+@dirrm www/validator/htdocs/sgml-lib/CR-wai-aria-20110118
 @dirrm www/validator/htdocs/sgml-lib
 @dirrm www/validator/htdocs/scripts
 @dirrm www/validator/htdocs/misc
