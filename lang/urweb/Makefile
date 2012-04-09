@@ -6,6 +6,7 @@
 
 PORTNAME=	urweb
 PORTVERSION=	20120329
+PORTREVISION=	1
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 EXTRACT_SUFX=	.tgz
