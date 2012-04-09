@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Provides a tied interface to the /etc/services file
 
+DEPRECATED=	Removed from CPAN
+EXPIRATION_DATE=	2012-05-09
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Net::Services.3
