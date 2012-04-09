@@ -17,6 +17,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upper Sorbian messages and documentation for KDE3
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=	does not fetch
 
 USE_KDELIBS_VER=3

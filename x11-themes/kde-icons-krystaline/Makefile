@@ -11,6 +11,9 @@ MASTER_SITES=	http://files.fredemmott.co.uk/
 
 COMMENT=	KDE Krystaline iconset
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not fetch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

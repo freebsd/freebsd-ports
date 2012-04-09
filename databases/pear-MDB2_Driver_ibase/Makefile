@@ -17,6 +17,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PHP=	interbase
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		fails to build
 
 FILES=		MDB2/Driver/ibase.php \

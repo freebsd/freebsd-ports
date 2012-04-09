@@ -18,6 +18,9 @@ COMMENT=	Portable, Extensible Toolkit for Scientific computation
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\
 		qsub:${PORTSDIR}/sysutils/torque
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not configure
 
 SLAVEDIRS=	math/petsc-mpich

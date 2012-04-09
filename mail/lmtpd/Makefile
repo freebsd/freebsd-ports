@@ -24,6 +24,9 @@ OPTIONS+=	BDB "Support for Berkeley DB" on
 OPTIONS+=	TRE "Support for TRE regexp (Approx regexp)" on
 OPTIONS+=	SIEVE "Support for SIEVE regexp (Approx regexp)" on
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		doesn't build
 
 .include <bsd.port.pre.mk>

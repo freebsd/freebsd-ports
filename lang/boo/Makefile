@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build
 
 WRKSRC=		${WRKDIR}

@@ -24,6 +24,9 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	web
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 

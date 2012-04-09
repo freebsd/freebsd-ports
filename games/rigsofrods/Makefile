@@ -34,6 +34,9 @@ USE_WX=		2.6+
 WX_UNICODE=	yes
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		Does not work with CEGUI 0.7.x
 
 USE_CMAKE=	yes

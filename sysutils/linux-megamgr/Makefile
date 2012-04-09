@@ -14,6 +14,9 @@ DISTNAME=		ut_linux_mgr_5.20
 MAINTAINER=		pmh@hausen.com
 COMMENT=		LSI MegaRAID controller management utility
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=			fails to fetch
 
 NO_WRKSUBDIR=		yes

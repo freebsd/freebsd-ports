@@ -29,6 +29,9 @@ LIB_DEPENDS=	gegl-0.1.107:${PORTSDIR}/graphics/gegl \
 		gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		bad plist + do not build with latest exiv2
 
 USE_AUTOTOOLS=	autoconf

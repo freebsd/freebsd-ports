@@ -20,6 +20,9 @@ RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
 USE_ZIP=	yes
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		doesn't not compile with opencv-2.3
 
 SCILAB_CMD=	${LOCALBASE}/bin/scilab

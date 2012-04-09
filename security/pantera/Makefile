@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-opens
 		${PYTHON_SITELIBDIR}/MySQLdb/connections.pyc:${PORTSDIR}/databases/py-MySQLdb
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		bad dependency line
 
 .if !defined(WITHOUT_MYSQL_SERVER)

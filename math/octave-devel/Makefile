@@ -29,6 +29,9 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull.5:${PORTSDIR}/math/qhull5
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		fails to work with recent versions of GCC
 
 LATEST_LINK=    octave-devel

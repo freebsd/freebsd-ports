@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-default-${PORTVERSION}
 
 COMMENT=	KDE Realistic complete photo-based iconset
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=	Does not fetch
 
 WRKSRC=		"${WRKDIR}/Realistic"

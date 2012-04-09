@@ -17,6 +17,9 @@ COMMENT=	Quickly search documents
 
 LIB_DEPENDS=	extractor.3:${PORTSDIR}/textproc/libextractor
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not configure with new libextractor
 
 GNU_CONFIGURE=	yes

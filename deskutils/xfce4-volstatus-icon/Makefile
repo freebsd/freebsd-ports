@@ -19,6 +19,9 @@ COMMENT=	Notification area icon that allows safe removal of removable devices
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 	hal.1:${PORTSDIR}/sysutils/hal
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		Does not work with xfce 4.8
 
 USE_BZIP2=	yes

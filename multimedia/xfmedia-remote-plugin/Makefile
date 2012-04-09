@@ -18,6 +18,9 @@ COMMENT=	Xfce 4 media remote plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-media>=0.9.2:${PORTSDIR}/multimedia/xfce4-media
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		Does not work with Xfce 4.8
 
 GNU_CONFIGURE=	yes

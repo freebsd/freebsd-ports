@@ -15,6 +15,9 @@ EXTRACT_ONLY=
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Star Fleet Battles Online
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build
 
 IGNOREFILES=	install40.jar

@@ -19,6 +19,9 @@ COMMENT=	A fantasy turn-based strategy game
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-fonts/junicode:extract
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		incomplete plist
 
 LICENSE=	GPLv2 GPLv3

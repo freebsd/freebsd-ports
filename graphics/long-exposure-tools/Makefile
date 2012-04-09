@@ -18,6 +18,9 @@ COMMENT=	Simulate the effects of long exposures
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 BROKEN=		does not build with new netpbm
 
 PLIST_FILES=	bin/pamblend bin/pamalign

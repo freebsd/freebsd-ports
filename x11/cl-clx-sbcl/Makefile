@@ -12,6 +12,9 @@ MASTERDIR=	${.CURDIR}/../../x11/cl-clx
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/clx/clx.asd:${PORTSDIR}/x11/cl-clx
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/clx/clx.asd:${PORTSDIR}/x11/cl-clx
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 USE_ASDF_FASL=	yes
 FASL_BUILD=	yes
 FASL_TARGET=	sbcl

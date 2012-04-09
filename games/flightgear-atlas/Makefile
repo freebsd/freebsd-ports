@@ -16,6 +16,9 @@ DISTNAME=	Atlas-${PORTVERSION}
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A map viewer for use with the FlightGear flight simulator
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2012-05-10
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
