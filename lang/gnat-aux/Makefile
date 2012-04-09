@@ -17,27 +17,10 @@ DISTFILES=	gcc-core-${GCC_VERSION}.tar.bz2
 MAINTAINER=	draco@marino.st
 COMMENT=	GNAT Ada compiler based on GCC ${GCC_BRANCH}
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-LIB_DEPENDS+=	mpfr.4:${PORTSDIR}/math/mpfr
-LIB_DEPENDS+=	mpc.2:${PORTSDIR}/math/mpc
+.include "${.CURDIR}/Makefile.common"
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-USE_BZIP2=		yes
-USE_ICONV=		yes
-USE_PERL5_BUILD=	yes
-ALL_TARGET=		default
-MAKE_JOBS_SAFE=		yes
-
-SNAPSHOT=		20111026
-GCC_BRANCH=		4.6
-GCC_POINT=		2
-GCC_VERSION=		${GCC_BRANCH}.${GCC_POINT}
 LANGS=			c
 APPLY_DIFFS=		core
-
 INTENDED_COMPILER=	NATIVE
 BOOTSTRAP_COMPILER=	NOT_REQUIRED
 BOOTSTRAP_TRIPLET=	NOT_SET
@@ -287,5 +270,16 @@ post-install:
 	${ECHO_CMD} "@unexec ${RMDIR} %D/include/c++               2>/dev/null || true" >> ${WRKDIR}/PLIST.lib
 
 	cd ${WRKDIR}; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
+.if ${OSVERSION} > 900000
+	@${ECHO_MSG} "========================================================"
+	@${ECHO_MSG} " NOTICE REGARDING ADA TASKING ON FREEBSD 9.x:"
+	@${ECHO_MSG} " Due to a new resource check in the threading library"
+	@${ECHO_MSG} " starting with FreeBSD 9.0, an exiting task panics with"
+	@${ECHO_MSG} " the message 'thread exits with resources held!'."
+	@${ECHO_MSG} " Essentially this behavior breaks Ada tasking and 23"
+	@${ECHO_MSG} " ACATS tests fail on FreeBSD 9.x. A solution is being"
+	@${ECHO_MSG} " sought, but the necessary patches will not be trivial."
+	@${ECHO_MSG} "========================================================"
+.endif
 
 .include <bsd.port.post.mk>
