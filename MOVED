@@ -3269,3 +3269,4 @@ audio/ruby-musicbrainz||2012-04-09|Has expired: MusicBrainz RDF webservice no lo
 converters/ruby-lv||2012-04-09|Has expired: upstream no longer has this
 devel/p5-Getopt-Popt||2012-04-09|Has expired: "Gone from CPAN"
 net/p5-Net-Rendezvous||2012-04-09|Has expired: Superceeded by dns/p5-Net-Bonjour
+audio/gstreamer-plugins-musicbrainz||2012-04-09|Has expired: MusicBrainz RDF webservice no longer functions
