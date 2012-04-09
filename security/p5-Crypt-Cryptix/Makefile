@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl5 interface to the Cryptix Crypto Library (Blowfish, DES and IDEA)
 
+DEPRECATED=	Gone from CPAN, project site says project is dead
+EXPIRATION_DATE=	2012-05-09
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::DES.3 \
