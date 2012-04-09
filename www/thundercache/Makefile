@@ -9,7 +9,8 @@ PORTNAME=	thundercache
 PORTVERSION=	6.1
 PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://www.bmsoftware.org/packs/ \
+MASTER_SITES=	http://www.thundercache.com.br/dist/ \
+		http://www.bmsoftware.org/packs/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
 		${MASTER_SITE_LOCAL}/jmelo
