@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libhtp
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.openinfosecfoundation.org/download/
 DISTNAME=	htp-${PORTVERSION}
