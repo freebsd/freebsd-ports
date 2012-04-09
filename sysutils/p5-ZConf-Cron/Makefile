@@ -7,6 +7,7 @@
 
 PORTNAME=	ZConf-Cron
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -15,10 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Handles storing cron tabs in ZConf
 
-BUILD_DEPENDS=	${SITE_PERL}/ZConf.pm:${PORTSDIR}/net/p5-ZConf \
-		${SITE_PERL}/DateTime/Event/Cron.pm:${PORTSDIR}/devel/p5-DateTime-Event-Cron \
-		${SITE_PERL}/mach/DateTime/Duration.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
+BUILD_DEPENDS=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
+		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
+RUN_DEPENS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
