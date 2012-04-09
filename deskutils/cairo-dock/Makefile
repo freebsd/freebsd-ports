@@ -7,6 +7,7 @@
 
 PORTNAME=	cairo-dock
 DISTVERSION=	2.3.0~3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/73753213/
 
@@ -17,6 +18,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		curl.6:${PORTSDIR}/ftp/curl \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
@@ -32,17 +34,5 @@ MANCOMPRESSED=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir}/pkgconfig|prefix}/libdata/pkgconfig| ; s|datadir}/man|prefix}/man|' \
 		${WRKSRC}/CMakeLists.txt ${WRKSRC}/src/gldit/CMakeLists.txt
-	${REINPLACE_CMD} -e 's,/usr,${PREFIX},g'	\
-		${WRKSRC}/src/gldit/cairo-dock-gui-factory.c
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/cairo/cairo-glitz.h)
-# Glitz support can only be enabled if cairo is built with glitz support
-CONFIGURE_ARGS+=--enable-glitz
-LIB_DEPENDS+=	glitz:${PORTSDIR}/graphics/glitz
-.else
-CONFIGURE_ARGS+=--disable-glitz
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
