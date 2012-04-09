@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-Twofish_PP
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN \
 		http://kostjn.spb.ru/freebsd/
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	The Twofish Algorithm in Pure Perl
+
+BUILD_DEPENDS=	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
