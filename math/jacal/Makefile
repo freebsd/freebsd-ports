@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	jacal
-PORTVERSION=	1b7
-PORTREVISION=	1
+PORTVERSION=	1c2
 CATEGORIES=	math
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
-DISTNAME=	jacal1b7
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Symbolic mathematics program written in Scheme
 
-RUN_DEPENDS=	scm:${PORTSDIR}/lang/scm
+RUN_DEPENDS=	scm:${PORTSDIR}/lang/scm \
+		${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
 
 WRKSRC=		${WRKDIR}/jacal
 
@@ -25,9 +24,12 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=		jacal.1
+INFO=		jacal
 
 do-configure:
 	cd ${WRKSRC}; \
-	${FIND} . -type f -exec perl -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'
+	${FIND} . -type f -exec ${PERL} -spi -e 's|%%PREFIX%%|${PREFIX}|' {} ';'
+	cd ${WRKSRC}; \
+	./configure
 
 .include <bsd.port.mk>

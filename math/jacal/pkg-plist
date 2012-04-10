@@ -16,6 +16,7 @@ lib/jacal/grammar.scm
 lib/jacal/hensel.scm
 lib/jacal/hist.scm
 lib/jacal/info.scm
+lib/jacal/interpolate.scm
 lib/jacal/jacalcat
 lib/jacal/math.scm
 lib/jacal/modeinit.scm
