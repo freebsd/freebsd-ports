@@ -16,6 +16,9 @@ bin/gunicorn_paster
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/django_wsgi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/django_wsgi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/django_wsgi.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/djangoapp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/djangoapp.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/app/djangoapp.pyo
