@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pivotx
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	SF/pivot-weblog/PivotX \
 		http://pivotx.net/files/ \
 		http://pivotx.net/files/archived/
-DISTNAME=	pivotx_2.3.0
+DISTNAME=	pivotx_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fumifumi@abacustech.jp
@@ -26,23 +26,24 @@ DOCS_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}-docs
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 
-OPTIONS=	MYSQL	"Use MySQL instead of flat files" off
+OPTIONS=	MYSQL	"Use MySQL instead of flat files" off \
+		PHPDOM	"Use PHP:DOM instead of SimpleXML" off
 
 .include <bsd.port.options.mk>
 
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=4
-USE_PHP=	session gettext xml gd pcre tokenizer
+USE_PHP=	session gettext xml tokenizer gd pcre
 USE_GETTEXT=	yes
 
-.if exists(${PHPBASE}/lib/php/${PHP_EXT_DIR}/simplexml.so) || !exists(${PHPBASE}/lib/php/${PHP_EXT_DIR}/dom.so)
-USE_PHP+=	simplexml
-.else
+.if defined(WITH_PHPDOM)
 USE_PHP+=	dom
+.else
+USE_PHP+=	simplexml
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=	yes
+USE_MYSQL=	client
 USE_PHP+=	mysql
 .endif
 
@@ -102,7 +103,7 @@ do-install:
 	@${MKDIR} '${WWWDIR}'
 	@cd '${WRKSRC}' && ${COPYTREE_SHARE} . '${WWWDIR}'
 .for DIR in ${WRITABLEDIRS}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} '${WWWDIR}/${DIR}'
+	@${CHOWN} -R '${WWWOWN}:${WWWGRP}' '${WWWDIR}/${DIR}'
 	@${FIND} '${WWWDIR}/${DIR}' -type d -print0 | ${XARGS} -0 ${CHMOD} u=rwx,go=rx
 	@${FIND} '${WWWDIR}/${DIR}' -type f -print0 | ${XARGS} -0 ${CHMOD} u=rw,go=r
 .endfor
