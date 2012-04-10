@@ -2129,6 +2129,7 @@
     SUBDIR += p5-MooseX-FollowPBP
     SUBDIR += p5-MooseX-Getopt
     SUBDIR += p5-MooseX-Has-Sugar
+    SUBDIR += p5-MooseX-HasDefaults
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-InsideOut
     SUBDIR += p5-MooseX-LazyRequire
