@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	commons-math
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	math java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Java library of self-contained mathematics and statistics components
 
 BUILD_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
@@ -58,8 +58,7 @@ MAKE_ARGS+=	-Djdk.api=${JDK_API}
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's#4.4##g' \
-			-e 's#junit-#junit#g' \
+	${REINPLACE_CMD} -e 's#junit-#junit#g' \
 			-e 's#/usr/share/junit#${JAVAJARDIR}#g' \
 			${WRKSRC}/build.xml
 
