@@ -16,21 +16,12 @@ include/libgstbuzztard/help.h
 include/libgstbuzztard/envelope.h
 include/libgstbuzztard/musicenums.h
 include/libgstbuzztard/tempo.h
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstBtEnvelope.html
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstPreset.html
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstBtPropertyMeta.html
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstAudioDelay.html
 %%DOCSDIR%%/gst-buzztard/ch02.html
 %%DOCSDIR%%/gst-buzztard/gst-buzztard-GstBtMusicEnums.html
 %%DOCSDIR%%/gst-buzztard/index.sgml
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstBtTempo.html
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstBtChildBin.html
 %%DOCSDIR%%/gst-buzztard/ch03.html
 %%DOCSDIR%%/gst-buzztard/index.html
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstFluidsynth.html
-%%DOCSDIR%%/gst-buzztard/gst-buzztard-GstSimSyn.html
 %%DOCSDIR%%/gst-buzztard/left.png
-%%DOCSDIR%%/gst-buzztard/gst-buzztard.devhelp
 %%DOCSDIR%%/gst-buzztard/GstBtToneConversion.html
 %%DOCSDIR%%/gst-buzztard/home.png
 %%DOCSDIR%%/gst-buzztard/ch01.html
@@ -44,11 +35,4 @@ include/libgstbuzztard/tempo.h
 %%DOCSDIR%%/gst-buzztard/up.png
 @dirrm %%DOCSDIR%%/gst-buzztard
 @dirrm %%DOCSDIR%%
-@dirrmtry include/gstreamer-0.10/gst/tempo
-@dirrmtry include/gstreamer-0.10/gst/propertymeta
-@dirrmtry include/gstreamer-0.10/gst/preset
-@dirrmtry include/gstreamer-0.10/gst/note2frequency
-@dirrmtry include/gstreamer-0.10/gst/help
-@dirrmtry include/gstreamer-0.10/gst/envelope
-@dirrmtry include/gstreamer-0.10/gst/childbin
 @dirrmtry include/libgstbuzztard
