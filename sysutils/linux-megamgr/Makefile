@@ -11,7 +11,7 @@ CATEGORIES=		sysutils linux
 MASTER_SITES=		http://www.lsi.com/DistributionSystem/AssetDocument/files/support/rsa/utilities/megamgr/
 DISTNAME=		ut_linux_mgr_5.20
 
-MAINTAINER=		pmh@hausen.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		LSI MegaRAID controller management utility
 
 DEPRECATED=	BROKEN for more than 6 month
