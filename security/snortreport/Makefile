@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	snortreport
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	security www
 MASTER_SITES=	http://www.symmetrixtech.com/ids/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add-on module for snort to generate real-time web reports
 
+LICENSE=	GPLv2
+
 .if !defined(WITHOUT_JPGRAPH)
-RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph
+RUN_DEPENDS=	${LOCALBASE}/share/jpgraph2/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
 .endif
 
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=	5
-DEFAULT_PHP_VER=	4
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NO_BUILD=	yes
