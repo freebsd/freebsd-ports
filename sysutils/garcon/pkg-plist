@@ -70,6 +70,7 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/de/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/el/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/es/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/garcon.mo
