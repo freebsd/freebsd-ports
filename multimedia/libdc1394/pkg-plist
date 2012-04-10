@@ -20,7 +20,6 @@ lib/libdc1394.la
 lib/libdc1394.so
 lib/libdc1394.so.23
 libdata/pkgconfig/libdc1394-2.pc
-@dirrmtry lib/pkgconfig
 @dirrmtry include/dc1394/vendor
 @dirrmtry include/dc1394/usb
 @dirrmtry include/dc1394/macosx
