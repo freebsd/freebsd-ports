@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	EBook-Tools
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Object class for manipulating and generating E-books
 
-BUILD_DEPENDS=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
-		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
-		${SITE_PERL}/Palm/PDB.pm:${PORTSDIR}/palm/p5-Palm \
-		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-		${SITE_PERL}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32 \
-		${SITE_PERL}/HTML/TextToHTML.pm:${PORTSDIR}/textproc/txt2html \
+BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
+		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
+		p5-File-MimeInfo>=0:${PORTSDIR}/devel/p5-File-MimeInfo \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-XML-Twig>=0:${PORTSDIR}/textproc/p5-XML-Twig \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Palm>=0:${PORTSDIR}/palm/p5-Palm \
+		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-String-CRC32>=0:${PORTSDIR}/devel/p5-String-CRC32 \
+		txt2html>=0:${PORTSDIR}/textproc/txt2html \
 		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		p5-Bit-Vector>=0:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	${LOCALBASE}/bin/tidy4:${PORTSDIR}/www/tidy
 
 PERL_MODBUILD=	yes
