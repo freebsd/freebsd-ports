@@ -1,0 +1,7 @@
+The Exporter module implements an "import" method which allows a module
+to export functions and variables to its users' namespaces. Many modules
+use Exporter rather than implementing their own "import" method because
+Exporter provides a highly flexible interface, with an implementation
+optimised for the common case.
+
+WWW: http://search.cpan.org/dist/Exporter/
