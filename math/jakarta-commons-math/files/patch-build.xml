@@ -1,0 +1,11 @@
+--- build.xml.orig	2012-03-26 01:38:37.000000000 +0600
++++ build.xml	2012-03-26 01:38:56.000000000 +0600
+@@ -36,7 +36,7 @@
+   <!-- Junit -->
+   <property name="junit.version"           value="4.8.2"/>
+   <property name="junit.home"              value="/usr/share/junit"/>
+-  <property name="junit.jar"               value="${junit.home}/junit-${junit.version}.jar"/>
++  <property name="junit.jar"               value="${junit.home}/junit.jar"/>
+ 
+ 
+ <!-- ========== Component Declarations ==================================== -->
