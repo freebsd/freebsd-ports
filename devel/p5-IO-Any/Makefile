@@ -14,11 +14,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IO::Any opens anything
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
-TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+TEST_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-Distribution>=0:${PORTSDIR}/devel/p5-Test-Distribution \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Pod>=1.22:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.08:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
