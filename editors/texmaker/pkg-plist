@@ -12,9 +12,15 @@ share/texmaker/AUTHORS
 share/texmaker/CHANGELOG.txt
 share/texmaker/COPYING
 share/texmaker/README_DIC_fr_FR.txt
+share/texmaker/README_cs_CZ.txt
 share/texmaker/README_de_DE_frami.txt
+share/texmaker/README_en_US.txt
 share/texmaker/README_es_ES.txt
 share/texmaker/README_hu_HU.txt
+share/texmaker/atd.css
+share/texmaker/cs_CZ.aff
+share/texmaker/cs_CZ.dic
+share/texmaker/csshttprequest.js
 share/texmaker/de_DE.aff
 share/texmaker/de_DE.dic
 share/texmaker/doc1.png
@@ -63,6 +69,8 @@ share/texmaker/doc9.png
 share/texmaker/doc9hu.png
 share/texmaker/en_GB.aff
 share/texmaker/en_GB.dic
+share/texmaker/en_US.aff
+share/texmaker/en_US.dic
 share/texmaker/es_ES.aff
 share/texmaker/es_ES.dic
 share/texmaker/fr_FR.aff
@@ -72,6 +80,7 @@ share/texmaker/hu_HU.dic
 share/texmaker/it_IT.aff
 share/texmaker/it_IT.dic
 share/texmaker/it_IT_README.txt
+share/texmaker/jquery.atd.textarea.js
 share/texmaker/latexhelp.html
 share/texmaker/nl_NL.aff
 share/texmaker/nl_NL.dic
@@ -99,6 +108,7 @@ share/texmaker/texmaker_nl.qm
 share/texmaker/texmaker_pl.qm
 share/texmaker/texmaker_pt_BR.qm
 share/texmaker/texmaker_ru.qm
+share/texmaker/texmaker_se.qm
 share/texmaker/texmaker_sr.qm
 share/texmaker/texmaker_zh_CN.qm
 share/texmaker/texmaker_zh_TW.qm
