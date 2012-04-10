@@ -7,7 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
@@ -24,7 +24,7 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
+MAKE_ARGS=	MYCFLAGS="${CFLAGS}"
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
