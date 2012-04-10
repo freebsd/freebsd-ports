@@ -6015,6 +6015,7 @@ imapfilter                      ports/mail/imapfilter
 imapproxy                       ports/net/imapproxy
 imapsync                        ports/mail/imapsync
 imaptools                       ports/mail/imaptools
+imaputils                       ports/mail/imaputils
 imaze                           ports/games/imaze
 imb                             ports/benchmarks/imb
 imc                             ports/graphics/imc
@@ -11214,6 +11215,7 @@ p5-CGP-CLI                      ports/mail/p5-CGP-CLI
 p5-CHI                          ports/devel/p5-CHI
 p5-CIF-Client                   ports/www/p5-CIF-Client
 p5-CLASS                        ports/devel/p5-CLASS
+p5-CPAN-Changes                 ports/devel/p5-CPAN-Changes
 p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
@@ -11525,6 +11527,7 @@ p5-Class-MixinFactory           ports/devel/p5-Class-MixinFactory
 p5-Class-Multimethods           ports/devel/p5-Class-Multimethods
 p5-Class-Multimethods-Pure      ports/devel/p5-Class-Multimethods-Pure
 p5-Class-NamedParms             ports/devel/p5-Class-NamedParms
+p5-Class-Null                   ports/devel/p5-Class-Null
 p5-Class-OOorNO                 ports/devel/p5-Class-OOorNO
 p5-Class-ObjectTemplate         ports/devel/p5-Class-ObjectTemplate
 p5-Class-ObjectTemplate-DB      ports/devel/p5-Class-ObjectTemplate-DB
@@ -15975,6 +15978,7 @@ p5-class-mop                    ports/devel/p5-Class-MOP
 p5-class-multimethods           ports/devel/p5-Class-Multimethods
 p5-class-multimethods-pure      ports/devel/p5-Class-Multimethods-Pure
 p5-class-namedparms             ports/devel/p5-Class-NamedParms
+p5-class-null                   ports/devel/p5-Class-Null
 p5-class-objecttemplate         ports/devel/p5-Class-ObjectTemplate
 p5-class-objecttemplate-db      ports/devel/p5-Class-ObjectTemplate-DB
 p5-class-observable             ports/devel/p5-Class-Observable
@@ -16082,6 +16086,7 @@ p5-convert-uulib                ports/converters/p5-Convert-UUlib
 p5-coro                         ports/devel/p5-Coro
 p5-corona                       ports/www/p5-Corona
 p5-couchdb-view                 ports/databases/p5-CouchDB-View
+p5-cpan-changes                 ports/devel/p5-CPAN-Changes
 p5-cpan-checksums               ports/devel/p5-CPAN-Checksums
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
