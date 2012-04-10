@@ -13,6 +13,8 @@ MASTER_SITES=	SF/crossfire/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	A cooperative multiplayer graphical RPG and adventure game
 
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_SDL=	image sdl
