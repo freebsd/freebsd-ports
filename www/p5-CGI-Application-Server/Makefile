@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI-Application-Server
 PORTVERSION=	0.062
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	A simple HTTP server for developing with CGI::Application
 
-RUN_DEPENDS= p5-CGI-Application-Plugin-Redirect>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-Redirect \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-CGI-Application-Plugin-Redirect>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-Redirect \
+		p5-HTTP-Server-Simple-Static>=0.02:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static \
 		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
-		p5-HTTP-Server-Simple-Static>=0.02:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-HTTP-Server-Simple>=0:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
+		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize
 
 PERL_MODBUILD=	yes
 
