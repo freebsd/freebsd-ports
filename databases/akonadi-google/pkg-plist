@@ -1,0 +1,37 @@
+bin/akonadi_googlecalendar_resource
+bin/akonadi_googlecontacts_resource
+include/libkgoogle/accessmanager.h
+include/libkgoogle/account.h
+include/libkgoogle/auth.h
+include/libkgoogle/common.h
+include/libkgoogle/fetchlistjob.h
+include/libkgoogle/libkgoogle_export.h
+include/libkgoogle/object.h
+include/libkgoogle/objects/accountinfo.h
+include/libkgoogle/objects/calendar.h
+include/libkgoogle/objects/contact.h
+include/libkgoogle/objects/contactsgroup.h
+include/libkgoogle/objects/event.h
+include/libkgoogle/objects/task.h
+include/libkgoogle/objects/tasklist.h
+include/libkgoogle/reply.h
+include/libkgoogle/request.h
+include/libkgoogle/service.h
+include/libkgoogle/services/accountinfo.h
+include/libkgoogle/services/calendar.h
+include/libkgoogle/services/contacts.h
+include/libkgoogle/services/tasks.h
+include/libkgoogle/ui/accountscombo.h
+lib/libkgoogle.so
+lib/libkgoogle.so.0
+lib/libkgoogle.so.0.3.0
+libdata/pkgconfig/libkgoogle.pc
+share/akonadi/agents/googlecalendarresource.desktop
+share/akonadi/agents/googlecontactsresource.desktop
+share/apps/cmake/modules/FindLibKGoogle.cmake
+@dirrmtry share/akonadi/agents
+@dirrmtry share/akonadi
+@dirrm include/libkgoogle/ui
+@dirrm include/libkgoogle/services
+@dirrm include/libkgoogle/objects
+@dirrm include/libkgoogle
