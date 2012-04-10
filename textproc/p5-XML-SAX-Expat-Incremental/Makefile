@@ -17,6 +17,7 @@ COMMENT=	XML::SAX::Expat subclass for non-blocking (incremental)
 RUN_DEPENDS=	p5-XML-Parser>0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-SAX-Expat>0:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
