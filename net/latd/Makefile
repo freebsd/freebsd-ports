@@ -10,7 +10,7 @@ PORTVERSION=	1.25
 CATEGORIES=	net
 MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	tillman@seekingfire.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The linux-decnet project LAT protocol suite
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
