@@ -52,6 +52,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="baf37cd2-8351-11e1-894e-00215c6a37bb">
+    <topic>samba -- "root" credential remote code execution</topic>
+    <affects>
+      <package>
+	<name>samba34</name>
+	<range><gt>3.4.*</gt><lt>3.4.16</lt></range>
+      </package>
+      <package>
+	<name>samba35</name>
+	<range><gt>3.5.*</gt><lt>3.5.14</lt></range>
+      </package>
+      <package>
+	<name>samba36</name>
+	<range><gt>3.6.*</gt><lt>3.6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba development team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2012-1182">
+	  <p>Samba versions 3.6.3 and all versions previous to this
+	    are affected by a vulnerability that allows remote code
+	    execution as the "root" user from an anonymous connection.</p>
+	  <p>As this does not require an authenticated connection it
+	    is the most serious vulnerability possible in a program,
+	    and users and vendors are encouraged to patch their Samba
+	    installations immediately.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1182</cvename>
+    </references>
+    <dates>
+      <discovery>2012-04-10</discovery>
+      <entry>2012-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f448dc1-82ca-11e1-b393-20cf30e32f6d">
     <topic>bugzilla Cross-Site Request Forgery</topic>
     <affects>
