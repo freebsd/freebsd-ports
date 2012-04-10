@@ -5,17 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-ssh-askpass
-PORTVERSION=	3.6p1
-PORTREVISION=	10
+PORTVERSION=	5.8p2
 CATEGORIES=	security gnome
-MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
-		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
+MASTER_SITES=	OPENBSD/OpenSSH/portable/
 DISTNAME=	openssh-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A graphical ssh askpass utility for Gnome2
 
-WRKSRC=		${WRKDIR}/openssh-3.6p1
+PORTSCOUT=	skipv:5.9p1 # Will update when FreeBSD version off SSH goes to 5.9p1
+
+WRKSRC=		${WRKDIR}/openssh-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/contrib
 ALL_TARGET=	gnome-ssh-askpass2
 
