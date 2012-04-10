@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Fixture-DBIC-Schema
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Module providing a DBIx::Class::Schema fixture data loader
 
-RUN_DEPENDS=	p5-DBIx-Class>=0.07005:${PORTSDIR}/databases/p5-DBIx-Class \
+BUILD_DEPENDS=	p5-DBIx-Class>=0.07005:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Kwalify>=1.19:${PORTSDIR}/textproc/p5-Kwalify \
 		p5-Params-Validate>=0.15:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-YAML-Syck>=0.95:${PORTSDIR}/textproc/p5-YAML-Syck
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite
 
 PERL_CONFIGURE=	yes
 
