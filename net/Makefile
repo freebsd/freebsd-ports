@@ -373,6 +373,7 @@
     SUBDIR += mono-zeroconf
     SUBDIR += mopd
     SUBDIR += morebalance
+    SUBDIR += mosh
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
     SUBDIR += mpich2

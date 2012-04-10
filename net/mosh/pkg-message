@@ -1,0 +1,8 @@
+Please note that mosh requires UTF-8 character set.  To set this on a
+per-user basis, you should add the following to ~/.login_conf:
+me:\
+        :charset=UTF-8:\
+        :lang=en_US.UTF-8:\
+        :setenv=LC_COLLATE=C:
+
+This must be done on both the client and the server.
