@@ -298,7 +298,6 @@
     SUBDIR += wmmatrix
     SUBDIR += wmxss
     SUBDIR += workrave
-    SUBDIR += wrapper
     SUBDIR += wterm
     SUBDIR += x11perf
     SUBDIR += x3270
