@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler 
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-TEST_DEPENDS=	p5-XML-RSS-LibXML>=0:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
+TEST_DEPENDS=	p5-XML-RSS-LibXML>=0.30.04:${PORTSDIR}/textproc/p5-XML-RSS-LibXML
 
 PERL_CONFIGURE=	yes
 
@@ -39,10 +39,4 @@ MAN3=		XML::Feed.3 \
 		XML::Feed::Enclosure.3 \
 		XML::Feed::Entry.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
