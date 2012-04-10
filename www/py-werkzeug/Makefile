@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,11 @@ PYDISTUTILS_NOEGGINFO=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+# Avoid to install patch files backup
+post-patch:
+	@cd ${WRKSRC} && \
+		${FIND} . -type f -name '*.orig' -exec ${RM} -f \{\} \; 
 
 .if !defined(NOPORTEXAMPLES)
 post-build:
