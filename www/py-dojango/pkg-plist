@@ -17,6 +17,15 @@
 %%PYTHON_SITELIBDIR%%/dojango/conf/settings.py
 %%PYTHON_SITELIBDIR%%/dojango/conf/settings.pyc
 %%PYTHON_SITELIBDIR%%/dojango/conf/settings.pyo
+%%PYTHON_SITELIBDIR%%/dojango/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/dojango/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dojango/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dojango/contrib/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/dojango/contrib/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dojango/contrib/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dojango/contrib/auth/forms.py
+%%PYTHON_SITELIBDIR%%/dojango/contrib/auth/forms.pyc
+%%PYTHON_SITELIBDIR%%/dojango/contrib/auth/forms.pyo
 %%PYTHON_SITELIBDIR%%/dojango/context_processors.py
 %%PYTHON_SITELIBDIR%%/dojango/context_processors.pyc
 %%PYTHON_SITELIBDIR%%/dojango/context_processors.pyo
@@ -67,7 +76,6 @@
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/ThumbnailPicker.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/plugins/InsertImage.js
 %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/resources/ThumbnailPicker.css
-%%PYTHON_SITELIBDIR%%/dojango/dojo-media/src/README
 %%PYTHON_SITELIBDIR%%/dojango/decorators.py
 %%PYTHON_SITELIBDIR%%/dojango/decorators.pyc
 %%PYTHON_SITELIBDIR%%/dojango/decorators.pyo
@@ -156,7 +164,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/management
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/forms
-@dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media/src
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/resources
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/dojo-media/dojango/widget
@@ -167,6 +174,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/data/piston
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/data/modelstore
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/data
+@dirrm %%PYTHON_SITELIBDIR%%/dojango/contrib/auth
+@dirrm %%PYTHON_SITELIBDIR%%/dojango/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/conf
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/bin
 @dirrm %%PYTHON_SITELIBDIR%%/dojango/appengine
