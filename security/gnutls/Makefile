@@ -64,14 +64,15 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=		AUTHORS NEWS README THANKS
-.endif
-EXAMPLES=	doc/examples/*.c
+PORTEXAMPLES=		*.c
 
 post-install:
+.if !defined (NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTEXAMPLES:C,^,doc/examples/,} \
+		${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
