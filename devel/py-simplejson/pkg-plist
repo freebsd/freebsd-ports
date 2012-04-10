@@ -53,6 +53,9 @@
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_indent.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_indent.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_indent.pyo
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_item_sort_key.py
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_item_sort_key.pyc
+%%PYTHON_SITELIBDIR%%/simplejson/tests/test_item_sort_key.pyo
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_namedtuple.py
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_namedtuple.pyc
 %%PYTHON_SITELIBDIR%%/simplejson/tests/test_namedtuple.pyo
