@@ -7,6 +7,7 @@
 
 PORTNAME=	HTTP-Engine
 PORTVERSION=	0.03005
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +15,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for HTTP Server Engine Drivers
 
-RUN_DEPENDS=	\
-	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
-	p5-Mouse>=0.62:${PORTSDIR}/devel/p5-Moose \
-	p5-MouseX-Types>=0.05:${PORTSDIR}/devel/p5-MouseX-Types \
-	p5-CGI-Simple>=1.103:${PORTSDIR}/www/p5-CGI-Simple \
-	p5-Filter>0:${PORTSDIR}/devel/p5-Filter \
-	p5-HTTP-Body>=1.05:${PORTSDIR}/www/p5-HTTP-Body \
-	p5-HTTP-Headers-Fast>=0.11:${PORTSDIR}/www/p5-HTTP-Headers-Fast \
-	p5-URI>=1.36:${PORTSDIR}/net/p5-URI \
-	p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-CGI-Simple>=1.103:${PORTSDIR}/www/p5-CGI-Simple \
+		p5-Filter>0:${PORTSDIR}/devel/p5-Filter \
+		p5-HTTP-Body>=1.05:${PORTSDIR}/www/p5-HTTP-Body \
+		p5-HTTP-Headers-Fast>=0.11:${PORTSDIR}/www/p5-HTTP-Headers-Fast \
+		p5-HTTP-Request-AsCGI>0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Mouse>=0.62:${PORTSDIR}/devel/p5-Moose \
+		p5-MouseX-Types>=0.05:${PORTSDIR}/devel/p5-MouseX-Types \
+		p5-URI>=1.36:${PORTSDIR}/net/p5-URI \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
