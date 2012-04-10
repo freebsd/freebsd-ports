@@ -28,6 +28,7 @@
 %%WWWDIR%%/localization/sk_SK.inc
 %%WWWDIR%%/localization/sl_SI.inc
 %%WWWDIR%%/localization/sv_SE.inc
+%%WWWDIR%%/localization/zh_TW.inc
 %%WWWDIR%%/sieverules.js
 %%WWWDIR%%/sieverules.php
 %%WWWDIR%%/skins/default/help.gif
@@ -41,6 +42,7 @@
 %%WWWDIR%%/skins/default/templates/editsieverule.html
 %%WWWDIR%%/skins/default/templates/setupsieverules.html
 %%WWWDIR%%/skins/default/templates/sieverules.html
+%%WWWDIR%%/package.xml
 @dirrm %%WWWDIR%%/skins/default/templates
 @dirrm %%WWWDIR%%/skins/default
 @dirrm %%WWWDIR%%/skins
