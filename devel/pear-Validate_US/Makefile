@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validate_US
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	devel www pear
 
 MAINTAINER=	wen@FreeBSD.org
