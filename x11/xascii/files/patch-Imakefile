@@ -1,0 +1,11 @@
+--- Imakefile.orig	1991-08-05 12:32:29.000000000 -0700
++++ Imakefile	2012-04-10 12:55:45.138341509 -0700
+@@ -1,5 +1,8 @@
+ LOCAL_LIBRARIES = XawClientLibs
+ 
++BINDIR = ${PREFIX}/bin
++MANPATH = ${PREFIX}${MAN1PREFIX}/man
++
+ SRCS = xascii.c
+ OBJS = xascii.o
+ 

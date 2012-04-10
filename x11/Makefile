@@ -303,6 +303,7 @@
     SUBDIR += x3270
     SUBDIR += xaniroc
     SUBDIR += xantfarm
+    SUBDIR += xascii
     SUBDIR += xauth
     SUBDIR += xautolock
     SUBDIR += xautomation
