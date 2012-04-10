@@ -1,0 +1,11 @@
+%%SITE_PERL%%/mach/auto/MooseX/HasDefaults/.packlist
+%%SITE_PERL%%/MooseX/HasDefaults/Meta/IsRO.pm
+%%SITE_PERL%%/MooseX/HasDefaults/Meta/IsRW.pm
+%%SITE_PERL%%/MooseX/HasDefaults/RW.pm
+%%SITE_PERL%%/MooseX/HasDefaults/RO.pm
+%%SITE_PERL%%/MooseX/HasDefaults.pm
+@dirrm %%SITE_PERL%%/mach/auto/MooseX/HasDefaults
+@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/HasDefaults/Meta
+@dirrm %%SITE_PERL%%/MooseX/HasDefaults
+@dirrmtry %%SITE_PERL%%/MooseX
