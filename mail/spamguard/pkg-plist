@@ -1,20 +1,34 @@
 @comment $FreeBSD$
 bin/spamguard
-etc/spamguard.conf.sample
-etc/spam-ignore.txt.sample
+etc/spamguard/spam-ignore.txt
+etc/spamguard/spam-high.txt
+etc/spamguard/spamguard_qsheff.conf
+etc/spamguard/qsheff_ignore.sample
+etc/spamguard/spamguard_qsheff.conf.sample
+etc/spamguard/qsheff_ignore
+etc/spamguard/qsheff_high
+etc/spamguard/spamguard.conf
+etc/spamguard/spam-ignore.txt.sample
+etc/spamguard/spamguard.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.DigitalUnix
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/tr/BENIOKU
+%%PORTDOCS%%%%DOCSDIR%%/tr/BENIOKU.DigitalUnix
 %%PORTDOCS%%%%DOCSDIR%%/tr/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/tr/DEGISIKLIKLER
+%%PORTDOCS%%%%DOCSDIR%%/tr/GUNCELLEME
 %%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM
 %%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM-SONRASI
 %%PORTDOCS%%%%DOCSDIR%%/tr/YAPILACAKLAR
 %%PORTDOCS%%%%DOCSDIR%%/tr/YAZARLAR
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/spamguard

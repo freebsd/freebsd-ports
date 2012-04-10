@@ -6,27 +6,32 @@
 #
 
 PORTNAME=	spamguard
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/spamguard/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+WRKSRC=		${WRKDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS CHANGELOG COPYING INSTALL \
-		POST-INSTALL README THANKS
-DOCS_TR=	BENIOKU COPYING DEGISIKLIKLER KURULUM \
-		KURULUM-SONRASI YAPILACAKLAR YAZARLAR
+		POST-INSTALL README THANKS README.DigitalUnix \
+	        THANKS TODO UPGRADE
+DOCS_TR=	BENIOKU BENIOKU.DigitalUnix COPYING DEGISIKLIKLER \
+		GUNCELLEME KURULUM KURULUM-SONRASI YAPILACAKLAR YAZARLAR
 
 SUB_FILES=	pkg-message
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/spamguard ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.sample ${PREFIX}/etc
+pre-configure:
+	        cd ${WRKSRC}; \
+		./autogen.sh
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/tr
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
