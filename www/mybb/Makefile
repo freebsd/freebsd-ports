@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mybb
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/mybb/mybb16/
-DISTNAME=	${PORTNAME}_1605
+DISTNAME=	${PORTNAME}_1606
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
@@ -28,7 +28,7 @@ do-install:
 	@${MKDIR} ${WWWDIR}
 	${CP} -R ${WRKSRC}/ ${WWWDIR}
 	${TOUCH} ${WWWDIR}/inc/config.php
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/inc/config.php
+	@${CHOWN} ${WWWOWN} ${WWWDIR}/inc/config.php ${WWWDIR}/inc/settings.php
 	@${CAT} ${PKGMESSAGE}
 
 create-plist:
