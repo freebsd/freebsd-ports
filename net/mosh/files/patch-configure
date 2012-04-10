@@ -1,0 +1,37 @@
+--- ./configure.orig	2012-04-03 13:04:06.000000000 -0400
++++ ./configure	2012-04-10 15:28:42.000000000 -0400
+@@ -5515,7 +5515,20 @@
+ done
+ 
+ 
+-for ac_header in pty.h util.h
++for ac_header in pty.h util.h libutil.h
++do :
++  as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
++ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
++if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
++  cat >>confdefs.h <<_ACEOF
++#define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
++_ACEOF
++
++fi
++
++done
++
++for ac_header in endian.h sys/endian.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
+@@ -6275,7 +6288,11 @@
+ fi
+ 
+ 
+-ac_fn_c_check_decl "$LINENO" "htobe64" "ac_cv_have_decl_htobe64" "#include <endian.h>
++ac_fn_c_check_decl "$LINENO" "htobe64" "ac_cv_have_decl_htobe64" "#if defined(HAVE_ENDIAN_H)
++#include <endian.h>
++#elif defined(HAVE_SYS_ENDIAN_H)
++#include <sys/endian.h>
++#endif
+ "
+ if test "x$ac_cv_have_decl_htobe64" = xyes; then :
+ 
