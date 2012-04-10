@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_DNS2
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	dns net pear
 
 MAINTAINER=	wen@FreeBSD.org
