@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	maildirsync
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Online synchronizer for Maildir-format mailboxes
 
 USE_PERL5=	yes
