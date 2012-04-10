@@ -16,6 +16,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	rick@wzoeterwoude.net
 COMMENT=	Tidy HTML Repairing and Parsing for PHP 4
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 BUILD_DEPENDS+=	${LOCALBASE}/include/tidy/tidy.h:${PORTSDIR}/www/tidy-devel
 
 LICENSE=	PHP30
