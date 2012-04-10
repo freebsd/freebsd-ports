@@ -1,14 +1,6 @@
---- requests.egg-info/SOURCES.txt.orig	2012-01-23 07:22:50.000000000 +0000
-+++ requests.egg-info/SOURCES.txt	2012-02-07 15:14:04.000000000 +0000
-@@ -4,7 +4,6 @@
- NOTICE
- README.rst
- setup.py
--test_requests.py
- requests/__init__.py
- requests/api.py
- requests/async.py
-@@ -28,15 +27,3 @@
+--- requests.egg-info/SOURCES.txt.orig	2012-03-31 05:47:55.000000000 +0200
++++ requests.egg-info/SOURCES.txt	2012-04-01 12:01:46.000000000 +0200
+@@ -27,16 +27,3 @@
  requests/packages/oreos/core.py
  requests/packages/oreos/monkeys.py
  requests/packages/oreos/structures.py
@@ -20,6 +12,7 @@
 -requests/packages/urllib3/poolmanager.py
 -requests/packages/urllib3/request.py
 -requests/packages/urllib3/response.py
+-requests/packages/urllib3/util.py
 -requests/packages/urllib3/packages/__init__.py
 -requests/packages/urllib3/packages/six.py
 -requests/packages/urllib3/packages/mimetools_choose_boundary/__init__.py
