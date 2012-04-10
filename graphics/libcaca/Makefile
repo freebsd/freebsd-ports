@@ -20,7 +20,8 @@ CONFIGURE_ARGS=	--disable-doc \
 		--enable-ncurses \
 		--disable-java \
 		--disable-csharp \
-		--disable-ruby
+		--disable-ruby \
+		--disable-python
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
 		NOTES README THANKS
