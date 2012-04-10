@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Exporter.pm
+%%SITE_PERL%%/Exporter/Heavy.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exporter
+@dirrmtry %%SITE_PERL%%/Exporter
