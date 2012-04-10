@@ -7,7 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
@@ -58,7 +58,7 @@ showinfo:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900044
-BROKEN=		does not compile on FreeBSD 9.X
+EXTRA_PATCHES=		${FILESDIR}/extra-patch-libk3bdevice-k3bscsicommandbsd.cpp
 .endif
 
 PKGMESSAGE=	${PKGDIR}/pkg-message-7
