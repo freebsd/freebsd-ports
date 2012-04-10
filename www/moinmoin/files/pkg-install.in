@@ -1,7 +1,7 @@
 #! /bin/sh
 
 destdir=%%MOINDEST%%
-sharedir=%%MOINDIR%%
+htdocs=%%HTDOCS%%
 
 case "x$2" in
 
@@ -17,8 +17,8 @@ case "x$2" in
 		echo "add something like that to your Apache configuration."
 		echo ""
 		echo ",-----"
-		echo " Alias /moin_static180/ \"$sharedir/htdocs/\""
-		echo " <Directory \"$sharedir/htdocs/\">"
+		echo " Alias /moin_static194/ \"$htdocs/\""
+		echo " <Directory \"$htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
 		echo " </Directory>"
@@ -42,13 +42,14 @@ case "x$2" in
 		echo ""
 
 		echo ",-----"
-		echo " Alias /moin_static180/ \"$sharedir/htdocs/\""
-		echo " <Directory \"$sharedir/htdocs/\">"
+		echo " Alias /moin_static194/ \"$htdocs/\""
+		echo " <Directory \"$htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
 		echo " </Directory>"
 		echo " ScriptAlias /mywiki \"$destdir/moin.cgi\""
-		echo " <Directory \"$sharedir/htdocs/\">"
+		echo " <Directory \"$destdir/\">"
+		echo "     Order deny,allow"
 		echo "     Allow from all"
 		echo " </Directory>"
 		echo "\`-----"
@@ -63,15 +64,16 @@ case "x$2" in
 		echo ""
 
 		echo ",-----"
-		echo " Alias /moin_static180/ \"$sharedir/htdocs/\""
-		echo " <Directory \"$sharedir/htdocs/\">"
+		echo " Alias /moin_static194/ \"$htdocs/\""
+		echo " <Directory \"$htdocs/\">"
 		echo "     Order deny,allow"
 		echo "     Allow from all"
 		echo " </Directory>"
 		echo " WSGIScriptAlias /mywiki \"$destdir/moin.wsgi\""
 		echo "#If you use HTTP authorization enable the following also"
     		echo "#WSGIPassAuthorization On"
-		echo " <Directory \"$sharedir/htdocs/\">"
+		echo " <Directory \"$destdir/\">"
+		echo "     Order deny,allow"
 		echo "     Allow from all"
 		echo " </Directory>"
 		echo "\`-----"
