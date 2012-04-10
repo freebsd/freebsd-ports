@@ -1,14 +1,6 @@
---- requests/compat.py.orig	2012-01-23 06:35:35.000000000 +0000
-+++ requests/compat.py	2012-02-07 15:46:29.000000000 +0000
-@@ -4,7 +4,6 @@
- pythoncompat
- """
- 
--
- import sys
- 
- # -------
-@@ -66,8 +65,8 @@
+--- requests/compat.py.orig	2012-02-15 09:48:23.000000000 +0100
++++ requests/compat.py	2012-03-19 17:40:30.000000000 +0100
+@@ -66,8 +66,8 @@
  # Windows-based system.
  is_windows = 'win32' in str(sys.platform).lower()
  
