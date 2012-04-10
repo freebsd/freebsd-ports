@@ -8,13 +8,13 @@
 PORTNAME=	loader-edb
 PORTVERSION=	0.9.9.042
 PORTREVISION=	2
-CATEGORIES=	graphics
+CATEGORIES=	graphics enlightenment
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	A hardware accelerated canvas API (edb engine)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

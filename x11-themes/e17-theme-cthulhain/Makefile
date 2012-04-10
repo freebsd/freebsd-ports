@@ -9,13 +9,13 @@ PORTNAME=	cthulhain
 PORTVERSION=	0.4.5
 PORTREVISION=	3
 PORTEPOCH=	1
-CATEGORIES=	x11-themes
+CATEGORIES=	x11-themes enlightenment
 MASTER_SITES=	GOOGLE_CODE
 MASTER_SITE_SUBDIR=	Themes/E17
 PKGNAMEPREFIX=	e17-theme-
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	Cthulhain theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

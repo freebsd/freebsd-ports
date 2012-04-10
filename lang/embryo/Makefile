@@ -12,7 +12,7 @@ CATEGORIES=	lang enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-01-29/base/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	A C like scripting language used in Enlightenment
 
 LICENSE=	BSD
