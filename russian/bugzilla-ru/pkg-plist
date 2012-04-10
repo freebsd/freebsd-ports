@@ -254,7 +254,6 @@
 @dirrmtry %%WWWDIR%%/template/ru-RU/default/flag
 @dirrmtry %%WWWDIR%%/template/ru-RU/default/extensions
 @dirrmtry %%WWWDIR%%/template/ru-RU/default/email
-@dirrmtry %%WWWDIR%%/template/ru-RU/default/bug/votes
 @dirrmtry %%WWWDIR%%/template/ru-RU/default/bug/process
 @dirrmtry %%WWWDIR%%/template/ru-RU/default/bug/create
 @dirrmtry %%WWWDIR%%/template/ru-RU/default/bug/activity
