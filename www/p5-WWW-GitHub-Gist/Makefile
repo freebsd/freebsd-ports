@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-GitHub-Gist
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ALEXBIO
@@ -15,9 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dennylin93@hs.ntnu.edu.tw
 COMMENT=	Perl interface to Gist
 
-RUN_DEPENDS=	p5-HTTP-Tiny>=0:${PORTSDIR}/www/p5-HTTP-Tiny \
+BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-HTTP-Tiny>=0:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
