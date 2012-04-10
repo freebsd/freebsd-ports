@@ -1,8 +1,35 @@
+0001-s3-Fix-bug-8238-KB2536276-prevents-access-to-sha.patch
 samba-3.4-check-bad-password-count.patch
 samba-3.4-net-trustdom-list-tidyup.patch
 samba3-3.4-honor-all-loopback-ips.patch
-samba3-3.4.12-nmbd-bind-explicit.patch
+samba3-3.4.15-nmbd-bind-explicit.patch
 samba3-3.4.4-fix-account-unlock.patch
+
+From 0b0c5596034a007b71785a0f36aaf40cf74b234d Mon Sep 17 00:00:00 2001
+From: Volker Lendecke <vl@samba.org>
+Date: Thu, 16 Jun 2011 22:20:49 +0200
+Subject: [PATCH] s3: Fix bug 8238 -- KB2536276 prevents access to shares
+
+Without this we were not sending the workgroup name in the negprot reply if
+plain text passwords are used.
+---
+ source3/smbd/negprot.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/source3/smbd/negprot.c b/source3/smbd/negprot.c
+index 81d29d9..51ad80d 100644
+--- a/source3/smbd/negprot.c
++++ b/source3/smbd/negprot.c
+@@ -382,6 +382,7 @@ static void reply_nt1(struct smb_request *req, uint16 choice)
+ 			reply_nterror(req, NT_STATUS_NO_MEMORY);
+ 			return;
+ 		}
++		p += ret;
+ 		DEBUG(3,("not using SPNEGO\n"));
+ 	} else {
+ 		DATA_BLOB spnego_blob = negprot_spnego();
+-- 
+1.5.6.5
 
  source3/auth/auth_sam.c      |  159 +++++++++++++++++++++++++++++++++---------
  source3/include/proto.h      |    3 +
@@ -625,10 +652,11 @@ index 0ce495e..0511a28 100644
  }
  
  /**
-From 104c65054cb5e4c4b78f7e75a21a078d68d12bb8 Mon Sep 17 00:00:00 2001
+From 981b5a14807883eaf9be4a4b95bb85955ecad690 Mon Sep 17 00:00:00 2001
 From: Stefan Metzmacher <metze@samba.org>
 Date: Thu, 28 Jan 2010 11:04:05 +0100
-Subject: [PATCH 1/4] s3:nmbd: also listen explicit on the subnet broadcast addresses
+Subject: [PATCH 1/4] s3:nmbd: also listen explicit on the subnet broadcast
+ addresses
 
 And send replies always via the unicast address of the subnet.
 
@@ -757,7 +785,7 @@ index eefe27a..07a4b02 100644
  			break;
  		}
 diff --git a/source3/nmbd/nmbd_packets.c b/source3/nmbd/nmbd_packets.c
-index 1c570ea..402282c 100644
+index 855f6af..402282c 100644
 --- a/source3/nmbd/nmbd_packets.c
 +++ b/source3/nmbd/nmbd_packets.c
 @@ -207,7 +207,8 @@ static struct packet_struct *create_and_init_netbios_packet(struct nmb_name *nmb
@@ -900,7 +928,7 @@ index 1c570ea..402282c 100644
 +		}
  	}
  
--	*listen_number = (count*2) + 2;
+-	*listen_number = num;
 +	*listen_number = count;
  
  	SAFE_FREE(*ppset);
@@ -1232,13 +1260,14 @@ index 13bc931..96d7b32 100644
  
  /****************************************************************************
 -- 
-1.7.0.4
+1.7.6
 
 
-From 67f12b0e16d6e97e5b942d2293c3e063ed1a520a Mon Sep 17 00:00:00 2001
+From 1d66aaf6f32a702703533d0391b77bdf047222b1 Mon Sep 17 00:00:00 2001
 From: Stefan Metzmacher <metze@samba.org>
 Date: Mon, 8 Feb 2010 12:51:29 +0100
-Subject: [PATCH 2/4] s3:nmbd: change "nmbd:bind explicit broadcast" into "nmbd bind explicit broadcast"
+Subject: [PATCH 2/4] s3:nmbd: change "nmbd:bind explicit broadcast" into
+ "nmbd bind explicit broadcast"
 
 metze
 (cherry picked from commit 0140bc389d56511c3255720856bdb64803ba8930)
@@ -1249,7 +1278,7 @@ metze
  3 files changed, 13 insertions(+), 1 deletions(-)
 
 diff --git a/source3/include/proto.h b/source3/include/proto.h
-index 7c2893b..26b0643 100644
+index 46ed4ab..17ab59b 100644
 --- a/source3/include/proto.h
 +++ b/source3/include/proto.h
 @@ -3939,6 +3939,7 @@ const char *lp_logon_drive(void);
@@ -1310,10 +1339,10 @@ index 2ba2dd3..87df0d4 100644
  FN_GLOBAL_LIST(lp_interfaces, &Globals.szInterfaces)
  FN_GLOBAL_STRING(lp_nis_home_map_name, &Globals.szNISHomeMapName)
 -- 
-1.7.0.4
+1.7.6
 
 
-From c7cbb3f8a06cf98abbbcaaad5806b101aea5b2a0 Mon Sep 17 00:00:00 2001
+From e23890c8e84e00df9770b1f6316711b9d08dd9d2 Mon Sep 17 00:00:00 2001
 From: Stefan Metzmacher <metze@samba.org>
 Date: Mon, 8 Feb 2010 12:59:13 +0100
 Subject: [PATCH 3/4] s3:docs-xml: document "nmbd bind explicit broadcast"
@@ -1348,13 +1377,14 @@ index 0000000..f328594
 +<value type="default">no</value>
 +</samba:parameter>
 -- 
-1.7.0.4
+1.7.6
 
 
-From 49b0020da61243090848136c1fb03fdd819655d0 Mon Sep 17 00:00:00 2001
+From df242559163fef493e4305b9eb54549012700565 Mon Sep 17 00:00:00 2001
 From: Jeremy Allison <jra@samba.org>
 Date: Wed, 10 Feb 2010 12:32:05 -0800
-Subject: [PATCH 4/4] More of the fix for bug #7118 - nmbd problems with socket address.
+Subject: [PATCH 4/4] More of the fix for bug #7118 - nmbd problems with
+ socket address.
 
 Add a simple "processed packet queue" cache to stop nmbd responding to
 packets received on the broadcast and non-broadcast socket (which
@@ -1501,7 +1531,7 @@ index 402282c..567a9df 100644
  }
  
 -- 
-1.7.0.4
+1.7.6
 
 From 179e63ae9aa93984ea3d237c1039460c5acf01a5 Mon Sep 17 00:00:00 2001
 From: Michael Adam <obnox@samba.org>
@@ -1578,36 +1608,4 @@ index 1dd8fc9..01b2517 100644
  		pdb_set_bad_password_time(sampass, 0, PDB_CHANGED);
 -- 
 1.6.3.3
-
-From b2ec4bffca5d033a172c572ecf0605e84af68315 Mon Sep 17 00:00:00 2001
-From: Stefan Metzmacher <metze@samba.org>
-Date: Thu, 30 Jun 2011 09:56:06 +0200
-Subject: [PATCH] s3:nmbd_packets: return the used number of sockets in create_listen_fdset() (bug #8276)
-
-Fix bug #7949 (DoS in Winbind and smbd with many file descriptors open)
-(commit feb3fcd0fa4bda0967b881315595d7702f4d1752) changed the bahavior,
-so that we skipped some sockets.
-
-This should work for v3-4-test.
-
-metze
----
- source3/nmbd/nmbd_packets.c |    2 +-
- 1 files changed, 1 insertions(+), 1 deletions(-)
-
-diff --git a/source3/nmbd/nmbd_packets.c b/source3/nmbd/nmbd_packets.c
-index 1c570ea..855f6af 100644
---- a/source3/nmbd/nmbd_packets.c
-+++ b/source3/nmbd/nmbd_packets.c
-@@ -1742,7 +1742,7 @@ only use %d.\n", (count*2) + 2, FD_SETSIZE));
- 		*maxfd = MAX( *maxfd, subrec->dgram_sock);
- 	}
- 
--	*listen_number = count;
-+	*listen_number = num;
- 
- 	SAFE_FREE(*ppset);
- 	SAFE_FREE(*psock_array);
--- 
-1.7.4.1
 
