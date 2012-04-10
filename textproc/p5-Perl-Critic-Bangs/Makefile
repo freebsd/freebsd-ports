@@ -13,8 +13,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ivan@serezhkin.com
 COMMENT=	A collection of handy Perl::Critic policies
 
-BUILD_DEPENDS=	${SITE_PERL}/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Perl-Critic
+BUILD_DEPENDS=	p5-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Perl-Critic
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
+		p5-Perl-Critic-Deprecated>=0:${PORTSDIR}/devel/p5-Perl-Critic-Deprecated
 
 PERL_CONFIGURE=	yes
 
