@@ -14,7 +14,7 @@ MASTER_SITES=	http://komquats.com/distfiles/ \
 WRKSRC=		${WRKDIR}
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Manipulate X cut buffers from the commandline
+COMMENT=	Display an ascii table in decimal, octal, and hexadecimal.
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_IMAKE=	YES
