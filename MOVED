@@ -3271,3 +3271,4 @@ devel/p5-Getopt-Popt||2012-04-09|Has expired: "Gone from CPAN"
 net/p5-Net-Rendezvous||2012-04-09|Has expired: Superceeded by dns/p5-Net-Bonjour
 audio/gstreamer-plugins-musicbrainz||2012-04-09|Has expired: MusicBrainz RDF webservice no longer functions
 x11/wrapper||2012-04-10|Has expired: not needed anymore
+www/resin2||2012-04-10|Has expired: unsupported upstream, consider www/resin3
