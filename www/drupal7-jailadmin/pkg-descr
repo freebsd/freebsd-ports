@@ -1,0 +1,5 @@
+This Drupal 7 module makes administration of FreeBSD vnet jails extremely
+easy. When combined with ZFS and vnet, FreeBSD jails make for a basic
+cloud-like infrastructure.
+
+WWW: https://github.com/lattera/drupal-jailadmin
