@@ -1,11 +1,71 @@
---- Makefile.orig	Thu Nov 23 09:57:49 2006
-+++ Makefile	Thu Nov 23 09:58:00 2006
-@@ -36,7 +36,7 @@
- RELEASE = 1
+--- Makefile.orig	2012-03-28 01:06:27.000000000 +0600
++++ Makefile	2012-03-28 01:06:39.000000000 +0600
+@@ -19,7 +19,6 @@
+ INSTALL = install
+ INSTALL_PROGRAM = ${INSTALL}
+ INSTALL_DATA = ${INSTALL} -m 644
+-INSTALL_INFO = ginstall-info
  
- rpm_prefix=$(HOME)/rpmbuild/
--prefix = /usr/local/
-+prefix = %%PREFIX%%/
- exec_prefix = $(prefix)
- # directory where `make install' will put executable.
- bindir = $(exec_prefix)bin/
+ CHPAT = $(HOME)/bin/chpat
+ MAKEDEV = $(MAKE) -f $(HOME)/makefile.dev
+@@ -45,9 +44,6 @@
+ 
+ # ./configure --distdir=${HOME}/dist/ --snapdir=${HOME}/pub/ --docdir=${HOME}/public_html/
+ 
+-config.status:
+-	./configure
+-Makefile: config.status
+ include config.status
+ 
+ prevdocsdir = prevdocs/
+@@ -80,9 +76,6 @@
+ 	mkdir -p $(DESTDIR)$(jacallibdir)
+ 	mkdir -p $(DESTDIR)$(bindir)
+ 	mkdir -p $(DESTDIR)$(infodir)
+-	mkdir -p $(DESTDIR)$(htmldir)
+-	mkdir -p $(DESTDIR)$(pdfdir)
+-	mkdir -p $(DESTDIR)$(dvidir)
+ 
+ jacal.dvi: jacal.texi version.txi
+ 	$(TEXI2DVI) -b -c $<
+@@ -100,10 +93,8 @@
+ install-pdf: jacal.pdf installdirs
+ 	$(INSTALL_DATA) $< $(DESTDIR)$(pdfdir)
+ 
+-jacal_toc.html: jacal.texi version.txi
+-	$(TEXI2HTML) $<
+-html: jacal_toc.html
+-$(DESTDIR)$(htmldir)jacal_toc.html: jacal_toc.html
++$(DESTDIR)$(htmldir)jacal_toc.html: jacal.texi version.txi
++	        $(TEXI2HTML) $<
+ 	-rm -f jacal_stoc.html
+ 	if [ -f $(prevdocsdir)jacal_toc.html ]; \
+ 	  then hitch $(prevdocsdir)jacal_\*.html jacal_\*.html \
+@@ -124,16 +115,9 @@
+ 	cd DOC/; pdflatex ratint.tex
+ 	$(INSTALL_DATA) DOC/ratint.pdf $(DESTDIR)$(pdfdir)
+ 
+-jacal-$(VERSION).info: jacal.texi version.txi
+-	$(MAKEINFO) $< --no-split -o $@
+-jacal.info: jacal-$(VERSION).info
+-	if [ -f $(prevdocsdir)jacal.info ];\
+-	  then infobar $(prevdocsdir)jacal.info $< $@;\
+-	  else cp jacal-$(VERSION).info jacal.info;fi
+-$(DESTDIR)$(infodir)jacal.info:	jacal.info
+-	$(INSTALL_DATA) $< $@
+-	-$(INSTALL_INFO) $@ $(DESTDIR)$(infodir)dir
+-	-rm $(DESTDIR)$(infodir)-jacal.info.gz
++$(DESTDIR)$(infodir)jacal.info:	jacal.texi version.txi
++	                $(MAKEINFO) $< --no-split -o jacal.info
++	$(INSTALL_DATA) jacal.info $@
+ install-info:	$(DESTDIR)$(infodir)jacal.info
+ info:	install-info
+ $(DESTDIR)$(infodir)jacal.info.gz: $(DESTDIR)$(infodir)jacal.info
+@@ -177,7 +161,6 @@
+ 	$(INSTALL_DATA) go-scm $(DESTDIR)$(jacallibdir)go.scm
+ 	rm go-scm
+ 	echo '#! /bin/sh'			   > jacal-script
+-	grep -h ^SCHEME_LIBRARY_PATH= `which slib`>> jacal-script
+ 	echo export SCHEME_LIBRARY_PATH		  >> jacal-script
+ 	echo JACALDIR=$(DESTDIR)$(jacallibdir)	  >> jacal-script
+ 	echo VERSION=$(VERSION)			  >> jacal-script

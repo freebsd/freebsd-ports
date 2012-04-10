@@ -1,0 +1,19 @@
+--- configure.orig	2012-03-28 02:16:29.000000000 +0600
++++ configure	2012-03-28 02:17:23.000000000 +0600
+@@ -52,14 +52,14 @@
+ bindir='${exec_prefix}bin/'
+ sbindir='${exec_prefix}sbin/'
+ libexecdir='${exec_prefix}libexec/'
+-datarootdir='${prefix}share/'
++datarootdir='${prefix}'
+ datadir='${datarootdir}'
+ sysconfdir='${prefix}etc/'
+ sharedstatedir='${prefix}com/'
+ localstatedir='${prefix}var/'
+ includedir='${prefix}include/'
+ oldincludedir='/usr/include/'
+-docdir='${datarootdir}doc/${PACKAGE_TARNAME}/'
++docdir='${datarootdir}share/doc/${PACKAGE_TARNAME}/'
+ infodir='${datarootdir}info/'
+ htmldir='${docdir}'
+ dvidir='${docdir}'
