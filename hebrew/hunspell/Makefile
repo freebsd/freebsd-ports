@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	hebrew textproc
 MASTER_SITES=	http://hspell.ivrix.org.il/
 DISTNAME=	hspell-${PORTVERSION}
@@ -18,7 +17,7 @@ COMMENT=	Hebrew hunspell dictionaries
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-ALL_TARGET=	myspell
+ALL_TARGET=	hunspell
 CONFIGURE_ARGS=	--enable-fatverb
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
