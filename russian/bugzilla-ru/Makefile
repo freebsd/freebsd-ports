@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	4.0.2-ru-20110808
+DISTVERSION=	4.0.5-ru-20120227
 CATEGORIES=	russian
-MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=bugzilla-ru/bugzilla-4.0-ru/${PORTVERSION:R:R}
 PKGNAMESUFFIX=	-ru
 
 MAINTAINER=	skv@FreeBSD.org
