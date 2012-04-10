@@ -52,6 +52,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7f448dc1-82ca-11e1-b393-20cf30e32f6d">
+    <topic>bugzilla Cross-Site Request Forgery</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>4.0.0</ge><lt>4.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.4/">
+	  <p>The following security issues have been discovered in Bugzilla:</p>
+	  <ul>
+            <li>Due to a lack of validation of the enctype form
+            attribute when making POST requests to xmlrpc.cgi,
+            a possible CSRF vulnerability was discovered. If a user
+            visits an HTML page with some malicious HTML code in it,
+            an attacker could make changes to a remote Bugzilla installation
+            on behalf of the victim's account by using the XML-RPC API
+            on a site running mod_perl. Sites running under mod_cgi
+            are not affected. Also the user would have had to be
+            already logged in to the target site for the vulnerability
+            to work.
+            </li>
+          </ul>
+	  <p>All affected installations are encouraged to upgrade as soon as
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0453</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=725663</url>
+    </references>
+    <dates>
+      <discovery>2012-02-22</discovery>
+      <entry>2012-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20923a0d-82ba-11e1-8d7b-003067b2972c">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
