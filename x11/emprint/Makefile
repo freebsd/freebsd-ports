@@ -10,7 +10,7 @@ PORTVERSION=	20110129
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	Utility for taking screenshots for E17
 
 DIST_SUBDIR=	e17

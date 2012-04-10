@@ -11,7 +11,7 @@ CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
 		http://files.roorback.net/e17/2011-05-25/base/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	Freedesktop.org EFL compatiblity layer
 
 LICENSE=	BSD

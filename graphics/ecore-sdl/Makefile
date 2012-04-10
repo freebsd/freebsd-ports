@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment core abstraction library (sdl module)
 
 LICENSE=	BSD

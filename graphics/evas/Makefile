@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	A hardware accelerated canvas API (meta-port)
 
 NO_BUILD=	yes

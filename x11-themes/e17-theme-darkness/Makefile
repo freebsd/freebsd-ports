@@ -8,13 +8,13 @@
 PORTNAME=	darkness
 PORTVERSION=	0.99.042
 PORTREVISION=	0
-CATEGORIES=	x11-themes
+CATEGORIES=	x11-themes enlightenment
 MASTER_SITES=	http://fc09.deviantart.net/fs28/f/2008/055/f/a/
 PKGNAMEPREFIX=	e17-theme-
 DISTNAME=	Darkness_by_saturn_vk
 EXTRACT_SUFX=	.edj
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	Darkness theme for use with e17 window manager
 
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
