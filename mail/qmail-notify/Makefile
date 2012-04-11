@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Delayed delivery notification for qmail
 
 CFLAGS+=	-DHAVE_SRANDOM
-LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO
 EXAMPLES=	cron.hourly message.txt
@@ -23,7 +22,7 @@ EXAMPLES=	cron.hourly message.txt
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 
 do-install:
 	cd ${WRKSRC} && ./installer

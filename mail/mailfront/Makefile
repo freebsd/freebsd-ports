@@ -37,7 +37,7 @@ do-configure:
 	${ECHO_CMD} "${MODULES_DIR}"	> ${WRKSRC}/conf-modules
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${CFLAGS_SO}"> ${WRKSRC}/conf-ccso
-	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 	${ECHO_CMD} "${QMAIL_PREFIX}"	> ${WRKSRC}/conf-qmail

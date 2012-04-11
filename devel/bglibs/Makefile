@@ -22,7 +22,6 @@ NOT_FOR_ARCHS=	alpha
 
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:env
-LDFLAGS?=	-s
 BGLIBS_INC=	${PREFIX}/include/${PORTNAME}
 BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
 USE_LDCONFIG=	${BGLIBS_LIB}
@@ -35,7 +34,7 @@ post-patch:
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${PREFIX}/man"	> ${WRKSRC}/conf-man
