@@ -60,13 +60,13 @@ share/doc/HTML/en/fung-calc/index.docbook
 share/doc/HTML/en/fung-calc/installation.docbook
 share/doc/HTML/en/fung-calc/introduction.docbook
 share/doc/HTML/en/fung-calc/newgraph.png
-share/fung-calc/AUTHORS
-share/fung-calc/COPYING
-share/fung-calc/ChangeLog
-share/fung-calc/README
-share/fung-calc/TODO
-share/fung-calc/samplegraphs.fgc
-share/fung-calc/translations/fung-calc.es.qm
+%%DATADIR%%/AUTHORS
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/README
+%%DATADIR%%/TODO
+%%DATADIR%%/samplegraphs.fgc
+%%DATADIR%%/translations/fung-calc.es.qm
 share/icons/hicolor/16x16/apps/fung_calc.png
 share/icons/hicolor/32x32/apps/fung_calc.png
 share/icons/hicolor/48x48/apps/fung_calc.png
@@ -88,5 +88,5 @@ share/mimelnk/application/x-fgc.desktop
 @dirrmtry share/applnk
 @dirrm include/fung-calc
 @dirrm share/doc/HTML/en/fung-calc
-@dirrm share/fung-calc/translations
-@dirrm share/fung-calc
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
