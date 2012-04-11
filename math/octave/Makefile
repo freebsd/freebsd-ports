@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTVERSION=	3.6.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -126,7 +125,7 @@ post-install:
 	@${FIND} -s $d -type d -depth | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
 .endfor
-.for d in ${PREFIX}/libexec/octave/${OCTAVE_VERSION} ${PREFIX}/libexec/octave/api-v45+ ${PREFIX}/libexec/octave/site ${PREFIX}/lib/octave/site
+.for d in ${PREFIX}/libexec/octave/${OCTAVE_VERSION} ${PREFIX}/libexec/octave/api-v45+ ${PREFIX}/libexec/octave/api-v48+ ${PREFIX}/libexec/octave/site ${PREFIX}/lib/octave/site
 	@${FIND} -s $d -type d -empty | \
 		${SED} -e 's,^${PREFIX}/,@exec ${MKDIR} %D/,' \
 		-e 's,$$, 2>/dev/null || true,' >> ${WRKDIR}/PLIST
