@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-generate_html
-PORTVERSION=	0.1.3
-PORTREVISION=	3
+PORTVERSION=	0.1.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -15,7 +14,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
+OCTSRC=		${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
