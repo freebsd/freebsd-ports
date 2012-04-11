@@ -23,6 +23,7 @@ LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 USE_GNOME=	gtk12 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sdl
+PORTSCOUT=	skipv:1.1.0,1.1.1,1.1.2,1.1.3,1.1.4,1.1.5,1.1.6,1.1.7,1.1.8
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS+=	-L${LOCALBASE}/lib
