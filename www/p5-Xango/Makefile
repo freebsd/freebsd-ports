@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Event Based High Performance Web Crawler Framework
 
+DEPRECATED=	Removed from CPAN
+EXPIRATION_DATE=	2012-05-11
+
 BUILD_DEPENDS=	${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
