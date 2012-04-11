@@ -8,6 +8,7 @@ sbin/ngircd
 %%PORTDOCS%%%%DOCSDIR%%/GIT.txt
 %%PORTDOCS%%%%DOCSDIR%%/HowToRelease.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/Modes.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/PAM.txt
 %%PORTDOCS%%%%DOCSDIR%%/Platforms.txt
