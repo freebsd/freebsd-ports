@@ -14,10 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adds a .json vmethod for all TT values
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
-		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-JSON>=2.12:${PORTSDIR}/converters/p5-JSON
+BUILD_DEPENDS=	p5-JSON>=2.12:${PORTSDIR}/converters/p5-JSON \
+		p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
+		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 
 PERL_CONFIGURE=	yes
 
