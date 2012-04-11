@@ -10,6 +10,7 @@ include/openssl/bn.h
 include/openssl/buffer.h
 include/openssl/camellia.h
 include/openssl/cast.h
+include/openssl/cmac.h
 include/openssl/cms.h
 include/openssl/comp.h
 include/openssl/conf.h
@@ -59,6 +60,8 @@ include/openssl/rsa.h
 include/openssl/safestack.h
 include/openssl/seed.h
 include/openssl/sha.h
+include/openssl/srp.h
+include/openssl/srtp.h
 include/openssl/ssl.h
 include/openssl/ssl2.h
 include/openssl/ssl23.h
