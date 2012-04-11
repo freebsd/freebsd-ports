@@ -24,6 +24,9 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
+# Overriding __MAKE_CONF makes sure that we don't re-parse
+# /etc/make.conf during do-build, which would jeopardize the build
+# if, for instance, the user set CFLAGS=mumble
 MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
