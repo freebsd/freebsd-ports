@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libskk
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	japanese
 MASTER_SITES=	http://cloud.github.com/downloads/ueno/libskk/
 
