@@ -7,6 +7,7 @@
 
 PORTNAME=	xbmc
 PORTVERSION=	11.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
@@ -78,10 +79,10 @@ OPTIONS=	AVAHI		"Enable Avahi support"			on \
 		NONFREE		"Enable non-free components (rar, ccx, ffmpeg)"	off \
 		OSS		"Enable experimental OSS support"	off \
 		PULSE		"Enable PulseAudio support"		off \
-		RTMP		"RTMP support via librtmp"		off \
+		RTMP		"RTMP support via librtmp"		on \
 		VAAPI		"Enable VAAPI support"			off \
 		VDPAU		"Enable VDPAU support"			off \
-		WEBSERVER	"Build Internal Webserver"		off
+		WEBSERVER	"Build Internal Webserver"		on
 
 DESKTOP_ENTRIES="XBMC" \
 		"${COMMENT}" \
