@@ -1,0 +1,571 @@
+From 77f7c815c4de0f1e51550efc5779863aef52259e Mon Sep 17 00:00:00 2001
+From: Matthaus Litteken <matthaus@puppetlabs.com>
+Date: Wed, 4 Apr 2012 14:33:33 -0700
+Subject: [PATCH] 2.7 - Fixes for CVEs 2012-1906, 2012-1986 to 2012-1989
+
+Squashed commit of the following:
+
+commit 1f58ea69847ee6ce7a8b9be255614f8f7384c209
+Author: Patrick Carlisle <patrick@puppetlabs.com>
+Date:   Wed Apr 4 13:36:06 2012 -0700
+
+    Stub mktmpdir and remove_entry_secure in os x package providers
+
+commit b7553a555774d687d2c96f5a2d7b430fbf49c130
+Author: Patrick Carlisle <patrick@puppetlabs.com>
+Date:   Tue Apr 3 16:17:18 2012 -0700
+
+    (#13260) Spec test to verify that mktmpdir is used
+
+commit 46e8dc06aa31426ec3bf5203e46107d72a9ba398
+Author: Patrick Carlisle <patrick@puppetlabs.com>
+Date:   Fri Mar 23 12:20:40 2012 -0700
+
+    (#13260) Use mktmpdir when downloading packages
+
+    This fixes a security vulnerability in the appdmg and pkgdmg providers where
+    they would curl packages directly into /tmp and the install them, allowing an
+    attacker to craft a symlink and overwrite arbitrary files or install arbitrary
+    packages.
+
+commit b36bda9ceb14b746a5b37553bff15aaeec7b20fc
+Author: Patrick Carlisle <patrick@puppetlabs.com>
+Date:   Fri Mar 16 14:44:44 2012 -0700
+
+    Refactor pkgdmg specs
+
+    Refactor to a more current spec style. Several of these specs didn't actually
+    test anything. They have either been deleted or made more specific.
+
+commit 91e7ce478649490d87684661f79d70b5ca46ddd0
+Author: Matthaus Litteken <matthaus@puppetlabs.com>
+Date:   Tue Apr 3 11:34:33 2012 -0700
+
+    Remove telnet Output_log parameter
+
+    The puppet telnet util opened an output log by default with a predictable name.
+    This left the log open to a write-through symlink attack as the puppet user.
+    This fix addresses that by removing the Output_log parameter from the
+    Net::Telnet::new call. Without the parameter, Net::Telnet defaults to no output
+    logging. The same is true for the dump_log parameter. The spec test for telnet
+    has been updated to test and ensure that no files are opened during connect. It
+    also stubs the TCPSocket for the telnet connection so that no connection is
+    attempted if @transport.connect isn't stubbed.
+
+commit 0d6d29933e613fe177e9235415919a5428db67bc
+Author: Andrew Parker <andy@puppetlabs.com>
+Date:   Mon Apr 2 11:47:17 2012 -0700
+
+    Fix for bucket_path security vulnerability
+
+    This is a fix for Bugs #13553, #13418, #13511. The bucket_path parameter
+    allowed control over where the filebucket will try to read and write to.
+    The only place available to stop this parameter is in the resolution
+    from a URI to an indirectory terminus. The bucket_path is used
+    internally for local filebuckets and so cannot be removed completely
+    without a larger change to the design.
+
+commit 19bd30a35c0dcf01d58934413d7dabb7edfabd3f
+Author: Andrew Parker <andy@puppetlabs.com>
+Date:   Mon Apr 2 10:44:26 2012 -0700
+
+    Removed text/marshal support
+
+    Removing text/marshal support in order to close the security
+    vulnerability described in Bug #13552.
+---
+ lib/puppet/network/formats.rb                      |   27 ------
+ lib/puppet/network/http/api/v1.rb                  |    1 +
+ lib/puppet/provider/package/appdmg.rb              |   26 ++---
+ lib/puppet/provider/package/pkgdmg.rb              |   36 +++----
+ lib/puppet/util/network_device/transport/telnet.rb |    4 +-
+ spec/unit/network/formats_spec.rb                  |   43 ---------
+ spec/unit/network/http/api/v1_spec.rb              |    8 ++
+ spec/unit/provider/package/appdmg_spec.rb          |   42 ++++++++
+ spec/unit/provider/package/pkgdmg_spec.rb          |  102 +++++++++++---------
+ .../util/network_device/transport/telnet_spec.rb   |    9 ++
+ 10 files changed, 144 insertions(+), 154 deletions(-)
+ create mode 100755 spec/unit/provider/package/appdmg_spec.rb
+
+diff --git a/lib/puppet/network/formats.rb b/lib/puppet/network/formats.rb
+index 082c83e..c5af288 100644
+--- lib/puppet/network/formats.rb
++++ lib/puppet/network/formats.rb
+@@ -77,33 +77,6 @@ Puppet::Network::FormatHandler.create_serialized_formats(:b64_zlib_yaml) do
+   end
+ end
+ 
+-
+-Puppet::Network::FormatHandler.create(:marshal, :mime => "text/marshal") do
+-  # Marshal doesn't need the class name; it's serialized.
+-  def intern(klass, text)
+-    Marshal.load(text)
+-  end
+-
+-  # Marshal doesn't need the class name; it's serialized.
+-  def intern_multiple(klass, text)
+-    Marshal.load(text)
+-  end
+-
+-  def render(instance)
+-    Marshal.dump(instance)
+-  end
+-
+-  # Marshal monkey-patches Array, so this works.
+-  def render_multiple(instances)
+-    Marshal.dump(instances)
+-  end
+-
+-  # Everything's supported
+-  def supported?(klass)
+-    true
+-  end
+-end
+-
+ Puppet::Network::FormatHandler.create(:s, :mime => "text/plain", :extension => "txt")
+ 
+ # A very low-weight format so it'll never get chosen automatically.
+diff --git a/lib/puppet/network/http/api/v1.rb b/lib/puppet/network/http/api/v1.rb
+index 852568a..ef19fe4 100644
+--- lib/puppet/network/http/api/v1.rb
++++ lib/puppet/network/http/api/v1.rb
+@@ -31,6 +31,7 @@ module Puppet::Network::HTTP::API::V1
+     method = indirection_method(http_method, indirection)
+ 
+     params[:environment] = Puppet::Node::Environment.new(environment)
++    params.delete(:bucket_path)
+ 
+     raise ArgumentError, "No request key specified in #{uri}" if key == "" or key.nil?
+ 
+diff --git a/lib/puppet/provider/package/appdmg.rb b/lib/puppet/provider/package/appdmg.rb
+index 6c5099a..1e292e3 100644
+--- lib/puppet/provider/package/appdmg.rb
++++ lib/puppet/provider/package/appdmg.rb
+@@ -50,23 +50,24 @@ Puppet::Type.type(:package).provide(:appdmg, :parent => Puppet::Provider::Packag
+ 
+   def self.installpkgdmg(source, name)
+     unless source =~ /\.dmg$/i
+-      self.fail "Mac OS X PKG DMG's must specificy a source string ending in .dmg"
++      self.fail "Mac OS X PKG DMG's must specify a source string ending in .dmg"
+     end
+     require 'open-uri'
+     require 'facter/util/plist'
+     cached_source = source
+-    if %r{\A[A-Za-z][A-Za-z0-9+\-\.]*://} =~ cached_source
+-      cached_source = "/tmp/#{name}"
+-      begin
+-        curl "-o", cached_source, "-C", "-", "-k", "-L", "-s", "--url", source
+-        Puppet.debug "Success: curl transfered [#{name}]"
+-      rescue Puppet::ExecutionFailure
+-        Puppet.debug "curl did not transfer [#{name}].  Falling back to slower open-uri transfer methods."
+-        cached_source = source
++    tmpdir = Dir.mktmpdir
++    begin
++      if %r{\A[A-Za-z][A-Za-z0-9+\-\.]*://} =~ cached_source
++        cached_source = File.join(tmpdir, name)
++        begin
++          curl "-o", cached_source, "-C", "-", "-k", "-L", "-s", "--url", source
++          Puppet.debug "Success: curl transfered [#{name}]"
++        rescue Puppet::ExecutionFailure
++          Puppet.debug "curl did not transfer [#{name}].  Falling back to slower open-uri transfer methods."
++          cached_source = source
++        end
+       end
+-    end
+ 
+-    begin
+       open(cached_source) do |dmg|
+         xml_str = hdiutil "mount", "-plist", "-nobrowse", "-readonly", "-mountrandom", "/tmp", dmg.path
+           ptable = Plist::parse_xml xml_str
+@@ -87,8 +88,7 @@ Puppet::Type.type(:package).provide(:appdmg, :parent => Puppet::Provider::Packag
+           end
+       end
+     ensure
+-      # JJM Remove the file if open-uri didn't already do so.
+-      File.unlink(cached_source) if File.exist?(cached_source)
++      FileUtils.remove_entry_secure(tmpdir, force=true)
+     end
+   end
+ 
+diff --git a/lib/puppet/provider/package/pkgdmg.rb b/lib/puppet/provider/package/pkgdmg.rb
+index c1268be..be9d3a7 100644
+--- lib/puppet/provider/package/pkgdmg.rb
++++ lib/puppet/provider/package/pkgdmg.rb
+@@ -39,11 +39,7 @@ Puppet::Type.type(:package).provide :pkgdmg, :parent => Puppet::Provider::Packag
+ 
+   def self.instances
+     instance_by_name.collect do |name|
+-      new(
+-        :name     => name,
+-        :provider => :pkgdmg,
+-        :ensure   => :installed
+-      )
++      new(:name => name, :provider => :pkgdmg, :ensure => :installed)
+     end
+   end
+ 
+@@ -58,22 +54,23 @@ Puppet::Type.type(:package).provide :pkgdmg, :parent => Puppet::Provider::Packag
+ 
+   def self.installpkgdmg(source, name)
+     unless source =~ /\.dmg$/i || source =~ /\.pkg$/i
+-      raise Puppet::Error.new("Mac OS X PKG DMG's must specificy a source string ending in .dmg or flat .pkg file")
++      raise Puppet::Error.new("Mac OS X PKG DMG's must specify a source string ending in .dmg or flat .pkg file")
+     end
+     require 'open-uri'
+     cached_source = source
+-    if %r{\A[A-Za-z][A-Za-z0-9+\-\.]*://} =~ cached_source
+-      cached_source = "/tmp/#{name}"
+-      begin
+-        curl "-o", cached_source, "-C", "-", "-k", "-L", "-s", "--url", source
+-        Puppet.debug "Success: curl transfered [#{name}]"
+-      rescue Puppet::ExecutionFailure
+-        Puppet.debug "curl did not transfer [#{name}].  Falling back to slower open-uri transfer methods."
+-        cached_source = source
++    tmpdir = Dir.mktmpdir
++    begin
++      if %r{\A[A-Za-z][A-Za-z0-9+\-\.]*://} =~ cached_source
++        cached_source = File.join(tmpdir, name)
++        begin
++          curl "-o", cached_source, "-C", "-", "-k", "-L", "-s", "--url", source
++          Puppet.debug "Success: curl transfered [#{name}]"
++        rescue Puppet::ExecutionFailure
++          Puppet.debug "curl did not transfer [#{name}].  Falling back to slower open-uri transfer methods."
++          cached_source = source
++        end
+       end
+-    end
+ 
+-    begin
+       if source =~ /\.dmg$/i
+         File.open(cached_source) do |dmg|
+           xml_str = hdiutil "mount", "-plist", "-nobrowse", "-readonly", "-noidme", "-mountrandom", "/tmp", dmg.path
+@@ -96,14 +93,11 @@ Puppet::Type.type(:package).provide :pkgdmg, :parent => Puppet::Provider::Packag
+             end
+           end
+         end
+-      elsif source =~ /\.pkg$/i
+-        installpkg(cached_source, name, source)
+       else
+-        raise Puppet::Error.new("Mac OS X PKG DMG's must specificy a source string ending in .dmg or flat .pkg file")
++        installpkg(cached_source, name, source)
+       end
+     ensure
+-      # JJM Remove the file if open-uri didn't already do so.
+-      File.unlink(cached_source) if File.exist?(cached_source)
++      FileUtils.remove_entry_secure(tmpdir, force=true)
+     end
+   end
+ 
+diff --git a/lib/puppet/util/network_device/transport/telnet.rb b/lib/puppet/util/network_device/transport/telnet.rb
+index e55079e..e9322f8 100644
+--- lib/puppet/util/network_device/transport/telnet.rb
++++ lib/puppet/util/network_device/transport/telnet.rb
+@@ -15,7 +15,7 @@ class Puppet::Util::NetworkDevice::Transport::Telnet < Puppet::Util::NetworkDevi
+     def connect
+       @telnet = Net::Telnet::new("Host" => host, "Port" => port || 23,
+                                  "Timeout" => 10,
+-                                 "Prompt" => default_prompt, "Output_log" => "/tmp/out.log")
++                                 "Prompt" => default_prompt)
+     end
+ 
+     def close
+@@ -39,4 +39,4 @@ class Puppet::Util::NetworkDevice::Transport::Telnet < Puppet::Util::NetworkDevi
+     def send(line)
+       @telnet.puts(line)
+     end
+-end
+\ No newline at end of file
++end
+diff --git a/spec/unit/network/formats_spec.rb b/spec/unit/network/formats_spec.rb
+index 62c2dbb..635e695 100755
+--- spec/unit/network/formats_spec.rb
++++ spec/unit/network/formats_spec.rb
+@@ -162,49 +162,6 @@ describe "Puppet Network Format" do
+ 
+   end
+ 
+-  it "should include a marshal format" do
+-    Puppet::Network::FormatHandler.format(:marshal).should_not be_nil
+-  end
+-
+-  describe "marshal" do
+-    before do
+-      @marshal = Puppet::Network::FormatHandler.format(:marshal)
+-    end
+-
+-    it "should have its mime type set to text/marshal" do
+-      Puppet::Network::FormatHandler.format(:marshal).mime.should == "text/marshal"
+-    end
+-
+-    it "should be supported on Strings" do
+-      @marshal.should be_supported(String)
+-    end
+-
+-    it "should render by calling 'Marshal.dump' on the instance" do
+-      instance = mock 'instance'
+-      Marshal.expects(:dump).with(instance).returns "foo"
+-      @marshal.render(instance).should == "foo"
+-    end
+-
+-    it "should render multiple instances by calling 'to_marshal' on the array" do
+-      instances = [mock('instance')]
+-
+-      Marshal.expects(:dump).with(instances).returns "foo"
+-      @marshal.render_multiple(instances).should == "foo"
+-    end
+-
+-    it "should intern by calling 'Marshal.load'" do
+-      text = "foo"
+-      Marshal.expects(:load).with("foo").returns "bar"
+-      @marshal.intern(String, text).should == "bar"
+-    end
+-
+-    it "should intern multiples by calling 'Marshal.load'" do
+-      text = "foo"
+-      Marshal.expects(:load).with("foo").returns "bar"
+-      @marshal.intern_multiple(String, text).should == "bar"
+-    end
+-  end
+-
+   describe "plaintext" do
+     before do
+       @text = Puppet::Network::FormatHandler.format(:s)
+diff --git a/spec/unit/network/http/api/v1_spec.rb b/spec/unit/network/http/api/v1_spec.rb
+index 039bccf..115f573 100755
+--- spec/unit/network/http/api/v1_spec.rb
++++ spec/unit/network/http/api/v1_spec.rb
+@@ -42,6 +42,14 @@ describe Puppet::Network::HTTP::API::V1 do
+       @tester.uri2indirection("GET", "/env/foo/bar", {:environment => "otherenv"})[3][:environment].to_s.should == "env"
+     end
+ 
++    it "should not pass a buck_path parameter through (See Bugs #13553, #13518, #13511)" do
++      @tester.uri2indirection("GET", "/env/foo/bar", { :bucket_path => "/malicious/path" })[3].should_not include({ :bucket_path => "/malicious/path" })
++    end
++
++    it "should pass allowed parameters through" do
++      @tester.uri2indirection("GET", "/env/foo/bar", { :allowed_param => "value" })[3].should include({ :allowed_param => "value" })
++    end
++
+     it "should return the environment as a Puppet::Node::Environment" do
+       @tester.uri2indirection("GET", "/env/foo/bar", {})[3][:environment].should be_a Puppet::Node::Environment
+     end
+diff --git a/spec/unit/provider/package/appdmg_spec.rb b/spec/unit/provider/package/appdmg_spec.rb
+new file mode 100755
+index 0000000..bde9efc
+--- /dev/null
++++ spec/unit/provider/package/appdmg_spec.rb
+@@ -0,0 +1,42 @@
++#!/usr/bin/env rspec
++require 'spec_helper'
++
++describe Puppet::Type.type(:package).provider(:appdmg) do
++  let(:resource) { Puppet::Type.type(:package).new(:name => 'foo', :provider => :appdmg) }
++  let(:provider) { described_class.new(resource) }
++
++  describe "when installing an appdmg" do
++    let(:fake_mountpoint) { "/tmp/dmg.foo" }
++    let(:empty_hdiutil_plist) { Plist::Emit.dump({}) }
++    let(:fake_hdiutil_plist) { Plist::Emit.dump({"system-entities" => [{"mount-point" => fake_mountpoint}]}) }
++
++    before do
++      fh = mock 'filehandle'
++      fh.stubs(:path).yields "/tmp/foo"
++      resource[:source] = "foo.dmg"
++      described_class.stubs(:open).yields fh
++      Dir.stubs(:mktmpdir).returns "/tmp/testtmp123"
++      FileUtils.stubs(:remove_entry_secure)
++    end
++
++    describe "from a remote source" do
++      let(:tmpdir) { "/tmp/good123" }
++
++      before :each do
++        resource[:source] = "http://fake.puppetlabs.com/foo.dmg"
++      end
++
++      it "should call tmpdir and use the returned directory" do
++        Dir.expects(:mktmpdir).returns tmpdir
++        Dir.stubs(:entries).returns ["foo.app"]
++        described_class.expects(:curl).with do |*args|
++          args[0] == "-o" and args[1].include? tmpdir
++        end
++        described_class.stubs(:hdiutil).returns fake_hdiutil_plist
++        described_class.expects(:installapp)
++
++        provider.install
++      end
++    end
++  end
++end
+diff --git a/spec/unit/provider/package/pkgdmg_spec.rb b/spec/unit/provider/package/pkgdmg_spec.rb
+index 155f12e..f8b2316 100755
+--- spec/unit/provider/package/pkgdmg_spec.rb
++++ spec/unit/provider/package/pkgdmg_spec.rb
+@@ -1,83 +1,89 @@
+ #!/usr/bin/env rspec
+ require 'spec_helper'
+ 
+-provider = Puppet::Type.type(:package).provider(:pkgdmg)
++describe Puppet::Type.type(:package).provider(:pkgdmg) do
++  let(:resource) { Puppet::Type.type(:package).new(:name => 'foo', :provider => :pkgdmg) }
++  let(:provider) { described_class.new(resource) }
+ 
+-describe provider do
+-  before do
+-    @resource = stub 'resource', :[] => "dummypkgdmg"
+-    @provider = provider.new(@resource)
+-
+-    @fakemountpoint   = "/tmp/dmg.foo"
+-    @fakepkgfile      = "/tmp/test.pkg"
+-    @fakehdiutilinfo  = {"system-entities" => [{"mount-point" => @fakemountpoint}] }
+-    @fakehdiutilplist = Plist::Emit.dump(@fakehdiutilinfo)
+-
+-    @hdiutilmountargs = ["mount", "-plist", "-nobrowse", "-readonly",
+-      "-noidme", "-mountrandom", "/tmp"]
+-  end
+-
+-  it "should not be versionable" do
+-    provider.versionable?.should be_false
+-  end
+-
+-  it "should not be uninstallable" do
+-    provider.uninstallable?.should be_false
+-  end
++  it { should_not be_versionable }
++  it { should_not be_uninstallable }
+ 
+   describe "when installing it should fail when" do
+-    it "no source is specified" do
+-      @resource.stubs(:[]).with(:source).returns nil
+-      lambda { @provider.install }.should raise_error(Puppet::Error)
++    before :each do
++      Puppet::Util.expects(:execute).never
+     end
+ 
+-    it "no name is specified" do
+-      @resource.stubs(:[]).with(:name).returns nil
+-      lambda { @provider.install }.should raise_error(Puppet::Error)
++    it "no source is specified" do
++      expect { provider.install }.should raise_error(Puppet::Error, /must specify a package source/)
+     end
+ 
+     it "the source does not end in .dmg or .pkg" do
+-      @resource.stubs(:[]).with(:source).returns "notendingindotdmgorpkg"
+-      lambda { @provider.install }.should raise_error(Puppet::Error)
+-    end
+-
+-    it "a disk image with no system entities is mounted" do
+-      @provider.stubs(:[]).with(:hdiutil).returns ""
+-      lambda { @provider.install }.should raise_error(Puppet::Error)
++      resource[:source] = "bar"
++      expect { provider.install }.should raise_error(Puppet::Error, /must specify a source string ending in .*dmg.*pkg/)
+     end
+   end
+ 
+   # These tests shouldn't be this messy. The pkgdmg provider needs work...
+   describe "when installing a pkgdmg" do
++    let(:fake_mountpoint) { "/tmp/dmg.foo" }
++    let(:empty_hdiutil_plist) { Plist::Emit.dump({}) }
++    let(:fake_hdiutil_plist) { Plist::Emit.dump({"system-entities" => [{"mount-point" => fake_mountpoint}]}) }
++
+     before do
+       fh = mock 'filehandle'
+       fh.stubs(:path).yields "/tmp/foo"
+-      @resource.stubs(:[]).with(:source).returns "foo.dmg"
++      resource[:source] = "foo.dmg"
+       File.stubs(:open).yields fh
++      Dir.stubs(:mktmpdir).returns "/tmp/testtmp123"
++      FileUtils.stubs(:remove_entry_secure)
++    end
++
++    it "should fail when a disk image with no system entities is mounted" do
++      described_class.stubs(:hdiutil).returns(empty_hdiutil_plist)
++      expect { provider.install }.should raise_error(Puppet::Error, /No disk entities/)
+     end
+ 
+     it "should call hdiutil to mount and eject the disk image" do
+       Dir.stubs(:entries).returns []
+-      @provider.class.expects(:hdiutil).with("eject", @fakemountpoint).returns 0
+-      @provider.class.expects(:hdiutil).with("mount", "-plist", "-nobrowse", "-readonly", "-noidme", "-mountrandom", "/tmp", nil).returns @fakehdiutilplist
+-      @provider.install
++      provider.class.expects(:hdiutil).with("eject", fake_mountpoint).returns 0
++      provider.class.expects(:hdiutil).with("mount", "-plist", "-nobrowse", "-readonly", "-noidme", "-mountrandom", "/tmp", nil).returns fake_hdiutil_plist
++      provider.install
+     end
+ 
+     it "should call installpkg if a pkg/mpkg is found on the dmg" do
+       Dir.stubs(:entries).returns ["foo.pkg"]
+-      @provider.class.stubs(:hdiutil).returns @fakehdiutilplist
+-      @provider.class.expects(:installpkg).with("#{@fakemountpoint}/foo.pkg", @resource[:name], "foo.dmg").returns ""
+-      @provider.install
++      provider.class.stubs(:hdiutil).returns fake_hdiutil_plist
++      provider.class.expects(:installpkg).with("#{fake_mountpoint}/foo.pkg", resource[:name], "foo.dmg").returns ""
++      provider.install
++    end
++
++    describe "from a remote source" do
++      let(:tmpdir) { "/tmp/good123" }
++
++      before :each do
++        resource[:source] = "http://fake.puppetlabs.com/foo.dmg"
++      end
++
++      it "should call tmpdir and use the returned directory" do
++        Dir.expects(:mktmpdir).returns tmpdir
++        Dir.stubs(:entries).returns ["foo.pkg"]
++        described_class.expects(:curl).with do |*args|
++          args[0] == "-o" and args[1].include? tmpdir
++        end
++        described_class.stubs(:hdiutil).returns fake_hdiutil_plist
++        described_class.expects(:installpkg)
++
++        provider.install
++      end
+     end
+   end
+ 
+   describe "when installing flat pkg file" do
+     it "should call installpkg if a flat pkg file is found instead of a .dmg image" do
+-      @resource.stubs(:[]).with(:source).returns "/tmp/test.pkg"
+-      @resource.stubs(:[]).with(:name).returns "testpkg"
+-        @provider.class.expects(:installpkgdmg).with("#{@fakepkgfile}", "testpkg").returns ""
+-        @provider.install
+-        end
++      resource[:source] = "/tmp/test.pkg"
++      resource[:name] = "testpkg"
++      provider.class.expects(:installpkgdmg).with("/tmp/test.pkg", "testpkg").returns ""
++      provider.install
++    end
+   end
+-
+ end
+diff --git a/spec/unit/util/network_device/transport/telnet_spec.rb b/spec/unit/util/network_device/transport/telnet_spec.rb
+index cea5ab7..0f73f52 100755
+--- spec/unit/util/network_device/transport/telnet_spec.rb
++++ spec/unit/util/network_device/transport/telnet_spec.rb
+@@ -6,6 +6,7 @@ require 'puppet/util/network_device/transport/telnet'
+ describe Puppet::Util::NetworkDevice::Transport::Telnet do
+ 
+   before(:each) do
++    TCPSocket.stubs(:open).returns stub_everything('tcp')
+     @transport = Puppet::Util::NetworkDevice::Transport::Telnet.new()
+   end
+ 
+@@ -13,6 +14,14 @@ describe Puppet::Util::NetworkDevice::Transport::Telnet do
+     @transport.should_not be_handles_login
+   end
+ 
++  it "should not open any files" do
++    File.expects(:open).never
++    @transport.host = "localhost"
++    @transport.port = 23
++
++    @transport.connect
++  end
++
+   it "should connect to the given host and port" do
+     Net::Telnet.expects(:new).with { |args| args["Host"] == "localhost" && args["Port"] == 23 }.returns stub_everything
+     @transport.host = "localhost"
+-- 
+1.7.9.2
+
