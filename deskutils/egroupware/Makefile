@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.002.20111111
+PORTVERSION=	1.8.004.20120407
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
@@ -24,7 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PEARDIR=	${LOCALBASE}/share/pear
 USE_BZIP2=	yes
-USE_PHP=	session ctype
+USE_PHP=	session ctype zlib bz2 mcrypt xmlreader
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
@@ -33,6 +33,9 @@ SUB_LIST=	EG_DIR=${EG_DIR} \
 
 OPTIONS=	MYSQL "Use MySQL database" on \
 		POSTGRE "Use PostgreSQL Database" off \
+		OSSL "Enable SSL connection support (for IMAP eg.)" on \
+		TNEF "Supports decoding winmail.dat attachments in felamimail" on \
+		ZIP "Enable contact data insertion for O/MS/Libre Office documents." on \
 		IMAP "Enable Mail support in eGroupware" on \
 		GD "Enable graphic support (needs xorg-libraries)" off \
 		LDAP "Contacts can be stored using OpenLDAP" off \
@@ -53,6 +56,15 @@ USE_PHP+=	mbstring
 .endif
 .if defined(WITH_IMAP)
 USE_PHP+=	imap
+.endif
+.if defined(WITH_OSSL)
+USE_PHP+=	openssl
+.endif
+.if defined(WITH_TNEF)
+RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
+.endif
+.if defined(WITH_ZIP)
+USE_PHP+=	zip
 .endif
 .if defined(WITH_GD)
 USE_PHP+=	gd
