@@ -852,6 +852,7 @@
     SUBDIR += prtunnel
     SUBDIR += ptpd
     SUBDIR += ptpd2
+    SUBDIR += ptpd2-devel
     SUBDIR += ptunnel
     SUBDIR += pure-sockets
     SUBDIR += pvm
