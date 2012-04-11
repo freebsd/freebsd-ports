@@ -17,6 +17,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PHP extension for JSON (JavaScript Object Notation) serialization for PHP 4
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-11
+
 LICENSE=	PHP301
 
 USE_PHP=	yes
