@@ -102,6 +102,9 @@
 %%PYTHON_SITELIBDIR%%/pyNN/neuroml.py
 %%PYTHON_SITELIBDIR%%/pyNN/neuroml.pyc
 %%PYTHON_SITELIBDIR%%/pyNN/neuroml.pyo
+%%PYTHON_SITELIBDIR%%/pyNN/neuroml2.py
+%%PYTHON_SITELIBDIR%%/pyNN/neuroml2.pyc
+%%PYTHON_SITELIBDIR%%/pyNN/neuroml2.pyo
 %%PYTHON_SITELIBDIR%%/pyNN/neuron/__init__.py
 %%PYTHON_SITELIBDIR%%/pyNN/neuron/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyNN/neuron/__init__.pyo
