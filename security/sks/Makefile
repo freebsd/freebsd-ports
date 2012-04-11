@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sks
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -33,6 +33,10 @@ PORTDOCS=	BUGS README TODO
 
 post-extract:
 	@: > ${WRKSRC}/Makefile.local
+	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile
+
+pre-build:
+	@cd ${WRKSRC} && test -f .depend || ${GMAKE} dep
 
 post-install:
 .if !defined(NOPORTDOCS)
