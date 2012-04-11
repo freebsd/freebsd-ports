@@ -1,17 +1,24 @@
---- Makefile.in.old	Sun Apr  4 23:36:26 2004
-+++ Makefile.in	Sun Apr  4 23:38:38 2004
-@@ -377,9 +377,12 @@
- $(DESTDIR)@datadir@/tpl: conf_dir
- 	install -d $(DESTDIR)@datadir@/masqmail/tpl
- 	install -m 644 tpl/failmsg.tpl $(DESTDIR)@datadir@/masqmail/tpl
--	install -m 644 tpl/failmsg.tpl.{de,fr,it} $(DESTDIR)@datadir@/masqmail/tpl
-+	install -m 644 tpl/failmsg.tpl.de $(DESTDIR)@datadir@/masqmail/tpl
-+	install -m 644 tpl/failmsg.tpl.fr $(DESTDIR)@datadir@/masqmail/tpl
-+	install -m 644 tpl/failmsg.tpl.it $(DESTDIR)@datadir@/masqmail/tpl
- 	install -m 644 tpl/warnmsg.tpl $(DESTDIR)@datadir@/masqmail/tpl
--	install -m 644 tpl/warnmsg.tpl.{de,fr} $(DESTDIR)@datadir@/masqmail/tpl
-+	install -m 644 tpl/warnmsg.tpl.de $(DESTDIR)@datadir@/masqmail/tpl
-+	install -m 644 tpl/warnmsg.tpl.fr $(DESTDIR)@datadir@/masqmail/tpl
+--- Makefile.in.orig	2012-04-04 02:18:39.238237978 +0600
++++ Makefile.in	2012-04-04 02:19:13.710250762 +0600
+@@ -689,7 +689,7 @@
+ 	uninstall uninstall-am uninstall-local
  
- log_dir: $(DESTDIR)@with_logdir@
  
+-install-data-local: log_dir spool_dir uid_bit conf_dir tpl_dir run_dir doc_dir rmail
++install-data-local: log_dir spool_dir uid_bit conf_dir tpl_dir run_dir rmail
+ 
+ uninstall-local: rm-rmail rm-doc_dir rm-tpl_dir rm-conf_dir rm-run_dir rm-spool_dir rm-log_dir
+ 
+@@ -707,12 +707,6 @@
+ rm-tpl_dir:
+ 	rm -rf $(DESTDIR)@datadir@/masqmail/
+ 
+-doc_dir:
+-	install -d $(DESTDIR)@docdir@
+-	cp -r docs $(DESTDIR)@docdir@
+-	cp -r examples $(DESTDIR)@docdir@
+-	cp ChangeLog NEWS AUTHORS COPYING README TODO INSTALL THANKS $(DESTDIR)@docdir@
+-
+ rm-doc_dir:
+ 	cd $(DESTDIR)@docdir@ && ( \
+ 	    rm -rf docs examples ; \
