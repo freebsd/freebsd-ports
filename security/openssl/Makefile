@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	1.0.0
-DISTVERSIONSUFFIX=	h
-PORTREVISION=	10
+PORTVERSION=	1.0.1
+#DISTVERSIONSUFFIX=	a
+#PORTREVISION=	0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -29,6 +29,7 @@ OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ASM	"Build with optimized Assembler" on \
 		ZLIB	"Build with zlib compression" on \
+		SCTP	"include SCTP support" on \
 		MD2	"Build with MD2 hash (obsolete)" on \
 		RC5	"Build with RC5 chipher (patented)" off \
 		RFC3779	"Build with RFC3779 support" off
@@ -1036,7 +1037,7 @@ MLINKS=	ASN1_OBJECT_new.3 ASN1_OBJECT_free.3 \
 OPENSSL_BASE_SONAME!=	readlink ${DESTDIR}/usr/lib/libcrypto.so || true
 OPENSSL_SHLIBVER_BASE=	${OPENSSL_BASE_SONAME:E}
 OPENSSL_BASE_SOPATH=	${OPENSSL_BASE_SONAME:H}
-OPENSSL_SHLIBVER?=	7
+OPENSSL_SHLIBVER?=	8
 
 .if defined(WITH_I386)
 .if ${ARCH} == "i386"
@@ -1069,6 +1070,12 @@ USE_LDCONFIG=	yes
 EXTRACONFIGURE+=	zlib zlib-dynamic
 .else
 EXTRACONFIGURE+=	no-zlib no-zlib-dynamic
+.endif
+
+.if !defined(WITHOUT_SCTP)
+EXTRACONFIGURE+=	sctp
+.else
+EXTRACONFIGURE+=	no-sctp
 .endif
 
 .if defined(WITH_MD2)
