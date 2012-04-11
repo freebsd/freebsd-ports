@@ -9,6 +9,7 @@ PORTNAME=	ptpd
 DISTVERSION=	2.2.0
 CATEGORIES=	net
 MASTER_SITES=	SF
+CONFLICTS=	ptpd-2.r.*
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
