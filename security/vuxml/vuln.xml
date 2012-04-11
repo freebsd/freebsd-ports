@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="607d2108-a0e4-423a-bf78-846f2a8f01b0">
+    <topic>Puppet -- High and moderate severity vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>puppet</name>
+	<range><lt>2.7.12_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <blockquote cite="http://puppetlabs.com/security/">
+	  <p>Multiple vulnerabilities exist in puppet that can result in
+	     arbitrary code execution, arbitrary file read access, denial of
+	     service, and arbitrary file write access.  Please review the
+	     details in each of the CVEs for additional information.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1906</cvename>
+      <url>http://puppetlabs.com/security/cve/cve-2012-1906/</url>
+      <cvename>CVE-2012-1986</cvename>
+      <url>http://puppetlabs.com/security/cve/cve-2012-1986/</url>
+      <cvename>CVE-2012-1987</cvename>
+      <url>http://puppetlabs.com/security/cve/cve-2012-1987/</url>
+      <cvename>CVE-2012-1988</cvename>
+      <url>http://puppetlabs.com/security/cve/cve-2012-1988/</url>
+      <cvename>CVE-2012-1989</cvename>
+      <url>http://puppetlabs.com/security/cve/cve-2012-1989/</url>
+    </references>
+    <dates>
+      <discovery>2012-03-26</discovery>
+      <entry>2012-04-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="baf37cd2-8351-11e1-894e-00215c6a37bb">
     <topic>samba -- "root" credential remote code execution</topic>
     <affects>
