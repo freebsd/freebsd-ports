@@ -7,7 +7,7 @@
 
 PORTNAME=	ogmtools
 PORTVERSION=	1.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
@@ -48,9 +48,7 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libdvdread.so.4)
-WITH_DVDREAD=yes
-.endif
+OPTIONS=	DVDREAD "DVD title chapter extraction via libdvdread" on
 
 .ifdef(WITH_DVDREAD)
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
@@ -64,11 +62,6 @@ MAN1+=	dvdxchap.1
 .else
 CONFIGURE_ARGS+=	--without-dvdread
 PLIST_SUB+=	WITH_DVDREAD="@comment "
-.endif
-
-pre-everything::
-.ifndef(WITH_DVDREAD)
-	@${ECHO_MSG} "===> Define WITH_DVDREAD in order to be able to 'Extract chapter information from DVDs'"
 .endif
 
 .include <bsd.port.post.mk>
