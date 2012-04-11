@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	adzap
-PORTVERSION=	20090301
+PORTVERSION=	20110915
 CATEGORIES=	www perl5
 MASTER_SITES=	http://adzapper.sourceforge.net/
 
@@ -19,13 +19,13 @@ SUB_FILES=	adzap.conf pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-configure:
-.for FILE in squid_redirect wrapzap zapchain
+.for FILE in squid_redirect-nodata wrapzap zapchain
 	${REINPLACE_CMD} -e "s:/usr/bin/perl:${PERL5}:g" \
 			-e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/scripts/${FILE}
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/squid_redirect ${PREFIX}/libexec/
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/squid_redirect-nodata ${PREFIX}/libexec/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/wrapzap ${PREFIX}/libexec/adzap
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/zapchain ${PREFIX}/libexec/
 	${INSTALL} -d ${EXAMPLESDIR}

@@ -1,5 +1,5 @@
 libexec/adzap
-libexec/squid_redirect
+libexec/squid_redirect-nodata
 libexec/zapchain
 %%EXAMPLESDIR%%/adzap.conf
 %%EXAMPLESDIR%%/rc/proxy-home.pac
