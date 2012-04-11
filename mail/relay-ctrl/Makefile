@@ -31,7 +31,7 @@ SUB_LIST=	EXPIRY=${RELAY_CTRL_EXPIRY} FIXUP=${RELAY_CTRL_RELAYCLIENT}
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
-	${ECHO_CMD} "${CC} ${STRIP}"		> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDGFLAGS} "	> ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
 

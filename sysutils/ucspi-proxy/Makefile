@@ -16,7 +16,7 @@ COMMENT=	A proxy program for UCSPI servers and clients
 BUILD_DEPENDS=	${BGLIBS_LIB}/libbg-unix.a:${PORTSDIR}/devel/bglibs
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-s -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
 
@@ -29,7 +29,7 @@ do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"     > ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"  > ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"   > ${WRKSRC}/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"  > ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"  > ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${BGLIBS_INCLUDE}" > ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${BGLIBS_LIB}"     > ${WRKSRC}/conf-bglibs
 

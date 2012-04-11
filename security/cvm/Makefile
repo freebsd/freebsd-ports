@@ -21,7 +21,6 @@ CONFLICTS=	bglibs-1.00*
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	#none
 USE_LDCONFIG=	yes
-LDFLAGS?=	-s
 BGLIBS_INC=	${LOCALBASE}/include/bglibs
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 
@@ -50,7 +49,7 @@ do-configure:
 	${ECHO_CMD} "${PREFIX}/include"	> ${WRKSRC}/conf-include
 	${ECHO_CMD} "${PREFIX}/lib"	> ${WRKSRC}/conf-lib
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"       > ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-bgincs
 	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-bglibs
 

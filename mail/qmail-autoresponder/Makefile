@@ -19,7 +19,7 @@ LIB_DEPENDS=	bg-sysdeps.2:${PORTSDIR}/devel/bglibs
 USE_MYSQL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/bglibs
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/bglibs -s
+LDFLAGS+=	-L${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/bglibs
 
 PROGS=		qmail-autoresponder qmail-autoresponder-mysql
 MAN1=		qmail-autoresponder.1
@@ -31,7 +31,7 @@ do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
-	${ECHO_CMD} "${CC} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
+	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin
