@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9a
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
+MASTER_SITES=	http://members.home.nl/p.a.rombouts/pdnsd/releases/ \
+		http://distfiles.pirateparty.in/ashish/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Caching (permanently, writes to disk on exit) DNS proxy-server
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
