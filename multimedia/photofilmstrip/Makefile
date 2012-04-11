@@ -13,7 +13,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Creates movies out of your pictures
 
 LICENSE=	GPLv2
@@ -22,6 +22,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer
+
+PORTSCOUT=	skipv:1.9.90,1.9.91	# Unstable Versions
 
 USE_PYTHON=	yes
 USE_WX=		2.8+
