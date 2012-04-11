@@ -1,16 +1,42 @@
 bin/mservdetect
 etc/masqmail/masqmail.conf-dist
-etc/masqmail/masqmail.get-dist
 etc/masqmail/masqmail.route-dist
+etc/masqmail/localnet.route-dist
+etc/masqmail/openssl.route-dist
 sbin/masqmail
-share/masqmail/tpl/failmsg.tpl
-share/masqmail/tpl/failmsg.tpl.de
-share/masqmail/tpl/failmsg.tpl.fr
-share/masqmail/tpl/failmsg.tpl.it
-share/masqmail/tpl/warnmsg.tpl
-share/masqmail/tpl/warnmsg.tpl.de
-share/masqmail/tpl/warnmsg.tpl.fr
-@dirrm share/masqmail/tpl
-@dirrm share/masqmail
+sbin/rmail
+%%DATADIR%%/tpl/failmsg.tpl
+%%DATADIR%%/tpl/failmsg.tpl.de
+%%DATADIR%%/tpl/failmsg.tpl.fr
+%%DATADIR%%/tpl/failmsg.tpl.it
+%%DATADIR%%/tpl/warnmsg.tpl
+%%DATADIR%%/tpl/warnmsg.tpl.de
+%%DATADIR%%/tpl/warnmsg.tpl.fr
+%%DATADIR%%/tpl/warnmsg.tpl.it
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.ipaq
+%%PORTDOCS%%%%DOCSDIR%%/docs/ppp-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/simple-local-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/oem-option
+%%PORTDOCS%%%%DOCSDIR%%/docs/uucp-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.agenda
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-release
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-static-linking
+%%PORTDOCS%%%%DOCSDIR%%/docs/README
+%%PORTDOCS%%%%DOCSDIR%%/docs/INSTALL.linux
+%%PORTDOCS%%%%DOCSDIR%%/docs/agenda-config.site
+%%PORTDOCS%%%%DOCSDIR%%/docs/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/docs/simple-relay-setup
+%%PORTDOCS%%%%DOCSDIR%%/docs/howto-report-bugs
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/tpl
+@dirrm %%DATADIR%%
 @dirrm etc/masqmail
-@dirrmtry /var/log/masqmail
