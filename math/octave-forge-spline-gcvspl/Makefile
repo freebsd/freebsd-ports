@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-spline-gcvspl
 PORTVERSION=	1.0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

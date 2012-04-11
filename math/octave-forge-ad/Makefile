@@ -7,12 +7,14 @@
 
 PORTNAME=	octave-forge-ad
 PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+
 GNU_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"

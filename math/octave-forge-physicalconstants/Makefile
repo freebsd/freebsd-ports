@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-physicalconstants
 PORTVERSION=	0.1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

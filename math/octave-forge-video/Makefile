@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-video
 PORTVERSION=	1.0.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
