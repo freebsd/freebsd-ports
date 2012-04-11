@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME:S/098//}-${PORTVERSION}
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	A set of PHP-scripts to administer LDAP over the web
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-11
+
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session
 DEFAULT_PHP_VER=	4
