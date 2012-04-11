@@ -16,13 +16,6 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C modules potentially useful to any project
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-
-USE_GMAKE=	yes
-MAKE_ENV=	prefix="${PREFIX}" \
-		MINVERSION="${SHLIB_MAJOR}" \
-		RPM_OPT_FLAGS="${CFLAGS} -I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 USE_LDCONFIG=	yes
@@ -35,15 +28,11 @@ MANCOMPRESSED=	yes
 SHLIB_MAJOR=	0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|\$${PREFIX}|g ; \
-		 s|^CC|#CC|g ; \
-		 s|^MAJ|#MAJ|g ; \
-		 s|^MIN|#MIN|g ; \
-		 s|\.\$${MAJVERSION}||g ; \
-		 s|^RPM_OPT_FLAGS|#RPM_OPT_FLAGS|g ; \
-		 s| -lc| \$${LDFLAGS}|g ; \
-		 s|install -m ...|\$${BSD_INSTALL_DATA}|g ; \
-		 s|-/sbin/ldconfig.*$$||g ; \
-		 s|-D_XOPEN_SOURCE=500||g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,-g,$$(CFLAGS),' \
+		-e '/^prefix/s/=/?=/' \
+		-e 's/prefix/PREFIX/' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -Ee 's,"g?cc","${CC}",' \
+		${WRKSRC}/mktool.c
 
 .include <bsd.port.mk>
