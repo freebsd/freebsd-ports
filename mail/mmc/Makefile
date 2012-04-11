@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+PORTSCOUT=	skipv:0.35
+
 CFLAGS+=	-fpermissive
 
 .include <bsd.port.mk>
