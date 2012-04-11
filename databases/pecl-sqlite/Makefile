@@ -19,6 +19,9 @@ COMMENT=	PECL classes to access sqlite databases in PHP 4
 
 LICENSE=	PHP30
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 WRKSRC=		${WRKDIR}/SQLite-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
