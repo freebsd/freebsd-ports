@@ -6,14 +6,25 @@
 #
 
 PORTNAME=	octave-forge-secs1d
-PORTVERSION=	0.0.8
-PORTREVISION=	6
+PORTVERSION=	0.0.9
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
+
+# OCTSRC is the name of the directory of the package.
+# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
+OCTSRC=		${DISTNAME}
+
+RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:${PORTSDIR}/math/octave-forge-bim
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+do-build:
+	@${DO_NADA}
+
+post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+
 .include <bsd.port.post.mk>
