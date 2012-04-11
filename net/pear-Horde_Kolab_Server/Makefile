@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Horde_Kolab_Server
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net www pear
 PKGNAMEPREFIX=	pear-
 
