@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.foofus.net/jmk/tools/ \
+MASTER_SITES=	http://www.foofus.net/~jmk/tools/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
