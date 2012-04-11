@@ -213,6 +213,7 @@
     SUBDIR += etoile-system
     SUBDIR += eventlog
     SUBDIR += evtviewer
+    SUBDIR += exfat-utils
     SUBDIR += extipl
     SUBDIR += ezjail
     SUBDIR += facter
