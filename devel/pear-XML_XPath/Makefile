@@ -12,6 +12,9 @@ CATEGORIES=	devel www pear
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class provided an XPath/DOM XML manipulation
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-11
+
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
