@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -23,6 +23,8 @@ USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
 CONTRIB_FILES=	bash_completion \
+		casesmash.py \
+		check-code.py \
 		convert-repo \
 		debugcmdserver.py \
 		debugshell.py \

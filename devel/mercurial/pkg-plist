@@ -641,6 +641,8 @@ bin/hg
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDATA%%%%DATADIR%%/contrib/bash_completion
+%%PORTDATA%%%%DATADIR%%/contrib/casesmash.py
+%%PORTDATA%%%%DATADIR%%/contrib/check-code.py
 %%PORTDATA%%%%DATADIR%%/contrib/convert-repo
 %%PORTDATA%%%%DATADIR%%/contrib/debugcmdserver.py
 %%PORTDATA%%%%DATADIR%%/contrib/debugshell.py
