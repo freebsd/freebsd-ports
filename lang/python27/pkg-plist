@@ -393,6 +393,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/distutils/tests/test_util.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_versionpredicate.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_version.py
+%%PYTHON_LIBDIR%%/distutils/tests/xxmodule.c
 %%PYTHON_LIBDIR%%/distutils/text_file.py
 %%PYTHON_LIBDIR%%/distutils/unixccompiler.py
 %%PYTHON_LIBDIR%%/distutils/util.py
@@ -735,9 +736,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.2.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.3.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.2.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.3.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/__main__.py
 %%PYTHON_LIBDIR%%/lib2to3/btm_matcher.py
@@ -836,7 +837,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_util.py
-%%PYTHON_LIBDIR%%/lib-dynload/Python-2.7.2-py%%PYVER%%.egg-info
+%%PYTHON_LIBDIR%%/lib-dynload/Python-2.7.3-py%%PYVER%%.egg-info
 %%PYTHON_LIBDIR%%/lib-dynload/_bisect.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_cn.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_hk.so
@@ -1101,6 +1102,10 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/cjkencodings/gbk.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/hz-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/hz.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_jp.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_jp-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_kr-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_kr.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/johab-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/johab.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis-utf8.txt
@@ -1108,6 +1113,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/data/README
+%%PYTHON_LIBDIR%%/test/nokia.pem
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/and.decTest
@@ -1282,7 +1288,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/randv2_64.pck
 %%PYTHON_LIBDIR%%/test/randv3.pck
 %%PYTHON_LIBDIR%%/test/re_tests.py
-%%PYTHON_LIBDIR%%/test/regex_tests.py
 %%PYTHON_LIBDIR%%/test/regrtest.py
 %%PYTHON_LIBDIR%%/test/relimport.py
 %%PYTHON_LIBDIR%%/test/reperf.py
@@ -1296,7 +1301,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/ssl_key.pem
 %%PYTHON_LIBDIR%%/test/string_tests.py
 %%PYTHON_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
-%%PYTHON_LIBDIR%%/test/svn_python_org_https_cert.pem
 %%PYTHON_LIBDIR%%/test/test_MimeWriter.py
 %%PYTHON_LIBDIR%%/test/test_SimpleHTTPServer.py
 %%PYTHON_LIBDIR%%/test/test_StringIO.py
@@ -1356,6 +1360,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_codecencodings_jp.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_kr.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_tw.py
+%%PYTHON_LIBDIR%%/test/test_codecencodings_iso2022.py
 %%PYTHON_LIBDIR%%/test/test_codecmaps_cn.py
 %%PYTHON_LIBDIR%%/test/test_codecmaps_hk.py
 %%PYTHON_LIBDIR%%/test/test_codecmaps_jp.py
@@ -1566,6 +1571,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_pty.py
 %%PYTHON_LIBDIR%%/test/test_pwd.py
 %%PYTHON_LIBDIR%%/test/test_py3kwarn.py
+%%PYTHON_LIBDIR%%/test/test_py_compile.py
 %%PYTHON_LIBDIR%%/test/test_pyclbr.py
 %%PYTHON_LIBDIR%%/test/test_pydoc.py
 %%PYTHON_LIBDIR%%/test/test_pyexpat.py

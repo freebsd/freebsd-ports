@@ -18,6 +18,7 @@ lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.a
 lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.so
 lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.so.1
 libdata/pkgconfig/python-3.2.pc
+%%PYTHON_INCLUDEDIR%%%%PYABIVER%%/accu.h
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/Python.h
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/abstract.h
@@ -2434,8 +2435,6 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/pystone.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/re_tests.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/re_tests.cpython-32.pyo
-%%PYTHON_LIBDIR%%/test/__pycache__/regex_tests.cpython-32.pyc
-%%PYTHON_LIBDIR%%/test/__pycache__/regex_tests.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/regrtest.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/regrtest.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/relimport.cpython-32.pyc
@@ -2916,6 +2915,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_property.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_pstats.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_pstats.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_py_compile.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_py_compile.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_pty.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_pty.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_pwd.cpython-32.pyc
@@ -3470,7 +3471,6 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/randv2_64.pck
 %%PYTHON_LIBDIR%%/test/randv3.pck
 %%PYTHON_LIBDIR%%/test/re_tests.py
-%%PYTHON_LIBDIR%%/test/regex_tests.py
 %%PYTHON_LIBDIR%%/test/regrtest.py
 %%PYTHON_LIBDIR%%/test/relimport.py
 %%PYTHON_LIBDIR%%/test/reperf.py
@@ -3500,7 +3500,9 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/subprocessdata/qgrep.py
 %%PYTHON_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
 %%PYTHON_LIBDIR%%/test/support.py
-%%PYTHON_LIBDIR%%/test/svn_python_org_https_cert.pem
+%%PYTHON_LIBDIR%%/test/mime.types
+%%PYTHON_LIBDIR%%/test/test_py_compile.py
+%%PYTHON_LIBDIR%%/test/nokia.pem
 %%PYTHON_LIBDIR%%/test/test___all__.py
 %%PYTHON_LIBDIR%%/test/test___future__.py
 %%PYTHON_LIBDIR%%/test/test__locale.py
