@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Django application that automates CSS compilation and compression
 
+DEPRECATED=	Upstream development stopped. Use www/py-django_compressor instead
+EXPIRATION_DATE=2012-05-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:${PORTSDIR}/www/py-beautifulsoup
 
 USE_PYTHON=	yes
