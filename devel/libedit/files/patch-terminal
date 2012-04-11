@@ -1,0 +1,50 @@
+Revision 212235
+libedit: Try to map <Delete> to ed-delete-next-char.
+
+This adds a new "arrow" key "delete" corresponding to the kD termcap 
+value. It only works if that is a sequence such as "\033[3~"; if it is 
+"\177", the em-delete-prev-char or ed-delete-prev-char from the 
+single-character mappings remains. It turns out that most terminals (xterm 
+and alikes, syscons in xterm mode) produce "\033[3~" by default so 
+<Delete> has the expected effect.
+
+This also means that things need to be considerably misconfigured for
+<Backspace> to perform a <Delete> action.
+
+--- term.c	2007/06/10 19:06:09	170511
++++ term.c	2010/09/05 16:12:10	212235
+@@ -223,7 +223,9 @@
+ 	{ "kh", "send cursor home" },
+ #define	T_at7	37
+ 	{ "@7", "send cursor end" },
+-#define	T_str	38
++#define	T_kD	38
++	{ "kD", "send cursor delete" },
++#define	T_str	39
+ 	{ NULL, NULL }
+ };
+ 
+@@ -1062,6 +1064,11 @@
+ 	arrow[A_K_EN].key = T_at7;
+ 	arrow[A_K_EN].fun.cmd = ED_MOVE_TO_END;
+ 	arrow[A_K_EN].type = XK_CMD;
++
++	arrow[A_K_DE].name = "delete";
++	arrow[A_K_DE].key = T_kD;
++	arrow[A_K_DE].fun.cmd = ED_DELETE_NEXT_CHAR;
++	arrow[A_K_DE].type = XK_CMD;
+ }
+ 
+ 
+--- term.h	2007/06/10 19:06:09	170511
++++ term.h	2010/09/05 16:12:10	212235
+@@ -79,7 +79,8 @@
+ #define	A_K_RT		3
+ #define	A_K_HO		4
+ #define	A_K_EN		5
+-#define	A_K_NKEYS	6
++#define	A_K_DE		6
++#define	A_K_NKEYS	7
+ 
+ protected void	term_move_to_line(EditLine *, int);
+ protected void	term_move_to_char(EditLine *, int);
