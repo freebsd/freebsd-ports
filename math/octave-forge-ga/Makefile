@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-ga
-PORTVERSION=	0.9.8
-PORTREVISION=	3
+PORTVERSION=	0.10.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,8 +15,6 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
-
-RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forge-communications
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
