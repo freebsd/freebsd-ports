@@ -2672,6 +2672,7 @@ drupal6-webform                 ports/www/drupal6-webform
 drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
 drupal6-zeropoint               ports/www/drupal6-zeropoint
 drupal7                         ports/www/drupal7
+drupal7-jailadmin               ports/www/drupal7-jailadmin
 drupal7-vulnscan                ports/www/drupal7-vulnscan
 drupal7-wysiwyg                 ports/www/drupal7-wysiwyg
 drush                           ports/www/drush
@@ -5004,7 +5005,6 @@ gstreamer-plugins-mp3           ports/audio/gstreamer-plugins-mp3
 gstreamer-plugins-mpeg2dec      ports/multimedia/gstreamer-plugins-mpeg2dec
 gstreamer-plugins-mpeg2enc      ports/multimedia/gstreamer-plugins-mpeg2enc
 gstreamer-plugins-musepack      ports/audio/gstreamer-plugins-musepack
-gstreamer-plugins-musicbrainz   ports/audio/gstreamer-plugins-musicbrainz
 gstreamer-plugins-nas           ports/audio/gstreamer-plugins-nas
 gstreamer-plugins-neon          ports/www/gstreamer-plugins-neon
 gstreamer-plugins-ogg           ports/audio/gstreamer-plugins-ogg
@@ -12211,6 +12211,7 @@ p5-Exception-Class-TryCatch     ports/devel/p5-Exception-Class-TryCatch
 p5-Exception-Handler            ports/devel/p5-Exception-Handler
 p5-Expect                       ports/lang/p5-Expect
 p5-Expect-Simple                ports/devel/p5-Expect-Simple
+p5-Exporter                     ports/devel/p5-Exporter
 p5-Exporter-Declare             ports/devel/p5-Exporter-Declare
 p5-Exporter-Easy                ports/devel/p5-Exporter-Easy
 p5-Exporter-Lite                ports/devel/p5-Exporter-Lite
@@ -12490,7 +12491,6 @@ p5-Getopt-GUI-Long              ports/devel/p5-Getopt-GUI-Long
 p5-Getopt-Long                  ports/devel/p5-Getopt-Long
 p5-Getopt-Long-Descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
-p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
 p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
 p5-Git-Repository               ports/devel/p5-Git-Repository
 p5-Git-Wrapper                  ports/devel/p5-Git-Wrapper
@@ -13335,6 +13335,7 @@ p5-MooseX-Emulate-Class-Accessor-Fast  ports/devel/p5-MooseX-Emulate-Class-Acces
 p5-MooseX-FollowPBP             ports/devel/p5-MooseX-FollowPBP
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-Has-Sugar             ports/devel/p5-MooseX-Has-Sugar
+p5-MooseX-HasDefaults           ports/devel/p5-MooseX-HasDefaults
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
 p5-MooseX-InsideOut             ports/devel/p5-MooseX-InsideOut
 p5-MooseX-LazyRequire           ports/devel/p5-MooseX-LazyRequire
@@ -13396,7 +13397,6 @@ p5-Multiplex-CMD                ports/devel/p5-Multiplex-CMD
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-MusicBrainz-DiscID           ports/audio/p5-MusicBrainz-DiscID
-p5-MusicBrainz-Queries          ports/audio/p5-MusicBrainz-Queries
 p5-MySQL-Diff                   ports/databases/p5-MySQL-Diff
 p5-NEXT                         ports/devel/p5-NEXT
 p5-NNML                         ports/news/p5-NNML
@@ -13599,7 +13599,6 @@ p5-Net-Radius-Server            ports/security/p5-Net-Radius-Server
 p5-Net-Random                   ports/net/p5-Net-Random
 p5-Net-RawIP                    ports/net/p5-Net-RawIP
 p5-Net-RawSock                  ports/net/p5-Net-RawSock
-p5-Net-Rendezvous               ports/net/p5-Net-Rendezvous
 p5-Net-Rendezvous-Publish       ports/net/p5-Net-Rendezvous-Publish
 p5-Net-Riak                     ports/net/p5-Net-Riak
 p5-Net-Rsh                      ports/net/p5-Net-Rsh
@@ -14530,6 +14529,7 @@ p5-Test-Benchmark               ports/devel/p5-Test-Benchmark
 p5-Test-BinaryData              ports/devel/p5-Test-BinaryData
 p5-Test-Block                   ports/devel/p5-Test-Block
 p5-Test-Class                   ports/devel/p5-Test-Class
+p5-Test-Class-Most              ports/devel/p5-Test-Class-Most
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Classy                  ports/devel/p5-Test-Classy
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
@@ -16706,6 +16706,7 @@ p5-exception-class-trycatch     ports/devel/p5-Exception-Class-TryCatch
 p5-exception-handler            ports/devel/p5-Exception-Handler
 p5-expect                       ports/lang/p5-Expect
 p5-expect-simple                ports/devel/p5-Expect-Simple
+p5-exporter                     ports/devel/p5-Exporter
 p5-exporter-declare             ports/devel/p5-Exporter-Declare
 p5-exporter-easy                ports/devel/p5-Exporter-Easy
 p5-exporter-lite                ports/devel/p5-Exporter-Lite
@@ -16976,7 +16977,6 @@ p5-getopt-gui-long              ports/devel/p5-Getopt-GUI-Long
 p5-getopt-long                  ports/devel/p5-Getopt-Long
 p5-getopt-long-descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
-p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
 p5-gis-distance-fast            ports/math/p5-GIS-Distance-Fast
 p5-gis-distance-lite            ports/math/p5-GIS-Distance-Lite
@@ -17839,6 +17839,7 @@ p5-moosex-emulate-class-accessor-fast  ports/devel/p5-MooseX-Emulate-Class-Acces
 p5-moosex-followpbp             ports/devel/p5-MooseX-FollowPBP
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-has-sugar             ports/devel/p5-MooseX-Has-Sugar
+p5-moosex-hasdefaults           ports/devel/p5-MooseX-HasDefaults
 p5-moosex-insideout             ports/devel/p5-MooseX-InsideOut
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-lazyrequire           ports/devel/p5-MooseX-LazyRequire
@@ -17910,7 +17911,6 @@ p5-multiplex-cmd                ports/devel/p5-Multiplex-CMD
 p5-music-audioscrobbler-mpd     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-music-audioscrobbler-submit  ports/audio/p5-Music-Audioscrobbler-Submit
 p5-musicbrainz-discid           ports/audio/p5-MusicBrainz-DiscID
-p5-musicbrainz-queries          ports/audio/p5-MusicBrainz-Queries
 p5-mysql-diff                   ports/databases/p5-MySQL-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
 p5-nagios-object                ports/net-mgmt/p5-Nagios-Object
@@ -18113,7 +18113,6 @@ p5-net-random                   ports/net/p5-Net-Random
 p5-net-rawip                    ports/net/p5-Net-RawIP
 p5-net-rawsock                  ports/net/p5-Net-RawSock
 p5-net-rblclient                ports/dns/p5-Net-RBLClient
-p5-net-rendezvous               ports/net/p5-Net-Rendezvous
 p5-net-rendezvous-publish       ports/net/p5-Net-Rendezvous-Publish
 p5-net-riak                     ports/net/p5-Net-Riak
 p5-net-rsh                      ports/net/p5-Net-Rsh
@@ -19076,6 +19075,7 @@ p5-test-benchmark               ports/devel/p5-Test-Benchmark
 p5-test-binarydata              ports/devel/p5-Test-BinaryData
 p5-test-block                   ports/devel/p5-Test-Block
 p5-test-class                   ports/devel/p5-Test-Class
+p5-test-class-most              ports/devel/p5-Test-Class-Most
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-classy                  ports/devel/p5-Test-Classy
 p5-test-cmd                     ports/devel/p5-Test-Cmd
@@ -23891,7 +23891,6 @@ repng2jpeg                      ports/graphics/repng2jpeg
 reportmagic                     ports/www/reportmagic
 repos-style                     ports/www/repos-style
 resid                           ports/audio/resid
-resin2                          ports/www/resin2
 resin3                          ports/www/resin3
 resourceproto                   ports/x11/resourceproto
 respond                         ports/sysutils/respond
@@ -24271,7 +24270,6 @@ ruby-liquid                     ports/textproc/ruby-liquid
 ruby-locale                     ports/devel/ruby-locale
 ruby-locale2                    ports/devel/ruby-locale2
 ruby-lua4                       ports/lang/ruby-lua4
-ruby-lv                         ports/converters/ruby-lv
 ruby-man                        ports/lang/ruby-man
 ruby-memcache                   ports/databases/ruby-memcache
 ruby-memoize                    ports/devel/ruby-memoize
@@ -24282,7 +24280,6 @@ ruby-mp3info                    ports/audio/ruby-mp3info
 ruby-mp3tag                     ports/audio/ruby-mp3tag
 ruby-msql                       ports/databases/ruby-msql
 ruby-multi                      ports/devel/ruby-multi
-ruby-musicbrainz                ports/audio/ruby-musicbrainz
 ruby-mwdom                      ports/textproc/ruby-mwdom
 ruby-mysql                      ports/databases/ruby-mysql
 ruby-narray                     ports/math/ruby-narray
@@ -27538,7 +27535,6 @@ wping                           ports/net/wping
 wprint                          ports/print/wprint
 wput                            ports/ftp/wput
 wqy                             ports/x11-fonts/wqy
-wrapper                         ports/x11/wrapper
 wsdlpull                        ports/www/wsdlpull
 wsjt                            ports/comms/wsjt
 wsmake                          ports/www/wsmake
