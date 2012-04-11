@@ -36,6 +36,7 @@ using std::strstreambuf;
 using std::istrstream;
 using std::ostrstream;
 using std::strstream;
+using namespace std;
 
 #endif
 
