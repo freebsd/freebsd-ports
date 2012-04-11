@@ -834,6 +834,7 @@
     SUBDIR += unixODBC
     SUBDIR += useracc
     SUBDIR += usogres
+    SUBDIR += vfront
     SUBDIR += virtuoso
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
