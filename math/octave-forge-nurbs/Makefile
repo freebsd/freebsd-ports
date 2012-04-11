@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-nurbs
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20120206
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -32,7 +32,7 @@ OPTIONS=	\
 	DICOM "Install package: dicom" On \
 	ECONOMETRICS "Install package: econometrics" On \
 	ENGINE "Install package: engine" On \
-	ES "Install package: es" On \
+	ES "Install package: es" Off \
 	FENV "Install package: fenv" On \
 	FITS "Install package: fits" On \
 	FINANCIAL "Install package: financial" On \

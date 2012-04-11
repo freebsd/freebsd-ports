@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-sockets
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
