@@ -1,0 +1,11 @@
+--- configure-orig	2012-03-30 23:58:04.000000000 +0000
++++ configure	2012-03-30 23:58:24.000000000 +0000
+@@ -4208,7 +4208,7 @@
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 
+-$as_echo "#define OCTAVE_LE_3_2_4 1" >>confdefs.h
++$as_echo "#undef OCTAVE_LE_3_2_4" >>confdefs.h
+ 
+ fi
+ 
