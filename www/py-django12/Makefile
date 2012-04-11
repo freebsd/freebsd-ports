@@ -39,6 +39,9 @@ MAN1=		daily_cleanup.1 django-admin.1 gather_profile_stats.1
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
+DEPRECATED=	Unsupported version
+EXPIRATION_DATE=2012-05-12
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_POSTGRESQL)
