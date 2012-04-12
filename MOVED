@@ -1063,7 +1063,6 @@ databases/p5-DBIx-Class-HTML-FormFu||2010-05-02|Has expired: This module is obso
 devel/py-rbtree||2010-05-02|Has expired: "does not build with new pyrex and it's not active maintained"
 devel/tavrasm||2010-05-02|Has expired: No longer maintained, use devel/avra instead
 mail/postfix23||2010-05-02|Has expired: No longer maintained by upstream developer
-math/libgmp4||2010-05-02|Has expired: Use math/gmp instead
 misc/ezload||2010-05-02|Has expired: does not build with new USB stack in 8-STABLE
 misc/gkrellmbgchg||2010-05-02|Has expired: use misc/gkrellmbgchg2
 multimedia/kbtv||2010-05-02|Has expired: no longer under development by author
