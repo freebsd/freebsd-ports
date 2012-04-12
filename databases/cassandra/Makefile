@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -80,7 +80,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/cassandra|${DATADIR}/bin|' \
 		${WRKSRC}/bin/cassandra-cli \
 		${WRKSRC}/bin/nodetool \
-		${WRKSRC}/bin/sstableloader
+		${WRKSRC}/bin/sstableloader \
+		${WRKSRC}/bin/sstable2json \
+		${WRKSRC}/bin/json2sstable \
+		${WRKSRC}/bin/sstablekeys
 	@${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' \
 		${WRKSRC}/bin/cassandra.in.sh
 	@${RM} -f ${WRKSRC}/conf/*.orig
@@ -103,6 +106,10 @@ do-install:
 	@${LN} -s ${DATADIR}/bin/nodetool ${PREFIX}/bin/nodetool
 	@${LN} -s ${DATADIR}/bin/sstableloader ${PREFIX}/bin/sstableloader
 	@${LN} -s ${DATADIR}/bin/repaircluster ${PREFIX}/bin/repaircluster
+	@${LN} -s ${DATADIR}/bin/json2sstable ${PREFIX}/bin/json2sstable
+	@${LN} -s ${DATADIR}/bin/sstable2json ${PREFIX}/bin/sstable2json
+	@${LN} -s ${DATADIR}/bin/sstablekeys ${PREFIX}/bin/sstablekeys
+
 .if defined(WITH_CQL)
 	@${LN} -s ${DATADIR}/bin/cqlsh ${PREFIX}/bin/cqlsh
 .endif
