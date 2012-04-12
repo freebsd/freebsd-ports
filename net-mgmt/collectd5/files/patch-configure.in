@@ -1,5 +1,14 @@
---- configure.in.orig	2011-10-14 22:49:49.000000000 +0200
-+++ configure.in	2012-01-08 16:04:13.000000000 +0100
+--- configure.in.orig	2011-10-14 12:49:49.000000000 -0800
++++ configure.in	2012-03-20 08:09:25.000000000 -0800
+@@ -98,7 +98,7 @@
+ fi
+ 
+ # Where to install .pc files.
+-pkgconfigdir="${libdir}/pkgconfig"
++pkgconfigdir="${prefix}/libdata/pkgconfig"
+ AC_SUBST(pkgconfigdir)
+ 
+ # Check for standards compliance mode
 @@ -1745,9 +1745,6 @@
  		[with_libgcrypt="yes"],
  		[with_libgcrypt="no (symbol gcry_md_hash_buffer not found)"])
@@ -15,7 +24,7 @@
  then
  	AC_MSG_CHECKING([for Python LIBS])
 -	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
-+	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_vars(\"LIBDIR\").__getitem__(0)+\"/\"+distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0))" | "$with_python_prog" 2>&1`
++	python_library_flags=`echo "import distutils.sysconfig;import sys;sys.stdout.write(distutils.sysconfig.get_config_var(\"LINKFORSHARED\")+\" -L\"+distutils.sysconfig.get_config_vars(\"LIBDIR\").__getitem__(0)+\" -l\"+distutils.sysconfig.get_config_vars(\"BLDLIBRARY\").__getitem__(0).replace(\"lib\", \"\").replace(\".a\", \"\"))" | "$with_python_prog" 2>&1`
  	python_config_status=$?
  
  	if test "$python_config_status" -ne 0 || test "x$python_library_flags" = "x"
