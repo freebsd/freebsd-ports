@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	A Perl search engine library
 
+DEPRECATED=	replaced by textproc/p5-KinoSearch1
+EXPIRATION_DATE=	2012-05-11
+
 MODULE_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWords \
 		p5-Lingua-Stem-Snowball>=0.94:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \
 		p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone
