@@ -7,6 +7,7 @@
 
 PORTNAME=	mosh
 PORTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GOOGLE_CODE
 
@@ -23,6 +24,8 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
 MAKE_JOBS_SAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
 PROJECTHOST=	mosh-scheme
 MAN1=	mosh.1 mosh_config.1
