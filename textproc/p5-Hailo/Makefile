@@ -7,6 +7,7 @@
 
 PORTNAME=	Hailo
 PORTVERSION=	0.70
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HINRIK
@@ -31,14 +32,15 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-IO-Interactive>=0.0.6:${PORTSDIR}/devel/p5-IO-Interactive \
 		p5-IPC-System-Simple>=1.21:${PORTSDIR}/devel/p5-IPC-System-Simple \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-MooseX-StrictConstructor>=0.16:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
 		p5-MouseX-Getopt>=0.33:${PORTSDIR}/devel/p5-MouseX-Getopt \
 		p5-MouseX-StrictConstructor>=0.02:${PORTSDIR}/devel/p5-MouseX-StrictConstructor \
 		p5-Regexp-Common>=2010010201:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-Term-Sk>=0.06:${PORTSDIR}/devel/p5-Term-Sk \
 		p5-namespace-clean>=0.18:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-TEST_DEPENDS=	p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception \
+TEST_DEPENDS=	p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Test-Exception>=0.29:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Expect>=0.31:${PORTSDIR}/devel/p5-Test-Expect \
 		p5-Test-Output>=0.16:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Script>=1.07:${PORTSDIR}/devel/p5-Test-Script \
@@ -88,7 +90,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie
 RUN_DEPENDS+=	p5-autodie>=2.08:${PORTSDIR}/devel/p5-autodie
-TEST_DEPENDS+=	p5-Test-More>=0.94:${PORTSDIR}/devel/p5-Test-More
+TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
