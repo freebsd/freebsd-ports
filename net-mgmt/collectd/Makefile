@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -41,6 +41,7 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		PGSQL		"Input: PostgreSQL" 				Off \
 		PING		"Input: Network latency (liboping)" 		On  \
 		PYTHON		"Input: Python plugin"				Off  \
+		ROUTEROS	"Input: RouterOS plugin"			Off  \
 		SNMP		"Input: SNMP" 					On  \
 		TOKYOTYRANT	"Input: Tokyotyrant database"			Off \
 		XMMS		"Input: XMMS" 					Off \
@@ -105,7 +106,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-perl \
 		--disable-pinba \
 		--disable-protocols \
-		--disable-routeros \
 		--disable-sensors \
 		--disable-serial \
 		--disable-table \
@@ -331,6 +331,15 @@ PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_ROUTEROS)
+LIB_DEPENDS+=	routeros:${PORTSDIR}/net/librouteros
+CONFIGURE_ARGS+=--enable-routeros --with-librouteros=${LOCALBASE}
+PLIST_SUB+=	ROUTEROS=""
+.else
+CONFIGURE_ARGS+=--disable-routeros --without-librouteros
+PLIST_SUB+=	ROUTEROS="@comment "
 .endif
 
 .if defined(WITH_RRDTOOL)
