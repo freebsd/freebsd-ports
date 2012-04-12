@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Compile
-PORTVERSION=	0.20
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Provide a system for writing modules that compile other Perl modules
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Module::Compile.3 \
+		Module::Compile::Opt.3 \
 		Module::Install::Admin::PMC.3 \
 		Module::Install::PMC.3\
 		Module::Optimize.3
