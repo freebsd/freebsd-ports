@@ -28,30 +28,28 @@ OPTIONS=	IMLIB2 "Use Imlib2" on  \
 
 .include <bsd.port.options.mk>
 
+MAKE_ARGS=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" CC="${CC}"
+
 .if !defined(WITHOUT_ULTRAGETOPT)
 LIB_DEPENDS+=	ultragetopt.0:${PORTSDIR}/devel/ultragetopt
-USE_ULTRAGETOPT=	yes
+MAKE_ARGS+=	USE_ULTRAGETOPT=yes
 .else
-USE_ULTRAGETOPT=	no
+MAKE_ARGS+=	USE_ULTRAGETOPT=no
 .endif
 
 .if !defined(WITHOUT_IMLIB2)
 USE_EFL=	imlib2
-USE_IMLIB2=	yes
+MAKE_ARGS+=	USE_IMLIB2=yes
 .else
-USE_IMLIB2=	no
+MAKE_ARGS+=	USE_IMLIB2=no
 .endif
 
 .if !defined(WITHOUT_XFT)
 USE_XORG+=	xft
-USE_XFT=	yes
+MAKE_ARGS+=	USE_XFT=yes
 .else
-USE_XFT=	no
+MAKE_ARGS+=	USE_XFT=no
 .endif
-
-MAKE_ARGS=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" CC="${CC}" \
-		USE_XFT="${USE_XFT}" USE_ULTRAGETOPT="${USE_ULTRAGETOPT}" \
-		USE_IMLIB2="${USE_IMLIB2}"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
