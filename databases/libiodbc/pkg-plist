@@ -36,8 +36,8 @@ libdata/pkgconfig/libiodbc.pc
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/iodbctest.c
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/iodbctest.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%ETCDIR%%
