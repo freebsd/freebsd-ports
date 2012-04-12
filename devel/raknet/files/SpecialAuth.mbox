@@ -1,0 +1,615 @@
+From ganael.laplanche@martymac.org Wed Mar 21 08:08:31 2012
+From ganael.laplanche Wed Mar 21 08:08:31 2012
+From: "Ganael LAPLANCHE" <ganael.laplanche@martymac.org>
+To: Kevin Jenkins <rakkar@jenkinssoftware.com>
+Subject: Re: Is Raknet still free software ?
+X-Openwebmail-Date: Wed, 21 Mar 2012 09:08:31 +0200
+Message-Id: <20120321070722.M94211@martymac.org>
+In-Reply-To: <CAHcnhTNqNSyFE6m6zqM_3=wpoydibhnoHv7WS1JV9AuUqeW33w@mail.gmail.com>
+References: <20120319144603.M66781@martymac.org> <CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com> <20120320071037.M83412@martymac.org> <CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyB
+YzdTU7=EB=vraw@mail.gmail.com> <20120320085523.M98627@martymac.org> <CAHcnhTNJRQfzAAicp8jvuh9ANyFbqREiZTCUjj6PH_zDrCOjDw@mail.gmail.com> <20120320154950.M74794@martymac.org> <CAHcnhTNqNSyFE6m6z
+qM_3=wpoydibhnoHv7WS1JV9AuUqeW33w@mail.gmail.com>
+X-Mailer: Open WebMail 2.01 20030425
+X-OriginatingIP: 157.99.64.43 (ganael.laplanche@martymac.org)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-15
+Status: RO
+Content-Length: 507
+Lines: 16
+
+On Tue, 20 Mar 2012 09:54:10 -0700, Kevin Jenkins wrote
+
+> You might want to just delete the copyright header then or
+> else it will be confusing to users. They are all the same I
+> believe so a copy/paste in /Source/*.h;*.cpp and the same for
+> DependentExtensions should do it
+
+OK, thanks. I'll do that. Thanks !
+
+Best regards,
+
+--
+Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+http://www.martymac.org | http://contribs.martymac.org
+FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+
+From rakkar@jenkinssoftware.com Wed Mar 21 08:08:51 2012
+Return-Path: <rakkar@jenkinssoftware.com>
+Delivered-To: ganael.laplanche@martymac.org
+X-Spam-Level: 
+X-Spam-Status: No, hits=0.0 required=5.0
+        tests=HTML_MESSAGE
+Received: from mccoy.galacsys.net (mx3.galacsys.net [217.24.89.4])
+	by lmtp.galacsys.net (lmtpd) with LMTP id 50412.008;
+	Tue, 20 Mar 2012 17:54:12 +0100 (CET)
+Received: from mccoy.galacsys.net (localhost [127.0.0.1])
+	by mccoy.galacsys.net (Postfix) with ESMTP id 2EAFA228A9
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 17:54:12 +0100 (CET)
+Received: from server282.com (server282.com [64.14.68.75])
+	by mccoy.galacsys.net (Postfix) with ESMTP
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 17:54:11 +0100 (CET)
+Received: (qmail 8004 invoked by uid 503); 20 Mar 2012 16:54:11 -0000
+Received: from unknown (HELO mail-iy0-f177.google.com) (rakkar@jenkinssoftware.com@209.85.210.177)
+  by server282.com with ESMTPA; 20 Mar 2012 16:54:11 -0000
+Received: by iaky10 with SMTP id y10so331109iak.22
+        for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 09:54:10 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.42.244.7 with SMTP id lo7mr372913icb.28.1332262450030; Tue, 20
+ Mar 2012 09:54:10 -0700 (PDT)
+Received: by 10.42.18.66 with HTTP; Tue, 20 Mar 2012 09:54:10 -0700 (PDT)
+In-Reply-To: <20120320154950.M74794@martymac.org>
+References: <20120319144603.M66781@martymac.org>
+	<CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com>
+	<20120320071037.M83412@martymac.org>
+	<CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyBYzdTU7=EB=vraw@mail.gmail.com>
+	<20120320085523.M98627@martymac.org>
+	<CAHcnhTNJRQfzAAicp8jvuh9ANyFbqREiZTCUjj6PH_zDrCOjDw@mail.gmail.com>
+	<20120320154950.M74794@martymac.org>
+Date: Tue, 20 Mar 2012 09:54:10 -0700
+Message-ID: <CAHcnhTNqNSyFE6m6zqM_3=wpoydibhnoHv7WS1JV9AuUqeW33w@mail.gmail.com>
+Subject: Re: Is Raknet still free software ?
+From: Kevin Jenkins <rakkar@jenkinssoftware.com>
+To: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+Content-Type: multipart/alternative; boundary=90e6ba5bc6db14e6b804bbaf86da
+Status: RO
+X-Status: A
+Content-Length: 2915
+Lines: 70
+
+--90e6ba5bc6db14e6b804bbaf86da
+Content-Type: text/plain; charset=ISO-8859-1
+
+You might want to just delete the copyright header then or else it will be
+confusing to users. They are all the same I believe so a copy/paste in
+/Source/*.h;*.cpp and the same for DependentExtensions should do it
+
+On Wed, Dec 31, 1969 at 4:00 PM, Ganael LAPLANCHE <
+ganael.laplanche@martymac.org> wrote:
+
+> On Tue, 20 Mar 2012 08:36:57 -0700, Kevin Jenkins wrote
+>
+> > GPL3. After downloading you can change the comment at the top
+> > of the headers to reflect this. RakNet 4 is under a different
+> > license because it is used with game consoles that do not
+> > allow GPL code.
+>
+> Thanks for this clarification. License file (GPLv3) will be bundled with
+> packages, so I don't think modifying each single header is necessary.
+> I'll also add a note into the FreeBSD port's Makefile about that.
+>
+> Thanks a lot !
+> Best regards,
+>
+> --
+> Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+> http://www.martymac.org | http://contribs.martymac.org
+> FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+>
+
+--90e6ba5bc6db14e6b804bbaf86da
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+You might want to just delete the copyright header then or else it will be =
+confusing to users. They are all the same I believe so a copy/paste in /Sou=
+rce/*.h;*.cpp and the same for DependentExtensions should do it<br><br><div=
+ class=3D"gmail_quote">
+On Wed, Dec 31, 1969 at 4:00 PM, Ganael LAPLANCHE <span dir=3D"ltr">&lt;<a =
+href=3D"mailto:ganael.laplanche@martymac.org">ganael.laplanche@martymac.org=
+</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin=
+:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+On Tue, 20 Mar 2012 08:36:57 -0700, Kevin Jenkins wrote<br>
+<div class=3D"im"><br>
+&gt; GPL3. After downloading you can change the comment at the top<br>
+&gt; of the headers to reflect this. RakNet 4 is under a different<br>
+&gt; license because it is used with game consoles that do not<br>
+&gt; allow GPL code.<br>
+<br>
+</div>Thanks for this clarification. License file (GPLv3) will be bundled w=
+ith<br>
+packages, so I don&#39;t think modifying each single header is necessary.<b=
+r>
+I&#39;ll also add a note into the FreeBSD port&#39;s Makefile about that.<b=
+r>
+<br>
+Thanks a lot !<br>
+<div><div></div><div class=3D"h5">Best regards,<br>
+<br>
+--<br>
+Ganael LAPLANCHE &lt;<a href=3D"mailto:ganael.laplanche@martymac.org">ganae=
+l.laplanche@martymac.org</a>&gt;<br>
+<a href=3D"http://www.martymac.org" target=3D"_blank">http://www.martymac.o=
+rg</a> | <a href=3D"http://contribs.martymac.org" target=3D"_blank">http://=
+contribs.martymac.org</a><br>
+FreeBSD: martymac &lt;martymac@FreeBSD.org&gt;, <a href=3D"http://www.FreeB=
+SD.org" target=3D"_blank">http://www.FreeBSD.org</a><br>
+</div></div></blockquote></div><br>
+
+--90e6ba5bc6db14e6b804bbaf86da--
+
+From ganael.laplanche@martymac.org Tue Mar 20 16:53:14 2012
+From ganael.laplanche Tue Mar 20 16:53:14 2012
+From: "Ganael LAPLANCHE" <ganael.laplanche@martymac.org>
+To: Kevin Jenkins <rakkar@jenkinssoftware.com>
+Subject: Re: Is Raknet still free software ?
+X-Openwebmail-Date: Tue, 20 Mar 2012 17:53:14 +0200
+Message-Id: <20120320154950.M74794@martymac.org>
+In-Reply-To: <CAHcnhTNJRQfzAAicp8jvuh9ANyFbqREiZTCUjj6PH_zDrCOjDw@mail.gmail.com>
+References: <20120319144603.M66781@martymac.org> <CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com> <20120320071037.M83412@martymac.org> <CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyB
+YzdTU7=EB=vraw@mail.gmail.com> <20120320085523.M98627@martymac.org> <CAHcnhTNJRQfzAAicp8jvuh9ANyFbqREiZTCUjj6PH_zDrCOjDw@mail.gmail.com>
+X-Mailer: Open WebMail 2.01 20030425
+X-OriginatingIP: 157.99.64.43 (ganael.laplanche@martymac.org)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-15
+Status: RO
+Content-Length: 680
+Lines: 19
+
+On Tue, 20 Mar 2012 08:36:57 -0700, Kevin Jenkins wrote
+
+> GPL3. After downloading you can change the comment at the top
+> of the headers to reflect this. RakNet 4 is under a different
+> license because it is used with game consoles that do not
+> allow GPL code.
+
+Thanks for this clarification. License file (GPLv3) will be bundled with
+packages, so I don't think modifying each single header is necessary.
+I'll also add a note into the FreeBSD port's Makefile about that.
+
+Thanks a lot !
+Best regards,
+
+--
+Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+http://www.martymac.org | http://contribs.martymac.org
+FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+
+From rakkar@jenkinssoftware.com Tue Mar 20 16:56:00 2012
+Return-Path: <rakkar@jenkinssoftware.com>
+Delivered-To: ganael.laplanche@martymac.org
+X-Spam-Level: 
+X-Spam-Status: No, hits=0.0 required=5.0
+        tests=HTML_MESSAGE
+Received: from mccoy.galacsys.net (mx3.galacsys.net [217.24.89.4])
+	by lmtp.galacsys.net (lmtpd) with LMTP id 23270.052;
+	Tue, 20 Mar 2012 16:43:41 +0100 (CET)
+Received: from mccoy.galacsys.net (localhost [127.0.0.1])
+	by mccoy.galacsys.net (Postfix) with ESMTP id E1BFD22844
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 16:43:40 +0100 (CET)
+X-Greylist: delayed 398 seconds by postgrey-1.15 at mccoy.galacsys.net; Tue, 20 Mar 2012 16:43:40 CET
+Received: from server282.com (server282.com [64.14.68.75])
+	by mccoy.galacsys.net (Postfix) with ESMTP
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 16:43:40 +0100 (CET)
+Received: (qmail 10487 invoked by uid 503); 20 Mar 2012 15:37:00 -0000
+Received: from unknown (HELO mail-we0-f177.google.com) (rakkar@jenkinssoftware.com@74.125.82.177)
+  by server282.com with ESMTPA; 20 Mar 2012 15:37:00 -0000
+Received: by werp11 with SMTP id p11so203936wer.22
+        for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 08:36:59 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.50.186.197 with SMTP id fm5mr1441232igc.23.1332257818597; Tue,
+ 20 Mar 2012 08:36:58 -0700 (PDT)
+Received: by 10.42.18.66 with HTTP; Tue, 20 Mar 2012 08:36:57 -0700 (PDT)
+Received: by 10.42.18.66 with HTTP; Tue, 20 Mar 2012 08:36:57 -0700 (PDT)
+In-Reply-To: <20120320085523.M98627@martymac.org>
+References: <20120319144603.M66781@martymac.org>
+	<CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com>
+	<20120320071037.M83412@martymac.org>
+	<CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyBYzdTU7=EB=vraw@mail.gmail.com>
+	<20120320085523.M98627@martymac.org>
+Date: Tue, 20 Mar 2012 08:36:57 -0700
+Message-ID: <CAHcnhTNJRQfzAAicp8jvuh9ANyFbqREiZTCUjj6PH_zDrCOjDw@mail.gmail.com>
+Subject: Re: Is Raknet still free software ?
+From: Kevin Jenkins <rakkar@jenkinssoftware.com>
+To: Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+Content-Type: multipart/alternative; boundary=14dae9340cb106dafc04bbae7247
+Status: RO
+X-Status: A
+Content-Length: 2358
+Lines: 62
+
+--14dae9340cb106dafc04bbae7247
+Content-Type: text/plain; charset=ISO-8859-1
+
+GPL3. After downloading you can change the comment at the top of the
+headers to reflect this. RakNet 4 is under a different license because it
+is used with game consoles that do not allow GPL code.
+On Mar 20, 2012 2:25 AM, "Ganael LAPLANCHE" <ganael.laplanche@martymac.org>
+wrote:
+
+> On Tue, 20 Mar 2012 01:06:32 -0700, Kevin Jenkins wrote
+>
+> > http://www.raknet.com/raknet/downloads/RakNet-3.902.zip
+>
+> Thanks ! Regarding the use of RakNet under GPL, is it GPL v2 or v3 ?
+>
+> Is RakNet 4.0x branch also published under GPL ?
+>
+> Thanks,
+> Best regards,
+>
+> --
+> Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+> http://www.martymac.org | http://contribs.martymac.org
+> FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+>
+
+--14dae9340cb106dafc04bbae7247
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<p>GPL3. After downloading you can change the comment at the top of the hea=
+ders to reflect this. RakNet 4 is under a different license because it is u=
+sed with game consoles that do not allow GPL code.</p>
+<div class=3D"gmail_quote">On Mar 20, 2012 2:25 AM, &quot;Ganael LAPLANCHE&=
+quot; &lt;<a href=3D"mailto:ganael.laplanche@martymac.org">ganael.laplanche=
+@martymac.org</a>&gt; wrote:<br type=3D"attribution"><blockquote class=3D"g=
+mail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-l=
+eft:1ex">
+On Tue, 20 Mar 2012 01:06:32 -0700, Kevin Jenkins wrote<br>
+<br>
+&gt; <a href=3D"http://www.raknet.com/raknet/downloads/RakNet-3.902.zip" ta=
+rget=3D"_blank">http://www.raknet.com/raknet/downloads/RakNet-3.902.zip</a>=
+<br>
+<br>
+Thanks ! Regarding the use of RakNet under GPL, is it GPL v2 or v3 ?<br>
+<br>
+Is RakNet 4.0x branch also published under GPL ?<br>
+<br>
+Thanks,<br>
+Best regards,<br>
+<br>
+--<br>
+Ganael LAPLANCHE &lt;<a href=3D"mailto:ganael.laplanche@martymac.org">ganae=
+l.laplanche@martymac.org</a>&gt;<br>
+<a href=3D"http://www.martymac.org" target=3D"_blank">http://www.martymac.o=
+rg</a> | <a href=3D"http://contribs.martymac.org" target=3D"_blank">http://=
+contribs.martymac.org</a><br>
+FreeBSD: martymac &lt;martymac@FreeBSD.org&gt;, <a href=3D"http://www.FreeB=
+SD.org" target=3D"_blank">http://www.FreeBSD.org</a><br>
+</blockquote></div>
+
+--14dae9340cb106dafc04bbae7247--
+
+From ganael.laplanche@martymac.org Tue Mar 20 10:05:20 2012
+From ganael.laplanche Tue Mar 20 10:05:20 2012
+From: "Ganael LAPLANCHE" <ganael.laplanche@martymac.org>
+To: Kevin Jenkins <rakkar@jenkinssoftware.com>
+Subject: Re: Is Raknet still free software ?
+X-Openwebmail-Date: Tue, 20 Mar 2012 11:05:20 +0200
+Message-Id: <20120320085523.M98627@martymac.org>
+In-Reply-To: <CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyBYzdTU7=EB=vraw@mail.gmail.com>
+References: <20120319144603.M66781@martymac.org> <CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com> <20120320071037.M83412@martymac.org> <CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyB
+YzdTU7=EB=vraw@mail.gmail.com>
+X-Mailer: Open WebMail 2.01 20030425
+X-OriginatingIP: 157.99.64.43 (ganael.laplanche@martymac.org)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-15
+Status: RO
+Content-Length: 432
+Lines: 16
+
+On Tue, 20 Mar 2012 01:06:32 -0700, Kevin Jenkins wrote
+
+> http://www.raknet.com/raknet/downloads/RakNet-3.902.zip
+
+Thanks ! Regarding the use of RakNet under GPL, is it GPL v2 or v3 ?
+
+Is RakNet 4.0x branch also published under GPL ?
+
+Thanks,
+Best regards,
+
+--
+Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+http://www.martymac.org | http://contribs.martymac.org
+FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+
+From rakkar@jenkinssoftware.com Tue Mar 20 16:56:00 2012
+Return-Path: <rakkar@jenkinssoftware.com>
+Delivered-To: ganael.laplanche@martymac.org
+X-Spam-Level: 
+X-Spam-Status: No, hits=0.0 required=5.0
+        tests=HTML_MESSAGE
+Received: from mx1.galacsys.net (mx.galacsys.net [217.24.81.221])
+	by lmtp.galacsys.net (lmtpd) with LMTP id 63854.026;
+	Tue, 20 Mar 2012 09:06:36 +0100 (CET)
+Received: from mx1.galacsys.net (unknown [127.0.3.1])
+	by mx1.galacsys.net (Postfix) with ESMTP id A38F32C23B8D
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 09:06:36 +0100 (CET)
+Received: from mx2.freebsd.org (mx2.freebsd.org [IPv6:2001:4f8:fff6::35])
+	by mx1.galacsys.net (Postfix) with ESMTP
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 09:06:36 +0100 (CET)
+Received: from hub.freebsd.org (hub.freebsd.org [IPv6:2001:4f8:fff6::36])
+	by mx2.freebsd.org (Postfix) with ESMTP id DBFE014EAE3
+	for <ganael.laplanche@martymac.org>; Tue, 20 Mar 2012 08:06:34 +0000 (UTC)
+Received: by hub.freebsd.org (Postfix)
+	id D9F991065670; Tue, 20 Mar 2012 08:06:34 +0000 (UTC)
+Delivered-To: martymac@freebsd.org
+Received: from mx1.freebsd.org (mx1.freebsd.org [69.147.83.52])
+	by hub.freebsd.org (Postfix) with ESMTP id D94F9106566B
+	for <martymac@freebsd.org>; Tue, 20 Mar 2012 08:06:34 +0000 (UTC)
+	(envelope-from rakkar@jenkinssoftware.com)
+Received: from server282.com (server282.com [64.14.68.75])
+	by mx1.freebsd.org (Postfix) with ESMTP id 7B5438FC15
+	for <martymac@freebsd.org>; Tue, 20 Mar 2012 08:06:34 +0000 (UTC)
+Received: (qmail 19778 invoked by uid 503); 20 Mar 2012 08:06:33 -0000
+Received: from unknown (HELO mail-iy0-f182.google.com) (rakkar@jenkinssoftware.com@209.85.210.182)
+  by server282.com with ESMTPA; 20 Mar 2012 08:06:33 -0000
+Received: by iahk25 with SMTP id k25so14940248iah.13
+        for <martymac@freebsd.org>; Tue, 20 Mar 2012 01:06:32 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.50.45.200 with SMTP id p8mr8166858igm.23.1332230792687; Tue,
+ 20 Mar 2012 01:06:32 -0700 (PDT)
+Received: by 10.42.18.66 with HTTP; Tue, 20 Mar 2012 01:06:32 -0700 (PDT)
+In-Reply-To: <20120320071037.M83412@martymac.org>
+References: <20120319144603.M66781@martymac.org>
+	<CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com>
+	<20120320071037.M83412@martymac.org>
+Date: Tue, 20 Mar 2012 01:06:32 -0700
+Message-ID: <CAHcnhTNoT0zTExbrmGhp9Bi4pJR_TKLVtmyBYzdTU7=EB=vraw@mail.gmail.com>
+Subject: Re: Is Raknet still free software ?
+From: Kevin Jenkins <rakkar@jenkinssoftware.com>
+To: Ganael LAPLANCHE <martymac@freebsd.org>
+Content-Type: multipart/alternative; boundary=14dae93403c528302604bba8275b
+Status: RO
+X-Status: A
+Content-Length: 2325
+Lines: 61
+
+--14dae93403c528302604bba8275b
+Content-Type: text/plain; charset=ISO-8859-1
+
+http://www.raknet.com/raknet/downloads/RakNet-3.902.zip
+
+On Wed, Dec 31, 1969 at 4:00 PM, Ganael LAPLANCHE <martymac@freebsd.org>wrote:
+
+> On Mon, 19 Mar 2012 14:37:40 -0700, Kevin Jenkins wrote
+>
+> > What license is the version you have under? I am ok with
+> > RakNet being used under the GPL
+>
+> We have 3.5.2 in ports, but license is not yet specified. I will
+> indicate with the update that it is released under the GPL.
+>
+> Are sources for the lastest GPL'ed version available somewhere ?
+>
+> Thank you very much,
+> Best regards,
+>
+> --
+> Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+> http://www.martymac.org | http://contribs.martymac.org
+> FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+>
+
+--14dae93403c528302604bba8275b
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<a href=3D"http://www.raknet.com/raknet/downloads/RakNet-3.902.zip">http://=
+www.raknet.com/raknet/downloads/RakNet-3.902.zip</a><br><br><div class=3D"g=
+mail_quote">On Wed, Dec 31, 1969 at 4:00 PM, Ganael LAPLANCHE <span dir=3D"=
+ltr">&lt;<a href=3D"mailto:martymac@freebsd.org">martymac@freebsd.org</a>&g=
+t;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">On Mon, 19 Mar 2012 14:37:40 -0700, Kevin Je=
+nkins wrote<br>
+<br>
+&gt; What license is the version you have under? I am ok with<br>
+&gt; RakNet being used under the GPL<br>
+<br>
+We have 3.5.2 in ports, but license is not yet specified. I will<br>
+indicate with the update that it is released under the GPL.<br>
+<br>
+Are sources for the lastest GPL&#39;ed version available somewhere ?<br>
+<br>
+Thank you very much,<br>
+Best regards,<br>
+<font color=3D"#888888"><br>
+--<br>
+Ganael LAPLANCHE &lt;<a href=3D"mailto:ganael.laplanche@martymac.org">ganae=
+l.laplanche@martymac.org</a>&gt;<br>
+<a href=3D"http://www.martymac.org" target=3D"_blank">http://www.martymac.o=
+rg</a> | <a href=3D"http://contribs.martymac.org" target=3D"_blank">http://=
+contribs.martymac.org</a><br>
+FreeBSD: martymac &lt;martymac@FreeBSD.org&gt;, <a href=3D"http://www.FreeB=
+SD.org" target=3D"_blank">http://www.FreeBSD.org</a><br>
+</font></blockquote></div><br>
+
+--14dae93403c528302604bba8275b--
+
+From martymac@FreeBSD.org Tue Mar 20 08:13:01 2012
+From ganael.laplanche Tue Mar 20 08:13:01 2012
+From: "Ganael LAPLANCHE" <martymac@FreeBSD.org>
+To: Kevin Jenkins <rakkar@jenkinssoftware.com>
+Subject: Re: Is Raknet still free software ?
+X-Openwebmail-Date: Tue, 20 Mar 2012 09:13:01 +0200
+Message-Id: <20120320071037.M83412@martymac.org>
+In-Reply-To: <CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com>
+References: <20120319144603.M66781@martymac.org> <CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com>
+X-Mailer: Open WebMail 2.01 20030425
+X-OriginatingIP: 157.99.64.43 (ganael.laplanche@martymac.org)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-15
+Status: RO
+Content-Length: 553
+Lines: 18
+
+On Mon, 19 Mar 2012 14:37:40 -0700, Kevin Jenkins wrote
+
+> What license is the version you have under? I am ok with
+> RakNet being used under the GPL
+
+We have 3.5.2 in ports, but license is not yet specified. I will
+indicate with the update that it is released under the GPL.
+
+Are sources for the lastest GPL'ed version available somewhere ?
+
+Thank you very much,
+Best regards,
+
+--
+Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+http://www.martymac.org | http://contribs.martymac.org
+FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+
+From rakkar@jenkinssoftware.com Tue Mar 20 16:55:59 2012
+Return-Path: <rakkar@jenkinssoftware.com>
+Delivered-To: ganael.laplanche@martymac.org
+X-Spam-Level: 
+X-Spam-Status: No, hits=0.0 required=5.0
+        tests=HTML_MESSAGE
+Received: from spock.galacsys.net (mx2.galacsys.net [88.191.250.28])
+	by lmtp.galacsys.net (lmtpd) with LMTP id 93269.002;
+	Mon, 19 Mar 2012 23:16:38 +0100 (CET)
+Received: from spock.galacsys.net (localhost.galacsys.net [127.0.0.1])
+	by spock.galacsys.net (Postfix) with ESMTP id A9EF54511B
+	for <ganael.laplanche@martymac.org>; Mon, 19 Mar 2012 23:16:38 +0100 (CET)
+X-Greylist: delayed 1931 seconds by postgrey-1.15 at spock.galacsys.net; Mon, 19 Mar 2012 23:16:38 CET
+Received: from mx2.freebsd.org (mx2.freebsd.org [IPv6:2001:4f8:fff6::35])
+	by spock.galacsys.net (Postfix) with ESMTP
+	for <ganael.laplanche@martymac.org>; Mon, 19 Mar 2012 23:16:38 +0100 (CET)
+Received: from hub.freebsd.org (hub.freebsd.org [IPv6:2001:4f8:fff6::36])
+	by mx2.freebsd.org (Postfix) with ESMTP id F17D71509FF
+	for <ganael.laplanche@martymac.org>; Mon, 19 Mar 2012 21:44:22 +0000 (UTC)
+Received: by hub.freebsd.org (Postfix)
+	id F01DE106564A; Mon, 19 Mar 2012 21:44:22 +0000 (UTC)
+Delivered-To: martymac@freebsd.org
+Received: from mx1.freebsd.org (mx1.freebsd.org [IPv6:2001:4f8:fff6::34])
+	by hub.freebsd.org (Postfix) with ESMTP id EF6881065676
+	for <martymac@freebsd.org>; Mon, 19 Mar 2012 21:44:22 +0000 (UTC)
+	(envelope-from rakkar@jenkinssoftware.com)
+Received: from server282.com (server282.com [64.14.68.75])
+	by mx1.freebsd.org (Postfix) with ESMTP id 90E118FC17
+	for <martymac@freebsd.org>; Mon, 19 Mar 2012 21:44:22 +0000 (UTC)
+Received: (qmail 4999 invoked by uid 503); 19 Mar 2012 21:37:41 -0000
+Received: from unknown (HELO mail-iy0-f182.google.com) (rakkar@jenkinssoftware.com@209.85.210.182)
+  by server282.com with ESMTPA; 19 Mar 2012 21:37:41 -0000
+Received: by iahk25 with SMTP id k25so14053931iah.13
+        for <martymac@freebsd.org>; Mon, 19 Mar 2012 14:37:40 -0700 (PDT)
+MIME-Version: 1.0
+Received: by 10.50.169.9 with SMTP id aa9mr7240489igc.23.1332193060538; Mon,
+ 19 Mar 2012 14:37:40 -0700 (PDT)
+Received: by 10.42.18.66 with HTTP; Mon, 19 Mar 2012 14:37:40 -0700 (PDT)
+Received: by 10.42.18.66 with HTTP; Mon, 19 Mar 2012 14:37:40 -0700 (PDT)
+In-Reply-To: <20120319144603.M66781@martymac.org>
+References: <20120319144603.M66781@martymac.org>
+Date: Mon, 19 Mar 2012 14:37:40 -0700
+Message-ID: <CAHcnhTMkHeTNd0n_NDMjcu1S1grXBjU_8f8oPUp-Lwyp5uo4jw@mail.gmail.com>
+Subject: Re: Is Raknet still free software ?
+From: Kevin Jenkins <rakkar@jenkinssoftware.com>
+To: Ganael LAPLANCHE <martymac@freebsd.org>
+Cc: rakkar@jenkinssoftware.com
+Content-Type: multipart/alternative; boundary=e89a8f3bb04525487e04bb9f5eec
+Status: RO
+X-Status: A
+Content-Length: 2185
+Lines: 56
+
+--e89a8f3bb04525487e04bb9f5eec
+Content-Type: text/plain; charset=ISO-8859-1
+
+What license is the version you have under? I am ok with RakNet being used
+under the GPL
+On Mar 19, 2012 8:15 AM, "Ganael LAPLANCHE" <martymac@freebsd.org> wrote:
+
+> Hello,
+>
+> I am the maintainer of the Raknet port on FreeBSD. Our version in the
+> ports tree is 3.5.2. It is very old and I would like to update it.
+>
+> I would like to know if Raknet is still free software (it does not seem
+> to be the case anymore) ? If yes, under which license is it available
+> and where can I access the source code ?
+>
+> Best regards,
+>
+> --
+> Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+> http://www.martymac.org | http://contribs.martymac.org
+> FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
+>
+
+--e89a8f3bb04525487e04bb9f5eec
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<p>What license is the version you have under? I am ok with RakNet being us=
+ed under the GPL</p>
+<div class=3D"gmail_quote">On Mar 19, 2012 8:15 AM, &quot;Ganael LAPLANCHE&=
+quot; &lt;<a href=3D"mailto:martymac@freebsd.org">martymac@freebsd.org</a>&=
+gt; wrote:<br type=3D"attribution"><blockquote class=3D"gmail_quote" style=
+=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+Hello,<br>
+<br>
+I am the maintainer of the Raknet port on FreeBSD. Our version in the<br>
+ports tree is 3.5.2. It is very old and I would like to update it.<br>
+<br>
+I would like to know if Raknet is still free software (it does not seem<br>
+to be the case anymore) ? If yes, under which license is it available<br>
+and where can I access the source code ?<br>
+<br>
+Best regards,<br>
+<br>
+--<br>
+Ganael LAPLANCHE &lt;<a href=3D"mailto:ganael.laplanche@martymac.org">ganae=
+l.laplanche@martymac.org</a>&gt;<br>
+<a href=3D"http://www.martymac.org" target=3D"_blank">http://www.martymac.o=
+rg</a> | <a href=3D"http://contribs.martymac.org" target=3D"_blank">http://=
+contribs.martymac.org</a><br>
+FreeBSD: martymac &lt;martymac@FreeBSD.org&gt;, <a href=3D"http://www.FreeB=
+SD.org" target=3D"_blank">http://www.FreeBSD.org</a><br>
+</blockquote></div>
+
+--e89a8f3bb04525487e04bb9f5eec--
+
+From martymac@FreeBSD.org Mon Mar 19 15:56:12 2012
+From ganael.laplanche Mon Mar 19 15:56:12 2012
+From: "Ganael LAPLANCHE" <martymac@FreeBSD.org>
+To: rakkar@jenkinssoftware.com
+Subject: Is Raknet still free software ?
+X-Openwebmail-Date: Mon, 19 Mar 2012 16:56:12 +0200
+Message-Id: <20120319144603.M66781@martymac.org>
+X-Mailer: Open WebMail 2.01 20030425
+X-OriginatingIP: 157.99.64.43 (ganael.laplanche@martymac.org)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-15
+Status: RO
+Content-Length: 518
+Lines: 16
+
+Hello,
+
+I am the maintainer of the Raknet port on FreeBSD. Our version in the
+ports tree is 3.5.2. It is very old and I would like to update it.
+
+I would like to know if Raknet is still free software (it does not seem
+to be the case anymore) ? If yes, under which license is it available
+and where can I access the source code ?
+
+Best regards,
+
+--
+Ganael LAPLANCHE <ganael.laplanche@martymac.org>
+http://www.martymac.org | http://contribs.martymac.org
+FreeBSD: martymac <martymac@FreeBSD.org>, http://www.FreeBSD.org
