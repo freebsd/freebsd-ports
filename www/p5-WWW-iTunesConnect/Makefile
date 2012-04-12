@@ -7,7 +7,7 @@
 
 PORTNAME=	WWW-iTunesConnect
 PORTVERSION=	1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,11 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Client interface for Apple's iTunes Connect service
 
-RUN_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww \
-		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-Net-SSLeay>=0:${PORTSDIR}/security/p5-Net-SSLeay \
+		p5-HTML-Form>=0:${PORTSDIR}/www/p5-HTML-Form
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
