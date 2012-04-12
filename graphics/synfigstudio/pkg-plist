@@ -106,7 +106,9 @@ share/applications/synfigstudio.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+share/locale/da/LC_MESSAGES/synfigstudio.mo
 share/locale/de/LC_MESSAGES/synfigstudio.mo
+share/locale/cs/LC_MESSAGES/synfigstudio.mo
 share/locale/en_GB/LC_MESSAGES/synfigstudio.mo
 share/locale/lt/LC_MESSAGES/synfigstudio.mo
 share/locale/fa_IR/LC_MESSAGES/synfigstudio.mo
@@ -130,6 +132,7 @@ share/icons/hicolor/64x64/apps/synfig_icon.png
 share/icons/hicolor/scalable/apps/synfig_icon.svg
 share/pixmaps/sif_icon.png
 share/pixmaps/synfig_icon.png
+share/pixmaps/synfigstudio/layer_transform_scale_icon.png
 share/pixmaps/synfigstudio/animate_pause_icon.png
 share/pixmaps/synfigstudio/animate_loop_icon.png
 share/pixmaps/synfigstudio/interpolation_type_clamped_icon.png
@@ -179,7 +182,6 @@ share/pixmaps/synfigstudio/layer_other_plant_icon.png
 share/pixmaps/synfigstudio/layer_other_text_icon.png
 share/pixmaps/synfigstudio/layer_other_xorpattern_icon.png
 share/pixmaps/synfigstudio/layer_transform_rotate_icon.png
-share/pixmaps/synfigstudio/layer_transform_zoom_icon.png
 share/pixmaps/synfigstudio/tool_bline_icon.png
 share/pixmaps/synfigstudio/tool_circle_icon.png
 share/pixmaps/synfigstudio/tool_draw_icon.png
