@@ -77,6 +77,8 @@ lib/collectd/ntpd.so
 %%PYTHON%%lib/collectd/python.so
 lib/collectd/processes.so
 lib/collectd/processes.la
+%%ROUTEROS%%lib/collectd/routeros.la
+%%ROUTEROS%%lib/collectd/routeros.so
 %%RRD%%lib/collectd/rrdtool.la
 %%RRD%%lib/collectd/rrdtool.so
 %%RRDCACHED%%lib/collectd/rrdcached.la
