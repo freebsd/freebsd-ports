@@ -1,4 +1,5 @@
 bin/unison
+%%TEXT%%share/applications/unison.desktop
 %%TEXT%%bin/unison-text
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
