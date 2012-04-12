@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	Mail-Field-Received
-PORTVERSION=	0.24
+PORTVERSION=	0.26
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Perl5 modules for parsing of `Received' headers in e-mails.
+MAINTAINER=	culot@FreeBSD.org
+COMMENT=	Perl5 modules for parsing of `Received' headers in e-mails
 
-BUILD_DEPENDS=	${SITE_PERL}/Mail/Field.pm:${PORTSDIR}/mail/p5-Mail-Tools
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Mail-Tools>0:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	yes
 
