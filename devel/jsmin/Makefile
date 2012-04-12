@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jsmin
-DISTVERSION=	20110122
+DISTVERSION=	20120109
 CATEGORIES=	devel
 MASTER_SITES=	http://www.crockford.com/javascript/
 DISTNAME=	${PORTNAME}
