@@ -26,6 +26,13 @@ DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+DESKTOP_ENTRIES="NetBeans" \
+		"NetBeans IDE" \
+		${DATADIR}/nb/netbeans.png \
+		${PORTNAME}-${PORTVERSION} \
+		"Development;" \
+		${FALSE}
+
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
