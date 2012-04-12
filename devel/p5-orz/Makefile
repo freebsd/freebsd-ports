@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orz
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN/INGY
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A method of annotation as /* */ in perl
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Compile.pm:${PORTSDIR}/devel/p5-Module-Compile
+BUILD_DEPENDS=	p5-Module-Compile>=0.21:${PORTSDIR}/devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
