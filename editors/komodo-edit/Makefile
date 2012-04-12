@@ -13,27 +13,31 @@ DISTNAME=	Komodo-Edit-${PORTVERSION}-8334-linux-libcpp6-x86
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Multi-language editor from ActiveState
 
-BROKEN=		does not package
-
 CONFLICTS=	komodo-ide-*
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_LINUX=	f10
 USE_LINUX_APPS=	gtk2 jpeg
-USE_LDCONFIG=	yes
-USE_PYTHON=	yes
+
+DESKTOP_ENTRIES=	"Komodo Edit" "Free multi-platform editor that makes it easy to write quality code." \
+			"${DATADIR}/share/icons/komodo48.png" \
+			"${PREFIX}/bin/komodo %%F" "Application;Development;Utility;TextEditor;" \
+			false
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
-BROKEN=		fails to install
+BROKEN=		does not build
 .endif
 
 do-install:
 	${MKDIR} ${DESKTOPDIR}
-	cd ${WRKSRC} && ${SH} install.sh -I ${DATADIR} -s
+	cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_SHARE} \* ${DATADIR}
+	${CHMOD} ${BINMODE} ${DATADIR}/bin/komodo
+	${CHMOD} ${BINMODE} ${DATADIR}/lib/mozilla/komodo
+	${CHMOD} ${BINMODE} ${DATADIR}/lib/mozilla/komodo-bin
+	${CHMOD} ${BINMODE} ${DATADIR}/lib/mozilla/run-mozilla.sh
 	${LN} -sf ${DATADIR}/bin/komodo ${PREFIX}/bin/
-	${LN} -sf ${DATADIR}/share/desktop/komodo-edit-5.desktop ${DESKTOPDIR}/
 
 .include <bsd.port.post.mk>
