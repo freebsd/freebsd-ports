@@ -21,6 +21,7 @@ RUN_DEPENDS=	\
 	p5-UNIVERSAL-can>0:${PORTSDIR}/devel/p5-UNIVERSAL-can \
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
