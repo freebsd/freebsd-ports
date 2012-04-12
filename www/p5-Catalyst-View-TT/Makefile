@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Catalyst-View-TT
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Template Toolkit view class for Catalyst
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
