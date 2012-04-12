@@ -14,10 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module to manipulate RADIUS packets
 
+TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+
 PERL_CONFIGURE=	yes
 MAN3=		Net::Radius::Dictionary.3 Net::Radius::Packet.3
-
-post-extract:
-	${FIND} ${WRKDIR} -type f | ${XARGS} ${PERL5} -pi -e "s:\r::g"
 
 .include <bsd.port.mk>
