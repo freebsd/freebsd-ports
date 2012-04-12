@@ -6,12 +6,14 @@
 #    $MCom: ports/multimedia/gstreamermm/Makefile,v 1.6 2009/09/26 13:42:00 marcus Exp $
 
 PORTNAME=	gstreamermm
-PORTVERSION=	0.10.10
+PORTVERSION=	0.10.10.1
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	C++ wrapper library for the multimedia library GStreamer
+
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
