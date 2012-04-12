@@ -1,10 +1,17 @@
-%%SITE_PERL%%/Module/Compile.pm
-%%SITE_PERL%%/Module/Install/Admin/PMC.pm
-%%SITE_PERL%%/Module/Install/PMC.pm
-%%SITE_PERL%%/Module/Optimize.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Compile/.packlist
+%%SITE_PERL%%/Module/Compile.pm
+%%SITE_PERL%%/Module/Compile.pod
+%%SITE_PERL%%/Module/Compile/Opt.pm
+%%SITE_PERL%%/Module/Compile/Opt.pod
+%%SITE_PERL%%/Module/Install/Admin/PMC.pm
+%%SITE_PERL%%/Module/Install/Admin/PMC.pod
+%%SITE_PERL%%/Module/Install/PMC.pm
+%%SITE_PERL%%/Module/Install/PMC.pod
+%%SITE_PERL%%/Module/Optimize.pm
+%%SITE_PERL%%/Module/Optimize.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module/Compile
 @dirrmtry %%SITE_PERL%%/Module/Install/Admin
 @dirrmtry %%SITE_PERL%%/Module/Install
 @dirrmtry %%SITE_PERL%%/Module
