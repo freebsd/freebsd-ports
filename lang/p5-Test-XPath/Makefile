@@ -20,8 +20,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
 
-TEST_DEPENDS=	p5-Test-XPath>=0:${PORTSDIR}/lang/p5-Test-XPath
-
 PERL_MODBUILD=	yes
 
 MAN3=		Test::XPath.3
