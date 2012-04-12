@@ -766,6 +766,10 @@
 %%WWWDIR%%/language/fa_IR/install.lang.php
 %%WWWDIR%%/language/fa_IR/iso.txt
 %%WWWDIR%%/language/fa_IR/upgrade.lang.php
+%%WWWDIR%%/language/fi_FI/about.html
+%%WWWDIR%%/language/fi_FI/common.lang.php
+%%WWWDIR%%/language/fi_FI/fi_FI.jpg
+%%WWWDIR%%/language/fi_FI/iso.txt
 %%WWWDIR%%/language/fr_CA/about.html
 %%WWWDIR%%/language/fr_CA/admin.lang.php
 %%WWWDIR%%/language/fr_CA/common.lang.php
@@ -1276,8 +1280,10 @@
 %%WWWDIR%%/language/uk_UA/about.html
 %%WWWDIR%%/language/uk_UA/admin.lang.php
 %%WWWDIR%%/language/uk_UA/common.lang.php
+%%WWWDIR%%/language/uk_UA/install.lang.php
 %%WWWDIR%%/language/uk_UA/iso.txt
 %%WWWDIR%%/language/uk_UA/uk_UA.jpg
+%%WWWDIR%%/language/uk_UA/upgrade.lang.php
 %%WWWDIR%%/language/vi_VN/README.txt
 %%WWWDIR%%/language/vi_VN/about.html
 %%WWWDIR%%/language/vi_VN/admin.lang.php
@@ -1430,6 +1436,8 @@
 %%WWWDIR%%/plugins/LocalFilesEditor/language/sv_SE/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR/plugin.lang.php
+%%WWWDIR%%/plugins/LocalFilesEditor/language/uk_UA/description.txt
+%%WWWDIR%%/plugins/LocalFilesEditor/language/uk_UA/plugin.lang.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN/description.txt
 %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN/index.php
 %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN/plugin.lang.php
@@ -1619,6 +1627,7 @@
 %%WWWDIR%%/plugins/language_switch/language/sv_SE/index.php
 %%WWWDIR%%/plugins/language_switch/language/tr_TR/description.txt
 %%WWWDIR%%/plugins/language_switch/language/tr_TR/index.php
+%%WWWDIR%%/plugins/language_switch/language/uk_UA/description.txt
 %%WWWDIR%%/plugins/language_switch/language/vi_VN/description.txt
 %%WWWDIR%%/plugins/language_switch/language/vi_VN/index.php
 %%WWWDIR%%/plugins/language_switch/language/zh_CN/description.txt
@@ -2124,6 +2133,7 @@
 @dirrmtry %%WWWDIR%%/template-extension
 @dirrm %%WWWDIR%%/plugins/language_switch/language/zh_CN
 @dirrm %%WWWDIR%%/plugins/language_switch/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/language_switch/language/uk_UA
 @dirrm %%WWWDIR%%/plugins/language_switch/language/tr_TR
 @dirrm %%WWWDIR%%/plugins/language_switch/language/sv_SE
 @dirrm %%WWWDIR%%/plugins/language_switch/language/sr_RS
@@ -2203,6 +2213,7 @@
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/template
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/zh_CN
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/vi_VN
+@dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/uk_UA
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/tr_TR
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sv_SE
 @dirrm %%WWWDIR%%/plugins/LocalFilesEditor/language/sr_RS
@@ -2298,6 +2309,7 @@
 @dirrm %%WWWDIR%%/language/fr_FR
 @dirrm %%WWWDIR%%/language/fr_CA/help
 @dirrm %%WWWDIR%%/language/fr_CA
+@dirrm %%WWWDIR%%/language/fi_FI
 @dirrm %%WWWDIR%%/language/fa_IR
 @dirrm %%WWWDIR%%/language/et_EE
 @dirrm %%WWWDIR%%/language/es_ES/help
