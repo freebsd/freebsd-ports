@@ -6,73 +6,73 @@
 #
 
 PORTNAME=	raknet
-PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTVERSION=	3.9.2
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
-		SF/${PORTNAME}jenkinsso/${PORTNAME}jenkinsso/3.52
-
-DISTNAME=	RakNet-3.52
+		LOCAL/martymac
+DISTNAME=	RakNet-3.902
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Networking API that provides reliable UDP primarily for online games
 
+# Original license is Indy license, but FreeBSD has been granted special
+# authorization to provide RakNet 3.x (*only*, not 4.x) under the terms of
+# the GPL v3 license. This agreement has been received by the MAINTAINER
+# through a private mail exchange on 2012-03-20 (see files/SpecialAuth.mbox).
+LICENSE=	GPLv3 SpecialAuth
+LICENSE_COMB=	dual
+LICENSE_NAME_SpecialAuth=	Special authorization from developer
+LICENSE_FILE_SpecialAuth=	${FILESDIR}/SpecialAuth.mbox
+LICENSE_PERMS_SpecialAuth=	${_LICENSE_PERMS_DEFAULT}
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal autoheader autoconf automake libtool
-AUTOMAKE_ARGS=	--add-missing
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
-	-I ${LOCALBASE}/share/aclocal \
-	-I ${WRKDIR}/autotools/m4
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.(cpp|h)
+DOS2UNIX_REGEX=	.*\.(cpp|h|txt)
 
-OPTIONS=	RAKVOICE "Build Rakvoice" off \
-			AUTOPATCHER "Build autopatcher" off
+USE_GMAKE=	yes
+USE_CMAKE=	yes
+
+# XXX Do not provide Samples for the following reason :
+# - potential licensing problems
+# XXX Disable build of DependentExtensions for the following reasons :
+# - potential licensing problems
+# - only static libraries are built (shared libraries are no more provided, e.g.
+#   for autopatcher or rakvoice)
+# - no install target is provided, which prevents us to determine what files
+#   have to be provided by the port to have working extensions
+CMAKE_ARGS+=	-DDISABLEDEPENDENCIES:BOOL=ON
+
+.if ${CC} == "clang" || ${CXX} == "clang++"
+BROKEN=	does not build with clang
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_RAKVOICE)
-CONFIGURE_ARGS+=	--enable-rakvoice
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libspeex.so:${PORTSDIR}/audio/speex
-RUN_DEPENDS+=	${LOCALBASE}/lib/libspeex.so:${PORTSDIR}/audio/speex
-PLIST_SUB+=	PL_RAKVOICE=""
-.else
-CONFIGURE_ARGS+=	--disable-rakvoice
-PLIST_SUB+=	PL_RAKVOICE="@comment "
-.endif
-
-.if defined(WITH_AUTOPATCHER)
-CONFIGURE_ARGS+=	--enable-autopatcher
-USE_PGSQL=	yes
-PLIST_SUB+=	PL_AUTOPATCHER=""
-.else
-CONFIGURE_ARGS+=	--disable-autopatcher
-PLIST_SUB+=	PL_AUTOPATCHER="@comment "
-.endif
-
 post-patch:
-	@${MKDIR} ${WRKSRC}/autotools/build
+	@${FIND} ${WRKSRC} -type f -a '(' -name '*.cpp' -o -name '*.h' ')' -print0 \
+		| ${XARGS} -0 -x -n10 \
+			${REINPLACE_CMD} -e 's|Usage of RakNet is subject to the appropriate license agreement|Raknet is available under the terms of the GPLv3 license, see ${_LICENSE_DIR}/GPLv3|'
 
-pre-configure:
-	@(cd ${WRKSRC}/ && \
-		${LIBTOOLIZE} --force --copy --automake)
+pre-install:
+	@${FIND} ${WRKSRC} -type f -name '*.bak' -print0 \
+		| ${XARGS} -0 -x -n10 ${RM}
 
-post-install:
+do-install:
+	@${MKDIR} ${PREFIX}/include/raknet
+	@(cd ${WRKSRC}/Source/ && ${COPYTREE_SHARE} \*.h ${PREFIX}/include/raknet)
+	@${MKDIR} ${PREFIX}/lib
+	@${INSTALL_LIB} ${WRKSRC}/Lib/DLL/libRakNetDynamic.so \
+		${PREFIX}/lib/libraknet.so.0
+	@${LN} ${PREFIX}/lib/libraknet.so.0 ${PREFIX}/lib/libraknet.so
+	@${INSTALL_LIB} ${WRKSRC}/Lib/LibStatic/libRakNetStatic.a \
+		${PREFIX}/lib/libraknet.a
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/Help
-	(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/Help)
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/Samples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${MKDIR} ${DOCSDIR}/Help
+	@(cd ${WRKSRC}/Help/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/Help)
+	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

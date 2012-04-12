@@ -578,3 +578,5 @@ libaacplus-*		audio/libaacplus	Unclear legal status
 dmd-*			lang/dmd		No redistribution of non
 						validated binaries
 madfufw-*		audio/madfufw		No redistribution of firmware files
+raknet-*		devel/raknet		Original license is Indy license, special
+						authorization granted to provide RakNet under GPL v3
