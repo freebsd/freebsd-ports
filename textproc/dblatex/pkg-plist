@@ -146,6 +146,7 @@ bin/dblatex
 %%DATADIR%%/xsl/format.xsl
 %%DATADIR%%/xsl/glossary.xsl
 %%DATADIR%%/xsl/graphic.xsl
+%%DATADIR%%/xsl/htmltbl.xsl
 %%DATADIR%%/xsl/index.xsl
 %%DATADIR%%/xsl/inlined.xsl
 %%DATADIR%%/xsl/keyword.xsl
@@ -229,8 +230,6 @@ bin/dblatex
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch01s03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch01s05.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch02.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch02s02.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch02s03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ch03s06.html
@@ -248,6 +247,7 @@ bin/dblatex
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/co.linkends.show.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/colophon.tocdepth.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/dedication.tocdepth.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/default.table.rules.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/default.table.width.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/doc.alignment.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/doc.collab.show.html
@@ -381,6 +381,7 @@ bin/dblatex
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/images/warning.svg
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/images/warning.tif
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/img-tbl-color.png
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/img-tbl-html.png
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/index.numbered.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/index.tocdepth.html
@@ -425,7 +426,7 @@ bin/dblatex
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/preface.tocdepth.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/processus.png
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/qanda.defaultlabel.html
-%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/re01.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/ref-dblatex.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/refclass.suppress.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/refentry.generate.name.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/refentry.numbered.html
@@ -435,6 +436,8 @@ bin/dblatex
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-custom-latex.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-custom.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-figinclude.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-install-unix.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-install.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-param-value.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-params.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/manual/sec-pub-output.html
@@ -491,6 +494,7 @@ bin/dblatex
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/release-notes/sec-changes-02pre.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/release-notes/sec-changes-03.html
 %%PORTDOCS%%%%DOCSDIR%%/xhtml/release-notes/sec-changes-031.html
+%%PORTDOCS%%%%DOCSDIR%%/xhtml/release-notes/sec-changes-032.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/release-notes.pdf
 %%PYTHON_SITELIBDIR%%/dbtexmf/__init__.py
@@ -629,6 +633,7 @@ bin/dblatex
 %%PYTHON_SITELIBDIR%%/dbtexmf/xslt/xsltproc.py
 %%PYTHON_SITELIBDIR%%/dbtexmf/xslt/xsltproc.pyc
 %%PYTHON_SITELIBDIR%%/dbtexmf/xslt/xsltproc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 @dirrm %%PYTHON_SITELIBDIR%%/dbtexmf/xslt
 @dirrm %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/grubber
 @dirrm %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/xetex
