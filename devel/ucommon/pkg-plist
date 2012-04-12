@@ -17,6 +17,7 @@ include/commoncpp/export.h
 include/commoncpp/file.h
 include/commoncpp/mime.h
 include/commoncpp/numbers.h
+include/commoncpp/object.h
 include/commoncpp/pointer.h
 include/commoncpp/process.h
 include/commoncpp/serial.h
