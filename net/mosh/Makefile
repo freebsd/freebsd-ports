@@ -7,7 +7,7 @@
 
 PORTNAME=	mosh
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-utempter
 
 LATEST_LINK=	mosh-term
+
+CONFLICTS_INSTALL=	mosh-0.[2-9].*
 
 PLIST_FILES=	bin/mosh bin/mosh-server bin/mosh-client
 MAN1=		mosh-client.1 mosh-server.1 mosh.1
