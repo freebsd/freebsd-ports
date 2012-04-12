@@ -699,6 +699,7 @@
     SUBDIR += pwgen
     SUBDIR += pwgen2
     SUBDIR += pwsafe
+    SUBDIR += py-XenAPI
     SUBDIR += py-bcfg2
     SUBDIR += py-drmaa
     SUBDIR += py-filelike
