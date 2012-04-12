@@ -21,6 +21,8 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-DateTime-Format-SQLite>=0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
+		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator
 
 PERL_CONFIGURE=	yes
 
