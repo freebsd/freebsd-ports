@@ -442,6 +442,7 @@ akode-plugins-pulseaudio        ports/audio/akode-plugins-pulseaudio
 akode-plugins-resampler         ports/audio/akode-plugins-resampler
 akode-plugins-xiph              ports/audio/akode-plugins-xiph
 akonadi                         ports/databases/akonadi
+akonadi-google                  ports/databases/akonadi-google
 akonadi-googledata              ports/databases/akonadi-googledata
 akpop3d                         ports/mail/akpop3d
 alabastra                       ports/devel/alabastra
@@ -3266,6 +3267,7 @@ excido                          ports/games/excido
 execline                        ports/lang/execline
 exempi                          ports/textproc/exempi
 exercisix                       ports/devel/exercisix
+exfat-utils                     ports/sysutils/exfat-utils
 exhaust                         ports/games/exhaust
 exhaust-doc                     ports/games/exhaust-doc
 exhaust-ma                      ports/games/exhaust-ma
@@ -7606,6 +7608,7 @@ lamprop                         ports/science/lamprop
 lanbrowsing                     ports/net/lanbrowsing
 lander                          ports/games/lander
 landscape                       ports/graphics/landscape
+lang_mosh                       ports/lang/mosh
 langspec                        ports/java/langspec
 lanmap                          ports/net-mgmt/lanmap
 lapack                          ports/math/lapack
@@ -9608,7 +9611,6 @@ moria                           ports/games/moria
 morla                           ports/editors/morla
 morpheus                        ports/graphics/morpheus
 moscow_ml                       ports/lang/moscow_ml
-mosh                            ports/lang/mosh
 mosref                          ports/security/mosref
 most                            ports/sysutils/most
 motion                          ports/multimedia/motion
@@ -10042,6 +10044,7 @@ net-snmp                        ports/net-mgmt/net-snmp
 net2ftp                         ports/ftp/net2ftp
 net6                            ports/net/net6
 net_jags                        ports/net/jags
+net_mosh                        ports/net/mosh
 netams                          ports/net-mgmt/netams
 netams-front                    ports/net-mgmt/netams-front
 netatalk                        ports/net/netatalk
@@ -22255,6 +22258,7 @@ py-django-json-rpc              ports/www/py-django-json-rpc
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-mptt                  ports/www/py-django-mptt
+py-django-openid-auth           ports/www/py-django-openid-auth
 py-django-photologue            ports/www/py-django-photologue
 py-django-pipeline              ports/www/py-django-pipeline
 py-django-piston                ports/www/py-django-piston
@@ -27091,6 +27095,7 @@ verlihub-plugins-messanger      ports/net-p2p/verlihub-plugins-messanger
 verlihub-plugins-stats          ports/net-p2p/verlihub-plugins-stats
 veusz                           ports/science/veusz
 vexim                           ports/mail/vexim
+vfront                          ports/databases/vfront
 vgb-bin                         ports/emulators/vgb-bin
 vgba-bin                        ports/emulators/vgba-bin
 vhcp                            ports/net-p2p/vhcp
@@ -27633,6 +27638,7 @@ xarchive                        ports/archivers/xarchive
 xarchiver                       ports/archivers/xarchiver
 xarchon                         ports/games/xarchon
 xaric                           ports/irc/xaric
+xascii                          ports/x11/xascii
 xasteroids                      ports/games/xasteroids
 xastir                          ports/comms/xastir
 xataxx                          ports/games/xataxx
