@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PHP Extension to help debugging a PHP script
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 USE_AUTOTOOLS=	libtool
 USE_PHP=	yes
 USE_PHPIZE=	yes

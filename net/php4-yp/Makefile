@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 CATEGORIES=	net
 
 MASTERDIR=	${.CURDIR}/../../lang/php4

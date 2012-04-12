@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 CATEGORIES=	finance
 PKGNAMESUFFIX=	-pfpro
 

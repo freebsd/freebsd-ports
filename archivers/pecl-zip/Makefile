@@ -16,6 +16,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to create and read zip files (PHP 4 only)
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 LICENSE=	PHP301
 
 USE_PHP=	pcre
