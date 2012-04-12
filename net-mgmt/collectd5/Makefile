@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	5.0.1
-PORTREVISION=	1
+PORTVERSION=	5.1.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -42,11 +41,12 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		PDNS		"Input: PowerDNS" 				Off \
 		PGSQL		"Input: PostgreSQL" 				Off \
 		PING		"Input: Network latency (liboping)" 		On  \
-		PYTHON		"Input: Python plugin"				Off  \
+		PYTHON		"Input: Python plugin"				Off \
+		ROUTEROS	"Input: RouterOS plugin"			Off \
 		SNMP		"Input: SNMP" 					On  \
 		TOKYOTYRANT	"Input: Tokyotyrant database"			Off \
 		XMMS		"Input: XMMS" 					Off \
-		RRDTOOL		"Output: RRDTool"				On \
+		RRDTOOL		"Output: RRDTool"				On  \
 		RRDCACHED	"Output: RRDTool Cached (require RRDTOOL)"	On
 
 MAN1=		collectd.1 collectd-nagios.1 collectdmon.1 collectdctl.1
@@ -110,8 +110,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-perl \
 		--disable-pinba \
 		--disable-protocols \
-		--disable-routeros \
-		--without-librouteros \
 		--disable-sensors \
 		--disable-serial \
 		--disable-table \
@@ -267,7 +265,7 @@ PLIST_SUB+=	MBMON="@comment "
 .endif
 
 .if defined(WITH_MEMCACHED)
-LIB_DEPENDS+=	memcached.8:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=--enable-memcached
 CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE}
 PLIST_SUB+=	MEMCACHED=""
@@ -338,6 +336,15 @@ PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_ROUTEROS)
+LIB_DEPENDS+=	routeros:${PORTSDIR}/net/librouteros
+CONFIGURE_ARGS+=--enable-routeros --with-librouteros=${LOCALBASE}
+PLIST_SUB+=	ROUTEROS=""
+.else
+CONFIGURE_ARGS+=--disable-routeros --without-librouteros
+PLIST_SUB+=	ROUTEROS="@comment "
 .endif
 
 .if defined(WITH_RRDTOOL)

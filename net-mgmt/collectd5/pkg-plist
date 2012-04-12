@@ -77,6 +77,8 @@ lib/collectd/ntpd.so
 %%PYTHON%%lib/collectd/python.so
 lib/collectd/processes.la
 lib/collectd/processes.so
+%%ROUTEROS%%lib/collectd/routeros.la
+%%ROUTEROS%%lib/collectd/routeros.so
 %%RRD%%lib/collectd/rrdtool.la
 %%RRD%%lib/collectd/rrdtool.so
 %%RRDCACHED%%lib/collectd/rrdcached.la
@@ -103,6 +105,8 @@ lib/collectd/uptime.la
 lib/collectd/uptime.so
 lib/collectd/uuid.la
 lib/collectd/uuid.so
+lib/collectd/write_graphite.so
+lib/collectd/write_graphite.la
 lib/libcollectdclient.la
 lib/libcollectdclient.so
 lib/libcollectdclient.so.0
