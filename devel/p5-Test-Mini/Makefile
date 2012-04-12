@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Mini
 PORTVERSION=	v1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PVANDE
@@ -23,6 +24,7 @@ BUILD_DEPENDS=	p5-Data-Inspect>=0.03:${PORTSDIR}/devel/p5-Data-Inspect \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-aliased>=0.30:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-clean>=0.14:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
