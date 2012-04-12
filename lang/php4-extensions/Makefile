@@ -16,6 +16,9 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A "meta-port" to install PHP extensions
 
+DEPRECATED=	php4 is EOLed
+EXPIRATION_DATE=	2012-05-10
+
 USE_PHP=	yes
 DEFAULT_PHP_VER=4
 IGNORE_WITH_PHP=5
