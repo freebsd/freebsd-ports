@@ -74,10 +74,17 @@ do-install:
 	${XMLCAT_ADD}
 	${SGMLCAT_ADD}
 
-validate:
+validate: tidy
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
+	@${ECHO_MSG} Checking if tidy differs...
+	@if ${DIFF} -u "${VUXML_FILE}" "${VUXML_FILE}.tidy"; \
+	then \
+		${ECHO_MSG} ... seems okay; \
+	else \
+		return 1; \
+	fi
 
-tidy:
+tidy: vuln.xml
 	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}" > "${VUXML_FILE}.tidy"
 
 newentry:
