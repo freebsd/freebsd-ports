@@ -2,6 +2,9 @@ bin/cassandra-cli
 bin/nodetool
 bin/repaircluster
 bin/sstableloader
+bin/json2sstable
+bin/sstable2json
+bin/sstablekeys
 %%CQL%%bin/cqlsh
 %%DATADIR%%/CHANGES.txt
 %%DATADIR%%/LICENSE.txt
@@ -113,7 +116,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/client/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/client/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/client/package-use.html
-%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/Context.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/CreationTimeAwareFuture.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/DebuggableScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/DebuggableThreadPoolExecutor.html
@@ -125,7 +127,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/NamedThreadFactory.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/Stage.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/StageManager.html
-%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/Context.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/CreationTimeAwareFuture.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/DebuggableScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/DebuggableThreadPoolExecutor.html
@@ -325,7 +326,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/db/TruncateResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/TruncateVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/Truncation.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/UnserializableColumnFamilyException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/WriteResponse.WriteResponseSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/WriteResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/AbstractColumnContainer.DeletionInfo.html
@@ -367,6 +367,10 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/KeyspaceNotDefinedException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Memtable.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RangeSliceCommand.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/UnknownColumnFamilyException.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/AbstractCompositeType.CompositeComponent.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/marshal/class-use/AbstractCompositeType.CompositeComponent.html
+%%DATADIR%%/javadoc/org/apache/cassandra/db/UnknownColumnFamilyException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/RangeSliceReply.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadCommand.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/ReadRepairVerbHandler.html
@@ -390,7 +394,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/TruncateResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/TruncateVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/Truncation.html
-%%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/UnserializableColumnFamilyException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/WriteResponse.WriteResponseSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/class-use/WriteResponse.html
 %%DATADIR%%/javadoc/org/apache/cassandra/db/columniterator/IColumnIterator.html
@@ -1679,7 +1682,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/Throttle.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/UUIDGen.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/WrappedRunnable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/utils/XMLUtils.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/AbstractStatsDeque.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Allocator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BloomFilter.html
@@ -1728,7 +1730,6 @@ bin/sstableloader
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/Throttle.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/UUIDGen.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/WrappedRunnable.html
-%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/XMLUtils.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs/OpenBitSet.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs/class-use/OpenBitSet.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/obs/package-frame.html
@@ -1767,9 +1768,9 @@ bin/sstableloader
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.pyc
 %%CQL%%%%DATADIR%%/pylib/cqlshlib/wcwidth.py
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-1.0.8.jar
-%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.8.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-1.0.8.jar
+%%DATADIR%%/lib/apache-cassandra-1.0.9.jar
+%%DATADIR%%/lib/apache-cassandra-clientutil-1.0.9.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-1.0.9.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
