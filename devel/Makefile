@@ -3399,6 +3399,7 @@
     SUBDIR += py-usb
     SUBDIR += py-utils
     SUBDIR += py-venusian
+    SUBDIR += py-versiontools
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-wsgi_xmlrpc
