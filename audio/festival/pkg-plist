@@ -134,11 +134,14 @@ libexec/festival_client.naked
 %%DATADIR%%/lib/unilex_phones.scm
 %%DATADIR%%/lib/voices.scm
 %%DATADIR%%/lib/web.scm
+@exec mkdir -p %%DATADIR%%/lib/voices/spanish
+@exec mkdir -p %%DATADIR%%/lib/voices/english
 @dirrmtry %%DATADIR%%/lib/voices/spanish
 @dirrmtry %%DATADIR%%/lib/voices/english
 @dirrmtry %%DATADIR%%/lib/voices
 @dirrm %%DATADIR%%/lib/multisyn
 @dirrm %%DATADIR%%/lib/etc
+@exec mkdir -p %%DATADIR%%/lib/dicts
 @dirrmtry %%DATADIR%%/lib/dicts
 @dirrmtry %%DATADIR%%/lib
 @dirrm %%DATADIR%%/examples/songs
