@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -260,7 +260,7 @@ PLIST_SUB+=	MBMON="@comment "
 .endif
 
 .if defined(WITH_MEMCACHED)
-LIB_DEPENDS+=	memcached.9:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	memcached.10:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=--enable-memcached
 CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE}
 PLIST_SUB+=	MEMCACHED=""

@@ -7,7 +7,7 @@
 
 PORTNAME?=	proftpd
 PORTVERSION?=	1.3.4a
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -469,7 +469,7 @@ PLIST_SUB+=	CTRLS="@comment "
 .endif
 
 .if defined(WITH_MEMCACHE) || defined(AUTOSELECT_MEMCACHE)
-LIB_DEPENDS+=		memcached.9:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=		memcached.10:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=	--enable-memcache
 PLIST_SUB+=	MOD_MEMCACHE=""
 .else
