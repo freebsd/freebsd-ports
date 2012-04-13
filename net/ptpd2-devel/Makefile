@@ -18,6 +18,8 @@ LICENSE=	BSD
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
 CONFLICTS=	ptpd-2.[0-9].*
+LATEST_LINK=	ptpd2-devel
+
 PLIST_FILES=	sbin/ptpd2
 PORTDOCS=	*
 
