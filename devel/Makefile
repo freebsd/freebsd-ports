@@ -153,6 +153,7 @@
     SUBDIR += bzr-loom
     SUBDIR += bzr-pipeline
     SUBDIR += bzr-rewrite
+    SUBDIR += bzr-scmproj
     SUBDIR += bzr-stats
     SUBDIR += bzr-svn
     SUBDIR += bzr-upload
