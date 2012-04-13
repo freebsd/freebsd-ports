@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.4.4
-PORTREVISION=	1
+PORTVERSION=	4.6.0
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -77,7 +76,7 @@ PLIST_SUB+=		TETEX="@comment "
 BUILD_DEPENDS+=		kpsexpand:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS+=		kpsexpand:${PORTSDIR}/print/teTeX-base
 CONFIGURE_ARGS+=	--with-kpsexpand \
-			--with-texdir=${PREFIX}/share/texmf-local/tex/latex/gnuplot
+			--with-texdir=${LOCALBASE}/share/texmf/tex/latex/gnuplot
 PLIST_SUB+=		TETEX=""
 .endif
 
@@ -99,6 +98,10 @@ CONFIGURE_ARGS+=	--without-cairo
 .else
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 USE_GNOME+=		pango
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	gnuplot.dvi gnuplot.ps gnuplot.txt psdoc
 .endif
 
 post-patch:
