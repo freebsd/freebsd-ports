@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django_compressor
-PORTVERSION=	0.9.2
+PORTVERSION=	1.1.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	changlp@cs.nctu.edu.tw
 COMMENT=	Compresses linked and inline javascript/CSS into a single cached file
 
-USE_PYTHON=	yes
+LICENSE=	MIT
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versiontools>=1.8.2:${PORTSDIR}/devel/py-versiontools
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=0.4:${PORTSDIR}/www/py-django-appconf
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 
 OPTIONS=	BEAUTIFULSOUP "Enable BeautifulSoupParser" Off \
