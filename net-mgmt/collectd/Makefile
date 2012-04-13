@@ -260,7 +260,7 @@ PLIST_SUB+=	MBMON="@comment "
 .endif
 
 .if defined(WITH_MEMCACHED)
-LIB_DEPENDS+=	memcached.8:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	memcached.9:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=--enable-memcached
 CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE}
 PLIST_SUB+=	MEMCACHED=""
