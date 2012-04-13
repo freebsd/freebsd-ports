@@ -17,8 +17,10 @@ bin/llvm-nm
 bin/llvm-objdump
 bin/llvm-prof
 bin/llvm-ranlib
+bin/llvm-readobj
 bin/llvm-rtdyld
 bin/llvm-size
+bin/llvm-stress
 bin/llvm-stub
 bin/llvm-tblgen
 bin/macho-dump
@@ -34,6 +36,7 @@ include/llvm-c/Initialization.h
 include/llvm-c/LinkTimeOptimizer.h
 include/llvm-c/Object.h
 include/llvm-c/Target.h
+include/llvm-c/TargetMachine.h
 include/llvm-c/Transforms/IPO.h
 include/llvm-c/Transforms/PassManagerBuilder.h
 include/llvm-c/Transforms/Scalar.h
@@ -53,6 +56,7 @@ include/llvm/ADT/DepthFirstIterator.h
 include/llvm/ADT/EquivalenceClasses.h
 include/llvm/ADT/FoldingSet.h
 include/llvm/ADT/GraphTraits.h
+include/llvm/ADT/Hashing.h
 include/llvm/ADT/ImmutableIntervalMap.h
 include/llvm/ADT/ImmutableList.h
 include/llvm/ADT/ImmutableMap.h
@@ -81,6 +85,7 @@ include/llvm/ADT/SmallSet.h
 include/llvm/ADT/SmallString.h
 include/llvm/ADT/SmallVector.h
 include/llvm/ADT/SparseBitVector.h
+include/llvm/ADT/SparseSet.h
 include/llvm/ADT/Statistic.h
 include/llvm/ADT/StringExtras.h
 include/llvm/ADT/StringMap.h
@@ -94,6 +99,7 @@ include/llvm/ADT/Twine.h
 include/llvm/ADT/UniqueVector.h
 include/llvm/ADT/ValueMap.h
 include/llvm/ADT/VariadicFunction.h
+include/llvm/ADT/edit_distance.h
 include/llvm/ADT/ilist.h
 include/llvm/ADT/ilist_node.h
 include/llvm/Analysis/AliasAnalysis.h
@@ -189,6 +195,7 @@ include/llvm/CodeGen/LinkAllAsmWriterComponents.h
 include/llvm/CodeGen/LinkAllCodegenComponents.h
 include/llvm/CodeGen/LiveInterval.h
 include/llvm/CodeGen/LiveIntervalAnalysis.h
+include/llvm/CodeGen/LiveRangeEdit.h
 include/llvm/CodeGen/LiveStackAnalysis.h
 include/llvm/CodeGen/LiveVariables.h
 include/llvm/CodeGen/MachORelocation.h
@@ -217,6 +224,7 @@ include/llvm/CodeGen/MachinePassRegistry.h
 include/llvm/CodeGen/MachineRegisterInfo.h
 include/llvm/CodeGen/MachineRelocation.h
 include/llvm/CodeGen/MachineSSAUpdater.h
+include/llvm/CodeGen/MachineScheduler.h
 include/llvm/CodeGen/PBQP/Graph.h
 include/llvm/CodeGen/PBQP/HeuristicBase.h
 include/llvm/CodeGen/PBQP/HeuristicSolver.h
@@ -232,6 +240,7 @@ include/llvm/CodeGen/RegisterScavenging.h
 include/llvm/CodeGen/ResourcePriorityQueue.h
 include/llvm/CodeGen/RuntimeLibcalls.h
 include/llvm/CodeGen/ScheduleDAG.h
+include/llvm/CodeGen/ScheduleDAGInstrs.h
 include/llvm/CodeGen/ScheduleHazardRecognizer.h
 include/llvm/CodeGen/SchedulerRegistry.h
 include/llvm/CodeGen/ScoreboardHazardRecognizer.h
@@ -251,16 +260,17 @@ include/llvm/Config/llvm-config.h
 include/llvm/Constant.h
 include/llvm/Constants.h
 include/llvm/DebugInfo/DIContext.h
-include/llvm/DebugInfoProbe.h
 include/llvm/DefaultPasses.h
 include/llvm/DerivedTypes.h
 include/llvm/ExecutionEngine/ExecutionEngine.h
 include/llvm/ExecutionEngine/GenericValue.h
+include/llvm/ExecutionEngine/IntelJITEventsWrapper.h
 include/llvm/ExecutionEngine/Interpreter.h
 include/llvm/ExecutionEngine/JIT.h
 include/llvm/ExecutionEngine/JITEventListener.h
 include/llvm/ExecutionEngine/JITMemoryManager.h
 include/llvm/ExecutionEngine/MCJIT.h
+include/llvm/ExecutionEngine/OProfileWrapper.h
 include/llvm/ExecutionEngine/RuntimeDyld.h
 include/llvm/Function.h
 include/llvm/GVMaterializer.h
@@ -347,6 +357,7 @@ include/llvm/Module.h
 include/llvm/Object/Archive.h
 include/llvm/Object/Binary.h
 include/llvm/Object/COFF.h
+include/llvm/Object/ELF.h
 include/llvm/Object/Error.h
 include/llvm/Object/MachO.h
 include/llvm/Object/MachOFormat.h
@@ -437,6 +448,7 @@ include/llvm/Support/Regex.h
 include/llvm/Support/Registry.h
 include/llvm/Support/RegistryParser.h
 include/llvm/Support/SMLoc.h
+include/llvm/Support/SaveAndRestore.h
 include/llvm/Support/Signals.h
 include/llvm/Support/Solaris.h
 include/llvm/Support/SourceMgr.h
@@ -456,6 +468,7 @@ include/llvm/Support/TypeBuilder.h
 include/llvm/Support/Valgrind.h
 include/llvm/Support/ValueHandle.h
 include/llvm/Support/Win64EH.h
+include/llvm/Support/YAMLParser.h
 include/llvm/Support/circular_raw_ostream.h
 include/llvm/Support/raw_os_ostream.h
 include/llvm/Support/raw_ostream.h
@@ -495,7 +508,6 @@ include/llvm/Transforms/Instrumentation.h
 include/llvm/Transforms/Scalar.h
 include/llvm/Transforms/Utils/AddrModeMatcher.h
 include/llvm/Transforms/Utils/BasicBlockUtils.h
-include/llvm/Transforms/Utils/BasicInliner.h
 include/llvm/Transforms/Utils/BuildLibCalls.h
 include/llvm/Transforms/Utils/Cloning.h
 include/llvm/Transforms/Utils/CmpInstAnalysis.h
@@ -517,6 +529,8 @@ include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
 lib/BugpointPasses.so
 lib/LLVMHello.so
+lib/libLLVM-3.1svn.so
+lib/libLLVM-3.1svn.so.0
 lib/libLLVMARMAsmParser.a
 lib/libLLVMARMAsmPrinter.a
 lib/libLLVMARMCodeGen.a
@@ -529,8 +543,6 @@ lib/libLLVMAsmParser.a
 lib/libLLVMAsmPrinter.a
 lib/libLLVMBitReader.a
 lib/libLLVMBitWriter.a
-lib/libLLVMCBackendCodeGen.a
-lib/libLLVMCBackendInfo.a
 lib/libLLVMCellSPUCodeGen.a
 lib/libLLVMCellSPUDesc.a
 lib/libLLVMCellSPUInfo.a
@@ -540,6 +552,7 @@ lib/libLLVMCppBackendCodeGen.a
 lib/libLLVMCppBackendInfo.a
 lib/libLLVMDebugInfo.a
 lib/libLLVMExecutionEngine.a
+lib/libLLVMHexagonAsmPrinter.a
 lib/libLLVMHexagonCodeGen.a
 lib/libLLVMHexagonDesc.a
 lib/libLLVMHexagonInfo.a
@@ -609,7 +622,6 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/BitCodeFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/BranchWeightMetadata.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Bugpoint.html
-%%PORTDOCS%%%%DOCSDIR%%/html/CFEBuildInstrs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CMake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CodeGenerator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CodingStandards.html
@@ -633,6 +645,7 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/llvm-nm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/llvm-prof.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/llvm-ranlib.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/llvm-stress.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/opt.html
 %%PORTDOCS%%%%DOCSDIR%%/html/CommandGuide/tblgen.html
@@ -666,6 +679,7 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html/SourceLevelDebugging.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SystemLibrary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/TableGenFundamentals.html
+%%PORTDOCS%%%%DOCSDIR%%/html/TestSuiteMakefileGuide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/TestingGuide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/WritingAnLLVMBackend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/WritingAnLLVMPass.html
@@ -714,6 +728,7 @@ lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/ps/llvm-nm.ps
 %%PORTDOCS%%%%DOCSDIR%%/ps/llvm-prof.ps
 %%PORTDOCS%%%%DOCSDIR%%/ps/llvm-ranlib.ps
+%%PORTDOCS%%%%DOCSDIR%%/ps/llvm-stress.ps
 %%PORTDOCS%%%%DOCSDIR%%/ps/opt.ps
 %%PORTDOCS%%%%DOCSDIR%%/ps/tblgen.ps
 @dirrm include/llvm/Transforms/Utils

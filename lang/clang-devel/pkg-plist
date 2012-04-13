@@ -33,6 +33,7 @@ include/clang/AST/DeclCXX.h
 include/clang/AST/DeclContextInternals.h
 include/clang/AST/DeclFriend.h
 include/clang/AST/DeclGroup.h
+include/clang/AST/DeclLookups.h
 include/clang/AST/DeclNodes.inc
 include/clang/AST/DeclObjC.h
 include/clang/AST/DeclTemplate.h
@@ -45,7 +46,9 @@ include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
 include/clang/AST/ExternalASTSource.h
 include/clang/AST/GlobalDecl.h
+include/clang/AST/LambdaMangleContext.h
 include/clang/AST/Mangle.h
+include/clang/AST/NSAPI.h
 include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/OperationKinds.h
 include/clang/AST/ParentMap.h
@@ -71,7 +74,6 @@ include/clang/AST/TypeNodes.def
 include/clang/AST/TypeOrdering.h
 include/clang/AST/TypeVisitor.h
 include/clang/AST/UnresolvedSet.h
-include/clang/AST/UsuallyTinyPtrVector.h
 include/clang/AST/VTTBuilder.h
 include/clang/AST/VTableBuilder.h
 include/clang/Analysis/Analyses/CFGReachabilityAnalysis.h
@@ -87,18 +89,19 @@ include/clang/Analysis/AnalysisContext.h
 include/clang/Analysis/AnalysisDiagnostic.h
 include/clang/Analysis/CFG.h
 include/clang/Analysis/CFGStmtMap.h
+include/clang/Analysis/CallGraph.h
 include/clang/Analysis/DomainSpecific/CocoaConventions.h
 include/clang/Analysis/FlowSensitive/DataflowSolver.h
 include/clang/Analysis/FlowSensitive/DataflowValues.h
 include/clang/Analysis/ProgramPoint.h
 include/clang/Analysis/Support/BlkExprDeclBitVector.h
 include/clang/Analysis/Support/BumpVector.h
-include/clang/Analysis/Support/SaveAndRestore.h
 include/clang/Analysis/Visitors/CFGRecStmtDeclVisitor.h
 include/clang/Analysis/Visitors/CFGRecStmtVisitor.h
 include/clang/Analysis/Visitors/CFGStmtVisitor.h
 include/clang/Basic/ABI.h
 include/clang/Basic/AddressSpaces.h
+include/clang/Basic/AllDiagnostics.h
 include/clang/Basic/AttrKinds.h
 include/clang/Basic/AttrList.inc
 include/clang/Basic/Builtins.def
@@ -187,6 +190,11 @@ include/clang/Driver/ToolChain.h
 include/clang/Driver/Types.def
 include/clang/Driver/Types.h
 include/clang/Driver/Util.h
+include/clang/Edit/Commit.h
+include/clang/Edit/EditedSource.h
+include/clang/Edit/EditsReceiver.h
+include/clang/Edit/FileOffset.h
+include/clang/Edit/Rewriters.h
 include/clang/Frontend/ASTConsumers.h
 include/clang/Frontend/ASTUnit.h
 include/clang/Frontend/Analyses.def
@@ -221,19 +229,6 @@ include/clang/Frontend/TextDiagnosticPrinter.h
 include/clang/Frontend/Utils.h
 include/clang/Frontend/VerifyDiagnosticConsumer.h
 include/clang/FrontendTool/Utils.h
-include/clang/Index/ASTLocation.h
-include/clang/Index/Analyzer.h
-include/clang/Index/CallGraph.h
-include/clang/Index/DeclReferenceMap.h
-include/clang/Index/Entity.h
-include/clang/Index/GlobalSelector.h
-include/clang/Index/Handlers.h
-include/clang/Index/IndexProvider.h
-include/clang/Index/Indexer.h
-include/clang/Index/Program.h
-include/clang/Index/STLExtras.h
-include/clang/Index/SelectorMap.h
-include/clang/Index/TranslationUnit.h
 include/clang/Lex/AttrSpellings.inc
 include/clang/Lex/CodeCompletionHandler.h
 include/clang/Lex/DirectoryLookup.h
@@ -272,6 +267,8 @@ include/clang/Rewrite/Rewriter.h
 include/clang/Rewrite/Rewriters.h
 include/clang/Rewrite/TokenRewriter.h
 include/clang/Sema/AnalysisBasedWarnings.h
+include/clang/Sema/AttrParsedAttrKinds.inc
+include/clang/Sema/AttrParsedAttrList.inc
 include/clang/Sema/AttrTemplateInstantiate.inc
 include/clang/Sema/AttributeList.h
 include/clang/Sema/CXXFieldCollector.h
@@ -284,7 +281,6 @@ include/clang/Sema/IdentifierResolver.h
 include/clang/Sema/Initialization.h
 include/clang/Sema/LocInfoType.h
 include/clang/Sema/Lookup.h
-include/clang/Sema/MultiInitializer.h
 include/clang/Sema/ObjCMethodList.h
 include/clang/Sema/Overload.h
 include/clang/Sema/Ownership.h
@@ -312,6 +308,7 @@ include/clang/Serialization/Module.h
 include/clang/Serialization/ModuleManager.h
 include/clang/Serialization/SerializationDiagnostic.h
 include/clang/StaticAnalyzer/Checkers/ClangCheckers.h
+include/clang/StaticAnalyzer/Checkers/CommonBugCategories.h
 include/clang/StaticAnalyzer/Checkers/DereferenceChecker.h
 include/clang/StaticAnalyzer/Checkers/LocalCheckers.h
 include/clang/StaticAnalyzer/Core/BugReporter/BugReporter.h
@@ -333,6 +330,7 @@ include/clang/StaticAnalyzer/Core/PathSensitive/CoreEngine.h
 include/clang/StaticAnalyzer/Core/PathSensitive/Environment.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ExplodedGraph.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ExprEngine.h
+include/clang/StaticAnalyzer/Core/PathSensitive/FunctionSummary.h
 include/clang/StaticAnalyzer/Core/PathSensitive/MemRegion.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ObjCMessage.h
 include/clang/StaticAnalyzer/Core/PathSensitive/ProgramState.h
@@ -350,6 +348,8 @@ include/clang/StaticAnalyzer/Core/PathSensitive/TaintTag.h
 include/clang/StaticAnalyzer/Core/PathSensitive/WorkList.h
 include/clang/StaticAnalyzer/Frontend/CheckerRegistration.h
 include/clang/StaticAnalyzer/Frontend/FrontendActions.h
+include/clang/Tooling/CompilationDatabase.h
+include/clang/Tooling/Tooling.h
 lib/clang/3.1/include/arm_neon.h
 lib/clang/3.1/include/emmintrin.h
 lib/clang/3.1/include/immintrin.h
@@ -371,9 +371,9 @@ lib/libclangAnalysis.a
 lib/libclangBasic.a
 lib/libclangCodeGen.a
 lib/libclangDriver.a
+lib/libclangEdit.a
 lib/libclangFrontend.a
 lib/libclangFrontendTool.a
-lib/libclangIndex.a
 lib/libclangLex.a
 lib/libclangParse.a
 lib/libclangRewrite.a
@@ -382,6 +382,7 @@ lib/libclangSerialization.a
 lib/libclangStaticAnalyzerCheckers.a
 lib/libclangStaticAnalyzerCore.a
 lib/libclangStaticAnalyzerFrontend.a
+lib/libclangTooling.a
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
@@ -391,6 +392,7 @@ lib/libclangStaticAnalyzerFrontend.a
 %%PORTDOCS%%%%DOCSDIR%%/html/DriverInternals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/InternalsManual.html
 %%PORTDOCS%%%%DOCSDIR%%/html/LanguageExtensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ObjectiveCLiterals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PCHInternals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/PTHInternals.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ReleaseNotes.html
@@ -408,6 +410,7 @@ lib/libclangStaticAnalyzerFrontend.a
 @dirrm lib/clang/3.1/include
 @dirrm lib/clang/3.1
 @dirrm lib/clang
+@dirrm include/clang/Tooling
 @dirrm include/clang/StaticAnalyzer/Frontend
 @dirrm include/clang/StaticAnalyzer/Core/PathSensitive
 @dirrm include/clang/StaticAnalyzer/Core/BugReporter
@@ -419,9 +422,9 @@ lib/libclangStaticAnalyzerFrontend.a
 @dirrm include/clang/Rewrite
 @dirrm include/clang/Parse
 @dirrm include/clang/Lex
-@dirrm include/clang/Index
 @dirrm include/clang/FrontendTool
 @dirrm include/clang/Frontend
+@dirrm include/clang/Edit
 @dirrm include/clang/Driver
 @dirrm include/clang/Config
 @dirrm include/clang/CodeGen
