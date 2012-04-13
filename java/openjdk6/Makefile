@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b24
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -47,7 +47,8 @@ OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		IPV6 "Enable IPv6 support" off \
 		POLICY "Install the Unlimited Strength Policy Files" off \
 		SOUND "Enable sound support" off \
-		TEST "Add support for running regression test" off
+		TEST "Add support for running regression test" off \
+		TZUPDATE "Update the time zone data" on
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -80,6 +81,10 @@ EXTRACT_BEFORE_ARGS=
 
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
+.endif
+
+.if defined(WITH_TZUPDATE)
+RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 .endif
 
 # avoid ARCH in MAKEFLAGS, breaks build
@@ -238,8 +243,14 @@ post-patch:
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
 
-.if defined(WITH_TEST)
 post-build:
+.if defined(WITH_TZUPDATE)
+	@# Update time zones
+	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
+	@${LN} -s -f ${LOCALBASE}/share/java/zi \
+		${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
+.endif
+.if defined(WITH_TEST)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Run \"make test\" to execute regression test (it could take a few hours to complete)."
 .if defined(DISPLAY)
