@@ -1,0 +1,4 @@
+A helper class for handling configuration defaults of packaged Django apps
+gracefully.
+
+WWW:	http://django-appconf.readthedocs.org/
