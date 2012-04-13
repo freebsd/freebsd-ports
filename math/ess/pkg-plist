@@ -36,6 +36,8 @@
 %%EMACS_SITE_LISPDIR%%/ess-custom.elc
 %%EMACS_SITE_LISPDIR%%/ess-dde.el
 %%EMACS_SITE_LISPDIR%%/ess-dde.elc
+%%EMACS_SITE_LISPDIR%%/ess-developer.el
+%%EMACS_SITE_LISPDIR%%/ess-developer.elc
 %%EMACS_SITE_LISPDIR%%/ess-eldoc.el
 %%EMACS_SITE_LISPDIR%%/ess-eldoc.elc
 %%EMACS_SITE_LISPDIR%%/ess-font-lock.el
@@ -104,6 +106,8 @@
 %%EMACS_SITE_LISPDIR%%/ess-swv.elc
 %%EMACS_SITE_LISPDIR%%/ess-toolbar.el
 %%EMACS_SITE_LISPDIR%%/ess-toolbar.elc
+%%EMACS_SITE_LISPDIR%%/ess-tracebug.el
+%%EMACS_SITE_LISPDIR%%/ess-tracebug.elc
 %%EMACS_SITE_LISPDIR%%/ess-trns.el
 %%EMACS_SITE_LISPDIR%%/ess-trns.elc
 %%EMACS_SITE_LISPDIR%%/ess-utils.el
