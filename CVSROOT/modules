@@ -21945,6 +21945,7 @@ ptoc                            ports/lang/ptoc
 ptools                          ports/games/ptools
 ptpd                            ports/net/ptpd
 ptpd2                           ports/net/ptpd2
+ptpd2-devel                     ports/net/ptpd2-devel
 ptunnel                         ports/net/ptunnel
 ptx-kmod                        ports/multimedia/ptx-kmod
 pty                             ports/devel/pty
@@ -22315,6 +22316,7 @@ py-fchksum                      ports/security/py-fchksum
 py-feedfinder                   ports/www/py-feedfinder
 py-feedgenerator                ports/www/py-feedgenerator
 py-feedparser                   ports/textproc/py-feedparser
+py-ffc                          ports/math/py-ffc
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
 py-firebirdsql                  ports/databases/py-firebirdsql
