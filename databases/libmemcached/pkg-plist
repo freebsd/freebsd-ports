@@ -21,6 +21,7 @@ include/libhashkit-1.0/has.h
 include/libhashkit-1.0/hashkit.h
 include/libhashkit-1.0/hashkit.hpp
 include/libhashkit-1.0/strerror.h
+include/libhashkit-1.0/string.h
 include/libhashkit-1.0/str_algorithm.h
 include/libhashkit-1.0/types.h
 include/libhashkit-1.0/visibility.h
@@ -40,6 +41,7 @@ include/libmemcached-1.0/defaults.h
 include/libmemcached-1.0/delete.h
 include/libmemcached-1.0/deprecated_types.h
 include/libmemcached-1.0/dump.h
+include/libmemcached-1.0/encoding_key.h
 include/libmemcached-1.0/error.h
 include/libmemcached-1.0/exception.hpp
 include/libmemcached-1.0/exist.h
@@ -98,11 +100,11 @@ include/libmemcachedutil-1.0/version.h
 lib/libhashkit.a
 lib/libhashkit.la
 lib/libhashkit.so
-lib/libhashkit.so.1
+lib/libhashkit.so.2
 lib/libmemcached.a
 lib/libmemcached.la
 lib/libmemcached.so
-lib/libmemcached.so.9
+lib/libmemcached.so.10
 lib/libmemcachedprotocol.a
 lib/libmemcachedprotocol.la
 lib/libmemcachedprotocol.so

@@ -6,34 +6,41 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
-LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		event-1.4.4:${PORTSDIR}/devel/libevent
 
-FETCH_ARGS?= 	-pRr
+FETCH_ARGS?=	-pRr
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
-CONFIGURE_ARGS=	--with-memcached=no --disable-libevent --without-libevent-prefix
+CONFIGURE_ARGS=	--without-memcached
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
-
-OPTIONS=	SASL "With (Cyrus) SASL2 support" off
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/lib/libsasl.so.2)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+.endif
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.x
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
+	@${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
 			 -e '/^LDFLAGS *=/ s/$$/ $${LTLIBSASL2}/' \
 			${WRKSRC}/Makefile.in ${WRKSRC}/support/include.am
 .if defined(NO_INSTALL_MANPAGES)
-	${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
 .endif
 
 .if !defined(NO_INSTALL_MANPAGES)
@@ -151,13 +158,6 @@ MAN3=		hashkit_clone.3 \
 		memcached_touch_by_key.3 \
 		memcached_verbosity.3 \
 		memcached_version.3
-.endif
-
-.if defined(WITH_SASL)
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--with-libsasl2-prefix="${LOCALBASE}"
-.else
-CONFIGURE_ARGS+=	--disable-sasl
 .endif
 
 .include <bsd.port.post.mk>
