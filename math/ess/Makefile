@@ -1,13 +1,12 @@
 # New ports collection makefile for:	ess
-# Date created: 06 March 2010
-# Whom: 	Christopher J.s Ruwe
+# Date created:				06 March 2010
+# Whom:					Christopher J.s Ruwe
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ess
-PORTVERSION=	5.14
-PORTREVISION=	8
+PORTVERSION=	12.04
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
