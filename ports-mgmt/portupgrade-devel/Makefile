@@ -44,7 +44,7 @@ MLINKS=		pkgdb.1 pkg_which.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
 NO_CHECKSUM=	yes
-GIT_REPO_URL=	git@github.com:stass/pkgtools.git
+GIT_REPO_URL=	git@github.com:pkgtools/pkgtools.git
 
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
