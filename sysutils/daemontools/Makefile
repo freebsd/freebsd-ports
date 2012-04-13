@@ -18,8 +18,8 @@ COMMENT=	Service monitoring and logging utilities by djb
 
 LICENSE=	PD
 LICENSE_NAME=	public domain
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_TEXT=	The daemontools-0.76.tar.gz archive is in the public domain as of 2007.12.28.
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
 		S_EARLY	"Start early, before the normal daemons" off \
@@ -61,8 +61,8 @@ MANCOMPRESSED=	no
 
 .if defined(WITH_SIGQ12)
 #PATCH_SITES+=	http://thedjbway.org/patches/:sigq12
-PATCH_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%\//roam\/sysutils\/daemontools\/:sigq12/} \
-		http://people.FreeBSD.org/~roam/ports/sysutils/daemontools/:sigq12
+PATCH_SITES+=	${MASTER_SITE_LOCAL:S/%SUBDIR%\//jgh\/sysutils\/daemontools\/:sigq12/} \
+		http://people.FreeBSD.org/~jgh/ports/sysutils/daemontools/:sigq12
 PATCHFILES+=	daemontools-0.76.sigq12.patch:sigq12
 PATCH_DIST_STRIP=	-p2
 .endif
@@ -93,7 +93,7 @@ do-install:
 
 post-install:
 .if !defined(WITHOUT_MAN)
-	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${MAN8PREFIX}/man/man8/
 .endif
 
 .include <bsd.port.post.mk>
