@@ -53,6 +53,10 @@ if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
 fi
 # XXX: Hack to enable check of the dependent variables
 eval real_${rcvar}="\${${rcvar}:=NO}"	${rcvar}=YES
+%%WINBIND%%# winbindd
+%%WINBIND%%rcvar=winbindd_enable
+%%WINBIND%%winbindd_enable=${winbindd_enable:=NO}
+%%WINBIND%%winbindd_flags=${winbindd_flags=''}
 # nmbd
 rcvar=nmbd_enable
 nmbd_enable=${nmbd_enable:=NO}
@@ -61,10 +65,6 @@ nmbd_flags=${nmbd_flags="-D"}
 rcvar=smbd_enable
 smbd_enable=${smbd_enable:=NO}
 smbd_flags=${smbd_flags="-D"}
-%%WINBIND%%# winbindd
-%%WINBIND%%rcvar=winbindd_enable
-%%WINBIND%%winbindd_enable=${winbindd_enable:=NO}
-%%WINBIND%%winbindd_flags=${winbindd_flags=''}
 # Custom commands
 extra_commands="reload status"
 start_precmd="samba_start_precmd"
