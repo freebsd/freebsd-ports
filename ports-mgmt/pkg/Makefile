@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta10
+DISTVERSION=	1.0-beta11
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -26,9 +26,12 @@ MAKE_ENV+=	WITHOUT_PROFILE=yes
 MAN8=	pkg.8 \
 	pkg-add.8 \
 	pkg-autoremove.8 \
+	pkg-audit.8 \
 	pkg-backup.8 \
+	pkg-check.8 \
 	pkg-create.8 \
 	pkg-delete.8 \
+	pkg-fetch.8 \
 	pkg-info.8 \
 	pkg-install.8 \
 	pkg-query.8 \
