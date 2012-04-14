@@ -26,7 +26,8 @@ OPTIONS=	WIDE_CHARS "enable wide-character support" on \
 		256_COLOR "enable 256-color support" off \
 		DEC_LOCATOR "enable DECterm Locator support" off \
 		PCRE "use PCRE for regular-expressions" off \
-		GNOME "include gnome support for .desktop file" off
+		GNOME "include gnome support for .desktop file" off \
+		DABBREV "enable support for dabbrev-expand" off
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -59,6 +60,10 @@ USE_GNOME=		desktopfileutils
 PLIST_SUB+=		GNOME=""
 .else
 PLIST_SUB+=		GNOME="@comment "
+.endif
+
+.if defined(WITH_DABBREV)
+CONFIGURE_ARGS+=	--enable-dabbrev
 .endif
 
 MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
