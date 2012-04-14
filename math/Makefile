@@ -536,6 +536,7 @@
     SUBDIR += py-svgmath
     SUBDIR += py-symeig
     SUBDIR += py-sympy
+    SUBDIR += py-ufl
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
