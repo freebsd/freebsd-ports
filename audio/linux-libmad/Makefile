@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	${LINUX_DIST}/linux/${LINUX_DIST_VER}/${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4

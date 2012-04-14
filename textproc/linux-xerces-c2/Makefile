@@ -18,6 +18,8 @@ DISTNAME=	${PORTNAME}-c-${PORTVERSION}-1.fc4.rf
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Validating XML parser from the Apache XML Project (linux version)
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	4

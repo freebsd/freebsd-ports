@@ -16,6 +16,8 @@ COMMENT=	RPM of libxml2
 
 CONFLICTS=	linux-f8-libxml2-[0-9]* linux-f10-libxml2-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes

@@ -16,6 +16,8 @@ COMMENT=		RPM of libmng
 
 CONFLICTS=		linux-f8-libmng-[0-9]* linux-f10-libmng-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	jpeg
 LINUX_DIST_VER=	4

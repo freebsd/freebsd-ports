@@ -16,6 +16,8 @@ COMMENT=	Linux version of the graphic library for GTK+
 
 CONFLICTS=	linux-f8-gdk-pixbuf-[0-9]* linux-f10-gdk-pixbuf-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 ONLY_FOR_ARCHS=	i386 amd64

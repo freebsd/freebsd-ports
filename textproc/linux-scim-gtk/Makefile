@@ -21,6 +21,8 @@ CONFLICTS=	linux-f8-scim-gtk-[0-9]* linux-f10-scim-gtk-[0-9]*
 MASTER_SITE_SRC_SUBDIR=	# defined below
 SRC_DISTFILES=	scim-${PORTVERSION}-${PORTSUBVERSION}.fc${LINUX_DIST_VER}${SRC_SUFX}
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	gtk2 scimlibs

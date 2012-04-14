@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-6.4
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux psproc binaries
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	4
