@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7u2/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -33,6 +34,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ZIP=	YES
 MAKE_JOBS_UNSAFE=	YES
+
+OPTIONS=	TZUPDATE	"Update the time zone data"	on
 
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	2
@@ -112,6 +115,10 @@ BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_TZUPDATE)
+RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
+.endif
+
 # do we have valid native jdk installed?
 .for BJDK in ${BOOTSTRAP_JDKS}
 .  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
@@ -146,6 +153,14 @@ post-patch:
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
+
+.if defined(WITH_TZUPDATE)
+pre-install:
+	@# Update time zones
+	@${RM} -rf ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib/zi
+	@${LN} -s -f ${LOCALBASE}/share/java/zi \
+		${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre/lib
+.endif
 
 do-install:
 	@${MKDIR} ${INSTALLDIR}
