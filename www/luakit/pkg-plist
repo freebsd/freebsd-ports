@@ -1,0 +1,62 @@
+@comment $FreeBSD$
+bin/luakit
+etc/xdg/luakit/binds.lua
+etc/xdg/luakit/globals.lua
+etc/xdg/luakit/modes.lua
+etc/xdg/luakit/rc.lua
+etc/xdg/luakit/theme.lua
+etc/xdg/luakit/webview.lua
+etc/xdg/luakit/window.lua
+share/applications/luakit.desktop
+share/doc/luakit/README.md
+share/doc/luakit/AUTHORS
+share/doc/luakit/COPYING
+share/doc/luakit/COPYING.GPLv3
+share/luakit/lib/lousy/widget/init.lua
+share/luakit/lib/lousy/widget/menu.lua
+share/luakit/lib/lousy/widget/tablist.lua
+share/luakit/lib/lousy/init.lua
+share/luakit/lib/lousy/mode.lua
+share/luakit/lib/lousy/signal.lua
+share/luakit/lib/lousy/bind.lua
+share/luakit/lib/lousy/uri.lua
+share/luakit/lib/lousy/util.lua
+share/luakit/lib/lousy/theme.lua
+share/luakit/lib/follow/binds.lua
+share/luakit/lib/follow/init.lua
+share/luakit/lib/follow/modes.lua
+share/luakit/lib/follow/styles.lua
+share/luakit/lib/cmdhist.lua
+share/luakit/lib/completion.lua
+share/luakit/lib/cookie_blocking.lua
+share/luakit/lib/cookies.lua
+share/luakit/lib/downloads.lua
+share/luakit/lib/downloads_chrome.lua
+share/luakit/lib/follow_selected.lua
+share/luakit/lib/formfiller.lua
+share/luakit/lib/go_input.lua
+share/luakit/lib/go_next_prev.lua
+share/luakit/lib/go_up.lua
+share/luakit/lib/history.lua
+share/luakit/lib/history_chrome.lua
+share/luakit/lib/noscript.lua
+share/luakit/lib/proxy.lua
+share/luakit/lib/quickmarks.lua
+share/luakit/lib/search.lua
+share/luakit/lib/session.lua
+share/luakit/lib/tabhistory.lua
+share/luakit/lib/taborder.lua
+share/luakit/lib/undoclose.lua
+share/luakit/lib/bookmarks.lua
+share/luakit/lib/userscripts.lua
+share/luakit/lib/chrome.lua
+share/pixmaps/luakit.png
+@dirrm share/luakit/lib/lousy/widget
+@dirrm share/luakit/lib/lousy
+@dirrm share/luakit/lib/follow
+@dirrm share/luakit/lib
+@dirrm share/luakit
+@dirrm share/doc/luakit
+@dirrmtry share/applications
+@dirrmtry etc/xdg/luakit
+@dirrmtry etc/xdg
