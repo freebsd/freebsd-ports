@@ -172,33 +172,33 @@ lib/libgwenhywfar.so.63
 %%WITH_QT4%%libdata/pkgconfig/gwengui-qt4.pc
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
-share/gwenhywfar/ca-bundle.crt
-share/gwenhywfar/dialogs/dlg_input.dlg
-share/gwenhywfar/dialogs/dlg_message.dlg
-share/gwenhywfar/dialogs/dlg_progress.dlg
-share/gwenhywfar/dialogs/dlg_showbox.dlg
-share/gwenhywfar/typemaker2/c/char.tm2
-share/gwenhywfar/typemaker2/c/char_array.tm2
-share/gwenhywfar/typemaker2/c/char_ptr.tm2
-share/gwenhywfar/typemaker2/c/double.tm2
-share/gwenhywfar/typemaker2/c/gwen_buffer.tm2
-share/gwenhywfar/typemaker2/c/gwen_date.tm2
-share/gwenhywfar/typemaker2/c/gwen_idlist64.tm2
-share/gwenhywfar/typemaker2/c/gwen_time.tm2
-share/gwenhywfar/typemaker2/c/idmap_base.tm2
-share/gwenhywfar/typemaker2/c/int.tm2
-share/gwenhywfar/typemaker2/c/int_base.tm2
-share/gwenhywfar/typemaker2/c/list1_base.tm2
-share/gwenhywfar/typemaker2/c/list2_base.tm2
-share/gwenhywfar/typemaker2/c/struct_base.tm2
-share/gwenhywfar/typemaker2/c/tree_base.tm2
-share/gwenhywfar/typemaker2/c/uint32_t.tm2
-share/gwenhywfar/typemaker2/c/uint64_t.tm2
+%%DATADIR%%/ca-bundle.crt
+%%DATADIR%%/dialogs/dlg_input.dlg
+%%DATADIR%%/dialogs/dlg_message.dlg
+%%DATADIR%%/dialogs/dlg_progress.dlg
+%%DATADIR%%/dialogs/dlg_showbox.dlg
+%%DATADIR%%/typemaker2/c/char.tm2
+%%DATADIR%%/typemaker2/c/char_array.tm2
+%%DATADIR%%/typemaker2/c/char_ptr.tm2
+%%DATADIR%%/typemaker2/c/double.tm2
+%%DATADIR%%/typemaker2/c/gwen_buffer.tm2
+%%DATADIR%%/typemaker2/c/gwen_date.tm2
+%%DATADIR%%/typemaker2/c/gwen_idlist64.tm2
+%%DATADIR%%/typemaker2/c/gwen_time.tm2
+%%DATADIR%%/typemaker2/c/idmap_base.tm2
+%%DATADIR%%/typemaker2/c/int.tm2
+%%DATADIR%%/typemaker2/c/int_base.tm2
+%%DATADIR%%/typemaker2/c/list1_base.tm2
+%%DATADIR%%/typemaker2/c/list2_base.tm2
+%%DATADIR%%/typemaker2/c/struct_base.tm2
+%%DATADIR%%/typemaker2/c/tree_base.tm2
+%%DATADIR%%/typemaker2/c/uint32_t.tm2
+%%DATADIR%%/typemaker2/c/uint64_t.tm2
 share/locale/de/LC_MESSAGES/gwenhywfar.mo
-@dirrm share/gwenhywfar/typemaker2/c
-@dirrm share/gwenhywfar/typemaker2
-@dirrm share/gwenhywfar/dialogs
-@dirrm share/gwenhywfar
+@dirrm %%DATADIR%%/typemaker2/c
+@dirrm %%DATADIR%%/typemaker2
+@dirrm %%DATADIR%%/dialogs
+@dirrm %%DATADIR%%
 @dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio
 @dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct
 @dirrm lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/configmgr
