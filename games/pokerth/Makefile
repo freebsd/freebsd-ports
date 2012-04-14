@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	PokerTH-${PORTVERSION}-src
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	A poker game written in C++/QT4
 
 LICENSE=	GPLv2

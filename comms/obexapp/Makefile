@@ -10,7 +10,7 @@ PORTVERSION=	1.4.15
 CATEGORIES=	comms net
 MASTER_SITES=	http://people.freebsd.org/~emax/obexapp/
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Obex application to transfer objects to mobile equipment
 
 LIB_DEPENDS=	openobex:${PORTSDIR}/comms/openobex \

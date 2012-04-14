@@ -13,7 +13,7 @@ MASTER_SITES=	http://github.com/sargon/${PORTNAME}${PKGNAMESUFFIX}/tarball/${POR
 PKGNAMESUFFIX=	-srg
 DISTNAME=	sargon-${PORTNAME}${PKGNAMESUFFIX}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop - sargon fork
 
 CONFLICTS_INSTALL=	trayer-1.0*

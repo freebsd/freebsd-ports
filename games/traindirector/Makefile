@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.backerstreet.com/traindir/
 DISTNAME=	tdir36src
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Train controller simulation
 
 LICENSE=	GPLv2

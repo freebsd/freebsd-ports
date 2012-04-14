@@ -11,7 +11,7 @@ CATEGORIES=	www deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION:C/\..*//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Small php webapp to manage your recipes
 
 LICENSE=	GPLv2
