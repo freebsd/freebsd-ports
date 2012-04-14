@@ -1,0 +1,6 @@
+Opa is an open source, simple and unified platform for writing web
+applications. All aspects are directly written in Opa: Frontend code,
+backend code, database queries and configuration. And everything is
+strongly statically typed.
+
+WWW: http://opalang.org/
