@@ -353,7 +353,6 @@
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css/tinymce.css
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css/form.css
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css/ie6.css
-%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/info.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type/folderParent.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type/fileUnknown.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type/fileText.png
@@ -373,6 +372,9 @@
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type/Thumbs.db
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type/fileFlash.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type/fileXml.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/Thumbs.db
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/info.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/programm2008.jpg
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/cut.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/ajaxLoading.gif
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/button.gif
@@ -411,6 +413,32 @@
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/action/delete.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/panel_bg.gif
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/folder.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/New Folder/Thumbs.db
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/New Folder/folder_explore.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileAcrobat.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileWord.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/filePowerpoint.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileCode.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileExcel.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileUnknown.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileFlash.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileExe.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileText.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/folder.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/folderParent.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileRTF.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/Thumbs.db
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileZip.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileMusic.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/folderEmpty.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/filePicture.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileVideo.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon/fileXml.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/button/grey_lc.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/button/grey_rc.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/action/cross.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css/ajaxfilemanager.css
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css/stand_alone.css
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/standard/panel_bg.gif
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/standard/go_parent.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/standard/button.gif
@@ -440,6 +468,7 @@
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/cut_flag.gif
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/refresh.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/copy.png
+%%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/grey_lc.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/uploadProcessing.gif
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/big_icon/fileText.png
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/big_icon/fileVideo.png
@@ -921,6 +950,7 @@
 %%WWWDIR%%/inc/PMF_DB/Mysql.php
 %%WWWDIR%%/inc/PMF_DB/Ibm_db2.php
 %%WWWDIR%%/inc/PMF_DB/Sqlsrv.php
+%%WWWDIR%%/inc/PMF_DB/Sqlite3.php
 %%WWWDIR%%/inc/PMF_DB/Sybase.php
 %%WWWDIR%%/inc/PMF_DB/Pgsql.php
 %%WWWDIR%%/inc/PMF_DB/Mysqli.php
@@ -1049,6 +1079,7 @@
 %%WWWDIR%%/inc/PMF_Enc/EncMd5.php
 %%WWWDIR%%/inc/PMF_Enc/EncCrypt.php
 %%WWWDIR%%/inc/PMF_Enc/Enc.php
+%%WWWDIR%%/scripts/createHashes.php
 %%WWWDIR%%/scripts/git2changelog.sh
 %%WWWDIR%%/scripts/git2package.sh
 %%WWWDIR%%/scripts/version.sh
@@ -1264,10 +1295,13 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/autoresize
 @dirrm %%WWWDIR%%/admin/editor/plugins/autolink
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/standard
+@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/small_icon
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/pagination
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/file_type
+@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/button
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/big_icon
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/action
+@dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/New Folder
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/css
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default
