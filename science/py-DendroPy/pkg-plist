@@ -1,5 +1,6 @@
 bin/cattrees.py
 bin/long_branch_symmdiff.py
 bin/strict_consensus_merge.py
+bin/sumlabels.py
 bin/sumtrees.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
