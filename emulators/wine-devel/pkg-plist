@@ -720,6 +720,7 @@ lib/wine/apphelp.dll.so
 lib/wine/appwiz.cpl.so
 lib/wine/aspnet_regiis.exe.so
 lib/wine/atl.dll.so
+lib/wine/atl80.dll.so
 lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
 lib/wine/avicap32.dll.so
@@ -860,6 +861,7 @@ lib/wine/fakedlls/apphelp.dll
 lib/wine/fakedlls/appwiz.cpl
 lib/wine/fakedlls/aspnet_regiis.exe
 lib/wine/fakedlls/atl.dll
+lib/wine/fakedlls/atl80.dll
 lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
 lib/wine/fakedlls/avicap32.dll
