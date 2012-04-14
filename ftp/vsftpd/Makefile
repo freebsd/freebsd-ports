@@ -19,19 +19,15 @@ LICENSE=	GPLv2
 ALL_TARGET=	vsftpd
 MAN5=		vsftpd.conf.5
 MAN8=		vsftpd.8
+USE_RC_SUBR=	vsftpd.sh
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
-OPTIONS=	RC_NG		"install RC_NG script"		off \
-		VSFTPD_SSL	"Include support for SSL"	off \
+OPTIONS=	VSFTPD_SSL	"Include support for SSL"	off \
 		PIDFILE		"unofficial support for pidfile"	off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_RC_NG)
-USE_RC_SUBR=	vsftpd.sh
-.endif
 
 .if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
