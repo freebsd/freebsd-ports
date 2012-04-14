@@ -7,7 +7,7 @@
 
 PORTNAME=	cTemplate
 PORTVERSION=	1.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc pear
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vanilla
@@ -17,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A PECL extension for google ctemplate library
 
-LIB_DEPENDS=	ctemplate.1:${PORTSDIR}/textproc/google-ctemplate
+LIB_DEPENDS=	ctemplate.2:${PORTSDIR}/textproc/google-ctemplate
 
 USE_BZIP2=	yes
 USE_PHP=	yes

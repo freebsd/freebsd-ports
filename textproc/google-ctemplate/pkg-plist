@@ -2,6 +2,7 @@ bin/diff_tpl_auto_escape
 bin/make_tpl_varnames_h
 bin/template-converter
 include/ctemplate/per_expand_data.h
+include/ctemplate/str_ref.h
 include/ctemplate/template.h
 include/ctemplate/template_annotator.h
 include/ctemplate/template_cache.h
@@ -16,11 +17,11 @@ include/ctemplate/template_string.h
 lib/libctemplate.a
 lib/libctemplate.la
 lib/libctemplate.so
-lib/libctemplate.so.1
+lib/libctemplate.so.2
 lib/libctemplate_nothreads.a
 lib/libctemplate_nothreads.la
 lib/libctemplate_nothreads.so
-lib/libctemplate_nothreads.so.1
+lib/libctemplate_nothreads.so.2
 libdata/pkgconfig/libctemplate.pc
 libdata/pkgconfig/libctemplate_nothreads.pc
 @dirrm include/ctemplate
