@@ -7,7 +7,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -15,11 +14,6 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.1:${PORTSDIR}/devel/rudiments
-
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=		does not compile
 
 WANT_GNOME=	yes
 USE_GMAKE=	yes
