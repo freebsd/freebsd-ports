@@ -10,6 +10,7 @@
 
 PORTNAME=		dma
 PORTVERSION=		v0.7
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		mail ipv6
 #MASTER_SITES=		https://github.com/		# 302 temp move
@@ -18,7 +19,7 @@ DISTNAME=		${PORTVERSION}
 EXTRACT_SUFX=
 DIST_SUBDIR=		${PORTNAME}
 
-MAINTAINER=	bz@FreeBSD.org
+MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
 LICENSE=	BSD
