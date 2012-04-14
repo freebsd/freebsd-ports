@@ -1,0 +1,11 @@
+--- configure.orig	2011-12-31 12:07:36.000000000 -0600
++++ configure	2011-12-31 12:10:21.000000000 -0600
+@@ -399,7 +399,7 @@
+ if [ -n "$HAS_CAMLIDL" ]; then
+ # - checking libnatpmp *
+     echo-check libnatpmp
+-    if LIBNATPMP=($(check-c-lib -opt libnatpmp/natpmp netinet/in.h arpa/inet.h libnatpmp/getgateway.h libnatpmp/natpmp.h)); then
++    if LIBNATPMP=($(check-c-lib -opt libnatpmp/natpmp netinet/in.h arpa/inet.h natpmp.h)); then
+         HAS_LIBNATPMP=1
+     else
+         LIBNATPMP=("")
