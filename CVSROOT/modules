@@ -22107,6 +22107,7 @@ py-TurboJinja                   ports/devel/py-TurboJinja
 py-WebError                     ports/www/py-WebError
 py-WebFlash                     ports/www/py-WebFlash
 py-WebTest                      ports/www/py-WebTest
+py-XenAPI                       ports/sysutils/py-XenAPI
 py-YABT                         ports/misc/py-YABT
 py-ZopeUndo                     ports/devel/py-ZopeUndo
 py-aafigure                     ports/graphics/py-aafigure
@@ -22246,6 +22247,7 @@ py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-annoying              ports/www/py-django-annoying
 py-django-app-plugins           ports/www/py-django-app-plugins
+py-django-appconf               ports/www/py-django-appconf
 py-django-appmedia              ports/www/py-django-appmedia
 py-django-caching-app-plugins   ports/www/py-django-caching-app-plugins
 py-django-classy-tags           ports/www/py-django-classy-tags
@@ -23074,6 +23076,7 @@ py-utidy                        ports/www/py-utidy
 py-utils                        ports/devel/py-utils
 py-vatnumber                    ports/finance/py-vatnumber
 py-venusian                     ports/devel/py-venusian
+py-versiontools                 ports/devel/py-versiontools
 py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
 py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
@@ -23122,6 +23125,7 @@ py-xattr                        ports/devel/py-xattr
 py-xcaplib                      ports/devel/py-xcaplib
 py-xdelta3                      ports/misc/py-xdelta3
 py-xdg                          ports/devel/py-xdg
+py-xenapi                       ports/sysutils/py-XenAPI
 py-xlib                         ports/x11-toolkits/py-xlib
 py-xlrd                         ports/textproc/py-xlrd
 py-xlwriter                     ports/textproc/py-xlwriter
