@@ -21,6 +21,7 @@ libexec/ircd-ratbox/ssld
 %%DATADIR%%/help/opers/error
 %%DATADIR%%/help/opers/etrace
 %%DATADIR%%/help/opers/gline
+%%DATADIR%%/help/opers/gungline
 %%DATADIR%%/help/opers/help
 %%DATADIR%%/help/opers/index
 %%DATADIR%%/help/opers/info

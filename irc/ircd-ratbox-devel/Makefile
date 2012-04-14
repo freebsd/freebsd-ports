@@ -7,17 +7,17 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/testing/	\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/testing/	\
-		http://www.ircd-ratbox.org/download/testing/		\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/testing/old/	\
-		http://www.ircd-ratbox.org/download/testing/old/
+MASTER_SITES=	http://www.ratbox.org/download/				\
+		ftp://ftp.parodius.com/pub/ircd-ratbox/			\
+		http://www.ratbox.org/download/old/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Advanced, stable IRC daemon, used widely on EFnet ('testing' release)
+
+LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-[0-9]*
 
