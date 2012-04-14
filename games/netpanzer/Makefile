@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Real time, isometric view, tank multiplayer strategy game
 
 LICENSE=	GPLv2

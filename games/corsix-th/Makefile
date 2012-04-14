@@ -12,7 +12,7 @@ MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	corsix-th
 DISTNAME=	CorsixTH-${DISTVERSION}-Source
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source clone of Theme Hospital
 
 LICENSE=	MIT

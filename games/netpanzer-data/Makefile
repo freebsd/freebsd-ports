@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 PKGNAMEPREFIX=	netpanzer-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME:S/$/-/}${PORTVERSION}
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Data files for the netpanzer game
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs

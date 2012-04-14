@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
 		ftp://ftp.gnokii.org/pub/gnokii/ \
 		http://www.gnokii.org/download/gnokii/0.6.x/
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Tools to talk to GSM cellular phones
 
 LICENSE=	GPLv2

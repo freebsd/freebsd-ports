@@ -11,7 +11,7 @@ CATEGORIES=	comms net
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	linux/bluetooth
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open source implementation of the OBEX protocol
 
 USE_GMAKE=	yes

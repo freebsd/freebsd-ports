@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	mad@madpilot.net
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	A GTK2 based XMMS2 client, written in C
 
 LICENSE=	GPLv2
