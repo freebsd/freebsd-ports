@@ -509,6 +509,7 @@
     SUBDIR += py-basemap
     SUBDIR += py-basemap-data
     SUBDIR += py-bitvector
+    SUBDIR += py-fiat
     SUBDIR += py-ffc
     SUBDIR += py-fpconst
     SUBDIR += py-gato
