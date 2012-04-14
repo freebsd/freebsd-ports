@@ -70,6 +70,7 @@
     SUBDIR += clit
     SUBDIR += clucene
     SUBDIR += clucene-contrib
+    SUBDIR += coccigrep
     SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += codespell
