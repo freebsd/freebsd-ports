@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -34,7 +34,7 @@ QT_COMPONENTS=	gui corelib network sql sql-sqlite3 qmake_build \
 		moc_build rcc_build uic_build
 USE_SDL=	mixer
 HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	-unix PREFIX=${PREFIX}
+QMAKE_ARGS+=	PREFIX=${PREFIX}
 
 PORTDOCS=	server_setup_howto.txt
 MAN1=		pokerth.1
