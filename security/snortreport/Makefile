@@ -16,7 +16,7 @@ COMMENT=	Add-on module for snort to generate real-time web reports
 LICENSE=	GPLv2
 
 .if !defined(WITHOUT_JPGRAPH)
-RUN_DEPENDS=	${LOCALBASE}/share/jpgraph2/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
+RUN_DEPENDS=	${LOCALBASE}/share/jpgraph/jpgraph.php:${PORTSDIR}/graphics/jpgraph2
 .endif
 
 USE_PHP=	yes
