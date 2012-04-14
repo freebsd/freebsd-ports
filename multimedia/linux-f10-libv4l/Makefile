@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Collection of video4linux support libraries (Fedora 10)
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
 RPMVERSION=	1.fc10

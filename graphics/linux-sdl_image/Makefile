@@ -18,6 +18,8 @@ COMMENT=	A simple library to load images as SDL interfaces (linux version)
 
 CONFLICTS=	linux-f8-sdl_image-[0-9]* linux-f10-sdl_image-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=	yes
 USE_LINUX_APPS=	sdl12
 LINUX_DIST_VER=	4

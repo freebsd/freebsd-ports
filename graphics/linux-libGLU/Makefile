@@ -19,6 +19,8 @@ COMMENT=	OpenGL utility library (Linux version)
 CONFLICTS=	linux_dri-[0-9]* linux-f8-libGLU-[0-9]* linux-f10-libGLU-[0-9]* linux-dri-[0-9]* \
 		linux-f8-dri-[0-9]* linux-f10-dri-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 RPMVERSION=	37.FC4.49.2.1
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes

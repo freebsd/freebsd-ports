@@ -96,6 +96,8 @@ ALWAYS_KEEP_DISTFILES=	yes
 LATEST_LINK=		linux_base
 CONFLICTS=		linux_base-gentoo* linux_locale* \
 			linux_base-f8* linux_base-f7* linux_base-fc6*
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes

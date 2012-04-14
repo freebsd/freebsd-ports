@@ -18,6 +18,8 @@ COMMENT=	GTK+ library, version 2.X, Linux binary
 
 CONFLICTS=	linux-f8-gtk2-[0-9]* linux-f10-gtk2-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 # these libraries are required by gtk-query-immodules-2.0 or

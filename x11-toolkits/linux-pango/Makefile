@@ -17,7 +17,8 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Linux pango binary
 
 FORBIDDEN=	Vulnerable since 2009-05-13, http://portaudit.freebsd.org/4b172278-3f46-11de-becb-001cc0377035.html
-EXPIRATION_DATE=	2011-10-14
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 
 CONFLICTS=	linux-f8-pango-[0-9]* linux-f10-pango-[0-9]*
 

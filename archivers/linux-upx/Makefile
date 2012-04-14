@@ -17,6 +17,8 @@ COMMENT=		RPM of UPX, a high-performance executable packer
 
 CONFLICTS=		linux-f8-upx-[0-9]* linux-f10-upx-[0-9]*
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 USE_LINUX_RPM=		yes
 USE_LINUX_APPS=		ucl
 RPMVERSION=		4

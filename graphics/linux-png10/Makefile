@@ -18,6 +18,8 @@ COMMENT=	RPM of the PNG lib (old 1.0 version)
 CONFLICTS=	linux-f8-png10-[0-9]* linux-f10-png10-[0-9]*
 LATEST_LINK=	linux-png10
 
+# EXPIRATION_DATE is the EoL of the last 7.x release
+EXPIRATION_DATE=2013-02-28
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
