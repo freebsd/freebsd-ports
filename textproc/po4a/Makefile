@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	po4a
-PORTVERSION=	0.40.1
-PORTREVISION=	1
+PORTVERSION=	0.41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3341/
 
@@ -24,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 PERL_MODBUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-v0.40.1
 
 MANPREFIX=	${PREFIX}
 MAN3PREFIX=	${MANPREFIX}
@@ -61,9 +60,5 @@ MAN1=		msguntypot.1 \
 		po4a-updatepo.1
 
 PORT_VERBS=	${PORTNAME} Po4a msguntypot
-
-post-patch:
-	@${REINPLACE_CMD} -e '/install_path/s|/locale|/share&|;/my .options/s|-v|-k 0 &|;\
-		s|gzip|${TRUE}|g;s|3pm|3|g;s|1p|1|g' ${WRKSRC}/Build.PL
 
 .include <bsd.port.mk>
