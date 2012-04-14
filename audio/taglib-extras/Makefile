@@ -9,7 +9,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kollide.net/~jefferai/
 
-MAINTAINER=	datahead4@gmail.com
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra taglib features for Amarok 2.2
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib

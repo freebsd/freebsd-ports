@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
-MAINTAINER=	datahead4@gmail.com
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	An advanced digital photo management application for KDE4
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
