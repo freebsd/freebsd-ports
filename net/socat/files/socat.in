@@ -18,11 +18,13 @@
 name="socat"
 rcvar=socat_enable
 
-command=%%PREFIX%%/bin/${name}
-command_args="&"
-
 load_rc_config $name
 
 : ${socat_enable="NO"}
+
+socat_flags="%%PREFIX%%/bin/socat ${socat_flags} &"
+command="%%PREFIX%%/sbin/socat_wrapper"
+command_interpreter="/bin/sh -T"
+pidfile=/var/run/socat_wrapper.pid
 
 run_rc_command "$1"
