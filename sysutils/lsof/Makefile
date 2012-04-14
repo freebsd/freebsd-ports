@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.86B
-PORTEPOCH=	6
+PORTVERSION=	4.86
+PORTEPOCH=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
@@ -31,7 +31,7 @@ MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
 #Please leave the below line in for the next clean up.
-FIXUP_RELEASE=	YES
+#FIXUP_RELEASE=	YES
 .if defined(FIXUP_RELEASE)
 DISTNAME_SUFFIX=.freebsd
 .else
@@ -61,12 +61,6 @@ post-extract:
 	)
 	@( cd ${WRKSRC} ; ${ECHO_CMD} "y" | ./Inventory || exit 1 )
 .endif
-
-#pre-patch:
-#	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-#	@${SED} -e "s|^--- d|--- dialects/freebsd/d|"  \
-#		${DISTDIR}/freebsd_3.0_patch > ${WRKDIR}/p
-#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/p
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
