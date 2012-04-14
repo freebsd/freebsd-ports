@@ -7,9 +7,11 @@
 
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	2.3.0~3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/73753265/
+MASTER_SITES=	http://launchpadlibrarian.net/73753265/ \
+		http://pazzle.otdux.com.ua/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ICONS_PACKAGE}${EXTRACT_SUFX}
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
@@ -20,6 +22,7 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 
 DATADIR=	${PREFIX}/share/cairo-dock
 
+ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -41,6 +44,9 @@ OPTIONS=	GMENU "Common Applications menu" On \
 		ALSA_MIXER "For ALSA compatibility utils" Off
 
 .include <bsd.port.options.mk>
+
+post-patch:
+	@${CP} -R ${WRKDIR}/${ICONS_PACKAGE}/* ${WRKSRC}
 
 .if defined(WITH_GMENU)
 LIB_DEPENDS+=	gnome-menu.2:${PORTSDIR}/x11/gnome-menus
@@ -91,6 +97,7 @@ PLIST_SUB+=	XFCE_INTEGRATION="@comment "
 
 .if defined(WITH_ALSA_MIXER)
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 CMAKE_ARGS+=	-Denable_alsa_mixer:STRING=yes
 PLIST_SUB+=	ALSA_MIXER=""
 .else
