@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	aqbanking
-PORTVERSION=	5.0.22
+PORTVERSION=	5.0.23
 CATEGORIES=	finance
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=92&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=93&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
