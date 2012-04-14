@@ -26,8 +26,6 @@ LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 CFLAGS+=	-D_DONT_USE_CTYPE_INLINE_
 LDFLAGS+=	-lhz
 
-EXTRA_PATCHES+=	${.CURDIR}/files/patch-*
-
 WITH_MUTT_LOCALES_FIX=	yes
 WITH_MUTT_NCURSES=	yes
 .if !defined(PACKAGE_BUILDING)
@@ -42,5 +40,9 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 
 post-patch::
 	@${REINPLACE_CMD} -e '/^mutt_SOURCES/s/\\$$/ myiconv.c \\/' ${WRKSRC}/Makefile.am
+	@for i in ${.CURDIR}/files/patch-*; do \
+		${ECHO_MSG} "===>  Applying extra patch $$i"; \
+		${PATCH} ${PATCH_ARGS} < $$i; \
+	done
 
 .include "${MASTERDIR}/Makefile"
