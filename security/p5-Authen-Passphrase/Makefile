@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Authen-Passphrase
-PORTVERSION=	0.007
+PORTVERSION=	0.008
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Perl module for handling hashed passwords/passphrases as objects
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/DecHpwd.pm:${PORTSDIR}/security/p5-Authen-DecHpwd \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
@@ -23,13 +26,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/DecHpwd.pm:${PORTSDIR}/security/
 		${SITE_PERL}/${PERL_ARCH}/Crypt/UnixCrypt_XS.pm:${PORTSDIR}/security/p5-Crypt-UnixCrypt_XS \
 		${SITE_PERL}/Data/Entropy/Algorithms.pm:${PORTSDIR}/security/p5-Data-Entropy \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD4.pm:${PORTSDIR}/security/p5-Digest-MD4 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/Module/Runtime.pm:${PORTSDIR}/devel/p5-Module-Runtime \
 		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
 PERL_MODBUILD=	yes
 
 MAN3=	Authen::Passphrase.3 \
