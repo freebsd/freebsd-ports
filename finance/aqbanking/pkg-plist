@@ -235,164 +235,164 @@ lib/libaqofxconnect.so.7
 %%WITH_PAYPAL%%lib/libaqpaypal.so.0
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
-share/aqbanking/aqbanking/typemaker2/c/ab_account.tm2
-share/aqbanking/aqbanking/typemaker2/c/ab_job.tm2
-share/aqbanking/aqbanking/typemaker2/c/ab_job_list.tm2
-share/aqbanking/aqbanking/typemaker2/c/ab_job_list2.tm2
-share/aqbanking/aqbanking/typemaker2/c/ab_user.tm2
-share/aqbanking/backends/aqhbci/dialogs/chipcard.png
-share/aqbanking/backends/aqhbci/dialogs/dlg_choose_usertype.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_ddvcard.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_ddvcard_special.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_editaccount.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_edituserddv.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_edituserpintan.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_edituserrdh.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_importkeyfile.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_newkeyfile.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_newuser.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_pintan.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_pintan_special.dlg
-share/aqbanking/backends/aqhbci/dialogs/dlg_rdh_special.dlg
-share/aqbanking/backends/aqhbci/dialogs/keyfile.png
-share/aqbanking/backends/aqhbci/dialogs/pintan.png
-share/aqbanking/backends/aqhbci/hbci.xml
-share/aqbanking/backends/aqofxconnect/dialogs/dlg_edituser.dlg
-share/aqbanking/backends/aqofxconnect/dialogs/dlg_getinst.dlg
-share/aqbanking/backends/aqofxconnect/dialogs/dlg_newuser.dlg
-share/aqbanking/backends/aqofxconnect/dialogs/dlg_ofx_special.dlg
-%%WITH_PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_edituser.dlg
-%%WITH_PAYPAL%%share/aqbanking/backends/aqpaypal/dialogs/dlg_newuser.dlg
-share/aqbanking/bankinfo/at/banks.data
-share/aqbanking/bankinfo/at/bic.idx
-share/aqbanking/bankinfo/at/blz.idx
-share/aqbanking/bankinfo/at/namloc.idx
-share/aqbanking/bankinfo/ca/banks.data
-share/aqbanking/bankinfo/ca/bic.idx
-share/aqbanking/bankinfo/ca/blz.idx
-share/aqbanking/bankinfo/ca/namloc.idx
-share/aqbanking/bankinfo/ch/banks.data
-share/aqbanking/bankinfo/ch/bic.idx
-share/aqbanking/bankinfo/ch/blz.idx
-share/aqbanking/bankinfo/ch/namloc.idx
-share/aqbanking/bankinfo/de/banks.data
-share/aqbanking/bankinfo/de/bic.idx
-share/aqbanking/bankinfo/de/blz.idx
-share/aqbanking/bankinfo/de/namloc.idx
-share/aqbanking/bankinfo/us/banks.data
-share/aqbanking/bankinfo/us/bic.idx
-share/aqbanking/bankinfo/us/blz.idx
-share/aqbanking/bankinfo/us/namloc.idx
-share/aqbanking/dialogs/dlg_editaccount.dlg
-share/aqbanking/dialogs/dlg_edituser.dlg
-share/aqbanking/dialogs/dlg_importer.dlg
-share/aqbanking/dialogs/dlg_selectbackend.dlg
-share/aqbanking/dialogs/dlg_selectbankinfo.dlg
-share/aqbanking/dialogs/dlg_setup.dlg
-share/aqbanking/dialogs/dlg_setup_newuser.dlg
-share/aqbanking/dialogs/dlg_usertype_pagedefault.dlg
-share/aqbanking/imexporters/csv/dialogs/csv_editprofile.dlg
-share/aqbanking/imexporters/csv/profiles/amex.conf
-share/aqbanking/imexporters/csv/profiles/aqmoney1.conf
-share/aqbanking/imexporters/csv/profiles/aqmoney2.conf
-share/aqbanking/imexporters/csv/profiles/bankaustria.conf
-share/aqbanking/imexporters/csv/profiles/cli-transfers.conf
-share/aqbanking/imexporters/csv/profiles/comdirect.conf
-share/aqbanking/imexporters/csv/profiles/consors-tagesgeld.conf
-share/aqbanking/imexporters/csv/profiles/default.conf
-share/aqbanking/imexporters/csv/profiles/diba.conf
-share/aqbanking/imexporters/csv/profiles/dkb-cash.conf
-share/aqbanking/imexporters/csv/profiles/dkb.conf
-share/aqbanking/imexporters/csv/profiles/full.conf
-share/aqbanking/imexporters/csv/profiles/hypovereinsbank.conf
-share/aqbanking/imexporters/csv/profiles/lbbberlin.conf
-share/aqbanking/imexporters/csv/profiles/mijnpostbank.conf
-share/aqbanking/imexporters/csv/profiles/oko.conf
-share/aqbanking/imexporters/csv/profiles/postbankffm.conf
-share/aqbanking/imexporters/csv/profiles/psk.conf
-share/aqbanking/imexporters/csv/profiles/sns.conf
-share/aqbanking/imexporters/csv/profiles/sparda.conf
-share/aqbanking/imexporters/csv/profiles/spk-aachen.conf
-share/aqbanking/imexporters/csv/profiles/spk-steiermark.conf
-share/aqbanking/imexporters/csv/profiles/tonline-banking.conf
-share/aqbanking/imexporters/csv/profiles/vrnetworld.conf
-share/aqbanking/imexporters/ctxfile/profiles/default.conf
-share/aqbanking/imexporters/dtaus/profiles/debitnote.conf
-share/aqbanking/imexporters/dtaus/profiles/default.conf
-share/aqbanking/imexporters/dtaus/profiles/transfer.conf
-share/aqbanking/imexporters/eri/profiles/default.conf
-share/aqbanking/imexporters/eri2/eriformat.xml
-share/aqbanking/imexporters/ofx/profiles/default.conf
-share/aqbanking/imexporters/ofx/profiles/iso8859.conf
-share/aqbanking/imexporters/openhbci1/profiles/default.conf
-share/aqbanking/imexporters/q43/profiles/default.conf
-share/aqbanking/imexporters/sepa/profiles/ccm.conf
-share/aqbanking/imexporters/sepa/profiles/default.conf
-share/aqbanking/imexporters/swift/profiles/amro940.conf
-share/aqbanking/imexporters/swift/profiles/amro942.conf
-share/aqbanking/imexporters/swift/profiles/swiftmt940.conf
-share/aqbanking/imexporters/swift/profiles/swiftmt942.conf
-share/aqbanking/imexporters/xmldb/profiles/default.conf
-share/aqbanking/imexporters/yellownet/profiles/default.conf
-share/aqbanking/typemaker2/c/ab_accountqueue.tm2
-share/aqbanking/typemaker2/c/ab_accountqueue_list.tm2
-share/aqbanking/typemaker2/c/ab_jobqueue.tm2
-share/aqbanking/typemaker2/c/ab_jobqueue_list.tm2
-share/aqbanking/typemaker2/c/ab_queue.tm2
-share/aqbanking/typemaker2/c/ab_userqueue.tm2
-share/aqbanking/typemaker2/c/ab_userqueue_list.tm2
+%%DATADIR%%/aqbanking/typemaker2/c/ab_account.tm2
+%%DATADIR%%/aqbanking/typemaker2/c/ab_job.tm2
+%%DATADIR%%/aqbanking/typemaker2/c/ab_job_list.tm2
+%%DATADIR%%/aqbanking/typemaker2/c/ab_job_list2.tm2
+%%DATADIR%%/aqbanking/typemaker2/c/ab_user.tm2
+%%DATADIR%%/backends/aqhbci/dialogs/chipcard.png
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_choose_usertype.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_ddvcard.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_ddvcard_special.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_editaccount.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_edituserddv.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_edituserpintan.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_edituserrdh.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_importkeyfile.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_newkeyfile.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_newuser.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_pintan.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_pintan_special.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/dlg_rdh_special.dlg
+%%DATADIR%%/backends/aqhbci/dialogs/keyfile.png
+%%DATADIR%%/backends/aqhbci/dialogs/pintan.png
+%%DATADIR%%/backends/aqhbci/hbci.xml
+%%DATADIR%%/backends/aqofxconnect/dialogs/dlg_edituser.dlg
+%%DATADIR%%/backends/aqofxconnect/dialogs/dlg_getinst.dlg
+%%DATADIR%%/backends/aqofxconnect/dialogs/dlg_newuser.dlg
+%%DATADIR%%/backends/aqofxconnect/dialogs/dlg_ofx_special.dlg
+%%WITH_PAYPAL%%%%DATADIR%%/backends/aqpaypal/dialogs/dlg_edituser.dlg
+%%WITH_PAYPAL%%%%DATADIR%%/backends/aqpaypal/dialogs/dlg_newuser.dlg
+%%DATADIR%%/bankinfo/at/banks.data
+%%DATADIR%%/bankinfo/at/bic.idx
+%%DATADIR%%/bankinfo/at/blz.idx
+%%DATADIR%%/bankinfo/at/namloc.idx
+%%DATADIR%%/bankinfo/ca/banks.data
+%%DATADIR%%/bankinfo/ca/bic.idx
+%%DATADIR%%/bankinfo/ca/blz.idx
+%%DATADIR%%/bankinfo/ca/namloc.idx
+%%DATADIR%%/bankinfo/ch/banks.data
+%%DATADIR%%/bankinfo/ch/bic.idx
+%%DATADIR%%/bankinfo/ch/blz.idx
+%%DATADIR%%/bankinfo/ch/namloc.idx
+%%DATADIR%%/bankinfo/de/banks.data
+%%DATADIR%%/bankinfo/de/bic.idx
+%%DATADIR%%/bankinfo/de/blz.idx
+%%DATADIR%%/bankinfo/de/namloc.idx
+%%DATADIR%%/bankinfo/us/banks.data
+%%DATADIR%%/bankinfo/us/bic.idx
+%%DATADIR%%/bankinfo/us/blz.idx
+%%DATADIR%%/bankinfo/us/namloc.idx
+%%DATADIR%%/dialogs/dlg_editaccount.dlg
+%%DATADIR%%/dialogs/dlg_edituser.dlg
+%%DATADIR%%/dialogs/dlg_importer.dlg
+%%DATADIR%%/dialogs/dlg_selectbackend.dlg
+%%DATADIR%%/dialogs/dlg_selectbankinfo.dlg
+%%DATADIR%%/dialogs/dlg_setup.dlg
+%%DATADIR%%/dialogs/dlg_setup_newuser.dlg
+%%DATADIR%%/dialogs/dlg_usertype_pagedefault.dlg
+%%DATADIR%%/imexporters/csv/dialogs/csv_editprofile.dlg
+%%DATADIR%%/imexporters/csv/profiles/amex.conf
+%%DATADIR%%/imexporters/csv/profiles/aqmoney1.conf
+%%DATADIR%%/imexporters/csv/profiles/aqmoney2.conf
+%%DATADIR%%/imexporters/csv/profiles/bankaustria.conf
+%%DATADIR%%/imexporters/csv/profiles/cli-transfers.conf
+%%DATADIR%%/imexporters/csv/profiles/comdirect.conf
+%%DATADIR%%/imexporters/csv/profiles/consors-tagesgeld.conf
+%%DATADIR%%/imexporters/csv/profiles/default.conf
+%%DATADIR%%/imexporters/csv/profiles/diba.conf
+%%DATADIR%%/imexporters/csv/profiles/dkb-cash.conf
+%%DATADIR%%/imexporters/csv/profiles/dkb.conf
+%%DATADIR%%/imexporters/csv/profiles/full.conf
+%%DATADIR%%/imexporters/csv/profiles/hypovereinsbank.conf
+%%DATADIR%%/imexporters/csv/profiles/lbbberlin.conf
+%%DATADIR%%/imexporters/csv/profiles/mijnpostbank.conf
+%%DATADIR%%/imexporters/csv/profiles/oko.conf
+%%DATADIR%%/imexporters/csv/profiles/postbankffm.conf
+%%DATADIR%%/imexporters/csv/profiles/psk.conf
+%%DATADIR%%/imexporters/csv/profiles/sns.conf
+%%DATADIR%%/imexporters/csv/profiles/sparda.conf
+%%DATADIR%%/imexporters/csv/profiles/spk-aachen.conf
+%%DATADIR%%/imexporters/csv/profiles/spk-steiermark.conf
+%%DATADIR%%/imexporters/csv/profiles/tonline-banking.conf
+%%DATADIR%%/imexporters/csv/profiles/vrnetworld.conf
+%%DATADIR%%/imexporters/ctxfile/profiles/default.conf
+%%DATADIR%%/imexporters/dtaus/profiles/debitnote.conf
+%%DATADIR%%/imexporters/dtaus/profiles/default.conf
+%%DATADIR%%/imexporters/dtaus/profiles/transfer.conf
+%%DATADIR%%/imexporters/eri/profiles/default.conf
+%%DATADIR%%/imexporters/eri2/eriformat.xml
+%%DATADIR%%/imexporters/ofx/profiles/default.conf
+%%DATADIR%%/imexporters/ofx/profiles/iso8859.conf
+%%DATADIR%%/imexporters/openhbci1/profiles/default.conf
+%%DATADIR%%/imexporters/q43/profiles/default.conf
+%%DATADIR%%/imexporters/sepa/profiles/ccm.conf
+%%DATADIR%%/imexporters/sepa/profiles/default.conf
+%%DATADIR%%/imexporters/swift/profiles/amro940.conf
+%%DATADIR%%/imexporters/swift/profiles/amro942.conf
+%%DATADIR%%/imexporters/swift/profiles/swiftmt940.conf
+%%DATADIR%%/imexporters/swift/profiles/swiftmt942.conf
+%%DATADIR%%/imexporters/xmldb/profiles/default.conf
+%%DATADIR%%/imexporters/yellownet/profiles/default.conf
+%%DATADIR%%/typemaker2/c/ab_accountqueue.tm2
+%%DATADIR%%/typemaker2/c/ab_accountqueue_list.tm2
+%%DATADIR%%/typemaker2/c/ab_jobqueue.tm2
+%%DATADIR%%/typemaker2/c/ab_jobqueue_list.tm2
+%%DATADIR%%/typemaker2/c/ab_queue.tm2
+%%DATADIR%%/typemaker2/c/ab_userqueue.tm2
+%%DATADIR%%/typemaker2/c/ab_userqueue_list.tm2
 share/doc/aqhbci/aqhbci-tool/README
-%%WITH_PAYPAL%%share/doc/aqpaypal/aqpaypal-tool/README
+%%WITH_PAYPAL%%%%DOCSDIR%%/aqpaypal-tool/README
 share/locale/de/LC_MESSAGES/aqbanking.mo
-%%WITH_PAYPAL%%@dirrm share/doc/aqpaypal/aqpaypal-tool
-%%WITH_PAYPAL%%@dirrm share/doc/aqpaypal
+%%WITH_PAYPAL%%@dirrm %%DOCSDIR%%/aqpaypal-tool
+%%WITH_PAYPAL%%@dirrm %%DOCSDIR%%
 @dirrm share/doc/aqhbci/aqhbci-tool
 @dirrm share/doc/aqhbci
-@dirrm share/aqbanking/typemaker2/c
-@dirrm share/aqbanking/typemaker2
-@dirrm share/aqbanking/imexporters/yellownet/profiles
-@dirrm share/aqbanking/imexporters/yellownet
-@dirrm share/aqbanking/imexporters/xmldb/profiles
-@dirrm share/aqbanking/imexporters/xmldb
-@dirrm share/aqbanking/imexporters/swift/profiles
-@dirrm share/aqbanking/imexporters/swift
-@dirrm share/aqbanking/imexporters/sepa/profiles
-@dirrm share/aqbanking/imexporters/sepa
-@dirrm share/aqbanking/imexporters/q43/profiles
-@dirrm share/aqbanking/imexporters/q43
-@dirrm share/aqbanking/imexporters/openhbci1/profiles
-@dirrm share/aqbanking/imexporters/openhbci1
-@dirrm share/aqbanking/imexporters/ofx/profiles
-@dirrm share/aqbanking/imexporters/ofx
-@dirrm share/aqbanking/imexporters/eri2
-@dirrm share/aqbanking/imexporters/eri/profiles
-@dirrm share/aqbanking/imexporters/eri
-@dirrm share/aqbanking/imexporters/dtaus/profiles
-@dirrm share/aqbanking/imexporters/dtaus
-@dirrm share/aqbanking/imexporters/ctxfile/profiles
-@dirrm share/aqbanking/imexporters/ctxfile
-@dirrm share/aqbanking/imexporters/csv/profiles
-@dirrm share/aqbanking/imexporters/csv/dialogs
-@dirrm share/aqbanking/imexporters/csv
-@dirrm share/aqbanking/imexporters
-@dirrm share/aqbanking/dialogs
-@dirrm share/aqbanking/bankinfo/us
-@dirrm share/aqbanking/bankinfo/de
-@dirrm share/aqbanking/bankinfo/ch
-@dirrm share/aqbanking/bankinfo/ca
-@dirrm share/aqbanking/bankinfo/at
-@dirrm share/aqbanking/bankinfo
-%%WITH_PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal/dialogs
-%%WITH_PAYPAL%%@dirrm share/aqbanking/backends/aqpaypal
-@dirrm share/aqbanking/backends/aqofxconnect/dialogs
-@dirrm share/aqbanking/backends/aqofxconnect
-@dirrm share/aqbanking/backends/aqhbci/dialogs
-@dirrm share/aqbanking/backends/aqhbci
-@dirrm share/aqbanking/backends
-@dirrm share/aqbanking/aqbanking/typemaker2/c
-@dirrm share/aqbanking/aqbanking/typemaker2
-@dirrm share/aqbanking/aqbanking
-@dirrm share/aqbanking
+@dirrm %%DATADIR%%/typemaker2/c
+@dirrm %%DATADIR%%/typemaker2
+@dirrm %%DATADIR%%/imexporters/yellownet/profiles
+@dirrm %%DATADIR%%/imexporters/yellownet
+@dirrm %%DATADIR%%/imexporters/xmldb/profiles
+@dirrm %%DATADIR%%/imexporters/xmldb
+@dirrm %%DATADIR%%/imexporters/swift/profiles
+@dirrm %%DATADIR%%/imexporters/swift
+@dirrm %%DATADIR%%/imexporters/sepa/profiles
+@dirrm %%DATADIR%%/imexporters/sepa
+@dirrm %%DATADIR%%/imexporters/q43/profiles
+@dirrm %%DATADIR%%/imexporters/q43
+@dirrm %%DATADIR%%/imexporters/openhbci1/profiles
+@dirrm %%DATADIR%%/imexporters/openhbci1
+@dirrm %%DATADIR%%/imexporters/ofx/profiles
+@dirrm %%DATADIR%%/imexporters/ofx
+@dirrm %%DATADIR%%/imexporters/eri2
+@dirrm %%DATADIR%%/imexporters/eri/profiles
+@dirrm %%DATADIR%%/imexporters/eri
+@dirrm %%DATADIR%%/imexporters/dtaus/profiles
+@dirrm %%DATADIR%%/imexporters/dtaus
+@dirrm %%DATADIR%%/imexporters/ctxfile/profiles
+@dirrm %%DATADIR%%/imexporters/ctxfile
+@dirrm %%DATADIR%%/imexporters/csv/profiles
+@dirrm %%DATADIR%%/imexporters/csv/dialogs
+@dirrm %%DATADIR%%/imexporters/csv
+@dirrm %%DATADIR%%/imexporters
+@dirrm %%DATADIR%%/dialogs
+@dirrm %%DATADIR%%/bankinfo/us
+@dirrm %%DATADIR%%/bankinfo/de
+@dirrm %%DATADIR%%/bankinfo/ch
+@dirrm %%DATADIR%%/bankinfo/ca
+@dirrm %%DATADIR%%/bankinfo/at
+@dirrm %%DATADIR%%/bankinfo
+%%WITH_PAYPAL%%@dirrm %%DATADIR%%/backends/aqpaypal/dialogs
+%%WITH_PAYPAL%%@dirrm %%DATADIR%%/backends/aqpaypal
+@dirrm %%DATADIR%%/backends/aqofxconnect/dialogs
+@dirrm %%DATADIR%%/backends/aqofxconnect
+@dirrm %%DATADIR%%/backends/aqhbci/dialogs
+@dirrm %%DATADIR%%/backends/aqhbci
+@dirrm %%DATADIR%%/backends
+@dirrm %%DATADIR%%/aqbanking/typemaker2/c
+@dirrm %%DATADIR%%/aqbanking/typemaker2
+@dirrm %%DATADIR%%/aqbanking
+@dirrm %%DATADIR%%
 @dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/providers
 @dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/imexporters
 @dirrm lib/aqbanking/plugins/%%AQB_SHLIB_VER%%/bankinfo
