@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.3.12
-PORTREVISION=	2
+PORTVERSION=	1.6.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -17,18 +16,22 @@ COMMENT=	Video editing system
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		oil-0.3.0:${PORTSDIR}/devel/liboil \
 		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
-		mjpegutils-2.0.0:${PORTSDIR}/multimedia/mjpegtools
+		mjpegutils-2.0.0:${PORTSDIR}/multimedia/mjpegtools \
+		pulse:${PORTSDIR}/audio/pulseaudio \
+		schroedinger-1.0:${PORTSDIR}/multimedia/schroedinger \
+		asound:${PORTSDIR}/audio/alsa-lib \
+		avcodec:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		sox:${PORTSDIR}/audio/sox \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		sswf:${PORTSDIR}/graphics/sswf \
-		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
@@ -37,7 +40,8 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		x264:${PORTSDIR}/multimedia/x264 \
 		xmms:${PORTSDIR}/multimedia/xmms
 
-OPTIONS=	FREI0R "Enable frei0r support" off
+OPTIONS=	DOXYGEN	"Build Doxygen documentation"	off \
+		FREI0R	"Enable frei0r support"		off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
@@ -52,7 +56,7 @@ USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=	--disable-ldvgrab --disable-doxygen
+CONFIGURE_ARGS=	--disable-ldvgrab
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -67,6 +71,13 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
 .include <bsd.port.options.mk>
+
+.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+PORTDOCS=	html
+.else
+CONFIGURE_ARGS+=--disable-doxygen
+.endif
 
 .if defined(WITH_FREI0R)
 BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
@@ -105,6 +116,7 @@ post-patch:
 		 /flags/s|-L/usr/lib64||g ; \
 		 /flags/s|-Wl,-Bsymbolic||g ; \
 		 /flags/s|--tag=disable-static||g'
+	@${REINPLACE_CMD} -e 's|-$$(VERSION)||g' ${WRKSRC}/Makefile.in
 
 pre-build:
 	@cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
