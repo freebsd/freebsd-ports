@@ -1,0 +1,9 @@
+diff -r 25cc3a246cba build-utils/gentokens.lua
+--- build-utils/gentokens.lua Fri Mar 23 22:32:16 2012 -0300
++++ build-utils/gentokens.lua Fri Mar 23 22:33:52 2012 -0300
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env lua
++#!/usr/local/bin/lua-5.1
+ 
+ -- build-utils/gentokens.lua - gen tokenize lib
+ --

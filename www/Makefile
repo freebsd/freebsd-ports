@@ -413,6 +413,7 @@
     SUBDIR += ljdump
     SUBDIR += llgal
     SUBDIR += logtools
+    SUBDIR += luakit
     SUBDIR += lusca-head
     SUBDIR += lynx
     SUBDIR += lynx-current
