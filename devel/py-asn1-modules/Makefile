@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	asn1-modules
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
-		SF/pyasn1/py${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/pyasn1/py${PORTNAME}/${PORTVERSION} \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +17,6 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Collection of ASN.1 data structures for py-asn1
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0.1.1:${PORTSDIR}/devel/py-asn1
 
@@ -28,10 +27,16 @@ PYDISTUTILS_PKGNAME=	pyasn1-modules
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-BASEDOCS=	CHANGES \
-		README
+BASEDOCS=	CHANGES README
+
+TOOLS=		crldump.py crmfdump.py ocspclient.py ocspreqdump.py \
+		ocsprspdump.py pkcs10dump.py pkcs1dump.py pkcs7dump.py \
+		pkcs8dump.py snmpget.py x509dump.py
 
 post-install:
+.for t in ${TOOLS}
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${t} ${PREFIX}/bin
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${BASEDOCS}
