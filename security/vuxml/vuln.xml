@@ -52,6 +52,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c80a3d93-8632-11e1-a374-14dae9ebcf89">
+    <topic>phpmyfaq -- Remote PHP Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>2.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyFAQ project reports:</p>
+	<blockquote cite="http://www.phpmyfaq.de/advisory_2011-10-25.php">
+	  <p>The bundled ImageManager library allows injection of arbitrary PHP
+	    code to execute arbitrary php code and upload malware and trojan
+	    horses.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyfaq.de/advisory_2012-04-14.php</url>
+    </references>
+    <dates>
+      <discovery>2012-04-14</discovery>
+      <entry>2012-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="607d2108-a0e4-423a-bf78-846f2a8f01b0">
     <topic>puppet -- Multiple Vulnerabilities</topic>
     <affects>
