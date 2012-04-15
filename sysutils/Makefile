@@ -94,6 +94,7 @@
     SUBDIR += cdeploy
     SUBDIR += cdf
     SUBDIR += cdircmp
+    SUBDIR += cdls
     SUBDIR += cdrdao
     SUBDIR += cdrkit
     SUBDIR += cdroot
