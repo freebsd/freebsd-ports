@@ -1351,6 +1351,7 @@ bzr-gtk                         ports/devel/bzr-gtk
 bzr-loom                        ports/devel/bzr-loom
 bzr-pipeline                    ports/devel/bzr-pipeline
 bzr-rewrite                     ports/devel/bzr-rewrite
+bzr-scmproj                     ports/devel/bzr-scmproj
 bzr-stats                       ports/devel/bzr-stats
 bzr-svn                         ports/devel/bzr-svn
 bzr-upload                      ports/devel/bzr-upload
@@ -3988,7 +3989,6 @@ ftimes                          ports/security/ftimes
 ftjam                           ports/devel/ftjam
 ftjava                          ports/games/ftjava
 ftnchek                         ports/devel/ftnchek
-ftp-proxy                       ports/ftp/ftp-proxy
 ftp-tls                         ports/ftp/ftp-tls
 ftpcopy                         ports/ftp/ftpcopy
 ftpcube                         ports/ftp/ftpcube
@@ -10561,6 +10561,7 @@ oops                            ports/www/oops
 oorexx                          ports/lang/oorexx
 ooxcb                           ports/x11/ooxcb
 op                              ports/security/op
+opa                             ports/lang/opa
 opal                            ports/net/opal
 opal3                           ports/net/opal3
 open                            ports/sysutils/open
@@ -22319,6 +22320,7 @@ py-feedfinder                   ports/www/py-feedfinder
 py-feedgenerator                ports/www/py-feedgenerator
 py-feedparser                   ports/textproc/py-feedparser
 py-ffc                          ports/math/py-ffc
+py-fiat                         ports/math/py-fiat
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
 py-firebirdsql                  ports/databases/py-firebirdsql
@@ -23062,6 +23064,7 @@ py-twistedwords                 ports/net-im/py-twistedWords
 py-twitter                      ports/net/py-twitter
 py-twofish                      ports/security/py-twofish
 py-txamqp                       ports/net/py-txamqp
+py-ufl                          ports/math/py-ufl
 py-ujson                        ports/devel/py-ujson
 py-unidecode                    ports/converters/py-unidecode
 py-unittest2                    ports/devel/py-unittest2
@@ -23078,6 +23081,7 @@ py-vatnumber                    ports/finance/py-vatnumber
 py-venusian                     ports/devel/py-venusian
 py-versiontools                 ports/devel/py-versiontools
 py-vertex                       ports/net-p2p/py-vertex
+py-viper                        ports/math/py-viper
 py-virtualenv                   ports/devel/py-virtualenv
 py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
 py-visual                       ports/graphics/py-visual
