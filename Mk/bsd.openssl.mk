@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.46 2011-09-23 22:20:46 amdmi3 Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.47 2012-04-15 07:31:52 dinoex Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -114,11 +114,11 @@ OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .else
 # PKG_DBDIR was not found, default
 OPENSSL_PORT?=		security/openssl
-OPENSSL_SHLIBVER?=	7
+OPENSSL_SHLIBVER?=	8
 .endif
 .endif
 OPENSSL_PORT?=		security/openssl
-OPENSSL_SHLIBVER?=	7
+OPENSSL_SHLIBVER?=	8
 
 OPENSSLDIR=		${OPENSSLBASE}/openssl
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
