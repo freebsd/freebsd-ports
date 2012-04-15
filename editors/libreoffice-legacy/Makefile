@@ -37,6 +37,9 @@ PKGNAMESUFFIX=	-legacy
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
+DEPRECATED=	not supported upstream, maintaining 2 version of libreoffice is really painful
+EXPIRATION_DATE=	2012-05-15
+
 LICENSE=	LGPL3 MPL
 LICENSE_COMB=	dual
 
