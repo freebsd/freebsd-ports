@@ -1,25 +1,36 @@
 #!/bin/sh
 
-username=%%BOINC_USER%%
-group=%%BOINC_GROUP%%
-home=%%BOINC_HOME%%
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+user=%%BOINC_CLIENT_USER%%
+group=%%BOINC_CLIENT_GROUP%%
+home=%%BOINC_CLIENT_HOME%%
 shell=/bin/sh
 
 case $2 in
 POST-INSTALL)
-    if ! pw usershow ${username} >/dev/null 2>&1; then
-	if ! pw useradd ${username} -g ${group} -c BOINC -d ${home} -s ${shell}; then
+    if ! pw usershow ${user} >/dev/null 2>&1; then
+	if ! pw useradd ${user} -g ${group} -c "BOINC client user" -d ${home} -s ${shell}; then
 		err=$?
-		echo "WARNING: Unable to create user.  pw returned $err"
-		echo "You will need to create a boinc user and chown the boinc dir."
-		exit $err
+		echo "WARNING: Unable to create user ${user}.  pw returned ${err}"
+		echo "You will need to create a BOINC client user and"
+		echo "chown the BOINC client user directory."
+		exit ${err}
 	else
-		echo "boinc user created."
+		echo "BOINC client user created."
 	fi
     else
-	echo "boinc user found.  using existing boinc user."
+	echo "BOINC client user found.  Using found account."
     fi
-    mkdir -p ${home} ${home}/projects
-    chown ${username}:${group} ${home} ${home}/projects
+    mkdir -p ${home}
+    if [ ! -e ${home}/skins -a ! -L ${home}/skins ]; then
+	ln -s %%PREFIX%%/share/boinc/skins ${home}/skins
+	chown -h ${user}:${group} ${home}/skins
+    fi
+    if [ ! -e ${home}/ca-bundle.crt -a ! -L ${home}/ca-bundle.crt ]; then
+	ln -s %%LOCALBASE%%/share/certs/ca-root-nss.crt ${home}/ca-bundle.crt
+	chown -h ${user}:${group} ${home}/ca-bundle.crt
+    fi
+    chown ${user}:${group} ${home}
     ;;
 esac
