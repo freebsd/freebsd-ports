@@ -1,5 +1,5 @@
---- cmuwmraster.c.orig	Tue Jul  1 19:08:24 2008
-+++ cmuwmraster.c	Tue Jul  1 19:08:57 2008
+--- ./cmuwmraster.c.orig	Tue Jul  1 19:08:24 2008
++++ ./cmuwmraster.c	Tue Jul  1 19:08:57 2008
 @@ -22,9 +22,9 @@ struct cmuwm_header *headerp;
  {
      printf("%s is a %ldx%ld %ld plane CMU WM raster\n",
@@ -52,14 +52,14 @@
  
      linelen = (width / 8) + (width % 8 ? 1 : 0);
      lineptr = image->data;
---- image.h.orig	Tue Jul  1 21:18:52 2008
-+++ image.h	Tue Jul  1 21:21:24 2008
+--- ./image.h.orig	Tue Jul  1 21:18:52 2008
++++ ./image.h	Tue Jul  1 21:21:24 2008
 @@ -163,7 +163,7 @@ typedef struct {
      ((LEN) == 2 ? ((unsigned long) \
  		   (*(byte *)(PTR) << 8) | \
  		   (*((byte *)(PTR) + 1))) : \
 -     ((unsigned long)((*(byte *)(PTR) << 24) | \
-+     (((unsigned long)(*(byte *)(PTR) << 24) | \
++     ((unsigned long)(unsigned int)((*(byte *)(PTR) << 24) | \
  		      (*((byte *)(PTR) + 1) << 16) | \
  		      (*((byte *)(PTR) + 2) << 8) | \
  		      (*((byte *)(PTR) + 3)))))))
@@ -68,7 +68,7 @@
      ((LEN) == 2 ? ((unsigned long) \
  		   (*(byte *)(PTR)) | (*((byte *)(PTR) + 1) << 8)) : \
 -     ((unsigned long)((*(byte *)(PTR)) | \
-+     (((unsigned long)(*(byte *)(PTR)) | \
++     ((unsigned long)(unsigned int)((*(byte *)(PTR)) | \
  		      (*((byte *)(PTR) + 1) << 8) | \
  		      (*((byte *)(PTR) + 2) << 16) | \
  		      (*((byte *)(PTR) + 3) << 24))))))
