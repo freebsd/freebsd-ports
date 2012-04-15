@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A client for Cisco's AnyConnect SSL VPN
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
+
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
