@@ -1,6 +1,7 @@
 bin/pdffonts
 bin/pdfimages
 bin/pdfinfo
+bin/pdfdetach
 bin/pdftoppm
 bin/pdftops
 bin/pdftotext
@@ -8,7 +9,6 @@ bin/pdftotext
 etc/xpdfrc
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/hello.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
