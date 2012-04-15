@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.8e
+PORTVERSION=	9.8g
 CATEGORIES=	editors
 MASTER_SITES=	ftp://invisible-island.net/vile/current/ \
 		ftp://dickey.his.com/vile/current/ \
 		ftp://ftp.phred.org/pub/vile/current/
-DISTNAME=	vile-9.8e
+DISTNAME=	vile-9.8g
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=    ${MASTER_SITES:S,vile/current/,vile/patches/,g}

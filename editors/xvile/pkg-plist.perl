@@ -33,6 +33,7 @@ lib/xvile/vile-hs-filt
 lib/xvile/vile-def-filt
 lib/xvile/vile-diff-filt
 lib/xvile/vile-ecl-filt
+lib/xvile/vile-erl-filt
 lib/xvile/vile-esql-filt
 lib/xvile/vile-est-filt
 lib/xvile/vile-html-filt
@@ -123,6 +124,7 @@ share/xvile/vile/perl/spell.pm
 share/xvile/vile/perl/winops.pm
 @unexec rm -f %D/share/xvile/vile/vilemenu.rc
 share/xvile/vile/color-ls.rc
+share/xvile/vile/complete.rc
 share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc
 share/xvile/vile/gnugpg.rc
@@ -166,9 +168,11 @@ share/xvile/vile/csh.keywords
 share/xvile/vile/cweb.keywords
 share/xvile/vile/dcl.keywords
 share/xvile/vile/def.keywords
+share/xvile/vile/delphi.keywords
 share/xvile/vile/diff.keywords
 share/xvile/vile/docbook.keywords
 share/xvile/vile/ecl.keywords
+share/xvile/vile/erl.keywords
 share/xvile/vile/esql.keywords
 share/xvile/vile/est.keywords
 share/xvile/vile/fdl.keywords
@@ -225,6 +229,7 @@ share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
 share/xvile/vile/xsl.keywords
 share/xvile/macros/color-ls.rc
+share/xvile/macros/complete.rc
 share/xvile/macros/dates.rc
 share/xvile/macros/digraphs.rc
 share/xvile/macros/gnugpg.rc
