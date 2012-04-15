@@ -1,0 +1,11 @@
+--- src/tds/Makefile.in.orig	2012-03-15 14:36:30.297611037 +0800
++++ src/tds/Makefile.in	2012-03-15 14:36:40.297604738 +0800
+@@ -189,7 +189,7 @@
+ LIBADD_SHL_LOAD = @LIBADD_SHL_LOAD@
+ LIBICONV = @LIBICONV@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -liconv
+ LIBTOOL = @LIBTOOL@
+ LIPO = @LIPO@
+ LN_S = @LN_S@
