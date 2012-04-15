@@ -7,6 +7,7 @@
 
 PORTNAME=	xdd
 PORTVERSION=	65
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.ioperformance.com/xddversions/
 DISTNAME=	xdd65.013007
