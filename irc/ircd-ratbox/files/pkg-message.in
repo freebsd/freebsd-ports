@@ -12,10 +12,25 @@ server can be started by running:
 
 	%%PREFIX%%/etc/rc.d/ircd-ratbox start
 
-If you specified options for ircd-shortcut commands, these will have
-been added and the module included in the contrib module directory.
-You may wish to add an entry to your ircd.conf file for this module to
-be loaded when your IRCD starts.
+You can check your ircd.conf configuration file for syntactical errors
+using the following rc.d script command:
+
+	%%PREFIX%%/etc/rc.d/ircd-ratbox conftest
+
+The ban.db database should be checked and updated using 'bantool -u'.
+For safety, bantool updates must be done while no ircd is running and
+before starting the new version.
+
+	%%PREFIX%%/bin/bantool -u
+
+Notice: ircd-ratbox has been updated to follow the current stable
+release branch (3.0.x). All previous branches are no longer supported
+by the ratbox team. Users of ircd-ratbox are advised to create new ircd
+configuration files based on the examples provided.
+
+For more information on upgrading, see:
+
+	http://svn.ratbox.org/svnroot/ircd-ratbox/trunk/INSTALL
 
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------

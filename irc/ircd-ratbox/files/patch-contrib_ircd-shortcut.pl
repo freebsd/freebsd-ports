@@ -1,5 +1,5 @@
---- contrib/ircd-shortcut.pl.orig	Fri Jan 11 20:28:57 2008
-+++ contrib/ircd-shortcut.pl	Sun Jan 13 14:55:34 2008
+--- ./contrib/ircd-shortcut.pl.orig	2008-04-24 16:43:42.000000000 +0100
++++ ./contrib/ircd-shortcut.pl	2008-11-15 02:55:35.000000000 +0000
 @@ -36,7 +36,7 @@
  ######################################
  
