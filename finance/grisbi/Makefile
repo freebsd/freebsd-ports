@@ -7,23 +7,23 @@
 
 PORTNAME=	grisbi
 PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION:R}.x/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx	\
-		ssl.7:${PORTSDIR}/security/openssl
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	ofx.5:${PORTSDIR}/finance/libofx
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
+USE_OPENSSL=	yes
 INSTALLS_ICONS=	yes
 
 MAN1=		grisbi.1
