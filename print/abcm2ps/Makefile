@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	5.9.23
+PORTVERSION=	6.6.9
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
@@ -15,13 +15,12 @@ COMMENT=	Converts ABC to music sheet in PostScript format
 GNU_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 
-PORTDOCS=	Changes README deco.abc journey.abc mtunes1.abc mtunes2.abc \
-		multilang.abc newfeatures.abc sample.abc sample2.abc \
+PORTDOCS=	Changes README deco.abc newfeatures.abc sample.abc sample2.abc\
 		sample3.abc sample4.abc voices.abc sample3.eps features.txt \
 		format.txt options.txt
 PLIST_FILES=	bin/abcm2ps %%DATADIR%%/fbook.fmt %%DATADIR%%/fonts.fmt \
 		%%DATADIR%%/flute.fmt %%DATADIR%%/landscape.fmt \
-		%%DATADIR%%/tight.fmt
+		%%DATADIR%%/tight.fmt %%DATADIR%%/musicfont.fmt
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
