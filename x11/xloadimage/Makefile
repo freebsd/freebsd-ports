@@ -6,33 +6,30 @@
 #
 
 PORTNAME=	xloadimage
-PORTVERSION=	4.1.16
-PORTREVISION=	9
+PORTVERSION=	4.1.17
 CATEGORIES=	x11 graphics
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/:x11 \
+		${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}.${VERSION}
-
-PATCH_SITES=	${MASTER_SITE_DEBIAN_POOL}
-PATCHFILES=	${PORTNAME}_${VERSION}-${REVISION}${PATCHREV}.diff.gz
-PATCH_DIST_STRIP=	-p1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:x11 \
+		${PORTNAME}_${VERSION}-${REVISION}.debian.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 Image Loading Utility
-
-LICENCE=	MIT
-
-CONFLICTS_INSTALL=	xli-*
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-EXTRA_PATCHES=	${WRKSRC}/debian/patches/*.dpatch
+LICENCE=	MIT
+
+CONFLICTS_INSTALL=	xli-*
+
+EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.dpatch
 
 PATCH_STRIP=	-p1
 VERSION=	${PORTVERSION:R}
 REVISION=	${PORTVERSION:E}
-PATCHREV=	.2
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -47,8 +44,6 @@ MLINKS=		xloadimage.1 xsetbg.1 \
 
 post-patch:
 	@${CHMOD} a+rx ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/png.c
 	@${REINPLACE_CMD} -e 's|TIFFHeader|TIFFHeaderClassic|g' \
 		${WRKSRC}/tiff.c
 	@${REINPLACE_CMD} -e \
