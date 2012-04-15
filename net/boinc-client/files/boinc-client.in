@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: boinc-client
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable the BOINC client:
+#
+# boinc_client_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="boinc-client"
+rcvar=boinc_client_enable
+
+boinc_client_user=%%BOINC_CLIENT_USER%%
+boinc_client_home=%%BOINC_CLIENT_HOME%%
+boinc_client_flags="--daemon --dir ${boinc_client_home}"
+
+active_file="/var/run/${name}.active"
+
+load_rc_config $name
+: ${boinc_client_enable="NO"}
+
+start_cmd=boinc_client_start
+stop_cmd=boinc_client_stop
+
+boinc_client_start()
+{
+	if checkyesno boinc_client_enable; then
+		if [ -f ${active_file} ]; then
+			echo 1>&2 "${name} already running?"
+			return 1
+		fi
+		echo "Starting ${name}."
+		idprio 31 su - ${boinc_client_user} -c \
+		    "%%PREFIX%%/bin/boinc_client ${boinc_client_flags}"
+		touch ${active_file}
+	fi
+}
+
+boinc_client_stop()
+{
+	if [ ! -f ${active_file} ]; then
+		echo 1>&2 "${name} is not running."
+		return 1
+	fi
+	echo "Stopping ${name}."
+	su - ${boinc_client_user} -c \
+	    "cd ${boinc_client_home} && %%PREFIX%%/bin/boinccmd --quit"
+	rm ${active_file}
+}
+
+run_rc_command "$1"

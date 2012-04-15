@@ -4,9 +4,4 @@ and install one or more projects.
 
 Refer to the BOINC web page at:
 	http://boinc.berkeley.edu/
-
-SETI@HOME is available in port astro/boinc-setiathome.
-Einstein@Home is available for i386 users in astro/boinc-einsteinathome port.
-
-Other projects are not known to work on FreeBSD at this moment.
 -------------------------------------------------------------------
