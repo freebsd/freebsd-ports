@@ -1691,6 +1691,7 @@
     SUBDIR += rubygem-net-http-digest_auth
     SUBDIR += rubygem-net-http-persistent
     SUBDIR += rubygem-nicovideo
+    SUBDIR += rubygem-ntlm-http
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
     SUBDIR += rubygem-rack-cache
