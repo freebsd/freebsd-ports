@@ -1,0 +1,6 @@
+include/b64/cdecode.h
+include/b64/cencode.h
+include/b64/decode.h
+include/b64/encode.h
+lib/libb64.a
+@dirrm include/b64
