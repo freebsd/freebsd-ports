@@ -69,6 +69,7 @@ include/d/phobos/std/c/solaris/pthread.d
 include/d/phobos/std/c/solaris/socket.d
 include/d/phobos/std/c/solaris/solaris.d
 include/d/phobos/std/c/stdarg.d
+include/d/phobos/std/c/stdint.d
 include/d/phobos/std/c/stddef.d
 include/d/phobos/std/c/stdio.d
 include/d/phobos/std/c/stdlib.d
