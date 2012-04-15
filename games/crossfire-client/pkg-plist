@@ -14,6 +14,6 @@ bin/crossfire-client-gtk2
 %%DATADIR%%/glade-gtk2/v1-redux.glade
 %%DATADIR%%/themes/Black
 %%DATADIR%%/themes/Standard
-@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/glade-gtk2
+@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
