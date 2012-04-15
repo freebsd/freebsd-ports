@@ -1,5 +1,19 @@
---- xdd.h.orig	Fri Mar 16 06:35:11 2007
-+++ xdd.h	Fri Mar 16 07:04:35 2007
+--- xdd.h.orig	2012-02-15 22:00:06.595144141 -0800
++++ xdd.h	2012-02-15 22:01:01.868152911 -0800
+@@ -30,12 +30,12 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <sys/types.h>
++#include <string.h>
+ #ifdef WIN32
+ #include <io.h>
+ #include <sys/timeb.h>
+ #include <time.h>
+ #include <memory.h>
+-#include <string.h>
+ #include <windows.h>
+ #include <windef.h>
+ #include <winbase.h>
 @@ -48,7 +48,7 @@
  #include <sys/ipc.h>
  #include <sys/sem.h>
