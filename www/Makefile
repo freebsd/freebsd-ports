@@ -1393,7 +1393,6 @@
     SUBDIR += phpsysinfo-dev
     SUBDIR += phpvirtualbox
     SUBDIR += phpwebapp
-    SUBDIR += pivot-weblog
     SUBDIR += pivotx
     SUBDIR += piwigo
     SUBDIR += piwik
