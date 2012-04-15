@@ -7,59 +7,61 @@
 # ex: ts=8
 
 PORTNAME=	ircd-ratbox
-PORTVERSION=	2.2.9
+PORTVERSION=	3.0.7
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.ratbox.org/download/				\
 		ftp://ftp.parodius.com/pub/ircd-ratbox/			\
 		http://www.ratbox.org/download/old/
 
 MAINTAINER=	moggie@elasticmind.net
-COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
+COMMENT=	Advanced, stable IRC daemon, used widely on EFnet
+
+LICENSE=	GPLv2
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]*
 
 USE_BZIP2=	yes
-MAN8=		ircd.8
+#MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
-USE_PERL5_BUILD=	yes
+USE_SQLITE=	3
+USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
 
 USERS=		ircd
 GROUPS=		${USERS}
 
-LOGDIR=		/var/log/${PORTNAME}
-RUNDIR=		/var/run/${PORTNAME}
+LOGDIR?=	/var/log/${PORTNAME}
+RUNDIR?=	/var/run/${PORTNAME}
+DBDIR?=		/var/db/${PORTNAME}
 SUB_FILES=	pkg-message pkg-install
-PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
-SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
+PLIST_SUB=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
+SUB_LIST=	LOGDIR=${LOGDIR} RUNDIR=${RUNDIR} DBDIR=${DBDIR}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}	   \
-		--with-logdir=/var/log/${PORTNAME}		   \
-		--with-moduledir=${PREFIX}/lib/${PORTNAME}/modules \
-		--with-helpdir=${DATADIR}/help
+CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/${PORTNAME}		\
+		--with-logdir=/var/log/${PORTNAME}			\
+		--with-moduledir=${PREFIX}/lib/${PORTNAME}/modules	\
+		--libexecdir=${PREFIX}/libexec				\
+		--with-helpdir=${DATADIR}/help				\
+		--libdir=${PREFIX}/lib/${PORTNAME}			\
+		--with-sqlite3=${LOCALBASE}				\
+		--disable-backups
 
 PORTDOCS=	[^i]*.txt README.* technical/[^i]*.txt Tao-of-IRC.*
 
 #-- Options ------------------------------------------------------------
 
-OPTIONS=	KQUEUE		"Use superior kqueue(2) instead of poll(2)"	on  \
-		OPENSSL		"Enable openssl support"			on  \
+OPTIONS=	OPENSSL		"Enable openssl support"			on  \
 		IPV6		"Enable IPv6 support"				on  \
 		ZIPLINKS	"Enable ziplinks support"			on  \
 		SHARED_MODULES	"Enable shared modules support"			on  \
 		ASSERT		"Enable debugging code"				off \
 		SMALL_NET	"Tune server for small networks"		off \
-		SERVICES	"Enable ratbox-services compatibility code"	off
+		SERVICES	"Enable ratbox-services compatibility code"	off \
+		SHORTCUTS	"Build with ircd-shortcut commands"		off
 
 #----------------------------------------------------------------------
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_KQUEUE)
-CONFIGURE_ARGS+=	--enable-kqueue
-.else
-CONFIGURE_ARGS+=	--enable-poll
-.endif
 
 .if defined(WITH_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -68,8 +70,8 @@ CONFIGURE_ARGS+=	--enable-openssl
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .if defined(WITHOUT_ZIPLINKS)
@@ -92,6 +94,16 @@ CONFIGURE_ARGS+=	--enable-small-net
 
 .if defined(WITH_SERVICES)
 CONFIGURE_ARGS+=	--enable-services
+PLIST_SUB+=		SERVICES=""
+.else
+PLIST_SUB+=		SERVICES="@comment "
+.endif
+
+.if defined(WITH_SHORTCUTS)
+USE_PERL5_BUILD=	yes
+PLIST_SUB+=		SHORTCUTS=""
+.else
+PLIST_SUB+=		SHORTCUTS="@comment "
 .endif
 
 #-- User Configuration -------------------------------------------------
@@ -100,17 +112,12 @@ CONFIGURE_ARGS+=	--enable-services
 CONFIGURE_ARGS+=	--with-nicklen=${NICKLEN}
 .endif
 
-.if defined(TOPICLEN)
-CONFIGURE_ARGS+=	--with-topiclen=${TOPICLEN}
-.endif
-
 #-----------------------------------------------------------------------
 
 pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "This port has additional options:"
 	@${ECHO_MSG} "    NICKLEN     [default 9, max 50]    - Max nick length on server"
-	@${ECHO_MSG} "    TOPICLEN    [default 160, max 390] - Max topic length"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "    SERVER_NAME [default 'services.ircd-ratbox.org'] - Name of services"
 	@${ECHO_MSG} "    USER_SERV   [default 'USERSERV'] - Name of user registration service"
@@ -131,9 +138,13 @@ pre-build:
 			${WRKSRC}/doc/example.conf		\
 			${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%LOGDIR%%#${LOGDIR}#g"		\
-				${WRKSRC}/doc/example.conf	\
-				${WRKSRC}/doc/example.efnet.conf
+			${WRKSRC}/doc/example.conf		\
+			${WRKSRC}/doc/example.efnet.conf
+	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g"		\
+			${WRKSRC}/doc/example.conf		\
+			${WRKSRC}/doc/example.efnet.conf
 	@${REINPLACE_CMD} -e "s#%%RUNDIR%%#${RUNDIR}#g" ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e "s#%%DBDIR%%#${DBDIR}#g" ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s#%%WRKSRC%%#${WRKSRC}#g" ${WRKSRC}/contrib/ircd-shortcut.pl
 
 #-- ircd-shortcut.pl ratbox-services commands --------------------------------------
@@ -175,9 +186,22 @@ pre-build:
 	${WRKSRC}/contrib/ircd-shortcut.pl
 .endif
 
-#------ Execute ircd-shortcut perl script to generate the .c file. -----
+# ----- Execute ircd-shortcut perl script to generate the .c file. -----
+.if defined(WITH_SHORTCUTS)
 	@${ECHO_MSG} "Executing ircd-shortcut.pl for ircd-shortcuts generation."
 	${PERL} ${WRKSRC}/contrib/ircd-shortcut.pl
+.endif
+
+post-build:
+	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
+
+# ----- Need to build the m_rsshortcut.so module for ircd-shortcut.pl ----
+.if defined(WITH_SHORTCUTS)
+	@${ECHO_MSG} "Building m_rsshortcut.la for ircd-shortcuts."
+	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} m_rsshortcut.la
+.endif
 
 pre-su-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
@@ -185,14 +209,23 @@ pre-su-install:
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
 
 post-install:
-	${CHOWN} -R ircd:ircd ${PREFIX}/etc/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@cd ${INSTALL_WRKSRC}/contrib && ${SETENV} ${MAKE_ENV} ${MAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
 	${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${PREFIX}/etc/${PORTNAME}/ircd.motd.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/${PORTNAME}/ircd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/genssl.sh ${PREFIX}/etc/${PORTNAME}/genssl.sh
+
+# ----- We need to install the shortcut.pl module ----
+.if defined(WITH_SHORTCUTS)
+	@${ECHO_MSG} "Executing install-mod.sh for ircd-shortcuts module installation."
+	${SH} ${WRKSRC}/install-mod.sh ${WRKSRC}/contrib/m_rsshortcut.la \
+		${PREFIX}/lib/${PORTNAME}/modules/contrib
+.endif
 
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/ircd.conf ]; then \
 		${ECHO} "Installing default configuration file."; \

@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120415:
+  AFFECTS: users of irc/ircd-ratbox
+  AUTHOR: scheidell@FreeBSD.org
+
+  Ircd-ratbox has been updated to follow the current stable release branch (3.0.x).
+  All previous branches are no longer supported by the ratbox team.
+
+  Users of ircd-ratbox are advised to create new ircd configuration files based on
+  the examples provided.
+
 20120404:
   AFFECTS: users of net-mgmt/net-snmp
   AUTHOR: zi@FreeBSD.org

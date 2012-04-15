@@ -6,9 +6,9 @@
 #-----------------------------------------------------------------------
 if [ "x$2" = "xPRE-INSTALL" ]; then
 #-----------------------------------------------------------------------
-#
+
 # ${DO_NADA}
-#
+
 #-----------------------------------------------------------------------
 elif [ "x$2" = "xPOST-INSTALL" ]; then
 #-----------------------------------------------------------------------
@@ -21,12 +21,20 @@ mkdir -p %%RUNDIR%%           \
 && chown ircd:ircd %%RUNDIR%% \
 && chmod 750 %%RUNDIR%%
 
-# Secure permissions if we think this is a fresh install
+mkdir -p %%DBDIR%%		\
+&& chown ircd:ircd %%DBDIR%%	\
+&& chmod 750 %%DBDIR%%
 
-if [ ! -f ${PKG_PREFIX}/etc/ircd-ratbox/ircd.conf ]; then
-	chown -R ircd:ircd ${PKG_PREFIX}/etc/ircd-ratbox/
-	chmod 750 ${PKG_PREFIX}/etc/ircd-ratbox/
-	chmod 640 ${PKG_PREFIX}/etc/ircd-ratbox/*
+# Secure permissions if we think this is a fresh install
+conffile="%%PREFIX%%/etc/ircd-ratbox/ircd.conf"
+samplefile="%%PREFIX%%/etc/ircd-ratbox/ircd.conf.sample"
+if cmp -s $conffile $samplefile; then
+	echo "Setting default permissions for config dir and files."
+	chown -R root:ircd %%PREFIX%%/etc/ircd-ratbox/
+	chmod 750 %%PREFIX%%/etc/ircd-ratbox/
+	chmod 640 %%PREFIX%%/etc/ircd-ratbox/*
+else
+	echo "Modified ircd.conf file found, permissions unchanged."
 fi
 
 #-----------------------------------------------------------------------
