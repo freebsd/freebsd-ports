@@ -65,6 +65,7 @@ include/d/druntime/import/core/sync/exception.di
 include/d/druntime/import/core/sync/mutex.di
 include/d/druntime/import/core/sync/rwmutex.di
 include/d/druntime/import/core/sync/semaphore.di
+include/d/druntime/import/core/sys/freebsd/sys/event.di
 include/d/druntime/import/core/sys/osx/mach/kern_return.di
 include/d/druntime/import/core/sys/osx/mach/port.di
 include/d/druntime/import/core/sys/osx/mach/semaphore.di
@@ -117,17 +118,13 @@ include/d/druntime/import/object.di
 include/d/phobos2/crc32.d
 include/d/phobos2/etc/c/zlib.d
 include/d/phobos2/index.d
-include/d/phobos2/std/__fileinit.d
 include/d/phobos2/std/algorithm.d
 include/d/phobos2/std/array.d
 include/d/phobos2/std/ascii.d
-include/d/phobos2/std/atomics.d
 include/d/phobos2/std/base64.d
 include/d/phobos2/std/bigint.d
 include/d/phobos2/std/bind.d
-include/d/phobos2/std/bitarray.d
 include/d/phobos2/std/bitmanip.d
-include/d/phobos2/std/boxer.d
 include/d/phobos2/std/c/fenv.d
 include/d/phobos2/std/c/freebsd/socket.d
 include/d/phobos2/std/c/linux/linux.d
@@ -181,7 +178,6 @@ include/d/phobos2/std/internal/uni.d
 include/d/phobos2/std/internal/uni_tab.d
 include/d/phobos2/std/internal/processinit.d
 include/d/phobos2/std/internal/windows/advapi32.d
-include/d/phobos2/std/iterator.d
 include/d/phobos2/std/json.d
 include/d/phobos2/std/loader.d
 include/d/phobos2/std/math.d
@@ -253,6 +249,8 @@ include/d/phobos2/unittest.d
 @dirrm include/d/druntime/import/core/sys/posix
 @dirrm include/d/druntime/import/core/sys/osx/mach
 @dirrm include/d/druntime/import/core/sys/osx
+@dirrm include/d/druntime/import/core/sys/freebsd/sys
+@dirrm include/d/druntime/import/core/sys/freebsd
 @dirrm include/d/druntime/import/core/sys
 @dirrm include/d/druntime/import/core/sync
 @dirrm include/d/druntime/import/core/stdc
