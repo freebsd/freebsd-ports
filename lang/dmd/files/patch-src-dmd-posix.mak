@@ -1,5 +1,5 @@
---- ../../src/dmd/posix.mak.orig	2012-02-08 01:17:24.000000000 -0800
-+++ ../../src/dmd/posix.mak	2012-02-15 20:14:30.649579678 -0800
+--- ../../src/dmd/posix.mak.orig	2012-04-10 22:34:58.000000000 -0700
++++ ../../src/dmd/posix.mak	2012-04-14 23:37:37.562325386 -0700
 @@ -29,8 +29,6 @@
  TK=tk
  ROOT=root
@@ -18,7 +18,7 @@
  
  #OPT=-g -g3
  #OPT=-O2
-@@ -143,7 +141,7 @@
+@@ -144,7 +142,7 @@
  all: dmd
  
  dmd: $(DMD_OBJS)
@@ -27,12 +27,12 @@
  
  clean:
  	rm -f $(DMD_OBJS) dmd optab.o id.o impcnvgen idgen id.c id.h \
-@@ -522,7 +520,7 @@
+@@ -523,7 +521,7 @@
  	$(CC) -c $(GFLAGS) -I$(ROOT) $<
  
  strtold.o: $C/strtold.c
--	gcc -m$(MODEL) -c $<
-+	gcc -c $<
+-	gcc -m$(MODEL) -I$(ROOT) -c $<
++	gcc -I$(ROOT) -c $<
  
  struct.o: struct.c
  	$(CC) -c $(CFLAGS) $<
