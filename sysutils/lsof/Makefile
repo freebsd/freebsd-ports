@@ -47,6 +47,12 @@ CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
 PLIST_FILES=	sbin/lsof
 MAN8=		lsof.8
 
+.include <bsd.port.pre.mk>
+
+.if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
+IGNORE=		requires kernel sources
+.endif
+
 .if !defined(FIXUP_RELEASE)
 post-extract:
 	@( cd ${WRKDIR}/${DISTNAME} ; \
@@ -75,4 +81,4 @@ post-install:
 	    ${FIND} -d share/lsof -type d \
 	        | ${SED} -e 's/^/@dirrm /g' >>${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
