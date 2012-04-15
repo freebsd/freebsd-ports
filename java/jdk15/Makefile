@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	18
+PORTREVISION=	19
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -49,7 +49,6 @@ JRL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}_${JDK_UPDATE_VERSION}-fcs-src-b${JDK_BUI
 JRL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}_${JDK_UPDATE_VERSION}-fcs-bin-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
-TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
 JDK_UPDATE_VERSION=	16
@@ -57,9 +56,6 @@ JDK_PATCHSET_VERSION=	9
 JDK_BUILD_NUMBER=	02
 JDK_BUILD_DATE=		28_may_2008
 LATEST_LINK=	jdk15
-
-TZUPDATE_VERSION=	1_3_45
-TZUPDATE_TZVERSION=	2011n
 
 .include <bsd.port.pre.mk>
 
@@ -85,8 +81,7 @@ EXTRACT_ONLY+=	${POLICYFILE}
 .endif
 
 .if defined(WITH_TZUPDATE)
-DISTFILES+=	${TZUPDATEFILE}
-EXTRACT_ONLY+=	${TZUPDATEFILE}
+RUN_DEPENDS+=	${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 .endif
 
 # do we have valid native jdk installed?
@@ -187,7 +182,7 @@ X11_FILES=	../../j2se/make/sun/motif21/Makefile \
 		../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 DISTFILE_INSTRUCTIONS=\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
 .if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
@@ -209,12 +204,6 @@ DISTFILE_INSTRUCTIONS += Please open http://www.oracle.com/technetwork/java/java
 in a web browser and follow the \"Download\" link for\n\
 \"Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy\n\
 Files 5.0\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
-.endif#}
-.if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
-DISTFILE_INSTRUCTIONS += Please open http://www.oracle.com/technetwork/java/javase/downloads/index.html\n\
-in a web browser and follow the \"Download\" link for\n\
-\"JDK DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
-time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
 DISTFILE_INSTRUCTIONS += Please download the patchset, ${PATCHSETFILE}, from\n\
@@ -353,9 +342,8 @@ post-build:
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
-	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater-${TZUPDATE_VERSION:S/_/./g}-${TZUPDATE_TZVERSION}/tzupdater.jar -u -bc
-	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
+	@${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi
+	@${LN} -s -f ${LOCALBASE}/share/java/zi ${JDKIMAGEDIR}/jre/lib
 .endif
 
 do-install:
