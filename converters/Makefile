@@ -42,6 +42,7 @@
     SUBDIR += ish
     SUBDIR += konwert
     SUBDIR += ktextdecode
+    SUBDIR += libb64
     SUBDIR += libiconv
     SUBDIR += libticonv
     SUBDIR += libutf-8
