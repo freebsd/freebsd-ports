@@ -34,6 +34,7 @@ lib/xvile/vile-dcl-filt.so
 lib/xvile/vile-def-filt.so
 lib/xvile/vile-diff-filt.so
 lib/xvile/vile-ecl-filt.so
+lib/xvile/vile-erl-filt.so
 lib/xvile/vile-esql-filt.so
 lib/xvile/vile-est-filt.so
 lib/xvile/vile-fdl-filt.so
@@ -99,6 +100,7 @@ lib/xvile/vile-yacc-filt.so
 @unexec rm -f %D/share/xvile/vile/vilemenu.rc
 share/pixmaps/vile.xbm
 share/xvile/vile/color-ls.rc
+share/xvile/vile/complete.rc
 share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc
 share/xvile/vile/gnugpg.rc
@@ -142,9 +144,11 @@ share/xvile/vile/css.keywords
 share/xvile/vile/cweb.keywords
 share/xvile/vile/dcl.keywords
 share/xvile/vile/def.keywords
+share/xvile/vile/delphi.keywords
 share/xvile/vile/diff.keywords
 share/xvile/vile/docbook.keywords
 share/xvile/vile/ecl.keywords
+share/xvile/vile/erl.keywords
 share/xvile/vile/esql.keywords
 share/xvile/vile/est.keywords
 share/xvile/vile/fdl.keywords
@@ -202,6 +206,7 @@ share/xvile/vile/xs.keywords
 share/xvile/vile/xsl.keywords
 share/xvile/vile/yacc.keywords
 share/xvile/macros/color-ls.rc
+share/xvile/macros/complete.rc
 share/xvile/macros/dates.rc
 share/xvile/macros/digraphs.rc
 share/xvile/macros/gnugpg.rc

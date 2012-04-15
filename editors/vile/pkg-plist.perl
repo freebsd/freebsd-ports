@@ -22,6 +22,7 @@ lib/vile/vile-dcl-filt
 lib/vile/vile-def-filt
 lib/vile/vile-diff-filt
 lib/vile/vile-ecl-filt
+lib/vile/vile-erl-filt
 lib/vile/vile-esql-filt
 lib/vile/vile-est-filt
 lib/vile/vile-fdl-filt
@@ -101,6 +102,7 @@ share/vile/bat.keywords
 share/vile/bnf.keywords
 share/vile/c.keywords
 share/vile/color-ls.rc
+share/vile/complete.rc
 share/vile/cpp.keywords
 share/vile/cs.keywords
 share/vile/csh.keywords
@@ -109,10 +111,12 @@ share/vile/cweb.keywords
 share/vile/dates.rc
 share/vile/dcl.keywords
 share/vile/def.keywords
+share/vile/delphi.keywords
 share/vile/diff.keywords
 share/vile/digraphs.rc
 share/vile/docbook.keywords
 share/vile/ecl.keywords
+share/vile/erl.keywords
 share/vile/esql.keywords
 share/vile/est.keywords
 share/vile/fdl.keywords
@@ -132,6 +136,7 @@ share/vile/lua.keywords
 share/vile/loaderrs.rc
 share/vile/m4.keywords
 share/vile/macros/color-ls.rc
+share/vile/macros/complete.rc
 share/vile/macros/dates.rc
 share/vile/macros/digraphs.rc
 share/vile/macros/gnugpg.rc
