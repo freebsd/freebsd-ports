@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.72
-PORTREVISION=	2
+PORTVERSION=	2.73
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -52,7 +51,7 @@ SUB_FILES=	pkg-message
 
 CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !exists( /usr/include/libmilter/mfapi.h )
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
@@ -99,4 +98,4 @@ post-install:
 	@[ -d ${QUARANTINEDIR} ] && ${CHGRP} ${MAILUSER} ${QUARANTINEDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
