@@ -1,0 +1,1 @@
+package ifneeded tdbc::sqlite3 %%DISTVERSION%% [list source [file join $dir sqlite3-%%DISTVERSION%%.tm]]

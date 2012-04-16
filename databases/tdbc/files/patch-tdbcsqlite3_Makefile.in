@@ -1,0 +1,12 @@
+--- tdbcsqlite3/Makefile.in.orig	2011-08-01 16:50:38.000000000 +0200
++++ tdbcsqlite3/Makefile.in	2012-03-16 16:49:20.000000000 +0100
+@@ -72,6 +72,6 @@
+ pkgdatadir	= $(datadir)/$(PKG_DIR)
+ pkglibdir	= $(libdir)/$(PKG_DIR)
+ pkgincludedir	= $(includedir)/$(PKG_DIR)
+-tmdir		= $(libdir)/tcl$(TCL_MAJOR_VERSION)/$(TCL_VERSION)
++tmdir		= $(libdir)/tcl$(TCL_VERSION)
+ pkgslash	= `echo $(PACKAGE_NAME) | sed s=tdbc=tdbc/=`
+ 
+ top_builddir	= .
+ 

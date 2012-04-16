@@ -822,6 +822,7 @@
     SUBDIR += tarantool
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
+    SUBDIR += tdbc
     SUBDIR += tinycdb
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
