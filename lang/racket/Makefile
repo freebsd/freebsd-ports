@@ -26,6 +26,8 @@ MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	RACKET_PLACES	"Enable Places" ON
 
+CONFLICTS=	racket-textual-[0-9]*
+
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-shared --enable-pthread \
 			--enable-lt=${LIBTOOL}
