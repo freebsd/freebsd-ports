@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl svg qt3support network assistantclient \
 		moc_build qmake_build rcc_build
+USE_GL=		glu
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		PYTHON_CMD=${PYTHON_CMD}
