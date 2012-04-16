@@ -284,6 +284,7 @@
     SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += racket
+    SUBDIR += racket-textual
     SUBDIR += rakudo
     SUBDIR += ratfor
     SUBDIR += rexx-imc
