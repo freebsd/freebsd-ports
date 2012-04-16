@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Toolkit
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	textproc
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERIGRIN
@@ -20,15 +20,17 @@ BUILD_DEPENDS=	p5-Bread-Board>=0:${PORTSDIR}/devel/p5-Bread-Board \
 		p5-Moose>=0.92:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Aliases>=0:${PORTSDIR}/devel/p5-MooseX-Aliases \
 		p5-MooseX-App-Cmd>=0:${PORTSDIR}/devel/p5-MooseX-App-Cmd \
+		p5-MooseX-Getopt>=0:${PORTSDIR}/devel/p5-MooseX-Getopt \
 		p5-MooseX-MetaDescription>=0:${PORTSDIR}/devel/p5-MooseX-MetaDescription \
 		p5-MooseX-NonMoose>=0:${PORTSDIR}/devel/p5-MooseX-NonMoose \
 		p5-MooseX-Types-Path-Class>=0:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
+		p5-XML-SAX>=0.96:${PORTSDIR}/textproc/p5-XML-SAX \
 		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+#		p5-XML-SAX-Base>=0:${PORTSDIR}/textproc/p5-XML-SAX-Base
 
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \

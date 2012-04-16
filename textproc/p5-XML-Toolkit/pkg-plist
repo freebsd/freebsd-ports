@@ -3,6 +3,7 @@ bin/xmltk
 %%SITE_PERL%%/XML/Generator/Moose.pm
 %%SITE_PERL%%/XML/Toolkit.pm
 %%SITE_PERL%%/XML/Toolkit/App.pm
+%%SITE_PERL%%/XML/Toolkit/App/Config.pm
 %%SITE_PERL%%/XML/Toolkit/Builder.pm
 %%SITE_PERL%%/XML/Toolkit/Builder/ClassRegistry.pm
 %%SITE_PERL%%/XML/Toolkit/Builder/ClassTemplate.pm
@@ -34,6 +35,7 @@ bin/xmltk
 @dirrm %%SITE_PERL%%/XML/Toolkit/Cmd/Command
 @dirrm %%SITE_PERL%%/XML/Toolkit/Cmd
 @dirrm %%SITE_PERL%%/XML/Toolkit/Builder
+@dirrm %%SITE_PERL%%/XML/Toolkit/App
 @dirrm %%SITE_PERL%%/XML/Toolkit
 @dirrm %%SITE_PERL%%/XML/Generator
 @dirrm %%SITE_PERL%%/XML/Filter
