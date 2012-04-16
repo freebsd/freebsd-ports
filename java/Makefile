@@ -90,7 +90,6 @@
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += jaxen
-    SUBDIR += jbootstrap
     SUBDIR += jboss2
     SUBDIR += jboss5
     SUBDIR += jc
