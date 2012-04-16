@@ -1,0 +1,5 @@
+HTTPauth is a library supporting the full HTTP Authentication protocol as
+specified in RFC 2617; both Digest Authentication and Basic Authentication.
+
+WWW: http://httpauth.rubyforge.org/
+RG:  https://rubygems.org/gems/httpauth
