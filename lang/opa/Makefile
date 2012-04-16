@@ -26,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/ssl/ssl.a:${PORTSDIR}/security/oca
 		${LOCALBASE}/${OCAML_LIBDIR}/ocamlgraph/graph.a:${PORTSDIR}/math/ocaml-ocamlgraph \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex
 
-GITVER=		1598
+GITVER=		1635
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_GMAKE=	yes
