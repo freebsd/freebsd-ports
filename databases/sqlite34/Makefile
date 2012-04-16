@@ -15,6 +15,9 @@ DISTNAME=	sqlite-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database engine in a C library
 
+DEPRECARED=	No more supported, please use databases/sqlite3 instead
+EXPIRATION_DATE=	2012-05-16
+
 CONFLICTS=	sqlite3-[0-9]*
 
 USE_GMAKE=	YES
