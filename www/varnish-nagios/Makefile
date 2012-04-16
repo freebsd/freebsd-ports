@@ -12,7 +12,7 @@ MASTER_SITES=	http://repo.varnish-cache.org/source/ \
 		http://anders.fupp.net/distfiles/
 
 MAINTAINER=	anders@FreeBSD.org
-COMMENT=	Varnish Nagios
+COMMENT=	Nagios plugin to check status of Varnish
 
 BUILD_DEPENDS=	${LOCALBASE}/include/varnish/varnishapi.h:${PORTSDIR}/www/varnish
 
