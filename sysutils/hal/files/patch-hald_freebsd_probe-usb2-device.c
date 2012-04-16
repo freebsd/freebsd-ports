@@ -1,6 +1,14 @@
---- hald/freebsd/probing/probe-usb2-device.c.orig	2009-08-24 05:42:29.000000000 -0700
-+++ hald/freebsd/probing/probe-usb2-device.c	2011-12-30 17:20:52.000000000 -0800
-@@ -148,15 +148,16 @@
+--- hald/freebsd/probing/probe-usb2-device.c.orig	2009-08-24 08:42:29.000000000 -0400
++++ hald/freebsd/probing/probe-usb2-device.c	2012-03-31 15:20:14.000000000 -0400
+@@ -100,6 +100,7 @@ main(int argc, char **argv)
+       if (pcfg == NULL || libusb20_dev_get_info(pdev, &di))
+         {
+           free(pcfg);
++	  libusb20_dev_close(pdev);
+ 	  continue;
+ 	}
+ 
+@@ -148,15 +149,16 @@ main(int argc, char **argv)
  	    bcdspeed = 0x01200;
  	    break;
  	  case LIBUSB20_SPEED_HIGH:
@@ -20,7 +28,7 @@
  	}
  
        libhal_device_set_property_double(hfp_ctx, hfp_udi, "usb_device.speed",
-@@ -169,6 +170,9 @@
+@@ -169,6 +171,9 @@ main(int argc, char **argv)
            case UD_USB_2_0:
              version = 2.0;
  	    break;
@@ -30,7 +38,7 @@
  	  case UD_USB_3_0:
  	    version = 3.0;
  	    break;
-@@ -184,7 +188,7 @@
+@@ -184,7 +189,7 @@ main(int argc, char **argv)
        libhal_device_set_property_int(hfp_ctx, hfp_udi,
          "usb_device.vendor_id", di.udi_vendorNo, &hfp_error);
        libhal_device_set_property_int(hfp_ctx, hfp_udi,
