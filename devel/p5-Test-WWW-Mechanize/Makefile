@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-WWW-Mechanize
-PORTVERSION=	1.38
+PORTVERSION=	1.40
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PETDANCE
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Testing-specific WWW::Mechanize subclass
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-HTTP-Server-Simple>=0.42:${PORTSDIR}/www/p5-HTTP-Server-Simple \
@@ -27,4 +30,14 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Test::WWW::Mechanize.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+TEST_DEPENDS+=	p5-Test-Builder-Tester>=1.09:${PORTSDIR}/devel/p5-Test-Builder-Tester
+.endif
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
