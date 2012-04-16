@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	verilog-mode.el
-PORTVERSION=	465
-PORTREVISION=	1
+PORTVERSION=	790
 CATEGORIES=	cad elisp
 MASTER_SITES=	http://www.veripool.org/ftp/
 DISTNAME=	verilog-mode-${PORTVERSION}.el
