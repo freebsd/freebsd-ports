@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2011-03-27 18:41:32.000000000 +0200
++++ CMakeLists.txt	2012-04-16 12:13:31.000000000 +0200
+@@ -125,7 +125,7 @@
+ endif()
+ 
+ include_directories(${USES_UCOMMON_INCLUDE_DIRS})
+-link_directories(${USES_UCOMMON_LIBRARY_DIRS})
++link_directories(${USES_UCOMMON_LIBRARY_DIRS} ${WITH_LIBS})
+ add_definitions(${USES_UCOMMON_CFLAGS})
+ 
+ # by default we build static libs for windows, shared libs for unix.
