@@ -1485,6 +1485,7 @@ cdiff                           ports/textproc/cdiff
 cdircmp                         ports/sysutils/cdircmp
 cdk                             ports/devel/cdk
 cdlabelgen                      ports/print/cdlabelgen
+cdls                            ports/sysutils/cdls
 cdo                             ports/science/cdo
 cdonkey                         ports/net-p2p/cdonkey
 cdparanoia                      ports/audio/cdparanoia
@@ -1785,6 +1786,7 @@ cnews                           ports/news/cnews
 cntlm                           ports/www/cntlm
 cnupm                           ports/net/cnupm
 cobf                            ports/devel/cobf
+coccigrep                       ports/textproc/coccigrep
 coccinella                      ports/net-im/coccinella
 coccinelle                      ports/devel/coccinelle
 coco                            ports/textproc/coco
@@ -8951,6 +8953,7 @@ luaexpat                        ports/textproc/luaexpat
 luafilesystem                   ports/devel/luafilesystem
 luajava                         ports/devel/luajava
 luajit                          ports/lang/luajit
+luakit                          ports/www/luakit
 luasec                          ports/security/luasec
 luasocket                       ports/net/luasocket
 luasql-mysql                    ports/databases/luasql-mysql
@@ -21391,7 +21394,6 @@ pire                            ports/devel/pire
 pisg                            ports/irc/pisg
 pit                             ports/devel/pit
 pitivi                          ports/multimedia/pitivi
-pivot-weblog                    ports/www/pivot-weblog
 pivotx                          ports/www/pivotx
 piwigo                          ports/www/piwigo
 piwik                           ports/www/piwik
@@ -21713,9 +21715,6 @@ postgresql-plpython             ports/databases/postgresql-plpython
 postgresql-plruby               ports/databases/postgresql-plruby
 postgresql-relay                ports/databases/postgresql-relay
 postgresql-repmgr               ports/databases/postgresql-repmgr
-postgresql82-client             ports/databases/postgresql82-client
-postgresql82-contrib            ports/databases/postgresql82-contrib
-postgresql82-server             ports/databases/postgresql82-server
 postgresql83-client             ports/databases/postgresql83-client
 postgresql83-contrib            ports/databases/postgresql83-contrib
 postgresql83-docs               ports/databases/postgresql83-docs
@@ -24491,6 +24490,7 @@ rubygem-dnsruby                 ports/dns/rubygem-dnsruby
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
+rubygem-domain_name             ports/net/rubygem-domain_name
 rubygem-domainatrix             ports/www/rubygem-domainatrix
 rubygem-dragonfly               ports/graphics/rubygem-dragonfly
 rubygem-drydock                 ports/devel/rubygem-drydock
@@ -24656,6 +24656,7 @@ rubygem-nicovideo               ports/www/rubygem-nicovideo
 rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-nokogiri                ports/textproc/rubygem-nokogiri
 rubygem-notify                  ports/devel/rubygem-notify
+rubygem-ntlm-http               ports/www/rubygem-ntlm-http
 rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-oauth2                  ports/net/rubygem-oauth2
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
@@ -24845,6 +24846,8 @@ rubygem-twitter_oauth           ports/security/rubygem-twitter_oauth
 rubygem-typhoeus                ports/www/rubygem-typhoeus
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uglifier                ports/www/rubygem-uglifier
+rubygem-unf                     ports/textproc/rubygem-unf
+rubygem-unf_ext                 ports/textproc/rubygem-unf_ext
 rubygem-unicode                 ports/devel/rubygem-unicode
 rubygem-unicorn                 ports/www/rubygem-unicorn
 rubygem-uri-redis               ports/net/rubygem-uri-redis
