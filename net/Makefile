@@ -979,6 +979,7 @@
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-http_parser.rb
+    SUBDIR += rubygem-httpauth
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap
