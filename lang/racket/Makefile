@@ -7,23 +7,24 @@
 
 PORTNAME=	racket
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/racket/ \
-		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/racket/ \
-		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/racket/ \
-		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/racket/ \
-		ftp://infogroep.be/pub/racket/installers/${PORTVERSION}/racket/ \
-		http://russell.cs.bilgi.edu.tr/racket-installers/${PORTVERSION}/racket/
-DISTNAME=	racket-${PORTVERSION}-src-unix
+MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/${PORTNAME}/ \
+		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/${PORTNAME}/ \
+		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/${PORTNAME}/ \
+		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/${PORTNAME}/ \
+		ftp://infogroep.be/pub/racket/installers/${PORTVERSION}/${PORTNAME}/ \
+		http://russell.cs.bilgi.edu.tr/racket-installers/${PORTVERSION}/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src-unix
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	racket/${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS=	X11	"X11 support"	ON
+OPTIONS=	RACKET_PLACES	"Enable Places" ON
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-shared --enable-pthread \
@@ -32,35 +33,38 @@ CONFIGURE_SCRIPT=	../configure
 
 .include <bsd.port.options.mk>
 
+.if defined(WITHOUT_X11)
+IGNORE=		requires X11; use lang/racket-textual instead
+.endif
+
 .if ${ARCH} == "i386"
 MANUAL_PACKAGE_BUILD=	i386 requires kern.maxdsiz="640M" to build
 .endif
 
-.if defined(WITH_X11)
 USE_GNOME=	pango
 
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo	\
+LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi		\
+		cairo.2:${PORTSDIR}/graphics/cairo	\
 		jpeg.11:${PORTSDIR}/graphics/jpeg	\
 		png.6:${PORTSDIR}/graphics/png
+
+.if defined(WITH_RACKET_PLACES)
+CONFIGURE_ARGS+=	--enable-places
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg			\
-		${LOCALBASE}/libdata/pkgconfig/cairo.pc:${PORTSDIR}/graphics/cairo	\
-		${LOCALBASE}/libdata/pkgconfig/libpng14.pc:${PORTSDIR}/graphics/png	\
-		${LOCALBASE}/libdata/pkgconfig/pango.pc:${PORTSDIR}/x11-toolkits/pango
+CONFIGURE_ARGS+=	--disable-places
 .endif
 
 # Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src/build
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/build
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:env
 
-MAN1=   drracket.1 gracket.1 mred.1 mzc.1 \
-	mzscheme.1 plt-help.1 racket.1 \
-	raco.1 setup-plt.1 tex2page.1
+MAN1=		drracket.1 gracket.1 mred.1 mzc.1 mzscheme.1 plt-help.1 \
+		racket.1 raco.1 setup-plt.1 tex2page.1
 
 ONLY_FOR_ARCHS=	i386 amd64
 
