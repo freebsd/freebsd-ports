@@ -100,6 +100,10 @@ bin/nagstamon.py
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings_server_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/submit_check_result_dialog.ui
 %%PYTHON_SITELIBDIR%%/Nagstamon/resources/warning.wav
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/history.png
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/history.svg
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/authentication_dialog.ui
+%%PYTHON_SITELIBDIR%%/Nagstamon/resources/settings_action_dialog.ui
 @dirrm %%PYTHON_SITELIBDIR%%/Nagstamon/resources
 @dirrm %%PYTHON_SITELIBDIR%%/Nagstamon/Server
 @dirrm %%PYTHON_SITELIBDIR%%/Nagstamon
