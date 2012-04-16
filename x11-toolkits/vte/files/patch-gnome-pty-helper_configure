@@ -1,0 +1,11 @@
+--- gnome-pty-helper/configure.orig	2012-03-24 17:31:04.000000000 -0400
++++ gnome-pty-helper/configure	2012-03-24 17:31:21.000000000 -0400
+@@ -5699,7 +5699,7 @@ fi
+ 
+ fi
+ 
+-for ac_func in endutent fcntl forkpty getttyent getutent getutmpx grantpt flock login_tty openpty revoke sendmsg seteuid setreuid setutent strrchr updwtmp updwtmpx utmpname utmpxname
++for ac_func in endutent fcntl forkpty getttyent getutent getutmpx grantpt flock login_tty openpty revoke sendmsg seteuid setreuid setutent strrchr updwtmp updwtmpx utmpname utmpxname getutxid
+ do :
+   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
