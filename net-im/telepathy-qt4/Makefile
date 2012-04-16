@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME:C/4//}/
 DISTNAME=	${PORTNAME:C/4//}-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	High-level Qt 4 binding for Telepathy
+COMMENT=	High-level Qt binding for Telepathy
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
