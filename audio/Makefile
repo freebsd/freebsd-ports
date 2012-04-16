@@ -580,6 +580,7 @@
     SUBDIR += pianobar
     SUBDIR += picard
     SUBDIR += pidgin-musictracker
+    SUBDIR += pithos
     SUBDIR += play
     SUBDIR += playgsf
     SUBDIR += playmidi
