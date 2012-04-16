@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -15,9 +16,9 @@ MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	An authentication module for the Apache 2 webserver with OpenID
 
 LIB_DEPENDS=	opkele:${PORTSDIR}/devel/libopkele \
-		sqlite3:${PORTSDIR}/databases/sqlite34
+		sqlite3:${PORTSDIR}/databases/sqlite3
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 
@@ -28,10 +29,4 @@ CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}
 
 CFLAGS+=	-I${LOCALBASE}/include -I/usr/include/openssl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		Doesn't compile on 6.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
