@@ -1,5 +1,5 @@
---- ./qwtplot3d.pro.orig	Tue Jun 26 18:34:05 2007
-+++ ./qwtplot3d.pro	Tue Jun 26 18:34:57 2007
+--- ./qwtplot3d.pro.orig	2012-04-16 21:57:23.562053805 +0000
++++ ./qwtplot3d.pro	2012-04-16 21:58:00.311051941 +0000
 @@ -1,9 +1,9 @@
  # pro file for building the makefile for qwtplot3d
  #
@@ -12,7 +12,15 @@
  MOC_DIR           = tmp
  OBJECTS_DIR       = tmp
  INCLUDEPATH       = include
-@@ -21,7 +21,7 @@
+@@ -11,6 +11,7 @@
+ DESTDIR      			= lib
+ #DESTDIR      			= ../../../lib
+ QT += opengl
++unix:LIBS +=	-lGLU
+ 
+ win32:TEMPLATE    = vclib
+ win32:CONFIG     += dll exceptions
+@@ -21,7 +22,7 @@
  win32:CONFIG -= zlib
  
  linux-g++:TMAKE_CXXFLAGS += -fno-exceptions

@@ -18,6 +18,7 @@ COMMENT=	3D plotting widgets for scientific data and math expressions
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build qmake_build opengl
+USE_GL=		glu
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
