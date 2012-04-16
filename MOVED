@@ -3276,3 +3276,4 @@ databases/postgresql82-server||2012-04-15|Has expired: EOL and multiple vulnerab
 databases/postgresql82-client||2012-04-15|Has expired: EOL and multiple vulnerabilities
 databases/postgresql82-contrib||2012-04-15|Has expired: EOL and multiple vulnerabilities
 www/pivot-weblog||2012-04-15|Has expired: unsupported upstream, consider www/pivotx
+java/jbootstrap||2012-04-16|Has expired: bootstrap for an ancient version of Java

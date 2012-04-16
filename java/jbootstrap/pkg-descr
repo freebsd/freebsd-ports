@@ -1,4 +1,0 @@
-Utilities that allow a JDK to be bootstrapped without needing another
-JDK to do so.
-
-WWW: http://www.eyesbeyond.com/freebsddom/java/jbootstrap.html
