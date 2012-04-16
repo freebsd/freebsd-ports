@@ -18,7 +18,7 @@ COMMENT=	Display an ascii table in decimal, octal, and hexadecimal.
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USE_IMAKE=	YES
-USE_XORG=	x11
+USE_XORG=	x11 xt xaw
 MAN1=		xascii.1
 PLIST_FILES=	bin/xascii
 
