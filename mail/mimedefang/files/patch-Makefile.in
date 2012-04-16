@@ -1,5 +1,5 @@
---- Makefile.in.orig	2011-06-20 21:25:17.000000000 +0400
-+++ Makefile.in	2011-08-12 18:31:02.338324612 +0400
+--- Makefile.in.orig	2012-01-20 19:20:32.000000000 +0400
++++ Makefile.in	2012-04-16 03:14:35.979944862 +0400
 @@ -156,14 +156,14 @@
  
  install: all
@@ -9,19 +9,19 @@
 -		-chmod 600 $(DESTDIR)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 ; \
 +	-if test "$(IP_HEADER)" = "yes" -a ! -f "$(DESTDIR)${CONFDIR}/mimedefang-ip-key.example" ; then \
 +		$(PERL) ./gen-ip-validator.pl > $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example ;\
-+		chmod 600 $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example > /dev/null 2>&1 ; \
++		-chmod 600 $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example > /dev/null 2>&1 ; \
  	fi
  
  	if test "$(DEFANGUSER)" != "" ; then \
  		if id "$(DEFANGUSER)" > /dev/null 2>&1 ; then \
 -			chown "$(DEFANGUSER)" $(DESTDIR)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 || true; \
 +			chown "$(DEFANGUSER)" $(DESTDIR)${CONFDIR}/mimedefang-ip-key.example > /dev/null 2>&1 || true; \
- 			$(INSTALL) -m 700 -o $(DEFANGUSER) -d $(DESTDIR)$(SPOOLDIR) > /dev/null 2>&1 || true; \
- 			$(INSTALL) -m 700 -o $(DEFANGUSER) -d $(DESTDIR)$(QDIR) > /dev/null 2>&1 || true; \
+ 			test ! -d $(DESTDIR)$(SPOOLDIR) && $(INSTALL) -m 750 -o $(DEFANGUSER) -d $(DESTDIR)$(SPOOLDIR) > /dev/null 2>&1 || true; \
+ 			test ! -d $(DESTDIR)$(QDIR) && $(INSTALL) -m 750 -o $(DEFANGUSER) -d $(DESTDIR)$(QDIR) > /dev/null 2>&1 || true; \
                  fi \
 @@ -185,11 +185,7 @@
- 	-test ! -d $(DESTDIR)$(SPOOLDIR) && mkdir -p $(DESTDIR)$(SPOOLDIR) && chmod 700 $(DESTDIR)$(SPOOLDIR) || true
- 	-test ! -d $(DESTDIR)$(QDIR) && mkdir -p $(DESTDIR)$(QDIR) && chmod 700 $(DESTDIR)$(QDIR) || true
+ 	-test ! -d $(DESTDIR)$(SPOOLDIR) && mkdir -p $(DESTDIR)$(SPOOLDIR) && chmod 750 $(DESTDIR)$(SPOOLDIR) || true
+ 	-test ! -d $(DESTDIR)$(QDIR) && mkdir -p $(DESTDIR)$(QDIR) && chmod 750 $(DESTDIR)$(QDIR) || true
  
 -	if test -f $(DESTDIR)${CONFDIR}/mimedefang-filter ; then \
 -		$(INSTALL) -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)${CONFDIR}/mimedefang-filter.example || exit 1; \
