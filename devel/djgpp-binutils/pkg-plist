@@ -33,3 +33,4 @@ bin/i586-pc-msdosdjgpp-strip
 @dirrm i586-pc-msdosdjgpp/lib/ldscripts
 @dirrmtry i586-pc-msdosdjgpp/lib
 @dirrmtry i586-pc-msdosdjgpp/bin
+@dirrmtry i586-pc-msdosdjgpp
