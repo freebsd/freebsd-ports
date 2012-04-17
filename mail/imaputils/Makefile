@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imaputils
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -14,19 +14,23 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	A number of tools and scripts for use with IMAP servers
 
 LICENSE=	ISCL
-LICENSE_FILE=	${WRKSRC}/license.txt
-
-CONFLICTS=	imaptools-[0-9]*
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+PERL_CONFIGURE=	yes
 
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/*.pl
+OPTIONS=	SSL	"Enable SSL support" off \
+		UNICODE	"Adds unicode support" off
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${PREFIX}/bin
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SSL)
+RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
+.endif
+
+.if defined(WITH_UNICODE)
+RUN_DEPENDS+=	p5-Unicode-IMAPUtf7>=0:${PORTSDIR}/converters/p5-Unicode-IMAPUtf7
+.endif
 
 .include <bsd.port.mk>
