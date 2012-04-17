@@ -589,6 +589,7 @@
     SUBDIR += openexr_ctl
     SUBDIR += opengl-man
     SUBDIR += opengtl
+    SUBDIR += openimageio
     SUBDIR += openjpeg
     SUBDIR += openjump
     SUBDIR += opennurbs
