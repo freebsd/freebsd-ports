@@ -35,6 +35,7 @@
     SUBDIR += crf++
     SUBDIR += dcl
     SUBDIR += devisor
+    SUBDIR += dlpoly-classic
     SUBDIR += dtiquery
     SUBDIR += ecs
     SUBDIR += elmer-eio
