@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun J2ME Wireless Toolkit
 
+DEPRECATED=	no more public distfiles, merged with Java ME SDK 3.0 upstream
+EXPIRATION_DATE=	2013-01-01
+
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_LINUX=	yes
@@ -41,7 +44,7 @@ do-extract:
 	@cd ${WRKDIR} \
 	&& dd bs=1024 if=${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
 		of=${WRKDIR}/j2mewtk-solaris.zip skip=20 2>/dev/null
-	@${LOCALBASE}/bin/unzip -qo ${WRKDIR}/j2mewtk-solaris.zip -d ${WRKSRC}
+	@${UNZIP_CMD} -qo ${WRKDIR}/j2mewtk-solaris.zip -d ${WRKSRC}
 	@${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0644 {} \+
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 {} \+
 	@${FIND} ${WRKSRC}/bin ! -name '*.jar' -exec ${CHMOD} 0755 {} \;
