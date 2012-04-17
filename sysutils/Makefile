@@ -449,6 +449,7 @@
     SUBDIR += libpcbsd
     SUBDIR += libretto-config
     SUBDIR += libsunacl
+    SUBDIR += libumberlog
     SUBDIR += libutempter
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-kdeplugins
