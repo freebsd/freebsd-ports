@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-statistics
 PORTVERSION=	1.1.1
+PORTREVISION	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,6 +18,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 OCTSRC=		${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
+RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:${PORTSDIR}/math/octave-forge-io
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
