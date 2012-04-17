@@ -5,7 +5,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_JAVA=	1.6+
 NO_BUILD=	yes
+USE_LDCONFIG=	${PREFIX}/arduino/lib
 
 SUB_FILES=	arduino pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
@@ -76,7 +77,7 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|readlink -f|realpath|g' ${WRKSRC}/arduino
 
 post-patch:
-	@${RM} ${WRKSRC}/hardware/arduino/bootloaders/atmega8/*.orig
+	@${RM} -f ${WRKSRC}/hardware/arduino/bootloaders/atmega8/*.orig ${WRKSRC}/hardware/arduino/cores/arduino/Print.cpp.orig
 
 .if defined(WITHOUT_REFDOCS)
 	@${RM} -rf ${WRKSRC}/reference
