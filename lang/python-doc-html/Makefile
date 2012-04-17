@@ -40,7 +40,7 @@ WRKSRC=		${WRKDIR}/docs-pdf
 IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text, html, pdf-a4, pdf-letter
 .  endif
 .else
-IGNORE=		There is no documentation for this Python version, because it deprecated upstream
+IGNORE=		there is no documentation for this Python version, because it deprecated upstream
 .endif
 
 pre-install:
