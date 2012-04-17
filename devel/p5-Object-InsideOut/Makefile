@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	3.92
+PORTVERSION=	3.93
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -32,8 +32,8 @@ MAN3=		Bundle::Object::InsideOut.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.25:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.25:${PORTSDIR}/lang/p5-Scalar-List-Utils
 TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
