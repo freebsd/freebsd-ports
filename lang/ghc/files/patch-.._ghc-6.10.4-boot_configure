@@ -1,5 +1,17 @@
+
+$FreeBSD$
+
 --- ../ghc-6.10.4-boot/configure.orig
 +++ ../ghc-6.10.4-boot/configure
+@@ -1942,7 +1942,7 @@
+ 	TargetPlatform=i386-unknown-linux;;
+ i[3456]86-*-freebsd2*)
+ 	TargetPlatform=i386-unknown-freebsd2;;
+-i[3456]86-*-freebsd[3-9]*)
++i[3456]86-*-freebsd*)
+ 	TargetPlatform=i386-unknown-freebsd;;
+ i[3456]86-*-netbsd*)
+ 	TargetPlatform=i386-unknown-netbsd;;
 @@ -1989,6 +1989,8 @@
          TargetPlatform=x86_64-unknown-linux;;
  x86_64-*-freebsd*)
