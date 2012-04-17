@@ -15,6 +15,15 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plasma-effect screensaver kernel module
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not configure
+.endif
+.if ${OSVERSION} >= 800000
+BROKEN=		Does not build
+.endif
+
 .if !exists(${SRC_BASE}/sys/dev/syscons/syscons.h)
 IGNORE=		requires kernel source (in ${SRC_BASE}) to build
 .endif
@@ -26,14 +35,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not configure
-.endif
-.if ${OSVERSION} >= 800000
-BROKEN=		Does not build
-.endif
 
 .include <bsd.port.post.mk>
