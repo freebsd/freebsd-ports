@@ -1,6 +1,6 @@
---- ./makefile.orig	2011-08-12 20:37:59.000000000 +0200
-+++ ./makefile	2011-10-04 20:14:30.000000000 +0200
-@@ -51,7 +51,7 @@
+--- ./Makefile.orig	2012-04-10 21:47:14.000000000 +0200
++++ ./Makefile	2012-04-14 18:50:22.291961515 +0200
+@@ -63,7 +63,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
  
@@ -9,7 +9,7 @@
  
  ASSERTS = yes
  
-@@ -92,11 +92,11 @@
+@@ -111,7 +111,7 @@
  
  else
  
@@ -18,26 +18,30 @@
  
  endif # USE_ICC
  
+@@ -119,7 +119,7 @@
+ CFOPTIMIZE += -flto=jobserver -fwhole-program
+ endif
+ 
 -CFOTHERS := -pipe $(EXTERNAL_FLAGS)
 +CFOTHERS := $(CFLAGS)
- CFWARN := -Wall
+ CFWARN := -Wall -Wformat-security
  CFWARN_L := -Wundef
  
-@@ -664,7 +664,7 @@
+@@ -688,7 +688,7 @@
  DEFINES += -DWIZARD
  endif
  ifdef NO_OPTIMIZE
 -CFOPTIMIZE  := -O0
 +CFOPTIMIZE  :=
  endif
- ifdef PCH
- CFWARN_L += -Winvalid-pch
-@@ -901,7 +901,7 @@
  
- GAME_DEPENDS  := $(DESTTILEFILES) $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS)
+ ifdef PCH
+@@ -953,7 +953,7 @@
+ 
+ GAME_DEPENDS  := $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS) dat/dlua/tags.lua
  SRC_PKG_BASE  := stone_soup
 -SRC_VERSION   := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
-+SRC_VERSION   := $(cat util/release_ver)
++SRC_VERSION   := $(shell cat util/release_ver)
+ MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|sed -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
  
  export SRC_VERSION
- 

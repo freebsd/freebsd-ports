@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -19,7 +18,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/stone_soup-${PORTVERSION}/licence.txt
 
 USE_SQLITE=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_LUA=	5.1
@@ -38,12 +37,11 @@ OPTIONS=	SOUND		"Sound support"			off \
 		WIZARD		"Wizard mode"			off \
 		LUA_BINDINGS	"Bindings for LUA user scripts"	off
 
-MAKEFILE=	makefile
 MAKE_ARGS=	prefix=${PREFIX} \
 		DATADIR=${DATADIR} \
 		SAVEDIR=${SAVEDIR} \
 		INSTALL_UGRP=root:games \
-		NO_AUTOOPT=YesPlease \
+		NO_AUTO_OPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
 		LUA_INCLUDE_DIR=${LOCALBASE}/include/lua51 \
 		LUA_LIB=-llua-5.1 \
@@ -53,16 +51,16 @@ MAKE_ARGS=	prefix=${PREFIX} \
 
 .include <bsd.port.options.mk>
 
-.if ${CC} == "clang" || ${CXX} == "clang++"
-BROKEN=		requires gcc at this time
+.if ${CC:T:M*clang*}
+MAKE_ARGS+=	NO_INLINE_DEPGEN=1
 .endif
 
 .if defined(VERBOSE)
 MAKE_ARGS+=	V=yes
 .endif
 
-.if defined(WITH_WIZARD)
-MAKE_ARGS+=	wizard
+.if defined(WITHOUT_WIZARD)
+MAKE_ARGS+=	NOWIZARD=y
 .endif
 
 .if defined(WITH_SDL)
