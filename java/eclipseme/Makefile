@@ -15,6 +15,9 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse J2ME Plugin
 
+DEPRECATED=	depends on java/sun-wtk
+EXPIRATION_DATE=	2012-06-01
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/bin/ktoolbar:${PORTSDIR}/java/sun-wtk
 
