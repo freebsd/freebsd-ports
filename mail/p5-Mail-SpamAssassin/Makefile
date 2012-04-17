@@ -27,7 +27,7 @@ BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CONFLICTS?=	(ja-)?p5-Mail-SpamAssassin-(devel-)?[0-9]*
+CONFLICTS?=	ja-p5-Mail-SpamAssassin-[0-9]* p5-Mail-SpamAssassin-devel-[0-9]* p5-Mail-SpamAssassin-Alt-[0-9]*
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	5.12+
@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
 		LOCALSTATEDIR="${DBDIR}/spamassassin"
 
-OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
+OPTIONS+=	AS_ROOT "Run spamd as root (recommended)" on \
 		SPAMC "Build spamd/spamc (not for amavisd)" on \
 		SACOMPILE "sa-compile" off \
 		DKIM "DKIM/DomainKeys Identified Mail" on \
@@ -159,7 +159,7 @@ SUB_LIST+=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
 SUB_LIST+=	RUN_AS_USER=""
 .endif
 
-post-patch:
+post-patch::
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${REINPLACE_CMD} -e 's#B_CONFDIR)/local.cf#B_CONFDIR)/local.cf.sample#g' \
 		-e 's#B_CONFDIR)/init.pre#B_CONFDIR)/init.pre.sample#g' \
