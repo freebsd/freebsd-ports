@@ -1,12 +1,11 @@
---- ffmpeg/libavcodec/Makefile.orig	2011-11-18 19:20:08.000000000 +0100
-+++ ffmpeg/libavcodec/Makefile	2011-11-26 19:47:40.015896744 +0100
-@@ -699,14 +699,14 @@
+--- ffmpeg/libavcodec/Makefile.orig	2012-03-21 19:20:05.000000000 +0100
++++ ffmpeg/libavcodec/Makefile	2012-03-22 16:12:43.333951792 +0100
+@@ -735,12 +735,14 @@
  # well.
  OBJS-$(!CONFIG_SMALL)                  += inverse.o
  
---include $(SRC_PATH)/$(SUBDIR)$(ARCH)/Makefile
 +-include $(SRC_PATH)/$(SUBDIR)$(MPLAYER_ARCH)/Makefile
- 
++
  SKIPHEADERS                            += %_tablegen.h                  \
                                            %_tables.h                    \
                                            aac_tablegen_decl.h           \

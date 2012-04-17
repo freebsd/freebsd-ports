@@ -44,12 +44,10 @@ CONFIGURE_ARGS+=--language=${WITH_LANG}
 DEBUG_FLAGS=	-g -O -fomit-frame-pointer
 .endif
 .else
-#Historically, we manually set OCFLAGS to -O3 -ffast-math -fomit-frame-pointer
-#Nowadays, let mplayer determine its own optimised flags
 .if defined(WITHOUT_OCFLAGS)
 CFLAGS+=	-O -fomit-frame-pointer
 .else
-CONFIGURE_ENV+=		CFLAGS=
+CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math
 .endif
 .endif #WITH_DEBUG
 

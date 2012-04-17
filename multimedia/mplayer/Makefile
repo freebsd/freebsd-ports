@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	4
+
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
@@ -283,7 +283,7 @@ post-install:
 .endfor
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
-	${INSTALL_DATA} ${WRKSRC}/gui/ui/pixmaps/mplayer.xpm ${LOCALBASE}/share/pixmaps
+	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${LOCALBASE}/share/pixmaps/mplayer.png
 .endif
 	@${CAT} ${PKGMESSAGE}
 

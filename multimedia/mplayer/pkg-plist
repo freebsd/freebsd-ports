@@ -1,6 +1,6 @@
 bin/mplayer
 %%GMPLAYER%%bin/gmplayer
-%%GMPLAYER%%share/pixmaps/mplayer.xpm
+%%GMPLAYER%%share/pixmaps/mplayer.png
 %%DATADIR%%/examples/etc/example.conf
 %%DATADIR%%/examples/etc/input.conf
 %%DATADIR%%/examples/etc/menu.conf
