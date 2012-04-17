@@ -1,10 +1,9 @@
---- ffmpeg/libavfilter/Makefile.orig	2011-11-26 19:50:38.592463304 +0100
-+++ ffmpeg/libavfilter/Makefile	2011-11-26 19:50:38.570462855 +0100
-@@ -153,7 +153,7 @@
+--- ffmpeg/libavfilter/Makefile.orig	2012-03-21 19:20:05.000000000 +0100
++++ ffmpeg/libavfilter/Makefile	2012-03-22 16:09:31.826872990 +0100
+@@ -167,6 +167,7 @@
+ OBJS-$(CONFIG_MP_FILTER) += libmpcodecs/vf_yvu9.o
  OBJS-$(CONFIG_MP_FILTER) += libmpcodecs/pullup.o
  
- 
---include $(SRC_PATH)/$(SUBDIR)$(ARCH)/Makefile
 +-include $(SRC_PATH)/$(SUBDIR)$(MPLAYER_ARCH)/Makefile
  
  DIRS = x86 libmpcodecs

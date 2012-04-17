@@ -1,6 +1,6 @@
---- configure.orig	2011-12-15 15:01:05.000000000 +0100
-+++ configure	2011-12-29 02:08:51.963305635 +0100
-@@ -635,7 +635,7 @@
+--- configure.orig	2012-03-15 16:20:02.000000000 +0100
++++ configure	2012-03-22 15:36:16.583006073 +0100
+@@ -637,7 +637,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1447,7 +1447,6 @@
+@@ -1455,7 +1455,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,7 +17,7 @@
      ;;
  
    esac
-@@ -3565,7 +3564,7 @@
+@@ -3576,7 +3575,7 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -26,7 +26,7 @@
  fi
  if test "$_pthreads" = auto ; then
  cat > $TMPC << EOF
-@@ -3575,7 +3574,7 @@
+@@ -3586,7 +3585,7 @@
  EOF
  _pthreads=no
  if ! hpux ; then
@@ -35,7 +35,7 @@
      # for crosscompilation, we cannot execute the program, be happy if we can link statically
      cc_check $THREAD_CFLAGS $ld_tmp && (tmp_run || test "$ld_static") && ld_pthread="$ld_tmp" && _pthreads=yes && break
    done
-@@ -6216,7 +6215,7 @@
+@@ -6245,7 +6244,7 @@
  echocheck "libgsm"
  if test "$_libgsm" = auto ; then
    _libgsm=no
@@ -44,7 +44,7 @@
  fi
  if test "$_libgsm" = yes ; then
    def_libgsm='#define CONFIG_LIBGSM 1'
-@@ -6716,6 +6715,16 @@
+@@ -6705,6 +6704,16 @@
    nolibrtmp=no
    def_librtmp='#define CONFIG_LIBRTMP 1'
    inputmodules="librtmp $inputmodules"
@@ -61,16 +61,16 @@
  else
    nolibrtmp=yes
    _librtmp=no
-@@ -7085,7 +7094,7 @@
+@@ -7097,7 +7106,7 @@
  echocheck "mencoder"
  if test "$_mencoder" = no ; then
    # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
 -  libavencoders="$mplayer_encoders MPEG1VIDEO_ENCODER SNOW_ENCODER"
 +  libavencoders="$mplayer_encoders MPEG1VIDEO_ENCODER H263_ENCODER SNOW_ENCODER"
-   # needed for codec id -> tag conversion
-   libavmuxers="AVI_MUXER"
  fi
-@@ -7425,8 +7434,11 @@
+ echores "$_mencoder"
+ 
+@@ -7435,8 +7444,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
@@ -84,7 +84,7 @@
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no &&
-@@ -7991,7 +8003,7 @@
+@@ -8001,7 +8013,7 @@
  EXESUF      = $_exesuf
  EXESUFS_ALL = .exe
  
