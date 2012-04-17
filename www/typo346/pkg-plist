@@ -4073,6 +4073,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/export.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/ext_autoload.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/ext_emconf.php
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/ext_icon.gif
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/ext_tables.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/ext_tables.sql
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/impexp/import.gif
