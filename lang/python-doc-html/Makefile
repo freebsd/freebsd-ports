@@ -40,11 +40,7 @@ WRKSRC=		${WRKDIR}/docs-pdf
 IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: text, html, pdf-a4, pdf-letter
 .  endif
 .else
-DISTNAME=	${DOCFORMAT}-${PORTVERSION}
-WRKSRC=		${WRKDIR}/Python-Docs-${PORTVERSION}
-.  if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf-a4" && ${DOCFORMAT} != "pdf-letter" && ${DOCFORMAT} != "postscript-a4" && ${DOCFORMAT} != "postscript-letter"
-IGNORE=		invalid value for DOCFORMAT: "${DOCFORMAT}", possible values are: html, pdf-a4, pdf-letter, postscript-a4, postscript-letter
-.  endif
+IGNORE=		There is no documentation for this Python version, because it deprecated upstream
 .endif
 
 pre-install:
