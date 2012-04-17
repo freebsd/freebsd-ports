@@ -26,6 +26,8 @@ CFLAGS+=-DWITH_SCPROTECT_LIST
 #MAN4=		scprotect.4
 #MANCOMPRESSED=	yes
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources
 .endif
@@ -33,4 +35,4 @@ IGNORE=		requires kernel sources
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
