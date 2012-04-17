@@ -270,8 +270,6 @@
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
     SUBDIR += python-doc-pdf-letter
-    SUBDIR += python-doc-postscript-a4
-    SUBDIR += python-doc-postscript-letter
     SUBDIR += python-doc-text
     SUBDIR += python-mode.el
     SUBDIR += python24

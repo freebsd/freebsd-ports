@@ -3277,3 +3277,5 @@ databases/postgresql82-client||2012-04-15|Has expired: EOL and multiple vulnerab
 databases/postgresql82-contrib||2012-04-15|Has expired: EOL and multiple vulnerabilities
 www/pivot-weblog||2012-04-15|Has expired: unsupported upstream, consider www/pivotx
 java/jbootstrap||2012-04-16|Has expired: bootstrap for an ancient version of Java
+lang/python-doc-postscript-a4||2012-04-17|This port was broken for a long time, deprecated upstream
+lang/python-doc-postscript-letter||2012-04-17|This port was broken for a long time, deprecated upstream
