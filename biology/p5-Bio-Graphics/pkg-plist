@@ -57,6 +57,7 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Glyph/pentagram.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/phylo_align.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/pinsertion.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/point_glyph.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/primers.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/processed_transcript.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/protein.pm
