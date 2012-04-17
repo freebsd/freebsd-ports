@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	mandree@FreeBSD.org
-# Implicit approval for port changes granted to Guido Falsi <mad@madpilot.net>
+# Implicit approval for port changes granted to Guido Falsi <madpilot@FreeBSD.org>
 COMMENT=	A user-level file synchronization tool
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
