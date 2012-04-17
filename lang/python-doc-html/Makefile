@@ -32,11 +32,7 @@ DOCFORMAT?=	html
 
 .if ${PYTHON_REL} >= 260
 .  if ${DOCFORMAT} == "html" || ${DOCFORMAT} == "text"
-.    if ${PYTHON_REL} == 260
-WRKSRC=		${WRKDIR}/python-docs-${DOCFORMAT}
-.    else
 WRKSRC=		${WRKDIR}/${DISTNAME}
-.    endif
 .  else
 WRKSRC=		${WRKDIR}/docs-pdf
 .  endif
