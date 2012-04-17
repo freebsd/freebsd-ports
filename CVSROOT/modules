@@ -6750,7 +6750,6 @@ jaxup                           ports/textproc/jaxup
 jbidwatcher                     ports/misc/jbidwatcher
 jbig2dec                        ports/graphics/jbig2dec
 jbigkit                         ports/graphics/jbigkit
-jbootstrap                      ports/java/jbootstrap
 jboss2                          ports/java/jboss2
 jboss5                          ports/java/jboss5
 jbrofuzz                        ports/security/jbrofuzz
@@ -7822,6 +7821,7 @@ libaudiofile                    ports/audio/libaudiofile
 libaura                         ports/devel/libaura
 libaux                          ports/graphics/libaux
 libavl                          ports/devel/libavl
+libb64                          ports/converters/libb64
 libbegemot                      ports/devel/libbegemot
 libbf                           ports/security/libbf
 libbfd                          ports/devel/libbfd
@@ -21393,6 +21393,7 @@ pircbot                         ports/irc/pircbot
 pire                            ports/devel/pire
 pisg                            ports/irc/pisg
 pit                             ports/devel/pit
+pithos                          ports/audio/pithos
 pitivi                          ports/multimedia/pitivi
 pivotx                          ports/www/pivotx
 piwigo                          ports/www/piwigo
@@ -23738,6 +23739,7 @@ rabbitmq-c-devel                ports/net/rabbitmq-c-devel
 rabl_client                     ports/mail/rabl_client
 rabl_server                     ports/mail/rabl_server
 racket                          ports/lang/racket
+racket-textual                  ports/lang/racket-textual
 rackmonkey                      ports/net-mgmt/rackmonkey
 racoon2                         ports/security/racoon2
 radare2                         ports/devel/radare2
@@ -24559,6 +24561,7 @@ rubygem-htmlentities            ports/textproc/rubygem-htmlentities
 rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-http_parser.rb          ports/net/rubygem-http_parser.rb
 rubygem-httparty                ports/www/rubygem-httparty
+rubygem-httpauth                ports/net/rubygem-httpauth
 rubygem-httpclient              ports/www/rubygem-httpclient
 rubygem-i18n                    ports/devel/rubygem-i18n
 rubygem-icalendar               ports/devel/rubygem-icalendar
@@ -26137,6 +26140,7 @@ tcpxtract                       ports/net/tcpxtract
 tcsh_nls                        ports/shells/tcsh_nls
 tcshrc                          ports/shells/tcshrc
 tdb                             ports/databases/tdb
+tdbc                            ports/databases/tdbc
 tdetect                         ports/net/tdetect
 tdfsb                           ports/x11-fm/tdfsb
 tdhkit                          ports/textproc/tdhkit
@@ -27030,6 +27034,7 @@ varconf                         ports/devel/varconf
 varkon                          ports/cad/varkon
 varnish                         ports/www/varnish
 varnish-libvmod-header          ports/www/varnish-libvmod-header
+varnish-nagios                  ports/www/varnish-nagios
 varnish2                        ports/www/varnish2
 vavoom                          ports/games/vavoom
 vavoom-extras                   ports/games/vavoom-extras
