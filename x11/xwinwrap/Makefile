@@ -7,6 +7,7 @@
 
 PORTNAME=	xwinwrap
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
 		http://tourservice.kz/zloidemon/distfiles/ \
@@ -19,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_BZIP2=	yes
-USE_XLIB=	x11 xproto xrender xext
+USE_XORG=	x11 xproto xrender xext
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
