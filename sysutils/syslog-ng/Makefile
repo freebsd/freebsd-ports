@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 
 .if defined(WITH_SPOOF)
 BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet115-config
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet116-config
 CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=        --disable-linux-caps
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's:libnet-config:libnet116-config:g' ${WRKSRC}/configure
 	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 .if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} \

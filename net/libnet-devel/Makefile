@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libnet
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	net
 MASTER_SITES=	SF/libnet-dev
 
@@ -21,7 +20,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-link-layer=${LIBNET_LINK}
 
-SHORT_VER=	115
+SHORT_VER=	116
 SHORT_NAME=	${PORTNAME}${SHORT_VER}
 DOCSDIR=	${PREFIX}/share/doc/${SHORT_NAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${SHORT_NAME}
@@ -29,9 +28,10 @@ USE_LDCONFIG=	${PREFIX}/lib/${SHORT_NAME}
 PLIST_SUB=	SVER=${SHORT_VER} SNAME=${SHORT_NAME} VERSION=${PORTVERSION}
 
 MAN3=		libnet-functions.h.3 libnet-macros.h.3 libnet.h.3
-DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
+DOCS=		README doc/CHANGELOG doc/CONTRIB doc/COPYING \
 		doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING doc/PORTED \
 		doc/RAWSOCKET_NON_SEQUITUR doc/TODO
+
 EXAMPLES=	sample/*.c
 
 OPTIONS=	NONE "link layer none" off \
@@ -66,8 +66,8 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin/${SHORT_NAME}-config
 	@cd ${PREFIX}/lib && \
-		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.7 && \
-		${LN} -sf libnet-${PORTVERSION}.so.7 libnet-${PORTVERSION}.so
+		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.8 && \
+		${LN} -sf libnet-${PORTVERSION}.so.8 libnet-${PORTVERSION}.so
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
