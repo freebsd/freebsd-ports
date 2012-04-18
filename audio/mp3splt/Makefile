@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	SF/mp3splt/${PORTNAME}
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	Utility to split mp3 and ogg files (via CUE sheets)
@@ -34,12 +34,12 @@ PLIST_FILES=	bin/mp3splt bin/oggsplt
 CONFIGURE_ARGS+=	--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=	de_DE es fr_FR
+LANGUAGES=	cs de_DE es fr_FR
 .for language in ${LANGUAGES}
 PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/mp3splt.mo
 .endfor
-PLIST_FILES+=	"@dirrmtry share/locale/de_DE/LC_MESSAGES"
-PLIST_FILES+=	"@dirrmtry share/locale/de_DE"
+PLIST_DIRSTRY+=	share/locale/de_DE/LC_MESSAGES
+PLIST_DIRSTRY+=	share/locale/de_DE
 .endif
 
 .include <bsd.port.post.mk>
