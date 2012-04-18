@@ -1,0 +1,9 @@
+A CPAN::Meta::Requirements object models a set of version constraints like those
+specified in the META.yml or META.json files in CPAN distributions. It can be
+built up by adding more and more constraints, and it will reduce them to the
+simplest representation.
+
+Logically impossible constraints will be identified immediately by thrown
+exceptions.
+
+WWW: http://search.cpan.org/dist/CPAN-Meta-Requirements/
