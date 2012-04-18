@@ -204,6 +204,8 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
+    SUBDIR += firefox-esr
+    SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox-sync
