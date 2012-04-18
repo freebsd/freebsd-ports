@@ -7,7 +7,7 @@
 
 PORTNAME=	memtest86+
 PORTVERSION=	4.20
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
@@ -26,7 +26,8 @@ BOOT_DIR?=	/boot/opt
 
 OPTIONS=	ISO	"Build bootable ISO image"			off \
 		BOOT	"Build ELF image loadable by boot2 and loader"	on \
-		SERIAL	"Enable serial console at COM1/115200"		off
+		SERIAL	"Enable serial console at COM1/9600"		off \
+		HISPEED	"Set COM1 serial console speed to 115200"	off
 
 .include <bsd.port.pre.mk>
 
@@ -45,8 +46,12 @@ ALL_TARGET+=	iso
 .endif
 
 .if defined(WITH_SERIAL)
-EXTRA_PATCHES+=	${PATCHDIR}//extra-patch-config.h
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-config.h
+
+.if defined(WITH_HISPEED)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-config.h-115200
 .endif
+.endif	# WITH_SERIAL
 
 .if ${OSVERSION} < 700042
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile
