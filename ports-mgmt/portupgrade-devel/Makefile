@@ -14,7 +14,7 @@ MASTER_SITES=	https://github.com/stass/pkgtools/tarball
 PKGNAMESUFFIX=	-devel
 DISTNAME=	pkgtools-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bryan@shatow.net
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
