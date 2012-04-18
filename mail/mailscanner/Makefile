@@ -7,7 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.84.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -135,6 +135,14 @@ post-extract:
 		   perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz \
 		&& ${MV} MailScanner-${PORTVERSION}-${PATCHLEVEL}/* .
 
+post-patch:
+	${REINPLACE_CMD} -e 's,\$$(mktemp),$$(mktemp -t tmp),' \
+		${WRKSRC}/lib/clamav-wrapper \
+		${WRKSRC}/lib/trend-autoupdate \
+		${WRKSRC}/lib/bitdefender-wrapper \
+		${WRKSRC}/lib/kaspersky-wrapper \
+		${WRKSRC}/bin/Sophos.install
+
 do-build:
 	@${REINPLACE_CMD} \
 		-e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
@@ -150,7 +158,7 @@ do-build:
 		-e 's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g'	\
 		-e 's,/usr/bin/sa-compile,${LOCALBASE}/bin/sa-compile,g' \
 		-e 's,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g'	\
-		-e 's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g'		\
+		-e 's,/usr/bin/unzip,${UNZIP_CMD},g'				\
 		-e 's,/usr/bin/wget,${LOCALBASE}/bin/wget,g'		\
 		-e 's,/usr/lib/sendmail,/usr/sbin/sendmail,g'		\
 		${WRKSRC}/bin/MailScanner				\
