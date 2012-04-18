@@ -6,6 +6,30 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120418:
+  AFFECTS: users of www/firefox and mail/thunderbird
+  AUTHOR: gecko@FreeBSD.org
+
+  Firefox and Thunderbird have been updated to 11.0. If you want to
+  stay with the Extended Support Release please use the new -esr
+  ports.
+
+  Firefox:
+  # portupgrade -o www/firefox-esr www/firefox
+  # portupgrade -o www/firefox-esr-i18n www/firefox-i18n (if installed)
+  or
+  # portmaster -o www/firefox-esr www/firefox
+  # portmaster -o www/firefox-esr-i18n www/firefox-i18n (if installed)
+
+  Thunderbird:
+  # portupgrade -o mail/thunderbird-esr mail/thunderbird
+  # portupgrade -o mail/thunderbird-esr-i18n \
+    mail/thunderbird-i18n (if installed)
+  or
+  # portmaster -o mail/thunderbird-esr mail/thunderbird
+  # portmaster -o mail/thunderbird-esr-i18n \
+    mail/thunderbird (if installed)
+
+20120418:
   AFFECTS: users of www/chpasswd
   AUTHOR: madpilot@FreeBSD.org
 
