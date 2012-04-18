@@ -8,13 +8,15 @@
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tools to allow all applications to integrate with the free desktop
+
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 GNU_CONFIGURE=	yes
 XDG_FILES=	xdg-desktop-icon \
