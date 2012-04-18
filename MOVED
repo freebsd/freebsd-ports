@@ -3279,3 +3279,6 @@ www/pivot-weblog||2012-04-15|Has expired: unsupported upstream, consider www/piv
 java/jbootstrap||2012-04-16|Has expired: bootstrap for an ancient version of Java
 lang/python-doc-postscript-a4||2012-04-17|This port was broken for a long time, deprecated upstream
 lang/python-doc-postscript-letter||2012-04-17|This port was broken for a long time, deprecated upstream
+mail/dbmail20||2012-04-18|Has expired: No more supported upstream. No ports depend on this
+mail/dbmail21||2012-04-18|Has expired: No more supported upstream. No ports depend on this
+mail/dbmail23||2012-04-18|Has expired: No more supported upstream. No ports depend on this
