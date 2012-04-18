@@ -7,7 +7,7 @@
 
 PORTNAME=	plasma
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kld
 MASTER_SITES=	SF/futurebsd/futurebsd/${PORTNAME}
 PKGNAMESUFFIX=	-kmod
@@ -16,13 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plasma-effect screensaver kernel module
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not configure
-.endif
-.if ${OSVERSION} >= 800000
-BROKEN=		Does not build
-.endif
 
 .if !exists(${SRC_BASE}/sys/dev/syscons/syscons.h)
 IGNORE=		requires kernel source (in ${SRC_BASE}) to build
