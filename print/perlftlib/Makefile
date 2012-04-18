@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	sada
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to use the FreeType library from the perl language
 
+DEPRECATED=	No more upstream, no more used in the ports tree
+EXPIRATION_DATE=	2012-05-18
+
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 USE_FREETYPE=	yes
