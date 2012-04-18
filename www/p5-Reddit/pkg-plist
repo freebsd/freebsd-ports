@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Reddit.pm
+%%SITE_PERL%%/Reddit/Type/User.pm
+%%SITE_PERL%%/Reddit/Type/Subreddit.pm
+%%SITE_PERL%%/mach/auto/Reddit/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Reddit
+@dirrm %%SITE_PERL%%/Reddit/Type
+@dirrm %%SITE_PERL%%/Reddit
