@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	10.0.3
+DISTVERSION=	11.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -25,6 +25,7 @@ CONFLICTS_BUILD=	spidermonkey-*
 
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
+CONFLICTS=	thunderbird-10.*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
@@ -60,7 +61,7 @@ OPTIONS=	LIGHTNING	"Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-esr10
+WRKSRC=		${WRKDIR}/comm-release
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ${ARCH} == powerpc64
