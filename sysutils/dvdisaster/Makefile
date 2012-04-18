@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dvdisaster
-PORTVERSION=	0.72.3
-PORTREVISION=	1
+PORTVERSION=	0.72.4
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF \
 		http://dvdisaster.net/downloads/
@@ -26,17 +26,24 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--docsubdir="/" \
 		--png-includes=${LOCALBASE}/include \
 		--png-libraries=${LOCALBASE}/lib
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=yes
 
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--docdir=${WRKSRC}
+.else
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+.endif
+
+PORTDOCS=	*
+
 PORTSCOUT=	limitw:1,even
 
 MAN1=		dvdisaster.1
 MANLANG=	"" cs de it
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \
