@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	10.0.3
+DISTVERSION=	11.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}esr/source
-DISTNAME=	${PORTNAME}-${DISTVERSION}esr.source
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
+DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -26,6 +26,7 @@ CONFLICTS_BUILD=	spidermonkey-*
 
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
+CONFLICTS=	firefox-10.*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZILLA_NAME=	Firefox
@@ -57,7 +58,7 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKDIR}/mozilla-esr10
+WRKSRC:=	${WRKDIR}/mozilla-release
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui

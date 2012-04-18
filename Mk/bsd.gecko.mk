@@ -181,7 +181,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 10+ 36+ 10 36
+#                         Available values: yes 10+ 11+ 36+ 10 11+ 36
 #                         NOTE:
 #                         default value 10 is used in case of USE_FIREFOX=yes
 #
@@ -223,11 +223,12 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	10
-_FIREFOX_VERSIONS=			10 36
-_FIREFOX_RANGE_VERSIONS=	10+ 36+
+_FIREFOX_VERSIONS=			10 11 36
+_FIREFOX_RANGE_VERSIONS=	10+ 11+ 36+
 
 # For specifying [36, ..]+
-_FIREFOX_36P=	36 ${_FIREFOX_10P}
+_FIREFOX_36P=	36 ${_FIREFOX_11P}
+_FIREFOX_11P=	11 ${_FIREFOX_10P}
 _FIREFOX_10P=	10
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -288,7 +289,8 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 .endif
 
 # Dependence lines for different Firefox versions
-10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
+11_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 36_DEPENDS=		${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox36
 
 # Add dependencies
@@ -828,10 +830,14 @@ gecko-post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${MOZSRC}/build/unix/run-mozilla.sh
-	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
-		${MOZSRC}/widget/src/gtk2/nsSound.cpp
-	@${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
-		${MOZSRC}/*/*/*/nsDeviceContextSpecG.cpp
+	@if [ -f ${MOZSRC}/widget/src/gtk2/nsSound.cpp ] ; then \
+		${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|libesd.so|g' \
+			${MOZSRC}/widget/src/gtk2/nsSound.cpp ; \
+	fi
+	@if ! [ -f ${MOZSRC}/widget/gtk2/nsDeviceContextSpecG.cpp ] ; then \
+		${REINPLACE_CMD} -E -e 's|libcups\.so\.[0-9]+|libcups.so|g' \
+			${MOZSRC}/*/*/*/nsDeviceContextSpecG.cpp ; \
+	fi
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${MOZSRC}/xpcom/*/SpecialSystemDirectory.cpp
