@@ -19,6 +19,8 @@ COMMENT=	High-level Python Web framework
 
 LICENSE=	BSD
 
+LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}django13
+
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
