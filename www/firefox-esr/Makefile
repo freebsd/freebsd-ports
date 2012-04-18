@@ -25,7 +25,9 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 CONFLICTS_BUILD=	spidermonkey-*
 
 USE_AUTOTOOLS=	autoconf213
+LATEST_LINK=	firefox-esr
 USE_GECKO=	gecko
+CONFLICTS=	firefox-1[1-9].*
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZILLA_NAME=	Firefox
