@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Data-Peek
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A collection of low-level debug facilities
 
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
