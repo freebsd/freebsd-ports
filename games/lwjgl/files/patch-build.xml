@@ -1,0 +1,75 @@
+Obtained from http://foo.poildetroll.net/minecraft/lwjgl-2.7.1-freebsd.diff
+
+
+--- ./build.xml.orig	2011-02-06 19:23:40.000000000 +0000
++++ ./build.xml	2012-03-26 18:14:03.079373854 +0000
+@@ -246,7 +246,7 @@
+ 			<class name="org.lwjgl.opengl.WindowsContextImplementation" />
+ 		</javah>
+ 
+-		<javah classpath="${lwjgl.bin}" destdir="${lwjgl.src.native}/macosx" force="yes">
++		<!-- <javah classpath="${lwjgl.bin}" destdir="${lwjgl.src.native}/macosx" force="yes">
+ 			<class name="org.lwjgl.MacOSXSysImplementation" />
+ 			<class name="org.lwjgl.opengl.MacOSXMouseEventQueue" />
+ 			<class name="org.lwjgl.opengl.MacOSXCanvasPeerInfo" />
+@@ -254,7 +254,7 @@
+ 			<class name="org.lwjgl.opengl.MacOSXPbufferPeerInfo" />
+ 			<class name="org.lwjgl.opengl.MacOSXDisplay" />
+ 			<class name="org.lwjgl.opengl.MacOSXContextImplementation" />
+-		</javah>
++		</javah> -->
+ 
+ 		<javah classpath="${lwjgl.bin}" destdir="${lwjgl.src.headers}" force="yes">
+ 			<class name="org.lwjgl.opengl.AWTSurfaceLock" />
+@@ -293,13 +293,13 @@
+ 				</tokenfilter>
+ 			</filterchain>
+ 		</loadfile>
+-		<loadfile srcfile="${lwjgl.src}/java/org/lwjgl/MacOSXSysImplementation.java" property="lwjgl.java.macosx.version">
++		<!-- <loadfile srcfile="${lwjgl.src}/java/org/lwjgl/MacOSXSysImplementation.java" property="lwjgl.java.macosx.version">
+ 			<filterchain>
+ 				<tokenfilter>
+ 	    		<containsstring contains="JNI_VERSION ="/>
+ 				</tokenfilter>
+ 			</filterchain>
+-		</loadfile>
++		</loadfile> -->
+ 		<loadfile srcfile="${lwjgl.src.native}/windows/org_lwjgl_WindowsSysImplementation.h" property="lwjgl.native.windows.version">
+ 			<filterchain>
+ 				<tokenfilter>
+@@ -314,13 +314,13 @@
+ 				</tokenfilter>
+ 			</filterchain>
+ 		</loadfile>
+-		<loadfile srcfile="${lwjgl.src.native}/macosx/org_lwjgl_MacOSXSysImplementation.h" property="lwjgl.native.macosx.version">
++		<!-- <loadfile srcfile="${lwjgl.src.native}/macosx/org_lwjgl_MacOSXSysImplementation.h" property="lwjgl.native.macosx.version">
+ 			<filterchain>
+ 				<tokenfilter>
+ 	    		<containsstring contains="#define org_lwjgl_MacOSXSysImplementation_JNI_VERSION"/>
+ 				</tokenfilter>
+ 			</filterchain>
+-		</loadfile>
++		</loadfile> -->
+ 		<echo>
+ 			lwjgl.java.windows.version = ${lwjgl.java.windows.version}
+ 			lwjgl.native.windows.version = ${lwjgl.native.windows.version}
+@@ -380,7 +380,10 @@
+ 		<antcall target="-compile_native_win32" />
+ 
+ 		<condition property="lwjgl.platform.linux">
+-			<os name="Linux" />
++			<or>
++				<os name="Linux" />
++				<os name="FreeBSD" />
++			</or>
+ 		</condition>
+ 		<antcall target="-compile_native_linux" />
+ 
+@@ -493,6 +496,7 @@
+ 		<condition property="native_path" value="libs/linux">
+ 			<or>
+ 				<os name="Linux" />
++				<os name="FreeBSD" />
+ 				<os name="SunOS" />
+ 			</or>
+ 		</condition>
