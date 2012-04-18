@@ -7,7 +7,7 @@
 
 PORTNAME=	postgrey
 PORTVERSION=	1.34
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -15,11 +15,11 @@ MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	Greylisting policy server for Postfix
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
-		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
-		${SITE_PERL}/Parse/Syslog.pm:${PORTSDIR}/textproc/p5-Parse-Syslog \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
+		p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \
+		p5-Parse-Syslog>=0:${PORTSDIR}/textproc/p5-Parse-Syslog \
+		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -46,8 +46,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' ${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
 	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PGY_DIR}#' ${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport
 
-do-install:
+pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+do-install:
 	@${POD2MAN} ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
 	@${POD2MAN} ${WRKSRC}/policy-test ${WRKSRC}/policy-test.1
 	@${POD2MAN} ${WRKSRC}/contrib/postgreyreport ${WRKSRC}/postgreyreport.1
