@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.31
+PORTVERSION=	0.6.33
 CATEGORIES=	textproc ruby
 MASTER_SITES=	https://github.com/uwabami/${PORTNAME}/tarball/v${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 
-GITVERSION=	0df3288
+GITVERSION=	fc69b57
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/uwabami-${PORTNAME}-${GITVERSION}
 
