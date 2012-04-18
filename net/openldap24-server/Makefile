@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.26
+DISTVERSION=		2.4.30
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -38,6 +38,7 @@ UNIQUENAME?=		${PKGNAMEPREFIX}openldap24
 LATEST_LINK?=		${UNIQUENAME}${PKGNAMESUFFIX}
 USE_OPENSSL=		yes
 MAKE_JOBS_SAFE=		yes
+USE_AUTOTOOLS=		libtool
 
 WANT_OPENLDAP_VER?=	24
 .if ${WANT_OPENLDAP_VER} != 24
@@ -45,7 +46,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	2
+PORTREVISION_SERVER=	0
 OPENLDAP_SHLIB_MAJOR=	8
 
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
@@ -134,8 +135,6 @@ CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 
 .endif
 
-USE_AUTOTOOLS=		libtool
-
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
 
@@ -155,6 +154,9 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
 			--disable-dependency-tracking \
 			--enable-dynamic
+
+# XXX FreeBSD does not implement O_DSYNC and fdatasync at this time.
+CFLAGS+=		-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
 
 .if defined(WITHOUT_FETCH)
 CONFIGURE_ARGS+=	--without-fetch
