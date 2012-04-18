@@ -395,6 +395,7 @@
     SUBDIR += jigsaw
     SUBDIR += jigzo
     SUBDIR += jin
+    SUBDIR += jinput
     SUBDIR += joequake
     SUBDIR += jools
     SUBDIR += jtans
