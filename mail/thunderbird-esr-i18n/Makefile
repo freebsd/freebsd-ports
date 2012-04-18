@@ -27,6 +27,7 @@ PLISTF?=	${WRKDIR}/plist_files
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
+LATEST_LINK=	thunderbird-esr-i18n
 NO_BUILD=	yes
 USE_THUNDERBIRD=	10
 USE_XPI=	thunderbird linux-thunderbird
