@@ -133,6 +133,9 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 post-patch:
 	@${RM} -f ${WRKSRC}/popper/md5.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/man/*
+	@${REINPLACE_CMD} -e \
+		's|\$${sbindir}/sendmail|${LOCALBASE}/sbin/sendmail|g' \
+		${WRKSRC}/configure.in
 .if defined(WITH_POPPASSD)
 	@${REINPLACE_CMD} -e 's|/usr/bin/smbpasswd|${LOCALBASE}/bin/smbpasswd|' \
 		${WRKSRC}/password/poppassd.c
