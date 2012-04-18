@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	cocot
-PORTVERSION=	20080315
+PORTVERSION=	20120313
 CATEGORIES=	converters
-MASTER_SITES=	http://vmi.jp/software/cygwin/
+MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
+DISTNAME=	${PORTNAME}-1.1-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Code Converter on TTY
 
-USE_BZIP2=	yes
+USE_ZIP=	yes
 USE_ICONV=	yes
+WRKSRC=		${WRKDIR}/vmi-${PORTNAME}-8bc9f64
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
