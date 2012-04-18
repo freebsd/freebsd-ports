@@ -1,4 +1,5 @@
 include/libssh/callbacks.h
+include/libssh/legacy.h
 include/libssh/libssh.h
 include/libssh/server.h
 include/libssh/sftp.h
@@ -7,5 +8,7 @@ include/libssh/ssh2.h
 lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.1.4
+lib/libssh.so.4.2.2
+libdata/pkgconfig/libssh.pc
+libdata/pkgconfig/libssh_threads.pc
 @dirrm include/libssh

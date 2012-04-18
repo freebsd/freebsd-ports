@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libssh
-PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.libssh.org/files/0.4/ \
+MASTER_SITES=	http://www.libssh.org/files/0.5/ \
 		LOCAL/avl
 
 MAINTAINER=	avl@FreeBSD.org
@@ -48,11 +47,11 @@ PLIST_SUB+=	SSH1="@comment "
 .endif
 
 post-patch:
-	@${MKDIR} ${BUILD_WRKSRC}
 	@${RM} ${PATCH_WRKSRC}/cmake/Modules/UseDoxygen.cmake
 	@${REINPLACE_CMD} -e '/add_subdirectory.*s)/d' \
+		-e 's|LIB_INSTALL_DIR}|CMAKE_INSTALL_PREFIX}/libdata|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|ssh_static|ssh|' \
-		${PATCH_WRKSRC}/libssh/CMakeLists.txt
+		${PATCH_WRKSRC}/src/CMakeLists.txt
 
 .include <bsd.port.mk>
