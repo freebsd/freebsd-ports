@@ -17,6 +17,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
+LICENSE=	BSD
+
 LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}django12
 
 USE_GETTEXT=	yes
@@ -24,7 +26,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
 
-CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[13]*
+CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[34].*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
