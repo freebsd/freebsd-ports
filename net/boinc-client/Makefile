@@ -7,6 +7,7 @@
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.0.25
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -151,6 +152,7 @@ post-install:
 	cd ${LOCALBASE}/share/pixmaps ; ${LN} -sf ${PREFIX}/share/boinc/boincmgr.${name}x${name}.png
 . endfor
 .endif
+	${INSTALL_DATA} ${WRKSRC}/lib/std_fixes.h ${PREFIX}/include/boinc
 .if !defined(WITHOUT_X11)
 . for name in api/boinc_gl.h api/txf_util.h
 	${INSTALL_DATA} ${WRKSRC}/${name} ${PREFIX}/include/boinc
