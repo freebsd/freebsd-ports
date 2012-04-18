@@ -720,6 +720,8 @@
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
+    SUBDIR += thunderbird-esr
+    SUBDIR += thunderbird-esr-i18n
     SUBDIR += thunderbird-i18n
     SUBDIR += thunderbird3
     SUBDIR += thunderbird3-i18n
