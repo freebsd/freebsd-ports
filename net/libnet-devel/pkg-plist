@@ -9,10 +9,9 @@ include/%%SNAME%%/libnet/libnet-types.h
 lib/%%SNAME%%/libnet.a
 lib/%%SNAME%%/libnet.la
 lib/%%SNAME%%/libnet.so
-lib/%%SNAME%%/libnet.so.7
+lib/%%SNAME%%/libnet.so.8
 lib/libnet-%%VERSION%%.so
-lib/libnet-%%VERSION%%.so.7
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
+lib/libnet-%%VERSION%%.so.8
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

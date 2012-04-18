@@ -7,7 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -19,7 +19,7 @@ MAINTAINER=	ports@encarnate.com
 COMMENT=	Subsystem for High-Availability Clustering
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
-		net-1.1.5:${PORTSDIR}/net/libnet-devel \
+		net-1.1.6:${PORTSDIR}/net/libnet-devel \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		xml2:${PORTSDIR}/textproc/libxml2
 PATCH_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
@@ -37,8 +37,8 @@ USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libnet115
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet115
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libnet116
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libnet116
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localstatedir=/var \
