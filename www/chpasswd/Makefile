@@ -7,6 +7,7 @@
 
 PORTNAME=	chpasswd
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	www
 #MASTER_SITES=	SF/orsochpasswd/orsochpasswd/chpasswd-2.2.4/
 MASTER_SITES=	SF/orso${PORTNAME}/orso${PORTNAME}/${PORTNAME}-${PORTVERSION}/

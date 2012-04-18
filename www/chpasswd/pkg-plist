@@ -1,4 +1,6 @@
-etc/chpasswd/chpasswd.conf
+@unexec if cmp -s %D/etc/chpasswd/chpasswd.conf.sample %D/etc/chpasswd/chpasswd.conf; then rm -f %D/etc/chpasswd/chpasswd.conf; fi
+etc/chpasswd/chpasswd.conf.sample
+@exec if [ ! -f %D/etc/chpasswd/chpasswd.conf ] ; then cp -p %D/%F %B/chpasswd/chpasswd.conf; fi
 etc/chpasswd/chpasswd.log
 www/cgi-bin/chpasswd.cgi
 @dirrm etc/chpasswd

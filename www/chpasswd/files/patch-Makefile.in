@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Feb 11 14:56:26 2004
-+++ Makefile.in	Wed Feb 11 14:57:15 2004
+--- Makefile.in.orig	2009-02-16 18:04:20.000000000 +0100
++++ Makefile.in	2012-04-04 11:40:46.773080089 +0200
 @@ -1,13 +1,13 @@
  # Makefile.in for chpasswd.cgi
  
@@ -16,7 +16,15 @@
  PREFIX		= @prefix@
  DEFS 		= -I. @DEFS@ -DPREFIX=\"@prefix@\" 
  
-@@ -43,7 +43,7 @@
+@@ -37,13 +37,13 @@
+                 echo "cp $(PREFIX)/chpasswd.conf"; \
+ 	        cp chpasswd.conf $(PREFIX)/chpasswd.conf; \
+ 	        chmod 755 $(PREFIX)/chpasswd.conf; \
+-	 else \
+-	        cp chpasswd.conf $(PREFIX)/chpasswd.conf.orig; \
+ 	fi
++	@echo "cp $(PREFIX)/chpasswd.conf.sample"
++	@cp chpasswd.conf $(PREFIX)/chpasswd.conf.sample
  	@if test ! -f $(PREFIX)/chpasswd.log; then \
                  echo "touch $(PREFIX)/chpasswd.log"; \
  	        touch $(PREFIX)/chpasswd.log; \
