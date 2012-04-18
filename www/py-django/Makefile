@@ -24,7 +24,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
 
-CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[23]*
+CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[23].*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
