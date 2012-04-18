@@ -1,0 +1,1106 @@
+bin/fgr
+bin/rfm
+bin/rfm-inquire
+bin/rodent
+bin/rodent-desk
+bin/rodent-diff
+bin/rodent-dotdesktop
+bin/rodent-fgr
+bin/rodent-forked
+bin/rodent-fstab
+bin/rodent-getpass
+bin/rodent-mime
+bin/rodent-ps
+bin/rodent-root
+lib/librfm.la
+lib/librfm.so
+lib/librfm.so.1
+lib/librfm_deskview.la
+lib/librfm_deskview.so
+lib/librfm_deskview.so.1
+lib/librfm_gridview.la
+lib/librfm_gridview.so
+lib/librfm_gridview.so.1
+lib/librodent.la
+lib/librodent.so
+lib/librodent.so.1
+%%NLS%%lib/locale/af/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ar/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/as/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ast/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/az/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/be/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/be@latin/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/bg/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/bn/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/br/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/bs/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ca/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ca@valencia/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/crh/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/cs/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/csb/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/cy/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/da/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/de/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/dz/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/el/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/en_CA/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/en_GB/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/eo/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/es/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/et/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/eu/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/fa/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/fi/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/fr/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/fy/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ga/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/gl/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/gu/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/he/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/hi/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/hne/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/hr/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/hsb/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/hu/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/hy/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ia/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/id/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/is/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/it/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ja/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ka/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/kg/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/km/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/kn/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ko/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ku/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/lt/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/lv/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/mai/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/mk/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ml/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/mr/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ms/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/nb/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/nds/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ne/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/nl/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/nn/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/oc/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/or/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/pa/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/pl/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ps/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/pt/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/pt_BR/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ro/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ru/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/si/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sk/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sl/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sq/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sr/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sr@ije/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sr@ijekavian/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sr@ijekavianlatin/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sr@latin/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/sv/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ta/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/te/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/tg/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/th/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/tk/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/tr/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/ug/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/uk/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/uz/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/uz@cyrillic/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/vi/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/wa/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/xh/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/zh/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/zh_CN/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/zh_HK/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/zh_TW.Big5/LC_MESSAGES/rodent.mo
+%%NLS%%lib/locale/zh_TW/LC_MESSAGES/rodent.mo
+lib/rfm-Gamma/libcombobox.la
+lib/rfm-Gamma/libcombobox.so
+lib/rfm-Gamma/libcombobox.so.0
+lib/rfm-Gamma/libdotdesktop.la
+lib/rfm-Gamma/libdotdesktop.so
+lib/rfm-Gamma/libdotdesktop.so.0
+lib/rfm-Gamma/libfgr.la
+lib/rfm-Gamma/libfgr.so
+lib/rfm-Gamma/libfgr.so.0
+lib/rfm-Gamma/libfstab.la
+lib/rfm-Gamma/libfstab.so
+lib/rfm-Gamma/libfstab.so.0
+lib/rfm-Gamma/libicons.la
+lib/rfm-Gamma/libicons.so
+lib/rfm-Gamma/libicons.so.0
+lib/rfm-Gamma/libmime.la
+lib/rfm-Gamma/libmime.so
+lib/rfm-Gamma/libmime.so.0
+lib/rfm-Gamma/libproperties.la
+lib/rfm-Gamma/libproperties.so
+lib/rfm-Gamma/libproperties.so.0
+lib/rfm-Gamma/libps.la
+lib/rfm-Gamma/libps.so
+lib/rfm-Gamma/libps.so.0
+lib/rfm-Gamma/libsettings.la
+lib/rfm-Gamma/libsettings.so
+lib/rfm-Gamma/libsettings.so.0
+share/applications/Rfm-mime.desktop
+share/applications/Rfm-root.desktop
+share/applications/Rodent-diff.desktop
+share/applications/Rodent-dotdesktop.desktop
+share/applications/Rodent-fgr.desktop
+share/applications/Rodent-fstab.desktop
+share/applications/Rodent-home.desktop
+share/applications/Rodent-ps.desktop
+share/applications/Rodent.desktop
+share/icons/Rodent/48x48/apps/KDE.png
+share/icons/Rodent/48x48/apps/gnome.png
+share/icons/Rodent/48x48/apps/gtk.png
+share/icons/Rodent/48x48/apps/rodent-diff.png
+share/icons/Rodent/48x48/apps/rodent-dotdesktop.png
+share/icons/Rodent/48x48/apps/rodent-fgr.png
+share/icons/Rodent/48x48/apps/rodent-fstab.png
+share/icons/Rodent/48x48/apps/rodent-mime.png
+share/icons/Rodent/48x48/apps/rodent-ps.png
+share/icons/Rodent/48x48/apps/rodent-root.png
+share/icons/Rodent/48x48/apps/rodent.png
+share/icons/Rodent/48x48/apps/xfce.png
+share/icons/Rodent/index.theme
+share/icons/Rodent/scalable/actions/add-files-to-archive.svg
+share/icons/Rodent/scalable/actions/add-folder-to-archive.svg
+share/icons/Rodent/scalable/actions/address-book-new.svg
+share/icons/Rodent/scalable/actions/application-exit.svg
+share/icons/Rodent/scalable/actions/appointment-new.svg
+share/icons/Rodent/scalable/actions/archive-extract.svg
+share/icons/Rodent/scalable/actions/archive-insert-directory.svg
+share/icons/Rodent/scalable/actions/archive-insert.svg
+share/icons/Rodent/scalable/actions/archive-remove.svg
+share/icons/Rodent/scalable/actions/configure-shortcuts.svg
+share/icons/Rodent/scalable/actions/configure-toolbars.svg
+share/icons/Rodent/scalable/actions/configure.svg
+share/icons/Rodent/scalable/actions/contact-new.svg
+share/icons/Rodent/scalable/actions/document-export.svg
+share/icons/Rodent/scalable/actions/document-import.svg
+share/icons/Rodent/scalable/actions/document-new.svg
+share/icons/Rodent/scalable/actions/document-open-recent.svg
+share/icons/Rodent/scalable/actions/document-open.svg
+share/icons/Rodent/scalable/actions/document-page-setup.svg
+share/icons/Rodent/scalable/actions/document-print-preview.svg
+share/icons/Rodent/scalable/actions/document-print.svg
+share/icons/Rodent/scalable/actions/document-properties.svg
+share/icons/Rodent/scalable/actions/document-revert.svg
+share/icons/Rodent/scalable/actions/document-save-as.svg
+share/icons/Rodent/scalable/actions/document-save.svg
+share/icons/Rodent/scalable/actions/document-send.svg
+share/icons/Rodent/scalable/actions/download-later.svg
+share/icons/Rodent/scalable/actions/download.svg
+share/icons/Rodent/scalable/actions/edit-clear-history.svg
+share/icons/Rodent/scalable/actions/edit-clear-list.svg
+share/icons/Rodent/scalable/actions/edit-clear-locationbar-ltr.svg
+share/icons/Rodent/scalable/actions/edit-clear-locationbar-rtl.svg
+share/icons/Rodent/scalable/actions/edit-clear.svg
+share/icons/Rodent/scalable/actions/edit-copy.svg
+share/icons/Rodent/scalable/actions/edit-cut.svg
+share/icons/Rodent/scalable/actions/edit-delete.svg
+share/icons/Rodent/scalable/actions/edit-find-mail.svg
+share/icons/Rodent/scalable/actions/edit-find-project.svg
+share/icons/Rodent/scalable/actions/edit-find-replace.svg
+share/icons/Rodent/scalable/actions/edit-find-user.svg
+share/icons/Rodent/scalable/actions/edit-find.svg
+share/icons/Rodent/scalable/actions/edit-paste.svg
+share/icons/Rodent/scalable/actions/edit-redo.svg
+share/icons/Rodent/scalable/actions/edit-select-all.svg
+share/icons/Rodent/scalable/actions/edit-undo.svg
+share/icons/Rodent/scalable/actions/extract-archive.svg
+share/icons/Rodent/scalable/actions/folder-copy.svg
+share/icons/Rodent/scalable/actions/folder-move.svg
+share/icons/Rodent/scalable/actions/folder-new.svg
+share/icons/Rodent/scalable/actions/format-font-size-less.svg
+share/icons/Rodent/scalable/actions/format-font-size-more.svg
+share/icons/Rodent/scalable/actions/format-indent-less.svg
+share/icons/Rodent/scalable/actions/format-indent-more.svg
+share/icons/Rodent/scalable/actions/format-justify-center.svg
+share/icons/Rodent/scalable/actions/format-justify-fill.svg
+share/icons/Rodent/scalable/actions/format-justify-left.svg
+share/icons/Rodent/scalable/actions/format-justify-right.svg
+share/icons/Rodent/scalable/actions/format-text-bold.svg
+share/icons/Rodent/scalable/actions/format-text-direction-ltr.svg
+share/icons/Rodent/scalable/actions/format-text-direction-rtl.svg
+share/icons/Rodent/scalable/actions/format-text-italic.svg
+share/icons/Rodent/scalable/actions/format-text-strikethrough.svg
+share/icons/Rodent/scalable/actions/format-text-underline.svg
+share/icons/Rodent/scalable/actions/go-bottom.svg
+share/icons/Rodent/scalable/actions/go-down.svg
+share/icons/Rodent/scalable/actions/go-first.svg
+share/icons/Rodent/scalable/actions/go-home.svg
+share/icons/Rodent/scalable/actions/go-jump.svg
+share/icons/Rodent/scalable/actions/go-last.svg
+share/icons/Rodent/scalable/actions/go-next.svg
+share/icons/Rodent/scalable/actions/go-previous.svg
+share/icons/Rodent/scalable/actions/go-top.svg
+share/icons/Rodent/scalable/actions/go-up.svg
+share/icons/Rodent/scalable/actions/help-about.svg
+share/icons/Rodent/scalable/actions/help-contents.svg
+share/icons/Rodent/scalable/actions/help-faq.svg
+share/icons/Rodent/scalable/actions/insert-image.svg
+share/icons/Rodent/scalable/actions/insert-link.svg
+share/icons/Rodent/scalable/actions/insert-object.svg
+share/icons/Rodent/scalable/actions/insert-table.svg
+share/icons/Rodent/scalable/actions/insert-text.svg
+share/icons/Rodent/scalable/actions/list-add-font.svg
+share/icons/Rodent/scalable/actions/list-add-user.svg
+share/icons/Rodent/scalable/actions/list-add.svg
+share/icons/Rodent/scalable/actions/list-remove-user.svg
+share/icons/Rodent/scalable/actions/list-remove.svg
+share/icons/Rodent/scalable/actions/list-resource-add.svg
+share/icons/Rodent/scalable/actions/mail-forward.svg
+share/icons/Rodent/scalable/actions/mail-mark-important.svg
+share/icons/Rodent/scalable/actions/mail-mark-junk.svg
+share/icons/Rodent/scalable/actions/mail-mark-notjunk.svg
+share/icons/Rodent/scalable/actions/mail-mark-read.svg
+share/icons/Rodent/scalable/actions/mail-mark-unread.svg
+share/icons/Rodent/scalable/actions/mail-message-new.svg
+share/icons/Rodent/scalable/actions/mail-read.svg
+share/icons/Rodent/scalable/actions/mail-reply-all.svg
+share/icons/Rodent/scalable/actions/mail-reply-sender.svg
+share/icons/Rodent/scalable/actions/mail-send-receive.svg
+share/icons/Rodent/scalable/actions/mail-send.svg
+share/icons/Rodent/scalable/actions/mail-unread.svg
+share/icons/Rodent/scalable/actions/media-eject.svg
+share/icons/Rodent/scalable/actions/media-playback-pause.svg
+share/icons/Rodent/scalable/actions/media-playback-start.svg
+share/icons/Rodent/scalable/actions/media-playback-stop.svg
+share/icons/Rodent/scalable/actions/media-record.svg
+share/icons/Rodent/scalable/actions/media-seek-backward.svg
+share/icons/Rodent/scalable/actions/media-seek-forward.svg
+share/icons/Rodent/scalable/actions/media-skip-backward.svg
+share/icons/Rodent/scalable/actions/media-skip-forward.svg
+share/icons/Rodent/scalable/actions/object-flip-horizontal.svg
+share/icons/Rodent/scalable/actions/object-flip-vertical.svg
+share/icons/Rodent/scalable/actions/object-rotate-left.svg
+share/icons/Rodent/scalable/actions/object-rotate-right.svg
+share/icons/Rodent/scalable/actions/process-reset.svg
+share/icons/Rodent/scalable/actions/process-stop.svg
+share/icons/Rodent/scalable/actions/system-lock-screen.svg
+share/icons/Rodent/scalable/actions/system-log-out.svg
+share/icons/Rodent/scalable/actions/system-reboot.svg
+share/icons/Rodent/scalable/actions/system-run.svg
+share/icons/Rodent/scalable/actions/system-search.svg
+share/icons/Rodent/scalable/actions/system-shutdown.svg
+share/icons/Rodent/scalable/actions/system-suspend-hibernate.svg
+share/icons/Rodent/scalable/actions/system-switch-user.svg
+share/icons/Rodent/scalable/actions/system-upgrade.svg
+share/icons/Rodent/scalable/actions/tools-check-spelling.svg
+share/icons/Rodent/scalable/actions/view-fullscreen.svg
+share/icons/Rodent/scalable/actions/view-refresh.svg
+share/icons/Rodent/scalable/actions/view-restore.svg
+share/icons/Rodent/scalable/actions/view-sort-ascending.svg
+share/icons/Rodent/scalable/actions/view-sort-descending.svg
+share/icons/Rodent/scalable/actions/window-close.svg
+share/icons/Rodent/scalable/actions/window-new.svg
+share/icons/Rodent/scalable/actions/zoom-fit-best.svg
+share/icons/Rodent/scalable/actions/zoom-fit-page.svg
+share/icons/Rodent/scalable/actions/zoom-fit-width.svg
+share/icons/Rodent/scalable/actions/zoom-in.svg
+share/icons/Rodent/scalable/actions/zoom-original.svg
+share/icons/Rodent/scalable/actions/zoom-out.svg
+share/icons/Rodent/scalable/actions/zoom-page-height.svg
+share/icons/Rodent/scalable/actions/zoom-page-width.svg
+share/icons/Rodent/scalable/apps/accessories-calculator.svg
+share/icons/Rodent/scalable/apps/accessories-character-map.svg
+share/icons/Rodent/scalable/apps/accessories-dictionary.svg
+share/icons/Rodent/scalable/apps/accessories-diff-tool.svg
+share/icons/Rodent/scalable/apps/accessories-search.svg
+share/icons/Rodent/scalable/apps/accessories-text-editor.svg
+share/icons/Rodent/scalable/apps/help-browser.svg
+share/icons/Rodent/scalable/apps/help.svg
+share/icons/Rodent/scalable/apps/multimedia-balance-control.svg
+share/icons/Rodent/scalable/apps/multimedia-volume-control.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-accessibility.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-default-applications.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-display.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-effect.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-filetype-association.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-font.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-icons.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-keyboard-shortcuts.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-keyboard.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-launch-feedback.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-locale.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-mouse.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-multimedia.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-multiple.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-screensaver.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-theme.svg
+share/icons/Rodent/scalable/apps/preferences-desktop-wallpaper.svg
+share/icons/Rodent/scalable/apps/preferences-other.svg
+share/icons/Rodent/scalable/apps/preferences-system-login.svg
+share/icons/Rodent/scalable/apps/preferences-system-network-sharing.svg
+share/icons/Rodent/scalable/apps/preferences-system-network.svg
+share/icons/Rodent/scalable/apps/preferences-system-windows-actions.svg
+share/icons/Rodent/scalable/apps/preferences-system-windows-move.svg
+share/icons/Rodent/scalable/apps/preferences-system-windows.svg
+share/icons/Rodent/scalable/apps/system-file-manager.svg
+share/icons/Rodent/scalable/apps/system-software-install.svg
+share/icons/Rodent/scalable/apps/system-software-update.svg
+share/icons/Rodent/scalable/apps/system-suspend-hibernate.svg
+share/icons/Rodent/scalable/apps/system-suspend.svg
+share/icons/Rodent/scalable/apps/utilities-system-monitor.svg
+share/icons/Rodent/scalable/apps/utilities-terminal.svg
+share/icons/Rodent/scalable/categories/applications-accessories.svg
+share/icons/Rodent/scalable/categories/applications-development.svg
+share/icons/Rodent/scalable/categories/applications-engineering.svg
+share/icons/Rodent/scalable/categories/applications-games.svg
+share/icons/Rodent/scalable/categories/applications-graphics.svg
+share/icons/Rodent/scalable/categories/applications-internet.svg
+share/icons/Rodent/scalable/categories/applications-multimedia.svg
+share/icons/Rodent/scalable/categories/applications-office.svg
+share/icons/Rodent/scalable/categories/applications-other.svg
+share/icons/Rodent/scalable/categories/applications-science.svg
+share/icons/Rodent/scalable/categories/applications-system.svg
+share/icons/Rodent/scalable/categories/applications-utilities.svg
+share/icons/Rodent/scalable/categories/preferences-desktop-peripherals.svg
+share/icons/Rodent/scalable/categories/preferences-desktop-personal.svg
+share/icons/Rodent/scalable/categories/preferences-desktop.svg
+share/icons/Rodent/scalable/categories/preferences-system-network.svg
+share/icons/Rodent/scalable/categories/system-help.svg
+share/icons/Rodent/scalable/devices/audio-card.svg
+share/icons/Rodent/scalable/devices/audio-input-microphone.svg
+share/icons/Rodent/scalable/devices/battery.svg
+share/icons/Rodent/scalable/devices/camera-photo.svg
+share/icons/Rodent/scalable/devices/camera-video.svg
+share/icons/Rodent/scalable/devices/camera-web.svg
+share/icons/Rodent/scalable/devices/chardevice.svg
+share/icons/Rodent/scalable/devices/computer.svg
+share/icons/Rodent/scalable/devices/drive-harddisk.svg
+share/icons/Rodent/scalable/devices/drive-optical.svg
+share/icons/Rodent/scalable/devices/drive-removable-media-ieee1394.svg
+share/icons/Rodent/scalable/devices/drive-removable-media-scsi.svg
+share/icons/Rodent/scalable/devices/drive-removable-media.svg
+share/icons/Rodent/scalable/devices/input-keyboard.svg
+share/icons/Rodent/scalable/devices/input-mouse.svg
+share/icons/Rodent/scalable/devices/input-tablet.svg
+share/icons/Rodent/scalable/devices/media-flash.svg
+share/icons/Rodent/scalable/devices/media-floppy.svg
+share/icons/Rodent/scalable/devices/media-optical.svg
+share/icons/Rodent/scalable/devices/multimedia-player.svg
+share/icons/Rodent/scalable/devices/network-wire.svg
+share/icons/Rodent/scalable/devices/network-wireless.svg
+share/icons/Rodent/scalable/devices/pda.svg
+share/icons/Rodent/scalable/devices/phone.svg
+share/icons/Rodent/scalable/devices/printer-class.svg
+share/icons/Rodent/scalable/devices/printer.svg
+share/icons/Rodent/scalable/devices/scanner.svg
+share/icons/Rodent/scalable/devices/speaker.svg
+share/icons/Rodent/scalable/devices/video-display.svg
+share/icons/Rodent/scalable/emblems/emblem-default.svg
+share/icons/Rodent/scalable/emblems/emblem-documents.svg
+share/icons/Rodent/scalable/emblems/emblem-downloads.svg
+share/icons/Rodent/scalable/emblems/emblem-favorite.svg
+share/icons/Rodent/scalable/emblems/emblem-important.svg
+share/icons/Rodent/scalable/emblems/emblem-mail.svg
+share/icons/Rodent/scalable/emblems/emblem-photos.svg
+share/icons/Rodent/scalable/emblems/emblem-readonly.svg
+share/icons/Rodent/scalable/emblems/emblem-shared.svg
+share/icons/Rodent/scalable/emblems/emblem-show-hidden.svg
+share/icons/Rodent/scalable/emblems/emblem-symbolic-link.svg
+share/icons/Rodent/scalable/emblems/emblem-synchronized.svg
+share/icons/Rodent/scalable/emblems/emblem-system.svg
+share/icons/Rodent/scalable/emblems/emblem-unreadable.svg
+share/icons/Rodent/scalable/emblems/emblem-write-ok.svg
+share/icons/Rodent/scalable/emotes/face-angel.svg
+share/icons/Rodent/scalable/emotes/face-cool.svg
+share/icons/Rodent/scalable/emotes/face-devilish.svg
+share/icons/Rodent/scalable/emotes/face-plain.svg
+share/icons/Rodent/scalable/emotes/face-raspberry.svg
+share/icons/Rodent/scalable/emotes/face-sad.svg
+share/icons/Rodent/scalable/emotes/face-sick.svg
+share/icons/Rodent/scalable/emotes/face-smile-big.svg
+share/icons/Rodent/scalable/emotes/face-tired.svg
+share/icons/Rodent/scalable/mimetypes/application-msword.svg
+share/icons/Rodent/scalable/mimetypes/application-octet-stream.svg
+share/icons/Rodent/scalable/mimetypes/application-ogg.svg
+share/icons/Rodent/scalable/mimetypes/application-pdf.svg
+share/icons/Rodent/scalable/mimetypes/application-pgp-encrypted.svg
+share/icons/Rodent/scalable/mimetypes/application-pgp-keys.svg
+share/icons/Rodent/scalable/mimetypes/application-pgp.svg
+share/icons/Rodent/scalable/mimetypes/application-postscript.svg
+share/icons/Rodent/scalable/mimetypes/application-qif.svg
+share/icons/Rodent/scalable/mimetypes/application-rhythmbox-effect.svg
+share/icons/Rodent/scalable/mimetypes/application-rhythmbox-playlist.svg
+share/icons/Rodent/scalable/mimetypes/application-rss+xml.svg
+share/icons/Rodent/scalable/mimetypes/application-rtf.svg
+share/icons/Rodent/scalable/mimetypes/application-smil.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.lotus-1-2-3.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.ms-excel.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.ms-powerpoint.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.ms-word.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.oasis.opendocument.drawing.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.oasis.opendocument.graphics.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.oasis.opendocument.image.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.oasis.opendocument.text-web.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.oasis.opendocument.text.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.openofficeorg.extension.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.rn-realmedia-secure.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.rn-realmedia-vbr.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.rn-realmedia.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.stardivision.calc.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.stardivision.chart.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.stardivision.impress.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.stardivision.writer.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.calc.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.calc.template.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.chart.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.draw.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.draw.template.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.impress.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.impress.template.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.writer.svg
+share/icons/Rodent/scalable/mimetypes/application-vnd.sun.xml.writer.template.svg
+share/icons/Rodent/scalable/mimetypes/application-wordperfect.svg
+share/icons/Rodent/scalable/mimetypes/application-x-7z-compressed.svg
+share/icons/Rodent/scalable/mimetypes/application-x-abiword.svg
+share/icons/Rodent/scalable/mimetypes/application-x-applix-spreadsheet.svg
+share/icons/Rodent/scalable/mimetypes/application-x-applix-word.svg
+share/icons/Rodent/scalable/mimetypes/application-x-archive.svg
+share/icons/Rodent/scalable/mimetypes/application-x-arj.svg
+share/icons/Rodent/scalable/mimetypes/application-x-backup.svg
+share/icons/Rodent/scalable/mimetypes/application-x-bittorrent.svg
+share/icons/Rodent/scalable/mimetypes/application-x-blender.svg
+share/icons/Rodent/scalable/mimetypes/application-x-bzip-compressed-tar.svg
+share/icons/Rodent/scalable/mimetypes/application-x-bzip.svg
+share/icons/Rodent/scalable/mimetypes/application-x-catalog.svg
+share/icons/Rodent/scalable/mimetypes/application-x-cbr.svg
+share/icons/Rodent/scalable/mimetypes/application-x-cbz.svg
+share/icons/Rodent/scalable/mimetypes/application-x-cd-image.svg
+share/icons/Rodent/scalable/mimetypes/application-x-compress.svg
+share/icons/Rodent/scalable/mimetypes/application-x-compressed-tar.svg
+share/icons/Rodent/scalable/mimetypes/application-x-core-file.svg
+share/icons/Rodent/scalable/mimetypes/application-x-core.svg
+share/icons/Rodent/scalable/mimetypes/application-x-cpio-compressed.svg
+share/icons/Rodent/scalable/mimetypes/application-x-cpio.svg
+share/icons/Rodent/scalable/mimetypes/application-x-deb.svg
+share/icons/Rodent/scalable/mimetypes/application-x-desktop.svg
+share/icons/Rodent/scalable/mimetypes/application-x-dia-diagram.svg
+share/icons/Rodent/scalable/mimetypes/application-x-dvi.svg
+share/icons/Rodent/scalable/mimetypes/application-x-emerald-theme.svg
+share/icons/Rodent/scalable/mimetypes/application-x-emerald.svg
+share/icons/Rodent/scalable/mimetypes/application-x-executable.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-afm.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-asm.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-bdf.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-linux-psf.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-pcf.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-psf.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-sunos-news.svg
+share/icons/Rodent/scalable/mimetypes/application-x-font-ttf.svg
+share/icons/Rodent/scalable/mimetypes/application-x-gettext-translation.svg
+share/icons/Rodent/scalable/mimetypes/application-x-glade.svg
+share/icons/Rodent/scalable/mimetypes/application-x-gnucash.svg
+share/icons/Rodent/scalable/mimetypes/application-x-gnumeric.svg
+share/icons/Rodent/scalable/mimetypes/application-x-gtktalog.svg
+share/icons/Rodent/scalable/mimetypes/application-x-gzip.svg
+share/icons/Rodent/scalable/mimetypes/application-x-iso-image.svg
+share/icons/Rodent/scalable/mimetypes/application-x-jar.svg
+share/icons/Rodent/scalable/mimetypes/application-x-java-archive.svg
+share/icons/Rodent/scalable/mimetypes/application-x-java-byte-code.svg
+share/icons/Rodent/scalable/mimetypes/application-x-kde-app-info.svg
+share/icons/Rodent/scalable/mimetypes/application-x-killustrator.svg
+share/icons/Rodent/scalable/mimetypes/application-x-kpresenter.svg
+share/icons/Rodent/scalable/mimetypes/application-x-kspread.svg
+share/icons/Rodent/scalable/mimetypes/application-x-kword.svg
+share/icons/Rodent/scalable/mimetypes/application-x-lha.svg
+share/icons/Rodent/scalable/mimetypes/application-x-lzma-compressed-tar.svg
+share/icons/Rodent/scalable/mimetypes/application-x-lzma.svg
+share/icons/Rodent/scalable/mimetypes/application-x-ms-dos-executable.svg
+share/icons/Rodent/scalable/mimetypes/application-x-object.svg
+share/icons/Rodent/scalable/mimetypes/application-x-package-list.svg
+share/icons/Rodent/scalable/mimetypes/application-x-perl.svg
+share/icons/Rodent/scalable/mimetypes/application-x-php.svg
+share/icons/Rodent/scalable/mimetypes/application-x-python-bytecode.svg
+share/icons/Rodent/scalable/mimetypes/application-x-python.svg
+share/icons/Rodent/scalable/mimetypes/application-x-qw.svg
+share/icons/Rodent/scalable/mimetypes/application-x-rar.svg
+share/icons/Rodent/scalable/mimetypes/application-x-reject.svg
+share/icons/Rodent/scalable/mimetypes/application-x-remote-connection.svg
+share/icons/Rodent/scalable/mimetypes/application-x-rpm.svg
+share/icons/Rodent/scalable/mimetypes/application-x-share-library-la.svg
+share/icons/Rodent/scalable/mimetypes/application-x-sharedlib.svg
+share/icons/Rodent/scalable/mimetypes/application-x-shellscript.svg
+share/icons/Rodent/scalable/mimetypes/application-x-shockwave-flash.svg
+share/icons/Rodent/scalable/mimetypes/application-x-smil.svg
+share/icons/Rodent/scalable/mimetypes/application-x-tar.svg
+share/icons/Rodent/scalable/mimetypes/application-x-tarz.svg
+share/icons/Rodent/scalable/mimetypes/application-x-tex.svg
+share/icons/Rodent/scalable/mimetypes/application-x-theme.svg
+share/icons/Rodent/scalable/mimetypes/application-x-trash.svg
+share/icons/Rodent/scalable/mimetypes/application-x-vnc.svg
+share/icons/Rodent/scalable/mimetypes/application-zip.svg
+share/icons/Rodent/scalable/mimetypes/ascii.svg
+share/icons/Rodent/scalable/mimetypes/audio-ac3.svg
+share/icons/Rodent/scalable/mimetypes/audio-basic.svg
+share/icons/Rodent/scalable/mimetypes/audio-midi.svg
+share/icons/Rodent/scalable/mimetypes/audio-mpeg.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-adpcm.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-aiff.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-flac+ogg.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-generic.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-it.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-midi.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-mod.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-mp3-playlist.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-mp3.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-mpeg.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-mpegurl.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-ms-wma.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-pn-realaudio.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-s3m.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-scpls.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-speex+ogg.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-stm.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-ulaw.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-voc.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-vorbis+ogg.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-vorbis-ogg.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-wav.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-xi.svg
+share/icons/Rodent/scalable/mimetypes/audio-x-xm.svg
+share/icons/Rodent/scalable/mimetypes/audio.svg
+share/icons/Rodent/scalable/mimetypes/binary.svg
+share/icons/Rodent/scalable/mimetypes/cd-image.svg
+share/icons/Rodent/scalable/mimetypes/contents2.svg
+share/icons/Rodent/scalable/mimetypes/deb.svg
+share/icons/Rodent/scalable/mimetypes/document.svg
+share/icons/Rodent/scalable/mimetypes/exec.svg
+share/icons/Rodent/scalable/mimetypes/executable.svg
+share/icons/Rodent/scalable/mimetypes/font-x-generic.svg
+share/icons/Rodent/scalable/mimetypes/font.svg
+share/icons/Rodent/scalable/mimetypes/html.svg
+share/icons/Rodent/scalable/mimetypes/image-bmp.svg
+share/icons/Rodent/scalable/mimetypes/image-gif.svg
+share/icons/Rodent/scalable/mimetypes/image-ief.svg
+share/icons/Rodent/scalable/mimetypes/image-jpeg.svg
+share/icons/Rodent/scalable/mimetypes/image-png.svg
+share/icons/Rodent/scalable/mimetypes/image-svg+xml.svg
+share/icons/Rodent/scalable/mimetypes/image-svg.svg
+share/icons/Rodent/scalable/mimetypes/image-tiff.svg
+share/icons/Rodent/scalable/mimetypes/image-x-3ds.svg
+share/icons/Rodent/scalable/mimetypes/image-x-applix-graphic.svg
+share/icons/Rodent/scalable/mimetypes/image-x-cmu-raster.svg
+share/icons/Rodent/scalable/mimetypes/image-x-generic.svg
+share/icons/Rodent/scalable/mimetypes/image-x-portable-anymap.svg
+share/icons/Rodent/scalable/mimetypes/image-x-portable-bitmap.svg
+share/icons/Rodent/scalable/mimetypes/image-x-portable-greymap.svg
+share/icons/Rodent/scalable/mimetypes/image-x-portable-pixmap.svg
+share/icons/Rodent/scalable/mimetypes/image-x-psd.svg
+share/icons/Rodent/scalable/mimetypes/image-x-rgb.svg
+share/icons/Rodent/scalable/mimetypes/image-x-tga.svg
+share/icons/Rodent/scalable/mimetypes/image-x-xbitmap.svg
+share/icons/Rodent/scalable/mimetypes/image-x-xcf.svg
+share/icons/Rodent/scalable/mimetypes/image-x-xfig.svg
+share/icons/Rodent/scalable/mimetypes/image-x-xpixmap.svg
+share/icons/Rodent/scalable/mimetypes/image-x-xwindowdum.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-base.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-calc.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-draw.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-impress.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-math.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-database.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-drawing-template.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-drawing.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-formula.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-master-document.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-presentation-template.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-presentation.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-spreadsheet-template.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-spreadsheet.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-text-template.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-text.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-oasis-web-template.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-printeradmin.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-startcenter.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-template.svg
+share/icons/Rodent/scalable/mimetypes/libreoffice-writer.svg
+share/icons/Rodent/scalable/mimetypes/office-contact.svg
+share/icons/Rodent/scalable/mimetypes/office-document.svg
+share/icons/Rodent/scalable/mimetypes/office-illustration.svg
+share/icons/Rodent/scalable/mimetypes/office-spreadsheet.svg
+share/icons/Rodent/scalable/mimetypes/ooo-base.svg
+share/icons/Rodent/scalable/mimetypes/ooo-calc.svg
+share/icons/Rodent/scalable/mimetypes/ooo-draw.svg
+share/icons/Rodent/scalable/mimetypes/ooo-impress.svg
+share/icons/Rodent/scalable/mimetypes/ooo-math.svg
+share/icons/Rodent/scalable/mimetypes/ooo-template.svg
+share/icons/Rodent/scalable/mimetypes/ooo-writer.svg
+share/icons/Rodent/scalable/mimetypes/openoffice.svg
+share/icons/Rodent/scalable/mimetypes/openofficeorg-printeradmin.svg
+share/icons/Rodent/scalable/mimetypes/openofficeorg3-database.svg
+share/icons/Rodent/scalable/mimetypes/openofficeorg3-drawing.svg
+share/icons/Rodent/scalable/mimetypes/openofficeorg3-oasis-database.svg
+share/icons/Rodent/scalable/mimetypes/openofficeorg3-oasis-spreadsheet.svg
+share/icons/Rodent/scalable/mimetypes/package-x-generic.svg
+share/icons/Rodent/scalable/mimetypes/package.svg
+share/icons/Rodent/scalable/mimetypes/rpm.svg
+share/icons/Rodent/scalable/mimetypes/shellscript.svg
+share/icons/Rodent/scalable/mimetypes/sound.svg
+share/icons/Rodent/scalable/mimetypes/spreadsheet.svg
+share/icons/Rodent/scalable/mimetypes/tar.svg
+share/icons/Rodent/scalable/mimetypes/text-css.svg
+share/icons/Rodent/scalable/mimetypes/text-html.svg
+share/icons/Rodent/scalable/mimetypes/text-perl.svg
+share/icons/Rodent/scalable/mimetypes/text-sgml.svg
+share/icons/Rodent/scalable/mimetypes/text-x-authors.svg
+share/icons/Rodent/scalable/mimetypes/text-x-c++.svg
+share/icons/Rodent/scalable/mimetypes/text-x-c++src.svg
+share/icons/Rodent/scalable/mimetypes/text-x-c-header.svg
+share/icons/Rodent/scalable/mimetypes/text-x-c.svg
+share/icons/Rodent/scalable/mimetypes/text-x-changelog.svg
+share/icons/Rodent/scalable/mimetypes/text-x-chdr.svg
+share/icons/Rodent/scalable/mimetypes/text-x-copying.svg
+share/icons/Rodent/scalable/mimetypes/text-x-credits.svg
+share/icons/Rodent/scalable/mimetypes/text-x-csh.svg
+share/icons/Rodent/scalable/mimetypes/text-x-csharp.svg
+share/icons/Rodent/scalable/mimetypes/text-x-csrc.svg
+share/icons/Rodent/scalable/mimetypes/text-x-generic-template.svg
+share/icons/Rodent/scalable/mimetypes/text-x-generic.svg
+share/icons/Rodent/scalable/mimetypes/text-x-gettext-translation.svg
+share/icons/Rodent/scalable/mimetypes/text-x-gtkrc.svg
+share/icons/Rodent/scalable/mimetypes/text-x-haskell.svg
+share/icons/Rodent/scalable/mimetypes/text-x-install.svg
+share/icons/Rodent/scalable/mimetypes/text-x-java.svg
+share/icons/Rodent/scalable/mimetypes/text-x-literate-haskell.svg
+share/icons/Rodent/scalable/mimetypes/text-x-log.svg
+share/icons/Rodent/scalable/mimetypes/text-x-lyx.svg
+share/icons/Rodent/scalable/mimetypes/text-x-makefile.svg
+share/icons/Rodent/scalable/mimetypes/text-x-news.svg
+share/icons/Rodent/scalable/mimetypes/text-x-patch.svg
+share/icons/Rodent/scalable/mimetypes/text-x-preview.svg
+share/icons/Rodent/scalable/mimetypes/text-x-python.svg
+share/icons/Rodent/scalable/mimetypes/text-x-readme.svg
+share/icons/Rodent/scalable/mimetypes/text-x-scheme.svg
+share/icons/Rodent/scalable/mimetypes/text-x-script.svg
+share/icons/Rodent/scalable/mimetypes/text-x-sh.svg
+share/icons/Rodent/scalable/mimetypes/text-x-source.svg
+share/icons/Rodent/scalable/mimetypes/text-x-tex.svg
+share/icons/Rodent/scalable/mimetypes/text-x-troff-man.svg
+share/icons/Rodent/scalable/mimetypes/text-x-vcalendar.svg
+share/icons/Rodent/scalable/mimetypes/text-x-vcard.svg
+share/icons/Rodent/scalable/mimetypes/text-x-xslt.svg
+share/icons/Rodent/scalable/mimetypes/text-x-zsh.svg
+share/icons/Rodent/scalable/mimetypes/text-xml.svg
+share/icons/Rodent/scalable/mimetypes/text.svg
+share/icons/Rodent/scalable/mimetypes/tgz.svg
+share/icons/Rodent/scalable/mimetypes/txt.svg
+share/icons/Rodent/scalable/mimetypes/txt2.svg
+share/icons/Rodent/scalable/mimetypes/vcalendar.svg
+share/icons/Rodent/scalable/mimetypes/vcard.svg
+share/icons/Rodent/scalable/mimetypes/video-mpeg.svg
+share/icons/Rodent/scalable/mimetypes/video-quicktime.svg
+share/icons/Rodent/scalable/mimetypes/video-x-generic.svg
+share/icons/Rodent/scalable/mimetypes/video-x-ms-asf.svg
+share/icons/Rodent/scalable/mimetypes/video-x-ms-wmv.svg
+share/icons/Rodent/scalable/mimetypes/video-x-msvideo.svg
+share/icons/Rodent/scalable/mimetypes/video.svg
+share/icons/Rodent/scalable/mimetypes/wordprocessing.svg
+share/icons/Rodent/scalable/mimetypes/www.svg
+share/icons/Rodent/scalable/mimetypes/x-office-address-book.svg
+share/icons/Rodent/scalable/mimetypes/x-office-calendar.svg
+share/icons/Rodent/scalable/mimetypes/x-office-database.svg
+share/icons/Rodent/scalable/mimetypes/x-office-document-template.svg
+share/icons/Rodent/scalable/mimetypes/x-office-document.svg
+share/icons/Rodent/scalable/mimetypes/x-office-drawing-template.svg
+share/icons/Rodent/scalable/mimetypes/x-office-drawing.svg
+share/icons/Rodent/scalable/mimetypes/x-office-math.svg
+share/icons/Rodent/scalable/mimetypes/x-office-presentation-template.svg
+share/icons/Rodent/scalable/mimetypes/x-office-presentation.svg
+share/icons/Rodent/scalable/mimetypes/x-office-spreadsheet-template.svg
+share/icons/Rodent/scalable/mimetypes/x-office-spreadsheet.svg
+share/icons/Rodent/scalable/mimetypes/zip.svg
+share/icons/Rodent/scalable/places/folder-bookmarks.svg
+share/icons/Rodent/scalable/places/folder-development.svg
+share/icons/Rodent/scalable/places/folder-documents.svg
+share/icons/Rodent/scalable/places/folder-download.svg
+share/icons/Rodent/scalable/places/folder-downloads.svg
+share/icons/Rodent/scalable/places/folder-favorites.svg
+share/icons/Rodent/scalable/places/folder-html.svg
+share/icons/Rodent/scalable/places/folder-image.svg
+share/icons/Rodent/scalable/places/folder-images.svg
+share/icons/Rodent/scalable/places/folder-important.svg
+share/icons/Rodent/scalable/places/folder-locked.svg
+share/icons/Rodent/scalable/places/folder-music.svg
+share/icons/Rodent/scalable/places/folder-pictures.svg
+share/icons/Rodent/scalable/places/folder-print.svg
+share/icons/Rodent/scalable/places/folder-publicshare.svg
+share/icons/Rodent/scalable/places/folder-remote-ftp.svg
+share/icons/Rodent/scalable/places/folder-remote-nfs.svg
+share/icons/Rodent/scalable/places/folder-remote-smb.svg
+share/icons/Rodent/scalable/places/folder-remote-ssh.svg
+share/icons/Rodent/scalable/places/folder-remote.svg
+share/icons/Rodent/scalable/places/folder-root.svg
+share/icons/Rodent/scalable/places/folder-saved-search.svg
+share/icons/Rodent/scalable/places/folder-scouts.svg
+share/icons/Rodent/scalable/places/folder-sound.svg
+share/icons/Rodent/scalable/places/folder-symlink.svg
+share/icons/Rodent/scalable/places/folder-system.svg
+share/icons/Rodent/scalable/places/folder-tar.svg
+share/icons/Rodent/scalable/places/folder-templates.svg
+share/icons/Rodent/scalable/places/folder-txt.svg
+share/icons/Rodent/scalable/places/folder-video.svg
+share/icons/Rodent/scalable/places/folder-videos.svg
+share/icons/Rodent/scalable/places/folder-wine.svg
+share/icons/Rodent/scalable/places/folder.svg
+share/icons/Rodent/scalable/places/mail-folder-inbox.svg
+share/icons/Rodent/scalable/places/mail-folder-outbox.svg
+share/icons/Rodent/scalable/places/mail-folder-sent.svg
+share/icons/Rodent/scalable/places/mail-message.svg
+share/icons/Rodent/scalable/places/music-library.svg
+share/icons/Rodent/scalable/places/network-server.svg
+share/icons/Rodent/scalable/places/network-workgroup.svg
+share/icons/Rodent/scalable/places/repository.svg
+share/icons/Rodent/scalable/places/start-here-arch.svg
+share/icons/Rodent/scalable/places/start-here-gentoo.svg
+share/icons/Rodent/scalable/places/start-here.svg
+share/icons/Rodent/scalable/places/user-bookmarks.svg
+share/icons/Rodent/scalable/places/user-desktop.svg
+share/icons/Rodent/scalable/places/user-favorites.svg
+share/icons/Rodent/scalable/places/user-home.svg
+share/icons/Rodent/scalable/places/user-images.svg
+share/icons/Rodent/scalable/places/user-pictures.svg
+share/icons/Rodent/scalable/places/user-share.svg
+share/icons/Rodent/scalable/places/user-trash.svg
+share/icons/Rodent/scalable/status/appointment-missed.svg
+share/icons/Rodent/scalable/status/appointment-soon.svg
+share/icons/Rodent/scalable/status/audio-volume-high.svg
+share/icons/Rodent/scalable/status/audio-volume-low.svg
+share/icons/Rodent/scalable/status/audio-volume-medium.svg
+share/icons/Rodent/scalable/status/audio-volume-muted.svg
+share/icons/Rodent/scalable/status/audio-volume-off.svg
+share/icons/Rodent/scalable/status/battery-caution-charging.svg
+share/icons/Rodent/scalable/status/battery-caution.svg
+share/icons/Rodent/scalable/status/battery-charging.svg
+share/icons/Rodent/scalable/status/battery-good-charging.svg
+share/icons/Rodent/scalable/status/battery-good.svg
+share/icons/Rodent/scalable/status/battery-low-charging.svg
+share/icons/Rodent/scalable/status/battery-low.svg
+share/icons/Rodent/scalable/status/bluetooth-active.svg
+share/icons/Rodent/scalable/status/bluetooth-disabled.svg
+share/icons/Rodent/scalable/status/dialog-error.svg
+share/icons/Rodent/scalable/status/dialog-information.svg
+share/icons/Rodent/scalable/status/dialog-password.svg
+share/icons/Rodent/scalable/status/dialog-question.svg
+share/icons/Rodent/scalable/status/dialog-warning.svg
+share/icons/Rodent/scalable/status/folder-drag-accept.svg
+share/icons/Rodent/scalable/status/folder-open.svg
+share/icons/Rodent/scalable/status/folder-visiting.svg
+share/icons/Rodent/scalable/status/image-loading.svg
+share/icons/Rodent/scalable/status/image-missing.svg
+share/icons/Rodent/scalable/status/mail-attachment.svg
+share/icons/Rodent/scalable/status/mail-read.svg
+share/icons/Rodent/scalable/status/mail-replied.svg
+share/icons/Rodent/scalable/status/mail-unread.svg
+share/icons/Rodent/scalable/status/media-playlist-repeat.svg
+share/icons/Rodent/scalable/status/media-playlist-shuffle.svg
+share/icons/Rodent/scalable/status/network-error.svg
+share/icons/Rodent/scalable/status/network-idle.svg
+share/icons/Rodent/scalable/status/network-offline.svg
+share/icons/Rodent/scalable/status/network-receive.svg
+share/icons/Rodent/scalable/status/network-transmit-receive.svg
+share/icons/Rodent/scalable/status/network-transmit.svg
+share/icons/Rodent/scalable/status/printer-error.svg
+share/icons/Rodent/scalable/status/printer-printing.svg
+share/icons/Rodent/scalable/status/security-high.svg
+share/icons/Rodent/scalable/status/security-low.svg
+share/icons/Rodent/scalable/status/security-medium.svg
+share/icons/Rodent/scalable/status/software-update-available.svg
+share/icons/Rodent/scalable/status/software-update-urgent.svg
+share/icons/Rodent/scalable/status/unknown.svg
+share/icons/Rodent/scalable/status/user-available.svg
+share/icons/Rodent/scalable/status/user-away.svg
+share/icons/Rodent/scalable/status/user-busy.svg
+share/icons/Rodent/scalable/status/user-idle.svg
+share/icons/Rodent/scalable/status/user-invisible.svg
+share/icons/Rodent/scalable/status/user-offline.svg
+share/icons/Rodent/scalable/status/weather-clear-night.svg
+share/icons/Rodent/scalable/status/weather-clear.svg
+share/icons/Rodent/scalable/status/weather-few-clouds-night.svg
+share/icons/Rodent/scalable/status/weather-few-clouds.svg
+share/icons/Rodent/scalable/status/weather-fog.svg
+share/icons/Rodent/scalable/status/weather-overcast.svg
+share/icons/Rodent/scalable/status/weather-severe-alert.svg
+share/icons/Rodent/scalable/status/weather-showers-scattered.svg
+share/icons/Rodent/scalable/status/weather-showers.svg
+share/icons/Rodent/scalable/status/weather-snow.svg
+share/icons/Rodent/scalable/status/weather-storm.svg
+share/icons/Rodent/scalable/status/webcamreceive.svg
+share/icons/Rodent/scalable/status/webcamsend.svg
+share/icons/Rodent/scalable/stock/arrow-down-double.svg
+share/icons/Rodent/scalable/stock/arrow-left-double.svg
+share/icons/Rodent/scalable/stock/arrow-right-double.svg
+share/icons/Rodent/scalable/stock/arrow-up-double.svg
+share/icons/Rodent/scalable/stock/bookmark-toolbar.svg
+share/icons/Rodent/scalable/stock/debian.svg
+share/icons/Rodent/scalable/stock/empty.svg
+share/icons/Rodent/scalable/stock/gtk-about.svg
+share/icons/Rodent/scalable/stock/gtk-cancel.svg
+share/icons/Rodent/scalable/stock/gtk-caps-lock-warning.svg
+share/icons/Rodent/scalable/stock/gtk-color-picker.svg
+share/icons/Rodent/scalable/stock/gtk-connect.svg
+share/icons/Rodent/scalable/stock/gtk-convert.svg
+share/icons/Rodent/scalable/stock/gtk-dialog-authentication.svg
+share/icons/Rodent/scalable/stock/gtk-disconnect.svg
+share/icons/Rodent/scalable/stock/gtk-dnd-multiple.svg
+share/icons/Rodent/scalable/stock/gtk-dnd.svg
+share/icons/Rodent/scalable/stock/gtk-edit.svg
+share/icons/Rodent/scalable/stock/gtk-file.svg
+share/icons/Rodent/scalable/stock/gtk-find.svg
+share/icons/Rodent/scalable/stock/gtk-font.svg
+share/icons/Rodent/scalable/stock/gtk-index.svg
+share/icons/Rodent/scalable/stock/gtk-no.svg
+share/icons/Rodent/scalable/stock/gtk-ok.svg
+share/icons/Rodent/scalable/stock/gtk-preferences.svg
+share/icons/Rodent/scalable/stock/gtk-select-color.svg
+share/icons/Rodent/scalable/stock/gtk-select-font.svg
+share/icons/Rodent/scalable/stock/gtk-spell-check.svg
+share/icons/Rodent/scalable/stock/gtk-undelete.svg
+share/icons/Rodent/scalable/stock/gtk-yes.svg
+share/icons/Rodent/scalable/stock/notes.svg
+share/icons/Rodent/scalable/stock/regular.svg
+share/pixmaps/rodent-diff.png
+share/pixmaps/rodent-dotdesktop.png
+share/pixmaps/rodent-fgr.png
+share/pixmaps/rodent-fstab.png
+share/pixmaps/rodent-mime.png
+share/pixmaps/rodent-ps.png
+share/pixmaps/rodent-root.png
+share/pixmaps/rodent.png
+share/rfm-Gamma/icons.mime.xml
+share/rfm-Gamma/mime-module.xml
+@dirrm share/rfm-Gamma
+@dirrmtry share/pixmaps
+@dirrm share/icons/Rodent/scalable/stock
+@dirrm share/icons/Rodent/scalable/status
+@dirrm share/icons/Rodent/scalable/places
+@dirrm share/icons/Rodent/scalable/mimetypes
+@dirrm share/icons/Rodent/scalable/emotes
+@dirrm share/icons/Rodent/scalable/emblems
+@dirrm share/icons/Rodent/scalable/devices
+@dirrm share/icons/Rodent/scalable/categories
+@dirrm share/icons/Rodent/scalable/apps
+@dirrm share/icons/Rodent/scalable/actions
+@dirrm share/icons/Rodent/scalable
+@dirrm share/icons/Rodent/48x48/apps
+@dirrm share/icons/Rodent/48x48
+@dirrm share/icons/Rodent
+@dirrmtry share/applications
+@dirrm lib/rfm-Gamma
+%%NLS%%@dirrmtry lib/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_TW.Big5/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_TW.Big5
+%%NLS%%@dirrmtry lib/locale/zh_TW
+%%NLS%%@dirrmtry lib/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_HK
+%%NLS%%@dirrmtry lib/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh_CN
+%%NLS%%@dirrmtry lib/locale/zh/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/zh
+%%NLS%%@dirrmtry lib/locale/xh/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/xh
+%%NLS%%@dirrmtry lib/locale/wa/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/wa
+%%NLS%%@dirrmtry lib/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/vi
+%%NLS%%@dirrmtry lib/locale/uz@cyrillic/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/uz@cyrillic
+%%NLS%%@dirrmtry lib/locale/uz/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/uz
+%%NLS%%@dirrmtry lib/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/uk
+%%NLS%%@dirrmtry lib/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ug
+%%NLS%%@dirrmtry lib/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/tr
+%%NLS%%@dirrmtry lib/locale/tk/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/tk
+%%NLS%%@dirrmtry lib/locale/th/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/th
+%%NLS%%@dirrmtry lib/locale/tg/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/tg
+%%NLS%%@dirrmtry lib/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/te
+%%NLS%%@dirrmtry lib/locale/ta/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ta
+%%NLS%%@dirrmtry lib/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sv
+%%NLS%%@dirrmtry lib/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sr@latin
+%%NLS%%@dirrmtry lib/locale/sr@ijekavianlatin/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sr@ijekavianlatin
+%%NLS%%@dirrmtry lib/locale/sr@ijekavian/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sr@ijekavian
+%%NLS%%@dirrmtry lib/locale/sr@ije/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sr@ije
+%%NLS%%@dirrmtry lib/locale/sr/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sr
+%%NLS%%@dirrmtry lib/locale/sq/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sq
+%%NLS%%@dirrmtry lib/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sl
+%%NLS%%@dirrmtry lib/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/sk
+%%NLS%%@dirrmtry lib/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/si
+%%NLS%%@dirrmtry lib/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ru
+%%NLS%%@dirrmtry lib/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ro
+%%NLS%%@dirrmtry lib/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pt_BR
+%%NLS%%@dirrmtry lib/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pt
+%%NLS%%@dirrmtry lib/locale/ps/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ps
+%%NLS%%@dirrmtry lib/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pl
+%%NLS%%@dirrmtry lib/locale/pa/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/pa
+%%NLS%%@dirrmtry lib/locale/or/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/or
+%%NLS%%@dirrmtry lib/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/oc
+%%NLS%%@dirrmtry lib/locale/nn/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/nn
+%%NLS%%@dirrmtry lib/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/nl
+%%NLS%%@dirrmtry lib/locale/ne/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ne
+%%NLS%%@dirrmtry lib/locale/nds/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/nds
+%%NLS%%@dirrmtry lib/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/nb
+%%NLS%%@dirrmtry lib/locale/ms/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ms
+%%NLS%%@dirrmtry lib/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/mr
+%%NLS%%@dirrmtry lib/locale/ml/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ml
+%%NLS%%@dirrmtry lib/locale/mk/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/mk
+%%NLS%%@dirrmtry lib/locale/mai/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/mai
+%%NLS%%@dirrmtry lib/locale/lv/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/lv
+%%NLS%%@dirrmtry lib/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/lt
+%%NLS%%@dirrmtry lib/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ku
+%%NLS%%@dirrmtry lib/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ko
+%%NLS%%@dirrmtry lib/locale/kn/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/kn
+%%NLS%%@dirrmtry lib/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/km
+%%NLS%%@dirrmtry lib/locale/kg/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/kg
+%%NLS%%@dirrmtry lib/locale/ka/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ka
+%%NLS%%@dirrmtry lib/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ja
+%%NLS%%@dirrmtry lib/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/it
+%%NLS%%@dirrmtry lib/locale/is/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/is
+%%NLS%%@dirrmtry lib/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/id
+%%NLS%%@dirrmtry lib/locale/ia/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ia
+%%NLS%%@dirrmtry lib/locale/hy/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hy
+%%NLS%%@dirrmtry lib/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hu
+%%NLS%%@dirrmtry lib/locale/hsb/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hsb
+%%NLS%%@dirrmtry lib/locale/hr/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hr
+%%NLS%%@dirrmtry lib/locale/hne/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hne
+%%NLS%%@dirrmtry lib/locale/hi/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/hi
+%%NLS%%@dirrmtry lib/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/he
+%%NLS%%@dirrmtry lib/locale/gu/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/gu
+%%NLS%%@dirrmtry lib/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/gl
+%%NLS%%@dirrmtry lib/locale/ga/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ga
+%%NLS%%@dirrmtry lib/locale/fy/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/fy
+%%NLS%%@dirrmtry lib/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/fr
+%%NLS%%@dirrmtry lib/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/fi
+%%NLS%%@dirrmtry lib/locale/fa/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/fa
+%%NLS%%@dirrmtry lib/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/eu
+%%NLS%%@dirrmtry lib/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/et
+%%NLS%%@dirrmtry lib/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/es
+%%NLS%%@dirrmtry lib/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/eo
+%%NLS%%@dirrmtry lib/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/en_GB
+%%NLS%%@dirrmtry lib/locale/en_CA/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/en_CA
+%%NLS%%@dirrmtry lib/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/el
+%%NLS%%@dirrmtry lib/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/dz
+%%NLS%%@dirrmtry lib/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/de
+%%NLS%%@dirrmtry lib/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/da
+%%NLS%%@dirrmtry lib/locale/cy/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/cy
+%%NLS%%@dirrmtry lib/locale/csb/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/csb
+%%NLS%%@dirrmtry lib/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/cs
+%%NLS%%@dirrmtry lib/locale/crh/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/crh
+%%NLS%%@dirrmtry lib/locale/ca@valencia/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ca@valencia
+%%NLS%%@dirrmtry lib/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ca
+%%NLS%%@dirrmtry lib/locale/bs/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/bs
+%%NLS%%@dirrmtry lib/locale/br/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/br
+%%NLS%%@dirrmtry lib/locale/bn/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/bn
+%%NLS%%@dirrmtry lib/locale/bg/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/bg
+%%NLS%%@dirrmtry lib/locale/be@latin/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/be@latin
+%%NLS%%@dirrmtry lib/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/be
+%%NLS%%@dirrmtry lib/locale/az/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/az
+%%NLS%%@dirrmtry lib/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ast
+%%NLS%%@dirrmtry lib/locale/as/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/as
+%%NLS%%@dirrmtry lib/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/ar
+%%NLS%%@dirrmtry lib/locale/af/LC_MESSAGES
+%%NLS%%@dirrmtry lib/locale/af
+%%NLS%%@dirrmtry lib/locale
