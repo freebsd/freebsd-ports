@@ -2493,6 +2493,7 @@ dkftpbench                      ports/benchmarks/dkftpbench
 dkimproxy                       ports/mail/dkimproxy
 dkns                            ports/editors/dkns
 dlint                           ports/dns/dlint
+dlpoly-classic                  ports/science/dlpoly-classic
 dlume                           ports/deskutils/dlume
 dlv                             ports/lang/dlv
 dma                             ports/mail/dma
@@ -10635,6 +10636,7 @@ opengrok                        ports/devel/opengrok
 opengtl                         ports/graphics/opengtl
 openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
+openimageio                     ports/graphics/openimageio
 openipmi                        ports/sysutils/openipmi
 openjade                        ports/textproc/openjade
 openjazz                        ports/games/openjazz
@@ -23339,8 +23341,6 @@ python                          ports/lang/python
 python-doc-html                 ports/lang/python-doc-html
 python-doc-pdf-a4               ports/lang/python-doc-pdf-a4
 python-doc-pdf-letter           ports/lang/python-doc-pdf-letter
-python-doc-postscript-a4        ports/lang/python-doc-postscript-a4
-python-doc-postscript-letter    ports/lang/python-doc-postscript-letter
 python-doc-text                 ports/lang/python-doc-text
 python-mode.el                  ports/lang/python-mode.el
 python-nexus                    ports/biology/python-nexus
