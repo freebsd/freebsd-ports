@@ -398,6 +398,7 @@
     SUBDIR += joequake
     SUBDIR += jools
     SUBDIR += jtans
+    SUBDIR += jutils
     SUBDIR += jvgs
     SUBDIR += jzip
     SUBDIR += kaid
