@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Prowl/.packlist
+%%SITE_PERL%%/WebService/Prowl.pm
+%%SITE_PERL%%/WebService/Prowl/AnyEventHTTP.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Prowl
+@dirrm %%SITE_PERL%%/WebService/Prowl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@dirrmtry %%SITE_PERL%%/WebService
