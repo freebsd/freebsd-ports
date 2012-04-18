@@ -1,0 +1,30 @@
+MAN1=	GMT.1 backtracker.1 binlegs.1 blockmean.1 blockmedian.1 \
+	blockmode.1 dat2gmt.1 dimfilter.1 filter1d.1 fitcircle.1 \
+	gmt2bin.1 gmt2dat.1 gmt2kml.1 gmt2rgb.1 gmt_shell_functions.1 \
+	gmtconvert.1 gmtdefaults.1 gmtdigitize.1 gmtdp.1 gmtget.1 \
+	gmtinfo.1 gmtlegs.1 gmtlist.1 gmtlogo.1 gmtmath.1 gmtpath.1 \
+	gmtselect.1 gmtset.1 gmtstitch.1 gmttrack.1 grd2cpt.1 grd2xyz.1 \
+	grdblend.1 grdclip.1 grdcontour.1 grdcut.1 grdedit.1 grdfft.1 \
+	grdfilter.1 grdgradient.1 grdhisteq.1 grdimage.1 grdinfo.1 \
+	grdlandmask.1 grdmask.1 grdmath.1 grdpaste.1 grdproject.1 \
+	grdraster.1 grdreformat.1 grdrotater.1 grdsample.1 grdspotter.1 \
+	grdtrack.1 grdtrend.1 grdvector.1 grdview.1 grdvolume.1 \
+	greenspline.1 gshhs.1 gshhs_dp.1 gshhstograss.1 hotspotter.1 \
+	img2google.1 img2grd.1 img2mercgrd.1 isogmt.1 kml2gmt.1 makecpt.1 \
+	makepattern.1 mapproject.1 mgd77convert.1 mgd77info.1 mgd77list.1 \
+	mgd77magref.1 mgd77manage.1 mgd77path.1 mgd77sniffer.1 \
+	mgd77togmt.1 mgd77track.1 minmax.1 nc2xy.1 nearneighbor.1 \
+	originator.1 project.1 ps2raster.1 psbasemap.1 psbbox.1 psclip.1 \
+	pscoast.1 pscontour.1 pscoupe.1 pshistogram.1 psimage.1 \
+	pslegend.1 psmask.1 psmeca.1 psmegaplot.1 pspolar.1 psrose.1 \
+	psscale.1 pssegy.1 pssegyz.1 pstext.1 psvelo.1 pswiggle.1 psxy.1 \
+	psxyz.1 rotconverter.1 sample1d.1 segy2grd.1 spectrum1d.1 \
+	sphdistance.1 sphinterpolate.1 sphtriangulate.1 splitxyz.1 \
+	surface.1 trend1d.1 trend2d.1 triangulate.1 x2sys_binlist.1 \
+	x2sys_cross.1 x2sys_datalist.1 x2sys_get.1 x2sys_init.1 \
+	x2sys_list.1 x2sys_merge.1 x2sys_put.1 x2sys_report.1 \
+	x2sys_solve.1 x_edit.1 x_init.1 x_list.1 x_over.1 x_remove.1 \
+	x_report.1 x_setup.1 x_solve_dc_drift.1 x_system.1 x_update.1 \
+	xyz2grd.1
+MAN3=	pslib.3
+MAN5=	gmtcolors.5

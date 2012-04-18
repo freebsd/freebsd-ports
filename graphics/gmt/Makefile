@@ -6,96 +6,89 @@
 #
 
 PORTNAME=	gmt
-PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTVERSION=	4.5.8
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/gmt/ \
-		ftp://ftp.iag.usp.br/pub/gmt/ \
-		ftp://ftp.geologi.uio.no/pub/gmt/
-DISTNAME=	GMT${PORTVERSION}
-DISTFILES=	${EXTRACT_ONLY} ${EXTRACT_SUB}
-DIST_SUBDIR=	gmt
-EXTRACT_ONLY=	${DISTNAME}_progs${EXTRACT_SUFX} \
-		${DISTNAME}_man${EXTRACT_SUFX}
+MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/${PORTNAME}/	\
+		ftp://ftp.soest.hawaii.edu/${PORTNAME}/		\
+		ftp://ftp.geologi.uio.no/pub/${PORTNAME}/	\
+		ftp://ibis.grdl.noaa.gov/pub/${PORTNAME}/	\
+		ftp://gd.tuwien.ac.at/pub/${PORTNAME}/		\
+		ftp://ftp.iag.usp.br/pub/${PORTNAME}/		\
+		ftp://ftp.scc.u-tokai.ac.jp/pub/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Generic Mapping Tools data processing and display software package
 
-DEPRECATED=	Hasn't fetched since before 2006
-EXPIRATION_DATE=2012-04-17
+WRKSRC=		${WRKDIR}/${PORTNAME:U}${DISTVERSION}
+USE_BZIP2=	yes
+USE_AUTOTOOLS=	autoconf
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--datadir=${DATADIR}
+USE_XLIB=	yes
+USE_GMAKE=	yes
+USE_XORG=	x11
 
-BROKEN=		Doesn't fetch
+PORTDOCS=	*
+PORTDATA=	*
 
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
+OPTIONS=	SHARED "Build shared (dynamic) libraries" on \
+		EPS "defaults .eps, otherwise .ps" off \
+		DEBUG "Compile for debugging code" off \
+		DEVDEBUG "Extra debugging for developers" off \
+		IMPERIAL "Choose Imperial (inch) units over metric (cm)" off \
+		GDAL "Compile in experimental GDAL support" on \
+		NETCDF "With netCDF (7) support" on \
+		OCTAVE "With OCTAVE support" off
 
-EXTRACT_SUB=	GMT_share${EXTRACT_SUFX}
+.include "Makefile.man"
+.include <bsd.port.options.mk>
 
-USE_BZIP2=	YES
-HAS_CONFIGURE=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX}/${PORTNAME} \
-		--enable-wrapbin=${PREFIX}/bin \
-		--enable-wrapman=${PREFIX}/man \
-		--enable-shared
-MAKE_ENV+=	NETCDFHOME=${LOCALBASE}
-INSTALL_TARGET=	install install-data install-man install-wrapper
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
+.if defined(WITH_NETCDF)
+LIB_DEPENDS+=		netcdf:${PORTSDIR}/science/netcdf4
+CONFIGURE_ARGS+=	--enable-netcdf
 .endif
 
-post-extract:
-	@for file in ${EXTRACT_SUB}; do \
-		if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
-		then \
-			exit 1; \
-		fi \
-	done
-
-.ifdef(WITH_EVERYTHING)
-WITH_COAST_HIGH=YES
-WITH_COAST_FULL=YES
-WITH_FAST_TRIANGLE=YES
-WITH_SUPPL=YES
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-# High-rez coastlines (8M):
-.ifdef(WITH_COAST_HIGH)
-EXTRACT_SUB+=	GMT_high${EXTRACT_SUFX}
-PLIST_SUB+=	COAST_HIGH=""
+.if defined(WITH_DEVDEBUG)
+CONFIGURE_ARGS+=	--enable-devdebug
+.endif
+
+.if defined(WITH_SHARED)
+USE_LDCONFIG=		yes
+CONFIGURE_ARGS+=	--enable-shared
+.endif
+
+.if defined(WITH_IMPERIAL)
+CONFIGURE_ARGS+=	--enable-US
+.endif
+
+.if defined(WITH_EPS)
+CONFIGURE_ARGS+=	--enable-eps
+.endif
+
+.if defined(WITH_GDAL)
+LIB_DEPENDS+=		gdal.16:${PORTSDIR}/graphics/gdal
+CONFIGURE_ARGS+=	--enable-gdal
+.endif
+
+.if defined(WITH_OCTAVE)
+RUN_DEPENDS+=		octave:${PORTSDIR}/math/octave
+CONFIGURE_ARGS+=	--enable-octave
+CONFIGURE_ARGS+=	--enable-mex
 .else
-PLIST_SUB+=	COAST_HIGH="@comment "
+CONFIGURE_ARGS+=	--disable-mex
 .endif
 
-# Full-rez coastlines (28M):
-.ifdef(WITH_COAST_FULL)
-EXTRACT_SUB+=	GMT_full${EXTRACT_SUFX}
-PLIST_SUB+=	COAST_FULL=""
+INSTALL_TARGET=		install-gmt install-data install-man install-doc
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || \
+    ${ARCH} == "alpha" || ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--enable-64
 .else
-PLIST_SUB+=	COAST_FULL="@comment "
+CONFIGURE_ARGS+=	--disable-64
 .endif
 
-# Jonathan Shewchuck's Delauney triangulation routines (non-GPL)
-.ifdef(WITH_FAST_TRIANGLE)
-EXTRACT_SUB+=	triangle${EXTRACT_SUFX}
-RESTRICTED=	No commercial use
-RESTRICTED_FILES=	triangle${EXTRACT_SUFX}
-CONFIGURE_ARGS+=	--enable-triangle
-.endif
-
-WITH_SUPPL?=	YES
-# Supplemental programs which use GMT
-.if defined(WITH_SUPPL) && ${WITH_SUPPL} != "NO"
-EXTRACT_ONLY+=	${DISTNAME}_suppl${EXTRACT_SUFX}
-INSTALL_TARGET+=	install-suppl
-PLIST_SUB+=	SUPPL=""
-post-configure:
-	${TOUCH} ${WRKSRC}/src/mex/.skip
-.else
-PLIST_SUB+=	SUPPL="@comment "
-.endif
-
-MANL=		GMT.l
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

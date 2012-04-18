@@ -1,0 +1,16 @@
+$FreeBSD$
+
+On GNU systems gcc is used as ld, which accepts the -Wl option to pass options
+to ld.  On FreeBSD, ld is used, and gets upset with -Wl.
+
+--- configure.ac.orig	2012-04-09 09:40:43.118542080 +0100
++++ configure.ac	2012-04-09 09:45:57.340543460 +0100
+@@ -759,7 +759,7 @@
+ 		LD_OPT='-shared -Wl,-soname=$*.'$SL_VERSION
+ 	elif test "$os" = "FreeBSD" || test "$os" = "NetBSD" ; then
+ 		SL_VERSION=$SL.$LIB_MAJOR_VERSION
+-		LD_OPT='-shared -Wl,-soname=$*.'$SL_VERSION
++		LD_OPT='-shared -soname=$*.'$SL_VERSION
+ 	elif test "$os" = "OSF1" ; then
+ 		LD_OPT='-shared -expect_unresolved "*"'
+ 	elif test "$os" = "IRIX64" ; then
