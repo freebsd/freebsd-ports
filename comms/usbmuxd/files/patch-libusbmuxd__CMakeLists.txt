@@ -1,0 +1,26 @@
+--- ./libusbmuxd/CMakeLists.txt.orig	2012-04-18 16:20:48.468900320 +0200
++++ ./libusbmuxd/CMakeLists.txt	2012-04-18 16:27:25.439000508 +0200
+@@ -2,17 +2,20 @@
+ find_package(Threads)
+ 
+ option(WANT_INOTIFY "Build with inotify support" ON)
++
++add_library (libusbmuxd SHARED libusbmuxd.c sock_stuff.c ${CMAKE_SOURCE_DIR}/common/utils.c)
++find_library (PTHREAD pthread)
++
+ if (WANT_INOTIFY)
+ find_package(Inotify)
+ if (INOTIFY_FOUND)
+   add_definitions("-DHAVE_INOTIFY")
++  include_directories(${INOTIFY_INCLUDE_DIR})
++  target_link_libraries(libusbmuxd ${INOTIFY_LIBRARY})
+   message("-- libusbmuxd will be built with inotify support")
+ endif()
+ endif(WANT_INOTIFY)
+ 
+-add_library (libusbmuxd SHARED libusbmuxd.c sock_stuff.c ${CMAKE_SOURCE_DIR}/common/utils.c)
+-find_library (PTHREAD pthread)
+-
+ if (HAVE_PLIST)
+   add_definitions("-DHAVE_PLIST")
+   message("-- libusbmuxd will be built with protocol version 1 support")
