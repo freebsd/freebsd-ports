@@ -23,6 +23,8 @@ COMMENT=	A Common Lisp development system derived from the CMU CL system
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to this architecture yet
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-DSBCL_HOME=\\\"${SBCL_HOME}\\\"
