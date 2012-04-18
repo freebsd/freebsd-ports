@@ -29,8 +29,6 @@ LICENSE=	EPL
 
 OPTIONS=	STATIC	"Static linking" off
 
-RESTRICTED=	Source recipient must acknowledge license
-
 FETCH_ARGS=	-Rr
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
