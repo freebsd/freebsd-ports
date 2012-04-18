@@ -24,7 +24,9 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 CONFLICTS_BUILD=	spidermonkey-*
 
 USE_AUTOTOOLS=	autoconf213
+LATEST_LINK=	thunderbird-esr
 USE_GECKO=	gecko
+CONFLICTS=	thunderbird-1[1-9].*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
