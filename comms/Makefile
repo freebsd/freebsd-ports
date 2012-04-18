@@ -81,6 +81,7 @@
     SUBDIR += minicom
     SUBDIR += mlan
     SUBDIR += mlan3
+    SUBDIR += morse
     SUBDIR += nasawash
     SUBDIR += ncid
     SUBDIR += nec2c

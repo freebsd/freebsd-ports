@@ -1,0 +1,6 @@
+This is Morse Classic, a generic morse-code practice utility for Unix systems.
+You'll invoke it as "morsec"; to distinguish it from Alan Cox's "morse" program.
+
+A modified version of the program "QSO" by Paul J. Drongowski is also included.
+
+WWW: http://www.catb.org/~esr/morse/
