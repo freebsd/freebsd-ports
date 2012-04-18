@@ -25,6 +25,7 @@
     SUBDIR += pbi-thumbnailer
     SUBDIR += pcmanfm
     SUBDIR += py-nautilus
+    SUBDIR += rodent
     SUBDIR += rox-filer
     SUBDIR += rox-mime-editor
     SUBDIR += rox-session

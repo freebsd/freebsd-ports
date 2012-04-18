@@ -1,0 +1,14 @@
+Rodent is a fast, small and powerful file manager for the
+GNU operating system (but it also works in BSD). That's one
+way to look at it. Another way is to call it a graphic shell
+(that's probably more accurate).
+
+* Rodent wastes no space on menus or function buttons (display
+  real estate is too valuable).
+* All functionality is available through popup menu or keyboard
+  action.
+* Popup menu is context sensitive.
+* Full lpterminal is available from keyboard.
+* Functionality is extendible via plugin technology.
+
+WWW: http://xffm.org/
