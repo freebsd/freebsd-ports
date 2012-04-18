@@ -1,0 +1,48 @@
+--- Makefile.orig	2011-06-04 02:18:03.000000000 -0700
++++ Makefile	2012-04-12 10:03:23.000000000 -0700
+@@ -26,7 +26,7 @@
+ #DEVICE = Linux
+ #DEVICE = OSS
+ #DEVICE = ALSA
+-DEVICE = PA
++#DEVICE = PA
+ 
+ VERSION=2.4
+ 
+@@ -37,16 +37,16 @@
+ 	qso.d/*.[ch] qso.d/Makefile
+ 
+ default:
+-	make testmorse
++	${MAKE} testmorse
+ 
+ all: morse QSO morse.1 QSO.1
+ 
+ morse:
+-	cd morse.d && make DEVICE=${DEVICE}
++	${MAKE} -C morse.d DEVICE=${DEVICE}
+ 	ln morse.d/morse ./morse
+ 
+ QSO:
+-	cd qso.d && make
++	${MAKE} -C qso.d
+ 	ln qso.d/QSO ./QSO
+ 
+ #
+@@ -67,8 +67,8 @@
+ 
+ clean:
+ 	rm -f morse QSO *.1 *.html SHIPPER.*
+-	cd morse.d; make clean
+-	cd qso.d; make clean
++	${MAKE} -C morse.d clean
++	${MAKE} -C qso.d clean
+ 
+ pristine: clean
+ 	rm -f $(MANPAGES) morse.html
+@@ -88,4 +88,4 @@
+ dist: morse-$(VERSION).tar.gz
+ 
+ release: morse-$(VERSION).tar.gz morse.html
+-	shipper -u -m -t; make clean
++	shipper -u -m -t; ${MAKE} clean
