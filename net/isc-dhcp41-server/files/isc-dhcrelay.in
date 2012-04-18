@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp41-server/files/isc-dhcrelay.in,v 1.4 2011-06-21 17:08:11 lev Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp41-server/files/isc-dhcrelay.in,v 1.5 2012-04-18 17:55:19 zi Exp $
 #
 # PROVIDE: dhcrelay
 # REQUIRE: DAEMON
@@ -15,8 +15,11 @@
 dhcrelay_enable=${dhcrelay_enable:-"NO"}
 dhcrelay6_enable=${dhcrelay6_enable:-"NO"}
 # dhcrelay_flags=""			# command option(s)
-# dhcrelay_servers=""			# dhcrelay server(s)
-# dhcrelay_ifaces=""			# ethernet interface(s)
+# dhcrelay_servers=""			# v4 dhcrelay server(s)
+# dhcrelay_ifaces=""			# v4 ethernet interface(s)
+# dhcrelay6_lowers=""			# v6 "lower" network interface(s)
+# dhcrelay6_uppers=""			# v6 "upper" network interface(s)
+
 
 case $0 in
 /etc/rc*)
@@ -43,7 +46,7 @@ esac
 dhcrelay_precmd ()
 {
 	local ifaces _servers _ifaces
-	
+
 	eval "_servers=\${${name}_servers}"
 	eval "_ifaces=\${${name}_ifaces}"
 
@@ -59,11 +62,39 @@ dhcrelay_precmd ()
 	rc_flags="${rc_flags} ${ipversion} ${ifaces} ${_servers}"
 }
 
+dhcrelay6_precmd ()
+{
+	local lowers _lowers uppers _uppers
+
+	eval "_lowers=\${${name}_lowers}"
+	eval "_uppers=\${${name}_uppers}"
+
+	if [ -z "${_lowers}" ]; then
+		err 1 "no ${name} lower(s) configured."
+	fi
+
+	if [ -z "${_uppers}" ]; then
+		err 1 "no ${name} upper(s) configured."
+	fi
+
+	lowers=
+	for lower in ${_lowers}; do
+		lowers="${lowers} -l ${lower}"
+	done
+
+	uppers=
+	for upper in ${_uppers}; do
+		uppers="${uppers} -u ${upper}"
+	done
+
+	rc_flags="${rc_flags} ${ipversion} ${lowers} ${uppers}"
+}
+
 . /etc/rc.subr
 
 rcvar=${name}_enable
 
-command=%%PREFIX%%/sbin/${name}
+command=%%PREFIX%%/sbin/dhcrelay
 pidfile=/var/run/${name}.pid
 start_precmd=${name}_precmd
 
