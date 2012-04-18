@@ -7,6 +7,7 @@
 
 PORTNAME=	Term-ShellUI
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A fully-featured shell-like command line environment
 
-BUILD_DEPENDS=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
-RUN_DEPENDS=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
+BUILD_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
+RUN_DEPENDS=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 
 PERL_CONFIGURE=	yes
 
