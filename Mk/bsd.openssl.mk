@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.47 2012-04-15 07:31:52 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.48 2012-04-18 11:38:20 bapt Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -100,6 +100,14 @@ OPENSSLBASE=		${LOCALBASE}
 # find installed port and use it for dependency
 PKG_DBDIR?=		${DESTDIR}/var/db/pkg
 .if !defined(OPENSSL_INSTALLED)
+.if defined(WITH_PKGNG)
+.if defined(DESTDIR)
+PKGARGS=	-c ${DESTDIR}
+.else
+PKGARGS=
+.endif
+OPENSSL_INSTALLED!=	${PKG_BIN} ${PKGARGS} which -qo ${LOCALBASE}/lib/libcrypto.so
+.else
 OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 			xargs -0 grep -l "^lib/libssl.so." | \
 			while read contents; do \
@@ -107,9 +115,15 @@ OPENSSL_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 				if test "$${sslprefix}" = "@cwd ${LOCALBASE}" ; then \
 					echo "$${contents}"; break; fi; done
 .endif
+.endif
 .if defined(OPENSSL_INSTALLED) && ${OPENSSL_INSTALLED} != ""
+.if defined(WITH_PKGNG)
+OPENSSL_PORT=		${OPENSSL_INSTALLED}
+OPENSSL_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | grep "^`pkg query "%p" ${OPENSSL_INSTALLED}`/lib/libssl.so."
+.else
 OPENSSL_PORT!=		grep "^@comment ORIGIN:" "${OPENSSL_INSTALLED}" | ${CUT} -d : -f 2
 OPENSSL_SHLIBFILE!=	grep "^lib/libssl.so." "${OPENSSL_INSTALLED}"
+.endif
 OPENSSL_SHLIBVER?=	${OPENSSL_SHLIBFILE:E}
 .else
 # PKG_DBDIR was not found, default
