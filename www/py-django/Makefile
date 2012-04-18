@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	www python
-MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION:R}/ \
+MASTER_SITES=	https://www.djangoproject.com/m/releases/${PORTVERSION}/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
@@ -17,12 +17,14 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
+LICENSE=	BSD
+
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
 
-CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[12]*
+CONFLICTS=	py2[0-9]-django-devel-[0-9]* py2[0-9]-django-1.[23]*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
@@ -41,7 +43,6 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .if defined(WITH_POSTGRESQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so:${PORTSDIR}/databases/py-psycopg2
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-changeset_16520.diff
 .endif
 
 .if defined(WITH_MYSQL)
@@ -58,7 +59,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-changeset_16223_16231.diff
 PORTDOCS=	*
 .endif
 
