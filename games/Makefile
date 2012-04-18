@@ -510,6 +510,7 @@
     SUBDIR += ltris
     SUBDIR += lucidlife
     SUBDIR += luola
+    SUBDIR += lwjgl
     SUBDIR += macopix
     SUBDIR += madbomber
     SUBDIR += maelstrom

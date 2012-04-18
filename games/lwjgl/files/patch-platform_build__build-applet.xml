@@ -1,0 +1,21 @@
+Obtained from http://foo.poildetroll.net/minecraft/lwjgl-2.7.1-freebsd.diff
+
+
+--- ./platform_build/build-applet.xml.orig	2011-02-06 19:22:46.000000000 +0000
++++ ./platform_build/build-applet.xml	2012-03-26 18:14:03.104373501 +0000
+@@ -1,7 +1,7 @@
+ <project name="applet">
+ 
+ 	<!-- Create our packer task -->
+-	<taskdef name="pack200" classname="com.sun.tools.apache.ant.pack200.Pack200Task" classpath="platform_build/Pack200Task.jar"/>
++	<!-- <taskdef name="pack200" classname="com.sun.tools.apache.ant.pack200.Pack200Task" classpath="platform_build/Pack200Task.jar"/> -->
+ 
+ 	<target name="applet">
+ 		<antcall target="-applet">
+@@ -144,4 +144,4 @@
+ 			<param name="output" value="applet/advance/solaris_natives.jar.lzma"/>
+ 		</antcall>
+ 	</target>
+-</project>
+\ No newline at end of file
++</project>
