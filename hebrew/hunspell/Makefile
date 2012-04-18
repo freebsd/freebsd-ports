@@ -8,7 +8,8 @@
 PORTNAME=	hunspell
 PORTVERSION=	1.2
 CATEGORIES=	hebrew textproc
-MASTER_SITES=	http://hspell.ivrix.org.il/
+MASTER_SITES=	http://hspell.ivrix.org.il/ \
+		LOCAL/sunpoet/${PORTNAME}
 DISTNAME=	hspell-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
