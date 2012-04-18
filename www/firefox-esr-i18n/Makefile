@@ -21,6 +21,7 @@ EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_FIREFOX=	10
 USE_XPI=	firefox linux-firefox
+LATEST_LINK=	firefox-esr-i18n
 
 USE_SUBMAKE=	yes
 
