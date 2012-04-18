@@ -206,6 +206,7 @@ MAN5+=	ldap.conf.5 \
 	slapd-ldap.5 \
 	slapd-ldbm.5 \
 	slapd-ldif.5 \
+	slapd-mdb.5 \
 	slapd-meta.5 \
 	slapd-monitor.5 \
 	slapd-ndb.5 \
@@ -242,7 +243,8 @@ MAN5+=	ldap.conf.5 \
 	slapo-unique.5 \
 	slapo-valsort.5 
 MLINKS+= \
-	slapd-bdb.5 slapd-hdb.5
+	slapd-bdb.5 slapd-hdb.5 \
+	slapd-sock.5 slapo-sock.5
 
 MAN8+=	slapacl.8 \
 	slapadd.8 \

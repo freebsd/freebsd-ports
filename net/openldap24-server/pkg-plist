@@ -1,17 +1,26 @@
 @comment $FreeBSD$
 @unexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
-etc/openldap/schema/README
-etc/openldap/schema/core.ldif
-etc/openldap/schema/cosine.ldif
-etc/openldap/schema/dyngroup.ldif
-etc/openldap/schema/inetorgperson.ldif
-etc/openldap/schema/nis.ldif
-etc/openldap/schema/openldap.ldif
-etc/openldap/schema/pmi.schema
-etc/openldap/schema/pmi.schema.default
+etc/openldap/slapd.ldif.default
+etc/openldap/slapd.ldif
 @unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
 etc/openldap/slapd.conf.default
 @exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
+etc/openldap/schema/ppolicy.ldif
+etc/openldap/schema/pmi.schema.default
+etc/openldap/schema/pmi.schema
+etc/openldap/schema/pmi.ldif
+etc/openldap/schema/openldap.ldif
+etc/openldap/schema/nis.ldif
+etc/openldap/schema/misc.ldif
+etc/openldap/schema/java.ldif
+etc/openldap/schema/inetorgperson.ldif
+etc/openldap/schema/dyngroup.ldif
+etc/openldap/schema/duaconf.ldif
+etc/openldap/schema/cosine.ldif
+etc/openldap/schema/core.ldif
+etc/openldap/schema/corba.ldif
+etc/openldap/schema/collective.ldif
+etc/openldap/schema/README
 etc/openldap/DB_CONFIG.example
 %%SLAPI%%lib/libslapi.a
 %%SLAPI%%lib/libslapi.la
