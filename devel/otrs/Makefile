@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	3.0.11
+PORTVERSION=	3.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -67,7 +67,7 @@ PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		System/Crypt System/CustomerAuth System/CustomerUser \
 		System/CustomerUser/ System/
 DOCS_DIRS_LIST=	"" manual/en
-DOCS_FILES_LIST=	C[A-Z]* INSTALL RE* TODO UPGRADING
+DOCS_FILES_LIST=	C[A-Z]* INSTALL RE* UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_FILES=	scripts/suse* scripts/redhat* \
@@ -144,6 +144,9 @@ IGNORE=	you only need 1 spell checker
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC} -name "*.pm" | \
+		${XARGS} ${REINPLACE_CMD} -i '' \
+      			-e 's|Digest::SHA::PurePerl|Digest::SHA|g'
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${RM} -rf ${WRKSRC}/Kernel/cpan-lib/ \
 		${CLEAN_FILES:S!^!${WRKSRC}/!}
