@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugspots
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
