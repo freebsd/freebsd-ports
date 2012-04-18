@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.5 2011-11-10 06:45:45 mm Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postgrey/files/pkg-install.in,v 1.6 2012-04-18 07:54:30 crees Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
 
@@ -16,6 +16,11 @@ PRE-INSTALL)
     exit 1
   fi
 
+  ;;
+
+POST-INSTALL)
+  echo "---> Starting post-install script:"
+
   # Create home directory if required
   if [ -d "%%POSTGREYDIR%%" ]; then
     echo "---> Using existing Postgrey database directory (%%POSTGREYDIR%%)"
@@ -27,10 +32,6 @@ PRE-INSTALL)
     /usr/sbin/chown -R "%%USER%%:%%GROUP%%" "%%POSTGREYDIR%%" || exit 1
     /bin/chmod g+s "%%POSTGREYDIR%%" || exit 1
   fi
-  ;;
-
-POST-INSTALL)
-  echo "---> Starting post-install script:"
 
   for i in %%ETCFILES%%; do
     if [ ! -f "%%PREFIX%%/etc/postfix/postgrey_${i}" ]; then
