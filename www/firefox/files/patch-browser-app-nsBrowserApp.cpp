@@ -1,18 +1,23 @@
---- browser/app/nsBrowserApp.cpp	2011-09-28 22:24:36.000000000 +0200
-+++ ../../ff6/mozilla-release/browser/app/nsBrowserApp.cpp	2011-09-02 22:15:19.000000000 +0200
-@@ -36,19 +36,14 @@
+--- browser/app/nsBrowserApp.cpp	2012-03-13 02:36:38.000000000 +0100
++++ ../../../firefox-esr/work/mozilla-esr10/browser/app/nsBrowserApp.cpp	2012-03-15 10:17:09.000000000 +0100
+@@ -36,23 +36,14 @@
   *
   * ***** END LICENSE BLOCK ***** */
  
+-#include "application.ini.h"
 -#include "nsXPCOMGlue.h"
- #include "nsXULAppAPI.h"
 -#if defined(XP_WIN)
++#include "nsXULAppAPI.h"
 +#ifdef XP_WIN
  #include <windows.h>
  #include <stdlib.h>
 -#elif defined(XP_UNIX)
 -#include <sys/time.h>
 -#include <sys/resource.h>
+-#endif
+-
+-#ifdef XP_MACOSX
+-#include "MacQuirks.h"
  #endif
  
  #include <stdio.h>
@@ -21,7 +26,7 @@
  
  #include "plstr.h"
  #include "prprf.h"
-@@ -59,16 +54,11 @@
+@@ -63,16 +54,11 @@
  #include "nsStringGlue.h"
  
  #ifdef XP_WIN
@@ -40,7 +45,7 @@
  
  static void Output(const char *fmt, ... )
  {
-@@ -95,12 +85,12 @@
+@@ -99,12 +85,12 @@
    {
      if (*++arg == '-')
        ++arg;
@@ -54,8 +59,8 @@
 +    return !PL_strcasecmp(++arg, s);
  #endif
  
-   return PR_FALSE;
-@@ -116,48 +106,22 @@
+   return false;
+@@ -120,35 +106,22 @@
    ~ScopedLogging() { NS_LogTerm(); }
  };
  
@@ -86,22 +91,13 @@
 +  ScopedLogging log;
 +
    nsCOMPtr<nsILocalFile> appini;
--#ifdef XP_WIN
--  // exePath comes from mozilla::BinaryPath::Get, which returns a UTF-8
--  // encoded path, so it is safe to convert it
--  nsresult rv = NS_NewLocalFile(NS_ConvertUTF8toUTF16(exePath), false,
--                                getter_AddRefs(appini));
--#else
--  nsresult rv = NS_NewNativeLocalFile(nsDependentCString(exePath), false,
--                                      getter_AddRefs(appini));
--#endif
+-  nsresult rv;
 +  nsresult rv = XRE_GetBinaryPath(argv[0], getter_AddRefs(appini));
-   if (NS_FAILED(rv)) {
++  if (NS_FAILED(rv)) {
 +    Output("Couldn't calculate the application directory.");
-     return 255;
-   }
--
-   appini->SetNativeLeafName(NS_LITERAL_CSTRING("application.ini"));
++    return 255;
++  }
++  appini->SetNativeLeafName(NS_LITERAL_CSTRING("application.ini"));
  
    // Allow firefox.exe to launch XULRunner apps via -app <application.ini>
    // Note that -app must be the *first* argument.
@@ -111,7 +107,7 @@
    if (appDataFile && *appDataFile) {
      rv = XRE_GetFileFromPath(appDataFile, getter_AddRefs(appini));
      if (NS_FAILED(rv)) {
-@@ -177,12 +141,8 @@
+@@ -168,133 +141,23 @@
        return 255;
      }
  
@@ -126,16 +122,44 @@
      argv[2] = argv[0];
      argv += 2;
      argc -= 2;
-@@ -197,90 +157,7 @@
+   }
  
-   int result = XRE_main(argc, argv, appData);
-   XRE_FreeAppData(appData);
+-  int result;
+-  if (appini) {
+-    nsXREAppData *appData;
+-    rv = XRE_CreateAppData(appini, &appData);
+-    if (NS_FAILED(rv)) {
+-      Output("Couldn't read application.ini");
+-      return 255;
+-    }
+-    result = XRE_main(argc, argv, appData);
+-    XRE_FreeAppData(appData);
+-  } else {
+-#ifdef XP_WIN
+-    // exePath comes from mozilla::BinaryPath::Get, which returns a UTF-8
+-    // encoded path, so it is safe to convert it
+-    rv = NS_NewLocalFile(NS_ConvertUTF8toUTF16(exePath), PR_FALSE,
+-                         getter_AddRefs(appini));
+-#else
+-    rv = NS_NewNativeLocalFile(nsDependentCString(exePath), PR_FALSE,
+-                               getter_AddRefs(appini));
+-#endif
+-    if (NS_FAILED(rv)) {
+-      return 255;
+-    }
+-    result = XRE_main(argc, argv, &sAppData);
+-  }
+-
 -  return result;
 -}
 -
 -int main(int argc, char* argv[])
 -{
 -  char exePath[MAXPATHLEN];
+-
+-#ifdef XP_MACOSX
+-  TriggerQuirks();
+-#endif
 -
 -  nsresult rv = mozilla::BinaryPath::Get(argv[0], exePath);
 -  if (NS_FAILED(rv)) {
@@ -173,13 +197,18 @@
 -    Output("Couldn't load XPCOM.\n");
 -    return 255;
 -  }
+-  // Reset exePath so that it is the directory name and not the xpcom dll name
+-  *lastSlash = 0;
 -
 -  rv = XPCOMGlueLoadXULFunctions(kXULFuncs);
--  if (NS_FAILED(rv)) {
++  nsXREAppData *appData;
++  rv = XRE_CreateAppData(appini, &appData);
+   if (NS_FAILED(rv)) {
 -    Output("Couldn't load XRE functions.\n");
--    return 255;
--  }
--
++    Output("Couldn't read application.ini");
+     return 255;
+   }
+ 
 -#ifdef XRE_HAS_DLL_BLOCKLIST
 -  XRE_SetupDllBlocklist();
 -#endif
@@ -215,6 +244,8 @@
 -  }
 -
 -  XPCOMGlueShutdown();
++  int result = XRE_main(argc, argv, appData);
++  XRE_FreeAppData(appData);
 +  if (appEnv)
 +    PR_smprintf_free(appEnv);
    return result;

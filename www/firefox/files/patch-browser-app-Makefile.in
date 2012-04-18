@@ -1,6 +1,6 @@
---- browser/app/Makefile.in	2011-09-28 22:24:36.000000000 +0200
-+++ ../../ff6/mozilla-release/browser/app/Makefile.in	2011-09-02 22:15:19.000000000 +0200
-@@ -92,22 +91,35 @@
+--- browser/app/Makefile.in.orig	2012-02-22 17:06:17.000000000 +0100
++++ browser/app/Makefile.in	2012-03-07 20:46:17.000000000 +0100
+@@ -66,23 +66,36 @@
  else
  # Build a binary bootstrapping with XRE_main
  
@@ -15,6 +15,7 @@
  LOCAL_INCLUDES += -I$(topsrcdir)/toolkit/xre
  LOCAL_INCLUDES += -I$(topsrcdir)/xpcom/base
 -LOCAL_INCLUDES += -I$(topsrcdir)/xpcom/build
+ LOCAL_INCLUDES += -I$(DEPTH)/build
  
 -DEFINES += -DXPCOM_GLUE
 -STL_FLAGS=
@@ -37,10 +38,10 @@
 +LIBS += -ljprof
 +endif
 +
- ifndef MOZ_WINCONSOLE
- ifdef MOZ_DEBUG
- MOZ_WINCONSOLE = 1
-@@ -182,9 +194,18 @@
+ ifdef MOZ_LINKER
+ LIBS += $(ZLIB_LIBS)
+ endif
+@@ -157,9 +170,18 @@
  
  ifneq (,$(filter-out OS2 WINNT,$(OS_ARCH)))
  
