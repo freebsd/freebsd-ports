@@ -1,3 +1,11 @@
+Version 4.84.5_3
+================
+- Added FreeBSD required mktemp options
+
+Version 4.84.5_2
+================
+- Fixed creation of mailscanner.cf symlink
+
 Version 4.84.5_1
 ================
 - Added patch for TNEF.pm bug
@@ -57,8 +65,8 @@ Version 4.61.7
 ==============
 - Upgrade to 4.61.7
 - Attention: update_spamassassin and update_spamassassin.cron are rewritten to fit
-  FreeBSD. Untestet. If you are using non-standard directories or FreeBSD < 6 you will
-  have to tweck update_spamassassin.
+  FreeBSD. Untested. If you are using non-standard directories or FreeBSD < 6 you will
+  have to check update_spamassassin.
 
 Version 4.60.8_2
 ================
