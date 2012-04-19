@@ -15,6 +15,7 @@ include/userfw/modules/dummynet.h
 include/userfw/modules/ip.h
 include/userfw/modules/ipfw.h
 include/userfw/modules/ipv4.h
+include/userfw/modules/log.h
 include/userfw/modules/multiruleset.h
 @dirrmtry include/userfw/modules
 @dirrmtry include/userfw
@@ -24,6 +25,7 @@ include/userfw/modules/multiruleset.h
 %%KMODDIR%%/userfw_counters.ko
 %%KMODDIR%%/userfw_dummynet.ko
 %%KMODDIR%%/userfw_ipfw.ko
+%%KMODDIR%%/userfw_log.ko
 %%KMODDIR%%/userfw_multiruleset.ko
 @exec /usr/sbin/kldxref /%%KMODDIR%%
 @unexec /usr/sbin/kldxref /%%KMODDIR%%
