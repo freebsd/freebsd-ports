@@ -1,3 +1,4 @@
+%%GDB_LINK%%bin/gdb
 bin/gdb%%VER%%
 bin/gdbtui%%VER%%
 %%PYTHON%%share/gdb%%VER%%/python/gdb/__init__.py
@@ -11,5 +12,3 @@ bin/gdbtui%%VER%%
 %%PYTHON%%@dirrm share/gdb%%VER%%/python/gdb
 %%PYTHON%%@dirrm share/gdb%%VER%%/python
 %%PYTHON%%@dirrm share/gdb%%VER%%
-@exec if $( %%GDB_LINK%% ) ; then ln -fs %%PREFIX%%/bin/gdb%%VER%% %%PREFIX%%/bin/gdb; fi
-@unexec if $( %%GDB_LINK%% ) ; then rm -f %%PREFIX%%/bin/gdb; fi
