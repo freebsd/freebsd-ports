@@ -6,6 +6,7 @@
 
 PORTNAME=	komodo-edit
 PORTVERSION=	6.1.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/releases/${PORTVERSION}/
 DISTNAME=	Komodo-Edit-${PORTVERSION}-8334-linux-libcpp6-x86
@@ -18,12 +19,13 @@ CONFLICTS=	komodo-ide-*
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_LINUX=	f10
-USE_LINUX_APPS=	gtk2 jpeg
-
-DESKTOP_ENTRIES=	"Komodo Edit" "Free multi-platform editor that makes it easy to write quality code." \
-			"${DATADIR}/share/icons/komodo48.png" \
-			"${PREFIX}/bin/komodo %%F" "Application;Development;Utility;TextEditor;" \
-			false
+USE_LINUX_APPS=	gtk2 jpeg dbusglib
+DESKTOP_ENTRIES="Komodo Edit" \
+		"Free multi-platform editor that makes it easy to write quality code." \
+		${DATADIR}/share/icons/komodo48.png \
+		"${PORTNAME}" \
+		"Development;Utility;TextEditor;" \
+		${FALSE}
 
 .include <bsd.port.pre.mk>
 
