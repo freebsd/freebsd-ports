@@ -1,4 +1,4 @@
-# New ports collection makefile for:	cfengine v3
+
 # Date created:		February 2, 2009
 # Whom:			jrhett@netconsonance.com
 #
@@ -6,44 +6,73 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cfengine.com/source-code/download?file=
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 LATEST_LINK=	cfengine3
-FETCH_BEFORE_ARGS=   -o ${DISTDIR}/${DISTFILES}
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
+
+CONFLICTS=	cfengine-2*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
-WITH_BDB_VER?=	47
-USE_BDB=	yes
+USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
-DOCSDIR=	${PREFIX}/share/doc/cfengine3
+DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html \
-		--with-berkeleydb=${LOCALBASE}
+		--mandir=${PREFIX}/man \
+		--enable-fhs
 
-CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
-		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
-		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
+OPTIONS=	PCRE	"Enable Perl-compatible regular expressions"	on \
+		TOKYOCABINET	"Enable TokyoCabinet support"		on \
+		QDBM	"Enable QDBM support"				off \
+		PGSQL	"Enable PostgreSQL connector"			off \
+		MYSQL	"Enable MySQL connector"			off
 
-OPTIONS=	PCRE	"Enable Perl-compatible regular expressions"		on
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_TOKYOCABINET) && defined(WITH_QDBM)
+BROKEN=		TOKYOCABINET and QDBM are mutuallly exclusive
+.endif
+
 .if defined(WITH_PCRE)
-LIB_DEPENDS+=   pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 .endif
+
+.if defined(WITH_TOKYOCABINET)
+CONFIGURE_ARGS+=	--with-tokyocabinet=${LOCALBASE}
+LIB_DEPENDS+=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
+.endif
+
+.if defined(WITH_QDBM)
+CONFIGURE_ARGS+=	--with-qdbm=${LOCALBASE}
+LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
+.endif
+
+.if defined(WITH_PGSQL)
+CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-postgresql=no
+.endif
+
+.if defined(WITH_MYSQL)
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-mysql=no
+.endif
+
 
 MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
 	cf-report.8	cf-serverd.8	cf-execd.8	\
 	cf-know.8	cf-promises.8	cf-runagent.8
-	
 
 post-patch:
 		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\

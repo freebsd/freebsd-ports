@@ -1,6 +1,6 @@
-lib/libpromises.la
-lib/libpromises.so
-lib/libpromises.so.1
+libexec/cfengine/libpromises.la
+libexec/cfengine/libpromises.so
+libexec/cfengine/libpromises.so.1
 sbin/cf-agent
 sbin/cf-execd
 sbin/cf-key
@@ -10,9 +10,9 @@ sbin/cf-promises
 sbin/cf-report
 sbin/cf-runagent
 sbin/cf-serverd
-share/cfengine/masterfiles/cfengine_stdlib.cf
-share/cfengine/masterfiles/failsafe.cf
-share/cfengine/masterfiles/promises.cf
+share/cfengine/CoreBase/failsafe.cf
+share/cfengine/CoreBase/cfengine_stdlib.cf
+share/cfengine/CoreBase/promises.cf
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/example_config/cfengine_stdlib.cf
@@ -22,7 +22,8 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/example_config/update.cf
 %%DOCSDIR%%/examples/active_directory.cf
 %%DOCSDIR%%/examples/app_baseline.cf
-%%DOCSDIR%%/examples/cfengine_stdlib.cf
+%%DOCSDIR%%/examples/guest_environment_kvm.cf
+%%DOCSDIR%%/examples/hostswithclass.cf
 %%DOCSDIR%%/examples/promise_knowledge.cf
 %%DOCSDIR%%/examples/unit_abort.cf
 %%DOCSDIR%%/examples/unit_accessed_before.cf
@@ -80,8 +81,6 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_edit_setvar.cf
 %%DOCSDIR%%/examples/unit_edit_triggerclass.cf
 %%DOCSDIR%%/examples/unit_env.cf
-%%DOCSDIR%%/examples/unit_environment.cf
-%%DOCSDIR%%/examples/unit_environment_simple.cf
 %%DOCSDIR%%/examples/unit_epimenides.cf
 %%DOCSDIR%%/examples/unit_escape.cf
 %%DOCSDIR%%/examples/unit_exec_args.cf
@@ -145,12 +144,15 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_log_private.cf
 %%DOCSDIR%%/examples/unit_loops.cf
 %%DOCSDIR%%/examples/unit_lsdir.cf
+%%DOCSDIR%%/examples/unit_maplist.cf
 %%DOCSDIR%%/examples/unit_measure_log.cf
 %%DOCSDIR%%/examples/unit_measurements.cf
 %%DOCSDIR%%/examples/unit_menu.cf
 %%DOCSDIR%%/examples/unit_method.cf
+%%DOCSDIR%%/examples/unit_method_polymorph.cf
 %%DOCSDIR%%/examples/unit_method_validate.cf
 %%DOCSDIR%%/examples/unit_method_var.cf
+%%DOCSDIR%%/examples/unit_method_var2.cf
 %%DOCSDIR%%/examples/unit_module_exec.cf
 %%DOCSDIR%%/examples/unit_module_exec_2.cf
 %%DOCSDIR%%/examples/unit_monitord.cf
@@ -159,10 +161,11 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_neighbourhood_watch.cf
 %%DOCSDIR%%/examples/unit_null_config.cf
 %%DOCSDIR%%/examples/unit_occurrences.cf
+%%DOCSDIR%%/examples/unit_orchestration_hostlist.cf
 %%DOCSDIR%%/examples/unit_ordering.cf
 %%DOCSDIR%%/examples/unit_package_apt.cf
 %%DOCSDIR%%/examples/unit_package_freebsd.cf
-%%DOCSDIR%%/examples/unit_package_hash.cf
+%%DOCSDIR%%/examples/unit_package_latest.cf
 %%DOCSDIR%%/examples/unit_package_msi_file.cf
 %%DOCSDIR%%/examples/unit_package_msi_version.cf
 %%DOCSDIR%%/examples/unit_package_rpm.cf
@@ -182,7 +185,6 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_process_restart.cf
 %%DOCSDIR%%/examples/unit_process_restart_basic.cf
 %%DOCSDIR%%/examples/unit_process_signalling.cf
-%%DOCSDIR%%/examples/unit_services_win.cf
 %%DOCSDIR%%/examples/unit_product.cf
 %%DOCSDIR%%/examples/unit_promises.cf
 %%DOCSDIR%%/examples/unit_readlist.cf
@@ -218,9 +220,12 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_server_flatcopy_localhost.cf
 %%DOCSDIR%%/examples/unit_service_disable.cf
 %%DOCSDIR%%/examples/unit_service_start.cf
+%%DOCSDIR%%/examples/unit_services_concept.cf
+%%DOCSDIR%%/examples/unit_services_win.cf
 %%DOCSDIR%%/examples/unit_setuidlog.cf
 %%DOCSDIR%%/examples/unit_setvar.cf
 %%DOCSDIR%%/examples/unit_software_dist.cf
+%%DOCSDIR%%/examples/unit_software_update_version_yum.cf
 %%DOCSDIR%%/examples/unit_splitstring.cf
 %%DOCSDIR%%/examples/unit_sql.cf
 %%DOCSDIR%%/examples/unit_storage.cf
@@ -245,12 +250,13 @@ share/cfengine/masterfiles/promises.cf
 %%DOCSDIR%%/examples/unit_warnifline.cf
 %%DOCSDIR%%/examples/unit_webserver.cf
 %%DOCSDIR%%/examples/unit_zenoss.cf
+%%DOCSDIR%%/examples/win_dns_client.cf
 %%DOCSDIR%%/examples/win_emergency.cf
 %%DOCSDIR%%/examples/win_registry.cf
 %%DOCSDIR%%/examples/win_schedule.cf
-%%DOCSDIR%%/examples/win_services.cf
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%/example_config
 @dirrm %%DOCSDIR%%
-@dirrm share/cfengine/masterfiles
+@dirrm share/cfengine/CoreBase
 @dirrm share/cfengine
+@dirrm libexec/cfengine
