@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b24
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -48,7 +48,7 @@ OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		POLICY "Install the Unlimited Strength Policy Files" off \
 		SOUND "Enable sound support" off \
 		TEST "Add support for running regression test" off \
-		TZUPDATE "Update the time zone data" on
+		TZUPDATE "Update the time zone data" off
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
