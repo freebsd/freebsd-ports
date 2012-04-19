@@ -3283,3 +3283,4 @@ mail/dbmail20||2012-04-18|Has expired: No more supported upstream. No ports depe
 mail/dbmail21||2012-04-18|Has expired: No more supported upstream. No ports depend on this
 mail/dbmail23||2012-04-18|Has expired: No more supported upstream. No ports depend on this
 math/octave-forge-times||2012-04-18|Depreciated upstream
+www/fpc-httpd13||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
