@@ -1,76 +1,20 @@
---- Makefile.orig	2008-02-01 00:06:38.000000000 +1100
-+++ Makefile	2008-07-29 13:09:58.000000000 +1000
-@@ -21,7 +21,7 @@
+--- Makefile.orig	2010-10-10 15:56:56.000000000 -0700
++++ Makefile	2012-04-11 22:30:19.000000000 -0700
+@@ -41,7 +41,7 @@
+ ELISP_EXTRAS=isar/interface isar/isartags
+ EXTRA_DIRS = images
  
- # Set this to "emacs" or "xemacs" according to your version of Emacs.
- # NB: this is also used to set default install path names below.
--EMACS=$(shell if [ -z "`which emacs`" ]; then echo xemacs; else echo emacs; fi)
-+EMACS=${EMACS_NAME}
+-DOC_FILES=AUTHORS BUGS COMPATIBILITY CHANGES COPYING INSTALL README REGISTER doc/*.pdf
++DOC_FILES=AUTHORS BUGS COMPATIBILITY CHANGES COPYING INSTALL README REGISTER
+ DOC_EXAMPLES=acl2/*.acl2 hol98/*.sml isar/*.thy lclam/*.lcm lego/*.l pgshell/*.pgsh phox/*.phx plastic/*.lf twelf/*.elf
+ DOC_SUBDIRS=${DOC_EXAMPLES} */README* */CHANGES */BUGS 
  
- # We default to /usr rather than /usr/local because installs of
- # desktop and doc files under /usr/local are unlikely to work with
-@@ -29,8 +29,7 @@
- # individually before the install section.
- # NB: DEST_PREFIX is used for final destination prefix, in case we're
- # packaging into a build prefix rather than live root (e.g. in rpmbuild).
--PREFIX=/usr
--DEST_PREFIX=/usr
-+DEST_PREFIX=${PREFIX}
- 
- PWD=$(shell pwd)
- 
-@@ -75,8 +74,8 @@
- ##	     old .elc's and re-compile.
- ##
- compile: $(EL) x-symbol/lisp/*.el
--	lastemacs=`cat .byte-compile 2>/dev/null || echo `; if [ "$$lastemacs" != "" ] && [ "$$lastemacs" != "$(EMACS)" ]; then rm -f .byte-compile $(ELC) x-symbol/lisp/*.elc; fi
--	make .byte-compile
-+	lastemacs=`cat .byte-compile 2>/dev/null || echo `; if [ "$$lastemacs" != "" ] && [ "$$lastemacs" != "$(EMACS_NAME)" ]; then rm -f .byte-compile $(ELC) x-symbol/lisp/*.elc; fi
-+	$(MAKE) .byte-compile
- 
- ## Compiling can show up errors in the code, but be wary of fixing obsoletion
- ## or argument call warnings unless they're valid for both Emacsen.
-@@ -85,10 +84,10 @@
- 	@echo "****************************************************************"
- 	@echo " Byte compiling... "
- 	@echo "****************************************************************"
--	make elc
-+	$(MAKE) elc
- 	@echo " Byte compiling X-Symbol..."
- 	(cd x-symbol/lisp; $(MAKE) EMACS="$(EMACS) -q -no-site-file")
--	echo $(EMACS) > $(@)
-+	echo $(EMACS_NAME) > $(@)
- 	@echo "****************************************************************"
- 	@echo " Finished."
- 	@echo "****************************************************************"
-@@ -137,39 +136,35 @@
- # Set Elisp directories according to paths used in Red Hat RPMs
- # (which may or may not be official Emacs policy).  We generate
- # a pg-init.el file which loads the appropriate proof-site.el.
--ifeq ($(EMACS),xemacs) 
--ELISPP=share/xemacs/site-packages/lisp/ProofGeneral
--ELISP_START=${PREFIX}/share/xemacs/site-packages/lisp/site-start.d
--else
--ELISPP=share/${EMACS}/site-lisp/ProofGeneral
--ELISP_START=${PREFIX}/share/${EMACS}/site-lisp/site-start.d
--endif
-+ELISPP=${EMACS_SITE_LISPDIR}/ProofGeneral
-+ELISP_START=${PREFIX}/${EMACS_SITE_LISPDIR}/site-start.d
- 
- ELISP=${PREFIX}/${ELISPP}
- DEST_ELISP=${DEST_PREFIX}/${ELISPP}
- 
- BINDIR=${PREFIX}/bin
- DESKTOP=${PREFIX}/share
--DOCDIR=${PREFIX}/share/doc/ProofGeneral
--MANDIR=${PREFIX}/share/man/man1
--INFODIR=${PREFIX}/share/info
-+DOCDIR=${DOCSDIR}
-+MANDIR=${PREFIX}/man/man1
-+INFODIR=${PREFIX}/info
+@@ -135,22 +135,23 @@
+ MANDIR=${PREFIX}/share/man/man1
+ INFODIR=${PREFIX}/share/info
  
 -install: install-desktop install-elisp install-bin install-init
-+install: install-desktop install-elisp install-bin install-init install-man ${INSTALLDOC}
++install: install-desktop install-elisp install-bin install-init ${INSTALLDOC}
  
  install-desktop:
 -	mkdir -p ${DESKTOP}/icons/hicolor/16x16
@@ -103,7 +47,7 @@
  # backwards compatibility with old linuxes
  	mkdir -p ${DESKTOP}/application-registry
  	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
-@@ -190,15 +185,23 @@
+@@ -168,15 +169,23 @@
  install-el:
  	mkdir -p ${ELISP}
  	for f in ${ELISP_DIRS} ${EXTRA_DIRS}; do mkdir -p ${ELISP}/$$f; done
@@ -132,7 +76,7 @@
  
  install-init:
  	mkdir -p ${ELISP_START}
-@@ -208,24 +211,33 @@
+@@ -186,18 +195,23 @@
  
  install-bin: scripts
  	mkdir -p ${BINDIR}
@@ -140,7 +84,7 @@
 +	${BSD_INSTALL_SCRIPT} ${BIN_SCRIPTS} ${BINDIR}
  
 -install-doc: doc.info doc.pdf
-+install-man: doc.info
++install-doc: doc.html
  	mkdir -p ${MANDIR}
 -	cp -pf doc/proofgeneral.1 ${MANDIR}
 -	mkdir -p ${INFODIR}
@@ -150,8 +94,6 @@
 +	${BSD_INSTALL_MAN} doc/proofgeneral.1 ${MANDIR}
 +	${BSD_INSTALL_MAN} doc/PG-adapting.info ${INFODIR}
 +	${BSD_INSTALL_MAN} doc/ProofGeneral.info ${INFODIR}
-+
-+install-doc: doc.pdf doc.html
  	mkdir -p ${DOCDIR}
 -	for f in ${DOC_FILES}; do cp -pf $$f ${DOCDIR}; done
 -	for f in ${DOC_EXAMPLES}; do mkdir -p ${DOCDIR}/`dirname $$f`; cp -pf $$f ${DOCDIR}/$$f; done
@@ -164,16 +106,6 @@
 +	mkdir -p ${DOCDIR}/PG-adapting
 +	for f in doc/PG-adapting/*.html; do \
 +		${BSD_INSTALL_MAN} $$f ${DOCDIR}/PG-adapting/`basename $$f`; done
-+	for f in ProofGeneral.pdf PG-adapting.pdf; do \
-+		${BSD_INSTALL_MAN} doc/$$f ${DOCDIR}/$$f; done
  
  doc: FORCE
--	(cd doc; make EMACS=$(EMACS) $*)
-+	(cd doc; $(MAKE) EMACS=$(EMACS) $*)
- 
- doc.%: FORCE
--	(cd doc; make EMACS=$(EMACS) $*)
-+	(cd doc; $(MAKE) EMACS=$(EMACS) $*)
- 
- ##
- ## scripts: try to patch bash and perl scripts with correct paths
+ 	(cd doc; $(MAKE) EMACS=$(EMACS) $*)
