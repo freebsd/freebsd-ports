@@ -1,0 +1,12 @@
+--- Makefile.orig	2001-01-24 11:57:49.000000000 -0500
++++ Makefile	2012-04-19 17:54:27.000000000 -0400
+@@ -3,8 +3,6 @@
+ KMOD=	plasma_saver
+ SRCS= 	plasma_saver.c
+ 
+-NOMAN=
+-CFLAGS+= -I${.CURDIR}/.. -I.
+-CWARNFLAGS= -Wall
++NO_MAN=
+ 
+ .include <bsd.kmod.mk>

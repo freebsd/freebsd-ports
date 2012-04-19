@@ -1,5 +1,5 @@
 --- plasma_saver.c.orig	2001-01-24 12:03:23.000000000 -0500
-+++ plasma_saver.c	2012-04-18 17:51:10.000000000 -0400
++++ plasma_saver.c	2012-04-19 17:56:10.000000000 -0400
 @@ -52,7 +52,7 @@
  #define SCR_W 320
  #define SCR_H 200
@@ -58,7 +58,17 @@
  		log(LOG_NOTICE, "plasma_saver: the console does not support M_VGA_CG320\n");
  		return(ENODEV);
  	}
-@@ -123,14 +134,15 @@
+@@ -115,7 +126,8 @@
+ 	return(0);
+ }
+ 
+-void draw_plasma(u_char *buffer)
++static void
++draw_plasma(u_char *buffer)
+ {
+ 	short i,j;
+ 	anglebak[0] = angle[0];
+@@ -123,14 +135,15 @@
  	anglebak[2] = angle[2];
          for (i=0; i<PLAS_S; i++)
          {
@@ -82,7 +92,7 @@
  	}
  	for(i=0; i<PLAS_S; i++)
  	{
-@@ -144,11 +156,11 @@
+@@ -144,11 +157,11 @@
  			buffer[((i+45)*SCR_W) + (j+96)] = 128 + 
  				ybuffer[i] + xbuffer[j];
  	}
@@ -99,7 +109,7 @@
  }
  
  static int
-@@ -156,8 +168,13 @@
+@@ -156,8 +169,13 @@
  {
  	if(blank) {
  		if(blanked <= 0) {
