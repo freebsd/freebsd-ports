@@ -221,7 +221,6 @@
     SUBDIR += foswiki
     SUBDIR += foswiki-ModPerlEngineContrib
     SUBDIR += fpc-fastcgi
-    SUBDIR += fpc-httpd20
     SUBDIR += fpc-httpd22
     SUBDIR += free-sa
     SUBDIR += free-sa-devel
