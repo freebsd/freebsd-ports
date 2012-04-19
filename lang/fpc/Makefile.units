@@ -332,7 +332,7 @@ OPT+=-Fu../fcl/*
 
 .if ${PKGNAMESUFFIX} == "-x11"
 .	if defined(WITH_X11)
-USE_XLIB=	yes
+USE_XORG=	xcursor xfont xxf86dga xxf86vm xi xinerama xkbfile xrandr xrender xres xv
 .	endif
 .endif
 
