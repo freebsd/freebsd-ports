@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -55,9 +55,9 @@ OPTIONS=	DEBUG "Build with debugging symbols" off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_GDB_LINK)
-PLIST_SUB+=	GDB_LINK=true
+PLIST_SUB+=	GDB_LINK=""
 .else
-PLIST_SUB+=	GDB_LINK=false
+PLIST_SUB+=	GDB_LINK="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
@@ -101,6 +101,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
 	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
+.if defined(WITH_GDB_LINK)
+	${LN} -sf gdb${VER} ${PREFIX}/bin/gdb
+.endif
 .if defined(WITH_PYTHON)
 	(cd ${WRKSRC}/gdb; ${GMAKE} install-python )
 	(cd ${WRKSRC}/gdb/data-directory; ${GMAKE} install-python )
