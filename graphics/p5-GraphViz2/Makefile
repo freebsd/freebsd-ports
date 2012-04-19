@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.01
+PORTVERSION=	2.02
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSAVAGE
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
 		p5-HTML-Entities-Interpolate>=1.04:${PORTSDIR}/textproc/p5-HTML-Entities-Interpolate \
 		p5-HTML-Tree>=4.2:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Hash-FieldHash>=0.10:${PORTSDIR}/devel/p5-Hash-FieldHash \
+		p5-IPC-Run>=0.90:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Log-Handler>=0.71:${PORTSDIR}/devel/p5-Log-Handler \
 		p5-Parse-RecDescent>=1.965.001:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-Perl6-Slurp>=0.03:${PORTSDIR}/devel/p5-Perl6-Slurp \
@@ -70,12 +71,12 @@ TEST_DEPENDS+=	p5-Test-Simple>=0.94:${PORTSDIR}/devel/p5-Test-Simple
 .if ${PERL_LEVEL} < 501400
 BUILD_DEPENDS+=	p5-HTTP-Tiny>=0.012:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-PathTools>=3.3300:${PORTSDIR}/devel/p5-PathTools \
-		p5-Pod-Simple>=3.16:${PORTSDIR}/textproc/p5-Pod-Simple \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-parent>=0.225:${PORTSDIR}/devel/p5-parent
 RUN_DEPENDS+=	p5-HTTP-Tiny>=0.012:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-PathTools>=3.3300:${PORTSDIR}/devel/p5-PathTools \
-		p5-Pod-Simple>=3.16:${PORTSDIR}/textproc/p5-Pod-Simple \
-		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-parent>=0.225:${PORTSDIR}/devel/p5-parent
 .endif
 
 post-install:
