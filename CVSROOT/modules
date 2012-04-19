@@ -215,6 +215,7 @@ R-cran-ROAuth                   ports/security/R-cran-ROAuth
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-Rpad                     ports/www/R-cran-Rpad
 R-cran-SuppDists                ports/math/R-cran-SuppDists
+R-cran-TTR                      ports/finance/R-cran-TTR
 R-cran-XML                      ports/textproc/R-cran-XML
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-bayesm                   ports/science/R-cran-bayesm
@@ -3504,6 +3505,8 @@ firedns                         ports/dns/firedns
 fireflies                       ports/x11/fireflies
 firefly                         ports/audio/firefly
 firefox                         ports/www/firefox
+firefox-esr                     ports/www/firefox-esr
+firefox-esr-i18n                ports/www/firefox-esr-i18n
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
 firefox-sync                    ports/www/firefox-sync
@@ -6814,6 +6817,7 @@ jiic                            ports/devel/jiic
 jikes                           ports/java/jikes
 jin                             ports/games/jin
 jing                            ports/textproc/jing
+jinput                          ports/games/jinput
 jinzora                         ports/www/jinzora
 jive                            ports/misc/jive
 jjclient                        ports/deskutils/jjclient
@@ -6910,6 +6914,7 @@ junit                           ports/java/junit
 junkbuster                      ports/www/junkbuster
 junkfilter                      ports/mail/junkfilter
 jupp                            ports/editors/jupp
+jutils                          ports/games/jutils
 jvgs                            ports/games/jvgs
 jwasm                           ports/devel/jwasm
 jwhois                          ports/net/jwhois
@@ -8393,6 +8398,7 @@ libtuner                        ports/multimedia/libtuner
 libublio                        ports/devel/libublio
 libudbc                         ports/databases/libudbc
 libukcprog                      ports/devel/libukcprog
+libumberlog                     ports/sysutils/libumberlog
 libumidi                        ports/audio/libumidi
 libungif                        ports/graphics/libungif
 libunicode                      ports/devel/libunicode
@@ -8979,6 +8985,7 @@ lv                              ports/misc/lv
 lv-aspell                       ports/textproc/lv-aspell
 lv2core                         ports/audio/lv2core
 lvwimax                         ports/net/lvwimax
+lwjgl                           ports/games/lwjgl
 lwm                             ports/x11-wm/lwm
 lwp                             ports/devel/lwp
 lxappearance                    ports/x11-themes/lxappearance
@@ -11229,6 +11236,7 @@ p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
+p5-CPAN-Meta-Requirements       ports/devel/p5-CPAN-Meta-Requirements
 p5-CPAN-Meta-YAML               ports/devel/p5-CPAN-Meta-YAML
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
 p5-CPAN-Perl-Releases           ports/devel/p5-CPAN-Perl-Releases
@@ -11585,6 +11593,7 @@ p5-Compress-LeadingBlankSpaces  ports/www/p5-Compress-LeadingBlankSpaces
 p5-Compress-Raw-Bzip2           ports/archivers/p5-Compress-Raw-Bzip2
 p5-Compress-Raw-Lzma            ports/archivers/p5-Compress-Raw-Lzma
 p5-Compress-Raw-Zlib            ports/archivers/p5-Compress-Raw-Zlib
+p5-Compress-Snappy              ports/archivers/p5-Compress-Snappy
 p5-Config-Any                   ports/devel/p5-Config-Any
 p5-Config-ApacheFormat          ports/devel/p5-Config-ApacheFormat
 p5-Config-Auto                  ports/devel/p5-Config-Auto
@@ -15080,6 +15089,7 @@ p5-WebService-Linode            ports/www/p5-WebService-Linode
 p5-WebService-MoviePosterDB     ports/www/p5-WebService-MoviePosterDB
 p5-WebService-MusicBrainz       ports/www/p5-WebService-MusicBrainz
 p5-WebService-NoPaste           ports/www/p5-WebService-NoPaste
+p5-WebService-Prowl             ports/net/p5-WebService-Prowl
 p5-WebService-Rakuten           ports/www/p5-WebService-Rakuten
 p5-WebService-Simple            ports/www/p5-WebService-Simple
 p5-WebService-Technorati        ports/www/p5-WebService-Technorati
@@ -16037,6 +16047,7 @@ p5-compress-lzw                 ports/archivers/p5-Compress-LZW
 p5-compress-raw-bzip2           ports/archivers/p5-Compress-Raw-Bzip2
 p5-compress-raw-lzma            ports/archivers/p5-Compress-Raw-Lzma
 p5-compress-raw-zlib            ports/archivers/p5-Compress-Raw-Zlib
+p5-compress-snappy              ports/archivers/p5-Compress-Snappy
 p5-config-any                   ports/devel/p5-Config-Any
 p5-config-apacheformat          ports/devel/p5-Config-ApacheFormat
 p5-config-auto                  ports/devel/p5-Config-Auto
@@ -16101,6 +16112,7 @@ p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
 p5-cpan-listchanges             ports/devel/p5-cpan-listchanges
 p5-cpan-meta                    ports/devel/p5-CPAN-Meta
+p5-cpan-meta-requirements       ports/devel/p5-CPAN-Meta-Requirements
 p5-cpan-meta-yaml               ports/devel/p5-CPAN-Meta-YAML
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
 p5-cpan-perl-releases           ports/devel/p5-CPAN-Perl-Releases
@@ -19553,6 +19565,7 @@ p5-webservice-linode            ports/www/p5-WebService-Linode
 p5-webservice-movieposterdb     ports/www/p5-WebService-MoviePosterDB
 p5-webservice-musicbrainz       ports/www/p5-WebService-MusicBrainz
 p5-webservice-nopaste           ports/www/p5-WebService-NoPaste
+p5-webservice-prowl             ports/net/p5-WebService-Prowl
 p5-webservice-rakuten           ports/www/p5-WebService-Rakuten
 p5-webservice-simple            ports/www/p5-WebService-Simple
 p5-webservice-technorati        ports/www/p5-WebService-Technorati
@@ -21652,6 +21665,7 @@ ports_m4                        ports/devel/m4
 ports_mixer                     ports/sysutils/mixer
 ports_mk                        ports/devel/mk
 ports_modules                   ports/sysutils/modules
+ports_morse                     ports/comms/morse
 ports_mrouted                   ports/net/mrouted
 ports_mt                        ports/www/MT
 ports_ntp                       ports/net/ntp
@@ -22276,6 +22290,7 @@ py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
 py-django12                     ports/www/py-django12
+py-django13                     ports/www/py-django13
 py-django_compressor            ports/www/py-django_compressor
 py-djblets                      ports/www/py-djblets
 py-dns                          ports/dns/py-dns
@@ -23723,6 +23738,7 @@ r-cran-spdep                    ports/math/R-cran-spdep
 r-cran-stringr                  ports/textproc/R-cran-stringr
 r-cran-strucchange              ports/finance/R-cran-strucchange
 r-cran-suppdists                ports/math/R-cran-SuppDists
+r-cran-ttr                      ports/finance/R-cran-TTR
 r-cran-twitter                  ports/net/R-cran-twitteR
 r-cran-urca                     ports/finance/R-cran-urca
 r-cran-vars                     ports/finance/R-cran-vars
@@ -23986,6 +24002,7 @@ roboto-fonts-ttf                ports/x11-fonts/roboto-fonts-ttf
 rockdodger                      ports/games/rockdodger
 rocksndiamonds                  ports/games/rocksndiamonds
 rocs                            ports/math/rocs
+rodent                          ports/x11-fm/rodent
 rolo                            ports/deskutils/rolo
 romdict                         ports/textproc/romdict
 root-doc                        ports/devel/root-doc
@@ -26277,6 +26294,8 @@ thunar-vfs                      ports/x11-fm/thunar-vfs
 thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
 thunderbird-dictionaries        ports/mail/thunderbird-dictionaries
+thunderbird-esr                 ports/mail/thunderbird-esr
+thunderbird-esr-i18n            ports/mail/thunderbird-esr-i18n
 thunderbird-i18n                ports/mail/thunderbird-i18n
 thunderbird3                    ports/mail/thunderbird3
 thunderbird3-i18n               ports/mail/thunderbird3-i18n
