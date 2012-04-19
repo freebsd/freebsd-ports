@@ -1,11 +1,12 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.13 2011-06-23 05:05:26 acm Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.14 2012-04-19 06:19:58 acm Exp $
 
 @unexec if cmp -s %D/etc/fpc.cfg.sample %D/etc/fpc.cfg; then rm -f %D/etc/fpc.cfg; fi
 etc/fpc.cfg.sample
 @exec if [ ! -f %D/etc/fpc.cfg ] ; then cp -p %D/%F %B/fpc.cfg; fi
 bin/fpc
-bin/fpcmake
 bin/fpcsubst
+bin/fpcmake
+bin/fpcmkcfg
 bin/mkarmins
 bin/mkx86ins
 bin/ppudump
@@ -24,14 +25,15 @@ lib/fpc/%%PORTVERSION%%/msg/errorfi.msg
 lib/fpc/%%PORTVERSION%%/msg/errorhe.msg
 lib/fpc/%%PORTVERSION%%/msg/errorheu.msg
 lib/fpc/%%PORTVERSION%%/msg/errorid.msg
+lib/fpc/%%PORTVERSION%%/msg/erroriu.msg
+lib/fpc/%%PORTVERSION%%/msg/errorru.msg
 lib/fpc/%%PORTVERSION%%/msg/errorn.msg
 lib/fpc/%%PORTVERSION%%/msg/errorpl.msg
 lib/fpc/%%PORTVERSION%%/msg/errorpli.msg
-lib/fpc/%%PORTVERSION%%/msg/errorptd.msg
-lib/fpc/%%PORTVERSION%%/msg/errorptw.msg
+lib/fpc/%%PORTVERSION%%/msg/errorpt.msg
+lib/fpc/%%PORTVERSION%%/msg/errorptu.msg
 lib/fpc/%%PORTVERSION%%/msg/errorues.msg
 lib/fpc/%%PORTVERSION%%/msg/errorr.msg
-lib/fpc/%%PORTVERSION%%/msg/errorrw.msg
 %%FPC_I386%%lib/fpc/%%PORTVERSION%%/ppc386
 %%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/ppcx64
 lib/fpc/%%PORTVERSION%%/samplecfg
@@ -93,6 +95,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/initc.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/initc.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/ipc.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/ipc.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/iso7185.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/iso7185.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/keyboard.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/keyboard.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpbaseunix.a
@@ -121,6 +125,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpgetopts.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpheaptrc.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpinitc.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpipc.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpiso7185.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpkeyboard.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libplineinfo.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libplnfodwrf.a

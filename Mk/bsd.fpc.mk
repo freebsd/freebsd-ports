@@ -30,7 +30,7 @@ _FPCMKINCLUDED=	yes
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.4.4
+DEFAULT_FPC_VER=	2.6.0
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 
@@ -58,18 +58,20 @@ UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 
 _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dbus dts fastcgi fcl-async fcl-base \
 		fcl-db fcl-fpcunit fcl-image fcl-json fcl-net fcl-passrc fcl-process \
-		fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpmkunit fpvectorial \
-		fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash hermes httpd13 \
-		httpd20 httpd22 ibase iconvenc imagemagick imlib ldap libcurl libgd \
-		libpng 	libxml2 lua mad matroska modplug mysql ncurses newt numlib \
-		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
-		postgres proj4 pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite \
-		svgalib symbolic syslog tcl unzip users utmp uuid x11 xforms zlib
+		fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpmkunit fppkg fpvectorial \
+		fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash hermes httpd22 \
+		ibase iconvenc imagemagick imlib ldap libcurl libgd libpng libxml2 \
+		lua mad matroska modplug mysql ncurses newt numlib odbc oggvorbis \
+		openal opengl openssl oracle pasjpeg paszlib pcap postgres proj4 \
+		pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite svgalib symbolic \
+		syslog tcl unzip users utmp uuid x11 xforms zlib
+
+_FPC_CFG_UNITS=	fastcgi fcl-web
 
 .if defined(WANT_FPC_BASE)
 .       if ${WANT_FPC_BASE:L} == "yes"
-USE_FPC=	gdbint graph hash httpd13 httpd20 httpd22 ibase mysql odbc oracle \
-		pasjpeg paszlib postgres pthreads regexpr sqlite
+USE_FPC=	gdbint graph hash httpd22 ibase mysql odbc oracle pasjpeg paszlib \
+		postgres pthreads regexpr sqlite
 .       else
 IGNORE= unknown value, please use "yes" instead of
 .       endif
@@ -95,8 +97,6 @@ IGNORE= cannot install: unknown FPC unit ${UNITS}
 gdbint_UNIT=	devel/fpc-gdbint
 graph_UNIT=	graphics/fpc-graph
 hash_UNIT=	security/fpc-hash
-httpd13_UNIT=	www/fpc-httpd13
-httpd20_UNIT=	www/fpc-httpd20
 httpd22_UNIT=	www/fpc-httpd22
 ibase_UNIT=	databases/fpc-ibase
 mysql_UNIT=	databases/fpc-mysql
@@ -135,6 +135,7 @@ fcl_xml_UNIT=	devel/fpc-fcl-xml
 fftw_UNIT=	math/fpc-fftw
 fpmkunit_UNIT=	devel/fpc-fpmkunit
 fpgtk_UNIT=	graphics/fpc-fpgtk
+fppkg_UNIT=	devel/fpc-fppkg
 fpvectorial_UNIT=	graphics/fpc-fpvectorial
 fv_UNIT=	devel/fpc-fv
 hermes_UNIT=	graphics/fpc-hermes
@@ -185,11 +186,16 @@ zlib_UNIT=	devel/fpc-zlib
 .endif
 
 .if defined(_POSTMKINCLUDED) && defined(USE_FPC)
-
 .	for UNITS in ${USE_FPC}
 .		if ${_FPC_ALL_UNITS:M${UNITS}}!=""
-BUILD_DEPENDS+=	${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
-RUN_DEPENDS+=	${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.			if ${_FPC_CFG_UNITS:M${UNITS}}!=""
+BUILD_DEPENDS+= ${UNITSDIR}/${UNITS}/fpunits.cfg:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+RUN_DEPENDS+=   ${UNITSDIR}/${UNITS}/fpunits.cfg:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.			else
+BUILD_DEPENDS+= ${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+RUN_DEPENDS+=   ${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNIT}
+.			endif
+
 security-check: fpc-check-install
 .		endif
 .	endfor

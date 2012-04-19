@@ -18,6 +18,6 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	IMLIB	"Install imlib graphic library"	on
+OPTIONS=	IMLIB2	"Install imlib graphic library"	on
 
 .include "${MASTERDIR}/Makefile"

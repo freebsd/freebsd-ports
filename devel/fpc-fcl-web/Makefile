@@ -13,8 +13,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
 USE_FPC=	fastcgi fcl-async fcl-base fcl-db fcl-json fcl-net fcl-process \
-		fcl-xml hash httpd13 httpd20 httpd22 ibase mysql odbc oracle \
-		paszlib postgres pthreads sqlite
+		fcl-xml hash httpd22 ibase mysql odbc oracle paszlib postgres \
+		pthreads sqlite
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

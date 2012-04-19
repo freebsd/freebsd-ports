@@ -12,9 +12,7 @@ PKGNAMESUFFIX=	-utils
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Compiler utils
 
-USE_FPC=	chm fcl-async fcl-base fcl-net fcl-passrc fcl-process fcl-res fcl-xml gdbint \
-		graph ibase libcurl hash mysql oracle pasjpeg paszlib pthreads \
-		postgres regexpr sqlite
+USE_FPC=	chm fcl-base fcl-net fcl-process fcl-res fppkg libcurl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
