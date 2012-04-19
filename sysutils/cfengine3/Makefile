@@ -42,6 +42,10 @@ OPTIONS=	PCRE	"Enable Perl-compatible regular expressions"	on \
 BROKEN=		TOKYOCABINET and QDBM are mutuallly exclusive
 .endif
 
+.if !defined(WITH_TOKYOCABINET) && !defined(WITH_QDBM)
+BROKEN=		TOKYOCABINET or QDBM must be defined
+.endif
+
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
