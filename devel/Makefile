@@ -426,6 +426,7 @@
     SUBDIR += fpc-fcl-web
     SUBDIR += fpc-fcl-xml
     SUBDIR += fpc-fpmkunit
+    SUBDIR += fpc-fppkg
     SUBDIR += fpc-fv
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-newt
