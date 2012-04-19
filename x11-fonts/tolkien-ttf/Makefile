@@ -16,6 +16,8 @@ COMMENT=	A selection of the best TrueType fonts for JRR Tolkien Languages
 
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
+BROKEN=		unfetchable
+
 RESTRICTED=	"Shareware. Unlicensed commercial usage/redistribution prohibited."
 
 USE_BZIP2=	yes
