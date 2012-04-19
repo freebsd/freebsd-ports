@@ -21,6 +21,8 @@ COMMENT=	A stub code generator for using C/C++ libraries from ocaml
 
 USE_OCAML=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 .include <bsd.port.pre.mk>
