@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FFmpeg-Command
-PORTVERSION=	0.15
+PORTVERSION=	0.18
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIZZY
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 PERL_CONFIGURE=	yes
 
