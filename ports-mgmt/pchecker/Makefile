@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	pchecker
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	ak-various-projects
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	A tool that checks the ports tree for various errors
 
 LICENSE=	BSD
-
-PROJECTHOST=	ak-various-projects
 
 USE_XZ=	yes
 NO_BUILD=	yes
