@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20120206
-PORTREVISION=	2
+PORTVERSION=	20120418
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -96,7 +95,6 @@ OPTIONS=	\
 	SYMBAND "Install package: symband" On \
 	SYMBOLIC "Install package: symbolic" On \
 	TCL_OCTAVE "Install package: tcl-octave" On \
-	TIME "Install package: time" On \
 	TSA "Install package: tsa" On \
 	VIDEO "Install package: video" On \
 	XRAYLIB "Install package: xraylib" On \
@@ -340,9 +338,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/symbolic.tar.gz:${PORTSDIR}/math/octave-forge-symb
 .endif
 .if defined(WITH_TCL_OCTAVE)
 RUN_DEPENDS+=	${TARBALLS_DIR}/tcl-octave.tar.gz:${PORTSDIR}/math/octave-forge-tcl-octave
-.endif
-.if defined(WITH_TIME)
-RUN_DEPENDS+=	${TARBALLS_DIR}/time.tar.gz:${PORTSDIR}/math/octave-forge-time
 .endif
 .if defined(WITH_TSA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/tsa.tar.gz:${PORTSDIR}/math/octave-forge-tsa
