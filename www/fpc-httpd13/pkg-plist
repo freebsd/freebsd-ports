@@ -1,9 +1,0 @@
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd13/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd13/httpd.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd13/httpd.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd13/libphttpd.a
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd13
-@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
-@dirrmtry lib/fpc/%%PORTVERSION%%/units
-@dirrmtry lib/fpc/%%PORTVERSION%%
-@dirrmtry lib/fpc
