@@ -1,0 +1,17 @@
+###############################################################################
+
+Double Commander was installed
+
+1) This is BETA software, so use it at your own risk
+
+2) You can run it using:
+
+   # doublecmd
+
+3) Plugins are currently not available for FreeBSD. For more information see:
+   http://sourceforge.net/apps/mediawiki/doublecmd/index.php?title=Issues_with_FPC,_Lazarus
+   in "Loading shared libraries on FreeBSD doesn't work" section
+
+4) Enjoy it ;)
+
+############################################################################### 

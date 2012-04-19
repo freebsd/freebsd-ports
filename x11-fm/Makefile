@@ -8,6 +8,7 @@
     SUBDIR += catseye-fm
     SUBDIR += dfm
     SUBDIR += dolphin
+    SUBDIR += doublecmd
     SUBDIR += emelfm2
     SUBDIR += etoile-fontmanager
     SUBDIR += ezfm
