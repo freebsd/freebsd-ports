@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
@@ -35,7 +35,7 @@ CGIDIR?=	www/cgi-bin
 CGIPATH?=	/cgi-bin
 WWW_OWNER?=	${WWWOWN}
 WWW_GROUP?=	${WWWGRP}
-REPORT_LANG=	ca de en it
+REPORT_LANG=	ca de en it pl
 WWWROOT=	${WWWDIR:S,/${PORTNAME}$,,}
 
 SUB_FILES=	pkg-message
@@ -49,14 +49,7 @@ WWW_FILES=	logo_top.png \
 		logo_bot.png \
 		monitorixico.png
 
-PORTDOCS=	COPYING \
-		Changes \
-		README \
-		README.FreeBSD \
-		README.OpenBSD \
-		README.nginx \
-		monitorix-alert.sh \
-		monitorix-apache.conf
+PORTDOCS=	*
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -94,11 +87,10 @@ do-install:
 .endfor
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${PREFIX}/${CGIDIR}/
-.for m in ${MAN5}
-	@${INSTALL_MAN} ${WRKSRC}/man/man5/$m ${MAN5PREFIX}/man/man5/
-.endfor
-.for m in ${MAN8}
-	@${INSTALL_MAN} ${WRKSRC}/man/man8/$m ${MAN8PREFIX}/man/man8/
+.for c in 5 8
+. for m in ${MAN$c}
+	@${INSTALL_MAN} ${WRKSRC}/man/man$c/$m ${MAN$cPREFIX}/man/man$c/
+. endfor
 .endfor
 	@${MKDIR} ${WWWDIR}/reports
 .for l in ${REPORT_LANG}
@@ -107,8 +99,8 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+. for f in docs/* README README.FreeBSD README.nginx Changes
+	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 . endfor
 .endif
 

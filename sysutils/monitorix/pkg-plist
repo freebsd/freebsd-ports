@@ -1,4 +1,3 @@
-@stopdaemon monitorix
 @exec mkdir -p %D/%%WWWDIR%%/imgs
 @exec chown %%WWW_OWNER%%:%%WWW_GROUP%% %D/%%WWWDIR%%/imgs
 @unexec if cmp -s %D/etc/monitorix.conf %D/etc/monitorix.conf.sample; then rm -f %D/etc/monitorix.conf; fi
@@ -15,6 +14,7 @@ bin/monitorix
 %%WWWDIR%%/reports/de.html
 %%WWWDIR%%/reports/en.html
 %%WWWDIR%%/reports/it.html
+%%WWWDIR%%/reports/pl.html
 @dirrm %%WWWDIR%%/reports
 %%WWWDIR%%/logo_bot.png
 %%WWWDIR%%/logo_top.png
