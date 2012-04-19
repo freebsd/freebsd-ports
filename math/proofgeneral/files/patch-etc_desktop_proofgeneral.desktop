@@ -1,5 +1,5 @@
---- etc/desktop/proofgeneral.desktop.orig	Thu Dec  8 07:40:38 2005
-+++ etc/desktop/proofgeneral.desktop	Thu Dec  8 07:41:03 2005
+--- etc/desktop/proofgeneral.desktop.orig	2012-04-11 20:39:33.000000000 -0700
++++ etc/desktop/proofgeneral.desktop	2012-04-11 20:41:16.000000000 -0700
 @@ -5,7 +5,7 @@
  Name=Proof General
  GenericName=Theorem proving environment

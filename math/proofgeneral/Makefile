@@ -6,52 +6,44 @@
 #
 
 PORTNAME=	proofgeneral
-PORTVERSION=	3.7.1
-PORTREVISION=	5
+PORTVERSION=	4.1
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
-DISTNAME=	ProofGeneral-3.7.1
+PKGNAMESUFFIX=	-${EMACS_NAME}
+DISTNAME=	ProofGeneral-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	A generic interface for proof assistants
 
-PKGNAMESUFFIX+=	-${EMACS_NAME}
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
-
-#
-# Unless EMACS_PORT_NAME is overriden by the user,
-# use any installed version of [X]Emacs.
-#
-# If there is none installed, use xemacs21-mule.
-#
-.if !defined(EMACS_PORT_NAME)
-.if !exists(${LOCALBASE}/bin/emacs)
-EMACS_PORT_NAME=xemacs21-mule
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/${EMACS_PORT_NAME}
-
-# xemacs21-mule does not depend on xemacs-packages, so add a dependency here
-BUILD_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/lisp/xlib/xlib-xlib.el:${PORTSDIR}/editors/xemacs-packages
-RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/lisp/xlib/xlib-xlib.el:${PORTSDIR}/editors/xemacs-packages
-.else
-EMACS_PORT_NAME=emacs
-BUILD_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/${EMACS_PORT_NAME}
-.endif
-.endif
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-MAKE_ARGS+=	EMACS_NAME=${EMACS_NAME} EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
+.ifdef (PACKAGE_BUILDING)
+PLIST_SUB+=	PACKAGE_BUILDING="@comment "
+.else
+PLIST_SUB+=	PACKAGE_BUILDING=""
+.endif
+
+MAKE_ARGS+=	PREFIX="${LOCALBASE}" DEST_PREFIX="${PREFIX}" MAKE="${GMAKE}" \
+	DOCDIR="${DOCSDIR}" MANDIR="${PREFIX}/man/man1" INFODIR="${PREFIX}/info" \
+	BINDIR="${PREFIX}/bin" DESKTOP="${PREFIX}/share" \
+	ELISPP="${EMACS_SITE_LISPDIR}/ProofGeneral" \
+	ELISP="${PREFIX}/${EMACS_SITE_LISPDIR}/ProofGeneral" \
+	ELISP_START="${PREFIX}/${EMACS_SITE_LISPDIR}/site-start.d" \
+	EMACS="${EMACS_NAME}" EMACS_NAME="${EMACS_NAME}" \
+	DEST_ELISP="${PREFIX}/${EMACS_SITE_LISPDIR}/ProofGeneral" \
+	EMACS_SITE_LISPDIR="${EMACS_SITE_LISPDIR}"
 
 SUB_FILES=	pkg-message
 SUB_LIST=	EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
@@ -62,9 +54,12 @@ INFO=		PG-adapting ProofGeneral
 
 .if !defined(NOPORTDOCS)
 MAKE_ARGS+=	DOCSDIR=${DOCSDIR} INSTALLDOC=install-doc
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
-		texi2pdf:${PORTSDIR}/print/texinfo
+BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
+
+PORTDOCS=	AUTHORS BUGS CHANGES COMPATIBILITY COPYING INSTALL \
+		PG-adapting ProofGeneral README REGISTER acl2 hol98 isar lclam lego \
+		pgshell phox plastic twelf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
