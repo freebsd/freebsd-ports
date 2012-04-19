@@ -1,11 +1,13 @@
---- compiler/utils/samplecfg	2009-02-28 17:54:01.000000000 -0500
-+++ compiler/utils/samplecfg	2009-04-26 13:53:57.000000000 -0500
-@@ -55,7 +55,7 @@
+--- compiler/utils/samplecfg	2011-12-10 07:59:24.000000000 -0500
++++ compiler/utils/samplecfg	2012-02-23 15:47:13.000000000 -0500
+@@ -37,8 +37,8 @@
  # Detect if we have write permission in sysdir.
  if [ -w "$sysdir" ] ; then
    echo Write permission in $sysdir.
 -  fpccfgfile="$sysdir"/fpc.cfg
+-  fppkgfile="$sysdir"/fppkg.cfg
 +  fpccfgfile="$sysdir"/fpc.cfg.sample
++  fppkgfile="$sysdir"/fppkg.cfg.sample
+   defaultfile="$sysdir"/fppkg/default
+   compilerconfigdir="-d CompilerConfigDir=$sysdir/fppkg"
  else
-   echo No write premission in $sysdir.
-   fpccfgfile="$HOME"/.fpc.cfg

@@ -1,35 +1,19 @@
-bin/mkxmlrpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/cnetdb.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/netdb.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/servlets.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsock.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/httpbase.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/httpclient.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/httpsvlt.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/xmlrpc.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/cnetdb.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/netdb.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/servlets.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/cnetdb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsock.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/httpbase.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/httpclient.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/httpsvlt.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/xmlrpc.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/fpsock.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpcnetdb.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpfpsock.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpnetdb.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpresolve.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpssockets.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpservlets.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpfpsock.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libphttpbase.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libphttpclient.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libphttpsvlt.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/libpxmlrpc.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/netdb.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/netdb.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/resolve.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net/ssockets.ppu
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-net
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units

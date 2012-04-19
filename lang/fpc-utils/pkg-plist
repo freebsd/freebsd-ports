@@ -2,13 +2,13 @@ bin/bin2obj
 bin/data2inc
 bin/delp
 bin/fpclasschart
-bin/fpcmkcfg
 bin/fpcres
 bin/fpdoc
 bin/fppkg
 bin/fprcp
 bin/h2pas
 bin/h2paspp
+bin/instantfpc
 bin/makeskel
 bin/plex
 bin/postw32
@@ -18,46 +18,9 @@ bin/pyacc
 bin/rmcvsdir
 bin/rstconv
 bin/unitdiff
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fprepos.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fpxmlrep.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgoptions.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgglobals.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmessages.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkghandler.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgdownload.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgcommands.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fprepos.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/fpxmlrep.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgoptions.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgglobals.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmessages.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkghandler.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgdownload.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgcommands.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgwget.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkglnet.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgrepos.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libpfprepos.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libpfpxmlrep.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgoptions.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgglobals.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgmessages.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkghandler.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgmkconv.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgdownload.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgfpmake.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgcommands.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/lexlib.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/yacclib.ppu
@@ -67,8 +30,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/libplexlib.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/libpyacclib.a
 lib/fpc/lexyacc/yyparse.cod
 lib/fpc/lexyacc/yylex.cod
-@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lexyacc/
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%

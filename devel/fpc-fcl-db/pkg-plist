@@ -111,6 +111,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpstdexports.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpstdexports.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fptexexport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fptexexport.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpxmlxsdexport.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/fpxmlxsdexport.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/ibconnection.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/ibconnection.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpbufdataset.a
@@ -169,6 +171,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpsqlscanner.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpsqltree.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpstdexports.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfptexexport.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpxmlxsdexport.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpibconnection.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmemds.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpmysql40conn.a

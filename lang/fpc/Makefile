@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.4.4
+PORTVERSION=	2.6.0
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -115,7 +115,9 @@ do-extract:
 # unpack source distribution
 	@cd ${WRKDIR} && \
 		${GZIP_CMD} -dc ${_DISTDIR}/${DISTNAME:S/$/.source/}${EXTRACT_SUFX} \
-			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl ${FPCSRCDIR}/utils/fpcm
+			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl \
+				${FPCSRCDIR}/utils/fpcmkcfg ${FPCSRCDIR}/packages/fcl-base \
+					${FPCSRCDIR}/packages/fcl-process ${FPCSRCDIR}/utils/fpcm
 
 post-patch:
 .if ${ARCH} == "i386"
@@ -129,16 +131,21 @@ post-patch:
 do-build:
 # build fpc compiler
 	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} cycle ${MAKE_ENV}
-# build fpcmake
+# build fpcmkcfg
 	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-base && ${GMAKE} ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-process && ${GMAKE} ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${GMAKE} ${MAKE_ENV}
 
 do-install:
 # 	Installing fpc compiler
 	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${GMAKE} install ${MAKE_ENV}
 # 	Installing fpc runtime
 	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
+# 	Installng fpcmkcfg
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${GMAKE} install ${MAKE_ENV}
 # 	Installng fpcmake
-	@@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
 # 	Installing manpages
 	${INSTALL_DATA} ${WRKDIR}/man/man1/* ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/man/man5/* ${MAN1PREFIX}/man/man5

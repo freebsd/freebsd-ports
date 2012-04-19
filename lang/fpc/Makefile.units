@@ -23,40 +23,9 @@ MAKE_ENV+=		PP=${LOCALBASE}/bin/${PPNAME} \
 			OPT="${OPT}" \
 			BSDHIER=1
 
-.if ${PKGNAMESUFFIX} == "-ibase"
-.	if defined(WITH_IBASE)
-USE_FIREBIRD=	yes
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-mysql"
-.	if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-odbc"
-.	if defined(WITH_ODBC)
-LIB_DEPENDS=	odbc.2:${PORTSDIR}/databases/unixODBC
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-oracle"
-.	if defined(WITH_ORACLE)
-ORACLE8_LIB=	${LOCALBASE}/oracle8-client/rdbms/lib
-RUN_DEPENDS=	${ORACLE8_LIB}/env_rdbms.mk:${PORTSDIR}/databases/oracle8-client
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-postgres"
-.	if defined(WITH_PGSQL)
-USE_PGSQL=	yes
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-sqlite"
-.	if defined(WITH_SQLITE)
-USE_SQLITE=	yes
+.if ${PKGNAMESUFFIX} == "-a52"
+.	if defined(WITH_LIBA52)
+LIB_DEPENDS=	a52:${PORTSDIR}/audio/liba52
 .	endif
 .endif
 
@@ -66,23 +35,22 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libbfd.a:${PORTSDIR}/devel/libbfd
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-fftw"
-.	if defined(WITH_FFTW)
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
+.if ${PKGNAMESUFFIX} == "-cairo"
+.	if defined(WITH_LIBCAIRO)
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-imagemagick"
-.	if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
+.if ${PKGNAMESUFFIX} == "-dbus"
+.	if defined(WITH_DBUS)
+LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-xforms"
-.	if defined(WITH_XFORMS)
-LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
+.if ${PKGNAMESUFFIX} == "-dts"
+.	if defined(WITH_LIBDCA)
+LIB_DEPENDS=	dca:${PORTSDIR}/multimedia/libdca
 .	endif
-HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fcl-db"
@@ -98,6 +66,12 @@ OPT+=	-Fu${WRKDIR}/${WRKUNITDIR}/*
 .if ${PKGNAMESUFFIX} == "-fcl-web"
 OPT+=	-Fuunits/${BUILDNAME} -Fu../units/${BUILDNAME} -Fu../* \
 	-Fu../../units/${BUILDNAME} -Fu../../../units/${BUILDNAME}
+.endif
+
+.if ${PKGNAMESUFFIX} == "-fftw"
+.	if defined(WITH_FFTW)
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
+.	endif
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fpgtk"
@@ -123,6 +97,12 @@ LIB_DEPENDS=	ggi:${PORTSDIR}/graphics/libggi
 .	endif
 .endif
 
+.if ${PKGNAMESUFFIX} == "-gmp"
+.	if defined(WITH_GMP)
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+.	endif
+.endif
+
 .if ${PKGNAMESUFFIX} == "-gtk1"
 .	if defined(WITH_GTK1)
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
@@ -138,9 +118,9 @@ USE_GNOME=	gtk20
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-httpd20"
-.	if defined(WITH_APACHE20)
-USE_APACHE=	20
+.if ${PKGNAMESUFFIX} == "-hermes"
+.	if defined(WITH_HERMES)
+LIB_DEPENDS=	Hermes:${PORTSDIR}/graphics/Hermes
 .	endif
 .endif
 
@@ -150,16 +130,32 @@ USE_APACHE=	22
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-imlib"
-.	if defined(WITH_IMLIB)
-.include <${PORTSDIR}/Mk/bsd.gnome.mk>
-USE_GNOME=	imlib
+.if ${PKGNAMESUFFIX} == "-ibase"
+.	if defined(WITH_IBASE)
+USE_FIREBIRD=	yes
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-cairo"
-.	if defined(WITH_LIBCAIRO)
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+.if ${PKGNAMESUFFIX} == "-iconvenc"
+USE_ICONV=	yes
+.endif
+
+.if ${PKGNAMESUFFIX} == "-imagemagick"
+.	if defined(WITH_IMAGEMAGICK)
+LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-imlib"
+.	if defined(WITH_IMLIB)
+.include <${PORTSDIR}/Mk/bsd.efl.mk>
+USE_EFL=	imlib2
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-ldap"
+.	if defined(WITH_OPENLDAP)
+USE_OPENLDAP=	yes
 .	endif
 .endif
 
@@ -181,6 +177,69 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 .	endif
 .endif
 
+.if ${PKGNAMESUFFIX} == "-libxml2"
+.	if defined(WITH_LIBXML2)
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-lua"
+.	if defined(WITH_LUA)
+LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-mad"
+.if defined(WITH_LIBMAD)
+LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-matroska"
+.	if defined(WITH_LIBMATROSKA)
+LIB_DEPENDS=	matroska:${PORTSDIR}/multimedia/libmatroska
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-modplug"
+.	if defined(WITH_LIBMODPLUG)
+LIB_DEPENDS=	modplug:${PORTSDIR}/audio/libmodplug
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-mysql"
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-newt"
+.	if defined(WITH_NEWT)
+LIB_DEPENDS=	newt:${PORTSDIR}/devel/newt
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-odbc"
+.	if defined(WITH_ODBC)
+LIB_DEPENDS=	odbc.2:${PORTSDIR}/databases/unixODBC
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-oggvorbis"
+.	if defined(WITH_LIBOGG)
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
+.	endif
+.	if defined(WITH_LIBVORBIS)
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-openal"
+.	if defined(WITH_OPENAL)
+USE_OPENAL=	soft
+.	endif
+.endif
+
 .if ${PKGNAMESUFFIX} == "-opengl"
 .	if defined(WITH_OPENGL)
 USE_GL=		glut
@@ -189,20 +248,63 @@ HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-openssl"
-.       if defined(WITH_OPENSSL)
-USE_OPENSSL=	yes
-.       endif
+.	if defined(WITH_OPENSSL)
+USE_OPENSSL=    yes
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-oracle"
+.	if defined(WITH_ORACLE)
+ORACLE8_LIB=	${LOCALBASE}/oracle8-client/rdbms/lib
+RUN_DEPENDS=	${ORACLE8_LIB}/env_rdbms.mk:${PORTSDIR}/databases/oracle8-client
+.	endif
 .endif
 
 .if ${PKGNAMESUFFIX} == "-pcap"
-.	if defined(WITH_LIBPCAP)
+.       if defined(WITH_LIBPCAP)
 LIB_DEPENDS=    pcap:${PORTSDIR}/net/libpcap
+.       endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-postgres"
+.	if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-proj4"
+.	if defined(WITH_PROJ)
+LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-rexx"
+.	if defined(WITH_REXX_REGINA)
+RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-rsvg"
+.	if defined(WITH_LIBRSVG2)
+LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 .	endif
 .endif
 
 .if ${PKGNAMESUFFIX} == "-sdl"
 .	if defined(WITH_SDL)
-USE_SDL=	sdl image mixer ttf gfx 
+USE_SDL=	sdl image mixer ttf gfx
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-sndfile"
+.	if defined(WITH_LIBSNDFILE)
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-sqlite"
+.	if defined(WITH_SQLITE)
+USE_SQLITE=	yes
 .	endif
 .endif
 
@@ -234,132 +336,31 @@ USE_XLIB=	yes
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-iconvenc"
-USE_ICONV=	yes
-.endif
-
-.if ${PKGNAMESUFFIX} == "-a52"
-.	if defined(WITH_LIBA52)
-LIB_DEPENDS=	a52:${PORTSDIR}/audio/liba52
+.if ${PKGNAMESUFFIX} == "-xforms"
+.	if defined(WITH_XFORMS)
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 .	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-dbus"
-.	if defined(WITH_DBUS)
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-dts"
-.	if defined(WITH_LIBDCA)
-LIB_DEPENDS=	dca:${PORTSDIR}/multimedia/libdca
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-gmp"
-.	if defined(WITH_GMP)
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-ldap"
-.	if defined(WITH_OPENLDAP)
-USE_OPENLDAP=	yes
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-libxml2"
-.	if defined(WITH_LIBXML2)
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-lua"
-.	if defined(WITH_LUA)
-LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-mad"
-.	if defined(WITH_LIBMAD)
-LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-matroska"
-.	if defined(WITH_LIBMATROSKA)
-LIB_DEPENDS=	matroska:${PORTSDIR}/multimedia/libmatroska
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-modplug"
-.	if defined(WITH_LIBMODPLUG)
-LIB_DEPENDS=	modplug:${PORTSDIR}/audio/libmodplug
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-newt"
-.	if defined(WITH_NEWT)
-LIB_DEPENDS=	newt:${PORTSDIR}/devel/newt
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-oggvorbis"
-.	if defined(WITH_LIBOGG)
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
-.	endif
-.	if defined(WITH_LIBVORBIS)
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-openal"
-.	if defined(WITH_OPENAL)
-LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-proj4"
-.	if defined(WITH_PROJ)
-LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-rexx"
-.	if defined(WITH_REXX_REGINA)
-RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-rsvg"
-.	if defined(WITH_LIBRSVG2)
-LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-sndfile"
-.	if defined(WITH_LIBSNDFILE)
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
-.	endif
-.endif
-
-.if ${PKGNAMESUFFIX} == "-hermes"
-.	if defined(WITH_HERMES)
-LIB_DEPENDS=	Hermes:${PORTSDIR}/graphics/Hermes
-.	endif
+HAVE_EXAMPLES=	true
 .endif
 
 post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
 		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf
-.if ${PKGNAMESUFFIX} == "-fpvectorial"
-	@${CP} ${FILESDIR}/fpvutils.pas ${WRKDIR}/${WRKUNITDIR}/src
-.endif
 
 post-patch:
-.if ${PKGNAMESUFFIX} == "-utils"
-	@${REINPLACE_CMD} -e 's|fpcm ||g' ${WRKDIR}/${WRKUNITDIR}/Makefile \
+.if ${PKGNAMESUFFIX} == "-fpmkunit"
+	@${REINPLACE_CMD} -e 's|\[Linux\]|\[Linux,FreeBSD,NetBSD,OpenBSD\]|g' \
+		${WRKDIR}/${WRKUNITDIR}/src/${PKGNAMESUFFIX:S/-//}.pp
+.endif
+.if ${PKGNAMESUFFIX} == "-fppkg"
+	@${REINPLACE_CMD} -e 's|packages_freebsd=fcl-net fcl-web|packages_freebsd=fcl-net|g' \
 		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc
+.endif
+.if ${PKGNAMESUFFIX} == "-utils"
+	@${REINPLACE_CMD} -e 's| fpcmkcfg||g' -e 's| fpcm||g' ${WRKDIR}/${WRKUNITDIR}/Makefile \
+		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc
+	@${REINPLACE_CMD} -e 's|$$(INSTALL) Package.fpc $$(INSTALL_UNITDIR)||g' \
+		${WRKDIR}/${WRKUNITDIR}/fppkg/Makefile
 .endif
 
 do-build:
