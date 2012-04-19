@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	Authen-Simple-LDAP
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple LDAP authentication
 
-BUILD_DEPENDS=	${SITE_PERL}/Authen/Simple.pm:${PORTSDIR}/security/p5-Authen-Simple \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+BUILD_DEPENDS=	p5-Authen-Simple>=0:${PORTSDIR}/security/p5-Authen-Simple \
+		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	Authen::Simple::LDAP.3 Authen::Simple::ActiveDirectory.3
+PERL_CONFIGURE=	yes
 
-PERL_MODBUILD=	yes
+MAN3=		Authen::Simple::ActiveDirectory.3 \
+		Authen::Simple::LDAP.3
 
 .include <bsd.port.mk>
