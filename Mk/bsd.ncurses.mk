@@ -76,7 +76,7 @@ NCURSES_INSTALLED!=	find "${PKG_DBDIR}/" -type f -name "+CONTENTS" -print0 | \
 .if defined(NCURSES_INSTALLED) && ${NCURSES_INSTALLED} != ""
 .if defined(WITH_PKGNG)
 NCURSES_PORT=		${NCURSES_INSTALLED}
-NCURSES_SHLIBFILE!=	${PKG_INFO} -ql ${OPENSSL_INSTALLED} | grep "^`pkg query "%p" ${OPENSSL_INSTALLED}`/lib/libncurses.so."
+NCURSES_SHLIBFILE!=	${PKG_INFO} -ql ${NCURSES_INSTALLED} | grep "^`pkg query "%p" ${NCURSES_INSTALLED}`/lib/libncurses.so."
 .else
 NCURSES_PORT!=		grep "^@comment ORIGIN:" "${NCURSES_INSTALLED}" | ${CUT} -d : -f 2
 NCURSES_SHLIBFILE!=	grep -m 1 "^lib/libncurses.so." "${NCURSES_INSTALLED}"
