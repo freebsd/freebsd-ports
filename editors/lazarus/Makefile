@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.30
+PORTVERSION=	0.9.30.4
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
