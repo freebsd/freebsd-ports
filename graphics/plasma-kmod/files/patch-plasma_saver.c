@@ -42,7 +42,7 @@
  	/* theta now > 0, < 2pi, look up in table */
  
 -        apos = (int)((theta/TWO_PI)*90.0);
-+	apos = fdiv(fdiv(theta * SCALE, TWO_PI) * 90, SCALE);
++	apos = fdiv(theta * SCALE, TWO_PI) * 90 / SCALE;
  	return((neg) ? -aprsinv[apos] : aprsinv[apos]);
  }
  
