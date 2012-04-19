@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission-remote-gui
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	transgui-${PORTVERSION}-src
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 		fpcres:${PORTSDIR}/lang/fpc-utils
 RUN_DEPENDS=	transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon
 
-PROJECTHOST=	bsdistfiles
+PROJECTHOST=	transmisson-remote-gui
 
 USE_ZIP=	yes
 USE_FPC=	fcl-net
@@ -32,8 +32,8 @@ LAZBUILD_CMD=		${LOCALBASE}/bin/lazbuild
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/lazbuild)
-LCL_PLATFORM!=	${SED} -e 1d -e 's/^LCL_PLATFORM=\(.*\).*$$/\1/' ${LOCALBASE}/etc/lazbuild.cfg
+.if exists(${LOCALBASE}/bin/lazbuild) && exists(${LOCALBASE}/etc/lazbuild.cfg)
+.include "${LOCALBASE}/etc/lazbuild.cfg"
 .endif
 
 do-build:
