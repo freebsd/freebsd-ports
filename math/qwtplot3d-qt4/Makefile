@@ -36,8 +36,10 @@ pre-build:
 		 s|^LINK .*|LINK=${CXX}|; \
 		 s|^\(INCPATH .*=\)|\1 -Iinclude|;'  Makefile
 do-install:
-	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} \* ${PREFIX}/include/qwtplot3d-qt4)
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/include/qwtplot3d-qt4
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qwtplot3d-qt4
+	${MKDIR} ${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib
 	${LN} -fs ${PREFIX}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d-qt4.so.0
 	${LN} -fs ${PREFIX}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d-qt4.so
 
