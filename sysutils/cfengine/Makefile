@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.cfengine.org/tarballs/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
+CONFLICTS=	cfengine-3*
+
 USE_RC_SUBR=	cfexecd cfservd
 
 WITH_BDB_VER?=	46
