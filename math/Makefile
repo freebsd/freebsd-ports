@@ -331,7 +331,6 @@
     SUBDIR += octave-forge-symband
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tcl-octave
-    SUBDIR += octave-forge-time
     SUBDIR += octave-forge-tsa
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-xraylib
