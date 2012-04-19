@@ -28,10 +28,12 @@ DOCSDIR=	${PREFIX}/share/doc/cfengine
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--htmldir=${DOCSDIR}/html \
 		--mandir=${PREFIX}/man \
+		--with-pcre=${LOCALBASE} \
 		--enable-fhs
 
-OPTIONS=	PCRE	"Enable Perl-compatible regular expressions"	on \
-		TOKYOCABINET	"Enable TokyoCabinet support"		on \
+LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+
+OPTIONS=	TOKYOCABINET	"Enable TokyoCabinet support"		on \
 		QDBM	"Enable QDBM support"				off \
 		PGSQL	"Enable PostgreSQL connector"			off \
 		MYSQL	"Enable MySQL connector"			off
@@ -44,11 +46,6 @@ BROKEN=		TOKYOCABINET and QDBM are mutuallly exclusive
 
 .if !defined(WITH_TOKYOCABINET) && !defined(WITH_QDBM)
 BROKEN=		TOKYOCABINET or QDBM must be defined
-.endif
-
-.if defined(WITH_PCRE)
-LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}
 .endif
 
 .if defined(WITH_TOKYOCABINET)
