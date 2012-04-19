@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fasm
-PORTVERSION=	1.69.39
+PORTVERSION=	1.70.00
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
+DISTNAME=	${PORTNAME}-1.70
 
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
