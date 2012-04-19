@@ -20,4 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+PORTSCOUT=	skipv:0.9.47
+
 .include <bsd.port.mk>
