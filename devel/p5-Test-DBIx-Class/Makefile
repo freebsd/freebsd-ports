@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,7 +35,8 @@ BUILD_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Deep>=0.106:${PORTSDIR}/devel/p5-Test-Deep \
-		p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences
+		p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
+		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
