@@ -7,20 +7,21 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	9999
-PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	https://github.com/stass/pkgtools/tarball
+MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	bryan@shatow.net
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
-CONFLICTS_INSTALL=	portupgrade-[0-9]*
+LICENSE=	BSD
 
 FETCH_DEPENDS=	git:${PORTSDIR}/devel/git
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+
+CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
 MANUAL_PACKAGE_BUILD=	troubles with distfile cache on pointyhat
 
@@ -44,7 +45,7 @@ MLINKS=		pkgdb.1 pkg_which.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
 NO_CHECKSUM=	yes
-GIT_REPO_URL=	git@github.com:pkgtools/pkgtools.git
+GIT_REPO_URL=	http://github.com/pkgtools/pkgtools.git
 
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
@@ -60,8 +61,8 @@ do-fetch:
 	    ${GREP} heads/master | ${AWK} '{print $$1}'`; \
 	    if [ ! -f "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ]; then \
 	    ${SETENV} ${FETCH_ENV} ${FETCH_BINARY} -m -o \
-	    "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ${MASTER_SITES}/master \
-	    && ln -sf "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" \
+	    "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ${MASTER_SITES}master \
+	    && ${LN} -sf "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" \
 	    "${_DISTDIR}/portupgrade/latest"; fi)
 
 do-extract:
