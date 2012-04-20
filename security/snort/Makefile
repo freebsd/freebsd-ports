@@ -175,11 +175,11 @@ CONFIGURE_ARGS+=	--enable-react
 .endif
 
 .if defined(WITH_SNORTSAM)
-BROKEN=		current snortsam patch results in build failures
+#BROKEN=		current snortsam patch results in build failures
 USE_AUTOTOOLS+=	automake
 USE_GNOME=	pkgconfig
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
-PATCHFILES+=	snortsam-2.9.1.2.diff.gz:snortsam
+PATCHFILES+=	snortsam-2.9.2.2.diff.gz:snortsam
 .endif
 
 post-patch:
@@ -210,7 +210,6 @@ pre-configure:
 	@${FIND} ${WRKSRC} -name 'Makefile.am' | ${XARGS} ${REINPLACE_CMD} -e 's|lib/snort_|lib/snort/|g'
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.am \
 		${WRKSRC}/src/dynamic-preprocessors/libs/Makefile.am
-	@${REINPLACE_CMD} -e '/README.u2boat/d' ${WRKSRC}/tools/u2boat/Makefile.am
 	@${ECHO_MSG} "===>   Rebuilding required files for snortsam patches..."
 	@cd ${WRKSRC} && ${SH} ${WRKSRC}/autojunk.sh
 	@${ECHO_MSG} "===>   Done.  Configuring..."
