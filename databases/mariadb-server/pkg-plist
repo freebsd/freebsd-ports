@@ -10,6 +10,8 @@ bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
+bin/mytop
+%%HANDLERSOCKET%%bin/hsclient
 bin/mysql_client_test_embedded
 bin/mysql_convert_table_format
 bin/mysql_find_rows
@@ -48,6 +50,22 @@ bin/replace
 bin/resolve_stack_dump
 bin/resolveip
 %%PBXT%%bin/xtstat
+%%HANDLERSOCKET%%include/handlersocket/allocator.hpp
+%%HANDLERSOCKET%%include/handlersocket/config.hpp
+%%HANDLERSOCKET%%include/handlersocket/mutex.hpp
+%%HANDLERSOCKET%%include/handlersocket/string_util.hpp
+%%HANDLERSOCKET%%include/handlersocket/auto_addrinfo.hpp
+%%HANDLERSOCKET%%include/handlersocket/escape.hpp
+%%HANDLERSOCKET%%include/handlersocket/socket.hpp
+%%HANDLERSOCKET%%include/handlersocket/thread.hpp
+%%HANDLERSOCKET%%include/handlersocket/auto_file.hpp
+%%HANDLERSOCKET%%include/handlersocket/fatal.hpp
+%%HANDLERSOCKET%%include/handlersocket/string_buffer.hpp
+%%HANDLERSOCKET%%include/handlersocket/util.hpp
+%%HANDLERSOCKET%%include/handlersocket/auto_ptrcontainer.hpp
+%%HANDLERSOCKET%%include/handlersocket/hstcpcli.hpp
+%%HANDLERSOCKET%%include/handlersocket/string_ref.hpp
+%%HANDLERSOCKET%%@dirrm include/handlersocket
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters_debug.h
@@ -80,6 +98,10 @@ bin/resolveip
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndbapi_limits.h
 %%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
 %%ARIADB%%lib/mysql/libaria.a
+%%HANDLERSOCKET%%lib/libhsclient.so.0
+%%HANDLERSOCKET%%lib/libhsclient.so
+%%HANDLERSOCKET%%lib/libhsclient.la
+%%HANDLERSOCKET%%lib/libhsclient.a
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
@@ -96,7 +118,10 @@ lib/mysql/libmysys.a
 %%NDB%%lib/mysql/libndbclient.so
 %%NDB%%lib/mysql/libndbclient.so.3
 lib/mysql/libvio.a
-%%STATIC%%lib/mysql/plugin/auth_pam.a
+%%HANDLERSOCKET%%lib/mysql/plugin/handlersocket.so.0
+%%HANDLERSOCKET%%lib/mysql/plugin/handlersocket.so
+%%HANDLERSOCKET%%lib/mysql/plugin/handlersocket.la
+%%HANDLERSOCKET%%lib/mysql/plugin/handlersocket.a
 %%STATIC%%lib/mysql/plugin/auth_pam.la
 %%STATIC%%lib/mysql/plugin/auth_pam.so
 %%STATIC%%lib/mysql/plugin/auth_pam.so.0
@@ -104,15 +129,12 @@ lib/mysql/libvio.a
 %%STATIC%%lib/mysql/plugin/dialog.la
 %%STATIC%%lib/mysql/plugin/dialog.so
 %%STATIC%%lib/mysql/plugin/dialog.so.0
-%%STATIC%%lib/mysql/plugin/feedback.a
 %%STATIC%%lib/mysql/plugin/feedback.la
 %%STATIC%%lib/mysql/plugin/feedback.so
 %%STATIC%%lib/mysql/plugin/feedback.so.0
-%%STATIC%%%%ARCHIVE%%lib/mysql/plugin/ha_archive.a
 %%STATIC%%%%ARCHIVE%%lib/mysql/plugin/ha_archive.la
 %%STATIC%%%%ARCHIVE%%lib/mysql/plugin/ha_archive.so
 %%STATIC%%%%ARCHIVE%%lib/mysql/plugin/ha_archive.so.0
-%%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.a
 %%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.la
 %%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.so
 %%STATIC%%%%BLACKHOLE%%lib/mysql/plugin/ha_blackhole.so.0
@@ -132,7 +154,6 @@ lib/mysql/libvio.a
 %%STATIC%%%%FEDERATED%%lib/mysql/plugin/ha_federated.la
 %%STATIC%%%%FEDERATED%%lib/mysql/plugin/ha_federated.so
 %%STATIC%%%%FEDERATED%%lib/mysql/plugin/ha_federated.so.0
-%%STATIC%%%%FEDERATEDX%%lib/mysql/plugin/ha_federatedx.a
 %%STATIC%%%%FEDERATEDX%%lib/mysql/plugin/ha_federatedx.la
 %%STATIC%%%%FEDERATEDX%%lib/mysql/plugin/ha_federatedx.so
 %%STATIC%%%%FEDERATEDX%%lib/mysql/plugin/ha_federatedx.so.0
@@ -151,7 +172,6 @@ lib/mysql/libvio.a
 %%SPHINX%%lib/mysql/plugin/sphinx.la
 %%SPHINX%%lib/mysql/plugin/sphinx.so
 %%SPHINX%%lib/mysql/plugin/sphinx.so.0
-%%STATIC%%%%XTRADB%%lib/mysql/plugin/ha_xtradb.a
 %%STATIC%%%%XTRADB%%lib/mysql/plugin/ha_xtradb.la
 %%STATIC%%%%XTRADB%%lib/mysql/plugin/ha_xtradb.so
 %%STATIC%%%%XTRADB%%lib/mysql/plugin/ha_xtradb.so.0

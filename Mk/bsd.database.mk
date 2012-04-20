@@ -108,7 +108,7 @@ DEFAULT_MYSQL_VER?=	55
 MYSQL41_LIBVER=		14
 MYSQL50_LIBVER=		15
 MYSQL51_LIBVER=		16
-MYSQL52_LIBVER=		16
+MYSQL53_LIBVER=		16
 MYSQL55_LIBVER=		18
 
 # Setting/finding MySQL version we want.
@@ -137,7 +137,7 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .endif
 .endif
 
-.if (${MYSQL_VER} == "52")
+.if (${MYSQL_VER} == "53")
 _MYSQL_CLIENT=	databases/mariadb-client
 _MYSQL_SERVER=	databases/mariadb-server
 .else

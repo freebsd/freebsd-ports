@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PORTVERSION=	5.2.10
+PORTVERSION=	5.3.6
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	52
+WANT_MYSQL_VER=	53
 .endif
 
 .if !defined(MARIADB_SCRIPTS_SLAVE)
@@ -77,6 +77,7 @@ OPTIONS+=	ARIADB "Aria storage engine" On \
 		OQGRAPH "Open Query Graph Computation engine" Off \
 		PBXT "MVCC-based transactional engine" Off \
 		PARTITION "Partitioning support" Off \
+		HANDLERSOCKET "HandlerSocket support" On \
 		NDB "Enable NDB support (implies PARTITION)" Off \
 		EXAMPLES "Example engine,daemon and ftsearch plugins" Off
 .endif	# .if !defined(MARIADB_CLIENT_SLAVE)
@@ -168,6 +169,13 @@ PLUGINS+=	xtradb
 .else
 CONFIGURE_ARGS+=	--without-plugin-xtradb
 PLIST_SUB+=	XTRADB="@comment "
+.endif
+.if defined(WITH_HANDLERSOCKET)
+PLIST_SUB+=	HANDLERSOCKET=""
+PLUGINS+=	handlersocket
+.else
+CONFIGURE_ARGS+=	--without-plugin-handlersocket
+PLIST_SUB+=     HANDLERSOCKET="@comment "
 .endif
 .if defined(WITH_OQGRAPH)
 CONFIGURE_ARGS+=	--with-plugin-oqgraph
