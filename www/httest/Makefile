@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	httest
-PORTVERSION=	2.1.18
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	www
 MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
@@ -33,10 +32,10 @@ MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LUA_INCDIR}
 
-MAN1=		httest.1 htproxy.1 htntlm.1 htremote.1
-PORTEXAMPLES=	*
+MAN1=		htntlm.1 htproxy.1 htremote.1 httest.1 hturlext.1 htx2b.1
 PLIST_FILES=	bin/htntlm bin/htproxy bin/htremote bin/httest bin/hturlext \
 		bin/htx2b
+PORTEXAMPLES=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e \
