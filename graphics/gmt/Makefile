@@ -7,6 +7,7 @@
 
 PORTNAME=	gmt
 PORTVERSION=	4.5.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/${PORTNAME}/	\
 		ftp://ftp.soest.hawaii.edu/${PORTNAME}/		\
@@ -24,9 +25,8 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--datadir=${DATADIR}
-USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_XORG=	x11
+USE_XORG=	x11 xaw xmu xt
 
 PORTDOCS=	*
 PORTDATA=	*
