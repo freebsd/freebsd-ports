@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	latexmk
-PORTVERSION=	307a
-PORTREVISION=	4
+PORTVERSION=	431
 CATEGORIES=	print
 MASTER_SITES=	http://www.phys.psu.edu/~collins/software/latexmk/
 
@@ -24,11 +23,12 @@ NO_BUILD=	yes
 
 MAN1=		latexmk.1
 PLIST_FILES=	bin/latexmk
-PORTDOCS=	CHANGES INSTALL README latexmk.pdf latexmk.ps latexmk.txt
+PORTDOCS=	CHANGES COPYING INSTALL README latexmk.pdf latexmk.ps latexmk.txt
+PORTEXAMPLES=	*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/latexmk.pl ${PREFIX}/bin/latexmk
-	${INSTALL_MAN} ${WRKSRC}/latexmk.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/latexmk.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
@@ -37,6 +37,11 @@ do-install:
 .endif
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} example_rcfiles ${EXAMPLESDIR} )
+	( cd ${WRKSRC} && ${COPYTREE_BIN} extra-scripts ${EXAMPLESDIR} )
+.endif
 .if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
 .endif
