@@ -7,8 +7,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
-#DISTVERSIONSUFFIX=	a
-#PORTREVISION=	0
+DISTVERSIONSUFFIX=	a
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -427,6 +427,10 @@ MLINKS=	ASN1_OBJECT_new.3 ASN1_OBJECT_free.3 \
 	EVP_DigestInit.3 EVP_ripemd160.3 \
 	EVP_DigestInit.3 EVP_sha.3 \
 	EVP_DigestInit.3 EVP_sha1.3 \
+	EVP_DigestInit.3 EVP_sha224.3 \
+	EVP_DigestInit.3 EVP_sha256.3 \
+	EVP_DigestInit.3 EVP_sha384.3 \
+	EVP_DigestInit.3 EVP_sha512.3 \
 	EVP_DigestSignInit.3 EVP_DigestSignFinal.3 \
 	EVP_DigestSignInit.3 EVP_DigestSignUpdate.3 \
 	EVP_DigestVerifyInit.3 EVP_DigestVerifyFinal.3 \
