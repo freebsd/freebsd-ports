@@ -1,33 +1,33 @@
-bin/inisqueak
 bin/squeak
-%%DOCSDIR%%/COPYING.gz
-%%DOCSDIR%%/COPYRIGHT.gz
-%%DOCSDIR%%/LICENSE.gz
-%%DOCSDIR%%/README.Contributing.gz
-%%DOCSDIR%%/README.Keyboard.gz
-%%DOCSDIR%%/README.Sound.gz
-%%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/B3DAcceleratorPlugin
-%%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/Squeak3D
-%%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/XDisplayControlPlugin
-%%PLIST_XIM%%%%DATADIR%%/%%VMVERSION%%/ImmX11Plugin
-%%PLIST_NPSQUEAK%%%%DATADIR%%/%%VMVERSION%%/npsqueak.so
-%%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueakrun
-%%DATADIR%%/%%VMVERSION%%/squeak
-%%PLIST_X%%%%DATADIR%%/%%VMVERSION%%/vm-display-X11
-%%DATADIR%%/%%VMVERSION%%/AioPlugin
-%%DATADIR%%/%%VMVERSION%%/PseudoTTYPlugin
-%%DATADIR%%/%%VMVERSION%%/UnixOSProcessPlugin
-%%DATADIR%%/%%VMVERSION%%/vm-display-null
-%%DATADIR%%/%%VMVERSION%%/vm-sound-NAS
-%%DATADIR%%/%%VMVERSION%%/vm-sound-OSS
-%%DATADIR%%/%%VMVERSION%%/vm-sound-null
-%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%.changes.gz
-%%DATADIR%%/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%.image.gz
-%%PLIST_NPSQUEAK%%%%DATADIR%%/SqueakPlugin.image.gz
-%%DATADIR%%/SqueakV3.sources
-%%DATADIR%%/SqueakV39.sources
-%%DATADIR%%/%%VMVERSION%%/SqueakV39.sources
-%%PLIST_NPSQUEAK%%%%DATADIR%%/npsqueakregister
-@dirrm %%DATADIR%%/%%VMVERSION%%
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+bin/squeak.sh
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.AioPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.ClipboardExtendedPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.DBusPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.FileCopyPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.GStreamerPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.HostWindowPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.KedamaPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.KedamaPlugin2
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.MIDIPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.Mpeg3Plugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.RomePlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.Squeak3D
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.SqueakFFIPrims
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.UUIDPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.UnixOSProcessPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.XDisplayControlPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-display-X11
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-display-custom
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-display-null
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-ALSA
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-NAS
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-OSS
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-custom
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-null
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.vm-sound-pulse
+lib/squeak/%%SQUEAK_LIB_DIR%%/squeakvm
+lib/squeak/Squeak4.3.changes
+lib/squeak/Squeak4.3.image
+lib/squeak/SqueakV41.sources
+@dirrm lib/squeak/%%SQUEAK_LIB_DIR%%
+@dirrm lib/squeak
