@@ -1,9 +1,11 @@
 LatexMk completely automates the process of generating a LaTeX document.
 Essentially, it is a highly specialized relative of the general make
-utility. Given the source files for a document, latexmk issues the
-appropriate sequence of commands to generate a .dvi, .ps, .pdf or
-hardcopy version of the document. It can also be set to run continuously
-with a previewer; the needed commands are rerun whenever one of the
-source files is modified.
+utility.  Given the source files for a document, latexmk issues the
+appropriate sequence of commands to generate a .dvi, .ps, .pdf or hardcopy
+version of the document.  It will run LaTeX the correct number of times to
+resolve cross references, and run auxiliary programs (bibtex, makeindex) if
+necessary. It can also be set to run continuously with a previewer, in which
+case the needed commands are re-run whenever one of the source files is
+modified.
 
 WWW: http://www.phys.psu.edu/~collins/software/latexmk/
