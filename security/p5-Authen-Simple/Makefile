@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Authen-Simple
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple authentication framework
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -21,13 +20,13 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN3=	Authen::Simple.3 \
-	Authen::Simple::Adapter.3 \
-	Authen::Simple::Apache.3 \
-	Authen::Simple::Log.3 \
-	Authen::Simple::Password.3
+MAN3=		Authen::Simple.3 \
+		Authen::Simple::Adapter.3 \
+		Authen::Simple::Apache.3 \
+		Authen::Simple::Log.3 \
+		Authen::Simple::Password.3
 
 .include <bsd.port.pre.mk>
 
