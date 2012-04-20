@@ -10,20 +10,20 @@ PORTVERSION=	2.4.9.3
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/${GITVERSION}/
-DISTNAME=	pkgtools-pkgtools-${GITVERSION}
+MASTER_SITES=	SF/portupgrade/pkgtools/${PORTVERSION}/
+DISTNAME=	pkgtools-${PORTVERSION}
 
 MAINTAINER=	bryan@shatow.net
 COMMENT=	FreeBSD ports/packages administration and management tool suite
+
+LICENSE=	BSD
 
 OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
 		BDB1 "Use Berkeley DB 1.85 as backend" off
 
 CONFLICTS_INSTALL=	portupgrade-devel-*
 
-FETCH_ARGS=	-Fpr
-GITVERSION=	b99f3ce
-
+USE_BZIP2=	yes
 USE_RUBY=	yes
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
@@ -67,7 +67,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 .endif
 
 # parsedate is needed for date globbing
-.if ${RUBY_DEFAULT_VER} == "1.9"
+.if ${RUBY_VER} == 1.9
 RUN_DEPENDS+=	${RUBY_SITELIBDIR}/parsedate.rb:${PORTSDIR}/devel/ruby-date2
 .endif
 
