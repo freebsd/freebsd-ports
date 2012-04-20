@@ -1,0 +1,8 @@
+# Example radmind configuration file.
+#
+#
+# Host			Command (.K) file.
+# localhost		default.K
+# 127.0.0.1		default.K
+######################################################
+

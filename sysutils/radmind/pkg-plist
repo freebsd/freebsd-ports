@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/fsdiff
 bin/ktcheck
 bin/lapply
@@ -19,8 +20,9 @@ sbin/radmind
 @exec mkdir -p -m 755 %%RADMIND_BASE_DIR%%/client
 @exec mkdir -p -m 755 %%RADMIND_BASE_DIR%%/preapply
 @exec mkdir -p -m 755 %%RADMIND_BASE_DIR%%/postapply
-@exec chown -R radmind:radmind %%RADMIND_BASE_DIR%%
-@cwd /
+@exec chown -R %%RADMINUSER%%:%%RADMINUSER%% %%RADMIND_BASE_DIR%%
+@unexec if cmp -s %%RADMIND_BASE_DIR%%/config.sample %%RADMIND_BASE_DIR%%/config; then rm -f %%RADMIND_BASE_DIR%%/config; fi
+%%RADMIND_BASE_DIR%%/config.sample
 @dirrmtry %%RADMIND_BASE_DIR%%/transcript
 @dirrmtry %%RADMIND_BASE_DIR%%/tmp/transcript
 @dirrmtry %%RADMIND_BASE_DIR%%/tmp/file
