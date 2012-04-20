@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_musicindex
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.7
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -96,8 +95,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 .if !defined(WITHOUT_NLS)
 	${RM} ${WRKSRC}/po/*.gmo
-	${MV} ${WRKSRC}/po/pt-br.po ${WRKSRC}/po/pt_BR.po
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|pt-br|pt_BR|g' ${WRKSRC}/po/LINGUAS ${WRKSRC}/po/pt_BR.po
 .endif
 
 post-build:
