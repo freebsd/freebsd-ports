@@ -206,6 +206,7 @@ share/xvile/vile/xs.keywords
 share/xvile/vile/xsl.keywords
 share/xvile/vile/yacc.keywords
 share/xvile/macros/color-ls.rc
+share/xvile/macros/complete.rc
 share/xvile/macros/dates.rc
 share/xvile/macros/digraphs.rc
 share/xvile/macros/gnugpg.rc
