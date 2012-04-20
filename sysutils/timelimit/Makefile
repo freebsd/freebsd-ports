@@ -15,6 +15,9 @@ MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
 
 LICENSE=	BSD
+
+CONFLICTS=	netpipes-[0-9]*
+
 MAN1=		timelimit.1
 PLIST_FILES=	bin/timelimit
 
