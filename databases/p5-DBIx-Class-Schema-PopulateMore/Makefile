@@ -7,7 +7,7 @@
 
 PORTNAME=	DBIx-Class-Schema-PopulateMore
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	p5-Data-Visitor>=0.27:${PORTSDIR}/devel/p5-Data-Visitor \
 RUN_DEPENDS=	p5-Data-Visitor>=0.27:${PORTSDIR}/devel/p5-Data-Visitor \
 		p5-DateTimeX-Easy>=0.089:${PORTSDIR}/devel/p5-DateTimeX-Easy \
 		p5-List-MoreUtils>=0.30:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Module-Pluggable>=3.9:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Moose>=1.24:${PORTSDIR}/devel/p5-Moose
 
 TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
