@@ -73,6 +73,9 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/runner.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/runner.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/runner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/status_codes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/status_codes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/status_codes.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/util.pyo
@@ -91,17 +94,16 @@ bin/pip-%%PYTHON_VER%%
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs/subversion.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs/subversion.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs/subversion.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/venv.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/venv.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/venv.pyo
 %%PORTDOCS%%%%DOCSDIR%%/ci-server-step-by-step.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
-%%PORTDOCS%%%%DOCSDIR%%/how-to-contribute.txt
+%%PORTDOCS%%%%DOCSDIR%%/contributing.txt
+%%PORTDOCS%%%%DOCSDIR%%/glossary.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/installing.txt
 %%PORTDOCS%%%%DOCSDIR%%/news.txt
-%%PORTDOCS%%%%DOCSDIR%%/requirement-format.txt
-%%PORTDOCS%%%%DOCSDIR%%/running-tests.txt
+%%PORTDOCS%%%%DOCSDIR%%/other-tools.txt
+%%PORTDOCS%%%%DOCSDIR%%/requirements.txt
+%%PORTDOCS%%%%DOCSDIR%%/usage.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/vcs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pip/commands
