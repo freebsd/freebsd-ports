@@ -17,11 +17,13 @@ include/mysql/errmsg.h
 include/mysql/keycache.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
+include/mysql/ma_dyncol.h
 include/mysql/my_alloc.h
 include/mysql/my_attribute.h
 include/mysql/my_compiler.h
 include/mysql/my_config.h
 include/mysql/my_dbug.h
+include/mysql/my_decimal_limits.h
 include/mysql/my_dir.h
 include/mysql/my_getopt.h
 include/mysql/my_global.h
@@ -44,6 +46,7 @@ include/mysql/plugin_auth.h
 include/mysql/plugin_auth_common.h
 include/mysql/readline.h
 include/mysql/service_my_snprintf.h
+include/mysql/service_progress_report.h
 include/mysql/service_thd_alloc.h
 include/mysql/services.h
 include/mysql/sql_common.h
