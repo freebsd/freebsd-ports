@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	libimobiledevice
-PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTVERSION=	1.0.7
 CATEGORIES=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	A library to communicate with Apple iPhone/iPod Touch devices
+COMMENT=	Library to communicate with Apple iPhone/iPod Touch devices
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
