@@ -203,9 +203,11 @@ R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
 R-cran-DCluster                 ports/science/R-cran-DCluster
+R-cran-Defaults                 ports/devel/R-cran-Defaults
 R-cran-Epi                      ports/science/R-cran-Epi
 R-cran-Formula                  ports/math/R-cran-Formula
 R-cran-KFAS                     ports/math/R-cran-KFAS
+R-cran-PerformanceAnalytics     ports/finance/R-cran-PerformanceAnalytics
 R-cran-RColorBrewer             ports/graphics/R-cran-RColorBrewer
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
 R-cran-RFinanceYJ               ports/finance/R-cran-RFinanceYJ
@@ -252,6 +254,7 @@ R-cran-plm                      ports/finance/R-cran-plm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-proto                    ports/devel/R-cran-proto
 R-cran-psych                    ports/math/R-cran-psych
+R-cran-quantmod                 ports/finance/R-cran-quantmod
 R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-reshape2                 ports/devel/R-cran-reshape2
 R-cran-rgdal                    ports/graphics/R-cran-rgdal
@@ -263,6 +266,7 @@ R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-shape                    ports/graphics/R-cran-shape
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-snow                     ports/science/R-cran-snow
+R-cran-som                      ports/science/R-cran-som
 R-cran-sp                       ports/math/R-cran-sp
 R-cran-spdep                    ports/math/R-cran-spdep
 R-cran-stringr                  ports/textproc/R-cran-stringr
@@ -2226,10 +2230,7 @@ dbh                             ports/databases/dbh
 dbh10                           ports/databases/dbh10
 dblatex                         ports/textproc/dblatex
 dbmail                          ports/mail/dbmail
-dbmail20                        ports/mail/dbmail20
-dbmail21                        ports/mail/dbmail21
 dbmail22                        ports/mail/dbmail22
-dbmail23                        ports/mail/dbmail23
 dbow                            ports/databases/dbow
 dboxfe                          ports/emulators/dboxfe
 dbs                             ports/benchmarks/dbs
@@ -2605,6 +2606,7 @@ dotconf++                       ports/devel/dotconf++
 dotfile                         ports/misc/dotfile
 dotproject                      ports/www/dotproject
 dotter                          ports/biology/dotter
+doublecmd                       ports/x11-fm/doublecmd
 doulos                          ports/x11-fonts/doulos
 doulos-compact                  ports/x11-fonts/doulos-compact
 dovecot                         ports/mail/dovecot
@@ -3743,6 +3745,7 @@ fpc-fcl-xml                     ports/devel/fpc-fcl-xml
 fpc-fftw                        ports/math/fpc-fftw
 fpc-fpgtk                       ports/graphics/fpc-fpgtk
 fpc-fpmkunit                    ports/devel/fpc-fpmkunit
+fpc-fppkg                       ports/devel/fpc-fppkg
 fpc-fpvectorial                 ports/graphics/fpc-fpvectorial
 fpc-fv                          ports/devel/fpc-fv
 fpc-gdbint                      ports/devel/fpc-gdbint
@@ -3755,8 +3758,6 @@ fpc-gtk1                        ports/x11-toolkits/fpc-gtk1
 fpc-gtk2                        ports/x11-toolkits/fpc-gtk2
 fpc-hash                        ports/security/fpc-hash
 fpc-hermes                      ports/graphics/fpc-hermes
-fpc-httpd13                     ports/www/fpc-httpd13
-fpc-httpd20                     ports/www/fpc-httpd20
 fpc-httpd22                     ports/www/fpc-httpd22
 fpc-ibase                       ports/databases/fpc-ibase
 fpc-iconvenc                    ports/converters/fpc-iconvenc
@@ -10506,7 +10507,6 @@ octave-forge-struct             ports/math/octave-forge-struct
 octave-forge-symband            ports/math/octave-forge-symband
 octave-forge-symbolic           ports/math/octave-forge-symbolic
 octave-forge-tcl-octave         ports/math/octave-forge-tcl-octave
-octave-forge-time               ports/math/octave-forge-time
 octave-forge-tsa                ports/math/octave-forge-tsa
 octave-forge-video              ports/math/octave-forge-video
 octave-forge-xraylib            ports/math/octave-forge-xraylib
@@ -14118,6 +14118,7 @@ p5-ReadLine-Gnu                 ports/devel/p5-ReadLine-Gnu
 p5-ReadLine-Perl                ports/devel/p5-ReadLine-Perl
 p5-ReadLine-TTYtter             ports/devel/p5-ReadLine-TTYtter
 p5-Readonly                     ports/devel/p5-Readonly
+p5-Reddit                       ports/www/p5-Reddit
 p5-Redis                        ports/databases/p5-Redis
 p5-Redis-hiredis                ports/databases/p5-Redis-hiredis
 p5-Reflex                       ports/devel/p5-Reflex
@@ -18642,6 +18643,7 @@ p5-readline-perl                ports/devel/p5-ReadLine-Perl
 p5-readline-ttytter             ports/devel/p5-ReadLine-TTYtter
 p5-readonly                     ports/devel/p5-Readonly
 p5-reaper                       ports/devel/p5-reaper
+p5-reddit                       ports/www/p5-Reddit
 p5-redis                        ports/databases/p5-Redis
 p5-redis-hiredis                ports/databases/p5-Redis-hiredis
 p5-reflex                       ports/devel/p5-Reflex
@@ -23685,6 +23687,7 @@ r-cran-coda                     ports/math/R-cran-coda
 r-cran-colorspace               ports/graphics/R-cran-colorspace
 r-cran-dbi                      ports/databases/R-cran-DBI
 r-cran-dcluster                 ports/science/R-cran-DCluster
+r-cran-defaults                 ports/devel/R-cran-Defaults
 r-cran-deldir                   ports/math/R-cran-deldir
 r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-dichromat                ports/graphics/R-cran-dichromat
@@ -23709,11 +23712,13 @@ r-cran-memisc                   ports/math/R-cran-memisc
 r-cran-memoise                  ports/devel/R-cran-memoise
 r-cran-munsell                  ports/graphics/R-cran-munsell
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
+r-cran-performanceanalytics     ports/finance/R-cran-PerformanceAnalytics
 r-cran-pixmap                   ports/graphics/R-cran-pixmap
 r-cran-plm                      ports/finance/R-cran-plm
 r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-proto                    ports/devel/R-cran-proto
 r-cran-psych                    ports/math/R-cran-psych
+r-cran-quantmod                 ports/finance/R-cran-quantmod
 r-cran-rcolorbrewer             ports/graphics/R-cran-RColorBrewer
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-reshape                  ports/devel/R-cran-reshape
@@ -23733,6 +23738,7 @@ r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-shape                    ports/graphics/R-cran-shape
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-snow                     ports/science/R-cran-snow
+r-cran-som                      ports/science/R-cran-som
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-spdep                    ports/math/R-cran-spdep
 r-cran-stringr                  ports/textproc/R-cran-stringr
