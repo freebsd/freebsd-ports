@@ -146,17 +146,7 @@ PLIST_SUB+=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 		DOC_FILE=${DOC_FILE}
 
-.if exists(${PREFIX}/bin/emacs-${EMACS_VER})
-EMACS_BASE=${PREFIX}
-.else
-EMACS_BASE=${LOCALBASE}
-.endif
-
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900007
-BROKEN=		does not build
-.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=		Segfault during build on ia64
@@ -175,7 +165,7 @@ pre-build:
 	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
 	@(cd ${WRKSRC}/src/../lisp; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${EMACS_BASE}/bin/emacs-${EMACS_VER})
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} compile-files EMACS=${EMACS_CMD})
 	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
 	@(cd ${WRKSRC}/src/../lisp; \
 	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
