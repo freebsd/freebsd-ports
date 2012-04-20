@@ -3,5 +3,8 @@
 %%SITE_PERL%%/Authen/Simple/Apache.pm
 %%SITE_PERL%%/Authen/Simple/Log.pm
 %%SITE_PERL%%/Authen/Simple/Password.pm
-@dirrm %%SITE_PERL%%/Authen/Simple
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen/Simple
 @dirrmtry %%SITE_PERL%%/Authen
