@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
 INSTALLS_ICONS=	yes
 
 MAN1=		grisbi.1
