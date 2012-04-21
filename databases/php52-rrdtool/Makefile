@@ -14,15 +14,15 @@ MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/contrib/ \
 PKGNAMEPREFIX=	php52-
 DISTNAME=	php_rrdtool
 
-MAINTAINER=	scheidell@secnap.net
+MAINTAINER=	scheidell@FreeBSD.org
 COMMENT=	A php 52 rrdtool glue
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 WRKSRC=		${WRKDIR}/rrdtool
 
-DEPRECATED=	PHP 5.2 series is not supported anymore, migrate now
-EXPIRATION_DATE=2012-03-01
+DEPRECATED=	PHP 5.2 series is strongly discouraged for new installations, migrate now
+EXPIRATION_DATE=2013-03-01
 
 USE_PHP=	yes
 DEFAULT_PHP_VER=52
