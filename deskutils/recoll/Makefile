@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	recoll
-PORTVERSION=	1.16.2
+PORTVERSION=	1.17.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
 
 OPTIONS=	QT "Enable Qt-based GUI support" on \
 		ASPELL "Enable ASpell support" on \
+		PYTHON "Enable Python module support" on \
 		X11MON "Enable X11 session monitoring support" on
 
 USE_ICONV=	yes
@@ -54,6 +55,16 @@ CONFIGURE_ARGS+=--without-aspell
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .endif
 
+.if defined(WITHOUT_PYTHON)
+CONFIGURE_ARGS+=--disable-python-module
+PLIST_SUB+=	PYTHON="@comment "
+.else
+USE_PYTHON=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_EGGINFO=	Recoll-1.0-py${PYTHON_VER}.egg-info
+PLIST_SUB+=	PYTHON=""
+.endif
+
 .if defined(WITHOUT_X11MON)
 CONFIGURE_ARGS+=--disable-x11mon
 .else
@@ -67,6 +78,8 @@ post-patch:
 		'/recoll.pro/s|^|#|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/lib|${LOCALBASE}/lib|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/--prefix=/s|^|@NOPYTHON@|' ${WRKSRC}/recollinstall.in
 	@${REINPLACE_CMD} -e \
 		's|= -g -O2|=|' ${WRKSRC}/mk/localdefs.in
 	@${REINPLACE_CMD} -e \

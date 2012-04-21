@@ -1,5 +1,6 @@
 %%QT%%bin/recoll
 bin/recollindex
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/recoll.so
 %%QT%%share/applications/recoll-searchgui.desktop
 %%QT%%share/icons/hicolor/48x48/apps/recoll.png
 %%QT%%share/pixmaps/recoll.png
@@ -11,6 +12,8 @@ bin/recollindex
 %%DATADIR%%/examples/mimeview
 %%DATADIR%%/examples/rclmon.sh
 %%DATADIR%%/examples/recoll.conf
+%%DATADIR%%/examples/recoll.qss
+%%DATADIR%%/examples/recollindex.desktop
 %%DATADIR%%/filters/hotrecoll.py
 %%DATADIR%%/filters/rclabw
 %%DATADIR%%/filters/rclaptosidman
@@ -21,10 +24,9 @@ bin/recollindex
 %%DATADIR%%/filters/rcldvi
 %%DATADIR%%/filters/rclexecm.py
 %%DATADIR%%/filters/rclfb2
-%%DATADIR%%/filters/rclflac
 %%DATADIR%%/filters/rclgaim
+%%DATADIR%%/filters/rclgnm
 %%DATADIR%%/filters/rclics
-%%DATADIR%%/filters/rclid3
 %%DATADIR%%/filters/rclimg
 %%DATADIR%%/filters/rclinfo
 %%DATADIR%%/filters/rclkar
@@ -34,7 +36,7 @@ bin/recollindex
 %%DATADIR%%/filters/rcllyx
 %%DATADIR%%/filters/rclman
 %%DATADIR%%/filters/rclnull
-%%DATADIR%%/filters/rclogg
+%%DATADIR%%/filters/rclokulnote
 %%DATADIR%%/filters/rclopxml
 %%DATADIR%%/filters/rclpdf
 %%DATADIR%%/filters/rclppt
@@ -79,6 +81,7 @@ bin/recollindex
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_cs.qm
 %%DATADIR%%/translations/recoll_de.qm
+%%DATADIR%%/translations/recoll_es.qm
 %%DATADIR%%/translations/recoll_fr.qm
 %%DATADIR%%/translations/recoll_it.qm
 %%DATADIR%%/translations/recoll_lt.qm
@@ -86,6 +89,8 @@ bin/recollindex
 %%DATADIR%%/translations/recoll_tr.qm
 %%DATADIR%%/translations/recoll_uk.qm
 %%DATADIR%%/translations/recoll_xx.qm
+%%DATADIR%%/translations/recoll_zh.qm
+%%DATADIR%%/translations/recoll_zh_CN.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/filters
