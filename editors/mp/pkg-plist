@@ -59,6 +59,7 @@ bin/mpsl
 %%DATADIR%%/mp_templates.mpsl
 %%DATADIR%%/mp_toys.mpsl
 %%DATADIR%%/mp_tui.mpsl
+%%DATADIR%%/mp_vcs.mpsl
 %%DATADIR%%/mp_writing.mpsl
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
