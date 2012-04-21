@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120419:
+  AFFECTS: users of security/openssl
+  AUTHOR: dinoex@FreeBSD.org
+
+  The OpenSSL lport has been update to 1.0.1a. Please rebuild all
+  ports that depend on it.
+
+  If you use portmaster:
+        portmaster -r openssl
+  Or, if you would prefer a more gradual approach:
+        portmaster -w openssl (Check the man page for more information)
+
+  If you use portupgrade:
+        portupgrade -fr security/openssl
+
 20120418:
   AFFECTS: users of www/firefox and mail/thunderbird
   AUTHOR: gecko@FreeBSD.org
