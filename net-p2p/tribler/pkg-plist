@@ -935,6 +935,9 @@ bin/tribler
 %%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/MoveTorrents.py
 %%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/MoveTorrents.pyc
 %%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/MoveTorrents.pyo
+%%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/RemoveTorrent.py
+%%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/RemoveTorrent.pyc
+%%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/RemoveTorrent.pyo
 %%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/SaveAs.py
 %%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/SaveAs.pyc
 %%PYTHON_SITELIBDIR%%/Tribler/Main/Dialogs/SaveAs.pyo
@@ -1149,6 +1152,116 @@ bin/tribler
 %%PYTHON_SITELIBDIR%%/Tribler/Main/vwxGUI/tribler_topButton.pyc
 %%PYTHON_SITELIBDIR%%/Tribler/Main/vwxGUI/tribler_topButton.pyo
 %%PYTHON_SITELIBDIR%%/Tribler/Main/vwxGUI/zudeo_torrent_description.txt
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/__init__.py
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/LICENSE
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/constants.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/contextmenu.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/dialogmanager.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/dialogs.css
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/excanvas.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/flotr.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/guest.html
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/ie.css
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/ie.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/ie7.css
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/about.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/add.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/arrow.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/blank.gif
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/button.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/clipboard.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/close.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/delete.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/error.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/feed.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/flags.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/folder.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/folder_explore.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/header.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/label.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/menucheck.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/menuexp.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/menusel.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/mootools.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/nextprev.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/props.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/settings.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/snake.gif
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/table_refresh.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/tabs.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/tbar.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/toolbar.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/tstatus.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/ut.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/ut_small.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/world.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images/zoom.png
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/index.html
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/index_falcon.html
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/_.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ar.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/be.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/bg.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/bs.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ca.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/cs.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/da.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/de.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/el.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/en.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/es.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/et.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/fallback.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/fi.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/fr.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/fyNL.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ga.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/gl.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/he.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/hu.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/is.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/it.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ja.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ka.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ko.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/lt.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/lv.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/nl.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/nnNO.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/no.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/pl.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/pt.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ptBR.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ro.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/ru.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/sk.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/sl.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/sq.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/srSR.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/sv.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/th.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/tr.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/tw.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/uk.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/va.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/vi.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/zhCN.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang/zhTW.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/logger.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/main.css
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/main.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/mootools.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/speedgraph.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/stable.css
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/stable.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/tabs.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/utils.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/webui.js
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/webUI.py
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/webUI.pyc
+%%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/webUI.pyo
 %%PYTHON_SITELIBDIR%%/Tribler/Player/BaseApp.py
 %%PYTHON_SITELIBDIR%%/Tribler/Player/BaseApp.pyc
 %%PYTHON_SITELIBDIR%%/Tribler/Player/BaseApp.pyo
@@ -1681,7 +1794,7 @@ bin/tribler
 %%PYTHON_SITELIBDIR%%/Tribler/community/walktest/script.py
 %%PYTHON_SITELIBDIR%%/Tribler/community/walktest/script.pyc
 %%PYTHON_SITELIBDIR%%/Tribler/community/walktest/script.pyo
-%%PYTHON_SITELIBDIR%%/Tribler/schema_sdb_v11.sql
+%%PYTHON_SITELIBDIR%%/Tribler/schema_sdb_v12.sql
 %%PYTHON_SITELIBDIR%%/Tribler/vlc.py
 %%PYTHON_SITELIBDIR%%/Tribler/vlc.pyc
 %%PYTHON_SITELIBDIR%%/Tribler/vlc.pyo
@@ -1727,6 +1840,10 @@ share/pixmaps/tribler.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/Tribler/Policies
 @dirrm %%PYTHON_SITELIBDIR%%/Tribler/Plugin
 @dirrm %%PYTHON_SITELIBDIR%%/Tribler/Player
+@dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/lang
+@dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static/images
+@dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/webUI/static
+@dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/webUI
 @dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/vwxGUI/images
 @dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/vwxGUI
 @dirrm %%PYTHON_SITELIBDIR%%/Tribler/Main/Utility/Feeds
