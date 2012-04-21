@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get public suffix of domain name via Mozilla Public Suffix List
 
-BUILD_DEPENDS=	p5-HTTP-Tiny>=0:${PORTSDIR}/www/p5-HTTP-Tiny \
-		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+BUILD_DEPENDS=	p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
@@ -28,4 +27,10 @@ PERL_MODBUILD=	yes
 
 MAN3=		Mozilla::PublicSuffix.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-HTTP-Tiny>=0:${PORTSDIR}/www/p5-HTTP-Tiny
+.endif
+
+.include <bsd.port.post.mk>
