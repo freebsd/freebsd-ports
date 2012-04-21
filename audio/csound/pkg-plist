@@ -1,6 +1,7 @@
 bin/atsa
 bin/cs
 bin/csb64enc
+bin/csbeats
 bin/csmixer
 bin/csound
 %%FLTKGUI%%bin/csound5gui
@@ -90,7 +91,6 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/ATSread.html
 %%PORTDOCS%%%%DOCSDIR%%/ATSreadnz.html
 %%PORTDOCS%%%%DOCSDIR%%/ATSsinnoi.html
-%%PORTDOCS%%%%DOCSDIR%%/BeatsTop.html
 %%PORTDOCS%%%%DOCSDIR%%/BuildingCsound.html
 %%PORTDOCS%%%%DOCSDIR%%/CommandCsoundVST.html
 %%PORTDOCS%%%%DOCSDIR%%/CommandDesc.html
@@ -120,12 +120,12 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/ControlSubinstrument.html
 %%PORTDOCS%%%%DOCSDIR%%/ControlTimeread.html
 %%PORTDOCS%%%%DOCSDIR%%/ControlTop.html
+%%PORTDOCS%%%%DOCSDIR%%/CsBeats.html
 %%PORTDOCS%%%%DOCSDIR%%/CscoreAdvancd.html
 %%PORTDOCS%%%%DOCSDIR%%/CscoreCompile.html
 %%PORTDOCS%%%%DOCSDIR%%/CscoreMain.html
 %%PORTDOCS%%%%DOCSDIR%%/CscoreTop.html
 %%PORTDOCS%%%%DOCSDIR%%/CsoundLinks.html
-%%PORTDOCS%%%%DOCSDIR%%/Example.html
 %%PORTDOCS%%%%DOCSDIR%%/FLbox.html
 %%PORTDOCS%%%%DOCSDIR%%/FLbutBank.html
 %%PORTDOCS%%%%DOCSDIR%%/FLbutton.html
@@ -482,6 +482,7 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/cauchy.html
 %%PORTDOCS%%%%DOCSDIR%%/cauchyi.html
 %%PORTDOCS%%%%DOCSDIR%%/ceil.html
+%%PORTDOCS%%%%DOCSDIR%%/cell.html
 %%PORTDOCS%%%%DOCSDIR%%/cent.html
 %%PORTDOCS%%%%DOCSDIR%%/cggoto.html
 %%PORTDOCS%%%%DOCSDIR%%/chanctrl.html
@@ -757,6 +758,7 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/examples/cauchy.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/cauchyi.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/ceil.csd
+%%PORTDOCS%%%%DOCSDIR%%/examples/cell.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/cent.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/cggoto.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/chanctrl.csd
@@ -805,6 +807,7 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/examples/cross2.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/crossfm.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/crunch.csd
+%%PORTDOCS%%%%DOCSDIR%%/examples/csbeats.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/ctrl7.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/cuserrnd.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/dam.csd
@@ -972,6 +975,7 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen01computed.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen02.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen03.csd
+%%PORTDOCS%%%%DOCSDIR%%/examples/gen04.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen05.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen06.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen07.csd
@@ -993,6 +997,9 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen25.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen27.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen28.csd
+%%PORTDOCS%%%%DOCSDIR%%/examples/gen32.csd
+%%PORTDOCS%%%%DOCSDIR%%/examples/gen33.csd
+%%PORTDOCS%%%%DOCSDIR%%/examples/gen34.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen40.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen41.csd
 %%PORTDOCS%%%%DOCSDIR%%/examples/gen42.csd
@@ -1831,6 +1838,15 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/images/gen02_2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen02_3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen03.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen03_1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen03_2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen03_3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen03_4.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen03_5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen04_1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen04_2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen04_3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen04_4.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen05.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen05_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen05_2.png
@@ -1845,6 +1861,10 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/images/gen08_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen08_2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen09.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen09_1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen09_2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen09_3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen09_4.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen09square.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen10.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen10_1.png
@@ -1857,6 +1877,13 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/images/gen11_3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen12.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen13.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_4.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_6.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen13_7.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen14.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen15-1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen15-2.png
@@ -1866,6 +1893,7 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/images/gen16_types.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen17.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen19.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen19_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen20_1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen20_2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen21_1.png
@@ -1875,6 +1903,8 @@ lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/images/gen21_5.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen25.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen27.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen33.png
+%%PORTDOCS%%%%DOCSDIR%%/images/gen34.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen40.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen41.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gen42.png
