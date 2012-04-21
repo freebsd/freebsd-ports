@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdcat
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		GOOGLE_CODE:lib7zip
@@ -22,7 +22,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/archivers/p7zip:patch \
 		${NONEXISTENT}:${PORTSDIR}/multimedia/mediainfo:build
-LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar
+LIB_DEPENDS=	tar.0:${PORTSDIR}/devel/libtar \
+		exif.12:${PORTSDIR}/graphics/libexif
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -31,6 +32,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui qt3support xml \
 		linguist_build moc_build qmake_build uic_build
+INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
 
 QMAKEFLAGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
@@ -43,13 +45,17 @@ QMAKEFLAGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
 # spoof tinderbox: build deps for multimedia/mediainfo
-USE_AUTOTOOLS=	automake:env autoconf:env libtool:env
+USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 
 PORTDOCS=	Authors ChangeLog README TRANSLATORS_README
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.png
 .for lang in cz de el es fr hu id it pl pt sk sr
 PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_${lang}.qm
 .endfor
+.for size in 16 22 32 48 64
+PLIST_FILES+=	share/icons/hicolor/${size}x${size}/apps/${PORTNAME}_logo.png
+.endfor
+PLIST_FILES+=	share/icons/hicolor/scalable/apps/${PORTNAME}_logo.svg
 PLIST_DIRS=	%%DATADIR%%/translations %%DATADIR%%
 
 L7Z_NAME=	lib7zip
@@ -59,8 +65,8 @@ L7Z_WRKSRC=	${WRKDIR}/${L7Z_NAME}
 
 .include <bsd.port.pre.mk>
 
-P7Z_WRKSRC!=	cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC
-MIF_WRKSRC!=	cd ${PORTSDIR}/multimedia/mediainfo && ${MAKE} -V WRKSRC
+P7Z_WRKSRC=	$$(cd ${PORTSDIR}/archivers/p7zip && ${MAKE} -V WRKSRC)
+MIF_WRKSRC=	$$(cd ${PORTSDIR}/multimedia/mediainfo && ${MAKE} -V WRKSRC)
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/${L7Z_DISTFILE} | (cd ${WRKDIR} && ${TAR} -xf -)
@@ -101,6 +107,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${DATADIR}
 	@${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${BUILD_WRKSRC}/lang/*.qm ${DATADIR}/translations
+	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_logo.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}_logo.svg
+.for size in 16 22 32 48 64
+	@${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}_logo_${size}x${size}.png \
+		${PREFIX}/share/icons/hicolor/${size}x${size}/apps/${PORTNAME}_logo.png
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
