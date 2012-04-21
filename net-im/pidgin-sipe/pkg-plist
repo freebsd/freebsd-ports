@@ -15,10 +15,13 @@ lib/purple-2/libsipe.so
 %%NLS%%share/locale/nb/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pidgin-sipe.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pidgin-sipe.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/pidgin-sipe.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pidgin-sipe.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pidgin-sipe.mo
 share/pixmaps/pidgin/protocols/16/sipe.png
