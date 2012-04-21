@@ -3,5 +3,5 @@ share/applications/ja2-stracciatella.desktop
 share/pixmaps/jagged2.ico
 @dirrm %%DATADIR%%/Data/TILECACHE
 @dirrm %%DATADIR%%/Data
-@unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "Warning: data files in %D/%%DATADIR%% have been left intact."
+@dirrmtry %D/%%DATADIR%% 2>/dev/null || echo "Warning: data files in %D/%%DATADIR%% have been left intact."
 @dirrmtry share/applications
