@@ -52,6 +52,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7184f92e-8bb8-11e1-8d7b-003067b2972c">
+    <topic>OpenSSL -- integer conversions result in memory corruption</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL security team reports:</p>
+	<blockquote cite="http://www.openssl.org/news/secadv_20120419.txt">
+	  <p>A potentially exploitable vulnerability has been discovered in the OpenSSL
+	    function asn1_d2i_read_bio.
+	    Any application which uses BIO or FILE based functions to read untrusted DER
+	    format data is vulnerable. Affected functions are of the form d2i_*_bio or
+	    d2i_*_fp, for example d2i_X509_bio or d2i_PKCS12_fp.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2110</cvename>
+      <mlist msgid="20120419103522.GN30784@cmpxchg8b.com">http://marc.info/?l=full-disclosure&amp;m=133483221408243</mlist>
+      <url>http://www.openssl.org/news/secadv_20120419.txt</url>
+    </references>
+    <dates>
+      <discovery>2012-04-19</discovery>
+      <entry>2012-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09c87973-8b9d-11e1-b393-20cf30e32f6d">
     <topic>bugzilla -- multiple vulnerabilities</topic>
     <affects>
