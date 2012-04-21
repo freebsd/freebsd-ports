@@ -16,7 +16,7 @@ COMMENT=	Automatic panorama control point generation tool
 
 RESTRICTED=	May be covered by patents
 
-DEPRECATED=	BROKEN for more than 6 month
+DEPRECATED=	Disappeared from vendor site. No longer required by graphics/hugin
 EXPIRATION_DATE=	2012-05-10
 
 BROKEN=		unfetchable
