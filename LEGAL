@@ -421,7 +421,6 @@ skype*			net/skype		Not for redistribution
 squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable
 						firmware, documentation, and
 						images
-socks5-*		net/socks5		No commercial use
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 speedmgmt*		net/pppoa		Not for redistribution -- see
 						http://www.alcatel.com/consumer-
