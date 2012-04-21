@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system tray dockapp similar to the GNOME notification area applet
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_XORG=	x11 ice sm
 GNU_CONFIGURE=	yes
@@ -21,7 +23,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/peksystray
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@x_includes@||g ; \
-		 s|@x_libraries@||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|@x_includes@|| ; s|@x_libraries@||' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
