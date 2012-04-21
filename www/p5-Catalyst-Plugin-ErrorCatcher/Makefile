@@ -11,7 +11,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CHISEL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catch application errors and emit them somewhere
 
 LICENSE=	ART10 GPLv1
