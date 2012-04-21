@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
@@ -38,12 +38,7 @@ CONFIGURE_ENV+=	NEWCXX="${CXX}" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-###
-## Library dependency handling
-###
-.if !exists(/usr/lib/libbz2.so)
-LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
-.endif
+SUB_FILES=	pkg-message
 
 ###
 ## Options activation
@@ -101,7 +96,6 @@ CONFIGURE_ARGS+=--disable-gd
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt \
 		Install.txt Todo.txt ed2k_links.txt
 PORTDOCS=	${DOCFILES}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # build additional tools
 ALL_TARGET+=	\
@@ -145,22 +139,15 @@ post-configure:
 		-e 's|^(PTHREAD_LIBS[^=]*=).*$$|\1${PTHREAD_LIBS}|' \
 		${BUILD_WRKSRC}/config/Makefile.config
 
-pre-install:
-.if exists(${.CURDIR}/pkg-message)
-	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
-		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
-.elif exists(${MASTERDIR}/pkg-message)
-	@${SED} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
-		< ${MASTERDIR}/pkg-message > ${PKGMESSAGE}
-.endif
-
 do-install:
 .ifndef(WITHOUT_CORE)
 	@${INSTALL_PROGRAM} ${WRKSRC}/mld_hash		${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlnet		${PREFIX}/bin/mlnet-real
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh		${PREFIX}/bin/mlnet
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_SCRIPT} ${FILESDIR}/kill_mldonkey	${EXAMPLESDIR}
+.endif
 .endif
 .ifndef(WITHOUT_GUI)
 	@${INSTALL_PROGRAM} ${WRKSRC}/mlgui		${PREFIX}/bin
