@@ -1,5 +1,5 @@
-include/GL/dmesa.h
-include/GL/ggimesa.h
+%%OLD%%include/GL/dmesa.h
+%%OLD%%include/GL/ggimesa.h
 include/GL/gl.h
 include/GL/gl_mangle.h
 include/GL/glext.h
@@ -8,11 +8,11 @@ include/GL/glx.h
 include/GL/glx_mangle.h
 include/GL/glxext.h
 include/GL/mesa_wgl.h
-include/GL/mglmesa.h
+%%OLD%%include/GL/mglmesa.h
 include/GL/osmesa.h
-include/GL/svgamesa.h
+%%OLD%%include/GL/svgamesa.h
 include/GL/vms_x_fix.h
-%%MESALIB76%%include/GL/wglext.h
+include/GL/wglext.h
 include/GL/wmesa.h
 lib/libGL.so
 lib/libGL.so.1

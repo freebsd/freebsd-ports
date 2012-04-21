@@ -7,7 +7,7 @@
 
 PORTNAME=	libdrm
 PORTVERSION=	${LIBDRM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	${LIBDRM_REVISION}
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
@@ -15,29 +15,44 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS=	pciaccess.0:${PORTSDIR}/devel/libpciaccess \
+		pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CONFIGURE_ARGS=	--enable-nouveau-experimental-api
+
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+.if defined(WITH_NEW_XORG)
 
-.if defined(WITHOUT_NOUVEAU)
-LIBDRM_VERSION=	2.4.17
-CONFIGURE_ARGS=	--disable-nouveau-experimental-api \
-		--disable-radeon-experimental-api
-PLIST_SUB+=	NEW= OLD="@comment "
+OPTIONS=	KMS "Enable KMS support (very experimental)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_KMS)
+CONFIGURE_ARGS+=--enable-libkms
+EXTRA_PATCHES+=	${FILESDIR}/extra-xf86drmMode.c
+PLIST_SUB+=	KMS=""
 .else
-LIBDRM_VERSION=	2.4.12
-CONFIGURE_ARGS=	--enable-nouveau-experimental-api
-PLIST_SUB+=	OLD= NEW="@comment "
+PLIST_SUB+=	KMS="@comment "
+.endif
+
+LIBDRM_VERSION=	2.4.31
+LIBDRM_REVISION=1
+PLIST_SUB+=	OLD="@comment " NEW=""
+.else
+LIBDRM_VERSION=	2.4.17
+LIBDRM_REVISION=0
+PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
 pre-patch:
-	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
-	    ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g; \
+			   12661s/x86_/amd/g' \
+		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

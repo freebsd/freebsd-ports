@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-mga
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.13
 PORTEPOCH=	2
 CATEGORIES=	x11-drivers
 
@@ -20,9 +20,9 @@ USE_XORG=	xf86driproto videoproto xextproto glproto
 MAN4=		mga.4x
 
 pre-patch:
-	${REINPLACE_CMD} \
-		-e 's|values.h|sys/limits.h|g' \
-		-e 's|MAXSHORT|SHRT_MAX|g' \
-		${WRKSRC}/src/mga_arc.c
+#	${REINPLACE_CMD} \
+#		-e 's|values.h|sys/limits.h|g' \
+#		-e 's|MAXSHORT|SHRT_MAX|g' \
+#		${WRKSRC}/src/mga_arc.c
 
 .include <bsd.port.mk>

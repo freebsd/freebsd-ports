@@ -141,6 +141,10 @@ USE_XORG+=	pciaccess
 
 .endif
 
+.if exists(${LOCALBASE}/bin/X)
+XSERVER_VER=	${LOCALBASE}/bin/X -version 2>&1 | sed -n 's;^X\.Org X Server \([^ ]*\).*;\1;p'
+.endif
+
 .if defined(_POSTMKINCLUDED) && !defined(Xorg_Post_Include)
 
 Xorg_Post_Include=		bsd.xorg.mk

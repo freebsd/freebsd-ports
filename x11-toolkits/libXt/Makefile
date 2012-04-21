@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libXt
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
@@ -64,6 +64,7 @@ MAN3=	MenuPopdown.3 \
 	XtAppUnlock.3 \
 	XtAppWarning.3 \
 	XtAppWarningMsg.3 \
+	XtAsprintf.3 \
 	XtAugmentTranslations.3 \
 	XtBuildEventMask.3 \
 	XtCallAcceptFocus.3\

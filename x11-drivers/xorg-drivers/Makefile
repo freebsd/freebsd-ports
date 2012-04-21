@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-drivers
-PORTVERSION=	7.5.1
+PORTVERSION=	7.5.2
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -37,7 +37,7 @@ VIDEO_ON+=	sunffb
 VIDEO_ON+=	openchrome
 .endif
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+.if (${ARCH} == "amd64" || ${ARCH} == "i386") && !defined(WITH_NEW_XORG)
 VIDEO_ON+=	intel
 .endif
 

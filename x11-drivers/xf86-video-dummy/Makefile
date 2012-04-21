@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-dummy
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
