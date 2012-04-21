@@ -1062,7 +1062,6 @@
     SUBDIR += socat
     SUBDIR += socketbind
     SUBDIR += socketpipe
-    SUBDIR += socks5
     SUBDIR += splatd
     SUBDIR += spnetkit
     SUBDIR += spoofer

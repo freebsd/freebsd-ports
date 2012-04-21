@@ -3287,3 +3287,4 @@ www/fpc-httpd13||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instea
 www/fpc-httpd20||2012-04-19|Obsolete freepascal unit. Use www/fpc-httpd22 instead of it
 editors/lazarus-gtk2||2012-04-20|Never fully added. Use editors/lazarus instead
 editors/lazarus-qt4||2012-04-20|Never fully added. Use editors/lazarus instead
+net/socks5||2012-04-21|Removed
