@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-remote
 PORTVERSION=	0.4.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.escape-edv.de/endriss/vdr/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 
 post-patch: post-patch-plugin
 
-post-install:
+post-install: post-install-pluginlocales
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})

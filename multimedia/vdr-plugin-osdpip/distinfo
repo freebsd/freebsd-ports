@@ -1,2 +1,4 @@
 SHA256 (vdr/vdr-osdpip-0.1.1.tgz) = 777f5fd9abbfbf43227c78eb2b363d3bdade2b368425ed78caa836d4c38bfef4
 SIZE (vdr/vdr-osdpip-0.1.1.tgz) = 53272
+SHA256 (vdr/osdpip-vdr-1.7.26.diff) = fa58b9671439b7a5a13d7b3e93b5a7596aecf5169b4400b5bf5a922c90e6132f
+SIZE (vdr/osdpip-vdr-1.7.26.diff) = 1057

@@ -1,2 +1,4 @@
-SHA256 (vdr/vdr-1.7.22.tar.bz2) = 73c36058400bc86b8b5aaaf5de0989551e4e6fc052157bebd180bfac4af7f628
-SIZE (vdr/vdr-1.7.22.tar.bz2) = 757800
+SHA256 (vdr/vdr-1.7.27.tar.bz2) = d948841535b917ab6eb31582d6d40bc281ff6a751988e5bfc1b097567e7ca264
+SIZE (vdr/vdr-1.7.27.tar.bz2) = 767714
+SHA256 (vdr/vdr-1.7.24-s2apiwrapper-0.8.diff) = 2d8b83c01c769c05bcc1a27889f9eb7223aea4e74b66e67b876c52e7fd0f296a
+SIZE (vdr/vdr-1.7.24-s2apiwrapper-0.8.diff) = 19788

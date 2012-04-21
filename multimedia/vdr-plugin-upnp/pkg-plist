@@ -1,4 +1,4 @@
-lib/vdr/libvdr-upnp.so.1.7.22
+lib/vdr/libvdr-upnp.so.%%APIVERSION%%
 etc/vdr/plugins/upnp/http/icons/upnpIconLrg.jpeg
 etc/vdr/plugins/upnp/http/icons/upnpIconLrg.png
 etc/vdr/plugins/upnp/http/icons/upnpIconSm.jpeg

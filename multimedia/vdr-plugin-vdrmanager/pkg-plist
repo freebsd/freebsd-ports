@@ -1,2 +1,2 @@
-lib/vdr/libvdr-vdrmanager.so.1.7.22
+lib/vdr/libvdr-vdrmanager.so.%%APIVERSION%%
 etc/vdr/plugins/plugin.vdrmanager.conf.sample

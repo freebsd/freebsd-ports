@@ -1,15 +1,17 @@
 bin/svdrpsend
 bin/vdr
 bin/vdr-waitdvb
-lib/vdr/libvdr-dvbsddevice.so.1.7.22
-lib/vdr/libvdr-svcsvr.so.1.7.22
-lib/vdr/libvdr-svccli.so.1.7.22
-lib/vdr/libvdr-status.so.1.7.22
-lib/vdr/libvdr-skincurses.so.1.7.22
-lib/vdr/libvdr-pictures.so.1.7.22
-lib/vdr/libvdr-osddemo.so.1.7.22
-lib/vdr/libvdr-hello.so.1.7.22
-lib/vdr/libvdr-svdrpdemo.so.1.7.22
+lib/vdr/libvdr-dvbsddevice.so.1.7.27
+lib/vdr/libvdr-svcsvr.so.1.7.27
+lib/vdr/libvdr-svccli.so.1.7.27
+lib/vdr/libvdr-status.so.1.7.27
+lib/vdr/libvdr-skincurses.so.1.7.27
+lib/vdr/libvdr-pictures.so.1.7.27
+lib/vdr/libvdr-osddemo.so.1.7.27
+lib/vdr/libvdr-hello.so.1.7.27
+lib/vdr/libvdr-svdrpdemo.so.1.7.27
+lib/vdr/libvdr-epgtableid0.so.1.7.27
+lib/vdr/libvdr-rcu.so.1.7.27
 libdata/pkgconfig/vdr.pc
 %%NLS%%share/locale/ar/LC_MESSAGES/vdr.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/vdr.mo
@@ -106,7 +108,6 @@ include/vdr/remote.h
 include/vdr/recording.h
 include/vdr/recorder.h
 include/vdr/receiver.h
-include/vdr/rcu.h
 include/vdr/plugin.h
 include/vdr/player.h
 include/vdr/pat.h
@@ -135,6 +136,7 @@ include/vdr/cutter.h
 include/vdr/ci.h
 include/vdr/config.h
 include/vdr/channels.h
+include/vdr/s2apiwrapper.h
 include/vdr/Make.global
 %%TTXPATCH%%include/vdr/vdrttxtsubshooks.h
 @exec mkdir -p %D/etc/vdr/plugins

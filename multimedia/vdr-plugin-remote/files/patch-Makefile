@@ -13,6 +13,32 @@
  ### The object files (add further files here):
  
  OBJS = $(PLUGIN).o ttystatus.o
+@@ -81,9 +87,9 @@ $(DEPFILE): Makefile
+ 
+ ### Internationalization (I18N):
+ 
+-ifneq ($(shell grep 'LOCALEDIR' $(VDRDIR)/Makefile),)
++#ifneq ($(shell grep 'LOCALEDIR' $(VDRDIR)/Makefile),)
+ PODIR     = po
+ LOCALEDIR = $(VDRDIR)/locale
+ I18Npo    = $(wildcard $(PODIR)/*.po)
+ I18Nmo    = $(addsuffix .mo, $(foreach file, $(I18Npo), $(basename $(file))))
+ I18Ndirs  = $(notdir $(foreach file, $(I18Npo), $(basename $(file))))
+@@ -104,10 +110,10 @@ i18n: $(I18Nmo)
+ 	    mkdir -p $(LOCALEDIR)/$$i/LC_MESSAGES;\
+ 	    cp $(PODIR)/$$i.mo $(LOCALEDIR)/$$i/LC_MESSAGES/vdr-$(PLUGIN).mo;\
+ 	    done
+-else
+-OBJS += i18n.o
+-i18n: ;
+-endif
++#else
++#OBJS += i18n.o
++#i18n: ;
++#endif
+ 
+ ### Targets:
+ 
 @@ -126,3 +132,6 @@ dist: clean
  clean:
  	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot

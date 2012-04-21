@@ -1,6 +1,6 @@
 --- a/configure
 +++ a/configure
-@@ -350,11 +350,14 @@ test_pkgconfig
+@@ -349,11 +349,14 @@ test_pkgconfig
  [ $debug = yes ] && \
    test_library   X11  do_error     "none.h"         "-lnolib"
  
@@ -20,7 +20,7 @@
  
  if enabled libxine; then
  
-@@ -366,24 +369,40 @@ if enabled libxine; then
+@@ -365,24 +368,40 @@ if enabled libxine; then
    fi
    log " $XINEPLUGINDIR"
  
@@ -41,7 +41,7 @@
 -    test_library X11  xshape       "X11/extensions/shape.h"    "-lXext"      "XShapeQueryExtension(0,0,0)"
 -    test_library X11  xdpms        "X11/extensions/dpms.h"     "-lXext"      "DPMSDisable(0)"
 -    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)"
--    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)"
+-    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)"
 -    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)"
 +#    test_library X11  xext         "X11/extensions/Xext.h"     "-lXext"      ""
 +    test_library X11  xext         "X11/extensions/Xext.h"     "-lXext"      "" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
@@ -55,8 +55,8 @@
 +    test_library X11  xdpms        "X11/extensions/dpms.h"     "-lXext"      "DPMSDisable(0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)"
 +    test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-+#    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)"
-+    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU -lglut"  "glXQueryVersion(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
++#    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)"
++    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)"
 +    test_library none vdpau        "vdpau/vdpau_x11.h"         "-lvdpau"     "vdp_device_create_x11(0,0,0,0)" "-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 +#    test_library X11  dbus-glib-1  \

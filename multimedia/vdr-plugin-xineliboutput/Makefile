@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr-plugin-xineliboutput
-PORTVERSION=	1.0.90s20111129.1002
-PORTREVISION=	3
+PORTVERSION=	1.0.90s20120403.2257
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot
@@ -50,7 +49,7 @@ CONFIGURE_OPTS+=	--disable-libextractor
 
 .if defined(WITH_LIBBLURAY)
 CONFIGURE_OPTS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray.2:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_OPTS+=	--disable-libbluray
 .endif
