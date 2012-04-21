@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTVERSION=	5.2.2
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/
 
@@ -23,6 +22,7 @@ OPTIONS=	NLS	"Native language support"	on \
 		PCRE	"Build with PCRE support"	on
 
 WANT_GNOME=	yes
+USE_NCURSES=	yes
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
@@ -70,6 +70,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g ; \
 		 s|-I/usr/local/include||g ; \
 		 s|-L/usr/local/lib||g ; \
+		 /gtk+/s|3.0|2.0|g ; \
+		 /OK/s|3.0|2.0|g ; \
+		 /CONFOPT_GTK/s|3|2|g ; \
 		 s|-lX11||g' ${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g' ${WRKSRC}/mpv_curses.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/mpdm/config.sh
