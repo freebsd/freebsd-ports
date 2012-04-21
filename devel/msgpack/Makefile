@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	msgpack
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.7
 CATEGORIES=	devel
-MASTER_SITES=	SOURCEFORGE
-MASTER_SITE_SUBDIR=	msgpack/msgpack/cpp
+MASTER_SITES=	http://msgpack.org/releases/cpp/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Binary-based efficient data interchange format focused on performance
