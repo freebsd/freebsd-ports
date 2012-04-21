@@ -30,7 +30,6 @@ RUN_DEPENDS=	enblend>=3.1.r20080615:${PORTSDIR}/graphics/enblend \
 USE_BZIP2=	yes
 
 OPTIONS=	PANOMATIC "Install graphics/panomatic" on \
-		AUTOPANOSIFT "Install graphics/autopano-sift" off \
 		AUTOPANOSIFTC "Install graphics/autopano-sift-c" on
 
 USE_CMAKE=	yes
@@ -108,14 +107,6 @@ post-configure:
 
 .if defined(WITH_PANOMATIC)
 RUN_DEPENDS+=	panomatic:${PORTSDIR}/graphics/panomatic
-.endif
-
-.if defined(WITH_AUTOPANOSIFT)
-.if defined(WITH_AUTOPANOSIFTC)
-BROKEN=	autopano-sift and autopano-sift-c are mutually exclusive,\
-	please run 'make config' again and select at most one of them
-.endif
-RUN_DEPENDS+=	autopanog:${PORTSDIR}/graphics/autopano-sift
 .endif
 
 .if defined(WITH_AUTOPANOSIFTC)
