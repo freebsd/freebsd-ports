@@ -1,0 +1,29 @@
+--- GNUmakefile.orig	2011-12-23 13:58:36.000000000 +0000
++++ GNUmakefile	2012-04-13 04:10:44.000000000 +0000
+@@ -36,7 +36,7 @@
+ # Install dir for libasync_wmi_lib.so.* and pysamba wrapper code.
+ # e.g., Samba/source/bin/shared/libasync_wmi_lib.so.0.0.1 --> $(PY_LIBDIR)
+ #
+-PY_LIBDIR     = $(ZENHOME)/lib/python
++PY_LIBDIR?    = $(ZENHOME)/lib/python
+ 
+ #-------------------------------------------------------------------------#
+ # A key deliverable of this build process is the libasync_wmi shared      #
+@@ -70,7 +70,7 @@
+ #-------------------------------------------------------------------------#
+ # Comment out the next line to disable google-breakpad dependency.
+ ifneq ($(shell uname), Darwin)
+-USE_BREAKPAD = 1
++#USE_BREAKPAD = 1
+ endif
+ 
+ ifneq ($(USE_BREAKPAD),)
+@@ -158,7 +158,7 @@
+ $(SAMBA_SRCDIR)/Makefile: $(SAMBA_SRCDIR)/autogen.sh
+ 	cd $(SAMBA_SRCDIR) ;\
+ 	./autogen.sh ;\
+-	CPPFLAGS="$(WMI_CPPFLAGS)" ./configure --without-readline --enable-debug
++	CPPFLAGS="$(WMI_CPPFLAGS)" ./configure --without-readline --enable-debug --disable-gnutls
+ 
+ ifeq ($(USE_BREAKPAD),)
+ pywmi-build: build-prereqs $(LIBRPC_CONFIG_MK) $(SAMBA_SRCDIR)/Makefile

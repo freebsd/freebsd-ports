@@ -229,4 +229,5 @@ openerpd:*:951:
 bitten-slave:*:952:
 _neubot:*:953:
 hadoop:*:955:
+pandora:*:956:
 nobody:*:65534:

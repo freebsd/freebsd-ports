@@ -232,4 +232,5 @@ bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/usr/s
 _neubot:*:953:953::0:0:neubot daemon:/nonexistent:/usr/sbin/nologin
 oops:*:954:65534::0:0:oops user:/nonexistent:/usr/sbin/nologin
 hadoop:*:955:955::0:0:hadoop user:/nonexistent:/usr/sbin/nologin
+pandora:*:956:956::0:0:Pandora FMS user:/usr/local/etc/pandora/home:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

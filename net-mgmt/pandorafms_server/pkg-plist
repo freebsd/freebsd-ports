@@ -1,0 +1,98 @@
+@comment $FreeBSD$
+bin/pandora_exec
+bin/pandora_server
+%%TENTACLE%%bin/tentacle_server
+@unexec if cmp -s %D/%%ETCDIR%%/pandora_server.conf.sample %D/%%ETCDIR%%/pandora_server.conf;then rm -f %D/%%ETCDIR%%/pandora_server.conf;fi
+%%ETCDIR%%/pandora_server.conf.sample
+@exec [ -e %D/%F ] || cp -p %D/%F %B/pandora_server.conf
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PandoraFMS/.packlist
+%%SITE_PERL%%/PandoraFMS/Config.pm
+%%SITE_PERL%%/PandoraFMS/Core.pm
+%%SITE_PERL%%/PandoraFMS/DB.pm
+%%SITE_PERL%%/PandoraFMS/DataServer.pm
+%%SITE_PERL%%/PandoraFMS/GIS.pm
+%%SITE_PERL%%/PandoraFMS/GeoIP.pm
+%%SITE_PERL%%/PandoraFMS/NetworkServer.pm
+%%SITE_PERL%%/PandoraFMS/NmapParser.pm
+%%SITE_PERL%%/PandoraFMS/PluginServer.pm
+%%SITE_PERL%%/PandoraFMS/PredictionServer.pm
+%%SITE_PERL%%/PandoraFMS/ProducerConsumerServer.pm
+%%SITE_PERL%%/PandoraFMS/ReconServer.pm
+%%SITE_PERL%%/PandoraFMS/SNMPServer.pm
+%%SITE_PERL%%/PandoraFMS/Sendmail.pm
+%%SITE_PERL%%/PandoraFMS/Server.pm
+%%SITE_PERL%%/PandoraFMS/Tools.pm
+%%SITE_PERL%%/PandoraFMS/Traceroute.pm
+%%SITE_PERL%%/PandoraFMS/Traceroute/PurePerl.pm
+%%SITE_PERL%%/PandoraFMS/WMIServer.pm
+%%DATADIR%%/util/alert_multicast.pl
+%%DATADIR%%/util/change_remoteconfig.pl
+%%DATADIR%%/util/compaq_chassis_trap_manager.pl
+%%DATADIR%%/util/compaq_chassis_trap_manager2.pl
+%%DATADIR%%/util/esx_trap_manager.pl
+%%DATADIR%%/util/gis.README
+%%DATADIR%%/util/gpx2pandora_agent_data.pl
+%%DATADIR%%/util/n2p.README
+%%DATADIR%%/util/n2p.pl
+%%DATADIR%%/util/pandora2ast/GPL
+%%DATADIR%%/util/pandora2ast/README
+%%DATADIR%%/util/pandora2ast/channelcommands
+%%DATADIR%%/util/pandora2ast/extensions.conf.add
+%%DATADIR%%/util/pandora2ast/pandora2ast.pl
+%%DATADIR%%/util/pandora2ast/text2speech.php
+%%DATADIR%%/util/pandora_DBI_test.pl
+%%DATADIR%%/util/pandora_backup.sh
+%%DATADIR%%/util/pandora_count.sh
+%%DATADIR%%/util/pandora_db.pl
+%%DATADIR%%/util/pandora_dbstress.README
+%%DATADIR%%/util/pandora_dbstress.pl
+%%DATADIR%%/util/pandora_diagnostic.sh
+%%DATADIR%%/util/pandora_logrotate
+%%DATADIR%%/util/pandora_manage.pl
+%%DATADIR%%/util/pandora_recode_db.pl
+%%DATADIR%%/util/pandora_remote_agent.sh
+%%DATADIR%%/util/pandora_server
+%%DATADIR%%/util/pandora_snmp.README
+%%DATADIR%%/util/pandora_sync_db.pl
+%%DATADIR%%/util/pandora_xml_stress.README
+%%DATADIR%%/util/pandora_xml_stress.conf
+%%DATADIR%%/util/pandora_xml_stress.pl
+%%DATADIR%%/util/plugin/babel_plugin/README
+%%DATADIR%%/util/plugin/babel_plugin/babel_plugin.sh
+%%DATADIR%%/util/plugin/babel_plugin/plugin_definition.ini
+%%DATADIR%%/util/plugin/bgp_plugin.pl
+%%DATADIR%%/util/plugin/create_integria_incident.sh
+%%DATADIR%%/util/plugin/dns_plugin.sh
+%%DATADIR%%/util/plugin/integria_plugin/README
+%%DATADIR%%/util/plugin/integria_plugin/integria_plugin.sh
+%%DATADIR%%/util/plugin/integria_plugin/plugin_definition.ini
+%%DATADIR%%/util/plugin/ipmi-plugin.pl
+%%DATADIR%%/util/plugin/multicast.pl
+%%DATADIR%%/util/plugin/mysql_plugin.sh
+%%DATADIR%%/util/plugin/openvpn_pandoraplugin.pl
+%%DATADIR%%/util/plugin/pandora_inventory_change.README
+%%DATADIR%%/util/plugin/pandora_inventory_change.pl
+%%DATADIR%%/util/plugin/pandora_loadgen.pl
+%%DATADIR%%/util/plugin/pandora_server_status.pl
+%%DATADIR%%/util/plugin/snmp_process.pl
+%%DATADIR%%/util/plugin/ssh_pandoraplugin.sh
+%%DATADIR%%/util/plugin/udp_nmap_plugin.sh
+%%DATADIR%%/util/plugin/webcheck_plugin.sh
+%%DATADIR%%/util/recon_scripts/snmpdevices.pl
+%%DATADIR%%/util/recon_scripts/ipmi-recon.pl
+%%DATADIR%%/util/tentacle_serverd
+%%DATADIR%%/util/udp_client.pl
+%%DATADIR%%/util/windows.README
+etc/periodic/daily/199.clean-pandoradb
+@dirrm %%SITE_PERL%%/PandoraFMS/Traceroute
+@dirrm %%SITE_PERL%%/PandoraFMS
+@dirrm %%DATADIR%%/util/plugin/babel_plugin
+@dirrm %%DATADIR%%/util/plugin/integria_plugin
+@dirrm %%DATADIR%%/util/pandora2ast
+@dirrmtry %%DATADIR%%/util/plugin
+@dirrmtry %%DATADIR%%/util/recon_scripts
+@dirrmtry %%DATADIR%%/util
+@dirrmtry %%DATADIR%%
+@dirrmtry %%PREFIX%%/etc/periodic/daily
+@dirrmtry %%PREFIX%%/etc/periodic
+@dirrmtry %%ETCDIR%%

@@ -232,6 +232,9 @@
     SUBDIR += packit
     SUBDIR += pads
     SUBDIR += pancho
+    SUBDIR += pandorafms_agent
+    SUBDIR += pandorafms_console
+    SUBDIR += pandorafms_server
     SUBDIR += pftabled
     SUBDIR += php4-snmp
     SUBDIR += php5-snmp
@@ -296,6 +299,7 @@
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
     SUBDIR += wifimgr
+    SUBDIR += wmi-client
     SUBDIR += xymon-client
     SUBDIR += xymon-server
     SUBDIR += yabm

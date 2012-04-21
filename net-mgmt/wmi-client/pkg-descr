@@ -1,0 +1,6 @@
+This DCOM/WMI client implementation is based on Samba4 sources.
+It uses RPC/DCOM mechanism to interact with WMI services on
+Windows machines.
+
+This package contains also winexe - program to remote execution
+Windows commands remotely.
