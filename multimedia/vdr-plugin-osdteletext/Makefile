@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	vdr-plugin-osdteletext
-PORTVERSION=	0.9.0
-PORTREVISION=	9
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/416/
+MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/899/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.tgz
+
+#PATCH_SITES=	http://projects.vdr-developer.org/attachments/download/901/
+#PATCHFILES=	receiver-fix-2.diff
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - OSD teletext plugin

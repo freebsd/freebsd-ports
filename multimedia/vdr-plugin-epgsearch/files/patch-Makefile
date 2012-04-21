@@ -1,9 +1,9 @@
 --- a/Makefile
 +++ b/Makefile
-@@ -226,19 +226,35 @@ generate-i18n: i18n-template.h $(I18Npot
+@@ -235,19 +235,35 @@ i18n: $(I18Nmsgs) $(I18Npot)
  
  libvdr-$(PLUGIN).so: $(OBJS)
- 	$(CXX) $(CXXFLAGS)  -shared $(OBJS) $(LIBS) -o $@
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) $(LIBS) -o $@
 +ifdef FREEBSD
 +	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
 +else
@@ -11,7 +11,7 @@
 +endif
  
  libvdr-$(PLUGIN2).so: $(OBJS2)
- 	$(CXX) $(CXXFLAGS) -shared $(OBJS2) $(LIBS2) -o $@
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS2) $(LIBS2) -o $@
 +ifdef FREEBSD
 +	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
 +else
@@ -19,7 +19,7 @@
 +endif
  
  libvdr-$(PLUGIN3).so: $(OBJS3)
- 	$(CXX) $(CXXFLAGS) -shared $(OBJS3) $(LIBS3) -o $@
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS3) $(LIBS3) -o $@
 +ifdef FREEBSD
 +	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
 +else
@@ -27,7 +27,7 @@
 +endif
  
  libvdr-$(PLUGIN4).so: $(OBJS4)
- 	$(CXX) $(CXXFLAGS) -shared $(OBJS4) $(LIBS4) -o $@
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS4) $(LIBS4) -o $@
 +ifdef FREEBSD
 +	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
 +else
@@ -35,11 +35,11 @@
 +endif
  
  createcats: createcats.o Makefile
- 	$(CXX) $(CXXFLAGS) createcats.o -o $@
-@@ -278,3 +294,15 @@ install-doc:
- clean:
- 	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot $(PODIR)/*~
- 	@-rm -f $(OBJS) $(OBJS2) $(OBJS3) $(OBJS4) $(DEPFILE) *.so *.tgz core* *~ createcats createcats.o pod2*.tmp
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) createcats.o -o $@
+@@ -299,3 +315,15 @@ clean:
+ 	@-rm -f $(OBJS) $(OBJS2) $(OBJS3) $(OBJS4) $(DEPFILE) *.so *.tgz core* createcats createcats.o pod2*.tmp
+ 	@-find . \( -name "*~" -o -name "#*#" \) -print0 | xargs -0r rm -f
+ 	@-rm -rf doc html man
 +
 +install:
 +	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)

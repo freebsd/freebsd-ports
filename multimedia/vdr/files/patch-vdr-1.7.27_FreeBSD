@@ -1,7 +1,7 @@
 Index: Make.config.template
 @@ -8,6 +8,11 @@
  #
- # $Id: Make.config.template 2.4 2011/12/04 14:41:00 kls Exp $
+ # $Id: Make.config.template 2.8 2012/03/20 11:20:13 kls Exp $
  
 +OSTYPE   ?= $(shell uname -s)
 +ifeq ($(OSTYPE),FreeBSD)
@@ -11,53 +11,36 @@ Index: Make.config.template
  ### The C compiler and options:
  
  CC       = gcc
-@@ -23,20 +28,34 @@ endif
+@@ -28,11 +33,22 @@ PREFIX   = $(DESTDIR)/usr/local
+ MANDIR   = $(PREFIX)/man
+ BINDIR   = $(PREFIX)/bin
  
- ### The directory environment:
- 
--#DVBDIR   = /usr/src/v4l-dvb/linux
--MANDIR   = /usr/local/man
--BINDIR   = /usr/local/bin
-+PREFIX   = /usr/local
-+MANDIR   = $(PREFIX)/man
-+BINDIR   = $(PREFIX)/bin
- 
--LOCDIR   = ./locale
- PLUGINDIR= ./PLUGINS
--PLUGINLIBDIR= $(PLUGINDIR)/lib
- VIDEODIR = /video
-+
 +ifdef FREEBSD
 +# you have to set DVBDIR to a valid path!!!
 +# you will need extra patches for DVBDIR!!!
-+DVBDIR   = /usr/src/v4l-dvb/linux
-+LOCDIR   = $(PREFIX)/share/locale
-+CONFDIR  = $(PREFIX)/etc/vdr
-+PLUGINLIBDIR= $(PREFIX)/lib/vdr
++#DVBDIR   = /usr/local/include
++LOCDIR       = $(PREFIX)/share/locale
++PLUGINDIR    = ./PLUGINS
++PLUGINLIBDIR = $(PREFIX)/lib/vdr
++VIDEODIR     = /video
++CONFDIR      = $(PREFIX)/etc/vdr
 +else
-+LOCDIR   = ./locale
-+PLUGINLIBDIR= $(PLUGINDIR)/lib
- CONFDIR  = $(VIDEODIR)
+ LOCDIR       = ./locale
+ PLUGINDIR    = ./PLUGINS
+ PLUGINLIBDIR = $(PLUGINDIR)/lib
+ VIDEODIR     = /video
+ CONFDIR      = $(VIDEODIR)
 +endif
  
  ### The remote control:
  
- LIRC_DEVICE = /var/run/lirc/lircd
-+ifdef FREEBSD
-+RCU_DEVICE  = /dev/cuau0
-+else
- RCU_DEVICE  = /dev/ttyS1
-+endif
- 
- ## Define if you want vdr to not run as root
- #VDR_USER = vdr
-@@ -46,3 +65,7 @@ RCU_DEVICE  = /dev/ttyS1
+@@ -46,3 +62,7 @@ LIRC_DEVICE = /var/run/lirc/lircd
  ifdef DVBDIR
  INCLUDES += -I$(DVBDIR)/include
  endif
 +
 +ifdef FREEBSD
-+INCLUDES += -I/usr/local/include
++INCLUDES += -I$(VDRDIR)/include -I/usr/local/include
 +endif
 Index: Makefile
 @@ -8,6 +8,11 @@
@@ -72,19 +55,19 @@ Index: Makefile
  CC       ?= gcc
  CFLAGS   ?= -g -O3 -Wall
  
-@@ -21,7 +26,11 @@ MANDIR   = $(PREFIX)/share/man
- BINDIR   = $(PREFIX)/bin
- INCDIR   = $(PREFIX)/include
- LOCDIR   = ./locale
+@@ -21,7 +26,11 @@ MANDIR  ?= $(PREFIX)/share/man
+ BINDIR  ?= $(PREFIX)/bin
+ INCDIR  ?= $(PREFIX)/include
+ LOCDIR  ?= ./locale
 +ifdef FREEBSD
-+LIBS     = -ljpeg -lpthread -lrt $(shell pkg-config --libs freetype2 fontconfig) -liconv -lintl -lutil
++LIBS     = -ljpeg -lpthread -lrt -lutil -lintl -liconv $(shell pkg-config --libs freetype2 fontconfig)
 +else
  LIBS     = -ljpeg -lpthread -ldl -lcap -lrt $(shell pkg-config --libs freetype2 fontconfig)
 +endif
  INCLUDES ?= $(shell pkg-config --cflags freetype2 fontconfig)
  
  PLUGINDIR= ./PLUGINS
-@@ -151,7 +160,11 @@ i18n: $(I18Nmsgs)
+@@ -150,7 +159,11 @@ i18n: $(I18Nmsgs)
  
  install-i18n:
  	@mkdir -p $(DESTDIR)$(LOCDIR)
@@ -96,7 +79,7 @@ Index: Makefile
  
  # The 'include' directory (for plugins):
  
-@@ -190,7 +203,11 @@ install: install-bin install-conf instal
+@@ -189,7 +202,11 @@ install: install-bin install-conf instal
  
  install-bin: vdr
  	@mkdir -p $(DESTDIR)$(BINDIR)
@@ -108,7 +91,7 @@ Index: Makefile
  
  # Configuration files:
  
-@@ -213,13 +230,18 @@ install-doc:
+@@ -212,13 +229,18 @@ install-doc:
  
  install-plugins: plugins
  	@mkdir -p $(DESTDIR)$(PLUGINLIBDIR)
@@ -839,14 +822,7 @@ diff -u -r1.1.1.5 -r1.8
  off_t cUnbufferedFile::Seek(off_t Offset, int Whence)
  {
 Index: tools.h
-===================================================================
-RCS file: /progs/network/ccvs/vdr/tools.h,v
-retrieving revision 1.1.1.2
-retrieving revision 1.3
-diff -u -r1.1.1.2 -r1.3
---- tools.h	2010/02/17 10:14:44	1.1.1.2
-+++ tools.h	2010/02/17 10:46:55	1.3
-@@ -26,6 +26,12 @@
+@@ -27,6 +27,12 @@
  #include <sys/stat.h>
  #include <sys/types.h>
  
@@ -859,10 +835,10 @@ diff -u -r1.1.1.2 -r1.3
  typedef unsigned char uchar;
  
  extern int SysLogLevel;
-@@ -216,9 +222,17 @@
- bool SpinUpDisk(const char *FileName);
+@@ -227,9 +233,17 @@ bool SpinUpDisk(const char *FileName);
  void TouchFile(const char *FileName);
  time_t LastModifiedTime(const char *FileName);
+ off_t FileSize(const char *FileName); ///< returns the size of the given file, or -1 in case of an error (e.g. if the file doesn't exist)
 +#ifdef __FreeBSD__
 +cString WeekDayNameReal(int WeekDay);
 +#else
@@ -1219,4 +1195,32 @@ diff -u -r1.1.1.4 -r1.7
 +endif
  
  dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/epgtableid0/Makefile.orig
++++ PLUGINS/src/epgtableid0/Makefile
+@@ -100,7 +100,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: $(I18Npo) clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
+--- PLUGINS/src/rcu/Makefile.orig
++++ PLUGINS/src/rcu/Makefile
+@@ -100,7 +100,11 @@ i18n: $(I18Nmsgs) $(I18Npot)
+ 
+ libvdr-$(PLUGIN).so: $(OBJS)
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
++ifdef FREEBSD
++	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
++else
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
++endif
+ 
+ dist: $(I18Npo) clean
  	@-rm -rf $(TMPDIR)/$(ARCHIVE)

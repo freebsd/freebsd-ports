@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	vdr-plugin-epgsearch
-PORTVERSION=	0.9.25b20s20110221
-PORTREVISION=	6
+PORTVERSION=	1.0.1s20120322
 CATEGORIES=	multimedia
 MASTER_SITES=	http://winni.vdr-developer.org/epgsearch/downloads/beta/:beta \
 		LOCAL/nox/:snapshot
-DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${PORTVERSION:S/b/.beta/}${DISTVERSIONSUFFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	nox@FreeBSD.org

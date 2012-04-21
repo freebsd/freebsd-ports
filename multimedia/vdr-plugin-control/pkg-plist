@@ -1,1 +1,1 @@
-lib/vdr/libvdr-control.so.1.7.22
+lib/vdr/libvdr-control.so.%%APIVERSION%%

@@ -1,17 +1,16 @@
-diff -ur orig/osdteletext-0.8.3/Makefile osdteletext-0.8.3/Makefile
---- orig/osdteletext-0.8.3/Makefile	2009-05-25 20:28:59.000000000 +0200
-+++ osdteletext-0.8.3/Makefile	2010-03-16 17:31:20.000000000 +0100
-@@ -94,7 +94,11 @@
+--- Makefile.orig
++++ Makefile
+@@ -98,7 +98,11 @@ all: libvdr-$(PLUGIN).so i18n
  
  libvdr-$(PLUGIN).so: $(OBJS)
- 	$(CXX) $(CXXFLAGS) -shared $(OBJS) -o $@
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
 +ifdef FREEBSD
 +	@cp -f $@ $(LIBDIR)/$@.$(APIVERSION)
 +else
  	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
 +endif
  
- dist: clean
+ dist: $(I18Npo) clean
  	@-rm -rf $(TMPDIR)/$(ARCHIVE)
 diff -ur orig/osdteletext-0.8.3/txtrecv.c osdteletext-0.8.3/txtrecv.c
 --- orig/osdteletext-0.8.3/txtrecv.c	2009-05-25 20:28:59.000000000 +0200

@@ -1,6 +1,24 @@
 --- a/protocolext.c
 +++ b/protocolext.c
-@@ -82,6 +82,7 @@ void cIptvProtocolExt::TerminateScript(v
+@@ -55,10 +55,17 @@ void cIptvProtocolExt::ExecuteScript(voi
+      // Execute the external script
+      cString cmd = cString::sprintf("%s %d %d", *scriptFile, scriptParameter, socketPort);
+      debug("cIptvProtocolExt::ExecuteScript(child): %s\n", *cmd);
++#ifdef linux
+      if (execl("/bin/bash", "sh", "-c", *cmd, (char *)NULL) == -1) {
+         error("Script execution failed: %s", *cmd);
+         _exit(-1);
+         }
++#else
++     if (execl("/bin/sh", "sh", "-c", *cmd, (char *)NULL) == -1) {
++        error("Script execution failed: %s", *cmd);
++        _exit(-1);
++        }
++#endif
+      _exit(0);
+      }
+   else {
+@@ -86,6 +93,7 @@ void cIptvProtocolExt::TerminateScript(v
            error("Script '%s' won't terminate - killing it!", *scriptFile);
            kill(pid, SIGKILL);
            }
@@ -8,7 +26,7 @@
         // Clear wait status to make sure child exit status is accessible
         memset(&waitStatus, '\0', sizeof(waitStatus));
         // Wait for child termination
-@@ -94,6 +95,17 @@ void cIptvProtocolExt::TerminateScript(v
+@@ -98,6 +106,17 @@ void cIptvProtocolExt::TerminateScript(v
            debug("Child (%d) exited as expected\n", pid);
            waitOver = true;
            }

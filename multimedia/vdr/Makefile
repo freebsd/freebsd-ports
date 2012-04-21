@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	vdr
-PORTVERSION=	1.7.22
+PORTVERSION=	1.7.27
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
+
+PATCH_SITES=	http://www.udo-richter.de/vdr/files/
+PATCHFILES=	vdr-1.7.24-s2apiwrapper-0.8.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - development version
@@ -19,7 +23,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fon
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On \
-		TTXPATCH "Support patches for teletext subtitle plugin" On
+		TTXPATCH "Support patches for teletext subtitle plugin" On \
+		DVBPATCH "DVB audio patch for some countries" Off
 
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
@@ -36,11 +41,13 @@ CONFDIR=	$(ETCDIR)
 USE_CSTD=	gnu89
 MAKE_ARGS+=	CC=${CC}
 MAKE_ARGS+=	CXX=${CXX}
-MAKE_ARGS+=	DVBDIR=${LOCALBASE}/include
 MAKE_ARGS+=	VDR_USER=${VDR_USER}
 MAKE_ARGS+=	CONFDIR=$(CONFDIR)
 MAKE_ARGS+=	OSTYPE=FreeBSD
 MAKE_ARGS+=	LIRC_DEVICE=/var/run/lirc/lircd
+MAKE_ARGS+=	LIBDIR=../../lib
+MAKE_ARGS+=	VDRDIR=${WRKSRC}
+MAKE_ARGS+=	TMPDIR=/tmp
 ALL_TARGET=	all plugins
 
 VIDEODIR=	/video
@@ -59,6 +66,9 @@ PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch
 .if defined(WITH_IPTVPATCH)
 EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
+.endif
+.if defined(WITH_DVBPATCH)
+EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.27-pat.diff
 .endif
 
 .if defined(WITH_TTXPATCH)
@@ -79,6 +89,8 @@ post-patch:
 	@${REINPLACE_CMD} '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
 		${WRKSRC}/Makefile ${WRKSRC}/libsi/Makefile \
 		${WRKSRC}/PLUGINS/src/*/Makefile
+	@[ ! -f ${WRKSRC}/s2apiwrapper.c ] || \
+		${REINPLACE_CMD} 's/__u32/uint32_t/' ${WRKSRC}/s2apiwrapper.c
 .if defined(WITH_TTXPATCH)
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-1
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-2
@@ -88,8 +100,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${CONFDIR}|' ${WRKSRC}/vdr.1
 # We don't support this yet:
 	@${RM} -r ${WRKSRC}/PLUGINS/src/dvbhddevice
-# upstream bug:
-	@${CP} ${WRKSRC}/svdrpsend.pl ${WRKSRC}/svdrpsend
 
 post-install:
 .if !defined(WITHOUT_NLS)

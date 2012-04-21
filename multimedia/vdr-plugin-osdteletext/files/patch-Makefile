@@ -1,14 +1,10 @@
 --- osdteletext-0.8.3/Makefile.orig
 +++ osdteletext-0.8.3/Makefile
-@@ -110,8 +114,11 @@ dist: clean
- 
- clean:
- 	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot
--	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
+@@ -113,5 +113,8 @@ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
  
  install:
 +	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) $(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)
-+	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
 +
 +install-readme:
  	@install -d ../../man

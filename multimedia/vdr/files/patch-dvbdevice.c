@@ -8,20 +8,3 @@
  #include "dvbdevice.h"
  #include <ctype.h>
  #include <errno.h>
-@@ -800,10 +801,13 @@ bool cDvbDevice::Initialize(void)
-                    NextCardIndex(1); // skips this one
-                 }
-              }
--          else if (Frontend == 0)
--             goto LastAdapter;
--          else
-+          else {
-+             if (Checked >= MAXDVBDEVICES || Adapter >= MAXDVBDEVICES)
-+               goto LastAdapter;
-+             if (Frontend == 0)
-+               NextCardIndex(1); // skips this one
-              goto NextAdapter;
-+             }
-           }
-       NextAdapter: ;
-       }
