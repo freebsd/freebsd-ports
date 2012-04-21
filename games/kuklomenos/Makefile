@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	kuklomenos
-PORTVERSION=	0.4.4
-PORTREVISION=	3
+PORTVERSION=	0.4.5
 CATEGORIES=	games
-MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but challenging abstract shoot-em-up game
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
@@ -21,11 +21,12 @@ OPTIONS=	VORBIS "Enable Ogg/Vorbis support" on
 
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHEAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=--disable-sound
@@ -40,6 +41,5 @@ post-patch:
 		's|<SDL/SDL_mixer.h>|"SDL_mixer.h"|g' ${WRKSRC}/SDL_mixer/load_ogg.c
 	@${REINPLACE_CMD} -e \
 		'/^sounds_DATA/s|Makefile.am||g' ${WRKSRC}/sounds/Makefile.in
-	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/net.cc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
