@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--disable-suid-install
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 803000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd-rdnssd.h
 .endif
 
