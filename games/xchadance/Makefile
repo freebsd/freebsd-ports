@@ -17,11 +17,6 @@ COMMENT=	Display a dancing girl "ChaCha."
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=		unfetchable
-
 USE_XORG=	x11
 MAKEFILE=	makefile
 NO_WRKSUBDIR=	yes
