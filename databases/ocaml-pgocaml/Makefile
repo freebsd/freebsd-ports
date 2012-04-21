@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgocaml
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	databases
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/850/
 PKGNAMEPREFIX=	ocaml-
 EXTRACT_SUFX=	.tgz
 
@@ -20,23 +20,21 @@ BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/extlib:${PORTSDIR}/devel/ocaml-e
 		${LOCALBASE}/${OCAML_SITELIBDIR}/calendar:${PORTSDIR}/devel/ocaml-calendar \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/csv:${PORTSDIR}/textproc/ocaml-csv
 
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=		does not build
-
 USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
-OCAML_PKGDIRS=	pgocaml
+USE_OCAMLFIND_PLIST=	yes
 
 INSTALL_TARGET=	findlib_install
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/camlp4o.byte)
+post-patch:
+	${REINPLACE_CMD} 's/-pp "camlp4o/-pp "camlp4o.byte/g' ${WRKSRC}/Makefile
+.endif
 
 pre-build:
 	cd ${WRKSRC}; ${GMAKE} depend
 
-post-install:
-	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
