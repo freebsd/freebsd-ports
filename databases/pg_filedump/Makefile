@@ -17,12 +17,14 @@ COMMENT=	Utility to format PostgreSQL heap, index, etc into human-readable form
 BUILD_DEPENDS=	\
 	${NONEXISTENT}:${PORTSDIR}/databases/postgresql84-client:patch
 
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=		does not build
-
 WRKSRC=	${WRKDIR}/${PORTNAME}-8.4.0
+
+.include <bsd.port.pre.mk>
+
+PG84VER!=	cd ${PORTSDIR}/databases/postgresql84-client && ${MAKE} -V PORTVERSION
+
+post-patch:
+	${REINPLACE_CMD} -e "s|8.4.0|${PG84VER}|" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pg_filedump ${PREFIX}/bin
@@ -32,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README.pg_filedump ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
