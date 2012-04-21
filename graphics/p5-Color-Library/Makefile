@@ -7,6 +7,7 @@
 
 PORTNAME=	Color-Library
 PORTVERSION=	0.02.1
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROKR
@@ -17,8 +18,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An easy-to-use and comprehensive named-color library
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most

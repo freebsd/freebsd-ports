@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Action-REST
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:${PORTSDIR}/www/p5-Catalyst-Runtime 
 		p5-Data-Serializer>=0.36:${PORTSDIR}/devel/p5-Data-Serializer \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
 		p5-Moose>=1.03:${PORTSDIR}/devel/p5-Moose \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find \
