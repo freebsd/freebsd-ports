@@ -15,6 +15,7 @@ USE_GL=		gl
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
 do-install:
+	@${MKDIR} ${PREFIX}/include/GL/
 	cd ${WRKSRC}/src/glu; ${GMAKE} install
 	${INSTALL_DATA} ${WRKSRC}/include/GL/glu*.h ${PREFIX}/include/GL/
 	cd ${WRKSRC}/src/glu; ${GMAKE} install

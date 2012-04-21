@@ -13,7 +13,8 @@ DISTNAME=	xf86-video-intel-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Driver for Intel integrated graphics chipsets
 
-CONFLICTS=	xf86-video-i810-[0-9]* xf86-video-intel-[0-9]*
+IGNORE=		Not supported.
+CONFLICTS=	xf86-video-intel-2.7.[0-9]* xf86-video-intel-2.15.[0-9]*
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_GL=		gl

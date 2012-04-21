@@ -11,7 +11,6 @@ CATEGORIES=	graphics
 
 COMMENT=	OpenGL library that renders using GLX or DRI
 
-BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm \
 		expat.6:${PORTSDIR}/textproc/expat2
 

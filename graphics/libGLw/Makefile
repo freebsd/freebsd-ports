@@ -7,12 +7,9 @@
 
 PORTNAME=	libGLw
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL widgets library
-
-BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_GL=		gl
 USE_MOTIF=	yes

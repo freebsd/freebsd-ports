@@ -1,6 +1,8 @@
 bin/Xdmx
+%%OLD%%bin/xdmx
 bin/dmxaddinput
 bin/dmxaddscreen
+%%NEW%%bin/dmxinfo
 bin/dmxreconfig
 bin/dmxresize
 bin/dmxrminput
@@ -8,5 +10,6 @@ bin/dmxrmscreen
 bin/dmxtodmx
 bin/dmxwininfo
 bin/vdltodmx
-bin/xdmx
 bin/xdmxconfig
+%%NEW%%@dirrmtry share/X11/xorg.conf.d
+%%NEW%%@dirrmtry share/X11

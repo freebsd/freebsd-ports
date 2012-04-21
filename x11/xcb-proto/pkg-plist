@@ -18,6 +18,7 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/xevie.xml
 %%DATADIR%%/xf86dri.xml
 %%DATADIR%%/xfixes.xml
+%%DATADIR%%/xkb.xml
 %%DATADIR%%/xinerama.xml
 %%DATADIR%%/xinput.xml
 %%DATADIR%%/xprint.xml

@@ -32,11 +32,11 @@
   if test "x$PPC_VIDEO" = xyes; then
    PPC_VIDEO_TRUE=
    PPC_VIDEO_FALSE='#'
---- hw/xfree86/common/compiler.h.dist	2009-04-14 10:14:57.000000000 -0700
-+++ hw/xfree86/common/compiler.h	2009-06-18 16:22:46.000000000 -0700
-@@ -363,12 +363,10 @@
- #    endif
- 
+--- hw/xfree86/common/compiler.h.orig	2011-06-11 18:55:47.000000000 +0200
++++ hw/xfree86/common/compiler.h	2011-07-21 20:34:44.000000000 +0200
+@@ -397,12 +397,10 @@
+ #include <machine/pio.h>
+ #endif /* __NetBSD__ */
  
 -#   elif defined(linux) && defined(__ia64__) 
 +#   elif (defined(linux) || defined(__FreeBSD__)) && defined(__ia64__) 
@@ -45,9 +45,9 @@
  
 -#    include <sys/io.h>
 -
- struct __una_u64 { uint64_t x __attribute__((packed)); };
- struct __una_u32 { uint32_t x __attribute__((packed)); };
- struct __una_u16 { uint16_t x __attribute__((packed)); };
+ #    undef outb
+ #    undef outw
+ #    undef outl
 --- hw/xfree86/os-support/bsd/Makefile.in.dist	2009-06-18 17:45:13.000000000 -0700
 +++ hw/xfree86/os-support/bsd/Makefile.in	2009-06-18 17:45:19.000000000 -0700
 @@ -63,6 +63,7 @@

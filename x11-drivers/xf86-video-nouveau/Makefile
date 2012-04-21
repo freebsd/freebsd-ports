@@ -21,9 +21,8 @@ MAN4=		nouveau.4x
 
 MAKE_JOBS_SAFE=	yes
 
-.if defined(WITHOUT_NOUVEAU)
-BROKEN=		Please disable WITHOUT_NOUVEAU global macro.
-.endif
+# also doesn't work with mesa (libGL) version higher then 7.4.x
+IGNORE=		Not supported, missing kernel support. use the nvidia driver.
 
 post-configure:
 	${REINPLACE_CMD} '/NV_DRIVER_DATE/s/".*"/"${SNAPDATE}.${SNAPREV}"/' ${WRKSRC}/config.h

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-glint
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

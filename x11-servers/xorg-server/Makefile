@@ -5,25 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xorg-server
-PORTVERSION=	1.7.7
-PORTREVISION=	3
-PORTEPOCH=	1
+PORTNAME?=	xorg-server
+PORTVERSION=	${XORG_VERSION}
+PORTREVISION?=	${XORG_REVISION}
+PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
 DISTFILES=	xorg-server-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org X server and related programs
+COMMENT?=	X.Org X server and related programs
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
-RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config
+
+RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base.xml:${PORTSDIR}/x11/xkeyboard-config \
+		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 XORG_CAT=	xserver
 
+.if defined(WITH_NEW_XORG)
+XORG_VERSION=	1.10.6
+XORG_REVISION=	0
+PLIST_SUB+=	OLD="@comment " NEW=""
+EXTRA_PATCHES+=	${FILESDIR}/extra-hw_dmx_glxProxy_compsize.h \
+		${FILESDIR}/extra-hw_dmx_glxProxy_glxcmds.h
+.else
+XORG_VERSION=	1.7.7
+XORG_REVISION=	4
+PLIST_SUB+=	OLD="" NEW="@comment "
+EXTRA_PATCHES+=	${FILESDIR}/extra-include_eventstr.h
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-os-utils.c
+.endif
+
 USE_GMAKE=	yes
 USE_GL=		gl
-USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
+USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
 		dri2proto xcmiscproto xextproto xproto xtrans xf86miscproto \
 		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
@@ -34,10 +50,12 @@ USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xnest \
+CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
+		--without-xmlto --disable-docs --disable-devel-docs \
 		--localstatedir=/var --without-dtrace --disable-xephyr \
 		--enable-record=yes
 
+.if !defined(SLAVE_PORT)
 MAN1=		Xorg.1 \
 		Xserver.1 \
 		cvt.1 \
@@ -46,21 +64,26 @@ MAN4=		exa.4 \
 		fbdevhw.4
 MAN5=		xorg.conf.5
 
-NOT_FOR_ARCHS=	alpha
-
-.if !defined(ARCH)
-ARCH!=	/usr/bin/uname -p
+.if (WITH_NEW_XORG)
+MAN5+=		xorg.conf.d.5
+.endif
+.else
+# for slave ports we need to overwrite PLIST, so it doesn't overwrite
+# PLIST_FILES, with the masterport plist.
+PLIST=		${.CURDIR}/pkg-plist
 .endif
 
 OPTIONS=	AIGLX	"Compile with Accelerated Indirect GLX support" on \
 		SUID	"Install the Xorg server with setuid bit set" on
+
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == sparc64
 OPTIONS+=	HAL	"Compile with HAL config support" off
 .else
 OPTIONS+=	HAL	"Compile with HAL config support" on
 .endif
 
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL_BASE)
 # The reason why I use this is cause openssl from base doesn't install a .pc file
@@ -86,13 +109,6 @@ CONFIGURE_ARGS+=	--enable-aiglx=no
 CONFIGURE_ARGS+=--enable-install-setuid=yes
 .else
 CONFIGURE_ARGS+=--enable-install-setuid=no
-.endif
-
-.if ${ARCH} == alpha
-PLIST_SUB+=	ALPHA_NA="@comment "
-EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-alpha
-.else
-PLIST_SUB+=	ALPHA_NA=""
 .endif
 
 .if ${ARCH} == ia64
@@ -131,6 +147,15 @@ pre-everything::
 	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
 	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
 	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
+.endif
+
+.if defined(WITH_NEW_XORG)
+post-install:
+	@${MKDIR} ${PREFIX}/share/X11/xorg.conf.d
+
+PLIST_SUB+=	OLD="@comment " NEW=""
+.else
+PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
 .include <bsd.port.post.mk>

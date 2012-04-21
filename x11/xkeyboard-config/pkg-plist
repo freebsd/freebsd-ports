@@ -140,6 +140,7 @@ share/X11/xkb/symbols/af
 share/X11/xkb/symbols/al
 share/X11/xkb/symbols/altwin
 share/X11/xkb/symbols/am
+share/X11/xkb/symbols/apl
 share/X11/xkb/symbols/ara
 share/X11/xkb/symbols/at
 share/X11/xkb/symbols/az
@@ -156,6 +157,7 @@ share/X11/xkb/symbols/ca
 share/X11/xkb/symbols/capslock
 share/X11/xkb/symbols/cd
 share/X11/xkb/symbols/ch
+share/X11/xkb/symbols/cm
 share/X11/xkb/symbols/cn
 share/X11/xkb/symbols/compose
 share/X11/xkb/symbols/ctrl
@@ -172,11 +174,6 @@ share/X11/xkb/symbols/epo
 share/X11/xkb/symbols/es
 share/X11/xkb/symbols/et
 share/X11/xkb/symbols/eurosign
-share/X11/xkb/symbols/extras/apl
-share/X11/xkb/symbols/extras/ir
-share/X11/xkb/symbols/extras/rs
-share/X11/xkb/symbols/extras/ru
-share/X11/xkb/symbols/extras/us
 share/X11/xkb/symbols/fi
 share/X11/xkb/symbols/fo
 share/X11/xkb/symbols/fr
@@ -306,6 +303,7 @@ share/X11/xkb/symbols/th
 share/X11/xkb/symbols/tj
 share/X11/xkb/symbols/tm
 share/X11/xkb/symbols/tr
+share/X11/xkb/symbols/tw
 share/X11/xkb/symbols/typo
 share/X11/xkb/symbols/tz
 share/X11/xkb/symbols/ua
@@ -347,6 +345,7 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ky/LC_MESSAGES/xkeyboard-config.mo
@@ -372,8 +371,8 @@ share/X11/xkb/types/pc
 %%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/crh
 @exec mkdir -p /var/lib/xkb
+@dirrmtry share/locale/crh
 @dirrm share/X11/xkb/types
 @dirrm share/X11/xkb/symbols/xfree68_vndr
 @dirrm share/X11/xkb/symbols/sun_vndr
@@ -384,7 +383,6 @@ share/X11/xkb/types/pc
 @dirrm share/X11/xkb/symbols/macintosh_vndr
 @dirrm share/X11/xkb/symbols/hp_vndr
 @dirrm share/X11/xkb/symbols/fujitsu_vndr
-@dirrm share/X11/xkb/symbols/extras
 @dirrm share/X11/xkb/symbols/digital_vndr
 @dirrm share/X11/xkb/symbols
 @dirrm share/X11/xkb/semantics

@@ -21,48 +21,55 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-.ifdef	WITHOUT_NOUVEAU
-MESABASEVERSION=	7.6.1
-MESASUBVERSION=
-PLIST_SUB+=		MESALIB76= MESALIB74="@comment "
+.if defined(WITH_NEW_XORG)
+MESABASEVERSION=	7.11.2
+# if there is a subversion, include the '-' between 7.11-rc2 for example.
+MESASUBVERSION=		
+PLIST_SUB+=	OLD="@comment " NEW=""
 .else
-MESABASEVERSION=	7.4.4
-MESASUBVERSION=
-PLIST_SUB+=		MESALIB74= MESALIB76="@comment "
-EXTRA_PATCHES+=		${PATCHDIR}/mesalib74-configure
+MESABASEVERSION=	7.6.1
+MESASUBVERSION=		
+PLIST_SUB+=	OLD="" NEW="@comment "
 .endif
 
-MASTER_SITES?=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/:mesa,glut,demos
-MASTER_SITE_SUBDIR=	mesa3d
-DISTFILES=		MesaLib-${MESADISTVERSION}${EXTRACT_SUFX}:mesa
+MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${MESABASEVERSION}/:mesa,glut
+DISTFILES=	MesaLib-${MESADISTVERSION}${EXTRACT_SUFX}:mesa
 MAINTAINER?=	x11@FreeBSD.org
 
-USE_BZIP2=		yes
-USE_GMAKE=		yes
+BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend \
+		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+
+USE_BISON=	build
+USE_PYTHON_BUILD=yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-gallium
+CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers \
+		--disable-egl
+
+.if defined(WITH_NEW_XORG)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-mach64_context.h \
+		${PATCHDIR}/extra-sis_context.h \
+		${PATCHDIR}/extra-src-glsl_ir_constant_expression.cpp
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/extra-src__mesa__x86-64__glapi_x86-64.S \
+		${PATCHDIR}/extra-src__mesa__x86-64__xform4.S \
+		${PATCHDIR}/extra-src__mesa__x86__glapi_x86.S \
+		${PATCHDIR}/extra-src__mesa__x86__read_rgba_span_x86.S
+.endif
 
 ALL_TARGET=		default
 
-#MAKE_ARGS=		SHELL=${SH}
-#CFLAGS+=		-DUSE_XSHM -DHZ=100
-
 PATCHDIR=		${.CURDIR}/../../graphics/libGL/files
-WRKSRC=			${WRKDIR}/Mesa-${MESABASEVERSION}
+WRKSRC=			${WRKDIR}/Mesa-${MESABASEVERSION}${MESASUBVERSION}
 
 .if !defined(ARCH)
 ARCH!=			uname -p
-.endif
-
-.if ${ARCH} == alpha
-FAST_MATH=
-.else
-FAST_MATH=      -ffast-math
 .endif
 
 COMPONENT=		${PORTNAME:L:C/^lib//:C/mesa-//}
@@ -81,13 +88,6 @@ DISTFILES+=		MesaGLUT-${MESADISTVERSION}${EXTRACT_SUFX}:glut
 CONFIGURE_ARGS+=	--disable-glw
 .else
 CONFIGURE_ARGS+=	--enable-motif
-.endif
-
-.if ${COMPONENT:Mdemos} == ""
-CONFIGURE_ARGS+=	--with-demos=no
-.else
-DISTFILES+=		MesaDemos-${MESADISTVERSION}${EXTRACT_SUFX}:demos
-CONFIGURE_ARGS+=	--with-demos=demos,xdemos
 .endif
 
 .if ${COMPONENT:Mdri} == ""
@@ -111,11 +111,4 @@ post-patch:
 .if ${COMPONENT:Mglut} != ""
 	@${REINPLACE_CMD} -e 's|[$$](INSTALL_LIB_DIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/src/glut/glx/Makefile
-.endif
-.if ${COMPONENT:Mdemos} != ""
-	@${REINPLACE_CMD} -e 's|../images/|${DATADIR}/images/|g' \
-		-e 's|geartrain.dat|${DATADIR}/data/geartrain.dat|g' \
-		-e 's|terrain.dat|${DATADIR}/data/terrain.dat|g' \
-		-e 's|isosurf.dat|${DATADIR}/data/isosurf.dat|g' \
-			${WRKSRC}/progs/demos/*.c ${WRKSRC}/progs/xdemos/*.c
 .endif

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libXaw
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 
@@ -16,7 +16,7 @@ COMMENT=	X Athena Widgets library
 XORG_CAT=	lib
 USE_XORG=	printproto:both x11 xau xext xextproto xmu xp xpm xproto:both xt
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=--without-xmlto
+CONFIGURE_ARGS=	--without-xmlto
 
 MAN3=		Xaw.3
 
