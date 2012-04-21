@@ -85,11 +85,3 @@ lib/libhdf4.settings
 lib/libmfhdf.a
 lib/libmfhdf.so
 lib/libmfhdf.so.3
-%%PORTDOCS%%%%DOCSDIR%%/RM-print42r3.pdf
-%%PORTDOCS%%%%DOCSDIR%%/UG_print42r3.pdf
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY.txt
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE.txt
-%%PORTDOCS%%%%DOCSDIR%%/SZIP_HDF4_2r1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/bugs_fixed.txt
-%%PORTDOCS%%%%DOCSDIR%%/misc_docs.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
