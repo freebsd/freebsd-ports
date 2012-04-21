@@ -795,7 +795,6 @@
 %%WWWDIR%%/template/en/default/list/list.csv.tmpl
 %%WWWDIR%%/template/en/default/list/list.html.tmpl
 %%WWWDIR%%/template/en/default/list/list.ics.tmpl
-%%WWWDIR%%/template/en/default/list/list.js.tmpl
 %%WWWDIR%%/template/en/default/list/list.rdf.tmpl
 %%WWWDIR%%/template/en/default/list/quips.html.tmpl
 %%WWWDIR%%/template/en/default/list/server-push.html.tmpl
