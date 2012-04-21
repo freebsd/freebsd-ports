@@ -6,28 +6,35 @@
 #
 
 PORTNAME=	latrine
-PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	games
-MASTER_SITES=	http://people.debian.org/~godisch/latrine/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3085/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based LAnguage TRaINEr
 
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+USE_CSTD=	gnu89
+USE_SQLITE=	3
+USE_PERL5_BUILD=yes
+USE_NCURSES=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_CSTD=	gnu89
-USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_NCURSES=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 MAN1=		latrine.1
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,ncursesw/ncurses.h,ncurses.h,' \
-		${WRKSRC}/charset.h ${WRKSRC}/screen.c
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<ncursesw/|<|'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
