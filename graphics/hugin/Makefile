@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hugin
-PORTVERSION=	2010.4.0
-PORTREVISION=	3
+PORTVERSION=	2011.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -46,11 +45,14 @@ USE_GETTEXT=	yes
 
 USE_GL=		glew glut
 
+MANCOMPRESSED=	yes
 MAN1=		\
+		PTBatcher.1 \
 		PTBatcherGUI.1 \
 		align_image_stack.1 \
 		autooptimiser.1 \
-		calibrate_lens.1 \
+		autopano-noop.sh.1 \
+		calibrate_lens_gui.1 \
 		celeste_standalone.1 \
 		checkpto.1 \
 		cpclean.1 \
@@ -61,6 +63,8 @@ MAN1=		\
 		hugin_hdrmerge.1 \
 		hugin_stitch_project.1 \
 		icpfind.1 \
+		linefind.1 \
+		matchpoint.1 \
 		nona.1 \
 		nona_gui.1 \
 		pano_modify.1 \
@@ -71,6 +75,15 @@ MAN1=		\
 		vig_optimize.1
 
 #DOCSDIR=	${PREFIX}/share/hugin/xrc/data
+
+# Extract the tclap library in a place where hugin's CMake scripts will find
+# it. This library is entirely composed of .h files and does not need
+# to be compiled or configured. This dependency would best be done if tclap
+# is added as a separate port, but it does not seem eligible for that, so
+# currently we store the library in ${PATCHDIR} and extract it before running
+# CMake.
+pre-configure:
+	cd ${WRKSRC}/src/foreign && ${SH} ${PATCHDIR}/tclap-1.2.1-headers.shar
 
 # workaround a bug in cmake (?). Without this we get an error like:
 # cd /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx && /usr/bin/c++   -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -D__WXGTK__ -D_THREAD_SAFE -O2 -fno-strict-aliasing -pipe -pthread;-D_THREAD_SAFE -O3 -DNDEBUG -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin_base -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/foreign/vigra -I/usr/local/include -I/usr/local/include/OpenEXR -isystem /usr/local/lib/wx/include/gtk2-ansi-release-2.8 -isystem /usr/local/include/wx-2.8 -I/usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1 -o CMakeFiles/huginbasewx.dir/ImageCache.o -c /usr/ports/graphics/hugin/work/hugin-0.7.r3135/src/hugin1/base_wx/ImageCache.cpp
