@@ -6,94 +6,46 @@
 #
 
 PORTNAME=	hdf
-PORTVERSION=	4.2r3
-PORTREVISION=	6
+DISTVERSION=	4.2.7-patch1
+PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/prev-releases/HDF4.2r3/src/:src \
-		ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
-		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \
-		ftp://ftp.hdfgroup.org/HDF/Documentation/HDF4.2r3/:doc \
-		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc_szip
-DISTNAME=	HDF${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
-		${SZIP_DOCFILE}:doc_szip \
-		${DOCFILES:C/$/:doc/g}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/	\
+		ftp://ftp.hdfgroup.org/HDF/prev-releases/HDF${PORTVERSION:R}/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=	Does not fetch
-
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		sz.2:${PORTSDIR}/science/szip
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		sz:${PORTSDIR}/science/szip
 
 CONFLICTS=	netcdf-*
 
+USE_BZIP2=	yes
 USE_FORTRAN=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
+# XXX Our libtool breaks, when building this:
+# XXX can't link libraries with fortran
+#USE_AUTOTOOLS=	libtool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-jpeg="${LOCALBASE}" \
 		--with-szlib="${LOCALBASE}"\
-		--mandir=${MANPREFIX}/man
-DOCFILES=	RM-print42r3.pdf \
-		UG_print42r3.pdf
-SZIP_DOCFILE=	SZIP_HDF4_2r1.pdf
+		--enable-shared
 
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
+MAN3=		gr_chunk.3
 MANCOMPRESSED=	no
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64"
-BROKEN=		Does not compile on !i386, !amd64 and !alpha
-.endif
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
-.endif
-
-SHLIBVER_LIBMFHDF=	3
-SHLIBVER_MDF=	2
-
-post-extract:
-	${MKDIR} ${WRKSRC}_SHARED ; ${CP} -r ${WRKSRC}/* ${WRKSRC}_SHARED
-
-do-configure:
-	@(cd ${WRKSRC} && ${SETENV} ./configure \
-		${MAKE_ENV} ${CONFIGURE_ENV} ${CONFIGURE_ARGS})
-	@(cd ${WRKSRC}_SHARED && ${SETENV} ./configure \
-		${MAKE_ENV} ${CONFIGURE_ENV} ${CONFIGURE_ARGS} CFLAGS="${PICFLAG}" FFLAGS="${PICFLAG}")
-
-do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE})
-	@(cd ${WRKSRC}_SHARED; ${SETENV} ${MAKE_ENV} ${MAKE})
-	@(cd ${WRKSRC}_SHARED/mfhdf/libsrc; ld -Bshareable -o libmfhdf.so.${SHLIBVER_LIBMFHDF} -x -soname libmfhdf.so.${SHLIBVER_LIBMFHDF} --whole-archive libmfhdf.a )
-	@(cd ${WRKSRC}_SHARED/hdf/src; ld -Bshareable -o libdf.so.${SHLIBVER_MDF} -x -soname libdf.so.${SHLIBVER_MDF} --whole-archive libdf.a )
+check regression-test test: build
+	${MAKE} ${_MAKE_JOBS} -C ${WRKSRC}/hdf/test check
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}_SHARED/mfhdf/libsrc/libmfhdf.so.${SHLIBVER_LIBMFHDF} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}_SHARED/hdf/src/libdf.so.${SHLIBVER_MDF} ${PREFIX}/lib
-	${LN} -sf libmfhdf.so.${SHLIBVER_LIBMFHDF} ${PREFIX}/lib/libmfhdf.so
-	${LN} -sf libdf.so.${SHLIBVER_MDF} ${PREFIX}/lib/libdf.so
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCFILES} ${SZIP_DOCFILE}
-	@${INSTALL_DATA} ${DISTDIR}/${file} ${DOCSDIR}
-.endfor
-	@cd ${WRKSRC}/release_notes && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+	# Install man-pages omitted by HDF's own install process
+	${INSTALL_MAN} ${WRKSRC}/man/hdfunpac.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 ${MAN1PREFIX}/man/man3/
+	# Removing useless .la files from ${PREFIX}/lib
+	${RM} -f ${PREFIX}/lib/libdf.la ${PREFIX}/lib/libmfhdf.la
 
-test: build
-	cd ${WRKSRC}/hdf/test && ${MAKE} check
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
