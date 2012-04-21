@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/%%ETCDIR%%/pandora_agent.conf.sample %D/%%ETCDIR%%/pandora_agent.conf;then rm -f %D/%%ETCDIR%%/pandora_agent.conf; fi
+%%ETCDIR%%/pandora_agent.conf.sample
+@exec [ -e %D/%F ] || cp -p %D/%F %B/pandora_agent.conf
+bin/pandora_agent
+@exec mkdir -p %D/%%ETCDIR%%/collections
+%%ETCDIR%%/plugins/files_indir
+%%ETCDIR%%/plugins/grep_log
+%%ETCDIR%%/plugins/inventory
+%%ETCDIR%%/plugins/nagios_plugin_wrapper
+%%ETCDIR%%/plugins/pandora_df
+%%ETCDIR%%/plugins/pandora_update
+bin/pandora_agent_exec
+bin/tentacle_client
+%%TENTACLE_SERVER%%bin/tentacle_server
+@exec mkdir -p %D/%%DATADIR%%/collections
+%%DATADIR%%/plugins/files_indir
+%%DATADIR%%/plugins/grep_log
+%%DATADIR%%/plugins/inventory
+%%DATADIR%%/plugins/nagios_plugin_wrapper
+%%DATADIR%%/plugins/pandora_df
+%%DATADIR%%/plugins/pandora_update
+@dirrmtry %%DATADIR%%/collections
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%/collections
+@dirrmtry %%ETCDIR%%/plugins
+@dirrmtry %%ETCDIR%%
