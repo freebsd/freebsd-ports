@@ -1,0 +1,285 @@
+Index: doc/README.CHANGES
+===================================================================
+--- doc/README.CHANGES	(revision 230)
++++ doc/README.CHANGES	(working copy)
+@@ -1,5 +1,25 @@
+ PulledPork Changelog
+ 
++V0.6.2 the Cigar Pig
++
++Bug Fixes:
++- Bug #79 - Fixed race condition that did not allow for disabled rules to be modified using modifysid
++	These rules would then be enabled by flowbit dependency check and be unmodified
++- Bug #77 - Adjusted chown property of archive::tar
++- Bug #78 - Adjusted per bug report to allow for proper ignoring of preproc.rules 
++- Bug #102 - Only Enabled rules are written to sid-msg.map now when -E flag is specified
++- Bug #99 - Doc Bug, updated docs associated with snort_version variable
++- Bug #96 - Modified code to allow for same-line traling comments: "1:10011 #can haz disable!"
++		Also updated the rulestate files (enable,disable,drop)
++- Bug #82 - Modified run order to force modifysid to run before all other sid state modification routines
++		This allows for sid changes to be made prior to automatic state determination ala automatic
++		flowbit resolution.  NOTE that this DOES NOT AND WILL NOT disable automatic flowbit
++		resolution, this is a critical piece.
++- Bug #81 - Updated valid SO distro pre-compiled list
++
++New Features / changes:
++- Bug #105 - Removed Switch function as it is deprecated in > 5.12 perl
++
+ v0.6.1 the Smoking Pig, revisited
+ 
+ Bug Fixes:
+Index: etc/pulledpork.conf
+===================================================================
+--- etc/pulledpork.conf	(revision 230)
++++ etc/pulledpork.conf	(working copy)
+@@ -116,12 +116,15 @@
+ sostub_path=/usr/local/etc/snort/rules/so_rules.rules
+ 
+ # Define your distro, this is for the precompiled shared object libs!
+-# Valid Distro Types=Debian-Lenny, Ubuntu-6.01.1, Ubuntu-8.04
+-# CentOS-4.6, Centos-4-8, CentOS-5.0, Centos-5-4
+-# FC-5, FC-9, FC-11, FC-12, RHEL-5.0
+-# FreeBSD-6.3, FreeBSD-7-2, FreeBSD-7-3, FreeBSD-7.0, FreeBSD-8-0, FreeBSD-8-1
+-# OpenSUSE-11-3
+-distro=FreeBSD-8.0
++# Valid Distro Types:
++# Debian-5-0, Debian-6-0,
++# Ubuntu-8.04, Ubuntu-10-4
++# Centos-4-8, Centos-5-4
++# FC-12, FC-14, RHEL-5-5, RHEL-6-0
++# FreeBSD-7-3, FreeBSD-8-1
++# OpenBSD-4-8
++# Slackware-13-1
++distro=FreeBSD-8.1
+ 
+ #######  This next section is optional, but probably pretty useful to you.
+ #######  Please read thoroughly!
+@@ -160,8 +163,7 @@
+ 
+ # This defines the version of snort that you are using, for use ONLY if the 
+ # proper snort binary is not on the system that you are fetching the rules with
+-# Defining this value will set the Textonly flag, and thus will NOT allow
+-# you to use shared object rules.  This value MUST contain all 4 minor version
++# This value MUST contain all 4 minor version
+ # numbers. ET rules are now also dependant on this, verify supported ET versions
+ # prior to simply throwing rubbish in this variable kthx!
+ # snort_version=2.9.0.0
+Index: etc/disablesid.conf
+===================================================================
+--- etc/disablesid.conf	(revision 230)
++++ etc/disablesid.conf	(working copy)
+@@ -6,6 +6,10 @@
+ # Example of modifying state for rule ranges
+ # 1:220-1:3264,3:13010-3:13013
+ 
++# Comments are allowed in this file, and can also be on the same line
++# As the modify state syntax, as long as it is a trailing comment
++# 1:1011 # I Disabled this rule because I could!
++
+ # Example of modifying state for MS and cve rules, note the use of the : 
+ # in cve. This will modify MS09-008, cve 2009-0233, bugtraq 21301,
+ # and all MS00 and all cve 2000 related sids!  These support regular expression
+Index: etc/dropsid.conf
+===================================================================
+--- etc/dropsid.conf	(revision 230)
++++ etc/dropsid.conf	(working copy)
+@@ -10,6 +10,10 @@
+ # Example of modifying state for rule ranges
+ # 1:220-1:3264,3:13010-3:13013
+ 
++# Comments are allowed in this file, and can also be on the same line
++# As the modify state syntax, as long as it is a trailing comment
++# 1:1011 # I Disabled this rule because I could!
++
+ # Example of modifying state for MS and cve rules, note the use of the : 
+ # in cve. This will modify MS09-008, cve 2009-0233, bugtraq 21301,
+ # and all MS00 and all cve 2000 related sids!  These support regular expression
+Index: etc/enablesid.conf
+===================================================================
+--- etc/enablesid.conf	(revision 230)
++++ etc/enablesid.conf	(working copy)
+@@ -10,6 +10,10 @@
+ # Example of modifying state for rule ranges
+ # 1:220-1:3264,3:13010-3:13013
+ 
++# Comments are allowed in this file, and can also be on the same line
++# As the modify state syntax, as long as it is a trailing comment
++# 1:1011 # I Disabled this rule because I could!
++
+ # Example of modifying state for MS and cve rules, note the use of the : 
+ # in cve. This will modify MS09-008, cve 2009-0233, bugtraq 21301,
+ # and all MS00 and all cve 2000 related sids!  These support regular expression
+Index: pulledpork.pl
+===================================================================
+--- pulledpork.pl	(revision 230)
++++ pulledpork.pl	(working copy)
+@@ -33,7 +33,6 @@
+ use Getopt::Long qw(:config no_ignore_case bundling);
+ use Archive::Tar;
+ use POSIX qw(:errno_h);
+-use Switch;
+ use Cwd;
+ use Carp;
+ 
+@@ -41,7 +40,7 @@
+ 
+ # we are gonna need these!
+ my ( $oinkcode, $temp_path, $rule_file, $Syslogging );
+-my $VERSION = "PulledPork v0.6.1 the Smoking Pig <////~";
++my $VERSION = "PulledPork v0.6.2dev the Cigar Pig <////~";
+ my $ua      = LWP::UserAgent->new;
+ 
+ my ( $Hash, $ALogger, $Config_file, $Sorules, $Auto );
+@@ -139,11 +138,12 @@
+    -d Do not verify signature of rules tarball, i.e. downloading fron non VRT or ET locations.
+    -D What Distro are you running on, for the so_rules
+       For latest supported options see http://www.snort.org/snort-rules/shared-object-rules
+-      Valid Distro Types=Debian-Lenny, Ubuntu-6.01.1, Ubuntu-8.04
+-		CentOS-4.6, Centos-4-8, CentOS-5.0, Centos-5-4
+-		FC-5, FC-9, FC-11, FC-12, RHEL-5.0
+-		FreeBSD-6.3, FreeBSD-7-2, FreeBSD-7-3, FreeBSD-7.0, FreeBSD-8-0, FreeBSD-8-1
+-		OpenSUSE-11-3
++      Valid Distro Types:
++		Debian-5-0, Debian-6-0, Ubuntu-8.04, Ubuntu-10-4
++		Centos-4-8, Centos-5-4,	FC-12, FC-14, RHEL-5-5, RHEL-6-0
++		FreeBSD-7-3, FreeBSD-8-1
++		OpenBSD-4-8
++		Slackware-13-1
+    -e Where the enablesid config file lives.
+    -E Write ONLY the enabled rules to the output files.
+    -g grabonly (download tarball rule file(s) and do NOT process)
+@@ -222,6 +222,7 @@
+     my $tar = Archive::Tar->new();
+     $tar->read( $temp_path . $rule_file );
+     $tar->setcwd( cwd() );
++    local $Archive::Tar::CHOWN = 0; 
+     my @ignores = split( /,/, $ignore );
+ 
+     foreach (@ignores) {
+@@ -233,7 +234,7 @@
+             print "\tIgnoring preprocessor rules: $_\n"
+               if ( $Verbose && !$Quiet );
+             my $preprocfile = $_;
+-            $preprocfile =~ s/preproc/rules/;
++            $preprocfile =~ s/\.preproc/\.rules/;
+             $tar->remove("preproc_rules/$preprocfile");
+         }
+         elsif ( $_ =~ /\.so/ ) {
+@@ -714,11 +715,10 @@
+             @arry = "*" if $sids =~ /\*/;
+             foreach my $sid (@arry) {
+                 $sid = trim($sid);
+-                if ( $sid ne "*" && exists $$href{1}{$sid} ) {
++                if ( $sid ne "*" && defined $$href{1}{$sid}{'rule'} ) {
+                     print "\tModifying SID:$sid from:$from to:$to\n"
+                       if ( $Verbose && !$Quiet );
+-                    $$href{1}{$sid}{'rule'} =~ s/$from/$to/
+-                      if $$href{1}{$sid}{'rule'} !~ /^\s*#/;
++                    $$href{1}{$sid}{'rule'} =~ s/$from/$to/;
+                 }
+                 elsif ( $sid eq "*" ) {
+                     print "\tModifying ALL SIDS from:$from to:$to\n"
+@@ -739,21 +739,22 @@
+ # speed ftw!
+ sub modify_state {
+     my ( $function, $SID_conf, $hashref, $rstate ) = @_;
+-    my ( @sid_mod, $sidlist );
++    my ( @sid_mod, $sidlist);
+     print "Processing $SID_conf....\n" if !$Quiet;
+     print "\tSetting rules specified in $SID_conf to their default state!\n"
+       if ( !$Quiet && $function eq 'enable' && $rstate );
+     if ( -f $SID_conf ) {
+         open( DATA, "$SID_conf" ) or carp "unable to open $SID_conf $!";
+         while (<DATA>) {
+-            $sidlist = $_;
++	    next unless ($_ !~ /^\s*#/ && $_ ne "");
++	    $sidlist = (split '#',$_)[0];
+             chomp($sidlist);
+             $sidlist = trim($sidlist);
+-            if ( ( $sidlist !~ /^\s*#/ ) && ( $sidlist ne "" ) && !(@sid_mod) )
++            if (!@sid_mod )
+             {
+                 @sid_mod = split( /,/, $sidlist );
+             }
+-            elsif ( ( $sidlist !~ /^\s*#/ ) && ( $sidlist ne "" && @sid_mod ) )
++            elsif (@sid_mod)
+             {
+                 push( @sid_mod, split( /,/, $sidlist ) );
+             }
+@@ -861,8 +862,8 @@
+                     if ( $gid && $sid ) {
+                         $gid =~ s/:\d+//;
+                         $sid =~ s/\d+://;
+-                        switch ($function) {
+-                            case "enable" {
++                        if ($function) {
++                            if ($function eq "enable") {
+                                 if ( exists $$hashref{$gid}{$sid}
+                                     && $$hashref{$gid}{$sid}{'rule'} =~
+                                     /^\s*#\s*(alert|drop|pass)/i
+@@ -904,7 +905,7 @@
+                                     }
+                                 }
+                             }
+-                            case "drop" {
++                            elsif ($function eq "drop") {
+                                 if ( exists $$hashref{$gid}{$sid}
+                                     && $$hashref{$gid}{$sid}{'rule'} =~
+                                     /^\s*#*\s*alert/i )
+@@ -919,7 +920,7 @@
+                                     $sidcount++;
+                                 }
+                             }
+-                            case "disable" {
++                            elsif ($function eq "disable") {
+                                 if ( exists $$hashref{$gid}{$sid}
+                                     && $$hashref{$gid}{$sid}{'rule'} =~
+                                     /^\s*(alert|drop|pass)/i )
+@@ -974,11 +975,12 @@
+ 
+ ## make the sid-msg.map
+ sub sid_msg {
+-    my ( $ruleshash, $sidhash ) = @_;
++    my ( $ruleshash, $sidhash, $enonly ) = @_;
+     my ( $gid, $arg, $msg );
+     print "Generating sid-msg.map....\n" if !$Quiet;
+     foreach my $k ( sort keys %$ruleshash ) {
+         foreach my $k2 ( sort keys %{ $$ruleshash{$k} } ) {
++	    next if ((defined $enonly) && $$ruleshash{$k}{$k2}{'rule'} !~ /^\s*(alert|drop|pass)/);
+             ( my $header, my $options ) =
+               split( /^[^"]* \(\s*/, $$ruleshash{$k}{$k2}{'rule'} )
+               if defined $$ruleshash{$k}{$k2}{'rule'};
+@@ -1843,6 +1845,10 @@
+         policy_set( $ips_policy, \%rules_hash );
+     }
+ 
++    if ( $sidmod{modify} && -f $sidmod{modify} ) {
++        modify_sid( \%rules_hash, $sidmod{modify} );
++    }
++    
+     foreach (@sidact) {
+         if ( $sidmod{$_} && -f $sidmod{$_} ) {
+             modify_state( $_, $sidmod{$_}, \%rules_hash, $rstate );
+@@ -1852,11 +1858,7 @@
+         }
+     }
+ 
+-    if ( $sidmod{modify} && -f $sidmod{modify} ) {
+-        modify_sid( \%rules_hash, $sidmod{modify} );
+-    }
+-
+-    print "Setting Flowbit State....\n"
++   print "Setting Flowbit State....\n"
+       if ( !$Quiet );
+ 
+     my $fbits = 1;
+@@ -1878,8 +1880,7 @@
+     }
+ 
+     if ($sid_msg_map) {
+-
+-        sid_msg( \%rules_hash, \%sid_msg_map );
++        sid_msg( \%rules_hash, \%sid_msg_map, $enonly );
+         sid_write( \%sid_msg_map, $sid_msg_map );
+     }
+ 
