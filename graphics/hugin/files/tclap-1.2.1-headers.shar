@@ -1,0 +1,5805 @@
+# This is a shell archive.  Save it in a file, remove anything before
+# this line, and then unpack it by entering "sh file".  Note, it may
+# create directories; files and directories will be owned by you and
+# have default permissions.
+#
+# This archive contains:
+#
+#	./tclap-1.2.1
+#	./tclap-1.2.1/COPYING
+#	./tclap-1.2.1/AUTHORS
+#	./tclap-1.2.1/include
+#	./tclap-1.2.1/include/tclap
+#	./tclap-1.2.1/include/tclap/Arg.h
+#	./tclap-1.2.1/include/tclap/ArgException.h
+#	./tclap-1.2.1/include/tclap/ArgTraits.h
+#	./tclap-1.2.1/include/tclap/CmdLine.h
+#	./tclap-1.2.1/include/tclap/CmdLineInterface.h
+#	./tclap-1.2.1/include/tclap/CmdLineOutput.h
+#	./tclap-1.2.1/include/tclap/Constraint.h
+#	./tclap-1.2.1/include/tclap/DocBookOutput.h
+#	./tclap-1.2.1/include/tclap/HelpVisitor.h
+#	./tclap-1.2.1/include/tclap/IgnoreRestVisitor.h
+#	./tclap-1.2.1/include/tclap/MultiArg.h
+#	./tclap-1.2.1/include/tclap/MultiSwitchArg.h
+#	./tclap-1.2.1/include/tclap/OptionalUnlabeledTracker.h
+#	./tclap-1.2.1/include/tclap/StandardTraits.h
+#	./tclap-1.2.1/include/tclap/StdOutput.h
+#	./tclap-1.2.1/include/tclap/SwitchArg.h
+#	./tclap-1.2.1/include/tclap/UnlabeledMultiArg.h
+#	./tclap-1.2.1/include/tclap/UnlabeledValueArg.h
+#	./tclap-1.2.1/include/tclap/ValueArg.h
+#	./tclap-1.2.1/include/tclap/ValuesConstraint.h
+#	./tclap-1.2.1/include/tclap/VersionVisitor.h
+#	./tclap-1.2.1/include/tclap/Visitor.h
+#	./tclap-1.2.1/include/tclap/XorHandler.h
+#	./tclap-1.2.1/include/tclap/ZshCompletionOutput.h
+#
+echo c - ./tclap-1.2.1
+mkdir -p ./tclap-1.2.1 > /dev/null 2>&1
+echo x - ./tclap-1.2.1/COPYING
+sed 's/^X//' >./tclap-1.2.1/COPYING << 'b2b5877d0ab068bbf31046b36d123ea9'
+X
+X
+XCopyright (c) 2003 Michael E. Smoot 
+X
+XPermission is hereby granted, free of charge, to any person 
+Xobtaining a copy of this software and associated documentation 
+Xfiles (the "Software"), to deal in the Software without restriction, 
+Xincluding without limitation the rights to use, copy, modify, merge, 
+Xpublish, distribute, sublicense, and/or sell copies of the Software, 
+Xand to permit persons to whom the Software is furnished to do so, 
+Xsubject to the following conditions:
+X
+XThe above copyright notice and this permission notice shall be 
+Xincluded in all copies or substantial portions of the Software.
+X
+XTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+XEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+XOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+XNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS 
+XBE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+XAN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+XIN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+XTHE SOFTWARE.
+X
+X
+b2b5877d0ab068bbf31046b36d123ea9
+echo x - ./tclap-1.2.1/AUTHORS
+sed 's/^X//' >./tclap-1.2.1/AUTHORS << '91fb6be59aece94219a2b3bedfc70b66'
+X
+Xoriginal author: Michael E. Smoot
+Xinvaluable contributions: Daniel Aarno
+Xmore contributions: Erik Zeek
+Xmore contributions: Fabien Carmagnac (Tinbergen-AM)
+Xoutstanding editing: Carol Smoot
+91fb6be59aece94219a2b3bedfc70b66
+echo c - ./tclap-1.2.1/include
+mkdir -p ./tclap-1.2.1/include > /dev/null 2>&1
+echo c - ./tclap-1.2.1/include/tclap
+mkdir -p ./tclap-1.2.1/include/tclap > /dev/null 2>&1
+echo x - ./tclap-1.2.1/include/tclap/Arg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/Arg.h << '449772a10c7d8ab780923cf3edda5251'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/******************************************************************************
+X *
+X *  file:  Arg.h
+X *
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno .
+X *  All rights reverved.
+X *
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+X *  DEALINGS IN THE SOFTWARE.
+X *
+X *****************************************************************************/
+X
+X
+X#ifndef TCLAP_ARGUMENT_H
+X#define TCLAP_ARGUMENT_H
+X
+X#ifdef HAVE_CONFIG_H
+X#include <config.h>
+X#else
+X#define HAVE_SSTREAM
+X#endif
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <iomanip>
+X#include <cstdio>
+X
+X#if defined(HAVE_SSTREAM)
+X#include <sstream>
+Xtypedef std::istringstream istringstream;
+X#elif defined(HAVE_STRSTREAM)
+X#include <strstream>
+Xtypedef std::istrstream istringstream;
+X#else
+X#error "Need a stringstream (sstream or strstream) to compile!"
+X#endif
+X
+X#include <tclap/ArgException.h>
+X#include <tclap/Visitor.h>
+X#include <tclap/CmdLineInterface.h>
+X#include <tclap/ArgTraits.h>
+X#include <tclap/StandardTraits.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A virtual base class that defines the essential data for all arguments.
+X * This class, or one of its existing children, must be subclassed to do
+X * anything.
+X */
+Xclass Arg
+X{
+X	private:
+X		/**
+X		 * Prevent accidental copying.
+X		 */
+X		Arg(const Arg& rhs);
+X
+X		/**
+X		 * Prevent accidental copying.
+X		 */
+X		Arg& operator=(const Arg& rhs);
+X
+X		/**
+X		 * Indicates whether the rest of the arguments should be ignored.
+X		 */
+X		static bool& ignoreRestRef() { static bool ign = false; return ign; }
+X
+X		/**
+X		 * The delimiter that separates an argument flag/name from the
+X		 * value.
+X		 */
+X		static char& delimiterRef() { static char delim = ' '; return delim; }
+X
+X	protected:
+X
+X		/**
+X		 * The single char flag used to identify the argument.
+X		 * This value (preceded by a dash {-}), can be used to identify
+X		 * an argument on the command line.  The _flag can be blank,
+X		 * in fact this is how unlabeled args work.  Unlabeled args must
+X		 * override appropriate functions to get correct handling. Note
+X		 * that the _flag does NOT include the dash as part of the flag.
+X		 */
+X		std::string _flag;
+X
+X		/**
+X		 * A single work namd indentifying the argument.
+X		 * This value (preceded by two dashed {--}) can also be used
+X		 * to identify an argument on the command line.  Note that the
+X		 * _name does NOT include the two dashes as part of the _name. The
+X		 * _name cannot be blank.
+X		 */
+X		std::string _name;
+X
+X		/**
+X		 * Description of the argument.
+X		 */
+X		std::string _description;
+X
+X		/**
+X		 * Indicating whether the argument is required.
+X		 */
+X		bool _required;
+X
+X		/**
+X		 * Label to be used in usage description.  Normally set to
+X		 * "required", but can be changed when necessary.
+X		 */
+X		std::string _requireLabel;
+X
+X		/**
+X		 * Indicates whether a value is required for the argument.
+X		 * Note that the value may be required but the argument/value
+X		 * combination may not be, as specified by _required.
+X		 */
+X		bool _valueRequired;
+X
+X		/**
+X		 * Indicates whether the argument has been set.
+X		 * Indicates that a value on the command line has matched the
+X		 * name/flag of this argument and the values have been set accordingly.
+X		 */
+X		bool _alreadySet;
+X
+X		/**
+X		 * A pointer to a vistitor object.
+X		 * The visitor allows special handling to occur as soon as the
+X		 * argument is matched.  This defaults to NULL and should not
+X		 * be used unless absolutely necessary.
+X		 */
+X		Visitor* _visitor;
+X
+X		/**
+X		 * Whether this argument can be ignored, if desired.
+X		 */
+X		bool _ignoreable;
+X
+X		/**
+X		 * Indicates that the arg was set as part of an XOR and not on the
+X		 * command line.
+X		 */
+X		bool _xorSet;
+X
+X		bool _acceptsMultipleValues;
+X
+X		/**
+X		 * Performs the special handling described by the Vistitor.
+X		 */
+X		void _checkWithVisitor() const;
+X
+X		/**
+X		 * Primary constructor. YOU (yes you) should NEVER construct an Arg
+X		 * directly, this is a base class that is extended by various children
+X		 * that are meant to be used.  Use SwitchArg, ValueArg, MultiArg,
+X		 * UnlabeledValueArg, or UnlabeledMultiArg instead.
+X		 *
+X		 * \param flag - The flag identifying the argument.
+X		 * \param name - The name identifying the argument.
+X		 * \param desc - The description of the argument, used in the usage.
+X		 * \param req - Whether the argument is required.
+X		 * \param valreq - Whether the a value is required for the argument.
+X		 * \param v - The visitor checked by the argument. Defaults to NULL.
+X		 */
+X 		Arg( const std::string& flag,
+X			 const std::string& name,
+X			 const std::string& desc,
+X			 bool req,
+X			 bool valreq,
+X			 Visitor* v = NULL );
+X
+X	public:
+X		/**
+X		 * Destructor.
+X		 */
+X		virtual ~Arg();
+X
+X		/**
+X		 * Adds this to the specified list of Args.
+X		 * \param argList - The list to add this to.
+X		 */
+X		virtual void addToList( std::list<Arg*>& argList ) const;
+X
+X		/**
+X		 * Begin ignoring arguments since the "--" argument was specified.
+X		 */
+X		static void beginIgnoring() { ignoreRestRef() = true; }
+X
+X		/**
+X		 * Whether to ignore the rest.
+X		 */
+X		static bool ignoreRest() { return ignoreRestRef(); }
+X
+X		/**
+X		 * The delimiter that separates an argument flag/name from the
+X		 * value.
+X		 */
+X		static char delimiter() { return delimiterRef(); }
+X
+X		/**
+X		 * The char used as a place holder when SwitchArgs are combined.
+X		 * Currently set to the bell char (ASCII 7).
+X		 */
+X		static char blankChar() { return (char)7; }
+X
+X		/**
+X		 * The char that indicates the beginning of a flag.  Defaults to '-', but
+X		 * clients can define TCLAP_FLAGSTARTCHAR to override.
+X		 */
+X#ifndef TCLAP_FLAGSTARTCHAR
+X#define TCLAP_FLAGSTARTCHAR '-'
+X#endif
+X		static char flagStartChar() { return TCLAP_FLAGSTARTCHAR; }
+X
+X		/**
+X		 * The sting that indicates the beginning of a flag.  Defaults to "-", but
+X		 * clients can define TCLAP_FLAGSTARTSTRING to override. Should be the same
+X		 * as TCLAP_FLAGSTARTCHAR.
+X		 */
+X#ifndef TCLAP_FLAGSTARTSTRING
+X#define TCLAP_FLAGSTARTSTRING "-"
+X#endif
+X		static const std::string flagStartString() { return TCLAP_FLAGSTARTSTRING; }
+X
+X		/**
+X		 * The sting that indicates the beginning of a name.  Defaults to "--", but
+X		 *  clients can define TCLAP_NAMESTARTSTRING to override.
+X		 */
+X#ifndef TCLAP_NAMESTARTSTRING
+X#define TCLAP_NAMESTARTSTRING "--"
+X#endif
+X		static const std::string nameStartString() { return TCLAP_NAMESTARTSTRING; }
+X
+X		/**
+X		 * The name used to identify the ignore rest argument.
+X		 */
+X		static const std::string ignoreNameString() { return "ignore_rest"; }
+X
+X		/**
+X		 * Sets the delimiter for all arguments.
+X		 * \param c - The character that delimits flags/names from values.
+X		 */
+X		static void setDelimiter( char c ) { delimiterRef() = c; }
+X
+X		/**
+X		 * Pure virtual method meant to handle the parsing and value assignment
+X		 * of the string on the command line.
+X		 * \param i - Pointer the the current argument in the list.
+X		 * \param args - Mutable list of strings. What is
+X		 * passed in from main.
+X		 */
+X		virtual bool processArg(int *i, std::vector<std::string>& args) = 0;
+X
+X		/**
+X		 * Operator ==.
+X		 * Equality operator. Must be virtual to handle unlabeled args.
+X		 * \param a - The Arg to be compared to this.
+X		 */
+X		virtual bool operator==(const Arg& a) const;
+X
+X		/**
+X		 * Returns the argument flag.
+X		 */
+X		const std::string& getFlag() const;
+X
+X		/**
+X		 * Returns the argument name.
+X		 */
+X		const std::string& getName() const;
+X
+X		/**
+X		 * Returns the argument description.
+X		 */
+X		std::string getDescription() const;
+X
+X		/**
+X		 * Indicates whether the argument is required.
+X		 */
+X		virtual bool isRequired() const;
+X
+X		/**
+X		 * Sets _required to true. This is used by the XorHandler.
+X		 * You really have no reason to ever use it.
+X		 */
+X		void forceRequired();
+X
+X		/**
+X		 * Sets the _alreadySet value to true.  This is used by the XorHandler.
+X		 * You really have no reason to ever use it.
+X		 */
+X		void xorSet();
+X
+X		/**
+X		 * Indicates whether a value must be specified for argument.
+X		 */
+X		bool isValueRequired() const;
+X
+X		/**
+X		 * Indicates whether the argument has already been set.  Only true
+X		 * if the arg has been matched on the command line.
+X		 */
+X		bool isSet() const;
+X
+X		/**
+X		 * Indicates whether the argument can be ignored, if desired.
+X		 */
+X		bool isIgnoreable() const;
+X
+X		/**
+X		 * A method that tests whether a string matches this argument.
+X		 * This is generally called by the processArg() method.  This
+X		 * method could be re-implemented by a child to change how
+X		 * arguments are specified on the command line.
+X		 * \param s - The string to be compared to the flag/name to determine
+X		 * whether the arg matches.
+X		 */
+X		virtual bool argMatches( const std::string& s ) const;
+X
+X		/**
+X		 * Returns a simple string representation of the argument.
+X		 * Primarily for debugging.
+X		 */
+X		virtual std::string toString() const;
+X
+X		/**
+X		 * Returns a short ID for the usage.
+X		 * \param valueId - The value used in the id.
+X		 */
+X		virtual std::string shortID( const std::string& valueId = "val" ) const;
+X
+X		/**
+X		 * Returns a long ID for the usage.
+X		 * \param valueId - The value used in the id.
+X		 */
+X		virtual std::string longID( const std::string& valueId = "val" ) const;
+X
+X		/**
+X		 * Trims a value off of the flag.
+X		 * \param flag - The string from which the flag and value will be
+X		 * trimmed. Contains the flag once the value has been trimmed.
+X		 * \param value - Where the value trimmed from the string will
+X		 * be stored.
+X		 */
+X		virtual void trimFlag( std::string& flag, std::string& value ) const;
+X
+X		/**
+X		 * Checks whether a given string has blank chars, indicating that
+X		 * it is a combined SwitchArg.  If so, return true, otherwise return
+X		 * false.
+X		 * \param s - string to be checked.
+X		 */
+X		bool _hasBlanks( const std::string& s ) const;
+X
+X		/**
+X		 * Sets the requireLabel. Used by XorHandler.  You shouldn't ever
+X		 * use this.
+X		 * \param s - Set the requireLabel to this value.
+X		 */
+X		void setRequireLabel( const std::string& s );
+X
+X		/**
+X		 * Used for MultiArgs and XorHandler to determine whether args
+X		 * can still be set.
+X		 */
+X		virtual bool allowMore();
+X
+X		/**
+X		 * Use by output classes to determine whether an Arg accepts
+X		 * multiple values.
+X		 */
+X		virtual bool acceptsMultipleValues();
+X
+X		/**
+X		 * Clears the Arg object and allows it to be reused by new
+X		 * command lines.
+X		 */
+X		 virtual void reset();
+X};
+X
+X/**
+X * Typedef of an Arg list iterator.
+X */
+Xtypedef std::list<Arg*>::iterator ArgListIterator;
+X
+X/**
+X * Typedef of an Arg vector iterator.
+X */
+Xtypedef std::vector<Arg*>::iterator ArgVectorIterator;
+X
+X/**
+X * Typedef of a Visitor list iterator.
+X */
+Xtypedef std::list<Visitor*>::iterator VisitorListIterator;
+X
+X/*
+X * Extract a value of type T from it's string representation contained
+X * in strVal. The ValueLike parameter used to select the correct
+X * specialization of ExtractValue depending on the value traits of T.
+X * ValueLike traits use operator>> to assign the value from strVal.
+X */
+Xtemplate<typename T> void
+XExtractValue(T &destVal, const std::string& strVal, ValueLike vl)
+X{
+X    static_cast<void>(vl); // Avoid warning about unused vl
+X    std::istringstream is(strVal);
+X
+X    int valuesRead = 0;
+X    while ( is.good() ) {
+X	if ( is.peek() != EOF )
+X#ifdef TCLAP_SETBASE_ZERO
+X	    is >> std::setbase(0) >> destVal;
+X#else
+X	    is >> destVal;
+X#endif
+X	else
+X	    break;
+X
+X	valuesRead++;
+X    }
+X
+X    if ( is.fail() )
+X	throw( ArgParseException("Couldn't read argument value "
+X				 "from string '" + strVal + "'"));
+X
+X
+X    if ( valuesRead > 1 )
+X	throw( ArgParseException("More than one valid value parsed from "
+X				 "string '" + strVal + "'"));
+X
+X}
+X
+X/*
+X * Extract a value of type T from it's string representation contained
+X * in strVal. The ValueLike parameter used to select the correct
+X * specialization of ExtractValue depending on the value traits of T.
+X * StringLike uses assignment (operator=) to assign from strVal.
+X */
+Xtemplate<typename T> void
+XExtractValue(T &destVal, const std::string& strVal, StringLike sl)
+X{
+X    static_cast<void>(sl); // Avoid warning about unused sl
+X    SetString(destVal, strVal);
+X}
+X
+X//////////////////////////////////////////////////////////////////////
+X//BEGIN Arg.cpp
+X//////////////////////////////////////////////////////////////////////
+X
+Xinline Arg::Arg(const std::string& flag,
+X         const std::string& name,
+X         const std::string& desc,
+X         bool req,
+X         bool valreq,
+X         Visitor* v) :
+X  _flag(flag),
+X  _name(name),
+X  _description(desc),
+X  _required(req),
+X  _requireLabel("required"),
+X  _valueRequired(valreq),
+X  _alreadySet(false),
+X  _visitor( v ),
+X  _ignoreable(true),
+X  _xorSet(false),
+X  _acceptsMultipleValues(false)
+X{
+X	if ( _flag.length() > 1 )
+X		throw(SpecificationException(
+X				"Argument flag can only be one character long", toString() ) );
+X
+X	if ( _name != ignoreNameString() &&
+X		 ( _flag == Arg::flagStartString() ||
+X		   _flag == Arg::nameStartString() ||
+X		   _flag == " " ) )
+X		throw(SpecificationException("Argument flag cannot be either '" +
+X							Arg::flagStartString() + "' or '" +
+X							Arg::nameStartString() + "' or a space.",
+X							toString() ) );
+X
+X	if ( ( _name.substr( 0, Arg::flagStartString().length() ) == Arg::flagStartString() ) ||
+X		 ( _name.substr( 0, Arg::nameStartString().length() ) == Arg::nameStartString() ) ||
+X		 ( _name.find( " ", 0 ) != std::string::npos ) )
+X		throw(SpecificationException("Argument name begin with either '" +
+X							Arg::flagStartString() + "' or '" +
+X							Arg::nameStartString() + "' or space.",
+X							toString() ) );
+X
+X}
+X
+Xinline Arg::~Arg() { }
+X
+Xinline std::string Arg::shortID( const std::string& valueId ) const
+X{
+X	std::string id = "";
+X
+X	if ( _flag != "" )
+X		id = Arg::flagStartString() + _flag;
+X	else
+X		id = Arg::nameStartString() + _name;
+X
+X	if ( _valueRequired )
+X		id += std::string( 1, Arg::delimiter() ) + "<" + valueId  + ">";
+X
+X	if ( !_required )
+X		id = "[" + id + "]";
+X
+X	return id;
+X}
+X
+Xinline std::string Arg::longID( const std::string& valueId ) const
+X{
+X	std::string id = "";
+X
+X	if ( _flag != "" )
+X	{
+X		id += Arg::flagStartString() + _flag;
+X
+X		if ( _valueRequired )
+X			id += std::string( 1, Arg::delimiter() ) + "<" + valueId + ">";
+X
+X		id += ",  ";
+X	}
+X
+X	id += Arg::nameStartString() + _name;
+X
+X	if ( _valueRequired )
+X		id += std::string( 1, Arg::delimiter() ) + "<" + valueId + ">";
+X
+X	return id;
+X
+X}
+X
+Xinline bool Arg::operator==(const Arg& a) const
+X{
+X	if ( ( _flag != "" && _flag == a._flag ) || _name == a._name)
+X		return true;
+X	else
+X		return false;
+X}
+X
+Xinline std::string Arg::getDescription() const
+X{
+X	std::string desc = "";
+X	if ( _required )
+X		desc = "(" + _requireLabel + ")  ";
+X
+X//	if ( _valueRequired )
+X//		desc += "(value required)  ";
+X
+X	desc += _description;
+X	return desc;
+X}
+X
+Xinline const std::string& Arg::getFlag() const { return _flag; }
+X
+Xinline const std::string& Arg::getName() const { return _name; }
+X
+Xinline bool Arg::isRequired() const { return _required; }
+X
+Xinline bool Arg::isValueRequired() const { return _valueRequired; }
+X
+Xinline bool Arg::isSet() const
+X{
+X	if ( _alreadySet && !_xorSet )
+X		return true;
+X	else
+X		return false;
+X}
+X
+Xinline bool Arg::isIgnoreable() const { return _ignoreable; }
+X
+Xinline void Arg::setRequireLabel( const std::string& s)
+X{
+X	_requireLabel = s;
+X}
+X
+Xinline bool Arg::argMatches( const std::string& argFlag ) const
+X{
+X	if ( ( argFlag == Arg::flagStartString() + _flag && _flag != "" ) ||
+X	       argFlag == Arg::nameStartString() + _name )
+X		return true;
+X	else
+X		return false;
+X}
+X
+Xinline std::string Arg::toString() const
+X{
+X	std::string s = "";
+X
+X	if ( _flag != "" )
+X		s += Arg::flagStartString() + _flag + " ";
+X
+X	s += "(" + Arg::nameStartString() + _name + ")";
+X
+X	return s;
+X}
+X
+Xinline void Arg::_checkWithVisitor() const
+X{
+X	if ( _visitor != NULL )
+X		_visitor->visit();
+X}
+X
+X/**
+X * Implementation of trimFlag.
+X */
+Xinline void Arg::trimFlag(std::string& flag, std::string& value) const
+X{
+X	int stop = 0;
+X	for ( int i = 0; static_cast<unsigned int>(i) < flag.length(); i++ )
+X		if ( flag[i] == Arg::delimiter() )
+X		{
+X			stop = i;
+X			break;
+X		}
+X
+X	if ( stop > 1 )
+X	{
+X		value = flag.substr(stop+1);
+X		flag = flag.substr(0,stop);
+X	}
+X
+X}
+X
+X/**
+X * Implementation of _hasBlanks.
+X */
+Xinline bool Arg::_hasBlanks( const std::string& s ) const
+X{
+X	for ( int i = 1; static_cast<unsigned int>(i) < s.length(); i++ )
+X		if ( s[i] == Arg::blankChar() )
+X			return true;
+X
+X	return false;
+X}
+X
+Xinline void Arg::forceRequired()
+X{
+X	_required = true;
+X}
+X
+Xinline void Arg::xorSet()
+X{
+X	_alreadySet = true;
+X	_xorSet = true;
+X}
+X
+X/**
+X * Overridden by Args that need to added to the end of the list.
+X */
+Xinline void Arg::addToList( std::list<Arg*>& argList ) const
+X{
+X	argList.push_front( const_cast<Arg*>(this) );
+X}
+X
+Xinline bool Arg::allowMore()
+X{
+X	return false;
+X}
+X
+Xinline bool Arg::acceptsMultipleValues()
+X{
+X	return _acceptsMultipleValues;
+X}
+X
+Xinline void Arg::reset()
+X{
+X	_xorSet = false;
+X	_alreadySet = false;
+X}
+X
+X//////////////////////////////////////////////////////////////////////
+X//END Arg.cpp
+X//////////////////////////////////////////////////////////////////////
+X
+X} //namespace TCLAP
+X
+X#endif
+X
+449772a10c7d8ab780923cf3edda5251
+echo x - ./tclap-1.2.1/include/tclap/ArgException.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/ArgException.h << '488f863a80aa1f73e50627100c85a1b8'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/****************************************************************************** 
+X * 
+X *  file:  ArgException.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_ARG_EXCEPTION_H
+X#define TCLAP_ARG_EXCEPTION_H
+X
+X#include <string>
+X#include <exception>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A simple class that defines and argument exception.  Should be caught
+X * whenever a CmdLine is created and parsed.
+X */
+Xclass ArgException : public std::exception
+X{
+X	public:
+X	
+X		/**
+X		 * Constructor.
+X		 * \param text - The text of the exception.
+X		 * \param id - The text identifying the argument source.
+X		 * \param td - Text describing the type of ArgException it is.
+X		 * of the exception.
+X		 */
+X		ArgException( const std::string& text = "undefined exception", 
+X					  const std::string& id = "undefined",
+X					  const std::string& td = "Generic ArgException")
+X			: std::exception(), 
+X			  _errorText(text), 
+X			  _argId( id ), 
+X			  _typeDescription(td)
+X		{ } 
+X		
+X		/**
+X		 * Destructor.
+X		 */
+X		virtual ~ArgException() throw() { }
+X
+X		/**
+X		 * Returns the error text.
+X		 */
+X		std::string error() const { return ( _errorText ); }
+X
+X		/**
+X		 * Returns the argument id.
+X		 */
+X		std::string argId() const  
+X		{ 
+X			if ( _argId == "undefined" )
+X				return " ";
+X			else
+X				return ( "Argument: " + _argId ); 
+X		}
+X
+X		/**
+X		 * Returns the arg id and error text. 
+X		 */
+X		const char* what() const throw() 
+X		{
+X			static std::string ex; 
+X			ex = _argId + " -- " + _errorText;
+X			return ex.c_str();
+X		}
+X
+X		/**
+X		 * Returns the type of the exception.  Used to explain and distinguish
+X		 * between different child exceptions.
+X		 */
+X		std::string typeDescription() const
+X		{
+X			return _typeDescription; 
+X		}
+X
+X
+X	private:
+X
+X		/**
+X		 * The text of the exception message.
+X		 */
+X		std::string _errorText;
+X
+X		/**
+X		 * The argument related to this exception.
+X		 */
+X		std::string _argId;
+X
+X		/**
+X		 * Describes the type of the exception.  Used to distinguish
+X		 * between different child exceptions.
+X		 */
+X		std::string _typeDescription;
+X
+X};
+X
+X/**
+X * Thrown from within the child Arg classes when it fails to properly
+X * parse the argument it has been passed.
+X */
+Xclass ArgParseException : public ArgException
+X{ 
+X	public:
+X		/**
+X		 * Constructor.
+X		 * \param text - The text of the exception.
+X		 * \param id - The text identifying the argument source 
+X		 * of the exception.
+X		 */
+X		ArgParseException( const std::string& text = "undefined exception", 
+X					       const std::string& id = "undefined" )
+X			: ArgException( text, 
+X			                id, 
+X							std::string( "Exception found while parsing " ) + 
+X							std::string( "the value the Arg has been passed." ))
+X			{ }
+X};
+X
+X/**
+X * Thrown from CmdLine when the arguments on the command line are not
+X * properly specified, e.g. too many arguments, required argument missing, etc.
+X */
+Xclass CmdLineParseException : public ArgException
+X{
+X	public:
+X		/**
+X		 * Constructor.
+X		 * \param text - The text of the exception.
+X		 * \param id - The text identifying the argument source 
+X		 * of the exception.
+X		 */
+X		CmdLineParseException( const std::string& text = "undefined exception", 
+X					           const std::string& id = "undefined" )
+X			: ArgException( text, 
+X			                id,
+X							std::string( "Exception found when the values ") +
+X							std::string( "on the command line do not meet ") +
+X							std::string( "the requirements of the defined ") +
+X							std::string( "Args." ))
+X		{ }
+X};
+X
+X/**
+X * Thrown from Arg and CmdLine when an Arg is improperly specified, e.g. 
+X * same flag as another Arg, same name, etc.
+X */
+Xclass SpecificationException : public ArgException
+X{
+X	public:
+X		/**
+X		 * Constructor.
+X		 * \param text - The text of the exception.
+X		 * \param id - The text identifying the argument source 
+X		 * of the exception.
+X		 */
+X		SpecificationException( const std::string& text = "undefined exception",
+X					            const std::string& id = "undefined" )
+X			: ArgException( text, 
+X			                id,
+X							std::string("Exception found when an Arg object ")+
+X							std::string("is improperly defined by the ") +
+X							std::string("developer." )) 
+X		{ }
+X
+X};
+X
+Xclass ExitException {
+Xpublic:
+X	ExitException(int estat) : _estat(estat) {}
+X
+X	int getExitStatus() const { return _estat; }
+X
+Xprivate:
+X	int _estat;
+X};
+X
+X} // namespace TCLAP
+X
+X#endif
+X
+488f863a80aa1f73e50627100c85a1b8
+echo x - ./tclap-1.2.1/include/tclap/ArgTraits.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/ArgTraits.h << '7f9a75db10b90009dd21cf499cec08cf'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/******************************************************************************
+X *
+X *  file:  ArgTraits.h
+X *
+X *  Copyright (c) 2007, Daniel Aarno, Michael E. Smoot .
+X *  All rights reverved.
+X *
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+X *  DEALINGS IN THE SOFTWARE.
+X *
+X *****************************************************************************/
+X
+X// This is an internal tclap file, you should probably not have to
+X// include this directly
+X
+X#ifndef TCLAP_ARGTRAITS_H
+X#define TCLAP_ARGTRAITS_H
+X
+Xnamespace TCLAP {
+X
+X// We use two empty structs to get compile type specialization
+X// function to work
+X
+X/**
+X * A value like argument value type is a value that can be set using
+X * operator>>. This is the default value type.
+X */
+Xstruct ValueLike {
+X    typedef ValueLike ValueCategory;
+X	virtual ~ValueLike() {}
+X};
+X
+X/**
+X * A string like argument value type is a value that can be set using
+X * operator=(string). Usefull if the value type contains spaces which
+X * will be broken up into individual tokens by operator>>.
+X */
+Xstruct StringLike {
+X	virtual ~StringLike() {}
+X};
+X
+X/**
+X * A class can inherit from this object to make it have string like
+X * traits. This is a compile time thing and does not add any overhead
+X * to the inherenting class.
+X */
+Xstruct StringLikeTrait {
+X    typedef StringLike ValueCategory;
+X	virtual ~StringLikeTrait() {}
+X};
+X
+X/**
+X * A class can inherit from this object to make it have value like
+X * traits. This is a compile time thing and does not add any overhead
+X * to the inherenting class.
+X */
+Xstruct ValueLikeTrait {
+X    typedef ValueLike ValueCategory;
+X	virtual ~ValueLikeTrait() {}
+X};
+X
+X/**
+X * Arg traits are used to get compile type specialization when parsing
+X * argument values. Using an ArgTraits you can specify the way that
+X * values gets assigned to any particular type during parsing. The two
+X * supported types are StringLike and ValueLike.
+X */
+Xtemplate<typename T>
+Xstruct ArgTraits {
+X    typedef typename T::ValueCategory ValueCategory;
+X	virtual ~ArgTraits() {}
+X    //typedef ValueLike ValueCategory;
+X};
+X
+X#endif
+X
+X} // namespace
+7f9a75db10b90009dd21cf499cec08cf
+echo x - ./tclap-1.2.1/include/tclap/CmdLine.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/CmdLine.h << '52e5ff1ecb66cb9b9be836e0e48e2c02'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/******************************************************************************
+X *
+X *  file:  CmdLine.h
+X *
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X *
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+X *  DEALINGS IN THE SOFTWARE.
+X *
+X *****************************************************************************/
+X
+X#ifndef TCLAP_CMDLINE_H
+X#define TCLAP_CMDLINE_H
+X
+X#include <tclap/SwitchArg.h>
+X#include <tclap/MultiSwitchArg.h>
+X#include <tclap/UnlabeledValueArg.h>
+X#include <tclap/UnlabeledMultiArg.h>
+X
+X#include <tclap/XorHandler.h>
+X#include <tclap/HelpVisitor.h>
+X#include <tclap/VersionVisitor.h>
+X#include <tclap/IgnoreRestVisitor.h>
+X
+X#include <tclap/CmdLineOutput.h>
+X#include <tclap/StdOutput.h>
+X
+X#include <tclap/Constraint.h>
+X#include <tclap/ValuesConstraint.h>
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <iomanip>
+X#include <algorithm>
+X#include <stdlib.h> // Needed for exit(), which isn't defined in some envs.
+X
+Xnamespace TCLAP {
+X
+Xtemplate<typename T> void DelPtr(T ptr)
+X{
+X	delete ptr;
+X}
+X
+Xtemplate<typename C> void ClearContainer(C &c)
+X{
+X	typedef typename C::value_type value_type;
+X	std::for_each(c.begin(), c.end(), DelPtr<value_type>);
+X	c.clear();
+X}
+X
+X
+X/**
+X * The base class that manages the command line definition and passes
+X * along the parsing to the appropriate Arg classes.
+X */
+Xclass CmdLine : public CmdLineInterface
+X{
+X	protected:
+X
+X		/**
+X		 * The list of arguments that will be tested against the
+X		 * command line.
+X		 */
+X		std::list<Arg*> _argList;
+X
+X		/**
+X		 * The name of the program.  Set to argv[0].
+X		 */
+X		std::string _progName;
+X
+X		/**
+X		 * A message used to describe the program.  Used in the usage output.
+X		 */
+X		std::string _message;
+X
+X		/**
+X		 * The version to be displayed with the --version switch.
+X		 */
+X		std::string _version;
+X
+X		/**
+X		 * The number of arguments that are required to be present on
+X		 * the command line. This is set dynamically, based on the
+X		 * Args added to the CmdLine object.
+X		 */
+X		int _numRequired;
+X
+X		/**
+X		 * The character that is used to separate the argument flag/name
+X		 * from the value.  Defaults to ' ' (space).
+X		 */
+X		char _delimiter;
+X
+X		/**
+X		 * The handler that manages xoring lists of args.
+X		 */
+X		XorHandler _xorHandler;
+X
+X		/**
+X		 * A list of Args to be explicitly deleted when the destructor
+X		 * is called.  At the moment, this only includes the three default
+X		 * Args.
+X		 */
+X		std::list<Arg*> _argDeleteOnExitList;
+X
+X		/**
+X		 * A list of Visitors to be explicitly deleted when the destructor
+X		 * is called.  At the moment, these are the Vistors created for the
+X		 * default Args.
+X		 */
+X		std::list<Visitor*> _visitorDeleteOnExitList;
+X
+X		/**
+X		 * Object that handles all output for the CmdLine.
+X		 */
+X		CmdLineOutput* _output;
+X
+X		/**
+X		 * Should CmdLine handle parsing exceptions internally?
+X		 */
+X		bool _handleExceptions;
+X
+X		/**
+X		 * Throws an exception listing the missing args.
+X		 */
+X		void missingArgsException();
+X
+X		/**
+X		 * Checks whether a name/flag string matches entirely matches
+X		 * the Arg::blankChar.  Used when multiple switches are combined
+X		 * into a single argument.
+X		 * \param s - The message to be used in the usage.
+X		 */
+X		bool _emptyCombined(const std::string& s);
+X
+X		/**
+X		 * Perform a delete ptr; operation on ptr when this object is deleted.
+X		 */
+X		void deleteOnExit(Arg* ptr);
+X
+X		/**
+X		 * Perform a delete ptr; operation on ptr when this object is deleted.
+X		 */
+X		void deleteOnExit(Visitor* ptr);
+X
+Xprivate:
+X
+X		/**
+X		 * Prevent accidental copying.
+X		 */
+X		CmdLine(const CmdLine& rhs);
+X		CmdLine& operator=(const CmdLine& rhs);
+X
+X		/**
+X		 * Encapsulates the code common to the constructors
+X		 * (which is all of it).
+X		 */
+X		void _constructor();
+X
+X
+X		/**
+X		 * Is set to true when a user sets the output object. We use this so
+X		 * that we don't delete objects that are created outside of this lib.
+X		 */
+X		bool _userSetOutput;
+X
+X		/**
+X		 * Whether or not to automatically create help and version switches.
+X		 */
+X		bool _helpAndVersion;
+X
+X	public:
+X
+X		/**
+X		 * Command line constructor. Defines how the arguments will be
+X		 * parsed.
+X		 * \param message - The message to be used in the usage
+X		 * output.
+X		 * \param delimiter - The character that is used to separate
+X		 * the argument flag/name from the value.  Defaults to ' ' (space).
+X		 * \param version - The version number to be used in the
+X		 * --version switch.
+X		 * \param helpAndVersion - Whether or not to create the Help and
+X		 * Version switches. Defaults to true.
+X		 */
+X		CmdLine(const std::string& message,
+X				const char delimiter = ' ',
+X				const std::string& version = "none",
+X				bool helpAndVersion = true);
+X
+X		/**
+X		 * Deletes any resources allocated by a CmdLine object.
+X		 */
+X		virtual ~CmdLine();
+X
+X		/**
+X		 * Adds an argument to the list of arguments to be parsed.
+X		 * \param a - Argument to be added.
+X		 */
+X		void add( Arg& a );
+X
+X		/**
+X		 * An alternative add.  Functionally identical.
+X		 * \param a - Argument to be added.
+X		 */
+X		void add( Arg* a );
+X
+X		/**
+X		 * Add two Args that will be xor'd.  If this method is used, add does
+X		 * not need to be called.
+X		 * \param a - Argument to be added and xor'd.
+X		 * \param b - Argument to be added and xor'd.
+X		 */
+X		void xorAdd( Arg& a, Arg& b );
+X
+X		/**
+X		 * Add a list of Args that will be xor'd.  If this method is used,
+X		 * add does not need to be called.
+X		 * \param xors - List of Args to be added and xor'd.
+X		 */
+X		void xorAdd( std::vector<Arg*>& xors );
+X
+X		/**
+X		 * Parses the command line.
+X		 * \param argc - Number of arguments.
+X		 * \param argv - Array of arguments.
+X		 */
+X		void parse(int argc, const char * const * argv);
+X
+X		/**
+X		 * Parses the command line.
+X		 * \param args - A vector of strings representing the args.
+X		 * args[0] is still the program name.
+X		 */
+X		void parse(std::vector<std::string>& args);
+X
+X		/**
+X		 *
+X		 */
+X		CmdLineOutput* getOutput();
+X
+X		/**
+X		 *
+X		 */
+X		void setOutput(CmdLineOutput* co);
+X
+X		/**
+X		 *
+X		 */
+X		std::string& getVersion();
+X
+X		/**
+X		 *
+X		 */
+X		std::string& getProgramName();
+X
+X		/**
+X		 *
+X		 */
+X		std::list<Arg*>& getArgList();
+X
+X		/**
+X		 *
+X		 */
+X		XorHandler& getXorHandler();
+X
+X		/**
+X		 *
+X		 */
+X		char getDelimiter();
+X
+X		/**
+X		 *
+X		 */
+X		std::string& getMessage();
+X
+X		/**
+X		 *
+X		 */
+X		bool hasHelpAndVersion();
+X
+X		/**
+X		 * Disables or enables CmdLine's internal parsing exception handling.
+X		 *
+X		 * @param state Should CmdLine handle parsing exceptions internally?
+X		 */
+X		void setExceptionHandling(const bool state);
+X
+X		/**
+X		 * Returns the current state of the internal exception handling.
+X		 *
+X		 * @retval true Parsing exceptions are handled internally.
+X		 * @retval false Parsing exceptions are propagated to the caller.
+X		 */
+X		bool getExceptionHandling() const;
+X
+X		/**
+X		 * Allows the CmdLine object to be reused.
+X		 */
+X		void reset();
+X
+X};
+X
+X
+X///////////////////////////////////////////////////////////////////////////////
+X//Begin CmdLine.cpp
+X///////////////////////////////////////////////////////////////////////////////
+X
+Xinline CmdLine::CmdLine(const std::string& m,
+X                        char delim,
+X                        const std::string& v,
+X                        bool help )
+X    :
+X  _argList(std::list<Arg*>()),
+X  _progName("not_set_yet"),
+X  _message(m),
+X  _version(v),
+X  _numRequired(0),
+X  _delimiter(delim),
+X  _xorHandler(XorHandler()),
+X  _argDeleteOnExitList(std::list<Arg*>()),
+X  _visitorDeleteOnExitList(std::list<Visitor*>()),
+X  _output(0),
+X  _handleExceptions(true),
+X  _userSetOutput(false),
+X  _helpAndVersion(help)
+X{
+X	_constructor();
+X}
+X
+Xinline CmdLine::~CmdLine()
+X{
+X	ClearContainer(_argDeleteOnExitList);
+X	ClearContainer(_visitorDeleteOnExitList);
+X
+X	if ( !_userSetOutput ) {
+X		delete _output;
+X		_output = 0;
+X	}
+X}
+X
+Xinline void CmdLine::_constructor()
+X{
+X	_output = new StdOutput;
+X
+X	Arg::setDelimiter( _delimiter );
+X
+X	Visitor* v;
+X
+X	if ( _helpAndVersion )
+X	{
+X		v = new HelpVisitor( this, &_output );
+X		SwitchArg* help = new SwitchArg("h","help",
+X		                      "Displays usage information and exits.",
+X		                      false, v);
+X		add( help );
+X		deleteOnExit(help);
+X		deleteOnExit(v);
+X
+X		v = new VersionVisitor( this, &_output );
+X		SwitchArg* vers = new SwitchArg("","version",
+X		                      "Displays version information and exits.",
+X		                      false, v);
+X		add( vers );
+X		deleteOnExit(vers);
+X		deleteOnExit(v);
+X	}
+X
+X	v = new IgnoreRestVisitor();
+X	SwitchArg* ignore  = new SwitchArg(Arg::flagStartString(),
+X	          Arg::ignoreNameString(),
+X	          "Ignores the rest of the labeled arguments following this flag.",
+X	          false, v);
+X	add( ignore );
+X	deleteOnExit(ignore);
+X	deleteOnExit(v);
+X}
+X
+Xinline void CmdLine::xorAdd( std::vector<Arg*>& ors )
+X{
+X	_xorHandler.add( ors );
+X
+X	for (ArgVectorIterator it = ors.begin(); it != ors.end(); it++)
+X	{
+X		(*it)->forceRequired();
+X		(*it)->setRequireLabel( "OR required" );
+X		add( *it );
+X	}
+X}
+X
+Xinline void CmdLine::xorAdd( Arg& a, Arg& b )
+X{
+X	std::vector<Arg*> ors;
+X	ors.push_back( &a );
+X	ors.push_back( &b );
+X	xorAdd( ors );
+X}
+X
+Xinline void CmdLine::add( Arg& a )
+X{
+X	add( &a );
+X}
+X
+Xinline void CmdLine::add( Arg* a )
+X{
+X	for( ArgListIterator it = _argList.begin(); it != _argList.end(); it++ )
+X		if ( *a == *(*it) )
+X			throw( SpecificationException(
+X			        "Argument with same flag/name already exists!",
+X			        a->longID() ) );
+X
+X	a->addToList( _argList );
+X
+X	if ( a->isRequired() )
+X		_numRequired++;
+X}
+X
+X
+Xinline void CmdLine::parse(int argc, const char * const * argv)
+X{
+X		// this step is necessary so that we have easy access to
+X		// mutable strings.
+X		std::vector<std::string> args;
+X		for (int i = 0; i < argc; i++)
+X			args.push_back(argv[i]);
+X
+X		parse(args);
+X}
+X
+Xinline void CmdLine::parse(std::vector<std::string>& args)
+X{
+X	bool shouldExit = false;
+X	int estat = 0;
+X
+X	try {
+X		_progName = args.front();
+X		args.erase(args.begin());
+X
+X		int requiredCount = 0;
+X
+X		for (int i = 0; static_cast<unsigned int>(i) < args.size(); i++) 
+X		{
+X			bool matched = false;
+X			for (ArgListIterator it = _argList.begin();
+X			     it != _argList.end(); it++) {
+X				if ( (*it)->processArg( &i, args ) )
+X				{
+X					requiredCount += _xorHandler.check( *it );
+X					matched = true;
+X					break;
+X				}
+X			}
+X
+X			// checks to see if the argument is an empty combined
+X			// switch and if so, then we've actually matched it
+X			if ( !matched && _emptyCombined( args[i] ) )
+X				matched = true;
+X
+X			if ( !matched && !Arg::ignoreRest() )
+X				throw(CmdLineParseException("Couldn't find match "
+X				                            "for argument",
+X				                            args[i]));
+X		}
+X
+X		if ( requiredCount < _numRequired )
+X			missingArgsException();
+X
+X		if ( requiredCount > _numRequired )
+X			throw(CmdLineParseException("Too many arguments!"));
+X
+X	} catch ( ArgException& e ) {
+X		// If we're not handling the exceptions, rethrow.
+X		if ( !_handleExceptions) {
+X			throw;
+X		}
+X
+X		try {
+X			_output->failure(*this,e);
+X		} catch ( ExitException &ee ) {
+X			estat = ee.getExitStatus();
+X			shouldExit = true;
+X		}
+X	} catch (ExitException &ee) {
+X		// If we're not handling the exceptions, rethrow.
+X		if ( !_handleExceptions) {
+X			throw;
+X		}
+X
+X		estat = ee.getExitStatus();
+X		shouldExit = true;
+X	}
+X
+X	if (shouldExit)
+X		exit(estat);
+X}
+X
+Xinline bool CmdLine::_emptyCombined(const std::string& s)
+X{
+X	if ( s.length() > 0 && s[0] != Arg::flagStartChar() )
+X		return false;
+X
+X	for ( int i = 1; static_cast<unsigned int>(i) < s.length(); i++ )
+X		if ( s[i] != Arg::blankChar() )
+X			return false;
+X
+X	return true;
+X}
+X
+Xinline void CmdLine::missingArgsException()
+X{
+X		int count = 0;
+X
+X		std::string missingArgList;
+X		for (ArgListIterator it = _argList.begin(); it != _argList.end(); it++)
+X		{
+X			if ( (*it)->isRequired() && !(*it)->isSet() )
+X			{
+X				missingArgList += (*it)->getName();
+X				missingArgList += ", ";
+X				count++;
+X			}
+X		}
+X		missingArgList = missingArgList.substr(0,missingArgList.length()-2);
+X
+X		std::string msg;
+X		if ( count > 1 )
+X			msg = "Required arguments missing: ";
+X		else
+X			msg = "Required argument missing: ";
+X
+X		msg += missingArgList;
+X
+X		throw(CmdLineParseException(msg));
+X}
+X
+Xinline void CmdLine::deleteOnExit(Arg* ptr)
+X{
+X	_argDeleteOnExitList.push_back(ptr);
+X}
+X
+Xinline void CmdLine::deleteOnExit(Visitor* ptr)
+X{
+X	_visitorDeleteOnExitList.push_back(ptr);
+X}
+X
+Xinline CmdLineOutput* CmdLine::getOutput()
+X{
+X	return _output;
+X}
+X
+Xinline void CmdLine::setOutput(CmdLineOutput* co)
+X{
+X	if ( !_userSetOutput )
+X		delete _output;
+X	_userSetOutput = true;
+X	_output = co;
+X}
+X
+Xinline std::string& CmdLine::getVersion()
+X{
+X	return _version;
+X}
+X
+Xinline std::string& CmdLine::getProgramName()
+X{
+X	return _progName;
+X}
+X
+Xinline std::list<Arg*>& CmdLine::getArgList()
+X{
+X	return _argList;
+X}
+X
+Xinline XorHandler& CmdLine::getXorHandler()
+X{
+X	return _xorHandler;
+X}
+X
+Xinline char CmdLine::getDelimiter()
+X{
+X	return _delimiter;
+X}
+X
+Xinline std::string& CmdLine::getMessage()
+X{
+X	return _message;
+X}
+X
+Xinline bool CmdLine::hasHelpAndVersion()
+X{
+X	return _helpAndVersion;
+X}
+X
+Xinline void CmdLine::setExceptionHandling(const bool state)
+X{
+X	_handleExceptions = state;
+X}
+X
+Xinline bool CmdLine::getExceptionHandling() const
+X{
+X	return _handleExceptions;
+X}
+X
+Xinline void CmdLine::reset()
+X{
+X	for( ArgListIterator it = _argList.begin(); it != _argList.end(); it++ )
+X		(*it)->reset();
+X	
+X	_progName.clear();
+X}
+X
+X///////////////////////////////////////////////////////////////////////////////
+X//End CmdLine.cpp
+X///////////////////////////////////////////////////////////////////////////////
+X
+X
+X
+X} //namespace TCLAP
+X#endif
+52e5ff1ecb66cb9b9be836e0e48e2c02
+echo x - ./tclap-1.2.1/include/tclap/CmdLineInterface.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/CmdLineInterface.h << '3163f0a317c750bc428ef2139382cda5'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  CmdLineInterface.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X *
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_COMMANDLINE_INTERFACE_H
+X#define TCLAP_COMMANDLINE_INTERFACE_H
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <algorithm>
+X
+X
+Xnamespace TCLAP {
+X     
+Xclass Arg;
+Xclass CmdLineOutput;
+Xclass XorHandler;
+X
+X/**
+X * The base class that manages the command line definition and passes
+X * along the parsing to the appropriate Arg classes.
+X */
+Xclass CmdLineInterface
+X{
+X	public:
+X
+X		/**
+X		 * Destructor
+X		 */
+X		virtual ~CmdLineInterface() {}
+X
+X		/**
+X		 * Adds an argument to the list of arguments to be parsed.
+X		 * \param a - Argument to be added. 
+X		 */
+X		virtual void add( Arg& a )=0;
+X
+X		/**
+X		 * An alternative add.  Functionally identical.
+X		 * \param a - Argument to be added. 
+X		 */
+X		virtual void add( Arg* a )=0;
+X
+X		/**
+X		 * Add two Args that will be xor'd.  
+X		 * If this method is used, add does
+X		 * not need to be called.
+X		 * \param a - Argument to be added and xor'd. 
+X		 * \param b - Argument to be added and xor'd. 
+X		 */
+X		virtual void xorAdd( Arg& a, Arg& b )=0;
+X
+X		/**
+X		 * Add a list of Args that will be xor'd.  If this method is used, 
+X		 * add does not need to be called.
+X		 * \param xors - List of Args to be added and xor'd. 
+X		 */
+X		virtual void xorAdd( std::vector<Arg*>& xors )=0;
+X
+X		/**
+X		 * Parses the command line.
+X		 * \param argc - Number of arguments.
+X		 * \param argv - Array of arguments.
+X		 */
+X		virtual void parse(int argc, const char * const * argv)=0;
+X
+X        /**
+X         * Parses the command line.
+X         * \param args - A vector of strings representing the args. 
+X         * args[0] is still the program name.
+X         */
+X        void parse(std::vector<std::string>& args);
+X
+X		/**
+X		 * Returns the CmdLineOutput object.
+X		 */
+X		virtual CmdLineOutput* getOutput()=0;
+X
+X		/**
+X		 * \param co - CmdLineOutput object that we want to use instead. 
+X		 */
+X		virtual void setOutput(CmdLineOutput* co)=0;
+X
+X		/**
+X		 * Returns the version string.
+X		 */
+X		virtual std::string& getVersion()=0;
+X
+X		/**
+X		 * Returns the program name string.
+X		 */
+X		virtual std::string& getProgramName()=0;
+X
+X		/**
+X		 * Returns the argList. 
+X		 */
+X		virtual std::list<Arg*>& getArgList()=0;
+X
+X		/**
+X		 * Returns the XorHandler. 
+X		 */
+X		virtual XorHandler& getXorHandler()=0;
+X
+X		/**
+X		 * Returns the delimiter string.
+X		 */
+X		virtual char getDelimiter()=0;
+X
+X		/**
+X		 * Returns the message string.
+X		 */
+X		virtual std::string& getMessage()=0;
+X
+X		/**
+X		 * Indicates whether or not the help and version switches were created
+X		 * automatically.
+X		 */
+X		virtual bool hasHelpAndVersion()=0;
+X
+X		/** 
+X		 * Resets the instance as if it had just been constructed so that the
+X		 * instance can be reused. 
+X		 */
+X		virtual void reset()=0;
+X};
+X
+X} //namespace
+X
+X
+X#endif 
+3163f0a317c750bc428ef2139382cda5
+echo x - ./tclap-1.2.1/include/tclap/CmdLineOutput.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/CmdLineOutput.h << '540b1381bc6855afc0738f114aeca2c3'
+X
+X
+X/****************************************************************************** 
+X * 
+X *  file:  CmdLineOutput.h
+X * 
+X *  Copyright (c) 2004, Michael E. Smoot
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_CMDLINEOUTPUT_H
+X#define TCLAP_CMDLINEOUTPUT_H
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <iomanip>
+X#include <algorithm>
+X
+Xnamespace TCLAP {
+X
+Xclass CmdLineInterface;
+Xclass ArgException;
+X
+X/**
+X * The interface that any output object must implement.
+X */
+Xclass CmdLineOutput 
+X{
+X
+X	public:
+X
+X		/**
+X		 * Virtual destructor.
+X		 */
+X		virtual ~CmdLineOutput() {}
+X
+X		/**
+X		 * Generates some sort of output for the USAGE. 
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void usage(CmdLineInterface& c)=0;
+X
+X		/**
+X		 * Generates some sort of output for the version. 
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void version(CmdLineInterface& c)=0;
+X
+X		/**
+X		 * Generates some sort of output for a failure. 
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 * \param e - The ArgException that caused the failure. 
+X		 */
+X		virtual void failure( CmdLineInterface& c, 
+X						      ArgException& e )=0;
+X
+X};
+X
+X} //namespace TCLAP
+X#endif 
+540b1381bc6855afc0738f114aeca2c3
+echo x - ./tclap-1.2.1/include/tclap/Constraint.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/Constraint.h << '4fa03c7a81bf8a76d5f3a92a9d6ff507'
+X
+X/******************************************************************************
+X *
+X *  file:  Constraint.h
+X *
+X *  Copyright (c) 2005, Michael E. Smoot
+X *  All rights reverved.
+X *
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+X *  DEALINGS IN THE SOFTWARE.
+X *
+X *****************************************************************************/
+X
+X#ifndef TCLAP_CONSTRAINT_H
+X#define TCLAP_CONSTRAINT_H
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <iomanip>
+X#include <algorithm>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * The interface that defines the interaction between the Arg and Constraint.
+X */
+Xtemplate<class T>
+Xclass Constraint
+X{
+X
+X	public:
+X		/**
+X		 * Returns a description of the Constraint.
+X		 */
+X		virtual std::string description() const =0;
+X
+X		/**
+X		 * Returns the short ID for the Constraint.
+X		 */
+X		virtual std::string shortID() const =0;
+X
+X		/**
+X		 * The method used to verify that the value parsed from the command
+X		 * line meets the constraint.
+X		 * \param value - The value that will be checked.
+X		 */
+X		virtual bool check(const T& value) const =0;
+X
+X		/**
+X		 * Destructor.
+X		 * Silences warnings about Constraint being a base class with virtual
+X		 * functions but without a virtual destructor.
+X		 */
+X		virtual ~Constraint() { ; }
+X};
+X
+X} //namespace TCLAP
+X#endif
+4fa03c7a81bf8a76d5f3a92a9d6ff507
+echo x - ./tclap-1.2.1/include/tclap/DocBookOutput.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/DocBookOutput.h << '6c3f1271881e12b76004ab9e1e07653a'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/****************************************************************************** 
+X * 
+X *  file:  DocBookOutput.h
+X * 
+X *  Copyright (c) 2004, Michael E. Smoot
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_DOCBOOKOUTPUT_H
+X#define TCLAP_DOCBOOKOUTPUT_H
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <algorithm>
+X
+X#include <tclap/CmdLineInterface.h>
+X#include <tclap/CmdLineOutput.h>
+X#include <tclap/XorHandler.h>
+X#include <tclap/Arg.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A class that generates DocBook output for usage() method for the 
+X * given CmdLine and its Args.
+X */
+Xclass DocBookOutput : public CmdLineOutput
+X{
+X
+X	public:
+X
+X		/**
+X		 * Prints the usage to stdout.  Can be overridden to 
+X		 * produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void usage(CmdLineInterface& c);
+X
+X		/**
+X		 * Prints the version to stdout. Can be overridden 
+X		 * to produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void version(CmdLineInterface& c);
+X
+X		/**
+X		 * Prints (to stderr) an error message, short usage 
+X		 * Can be overridden to produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 * \param e - The ArgException that caused the failure. 
+X		 */
+X		virtual void failure(CmdLineInterface& c, 
+X						     ArgException& e );
+X
+X	protected:
+X
+X		/**
+X		 * Substitutes the char r for string x in string s.
+X		 * \param s - The string to operate on. 
+X		 * \param r - The char to replace. 
+X		 * \param x - What to replace r with. 
+X		 */
+X		void substituteSpecialChars( std::string& s, char r, std::string& x );
+X		void removeChar( std::string& s, char r);
+X		void basename( std::string& s );
+X
+X		void printShortArg(Arg* it);
+X		void printLongArg(Arg* it);
+X
+X		char theDelimiter;
+X};
+X
+X
+Xinline void DocBookOutput::version(CmdLineInterface& _cmd) 
+X{ 
+X	std::cout << _cmd.getVersion() << std::endl;
+X}
+X
+Xinline void DocBookOutput::usage(CmdLineInterface& _cmd ) 
+X{
+X	std::list<Arg*> argList = _cmd.getArgList();
+X	std::string progName = _cmd.getProgramName();
+X	std::string xversion = _cmd.getVersion();
+X	theDelimiter = _cmd.getDelimiter();
+X	XorHandler xorHandler = _cmd.getXorHandler();
+X	std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+X	basename(progName);
+X
+X	std::cout << "<?xml version='1.0'?>" << std::endl;
+X	std::cout << "<!DOCTYPE refentry PUBLIC \"-//OASIS//DTD DocBook XML V4.2//EN\"" << std::endl;
+X	std::cout << "\t\"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd\">" << std::endl << std::endl;
+X
+X	std::cout << "<refentry>" << std::endl;
+X
+X	std::cout << "<refmeta>" << std::endl;
+X	std::cout << "<refentrytitle>" << progName << "</refentrytitle>" << std::endl;
+X	std::cout << "<manvolnum>1</manvolnum>" << std::endl;
+X	std::cout << "</refmeta>" << std::endl;
+X
+X	std::cout << "<refnamediv>" << std::endl;
+X	std::cout << "<refname>" << progName << "</refname>" << std::endl;
+X	std::cout << "<refpurpose>" << _cmd.getMessage() << "</refpurpose>" << std::endl;
+X	std::cout << "</refnamediv>" << std::endl;
+X
+X	std::cout << "<refsynopsisdiv>" << std::endl;
+X	std::cout << "<cmdsynopsis>" << std::endl;
+X
+X	std::cout << "<command>" << progName << "</command>" << std::endl;
+X
+X	// xor
+X	for ( int i = 0; (unsigned int)i < xorList.size(); i++ )
+X	{
+X		std::cout << "<group choice='req'>" << std::endl;
+X		for ( ArgVectorIterator it = xorList[i].begin(); 
+X						it != xorList[i].end(); it++ )
+X			printShortArg((*it));
+X
+X		std::cout << "</group>" << std::endl;
+X	}
+X	
+X	// rest of args
+X	for (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+X		if ( !xorHandler.contains( (*it) ) )
+X			printShortArg((*it));
+X
+X 	std::cout << "</cmdsynopsis>" << std::endl;
+X	std::cout << "</refsynopsisdiv>" << std::endl;
+X
+X	std::cout << "<refsect1>" << std::endl;
+X	std::cout << "<title>Description</title>" << std::endl;
+X	std::cout << "<para>" << std::endl;
+X	std::cout << _cmd.getMessage() << std::endl; 
+X	std::cout << "</para>" << std::endl;
+X	std::cout << "</refsect1>" << std::endl;
+X
+X	std::cout << "<refsect1>" << std::endl;
+X	std::cout << "<title>Options</title>" << std::endl;
+X
+X	std::cout << "<variablelist>" << std::endl;
+X	
+X	for (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+X		printLongArg((*it));
+X
+X	std::cout << "</variablelist>" << std::endl;
+X	std::cout << "</refsect1>" << std::endl;
+X
+X	std::cout << "<refsect1>" << std::endl;
+X	std::cout << "<title>Version</title>" << std::endl;
+X	std::cout << "<para>" << std::endl;
+X	std::cout << xversion << std::endl; 
+X	std::cout << "</para>" << std::endl;
+X	std::cout << "</refsect1>" << std::endl;
+X	
+X	std::cout << "</refentry>" << std::endl;
+X
+X}
+X
+Xinline void DocBookOutput::failure( CmdLineInterface& _cmd,
+X				    ArgException& e ) 
+X{ 
+X	static_cast<void>(_cmd); // unused
+X	std::cout << e.what() << std::endl;
+X	throw ExitException(1);
+X}
+X
+Xinline void DocBookOutput::substituteSpecialChars( std::string& s,
+X				                                   char r,
+X												   std::string& x )
+X{
+X	size_t p;
+X	while ( (p = s.find_first_of(r)) != std::string::npos )
+X	{
+X		s.erase(p,1);
+X		s.insert(p,x);
+X	}
+X}
+X
+Xinline void DocBookOutput::removeChar( std::string& s, char r)
+X{
+X	size_t p;
+X	while ( (p = s.find_first_of(r)) != std::string::npos )
+X	{
+X		s.erase(p,1);
+X	}
+X}
+X
+Xinline void DocBookOutput::basename( std::string& s )
+X{
+X	size_t p = s.find_last_of('/');
+X	if ( p != std::string::npos )
+X	{
+X		s.erase(0, p + 1);
+X	}
+X}
+X
+Xinline void DocBookOutput::printShortArg(Arg* a)
+X{
+X	std::string lt = "&lt;"; 
+X	std::string gt = "&gt;"; 
+X
+X	std::string id = a->shortID();
+X	substituteSpecialChars(id,'<',lt);
+X	substituteSpecialChars(id,'>',gt);
+X	removeChar(id,'[');
+X	removeChar(id,']');
+X	
+X	std::string choice = "opt";
+X	if ( a->isRequired() )
+X		choice = "plain";
+X
+X	std::cout << "<arg choice='" << choice << '\'';
+X	if ( a->acceptsMultipleValues() )
+X		std::cout << " rep='repeat'";
+X
+X
+X	std::cout << '>';
+X	if ( !a->getFlag().empty() )
+X		std::cout << a->flagStartChar() << a->getFlag();
+X	else
+X		std::cout << a->nameStartString() << a->getName();
+X	if ( a->isValueRequired() )
+X	{
+X		std::string arg = a->shortID();
+X		removeChar(arg,'[');
+X		removeChar(arg,']');
+X		removeChar(arg,'<');
+X		removeChar(arg,'>');
+X		arg.erase(0, arg.find_last_of(theDelimiter) + 1);
+X		std::cout << theDelimiter;
+X		std::cout << "<replaceable>" << arg << "</replaceable>";
+X	}
+X	std::cout << "</arg>" << std::endl;
+X
+X}
+X
+Xinline void DocBookOutput::printLongArg(Arg* a)
+X{
+X	std::string lt = "&lt;"; 
+X	std::string gt = "&gt;"; 
+X
+X	std::string desc = a->getDescription();
+X	substituteSpecialChars(desc,'<',lt);
+X	substituteSpecialChars(desc,'>',gt);
+X
+X	std::cout << "<varlistentry>" << std::endl;
+X
+X	if ( !a->getFlag().empty() )
+X	{
+X		std::cout << "<term>" << std::endl;
+X		std::cout << "<option>";
+X		std::cout << a->flagStartChar() << a->getFlag();
+X		std::cout << "</option>" << std::endl;
+X		std::cout << "</term>" << std::endl;
+X	}
+X
+X	std::cout << "<term>" << std::endl;
+X	std::cout << "<option>";
+X	std::cout << a->nameStartString() << a->getName();
+X	if ( a->isValueRequired() )
+X	{
+X		std::string arg = a->shortID();
+X		removeChar(arg,'[');
+X		removeChar(arg,']');
+X		removeChar(arg,'<');
+X		removeChar(arg,'>');
+X		arg.erase(0, arg.find_last_of(theDelimiter) + 1);
+X		std::cout << theDelimiter;
+X		std::cout << "<replaceable>" << arg << "</replaceable>";
+X	}
+X	std::cout << "</option>" << std::endl;
+X	std::cout << "</term>" << std::endl;
+X
+X	std::cout << "<listitem>" << std::endl;
+X	std::cout << "<para>" << std::endl;
+X	std::cout << desc << std::endl;
+X	std::cout << "</para>" << std::endl;
+X	std::cout << "</listitem>" << std::endl;
+X
+X	std::cout << "</varlistentry>" << std::endl;
+X}
+X
+X} //namespace TCLAP
+X#endif 
+6c3f1271881e12b76004ab9e1e07653a
+echo x - ./tclap-1.2.1/include/tclap/HelpVisitor.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/HelpVisitor.h << 'fa7561d94c7d14666e1833aa0ad02635'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  HelpVisitor.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_HELP_VISITOR_H
+X#define TCLAP_HELP_VISITOR_H
+X
+X#include <tclap/CmdLineInterface.h>
+X#include <tclap/CmdLineOutput.h>
+X#include <tclap/Visitor.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A Visitor object that calls the usage method of the given CmdLineOutput
+X * object for the specified CmdLine object.
+X */
+Xclass HelpVisitor: public Visitor
+X{
+X	private:
+X		/**
+X		 * Prevent accidental copying.
+X		 */
+X		HelpVisitor(const HelpVisitor& rhs);
+X		HelpVisitor& operator=(const HelpVisitor& rhs);
+X
+X	protected:
+X
+X		/**
+X		 * The CmdLine the output will be generated for. 
+X		 */
+X		CmdLineInterface* _cmd;
+X
+X		/**
+X		 * The output object. 
+X		 */
+X		CmdLineOutput** _out;
+X
+X	public:
+X
+X		/**
+X		 * Constructor.
+X		 * \param cmd - The CmdLine the output will be generated for.
+X		 * \param out - The type of output. 
+X		 */
+X		HelpVisitor(CmdLineInterface* cmd, CmdLineOutput** out) 
+X				: Visitor(), _cmd( cmd ), _out( out ) { }
+X
+X		/**
+X		 * Calls the usage method of the CmdLineOutput for the 
+X		 * specified CmdLine.
+X		 */
+X		void visit() { (*_out)->usage(*_cmd); throw ExitException(0); }
+X		
+X};
+X
+X}
+X
+X#endif
+fa7561d94c7d14666e1833aa0ad02635
+echo x - ./tclap-1.2.1/include/tclap/IgnoreRestVisitor.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/IgnoreRestVisitor.h << '2f28e4c5c45c7cec34d01e3262919bfa'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  IgnoreRestVisitor.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_IGNORE_REST_VISITOR_H
+X#define TCLAP_IGNORE_REST_VISITOR_H
+X
+X#include <tclap/Visitor.h>
+X#include <tclap/Arg.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A Vistor that tells the CmdLine to begin ignoring arguments after
+X * this one is parsed.
+X */
+Xclass IgnoreRestVisitor: public Visitor
+X{
+X	public:
+X
+X		/**
+X		 * Constructor.
+X		 */
+X		IgnoreRestVisitor() : Visitor() {}
+X
+X		/**
+X		 * Sets Arg::_ignoreRest.
+X		 */
+X		void visit() { Arg::beginIgnoring();  }
+X};
+X
+X}
+X
+X#endif
+2f28e4c5c45c7cec34d01e3262919bfa
+echo x - ./tclap-1.2.1/include/tclap/MultiArg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/MultiArg.h << 'c54d6e9a668949de372cd82874b6dc59'
+X/****************************************************************************** 
+X * 
+X *  file:  MultiArg.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/
+X
+X
+X#ifndef TCLAP_MULTIPLE_ARGUMENT_H
+X#define TCLAP_MULTIPLE_ARGUMENT_H
+X
+X#include <string>
+X#include <vector>
+X
+X#include <tclap/Arg.h>
+X#include <tclap/Constraint.h>
+X
+Xnamespace TCLAP {
+X/**
+X * An argument that allows multiple values of type T to be specified.  Very
+X * similar to a ValueArg, except a vector of values will be returned
+X * instead of just one.
+X */
+Xtemplate<class T>
+Xclass MultiArg : public Arg
+X{
+Xpublic:
+X	typedef std::vector<T> container_type;	
+X	typedef typename container_type::iterator iterator;
+X	typedef typename container_type::const_iterator const_iterator;
+X
+Xprotected:
+X
+X	/**
+X	 * The list of values parsed from the CmdLine.
+X	 */
+X	std::vector<T> _values;
+X
+X	/**
+X	 * The description of type T to be used in the usage.
+X	 */
+X	std::string _typeDesc;
+X
+X	/**
+X	 * A list of constraint on this Arg. 
+X	 */
+X	Constraint<T>* _constraint;
+X
+X	/**
+X	 * Extracts the value from the string.
+X	 * Attempts to parse string as type T, if this fails an exception
+X	 * is thrown.
+X	 * \param val - The string to be read.
+X	 */
+X	void _extractValue( const std::string& val );
+X
+X	/**
+X	 * Used by XorHandler to decide whether to keep parsing for this arg.
+X	 */
+X	bool _allowMore;
+X
+Xpublic:
+X
+X	/**
+X	 * Constructor.
+X	 * \param flag - The one character flag that identifies this
+X	 * argument on the command line.
+X	 * \param name - A one word name for the argument.  Can be
+X	 * used as a long flag on the command line.
+X	 * \param desc - A description of what the argument is for or
+X	 * does.
+X	 * \param req - Whether the argument is required on the command
+X	 * line.
+X	 * \param typeDesc - A short, human readable description of the
+X	 * type that this object expects.  This is used in the generation
+X	 * of the USAGE statement.  The goal is to be helpful to the end user
+X	 * of the program.
+X	 * \param v - An optional visitor.  You probably should not
+X	 * use this unless you have a very good reason.
+X	 */
+X	MultiArg( const std::string& flag,
+X                  const std::string& name,
+X                  const std::string& desc,
+X                  bool req,
+X                  const std::string& typeDesc,
+X                  Visitor* v = NULL);
+X
+X	/**
+X	 * Constructor.
+X	 * \param flag - The one character flag that identifies this
+X	 * argument on the command line.
+X	 * \param name - A one word name for the argument.  Can be
+X	 * used as a long flag on the command line.
+X	 * \param desc - A description of what the argument is for or
+X	 * does.
+X	 * \param req - Whether the argument is required on the command
+X	 * line.
+X	 * \param typeDesc - A short, human readable description of the
+X	 * type that this object expects.  This is used in the generation
+X	 * of the USAGE statement.  The goal is to be helpful to the end user
+X	 * of the program.
+X	 * \param parser - A CmdLine parser object to add this Arg to
+X	 * \param v - An optional visitor.  You probably should not
+X	 * use this unless you have a very good reason.
+X	 */
+X	MultiArg( const std::string& flag, 
+X                  const std::string& name,
+X                  const std::string& desc,
+X                  bool req,
+X                  const std::string& typeDesc,
+X                  CmdLineInterface& parser,
+X                  Visitor* v = NULL );
+X
+X	/**
+X	 * Constructor.
+X	 * \param flag - The one character flag that identifies this
+X	 * argument on the command line.
+X	 * \param name - A one word name for the argument.  Can be
+X	 * used as a long flag on the command line.
+X	 * \param desc - A description of what the argument is for or
+X	 * does.
+X	 * \param req - Whether the argument is required on the command
+X	 * line.
+X	 * \param constraint - A pointer to a Constraint object used
+X	 * to constrain this Arg.
+X	 * \param v - An optional visitor.  You probably should not
+X	 * use this unless you have a very good reason.
+X	 */
+X	MultiArg( const std::string& flag,
+X                  const std::string& name,
+X                  const std::string& desc,
+X                  bool req,
+X                  Constraint<T>* constraint,
+X                  Visitor* v = NULL );
+X		  
+X	/**
+X	 * Constructor.
+X	 * \param flag - The one character flag that identifies this
+X	 * argument on the command line.
+X	 * \param name - A one word name for the argument.  Can be
+X	 * used as a long flag on the command line.
+X	 * \param desc - A description of what the argument is for or
+X	 * does.
+X	 * \param req - Whether the argument is required on the command
+X	 * line.
+X	 * \param constraint - A pointer to a Constraint object used
+X	 * to constrain this Arg.
+X	 * \param parser - A CmdLine parser object to add this Arg to
+X	 * \param v - An optional visitor.  You probably should not
+X	 * use this unless you have a very good reason.
+X	 */
+X	MultiArg( const std::string& flag, 
+X                  const std::string& name,
+X                  const std::string& desc,
+X                  bool req,
+X                  Constraint<T>* constraint,
+X                  CmdLineInterface& parser,
+X                  Visitor* v = NULL );
+X		  
+X	/**
+X	 * Handles the processing of the argument.
+X	 * This re-implements the Arg version of this method to set the
+X	 * _value of the argument appropriately.  It knows the difference
+X	 * between labeled and unlabeled.
+X	 * \param i - Pointer the the current argument in the list.
+X	 * \param args - Mutable list of strings. Passed from main().
+X	 */
+X	virtual bool processArg(int* i, std::vector<std::string>& args); 
+X
+X	/**
+X	 * Returns a vector of type T containing the values parsed from
+X	 * the command line.
+X	 */
+X	const std::vector<T>& getValue();
+X
+X	/**
+X	 * Returns an iterator over the values parsed from the command
+X	 * line.
+X	 */
+X	const_iterator begin() const { return _values.begin(); }
+X
+X	/**
+X	 * Returns the end of the values parsed from the command
+X	 * line.
+X	 */
+X	const_iterator end() const { return _values.end(); }
+X
+X	/**
+X	 * Returns the a short id string.  Used in the usage. 
+X	 * \param val - value to be used.
+X	 */
+X	virtual std::string shortID(const std::string& val="val") const;
+X
+X	/**
+X	 * Returns the a long id string.  Used in the usage. 
+X	 * \param val - value to be used.
+X	 */
+X	virtual std::string longID(const std::string& val="val") const;
+X
+X	/**
+X	 * Once we've matched the first value, then the arg is no longer
+X	 * required.
+X	 */
+X	virtual bool isRequired() const;
+X
+X	virtual bool allowMore();
+X	
+X	virtual void reset();
+X
+Xprivate:
+X	/**
+X	 * Prevent accidental copying
+X	 */
+X	MultiArg<T>(const MultiArg<T>& rhs);
+X	MultiArg<T>& operator=(const MultiArg<T>& rhs);
+X
+X};
+X
+Xtemplate<class T>
+XMultiArg<T>::MultiArg(const std::string& flag, 
+X                      const std::string& name,
+X                      const std::string& desc,
+X                      bool req,
+X                      const std::string& typeDesc,
+X                      Visitor* v) :
+X   Arg( flag, name, desc, req, true, v ),
+X  _values(std::vector<T>()),
+X  _typeDesc( typeDesc ),
+X  _constraint( NULL ),
+X  _allowMore(false)
+X{ 
+X	_acceptsMultipleValues = true;
+X}
+X
+Xtemplate<class T>
+XMultiArg<T>::MultiArg(const std::string& flag, 
+X                      const std::string& name,
+X                      const std::string& desc,
+X                      bool req,
+X                      const std::string& typeDesc,
+X                      CmdLineInterface& parser,
+X                      Visitor* v)
+X: Arg( flag, name, desc, req, true, v ),
+X  _values(std::vector<T>()),
+X  _typeDesc( typeDesc ),
+X  _constraint( NULL ),
+X  _allowMore(false)
+X{ 
+X	parser.add( this );
+X	_acceptsMultipleValues = true;
+X}
+X
+X/**
+X *
+X */
+Xtemplate<class T>
+XMultiArg<T>::MultiArg(const std::string& flag, 
+X                      const std::string& name,
+X                      const std::string& desc,
+X                      bool req,
+X                      Constraint<T>* constraint,
+X                      Visitor* v)
+X: Arg( flag, name, desc, req, true, v ),
+X  _values(std::vector<T>()),
+X  _typeDesc( constraint->shortID() ),
+X  _constraint( constraint ),
+X  _allowMore(false)
+X{ 
+X	_acceptsMultipleValues = true;
+X}
+X
+Xtemplate<class T>
+XMultiArg<T>::MultiArg(const std::string& flag, 
+X                      const std::string& name,
+X                      const std::string& desc,
+X                      bool req,
+X                      Constraint<T>* constraint,
+X                      CmdLineInterface& parser,
+X                      Visitor* v)
+X: Arg( flag, name, desc, req, true, v ),
+X  _values(std::vector<T>()),
+X  _typeDesc( constraint->shortID() ),
+X  _constraint( constraint ),
+X  _allowMore(false)
+X{ 
+X	parser.add( this );
+X	_acceptsMultipleValues = true;
+X}
+X
+Xtemplate<class T>
+Xconst std::vector<T>& MultiArg<T>::getValue() { return _values; }
+X
+Xtemplate<class T>
+Xbool MultiArg<T>::processArg(int *i, std::vector<std::string>& args) 
+X{
+X 	if ( _ignoreable && Arg::ignoreRest() )
+X		return false;
+X
+X	if ( _hasBlanks( args[*i] ) )
+X		return false;
+X
+X	std::string flag = args[*i];
+X	std::string value = "";
+X
+X   	trimFlag( flag, value );
+X
+X   	if ( argMatches( flag ) )
+X   	{
+X   		if ( Arg::delimiter() != ' ' && value == "" )
+X			throw( ArgParseException( 
+X			           "Couldn't find delimiter for this argument!",
+X					   toString() ) );
+X
+X		// always take the first one, regardless of start string
+X		if ( value == "" )
+X		{
+X			(*i)++;
+X			if ( static_cast<unsigned int>(*i) < args.size() )
+X				_extractValue( args[*i] );
+X			else
+X				throw( ArgParseException("Missing a value for this argument!",
+X                                         toString() ) );
+X		} 
+X		else
+X			_extractValue( value );
+X
+X		/*
+X		// continuing taking the args until we hit one with a start string 
+X		while ( (unsigned int)(*i)+1 < args.size() &&
+X				args[(*i)+1].find_first_of( Arg::flagStartString() ) != 0 &&
+X		        args[(*i)+1].find_first_of( Arg::nameStartString() ) != 0 ) 
+X				_extractValue( args[++(*i)] );
+X		*/
+X
+X		_alreadySet = true;
+X		_checkWithVisitor();
+X
+X		return true;
+X	}
+X	else
+X		return false;
+X}
+X
+X/**
+X *
+X */
+Xtemplate<class T>
+Xstd::string MultiArg<T>::shortID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return Arg::shortID(_typeDesc) + " ... ";
+X}
+X
+X/**
+X *
+X */
+Xtemplate<class T>
+Xstd::string MultiArg<T>::longID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return Arg::longID(_typeDesc) + "  (accepted multiple times)";
+X}
+X
+X/**
+X * Once we've matched the first value, then the arg is no longer
+X * required.
+X */
+Xtemplate<class T>
+Xbool MultiArg<T>::isRequired() const
+X{
+X	if ( _required )
+X	{
+X		if ( _values.size() > 1 )
+X			return false;
+X		else
+X			return true;
+X   	}
+X   	else
+X		return false;
+X
+X}
+X
+Xtemplate<class T>
+Xvoid MultiArg<T>::_extractValue( const std::string& val ) 
+X{
+X    try {
+X	T tmp;
+X	ExtractValue(tmp, val, typename ArgTraits<T>::ValueCategory());
+X	_values.push_back(tmp);
+X    } catch( ArgParseException &e) {
+X	throw ArgParseException(e.error(), toString());
+X    }
+X
+X    if ( _constraint != NULL )
+X	if ( ! _constraint->check( _values.back() ) )
+X	    throw( CmdLineParseException( "Value '" + val +
+X					  "' does not meet constraint: " +
+X					  _constraint->description(), 
+X					  toString() ) );
+X}
+X		
+Xtemplate<class T>
+Xbool MultiArg<T>::allowMore()
+X{
+X	bool am = _allowMore;
+X	_allowMore = true;
+X	return am;
+X}
+X
+Xtemplate<class T>
+Xvoid MultiArg<T>::reset()
+X{
+X	Arg::reset();
+X	_values.clear();
+X}
+X
+X} // namespace TCLAP
+X
+X#endif
+c54d6e9a668949de372cd82874b6dc59
+echo x - ./tclap-1.2.1/include/tclap/MultiSwitchArg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/MultiSwitchArg.h << '638be8f6eb3bfa0ff00aac2481713d75'
+X
+X/****************************************************************************** 
+X*
+X*  file:  MultiSwitchArg.h
+X*
+X*  Copyright (c) 2003, Michael E. Smoot .
+X*  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X*  Copyright (c) 2005, Michael E. Smoot, Daniel Aarno, Erik Zeek.
+X*  All rights reverved.
+X*
+X*  See the file COPYING in the top directory of this distribution for
+X*  more information.
+X*
+X*  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+X*  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+X*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+X*  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+X*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+X*  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+X*  DEALINGS IN THE SOFTWARE.
+X*
+X*****************************************************************************/
+X
+X
+X#ifndef TCLAP_MULTI_SWITCH_ARG_H
+X#define TCLAP_MULTI_SWITCH_ARG_H
+X
+X#include <string>
+X#include <vector>
+X
+X#include <tclap/SwitchArg.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X* A multiple switch argument.  If the switch is set on the command line, then
+X* the getValue method will return the number of times the switch appears.
+X*/
+Xclass MultiSwitchArg : public SwitchArg
+X{
+X	protected:
+X
+X		/**
+X		 * The value of the switch.
+X		 */
+X		int _value;
+X
+X		/**
+X		 * Used to support the reset() method so that ValueArg can be
+X		 * reset to their constructed value.
+X		 */
+X		int _default;
+X
+X	public:
+X
+X		/**
+X		 * MultiSwitchArg constructor.
+X		 * \param flag - The one character flag that identifies this
+X		 * argument on the command line.
+X		 * \param name - A one word name for the argument.  Can be
+X		 * used as a long flag on the command line.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param init - Optional. The initial/default value of this Arg. 
+X		 * Defaults to 0.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		MultiSwitchArg(const std::string& flag, 
+X				const std::string& name,
+X				const std::string& desc,
+X				int init = 0,
+X				Visitor* v = NULL);
+X
+X
+X		/**
+X		 * MultiSwitchArg constructor.
+X		 * \param flag - The one character flag that identifies this
+X		 * argument on the command line.
+X		 * \param name - A one word name for the argument.  Can be
+X		 * used as a long flag on the command line.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param parser - A CmdLine parser object to add this Arg to
+X		 * \param init - Optional. The initial/default value of this Arg. 
+X		 * Defaults to 0.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		MultiSwitchArg(const std::string& flag, 
+X				const std::string& name,
+X				const std::string& desc,
+X				CmdLineInterface& parser,
+X				int init = 0,
+X				Visitor* v = NULL);
+X
+X
+X		/**
+X		 * Handles the processing of the argument.
+X		 * This re-implements the SwitchArg version of this method to set the
+X		 * _value of the argument appropriately.
+X		 * \param i - Pointer the the current argument in the list.
+X		 * \param args - Mutable list of strings. Passed
+X		 * in from main().
+X		 */
+X		virtual bool processArg(int* i, std::vector<std::string>& args); 
+X
+X		/**
+X		 * Returns int, the number of times the switch has been set.
+X		 */
+X		int getValue();
+X
+X		/**
+X		 * Returns the shortID for this Arg.
+X		 */
+X		std::string shortID(const std::string& val) const;
+X
+X		/**
+X		 * Returns the longID for this Arg.
+X		 */
+X		std::string longID(const std::string& val) const;
+X		
+X		void reset();
+X
+X};
+X
+X//////////////////////////////////////////////////////////////////////
+X//BEGIN MultiSwitchArg.cpp
+X//////////////////////////////////////////////////////////////////////
+Xinline MultiSwitchArg::MultiSwitchArg(const std::string& flag,
+X					const std::string& name,
+X					const std::string& desc,
+X					int init,
+X					Visitor* v )
+X: SwitchArg(flag, name, desc, false, v),
+X_value( init ),
+X_default( init )
+X{ }
+X
+Xinline MultiSwitchArg::MultiSwitchArg(const std::string& flag,
+X					const std::string& name, 
+X					const std::string& desc, 
+X					CmdLineInterface& parser,
+X					int init,
+X					Visitor* v )
+X: SwitchArg(flag, name, desc, false, v),
+X_value( init ),
+X_default( init )
+X{ 
+X	parser.add( this );
+X}
+X
+Xinline int MultiSwitchArg::getValue() { return _value; }
+X
+Xinline bool MultiSwitchArg::processArg(int *i, std::vector<std::string>& args)
+X{
+X	if ( _ignoreable && Arg::ignoreRest() )
+X		return false;
+X
+X	if ( argMatches( args[*i] ))
+X	{
+X		// so the isSet() method will work
+X		_alreadySet = true;
+X
+X		// Matched argument: increment value.
+X		++_value;
+X
+X		_checkWithVisitor();
+X
+X		return true;
+X	}
+X	else if ( combinedSwitchesMatch( args[*i] ) )
+X	{
+X		// so the isSet() method will work
+X		_alreadySet = true;
+X
+X		// Matched argument: increment value.
+X		++_value;
+X
+X		// Check for more in argument and increment value.
+X		while ( combinedSwitchesMatch( args[*i] ) ) 
+X			++_value;
+X
+X		_checkWithVisitor();
+X
+X		return false;
+X	}
+X	else
+X		return false;
+X}
+X
+Xinline std::string 
+XMultiSwitchArg::shortID(const std::string& val) const
+X{
+X	return Arg::shortID(val) + " ... ";
+X}
+X
+Xinline std::string 
+XMultiSwitchArg::longID(const std::string& val) const
+X{
+X	return Arg::longID(val) + "  (accepted multiple times)";
+X}
+X
+Xinline void
+XMultiSwitchArg::reset()
+X{
+X	MultiSwitchArg::_value = MultiSwitchArg::_default;
+X}
+X
+X//////////////////////////////////////////////////////////////////////
+X//END MultiSwitchArg.cpp
+X//////////////////////////////////////////////////////////////////////
+X
+X} //namespace TCLAP
+X
+X#endif
+638be8f6eb3bfa0ff00aac2481713d75
+echo x - ./tclap-1.2.1/include/tclap/OptionalUnlabeledTracker.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/OptionalUnlabeledTracker.h << '5accbcf05157f62b9191e9089f98020b'
+X
+X
+X/****************************************************************************** 
+X * 
+X *  file:  OptionalUnlabeledTracker.h
+X * 
+X *  Copyright (c) 2005, Michael E. Smoot .
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_OPTIONAL_UNLABELED_TRACKER_H
+X#define TCLAP_OPTIONAL_UNLABELED_TRACKER_H
+X
+X#include <string>
+X
+Xnamespace TCLAP {
+X
+Xclass OptionalUnlabeledTracker
+X{
+X
+X	public:
+X
+X		static void check( bool req, const std::string& argName );
+X
+X		static void gotOptional() { alreadyOptionalRef() = true; }
+X
+X		static bool& alreadyOptional() { return alreadyOptionalRef(); } 
+X
+X	private:
+X
+X		static bool& alreadyOptionalRef() { static bool ct = false; return ct; }
+X};
+X
+X
+Xinline void OptionalUnlabeledTracker::check( bool req, const std::string& argName )
+X{
+X    if ( OptionalUnlabeledTracker::alreadyOptional() )
+X        throw( SpecificationException(
+X	"You can't specify ANY Unlabeled Arg following an optional Unlabeled Arg",
+X	                argName ) );
+X
+X    if ( !req )
+X        OptionalUnlabeledTracker::gotOptional();
+X}
+X
+X
+X} // namespace TCLAP
+X
+X#endif
+5accbcf05157f62b9191e9089f98020b
+echo x - ./tclap-1.2.1/include/tclap/StandardTraits.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/StandardTraits.h << 'd2a113aa13f8d556e89bedca14db953e'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/******************************************************************************
+X *
+X *  file:  StandardTraits.h
+X *
+X *  Copyright (c) 2007, Daniel Aarno, Michael E. Smoot .
+X *  All rights reverved.
+X *
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+X *  DEALINGS IN THE SOFTWARE.
+X *
+X *****************************************************************************/
+X
+X// This is an internal tclap file, you should probably not have to
+X// include this directly
+X
+X#ifndef TCLAP_STANDARD_TRAITS_H
+X#define TCLAP_STANDARD_TRAITS_H
+X
+X#ifdef HAVE_CONFIG_H
+X#include <config.h> // To check for long long
+X#endif
+X
+X// If Microsoft has already typedef'd wchar_t as an unsigned 
+X// short, then compiles will break because it's as if we're
+X// creating ArgTraits twice for unsigned short. Thus...
+X#ifdef _MSC_VER
+X#ifndef _NATIVE_WCHAR_T_DEFINED
+X#define TCLAP_DONT_DECLARE_WCHAR_T_ARGTRAITS
+X#endif
+X#endif
+X
+Xnamespace TCLAP {
+X
+X// ======================================================================
+X// Integer types
+X// ======================================================================
+X
+X/**
+X * longs have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<long> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * ints have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<int> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * shorts have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<short> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * chars have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<char> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X#ifdef HAVE_LONG_LONG
+X/**
+X * long longs have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<long long> {
+X    typedef ValueLike ValueCategory;
+X};
+X#endif
+X
+X// ======================================================================
+X// Unsigned integer types
+X// ======================================================================
+X
+X/**
+X * unsigned longs have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<unsigned long> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * unsigned ints have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<unsigned int> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * unsigned shorts have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<unsigned short> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * unsigned chars have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<unsigned char> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X// Microsoft implements size_t awkwardly. 
+X#if defined(_MSC_VER) && defined(_M_X64)
+X/**
+X * size_ts have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<size_t> {
+X    typedef ValueLike ValueCategory;
+X};
+X#endif
+X
+X
+X#ifdef HAVE_LONG_LONG
+X/**
+X * unsigned long longs have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<unsigned long long> {
+X    typedef ValueLike ValueCategory;
+X};
+X#endif
+X
+X// ======================================================================
+X// Float types
+X// ======================================================================
+X
+X/**
+X * floats have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<float> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X/**
+X * doubles have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<double> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X// ======================================================================
+X// Other types
+X// ======================================================================
+X
+X/**
+X * bools have value-like semantics.
+X */
+Xtemplate<>
+Xstruct ArgTraits<bool> {
+X    typedef ValueLike ValueCategory;
+X};
+X
+X
+X/**
+X * wchar_ts have value-like semantics.
+X */
+X#ifndef TCLAP_DONT_DECLARE_WCHAR_T_ARGTRAITS
+Xtemplate<>
+Xstruct ArgTraits<wchar_t> {
+X    typedef ValueLike ValueCategory;
+X};
+X#endif
+X
+X/**
+X * Strings have string like argument traits.
+X */
+Xtemplate<>
+Xstruct ArgTraits<std::string> {
+X    typedef StringLike ValueCategory;
+X};
+X
+Xtemplate<typename T>
+Xvoid SetString(T &dst, const std::string &src)
+X{
+X    dst = src;
+X}
+X
+X} // namespace
+X
+X#endif
+X
+d2a113aa13f8d556e89bedca14db953e
+echo x - ./tclap-1.2.1/include/tclap/StdOutput.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/StdOutput.h << '57a273c6825672fe515a22c766412bc7'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/****************************************************************************** 
+X * 
+X *  file:  StdOutput.h
+X * 
+X *  Copyright (c) 2004, Michael E. Smoot
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_STDCMDLINEOUTPUT_H
+X#define TCLAP_STDCMDLINEOUTPUT_H
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <algorithm>
+X
+X#include <tclap/CmdLineInterface.h>
+X#include <tclap/CmdLineOutput.h>
+X#include <tclap/XorHandler.h>
+X#include <tclap/Arg.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A class that isolates any output from the CmdLine object so that it
+X * may be easily modified.
+X */
+Xclass StdOutput : public CmdLineOutput
+X{
+X
+X	public:
+X
+X		/**
+X		 * Prints the usage to stdout.  Can be overridden to 
+X		 * produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void usage(CmdLineInterface& c);
+X
+X		/**
+X		 * Prints the version to stdout. Can be overridden 
+X		 * to produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void version(CmdLineInterface& c);
+X
+X		/**
+X		 * Prints (to stderr) an error message, short usage 
+X		 * Can be overridden to produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 * \param e - The ArgException that caused the failure. 
+X		 */
+X		virtual void failure(CmdLineInterface& c, 
+X				     ArgException& e );
+X
+X	protected:
+X
+X        /**
+X         * Writes a brief usage message with short args.
+X		 * \param c - The CmdLine object the output is generated for. 
+X         * \param os - The stream to write the message to.
+X         */
+X        void _shortUsage( CmdLineInterface& c, std::ostream& os ) const;
+X
+X        /**
+X		 * Writes a longer usage message with long and short args, 
+X		 * provides descriptions and prints message.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 * \param os - The stream to write the message to.
+X		 */
+X		void _longUsage( CmdLineInterface& c, std::ostream& os ) const;
+X
+X		/**
+X		 * This function inserts line breaks and indents long strings 
+X		 * according the  params input. It will only break lines at spaces, 
+X		 * commas and pipes.
+X		 * \param os - The stream to be printed to.
+X		 * \param s - The string to be printed.
+X		 * \param maxWidth - The maxWidth allowed for the output line. 
+X		 * \param indentSpaces - The number of spaces to indent the first line. 
+X		 * \param secondLineOffset - The number of spaces to indent the second
+X		 * and all subsequent lines in addition to indentSpaces.
+X		 */
+X		void spacePrint( std::ostream& os, 
+X						 const std::string& s, 
+X						 int maxWidth, 
+X						 int indentSpaces, 
+X						 int secondLineOffset ) const;
+X
+X};
+X
+X
+Xinline void StdOutput::version(CmdLineInterface& _cmd) 
+X{
+X	std::string progName = _cmd.getProgramName();
+X	std::string xversion = _cmd.getVersion();
+X
+X	std::cout << std::endl << progName << "  version: " 
+X			  << xversion << std::endl << std::endl;
+X}
+X
+Xinline void StdOutput::usage(CmdLineInterface& _cmd ) 
+X{
+X	std::cout << std::endl << "USAGE: " << std::endl << std::endl; 
+X
+X	_shortUsage( _cmd, std::cout );
+X
+X	std::cout << std::endl << std::endl << "Where: " << std::endl << std::endl;
+X
+X	_longUsage( _cmd, std::cout );
+X
+X	std::cout << std::endl; 
+X
+X}
+X
+Xinline void StdOutput::failure( CmdLineInterface& _cmd,
+X								ArgException& e ) 
+X{
+X	std::string progName = _cmd.getProgramName();
+X
+X	std::cerr << "PARSE ERROR: " << e.argId() << std::endl
+X		      << "             " << e.error() << std::endl << std::endl;
+X
+X	if ( _cmd.hasHelpAndVersion() )
+X		{
+X			std::cerr << "Brief USAGE: " << std::endl;
+X
+X			_shortUsage( _cmd, std::cerr );	
+X
+X			std::cerr << std::endl << "For complete USAGE and HELP type: " 
+X					  << std::endl << "   " << progName << " --help" 
+X					  << std::endl << std::endl;
+X		}
+X	else
+X		usage(_cmd);
+X
+X	throw ExitException(1);
+X}
+X
+Xinline void 
+XStdOutput::_shortUsage( CmdLineInterface& _cmd, 
+X						std::ostream& os ) const
+X{
+X	std::list<Arg*> argList = _cmd.getArgList();
+X	std::string progName = _cmd.getProgramName();
+X	XorHandler xorHandler = _cmd.getXorHandler();
+X	std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+X
+X	std::string s = progName + " ";
+X
+X	// first the xor
+X	for ( int i = 0; static_cast<unsigned int>(i) < xorList.size(); i++ )
+X		{
+X			s += " {";
+X			for ( ArgVectorIterator it = xorList[i].begin(); 
+X				  it != xorList[i].end(); it++ )
+X				s += (*it)->shortID() + "|";
+X
+X			s[s.length()-1] = '}';
+X		}
+X
+X	// then the rest
+X	for (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+X		if ( !xorHandler.contains( (*it) ) )
+X			s += " " + (*it)->shortID();
+X
+X	// if the program name is too long, then adjust the second line offset 
+X	int secondLineOffset = static_cast<int>(progName.length()) + 2;
+X	if ( secondLineOffset > 75/2 )
+X		secondLineOffset = static_cast<int>(75/2);
+X
+X	spacePrint( os, s, 75, 3, secondLineOffset );
+X}
+X
+Xinline void 
+XStdOutput::_longUsage( CmdLineInterface& _cmd, 
+X					   std::ostream& os ) const
+X{
+X	std::list<Arg*> argList = _cmd.getArgList();
+X	std::string message = _cmd.getMessage();
+X	XorHandler xorHandler = _cmd.getXorHandler();
+X	std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+X
+X	// first the xor 
+X	for ( int i = 0; static_cast<unsigned int>(i) < xorList.size(); i++ )
+X		{
+X			for ( ArgVectorIterator it = xorList[i].begin(); 
+X				  it != xorList[i].end(); 
+X				  it++ )
+X				{
+X					spacePrint( os, (*it)->longID(), 75, 3, 3 );
+X					spacePrint( os, (*it)->getDescription(), 75, 5, 0 );
+X
+X					if ( it+1 != xorList[i].end() )
+X						spacePrint(os, "-- OR --", 75, 9, 0);
+X				}
+X			os << std::endl << std::endl;
+X		}
+X
+X	// then the rest
+X	for (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+X		if ( !xorHandler.contains( (*it) ) )
+X			{
+X				spacePrint( os, (*it)->longID(), 75, 3, 3 ); 
+X				spacePrint( os, (*it)->getDescription(), 75, 5, 0 ); 
+X				os << std::endl;
+X			}
+X
+X	os << std::endl;
+X
+X	spacePrint( os, message, 75, 3, 0 );
+X}
+X
+Xinline void StdOutput::spacePrint( std::ostream& os, 
+X						           const std::string& s, 
+X						           int maxWidth, 
+X						           int indentSpaces, 
+X						           int secondLineOffset ) const
+X{
+X	int len = static_cast<int>(s.length());
+X
+X	if ( (len + indentSpaces > maxWidth) && maxWidth > 0 )
+X		{
+X			int allowedLen = maxWidth - indentSpaces;
+X			int start = 0;
+X			while ( start < len )
+X				{
+X					// find the substring length
+X					// int stringLen = std::min<int>( len - start, allowedLen );
+X					// doing it this way to support a VisualC++ 2005 bug 
+X					using namespace std; 
+X					int stringLen = min<int>( len - start, allowedLen );
+X
+X					// trim the length so it doesn't end in middle of a word
+X					if ( stringLen == allowedLen )
+X						while ( stringLen >= 0 &&
+X								s[stringLen+start] != ' ' && 
+X								s[stringLen+start] != ',' &&
+X								s[stringLen+start] != '|' ) 
+X							stringLen--;
+X	
+X					// ok, the word is longer than the line, so just split 
+X					// wherever the line ends
+X					if ( stringLen <= 0 )
+X						stringLen = allowedLen;
+X
+X					// check for newlines
+X					for ( int i = 0; i < stringLen; i++ )
+X						if ( s[start+i] == '\n' )
+X							stringLen = i+1;
+X
+X					// print the indent	
+X					for ( int i = 0; i < indentSpaces; i++ )
+X						os << " ";
+X
+X					if ( start == 0 )
+X						{
+X							// handle second line offsets
+X							indentSpaces += secondLineOffset;
+X
+X							// adjust allowed len
+X							allowedLen -= secondLineOffset;
+X						}
+X
+X					os << s.substr(start,stringLen) << std::endl;
+X
+X					// so we don't start a line with a space
+X					while ( s[stringLen+start] == ' ' && start < len )
+X						start++;
+X			
+X					start += stringLen;
+X				}
+X		}
+X	else
+X		{
+X			for ( int i = 0; i < indentSpaces; i++ )
+X				os << " ";
+X			os << s << std::endl;
+X		}
+X}
+X
+X} //namespace TCLAP
+X#endif 
+57a273c6825672fe515a22c766412bc7
+echo x - ./tclap-1.2.1/include/tclap/SwitchArg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/SwitchArg.h << 'f0ae2ca2e5ad5af3e49557c93907528b'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  SwitchArg.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_SWITCH_ARG_H
+X#define TCLAP_SWITCH_ARG_H
+X
+X#include <string>
+X#include <vector>
+X
+X#include <tclap/Arg.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A simple switch argument.  If the switch is set on the command line, then
+X * the getValue method will return the opposite of the default value for the
+X * switch.
+X */
+Xclass SwitchArg : public Arg
+X{
+X	protected:
+X
+X		/**
+X		 * The value of the switch.
+X		 */
+X		bool _value;
+X
+X		/**
+X		 * Used to support the reset() method so that ValueArg can be
+X		 * reset to their constructed value.
+X		 */
+X        bool _default;
+X
+X	public:
+X
+X        /**
+X		 * SwitchArg constructor.
+X		 * \param flag - The one character flag that identifies this
+X		 * argument on the command line.
+X		 * \param name - A one word name for the argument.  Can be
+X		 * used as a long flag on the command line.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param def - The default value for this Switch. 
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		SwitchArg(const std::string& flag, 
+X			      const std::string& name, 
+X			      const std::string& desc,
+X			      bool def = false,
+X				  Visitor* v = NULL);
+X
+X				  
+X		/**
+X		 * SwitchArg constructor.
+X		 * \param flag - The one character flag that identifies this
+X		 * argument on the command line.
+X		 * \param name - A one word name for the argument.  Can be
+X		 * used as a long flag on the command line.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param parser - A CmdLine parser object to add this Arg to
+X		 * \param def - The default value for this Switch.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		SwitchArg(const std::string& flag, 
+X			      const std::string& name, 
+X			      const std::string& desc,
+X				  CmdLineInterface& parser,
+X			      bool def = false,
+X				  Visitor* v = NULL);
+X				  
+X				  
+X        /**
+X		 * Handles the processing of the argument.
+X		 * This re-implements the Arg version of this method to set the
+X		 * _value of the argument appropriately.
+X		 * \param i - Pointer the the current argument in the list.
+X		 * \param args - Mutable list of strings. Passed
+X		 * in from main().
+X		 */
+X		virtual bool processArg(int* i, std::vector<std::string>& args); 
+X
+X		/**
+X		 * Checks a string to see if any of the chars in the string
+X		 * match the flag for this Switch.
+X		 */
+X		bool combinedSwitchesMatch(std::string& combined);
+X
+X		/**
+X		 * Returns bool, whether or not the switch has been set.
+X		 */
+X		bool getValue();
+X		
+X		virtual void reset();
+X
+X	private:
+X		/**
+X		 * Checks to see if we've found the last match in
+X		 * a combined string.
+X		 */
+X		bool lastCombined(std::string& combined);
+X
+X		/**
+X		 * Does the common processing of processArg.
+X		 */
+X		void commonProcessing();
+X};
+X
+X//////////////////////////////////////////////////////////////////////
+X//BEGIN SwitchArg.cpp
+X//////////////////////////////////////////////////////////////////////
+Xinline SwitchArg::SwitchArg(const std::string& flag, 
+X                            const std::string& name, 
+X                            const std::string& desc, 
+X                            bool default_val,
+X                            Visitor* v )
+X: Arg(flag, name, desc, false, false, v),
+X  _value( default_val ),
+X  _default( default_val )
+X{ }
+X
+Xinline SwitchArg::SwitchArg(const std::string& flag, 
+X                            const std::string& name, 
+X                            const std::string& desc, 
+X                            CmdLineInterface& parser,
+X                            bool default_val,
+X                            Visitor* v )
+X: Arg(flag, name, desc, false, false, v),
+X  _value( default_val ),
+X  _default(default_val)
+X{ 
+X	parser.add( this );
+X}
+X
+Xinline bool SwitchArg::getValue() { return _value; }
+X
+Xinline bool SwitchArg::lastCombined(std::string& combinedSwitches ) 
+X{
+X	for ( unsigned int i = 1; i < combinedSwitches.length(); i++ )
+X		if ( combinedSwitches[i] != Arg::blankChar() )
+X			return false;
+X	
+X	return true;
+X}
+X
+Xinline bool SwitchArg::combinedSwitchesMatch(std::string& combinedSwitches )
+X{
+X	// make sure this is actually a combined switch
+X	if ( combinedSwitches.length() > 0 &&
+X	     combinedSwitches[0] != Arg::flagStartString()[0] )
+X		return false;
+X
+X	// make sure it isn't a long name 
+X	if ( combinedSwitches.substr( 0, Arg::nameStartString().length() ) == 
+X	     Arg::nameStartString() )
+X		return false;
+X
+X	// make sure the delimiter isn't in the string 
+X	if ( combinedSwitches.find_first_of( Arg::delimiter() ) != std::string::npos )
+X		return false;
+X
+X	// ok, we're not specifying a ValueArg, so we know that we have
+X	// a combined switch list.  
+X	for ( unsigned int i = 1; i < combinedSwitches.length(); i++ )
+X		if ( _flag.length() > 0 && 
+X		     combinedSwitches[i] == _flag[0] &&
+X		     _flag[0] != Arg::flagStartString()[0] ) 
+X		{
+X			// update the combined switches so this one is no longer present
+X			// this is necessary so that no unlabeled args are matched
+X			// later in the processing.
+X			//combinedSwitches.erase(i,1);
+X			combinedSwitches[i] = Arg::blankChar(); 
+X			return true;
+X		}
+X
+X	// none of the switches passed in the list match. 
+X	return false;	
+X}
+X
+Xinline void SwitchArg::commonProcessing()
+X{
+X	if ( _xorSet )
+X		throw(CmdLineParseException(
+X		      "Mutually exclusive argument already set!", toString()));
+X
+X	if ( _alreadySet ) 
+X		throw(CmdLineParseException("Argument already set!", toString()));
+X
+X	_alreadySet = true;
+X
+X	if ( _value == true )
+X		_value = false;
+X	else
+X		_value = true;
+X
+X	_checkWithVisitor();
+X}
+X
+Xinline bool SwitchArg::processArg(int *i, std::vector<std::string>& args)
+X{
+X	if ( _ignoreable && Arg::ignoreRest() )
+X		return false;
+X
+X	// if the whole string matches the flag or name string
+X	if ( argMatches( args[*i] ) )
+X	{
+X		commonProcessing();
+X
+X		return true;
+X	}
+X	// if a substring matches the flag as part of a combination
+X	else if ( combinedSwitchesMatch( args[*i] ) )
+X	{
+X		// check again to ensure we don't misinterpret 
+X		// this as a MultiSwitchArg 
+X		if ( combinedSwitchesMatch( args[*i] ) )
+X			throw(CmdLineParseException("Argument already set!", 
+X			                            toString()));
+X
+X		commonProcessing();
+X
+X		// We only want to return true if we've found the last combined
+X		// match in the string, otherwise we return true so that other 
+X		// switches in the combination will have a chance to match.
+X		return lastCombined( args[*i] );
+X	}
+X	else
+X		return false;
+X}
+X
+Xinline void SwitchArg::reset()
+X{
+X	Arg::reset();
+X	_value = _default;  
+X}
+X//////////////////////////////////////////////////////////////////////
+X//End SwitchArg.cpp
+X//////////////////////////////////////////////////////////////////////
+X
+X} //namespace TCLAP
+X
+X#endif
+f0ae2ca2e5ad5af3e49557c93907528b
+echo x - ./tclap-1.2.1/include/tclap/UnlabeledMultiArg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/UnlabeledMultiArg.h << 'a95bf0c49291db990129354d38bae45f'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  UnlabeledMultiArg.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot.
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_MULTIPLE_UNLABELED_ARGUMENT_H
+X#define TCLAP_MULTIPLE_UNLABELED_ARGUMENT_H
+X
+X#include <string>
+X#include <vector>
+X
+X#include <tclap/MultiArg.h>
+X#include <tclap/OptionalUnlabeledTracker.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * Just like a MultiArg, except that the arguments are unlabeled.  Basically,
+X * this Arg will slurp up everything that hasn't been matched to another 
+X * Arg.
+X */
+Xtemplate<class T>
+Xclass UnlabeledMultiArg : public MultiArg<T>
+X{
+X
+X	// If compiler has two stage name lookup (as gcc >= 3.4 does)
+X	// this is requried to prevent undef. symbols
+X	using MultiArg<T>::_ignoreable;
+X	using MultiArg<T>::_hasBlanks;
+X	using MultiArg<T>::_extractValue;
+X	using MultiArg<T>::_typeDesc;
+X	using MultiArg<T>::_name;
+X	using MultiArg<T>::_description;
+X	using MultiArg<T>::_alreadySet;
+X	using MultiArg<T>::toString;
+X
+X	public:
+X		
+X		/**
+X		 * Constructor.  
+X		 * \param name - The name of the Arg. Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 *  line.
+X		 * \param typeDesc - A short, human readable description of the
+X		 * type that this object expects.  This is used in the generation
+X		 * of the USAGE statement.  The goal is to be helpful to the end user
+X		 * of the program.
+X		 * \param ignoreable - Whether or not this argument can be ignored
+X		 * using the "--" flag.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		UnlabeledMultiArg( const std::string& name,
+X				           const std::string& desc,
+X						   bool req,
+X				           const std::string& typeDesc,
+X						   bool ignoreable = false,
+X				           Visitor* v = NULL );
+X		/**
+X		 * Constructor.  
+X		 * \param name - The name of the Arg. Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 *  line.
+X		 * \param typeDesc - A short, human readable description of the
+X		 * type that this object expects.  This is used in the generation
+X		 * of the USAGE statement.  The goal is to be helpful to the end user
+X		 * of the program.
+X		 * \param parser - A CmdLine parser object to add this Arg to
+X		 * \param ignoreable - Whether or not this argument can be ignored
+X		 * using the "--" flag.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		UnlabeledMultiArg( const std::string& name,
+X				           const std::string& desc,
+X						   bool req,
+X				           const std::string& typeDesc,
+X						   CmdLineInterface& parser,
+X						   bool ignoreable = false,
+X				           Visitor* v = NULL );
+X						 
+X		/**
+X		 * Constructor.  
+X		 * \param name - The name of the Arg. Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 *  line.
+X		 * \param constraint - A pointer to a Constraint object used
+X		 * to constrain this Arg.
+X		 * \param ignoreable - Whether or not this argument can be ignored
+X		 * using the "--" flag.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		UnlabeledMultiArg( const std::string& name,
+X						   const std::string& desc,
+X						   bool req,
+X						   Constraint<T>* constraint,
+X						   bool ignoreable = false,
+X						   Visitor* v = NULL );
+X
+X		/**
+X		 * Constructor.  
+X		 * \param name - The name of the Arg. Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 *  line.
+X		 * \param constraint - A pointer to a Constraint object used
+X		 * to constrain this Arg.
+X		 * \param parser - A CmdLine parser object to add this Arg to
+X		 * \param ignoreable - Whether or not this argument can be ignored
+X		 * using the "--" flag.
+X		 * \param v - An optional visitor.  You probably should not
+X		 * use this unless you have a very good reason.
+X		 */
+X		UnlabeledMultiArg( const std::string& name, 
+X						   const std::string& desc, 
+X						   bool req,
+X						   Constraint<T>* constraint,
+X						   CmdLineInterface& parser,
+X						   bool ignoreable = false,
+X						   Visitor* v = NULL );
+X						 
+X		/**
+X		 * Handles the processing of the argument.
+X		 * This re-implements the Arg version of this method to set the
+X		 * _value of the argument appropriately.  It knows the difference
+X		 * between labeled and unlabeled.
+X		 * \param i - Pointer the the current argument in the list.
+X		 * \param args - Mutable list of strings. Passed from main().
+X		 */
+X		virtual bool processArg(int* i, std::vector<std::string>& args); 
+X
+X		/**
+X		 * Returns the a short id string.  Used in the usage.
+X		 * \param val - value to be used.
+X		 */
+X		virtual std::string shortID(const std::string& val="val") const;
+X
+X		/**
+X		 * Returns the a long id string.  Used in the usage.
+X		 * \param val - value to be used.
+X		 */
+X		virtual std::string longID(const std::string& val="val") const;
+X
+X		/**
+X		 * Opertor ==.
+X		 * \param a - The Arg to be compared to this.
+X		 */
+X		virtual bool operator==(const Arg& a) const;
+X
+X		/**
+X		 * Pushes this to back of list rather than front.
+X		 * \param argList - The list this should be added to.
+X		 */
+X		virtual void addToList( std::list<Arg*>& argList ) const;
+X};
+X
+Xtemplate<class T>
+XUnlabeledMultiArg<T>::UnlabeledMultiArg(const std::string& name, 
+X				                        const std::string& desc, 
+X										bool req,
+X					                    const std::string& typeDesc,
+X										bool ignoreable,
+X					                    Visitor* v)
+X: MultiArg<T>("", name, desc,  req, typeDesc, v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(true, toString());
+X}
+X
+Xtemplate<class T>
+XUnlabeledMultiArg<T>::UnlabeledMultiArg(const std::string& name, 
+X				                        const std::string& desc, 
+X										bool req,
+X					                    const std::string& typeDesc,
+X										CmdLineInterface& parser,
+X										bool ignoreable,
+X					                    Visitor* v)
+X: MultiArg<T>("", name, desc,  req, typeDesc, v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(true, toString());
+X	parser.add( this );
+X}
+X
+X
+Xtemplate<class T>
+XUnlabeledMultiArg<T>::UnlabeledMultiArg(const std::string& name, 
+X				                        const std::string& desc, 
+X										bool req,
+X					                    Constraint<T>* constraint,
+X										bool ignoreable,
+X					                    Visitor* v)
+X: MultiArg<T>("", name, desc,  req, constraint, v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(true, toString());
+X}
+X
+Xtemplate<class T>
+XUnlabeledMultiArg<T>::UnlabeledMultiArg(const std::string& name, 
+X				                        const std::string& desc, 
+X										bool req,
+X					                    Constraint<T>* constraint,
+X										CmdLineInterface& parser,
+X										bool ignoreable,
+X					                    Visitor* v)
+X: MultiArg<T>("", name, desc,  req, constraint, v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(true, toString());
+X	parser.add( this );
+X}
+X
+X
+Xtemplate<class T>
+Xbool UnlabeledMultiArg<T>::processArg(int *i, std::vector<std::string>& args) 
+X{
+X
+X	if ( _hasBlanks( args[*i] ) )
+X		return false;
+X
+X	// never ignore an unlabeled multi arg
+X
+X
+X	// always take the first value, regardless of the start string 
+X	_extractValue( args[(*i)] );
+X
+X	/*
+X	// continue taking args until we hit the end or a start string 
+X	while ( (unsigned int)(*i)+1 < args.size() &&
+X			args[(*i)+1].find_first_of( Arg::flagStartString() ) != 0 &&
+X            args[(*i)+1].find_first_of( Arg::nameStartString() ) != 0 ) 
+X		_extractValue( args[++(*i)] );
+X	*/
+X
+X	_alreadySet = true;
+X
+X	return true;
+X}
+X
+Xtemplate<class T>
+Xstd::string UnlabeledMultiArg<T>::shortID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return std::string("<") + _typeDesc + "> ...";
+X}
+X
+Xtemplate<class T>
+Xstd::string UnlabeledMultiArg<T>::longID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return std::string("<") + _typeDesc + ">  (accepted multiple times)";
+X}
+X
+Xtemplate<class T>
+Xbool UnlabeledMultiArg<T>::operator==(const Arg& a) const
+X{
+X	if ( _name == a.getName() || _description == a.getDescription() )
+X		return true;
+X	else
+X		return false;
+X}
+X
+Xtemplate<class T>
+Xvoid UnlabeledMultiArg<T>::addToList( std::list<Arg*>& argList ) const
+X{
+X	argList.push_back( const_cast<Arg*>(static_cast<const Arg* const>(this)) );
+X}
+X
+X}
+X
+X#endif
+a95bf0c49291db990129354d38bae45f
+echo x - ./tclap-1.2.1/include/tclap/UnlabeledValueArg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/UnlabeledValueArg.h << '049a42889af23bac6e48a7b0825bbdff'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  UnlabeledValueArg.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_UNLABELED_VALUE_ARGUMENT_H
+X#define TCLAP_UNLABELED_VALUE_ARGUMENT_H
+X
+X#include <string>
+X#include <vector>
+X
+X#include <tclap/ValueArg.h>
+X#include <tclap/OptionalUnlabeledTracker.h>
+X
+X
+Xnamespace TCLAP {
+X
+X/**
+X * The basic unlabeled argument that parses a value.
+X * This is a template class, which means the type T defines the type
+X * that a given object will attempt to parse when an UnlabeledValueArg
+X * is reached in the list of args that the CmdLine iterates over.
+X */
+Xtemplate<class T>
+Xclass UnlabeledValueArg : public ValueArg<T>
+X{
+X
+X	// If compiler has two stage name lookup (as gcc >= 3.4 does)
+X	// this is requried to prevent undef. symbols
+X	using ValueArg<T>::_ignoreable;
+X	using ValueArg<T>::_hasBlanks;
+X	using ValueArg<T>::_extractValue;
+X	using ValueArg<T>::_typeDesc;
+X	using ValueArg<T>::_name;
+X	using ValueArg<T>::_description;
+X	using ValueArg<T>::_alreadySet;
+X	using ValueArg<T>::toString;
+X
+X	public:
+X
+X		/**
+X		 * UnlabeledValueArg constructor.
+X		 * \param name - A one word name for the argument.  Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 * line.
+X		 * \param value - The default value assigned to this argument if it
+X		 * is not present on the command line.
+X		 * \param typeDesc - A short, human readable description of the
+X		 * type that this object expects.  This is used in the generation
+X		 * of the USAGE statement.  The goal is to be helpful to the end user
+X		 * of the program.
+X		 * \param ignoreable - Allows you to specify that this argument can be
+X		 * ignored if the '--' flag is set.  This defaults to false (cannot
+X		 * be ignored) and should  generally stay that way unless you have 
+X		 * some special need for certain arguments to be ignored.
+X		 * \param v - Optional Vistor.  You should leave this blank unless
+X		 * you have a very good reason.
+X		 */
+X		UnlabeledValueArg( const std::string& name, 
+X			               const std::string& desc, 
+X						   bool req,
+X				           T value,
+X				           const std::string& typeDesc,
+X						   bool ignoreable = false,
+X				           Visitor* v = NULL); 
+X
+X		/**
+X		 * UnlabeledValueArg constructor.
+X		 * \param name - A one word name for the argument.  Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 * line.
+X		 * \param value - The default value assigned to this argument if it
+X		 * is not present on the command line.
+X		 * \param typeDesc - A short, human readable description of the
+X		 * type that this object expects.  This is used in the generation
+X		 * of the USAGE statement.  The goal is to be helpful to the end user
+X		 * of the program.
+X		 * \param parser - A CmdLine parser object to add this Arg to
+X		 * \param ignoreable - Allows you to specify that this argument can be
+X		 * ignored if the '--' flag is set.  This defaults to false (cannot
+X		 * be ignored) and should  generally stay that way unless you have 
+X		 * some special need for certain arguments to be ignored.
+X		 * \param v - Optional Vistor.  You should leave this blank unless
+X		 * you have a very good reason.
+X		 */
+X		UnlabeledValueArg( const std::string& name, 
+X			               const std::string& desc, 
+X						   bool req,
+X				           T value,
+X				           const std::string& typeDesc,
+X						   CmdLineInterface& parser,
+X						   bool ignoreable = false,
+X				           Visitor* v = NULL ); 					
+X						
+X		/**
+X		 * UnlabeledValueArg constructor.
+X		 * \param name - A one word name for the argument.  Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 * line.
+X		 * \param value - The default value assigned to this argument if it
+X		 * is not present on the command line.
+X		 * \param constraint - A pointer to a Constraint object used
+X		 * to constrain this Arg.
+X		 * \param ignoreable - Allows you to specify that this argument can be
+X		 * ignored if the '--' flag is set.  This defaults to false (cannot
+X		 * be ignored) and should  generally stay that way unless you have 
+X		 * some special need for certain arguments to be ignored.
+X		 * \param v - Optional Vistor.  You should leave this blank unless
+X		 * you have a very good reason.
+X		 */
+X		UnlabeledValueArg( const std::string& name, 
+X			               const std::string& desc, 
+X						   bool req,
+X				           T value,
+X				           Constraint<T>* constraint,
+X						   bool ignoreable = false,
+X				           Visitor* v = NULL ); 
+X
+X		
+X		/**
+X		 * UnlabeledValueArg constructor.
+X		 * \param name - A one word name for the argument.  Note that this is used for
+X		 * identification, not as a long flag.
+X		 * \param desc - A description of what the argument is for or
+X		 * does.
+X		 * \param req - Whether the argument is required on the command
+X		 * line.
+X		 * \param value - The default value assigned to this argument if it
+X		 * is not present on the command line.
+X		 * \param constraint - A pointer to a Constraint object used
+X		 * to constrain this Arg.
+X		 * \param parser - A CmdLine parser object to add this Arg to
+X		 * \param ignoreable - Allows you to specify that this argument can be
+X		 * ignored if the '--' flag is set.  This defaults to false (cannot
+X		 * be ignored) and should  generally stay that way unless you have 
+X		 * some special need for certain arguments to be ignored.
+X		 * \param v - Optional Vistor.  You should leave this blank unless
+X		 * you have a very good reason.
+X		 */
+X		UnlabeledValueArg( const std::string& name, 
+X			               const std::string& desc, 
+X						   bool req,
+X				           T value,
+X				           Constraint<T>* constraint,
+X						   CmdLineInterface& parser,
+X						   bool ignoreable = false,
+X				           Visitor* v = NULL);
+X						
+X		/**
+X		 * Handles the processing of the argument.
+X		 * This re-implements the Arg version of this method to set the
+X		 * _value of the argument appropriately.  Handling specific to
+X		 * unlabled arguments.
+X		 * \param i - Pointer the the current argument in the list.
+X		 * \param args - Mutable list of strings. 
+X		 */
+X		virtual bool processArg(int* i, std::vector<std::string>& args); 
+X
+X		/**
+X		 * Overrides shortID for specific behavior.
+X		 */
+X		virtual std::string shortID(const std::string& val="val") const;
+X
+X		/**
+X		 * Overrides longID for specific behavior.
+X		 */
+X		virtual std::string longID(const std::string& val="val") const;
+X
+X		/**
+X		 * Overrides operator== for specific behavior.
+X		 */
+X		virtual bool operator==(const Arg& a ) const;
+X
+X		/**
+X		 * Instead of pushing to the front of list, push to the back.
+X		 * \param argList - The list to add this to.
+X		 */
+X		virtual void addToList( std::list<Arg*>& argList ) const;
+X
+X};
+X
+X/**
+X * Constructor implemenation.
+X */
+Xtemplate<class T>
+XUnlabeledValueArg<T>::UnlabeledValueArg(const std::string& name, 
+X					                    const std::string& desc, 
+X										bool req,
+X					                    T val,
+X					                    const std::string& typeDesc,
+X					                    bool ignoreable,
+X					                    Visitor* v)
+X: ValueArg<T>("", name, desc, req, val, typeDesc, v)
+X{ 
+X	_ignoreable = ignoreable;
+X
+X	OptionalUnlabeledTracker::check(req, toString());
+X
+X}
+X
+Xtemplate<class T>
+XUnlabeledValueArg<T>::UnlabeledValueArg(const std::string& name, 
+X					                    const std::string& desc, 
+X										bool req,
+X					                    T val,
+X					                    const std::string& typeDesc,
+X					                    CmdLineInterface& parser,
+X					                    bool ignoreable,
+X					                    Visitor* v)
+X: ValueArg<T>("", name, desc, req, val, typeDesc, v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(req, toString());
+X	parser.add( this );
+X}
+X
+X/**
+X * Constructor implemenation.
+X */
+Xtemplate<class T>
+XUnlabeledValueArg<T>::UnlabeledValueArg(const std::string& name, 
+X                                        const std::string& desc, 
+X										bool req,
+X                                        T val,
+X                                        Constraint<T>* constraint,
+X                                        bool ignoreable,
+X                                        Visitor* v)
+X: ValueArg<T>("", name, desc, req, val, constraint, v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(req, toString());
+X}
+X
+Xtemplate<class T>
+XUnlabeledValueArg<T>::UnlabeledValueArg(const std::string& name, 
+X					                    const std::string& desc, 
+X										bool req,
+X					                    T val,
+X					                    Constraint<T>* constraint,
+X					                    CmdLineInterface& parser,
+X					                    bool ignoreable,
+X					                    Visitor* v)
+X: ValueArg<T>("", name, desc, req, val, constraint,  v)
+X{ 
+X	_ignoreable = ignoreable;
+X	OptionalUnlabeledTracker::check(req, toString());
+X	parser.add( this );
+X}
+X
+X/**
+X * Implementation of processArg().
+X */
+Xtemplate<class T>
+Xbool UnlabeledValueArg<T>::processArg(int *i, std::vector<std::string>& args) 
+X{
+X	
+X	if ( _alreadySet )
+X		return false;
+X	
+X	if ( _hasBlanks( args[*i] ) )
+X		return false;
+X
+X	// never ignore an unlabeled arg
+X	
+X	_extractValue( args[*i] );
+X	_alreadySet = true;
+X	return true;
+X}
+X
+X/**
+X * Overriding shortID for specific output.
+X */
+Xtemplate<class T>
+Xstd::string UnlabeledValueArg<T>::shortID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return std::string("<") + _typeDesc + ">";
+X}
+X
+X/**
+X * Overriding longID for specific output.
+X */
+Xtemplate<class T>
+Xstd::string UnlabeledValueArg<T>::longID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X
+X	// Ideally we would like to be able to use RTTI to return the name
+X	// of the type required for this argument.  However, g++ at least, 
+X	// doesn't appear to return terribly useful "names" of the types.  
+X	return std::string("<") + _typeDesc + ">";
+X}
+X
+X/**
+X * Overriding operator== for specific behavior.
+X */
+Xtemplate<class T>
+Xbool UnlabeledValueArg<T>::operator==(const Arg& a ) const
+X{
+X	if ( _name == a.getName() || _description == a.getDescription() )
+X		return true;
+X	else
+X		return false;
+X}
+X
+Xtemplate<class T>
+Xvoid UnlabeledValueArg<T>::addToList( std::list<Arg*>& argList ) const
+X{
+X	argList.push_back( const_cast<Arg*>(static_cast<const Arg* const>(this)) );
+X}
+X
+X}
+X#endif
+049a42889af23bac6e48a7b0825bbdff
+echo x - ./tclap-1.2.1/include/tclap/ValueArg.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/ValueArg.h << 'a60f532435518bff454ebb37402f0120'
+X/****************************************************************************** 
+X * 
+X *  file:  ValueArg.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_VALUE_ARGUMENT_H
+X#define TCLAP_VALUE_ARGUMENT_H
+X
+X#include <string>
+X#include <vector>
+X
+X#include <tclap/Arg.h>
+X#include <tclap/Constraint.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * The basic labeled argument that parses a value.
+X * This is a template class, which means the type T defines the type
+X * that a given object will attempt to parse when the flag/name is matched
+X * on the command line.  While there is nothing stopping you from creating
+X * an unflagged ValueArg, it is unwise and would cause significant problems.
+X * Instead use an UnlabeledValueArg.
+X */
+Xtemplate<class T>
+Xclass ValueArg : public Arg 
+X{
+X    protected:
+X
+X        /**
+X         * The value parsed from the command line.
+X         * Can be of any type, as long as the >> operator for the type
+X         * is defined.
+X         */
+X        T _value;
+X
+X		/**
+X		 * Used to support the reset() method so that ValueArg can be
+X		 * reset to their constructed value.
+X		 */
+X        T _default;
+X
+X        /**
+X         * A human readable description of the type to be parsed.
+X         * This is a hack, plain and simple.  Ideally we would use RTTI to
+X         * return the name of type T, but until there is some sort of
+X         * consistent support for human readable names, we are left to our
+X         * own devices.
+X         */
+X        std::string _typeDesc;
+X
+X        /**
+X         * A Constraint this Arg must conform to. 
+X         */
+X        Constraint<T>* _constraint;
+X
+X        /**
+X         * Extracts the value from the string.
+X         * Attempts to parse string as type T, if this fails an exception
+X         * is thrown.
+X         * \param val - value to be parsed. 
+X         */
+X        void _extractValue( const std::string& val );
+X
+X	public:
+X
+X        /**
+X         * Labeled ValueArg constructor.
+X         * You could conceivably call this constructor with a blank flag, 
+X         * but that would make you a bad person.  It would also cause
+X         * an exception to be thrown.   If you want an unlabeled argument, 
+X         * use the other constructor.
+X         * \param flag - The one character flag that identifies this
+X         * argument on the command line.
+X         * \param name - A one word name for the argument.  Can be
+X         * used as a long flag on the command line.
+X         * \param desc - A description of what the argument is for or
+X         * does.
+X         * \param req - Whether the argument is required on the command
+X         * line.
+X         * \param value - The default value assigned to this argument if it
+X         * is not present on the command line.
+X         * \param typeDesc - A short, human readable description of the
+X         * type that this object expects.  This is used in the generation
+X         * of the USAGE statement.  The goal is to be helpful to the end user
+X         * of the program.
+X         * \param v - An optional visitor.  You probably should not
+X         * use this unless you have a very good reason.
+X         */
+X        ValueArg( const std::string& flag, 
+X                  const std::string& name, 
+X                  const std::string& desc, 
+X                  bool req, 
+X                  T value,
+X                  const std::string& typeDesc,
+X                  Visitor* v = NULL);
+X				 
+X				 
+X        /**
+X         * Labeled ValueArg constructor.
+X         * You could conceivably call this constructor with a blank flag, 
+X         * but that would make you a bad person.  It would also cause
+X         * an exception to be thrown.   If you want an unlabeled argument, 
+X         * use the other constructor.
+X         * \param flag - The one character flag that identifies this
+X         * argument on the command line.
+X         * \param name - A one word name for the argument.  Can be
+X         * used as a long flag on the command line.
+X         * \param desc - A description of what the argument is for or
+X         * does.
+X         * \param req - Whether the argument is required on the command
+X         * line.
+X         * \param value - The default value assigned to this argument if it
+X         * is not present on the command line.
+X         * \param typeDesc - A short, human readable description of the
+X         * type that this object expects.  This is used in the generation
+X         * of the USAGE statement.  The goal is to be helpful to the end user
+X         * of the program.
+X         * \param parser - A CmdLine parser object to add this Arg to
+X         * \param v - An optional visitor.  You probably should not
+X         * use this unless you have a very good reason.
+X         */
+X        ValueArg( const std::string& flag, 
+X                  const std::string& name, 
+X                  const std::string& desc, 
+X                  bool req, 
+X                  T value,
+X                  const std::string& typeDesc,
+X                  CmdLineInterface& parser,
+X                  Visitor* v = NULL );
+X 
+X        /**
+X         * Labeled ValueArg constructor.
+X         * You could conceivably call this constructor with a blank flag, 
+X         * but that would make you a bad person.  It would also cause
+X         * an exception to be thrown.   If you want an unlabeled argument, 
+X         * use the other constructor.
+X         * \param flag - The one character flag that identifies this
+X         * argument on the command line.
+X         * \param name - A one word name for the argument.  Can be
+X         * used as a long flag on the command line.
+X         * \param desc - A description of what the argument is for or
+X         * does.
+X         * \param req - Whether the argument is required on the command
+X         * line.
+X         * \param value - The default value assigned to this argument if it
+X         * is not present on the command line.
+X         * \param constraint - A pointer to a Constraint object used
+X		 * to constrain this Arg.
+X         * \param parser - A CmdLine parser object to add this Arg to.
+X         * \param v - An optional visitor.  You probably should not
+X         * use this unless you have a very good reason.
+X         */
+X        ValueArg( const std::string& flag, 
+X                  const std::string& name, 
+X                  const std::string& desc, 
+X                  bool req, 
+X                  T value,
+X                  Constraint<T>* constraint,
+X                  CmdLineInterface& parser,
+X                  Visitor* v = NULL );
+X	  
+X        /**
+X         * Labeled ValueArg constructor.
+X         * You could conceivably call this constructor with a blank flag, 
+X         * but that would make you a bad person.  It would also cause
+X         * an exception to be thrown.   If you want an unlabeled argument, 
+X         * use the other constructor.
+X         * \param flag - The one character flag that identifies this
+X         * argument on the command line.
+X         * \param name - A one word name for the argument.  Can be
+X         * used as a long flag on the command line.
+X         * \param desc - A description of what the argument is for or
+X         * does.
+X         * \param req - Whether the argument is required on the command
+X         * line.
+X         * \param value - The default value assigned to this argument if it
+X         * is not present on the command line.
+X         * \param constraint - A pointer to a Constraint object used
+X		 * to constrain this Arg.
+X         * \param v - An optional visitor.  You probably should not
+X         * use this unless you have a very good reason.
+X         */
+X        ValueArg( const std::string& flag, 
+X                  const std::string& name, 
+X                  const std::string& desc, 
+X                  bool req, 
+X                  T value,
+X                  Constraint<T>* constraint,
+X                  Visitor* v = NULL );
+X
+X        /**
+X         * Handles the processing of the argument.
+X         * This re-implements the Arg version of this method to set the
+X         * _value of the argument appropriately.  It knows the difference
+X         * between labeled and unlabeled.
+X         * \param i - Pointer the the current argument in the list.
+X         * \param args - Mutable list of strings. Passed 
+X         * in from main().
+X         */
+X        virtual bool processArg(int* i, std::vector<std::string>& args); 
+X
+X        /**
+X         * Returns the value of the argument.
+X         */
+X        T& getValue() ;
+X
+X        /**
+X         * Specialization of shortID.
+X         * \param val - value to be used.
+X         */
+X        virtual std::string shortID(const std::string& val = "val") const;
+X
+X        /**
+X         * Specialization of longID.
+X         * \param val - value to be used.
+X         */
+X        virtual std::string longID(const std::string& val = "val") const;
+X        
+X        virtual void reset() ;
+X
+Xprivate:
+X       /**
+X        * Prevent accidental copying
+X        */
+X       ValueArg<T>(const ValueArg<T>& rhs);
+X       ValueArg<T>& operator=(const ValueArg<T>& rhs);
+X};
+X
+X
+X/**
+X * Constructor implementation.
+X */
+Xtemplate<class T>
+XValueArg<T>::ValueArg(const std::string& flag, 
+X                      const std::string& name, 
+X                      const std::string& desc, 
+X                      bool req, 
+X                      T val,
+X                      const std::string& typeDesc,
+X                      Visitor* v)
+X: Arg(flag, name, desc, req, true, v),
+X  _value( val ),
+X  _default( val ),
+X  _typeDesc( typeDesc ),
+X  _constraint( NULL )
+X{ }
+X
+Xtemplate<class T>
+XValueArg<T>::ValueArg(const std::string& flag, 
+X                      const std::string& name, 
+X                      const std::string& desc, 
+X                      bool req, 
+X                      T val,
+X                      const std::string& typeDesc,
+X                      CmdLineInterface& parser,
+X                      Visitor* v)
+X: Arg(flag, name, desc, req, true, v),
+X  _value( val ),
+X  _default( val ),
+X  _typeDesc( typeDesc ),
+X  _constraint( NULL )
+X{ 
+X    parser.add( this );
+X}
+X
+Xtemplate<class T>
+XValueArg<T>::ValueArg(const std::string& flag, 
+X                      const std::string& name, 
+X                      const std::string& desc, 
+X                      bool req, 
+X                      T val,
+X                      Constraint<T>* constraint,
+X                      Visitor* v)
+X: Arg(flag, name, desc, req, true, v),
+X  _value( val ),
+X  _default( val ),
+X  _typeDesc( constraint->shortID() ),
+X  _constraint( constraint )
+X{ }
+X
+Xtemplate<class T>
+XValueArg<T>::ValueArg(const std::string& flag, 
+X                      const std::string& name, 
+X                      const std::string& desc, 
+X                      bool req, 
+X                      T val,
+X                      Constraint<T>* constraint,
+X                      CmdLineInterface& parser,
+X                      Visitor* v)
+X: Arg(flag, name, desc, req, true, v),
+X  _value( val ),
+X  _default( val ),
+X  _typeDesc( constraint->shortID() ),
+X  _constraint( constraint )
+X{ 
+X    parser.add( this );
+X}
+X
+X
+X/**
+X * Implementation of getValue().
+X */
+Xtemplate<class T>
+XT& ValueArg<T>::getValue() { return _value; }
+X
+X/**
+X * Implementation of processArg().
+X */
+Xtemplate<class T>
+Xbool ValueArg<T>::processArg(int *i, std::vector<std::string>& args)
+X{
+X    if ( _ignoreable && Arg::ignoreRest() )
+X		return false;
+X
+X    if ( _hasBlanks( args[*i] ) )
+X		return false;
+X
+X    std::string flag = args[*i];
+X
+X    std::string value = "";
+X    trimFlag( flag, value );
+X
+X    if ( argMatches( flag ) )
+X    {
+X        if ( _alreadySet )
+X		{
+X			if ( _xorSet )
+X				throw( CmdLineParseException(
+X				       "Mutually exclusive argument already set!", 
+X				                             toString()) );
+X			else
+X				throw( CmdLineParseException("Argument already set!", 
+X				                             toString()) );
+X		}
+X
+X        if ( Arg::delimiter() != ' ' && value == "" )
+X			throw( ArgParseException( 
+X							"Couldn't find delimiter for this argument!",
+X                             toString() ) );
+X
+X        if ( value == "" )
+X        {
+X            (*i)++;
+X            if ( static_cast<unsigned int>(*i) < args.size() ) 
+X				_extractValue( args[*i] );
+X            else
+X				throw( ArgParseException("Missing a value for this argument!",
+X                                                    toString() ) );
+X        }
+X        else
+X			_extractValue( value );
+X				
+X        _alreadySet = true;
+X        _checkWithVisitor();
+X        return true;
+X    }	
+X    else
+X		return false;
+X}
+X
+X/**
+X * Implementation of shortID.
+X */
+Xtemplate<class T>
+Xstd::string ValueArg<T>::shortID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return Arg::shortID( _typeDesc ); 
+X}
+X
+X/**
+X * Implementation of longID.
+X */
+Xtemplate<class T>
+Xstd::string ValueArg<T>::longID(const std::string& val) const
+X{
+X	static_cast<void>(val); // Ignore input, don't warn
+X	return Arg::longID( _typeDesc ); 
+X}
+X
+Xtemplate<class T>
+Xvoid ValueArg<T>::_extractValue( const std::string& val ) 
+X{
+X    try {
+X	ExtractValue(_value, val, typename ArgTraits<T>::ValueCategory());
+X    } catch( ArgParseException &e) {
+X	throw ArgParseException(e.error(), toString());
+X    }
+X    
+X    if ( _constraint != NULL )
+X	if ( ! _constraint->check( _value ) )
+X	    throw( CmdLineParseException( "Value '" + val + 
+X					  + "' does not meet constraint: " 
+X					  + _constraint->description(),
+X					  toString() ) );
+X}
+X
+Xtemplate<class T>
+Xvoid ValueArg<T>::reset()
+X{
+X	Arg::reset();
+X	_value = _default;
+X}
+X
+X} // namespace TCLAP
+X
+X#endif
+a60f532435518bff454ebb37402f0120
+echo x - ./tclap-1.2.1/include/tclap/ValuesConstraint.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/ValuesConstraint.h << '4ef0069c5bb6fc674dcc5f66159d3cdc'
+X
+X
+X/****************************************************************************** 
+X * 
+X *  file:  ValuesConstraint.h
+X * 
+X *  Copyright (c) 2005, Michael E. Smoot
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_VALUESCONSTRAINT_H
+X#define TCLAP_VALUESCONSTRAINT_H
+X
+X#include <string>
+X#include <vector>
+X#include <tclap/Constraint.h>
+X
+X#ifdef HAVE_CONFIG_H
+X#include <config.h>
+X#else
+X#define HAVE_SSTREAM
+X#endif
+X
+X#if defined(HAVE_SSTREAM)
+X#include <sstream>
+X#elif defined(HAVE_STRSTREAM)
+X#include <strstream>
+X#else
+X#error "Need a stringstream (sstream or strstream) to compile!"
+X#endif
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A Constraint that constrains the Arg to only those values specified
+X * in the constraint.
+X */
+Xtemplate<class T>
+Xclass ValuesConstraint : public Constraint<T>
+X{
+X
+X	public:
+X
+X		/**
+X		 * Constructor. 
+X		 * \param allowed - vector of allowed values. 
+X		 */
+X		ValuesConstraint(std::vector<T>& allowed);	
+X
+X		/**
+X		 * Virtual destructor.
+X		 */
+X		virtual ~ValuesConstraint() {}
+X
+X		/**
+X		 * Returns a description of the Constraint. 
+X		 */
+X		virtual std::string description() const;
+X
+X		/**
+X		 * Returns the short ID for the Constraint.
+X		 */
+X		virtual std::string shortID() const;
+X
+X		/**
+X		 * The method used to verify that the value parsed from the command
+X		 * line meets the constraint.
+X		 * \param value - The value that will be checked. 
+X		 */
+X		virtual bool check(const T& value) const;
+X	
+X	protected:
+X
+X		/**
+X		 * The list of valid values. 
+X		 */
+X		std::vector<T> _allowed;
+X
+X		/**
+X		 * The string used to describe the allowed values of this constraint.
+X		 */
+X		std::string _typeDesc;
+X
+X};
+X
+Xtemplate<class T>
+XValuesConstraint<T>::ValuesConstraint(std::vector<T>& allowed)
+X: _allowed(allowed),
+X  _typeDesc("")
+X{ 
+X    for ( unsigned int i = 0; i < _allowed.size(); i++ )
+X    {
+X
+X#if defined(HAVE_SSTREAM)
+X        std::ostringstream os;
+X#elif defined(HAVE_STRSTREAM)
+X        std::ostrstream os;
+X#else
+X#error "Need a stringstream (sstream or strstream) to compile!"
+X#endif
+X
+X        os << _allowed[i];
+X
+X        std::string temp( os.str() ); 
+X
+X        if ( i > 0 )
+X			_typeDesc += "|";
+X        _typeDesc += temp;
+X    }
+X}
+X
+Xtemplate<class T>
+Xbool ValuesConstraint<T>::check( const T& val ) const
+X{
+X	if ( std::find(_allowed.begin(),_allowed.end(),val) == _allowed.end() )
+X		return false;
+X	else 
+X		return true;
+X}
+X
+Xtemplate<class T>
+Xstd::string ValuesConstraint<T>::shortID() const
+X{
+X    return _typeDesc;	
+X}
+X
+Xtemplate<class T>
+Xstd::string ValuesConstraint<T>::description() const
+X{
+X    return _typeDesc;	
+X}
+X
+X
+X} //namespace TCLAP
+X#endif 
+X
+4ef0069c5bb6fc674dcc5f66159d3cdc
+echo x - ./tclap-1.2.1/include/tclap/VersionVisitor.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/VersionVisitor.h << '40d4cfecd7f2ec1737b88377b58eda63'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/****************************************************************************** 
+X * 
+X *  file:  VersionVisitor.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_VERSION_VISITOR_H
+X#define TCLAP_VERSION_VISITOR_H
+X
+X#include <tclap/CmdLineInterface.h>
+X#include <tclap/CmdLineOutput.h>
+X#include <tclap/Visitor.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A Vistor that will call the version method of the given CmdLineOutput
+X * for the specified CmdLine object and then exit.
+X */
+Xclass VersionVisitor: public Visitor
+X{
+X	private:
+X		/**
+X		 * Prevent accidental copying
+X		 */
+X		VersionVisitor(const VersionVisitor& rhs);
+X		VersionVisitor& operator=(const VersionVisitor& rhs);
+X
+X	protected:
+X
+X		/**
+X		 * The CmdLine of interest.
+X		 */
+X		CmdLineInterface* _cmd;
+X
+X		/**
+X		 * The output object. 
+X		 */
+X		CmdLineOutput** _out;
+X
+X	public:
+X
+X		/**
+X		 * Constructor.
+X		 * \param cmd - The CmdLine the output is generated for. 
+X		 * \param out - The type of output. 
+X		 */
+X		VersionVisitor( CmdLineInterface* cmd, CmdLineOutput** out ) 
+X				: Visitor(), _cmd( cmd ), _out( out ) { }
+X
+X		/**
+X		 * Calls the version method of the output object using the
+X		 * specified CmdLine.
+X		 */
+X		void visit() { 
+X		    (*_out)->version(*_cmd); 
+X		    throw ExitException(0); 
+X		}
+X
+X};
+X
+X}
+X
+X#endif
+40d4cfecd7f2ec1737b88377b58eda63
+echo x - ./tclap-1.2.1/include/tclap/Visitor.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/Visitor.h << '72fd68cc7182289c42b429409ee0e670'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  Visitor.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X
+X#ifndef TCLAP_VISITOR_H
+X#define TCLAP_VISITOR_H
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A base class that defines the interface for visitors.
+X */
+Xclass Visitor
+X{
+X	public:
+X
+X		/**
+X		 * Constructor. Does nothing.
+X		 */
+X		Visitor() { }
+X
+X		/**
+X		 * Destructor. Does nothing.
+X		 */
+X		virtual ~Visitor() { }
+X
+X		/**
+X		 * Does nothing. Should be overridden by child.
+X		 */
+X		virtual void visit() { }
+X};
+X
+X}
+X
+X#endif
+72fd68cc7182289c42b429409ee0e670
+echo x - ./tclap-1.2.1/include/tclap/XorHandler.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/XorHandler.h << '7a509def8166432d459a47c4eaa37231'
+X
+X/****************************************************************************** 
+X * 
+X *  file:  XorHandler.h
+X * 
+X *  Copyright (c) 2003, Michael E. Smoot .
+X *  Copyright (c) 2004, Michael E. Smoot, Daniel Aarno.
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.  
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_XORHANDLER_H
+X#define TCLAP_XORHANDLER_H
+X
+X#include <tclap/Arg.h>
+X#include <string>
+X#include <vector>
+X#include <algorithm>
+X#include <iostream>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * This class handles lists of Arg's that are to be XOR'd on the command
+X * line.  This is used by CmdLine and you shouldn't ever use it.
+X */
+Xclass XorHandler
+X{
+X	protected:
+X
+X		/**
+X		 * The list of of lists of Arg's to be or'd together.
+X		 */
+X		std::vector< std::vector<Arg*> > _orList;
+X
+X	public:
+X
+X		/**
+X		 * Constructor.  Does nothing.
+X		 */
+X		XorHandler( ) : _orList(std::vector< std::vector<Arg*> >()) {}
+X
+X		/**
+X		 * Add a list of Arg*'s that will be orred together.
+X		 * \param ors - list of Arg* that will be xor'd.
+X		 */
+X		void add( std::vector<Arg*>& ors );
+X			
+X		/**
+X		 * Checks whether the specified Arg is in one of the xor lists and
+X		 * if it does match one, returns the size of the xor list that the
+X		 * Arg matched.  If the Arg matches, then it also sets the rest of
+X		 * the Arg's in the list. You shouldn't use this.  
+X		 * \param a - The Arg to be checked.
+X		 */
+X		int check( const Arg* a );
+X
+X		/**
+X		 * Returns the XOR specific short usage.
+X		 */
+X		std::string shortUsage();
+X
+X		/**
+X		 * Prints the XOR specific long usage.
+X		 * \param os - Stream to print to.
+X		 */
+X		void printLongUsage(std::ostream& os);
+X
+X		/**
+X		 * Simply checks whether the Arg is contained in one of the arg
+X		 * lists.
+X		 * \param a - The Arg to be checked.
+X		 */
+X		bool contains( const Arg* a );
+X
+X		std::vector< std::vector<Arg*> >& getXorList(); 
+X
+X};
+X
+X
+X//////////////////////////////////////////////////////////////////////
+X//BEGIN XOR.cpp
+X//////////////////////////////////////////////////////////////////////
+Xinline void XorHandler::add( std::vector<Arg*>& ors )
+X{ 
+X	_orList.push_back( ors );
+X}
+X
+Xinline int XorHandler::check( const Arg* a ) 
+X{
+X	// iterate over each XOR list
+X	for ( int i = 0; static_cast<unsigned int>(i) < _orList.size(); i++ )
+X	{
+X		// if the XOR list contains the arg..
+X		ArgVectorIterator ait = std::find( _orList[i].begin(), 
+X		                                   _orList[i].end(), a );
+X		if ( ait != _orList[i].end() )
+X		{
+X			// first check to see if a mutually exclusive switch
+X			// has not already been set
+X			for ( ArgVectorIterator it = _orList[i].begin(); 
+X				  it != _orList[i].end(); 
+X				  it++ )
+X				if ( a != (*it) && (*it)->isSet() )
+X					throw(CmdLineParseException(
+X					      "Mutually exclusive argument already set!",
+X					      (*it)->toString()));
+X
+X			// go through and set each arg that is not a
+X			for ( ArgVectorIterator it = _orList[i].begin(); 
+X				  it != _orList[i].end(); 
+X				  it++ )
+X				if ( a != (*it) )
+X					(*it)->xorSet();
+X
+X			// return the number of required args that have now been set
+X			if ( (*ait)->allowMore() )
+X				return 0;
+X			else
+X				return static_cast<int>(_orList[i].size());
+X		}
+X	}
+X
+X	if ( a->isRequired() )
+X		return 1;
+X	else
+X		return 0;
+X}
+X
+Xinline bool XorHandler::contains( const Arg* a )
+X{
+X	for ( int i = 0; static_cast<unsigned int>(i) < _orList.size(); i++ )
+X		for ( ArgVectorIterator it = _orList[i].begin(); 
+X			  it != _orList[i].end(); 
+X			  it++ )	
+X			if ( a == (*it) )
+X				return true;
+X
+X	return false;
+X}
+X
+Xinline std::vector< std::vector<Arg*> >& XorHandler::getXorList() 
+X{
+X	return _orList;
+X}
+X
+X
+X
+X//////////////////////////////////////////////////////////////////////
+X//END XOR.cpp
+X//////////////////////////////////////////////////////////////////////
+X
+X} //namespace TCLAP
+X
+X#endif 
+7a509def8166432d459a47c4eaa37231
+echo x - ./tclap-1.2.1/include/tclap/ZshCompletionOutput.h
+sed 's/^X//' >./tclap-1.2.1/include/tclap/ZshCompletionOutput.h << 'dd4a68ee5d85b9e244b229c5b8b5c693'
+X// -*- Mode: c++; c-basic-offset: 4; tab-width: 4; -*-
+X
+X/****************************************************************************** 
+X * 
+X *  file:  ZshCompletionOutput.h
+X * 
+X *  Copyright (c) 2006, Oliver Kiddle
+X *  All rights reverved.
+X * 
+X *  See the file COPYING in the top directory of this distribution for
+X *  more information.
+X *  
+X *  THE SOFTWARE IS PROVIDED _AS IS_, WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+X *  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+X *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+X *  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+X *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+X *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+X *  DEALINGS IN THE SOFTWARE.
+X *  
+X *****************************************************************************/ 
+X
+X#ifndef TCLAP_ZSHCOMPLETIONOUTPUT_H
+X#define TCLAP_ZSHCOMPLETIONOUTPUT_H
+X
+X#include <string>
+X#include <vector>
+X#include <list>
+X#include <iostream>
+X#include <map>
+X
+X#include <tclap/CmdLineInterface.h>
+X#include <tclap/CmdLineOutput.h>
+X#include <tclap/XorHandler.h>
+X#include <tclap/Arg.h>
+X
+Xnamespace TCLAP {
+X
+X/**
+X * A class that generates a Zsh completion function as output from the usage()
+X * method for the given CmdLine and its Args.
+X */
+Xclass ZshCompletionOutput : public CmdLineOutput
+X{
+X
+X	public:
+X
+X		ZshCompletionOutput();
+X
+X		/**
+X		 * Prints the usage to stdout.  Can be overridden to 
+X		 * produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void usage(CmdLineInterface& c);
+X
+X		/**
+X		 * Prints the version to stdout. Can be overridden 
+X		 * to produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 */
+X		virtual void version(CmdLineInterface& c);
+X
+X		/**
+X		 * Prints (to stderr) an error message, short usage 
+X		 * Can be overridden to produce alternative behavior.
+X		 * \param c - The CmdLine object the output is generated for. 
+X		 * \param e - The ArgException that caused the failure. 
+X		 */
+X		virtual void failure(CmdLineInterface& c,
+X						     ArgException& e );
+X
+X	protected:
+X
+X		void basename( std::string& s );
+X		void quoteSpecialChars( std::string& s );
+X
+X		std::string getMutexList( CmdLineInterface& _cmd, Arg* a );
+X		void printOption( Arg* it, std::string mutex );
+X		void printArg( Arg* it );
+X
+X		std::map<std::string, std::string> common;
+X		char theDelimiter;
+X};
+X
+XZshCompletionOutput::ZshCompletionOutput()
+X: common(std::map<std::string, std::string>()),
+X  theDelimiter('=')
+X{
+X	common["host"] = "_hosts";
+X	common["hostname"] = "_hosts";
+X	common["file"] = "_files";
+X	common["filename"] = "_files";
+X	common["user"] = "_users";
+X	common["username"] = "_users";
+X	common["directory"] = "_directories";
+X	common["path"] = "_directories";
+X	common["url"] = "_urls";
+X}
+X
+Xinline void ZshCompletionOutput::version(CmdLineInterface& _cmd)
+X{
+X	std::cout << _cmd.getVersion() << std::endl;
+X}
+X
+Xinline void ZshCompletionOutput::usage(CmdLineInterface& _cmd )
+X{
+X	std::list<Arg*> argList = _cmd.getArgList();
+X	std::string progName = _cmd.getProgramName();
+X	std::string xversion = _cmd.getVersion();
+X	theDelimiter = _cmd.getDelimiter();
+X	basename(progName);
+X
+X	std::cout << "#compdef " << progName << std::endl << std::endl <<
+X		"# " << progName << " version " << _cmd.getVersion() << std::endl << std::endl <<
+X		"_arguments -s -S";
+X
+X	for (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+X	{
+X		if ( (*it)->shortID().at(0) == '<' )
+X			printArg((*it));
+X		else if ( (*it)->getFlag() != "-" )
+X			printOption((*it), getMutexList(_cmd, *it));
+X	}
+X
+X	std::cout << std::endl;
+X}
+X
+Xinline void ZshCompletionOutput::failure( CmdLineInterface& _cmd,
+X				                ArgException& e )
+X{
+X	static_cast<void>(_cmd); // unused
+X	std::cout << e.what() << std::endl;
+X}
+X
+Xinline void ZshCompletionOutput::quoteSpecialChars( std::string& s )
+X{
+X	size_t idx = s.find_last_of(':');
+X	while ( idx != std::string::npos )
+X	{
+X		s.insert(idx, 1, '\\');
+X		idx = s.find_last_of(':', idx);
+X	}
+X	idx = s.find_last_of('\'');
+X	while ( idx != std::string::npos )
+X	{
+X		s.insert(idx, "'\\'");
+X		if (idx == 0)
+X			idx = std::string::npos;
+X		else
+X			idx = s.find_last_of('\'', --idx);
+X	}
+X}
+X
+Xinline void ZshCompletionOutput::basename( std::string& s )
+X{
+X	size_t p = s.find_last_of('/');
+X	if ( p != std::string::npos )
+X	{
+X		s.erase(0, p + 1);
+X	}
+X}
+X
+Xinline void ZshCompletionOutput::printArg(Arg* a)
+X{
+X	static int count = 1;
+X
+X	std::cout << " \\" << std::endl << "  '";
+X	if ( a->acceptsMultipleValues() )
+X		std::cout << '*';
+X	else
+X		std::cout << count++;
+X	std::cout << ':';
+X	if ( !a->isRequired() )
+X		std::cout << ':';
+X
+X	std::cout << a->getName() << ':';
+X	std::map<std::string, std::string>::iterator compArg = common.find(a->getName());
+X	if ( compArg != common.end() )
+X	{
+X		std::cout << compArg->second;
+X	}
+X	else
+X	{
+X		std::cout << "_guard \"^-*\" " << a->getName();
+X	}
+X	std::cout << '\'';
+X}
+X
+Xinline void ZshCompletionOutput::printOption(Arg* a, std::string mutex)
+X{
+X	std::string flag = a->flagStartChar() + a->getFlag();
+X	std::string name = a->nameStartString() + a->getName();
+X	std::string desc = a->getDescription();
+X
+X	// remove full stop and capitalisation from description as
+X	// this is the convention for zsh function
+X	if (!desc.compare(0, 12, "(required)  "))
+X	{
+X		desc.erase(0, 12);
+X	}
+X	if (!desc.compare(0, 15, "(OR required)  "))
+X	{
+X		desc.erase(0, 15);
+X	}
+X	size_t len = desc.length();
+X	if (len && desc.at(--len) == '.')
+X	{
+X		desc.erase(len);
+X	}
+X	if (len)
+X	{
+X		desc.replace(0, 1, 1, tolower(desc.at(0)));
+X	}
+X
+X	std::cout << " \\" << std::endl << "  '" << mutex;
+X
+X	if ( a->getFlag().empty() )
+X	{
+X		std::cout << name;
+X	}
+X	else
+X	{
+X		std::cout << "'{" << flag << ',' << name << "}'";
+X	}
+X	if ( theDelimiter == '=' && a->isValueRequired() )
+X		std::cout << "=-";
+X	quoteSpecialChars(desc);
+X	std::cout << '[' << desc << ']';
+X
+X	if ( a->isValueRequired() )
+X	{
+X		std::string arg = a->shortID();
+X		arg.erase(0, arg.find_last_of(theDelimiter) + 1);
+X		if ( arg.at(arg.length()-1) == ']' )
+X			arg.erase(arg.length()-1);
+X		if ( arg.at(arg.length()-1) == ']' )
+X		{
+X			arg.erase(arg.length()-1);
+X		}
+X		if ( arg.at(0) == '<' )
+X		{
+X			arg.erase(arg.length()-1);
+X			arg.erase(0, 1);
+X		}
+X		size_t p = arg.find('|');
+X		if ( p != std::string::npos )
+X		{
+X			do
+X			{
+X				arg.replace(p, 1, 1, ' ');
+X			}
+X			while ( (p = arg.find_first_of('|', p)) != std::string::npos );
+X			quoteSpecialChars(arg);
+X			std::cout << ": :(" << arg << ')';
+X		}
+X		else
+X		{
+X			std::cout << ':' << arg;
+X			std::map<std::string, std::string>::iterator compArg = common.find(arg);
+X			if ( compArg != common.end() )
+X			{
+X				std::cout << ':' << compArg->second;
+X			}
+X		}
+X	}
+X
+X	std::cout << '\'';
+X}
+X
+Xinline std::string ZshCompletionOutput::getMutexList( CmdLineInterface& _cmd, Arg* a)
+X{
+X	XorHandler xorHandler = _cmd.getXorHandler();
+X	std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+X	
+X	if (a->getName() == "help" || a->getName() == "version")
+X	{
+X		return "(-)";
+X	}
+X
+X	std::ostringstream list;
+X	if ( a->acceptsMultipleValues() )
+X	{
+X		list << '*';
+X	}
+X
+X	for ( int i = 0; static_cast<unsigned int>(i) < xorList.size(); i++ )
+X	{
+X		for ( ArgVectorIterator it = xorList[i].begin();
+X			it != xorList[i].end();
+X			it++)
+X		if ( a == (*it) )
+X		{
+X			list << '(';
+X			for ( ArgVectorIterator iu = xorList[i].begin();
+X				iu != xorList[i].end();
+X				iu++ )
+X			{
+X				bool notCur = (*iu) != a;
+X				bool hasFlag = !(*iu)->getFlag().empty();
+X				if ( iu != xorList[i].begin() && (notCur || hasFlag) )
+X					list << ' ';
+X				if (hasFlag)
+X					list << (*iu)->flagStartChar() << (*iu)->getFlag() << ' ';
+X				if ( notCur || hasFlag )
+X					list << (*iu)->nameStartString() << (*iu)->getName();
+X			}
+X			list << ')';
+X			return list.str();
+X		}
+X	}
+X	
+X	// wasn't found in xor list
+X	if (!a->getFlag().empty()) {
+X		list << "(" << a->flagStartChar() << a->getFlag() << ' ' <<
+X			a->nameStartString() << a->getName() << ')';
+X	}
+X	
+X	return list.str();
+X}
+X
+X} //namespace TCLAP
+X#endif
+dd4a68ee5d85b9e244b229c5b8b5c693
+exit
+

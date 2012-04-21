@@ -3,7 +3,7 @@ bin/PTBatcherGUI
 bin/align_image_stack
 bin/autooptimiser
 bin/autopano-noop.sh
-bin/calibrate_lens
+bin/calibrate_lens_gui
 bin/celeste_standalone
 bin/checkpto
 bin/cpclean
@@ -14,6 +14,7 @@ bin/hugin
 bin/hugin_hdrmerge
 bin/hugin_stitch_project
 bin/icpfind
+bin/linefind
 bin/matchpoint
 bin/nona
 bin/nona_gui
@@ -24,13 +25,14 @@ bin/pto_merge
 bin/tca_correct
 bin/vig_optimize
 lib/hugin/libceleste.so.0.0
-lib/hugin/libhuginANN.so.0.0
-lib/hugin/libhuginvigraimpex.so.0.0
+lib/hugin/libflann_cpp.so
 lib/hugin/libhuginbase.so.0.0
-lib/hugin/libmakefilelib.so.0.0
 lib/hugin/libhuginbasewx.so.0.0
+lib/hugin/libhuginlines.so.0.0
+lib/hugin/libhuginvigraimpex.so.0.0
 lib/hugin/libicpfindlib.so.0.0
 lib/hugin/liblocalfeatures.so.0.0
+lib/hugin/libmakefilelib.so.0.0
 share/applications/hugin.desktop
 share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/Makefile.equirect.mk
@@ -47,7 +49,6 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/crop_panel.xrc
 %%DATADIR%%/xrc/data/COPYING
 %%DATADIR%%/xrc/data/about.htm
-%%DATADIR%%/xrc/data/about.txt
 %%DATADIR%%/xrc/data/add_project.png
 %%DATADIR%%/xrc/data/add_projects.png
 %%DATADIR%%/xrc/data/autocrop_tool.png
@@ -114,6 +115,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/200px-Big_ben_equirectangular.jpg
 %%DATADIR%%/xrc/data/help_en_EN/200px-Big_ben_mercator.jpg
 %%DATADIR%%/xrc/data/help_en_EN/200px-Bin_ben_sinusoidal.jpg
+%%DATADIR%%/xrc/data/help_en_EN/200px-Hugin-2011.0_fpw_overview.png
 %%DATADIR%%/xrc/data/help_en_EN/200px-Panoglview.png
 %%DATADIR%%/xrc/data/help_en_EN/21cb21c7c1de5b4c61da90794c62bc1a.png
 %%DATADIR%%/xrc/data/help_en_EN/220px-Ben_Equirectangular_panini.jpg
@@ -155,6 +157,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/57b296711670bf47db3e71c9f866abad.png
 %%DATADIR%%/xrc/data/help_en_EN/581px-Entropy.png
 %%DATADIR%%/xrc/data/help_en_EN/586px-Laplacian-of-gaussian.png
+%%DATADIR%%/xrc/data/help_en_EN/5a12c95d04637539015c2d09b5002204.png
 %%DATADIR%%/xrc/data/help_en_EN/5a34bb082daf037b3c4b14c13af6855b.png
 %%DATADIR%%/xrc/data/help_en_EN/5f558fa7e9b1567daca23dc3433f5cec.png
 %%DATADIR%%/xrc/data/help_en_EN/600px-Tuebingen_Neckarfront_small15_2006-06-11.jpg
@@ -215,6 +218,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/CA_tCA02.jpg
 %%DATADIR%%/xrc/data/help_en_EN/CA_tCA03.jpg
 %%DATADIR%%/xrc/data/help_en_EN/CCD.html
+%%DATADIR%%/xrc/data/help_en_EN/Calibrate_lens_gui.html
 %%DATADIR%%/xrc/data/help_en_EN/Camera_response_curve.html
 %%DATADIR%%/xrc/data/help_en_EN/Celeste_cpeditor_post.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Celeste_cpeditor_pre.jpg
@@ -222,6 +226,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Celeste_images_panel.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Celeste_preferences.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Celeste_standalone.html
+%%DATADIR%%/xrc/data/help_en_EN/Checkpto.html
 %%DATADIR%%/xrc/data/help_en_EN/Chromatic_aberration.html
 %%DATADIR%%/xrc/data/help_en_EN/Color_correct_tiff.html
 %%DATADIR%%/xrc/data/help_en_EN/Colour_profile.html
@@ -240,6 +245,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Cylindrical_panorama.html
 %%DATADIR%%/xrc/data/help_en_EN/DSLR_spherical_resolution.html
 %%DATADIR%%/xrc/data/help_en_EN/Depth_of_Field.html
+%%DATADIR%%/xrc/data/help_en_EN/Diffraction.html
 %%DATADIR%%/xrc/data/help_en_EN/Dust_Removal_with_Flatfield.html
 %%DATADIR%%/xrc/data/help_en_EN/Dynamic_range.html
 %%DATADIR%%/xrc/data/help_en_EN/EXIF.html
@@ -251,6 +257,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Entropy-cutoff.png
 %%DATADIR%%/xrc/data/help_en_EN/Entropy.png
 %%DATADIR%%/xrc/data/help_en_EN/Equirectangular.html
+%%DATADIR%%/xrc/data/help_en_EN/Equirectangular_Panini.html
 %%DATADIR%%/xrc/data/help_en_EN/Equirectangular_Projection.html
 %%DATADIR%%/xrc/data/help_en_EN/Field_of_View.html
 %%DATADIR%%/xrc/data/help_en_EN/Fisheye_Projection.html
@@ -284,6 +291,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_Preferences.html
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_Preview_window.html
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_Reset_Values_window.html
+%%DATADIR%%/xrc/data/help_en_EN/Hugin_Scripting_Interface.html
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_Stitcher_tab.html
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_Trackers.html
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_add_project.png
@@ -318,6 +326,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_translation_guide.html
 %%DATADIR%%/xrc/data/help_en_EN/Hugin_undo.png
 %%DATADIR%%/xrc/data/help_en_EN/Icpfind.html
+%%DATADIR%%/xrc/data/help_en_EN/Illustration4.png
 %%DATADIR%%/xrc/data/help_en_EN/Interpolate_none.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Interpolate_poly3.jpg
 %%DATADIR%%/xrc/data/help_en_EN/Interpolate_sinc256.jpg
@@ -330,6 +339,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Lens_correction_model.html
 %%DATADIR%%/xrc/data/help_en_EN/Lens_distortion.html
 %%DATADIR%%/xrc/data/help_en_EN/Lightprobe.html
+%%DATADIR%%/xrc/data/help_en_EN/Linefind.html
 %%DATADIR%%/xrc/data/help_en_EN/Local-analysis-window.png
 %%DATADIR%%/xrc/data/help_en_EN/MatchPoint.html
 %%DATADIR%%/xrc/data/help_en_EN/Medinet_habu_horizontal_fisheye.jpg
@@ -350,6 +360,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/PTblender.html
 %%DATADIR%%/xrc/data/help_en_EN/PTmender.html
 %%DATADIR%%/xrc/data/help_en_EN/PTtiff2psd.html
+%%DATADIR%%/xrc/data/help_en_EN/Panini.html
 %%DATADIR%%/xrc/data/help_en_EN/Pano12.html
 %%DATADIR%%/xrc/data/help_en_EN/Pano_modify.html
 %%DATADIR%%/xrc/data/help_en_EN/Panoglview.html
@@ -387,6 +398,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/Smooth-edge.png
 %%DATADIR%%/xrc/data/help_en_EN/Spherical.html
 %%DATADIR%%/xrc/data/help_en_EN/Stereographic_Projection.html
+%%DATADIR%%/xrc/data/help_en_EN/Stitching_a_photo-mosaic.html
 %%DATADIR%%/xrc/data/help_en_EN/Straight_line_control_points.html
 %%DATADIR%%/xrc/data/help_en_EN/Swing_rod.html
 %%DATADIR%%/xrc/data/help_en_EN/TIFF.html
@@ -428,6 +440,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/help_en_EN/hugin.hhp
 %%DATADIR%%/xrc/data/help_en_EN/hugin_help_en_EN.hhp
 %%DATADIR%%/xrc/data/help_en_EN/license.html
+%%DATADIR%%/xrc/data/help_en_EN/manual.css
 %%DATADIR%%/xrc/data/help_en_EN/panotoolsng.png
 %%DATADIR%%/xrc/data/help_it_IT/16bit_workflow_with_hugin.html
 %%DATADIR%%/xrc/data/help_it_IT/Aliasing.html
@@ -551,10 +564,10 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/identify_tool.png
 %%DATADIR%%/xrc/data/identify_tool_small.png
 %%DATADIR%%/xrc/data/info.png
+%%DATADIR%%/xrc/data/intro.htm
 %%DATADIR%%/xrc/data/keyboard_pl.html
 %%DATADIR%%/xrc/data/list.png
 %%DATADIR%%/xrc/data/logo.png
-%%DATADIR%%/xrc/data/milko.png
 %%DATADIR%%/xrc/data/nona_enblend.mk
 %%DATADIR%%/xrc/data/nona_multilayer.mk
 %%DATADIR%%/xrc/data/nona_smartblend.mk
@@ -569,6 +582,8 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/data/preview_num_transform.png
 %%DATADIR%%/xrc/data/preview_show_all.png
 %%DATADIR%%/xrc/data/preview_show_none.png
+%%DATADIR%%/xrc/data/preview_white_balance.png
+%%DATADIR%%/xrc/data/preview_white_balance_small.png
 %%DATADIR%%/xrc/data/ptbatcher.ico
 %%DATADIR%%/xrc/data/ptbatcher.png
 %%DATADIR%%/xrc/data/ptmender_enblend.mk
@@ -591,6 +606,7 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/edit_script_dialog.xrc
 %%DATADIR%%/xrc/images_panel.xrc
 %%DATADIR%%/xrc/lens_panel.xrc
+%%DATADIR%%/xrc/lenscal_frame.xrc
 %%DATADIR%%/xrc/main_frame.xrc
 %%DATADIR%%/xrc/main_menu.xrc
 %%DATADIR%%/xrc/main_tool.xrc
@@ -601,10 +617,12 @@ share/applications/PTBatcherGUI.desktop
 %%DATADIR%%/xrc/pref_dialog.xrc
 %%DATADIR%%/xrc/preview_frame.xrc
 %%DATADIR%%/xrc/reset_dialog.xrc
+share/applications/calibrate_lens_gui.desktop
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
 share/locale/bg/LC_MESSAGES/hugin.mo
 share/locale/ca_ES/LC_MESSAGES/hugin.mo
 share/locale/cs_CZ/LC_MESSAGES/hugin.mo
+share/locale/da/LC_MESSAGES/hugin.mo
 share/locale/de/LC_MESSAGES/hugin.mo
 share/locale/en_GB/LC_MESSAGES/hugin.mo
 share/locale/es/LC_MESSAGES/hugin.mo
@@ -617,6 +635,7 @@ share/locale/ko/LC_MESSAGES/hugin.mo
 share/locale/nl/LC_MESSAGES/hugin.mo
 share/locale/pl/LC_MESSAGES/hugin.mo
 share/locale/pt_BR/LC_MESSAGES/hugin.mo
+share/locale/ro/LC_MESSAGES/hugin.mo
 share/locale/ru/LC_MESSAGES/hugin.mo
 share/locale/sk/LC_MESSAGES/hugin.mo
 share/locale/sl/LC_MESSAGES/hugin.mo
