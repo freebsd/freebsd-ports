@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION=	1.13.1
-PORTREVISION=	2
+PORTVERSION=	1.14
 CATEGORIES=	converters devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A character set conversion library
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_CSTD=	gnu89
-LIBTOOLFILES=	configure libcharset/configure
+LIBTOOLFILES=	configure libcharset/configure preload/configure
 CONFIGURE_ARGS=	--enable-static \
 		--without-libintl-prefix \
 		--docdir=${DOCSDIR}
@@ -31,8 +28,8 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_open_into.3 iconv_close.3 iconvctl.3
 
-OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets" on \
-		EXTRA_PATCHES	"Apply patches to fix CP932, add EUCJP-MS" off
+OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets" on
+#		EXTRA_PATCHES	"Apply patches to fix CP932, add EUCJP-MS" off
 
 .ifdef USE_ICONV
 .error USE_ICONV is defined as an environment variable, or in the arguments \
@@ -45,13 +42,13 @@ OPTIONS=	EXTRA_ENCODINGS	"Include extra character sets" on \
 CONFIGURE_ARGS+=	--enable-extra-encodings
 .endif
 
-.if defined(WITH_EXTRA_PATCHES)
-PATCH_SITES+=	http://www2d.biglobe.ne.jp/~msyk/software/libiconv/
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	nork
-PATCHFILES+=	${DISTNAME:C/1\.13\.1/1.13/}-ja-1.patch.gz
-PATCH_DIST_STRIP+=	-p1
-.endif
+#.if defined(WITH_EXTRA_PATCHES)
+#PATCH_SITES+=	http://www2d.biglobe.ne.jp/~msyk/software/libiconv/
+#PATCH_SITES+=	${MASTER_SITE_LOCAL}
+#PATCH_SITE_SUBDIR=	nork
+#PATCHFILES+=	${DISTNAME:C/1\.13\.1/1.13/}-ja-1.patch.gz
+#PATCH_DIST_STRIP+=	-p1
+#.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:ei_ksc5601:ei_euc_kr:g' ${WRKSRC}/lib/aliases.h
