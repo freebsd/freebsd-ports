@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	3.6.8
+PORTREVISION=	1
 CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
@@ -24,6 +25,12 @@ NO_WRKSUBDIR=	yes
 .include "${.CURDIR}/../../devel/bugzilla3/Makefile.common"
 
 LANGDIR=	${WWWDIR}/template/de
+
+# german template checks the bugzilla version number and displays
+# non supported bugzilla version, however there are no relevant
+# changes in the template between 3.6.8 and 3.6.9
+post-patch:
+	@${SED} -i '' -e 's|3.6.8|3.6.9|' ${WRKDIR}/de/default/global/gzversion.html.tmpl
 
 do-install:
 	@-${MKDIR} ${LANGDIR}
