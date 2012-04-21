@@ -1,22 +1,19 @@
---- libcharset/lib/config.charset.orig	Thu Jan 30 03:43:59 2003
-+++ libcharset/lib/config.charset	Tue Oct 14 16:55:29 2003
-@@ -246,8 +246,8 @@
- 	#echo "sun_eu_greek ?" # what is this?
- 	echo "UTF-8 UTF-8"
- 	;;
--    freebsd* | os2*)
--	# FreeBSD 4.2 doesn't have nl_langinfo(CODESET); therefore
-+    freebsd4.[0-5] | os2*)
-+	# FreeBSD up to 4.6 doesn't have nl_langinfo(CODESET); therefore
- 	# localcharset.c falls back to using the full locale name
- 	# from the environment variables.
- 	# Likewise for OS/2. OS/2 has XFree86 just like FreeBSD. Just
-@@ -282,6 +282,31 @@
- 	echo "ja_JP.SJIS SHIFT_JIS"
- 	echo "ja_JP.Shift_JIS SHIFT_JIS"
- 	echo "ko_KR.EUC EUC-KR"
-+	;;
-+    freebsd*)
+--- libcharset/lib/config.charset.orig	2010-04-05 02:25:38.000000000 +0200
++++ libcharset/lib/config.charset	2011-10-23 22:05:50.000000000 +0200
+@@ -348,7 +348,7 @@ case "$os" in
+     #echo "sun_eu_greek ?" # what is this?
+     echo "UTF-8 UTF-8"
+     ;;
+-  freebsd* | os2*)
++  freebsd4.[0-5]* | os2*)
+     # FreeBSD 4.2 doesn't have nl_langinfo(CODESET); therefore
+     # localcharset.c falls back to using the full locale name
+     # from the environment variables.
+@@ -385,6 +385,31 @@ case "$os" in
+     echo "ja_JP.Shift_JIS SHIFT_JIS"
+     echo "ko_KR.EUC EUC-KR"
+     ;;
++  freebsd*)
 +	echo "US-ASCII ASCII"
 +	echo "ISO8859-1 ISO-8859-1"
 +	echo "ISO_8859-1 ISO-8859-1"
@@ -40,6 +37,7 @@
 +	echo "Big5 BIG5"
 +	echo "SJIS SHIFT_JIS"
 +	echo "Shift_JIS SHIFT_JIS"
- 	;;
-     netbsd*)
- 	echo "646 ASCII"
++        ;;
+   netbsd*)
+     echo "646 ASCII"
+     echo "ISO8859-1 ISO-8859-1"
