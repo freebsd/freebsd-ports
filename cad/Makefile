@@ -64,6 +64,7 @@
     SUBDIR += opencascade
     SUBDIR += opencascade-tutorial
     SUBDIR += openscad
+    SUBDIR += openvsp
     SUBDIR += p5-GDS2
     SUBDIR += p5-Verilog-Perl
     SUBDIR += pcb
