@@ -25,6 +25,7 @@
     SUBDIR += koi8r-ps
     SUBDIR += ksocrat
     SUBDIR += libcyrillic
+    SUBDIR += libreoffice
     SUBDIR += mueller-dic
     SUBDIR += muttprint
     SUBDIR += mythes

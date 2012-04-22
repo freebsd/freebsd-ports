@@ -1,0 +1,79 @@
+# $FreeBSD$
+
+PORTNAME=	libreoffice
+PORTVERSION=	3.5.2
+RCVER=		2
+LOVERSION=	${PORTVERSION}.${RCVER}
+CATEGORIES?=	editors
+MAINTAINER?=	office@FreeBSD.org
+
+LICENSE=	LGPL3 MPL
+LICENSE_COMB=	dual
+
+MASTER_SITES?=	http://ftp.rediris.es/mirror/TDF/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://mirrors.supportex.net/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://mirror.netcologne.de/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.uni-muenster.de/pub/software/DocumentFoundation/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.rz.tu-bs.de/pub/mirror/tdf/tdf-pub/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://artfiles.org/documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://mirror.galpon.org/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.tu-chemnitz.de/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://tdf.panu.it/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.wh2.tu-dresden.de/pub/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.klid.dk/ftp/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://gd.tuwien.ac.at/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://archive.sunet.se/pub/Office/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.astral.ro/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.roedu.net/mirrors/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.unicamp.br/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://mirror.yongbok.net/tdf/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR} \
+		http://ftp.osuosl.org/pub/tdf/libreoffice/${MASTER_SITE_SUBDIR}
+
+ONLY_FOR_ARCH=	i386 amd64
+
+# for dynamic plist generation
+PLISTD?=	${WRKDIR}/plist_dirs
+PLISTF?=	${WRKDIR}/plist_files
+
+.if defined(LO_I18N)
+NO_BUILD=	yes
+
+RUN_DEPENDS=	libreoffice:${PORTSDIR}/editors/libreoffice
+
+#MASTER_SITE_SUBDIR=	testing/${PORTVERSION}/deb/x86/
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/deb/x86/
+DIST_SUBDIR?=	libreoffice/i18n
+
+PKGNAMEPREFIX=	${LO_I18N}-
+
+DISTFILES=	LibO_${PORTVERSION}_Linux_x86_langpack-deb_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
+.if defined(LO_HAS_HELPPACK)
+DISTFILES+=	LibO_${PORTVERSION}_Linux_x86_helppack-deb_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
+.endif
+COMMENT?=	${LO_I18N} language pack for ${PORTNAME}
+
+post-extract:
+	@${MKDIR} ${WRKSRC}; \
+	for deb in ${WRKDIR}/LibO_${PORTVERSION}rc${RCVER}_Linux_x86_langpack-deb_${LO_I18N:S/_/-/}/DEBS/*.deb ; do \
+		${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
+	done ; \
+	if [ -n ${LO_HAS_HELPPACK} ]; then \
+		for deb in ${WRKDIR}/LibO_${PORTVERSION}rc${RCVER}_Linux_x86_helppack-deb_${LO_I18N:S/_/-/}/DEBS/*.deb ; do \
+			${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
+		done ; \
+	fi
+
+do-install:
+	@rm -f ${PLISTD} ${PLISTF}
+	cd ${WRKSRC}/opt/${PORTNAME}3.5 ; ${FIND} * -type d -exec ${ECHO_CMD} "@unexec ${RMDIR} %D/lib/${PORTNAME}/{} || ${TRUE}" \; >> ${PLISTD}
+	cd ${WRKSRC}/opt/${PORTNAME}3.5 ; ${FIND} * \( -type f -o -type l \) -exec ${ECHO_CMD} "lib/${PORTNAME}/{} " \; >> ${PLISTF}
+
+	${SORT} ${PLISTF} >> ${TMPPLIST}
+	${SORT} -r ${PLISTD} >> ${TMPPLIST}
+
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	cd ${WRKSRC}/opt/${PORTNAME}3.5 ; ${PAX} -rw . ${PREFIX}/lib/${PORTNAME}
+
+.endif

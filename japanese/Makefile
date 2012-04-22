@@ -158,6 +158,7 @@
     SUBDIR += less
     SUBDIR += libicq
     SUBDIR += libjcode
+    SUBDIR += libreoffice
     SUBDIR += libskk
     SUBDIR += libslang
     SUBDIR += libtomoe-gtk

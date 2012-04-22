@@ -13,5 +13,6 @@
     SUBDIR += khotot
     SUBDIR += koffice-i18n
     SUBDIR += libitl
+    SUBDIR += libreoffice
 
 .include <bsd.port.subdir.mk>

@@ -13,6 +13,7 @@
     SUBDIR += kde4-l10n
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
+    SUBDIR += libreoffice
     SUBDIR += monacofonts
     SUBDIR += mythes
     SUBDIR += webalizer

@@ -18,6 +18,7 @@
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
     SUBDIR += libgadu
+    SUBDIR += libreoffice
     SUBDIR += libtlen
     SUBDIR += mythes
     SUBDIR += php_doc
