@@ -32,7 +32,7 @@ PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 PKGNAMEPREFIX=	linux_base-
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
 		linux_base-rh* linux_base-suse* linux_base-f* \
-		linux_base-gentoo-stage[12]-*
+		linux_base-gentoo-stage[12]-* linux_base-c*
 USE_LINUX_PREFIX=	YES
 PREFIX_SUBDIR=
 .else
