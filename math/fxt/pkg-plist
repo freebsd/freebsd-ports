@@ -659,6 +659,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-subset-lex-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-subset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-gslex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/catalan-gslex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/motzkin-path-lex-out.txt
@@ -682,9 +684,7 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sl-gray-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-subset-lex-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/acgray-demo.cc
@@ -1207,6 +1207,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/revbin-perm-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/swap-blocks-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/swap-blocks-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A209411-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A209411-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A182039-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A182039-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206702-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A206702-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/seq/A080936-demo.cc
