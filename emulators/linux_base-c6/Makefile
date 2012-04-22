@@ -69,6 +69,9 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		bash-4.1.2-8.el6.centos.src.rpm \
 		bzip2-1.0.5-7.el6_0.src.rpm \
 		coreutils-8.4-16.el6.src.rpm \
+		compat-db-4.6.21-15.el6.src.rpm \
+		compat-gcc-296-2.96-144.el6.src.rpm \
+		compat-gcc-32-3.2.3-69.el6.src.rpm \
 		db4-4.7.25-16.el6.src.rpm \
 		e2fsprogs-1.41.12-11.el6.src.rpm \
 		elfutils-0.152-1.el6.src.rpm \
