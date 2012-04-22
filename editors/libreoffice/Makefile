@@ -5,53 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libreoffice
-PORTVERSION=	3.4.5
-CATEGORIES=	editors
-MASTER_SITES=	http://ftp.rediris.es/mirror/TDF/libreoffice/src/${PORTVERSION}/ \
-		http://mirrors.supportex.net/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://mirror.netcologne.de/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.uni-muenster.de/pub/software/DocumentFoundation/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.rz.tu-bs.de/pub/mirror/tdf/tdf-pub/libreoffice/src/${PORTVERSION}/ \
-		http://artfiles.org/documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
-		http://mirror.galpon.org/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.tu-chemnitz.de/pub/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://tdf.panu.it/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.wh2.tu-dresden.de/pub/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.klid.dk/ftp/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://gd.tuwien.ac.at/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://archive.sunet.se/pub/Office/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.astral.ro/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.roedu.net/mirrors/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.unicamp.br/pub/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://mirror.yongbok.net/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/src/${PORTVERSION}/ \
-		http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
-		http://dev-www.libreoffice.org/src/:ext \
+.include "${.CURDIR}/Makefile.common"
+
+MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
+MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
 		http://download.go-oo.org/src/:GoOOSrc \
 		http://download.go-oo.org/extern/:GoOOExtern \
 		http://www.numbertext.org/linux/:OOoDTP
 
-MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
-LICENSE=	LGPL3 MPL
-LICENSE_COMB=	dual
-
-# dmake can't be used from ports
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		unzip:${PORTSDIR}/archivers/unzip \
 		bash:${PORTSDIR}/shells/bash \
-		oo2po:${PORTSDIR}/textproc/translate-toolkit \
 		dmake:${PORTSDIR}/devel/dmake \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
-		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
 		vigra-config:${PORTSDIR}/graphics/vigra
-# rely on bsdtar ability to extract .gz and .bz2 archives
+
+#		${LOCALBASE}/include/mdds/global.hpp:${PORTSDIR}/devel/mdds
+#		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
+
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
@@ -67,50 +42,45 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \
 		wps-0.2.2:${PORTSDIR}/textproc/libwps \
 		rdf.0:${PORTSDIR}/textproc/redland \
-		textcat.0:${PORTSDIR}/textproc/libtextcat \
+		exttextcat.0:${PORTSDIR}/textproc/libexttextcat \
 		lpsolve55:${PORTSDIR}/math/lp_solve \
-		cups.2:${PORTSDIR}/print/cups-client
+		cups.2:${PORTSDIR}/print/cups-client \
+		visio-0.0.0:${PORTSDIR}/textproc/libvisio \
+		graphite2.2:${PORTSDIR}/graphics/graphite2 \
+		nss3.1:${PORTSDIR}/security/nss \
+		SampleICC.2:${PORTSDIR}/graphics/sampleicc \
+		png.6:${PORTSDIR}/graphics/png \
+		cmis-0.2.0:${PORTSDIR}/net/libcmis \
+
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/liberation-fonts-ttf/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
+		${LOCALBASE}/lib/X11/fonts/linuxlibertine/LinLibertine_Bd-4.1.0.ttf:${PORTSDIR}/x11-fonts/linuxlibertine \
+		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
+		${LOCALBASE}/lib/X11/fonts/gentium-basic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic
 
 CONFLICTS_INSTALL=	libreoffice-legacy-[0-9]*
 
-LOVERSION=	${PORTVERSION}.2
-LO_COMPONENTS=	artwork base calc components extensions \
-		extras filters help impress libs-core libs-extern \
-		libs-extern-sys libs-gui postprocess sdk testing \
-		ure writer translations
+#LO_COMPONENTS=	binfilter dictionaries help translations
+LO_COMPONENTS=	help
 
-USE_BZIP2=	yes
+USE_XZ=	yes
+USE_PYTHON=	yes
 #l10n
 INSTALL_TARGET=	distro-pack-install
 
 DIST_SUBDIR=	libreoffice
-DISTFILES+=	${PORTNAME}-bootstrap-${LOVERSION}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/${PORTNAME}-bootstrap-${LOVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-core-${LOVERSION}
 
 LODESTDIR=	${WRKDIR}/loinstall
 
+DISTFILES+=	${PORTNAME}-core-${LOVERSION}${EXTRACT_SUFX}
 .for components in ${LO_COMPONENTS}
 DISTFILES+=	${PORTNAME}-${components}-${LOVERSION}${EXTRACT_SUFX}
 .endfor
 
-# for dynamic plist generation
-PLISTD?=	${WRKDIR}/plist_dirs
-PLISTF?=	${WRKDIR}/plist_files
-
-# not tested on other platforms and at leat plist will be wrong because of LOARCH not expendanded correctly
-ONLY_FOR_ARCH=	i386 amd64
-
 EXTRACT_ONLY:=	${DISTFILES}
 
-#additionnal components
-DISTFILES+=	fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:GoOOSrc \
-		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:GoOOSrc \
-		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:GoOOSrc \
-		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:GoOOSrc \
-		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:ext \
-		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:ext \
-		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:GoOOSrc \
-		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:OOoDTP
+DISTFILES+=	0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:ext \
+		f02578f5218f217a9f20e9c30e119c6a-boost_1_44_0.tar.bz2:ext
 
 USE_BDB=	yes
 USE_PERL5_BUILD=	yes
@@ -119,20 +89,24 @@ USE_GMAKE=	yes
 USE_BISON=	build
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
+WANT_PGSQL_VER=	90+
+USE_PGSQL=	yes
+
 USE_XORG=	xaw xrandr
 USE_GL=		gl glu
 MAKE_JOBS_UNSAFE=	yes
-USE_AUTOTOOLS=	autoconf automake:env
+USE_GETTEXT=	yes
 
 OPTIONS=	WEBDAV	"Support webdav protocol" off \
 		KDE4	"With Qt4/KDE4 vclplug support" off \
 		GTK	"With GTK vclplug support" on \
+		GTK3	"With GTK3 vclplug support" off \
 		GNOME	"Better integration in gnome environnement" off \
 		JAVA	"Add Java support (XML Filters, macros)" off \
-		PYUNO	"Allow to script libreoffice in python" off \
-		SYSTRAY	"Enable systemtry quickstarter" off \
+		SYSTRAY	"Enable systemtray quickstarter" off \
 		MMEDIA	"Enable multimedia backend for impress" off \
 		SDK	"Build with SDK" off \
+		SVG	"Enable SVG support" on \
 		DEBUG	"Build with debug symbols and verbose output" off
 
 CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
@@ -140,18 +114,18 @@ CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
 			OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
+#			--with-system-boost
+#			--with-system-mdds
 CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--disable-fetch-external \
 			--with-build-version="FreeBSD ports ${PKGVERSION}" \
 			--with-vendor="FreeBSD ports ${PKGVERSION}" \
 			--exec-prefix=${PREFIX} \
-			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch \
+			--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
 			--with-system-libxml \
-			--with-system-libxslt \
-			--with-system-cairo --enable-cairo \
-			--with-system-boost \
-			--with-system-cppunit \
+			--with-system-cairo \
+			--enable-cairo-canvas \
 			--with-system-zlib \
 			--with-system-icu \
 			--with-system-db \
@@ -159,6 +133,7 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--with-system-expat \
 			--with-system-openssl \
 			--with-system-curl \
+			--with-system-libvisio \
 			--with-system-libwpd \
 			--with-system-libwpg \
 			--with-system-libwps \
@@ -167,33 +142,45 @@ CONFIGURE_ARGS+=	--with-unix-wrapper="libreoffice" \
 			--with-system-hunspell \
 			--with-system-mythes \
 			--with-system-altlinuxhyph \
-			--with-system-libtextcat \
+			--with-system-libexttextcat \
 			--with-system-lpsolve \
 			--with-system-vigra \
-			--with-fonts \
 			--with-alloc=system \
 			--with-system-stdlibs \
-			--with-system-xrender-headers \
 			--with-system-mesa-headers \
 			--disable-epm \
 			--disable-mozilla \
 			--disable-build-mozilla \
 			--without-system-mozilla \
-			--disable-kde \
+			--without-fonts \
+			--without-afms \
+			--without-ppds \
 			--without-stlport \
-			--disable-nss-module \
-			--with-system-translate-toolkit \
+			--disable-kde \
+			--disable-kdeab \
+			--with-system-nss \
+			--without-myspell-dicts \
 			--with-system-dicts \
 			--disable-dependency-tracking \
 			--with-external-thes-dir=${LOCALBASE}/share/mythes \
 			--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 			--with-external-dict-dir=${LOCALBASE}/share/hunspell \
 			--disable-zenity \
-			--enable-cups
-
-.if defined(LOCALIZED_LANG)
-CONFIGURE_ARGS+=	--with-lang="${LOCALIZED_LANG}"
-.endif
+			--enable-graphite \
+			--with-system-graphite \
+			--with-system-sampleicc \
+			--enable-mergelibs \
+			--enable-gio  \
+			--disable-nsplugin \
+			--disable-linkoo \
+			--disable-online-update \
+			--disable-xmlsec \
+			--with-system-gettext \
+			--with-system-libpng \
+			--with-system-postgresql \
+			--with-system-libcmis \
+			--disable-gnome-vfs \
+			--enable-python=system
 
 # extensions
 CONFIGURE_ARGS+=	--enable-ext-pdfimport \
@@ -219,9 +206,27 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.options.mk>
 
+.if defined(WITH_GCC)
+USE_GCC=	4.6+
+DISTFILES+=	bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:ext
+.else
+CONFIGURE_ARGS+=	--with-system-cppunit
+CC=	clang
+CXX=	clang++
+CXXCPP=	clang-cpp
+CPP=	clang-cpp
+.if !exists(${DESTDIR}/usr/bin/clang)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+USE_BINUTILS=	yes
+CXXCPP=	clang++ -E
+CPP=	clang -E
+.endif
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
+.endif
+
 MAKE_ENV+=	USE_GMAKE=1 DESTDIR=${LODESTDIR}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER} -L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER}
 
 .if defined(WITHOUT_SYSTRAY)
 CONFIGURE_ARGS+=	--disable-systray
@@ -233,18 +238,25 @@ USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=	--disable-gstreamer
 .endif
 
-.if defined(WITH_PYUNO)
-USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--with-system-python
+.if defined(WITH_SVG)
+CONFIGURE_ARGS+=	--enable-librsvg=system
+USE_GNOME+=	librsvg2
 .else
-CONFIGURE_ARGS+=	--disable-python
+CONFIGURE_ARGS+=	--enable-librsvg=no
 .endif
 
 .if defined(WITH_GTK) || defined(WITH_GNOME)
-USE_GNOME=	gtk20 desktopfileutils
+USE_GNOME+=	gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gtk
+.endif
+
+.if defined(WITH_GTK3)
+USE_GNOME+=	gtk30 desktopfileutils
+INSTALLS_ICONS=	yes
+.else
+CONFIGURE_ARGS+=	--disable-gtk3
 .endif
 
 .if defined(WITH_WEBDAV)
@@ -264,10 +276,10 @@ CONFIGURE_ARGS+=	--disable-kde4
 .endif
 
 .if defined(WITH_GNOME)
-USE_GNOME+=		gconf2 gnomevfs2
-CONFIGURE_ARGS+=	--enable-gconf --enable-gnome-vfs
+USE_GNOME+=		gconf2
+CONFIGURE_ARGS+=	--enable-gconf
 .else
-CONFIGURE_ARGS+=	--disable-gconf --disable-gnome-vfs
+CONFIGURE_ARGS+=	--disable-gconf --disable-lockdown
 .endif
 
 .if defined(WITH_JAVA)
@@ -334,24 +346,11 @@ CONFIGURE_ARGS+=	--enable-debug \
 			--enable-dbgutil \
 			--enable-verbose \
 			--enable-crashdump
+.else
+CONFIGURE_ARGS+=	--enable-release-build
 .endif
 
 .include <bsd.port.pre.mk>
-pre-fetch:
-.if !defined(LOCALIZED_LANG)
-	@${ECHO_CMD}
-	@${ECHO_CMD} "you can build a localized version of libreoffice by setting"
-	@${ECHO_CMD} "LOCALIZED_LANG=xx"
-	@${ECHO_CMD} "where xx can one or more of the following:"
-	@${ECHO_CMD} "af ar as ast be-BY bg bn bo br brx bs ca-XV ca cs cy da de dgo dz el"
-	@${ECHO_CMD} "en-GB en-ZA eo es et eu fa fi fr ga gl gu he hi-IN hi hr hu id is it"
-	@${ECHO_CMD} "ja ka kid kk km kn ko kok ks ku lo lt lv mai mk ml mn mni mr my nb ne"
-	@${ECHO_CMD} "nl nn nr ns oc om or pa-IN pl pt-BR pt ro ru rw sa-IN sat sd sh si sk"
-	@${ECHO_CMD} "sl sq sr ss st sv sw-TZ ta te tg th tn tr ts ug uk ur-IN uz ve vi xh"
-	@${ECHO_CMD} "zh-CN zh-TW zu"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "Current setting: ${LOCALIZED_LANG}"
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/clone
@@ -362,24 +361,35 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/clone/repos_changed
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#-5.1#${BDB_VER}#g' \
-		-e 's#5.1#${BDB_LIB_NAME:S/db//}#g' \
-			${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e 's#/bin/bash#${LOCALBASE}/bin/bash#' \
-			${WRKSRC}/bin/distro-install-desktop-integration
-
-.if defined(WITH_KDE4)
-	@${REINPLACE_CMD} -e 's#moc,#moc-qt4,#g' \
-		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's#5.1 5.0#${BDB_VER}#g' \
+		 -e 's,"Linux" \&\& test "z$$enable_graphite","FreeBSD" \&\& test "z$$enable_graphite",g' \
+		${WRKSRC}/configure
+#install-gdb-printer is failing
+	@${REINPLACE_CMD} -e "/gdb/d" ${WRKSRC}/solenv/prj/build.lst
+	@${REINPLACE_CMD} -e 's#@SYSTEM_DB_CFLAGS@#@SYSTEM_DB_CFLAGS@ -I${BDB_INCLUDE_DIR}#' \
+			-e 's#@DB_LIB@#${BDB_LIB_NAME}#' \
+			${WRKSRC}/set_soenv.in
+	@${REINPLACE_CMD} -e 's/sha1sum/sha1/g' ${WRKSRC}/configure
+.if defined(WITH_GCC)
+	@${REINPLACE_CMD} -e "s|^LINKFLAGSDEFS:=|LINKFLAGSDEFS:=-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}|" \
+		${WRKSRC}/solenv/inc/unxfbsd.mk
+.else
+	#Visibility is broken with clang
+	@${REINPLACE_CMD} -e "s|HAVE_GCC_VISIBILITY_FEATURE=TRUE|HAVE_GCC_VISIBILITY_FEATURE=FALSE|g" \
+		${WRKSRC}/configure
+		
 .endif
-#	@${LN} -s ${MD5} ${WRKSRC}/bin/md5sum
+
 .if defined(WITH_JAVA)
 	@${REINPLACE_CMD} -e 's/^ANT_OPT/#ANT_OPT/g' \
-		${WRKSRC}/clone/extensions/apache-commons/java/codec/makefile.mk \
-		${WRKSRC}/clone/extensions/apache-commons/java/httpclient/makefile.mk \
-		${WRKSRC}/clone/extensions/apache-commons/java/lang/makefile.mk \
-		${WRKSRC}/clone/extensions/apache-commons/java/logging/makefile.mk
+		${WRKSRC}/apache-commons/java/codec/makefile.mk \
+		${WRKSRC}/apache-commons/java/httpclient/makefile.mk \
+		${WRKSRC}/apache-commons/java/lang/makefile.mk \
+		${WRKSRC}/apache-commons/java/logging/makefile.mk
 .endif
+
+pre-configure:
+	@${TOUCH} ${WRKSRC}/autogen.lastrun
 
 post-configure:
 	@cd ${WRKSRC} && ./bin/create_bootstrap_links
@@ -393,7 +403,7 @@ post-install:
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s lib \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
 
-.for subdir in applications icons mime mimelnk
+.for subdir in icons mimelnk
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND}  -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir} -type d \
 		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
@@ -406,11 +416,7 @@ post-install:
 .endfor
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin \( -type f -o -type l \) -print >> ${PLISTF}
 
-#Fix .desktop files
-	@${FIND} ${LODESTDIR}/${PREFIX} -name *.desktop -type f -exec ${SED} -i .bak -e 's|office34|office|g; s|office3.4|office|g' {} \;
-	@${FIND} ${LODESTDIR}/${PREFIX} -name *.desktop.bak -delete
-
-.if defined(WITH_GTK) || defined(WITH_GNOME)
+.if defined(WITH_GTK) || defined(WITH_GNOME) || defined(WITH_GTK3)
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
@@ -422,8 +428,8 @@ post-install:
 .endfor
 .endif
 
-	@${SORT} ${WRKDIR}/plist_files >> ${TMPPLIST}
-	@${SORT} -r ${WRKDIR}/plist_dirs >> ${TMPPLIST}
+	@${SORT} ${PLISTF} >> ${TMPPLIST}
+	@${SORT} -r ${PLISTD} >> ${TMPPLIST}
 
 .if defined(WITH_SDK)
 .for subdir in include share/idl share/libreoffice share/doc

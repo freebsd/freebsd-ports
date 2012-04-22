@@ -29,6 +29,7 @@
     SUBDIR += kde4-l10n
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
+    SUBDIR += libreoffice
     SUBDIR += med
     SUBDIR += mythes
     SUBDIR += php_doc

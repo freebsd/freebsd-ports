@@ -8,6 +8,7 @@
 .if !defined(NO_VIET_KDE)
     SUBDIR += kde3-i18n
 .endif
+    SUBDIR += libreoffice
     SUBDIR += libviet
     SUBDIR += unicode-uhoai
     SUBDIR += urwvn

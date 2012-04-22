@@ -34,6 +34,7 @@
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
     SUBDIR += ksteak
+    SUBDIR += libreoffice
     SUBDIR += manpages
     SUBDIR += mediathek
     SUBDIR += mythes
