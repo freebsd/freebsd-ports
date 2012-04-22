@@ -101,17 +101,15 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>Due to a lack of proper validation of the X-FORWARDED-FOR
 	    header of an authentication request, an attacker could bypass
 	    the current lockout policy used for protection against brute-
-	    force password discovery. This vulnerability can only be 
-	    exploited if the 'inbound_proxies' parameter is set.
-	  </p>
+	    force password discovery.  This vulnerability can only be
+	    exploited if the 'inbound_proxies' parameter is set.</p>
 	  <h1>Cross Site Scripting</h1>
 	  <p>A JavaScript template used by buglist.cgi could be used
 	    by a malicious script to permit an attacker to gain access
 	    to some information about bugs he would not normally be
-	    allowed to see, using the victim's credentials. To be
+	    allowed to see, using the victim's credentials.  To be
 	    exploitable, the victim must be logged in when visiting
-	    the attacker's malicious page.
-	  </p>
+	    the attacker's malicious page.</p>
 	  <p>All affected installations are encouraged to upgrade as soon as
 	    possible.</p>
 	</blockquote>
@@ -143,20 +141,21 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Typo Security Team reports:</p>
 	<blockquote cite="https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-002/">
-	  <p> Failing to properly encode the output, the default TYPO3 Exception
-         Handler is susceptible to Cross-Site Scripting.  We are not aware of
-         a possibilty to exploit this vulnerability without third party
-         extensions being installed that put user input in exception messages.
-         However it has come to our attention that extensions using the extbase
-         MVC framework can be used to exploit this vulnerability if these
-         extensions accept objects in controller actions.</p>
+	  <p>Failing to properly encode the output, the default TYPO3
+	    Exception Handler is susceptible to Cross-Site Scripting.  We
+	    are not aware of a possibility to exploit this vulnerability
+	    without third party extensions being installed that put user
+	    input in exception messages.  However, it has come to our
+	    attention that extensions using the extbase MVC framework can
+	    be used to exploit this vulnerability if these extensions
+	    accept objects in controller actions.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-	   <cvename>CVE-2012-2112</cvename>
-	   <url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-002/</url>
-    </references>
+      <cvename>CVE-2012-2112</cvename>
+	<url>https://typo3.org/teams/security/security-bulletins/typo3-core/typo3-core-sa-2012-002/</url>
+      </references>
     <dates>
       <discovery>2012-04-17</discovery>
       <entry>2012-04-18</entry>
@@ -205,9 +204,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The phpMyFAQ project reports:</p>
 	<blockquote cite="http://www.phpmyfaq.de/advisory_2011-10-25.php">
-	  <p>The bundled ImageManager library allows injection of arbitrary PHP
-	    code to execute arbitrary php code and upload malware and trojan
-	    horses.</p>
+	  <p>The bundled ImageManager library allows injection of arbitrary
+	    PHP code to execute arbitrary PHP code and upload malware and
+	    trojan horses.</p>
 	</blockquote>
       </body>
     </description>
@@ -230,12 +229,12 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <blockquote cite="http://puppetlabs.com/security/">
+	<blockquote cite="http://puppetlabs.com/security/">
 	  <p>Multiple vulnerabilities exist in puppet that can result in
-	     arbitrary code execution, arbitrary file read access, denial of
-	     service, and arbitrary file write access.  Please review the
-	     details in each of the CVEs for additional information.</p>
-        </blockquote>
+	    arbitrary code execution, arbitrary file read access, denial of
+	    service, and arbitrary file write access.  Please review the
+	    details in each of the CVEs for additional information.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -309,18 +308,16 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://www.bugzilla.org/security/4.0.4/">
 	  <p>The following security issues have been discovered in Bugzilla:</p>
 	  <ul>
-            <li>Due to a lack of validation of the enctype form
-            attribute when making POST requests to xmlrpc.cgi,
-            a possible CSRF vulnerability was discovered. If a user
-            visits an HTML page with some malicious HTML code in it,
-            an attacker could make changes to a remote Bugzilla installation
-            on behalf of the victim's account by using the XML-RPC API
-            on a site running mod_perl. Sites running under mod_cgi
-            are not affected. Also the user would have had to be
-            already logged in to the target site for the vulnerability
-            to work.
-            </li>
-          </ul>
+	    <li>Due to a lack of validation of the enctype form attribute
+	      when making POST requests to xmlrpc.cgi, a possible CSRF
+	      vulnerability was discovered.  If a user visits an HTML page
+	      with some malicious HTML code in it, an attacker could make
+	      changes to a remote Bugzilla installation on behalf of the
+	      victim's account by using the XML-RPC API on a site running
+	      mod_perl.  Sites running under mod_cgi are not affected.
+	      Also, the user would have had to be already logged in to the
+	      target site for the vulnerability to work.</li>
+	  </ul>
 	  <p>All affected installations are encouraged to upgrade as soon as
 	    possible.</p>
 	</blockquote>
@@ -2087,17 +2084,18 @@ Note:  Please add new entries to the beginning of this file.
     <topic>mathopd - directory traversal vulnerability</topic>
     <affects>
       <package>
-        <name>mathopd</name>
-        <range><lt>1.5p7</lt></range>
+	<name>mathopd</name>
+	<range><lt>1.5p7</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Michiel Boland reports:</p>
-        <blockquote cite="http://www.mathopd.org/security.html">
-          <p>The software has a vulnerability that could lead to directory
-	    traversal if the '*' construct for mass virtual hosting is used.</p>
-        </blockquote>
+	<p>Michiel Boland reports:</p>
+	<blockquote cite="http://www.mathopd.org/security.html">
+	  <p>The software has a vulnerability that could lead to directory
+	    traversal if the '*' construct for mass virtual hosting is
+	    used.</p>
+	</blockquote>
       </body>
     </description>
     <references>
@@ -2755,31 +2753,31 @@ Note:  Please add new entries to the beginning of this file.
     <topic>tomcat -- Denial of Service</topic>
     <affects>
       <package>
-        <name>tomcat</name>
-        <range><gt>5.5.0</gt><lt>5.5.35</lt></range>
+	<name>tomcat</name>
+	<range><gt>5.5.0</gt><lt>5.5.35</lt></range>
       </package>
       <package>
-        <name>tomcat</name>
-        <range><gt>6.0.0</gt><lt>6.0.34</lt></range>
+	<name>tomcat</name>
+	<range><gt>6.0.0</gt><lt>6.0.34</lt></range>
       </package>
       <package>
-        <name>tomcat</name>
-        <range><gt>7.0.0</gt><lt>7.0.23</lt></range>
+	<name>tomcat</name>
+	<range><gt>7.0.0</gt><lt>7.0.23</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Tomcat security team reports:</p>
-        <blockquote cite="http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.35">
-          <p>Analysis of the recent hash collision vulnerability identified
-            unrelated inefficiencies with Apache Tomcat's handling of large
-            numbers of parameters and parameter values. These inefficiencies could
-            allow an attacker, via a specially crafted request, to cause large
-            amounts of CPU to be used which in turn could create a denial of
-            service. The issue was addressed by modifying the Tomcat parameter
-            handling code to efficiently process large numbers of parameters and
-            parameter values.</p>
-        </blockquote>
+	<p>The Tomcat security team reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-5.html#Fixed_in_Apache_Tomcat_5.5.35">
+	  <p>Analysis of the recent hash collision vulnerability identified
+	    unrelated inefficiencies with Apache Tomcat's handling of large
+	    numbers of parameters and parameter values.  These inefficiencies
+	    could allow an attacker, via a specially crafted request, to
+	    cause large amounts of CPU to be used which in turn could create
+	    a denial of service.  The issue was addressed by modifying the
+	    Tomcat parameter handling code to efficiently process large
+	    numbers of parameters and parameter values.</p>
+	</blockquote>
       </body>
     </description>
     <references>
