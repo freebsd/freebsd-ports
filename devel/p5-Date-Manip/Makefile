@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date-Manip
-PORTVERSION=	6.30
+PORTVERSION=	6.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SBECK
@@ -29,6 +29,7 @@ MAN3=	Date::Manip.3 Date::Manip::Base.3 Date::Manip::Calc.3 \
 	Date::Manip::DM6.3 Date::Manip::Date.3 \
 	Date::Manip::Delta.3 Date::Manip::Examples.3 \
 	Date::Manip::Holidays.3 Date::Manip::Lang.3 \
+	Date::Manip::Lang::finnish.3 \
 	Date::Manip::Migration5to6.3 Date::Manip::Misc.3 \
 	Date::Manip::Obj.3 Date::Manip::Objects.3 \
 	Date::Manip::Problems.3 Date::Manip::Recur.3 \
