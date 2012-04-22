@@ -1,6 +1,16 @@
---- desktopfiles/Makefile.in.orig	2011-03-31 01:20:37.000000000 -0700
-+++ desktopfiles/Makefile.in	2011-03-31 01:21:48.000000000 -0700
-@@ -54,7 +54,7 @@
+--- desktopfiles/Makefile.in.orig	2012-04-09 20:56:55.000000000 -0700
++++ desktopfiles/Makefile.in	2012-04-21 20:39:20.000000000 -0700
+@@ -50,14 +50,14 @@
+ 
+ hi32-djview4.png hi64-djview4.png: djview.svg
+ 	s=`echo $@ | sed -e 's/[a-z]*\([0-9]*\).*/\1/'`; \
+-	  ${RSVG} -w $${s} -h $${s} -o $@ $< \
+-	  || ${CONVERT} -geometry $${s}x$${s} -depth 8 -background none $< $@ \
++	  ${RSVG} -w $${s} -h $${s} -o $@ $> \
++	  || ${CONVERT} -geometry $${s}x$${s} -depth 8 -background none $> $@ \
+ 	  || ${INKSCAPE} --without-gui --export-width=$${s} \
+-                         --export-height=$${s} --export-png=$@ $< \
++                         --export-height=$${s} --export-png=$@ $> \
  	  || cp ${srcdir}/prebuilt-$@ $@
  
  hi-djview4.svgz: djview.svg
@@ -9,7 +19,7 @@
  
  register-djview-menu: register-djview-menu.in
  	sed < ${srcdir}/register-djview-menu.in > register-djview-menu \
-@@ -71,10 +71,10 @@
+@@ -74,10 +74,10 @@
  
  install-djview-files: FORCE
  	${INSTALL} -d ${DESTDIR}${datadir_djview}

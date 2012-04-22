@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djview
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	graphics
 MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
 
@@ -30,6 +30,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+
+WRKSRC=		${WRKDIR}/djview4-${PORTVERSION}
 
 .if defined(CXX) && ${CXX:M*icc}
 QMAKESPEC?=	freebsd-icc
