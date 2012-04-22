@@ -1,115 +1,124 @@
-# New ports collection makefile for:	emulators/linux_base-f10
-# Date created:				2009-04-30
-# Whom:					bsam
+# New ports collection makefile for:	emulators/linux_base-c6
+# Date created:				2012-03-10
+# Whom:					Svyatoslav Lempert <svyatoslav.lempert@gmail dot com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		f10
-PORTVERSION=		10
-PORTREVISION=		4
+PORTNAME=		c6
+PORTVERSION=		6.2
 CATEGORIES=		emulators linux
-MASTER_SITES=		CRITICAL/rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
+MASTER_SITES=		http://mirror.yandex.ru/centos/${PORTVERSION}/os/i386/Packages/ \
+			http://mirrors.kernel.org/centos/${PORTVERSION}/os/i386/Packages/ \
+			http://mirror.centos.org/centos/${PORTVERSION}/os/i386/Packages/
+			
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
-DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
+DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/centos/${PORTVERSION}
 EXTRACT_ONLY=		${BIN_DISTFILES}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux Fedora 10)
+COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 6.2)
 
-BIN_DISTFILES=	basesystem-10.0-1.noarch.rpm \
-		bash-3.2-30.fc10.${LINUX_RPM_ARCH}.rpm \
-		bzip2-1.0.5-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		bzip2-libs-1.0.5-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		compat-db-4.6.21-5.fc10.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-296-2.96-141.${LINUX_RPM_ARCH}.rpm \
-		compat-libstdc++-33-3.2.3-64.${LINUX_RPM_ARCH}.rpm \
-		coreutils-6.12-20.fc10.${LINUX_RPM_ARCH}.rpm \
-		db4-4.7.25-7.fc10.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-1.41.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-libs-1.41.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		elfutils-0.142-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		fedora-release-10-1.noarch.rpm \
-		filesystem-2.4.19-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		freetype-2.3.7-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		gdbm-1.8.0-29.fc10.${LINUX_RPM_ARCH}.rpm \
-		glib-1.2.10-32.fc10.${LINUX_RPM_ARCH}.rpm \
-		glib2-2.18.4-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		glibc-2.9-3.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.9-3.${LINUX_RPM_ARCH}.rpm \
-		grep-2.5.1a-61.fc10.${LINUX_RPM_ARCH}.rpm \
-		info-4.12-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		keyutils-libs-1.2-3.fc9.${LINUX_RPM_ARCH}.rpm \
-		krb5-libs-1.6.3-18.fc10.${LINUX_RPM_ARCH}.rpm \
-		libacl-2.2.47-3.fc10.${LINUX_RPM_ARCH}.rpm \
-		libattr-2.4.43-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		libcap-2.10-2.fc10.${LINUX_RPM_ARCH}.rpm \
-		libgcc-4.3.2-7.${LINUX_RPM_ARCH}.rpm \
-		libidn-0.6.14-8.${LINUX_RPM_ARCH}.rpm \
-		libselinux-2.0.78-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libsepol-2.0.33-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		libstdc++-4.3.2-7.${LINUX_RPM_ARCH}.rpm \
-		ncurses-5.6-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm \
-		ncurses-libs-5.6-20.20080927.fc10.${LINUX_RPM_ARCH}.rpm \
-		pcre-7.8-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		popt-1.13-4.fc10.${LINUX_RPM_ARCH}.rpm \
-		readline-5.2-13.fc9.${LINUX_RPM_ARCH}.rpm \
-		setserial-2.17-22.fc9.${LINUX_RPM_ARCH}.rpm \
-		setup-2.7.4-4.fc10.noarch.rpm \
-		slang-2.1.4-1.fc10.${LINUX_RPM_ARCH}.rpm \
-		zlib-1.2.3-18.fc9.${LINUX_RPM_ARCH}.rpm
+BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
+		bash-4.1.2-8.el6.centos.${LINUX_RPM_ARCH}.rpm \
+		bzip2-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
+		bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
+		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-33-3.2.3-69.el6.${LINUX_RPM_ARCH}.rpm \
+		compat-libstdc++-296-2.96-144.el6.${LINUX_RPM_ARCH}.rpm \
+		coreutils-8.4-16.el6.${LINUX_RPM_ARCH}.rpm \
+		db4-4.7.25-16.el6.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-1.41.12-11.el6.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.41.12-11.el6.${LINUX_RPM_ARCH}.rpm \
+		elfutils-0.152-1.el6.${LINUX_RPM_ARCH}.rpm \
+		centos-release-6-2.el6.centos.7.${LINUX_RPM_ARCH}.rpm \
+		filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
+		freetype-2.3.11-6.el6_1.7.${LINUX_RPM_ARCH}.rpm \
+		gdbm-1.8.0-36.el6.${LINUX_RPM_ARCH}.rpm \
+		glib2-2.22.5-6.el6.${LINUX_RPM_ARCH}.rpm \
+		glibc-2.12-1.47.el6.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.12-1.47.el6.${LINUX_RPM_ARCH}.rpm \
+		grep-2.6.3-2.el6.${LINUX_RPM_ARCH}.rpm \
+		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
+		keyutils-1.4-3.el6.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.9-22.el6.${LINUX_RPM_ARCH}.rpm \
+		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
+		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
+		libcap-2.16-5.5.el6.${LINUX_RPM_ARCH}.rpm \
+		libgcc-4.4.6-3.el6.${LINUX_RPM_ARCH}.rpm \
+		libidn-1.18-2.el6.${LINUX_RPM_ARCH}.rpm \
+		libselinux-2.0.94-5.2.el6.${LINUX_RPM_ARCH}.rpm \
+		libsepol-2.0.41-4.el6.${LINUX_RPM_ARCH}.rpm \
+		libstdc++-4.4.6-3.el6.${LINUX_RPM_ARCH}.rpm \
+		ncurses-5.7-3.20090208.el6.${LINUX_RPM_ARCH}.rpm \
+		ncurses-libs-5.7-3.20090208.el6.${LINUX_RPM_ARCH}.rpm \
+		pcre-7.8-3.1.el6.${LINUX_RPM_ARCH}.rpm \
+		popt-1.13-7.el6.${LINUX_RPM_ARCH}.rpm \
+		readline-6.0-3.el6.${LINUX_RPM_ARCH}.rpm \
+		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
+		setup-2.8.14-13.el6.noarch.rpm \
+		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
+		zlib-1.2.3-27.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
 
-MASTER_SITE_SUBDIR+= ../updates/${PORTVERSION}/SRPMS \
-		../releases/${PORTVERSION}/Everything/source/SRPMS/
+MASTER_SITES+=	http://vault.centos.org/6.2/os/Source/SPackages/
 
-SRC_DISTFILES+=	acl-2.2.47-3.fc10.src.rpm \
-		attr-2.4.43-1.fc10.src.rpm \
-		basesystem-10.0-1.src.rpm \
-		bash-3.2-29.fc10.src.rpm \
-		bzip2-1.0.5-3.fc10.src.rpm \
-		compat-db-4.6.21-5.fc10.src.rpm \
-		coreutils-6.12-17.fc10.src.rpm \
-		db4-4.7.25-5.fc10.src.rpm \
-		e2fsprogs-1.41.4-6.fc10.src.rpm \
-		elfutils-0.142-1.fc10.src.rpm \
-		fedora-release-10-1.src.rpm \
-		filesystem-2.4.19-1.fc10.src.rpm \
-		freetype-2.3.7-1.fc10.src.rpm \
-		gcc-4.3.2-7.src.rpm \
-		gdbm-1.8.0-29.fc10.src.rpm \
-		glib-1.2.10-32.fc10.src.rpm \
-		glib2-2.18.2-3.fc10.src.rpm \
-		glibc-2.9-2.src.rpm \
-		grep-2.5.1a-61.fc10.src.rpm \
-		keyutils-1.2-3.fc9.src.rpm \
-		krb5-1.6.3-16.fc10.src.rpm \
-		libcap-2.10-2.fc10.src.rpm \
-		libidn-0.6.14-8.src.rpm \
-		libselinux-2.0.73-1.fc10.src.rpm \
-		libsepol-2.0.33-1.fc10.src.rpm \
-		ncurses-5.6-20.20080927.fc10.src.rpm \
-		pcre-7.8-1.fc10.src.rpm \
-		readline-5.2-13.fc9.src.rpm \
-		setserial-2.17-22.fc9.src.rpm \
-		setup-2.7.4-1.fc10.src.rpm \
-		slang-2.1.4-1.fc10.src.rpm \
-		texinfo-4.12-4.fc10.src.rpm \
-		zlib-1.2.3-18.fc9.src.rpm
+SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
+		bash-4.1.2-8.el6.centos.src.rpm \
+		bzip2-1.0.5-7.el6_0.src.rpm \
+		coreutils-8.4-16.el6.src.rpm \
+		db4-4.7.25-16.el6.src.rpm \
+		e2fsprogs-1.41.12-11.el6.src.rpm \
+		elfutils-0.152-1.el6.src.rpm \
+		centos-release-6-2.el6.centos.7.src.rpm \
+		filesystem-2.4.30-3.el6.src.rpm \
+		freetype-2.3.11-6.el6_1.7.src.rpm \
+		gdbm-1.8.0-36.el6.src.rpm \
+		glib2-2.22.5-6.el6.src.rpm \
+		glibc-2.12-1.47.el6.src.rpm \
+		grep-2.6.3-2.el6.src.rpm \
+		texinfo-4.13a-8.el6.src.rpm \
+		keyutils-1.4-3.el6.src.rpm \
+		krb5-1.9-22.el6.src.rpm \
+		acl-2.2.49-6.el6.src.rpm \
+		attr-2.4.44-7.el6.src.rpm \
+		libcap-2.16-5.5.el6.src.rpm \
+		gcc-4.4.6-3.el6.src.rpm \
+		libidn-1.18-2.el6.src.rpm \
+		libselinux-2.0.94-5.2.el6.src.rpm \
+		libsepol-2.0.41-4.el6.src.rpm \
+		ncurses-5.7-3.20090208.el6.src.rpm \
+		pcre-7.8-3.1.el6.src.rpm \
+		popt-1.13-7.el6.src.rpm \
+		readline-6.0-3.el6.src.rpm \
+		setserial-2.17-25.el6.src.rpm \
+		setup-2.8.14-13.el6.src.rpm \
+		slang-2.2.1-1.el6.src.rpm \
+		zlib-1.2.3-27.el6.src.rpm
 
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=		linux_base-gentoo* linux_base-fc4-[0-9]* linux_base-fc6-[0-9]* \
-			linux_base-f7-[0-9]* linux_base-f8-[0-9]* linux_base-f9-[0-9]* linux-glib2-*
+CONFLICTS=              linux_base-gentoo* linux_base-f* linux-glib2-*
+
 ONLY_FOR_ARCHS=		i386 amd64
-LINUX_RPM_ARCH=		i386
+LINUX_RPM_ARCH=		i686
 USE_LINUX_PREFIX=	yes
 NO_WRKSUBDIR=		yes
 DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
-PLIST_SUB=		GLIBCVER="2.9"
+PLIST_SUB=		GLIBCVER="2.12"
+
+# TODO:
+# - find remaining SRC RPMs
+# - move master sites to bsd.sites.mk
+# - add 2-3 mirrors from each country (http://www.centos.org/modules/tinycontent/index.php?id=31)
+# - create centos infrastructure in bsd.linux*.mk
+# - look for updates in the updates folder of the CentOS mirrors
+# - research what are the important differences between 2.6.16 and 2.6.18, and
+#   if we need to add something to the linuxulator
+
 
 RPM2CPIO?=		${LOCALBASE}/bin/rpm2cpio
 
@@ -129,7 +138,9 @@ LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 .if ${LINUX_OSRELEASE}x == "x"
 IGNORE=			linuxulator is not (kld)loaded
 .elif ${LINUX_OSRELEASE} == "2.4.2"
-IGNORE=			compat.linux.osrelease: 2.4.2 is not supported, please use 2.6.16
+IGNORE=			compat.linux.osrelease: ${LINUX_OSRELEASE} is not supported, please use 2.6.18, BEWARE this is highly experimental
+.elif ${LINUX_OSRELEASE} == "2.6.16"
+IGNORE=			compat.linux.osrelease: ${LINUX_OSRELEASE} is not supported, please use 2.6.18, BEWARE this is highly experimental
 .endif
 
 REMOVE_DIRS=		boot dev etc/fonts home initrd media root tmp var/log var/run var/tmp \
@@ -180,10 +191,8 @@ do-build:
 	@${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf.sample ${WRKSRC}/etc
 	@${TOUCH} ${WRKSRC}/etc/mtab
 #
-# If ${PREFIX}/etc/nsswitch.conf exists, don't touch it,
-# install only ${PREFIX}/etc/nsswitch.conf.dist
+# If ${PREFIX}/etc/krb5.conf exists, don't touch it
 #
-	@${MV} ${WRKSRC}/etc/nsswitch.conf ${WRKSRC}/etc/nsswitch.conf.dist
 	@${MV} ${WRKSRC}/etc/krb5.conf ${WRKSRC}/etc/krb5.conf.dist
 
 # Fix usr/bin/*db4* permissions to allow "portupgrade -s"
@@ -193,7 +202,7 @@ do-build:
 		${WRKSRC}/usr/sbin -type f -print0 | ${XARGS} -0 ${FILE} \
 		| ${GREP} ELF | ${CUT} -d : -f 1 \
 		| ${XARGS} ${BRANDELF} -t Linux
-	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.9.so
+	@${BRANDELF} -t Linux ${WRKSRC}/lib/ld-2.12.so
 
 # Restore the status quo for usr/bin/*db4* files
 #	@${CHMOD} u-w ${WRKSRC}/usr/bin/*db4*
