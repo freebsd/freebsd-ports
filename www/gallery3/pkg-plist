@@ -192,6 +192,7 @@
 %%WWWDIR%%/modules/gallery/helpers/MY_num.php
 %%WWWDIR%%/modules/gallery/helpers/MY_remote.php
 %%WWWDIR%%/modules/gallery/helpers/MY_url.php
+%%WWWDIR%%/modules/gallery/helpers/MY_valid.php
 %%WWWDIR%%/modules/gallery/helpers/access.php
 %%WWWDIR%%/modules/gallery/helpers/album.php
 %%WWWDIR%%/modules/gallery/helpers/auth.php
@@ -217,6 +218,7 @@
 %%WWWDIR%%/modules/gallery/helpers/json.php
 %%WWWDIR%%/modules/gallery/helpers/l10n_client.php
 %%WWWDIR%%/modules/gallery/helpers/l10n_scanner.php
+%%WWWDIR%%/modules/gallery/helpers/legal_file.php
 %%WWWDIR%%/modules/gallery/helpers/locales.php
 %%WWWDIR%%/modules/gallery/helpers/log.php
 %%WWWDIR%%/modules/gallery/helpers/message.php
@@ -239,11 +241,13 @@
 %%WWWDIR%%/modules/gallery/images/graphicsmagick.png
 %%WWWDIR%%/modules/gallery/images/imagemagick.jpg
 %%WWWDIR%%/modules/gallery/images/missing_movie.png
+%%WWWDIR%%/modules/gallery/images/missing_photo.png
 %%WWWDIR%%/modules/gallery/js/albums_form_add.js
 %%WWWDIR%%/modules/gallery/js/item_form_delete.js
 %%WWWDIR%%/modules/gallery/js/l10n_client.js
 %%WWWDIR%%/modules/gallery/libraries/Admin_View.php
 %%WWWDIR%%/modules/gallery/libraries/Block.php
+%%WWWDIR%%/modules/gallery/libraries/Breadcrumb.php
 %%WWWDIR%%/modules/gallery/libraries/Form_Script.php
 %%WWWDIR%%/modules/gallery/libraries/Form_Uploadify.php
 %%WWWDIR%%/modules/gallery/libraries/Form_Uploadify_buttons.php
@@ -281,6 +285,7 @@
 %%WWWDIR%%/modules/gallery/models/theme.php
 %%WWWDIR%%/modules/gallery/models/var.php
 %%WWWDIR%%/modules/gallery/module.info
+%%WWWDIR%%/modules/gallery/vendor/joomla/crypt.php
 %%WWWDIR%%/modules/gallery/views/admin_advanced_settings.html.php
 %%WWWDIR%%/modules/gallery/views/admin_block_log_entries.html.php
 %%WWWDIR%%/modules/gallery/views/admin_block_news.html.php
@@ -842,6 +847,8 @@
 @dirrm %%WWWDIR%%/modules/image_block
 @dirrm %%WWWDIR%%/modules/gallery/views/kohana
 @dirrm %%WWWDIR%%/modules/gallery/views
+@dirrm %%WWWDIR%%/modules/gallery/vendor/joomla
+@dirrm %%WWWDIR%%/modules/gallery/vendor
 @dirrm %%WWWDIR%%/modules/gallery/models
 @dirrm %%WWWDIR%%/modules/gallery/libraries/drivers/Cache
 @dirrm %%WWWDIR%%/modules/gallery/libraries/drivers
