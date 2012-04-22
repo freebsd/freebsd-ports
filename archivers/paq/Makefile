@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20120326
+PORTVERSION=	20120404
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
 DISTFILES=	libzpaq501.zip wbpe110.zip zpaq404.zip zpipe.201.zip
 .if !defined(NOPORTDATA) || make(makesum)
 DISTFILES+=	bmp_j4a.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 		calgarytest.zpaq calgarytest2.zpaq exe_j1.zip fast.cfg \
-		jpg_test2.zip lz1.zip max.cfg mid.cfg min.zip zpsfx.100.zip
+		jpg_test2.zip lz1.zip max.cfg mid.cfg min.zip zpsfx.100.zip \
+		zpsfx101.cpp
 .endif
 .if !defined(NOPORTDOCS) || make(makesum)
 DISTFILES+=	zpaq1.pdf zpaq200.pdf
@@ -75,8 +76,9 @@ DDATA=	fast.cfg max.cfg mid.cfg
 PORTDATA=	${WDATA} ${DDATA} zpsfx
 .endif
 
-.if !defined(NOPORTDOCS)
 post-extract:
+	@${CP} ${_DISTDIR}/zpsfx101.cpp ${WRKSRC}/zpsfx.cpp
+.if !defined(NOPORTDOCS)
 .for r in ${READMES}
 	@${UNZIP_CMD} -pq  ${_DISTDIR}/${r}.zip readme.txt > ${WRKSRC}/readme_${r:R}.txt
 .endfor

@@ -1,6 +1,6 @@
---- zpsfx.cpp.orig	2011-03-30 19:27:34.000000000 -0400
-+++ zpsfx.cpp	2011-03-30 19:28:24.000000000 -0400
-@@ -15,19 +15,38 @@
+--- zpsfx.cpp.orig	2012-04-09 04:01:23.000000000 -0400
++++ zpsfx.cpp	2012-04-09 04:02:25.000000000 -0400
+@@ -16,19 +16,38 @@
  the executable smaller. -DNDEBUG turns off run time checks.
  To convert a ZPAQ archive to a self extracting archive:
  
@@ -39,3 +39,39 @@
  The program reads itself and decompresses the appended archive.
  You must enter the .exe extension as shown. If the file is not in
  the current folder then you need to specify the path. The PATH environment
+@@ -44,7 +63,11 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string>
++#ifdef unix
++#include <sys/stat.h>
++#else
+ #include <windows.h>
++#endif
+ 
+ // An error handler is required as shown in this example. libzpaq will
+ // call it with an English language message in case of a fatal error.
+@@ -96,7 +119,11 @@
+ 
+ // Return '/' in Linux or '\' in Windows
+ char slash() {
++#ifdef unix
++  return '/';
++#else
+   return '\\';
++#endif
+ }
+ 
+ // Create directories as needed. For example if path="/tmp/foo/bar"
+@@ -106,7 +133,11 @@
+   for (int i=0; i<path.size(); ++i) {
+     if (path[i]=='\\' || path[i]=='/') {
+       path[i]=0;
++#ifdef unix
++      int ok=!mkdir(path.c_str(), 0777);
++#else
+       int ok=CreateDirectory(path.c_str(), 0);
++#endif
+       path[i]=slash();
+     }
+   }
