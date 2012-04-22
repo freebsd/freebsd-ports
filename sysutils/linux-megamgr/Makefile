@@ -8,16 +8,11 @@
 PORTNAME=		linux-megamgr
 PORTVERSION=		5.20
 CATEGORIES=		sysutils linux
-MASTER_SITES=		http://www.lsi.com/DistributionSystem/AssetDocument/files/support/rsa/utilities/megamgr/
+MASTER_SITES=		http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/
 DISTNAME=		ut_linux_mgr_5.20
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		LSI MegaRAID controller management utility
-
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=			fails to fetch
 
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
