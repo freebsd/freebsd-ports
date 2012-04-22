@@ -18,6 +18,10 @@ RUN_DEPENDS=	\
 	p5-Digest-SHA1>0:${PORTSDIR}/security/p5-Digest-SHA1 \
 	p5-Plack>=0.9910:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
