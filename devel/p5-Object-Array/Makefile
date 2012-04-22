@@ -7,6 +7,7 @@
 
 PORTNAME=	Object-Array
 PORTVERSION=	0.060
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Array references with accessors
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/Sub/Exporter.pm:${PORTSDIR}/devel/p5-Sub-Exporter \
-		${SITE_PERL}/Sub/Install.pm:${PORTSDIR}/devel/p5-Sub-Install \
-		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
+		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
