@@ -19,6 +19,9 @@ RUN_DEPENDS=	\
 	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 	p5-Statistics-Basic>0:${PORTSDIR}/math/p5-Statistics-Basic
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-Test-Pod>0:${PORTSDIR}/devel/p5-Test-Pod \
+	p5-Test-Pod-Coverage>0:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
