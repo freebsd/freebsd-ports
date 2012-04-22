@@ -114,7 +114,6 @@ DISTINFO_FILE?=		${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 PLIST_SUB=		GLIBCVER="2.12"
 
 # TODO:
-# - find remaining SRC RPMs
 # - move master sites to bsd.sites.mk
 # - add 2-3 mirrors from each country (http://www.centos.org/modules/tinycontent/index.php?id=31)
 # - create centos infrastructure in bsd.linux*.mk
