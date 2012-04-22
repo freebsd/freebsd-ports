@@ -4,8 +4,6 @@ bin/hello
 %%NLS%%share/locale/da/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/de/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/el/LC_MESSAGES/hello.mo
-%%NLS%%share/locale/en@boldquot/LC_MESSAGES/hello.mo
-%%NLS%%share/locale/en@quot/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/es/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/et/LC_MESSAGES/hello.mo
@@ -31,7 +29,6 @@ bin/hello
 %%NLS%%share/locale/pl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/hello.mo
-%%NLS%%share/locale/rm/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/hello.mo
