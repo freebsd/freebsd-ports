@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.31
+PORTVERSION=	3.21.41
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/ \
+MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/\
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
@@ -17,20 +17,16 @@ COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	 samplerate:${PORTSDIR}/audio/libsamplerate
-
-
-BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/lib/fltk11/libfltk.so:${PORTSDIR}/x11-toolkits/fltk11
-
+BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
+		xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate\
+		fltk:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	FLTK_CONFIG="/usr/local/bin/fltk11/fltk-config"
-
-MAN1=		fldigi.1 
+CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
+MAN1=		fldigi.1
 
 OPTIONS=	NATIVE_OPT	"Enable Native Optimizations"		off \
 		NLS		"Use NLS"				off \
@@ -43,7 +39,6 @@ OPTIONS=	NATIVE_OPT	"Enable Native Optimizations"		off \
 		HAMLIB		"Support rig control via hamlib"	on \
 
 .include <bsd.port.pre.mk>
-
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Fails to install
@@ -127,8 +122,7 @@ post-configure:
 		-e 's|^CPPFLAGS|#CPPFLAGS|' \
 		${WRKSRC}/src/Makefile
 # force rebuild of man pages
-	rm ${WRKSRC}/doc/*.1
-
+	${RM} ${WRKSRC}/doc/*.1
 
 post-install:
 .if	!defined(NOPORTDOCS)
