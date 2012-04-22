@@ -83,6 +83,7 @@
     SUBDIR += linux-vmware-toolbox5
     SUBDIR += linux-vmware-toolbox6
     SUBDIR += linux-xjoypad
+    SUBDIR += linux_base-c6
     SUBDIR += linux_base-f10
     SUBDIR += linux_base-fc4
     SUBDIR += linux_base-gentoo-stage3
