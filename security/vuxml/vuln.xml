@@ -3514,7 +3514,6 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>seamonkey</name>
 	<range><lt>2.6</lt></range>
-p
       </package>
       <package>
 	<name>thunderbird</name>
