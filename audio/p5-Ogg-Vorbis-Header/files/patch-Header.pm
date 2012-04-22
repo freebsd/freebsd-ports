@@ -7,7 +7,7 @@
 -					LIBS => '-logg -lvorbis -lvorbisfile',
 -					INC => '-I/inc',
 +					LIBS => '-L${LOCALBASE}/lib -logg -lvorbis -lvorbisfile',
-+					INC => '-I/inc -I${LOCALBASE}/include',
++					INC => '-I${LOCALBASE}/include',
  					AUTO_INCLUDE => '#include "inc/vcedit.h"',
  					AUTO_INCLUDE => '#include "inc/vcedit.c"',
  					VERSION => '0.03',

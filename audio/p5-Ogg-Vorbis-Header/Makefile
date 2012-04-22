@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
 
+BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
-BUILD_DEPENDS=	${SITE_PERL}/Inline/MakeMaker.pm:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Ogg::Vorbis::Header.3
