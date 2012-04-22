@@ -16,13 +16,16 @@ COMMENT=		LSI MegaRAID controller management utility
 
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
-RESTRICTED=		Redistribution prohibited, see: http://www.lsi.com/cm/License.do
+RESTRICTED=		Redistribution seems to be prohibited
 ONLY_FOR_ARCHS=		i386 amd64
 USE_LINUX=		yes
 SUB_FILES=		megamgr.sh
+USE_DOS2UNIX=		ut_linux_mgr_5.20.txt
 
 do-build:
-	@${BRANDELF} -t Linux ${WRKSRC}/megamgr.bin
+	${CHMOD} 755 ${WRKSRC}/megamgr.bin
+	${BRANDELF} -t Linux ${WRKSRC}/megamgr.bin
+	${REINPLACE_CMD} -E -e 's,[[:blank:]]+$$,,' ${WRKSRC}/ut_linux_mgr_5.20.txt
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/megamgr.sh ${PREFIX}/sbin/megamgr
@@ -33,12 +36,22 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/${DISTNAME}.txt ${DOCSDIR}/readme.txt
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 601000
 IGNORE=			needs at least FreeBSD 6.1 and amr_linux.ko
 .endif
+
+pre-fetch:
+	#
+	# You may need to accept LSI's End-User License Agreement
+	# before downloading. If the automatic fetching fails,
+	# please, paste the following URL into your browser:
+	#
+	#	${MASTER_SITES}${_DISTFILES}
+	#
+	# and save the downloaded file into ${DISTDIR}/
+	#
 
 .include <bsd.port.post.mk>
