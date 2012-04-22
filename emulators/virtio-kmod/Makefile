@@ -13,14 +13,16 @@ MASTER_SITE_SUBDIR=	kuriyama
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	virtio kernel modules port for 8.2/9.0
+COMMENT=	virtio kernel modules port for 8.[23]/9.0
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}
-SVN_REV=	228301
+SVN_REV=	234349
 KMODDIR?=	/boot/modules
 PLIST_SUB=	KMODDIR=${KMODDIR:C,^/,,}
+NEEDSUBDIRS=	amd64 conf contrib dev/pci geom i386 kern net netinet netinet6 \
+	sys tools vm x86
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
@@ -28,13 +30,20 @@ IGNORE=		requires kernel source to be installed
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} != "8.2" && ${OSREL} != "9.0"
+.if ${OSREL} != "8.2" && ${OSREL} != "8.3" && ${OSREL} != "9.0"
 IGNORE=		not supported $${OSREL} (${OSREL})
+.endif
+.if ${OSREL} == "8.2"
+SVN_REV=	228301
+#SVN_REV=	232470
+#SVN_REV=	228301
 .endif
 
 post-extract:
-	cd ${WRKSRC} && ${MKDIR} tmp && ${MV} dev modules tmp/
-	${CP} -Rp ${SRC_BASE}/sys ${WRKSRC}/
+	cd ${WRKSRC} && ${MKDIR} sys/dev tmp && ${MV} dev modules tmp/
+	for d in ${NEEDSUBDIRS}; do \
+		${CP} -Rp ${SRC_BASE}/sys/${d} ${WRKSRC}/sys/${d}; \
+	done
 	${CP} -Rp ${WRKSRC}/tmp/* ${WRKSRC}/sys/
 
 do-build:
