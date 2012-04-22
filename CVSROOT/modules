@@ -14526,6 +14526,7 @@ p5-Term-Encoding                ports/devel/p5-Term-Encoding
 p5-Term-Menus                   ports/devel/p5-Term-Menus
 p5-Term-ProgressBar             ports/devel/p5-Term-ProgressBar
 p5-Term-Prompt                  ports/devel/p5-Term-Prompt
+p5-Term-QRCode                  ports/textproc/p5-Term-QRCode
 p5-Term-Query                   ports/devel/p5-Term-Query
 p5-Term-RawInput                ports/devel/p5-Term-RawInput
 p5-Term-ReadKey                 ports/devel/p5-Term-ReadKey
@@ -19076,6 +19077,7 @@ p5-term-encoding                ports/devel/p5-Term-Encoding
 p5-term-menus                   ports/devel/p5-Term-Menus
 p5-term-progressbar             ports/devel/p5-Term-ProgressBar
 p5-term-prompt                  ports/devel/p5-Term-Prompt
+p5-term-qrcode                  ports/textproc/p5-Term-QRCode
 p5-term-query                   ports/devel/p5-Term-Query
 p5-term-rawinput                ports/devel/p5-Term-RawInput
 p5-term-readkey                 ports/devel/p5-Term-ReadKey
@@ -19900,6 +19902,9 @@ pamtester                       ports/security/pamtester
 pan                             ports/news/pan
 pancho                          ports/net-mgmt/pancho
 panda                           ports/print/panda
+pandorafms_agent                ports/net-mgmt/pandorafms_agent
+pandorafms_console              ports/net-mgmt/pandorafms_console
+pandorafms_server               ports/net-mgmt/pandorafms_server
 pango                           ports/x11-toolkits/pango
 pango-reference                 ports/x11-toolkits/pango-reference
 pangomm                         ports/x11-toolkits/pangomm
@@ -25530,7 +25535,6 @@ socketbind                      ports/net/socketbind
 socketpipe                      ports/net/socketpipe
 sockets                         ports/net/Sockets
 socklog                         ports/sysutils/socklog
-socks5                          ports/net/socks5
 sodipodi                        ports/graphics/sodipodi
 softfail                        ports/mail/softfail
 softflowd                       ports/net-mgmt/softflowd
@@ -27507,6 +27511,7 @@ wmfuzzy                         ports/x11-clocks/wmfuzzy
 wmget                           ports/ftp/wmget
 wmglobe                         ports/astro/wmglobe
 wmgrabimage                     ports/graphics/wmgrabimage
+wmi-client                      ports/net-mgmt/wmi-client
 wmicons                         ports/graphics/wmicons
 wmii                            ports/x11-wm/wmii
 wmii-devel                      ports/x11-wm/wmii-devel
