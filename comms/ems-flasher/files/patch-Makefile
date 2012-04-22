@@ -1,0 +1,17 @@
+--- Makefile.orig	2012-03-22 18:15:08.163459495 -0400
++++ Makefile	2012-03-22 18:15:36.050459158 -0400
+@@ -1,13 +1,10 @@
+ PROG = ems-flasher
+ OBJS = ems.o main.o
+ 
+-CFLAGS  = -g -Wall -Werror
+-CFLAGS += `pkg-config --cflags libusb-1.0`
+-
+ all: $(PROG)
+ 
+ $(PROG): $(OBJS)
+-	$(CC) -o $(PROG) $(OBJS) `pkg-config --libs libusb-1.0`
++	$(CC) -o $(PROG) $(OBJS) $(LDFLAGS)
+ 
+ clean:
+ 	rm -f $(PROG) $(OBJS)

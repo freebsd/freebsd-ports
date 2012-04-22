@@ -30,6 +30,7 @@
     SUBDIR += echolinux
     SUBDIR += efax
     SUBDIR += efax-gtk
+    SUBDIR += ems-flasher
     SUBDIR += esmska
     SUBDIR += fldigi
     SUBDIR += flwrap
