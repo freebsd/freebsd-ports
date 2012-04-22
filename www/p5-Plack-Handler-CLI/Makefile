@@ -19,6 +19,10 @@ RUN_DEPENDS=	\
 	p5-Plack>=0.99:${PORTSDIR}/www/p5-Plack \
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-HTTP-Request-AsCGI>0:${PORTSDIR}/www/p5-HTTP-Request-AsCGI \
+	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
