@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	285.05.09
+DISTVERSION?=	295.40
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -98,14 +98,14 @@ LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/nv-freebsd.h
-# Adjust for updated d_mmap() in recent -CURRENT
+# Adjust legacy drivers for updated d_mmap() since early 9.X
 .if ${OSVERSION} > 900005 && ${NVVERSION} < 1952200
 	${REINPLACE_CMD} -e 's/vm_offset_t offset/vm_ooffset_t offset/ ; \
 		s/vm_offset_t \*address/vm_paddr_t *address/ ; \
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
 .endif
-# Catch up with FreeBSD SVN r225617
+# Catch up legacy drivers with FreeBSD SVN r225617
 .if ${OSVERSION} > 900043 && ${NVVERSION} < 1952200
 	${REINPLACE_CMD} -e '/return/s/ioctl/sys_&/' \
 		${WRKSRC}/src/nvidia_linux.c
@@ -128,11 +128,12 @@ post-patch: .SILENT
 .endif
 	${REINPLACE_CMD} -e '/exists/s/$$/ \&\& !defined(WITHOUT_LINUX)/' \
 		${WRKSRC}/lib/Makefile
+# Do not install VDPAU libraries, they are provided by `multimedia/libvdpau'
 .if ${NVVERSION} >= 1802900
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 .endif
-# Don't build any binaries (native nvidia-settings and nvidia-xconfig are
+# Do not build any binaries (native nvidia-settings and nvidia-xconfig are
 # provided by corresponding ports) and manuals
 .if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
