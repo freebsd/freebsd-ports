@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	dynare
-PORTVERSION=	4.2.4
+PORTVERSION=	4.2.5
 CATEGORIES=	math
-MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/dynare-4.2.4.tar.gz/at_download/file
+MASTER_SITES=	http://www.dynare.org/download/dynare-4.2/source/${DISTNAME}.tar.gz/at_download/file
 
 MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
