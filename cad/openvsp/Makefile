@@ -1,0 +1,46 @@
+# Port makefile for:	openvsp
+# Date created:		Apr 10 2012
+# Whom:			Fernando Apesteguia <fernando.apesteguia@gmail.com>
+#
+# $FreeBSD$
+
+PORTNAME=	openvsp
+PORTVERSION=	2.0
+CATEGORIES=	cad
+MASTER_SITES=	https://nodeload.github.com/OpenVSP/OpenVSP/tarball/
+DISTNAME=	OpenVSP_${PORTVERSION}_Community
+
+MAINTAINER=	fernando.apesteguia@gmail.com
+COMMENT=	Create a 3D model of an aircraft defined by engineering parameters
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libopenNURBS.a:${PORTSDIR}/graphics/opennurbs
+
+LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
+
+WRKSRC=		${WRKDIR}/OpenVSP-OpenVSP-574d7c3/src
+
+USE_CMAKE=	yes
+USE_DOS2UNIX=	yes
+USE_XORG=	xinerama xft
+USE_GNOME=	libxml2
+
+PORTEXAMPLES=	*
+INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/../examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+
+PLIST_FILES=	bin/vsp
+
+CFLAGS+=	-I${LOCALBASE}/include/openNURBS
+
+do-fetch:
+	${FETCH_BINARY} -o ${DISTDIR}/${DISTNAME}.tar.gz ${MASTER_SITES}${DISTNAME}
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/vsp/vsp ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_PORTEXAMPLES}
+.endif
+
+.include <bsd.port.mk>
