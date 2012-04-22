@@ -3061,7 +3061,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
-+Bundle-Version: 3.7.0.qualifier
++Bundle-Version: 3.7.1.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -4875,18 +4875,23 @@ $FreeBSD$
 +custom = true
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/build.xml	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/build.xml	2009-12-23 15:14:12.583575548 -0500
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,17 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<project name="org.eclipse.swt.gtk.freebsd.x86" default="build.jars" basedir=".">
 +
 +	<property name="swt.ws" value="gtk" />
 +	<property name="swt.os" value="freebsd" />
 +	<property name="swt.arch" value="x86" />
++	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.7.0" />
++	<property name="version.suffix" value="3.7.1" />
 +
-+	<import file="../org.eclipse.swt/buildFragment.xml"/>
++	<condition property="plugindir" value="../../../eclipse.platform.swt/bundles/org.eclipse.swt" else="${buildDirectory}/plugins/org.eclipse.swt">
++		<available file="../../../eclipse.platform.swt/bundles/org.eclipse.swt" type="dir"/>
++	</condition>
++	<import file="${plugindir}/buildFragment.xml"/>
++	<import file="${plugindir}/buildSWT.xml"/>
 +</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/fragment.properties	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/fragment.properties	2009-12-23 15:14:12.583575548 -0500
@@ -4942,7 +4947,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86_64; singleton:=true
-+Bundle-Version: 3.7.0.qualifier
++Bundle-Version: 3.7.1.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -6756,18 +6761,23 @@ $FreeBSD$
 +custom = true
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/build.xml	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/build.xml	2009-12-23 15:14:12.588595660 -0500
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,17 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<project name="org.eclipse.swt.gtk.freebsd.x86_64" default="build.jars" basedir=".">
 +
 +	<property name="swt.ws" value="gtk" />
 +	<property name="swt.os" value="freebsd" />
 +	<property name="swt.arch" value="x86_64" />
++	<property name="targets" value="make_mozilla make_xulrunner make_xpcominit install"/>
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.7.0" />
++	<property name="version.suffix" value="3.7.1" />
 +
-+	<import file="../org.eclipse.swt/buildFragment.xml"/>
++	<condition property="plugindir" value="../../../eclipse.platform.swt/bundles/org.eclipse.swt" else="${buildDirectory}/plugins/org.eclipse.swt">
++		<available file="../../../eclipse.platform.swt/bundles/org.eclipse.swt" type="dir"/>
++	</condition>
++	<import file="${plugindir}/buildFragment.xml"/>
++	<import file="${plugindir}/buildSWT.xml"/>
 +</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/fragment.properties	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/fragment.properties	2009-12-23 15:14:12.588595660 -0500
@@ -7336,19 +7346,96 @@ $FreeBSD$
 @@ -34,6 +34,7 @@
  org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=v20110502
  org.eclipse.equinox.http,0.0.0=v20110413
- org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3735b
-+org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3735b
+ org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3738a
++org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3738a
  org.eclipse.equinox.p2.ui.admin,0.0.0=v20110502-1955
  org.eclipse.equinox.p2.publisher.eclipse,0.0.0=v20110511
  org.eclipse.equinox.weaving.caching.j9,0.0.0=v20110502
-@@ -245,6 +246,7 @@
- org.eclipse.swt.examples,0.0.0=v3735b
+@@ -52,6 +52,7 @@
+ org.eclipse.ui.workbench.texteditor,0.0.0=v20110505-0800
+ org.eclipse.ui.examples.multipageeditor,0.0.0=I20110413-1600
+ org.eclipse.core.filesystem.linux.x86,0.0.0=v20110423-0524
++org.eclipse.core.filesystem.freebsd.x86,0.0.0=v20110423-0524
+ org.eclipse.equinox.p2.ui.discovery,0.0.0=v20110502-1955
+ org.eclipse.ui.examples.javaeditor,0.0.0=v20110524-0800
+ org.eclipse.ant.core,0.0.0=v20110511
+@@ -93,6 +94,7 @@
+ org.eclipse.core.runtime,0.0.0=v20110110
+ org.eclipse.core.resources.win32.x86,0.0.0=v20110423-0524
+ org.eclipse.equinox.launcher.gtk.linux.x86_64,0.0.0=v20110505
++org.eclipse.equinox.launcher.gtk.freebsd.x86_64,0.0.0=v20110505
+ org.eclipse.help,0.0.0=v20110426
+ org.eclipse.pde.api.tools.ee.j2se15,0.0.0=v20110401-1030
+ org.junit4,0.0.0=v20100525
+@@ -135,6 +137,7 @@
+ org.eclipse.equinox.p2.ui.importexport,0.0.0=v20110511
+ org.eclipse.pde.api.tools.ee.jre11,0.0.0=v20110401-1030
+ org.eclipse.core.net.linux.x86_64,0.0.0=I20110331-0827
++org.eclipse.core.net.freebsd.x86_64,0.0.0=I20110331-0827
+ org.eclipse.equinox.jsp.jasper,0.0.0=v20110502
+ org.eclipse.pde.api.tools.ee.j2se14,0.0.0=v20110401-1030
+ org.eclipse.equinox.p2.ui,0.0.0=v20110601
+@@ -158,6 +161,7 @@
+ org.eclipse.swt.gtk.solaris.x86,0.0.0=v3738a
+ org.eclipse.pde.ds.ui,0.0.0=v20110516
+ org.eclipse.core.net.linux.x86,0.0.0=I20110419-0800
++org.eclipse.core.net.freebsd.x86,0.0.0=I20110419-0800
+ org.eclipse.equinox.p2.console,0.0.0=v20110502-1955
+ org.eclipse.equinox.http.jetty,0.0.0=v20110502
+ org.eclipse.swt.examples.browser.demos,0.0.0=v3738a
+@@ -175,6 +179,7 @@
+ org.eclipse.equinox.launcher.win32.win32.ia64,0.0.0=v20110502
+ org.eclipse.swt.examples.browser,0.0.0=v3738a
+ org.eclipse.core.filesystem.linux.x86_64,0.0.0=v20110423-0524
++org.eclipse.core.filesystem.freebsd.x86_64,0.0.0=v20110423-0524
+ org.eclipse.equinox.event,0.0.0=v20110502
+ org.eclipse.ui.ide,0.0.0=v20110809-1737
+ org.eclipse.ui.views.log,0.0.0=v20110404
+@@ -185,6 +190,7 @@
+ org.eclipse.equinox.ds,0.0.0=R37x_v20110701
+ org.eclipse.equinox.launcher.win32.win32.x86_64,0.0.0=v20110502
+ org.eclipse.equinox.launcher.gtk.linux.x86,0.0.0=v20110505
++org.eclipse.equinox.launcher.gtk.freebsd.x86,0.0.0=v20110505
+ org.eclipse.update.core.linux,0.0.0=v20100512
+ org.eclipse.core.databinding.property,0.0.0=I20110222-0800
+ org.eclipse.ui.examples.propertysheet,0.0.0=I20110413-1600
+@@ -246,6 +247,7 @@
+ org.eclipse.swt.examples,0.0.0=v3738a
  org.eclipse.cvs,0.0.0=v20110505-0800
- org.eclipse.swt.gtk.linux.x86,0.0.0=v3735b
-+org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3735b
+ org.eclipse.swt.gtk.linux.x86,0.0.0=v3738a
++org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3738a
  org.eclipse.equinox.log,0.0.0=v20110502
  org.eclipse.equinox.jmx.client,0.0.0=v20100503
  org.eclipse.ui.win32,0.0.0=I20100509-0800
+--- build/eclipse-3.7.0-src/features/org.eclipse.equinox.executable/feature.xml~	Fri Feb 18 17:56:16 2011
++++ build/eclipse-3.7.0-src/features/org.eclipse.equinox.executable/feature.xml	Thu Sep 15 11:03:18 2011
+@@ -131,6 +131,26 @@
+          fragment="true"/>
+ 
+    <plugin
++         id="org.eclipse.equinox.launcher.gtk.freebsd.x86"
++         os="freebsd"
++         ws="gtk"
++         arch="x86"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"/>
++
++   <plugin
++         id="org.eclipse.equinox.launcher.gtk.freebsd.x86_64"
++         os="freebsd"
++         ws="gtk"
++         arch="x86_64"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"/>
++
++   <plugin
+          id="org.eclipse.equinox.launcher.motif.aix.ppc"
+          os="aix"
+          ws="motif"
 --- build/eclipse-3.7.0-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	2011-05-27 13:45:22.000000000 -0500
 +++ build/eclipse-3.7.0-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	2012-01-23 11:51:27.000000000 -0600
 @@ -25,7 +25,7 @@

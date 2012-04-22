@@ -1,0 +1,88 @@
+--- eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/javax.servlet_3.0.0.jar/META-INF/MANIFEST.MF~	2012-01-26 18:03:49.377369870 +0100
++++ eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/javax.servlet_3.0.0.jar/META-INF/MANIFEST.MF	2012-01-26 18:18:27.055000978 +0100
+@@ -6,6 +6,6 @@
+ Bundle-Localization: plugin
+-Bundle-Version: 2.5.0.v200806031605
++Bundle-Version: 3.0.0.v201103241727
+ Bundle-Vendor: %bundleProvider
+-Export-Package: javax.servlet;version="2.5",javax.servlet.http;version
+- ="2.5",javax.servlet.resources;version="2.5"
++Export-Package: javax.servlet;version="3.0",javax.servlet.http;version
++ ="3.0",javax.servlet.resources;version="3.0"
+ 
+--- eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/javax.servlet.jsp_2.2.0.jar/META-INF/MANIFEST.MF~	2011-12-19 16:40:57.000000000 +0100
++++ eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/javax.servlet.jsp_2.2.0.jar/META-INF/MANIFEST.MF	2012-01-26 18:43:30.749772042 +0100
+@@ -4,10 +4,10 @@
+ Bundle-RequiredExecutionEnvironment: CDC-1.0/Foundation-1.0,J2SE-1.3
+ Bundle-Name: %bundleName
+ Bundle-SymbolicName: javax.servlet.jsp
+-Export-Package: javax.servlet.jsp; version=2.0,javax.servlet.jsp.el; v
+- ersion=2.0,javax.servlet.jsp.resources; version=2.0,javax.servlet.jsp
+- .tagext; version=2.0
+-Bundle-Version: 2.0.0.v200806031607
++Export-Package: javax.servlet.jsp; version=2.2,javax.servlet.jsp.el; v
++ ersion=2.2,javax.servlet.jsp.resources; version=2.2,javax.servlet.jsp
++ .tagext; version=2.2
++Bundle-Version: 2.2.0.v200806031607
+ Bundle-ManifestVersion: 2
+-Import-Package: javax.servlet; version=2.4,javax.servlet.http; version
+- =2.4,javax.servlet.resources; version=2.4
++Import-Package: javax.servlet; version=3.0,javax.servlet.http; version
++ =3.0,javax.servlet.resources; version=3.0
+--- eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/org.apache.jasper_7.0.21.jar/META-INF/MANIFEST.MF~	2011-12-19 16:40:57.000000000 +0100
++++ eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/org.apache.jasper_7.0.21.jar/META-INF/MANIFEST.MF	2012-01-26 18:36:42.891544584 +0100
+@@ -6,21 +6,21 @@
+  2SE-1.3
+ Bundle-Name: %bundleName
+ Bundle-SymbolicName: org.apache.jasper
+-Export-Package: org.apache.jasper;version="5.5.17",org.apache.jasper.c
+- ompiler;version="5.5.17",org.apache.jasper.compiler.tagplugin;version
+- ="5.5.17",org.apache.jasper.resources;version="5.5.17",org.apache.jas
+- per.runtime;version="5.5.17",org.apache.jasper.security;version="5.5.
+- 17",org.apache.jasper.servlet;version="5.5.17",org.apache.jasper.tagp
+- lugins.jstl;version="5.5.17",org.apache.jasper.tagplugins.jstl.core;v
+- ersion="5.5.17",org.apache.jasper.util;version="5.5.17",org.apache.ja
+- sper.xmlparser;version="5.5.17"
+-Bundle-Version: 5.5.17.v201004212143
++Export-Package: org.apache.jasper;version="7.0.21",org.apache.jasper.c
++ ompiler;version="7.0.21",org.apache.jasper.compiler.tagplugin;version
++ ="7.0.21",org.apache.jasper.resources;version="7.0.21",org.apache.jas
++ per.runtime;version="7.0.21",org.apache.jasper.security;version="5.5.
++ 17",org.apache.jasper.servlet;version="7.0.21",org.apache.jasper.tagp
++ lugins.jstl;version="7.0.21",org.apache.jasper.tagplugins.jstl.core;v
++ ersion="7.0.21",org.apache.jasper.util;version="7.0.21",org.apache.ja
++ sper.xmlparser;version="7.0.21"
++Bundle-Version: 7.0.21.v201004212143
+ Bundle-ManifestVersion: 2
+-Import-Package: javax.servlet;version="[2.4, 3.0)",javax.servlet.http;
+- version="[2.4, 3.0)",javax.servlet.jsp;version="[2.0, 2.1)",javax.ser
+- vlet.jsp.el;version="[2.0, 2.1)",javax.servlet.jsp.resources;version=
+- "[2.0, 2.1)",javax.servlet.jsp.tagext;version="[2.0, 2.1)",javax.serv
+- let.resources;version="[2.4, 3.0)",javax.xml.parsers,org.apache.commo
++Import-Package: javax.servlet;version="3.0",javax.servlet.http;
++ version="3.0",javax.servlet.jsp;version="2.2",javax.ser
++ vlet.jsp.el;version="2.2",javax.servlet.jsp.resources;version=
++ "2.2",javax.servlet.jsp.tagext;version="2.2",javax.serv
++ let.resources;version="3.0",javax.xml.parsers,org.apache.commo
+  ns.el;version="[1.0.0,2.0.0)",org.apache.commons.logging;version="[1.
+  0.0,2.0.0)",org.apache.tools.ant;resolution:=optional,org.apache.tool
+  s.ant.taskdefs;resolution:=optional,org.apache.tools.ant.types;resolu
+--- eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/org.apache.commons.el_1.0.0.v200806031608.jar/META-INF/MANIFEST.MF~	Mon Dec 19 16:40:57 2011
++++ eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92/dependencyManifests/org.apache.commons.el_1.0.0.v200806031608.jar/META-INF/MANIFEST.MF	Wed Feb 29 16:33:20 2012
+@@ -8,11 +8,11 @@
+  ns.el.parser;version="1.0.0"
+ Bundle-Version: 1.0.0.v201004212143
+ Bundle-ManifestVersion: 2
+-Import-Package: javax.servlet;version="[2.4, 3.0)",javax.servlet.http;
+- version="[2.4, 3.0)",javax.servlet.jsp;version="[2.0, 2.1)",javax.ser
+- vlet.jsp.el;version="[2.0, 2.1)",javax.servlet.jsp.resources;version=
+- "[2.0, 2.1)",javax.servlet.jsp.tagext;version="[2.0, 2.1)",javax.serv
+- let.resources;version="[2.4, 3.0)"
++Import-Package: javax.servlet;version="[2.5, 3.0]",javax.servlet.http;
++ version="[2.5, 3.0]",javax.servlet.jsp;version="2.2",javax.ser
++ vlet.jsp.el;version="2.2",javax.servlet.jsp.resources;version=
++ "2.2",javax.servlet.jsp.tagext;version="2.2",javax.serv
++ let.resources;version="[2.5, 3.0]"
+ 
+ Name: org/apache/commons/el/ImplicitObjects$6.class
+ SHA1-Digest: yk3eN531Co8H5mcmuI/jBgzMK7M=

@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	eclipse-devel
-PORTVERSION=	3.7.0
-PORTREVISION=	4
+PORTVERSION=	3.7.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.7.x_Indigo/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/plugins/:2 \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:4,} \
 		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,junit/junit/${JUNIT3_VERSION}/:5,} \
-		http://cloud.github.com/downloads/KentBeck/junit/:6
+		http://cloud.github.com/downloads/KentBeck/junit/:6 \
+		${MASTER_SITE_APACHE_TOMCAT:S,%SUBDIR%/,tomcat-7/v${TOMCAT_VERSION}/bin/:7,} \
+		${MASTER_SITE_APACHE_TOMCAT:S,%SUBDIR%/,tomcat-7/v${TOMCAT_VERSION}/bin/extras/:7,}
 DISTFILES=	${ECLIPSE_BUILD_SRCFILE}:1 \
 		${ECLIPSE_SRCFILE}:1 \
 		${ANT_SRCFILE}:4 \
 		${JUNIT3_SRCFILE}:5 \
-		${JUNIT4_SRCFILE}:6
+		${JUNIT4_SRCFILE}:6 \
+		${TOMCAT_SRCFILES:C,(.*),\\1:7,}
 DIST_SUBDIR=	eclipse
 EXTRACT_ONLY=	${ECLIPSE_BUILD_SRCFILE}
 
@@ -48,6 +50,7 @@ USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
 USE_JAVA=	yes
 USE_XZ=		yes
 BZIP2_SUFX=	.tar.bz2
+ZIP_CMD?=	${LOCALBASE}/bin/zip
 
 JAVA_BUILD=	yes
 JAVA_OS=	native
@@ -55,19 +58,16 @@ JAVA_RUN=	yes
 JAVA_VERSION=	1.6
 JAVA_VENDOR=	openjdk
 
-ECLIPSE_BUILD_SRCFILE=	eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5${EXTRACT_SUFX}
+ECLIPSE_BUILD_SRCFILE=	eclipse-build-914dc6de2bfc5ee5819a229cf4877f7043040a92${EXTRACT_SUFX}
 ECLIPSE_SRCFILE=	eclipse-${PORTVERSION}-src${BZIP2_SUFX}
 ECLIPSE_TEST_SRCFILE=	eclipse-sdktests-${PORTVERSION}-src${BZIP2_SUFX}
 ECLIPSE_TEST_SCRIPTFILE=eclipse-sdktests-${PORTVERSION}-scripts${BZIP2_SUFX}
 ECLIPSE_JAR_BUNDLES=	com.ibm.icu_4.4.2.v20110208.jar \
 			com.jcraft.jsch_0.1.41.v201101211617.jar \
-			javax.servlet.jsp_2.0.0.v201101211617.jar \
-			javax.servlet_2.5.0.v201103041518.jar \
 			org.apache.commons.codec_1.3.0.v201101211617.jar \
 			org.apache.commons.el_1.0.0.v201101211617.jar \
 			org.apache.commons.httpclient_3.1.0.v201012070820.jar \
 			org.apache.commons.logging_1.0.4.v201101211617.jar \
-			org.apache.jasper_5.5.17.v201101211617.jar \
 			org.apache.lucene.core_2.9.1.v201101211721.jar \
 			org.apache.lucene.analysis_2.9.1.v201101211721.jar \
 			org.hamcrest.core_1.1.0.v20090501071000.jar \
@@ -102,6 +102,15 @@ JUNIT3_VERSION=		3.8.2
 JUNIT3_SRCFILE=		junit${JUNIT3_VERSION}.zip
 JUNIT4_VERSION=		4.8.2
 JUNIT4_SRCFILE=		junit-${JUNIT4_VERSION}.jar
+TOMCAT_VERSION=		7.0.25
+TOMCAT_SRCFILES=	apache-tomcat-${TOMCAT_VERSION}.tar.gz tomcat-juli.jar
+TOMCAT_BUNDLES=		el-api.jar \
+			jasper-el.jar \
+			jasper.jar \
+			jsp-api.jar \
+			servlet-api.jar \
+			tomcat-api.jar \
+			tomcat-juli.jar
 FBSD_SUPPORT_SRCFILE=	freebsd-support.patch
 ECLIPSE_GENERATED_BUILDSCRIPTS=	eclipse-build-generatedScripts.tar.bz2
 
@@ -136,26 +145,36 @@ DISTFILES+=	${ECLIPSE_TEST_SRCFILE}:1 ${ECLIPSE_TEST_SCRIPTFILE}:1
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		Xvnc:${PORTSDIR}/net/tightvnc
 
-ALL_TARGET=	provision.tests
+ALL_TARGET=	runTests
 .endif
 
-# Copy the eclipse source file to the work area
+# Prepare Eclipse source, Ant, JUnit and Tomcat bundles
 post-extract:
-	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ANT_SRCFILE} ${EXTRACT_AFTER_ARGS})
+	@${MKDIR} ${BUILD_WRKSRC}/bundles
 
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_SRCFILE} ${BUILD_WRKSRC}
 	@${CP} ${FILESDIR}/${FBSD_SUPPORT_SRCFILE} ${BUILD_WRKSRC}/patches/
-	@${MKDIR} ${BUILD_WRKSRC}/bundles
 .for f in ${ECLIPSE_JAR_BUNDLES} ${ECLIPSE_SAT4J_BUNDLES}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${BUILD_WRKSRC}/bundles/
 .endfor
+	@(${MKDIR} ${BUILD_WRKSRC}/generatedScripts && cd ${BUILD_WRKSRC}/generatedScripts && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${BUILD_WRKSRC}/${ECLIPSE_GENERATED_BUILDSCRIPTS} ${EXTRACT_AFTER_ARGS})
+
+	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ANT_SRCFILE} ${EXTRACT_AFTER_ARGS})
 .for f in ${ANT_BUNDLES}
 	@${CP} ${WRKDIR}/apache-ant-${ANT_VERSION}/lib/${f} ${BUILD_WRKSRC}/bundles/
 .endfor
+
 	@${MKDIR} ${WRKDIR}/junit
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${JUNIT3_SRCFILE} -d ${WRKDIR}/junit
 	@${CP} ${WRKDIR}/junit/junit${JUNIT3_VERSION}/junit.jar ${BUILD_WRKSRC}/bundles/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${JUNIT4_SRCFILE} ${BUILD_WRKSRC}/bundles/junit4.jar
+
+	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${TOMCAT_SRCFILES:Mapache-tomcat*.tar.gz} ${EXTRACT_AFTER_ARGS})
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${TOMCAT_SRCFILES:M*.jar} ${WRKDIR}/apache-tomcat-${TOMCAT_VERSION}/lib/
+.for f in ${TOMCAT_BUNDLES}
+	@${CP} ${WRKDIR}/apache-tomcat-${TOMCAT_VERSION}/lib/${f} ${BUILD_WRKSRC}/bundles/
+.endfor
+
 .if defined(WITH_TESTS)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_TEST_SRCFILE} ${BUILD_WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_TEST_SCRIPTFILE} ${BUILD_WRKSRC}
@@ -168,13 +187,15 @@ pre-patch:
 
 # Fixup boot classes path
 post-patch:
-	@(cd ${BUILD_WRKSRC}/generatedScripts; tar cjf ${BUILD_WRKSRC}/eclipse-build-generatedScripts.tar.bz2 plugins)
+	@(cd ${BUILD_WRKSRC}/generatedScripts; tar cjf ${BUILD_WRKSRC}/${ECLIPSE_GENERATED_BUILDSCRIPTS} plugins)
 
 	@${REINPLACE_CMD} -e "s+%%BOOTCLASSPATH%%+${BOOTCLASSPATH}+g" ${BUILD_WRKSRC}/build.properties
 	@${REINPLACE_CMD} -e "s+%%BOOTCLASSPATH%%+${BOOTCLASSPATH}+g" ${BUILD_WRKSRC}/pdebuild.properties
 	@${REINPLACE_CMD} -e "s+%%PORTNAME%%+${PORTNAME}+g" ${BUILD_WRKSRC}/build.xml
 	@${REINPLACE_CMD} -e "s+%%PORTNAME%%+${PORTNAME}+g" ${BUILD_WRKSRC}/eclipse.desktop
+
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} applyPatches)
+
 .for f in ${ECLIPSE_JAR_BUNDLES}
 	@${REINPLACE_CMD} -e "s+^${f}=\(.*\)+${f}=${BUILD_WRKSRC}/bundles/${f}+" ${BUILD_WRKSRC}/dependencies.properties
 	@${REINPLACE_CMD} -e "s+^${f}=\(.*\)+${f}=${BUILD_WRKSRC}/bundles/${f}+" ${BUILD_WRKSRC}/jdtdependencies.properties
@@ -190,10 +211,26 @@ post-patch:
 	@${REINPLACE_CMD} -e "s+=/usr/share/java/junit4.jar+=${BUILD_WRKSRC}/bundles/junit4.jar+" ${BUILD_WRKSRC}/jdtnonosgidependencies.properties
 	@${REINPLACE_CMD} -e "s+/usr/share/java/junit4.jar+${BUILD_WRKSRC}/bundles/junit4.jar+" ${BUILD_WRKSRC}/build.xml
 
+	@${REINPLACE_CMD} -e "s+^\(javax.el_2.2.0.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/el-api.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/javax.el_2.2.0.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/el-api.jar
+	@${REINPLACE_CMD} -e "s+^\(org.apache.el_7.0.21.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/jasper-el.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/org.apache.el_7.0.21.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/jasper-el.jar
+	@${REINPLACE_CMD} -e "s+^\(org.apache.jasper_7.0.21.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/jasper.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_7.0.21.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/jasper.jar
+	@${REINPLACE_CMD} -e "s+^\(javax.servlet.jsp_2.2.0.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/jsp-api.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/javax.servlet.jsp_2.2.0.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/jsp-api.jar
+	@${REINPLACE_CMD} -e "s+^\(javax.servlet_3.0.0.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/servlet-api.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/javax.servlet_3.0.0.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/servlet-api.jar
+	@${REINPLACE_CMD} -e "s+^\(org.apache.tomcat_7.0.21.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/tomcat-api.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/org.apache.tomcat_7.0.21.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/tomcat-api.jar
+	@${REINPLACE_CMD} -e "s+^\(org.apache.juli_7.0.21.jar\)=\(.*\)+\1=${BUILD_WRKSRC}/bundles/tomcat-juli.jar+" ${BUILD_WRKSRC}/dependencies.properties
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/org.apache.juli_7.0.21.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/tomcat-juli.jar
+
 	@${MV} ${BUILD_WRKSRC}/dependencyManifests/com.jcraft.jsch_0.1.41.v200903070017.jar ${BUILD_WRKSRC}/dependencyManifests/com.jcraft.jsch_0.1.41.v201101211617.jar
 	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v200806031608.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v201101211617.jar
+	@${JAR} umf ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v201101211617.jar/META-INF/MANIFEST.MF ${BUILD_WRKSRC}/bundles/org.apache.commons.el_1.0.0.v201101211617.jar
+	@${ZIP_CMD} -qd ${BUILD_WRKSRC}/bundles/org.apache.commons.el_1.0.0.v201101211617.jar META-INF/ECLIPSEF.SF META-INF/ECLIPSEF.RSA
 	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.httpclient_3.1.0.v201005080502.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.httpclient_3.1.0.v201012070820.jar
-	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_5.5.17.v200903231320.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_5.5.17.v201101211617.jar
 	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.server_6.1.23.v201004211559.jar ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.server_6.1.23.v201012071420.jar
 	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.util_6.1.23.v201004211559.jar ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.util_6.1.23.v201012071420.jar
 	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.objectweb.asm_3.3.1.v201101071600.jar ${BUILD_WRKSRC}/dependencyManifests/org.objectweb.asm_3.3.1.v201105211655.jar
