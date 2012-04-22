@@ -23,6 +23,7 @@ RUN_DEPENDS=	\
 	p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-URI-Match>0:${PORTSDIR}/net/p5-URI-Match
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Class-Null>0:${PORTSDIR}/devel/p5-Class-Null
 
 PERL_CONFIGURE=	yes
 
