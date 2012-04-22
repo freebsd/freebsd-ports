@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	alephone
-PORTVERSION=	20111201
-PORTREVISION=	1
+PORTVERSION=	20120128
 CATEGORIES=	games
-MASTER_SITES=	SF/marathon/Aleph%20One/2011-12-01
+MASTER_SITES=	SF/marathon/Aleph%20One/2012-01-28
 DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	fiziologus@gmail.com
@@ -22,7 +21,6 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_SDL+=	image net sdl sound
 USE_GL=		yes
-USE_LUA=	5.1
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-alsa --disable-sndfile
@@ -39,7 +37,7 @@ OPTIONS=	MAD "use libmad for mp3 playback" on \
 		TTF "enable SDL_ttf font rendering" on \
 		ZZIP "enable zziplib support" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_MAD)
 CONFIGURE_ARGS+=--disable-mad
@@ -87,4 +85,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
