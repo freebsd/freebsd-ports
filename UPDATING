@@ -9,25 +9,27 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11/xorg
   AUTHOR: x11@FreeBSD.org
 
-  The default mesa has been updated to 7.6.1 and the default xorg-server to 1.7.7.
-  A switch is available for people that want to use  mesa 7.11.x and xorg-server
-  1.10.6. This requires an nvidia card or Intel+KMS support. If you have an intel
-  card and can try these experimental KMS support patches: 10/head with a
-  patch: http://people.freebsd.org/~kib/drm/
-  FreeBSD stable/9 and releng/9.0
+  The default mesa has been updated to 7.6.1 and the default xorg-server
+  to 1.7.7.
+  A switch is available for people that want to use mesa 7.11.x and
+  xorg-server 1.10.6. This requires an nvidia card or Intel+KMS support.
+  If you have an intel card and can try these experimental KMS support
+  patches:
+  10/head with a patch: http://people.freebsd.org/~kib/drm/
+  FreeBSD stable/9 and releng/9.0:
   http://lists.freebsd.org/pipermail/freebsd-x11/2012-April/011640.html
 
 20120419:
   AFFECTS: users of security/openssl
   AUTHOR: dinoex@FreeBSD.org
 
-  The OpenSSL lport has been update to 1.0.1a. Please rebuild all
+  The OpenSSL port has been updated to 1.0.1a. Please rebuild all
   ports that depend on it.
 
   If you use portmaster:
         portmaster -r openssl
   Or, if you would prefer a more gradual approach:
-        portmaster -w openssl (Check the man page for more information)
+        portmaster -w openssl (check the man page for more information)
 
   If you use portupgrade:
         portupgrade -fr security/openssl
