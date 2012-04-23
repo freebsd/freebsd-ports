@@ -9,53 +9,27 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.55.0
+PORTVERSION=	1.0.56
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
+DISTFILES=	\
+	${PORTNAME}-${PORTVERSION}-source${EXTRACT_SUFX}
+.if !defined(NOPORTDOCS) || make(makesum)
+DISTFILES+=	\
+	${PORTNAME}-${PORTVERSION}-documentation-html${EXTRACT_SUFX}
+.endif
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
-# More platforms are supported, but on Linux.
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to this architecture yet
-
-BROKEN=		does not build
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-DSBCL_HOME=\\\"${SBCL_HOME}\\\"
-CPPFLAGS+=	-I.
-SBCL_HOME=	${PREFIX}/lib/sbcl/
 
 OPTIONS=	SBCL "Use installed SBCL binary if available" off \
-		THREADS "Enable experimental threading support" off \
-		PDF "Build PDF documentation" on \
-		PS "Build PostScript documentation" off
+		THREADS "Enable experimental threading support" off
 
-MAN1=		sbcl.1
-INFODIR=	${PREFIX}/${INFO_PATH}
-.if !defined(NOPORTDOCS)
-INFO=	${MANUALS_SRC} sbcl-internals
-MANUALS_SRC=	asdf sbcl
-TEXTDOCS=	BUGS CREDITS COPYING NEWS PRINCIPLES TLA TODO
-MANUALS=	${MANUALS_SRC:S,$,.html,g}
-MODULESDOCS=	asdf/README asdf/README.SBCL	\
-		asdf-install/README 		\
-		sb-aclrepl/README		\
-		sb-bsd-sockets/FAQ sb-bsd-sockets/NEWS \
-		sb-md5/README			\
-		sb-posix/README			\
-		sb-rotate-byte/README		\
-		sb-simple-streams/README
-.endif
-
-OSVER_MAJOR=	${OSREL:R}
-NEWBOOTNAME=	${PORTNAME}-${PORTVERSION:R}-${ARCH}-freebsd${OSVER_MAJOR}
-DOC_TARGETS=	info html
 CONTRIB_MODULES=	asdf			\
 			asdf-install		\
 			sb-aclrepl		\
@@ -73,146 +47,129 @@ CONTRIB_MODULES=	asdf			\
 			sb-rt			\
 			sb-simple-streams	\
 			sb-sprof
+MAN1=		sbcl.1
+NEWBOOTNAME=	${PORTNAME}-${PORTVERSION}-${ARCH}-freebsd${OSREL:R}
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to\
+this architecture yet
+SBCL_HOME=	${PREFIX}/lib/sbcl
 
-.if ${PORTVERSION:E} == 0
-SBCLPATCHLEVEL=	#empty
-.else
-SBCLPATCHLEVEL=	-r${PORTVERSION:E}
+.if !defined(NOPORTDOCS)
+MANUALS=	asdf.html sbcl.html
+MODULESDOCS=	asdf/README asdf/README.SBCL	\
+		asdf-install/README 		\
+		sb-aclrepl/README		\
+		sb-bsd-sockets/FAQ sb-bsd-sockets/NEWS \
+		sb-md5/README			\
+		sb-posix/README			\
+		sb-rotate-byte/README		\
+		sb-simple-streams/README
+TEXTDOCS=	BUGS CREDITS COPYING NEWS PRINCIPLES TLA TODO
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
-MAKE_SH_ARGS?=	--with-sb-core-compression
-.if defined(WITH_THREADS)
-MAKE_SH_ARGS+=	--with-sb-thread
-.else
-MAKE_SH_ARGS+=	--without-sb-thread
-.endif
-
-.if !defined(NOPORTDOCS) && (defined(WITH_PDF) || defined(WITH_PS))
-BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-.endif
-
-.if !defined(NOPORTDOCS) && defined(WITH_PDF)
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
-		texi2dvi:${PORTSDIR}/print/texinfo
-DOC_TARGETS+=	pdf
-PLIST_SUB+=	PDF=""
-MANUALS+=	${MANUALS_SRC:S,$,.pdf,g}
-.else
-PLIST_SUB+=	PDF="@comment "
-.endif
-
-.if !defined(NOPORTDOCS) && defined(WITH_PS)
-BUILD_DEPENDS+=	dvips:${PORTSDIR}/print/dvips
-DOC_TARGETS+=	ps
-PLIST_SUB+=	PS=""
-MANUALS+=	${MANUALS_SRC:S,$,.ps,g}
-.else
-PLIST_SUB+=	PS="@comment "
-.endif
+CFLAGS+=	-fno-omit-frame-pointer
+CPPFLAGS+=	-I. -DSBCL_PREFIX=\\\"\$$(SBCL_PREFIX)\\\"
 
 .if ${ARCH} == "i386"
+DYNAMIC_SPACE_SIZE?=	512
 PLIST_SUB+=	I386_ONLY="" AMD64_ONLY="@comment "
 SBCLCONFIG=	 Config.x86-freebsd
-DYNAMIC_SPACE_SIZE?=	512
 .else
+DYNAMIC_SPACE_SIZE?=	1024
 PLIST_SUB+=	I386_ONLY="@comment " AMD64_ONLY=""
 SBCLCONFIG=	Config.x86-64-freebsd
-DYNAMIC_SPACE_SIZE?=	1024
 .endif
 
+MAKE_SH_ARGS?=	--prefix=${PREFIX} --dynamic-space-size=${DYNAMIC_SPACE_SIZE} \
+--with-sb-core-compression
+NM?=	/usr/bin/nm
+NMFLAGS?=	-gp
+
 # If WITH_SBCL is defined, try to use existing "sbcl" first.
-.if defined(WITH_SBCL) && exists(${LOCALBASE}/bin/sbcl) && !make(makesum)
-LISP_CMD=	""
-.else
+.if !defined(WITH_SBCL) || !exists(${LOCALBASE}/bin/sbcl) || make(makesum)
 BOOT_VERSION=	1.0.31
 
 . if make(makesum)
 BOOT_ARCH_OS_LIST=	amd64-freebsd8 amd64-freebsd7 i386-freebsd8 \
 			i386-freebsd7
 . else
-.  if ${OSVER_MAJOR} > 8	# We'll use 8.x bootstrap for now
+.  if ${OSREL:R} > 8	# We'll use 8.x bootstrap for now
 BOOT_ARCH_OS_LIST=	${ARCH}-freebsd8
 .  else
-BOOT_ARCH_OS_LIST=	${ARCH}-freebsd${OSVER_MAJOR}
+BOOT_ARCH_OS_LIST=	${ARCH}-freebsd${OSREL:R}
 .  endif
 . endif
 
-. ifdef(DYNAMIC_SPACE_SIZE)
-LISP_EXTRA_ARG=	--dynamic-space-size ${DYNAMIC_SPACE_SIZE}
-. endif
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 . for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
 DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}:binaries
 . endfor
-LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core ${LISP_EXTRA_ARG} --disable-debugger --userinit /dev/null --sysinit /dev/null"
+
+XC_HOST?=	${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core \
+${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core \
+--dynamic-space-size ${DYNAMIC_SPACE_SIZE} \
+--disable-debugger --userinit /dev/null --sysinit /dev/null
+MAKE_SH_ARGS+=	--xc-host='${XC_HOST}'
 
 .endif # defined(WITH_SBCL)
+
+.if defined(WITH_THREADS)
+MAKE_SH_ARGS+=	--with-sb-thread
+.else
+MAKE_SH_ARGS+=	--without-sb-thread
+.endif
 
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "---------------------------------------------------------"
-	@${ECHO_MSG} "You might need to increase memory limits in order to"
+	@${ECHO_MSG} "You might need to adjust memory limits in order to"
 	@${ECHO_MSG} "build SBCL."
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You can use the DYNAMIC_SPACE_SIZE knob to tweak the size"
-	@${ECHO_MSG} "of SBCL dynamically allocated memory."
+	@${ECHO_MSG} "You can use the DYNAMIC_SPACE_SIZE knob to change the size"
+	@${ECHO_MSG} "of SBCL dynamically-allocated memory."
 	@${ECHO_MSG} "---------------------------------------------------------"
 	@${ECHO_MSG}
 
 post-patch:
 	@${ECHO_CMD} "CC=${CC}" >> ${WRKSRC}/src/runtime/${SBCLCONFIG}
-	@${ECHO_CMD} "CFLAGS=${CFLAGS} -fno-omit-frame-pointer" >> \
-	    ${WRKSRC}/src/runtime/${SBCLCONFIG}
+	@${ECHO_CMD} "CFLAGS=${CFLAGS}" >> \
+		${WRKSRC}/src/runtime/${SBCLCONFIG}
 	@${ECHO_CMD} "CPPFLAGS=${CPPFLAGS}" >> \
-	    ${WRKSRC}/src/runtime/${SBCLCONFIG}
+		${WRKSRC}/src/runtime/${SBCLCONFIG}
 	@${ECHO_CMD} "GREP=${GREP}" >> ${WRKSRC}/src/runtime/${SBCLCONFIG}
 	@${ECHO_CMD} "LD=${LD}" >> ${WRKSRC}/src/runtime/${SBCLCONFIG}
 	@${ECHO_CMD} "LINKFLAGS=${LDFLAGS} -dynamic -rdynamic" >> \
-	    ${WRKSRC}/src/runtime/${SBCLCONFIG}
+		${WRKSRC}/src/runtime/${SBCLCONFIG}
+	@${ECHO_CMD} "NM=${NM} ${NMFLAGS}" >> \
+		${WRKSRC}/src/runtime/${SBCLCONFIG}
 	@${REINPLACE_CMD} -E -e 's,-lthr,-pthread,g' \
 	    -e 's,-lpthread,-pthread,g' ${WRKSRC}/src/runtime/${SBCLCONFIG}
-.ifdef(NM)
-	@${ECHO_CMD} "NM=${NM} -gp" >> ${WRKSRC}/src/runtime/${SBCLCONFIG}
-.endif
 	@${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 	-e 's|\.core|_core|g'
 	@${REINPLACE_CMD} \
-		-e 's|/etc/sbclrc|${PREFIX}&|g' \
 		-e 's|/usr/local|${PREFIX}|g' \
-		${WRKSRC}/doc/sbcl.1 \
-		${WRKSRC}/doc/manual/*.texinfo \
-		${WRKSRC}/src/code/toplevel.lisp
-	@${REINPLACE_CMD} -e '\|CC=|s|gcc|${CC}|'  ${WRKSRC}/contrib/asdf-module.mk
-	@${REINPLACE_CMD} -e 's|"cc"|"${CC}"|' \
-		-e 's|"-O3"|"${CFLAGS}"|' \
-			${WRKSRC}/tests/swap-lispobjs.impure.lisp
-	@${REINPLACE_CMD} -e 's|cc -c|${CC} -c|' \
-		-e 's|ld \$$SO_FLAGS|${LD} \$$SO_FLAGS|' \
-			 ${WRKSRC}/tests/foreign.test.sh
-	@${REINPLACE_CMD} -E -e 's,makeinfo,makeinfo --no-split,g' \
-		${WRKSRC}/doc/internals/Makefile
+		${WRKSRC}/doc/sbcl.1
+	@${REINPLACE_CMD} -e '\|CC?=|s|gcc|${CC}|'  \
+		${WRKSRC}/contrib/asdf-module.mk
+	@${REINPLACE_CMD} -E -e 's!-sbcl-shared!& ${CFLAGS}!' \
+		-e 's!\$$(TEST_FILESTEM|1)_core!$${\1}_core!g' \
+		${WRKSRC}/tests/core.test.sh \
+		${WRKSRC}/tests/foreign.test.sh
+	@${REINPLACE_CMD} -E -e 's!"-O3"!!' \
+		-e 's!("-sbcl-(pic|shared)"[[:blank:]]*)+!& ${CFLAGS:C/.*/"&"/}!' \
+		${WRKSRC}/tests/foreign-stack-alignment.impure.lisp \
+		${WRKSRC}/tests/kill-non-lisp-thread.impure.lisp \
+		${WRKSRC}/tests/swap-lispobjs.impure.lisp \
+		${WRKSRC}/tests/threads.impure.lisp
+	@${REINPLACE_CMD} -e 's|( cd ./doc ; sh ./clean.sh )|#&|' \
+		${WRKSRC}/clean.sh
 
 do-build:
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
-	@(cd ${WRKSRC} && ${SETENV} CC="${CC}" INSTALL_ROOT=${PREFIX} \
-		LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" \
-		${SH} make.sh ${LISP_CMD} ${MAKE_SH_ARGS})
+	@(cd ${WRKSRC} && ${SETENV} CC="${CC}" ${SH} make.sh ${MAKE_SH_ARGS})
 	@${RM} -rf ${WRKSRC}/contrib/sb-cover/test-output
-.if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc/manual && ${SETENV} \
-		LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" \
-		${GMAKE} MAKEINFO='makeinfo --no-split' ${DOC_TARGETS})
-	@(cd ${WRKSRC}/doc/internals && ${GMAKE} sbcl-internals.info)
-.if defined(WITH_PDF)
-	@(cd ${WRKSRC}/doc/internals && ${GMAKE} sbcl-internals.pdf)
-.endif
-.endif
 	@${REINPLACE_CMD} -E -e \
 		's|\$$Date\$$|'"`${SETENV} LANG=C /bin/date '+%B %d, %Y'`|g" \
 		${WRKSRC}/doc/sbcl.1
@@ -230,14 +187,6 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${MANUALS_SRC:S,^,${WRKSRC}/doc/manual/,g:S,$,.info,g} \
-	    ${INFODIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/internals/sbcl-internals.info \
-	    ${INFODIR}/
-.if defined(WITH_PDF)
-	${INSTALL_DATA} ${WRKSRC}/doc/internals/sbcl-internals.pdf \
-	    ${DOCSDIR}/
-.endif
 	${INSTALL_DATA} ${MANUALS:S,^, ${WRKSRC}/doc/manual/,g} ${DOCSDIR}/
 	${INSTALL_DATA} ${TEXTDOCS:S,^,${WRKSRC}/,g} ${DOCSDIR}/
 	${MKDIR} ${MODULESDOCS:C,/[^/]+$,,g:u:S,^,${DOCSDIR}/,g}
@@ -250,8 +199,7 @@ do-install:
 	@${TOUCH} ${SBCL_HOME}/site-systems/.keep_me
 
 check regression-test test: build
-	(cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" \
-	LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" ${SH} run-tests.sh)
+	(cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" ${SH} run-tests.sh)
 
 bootstrap:
 	${CP} -r ${WRKSRC} ${WRKDIR}/${NEWBOOTNAME}
