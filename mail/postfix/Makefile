@@ -20,7 +20,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.8.5
+VDAVERSION=	2.9.1
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-8].* postfix-base-2.[0-8].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.*
@@ -88,7 +88,7 @@ MLINKS=	sendmail.1 mailq.1 \
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
-.if !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
 OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || true
 .if !empty(OLD_MAILER)
 IS_INTERACTIVE=	yes
@@ -235,9 +235,8 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
-BROKEN=			At the moment, VDA support is unavailable for ${PORTNAME}-${DISTVERSION}
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
-PATCHFILES+=		postfix-vda-v10-${VDAVERSION}.patch:vda
+PATCHFILES+=		postfix-vda-v11-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
 PLIST_SUB+=		VDA=""
 .else
