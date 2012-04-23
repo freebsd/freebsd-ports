@@ -25,6 +25,7 @@ bin/r8tohdf
 bin/ristosds
 bin/vmake
 bin/vshow
+include/H4api_adpt.h
 include/atom.h
 include/bitvect.h
 include/cdeflate.h
@@ -50,6 +51,7 @@ include/hchunks.h
 include/hcomp.h
 include/hcompi.h
 include/hconv.h
+include/hdatainfo.h
 include/hdf.f90
 include/hdf.h
 include/hdf.inc
@@ -65,6 +67,7 @@ include/hproto_fortran.h
 include/htags.h
 include/linklist.h
 include/local_nc.h
+include/mfdatainfo.h
 include/mffunc.inc
 include/mffunc.f90
 include/mfhdfi.h
