@@ -7,9 +7,9 @@ if [ "$2" != "POST-DEINSTALL" ]; then
 fi
 
 F=%%BOINC_HOME%%/projects/%%SETI_SITE%%/app_info.xml
-echo Removing astropulse_v505 lines from $F
+echo Removing astropulse_v6 lines from $F
 
-l=`grep -n "<name>astropulse_v505</name>" $F | cut -f 1 -d :`
+l=`grep -n "<name>astropulse_v6</name>" $F | cut -f 1 -d :`
 if [ $? -ne 0 ]; then
     echo $F is corrupt
     exit 1

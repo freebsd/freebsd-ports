@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120423:
+  AFFECTS: users of astro/boinc-astropulse
+  AUTHOR: rene@FreeBSD.org
+
+  Astropulse has been updated to 6.01, which is a different application
+  than version 5.06.  You need to have Astropulse v6 enabled in your
+  account under SETI@home preferences.  It is also advisable to finish
+  and report existing Astropulse units before updating.
+
 20120421:
   AFFECTS: users of x11/xorg
   AUTHOR: x11@FreeBSD.org
