@@ -35,6 +35,12 @@ you update your ports collection, before attempting any port upgrades.
         portupgrade -fr security/openssl
 
 20120418:
+  AFFECTS: Nobody
+  AUTHOR: wxs@FreeBSD.org
+
+  FreeBSD 8.3 released.
+
+20120418:
   AFFECTS: users of www/firefox and mail/thunderbird
   AUTHOR: gecko@FreeBSD.org
 
