@@ -13,7 +13,7 @@ DISTFILES=	rx-${PORTVERSION}.tar.bz2:rel SWIG-1.3.29-wx.tar.gz:pr
 DIST_SUBDIR=	ros
 EXTRACT_ONLY=	rx-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - GUI related tools
 
 #LICENSE=	BSD LGPL* CreativeCommons WxWindows

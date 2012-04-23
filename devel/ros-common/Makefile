@@ -18,7 +18,7 @@ DISTFILES=	common-${PORTVERSION}.tar.bz2:rel bfl-31655.tar.gz:pr \
 DIST_SUBDIR=	ros
 EXTRACT_ONLY=	common-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - common utilities
 
 #LICENSE_COMB=	multi

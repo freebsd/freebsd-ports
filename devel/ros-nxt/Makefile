@@ -15,7 +15,7 @@ DISTFILES=	nxt-${PORTVERSION}.tar.bz2:rel nxt-python-1.1.2.zip:gc \
 DIST_SUBDIR=	ros
 EXTRACT_ONLY=	nxt-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - LEGO NXT interface
 
 PROJECTHOST=	nxt-python

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - tutorials
 
 LICENSE=	BSD
