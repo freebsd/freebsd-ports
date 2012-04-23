@@ -3051,6 +3051,7 @@ empire                          ports/games/empire
 empower                         ports/sysutils/empower
 emprint                         ports/x11/emprint
 empty                           ports/net/empty
+ems-flasher                     ports/comms/ems-flasher
 emu                             ports/x11/emu
 emu10kx                         ports/audio/emu10kx
 emulators_openmsx               ports/emulators/openmsx
@@ -8798,6 +8799,7 @@ linux-xmovie                    ports/multimedia/linux-xmovie
 linux-xnviewmp                  ports/graphics/linux-XnViewMP
 linux-xorg-libs                 ports/x11/linux-xorg-libs
 linux-ymessenger                ports/net-im/linux-ymessenger
+linux_base-c6                   ports/emulators/linux_base-c6
 linux_base-f10                  ports/emulators/linux_base-f10
 linux_base-fc4                  ports/emulators/linux_base-fc4
 linux_base-gentoo-stage3        ports/emulators/linux_base-gentoo-stage3
@@ -10721,6 +10723,7 @@ openvpn-beta                    ports/security/openvpn-beta
 openvpn-devel                   ports/security/openvpn-devel
 openvpn20                       ports/security/openvpn20
 openvrml                        ports/www/openvrml
+openvsp                         ports/cad/openvsp
 openvswitch                     ports/net/openvswitch
 openwebmail                     ports/mail/openwebmail
 openwince-include               ports/devel/openwince-include
