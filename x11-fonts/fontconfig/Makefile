@@ -8,7 +8,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.8.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
