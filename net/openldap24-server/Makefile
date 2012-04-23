@@ -6,22 +6,16 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.30
+DISTVERSION=		2.4.31
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
-			ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
 			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
-			ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
-			ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.rediris.es/mirror/OpenLDAP/%SUBDIR%/ \
-			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
-			ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
+			ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX?=		-server
 EXTRACT_SUFX=		.tgz
@@ -39,6 +33,8 @@ LATEST_LINK?=		${UNIQUENAME}${PKGNAMESUFFIX}
 USE_OPENSSL=		yes
 MAKE_JOBS_SAFE=		yes
 USE_AUTOTOOLS=		libtool
+USERS=			ldap
+GROUPS=			ldap
 
 WANT_OPENLDAP_VER?=	24
 .if ${WANT_OPENLDAP_VER} != 24
@@ -57,6 +53,7 @@ OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
 		ACI "Per-object ACI (experimental)" off \
 		BDB "With BerkeleyDB backend" on \
 		DNSSRV "With Dnssrv backend" off \
+		MDB "With Memory-Mapped DB backend" off \
 		PASSWD "With Passwd backend" off \
 		PERL "With Perl backend" off \
 		RELAY "With Relay backend" off \
@@ -140,7 +137,7 @@ PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
 
 SCHEMATA=		collective corba core cosine duaconf dyngroup \
 			inetorgperson java misc \
-			nis openldap ppolicy
+			nis openldap pmi ppolicy
 
 LDAP_RUN_DIR?=		/var/run/openldap
 LOCALSTATEDIR?=		/var/db
@@ -186,7 +183,7 @@ USE_LDCONFIG=		yes
 # server specific configuration
 
 USE_LDCONFIG=		${PREFIX}/libexec/openldap
-SUB_FILES+=		pkg-install pkg-message pkg-deinstall
+SUB_FILES+=		pkg-message pkg-deinstall
 USE_RC_SUBR=		slapd.sh
 
 EXTRA_PATCHES+=		${FILESDIR}/extrapatch-Makefile.in
@@ -353,6 +350,13 @@ CONFIGURE_ARGS+=	--enable-dnssrv=${BACKEND_ENABLE}
 PLIST_SUB+=		BACK_DNSSRV=${BACKEND_PLIST}
 .else
 PLIST_SUB+=		BACK_DNSSRV="@comment "
+.endif
+
+.if defined(WITH_MDB)
+CONFIGURE_ARGS+=	--enable-mdb=${BACKEND_ENABLE}
+PLIST_SUB+=		BACK_MDB=${BACKEND_PLIST}
+.else
+PLIST_SUB+=		BACK_MDB="@comment "
 .endif
 
 .if defined(WITH_PASSWD)
