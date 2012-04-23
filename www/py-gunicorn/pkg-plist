@@ -103,9 +103,6 @@ bin/gunicorn_paster
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/ggevent.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/ggevent.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/ggevent.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/ggevent_wsgi.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/ggevent_wsgi.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/ggevent_wsgi.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/gtornado.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/gtornado.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/gunicorn/workers/gtornado.pyo
