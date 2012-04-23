@@ -362,6 +362,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#5.1 5.0#${BDB_VER}#g' \
+		 -e 's,-ldb$$dash$$dbver,-l${BDB_LIB_NAME},g' \
 		 -e 's,"Linux" \&\& test "z$$enable_graphite","FreeBSD" \&\& test "z$$enable_graphite",g' \
 		${WRKSRC}/configure
 #install-gdb-printer is failing
