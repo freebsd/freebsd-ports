@@ -1,5 +1,5 @@
---- bin/distro-install-desktop-integration.orig	2012-04-18 17:18:32.000000000 +0200
-+++ bin/distro-install-desktop-integration	2012-04-20 14:35:47.000000000 +0200
+--- ./bin/distro-install-desktop-integration.orig	2012-03-27 18:22:01.000000000 +0200
++++ ./bin/distro-install-desktop-integration	2012-04-23 19:17:27.574712717 +0200
 @@ -91,13 +91,13 @@
  }
  
@@ -17,9 +17,11 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -112,15 +112,15 @@
+@@ -111,16 +111,17 @@
+     export PRODUCTVERSION=
      export KDEMAINDIR=$PREFIXDIR
      export GNOMEDIR=$PREFIXDIR
++    export PREFIXDIR=$PREFIXDIR
      export GNOME_MIME_THEME=hicolor
 -    /bin/bash ./create_tree.sh
 +    bash ./create_tree.sh
@@ -36,7 +38,7 @@
  if test -d $DESTDIR/opt ; then
      rm -f $DESTDIR/opt/$INSTALLDIRNAME
      rmdir --ignore-fail-on-non-empty $DESTDIR/opt
-@@ -129,7 +129,7 @@
+@@ -129,7 +130,7 @@
  # we want non-versioned desktop files
  cd $DESTDIR/$INSTALLDIR/share/xdg
  # we want non-versioned stuff in the distro packages
@@ -45,7 +47,7 @@
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
      -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
      -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
-@@ -144,7 +144,7 @@
+@@ -144,7 +145,7 @@
                 $PREFIXDIR/share/mime/packages \
                 $PREFIXDIR/share/mime-info \
                 $PREFIXDIR/share/icons ; do
