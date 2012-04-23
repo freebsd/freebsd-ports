@@ -5,9 +5,6 @@ bin/portbuilder
 %%PYTHON_SITELIBDIR%%/libpb/builder.py
 %%PYTHON_SITELIBDIR%%/libpb/builder.pyc
 %%PYTHON_SITELIBDIR%%/libpb/builder.pyo
-%%PYTHON_SITELIBDIR%%/libpb/debug.py
-%%PYTHON_SITELIBDIR%%/libpb/debug.pyc
-%%PYTHON_SITELIBDIR%%/libpb/debug.pyo
 %%PYTHON_SITELIBDIR%%/libpb/env.py
 %%PYTHON_SITELIBDIR%%/libpb/env.pyc
 %%PYTHON_SITELIBDIR%%/libpb/env.pyo
@@ -17,21 +14,33 @@ bin/portbuilder
 %%PYTHON_SITELIBDIR%%/libpb/job.py
 %%PYTHON_SITELIBDIR%%/libpb/job.pyc
 %%PYTHON_SITELIBDIR%%/libpb/job.pyo
+%%PYTHON_SITELIBDIR%%/libpb/log.py
+%%PYTHON_SITELIBDIR%%/libpb/log.pyc
+%%PYTHON_SITELIBDIR%%/libpb/log.pyo
 %%PYTHON_SITELIBDIR%%/libpb/make.py
 %%PYTHON_SITELIBDIR%%/libpb/make.pyc
 %%PYTHON_SITELIBDIR%%/libpb/make.pyo
+%%PYTHON_SITELIBDIR%%/libpb/mk.py
+%%PYTHON_SITELIBDIR%%/libpb/mk.pyc
+%%PYTHON_SITELIBDIR%%/libpb/mk.pyo
 %%PYTHON_SITELIBDIR%%/libpb/monitor.py
 %%PYTHON_SITELIBDIR%%/libpb/monitor.pyc
 %%PYTHON_SITELIBDIR%%/libpb/monitor.pyo
+%%PYTHON_SITELIBDIR%%/libpb/pkg/__init__.py
+%%PYTHON_SITELIBDIR%%/libpb/pkg/__init__.pyc
+%%PYTHON_SITELIBDIR%%/libpb/pkg/__init__.pyo
+%%PYTHON_SITELIBDIR%%/libpb/pkg/pkg.py
+%%PYTHON_SITELIBDIR%%/libpb/pkg/pkg.pyc
+%%PYTHON_SITELIBDIR%%/libpb/pkg/pkg.pyo
+%%PYTHON_SITELIBDIR%%/libpb/pkg/pkgng.py
+%%PYTHON_SITELIBDIR%%/libpb/pkg/pkgng.pyc
+%%PYTHON_SITELIBDIR%%/libpb/pkg/pkgng.pyo
 %%PYTHON_SITELIBDIR%%/libpb/port/__init__.py
 %%PYTHON_SITELIBDIR%%/libpb/port/__init__.pyc
 %%PYTHON_SITELIBDIR%%/libpb/port/__init__.pyo
 %%PYTHON_SITELIBDIR%%/libpb/port/dependhandler.py
 %%PYTHON_SITELIBDIR%%/libpb/port/dependhandler.pyc
 %%PYTHON_SITELIBDIR%%/libpb/port/dependhandler.pyo
-%%PYTHON_SITELIBDIR%%/libpb/port/mk.py
-%%PYTHON_SITELIBDIR%%/libpb/port/mk.pyc
-%%PYTHON_SITELIBDIR%%/libpb/port/mk.pyo
 %%PYTHON_SITELIBDIR%%/libpb/port/port.py
 %%PYTHON_SITELIBDIR%%/libpb/port/port.pyc
 %%PYTHON_SITELIBDIR%%/libpb/port/port.pyo
@@ -42,4 +51,5 @@ bin/portbuilder
 %%PYTHON_SITELIBDIR%%/libpb/signal.pyc
 %%PYTHON_SITELIBDIR%%/libpb/signal.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/libpb/port
+@dirrm %%PYTHON_SITELIBDIR%%/libpb/pkg
 @dirrm %%PYTHON_SITELIBDIR%%/libpb
