@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	instead
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	instead_${PORTVERSION}
 
-MAINTAINER=	neuroworker@gmail.com
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple Text Adventure, The Interpreter
 
 HAS_CONFIGURE=	yes
