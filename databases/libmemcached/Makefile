@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	A C and C++ client library to the memcached server
 
 LIB_DEPENDS?=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
