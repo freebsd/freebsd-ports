@@ -1,26 +1,55 @@
 %%HTACCESS%%%%WWWDIR%%/.htaccess
 %%HTACCESS%%%%WWWDIR%%/app/.htaccess
-@unexec if cmp -s %D/%%WWWDIR%%/app/config/acl.ini.php.default %D/%%WWWDIR%%/app/config/acl.ini.php; then rm -f %D/%%WWWDIR%%/app/config/acl.ini.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/acl.ini.php has not been removed"; fi
-%%WWWDIR%%/app/config/acl.ini.php.default
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/acl.php.default %D/%%WWWDIR%%/app/Config/acl.php; then rm -f %D/%%WWWDIR%%/app/Config/acl.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/acl.php has not been removed"; fi
+%%WWWDIR%%/app/Config/acl.php.default
+@exec if [ ! -f %B/acl.php ]; then cp -p %B/acl.php.default %B/acl.php; else %%ECHO_MSG%% "===> Customized %B/acl.php has not been overwritten"; fi
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/acl.ini.php.default %D/%%WWWDIR%%/app/Config/acl.ini.php; then rm -f %D/%%WWWDIR%%/app/Config/acl.ini.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/acl.ini.php has not been removed"; fi
+%%WWWDIR%%/app/Config/acl.ini.php.default
 @exec if [ ! -f %B/acl.ini.php ]; then cp -p %B/acl.ini.php.default %B/acl.ini.php; else %%ECHO_MSG%% "===> Customized %B/acl.ini.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/config/bootstrap.php.default %D/%%WWWDIR%%/app/config/bootstrap.php; then rm -f %D/%%WWWDIR%%/app/config/bootstrap.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/bootstrap.php has not been removed"; fi
-%%WWWDIR%%/app/config/bootstrap.php.default
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/bootstrap.php.default %D/%%WWWDIR%%/app/Config/bootstrap.php; then rm -f %D/%%WWWDIR%%/app/Config/bootstrap.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/bootstrap.php has not been removed"; fi
+%%WWWDIR%%/app/Config/bootstrap.php.default
 @exec if [ ! -f %B/bootstrap.php ]; then cp -p %B/bootstrap.php.default %B/bootstrap.php; else %%ECHO_MSG%% "===> Customized %B/bootstrap.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/config/core.php.default %D/%%WWWDIR%%/app/config/core.php; then rm -f %D/%%WWWDIR%%/app/config/core.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/core.php has not been removed"; fi
-%%WWWDIR%%/app/config/core.php.default
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/core.php.default %D/%%WWWDIR%%/app/Config/core.php; then rm -f %D/%%WWWDIR%%/app/Config/core.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/core.php has not been removed"; fi
+%%WWWDIR%%/app/Config/core.php.default
 @exec if [ ! -f %B/core.php ]; then cp -p %B/core.php.default %B/core.php; else %%ECHO_MSG%% "===> Customized %B/core.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/config/database.php.default %D/%%WWWDIR%%/app/config/database.php; then rm -f %D/%%WWWDIR%%/app/config/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/database.php has not been removed"; fi
-%%WWWDIR%%/app/config/database.php.default
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/database.php.default %D/%%WWWDIR%%/app/Config/database.php; then rm -f %D/%%WWWDIR%%/app/Config/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/database.php has not been removed"; fi
+%%WWWDIR%%/app/Config/database.php.default
 @exec if [ ! -f %B/database.php ]; then cp -p %B/database.php.default %B/database.php; else %%ECHO_MSG%% "===> Customized %B/database.php has not been overwritten"; fi
-@unexec if cmp -s %D/%%WWWDIR%%/app/config/routes.php.default %D/%%WWWDIR%%/app/config/routes.php; then rm -f %D/%%WWWDIR%%/app/config/routes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/config/routes.php has not been removed"; fi
-%%WWWDIR%%/app/config/routes.php.default
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/email.php.default %D/%%WWWDIR%%/app/Config/email.php; then rm -f %D/%%WWWDIR%%/app/Config/email.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/email.php has not been removed"; fi
+%%WWWDIR%%/app/Config/email.php.default
+@exec if [ ! -f %B/email.php ]; then cp -p %B/email.php.default %B/email.php; else %%ECHO_MSG%% "===> Customized %B/email.php has not been overwritten"; fi
+@unexec if cmp -s %D/%%WWWDIR%%/app/Config/routes.php.default %D/%%WWWDIR%%/app/Config/routes.php; then rm -f %D/%%WWWDIR%%/app/Config/routes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/app/Config/routes.php has not been removed"; fi
+%%WWWDIR%%/app/Config/routes.php.default
 @exec if [ ! -f %B/routes.php ]; then cp -p %B/routes.php.default %B/routes.php; else %%ECHO_MSG%% "===> Customized %B/routes.php has not been overwritten"; fi
-%%WWWDIR%%/app/config/schema/db_acl.php
-%%WWWDIR%%/app/config/schema/i18n.php
-%%WWWDIR%%/app/config/schema/sessions.php
+%%WWWDIR%%/app/Config/Schema/db_acl.php
+%%WWWDIR%%/app/Config/Schema/db_acl.sql
+%%WWWDIR%%/app/Config/Schema/i18n.php
+%%WWWDIR%%/app/Config/Schema/i18n.sql
+%%WWWDIR%%/app/Config/Schema/sessions.php
+%%WWWDIR%%/app/Config/Schema/sessions.sql
+%%WWWDIR%%/app/Console/Command/AppShell.php
+%%WWWDIR%%/app/Console/cake
+%%WWWDIR%%/app/Console/cake.bat
+%%WWWDIR%%/app/Console/cake.php
+%%WWWDIR%%/app/Controller/AppController.php
+%%WWWDIR%%/app/Controller/PagesController.php
+%%WWWDIR%%/app/Model/AppModel.php
+%%WWWDIR%%/app/View/Emails/html/default.ctp
+%%WWWDIR%%/app/View/Emails/text/default.ctp
+%%WWWDIR%%/app/View/Errors/error400.ctp
+%%WWWDIR%%/app/View/Errors/error500.ctp
+%%WWWDIR%%/app/View/Helper/AppHelper.php
+%%WWWDIR%%/app/View/Layouts/Emails/html/default.ctp
+%%WWWDIR%%/app/View/Layouts/Emails/text/default.ctp
+%%WWWDIR%%/app/View/Layouts/js/default.ctp
+%%WWWDIR%%/app/View/Layouts/rss/default.ctp
+%%WWWDIR%%/app/View/Layouts/xml/default.ctp
+%%WWWDIR%%/app/View/Layouts/ajax.ctp
+%%WWWDIR%%/app/View/Layouts/default.ctp
+%%WWWDIR%%/app/View/Layouts/flash.ctp
+%%WWWDIR%%/app/View/Pages/home.ctp
 %%WWWDIR%%/app/index.php
 %%HTACCESS%%%%WWWDIR%%/app/webroot/.htaccess
-%%WWWDIR%%/app/webroot/css.php
 %%WWWDIR%%/app/webroot/css/cake.generic.css
 %%WWWDIR%%/app/webroot/favicon.ico
 %%WWWDIR%%/app/webroot/img/cake.icon.png
@@ -31,995 +60,1209 @@
 %%WWWDIR%%/app/webroot/img/test-skip-icon.png
 %%WWWDIR%%/app/webroot/index.php
 %%WWWDIR%%/app/webroot/test.php
-%%WWWDIR%%/cake/LICENSE.txt
-%%WWWDIR%%/cake/VERSION.txt
-%%WWWDIR%%/cake/basics.php
-%%WWWDIR%%/cake/bootstrap.php
-%%WWWDIR%%/cake/config/config.php
-%%WWWDIR%%/cake/config/paths.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0080_00ff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0100_017f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0180_024F.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0250_02af.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0370_03ff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0400_04ff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0500_052f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/0530_058f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/1e00_1eff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/1f00_1fff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/2100_214f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/2150_218f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/2460_24ff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/2c00_2c5f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/2c60_2c7f.php
-%%WWWDIR%%/cake/config/unicode/casefolding/2c80_2cff.php
-%%WWWDIR%%/cake/config/unicode/casefolding/ff00_ffef.php
-%%WWWDIR%%/cake/console/cake
-%%WWWDIR%%/cake/console/cake.bat
-%%WWWDIR%%/cake/console/cake.php
-%%WWWDIR%%/cake/console/error.php
-%%WWWDIR%%/cake/console/libs/acl.php
-%%WWWDIR%%/cake/console/libs/api.php
-%%WWWDIR%%/cake/console/libs/bake.php
-%%WWWDIR%%/cake/console/libs/console.php
-%%WWWDIR%%/cake/console/libs/i18n.php
-%%WWWDIR%%/cake/console/libs/schema.php
-%%WWWDIR%%/cake/console/libs/shell.php
-%%WWWDIR%%/cake/console/libs/tasks/bake.php
-%%WWWDIR%%/cake/console/libs/tasks/controller.php
-%%WWWDIR%%/cake/console/libs/tasks/db_config.php
-%%WWWDIR%%/cake/console/libs/tasks/extract.php
-%%WWWDIR%%/cake/console/libs/tasks/fixture.php
-%%WWWDIR%%/cake/console/libs/tasks/model.php
-%%WWWDIR%%/cake/console/libs/tasks/plugin.php
-%%WWWDIR%%/cake/console/libs/tasks/project.php
-%%WWWDIR%%/cake/console/libs/tasks/template.php
-%%WWWDIR%%/cake/console/libs/tasks/test.php
-%%WWWDIR%%/cake/console/libs/tasks/view.php
-%%WWWDIR%%/cake/console/templates/default/actions/controller_actions.ctp
-%%WWWDIR%%/cake/console/templates/default/classes/controller.ctp
-%%WWWDIR%%/cake/console/templates/default/classes/fixture.ctp
-%%WWWDIR%%/cake/console/templates/default/classes/model.ctp
-%%WWWDIR%%/cake/console/templates/default/classes/test.ctp
-%%WWWDIR%%/cake/console/templates/default/views/form.ctp
-%%WWWDIR%%/cake/console/templates/default/views/home.ctp
-%%WWWDIR%%/cake/console/templates/default/views/index.ctp
-%%WWWDIR%%/cake/console/templates/default/views/view.ctp
-%%HTACCESS%%%%WWWDIR%%/cake/console/templates/skel/.htaccess
-%%WWWDIR%%/cake/console/templates/skel/app_controller.php
-%%WWWDIR%%/cake/console/templates/skel/app_helper.php
-%%WWWDIR%%/cake/console/templates/skel/app_model.php
-%%WWWDIR%%/cake/console/templates/skel/config/acl.ini.php
-%%WWWDIR%%/cake/console/templates/skel/config/bootstrap.php
-%%WWWDIR%%/cake/console/templates/skel/config/core.php
-%%WWWDIR%%/cake/console/templates/skel/config/database.php.default
-%%WWWDIR%%/cake/console/templates/skel/config/routes.php
-%%WWWDIR%%/cake/console/templates/skel/config/schema/db_acl.php
-%%WWWDIR%%/cake/console/templates/skel/config/schema/db_acl.sql
-%%WWWDIR%%/cake/console/templates/skel/config/schema/i18n.php
-%%WWWDIR%%/cake/console/templates/skel/config/schema/i18n.sql
-%%WWWDIR%%/cake/console/templates/skel/config/schema/sessions.php
-%%WWWDIR%%/cake/console/templates/skel/config/schema/sessions.sql
-%%WWWDIR%%/cake/console/templates/skel/controllers/pages_controller.php
-%%WWWDIR%%/cake/console/templates/skel/index.php
-%%WWWDIR%%/cake/console/templates/skel/views/elements/email/html/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/elements/email/text/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/ajax.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/email/html/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/email/text/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/flash.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/js/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/rss/default.ctp
-%%WWWDIR%%/cake/console/templates/skel/views/layouts/xml/default.ctp
-%%HTACCESS%%%%WWWDIR%%/cake/console/templates/skel/webroot/.htaccess
-%%WWWDIR%%/cake/console/templates/skel/webroot/css.php
-%%WWWDIR%%/cake/console/templates/skel/webroot/css/cake.generic.css
-%%WWWDIR%%/cake/console/templates/skel/webroot/favicon.ico
-%%WWWDIR%%/cake/console/templates/skel/webroot/img/cake.icon.png
-%%WWWDIR%%/cake/console/templates/skel/webroot/img/cake.power.gif
-%%WWWDIR%%/cake/console/templates/skel/webroot/img/test-error-icon.png
-%%WWWDIR%%/cake/console/templates/skel/webroot/img/test-fail-icon.png
-%%WWWDIR%%/cake/console/templates/skel/webroot/img/test-pass-icon.png
-%%WWWDIR%%/cake/console/templates/skel/webroot/img/test-skip-icon.png
-%%WWWDIR%%/cake/console/templates/skel/webroot/index.php
-%%WWWDIR%%/cake/console/templates/skel/webroot/test.php
-%%WWWDIR%%/cake/console/libs/testsuite.php
-%%WWWDIR%%/cake/dispatcher.php
-%%WWWDIR%%/cake/libs/cache.php
-%%WWWDIR%%/cake/libs/cache/apc.php
-%%WWWDIR%%/cake/libs/cache/file.php
-%%WWWDIR%%/cake/libs/cache/memcache.php
-%%WWWDIR%%/cake/libs/cache/xcache.php
-%%WWWDIR%%/cake/libs/cake_log.php
-%%WWWDIR%%/cake/libs/cake_session.php
-%%WWWDIR%%/cake/libs/cake_socket.php
-%%WWWDIR%%/cake/libs/class_registry.php
-%%WWWDIR%%/cake/libs/configure.php
-%%WWWDIR%%/cake/libs/controller/app_controller.php
-%%WWWDIR%%/cake/libs/controller/component.php
-%%WWWDIR%%/cake/libs/controller/components/acl.php
-%%WWWDIR%%/cake/libs/controller/components/auth.php
-%%WWWDIR%%/cake/libs/controller/components/cookie.php
-%%WWWDIR%%/cake/libs/controller/components/email.php
-%%WWWDIR%%/cake/libs/controller/components/request_handler.php
-%%WWWDIR%%/cake/libs/controller/components/security.php
-%%WWWDIR%%/cake/libs/controller/components/session.php
-%%WWWDIR%%/cake/libs/controller/controller.php
-%%WWWDIR%%/cake/libs/controller/pages_controller.php
-%%WWWDIR%%/cake/libs/controller/scaffold.php
-%%WWWDIR%%/cake/libs/debugger.php
-%%WWWDIR%%/cake/libs/error.php
-%%WWWDIR%%/cake/libs/file.php
-%%WWWDIR%%/cake/libs/folder.php
-%%WWWDIR%%/cake/libs/http_socket.php
-%%WWWDIR%%/cake/libs/i18n.php
-%%WWWDIR%%/cake/libs/inflector.php
-%%WWWDIR%%/cake/libs/l10n.php
-%%WWWDIR%%/cake/libs/magic_db.php
-%%WWWDIR%%/cake/libs/log/file_log.php
-%%WWWDIR%%/cake/libs/model/app_model.php
-%%WWWDIR%%/cake/libs/model/behaviors/acl.php
-%%WWWDIR%%/cake/libs/model/behaviors/containable.php
-%%WWWDIR%%/cake/libs/model/behaviors/translate.php
-%%WWWDIR%%/cake/libs/model/behaviors/tree.php
-%%WWWDIR%%/cake/libs/model/cake_schema.php
-%%WWWDIR%%/cake/libs/model/connection_manager.php
-%%WWWDIR%%/cake/libs/model/datasources/datasource.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo/dbo_mssql.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo/dbo_mysql.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo/dbo_mysqli.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo/dbo_oracle.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo/dbo_postgres.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo/dbo_sqlite.php
-%%WWWDIR%%/cake/libs/model/datasources/dbo_source.php
-%%WWWDIR%%/cake/libs/model/db_acl.php
-%%WWWDIR%%/cake/libs/model/model.php
-%%WWWDIR%%/cake/libs/model/model_behavior.php
-%%WWWDIR%%/cake/libs/multibyte.php
-%%WWWDIR%%/cake/libs/object.php
-%%WWWDIR%%/cake/libs/overloadable.php
-%%WWWDIR%%/cake/libs/overloadable_php4.php
-%%WWWDIR%%/cake/libs/overloadable_php5.php
-%%WWWDIR%%/cake/libs/router.php
-%%WWWDIR%%/cake/libs/sanitize.php
-%%WWWDIR%%/cake/libs/security.php
-%%WWWDIR%%/cake/libs/set.php
-%%WWWDIR%%/cake/libs/string.php
-%%WWWDIR%%/cake/libs/validation.php
-%%WWWDIR%%/cake/libs/view/elements/sql_dump.ctp
-%%WWWDIR%%/cake/libs/view/elements/email/html/default.ctp
-%%WWWDIR%%/cake/libs/view/elements/email/text/default.ctp
-%%WWWDIR%%/cake/libs/view/errors/error404.ctp
-%%WWWDIR%%/cake/libs/view/errors/error500.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_action.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_behavior_class.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_behavior_file.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_component_class.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_component_file.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_connection.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_controller.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_helper_class.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_helper_file.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_layout.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_model.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_scaffolddb.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_table.ctp
-%%WWWDIR%%/cake/libs/view/errors/missing_view.ctp
-%%WWWDIR%%/cake/libs/view/errors/private_action.ctp
-%%WWWDIR%%/cake/libs/view/errors/scaffold_error.ctp
-%%WWWDIR%%/cake/libs/view/helper.php
-%%WWWDIR%%/cake/libs/view/helpers/ajax.php
-%%WWWDIR%%/cake/libs/view/helpers/app_helper.php
-%%WWWDIR%%/cake/libs/view/helpers/cache.php
-%%WWWDIR%%/cake/libs/view/helpers/form.php
-%%WWWDIR%%/cake/libs/view/helpers/html.php
-%%WWWDIR%%/cake/libs/view/helpers/javascript.php
-%%WWWDIR%%/cake/libs/view/helpers/jquery_engine.php
-%%WWWDIR%%/cake/libs/view/helpers/js.php
-%%WWWDIR%%/cake/libs/view/helpers/mootools_engine.php
-%%WWWDIR%%/cake/libs/view/helpers/number.php
-%%WWWDIR%%/cake/libs/view/helpers/paginator.php
-%%WWWDIR%%/cake/libs/view/helpers/prototype_engine.php
-%%WWWDIR%%/cake/libs/view/helpers/rss.php
-%%WWWDIR%%/cake/libs/view/helpers/session.php
-%%WWWDIR%%/cake/libs/view/helpers/text.php
-%%WWWDIR%%/cake/libs/view/helpers/time.php
-%%WWWDIR%%/cake/libs/view/helpers/xml.php
-%%WWWDIR%%/cake/libs/view/layouts/ajax.ctp
-%%WWWDIR%%/cake/libs/view/layouts/default.ctp
-%%WWWDIR%%/cake/libs/view/layouts/email/html/default.ctp
-%%WWWDIR%%/cake/libs/view/layouts/email/text/default.ctp
-%%WWWDIR%%/cake/libs/view/layouts/flash.ctp
-%%WWWDIR%%/cake/libs/view/layouts/js/default.ctp
-%%WWWDIR%%/cake/libs/view/layouts/rss/default.ctp
-%%WWWDIR%%/cake/libs/view/layouts/xml/default.ctp
-%%WWWDIR%%/cake/libs/view/media.php
-%%WWWDIR%%/cake/libs/view/pages/home.ctp
-%%WWWDIR%%/cake/libs/view/scaffolds/edit.ctp
-%%WWWDIR%%/cake/libs/view/scaffolds/index.ctp
-%%WWWDIR%%/cake/libs/view/scaffolds/view.ctp
-%%WWWDIR%%/cake/libs/view/theme.php
-%%WWWDIR%%/cake/libs/view/view.php
-%%WWWDIR%%/cake/libs/xml.php
-%%WWWDIR%%/cake/tests/cases/basics.test.php
-%%WWWDIR%%/cake/tests/cases/console/cake.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/acl.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/api.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/bake.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/schema.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/shell.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/controller.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/db_config.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/extract.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/fixture.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/model.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/plugin.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/project.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/template.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/test.test.php
-%%WWWDIR%%/cake/tests/cases/console/libs/tasks/view.test.php
-%%WWWDIR%%/cake/tests/cases/dispatcher.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cache.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cache/apc.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cache/file.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cache/memcache.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cache/xcache.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cake_log.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cake_session.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cake_socket.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cake_test_case.test.php
-%%WWWDIR%%/cake/tests/cases/libs/cake_test_fixture.test.php
-%%WWWDIR%%/cake/tests/cases/libs/class_registry.test.php
-%%WWWDIR%%/cake/tests/cases/libs/code_coverage_manager.test.php
-%%WWWDIR%%/cake/tests/cases/libs/configure.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/component.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/acl.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/auth.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/cookie.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/email.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/request_handler.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/security.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/components/session.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/controller.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/controller_merge_vars.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/pages_controller.test.php
-%%WWWDIR%%/cake/tests/cases/libs/controller/scaffold.test.php
-%%WWWDIR%%/cake/tests/cases/libs/debugger.test.php
-%%WWWDIR%%/cake/tests/cases/libs/error.test.php
-%%WWWDIR%%/cake/tests/cases/libs/file.test.php
-%%WWWDIR%%/cake/tests/cases/libs/folder.test.php
-%%WWWDIR%%/cake/tests/cases/libs/http_socket.test.php
-%%WWWDIR%%/cake/tests/cases/libs/i18n.test.php
-%%WWWDIR%%/cake/tests/cases/libs/inflector.test.php
-%%WWWDIR%%/cake/tests/cases/libs/l10n.test.php
-%%WWWDIR%%/cake/tests/cases/libs/magic_db.test.php
-%%WWWDIR%%/cake/tests/cases/libs/log/file_log.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/behaviors/acl.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/behaviors/containable.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/behaviors/translate.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/behaviors/tree.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/cake_schema.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/connection_manager.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_mssql.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_mysql.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_mysqli.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_oracle.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_postgres.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo/dbo_sqlite.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo_source.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/db_acl.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model_behavior.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model_delete.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model_integration.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model_read.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model_validation.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/model_write.test.php
-%%WWWDIR%%/cake/tests/cases/libs/model/models.php
-%%WWWDIR%%/cake/tests/cases/libs/multibyte.test.php
-%%WWWDIR%%/cake/tests/cases/libs/object.test.php
-%%WWWDIR%%/cake/tests/cases/libs/overloadable.test.php
-%%WWWDIR%%/cake/tests/cases/libs/router.test.php
-%%WWWDIR%%/cake/tests/cases/libs/sanitize.test.php
-%%WWWDIR%%/cake/tests/cases/libs/security.test.php
-%%WWWDIR%%/cake/tests/cases/libs/set.test.php
-%%WWWDIR%%/cake/tests/cases/libs/string.test.php
-%%WWWDIR%%/cake/tests/cases/libs/test_manager.test.php
-%%WWWDIR%%/cake/tests/cases/libs/validation.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helper.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/ajax.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/cache.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/form.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/html.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/javascript.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/jquery_engine.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/js.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/mootools_engine.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/number.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/paginator.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/prototype_engine.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/rss.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/session.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/text.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/time.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/helpers/xml.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/media.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/theme.test.php
-%%WWWDIR%%/cake/tests/cases/libs/view/view.test.php
-%%WWWDIR%%/cake/tests/cases/libs/xml.test.php
-%%WWWDIR%%/cake/tests/fixtures/account_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aco_action_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aco_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aco_two_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/ad_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/advertisement_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/after_tree_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/another_article_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/apple_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aro_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aro_two_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aros_aco_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/aros_aco_two_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/article_featured_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/article_featureds_tags_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/article_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/articles_tag_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/attachment_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/auth_user_custom_field_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/auth_user_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/author_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/basket_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/bid_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/bidding_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/bidding_message_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/binary_test_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/book_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/cache_test_model_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/callback_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/campaign_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/category_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/category_thread_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/cd_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/comment_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/content_account_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/content_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/counter_cache_post_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/counter_cache_post_nonstandard_primary_key_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/counter_cache_user_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/counter_cache_user_nonstandard_primary_key_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/data_test_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/datatype_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/dependency_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/device_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/device_type_category_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/device_type_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/document_directory_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/document_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/exterior_type_category_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/feature_set_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/featured_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/film_file_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/flag_tree_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/fruit_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/fruits_uuid_tag_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/group_update_all_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/home_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/image_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/item_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/items_portfolio_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/join_a_b_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/join_a_c_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/join_a_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/join_b_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/join_c_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/join_thing_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/message_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/my_categories_my_products_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/my_categories_my_users_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/my_category_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/my_product_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/my_user_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/node_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/number_tree_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/number_tree_two_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/numeric_article_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/overall_favorite_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/person_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/portfolio_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/post_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/posts_tag_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/prefix_test_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/primary_model_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/product_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/product_update_all_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/project_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/sample_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/secondary_model_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/session_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/something_else_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/something_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/stories_tag_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/story_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/syfile_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/tag_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/test_plugin_article_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/test_plugin_comment_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/the_paper_monkies_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/thread_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/translate_article_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/translate_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/translate_table_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/translate_with_prefix_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/translated_article_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/translated_item_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/unconventional_tree_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/underscore_field_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/user_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuid_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuid_tag_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuid_tree_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuiditem_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuiditems_uuidportfolio_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuiditems_uuidportfolio_numericid_fixture.php
-%%WWWDIR%%/cake/tests/fixtures/uuidportfolio_fixture.php
-%%WWWDIR%%/cake/tests/groups/acl.group.php
-%%WWWDIR%%/cake/tests/groups/bake.group.php
-%%WWWDIR%%/cake/tests/groups/behaviors.group.php
-%%WWWDIR%%/cake/tests/groups/cache.group.php
-%%WWWDIR%%/cake/tests/groups/components.group.php
-%%WWWDIR%%/cake/tests/groups/configure.group.php
-%%WWWDIR%%/cake/tests/groups/console.group.php
-%%WWWDIR%%/cake/tests/groups/controller.group.php
-%%WWWDIR%%/cake/tests/groups/database.group.php
-%%WWWDIR%%/cake/tests/groups/helpers.group.php
-%%WWWDIR%%/cake/tests/groups/i18n.group.php
-%%WWWDIR%%/cake/tests/groups/javascript.group.php
-%%WWWDIR%%/cake/tests/groups/lib.group.php
-%%WWWDIR%%/cake/tests/groups/model.group.php
-%%WWWDIR%%/cake/tests/groups/no_cross_contamination.group.php
-%%WWWDIR%%/cake/tests/groups/routing_system.group.php
-%%WWWDIR%%/cake/tests/groups/socket.group.php
-%%WWWDIR%%/cake/tests/groups/test_suite.group.php
-%%WWWDIR%%/cake/tests/groups/view.group.php
-%%WWWDIR%%/cake/tests/groups/xml.group.php
-%%WWWDIR%%/cake/tests/lib/cake_test_case.php
-%%WWWDIR%%/cake/tests/lib/cake_test_fixture.php
-%%WWWDIR%%/cake/tests/lib/cake_test_model.php
-%%WWWDIR%%/cake/tests/lib/cake_test_suite_dispatcher.php
-%%WWWDIR%%/cake/tests/lib/cake_web_test_case.php
-%%WWWDIR%%/cake/tests/lib/code_coverage_manager.php
-%%WWWDIR%%/cake/tests/lib/reporter/cake_base_reporter.php
-%%WWWDIR%%/cake/tests/lib/reporter/cake_cli_reporter.php
-%%WWWDIR%%/cake/tests/lib/reporter/cake_html_reporter.php
-%%WWWDIR%%/cake/tests/lib/reporter/cake_text_reporter.php
-%%WWWDIR%%/cake/tests/lib/templates/footer.php
-%%WWWDIR%%/cake/tests/lib/templates/header.php
-%%WWWDIR%%/cake/tests/lib/templates/menu.php
-%%WWWDIR%%/cake/tests/lib/templates/simpletest.php
-%%WWWDIR%%/cake/tests/lib/templates/xdebug.php
-%%WWWDIR%%/cake/tests/lib/test_manager.php
-%%WWWDIR%%/cake/tests/test_app/config/acl.ini.php
-%%WWWDIR%%/cake/tests/test_app/controllers/tests_apps_controller.php
-%%WWWDIR%%/cake/tests/test_app/controllers/tests_apps_posts_controller.php
-%%WWWDIR%%/cake/tests/test_app/libs/cache/test_app_cache.php
-%%WWWDIR%%/cake/tests/test_app/libs/library.php
-%%WWWDIR%%/cake/tests/test_app/libs/log/test_app_log.php
-%%WWWDIR%%/cake/tests/test_app/locale/cache_test_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/cache_test_po/LC_MESSAGES/dom1.po
-%%WWWDIR%%/cake/tests/test_app/locale/cache_test_po/LC_MESSAGES/dom2.po
-%%WWWDIR%%/cake/tests/test_app/locale/ja_jp/LC_TIME
-%%WWWDIR%%/cake/tests/test_app/locale/po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/po/LC_MONETARY/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/po/LC_TIME
-%%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_0_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_0_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_10_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_10_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_11_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_11_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_11_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_11_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_12_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_12_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_12_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_12_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_13_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_13_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_13_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_13_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_14_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_14_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_14_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_14_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_1_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_1_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_2_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_2_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_3_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_3_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_4_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_4_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_5_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_5_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_6_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_6_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_7_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_7_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_8_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_8_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo/LC_MESSAGES/core.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo/LC_MESSAGES/default.mo
-%%WWWDIR%%/cake/tests/test_app/locale/rule_9_po/LC_MESSAGES/core.po
-%%WWWDIR%%/cake/tests/test_app/locale/rule_9_po/LC_MESSAGES/default.po
-%%WWWDIR%%/cake/tests/test_app/locale/time_test/LC_TIME
-%%WWWDIR%%/cake/tests/test_app/models/behaviors/persister_one_behavior.php
-%%WWWDIR%%/cake/tests/test_app/models/behaviors/persister_two_behavior.php
-%%WWWDIR%%/cake/tests/test_app/models/datasources/test/test_local_driver.php
-%%WWWDIR%%/cake/tests/test_app/models/datasources/test2_other_source.php
-%%WWWDIR%%/cake/tests/test_app/models/datasources/test2_source.php
-%%WWWDIR%%/cake/tests/test_app/models/comment.php
-%%WWWDIR%%/cake/tests/test_app/models/persister_one.php
-%%WWWDIR%%/cake/tests/test_app/models/persister_two.php
-%%WWWDIR%%/cake/tests/test_app/models/post.php
-%%WWWDIR%%/cake/tests/test_app/plugins/plugin_js/webroot/js/one/plugin_one.js
-%%WWWDIR%%/cake/tests/test_app/plugins/plugin_js/webroot/js/plugin_js.js
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/config/load.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/config/more.load.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/config/schema/schema.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/other_component.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/plugins_component.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/test_plugin_component.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components/test_plugin_other_component.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/test_plugin_controller.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/tests_controller.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/libs/cache/test_plugin_cache.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/libs/log/test_plugin_log.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/libs/test_plugin_library.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/locale/po/LC_MESSAGES/test_plugin.po
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/locale/po/LC_MONETARY/test_plugin.po
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/behaviors/test_plugin_persister_one.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/behaviors/test_plugin_persister_two.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources/dbo/dbo_dummy.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources/test/test_driver.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources/test_other_source.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources/test_source.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/test_plugin_auth_user.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/test_plugin_authors.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/test_plugin_comment.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/test_plugin_post.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/test_plugin_app_controller.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/test_plugin_app_model.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/sample/sample_plugin.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/shells/example.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/welcome.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/elements/plugin_element.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/elements/test_plugin_element.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/other_helper.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/plugged_helper.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers/test_plugin_app.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/layouts/default.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/tests/index.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/tests/scaffold.edit.ctp
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/css/test_plugin_asset.css
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/css/theme_one.htc
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/css/unknown.extension
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/flash/plugin_test.swf
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/img/cake.icon.gif
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/js/test_plugin/test.js
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/pdfs/plugin_test.pdf
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/root.js
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/example.php
-%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/welcome.php
-%%WWWDIR%%/cake/tests/test_app/tmp/dir_map
-%%WWWDIR%%/cake/tests/test_app/vendors/Test/MyTest.php
-%%WWWDIR%%/cake/tests/test_app/vendors/Test/hello.php
-%%WWWDIR%%/cake/tests/test_app/vendors/css/test_asset.css
-%%WWWDIR%%/cake/tests/test_app/vendors/img/test.jpg
-%%WWWDIR%%/cake/tests/test_app/vendors/img/test_2.JPG
-%%WWWDIR%%/cake/tests/test_app/vendors/sample/configure_test_vendor_sample.php
-%%WWWDIR%%/cake/tests/test_app/vendors/shells/sample.php
-%%WWWDIR%%/cake/tests/test_app/vendors/shells/templates/test/classes/test_object.ctp
-%%WWWDIR%%/cake/tests/test_app/vendors/somename/some.name.php
-%%WWWDIR%%/cake/tests/test_app/vendors/welcome.php
-%%WWWDIR%%/cake/tests/test_app/views/elements/email/html/custom.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/email/html/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/email/html/nested_element.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/email/text/custom.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/email/text/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/email/text/wide.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/html_call.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/nocache/contains_nocache.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/nocache/plain.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/nocache/sub1.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/nocache/sub2.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/session_helper.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/test_element.ctp
-%%WWWDIR%%/cake/tests/test_app/views/elements/test_element.xml
-%%WWWDIR%%/cake/tests/test_app/views/elements/type_check.ctp
-%%WWWDIR%%/cake/tests/test_app/views/helpers/banana.php
-%%WWWDIR%%/cake/tests/test_app/views/layouts/ajax.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/ajax2.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/cache_empty_sections.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/cache_layout.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/email/html/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/email/html/thin.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/email/text/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/flash.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/js/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/multi_cache.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/rss/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/layouts/xml/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/pages/home.ctp
-%%WWWDIR%%/cake/tests/test_app/views/pages/extract.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/cache_empty_sections.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/cache_form.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/helper_overwrite.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/index.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/multiple_nocache.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/nocache_multiple_element.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/scaffold.edit.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/sequencial_nocache.ctp
-%%WWWDIR%%/cake/tests/test_app/views/posts/test_nocache_tags.ctp
-%%WWWDIR%%/cake/tests/test_app/views/tests_apps/index.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/elements/test_element.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/layouts/default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/plugins/test_plugin/layouts/plugin_default.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/plugins/test_plugin/tests/index.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/posts/index.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/posts/scaffold.index.ctp
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/css/test_asset.css
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/css/theme_webroot.css
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/flash/theme_test.swf
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/img/cake.power.gif
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/img/test.jpg
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/js/theme.js
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/js/one/theme_one.js
-%%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/pdfs/theme_test.pdf
-%%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme/css/theme_webroot.css
-%%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme/css/webroot_test.css
-%%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme/img/cake.power.gif
-%%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme/img/test.jpg
 %%WWWDIR%%/index.php
+%%WWWDIR%%/lib/Cake/Cache/Cache.php
+%%WWWDIR%%/lib/Cake/Cache/CacheEngine.php
+%%WWWDIR%%/lib/Cake/Cache/Engine/ApcEngine.php
+%%WWWDIR%%/lib/Cake/Cache/Engine/FileEngine.php
+%%WWWDIR%%/lib/Cake/Cache/Engine/MemcacheEngine.php
+%%WWWDIR%%/lib/Cake/Cache/Engine/WincacheEngine.php
+%%WWWDIR%%/lib/Cake/Cache/Engine/XcacheEngine.php
+%%WWWDIR%%/lib/Cake/Config/config.php
+%%WWWDIR%%/lib/Cake/Config/routes.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0080_00ff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0100_017f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0180_024F.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0250_02af.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0370_03ff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0400_04ff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0500_052f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/0530_058f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/1e00_1eff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/1f00_1fff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/2100_214f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/2150_218f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/2460_24ff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/2c00_2c5f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/2c60_2c7f.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/2c80_2cff.php
+%%WWWDIR%%/lib/Cake/Config/unicode/casefolding/ff00_ffef.php
+%%WWWDIR%%/lib/Cake/Configure/ConfigReaderInterface.php
+%%WWWDIR%%/lib/Cake/Configure/IniReader.php
+%%WWWDIR%%/lib/Cake/Configure/PhpReader.php
+%%WWWDIR%%/lib/Cake/Console/Command/AclShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/ApiShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/AppShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/BakeShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/CommandListShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/ConsoleShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/I18nShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/SchemaShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/TestShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/BakeTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/ControllerTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/DbConfigTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/ExtractTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/FixtureTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/ModelTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/PluginTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/ProjectTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/TemplateTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/TestTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/Task/ViewTask.php
+%%WWWDIR%%/lib/Cake/Console/Command/TestsuiteShell.php
+%%WWWDIR%%/lib/Cake/Console/Command/UpgradeShell.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleErrorHandler.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleInput.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleInputArgument.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleInputOption.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleInputSubcommand.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleOptionParser.php
+%%WWWDIR%%/lib/Cake/Console/ConsoleOutput.php
+%%WWWDIR%%/lib/Cake/Console/HelpFormatter.php
+%%WWWDIR%%/lib/Cake/Console/Shell.php
+%%WWWDIR%%/lib/Cake/Console/ShellDispatcher.php
+%%WWWDIR%%/lib/Cake/Console/TaskCollection.php
+%%WWWDIR%%/lib/Cake/Console/Templates/default/actions/controller_actions.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/classes/controller.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/classes/fixture.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/classes/model.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/classes/test.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/views/form.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/views/home.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/views/index.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/default/views/view.ctp
+%%HTACCESS%%%%WWWDIR%%/lib/Cake/Console/Templates/skel/.htaccess
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema/db_acl.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema/db_acl.sql
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema/i18n.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema/i18n.sql
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema/sessions.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema/sessions.sql
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/acl.ini.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/bootstrap.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/core.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/database.php.default
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/email.php.default
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/routes.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/Command/AppShell.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/cake
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/cake.bat
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/cake.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Controller/AppController.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Controller/PagesController.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/Model/AppModel.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Emails/html/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Emails/text/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Errors/error400.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Errors/error500.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Helper/AppHelper.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/Emails/html/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/Emails/text/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/ajax.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/flash.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/js/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/rss/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/xml/default.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Pages/home.ctp
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/index.php
+%%HTACCESS%%%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/.htaccess
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/css/cake.generic.css
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/favicon.ico
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img/cake.icon.png
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img/cake.power.gif
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img/test-error-icon.png
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img/test-fail-icon.png
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img/test-pass-icon.png
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img/test-skip-icon.png
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/index.php
+%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/test.php
+%%WWWDIR%%/lib/Cake/Console/cake
+%%WWWDIR%%/lib/Cake/Console/cake.bat
+%%WWWDIR%%/lib/Cake/Console/cake.php
+%%WWWDIR%%/lib/Cake/Controller/CakeErrorController.php
+%%WWWDIR%%/lib/Cake/Controller/Component.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Acl/AclInterface.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Acl/DbAcl.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Acl/IniAcl.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Acl/PhpAcl.php
+%%WWWDIR%%/lib/Cake/Controller/Component/AclComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/ActionsAuthorize.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/BaseAuthenticate.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/BaseAuthorize.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/BasicAuthenticate.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/ControllerAuthorize.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/CrudAuthorize.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/DigestAuthenticate.php
+%%WWWDIR%%/lib/Cake/Controller/Component/Auth/FormAuthenticate.php
+%%WWWDIR%%/lib/Cake/Controller/Component/AuthComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/CookieComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/EmailComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/PaginatorComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/RequestHandlerComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/SecurityComponent.php
+%%WWWDIR%%/lib/Cake/Controller/Component/SessionComponent.php
+%%WWWDIR%%/lib/Cake/Controller/ComponentCollection.php
+%%WWWDIR%%/lib/Cake/Controller/Controller.php
+%%WWWDIR%%/lib/Cake/Controller/Scaffold.php
+%%WWWDIR%%/lib/Cake/Core/App.php
+%%WWWDIR%%/lib/Cake/Core/CakePlugin.php
+%%WWWDIR%%/lib/Cake/Core/Configure.php
+%%WWWDIR%%/lib/Cake/Core/Object.php
+%%WWWDIR%%/lib/Cake/Error/ErrorHandler.php
+%%WWWDIR%%/lib/Cake/Error/ExceptionRenderer.php
+%%WWWDIR%%/lib/Cake/Error/exceptions.php
+%%WWWDIR%%/lib/Cake/Event/CakeEvent.php
+%%WWWDIR%%/lib/Cake/Event/CakeEventListener.php
+%%WWWDIR%%/lib/Cake/Event/CakeEventManager.php
+%%WWWDIR%%/lib/Cake/I18n/I18n.php
+%%WWWDIR%%/lib/Cake/I18n/L10n.php
+%%WWWDIR%%/lib/Cake/I18n/Multibyte.php
+%%WWWDIR%%/lib/Cake/LICENSE.txt
+%%WWWDIR%%/lib/Cake/Log/CakeLog.php
+%%WWWDIR%%/lib/Cake/Log/CakeLogInterface.php
+%%WWWDIR%%/lib/Cake/Log/Engine/FileLog.php
+%%WWWDIR%%/lib/Cake/Model/AclNode.php
+%%WWWDIR%%/lib/Cake/Model/Aco.php
+%%WWWDIR%%/lib/Cake/Model/AcoAction.php
+%%WWWDIR%%/lib/Cake/Model/Aro.php
+%%WWWDIR%%/lib/Cake/Model/Behavior/AclBehavior.php
+%%WWWDIR%%/lib/Cake/Model/Behavior/ContainableBehavior.php
+%%WWWDIR%%/lib/Cake/Model/Behavior/TranslateBehavior.php
+%%WWWDIR%%/lib/Cake/Model/Behavior/TreeBehavior.php
+%%WWWDIR%%/lib/Cake/Model/BehaviorCollection.php
+%%WWWDIR%%/lib/Cake/Model/CakeSchema.php
+%%WWWDIR%%/lib/Cake/Model/ConnectionManager.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/CakeSession.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/DataSource.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Database/Mysql.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Database/Postgres.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Database/Sqlite.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Database/Sqlserver.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/DboSource.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Session/CacheSession.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Session/CakeSessionHandlerInterface.php
+%%WWWDIR%%/lib/Cake/Model/Datasource/Session/DatabaseSession.php
+%%WWWDIR%%/lib/Cake/Model/I18nModel.php
+%%WWWDIR%%/lib/Cake/Model/Model.php
+%%WWWDIR%%/lib/Cake/Model/ModelBehavior.php
+%%WWWDIR%%/lib/Cake/Model/Permission.php
+%%WWWDIR%%/lib/Cake/Network/CakeRequest.php
+%%WWWDIR%%/lib/Cake/Network/CakeResponse.php
+%%WWWDIR%%/lib/Cake/Network/CakeSocket.php
+%%WWWDIR%%/lib/Cake/Network/Email/AbstractTransport.php
+%%WWWDIR%%/lib/Cake/Network/Email/CakeEmail.php
+%%WWWDIR%%/lib/Cake/Network/Email/DebugTransport.php
+%%WWWDIR%%/lib/Cake/Network/Email/MailTransport.php
+%%WWWDIR%%/lib/Cake/Network/Email/SmtpTransport.php
+%%WWWDIR%%/lib/Cake/Network/Http/BasicAuthentication.php
+%%WWWDIR%%/lib/Cake/Network/Http/DigestAuthentication.php
+%%WWWDIR%%/lib/Cake/Network/Http/HttpResponse.php
+%%WWWDIR%%/lib/Cake/Network/Http/HttpSocket.php
+%%WWWDIR%%/lib/Cake/Routing/Dispatcher.php
+%%WWWDIR%%/lib/Cake/Routing/Route/CakeRoute.php
+%%WWWDIR%%/lib/Cake/Routing/Route/PluginShortRoute.php
+%%WWWDIR%%/lib/Cake/Routing/Route/RedirectRoute.php
+%%WWWDIR%%/lib/Cake/Routing/Router.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllBehaviorsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllCacheTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllComponentsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllConfigureTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllConsoleTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllControllerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllCoreTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllDatabaseTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllErrorTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllEventTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllHelpersTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllI18nTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllLogTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllNetworkTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllRoutingTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllTestSuiteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllTestsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllUtilityTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/AllViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/BasicsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Cache/CacheTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Cache/Engine/ApcEngineTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Cache/Engine/FileEngineTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Cache/Engine/MemcacheEngineTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Cache/Engine/WincacheEngineTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Cache/Engine/XcacheEngineTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Configure/IniReaderTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Configure/PhpReaderTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/AllConsoleLibsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/AllConsoleTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/AllShellsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/AllTasksTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/AclShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/ApiShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/BakeShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/CommandListShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/SchemaShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/TestShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/ControllerTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/DbConfigTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/ExtractTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/FixtureTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/ModelTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/PluginTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/ProjectTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/TemplateTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/TestTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task/ViewTaskTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/ConsoleErrorHandlerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/ConsoleOptionParserTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/ConsoleOutputTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/HelpFormatterTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/ShellDispatcherTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/ShellTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Console/TaskCollectionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Acl/DbAclTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Acl/IniAclTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Acl/PhpAclTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth/ActionsAuthorizeTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth/BasicAuthenticateTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth/ControllerAuthorizeTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth/CrudAuthorizeTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth/DigestAuthenticateTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth/FormAuthenticateTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/AclComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/AuthComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/CookieComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/EmailComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/PaginatorComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/RequestHandlerComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/SecurityComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/SessionComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/ComponentCollectionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/ComponentTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/ControllerMergeVarsTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/ControllerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/PagesControllerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Controller/ScaffoldTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Core/AppTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Core/CakePluginTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Core/ConfigureTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Core/ObjectTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Error/ErrorHandlerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Error/ExceptionRendererTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Event/CakeEventManagerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Event/CakeEventTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/I18n/I18nTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/I18n/L10nTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/I18n/MultibyteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Log/CakeLogTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Log/Engine/FileLogTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/AclBehaviorTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/ContainableBehaviorTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/TranslateBehaviorTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/TreeBehaviorAfterTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/TreeBehaviorNumberTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/TreeBehaviorScopedTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/TreeBehaviorTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior/TreeBehaviorUuidTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/BehaviorCollectionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/CakeSessionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/MysqlTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/PostgresTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/SqliteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/SqlserverTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/DboSourceTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Session/CacheSessionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Session/DatabaseSessionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/AclNodeTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/CakeSchemaTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ConnectionManagerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelCrossSchemaHabtmTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelDeleteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelIntegrationTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelReadTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelTestBase.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelValidationTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/ModelWriteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/models.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/CakeRequestTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/CakeResponseTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/CakeSocketTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Email/CakeEmailTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Email/DebugTransportTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Email/SmtpTransportTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Http/BasicAuthenticationTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Http/DigestAuthenticationTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Http/HttpResponseTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Network/Http/HttpSocketTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Routing/DispatcherTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Routing/Route/CakeRouteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Routing/Route/PluginShortRouteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Routing/Route/RedirectRouteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Routing/RouterTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/TestSuite/CakeTestCaseTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/TestSuite/CakeTestFixtureTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/TestSuite/CakeTestSuiteTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/TestSuite/ControllerTestCaseTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/TestSuite/HtmlCoverageReportTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/CakeNumberTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/CakeTimeTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/ClassRegistryTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/DebuggerTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/FileTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/FolderTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/InflectorTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/ObjectCollectionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/SanitizeTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/SecurityTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/SetTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/StringTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/ValidationTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Utility/XmlTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/CacheHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/FormHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/HtmlHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/JqueryEngineHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/JsHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/MootoolsEngineHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/NumberHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/PaginatorHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/PrototypeEngineHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/RssHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/SessionHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/TextHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/Helper/TimeHelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/HelperCollectionTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/HelperTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/JsonViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/MediaViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/ScaffoldViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/ThemeViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/ViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/View/XmlViewTest.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AccountFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AcoActionFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AcoFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AcoTwoFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AdFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AdvertisementFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AfterTreeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AnotherArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AppleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArmorFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArmorsPlayerFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AroFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AroTwoFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArosAcoFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArosAcoTwoFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArticleFeaturedFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArticleFeaturedsTagsFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ArticlesTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AssertTagsTestCase.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AttachmentFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AuthUserCustomFieldFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AuthUserFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/AuthorFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BakeArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BakeArticlesBakeTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BakeCommentFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BakeTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BasketFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BidFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BiddingFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BiddingMessageFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BinaryTestFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/BookFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CacheTestModelFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CallbackFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CampaignFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CategoryFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CategoryThreadFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CdFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CommentFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ContentAccountFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ContentFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CounterCachePostFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CounterCachePostNonstandardPrimaryKeyFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CounterCacheUserFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/CounterCacheUserNonstandardPrimaryKeyFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DataTestFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DatatypeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DependencyFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DeviceFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DeviceTypeCategoryFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DeviceTypeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DocumentDirectoryFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DocumentFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DomainFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/DomainsSiteFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ExteriorTypeCategoryFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FeatureSetFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FeaturedFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FilmFileFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FixturizedTestCase.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FlagTreeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FruitFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/FruitsUuidTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/GroupUpdateAllFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/GuildFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/GuildsPlayerFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/HomeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ImageFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ItemFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ItemsPortfolioFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/JoinABFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/JoinACFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/JoinAFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/JoinBFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/JoinCFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/JoinThingFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/MessageFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/MyCategoriesMyProductsFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/MyCategoriesMyUsersFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/MyCategoryFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/MyProductFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/MyUserFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/NodeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/NumberTreeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/NumberTreeTwoFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/NumericArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/OverallFavoriteFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PersonFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PlayerFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PortfolioFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PostFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PostsTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PrefixTestFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/PrimaryModelFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ProductFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ProductUpdateAllFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ProjectFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SampleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SecondaryModelFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SiteFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SessionFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SomethingElseFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SomethingFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/StoriesTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/StoryFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/SyfileFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TestPluginArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TestPluginCommentFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ThePaperMonkiesFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/ThreadFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TranslateArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TranslateFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TranslateTableFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TranslateWithPrefixFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TranslatedArticleFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/TranslatedItemFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UnconventionalTreeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UnderscoreFieldFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UserFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuidFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuidTagFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuidTreeFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuiditemFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuiditemsUuidportfolioFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuiditemsUuidportfolioNumericidFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/UuidportfolioFixture.php
+%%WWWDIR%%/lib/Cake/Test/Fixture/rss.xml
+%%WWWDIR%%/lib/Cake/Test/Fixture/sample.xml
+%%WWWDIR%%/lib/Cake/Test/Fixture/soap_request.xml
+%%WWWDIR%%/lib/Cake/Test/Fixture/soap_response.xml
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/acl.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/acl.ini.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/empty.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/htmlhelper_minimized.ini
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/htmlhelper_tags.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/nested.ini
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/no_section.ini
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/routes.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/var_test.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Config/var_test2.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Console/Command/SampleShell.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test/classes/test_object.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test/views/admin_edit.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Controller/AppController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Controller/PagesController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Controller/TestsAppsController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Controller/TestsAppsPostsController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Lib/Cache/Engine/TestAppCacheEngine.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Lib/Library.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Lib/Log/Engine/TestAppLog.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Lib/Utility/TestUtilityClass.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/cache_test_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/cache_test_po/LC_MESSAGES/dom1.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/cache_test_po/LC_MESSAGES/dom2.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/ja_jp/LC_TIME
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/po/LC_MONETARY/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/po/LC_TIME
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_mo/LC_MESSAGES/core.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_mo/LC_MESSAGES/default.mo
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_po/LC_MESSAGES/core.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_po/LC_MESSAGES/default.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Locale/time_test/LC_TIME
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Behavior/PersisterOneBehaviorBehavior.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Behavior/PersisterTwoBehaviorBehavior.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource/Database/TestLocalDriver.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource/Session/TestAppLibSession.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource/Test2OtherSource.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource/Test2Source.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/AppModel.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Comment.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/PersisterOne.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/PersisterTwo.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Model/Post.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/Config/bootstrap.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/webroot/js/one/plugin_one.js
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/webroot/js/plugin_js.js
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/Schema/schema.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/bootstrap.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/custom_config.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/load.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/more.load.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/routes.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command/ExampleShell.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command/Task/OtherTaskTask.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/OtherComponent.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/PluginsComponent.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/TestPluginComponent.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component/TestPluginOtherComponent.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/TestPluginAppController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/TestPluginController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/TestsController.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Cache/Engine/TestPluginCacheEngine.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Custom/Package/CustomLibClass.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Error/TestPluginExceptionRenderer.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Log/Engine/TestPluginLog.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/TestPluginLibrary.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/TestPluginOtherLibrary.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Locale/po/LC_MESSAGES/test_plugin.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Locale/po/LC_MONETARY/test_plugin.po
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Behavior/TestPluginPersisterOneBehavior.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Behavior/TestPluginPersisterTwoBehavior.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/Database/DboDummy.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/Database/TestDriver.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/Session/TestPluginSession.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/TestSource.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/TestOtherSource.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/TestPluginAppModel.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/TestPluginAuthUser.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/TestPluginAuthors.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/TestPluginComment.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/TestPluginPost.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/sample/sample_plugin.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Utility/TestPluginEngine.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/welcome.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/Example/ExampleExample.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/plugin_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/test_plugin_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/translate.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Emails/text/test_plugin_tpl.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Helper/OtherHelperHelper.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Helper/PluggedHelperHelper.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Helper/TestPluginAppHelper.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Layouts/Emails/text/plug_default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Layouts/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Tests/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Tests/scaffold.form.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/css/test_plugin_asset.css
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/css/theme_one.htc
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/css/unknown.extension
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/flash/plugin_test.swf
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/img/cake.icon.gif
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/js/test_plugin/test.js
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/pdfs/plugin_test.pdf
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/root.js
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Config/bootstrap.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/ExampleShell.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/WelcomeShell.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Utility/TestAppEngine.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/Test/MyTest.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/Test/hello.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/css/test_asset.css
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/img/test.jpg
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/img/test_2.JPG
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/sample/configure_test_vendor_sample.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/somename/some.name.php
+%%WWWDIR%%/lib/Cake/Test/test_app/Vendor/welcome.php
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/extended_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/extended_missing_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/html_call.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/nocache/contains_nocache.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/nocache/plain.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/nocache/sub1.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/nocache/sub2.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/parent_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/session_helper.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/test_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/test_element.xml
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/type_check.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/custom.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/japanese.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html/nested_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text/custom.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text/custom_helper.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text/japanese.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text/wide.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Errors/error400.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Errors/error500.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Helper/BananaHelper.php
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/html/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/html/japanese.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/html/thin.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/text/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/text/japanese.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/ajax.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/ajax2.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/cache_empty_sections.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/cache_layout.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/flash.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/json/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/multi_cache.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/js/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/rss/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/xml/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Pages/extract.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Pages/home.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Pages/page.home.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/json/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/xml/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/alt_ext.alt
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/cache_empty_sections.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/cache_form.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_loop.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_loop_inner.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_missing_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/extend_self.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/helper_overwrite.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/multiple_nocache.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/nested_extends.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/nocache_multiple_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/open_block.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/parent_1.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/parent_2.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/parent_view.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/scaffold.form.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/sequencial_nocache.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/test_nocache_tags.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/TestsApps/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/TestsApps/json/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Elements/test_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Layouts/default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Plugin/TestPlugin/Layouts/plugin_default.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Plugin/TestPlugin/Tests/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Posts/index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Posts/scaffold.index.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Posts/themed.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/css/test_asset.css
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/css/theme_webroot.css
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/flash/theme_test.swf
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/img/cake.power.gif
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/img/test.jpg
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/js/one/theme_one.js
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/js/theme.js
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/pdfs/theme_test.pdf
+%%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/space image.text
+%%WWWDIR%%/lib/Cake/Test/test_app/tmp/dir_map
+%%WWWDIR%%/lib/Cake/Test/test_app/webroot/img/cake.power.gif
+%%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme/css/theme_webroot.css
+%%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme/css/webroot_test.css
+%%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme/img/cake.power.gif
+%%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme/img/test.jpg
+%%WWWDIR%%/lib/Cake/TestSuite/CakeTestCase.php
+%%WWWDIR%%/lib/Cake/TestSuite/CakeTestLoader.php
+%%WWWDIR%%/lib/Cake/TestSuite/CakeTestRunner.php
+%%WWWDIR%%/lib/Cake/TestSuite/CakeTestSuite.php
+%%WWWDIR%%/lib/Cake/TestSuite/CakeTestSuiteCommand.php
+%%WWWDIR%%/lib/Cake/TestSuite/CakeTestSuiteDispatcher.php
+%%WWWDIR%%/lib/Cake/TestSuite/ControllerTestCase.php
+%%WWWDIR%%/lib/Cake/TestSuite/Coverage/BaseCoverageReport.php
+%%WWWDIR%%/lib/Cake/TestSuite/Coverage/HtmlCoverageReport.php
+%%WWWDIR%%/lib/Cake/TestSuite/Coverage/TextCoverageReport.php
+%%WWWDIR%%/lib/Cake/TestSuite/Fixture/CakeFixtureManager.php
+%%WWWDIR%%/lib/Cake/TestSuite/Fixture/CakeTestFixture.php
+%%WWWDIR%%/lib/Cake/TestSuite/Fixture/CakeTestModel.php
+%%WWWDIR%%/lib/Cake/TestSuite/Reporter/CakeBaseReporter.php
+%%WWWDIR%%/lib/Cake/TestSuite/Reporter/CakeHtmlReporter.php
+%%WWWDIR%%/lib/Cake/TestSuite/Reporter/CakeTextReporter.php
+%%WWWDIR%%/lib/Cake/TestSuite/templates/footer.php
+%%WWWDIR%%/lib/Cake/TestSuite/templates/header.php
+%%WWWDIR%%/lib/Cake/TestSuite/templates/menu.php
+%%WWWDIR%%/lib/Cake/TestSuite/templates/missing_connection.php
+%%WWWDIR%%/lib/Cake/TestSuite/templates/phpunit.php
+%%WWWDIR%%/lib/Cake/TestSuite/templates/xdebug.php
+%%WWWDIR%%/lib/Cake/Utility/CakeNumber.php
+%%WWWDIR%%/lib/Cake/Utility/CakeTime.php
+%%WWWDIR%%/lib/Cake/Utility/ClassRegistry.php
+%%WWWDIR%%/lib/Cake/Utility/Debugger.php
+%%WWWDIR%%/lib/Cake/Utility/File.php
+%%WWWDIR%%/lib/Cake/Utility/Folder.php
+%%WWWDIR%%/lib/Cake/Utility/Inflector.php
+%%WWWDIR%%/lib/Cake/Utility/ObjectCollection.php
+%%WWWDIR%%/lib/Cake/Utility/Sanitize.php
+%%WWWDIR%%/lib/Cake/Utility/Security.php
+%%WWWDIR%%/lib/Cake/Utility/Set.php
+%%WWWDIR%%/lib/Cake/Utility/String.php
+%%WWWDIR%%/lib/Cake/Utility/Validation.php
+%%WWWDIR%%/lib/Cake/Utility/Xml.php
+%%WWWDIR%%/lib/Cake/VERSION.txt
+%%WWWDIR%%/lib/Cake/View/Elements/exception_stack_trace.ctp
+%%WWWDIR%%/lib/Cake/View/Elements/sql_dump.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_action.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_behavior.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_component.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_connection.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_controller.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_database.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_datasource.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_datasource_config.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_helper.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_layout.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_plugin.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_table.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/missing_view.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/pdo_error.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/private_action.ctp
+%%WWWDIR%%/lib/Cake/View/Errors/scaffold_error.ctp
+%%WWWDIR%%/lib/Cake/View/Helper.php
+%%WWWDIR%%/lib/Cake/View/Helper/CacheHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/FormHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/HtmlHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/JqueryEngineHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/JsBaseEngineHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/JsHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/MootoolsEngineHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/NumberHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/PaginatorHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/PrototypeEngineHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/RssHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/SessionHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/TextHelper.php
+%%WWWDIR%%/lib/Cake/View/Helper/TimeHelper.php
+%%WWWDIR%%/lib/Cake/View/HelperCollection.php
+%%WWWDIR%%/lib/Cake/View/ScaffoldView.php
+%%WWWDIR%%/lib/Cake/View/Scaffolds/form.ctp
+%%WWWDIR%%/lib/Cake/View/Scaffolds/index.ctp
+%%WWWDIR%%/lib/Cake/View/Scaffolds/view.ctp
+%%WWWDIR%%/lib/Cake/View/MediaView.php
+%%WWWDIR%%/lib/Cake/View/JsonView.php
+%%WWWDIR%%/lib/Cake/View/ThemeView.php
+%%WWWDIR%%/lib/Cake/View/View.php
+%%WWWDIR%%/lib/Cake/View/ViewBlock.php
+%%WWWDIR%%/lib/Cake/View/XmlView.php
+%%WWWDIR%%/lib/Cake/basics.php
+%%WWWDIR%%/lib/Cake/bootstrap.php
 %%APDEP%%%%CONFDIR%%/cakephp.conf
-@dirrm %%WWWDIR%%/vendors/shells/templates
-@dirrm %%WWWDIR%%/vendors/shells/tasks
-@dirrm %%WWWDIR%%/vendors/shells
 @dirrm %%WWWDIR%%/vendors
-@dirrm %%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme/img
-@dirrm %%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme/css
-@dirrm %%WWWDIR%%/cake/tests/test_app/webroot/theme/test_theme
-@dirrm %%WWWDIR%%/cake/tests/test_app/webroot/theme
-@dirrm %%WWWDIR%%/cake/tests/test_app/webroot
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/pdfs
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/js/one
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/js
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/img
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/flash
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot/css
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/webroot
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/posts
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/plugins/test_plugin/tests
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/plugins/test_plugin/layouts
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/plugins/test_plugin
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/plugins
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/layouts
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme/elements
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed/test_theme
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/themed
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/tests_apps
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/scaffolds
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/posts
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/pages
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/xml
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/rss
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/js
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/email/text
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/email/html
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts/email
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/layouts
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/helpers
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/errors
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/nocache
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/email/text
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/email/html
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements/email
-@dirrm %%WWWDIR%%/cake/tests/test_app/views/elements
-@dirrm %%WWWDIR%%/cake/tests/test_app/views
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/somename
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells/templates/test/classes
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells/templates/test
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells/templates
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells/tasks
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/shells
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/sample
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/img
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/css
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors/Test
-@dirrm %%WWWDIR%%/cake/tests/test_app/vendors
-@dirrm %%WWWDIR%%/cake/tests/test_app/tmp
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/templates
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/tasks
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/pdfs
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/js/test_plugin
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/js
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/img
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/flash
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot/css
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/webroot
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/tests
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/layouts
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/helpers
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views/elements
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/views
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/shells/templates
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/shells/tasks
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/shells
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/sample
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources/test
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources/dbo
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/datasources
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models/behaviors
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/models
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/locale/po/LC_MONETARY
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/locale/po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/locale/po
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/locale
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/libs/log
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/libs/cache
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/libs
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers/components
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/controllers
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/config/schema
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/config
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/test_plugin
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/plugin_js/webroot/js/one
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/plugin_js/webroot/js
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/plugin_js/webroot
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins/plugin_js
-@dirrm %%WWWDIR%%/cake/tests/test_app/plugins
-@dirrm %%WWWDIR%%/cake/tests/test_app/models/datasources/test
-@dirrm %%WWWDIR%%/cake/tests/test_app/models/datasources
-@dirrm %%WWWDIR%%/cake/tests/test_app/models/behaviors
-@dirrm %%WWWDIR%%/cake/tests/test_app/models
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/time_test
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_9_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_8_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_7_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_6_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_5_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_4_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_3_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_2_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_1_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_14_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_14_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_14_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_14_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_13_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_13_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_13_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_13_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_12_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_12_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_12_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_12_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_11_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_11_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_11_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_11_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_10_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/rule_0_mo
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/po/LC_MONETARY
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/ja_jp
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/cache_test_po/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale/cache_test_po
-@dirrm %%WWWDIR%%/cake/tests/test_app/locale
-@dirrm %%WWWDIR%%/cake/tests/test_app/libs/log
-@dirrm %%WWWDIR%%/cake/tests/test_app/libs/cache
-@dirrm %%WWWDIR%%/cake/tests/test_app/libs
-@dirrm %%WWWDIR%%/cake/tests/test_app/controllers/components
-@dirrm %%WWWDIR%%/cake/tests/test_app/controllers
-@dirrm %%WWWDIR%%/cake/tests/test_app/config
-@dirrm %%WWWDIR%%/cake/tests/test_app
-@dirrm %%WWWDIR%%/cake/tests/lib/templates
-@dirrm %%WWWDIR%%/cake/tests/lib/reporter
-@dirrm %%WWWDIR%%/cake/tests/lib
-@dirrm %%WWWDIR%%/cake/tests/groups
-@dirrm %%WWWDIR%%/cake/tests/fixtures
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/view/helpers
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/view
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/model/datasources/dbo
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/model/datasources
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/model/behaviors
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/model
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/log
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/controller/components
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/controller
-@dirrm %%WWWDIR%%/cake/tests/cases/libs/cache
-@dirrm %%WWWDIR%%/cake/tests/cases/libs
-@dirrm %%WWWDIR%%/cake/tests/cases/console/libs/tasks
-@dirrm %%WWWDIR%%/cake/tests/cases/console/libs
-@dirrm %%WWWDIR%%/cake/tests/cases/console
-@dirrm %%WWWDIR%%/cake/tests/cases
-@dirrm %%WWWDIR%%/cake/tests
-@dirrm %%WWWDIR%%/cake/libs/view/scaffolds
-@dirrm %%WWWDIR%%/cake/libs/view/pages
-@dirrm %%WWWDIR%%/cake/libs/view/layouts/xml
-@dirrm %%WWWDIR%%/cake/libs/view/layouts/rss
-@dirrm %%WWWDIR%%/cake/libs/view/layouts/js
-@dirrm %%WWWDIR%%/cake/libs/view/layouts/email/text
-@dirrm %%WWWDIR%%/cake/libs/view/layouts/email/html
-@dirrm %%WWWDIR%%/cake/libs/view/layouts/email
-@dirrm %%WWWDIR%%/cake/libs/view/layouts
-@dirrm %%WWWDIR%%/cake/libs/view/helpers
-@dirrm %%WWWDIR%%/cake/libs/view/errors
-@dirrm %%WWWDIR%%/cake/libs/view/elements/email/text
-@dirrm %%WWWDIR%%/cake/libs/view/elements/email/html
-@dirrm %%WWWDIR%%/cake/libs/view/elements/email
-@dirrm %%WWWDIR%%/cake/libs/view/elements
-@dirrm %%WWWDIR%%/cake/libs/view
-@dirrm %%WWWDIR%%/cake/libs/model/datasources/dbo
-@dirrm %%WWWDIR%%/cake/libs/model/datasources
-@dirrm %%WWWDIR%%/cake/libs/model/behaviors
-@dirrm %%WWWDIR%%/cake/libs/model
-@dirrm %%WWWDIR%%/cake/libs/log
-@dirrm %%WWWDIR%%/cake/libs/controller/components
-@dirrm %%WWWDIR%%/cake/libs/controller
-@dirrm %%WWWDIR%%/cake/libs/cache
-@dirrm %%WWWDIR%%/cake/libs
-@dirrm %%WWWDIR%%/cake/console/templates/skel/webroot/js
-@dirrm %%WWWDIR%%/cake/console/templates/skel/webroot/img
-@dirrm %%WWWDIR%%/cake/console/templates/skel/webroot/css
-@dirrm %%WWWDIR%%/cake/console/templates/skel/webroot
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/scaffolds
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/pages
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts/xml
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts/rss
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts/js
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts/email/text
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts/email/html
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts/email
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/layouts
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/helpers
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/errors
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/elements/email/text
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/elements/email/html
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/elements/email
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views/elements
-@dirrm %%WWWDIR%%/cake/console/templates/skel/views
-@dirrm %%WWWDIR%%/cake/console/templates/skel/vendors/shells/tasks
-@dirrm %%WWWDIR%%/cake/console/templates/skel/vendors/shells
-@dirrm %%WWWDIR%%/cake/console/templates/skel/vendors
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/tests
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/sessions
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/logs
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/cache/views
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/cache/persistent
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/cache/models
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp/cache
-@dirrmtry %%WWWDIR%%/cake/console/templates/skel/tmp
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/groups
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/fixtures
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/shells
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/models
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/helpers
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/datasources
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/controllers
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/components
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases/behaviors
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests/cases
-@dirrm %%WWWDIR%%/cake/console/templates/skel/tests
-@dirrm %%WWWDIR%%/cake/console/templates/skel/plugins
-@dirrm %%WWWDIR%%/cake/console/templates/skel/models/datasources
-@dirrm %%WWWDIR%%/cake/console/templates/skel/models/behaviors
-@dirrm %%WWWDIR%%/cake/console/templates/skel/models
-@dirrm %%WWWDIR%%/cake/console/templates/skel/locale/eng/LC_MESSAGES
-@dirrm %%WWWDIR%%/cake/console/templates/skel/locale/eng
-@dirrm %%WWWDIR%%/cake/console/templates/skel/locale
-@dirrm %%WWWDIR%%/cake/console/templates/skel/libs
-@dirrm %%WWWDIR%%/cake/console/templates/skel/controllers/components
-@dirrm %%WWWDIR%%/cake/console/templates/skel/controllers
-@dirrm %%WWWDIR%%/cake/console/templates/skel/config/schema
-@dirrm %%WWWDIR%%/cake/console/templates/skel/config
-@dirrm %%WWWDIR%%/cake/console/templates/skel
-@dirrm %%WWWDIR%%/cake/console/templates/default/views
-@dirrm %%WWWDIR%%/cake/console/templates/default/classes
-@dirrm %%WWWDIR%%/cake/console/templates/default/actions
-@dirrm %%WWWDIR%%/cake/console/templates/default
-@dirrm %%WWWDIR%%/cake/console/templates
-@dirrm %%WWWDIR%%/cake/console/libs/tasks
-@dirrm %%WWWDIR%%/cake/console/libs
-@dirrm %%WWWDIR%%/cake/console
-@dirrm %%WWWDIR%%/cake/config/unicode/casefolding
-@dirrm %%WWWDIR%%/cake/config/unicode
-@dirrm %%WWWDIR%%/cake/config
-@dirrm %%WWWDIR%%/cake
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/lib/Cake/View/Scaffolds
+@dirrm %%WWWDIR%%/lib/Cake/View/Helper
+@dirrm %%WWWDIR%%/lib/Cake/View/Errors
+@dirrm %%WWWDIR%%/lib/Cake/View/Elements
+@dirrm %%WWWDIR%%/lib/Cake/View
+@dirrm %%WWWDIR%%/lib/Cake/Utility
+@dirrm %%WWWDIR%%/lib/Cake/TestSuite/templates
+@dirrm %%WWWDIR%%/lib/Cake/TestSuite/Reporter
+@dirrm %%WWWDIR%%/lib/Cake/TestSuite/Fixture
+@dirrm %%WWWDIR%%/lib/Cake/TestSuite/Coverage
+@dirrm %%WWWDIR%%/lib/Cake/TestSuite
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme/img
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme/css
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme/test_theme
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/webroot/theme
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/webroot/img
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/webroot
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/tmp
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/pdfs
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/js/one
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/js
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/img
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/flash
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot/css
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/webroot
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Posts
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Plugin/TestPlugin/Tests
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Plugin/TestPlugin/Layouts
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Plugin/TestPlugin
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Plugin
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Layouts
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme/Elements
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed/TestTheme
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Themed
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/TestsApps/json
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/TestsApps
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Scaffolds
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/xml
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts/json
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Posts
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Pages
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/xml
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/rss
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/json
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/js
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/text
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails/html
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Layouts
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Helper
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Errors
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/text
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails/html
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Elements/nocache
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View/Elements
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/View
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Vendor/somename
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Vendor/sample
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Vendor/img
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Vendor/css
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Vendor/Test
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Vendor
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Utility
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Templates
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/Task
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Config
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/pdfs
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/js/test_plugin
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/js
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/img
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/flash
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot/css
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/webroot
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Tests
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Layouts/Emails/text
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Layouts/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Layouts
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Helper
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Emails/text
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/sample
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/Example
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Utility
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/Session
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource/Database
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Datasource
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model/Behavior
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Model
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Locale/po/LC_MONETARY
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Locale/po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Locale/po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Locale
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Log/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Log
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Error
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Custom/Package
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Custom
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Cache/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib/Cache
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Lib
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller/Component
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Controller
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Templates
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command/Task
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Command
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config/Schema
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Config
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/webroot/js/one
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/webroot/js
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/webroot
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs/Config
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/PluginJs
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource/Session
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource/Database
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Model/Datasource
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Model/Behavior
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Model
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/time_test
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_9_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_8_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_7_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_6_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_5_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_4_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_3_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_2_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_1_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_14_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_13_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_12_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_11_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_10_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_mo/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/rule_0_mo
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/po/LC_MONETARY
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/ja_jp
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/cache_test_po/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale/cache_test_po
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Locale
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Utility
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Log/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Log
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Cache/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib/Cache
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Lib
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Controller/Component
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Controller
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test/views
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test/classes
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates/test
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Templates
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Command/Task
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console/Command
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Console
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Config
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app
+@dirrm %%WWWDIR%%/lib/Cake/Test/Fixture
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/View/Helper
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/View
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Utility
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/TestSuite
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Routing/Route
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Routing
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Network/Http
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Network/Email
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Network
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Session
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Model/Behavior
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Model
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Log/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Log
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/I18n
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Event
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Error
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Core
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Acl
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Controller/Component/Auth
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Controller/Component
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Controller
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Console/Command/Task
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Console/Command
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Console
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Configure
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Cache/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case/Cache
+@dirrm %%WWWDIR%%/lib/Cake/Test/Case
+@dirrm %%WWWDIR%%/lib/Cake/Test
+@dirrm %%WWWDIR%%/lib/Cake/Routing/Route
+@dirrm %%WWWDIR%%/lib/Cake/Routing
+@dirrm %%WWWDIR%%/lib/Cake/Network/Http
+@dirrm %%WWWDIR%%/lib/Cake/Network/Email
+@dirrm %%WWWDIR%%/lib/Cake/Network
+@dirrm %%WWWDIR%%/lib/Cake/Model/Datasource/Session
+@dirrm %%WWWDIR%%/lib/Cake/Model/Datasource/Database
+@dirrm %%WWWDIR%%/lib/Cake/Model/Datasource
+@dirrm %%WWWDIR%%/lib/Cake/Model/Behavior
+@dirrm %%WWWDIR%%/lib/Cake/Model
+@dirrm %%WWWDIR%%/lib/Cake/Log/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Log
+@dirrm %%WWWDIR%%/lib/Cake/I18n
+@dirrm %%WWWDIR%%/lib/Cake/Event
+@dirrm %%WWWDIR%%/lib/Cake/Error
+@dirrm %%WWWDIR%%/lib/Cake/Core
+@dirrm %%WWWDIR%%/lib/Cake/Controller/Component/Acl
+@dirrm %%WWWDIR%%/lib/Cake/Controller/Component/Auth
+@dirrm %%WWWDIR%%/lib/Cake/Controller/Component
+@dirrm %%WWWDIR%%/lib/Cake/Controller
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/js
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/files
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/img
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/css
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/tests
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/sessions
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/logs
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache/views
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache/persistent
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache/models
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache
+@dirrmtry %%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Scaffolds
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Pages
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/xml
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/rss
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/js
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/Emails/text
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/Emails/html
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Layouts
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Helper
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Errors
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Emails/text
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Emails/html
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Elements
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/View
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Vendor
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Fixture
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/View/Helper
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/View
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/Model/Behavior
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/Model
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/Controller/Component
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/Controller
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Test
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Plugin
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Model/Datasource
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Model/Behavior
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Model
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Locale/eng/LC_MESSAGES
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Locale/eng
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Locale
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Lib
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Controller/Component
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Controller
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/Templates
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/Command/Task
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/Command
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Console
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Config/Schema
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel/Config
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/skel
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/default/views
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/default/classes
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/default/actions
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates/default
+@dirrm %%WWWDIR%%/lib/Cake/Console/Templates
+@dirrm %%WWWDIR%%/lib/Cake/Console/Command/Task
+@dirrm %%WWWDIR%%/lib/Cake/Console/Command
+@dirrm %%WWWDIR%%/lib/Cake/Console
+@dirrm %%WWWDIR%%/lib/Cake/Configure
+@dirrm %%WWWDIR%%/lib/Cake/Config/unicode/casefolding
+@dirrm %%WWWDIR%%/lib/Cake/Config/unicode
+@dirrm %%WWWDIR%%/lib/Cake/Config
+@dirrm %%WWWDIR%%/lib/Cake/Cache/Engine
+@dirrm %%WWWDIR%%/lib/Cake/Cache
+@dirrm %%WWWDIR%%/lib/Cake
+@dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/app/webroot/js
 @dirrm %%WWWDIR%%/app/webroot/img
 @dirrm %%WWWDIR%%/app/webroot/files
 @dirrm %%WWWDIR%%/app/webroot/css
 @dirrm %%WWWDIR%%/app/webroot
-@dirrm %%WWWDIR%%/app/views/scaffolds
-@dirrm %%WWWDIR%%/app/views/layouts/xml
-@dirrm %%WWWDIR%%/app/views/layouts/rss
-@dirrm %%WWWDIR%%/app/views/layouts/js
-@dirrm %%WWWDIR%%/app/views/layouts/email/text
-@dirrm %%WWWDIR%%/app/views/layouts/email/html
-@dirrm %%WWWDIR%%/app/views/layouts/email
-@dirrm %%WWWDIR%%/app/views/layouts
-@dirrm %%WWWDIR%%/app/views/pages
-@dirrm %%WWWDIR%%/app/views/helpers
-@dirrm %%WWWDIR%%/app/views/errors
-@dirrm %%WWWDIR%%/app/views/elements/email/text
-@dirrm %%WWWDIR%%/app/views/elements/email/html
-@dirrm %%WWWDIR%%/app/views/elements/email
-@dirrm %%WWWDIR%%/app/views/elements
-@dirrm %%WWWDIR%%/app/views
-@dirrm %%WWWDIR%%/app/vendors/shells/templates
-@dirrm %%WWWDIR%%/app/vendors/shells/tasks
-@dirrm %%WWWDIR%%/app/vendors/shells
-@dirrm %%WWWDIR%%/app/vendors
 @dirrmtry %%WWWDIR%%/app/tmp/tests
 @dirrmtry %%WWWDIR%%/app/tmp/sessions
 @dirrmtry %%WWWDIR%%/app/tmp/logs
@@ -1028,99 +1271,102 @@
 @dirrmtry %%WWWDIR%%/app/tmp/cache/models
 @dirrmtry %%WWWDIR%%/app/tmp/cache
 @dirrmtry %%WWWDIR%%/app/tmp
-@dirrm %%WWWDIR%%/app/tests/groups
-@dirrm %%WWWDIR%%/app/tests/fixtures
-@dirrm %%WWWDIR%%/app/tests/cases/models
-@dirrm %%WWWDIR%%/app/tests/cases/helpers
-@dirrm %%WWWDIR%%/app/tests/cases/controllers
-@dirrm %%WWWDIR%%/app/tests/cases/components
-@dirrm %%WWWDIR%%/app/tests/cases/behaviors
-@dirrm %%WWWDIR%%/app/tests/cases
-@dirrm %%WWWDIR%%/app/tests
-@dirrm %%WWWDIR%%/app/plugins
-@dirrm %%WWWDIR%%/app/models/datasources
-@dirrm %%WWWDIR%%/app/models/behaviors
-@dirrm %%WWWDIR%%/app/models
-@dirrm %%WWWDIR%%/app/locale/eng/LC_MESSAGES
-@dirrm %%WWWDIR%%/app/locale/eng
-@dirrm %%WWWDIR%%/app/locale
-@dirrm %%WWWDIR%%/app/libs
-@dirrm %%WWWDIR%%/app/controllers/components
-@dirrm %%WWWDIR%%/app/controllers
-@dirrm %%WWWDIR%%/app/config/schema
-@dirrmtry %%WWWDIR%%/app/config
+@dirrm %%WWWDIR%%/app/View/Scaffolds
+@dirrm %%WWWDIR%%/app/View/Pages
+@dirrm %%WWWDIR%%/app/View/Layouts/xml
+@dirrm %%WWWDIR%%/app/View/Layouts/rss
+@dirrm %%WWWDIR%%/app/View/Layouts/js
+@dirrm %%WWWDIR%%/app/View/Layouts/Emails/text
+@dirrm %%WWWDIR%%/app/View/Layouts/Emails/html
+@dirrm %%WWWDIR%%/app/View/Layouts/Emails
+@dirrm %%WWWDIR%%/app/View/Layouts
+@dirrm %%WWWDIR%%/app/View/Helper
+@dirrm %%WWWDIR%%/app/View/Errors
+@dirrm %%WWWDIR%%/app/View/Emails/text
+@dirrm %%WWWDIR%%/app/View/Emails/html
+@dirrm %%WWWDIR%%/app/View/Emails
+@dirrm %%WWWDIR%%/app/View/Elements
+@dirrm %%WWWDIR%%/app/View
+@dirrm %%WWWDIR%%/app/Vendor
+@dirrm %%WWWDIR%%/app/Test/Fixture
+@dirrm %%WWWDIR%%/app/Test/Case/View/Helper
+@dirrm %%WWWDIR%%/app/Test/Case/View
+@dirrm %%WWWDIR%%/app/Test/Case/Model/Behavior
+@dirrm %%WWWDIR%%/app/Test/Case/Model
+@dirrm %%WWWDIR%%/app/Test/Case/Controller/Component
+@dirrm %%WWWDIR%%/app/Test/Case/Controller
+@dirrm %%WWWDIR%%/app/Test/Case
+@dirrm %%WWWDIR%%/app/Test
+@dirrm %%WWWDIR%%/app/Plugin
+@dirrm %%WWWDIR%%/app/Model/Datasource
+@dirrm %%WWWDIR%%/app/Model/Behavior
+@dirrm %%WWWDIR%%/app/Model
+@dirrm %%WWWDIR%%/app/Locale/eng/LC_MESSAGES
+@dirrm %%WWWDIR%%/app/Locale/eng
+@dirrm %%WWWDIR%%/app/Locale
+@dirrm %%WWWDIR%%/app/Lib
+@dirrm %%WWWDIR%%/app/Controller/Component
+@dirrm %%WWWDIR%%/app/Controller
+@dirrm %%WWWDIR%%/app/Console/Templates
+@dirrm %%WWWDIR%%/app/Console/Command/Task
+@dirrm %%WWWDIR%%/app/Console/Command
+@dirrm %%WWWDIR%%/app/Console
+@dirrm %%WWWDIR%%/app/Config/Schema
+@dirrmtry %%WWWDIR%%/app/Config
 @dirrmtry %%WWWDIR%%/app
 @dirrmtry %%WWWDIR%%
-@exec mkdir -p %D/%%WWWDIR%%/vendors/shells/templates
-@exec mkdir -p %D/%%WWWDIR%%/vendors/shells/tasks
-@exec mkdir -p %D/%%WWWDIR%%/plugins
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/views/scaffolds
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/views/errors
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/views/elements
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/vendors/shells/tasks
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/templates
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin_two/vendors/shells/tasks
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/shells/templates
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/plugins/test_plugin/vendors/shells/tasks
-@exec mkdir -p %D/%%WWWDIR%%/cake/tests/test_app/controllers/components
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/webroot/js
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/views/scaffolds
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/views/pages
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/views/helpers
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/views/errors
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/vendors/shells/tasks
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tmp/tests
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tmp/sessions
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tmp/logs
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tmp/cache/views
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tmp/cache/persistent
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tmp/cache/models
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/groups
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/fixtures
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/shells
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/models
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/helpers
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/datasources
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/controllers
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/components
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/tests/cases/behaviors
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/plugins
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/models/datasources
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/models/behaviors
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/locale/eng/LC_MESSAGES
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/libs
-@exec mkdir -p %D/%%WWWDIR%%/cake/console/templates/skel/controllers/components
-@exec mkdir -p %D/%%WWWDIR%%/app/webroot/js
-@exec mkdir -p %D/%%WWWDIR%%/app/webroot/files
-@exec mkdir -p %D/%%WWWDIR%%/app/views/scaffolds
-@exec mkdir -p %D/%%WWWDIR%%/app/views/pages
-@exec mkdir -p %D/%%WWWDIR%%/app/views/layouts/xml
-@exec mkdir -p %D/%%WWWDIR%%/app/views/layouts/rss
-@exec mkdir -p %D/%%WWWDIR%%/app/views/layouts/js
-@exec mkdir -p %D/%%WWWDIR%%/app/views/layouts/email/text
-@exec mkdir -p %D/%%WWWDIR%%/app/views/layouts/email/html
-@exec mkdir -p %D/%%WWWDIR%%/app/views/helpers
-@exec mkdir -p %D/%%WWWDIR%%/app/views/errors
-@exec mkdir -p %D/%%WWWDIR%%/app/views/elements/email/text
-@exec mkdir -p %D/%%WWWDIR%%/app/views/elements/email/html
-@exec mkdir -p %D/%%WWWDIR%%/app/vendors/shells/templates
-@exec mkdir -p %D/%%WWWDIR%%/app/vendors/shells/tasks
-@exec mkdir -p %D/%%WWWDIR%%/app/tmp/tests
-@exec mkdir -p %D/%%WWWDIR%%/app/tmp/sessions
-@exec mkdir -p %D/%%WWWDIR%%/app/tmp/logs
-@exec mkdir -p %D/%%WWWDIR%%/app/tmp/cache/views
-@exec mkdir -p %D/%%WWWDIR%%/app/tmp/cache/persistent
+@exec mkdir -p %D/%%WWWDIR%%/app/Console/Command/Task
+@exec mkdir -p %D/%%WWWDIR%%/app/Console/Templates
+@exec mkdir -p %D/%%WWWDIR%%/app/Controller/Component
+@exec mkdir -p %D/%%WWWDIR%%/app/Lib
+@exec mkdir -p %D/%%WWWDIR%%/app/Locale/eng/LC_MESSAGES
+@exec mkdir -p %D/%%WWWDIR%%/app/Model/Behavior
+@exec mkdir -p %D/%%WWWDIR%%/app/Model/Datasource
+@exec mkdir -p %D/%%WWWDIR%%/app/Plugin
+@exec mkdir -p %D/%%WWWDIR%%/app/Test/Case/Controller/Component
+@exec mkdir -p %D/%%WWWDIR%%/app/Test/Case/Model/Behavior
+@exec mkdir -p %D/%%WWWDIR%%/app/Test/Case/View/Helper
+@exec mkdir -p %D/%%WWWDIR%%/app/Test/Fixture
+@exec mkdir -p %D/%%WWWDIR%%/app/Vendor
+@exec mkdir -p %D/%%WWWDIR%%/app/View
+@exec mkdir -p %D/%%WWWDIR%%/app/View/Elements
+@exec mkdir -p %D/%%WWWDIR%%/app/View/Scaffolds
 @exec mkdir -p %D/%%WWWDIR%%/app/tmp/cache/models
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/groups
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/fixtures
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/cases/models
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/cases/helpers
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/cases/controllers
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/cases/components
-@exec mkdir -p %D/%%WWWDIR%%/app/tests/cases/behaviors
-@exec mkdir -p %D/%%WWWDIR%%/app/plugins
-@exec mkdir -p %D/%%WWWDIR%%/app/models/datasources
-@exec mkdir -p %D/%%WWWDIR%%/app/models/behaviors
-@exec mkdir -p %D/%%WWWDIR%%/app/locale/eng/LC_MESSAGES
-@exec mkdir -p %D/%%WWWDIR%%/app/libs
-@exec mkdir -p %D/%%WWWDIR%%/app/controllers/components
+@exec mkdir -p %D/%%WWWDIR%%/app/tmp/cache/persistent
+@exec mkdir -p %D/%%WWWDIR%%/app/tmp/cache/views
+@exec mkdir -p %D/%%WWWDIR%%/app/tmp/logs
+@exec mkdir -p %D/%%WWWDIR%%/app/tmp/sessions
+@exec mkdir -p %D/%%WWWDIR%%/app/tmp/tests
+@exec mkdir -p %D/%%WWWDIR%%/app/webroot/files
+@exec mkdir -p %D/%%WWWDIR%%/app/webroot/js
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/Command/Task
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Console/Templates
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Controller/Component
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Lib
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Locale/eng/LC_MESSAGES
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Model/Behavior
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Model/Datasource
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Plugin
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/Controller/Component
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/Model/Behavior
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Case/View/Helper
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Test/Fixture
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/Vendor
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Elements
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/View/Scaffolds
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache/models
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache/persistent
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/cache/views
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/logs
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/sessions
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/tmp/tests
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/files
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Console/Templates/skel/webroot/js
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Test/test_app/Console/Command/Task
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Test/test_app/Controller/Component
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Console/Templates
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Command/Task
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPluginTwo/Console/Templates
+@exec mkdir -p %D/%%WWWDIR%%/lib/Cake/Test/test_app/View/Scaffolds
+@exec mkdir -p %D/%%WWWDIR%%/plugins
+@exec mkdir -p %D/%%WWWDIR%%/vendors

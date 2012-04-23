@@ -1,16 +1,14 @@
-# New ports collection makefile for:	cakephp13
-# Date created:        			19 September 2011
+# New ports collection makefile for:	cakephp2
+# Date created:        			20 February 2012
 # Whom:                			Christoph Theis <theis@gmx.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.3.14
-PORTREVISION=
+PORTVERSION=	2.1.1
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
-		LOCAL/glarkin
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 
 MAINTAINER=	theis@gmx.at
@@ -18,15 +16,15 @@ COMMENT=	A framework for developing PHP web applications
 
 LICENSE=	MIT
 
-GITVERSION=	0-g5ac77c2
+GITVERSION=	0-g43cf2f0
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-822a1e0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-0cad237
 
 PORTDOCS=	README
 
 SLAVE_PORT_MODULES=	rewrite
 
-CONFLICTS=	cakephp-1.[12].*
+CONFLICTS=	cakephp-1.*
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
@@ -36,12 +34,14 @@ DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
 
 CAKE_CONF_FILES=	\
-		app/config/acl.ini.php \
-		app/config/bootstrap.php \
-		app/config/core.php \
-		app/config/database.php \
-		app/config/routes.php
-CAKE_CONSOLE=	cake/console/cake
+		app/Config/acl.php \
+		app/Config/acl.ini.php \
+		app/Config/bootstrap.php \
+		app/Config/core.php \
+		app/Config/database.php \
+		app/Config/routes.php \
+		app/Config/email.php
+CAKE_CONSOLE=	lib/Cake/Console/cake
 
 OPTIONS=	PROD "Install for production server (make confighelp)" Off \
 		AP "Add Apache 2.2+ dependency" Off \
@@ -82,7 +82,7 @@ PROD=		production
 HTACCESS=	""
 .else
 PROD=		development
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-app__config__core.php
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-app__Config__core.php
 HTACCESS=	"@comment "
 .endif
 
@@ -141,8 +141,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -name ._\* -delete
 
 post-patch:
-	@${RM} -f ${WRKSRC}/cake/console/cake.orig \
-		${WRKSRC}/app/config/core.php.orig
+	@${RM} -f ${WRKSRC}/lib/Cake/Console/cake.orig \
+		${WRKSRC}/app/Config/core.php.orig
 
 # Rename config files so we don't overwrite those in an existing installation
 	@for i in ${CAKE_CONF_FILES}; do \
@@ -153,7 +153,7 @@ post-patch:
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		".htaccess app cake index.php vendors" ${WWWDIR}
+		".htaccess app lib index.php plugins vendors" ${WWWDIR}
 
 .if !defined(WITH_PROD)
 # If installed in development mode, get rid of .htaccess files,
