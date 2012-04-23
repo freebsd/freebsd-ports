@@ -5,20 +5,31 @@ etc/openldap/slapd.ldif
 @unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
 etc/openldap/slapd.conf.default
 @exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
+etc/openldap/schema/ppolicy.schema
 etc/openldap/schema/ppolicy.ldif
-etc/openldap/schema/pmi.schema.default
 etc/openldap/schema/pmi.schema
 etc/openldap/schema/pmi.ldif
+etc/openldap/schema/openldap.schema
 etc/openldap/schema/openldap.ldif
+etc/openldap/schema/nis.schema
 etc/openldap/schema/nis.ldif
+etc/openldap/schema/misc.schema
 etc/openldap/schema/misc.ldif
+etc/openldap/schema/java.schema
 etc/openldap/schema/java.ldif
+etc/openldap/schema/inetorgperson.schema
 etc/openldap/schema/inetorgperson.ldif
+etc/openldap/schema/dyngroup.schema
 etc/openldap/schema/dyngroup.ldif
+etc/openldap/schema/duaconf.schema
 etc/openldap/schema/duaconf.ldif
+etc/openldap/schema/cosine.schema
 etc/openldap/schema/cosine.ldif
+etc/openldap/schema/core.schema
 etc/openldap/schema/core.ldif
+etc/openldap/schema/corba.schema
 etc/openldap/schema/corba.ldif
+etc/openldap/schema/collective.schema
 etc/openldap/schema/collective.ldif
 etc/openldap/schema/README
 etc/openldap/DB_CONFIG.example
@@ -56,6 +67,10 @@ etc/openldap/DB_CONFIG.example
 %%BACK_DNSSRV%%libexec/openldap/back_dnssrv-2.4.so.%%SHLIB_MAJOR%%
 %%BACK_DNSSRV%%libexec/openldap/back_dnssrv.la
 %%BACK_DNSSRV%%libexec/openldap/back_dnssrv.so
+%%BACK_MDB%%libexec/openldap/back_mdb-2.4.so
+%%BACK_MDB%%libexec/openldap/back_mdb-2.4.so.%%SHLIB_MAJOR%%
+%%BACK_MDB%%libexec/openldap/back_mdb.la
+%%BACK_MDB%%libexec/openldap/back_mdb.so
 %%BACK_PASSWD%%libexec/openldap/back_passwd-2.4.so
 %%BACK_PASSWD%%libexec/openldap/back_passwd-2.4.so.%%SHLIB_MAJOR%%
 %%BACK_PASSWD%%libexec/openldap/back_passwd.la
