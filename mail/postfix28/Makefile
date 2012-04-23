@@ -21,7 +21,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.8.5
+VDAVERSION=	2.8.9
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
 		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
 		sendmail+*-8.* smail-3.* zmailer-2.*
@@ -91,7 +91,7 @@ MLINKS=	sendmail.1 mailq.1 \
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
-.if !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
 OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || true
 .if !empty(OLD_MAILER)
 IS_INTERACTIVE=	yes
