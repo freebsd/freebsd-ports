@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pkg
-DISTVERSION=	1.0-beta11
-PORTREVISION=	1
+DISTVERSION=	1.0-beta12
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/portmgr \
 		http://files.etoilebsd.net/pkg/
@@ -30,6 +29,7 @@ MAN8=	pkg.8 \
 	pkg-audit.8 \
 	pkg-backup.8 \
 	pkg-check.8 \
+	pkg-clean.8 \
 	pkg-create.8 \
 	pkg-delete.8 \
 	pkg-fetch.8 \
@@ -38,8 +38,10 @@ MAN8=	pkg.8 \
 	pkg-query.8 \
 	pkg-register.8 \
 	pkg-repo.8 \
+	pkg-rquery.8 \
 	pkg-search.8 \
 	pkg-set.8 \
+	pkg-shell.8 \
 	pkg-shlib.8 \
 	pkg-update.8 \
 	pkg-updating.8 \
@@ -47,6 +49,8 @@ MAN8=	pkg.8 \
 	pkg-version.8 \
 	pkg-which.8
 MAN5=	pkg.conf.5
+
+PORTEXAMPLES=	etc/pkg.conf.sample
 
 .include <bsd.port.pre.mk>
 
@@ -68,6 +72,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/periodic/security
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/410.pkg-audit ${PREFIX}/etc/periodic/security
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
