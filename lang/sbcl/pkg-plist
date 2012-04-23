@@ -188,8 +188,6 @@ lib/sbcl/site-systems/.keep_me
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asdf-install/README
 %%PORTDOCS%%%%DOCSDIR%%/asdf.html
-%%PDF%%%%PORTDOCS%%%%DOCSDIR%%/asdf.pdf
-%%PS%%%%PORTDOCS%%%%DOCSDIR%%/asdf.ps
 %%PORTDOCS%%%%DOCSDIR%%/asdf/README
 %%PORTDOCS%%%%DOCSDIR%%/asdf/README.SBCL
 %%PORTDOCS%%%%DOCSDIR%%/sb-aclrepl/README
@@ -199,10 +197,7 @@ lib/sbcl/site-systems/.keep_me
 %%PORTDOCS%%%%DOCSDIR%%/sb-posix/README
 %%PORTDOCS%%%%DOCSDIR%%/sb-rotate-byte/README
 %%PORTDOCS%%%%DOCSDIR%%/sb-simple-streams/README
-%%PDF%%%%PORTDOCS%%%%DOCSDIR%%/sbcl-internals.pdf
 %%PORTDOCS%%%%DOCSDIR%%/sbcl.html
-%%PDF%%%%PORTDOCS%%%%DOCSDIR%%/sbcl.pdf
-%%PS%%%%PORTDOCS%%%%DOCSDIR%%/sbcl.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-simple-streams
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-rotate-byte
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-posix
