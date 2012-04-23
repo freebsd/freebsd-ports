@@ -11,10 +11,10 @@
 -  AC_DEFINE_UNQUOTED(SVN_REV,"${svnrev}",
 -    [Define to be the subversion revision number])
 -else
--  AC_REVISION([$Revision: 163 $])
--  AC_DEFINE(SVN_REV,"$Revision: 163 $",
-+  AC_REVISION([$Revision: 868 $])
-+  AC_DEFINE(SVN_REV,"$Revision: 868 $",
+-  AC_REVISION([$Revision: 1190 $])
+-  AC_DEFINE(SVN_REV,"$Revision: 1190 $",
++  AC_REVISION([$Revision: 1280 $])
++  AC_DEFINE(SVN_REV,"$Revision: 1280 $",
      [Define to be the subversion revision number])
 -fi
  

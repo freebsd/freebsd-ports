@@ -5,11 +5,10 @@
 #
 
 PORTNAME=	boinc-astropulse
-PORTVERSION=	5.06
-PORTREVISION=	3
+PORTVERSION=	6.01
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
-DISTNAME=	astropulse-svn-868
+DISTNAME=	astropulse-svn-1280
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Astropulse for BOINC
