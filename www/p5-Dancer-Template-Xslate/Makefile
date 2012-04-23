@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer-Template-Xslate
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSIMOES
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Text::Xslate wrapper for Dancer
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Dancer>0:${PORTSDIR}/www/p5-Dancer \
 		p5-Text-Xslate>0:${PORTSDIR}/textproc/p5-Text-Xslate
