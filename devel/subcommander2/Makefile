@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://subcommander.tigris.org/files/documents/1759/46766/
 DISTNAME=	Subcommander-${PORTVERSION:S/.b/b/g}p1
 
-MAINTAINER=	cyberbotx@cyberbotx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt4 based multiplatform subversion client, diff & merge tool
 
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \

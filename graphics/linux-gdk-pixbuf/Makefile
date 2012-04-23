@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics linux
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}
 
-MAINTAINER=	sethk@meowfishies.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux version of the graphic library for GTK+
 
 CONFLICTS=	linux-f8-gdk-pixbuf-[0-9]* linux-f10-gdk-pixbuf-[0-9]*
