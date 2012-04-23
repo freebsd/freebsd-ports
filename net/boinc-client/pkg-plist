@@ -16,6 +16,7 @@ include/boinc/cc_config.h
 include/boinc/cert_sig.h
 include/boinc/cl_boinc.h
 include/boinc/common_defs.h
+include/boinc/config.h
 include/boinc/coproc.h
 include/boinc/crypt.h
 include/boinc/diagnostics.h
@@ -48,6 +49,9 @@ include/boinc/util.h
 include/boinc/version.h
 include/boinc/win_util.h
 %%X11%%include/boinc/boinc_gl.h
+%%X11%%include/boinc/graphics_api.h
+%%X11%%include/boinc/graphics_data.h
+%%X11%%include/boinc/reduce.h
 %%X11%%include/boinc/txf_util.h
 lib/libboinc.a
 lib/libboinc.la
