@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.0.15
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -72,7 +71,6 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
 		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
-		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		ARRAYVAR_MODULE		"3rd party array_var module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
@@ -405,6 +403,7 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/masterzen/nginx-upload-progress-module/tarball/v${NGINX_UPLOADPROGRESS_MODULE_VERSION}/:uploadprogress
 DISTFILES+=	masterzen-nginx-upload-progress-module-v${NGINX_UPLOADPROGRESS_MODULE_VERSION}-${GIT_UPLOADPROGRESS_MODULE_VERSION}.tar.gz:uploadprogress
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/masterzen-nginx-upload-progress-module-${GIT_UPLOADPROGRESS_MODULE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_uploadprogress_module.c
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_FAIR) || defined(WITH_SUPERVISORD_MODULE)
@@ -421,13 +420,6 @@ MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
 DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
-.endif
-
-.if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
-NGINX_UPSTREAM_KEEPALIVE_VERSION=	0.7
-MASTER_SITES+=	http://mdounin.ru/files/:upstream
-DISTFILES+=	ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}.tar.gz:upstream
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_upstream_keepalive-${NGINX_UPSTREAM_KEEPALIVE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_XSLT_MODULE)
@@ -488,7 +480,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 .if defined(WITH_LUA_MODULE)
 LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
-CONFIGURE_ENV+= "LUAJIT_LIB=${LOCALBASE}/lib"
+CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
 NGINX_LUA_MODULE_VERSION=	0.4.1
 GIT_LUA_MODULE_VERSION=	0-g204ce2b
@@ -849,13 +841,12 @@ post-install:
 	${ECHO_CMD} ${SITE_PERL_REL}/${PERL_ARCH}/nginx.pm >> ${TMPPLIST}
 	${ECHO_CMD} @dirrm ${SITE_PERL_REL}/${PERL_ARCH}/auto/nginx >> ${TMPPLIST}
 .endif
+.if !defined(NO_INSTALL_MANPAGES)
+	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
+.endif
 
 .if defined(WITH_NAXSI_MODULE)
 	${ECHO_CMD} etc/nginx/naxsi_core.rules >> ${TMPPLIST}
-.endif
-
-.if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${MAN8PREFIX}/man/man8
 .endif
 
 .include <bsd.port.post.mk>

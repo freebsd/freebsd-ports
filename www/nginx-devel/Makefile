@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.1.19
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -573,7 +572,7 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_MODULE_VERSION}/:setmisc
 DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_MODULE_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module::config
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-agentzh-set-misc-nginx-module::config
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
