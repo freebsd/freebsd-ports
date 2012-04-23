@@ -15,7 +15,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-WM-0.81.0.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	Fritz.Heinrichmeyer@fernuni-hagen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 file manager using WINGS library. Dockable in WindowMaker
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
