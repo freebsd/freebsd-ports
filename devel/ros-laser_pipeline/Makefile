@@ -11,7 +11,7 @@ MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${ST
 DISTNAME=	laser_pipeline-${PORTVERSION}
 DIST_SUBDIR=	ros
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - laser data processing utilities
 
 LICENSE=	BSD

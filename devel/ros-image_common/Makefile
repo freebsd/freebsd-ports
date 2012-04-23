@@ -11,7 +11,7 @@ MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${ST
 DISTNAME=	image_common-${PORTVERSION}
 DIST_SUBDIR=	ros
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - common image routines
 
 LICENSE=	BSD

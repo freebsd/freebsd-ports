@@ -16,7 +16,7 @@ DISTFILES=	geometry-${PORTVERSION}.tar.bz2:rel \
 DIST_SUBDIR=	ros
 EXTRACT_ONLY=	geometry-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - geometric and math libraries
 
 #LICENSE_COMB=	multi
