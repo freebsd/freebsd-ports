@@ -7,6 +7,7 @@
 
 PORTNAME=	crossfire-client
 PORTVERSION=	1.70.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/crossfire/crossfire-${PORTVERSION}
 
@@ -27,5 +28,14 @@ post-patch:
 		${WRKSRC}/common/metaserver.c
 	${REINPLACE_CMD} -e "/mandir='${datarootdir}\/man'/d" \
 		${WRKSRC}/configure
+
+post-install:
+	${CP} ${WRKSRC}/pixmaps/48x48.png ${WRKSRC}/pixmaps/crossfire-client.png
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/gtk-v2/crossfire-client.desktop \
+		${PREFIX}/share/applications
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/crossfire-client.png \
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
