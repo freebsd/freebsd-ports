@@ -1,0 +1,27 @@
+--- ./VERSION.orig	2012-01-25 11:39:35.000000000 -0800
++++ ./VERSION	2012-04-23 16:30:33.214390779 -0700
+@@ -1 +1 @@
+-2012-01-25 "Angua"
++2012-01-25a "Angua"
+--- ./doku.php.orig	2012-01-25 11:39:32.000000000 -0800
++++ ./doku.php	2012-04-23 16:30:33.214390779 -0700
+@@ -7,7 +7,7 @@
+  */
+ 
+ // update message version
+-$updateVersion = 36;
++$updateVersion = 36.1;
+ 
+ //  xdebug_start_profiling();
+ 
+--- ./inc/html.php.orig	2012-01-25 11:39:32.000000000 -0800
++++ ./inc/html.php	2012-04-23 16:30:40.813392265 -0700
+@@ -1437,7 +1437,7 @@
+     global $TEXT;
+ 
+     if ($param['target'] !== 'section') {
+-        msg('No editor for edit target ' . $param['target'] . ' found.', -1);
++        msg('No editor for edit target ' . hsc($param['target']) . ' found.', -1);
+     }
+ 
+     $attr = array('tabindex'=>'1');
