@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.10-20120308
+DISTVERSION=	2.10-20120422
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -87,7 +87,7 @@ MLINKS=	sendmail.1 mailq.1 \
 HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
-.if !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
 OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || true
 .if !empty(OLD_MAILER)
 IS_INTERACTIVE=	yes
