@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	love
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -34,20 +33,20 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
-WRKSRC=		${WRKDIR}/love-HEAD
+WRKSRC=		${WRKDIR}/love-${PORTVERSION}
 
 PLIST_FILES=	bin/love
 
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^prefix=/ d; /^bindir=/ d; /^libdir=/ d; \
+		/test/ s|==|=|' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in changes.txt readme.txt
+.for f in changes.txt readme.md
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
