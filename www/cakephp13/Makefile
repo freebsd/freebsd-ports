@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	1.3.14
-PORTREVISION=
+PORTVERSION=	1.3.15
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/ \
 		LOCAL/glarkin
@@ -18,15 +17,15 @@ COMMENT=	A framework for developing PHP web applications
 
 LICENSE=	MIT
 
-GITVERSION=	0-g5ac77c2
+GITVERSION=	0-g3ff1ff1
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-822a1e0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-5e063d7
 
 PORTDOCS=	README
 
 SLAVE_PORT_MODULES=	rewrite
 
-CONFLICTS=	cakephp-1.[12].*
+CONFLICTS=	cakephp-1.[12].* cakephp-2.*
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
