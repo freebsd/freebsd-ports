@@ -1,5 +1,8 @@
-Another one small and robust www server, supports
-kqueue (EV_CLEAR, EV_DISABLE, NOTE_LOWAT, EV_EOF, etc.),
-select, poll, sendfile.
+NGINX is a high performance edge web server with the lowest memory footprint
+and the key features to build modern and efficient web infrastructure.
 
-WWW: http://sysoev.ru/nginx/
+NGINX functionality includes HTTP server, HTTP and mail reverse proxy, caching,
+load balancing, compression, request throttling, connection multiplexing and
+reuse, SSL offload and HTTP media streaming.
+
+WWW: http://nginx.org/
