@@ -7,7 +7,7 @@
 
 PORTNAME=	love
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel games
 MASTER_SITES=	http://cdn.bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -24,6 +24,8 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
+LATEST_LINK=	${PORTNAME}07
+
 USE_GMAKE=	yes
 USE_OPENAL=	yes
 USE_SDL=	sdl mixer
@@ -33,11 +35,13 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib \
+		--program-suffix=07
 WRKSRC=		${WRKDIR}/love-HEAD
 
-PLIST_FILES=	bin/love
+PLIST_FILES=	bin/love07
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}07
 PORTDOCS=	*
 
 post-patch:
