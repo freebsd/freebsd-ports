@@ -5,6 +5,9 @@ lib/vmd/Announcement
 lib/vmd/LICENSE
 lib/vmd/README
 lib/vmd/doc/ug.pdf
+lib/vmd/plugins/%%VMD_ARCH%%/bin/catdcd4.0/catdcd
+lib/vmd/plugins/%%VMD_ARCH%%/bin/cionize1.0/cionize
+lib/vmd/plugins/%%VMD_ARCH%%/molfile/abinitplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/avsplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/babelplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/basissetplugin.so
@@ -41,6 +44,7 @@ lib/vmd/plugins/%%VMD_ARCH%%/molfile/mol2plugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/moldenplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/msmsplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/namdbinplugin.so
+lib/vmd/plugins/%%VMD_ARCH%%/molfile/offplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/parm7plugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/parmplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/pbeqplugin.so
@@ -63,25 +67,91 @@ lib/vmd/plugins/%%VMD_ARCH%%/molfile/vaspposcarplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/vaspxdatcarplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/vaspxmlplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/vtfplugin.so
+lib/vmd/plugins/%%VMD_ARCH%%/molfile/webpdbplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/xbgfplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/xsfplugin.so
 lib/vmd/plugins/%%VMD_ARCH%%/molfile/xyzplugin.so
-lib/vmd/plugins/%%VMD_ARCH%%/tcl/hesstrans1.0/hessTest.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/autopsf1.3/psfcheck.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/autopsf1.3/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/autopsf1.3/autopsf.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/cionize1.0/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/cionize1.0/cionize.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/clustalw1.1/clustalw
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/clustalw1.1/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/clustalw1.1/clustalw_help
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/clustalw1.1/clustalw.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/clustalw1.1/mafft.tcl
 lib/vmd/plugins/%%VMD_ARCH%%/tcl/hesstrans1.0/hesstrans.so
-lib/vmd/plugins/%%VMD_ARCH%%/tcl/hesstrans1.0/hesstrans.tcl
 lib/vmd/plugins/%%VMD_ARCH%%/tcl/hesstrans1.0/pkgIndex.tcl
-lib/vmd/plugins/LINUX/tcl/intersurf1.1/bin/intersurf.so
-lib/vmd/plugins/LINUX/tcl/intersurf1.1/color_func.tcl
-lib/vmd/plugins/LINUX/tcl/intersurf1.1/intersurf_gui.tcl
-lib/vmd/plugins/LINUX/tcl/intersurf1.1/license.txt
-lib/vmd/plugins/LINUX/tcl/intersurf1.1/nicostuf.tcl
-lib/vmd/plugins/LINUX/tcl/intersurf1.1/pkgIndex.tcl
-lib/vmd/plugins/WIN32/tcl/intersurf1.1/bin/intersurf.dll
-lib/vmd/plugins/WIN32/tcl/intersurf1.1/color_func.tcl
-lib/vmd/plugins/WIN32/tcl/intersurf1.1/intersurf_gui.tcl
-lib/vmd/plugins/WIN32/tcl/intersurf1.1/license.txt
-lib/vmd/plugins/WIN32/tcl/intersurf1.1/nicostuf.tcl
-lib/vmd/plugins/WIN32/tcl/intersurf1.1/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/q
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/metric.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/libbiokit_profcombine.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/libbiokit_entropy.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/libbiokit.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/seqqr
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/structqr
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/qpair
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/rmsd
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/percid
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1/tcl_libbiokit.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/mutator1.4/libalchemify.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/mutator1.4/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/mutator1.4/mutator_gui.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/mutator1.4/mutator.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/upgmaclu
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_widget.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_nodeprops.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_nexus.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_newick.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_matrixviewer.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_je.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_export.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_data.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/phylotree_analysis.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2/cluster.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/pmepot1.0/libpmepot.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/pmepot1.0/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/pmepot1.0/pmepot.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/pmepot1.0/pmepot_gui.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/psfgen1.6/libpsfgen.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/psfgen1.6/ug.pdf
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/psfgen1.6/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/specden.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/signalproc.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/fftpack.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/data_io_lib.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/fftcmds.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1/sgsmooth.so
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2/stamp
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2/stamp.defaults
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2/pdb.directories
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2/dssp.directories
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2/stamp.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/rnaview
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/rnaview.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/CVS/Root
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/CVS/Repository
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/CVS/Entries
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_A.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_C.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_G.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_I.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_P.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_T.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/Atomic_U.pdb
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/misc_rna.par
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/ps_image.par
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/raster3d.par
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/vrml_image.par
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/volutil1.3/volutil
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/volutil1.3/pkgIndex.tcl
+lib/vmd/plugins/%%VMD_ARCH%%/tcl/volutil1.3/volutil.tcl
 lib/vmd/plugins/include/molfile_plugin.h
 lib/vmd/plugins/include/vmdconio.h
 lib/vmd/plugins/include/vmdplugin.h
@@ -90,18 +160,17 @@ lib/vmd/plugins/noarch/tcl/apbsrun1.3/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/apbsrun1.3/radii.dat
 lib/vmd/plugins/noarch/tcl/atomedit1.0/atomedit.tcl
 lib/vmd/plugins/noarch/tcl/atomedit1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/autoimd-api.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/autoimd-gui.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/autoimd-settings.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/autoimd-template.namd
-lib/vmd/plugins/noarch/tcl/autoimd1.6/autoimd.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/namdrun.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/autoimd1.6/ug.pdf
-lib/vmd/plugins/noarch/tcl/autoionize1.2/autoionize.tcl
-lib/vmd/plugins/noarch/tcl/autoionize1.2/autoionizegui.tcl
-lib/vmd/plugins/noarch/tcl/autoionize1.2/ions.top
-lib/vmd/plugins/noarch/tcl/autoionize1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/autoimd-api.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/autoimd-gui.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/autoimd-settings.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/autoimd-template.namd
+lib/vmd/plugins/noarch/tcl/autoimd1.7/autoimd.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/namdrun.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/autoimd1.7/ug.pdf
+lib/vmd/plugins/noarch/tcl/autoionize1.3/autoionize.tcl
+lib/vmd/plugins/noarch/tcl/autoionize1.3/autoionizegui.tcl
+lib/vmd/plugins/noarch/tcl/autoionize1.3/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/bignum1.0/bignum.tcl
 lib/vmd/plugins/noarch/tcl/bignum1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/biocore1.1/biocore.tcl
@@ -124,12 +193,18 @@ lib/vmd/plugins/noarch/tcl/cgtools1.0/protein.cgc
 lib/vmd/plugins/noarch/tcl/cgtools1.0/rbcg-2007.par
 lib/vmd/plugins/noarch/tcl/cgtools1.0/rbcg-2007.top
 lib/vmd/plugins/noarch/tcl/cgtools1.0/water.cgc
+lib/vmd/plugins/noarch/tcl/chirality1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/chirality1.1/chirality_gui.tcl
+lib/vmd/plugins/noarch/tcl/chirality1.1/chirality.tcl
+lib/vmd/plugins/noarch/tcl/cispeptide1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/cispeptide1.1/cispeptide_gui.tcl
+lib/vmd/plugins/noarch/tcl/cispeptide1.1/cispeptide.tcl
 lib/vmd/plugins/noarch/tcl/cliptool1.0/cliptool.tcl
 lib/vmd/plugins/noarch/tcl/cliptool1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/clonerep1.1/clonerep.tcl
-lib/vmd/plugins/noarch/tcl/clonerep1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/colorscalebar1.2/colorscalebar.tcl
-lib/vmd/plugins/noarch/tcl/colorscalebar1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/clonerep1.2/clonerep.tcl
+lib/vmd/plugins/noarch/tcl/clonerep1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/colorscalebar1.3/colorscalebar.tcl
+lib/vmd/plugins/noarch/tcl/colorscalebar1.3/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/contactmap1.1/contactmap.tcl
 lib/vmd/plugins/noarch/tcl/contactmap1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/dataimport1.0/dataimport.tcl
@@ -138,33 +213,48 @@ lib/vmd/plugins/noarch/tcl/demomaster1.0/demomaster.tcl
 lib/vmd/plugins/noarch/tcl/demomaster1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/dipwatch1.2/dipwatch.tcl
 lib/vmd/plugins/noarch/tcl/dipwatch1.2/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/dowser1.0/dowser.tcl
-lib/vmd/plugins/noarch/tcl/dowser1.0/dowser_gui.tcl
-lib/vmd/plugins/noarch/tcl/dowser1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/dowser1.1/dowser.tcl
+lib/vmd/plugins/noarch/tcl/dowser1.1/dowser_gui.tcl
+lib/vmd/plugins/noarch/tcl/dowser1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/exectool1.2/exectool.tcl
 lib/vmd/plugins/noarch/tcl/exectool1.2/jobmanager.tcl
 lib/vmd/plugins/noarch/tcl/exectool1.2/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/extendedpdb1.0/extendedpdb.tcl
 lib/vmd/plugins/noarch/tcl/extendedpdb1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/gofrgui1.1/gofrgui.tcl
-lib/vmd/plugins/noarch/tcl/gofrgui1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/hbonds1.1/hbonds.tcl
-lib/vmd/plugins/noarch/tcl/hbonds1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_guiProcs.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_guiInterface.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_GeomOpt.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_GenZMatrix.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_GenDihScan.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_GenBonded.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_DihOpt.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_ChargeOpt.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_BuildPar.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_BondAngleOpt.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk.tcl
+lib/vmd/plugins/noarch/tcl/fftk1.0/fftk_SharedFcns.tcl
+lib/vmd/plugins/noarch/tcl/gofrgui1.2/gofrgui.tcl
+lib/vmd/plugins/noarch/tcl/gofrgui1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/hbonds1.2/hbonds.tcl
+lib/vmd/plugins/noarch/tcl/hbonds1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/heatmapper1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/heatmapper1.0/heatmapper.tcl
 lib/vmd/plugins/noarch/tcl/idatm0.1/idatm.tcl
 lib/vmd/plugins/noarch/tcl/idatm0.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/ilstools1.2/acetylene.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/carbondioxide.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/carbonmonoxide.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/ethene.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/hydrogen.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/ilstools.tcl
-lib/vmd/plugins/noarch/tcl/ilstools1.2/methane.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/nitricoxide.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/nitrogen.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/nitrogendioxide.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/nitrousoxide.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/oxygen.xyz
-lib/vmd/plugins/noarch/tcl/ilstools1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/ilstools1.4/acetylene.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/carbondioxide.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/carbonmonoxide.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/ethene.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/hydrogen.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/ilstools.tcl
+lib/vmd/plugins/noarch/tcl/ilstools1.4/methane.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/nitricoxide.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/nitrogen.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/nitrogendioxide.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/nitrousoxide.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/oxygen.xyz
+lib/vmd/plugins/noarch/tcl/ilstools1.4/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/imdmenu1.0/imdmenu.tcl
 lib/vmd/plugins/noarch/tcl/imdmenu1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/inorganicbuilder.tcl
@@ -189,113 +279,147 @@ lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/materials/sio2.inp
 lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/materials/sio2.pdb
 lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/materials/sio2.top
 lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/irspecgui1.1/irspecgui.tcl
-lib/vmd/plugins/noarch/tcl/irspecgui1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/membrane1.0/membrane.tcl
-lib/vmd/plugins/noarch/tcl/membrane1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/membrane1.0/popc_box.pdb
-lib/vmd/plugins/noarch/tcl/membrane1.0/popc_box.psf
-lib/vmd/plugins/noarch/tcl/membrane1.0/pope_box.pdb
-lib/vmd/plugins/noarch/tcl/membrane1.0/pope_box.psf
-lib/vmd/plugins/noarch/tcl/membrane1.0/top_all27_prot_lipid.inp
-lib/vmd/plugins/noarch/tcl/mergestructs1.0/mergestructs.tcl
-lib/vmd/plugins/noarch/tcl/mergestructs1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/ATOMTYPE_OPLS.DEF
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/CVS/Entries
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/CVS/Repository
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/CVS/Root
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/ALA.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/ARG.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/ASN.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/ASP.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/CVS/Entries
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/CVS/Repository
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/CVS/Root
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/CYS.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/GLN.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/GLU.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/GLY-end.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/GLY.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/HIS.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/HSE.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/ILE.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/LEU.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/LYS.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/MET.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/PHE.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/PRO.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/SER.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/THR.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/TRP.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/TYR.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/VAL.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/CVS/Entries
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/CVS/Repository
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/CVS/Root
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/acetone.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/ammonia.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/basefrag.mdb
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/benzene.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/benzene.pdb
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/butane.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/cyclobutane.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/cyclohexane.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/cyclopentane.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/cyclopropane.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/furan.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/isoprene.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/methane.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/naphthalene.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/thf.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/thiophene.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/water.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/convert_xbgf_to_frags.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/CVS/Entries
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/CVS/Repository
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/CVS/Root
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/amino.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/butyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/carboxyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/chloride.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/formyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/frag.mdb
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/furan_1C.frag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/furan_2C.frag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/hydroxyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/methyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/methyl.pdb
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/phenyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/tbutyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/thiol.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/thiophene_1C.frag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/thiophene_2C.frag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/vinyl.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/A.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/C.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/CVS/Entries
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/CVS/Repository
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/CVS/Root
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/G.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/T.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/U.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/dna_backbone.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/dna_dihedrals.gif
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/rna_backbone.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/rna_backbone_added.mfrag
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture_builder.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture_edit.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture_geometry.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture_gui.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture_internals.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/molefacture_state.tcl
-lib/vmd/plugins/noarch/tcl/molefacture1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/irspecgui1.2/irspecgui.tcl
+lib/vmd/plugins/noarch/tcl/irspecgui1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_template.namd
+lib/vmd/plugins/noarch/tcl/mdff0.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_setup.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_correlation.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_sim.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_map.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_check.tcl
+lib/vmd/plugins/noarch/tcl/mdff0.2/mdff_tmp.tcl
+lib/vmd/plugins/noarch/tcl/membrane1.1/membrane.tcl
+lib/vmd/plugins/noarch/tcl/membrane1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/membrane1.1/popc36_box.pdb
+lib/vmd/plugins/noarch/tcl/membrane1.1/popc36_box.psf
+lib/vmd/plugins/noarch/tcl/membrane1.1/pope36_box.pdb
+lib/vmd/plugins/noarch/tcl/membrane1.1/pope36_box.psf
+lib/vmd/plugins/noarch/tcl/membrane1.1/popc_box.pdb
+lib/vmd/plugins/noarch/tcl/membrane1.1/popc_box.psf
+lib/vmd/plugins/noarch/tcl/membrane1.1/pope_box.pdb
+lib/vmd/plugins/noarch/tcl/membrane1.1/pope_box.psf
+lib/vmd/plugins/noarch/tcl/membrane1.1/top_all27_prot_lipid.inp
+lib/vmd/plugins/noarch/tcl/mergestructs1.1/mergestructs.tcl
+lib/vmd/plugins/noarch/tcl/mergestructs1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/ATOMTYPE_OPLS.DEF
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/CVS/Entries
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/CVS/Repository
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/CVS/Root
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/ALA.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/ARG.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/ASN.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/ASP.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/CVS/Entries
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/CVS/Repository
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/CVS/Root
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/CYS.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/GLN.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/GLU.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/GLY-end.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/GLY.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/HIS.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/HSE.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/ILE.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/LEU.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/LYS.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/MET.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/PHE.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/PRO.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/SER.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/THR.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/TRP.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/TYR.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/VAL.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/CVS/Entries
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/CVS/Repository
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/CVS/Root
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/acetone.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/ammonia.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/basefrag.mdb
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/benzene.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/benzene.pdb
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/butane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/cyclobutane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/cyclohexane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/cyclopentane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/cyclopropane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/furan.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/isoprene.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/methane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/naphthalene.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/thf.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/thiophene.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/water.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/anthracene.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/cycloheptane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/cyclooctane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/formic_acid.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/hcn.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/indole.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/norbornane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/oxyrane.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/piperazine.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/pyrazole.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/pyridine.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/pyrrole.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/sulfate.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/convert_xbgf_to_frags.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/carboxylate.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/cycloheptane.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/cyclooctane.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/epoxide.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/indole.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/nitrile.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/nitro.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/phospho.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/CVS/Entries
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/CVS/Repository
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/CVS/Root
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/amino.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/butyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/carboxyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/chloride.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/formyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/frag.mdb
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/furan_1C.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/furan_2C.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/hydroxyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/methyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/methyl.pdb
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/phenyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/tbutyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/thiol.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/thiophene_1C.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/thiophene_2C.frag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/vinyl.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/A.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/C.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/CVS/Entries
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/CVS/Repository
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/CVS/Root
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/G.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/T.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/U.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/dna_backbone.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/dna_dihedrals.gif
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/rna_backbone.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/rna_backbone_added.mfrag
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture_builder.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture_edit.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture_geometry.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture_gui.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture_internals.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/molefacture_state.tcl
+lib/vmd/plugins/noarch/tcl/molefacture1.3/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/moltoptools0.1/moltoptools.tcl
 lib/vmd/plugins/noarch/tcl/moltoptools0.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/multimolanim1.0/multimolanim.tcl
 lib/vmd/plugins/noarch/tcl/multimolanim1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/multiplot1.4/multiplot.tcl
-lib/vmd/plugins/noarch/tcl/multiplot1.4/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/multiplot1.6/multiplot.tcl
+lib/vmd/plugins/noarch/tcl/multiplot1.6/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/multiseq2.1/colormap_vmd.tcl
 lib/vmd/plugins/noarch/tcl/multiseq2.1/export_options.tcl
 lib/vmd/plugins/noarch/tcl/multiseq2.1/find.tcl
@@ -318,99 +442,113 @@ lib/vmd/plugins/noarch/tcl/multiseqdialog1.1/scrolledframe.tcl
 lib/vmd/plugins/noarch/tcl/multiseqdialog1.1/wait_dialog.tcl
 lib/vmd/plugins/noarch/tcl/multitext1.0/multitext.tcl
 lib/vmd/plugins/noarch/tcl/multitext1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/namdenergy1.2/namdenergy.tcl
-lib/vmd/plugins/noarch/tcl/namdenergy1.2/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/namdgui1.2/namdgui.tcl
-lib/vmd/plugins/noarch/tcl/namdgui1.2/namdgui_tclforces.tcl
-lib/vmd/plugins/noarch/tcl/namdgui1.2/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/namdplot1.0/namdplot.tcl
-lib/vmd/plugins/noarch/tcl/namdplot1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/namdenergy1.4/namdenergy.tcl
+lib/vmd/plugins/noarch/tcl/namdenergy1.4/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/namdgui1.3/namdgui.tcl
+lib/vmd/plugins/noarch/tcl/namdgui1.3/namdgui_tclforces.tcl
+lib/vmd/plugins/noarch/tcl/namdgui1.3/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/namdplot1.1/namdplot.tcl
+lib/vmd/plugins/noarch/tcl/namdplot1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/namdserver1.1/namdserver.tcl
 lib/vmd/plugins/noarch/tcl/namdserver1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/nanotube1.0/nanotube.tcl
-lib/vmd/plugins/noarch/tcl/nanotube1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/nanotube1.2/nanotube.tcl
+lib/vmd/plugins/noarch/tcl/nanotube1.2/graphene.tcl
+lib/vmd/plugins/noarch/tcl/nanotube1.2/gui.tcl
+lib/vmd/plugins/noarch/tcl/nanotube1.2/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/navfly1.0/navfly.tcl
 lib/vmd/plugins/noarch/tcl/navfly1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/navigate1.0/navigate.tcl
 lib/vmd/plugins/noarch/tcl/navigate1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/optimization1.0/optimization.tcl
-lib/vmd/plugins/noarch/tcl/optimization1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/suboptimalPaths.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/adjacencyMatrix.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/networkSetup.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/communityNetwork.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/networkViewGui.tcl
+lib/vmd/plugins/noarch/tcl/networkview1.0/networkView.tcl
+lib/vmd/plugins/noarch/tcl/nmwiz1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/nmwiz1.0/nmwiz.tcl
+lib/vmd/plugins/noarch/tcl/optimization1.1/optimization.tcl
+lib/vmd/plugins/noarch/tcl/optimization1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/palettetool1.0/palettetool.tcl
 lib/vmd/plugins/noarch/tcl/palettetool1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_atomedit.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_aux.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_charmmcharges.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_components.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_energies.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_hessian.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_intcoor.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_lists.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_parameters.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_potscan.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_readwrite.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_refinement.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_respcharges.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_tmcomplex.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/paratool_topology.tcl
-lib/vmd/plugins/noarch/tcl/paratool1.4/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbcbox.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbcgui.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbcjoin.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbcset.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbctools.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbcunwrap.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pbcwrap.tcl
-lib/vmd/plugins/noarch/tcl/pbctools2.5/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_atomedit.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_aux.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_charmmcharges.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_components.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_energies.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_hessian.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_intcoor.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_lists.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_parameters.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_potscan.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_readwrite.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_refinement.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_respcharges.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_tmcomplex.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/paratool_topology.tcl
+lib/vmd/plugins/noarch/tcl/paratool1.5/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/parsefep1.5/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/parsefep1.5/parseFEP.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbcbox.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbcgui.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbcjoin.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbcset.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbctools.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbcunwrap.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pbcwrap.tcl
+lib/vmd/plugins/noarch/tcl/pbctools2.6/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/pdbtool1.0/pdbtool.tcl
 lib/vmd/plugins/noarch/tcl/pdbtool1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_analysis.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_data.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_export.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_je.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_matrixviewer.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_newick.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_nexus.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_nodeprops.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/phylotree_widget.tcl
-lib/vmd/plugins/noarch/tcl/phylotree1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/plumed0.9/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/plumed0.9/vmdplumed.tcl
+lib/vmd/plugins/noarch/tcl/propka1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/propka1.1/propka.tcl
 lib/vmd/plugins/noarch/tcl/psipred1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/psipred1.1/psipred.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_analysis.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_atomedit.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_aux.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_charges.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_intcoor.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_readwrite.tcl
-lib/vmd/plugins/noarch/tcl/qmtool1.1/qmtool_setup.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_analysis.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_atomedit.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_aux.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_charges.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_intcoor.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_readwrite.tcl
+lib/vmd/plugins/noarch/tcl/qmtool1.3/qmtool_setup.tcl
 lib/vmd/plugins/noarch/tcl/ramaplot1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/ramaplot1.1/ramaplot.tcl
-lib/vmd/plugins/noarch/tcl/readcharmmpar1.1/par_all27_prot_lipid_na.inp
-lib/vmd/plugins/noarch/tcl/readcharmmpar1.1/par_amber2charmm.inp
-lib/vmd/plugins/noarch/tcl/readcharmmpar1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/readcharmmpar1.1/readcharmmpar.tcl
-lib/vmd/plugins/noarch/tcl/readcharmmtop1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/readcharmmtop1.0/readcharmmtop.tcl
-lib/vmd/plugins/noarch/tcl/readcharmmtop1.0/top_all27_hybrid.inp
-lib/vmd/plugins/noarch/tcl/readcharmmtop1.0/top_all27_prot_lipid_na.inp
-lib/vmd/plugins/noarch/tcl/readcharmmtop1.0/top_amber2charmm.inp
-lib/vmd/plugins/noarch/tcl/resptool1.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/resptool1.1/resptool.tcl
+lib/vmd/plugins/noarch/tcl/readcharmmpar1.2/par_all27_prot_lipid_na.inp
+lib/vmd/plugins/noarch/tcl/readcharmmpar1.2/par_all36_lipid.prm
+lib/vmd/plugins/noarch/tcl/readcharmmpar1.2/par_amber2charmm.inp
+lib/vmd/plugins/noarch/tcl/readcharmmpar1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/readcharmmpar1.2/readcharmmpar.tcl
+lib/vmd/plugins/noarch/tcl/readcharmmtop1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/readcharmmtop1.1/readcharmmtop.tcl
+lib/vmd/plugins/noarch/tcl/readcharmmtop1.1/top_all27_hybrid.inp
+lib/vmd/plugins/noarch/tcl/readcharmmtop1.1/top_all27_prot_lipid_na.inp
+lib/vmd/plugins/noarch/tcl/readcharmmtop1.1/top_all36_lipid.rtf
+lib/vmd/plugins/noarch/tcl/readcharmmtop1.1/top_amber2charmm.inp
+lib/vmd/plugins/noarch/tcl/remote0.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/remote0.1/remote.tcl
+lib/vmd/plugins/noarch/tcl/resptool1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/resptool1.2/resptool.tcl
 lib/vmd/plugins/noarch/tcl/rmsd1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/rmsd1.0/rmsd.tcl
-lib/vmd/plugins/noarch/tcl/rmsdtt2.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/rmsdtt2.0/rmsdtt.tcl
-lib/vmd/plugins/noarch/tcl/rnaview1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/rnaview1.0/rnaview.tcl
+lib/vmd/plugins/noarch/tcl/rmsdtt3.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/rmsdtt3.0/rmsdtt.tcl
+lib/vmd/plugins/noarch/tcl/rmsdvt1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/rmsdvt1.0/rmsdvt.tcl
+lib/vmd/plugins/noarch/tcl/rmsdvt1.0/rmsdvt-gui.tcl
+lib/vmd/plugins/noarch/tcl/rmsdvt1.0/modal.tcl
 lib/vmd/plugins/noarch/tcl/ruler1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/ruler1.0/ruler.tcl
-lib/vmd/plugins/noarch/tcl/runante0.1/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/runante0.1/runante.tcl
-lib/vmd/plugins/noarch/tcl/saltbr1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/saltbr1.0/saltbr.tcl
+lib/vmd/plugins/noarch/tcl/runante0.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/runante0.2/runante.tcl
+lib/vmd/plugins/noarch/tcl/runsqm0.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/runsqm0.2/runsqm.tcl
+lib/vmd/plugins/noarch/tcl/saltbr1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/saltbr1.1/saltbr.tcl
 lib/vmd/plugins/noarch/tcl/seqdata1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/seqdata1.1/seqdata.tcl
 lib/vmd/plugins/noarch/tcl/seqdata1.1/seqdata_aln.tcl
@@ -470,34 +608,36 @@ lib/vmd/plugins/noarch/tcl/seqedit1.1/seqedit_widget_edit.tcl
 lib/vmd/plugins/noarch/tcl/seqedit1.1/seqedit_widget_select.tcl
 lib/vmd/plugins/noarch/tcl/seqedit1.1/seqedit_widget_statusbar.tcl
 lib/vmd/plugins/noarch/tcl/seqedit1.1/taxonomy_options.tcl
-lib/vmd/plugins/noarch/tcl/solvate1.3/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/solvate1.3/solvate.tcl
-lib/vmd/plugins/noarch/tcl/solvate1.3/wat.pdb
-lib/vmd/plugins/noarch/tcl/solvate1.3/wat.psf
-lib/vmd/plugins/noarch/tcl/solvate1.3/wat.top
-lib/vmd/plugins/noarch/tcl/ssrestraints1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/ssrestraints1.0/ssrestraints.tcl
-lib/vmd/plugins/noarch/tcl/ssrestraints1.0/ssrestraints_stride.tcl
+lib/vmd/plugins/noarch/tcl/solvate1.5/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/solvate1.5/solvate.tcl
+lib/vmd/plugins/noarch/tcl/solvate1.5/wat.pdb
+lib/vmd/plugins/noarch/tcl/solvate1.5/wat.psf
+lib/vmd/plugins/noarch/tcl/solvate1.5/wat.top
+lib/vmd/plugins/noarch/tcl/ssrestraints1.1/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/ssrestraints1.1/ssrestraints.tcl
+lib/vmd/plugins/noarch/tcl/ssrestraints1.1/ssrestraints_stride.tcl
 lib/vmd/plugins/noarch/tcl/stingtool1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/stingtool1.0/stingtool.tcl
-lib/vmd/plugins/noarch/tcl/symmetrytool1.2/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/symmetrytool1.2/symmetry.tcl
-lib/vmd/plugins/noarch/tcl/timeline2.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/timeline2.0/timeline.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/README
-lib/vmd/plugins/noarch/tcl/topotools1.0/par_CG.prm
-lib/vmd/plugins/noarch/tcl/topotools1.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/top_CG.prm
-lib/vmd/plugins/noarch/tcl/topotools1.0/topoangles.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topoatoms.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topobonds.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topocgcmm.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topodihedrals.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topohelpers.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topoimpropers.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topolammps.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topotools.tcl
-lib/vmd/plugins/noarch/tcl/topotools1.0/topoutils.tcl
+lib/vmd/plugins/noarch/tcl/symmetrytool1.3/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/symmetrytool1.3/symmetry.tcl
+lib/vmd/plugins/noarch/tcl/timeline2.3/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/timeline2.3/timeline.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/README
+lib/vmd/plugins/noarch/tcl/topotools1.2/par_CG.prm
+lib/vmd/plugins/noarch/tcl/topotools1.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/top_CG.prm
+lib/vmd/plugins/noarch/tcl/topotools1.2/topoangles.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topoatoms.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topobonds.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topocgcmm.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topodihedrals.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topogromacs.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topohelpers.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topoimpropers.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topolammps.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topotools.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topoutils.tcl
+lib/vmd/plugins/noarch/tcl/topotools1.2/topovarxyz.tcl
 lib/vmd/plugins/noarch/tcl/trunctraj1.5/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/trunctraj1.5/toppar/acepar19.inp
 lib/vmd/plugins/noarch/tcl/trunctraj1.5/toppar/acepar22_prot.inp
@@ -554,12 +694,18 @@ lib/vmd/plugins/noarch/tcl/trunctraj1.5/toppar/toprna10r_22.inp
 lib/vmd/plugins/noarch/tcl/trunctraj1.5/trunctraj.tcl
 lib/vmd/plugins/noarch/tcl/utilities1.0/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/utilities1.0/utilities.tcl
-lib/vmd/plugins/noarch/tcl/vdna2.0/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/vdna2.0/vdna.tcl
-lib/vmd/plugins/noarch/tcl/viewmaster2.2/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/viewmaster2.2/viewmaster.tcl
-lib/vmd/plugins/noarch/tcl/vmdmovie1.7/pkgIndex.tcl
-lib/vmd/plugins/noarch/tcl/vmdmovie1.7/vmdmovie.tcl
+lib/vmd/plugins/noarch/tcl/vdna2.2/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/vdna2.2/vdna.tcl
+lib/vmd/plugins/noarch/tcl/viewchangerender1.6/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/viewchangerender1.6/vcr_gui.tcl
+lib/vmd/plugins/noarch/tcl/viewchangerender1.6/vcr.tcl
+lib/vmd/plugins/noarch/tcl/viewmaster2.5/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/viewmaster2.5/viewmaster.tcl
+lib/vmd/plugins/noarch/tcl/vmddebug1.0/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/vmddebug1.0/debugatomsel.tcl
+lib/vmd/plugins/noarch/tcl/vmddebug1.0/vmddebug.tcl
+lib/vmd/plugins/noarch/tcl/vmdmovie1.9/pkgIndex.tcl
+lib/vmd/plugins/noarch/tcl/vmdmovie1.9/vmdmovie.tcl
 lib/vmd/plugins/noarch/tcl/vmdtkcon1.1/README
 lib/vmd/plugins/noarch/tcl/vmdtkcon1.1/pkgIndex.tcl
 lib/vmd/plugins/noarch/tcl/vmdtkcon1.1/tkcon-2.3/CVS/Entries
@@ -1027,6 +1173,8 @@ lib/vmd/shaders/CVS/Root
 lib/vmd/shaders/vmd.frag
 lib/vmd/shaders/vmd.vert
 lib/vmd/shaders/vmdsphere.frag
+lib/vmd/shaders/vmdspheresprite.frag
+lib/vmd/shaders/vmdspheresprite.vert
 lib/vmd/shaders/vmdsphere.vert
 lib/vmd/stride_%%VMD_ARCH%%
 lib/vmd/surf_%%VMD_ARCH%%
@@ -1035,107 +1183,129 @@ lib/vmd/vmd_%%VMD_ARCH%%
 lib/vmd/vmd_completion.dat
 
 @dirrm lib/vmd/doc
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/bin/catdcd4.0
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/bin/cionize1.0
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/bin
 @dirrm lib/vmd/plugins/%%VMD_ARCH%%/molfile
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/autopsf1.3
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/cionize1.0
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/clustalw1.1
 @dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/hesstrans1.0
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/libbiokit1.1
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/mutator1.4
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/phylotree1.2
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/pmepot1.0
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/psfgen1.6
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS/CVS
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1/BASEPARS
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/rnaview1.1
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/signalproc1.1
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/stamp1.2
+@dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl/volutil1.3
 @dirrm lib/vmd/plugins/%%VMD_ARCH%%/tcl
 @dirrm lib/vmd/plugins/%%VMD_ARCH%%
-@dirrm lib/vmd/plugins/LINUX/tcl/intersurf1.1/bin
-@dirrm lib/vmd/plugins/LINUX/tcl/intersurf1.1
-@dirrm lib/vmd/plugins/LINUX/tcl
-@dirrm lib/vmd/plugins/LINUX
-@dirrm lib/vmd/plugins/WIN32/tcl/intersurf1.1/bin
-@dirrm lib/vmd/plugins/WIN32/tcl/intersurf1.1
-@dirrm lib/vmd/plugins/WIN32/tcl
-@dirrm lib/vmd/plugins/WIN32
 @dirrm lib/vmd/plugins/include
 @dirrm lib/vmd/plugins/noarch/tcl/apbsrun1.3
 @dirrm lib/vmd/plugins/noarch/tcl/atomedit1.0
-@dirrm lib/vmd/plugins/noarch/tcl/autoimd1.6
-@dirrm lib/vmd/plugins/noarch/tcl/autoionize1.2
+@dirrm lib/vmd/plugins/noarch/tcl/autoimd1.7
+@dirrm lib/vmd/plugins/noarch/tcl/autoionize1.3
 @dirrm lib/vmd/plugins/noarch/tcl/bignum1.0
 @dirrm lib/vmd/plugins/noarch/tcl/biocore1.1
 @dirrm lib/vmd/plugins/noarch/tcl/blast1.1
 @dirrm lib/vmd/plugins/noarch/tcl/cgtools1.0
+@dirrm lib/vmd/plugins/noarch/tcl/chirality1.1
+@dirrm lib/vmd/plugins/noarch/tcl/cispeptide1.1
 @dirrm lib/vmd/plugins/noarch/tcl/cliptool1.0
-@dirrm lib/vmd/plugins/noarch/tcl/clonerep1.1
-@dirrm lib/vmd/plugins/noarch/tcl/colorscalebar1.2
+@dirrm lib/vmd/plugins/noarch/tcl/clonerep1.2
+@dirrm lib/vmd/plugins/noarch/tcl/colorscalebar1.3
 @dirrm lib/vmd/plugins/noarch/tcl/contactmap1.1
 @dirrm lib/vmd/plugins/noarch/tcl/dataimport1.0
 @dirrm lib/vmd/plugins/noarch/tcl/demomaster1.0
 @dirrm lib/vmd/plugins/noarch/tcl/dipwatch1.2
-@dirrm lib/vmd/plugins/noarch/tcl/dowser1.0
+@dirrm lib/vmd/plugins/noarch/tcl/dowser1.1
 @dirrm lib/vmd/plugins/noarch/tcl/exectool1.2
 @dirrm lib/vmd/plugins/noarch/tcl/extendedpdb1.0
-@dirrm lib/vmd/plugins/noarch/tcl/gofrgui1.1
-@dirrm lib/vmd/plugins/noarch/tcl/hbonds1.1
+@dirrm lib/vmd/plugins/noarch/tcl/fftk1.0
+@dirrm lib/vmd/plugins/noarch/tcl/gofrgui1.2
+@dirrm lib/vmd/plugins/noarch/tcl/hbonds1.2
+@dirrm lib/vmd/plugins/noarch/tcl/heatmapper1.0
 @dirrm lib/vmd/plugins/noarch/tcl/idatm0.1
-@dirrm lib/vmd/plugins/noarch/tcl/ilstools1.2
+@dirrm lib/vmd/plugins/noarch/tcl/ilstools1.4
 @dirrm lib/vmd/plugins/noarch/tcl/imdmenu1.0
 @dirrm lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/materials/CVS
 @dirrm lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1/materials
 @dirrm lib/vmd/plugins/noarch/tcl/inorganicbuilder0.1
-@dirrm lib/vmd/plugins/noarch/tcl/irspecgui1.1
-@dirrm lib/vmd/plugins/noarch/tcl/membrane1.0
-@dirrm lib/vmd/plugins/noarch/tcl/mergestructs1.0
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/CVS
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids/CVS
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/amino_acids
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol/CVS
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/basemol
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments/CVS
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/fragments
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids/CVS
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib/nucleic_acids
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1/lib
-@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.1
+@dirrm lib/vmd/plugins/noarch/tcl/irspecgui1.2
+@dirrm lib/vmd/plugins/noarch/tcl/mdff0.2
+@dirrm lib/vmd/plugins/noarch/tcl/membrane1.1
+@dirrm lib/vmd/plugins/noarch/tcl/mergestructs1.1
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/amino_acids
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/basemol
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/fragments
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids/CVS
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib/nucleic_acids
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3/lib
+@dirrm lib/vmd/plugins/noarch/tcl/molefacture1.3
 @dirrm lib/vmd/plugins/noarch/tcl/moltoptools0.1
 @dirrm lib/vmd/plugins/noarch/tcl/multimolanim1.0
-@dirrm lib/vmd/plugins/noarch/tcl/multiplot1.4
+@dirrm lib/vmd/plugins/noarch/tcl/multiplot1.6
 @dirrm lib/vmd/plugins/noarch/tcl/multiseq2.1
 @dirrm lib/vmd/plugins/noarch/tcl/multiseqdialog1.1
 @dirrm lib/vmd/plugins/noarch/tcl/multitext1.0
-@dirrm lib/vmd/plugins/noarch/tcl/namdenergy1.2
-@dirrm lib/vmd/plugins/noarch/tcl/namdgui1.2
-@dirrm lib/vmd/plugins/noarch/tcl/namdplot1.0
+@dirrm lib/vmd/plugins/noarch/tcl/namdenergy1.4
+@dirrm lib/vmd/plugins/noarch/tcl/namdgui1.3
+@dirrm lib/vmd/plugins/noarch/tcl/namdplot1.1
 @dirrm lib/vmd/plugins/noarch/tcl/namdserver1.1
-@dirrm lib/vmd/plugins/noarch/tcl/nanotube1.0
+@dirrm lib/vmd/plugins/noarch/tcl/nanotube1.2
 @dirrm lib/vmd/plugins/noarch/tcl/navfly1.0
 @dirrm lib/vmd/plugins/noarch/tcl/navigate1.0
-@dirrm lib/vmd/plugins/noarch/tcl/optimization1.0
+@dirrm lib/vmd/plugins/noarch/tcl/networkview1.0
+@dirrm lib/vmd/plugins/noarch/tcl/nmwiz1.0
+@dirrm lib/vmd/plugins/noarch/tcl/optimization1.1
 @dirrm lib/vmd/plugins/noarch/tcl/palettetool1.0
-@dirrm lib/vmd/plugins/noarch/tcl/paratool1.4
-@dirrm lib/vmd/plugins/noarch/tcl/pbctools2.5
+@dirrm lib/vmd/plugins/noarch/tcl/paratool1.5
+@dirrm lib/vmd/plugins/noarch/tcl/parsefep1.5
+@dirrm lib/vmd/plugins/noarch/tcl/pbctools2.6
 @dirrm lib/vmd/plugins/noarch/tcl/pdbtool1.0
-@dirrm lib/vmd/plugins/noarch/tcl/phylotree1.1
+@dirrm lib/vmd/plugins/noarch/tcl/plumed0.9
+@dirrm lib/vmd/plugins/noarch/tcl/propka1.1
 @dirrm lib/vmd/plugins/noarch/tcl/psipred1.1
-@dirrm lib/vmd/plugins/noarch/tcl/qmtool1.1
+@dirrm lib/vmd/plugins/noarch/tcl/qmtool1.3
 @dirrm lib/vmd/plugins/noarch/tcl/ramaplot1.1
-@dirrm lib/vmd/plugins/noarch/tcl/readcharmmpar1.1
-@dirrm lib/vmd/plugins/noarch/tcl/readcharmmtop1.0
-@dirrm lib/vmd/plugins/noarch/tcl/resptool1.1
+@dirrm lib/vmd/plugins/noarch/tcl/readcharmmpar1.2
+@dirrm lib/vmd/plugins/noarch/tcl/readcharmmtop1.1
+@dirrm lib/vmd/plugins/noarch/tcl/resptool1.2
+@dirrm lib/vmd/plugins/noarch/tcl/remote0.1
+@dirrm lib/vmd/plugins/noarch/tcl/rmsdvt1.0
 @dirrm lib/vmd/plugins/noarch/tcl/rmsd1.0
-@dirrm lib/vmd/plugins/noarch/tcl/rmsdtt2.0
-@dirrm lib/vmd/plugins/noarch/tcl/rnaview1.0
+@dirrm lib/vmd/plugins/noarch/tcl/rmsdtt3.0
 @dirrm lib/vmd/plugins/noarch/tcl/ruler1.0
-@dirrm lib/vmd/plugins/noarch/tcl/runante0.1
-@dirrm lib/vmd/plugins/noarch/tcl/saltbr1.0
+@dirrm lib/vmd/plugins/noarch/tcl/runante0.2
+@dirrm lib/vmd/plugins/noarch/tcl/runsqm0.2
+@dirrm lib/vmd/plugins/noarch/tcl/saltbr1.1
 @dirrm lib/vmd/plugins/noarch/tcl/seqdata1.1
 @dirrm lib/vmd/plugins/noarch/tcl/seqedit1.1/blosum
 @dirrm lib/vmd/plugins/noarch/tcl/seqedit1.1
-@dirrm lib/vmd/plugins/noarch/tcl/solvate1.3
-@dirrm lib/vmd/plugins/noarch/tcl/ssrestraints1.0
+@dirrm lib/vmd/plugins/noarch/tcl/solvate1.5
+@dirrm lib/vmd/plugins/noarch/tcl/ssrestraints1.1
 @dirrm lib/vmd/plugins/noarch/tcl/stingtool1.0
-@dirrm lib/vmd/plugins/noarch/tcl/symmetrytool1.2
-@dirrm lib/vmd/plugins/noarch/tcl/timeline2.0
-@dirrm lib/vmd/plugins/noarch/tcl/topotools1.0
+@dirrm lib/vmd/plugins/noarch/tcl/symmetrytool1.3
+@dirrm lib/vmd/plugins/noarch/tcl/timeline2.3
+@dirrm lib/vmd/plugins/noarch/tcl/topotools1.2
 @dirrm lib/vmd/plugins/noarch/tcl/trunctraj1.5/toppar/non_charmm
 @dirrm lib/vmd/plugins/noarch/tcl/trunctraj1.5/toppar/stream
 @dirrm lib/vmd/plugins/noarch/tcl/trunctraj1.5/toppar
 @dirrm lib/vmd/plugins/noarch/tcl/trunctraj1.5
 @dirrm lib/vmd/plugins/noarch/tcl/utilities1.0
-@dirrm lib/vmd/plugins/noarch/tcl/vdna2.0
-@dirrm lib/vmd/plugins/noarch/tcl/viewmaster2.2
-@dirrm lib/vmd/plugins/noarch/tcl/vmdmovie1.7
+@dirrm lib/vmd/plugins/noarch/tcl/vdna2.2
+@dirrm lib/vmd/plugins/noarch/tcl/viewchangerender1.6
+@dirrm lib/vmd/plugins/noarch/tcl/viewmaster2.5
+@dirrm lib/vmd/plugins/noarch/tcl/vmddebug1.0
+@dirrm lib/vmd/plugins/noarch/tcl/vmdmovie1.9
 @dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.1/tkcon-2.3/CVS
 @dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.1/tkcon-2.3/docs/CVS
 @dirrm lib/vmd/plugins/noarch/tcl/vmdtkcon1.1/tkcon-2.3/docs

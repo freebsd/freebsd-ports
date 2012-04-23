@@ -1,6 +1,6 @@
 --- Make-arch-orig	Fri Mar 25 14:34:38 2005
 +++ lib/tachyon/unix/Make-arch	Fri Mar 25 14:34:50 2005
-@@ -950,7 +950,7 @@
+@@ -989,7 +989,7 @@
  	$(MAKE) all \
  	"ARCH = bsd" \
  	"CC = gcc" \

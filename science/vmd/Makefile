@@ -6,16 +6,16 @@
 #
 
 PORTNAME=		vmd
-PORTVERSION=		1.8.7
-PORTREVISION=		3
+DISTVERSION=		1.9.1
 CATEGORIES=		science graphics python tcl tk
-MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.98.7/:tachyon \
+MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.99b2/:tachyon \
+			http://www.photonlimited.com/~johns/tachyon/files/0.99b2/:tachyon \
 			http://www.ks.uiuc.edu/Research/vmd/extsrcs/:stride
 DISTFILES=		${VMD_DIST} \
 			${TACHYON_DIST}:tachyon \
 			${STRIDE_DIST}:stride
 
-MAINTAINER=		kaduk-fbsd@mit.edu
+MAINTAINER=		bjk@freebsd.org
 COMMENT=		A molecular visualization program
 
 BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
@@ -35,8 +35,8 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 RESTRICTED=		License has restrictions
 
-VMD_DIST=		${PORTNAME}-${PORTVERSION}.src.tar.gz
-TACHYON_DIST=		tachyon-0.98.7.tar.gz
+VMD_DIST=		${PORTNAME}-${DISTVERSION}.src.tar.gz
+TACHYON_DIST=		tachyon-0.99b2.tar.gz
 # I get stride.tar.gz from ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/
 # but the www.ks.uiuc.edu site (that gives Stride_src.tar.Z) is closer
 # to vmd upstream (and google actually knows about it).
@@ -72,7 +72,7 @@ post-patch:
 	${REINPLACE_CMD} "s/-ltk8.5/-ltk85/" ${WRKSRC}/configure
 	${REINPLACE_CMD} "s/-ltcl8.5/-ltcl85/" ${WRKSRC}/configure
 	${REINPLACE_CMD} "s%\$$python_dir/lib_\$$config_arch%${PREFIX}%" ${WRKSRC}/configure
-	${REINPLACE_CMD} "s/python2.2/${PYTHON_VERSION}/" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s/python2.5/${PYTHON_VERSION}/" ${WRKSRC}/configure
 	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/Makefile
 	${REINPLACE_CMD} "s/.SILENT:/#.SILENT:/" ${WRKDIR}/plugins/*/Makefile
 	${REINPLACE_CMD} "s%log2f(\([^ ,]*\))%logf(\1)/(float)M_LN2%g" ${WRKSRC}/src/Orbital.C
@@ -81,7 +81,7 @@ post-patch:
 
 do-build:
 	${SETENV} ${MAKE_ENV} ${GMAKE} bsd -C ${WRKSRC}/lib/tachyon/unix && ${MV} ${WRKSRC}/lib/tachyon/compile/bsd/tachyon ${WRKSRC}/lib/tachyon/tachyon_${VMD_ARCH}
-	${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${GMAKE} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
+	${SETENV} ${MAKE_ENV} TCLLIB=-L${PREFIX}/lib/tcl8.5 TCLINC=-I${PREFIX}/include/tcl8.5 PLUGINDIR=${WRKSRC}/plugins ${GMAKE} ${VMD_ARCH} distrib -C ${WRKDIR}/plugins
 	${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.5 TK_INCLUDE_DIR=${PREFIX}/include/tk8.5 ${GMAKE} ${VMD_TARGET} -C ${WRKSRC}
 	${SETENV} ${MAKE_ENV} ${GMAKE} all -C ${WRKSRC}/src
 	${SETENV} ${MAKE_ENV} ${GMAKE} depend -C ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} surf -C ${WRKSRC}/lib/surf && ${MV} ${WRKSRC}/lib/surf/surf ${WRKSRC}/lib/surf/surf_${VMD_ARCH}

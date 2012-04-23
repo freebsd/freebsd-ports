@@ -1,38 +1,31 @@
---- Make-arch.orig	Mon Feb  7 13:09:55 2005
-+++ ../plugins/Make-arch	Fri Mar 25 16:54:01 2005
-@@ -12,6 +12,7 @@
- 	@echo " AIX5_64"
- 	@echo " AIX6_64"
- 	@echo " FREEBSD"
-+	@echo " FREEBSDAMD64"
- 	@echo " HPUX11"
- 	@echo " IRIX6"
- 	@echo " IRIX6_64"
-@@ -259,8 +260,25 @@
+--- ../plugins/Make-arch.orig	2011-03-11 22:38:25.000000000 -0500
++++ ../plugins/Make-arch	2011-03-12 00:08:41.000000000 -0500
+@@ -277,8 +277,8 @@
  	"CC = gcc" \
  	"CXX = g++" \
-	"DEF = -D" \
+ 	"DEF = -D" \
 -	"CCFLAGS = -O2 -Wall -I/usr/local/include/tcl8.5" \
 -	"CXXFLAGS = -O2 -Wall" \
 +	"CCFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.5" \
-+	"CXXFLAGS = ${CFLAGS} -O2 -Wall -I/usr/local/include/tcl8.5" \
-+	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
-+	"NETCDFLDFLAGS = -lnetcdf " \
-+	"AR = ar" \
-+	"NM = nm -p" \
-+	"RANLIB = touch" \
-+	"SHLD = gcc -shared"
-+
-+FREEBSDAMD64:
-+	$(MAKE) dynlibs staticlibs \
-+	"ARCH = FREEBSDAMD64" \
-+	"COPTO = -fPIC -m64 -o " \
-+	"LOPTO = -fPIC -m64 -o " \
-+	"CC = gcc" \
-+	"CXX = g++" \
-+	"DEF = -D" \
-+	"CCFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
-+	"CXXFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
++	"CXXFLAGS = ${CFLAGS} -O2 -Wall" \
  	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
-	"NETCDFLDFLAGS = -lnetcdf " \
+ 	"NETCDFLDFLAGS = -lnetcdf " \
+ 	"AR = ar" \
+@@ -288,14 +288,14 @@
+ 
+ FREEBSDAMD64:
+ 	$(MAKE) dynlibs staticlibs bins \
+-	"ARCH = FREEBSD" \
++	"ARCH = FREEBSDAMD64" \
+ 	"COPTO = -fPIC -m64 -o " \
+ 	"LOPTO = -fPIC -m64 -o " \
+ 	"CC = gcc" \
+ 	"CXX = g++" \
+ 	"DEF = -D" \
+-	"CCFLAGS = -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
+-	"CXXFLAGS = -m64 -O2 -Wall" \
++	"CCFLAGS = ${CFLAGS} -m64 -O2 -Wall -I/usr/local/include/tcl8.5" \
++	"CXXFLAGS = ${CFLAGS} -m64 -O2 -Wall" \
+ 	"TCLLDFLAGS = -L/usr/local/lib -ltcl85" \
+ 	"NETCDFLDFLAGS = -lnetcdf " \
  	"AR = ar" \
