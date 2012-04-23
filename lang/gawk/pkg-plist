@@ -38,7 +38,3 @@ share/awk/zerofile.awk
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 @dirrm share/awk
 @dirrm libexec/awk
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
