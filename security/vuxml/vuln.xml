@@ -52,6 +52,116 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="380e8c56-8e32-11e1-9580-4061862b8c22">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>11.0,1</gt><lt>12.0,1</lt></range>
+	<range><lt>10.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>10.0.4,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.9</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>10.0.4</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.9</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><gt>11.0</gt><lt>12.0</lt></range>
+	<range><lt>10.0.4</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>10.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2012-20 Miscellaneous memory safety hazards (rv:12.0/ rv:10.0.4)</p>
+	  <p>MFSA 2012-21 Multiple security flaws fixed in FreeType v2.4.9</p>
+	  <p>MFSA 2012-22 use-after-free in IDBKeyRange</p>
+	  <p>MFSA 2012-23 Invalid frees causes heap corruption in gfxImageSurface</p>
+	  <p>MFSA 2012-24 Potential XSS via multibyte content processing errors</p>
+	  <p>MFSA 2012-25 Potential memory corruption during font rendering using cairo-dwrite</p>
+	  <p>MFSA 2012-26 WebGL.drawElements may read illegal video memory due to FindMaxUshortElement error</p>
+	  <p>MFSA 2012-27 Page load short-circuit can lead to XSS</p>
+	  <p>MFSA 2012-28 Ambiguous IPv6 in Origin headers may bypass webserver access restrictions</p>
+	  <p>MFSA 2012-29 Potential XSS through ISO-2022-KR/ISO-2022-CN decoding issues</p>
+	  <p>MFSA 2012-30 Crash with WebGL content using textImage2D</p>
+	  <p>MFSA 2012-31 Off-by-one error in OpenType Sanitizer</p>
+	  <p>MFSA 2012-32 HTTP Redirections and remote content can be read by javascript errors</p>
+	  <p>MFSA 2012-33 Potential site identity spoofing when loading RSS and Atom feeds</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-1187</cvename>
+	<cvename>CVE-2011-3062</cvename>
+	<cvename>CVE-2012-0467</cvename>
+	<cvename>CVE-2012-0468</cvename>
+	<cvename>CVE-2012-0469</cvename>
+	<cvename>CVE-2012-0470</cvename>
+	<cvename>CVE-2012-0471</cvename>
+	<cvename>CVE-2012-0472</cvename>
+	<cvename>CVE-2012-0473</cvename>
+	<cvename>CVE-2012-0474</cvename>
+	<cvename>CVE-2012-0475</cvename>
+	<cvename>CVE-2012-0477</cvename>
+	<cvename>CVE-2012-0478</cvename>
+	<cvename>CVE-2012-0479</cvename>
+	<cvename>CVE-2012-1126</cvename>
+	<cvename>CVE-2012-1127</cvename>
+	<cvename>CVE-2012-1128</cvename>
+	<cvename>CVE-2012-1129</cvename>
+	<cvename>CVE-2012-1130</cvename>
+	<cvename>CVE-2012-1131</cvename>
+	<cvename>CVE-2012-1132</cvename>
+	<cvename>CVE-2012-1133</cvename>
+	<cvename>CVE-2012-1134</cvename>
+	<cvename>CVE-2012-1135</cvename>
+	<cvename>CVE-2012-1136</cvename>
+	<cvename>CVE-2012-1137</cvename>
+	<cvename>CVE-2012-1138</cvename>
+	<cvename>CVE-2012-1139</cvename>
+	<cvename>CVE-2012-1140</cvename>
+	<cvename>CVE-2012-1141</cvename>
+	<cvename>CVE-2012-1142</cvename>
+	<cvename>CVE-2012-1143</cvename>
+	<cvename>CVE-2012-1144</cvename>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-20.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-21.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-22.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-23.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-24.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-25.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-26.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-27.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-28.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-29.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-30.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-31.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-32.html</url>
+	<url>http://www.mozilla.org/security/announce/2012/mfsa2012-33.html</url>
+    </references>
+    <dates>
+      <discovery>2012-04-24</discovery>
+      <entry>2012-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a04247f1-8d9c-11e1-93c7-00215c6a37bb">
     <topic>Dokuwiki -- cross site scripting vulnerability</topic>
     <affects>
