@@ -1,0 +1,6 @@
+MooseX::AuthorizedMethods exports the "authorized" declarator that makes a
+verification if the user has the required permissions before the acual
+invocation. The default verification method will take the "user" method result
+and call "roles" to list the roles given to that user.
+
+WWW: http://search.cpan.org/dist/MooseX-AuthorizedMethods/
