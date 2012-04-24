@@ -6,6 +6,7 @@
 #
 
 .include "${.CURDIR}/../libreoffice/Makefile.common"
+UNIQUENAME=   ${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-i18n
 DISTFILES= 	#none
 MASTER_SITES=	#none
