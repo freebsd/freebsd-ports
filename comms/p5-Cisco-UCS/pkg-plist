@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Cisco/UCS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
+@dirrmtry %%SITE_PERL%%/Cisco

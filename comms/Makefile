@@ -90,6 +90,7 @@
     SUBDIR += o2sms
     SUBDIR += obexapp
     SUBDIR += openobex
+    SUBDIR += p5-Cisco-UCS
     SUBDIR += p5-Device-Gsm
     SUBDIR += p5-Device-Modem
     SUBDIR += p5-Device-SerialPort
