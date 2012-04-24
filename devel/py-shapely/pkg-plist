@@ -123,6 +123,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_geomseq.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_geomseq.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_geomseq.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_getitem.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_getitem.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_getitem.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_linear_referencing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_linear_referencing.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/tests/test_linear_referencing.pyo
