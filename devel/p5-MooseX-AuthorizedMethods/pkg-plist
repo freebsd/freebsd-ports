@@ -1,0 +1,16 @@
+%%SITE_PERL%%/MooseX/AuthorizedMethods.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Authorized.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Authorized/Application/ToClass.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Authorized/Application/ToComposite.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Authorized/Application/ToInstance.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Authorized/CheckRoles.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Authorized/Meta/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AuthorizedMethods/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/AuthorizedMethods
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Authorized/Meta
+@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Authorized/Application
+@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Authorized
+@dirrmtry %%SITE_PERL%%/MooseX/Meta/Method
+@dirrmtry %%SITE_PERL%%/MooseX/Meta
+@dirrmtry %%SITE_PERL%%/MooseX
