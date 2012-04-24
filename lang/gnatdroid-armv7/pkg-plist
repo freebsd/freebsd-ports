@@ -14,6 +14,7 @@ bin/%%TARGET%%-gcov
 bin/%%TARGET%%-cpp
 bin/%%TARGET%%-gnatgcc
 bin/%%TARGET%%-gcc-%%GCCVERS%%
+%%FRT%%bin/%%TARGET%%-gnatgfortran
 lib/libiberty.a
 %%TARGET%%/bin/gnatbind
 %%TARGET%%/bin/gnatchop
@@ -24,7 +25,4 @@ lib/libiberty.a
 %%TARGET%%/bin/gnatmake
 %%TARGET%%/bin/gnatprep
 %%TARGET%%/bin/gnatgcc
-%%TARGET%%/lib/armv7-a/thumb/libiberty.a
-%%TARGET%%/lib/armv7-a/libiberty.a
-@dirrm %%TARGET%%/lib/armv7-a/thumb
-@dirrm %%TARGET%%/lib/armv7-a
+%%FRT%%%%TARGET%%/bin/gnatgfortran
