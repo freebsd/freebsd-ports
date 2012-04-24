@@ -1,14 +1,14 @@
 %%SITE_PERL%%/PatchReader.pm
-%%SITE_PERL%%/PatchReader/NarrowPatch.pm
-%%SITE_PERL%%/PatchReader/FilterPatch.pm
 %%SITE_PERL%%/PatchReader/AddCVSContext.pm
 %%SITE_PERL%%/PatchReader/Base.pm
-%%SITE_PERL%%/PatchReader/Raw.pm
-%%SITE_PERL%%/PatchReader/FixPatchRoot.pm
 %%SITE_PERL%%/PatchReader/CVSClient.pm
-%%SITE_PERL%%/PatchReader/PatchInfoGrabber.pm
-%%SITE_PERL%%/PatchReader/DiffPrinter/template.pm
 %%SITE_PERL%%/PatchReader/DiffPrinter/raw.pm
+%%SITE_PERL%%/PatchReader/DiffPrinter/template.pm
+%%SITE_PERL%%/PatchReader/FilterPatch.pm
+%%SITE_PERL%%/PatchReader/FixPatchRoot.pm
+%%SITE_PERL%%/PatchReader/NarrowPatch.pm
+%%SITE_PERL%%/PatchReader/PatchInfoGrabber.pm
+%%SITE_PERL%%/PatchReader/Raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PatchReader
 @dirrm %%SITE_PERL%%/PatchReader/DiffPrinter
