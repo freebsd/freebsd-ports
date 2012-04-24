@@ -54,8 +54,8 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		png.6:${PORTSDIR}/graphics/png \
 		cmis-0.2.0:${PORTSDIR}/net/libcmis \
 
-RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/liberation-fonts-ttf/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
-		${LOCALBASE}/lib/X11/fonts/linuxlibertine/LinLibertine_Bd-4.1.0.ttf:${PORTSDIR}/x11-fonts/linuxlibertine \
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/Liberation/LiberationMono-Bold.ttf:${PORTSDIR}/x11-fonts/liberation-fonts-ttf \
+		${LOCALBASE}/lib/X11/fonts/LinLibertineG/LinLibertine_DR_G.ttf:${PORTSDIR}/x11-fonts/linuxlibertine-g \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu \
 		${LOCALBASE}/lib/X11/fonts/gentium-basic/GenBasI.ttf:${PORTSDIR}/x11-fonts/gentium-basic
 
