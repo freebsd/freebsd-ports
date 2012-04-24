@@ -20,6 +20,8 @@ RUN_DEPENDS=	\
 	p5-POE>0:${PORTSDIR}/devel/p5-POE \
 	p5-POE-Filter-HTTP-Parser>0:${PORTSDIR}/www/p5-POE-Filter-HTTP-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-TCP>=0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
