@@ -31,8 +31,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-hw_dmx_glxProxy_compsize.h \
 		${FILESDIR}/extra-hw_dmx_glxProxy_glxcmds.h
 .else
 XORG_VERSION=	1.7.7
-XORG_REVISION=	4
+XORG_REVISION=	5
 PLIST_SUB+=	OLD="" NEW="@comment "
+EXTRA_PATCHES+=	${FILESDIR}/extra-dix_events.c
 EXTRA_PATCHES+=	${FILESDIR}/extra-include_eventstr.h
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-os-utils.c
 .endif
