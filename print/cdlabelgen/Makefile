@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdlabelgen
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	print perl5
 MASTER_SITES=	http://www.aczoom.com/pub/tools/
 EXTRACT_SUFX=	.tgz
