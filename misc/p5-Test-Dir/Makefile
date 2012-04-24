@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Dir
-PORTVERSION=	1.006
+PORTVERSION=	1.014
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,8 @@ COMMENT=	Test directory attributes
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Test::Dir.3 Test::Folder.3
+MAN3=		Test::Dir.3 \
+		Test::Dir::Base.3 \
+		Test::Folder.3
 
 .include <bsd.port.mk>
