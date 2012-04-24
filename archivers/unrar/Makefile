@@ -7,7 +7,7 @@
 
 PORTNAME=	unrar
 PORTVERSION=	4.10
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	5
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ \
@@ -17,6 +17,8 @@ DISTNAME=	unrarsrc-4.1.4
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
+OPTIONS=	OPENSSL_AES "Use OpenSSL implementation of AES" on
+
 CONFLICTS?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
 MAKEFILE=	makefile.unix
@@ -25,6 +27,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unrar
 PORTDOCS=	license.txt readme.txt
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_OPENSSL_AES)
+CPPFLAGS+=	-DOPENSSL_AES -I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
+USE_OPENSSL=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXX/ s|^|#|' ${WRKSRC}/${MAKEFILE}
