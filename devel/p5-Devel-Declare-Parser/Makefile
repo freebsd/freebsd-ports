@@ -20,6 +20,7 @@ RUN_DEPENDS=	\
 	p5-Devel-BeginLift>0:${PORTSDIR}/devel/p5-Devel-BeginLift \
 	p5-Devel-Declare>=0.006:${PORTSDIR}/devel/p5-Devel-Declare
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception-LessClever>=0:${PORTSDIR}/devel/p5-Test-Exception-LessClever
 
 PERL_MODBUILD=	yes
 
