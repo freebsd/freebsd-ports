@@ -10,7 +10,7 @@ PORTNAME?=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
-PATCHLEVEL=	480
+PATCHLEVEL=	502
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -23,7 +23,7 @@ PATCH_SITES=	${MASTER_SITES:S|unix|patches/${PORTVERSION:C/\.[0-9a-z]*$//}|}\
 PATCHFILES!=	/usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434
+BADPATCHES=	122 225 235 246 247 252 253 336 386 387 400 434 487 491
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N7.3.${p}}
 .endfor
@@ -246,6 +246,7 @@ cklatest: .PHONY
 	@${MAKE} -V PATCHLEVEL
 	-(ncftpls \
 	    ftp://ftp.vim.org/pub/vim/patches/${PORTVERSION:C/\.[0-9a-z]*$//}/ \
+		| grep "^${PORTVERSION:C/\.[0-9a-z]*$//}" \
 		| ${SED} -n -e 's/${PORTVERSION:C/[0-9]*$//}\([0-9][0-9][0-9]\)$$/\1/p' \
 		| ${TAIL} -1)
 
