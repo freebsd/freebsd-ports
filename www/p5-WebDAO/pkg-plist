@@ -1,0 +1,37 @@
+bin/wd_fcgi.fpl
+bin/wd_shell.pl
+bin/webdao.psgi
+%%SITE_PERL%%/WebDAO.pm
+%%SITE_PERL%%/WebDAO/Base.pm
+%%SITE_PERL%%/WebDAO/CV.pm
+%%SITE_PERL%%/WebDAO/CVfcgi.pm
+%%SITE_PERL%%/WebDAO/Component.pm
+%%SITE_PERL%%/WebDAO/Config.pm
+%%SITE_PERL%%/WebDAO/Container.pm
+%%SITE_PERL%%/WebDAO/Element.pm
+%%SITE_PERL%%/WebDAO/Engine.pm
+%%SITE_PERL%%/WebDAO/FCGI/ProcManager.pm
+%%SITE_PERL%%/WebDAO/Lex.pm
+%%SITE_PERL%%/WebDAO/Lexer/base.pm
+%%SITE_PERL%%/WebDAO/Lexer/method.pm
+%%SITE_PERL%%/WebDAO/Lexer/object.pm
+%%SITE_PERL%%/WebDAO/Lexer/regclass.pm
+%%SITE_PERL%%/WebDAO/Lexer/text.pm
+%%SITE_PERL%%/WebDAO/Lib/MethodByPath.pm
+%%SITE_PERL%%/WebDAO/Lib/RawHTML.pm
+%%SITE_PERL%%/WebDAO/Modal.pm
+%%SITE_PERL%%/WebDAO/Response.pm
+%%SITE_PERL%%/WebDAO/Session.pm
+%%SITE_PERL%%/WebDAO/SessionSH.pm
+%%SITE_PERL%%/WebDAO/Sessionco.pm
+%%SITE_PERL%%/WebDAO/Store/Abstract.pm
+%%SITE_PERL%%/WebDAO/Store/Storable.pm
+%%SITE_PERL%%/WebDAO/Test.pm
+%%SITE_PERL%%/WebDAO/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebDAO/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebDAO
+@dirrmtry %%SITE_PERL%%/WebDAO/Store
+@dirrmtry %%SITE_PERL%%/WebDAO/Lib
+@dirrmtry %%SITE_PERL%%/WebDAO/Lexer
+@dirrmtry %%SITE_PERL%%/WebDAO/FCGI
+@dirrmtry %%SITE_PERL%%/WebDAO

@@ -1278,6 +1278,7 @@
     SUBDIR += p5-Web-Scraper
     SUBDIR += p5-Web-Scraper-Config
     SUBDIR += p5-Web-oEmbed
+    SUBDIR += p5-WebDAO
     SUBDIR += p5-WebService-Basecamp
     SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-WebService-BuzzurlAPI
