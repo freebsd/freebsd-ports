@@ -1,27 +1,29 @@
-# New ports collection makefile for:	SWIG
-# Date created:			19 April 1996
-# Whom:				jkh
+# New ports collection makefile for:    SWIG
+# Date created:                 19 April 1996
+# Whom:                         jkh
 #
 # $FreeBSD$
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3.40
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rafan@FreeBSD.org
-COMMENT=	Simplified Wrapper and Interface Generator
+MAINTAINER=	jwbacon@tds.net
+COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+
+LATEST_LINK?=	swig2
 USE_AUTOTOOLS=	autoconf:env libtool
 
-MAN1=		ccache-swig.1
+MAN1=		ccache-swig${VER}.1
 
 VER=		${PORTVERSION:R}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-# Supported languages: allegrocl c# clisp chicken guile java lua ocaml Octave
-#                      perl php pike python R ruby tcl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 CFLAGS+=	-fPIC -DPIC
@@ -30,6 +32,8 @@ PLIST_SUB+=	VER="${VER}"
 
 WANT_LUA=	yes
 WANT_LUA_VER=	5.0+
+
+CONFIGURE_ARGS+=--program-suffix=${VER}
 
 .include <bsd.port.pre.mk>
 
@@ -58,7 +62,6 @@ post-configure:
 	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
 
 post-install:
-	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Examples && ${FIND} . -type d \
@@ -72,23 +75,6 @@ post-install:
 		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Doc && ${FIND} . -type f \
 		-exec ${INSTALL_DATA} {} ${DOCSDIR}/${PORTVERSION}/{} \;
-.endif
-
-.if defined(MAINTAINER_MODE)
-TMP_PREFIX=	/tmp/${PKGNAME}
-gen-pkg-plist:
-	${RM} -rf ${PLIST} ${TMP_PREFIX}
-	${MAKE} PLIST=pkg-plist PKG_DBDIR=${TMP_PREFIX}/pkgdb PREFIX=${TMP_PREFIX}/local clean all install
-	${PORTSDIR}/Tools/scripts/plist \
-	  -d -m ${PORTSDIR}/Templates/BSD.local.dist ${TMP_PREFIX}/local | ${SED} '\
-	    s,${DATADIR_REL},%%DATADIR%%,; \
-	    s,${DOCSDIR_REL},%%DOCSDIR%%,; \
-	    s,${EXAMPLESDIR_REL},%%EXAMPLESDIR%%,; \
-	    /%%DOCSDIR%%/s,^,%%PORTDOCS%%,; \
-	    /%%EXAMPLESDIR%%/s,^,%%PORTEXAMPLES%%,; \
-	    s,${PORTVERSION},%%PORTVERSION%%,; \
-	    s,${VER},%%VER%%, \
-	  ' > ${PLIST}
 .endif
 
 .include <bsd.port.post.mk>
