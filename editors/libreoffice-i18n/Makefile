@@ -48,7 +48,7 @@ OPTIONS+=	${${lang}_OPTION} "${${lang}_NAME} localization" off
 
 .include <bsd.port.options.mk>
 
-.for lang in ${KDE4_LANG_ALL}
+.for lang in ${LO_LANG_ALL}
 .if defined(WITH_ALL) || defined(WITH_${${lang}_OPTION})
 RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
