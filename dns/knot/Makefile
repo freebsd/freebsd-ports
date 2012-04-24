@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	knot
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://public.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
@@ -40,9 +39,6 @@ post-install:
 	@${MKDIR} ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/knot.min.conf ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/knot.full.conf ${ETCDIR}
-	@if [ ! -f ${ETCDIR}/knot.conf ]; then \
-		${INSTALL_DATA} ${ETCDIR}/knot.min.conf ${ETCDIR}/knot.conf; \
-	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
