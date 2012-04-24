@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Track object life to detect memory leaks
 
+DEPRECATED=	removed from CPAN
+EXPIRATION_DATE=	2012-05-23
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Devel::ObjectTracker.3
