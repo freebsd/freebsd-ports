@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Jemplate
-PORTVERSION=	0.261
+PORTVERSION=	0.262
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:RKRIMEN
+MASTER_SITE_SUBDIR=	CPAN:FREW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
@@ -27,5 +27,8 @@ MAN3=	Jemplate.3 \
 	Jemplate::Parser.3 \
 	Jemplate::Runtime.3 \
 	Jemplate::Runtime::Compact.3
+
+post-patch:
+	@${RM} ${WRKSRC}/bin/README
 
 .include <bsd.port.mk>
