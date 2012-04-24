@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A Perl based file manager
 
-RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+BUILD_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Chmod>=0.0.0:${PORTSDIR}/x11-toolkits/p5-Gtk2-Chmod \
 		p5-Gtk2-PathButtonBar>=0.1.2:${PORTSDIR}/x11-toolkits/p5-Gtk2-PathButtonBar \
 		p5-String-ShellQuote>=1.03:${PORTSDIR}/textproc/p5-String-ShellQuote \
@@ -24,6 +24,7 @@ RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-ZConf-Bookmarks>=0.2.3:${PORTSDIR}/net/p5-ZConf-Bookmarks \
 		p5-ZConf-Runner>=2.1.1:${PORTSDIR}/deskutils/p5-ZConf-Runner \
 		p5-Dir-Watch>=0.0.0:${PORTSDIR}/devel/p5-Dir-Watch
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
