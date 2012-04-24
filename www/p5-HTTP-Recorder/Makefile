@@ -6,26 +6,28 @@
 #
 
 PORTNAME=	HTTP-Recorder
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:LEIRA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Record interaction with websites
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTTP/Request/Params.pm:${PORTSDIR}/www/p5-HTTP-Request-Params
+BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTTP-Proxy>=0:${PORTSDIR}/www/p5-HTTP-Proxy \
+		p5-HTTP-Request-Params>=0:${PORTSDIR}/www/p5-HTTP-Request-Params \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
+MAN1=		httprecorder.1
 MAN3=		HTTP::Recorder.3
 
 post-patch:
-	${RM} -f ${WRKSRC}/lib/HTTP/Recorder.pm.orig
+	@${RM} -f ${WRKSRC}/lib/HTTP/Recorder.pm.orig
 
 .include <bsd.port.mk>
