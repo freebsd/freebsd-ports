@@ -1,0 +1,15 @@
+%%SITE_PERL%%/MooseX/TransactionalMethods.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application/ToClass.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application/ToComposite.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application/ToInstance.pm
+%%SITE_PERL%%/MooseX/Meta/Method/Transactional/Meta/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/TransactionalMethods/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/TransactionalMethods
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Transactional/Meta
+@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Transactional/Application
+@dirrm %%SITE_PERL%%/MooseX/Meta/Method/Transactional
+@dirrmtry %%SITE_PERL%%/MooseX/Meta/Method
+@dirrmtry %%SITE_PERL%%/MooseX/Meta
+@dirrmtry %%SITE_PERL%%/MooseX

@@ -1,0 +1,4 @@
+MooseX::TransactionalMethods exports the "transactional" declarator that will
+enclose the method in a txn_do call.
+
+WWW: http://search.cpan.org/dist/MooseX-TransactionalMethods/

@@ -2167,6 +2167,7 @@
     SUBDIR += p5-MooseX-StrictConstructor
     SUBDIR += p5-MooseX-Traits
     SUBDIR += p5-MooseX-Traits-Pluggable
+    SUBDIR += p5-MooseX-TransactionalMethods
     SUBDIR += p5-MooseX-Types
     SUBDIR += p5-MooseX-Types-Common
     SUBDIR += p5-MooseX-Types-DateTime
