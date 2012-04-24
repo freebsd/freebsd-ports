@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	spatialindex
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.osgeo.org/libspatialindex/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -13,6 +13,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A General Framework for Developing Spatial Indices
 
 USE_AUTOTOOLS=	libtool:env
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
