@@ -7,6 +7,7 @@
 
 PORTNAME=	rdtool
 PORTVERSION=	0.6.33
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	https://github.com/uwabami/${PORTNAME}/tarball/v${PORTVERSION}/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,11 +25,15 @@ WRKSRC=		${WRKDIR}/uwabami-${PORTNAME}-${GITVERSION}
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
+USE_RAKE=	yes
 
 RUBY_MODNAME=	rd
 
 DOCS_EN=	README.rd	doc/rd-draft.rd
 DOCS_JA=	README.rd.ja	doc/rd-draft.rd.ja
+
+post-build:
+	cd ${WRKSRC} && ${RAKE_BIN} racc
 
 post-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/rd
