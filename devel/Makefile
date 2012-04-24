@@ -3931,6 +3931,7 @@
     SUBDIR += svntrac
     SUBDIR += swank-clojure
     SUBDIR += swig13
+    SUBDIR += swig20
     SUBDIR += synfig
     SUBDIR += sysconftool
     SUBDIR += sysfsutils
