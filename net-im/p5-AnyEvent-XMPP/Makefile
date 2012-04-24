@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	AnyEvent-XMPP
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An implementation of the XMPP Protocol
 
 BUILD_DEPENDS=	p5-AnyEvent>=0:${PORTSDIR}/devel/p5-AnyEvent \
@@ -74,4 +74,10 @@ MAN3=	AnyEvent::XMPP.3 \
 	AnyEvent::XMPP::Ext::MUC::Room.3 \
 	AnyEvent::XMPP::Client.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+# One of it's dependency is p5-GSSAPI which is marked broken for 7.X
+.if ${OSVERSION} < 800000
+BROKEN=	Does not work on FreeBSD 7.x
+.endif
+
+.include <bsd.port.post.mk>
