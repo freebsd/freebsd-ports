@@ -7,7 +7,7 @@
 
 PORTNAME=	Gtk2-Chmod
 PORTVERSION=	0.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -16,7 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Provides a dialog for getting values to use with chmod
 
-RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
+BUILD_DEPENDS=	p5-File-Stat-Bits>=0:${PORTSDIR}/sysutils/p5-File-Stat-Bits \
+		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
