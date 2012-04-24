@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.12
+PORTVERSION=	3.13
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
@@ -38,7 +38,7 @@ PLIST_SUB+=	GNEE=""
 DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PREFIX}/share/pixmaps/xnee.png" \
 			"gnee" "Development;" true
 .else
-CONFIGURE_ARGS+=	--disable-gui
+CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	GNEE="@comment "
 .endif
 
