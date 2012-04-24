@@ -17,6 +17,7 @@ COMMENT=	Perl extension to parse lisp S-expressions into perl data structures
 RUN_DEPENDS=	\
 	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_CONFIGURE=	yes
 
