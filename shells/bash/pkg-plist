@@ -104,9 +104,7 @@ bin/bashbug
 %%NLS%%share/locale/sk/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/bash.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/bash.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bash.mo
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
