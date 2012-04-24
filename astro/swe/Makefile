@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	swe
-PORTVERSION=	1.75.00
+PORTVERSION=	1.77.00
 CATEGORIES=	astro devel
 MASTER_SITES=	ftp://ftp.astro.com/pub/swisseph/
 DISTNAME=	${PORTNAME}_unix_src_${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	The High Precision Ephemeris Developed By Astrodienst
 
 WRKSRC=		${WRKDIR}/src
