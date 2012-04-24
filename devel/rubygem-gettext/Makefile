@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,10 +19,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rgettext bin/rmsgfmt bin/rmsgmerge
-
-post-install:
-	@(cd ${PREFIX}/${GEM_LIB_DIR} && \
-	    ${PATCH} -s -f -p0 < ${PATCHDIR}/extra::patch-lib_gettext_runtime_locale_path.rb && \
-	    ${RM} lib/gettext/runtime/locale_path.rb.orig)
 
 .include <bsd.port.mk>
