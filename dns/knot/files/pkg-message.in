@@ -5,17 +5,17 @@
 #
 # ----- configure --------------------------------------------------
 #
-  $EDITOR %%ETCDIR%%/knot.conf       
-#
-# For all option have a look at the contents of
-# %%PREFIX%%/etc/knot/knot.full.conf
+  $EDITOR %%ETCDIR%%/knot.min.conf
+# -or-
+# $EDITOR %%ETCDIR%%/knot.full.conf
+# and save it as %%ETCDIR%%/knot.conf
 #
 # ----- prepare ----------------------------------------------------
 #
 # required:
   echo knot_enable=\"YES\" >> /etc/rc.conf
 # for customization if desired:
-# echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf" >> /etc/rc.conf
+# echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf\" >> /etc/rc.conf
 #
 # ----- startup ----------------------------------------------------
 #
