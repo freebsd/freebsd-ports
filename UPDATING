@@ -71,7 +71,7 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portmaster -o mail/thunderbird-esr mail/thunderbird
   # portmaster -o mail/thunderbird-esr-i18n \
-    mail/thunderbird (if installed)
+    mail/thunderbird-i18n (if installed)
 
 20120418:
   AFFECTS: users of www/chpasswd
