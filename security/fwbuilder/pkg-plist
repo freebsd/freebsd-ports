@@ -85,6 +85,7 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/automatic_rules
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/block_action
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/check_utilities
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/configure_interfaces
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/conntrack
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/constants
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/installer_commands_reg_user
@@ -203,6 +204,7 @@ share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.2.2.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.0.0.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.0.1.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_5.1.0.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/state_sync_configuration.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip01.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip02.html
