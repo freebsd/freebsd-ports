@@ -36,6 +36,7 @@ ru_PORT=	russian/${PORTNAME}
 uk_PORT=	ukrainian/${PORTNAME}
 zh_CN_PORT=	chinese/${PORTNAME}-zh_CN
 zh_TW_PORT=	chinese/${PORTNAME}-zh_TW
+vi_PORT=	vietnamese/${PORTNAME}
 
 OPTIONS=	ALL "All localizations" on
 
