@@ -21,7 +21,7 @@ COMMENT=	GNU Data Base Manager (gdbm) interface
 
 LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File ${DISTNAME}/t/lib
 
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_SAFE=	yes
