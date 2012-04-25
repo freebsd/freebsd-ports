@@ -1,5 +1,5 @@
---- plone/supermodel/exportimport.py.orig	2011-05-13 20:28:08.000000000 +0400
-+++ plone/supermodel/exportimport.py	2011-09-22 23:05:55.000000000 +0400
+--- ./plone/supermodel/exportimport.py.orig	2012-04-15 17:56:36.000000000 +0400
++++ ./plone/supermodel/exportimport.py	2012-04-25 00:12:57.000000000 +0400
 @@ -1,4 +1,4 @@
 -from elementtree import ElementTree
 +from xml.etree import ElementTree

@@ -16,6 +16,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/converters.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/converters.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/converters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/debug.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/debug.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/debug.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/directives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/directives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/directives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/directives.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/exportimport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/exportimport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/exportimport.pyo
@@ -39,6 +46,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/patches.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/patches.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/schema.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/schemaclass.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/serializer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/serializer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/supermodel/serializer.pyo
