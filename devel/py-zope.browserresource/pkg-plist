@@ -43,13 +43,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/configure.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/support.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/support.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/support.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/test_configure.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/test_configure.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/test_configure.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/test_directives.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/test_directives.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/browserresource/tests/test_directives.pyo
