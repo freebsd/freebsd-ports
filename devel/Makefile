@@ -159,6 +159,7 @@
     SUBDIR += bzr-svn
     SUBDIR += bzr-upload
     SUBDIR += bzrtools
+    SUBDIR += c-unit
     SUBDIR += c4
     SUBDIR += calibrator
     SUBDIR += cbind
