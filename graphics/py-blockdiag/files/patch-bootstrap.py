@@ -1,21 +1,31 @@
---- src/blockdiag/utils/bootstrap.py.orig	2011-12-16 20:04:27.000000000 +0900
-+++ src/blockdiag/utils/bootstrap.py	2011-12-29 11:15:27.000000000 +0900
-@@ -170,13 +170,7 @@
+--- src/blockdiag/utils/bootstrap.py.orig	2012-04-18 11:00:23.000000000 +0900
++++ src/blockdiag/utils/bootstrap.py	2012-04-23 11:34:13.000000000 +0900
+@@ -182,23 +182,7 @@
  
  
  def detectfont(options):
--    fonts = ['c:/windows/fonts/VL-Gothic-Regular.ttf',  # for Windows
--             'c:/windows/fonts/msgothic.ttf',  # for Windows
--             'c:/windows/fonts/msgoth04.ttc',  # for Windows
--             '/usr/share/fonts/truetype/ipafont/ipagp.ttf',  # for Debian
--             '/usr/local/share/font-ipa/ipagp.otf',  # for FreeBSD
--             '/Library/Fonts/Hiragino Sans GB W3.otf',  # for MacOS
--             '/System/Library/Fonts/AppleGothic.ttf']  # for MacOS
+-    fonts = [
+-        # for Windows
+-        'c:/windows/fonts/VL-Gothic-Regular.ttf',
+-        'c:/windows/fonts/msgothic.ttf',
+-        'c:/windows/fonts/msgoth04.ttc',
+-        # for Debian (squeeze)
+-        '/usr/share/fonts/truetype/ipafont/ipagp.ttf',
+-        '/usr/share/fonts/truetype/vlgothic/VL-PGothic-Regular.ttf',
+-        # for Debian (wheezy)
+-        '/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf',
+-        '/usr/share/fonts/truetype/vlgothic/VL-PGothic-Regular.ttf',
+-        # for MacOS
+-        '/Library/Fonts/Hiragino Sans GB W3.otf',  # for MacOS
+-        '/System/Library/Fonts/AppleGothic.ttf',  # for MacOS
+-        # for FreeBSD
+-        '/usr/local/share/font-ipa/ipagp.otf',  # for FreeBSD
+-    ]
 +    ipafontpath = '%%LOCALBASE%%/share/font-ipa/ipagp.otf'
  
      fontpath = None
      if options.font:
-@@ -190,11 +184,8 @@
+@@ -212,11 +196,8 @@
              raise RuntimeError(msg)
  
      if fontpath is None:
