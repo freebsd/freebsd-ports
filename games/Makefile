@@ -566,7 +566,6 @@
     SUBDIR += nethack34-qt
     SUBDIR += netherearth
     SUBDIR += netpanzer
-    SUBDIR += netpanzer-data
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
