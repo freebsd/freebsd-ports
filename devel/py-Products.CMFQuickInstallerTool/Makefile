@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Products.CMFQuickInstallerTool
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,5 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.annotation>=0:${PORTSDIR}/devel/py-zope
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 
 .include <bsd.port.mk>

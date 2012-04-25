@@ -37,6 +37,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/actions.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/install.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/metadata.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/profiles.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/testSetup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/CMFQuickInstallerTool/tests/testSetup.pyc
