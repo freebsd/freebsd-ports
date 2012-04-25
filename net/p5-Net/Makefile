@@ -7,7 +7,7 @@
 
 PORTNAME=	Net
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
@@ -16,10 +16,6 @@ DISTNAME=	libnet-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules to access and use network protocols
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
 
