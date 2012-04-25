@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -139,7 +140,7 @@ IGNORE=		requires at least HTTP_MODULE or MAIL_MODULE to \
 .endif
 
 .if defined(WITH_DEBUG)
-CFLAGS+=	-g -DNGX_DEBUG_MALLOC
+CFLAGS+=	-g
 STRIP=		#do not strip if nginx with debug information
 .endif
 
