@@ -102,6 +102,7 @@
     SUBDIR += cdrtools-devel
     SUBDIR += cfengine
     SUBDIR += cfengine3
+    SUBDIR += cfengine3-legacy
     SUBDIR += chgrep
     SUBDIR += ciso
     SUBDIR += ck4up
