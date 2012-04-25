@@ -7,6 +7,7 @@
 
 PORTNAME=	slapd-cyrus
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	mail net
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	Slapd-Backend-Cyrus-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	Slapd-Backend-Cyrus-${PORTVERSION}
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Slapd backend to translate DIT into Cyrus configuration
 
-BUILD_DEPENDS=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd23 \
+BUILD_DEPENDS=	cyrus-imapd>=0:${PORTSDIR}/mail/cyrus-imapd24 \
 		p5-BerkeleyDB>=0:${PORTSDIR}/databases/p5-BerkeleyDB \
 		p5-Class-Accessor-Lvalue>=0:${PORTSDIR}/devel/p5-Class-Accessor-Lvalue \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
