@@ -1,0 +1,24 @@
+include/CUnit/CUError.h
+include/CUnit/CUnit.h
+include/CUnit/MyMem.h
+include/CUnit/TestDB.h
+include/CUnit/TestRun.h
+include/CUnit/Util.h
+lib/libcunit.a
+lib/libcunit.la
+lib/libcunit.so
+lib/libcunit.so.1
+share/CUnit/CUnit-List.dtd
+share/CUnit/CUnit-List.xsl
+share/CUnit/CUnit-Run.dtd
+share/CUnit/CUnit-Run.xsl
+share/CUnit/Memory-Dump.dtd
+share/CUnit/Memory-Dump.xsl
+@dirrmtry share/examples/CUnit/Curses
+@dirrmtry share/examples/CUnit/Console
+@dirrmtry share/examples/CUnit/Basic
+@dirrmtry share/examples/CUnit/Automated
+@dirrmtry share/examples/CUnit
+@dirrmtry share/CUnit/Test
+@dirrm share/CUnit
+@dirrm include/CUnit
