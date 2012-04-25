@@ -1,0 +1,19 @@
+--- SConstruct.orig	2011-12-22 19:32:06.000000000 +0100
++++ SConstruct	2012-04-24 23:49:38.000000000 +0200
+@@ -69,7 +69,7 @@
+     ('crossmingwsdlconfig','sets the sdl-config full path for mingw cross compiler', 'sdl-config')
+ )
+ 
+-env = Environment(ENV = os.environ, options = opts)
++env = Environment(ENV = os.environ, options = opts, CC = os.environ['CC'], CXX = os.environ['CXX'])
+ Help(opts.GenerateHelpText(env))
+ 
+ ################################################################
+@@ -240,6 +240,7 @@
+     SetupSpawn(env)
+ else:
+     env.ParseConfig(env['sdlconfig'] + ' --cflags --libs')
++    env.Append( _LIBFLAGS = [ '-L%%LOCALBASE%%/lib' ] )
+     env.Append( NPLIBS = [ 'SDL_mixer' ] )
+ 
+ # for crossmingw platform

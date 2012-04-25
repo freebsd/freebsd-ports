@@ -1,12 +1,5 @@
 bin/netpanzer
 share/applications/netpanzer.desktop
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/serverhowto.html
-%%PORTDOCS%%%%DOCSDIR%%/tipofday.txt
 share/pixmaps/netpanzer.png
 share/pixmaps/netpanzer.xpm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
