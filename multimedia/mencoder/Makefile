@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--disable-faac
 .endif
 
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.119:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.123:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif

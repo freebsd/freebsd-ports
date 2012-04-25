@@ -7,28 +7,31 @@
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
 CATEGORIES=	multimedia
-MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
-DISTNAME=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable
-DISTFILES=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	mm/x264
+DISTFILES=	${DISTNAME}.tar.xz
+DISTNAME=	${PORTNAME}-${X264_GITVER}
 DIST_SUBDIR=	x264
-EXTRACT_ONLY=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTFILES}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
-BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-X264_BUILD=	119
-X264_REV=	2113
-X264_SNAP=	20111220
+BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
+X264_BUILD=	123
+X264_REV=	2189
+X264_COMMIT=	35cf912671fddcb3e701bf667a75f77dd8b28264
+X264_GITVER=	${X264_COMMIT:C/^(.......).*$/\1/g}
+
+X264_GITVER=	35cf912
+
+USE_XZ=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -37,7 +40,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	ASM "Assembly optimizations (devel/binutils)" On \
 		DEBUG "Enable Debugging" Off \
-		PGO "Enable Profile-Guided Optimization" Off \
+		PGO "Enable Profile-Guided Optimization" On \
 		GCC44 "Use gcc 4.4+ (implies WITH_ASM)" Off \
 		GPAC "Enable MPEG-4 Output" On \
 		X11_OUTPUT "Enable X11 Output" Off
