@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2012-01-22
-PORTREVISION=	3
+DISTVERSION=	2012-04-25
+PORTREVISION=	0
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm/ffmpeg
@@ -24,7 +24,7 @@ CONFLICTS=	ffmpeg-0.*
 
 LATEST_LINK=	ffmpeg-devel
 
-GIT_SNAPSHOT=	b4ec645f471faa5142ce492e39c7527eddda46de
+GIT_SNAPSHOT=	8f899545502c287653223ca27522c4abcd3a2e91
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
 
 USE_XZ=		yes
@@ -41,7 +41,6 @@ OPTIONS=	AACPLUS	"Enable aac via libaacplus" off \
 		ASS	"Subtitles rendering via libass" off \
 		CDIO	"Audio CD grabbing with libcdio" off \
 		CELT	"Enable CELT/Opus decoding via libcelt" off \
-		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
 		FREETYPE "Text on top of video frames (freetype2)" on \
@@ -71,7 +70,6 @@ OPTIONS=	AACPLUS	"Enable aac via libaacplus" off \
 		XVID	"Xvid encoder via xvidcore" on
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
-	libavcodec/opt.h \
 	libavcodec/vdpau.h \
 	libavcodec/xvmc.h \
 	libavdevice/avdevice.h \
@@ -113,7 +111,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-shared \
 		--enable-gpl \
 		--enable-postproc \
-		--enable-avconv \
 		--enable-avfilter \
 		--enable-pthreads \
 		--enable-x11grab \
@@ -162,7 +159,7 @@ FFMPEG_CFLAGS+=		-msse
 # PORTDOCS
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
-MAN1+=		avconv.1 ffmpeg.1 ffprobe.1
+MAN1+=		ffmpeg.1 ffprobe.1
 .endif
 
 # optimizations
@@ -227,14 +224,6 @@ LIB_DEPENDS+=	celt0.2:${PORTSDIR}/audio/celt
 CONFIGURE_ARGS+=	--enable-libcelt
 .else
 CONFIGURE_ARGS+=	--disable-libcelt
-.endif
-
-# dirac
-.if defined(WITH_DIRAC)
-LIB_DEPENDS+=	dirac_encoder.1:${PORTSDIR}/multimedia/dirac
-CONFIGURE_ARGS+=	--enable-libdirac
-.else
-CONFIGURE_ARGS+=	--disable-libdirac
 .endif
 
 # faac
@@ -435,7 +424,7 @@ CONFIGURE_ARGS+=	--disable-libvpx
 
 # x264
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.119:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.123:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
