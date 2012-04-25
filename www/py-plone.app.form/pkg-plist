@@ -81,6 +81,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/checkboxwidget.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/checkboxwidget.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/checkboxwidget.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/checkboxwidget.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/configure.zcml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/datecomponents.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/form/widgets/datecomponents.pyc

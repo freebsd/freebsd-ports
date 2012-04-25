@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone.app.form
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,7 +38,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=0:${PORTSDIR}/devel/py-five.fo
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 .include <bsd.port.mk>
