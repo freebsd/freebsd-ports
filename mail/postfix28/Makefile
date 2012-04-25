@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.8.9
-PORTREVISION=	1
+PORTVERSION=	2.8.10
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
