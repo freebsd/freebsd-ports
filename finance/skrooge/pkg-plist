@@ -10,7 +10,7 @@ lib/kde4/plasma_skroogoid_scheduledoperation.so
 lib/kde4/plasma_skroogoid_unit.so
 lib/kde4/plasma_widget_incomeexpenditure.so
 lib/kde4/plasma_widget_simulation.so
-lib/kde4/plugins/grantlee/0.2/grantlee_skroogefilters.so
+lib/kde4/plugins/grantlee/0.2/grantlee_skgfilters.so
 lib/kde4/skg_advice.so
 lib/kde4/skg_bookmark.so
 lib/kde4/skg_dashboard.so
@@ -18,6 +18,7 @@ lib/kde4/skg_debug.so
 lib/kde4/skg_delete.so
 lib/kde4/skg_file.so
 lib/kde4/skg_highlight.so
+lib/kde4/skg_monthly.so
 lib/kde4/skg_print.so
 lib/kde4/skg_properties.so
 lib/kde4/skg_selectall.so
@@ -40,7 +41,6 @@ lib/kde4/skrooge_import_skg.so
 lib/kde4/skrooge_import_xhb.so
 lib/kde4/skrooge_import_xml.so
 lib/kde4/skrooge_importexport.so
-lib/kde4/skrooge_monthly.so
 lib/kde4/skrooge_operation.so
 lib/kde4/skrooge_payee.so
 lib/kde4/skrooge_report.so
@@ -71,6 +71,7 @@ share/apps/skg_debug/skg_debug.rc
 share/apps/skg_delete/skg_delete.rc
 share/apps/skg_file/skg_file.rc
 share/apps/skg_highlight/skg_highlight.rc
+share/apps/skg_monthly/skg_monthly.rc
 share/apps/skg_print/skg_print.rc
 share/apps/skg_properties/skg_properties.rc
 share/apps/skg_selectall/skg_selectall.rc
@@ -83,6 +84,7 @@ share/apps/skrooge/html/default/categories_month_table.html
 share/apps/skrooge/html/default/categories_previous_month_table.html
 share/apps/skrooge/html/default/income_vs_expenditure_table.html
 share/apps/skrooge/html/default/unit_table.html
+share/apps/skrooge/html/main.txt
 share/apps/skrooge/images/logo/absa_bank__632005.png
 share/apps/skrooge/images/logo/aib.png
 share/apps/skrooge/images/logo/allianz.png
@@ -166,7 +168,6 @@ share/apps/skrooge_budget/skrooge_budget.rc
 share/apps/skrooge_calculator/skrooge_calculator.rc
 share/apps/skrooge_categories/skrooge_categories.rc
 share/apps/skrooge_importexport/skrooge_importexport.rc
-share/apps/skrooge_monthly/skrooge_monthly.rc
 share/apps/skrooge_operation/skrooge_operation.rc
 share/apps/skrooge_payee/skrooge_payee.rc
 share/apps/skrooge_report/skrooge_report.rc
@@ -175,6 +176,7 @@ share/apps/skrooge_search/skrooge_search.rc
 share/apps/skrooge_tracker/skrooge_tracker.rc
 share/apps/skrooge_unit/skrooge_unit.rc
 share/config.kcfg/skgbasegui_settings.kcfg
+share/config.kcfg/skgbookmark_settings.kcfg
 share/config.kcfg/skgdashboard_settings.kcfg
 share/config.kcfg/skgfile_settings.kcfg
 share/config.kcfg/skgimportexport_settings.kcfg
@@ -271,6 +273,9 @@ share/doc/HTML/en/skrooge/zoom_graph.png
 share/doc/HTML/es/skrooge/common
 share/doc/HTML/es/skrooge/index.cache.bz2
 share/doc/HTML/es/skrooge/index.docbook
+share/doc/HTML/fr/skrooge/common
+share/doc/HTML/fr/skrooge/index.cache.bz2
+share/doc/HTML/fr/skrooge/index.docbook
 share/doc/HTML/lt/skrooge/after_mass_update.png
 share/doc/HTML/lt/skrooge/bank_accounts.png
 share/doc/HTML/lt/skrooge/before_mass_update.png
@@ -476,6 +481,7 @@ share/kde4/services/skg-plugin-debug.desktop
 share/kde4/services/skg-plugin-delete.desktop
 share/kde4/services/skg-plugin-file.desktop
 share/kde4/services/skg-plugin-highlight.desktop
+share/kde4/services/skg-plugin-monthly.desktop
 share/kde4/services/skg-plugin-print.desktop
 share/kde4/services/skg-plugin-properties.desktop
 share/kde4/services/skg-plugin-selectall.desktop
@@ -498,7 +504,6 @@ share/kde4/services/skrooge-plugin-budget.desktop
 share/kde4/services/skrooge-plugin-calculator.desktop
 share/kde4/services/skrooge-plugin-categories.desktop
 share/kde4/services/skrooge-plugin-importexport.desktop
-share/kde4/services/skrooge-plugin-monthly.desktop
 share/kde4/services/skrooge-plugin-operation.desktop
 share/kde4/services/skrooge-plugin-payee.desktop
 share/kde4/services/skrooge-plugin-report.desktop
@@ -555,6 +560,7 @@ share/mime/packages/x-skg.xml
 @dirrm share/doc/HTML/pt/skrooge
 @dirrm share/doc/HTML/nl/skrooge
 @dirrm share/doc/HTML/lt/skrooge
+@dirrm share/doc/HTML/fr/skrooge
 @dirrm share/doc/HTML/es/skrooge
 @dirrm share/doc/HTML/en/skrooge
 @dirrm share/apps/skrooge_unit
@@ -564,7 +570,6 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skrooge_report
 @dirrm share/apps/skrooge_payee
 @dirrm share/apps/skrooge_operation
-@dirrm share/apps/skrooge_monthly
 @dirrm share/apps/skrooge_importexport
 @dirrm share/apps/skrooge_categories
 @dirrm share/apps/skrooge_calculator
@@ -581,6 +586,18 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skrooge/images/logo/l10n
 @dirrm share/apps/skrooge/images/logo
 @dirrm share/apps/skrooge/images
+@dirrm share/apps/skrooge/html/skrooge_unit
+@dirrm share/apps/skrooge/html/skrooge_tracker
+@dirrm share/apps/skrooge/html/skrooge_search
+@dirrm share/apps/skrooge/html/skrooge_scheduled
+@dirrm share/apps/skrooge/html/skrooge_report
+@dirrm share/apps/skrooge/html/skrooge_payee
+@dirrm share/apps/skrooge/html/skrooge_operation
+@dirrm share/apps/skrooge/html/skrooge_importexport
+@dirrm share/apps/skrooge/html/skrooge_categories
+@dirrm share/apps/skrooge/html/skrooge_calculator
+@dirrm share/apps/skrooge/html/skrooge_budget
+@dirrm share/apps/skrooge/html/skrooge_bank
 @dirrm share/apps/skrooge/html/default
 @dirrm share/apps/skrooge/html
 @dirrm share/apps/skrooge
@@ -588,6 +605,7 @@ share/mime/packages/x-skg.xml
 @dirrm share/apps/skg_selectall
 @dirrm share/apps/skg_properties
 @dirrm share/apps/skg_print
+@dirrm share/apps/skg_monthly
 @dirrm share/apps/skg_highlight
 @dirrm share/apps/skg_file
 @dirrm share/apps/skg_delete
