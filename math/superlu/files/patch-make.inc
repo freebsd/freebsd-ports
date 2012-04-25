@@ -1,6 +1,6 @@
 --- make.inc.orig	2006-01-02 00:52:00.000000000 +0100
-+++ make.inc	2012-03-13 14:59:15.000000000 +0100
-@@ -19,22 +19,23 @@
++++ make.inc	2012-04-11 09:50:17.000000000 +0200
+@@ -19,22 +19,25 @@
  #
  TMGLIB       = libtmglib.a
  SUPERLULIB   = libsuperlu_3.0.a
@@ -23,12 +23,20 @@
 -FFLAGS       = -O
 -LOADER       = cc
 -LOADOPTS     = -xO3
-+CC           ?= gcc46
-+CFLAGS       ?= -O2 -pipe -O2 -fno-strict-aliasing -pipe -O3 -pipe -fno-strict-aliasing -march=native -Wl,-rpath=/usr/local/lib/gcc46
-+FORTRAN	     ?= gfortran46
-+FFLAGS       ?= -O -Wl,-rpath=/usr/local/lib/gcc46
-+LOADER       ?= gfortran46
-+LOADOPTS     = 
++#CC           ?= gcc46
++#CFLAGS       ?= -O3 -pipe -fno-strict-aliasing -march=native -Wl,-rpath=/usr/local/lib/gcc46
++#FORTRAN	     ?= gfortran46
++#FFLAGS       ?= -O -Wl,-rpath=/usr/local/lib/gcc46
++#LOADER       ?= gfortran46
++#LOADOPTS     = 
++
++CFLAGS       += -Wall -fpic
  
  #
  #  C preprocessor defs for compilation (-DNoChange, -DAdd_, or -DUpCase)
+@@ -43,4 +46,4 @@
+ #
+ # The directory in which Matlab is installed
+ #
+-MATLAB	     = /usr/sww/pkg/matlab
++#MATLAB	     = /usr/sww/pkg/matlab

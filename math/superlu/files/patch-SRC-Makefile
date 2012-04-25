@@ -1,6 +1,6 @@
 --- SRC/Makefile.orig	2006-01-06 00:09:14.000000000 +0100
-+++ SRC/Makefile	2012-03-13 15:14:50.000000000 +0100
-@@ -89,28 +89,31 @@
++++ SRC/Makefile	2012-04-06 20:56:28.000000000 +0200
+@@ -89,39 +89,47 @@
  	zcolumn_dfs.o zcolumn_bmod.o zpivotL.o zpruneL.o \
  	zmemory.o zutil.o zmyblas2.o
  
@@ -32,13 +32,28 @@
  	$(RANLIB) ../$(SUPERLULIB)
  
 +shared:	single double complex complex16
-+	$(CC) -shared -Wl,-soname=$(SUPERLULIB_SHARED) -o ../$(SUPERLULIB_SHARED) ../$(SUPERLULIB)
++	$(CC) -shared -Wl,-soname=$(SUPERLULIB_SHARED) -o ../$(SUPERLULIB_SHARED) \
++		$(ALLAUX) $(LAAUX) $(SCLAUX) $(DZLAUX) \
++		$(SLUSRC) $(SLASRC) \
++		$(DLUSRC) $(DLASRC) \
++		$(CLUSRC) $(CLASRC) \
++		$(ZLUSRC) $(ZLASRC)
 +
  
  ##################################
  # Do not optimize these routines #
-@@ -125,3 +128,4 @@
+ ##################################
+-slamch.o: slamch.c ; $(CC) -c $(NOOPTS) $(CDEFS) $<
+-dlamch.o: dlamch.c ; $(CC) -c $(NOOPTS) $(CDEFS) $<
+-superlu_timer.o:  superlu_timer.c ; $(CC) -c $(NOOPTS) $<
++slamch.o: slamch.c ; $(CC) -fpic -c $(NOOPTS) $(CDEFS) $<
++dlamch.o: dlamch.c ; $(CC) -fpic -c $(NOOPTS) $(CDEFS) $<
++superlu_timer.o:  superlu_timer.c ; $(CC) -fpic -c $(NOOPTS) $<
+ ##################################
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) $(CDEFS) $(BLASDEF) -c $< $(VERBOSE)
  
  clean:	
- 	rm -f *.o ../libsuperlu_3.0.a
-+	rm -f *.o ../libsuperlu_3.0.so
+-	rm -f *.o ../libsuperlu_3.0.a
++	rm -f *.o ../libsuperlu_3.0.a ../libsuperlu_3.0.so
