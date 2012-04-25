@@ -80,6 +80,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/namechooser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/namechooser.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/namechooser.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/testing.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/testing.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/testing.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/__init__.pyo
@@ -95,6 +98,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/test_namechooser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/test_namechooser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/test_namechooser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/test_namechooser_unit.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/test_namechooser_unit.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests/test_namechooser_unit.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/browser/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/plone/app/content/browser
