@@ -441,6 +441,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/doctestcase.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/events.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/folder_marshall.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/input/animated.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/input/pdb.doc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/input/rest1.rst
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Products/Archetypes/tests/input/rest1.tgz
