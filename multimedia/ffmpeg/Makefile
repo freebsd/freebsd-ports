@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.7.11
-PORTREVISION?=	4
+PORTVERSION=	0.7.12
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -365,7 +365,7 @@ CONFIGURE_ARGS+=	--disable-libvpx
 
 # x264
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.119:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.123:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
