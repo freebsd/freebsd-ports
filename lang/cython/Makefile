@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cython
-PORTVERSION=	0.15.1
+PORTVERSION=	0.16
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.cython.org/release/ \
 		CHEESESHOP
