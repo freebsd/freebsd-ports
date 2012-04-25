@@ -14,7 +14,7 @@ bin/virtualenv
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/distribute-%%DISTRIBUTEVER%%.tar.gz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/pip-%%PIPVER%%.tar.gz
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/setuptools-0.6c11-py%%PYVER%%.egg
+%%PY2X%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/setuptools-0.6c11-py%%PYVER%%.egg
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support
