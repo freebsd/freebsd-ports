@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	spine
-PORTVERSION=	0.8.7.h
+PORTVERSION=	0.8.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
-DISTNAME=	cacti-${PORTNAME}-0.8.7h
+DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
