@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Products.ATContentTypes
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.7
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,6 +46,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}archetypes.referencebrowserwidget>=0:${PORTS
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 .include <bsd.port.mk>
