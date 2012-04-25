@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone.app.contentrules
-PORTVERSION=	2.0.7
+PORTVERSION=	2.1.4
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -51,7 +51,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=0:${PORTSDIR}/devel/py-five.fo
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 .include <bsd.port.mk>
