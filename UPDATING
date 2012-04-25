@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120425:
+  AFFECTS: users of mail/postfix, mail/postfix2[6-8]
+  AUTHOR: sahil@FreeBSD.org
+
+  The latest update to these ports adds support to turn off
+  the TLSv1.1 and TLSv1.2 protocols introduced in OpenSSL 1.0.1.
+  These protocols are known to cause inter-operability issues
+  with certain services, e.g. hotmail.  If using TLS with Postfix,
+  please consult the RELEASE_NOTES for information about possible
+  workarounds.
+
 20120423:
   AFFECTS: users of astro/boinc-astropulse
   AUTHOR: rene@FreeBSD.org
