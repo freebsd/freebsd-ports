@@ -181,7 +181,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 10+ 11+ 36+ 10 11+ 36
+#                         Available values: yes 10+ 12+ 36+ 10 12+ 36
 #                         NOTE:
 #                         default value 10 is used in case of USE_FIREFOX=yes
 #
@@ -203,7 +203,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 10+ 11+ 31+ 10 11 31
+#                         Available values: yes 10+ 12+ 31+ 10 12 31
 #                         NOTE:
 #                         default value 10 is used in case of USE_THUNDERBIRD=yes
 #
@@ -223,12 +223,12 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	10
-_FIREFOX_VERSIONS=			10 11 36
-_FIREFOX_RANGE_VERSIONS=	10+ 11+ 36+
+_FIREFOX_VERSIONS=			10 12 36
+_FIREFOX_RANGE_VERSIONS=	10+ 12+ 36+
 
 # For specifying [36, ..]+
-_FIREFOX_36P=	36 ${_FIREFOX_11P}
-_FIREFOX_11P=	11 ${_FIREFOX_10P}
+_FIREFOX_36P=	36 ${_FIREFOX_12P}
+_FIREFOX_12P=	12 ${_FIREFOX_10P}
 _FIREFOX_10P=	10
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -290,7 +290,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 10_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-11_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+12_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 36_DEPENDS=		${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox36
 
 # Add dependencies
@@ -383,12 +383,12 @@ _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
 _THUNDERBIRD_DEFAULT_VERSION=	10
-_THUNDERBIRD_VERSIONS=			10 11 31
-_THUNDERBIRD_RANGE_VERSIONS=	10+ 11+ 31+
+_THUNDERBIRD_VERSIONS=			10 12 31
+_THUNDERBIRD_RANGE_VERSIONS=	10+ 12+ 31+
 
 # For specifying [31, 30, ..]+
-_THUNDERBIRD_31P=	31 ${_THUNDERBIRD_11P}
-_THUNDERBIRD_11P=	11 ${_THUNDERBIRD_10P}
+_THUNDERBIRD_31P=	31 ${_THUNDERBIRD_12P}
+_THUNDERBIRD_12P=	12 ${_THUNDERBIRD_10P}
 _THUNDERBIRD_10P=	10
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
@@ -449,7 +449,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 
 # Dependence lines for different Thunderbird versions
 10_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird-esr
-11_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+12_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 31_DEPENDS=		${LOCALBASE}/lib/thunderbird3/thunderbird:${PORTSDIR}/mail/thunderbird3
 
 # Add dependencies
