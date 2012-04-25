@@ -3,10 +3,10 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#.1
+#
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.8
+DISTVERSION=	2.9
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
