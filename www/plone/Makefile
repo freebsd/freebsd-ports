@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Plone-${PORTVERSION}
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	zope@FreeBSD.org
 COMMENT=	The Plone Content Management System
 
 LICENSE=	GPLv2
