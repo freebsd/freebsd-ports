@@ -38,9 +38,11 @@ lib/FileRunner/font.tcl
 lib/FileRunner/fr
 lib/FileRunner/frcolor.tcl
 lib/FileRunner/frftp
+lib/FileRunner/frutils.tcl
 lib/FileRunner/ftp.tcl
-lib/FileRunner/ftpcore.tcl
+lib/FileRunner/ftp_control.tcl
 lib/FileRunner/http.tcl
+lib/FileRunner/sftp.tcl
 lib/FileRunner/icon.xpm
 lib/FileRunner/tclIndex
 lib/FileRunner/tclmultilistbox.tcl
