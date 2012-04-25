@@ -18,6 +18,7 @@ COMMENT=	A fork of nicotine soulseek client
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 CONFLICTS=	nicotine-[0-9]*
+BROKEN=		does not build
 
 USE_BZIP2=		yes
 USE_GNOME=		pygtk2
