@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	17.5
+PORTVERSION=	17.7
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -34,7 +34,8 @@ PLIST_DIRS=	%%DATADIR%%
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GUI)
-LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+USE_XORG=	xpm
+BUILD_DEPENDS+=	${LOCALBASE}/lib/fltk11/libfltk.so:${PORTSDIR}/x11-toolkits/fltk11
 MAKE_ENV+=	HAVE_FLTK=1 FLTK_NUT="fltk/Nut"
 PLIST_FILES+=	bin/Nut
 .endif
@@ -48,7 +49,8 @@ post-patch:
 		 s| -O | | ; \
 		 s|^HAVE_FLTK =|#HAVE_FLTK =| ; \
 		 s|^FLTK_NUT =|#FLTK_NUT =| ; \
-		 s|ldstaticflags|ldflags|'
+		 s|ldstaticflags|ldflags| ; \
+		 s|fltk-config|${LOCALBASE}/bin/fltk11/fltk-config|'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
