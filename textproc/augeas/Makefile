@@ -8,6 +8,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 
@@ -39,8 +40,5 @@ post-install:
 	${MKDIR} ${LENSESDIR}/tests
 	${INSTALL_DATA} ${FILESDIR}/rcconf.aug ${LENSESDIR}/rcconf.aug
 	${INSTALL_DATA} ${FILESDIR}/test_rcconf.aug ${LENSESDIR}/tests/rcconf.aug
-
-test: install
-	@cd ${WRKSRC}/tests && make check
 
 .include <bsd.port.mk>
