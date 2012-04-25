@@ -1,0 +1,17 @@
+MooseX-App is a highly customizeable helper to write user-friendly command-line
+applications without having to worry about most of the annoying things usually
+involved. Just take any existing Moose class, add a single line (use MooseX-App
+qw(PluginA PluginB ...)) and create one class for each command in an underlying
+namespace.
+
+MooseX-App will then take care of
+- Finding, loading and initializing the command classes
+- Creating automated doucumentation
+- Reading and validating the command line options entered by the user
+
+Read the Tutorial[1] for getting started with a simple MooseX::App command line
+application.
+
+[1] http://search.cpan.org/dist/MooseX-App/lib/MooseX/App/Tutorial.pod
+
+WWW: http://search.cpan.org/dist/MooseX-App/
