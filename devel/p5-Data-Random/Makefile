@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for generating random data
 
+BUILD_DEPENDS=	p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny
+
 OPTIONS=	DATE_CALC	"Support for rand_date()" on \
 		GD		"Support for rand_image()" off
 
