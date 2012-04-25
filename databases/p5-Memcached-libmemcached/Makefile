@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	Report on and update an SQLite database
+COMMENT=	Thin fast full interface to the libmemcached client API
 
 PERL_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -48,6 +48,6 @@ MAN3=		Memcached::libmemcached.3 \
 		Memcached::libmemcached::memcached_version.3
 
 post-patch:
-	@${REINPLACE_CMD} -e '/my $$configure_args/ s|--disable-shared|& --without-memcached|' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e '/my $$configure_args/ s|--disable-shared|& --without-memcached --disable-dtrace|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
