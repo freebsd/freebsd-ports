@@ -7,6 +7,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://salsaman.home.xs4all.nl/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -117,6 +118,11 @@ post-patch:
 		 /flags/s|-Wl,-Bsymbolic||g ; \
 		 /flags/s|--tag=disable-static||g'
 	@${REINPLACE_CMD} -e 's|-$$(VERSION)||g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} 's|/bin/touch|/usr/bin/touch|g' \
+		${WRKSRC}/smogrify \
+		${WRKSRC}/src/callbacks.c \
+		${WRKSRC}/src/saveplay.c \
+		${WRKSRC}/src/utils.c
 
 pre-build:
 	@cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
