@@ -83,6 +83,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Main.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Main.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Main.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/MemoryView.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/MemoryView.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/MemoryView.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ModuleNode.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ModuleNode.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ModuleNode.pyo
@@ -127,9 +130,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestBuffer.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestBuffer.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestBuffer.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestDecorators.py
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestDecorators.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestDecorators.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestMemView.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestMemView.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestMemView.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestParseTreeTransforms.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestParseTreeTransforms.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestParseTreeTransforms.pyo
@@ -139,6 +142,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestTreePath.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestUtilityLoad.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestUtilityLoad.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/TestUtilityLoad.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Tests/__init__.pyo
@@ -362,6 +368,15 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/StringIOTree.py
 %%PYTHON_SITELIBDIR%%/Cython/StringIOTree.pyc
 %%PYTHON_SITELIBDIR%%/Cython/StringIOTree.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/compat3.py
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/_looper.py
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/compat3.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/_looper.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/compat3.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Tempita/_looper.pyo
 %%PYTHON_SITELIBDIR%%/Cython/TestUtils.py
 %%PYTHON_SITELIBDIR%%/Cython/TestUtils.pyc
 %%PYTHON_SITELIBDIR%%/Cython/TestUtils.pyo
@@ -377,6 +392,24 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Tests/xmlrunner.py
 %%PYTHON_SITELIBDIR%%/Cython/Tests/xmlrunner.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Tests/xmlrunner.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Buffer.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Capsule.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/CythonFunction.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Exceptions.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/FunctionArguments.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Generator.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/MemoryView_C.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/MemoryView.pyx
+%%PYTHON_SITELIBDIR%%/Cython/Utility/ModuleSetupCode.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/Optimize.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/StringTools.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/TestCythonScope.pyx
+%%PYTHON_SITELIBDIR%%/Cython/Utility/TestCyUtilityLoader.pyx
+%%PYTHON_SITELIBDIR%%/Cython/Utility/TestUtilityLoader.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/TypeConversion.c
+%%PYTHON_SITELIBDIR%%/Cython/Utility/__init__.py
+%%PYTHON_SITELIBDIR%%/Cython/Utility/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Utility/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Utils.py
 %%PYTHON_SITELIBDIR%%/Cython/Utils.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Utils.pyo
@@ -408,5 +441,7 @@ bin/cygdb
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Plex
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Runtime
 @dirrm %%PYTHON_SITELIBDIR%%/Cython/Tests
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Tempita
+@dirrm %%PYTHON_SITELIBDIR%%/Cython/Utility
 @dirrm %%PYTHON_SITELIBDIR%%/Cython
 @dirrm %%PYTHON_SITELIBDIR%%/pyximport
