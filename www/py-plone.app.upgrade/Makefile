@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone.app.upgrade
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -56,6 +56,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+USE_ZIP=	yes
 #USE_ZOPE=	yes
 
 .include <bsd.port.mk>
