@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.18001
-PORTREVISION=	1
+PORTVERSION=	3.18002
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,26 +41,32 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::Twitter.3 Net::Twitter::Search.3 Net::Identica.3 \
-		Net::Twitter::API.3 Net::Twitter::Role::API::Search.3 \
-		Net::Twitter::Error.3 Net::Twitter::Role::OAuth.3 \
-		Net::Twitter::OAuth.3 Net::Twitter::Core.3 \
+MAN3=		Net::Identica.3 \
+		Net::Twitter.3 \
+		Net::Twitter::API.3 \
+		Net::Twitter::Core.3 \
+		Net::Twitter::Error.3 \
+		Net::Twitter::OAuth.3 \
 		Net::Twitter::Role::API::Lists.3 \
 		Net::Twitter::Role::API::REST.3 \
+		Net::Twitter::Role::API::Search.3 \
 		Net::Twitter::Role::API::Search::Trends.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
 		Net::Twitter::Role::API::Upload.3 \
 		Net::Twitter::Role::AutoCursor.3 \
 		Net::Twitter::Role::InflateObjects.3 \
 		Net::Twitter::Role::Legacy.3 \
+		Net::Twitter::Role::OAuth.3 \
 		Net::Twitter::Role::RateLimit.3 \
 		Net::Twitter::Role::RetryOnError.3 \
 		Net::Twitter::Role::SimulateCursors.3 \
-		Net::Twitter::Role::WrapError.3
+		Net::Twitter::Role::WrapError.3 \
+		Net::Twitter::Search.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
 RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
 .endif
 
