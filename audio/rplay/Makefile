@@ -29,7 +29,7 @@ INFO=		RPLAY RPTP librplay rplayd
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR=	rplay
+USE_RC_SUBR=	rplayd
 
 .if ${ARCH} == "amd64"
 # pr ports/166658 mentions a problem with amd64. if it happens on i386, you can delete this conditional
