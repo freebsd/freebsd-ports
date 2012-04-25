@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	2.04
-PORTREVISION=	4
+PORTVERSION=	2.15
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/old/${PORTVERSION}
@@ -23,6 +23,8 @@ LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 .if defined(WITH_FFTW)
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
 .endif
+
+.if 0 # NOPORTDOCS= teTeX is too old to compile the asymptote documentation
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex:${PORTSDIR}/print/teTeX-base \
@@ -30,12 +32,11 @@ BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
 		svn:${PORTSDIR}/devel/subversion \
 		texi2dvi:${PORTSDIR}/print/texinfo
+.endif
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
 		latex:${PORTSDIR}/print/teTeX-base \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
-
-BROKEN=		fails to build
 
 ONLY_FOR_ARCHS=	i386 amd64
 # it requires boehm-gc 7.X
@@ -44,6 +45,7 @@ CONFIGURE_ARGS=	--disable-gc
 USE_GHOSTSCRIPT=yes
 USE_GL=	glut
 USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -65,7 +67,8 @@ ALL_TARGET=	asy asy-keywords.el
 INSTALL_TARGET=	install-asy install-texhash
 
 # Documentation
-.if !defined(NOPORTDOCS)
+#if !defined(NOPORTDOCS)
+.if 0 #NOPORTDOCS= teTeX is too old to compile the asymptote documentation
 MAN1=	asy.1 xasy.1x
 INFO=	asy-faq
 
