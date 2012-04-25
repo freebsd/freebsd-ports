@@ -965,6 +965,7 @@
     SUBDIR += libstatgrab
     SUBDIR += libstrfunc
     SUBDIR += libstroke
+    SUBDIR += libsysinfo
     SUBDIR += libtai
     SUBDIR += libtap
     SUBDIR += libtar
