@@ -68,7 +68,9 @@ do-install:
 		${PREFIX}/lib/libsuperlu.a
 	${INSTALL_DATA} ${WRKSRC}/libsuperlu_${P_VERSION}.so \
 		${PREFIX}/lib/libsuperlu.so.${PORTREVISION}
-	${LN} -s ${PREFIX}/lib/libsuperlu.so.${PORTREVISION} \
+	${LN} -fs ${PREFIX}/lib/libsuperlu.so.${PORTREVISION} \
+		${PREFIX}/lib/libsuperlu_${P_VERSION}.so
+	${LN} -fs ${PREFIX}/lib/libsuperlu_${P_VERSION}.so \
 		${PREFIX}/lib/libsuperlu.so
 	@${MKDIR} ${PREFIX}/include/superlu
 	${INSTALL_DATA} ${WRKSRC}/SRC/*.h ${PREFIX}/include/superlu
