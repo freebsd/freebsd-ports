@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME:S/^cu/CU/}-${DISTVERSION}-src
 MAINTAINER=	stefan@fh-mainz.de
 COMMENT=	An automated unit testing framework for C
 
+CONFLICTS=	c-unit-[0-9]*
+
 WRKSRC=	${WRKDIR}/${PORTNAME:S/^cu/CU/}-${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/CUnit
 GNU_CONFIGURE=	yes
