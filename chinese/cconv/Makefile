@@ -7,7 +7,7 @@
 
 PORTNAME=	cconv
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese converters
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,7 +19,7 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|unicode.h||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|unicode.h||; s|libcconv_la_LDFLAGS|cconv_LDFLAGS|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|UTF-TW|UTF8-TW|g' ${WRKSRC}/main.c
 
 .include <bsd.port.mk>
