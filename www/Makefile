@@ -1401,6 +1401,7 @@
     SUBDIR += piwik
     SUBDIR += planet
     SUBDIR += pligg
+    SUBDIR += plone
     SUBDIR += plugger
     SUBDIR += plugger-plugins-hubbe
     SUBDIR += pmwiki
