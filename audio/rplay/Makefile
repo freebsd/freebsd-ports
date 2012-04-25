@@ -7,7 +7,7 @@
 
 PORTNAME=	rplay
 PORTVERSION=	3.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
@@ -27,13 +27,22 @@ MAN8=		rplayd.8
 
 INFO=		RPLAY RPTP librplay rplayd
 
+.include <bsd.port.pre.mk>
+
+USE_RC_SUBR=	rplay
+
+.if ${ARCH} == "amd64"
+# pr ports/166658 mentions a problem with amd64. if it happens on i386, you can delete this conditional
+# and rename to patch-ao
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ao
+.endif
+
 post-extract:
 	@${CP} ${WRKSRC}/doc/rplay.texi ${WRKSRC}/doc/rplayd.texi
 
 post-install:
-	@${ECHO_MSG} "===>	Installing ${PREFIX}/etc/rc.d/rplayd.sh"
-	@${ECHO_MSG} "===>	startup file as ${PREFIX}/etc/rc.d/rplayd.sh.sample"
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rplayd.sh ${PREFIX}/etc/rc.d/rplayd.sh.sample
+	@${ECHO_MSG} "===>	startup file as ${PREFIX}/etc/rc.d/rplayd"
+	@${MKDIR} ${PREFIX}/etc/
 	for na in rplay.conf rplay.helpers rplay.servers rplay.hosts; do \
 		${CP} ${WRKSRC}/etc/$$na ${PREFIX}/etc/$$na.sample; \
 		if [ ! -f ${PREFIX}/etc/$$na ]; then \
@@ -45,4 +54,4 @@ post-install:
 .endif
 	@${ECHO_CMD} localhost > ${PREFIX}/etc/rplay.hosts.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

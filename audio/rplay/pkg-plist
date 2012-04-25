@@ -1,4 +1,4 @@
-etc/rc.d/rplayd.sh.sample
+@unexec rm -f %D/etc/rc.d/rplay.sh*
 @unexec if cmp %D/etc/rplay.hosts.sample %D/etc/rplay.hosts 2>/dev/null; then rm -f %D/etc/rplay.hosts; fi
 etc/rplay.hosts.sample
 @unexec if cmp %D/etc/rplay.conf.sample %D/etc/rplay.conf 2>/dev/null; then rm -f %D/etc/rplay.conf; fi
