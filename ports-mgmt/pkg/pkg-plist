@@ -1,3 +1,4 @@
+etc/pkg.conf.sample
 sbin/pkg
 sbin/pkg-static
 sbin/pkg2ng
