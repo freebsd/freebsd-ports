@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.8.2
-PORTREVISION=	8
+PORTVERSION=	3.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION}/source/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,9 +31,9 @@ MAKE_JOBS_SAFE=	yes
 USE_GCC=	4.2+
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=55 \
-		OPENTHREADS_VERSION=2.4.0 \
-		OPENTHREADS_SHLIBVER=11
+		OSG_SHLIBVER=80 \
+		OPENTHREADS_VERSION=2.6.0 \
+		OPENTHREADS_SHLIBVER=12
 
 PORTSCOUT=	limitw:1,even
 
@@ -48,21 +47,21 @@ OPTIONS=	CURL     "Support for cURL"                 off \
 		ITK      "Support for InsightToolkit"       off \
 		VNC      "Support for LibVNCServer"         off \
 		OPENEXR  "Support for OpenEXR"              off \
+		FFMPEG   "Support for FFmpeg"               off \
 		SVG      "Support for SVG through librsvg2" off \
 		PDF      "Support for PDF through poppler"  off \
-		XRANDR   "Use Xrandr"                       on
+		XRANDR   "Use Xrandr"                       on \
+		SDL      "Use SDL (joystick support in present3d)" off
 
 # broken (openvrml from ports is too old)
 #		OPENVRML "Support for OpenVRML"             off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT SDL FOX Qt3 Qt4 wxWidgets   # only for examples
-FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL        # not in ports
-FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB # common & lightweight
-FORCE_PC_IGNORE=	GTK GTKGL                     # only for examples
-FORCE_PC_REQUIRE=
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL GtkGl # only for examples
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
+FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
 
 # options that affect FIND_PACKAGE
 .if defined(WITH_CURL)
@@ -167,30 +166,43 @@ FORCE_IGNORE+=	OpenEXR
 PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
+.if defined(WITH_FFMPEG)
+FORCE_REQUIRE+=	FFmpeg
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+PLIST_SUB+=	FFMPEG=""
+.else
+FORCE_IGNORE+=	FFmpeg
+PLIST_SUB+=	FFMPEG="@comment "
+.endif
+
+.if defined(WITH_SDL)
+FORCE_REQUIRE+=	SDL
+USE_SDL=	sdl
+.else
+FORCE_IGNORE+=	SDL
+.endif
+
 # options that affect PKG_CHECK_MODULES
 .if defined(WITH_SVG)
-FORCE_PC_REQUIRE+=RSVG
+FORCE_REQUIRE+=	RSVG
 LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	SVG=""
 .else
-FORCE_PC_IGNORE+=RSVG
+FORCE_IGNORE+=	RSVG
 PLIST_SUB+=	SVG="@comment "
 .endif
 
 .if defined(WITH_PDF)
-FORCE_PC_REQUIRE+=POPPLER
+FORCE_REQUIRE+=	Poppler-glib
 LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 PLIST_SUB+=	PDF=""
 .else
-FORCE_PC_IGNORE+=POPPLER
+FORCE_IGNORE+=	Poppler-glib
 PLIST_SUB+=	PDF="@comment "
 .endif
 
 .if defined(WITH_SVG) || defined(WITH_PDF)
-FORCE_PC_REQUIRE+=CAIRO
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-.else
-FORCE_PC_IGNORE+=CAIRO
 .endif
 
 # other options
@@ -201,9 +213,18 @@ CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 USE_XORG+=	xrandr
 .endif
 
+.if defined(WITHOUT_XRANDR)
+CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
+USE_XORG+=	xrandr
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
+	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d' \
+		${WRKSRC}/CMakeLists.txt
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
@@ -212,13 +233,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|^|#|' \
 		${WRKSRC}/CMakeLists.txt
 .endfor
-.for p in ${FORCE_PC_REQUIRE}
-	@${REINPLACE_CMD} -e 's|PKG_CHECK_MODULES.*${p}|& REQUIRED| ' \
-		${WRKSRC}/CMakeLists.txt
-.endfor
-.for p in ${FORCE_PC_IGNORE}
-	@${REINPLACE_CMD} -e '/PKG_CHECK_MODULES.*${p}/ s|^|#|' \
-		${WRKSRC}/CMakeLists.txt
-.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

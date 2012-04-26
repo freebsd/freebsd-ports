@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -20,18 +21,13 @@ COMMENT=	The FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		osg.80:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
-
-.if defined(WITH_OSG_DEVEL)
-LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
-.else
-LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
-.endif
 
 USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
