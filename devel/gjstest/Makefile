@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gjstest
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight JS unit testing using the V8 engine
+
+LICENSE=	AL2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gflags:${PORTSDIR}/devel/gflags \
