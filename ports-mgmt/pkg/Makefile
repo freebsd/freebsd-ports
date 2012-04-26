@@ -50,8 +50,6 @@ MAN8=	pkg.8 \
 	pkg-which.8
 MAN5=	pkg.conf.5
 
-PORTEXAMPLES=	etc/pkg.conf.sample
-
 .include <bsd.port.pre.mk>
 
 #define PKG_DEPENDS to nothing to avoid infinite loop looking for pkg :)
@@ -72,9 +70,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/periodic/security
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/periodic/410.pkg-audit ${PREFIX}/etc/periodic/security
 	@${INSTALL_SCRIPT} ${WRKSRC}/ports/pkg2ng ${PREFIX}/sbin
-.if !defined(NOPORTEXAMPLES)
 	@${INSTALL_DATA} ${WRKSRC}/pkg/pkg.conf.sample ${PREFIX}/etc
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
