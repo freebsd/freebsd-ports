@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	2.2.0
+PORTVERSION=	2.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Ruby whois library
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=		bin/ruby-whois
+
+PLIST_FILES=	bin/ruby-whois
 
 .include <bsd.port.mk>
