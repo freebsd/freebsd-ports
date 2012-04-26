@@ -5,7 +5,7 @@ Add these to /etc/rc.conf:
 pmacctd_enable="YES"
 pmacctd_flags="-DF %%PREFIX%%/etc/pmacctd.conf -i <interface>"
 
-Configuration examples are located in %%EXAMPLESDIR%%.  You must copy 
+Configuration examples are located in %%EXAMPLESDIR%%.  You must copy
 one of these to %%PREFIX%%/etc/pmacctd.conf and make any required edits
 for your environment.
 
