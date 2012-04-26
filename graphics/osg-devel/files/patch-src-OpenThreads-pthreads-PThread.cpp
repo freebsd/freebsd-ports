@@ -1,5 +1,5 @@
---- src/OpenThreads/pthreads/PThread.c++.orig	2009-11-20 13:27:43.000000000 +0300
-+++ src/OpenThreads/pthreads/PThread.c++	2009-12-15 20:26:51.000000000 +0300
+--- src/OpenThreads/pthreads/PThread.cpp.orig	2009-11-20 13:27:43.000000000 +0300
++++ src/OpenThreads/pthreads/PThread.cpp	2009-12-15 20:26:51.000000000 +0300
 @@ -21,6 +21,7 @@
  #include <sys/types.h>
  #include <unistd.h>

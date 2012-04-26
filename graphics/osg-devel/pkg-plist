@@ -75,6 +75,7 @@ include/osg/GLU
 include/osg/Geode
 include/osg/Geometry
 include/osg/GraphicsContext
+include/osg/GraphicsCostEstimator
 include/osg/GraphicsThread
 include/osg/Group
 include/osg/Hint
@@ -164,6 +165,8 @@ include/osg/Transform
 include/osg/TriangleFunctor
 include/osg/TriangleIndexFunctor
 include/osg/Uniform
+include/osg/UserDataContainer
+include/osg/ValueObject
 include/osg/Vec2
 include/osg/Vec2b
 include/osg/Vec2d
@@ -244,6 +247,7 @@ include/osgDB/DatabaseRevisions
 include/osgDB/DotOsgWrapper
 include/osgDB/DynamicLibrary
 include/osgDB/Export
+include/osgDB/ExternalFileWriter
 include/osgDB/FileCache
 include/osgDB/FileNameUtils
 include/osgDB/FileUtils
@@ -392,6 +396,7 @@ include/osgShadow/OccluderGeometry
 include/osgShadow/ParallelSplitShadowMap
 include/osgShadow/ProjectionShadowMap
 include/osgShadow/ShadowMap
+include/osgShadow/ShadowSettings
 include/osgShadow/ShadowTechnique
 include/osgShadow/ShadowTexture
 include/osgShadow/ShadowVolume
@@ -399,6 +404,7 @@ include/osgShadow/ShadowedScene
 include/osgShadow/SoftShadowMap
 include/osgShadow/StandardShadowMap
 include/osgShadow/Version
+include/osgShadow/ViewDependentShadowMap
 include/osgShadow/ViewDependentShadowTechnique
 include/osgSim/BlinkSequence
 include/osgSim/ColorRange
@@ -454,7 +460,6 @@ include/osgUtil/DrawElementTypeSimplifier
 include/osgUtil/EdgeCollector
 include/osgUtil/Export
 include/osgUtil/GLObjectsVisitor
-include/osgUtil/GraphicsCostEstimator
 include/osgUtil/HalfWayMapGenerator
 include/osgUtil/HighlightMapGenerator
 include/osgUtil/IncrementalCompileOperation
@@ -464,6 +469,7 @@ include/osgUtil/LineSegmentIntersector
 include/osgUtil/MeshOptimizers
 include/osgUtil/OperationArrayFunctor
 include/osgUtil/Optimizer
+include/osgUtil/PerlinNoise
 include/osgUtil/PlaneIntersector
 include/osgUtil/PolytopeIntersector
 include/osgUtil/PositionalStateContainer
@@ -489,10 +495,7 @@ include/osgUtil/UpdateVisitor
 include/osgUtil/Version
 include/osgViewer/CompositeViewer
 include/osgViewer/Export
-include/osgViewer/GraphicsHandleX11
 include/osgViewer/GraphicsWindow
-include/osgViewer/GraphicsWindowX11
-include/osgViewer/PixelBufferX11
 include/osgViewer/Renderer
 include/osgViewer/Scene
 include/osgViewer/Version
