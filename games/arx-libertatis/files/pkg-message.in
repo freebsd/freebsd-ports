@@ -1,0 +1,14 @@
+==========================================================================
+
+Arx Libertatis requires data files from either full version or a demo
+of Arx Fatalis. Copy the following files and directories to
+either %%PREFIX%%/share/arx or ~/.local/share/arx:
+
+  *.pak
+  graph/
+  misc/
+
+See http://arx.parpg.net/Getting_the_game_data for the information on
+getting the game data.
+
+==========================================================================
