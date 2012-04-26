@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -217,7 +217,13 @@ CC=	clang
 CXX=	clang++
 CXXCPP=	clang-cpp
 CPP=	clang-cpp
-.if !exists(${DESTDIR}/usr/bin/clang)
+# Work around a bug in pointyhat and tinderbox, prevent it to determine than
+# clang from ports is needed when host is a freebsd 9+
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
+USE_BINUTILS=	yes
+.endif
+.if !exists(/usr/bin/clang)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 USE_BINUTILS=	yes
 CXXCPP=	clang++ -E
