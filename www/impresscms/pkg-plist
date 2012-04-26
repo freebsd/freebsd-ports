@@ -1037,138 +1037,6 @@
 %%WWWDIR%%/htdocs/images/calendar.png
 %%WWWDIR%%/htdocs/images/close12.gif
 %%WWWDIR%%/htdocs/images/code.gif
-%%WWWDIR%%/htdocs/images/crystal/actions/0.png
-%%WWWDIR%%/htdocs/images/crystal/actions/1.png
-%%WWWDIR%%/htdocs/images/crystal/actions/about_kde.png
-%%WWWDIR%%/htdocs/images/crystal/actions/acp_help.png
-%%WWWDIR%%/htdocs/images/crystal/actions/asc.png
-%%WWWDIR%%/htdocs/images/crystal/actions/attach.png
-%%WWWDIR%%/htdocs/images/crystal/actions/back.png
-%%WWWDIR%%/htdocs/images/crystal/actions/back1.png
-%%WWWDIR%%/htdocs/images/crystal/actions/back2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/bookmark.png
-%%WWWDIR%%/htdocs/images/crystal/actions/bookmark_add.png
-%%WWWDIR%%/htdocs/images/crystal/actions/button_cancel.png
-%%WWWDIR%%/htdocs/images/crystal/actions/button_ok.png
-%%WWWDIR%%/htdocs/images/crystal/actions/cd.png
-%%WWWDIR%%/htdocs/images/crystal/actions/compfile.png
-%%WWWDIR%%/htdocs/images/crystal/actions/configure.png
-%%WWWDIR%%/htdocs/images/crystal/actions/contents.png
-%%WWWDIR%%/htdocs/images/crystal/actions/db.png
-%%WWWDIR%%/htdocs/images/crystal/actions/db_update.png
-%%WWWDIR%%/htdocs/images/crystal/actions/decrypted.png
-%%WWWDIR%%/htdocs/images/crystal/actions/desc.png
-%%WWWDIR%%/htdocs/images/crystal/actions/down.png
-%%WWWDIR%%/htdocs/images/crystal/actions/edit.gif
-%%WWWDIR%%/htdocs/images/crystal/actions/edit.png
-%%WWWDIR%%/htdocs/images/crystal/actions/edit_picture.png
-%%WWWDIR%%/htdocs/images/crystal/actions/editcopy.png
-%%WWWDIR%%/htdocs/images/crystal/actions/editcut.png
-%%WWWDIR%%/htdocs/images/crystal/actions/editdelete.gif
-%%WWWDIR%%/htdocs/images/crystal/actions/editdelete.png
-%%WWWDIR%%/htdocs/images/crystal/actions/editpaste.png
-%%WWWDIR%%/htdocs/images/crystal/actions/edittrash.png
-%%WWWDIR%%/htdocs/images/crystal/actions/encrypted.png
-%%WWWDIR%%/htdocs/images/crystal/actions/exit.png
-%%WWWDIR%%/htdocs/images/crystal/actions/file.png
-%%WWWDIR%%/htdocs/images/crystal/actions/fileclose.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filefind.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filenew.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filenew2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/fileopen.png
-%%WWWDIR%%/htdocs/images/crystal/actions/fileprint.gif
-%%WWWDIR%%/htdocs/images/crystal/actions/fileprint.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filequickprint.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filesave.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filesave2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filesaveas.png
-%%WWWDIR%%/htdocs/images/crystal/actions/filesaveas2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/find.png
-%%WWWDIR%%/htdocs/images/crystal/actions/folder.png
-%%WWWDIR%%/htdocs/images/crystal/actions/folder_new.png
-%%WWWDIR%%/htdocs/images/crystal/actions/forward.png
-%%WWWDIR%%/htdocs/images/crystal/actions/forward1.png
-%%WWWDIR%%/htdocs/images/crystal/actions/forward2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/frameprint.png
-%%WWWDIR%%/htdocs/images/crystal/actions/gohome.png
-%%WWWDIR%%/htdocs/images/crystal/actions/help.png
-%%WWWDIR%%/htdocs/images/crystal/actions/index.html
-%%WWWDIR%%/htdocs/images/crystal/actions/klipper_dock.png
-%%WWWDIR%%/htdocs/images/crystal/actions/klipper_dock2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/locationbar_erase.png
-%%WWWDIR%%/htdocs/images/crystal/actions/lock.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_delete.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_delete2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_find.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_find2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_forward.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_forward2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_generic.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_generic2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_get.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_get2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_new.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_new2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_new3.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_replay.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_replayall.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_reply.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_reply2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_replyall.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_replyall2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_replylist.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_replylist2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_send.gif
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_send.png
-%%WWWDIR%%/htdocs/images/crystal/actions/mail_send2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/make_kdevelop.png
-%%WWWDIR%%/htdocs/images/crystal/actions/message_reply.png
-%%WWWDIR%%/htdocs/images/crystal/actions/misc.png
-%%WWWDIR%%/htdocs/images/crystal/actions/next.png
-%%WWWDIR%%/htdocs/images/crystal/actions/openterm.png
-%%WWWDIR%%/htdocs/images/crystal/actions/people.png
-%%WWWDIR%%/htdocs/images/crystal/actions/personal.png
-%%WWWDIR%%/htdocs/images/crystal/actions/previous.png
-%%WWWDIR%%/htdocs/images/crystal/actions/project_open.png
-%%WWWDIR%%/htdocs/images/crystal/actions/queue.png
-%%WWWDIR%%/htdocs/images/crystal/actions/rebuild.png
-%%WWWDIR%%/htdocs/images/crystal/actions/redo.png
-%%WWWDIR%%/htdocs/images/crystal/actions/reload.png
-%%WWWDIR%%/htdocs/images/crystal/actions/reload3.png
-%%WWWDIR%%/htdocs/images/crystal/actions/reload_page.png
-%%WWWDIR%%/htdocs/images/crystal/actions/run.png
-%%WWWDIR%%/htdocs/images/crystal/actions/show_clips.gif
-%%WWWDIR%%/htdocs/images/crystal/actions/signature.png
-%%WWWDIR%%/htdocs/images/crystal/actions/stop.png
-%%WWWDIR%%/htdocs/images/crystal/actions/thumbnail.png
-%%WWWDIR%%/htdocs/images/crystal/actions/toggle_log.png
-%%WWWDIR%%/htdocs/images/crystal/actions/undo.png
-%%WWWDIR%%/htdocs/images/crystal/actions/unlock.png
-%%WWWDIR%%/htdocs/images/crystal/actions/up.png
-%%WWWDIR%%/htdocs/images/crystal/actions/up1.png
-%%WWWDIR%%/htdocs/images/crystal/actions/up2.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_bottom.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_choose.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_detailed.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_icon.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_left_right.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_multicolumn.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_remove.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_right.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_sidetree.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_text.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_top_bottom.png
-%%WWWDIR%%/htdocs/images/crystal/actions/view_tree.png
-%%WWWDIR%%/htdocs/images/crystal/actions/viewmag+.png
-%%WWWDIR%%/htdocs/images/crystal/actions/viewmag-.png
-%%WWWDIR%%/htdocs/images/crystal/actions/viewmag.png
-%%WWWDIR%%/htdocs/images/crystal/actions/viewmag1.png
-%%WWWDIR%%/htdocs/images/crystal/actions/viewmagfit.png
-%%WWWDIR%%/htdocs/images/crystal/actions/window_fullscreen.png
-%%WWWDIR%%/htdocs/images/crystal/actions/window_new.png
-%%WWWDIR%%/htdocs/images/crystal/actions/window_nofullscreen.png
-%%WWWDIR%%/htdocs/images/crystal/actions/wizard.png
-%%WWWDIR%%/htdocs/images/crystal/index.html
 %%WWWDIR%%/htdocs/images/delete.gif
 %%WWWDIR%%/htdocs/images/download.gif
 %%WWWDIR%%/htdocs/images/edit.gif
@@ -1280,6 +1148,129 @@
 %%WWWDIR%%/htdocs/images/index.html
 %%WWWDIR%%/htdocs/images/infomsg_icon.gif
 %%WWWDIR%%/htdocs/images/italic.gif
+%%WWWDIR%%/htdocs/images/kfaenza/actions/0.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/1.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/acp_help.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/asc.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/attach.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/back.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/back1.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/back2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/bookmark.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/bookmark_add.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/button_cancel.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/button_ok.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/cd.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/compfile.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/configure.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/contents.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/db.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/db_update.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/decrypted.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/desc.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/down.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/edit.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/edit_picture.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/editcopy.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/editcut.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/editdelete.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/editpaste.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/encrypted.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/exit.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/file.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/fileclose.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filefind.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filenew.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filenew2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/fileopen.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/fileprint.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filequickprint.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesave.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesave2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesaveas.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/filesaveas2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/find.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/folder.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/folder_new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/forward.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/forward1.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/forward2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/frameprint.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/gohome.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/help.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/index.html
+%%WWWDIR%%/htdocs/images/kfaenza/actions/internet-radio-new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-snap.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-split-audio.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-zoom-large.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/kdenlive-zoom-small.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/klipper_dock.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/klipper_dock2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/locationbar_erase.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/lock.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/lpi-translate.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_delete.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_find.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_forward.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_generic.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_get.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_reply.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_replyall.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_replylist.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/mail_send.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/make_kdevelop.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-playback-pause.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-playback-start.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-playback-stop.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-playlist-repeat.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-playlist-shuffle.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-record.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-skip-backward.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/media-skip-forward.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/message_reply.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/misc.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/music-library.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/network-connect.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/network-disconnect.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/next.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/openterm.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/package-new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/people.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/personal.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/player-volume-muted.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/player-volume.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/podcast-new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/previous.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/project_open.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/queue.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/rebuild.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/redo.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/reload.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/reload3.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/reload_page.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/run.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/signature.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/stop.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/tab-new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/tag-new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/thumbnail.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/toggle_log.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/undo.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/unlock.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/up.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/up2.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/view_bottom.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/view_choose.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/view_detailed.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/view_icon.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/view_top.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/viewmag.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/window_fullscreen.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/window_new.png
+%%WWWDIR%%/htdocs/images/kfaenza/actions/wizard.png
+%%WWWDIR%%/htdocs/images/kfaenza/doc/readme.txt
+%%WWWDIR%%/htdocs/images/kfaenza/index.html
 %%WWWDIR%%/htdocs/images/left_both.gif
 %%WWWDIR%%/htdocs/images/linethrough.gif
 %%WWWDIR%%/htdocs/images/logo.gif
@@ -1638,69 +1629,6 @@
 %%WWWDIR%%/htdocs/libraries/geshi/docs/README
 %%WWWDIR%%/htdocs/libraries/geshi/docs/THANKS
 %%WWWDIR%%/htdocs/libraries/geshi/docs/TODO
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/__filesource/fsource_geshi_core_geshi.php.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/blank.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/classtrees_geshi.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/elementindex.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/elementindex_geshi.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/errors.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/geshi/core/GeSHi.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/geshi/core/_geshi.php.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/index.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/li_geshi.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/banner.css
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/AbstractClass.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/AbstractClass_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/AbstractMethod.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/AbstractPrivateClass.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/AbstractPrivateClass_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/AbstractPrivateMethod.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Class.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Class_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Constant.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Constructor.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Destructor.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Function.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Global.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/I.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Index.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Interface.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Interface_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/L.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Lminus.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Lplus.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Method.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Page.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Page_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/PrivateClass.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/PrivateClass_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/PrivateMethod.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/PrivateVariable.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/StaticMethod.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/StaticVariable.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/T.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Tminus.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Tplus.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/Variable.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/blank.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/class_folder.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/empty.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/file.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/folder.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/function_folder.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/next_button.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/next_button_disabled.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/package.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/package_folder.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/previous_button.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/previous_button_disabled.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/private_class_logo.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/tutorial.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/tutorial_folder.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images/up_button.png
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/stylesheet.css
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/packages.html
-%%WWWDIR%%/htdocs/libraries/geshi/docs/api/todolist.html
 %%WWWDIR%%/htdocs/libraries/geshi/docs/geshi-doc.html
 %%WWWDIR%%/htdocs/libraries/geshi/docs/geshi-doc.txt
 %%WWWDIR%%/htdocs/libraries/geshi/docs/index.html
@@ -1918,16 +1846,13 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/Xml.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Builder/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/Id.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedClasses.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
@@ -1955,18 +1880,22 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenProperties.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
@@ -1987,6 +1916,8 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
@@ -2000,17 +1931,21 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
@@ -2032,13 +1967,10 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/index.html
+%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema/info.ini
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/index.html
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/EntityLookup/entities.ser
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/EntityLookup/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/ExtractStyleBlocks.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/GoogleVideo.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/LiveLeak.php
@@ -2046,27 +1978,18 @@
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/Vimeo.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/WeGame.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/YouTube.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/YouTubeIframe.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Filter/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/classes/en-x-test.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/classes/index.html
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-test.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en-x-testmini.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/en.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Language/messages/index.html
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Lexer/PEARSax3.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Lexer/PH5P.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Lexer/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/CSSDefinition.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.css
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.js
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/ConfigForm.php
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/HTMLDefinition.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer/index.html
 %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/Printer.php
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/index.html
-%%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/index.html
 %%WWWDIR%%/htdocs/libraries/icms/Autoloader.php
 %%WWWDIR%%/htdocs/libraries/icms/Event.php
 %%WWWDIR%%/htdocs/libraries/icms/Utils.php
@@ -2501,7 +2424,6 @@
 %%WWWDIR%%/htdocs/libraries/paginationstyles/images/index.html
 %%WWWDIR%%/htdocs/libraries/paginationstyles/index.html
 %%WWWDIR%%/htdocs/libraries/paginationstyles/paginationstyles.php
-%%WWWDIR%%/htdocs/libraries/phpmailer/ChangeLog.txt
 %%WWWDIR%%/htdocs/libraries/phpmailer/LICENSE
 %%WWWDIR%%/htdocs/libraries/phpmailer/README
 %%WWWDIR%%/htdocs/libraries/phpmailer/aboutus.html
@@ -2983,7 +2905,338 @@
 %%WWWDIR%%/htdocs/lostpass.php
 %%WWWDIR%%/htdocs/mainfile.php
 %%WWWDIR%%/htdocs/misc.php
+%%WWWDIR%%/htdocs/modules/banners/admin/about.php
+%%WWWDIR%%/htdocs/modules/banners/admin/admin_header.php
+%%WWWDIR%%/htdocs/modules/banners/admin/banner.php
+%%WWWDIR%%/htdocs/modules/banners/admin/client.php
+%%WWWDIR%%/htdocs/modules/banners/admin/index.php
+%%WWWDIR%%/htdocs/modules/banners/admin/menu.php
+%%WWWDIR%%/htdocs/modules/banners/admin/position.php
+%%WWWDIR%%/htdocs/modules/banners/banner.php
+%%WWWDIR%%/htdocs/modules/banners/class/Banner.php
+%%WWWDIR%%/htdocs/modules/banners/class/BannerHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/Client.php
+%%WWWDIR%%/htdocs/modules/banners/class/ClientHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/Position.php
+%%WWWDIR%%/htdocs/modules/banners/class/PositionHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/Positionlink.php
+%%WWWDIR%%/htdocs/modules/banners/class/PositionlinkHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/Visiblein.php
+%%WWWDIR%%/htdocs/modules/banners/class/VisibleinHandler.php
+%%WWWDIR%%/htdocs/modules/banners/class/index.html
+%%WWWDIR%%/htdocs/modules/banners/client.php
+%%WWWDIR%%/htdocs/modules/banners/docs/changelog.txt
+%%WWWDIR%%/htdocs/modules/banners/docs/index.html
+%%WWWDIR%%/htdocs/modules/banners/docs/install.txt
+%%WWWDIR%%/htdocs/modules/banners/footer.php
+%%WWWDIR%%/htdocs/modules/banners/header.php
+%%WWWDIR%%/htdocs/modules/banners/icms_version.php
+%%WWWDIR%%/htdocs/modules/banners/images/blank.png
+%%WWWDIR%%/htdocs/modules/banners/images/client_big.png
+%%WWWDIR%%/htdocs/modules/banners/images/client_small.png
+%%WWWDIR%%/htdocs/modules/banners/images/icon_big.png
+%%WWWDIR%%/htdocs/modules/banners/images/icon_small.png
+%%WWWDIR%%/htdocs/modules/banners/images/index.html
+%%WWWDIR%%/htdocs/modules/banners/images/position_big.png
+%%WWWDIR%%/htdocs/modules/banners/images/position_small.png
+%%WWWDIR%%/htdocs/modules/banners/images/toggle.gif
+%%WWWDIR%%/htdocs/modules/banners/include/common.php
+%%WWWDIR%%/htdocs/modules/banners/include/index.html
+%%WWWDIR%%/htdocs/modules/banners/include/onupdate.inc.php
+%%WWWDIR%%/htdocs/modules/banners/include/requirements.php
+%%WWWDIR%%/htdocs/modules/banners/index.php
+%%WWWDIR%%/htdocs/modules/banners/language/english/admin.php
+%%WWWDIR%%/htdocs/modules/banners/language/english/common.php
+%%WWWDIR%%/htdocs/modules/banners/language/english/index.html
+%%WWWDIR%%/htdocs/modules/banners/language/english/mail_template/banner_new.tpl
+%%WWWDIR%%/htdocs/modules/banners/language/english/mail_template/client_new.tpl
+%%WWWDIR%%/htdocs/modules/banners/language/english/mail_template/index.html
+%%WWWDIR%%/htdocs/modules/banners/language/english/main.php
+%%WWWDIR%%/htdocs/modules/banners/language/english/modinfo.php
+%%WWWDIR%%/htdocs/modules/banners/language/index.html
+%%WWWDIR%%/htdocs/modules/banners/module.css
+%%WWWDIR%%/htdocs/modules/banners/plugins/function.banners.php
+%%WWWDIR%%/htdocs/modules/banners/plugins/index.html
+%%WWWDIR%%/htdocs/modules/banners/templates/banners_admin_banner.html
+%%WWWDIR%%/htdocs/modules/banners/templates/banners_admin_client.html
+%%WWWDIR%%/htdocs/modules/banners/templates/banners_admin_position.html
+%%WWWDIR%%/htdocs/modules/banners/templates/banners_banner.html
+%%WWWDIR%%/htdocs/modules/banners/templates/banners_client.html
+%%WWWDIR%%/htdocs/modules/banners/templates/banners_requirements.html
+%%WWWDIR%%/htdocs/modules/banners/templates/index.html
+%%WWWDIR%%/htdocs/modules/content/admin/about.php
+%%WWWDIR%%/htdocs/modules/content/admin/admin_header.php
+%%WWWDIR%%/htdocs/modules/content/admin/content.php
+%%WWWDIR%%/htdocs/modules/content/admin/index.php
+%%WWWDIR%%/htdocs/modules/content/admin/menu.php
+%%WWWDIR%%/htdocs/modules/content/blocks/content_display.php
+%%WWWDIR%%/htdocs/modules/content/blocks/content_menu.php
+%%WWWDIR%%/htdocs/modules/content/blocks/index.html
+%%WWWDIR%%/htdocs/modules/content/class/Content.php
+%%WWWDIR%%/htdocs/modules/content/class/ContentHandler.php
+%%WWWDIR%%/htdocs/modules/content/class/index.html
+%%WWWDIR%%/htdocs/modules/content/comment_delete.php
+%%WWWDIR%%/htdocs/modules/content/comment_edit.php
+%%WWWDIR%%/htdocs/modules/content/comment_new.php
+%%WWWDIR%%/htdocs/modules/content/comment_post.php
+%%WWWDIR%%/htdocs/modules/content/comment_reply.php
+%%WWWDIR%%/htdocs/modules/content/content.php
+%%WWWDIR%%/htdocs/modules/content/docs/changelog.txt
+%%WWWDIR%%/htdocs/modules/content/docs/install.txt
+%%WWWDIR%%/htdocs/modules/content/docs/license.txt
+%%WWWDIR%%/htdocs/modules/content/footer.php
+%%WWWDIR%%/htdocs/modules/content/header.php
+%%WWWDIR%%/htdocs/modules/content/icms_version.php
+%%WWWDIR%%/htdocs/modules/content/images/00-time.gif
+%%WWWDIR%%/htdocs/modules/content/images/00-title.gif
+%%WWWDIR%%/htdocs/modules/content/images/blank.png
+%%WWWDIR%%/htdocs/modules/content/images/comments.gif
+%%WWWDIR%%/htdocs/modules/content/images/content-help.png
+%%WWWDIR%%/htdocs/modules/content/images/content.png
+%%WWWDIR%%/htdocs/modules/content/images/cssbutton.gif
+%%WWWDIR%%/htdocs/modules/content/images/icon_big.png
+%%WWWDIR%%/htdocs/modules/content/images/icon_small.png
+%%WWWDIR%%/htdocs/modules/content/images/index.html
+%%WWWDIR%%/htdocs/modules/content/images/rss.png
+%%WWWDIR%%/htdocs/modules/content/images/viewsubs.gif
+%%WWWDIR%%/htdocs/modules/content/include/comment.inc.php
+%%WWWDIR%%/htdocs/modules/content/include/common.php
+%%WWWDIR%%/htdocs/modules/content/include/content.css
+%%WWWDIR%%/htdocs/modules/content/include/index.html
+%%WWWDIR%%/htdocs/modules/content/include/menu.css
+%%WWWDIR%%/htdocs/modules/content/include/menu.js
+%%WWWDIR%%/htdocs/modules/content/include/menu_rtl.css
+%%WWWDIR%%/htdocs/modules/content/include/notification.inc.php
+%%WWWDIR%%/htdocs/modules/content/include/onupdate.inc.php
+%%WWWDIR%%/htdocs/modules/content/include/requirements.php
+%%WWWDIR%%/htdocs/modules/content/include/search.inc.php
+%%WWWDIR%%/htdocs/modules/content/index.php
+%%WWWDIR%%/htdocs/modules/content/language/english/admin.php
+%%WWWDIR%%/htdocs/modules/content/language/english/blocks.php
+%%WWWDIR%%/htdocs/modules/content/language/english/common.php
+%%WWWDIR%%/htdocs/modules/content/language/english/index.html
+%%WWWDIR%%/htdocs/modules/content/language/english/mail_template/global_content_published.tpl
+%%WWWDIR%%/htdocs/modules/content/language/english/mail_template/index.html
+%%WWWDIR%%/htdocs/modules/content/language/english/main.php
+%%WWWDIR%%/htdocs/modules/content/language/english/modinfo.php
+%%WWWDIR%%/htdocs/modules/content/language/index.html
+%%WWWDIR%%/htdocs/modules/content/module.css
+%%WWWDIR%%/htdocs/modules/content/module_rtl.css
+%%WWWDIR%%/htdocs/modules/content/notification_update.php
+%%WWWDIR%%/htdocs/modules/content/rss.php
+%%WWWDIR%%/htdocs/modules/content/templates/blocks/content_content_display.html
+%%WWWDIR%%/htdocs/modules/content/templates/blocks/content_content_menu.html
+%%WWWDIR%%/htdocs/modules/content/templates/blocks/index.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_admin_content.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_content.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_content_menu_structure.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_footer.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_header.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_index.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_requirements.html
+%%WWWDIR%%/htdocs/modules/content/templates/content_single_content.html
+%%WWWDIR%%/htdocs/modules/content/templates/index.html
 %%WWWDIR%%/htdocs/modules/index.html
+%%WWWDIR%%/htdocs/modules/profile/activate.php
+%%WWWDIR%%/htdocs/modules/profile/admin/about.php
+%%WWWDIR%%/htdocs/modules/profile/admin/admin_header.php
+%%WWWDIR%%/htdocs/modules/profile/admin/audio.php
+%%WWWDIR%%/htdocs/modules/profile/admin/category.php
+%%WWWDIR%%/htdocs/modules/profile/admin/field.php
+%%WWWDIR%%/htdocs/modules/profile/admin/finduser.php
+%%WWWDIR%%/htdocs/modules/profile/admin/index.html
+%%WWWDIR%%/htdocs/modules/profile/admin/menu.php
+%%WWWDIR%%/htdocs/modules/profile/admin/permissions.php
+%%WWWDIR%%/htdocs/modules/profile/admin/pictures.php
+%%WWWDIR%%/htdocs/modules/profile/admin/regstep.php
+%%WWWDIR%%/htdocs/modules/profile/admin/tribes.php
+%%WWWDIR%%/htdocs/modules/profile/admin/tribeuser.php
+%%WWWDIR%%/htdocs/modules/profile/admin/user.php
+%%WWWDIR%%/htdocs/modules/profile/admin/videos.php
+%%WWWDIR%%/htdocs/modules/profile/admin/visibility.php
+%%WWWDIR%%/htdocs/modules/profile/assets/audioplayers/dewplayer.swf
+%%WWWDIR%%/htdocs/modules/profile/assets/audioplayers/index.html
+%%WWWDIR%%/htdocs/modules/profile/assets/css/index.html
+%%WWWDIR%%/htdocs/modules/profile/assets/css/profile.css
+%%WWWDIR%%/htdocs/modules/profile/assets/css/profile_rtl.css
+%%WWWDIR%%/htdocs/modules/profile/assets/index.html
+%%WWWDIR%%/htdocs/modules/profile/audio.php
+%%WWWDIR%%/htdocs/modules/profile/blocks/blocks.php
+%%WWWDIR%%/htdocs/modules/profile/blocks/index.html
+%%WWWDIR%%/htdocs/modules/profile/changemail.php
+%%WWWDIR%%/htdocs/modules/profile/changepass.php
+%%WWWDIR%%/htdocs/modules/profile/class/Audio.php
+%%WWWDIR%%/htdocs/modules/profile/class/AudioHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Category.php
+%%WWWDIR%%/htdocs/modules/profile/class/CategoryHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Configs.php
+%%WWWDIR%%/htdocs/modules/profile/class/ConfigsHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Field.php
+%%WWWDIR%%/htdocs/modules/profile/class/FieldHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Friendship.php
+%%WWWDIR%%/htdocs/modules/profile/class/FriendshipHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Pictures.php
+%%WWWDIR%%/htdocs/modules/profile/class/PicturesHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Profile.php
+%%WWWDIR%%/htdocs/modules/profile/class/ProfileHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Regstep.php
+%%WWWDIR%%/htdocs/modules/profile/class/RegstepHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Smartuser.php
+%%WWWDIR%%/htdocs/modules/profile/class/Tribepost.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribepostHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Tribes.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribesHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Tribetopic.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribetopicHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Tribeuser.php
+%%WWWDIR%%/htdocs/modules/profile/class/TribeuserHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Videos.php
+%%WWWDIR%%/htdocs/modules/profile/class/VideosHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Visibility.php
+%%WWWDIR%%/htdocs/modules/profile/class/VisibilityHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/Visitors.php
+%%WWWDIR%%/htdocs/modules/profile/class/VisitorsHandler.php
+%%WWWDIR%%/htdocs/modules/profile/class/index.html
+%%WWWDIR%%/htdocs/modules/profile/comment_delete.php
+%%WWWDIR%%/htdocs/modules/profile/comment_edit.php
+%%WWWDIR%%/htdocs/modules/profile/comment_new.php
+%%WWWDIR%%/htdocs/modules/profile/comment_post.php
+%%WWWDIR%%/htdocs/modules/profile/comment_reply.php
+%%WWWDIR%%/htdocs/modules/profile/configs.php
+%%WWWDIR%%/htdocs/modules/profile/docs/changelog.txt
+%%WWWDIR%%/htdocs/modules/profile/docs/index.html
+%%WWWDIR%%/htdocs/modules/profile/docs/license.txt
+%%WWWDIR%%/htdocs/modules/profile/edituser.php
+%%WWWDIR%%/htdocs/modules/profile/footer.php
+%%WWWDIR%%/htdocs/modules/profile/friendship.php
+%%WWWDIR%%/htdocs/modules/profile/header.php
+%%WWWDIR%%/htdocs/modules/profile/icms_version.php
+%%WWWDIR%%/htdocs/modules/profile/images/admin/audio_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/audio_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/categories_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/categories_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/fields_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/fields_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/findusers_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/findusers_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/merge.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/permissions_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/permissions_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/pictures_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/pictures_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/regstep_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/regstep_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/tribes_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/tribes_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/tribeusers_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/tribeusers_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/users_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/users_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/videos_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/videos_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/visibility_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/admin/visibility_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/audio.gif
+%%WWWDIR%%/htdocs/modules/profile/images/avatar.gif
+%%WWWDIR%%/htdocs/modules/profile/images/blank.gif
+%%WWWDIR%%/htdocs/modules/profile/images/blank18.png
+%%WWWDIR%%/htdocs/modules/profile/images/comments.gif
+%%WWWDIR%%/htdocs/modules/profile/images/configs.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/aim.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/bio.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/birthday.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/clock.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/comments.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/email.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/house.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/icq.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/interests.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/msnm.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/occ.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/openid.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/rank.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/signature.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/url.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/username.gif
+%%WWWDIR%%/htdocs/modules/profile/images/field/ym.gif
+%%WWWDIR%%/htdocs/modules/profile/images/friends.gif
+%%WWWDIR%%/htdocs/modules/profile/images/icon_big.png
+%%WWWDIR%%/htdocs/modules/profile/images/icon_small.png
+%%WWWDIR%%/htdocs/modules/profile/images/index.html
+%%WWWDIR%%/htdocs/modules/profile/images/lock.gif
+%%WWWDIR%%/htdocs/modules/profile/images/mapsgoogle.gif
+%%WWWDIR%%/htdocs/modules/profile/images/noavatar.gif
+%%WWWDIR%%/htdocs/modules/profile/images/pictures.gif
+%%WWWDIR%%/htdocs/modules/profile/images/pm.gif
+%%WWWDIR%%/htdocs/modules/profile/images/profile-start.gif
+%%WWWDIR%%/htdocs/modules/profile/images/search.png
+%%WWWDIR%%/htdocs/modules/profile/images/toggle.png
+%%WWWDIR%%/htdocs/modules/profile/images/tribes.gif
+%%WWWDIR%%/htdocs/modules/profile/images/unlock.gif
+%%WWWDIR%%/htdocs/modules/profile/images/video.gif
+%%WWWDIR%%/htdocs/modules/profile/include/autotasks/index.html
+%%WWWDIR%%/htdocs/modules/profile/include/autotasks/reactivate_suspended.php
+%%WWWDIR%%/htdocs/modules/profile/include/common.php
+%%WWWDIR%%/htdocs/modules/profile/include/forms.php
+%%WWWDIR%%/htdocs/modules/profile/include/index.html
+%%WWWDIR%%/htdocs/modules/profile/include/notification.inc.php
+%%WWWDIR%%/htdocs/modules/profile/include/onupdate.inc.php
+%%WWWDIR%%/htdocs/modules/profile/include/requirements.php
+%%WWWDIR%%/htdocs/modules/profile/include/search.inc.php
+%%WWWDIR%%/htdocs/modules/profile/index.php
+%%WWWDIR%%/htdocs/modules/profile/language/english/admin.php
+%%WWWDIR%%/htdocs/modules/profile/language/english/blocks.php
+%%WWWDIR%%/htdocs/modules/profile/language/english/common.php
+%%WWWDIR%%/htdocs/modules/profile/language/english/index.html
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/activated.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/adminactivate.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/changemail.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/index.html
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/notify_audio_new_audio.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/notify_pictures_new_picutre.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/notify_tribepost_new_tribepost.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/notify_tribetopic_new_tribetopic.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/notify_videos_new_video.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/mail_template/register.tpl
+%%WWWDIR%%/htdocs/modules/profile/language/english/main.php
+%%WWWDIR%%/htdocs/modules/profile/language/english/modinfo.php
+%%WWWDIR%%/htdocs/modules/profile/language/index.html
+%%WWWDIR%%/htdocs/modules/profile/notification_update.php
+%%WWWDIR%%/htdocs/modules/profile/pictures.php
+%%WWWDIR%%/htdocs/modules/profile/register.php
+%%WWWDIR%%/htdocs/modules/profile/search.php
+%%WWWDIR%%/htdocs/modules/profile/templates/blocks/index.html
+%%WWWDIR%%/htdocs/modules/profile/templates/blocks/profile_block_friends.html
+%%WWWDIR%%/htdocs/modules/profile/templates/blocks/profile_block_usermenu.html
+%%WWWDIR%%/htdocs/modules/profile/templates/index.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_audio.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_category.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_field.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_pictures.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_regstep.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_tribes.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_tribeuser.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_videos.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_admin_visibility.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_audio.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_changemail.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_changepass.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_configs.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_footer.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_friendship.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_header.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_index.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_pictures.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_register.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_requirements.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_results.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_search.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_tribes.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_userinfo.html
+%%WWWDIR%%/htdocs/modules/profile/templates/profile_videos.html
+%%WWWDIR%%/htdocs/modules/profile/tribes.php
+%%WWWDIR%%/htdocs/modules/profile/userinfo.php
+%%WWWDIR%%/htdocs/modules/profile/videos.php
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/class/adsense.php
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/class/index.html
 %%WWWDIR%%/htdocs/modules/system/admin/adsense/images/adsense.png
@@ -4071,12 +4324,13 @@
 @dirrm %%WWWDIR%%/htdocs/editors/tinymce
 @dirrm %%WWWDIR%%/htdocs/editors
 @dirrm %%WWWDIR%%/htdocs/images/banners
-@dirrm %%WWWDIR%%/htdocs/images/crystal/actions
-@dirrm %%WWWDIR%%/htdocs/images/crystal
 @dirrm %%WWWDIR%%/htdocs/images/flags
 @dirrm %%WWWDIR%%/htdocs/images/icons/english
 @dirrm %%WWWDIR%%/htdocs/images/icons/social
 @dirrm %%WWWDIR%%/htdocs/images/icons
+@dirrm %%WWWDIR%%/htdocs/images/kfaenza/actions
+@dirrm %%WWWDIR%%/htdocs/images/kfaenza/doc
+@dirrm %%WWWDIR%%/htdocs/images/kfaenza
 @dirrm %%WWWDIR%%/htdocs/images/search
 @dirrm %%WWWDIR%%/htdocs/images/subject
 @dirrm %%WWWDIR%%/htdocs/images
@@ -4124,11 +4378,6 @@
 @dirrm %%WWWDIR%%/htdocs/language/english/mail_template
 @dirrm %%WWWDIR%%/htdocs/language/english
 @dirrm %%WWWDIR%%/htdocs/language
-@dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api/__filesource
-@dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api/geshi/core
-@dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api/geshi
-@dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api/media/images
-@dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api/media
 @dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs/api
 @dirrm %%WWWDIR%%/htdocs/libraries/geshi/docs
 @dirrm %%WWWDIR%%/htdocs/libraries/geshi/geshi
@@ -4283,6 +4532,47 @@
 @dirrm %%WWWDIR%%/htdocs/libraries/xml/rss
 @dirrm %%WWWDIR%%/htdocs/libraries/xml
 @dirrm %%WWWDIR%%/htdocs/libraries
+@dirrm %%WWWDIR%%/htdocs/modules/banners/admin
+@dirrm %%WWWDIR%%/htdocs/modules/banners/class
+@dirrm %%WWWDIR%%/htdocs/modules/banners/docs
+@dirrm %%WWWDIR%%/htdocs/modules/banners/images
+@dirrm %%WWWDIR%%/htdocs/modules/banners/include
+@dirrm %%WWWDIR%%/htdocs/modules/banners/language/english/mail_template
+@dirrm %%WWWDIR%%/htdocs/modules/banners/language/english
+@dirrm %%WWWDIR%%/htdocs/modules/banners/language
+@dirrm %%WWWDIR%%/htdocs/modules/banners/plugins
+@dirrm %%WWWDIR%%/htdocs/modules/banners/templates
+@dirrm %%WWWDIR%%/htdocs/modules/banners
+@dirrm %%WWWDIR%%/htdocs/modules/content/admin
+@dirrm %%WWWDIR%%/htdocs/modules/content/blocks
+@dirrm %%WWWDIR%%/htdocs/modules/content/class
+@dirrm %%WWWDIR%%/htdocs/modules/content/docs
+@dirrm %%WWWDIR%%/htdocs/modules/content/images
+@dirrm %%WWWDIR%%/htdocs/modules/content/include
+@dirrm %%WWWDIR%%/htdocs/modules/content/language/english/mail_template
+@dirrm %%WWWDIR%%/htdocs/modules/content/language/english
+@dirrm %%WWWDIR%%/htdocs/modules/content/language
+@dirrm %%WWWDIR%%/htdocs/modules/content/templates/blocks
+@dirrm %%WWWDIR%%/htdocs/modules/content/templates
+@dirrm %%WWWDIR%%/htdocs/modules/content
+@dirrm %%WWWDIR%%/htdocs/modules/profile/admin
+@dirrm %%WWWDIR%%/htdocs/modules/profile/assets/audioplayers
+@dirrm %%WWWDIR%%/htdocs/modules/profile/assets/css
+@dirrm %%WWWDIR%%/htdocs/modules/profile/assets
+@dirrm %%WWWDIR%%/htdocs/modules/profile/blocks
+@dirrm %%WWWDIR%%/htdocs/modules/profile/class
+@dirrm %%WWWDIR%%/htdocs/modules/profile/docs
+@dirrm %%WWWDIR%%/htdocs/modules/profile/images/admin
+@dirrm %%WWWDIR%%/htdocs/modules/profile/images/field
+@dirrm %%WWWDIR%%/htdocs/modules/profile/images
+@dirrm %%WWWDIR%%/htdocs/modules/profile/include/autotasks
+@dirrm %%WWWDIR%%/htdocs/modules/profile/include
+@dirrm %%WWWDIR%%/htdocs/modules/profile/language/english/mail_template
+@dirrm %%WWWDIR%%/htdocs/modules/profile/language/english
+@dirrm %%WWWDIR%%/htdocs/modules/profile/language
+@dirrm %%WWWDIR%%/htdocs/modules/profile/templates/blocks
+@dirrm %%WWWDIR%%/htdocs/modules/profile/templates
+@dirrm %%WWWDIR%%/htdocs/modules/profile
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/adsense/class
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/adsense/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/adsense
