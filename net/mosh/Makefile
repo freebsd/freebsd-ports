@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -19,11 +18,11 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Pty.pm:${PORTSDIR}/devel/p5-IO-Tty
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/typeof/typeof.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost=${LOCALBASE} --with-utempter
+CONFIGURE_ARGS=	--with-utempter
+INSTALL_TARGET=	install-strip
 
 LATEST_LINK=	mosh-term
 
