@@ -15,6 +15,7 @@
 %%TOOLBOXDIR%%/demos/wden.dem.sce
 %%TOOLBOXDIR%%/etc/swt.quit
 %%TOOLBOXDIR%%/etc/swt.start
+%%HELP%%%%TOOLBOXDIR%%/jar/scilab_en_US_help.jar
 %%TOOLBOXDIR%%/loader.sce
 %%TOOLBOXDIR%%/macros/ShapeAsRow.bin
 %%TOOLBOXDIR%%/macros/ShapeAsRow.sci
@@ -61,6 +62,7 @@
 @dirrm %%TOOLBOXDIR%%/sci_gateway/c
 @dirrm %%TOOLBOXDIR%%/sci_gateway
 @dirrm %%TOOLBOXDIR%%/macros
+%%HELP%%@dirrm %%TOOLBOXDIR%%/jar
 @dirrm %%TOOLBOXDIR%%/etc
 @dirrm %%TOOLBOXDIR%%/demos/image
 @dirrm %%TOOLBOXDIR%%/demos
