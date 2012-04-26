@@ -1,5 +1,5 @@
---- src/osgPlugins/xine/video_out_rgb.c.orig
-+++ src/osgPlugins/xine/video_out_rgb.c
+--- src/osgPlugins/xine/video_out_rgb.c.orig	2012-02-09 20:42:47.000000000 +0400
++++ src/osgPlugins/xine/video_out_rgb.c	2012-03-06 23:06:37.317706687 +0400
 @@ -51,6 +51,11 @@
  #include "xine/video_out.h"
  #include "video_out_rgb.h"
@@ -12,7 +12,7 @@
  
  #define THIS  "video_out_rgb"
  
-@@ -2237,9 +2242,15 @@ rgbout_frame_dispose(vo_frame_t* vo_fram
+@@ -2237,9 +2242,15 @@
  
  	EVAL(vo_frame != NULL)
  
@@ -28,7 +28,7 @@
  	free(frame);
  
  FAILURE:
-@@ -2303,9 +2314,15 @@ rgbout_update_frame_format(vo_driver_t* 
+@@ -2303,9 +2314,15 @@
  	this->frame_width      = frame->width;
  	this->frame_height     = frame->height;
  
@@ -44,7 +44,7 @@
  
  CHECK_FRAME:
  	switch(frame->format)
-@@ -2322,6 +2339,7 @@ CHECK_FRAME:
+@@ -2322,6 +2339,7 @@
  			frame->vo_frame.pitches[0] = (frame->width > 7) ? frame->width : 8;
  			frame->vo_frame.pitches[1] = (frame->width > 15) ? (frame->width >> 1) : 8;
  			frame->vo_frame.pitches[2] = frame->vo_frame.pitches[1];
@@ -52,7 +52,7 @@
  			frame->vo_frame.base[0] = (uint8_t*) xine_xmalloc_aligned(16,
  							 	frame->vo_frame.pitches[0] * frame->height,
  							 	&(frame->chunk[0]));
-@@ -2331,6 +2349,14 @@ CHECK_FRAME:
+@@ -2331,6 +2349,14 @@
  			frame->vo_frame.base[2] = (uint8_t*) xine_xmalloc_aligned(16,
  								frame->vo_frame.pitches[2] * (frame->height >> 1),
  								&(frame->chunk[2]));
@@ -67,7 +67,7 @@
  		}
  		break;
  
-@@ -2346,9 +2372,14 @@ CHECK_FRAME:
+@@ -2346,9 +2372,14 @@
  			frame->vo_frame.pitches[0] = (frame->width > 3) ? (frame->width << 1) : 8;
  			frame->vo_frame.pitches[1] = 0;
  			frame->vo_frame.pitches[2] = 0;
@@ -82,17 +82,3 @@
  			frame->vo_frame.base[1] = NULL;
  			frame->vo_frame.base[2] = NULL;
  		}
-@@ -2769,8 +2800,13 @@ init_class(xine_t* xine, void* vo_visual
- 	clear(rgb_class, sizeof(rgbout_class_t));
- 
- 	rgb_class->driver_class.open_plugin     = open_plugin;
-+#if XINE_MAJOR_VERSION < 1 || (XINE_MAJOR_VERSION == 1 && XINE_MINOR_VERSION < 2)
- 	rgb_class->driver_class.get_identifier  = get_identifier;
- 	rgb_class->driver_class.get_description = get_description;
-+#else
-+	rgb_class->driver_class.identifier      = get_identifier(NULL);
-+	rgb_class->driver_class.description     = get_description(NULL);
-+#endif
- 	rgb_class->driver_class.dispose         = dispose_class;
- 
- 	return(rgb_class);

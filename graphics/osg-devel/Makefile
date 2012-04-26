@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.9.11
-PORTREVISION=	3
+PORTVERSION=	3.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,8 +31,8 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=71 \
-		OPENTHREADS_VERSION=2.5.0 \
+		OSG_SHLIBVER=90 \
+		OPENTHREADS_VERSION=2.6.0 \
 		OPENTHREADS_SHLIBVER=12
 
 PORTSCOUT=	limitw:1,odd
@@ -61,7 +60,7 @@ OPTIONS=	CURL     "Support for cURL"                 off \
 
 # GUI toolkits are only needed for building examples, which are not even installed
 FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL GtkGl # only for examples
-FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX GTA       # not in ports
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
 
 # options that affect FIND_PACKAGE
