@@ -13,7 +13,7 @@ MASTER_SITES=	http://perso.orange.fr/chamayou/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	kwin-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	KDE window decoration
 
 USE_BZIP2=	yes

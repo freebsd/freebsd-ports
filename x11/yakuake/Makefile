@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	x11 kde
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	Quake-style terminal emulator based on KDE's Konsole
 
 USE_AUTOTOOLS=	libtool
