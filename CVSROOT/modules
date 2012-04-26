@@ -1370,6 +1370,7 @@ c-icap                          ports/www/c-icap
 c-nocem                         ports/news/c-nocem
 c-sig                           ports/mail/c-sig
 c-sig-emacs21                   ports/mail/c-sig-emacs21
+c-unit                          ports/devel/c-unit
 c2html                          ports/textproc/c2html
 c2ps-a4                         ports/print/c2ps-a4
 c2ps-letter                     ports/print/c2ps-letter
@@ -1522,6 +1523,7 @@ centerim-devel                  ports/net-im/centerim-devel
 cfdg                            ports/graphics/cfdg
 cfengine                        ports/sysutils/cfengine
 cfengine3                       ports/sysutils/cfengine3
+cfengine3-legacy                ports/sysutils/cfengine3-legacy
 cfitsio                         ports/astro/cfitsio
 cflow                           ports/devel/cflow
 cflow2vcg                       ports/devel/cflow2vcg
@@ -8459,6 +8461,7 @@ libsvm                          ports/science/libsvm
 libsvm-python                   ports/science/libsvm-python
 libsx                           ports/x11/libsx
 libsynaptics                    ports/x11/libsynaptics
+libsysinfo                      ports/devel/libsysinfo
 libtai                          ports/devel/libtai
 libtap                          ports/devel/libtap
 libtar                          ports/devel/libtar
@@ -13443,6 +13446,7 @@ p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
 p5-MooseX-Aliases               ports/devel/p5-MooseX-Aliases
+p5-MooseX-App                   ports/devel/p5-MooseX-App
 p5-MooseX-App-Cmd               ports/devel/p5-MooseX-App-Cmd
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-Attribute-Chained     ports/devel/p5-MooseX-Attribute-Chained
@@ -17956,6 +17960,7 @@ p5-moose                        ports/devel/p5-Moose
 p5-moose-autobox                ports/devel/p5-Moose-Autobox
 p5-moose-policy                 ports/devel/p5-Moose-Policy
 p5-moosex-aliases               ports/devel/p5-MooseX-Aliases
+p5-moosex-app                   ports/devel/p5-MooseX-App
 p5-moosex-app-cmd               ports/devel/p5-MooseX-App-Cmd
 p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attribute-chained     ports/devel/p5-MooseX-Attribute-Chained
@@ -21631,6 +21636,7 @@ plib                            ports/x11-toolkits/plib
 pligg                           ports/www/pligg
 plman                           ports/math/plman
 pload                           ports/net/pload
+plone                           ports/www/plone
 plonx                           ports/games/plonx
 plopfolio                       ports/deskutils/plopfolio
 plor                            ports/news/plor
