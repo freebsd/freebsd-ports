@@ -5,14 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mapnik2
-PORTVERSION=	2.0.0
+PORTNAME=	mapnik
+PORTVERSION=	2.0.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
-MASTER_SITES=	BERLIOS
-MASTER_SITE_SUBDIR=	mapnik
-DISTNAME=	mapnik-${PORTVERSION}
+MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	littlesavage@rambler.ru
 COMMENT=	A Free Toolkit For Developing Mapping Applications
 
 LICENSE=	LGPL21
@@ -37,8 +36,6 @@ USE_SCONS=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig libxml2
 MAKE_JOBS_SAFE=	yes
-
-CONFLICTS=	mapnik-1.*
 
 INPUT_PLUGINS=	raster shape
 
