@@ -154,6 +154,7 @@
     SUBDIR += udns
     SUBDIR += unbound
     SUBDIR += updatedd
+    SUBDIR += validns
     SUBDIR += vizone
     SUBDIR += walker
     SUBDIR += zkt
