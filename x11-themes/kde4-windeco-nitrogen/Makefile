@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-windeco-
 DISTNAME=	99551-${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	KDE4 window decoration
 
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	20798-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	KDE style focused on customization
 
 USE_BZIP2=	yes

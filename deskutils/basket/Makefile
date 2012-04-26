@@ -10,7 +10,7 @@ PORTREVISION=	6
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://basket.kde.org/downloads/
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	Desktop organization tool
 
 USE_KDELIBS_VER=3

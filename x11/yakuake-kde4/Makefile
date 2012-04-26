@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	Drop-down terminal emulator for KDE
 
 LICENSE=	GPLv2

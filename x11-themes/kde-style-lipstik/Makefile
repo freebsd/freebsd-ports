@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	18223-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	Modified Plastik KDE style
 
 USE_KDEBASE_VER=3

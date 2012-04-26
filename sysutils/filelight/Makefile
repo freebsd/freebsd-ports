@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	Represent a file system as a set of concentric segmented-rings
 
 USE_KDELIBS_VER=3

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.p0z3r.org/downloads/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	smooth-blend-${PORTVERSION}
 
-MAINTAINER=	decept0@gmail.com
+MAINTAINER=	shanjobe@gmail.com
 COMMENT=	A window decoration for KDE
 
 CONFLICTS=	kdeartwork-3.5.[0-9]*
