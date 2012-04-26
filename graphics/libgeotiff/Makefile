@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
@@ -20,7 +20,9 @@ LIB_DEPENDS=	jbig:${PORTSDIR}/graphics/jbigkit \
 		proj:${PORTSDIR}/graphics/proj \
 		tiff:${PORTSDIR}/graphics/tiff
 
-CONFIGURE_ARGS=	--disable-doxygen-doc \
+CPPFLAGS+=	-fPIC
+CONFIGURE_ARGS=	--datadir=${DATADIR} \
+		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-html \
 		--disable-doxygen-man \
@@ -31,10 +33,6 @@ CONFIGURE_ARGS=	--disable-doxygen-doc \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
+MAN1=		listgeo.1
 
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
