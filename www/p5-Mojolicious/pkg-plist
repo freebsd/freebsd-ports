@@ -29,8 +29,6 @@
 %%SITE_PERL%%/Mojo/IOLoop/Delay.pm
 %%SITE_PERL%%/Mojo/IOLoop/Server.pm
 %%SITE_PERL%%/Mojo/IOLoop/Stream.pm
-%%SITE_PERL%%/Mojo/IOWatcher.pm
-%%SITE_PERL%%/Mojo/IOWatcher/EV.pm
 %%SITE_PERL%%/Mojo/JSON.pm
 %%SITE_PERL%%/Mojo/JSON/Pointer.pm
 %%SITE_PERL%%/Mojo/Loader.pm
@@ -40,6 +38,9 @@
 %%SITE_PERL%%/Mojo/Message/Response.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
+%%SITE_PERL%%/Mojo/Reactor.pm
+%%SITE_PERL%%/Mojo/Reactor/EV.pm
+%%SITE_PERL%%/Mojo/Reactor/Poll.pm
 %%SITE_PERL%%/Mojo/Server.pm
 %%SITE_PERL%%/Mojo/Server/CGI.pm
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
@@ -100,6 +101,7 @@
 %%SITE_PERL%%/Mojolicious/Routes.pm
 %%SITE_PERL%%/Mojolicious/Routes/Match.pm
 %%SITE_PERL%%/Mojolicious/Routes/Pattern.pm
+%%SITE_PERL%%/Mojolicious/Routes/Route.pm
 %%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
@@ -159,9 +161,9 @@ bin/morbo
 @dirrm %%SITE_PERL%%/Mojo/UserAgent
 @dirrm %%SITE_PERL%%/Mojo/Transaction
 @dirrm %%SITE_PERL%%/Mojo/Server
+@dirrm %%SITE_PERL%%/Mojo/Reactor
 @dirrm %%SITE_PERL%%/Mojo/Message
 @dirrm %%SITE_PERL%%/Mojo/JSON
-@dirrm %%SITE_PERL%%/Mojo/IOWatcher
 @dirrm %%SITE_PERL%%/Mojo/IOLoop
 @dirrm %%SITE_PERL%%/Mojo/DOM
 @dirrm %%SITE_PERL%%/Mojo/Cookie
