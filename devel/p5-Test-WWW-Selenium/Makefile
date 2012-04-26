@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-WWW-Selenium
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,9 +17,7 @@ COMMENT=	Perl driver and test library for Selenium Remote Control (SRC)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-REPL>=0:${PORTSDIR}/devel/p5-Devel-REPL \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
@@ -28,8 +26,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Devel::REPL::Plugin::Selenium.3 \
-		Test::WWW::Selenium.3 \
+MAN3=		Test::WWW::Selenium.3 \
 		WWW::Selenium::Util.3 \
 		WWW::Selenium.3
 
