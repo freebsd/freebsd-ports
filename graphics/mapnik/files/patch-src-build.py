@@ -1,27 +1,30 @@
---- src/build.py.orig	2011-09-26 14:30:13.000000000 +0400
-+++ src/build.py	2011-10-08 19:52:17.875391466 +0400
-@@ -79,6 +79,8 @@
+--- src/build.py.orig	2012-04-11 14:29:19.000000000 +0400
++++ src/build.py	2012-04-11 14:34:13.000000000 +0400
+@@ -80,6 +80,8 @@
  
  if env['PLATFORM'] == 'Darwin':
-     mapnik_libname = 'libmapnik2.dylib'
+     mapnik_libname = 'libmapnik.dylib'
 +elif env['PLATFORM'] == 'FreeBSD':
-+    mapnik_libname = 'libmapnik2.so.' + ("%d" % (ABI_VERSION[0])) 
++    mapnik_libname = 'libmapnik.so.' + ("%d" % int(ABI_VERSION[0]))
  else:
-     mapnik_libname = 'libmapnik2.so.' + ("%d.%d" % (ABI_VERSION[0],ABI_VERSION[1])) 
+     mapnik_libname = 'libmapnik.so.' + ("%d.%d" % (int(ABI_VERSION[0]),int(ABI_VERSION[1])))
  
-@@ -320,7 +322,10 @@
+@@ -326,8 +328,12 @@
+         os.symlink(os.path.basename(src), trgt)
  
      major, minor, micro = ABI_VERSION
-     
--    soFile = "%s.%d.%d.%d" % (os.path.basename(str(mapnik[0])), major, minor, micro)
+-    
+-    soFile = "%s.%d.%d.%d" % (os.path.basename(str(mapnik[0])), int(major), int(minor), int(micro))
++
 +    if env['PLATFORM'] == 'FreeBSD':
-+        soFile = "%s.%d" % (os.path.basename(str(mapnik[0])), major)
++        soFile = "%s.%d" % (os.path.basename(str(mapnik[0])), int(major))
 +    else:
-+        soFile = "%s.%d.%d.%d" % (os.path.basename(str(mapnik[0])), major, minor, micro)
++        soFile = "%s.%d.%d.%d" % (os.path.basename(str(mapnik[0])), int(major), int(minor), int(micro))
++   
      target = os.path.join(env['MAPNIK_LIB_BASE_DEST'], soFile)
      
      if 'uninstall' not in COMMAND_LINE_TARGETS:
-@@ -335,13 +340,17 @@
+@@ -342,13 +348,17 @@
      target2 = os.path.join(env['MAPNIK_LIB_BASE_DEST'], os.path.basename(str(mapnik[0])))
      if 'uninstall' not in COMMAND_LINE_TARGETS:
          if 'install' in COMMAND_LINE_TARGETS:

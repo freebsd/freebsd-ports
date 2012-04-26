@@ -93,6 +93,7 @@ include/mapnik/agg_rasterizer.hpp
 include/mapnik/box2d.hpp
 include/mapnik/css_color_grammar.hpp
 include/mapnik/css_color_grammar_deprecated.hpp
+include/mapnik/expression.hpp
 include/mapnik/expression_evaluator.hpp
 include/mapnik/expression_grammar.hpp
 include/mapnik/expression_node.hpp
@@ -146,56 +147,47 @@ include/mapnik/value_error.hpp
 include/mapnik/warp.hpp
 include/mapnik/wkt/wkt_factory.hpp
 include/mapnik/wkt/wkt_grammar.hpp
-lib/libmapnik2.so
-lib/libmapnik2.so.2
-%%GDAL%%lib/mapnik2/input/gdal.input
-%%OGR%%lib/mapnik2/input/ogr.input
-%%OSM%%lib/mapnik2/input/osm.input
-%%POSTGIS%%lib/mapnik2/input/postgis.input
-lib/mapnik2/input/raster.input
-lib/mapnik2/input/shape.input
-%%SQLITE%%lib/mapnik2/input/sqlite.input
-lib/mapnik2/fonts/unifont-5.1.20080907.ttf
-lib/mapnik2/fonts/DejaVuSerif-BoldItalic.ttf
-lib/mapnik2/fonts/DejaVuSerifCondensed-BoldItalic.ttf
-lib/mapnik2/fonts/DejaVuSerif-Italic.ttf
-lib/mapnik2/fonts/DejaVuSerifCondensed-Italic.ttf
-lib/mapnik2/fonts/DejaVuSansMono-Oblique.ttf
-lib/mapnik2/fonts/DejaVuSerifCondensed-Bold.ttf
-lib/mapnik2/fonts/DejaVuSansCondensed-Oblique.ttf
-lib/mapnik2/fonts/DejaVuSansCondensed-Bold.ttf
-lib/mapnik2/fonts/DejaVuSans-Oblique.ttf
-lib/mapnik2/fonts/DejaVuSansCondensed.ttf
-lib/mapnik2/fonts/DejaVuSansMono-Bold.ttf
-lib/mapnik2/fonts/DejaVuSans.ttf
-lib/mapnik2/fonts/DejaVuSans-Bold.ttf
-lib/mapnik2/fonts/DejaVuSans-ExtraLight.ttf
-lib/mapnik2/fonts/DejaVuSerif.ttf
-lib/mapnik2/fonts/DejaVuSerifCondensed.ttf
-lib/mapnik2/fonts/DejaVuSansCondensed-BoldOblique.ttf
-lib/mapnik2/fonts/DejaVuSansMono-BoldOblique.ttf
-lib/mapnik2/fonts/DejaVuSans-BoldOblique.ttf
-lib/mapnik2/fonts/DejaVuSerif-Bold.ttf
-lib/mapnik2/fonts/DejaVuSansMono.ttf
+lib/libmapnik.so
+lib/libmapnik.so.2
+%%GDAL%%lib/mapnik/input/gdal.input
+%%OGR%%lib/mapnik/input/ogr.input
+%%OSM%%lib/mapnik/input/osm.input
+%%POSTGIS%%lib/mapnik/input/postgis.input
+lib/mapnik/input/raster.input
+lib/mapnik/input/shape.input
+%%SQLITE%%lib/mapnik/input/sqlite.input
+lib/mapnik/fonts/unifont-5.1.20080907.ttf
+lib/mapnik/fonts/DejaVuSerif-BoldItalic.ttf
+lib/mapnik/fonts/DejaVuSerifCondensed-BoldItalic.ttf
+lib/mapnik/fonts/DejaVuSerif-Italic.ttf
+lib/mapnik/fonts/DejaVuSerifCondensed-Italic.ttf
+lib/mapnik/fonts/DejaVuSansMono-Oblique.ttf
+lib/mapnik/fonts/DejaVuSerifCondensed-Bold.ttf
+lib/mapnik/fonts/DejaVuSansCondensed-Oblique.ttf
+lib/mapnik/fonts/DejaVuSansCondensed-Bold.ttf
+lib/mapnik/fonts/DejaVuSans-Oblique.ttf
+lib/mapnik/fonts/DejaVuSansCondensed.ttf
+lib/mapnik/fonts/DejaVuSansMono-Bold.ttf
+lib/mapnik/fonts/DejaVuSans.ttf
+lib/mapnik/fonts/DejaVuSans-Bold.ttf
+lib/mapnik/fonts/DejaVuSans-ExtraLight.ttf
+lib/mapnik/fonts/DejaVuSerif.ttf
+lib/mapnik/fonts/DejaVuSerifCondensed.ttf
+lib/mapnik/fonts/DejaVuSansCondensed-BoldOblique.ttf
+lib/mapnik/fonts/DejaVuSansMono-BoldOblique.ttf
+lib/mapnik/fonts/DejaVuSans-BoldOblique.ttf
+lib/mapnik/fonts/DejaVuSerif-Bold.ttf
+lib/mapnik/fonts/DejaVuSansMono.ttf
+%%PYTHON_SITELIBDIR%%/mapnik/__init__.py
+%%PYTHON_SITELIBDIR%%/mapnik/printing.py
+%%PYTHON_SITELIBDIR%%/mapnik/paths.py
+%%PYTHON_SITELIBDIR%%/mapnik/_mapnik.so
 %%PYTHON_SITELIBDIR%%/mapnik2/__init__.py
-%%PYTHON_SITELIBDIR%%/mapnik2/printing.py
-%%PYTHON_SITELIBDIR%%/mapnik2/paths.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/wms130.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/WMS.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/wms111.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/modserver.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/cgiserver.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/__init__.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/common.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/configparser.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/exceptions.py
-%%PYTHON_SITELIBDIR%%/mapnik2/ogcserver/wsgi.py
-%%PYTHON_SITELIBDIR%%/mapnik2/_mapnik2.so
-@dirrm %%PYTHON_SITELIBDIR%%/mapnik2/ogcserver
+@dirrm %%PYTHON_SITELIBDIR%%/mapnik
 @dirrm %%PYTHON_SITELIBDIR%%/mapnik2
-@dirrm lib/mapnik2/input
-@dirrm lib/mapnik2/fonts
-@dirrm lib/mapnik2
+@dirrm lib/mapnik/input
+@dirrm lib/mapnik/fonts
+@dirrm lib/mapnik
 @dirrm include/mapnik/grid
 @dirrm include/mapnik/svg
 @dirrm include/mapnik/wkt
