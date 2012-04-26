@@ -7,23 +7,19 @@
 
 PORTNAME=	fgrun
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A graphical frontend to run FlightGear Flight Simulator
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		osg.80:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	simgear>=2.4.0:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	simgear>=2.4.0:${PORTSDIR}/devel/simgear \
 		fgfs:${PORTSDIR}/games/flightgear
-
-.if defined(WITH_OSG_DEVEL)
-LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
-.else
-LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
-.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost="${LOCALBASE}"
