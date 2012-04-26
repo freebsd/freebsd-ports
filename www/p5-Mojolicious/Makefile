@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	2.61
+PORTVERSION=	2.89
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -52,8 +52,6 @@ MAN3=		Mojo.3 \
 		Mojo::IOLoop::Delay.3 \
 		Mojo::IOLoop::Server.3 \
 		Mojo::IOLoop::Stream.3 \
-		Mojo::IOWatcher.3 \
-		Mojo::IOWatcher::EV.3 \
 		Mojo::JSON.3 \
 		Mojo::JSON::Pointer.3 \
 		Mojo::Loader.3 \
@@ -63,6 +61,9 @@ MAN3=		Mojo.3 \
 		Mojo::Message::Response.3 \
 		Mojo::Parameters.3 \
 		Mojo::Path.3 \
+		Mojo::Reactor.3 \
+		Mojo::Reactor::EV.3 \
+		Mojo::Reactor::Poll.3 \
 		Mojo::Server.3 \
 		Mojo::Server::CGI.3 \
 		Mojo::Server::Daemon.3 \
@@ -123,6 +124,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Routes.3 \
 		Mojolicious::Routes::Match.3 \
 		Mojolicious::Routes::Pattern.3 \
+		Mojolicious::Routes::Route.3 \
 		Mojolicious::Sessions.3 \
 		Mojolicious::Static.3 \
 		Mojolicious::Types.3 \
