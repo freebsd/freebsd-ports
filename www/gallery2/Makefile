@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gallery2
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}-full
 DIST_SUBDIR=	gallery2
 
-MAINTAINER=	freebsd-ports@varju.ca
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web based photo album organizer written in PHP
 
 USE_PHP=	pcre session

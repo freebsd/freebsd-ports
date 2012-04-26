@@ -140,6 +140,7 @@
 %%WWWDIR%%/lib/javascript/BlockToggle.js
 %%WWWDIR%%/lib/javascript/ColorChooser.js
 %%WWWDIR%%/lib/javascript/Cropper.js
+%%WWWDIR%%/lib/joomla/crypt.php
 %%WWWDIR%%/lib/pear/COPYING.LESSER
 %%WWWDIR%%/lib/pear/HTMLSax3.php
 %%WWWDIR%%/lib/pear/Safe.php
@@ -8585,6 +8586,7 @@
 @dirrm %%WWWDIR%%/lib/smarty
 @dirrm %%WWWDIR%%/lib/phpass
 @dirrm %%WWWDIR%%/lib/pear
+@dirrm %%WWWDIR%%/lib/joomla
 @dirrm %%WWWDIR%%/lib/javascript
 @dirrm %%WWWDIR%%/lib/bbcode
 @dirrm %%WWWDIR%%/lib/adodb/perf
