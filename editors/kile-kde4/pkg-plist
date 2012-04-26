@@ -223,6 +223,8 @@ share/apps/kile/icons/hicolor/16x16/actions/matrix.png
 share/apps/kile/icons/hicolor/16x16/actions/medskip.png
 share/apps/kile/icons/hicolor/16x16/actions/medspace.png
 share/apps/kile/icons/hicolor/16x16/actions/minipage.png
+share/apps/kile/icons/hicolor/16x16/actions/modified.png
+share/apps/kile/icons/hicolor/16x16/actions/modonhd.png
 share/apps/kile/icons/hicolor/16x16/actions/multline.png
 share/apps/kile/icons/hicolor/16x16/actions/nextbullet.png
 share/apps/kile/icons/hicolor/16x16/actions/nextparagraph.png
@@ -402,8 +404,6 @@ share/apps/kile/icons/hicolor/48x48/actions/sqrt.png
 share/apps/kile/icons/hicolor/64x64/actions/nroot.png
 share/apps/kile/icons/hicolor/64x64/actions/preview.png
 share/apps/kile/icons/hicolor/64x64/actions/sqrt.png
-share/apps/kile/icons/oxygen/16x16/actions/modified.png
-share/apps/kile/icons/oxygen/16x16/actions/modonhd.png
 share/apps/kile/kilestdtools.rc
 share/apps/kile/kileui.rc
 share/apps/kile/mathsymbols/arrows/img001arrows.png
@@ -1494,8 +1494,13 @@ share/doc/HTML/en/kile/structureview.png
 share/doc/HTML/en/kile/texgroup.png
 share/doc/HTML/es/kile/index.cache.bz2
 share/doc/HTML/es/kile/index.docbook
+share/doc/HTML/fr/kile/bullets.png
+share/doc/HTML/fr/kile/delete.png
 share/doc/HTML/fr/kile/index.cache.bz2
 share/doc/HTML/fr/kile/index.docbook
+share/doc/HTML/fr/kile/select.png
+share/doc/HTML/fr/kile/snap_okular_settings.png
+share/doc/HTML/fr/kile/snap_ref_choose.png
 share/doc/HTML/it/kile/index.cache.bz2
 share/doc/HTML/it/kile/index.docbook
 share/doc/HTML/nl/kile/index.cache.bz2
@@ -1623,9 +1628,6 @@ share/mime/text/x-kilepr.xml
 @dirrm share/apps/kile/mathsymbols/cyrillic
 @dirrm share/apps/kile/mathsymbols/arrows
 @dirrm share/apps/kile/mathsymbols
-@dirrm share/apps/kile/icons/oxygen/16x16/actions
-@dirrm share/apps/kile/icons/oxygen/16x16
-@dirrm share/apps/kile/icons/oxygen
 @dirrm share/apps/kile/icons/hicolor/64x64/actions
 @dirrm share/apps/kile/icons/hicolor/64x64
 @dirrm share/apps/kile/icons/hicolor/48x48/actions
