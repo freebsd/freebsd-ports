@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sslh
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.rutschle.net/tech/
 
