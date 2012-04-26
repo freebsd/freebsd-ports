@@ -8,6 +8,7 @@
 %%TOOLBOXDIR%%/demos/noise.sce
 %%TOOLBOXDIR%%/demos/sivp.dem.gateway.sce
 %%TOOLBOXDIR%%/demos/video.sce
+%%TOOLBOXDIR%%/etc/SIVP.quit
 %%TOOLBOXDIR%%/etc/SIVP.start
 %%TOOLBOXDIR%%/etc/haarcascade_frontalface_alt2.xml
 %%TOOLBOXDIR%%/etc/lefteye.xml
@@ -17,10 +18,13 @@
 %%TOOLBOXDIR%%/images/people.jpg
 %%TOOLBOXDIR%%/images/peppers.png
 %%TOOLBOXDIR%%/images/red-car-video.avi
+%%TOOLBOXDIR%%/images/red-car-video.mpg
 %%TOOLBOXDIR%%/images/video.avi
-%%TOOLBOXDIR%%/jar/scilab_en_US_help.jar
+%%TOOLBOXDIR%%/images/video.mpg
+%%HELP%%%%TOOLBOXDIR%%/jar/scilab_en_US_help.jar
 %%TOOLBOXDIR%%/loader.sce
 %%TOOLBOXDIR%%/macros/buildmacros.sce
+%%TOOLBOXDIR%%/macros/cleanmacros.sce
 %%TOOLBOXDIR%%/macros/corr2.bin
 %%TOOLBOXDIR%%/macros/corr2.sci
 %%TOOLBOXDIR%%/macros/detectfaces.bin
@@ -33,6 +37,8 @@
 %%TOOLBOXDIR%%/macros/edge.sci
 %%TOOLBOXDIR%%/macros/fspecial.bin
 %%TOOLBOXDIR%%/macros/fspecial.sci
+%%TOOLBOXDIR%%/macros/getSIVPpath.bin
+%%TOOLBOXDIR%%/macros/getSIVPpath.sci
 %%TOOLBOXDIR%%/macros/hsv2rgb.bin
 %%TOOLBOXDIR%%/macros/hsv2rgb.sci
 %%TOOLBOXDIR%%/macros/im2bw.bin
@@ -71,7 +77,6 @@
 %%TOOLBOXDIR%%/macros/imresize.sci
 %%TOOLBOXDIR%%/macros/imshow.bin
 %%TOOLBOXDIR%%/macros/imshow.sci
-%%TOOLBOXDIR%%/macros/imshow.tcl
 %%TOOLBOXDIR%%/macros/imsubtract.bin
 %%TOOLBOXDIR%%/macros/imsubtract.sci
 %%TOOLBOXDIR%%/macros/imwrite.bin
@@ -104,13 +109,13 @@
 %%TOOLBOXDIR%%/macros/xs2im.sci
 %%TOOLBOXDIR%%/macros/ycbcr2rgb.bin
 %%TOOLBOXDIR%%/macros/ycbcr2rgb.sci
-%%TOOLBOXDIR%%/sci_gateway/c/libsivp.so
-%%TOOLBOXDIR%%/sci_gateway/c/loader.sce
+%%TOOLBOXDIR%%/sci_gateway/cpp/libgw_sivp.so
+%%TOOLBOXDIR%%/sci_gateway/cpp/loader.sce
 %%TOOLBOXDIR%%/sci_gateway/loader_gateway.sce
-@dirrm %%TOOLBOXDIR%%/sci_gateway/c
+@dirrm %%TOOLBOXDIR%%/sci_gateway/cpp
 @dirrm %%TOOLBOXDIR%%/sci_gateway
 @dirrm %%TOOLBOXDIR%%/macros
-@dirrm %%TOOLBOXDIR%%/jar
+%%HELP%%@dirrm %%TOOLBOXDIR%%/jar
 @dirrm %%TOOLBOXDIR%%/images
 @dirrm %%TOOLBOXDIR%%/etc
 @dirrm %%TOOLBOXDIR%%/demos
