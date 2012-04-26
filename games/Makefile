@@ -44,6 +44,7 @@
     SUBDIR += apoolGL
     SUBDIR += apricots
     SUBDIR += armagetron
+    SUBDIR += arx-libertatis
     SUBDIR += asc
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
