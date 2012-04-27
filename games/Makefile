@@ -787,6 +787,7 @@
     SUBDIR += sdlquake2
     SUBDIR += sdlroids
     SUBDIR += sdlsand
+    SUBDIR += sdl_scavenger
     SUBDIR += sea-defender
     SUBDIR += seabattle
     SUBDIR += seahaven

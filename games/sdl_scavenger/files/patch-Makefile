@@ -1,0 +1,16 @@
+Index: Makefile
+@@ -1,12 +1,9 @@
+-CC	= gcc
+ ###CFLAGS	= -Wall -O2 -I/usr/local/include/SDL -I/usr/include/SDL -D_REENTRANT
+-CFLAGS	= -O2 `sdl-config --cflags`
++CFLAGS	+= `sdl-config --cflags`
+ 
+ sdlscav:	scav.o gfx.o sound.o edit.o anim.o
+ ###	gcc -o sdlscav scav.o gfx.o sound.o edit.o anim.o -lSDL -ldl -lpthread
+-	gcc -o sdlscav scav.o gfx.o sound.o edit.o anim.o `sdl-config --libs`
+-	install -m 0755 -d $$HOME/.scavenger
+-	install -m 0644 data/*rc $$HOME/.scavenger
++	${CC} -o sdlscav scav.o gfx.o sound.o edit.o anim.o `sdl-config --libs`
+ 
+ scav.o: scav.c scav.h names.h edit.h anim.h gfx.h sound.h
+ 

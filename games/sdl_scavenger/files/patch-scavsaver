@@ -1,0 +1,11 @@
+--- scavsaver.orig	2005-01-23 08:52:00.000000000 +0100
++++ scavsaver	2012-04-24 01:05:13.000000000 +0200
+@@ -1,6 +1,6 @@
+-#!/bin/bash
++#!/bin/sh
+ #This script turns off the screen saver, runs scavenger with all its parameters,
+ #then turns the screen saver back on when scavenger exits.
+ xset -dpms
+-sdlscav $*
++sdlscavenger $*
+ xset +dpms
