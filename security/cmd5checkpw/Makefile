@@ -15,7 +15,8 @@ COMMENT=	Checkpassword compatible authentication program that uses CRAM-MD5
 
 MAN8=		cmd5checkpw.8
 
-DOCS_FILES=	CHANGES CREDITS INSTALL README rfc1321.txt rfc2104.txt
+PORTDOCS=	CHANGES CREDITS INSTALL README rfc1321.txt rfc2104.txt
+PLIST_FILES=	bin/cmd5checkpw etc/poppasswd.dist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/poppasswd|${LOCALBASE}/etc/poppasswd|' \
@@ -30,7 +31,7 @@ do-install:
 	@${INSTALL_MAN}	${WRKSRC}/cmd5checkpw.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.    for f in ${DOCS_FILES}
+.    for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .    endfor
 .endif
