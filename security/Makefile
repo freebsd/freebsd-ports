@@ -80,6 +80,7 @@
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
+    SUBDIR += cmd5checkpw
     SUBDIR += cops
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
