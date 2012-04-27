@@ -701,6 +701,7 @@ artwiz-aleczapka                ports/x11-fonts/artwiz-aleczapka
 artwiz-aleczapka-de             ports/x11-fonts/artwiz-aleczapka-de
 artwiz-aleczapka-se             ports/x11-fonts/artwiz-aleczapka-se
 artwiz-fonts                    ports/x11-fonts/artwiz-fonts
+arx-libertatis                  ports/games/arx-libertatis
 as31                            ports/devel/as31
 asapm                           ports/sysutils/asapm
 asbutton                        ports/misc/asbutton
@@ -10204,7 +10205,6 @@ netmask                         ports/net-mgmt/netmask
 netmond                         ports/net-mgmt/netmond
 netoffice                       ports/www/netoffice
 netpanzer                       ports/games/netpanzer
-netpanzer-data                  ports/games/netpanzer-data
 netpbm                          ports/graphics/netpbm
 netperf                         ports/benchmarks/netperf
 netperfmeter                    ports/benchmarks/netperfmeter
@@ -27181,6 +27181,7 @@ valgrind                        ports/devel/valgrind
 valgrind-snapshot               ports/devel/valgrind-snapshot
 validator                       ports/www/validator
 valide                          ports/devel/valide
+validns                         ports/dns/validns
 valknut                         ports/net-p2p/valknut
 vamos                           ports/games/vamos
 vamp-plugin-sdk                 ports/audio/vamp-plugin-sdk
