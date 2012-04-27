@@ -15,7 +15,8 @@ hald_enable=${hald_enable-"NO"}
 . /etc/rc.subr
 
 name=webcamd
-rcvar=webcamd_enable
+rcvar=`set_rcvar`
+iface=${3-0}
 command=%%PREFIX%%/sbin/webcamd
 command_args="-B -U webcamd -G webcamd"
 
@@ -28,7 +29,7 @@ webcamd_prestart()
   fi
 }
 
-pidfile="/var/run/webcamd.*.0.pid"
+pidfile="/var/run/webcamd.*.$iface.pid"
 
 load_rc_config $name
 
@@ -42,7 +43,7 @@ fi
 
 if [ $# -gt 1 ]; then
 	pidfile="webcamd.dummy"
-	command_args="$command_args -d $2 -i 0"
+	command_args="$command_args -d $2 -i $iface"
 	# Only run the rc command if the appropriate arguments are specified:	
 	run_rc_command $1
 fi
