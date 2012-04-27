@@ -26,8 +26,8 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/cmd5checkpw ${LOCALBASE}/bin
-	@${INSTALL_DATA} ${WRKSRC}/poppasswd ${LOCALBASE}/etc/poppasswd.dist
+	@${INSTALL_PROGRAM} ${WRKSRC}/cmd5checkpw ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/poppasswd ${PREFIX}/etc/poppasswd.dist
 	@${INSTALL_MAN}	${WRKSRC}/cmd5checkpw.8 ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
