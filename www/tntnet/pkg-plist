@@ -14,6 +14,7 @@ bin/tntnet-config
 %%ETCDIR%%/tntnet.properties.sample
 @exec if [ ! -f %D/etc/tntnet/tntnet.properties ] ; then cp -p %D/%F %B/tntnet.properties; fi
 include/tnt/applicationunlocker.h
+include/tnt/backgroundworker.h
 include/tnt/cmd.h
 include/tnt/compident.h
 include/tnt/comploader.h
@@ -68,17 +69,20 @@ include/tnt/worker.h
 include/tnt/zdata.h
 lib/libtntnet.la
 lib/libtntnet.so
-lib/libtntnet.so.9
+lib/libtntnet.so.10
 lib/libtntnet_cgi.a
 lib/libtntnet_cgi.la
 lib/libtntnet_cgi.so
-lib/libtntnet_cgi.so.9
+lib/libtntnet_cgi.so.10
 lib/libtntnet_sdk.la
 lib/libtntnet_sdk.so
-lib/libtntnet_sdk.so.9
+lib/libtntnet_sdk.so.10
 lib/tntnet/alldemos.la
 lib/tntnet/alldemos.so
 lib/tntnet/alldemos.so.0
+lib/tntnet/backgroundjob.la
+lib/tntnet/backgroundjob.so
+lib/tntnet/backgroundjob.so.0
 lib/tntnet/calc.la
 lib/tntnet/calc.so
 lib/tntnet/calc.so.0
@@ -130,7 +134,7 @@ lib/tntnet/strings.so
 lib/tntnet/strings.so.0
 lib/tntnet/tntnet.la
 lib/tntnet/tntnet.so
-lib/tntnet/tntnet.so.9
+lib/tntnet/tntnet.so.10
 lib/tntnet/upload.la
 lib/tntnet/upload.so
 lib/tntnet/upload.so.0
