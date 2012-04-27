@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-upnp
 PORTVERSION=	0.0.2a2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/177/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION:S/a/-alpha/}${DISTVERSIONSUFFIX}
@@ -18,7 +18,7 @@ COMMENT=	Video Disk Recorder - UPnP/DLNA plugin (alpha!)
 
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		boost_system:${PORTSDIR}/devel/boost-libs \
-		upnp.8:${PORTSDIR}/devel/upnp \
+		upnp.9:${PORTSDIR}/devel/upnp \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 DIST_SUBDIR=	vdr
