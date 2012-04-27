@@ -49,6 +49,7 @@
     SUBDIR += grig
     SUBDIR += gscmxx
     SUBDIR += gsmlib
+    SUBDIR += gtkmmorse
     SUBDIR += hamfax
     SUBDIR += hamlib
     SUBDIR += hcidump
