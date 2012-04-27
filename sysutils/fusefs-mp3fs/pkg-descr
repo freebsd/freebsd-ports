@@ -1,0 +1,10 @@
+MP3FS is a read-only FUSE filesystem which transcodes audio formats (currently
+FLAC) to MP3 on the fly when opened and read. This was written to enable me to
+use my FLAC collection with software and/or hardware which only understands
+the MP3 format e.g. gmediaserver to a Netgear MP101 MP3 player.
+
+It is also a novel alternative to traditional MP3 encoders. Just use your
+favorite file browser to select the files you want encoded and copy them
+somewhere!
+
+WWW: https://github.com/khenriks/mp3fs
