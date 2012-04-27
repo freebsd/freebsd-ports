@@ -13,3 +13,5 @@ etc/portshaker.d/haskell
 etc/portshaker.d/marcuscom_ports
 etc/portshaker.d/marcuscom_ports_stable
 etc/portshaker.d/ports
+etc/portshaker.d/redports
+etc/portshaker.d/xorg

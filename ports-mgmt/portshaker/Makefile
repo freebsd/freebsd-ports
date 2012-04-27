@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 MASTER_SITES=	http://bsd-sharp.googlecode.com/files/ \
@@ -30,7 +30,8 @@ OPTIONS=	BSDSHARP  "Enable BSD-sharp ports"                on \
 		ENLIGHTENMENT "Enable Enlightnement ports"        off \
 		HASKELL   "Enable Haskell ports"                  off \
 		MARCUSCOM "Enable GNOME development ports"        off \
-		TEXLIVE   "Enable TeXLive ports (Experimental)"   off
+		TEXLIVE   "Enable TeXLive ports (Experimental)"   off \
+		XORG      "Enable Xorg development ports"         off
 .endif
 
 .include <bsd.port.options.mk>
@@ -66,6 +67,9 @@ MAKE_ENV+=	WITH_MARCUSCOM=1
 . endif
 . if defined (WITH_TEXLIVE)
 MAKE_ENV+=	WITH_TEXLIVE=1
+. endif
+. if defined (WITH_XORG)
+MAKE_ENV+=	WITH_XORG=1
 . endif
 
 .endif
