@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# generate full build shell script for OpenOffice.org
+# generate full build shell script for Apache OpenOffice
 # Whom:         Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
 
