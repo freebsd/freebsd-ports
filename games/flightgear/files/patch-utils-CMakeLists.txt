@@ -1,0 +1,10 @@
+--- utils/CMakeLists.txt.orig	2012-03-09 13:50:13.026701925 +0100
++++ utils/CMakeLists.txt	2012-03-09 13:50:24.126886556 +0100
+@@ -1,6 +1,7 @@
+ add_subdirectory(TerraSync)
+ add_subdirectory(fgviewer)
+ add_subdirectory(GPSsmooth)
++add_subdirectory(js_server)
+ 
+ if (FLTK_FOUND)
+     if (EXISTS ${FLTK_FLUID_EXECUTABLE})
