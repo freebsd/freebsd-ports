@@ -17,7 +17,7 @@
    else if (len > 0) {
       // Process auxiliary received data and validate source address
 +#ifndef __FreeBSD__
-      for (cmsg = CMSG_FIRSTHDR(&msgh); (sourceAddr != INADDR_ANY) && (cmsg != NULL); cmsg = CMSG_NXTHDR(&msgh, cmsg)) {
+      for (cmsg = CMSG_FIRSTHDR(&msgh); (streamAddr != INADDR_ANY) && (cmsg != NULL); cmsg = CMSG_NXTHDR(&msgh, cmsg)) {
           if ((cmsg->cmsg_level == SOL_IP) && (cmsg->cmsg_type == IP_PKTINFO)) {
              struct in_pktinfo *i = (struct in_pktinfo *)CMSG_DATA(cmsg);
 @@ -189,6 +192,7 @@ int cIptvUdpSocket::Read(unsigned char* 
