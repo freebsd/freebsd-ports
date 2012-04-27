@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	box
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}c/Box%20-%20the%20compiler/${DISTNAME}/
 
@@ -28,6 +28,8 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
 MAN1=		${PORTNAME}.1
+
+PLIST_SUB+=	PLIST_VER="0.3"
 
 post-patch:
 	${TOUCH} ${WRKSRC}/man/${PORTNAME}.sgml
