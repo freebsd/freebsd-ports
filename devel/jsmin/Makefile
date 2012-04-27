@@ -7,26 +7,28 @@
 #
 
 PORTNAME=	jsmin
-DISTVERSION=	20120109
+PORTVERSION=	20120415
 CATEGORIES=	devel
-MASTER_SITES=	http://www.crockford.com/javascript/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.c
+MASTER_SITES=	https://github.com/douglascrockford/JSMin/tarball/master/
+DISTNAME=	douglascrockford-JSMin-${GITVERSION}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	The JavaScript Minifier
 
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	${WRKSRC}
-NO_WRKSUBDIR=	yes
+GITVERSION=	5ca277e
+FETCH_ARGS=	-pRr
 
 PLIST_FILES=	bin/jsmin
+PORTDOCS=	README
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
