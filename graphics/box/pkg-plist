@@ -1,59 +1,89 @@
 @comment $FreeBSD$
 bin/box
-bin/box0.2
-include/box0.2/box/array.h
-include/box0.2/box/defaults.h
-include/box0.2/box/error.h
-include/box0.2/box/hashfunc.h
-include/box0.2/box/hashtable.h
-include/box0.2/box/list.h
-include/box0.2/box/mem.h
-include/box0.2/box/messages.h
-include/box0.2/box/msgbase.h
-include/box0.2/box/occupation.h
-include/box0.2/box/print.h
-include/box0.2/box/srcpos.h
-include/box0.2/box/strutils.h
-include/box0.2/box/types.h
-include/box0.2/box/version.h
-include/box0.2/box/virtmach.h
-include/box0.2/box/vmalloc.h
-include/box0.2/box/vmproc.h
-include/box0.2/box/vmsym.h
-include/box0.2/box/vmsymstuff.h
-lib/box0.2/lib/libg.a
-lib/box0.2/lib/libg.la
-lib/box0.2/lib/libg.so
-lib/box0.2/pkg/_area.bxh
-lib/box0.2/pkg/_arrows.bxh
-lib/box0.2/pkg/_bbox.bxh
-lib/box0.2/pkg/_circle.bxh
-lib/box0.2/pkg/_color.bxh
-lib/box0.2/pkg/_gradient.bxh
-lib/box0.2/pkg/_line.bxh
-lib/box0.2/pkg/_matrix.bxh
-lib/box0.2/pkg/_pointlist.bxh
-lib/box0.2/pkg/_poly.bxh
-lib/box0.2/pkg/_put.bxh
-lib/box0.2/pkg/_rectangle.bxh
-lib/box0.2/pkg/_sphere.bxh
-lib/box0.2/pkg/_style.bxh
-lib/box0.2/pkg/_text.bxh
-lib/box0.2/pkg/_window.bxh
-lib/box0.2/pkg/arrows.bxh
-lib/box0.2/pkg/bounce.bxh
-lib/box0.2/pkg/caps.bxh
-lib/box0.2/pkg/electric.bxh
-lib/box0.2/pkg/g.bxh
-lib/box0.2/pkg/label.bxh
-lib/box0.2/pkg/math.bxh
-lib/box0.2/pkg/obj.bxh
-lib/box0.2/pkg/raw.bxh
-lib/box0.2/pkg/tools.bxh
-lib/libboxcore0.2.a
-lib/libboxcore0.2.la
-lib/libboxcore0.2.so
-lib/libboxcore0.2.so.0
+bin/box%%PLIST_VER%%
+include/box%%PLIST_VER%%/box/array.h
+include/box%%PLIST_VER%%/box/defaults.h
+include/box%%PLIST_VER%%/box/error.h
+include/box%%PLIST_VER%%/box/hashfunc.h
+include/box%%PLIST_VER%%/box/hashtable.h
+include/box%%PLIST_VER%%/box/list.h
+include/box%%PLIST_VER%%/box/mem.h
+include/box%%PLIST_VER%%/box/messages.h
+include/box%%PLIST_VER%%/box/msgbase.h
+include/box%%PLIST_VER%%/box/occupation.h
+include/box%%PLIST_VER%%/box/print.h
+include/box%%PLIST_VER%%/box/srcpos.h
+include/box%%PLIST_VER%%/box/strutils.h
+include/box%%PLIST_VER%%/box/types.h
+include/box%%PLIST_VER%%/box/version.h
+include/box%%PLIST_VER%%/box/virtmach.h
+include/box%%PLIST_VER%%/box/vmalloc.h
+include/box%%PLIST_VER%%/box/vmproc.h
+include/box%%PLIST_VER%%/box/vmsym.h
+include/box%%PLIST_VER%%/box/vmsymstuff.h
+lib/box%%PLIST_VER%%/lib/libg.a
+lib/box%%PLIST_VER%%/lib/libg.la
+lib/box%%PLIST_VER%%/lib/libg.so
+lib/box%%PLIST_VER%%/pkg/_arrows.bxh
+lib/box%%PLIST_VER%%/pkg/_sphere.bxh
+lib/box%%PLIST_VER%%/pkg/arrows.bxh
+lib/box%%PLIST_VER%%/pkg/bounce.bxh
+lib/box%%PLIST_VER%%/pkg/caps.box
+lib/box%%PLIST_VER%%/pkg/core.dox
+lib/box%%PLIST_VER%%/pkg/electric.bxh
+lib/box%%PLIST_VER%%/pkg/g/obj.box
+lib/box%%PLIST_VER%%/pkg/g/const.box
+lib/box%%PLIST_VER%%/pkg/g/gcore.box
+lib/box%%PLIST_VER%%/pkg/g/matrix.box
+lib/box%%PLIST_VER%%/pkg/g/transform.box
+lib/box%%PLIST_VER%%/pkg/g/option.box
+lib/box%%PLIST_VER%%/pkg/g/raw.box
+lib/box%%PLIST_VER%%/pkg/g/cmdstream.box
+lib/box%%PLIST_VER%%/pkg/g/points.box
+lib/box%%PLIST_VER%%/pkg/g/path.box
+lib/box%%PLIST_VER%%/pkg/g/fill.box
+lib/box%%PLIST_VER%%/pkg/g/stroke.box
+lib/box%%PLIST_VER%%/pkg/g/style.box
+lib/box%%PLIST_VER%%/pkg/g/poly.box
+lib/box%%PLIST_VER%%/pkg/g/text.box
+lib/box%%PLIST_VER%%/pkg/g/texts.box
+lib/box%%PLIST_VER%%/pkg/g/circle.box
+lib/box%%PLIST_VER%%/pkg/g/circles.box
+lib/box%%PLIST_VER%%/pkg/g/line.box
+lib/box%%PLIST_VER%%/pkg/g/lines.box
+lib/box%%PLIST_VER%%/pkg/g/gradcore.box
+lib/box%%PLIST_VER%%/pkg/g/gradient.box
+lib/box%%PLIST_VER%%/pkg/g/clip.box
+lib/box%%PLIST_VER%%/pkg/g/hot.box
+lib/box%%PLIST_VER%%/pkg/g/constraints.box
+lib/box%%PLIST_VER%%/pkg/g/put.box
+lib/box%%PLIST_VER%%/pkg/g/window.box
+lib/box%%PLIST_VER%%/pkg/g/bbox.box
+lib/box%%PLIST_VER%%/pkg/g/save.box
+lib/box%%PLIST_VER%%/pkg/g/g2.box
+lib/box%%PLIST_VER%%/pkg/g/init.box
+lib/box%%PLIST_VER%%/pkg/g/color.box
+lib/box%%PLIST_VER%%/pkg/g/oldstyle.box
+lib/box%%PLIST_VER%%/pkg/g/_gradient.bxh
+lib/box%%PLIST_VER%%/pkg/g/pattern.box
+lib/box%%PLIST_VER%%/pkg/g/_line.bxh
+lib/box%%PLIST_VER%%/pkg/g/_circle.bxh
+lib/box%%PLIST_VER%%/pkg/g/_poly.bxh
+lib/box%%PLIST_VER%%/pkg/g/_put.bxh
+lib/box%%PLIST_VER%%/pkg/g/_pointlist.bxh
+lib/box%%PLIST_VER%%/pkg/g/_text.bxh
+lib/box%%PLIST_VER%%/pkg/g/area.box
+lib/box%%PLIST_VER%%/pkg/g/axes.box
+lib/box%%PLIST_VER%%/pkg/g/thickline.box
+lib/box%%PLIST_VER%%/pkg/g/image.box
+lib/box%%PLIST_VER%%/pkg/label.bxh
+lib/box%%PLIST_VER%%/pkg/math.box
+lib/box%%PLIST_VER%%/pkg/rectangle.box
+lib/box%%PLIST_VER%%/pkg/tools.bxh
+lib/libboxcore%%PLIST_VER%%.a
+lib/libboxcore%%PLIST_VER%%.la
+lib/libboxcore%%PLIST_VER%%.so
+lib/libboxcore%%PLIST_VER%%.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
@@ -84,8 +114,9 @@ lib/libboxcore0.2.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yin-yang.box
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smileys
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm lib/box0.2/pkg
-@dirrm lib/box0.2/lib
-@dirrm lib/box0.2
-@dirrm include/box0.2/box
-@dirrm include/box0.2
+@dirrm lib/box%%PLIST_VER%%/pkg/g
+@dirrm lib/box%%PLIST_VER%%/pkg
+@dirrm lib/box%%PLIST_VER%%/lib
+@dirrm lib/box%%PLIST_VER%%
+@dirrm include/box%%PLIST_VER%%/box
+@dirrm include/box%%PLIST_VER%%
