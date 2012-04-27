@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	simgear
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
@@ -29,13 +28,7 @@ USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_OPENAL=	al alut
 USE_GL=		gl glu glut
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--with-jpeg-factory
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
-		${WRKSRC}/configure
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON
 
 .include <bsd.port.mk>

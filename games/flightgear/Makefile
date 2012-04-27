@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flightgear
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -21,7 +20,9 @@ COMMENT=	The FlightGear flight simulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		osg.80:${PORTSDIR}/graphics/osg
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
@@ -30,21 +31,22 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
 
 USE_BZIP2=	yes
-USE_XORG=	ice sm x11 xext xi xt xmu
+USE_XORG=	ice sm x11 xext xft xi xinerama xt xmu
 USE_GL=		gl glu glut
-USE_OPENAL=	al
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
-MAKE_JOBS_UNSAFE=yes
+USE_OPENAL=	al alut
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
+		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \
+		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
+		-DCMAKE_INSTALL_DOCDIR:PATH=${DOCSDIR}
 
-MAN1=	est-epsilon.1 js_demo.1 pstest.1 fgjs.1 gl-info.1 fgfs.1
+PORTDOCS=	README README.OSG README.OpenAL README.SimGear README.plib
 
-post-patch:
-	@${REINPLACE_CMD} 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
-		${WRKSRC}/configure
+.if defined(NOPORTDOCS)
+CMAKE_ARGS+=	-DNOPORTDOCS:BOOL=ON
+.endif
+
+MAN1=	js_demo.1 fgjs.1 gl-info.1 fgfs.1 fgpanel.1 terrasync.1
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/js_server/js_server ${PREFIX}/bin
