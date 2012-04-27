@@ -281,6 +281,7 @@
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
     SUBDIR += fusefs-mhddfs
+    SUBDIR += fusefs-mp3fs
     SUBDIR += fusefs-ntfs
     SUBDIR += fusefs-pod
     SUBDIR += fusefs-rar2fs
