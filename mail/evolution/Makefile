@@ -75,7 +75,7 @@ RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 .if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
 HEIMDAL_HOME?=		${LOCALBASE}
-LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		krb5.26:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} \
 			--with-krb5-includes=${HEIMDAL_HOME}/include
 KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
