@@ -784,10 +784,11 @@
     SUBDIR += sdb
     SUBDIR += sdl-ball
     SUBDIR += sdlCC
+    SUBDIR += sdl_jewels
+    SUBDIR += sdl_scavenger
     SUBDIR += sdlquake2
     SUBDIR += sdlroids
     SUBDIR += sdlsand
-    SUBDIR += sdl_scavenger
     SUBDIR += sea-defender
     SUBDIR += seabattle
     SUBDIR += seahaven
