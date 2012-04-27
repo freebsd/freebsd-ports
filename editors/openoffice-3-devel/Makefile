@@ -1,4 +1,4 @@
-# New ports collection makefile for: OpenOffice.org
+# New ports collection makefile for: Apache OpenOffice
 # Date created:		28 February 2002
 # Whom:                 Martin Blapp
 #
@@ -102,8 +102,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
 		rdf.0:${PORTSDIR}/textproc/redland \
 		textcat.0:${PORTSDIR}/textproc/libtextcat \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		graphite.3:${PORTSDIR}/graphics/silgraphite
+		freetype.9:${PORTSDIR}/print/freetype2
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -179,7 +178,6 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-beanshell	\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar
 
-#			--with-system-graphite
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 #OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
