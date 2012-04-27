@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.9.3
-PORTREVISION=	1
+PORTVERSION=	2.4.9.4
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SF/portupgrade/pkgtools/${PORTVERSION}/
+MASTER_SITES=	SF/portupgrade/pkgtools/${PORTVERSION}/ \
+		http://www.shatow.net/freebsd/
 DISTNAME=	pkgtools-${PORTVERSION}
 
 MAINTAINER=	bryan@shatow.net
