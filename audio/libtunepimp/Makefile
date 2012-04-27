@@ -28,6 +28,7 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		mpcdec:${PORTSDIR}/audio/musepack
 
 DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-06-01
 
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
