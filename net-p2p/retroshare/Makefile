@@ -7,6 +7,7 @@
 
 PORTNAME=	retroshare
 PORTVERSION=	0.5.3a
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}/${BINARY}/${PORTVERSION}
@@ -19,7 +20,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/trunk/retroshare-gui/src/license/license.txt
 
 LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
-		upnp.8:${PORTSDIR}/devel/upnp \
+		upnp.9:${PORTSDIR}/devel/upnp \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS+=	pinentry-qt4:${PORTSDIR}/security/pinentry-qt4
 
