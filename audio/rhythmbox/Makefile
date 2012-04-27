@@ -8,7 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,8 +17,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Audio player for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-    		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
+LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
