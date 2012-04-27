@@ -29,18 +29,16 @@ PLIST_FILES=	bin/sdlscavenger \
 PORTDATA=	*
 PORTDOCS=	CREDITS DOC NEW_FEATURES README STRATEGY
 
+ALL_TARGET=
+
 post-patch:
 		@${REINPLACE_CMD} -e 's|data:/usr/local/games/scavenger|data:${DATADIR}/data|' \
 			${WRKSRC}/names.h
-
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE})
 
 do-install:
 # Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/sdlscav ${PREFIX}/bin/sdlscavenger
 
-post-install:
 # Pixmaps
 	${CP} ${WRKSRC}/data/scav.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
 
