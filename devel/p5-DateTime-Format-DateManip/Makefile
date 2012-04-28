@@ -15,8 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Date::Manip dates and durations to DateTimes and vice versa
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
+RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip
 
 PERL_MODBUILD=	yes
 
