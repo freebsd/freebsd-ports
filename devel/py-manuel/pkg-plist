@@ -25,6 +25,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/ignore.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/ignore.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/ignore.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/index.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/isolation.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/isolation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/manuel/isolation.pyo
