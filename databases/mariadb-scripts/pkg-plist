@@ -1,4 +1,5 @@
 bin/msql2mysql
+bin/mytop
 bin/mysql_convert_table_format
 bin/mysql_find_rows
 bin/mysql_fix_extensions

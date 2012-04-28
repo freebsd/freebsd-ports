@@ -7,10 +7,11 @@
 PORTNAME=	mariadb
 PKGNAMESUFFIX=	-scripts
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
-
 COMMENT=	Scripts for mariadb - drop-in replacement for MySQL
 
+LICENSE=	GPLv2
+
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 USE_PERL5=	yes
 
 MASTERDIR=	${.CURDIR}/../mariadb-server
