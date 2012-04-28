@@ -785,6 +785,7 @@
     SUBDIR += sdl-ball
     SUBDIR += sdlCC
     SUBDIR += sdl_jewels
+    SUBDIR += sdl_lopan
     SUBDIR += sdl_scavenger
     SUBDIR += sdlquake2
     SUBDIR += sdlroids
