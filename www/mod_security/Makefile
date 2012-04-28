@@ -49,7 +49,7 @@ PLIST_FILES+=	bin/mlogc
 .if defined(WITH_LUA)
 USE_LUA=	5.1+
 CONFIGURE_ARGS+=	--with-lua=${LOCALBASE}
-LIB_DEPENDS+=	lua-5.1:${PORTSDIR}/lang/lua
+LIB_DEPENDS+=	lua-5.1.1:${PORTSDIR}/lang/lua
 .else
 CONFIGURE_ARGS+=	--without-lua
 .endif
