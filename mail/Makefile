@@ -116,6 +116,7 @@
     SUBDIR += enigmail
     SUBDIR += enigmail-seamonkey
     SUBDIR += enigmail-thunderbird
+    SUBDIR += enigmail-thunderbird-esr
     SUBDIR += enigmail-thunderbird3
     SUBDIR += enma
     SUBDIR += eps
