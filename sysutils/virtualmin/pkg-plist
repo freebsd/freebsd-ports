@@ -2,6 +2,14 @@
 %%LIB32DIR%%/webmin/virtual-server/IDNA/Punycode.pm
 %%LIB32DIR%%/webmin/virtual-server/PHP/Serialization.pm
 %%LIB32DIR%%/webmin/virtual-server/RELEASE
+%%LIB32DIR%%/webmin/virtual-server/S3.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/AWSAuthConnection.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/GetResponse.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/ListAllMyBucketsResponse.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/ListBucketResponse.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/QueryStringAuthGenerator.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/Response.pm
+%%LIB32DIR%%/webmin/virtual-server/S3/S3Object.pm
 %%LIB32DIR%%/webmin/virtual-server/acl_security.pl
 %%LIB32DIR%%/webmin/virtual-server/add_script.cgi
 %%LIB32DIR%%/webmin/virtual-server/admins-lib.pl
@@ -404,6 +412,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_quotas.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_modules.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_reseller_theme.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_s3_endpoint.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_scriptdir.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_scriptwarn_url.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_secmx_nodns.html
@@ -421,6 +430,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/config_spam_lock.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_spam_trap_black.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_spam_white.html
+%%LIB32DIR%%/webmin/virtual-server/help/config_ssh_args.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_ssl.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_status.html
 %%LIB32DIR%%/webmin/virtual-server/help/config_tar_args.html
@@ -1058,6 +1068,8 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.89/2-nginx
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.90/1-backup
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.90/2-purge
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.91/1-stats
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.91/4-cloneip
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1076,6 +1088,8 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.87/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.89/0-scripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.90/0-scripts
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.91/0-scripts
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.91/2-s3gpl
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/newip_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/newkey.cgi
@@ -1105,6 +1119,7 @@
 %%LIB32DIR%%/webmin/virtual-server/restore.cgi
 %%LIB32DIR%%/webmin/virtual-server/restore_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/run-all-webalizer.pl
+%%LIB32DIR%%/webmin/virtual-server/s3-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/save_admin.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_afile.cgi
 %%LIB32DIR%%/webmin/virtual-server/save_alias.cgi
@@ -1178,9 +1193,11 @@
 %%LIB32DIR%%/webmin/virtual-server/spamtrap.pl
 %%LIB32DIR%%/webmin/virtual-server/start_feature.cgi
 %%LIB32DIR%%/webmin/virtual-server/start_script.cgi
+%%LIB32DIR%%/webmin/virtual-server/stats-lib.pl
 %%LIB32DIR%%/webmin/virtual-server/stop_feature.cgi
 %%LIB32DIR%%/webmin/virtual-server/stop_script.cgi
 %%LIB32DIR%%/webmin/virtual-server/subdomain-template
+%%LIB32DIR%%/webmin/virtual-server/summary_domain.cgi
 %%LIB32DIR%%/webmin/virtual-server/test-imap.pl
 %%LIB32DIR%%/webmin/virtual-server/test-pop3.pl
 %%LIB32DIR%%/webmin/virtual-server/test-smtp.pl
@@ -1209,6 +1226,7 @@
 %%LIB32DIR%%/webmin/virtual-server/wizard.cgi
 %%LIB32DIR%%/webmin/virtual-server/writelogs.pl
 @dirrm %%LIB32DIR%%/webmin/virtual-server/scripts
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.91
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.90
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.89
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.87
@@ -1227,6 +1245,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.91
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.90
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.89
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.88
@@ -1263,6 +1282,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/lang
 @dirrm %%LIB32DIR%%/webmin/virtual-server/images
 @dirrm %%LIB32DIR%%/webmin/virtual-server/help
+@dirrm %%LIB32DIR%%/webmin/virtual-server/S3
 @dirrm %%LIB32DIR%%/webmin/virtual-server/PHP
 @dirrm %%LIB32DIR%%/webmin/virtual-server/IDNA
 @dirrm %%LIB32DIR%%/webmin/virtual-server
