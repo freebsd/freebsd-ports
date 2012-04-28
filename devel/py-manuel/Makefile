@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manuel
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,9 @@ COMMENT=	Lets you build tested documentation
 
 LICENSE=	ZPL21
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
+
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
