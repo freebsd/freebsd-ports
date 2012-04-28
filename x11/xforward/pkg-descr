@@ -1,0 +1,4 @@
+This is version 1.0 of xforward, a program for relaying X11
+connections across network boundaries.  While it may be used to cross
+security boundaries, Digital Equipment Corporation does not warrant
+this software for security or any other purpose.

@@ -1,0 +1,25 @@
+--- Makefile.orig	1993-06-04 19:32:01.000000000 -0700
++++ Makefile	2012-04-27 13:01:33.079482669 -0700
+@@ -18,17 +18,17 @@
+ # MANDIR is where the manual page will be installed.
+ 
+ DESTDIR=
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man/man1
++BINDIR=${PREFIX}/bin
++MANDIR=${PREFIX}/man/man1
+ 
+ # Where to find things
+ # INCFLAGS lists directories to search for header files
+ # LDFLAGS lists directories to search for libraries
+ # LIBS lists the necessary libraries (Motif, Xt, X11)
+ 
+-INCFLAGS= -I/usr/lib/DXM/lib -I/usr/lib/DXM/lib/Xt
+-LDFLAGS= -L/usr/lib/DXM/lib/Xm -L/usr/lib/DXM/lib/Xt
+-LIBS= -lXm -lXt -lX11
++INCFLAGS= -I${LOCALBASE}/include
++LDFLAGS= -L${LOCALBASE}/lib
++LIBS= -lXm -lXt -lX11 -lXext
+ 
+ CFLAGS= ${INCFLAGS} -O
+ 
