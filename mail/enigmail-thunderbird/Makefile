@@ -13,7 +13,7 @@ EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		thunderbird
-GECKO_PORTDIR=	mail/${GECKO}-esr
-GECKO_EXTDIR=	comm-esr10
+GECKO_PORTDIR=	mail/${GECKO}
+GECKO_EXTDIR=	comm-release
 
 .include "${MASTERDIR}/Makefile"
