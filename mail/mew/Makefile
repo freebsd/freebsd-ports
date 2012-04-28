@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	mew
-PORTVERSION=	6.4
+PORTVERSION=	6.5
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.mew.org/Release/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	hiroto.kagotani@gmail.com
-COMMENT?=	Messaging in the Emacs World for emacs
+MAINTAINER=	hiroto.kagotani@gmail.com
+COMMENT=	Messaging in the Emacs World for emacs
 
 OPTIONS=	DATABASE "Database feature support (with Ruby & Sqlite3)" on
 
