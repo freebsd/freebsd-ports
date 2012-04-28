@@ -7,6 +7,7 @@
 
 PORTNAME=	OpenLP
 PORTVERSION=	1.9.8
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +29,7 @@ RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
+		py*-qt4-opengl>=0:${PORTSDIR}/x11/py-qt4-opengl \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
 		py*-mako>0:${PORTSDIR}/textproc/py-mako \
 		py*-migrate>=0:${PORTSDIR}/databases/py-migrate \
