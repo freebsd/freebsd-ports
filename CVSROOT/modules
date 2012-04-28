@@ -1777,6 +1777,7 @@ cmake                           ports/devel/cmake
 cmake-fedora                    ports/devel/cmake-fedora
 cmake-gui                       ports/devel/cmake-gui
 cmatrix                         ports/misc/cmatrix
+cmd5checkpw                     ports/security/cmd5checkpw
 cmdftp                          ports/ftp/cmdftp
 cmdwatch                        ports/sysutils/cmdwatch
 cmios9                          ports/converters/cmios9
@@ -4046,6 +4047,7 @@ fusefs-ifuse                    ports/sysutils/fusefs-ifuse
 fusefs-kmod                     ports/sysutils/fusefs-kmod
 fusefs-libs                     ports/sysutils/fusefs-libs
 fusefs-mhddfs                   ports/sysutils/fusefs-mhddfs
+fusefs-mp3fs                    ports/sysutils/fusefs-mp3fs
 fusefs-ntfs                     ports/sysutils/fusefs-ntfs
 fusefs-pod                      ports/sysutils/fusefs-pod
 fusefs-rar2fs                   ports/sysutils/fusefs-rar2fs
@@ -24604,6 +24606,7 @@ rubygem-compass                 ports/textproc/rubygem-compass
 rubygem-configuration           ports/devel/rubygem-configuration
 rubygem-couchrest               ports/databases/rubygem-couchrest
 rubygem-crack                   ports/devel/rubygem-crack
+rubygem-cri                     ports/devel/rubygem-cri
 rubygem-cuba                    ports/www/rubygem-cuba
 rubygem-curb                    ports/ftp/rubygem-curb
 rubygem-daemon_controller       ports/devel/rubygem-daemon_controller
@@ -24792,6 +24795,7 @@ rubygem-multi_xml               ports/textproc/rubygem-multi_xml
 rubygem-multipart-post          ports/www/rubygem-multipart-post
 rubygem-murder                  ports/sysutils/rubygem-murder
 rubygem-mutter                  ports/devel/rubygem-mutter
+rubygem-nanoc                   ports/www/rubygem-nanoc
 rubygem-ncurses                 ports/devel/rubygem-ncurses
 rubygem-ncursesw                ports/devel/rubygem-ncursesw
 rubygem-needle                  ports/devel/rubygem-needle
@@ -25249,9 +25253,11 @@ sdlCC                           ports/games/sdlCC
 sdl_console                     ports/devel/sdl_console
 sdl_gfx                         ports/graphics/sdl_gfx
 sdl_image                       ports/graphics/sdl_image
+sdl_jewels                      ports/games/sdl_jewels
 sdl_mixer                       ports/audio/sdl_mixer
 sdl_net                         ports/net/sdl_net
 sdl_pango                       ports/x11-toolkits/sdl_pango
+sdl_scavenger                   ports/games/sdl_scavenger
 sdl_sge                         ports/devel/sdl_sge
 sdl_sound                       ports/audio/sdl_sound
 sdl_ttf                         ports/graphics/sdl_ttf
