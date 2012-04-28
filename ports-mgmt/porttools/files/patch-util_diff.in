@@ -90,7 +90,7 @@
  	else 
  		# Non-CVS modes
 +		DIRBASENAME=`basename \`pwd\``
-+		PORTBASENAME_HEADER=`sed -n -E -e '1,/^($|[^#].*$)|\\$FreeBSD: /tmp/pcvs/ports/ports-mgmt/porttools/files/patch-util_diff.in,v 1.5 2012-03-03 13:31:02 crees Exp $FreeBSD:[[:space:]]*ports/([^/]+)/([^/]+)/Makefile.*$%\2%p' Makefile`
++		PORTBASENAME_HEADER=`sed -n -E -e '1,/^($|[^#].*$)|\\$FreeBSD\:/s%^#.*\\$FreeBSD\:[[:space:]]*([^/]+/)*([^/]+)/Makefile.*\\$%\2%p' Makefile`
 +		if [ "${DIRBASENAME}" != "${PORTBASENAME_HEADER}" ]
 +		then
 +			echo "Warning: current directory name differs from Makefile header:"
@@ -116,7 +116,7 @@
 +			if [ ! -d ${ORIG_DIR} ]
 +			then
 +				echo "Original version does not exist at ${ORIG_DIR}"
-+				if [ -d "${DIFF_MODE}/${CATEGORY}/${PORTBASENAME}" ]
++				if [ -d "${DIFF_MODE}/${CATEGORY}/${DIRBASENAME}" ]
 +				then
 +					PORTBASENAME=${DIRBASENAME}
 +					ORIG_DIR="${DIFF_MODE}/${CATEGORY}/${PORTBASENAME}"
