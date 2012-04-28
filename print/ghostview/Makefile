@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostview
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://ftp.gnu.org/old-gnu/ghostview/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/ghostview/
@@ -20,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_IMAKE=	yes
 USE_XORG=	xbitmaps xaw
+USE_GHOSTSCRIPT_RUN=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		ghostview.1
