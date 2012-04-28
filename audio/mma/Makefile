@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	mma
-DISTVERSION=	1.7
+PORTVERSION=	12.02
 PORTREVISION=	0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
-DISTFILES=	${PORTNAME}-bin-${DISTVERSION}.tar.gz
+MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/
+DISTFILES=	${PORTNAME}-bin-${PORTVERSION}.tar.gz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Musical MIDI Accompaniment generator
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 
 OPTIONS=	TIMIDITY	"Install timidity++ as MIDI player" Off \
 		PLAYMIDI	"Install playmidi as MIDI player" Off
@@ -28,12 +27,13 @@ WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${DISTVERSION:S,a,,}
 
 MMABIN=	${PREFIX}/bin/mma
 
-.if !defined (NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
 .if !defined (NO_INSTALL_MANPAGES)
 MAN1=	mma.1 mma-renum.1
 MAN8=	mma-libdoc.8
 .endif
+
+.if !defined (NOPORTDOCS)
+DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
 .endif
 
 post-patch:
@@ -54,9 +54,10 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/pdf && ${CP} ${WRKDOC}/*.pdf ${DOCSDIR}/pdf/ && \
 	cd ${WRKSRC}/docs/html && ${COPYTREE_SHARE} . ${DOCSDIR}/html
+.endif
+
 .if !defined(NO_INSTALL_MANPAGES)
 	@cd ${WRKSRC}/docs/man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1/ && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8/
-.endif
 .endif
 
 post-install:
