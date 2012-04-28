@@ -65,6 +65,7 @@
     SUBDIR += bbapm
     SUBDIR += bchunk
     SUBDIR += be_agent
+    SUBDIR += beadm
     SUBDIR += binup
     SUBDIR += biosfont
     SUBDIR += bkpupsd
