@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.4
+PORTVERSION?=	1.4.1
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
-PKGNAMEPREFIX=	${GECKO}-
+PKGNAMEPREFIX?=	${GECKO}-
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail clients
@@ -71,7 +71,7 @@ do-extract:
 	done
 
 pre-patch:
-	@${REINPLACE_CMD} -e "s|${GECKO_PORTDIR}|mail/enigmail-${GECKO}|g" \
+	@${REINPLACE_CMD} -e "s|${GECKO_PORTDIR}|${GECKO_PORTDIR:S/www/mail/:S/\//\/enigmail-/}|g" \
 		`${FIND} ${WRKSRC} -name autoconf.mk`
 
 post-patch:
