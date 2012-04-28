@@ -15,6 +15,7 @@ DISTNAME=	SQLAlchemy-${DISTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLAlchemy
@@ -28,7 +29,7 @@ OPTIONS=	FIREBIRD "support FireBird" off
 OPTIONS+=	MSSQL "support MS SQL Server" off
 OPTIONS+=	MYSQL "support MySql" on
 OPTIONS+=	NOSE "install Nose for unit tests" off
-OPTIONS+=	POSTGRE "support PostGreSQL" on
+OPTIONS+=	PGSQL "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 OPTIONS+=	SYBASE "support Sybase" off
 
@@ -50,7 +51,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/kinterbasdb/__init__.py:${PORTSDIR}/databases
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-.if !defined(WITHOUT_MYSQL)
+.if !defined(WITHOUT_MYSQL) && ${PYTHON_REL} < 3.0
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
@@ -58,7 +59,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose-1.0.0:${PORTSDIR}/devel/py-nose
 .endif
 
-.if !defined(WITHOUT_POSTGRE)
+.if !defined(WITHOUT_PGSQL)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
 .endif
 
