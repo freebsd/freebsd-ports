@@ -29,7 +29,7 @@ OPTIONS=	FIREBIRD "support FireBird" off
 OPTIONS+=	MSSQL "support MS SQL Server" off
 OPTIONS+=	MYSQL "support MySql" on
 OPTIONS+=	NOSE "install Nose for unit tests" off
-OPTIONS+=	POSTGRE "support PostGreSQL" on
+OPTIONS+=	PGSQL "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 OPTIONS+=	SYBASE "support Sybase" off
 
@@ -59,7 +59,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MyS
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}nose-1.0.0:${PORTSDIR}/devel/py-nose
 .endif
 
-.if !defined(WITHOUT_POSTGRE)
+.if !defined(WITHOUT_PGSQL)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-psycopg2
 .endif
 
