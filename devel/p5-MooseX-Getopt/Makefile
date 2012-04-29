@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.40
+PORTVERSION=	0.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,8 +25,9 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleConfig \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires \
+		p5-Test-Trap>=0:${PORTSDIR}/devel/p5-Test-Trap \
+		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
 
