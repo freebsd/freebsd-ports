@@ -845,6 +845,7 @@ automake                        ports/devel/automake
 automake-wrapper                ports/devel/automake-wrapper
 automake14                      ports/devel/automake14
 automoc4                        ports/devel/automoc4
+automount                       ports/sysutils/automount
 automounter                     ports/sysutils/automounter
 autopano-sift                   ports/graphics/autopano-sift
 autopano-sift-c                 ports/graphics/autopano-sift-c
@@ -1004,6 +1005,7 @@ bdftopcf                        ports/x11-fonts/bdftopcf
 be-aspell                       ports/textproc/be-aspell
 be_agent                        ports/sysutils/be_agent
 beacon                          ports/net/beacon
+beadm                           ports/sysutils/beadm
 beanie                          ports/finance/beanie
 beansdb                         ports/databases/beansdb
 beanstalkd                      ports/net/beanstalkd
@@ -3079,6 +3081,7 @@ engine_pkcs11                   ports/security/engine_pkcs11
 enigmail                        ports/mail/enigmail
 enigmail-seamonkey              ports/mail/enigmail-seamonkey
 enigmail-thunderbird            ports/mail/enigmail-thunderbird
+enigmail-thunderbird-esr        ports/mail/enigmail-thunderbird-esr
 enigmail-thunderbird3           ports/mail/enigmail-thunderbird3
 enlightenment                   ports/x11-wm/enlightenment
 enlightenment-docs              ports/x11-wm/enlightenment-docs
@@ -5151,6 +5154,7 @@ gtkmm24                         ports/x11-toolkits/gtkmm24
 gtkmm24-reference               ports/x11-toolkits/gtkmm24-reference
 gtkmm30                         ports/x11-toolkits/gtkmm30
 gtkmm30-reference               ports/x11-toolkits/gtkmm30-reference
+gtkmmorse                       ports/comms/gtkmmorse
 gtkparasite                     ports/devel/gtkparasite
 gtkpasman                       ports/security/gtkpasman
 gtkperf                         ports/benchmarks/gtkperf
@@ -25254,6 +25258,7 @@ sdl_console                     ports/devel/sdl_console
 sdl_gfx                         ports/graphics/sdl_gfx
 sdl_image                       ports/graphics/sdl_image
 sdl_jewels                      ports/games/sdl_jewels
+sdl_lopan                       ports/games/sdl_lopan
 sdl_mixer                       ports/audio/sdl_mixer
 sdl_net                         ports/net/sdl_net
 sdl_pango                       ports/x11-toolkits/sdl_pango
@@ -28105,6 +28110,7 @@ xfmpc                           ports/audio/xfmpc
 xfontsel                        ports/x11-fonts/xfontsel
 xforms                          ports/x11-toolkits/xforms
 xforms-i18n                     ports/x11-toolkits/xforms-i18n
+xforward                        ports/x11/xforward
 xfpovray                        ports/graphics/xfpovray
 xfractint                       ports/graphics/xfractint
 xfree86_xkb_xml                 ports/x11/xfree86_xkb_xml
