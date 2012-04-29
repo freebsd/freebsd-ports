@@ -17,7 +17,8 @@ USE_PERL5=	yes
 MASTERDIR=	${.CURDIR}/../mariadb-server
 MARIADB_SCRIPTS_SLAVE=	yes
 
-CONFLICTS=	mysql-scripts-[0-9]*
+CONFLICTS=	mysql-scripts-[0-9]* \
+		mytop-[0-9]*
 
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
