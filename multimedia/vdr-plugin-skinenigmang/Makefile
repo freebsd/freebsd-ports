@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr-plugin-skinenigmang
-PORTVERSION=	0.1.1
-PORTREVISION=	11
+PORTVERSION=	0.1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://andreas.vdr-developer.org/enigmang/download/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
