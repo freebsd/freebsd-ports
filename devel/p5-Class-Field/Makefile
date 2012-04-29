@@ -11,10 +11,13 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class Field Accessor Generator
 
-PERL_CONFIGURE=	YES
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Class::Field.3
 
