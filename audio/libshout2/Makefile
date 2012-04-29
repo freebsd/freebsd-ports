@@ -1,16 +1,16 @@
 # New ports collection makefile for:	libshout
-# Date created:				06 Jun 2000
-# Whom:					Zach Zurflu <zach@pabst.bendnet.com>
+# Date created:		06 Jun 2000
+# Whom:			Zach Zurflu <zach@pabst.bendnet.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libshout2
-PORTVERSION=	2.2.2
-PORTREVISION=	5
+PORTVERSION=	2.3.0
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
+MASTER_SITES=	http://downloads.xiph.org/releases/libshout/ \
+		LOCAL/sunpoet
 DISTNAME=	libshout-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,21 +20,22 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
+CONFLICTS=	libshout-[0-9]*
+
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-MAKE_JOBS_SAFE=	yes
-USE_GNOME+=	pkgconfig
 GNU_CONFIGURE=	yes
-CONFLICTS=	libshout-1.0.7
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig
+USE_LDCONFIG=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/libshout
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/configure
-
-post-configure:
-	@${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
-		${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ffast-math||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^Requires: |Requires.private: |' ${WRKSRC}/shout.pc.in
+	@${REINPLACE_CMD} -e '/^AM_CPPFLAGS = / s|^\(.*\) \(@XIPH_CPPFLAGS@\) \(.*\)$$|\1 \3 \2|' ${WRKSRC}/examples/Makefile.in
+	@${REINPLACE_CMD} -e 's|#ifdef IPV6_V6ONLY|#if defined(__BSD_VISIBLE) \&\& defined(IPV6_V6ONLY)|' ${WRKSRC}/src/net/sock.c
 
 .include <bsd.port.mk>
