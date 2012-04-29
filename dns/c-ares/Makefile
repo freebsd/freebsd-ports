@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.7.5
+PORTVERSION=	1.8.0
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/download/ \
-		http://obsd.isc.org/pub/OpenBSD/distfiles/
+		http://obsd.isc.org/pub/OpenBSD/distfiles/ \
+		http://mirrors.rit.edu/zi/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
@@ -32,19 +33,19 @@ EXTRA_PATCHES+=	${FILESDIR}/ares-config-info.patch
 PKGNAMESUFFIX=	-config
 .endif
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
+CONFIGURE_ARGS+=--enable-debug
 .else
-CONFIGURE_ARGS+=	--disable-debug
+CONFIGURE_ARGS+=--disable-debug
 .endif
 .if defined(WITH_HIDE_SYMBOLS)
-CONFIGURE_ARGS+=	--enable-symbol-hiding
+CONFIGURE_ARGS+=--enable-symbol-hiding
 .else
-CONFIGURE_ARGS+=	--disable-symbol-hiding
+CONFIGURE_ARGS+=--disable-symbol-hiding
 .endif
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=	--enable-optimize
+CONFIGURE_ARGS+=--enable-optimize
 .else
-CONFIGURE_ARGS+=	--disable-optimize
+CONFIGURE_ARGS+=--disable-optimize
 .endif
 
 USE_LDCONFIG=	yes
@@ -54,7 +55,7 @@ MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-shared --disable-werror
+CONFIGURE_ARGS+=--enable-shared --disable-werror
 
 MAN3=	ares_cancel.3 \
 	ares_destroy.3 ares_dup.3 \
@@ -80,6 +81,7 @@ MAN3=	ares_cancel.3 \
 	ares_strerror.3 \
 	ares_timeout.3 \
 	ares_version.3 \
+	ares_parse_naptr_reply.3 \
 	ares_parse_ns_reply.3 \
 	ares_destroy_options.3 \
 	ares_save_options.3
