@@ -1,15 +1,15 @@
---- Makefile.orig	2011-02-03 23:47:50.000000000 +0100
-+++ Makefile	2011-02-20 08:50:16.000000000 +0100
-@@ -236,8 +236,6 @@
- else
- lLIBS += $(shell pkg-config --libs gthread-2.0 gmodule-2.0)
+--- Makefile.orig	2012-03-16 09:11:47.000000000 +0100
++++ Makefile	2012-04-23 08:12:55.000000000 +0200
+@@ -274,7 +274,7 @@
+  lLIBS += $(shell pkg-config --libs gmodule-2.0)
  endif
--# -lrt needed for clock_gettime()
--lLIBS += -lrt
+ # -lrt needed for clock_gettime(), explicit -lm, -ldl needed for some arch-linux distros
+-lLIBS += -lrt -lm -ldl
++lLIBS += -lrt -lm
  ifeq ($(USE_GAMIN), 1)
  #gamin code is a superset of FAM code, so gamin needs fam as well
  lLIBS += -lfam
-@@ -277,10 +275,6 @@
+@@ -319,10 +319,6 @@
  	@for file in `ls $(ICONS)/ |grep -v svn`; do \
  		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
  	done
