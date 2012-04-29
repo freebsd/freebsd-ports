@@ -1889,6 +1889,7 @@
     SUBDIR += p5-Google-Checkout
     SUBDIR += p5-Google-ProtocolBuffers
     SUBDIR += p5-Gravatar-URL
+    SUBDIR += p5-Gtk2-Notify
     SUBDIR += p5-Gtk2-Spell
     SUBDIR += p5-Guard
     SUBDIR += p5-HOP-Lexer
