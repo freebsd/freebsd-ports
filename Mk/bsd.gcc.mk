@@ -101,11 +101,6 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 
 .if defined(USE_GCC)
 
-# GCC 4.5 got disconnected 2011-11-12, take care of any uses.
-.if ${USE_GCC} == "4.5+"
-USE_GCC=	4.6+
-.endif
-
 # See if we can use a later version or exclusively the one specified.
 _USE_GCC:=	${USE_GCC:S/+//}
 .if ${USE_GCC} != ${_USE_GCC}
