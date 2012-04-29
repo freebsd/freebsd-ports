@@ -1,6 +1,14 @@
 --- configure.orig	2010-01-25 12:47:28.000000000 +0100
 +++ configure	2011-03-11 17:11:27.000000000 +0100
-@@ -20717,17 +20717,17 @@
+@@ -18550,7 +18550,6 @@
+ 
+     fi
+   fi
+-     USE_NLS=yes
+ 
+ 
+     gt_cv_have_gettext=no
+@@ -21388,17 +21387,17 @@
  if test "x${prefix}" = "xNONE"; then
  
  cat >>confdefs.h <<_ACEOF

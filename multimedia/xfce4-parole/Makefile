@@ -5,37 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xfce4-parole
+PORTNAME=	parole
 PORTVERSION=	0.2.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia xfce
-MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/apps/parole/0.2
+MASTER_SITES=	XFCE/src/apps/parole/0.2/
 DIST_SUBDIR=	xfce4
-DISTNAME=	parole-${PORTVERSION}
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Lightweight media player for Xfce4 based on the gstreamer engine
+COMMENT=	Lightweight media player for Xfce4 based on gstreamer
 
-DATADIR=	${PREFIX}/share/${PORTNAME:S/xfce4-//}
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		notify.4:${PORTSDIR}/devel/libnotify \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GSTREAMER=	ffmpeg good theora xvid mp3 faad ogg dvd x264 \
-		flac wavpack soup
+USE_GSTREAMER=	core faad flac wavpack
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-power-manager-plugin \
 		--enable-libnotify \
 		--enable-taglib \
-		--disable-gtk-doc-html \
 		--without-html-dir
-CONFIGURE_ENV=	ac_cv_prog_AWK="${AWK}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig \
@@ -44,10 +38,19 @@ USE_XFCE=	configenv libgui libutil
 USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
 
-OPTIONS=	NLS "Enable Native Language Support" on \
-		CDDA "Enable CD audio support" on
+OPTIONS=	CDDA	"CD audio support (cdparanoia)"		on	\
+		HTTP	"HTTP streaming support (libsoup)"	on	\
+		NLS	"Native Language Support"		on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_CDDA)
+USE_GSTREAMER+=	cdparanoia
+.endif
+
+.if !defined(WITHOUT_HTTP)
+USE_GSTREAMER+=	soup
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -58,12 +61,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_CDDA)
-LIB_DEPENDS+=	cdio++.0:${PORTSDIR}/sysutils/gstreamer-plugins-cdio
-USE_GSTREAMER+=	cdaudio
-.endif
-
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
