@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	SF
@@ -39,7 +40,8 @@ OPTIONS=	APPLETALK	"Enable AppleTalk protocol support" on \
 		TIMELORD	"Enable Timelord network time service" off \
 		KRB5		"Enable Kerberos V UAM" off \
 		ZEROCONF	"Enable Zeroconf (Bonjour) support" on \
-		LDAP		"Enable LDAP support" off
+		LDAP		"Enable LDAP support" off \
+		SENDFILE	"Enable sendfile support" off
 
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
@@ -117,6 +119,12 @@ CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_OPENLDAP=		yes
 .else
 CONFIGURE_ARGS+=	--without-ldap
+.endif
+
+.if defined (WITH_SENDFILE)
+CONFIGURE_ARGS+=	--enable-sendfile
+.else
+CONFIGURE_ARGS+=	--disable-sendfile
 .endif
 
 .if ${OSVERSION} < 800031
