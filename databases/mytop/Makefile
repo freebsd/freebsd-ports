@@ -18,6 +18,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD
 		p5-DBI>=1.13:${PORTSDIR}/databases/p5-DBI \
 		p5-Term-ReadKey>=2.10:${PORTSDIR}/devel/p5-Term-ReadKey
 
+CONFLICTS=	mariadb-scripts-[0-9]*
+
 PERL_CONFIGURE=	yes
 
 MAN1=		mytop.1
