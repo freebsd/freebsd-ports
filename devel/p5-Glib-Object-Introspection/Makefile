@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Glib-Object-Introspection
-PORTVERSION=	0.007
+PORTVERSION=	0.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dynamically create Perl language bindings
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	gobject-introspection>=0.10.0:${PORTSDIR}/devel/gobject-introspection \
 		p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
@@ -26,8 +28,5 @@ TEST_DEPENDS=	p5-Cairo-GObject>=0:${PORTSDIR}/devel/p5-Cairo-GObject
 PERL_CONFIGURE=	yes
 
 MAN3=		Glib::Object::Introspection.3
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gcc -shared|${CC} -fPIC -shared|' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
