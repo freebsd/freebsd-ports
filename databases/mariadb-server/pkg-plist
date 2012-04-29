@@ -4,13 +4,11 @@
 %%ARIADB%%bin/aria_pack
 %%ARIADB%%bin/aria_read_log
 %%XTRADB%%bin/innochecksum
-bin/msql2mysql
 bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
-bin/mytop
 %%HANDLERSOCKET%%bin/hsclient
 bin/mysql_client_test_embedded
 bin/mysql_convert_table_format

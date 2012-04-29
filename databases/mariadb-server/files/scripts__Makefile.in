@@ -1,9 +1,10 @@
---- scripts/Makefile.in.orig	2011-03-01 22:25:08.000000000 -0800
-+++ scripts/Makefile.in	2011-06-03 21:58:20.000000000 -0700
-@@ -479,14 +479,11 @@
+--- scripts/Makefile.in.orig	2012-04-08 02:31:01.000000000 +0200
++++ scripts/Makefile.in	2012-04-28 14:08:29.000000000 +0200
+@@ -496,19 +496,14 @@
+ 		mysql_fix_privilege_tables_sql.c
  
  bin_SCRIPTS = @server_scripts@ \
- 			msql2mysql \
+-			msql2mysql \
 -			mysql_config \
 -			mysql_fix_privilege_tables \
  			mysql_fix_extensions \
@@ -15,7 +16,11 @@
  			mysql_convert_table_format \
  			mysql_find_rows \
  			mysqlhotcopy \
-@@ -528,8 +525,7 @@
+-			mytop \
+ 			mysqldumpslow \
+ 			mysqld_multi
+ 
+@@ -548,8 +543,7 @@
  			mysql_system_tables_fix.sql \
  			CMakeLists.txt
  

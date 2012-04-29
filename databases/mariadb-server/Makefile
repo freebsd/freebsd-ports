@@ -21,7 +21,7 @@ MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT?=	Database server - drop-in replacement for MySQL
+COMMENT=	Database server - drop-in replacement for MySQL
 
 LICENSE=	GPLv2
 
@@ -175,7 +175,7 @@ PLIST_SUB+=	HANDLERSOCKET=""
 PLUGINS+=	handlersocket
 .else
 CONFIGURE_ARGS+=	--without-plugin-handlersocket
-PLIST_SUB+=     HANDLERSOCKET="@comment "
+PLIST_SUB+=	HANDLERSOCKET="@comment "
 .endif
 .if defined(WITH_OQGRAPH)
 CONFIGURE_ARGS+=	--with-plugin-oqgraph
