@@ -1,5 +1,5 @@
---- gtk/Makefile.in.orig	2011-11-19 09:52:14.000000000 +0900
-+++ gtk/Makefile.in	2011-11-26 20:09:45.000000000 +0900
+--- gtk/Makefile.in.orig	2012-04-20 09:03:22.000000000 +0900
++++ gtk/Makefile.in	2012-04-29 02:29:44.000000000 +0900
 @@ -25,10 +25,10 @@
  
  OBJ = vte.o marshal.o vtetypebuiltins.o reaper.o
@@ -11,10 +11,10 @@
 -	$(LIBTOOL_LINK) -o libvte@LIBVTE_SUFFIX@.la $(OBJ:.o=.lo) ../mlterm/*.lo \
 +libvte-mlterm@LIBVTE_SUFFIX@.la: $(OBJ)
 +	$(LIBTOOL_LINK) -o libvte-mlterm@LIBVTE_SUFFIX@.la $(OBJ:.o=.lo) ../mlterm/*.lo \
- 	`echo ../xwindow/*.lo|sed 's/..\/xwindow\/main.lo//g' | \
- 	sed 's/..\/xwindow\/x_term_manager.lo//g' | \
+ 	`echo ../xwindow/*.lo| \
  	sed 's/..\/xwindow\/x_sb_screen.lo//g' | \
-@@ -45,13 +45,13 @@
+ 	sed 's/..\/xwindow\/x_scrollbar.lo//g' | \
+@@ -46,13 +46,13 @@
  		-I$(top_builddir)/xwindow -I../mkf/include -I../kiklib/include -g -c $<
  
  clean:

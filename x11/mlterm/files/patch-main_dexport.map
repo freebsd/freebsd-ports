@@ -1,0 +1,11 @@
+--- main/dexport.map.orig	2012-04-29 11:45:34.000000000 +0900
++++ main/dexport.map	2012-04-29 11:46:34.000000000 +0900
+@@ -2,6 +2,8 @@
+ global:
+ 	x_imagelib_load_file ;
+ 	x_get_opened_displays ;
++	__progname ;
++	environ ;
+ local:
+ 	* ;
+ } ;
