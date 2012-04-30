@@ -18,3 +18,4 @@ bin/mfsappendchunks
 bin/mfsmount
 bin/mfstools
 bin/mfssnapshot
+etc/mfsmount.cfg.dist
