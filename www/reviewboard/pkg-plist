@@ -70,6 +70,15 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/dumpdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/dumpdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/dumpdb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/loaddb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/loaddb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands/loaddb.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/evolutions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/evolutions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/evolutions.pyo
@@ -557,7 +566,6 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_visible.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_visible.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/evolutions/repository_visible.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/fixtures/hg.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/fixtures/test_scmtools.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/fixtures/test_site.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/fixtures/vmware.json
@@ -732,6 +740,7 @@ bin/rbssh
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/scmtools/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.py.orig
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/settings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/signals.py
@@ -996,6 +1005,7 @@ bin/rbssh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/changedescs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/attachments
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/management
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin/fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/reviewboard/admin
