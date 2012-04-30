@@ -3287,3 +3287,4 @@ editors/lazarus-gtk2||2012-04-20|Never fully added. Use editors/lazarus instead
 editors/lazarus-qt4||2012-04-20|Never fully added. Use editors/lazarus instead
 net/socks5||2012-04-21|Removed
 games/netpanzer-data||2012-04-25|No longer needed
+www/typo344||2012-04-30|Has expired: Support will end in the near future, see http://typo3.org/download/packages/ for details
