@@ -6,23 +6,16 @@
 #
 
 PORTNAME=	moosefs
-PORTVERSION=	1.6.20
-PORTREVISION=	1
+PORTVERSION=	#
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/moosefs/moosefs/${PORTVERSION}/
 PKGNAMESUFFIX=	-chunkserver
-DISTNAME=	mfs-${PORTVERSION}
+.include "${.CURDIR}/../moosefs-master/bsd.port.moosefs.mk"
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Storing files data and synchronizing it among themselves
 
-LICENSE=	GPLv3
-USERS=		mfs
-GROUPS=		mfs
-
-GNU_CONFIGURE=	yes
-USE_RC_SUBR+=	mfschunkserver
-MFS_WORKDIR=	/var
+DISTINFO_FILE=	${.CURDIR}/../moosefs-master/distinfo
+USE_RC_SUBR=	mfschunkserver
 
 MAN5=		mfschunkserver.cfg.5 mfshdd.cfg.5
 MAN8=		mfschunkserver.8
