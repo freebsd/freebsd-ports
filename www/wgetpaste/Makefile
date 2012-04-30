@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
