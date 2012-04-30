@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.3.10
-PORTREVISION?=	1
+PORTVERSION=	5.3.11
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -63,7 +63,7 @@ PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz
+PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
@@ -71,7 +71,7 @@ PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
 .if defined(WITH_MAILHEAD)
-PATCHFILES+=	php-${PORTVERSION}-mail-header.patch
+PATCHFILES+=	php-5.3.x-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
