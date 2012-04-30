@@ -2531,6 +2531,7 @@
     SUBDIR += p5-Test-Declare
     SUBDIR += p5-Test-Deep
     SUBDIR += p5-Test-Dependencies
+    SUBDIR += p5-Test-DependentModules
     SUBDIR += p5-Test-Differences
     SUBDIR += p5-Test-Distribution
     SUBDIR += p5-Test-EOL
