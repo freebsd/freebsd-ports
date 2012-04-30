@@ -22,6 +22,7 @@ bin/gtick
 %%NLS%%share/locale/ro/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gtick.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gtick.mo
