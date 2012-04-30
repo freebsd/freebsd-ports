@@ -1,7 +1,10 @@
 lib/ibus-hangul/setup/hangul_keyboard_list
 libexec/ibus-engine-hangul
 libexec/ibus-setup-hangul
+share/applications/ibus-setup-hangul.desktop
 share/ibus/component/hangul.xml
+share/icons/hicolor/64x64/apps/ibus-hangul.png
+share/icons/hicolor/scalable/apps/ibus-hangul.svg
 %%DATADIR%%/data/symbol.txt
 %%DATADIR%%/icons/ibus-hangul.png
 %%DATADIR%%/icons/ibus-hangul.svg
@@ -17,6 +20,13 @@ share/ibus/component/hangul.xml
 %%DATADIR%%/setup/setup.ui
 %%NLS%%share/locale/ko/LC_MESSAGES/ibus-hangul.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-hangul.mo
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/setup
