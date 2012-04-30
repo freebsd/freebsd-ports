@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 MAINTAINER=	ntarmos@cs.uoi.gr
 COMMENT=	A simple library for manipulating structured configuration files
 
+CONFLICTS=	wand-libconfig-[0-9]*
+
 USE_GNOME=	gnomehack pkgconfig
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
