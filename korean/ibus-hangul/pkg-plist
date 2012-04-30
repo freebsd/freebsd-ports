@@ -4,7 +4,9 @@ libexec/ibus-setup-hangul
 share/applications/ibus-setup-hangul.desktop
 share/ibus/component/hangul.xml
 share/icons/hicolor/64x64/apps/ibus-hangul.png
+share/icons/hicolor/64x64/apps/ibus-setup-hangul.png
 share/icons/hicolor/scalable/apps/ibus-hangul.svg
+share/icons/hicolor/scalable/apps/ibus-setup-hangul.svg
 %%DATADIR%%/data/symbol.txt
 %%DATADIR%%/icons/ibus-hangul.png
 %%DATADIR%%/icons/ibus-hangul.svg

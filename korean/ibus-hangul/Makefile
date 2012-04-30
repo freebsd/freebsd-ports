@@ -21,6 +21,7 @@ LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul \
 PROJECTHOST=	ibus
 
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intltool pkgconfig
