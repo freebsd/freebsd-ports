@@ -1,0 +1,17 @@
+Test::Mock::LWP::Dispatch intends for testing a code that heavily uses
+LWP::UserAgent.
+
+Assume that function you want to test makes three different request to the
+server and expects to get some content from the server. To test this function
+you should setup request/response mappings for mocked UserAgent and test it.
+
+For doing something with mappings, here are methods map, unmap and unmap_all.
+For controlling context of these mappings (is it applies for all created in your
+code LWP::UserAgent's or only to one specific?) you should call these functions
+for exported $mock_ua object (global mapping) or for newly created
+LWP::UserAgent (local mappings).
+
+See also on Test::Mock::LWP, it provides mocked LWP objects for you, so probably
+you can solve your problems with this module too.
+
+WWW: http://search.cpan.org/dist/Test-Mock-LWP-Dispatch/
