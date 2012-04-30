@@ -970,6 +970,7 @@
     SUBDIR += vcg
     SUBDIR += vid
     SUBDIR += view3ds
+    SUBDIR += viewnior
     SUBDIR += vigra
     SUBDIR += vindaloo
     SUBDIR += vips
