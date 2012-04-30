@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	9999
-PORTEPOCH=	2
+PORTVERSION=	20120429
+PORTEPOCH=	3
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/
+MASTER_SITES=	http://github.com/pkgtools/pkgtools/tarball/${GITVERSION}/ \
+		http://www.shatow.net/freebsd/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	pkgtools-${DISTVERSION}
+DISTNAME=	pkgtools-pkgtools-${GITVERSION}
 
 MAINTAINER=	bryan@shatow.net
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 LICENSE=	BSD
 
-FETCH_DEPENDS=	git:${PORTSDIR}/devel/git
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
-MANUAL_PACKAGE_BUILD=	troubles with distfile cache on pointyhat
+FETCH_ARGS=	-Fpr
+GITVERSION=	0449e52
 
 USE_RUBY=	yes
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
@@ -44,8 +45,6 @@ MLINKS=		pkgdb.1 pkg_which.1 \
 		portupgrade.1 portinstall.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
-NO_CHECKSUM=	yes
-GIT_REPO_URL=	http://github.com/pkgtools/pkgtools.git
 
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
@@ -54,20 +53,6 @@ INSTALL_TARGET=		install
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install-doc
 .endif
-
-do-fetch:
-	@${MKDIR} ${_DISTDIR}/portupgrade
-	@(head=`git ls-remote -h ${GIT_REPO_URL} | \
-	    ${GREP} heads/master | ${AWK} '{print $$1}'`; \
-	    if [ ! -f "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ]; then \
-	    ${SETENV} ${FETCH_ENV} ${FETCH_BINARY} -m -o \
-	    "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ${MASTER_SITES}master \
-	    && ${LN} -sf "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" \
-	    "${_DISTDIR}/portupgrade/latest"; fi)
-
-do-extract:
-	${MKDIR} ${WRKSRC}
-	@tar -C ${WRKSRC}/ --strip-components 1 -xf ${_DISTDIR}/portupgrade/latest
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} '/PREFIX/s:\(=[[:space:]]*\)\(.*/usr/local\):\1ENV["LOCALBASE"] || \2:' \
