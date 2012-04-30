@@ -52,6 +52,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b428e6b3-926c-11e1-8d7b-003067b2972c">
+    <topic>portupgrade-devel -- lack of distfile checksums</topic>
+    <affects>
+      <package>
+	<name>portupgrade-devel</name>
+	<range><lt>0,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ports security team reports:</p>
+	<p>The portupgrade-devel port fetched directly from a git
+	  respository without checking against a known good
+	  SHA hash. This means that it is possible that packages
+	  built using this port may not match the one vetted
+	  by the maintainer. Users are advised to rebuild
+	  portupgrade-devel from known good sources.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa/>
+    </references>
+    <dates>
+      <discovery>2012-04-30</discovery>
+      <entry>2012-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d85976a-9011-11e1-b5e0-000c299b62e1">
     <topic>net-snmp -- Remote DoS</topic>
     <affects>
