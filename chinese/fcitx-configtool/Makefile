@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	fcitx-configtool
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	Fcitx IM configure tool
+COMMENT=	Fcitx IM framework configure tool
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GNOME=	intltool gnomehack
 USE_GETTEXT=	yes
 USE_CMAKE=	yes

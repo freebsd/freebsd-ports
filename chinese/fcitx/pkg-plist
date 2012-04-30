@@ -100,6 +100,7 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/configdesc/fcitx-chttrans.desc
 %%DATADIR%%/configdesc/fcitx-classic-ui.desc
 %%DATADIR%%/configdesc/fcitx-pinyin.desc
+%%DATADIR%%/configdesc/fcitx-quickphrase.desc
 %%DATADIR%%/configdesc/fcitx-xim.desc
 %%DATADIR%%/configdesc/inputmethod.desc
 %%DATADIR%%/configdesc/profile.desc
@@ -132,6 +133,7 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/skin/classic/fullwidth_inactive.png
 %%DATADIR%%/skin/classic/inactive.png
 %%DATADIR%%/skin/classic/input.png
+%%DATADIR%%/skin/classic/kbd.png
 %%DATADIR%%/skin/classic/logo.png
 %%DATADIR%%/skin/classic/menu.png
 %%DATADIR%%/skin/classic/next.png
@@ -164,6 +166,7 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/skin/dark/fullwidth_inactive.png
 %%DATADIR%%/skin/dark/inactive.png
 %%DATADIR%%/skin/dark/input.png
+%%DATADIR%%/skin/dark/kbd.png
 %%DATADIR%%/skin/dark/keyboard.png
 %%DATADIR%%/skin/dark/logo.png
 %%DATADIR%%/skin/dark/menu.png
@@ -197,6 +200,7 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/skin/default/fullwidth_inactive.png
 %%DATADIR%%/skin/default/inactive.png
 %%DATADIR%%/skin/default/input.png
+%%DATADIR%%/skin/default/kbd.png
 %%DATADIR%%/skin/default/keyboard.png
 %%DATADIR%%/skin/default/logo.png
 %%DATADIR%%/skin/default/menu.png
@@ -231,6 +235,13 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/table/wbx.mb
 %%DATADIR%%/table/zrm.conf
 %%DATADIR%%/table/zrm.mb
+share/icons/gnome/scalable/status/fcitx-fullwidth-active.svg
+share/icons/gnome/scalable/status/fcitx-fullwidth-inactive.svg
+share/icons/gnome/scalable/status/fcitx-kbd.svg
+share/icons/gnome/scalable/status/fcitx-punc-active.svg
+share/icons/gnome/scalable/status/fcitx-punc-inactive.svg
+share/icons/gnome/scalable/status/fcitx-vk-active.svg
+share/icons/gnome/scalable/status/fcitx-vk-inactive.svg
 share/icons/hicolor/128x128/apps/fcitx.png
 share/icons/hicolor/16x16/apps/fcitx.png
 share/icons/hicolor/16x16/status/fcitx-fullwidth-active.png
@@ -240,6 +251,14 @@ share/icons/hicolor/16x16/status/fcitx-punc-active.png
 share/icons/hicolor/16x16/status/fcitx-punc-inactive.png
 share/icons/hicolor/16x16/status/fcitx-vk-active.png
 share/icons/hicolor/16x16/status/fcitx-vk-inactive.png
+share/icons/hicolor/22x22/apps/fcitx.png
+share/icons/hicolor/22x22/status/fcitx-fullwidth-active.png
+share/icons/hicolor/22x22/status/fcitx-fullwidth-inactive.png
+share/icons/hicolor/22x22/status/fcitx-kbd.png
+share/icons/hicolor/22x22/status/fcitx-punc-active.png
+share/icons/hicolor/22x22/status/fcitx-punc-inactive.png
+share/icons/hicolor/22x22/status/fcitx-vk-active.png
+share/icons/hicolor/22x22/status/fcitx-vk-inactive.png
 share/icons/hicolor/24x24/apps/fcitx.png
 share/icons/hicolor/24x24/status/fcitx-fullwidth-active.png
 share/icons/hicolor/24x24/status/fcitx-fullwidth-inactive.png
@@ -269,19 +288,22 @@ share/icons/hicolor/48x48/status/fcitx-vk-inactive.png
 share/icons/hicolor/48x48/status/fcitx-wbpy.png
 share/icons/hicolor/48x48/status/fcitx-wubi.png
 share/icons/hicolor/48x48/status/fcitx-ziranma.png
-share/icons/hicolor/scabable/status/fcitx-fullwidth-active.svg
-share/icons/hicolor/scabable/status/fcitx-fullwidth-inactive.svg
-share/icons/hicolor/scabable/status/fcitx-kbd.svg
-share/icons/hicolor/scabable/status/fcitx-punc-active.svg
-share/icons/hicolor/scabable/status/fcitx-punc-inactive.svg
-share/icons/hicolor/scabable/status/fcitx-vk-active.svg
-share/icons/hicolor/scabable/status/fcitx-vk-inactive.svg
+share/icons/hicolor/scalable/status/fcitx-fullwidth-active.svg
+share/icons/hicolor/scalable/status/fcitx-fullwidth-inactive.svg
+share/icons/hicolor/scalable/status/fcitx-kbd.svg
+share/icons/hicolor/scalable/status/fcitx-punc-active.svg
+share/icons/hicolor/scalable/status/fcitx-punc-inactive.svg
+share/icons/hicolor/scalable/status/fcitx-vk-active.svg
+share/icons/hicolor/scalable/status/fcitx-vk-inactive.svg
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
 @dirrmtry share/applications
-@dirrmtry share/icons/hicolor/scabable/status
-@dirrmtry share/icons/hicolor/scabable
+@dirrmtry share/icons/gnome/scalable/status
+@dirrmtry share/icons/gnome/scalable
+@dirrmtry share/icons/gnome
+@dirrmtry share/icons/hicolor/scalable/status
+@dirrmtry share/icons/hicolor/scalable
 @dirrm %%DATADIR%%/table
 @dirrm %%DATADIR%%/skin/default
 @dirrm %%DATADIR%%/skin/dark

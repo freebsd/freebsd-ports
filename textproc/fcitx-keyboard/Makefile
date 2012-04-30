@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx-keyboard
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -19,7 +19,7 @@ LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		icuuc.48:${PORTSDIR}/devel/icu
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 USE_GNOME=	intltool libxml2
