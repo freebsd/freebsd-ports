@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	wand-
 MAINTAINER=	matt@peterson.org
 COMMENT=	C library for parsing config files
 
+CONFLICTS=	libconfig-[0-9]*
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
