@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	igor
-PORTVERSION=	1.224
+PORTVERSION=	1.259
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
