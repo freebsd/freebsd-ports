@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	moosefs
-PORTVERSION=	1.6.20
+PORTVERSION=	#set via include
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/moosefs/moosefs/${PORTVERSION}/
 PKGNAMESUFFIX=	-master
-DISTNAME=	mfs-${PORTVERSION}
+.include "bsd.port.moosefs.mk"
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Managing the whole filesystem and storing metadata
 
 USE_PYTHON=	2.5+
 
-GNU_CONFIGURE=	yes
-USE_RC_SUBR+=	mfsmaster mfsmetalogger mfscgiserv
-MFS_WORKDIR=	/var
+USE_RC_SUBR=	mfsmaster mfsmetalogger mfscgiserv
 MFS_CGIDIR=	${PREFIX}/share/mfscgi
 SUB_FILES+=	pkg-install pkg-message pkg-deinstall
 SUB_LIST+=	MFS_WORKDIR="${MFS_WORKDIR}"
@@ -33,7 +30,7 @@ CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
 			--disable-mfschunkserver \
 			--disable-mfsmount
 
-MAN5=		mfsmaster.cfg.5 mfsexports.cfg.5 mfsmetalogger.cfg.5
+MAN5=		mfsmaster.cfg.5 mfsexports.cfg.5 mfsmetalogger.cfg.5 mfstopology.cfg.5
 MAN7=		moosefs.7 mfs.7
 MAN8=		mfscgiserv.8 mfsmaster.8 mfsmetarestore.8 mfsmetalogger.8
 
@@ -43,7 +40,7 @@ pre-install:
 	${MKDIR} ${MFS_CGIDIR}
 
 post-install:
-.for FILE in mfsmaster mfsexports mfsmetalogger
+.for FILE in mfsmaster mfsexports mfsmetalogger mfstopology
 	@if [ ! -f ${PREFIX}/etc/${i}.cfg ]; then \
 		${CP} ${PREFIX}/etc/${FILE}.cfg.dist ${PREFIX}/etc/${FILE}.cfg ; \
 	fi
