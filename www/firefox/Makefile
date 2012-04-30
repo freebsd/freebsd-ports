@@ -75,7 +75,7 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 .endif
 
 .if defined(WITH_PGO)
-BROKEN=		does not build
+BROKEN=		does not build with PGO option enabled
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 USE_PYTHON_BUILD=	yes
 USE_DISPLAY=		yes
