@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Mojolicious/Plugin/YamlConfig.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/YamlConfig/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin/YamlConfig
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/Plugin
