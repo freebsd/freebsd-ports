@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	axis2
-PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTVERSION=	1.6.2
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
@@ -21,8 +20,8 @@ USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
-OPTIONS=		TOMCAT5 "Enable Tomcat 5.x support"     on \
-			TOMCAT6 "Enable Tomcat 6.x support"     off \
+OPTIONS=		TOMCAT5 "Enable Tomcat 5.x support"     off \
+			TOMCAT6 "Enable Tomcat 6.x support"     on \
 			TOMCAT7 "Enable Tomcat 7.x support"     off
 
 .include <bsd.port.options.mk>
