@@ -1,12 +1,15 @@
 @exec  if [ ! -f %D/etc/mfsmaster.cfg ]; then /bin/cp %D/%F %D/etc/mfsmaster.cfg; fi
 @exec  if [ ! -f %D/etc/mfsexports.cfg ]; then /bin/cp %D/%F %D/etc/mfsexports.cfg; fi
 @exec  if [ ! -f %D/etc/mfsmetalogger.cfg ]; then /bin/cp %D/%F %D/etc/mfsmetalogger.cfg; fi
+@exec  if [ ! -f %D/etc/mfstopology.cfg ]; then /bin/cp %D/%F %D/etc/mfstopology.cfg; fi
 @unexec if cmp -s %D/etc/mfsmaster.cfg.dist %D/etc/mfsmaster.cfg; then rm -f %D/etc/mfsmaster.cfg; fi
 @unexec if cmp -s %D/etc/mfsexports.cfg.dist %D/etc/mfsexports.cfg; then rm -f %D/etc/mfsexports.cfg; fi
 @unexec if cmp -s %D/etc/mfsmetalogger.cfg.dist %D/etc/mfsmetalogger.cfg; then rm -f %D/etc/mfsmetalogger.cfg; fi
+@unexec if cmp -s %D/etc/mfstopology.cfg.dist %D/etc/mfstopology.cfg; then rm -f %D/etc/mfstopology.cfg; fi
 etc/mfsmaster.cfg.dist
 etc/mfsexports.cfg.dist
 etc/mfsmetalogger.cfg.dist
+etc/mfstopology.cfg.dist
 sbin/mfscgiserv
 sbin/mfsmaster
 sbin/mfsmetarestore
@@ -18,4 +21,5 @@ share/mfscgi/logomini.png
 share/mfscgi/index.html
 share/mfscgi/err.gif
 share/mfscgi/chart.cgi
+share/mfscgi/favicon.ico
 @dirrm share/mfscgi
