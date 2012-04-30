@@ -33,6 +33,9 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-network \
 		--with-libssh2
 
+#limit to non-stable release x.x.x
+PORTSCOUT=	limit:\d+\.\d+\.\d+$$
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
