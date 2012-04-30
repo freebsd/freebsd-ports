@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120430:
+  AFFECTS: users of www/py-google-api-python-client
+  AUTHOR: nivit@FreeBSD.org
+
+  The port has been updated to 1.0.b8. This new version has important
+  changes which might break your code:
+
+  * apiclient.anyjson has moved to oauth2client.anyjson.
+  * Some calls, for example, taskqueue().lease() used to require
+    a parameter named body. In this new release only methods that
+    really need to send a body require a body parameter, and so
+    you may get errors about an unknown 'body' parameter in your call.
+    The solution is to remove the unneeded body={} parameter
+
+  See http://code.google.com/p/google-api-python-client/wiki/PyDoc for
+  more information.
+
 20120426:
   AFFECTS: users of editors/libreoffice
   AUTHORS: bapt@FreeBSD.org
