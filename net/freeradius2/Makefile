@@ -112,7 +112,7 @@ PLIST_SUB+=	KRB5="@comment "
 
 # Patch rlm_krb5.c to add Heimdal support for specifying keytab+SPN
 .ifdef(WITH_HEIMDAL_PATCH)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src__modules__rlm_krb5__rlm_krb5.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__modules__rlm_krb5__rlm_krb5.c
 .endif
 
 .ifdef(WITH_LDAP)
@@ -165,7 +165,7 @@ PLIST_SUB+=	FIREBIRD="@comment "
 
 # Firebird module is still experimental
 .if defined(WITH_FIREBIRD) && !defined(WITH_EXPERIMENTAL)
-WITH_EXPERIMENTAL=	yes
+EXPM=		yes
 .endif
 
 .ifdef(WITH_PERL)
@@ -199,7 +199,7 @@ PLIST_SUB+=	RLMRUBY="@comment "
 
 # rlm_ruby module is still experimental
 .if defined(WITH_RUBY) && !defined(WITH_EXPERIMENTAL)
-WITH_EXPERIMENTAL=	yes
+EXPM=		yes
 .endif
 
 .ifdef(WITH_DHCP)
@@ -210,7 +210,7 @@ CONFIGURE_ARGS+=--without-dhcp
 
 # DHCP is still experimental
 .if defined(WITH_DHCP) && !defined(WITH_EXPERIMENTAL)
-WITH_EXPERIMENTAL=	yes
+EXPM=		yes
 .endif
 
 # No SMB option yet; rlm_smb is still unbuildable
@@ -227,7 +227,7 @@ PLIST_SUB+=	SMB="@comment "
 
 # SMB module is still experimental
 .if defined(WITH_SMB) && !defined(WITH_EXPERIMENTAL)
-WITH_EXPERIMENTAL=	yes
+EXPM=		yes
 .endif
 
 # Oracle support is experimental under FreeBSD
@@ -243,7 +243,7 @@ CONFIGURE_ARGS+=--without-rlm_sql_oracle
 PLIST_SUB+=	OCI8="@comment "
 .endif
 
-.ifdef(WITH_EXPERIMENTAL)
+.if defined(EXPM) || defined(WITH_EXPERIMENTAL)
 CONFIGURE_ARGS+=--with-experimental-modules
 PLIST_SUB+=	EXPM=""
 .else

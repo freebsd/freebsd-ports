@@ -197,6 +197,11 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_attr_rewrite.a
 %%LIBDIR%%/rlm_attr_rewrite.la
 %%LIBDIR%%/rlm_attr_rewrite.so
+%%EXPM%%%%LIBDIR%%/rlm_caching-%%PORTVERSION%%.la
+%%EXPM%%%%LIBDIR%%/rlm_caching-%%PORTVERSION%%.so
+%%EXPM%%%%LIBDIR%%/rlm_caching.a
+%%EXPM%%%%LIBDIR%%/rlm_caching.la
+%%EXPM%%%%LIBDIR%%/rlm_caching.so
 %%LIBDIR%%/rlm_chap-%%PORTVERSION%%.la
 %%LIBDIR%%/rlm_chap-%%PORTVERSION%%.so
 %%LIBDIR%%/rlm_chap.a
