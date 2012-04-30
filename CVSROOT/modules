@@ -12675,6 +12675,7 @@ p5-Gtk2-Ex-Utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
 p5-Gtk2-GladeXML                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-Gtk2-Html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-Gtk2-ImageView               ports/x11-toolkits/p5-Gtk2-ImageView
+p5-Gtk2-Notify                  ports/devel/p5-Gtk2-Notify
 p5-Gtk2-PathButtonBar           ports/x11-toolkits/p5-Gtk2-PathButtonBar
 p5-Gtk2-Spell                   ports/devel/p5-Gtk2-Spell
 p5-Gtk2-TrayIcon                ports/x11-toolkits/p5-Gtk2-TrayIcon
@@ -17182,6 +17183,7 @@ p5-gtk2-ex-utils                ports/x11-toolkits/p5-Gtk2-Ex-Utils
 p5-gtk2-gladexml                ports/x11-toolkits/p5-Gtk2-GladeXML
 p5-gtk2-html2                   ports/x11-toolkits/p5-Gtk2-Html2
 p5-gtk2-imageview               ports/x11-toolkits/p5-Gtk2-ImageView
+p5-gtk2-notify                  ports/devel/p5-Gtk2-Notify
 p5-gtk2-pathbuttonbar           ports/x11-toolkits/p5-Gtk2-PathButtonBar
 p5-gtk2-spell                   ports/devel/p5-Gtk2-Spell
 p5-gtk2-trayicon                ports/x11-toolkits/p5-Gtk2-TrayIcon
