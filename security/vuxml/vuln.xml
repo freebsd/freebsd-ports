@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2cde1892-913e-11e1-b44c-001fd0af1a4c">
+     <topic>php -- multiple vulnerabilities</topic>
+     <affects>
+        <package>
+           <name>php</name>
+           <range><lt>5.3.11</lt></range>
+           <range><lt>5.4.1</lt></range>
+        </package>
+     </affects>
+     <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+          <p>php development team reports:</p>
+          <blockquote cite="http://www.php.net/archive/2012.php#id2012-04-26-1">
+	    <p>Security Enhancements for both PHP 5.3.11 and PHP 5.4.1:</p>
+	    <ul>
+	      <li>Insufficient validating of upload name leading to corrupted $_FILES indices. (CVE-2012-1172) </li>
+	      <li>Add open_basedir checks to readline_write_history and readline_read_history.</li>
+	    </ul>
+	    <p>Security Enhancements for both PHP 5.3.11 only:</p>
+	    <ul>
+	      <li>Regression in magic_quotes_gpc fix for CVE-2012-0831.</li>
+	    </ul>
+          </blockquote>
+        </body>
+     </description>
+     <references>
+        <cvename>CVE-2012-0831</cvename>
+        <cvename>CVE-2012-1172</cvename>
+        <url>http://www.php.net/archive/2012.php#id2012-04-26-1</url>
+     </references>
+     <dates>
+        <discovery>2012-03-01</discovery>
+        <entry>2012-04-28</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="0fa15e08-92ec-11e1-a94a-00215c6a37bb">
     <topic>samba -- incorrect permission checks vulnerability</topic>
     <affects>
