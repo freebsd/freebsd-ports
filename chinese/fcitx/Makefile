@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.2
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A simple and fast GBK Chinese XIM server
+COMMENT=	A Flexible Input Method Framework
 
 LICENSE=	GPLv2
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 MAN1=	createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
 	readPYBase.1 readPYMB.1 scel2org.1 txt2mb.1
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GNOME=	pango intltool gnomehack
 USE_GETTEXT=	yes
 USE_XORG=	x11 xext

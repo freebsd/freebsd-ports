@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx-sunpinyin
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -17,7 +17,7 @@ COMMENT=	SunPinyin support for Fcitx
 LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx \
 		sunpinyin.3:${PORTSDIR}/chinese/sunpinyin
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 USE_GNOME=	intltool

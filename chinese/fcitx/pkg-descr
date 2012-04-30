@@ -1,7 +1,4 @@
-Fcitx is a simple and fast GBK Chinese XIM server.  It stands for Free
-Chinese Input Toy for X, an input method for Unix-like operating systems.
-To be more precise, it is a collection of Simplified Chinese input methods
-based on XIM (X Input Method), including WuBi, PinYin, and QuWei, and is
-distributed under GPL.  It is the descendent of gWuBi.
+Fcitx (Free Chinese Input Toy for X) is an input method framework,
+which aims to provide a flexible IM solution for the desktop environments.
 
 WWW:	http://code.google.com/p/fcitx/
