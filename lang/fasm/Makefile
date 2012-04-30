@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-1.70
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 
+BROKEN=		size mismatch
+
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.txt
 
