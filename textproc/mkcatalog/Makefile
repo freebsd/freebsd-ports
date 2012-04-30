@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A maintenance utility for sgml catalog files
 
 NO_WRKSUBDIR=	yes
-NO_CHECKSUM=	yes
 NO_BUILD=	yes
 PLIST_FILES=	sbin/mkcatalog
 SCRIPTS_ENV=	CONFIGURE_TARGETS=${CONFIGURE_TARGETS}
