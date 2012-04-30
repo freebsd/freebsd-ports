@@ -1,6 +1,9 @@
 The Google API Client for Python is a client library for accessing
-the Buzz, Latitude, Moderator, Diacritize, Translate, Custom Search,
-Search API for Shopping, URL Shortener, and Prediction APIs.
+the adexchangebuyer, adsense, analytics, audit, bigquery, blogger,
+books, calendar, customsearch, discovery, drive, freebase, gan,
+groupssettings, latitude, moderator, oauth2, orkut, pagespeedonline,
+plus, prediction, shopping, siteVerification, taskqueue, tasks,
+translate, urlshortener, and webfonts APIs.
 
 If you wish to use a Google API that is not in that list then you should
 look at the Google Data APIs Python Client Library (devel/py-gdata).

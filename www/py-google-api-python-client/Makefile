@@ -8,24 +8,27 @@
 PORTNAME=	google-api-python-client
 #PORTVERSION=
 #PORTREVISION=	0
-DISTVERSION=	1.0beta2
+DISTVERSION=	1.0beta8
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google API Client Library for Python
 
+LICENSE=	AL2
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gflags>=1.4:${PORTSDIR}/devel/py-gflags \
 		${PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \
-		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2
+		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2 \
+		${PKGNAMEPREFIX}simplejson>=2.5.0:${PORTSDIR}/devel/py-simplejson
 RUN_DEPENDS=	${PKGNAMEPREFIX}gflags>=1.4:${PORTSDIR}/devel/py-gflags \
 		${PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \
-		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2
+		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2 \
+		${PKGNAMEPREFIX}simplejson>=2.5.0:${PORTSDIR}/devel/py-simplejson \
+		${PKGNAMEPREFIX}WebTest>=1.3.3:${PORTSDIR}/www/py-WebTest
 
 USE_PYTHON=	-2.7
-
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 

@@ -4,21 +4,15 @@ bin/enable-app-engine-project
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/enable-app-engine-project
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/anyjson.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/anyjson.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/anyjson.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/buzz/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/buzz/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/buzz/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/buzz/future.json
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/latitude/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/latitude/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/latitude/__init__.pyo
@@ -51,35 +45,51 @@ bin/enable-app-engine-project
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/http.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/http.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/http.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/mimeparse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/mimeparse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/mimeparse.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/model.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/model.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/model.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/oauth.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/oauth.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/oauth.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/schema.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/schema.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/schema.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/anyjson.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/anyjson.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/anyjson.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/appengine.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/appengine.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/appengine.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/client.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/client.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/client.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/clientsecrets.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/clientsecrets.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/clientsecrets.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/crypt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/crypt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/crypt.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/django_orm.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/django_orm.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/django_orm.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/file.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/file.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/file.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/multistore_file.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/multistore_file.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/multistore_file.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/tools.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/tools.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/oauth2client/tools.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/uritemplate/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/uritemplate/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/uritemplate/__init__.pyo
-%%PORTDOCS%%%%DOCSDIR%%/apiclient.anyjson.html
-%%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.buzz.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.latitude.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.moderator.html
@@ -92,18 +102,77 @@ bin/enable-app-engine-project
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.ext.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.http.html
+%%PORTDOCS%%%%DOCSDIR%%/apiclient.mimeparse.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.model.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.oauth.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.activities.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.comments.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.groups.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.people.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.photoAlbums.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.photos.html
-%%PORTDOCS%%%%DOCSDIR%%/dyn/buzz.v1.related.html
+%%PORTDOCS%%%%DOCSDIR%%/apiclient.schema.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.adclients.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.adunits.customchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.adunits.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.customchannels.adunits.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.customchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.reports.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.accounts.urlchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.adclients.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.adunits.customchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.adunits.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.customchannels.adunits.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.customchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.reports.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.1.urlchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.adclients.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.adunits.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.customchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.reports.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/adsense.v1.urlchannels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.data.ga.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.data.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.management.accounts.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.management.goals.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.management.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.management.profiles.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.management.segments.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.management.webproperties.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/analytics.v3.report.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/audit.v1.activities.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/audit.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.blogs.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.comments.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.pages.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.posts.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.users.blogs.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/blogger.v2.users.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.bookshelves.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.bookshelves.volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.myconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.mylibrary.annotations.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.mylibrary.bookshelves.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.mylibrary.bookshelves.volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.mylibrary.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.mylibrary.readingpositions.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/books.v1.volumes.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.acl.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.calendarList.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.calendars.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.colors.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.events.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.freebusy.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/calendar.v3.settings.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/chromewebstore.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/chromewebstore.v1.licenses.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/contacts.v1beta1.allcontacts.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/contacts.v1beta1.allcontacts.photos.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/contacts.v1beta1.contacts.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/contacts.v1beta1.contacts.photos.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/contacts.v1beta1.groups.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/contacts.v1beta1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/customsearch.v1.cse.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/customsearch.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/diacritize.v1.diacritize.corpus.html
@@ -111,6 +180,13 @@ bin/enable-app-engine-project
 %%PORTDOCS%%%%DOCSDIR%%/dyn/diacritize.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/discovery.v1.apis.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/discovery.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/freebase.v1-dev.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/freebase.v1-dev.text.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/freebase.v1-dev.user.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/freebase.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/freebase.v1.text.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/groupssettings.v1.groups.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/groupssettings.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/latitude.v1.currentLocation.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/latitude.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/latitude.v1.location.html
@@ -133,11 +209,44 @@ bin/enable-app-engine-project
 %%PORTDOCS%%%%DOCSDIR%%/dyn/moderator.v1.topics.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/moderator.v1.topics.submissions.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/moderator.v1.votes.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/oauth2.v2.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/oauth2.v2.userinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/oauth2.v2.userinfo.v2.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/oauth2.v2.userinfo.v2.me.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.acl.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.activities.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.activityVisibility.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.badges.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.comments.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communities.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityFollow.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityMembers.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityMessages.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityPollComments.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityPollVotes.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityPolls.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityRelated.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.communityTopics.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.counters.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/orkut.v2.scraps.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/pagespeedonline.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/pagespeedonline.v1.pagespeedapi.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/plus.v1.activities.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/plus.v1.comments.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/plus.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/plus.v1.people.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.1.training.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.2.hostedmodels.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.2.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.2.training.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.3.hostedmodels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.3.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.3.training.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.4.hostedmodels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.4.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.4.trainedmodels.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/shopping.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/shopping.v1.products.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/siteVerification.v1.html
@@ -145,189 +254,95 @@ bin/enable-app-engine-project
 %%PORTDOCS%%%%DOCSDIR%%/dyn/taskqueue.v1beta1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/taskqueue.v1beta1.taskqueues.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/taskqueue.v1beta1.tasks.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/tasks.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/tasks.v1.tasklists.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/tasks.v1.tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.detections.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.languages.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.translations.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/transparencyreport.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/transparencyreport.v1.traffic.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/urlshortener.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/urlshortener.v1.url.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/webfonts.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/webfonts.v1.webfonts.html
 %%PORTDOCS%%%%DOCSDIR%%/httplib2.html
 %%PORTDOCS%%%%DOCSDIR%%/httplib2.iri2uri.html
 %%PORTDOCS%%%%DOCSDIR%%/httplib2.socks.html
+%%PORTDOCS%%%%DOCSDIR%%/oauth2client.anyjson.html
 %%PORTDOCS%%%%DOCSDIR%%/oauth2client.appengine.html
 %%PORTDOCS%%%%DOCSDIR%%/oauth2client.client.html
+%%PORTDOCS%%%%DOCSDIR%%/oauth2client.clientsecrets.html
+%%PORTDOCS%%%%DOCSDIR%%/oauth2client.crypt.html
 %%PORTDOCS%%%%DOCSDIR%%/oauth2client.django_orm.html
 %%PORTDOCS%%%%DOCSDIR%%/oauth2client.file.html
 %%PORTDOCS%%%%DOCSDIR%%/oauth2client.html
+%%PORTDOCS%%%%DOCSDIR%%/oauth2client.multistore_file.html
 %%PORTDOCS%%%%DOCSDIR%%/oauth2client.tools.html
 %%PORTDOCS%%%%DOCSDIR%%/uritemplate.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/anyjson.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/buzz/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/buzz/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/latitude/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/latitude/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/moderator/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/moderator/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/discovery.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/errors.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/ext/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/ext/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/ext/authtools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/ext/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/ext/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/http.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/apiclient/oauth.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/generate_report.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/generate_report_with_paging.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_account_tree.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_accounts.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_clients.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_clients_for_account.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_units.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_ad_units_for_custom_channel.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_custom_channels.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_custom_channels_for_ad_unit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/get_all_url_channels.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adsense/sample_utils.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/management_v3_reference.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/app.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/gflags.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/gflags_validators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/httplib2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/httplib2/iri2uri.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/httplib2/socks.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/embed.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/gadget.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/index.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/oauth2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/oauth2/clients/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/oauth2/clients/imap.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/oauth2/clients/smtp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/._decoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/._encoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/._ordered_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/._scanner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/._tool.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/decoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/encoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/ordered_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/scanner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/.___init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_decimal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_decode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_default.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_dump.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_encode_basestring_ascii.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_float.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_separators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/._test_unicode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_check_circular.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_decimal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_decode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_default.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_dump.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_encode_basestring_ascii.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_encode_for_html.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_fail.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_float.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_indent.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_pass1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_pass2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_pass3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_recursion.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_scanstring.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_separators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_speedups.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests/test_unicode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/simplejson/tool.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api-python-client-doc/uritemplate/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/anyjson.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/buzz/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/buzz/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/latitude/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/latitude/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/moderator/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/contrib/moderator/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/discovery.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/errors.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/ext/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/ext/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/ext/authtools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/ext/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/ext/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/http.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/apiclient/oauth.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/app.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/gflags.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/gflags_validators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/httplib2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/httplib2/iri2uri.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/httplib2/socks.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/grant.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/index.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2/clients/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2/clients/imap.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2/clients/smtp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2client/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2client/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2client/client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2client/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2client/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/oauth2client/tools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/._decoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/._encoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/._ordered_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/._scanner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/._tool.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/decoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/encoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/ordered_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/scanner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/.___init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_decimal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_decode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_default.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_dump.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_encode_basestring_ascii.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_float.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_separators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/._test_unicode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_check_circular.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_decimal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_decode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_default.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_dump.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_encode_basestring_ascii.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_encode_for_html.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_fail.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_float.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_indent.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_pass1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_pass2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_pass3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_recursion.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_scanstring.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_separators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_speedups.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tests/test_unicode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/simplejson/tool.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/static/go.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/uritemplate/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/buzz/buzz.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/app.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/appengine_with_robots/welcome.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/audit/audit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/blogger.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/customsearch/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debugging/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/diacritize/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/app.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/index.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dailymotion/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/buzz/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/buzz/models.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/buzz/tests.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/buzz/views.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/manage.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/plus/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/plus/models.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/plus/tests.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/plus/views.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/settings.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/static/go.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/buzz/login.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/buzz/welcome.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/plus/login.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/plus/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/urls.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/advertisers/advertisers.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/advertisers/advertisers_template.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/ccoffers/offers.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/ccoffers/offers_template.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/events/events.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/events/events_template.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/publishers/publishers.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gan/publishers/publishers_template.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupssettings/groupsettings.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/client_task.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/gen_appengine_access_token
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/gtaskqueue
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/gtaskqueue_puller
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/task_cmds.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_cmd_base.py
@@ -335,135 +350,13 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_logger.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/setup.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/latitude.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/local/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/localdiscovery/buzz.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/localdiscovery/buzz.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/moderator/moderator.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/anyjson.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/buzz/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/buzz/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/latitude/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/latitude/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/moderator/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/contrib/moderator/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/discovery.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/errors.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/ext/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/ext/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/ext/authtools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/ext/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/ext/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/http.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/apiclient/oauth.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/app.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/gflags.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/gflags_validators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/httplib2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/httplib2/iri2uri.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/httplib2/socks.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/index.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/clients/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/clients/imap.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/clients/smtp.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/tools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/uritemplate/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/anyjson.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/buzz/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/buzz/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/latitude/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/latitude/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/moderator/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/moderator/future.json
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/discovery.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/errors.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/ext/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/ext/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/ext/authtools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/ext/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/ext/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/http.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/oauth.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/app.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/gflags.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/gflags_validators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/httplib2/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/httplib2/iri2uri.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/httplib2/socks.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/index.yaml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client/appengine.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client/client.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client/django_orm.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client/file.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client/tools.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/._decoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/._encoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/._ordered_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/._scanner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/._tool.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/decoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/encoder.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/ordered_dict.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/scanner.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/.___init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_decimal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_decode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_default.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_dump.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_encode_basestring_ascii.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_float.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_separators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/._test_unicode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_check_circular.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_decimal.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_decode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_default.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_dump.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_encode_basestring_ascii.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_encode_for_html.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_fail.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_float.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_indent.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_pass1.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_pass2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_pass3.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_recursion.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_scanstring.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_separators.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_speedups.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests/test_unicode.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tool.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/uritemplate/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/buzz/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/buzz/models.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/buzz/tests.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/buzz/views.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/manage.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/settings.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/static/go.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/templates/buzz/login.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/templates/buzz/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/urls.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/client_secrets.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plus/plus.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/client_secrets.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/prediction.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/prediction_language_id.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/prediction_number.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/basic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/crowding.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/fulltextsearch.py
@@ -472,92 +365,47 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/pagination.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/ranking.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/restricting.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/buzz.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/moderator.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/prediction.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/urlshortener.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks_appengine/app.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks_appengine/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks_appengine/templates/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadqueue/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translate/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/urlshortener.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/urlshortener
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/translate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/threadqueue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine/templates
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks_appengine
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/searchforshopping
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/prediction
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/django_sample/templates/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/django_sample/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/django_sample/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/django_sample/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/django_sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/uritemplate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/simplejson/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/simplejson
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/oauth2client
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/httplib2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/ext
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/moderator
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/latitude
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion/apiclient
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/uritemplate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/oauth2client
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/oauth2/clients
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/oauth2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/httplib2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/apiclient/ext
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/apiclient/contrib/moderator
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/apiclient/contrib/latitude
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/apiclient/contrib/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/apiclient/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/apiclient
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plus
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/moderator
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/localdiscovery
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/local
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/latitude
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gtaskqueue_sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates/buzz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/groupssettings
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/publishers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/events
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/ccoffers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan/advertisers
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gan
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates/plus
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/buzz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/plus
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/diacritize
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/debugging
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dailymotion
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/customsearch
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/uritemplate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/simplejson/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/simplejson
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/oauth2client
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/oauth2/clients
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/oauth2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/httplib2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/apiclient/ext
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/apiclient/contrib/moderator
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/apiclient/contrib/latitude
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/apiclient/contrib/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/apiclient/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine/apiclient
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/blogger
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/audit
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine_with_robots
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/appengine
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/uritemplate
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/simplejson/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/simplejson
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/oauth2/clients
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/oauth2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/httplib2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/apiclient/ext
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/moderator
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/latitude
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib/buzz
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/apiclient/contrib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc/apiclient
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/api-python-client-doc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/analytics
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adsense
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dyn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -566,7 +414,6 @@ bin/enable-app-engine-project
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/ext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/moderator
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/latitude
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib/buzz
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apiclient
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
