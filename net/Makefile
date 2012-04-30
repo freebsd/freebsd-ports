@@ -608,6 +608,7 @@
     SUBDIR += p5-Net-Nessus-XMLRPC
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
+    SUBDIR += p5-Net-OAuth2
     SUBDIR += p5-Net-OpenID-Consumer
     SUBDIR += p5-Net-OpenSSH
     SUBDIR += p5-Net-Packet
