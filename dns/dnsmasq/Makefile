@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.60
-PORTREVISION=	1
+DISTVERSION=	2.61
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
