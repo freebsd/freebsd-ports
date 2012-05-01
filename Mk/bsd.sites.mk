@@ -519,9 +519,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
 	http://ftp.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
-	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	http://linorg.usp.br/gnome/%SUBDIR%/ \
 	http://mirror.aarnet.edu.au/pub/gnome/%SUBDIR%/ \
