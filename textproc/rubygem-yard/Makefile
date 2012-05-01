@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yard
-PORTVERSION=	0.7.5
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
