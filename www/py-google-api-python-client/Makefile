@@ -18,22 +18,21 @@ COMMENT=	Google API Client Library for Python
 
 LICENSE=	AL2
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gflags>=1.4:${PORTSDIR}/devel/py-gflags \
-		${PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \
-		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2 \
-		${PKGNAMEPREFIX}simplejson>=2.5.0:${PORTSDIR}/devel/py-simplejson
 RUN_DEPENDS=	${PKGNAMEPREFIX}gflags>=1.4:${PORTSDIR}/devel/py-gflags \
 		${PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \
-		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2 \
-		${PKGNAMEPREFIX}simplejson>=2.5.0:${PORTSDIR}/devel/py-simplejson \
-		${PKGNAMEPREFIX}WebTest>=1.3.3:${PORTSDIR}/www/py-WebTest
+		${PKGNAMEPREFIX}oauth2>=1.5.167:${PORTSDIR}/net/py-oauth2
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	easy_install
 USE_ZIP=	yes
 
 OPTIONS=	GAE	"Use the library with Google App Engine" off \
-		DJANGO	"Use the library with Django" off
+		DJANGO	"Use the library with Django" off \
+		WEBTEST	"Use WebTest helper to test WSGI apps (Python 2.6+)" off
+# bypass infrastructure bug
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
 
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
@@ -47,6 +46,14 @@ REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},' \
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
+.if defined(WITH_GAE)
+RUN_DEPENDS+=	google-appengine>=1.4.3:${PORTSDIR}/www/google-appengine
+.endif
+
+.if defined(WITH_DJANGO)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
+.endif
 
 post-patch:
 	${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
@@ -64,12 +71,13 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GAE)
-RUN_DEPENDS+=	google-appengine>=1.4.3:${PORTSDIR}/www/google-appengine
+# www/py-WebTest depends on www/py-webob, which runs only with Python 2.6+
+.if defined(WITH_WEBTEST) && ${PYTHON_VER} >= 2.6
+RUN_DEPENDS+=	${PKGNAMEPREFIX}WebTest>=1.3.3:${PORTSDIR}/www/py-WebTest
 .endif
 
-.if defined(WITH_DJANGO)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}django>=1.3:${PORTSDIR}/www/py-django
+.if ${PYTHON_VER} <= 2.5
+RUN_DEPENDS+=	${PKGNAMEPREFIX}simplejson>=2.5.0:${PORTSDIR}/devel/py-simplejson
 .endif
 
 .include <bsd.port.post.mk>
