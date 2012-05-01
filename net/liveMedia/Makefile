@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2011.06.16
-PORTREVISION=	0
+PORTVERSION=	2012.04.04
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/
@@ -19,15 +18,14 @@ MAINTAINER=	nork@FreeBSD.org
 COMMENT=	LIVE.COM Streaming Media
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 NO_CDROM=	'dated material'
 
 WRKSRC=		${WRKDIR}/live
 PLIST=		${WRKDIR}/pkg-plist
 
-HAS_CONFIGURE=	YES
-MAKE_JOBS_SAFE=	YES
+HAS_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_SCRIPT=	genMakefiles
 CONFIGURE_ARGS=		fixed-${OPSYS:L}
@@ -80,14 +78,15 @@ liveMedia=		\
 		liveMedia/include/BasicUDPSink.hh \
 		liveMedia/include/BasicUDPSource.hh \
 		liveMedia/include/ByteStreamFileSource.hh \
+		liveMedia/include/ByteStreamMemoryBufferSource.hh \
 		liveMedia/include/ByteStreamMultiFileSource.hh \
-		liveMedia/include/DarwinInjector.hh \
-		liveMedia/include/DeviceSource.hh \
-		liveMedia/include/DigestAuthentication.hh \
 		liveMedia/include/DVVideoFileServerMediaSubsession.hh \
 		liveMedia/include/DVVideoRTPSink.hh \
 		liveMedia/include/DVVideoRTPSource.hh \
 		liveMedia/include/DVVideoStreamFramer.hh \
+		liveMedia/include/DarwinInjector.hh \
+		liveMedia/include/DeviceSource.hh \
+		liveMedia/include/DigestAuthentication.hh \
 		liveMedia/include/FileServerMediaSubsession.hh \
 		liveMedia/include/FileSink.hh \
 		liveMedia/include/FramedFileSource.hh \
@@ -105,7 +104,6 @@ liveMedia=		\
 		liveMedia/include/H264VideoRTPSource.hh \
 		liveMedia/include/H264VideoStreamDiscreteFramer.hh \
 		liveMedia/include/H264VideoStreamFramer.hh \
-		liveMedia/include/HTTPSink.hh \
 		liveMedia/include/InputFile.hh \
 		liveMedia/include/JPEGVideoRTPSink.hh \
 		liveMedia/include/JPEGVideoRTPSource.hh \
@@ -128,7 +126,6 @@ liveMedia=		\
 		liveMedia/include/MPEG1or2DemuxedServerMediaSubsession.hh \
 		liveMedia/include/MPEG1or2FileServerDemux.hh \
 		liveMedia/include/MPEG1or2VideoFileServerMediaSubsession.hh \
-		liveMedia/include/MPEG1or2VideoHTTPSink.hh \
 		liveMedia/include/MPEG1or2VideoRTPSink.hh \
 		liveMedia/include/MPEG1or2VideoRTPSource.hh \
 		liveMedia/include/MPEG1or2VideoStreamDiscreteFramer.hh \
@@ -141,6 +138,7 @@ liveMedia=		\
 		liveMedia/include/MPEG2TransportStreamIndexFile.hh \
 		liveMedia/include/MPEG2TransportStreamMultiplexor.hh \
 		liveMedia/include/MPEG2TransportStreamTrickModeFilter.hh \
+		liveMedia/include/MPEG2TransportUDPServerMediaSubsession.hh \
 		liveMedia/include/MPEG4ESVideoRTPSink.hh \
 		liveMedia/include/MPEG4ESVideoRTPSource.hh \
 		liveMedia/include/MPEG4GenericRTPSink.hh \
@@ -151,6 +149,8 @@ liveMedia=		\
 		liveMedia/include/MPEG4VideoStreamDiscreteFramer.hh \
 		liveMedia/include/MPEG4VideoStreamFramer.hh \
 		liveMedia/include/MPEGVideoStreamFramer.hh \
+		liveMedia/include/MatroskaFile.hh \
+		liveMedia/include/MatroskaFileServerDemux.hh \
 		liveMedia/include/Media.hh \
 		liveMedia/include/MediaSession.hh \
 		liveMedia/include/MediaSink.hh \
@@ -170,11 +170,20 @@ liveMedia=		\
 		liveMedia/include/RTSPClient.hh \
 		liveMedia/include/RTSPCommon.hh \
 		liveMedia/include/RTSPServer.hh \
+		liveMedia/include/RTSPServerSupportingHTTPStreaming.hh \
 		liveMedia/include/SIPClient.hh \
 		liveMedia/include/ServerMediaSession.hh \
 		liveMedia/include/SimpleRTPSink.hh \
 		liveMedia/include/SimpleRTPSource.hh \
+		liveMedia/include/StreamReplicator.hh \
+		liveMedia/include/T140TextRTPSink.hh \
+		liveMedia/include/TCPStreamSink.hh \
+		liveMedia/include/TextRTPSink.hh \
+		liveMedia/include/VP8VideoRTPSink.hh \
+		liveMedia/include/VP8VideoRTPSource.hh \
 		liveMedia/include/VideoRTPSink.hh \
+		liveMedia/include/VorbisAudioRTPSink.hh \
+		liveMedia/include/VorbisAudioRTPSource.hh \
 		liveMedia/include/WAVAudioFileServerMediaSubsession.hh \
 		liveMedia/include/WAVAudioFileSource.hh \
 		liveMedia/include/liveMedia.hh \
