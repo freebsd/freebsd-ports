@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-GitHub
-DISTVERSION=	0.40_04
+DISTVERSION=	0.44
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FAYLAND
@@ -45,9 +45,11 @@ MAN3=		Net::GitHub.3 \
 		Net::GitHub::V2::Repositories.3 \
 		Net::GitHub::V2::Users.3 \
 		Net::GitHub::V3.3 \
+		Net::GitHub::V3::Events.3 \
 		Net::GitHub::V3::Gists.3 \
 		Net::GitHub::V3::GitData.3 \
 		Net::GitHub::V3::Issues.3 \
+		Net::GitHub::V3::OAuth.3 \
 		Net::GitHub::V3::Orgs.3 \
 		Net::GitHub::V3::PullRequests.3 \
 		Net::GitHub::V3::Query.3 \

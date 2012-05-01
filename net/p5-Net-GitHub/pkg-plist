@@ -11,9 +11,11 @@
 %%SITE_PERL%%/Net/GitHub/V2/Repositories.pm
 %%SITE_PERL%%/Net/GitHub/V2/Users.pm
 %%SITE_PERL%%/Net/GitHub/V3.pm
+%%SITE_PERL%%/Net/GitHub/V3/Events.pm
 %%SITE_PERL%%/Net/GitHub/V3/Gists.pm
 %%SITE_PERL%%/Net/GitHub/V3/GitData.pm
 %%SITE_PERL%%/Net/GitHub/V3/Issues.pm
+%%SITE_PERL%%/Net/GitHub/V3/OAuth.pm
 %%SITE_PERL%%/Net/GitHub/V3/Orgs.pm
 %%SITE_PERL%%/Net/GitHub/V3/PullRequests.pm
 %%SITE_PERL%%/Net/GitHub/V3/Query.pm
