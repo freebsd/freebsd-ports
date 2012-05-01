@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gpodder.org/src/
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 
 		${PYTHON_PKGNAMEPREFIX}mygpoclient>=1.4:${PORTSDIR}/devel/py-mygpoclient \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus
 
-OPTIONS=	GTK "With GTK UI" off \
+OPTIONS=	GTK "With GTK UI" on \
 		NOTIFY "Display notification bubbles for different events" off \
 		MUTAGEN "Allow metadata manipulation" off \
 		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off \
