@@ -1,5 +1,5 @@
---- ipc/unix_ipc.cc.orig	2012-04-02 08:17:58.917725634 +0900
-+++ ipc/unix_ipc.cc	2012-01-29 13:49:21.405805900 +0900
+--- ipc/unix_ipc.cc.orig	2012-05-01 12:21:13.686691614 +0900
++++ ipc/unix_ipc.cc	2012-05-01 12:46:21.249691952 +0900
 @@ -41,7 +41,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
@@ -36,7 +36,7 @@
      address.sun_len = SUN_LEN(&address);
      const size_t sun_len = sizeof(address);
  #else
-@@ -429,21 +429,21 @@
+@@ -434,21 +434,21 @@
                 SO_REUSEADDR,
                 reinterpret_cast<char *>(&on),
                 sizeof(on));
