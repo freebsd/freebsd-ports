@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	OpenSSH/portable
 PKGNAMESUFFIX=	-portable
 
-MAINTAINER=	magik@roorback.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
