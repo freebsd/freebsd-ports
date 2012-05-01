@@ -7,10 +7,11 @@
 
 PORTNAME=	openimageio
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://github.com/OpenImageIO/oiio/tarball/
 DISTNAME=	Release-${PORTVERSION}
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -18,13 +19,13 @@ COMMENT=	OpenImageIO graphics library
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	openjpeg:${PORTSDIR}/graphics/openjpeg \
-		opencv_legacy.2:${PORTSDIR}/graphics/opencv \
+LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		hdf5:${PORTSDIR}/science/hdf5 \
+		opencv_legacy.2:${PORTSDIR}/graphics/opencv \
+		openjpeg:${PORTSDIR}/graphics/openjpeg \
 		tbb.4:${PORTSDIR}/devel/tbb \
-		webp.2:${PORTSDIR}/graphics/webp \
-		hdf5:${PORTSDIR}/science/hdf5
+		webp.2:${PORTSDIR}/graphics/webp
 
 FETCH_ARGS=	-pRr
 USE_CMAKE=	yes
@@ -32,6 +33,7 @@ CMAKE_VERBOSE=	yes
 CMAKE_OUTSOURCE=	yes
 CMAKE_ARGS=	-DBUILDSTATIC:BOOL=OFF \
 		-DLINKSTATIC:BOOL=OFF \
+		-DUSE_PYTHON:BOOL=OFF \
 		-DUSE_TBB:BOOL=ON
 LDFLAGS+=	-ltbb
 USE_LDCONFIG=	yes
@@ -39,14 +41,13 @@ WRKSRC=		${WRKDIR}/OpenImageIO-oiio-2388ebf/src
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	IMAGEVIEWER "Build image viewer" on \
-		PYTHON "Python bindings"  on \
 		NOTHREADS "Disable thread support" off
 
-post-patch:
-	@${REINPLACE_CMD} 's|lib/python|lib/${PYTHON_VERSION}|' \
-		${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.options.mk>
+
+.if defined(NOPORTDOCS)
+CMAKE_ARGS+=	-DINSTALL_DOCS:BOOL=OFF
+.endif
 
 .if defined(WITH_IMAGEVIEWER)
 USE_GL=		glew
@@ -58,16 +59,6 @@ PLIST_SUB+=	IMAGEVIEWER=""
 .else
 CMAKE_ARGS+=	-DUSE_OPENGL:BOOL=OFF -DUSE_QT:BOOL=OFF
 PLIST_SUB+=	IMAGEVIEWER="@comment "
-.endif
-
-.if defined(WITH_PYTHON)
-CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON
-USE_PYTHON=	2.6+
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
-PLIST_SUB+=	PYTHON_BIND=""
-.else
-CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=OFF
-PLIST_SUB+=	PYTHON_BIND="@comment "
 .endif
 
 .if defined(WITH_NOTHREADS)
