@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc perl5
 MASTER_SITES=		SF/${PORTNAME:L}/${PORTNAME:L}-perl/${PORTVERSION}
 DISTNAME=		${PORTNAME:L}-perl-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
 
 LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab

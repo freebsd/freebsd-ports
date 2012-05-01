@@ -12,7 +12,7 @@ CATEGORIES=	mail www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multipart HTML Email builder
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Slurp/WithinPolicy.pm:${PORTSDIR}/devel/p5-File-Policy \

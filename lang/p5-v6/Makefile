@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An experimental compiler for Perl 6
 
 BUILD_DEPENDS=	p5-Data-Bind>=0.28:${PORTSDIR}/devel/p5-Data-Bind \

@@ -12,7 +12,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the LZO compression library
 
 LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2

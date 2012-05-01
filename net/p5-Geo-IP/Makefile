@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN \
 		http://www.maxmind.com/download/geoip/api/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Gets country name by IP or hostname
 
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP

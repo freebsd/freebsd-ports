@@ -11,7 +11,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster conversions to/from Bencode format
 
 RUN_DEPENDS=	${SITE_PERL}/Convert/Bencode.pm:${PORTSDIR}/converters/p5-Convert-Bencode

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quickly mock objects and classes
 
 RUN_DEPENDS=	p5-Exporter-Declare>=0:${PORTSDIR}/devel/p5-Exporter-Declare

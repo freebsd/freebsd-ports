@@ -11,7 +11,7 @@ CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The utility tools of Chinese character(HanZi)
 
 PERL_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	news perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A component that provides NNTP server functionality
 
 RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE \

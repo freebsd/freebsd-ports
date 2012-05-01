@@ -11,7 +11,7 @@ CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rule-based conversion of BPMF (bopomofo) into Hanyu Pinyin
 
 PERL_CONFIGURE=	yes

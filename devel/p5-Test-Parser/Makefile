@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parsing log files from test runs, and displays in an XML syntax
 
 RUN_DEPENDS=	${SITE_PERL}/Chart/Graph/Gnuplot.pm:${PORTSDIR}/graphics/p5-Chart-Graph \

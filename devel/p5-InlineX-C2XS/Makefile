@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to create an XS file from an Inline C file
 
 BUILD_DEPENDS=	p5-Inline>=0.46:${PORTSDIR}/devel/p5-Inline

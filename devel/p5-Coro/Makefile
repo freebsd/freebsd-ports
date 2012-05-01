@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Coroutine process abstraction for perl
 
 RUN_DEPENDS=	p5-Event>=1.08:${PORTSDIR}/devel/p5-Event \
