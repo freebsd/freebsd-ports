@@ -17,6 +17,8 @@ COMMENT=	Oracle Java 7 Development Kit for Linux
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+OPTIONS=	DEMO "Install demos and samples" off
+
 NO_CDROM=	License does not allow distribution with fee
 RESTRICTED=	Redistribution of repackaged binaries not permitted
 LATEST_LINK=	linux-sun-jdk17
@@ -44,6 +46,16 @@ BIN_DIRS=	bin jre/bin
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE?=You must manually fetch the J2SE SDK download for the Linux platform (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+.endif
+
+.if defined(WITH_DEMO)
+.if !exists(${DISTDIR}/${DISTNAME}-demos${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE?=You must manually fetch the J2SE demos and samples for the Linux platform (${DISTNAME}-demos${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+.endif
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-demos${EXTRACT_SUFX}
+PLIST_SUB+=	DEMO=""
+.else
+PLIST_SUB+=	DEMO="@comment "
 .endif
 
 pre-everything::
