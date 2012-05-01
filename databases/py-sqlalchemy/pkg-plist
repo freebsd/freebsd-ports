@@ -295,6 +295,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/mapper.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/mapper.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/mapper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/persistence.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/persistence.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/persistence.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/properties.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/properties.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/properties.pyo
@@ -455,6 +458,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/custom_management.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/listen_for_events.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/declarative_reflection/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/declarative_reflection/declarative_reflection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_dict/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_dict/dynamic_dict.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/__init__.py
@@ -500,6 +505,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/generic_associations
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/declarative_reflection
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/beaker_caching
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
