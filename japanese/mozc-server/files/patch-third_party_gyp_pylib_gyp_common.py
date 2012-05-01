@@ -1,7 +1,7 @@
---- third_party/gyp/pylib/gyp/common.py.orig	2012-04-02 08:17:52.712725348 +0900
-+++ third_party/gyp/pylib/gyp/common.py	2012-01-30 15:35:06.300889252 +0900
-@@ -351,8 +351,10 @@
-   flavors = {
+--- third_party/gyp/pylib/gyp/common.py.orig	2012-05-01 12:21:08.076690903 +0900
++++ third_party/gyp/pylib/gyp/common.py	2012-05-01 12:46:18.154691389 +0900
+@@ -353,8 +353,10 @@
+     'win32': 'win',
      'darwin': 'mac',
      'sunos5': 'solaris',
 -    'freebsd7': 'freebsd',

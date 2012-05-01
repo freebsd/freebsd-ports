@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozc
-PORTVERSION=	1.4.1033.102
+PORTVERSION=	1.5.1053.102
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -18,7 +18,8 @@ COMMENT?=	Mozc server for IBus, SCIM and others
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		protobuf.7:${PORTSDIR}/devel/protobuf \
-		zinnia.0:${PORTSDIR}/japanese/zinnia
+		zinnia.0:${PORTSDIR}/japanese/zinnia \
+		ssl.8:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes

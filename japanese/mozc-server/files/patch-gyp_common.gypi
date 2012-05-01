@@ -1,6 +1,6 @@
---- gyp/common.gypi.orig	2012-04-02 08:17:52.785727643 +0900
-+++ gyp/common.gypi	2012-04-02 08:32:43.630727845 +0900
-@@ -53,7 +53,7 @@
+--- gyp/common.gypi.orig	2012-05-01 12:21:08.159691563 +0900
++++ gyp/common.gypi	2012-05-01 12:46:18.406692000 +0900
+@@ -50,7 +50,7 @@
      # warning_cflags will be shared with Mac and Linux.
      'warning_cflags': [
        '-Wall',
@@ -9,7 +9,7 @@
        '-Wno-char-subscripts',
        '-Wno-sign-compare',
        '-Wno-deprecated-declarations',
-@@ -717,6 +717,12 @@
+@@ -720,6 +720,12 @@
            # <unordered_map> and <unordered_set>.
            '-Wno-deprecated',
          ],
@@ -20,5 +20,5 @@
 +          '-L@@LOCALBASE@@/lib'
 +        ],
          'conditions': [
-           ['target_platform!="Android"', {
-             'link_settings': {
+           ['chromeos==1', {
+             'defines': [

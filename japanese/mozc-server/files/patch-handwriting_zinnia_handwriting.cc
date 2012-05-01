@@ -1,4 +1,4 @@
---- handwriting/zinnia_handwriting.cc.orig	2012-04-02 08:17:52.785727643 +0900
+--- handwriting/zinnia_handwriting.cc.orig	2012-05-01 12:21:08.157692007 +0900
 +++ handwriting/zinnia_handwriting.cc	2012-04-02 08:38:43.657727715 +0900
 @@ -49,10 +49,16 @@
    const char kModelFile[] = "handwriting-light-ja.model";

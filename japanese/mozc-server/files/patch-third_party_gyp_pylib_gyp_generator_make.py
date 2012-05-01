@@ -1,6 +1,6 @@
---- third_party/gyp/pylib/gyp/generator/make.py.orig	2012-04-02 08:17:52.711727455 +0900
-+++ third_party/gyp/pylib/gyp/generator/make.py	2012-01-30 15:37:51.791889791 +0900
-@@ -1998,6 +1998,9 @@
+--- third_party/gyp/pylib/gyp/generator/make.py.orig	2012-05-01 12:21:08.073691445 +0900
++++ third_party/gyp/pylib/gyp/generator/make.py	2012-05-01 12:46:18.211693101 +0900
+@@ -1963,6 +1963,9 @@
      srcdir_prefix = '$(srcdir)/'
  
    flock_command= 'flock'
