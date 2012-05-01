@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/smb/SMBConnection.py
 %%PYTHON_SITELIBDIR%%/smb/SMBConnection.pyc
 %%PYTHON_SITELIBDIR%%/smb/SMBConnection.pyo
+%%PYTHON_SITELIBDIR%%/smb/SMBHandler.py
+%%PYTHON_SITELIBDIR%%/smb/SMBHandler.pyc
+%%PYTHON_SITELIBDIR%%/smb/SMBHandler.pyo
 %%PYTHON_SITELIBDIR%%/smb/SMBProtocol.py
 %%PYTHON_SITELIBDIR%%/smb/SMBProtocol.pyc
 %%PYTHON_SITELIBDIR%%/smb/SMBProtocol.pyo
@@ -86,6 +89,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/nmb_NBNSProtocol.html
 %%PORTDOCS%%%%DOCSDIR%%/api/nmb_NetBIOS.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SMBConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/api/smb_SMBHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SMBProtocolFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SharedDevice.html
 %%PORTDOCS%%%%DOCSDIR%%/api/smb_SharedFile.html
