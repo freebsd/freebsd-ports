@@ -40,6 +40,7 @@
     SUBDIR += fcitx-cloudpinyin
     SUBDIR += fcitx-configtool
     SUBDIR += fcitx-googlepinyin
+    SUBDIR += fcitx-libpinyin
     SUBDIR += fcitx-sunpinyin
     SUBDIR += fcitx-ui-light
     SUBDIR += fireflyttf
