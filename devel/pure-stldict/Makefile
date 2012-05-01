@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-stldict
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	devel
 
 MAINTAINER=	lichray@gmail.com
@@ -17,7 +17,6 @@ USE_PURE=	yes
 USE_GCC=	4.6+
 CXX=		g++${GCC_DEFAULT_V}
 CXXFLAGS+=	-std=c++0x -DHAVE_STD_IS_PERMUTATION
-CXXFLAGS+=	-DHAVE_STD_IS_PERMUTATION
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/pure/bsd.pure.mk"
