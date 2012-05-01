@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	7.4
-PORTREVISION=	4
+PORTVERSION=	7.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:S,$,:gdb,}
 MASTER_SITE_SUBDIR=gdb/:gdb
@@ -35,7 +34,7 @@ CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect readline sim texinfo intl
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - ${EXCLUDE:S/^/--exclude /}
-VER=	${PORTVERSION:S/.//}
+VER=	${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
 
