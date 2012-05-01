@@ -1,54 +1,54 @@
 bin/moose-outdated
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Trait.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Accessor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Meta.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Inlined.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Constructor.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasAttributes.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/AttributeCore.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasMethods.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/MiniTrait.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Package.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Module.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Attribute.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Deprecated.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Object.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Instance.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Conflicts.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/metaclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Attribute.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Trait.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Deprecated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Instance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Accessor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Constructor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Inlined.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Meta.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Overload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/MiniTrait.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/AttributeCore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasAttributes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasMethods.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Module.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Package.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Conflicts.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe1.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe10.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe11.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe2.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe3.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe4.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe5.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe6.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe7.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe8.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe9.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Recipe1.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Recipe2.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Recipe3.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Recipe4.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe1.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe2.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe3.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe4.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe5.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe6.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Recipe7.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles/Recipe1.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles/Recipe2.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles/Recipe3.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/BankAccount_MethodModifiersAndSubclassing.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/BinaryTree_AttributeFeatures.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/BinaryTree_BuilderAndLazyBuild.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Company_Subtypes.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/DateTime_ExtendingNonMooseParent.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Document_AugmentAndInner.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Genome_OverloadingSubtypesAndCoercion.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/HTTP_SubtypesAndCoercion.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Immutable.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Person_BUILDARGSAndBUILD.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Point_AttributesAndSubclassing.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Debugging_BaseClassRole.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/ExtensionOverview.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending/Mooseish_MooseSugar.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Debugging_BaseClassReplacement.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Labeled_AttributeMetaclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy/Table_ClassMetaclass.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/GlobRef_InstanceMetaclass.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Labeled_AttributeTrait.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/PrivateOrPublic_MethodMetaclass.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/Table_MetaclassTrait.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta/WhyMeta.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles/ApplicationToInstance.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles/Comparable_CodeReuse.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles/Restartable_AdvancedComposition.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Snack/Keywords.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Snack/Types.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Style.pod
@@ -209,13 +209,8 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.so
+%%SITE_PERL%%/%%PERL_ARCH%%/metaclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/oose.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/TypeConstraints
@@ -249,7 +244,14 @@ bin/moose-outdated
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Snack
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Roles
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Meta
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Legacy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Extending
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
