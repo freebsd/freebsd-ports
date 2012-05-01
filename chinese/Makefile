@@ -73,6 +73,7 @@
     SUBDIR += kon2
     SUBDIR += libchewing
     SUBDIR += libgooglepinyin
+    SUBDIR += libpinyin
     SUBDIR += libreoffice-zh_CN
     SUBDIR += libreoffice-zh_TW
     SUBDIR += libtabe
