@@ -1,3 +1,33 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/datastructures.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/datastructures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/document.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/document.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/document.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/compound.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/compound.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/compound.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/mongo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/mongo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/mongo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/temporal.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/temporal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields/temporal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/forms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/forms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/forms.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
@@ -82,8 +112,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/signals.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/signals.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/signals.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield/fields
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/dictshield
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongoengine/django
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/mongoengine
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
