@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${DL_JDK_VERSION:S/_/./g}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -32,7 +31,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 JDK_VERSION=	1.6.0
-JDK_REVISION=	30
+JDK_REVISION=	31
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 ONLY_FOR_ARCHS=	i386 amd64
 DOWNLOAD_URL?=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
