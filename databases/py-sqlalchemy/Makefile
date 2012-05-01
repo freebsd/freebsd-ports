@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.6
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ DISTNAME=	SQLAlchemy-${DISTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLAlchemy
@@ -27,7 +28,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 OPTIONS=	FIREBIRD "support FireBird" off
 OPTIONS+=	MSSQL "support MS SQL Server" off
-OPTIONS+=	MYSQL "support MySql" on
+OPTIONS+=	MYSQL "support MySQL" on
 OPTIONS+=	NOSE "install Nose for unit tests" off
 OPTIONS+=	PGSQL "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
@@ -51,8 +52,14 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/kinterbasdb/__init__.py:${PORTSDIR}/databases
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pymssql.py:${PORTSDIR}/databases/py-mssql
 .endif
 
-.if !defined(WITHOUT_MYSQL) && ${PYTHON_VER} < 3.0
+.if !defined(WITHOUT_MYSQL)
+.if ${PYTHON_VER} < 3.0
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+#.else
+# At the moment databases/py-pymysql does not build with Python3
+# See https://github.com/petehunt/PyMySQL#python-3-0-support
+#RUN_DEPENDS+=	pymysql>=0.5:${PORTSDIR}/databases/py-pymysql
+.endif
 .endif
 
 .if defined(WITH_NOSE)
@@ -75,11 +82,11 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${AL_PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	    ${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
 .for i in ${AL_PORTDOCS_SUBDIR}
-	${MKDIR} ${DOCSDIR}/${i}
-	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+	    ${MKDIR} ${DOCSDIR}/${i}
+	    @cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
 .endfor
 .endif
 
