@@ -14,6 +14,9 @@ MASTER_SITES=	SF/crossfire/crossfire-${PORTVERSION}
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	A cooperative multiplayer graphical RPG and adventure game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 libglade2
