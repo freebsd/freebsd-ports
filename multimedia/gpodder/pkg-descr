@@ -1,7 +1,10 @@
-gPodder is a GTK2 media aggregator written in Python.  A user can
-subscribe to RSS feeds for podcasts, videocasts, and other similiar
-content and download media files found in those feeds.  gPodder also
-supports optional iPod synchronization support, MP3/OGG id3 tag
-editing, and Ogg-to-iPod synchronization.
+gPodder downloads and manages free audio and video content ("podcasts") for you.
+Listen directly on your computer or on your mobile devices.
 
-WWW:  http://gpodder.org
+  * Supports RSS, Atom, YouTube, Soundcloud, Vimeo and XSPF feeds
+  * Discover new content at our Podcast directory
+  * Synchronize between devices with full gpodder.net integration
+  * Easily customizable - support for user-defined hooks and plugins
+  * Open Source and Free Software (GPL v3 or later)
+
+WWW:	http://gpodder.org/
