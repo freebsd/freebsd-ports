@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-Parser
-PORTVERSION=	1.38
+PORTVERSION=	1.51
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Modules to work with POD (Plain Old Documentation)
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
 MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \
 		Pod::ParseUtils.3 Pod::Parser.3 Pod::PlainText.3 Pod::Select.3 \
