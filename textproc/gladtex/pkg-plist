@@ -1,5 +1,3 @@
 @comment $FreeBSD$
-bin/gladtex
 bin/eqn2img
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/gladtex

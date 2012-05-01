@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	gladtex
-PORTVERSION=	1.1
-PORTREVISION=	3
+PORTVERSION=	1.2
+#PORTREVISION=	0
 CATEGORIES=	textproc math www
-MASTER_SITES=	http://www.math.uio.no/~martingu/gladtex/dl/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A program to replace LaTeX formulas in HTML files with images
 
-LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 
-USE_PERL5_RUN=	yes
+USE_PERL5=	yes
 
 BINPATH=	${PREFIX}/bin
 INCPATH=	-I${LOCALBASE}/include
@@ -28,17 +30,16 @@ LIBPATH=	-L${LOCALBASE}/lib
 
 MAKE_ENV+=	BINPATH=${BINPATH} INCPATH=${INCPATH} LIBPATH=${LIBPATH}
 
-DOCSFILES=	README
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	${PORTNAME}.1
+.endif
 
-post-extract:
-	@@cd ${WRKSRC};
-	${RM} -f eqn2img
-
-post-install:
-.if !defined(NOPORTDOCS)
+do-install:
 	@cd ${WRKSRC}; \
-	${MKDIR} ${DOCSDIR}; \
-	${INSTALL_DATA} ${DOCSFILES} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${PORTNAME} ${BINPATH}; \
+	${INSTALL_PROGRAM} eqn2img ${BINPATH}
+.if !defined(NO_INSTALL_MANPAGES)
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>
