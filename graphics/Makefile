@@ -811,6 +811,7 @@
     SUBDIR += py-opencv
     SUBDIR += py-openexr
     SUBDIR += py-opengl
+    SUBDIR += py-openimageio
     SUBDIR += py-paint
     SUBDIR += py-png
     SUBDIR += py-poppler
