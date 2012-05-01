@@ -76,7 +76,7 @@ if [ -n "${uwsgi_profiles}" ]; then
 	elif [ -n "$1" ]; then
 		for profile in ${uwsgi_profiles}; do
 	            echo "Processing ${name} profile: ${profile}"
-	            $0 $1 ${profile}
+	            %%PREFIX%%/etc/rc.d/uwsgi $1 ${profile}
 	        done
 	        exit 0
 	fi
