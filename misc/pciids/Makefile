@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20120227
+PORTVERSION=	20120409
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Database of all known ID's used in PCI devices
+COMMENT=	Database of all known IDs used in PCI devices
 
 LICENSE=	BSD GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 NO_BUILD=	yes
 PLIST_FILES=	%%DATADIR%%/pci.ids
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}/
 
 # maintainer section:
 
@@ -44,11 +44,13 @@ maketar: do-clean extract
 	${MV} ${MS_WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
 	(${DIFF} -u ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
 	if [ -s ${MS_DIFF} ]; then \
-		cd ${MS_WRKSRC}/ && ${TAR} -jcf ${PORTNAME}-${MS_VERSION}.tar.bz2 ${PORTNAME}-${MS_VERSION}/; \
-		${SED} -i '' -e "s|${PORTVERSION}|${MS_VERSION}|" ${.CURDIR}/Makefile; \
-		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.bz2 ${DISTDIR}/; \
+		cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${PORTNAME}-${MS_VERSION}.tar.xz ${PORTNAME}-${MS_VERSION}/; \
+		${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile; \
+		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/; \
 		cd ${.CURDIR}/ && ${MAKE} makesum; \
-		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${MS_DIFF} ***"; \
+		${CP} -i ${MS_DIFF} ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff; \
+		${ECHO_MSG} "*** Update from ${PORTVERSION} to ${MS_VERSION} ***"; \
+		${ECHO_MSG} "*** Changes: ${.CURDIR}/${PORTNAME}-${MS_VERSION}.diff"; \
 	else \
 		${ECHO_MSG} "*** ${MS_MASTER_SITE}${MS_DISTFILES} is unchanged (${PORTVERSION}) ***"; \
 	fi
