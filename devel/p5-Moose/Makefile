@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0403
+PORTVERSION=	2.0600
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -47,6 +47,7 @@ TEST_DEPENDS=	\
 	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 	p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Test-LeakTrace>=0:${PORTSDIR}/devel/p5-Test-LeakTrace \
+	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
@@ -69,6 +70,7 @@ MAN3=	Class::MOP.3 \
 	Class::MOP::Method::Generated.3 \
 	Class::MOP::Method::Inlined.3 \
 	Class::MOP::Method::Meta.3 \
+	Class::MOP::Method::Overload.3 \
 	Class::MOP::Method::Wrapped.3 \
 	Class::MOP::MiniTrait.3 \
 	Class::MOP::Mixin.3 \
@@ -80,31 +82,31 @@ MAN3=	Class::MOP.3 \
 	Class::MOP::Package.3 \
 	Moose.3 \
 	Moose::Cookbook.3 \
-	Moose::Cookbook::Basics::Recipe1.3 \
-	Moose::Cookbook::Basics::Recipe10.3 \
-	Moose::Cookbook::Basics::Recipe11.3 \
-	Moose::Cookbook::Basics::Recipe2.3 \
-	Moose::Cookbook::Basics::Recipe3.3 \
-	Moose::Cookbook::Basics::Recipe4.3 \
-	Moose::Cookbook::Basics::Recipe5.3 \
-	Moose::Cookbook::Basics::Recipe6.3 \
-	Moose::Cookbook::Basics::Recipe7.3 \
-	Moose::Cookbook::Basics::Recipe8.3 \
-	Moose::Cookbook::Basics::Recipe9.3 \
-	Moose::Cookbook::Extending::Recipe1.3 \
-	Moose::Cookbook::Extending::Recipe2.3 \
-	Moose::Cookbook::Extending::Recipe3.3 \
-	Moose::Cookbook::Extending::Recipe4.3 \
-	Moose::Cookbook::Meta::Recipe1.3 \
-	Moose::Cookbook::Meta::Recipe2.3 \
-	Moose::Cookbook::Meta::Recipe3.3 \
-	Moose::Cookbook::Meta::Recipe4.3 \
-	Moose::Cookbook::Meta::Recipe5.3 \
-	Moose::Cookbook::Meta::Recipe6.3 \
-	Moose::Cookbook::Meta::Recipe7.3 \
-	Moose::Cookbook::Roles::Recipe1.3 \
-	Moose::Cookbook::Roles::Recipe2.3 \
-	Moose::Cookbook::Roles::Recipe3.3 \
+	Moose::Cookbook::Basics::BankAccount_MethodModifiersAndSubclassing.3 \
+	Moose::Cookbook::Basics::BinaryTree_AttributeFeatures.3 \
+	Moose::Cookbook::Basics::BinaryTree_BuilderAndLazyBuild.3 \
+	Moose::Cookbook::Basics::Company_Subtypes.3 \
+	Moose::Cookbook::Basics::DateTime_ExtendingNonMooseParent.3 \
+	Moose::Cookbook::Basics::Document_AugmentAndInner.3 \
+	Moose::Cookbook::Basics::Genome_OverloadingSubtypesAndCoercion.3 \
+	Moose::Cookbook::Basics::HTTP_SubtypesAndCoercion.3 \
+	Moose::Cookbook::Basics::Immutable.3 \
+	Moose::Cookbook::Basics::Person_BUILDARGSAndBUILD.3 \
+	Moose::Cookbook::Basics::Point_AttributesAndSubclassing.3 \
+	Moose::Cookbook::Extending::Debugging_BaseClassRole.3 \
+	Moose::Cookbook::Extending::ExtensionOverview.3 \
+	Moose::Cookbook::Extending::Mooseish_MooseSugar.3 \
+	Moose::Cookbook::Legacy::Debugging_BaseClassReplacement.3 \
+	Moose::Cookbook::Legacy::Labeled_AttributeMetaclass.3 \
+	Moose::Cookbook::Legacy::Table_ClassMetaclass.3 \
+	Moose::Cookbook::Meta::GlobRef_InstanceMetaclass.3 \
+	Moose::Cookbook::Meta::Labeled_AttributeTrait.3 \
+	Moose::Cookbook::Meta::PrivateOrPublic_MethodMetaclass.3 \
+	Moose::Cookbook::Meta::Table_MetaclassTrait.3 \
+	Moose::Cookbook::Meta::WhyMeta.3 \
+	Moose::Cookbook::Roles::ApplicationToInstance.3 \
+	Moose::Cookbook::Roles::Comparable_CodeReuse.3 \
+	Moose::Cookbook::Roles::Restartable_AdvancedComposition.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
@@ -199,6 +201,9 @@ post-install:
 
 .if ${PERL_LEVEL} < 501001
 TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.else
+# p5-Test-DependentModules is only available on 5.10.1+ (currently)
+TEST_DEPENDS+=	p5-Test-DependentModules>=0.13:${PORTSDIR}/devel/p5-Test-DependentModules
 .endif
 
 .include <bsd.port.post.mk>
