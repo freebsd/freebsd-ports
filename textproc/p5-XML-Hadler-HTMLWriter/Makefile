@@ -10,7 +10,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlSAX handlers for outputting HTML
 
 RUN_DEPENDS=	${SITE_PERL}/XML/SAX/Writer.pm:${PORTSDIR}/textproc/p5-XML-SAX-Writer \

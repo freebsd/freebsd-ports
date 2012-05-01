@@ -11,7 +11,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extremely light-weight Lempel-Ziv-Free compression
 
 PERL_CONFIGURE=	yes

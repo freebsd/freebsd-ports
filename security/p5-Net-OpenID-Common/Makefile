@@ -11,7 +11,7 @@ CATEGORIES=	security net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Libraries shared between Net::OpenID::Consumer and Net::OpenID::Server
 
 BUILD_DEPENDS=	p5-Crypt-DH-GMP>=0:${PORTSDIR}/net/p5-Crypt-DH-GMP \

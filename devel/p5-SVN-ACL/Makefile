@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple ACL frontend for subversion
 
 BUILD_DEPENDS=	\

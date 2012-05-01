@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A FileHandle which supports ungetting of multiple bytes
 
 PERL_CONFIGURE=	yes

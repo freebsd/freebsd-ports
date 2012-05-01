@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:JGS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Reaper-1.00
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for reaping child processes via $$SIG{CHLD}
 
 PERL_CONFIGURE=	yes

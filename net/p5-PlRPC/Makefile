@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	RPC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for writing RPC servers and clients
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Daemon.pm:${PORTSDIR}/net/p5-Net-Daemon

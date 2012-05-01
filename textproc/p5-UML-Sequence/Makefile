@@ -12,7 +12,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module that produce UML sequence diagrams
 
 RUN_DEPENDS=	p5-XML-DOM>=1.25:${PORTSDIR}/textproc/p5-XML-DOM \

@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \

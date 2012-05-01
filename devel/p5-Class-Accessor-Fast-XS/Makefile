@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XS replacement for Class::Accessor::Fast
 
 BUILD_DEPENDS=	p5-AutoXS-Header>=0.03:${PORTSDIR}/devel/p5-AutoXS-Header \

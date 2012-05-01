@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Single interface to deal with file archives
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.07:${PORTSDIR}/archivers/p5-Archive-Zip \

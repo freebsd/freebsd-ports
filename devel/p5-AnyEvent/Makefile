@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
 
 PERL_CONFIGURE=	yes

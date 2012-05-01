@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A lightweight but robust filesystem based persistent LRU cache
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/NamedParms.pm:${PORTSDIR}/devel/p5-Class-NamedParms \

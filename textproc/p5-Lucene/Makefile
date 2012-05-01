@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TBUSCH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API to the C++ port of the Lucene search engine
 
 LIB_DEPENDS=	clucene:${PORTSDIR}/textproc/clucene

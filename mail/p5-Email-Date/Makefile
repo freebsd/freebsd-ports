@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]+)$/\1/}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find and Format Date Headers
 
 BUILD_DEPENDS=	p5-Email-Abstract>=2.10:${PORTSDIR}/mail/p5-Email-Abstract \

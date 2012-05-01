@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OOP for managing posts on del.icio.us
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \

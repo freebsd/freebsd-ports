@@ -13,7 +13,7 @@ CATEGORIES=	chinese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Chinese processing via libtabe
 
 LIB_DEPENDS=	tabe.3:${PORTSDIR}/chinese/libtabe

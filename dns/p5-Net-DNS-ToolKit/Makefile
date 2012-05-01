@@ -11,7 +11,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tools for working with DNS packets
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/DNS/Codes.pm:${PORTSDIR}/dns/p5-Net-DNS-Codes \

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	clsung/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 DISTNAME=	kwiki-trunk-20070327
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Kwiki Wiki Building Framework
 
 KWIKIDIR?=	kwiki

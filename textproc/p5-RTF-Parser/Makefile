@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for parsing RTF files
 
 BUILD_DEPENDS=	${SITE_PERL}/RTF/Tokenizer.pm:${PORTSDIR}/textproc/p5-RTF-Tokenizer

@@ -11,7 +11,7 @@ CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to SVMLight Machine-Learning Package
 
 BUILD_DEPENDS=	svmlight>=6.01_2:${PORTSDIR}/science/svmlight

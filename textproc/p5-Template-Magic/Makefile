@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl Module with magic merger of runtime values with templates
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Util.pm:${PORTSDIR}/devel/p5-IO-Util \

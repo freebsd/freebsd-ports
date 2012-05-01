@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
 
 RUN_DEPENDS=	p5-Module-Signature>=0:${PORTSDIR}/security/p5-Module-Signature
