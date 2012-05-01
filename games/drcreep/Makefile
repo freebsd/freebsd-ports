@@ -20,6 +20,8 @@ USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/head
 
+SUB_FILES+=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 801000
@@ -40,11 +42,6 @@ do-install:
 	${MKDIR} ${DATADIR}/data/save
 
 	${INSTALL_DATA} ${WRKSRC}/run/data/char.rom ${DATADIR}/data
-
-	@echo '------------------------------------------------------'
-	@echo ''
-	@echo 'Please copy your Castles of Dr. Creep disk image (D64) to ${DATADIR}/data'
-	@echo ''
-	@echo ''
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
