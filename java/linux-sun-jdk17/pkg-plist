@@ -17,6 +17,7 @@
 %%T%%/bin/javah
 %%T%%/bin/javap
 %%T%%/bin/javaws
+%%T%%/bin/jcmd
 %%T%%/bin/jconsole
 %%T%%/bin/jcontrol
 %%T%%/bin/jdb
@@ -206,8 +207,10 @@
 %%T%%/jre/lib/ext/sunpkcs11.jar
 %%T%%/jre/lib/ext/zipfs.jar
 %%T%%/jre/lib/flavormap.properties
-%%T%%/jre/lib/fontconfig.RedHat.5.5.bfc
-%%T%%/jre/lib/fontconfig.RedHat.5.5.properties.src
+%%T%%/jre/lib/fontconfig.RedHat.5.bfc
+%%T%%/jre/lib/fontconfig.RedHat.5.properties.src
+%%T%%/jre/lib/fontconfig.RedHat.6.bfc
+%%T%%/jre/lib/fontconfig.RedHat.6.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.10.bfc
 %%T%%/jre/lib/fontconfig.SuSE.10.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.11.bfc
@@ -252,6 +255,7 @@
 %%T%%/jre/lib/i386/libjavaplugin_oji.so
 %%T%%/jre/lib/i386/libjawt.so
 %%T%%/jre/lib/i386/libjdwp.so
+%%T%%/jre/lib/i386/libjfr.so
 %%T%%/jre/lib/i386/libjpeg.so
 %%T%%/jre/lib/i386/libjsdt.so
 %%T%%/jre/lib/i386/libjsig.so
@@ -292,6 +296,7 @@
 %%T%%/jre/lib/javaws.jar
 %%T%%/jre/lib/jce.jar
 %%T%%/jre/lib/jexec
+%%T%%/jre/lib/jfr.jar
 %%T%%/jre/lib/jsse.jar
 %%T%%/jre/lib/jvm.hprof.txt
 %%T%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
@@ -426,6 +431,7 @@
 %%T%%/jre/lib/zi/America/Chicago
 %%T%%/jre/lib/zi/America/Chihuahua
 %%T%%/jre/lib/zi/America/Costa_Rica
+%%T%%/jre/lib/zi/America/Creston
 %%T%%/jre/lib/zi/America/Cuiaba
 %%T%%/jre/lib/zi/America/Curacao
 %%T%%/jre/lib/zi/America/Danmarkshavn
@@ -878,9 +884,10 @@
 %%T%%/lib/visualvm/platform/lib/org-openide-modules.jar
 %%T%%/lib/visualvm/platform/lib/org-openide-util-lookup.jar
 %%T%%/lib/visualvm/platform/lib/org-openide-util.jar
-%%T%%/lib/visualvm/platform/modules/ext/jh-2.0_05.jar
+%%T%%/lib/visualvm/platform/modules/ext/jhall-2.0_05.jar
 %%T%%/lib/visualvm/platform/modules/ext/locale/updater_ja.jar
 %%T%%/lib/visualvm/platform/modules/ext/locale/updater_zh_CN.jar
+%%T%%/lib/visualvm/platform/modules/ext/nsProxyAutoConfig.js
 %%T%%/lib/visualvm/platform/modules/ext/updater.jar
 %%T%%/lib/visualvm/platform/modules/locale/org-netbeans-api-annotations-common_ja.jar
 %%T%%/lib/visualvm/platform/modules/locale/org-netbeans-api-annotations-common_zh_CN.jar
@@ -1146,12 +1153,9 @@
 %%T%%/lib/visualvm/visualvm/config/Modules/org-openide-options.xml_hidden
 %%T%%/lib/visualvm/visualvm/config/Modules/org-openide-util-enumerations.xml_hidden
 %%T%%/lib/visualvm/visualvm/core/com-sun-tools-visualvm-modules-startup.jar
-%%T%%/lib/visualvm/visualvm/core/locale/.svn_ja.jar
-%%T%%/lib/visualvm/visualvm/core/locale/.svn_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_ja.jar
 %%T%%/lib/visualvm/visualvm/core/locale/com-sun-tools-visualvm-modules-startup_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/core/locale/core_visualvm.jar
-%%T%%/lib/visualvm/visualvm/modules/all-wcprops
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-api-caching.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application-views.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-application.jar
@@ -1174,7 +1178,6 @@
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-threaddump.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-tools.jar
 %%T%%/lib/visualvm/visualvm/modules/com-sun-tools-visualvm-uisupport.jar
-%%T%%/lib/visualvm/visualvm/modules/entries
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_ja.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-api-caching_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-application-views_ja.jar
@@ -1221,17 +1224,7 @@
 %%T%%/lib/visualvm/visualvm/modules/locale/com-sun-tools-visualvm-uisupport_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-core_visualvm.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-.svn_ja.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-.svn_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-prop-base_ja.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-prop-base_zh_CN.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-props_ja.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-props_zh_CN.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-text-base_ja.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-text-base_zh_CN.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-tmp_ja.jar
-%%T%%/lib/visualvm/visualvm/modules/locale/org-netbeans-modules-tmp_zh_CN.jar
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-api-caching.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application-views.xml
 %%T%%/lib/visualvm/visualvm/update_tracking/com-sun-tools-visualvm-application.xml
@@ -1268,6 +1261,7 @@
 %%T%%/man/ja_JP.UTF-8/man1/javah.1
 %%T%%/man/ja_JP.UTF-8/man1/javap.1
 %%T%%/man/ja_JP.UTF-8/man1/javaws.1
+%%T%%/man/ja_JP.UTF-8/man1/jcmd.1
 %%T%%/man/ja_JP.UTF-8/man1/jconsole.1
 %%T%%/man/ja_JP.UTF-8/man1/jdb.1
 %%T%%/man/ja_JP.UTF-8/man1/jhat.1
@@ -1307,6 +1301,7 @@
 %%T%%/man/man1/javah.1
 %%T%%/man/man1/javap.1
 %%T%%/man/man1/javaws.1
+%%T%%/man/man1/jcmd.1
 %%T%%/man/man1/jconsole.1
 %%T%%/man/man1/jdb.1
 %%T%%/man/man1/jhat.1
@@ -1372,7 +1367,6 @@
 @dirrm %%T%%/lib/visualvm/platform/modules
 @dirrm %%T%%/lib/visualvm/platform/lib/locale
 @dirrm %%T%%/lib/visualvm/platform/lib
-@dirrm %%T%%/lib/visualvm/platform/docs
 @dirrm %%T%%/lib/visualvm/platform/core/locale
 @dirrm %%T%%/lib/visualvm/platform/core
 @dirrm %%T%%/lib/visualvm/platform/config/Modules
