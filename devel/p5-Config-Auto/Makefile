@@ -17,6 +17,7 @@ COMMENT=	Magical config file parser
 BUILD_DEPENDS=	p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-YAML>=0.67:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
 
 PERL_CONFIGURE=	yes
 
