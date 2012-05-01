@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ExtractUse
-PORTVERSION=	0.23
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find out what CPAN modules are used
 
-RUN_DEPENDS=	${SITE_PERL}/Pod/Strip.pm:${PORTSDIR}/textproc/p5-Pod-Strip \
+BUILD_DEPENDS=	p5-Pod-Strip>=0:${PORTSDIR}/textproc/p5-Pod-Strip \
 		p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require \
+		p5-Test-Deep>0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
 
 PERL_MODBUILD=	yes
 
-MAN3=		Module::ExtractUse.3
+MAN3=		Module::ExtractUse.3 Module::ExtractUse::Grammar.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+TEST_DEPENDS+=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
