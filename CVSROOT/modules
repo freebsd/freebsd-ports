@@ -841,6 +841,7 @@ autodist                        ports/devel/autodist
 autogen                         ports/devel/autogen
 autoindex                       ports/www/autoindex
 autoindex2                      ports/www/autoindex2
+autojump                        ports/sysutils/autojump
 automake                        ports/devel/automake
 automake-wrapper                ports/devel/automake-wrapper
 automake14                      ports/devel/automake14
@@ -13444,6 +13445,7 @@ p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mojolicious                  ports/www/p5-Mojolicious
 p5-Mojolicious-Plugin-Database  ports/www/p5-Mojolicious-Plugin-Database
 p5-Mojolicious-Plugin-Mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
+p5-Mojolicious-Plugin-YamlConfig  ports/www/p5-Mojolicious-Plugin-YamlConfig
 p5-Mon                          ports/net-mgmt/p5-Mon
 p5-MongoDB                      ports/databases/p5-MongoDB
 p5-Monitor-Simple               ports/sysutils/p5-Monitor-Simple
@@ -13708,6 +13710,7 @@ p5-Net-Netmask                  ports/net-mgmt/p5-Net-Netmask
 p5-Net-Nslookup                 ports/dns/p5-Net-Nslookup
 p5-Net-OAuth                    ports/net/p5-Net-OAuth
 p5-Net-OAuth-Simple             ports/net/p5-Net-OAuth-Simple
+p5-Net-OAuth2                   ports/net/p5-Net-OAuth2
 p5-Net-OSCAR                    ports/net-im/p5-Net-OSCAR
 p5-Net-OpenID-Common            ports/security/p5-Net-OpenID-Common
 p5-Net-OpenID-Consumer          ports/net/p5-Net-OpenID-Consumer
@@ -14685,6 +14688,7 @@ p5-Test-Debugger                ports/devel/p5-Test-Debugger
 p5-Test-Declare                 ports/devel/p5-Test-Declare
 p5-Test-Deep                    ports/devel/p5-Test-Deep
 p5-Test-Dependencies            ports/devel/p5-Test-Dependencies
+p5-Test-DependentModules        ports/devel/p5-Test-DependentModules
 p5-Test-Differences             ports/devel/p5-Test-Differences
 p5-Test-Dir                     ports/misc/p5-Test-Dir
 p5-Test-Distribution            ports/devel/p5-Test-Distribution
@@ -14723,6 +14727,7 @@ p5-Test-Memory-Cycle            ports/devel/p5-Test-Memory-Cycle
 p5-Test-Mini                    ports/devel/p5-Test-Mini
 p5-Test-Mini-Unit               ports/devel/p5-Test-Mini-Unit
 p5-Test-Mock-LWP                ports/devel/p5-Test-Mock-LWP
+p5-Test-Mock-LWP-Dispatch       ports/devel/p5-Test-Mock-LWP-Dispatch
 p5-Test-MockModule              ports/devel/p5-Test-MockModule
 p5-Test-MockObject              ports/devel/p5-Test-MockObject
 p5-Test-MockRandom              ports/devel/p5-Test-MockRandom
@@ -17959,6 +17964,7 @@ p5-mojo-server-fastcgi          ports/www/p5-Mojo-Server-FastCGI
 p5-mojolicious                  ports/www/p5-Mojolicious
 p5-mojolicious-plugin-database  ports/www/p5-Mojolicious-Plugin-Database
 p5-mojolicious-plugin-mongodb   ports/www/p5-Mojolicious-Plugin-Mongodb
+p5-mojolicious-plugin-yamlconfig  ports/www/p5-Mojolicious-Plugin-YamlConfig
 p5-mojomojo                     ports/www/p5-MojoMojo
 p5-mon                          ports/net-mgmt/p5-Mon
 p5-mongodb                      ports/databases/p5-MongoDB
@@ -18234,6 +18240,7 @@ p5-net-nis-listgroup            ports/net/p5-Net-NIS-Listgroup
 p5-net-nslookup                 ports/dns/p5-Net-Nslookup
 p5-net-oauth                    ports/net/p5-Net-OAuth
 p5-net-oauth-simple             ports/net/p5-Net-OAuth-Simple
+p5-net-oauth2                   ports/net/p5-Net-OAuth2
 p5-net-openid-common            ports/security/p5-Net-OpenID-Common
 p5-net-openid-consumer          ports/net/p5-Net-OpenID-Consumer
 p5-net-openid-janrain           ports/security/p5-Net-OpenID-JanRain
@@ -19242,6 +19249,7 @@ p5-test-debugger                ports/devel/p5-Test-Debugger
 p5-test-declare                 ports/devel/p5-Test-Declare
 p5-test-deep                    ports/devel/p5-Test-Deep
 p5-test-dependencies            ports/devel/p5-Test-Dependencies
+p5-test-dependentmodules        ports/devel/p5-Test-DependentModules
 p5-test-differences             ports/devel/p5-Test-Differences
 p5-test-dir                     ports/misc/p5-Test-Dir
 p5-test-distribution            ports/devel/p5-Test-Distribution
@@ -19280,6 +19288,7 @@ p5-test-memory-cycle            ports/devel/p5-Test-Memory-Cycle
 p5-test-mini                    ports/devel/p5-Test-Mini
 p5-test-mini-unit               ports/devel/p5-Test-Mini-Unit
 p5-test-mock-lwp                ports/devel/p5-Test-Mock-LWP
+p5-test-mock-lwp-dispatch       ports/devel/p5-Test-Mock-LWP-Dispatch
 p5-test-mockmodule              ports/devel/p5-Test-MockModule
 p5-test-mockobject              ports/devel/p5-Test-MockObject
 p5-test-mockrandom              ports/devel/p5-Test-MockRandom
@@ -26961,7 +26970,6 @@ typetrainer                     ports/misc/typetrainer
 typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
-typo344                         ports/www/typo344
 typo345                         ports/www/typo345
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
@@ -27322,6 +27330,7 @@ view3ds                         ports/graphics/view3ds
 viewfax                         ports/comms/viewfax
 viewglob                        ports/shells/viewglob
 viewklass                       ports/x11-toolkits/viewklass
+viewnior                        ports/graphics/viewnior
 viewres                         ports/x11/viewres
 viewvc                          ports/devel/viewvc
 vifm                            ports/misc/vifm
