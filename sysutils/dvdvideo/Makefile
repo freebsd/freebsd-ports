@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdvideo
 PORTVERSION=	20120126
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils multimedia
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -35,6 +35,10 @@ OPTIONS=	DVDCSS "Include libdvdcss support" ${DVDCSS_OPTION}
 DVDCSS_LIBVERSION=	3
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 323
+BROKEN=	bad plist with latest python
+.endif
 
 .if defined(WITH_DVDCSS)
 LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
