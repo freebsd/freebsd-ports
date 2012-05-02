@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.7.32
+PORTVERSION=	1.7.33
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
-		ftp://ftp.fox-toolkit.org/pub/
+MASTER_SITES=	http://ftp.fox-toolkit.org/pub/ \
+   		ftp://ftp.fox-toolkit.org/pub/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- devel version
