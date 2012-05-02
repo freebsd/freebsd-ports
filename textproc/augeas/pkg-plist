@@ -231,8 +231,6 @@ libdata/pkgconfig/augeas.pc
 %%DATADIR%%/lenses/dist/xml.aug
 %%DATADIR%%/lenses/dist/xorg.aug
 %%DATADIR%%/lenses/dist/yum.aug
-%%DATADIR%%/lenses/rcconf.aug
-%%DATADIR%%/lenses/tests/rcconf.aug
 share/vim/vimfiles/ftdetect/augeas.vim
 share/vim/vimfiles/syntax/augeas.vim
 @dirrm %%DATADIR%%/lenses/dist/tests

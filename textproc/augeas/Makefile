@@ -8,7 +8,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 
@@ -35,10 +35,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:$$(libdir)/pkgconfig:${PREFIX}/libdata/pkgconfig:' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's:/bin/bash:/usr/bin/env bash:' ${WRKSRC}/tests/*.sh
 	@${REINPLACE_CMD} -e 's:sed:gsed:' ${WRKSRC}/tests/test-augtool.sh
-
-post-install:
-	${MKDIR} ${LENSESDIR}/tests
-	${INSTALL_DATA} ${FILESDIR}/rcconf.aug ${LENSESDIR}/rcconf.aug
-	${INSTALL_DATA} ${FILESDIR}/test_rcconf.aug ${LENSESDIR}/tests/rcconf.aug
 
 .include <bsd.port.mk>
