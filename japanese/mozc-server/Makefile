@@ -7,6 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1053.102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -18,14 +19,14 @@ COMMENT?=	Mozc server for IBus, SCIM and others
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		protobuf.7:${PORTSDIR}/devel/protobuf \
-		zinnia.0:${PORTSDIR}/japanese/zinnia \
-		ssl.8:${PORTSDIR}/security/openssl
+		zinnia.0:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
+USE_OPENSSL=	yes
 
 BUILD_MOZC_LIST?=	mozc_server
 
@@ -68,6 +69,10 @@ LOCALBASE_REPLACE_FILES= \
 		base/process.cc \
 		gui/about_dialog/about_dialog.cc \
 		handwriting/zinnia_handwriting.cc
+SSL_REINPLACE_STR=
+.for V in OPENSSL_CFLAGS OPENSSLLIB OPENSSLINC OPENSSL_LDFLAGS
+SSL_REINPLACE_STR+=	-e "s,%%${V}%%,${${V}},"
+.endfor
 
 BUILD_CMD=	${SETENV} ${MAKE_ENV} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
@@ -81,6 +86,8 @@ post-patch:
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} "s,@@LOCALBASE@@,${LOCALBASE},g" \
 		${LOCALBASE_REPLACE_FILES}
+	cd ${WRKSRC} && \
+		${REINPLACE_CMD} ${SSL_REINPLACE_STR} base/base.gyp
 
 pre-build:
 	${PRINTF} "%s\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} $$@' > ${WRKSRC}/mozcmake
