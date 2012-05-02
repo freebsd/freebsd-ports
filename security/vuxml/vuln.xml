@@ -52,6 +52,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="18dffa02-946a-11e1-be9d-000c29cc39d3">
+    <topic>WebCalendar -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>WebCalendar-devel</name>
+	<range><le>1.2.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hanno Boeck reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2012/04/28/1">
+	  <p>Fixes [are now available] for various security vulnerabilities
+            including LFI (local file inclusion), XSS (cross site scripting)
+            and others.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-1495</cvename>
+      <cvename>CVE-2012-1496</cvename>
+      <url>http://packetstormsecurity.org/files/112332/WebCalendar-1.2.4-Remote-Code-Execution.html</url>
+      <url>http://packetstormsecurity.org/files/112323/WebCalendar-1.2.4-Pre-Auth-Remote-Code-Injection.html</url>
+      <url>http://archives.neohapsis.com/archives/bugtraq/2012-04/0182.html</url>
+    </references>
+    <dates>
+      <discovery>2012-04-28</discovery>
+      <entry>2012-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="94c0ac4f-9388-11e1-b242-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
