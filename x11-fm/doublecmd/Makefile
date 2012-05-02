@@ -18,6 +18,8 @@ COMMENT=	A Total Commander like file manager for the X Window System
 
 BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
 
+BROKEN=		does not build
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_DOS2UNIX=	yes
