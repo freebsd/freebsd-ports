@@ -34,6 +34,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3<1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:${PORTSDIR}/net/py-netifaces \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
+BROKEN=		unsatisfyable dependency object
+
 OPTIONS=	GMPY "Enable use GMP library in SSH" on \
 		PEP8 "Intsall pep8 for checking source" off
 
