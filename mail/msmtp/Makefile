@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.27
-PORTREVISION=	1
+PORTVERSION=	1.4.28
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -73,10 +72,10 @@ LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB=		NLS=""
+PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS="@comment "
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -90,7 +89,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpq/README.msmtpq ${DOCSDIR}
 .else
-PLIST_SUB=	MSMTPQ="@comment "
+PLIST_SUB+=	MSMTPQ="@comment "
 .endif
 
 .include <bsd.port.post.mk>
