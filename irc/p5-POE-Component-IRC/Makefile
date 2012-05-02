@@ -26,6 +26,7 @@ RUN_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Component-SSLify>0:${PORTSDIR}/security/p5-POE-Component-SSLify \
 		p5-IRC-Utils>=0.12:${PORTSDIR}/irc/p5-IRC-Utils
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	yes
 
