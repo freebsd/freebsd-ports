@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=	geekounet@poildetroll.net
+MAINTAINER=	pierre@guinoiseau.eu
 COMMENT=	Command line video extraction tool for YouTube and others
 
 LICENSE=	GPLv3
