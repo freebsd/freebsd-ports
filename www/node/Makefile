@@ -24,7 +24,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 WITHOUT_FBSD10_FIX=	yes
 
-CONFLICTS=	node-0.[0-57-9]* devel-0.[0-9]*
+CONFLICTS=	node-0.[0-57-9]* node-devel-0.[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
