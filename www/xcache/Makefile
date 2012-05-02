@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcache
-DISTVERSION=	1.3.2
+DISTVERSION=	2.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
@@ -19,7 +19,8 @@ USE_PHPIZE=	yes
 
 CONFIGURE_ARGS=	--enable-xcache=shared
 
-OPTIONS=	COVERAGER "Enable code coverage dumper" off
+OPTIONS=	CONSTANT "Enable handling of compile time constants" off \
+		COVERAGER "Enable code coverage dumper" off
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -36,6 +37,10 @@ COVERAGERFILES=	common-en.lang.php common-zh-simplified-gb2312.lang.php \
 		coverager.css coverager.php coverager.tpl.php index.php
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CONSTANT)
+CONFIGURE_ARGS+=--enable-xcache-constant
+.endif
 
 .if defined(WITH_COVERAGER)
 CONFIGURE_ARGS+=--enable-xcache-coverager
