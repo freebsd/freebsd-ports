@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A collection of tools for internationalizing Python applications
 
-USE_PYTHON=	2.5+
+USE_PYTHON=		2.5-2.7
 USE_PYDISTUTILS=	easy_install
 
 .if !defined(NOPORTDOCS)
