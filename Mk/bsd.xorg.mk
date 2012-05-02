@@ -20,7 +20,7 @@ Xorg_Pre_Include=		bsd.xorg.mk
 # app - requires pkgconfig, don't install shared libraries (I guess)
 # data - nothing I could factorize
 # doc - no particular notes
-# driver - input depends on inputproto/randrproto at least
+# driver - input depends on inputproto/renderproto at least
 #          video depends on randrproto/renderproto at least
 # font - don't install .pc file
 # lib - various dependencies, install .pc file
@@ -51,7 +51,7 @@ USE_GNOME+=	pkgconfig
 USE_XORG+=	xorg-server xproto randrproto xi
 CONFIGURE_ENV+=	DRIVER_MAN_SUFFIX=4x DRIVER_MAN_DIR='$$(mandir)/man4'
 .  if ${PORTNAME:M*input*}x != x
-USE_XORG+=	inputproto
+USE_XORG+=	inputproto renderproto
 .  elif ${PORTNAME:M*video*}x != x
 USE_XORG+=	fontsproto renderproto
 .  else
@@ -142,7 +142,7 @@ USE_XORG+=	pciaccess
 .endif
 
 .if exists(${LOCALBASE}/bin/X)
-XSERVER_VER=	${LOCALBASE}/bin/X -version 2>&1 | sed -n 's;^X\.Org X Server \([^ ]*\).*;\1;p'
+XSERVER_VER!=	${LOCALBASE}/bin/X -version 2>&1 | sed -n 's;^X\.Org X Server \([^ ]*\).*;\1;p'
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(Xorg_Post_Include)
