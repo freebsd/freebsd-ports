@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	etoile-
 DISTNAME=	RSSKit-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	Etoile Project RSSKit framwork
+COMMENT=	Etoile Project RSSKit framework
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
