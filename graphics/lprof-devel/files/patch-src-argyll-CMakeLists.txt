@@ -1,5 +1,20 @@
---- src/argyll/CMakeLists.txt.orig	2008-09-08 00:27:28.000000000 +0400
-+++ src/argyll/CMakeLists.txt	2008-09-08 00:27:28.000000000 +0400
+--- src/argyll/CMakeLists.txt	2008-02-19 18:02:10.000000000 -0300
++++ src/argyll/CMakeLists.txt	2012-05-01 11:02:19.000000000 -0300
+@@ -5,9 +5,11 @@ ENDFOREACH(argyll_inc_dir)
+ 
+ SET(ARGYLL_INCLUDE_DIRS "${ARGYLL_INCLUDE_DIRS}" CACHE PATH "Argyll cms include directories" FORCE)
+ 
+-SET_DIRECTORY_PROPERTIES(
+-    PROPERTIES
+-    INCLUDE_DIRECTORIES "${ARGYLL_INCLUDE_DIRS};${LIBUSB_INCLUDE_DIR};${CMAKE_SOURCE_DIR}/src/moncalqt;${WINDDK_INCLUDE_DIR}"
++INCLUDE_DIRECTORIES(
++    BEFORE
++    ${ARGYLL_INCLUDE_DIRS}
++    ${LIBUSB_INCLUDE_DIR}
++    ${CMAKE_SOURCE_DIR}/src/moncalqt
+ )
+ 
+ SET(ARGYLL_SOURCES
 @@ -83,3 +83,21 @@
      PROPERTIES
      COMPILE_FLAGS "${argyll_flags}"
