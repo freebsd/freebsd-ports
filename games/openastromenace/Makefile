@@ -20,6 +20,8 @@ COMMENT=	Hardcore 3D space shooter with spaceship upgrade possibilities
 LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GL=		gl glu
 USE_OPENAL=	al alut
