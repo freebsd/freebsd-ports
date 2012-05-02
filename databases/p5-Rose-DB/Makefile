@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.766
+PORTVERSION=	0.767
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A DBI wrapper and abstraction layer
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Bit-Vector>=6.4:${PORTSDIR}/math/p5-Bit-Vector \
 		p5-Clone-PP>=0:${PORTSDIR}/devel/p5-Clone-PP \
