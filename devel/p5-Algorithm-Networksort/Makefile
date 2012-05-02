@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Networksort
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module that will create sorting networks
 
-PERL_MODBUILD=	yes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Algorithm::Networksort.3
 
