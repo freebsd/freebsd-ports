@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-HTML-Objects
-PORTVERSION=	0.614
+PORTVERSION=	0.615
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	p5-Clone-PP>=0:${PORTSDIR}/devel/p5-Clone-PP \
 		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String \
 		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \
 		p5-Rose-Object>=0.854:${PORTSDIR}/devel/p5-Rose-Object \
 		p5-Rose-URI>=0.021:${PORTSDIR}/net/p5-Rose-URI \
