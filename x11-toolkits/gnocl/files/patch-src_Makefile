@@ -1,11 +1,6 @@
---- src/Makefile.orig	2012-04-09 13:56:02.000000000 +0200
-+++ src/Makefile	2012-04-10 15:01:49.000000000 +0200
-@@ -69,11 +69,11 @@
- 	iconView.o \
- 	infoBar.o \
- 	inputDialog.o \
--	./imageViewer/gtk-image-viewer-fixed.o \
- 	imageViewer.o \
+--- src/Makefile.orig	2012-04-20 23:05:25.000000000 +0200
++++ src/Makefile	2012-04-20 23:05:25.000000000 +0200
+@@ -72,6 +72,7 @@
  	image.o \
  	itemGroup.o \
  	label.o \
@@ -13,7 +8,7 @@
  	language.o \
  	layout.o \
  	linkButton.o \
-@@ -90,7 +90,9 @@
+@@ -88,7 +89,9 @@
  	pageSetup.o \
  	pageSetupDialog.o \
  	paned.o \
