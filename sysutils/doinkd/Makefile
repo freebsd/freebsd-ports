@@ -7,7 +7,7 @@
 
 PORTNAME=	doinkd
 PORTVERSION=	0.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 
@@ -24,14 +24,6 @@ PLIST_FILES=	etc/doinkd/doinkd.cf.template sbin/doinkd
 PLIST_DIRSTRY=	etc/doinkd
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900006
-EXTRA_PATCHES=	${PATCHDIR}/utmpx-Makefile \
-		${PATCHDIR}/utmpx-doinkd.h \
-		${PATCHDIR}/utmpx-doinkd.c
-.else
-EXTRA_PATCHES=	${PATCHDIR}/utmp-Makefile
-.endif
 
 post-extract:
 	(cd ${WRKSRC}; make clean)
