@@ -3,7 +3,6 @@
 %%WWWDIR%%/GPL.html
 %%WWWDIR%%/NEWS
 %%WWWDIR%%/README.html
-%%WWWDIR%%/TODO
 %%WWWDIR%%/UPGRADING.html
 %%WWWDIR%%/about.php
 %%WWWDIR%%/access.php
@@ -82,7 +81,7 @@
 %%WWWDIR%%/images/leftarrow.gif
 %%WWWDIR%%/images/leftarrowsmall.gif
 %%WWWDIR%%/images/login.gif
-%%WWWDIR%%/images/new.gif
+%%WWWDIR%%/images/new.png
 %%WWWDIR%%/images/newmoon.gif
 %%WWWDIR%%/images/ok.gif
 %%WWWDIR%%/images/pix.gif
@@ -364,8 +363,8 @@
 %%WWWDIR%%/translations/Korean.txt
 %%WWWDIR%%/translations/Lithuanian.txt
 %%WWWDIR%%/translations/Norwegian.txt
-%%WWWDIR%%/translations/Polish.txt
 %%WWWDIR%%/translations/Polish-utf8.txt
+%%WWWDIR%%/translations/Polish.txt
 %%WWWDIR%%/translations/Portuguese.txt
 %%WWWDIR%%/translations/Portuguese_BR.txt
 %%WWWDIR%%/translations/Portuguese_BR_utf8.txt
@@ -396,18 +395,7 @@
 %%WWWDIR%%/week.php
 %%WWWDIR%%/week_details.php
 %%WWWDIR%%/week_ssi.php
-%%WWWDIR%%/ws/activity_log.php
-%%WWWDIR%%/ws/event_mod.php
-%%WWWDIR%%/ws/get_events.php
-%%WWWDIR%%/ws/get_reminders.php
-%%WWWDIR%%/ws/get_unapproved.php
-%%WWWDIR%%/ws/get_users.php
-%%WWWDIR%%/ws/login.php
-%%WWWDIR%%/ws/user_mod.php
-%%WWWDIR%%/ws/webcalendar.jar
-%%WWWDIR%%/ws/ws.php
 %%WWWDIR%%/year.php
-@dirrm %%WWWDIR%%/ws
 @dirrm %%WWWDIR%%/translations
 @dirrm %%WWWDIR%%/tools
 @dirrm %%WWWDIR%%/themes

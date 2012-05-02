@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebCalendar
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}%201.2/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -35,6 +35,7 @@ PORTDOCS=	WebCalendar-SysAdmin.html \
 OPTIONS=	APACHE "Configure for Apache-2.x" off \
 		MYSQL "Use MySQL database backend (default)" On \
 		PGSQL "Use PostgreSQL database backend" Off \
+		SQLITE "Use SQLite database backend" Off \
 		MSSQL "Use MSSQL database backend" Off \
 		DBASE "Use DBase database backend" Off \
 		ODBC "Use ODBC database backend" Off \
@@ -78,6 +79,11 @@ DB_DEFINED=	yes
 
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
+DB_DEFINED=	yes
+.endif
+
+.if defined(WITH_SQLITE)
+USE_PHP+=	sqlite3
 DB_DEFINED=	yes
 .endif
 
