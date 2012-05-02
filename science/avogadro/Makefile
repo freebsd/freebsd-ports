@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avogadro
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -19,11 +18,13 @@ LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
+USE_GL=		glu
 USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl network linguist_build \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DENABLE_GLSL=OFF
+CMAKE_ARGS=	-DENABLE_GLSL=OFF \
+		-DQT_MKSPECS_RELATIVE=share/qt4/mkspecs
 USE_GCC=	4.4+
 MAKE_JOBS_SAFE=	yes
 
