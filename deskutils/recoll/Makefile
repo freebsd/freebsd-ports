@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal full text search package, based on Xapian
 
+BROKEN=		does not compile
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
