@@ -17,6 +17,8 @@ DIST_SUBDIR=	apache22
 MAINTAINER=	bmhermansson@gmail.com
 COMMENT=	Apache smooth streaming module
 
+BROKEN=		unfetchable
+
 MAKE_JOBS_SAFE=	yes
 
 RESTRICTED=	no-commercial-use
