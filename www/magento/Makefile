@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	magento
-PORTVERSION=	1.6.1.0
+PORTVERSION=	1.7.0.0
 CATEGORIES=	www finance
-MASTER_SITES=	LOCAL/wen
+MASTER_SITES=	http://www.magentocommerce.com/downloads/assets/1.7.0.0/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A feature-rich eCommerce platform
 
-USE_BZIP2=	yes
 USE_PHP=	pdo_mysql hash gd iconv curl dom soap simplexml mcrypt mysql
 WRKSRC=		${WRKDIR}/magento
 
