@@ -20,7 +20,6 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 intltool pkgconfig
 INSTALLS_ICONS=	yes
