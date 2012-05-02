@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 MAINTAINER=	theis@gmx.at
 COMMENT=	A framework for developing PHP web applications
 
+LATEST_LINK=	cakephp13
+
 LICENSE=	MIT
 
 GITVERSION=	0-g3ff1ff1
