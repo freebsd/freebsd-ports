@@ -3,6 +3,7 @@
 # rmport - remove port(s) from the FreeBSD Ports Collection.
 #
 # Copyright 2006-2007 Vasil Dimov
+# Copyright 2012-2012 Chris Rees
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,10 +30,11 @@
 # Authors:
 # Originally written by Vasil Dimov <vd@FreeBSD.org>
 # Others:
+# Chris Rees <crees@FreeBSD.org>
 #
 # $FreeBSD$
 #
-# MAINTAINER=	vd@FreeBSD.org
+# MAINTAINER=	crees@FreeBSD.org
 #
 
 PORTSDIR=${PORTSDIR:-/usr/ports}
@@ -43,6 +45,10 @@ TODAY=`date -u -v+0d +%Y-%m-%d`
 SED="sed -i .orig -E"
 # use ~/.ssh/config to set up the desired username if different than $LOGNAME
 PCVS=${PCVS:-cvs -d pcvs.freebsd.org:/home/pcvs}
+
+if ! CDIFF=$(which cdiff) ; then
+	CDIFF=${EDITOR}
+fi
 
 log()
 {
@@ -387,7 +393,7 @@ diff()
 
 	diffout=${codir}/diff
 
-	${PCVS} diff -u ports > ${diffout} 2>&1 || :
+	${PCVS} diff -uN ports > ${diffout} 2>&1 || :
 
 	read -p "hit <enter> to view cvs diff output" dummy
 
@@ -422,7 +428,7 @@ cleanup()
 	rmdir CVS
 
 	# release cvs directories
-	${PCVS} rel -d CVSROOT ports
+	${PCVS} rel -d ports
 
 	cd /
 	rmdir ${codir}
@@ -528,10 +534,9 @@ done
 # the diff afterwards
 answer=y
 while [ "${answer}" = "y" ] ; do
-	diffout=diff
+	diffout=$(diff)
 
-	# EDITOR instead of PAGER because vim has nice syntax highlighting ;-)
-	${EDITOR} ${diffout}
+	${CDIFF} ${diffout}
 
 	echo "" >&2
 	echo "you can now edit files under ${codir}/ by hand" >&2
