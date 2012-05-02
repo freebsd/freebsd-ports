@@ -3,34 +3,56 @@
 # Whom:                              Greg Larkin <glarkin@FreeBSD.org>
 #
 # $FreeBSD$
+
 #
 
 PORTNAME=	wysiwyg
-PORTVERSION=	0.2.7848
-PORTREVISION=	2
+DISTVERSION=	0.4.${SVN_REV}
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
-		LOCAL/glarkin
+		LOCAL/brooks
 PKGNAMEPREFIX=	trac-
-DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
+DIST_SUBDIR=	trac
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	WYSIWYG editor for Trac wiki
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_ZIP=	yes
-
-WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.11
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=    TracWysiwyg
-PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}
-PLIST_SUB+=	EGGVERSION=${PORTVERSION:R} PYTHONVERSION=${_PYTHON_VERSION}
+USE_BZIP2=	yes
+USE_PYTHON=	yes
+NO_BUILD=	yes
+USE_PYDISTUTILS=yes
+PYDISTUTILS_PKGNAME=	TracWysiwyg
+PLIST_SUB+=	EGGVERSION=${EGGVERSION} PYTHONVERSION=${_PYTHON_VERSION}
+EGGVERSION=	0.12.${PORTVERSION:R}
+PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/TracWysiwyg-%%EGGVERSION%%-py%%PYTHONVERSION%%.egg
 PYDISTUTILS_NOEGGINFO=	yes
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/TracWysiwyg-%%EGGVERSION%%-py%%PYTHONVERSION%%.egg
+
+.include <bsd.port.pre.mk>
+
+.if !defined(SVN_REV)
+.if defined(BOOTSTRAP)
+SVN_URL=	http://trac-hacks.org/svn/tracwysiwygplugin/0.12/
+LANG=		"C"
+SVN_REV!=	svn info ${SVN_URL} | ${GREP} Revision | cut -d' ' -f2
+.else
+.include "Makefile.svn_rev"
+.endif
+.endif
+
+.if defined(BOOTSTRAP) || defined(SVN_FETCH)
+FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} ${SVN_URL} ${WRKSRC}
+	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
