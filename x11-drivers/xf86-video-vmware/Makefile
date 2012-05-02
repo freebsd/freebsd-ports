@@ -12,6 +12,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org vmware display driver
 
+BROKEN=		bad plist
+
 XORG_CAT=	driver
 USE_XORG=	xextproto xineramaproto videoproto
 
