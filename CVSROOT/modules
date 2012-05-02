@@ -22203,7 +22203,6 @@ py-MarkupSafe                   ports/textproc/py-MarkupSafe
 py-Missing                      ports/devel/py-Missing
 py-MultiMapping                 ports/devel/py-MultiMapping
 py-MySQLdb                      ports/databases/py-MySQLdb
-py-MySQLdb-devel                ports/databases/py-MySQLdb-devel
 py-PEAK-Rules                   ports/devel/py-PEAK-Rules
 py-PF                           ports/security/py-PF
 py-Persistence                  ports/devel/py-Persistence
@@ -22709,8 +22708,8 @@ py-mwlib.ext                    ports/devel/py-mwlib.ext
 py-mwlib.rl                     ports/devel/py-mwlib.rl
 py-mx-base                      ports/lang/py-mx-base
 py-mx-experimental              ports/devel/py-mx-experimental
+py-mygpoclient                  ports/devel/py-mygpoclient
 py-mysqldb                      ports/databases/py-MySQLdb
-py-mysqldb-devel                ports/databases/py-MySQLdb-devel
 py-nagiosplugin                 ports/sysutils/py-nagiosplugin
 py-namebench                    ports/dns/py-namebench
 py-nautilus                     ports/x11-fm/py-nautilus
@@ -22757,6 +22756,7 @@ py-opencv                       ports/graphics/py-opencv
 py-openexr                      ports/graphics/py-openexr
 py-opengl                       ports/graphics/py-opengl
 py-openid                       ports/security/py-openid
+py-openimageio                  ports/graphics/py-openimageio
 py-openlp                       ports/multimedia/py-openlp
 py-openssl                      ports/security/py-openssl
 py-openssl-proxy                ports/www/py-openssl-proxy
@@ -28889,6 +28889,7 @@ zh-fcitx-chewing                ports/chinese/fcitx-chewing
 zh-fcitx-cloudpinyin            ports/chinese/fcitx-cloudpinyin
 zh-fcitx-configtool             ports/chinese/fcitx-configtool
 zh-fcitx-googlepinyin           ports/chinese/fcitx-googlepinyin
+zh-fcitx-libpinyin              ports/chinese/fcitx-libpinyin
 zh-fcitx-sunpinyin              ports/chinese/fcitx-sunpinyin
 zh-fcitx-ui-light               ports/chinese/fcitx-ui-light
 zh-fireflyttf                   ports/chinese/fireflyttf
@@ -28933,6 +28934,7 @@ zh-koffice-kde4-l10n-zh_tw      ports/chinese/koffice-kde4-l10n-zh_TW
 zh-kon2                         ports/chinese/kon2
 zh-libchewing                   ports/chinese/libchewing
 zh-libgooglepinyin              ports/chinese/libgooglepinyin
+zh-libpinyin                    ports/chinese/libpinyin
 zh-libreoffice-zh_CN            ports/chinese/libreoffice-zh_CN
 zh-libreoffice-zh_TW            ports/chinese/libreoffice-zh_TW
 zh-libreoffice-zh_cn            ports/chinese/libreoffice-zh_CN
