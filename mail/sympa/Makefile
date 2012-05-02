@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Sympa is an electronic mailing list manager
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS+=								\
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
@@ -38,8 +40,6 @@ BUILD_DEPENDS+=								\
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
-
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 
@@ -47,7 +47,6 @@ USERS=		sympa
 GROUPS=		sympa
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_APACHE=	20+
 ICONSDIR?=	www/icons
 CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 		--libexecdir=${PREFIX}/libexec/${PORTNAME} \
@@ -87,13 +86,16 @@ DB_TYPE=
 USE_MYSQL=	yes
 .endif
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_FASTCGI)
-BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
-		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
-RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
-		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+. if !defined(WITHOUT_APACHE)
+USE_APACHE=	20+
+BUILD_DEPENDS+= ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+RUN_DEPENDS+=   ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+. endif
 .endif
 
 .if ${DB_TYPE:L} == "oracle"
@@ -119,7 +121,8 @@ pre-fetch:
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	DB_TYPE=type	Optional: mysql, Oracle, Pg or Sybase"
-	@${ECHO_MSG} "	WITH_FASTCGI	Use FastCGI instead of plain CGI (Apache only)"
+	@${ECHO_MSG} "	WITH_FASTCGI	Use FastCGI instead of plain CGI"
+	@${ECHO_MSG} "	WITHOUT_APACHE	Use FastCGI without apache (spawn-fcgi or ?)"
 	@${ECHO_MSG} ""
 
 pre-install:
@@ -141,4 +144,4 @@ post-install:
 	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
