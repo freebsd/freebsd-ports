@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	6.2.1
+PORTVERSION=	6.4.3
 CATEGORIES=	deskutils www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}/1%20-%20SugarCRM%206.2.0/SugarCommunityEdition-6.2.0
+MASTER_SITE_SUBDIR=	${PORTNAME}/2%20-%20SugarCRM%206.4.0/SugarCommunityEdition-6.4.0
 DISTNAME=	SugarCE-${PORTVERSION}
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A web based customer relationship management suite
 
 FETCH_ARGS=	-pRr
