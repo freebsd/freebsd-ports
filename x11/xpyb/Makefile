@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:${PORTSDIR}/x11/xcb-p
 		xcb-proto>=1.1:${PORTSDIR}/x11/xcb-proto
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 USE_GNOME=	gnomehack
