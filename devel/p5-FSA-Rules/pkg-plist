@@ -1,2 +1,5 @@
 %%SITE_PERL%%/FSA/Rules.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA/Rules/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA/Rules
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FSA
 @dirrmtry %%SITE_PERL%%/FSA
