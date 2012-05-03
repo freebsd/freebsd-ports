@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	pyquery
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A jquery-like library for python
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.1:${PORTSDIR}/devel/py-lxml \
+		${PYTHON_PKGNAMEPREFIX}cssselect>=0.6.1:${PORTSDIR}/www/py-cssselect
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
