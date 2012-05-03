@@ -17,6 +17,7 @@ COMMENT=	Analyzer for CJK texts
 
 RUN_DEPENDS=	${SITE_PERL}/Plucene.pm:${PORTSDIR}/textproc/p5-Plucene
 BUILD_DEPENDS:=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes
 
