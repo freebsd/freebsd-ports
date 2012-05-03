@@ -13,12 +13,10 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Check and validate IPv6 addresses
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-PEAR_CATSRC=	yes
-CATEGORY=	Net
-FILES=		IPv6.php
-TESTS=		AllTests.php NetIPv6Test.php
+PORTSCOUT=		skipv:1.2.2b,1.2.2b2
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
