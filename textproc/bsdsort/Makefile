@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bsd-sort
-# Date created:				12 Juni 2007
+# Date created:				12 June 2007
 # Whom:					Gabor Kovesdan <gabor@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	sort
-PORTVERSION=	20120424
+PORTVERSION=	20120503
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
