@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for FastCGI Toolkit
 
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-HexString>=0:${PORTSDIR}/devel/p5-Test-HexString
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Net::FastCGI.3 \
