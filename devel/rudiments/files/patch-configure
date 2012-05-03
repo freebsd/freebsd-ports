@@ -1,6 +1,6 @@
---- configure.orig	2011-12-25 13:46:41.000000000 +0900
-+++ configure	2012-02-14 22:39:36.000000000 +0900
-@@ -15737,8 +15737,8 @@
+--- configure.orig	2012-02-17 13:38:13.000000000 +0900
++++ configure	2012-04-13 00:56:01.000000000 +0900
+@@ -16021,8 +16021,8 @@
  then
  
  	HAVE_PTHREAD=""
@@ -11,16 +11,16 @@
  
  	if ( test "$cross_compiling" = "yes" )
  	then
-@@ -15757,7 +15757,7 @@
+@@ -16041,7 +16041,7 @@
  
  	else
  
--		for i in "pthread" "c_r" "thread"
-+		for i in "thread"
+-		for i in "pthread" "c_r" "thread" "pthreads"
++		for i in "thread" "pthreads"
  		do
  
  
-@@ -15774,9 +15774,6 @@
+@@ -16058,9 +16058,6 @@
  STATIC=""
  HEADERSANDLIBSPATH=""
  
@@ -30,7 +30,7 @@
  eval "PTHREADSTATIC=\"\""
  if ( test -n "" )
  then
-@@ -16244,9 +16241,6 @@
+@@ -16528,9 +16525,6 @@
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
  LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib64$||g" -e "s|-L/lib64$||g" -e "s|-L/usr/lib64 ||g" -e "s|-L/lib64 ||g"`
  
