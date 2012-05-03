@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	3.84
+PORTVERSION=	3.86
 CATEGORIES=	databases
-MASTER_SITES=	http://www.garret.ru/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
+		http://www.garret.ru/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
