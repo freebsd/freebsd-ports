@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Perl extension for rounding numbers
 
 PERL_CONFIGURE=	yes
