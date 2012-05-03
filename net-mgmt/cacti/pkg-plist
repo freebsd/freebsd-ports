@@ -25,6 +25,7 @@
 %%CACTIDIR%%/cli/rebuild_poller_cache.php
 %%CACTIDIR%%/cli/repair_database.php
 %%CACTIDIR%%/cli/structure_rra_paths.php
+%%CACTIDIR%%/cli/reorder_data_query.php
 %%CACTIDIR%%/cli/repair_templates.php
 %%CACTIDIR%%/cli/upgrade_database.php
 %%CACTIDIR%%/cmd.php
@@ -181,12 +182,17 @@
 %%CACTIDIR%%/images/calendar.gif
 %%CACTIDIR%%/images/delete_icon.gif
 %%CACTIDIR%%/images/delete_icon_large.gif
+%%CACTIDIR%%/images/disable_icon.png
+%%CACTIDIR%%/images/enable_icon.png
+%%CACTIDIR%%/images/enable_icon_disabled.png
 %%CACTIDIR%%/images/favicon.ico
 %%CACTIDIR%%/images/graph_page_top.gif
 %%CACTIDIR%%/images/graph_properties.gif
 %%CACTIDIR%%/images/graph_query.png
 %%CACTIDIR%%/images/graph_zoom.gif
 %%CACTIDIR%%/images/hide.gif
+%%CACTIDIR%%/images/install_icon.png
+%%CACTIDIR%%/images/install_icon_disabled.png
 %%CACTIDIR%%/images/left_border.gif
 %%CACTIDIR%%/images/menu_line.gif
 %%CACTIDIR%%/images/menuarrow.gif
@@ -212,6 +218,8 @@
 %%CACTIDIR%%/images/tab_settings.gif
 %%CACTIDIR%%/images/tab_settings_down.gif
 %%CACTIDIR%%/images/transparent_line.gif
+%%CACTIDIR%%/images/uninstall_icon.gif
+%%CACTIDIR%%/images/view_none.gif
 %%CACTIDIR%%/include/auth.php
 %%CACTIDIR%%/include/bottom_footer.php
 @unexec cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php && rm -f %D/%%CACTIDIR%%/include/config.php || true
@@ -269,6 +277,7 @@
 %%CACTIDIR%%/include/jscalendar/lang/cn_utf8.js
 %%CACTIDIR%%/include/layout.js
 %%CACTIDIR%%/include/main.css
+%%CACTIDIR%%/include/plugins.php
 %%CACTIDIR%%/include/top_graph_header.php
 %%CACTIDIR%%/include/top_header.php
 %%CACTIDIR%%/include/treeview/ftiens4.js
@@ -306,6 +315,8 @@
 %%CACTIDIR%%/install/0_8_7f_to_0_8_7g.php
 %%CACTIDIR%%/install/0_8_7g_to_0_8_7h.php
 %%CACTIDIR%%/install/0_8_7h_to_0_8_7i.php
+%%CACTIDIR%%/install/0_8_7i_to_0_8_8.php
+%%CACTIDIR%%/install/0_8_8_to_0_8_8a.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -420,6 +431,7 @@
 %%CACTIDIR%%/lib/import.php
 %%CACTIDIR%%/lib/ldap.php
 %%CACTIDIR%%/lib/ping.php
+%%CACTIDIR%%/lib/plugins.php
 %%CACTIDIR%%/lib/poller.php
 %%CACTIDIR%%/lib/rrd.php
 %%CACTIDIR%%/lib/snmp.php
@@ -434,9 +446,11 @@
 %%CACTIDIR%%/log/.htaccess
 @unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
+%%CACTIDIR%%/plugins.php
 %%CACTIDIR%%/poller.php
 %%CACTIDIR%%/poller_commands.php
 %%CACTIDIR%%/poller_export.php
+%%CACTIDIR%%/plugins/index.php
 %%CACTIDIR%%/resource/script_queries/host_cpu.xml
 %%CACTIDIR%%/resource/script_queries/host_disk.xml
 %%CACTIDIR%%/resource/script_queries/unix_disk.xml
@@ -484,6 +498,7 @@
 @dirrm %%CACTIDIR%%/resource/script_server
 @dirrm %%CACTIDIR%%/resource/script_queries
 @dirrm %%CACTIDIR%%/resource
+@dirrmtry %%CACTIDIR%%/plugins
 @dirrmtry %%CACTIDIR%%/log
 @dirrm %%CACTIDIR%%/lib/adodb/lang
 @dirrm %%CACTIDIR%%/lib/adodb/drivers
