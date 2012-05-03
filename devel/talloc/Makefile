@@ -7,6 +7,8 @@
 
 PORTNAME=		talloc
 PORTVERSION=		2.0.7
+PORTREVISION=		0
+PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
 			ftp://ca.samba.org/pub/%SUBDIR%/ \
@@ -30,8 +32,8 @@ USE_GNOME=		pkgconfig
 
 MAKE_JOBS_SAFE=		yes
 
-PKGCONFIGDIR?=		${LOCALBASE}/libdata/pkgconfig
-PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${LOCALBASE}/;;}
+PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
+PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 OPTIONS=		PYTHON		"Python bindings"	on
 
@@ -46,13 +48,15 @@ PLIST_FILES=		include/talloc.h \
 
 CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
 CONFIGURE_ENV+=		NOCOLOR=yes
-MAKE_ENV+=		NOCOLOR=yes X11BASE=${LOCALBASE}
+MAKE_ENV+=		NOCOLOR=yes
 
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
-.if !defined(DISABLE_MAKE_JOBS)
+.if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
+.if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
+.endif
 .endif
 
 .if defined(WITH_PYTHON)
@@ -71,9 +75,22 @@ CONFIGURE_ARGS+=	--disable-python
 ALL_TARGET=		build
 INSTALL_TARGET=		install
 
+.include <bsd.port.pre.mk>
+
+IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
+
 post-patch:
 			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
 				${BUILD_WRKSRC}/wscript
+
+# Use threading (or multiprocessing) but not thread (renamed in python 3+).
+pre-configure:
+			@if ! ${PYTHON_CMD} -c "import multiprocessing;" 2>/dev/null; then \
+				${ECHO_CMD}; \
+				${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE_NONTHREAD_PYTHON:Q}.; \
+				${ECHO_CMD}; \
+				${FALSE}; \
+			fi
 
 pre-build:
 .for man in ${MAN3}
@@ -94,4 +111,4 @@ do-build:
 do-install:
 			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
