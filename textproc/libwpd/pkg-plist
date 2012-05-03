@@ -1,25 +1,27 @@
 bin/wpd2html
 bin/wpd2raw
 bin/wpd2text
-include/libwpd-0.9/libwpd/WPDocument.h
-include/libwpd-0.9/libwpd/WPXBinaryData.h
-include/libwpd-0.9/libwpd/WPXDocumentInterface.h
-include/libwpd-0.9/libwpd/WPXProperty.h
-include/libwpd-0.9/libwpd/WPXPropertyList.h
-include/libwpd-0.9/libwpd/WPXPropertyListVector.h
-include/libwpd-0.9/libwpd/WPXString.h
-include/libwpd-0.9/libwpd/libwpd.h
-include/libwpd-0.9/libwpd-stream/WPXStream.h
-include/libwpd-0.9/libwpd-stream/WPXStreamImplementation.h
-include/libwpd-0.9/libwpd-stream/libwpd-stream.h
-lib/libwpd-0.9.la
-lib/libwpd-0.9.so
-lib/libwpd-0.9.so.9
-lib/libwpd-stream-0.9.la
-lib/libwpd-stream-0.9.so
-lib/libwpd-stream-0.9.so.9
-libdata/pkgconfig/libwpd-0.9.pc
-libdata/pkgconfig/libwpd-stream-0.9.pc
-@dirrm include/libwpd-0.9/libwpd-stream
-@dirrm include/libwpd-0.9/libwpd
-@dirrm include/libwpd-0.9
+include/libwpd-%%MAJVER%%/libwpd/WPDocument.h
+include/libwpd-%%MAJVER%%/libwpd/WPXBinaryData.h
+include/libwpd-%%MAJVER%%/libwpd/WPXDocumentInterface.h
+include/libwpd-%%MAJVER%%/libwpd/WPXProperty.h
+include/libwpd-%%MAJVER%%/libwpd/WPXPropertyList.h
+include/libwpd-%%MAJVER%%/libwpd/WPXPropertyListVector.h
+include/libwpd-%%MAJVER%%/libwpd/WPXString.h
+include/libwpd-%%MAJVER%%/libwpd/libwpd.h
+include/libwpd-%%MAJVER%%/libwpd-stream/WPXStream.h
+include/libwpd-%%MAJVER%%/libwpd-stream/WPXStreamImplementation.h
+include/libwpd-%%MAJVER%%/libwpd-stream/libwpd-stream.h
+lib/libwpd-%%MAJVER%%.a
+lib/libwpd-%%MAJVER%%.la
+lib/libwpd-%%MAJVER%%.so
+lib/libwpd-%%MAJVER%%.so.9
+lib/libwpd-stream-%%MAJVER%%.a
+lib/libwpd-stream-%%MAJVER%%.la
+lib/libwpd-stream-%%MAJVER%%.so
+lib/libwpd-stream-%%MAJVER%%.so.9
+libdata/pkgconfig/libwpd-%%MAJVER%%.pc
+libdata/pkgconfig/libwpd-stream-%%MAJVER%%.pc
+@dirrm include/libwpd-%%MAJVER%%/libwpd-stream
+@dirrm include/libwpd-%%MAJVER%%/libwpd
+@dirrm include/libwpd-%%MAJVER%%
