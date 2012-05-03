@@ -1,9 +1,9 @@
---- Ted/makefile.in.orig	2009-06-10 14:41:19.000000000 +0900
-+++ Ted/makefile.in	2009-06-26 01:00:56.000000000 +0900
-@@ -42,7 +42,8 @@
- 	-I../bitmap	\
- 	-I../ind	\
- 	-I../include	\
+--- Ted/makefile.in.orig	2012-04-01 18:57:26.000000000 +0900
++++ Ted/makefile.in	2012-04-09 20:45:17.000000000 +0900
+@@ -56,7 +56,8 @@
+ 	-I../bitmap		\
+ 	-I../ind		\
+ 	-I../include		\
 -	$(DEF_PKGDIR)
 +	$(DEF_DOCUMENT_DIR)	\
 +	$(DEF_PSSCRIPT_DIR)
