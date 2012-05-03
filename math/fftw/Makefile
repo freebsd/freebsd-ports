@@ -26,14 +26,16 @@ FFTW_SUFIX=
 
 USE_FORTRAN=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:env automake:env libtool
+USE_AUTOTOOLS=	aclocal automake autoconf libtool
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-shared
-INFO=		fftw
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
+
+PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +45,7 @@ FFTW_SUFX=		s
 FFTW_PKGNAMESUFFIX=	-float
 PLIST_SUB+=	DEF="@comment "
 .else
+INFO=			fftw
 PLIST_SUB+=	DEF=""
 .endif
 
@@ -55,16 +58,16 @@ BROKEN=		does not build
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/doc/fftw.info*
-.if ${FFTW_FLAVOR}=="float"
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
-.endif
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc | |' ${WRKSRC}/Makefile.am
 
-pre-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF})
+post-build:
+.if ${FFTW_FLAVOR}=="default"
+	@cd ${WRKSRC}/doc && makeinfo fftw.texi
+.endif
 
 post-install:
 .if ${FFTW_FLAVOR}=="default"
+	${INSTALL_DATA} ${WRKSRC}/doc/fftw.info ${PREFIX}/${INFO_PATH}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/fftw.ps ${DOCSDIR}/fftw.ps
