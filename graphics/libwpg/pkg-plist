@@ -111,6 +111,7 @@ libdata/pkgconfig/libwpg-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2splitbar.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ftv2vertline.png
 %%PORTDOCS%%%%DOCSDIR%%/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions_0x61.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x62.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x63.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x64.html
@@ -134,6 +135,7 @@ libdata/pkgconfig/libwpg-0.2.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x79.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/html/functions_func_0x61.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_func_0x63.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_func_0x64.html
 %%PORTDOCS%%%%DOCSDIR%%/html/functions_func_0x65.html
