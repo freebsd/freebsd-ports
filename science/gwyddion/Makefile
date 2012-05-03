@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.16
-PORTREVISION=	4
+PORTVERSION=	2.27
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -24,13 +23,12 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
-		--disable-pascal --disable-pygwy --without-kde4-thumbnailer
+		--disable-pygwy --without-kde4-thumbnailer
 
 MAKE_ARGS=	pkgconfigdatadir=${PREFIX}/libdata/pkgconfig
 
 USE_GNOME=	desktopfileutils gnomemimedata gtk20 libxml2
 USE_GL=		yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
