@@ -36,6 +36,9 @@
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.pyo
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test64bit.pyo
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test64bit.py
+%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test64bit.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.pyo
@@ -116,6 +119,9 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/test.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/test.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/test.pyo
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testabsdatetime.py
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testabsdatetime.pyc
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testabsdatetime.pyo
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testcmp.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testcmp.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testcmp.pyo
@@ -128,6 +134,9 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnow.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnow.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnow.pyo
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnumpy.py
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnumpy.pyc
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnumpy.pyo
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.pyo
@@ -137,6 +146,9 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testroundoff.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testroundoff.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testroundoff.pyo
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testslotops.py
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testslotops.pyc
+%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testslotops.pyo
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/teststrftime.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/teststrftime.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/teststrftime.pyo
@@ -149,16 +161,6 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/timegm.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/timegm.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/timegm.pyo
-%%PYTHON_SITELIBDIR%%/mx/Doc/eGenix-mx-Extensions.html
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxBeeBase.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxDateTime.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxProxy.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxQueue.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxStack.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxTextTools.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxTools.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxUID.pdf
-%%PYTHON_SITELIBDIR%%/mx/Doc/mxURL.pdf
 %%PYTHON_SITELIBDIR%%/mx/LICENSE
 %%PYTHON_SITELIBDIR%%/mx/Log.py
 %%PYTHON_SITELIBDIR%%/mx/Log.pyc
@@ -179,6 +181,9 @@
 %%PYTHON_SITELIBDIR%%/mx/Misc/Cookie.py
 %%PYTHON_SITELIBDIR%%/mx/Misc/Cookie.pyc
 %%PYTHON_SITELIBDIR%%/mx/Misc/Cookie.pyo
+%%PYTHON_SITELIBDIR%%/mx/Misc/Daemon.py
+%%PYTHON_SITELIBDIR%%/mx/Misc/Daemon.pyc
+%%PYTHON_SITELIBDIR%%/mx/Misc/Daemon.pyo
 %%PYTHON_SITELIBDIR%%/mx/Misc/ExitFunctions.py
 %%PYTHON_SITELIBDIR%%/mx/Misc/ExitFunctions.pyc
 %%PYTHON_SITELIBDIR%%/mx/Misc/ExitFunctions.pyo
@@ -434,6 +439,7 @@
 %%PYTHON_SITELIBDIR%%/mx/__init__.py
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyo
+%%DOCSDIR%%/index.html
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase
@@ -441,7 +447,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime/Examples
 @dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime
 @dirrm %%PYTHON_SITELIBDIR%%/mx/DateTime
-@dirrm %%PYTHON_SITELIBDIR%%/mx/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Misc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/Proxy/mxProxy
@@ -468,5 +473,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/mx/URL/mxURL
 @dirrm %%PYTHON_SITELIBDIR%%/mx/URL
 @dirrm %%PYTHON_SITELIBDIR%%/mx
-share/doc/py-mx/index.html
-@dirrm share/doc/py-mx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
