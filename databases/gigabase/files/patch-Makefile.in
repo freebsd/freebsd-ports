@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri May  4 23:46:57 2007
-+++ Makefile.in	Sun Oct 21 03:00:51 2007
+--- Makefile.in.orig	2012-04-15 21:11:23.211612689 +0600
++++ Makefile.in	2012-04-15 21:16:04.938621569 +0600
 @@ -5,8 +5,10 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -20,7 +20,7 @@
 +CLI_LIB = libcligb$(SUFF).${LIBEXT}
  EXES = subsql
  
- EXAMPLES = guess testdb testjoin testddl testperf testspat testperf2 testsync testiref testtrav testidx testidx2 clitest testblob testleak
+ EXAMPLES = guess testdb testjoin testddl testperf testspat testperf2 testsync testiref testtrav testidx testidx2 clitest testblob testleak testsession testtimeseries testtl
 @@ -49,7 +51,7 @@
  
  CXX = @CXX@
@@ -48,7 +48,7 @@
  # Uncoment this for AIX/xlC 5.0
  #	xlC_r -qmkshrobj=-10 -o .libs/cli.so $(CLI_OBJS)
  #	ar rv .libs/libcli_r.a .libs/cli.so
-@@ -146,14 +148,14 @@
+@@ -155,14 +157,14 @@
  
  install: subsql $(GB_LIB) $(CLI_LIB)
  	mkdir -p $(includedir)
