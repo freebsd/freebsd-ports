@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	6.76
+PORTVERSION=	6.78
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HINRIK
@@ -24,7 +24,8 @@ RUN_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Filter-IRCD>=2.42:${PORTSDIR}/irc/p5-POE-Filter-IRCD \
 		p5-POE-Component-Client-DNS>=0.99:${PORTSDIR}/dns/p5-POE-Component-Client-DNS \
 		p5-POE-Component-SSLify>0:${PORTSDIR}/security/p5-POE-Component-SSLify \
-		p5-IRC-Utils>=0.12:${PORTSDIR}/irc/p5-IRC-Utils
+		p5-IRC-Utils>=0.12:${PORTSDIR}/irc/p5-IRC-Utils \
+		p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
