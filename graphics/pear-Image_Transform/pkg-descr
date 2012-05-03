@@ -1,3 +1,4 @@
-The PEAR::Image_Color manages and handles color data and conversions.
+The PEAR::Image_Transform provides a standard interface to manipulate images 
+using different libraries
 
-WWW: http://pear.php.net/package/Image_Color
+WWW: http://pear.php.net/package/Image_Transform
