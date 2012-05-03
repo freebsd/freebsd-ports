@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	obfsproxy
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.1.4
 PORTEPOCH=	1
 CATEGORIES=	security net
 MASTER_SITES=	https://archive.torproject.org/tor-package-archive/obfsproxy/ \
