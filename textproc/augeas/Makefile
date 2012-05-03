@@ -8,7 +8,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	0.10.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 
