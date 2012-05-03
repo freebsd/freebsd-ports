@@ -46,6 +46,61 @@ bin/zen
 share/open-usp-tukubai/devel/doc/INSTALL
 share/open-usp-tukubai/devel/doc/LICENSE
 share/open-usp-tukubai/devel/doc/README
+share/open-usp-tukubai/devel/html/COMMON/CSS/IE67HACK.CSS
+share/open-usp-tukubai/devel/html/COMMON/CSS/IE6HACK.CSS
+share/open-usp-tukubai/devel/html/COMMON/CSS/IE7HACK.CSS
+share/open-usp-tukubai/devel/html/COMMON/CSS/IE8HACK.CSS
+share/open-usp-tukubai/devel/html/COMMON/CSS/MAIN.CSS
+share/open-usp-tukubai/devel/html/COMMON/CSS/MENU.CSS
+share/open-usp-tukubai/devel/html/COMMON/IMG/BACKGROUND.JPG
+share/open-usp-tukubai/devel/html/COMMON/IMG/TUKUBAI_LOGO.JPG
+share/open-usp-tukubai/devel/html/COMMON/JS/MENU.JS
+share/open-usp-tukubai/devel/html/cgi-name.html
+share/open-usp-tukubai/devel/html/check_attr_name.html
+share/open-usp-tukubai/devel/html/check_need_name.html
+share/open-usp-tukubai/devel/html/comma.html
+share/open-usp-tukubai/devel/html/count.html
+share/open-usp-tukubai/devel/html/ctail.html
+share/open-usp-tukubai/devel/html/delf.html
+share/open-usp-tukubai/devel/html/divsen.html
+share/open-usp-tukubai/devel/html/getfirst.html
+share/open-usp-tukubai/devel/html/getlast.html
+share/open-usp-tukubai/devel/html/gyo.html
+share/open-usp-tukubai/devel/html/han.html
+share/open-usp-tukubai/devel/html/index.html
+share/open-usp-tukubai/devel/html/join0.html
+share/open-usp-tukubai/devel/html/join1.html
+share/open-usp-tukubai/devel/html/join2.html
+share/open-usp-tukubai/devel/html/juni.html
+share/open-usp-tukubai/devel/html/kasan.html
+share/open-usp-tukubai/devel/html/keta.html
+share/open-usp-tukubai/devel/html/keycut.html
+share/open-usp-tukubai/devel/html/loopj.html
+share/open-usp-tukubai/devel/html/loopx.html
+share/open-usp-tukubai/devel/html/map.html
+share/open-usp-tukubai/devel/html/marume.html
+share/open-usp-tukubai/devel/html/mdate.html
+share/open-usp-tukubai/devel/html/mime-read.html
+share/open-usp-tukubai/devel/html/mojihame.html
+share/open-usp-tukubai/devel/html/nameread.html
+share/open-usp-tukubai/devel/html/plus.html
+share/open-usp-tukubai/devel/html/rank.html
+share/open-usp-tukubai/devel/html/ratio.html
+share/open-usp-tukubai/devel/html/retu.html
+share/open-usp-tukubai/devel/html/self.html
+share/open-usp-tukubai/devel/html/sm2.html
+share/open-usp-tukubai/devel/html/sm4.html
+share/open-usp-tukubai/devel/html/sm5.html
+share/open-usp-tukubai/devel/html/tarr.html
+share/open-usp-tukubai/devel/html/tateyoko.html
+share/open-usp-tukubai/devel/html/tcat.html
+share/open-usp-tukubai/devel/html/unmap.html
+share/open-usp-tukubai/devel/html/up3.html
+share/open-usp-tukubai/devel/html/yarr.html
+share/open-usp-tukubai/devel/html/ycat.html
+share/open-usp-tukubai/devel/html/yobi.html
+share/open-usp-tukubai/devel/html/ysum.html
+share/open-usp-tukubai/devel/html/zen.html
 share/open-usp-tukubai/devel/man/cgi-name.txt
 share/open-usp-tukubai/devel/man/check_attr_name.txt
 share/open-usp-tukubai/devel/man/check_need_name.txt
@@ -91,7 +146,14 @@ share/open-usp-tukubai/devel/man/ycat.txt
 share/open-usp-tukubai/devel/man/yobi.txt
 share/open-usp-tukubai/devel/man/ysum.txt
 share/open-usp-tukubai/devel/man/zen.txt
-@dirrm share/open-usp-tukubai/devel/doc
+share/open-usp-tukubai/devel/pdf/all.pdf
+@dirrm share/open-usp-tukubai/devel/pdf              
 @dirrm share/open-usp-tukubai/devel/man
+@dirrm share/open-usp-tukubai/devel/html/COMMON/JS
+@dirrm share/open-usp-tukubai/devel/html/COMMON/IMG
+@dirrm share/open-usp-tukubai/devel/html/COMMON/CSS
+@dirrm share/open-usp-tukubai/devel/html/COMMON
+@dirrm share/open-usp-tukubai/devel/html
+@dirrm share/open-usp-tukubai/devel/doc
 @dirrm share/open-usp-tukubai/devel
 @dirrm share/open-usp-tukubai
