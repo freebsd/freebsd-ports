@@ -25,6 +25,8 @@ sbin/elogd
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/tabs.gif
 %%PORTDOCS%%%%DOCSDIR%%/thumbnail.png
+%%PORTDOCS%%%%DOCSDIR%%/live_bookmarks.png
+%%PORTDOCS%%%%DOCSDIR%%/rss.png
 %%PORTDOCS%%%%DOCSDIR%%/hierarchy.gif
 %%DATADIR%%/themes/default/eld_anchor.png
 %%DATADIR%%/themes/default/icon9.png
