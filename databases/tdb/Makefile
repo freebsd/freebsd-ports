@@ -18,6 +18,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Trivial Database
 
+LICENSE=		GPLv3
+
 CONFLICTS=		*samba3[0-4]-3.*
 
 USE_PYTHON_BUILD=	yes
@@ -27,7 +29,6 @@ WAF_TOOL=		buildtools/bin/waf
 CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 USE_GNOME=		pkgconfig
 
-LICENSE=		GPLv3
 MAKE_JOBS_SAFE=		yes
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
@@ -57,9 +58,11 @@ MAKE_ENV+=		NOCOLOR=yes
 
 CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
 
-.if !defined(DISABLE_MAKE_JOBS)
+.if !defined(DISABLE_MAKE_JOBS) && !defined(MAKE_JOBS_UNSAFE)
+.if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
 CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
 _MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
+.endif
 .endif
 
 .if defined(WITH_PYTHON)
@@ -74,9 +77,22 @@ CONFIGURE_ARGS+=	--disable-python
 ALL_TARGET=		build
 INSTALL_TARGET=		install
 
+.include <bsd.port.pre.mk>
+
+IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
+
 post-patch:
 			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
-				${WRKSRC}/wscript
+				${BUILD_WRKSRC}/wscript
+
+# Use threading (or multiprocessing) but not thread (renamed in python 3+).
+pre-configure:
+			@if ! ${PYTHON_CMD} -c "import multiprocessing;" 2>/dev/null; then \
+				${ECHO_CMD}; \
+				${ECHO_MSG} "===>  ${PKGNAME} "${IGNORE_NONTHREAD_PYTHON:Q}.; \
+				${ECHO_CMD}; \
+				${FALSE}; \
+			fi
 
 pre-build:
 .for man in ${MAN8}
@@ -86,7 +102,7 @@ pre-build:
 
 do-build:
 			@(cd ${BUILD_WRKSRC}; \
-			if ! ${SETENV} ${MAKE_ENV} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
+			if ! ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
 				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
 					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
@@ -95,6 +111,6 @@ do-build:
 			fi)
 
 do-install:
-			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
