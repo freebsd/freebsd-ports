@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.2.16
-PORTREVISION=	1
+PORTVERSION=	1.2.18
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 		LOCAL/nivit/${PORTNAME}/
@@ -28,12 +28,15 @@ BUILD_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 .endif
 
+# Python3 ready
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=	mftrace.1
+.endif
 
 PLIST_FILES=	\
 		bin/gf2pbm \
@@ -44,7 +47,9 @@ PLIST_FILES=	\
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gf2pbm ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mftrace ${PREFIX}/bin
+.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/mftrace.1 ${MANPREFIX}/man/man1
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/tfm.py ${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/afm.py ${PYTHON_SITELIBDIR}
 
