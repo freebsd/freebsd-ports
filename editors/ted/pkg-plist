@@ -2,6 +2,8 @@ bin/Ted
 bin/rtf2pdf.sh
 bin/rtf2ps.sh
 bin/rtf2txt.sh
+bin/rtf2epub.sh
+bin/rtf2html.sh
 %%DATADIR%%/afm/AvantGarde-Book.afm
 %%DATADIR%%/afm/AvantGarde-BookOblique.afm
 %%DATADIR%%/afm/AvantGarde-Demi.afm
