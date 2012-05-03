@@ -15,6 +15,7 @@ DISTNAME=	yapps${PORTVERSION}
 MAINTAINER=	xenophon+fbsdports@irtnog.org
 COMMENT=	An easy-to-use parser generator that generates Python code
 
+PORTSCOUT=	skipv:2-2.1.1-17.1
 WRKSRC=		${WRKDIR}/Yapps-${PORTVERSION}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
