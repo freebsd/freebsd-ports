@@ -1,28 +1,28 @@
---- configure.orig	2011-10-24 06:55:23.000000000 +0200
-+++ configure	2011-10-28 16:12:33.000000000 +0200
-@@ -594,7 +594,7 @@
- SHELL=${CONFIG_SHELL-/bin/sh}
+--- configure.orig	2012-04-19 14:52:53.532889214 +0600
++++ configure	2012-04-19 14:52:32.373895264 +0600
+@@ -558,7 +558,7 @@
+ MAKEFLAGS=
  
  # Identity of this package.
 -PACKAGE_NAME='gtkwave'
 +PACKAGE_NAME='gtkwave3'
  PACKAGE_TARNAME='gtkwave'
- PACKAGE_VERSION='3.3.34'
- PACKAGE_STRING='gtkwave 3.3.34'
-@@ -2417,7 +2417,7 @@
+ PACKAGE_VERSION='3.3.35'
+ PACKAGE_STRING='gtkwave 3.3.35'
+@@ -2972,7 +2972,7 @@
  
  
  # Define the identity of the package.
 - PACKAGE='gtkwave'
 + PACKAGE='gtkwave3'
-  VERSION='3.3.34'
+  VERSION='3.3.35'
  
  
-@@ -13096,6 +13096,7 @@
+@@ -9212,6 +9212,7 @@
+ TCLSPEC_LHS="${TCL_LIB_SPEC% *}"
  TKLSPEC_LHS="${TK_LIB_SPEC% *}"
  LDFLAGS="${LDFLAGS} ${TCLSPEC_LHS} ${TKLSPEC_LHS}"
- as_ac_Lib=`$as_echo "ac_cv_lib_tcl${TCL_VERSION}''_Tcl_CreateInterp" | $as_tr_sh`
 +TCL_VERSION=${TCL_VERSION%.*}${TCL_VERSION#*.}
- { $as_echo "$as_me:$LINENO: checking for Tcl_CreateInterp in -ltcl${TCL_VERSION}" >&5
+ as_ac_Lib=`$as_echo "ac_cv_lib_tcl${TCL_VERSION}''_Tcl_CreateInterp" | $as_tr_sh`
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for Tcl_CreateInterp in -ltcl${TCL_VERSION}" >&5
  $as_echo_n "checking for Tcl_CreateInterp in -ltcl${TCL_VERSION}... " >&6; }
- if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\" = set"; }; then
