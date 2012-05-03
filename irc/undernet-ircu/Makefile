@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	undernet-ircu
-PORTVERSION=	2.10.12.12
+PORTVERSION=	2.10.12.14
 CATEGORIES=	irc net
 MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION}
 DISTNAME=	ircu${PORTVERSION}
@@ -23,8 +23,6 @@ USE_RC_SUBR=		undernet.sh
 CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
 
 PLIST_FILES=	bin/ircd bin/umkpasswd bin/convert-conf etc/ircd.conf.example
-
-MAN8=		ircd.8
 
 OPTIONS=	IPV6 "Disable IPv6 support (default is autodetect)" off \
 		POLL "Force poll to be used even if not a sys call" off \
