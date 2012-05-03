@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	elog
-DISTVERSION=	2.9.1-1
+DISTVERSION=	2.9.2-1
 CATEGORIES=	www
 MASTER_SITES=	http://midas.psi.ch/elog/download/tar/
 
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A fast and lightweight, extremly customizable weblog
+
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 MAN1=		elog.1 elconv.1
 MAN8=		elogd.8
@@ -19,13 +23,11 @@ USE_RC_SUBR=	elogd
 SUB_FILES=		pkg-install pkg-deinstall
 SUB_LIST=		LOGBOOKDIR=${LOGBOOKDIR}
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 LOGBOOKDIR?=	www/elog
 PLIST_SUB+=	LOGBOOKDIR=${LOGBOOKDIR}
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/elog-2.9.1
+WRKSRC=		${WRKDIR}/elog-2.9.2
 MAKE_ENV=	LOGBOOKDIR=${LOGBOOKDIR}
 
 pre-fetch:
