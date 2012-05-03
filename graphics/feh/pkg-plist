@@ -1,13 +1,9 @@
 bin/feh
 bin/feh-cam
 bin/gen-cam-menu
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/examples/buttons
-%%DOCSDIR%%/examples/keys
-%%DOCSDIR%%/examples/themes
+%%EXAMPLESDIR%%/buttons
+%%EXAMPLESDIR%%/keys
+%%EXAMPLESDIR%%/themes
 %%DATADIR%%/fonts/black.style
 %%DATADIR%%/fonts/menu.style
 %%DATADIR%%/fonts/yudit.ttf
@@ -21,5 +17,4 @@ bin/gen-cam-menu
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

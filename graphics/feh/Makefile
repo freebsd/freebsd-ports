@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	2.3
+PORTVERSION=	2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
@@ -31,17 +31,18 @@ CPPFLAGS+=	-I${LOCALBASE}/include -std=c99
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
+PORTDOCS=	AUTHORS ChangeLog README TODO
+
 post-patch:
-	@${REINPLACE_CMD} 's#share/man#man#' ${WRKSRC}/config.mk
-	@${REINPLACE_CMD} 's#install-man install-doc install-bin#install-doc#' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's#/bin/bash#/bin/sh#' ${WRKSRC}/cam/gen-cam-menu
+	@${REINPLACE_CMD} 's#/install-man install-doc#install-man#' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/feh ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cam/feh-cam ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cam/gen-cam-menu ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/feh.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/feh-cam.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/gen-cam-menu.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
