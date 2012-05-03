@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	3.1.3
+PORTVERSION=	3.2.3
 CATEGORIES=	lang python
 MASTER_SITES=	http://downloads.egenix.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	The eGenix mx-Extension Series for Python
 
 USE_PYTHON=	yes
@@ -23,12 +23,17 @@ USE_ZOPE=	yes
 
 PYDISTUTILS_PKGNAME=	egenix-mx-base
 
-DOCDIR=		${PREFIX}/share/doc/py-mx
+PORTDOCS=	COPYRIGHT MANIFEST README LICENSE PKG-INFO
 
 post-install:
-	@${MKDIR} ${DOCDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 	@${SED} -e "s;%%PYTHON_SITELIBDIR%%;${PYTHON_SITELIBDIR};g" \
-		< ${FILESDIR}/index.html.in > ${DOCDIR}/index.html
-	@${CHMOD} 644 ${DOCDIR}/index.html
+		< ${FILESDIR}/index.html.in > ${DOCSDIR}/index.html
+	@${CHMOD} 644 ${DOCSDIR}/index.html
+.endif
 
 .include <bsd.port.mk>
