@@ -7,8 +7,10 @@
 
 PORTNAME=	ricty
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	https://nodeload.github.com/yascentur/Ricty/tarball/
+MASTER_SITES=	https://nodeload.github.com/yascentur/Ricty/tarball/${PORTVERSION}?dummy=/
+PKGNAMEPREFIX= ja-font-
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Ricty - fonts for programming
@@ -19,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/${X_FONTSDIR}/OTF/Inconsolata.otf:${PORTSDIR}/x11-fo
 				${LOCALBASE}/${X_FONTSDIR}/TTF/migu-1m-bold.ttf:${PORTSDIR}/japanese/font-migu \
 				fontforge:${PORTSDIR}/print/fontforge
 
+NO_PACKAGE=	redistribution is not allowed
+FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
@@ -34,9 +38,7 @@ X_FONTSDIR=	lib/X11/fonts
 
 OPTIONS=	DISCORD "Install Ricty-Discord" On
 
-.include <bsd.port.pre.mk>
-
-PKGNAMEPREFIX:= ${PKGNAMEPREFIX}font-
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DISCORD)
 PLIST_SUB+=	DISCORD=""
@@ -45,9 +47,6 @@ SUB_LIST+= DISCORD=""
 PLIST_SUB+=	DISCORD="@comment "
 SUB_LIST+= DISCORD="#"
 .endif
-
-do-fetch:
-	@${FETCH_BINARY} -o ${DISTDIR}/${DISTFILES} ${MASTER_SITES}${PORTVERSION}
 
 do-build:
 	cd ${WRKSRC} &&\
@@ -95,4 +94,4 @@ post-install:
 	${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
