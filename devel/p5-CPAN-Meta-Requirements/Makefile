@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	CPAN-Meta-Requirements
-PORTVERSION=	2.121
+PORTVERSION=	2.122
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of version requirements for a CPAN distribution
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
