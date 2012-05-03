@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_DiffieHellman
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,14 +16,8 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	bcmath mbstring gmp
-PEAR_CATSRC=	yes
 
-CATEGORY=	Crypt
-FILES=		DiffieHellman.php DiffieHellman/Math.php DiffieHellman/Exception.php \
-		DiffieHellman/Math/Exception.php DiffieHellman/Math/BigInteger.php \
-		DiffieHellman/Math/BigInteger/Interface.php DiffieHellman/Math/BigInteger/Gmp.php \
-		DiffieHellman/Math/BigInteger/Exception.php DiffieHellman/Math/BigInteger/Bcmath.php
-TESTS=		AllTests.php DiffieHellmanTest.php TestHelper.php TestConfiguration.php.dist
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
