@@ -900,6 +900,7 @@
     SUBDIR += tuxracer
     SUBDIR += tuxracer_golf
     SUBDIR += tuxtype
+    SUBDIR += twind
     SUBDIR += twitch
     SUBDIR += tycho
     SUBDIR += typespeed
