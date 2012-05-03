@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	colorfultabs
-PORTVERSION=	10.0
+PORTVERSION=	11.2
 DISTVERSIONSUFFIX=	-fx+sm
 PORTEPOCH=	1
 CATEGORIES=	www
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Colors every tab in a different color
 
 XPI_ID=		{0545b830-f0aa-4d7e-8820-50a4629a56fe}
