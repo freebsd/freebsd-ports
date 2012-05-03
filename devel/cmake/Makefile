@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.7
+PORTVERSION=	2.8.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.${PORTNAME}.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
@@ -16,11 +16,10 @@ COMMENT=	A cross-platform Makefile generator
 LICENSE=	BSD
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	MAKE=make
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--datadir="/${DATADIR_REL}" \
 		--docdir="/${DOCSDIR_REL}"
-CONFIGURE_ENV=	MAKE=make
-
 MAKE_JOBS_SAFE=	yes
 
 .if defined(STRIP) && ${STRIP} != ""
