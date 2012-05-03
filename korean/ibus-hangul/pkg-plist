@@ -1,3 +1,4 @@
+bin/ibus-setup-hangul
 lib/ibus-hangul/setup/hangul_keyboard_list
 libexec/ibus-engine-hangul
 libexec/ibus-setup-hangul
