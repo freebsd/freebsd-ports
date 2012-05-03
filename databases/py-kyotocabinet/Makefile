@@ -7,7 +7,7 @@
 
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pythonpkg/ \
 		LOCAL/sunpoet
