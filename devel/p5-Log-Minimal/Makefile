@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Minimal
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,8 @@ COMMENT=	Minimal but customizable logger
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-MAN3=	Log::Minimal.3
-
 PERL_CONFIGURE=	yes
+
+MAN3=		Log::Minimal.3
 
 .include <bsd.port.mk>
