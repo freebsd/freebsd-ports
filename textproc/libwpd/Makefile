@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libwpd
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -22,5 +22,9 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS+=--without-docs
+PLIST_SUB=	MAJVER=${PORTVERSION:R}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| docs||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
