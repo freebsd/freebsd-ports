@@ -7,7 +7,7 @@
 
 PORTNAME=	espeak
 PORTVERSION=	1.46.02
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -15,13 +15,30 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A software speech synthesizer
 
-LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio
+# default is runtime audio detection
+LIB_DEPENDS=	${PORTAUDIOLIB} \
+		${PULSEAUDIOLIB}
+
+PULSEAUDIOLIB=	pulse:${PORTSDIR}/audio/pulseaudio
+PORTAUDIOLIB=	portaudio:${PORTSDIR}/audio/portaudio
+
+.if (!defined(WITH_PULSEAUDIO) && !defined(WITH_PORTAUDIO)) || (defined(WITH_PULSEAUDIO) && defined(WITH_PORTAUDIO))
+AUDIO=	"runtime"
+.elif defined(WITH_PULSEAUDIO)
+AUDIO=	"pulseaudio"
+PORTAUDIOLIB=
+.else
+AUDIO=	"portaudio"
+PULSEAUDIOLIB=
+.endif
 
 CONFLICTS=	speak-1.[0-9]
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		AUDIO="${AUDIO}"
 
+CXXFLAGS+=	-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_GCC=	4.2+
 USE_LDCONFIG=	yes
