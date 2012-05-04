@@ -22,32 +22,30 @@ $FreeBSD$
  	$$final_exit
  
  $(CONFIG_MAKE):
-@@ -46,18 +46,18 @@
+@@ -46,17 +46,17 @@
  dist: $(CONFIG_MAKE)
  	rm -rf $(PACKAGE)-$(VERSION)
  	mkdir $(PACKAGE)-$(VERSION)
 -	make pre-dist-hook distdir=$$distdir
-+	$(MAKE) pre-dist-hook distdir=$$distdir
++	${MAKE} pre-dist-hook distdir=$$distdir
  	for dir in $(call quote_each,$(SUBDIRS)); do \
  		pkgdir=`pwd`/$(PACKAGE)-$(VERSION); \
  		mkdir "$$pkgdir/$$dir" || true; \
  		case $$dir in \
 -		.) make dist-local "distdir=$$pkgdir" || exit 1;; \
 -		*) (cd "$$dir"; make dist-local "distdir=$$pkgdir/$$dir") || exit 1;; \
-+		.) $(MAKE) dist-local "distdir=$$pkgdir" || exit 1;; \
-+		*) (cd "$$dir"; $(MAKE) dist-local "distdir=$$pkgdir/$$dir") || exit 1;; \
++		.) ${MAKE} dist-local "distdir=$$pkgdir" || exit 1;; \
++		*) (cd "$$dir"; ${MAKE} dist-local "distdir=$$pkgdir/$$dir") || exit 1;; \
  		esac \
  	done
 -	(make dist-local distdir=$(PACKAGE)-$(VERSION))
--	make
 -	make post-dist-hook "distsir=$$distdir"
-+	($(MAKE) dist-local distdir=$(PACKAGE)-$(VERSION))
-+	$(MAKE)
-+	$(MAKE) post-dist-hook "distsir=$$distdir"
++	(${MAKE} dist-local distdir=$(PACKAGE)-$(VERSION))
++	${MAKE} post-dist-hook "distsir=$$distdir"
  	tar czvf $(PACKAGE)-$(VERSION).tar.gz $(PACKAGE)-$(VERSION)
  	rm -rf $(PACKAGE)-$(VERSION)
  	@echo "=========================================="
-@@ -68,5 +68,5 @@
+@@ -67,5 +67,5 @@
  	(mkdir test; cd test;  \
  	tar xzvf ../$(PACKAGE)-$(VERSION).tar.gz; cd $(PACKAGE)-$(VERSION); \
  	./configure --prefix=$$(cd `pwd`/..; pwd); \
