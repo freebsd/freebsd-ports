@@ -155,8 +155,11 @@ lib/monodevelop/AddIns/NUnit/nunit.util.dll
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.dll
 lib/monodevelop/AddIns/VersionControl/MonoDevelop.VersionControl.dll.mdb
 %%GIT%%lib/monodevelop/AddIns/VersionControl/NGit.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/NGit.dll.mdb
 %%GIT%%lib/monodevelop/AddIns/VersionControl/NSch.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/NSch.dll.mdb
 %%GIT%%lib/monodevelop/AddIns/VersionControl/Sharpen.dll
+%%GIT%%lib/monodevelop/AddIns/VersionControl/Sharpen.dll.mdb
 lib/monodevelop/AddIns/VersionControl/comment.png
 lib/monodevelop/AddIns/VersionControl/menu_add.png
 lib/monodevelop/AddIns/VersionControl/menu_commit.png
@@ -241,8 +244,6 @@ share/locale/sv/LC_MESSAGES/monodevelop.mo
 share/locale/tr/LC_MESSAGES/monodevelop.mo
 share/locale/zh_CN/LC_MESSAGES/monodevelop.mo
 share/locale/zh_TW/LC_MESSAGES/monodevelop.mo
-share/mime/XMLnamespaces
-share/mime/aliases
 share/mime/application/x-asax.xml
 share/mime/application/x-ascx.xml
 share/mime/application/x-ashx.xml
@@ -265,21 +266,13 @@ share/mime/application/x-resourcesx.xml
 share/mime/application/x-soap-remoting.xml
 share/mime/application/x-web-config.xml
 share/mime/application/x-wsdl.xml
-share/mime/generic-icons
-share/mime/globs
-share/mime/globs2
-share/mime/icons
-share/mime/magic
-share/mime/mime.cache
 share/mime/packages/monodevelop.xml
-share/mime/subclasses
-share/mime/text/x-csharp.xml
 share/mime/text/x-js.xml
 share/mime/text/x-msil.xml
 share/mime/text/x-nemerle.xml
 share/mime/text/x-vb.xml
-share/mime/treemagic
-share/mime/types
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/locale/sv/LC_MESSAGES
 @dirrmtry share/locale/sv
 @dirrmtry share/locale/ja/LC_MESSAGES

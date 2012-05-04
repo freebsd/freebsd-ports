@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monodevelop-java
-PORTVERSION=	2.8
+PORTVERSION=	2.8.8.4
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
