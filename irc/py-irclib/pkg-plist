@@ -1,13 +1,20 @@
-%%PYTHON_SITELIBDIR%%/ircbot.py
-%%PYTHON_SITELIBDIR%%/ircbot.pyc
-%%PYTHON_SITELIBDIR%%/ircbot.pyo
-%%PYTHON_SITELIBDIR%%/irclib.py
-%%PYTHON_SITELIBDIR%%/irclib.pyc
-%%PYTHON_SITELIBDIR%%/irclib.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dccreceive
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dccsend
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/irccat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dccreceive
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/irccat2
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servermap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/irccat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testbot.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/servermap
+%%PYTHON_LIBDIR%%/site-packages/python_irclib-%%VERSION%%-py%%PYVER%%.egg-info/PKG-INFO
+%%PYTHON_LIBDIR%%/site-packages/python_irclib-%%VERSION%%-py%%PYVER%%.egg-info/dependency_links.txt
+%%PYTHON_LIBDIR%%/site-packages/python_irclib-%%VERSION%%-py%%PYVER%%.egg-info/SOURCES.txt
+%%PYTHON_LIBDIR%%/site-packages/python_irclib-%%VERSION%%-py%%PYVER%%.egg-info/top_level.txt
+%%PYTHON_LIBDIR%%/site-packages/ircbot.pyc
+%%PYTHON_LIBDIR%%/site-packages/irclib.pyc
+%%PYTHON_LIBDIR%%/site-packages/ircbot.py
+%%PYTHON_LIBDIR%%/site-packages/ircbot.pyo
+%%PYTHON_LIBDIR%%/site-packages/irclib.pyo
+%%PYTHON_LIBDIR%%/site-packages/irclib.py
+@dirrm %%PYTHON_LIBDIR%%/site-packages/python_irclib-%%VERSION%%-py%%PYVER%%.egg-info
+@dirrmtry %%PYTHON_LIBDIR%%/site-packages
+@dirrmtry %%PYTHON_LIBDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
