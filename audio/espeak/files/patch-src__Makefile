@@ -1,5 +1,5 @@
---- ./src/Makefile.orig	2011-04-07 15:05:41.000000000 +0200
-+++ ./src/Makefile	2011-04-07 15:08:06.000000000 +0200
+--- ./src/Makefile.orig	2011-11-22 22:46:08.000000000 +0100
++++ ./src/Makefile	2012-05-03 16:00:55.000000000 +0200
 @@ -1,8 +1,8 @@
  # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
  
@@ -11,7 +11,28 @@
  BINDIR=$(PREFIX)/bin
  INCDIR=$(PREFIX)/include/espeak
  LIBDIR=$(PREFIX)/lib
-@@ -36,7 +36,7 @@
+@@ -27,7 +27,7 @@
+ 
+ # 'runtime' uses pulseaudio if it is running, else uses portaudio
+ #AUDIO = runtime
+-AUDIO = portaudio
++AUDIO?= portaudio
+ #AUDIO = portaudio0
+ #AUDIO = portaudio2
+ #AUDIO = pulseaudio
+@@ -35,17 +35,17 @@
+ 
+ ifeq ($(AUDIO),runtime)
+ WAVE=wave.cpp wave_pulse.cpp
+-LIB_AUDIO=-lpulse -lpulse-simple -lportaudio
++LIB_AUDIO=-L$(LOCALBASE)/lib -lpulse -lpulse-simple -lportaudio
+ USE_AUDIO=-DUSE_PULSEAUDIO -DUSE_PORTAUDIO
+ else
+ ifeq ($(AUDIO),pulseaudio)
+ WAVE=wave_pulse.cpp
+-LIB_AUDIO=-lpulse
++LIB_AUDIO=-L$(LOCALBASE)/lib -lpulse
+ USE_AUDIO=-DUSE_PULSEAUDIO
  else
  ifeq ($(AUDIO),portaudio)
  WAVE=wave.cpp
@@ -19,8 +40,8 @@
 +LIB_AUDIO=-L$(LOCALBASE)/lib -lportaudio
  USE_AUDIO=-DUSE_PORTAUDIO
  else
- ifeq ($(AUDIO),sada)
-@@ -61,23 +61,23 @@
+ ifeq ($(AUDIO),portaudio0)
+@@ -83,23 +83,23 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
@@ -49,7 +70,7 @@
  
  $(BIN_NAME): $(OBJS1)
  	$(CXX) $(LDFLAGS) -o $@ $(OBJS1) $(LIBS1)
-@@ -111,7 +111,7 @@
+@@ -133,7 +133,7 @@
  
  install: all
  	# Create directories
@@ -58,7 +79,7 @@
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
-@@ -127,5 +127,5 @@
+@@ -149,5 +149,5 @@
  	# Install development headers
  	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
  	# Install data files
