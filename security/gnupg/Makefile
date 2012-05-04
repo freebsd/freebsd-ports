@@ -42,7 +42,8 @@ MAN8=		addgnupghome.8 applygnupgdefaults.8
 INFO=		gnupg
 .endif
 
-OPTIONS=	LDAP "LDAP keyserver interface" off \
+OPTIONS=	PINENTRY "Use pinentry" off \
+		LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
 		GPGSM "Enable GPGSM (requires LDAP)" off \
@@ -52,11 +53,15 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_PINENTRY)
+RUN_DEPENDS+=	pinentry>0:${PORTSDIR}/security/pinentry
+.endif
+
 .if defined(WITHOUT_GPGSM)
 CONFIGURE_ARGS+=--disable-gpgsm
 PLIST_SUB+=	GPGSM="@comment "
 .else
-RUN_DEPENDS=	dirmngr:${PORTSDIR}/security/dirmngr
+RUN_DEPENDS+=	dirmngr:${PORTSDIR}/security/dirmngr
 WITH_LDAP=	YES
 .undef WITHOUT_LDAP
 PLIST_SUB+=	GPGSM=""
