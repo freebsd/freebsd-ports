@@ -21,8 +21,8 @@ LIB_DEPENDS=	boost_unit_test_framework:${PORTSDIR}/devel/boost-libs \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
 		gtksourceviewmm-2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm
-BUILD_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
-RUN_DEPENDS=	gdb74:${PORTSDIR}/devel/gdb
+BUILD_DEPENDS=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
+RUN_DEPENDS=	${LOCALBASE}/bin/gdb:${PORTSDIR}/devel/gdb
 
 OPTIONS=	GHEX "Enable memory view" off
 
