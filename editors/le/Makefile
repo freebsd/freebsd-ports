@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.14.6
+PORTVERSION=	1.14.7
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/ \
 		http://mirrors.rit.edu/zi/
@@ -19,6 +19,8 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		le.1
 PORTDOCS=	*
