@@ -1,6 +1,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
@@ -28,12 +29,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/cross_correlation.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/cross_correlation.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/data/noise_models.npz
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/detrend.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/detrend.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/detrend.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/filter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/filter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/filter.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/freqattributes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/freqattributes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/freqattributes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/headers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/headers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/headers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/hoctavbands.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/hoctavbands.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/hoctavbands.pyo
@@ -151,6 +158,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/pitsa_welch_window_513.npy
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/ref_STS2
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/ref_unknown
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/RESP.NZ.CRLZ.10.HHZ.mac
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/RESP.NZ.CRLZ.10.HHZ.windows
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/rjob_20051006_l_210ba_60inc.gz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/rjob_20051006_l_60ba_130inc.gz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/signal/tests/data/rjob_20051006_q_210ba_60inc.gz
