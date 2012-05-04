@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	mirmon
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	misc
-MASTER_SITES=	http://people.cs.uu.nl/henkp/mirmon/
+MASTER_SITES=	http://www.staff.science.uu.nl/~penni101/mirmon/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
