@@ -516,6 +516,7 @@
     SUBDIR += mod_security21
     SUBDIR += mod_setenvifplus
     SUBDIR += mod_smooth_streaming
+    SUBDIR += mod_spdy
     SUBDIR += mod_tidy
     SUBDIR += mod_tsa
     SUBDIR += mod_uid
