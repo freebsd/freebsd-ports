@@ -1,21 +1,22 @@
---- Makefile.orig	2010-04-20 22:45:09.000000000 +0200
-+++ Makefile	2010-04-21 14:07:39.258797099 +0200
-@@ -54,12 +54,12 @@
-           cpu-a.asm dct-32.asm
+--- Makefile.orig	2012-04-24 23:13:17.000000000 +0200
++++ Makefile	2012-05-04 12:21:04.220847109 +0200
+@@ -84,13 +84,13 @@
+ endif
  X86SRC = $(X86SRC0:%=common/x86/%)
  
 -ifeq ($(ARCH),X86)
 +ifeq ($(ARCH),i386)
  ARCH_X86 = yes
  ASMSRC   = $(X86SRC) common/x86/pixel-32.asm
+ ASFLAGS += -DARCH_X86_64=0
  endif
  
 -ifeq ($(ARCH),X86_64)
 +ifeq ($(ARCH),amd64)
  ARCH_X86 = yes
- ASMSRC   = $(X86SRC:-32.asm=-64.asm)
- ASFLAGS += -DARCH_X86_64
-@@ -75,7 +75,7 @@
+ ASMSRC   = $(X86SRC:-32.asm=-64.asm) common/x86/trellis-64.asm
+ ASFLAGS += -DARCH_X86_64=1
+@@ -106,7 +106,7 @@
  endif
  
  # AltiVec optims
