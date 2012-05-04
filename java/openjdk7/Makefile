@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7u2/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -34,7 +35,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_ZIP=	YES
 MAKE_JOBS_UNSAFE=	YES
 
-OPTIONS=	TZUPDATE	"Update the time zone data"	on
+OPTIONS=	POLICY   "Install the Unlimited Strength Policy Files"      on \
+		TZUPDATE "Update the time zone data"                        on
 
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	2
@@ -154,6 +156,10 @@ post-patch:
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
 	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
+.if defined(WITH_POLICY)
+	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
+		${WRKSRC}/jdk/make/javax/crypto/Makefile
+.endif
 
 .if defined(WITH_TZUPDATE)
 pre-install:
