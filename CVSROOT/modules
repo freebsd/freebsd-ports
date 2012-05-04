@@ -13513,6 +13513,7 @@ p5-MooseX-Types-DateTime        ports/devel/p5-MooseX-Types-DateTime
 p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-MooseX-Types-DateTime-MoreCoercions  ports/devel/p5-MooseX-Types-DateTime-MoreCoercions
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
+p5-MooseX-Types-ISO8601         ports/devel/p5-MooseX-Types-ISO8601
 p5-MooseX-Types-JSON            ports/devel/p5-MooseX-Types-JSON
 p5-MooseX-Types-LoadableClass   ports/devel/p5-MooseX-Types-LoadableClass
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
@@ -18032,6 +18033,7 @@ p5-moosex-types-datetime        ports/devel/p5-MooseX-Types-DateTime
 p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-moosex-types-datetime-morecoercions  ports/devel/p5-MooseX-Types-DateTime-MoreCoercions
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
+p5-moosex-types-iso8601         ports/devel/p5-MooseX-Types-ISO8601
 p5-moosex-types-json            ports/devel/p5-MooseX-Types-JSON
 p5-moosex-types-loadableclass   ports/devel/p5-MooseX-Types-LoadableClass
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
@@ -20490,6 +20492,7 @@ pear-Services_Yadis             ports/www/pear-Services_Yadis
 pear-Services_Yahoo             ports/www/pear-Services_Yahoo
 pear-Services_urlTea            ports/www/pear-Services_urlTea
 pear-Spreadsheet_Excel_Writer   ports/textproc/pear-Spreadsheet_Excel_Writer
+pear-Structure_LinkedList       ports/devel/pear-Structure_LinkedList
 pear-Structures_DataGrid        ports/devel/pear-Structures_DataGrid
 pear-Structures_DataGrid_DataSource_Array  ports/databases/pear-Structures_DataGrid_DataSource_Array
 pear-Structures_DataGrid_DataSource_CSV  ports/databases/pear-Structures_DataGrid_DataSource_CSV
@@ -20875,6 +20878,7 @@ pear-services_yadis             ports/www/pear-Services_Yadis
 pear-services_yahoo             ports/www/pear-Services_Yahoo
 pear-soap                       ports/net/pear-SOAP
 pear-spreadsheet_excel_writer   ports/textproc/pear-Spreadsheet_Excel_Writer
+pear-structure_linkedlist       ports/devel/pear-Structure_LinkedList
 pear-structures_datagrid        ports/devel/pear-Structures_DataGrid
 pear-structures_datagrid_datasource_array  ports/databases/pear-Structures_DataGrid_DataSource_Array
 pear-structures_datagrid_datasource_csv  ports/databases/pear-Structures_DataGrid_DataSource_CSV
@@ -22384,6 +22388,7 @@ py-crack                        ports/security/py-crack
 py-crcmod                       ports/devel/py-crcmod
 py-creole                       ports/textproc/py-creole
 py-cryptkit                     ports/security/py-cryptkit
+py-cssselect                    ports/www/py-cssselect
 py-cssutils                     ports/www/py-cssutils
 py-ctags                        ports/devel/py-ctags
 py-cups                         ports/print/py-cups
@@ -26948,6 +26953,7 @@ twiki-twistycontrib             ports/www/twiki-TwistyContrib
 twiki-twistyplugin              ports/www/twiki-TwistyPlugin
 twiki-wysiwygplugin             ports/www/twiki-WysiwygPlugin
 twill                           ports/www/twill
+twind                           ports/games/twind
 twinkle                         ports/net/twinkle
 twirssi                         ports/net-im/twirssi
 twitch                          ports/games/twitch
