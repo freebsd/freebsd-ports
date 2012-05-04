@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	htree
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.a-k-r.org/htree/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
