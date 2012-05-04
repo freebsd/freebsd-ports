@@ -1,0 +1,3 @@
+%%APACHEMODDIR%%/mod_spdy.so
+%%DATADIR%%/mod_ssl.so
+@dirrmtry %%DATADIR%%
