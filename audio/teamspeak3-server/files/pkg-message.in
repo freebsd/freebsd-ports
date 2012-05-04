@@ -9,7 +9,7 @@ If you have a license file (licensekey.dat) and/or ts3server.ini,
 put it into %%ETCDIR%%
 
 To see the admin token after the first start, have a look
-into the logs in /var/log/teamspeak
+into the logs in %%LOGDIR%%
 
 TeamSpeak DNS server (tsdns) is not handled by this port. If you
 need id, please download and install it manually.

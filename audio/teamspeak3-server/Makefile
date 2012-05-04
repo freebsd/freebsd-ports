@@ -46,6 +46,9 @@ PLIST_SUB+=	DBDIR=${DBDIR} \
 		GROUPS=${GROUPS} \
 		BINGRP=${BINGRP}
 
+SUB_LIST+=	DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR}
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} ==	"i386"
