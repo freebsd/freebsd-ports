@@ -229,6 +229,8 @@ USE_BINUTILS=	yes
 CXXCPP=	clang++ -E
 CPP=	clang -E
 .endif
+# XXX Work around C++11 problems with Clang.
+CXXFLAGS=	-std=gnu++98 -Qunused-arguments
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
 .endif
 
