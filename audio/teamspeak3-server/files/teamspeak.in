@@ -18,10 +18,10 @@
 name="teamspeak"
 rcvar=teamspeak_enable
 
-db_dir=/var/db/teamspeak
-log_dir=/var/log/teamspeak
+db_dir=%%DBDIR%%
+log_dir=%%LOGDIR%%
 
-pidfile=/var/db/teamspeak/teamspeak_server.pid
+pidfile=%%DBDIR%%/teamspeak_server.pid
 procname=%%PREFIX%%/libexec/teamspeak_server
 command=/usr/sbin/daemon
 command_args="-fp $pidfile -u teamspeak %%PREFIX%%/libexec/teamspeak_server dbsqlpath=%%PREFIX%%/share/teamspeak/server/sql/ inifile=%%PREFIX%%/etc/teamspeak/ts3server.ini licensepath=%%PREFIX%%/etc/teamspeak/ logpath=$log_dir"

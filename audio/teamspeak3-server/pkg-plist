@@ -215,6 +215,8 @@ share/teamspeak/server/serverquerydocs/serveredit.txt
 share/teamspeak/server/serverquerydocs/servergroupadd.txt
 share/teamspeak/server/serverquerydocs/servergroupaddclient.txt
 share/teamspeak/server/serverquerydocs/servergroupaddperm.txt
+share/teamspeak/server/serverquerydocs/servergroupautoaddperm.txt
+share/teamspeak/server/serverquerydocs/servergroupautodelperm.txt
 share/teamspeak/server/serverquerydocs/servergroupbyclientid.txt
 share/teamspeak/server/serverquerydocs/servergroupclientlist.txt
 share/teamspeak/server/serverquerydocs/servergroupcopy.txt
@@ -236,6 +238,9 @@ share/teamspeak/server/serverquerydocs/serversnapshotcreate.txt
 share/teamspeak/server/serverquerydocs/serversnapshotdeploy.txt
 share/teamspeak/server/serverquerydocs/serverstart.txt
 share/teamspeak/server/serverquerydocs/serverstop.txt
+share/teamspeak/server/serverquerydocs/servertemppasswordadd.txt
+share/teamspeak/server/serverquerydocs/servertemppassworddel.txt
+share/teamspeak/server/serverquerydocs/servertemppasswordlist.txt
 share/teamspeak/server/serverquerydocs/setclientchannelgroup.txt
 share/teamspeak/server/serverquerydocs/tokenadd.txt
 share/teamspeak/server/serverquerydocs/tokendelete.txt
@@ -248,6 +253,9 @@ share/teamspeak/server/serverquerydocs/whoami.txt
 @comment directories
 @dirrm share/teamspeak/server
 @dirrmtry share/teamspeak
-@dirrmtry etc/teamspeak
-@dirrmtry /var/db/teamspeak
-@dirrmtry /var/log/teamspeak
+@dirrmtry %%ETCDIR%%
+@comment these three exec lines are needed for pkg_add
+@exec install -d -o %%USERS%% -g %%GROUPS%% %%DBDIR%%
+@exec install -d -o %%USERS%% -g %%BINGRP%% %%LOGDIR%%
+@exec mkdir -p %D/%%ETCDIR%%
+@unexec rmdir %%DBDIR%% %%LOGDIR%% 2>/dev/null || true

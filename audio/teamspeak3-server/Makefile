@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/${PORTVERSION}/ \
@@ -15,6 +15,15 @@ DISTNAME=	${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}-${PORTVERSION}
 
 MAINTAINER=	hirner@bitfire.at
 COMMENT=	Server side of the TeamSpeak group voice chat system
+
+LICENSE=	teamspeak
+LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
+
+.ifdef (BATCH)
+IGNORE=		license ${LICENSE} needs confirmation, but BATCH is defined
+.endif
 
 USE_ICONV=	yes
 USE_LDCONFIG=	${PREFIX}/lib/teamspeak/server
@@ -29,12 +38,13 @@ NO_BUILD=	yes
 USERS=	teamspeak
 GROUPS=	teamspeak
 
-LICENSE=	teamspeak
-LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
-LICENSE_FILE=	${WRKSRC}/LICENSE
-
 CONFLICTS=	teamspeak_server-[0-9]*
+
+PLIST_SUB+=	DBDIR=${DBDIR} \
+		LOGDIR=${LOGDIR} \
+		USERS=${USERS} \
+		GROUPS=${GROUPS} \
+		BINGRP=${BINGRP}
 
 .include <bsd.port.options.mk>
 
@@ -74,9 +84,9 @@ do-install:
 .endif
 
 post-install:
-	@${MKDIR} ${DBDIR} && ${CHOWN} -R ${USERS}:${GROUPS} ${DBDIR}
+	@${INSTALL} -d -o ${USERS} -g ${GROUPS} ${DBDIR}
+	@${INSTALL} -d -o ${USERS} -g ${BINGRP} ${LOGDIR}
 	@${MKDIR} ${ETCDIR}
-	@${MKDIR} ${LOGDIR} && ${CHOWN} -R ${USERS}:${BINGRP} ${LOGDIR}
 	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.mk>
