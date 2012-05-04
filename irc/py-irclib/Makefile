@@ -6,18 +6,23 @@
 #
 
 PORTNAME=	irclib
-PORTVERSION=	0.4.8
+PORTVERSION=	0.6.4
 CATEGORIES=	irc python
-MASTER_SITES=	SF/python-${PORTNAME}/python-${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/python-${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-irclib-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	william88@gmail.com
 COMMENT=	IRC protocol client library for Python
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
+USE_ZIP=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-irclib
+PYDISTUTILS_NOEGGINFO=yes
+
+PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
+
 EXAMPLEFILES=	irccat irccat2 servermap testbot.py \
 		dccreceive dccsend
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
@@ -26,8 +31,9 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${EXAMPLEFILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${file} ${EXAMPLESDIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/${file} ${EXAMPLESDIR}/
 .endfor
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_EGGINFO} -type f -exec ${CHMOD} 644 {} +;
 .endif
 
 .include <bsd.port.mk>
