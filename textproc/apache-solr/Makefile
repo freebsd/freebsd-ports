@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	apache-solr
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/solr/${PORTVERSION},}
+MASTER_SITES=	APACHE
+MASTER_SITE_SUBDIR=	lucene/solr/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
 
+LICENSE=	AL2
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	yes
-
-.include <bsd.port.pre.mk>
+PORTEXAMPLES=	*
 
 do-install:
-	${CP} -R ${WRKSRC}/dist/ ${JAVAJARDIR}
+	cd ${WRKSRC}/dist && ${COPYTREE_SHARE} \* ${JAVAJARDIR}
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/example/ ${EXAMPLESDIR}
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
