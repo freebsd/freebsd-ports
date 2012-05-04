@@ -8,7 +8,7 @@
 PORTNAME=	abraca
 PORTVERSION=	0.6.0
 CATEGORIES=	audio
-MASTER_SITES=	http://abraca.xmms.se/attachments/download/134/
+MASTER_SITES=	LOCAL/madpilot/abraca
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Abraca is a GTK2 client for the XMMS2 music player
