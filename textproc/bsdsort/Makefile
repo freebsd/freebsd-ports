@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sort
-PORTVERSION=	20120503
+PORTVERSION=	20120504
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
@@ -26,7 +26,8 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls"
 
-OPTIONS=	NLS		"Compile with NLS support"	on \
+OPTIONS=	THREADS		"Compile with threads support"	on \
+		NLS		"Compile with NLS support"	on \
 		OVERWRITE_BASE	"Replaces base GNU sort"	off
 
 .include <bsd.port.pre.mk>
@@ -36,6 +37,10 @@ MAKE_ENV+=	WITHOUT_NLS=yes
 PLIST_SUB+=	NLS="@comment "
 .else
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_THREADS)
+MAKE_ENV+=	WITHOUT_THREADS=yes
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
