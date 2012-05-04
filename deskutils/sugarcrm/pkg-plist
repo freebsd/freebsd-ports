@@ -788,6 +788,7 @@
 %%WWWDIR%%/include/SugarFields/Fields/Currency/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Currency/ListView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Currency/SugarFieldCurrency.php
+%%WWWDIR%%/include/SugarFields/Fields/Datetime/DetailView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Datetime/EditView.tpl
 %%WWWDIR%%/include/SugarFields/Fields/Datetime/SugarFieldDatetime.php
 %%WWWDIR%%/include/SugarFields/Fields/Datetimecombo/Datetimecombo.js
@@ -1155,6 +1156,7 @@
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopCreateLeadNameButton.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopCreateNoteButton.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopCreateTaskButton.php
+%%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopMessage.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopScheduleCallButton.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopScheduleMeetingButton.php
 %%WWWDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopSelectAccountButton.php
@@ -1642,6 +1644,7 @@
 %%WWWDIR%%/include/javascript/yui/build/calendar/assets/calx.gif
 %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins/sam/calendar-skin.css
 %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins/sam/calendar.css
+%%WWWDIR%%/include/javascript/yui/build/calendar/blank/calendar.css
 %%WWWDIR%%/include/javascript/yui/build/calendar/calendar-min.js
 %%WWWDIR%%/include/javascript/yui/build/calendar/calendar.js
 %%WWWDIR%%/include/javascript/yui/build/carousel/assets/ajax-loader.gif
@@ -1694,6 +1697,7 @@
 %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins/sam/datatable.css
 %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins/sam/dt-arrow-dn.png
 %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins/sam/dt-arrow-up.png
+%%WWWDIR%%/include/javascript/yui/build/datatable/blank/datatable.css
 %%WWWDIR%%/include/javascript/yui/build/datatable/datatable-min.js
 %%WWWDIR%%/include/javascript/yui/build/datatable/datatable.js
 %%WWWDIR%%/include/javascript/yui/build/datemath/datemath-min.js
@@ -1750,6 +1754,7 @@
 %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins/sam/layout-skin.css
 %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins/sam/layout.css
 %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins/sam/layout_sprite.png
+%%WWWDIR%%/include/javascript/yui/build/layout/blank/layout.css
 %%WWWDIR%%/include/javascript/yui/build/layout/layout-min.js
 %%WWWDIR%%/include/javascript/yui/build/layout/layout.js
 %%WWWDIR%%/include/javascript/yui/build/logger/assets/logger-core.css
@@ -1781,11 +1786,13 @@
 %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins/sam/menuitem_checkbox_disabled.png
 %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins/sam/menuitem_submenuindicator.png
 %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins/sam/menuitem_submenuindicator_disabled.png
+%%WWWDIR%%/include/javascript/yui/build/menu/blank/menu.css
 %%WWWDIR%%/include/javascript/yui/build/menu/menu-min.js
 %%WWWDIR%%/include/javascript/yui/build/menu/menu.js
 %%WWWDIR%%/include/javascript/yui/build/paginator/assets/paginator-core.css
 %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins/sam/paginator-skin.css
 %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins/sam/paginator.css
+%%WWWDIR%%/include/javascript/yui/build/paginator/blank/paginator.css
 %%WWWDIR%%/include/javascript/yui/build/paginator/paginator-min.js
 %%WWWDIR%%/include/javascript/yui/build/paginator/paginator.js
 %%WWWDIR%%/include/javascript/yui/build/profiler/profiler-min.js
@@ -1816,6 +1823,7 @@
 %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam/layout_sprite.png
 %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam/resize-skin.css
 %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam/resize.css
+%%WWWDIR%%/include/javascript/yui/build/resize/blank/resize.css
 %%WWWDIR%%/include/javascript/yui/build/resize/resize-min.js
 %%WWWDIR%%/include/javascript/yui/build/resize/resize.js
 %%WWWDIR%%/include/javascript/yui/build/selector/selector-min.js
@@ -1858,6 +1866,7 @@
 %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins/sam/tabview.css
 %%WWWDIR%%/include/javascript/yui/build/tabview/assets/tabview-core.css
 %%WWWDIR%%/include/javascript/yui/build/tabview/assets/tabview.css
+%%WWWDIR%%/include/javascript/yui/build/tabview/blank/tabview.css
 %%WWWDIR%%/include/javascript/yui/build/tabview/tabview-min.js
 %%WWWDIR%%/include/javascript/yui/build/tabview/tabview.js
 %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins/sam/check0.gif
@@ -1869,6 +1878,7 @@
 %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins/sam/treeview-sprite.gif
 %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins/sam/treeview.css
 %%WWWDIR%%/include/javascript/yui/build/treeview/assets/treeview-core.css
+%%WWWDIR%%/include/javascript/yui/build/treeview/blank/treeview.css
 %%WWWDIR%%/include/javascript/yui/build/treeview/treeview-min.js
 %%WWWDIR%%/include/javascript/yui/build/treeview/treeview.js
 %%WWWDIR%%/include/javascript/yui/build/uploader/assets/uploader.swf
@@ -4126,7 +4136,6 @@
 %%WWWDIR%%/modules/Accounts/views/view.detail.php
 %%WWWDIR%%/modules/Accounts/views/view.edit.php
 %%WWWDIR%%/modules/Accounts/views/view.list.php
-%%WWWDIR%%/modules/Activities/Activity.php
 %%WWWDIR%%/modules/Activities/Forms.php
 %%WWWDIR%%/modules/Activities/Menu.php
 %%WWWDIR%%/modules/Activities/OpenListView.php
@@ -4305,7 +4314,6 @@
 %%WWWDIR%%/modules/Calls/Save.php
 %%WWWDIR%%/modules/Calls/SubPanelViewInvitees.html
 %%WWWDIR%%/modules/Calls/SubPanelViewInvitees.php
-%%WWWDIR%%/modules/Calls/controller.php
 %%WWWDIR%%/modules/Calls/field_arrays.php
 %%WWWDIR%%/modules/Calls/language/en_us.lang.php
 %%WWWDIR%%/modules/Calls/metadata/SearchFields.php
@@ -5218,7 +5226,6 @@
 %%WWWDIR%%/modules/Meetings/SubPanelViewInvitees.html
 %%WWWDIR%%/modules/Meetings/SubPanelViewInvitees.php
 %%WWWDIR%%/modules/Meetings/action_view_map.php
-%%WWWDIR%%/modules/Meetings/controller.php
 %%WWWDIR%%/modules/Meetings/field_arrays.php
 %%WWWDIR%%/modules/Meetings/jsclass_scheduler.js
 %%WWWDIR%%/modules/Meetings/language/en_us.lang.php
@@ -6403,6 +6410,7 @@
 %%WWWDIR%%/themes/Sugar5/images/icon_Portal.gif
 %%WWWDIR%%/themes/Sugar5/images/icon_ProductCategories_32.gif
 %%WWWDIR%%/themes/Sugar5/images/icon_ProductTemplates.gif
+%%WWWDIR%%/themes/Sugar5/images/icon_ProductTemplates_32.gif
 %%WWWDIR%%/themes/Sugar5/images/icon_ProductTypes_32.gif
 %%WWWDIR%%/themes/Sugar5/images/icon_Product_Types_32.gif
 %%WWWDIR%%/themes/Sugar5/images/icon_Products.gif
@@ -7547,6 +7555,7 @@
 @dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/calendar/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/calendar
 @dirrm %%WWWDIR%%/include/javascript/yui/build/carousel/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/carousel/assets/skins
@@ -7568,6 +7577,7 @@
 @dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/datatable/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/datatable
 @dirrm %%WWWDIR%%/include/javascript/yui/build/datemath
 @dirrm %%WWWDIR%%/include/javascript/yui/build/dom
@@ -7596,6 +7606,7 @@
 @dirrm %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/layout/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/layout/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/layout/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/layout
 @dirrm %%WWWDIR%%/include/javascript/yui/build/logger/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/logger/assets/skins
@@ -7604,10 +7615,12 @@
 @dirrm %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/menu/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/menu/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/menu/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/menu
 @dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/paginator/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/paginator
 @dirrm %%WWWDIR%%/include/javascript/yui/build/profiler
 @dirrm %%WWWDIR%%/include/javascript/yui/build/profilerviewer/assets/skins/sam
@@ -7624,6 +7637,7 @@
 @dirrm %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/resize/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/resize/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/resize/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/resize
 @dirrm %%WWWDIR%%/include/javascript/yui/build/selector
 @dirrm %%WWWDIR%%/include/javascript/yui/build/slider/assets/skins/sam
@@ -7638,10 +7652,12 @@
 @dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/tabview/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/tabview
 @dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins/sam
 @dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/assets/skins
 @dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/assets
+@dirrm %%WWWDIR%%/include/javascript/yui/build/treeview/blank
 @dirrm %%WWWDIR%%/include/javascript/yui/build/treeview
 @dirrm %%WWWDIR%%/include/javascript/yui/build/uploader/assets
 @dirrm %%WWWDIR%%/include/javascript/yui/build/uploader
