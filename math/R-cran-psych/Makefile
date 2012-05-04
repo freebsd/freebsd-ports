@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	psych
-PORTVERSION=	1.0.94
-PORTREVISION=	6
+PORTVERSION=	1.2.1
 CATEGORIES=	math science
-DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	drue@therub.org
 COMMENT=	Psych package for the R project
 
-USE_R_MOD=	yes
+USE_R_MOD=		yes
 R_MOD_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

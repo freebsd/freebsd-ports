@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.14.2
+PORTVERSION=	2.15.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -236,6 +236,7 @@ post-patch:
 		${WRKSRC}/src/extra/tzone/tzfile.h \
 		${WRKSRC}/src/scripts/javareconf
 .if !defined(LIBRMATH_SLAVEPORT)
+	@${RM} -rf  ${WRKSRC}/src/library/compiler/inst/po/compiler-zh_CN
 .if defined(WITHOUT_NLS)
 	@(cd ${WRKSRC}/src/library/Recommended; \
 	for tarfile in *.tgz *.tar.gz ; do \
