@@ -19,10 +19,9 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	include/InitUtil.h
+USE_DOS2UNIX=	InitUtil.h
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,,," ${WRKSRC}/InitUtil.h
+PLIST_FILES=	include/InitUtil.h
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/InitUtil.h ${PREFIX}/include

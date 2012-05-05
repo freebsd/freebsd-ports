@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+USE_DOS2UNIX=	yes
+
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SHLIB_VERSION=	0
 
@@ -33,12 +35,6 @@ PLIST_SUB+=	WITH_PATESTS="@comment "
 PLIST_SUB+=	WITH_PATESTS=""
 .endif
 
-pre-patch:
-# replace \r\n with \n
-	@${FIND} ${WRKSRC} -type f \
-		| ${XARGS} -x -n 10 \
-			${REINPLACE_CMD} -E \
-				-e 's|||'
 post-patch:
 # replace obsolete headers, and fix up thread library
 	@${FIND} ${WRKSRC} -type f \
