@@ -53,7 +53,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="60de13d5-95f0-11e1-806a-001143cd36d8">
-    <topic>php -- vulnerability in certain CGI-based setups(</topic>
+    <topic>php -- vulnerability in certain CGI-based setups</topic>
     <affects>
       <package>
 	<name>php5</name>
