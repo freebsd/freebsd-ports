@@ -13,6 +13,7 @@ share/locale/as/LC_MESSAGES/iso_3166.mo
 share/locale/as/LC_MESSAGES/iso_639.mo
 share/locale/ast/LC_MESSAGES/iso_3166.mo
 share/locale/ast/LC_MESSAGES/iso_639.mo
+share/locale/ast/LC_MESSAGES/iso_639_3.mo
 share/locale/az/LC_MESSAGES/iso_3166.mo
 share/locale/az/LC_MESSAGES/iso_3166_2.mo
 share/locale/az/LC_MESSAGES/iso_639.mo
@@ -415,8 +416,6 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/wal
 @dirrmtry share/locale/ve/LC_MESSAGES
 @dirrmtry share/locale/ve
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/tt/LC_MESSAGES
@@ -429,26 +428,18 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/ti
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
-@dirrmtry share/locale/syr/LC_MESSAGES
-@dirrmtry share/locale/syr
 @dirrmtry share/locale/sw/LC_MESSAGES
 @dirrmtry share/locale/sw
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/so/LC_MESSAGES
 @dirrmtry share/locale/so
-@dirrmtry share/locale/sid/LC_MESSAGES
-@dirrmtry share/locale/sid
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
-@dirrmtry share/locale/sa/LC_MESSAGES
-@dirrmtry share/locale/sa
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
-@dirrmtry share/locale/om/LC_MESSAGES
-@dirrmtry share/locale/om
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
@@ -457,36 +448,24 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
-@dirrmtry share/locale/ky/LC_MESSAGES
-@dirrmtry share/locale/ky
-@dirrmtry share/locale/kw/LC_MESSAGES
-@dirrmtry share/locale/kw
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kok/LC_MESSAGES
 @dirrmtry share/locale/kok
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
-@dirrmtry share/locale/kl/LC_MESSAGES
-@dirrmtry share/locale/kl
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
-@dirrmtry share/locale/iu/LC_MESSAGES
-@dirrmtry share/locale/iu
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/haw/LC_MESSAGES
 @dirrmtry share/locale/haw
-@dirrmtry share/locale/gv/LC_MESSAGES
-@dirrmtry share/locale/gv
 @dirrmtry share/locale/gez/LC_MESSAGES
 @dirrmtry share/locale/gez
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/dv/LC_MESSAGES
-@dirrmtry share/locale/dv
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
 @dirrmtry share/locale/byn/LC_MESSAGES
@@ -497,5 +476,3 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/locale/aa/LC_MESSAGES
-@dirrmtry share/locale/aa
