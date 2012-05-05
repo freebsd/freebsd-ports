@@ -6,37 +6,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=		openshot
-PORTVERSION=		1.4.0
-PORTREVISION=	1
-CATEGORIES=		multimedia
-MASTER_SITES=		http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
+PORTNAME=	openshot
+PORTVERSION=	1.4.2
+CATEGORIES=	multimedia
+MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 
-MAINTAINER=		rodrigo@bebik.net
-COMMENT=		A non-linear video editor
+MAINTAINER=	rodrigo@bebik.net
+COMMENT=	A non-linear video editor
 
-LICENSE=		GPLv3
+LICENSE=	GPLv3
 
-RUN_DEPENDS=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-			frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins \
-			${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-			${PYTHON_SITELIBDIR}/httplib2/__init__.py:${PORTSDIR}/www/py-httplib2 \
-			${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-			${PYTHON_SITELIBDIR}/_mlt.so:${PORTSDIR}/multimedia/py-mlt \
-			${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
-			scrollkeeper-install:${PORTSDIR}/textproc/rarian \
-			sox:${PORTSDIR}/audio/sox
+RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
+		frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins \
+		${PYTHON_PKGNAMEPREFIX}goocanvas>=0:${PORTSDIR}/graphics/py-goocanvas \
+		${PYTHON_PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2 \
+		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}mlt>=0:${PORTSDIR}/multimedia/py-mlt \
+		${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
+		scrollkeeper-install:${PORTSDIR}/textproc/rarian \
+		sox:${PORTSDIR}/audio/sox
 
-USE_GNOME=		pygtk2 desktopfileutils
-USE_PYTHON=		2.5+
-USE_PYDISTUTILS=	yes
-USE_GETTEXT=		yes
-INSTALLS_OMF=		yes
+USE_GNOME=	pygtk2 desktopfileutils
+USE_PYTHON=	-2.7
+USE_PYDISTUTILS=yes
+USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
 
-MAN1=			${PORTNAME}.1 \
-			${PORTNAME}-render.1
-MANCOMPRESSED=		no
-FETCH_ARGS=		-pRr
+MAN1=		${PORTNAME}.1 \
+		${PORTNAME}-render.1
+MANCOMPRESSED=	no
+FETCH_ARGS=	-pRr
 
 post-patch:
 	@${FIND} ${WRKSRC}/docs/omf -name '*.omf' | ${XARGS} ${REINPLACE_CMD} -e \
