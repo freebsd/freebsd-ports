@@ -29,6 +29,8 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyOpenGL
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/.b/b/}
 
+USE_DOS2UNIX=	yes
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TKINTER)
@@ -37,7 +39,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkint
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|||"
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 	@${FIND} ${WRKSRC} -name "*.bak" -delete

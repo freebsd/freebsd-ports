@@ -30,6 +30,9 @@ WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 NO_BUILD=	yes
 
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(css|dhtml|diverses|editorial|grafik|helferlein|htm|inter|intro|javascript|layouts|navigation|perl|php|projekt|quellen|servercgi|src|xml|xls|dtd)$$
+
 PORTDOCS=	\
 		index.htm \
 		css \
@@ -51,20 +54,6 @@ PORTDOCS=	\
 		servercgi \
 		src \
 		xml
-
-post-patch:
-# \r\n -> \n on text files
-	@${FIND} -E ${WRKSRC} \
-		-iregex \
-		".*\.(css|dhtml|diverses|editorial|grafik|helferlein|htm|inter|intro|javascript|layouts|navigation|perl|php|projekt|quellen|servercgi|src|xml|xls|dtd)$$" \
-		-type f -print0 \
-		| ${XARGS} -0 -n 5 -x \
-			${REINPLACE_CMD} -E \
-			-e 's|||'
-# remove extraneous backup files
-	@${FIND} ${WRKSRC} -type f -name "*.bak" -print0 \
-		| ${XARGS} -0 -n 5 -x \
-			${RM} -f
 
 do-install:
 	@${MKDIR} ${DOCSDIR}

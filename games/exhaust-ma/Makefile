@@ -19,10 +19,9 @@ USE_GMAKE=	yes
 
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+USE_DOS2UNIX=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|||'
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exhaust ${PREFIX}/bin/${PORTNAME}
