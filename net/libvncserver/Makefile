@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libvncserver
-PORTVERSION=	0.9.8.2
+PORTVERSION=	0.9.9
 CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
@@ -27,6 +27,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-x
 
 OPTIONS= GNUTLS "Adds GnuTLS support" Off \
+	 OPENSSL "Adds OpenSSL support" on \
 	 GCRYPT "Adds Libgcrypt support" Off
 
 .include <bsd.port.options.mk>
@@ -36,6 +37,13 @@ LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
+.endif
+
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS=		--with-ssl
+.else
+CONFIGURE_ARGS+=	--without-crypto --without-ssl
 .endif
 
 .if defined(WITH_GCRYPT)
