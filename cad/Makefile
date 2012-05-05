@@ -21,6 +21,7 @@
     SUBDIR += electric
     SUBDIR += electric-ng
     SUBDIR += feappv
+    SUBDIR += fidocadj
     SUBDIR += findhier
     SUBDIR += freehdl
     SUBDIR += gdsreader
