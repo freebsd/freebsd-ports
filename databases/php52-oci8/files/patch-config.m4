@@ -1,5 +1,5 @@
---- config.m4.orig	Wed Apr  5 11:06:00 2006
-+++ config.m4	Tue Jul 11 08:20:27 2006
+--- ext/oci8/config.m4.orig	Wed Apr  5 11:06:00 2006
++++ ext/oci8/config.m4	Tue Jul 11 08:20:27 2006
 @@ -177,8 +177,7 @@
        ;;
  

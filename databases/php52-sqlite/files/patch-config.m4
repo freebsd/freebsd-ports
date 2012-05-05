@@ -1,5 +1,5 @@
---- config.m4.orig	Wed Nov 30 05:50:03 2005
-+++ config.m4	Tue Jan 17 12:51:21 2006
+--- ext/sqlite/config.m4.orig	Wed Nov 30 05:50:03 2005
++++ ext/sqlite/config.m4	Tue Jan 17 12:51:21 2006
 @@ -48,14 +48,6 @@
  
  

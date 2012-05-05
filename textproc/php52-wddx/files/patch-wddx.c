@@ -1,5 +1,5 @@
---- wddx.c.orig	Sun Jan  1 13:50:16 2006
-+++ wddx.c	Mon Jan 16 12:56:21 2006
+--- ext/wddx/wddx.c.orig	Sun Jan  1 13:50:16 2006
++++ ext/wddx/wddx.c	Mon Jan 16 12:56:21 2006
 @@ -18,6 +18,10 @@
  
  /* $Id: wddx.c,v 1.119.2.8 2006/01/01 12:50:16 sniper Exp $ */

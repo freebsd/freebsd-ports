@@ -1,5 +1,5 @@
---- config.m4.orig	Mon Dec  4 19:01:53 2006
-+++ config.m4	Wed Feb  7 12:21:20 2007
+--- ext/spl/config.m4.orig	Mon Dec  4 19:01:53 2006
++++ ext/spl/config.m4	Wed Feb  7 12:21:20 2007
 @@ -4,6 +4,11 @@
  PHP_ARG_ENABLE(spl, enable SPL suppport,
  [  --disable-spl           Disable Standard PHP Library], yes)

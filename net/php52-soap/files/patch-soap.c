@@ -1,5 +1,5 @@
---- soap.c.orig	Tue Oct  3 21:51:01 2006
-+++ soap.c	Sat Nov  4 11:38:29 2006
+--- ext/soap/soap.c.orig	Tue Oct  3 21:51:01 2006
++++ ext/soap/soap.c	Sat Nov  4 11:38:29 2006
 @@ -23,7 +23,7 @@
  #include "config.h"
  #endif

@@ -1,5 +1,5 @@
---- config.m4.orig	2009-08-04 13:20:49.000000000 +0200
-+++ config.m4	2009-09-22 11:13:12.000000000 +0200
+--- ext/readline/config.m4.orig	2009-08-04 13:20:49.000000000 +0200
++++ ext/readline/config.m4	2009-09-22 11:13:12.000000000 +0200
 @@ -5,13 +5,8 @@
  PHP_ARG_WITH(libedit,for libedit readline replacement, 
  [  --with-libedit[=DIR]    Include libedit readline replacement (CLI/CGI only)])

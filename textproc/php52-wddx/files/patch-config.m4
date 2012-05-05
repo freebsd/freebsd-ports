@@ -1,5 +1,5 @@
---- config.m4.orig	Mon Jul 26 09:05:10 2004
-+++ config.m4	Mon Jul 26 09:07:46 2004
+--- ext/wddx/config.m4.orig	Mon Jul 26 09:05:10 2004
++++ ext/wddx/config.m4	Mon Jul 26 09:07:46 2004
 @@ -5,6 +5,9 @@
  PHP_ARG_ENABLE(wddx,whether to enable WDDX support,
  [  --enable-wddx           Enable WDDX support.])

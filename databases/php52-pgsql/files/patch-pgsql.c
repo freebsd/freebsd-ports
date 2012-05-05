@@ -1,5 +1,5 @@
---- pgsql.c.orig	2007-10-04 01:31:58.000000000 +0200
-+++ pgsql.c	2008-01-29 11:10:15.000000000 +0100
+--- ext/pgsql/pgsql.c.orig	2007-10-04 01:31:58.000000000 +0200
++++ ext/pgsql/pgsql.c	2008-01-29 11:10:15.000000000 +0100
 @@ -62,6 +62,7 @@
  #define PGSQL_MAX_LENGTH_OF_LONG   30
  #define PGSQL_MAX_LENGTH_OF_DOUBLE 60
