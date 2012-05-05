@@ -16,14 +16,15 @@ COMMENT=	GDI+ API for System.Windows.Forms in Mono
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		png.6:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png \
+		cairo.2:${PORTSDIR}/graphics/cairo
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	x11
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
