@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libumberlog
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/algernon/libumberlog/
 
@@ -19,5 +19,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+
+MAN3=		umberlog.3
 
 .include <bsd.port.mk>
