@@ -8,7 +8,10 @@
 PORTNAME=	xcb-proto
 PORTVERSION=	1.7.1
 CATEGORIES=	x11 python
-MASTER_SITES=	http://xcb.freedesktop.org/dist/
+MASTER_SITES=	http://xcb.freedesktop.org/dist/ \
+		http://distfiles.pirateparty.in/%SUBDIR%/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ashish
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	The X protocol C-language Binding (XCB) protocol
