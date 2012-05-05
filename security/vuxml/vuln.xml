@@ -128,11 +128,14 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="2cde1892-913e-11e1-b44c-001fd0af1a4c">
      <topic>php -- multiple vulnerabilities</topic>
      <affects>
-        <package>
-           <name>php</name>
-           <range><lt>5.3.11</lt></range>
-           <range><lt>5.4.1</lt></range>
-        </package>
+	<package>
+	  <name>php53</name>
+	  <range><lt>5.3.11</lt></range>
+	</package>
+	<package>
+	  <name>php5</name>
+	  <range><lt>5.3.11</lt></range>
+	</package>
      </affects>
      <description>
         <body xmlns="http://www.w3.org/1999/xhtml">
@@ -158,6 +161,7 @@ Note:  Please add new entries to the beginning of this file.
      <dates>
         <discovery>2012-03-01</discovery>
         <entry>2012-04-28</entry>
+	<modified>2012-05-04</modified>
      </dates>
   </vuln>
 
