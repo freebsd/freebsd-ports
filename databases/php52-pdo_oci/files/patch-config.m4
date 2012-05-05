@@ -1,5 +1,5 @@
---- config.m4.orig	Thu Feb 16 03:03:13 2006
-+++ config.m4	Wed Feb  7 15:00:58 2007
+--- ext/pdo_oci/config.m4.orig	Thu Feb 16 03:03:13 2006
++++ ext/pdo_oci/config.m4	Wed Feb  7 15:00:58 2007
 @@ -145,7 +145,6 @@
        ;;
  

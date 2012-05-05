@@ -1,5 +1,5 @@
---- config.m4.orig	Tue Jul 27 23:58:02 2004
-+++ config.m4	Tue Jul 27 23:59:44 2004
+--- ext/gettext/config.m4.orig	Tue Jul 27 23:58:02 2004
++++ ext/gettext/config.m4	Tue Jul 27 23:59:44 2004
 @@ -30,7 +30,6 @@
  		AC_MSG_ERROR(Unable to find required gettext library)
  	])

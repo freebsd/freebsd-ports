@@ -1,5 +1,5 @@
---- posix.c.orig	Fri Feb 23 00:40:39 2007
-+++ posix.c	Sun May 13 17:52:27 2007
+--- ext/posix/posix.c.orig	Fri Feb 23 00:40:39 2007
++++ ext/posix/posix.c	Sun May 13 17:52:27 2007
 @@ -838,7 +838,7 @@
  #if defined(ZTS) && defined(HAVE_GETGRNAM_R) && defined(_SC_GETGR_R_SIZE_MAX)
  	buflen = sysconf(_SC_GETGR_R_SIZE_MAX);

@@ -1,5 +1,5 @@
---- sqlite_statement.c.orig	2007-12-31 08:20:10.000000000 +0100
-+++ sqlite_statement.c	2008-12-07 11:50:35.000000000 +0100
+--- ext/pdo_sqlite/sqlite_statement.c.orig	2007-12-31 08:20:10.000000000 +0100
++++ ext/pdo_sqlite/sqlite_statement.c	2008-12-07 11:50:35.000000000 +0100
 @@ -104,6 +104,21 @@
  						pdo_sqlite_error_stmt(stmt);
  						return 0;
