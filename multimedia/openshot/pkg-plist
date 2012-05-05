@@ -21,6 +21,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/snow.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/travel_map.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/trees.blend
+%%PYTHON_SITELIBDIR%%/openshot/blender/blend/wireframe_text.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blend/zoom_clapboard.blend
 %%PYTHON_SITELIBDIR%%/openshot/blender/blinds.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/blur.xml
@@ -49,6 +50,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/snow.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/travel_map.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/trees.png
+%%PYTHON_SITELIBDIR%%/openshot/blender/icons/wireframe_text.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/icons/zoom_clapboard.png
 %%PYTHON_SITELIBDIR%%/openshot/blender/lens_flare.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/magic_wand.xml
@@ -109,6 +111,9 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/trees.py
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/trees.pyc
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/trees.pyo
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/wireframe_text.py
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/wireframe_text.pyc
+%%PYTHON_SITELIBDIR%%/openshot/blender/scripts/wireframe_text.pyo
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/zoom_clapboard.py
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/zoom_clapboard.pyc
 %%PYTHON_SITELIBDIR%%/openshot/blender/scripts/zoom_clapboard.pyo
@@ -116,6 +121,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/blender/snow.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/travel_map.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/trees.xml
+%%PYTHON_SITELIBDIR%%/openshot/blender/wireframe_text.xml
 %%PYTHON_SITELIBDIR%%/openshot/blender/zoom_clapboard.xml
 %%PYTHON_SITELIBDIR%%/openshot/classes/__init__.py
 %%PYTHON_SITELIBDIR%%/openshot/classes/__init__.pyc
@@ -206,6 +212,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/coloradj_RGB.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/colordistance.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/contrast.xml
+%%PYTHON_SITELIBDIR%%/openshot/effects/defish0r.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/distort.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/echo.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/edgeglow.xml
@@ -226,6 +233,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/coloradj_RGB.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/colordistance.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/contrast.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/defishor.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/distort.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/edgeglow.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/equalizor.png
@@ -246,9 +254,6 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/old_lines.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/pixelate.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/primaries.png
-%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/remove_blue.png
-%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/remove_green.png
-%%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/remove_red.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/rgbparade.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/rotate.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/medium/saturate.png
@@ -270,6 +275,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/coloradj_RGB.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/colordistance.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/contrast.png
+%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/defishor.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/distort.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/edgeglow.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/equalizor.png
@@ -290,9 +296,6 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/old_lines.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/pixelate.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/primaries.png
-%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/remove_blue.png
-%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/remove_green.png
-%%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/remove_red.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/rgbparade.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/rotate.png
 %%PYTHON_SITELIBDIR%%/openshot/effects/icons/small/saturate.png
@@ -316,9 +319,6 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/effects/phaser.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/pixelate.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/primaries.xml
-%%PYTHON_SITELIBDIR%%/openshot/effects/remove_blue.xml
-%%PYTHON_SITELIBDIR%%/openshot/effects/remove_green.xml
-%%PYTHON_SITELIBDIR%%/openshot/effects/remove_red.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/rotate.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/saturation.xml
 %%PYTHON_SITELIBDIR%%/openshot/effects/scanlines.xml
@@ -394,6 +394,8 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/locale/bs/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/ca/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/ca/LC_MESSAGES/OpenShot.po
+%%PYTHON_SITELIBDIR%%/openshot/locale/ca@valencia/LC_MESSAGES/OpenShot.mo
+%%PYTHON_SITELIBDIR%%/openshot/locale/ca@valencia/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/cs/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/cs/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/cy/LC_MESSAGES/OpenShot.mo
@@ -488,6 +490,8 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/locale/ro/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/ru/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/ru/LC_MESSAGES/OpenShot.po
+%%PYTHON_SITELIBDIR%%/openshot/locale/shn/LC_MESSAGES/OpenShot.mo
+%%PYTHON_SITELIBDIR%%/openshot/locale/shn/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/sk/LC_MESSAGES/OpenShot.mo
 %%PYTHON_SITELIBDIR%%/openshot/locale/sk/LC_MESSAGES/OpenShot.po
 %%PYTHON_SITELIBDIR%%/openshot/locale/sl/LC_MESSAGES/OpenShot.mo
@@ -1094,6 +1098,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/themes/tango/visible_transparent.png
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Bar_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Bar_2.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Bar_3.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Bubbles_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Bubbles_2.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Cloud_1.svg
@@ -1103,6 +1108,10 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Footer_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Footer_2.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Footer_3.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Gold_1.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Gold_2.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Gold_Bottom.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Gold_Top.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Header_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Header_2.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Header_3.svg
@@ -1123,6 +1132,7 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/titles/16_9/Standard_4.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Bar_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Bar_2.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Bar_3.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Bubbles_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Bubbles_2.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Cloud_1.svg
@@ -1132,6 +1142,10 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Footer_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Footer_2.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Footer_3.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Gold_1.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Gold_2.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Gold_Bottom.svg
+%%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Gold_Top.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Header_1.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Header_2.svg
 %%PYTHON_SITELIBDIR%%/openshot/titles/4_3/Header_3.svg
@@ -1764,6 +1778,150 @@ bin/openshot-render
 %%PYTHON_SITELIBDIR%%/openshot/windows/ui/titles.ui
 %%PYTHON_SITELIBDIR%%/openshot/windows/ui/titles_edit.ui
 share/applications/openshot.desktop
+share/gnome/help/openshot/C/figures/Circle.svg
+share/gnome/help/openshot/C/figures/add_to_timeline.png
+share/gnome/help/openshot/C/figures/add_to_timeline_menu.png
+share/gnome/help/openshot/C/figures/animated_title.png
+share/gnome/help/openshot/C/figures/arrow.svg
+share/gnome/help/openshot/C/figures/clip_properties_tab1.png
+share/gnome/help/openshot/C/figures/clip_properties_tab2.png
+share/gnome/help/openshot/C/figures/clip_properties_tab3.png
+share/gnome/help/openshot/C/figures/clip_properties_tab4.png
+share/gnome/help/openshot/C/figures/clip_properties_tab5.png
+share/gnome/help/openshot/C/figures/clip_properties_tab6.png
+share/gnome/help/openshot/C/figures/clip_properties_tab7.png
+share/gnome/help/openshot/C/figures/duplicate_clip.png
+share/gnome/help/openshot/C/figures/effects/audio.png
+share/gnome/help/openshot/C/figures/effects/blur.png
+share/gnome/help/openshot/C/figures/effects/brightness.png
+share/gnome/help/openshot/C/figures/effects/burningtv.png
+share/gnome/help/openshot/C/figures/effects/cartoon.png
+share/gnome/help/openshot/C/figures/effects/charcoal.png
+share/gnome/help/openshot/C/figures/effects/chroma_hold.png
+share/gnome/help/openshot/C/figures/effects/chroma_key.png
+share/gnome/help/openshot/C/figures/effects/colordistance.png
+share/gnome/help/openshot/C/figures/effects/contrast.png
+share/gnome/help/openshot/C/figures/effects/deinterlace.png
+share/gnome/help/openshot/C/figures/effects/distort.png
+share/gnome/help/openshot/C/figures/effects/edgeglow.png
+share/gnome/help/openshot/C/figures/effects/freeze.png
+share/gnome/help/openshot/C/figures/effects/gamma.png
+share/gnome/help/openshot/C/figures/effects/glow.png
+share/gnome/help/openshot/C/figures/effects/greyscale.png
+share/gnome/help/openshot/C/figures/effects/hue.png
+share/gnome/help/openshot/C/figures/effects/invert.png
+share/gnome/help/openshot/C/figures/effects/mirror.png
+share/gnome/help/openshot/C/figures/effects/nosync.png
+share/gnome/help/openshot/C/figures/effects/old_dust.png
+share/gnome/help/openshot/C/figures/effects/old_film.png
+share/gnome/help/openshot/C/figures/effects/old_grain.png
+share/gnome/help/openshot/C/figures/effects/old_lines.png
+share/gnome/help/openshot/C/figures/effects/pixelate.png
+share/gnome/help/openshot/C/figures/effects/remove_blue.png
+share/gnome/help/openshot/C/figures/effects/remove_green.png
+share/gnome/help/openshot/C/figures/effects/remove_red.png
+share/gnome/help/openshot/C/figures/effects/rotate.png
+share/gnome/help/openshot/C/figures/effects/saturate.png
+share/gnome/help/openshot/C/figures/effects/scan_lines.png
+share/gnome/help/openshot/C/figures/effects/sepia.png
+share/gnome/help/openshot/C/figures/effects/sobel.png
+share/gnome/help/openshot/C/figures/effects/tcolor.png
+share/gnome/help/openshot/C/figures/effects/threshold.png
+share/gnome/help/openshot/C/figures/effects/two_layer.png
+share/gnome/help/openshot/C/figures/effects/water_rain.png
+share/gnome/help/openshot/C/figures/effects/wave.png
+share/gnome/help/openshot/C/figures/effects/white_balance.png
+share/gnome/help/openshot/C/figures/effects_rotation.png
+share/gnome/help/openshot/C/figures/effects_settings.png
+share/gnome/help/openshot/C/figures/effects_window.png
+share/gnome/help/openshot/C/figures/export_advanced.png
+share/gnome/help/openshot/C/figures/export_simple.png
+share/gnome/help/openshot/C/figures/export_to_xml.png
+share/gnome/help/openshot/C/figures/files_drag_and_drop.png
+share/gnome/help/openshot/C/figures/folders_create.png
+share/gnome/help/openshot/C/figures/folders_create_new.png
+share/gnome/help/openshot/C/figures/folders_move_to_folder.png
+share/gnome/help/openshot/C/figures/folders_organized.png
+share/gnome/help/openshot/C/figures/gimp_animation_package.png
+share/gnome/help/openshot/C/figures/image_seq_convert.png
+share/gnome/help/openshot/C/figures/image_seq_folder.png
+share/gnome/help/openshot/C/figures/import_image_seq.png
+share/gnome/help/openshot/C/figures/import_image_seq_menu.png
+share/gnome/help/openshot/C/figures/keyframe_animate.png
+share/gnome/help/openshot/C/figures/keyframe_layout.png
+share/gnome/help/openshot/C/figures/logo_badge.png
+share/gnome/help/openshot/C/figures/main_tabs.png
+share/gnome/help/openshot/C/figures/main_window.png
+share/gnome/help/openshot/C/figures/main_window_clips.png
+share/gnome/help/openshot/C/figures/main_window_edit_toolbars.png
+share/gnome/help/openshot/C/figures/main_window_files.png
+share/gnome/help/openshot/C/figures/main_window_filter.png
+share/gnome/help/openshot/C/figures/main_window_preview.png
+share/gnome/help/openshot/C/figures/main_window_timeline.png
+share/gnome/help/openshot/C/figures/main_window_toolbar.png
+share/gnome/help/openshot/C/figures/main_window_zoomer.png
+share/gnome/help/openshot/C/figures/menu_file.png
+share/gnome/help/openshot/C/figures/preferences.png
+share/gnome/help/openshot/C/figures/projects_new.png
+share/gnome/help/openshot/C/figures/rotate_simple_menu.png
+share/gnome/help/openshot/C/figures/timeline_drop.png
+share/gnome/help/openshot/C/figures/titles_folder.png
+share/gnome/help/openshot/C/figures/titles_main_screen.png
+share/gnome/help/openshot/C/figures/titles_menu.png
+share/gnome/help/openshot/C/figures/titles_new.png
+share/gnome/help/openshot/C/figures/titles_scrolling.png
+share/gnome/help/openshot/C/figures/track_buttons.png
+share/gnome/help/openshot/C/figures/tracks.png
+share/gnome/help/openshot/C/figures/transitions/blinds_in_to_out.png
+share/gnome/help/openshot/C/figures/transitions/blinds_in_to_out_big.png
+share/gnome/help/openshot/C/figures/transitions/blinds_sliding.png
+share/gnome/help/openshot/C/figures/transitions/circle_in_to_out.png
+share/gnome/help/openshot/C/figures/transitions/circle_out_to_in.png
+share/gnome/help/openshot/C/figures/transitions/clock_left_to_right.png
+share/gnome/help/openshot/C/figures/transitions/clock_right_to_left.png
+share/gnome/help/openshot/C/figures/transitions/fractal_1.png
+share/gnome/help/openshot/C/figures/transitions/fractal_2.png
+share/gnome/help/openshot/C/figures/transitions/fractal_3.png
+share/gnome/help/openshot/C/figures/transitions/fractal_4.png
+share/gnome/help/openshot/C/figures/transitions/fractal_5.png
+share/gnome/help/openshot/C/figures/transitions/fractal_6.png
+share/gnome/help/openshot/C/figures/transitions/fractal_7.png
+share/gnome/help/openshot/C/figures/transitions/fractal_8.png
+share/gnome/help/openshot/C/figures/transitions/hatched_1.png
+share/gnome/help/openshot/C/figures/transitions/hatched_2.png
+share/gnome/help/openshot/C/figures/transitions/hatched_3.png
+share/gnome/help/openshot/C/figures/transitions/hourglass_1.png
+share/gnome/help/openshot/C/figures/transitions/hourglass_2.png
+share/gnome/help/openshot/C/figures/transitions/hourglass_3.png
+share/gnome/help/openshot/C/figures/transitions/hourglass_4.png
+share/gnome/help/openshot/C/figures/transitions/mountains.png
+share/gnome/help/openshot/C/figures/transitions/openshot_logo.png
+share/gnome/help/openshot/C/figures/transitions/puzzle_7_by_7.png
+share/gnome/help/openshot/C/figures/transitions/rectangle_in_to_out.png
+share/gnome/help/openshot/C/figures/transitions/rectangle_out_to_in.png
+share/gnome/help/openshot/C/figures/transitions/sand.png
+share/gnome/help/openshot/C/figures/transitions/sphere.png
+share/gnome/help/openshot/C/figures/transitions/spiral_abstract_1.png
+share/gnome/help/openshot/C/figures/transitions/spiral_abstract_2.png
+share/gnome/help/openshot/C/figures/transitions/spiral_big.png
+share/gnome/help/openshot/C/figures/transitions/spiral_medium.png
+share/gnome/help/openshot/C/figures/transitions/spiral_small.png
+share/gnome/help/openshot/C/figures/transitions/spots.png
+share/gnome/help/openshot/C/figures/transitions/star_1.png
+share/gnome/help/openshot/C/figures/transitions/star_2.png
+share/gnome/help/openshot/C/figures/transitions/vertical_blinds_in_to_out.png
+share/gnome/help/openshot/C/figures/transitions/vertical_blinds_in_to_out_big.png
+share/gnome/help/openshot/C/figures/transitions/wipe_bottom_to_top.png
+share/gnome/help/openshot/C/figures/transitions/wipe_diagonal_1.png
+share/gnome/help/openshot/C/figures/transitions/wipe_diagonal_2.png
+share/gnome/help/openshot/C/figures/transitions/wipe_diagonal_3.png
+share/gnome/help/openshot/C/figures/transitions/wipe_diagonal_4.png
+share/gnome/help/openshot/C/figures/transitions/wipe_left_to_right.png
+share/gnome/help/openshot/C/figures/transitions/wipe_right_to_left.png
+share/gnome/help/openshot/C/figures/transitions/wipe_top_to_bottom.png
+share/gnome/help/openshot/C/figures/transitions_clock.png
+share/gnome/help/openshot/C/figures/transitions_properties.png
+share/gnome/help/openshot/C/figures/upload_to_web.png
 share/gnome/help/openshot/C/openshot.xml
 share/gnome/help/openshot/cs/openshot.xml
 share/gnome/help/openshot/da/openshot.xml
@@ -1771,150 +1929,6 @@ share/gnome/help/openshot/de/openshot.xml
 share/gnome/help/openshot/el/openshot.xml
 share/gnome/help/openshot/en_GB/openshot.xml
 share/gnome/help/openshot/es/openshot.xml
-share/gnome/help/openshot/figures/Circle.svg
-share/gnome/help/openshot/figures/add_to_timeline.png
-share/gnome/help/openshot/figures/add_to_timeline_menu.png
-share/gnome/help/openshot/figures/animated_title.png
-share/gnome/help/openshot/figures/arrow.svg
-share/gnome/help/openshot/figures/clip_properties_tab1.png
-share/gnome/help/openshot/figures/clip_properties_tab2.png
-share/gnome/help/openshot/figures/clip_properties_tab3.png
-share/gnome/help/openshot/figures/clip_properties_tab4.png
-share/gnome/help/openshot/figures/clip_properties_tab5.png
-share/gnome/help/openshot/figures/clip_properties_tab6.png
-share/gnome/help/openshot/figures/clip_properties_tab7.png
-share/gnome/help/openshot/figures/duplicate_clip.png
-share/gnome/help/openshot/figures/effects/audio.png
-share/gnome/help/openshot/figures/effects/blur.png
-share/gnome/help/openshot/figures/effects/brightness.png
-share/gnome/help/openshot/figures/effects/burningtv.png
-share/gnome/help/openshot/figures/effects/cartoon.png
-share/gnome/help/openshot/figures/effects/charcoal.png
-share/gnome/help/openshot/figures/effects/chroma_hold.png
-share/gnome/help/openshot/figures/effects/chroma_key.png
-share/gnome/help/openshot/figures/effects/colordistance.png
-share/gnome/help/openshot/figures/effects/contrast.png
-share/gnome/help/openshot/figures/effects/deinterlace.png
-share/gnome/help/openshot/figures/effects/distort.png
-share/gnome/help/openshot/figures/effects/edgeglow.png
-share/gnome/help/openshot/figures/effects/freeze.png
-share/gnome/help/openshot/figures/effects/gamma.png
-share/gnome/help/openshot/figures/effects/glow.png
-share/gnome/help/openshot/figures/effects/greyscale.png
-share/gnome/help/openshot/figures/effects/hue.png
-share/gnome/help/openshot/figures/effects/invert.png
-share/gnome/help/openshot/figures/effects/mirror.png
-share/gnome/help/openshot/figures/effects/nosync.png
-share/gnome/help/openshot/figures/effects/old_dust.png
-share/gnome/help/openshot/figures/effects/old_film.png
-share/gnome/help/openshot/figures/effects/old_grain.png
-share/gnome/help/openshot/figures/effects/old_lines.png
-share/gnome/help/openshot/figures/effects/pixelate.png
-share/gnome/help/openshot/figures/effects/remove_blue.png
-share/gnome/help/openshot/figures/effects/remove_green.png
-share/gnome/help/openshot/figures/effects/remove_red.png
-share/gnome/help/openshot/figures/effects/rotate.png
-share/gnome/help/openshot/figures/effects/saturate.png
-share/gnome/help/openshot/figures/effects/scan_lines.png
-share/gnome/help/openshot/figures/effects/sepia.png
-share/gnome/help/openshot/figures/effects/sobel.png
-share/gnome/help/openshot/figures/effects/tcolor.png
-share/gnome/help/openshot/figures/effects/threshold.png
-share/gnome/help/openshot/figures/effects/two_layer.png
-share/gnome/help/openshot/figures/effects/water_rain.png
-share/gnome/help/openshot/figures/effects/wave.png
-share/gnome/help/openshot/figures/effects/white_balance.png
-share/gnome/help/openshot/figures/effects_rotation.png
-share/gnome/help/openshot/figures/effects_settings.png
-share/gnome/help/openshot/figures/effects_window.png
-share/gnome/help/openshot/figures/export_advanced.png
-share/gnome/help/openshot/figures/export_simple.png
-share/gnome/help/openshot/figures/export_to_xml.png
-share/gnome/help/openshot/figures/files_drag_and_drop.png
-share/gnome/help/openshot/figures/folders_create.png
-share/gnome/help/openshot/figures/folders_create_new.png
-share/gnome/help/openshot/figures/folders_move_to_folder.png
-share/gnome/help/openshot/figures/folders_organized.png
-share/gnome/help/openshot/figures/gimp_animation_package.png
-share/gnome/help/openshot/figures/image_seq_convert.png
-share/gnome/help/openshot/figures/image_seq_folder.png
-share/gnome/help/openshot/figures/import_image_seq.png
-share/gnome/help/openshot/figures/import_image_seq_menu.png
-share/gnome/help/openshot/figures/keyframe_animate.png
-share/gnome/help/openshot/figures/keyframe_layout.png
-share/gnome/help/openshot/figures/logo_badge.png
-share/gnome/help/openshot/figures/main_tabs.png
-share/gnome/help/openshot/figures/main_window.png
-share/gnome/help/openshot/figures/main_window_clips.png
-share/gnome/help/openshot/figures/main_window_edit_toolbars.png
-share/gnome/help/openshot/figures/main_window_files.png
-share/gnome/help/openshot/figures/main_window_filter.png
-share/gnome/help/openshot/figures/main_window_preview.png
-share/gnome/help/openshot/figures/main_window_timeline.png
-share/gnome/help/openshot/figures/main_window_toolbar.png
-share/gnome/help/openshot/figures/main_window_zoomer.png
-share/gnome/help/openshot/figures/menu_file.png
-share/gnome/help/openshot/figures/preferences.png
-share/gnome/help/openshot/figures/projects_new.png
-share/gnome/help/openshot/figures/rotate_simple_menu.png
-share/gnome/help/openshot/figures/timeline_drop.png
-share/gnome/help/openshot/figures/titles_folder.png
-share/gnome/help/openshot/figures/titles_main_screen.png
-share/gnome/help/openshot/figures/titles_menu.png
-share/gnome/help/openshot/figures/titles_new.png
-share/gnome/help/openshot/figures/titles_scrolling.png
-share/gnome/help/openshot/figures/track_buttons.png
-share/gnome/help/openshot/figures/tracks.png
-share/gnome/help/openshot/figures/transitions/blinds_in_to_out.png
-share/gnome/help/openshot/figures/transitions/blinds_in_to_out_big.png
-share/gnome/help/openshot/figures/transitions/blinds_sliding.png
-share/gnome/help/openshot/figures/transitions/circle_in_to_out.png
-share/gnome/help/openshot/figures/transitions/circle_out_to_in.png
-share/gnome/help/openshot/figures/transitions/clock_left_to_right.png
-share/gnome/help/openshot/figures/transitions/clock_right_to_left.png
-share/gnome/help/openshot/figures/transitions/fractal_1.png
-share/gnome/help/openshot/figures/transitions/fractal_2.png
-share/gnome/help/openshot/figures/transitions/fractal_3.png
-share/gnome/help/openshot/figures/transitions/fractal_4.png
-share/gnome/help/openshot/figures/transitions/fractal_5.png
-share/gnome/help/openshot/figures/transitions/fractal_6.png
-share/gnome/help/openshot/figures/transitions/fractal_7.png
-share/gnome/help/openshot/figures/transitions/fractal_8.png
-share/gnome/help/openshot/figures/transitions/hatched_1.png
-share/gnome/help/openshot/figures/transitions/hatched_2.png
-share/gnome/help/openshot/figures/transitions/hatched_3.png
-share/gnome/help/openshot/figures/transitions/hourglass_1.png
-share/gnome/help/openshot/figures/transitions/hourglass_2.png
-share/gnome/help/openshot/figures/transitions/hourglass_3.png
-share/gnome/help/openshot/figures/transitions/hourglass_4.png
-share/gnome/help/openshot/figures/transitions/mountains.png
-share/gnome/help/openshot/figures/transitions/openshot_logo.png
-share/gnome/help/openshot/figures/transitions/puzzle_7_by_7.png
-share/gnome/help/openshot/figures/transitions/rectangle_in_to_out.png
-share/gnome/help/openshot/figures/transitions/rectangle_out_to_in.png
-share/gnome/help/openshot/figures/transitions/sand.png
-share/gnome/help/openshot/figures/transitions/sphere.png
-share/gnome/help/openshot/figures/transitions/spiral_abstract_1.png
-share/gnome/help/openshot/figures/transitions/spiral_abstract_2.png
-share/gnome/help/openshot/figures/transitions/spiral_big.png
-share/gnome/help/openshot/figures/transitions/spiral_medium.png
-share/gnome/help/openshot/figures/transitions/spiral_small.png
-share/gnome/help/openshot/figures/transitions/spots.png
-share/gnome/help/openshot/figures/transitions/star_1.png
-share/gnome/help/openshot/figures/transitions/star_2.png
-share/gnome/help/openshot/figures/transitions/vertical_blinds_in_to_out.png
-share/gnome/help/openshot/figures/transitions/vertical_blinds_in_to_out_big.png
-share/gnome/help/openshot/figures/transitions/wipe_bottom_to_top.png
-share/gnome/help/openshot/figures/transitions/wipe_diagonal_1.png
-share/gnome/help/openshot/figures/transitions/wipe_diagonal_2.png
-share/gnome/help/openshot/figures/transitions/wipe_diagonal_3.png
-share/gnome/help/openshot/figures/transitions/wipe_diagonal_4.png
-share/gnome/help/openshot/figures/transitions/wipe_left_to_right.png
-share/gnome/help/openshot/figures/transitions/wipe_right_to_left.png
-share/gnome/help/openshot/figures/transitions/wipe_top_to_bottom.png
-share/gnome/help/openshot/figures/transitions_clock.png
-share/gnome/help/openshot/figures/transitions_properties.png
-share/gnome/help/openshot/figures/upload_to_web.png
 share/gnome/help/openshot/fr/openshot.xml
 share/gnome/help/openshot/he/openshot.xml
 share/gnome/help/openshot/it/openshot.xml
@@ -1955,15 +1969,15 @@ share/pixmaps/openshot.svg
 @dirrm share/gnome/help/openshot/it
 @dirrm share/gnome/help/openshot/he
 @dirrm share/gnome/help/openshot/fr
-@dirrm share/gnome/help/openshot/figures/transitions
-@dirrm share/gnome/help/openshot/figures/effects
-@dirrm share/gnome/help/openshot/figures
 @dirrm share/gnome/help/openshot/es
 @dirrm share/gnome/help/openshot/en_GB
 @dirrm share/gnome/help/openshot/el
 @dirrm share/gnome/help/openshot/de
 @dirrm share/gnome/help/openshot/da
 @dirrm share/gnome/help/openshot/cs
+@dirrm share/gnome/help/openshot/C/figures/transitions
+@dirrm share/gnome/help/openshot/C/figures/effects
+@dirrm share/gnome/help/openshot/C/figures
 @dirrm share/gnome/help/openshot/C
 @dirrm share/gnome/help/openshot
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/windows/ui/icons
@@ -2042,6 +2056,8 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/sl
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/sk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/shn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/shn
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ru/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ru
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ro/LC_MESSAGES
@@ -2136,6 +2152,8 @@ share/pixmaps/openshot.svg
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/cy
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/cs/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ca@valencia/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ca@valencia
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ca/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/ca
 @dirrm %%PYTHON_SITELIBDIR%%/openshot/locale/bs/LC_MESSAGES
