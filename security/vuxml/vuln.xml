@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60de13d5-95f0-11e1-806a-001143cd36d8">
+    <topic>php -- vulnerability in certain CGI-based setups(</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><lt>5.3.12</lt></range>
+      </package>
+      <package>
+	<name>php4</name>
+	<range><lt>5.3</lt></range>
+      </package>
+      <package>
+	<name>php52</name>
+	<range><lt>5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>php development team reports:</p>
+	<blockquote cite="http://www.php.net/archive/2012.php#id2012-05-03-1">
+	  <p>Security Enhancements and Fixes in PHP 5.3.12:</p>
+	  <ul>
+	    <li>Initial fix for cgi-bin ?-s cmdarg parse issue (CVE-2012-1823)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2012-1823</cvename>
+    </references>
+    <dates>
+      <discovery>2012-05-03</discovery>
+      <entry>2012-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18dffa02-946a-11e1-be9d-000c29cc39d3">
     <topic>WebCalendar -- multiple vulnerabilities</topic>
     <affects>
