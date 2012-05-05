@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	heimdal
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5.2
+#PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -28,7 +28,6 @@ OPTIONS=	IPV6	"Enable IPV6 support"				on \
 		PKINIT	"Enable PK-INIT support"			on \
 		DIGEST	"Enable DIGEST support"				on \
 		KX509	"Enable kx509 support"				on \
-		KRB4	"Enable krb4 support"				off \
 		CRACKLIB "Use CrackLib for password quality checking"	off \
 		X11	 "Build X11 utilies"				off
 
@@ -40,7 +39,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \
 			--with-readline=${DESTDIR}/usr \
-			--enable-pthread-support
+			--enable-pthread-support \
+			--with-hdbdir=/var/db/${PORTNAME}
 
 INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
@@ -74,6 +74,7 @@ PLIST_SUB+=	KCM="@comment "
 .if defined(WITH_BDB)
 USE_BDB=	yes
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${BDB_LIB_DIR}
 CONFIGURE_ARGS+=	--with-berkeley-db=${LOCALBASE}
 #			--with-berkeley-db-include=${BDB_INCLUDE_DIR}
@@ -121,12 +122,6 @@ CONFIGURE_ARGS+=	--disable-kx509
 CONFIGURE_ARGS+=	--enable-kx509
 .endif
 
-.if !defined(WITH_KRB4)
-CONFIGURE_ARGS+=	--disable-krb4
-.else
-CONFIGURE_ARGS+=	--enable-krb4
-.endif
-
 .if defined(WITH_CRACKLIB)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 .endif
@@ -153,20 +148,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|@LDFLAGS@|@LDFLAGS@ \$$\(PTHREADS_LIBADD\)|g' \
 		${WRKSRC}/lib/ipc/Makefile.in
-
-# These will be fixed in the next release. Looks like they were forgot in this
-# release.
-post-configure:
-	@${CP} ${FILESDIR}/lib__otp__version-script.map \
-		${WRKSRC}/lib/otp/version-script.map
-	@${CP} ${FILESDIR}/lib__hcrypto__libtommath__tommath.h \
-		${WRKSRC}/lib/hcrypto/libtommath/tommath.h
-	@${CP} ${FILESDIR}/lib__hcrypto__libtommath__tommath_class.h \
-		${WRKSRC}/lib/hcrypto/libtommath/tommath_class.h
-	@${CP} ${FILESDIR}/lib__hcrypto__libtommath__tommath_superclass.h \
-		${WRKSRC}/lib/hcrypto/libtommath/tommath_superclass.h
-	@${CP} ${FILESDIR}/lib__gssapi__mech__gss_pname_to_uid.c \
-		${WRKSRC}/lib/gssapi/mech/gss_pname_to_uid.c
 
 post-build:
 .if defined(WITH_CRACKLIB)
