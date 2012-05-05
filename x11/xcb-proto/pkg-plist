@@ -4,6 +4,7 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/damage.xml
 %%DATADIR%%/dpms.xml
 %%DATADIR%%/dri2.xml
+%%DATADIR%%/ge.xml
 %%DATADIR%%/glx.xml
 %%DATADIR%%/randr.xml
 %%DATADIR%%/record.xml
@@ -17,6 +18,7 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/xcb.xsd
 %%DATADIR%%/xevie.xml
 %%DATADIR%%/xf86dri.xml
+%%DATADIR%%/xf86vidmode.xml
 %%DATADIR%%/xfixes.xml
 %%DATADIR%%/xkb.xml
 %%DATADIR%%/xinerama.xml
