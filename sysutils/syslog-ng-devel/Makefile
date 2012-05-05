@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.4.0a1
-PORTREVISION=   1
+PORTVERSION=	3.4.0a2
 CATEGORIES=	sysutils
-# MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(DISTVERSOIN)/source/ \
-# temporary workaround: git snapshot
-# as alpha1 release crashes on start on FreeBSD
-MASTER_SITES=	http://people.balabit.hu/czanik/ \
-		http://komquats.com/distfiles/ \
-		http://people.freebsd.org/~cy/distfiles/
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
-DISTFILES=	$(PORTNAME)-$(DISTVERSION).tar.gz
+DISTFILES=	$(PORTNAME)_$(DISTVERSION).tar.gz
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(DISTVERSION)/source/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
@@ -105,12 +99,11 @@ CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if defined(WITH_SMTP)
-CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/lib
+CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
 LIB_DEPENDS+=		esmtp.6:${PORTSDIR}/mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.la lib/syslog-ng/libafsmtp.so
-BROKEN=                 "smtp support does not work currently"
 .else
-CONFIGURE_ARGS+=	--without-libesmtp
+CONFIGURE_ARGS+=	--disable-smtp
 .endif
 
 .if defined(WITH_SQL)
