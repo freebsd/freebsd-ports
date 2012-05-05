@@ -9671,6 +9671,7 @@ mod_security                    ports/www/mod_security
 mod_security21                  ports/www/mod_security21
 mod_setenvifplus                ports/www/mod_setenvifplus
 mod_smooth_streaming            ports/www/mod_smooth_streaming
+mod_spdy                        ports/www/mod_spdy
 mod_tidy                        ports/www/mod_tidy
 mod_tsa                         ports/www/mod_tsa
 mod_uid                         ports/www/mod_uid
@@ -26979,6 +26980,7 @@ typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
 typo345                         ports/www/typo345
+typo346                         ports/www/typo346
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
 tzdialog                        ports/sysutils/tzdialog
