@@ -1,0 +1,15 @@
+Net::OpenSSH::Parallel is an scheduler that can run commands in parallel in a
+set of hosts through SSH. It tries to find a compromise between being simple to
+use, efficient and covering a good part of the problem space of parallel process
+execution via SSH.
+
+Obviously, it is build on top of Net::OpenSSH!
+
+Common usage of the module is as follows:
+- Create a Net::OpenSSH::Parallel object.
+- Register the hosts where you want to run commands with the "add_host" method.
+- Queue the actions you want to run (commands, file copy operations, etc.) using
+  the "push" method.
+- Call the "run" method and let the parallel scheduler take care of everything!
+
+WWW: http://search.cpan.org/dist/Net-OpenSSH-Parallel/
