@@ -1,9 +1,9 @@
 bin/afslog
 bin/ftp
-bin/gss
+bin/gsstool
 bin/hxtool
 bin/idn-lookup
-bin/kauth
+bin/kcc
 bin/kdestroy
 bin/kf
 bin/kgetcred
@@ -39,6 +39,7 @@ include/gssapi/gkrb5_err.h
 include/gssapi/gssapi.h
 include/gssapi/gssapi_ntlm.h
 include/gssapi/gssapi_krb5.h
+include/gssapi/gssapi_oid.h
 include/gssapi/gssapi_spnego.h
 %%HCRYPTO%%include/hcrypto/aes.h
 %%HCRYPTO%%include/hcrypto/bn.h
@@ -70,6 +71,7 @@ include/hdb_err.h
 include/heim_asn1.h
 include/heim-ipc.h
 include/heim_err.h
+include/heimbase.h
 include/heimntlm-protos.h
 include/heimntlm.h
 include/hex.h
@@ -90,6 +92,7 @@ include/krb5-private.h
 include/krb5-protos.h
 include/krb5-types.h
 include/krb5.h
+include/krb5/ccache_plugin.h
 include/krb5/locate_plugin.h
 include/krb5/send_to_kdc_plugin.h
 include/krb5/windc_plugin.h
@@ -97,6 +100,7 @@ include/krb5_asn1.h
 include/krb5_ccapi.h
 include/krb5_err.h
 include/kx509_asn1.h
+include/ntlm_err.h
 include/ocsp_asn1.h
 include/otp.h
 include/parse_bytes.h
@@ -123,11 +127,15 @@ lib/libasn1.so.8
 lib/libgssapi.a
 lib/libgssapi.la
 lib/libgssapi.so
-lib/libgssapi.so.2
+lib/libgssapi.so.3
 %%HCRYPTO%%lib/libhcrypto.a
 %%HCRYPTO%%lib/libhcrypto.la
 %%HCRYPTO%%lib/libhcrypto.so
 %%HCRYPTO%%lib/libhcrypto.so.5
+lib/libheimbase.a
+lib/libheimbase.la
+lib/libheimbase.so
+lib/libheimbase.so.1
 %%SQLITE%%lib/libheimsqlite.a
 %%SQLITE%%lib/libheimsqlite.la
 %%SQLITE%%lib/libheimsqlite.so
