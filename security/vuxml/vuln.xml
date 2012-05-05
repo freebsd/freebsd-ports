@@ -60,6 +60,7 @@ Note:  Please add new entries to the beginning of this file.
 	<range><gt>5.4</gt><lt>5.4.2</lt></range>
 	<range><lt>5.3.12</lt></range>
       </package>
+      <package>
 	<name>php53</name>
 	<range><lt>5.3.12</lt></range>
       </package>
@@ -78,7 +79,8 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://www.php.net/archive/2012.php#id2012-05-03-1">
 	  <p>Security Enhancements and Fixes in PHP 5.3.12:</p>
 	  <ul>
-	    <li>Initial fix for cgi-bin ?-s cmdarg parse issue (CVE-2012-1823)</li>
+	    <li>Initial fix for cgi-bin ?-s cmdarg parse issue
+	      (CVE-2012-1823)</li>
 	  </ul>
 	</blockquote>
       </body>
