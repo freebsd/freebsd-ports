@@ -18,4 +18,10 @@ LICENSE=	BSD
 PLIST_FILES=	bin/dfc
 MAN1=		dfc.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
+.include <bsd.port.post.mk>
