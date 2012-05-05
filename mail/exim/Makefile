@@ -188,18 +188,18 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-kas
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 .endif
 
-SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS},' \
-		-e 's,XX_PREFIX_XX,${PREFIX},' \
-		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
-		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH},' \
-		-e 's,XX_CONFIG_FILE_PATH_XX,${CONFIG_FILE_PATH},' \
-		-e 's,XX_ALT_CONFIG_PREFIX_XX,${ALT_CONFIG_PREFIX},' \
-		-e 's,XX_EXIM_USER_XX,${EXIM_USER},' \
-		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
-		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
+SEDLIST+=	-e 's,XX_CFLAGS_XX,${CFLAGS:S/,/\\,/g},' \
+		-e 's,XX_PREFIX_XX,${PREFIX:S/,/\\,/g},' \
+		-e 's,XX_LOCALBASE_XX,${LOCALBASE:S/,/\\,/g},' \
+		-e 's,XX_LOG_FILE_PATH_XX,${LOG_FILE_PATH:S/,/\\,/g},' \
+		-e 's,XX_CONFIG_FILE_PATH_XX,${CONFIG_FILE_PATH:S/,/\\,/g},' \
+		-e 's,XX_ALT_CONFIG_PREFIX_XX,${ALT_CONFIG_PREFIX:S/,/\\,/g},' \
+		-e 's,XX_EXIM_USER_XX,${EXIM_USER:S/,/\\,/g},' \
+		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP:S/,/\\,/g},' \
+		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET:S/,/\\,/g},'
 
 .if defined(WITH_FIXED_NEVER_USERS)
-SEDLIST+=	-e 's,^(FIXED_NEVER_USERS=).*,\1${WITH_FIXED_NEVER_USERS},'
+SEDLIST+=	-e 's,^(FIXED_NEVER_USERS=).*,\1${WITH_FIXED_NEVER_USERS:S/,/\\,/g},'
 .endif
 
 .if defined(WITH_EXIMON)
@@ -230,7 +230,7 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 
 .if !defined(WITHOUT_ICONV)
 USE_ICONV=	yes
-SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE}/lib -liconv,' \
+SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -liconv,' \
 		-e 's,^\# (HAVE_ICONV=),\1,'
 .else
 SEDLIST+=	-e 's,XX_ICONV_LIBS_XX,,'
@@ -249,9 +249,9 @@ WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=	yes
 LDAP_LIB_TYPE=	OPENLDAP2
-SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE}/lib -llber -lldap,' \
-		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE}/include,' \
-		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
+SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -llber -lldap,' \
+		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include,' \
+		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE:S/,/\\,/g},' \
 		-e 's,^\# (LOOKUP_LDAP=),\1,'
 .else
 SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
@@ -278,8 +278,8 @@ DB_LIBS=
 DB_INCLUDES=
 SEDLIST+=	-e 's,^(DBMLIB=),\# \1,'
 .endif
-SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
-		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
+SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
+		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
 .if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:L} != "auto"
 WANT_MYSQL_VER=	${WITH_MYSQL_VER}
@@ -289,8 +289,8 @@ WANT_MYSQL_VER=	${WITH_MYSQL_VER}
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE}/lib/mysql -lmysqlclient,' \
-		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE}/include/mysql,' \
+SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -lmysqlclient,' \
+		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include/mysql,' \
 		-e 's,^\# (LOOKUP_MYSQL=),\1,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
@@ -299,7 +299,7 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .if defined(WITH_SASLAUTHD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 SASLAUTHD_SOCKET?=	/var/run/saslauthd/mux
-SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=).*,\1${SASLAUTHD_SOCKET},'
+SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=).*,\1${SASLAUTHD_SOCKET:S/,/\\,/g},'
 .endif
 
 .if !defined(WITHOUT_PAM)
@@ -339,8 +339,8 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADLIB,'
 .elif ${WITH_RADIUS_TYPE:L} == radiusclient
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
-SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient-ng,' \
-		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/etc/radiusclient-ng/radiusclient.conf,' \
+SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lradiusclient-ng,' \
+		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE:S/,/\\,/g}/etc/radiusclient-ng/radiusclient.conf,' \
 		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENTNEW,'
 .else
 IGNORE=		the variable WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
@@ -351,8 +351,8 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE}/lib -lpq,' \
-		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE}/include/pgsql,' \
+SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib -lpq,' \
+		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE:S/,/\\,/g}/include/pgsql,' \
 		-e 's,^\# (LOOKUP_PGSQL=),\1,'
 .else
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
@@ -422,7 +422,7 @@ SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .if defined(WITH_SPF)
 LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
-		-e 's,XX_SPF_LIBS_XX,-lspf2 ${PTHREAD_LIBS},' \
+		-e 's,XX_SPF_LIBS_XX,-lspf2 ${PTHREAD_LIBS:S/,/\\,/g},' \
 		-e 's,^\# (EXPERIMENTAL_SPF=),\1,'
 .else
 SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
