@@ -57,15 +57,19 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>php5</name>
+	<range><gt>5.4</gt><lt>5.4.2</lt></range>
+	<range><lt>5.3.12</lt></range>
+      </package>
+	<name>php53</name>
 	<range><lt>5.3.12</lt></range>
       </package>
       <package>
 	<name>php4</name>
-	<range><lt>5.3</lt></range>
+	<range><lt>4.4.10</lt></range>
       </package>
       <package>
 	<name>php52</name>
-	<range><lt>5.3</lt></range>
+	<range><lt>5.2.17_8</lt></range>
       </package>
     </affects>
     <description>
