@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.4.7
+PORTVERSION=	3.4.9
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/ \
 		LOCAL/sunpoet
