@@ -42,14 +42,12 @@ ELISPDIR=	share/emacs/site-lisp
 LINK=		gtkmidi
 
 USE_GNOME=	gtk12
-USE_XLIB=	yes
 .endif
 
 .if ${INTERFACE} == "motif"
 LINK=		xmmidi
 
 USE_MOTIF=	yes
-USE_XLIB=	yes
 
 CONFIGURE_ENV+=	MOTIFLIB="${MOTIFLIB}"
 .endif
@@ -66,7 +64,7 @@ LIB_DEPENDS+=	slang.2:${PORTSDIR}/japanese/libslang
 .if ${INTERFACE} == "tcltk"
 LINK=		tkmidi
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 DOCFILES=	README.tk
 DOCLANG=	C ja_JP.eucJP
@@ -92,8 +90,7 @@ CONFIGURE_ENV+=	WISH=wish8.4
 LINK=		xawmidi
 
 LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-
-USE_XLIB=	yes
+USE_XORG=	xaw
 
 DOCFILES=	README.xaw
 DOCLANG=	C ja_JP.eucJP
@@ -103,7 +100,7 @@ DOCLANG=	C ja_JP.eucJP
 .if ${INTERFACE} == "xskin"
 LINK=		xskinmidi
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 DOCFILES=	README.xskin
 DOCLANG=	C ja_JP.eucJP
