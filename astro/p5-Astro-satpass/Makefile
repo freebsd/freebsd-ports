@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-satpass
-PORTVERSION=	0.049
+PORTVERSION=	0.050
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -31,15 +31,16 @@ CONFIGURE_ARGS=	-y
 PERL_CONFIGURE=	yes
 
 MAN1=		satpass.1
-MAN3=		Astro::Coord::ECI::Utils.3 \
+MAN3=		Astro::Coord::ECI.3 \
+		Astro::Coord::ECI::Mixin.3 \
+		Astro::Coord::ECI::Moon.3 \
+		Astro::Coord::ECI::OVERVIEW.3 \
+		Astro::Coord::ECI::Star.3 \
+		Astro::Coord::ECI::Sun.3 \
+		Astro::Coord::ECI::TLE.3 \
 		Astro::Coord::ECI::TLE::Iridium.3 \
 		Astro::Coord::ECI::TLE::Set.3 \
-		Astro::Coord::ECI::TLE.3 \
-		Astro::Coord::ECI::Star.3 \
-		Astro::Coord::ECI::OVERVIEW.3 \
-		Astro::Coord::ECI::Moon.3 \
-		Astro::Coord::ECI::Sun.3 \
-		Astro::Coord::ECI.3
+		Astro::Coord::ECI::Utils.3
 
 .include <bsd.port.options.mk>
 
