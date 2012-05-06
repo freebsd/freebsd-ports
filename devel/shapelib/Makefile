@@ -7,24 +7,20 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		ftp://ftp.remotesensing.org/shapelib/ \
 		LOCAL/sunpoet
-DISTNAME=	${PORTNAME}-${SHAPELIB_VER}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${SHAPELIB_VER}
 
 OPTIONS=	DEBUG "Debugging" off \
 		PROJ "Cartographic Projections library" off
-
-SHAPELIB_VER=	${PORTVERSION}b3
 
 .include <bsd.port.options.mk>
 
@@ -45,10 +41,11 @@ PROJ=		-DNO_PROJ4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
+# Ref: /usr/share/mk/bsd.endian.mk
+.if ${ARCH} == "amd64" || ${ARCH} == "arm" || ${ARCH} == "i386" || ${ARCH} == "ia64"
 ENDIAN=		-D_LITTLE_ENDIAN
 .else
-ENDIAN=		-D_BIG_ENDIAN	# powerpc & sparc64
+ENDIAN=		-D_BIG_ENDIAN	# mips*eb, powerpc, powerpc64 and sparc
 .endif
 
 post-patch:
@@ -58,13 +55,6 @@ post-patch:
 		-e 's|%%ENDIAN%%|${ENDIAN}|g' \
 		-e 's|%%PROJ%%|${PROJ}|g' \
 			${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile
-#.if defined(WITH_PROJ)
-#	@${REINPLACE_CMD} -e '/^all:/ s|$$| contrib_tools|' ${WRKSRC}/Makefile
-#.endif
-
-#		-e 's#%%INSTALL%%#${INSTALL}#g' \
-#		-e 's#%%INSTALL_PROGRAM%%#${INSTALL_PROGRAM}#g' \
-#		-e 's#%%PREFIX%%#${PREFIX}#g' \
 
 post-install:
 	${LN} -s libshp.so.1 ${PREFIX}/lib/libshp.so
