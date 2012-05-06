@@ -1149,6 +1149,7 @@
     SUBDIR += py-twistedLore
     SUBDIR += py-wicked
     SUBDIR += py-wordnet
+    SUBDIR += py-wtforms
     SUBDIR += py-xlrd
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
