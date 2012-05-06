@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.2.2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://distfiles.atheme.org/
+MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
@@ -18,10 +17,11 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--disable-pulse --disable-coreaudio
+CONFIGURE_ARGS=	--disable-pulse --disable-mpris2
 WANT_GNOME=	yes
 WANT_EFL=	yes
 WANT_SDL=	yes
@@ -30,10 +30,10 @@ PORTDOCS=	AUTHORS
 
 # no ports for:
 #		PULSE		"Enable PulseAudio output plugin"	on \
-#		COREAUDIO	"Enable CoreAudio output plugin"	on \
+#		FFAUDIO         "Enable FFAUDIO input plugin"           off \
 
 OPTIONS=	DBUS		"Enable dbus support"			on  \
-		OSS		"Enable OSS output plugin"		on  \
+		OSS		"Enable OSS output plugin"		off  \
 		OSS4		"Enable OSS4 output plugin"		off \
 		SDLOUT		"Enable SDL output plugin"		off \
 		ALSA		"Enable ALSA output plugin"		off \
@@ -45,7 +45,6 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		ADPLUG		"Enable AdPlug plugin"			off \
 		VORBIS		"Enable Ogg Vorbis input plugin"	off \
 		FLAC		"Enable FLAC input plugin"		off \
-		FFAUDIO         "Enable FFAUDIO input plugin"           off \
 		WAVPACK 	"Enable WavPack input plugin"		off \
 		AAC		"Enable aac plugin"			on  \
 		SNDFILE 	"Enable sndfile extensions"		off \
@@ -60,10 +59,9 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		SMB		"Enable SMB transport plugin"		off \
 		MTP		"Enable MTP upload support"             off \
 		NLS		"Native Language Support"		on  \
-		RESAMPLE	"Enable resample support"		off\
+		RESAMPLE	"Enable resample support"		off \
 		AMIDI		"Enable amidi support"			off \
 		NOTIFY		"Enable libnotify support"		off \
-		OPENAL		"Enable OpenAL support"			off \
 		BS2B		"Enable Bauer stereophonic-to-binaural (bs2b) support" off
 
 .include <bsd.port.pre.mk>
@@ -80,14 +78,14 @@ CONFIGURE_ARGS+=--disable-sdlout
 .if defined(WITH_NOTIFY) || exists(${LOCALBASE}/lib/libnotify.so.1)
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
-PLIST_SUB+=     NOTIFY=""
+PLIST_SUB+=		NOTIFY=""
 .else
 PLIST_SUB+=	NOTIFY="@comment "
 CONFIGURE_ARGS+=--disable-notify
 .endif
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=   dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-gnomeshortcuts
 PLIST_SUB+=	DBUS=""
 .else
@@ -167,14 +165,15 @@ CONFIGURE_ARGS+=--disable-flacng --disable-filewriter_flac
 PLIST_SUB+=	FLACPLUGIN="@comment "
 .endif
 
-.if defined(WITH_FFAUDIO)
-LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=--enable-ffaudio
-PLIST_SUB+=	FFAUDIOPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-ffaudio
-PLIST_SUB+=	FFAUDIOPLUGIN="@comment "
-.endif
+# Needs a newer version of ffmpeg
+#.if defined(WITH_FFAUDIO)
+#LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+#CONFIGURE_ARGS+=--enable-ffaudio
+#PLIST_SUB+=	FFAUDIOPLUGIN=""
+#.else
+#CONFIGURE_ARGS+=--disable-ffaudio
+#PLIST_SUB+=	FFAUDIOPLUGIN="@comment "
+#.endif
 
 .if defined(WITH_WAVPACK)
 LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
@@ -297,10 +296,10 @@ PLIST_SUB+=	MTPPLUGIN="@comment "
 .if !defined(WITHOUT_RESAMPLE)
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-resample
-PLIST_SUB+=     RESAMPLEPLUGIN=""
+PLIST_SUB+=		RESAMPLEPLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-resample
-PLIST_SUB+=     RESAMPLEPLUGIN="@comment "
+PLIST_SUB+=		RESAMPLEPLUGIN="@comment "
 .endif
 
 .if defined(WITH_ALSA)
@@ -331,15 +330,6 @@ PLIST_SUB+=	AMIDIAPLUGIN="@comment "
 PLIST_SUB+=	AMIDIPLUGIN="@comment "
 .endif
 
-.if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal
-CONFIGURE_ARGS+=--enable-openal
-PLIST_SUB+=	OPENALPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-openal
-PLIST_SUB+=	OPENALPLUGIN="@comment "
-.endif
-
 .if defined(WITH_BS2B)
 LIB_DEPENDS+=	bs2b.0:${PORTSDIR}/audio/libbs2b
 CONFIGURE_ARGS+=--enable-bs2b
@@ -368,7 +358,6 @@ CONFIGURE_ARGS+=--disable-smb
 PLIST_SUB+=	SMBPLUGIN="@comment "
 .endif
 
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
@@ -384,19 +373,6 @@ pre-everything::
 	@${ECHO_CMD} "Make sure you select the PARANOIA option when installing libcdio!"
 	@${ECHO_CMD} ""
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
-		s| -ldl||g ; \
-		s|1.9.7|0.120.1|g ; \
-		s|OSS_LIBS="-lossaudio"|OSS_LIBS=""|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
-		${WRKSRC}/src/neon/cert_verification.c \
-		${WRKSRC}/src/usf/memory.c
-	@${REINPLACE_CMD} -e 's|-ldl||g' \
-		${WRKSRC}/src/ladspa/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/lib/|${LOCALBASE}/lib/|g' \
-		${WRKSRC}/src/oss4/Makefile
 
 pre-configure:
 .if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)

@@ -6,33 +6,36 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://distfiles.atheme.org/
-MASTER_SITE_SUBDIR=oliver
+MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
-
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_XORG=	x11 sm
-USE_GNOME=	gtk20 libglade2
-USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-gtk3
-
-MAN1=		audacious.1 audtool.1
 
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
 		mowgli.2:${PORTSDIR}/devel/libmowgli \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-PORTDOCS=	README AUTHORS NEWS
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_XORG=	x11 sm
+USE_BZIP2=	yes
+USE_GNOME=	gtk20 libglade2
+USE_LDCONFIG=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	CHARSET	"Build with automatic charset detection"	off \
-		DBUS	"Build with dbus support"			on  \
+CONFIGURE_ARGS=	--disable-gtk3 --disable-chardet
+
+MAN1=		audacious.1 audtool.1
+
+PORTDOCS=	README AUTHORS
+
+# no ports for:
+#		CHARSET	"Build with automatic charset detection"	off \
+
+OPTIONS=	DBUS	"Build with dbus support"			on  \
 		GNOME	"Build with gconf support"			off \
 		ICONV	"Build with iconv support"			on \
 		NLS	"Native Language Support"			on  \
@@ -48,10 +51,6 @@ PLIST_SUB+=	WITH_DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
-.endif
-
-.if !defined(WITH_CHARSET)
-CONFIGURE_ARGS+=--disable-chardet
 .endif
 
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
@@ -83,20 +82,6 @@ CONFIGURE_ARGS+=--disable-sse2
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|CPPFLAGS +=\(.*\)|CPPFLAGS =\1 -I${LOCALBASE}/include|g' \
-		${WRKSRC}/src/libaudgui/Makefile \
-		${WRKSRC}/src/libaudtag/Makefile \
-		${WRKSRC}/src/libaudcore/Makefile
-	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|g; \
-		s|OUTPUT_PLUGIN_INIT_FOUND_DEVICES,|OUTPUT_PLUGIN_INIT_FOUND_DEVICES|g' \
-		${WRKSRC}/src/audacious/plugin.h
-	@${REINPLACE_CMD} 's|VALUE_NULL,|VALUE_NULL|g' \
-		${WRKSRC}/src/audacious/preferences.h
-	@${REINPLACE_CMD} 's|glib-2\.0/||g' \
-		${WRKSRC}/src/libaudtag/util.h \
-		${WRKSRC}/src/libaudtag/wma/guid.c \
-		${WRKSRC}/src/libaudtag/wma/wma.c \
-		${WRKSRC}/src/libaudtag/wma/wma_fmt.h
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
 	@${REINPLACE_CMD} 's|$${REGEX_LIBS}|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile
