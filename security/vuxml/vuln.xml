@@ -273,11 +273,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <freebsdsa/>
+      <mlist>http://web.archiveorange.com/archive/v/6ETvLYPz7CfFT9tiHKiI</mlist>
+      <mlist>http://www.freebsd.org/cgi/getmsg.cgi?fetch=100677+0+/usr/local/www/db/text/2012/cvs-ports/20120506.cvs-ports</mlist>
     </references>
     <dates>
       <discovery>2012-04-30</discovery>
       <entry>2012-04-30</entry>
+      <modified>2012-05-06</modified>
     </dates>
   </vuln>
 
