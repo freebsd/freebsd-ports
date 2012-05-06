@@ -1,3 +1,5 @@
+$FreeBSD$
+
 ### Eclipse Workspace Patch 1.0
 #P eclipse-build-config
 Index: build.properties.in

@@ -17,16 +17,18 @@ Index: build.xml
 ===================================================================
 --- build.xml	(revision 23733)
 +++ build.xml	(working copy)
-@@ -130,6 +130,7 @@
+@@ -131,7 +131,8 @@
  		<ant inheritall="false" antfile="pdebuild.xml">
  			<property name="buildId" value="${buildId}" />
  			<property name="buildArch" value="${buildArch}" />
+-			<property name="buildDirectory" value="../../" />
 +			<property name="buildOs" value="${buildOs}" />
++			<property name="buildDirectory" value="../../" />
  		</ant>
  	</target>
  
-@@ -315,7 +316,10 @@
- 		<!-- end back-ported patches -->
+@@ -312,7 +313,10 @@
+ 		<!-- end eclipse-build-only patches -->
  		<!-- Only build for one target (bug #293952) -->
  		<copy file="${buildConfigs}/eclipse-build-config/build.properties.in" tofile="${buildConfigs}/eclipse-build-config/build.properties" />
 -		<replace file="${buildConfigs}/eclipse-build-config/build.properties" token="@build_arch@" value="${buildArch}" />
@@ -34,9 +36,9 @@ Index: build.xml
 +			<replacefilter token="@build_arch@" value="${buildArch}" />
 +			<replacefilter token="@build_os@" value="${buildOs}" />
 +		</replace>
- 		<patch patchfile="${basedir}/patches/java-home.patch" dir="${buildDirectory}" strip="2" />
+ 		<patch patchfile="${basedir}/patches/eclipse-core-resources-compilation-profile.patch" dir="${buildDirectory}" strip="0" />
+ 		<patch patchfile="${basedir}/patches/eclipse-equinox-util.patch" dir="${buildDirectory}" strip="0" />
  		<echo file="patch-stamp" />
- 	</target>
 @@ -399,6 +403,7 @@
  		<!--
  		<ant antfile="build.xml" dir="${eclipse.pdebuild.scripts}">
@@ -121,6 +123,15 @@ Index: build.xml
  			<param name="p2.ws" value="gtk" />
  			<param name="p2.arch" value="${buildArch}" />
  			<param name="p2.repo" value="${reposource}" />
+@@ -750,7 +753,7 @@
+ 			<param name="p2.director.profile" value="${profileName}" />
+ 			<param name="p2.director.install.path" value="${provisionDir}" />
+ 			<param name="p2.director.extraArgs" value="-profileProperties org.eclipse.update.install.features=true" />
+-			<param name="p2.os" value="linux" />
++			<param name="p2.os" value="${buildOs}" />
+ 			<param name="p2.ws" value="gtk" />
+ 			<param name="p2.arch" value="${buildArch}" />
+ 			<param name="p2.repo" value="${reposource}" />
 @@ -800,6 +806,8 @@
  		-->
  		<exec executable="${basedir}/runtests.sh" dir="${basedir}">
@@ -139,20 +150,29 @@ Index: build.xml
  		<property name="swtjarpath" refid="swtjar" />
  		<symlink link="${installationDir}/swt-gtk-${label}.jar" resource="plugins/${swtjarpath}" />
  		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" />
+@@ -1061,7 +1074,7 @@
+                         <param name="p2.director.profile" value="PlatformProfile" />
+                         <param name="p2.director.install.path" value="${installationDir}" />
+                         <param name="p2.director.extraArgs" value="-purgeHistory" />
+-			<param name="p2.os" value="linux" />
++			<param name="p2.os" value="${buildOs}" />
+                         <param name="p2.ws" value="gtk" />
+                         <param name="p2.arch" value="${buildArch}" />
+                         <param name="p2.repo" value="${installationDir}" />
 Index: pdebuild.xml
 ===================================================================
 --- pdebuild.xml	(revision 23733)
 +++ pdebuild.xml	(working copy)
-@@ -78,7 +78,7 @@
- 		<file name="org.eclipse.help.base" />
- 	</filelist>
- 	<filelist id="depsDirs2" dir="${sdkSource}/plugins">
--		<file name="org.eclipse.swt.gtk.linux.${buildArch}" />
-+		<file name="org.eclipse.swt.gtk.${buildOs}.${buildArch}" />
- 		<file name="org.eclipse.core.filesystem" />
- 		<file name="org.eclipse.core.resources" />
- 		<file name="org.eclipse.core.commands" />
-@@ -164,12 +164,14 @@
+@@ -88,7 +88,7 @@
+ 	<filelist id="helpDirs" dir="${sdkSource}/plugins" files="${helpDirsProperty}"/>
+ 	
+ 	<property name="depsDirs2Property"
+-		value="org.eclipse.swt.gtk.linux.${buildArch}
++		value="org.eclipse.swt.gtk.${buildOs}.${buildArch}
+ 		       org.eclipse.core.filesystem
+ 		       org.eclipse.core.resources
+ 		       org.eclipse.core.commands
+@@ -214,12 +214,14 @@
  		<subant>
  			<property name="buildId" value="${buildId}" />
  			<property name="buildArch" value="${buildArch}" />
@@ -167,14 +187,27 @@ Index: pdebuild.xml
  			<property file="pdebuild.properties" />
  			<filelist refid="helpDirs" />
  		</subant>
-@@ -195,6 +197,7 @@
+@@ -245,6 +247,7 @@
  			<arg line="-application org.eclipse.ant.core.antRunner " />
  			<arg line="-buildfile ../pdebuild.xml generateScripts2" />
  			<arg line="-DbuildArch=${buildArch} " />
 +			<arg line="-DbuildOs=${buildOs} " />
  			<arg line="-DbuildId=${buildId} " />
- 			<arg line="-debug -consolelog " />
+ 			<arg line="-debug -consolelog" />
  		</java>
+@@ -287,10 +288,10 @@
+ 	<target name="removeGeneratedBuildXMLs" depends="zipPlugins2">
+ 		<fileset id="buildXMLsToKeep" dir="${sdkSource}/plugins"
+ 			excludes="**/org.eclipse.swt.gtk.*/*,
+-			**/org.eclipse.update.core.linux/**/*,
++			**/org.eclipse.update.core.${buildOs}/**/*,
+ 			**/org.eclipse.pde.build/scripts/*,
+ 			**/org.eclipse.jdt.core/scripts/*,
+-			**/org.eclipse.update.core.linux/src/*,
++			**/org.eclipse.update.core.${buildOs}/src/*,
+ 			**/org.eclipse.jdt.doc.isv/*,
+ 			**/org.eclipse.swt/*,
+ 			**/org.eclipse.jdt.doc.user/*"
 Index: publishProduct.xml
 ===================================================================
 --- publishProduct.xml	(revision 23733)
@@ -310,3 +343,15 @@ Index: runtests.sh
           h)
               usage
               exit 1
+--- task-src/org/eclipse/linuxtools/eclipsebuild/SymlinkNonOSGiJars.java~	Thu Feb 25 21:14:10 2010
++++ task-src/org/eclipse/linuxtools/eclipsebuild/SymlinkNonOSGiJars.java	Fri Nov  5 11:39:46 2010
+@@ -36,8 +36,8 @@
+     	for (Iterator<Object> jarIter = jarLocations.iterator(); jarIter.hasNext();) {
+ 			
+     		String origLocation = (String) jarIter.next();
+ 			
+-			String systemLocations = (String) dependencies.get(origLocation);
++			String systemLocations = getProject().replaceProperties((String) dependencies.get(origLocation));
+ 			String[] systemLocationList = systemLocations.split(":");
+ 			String attemptedLocations = "";
+ 			for (int j = 0; j < systemLocationList.length; j++) {
