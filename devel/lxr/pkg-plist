@@ -8,13 +8,12 @@
 %%LXRDIR%%/initdb-mysql
 %%LXRDIR%%/upgrade-0.9.10-postgres
 %%LXRDIR%%/upgrade-0.9.10-mysql
-%%LXRDIR%%/templates/html-head-btn.html
 %%LXRDIR%%/templates/valid-html401.png
-%%LXRDIR%%/templates/diff-head-btn.html
+%%LXRDIR%%/templates/vcss
+%%LXRDIR%%/templates/html-head-btn.html
 %%LXRDIR%%/templates/html-fatal.html
 %%LXRDIR%%/templates/html-dir.html
 %%LXRDIR%%/templates/html-head.html
-%%LXRDIR%%/templates/html-ident-refs.html
 %%LXRDIR%%/templates/html-ident.html
 %%LXRDIR%%/templates/html-search-glimpse.html
 %%LXRDIR%%/templates/html-search-swish.html
@@ -39,8 +38,10 @@
 %%SITE_PERL%%/LXR/Files.pm
 %%SITE_PERL%%/LXR/Index.pm
 %%SITE_PERL%%/LXR/Lang.pm
+%%SITE_PERL%%/LXR/Markup.pm
 %%SITE_PERL%%/LXR/SimpleParse.pm
 %%SITE_PERL%%/LXR/Tagger.pm
+%%SITE_PERL%%/LXR/Template.pm
 %%SITE_PERL%%/LXR/Index/Mysql.pm
 %%SITE_PERL%%/LXR/Index/DBI.pm
 %%SITE_PERL%%/LXR/Index/Oracle.pm
