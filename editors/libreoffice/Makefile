@@ -91,8 +91,6 @@ USE_GMAKE=	yes
 USE_BISON=	build
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
-WANT_PGSQL_VER=	90+
-USE_PGSQL=	yes
 
 USE_XORG=	xaw xrandr
 USE_GL=		gl glu
@@ -109,7 +107,8 @@ OPTIONS=	WEBDAV	"Support webdav protocol" off \
 		MMEDIA	"Enable multimedia backend for impress" off \
 		SDK	"Build with SDK" off \
 		SVG	"Enable SVG support" on \
-		DEBUG	"Build with debug symbols and verbose output" off
+		DEBUG	"Build with debug symbols and verbose output" off \
+		PGSQL	"Build with PostgreSQL-SDBC driver" on
 
 CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
 			DMAKE=${LOCALBASE}/bin/dmake \
@@ -238,6 +237,12 @@ MAKE_ENV+=	USE_GMAKE=1 DESTDIR=${LODESTDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER}
 
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+WANT_PGSQL_VER=	90+
+.else
+CONFIGURE_ARGS+=	--disable-postgresql-sdbc
+.endif
 .if defined(WITHOUT_SYSTRAY)
 CONFIGURE_ARGS+=	--disable-systray
 .endif
