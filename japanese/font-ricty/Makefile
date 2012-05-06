@@ -10,7 +10,7 @@ PORTVERSION=	3.2.0
 PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://nodeload.github.com/yascentur/Ricty/tarball/${PORTVERSION}?dummy=/
-PKGNAMEPREFIX= ja-font-
+PKGNAMEPREFIX=	ja-font-
 
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	Ricty - fonts for programming
@@ -42,10 +42,10 @@ OPTIONS=	DISCORD "Install Ricty-Discord" On
 
 .if defined(WITH_DISCORD)
 PLIST_SUB+=	DISCORD=""
-SUB_LIST+= DISCORD=""
+SUB_LIST+=	DISCORD=""
 .else
 PLIST_SUB+=	DISCORD="@comment "
-SUB_LIST+= DISCORD="#"
+SUB_LIST+=	DISCORD="#"
 .endif
 
 do-build:
