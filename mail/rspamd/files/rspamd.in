@@ -43,7 +43,7 @@ stop_postcmd="rm -f $rspamd_pidfile"
 rspamd_checkconfig()
 {
         echo "Performing sanity check on rspamd configuration:"
-        eval ${command} -t
+        eval ${command} ${command_args} -t
 }
 
 reopenlog_cmd()
