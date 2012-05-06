@@ -1374,6 +1374,7 @@
     SUBDIR += pelican
     SUBDIR += perlbal
     SUBDIR += pglogd
+    SUBDIR += phalcon
     SUBDIR += photo_gallery
     SUBDIR += php-dyn
     SUBDIR += php-plurk-api
