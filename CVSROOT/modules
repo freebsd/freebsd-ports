@@ -3478,6 +3478,7 @@ fi-acroread8                    ports/print/fi-acroread8
 fi-aspell                       ports/textproc/fi-aspell
 fib                             ports/devel/fib
 ficl                            ports/lang/ficl
+fidocadj                        ports/cad/fidocadj
 fidogate                        ports/news/fidogate
 fidogate-ds                     ports/news/fidogate-ds
 fig2sxd                         ports/graphics/fig2sxd
@@ -13721,6 +13722,7 @@ p5-Net-OpenID-Consumer          ports/net/p5-Net-OpenID-Consumer
 p5-Net-OpenID-JanRain           ports/security/p5-Net-OpenID-JanRain
 p5-Net-OpenID-Server            ports/security/p5-Net-OpenID-Server
 p5-Net-OpenSSH                  ports/net/p5-Net-OpenSSH
+p5-Net-OpenSSH-Parallel         ports/net/p5-Net-OpenSSH-Parallel
 p5-Net-POP3-SSLWrapper          ports/mail/p5-Net-POP3-SSLWrapper
 p5-Net-Packet                   ports/net/p5-Net-Packet
 p5-Net-Packet-Target            ports/net/p5-Net-Packet-Target
@@ -18251,6 +18253,7 @@ p5-net-openid-consumer          ports/net/p5-Net-OpenID-Consumer
 p5-net-openid-janrain           ports/security/p5-Net-OpenID-JanRain
 p5-net-openid-server            ports/security/p5-Net-OpenID-Server
 p5-net-openssh                  ports/net/p5-Net-OpenSSH
+p5-net-openssh-parallel         ports/net/p5-Net-OpenSSH-Parallel
 p5-net-oscar                    ports/net-im/p5-Net-OSCAR
 p5-net-packet                   ports/net/p5-Net-Packet
 p5-net-packet-target            ports/net/p5-Net-Packet-Target
