@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://granch.ru/pub/kavmilter/
 MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Sendmail antivirus filter, based on Kaspersky Antivirus and Milter API
 
+DEPRECATED=	Required files no longer available, obsolete software
+EXPIRATION_DATE=	2012-06-06
+
 .if !exists(/usr/lib/libmilter.a)
 IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
