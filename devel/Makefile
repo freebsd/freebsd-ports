@@ -4005,6 +4005,7 @@
     SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += ustl
+    SUBDIR += uthash
     SUBDIR += valgrind
     SUBDIR += valgrind-snapshot
     SUBDIR += valide
