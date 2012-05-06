@@ -196,6 +196,7 @@
     SUBDIR += fortytwo
     SUBDIR += fotofix
     SUBDIR += fotoxx
+    SUBDIR += founts
     SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-fpvectorial
