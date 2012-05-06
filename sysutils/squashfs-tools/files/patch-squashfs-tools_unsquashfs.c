@@ -1,10 +1,16 @@
 $FreeBSD$
 
---- unsquashfs.c	2009-04-05 23:23:06.000000000 +0200
-+++ unsquashfs.c	2010-04-29 17:48:22.000000000 +0200
-@@ -26,6 +26,10 @@
- #include "squashfs_compat.h"
- #include "read_fs.h"
+--- unsquashfs.c.orig	2010-09-20 03:14:38.000000000 +0530
++++ unsquashfs.c	2010-09-29 09:34:43.000000000 +0530
+@@ -29,9 +29,16 @@
+ #include "compressor.h"
+ #include "xattr.h"
+ 
++#ifdef __linux__
+ #include <sys/sysinfo.h>
++#endif
++
+ #include <sys/types.h>
  
 +#ifdef __FreeBSD__
 +#include <sys/sysctl.h>
