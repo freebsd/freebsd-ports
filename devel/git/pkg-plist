@@ -186,6 +186,7 @@ libexec/git-core/git-verify-tag
 libexec/git-core/git-web--browse
 libexec/git-core/git-whatchanged
 libexec/git-core/git-write-tree
+libexec/git-core/mergetools/deltawalker
 libexec/git-core/mergetools/xxdiff
 libexec/git-core/mergetools/tortoisemerge
 libexec/git-core/mergetools/tkdiff
@@ -207,7 +208,13 @@ libexec/git-core/mergetools/araxis
 %%PERLSUB%%%%SITE_PERL%%/Git/I18N.pm
 lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/git-blame.el
+%%NLS%%share/locale/da/LC_MESSAGES/git.mo
+%%NLS%%share/locale/de/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/git.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/git.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/git.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 share/emacs/site-lisp/git/git.el
 share/emacs/site-lisp/git/git-blame.el
 share/git-core/templates/description
@@ -598,6 +605,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-string-list.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-xdiff-interface.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/shallow.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-config.html
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-grep.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/racy-git.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-tree-walking.html
@@ -888,12 +897,14 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.7.7.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.8.6.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.2.txt
@@ -901,11 +912,16 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.9.7.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.10.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-favicon.png
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-logo.png
+%%CONTRIB%%share/git-core/contrib/diffall/README
+%%CONTRIB%%share/git-core/contrib/diffall/git-diffall
 %%CONTRIB%%share/git-core/contrib/README
 %%CONTRIB%%share/git-core/contrib/blameview/README
 %%CONTRIB%%share/git-core/contrib/blameview/blameview.perl
@@ -1029,6 +1045,7 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
 %%CONTRIB%%@dirrm share/git-core/contrib/credential/osxkeychain
 %%CONTRIB%%@dirrm share/git-core/contrib/credential
+%%CONTRIB%%@dirrm share/git-core/contrib/diffall
 %%CONTRIB%%@dirrm share/git-core/contrib/diff-highlight
 %%CONTRIB%%@dirrm share/git-core/contrib/emacs
 %%CONTRIB%%@dirrm share/git-core/contrib/examples
