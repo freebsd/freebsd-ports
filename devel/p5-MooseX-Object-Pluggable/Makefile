@@ -7,6 +7,7 @@
 
 PORTNAME=	MooseX-Object-Pluggable
 PORTVERSION=	0.0011
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Make your classes pluggable
 
-RUN_DEPENDS=	p5-Moose>=0.35:${PORTSDIR}/devel/p5-Moose \
-	p5-Module-Pluggable>0:${PORTSDIR}/devel/p5-Module-Pluggable
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Moose>=0.35:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
