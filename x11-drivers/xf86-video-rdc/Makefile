@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-video-rdc
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.9
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.SpringDaemons.com/stas/
 
@@ -17,11 +16,6 @@ COMMENT=	X.Org RDC display driver
 #USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
-
-DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
-
-BROKEN=		does not compile
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/xorg/modules/drivers
