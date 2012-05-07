@@ -486,6 +486,7 @@
     SUBDIR += git-subversion
     SUBDIR += gitg
     SUBDIR += gitolite
+    SUBDIR += gitolite2
     SUBDIR += gittrac
     SUBDIR += gjstest
     SUBDIR += glade2
