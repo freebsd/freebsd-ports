@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: condor_master
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# condor_enable (bool):   Set to NO by default.
+#               Set it to YES to enable condor.
+#
+
+. /etc/rc.subr
+
+name="condor"
+rcvar=condor_enable
+
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${condor_enable="NO"}
+
+start_cmd=condor_start
+stop_cmd=condor_stop
+
+condor_start() {
+    checkyesno condor_enable && echo "Starting condor_master." && \
+	%%PREFIX%%/sbin/condor_master ${condor_flags}
+}
+
+condor_stop() {
+    checkyesno condor_enable && echo "Stopping condor_master." && \
+	%%PREFIX%%/sbin/condor_off -master
+}
+
+run_rc_command "$1"
