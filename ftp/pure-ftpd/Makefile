@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		SF/pureftpd/Pure-FTPd/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 SUB_FILES=	pkg-message
@@ -48,7 +48,7 @@ OPTIONS=	LDAP		"Support for users in LDAP directories" off \
 		ANONRENAME	"Allow anonymous user to rename file" off \
 		ANONDELETE	"Allow anonymous user to delete file" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # language support requested?
 .if defined(WITH_LANG)
@@ -190,4 +190,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
