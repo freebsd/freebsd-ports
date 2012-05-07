@@ -18,13 +18,16 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 
+LATEST_LINK=	gitolite2
+CONFLICTS=	gitolite-[^2]*
+
 USE_PERL5=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS=	GITUSER	"Create git user as gitolite provider" On
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_GITUSER)
 USERS=		git
@@ -83,4 +86,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
