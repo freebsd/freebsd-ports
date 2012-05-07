@@ -7,6 +7,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.zmaw.de/attachments/download/1833/ \
 		LOCAL/sunpoet
@@ -71,7 +72,7 @@ PLIST_SUB=	NETCDF="@comment "
 
 .if !defined(WITHOUT_PROJ)
 CONFIGURE_ARGS+=--with-proj=${LOCALBASE}
-LIB_DEPENDS+=	proj.6:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=	proj.7:${PORTSDIR}/graphics/proj
 .endif
 
 .if !defined(WITHOUT_SZIP)

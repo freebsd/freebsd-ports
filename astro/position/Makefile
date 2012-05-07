@@ -7,7 +7,7 @@
 
 PORTNAME=	position
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/position/ \
 		${MASTER_SITE_LOCAL}

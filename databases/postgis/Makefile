@@ -7,7 +7,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/ \
  		http://www.postgis.org/download/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://postgis.refractions.net/download/ \
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
-LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
+LIB_DEPENDS=	proj.7:${PORTSDIR}/graphics/proj \
 		geos.0:${PORTSDIR}/graphics/geos
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
