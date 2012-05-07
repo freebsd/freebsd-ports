@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 

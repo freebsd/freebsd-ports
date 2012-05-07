@@ -356,7 +356,7 @@ include/geos/util/UnsupportedOperationException.h
 include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
-lib/libgeos-3.3.1.so
+lib/libgeos-3.3.3.so
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
