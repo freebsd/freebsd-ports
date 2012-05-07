@@ -1,11 +1,30 @@
 ==============================================================================
 
-Final gitolite installation instructions:
+gitolite v2 -> v3 migration procedures:
+
+WARNING: gitolite v3 is NOT "API" compatible with gitolite v2. Any local
+modifications - hooks, scripts, ADCs, etc - must be migrated.
+
+Please refer to [0] or [1] before moving on.
+
+tl;dr:
+    Backup gitolite-admin repo
+    Remove old gitolite references (authorized_keys, rc file, gitolite-admin,
+        ~/.gitolite)
+    Preset rc file
+    Proceed with final instructions for setup
+    Push old gitolite-admin repo
+
+[0] http://sitaramc.github.com/gitolite/install.html#migr
+[1] http://sitaramc.github.com/gitolite/master-toc.html
+
+
+Final gitolite setup instructions:
 
 Any ssh user can be a gitolite provider. Simply run the following command as
 the user:
 
-%%PREFIX%%/bin/gl-setup /path/to/admin.ssh.key.pub
+%%PREFIX%%/bin/gitolite -pk /path/to/admin.ssh.key.pub
 
 This will setup up the configuration files for gitolite, designating where the
 repositories are located and other options.
