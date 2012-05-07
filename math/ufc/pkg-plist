@@ -1,0 +1,15 @@
+include/ufc.h
+libdata/pkgconfig/ufc-1.pc
+%%PYTHON_SITELIBDIR%%/ufc_utils/__init__.py
+%%PYTHON_SITELIBDIR%%/ufc_utils/build.py
+%%PYTHON_SITELIBDIR%%/ufc_utils/dofmap.py
+%%PYTHON_SITELIBDIR%%/ufc_utils/finite_element.py
+%%PYTHON_SITELIBDIR%%/ufc_utils/form.py
+%%PYTHON_SITELIBDIR%%/ufc_utils/function.py
+%%PYTHON_SITELIBDIR%%/ufc_utils/integrals.py
+%%DATADIR%%/UFCConfig.cmake
+%%DATADIR%%/UFCConfigVersion.cmake
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/ufc_utils
+@dirrm %%PYTHON_SITELIBDIR%%/ufc
+@dirrmtry include/swig

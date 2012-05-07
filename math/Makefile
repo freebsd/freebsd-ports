@@ -604,6 +604,7 @@
     SUBDIR += trlan
     SUBDIR += truthtable
     SUBDIR += tvmet
+    SUBDIR += ufc
     SUBDIR += umatrix
     SUBDIR += ump
     SUBDIR += units
