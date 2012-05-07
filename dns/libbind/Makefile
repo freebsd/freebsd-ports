@@ -7,6 +7,7 @@
 
 PORTNAME=	libbind
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
