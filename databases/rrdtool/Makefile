@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.7
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		png.6:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
-
-LICENSE=	GPLv2
 
 CONFLICTS=	rrdtool-1.0* rrdtool-1.2*
 
@@ -45,7 +45,6 @@ OPTIONS=	DEJAVU		"Use DejaVu fonts (requires X11)" off \
 		RUBY_MODULE	"Build RUBY bindings" off
 
 .include <bsd.port.options.mk>
-
 
 .if defined(WITH_PYTHON_MODULE)
 USE_PYTHON=	yes
