@@ -6,7 +6,7 @@
 #    $MCom: ports/graphics/wxsvg/Makefile,v 1.1 2006/09/22 01:48:33 ahze Exp $
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
