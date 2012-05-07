@@ -158,6 +158,7 @@
     SUBDIR += cube
     SUBDIR += cultivation
     SUBDIR += cursive
+    SUBDIR += cutemaze
     SUBDIR += cuyo
     SUBDIR += d2x
     SUBDIR += d2x-xl

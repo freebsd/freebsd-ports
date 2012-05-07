@@ -1,0 +1,37 @@
+bin/cutemaze
+share/applications/cutemaze.desktop
+share/icons/oxygen/16x16/application-exit.png
+share/icons/oxygen/16x16/document-new.png
+share/icons/oxygen/16x16/games-config-options.png
+share/icons/oxygen/16x16/games-highscores.png
+share/icons/oxygen/16x16/games-hint.png
+share/icons/oxygen/16x16/help-about.png
+share/icons/oxygen/16x16/media-playback-pause.png
+share/icons/oxygen/16x16/zoom-in.png
+share/icons/oxygen/16x16/zoom-out.png
+share/icons/oxygen/22x22/application-exit.png
+share/icons/oxygen/22x22/document-new.png
+share/icons/oxygen/22x22/games-config-options.png
+share/icons/oxygen/22x22/games-highscores.png
+share/icons/oxygen/22x22/games-hint.png
+share/icons/oxygen/22x22/help-about.png
+share/icons/oxygen/22x22/media-playback-pause.png
+share/icons/oxygen/22x22/zoom-in.png
+share/icons/oxygen/22x22/zoom-out.png
+share/icons/oxygen/LGPL
+share/icons/oxygen/scalable/application-exit.svgz
+share/icons/oxygen/scalable/document-new.svgz
+share/icons/oxygen/scalable/games-config-options.svgz
+share/icons/oxygen/scalable/games-highscores.svgz
+share/icons/oxygen/scalable/games-hint.svgz
+share/icons/oxygen/scalable/help-about.svgz
+share/icons/oxygen/scalable/media-playback-pause.svgz
+share/icons/oxygen/scalable/zoom-in.svgz
+share/icons/oxygen/scalable/zoom-out.svgz
+share/pixmaps/cutemaze.png
+@dirrm share/icons/oxygen/scalable
+@dirrm share/icons/oxygen/22x22
+@dirrm share/icons/oxygen/16x16
+@dirrm share/icons/oxygen
+@dirrmtry share/icons
+@dirrm share/applications
