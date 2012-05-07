@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	toilet
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	misc
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Enhanced figlet(6)
 
 LIB_DEPENDS=	caca.0:${PORTSDIR}/graphics/libcaca
