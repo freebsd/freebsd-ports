@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rgdal
-DISTVERSION=	0.7-8
-PORTREVISION=	3
+DISTVERSION=	0.7-10
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -19,7 +18,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	gdal.16:${PORTSDIR}/graphics/gdal \
 		proj.7:${PORTSDIR}/graphics/proj
-RUN_DEPENDS=	R-cran-sp>=0.9.60:${PORTSDIR}/math/R-cran-sp
+RUN_DEPENDS=	R-cran-sp>=0.9.99:${PORTSDIR}/math/R-cran-sp
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
