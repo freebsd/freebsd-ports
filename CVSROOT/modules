@@ -3724,6 +3724,7 @@ foswiki-modperlenginecontrib    ports/www/foswiki-ModPerlEngineContrib
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fotoxx                          ports/graphics/fotoxx
+founts                          ports/graphics/founts
 fowsr                           ports/astro/fowsr
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
@@ -21136,6 +21137,7 @@ pgtop                           ports/databases/pgtop
 pgtune                          ports/databases/pgtune
 pgworksheet                     ports/databases/pgworksheet
 phalanx                         ports/games/phalanx
+phalcon                         ports/www/phalcon
 phamm                           ports/net/phamm
 phantom                         ports/sysutils/phantom
 phantomjs                       ports/lang/phantomjs
@@ -23286,6 +23288,7 @@ py-wsgi_xmlrpc                  ports/devel/py-wsgi_xmlrpc
 py-wsgiauth                     ports/www/py-wsgiauth
 py-wsgitools                    ports/devel/py-wsgitools
 py-wsgiutils                    ports/devel/py-wsgiutils
+py-wtforms                      ports/textproc/py-wtforms
 py-wxPython24                   ports/x11-toolkits/py-wxPython24
 py-wxPython26                   ports/x11-toolkits/py-wxPython26
 py-wxPython26-common            ports/x11-toolkits/py-wxPython26-common
@@ -27189,6 +27192,7 @@ utcount                         ports/sysutils/utcount
 utf8proc                        ports/textproc/utf8proc
 utftools                        ports/misc/utftools
 utftpd                          ports/net/utftpd
+uthash                          ports/devel/uthash
 uticom                          ports/comms/uticom
 utopia                          ports/print/utopia
 utserver                        ports/games/utserver
