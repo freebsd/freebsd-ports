@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	4.7.0
+PORTVERSION=	4.8.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/proj/ \
 		http://download.osgeo.org/proj/
@@ -24,10 +24,14 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_ZIP=	yes
 
-MAN1=		cs2cs.1 geod.1 nad2nad.1 proj.1
+MAN1=		cs2cs.1 geod.1 proj.1
 MAN3=		pj_init.3
 
 post-extract:
 	@${UNZIP_CMD} -q ${DISTDIR}/${DATUM_GRID_FILES} -d ${WRKSRC}/nad
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
