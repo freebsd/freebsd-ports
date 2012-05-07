@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	volta
-DISTVERSION=	0.0.1
+DISTVERSION=	0.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://dl.dropbox.com/u/7234177/Releases/ \
 		http://projects.martini.nu/volta/chrome/site/
@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cdb:${PORTSDIR}/databases/tinycdb
 
 USE_GMAKE=	yes
+USE_LUA=	5.1
 ALL_TARGET=	${PORTNAME}
 NO_INSTALL=	yes
 
