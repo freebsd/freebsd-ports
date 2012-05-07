@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	open-cobol
-PORTVERSION=	1.0
-PORTREVISION=	5
+PORTVERSION=	1.1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -16,8 +15,6 @@ MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-
-CONFLICTS=	open-cobol-1.[1]*
 
 USE_BDB=	yes
 USE_GMAKE=	yes

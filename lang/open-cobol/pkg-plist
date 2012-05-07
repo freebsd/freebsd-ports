@@ -27,6 +27,8 @@ lib/libcob.so.1
 %%DATADIR%%/config/ibm.conf
 %%DATADIR%%/config/mf.conf
 %%DATADIR%%/config/mvs.conf
+%%DATADIR%%/copy/screenio.cpy
+@dirrm %%DATADIR%%/copy
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
 @dirrm include/libcob
