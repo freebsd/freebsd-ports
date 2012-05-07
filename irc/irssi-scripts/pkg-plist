@@ -171,6 +171,7 @@ share/irssi/scripts/linkchan.pl
 share/irssi/scripts/listen.pl
 share/irssi/scripts/loadavg.pl
 share/irssi/scripts/localize.pl
+share/irssi/scripts/logresume.pl
 share/irssi/scripts/log2ansi.pl
 share/irssi/scripts/logcompress.pl
 share/irssi/scripts/ls.pl
@@ -216,7 +217,6 @@ share/irssi/scripts/norepeat.pl
 share/irssi/scripts/noteserve.pl
 share/irssi/scripts/noticemove.pl
 share/irssi/scripts/notonline.pl
-share/irssi/scripts/null.pl
 share/irssi/scripts/ogg123.pl
 share/irssi/scripts/oidenty.pl
 share/irssi/scripts/on.pl
@@ -281,6 +281,7 @@ share/irssi/scripts/sms.pl
 share/irssi/scripts/snmpup.pl
 share/irssi/scripts/spambot.pl
 share/irssi/scripts/special_complete.pl
+share/irssi/scripts/spellcheck.pl
 share/irssi/scripts/sping.pl
 share/irssi/scripts/stocks.pl
 share/irssi/scripts/synccheck.pl
