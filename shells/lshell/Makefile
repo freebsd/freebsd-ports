@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lshell
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15.1
 CATEGORIES=	shells
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.15/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Shell environment to limited sets of commands to user's
