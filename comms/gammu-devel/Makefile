@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.29.92
+PORTVERSION=	1.31.90
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -15,11 +15,11 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities - Development version
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
 CONFLICTS=	gammu-[1-9]* gammu-python-[1-9]*
-
-LICENSE=	GPLv2
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
@@ -28,6 +28,7 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
