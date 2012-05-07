@@ -8,11 +8,11 @@ include/rrd_format.h
 lib/librrd.a
 lib/librrd.la
 lib/librrd.so
-lib/librrd.so.5
+lib/librrd.so.6
 lib/librrd_th.a
 lib/librrd_th.la
 lib/librrd_th.so
-lib/librrd_th.so.5
+lib/librrd_th.so.6
 libdata/pkgconfig/librrd.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
