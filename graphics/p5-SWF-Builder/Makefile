@@ -11,7 +11,7 @@ CATEGORIES=	graphics www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create SWF movie
 
 BUILD_DEPENDS=	${SITE_PERL}/SWF/Element.pm:${PORTSDIR}/graphics/p5-SWF-File \

@@ -11,7 +11,7 @@ CATEGORIES=	russian textproc perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Additional russian encodings for XML::Parser
 
 RUN_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser

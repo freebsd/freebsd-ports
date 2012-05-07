@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Profiles time seconds needed for every request
 
 BUILD_DEPENDS=	mp2bug:${PORTSDIR}/www/mod_perl2

@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parsing folders for Mail::Box with C routines
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Box.pm:${PORTSDIR}/mail/p5-Mail-Box

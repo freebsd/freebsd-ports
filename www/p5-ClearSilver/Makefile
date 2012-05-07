@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for fast and powerful template system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver

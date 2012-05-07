@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format validation and more for Net:: related strings
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Default.pm:${PORTSDIR}/devel/p5-Class-Default

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Creates colorful matrix of Test::Harness test run results
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/TAP/Model.pm:${PORTSDIR}/devel/p5-Test-TAP-Model \

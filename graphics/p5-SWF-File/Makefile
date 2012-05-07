@@ -13,7 +13,7 @@ CATEGORIES=	graphics www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulating Flash movie (SWF) files
 
 RUN_DEPENDS=	${SITE_PERL}/Data/TemporaryBag.pm:${PORTSDIR}/devel/p5-Data-TemporaryBag

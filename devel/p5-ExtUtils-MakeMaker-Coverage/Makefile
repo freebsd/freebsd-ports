@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Add a Makefile target to determine test coverage using Devel::Cover
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/Cover.pm:${PORTSDIR}/devel/p5-Devel-Cover \

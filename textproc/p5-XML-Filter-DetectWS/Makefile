@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A PerlSAX filter that detects ignorable whitespace
 
 RUN_DEPENDS=	${SITE_PERL}/XML/Filter/SAXT.pm:${PORTSDIR}/textproc/p5-XML-Filter-SAXT

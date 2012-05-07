@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client library for memcached using libmemcache
 
 LIB_DEPENDS=	memcache.4:${PORTSDIR}/databases/libmemcache

@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NANDU
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Pod data to DocBook SGML
 
 BUILD_DEPENDS=	${SITE_PERL}/Pod/ParseLink.pm:${PORTSDIR}/textproc/p5-podlators \

@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Exchange XML via AnyEvent::HTTP
 
 BUILD_DEPENDS=	p5-XML-Compile-SOAP>=2.18:${PORTSDIR}/net/p5-XML-Compile-SOAP \
