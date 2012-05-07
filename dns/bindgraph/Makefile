@@ -7,7 +7,7 @@
 
 PORTNAME=	bindgraph
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/contrib/ \
 		http://ftp.ntua.gr/pub/net/monitoring/rrdtool/contrib/ \
