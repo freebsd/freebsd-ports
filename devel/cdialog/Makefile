@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.1.20111020
+PORTVERSION=	1.1.20120215
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/${PORTNAME:S|^c||}/
@@ -35,6 +35,7 @@ MANCOMPRESSED=	no
 
 INSTALL_TARGET=	install-strip install-man install-lib
 
+.if !defined(NOPORTEXAMPLES)
 post-patch:
 	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|dialog|cdialog|g" {} \;
 
@@ -42,5 +43,6 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
