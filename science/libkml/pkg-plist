@@ -1,5 +1,6 @@
 include/kml/base/attributes.h
 include/kml/base/color32.h
+include/kml/base/csv_splitter.h
 include/kml/base/date_time.h
 include/kml/base/expat_handler.h
 include/kml/base/expat_handler_ns.h
@@ -7,6 +8,7 @@ include/kml/base/expat_parser.h
 include/kml/base/file.h
 include/kml/base/math_util.h
 include/kml/base/memory_file.h
+include/kml/base/mimetypes.h
 include/kml/base/net_cache.h
 include/kml/base/referent.h
 include/kml/base/string_util.h
@@ -19,12 +21,19 @@ include/kml/base/xml_element.h
 include/kml/base/xml_file.h
 include/kml/base/xml_namespaces.h
 include/kml/base/xmlns.h
+include/kml/base/zip_file.h
 include/kml/convenience/atom_util.h
 include/kml/convenience/convenience.h
 include/kml/convenience/csv_file.h
+include/kml/convenience/csv_parser.h
 include/kml/convenience/element_counter.h
 include/kml/convenience/feature_list.h
 include/kml/convenience/gpx_trk_pt_handler.h
+include/kml/convenience/google_doc_list.h
+include/kml/convenience/google_maps_data.h
+include/kml/convenience/google_picasa_web.h
+include/kml/convenience/google_spreadsheets.h
+include/kml/convenience/http_client.h
 include/kml/convenience/kmz_check_links.h
 include/kml/dom/abstractlatlonbox.h
 include/kml/dom/abstractview.h
@@ -71,6 +80,8 @@ include/kml/dom/styleselector.h
 include/kml/dom/substyle.h
 include/kml/dom/timeprimitive.h
 include/kml/dom/vec2.h
+include/kml/dom/visitor.h
+include/kml/dom/visitor_driver.h
 include/kml/dom/xal.h
 include/kml/dom.h
 include/kml/engine/bbox.h
@@ -107,6 +118,7 @@ include/kml/engine/style_splitter.h
 include/kml/engine/update.h
 include/kml/engine.h
 include/kml/regionator/feature_list_region_handler.h
+include/kml/regionator/feature_list_regionator.h
 include/kml/regionator/region_handler.h
 include/kml/regionator/regionator.h
 include/kml/regionator/regionator_qid.h
@@ -128,12 +140,6 @@ include/kml/third_party/boost_1_34_1/boost/config.hpp
 include/kml/third_party/boost_1_34_1/boost/detail/workaround.hpp
 include/kml/third_party/boost_1_34_1/boost/intrusive_ptr.hpp
 include/kml/third_party/boost_1_34_1/boost/scoped_ptr.hpp
-include/kml/third_party/uriparser-0.7.1/include/Uri.h
-include/kml/third_party/uriparser-0.7.1/include/UriBase.h
-include/kml/third_party/uriparser-0.7.1/include/UriDefsAnsi.h
-include/kml/third_party/uriparser-0.7.1/include/UriDefsConfig.h
-include/kml/third_party/uriparser-0.7.1/include/UriDefsUnicode.h
-include/kml/third_party/uriparser-0.7.1/include/UriIp4.h
 include/kml/xsd/xsd_complex_type.h
 include/kml/xsd/xsd_element.h
 include/kml/xsd/xsd_file.h
@@ -189,8 +195,6 @@ lib/liburiparser.so.1
 @dirrm include/kml/third_party/boost_1_34_1/boost/detail
 @dirrm include/kml/third_party/boost_1_34_1/boost
 @dirrm include/kml/third_party/boost_1_34_1
-@dirrm include/kml/third_party/uriparser-0.7.1/include
-@dirrm include/kml/third_party/uriparser-0.7.1
 @dirrm include/kml/third_party
 @dirrm include/kml/xsd
 @dirrm include/kml
