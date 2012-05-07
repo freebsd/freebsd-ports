@@ -13,6 +13,9 @@ MASTER_SITES=	RG
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Creates, installs and searches for Puppet modules
 
+DEPRECATED=	Module tool is integrated in to sysutils/puppet as of 2.7.14
+EXPIRATION_DATE=	2012-07-07
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
