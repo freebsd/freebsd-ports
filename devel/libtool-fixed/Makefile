@@ -16,6 +16,9 @@ PKGNAMESUFFIX=	-fixed
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic shared library support script -- the fixed version
 
+DEPRECATED=	libtool has been fixed, no more need of this version
+EXPIRATION_DATE=	2012-06-07
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
