@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX Driver for non wellformed HTML
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/TreeBuilder.pm:${PORTSDIR}/textproc/p5-XML-TreeBuilder \

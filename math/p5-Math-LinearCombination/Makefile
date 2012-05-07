@@ -11,7 +11,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sum of variables with a numerical coefficient
 
 BUILD_DEPENDS=	${SITE_PERL}/fields.pm:${PORTSDIR}/devel/p5-Class-Fields \

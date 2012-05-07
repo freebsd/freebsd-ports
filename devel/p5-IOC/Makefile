@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:STEVAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight IOC (Inversion of Control) framework
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Throwable.pm:${PORTSDIR}/devel/p5-Class-Throwable \

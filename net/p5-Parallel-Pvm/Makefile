@@ -12,7 +12,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the Parallel Virtual Machine (PVM)
 
 BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm

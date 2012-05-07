@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implement lightweight hooks into POE
 
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \

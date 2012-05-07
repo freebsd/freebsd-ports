@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl interface to the Sablotron XSLT processor
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron

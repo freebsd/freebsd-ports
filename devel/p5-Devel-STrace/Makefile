@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	strace(1)-like runtime call trace for Perl applications
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Devel/RingBuffer.pm:${PORTSDIR}/devel/p5-Devel-RingBuffer \

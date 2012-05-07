@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regex pattern for Email Addresses
 
 BUILD_DEPENDS=	${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \

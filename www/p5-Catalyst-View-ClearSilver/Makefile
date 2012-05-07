@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JROCKWAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ClearSilver view class for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/ClearSilver.pm:${PORTSDIR}/www/p5-ClearSilver \

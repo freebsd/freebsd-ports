@@ -11,7 +11,7 @@ CATEGORIES=	textproc graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for generating Scalable Vector Graphics (SVG) documents
 
 PERL_CONFIGURE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI driver for Oracle RDBMS server
 
 OPTIONS=	OCI8 "Use OCI8" off

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	CPAN:ICRF
 PKGNAMEPREFIX=	p5-
 DISTNAME=	text-highlight-${PORTVERSION}
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syntax highlighting framework
 
 PERL_CONFIGURE=	yes

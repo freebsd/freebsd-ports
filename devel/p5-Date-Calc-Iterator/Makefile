@@ -11,7 +11,7 @@ CATEGORIES=	devel net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Iterate over a range of dates
 
 BUILD_DEPENDS=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc

@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test HTTP interactions
 
 RUN_DEPENDS=	p5-Class-Field>=0:${PORTSDIR}/devel/p5-Class-Field \
