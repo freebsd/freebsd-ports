@@ -16,10 +16,19 @@ The Lazarus RAD was installed
 
    It could be extracted to your home directory.
 
-4) A lazbuild.cfg file is installed at ${PREFIX}/etc directory. It contains the
-   current value of LCL_PLATFORM (gtk, gtk2, qt), it is the interface used by 
-   Lazarus. This value will be used by some ports that depend of Lazarus and
-   those will be compiled using the interface defined by LCL_PLATFORM.
+4) The lazbuild.cfg file has been removed, it is not necessary anymore. Now 
+   we can use the following ports for aplications that depend of lazarus 
+   and these can be built with an interface different than lazarus has compiled 
+   by default:
+
+   editors/lazarus-lcl-nogui
+   editors/lazarus-lcl-gtk
+   editors/lazarus-lcl-gtk2
+   editors/lazarus-lcl-qt
+
+   You can added those ports if you want support for nogui, gtk, gtk2 or qt 
+   interfaces. Please look at net-p2p/transmission-remote-gui like a example of
+   how use it
 
 5) Enjoy it ;)
 
