@@ -7,7 +7,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/${PORTNAME}-${PORTVERSION}/
 
