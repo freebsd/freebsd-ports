@@ -6,5 +6,5 @@ To get volta up and running, you'll still need to do two things:
  url_rewrite_program %%PREFIX%%/bin/volta -f %%PREFIX%%/etc/volta.db
 
  - Create a volta rule database! For detailed instructions, please
- reference %%DATADIR%%/README, or volta's website at:
+ reference %%DOCSDIR%%/README, or volta's website at:
  http://projects.martini.nu/volta/
