@@ -7,7 +7,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.0.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.silug.org/pub/alsa/plugins/ \
 		ftp://gd.tuwien.ac.at/opsys/linux/alsa/plugins/ \
@@ -74,6 +74,14 @@ PLIST_SUB+=		SPEEX=""
 .else
 CONFIGURE_ARGS+=	--without-speex
 PLIST_SUB+=		SPEEX="@comment "
+.endif
+
+.if	${OSVERSION} > 900036 \
+     || ${OSVERSION} > 802503 && ${OSVERSION} < 900000 \
+     || ${OSVERSION} > 704000 && ${OSVERSION} < 800000
+EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins-getiptrfix.patch
+.else # ${OSVERSION} <= 704000
+EXTRA_PATCHES+=	${FILESDIR}/alsa-plugins.patch
 .endif
 
 post-patch:	.SILENT
