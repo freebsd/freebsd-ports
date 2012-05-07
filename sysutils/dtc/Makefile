@@ -7,7 +7,7 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.34.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.sg/pub/dtc/bsd/ \
 		ftp://qala-sg.apt-proxy.gplhost.sg/pub/dtc/bsd/ \

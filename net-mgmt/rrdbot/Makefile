@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdbot
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://thewalter.net/stef/software/rrdbot/
 

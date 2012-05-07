@@ -8,6 +8,7 @@
 
 PORTNAME=	observium
 PORTVERSION=	0.11.5.2261
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://observium.org/ \
 		http://cpansearch.perl.org/src/BBB/Net-Ping-2.31/demo/

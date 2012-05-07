@@ -7,7 +7,7 @@
 
 PORTNAME=	nfdump-devel
 PORTVERSION=	20070808
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nfdump/snapshot/nfdump-snapshot-${PORTVERSION}
 DISTNAME=	nfdump-snapshot-${PORTVERSION}

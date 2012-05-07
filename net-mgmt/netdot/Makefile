@@ -7,6 +7,7 @@
 
 PORTNAME=	netdot
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://netdot.uoregon.edu/pub/dists/
 
