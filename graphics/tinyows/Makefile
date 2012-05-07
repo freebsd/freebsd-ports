@@ -7,6 +7,7 @@
 
 PORTNAME=		tinyows
 PORTVERSION=		1.0.0
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://tinyows.org/tracdocs/release/
 
