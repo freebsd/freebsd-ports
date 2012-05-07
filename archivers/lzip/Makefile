@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzip
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip
 
@@ -15,14 +15,13 @@ COMMENT=	Is a lossless data compressor based on the LZMA algorithm
 
 LICENSE=	GPLv3
 
-PLIST_FILES=	bin/lzip \
-		bin/lziprecover
+PLIST_FILES=	bin/lzip
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-MAN1=		lzip.1 lziprecover.1
+MAN1=		lzip.1
 INFO=		lzip
 
 .include <bsd.port.mk>
