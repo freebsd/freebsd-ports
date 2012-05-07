@@ -7,6 +7,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.30.4
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
@@ -14,54 +15,78 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-src/}
 DIST_SUBDIR=	freepascal
 
-MAINTAINER=	acm@FreeBSD.org
-COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
+MAINTAINER?=	acm@FreeBSD.org
+COMMENT?=	A portable Delphi-like IDE for the FreePascal compiler
 
-BUILD_DEPENDS=	fpcres:${PORTSDIR}/lang/fpc-utils
+BUILD_DEPENDS?=	#
+RUN_DEPENDS?=	#
 
 PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	#
-USE_FPC=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
+USE_FPC?=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
 		iconvenc pasjpeg x11
 MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 ${OPT_EXTRA}"
-MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
-SUB_FILES=	pkg-message
-SUB_LIST+=	PORTSDIR="${PORTSDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC?=	${WRKDIR}/${PORTNAME}
 
-.if !defined(WITHOUT_LAZARUS_OPTIONS)
+.if !defined(PKGNAMESUFFIX)
 OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	on \
 		QT4	"Use qt4 interface" off
 .endif
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+LAZARUS_ARCH=	i386
+.elif ${ARCH} == "amd64"
+LAZARUS_ARCH=	x86_64
+.endif
+
+BUILDNAME=	${LAZARUS_ARCH}-freebsd
+LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}
+
+.if !defined(PKGNAMESUFFIX)
+BUILD_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
+		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
+RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
+		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
+
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+
+MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
+SUB_FILES=	pkg-message
+SUB_LIST+=	PORTSDIR="${PORTSDIR}"
+
 .if defined(WITH_GTK2) && defined(WITH_QT4)
-IGNORE=		Please select only one option QT4 or GTK2, don't select both options
+IGNORE=		please select only one option QT4 or GTK2, don't select both options
 .endif
 
 .if defined(WITH_GTK2)
 USE_FPC+=	gtk2
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 gdkpixbuf
 LCL_PLATFORM=	gtk2
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
+RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk2
 .else
 .if !defined(WITH_QT4)
 USE_FPC+=	gtk1
 USE_GNOME=	gtk12 gdkpixbuf
 LCL_PLATFORM=	gtk
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
+RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-gtk
 .endif
 .endif
 
 .if defined(WITH_QT4)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/qt4/libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
+LIB_DEPENDS+=	Qt4Pas.5:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
+RUN_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-qt
 #OPT_EXTRA=	"-dUSE_QT_45"
 .endif
 
@@ -75,11 +100,14 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
-		${WRKSRC}/${MAKEFILE}
+			-e 's|tools: lcl|tools:|g' -e '3519d' ${WRKSRC}/${MAKEFILE}
+
+pre-build:
+	@${LN} -s ${LOCALBASE}/share/${PORTNAME}/lcl/units ${WRKSRC}/lcl/units
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_PLATFORM}
+		${SETENV} ${MAKE_ENV} ${GMAKE} packager/registration ideintf components ide starter lazbuilder LCL_PLATFORM=${LCL_PLATFORM}
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} tools LCL_PLATFORM=${LCL_PLATFORM}
 
@@ -94,8 +122,9 @@ pre-install:
 	@${ECHO} "exec ./startlazarus" >> ${WRKDIR}/lazarus-wrapper
 
 	@${RM} -f ${PLIST}
+	@${RM} -f ${WRKSRC}/lcl/units
 
-.	for FILE in bin/lazarus bin/lazbuild etc/lazbuild.cfg
+.	for FILE in bin/lazarus bin/lazbuild
 		@${ECHO_CMD} ${FILE} >> ${PLIST}
 .	endfor
 
@@ -117,8 +146,8 @@ pre-install:
 
 	@cd ${WRKSRC} && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrmtry %%DATADIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
 .for DIRE in components converter debugger designer doceditor ide ideintf images install languages lazarus.app lcl \
@@ -157,10 +186,10 @@ do-install:
 .endfor
 	${LN} -s ${DATADIR}/lazbuild ${PREFIX}/bin/lazbuild
 
-	@${ECHO_CMD} "# Current lazarus interface" > ${PREFIX}/etc/lazbuild.cfg
-	@${ECHO_CMD} "LCL_PLATFORM=${LCL_PLATFORM}" >> ${PREFIX}/etc/lazbuild.cfg
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
+.else
+.include "${MASTERDIR}/Makefile.common"
+.endif
 
 .include <bsd.port.post.mk>
