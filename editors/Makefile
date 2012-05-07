@@ -154,6 +154,7 @@
     SUBDIR += komodo-ide
     SUBDIR += kxmleditor
     SUBDIR += lazarus
+    SUBDIR += lazarus-lcl-gtk
     SUBDIR += lazarus-lcl-nogui
     SUBDIR += lazarus-lcl-units
     SUBDIR += le
