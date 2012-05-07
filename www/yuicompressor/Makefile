@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yuicompressor
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	www java
 MASTER_SITES=	http://yui.zenfs.com/releases/yuicompressor/
 
