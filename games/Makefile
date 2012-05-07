@@ -304,6 +304,7 @@
     SUBDIR += glest
     SUBDIR += glest-data
     SUBDIR += glife
+    SUBDIR += glightoff
     SUBDIR += glmaze
     SUBDIR += glob2
     SUBDIR += glsfcave
