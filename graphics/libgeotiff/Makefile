@@ -7,6 +7,7 @@
 
 PORTNAME=	libgeotiff
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \

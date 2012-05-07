@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -183,7 +183,7 @@ CONFIGURE_ARGS+=	--with-php
 .endif
 
 .if defined(WITH_PROJ)
-LIB_DEPENDS+=		proj.6:${PORTSDIR}/graphics/proj
+LIB_DEPENDS+=		proj.7:${PORTSDIR}/graphics/proj
 CONFIGURE_ARGS+=	--with-static-proj4=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-static-proj4=no

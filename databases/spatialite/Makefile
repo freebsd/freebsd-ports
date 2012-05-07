@@ -7,7 +7,7 @@
 
 PORTNAME=	spatialite
 PORTVERSION=	2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/${PORTNAME}-${PORTVERSION}/
 
@@ -15,7 +15,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Spatial Extensions for SQLite
 
 LIB_DEPENDS=	geos_c.8:${PORTSDIR}/graphics/geos \
-		proj.6:${PORTSDIR}/graphics/proj \
+		proj.7:${PORTSDIR}/graphics/proj \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes

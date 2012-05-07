@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
-		proj:${PORTSDIR}/graphics/proj \
+		proj.7:${PORTSDIR}/graphics/proj \
 		gsl.16:${PORTSDIR}/math/gsl \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 		gdal:${PORTSDIR}/graphics/gdal
