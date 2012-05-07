@@ -15,6 +15,8 @@ COMMENT=	Converts MP4 files to Fragmented MP4 and creates manifest files
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+BROKEN=		does not fetch
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-expat
 CPPFLAGS+=	-I${LOCALBASE}/include
