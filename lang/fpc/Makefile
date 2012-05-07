@@ -7,7 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	2.6.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -157,6 +157,7 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/fpc.cfg ]; then \
 		${CP} ${PREFIX}/etc/fpc.cfg.sample ${PREFIX}/etc/fpc.cfg; \
 	fi
+	@${REINPLACE_CMD} -i "" -e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${PREFIX}/etc/fpc.cfg
 	@${CAT} ${PKGMESSAGE}
 
 .else
