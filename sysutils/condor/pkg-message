@@ -1,9 +1,0 @@
-SECURITY NOTICE:
-Condor has been configured to accepted incoming connections from any
-domain. This is useful for those that are just getting started with
-Condor and does not pose any immediate threat to your system. Nevertheless,
-we recommend changing this to only hosts that you trust to communicate with
-your Condor pool.
-
-See the manual for more information about tuning the HOSTALLOW_* paramters
-in your system's condor_config file.

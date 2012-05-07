@@ -1,0 +1,13 @@
+
+Sample condor_config and condor_config.local files are available in
+%%ETCDIR%%.  Copy them to %%PREFIX%%/etc and edit to taste
+to get started.
+
+To start the condor daemons, add 'condor_enable="YES"' to
+
+	/etc/rc.conf
+
+and run
+
+	/usr/local/etc/rc.d/condor start
+
