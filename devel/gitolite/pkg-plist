@@ -1,35 +1,65 @@
-bin/gl-auth-command
-bin/gl-setup
-libexec/gitolite/gitolite.pm
-libexec/gitolite/gitolite_env.pm
-libexec/gitolite/gitolite_rc.pm
-libexec/gitolite/gl-admin-push
-libexec/gitolite/gl-auth-command
-libexec/gitolite/gl-compile-conf
-libexec/gitolite/gl-conf-convert
-libexec/gitolite/gl-dryrun
-libexec/gitolite/gl-install
-libexec/gitolite/gl-mirror-push
-libexec/gitolite/gl-mirror-shell
-libexec/gitolite/gl-query-rc
-libexec/gitolite/gl-setup
-libexec/gitolite/gl-setup-authkeys
-libexec/gitolite/gl-time
-libexec/gitolite/gl-tool
-libexec/gitolite/sshkeys-lint
-%%DATADIR%%/conf/example.conf
-%%DATADIR%%/conf/example.gitolite.rc
-%%DATADIR%%/conf/VERSION
-%%DATADIR%%/hooks/common/gitolite-hooked
-%%DATADIR%%/hooks/common/gl-pre-git.hub-sample
-%%DATADIR%%/hooks/common/post-receive.mirrorpush
-%%DATADIR%%/hooks/common/update
-%%DATADIR%%/hooks/common/update.secondary.sample
-%%DATADIR%%/hooks/gitolite-admin/post-update
-@dirrm %%DATADIR%%/conf
-@dirrm %%DATADIR%%/hooks/gitolite-admin
-@dirrm %%DATADIR%%/hooks/common
-@dirrm %%DATADIR%%/hooks
-@dirrm %%DATADIR%%
+bin/gitolite
+%%SITE_PERL%%/Gitolite/Common.pm
+%%SITE_PERL%%/Gitolite/Conf.pm
+%%SITE_PERL%%/Gitolite/Conf/Explode.pm
+%%SITE_PERL%%/Gitolite/Conf/Load.pm
+%%SITE_PERL%%/Gitolite/Conf/Store.pm
+%%SITE_PERL%%/Gitolite/Conf/Sugar.pm
+%%SITE_PERL%%/Gitolite/Easy.pm
+%%SITE_PERL%%/Gitolite/Hooks/PostUpdate.pm
+%%SITE_PERL%%/Gitolite/Hooks/Update.pm
+%%SITE_PERL%%/Gitolite/Rc.pm
+%%SITE_PERL%%/Gitolite/Setup.pm
+%%SITE_PERL%%/Gitolite/Test.pm
+%%SITE_PERL%%/Gitolite/Test/Tsh.pm
+%%SITE_PERL%%/Gitolite/Triggers.pm
+%%SITE_PERL%%/Gitolite/Triggers/CpuTime.pm
+%%SITE_PERL%%/Gitolite/Triggers/Mirroring.pm
+%%SITE_PERL%%/Gitolite/Triggers/Shell.pm
+%%SITE_PERL%%/Gitolite/Triggers/Writable.pm
+libexec/gitolite/VERSION
+libexec/gitolite/VREF/COUNT
+libexec/gitolite/VREF/DUPKEYS
+libexec/gitolite/VREF/EMAIL-CHECK
+libexec/gitolite/VREF/FILETYPE
+libexec/gitolite/VREF/MAX_NEWBIN_SIZE
+libexec/gitolite/VREF/MERGE-CHECK
+libexec/gitolite/VREF/partial-copy
+libexec/gitolite/commands/D
+libexec/gitolite/commands/access
+libexec/gitolite/commands/creator
+libexec/gitolite/commands/desc
+libexec/gitolite/commands/fork
+libexec/gitolite/commands/git-config
+libexec/gitolite/commands/help
+libexec/gitolite/commands/info
+libexec/gitolite/commands/mirror
+libexec/gitolite/commands/perms
+libexec/gitolite/commands/print-default-rc
+libexec/gitolite/commands/push
+libexec/gitolite/commands/sshkeys-lint
+libexec/gitolite/commands/sskm
+libexec/gitolite/commands/svnserve
+libexec/gitolite/commands/writable
+libexec/gitolite/gitolite
+libexec/gitolite/gitolite-shell
+libexec/gitolite/syntactic-sugar/continuation-lines
+libexec/gitolite/syntactic-sugar/keysubdirs-as-groups
+libexec/gitolite/triggers/partial-copy
+libexec/gitolite/triggers/post-compile/ssh-authkeys
+libexec/gitolite/triggers/post-compile/update-git-configs
+libexec/gitolite/triggers/post-compile/update-git-daemon-access-list
+libexec/gitolite/triggers/post-compile/update-gitweb-access-list
+libexec/gitolite/triggers/renice
+@dirrm %%SITE_PERL%%/Gitolite/Conf
+@dirrm %%SITE_PERL%%/Gitolite/Hooks
+@dirrm %%SITE_PERL%%/Gitolite/Test
+@dirrm %%SITE_PERL%%/Gitolite/Triggers
+@dirrm %%SITE_PERL%%/Gitolite
+@dirrm libexec/gitolite/VREF
+@dirrm libexec/gitolite/commands
+@dirrm libexec/gitolite/triggers/post-compile
+@dirrm libexec/gitolite/triggers
+@dirrm libexec/gitolite/syntactic-sugar
 @dirrm libexec/gitolite
 %%GITUSER%%@dirrmtry git
