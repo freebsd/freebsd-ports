@@ -267,6 +267,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/raid.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/routing.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/sapr3.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-intro.html
@@ -289,6 +290,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/system-administration.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
@@ -310,10 +312,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x14283.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30501.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30545.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x30589.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x15341.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x31827.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x31871.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x31915.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
