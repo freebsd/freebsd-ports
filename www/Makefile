@@ -1471,6 +1471,7 @@
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-storages
     SUBDIR += py-django-tagging
+    SUBDIR += py-django-tastypie
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django12
     SUBDIR += py-django13
