@@ -13,9 +13,10 @@ MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.1[0-7].*
+CONFLICTS=	mediawiki-1.19.*
 
 FETCH_ARGS=	-pr
+NO_LATEST_LINK=	yes
 USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
