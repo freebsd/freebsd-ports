@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	ExtUtils-PkgConfig
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simplistic interface to pkg-config
+
+LICENSE=	LGPL3
 
 USE_GNOME=	pkgconfig
 PERL_CONFIGURE=	yes
