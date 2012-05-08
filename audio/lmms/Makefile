@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lmms
-PORTVERSION=	0.4.12
-PORTREVISION=	2
+PORTVERSION=	0.4.13
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -51,13 +50,14 @@ CMAKE_ARGS=	-DWANT_ALSA:BOOL=OFF \
 		-DWANT_TAP:BOOL=OFF \
 		-DWANT_VST:BOOL=OFF \
 		-DHAVE_STRTOLL=ON
+MAKE_JOBS_SAFE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		lmms.1
 
 USE_DOS2UNIX=	plugins/midi_import/portsmf/allegrowr.cpp plugins/midi_import/portsmf/mfmidi.cpp
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
@@ -103,4 +103,4 @@ post-install:
 	# (root privileges are dropped in the main routine)
 	${CHMOD} u+s ${PREFIX}/bin/lmms
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
