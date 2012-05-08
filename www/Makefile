@@ -563,6 +563,7 @@
     SUBDIR += notftp
     SUBDIR += npapi-xine
     SUBDIR += npc
+    SUBDIR += npm
     SUBDIR += nscache
     SUBDIR += nspluginwrapper
     SUBDIR += nspluginwrapper-devel
