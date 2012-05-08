@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xca
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -27,12 +27,6 @@ CXX?=		g++
 
 MAN1=		xca.1
 MANCOMPRESSED=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
 
 post-patch:
 	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include" > ${WRKSRC}/Local.mak
@@ -61,4 +55,4 @@ post-patch:
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

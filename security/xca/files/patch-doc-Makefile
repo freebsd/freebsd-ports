@@ -16,7 +16,7 @@
 -	test ! -f xca-doc.tgz || tar zxf xca-doc.tgz
 -	@$(PRINT) "  DOC    [$(BASENAME)] $@"
 -	$(LINUXDOC) -B html $< >/dev/null
-+	echo 'The documentation for XCA can be viewed online at: <a href="http://xca.sourceforge.net/">http://xca.sourceforge.net/</a>.' > $@
++	echo 'The documentation for XCA can be viewed online at: <a href="http://xca.sourceforge.net/">http://xca.sourceforge.net/</a>.' >> $@
  
  install: xca.1.gz xca.html
  	install -m 755 -d $(destdir)$(docdir) \
