@@ -72,6 +72,8 @@ lib/node/wafadmin/__init__.py
 lib/node/wafadmin/ansiterm.py
 lib/node/wafadmin/pproc.py
 lib/node/wafadmin/py3kfixes.py
+lib/node_modules/.keepme
+@dirrm lib/node_modules
 @dirrm lib/node/wafadmin/Tools
 @dirrm lib/node/wafadmin
 @dirrm lib/node
