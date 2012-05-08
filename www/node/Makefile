@@ -20,13 +20,11 @@ OPTIONS=	SHARED_V8 "Build with lang/v8" off
 
 CONFLICTS=	node-0.[0-57-9]* node-devel-0.[0-9]*
 
-ONLY_FOR_ARCHS=	i386 amd64
 CONFIGURE_ARGS=	--no-ssl2 \
 		--openssl-includes=${OPENSSLINC} \
 		--openssl-libpath=${OPENSSLLIB} \
 		--prefix=${PREFIX:S/^${DESTDIR}//} \
 		--without-npm
-
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
