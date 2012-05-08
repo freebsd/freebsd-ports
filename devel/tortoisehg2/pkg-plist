@@ -502,6 +502,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/new-group.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/process-stop.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/qfinish.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/qimport.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/settings_projrc.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/status-check.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/tasktab-refresh.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-add-subrepo.svg
@@ -560,7 +561,6 @@ share/pixmaps/tortoisehg/icons/svg/recovery.svg
 share/pixmaps/tortoisehg/icons/svg/refresh_overlays.svg
 share/pixmaps/tortoisehg/icons/svg/remove.svg
 share/pixmaps/tortoisehg/icons/svg/repobrowse.svg
-share/pixmaps/tortoisehg/icons/svg/settings_projrc.svg
 share/pixmaps/tortoisehg/icons/svg/shelve.svg
 share/pixmaps/tortoisehg/icons/svg/sync.svg
 share/pixmaps/tortoisehg/icons/svg/thg_logo.svg
