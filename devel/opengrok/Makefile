@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opengrok
-PORTVERSION=	0.11
+PORTVERSION=	0.11.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://hub.opensolaris.org/bin/download/Project+opengrok/files/
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-JAVA_VENDOR?=	freebsd
 SHAREOWN=	www
 SHAREGRP=	www
 NO_BUILD=	yes
