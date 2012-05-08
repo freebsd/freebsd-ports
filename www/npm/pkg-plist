@@ -780,4 +780,3 @@ lib/node_modules/npm/test/update-test.sh
 @dirrm lib/node_modules/npm/bin/node-gyp-bin
 @dirrm lib/node_modules/npm/bin
 @dirrm lib/node_modules/npm
-@dirrmtry lib/node_modules
