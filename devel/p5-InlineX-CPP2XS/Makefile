@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	InlineX-CPP2XS
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SISYPHUS
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert from Inline C++ code to XS
 
-BUILD_DEPENDS=	${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline \
-		p5-Inline-CPP>=0.25:${PORTSDIR}/devel/p5-Inline-CPP
+BUILD_DEPENDS=	p5-Inline>=0.50:${PORTSDIR}/devel/p5-Inline \
+		p5-Inline-CPP>=0.39:${PORTSDIR}/devel/p5-Inline-CPP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
