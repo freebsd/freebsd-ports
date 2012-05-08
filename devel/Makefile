@@ -3248,6 +3248,7 @@
     SUBDIR += py-gyp-devel
     SUBDIR += py-hashring
     SUBDIR += py-hghooks
+    SUBDIR += py-hgsubversion
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
