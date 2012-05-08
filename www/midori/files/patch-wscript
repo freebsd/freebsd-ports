@@ -1,0 +1,13 @@
+--- wscript.orig	2012-04-14 21:17:35.000000000 +0200
++++ wscript	2012-05-02 19:15:37.000000000 +0200
+@@ -104,8 +104,8 @@
+     conf.check_tool ('compiler_cc')
+     conf.check_tool ('vala')
+     conf.check_tool ('glib2')
+-    if not check_version (conf.env['VALAC_VERSION'], 0, 14, 0):
+-        Utils.pprint ('RED', 'Vala 0.14.0 or later is required.')
++    if not check_version (conf.env['VALAC_VERSION'], 0, 12, 0):
++        Utils.pprint ('RED', 'Vala 0.12.0 or later is required.')
+         sys.exit (1)
+ 
+     if option_enabled ('nls'):
