@@ -21,6 +21,10 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-irclib
 PYDISTUTILS_NOEGGINFO=yes
 
+# TODO: irclib have some weird install script bundled and use of
+#       USE_PYDISTUTILS=easy_install would break it
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
 
 EXAMPLEFILES=	irccat irccat2 servermap testbot.py \
