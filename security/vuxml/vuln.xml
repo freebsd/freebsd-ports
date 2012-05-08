@@ -52,6 +52,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a1d0911f-987a-11e1-a2ef-001fd0af1a4c">
+     <topic>node -- private information disclosure</topic>
+     <affects>
+        <package>
+           <name>node</name>
+           <name>node-devel</name>
+           <range><lt>0.6.17</lt></range>
+        </package>
+     </affects>
+     <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+           <p>Private information disclosure</p>
+           <blockquote cite="http://blog.nodejs.org/2012/05/07/http-server-security-vulnerability-please-upgrade-to-0-6-17/">
+              <p>An attacker can cause private information disclosure.</p>
+           </blockquote>
+        </body>
+     </description>
+     <references>
+        <url>http://blog.nodejs.org/2012/05/07/http-server-security-vulnerability-please-upgrade-to-0-6-17/</url>
+     </references>
+     <dates>
+        <discovery>2012-04-17</discovery>
+        <entry>2012-05-7</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="725ab25a-987b-11e1-a2ef-001fd0af1a4c">
      <topic>p5-Config-IniFiles -- unsafe temporary file creation</topic>
      <affects>
