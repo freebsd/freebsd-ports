@@ -10,7 +10,7 @@ PORTVERSION=	4.6.1
 PORTREVISION=	7
 CATEGORIES=	print xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=xfce/4.6.1/src
+MASTER_SITE_SUBDIR=	src/archive/xfprint/${PORTVERSION:R}
 DISTNAME=	xfprint-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -18,7 +18,7 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 graphical frontend for printing
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -50,7 +50,7 @@ PLIST_SUB+=	LPR=""
 .endif
 
 .if defined(WITHOUT_LPR) && !defined(WITH_CUPS)
-IGNORE=		You have to define WITH_CUPS or undefine WITHOUT_LPR in order to install this port.
+IGNORE=		define WITH_CUPS or undefine WITHOUT_LPR to install this port
 .endif
 
 .if defined(WITH_LETTER)
