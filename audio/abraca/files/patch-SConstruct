@@ -1,0 +1,18 @@
+--- SConstruct.orig	2012-03-19 01:54:28.000000000 +0100
++++ SConstruct	2012-05-07 22:47:08.390528582 +0200
+@@ -59,7 +59,7 @@
+ conf.Finish()
+ 
+ env.Append(VALAPKGS = ['build-config'])
+-env.Append(CCFLAGS = ['-Wall', '-Wno-unused-variable', '-Wno-unused-but-set-variable'])
++env.Append(CCFLAGS = ['-Wall', '-Wno-unused-variable'])
+ #env.Append(CCFLAGS = ['-Wall', '-Wno-unused-variable', '-Wno-unused-but-set-variable', '-DHAVE_AVAHI_0_6'])
+ env.Append(CPPPATH = Dir('build'))
+ env.Append(LIBS = ['m'])
+@@ -74,4 +74,5 @@
+ env.SConscript('build/data/ui/SConscript', exports='env', duplicate=0)
+ env.SConscript('build/src/SConscript', exports='env', duplicate=0)
+ env.SConscript('build/gladeui/SConscript', exports='env', duplicate=0)
+-env.SConscript('build/po/SConscript', exports='env', duplicate=0)
++if %%NLS%%:
++	env.SConscript('build/po/SConscript', exports='env', duplicate=0)

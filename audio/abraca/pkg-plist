@@ -1,0 +1,9 @@
+bin/abraca
+share/applications/abraca.desktop
+share/icons/abraca.svg
+%%NLS%%share/locale/de/LC_MESSAGES/abraca.mo
+%%NLS%%share/locale/en/LC_MESSAGES/abraca.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/abraca.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/abraca.mo
+@dirrmtry share/icons
+@dirrmtry share/applications
