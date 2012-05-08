@@ -14,15 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl interface to a bitcoin instance
 
-RUN_DEPENDS=	p5-JSON-RPC>=0.96:${PORTSDIR}/devel/p5-JSON-RPC \
+BUILD_DEPENDS=	p5-JSON-RPC>=0.96:${PORTSDIR}/devel/p5-JSON-RPC \
 		p5-Class-Accessor>=0.34:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Module-Signature>=0.66:${PORTSDIR}/security/p5-Module-Signature \
 		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose
-BUILD_DEPENDS=	p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
-
-TEST_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Object-Authority>=0:${PORTSDIR}/devel/p5-Object-Authority
+		p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-Object-AUTHORITY>=0:${PORTSDIR}/devel/p5-Object-Authority
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
