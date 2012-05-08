@@ -346,6 +346,7 @@
 %%WWWDIR%%/build/TruncateAuditTrail.sql
 %%WWWDIR%%/build/check_syntax.sh
 %%WWWDIR%%/build/make_release.sh
+%%WWWDIR%%/build/make_release.sh~
 %%WWWDIR%%/companies/weberpdemo/EDI_Incoming_Orders/Order1.edi
 %%WWWDIR%%/companies/weberpdemo/EDI_Sent/EDI_INV_67.edi
 %%WWWDIR%%/companies/weberpdemo/EDI_Sent/EDI_INV_68.edi
