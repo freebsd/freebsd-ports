@@ -1,6 +1,0 @@
-bin/fasm
-%%PORTDOCS%%%%DOCSDIR%%/fasm.txt
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
