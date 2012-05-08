@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -18,7 +19,8 @@ CONFIGURE_ARGS+=--with-lasergnu \
 		--with-readline=gnu \
 		--without-linux-vga \
 		--without-lisp-files \
-		--without-tutorial
+		--without-tutorial \
+		--with-bitmap-terminals
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	X11		"Enable X11 support"		on \
