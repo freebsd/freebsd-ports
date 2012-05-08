@@ -224,6 +224,7 @@ include/wine/windows/dls1.h
 include/wine/windows/dls2.h
 include/wine/windows/dmdls.h
 include/wine/windows/dmerror.h
+include/wine/windows/dmksctrl.h
 include/wine/windows/dmo.h
 include/wine/windows/dmoreg.h
 include/wine/windows/dmort.h
