@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120508:
+  AFFECTS: users of www/node and www/node-devel
+  AUTHOR: sunpoet@FreeBSD.org
+
+  npm is a package manager for node. Starting with node 0.6.17 (www/node) and
+  node 0.7.8 (www/node-devel), we do not install bundled npm but provide a
+  separate port (www/npm). Please install www/npm if you need it.
+
 20120430:
   AFFECTS: users of www/py-google-api-python-client
   AUTHOR: nivit@FreeBSD.org
