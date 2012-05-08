@@ -1,0 +1,16 @@
+See
+http://sourceforge.net/tracker/?func=detail&aid=3511519&group_id=243163&atid=1121518
+--- metadata.c	2012-02-14 22:44:56.000000000 +0400
++++ metadata.c	2012-03-28 10:55:52.000000000 +0400
+@@ -160,8 +160,8 @@
+ 	/* If we weren't given a detail ID, look for one. */
+ 	if( !detailID )
+ 	{
+-		id = sql_get_text_field(db, "SELECT ID from DETAILS where PATH glob '%q.*'"
+-		                            " and MIME glob 'video/*' limit 1", file);
++		id = sql_get_text_field(db, "SELECT ID from DETAILS where (PATH > '%q.' and PATH <= '%q.z'"
++		                            " and MIME > 'video/' and MIME <= 'video/z') limit 1", file, file);
+ 		if( id )
+ 		{
+ 			//DEBUG DPRINTF(E_DEBUG, L_METADATA, "New file %s looks like a caption file.\n", path);
+

@@ -3,7 +3,7 @@
 @@ -629,7 +633,7 @@
  }
  
- int
+ static int
 -filter_audio(const struct dirent *d)
 +filter_audio(struct dirent *d)
  {
@@ -12,7 +12,7 @@
 @@ -641,7 +645,7 @@
  }
  
- int
+ static int
 -filter_video(const struct dirent *d)
 +filter_video(struct dirent *d)
  {
@@ -21,7 +21,7 @@
 @@ -653,7 +657,7 @@
  }
  
- int
+ static int
 -filter_images(const struct dirent *d)
 +filter_images(struct dirent *d)
  {
@@ -30,7 +30,7 @@
 @@ -665,7 +669,7 @@
  }
  
- int
+ static int
 -filter_media(const struct dirent *d)
 +filter_media(struct dirent *d)
  {

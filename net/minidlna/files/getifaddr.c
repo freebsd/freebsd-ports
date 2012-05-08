@@ -210,7 +210,6 @@ get_remote_mac(struct in_addr ip_addr, unsigned char *mac)
         struct rt_msghdr *rtm;
         struct sockaddr_inarp *sin;
         struct sockaddr_dl *sdl;
-        extern int h_errno;
 
         mib[0] = CTL_NET;
         mib[1] = PF_ROUTE;

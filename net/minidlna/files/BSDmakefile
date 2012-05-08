@@ -25,7 +25,7 @@ SRCS=	albumart.c daemonize.c getifaddr.c image_utils.c log.c    	\
 
 SRCS+=	misc.c tagutils.c textutils.c
 
-WARNS=	2
+WARNS=	3
 
 BINDIR=	${PREFIX}/sbin
 

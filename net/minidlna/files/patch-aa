@@ -18,108 +18,6 @@
 +#include <sys/endian.h>
  
  #include "upnpreplyparse.h"
---- albumart.c	2011-05-03 18:07:47.000000000 -0400
-+++ albumart.c	2011-08-24 01:10:29.000000000 -0400
-@@ -25,4 +25,5 @@
- #include <setjmp.h>
- #include <errno.h>
-+#include <limits.h>
- 
- #include <jpeglib.h>
---- scanner.c	2011-05-03 18:07:47.000000000 -0400
-+++ scanner.c	2011-08-24 01:31:10.000000000 -0400
-@@ -24,4 +24,5 @@
- #include <libgen.h>
- #include <inttypes.h>
-+#include <limits.h>
- #include <sys/stat.h>
- #include <sys/time.h>
-@@ -138,5 +139,6 @@
- 		static sqlite_int64 last_all_objectID = 0;
- 
--		asprintf(&sql, "SELECT DATE, CREATOR from DETAILS where ID = %"PRId64, detailID);
-+		asprintf(&sql, "SELECT DATE, CREATOR from DETAILS where ID = %"PRId64,
-+		    (int64_t)detailID);
- 		ret = sql_get_table(db, sql, &result, &row, &cols);
- 		free(sql);
-@@ -164,5 +166,6 @@
- 		{
- 			insert_container(date_taken, IMAGE_DATE_ID, NULL, "album.photoAlbum", NULL, NULL, NULL, &objectID, &parentID);
--			sprintf(last_date.parentID, IMAGE_DATE_ID"$%"PRIX64, parentID);
-+			sprintf(last_date.parentID, IMAGE_DATE_ID"$%"PRIX64,
-+			    (int64_t)parentID);
- 			last_date.objectID = objectID;
- 			strcpy(last_date.name, date_taken);
-@@ -187,5 +190,6 @@
- 		{
- 			insert_container(camera, IMAGE_CAMERA_ID, NULL, "storageFolder", NULL, NULL, NULL, &objectID, &parentID);
--			sprintf(last_cam.parentID, IMAGE_CAMERA_ID"$%"PRIX64, parentID);
-+			sprintf(last_cam.parentID, IMAGE_CAMERA_ID"$%"PRIX64,
-+			    (int64_t)parentID);
- 			strncpy(last_cam.name, camera, 255);
- 			last_camdate.name[0] = '\0';
-@@ -199,5 +203,6 @@
- 		{
- 			insert_container(date_taken, last_cam.parentID, NULL, "album.photoAlbum", NULL, NULL, NULL, &objectID, &parentID);
--			sprintf(last_camdate.parentID, "%s$%"PRIX64, last_cam.parentID, parentID);
-+			sprintf(last_camdate.parentID, "%s$%"PRIX64, last_cam.parentID,
-+			    (int64_t)parentID);
- 			last_camdate.objectID = objectID;
- 			strcpy(last_camdate.name, date_taken);
-@@ -222,5 +227,6 @@
- 	else if( strstr(class, "audioItem") )
- 	{
--		asprintf(&sql, "SELECT ALBUM, ARTIST, GENRE, ALBUM_ART from DETAILS where ID = %"PRId64, detailID);
-+		asprintf(&sql, "SELECT ALBUM, ARTIST, GENRE, ALBUM_ART from DETAILS where ID = %"PRId64,
-+		    (int64_t)detailID);
- 		ret = sql_get_table(db, sql, &result, &row, &cols);
- 		free(sql);
-@@ -269,10 +275,12 @@
- 			{
- 				insert_container(artist, MUSIC_ARTIST_ID, NULL, "person.musicArtist", NULL, genre, NULL, &objectID, &parentID);
--				sprintf(last_artist.parentID, MUSIC_ARTIST_ID"$%"PRIX64, parentID);
-+				sprintf(last_artist.parentID, MUSIC_ARTIST_ID"$%"PRIX64,
-+				    (int64_t)parentID);
- 				strcpy(last_artist.name, artist);
- 				last_artistAlbum.name[0] = '\0';
- 				/* Add this file to the "- All Albums -" container as well */
- 				insert_container(_("- All Albums -"), last_artist.parentID, NULL, "album", artist, genre, NULL, &objectID, &parentID);
--				sprintf(last_artistAlbumAll.parentID, "%s$%"PRIX64, last_artist.parentID, parentID);
-+				sprintf(last_artistAlbumAll.parentID, "%s$%"PRIX64, last_artist.parentID,
-+				    (int64_t)parentID);
- 				last_artistAlbumAll.objectID = objectID;
- 			}
-@@ -290,5 +298,6 @@
- 				insert_container(album?album:_("Unknown Album"), last_artist.parentID, album?last_album.parentID:NULL,
- 				                 "album.musicAlbum", artist, genre, album_art, &objectID, &parentID);
--				sprintf(last_artistAlbum.parentID, "%s$%"PRIX64, last_artist.parentID, parentID);
-+				sprintf(last_artistAlbum.parentID, "%s$%"PRIX64, last_artist.parentID,
-+				    (int64_t)parentID);
- 				last_artistAlbum.objectID = objectID;
- 				strcpy(last_artistAlbum.name, album?album:_("Unknown Album"));
-@@ -311,10 +320,12 @@
- 			{
- 				insert_container(genre, MUSIC_GENRE_ID, NULL, "genre.musicGenre", NULL, NULL, NULL, &objectID, &parentID);
--				sprintf(last_genre.parentID, MUSIC_GENRE_ID"$%"PRIX64, parentID);
-+				sprintf(last_genre.parentID, MUSIC_GENRE_ID"$%"PRIX64,
-+				    (int64_t)parentID);
- 				strcpy(last_genre.name, genre);
- 				last_genreArtist.name[0] = '\0';
- 				/* Add this file to the "- All Artists -" container as well */
- 				insert_container(_("- All Artists -"), last_genre.parentID, NULL, "person", NULL, genre, NULL, &objectID, &parentID);
--				sprintf(last_genreArtistAll.parentID, "%s$%"PRIX64, last_genre.parentID, parentID);
-+				sprintf(last_genreArtistAll.parentID, "%s$%"PRIX64, last_genre.parentID,
-+				    (int64_t)parentID);
- 				last_genreArtistAll.objectID = objectID;
- 			}
-@@ -331,5 +342,6 @@
- 				insert_container(artist?artist:_("Unknown Artist"), last_genre.parentID, artist?last_artist.parentID:NULL,
- 				                 "person.musicArtist", NULL, genre, NULL, &objectID, &parentID);
--				sprintf(last_genreArtist.parentID, "%s$%"PRIX64, last_genre.parentID, parentID);
-+				sprintf(last_genreArtist.parentID, "%s$%"PRIX64, last_genre.parentID,
-+				    (int64_t)parentID);
- 				last_genreArtist.objectID = objectID;
- 				strcpy(last_genreArtist.name, artist?artist:_("Unknown Artist"));
 --- upnpdescgen.c	2011-05-03 18:07:47.000000000 -0400
 +++ upnpdescgen.c	2011-08-24 01:32:48.000000000 -0400
 @@ -585,5 +585,5 @@
@@ -167,7 +65,8 @@
 -	return ts.tv_sec * 1000000ULL + ts.tv_nsec / 1000;
 -}
 -
- int
+-int
++static int
  read_bootid_node(unsigned char *buf, size_t size)
 @@ -82,26 +74,13 @@
  read_random_bytes(unsigned char *buf, size_t size)
@@ -222,20 +121,6 @@
  typedef struct _GUID {
 --- utils.c	2011-07-18 14:13:25.000000000 -0400
 +++ utils.c	2011-09-21 00:58:47.000000000 -0400
-@@ -20,5 +20,5 @@
- #include <string.h>
- #include <stdlib.h>
--#include <linux/limits.h>
-+#include <limits.h>
- #include <sys/stat.h>
- #include <unistd.h>
-@@ -32,5 +32,5 @@
- #include "log.h"
- 
--inline int
-+int
- strcatf(struct string_s *str, const char *fmt, ...)
- {
 @@ -207,11 +207,15 @@
  		}
  
@@ -254,12 +139,3 @@
 +				    "%s\n", s - path, path, path, strerror(e));
  				return -1;
  			}
---- metadata.c	2011-07-18 18:18:10.000000000 -0400
-+++ metadata.c	2011-08-24 02:01:32.000000000 -0400
-@@ -21,5 +21,5 @@
- #include <stdlib.h>
- #include <sys/stat.h>
--
-+#include <libgen.h>
- #include <unistd.h>
- #include <sys/types.h>
