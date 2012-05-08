@@ -24,7 +24,7 @@ Final gitolite setup instructions:
 Any ssh user can be a gitolite provider. Simply run the following command as
 the user:
 
-%%PREFIX%%/bin/gitolite -pk /path/to/admin.ssh.key.pub
+%%PREFIX%%/bin/gitolite setup -pk /path/to/admin.ssh.key.pub
 
 This will setup up the configuration files for gitolite, designating where the
 repositories are located and other options.
