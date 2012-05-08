@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autossh
-PORTVERSION=	1.4b
+PORTVERSION=	1.4c
 CATEGORIES=	security
 MASTER_SITES=	http://www.harding.motd.ca/autossh/
 EXTRACT_SUFX=	.tgz
