@@ -5,5 +5,6 @@
 %%PYTHON_SITELIBDIR%%/xmmsclient/propdict.py
 %%PYTHON_SITELIBDIR%%/xmmsclient/qt3.py
 %%PYTHON_SITELIBDIR%%/xmmsclient/sync.py
+%%PYTHON_SITELIBDIR%%/xmmsclient/xmmsvalue.so
 %%PYTHON_SITELIBDIR%%/xmmsclient/xmmsapi.so
 @dirrm %%PYTHON_SITELIBDIR%%/xmmsclient

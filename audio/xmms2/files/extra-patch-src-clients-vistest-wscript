@@ -1,25 +1,30 @@
 --- src/clients/vistest/wscript~
 +++ src/clients/vistest/wscript
-@@ -15,14 +15,6 @@ def build(bld):
-     obj.uselib_local = 'xmmsclient-glib xmmsclient'
-     obj.uselib = 'glib2 math'
+@@ -23,17 +23,6 @@ def build(bld):
+             t.install_path = None
  
--    if bld.env['LIB_vorbisenc']:
--        obj = bld.new_task_gen('cc', 'program')
--        obj.target = 'xmms2-ripper'
--        obj.source = 'ripper.c'
--        obj.includes = '. ../../.. ../../include'
--        obj.uselib_local = 'xmmsclient'
--        obj.uselib = 'vorbisenc'
+ 
+-    if bld.env.LIB_vorbisenc:
+-        t = bld(features = 'c cprogram',
+-            target = 'xmms2-ripper',
+-            source = 'ripper.c',
+-            includes = '. ../../.. ../../include',
+-            uselib = 'vorbisenc',
+-            use = 'xmmsclient'
+-            )
+-        if not bld.env.INSTALL_VIS_REFERENCE_CLIENTS:
+-            t.install_path = None
 -
-     if bld.env['LIB_visual'] and bld.env['LIB_sdl']:
-         obj = bld.new_task_gen('cc', 'program')
-         obj.target = 'xmms2-libvisual'
-@@ -38,7 +30,6 @@ def configure(conf):
-     conf.check_cc(lib="m", uselib_store="math")
-     conf.check_cfg(package='libvisual-0.4', uselib_store='visual', args='--cflags --libs')
-     conf.check_cfg(package='sdl', uselib_store='sdl', args='--cflags --libs')
--    conf.check_cfg(package='vorbisenc', uselib_store='vorbisenc', args='--cflags --libs')
+     if bld.env.LIB_visual and bld.env.LIB_sdl:
+         t = bld(features = 'c cprogram',
+             target = 'xmms2-libvisual',
+@@ -53,9 +42,6 @@ def configure(conf):
  
-     return True
+     conf.check_cc(lib="m", uselib_store="math", mandatory=False)
  
+-    conf.check_cfg(package='vorbisenc', uselib_store='vorbisenc',
+-            args='--cflags --libs', mandatory=False)
+-
+     if conf.check_cfg(package='libvisual-0.4', uselib_store='visual',
+             args='--cflags --libs', mandatory=False):
+         conf.check_cfg(package='sdl', uselib_store='sdl',

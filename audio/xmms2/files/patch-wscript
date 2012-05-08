@@ -1,27 +1,30 @@
---- wscript.orig	2010-02-19 18:43:54.000000000 +0100
-+++ wscript	2010-03-17 15:21:16.184861151 +0100
-@@ -303,7 +303,7 @@
-         conf.env['PKGCONFIGDIR'] = Options.options.pkgconfigdir
-         print(conf.env['PKGCONFIGDIR'])
+--- wscript.orig	2011-10-20 21:26:08.000000000 +0200
++++ wscript	2012-05-06 18:28:07.902349353 +0200
+@@ -295,9 +295,6 @@
+         conf.msg("uncommited changed", changed and "yes" or "no")
+         conf.env.VERSION = "%s (git commit: %s%s)" % (BASEVERSION, nam, dirty)
+ 
+-    conf.env.append_unique('CFLAGS', ['-g', '-O0'])
+-    conf.env.append_unique('CXXFLAGS', ['-g', '-O0'])
+-
+     if conf.options.with_profiling:
+         conf.env.with_profiling = True
+         conf.env.append_unique('CFLAGS', ['--coverage'])
+@@ -330,7 +327,7 @@
+         conf.env.PKGCONFIGDIR = conf.options.pkgconfigdir
+         Logs.pprint('Normal', conf.env.PKGCONFIGDIR) #XXX What is it ?
      else:
--        conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["LIBDIR"], "pkgconfig")
-+        conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["PREFIX"], "libdata", "pkgconfig")
+-        conf.env.PKGCONFIGDIR = os.path.join(conf.env.LIBDIR, 'pkgconfig')
++        conf.env.PKGCONFIGDIR = os.path.join(conf.env.PREFIX, 'libdata', 'pkgconfig')
  
-     if Options.options.config_prefix:
-         for dir in Options.options.config_prefix:
-@@ -480,15 +480,6 @@
-         opt.sub_options(o)
+     if conf.options.config_prefix:
+         for d in conf.options.config_prefix:
+@@ -339,6 +336,8 @@
+             conf.env.prepend_value('LIBPATH', os.path.join(d, 'lib'))
+             conf.env.prepend_value('CPPPATH', os.path.join(d, 'include'))
  
- def shutdown():
--    if Options.commands['install'] and (
--            Options.options.ldconfig or
--            (Options.options.ldconfig is None and os.geteuid() == 0)
--            ):
--        ldconfig = '/sbin/ldconfig'
--        if os.path.isfile(ldconfig):
--            libprefix = Utils.subst_vars('${PREFIX}/lib', Build.bld.env)
--            try: Utils.cmd_output(ldconfig + ' ' + libprefix)
--            except: pass
- 
-     if Options.options.run_tests:
-         os.system(os.path.join(blddir, "default/tests/test_xmmstypes"))
++    conf.env.prepend_value('LIBPATH', "%%WRKSRC%%/_build_/src/clients/lib/xmmsclient")
++
+     if Options.platform != 'win32':
+         conf.env.append_unique('CFLAGS_cstlib', ['-fPIC', '-DPIC'])
+         conf.env.append_unique('CPPFLAGS_cxxshlib', ['-fPIC', '-DPIC'])

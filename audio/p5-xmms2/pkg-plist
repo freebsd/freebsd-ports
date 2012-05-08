@@ -3,6 +3,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Glib.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Sync.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/XMMSClient/XMMSClient.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Collection.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Playlist.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient/Result.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient.pod
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/XMMSClient
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio/XMMSClient

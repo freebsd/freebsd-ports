@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.7
-PORTREVISION?=	4
-DISTVERSIONSUFFIX=DrNo
+PORTVERSION=	0.8
+DISTVERSIONSUFFIX=DrO_o
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT?=	Rewrite of xmms as a client/server system (developer release)
 
 USE_BZIP2=	yes
@@ -24,9 +23,11 @@ USE_SQLITE=	3
 
 USE_LDCONFIG=	yes
 
-MAN1=		nyxmms2.1 xmms2.1 xmms2-et.1 xmms2d.1 xmms2-launcher.1
+MAN1=		xmms2.1 xmms2d.1 xmms2-launcher.1
 MANCOMPRESSED=	yes
 PLIST_SUB+=	INCLUDEDIR="include/${PORTNAME}" LIBDIR="lib/${PORTNAME}"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	AIRPLAY	"Support output via Airport Express" off \
 		AO	"Support to output via libao" off \
@@ -52,16 +53,22 @@ OPTIONS=	AIRPLAY	"Support output via Airport Express" off \
 		PULSE	"Support to output via the PulseAudio" off \
 		SAMBA	"Support to playback files via SMB" off \
 		SID	"Support to playback SID files" off \
+		SNDFILE	"Support to playback AIFF/AU/CAF/PAF files" off \
 		SPEEX	"Support to playback SPEEX files" off \
 		TREMOR	"Support to playback OGG files" off \
 		VISUAL	"Support for visualization plugins" off \
 		VOCODER	"Phase Vocoder effect plugin" off \
 		VORBIS	"Support to playback OGG files" on \
 		WAVPACK	"Support to playback WV files" off \
-		XML	"Support for XML based playlists (XSPF, RSS)" off
+		XML	"Support for XML based playlists (XSPF, RSS)" off \
+		ET	"Install usage feedback reporting client" off
 .endif # !XMMS_SLAVE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 800030
+BROKEN=		Does not compile on 7.x: Requires fstatat(2)
+.endif
 
 .if defined(XMMS2_SLAVE)
 EXCLUDE+=	--without-xmms2d
@@ -206,24 +213,24 @@ PLIST_SUB+=	MAD="@comment "
 
 .if !defined(WITHOUT_MDNS_APPLE) && !defined(WITHOUT_MDNS_AVAHI)
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
+.elif defined(WITHOUT_MDNS_APPLE) && defined(WITHOUT_MDNS_AVAHI)
+EXCLUDE+=	--without-optionals="mdns"
 .endif
 
 .if !defined(WITHOUT_MDNS_APPLE)
-EXCLUDE+=	--without-optionals="avahi"
+EXCLUDE+=	--with-mdns-backend="dns_sd"
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
-EXCLUDE+=	--without-optionals="dns_sd"
 PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 
 .if !defined(WITHOUT_MDNS_AVAHI)
-EXCLUDE+=	--without-optionals="dns_sd"
+EXCLUDE+=	--with-mdns-backend="avahi"
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	MDNS_AVAHI=""
 MAN1+=		xmms2-mdns-avahi.1
 .else
-EXCLUDE+=	--without-optionals="avahi"
 PLIST_SUB+=	MDNS_AVAHI="@comment "
 .endif
 
@@ -291,6 +298,14 @@ EXCLUDE+=	--without-plugins="sid"
 PLIST_SUB+=	SID="@comment "
 .endif
 
+.if !defined(WITHOUT_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+PLIST_SUB+=	SNDFILE=""
+.else
+EXCLUDE+=	--without-plugins="sndfile"
+PLIST_SUB+=	SNDFILE="@comment "
+.endif
+
 .if !defined(WITHOUT_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 PLIST_SUB+=	SPEEX=""
@@ -318,9 +333,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-clients-vistest-wscript
 .if !defined(WITHOUT_VISUAL)
 USE_SDL=	yes
 LIB_DEPENDS+=	visual-0.4.0:${PORTSDIR}/graphics/libvisual04
-PLIST_SUB+=	VISUAL=""
 .else
 EXCLUDE+=	--without-optionals="vistest"
+.endif
+
+.if !defined(WITHOUT_VISUAL) && ${EXCLUDE:M--with-vis-reference-clients}
+PLIST_SUB+=	VISUAL=""
+.else
 PLIST_SUB+=	VISUAL="@comment "
 .endif
 
@@ -358,16 +377,31 @@ EXCLUDE+=	--without-plugins="xml" --without-plugins="rss" \
 PLIST_SUB+=	XML="@comment "
 .endif
 
+.if !defined(WITHOUT_ET)
+PLIST_SUB+=	ET=""
+MAN1+=		xmms2-et.1
+.else
+EXCLUDE+=	--without-optionals="et"
+PLIST_SUB+=	ET="@comment "
+.endif
+
 .endif # !XMMS2_SLAVE
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|" ${WRKSRC}/wscript
+
 do-configure:
-	cd ${WRKSRC} && ./waf configure --conf-prefix=${LOCALBASE} \
-		--prefix=${PREFIX} --mandir=${PREFIX}/man ${EXCLUDE}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${_MAKE_JOBS} configure \
+		--conf-prefix=${LOCALBASE} --prefix=${PREFIX} \
+		--mandir=${PREFIX}/man ${EXCLUDE}
 
 do-build:
-	cd ${WRKSRC} && ./waf build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${_MAKE_JOBS} build
 
 do-install:
-	cd ${WRKSRC} && ./waf install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf install --without-ldconfig
+	if [ ! -d ${DATADIR}/scripts/startup.d ]; then \
+		${MKDIR} ${DATADIR}/scripts/startup.d;\
+	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

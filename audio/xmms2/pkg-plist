@@ -2,7 +2,7 @@ bin/nyxmms2
 %%VISUAL%%bin/vistest
 %%VISUAL%%bin/vistest-fft
 bin/xmms2
-bin/xmms2-et
+%%ET%%bin/xmms2-et
 %%MDNS_AVAHI%%bin/xmms2-find-avahi
 bin/xmms2-launcher
 %%VISUAL%%bin/xmms2-libvisual
@@ -38,7 +38,14 @@ bin/xmms2d
 %%INCLUDEDIR%%/xmmsc/xmmsc_util.h
 %%INCLUDEDIR%%/xmmsc/xmmsc_visualization.h
 %%INCLUDEDIR%%/xmmsc/xmmsv.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_bitbuffer.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_build.h
 %%INCLUDEDIR%%/xmmsc/xmmsv_coll.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_deprecated.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_dict.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_general.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_list.h
+%%INCLUDEDIR%%/xmmsc/xmmsv_util.h
 %%INCLUDEDIR%%/xmmsclient/xmmsclient++-glib.h
 %%INCLUDEDIR%%/xmmsclient/xmmsclient++.h
 %%INCLUDEDIR%%/xmmsclient/xmmsclient++/bindata.h
@@ -114,6 +121,7 @@ lib/libxmmsclient.so.6.0.0
 %%XML%%%%LIBDIR%%/libxmms_rss.so
 %%SAMBA%%%%LIBDIR%%/libxmms_samba.so
 %%SID%%%%LIBDIR%%/libxmms_sid.so
+%%SNDFILE%%%%LIBDIR%%/libxmms_sndfile.so
 %%SPEEX%%%%LIBDIR%%/libxmms_speex.so
 %%TREMOR%%%%LIBDIR%%/libxmms_tremor.so
 %%LIBDIR%%/libxmms_tta.so
@@ -134,7 +142,8 @@ share/pixmaps/xmms2-black-on-white.svg
 share/pixmaps/xmms2-white-on-black.svg
 share/pixmaps/xmms2.svg
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
-%%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
+@exec if [ ! -d %D/%%DATADIR%%/scripts/startup.d ] ; then mkdir -p %D/%%DATADIR%%/scripts/startup.d; fi
+%%ET%%%%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
 %%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 %%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 %%FAM%%%%DATADIR%%/scripts/startup.d/xmms2-mlib-updater.sh
