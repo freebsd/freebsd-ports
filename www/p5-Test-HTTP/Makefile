@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-HTTP
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test HTTP interactions
 
-RUN_DEPENDS=	p5-Class-Field>=0:${PORTSDIR}/devel/p5-Class-Field \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Class-Field>=0:${PORTSDIR}/devel/p5-Class-Field \
+		p5-libwww>=5.827:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Test::HTTP.3 Test::HTTP::Syntax.3
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>
