@@ -1292,6 +1292,7 @@ otrs/Kernel/Language/pt.pm
 otrs/Kernel/Language/pt_BR.pm
 otrs/Kernel/Language/ru.pm
 otrs/Kernel/Language/sk_SK.pm
+otrs/Kernel/Language/sl.pm
 otrs/Kernel/Language/sr_Cyrl.pm
 otrs/Kernel/Language/sr_Latn.pm
 otrs/Kernel/Language/sv.pm
