@@ -3284,6 +3284,7 @@
     SUBDIR += py-manuel
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
+    SUBDIR += py-mimeparse
     SUBDIR += py-minimongo
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
