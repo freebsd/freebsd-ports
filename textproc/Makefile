@@ -967,6 +967,7 @@
     SUBDIR += p5-XML-Rewrite
     SUBDIR += p5-XML-Rules
     SUBDIR += p5-XML-SAX
+    SUBDIR += p5-XML-SAX-Base
     SUBDIR += p5-XML-SAX-Expat
     SUBDIR += p5-XML-SAX-Expat-Incremental
     SUBDIR += p5-XML-SAX-ExpatXS
