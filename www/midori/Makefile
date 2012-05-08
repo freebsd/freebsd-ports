@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -87,8 +86,8 @@ post-install:
 .if defined(WITH_APIDOCS)
 	${MKDIR} ${DOCSDIR}/api/katze/html
 	${MKDIR} ${DOCSDIR}/api/midori/html
-	(cd ${WRKSRC}/_build_/docs/api/katze/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/api/katze/html)
-	(cd ${WRKSRC}/_build_/docs/api/midori/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/api/midori/html)
+	(cd ${WRKSRC}/_build/docs/api/katze/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/api/katze/html)
+	(cd ${WRKSRC}/_build/docs/api/midori/html && ${COPYTREE_SHARE} \* ${DOCSDIR}/api/midori/html)
 .endif
 
 .include <bsd.port.post.mk>

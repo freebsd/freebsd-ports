@@ -44,7 +44,6 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-separatoraction.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-throbber.html
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-utils.html
-%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp2
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/left.png
 %%APIDOCS%%%%DOCSDIR%%/api/katze/html/right.png
@@ -75,7 +74,6 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-socket.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-sokoke.html
-%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp2
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/right.png
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/style.css

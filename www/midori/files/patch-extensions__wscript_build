@@ -1,0 +1,12 @@
+--- extensions/wscript_build.orig	2012-04-14 21:17:35.000000000 +0200
++++ extensions/wscript_build	2012-05-02 22:02:34.000000000 +0200
+@@ -4,7 +4,8 @@
+ 
+ import os
+ 
+-extensions = os.listdir ('extensions')
++exclude_files = ['external-download-manager.vala']
++extensions = [i for i in os.listdir ('extensions') if i not in exclude_files]
+ for extension in extensions:
+     folder = 'extensions' + os.sep + extension
+     if os.path.isdir (folder):
