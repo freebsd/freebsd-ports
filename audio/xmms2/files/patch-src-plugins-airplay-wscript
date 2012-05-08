@@ -1,19 +1,11 @@
 --- src/plugins/airplay/wscript.orig	2010-02-19 18:43:54.000000000 +0100
 +++ src/plugins/airplay/wscript	2010-03-17 15:14:34.459359323 +0100
-@@ -1,15 +1,6 @@
- from waftools.plugin import plugin
+@@ -12,8 +12,6 @@ rtspmessage.c
+ def plugin_configure(conf):
+     # MinGW doesn't ship sys/select.h
+     conf.check_cc(header_name='sys/select.h')
+-    conf.check_cfg(package="openssl", args="--cflags --libs",
+-            uselib_store="openssl")
  
--def plugin_configure(conf):
--	# MinGW doesn't ship sys/select.h
--	if not conf.check_cc(header_name='sys/select.h'):
--		return False
--
--	if not conf.check_cfg(package="openssl", args="--cflags --libs", uselib_store="openssl"):
--		return False
--	return True
--
--configure, build = plugin("airplay", configure=plugin_configure,
-+configure, build = plugin("airplay",
-                           source=["airplay.c", "raop_client.c",
-                                   "net_utils.c", "rtspdefs.c",
-                                   "rtspconnection.c", "rtspmessage.c"],
+ configure, build = plugin("airplay", configure=plugin_configure,
+                           source = source, libs=["openssl"], output_prio=4)
