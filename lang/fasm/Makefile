@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	fasm
-PORTVERSION=	1.70.00
+PORTVERSION=	1.70.01
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
-DISTNAME=	${PORTNAME}-1.70
 
 MAINTAINER=	graudeejs@gmail.com
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
-
-BROKEN=		size mismatch
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -22,12 +19,14 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 IA32_BINARY_PORT=	yes
 
+PLIST_FILES=	bin/fasm
+PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-CFLAGS=		-m32 -L/usr/lib32 -B/usr/lib32
+CFLAGS+=		-m32 -L/usr/lib32 -B/usr/lib32
 .endif
 
 do-build:
