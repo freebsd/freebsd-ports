@@ -1,0 +1,63 @@
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/maps.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/stupid.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/__version__.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/wrappers.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/stupid.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/pushmod.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/util.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/replay.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnmeta.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/editor.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnexternals.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnrepo.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/__version__.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/maps.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnmeta.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/pushmod.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/util.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/__init__.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svncommands.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/replay.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/wrappers.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svncommands.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/stupid.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/pushmod.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/util.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/editor.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnmeta.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/__version__.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/maps.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnrepo.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnrepo.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/help/subversion.rst
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/editor.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnexternals.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/common.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/svn_swig_wrapper.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/subvertpy_wrapper.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/__init__.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/common.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/subvertpy_wrapper.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/svn_swig_wrapper.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/svn_swig_wrapper.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/common.pyc
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/__init__.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap/subvertpy_wrapper.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnexternals.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/wrappers.py
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/replay.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svncommands.pyo
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/SOURCES.txt
+@dirrm %%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/svnwrap
+@dirrm %%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion/help
+@dirrm %%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg/hgsubversion
+@dirrm %%PYTHON_SITELIBDIR%%/hgsubversion-%%VERSION%%-py%%PYVER%%.egg
