@@ -1,5 +1,5 @@
---- minidlna.c	2011-07-18 18:18:11.000000000 -0400
-+++ minidlna.c	2011-08-24 01:25:26.000000000 -0400
+--- minidlna.c	2012-02-14 13:26:53.000000000 -0500
++++ minidlna.c	2012-04-11 11:18:28.000000000 -0400
 @@ -53,4 +53,5 @@
  #include <ctype.h>
  #include <sys/types.h>
@@ -15,20 +15,28 @@
 +
  #include "config.h"
  
-@@ -345,5 +350,5 @@
- 	/*const char * logfilename = 0;*/
- 	const char * presurl = 0;
+@@ -86,5 +91,7 @@
+ #include "upnpevents.h"
+ #include "scanner.h"
++#ifdef __linux__
+ #include "inotify.h"
++#endif
+ #include "log.h"
+ #ifdef TIVO_SUPPORT
+@@ -342,5 +349,5 @@
+ 	struct sigaction sa;
+ 	const char * presurl = NULL;
 -	const char * optionsfile = "/etc/minidlna.conf";
 +	const char * optionsfile = PREFIX "/etc/minidlna.conf";
  	char mac_str[13];
  	char * string, * word;
-@@ -353,4 +358,5 @@
- 	char ip_addr[INET_ADDRSTRLEN + 3] = {'\0'};
+@@ -352,4 +359,5 @@
+ 	char *log_level = NULL;
  
 +	uid_t	uid = (uid_t)-1;
  	/* first check if "-f" option is used */
  	for(i=2; i<argc; i++)
-@@ -741,4 +747,21 @@
+@@ -740,4 +748,21 @@
  			exit(0);
  			break;
 +		case 'u':
@@ -49,21 +57,14 @@
 +			}
 +			break;
  		default:
- 			fprintf(stderr, "Unknown option: %s\n", argv[i]);
-@@ -768,4 +791,5 @@
+ 			DPRINTF(E_ERROR, L_GENERAL, "Unknown option: %s\n", argv[i]);
+@@ -767,4 +792,5 @@
  			"\t\t[-s serial] [-m model_number] \n"
  			"\t\t[-t notify_interval] [-P pid_filename]\n"
 +			"\t\t[-u uid_to_run_as]\n"
  			"\t\t[-w url] [-R] [-V] [-h]\n"
  		        "\nNotes:\n\tNotify interval is in seconds. Default is 895 seconds.\n"
-@@ -831,5 +855,5 @@
- 
- 	/* set signal handler */
--	signal(SIGCLD, SIG_IGN);
-+	signal(SIGCHLD, SIG_IGN);
- 	memset(&sa, 0, sizeof(struct sigaction));
- 	sa.sa_handler = sigterm;
-@@ -849,4 +878,7 @@
+@@ -839,4 +865,7 @@
  	writepidfile(pidfilename, pid);
  
 +	if (uid != (uid_t)-1 && setuid(uid) == -1)
@@ -71,15 +72,18 @@
 +
  	return 0;
  }
-@@ -966,4 +998,5 @@
- #endif
+@@ -965,4 +995,5 @@
  	}
+ 	signal(SIGCHLD, SIG_IGN);
 +#if defined(__linux__)
  	if( sqlite3_threadsafe() && sqlite3_libversion_number() >= 3005001 &&
  	    GETFLAG(INOTIFY_MASK) && pthread_create(&inotify_thread, NULL, start_inotify, NULL) )
-@@ -971,4 +1004,5 @@
+@@ -970,6 +1001,7 @@
  		DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_inotify.\n");
  	}
 +#endif
  
- 	sudp = OpenAndConfSSDPReceiveSocket(n_lan_addr, lan_addr);
+-	sudp = OpenAndConfSSDPReceiveSocket(n_lan_addr, lan_addr);
++	sudp = OpenAndConfSSDPReceiveSocket();
+ 	if(sudp < 0)
+ 	{

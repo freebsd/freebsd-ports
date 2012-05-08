@@ -21,12 +21,14 @@ load_rc_config $name
 minidlna_enable=${minidlna_enable-"NO"}
 minidlna_uid=${minidlna_uid-"%%USER%%"}
 
-pidfile="/var/run/minidlna.pid"
+pidfile="/var/db/minidlna/minidlna.pid"
 
 start_precmd="rm -f $pidfile"
 stop_postcmd=$start_precmd
 
 command_args="-P $pidfile -u $minidlna_uid"
+extra_commands=rescan
+rescan_cmd="$command -R"
 required_dirs="/var/db/minidlna"
 
 run_rc_command $1

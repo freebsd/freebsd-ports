@@ -1,0 +1,25 @@
+Allowing SSDP M-SEARCH from other subnets. See:
+http://sourceforge.net/tracker/?func=detail&aid=3495642&group_id=243163&atid=1121518
+--- minissdp.c
++++ minissdp.c
+@@ -674,9 +674,17 @@ ProcessSSDPRequest(int s, unsigned short
+ 			}
+ 			if( i == n_lan_addr )
+ 			{
+-				DPRINTF(E_DEBUG, L_SSDP, "Ignoring SSDP M-SEARCH on other interface [%s]\n",
+-					inet_ntoa(sendername.sin_addr));
+-				return;
++				if( n_lan_addr == 1 )
++				{
++					DPRINTF(E_INFO, L_SSDP, "SSDP M-SEARCH coming from another subnet [%s]\n",
++						inet_ntoa(sendername.sin_addr));
++				}
++				else
++				{
++					DPRINTF(E_DEBUG, L_SSDP, "Ignoring SSDP M-SEARCH on other interface [%s]\n",
++						inet_ntoa(sendername.sin_addr));
++					return;
++				}
+ 			}
+ 			DPRINTF(E_INFO, L_SSDP, "SSDP M-SEARCH from %s:%d ST: %.*s, MX: %.*s, MAN: %.*s\n",
+ 	        	   inet_ntoa(sendername.sin_addr),
