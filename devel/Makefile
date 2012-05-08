@@ -3247,6 +3247,7 @@
     SUBDIR += py-grouch
     SUBDIR += py-gyp-devel
     SUBDIR += py-hashring
+    SUBDIR += py-hghooks
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
