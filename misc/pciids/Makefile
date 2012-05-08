@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20120409
+PORTVERSION=	20120507
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -28,11 +28,11 @@ do-install:
 # maintainer section:
 
 MS_DIFF=	${MS_WRKSRC}/${MS_DISTFILES}.diff
+MS_DISTFILES=	pci.ids
+MS_MASTER_SITE=	http://pci-ids.ucw.cz/
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
 MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
-MS_MASTER_SITE=	http://pci-ids.ucw.cz/
-MS_DISTFILES=	pci.ids
 
 maketar: do-clean extract
 	${MKDIR} ${MS_WRKSRC}/
