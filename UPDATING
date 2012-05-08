@@ -35,7 +35,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHORS: bapt@FreeBSD.org
 
   LOCALIZED_LANG option has gone, localised packages are now available
-  separatly, you can also use editors/libreoffice-i18n to pick the
+  separately, you can also use editors/libreoffice-i18n to pick the
   localisation you want.
 
 20120425:
