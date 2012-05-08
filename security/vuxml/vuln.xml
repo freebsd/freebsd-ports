@@ -10414,7 +10414,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php52</name>
-	<range><lt>5.2.15</lt></range>
+	<range><ge>0</ge></range>
       </package>
     </affects>
     <description>
