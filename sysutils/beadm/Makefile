@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beadm
-PORTVERSION=	0.1
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.shatow.net/freebsd/
 
