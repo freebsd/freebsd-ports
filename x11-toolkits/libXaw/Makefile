@@ -18,6 +18,14 @@ USE_XORG=	printproto:both x11 xau xext xextproto xmu xp xpm xproto:both xt
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-xmlto
 
+PORTDOCS=	*
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=--disable-specs
+post-configure:
+	@${REINPLACE_CMD} -e '/AM_MAKEFLAGS/s/ install-exec-am install-data-am/ install-exec-am/' ${WRKSRC}/specs/Makefile
+.endif
+
 MAN3=		Xaw.3
 
 .include <bsd.port.mk>
