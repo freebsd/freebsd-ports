@@ -28,7 +28,7 @@ stop_postcmd=$start_precmd
 
 command_args="-P $pidfile -u $minidlna_uid"
 extra_commands=rescan
-rescan_cmd="$command -R"
+rescan_cmd="$command -R -u $minidlna_uid"
 required_dirs="/var/db/minidlna"
 
 run_rc_command $1
