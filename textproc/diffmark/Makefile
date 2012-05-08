@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffmark
-PORTVERSION=	0.07
+PORTVERSION=	0.10
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mangrove.cz/diffmark/
 
