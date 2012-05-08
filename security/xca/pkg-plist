@@ -7,6 +7,7 @@ bin/xca
 %%DATADIR%%/dn.txt
 %%DATADIR%%/eku.txt
 %%DATADIR%%/oids.txt
+%%DATADIR%%/release.txt
 %%DATADIR%%/xca_de.qm
 %%DATADIR%%/xca_es.qm
 %%DATADIR%%/xca_fr.qm
