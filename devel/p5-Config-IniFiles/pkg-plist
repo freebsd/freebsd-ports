@@ -1,2 +1,5 @@
 %%SITE_PERL%%/Config/IniFiles.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniFiles/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/IniFiles
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 @dirrmtry %%SITE_PERL%%/Config
