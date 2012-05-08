@@ -7,6 +7,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.6.17
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -59,6 +60,11 @@ do-install:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} install)
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	${MKDIR} ${PREFIX}/lib/node_modules/
+	${TOUCH} ${PREFIX}/lib/node_modules/.keepme
+	${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
