@@ -41,6 +41,7 @@ FrontBase/bin/FBTLog
 FrontBase/bin/FBReplicator
 FrontBase/bin/sql92
 bin/sql92
+include/Target.h
 include/FBCAccess/FBCRow.h
 include/FBCAccess/FBDatabaseDefs.h
 include/FBCAccess/FBRSAccess.h

@@ -5,24 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	frontbase
-PORTVERSION=	4.2.8
+PORTNAME=	FrontBase
+PORTVERSION=	4.2.9
 CATEGORIES=	databases
 MASTER_SITES=	http://www.frontbase.com/download/Download_${PORTVERSION}/FreeBSD5/:db
 MASTER_SITES+=	http://www.frontbase.com/download/WO5Plugin/UnixLinux/:plugin
-DISTNAME=	FrontBase-${PORTVERSION}
-DISTFILES=	FrontBase-${PORTVERSION}.tar:db
+DISTFILES=	FrontBase-${PORTVERSION}-FreeBSD5.tar:db
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	mjs@bur.st
 COMMENT=	Frontbase SQL Database Server
 
-IS_INTERACTIVE=	yes
-RESTRICTED=	License doesn't allow redistribution
+LICENSE=	FrontBase
+LICENSE_NAME=	FrontBase
+LICENSE_FILE=	${FILESDIR}/LICENSE.txt
+LICENSE_PERMS=	no-auto-accept # nothing else allowed either
+
+NO_PACKAGE=	license requires confirmation
 
 USE_RC_SUBR=	frontbase.sh
 USE_LDCONFIG=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGDEINSTALL=	pkg-deinstall
 SUB_FILES+=	pkg-message
 
 ONLY_FOR_ARCHS=	i386
@@ -30,8 +31,8 @@ ONLY_FOR_ARCHS=	i386
 # Binary is built for 5.X :
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 
-FB_USER=	frontbase
-FB_GROUP=	frontbase
+USERS=		frontbase
+GROUPS=		frontbase
 NO_BUILD=	yes
 FBPKGNAME=	Package.tar.gz
 FBDATADIRS=	Collations Library Translations
