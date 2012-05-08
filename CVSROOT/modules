@@ -1305,6 +1305,7 @@ btoa                            ports/converters/btoa
 btparse                         ports/textproc/btparse
 btpd                            ports/net-p2p/btpd
 btqueue                         ports/net-p2p/btqueue
+bubble-chains                   ports/games/bubble-chains
 bubblegum                       ports/security/bubblegum
 bubblemon-dockapp               ports/sysutils/bubblemon-dockapp
 bubblemon2                      ports/sysutils/bubblemon2
@@ -2085,6 +2086,7 @@ cursor-polar-theme              ports/x11-themes/cursor-polar-theme
 curvedns                        ports/dns/curvedns
 cuse4bsd-kmod                   ports/multimedia/cuse4bsd-kmod
 cutecom                         ports/comms/cutecom
+cutemaze                        ports/games/cutemaze
 cutils                          ports/devel/cutils
 cutmp3                          ports/audio/cutmp3
 cutter                          ports/devel/cutter
@@ -4396,6 +4398,7 @@ git-merge-changelog             ports/devel/git-merge-changelog
 git-subversion                  ports/devel/git-subversion
 gitg                            ports/devel/gitg
 gitolite                        ports/devel/gitolite
+gitolite2                       ports/devel/gitolite2
 gittrac                         ports/devel/gittrac
 givaro                          ports/math/givaro
 gjs                             ports/lang/gjs
@@ -4469,6 +4472,7 @@ glibmm                          ports/devel/glibmm
 glibmm-reference                ports/devel/glibmm-reference
 glide3                          ports/graphics/glide3
 glife                           ports/games/glife
+glightoff                       ports/games/glightoff
 glimmer                         ports/editors/glimmer
 glimpse                         ports/textproc/glimpse
 glipper                         ports/deskutils/glipper
@@ -7702,6 +7706,11 @@ launchy                         ports/deskutils/launchy
 lavaps                          ports/sysutils/lavaps
 layouteditor                    ports/cad/layouteditor
 lazarus                         ports/editors/lazarus
+lazarus-lcl-gtk                 ports/editors/lazarus-lcl-gtk
+lazarus-lcl-gtk2                ports/editors/lazarus-lcl-gtk2
+lazarus-lcl-nogui               ports/editors/lazarus-lcl-nogui
+lazarus-lcl-qt                  ports/editors/lazarus-lcl-qt
+lazarus-lcl-units               ports/editors/lazarus-lcl-units
 lbdb                            ports/mail/lbdb
 lbl-cf                          ports/sysutils/lbl-cf
 lbl-hf                          ports/sysutils/lbl-hf
@@ -27026,6 +27035,7 @@ udunits                         ports/science/udunits
 uebimiau                        ports/mail/uebimiau
 uemacs                          ports/editors/uemacs
 uf-view                         ports/misc/uf-view
+ufc                             ports/math/ufc
 ufmcontrol-i18n                 ports/audio/ufmcontrol-i18n
 ufoai                           ports/games/ufoai
 ufoai-data                      ports/games/ufoai-data
