@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
 		LOCAL/sunpoet
@@ -30,11 +30,10 @@ post-patch:
 			${WRKSRC}/${PORTNAME}
 
 do-install:
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}.d/ ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/share/zsh/site-functions/
-	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.example ${PREFIX}/etc/${PORTNAME}.conf.sample
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}.d/
 	${INSTALL_DATA} ${DISTDIR}/zlin.conf ${PREFIX}/etc/${PORTNAME}.d/
+	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} ${PREFIX}/share/zsh/site-functions/
 
 .include <bsd.port.mk>
