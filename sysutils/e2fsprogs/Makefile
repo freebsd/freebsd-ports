@@ -43,7 +43,7 @@ post-extract:
 
 PKGDEINSTALL=	${PKGINSTALL}
 
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 # get more details into tinderbox logs
 .if defined(PACKAGE_BUILDING)
