@@ -7,14 +7,14 @@
 
 PORTNAME=	osm2pgsql
 PORTVERSION=	r27612
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters geography
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
 
-LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
+LIB_DEPENDS=	proj.7:${PORTSDIR}/graphics/proj \
 		geos.0:${PORTSDIR}/graphics/geos \
 		protobuf-c.0:${PORTSDIR}/devel/protobuf-c
 
