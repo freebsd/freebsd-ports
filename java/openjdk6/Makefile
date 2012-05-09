@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b24
-PORTREVISION=	7
+PORTVERSION=	b25
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -39,7 +38,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	14_nov_2011
+OPENJDK_BUILDDATE=	01_may_2012
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
@@ -66,7 +65,7 @@ JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
 JTREGVERSION=	b03
 JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_11_jul_2011.zip
-UPDATE_VERSION=	30
+UPDATE_VERSION=	32
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
