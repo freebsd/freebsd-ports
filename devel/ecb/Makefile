@@ -7,7 +7,7 @@
 
 PORTNAME=	ecb
 PORTVERSION=	2.40
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME:U}%20${PORTVERSION}
@@ -55,6 +55,7 @@ PORTDOCS=	NEWS README RELEASE_NOTES
 .endif
 
 post-patch:
+	${REINPLACE_CMD} "s|1\ 0\ 4\ 9|1\ 1\ 5\ 0|" ${WRKSRC}/ecb-upgrade.el
 	${REINPLACE_CMD} "s|\./info-help|${PREFIX}/info|" ${WRKSRC}/ecb-help.el
 	${REINPLACE_CMD} "s/^\(@dircategory \)GNU Emacs Lisp/\1The Emacs editor and associated tools/" ${WRKSRC}/ecb.texi
 
