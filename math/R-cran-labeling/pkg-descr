@@ -1,0 +1,5 @@
+Implements a number of axis labeling schemes, including those
+compared in An Extension of Wilkinson's Algorithm for Positioning
+Tick Labels on Axes by Talbot, Lin, and Hanrahan, InfoVis 2010.
+
+WWW:	http://cran.r-project.org/web/packages/labeling/
