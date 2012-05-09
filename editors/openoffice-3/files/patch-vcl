@@ -1,0 +1,24 @@
+temporary hack. -I/usr/local/include appears too early so that graphite
+catches it thus build fails. 
+
+/workdir &&  mkdir -p $W/CxxObject/vcl/unx/generic/gdi/ && mkdir -p $W/Dep/CxxObject/vcl/unx/generic/gdi/ && c++ -DCPPU_ENV=gcc3 -DCUI -DENABLE_GRAPHITE -DENABLE_GTK -DENABLE_LAYOUT=0 -DENABLE_LAYOUT_EXPERIMENTAL=0 -DFREEBSD -DGCC -DGXX_INCLUDE_PATH=/usr/include/c++/4.2 -DHAVE_GCC_VISIBILITY_FEATURE -DNDEBUG -DOPTIMIZE -DOSL_DEBUG_LEVEL=0 -DPRODUCT -DPRODUCT_FULL -DSOLAR_JAVA -DSTLPORT_VERSION=400 -DSUPD=340 -DUNIX -DUNX -DVCL -DX86_64 -D_PTHREADS -D_REENTRANT   -D_XSALSET_LIBNAME=\"libspa.so\" -DVCLPLUG_GEN_IMPLEMENTATION  -DUSE_RANDR  -DUSE_XINERAMA_XORG  -Wall -Wendif-labels -Wextra -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor -Wshadow -fPIC -fmessage-length=0 -fno-common -fno-strict-aliasing -fno-use-cxa-atexit -fvisibility-inlines-hidden -fvisibility=hidden -pipe   -D_THREAD_SAFE -I/usr/local/include    -DEXCEPTIONS_ON -fexceptions -fno-enforce-eh-specs  -Os -c $S/vcl/unx/generic/gdi/pspgraphics.cxx -o $W/CxxObject/vcl/unx/generic/gdi/pspgraphics.o -MMD -MT $W/CxxObject/vcl/unx/generic/gdi/pspgraphics.o -MF $W/Dep/CxxObject/vcl/unx/generic/gdi/pspgraphics.d -I$S/vcl/unx/generic/gdi/ -I$O/inc/stl -I$O/inc/stl -Iaaa -I$O/inc/external -I$O/inc -I$S/solenv/unxfbsdx/inc -I$S/solenv/inc -I$S/res -I$S/solenv/inc/Xp31 -I/usr/local/openjdk6/include -I/usr/local/openjdk6/include/freebsd -I/usr/local/openjdk6/include/bsd -I/usr/local/openjdk6/include/linux -I/usr/local/openjdk6/include/native_threads/include -I/usr/local/include -I$S/vcl/inc -I$S/vcl/inc/pch -I$S/solenv/inc -I$O/inc/offuh -I$O/inc/stl -I$O/inc 
+In file included from /usr/local/include/graphite/GrClient.h:31,
+                 from /work/tinderbox-ligeti8amd64/portstrees/FreeBSD/ports/editors/openoffice-3-devel/work/ooo/main/vcl/inc/graphite_layout.hxx:40,
+                 from /work/tinderbox-ligeti8amd64/portstrees/FreeBSD/ports/editors/openoffice-3-devel/work/ooo/main/vcl/unx/generic/gdi/pspgraphics.cxx:52:
+/usr/local/include/graphite/GrFeature.h:110: error: 'wstring' in namespace '_STL' does not name a type
+/usr/local/include/graphite/GrFeature.h:111: error: 'wstring' in namespace '_STL' does not name a type
+/usr/local/include/graphite/GrFeature.h:113: error: 'wstring' in namespace '_STL' does not name a type
+In file included from /work/tinderbox-ligeti8amd64/portstrees/FreeBSD/ports/editors/openoffice-3-devel/work/ooo/main/vcl/inc/graphite_layout.hxx:41,
+                 from /work/tinderbox-ligeti8amd64/portstrees/FreeBSD/ports/editors/openoffice-3-devel/work/ooo/main/vcl/unx/generic/gdi/pspgraphics.cxx:52:
+
+
+--- vcl/Library_vclplug_gen.mk	2012-02-20 11:32:20.000000000 +0900
++++ vcl/Library_vclplug_gen.mk	2012-02-20 11:53:47.000000000 +0900
+@@ -125,7 +125,6 @@
+ ifeq ($(XRANDR_DLOPEN),FALSE)
+ $(eval $(call gb_Library_set_cxxflags,vclplug_gen,\
+     $$(CXXFLAGS) \
+-    $$(XRANDR_CFLAGS) \
+ ))
+ $(eval $(call gb_Library_set_ldflags,vclplug_gen,\
+     $$(LDFLAGS) \

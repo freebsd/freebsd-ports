@@ -1,6 +1,7 @@
 # localized makefile
 # Whom:         Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
+
 ################################################################
 #See solenv/inc/postset.mk for details	
 ################################################################
@@ -395,11 +396,6 @@ BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/
 ################################################################
 .if ${LOCALIZED_LANG} == "zu"
 LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
-.if ${LOCALIZED_LANG} == "alllangs"
-ALL_LOCALIZED_LANGS=yes
-PKGNAMESUFFIX=	-alllangs
 .endif
 ################################################################
 .endif

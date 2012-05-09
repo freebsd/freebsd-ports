@@ -1,7 +1,8 @@
-OpenOffice.org is an Open Source, community-developed, multi-platform office
-productivity suite. It includes the key desktop applications, such as a
-word processor, spreadsheet, presentation manager, and drawing program,
-with a user interface and feature set similar to other office suites.
+Apache OpenOffice is an Open Source, community-developed, multi-platform
+office productivity suite. It includes the key desktop applications,
+such as a word processor, spreadsheet, presentation manager, and drawing
+program, with a user interface and feature set similar to other
+office suites.
 
 Components include:
   * A universal word processing application for creating business
@@ -13,5 +14,4 @@ Components include:
   * A vector-oriented draw module that enables the creation of 3D
     illustrations
 
-WWW: http://www.openoffice.org/
-     http://porting.openoffice.org/freebsd/
+WWW: http://incubator.apache.org/openofficeorg/
