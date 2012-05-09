@@ -326,13 +326,23 @@ lib/calibre/calibre/ebooks/mobi/reader/__init__.py
 lib/calibre/calibre/ebooks/mobi/reader/mobi6.py
 lib/calibre/calibre/ebooks/mobi/reader/headers.py
 lib/calibre/calibre/ebooks/mobi/reader/mobi8.py
+lib/calibre/calibre/ebooks/mobi/tweak.py
 lib/calibre/calibre/ebooks/mobi/utils.py
 lib/calibre/calibre/ebooks/mobi/writer2/__init__.py
 lib/calibre/calibre/ebooks/mobi/writer2/main.py
 lib/calibre/calibre/ebooks/mobi/writer2/indexer.py
+lib/calibre/calibre/ebooks/mobi/writer2/resources.py
 lib/calibre/calibre/ebooks/mobi/writer2/serializer.py
 lib/calibre/calibre/ebooks/mobi/writer8/main.py
 lib/calibre/calibre/ebooks/mobi/writer8/__init__.py
+lib/calibre/calibre/ebooks/mobi/writer8/index.py
+lib/calibre/calibre/ebooks/mobi/writer8/skeleton.py
+lib/calibre/calibre/ebooks/mobi/writer8/cleanup.py
+lib/calibre/calibre/ebooks/mobi/writer8/exth.py
+lib/calibre/calibre/ebooks/mobi/writer8/tbs.py
+lib/calibre/calibre/ebooks/mobi/writer8/header.py
+lib/calibre/calibre/ebooks/mobi/writer8/mobi.py
+lib/calibre/calibre/ebooks/mobi/writer8/toc.py
 lib/calibre/calibre/ebooks/odt/__init__.py
 lib/calibre/calibre/ebooks/odt/input.py
 lib/calibre/calibre/ebooks/oeb/__init__.py
@@ -371,6 +381,7 @@ lib/calibre/calibre/ebooks/pdb/ereader/reader202.py
 lib/calibre/calibre/ebooks/pdb/ereader/writer.py
 lib/calibre/calibre/ebooks/pdb/formatreader.py
 lib/calibre/calibre/ebooks/pdb/formatwriter.py
+lib/calibre/calibre/ebooks/pdb/haodoo/__init__.py
 lib/calibre/calibre/ebooks/pdb/haodoo/reader.py
 lib/calibre/calibre/ebooks/pdb/header.py
 lib/calibre/calibre/ebooks/pdb/palmdoc/__init__.py
@@ -473,6 +484,7 @@ lib/calibre/calibre/ebooks/tcr/__init__.py
 lib/calibre/calibre/ebooks/textile/__init__.py
 lib/calibre/calibre/ebooks/textile/functions.py
 lib/calibre/calibre/ebooks/textile/unsmarten.py
+lib/calibre/calibre/ebooks/tweak.py
 lib/calibre/calibre/ebooks/txt/__init__.py
 lib/calibre/calibre/ebooks/txt/markdownml.py
 lib/calibre/calibre/ebooks/txt/newlines.py
@@ -541,6 +553,8 @@ lib/calibre/calibre/gui2/catalog/catalog_tab_template_ui.py
 lib/calibre/calibre/gui2/comments_editor.py
 lib/calibre/calibre/gui2/complete.py
 lib/calibre/calibre/gui2/convert/__init__.py
+lib/calibre/calibre/gui2/convert/azw3_output_ui.py
+lib/calibre/calibre/gui2/convert/azw3_output.py
 lib/calibre/calibre/gui2/convert/bulk.py
 lib/calibre/calibre/gui2/convert/comic_input.py
 lib/calibre/calibre/gui2/convert/comic_input_ui.py
@@ -674,8 +688,6 @@ lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/test_email_ui.py
-lib/calibre/calibre/gui2/dialogs/tweak_epub.py
-lib/calibre/calibre/gui2/dialogs/tweak_epub_ui.py
 lib/calibre/calibre/gui2/dialogs/user_profiles.py
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
 lib/calibre/calibre/gui2/dnd.py
@@ -754,6 +766,7 @@ lib/calibre/calibre/gui2/preferences/toolbar.py
 lib/calibre/calibre/gui2/preferences/toolbar_ui.py
 lib/calibre/calibre/gui2/preferences/tweaks.py
 lib/calibre/calibre/gui2/preferences/tweaks_ui.py
+lib/calibre/calibre/gui2/proceed.py
 lib/calibre/calibre/gui2/progress_indicator/__init__.py
 lib/calibre/calibre/gui2/search_box.py
 lib/calibre/calibre/gui2/search_restriction_mixin.py
@@ -773,6 +786,7 @@ lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
 lib/calibre/calibre/gui2/store/stores/beam_ebooks_de_plugin.py
+lib/calibre/calibre/gui2/store/stores/biblio_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
 lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
 lib/calibre/calibre/gui2/store/stores/gandalf_plugin.py
