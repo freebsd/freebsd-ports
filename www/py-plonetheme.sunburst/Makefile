@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plonetheme.sunburst
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.4
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,6 @@ LICENSE=	GPLv2
 DIST_SUBDIR=	zope
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
+USE_ZIP=	yes
 
 .include <bsd.port.mk>
