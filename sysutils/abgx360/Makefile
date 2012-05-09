@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	abgx360
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://abgx360.x-scene.com/
+MASTER_SITES=	http://abgx360.x-scene.com/ \
+		http://update.cooltrainer.org/freebsd-ports/sysutils/abgx360/
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Verify and repair Xbox 360 backup images
@@ -24,8 +25,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900044
-BROKEN=		does not compile on FreeBSD 9.X
+.if ${OSVERSION} >= 900000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-abgx360.c
 .endif
 
 .if ${OSVERSION} > 900000
