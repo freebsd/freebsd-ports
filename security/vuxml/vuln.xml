@@ -52,6 +52,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3d55b961-9a2e-11e1-a2ef-001fd0af1a4c">
+     <topic>rubygem-mail -- multiple vulnerabilities</topic>
+     <affects>
+        <package>
+           <name>rubygem-mail</name>
+           <range><lt>2.4.4</lt></range>
+        </package>
+     </affects>
+     <description>
+        <body xmlns="http://www.w3.org/1999/xhtml">
+           <p>rubygem-mail -- multiple vulnerabilities</p>
+           <blockquote cite="http://seclists.org/oss-sec/2012/q2/190">
+              <p>Two issues were fixed. They are a file system traversal in file_delivery method and arbitrary command execution when using exim or sendmail from the command line.</p>
+           </blockquote>
+        </body>
+     </description>
+     <references>
+        <cvename>CVE-2012-2139</cvename>
+        <cvename>CVE-2012-2140</cvename>
+        <url>http://seclists.org/oss-sec/2012/q2/190</url>
+     </references>
+     <dates>
+        <discovery>2012-03-14</discovery>
+        <entry>2012-05-9</entry>
+     </dates>
+  </vuln>
+
   <vuln vid="a1d0911f-987a-11e1-a2ef-001fd0af1a4c">
      <topic>node -- private information disclosure</topic>
      <affects>
