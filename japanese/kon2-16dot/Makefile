@@ -7,7 +7,7 @@
 
 PORTNAME=	kon2
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 # '+=' is for slave ports
 CATEGORIES+=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		kon.1
 MANLANG=	ja
@@ -31,10 +31,6 @@ PORTDOCS=	README README.FreeBSD
 DOCDIR=		${PREFIX}/share/doc/kon2
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 .if !defined(KONFONT)
 KONFONT=16dot

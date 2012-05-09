@@ -1,12 +1,13 @@
---- kon.cfg.FreeBSD.orig	Fri Jan 24 02:17:34 1997
-+++ kon.cfg.FreeBSD	Wed Sep  2 22:24:15 1998
-@@ -115,8 +115,11 @@
+--- kon.cfg.FreeBSD.orig	1997-01-24 02:17:34.000000000 +0900
++++ kon.cfg.FreeBSD	2012-05-10 00:14:28.042552343 +0900
+@@ -114,9 +114,12 @@
+ 	63 63 63
  
  # Startup command definition (usually font loading commands are specified)
 -bdf-zcat:Startup
-+bdf-zcat16:@@KON16FONT@@
 -	gzip -cd /usr/local/lib/fonts/k14.bdf.gz | /usr/local/bin/fld -t bdf -n
 -	gzip -cd /usr/local/lib/fonts/7x14rk.bdf.gz | /usr/local/bin/fld -t bdf -n
++bdf-zcat16:@@KON16FONT@@
 +	gzip -cd @@PREFIX@@/share/fonts/bdf/jiskan16.bdf.gz | /usr/local/bin/fld -t bdf -n
 +	gzip -cd @@PREFIX@@/share/fonts/bdf/8x16rk.bdf.gz | /usr/local/bin/fld -t bdf -n
 +bdf-zcat14:@@KON14FONT@@
@@ -15,7 +16,7 @@
  minix:
  	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.ank
  	/usr/bin/fld.minix -n /usr/share/fonts/publicfont.k14
-@@ -143,13 +143,13 @@
+@@ -143,13 +146,13 @@
  # Mouse type definition.  Choose one of: Microsoft,
  # MouseSystems, BusMouse, MMSeries, Logitech, or None.
  Mouse:

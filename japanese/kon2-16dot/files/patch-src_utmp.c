@@ -1,6 +1,6 @@
---- src/utmp.c.orig	Fri Jan 24 09:37:28 1997
-+++ src/utmp.c	Sat Apr 26 21:50:30 1997
-@@ -41,20 +41,32 @@
+--- src/utmp.c.orig	1997-01-24 09:37:28.000000000 +0900
++++ src/utmp.c	2012-05-10 04:09:42.294562501 +0900
+@@ -41,20 +41,39 @@
  #include	<utmp.h>
  #include	<grp.h>
  #include	<sys/stat.h>
@@ -14,6 +14,12 @@
 +static gid_t ttyGid;
 +static int ts;
 +#endif
++static int unuse_utmp = 0;
++
++void	UnUseUtmp(int flg)
++{
++	unuse_utmp = flg;
++}
  
  void	SetUtmp(char *tty)
  {
@@ -22,11 +28,13 @@
  	struct passwd	*pw;
  	struct group	*ttygrp;
  	char	*tn;
+-
 +#if defined(__FreeBSD__)
 +	struct ttyent	*ttyp;
 +	int fd, i;
 +#endif
- 
++	if (unuse_utmp)
++		return;
  	pw = getpwuid(getuid());
  	tn = rindex(tty, '/') + 1;
  	memset((char *)&utmp, 0, sizeof(utmp));
@@ -34,7 +42,7 @@
  	strncpy(utmp.ut_id, tn + 3, sizeof(utmp.ut_id));
  	utmp.ut_type = DEAD_PROCESS;
  	setutent();
-@@ -66,21 +78,43 @@
+@@ -66,21 +85,45 @@
  	time(&(utmp.ut_time));
  	pututline(&utmp);
  	endutent();
@@ -75,12 +83,14 @@
 +	struct utmp	utmp;
 +	int fd;
 +#endif
++	if (unuse_utmp)
++		return;
  
 +#if !defined(__FreeBSD__)
  	tn = rindex(tty, '/') + 4;
  	memset((char *)&utmp, 0, sizeof(utmp));
  	strncpy(utmp.ut_id, tn, sizeof(utmp.ut_id));
-@@ -93,7 +127,19 @@
+@@ -93,7 +136,19 @@
  	time(&(utp->ut_time));
  	pututline(utp);
  	endutent();
