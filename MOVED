@@ -3290,3 +3290,4 @@ games/netpanzer-data||2012-04-25|No longer needed
 www/typo344||2012-04-30|Has expired: Support will end in the near future, see http://typo3.org/download/packages/ for details
 databases/py-MySQLdb-devel|databases/py-MySQLdb|2012-05-01|Port is outdated, use databases/py-MySQLdb instead
 misc/fortune-mod-the-godfather||2012-05-07|Has expired: No longer supported
+editors/openoffice.org-3|editors/openoffice-3|2012-03-09|Project renamed
