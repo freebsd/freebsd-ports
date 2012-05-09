@@ -1,0 +1,105 @@
+Index: coregrind/m_debuginfo/readdwarf.c
+===================================================================
+--- coregrind/m_debuginfo/readdwarf.c	(revision 11855)
++++ coregrind/m_debuginfo/readdwarf.c	(revision 11856)
+@@ -2899,6 +2899,22 @@
+             op = Cop_And; opname = "and"; goto binop;
+          case DW_OP_mul:
+             op = Cop_Mul; opname = "mul"; goto binop;
++         case DW_OP_shl:
++            op = Cop_Shl; opname = "shl"; goto binop;
++         case DW_OP_shr:
++            op = Cop_Shr; opname = "shr"; goto binop;
++         case DW_OP_eq:
++            op = Cop_Eq; opname = "eq"; goto binop;
++         case DW_OP_ge:
++            op = Cop_Ge; opname = "ge"; goto binop;
++         case DW_OP_gt:
++            op = Cop_Gt; opname = "gt"; goto binop;
++         case DW_OP_le:
++            op = Cop_Le; opname = "le"; goto binop;
++         case DW_OP_lt:
++            op = Cop_Lt; opname = "lt"; goto binop;
++         case DW_OP_ne:
++            op = Cop_Ne; opname = "ne"; goto binop;
+          binop:
+             POP( ix );
+             POP( ix2 );
+Index: coregrind/m_debuginfo/debuginfo.c
+===================================================================
+--- coregrind/m_debuginfo/debuginfo.c	(revision 11855)
++++ coregrind/m_debuginfo/debuginfo.c	(revision 11856)
+@@ -1880,6 +1880,14 @@
+             case Cop_Sub: return wL - wR;
+             case Cop_And: return wL & wR;
+             case Cop_Mul: return wL * wR;
++            case Cop_Shl: return wL << wR;
++            case Cop_Shr: return wL >> wR;
++            case Cop_Eq: return wL == wR ? 1 : 0;
++            case Cop_Ge: return wL >= wR ? 1 : 0;
++            case Cop_Gt: return wL > wR ? 1 : 0;
++            case Cop_Le: return wL <= wR ? 1 : 0;
++            case Cop_Lt: return wL < wR ? 1 : 0;
++            case Cop_Ne: return wL != wR ? 1 : 0;
+             default: goto unhandled;
+          }
+          /*NOTREACHED*/
+Index: coregrind/m_debuginfo/storage.c
+===================================================================
+--- coregrind/m_debuginfo/storage.c	(revision 11855)
++++ coregrind/m_debuginfo/storage.c	(revision 11856)
+@@ -603,6 +603,14 @@
+       case Cop_Sub: VG_(printf)("-"); break;
+       case Cop_And: VG_(printf)("&"); break;
+       case Cop_Mul: VG_(printf)("*"); break;
++      case Cop_Shl: VG_(printf)("<<"); break;
++      case Cop_Shr: VG_(printf)(">>"); break;
++      case Cop_Eq: VG_(printf)("=="); break;
++      case Cop_Ge: VG_(printf)(">="); break;
++      case Cop_Gt: VG_(printf)(">"); break;
++      case Cop_Le: VG_(printf)("<="); break;
++      case Cop_Lt: VG_(printf)("<"); break;
++      case Cop_Ne: VG_(printf)("!="); break;
+       default:      vg_assert(0);
+    }
+ }
+Index: coregrind/m_debuginfo/priv_storage.h
+===================================================================
+--- coregrind/m_debuginfo/priv_storage.h	(revision 11855)
++++ coregrind/m_debuginfo/priv_storage.h	(revision 11856)
+@@ -249,7 +249,15 @@
+       Cop_Add=0x321,
+       Cop_Sub,
+       Cop_And,
+-      Cop_Mul
++      Cop_Mul,
++      Cop_Shl,
++      Cop_Shr,
++      Cop_Eq,
++      Cop_Ge,
++      Cop_Gt,
++      Cop_Le,
++      Cop_Lt,
++      Cop_Ne
+    }
+    CfiOp;
+ 
+Index: coregrind/m_debuginfo/debuginfo.c
+===================================================================
+--- coregrind/m_debuginfo/debuginfo.c	(revision 11903)
++++ coregrind/m_debuginfo/debuginfo.c	(revision 11904)
+@@ -1883,10 +1883,10 @@
+             case Cop_Shl: return wL << wR;
+             case Cop_Shr: return wL >> wR;
+             case Cop_Eq: return wL == wR ? 1 : 0;
+-            case Cop_Ge: return wL >= wR ? 1 : 0;
+-            case Cop_Gt: return wL > wR ? 1 : 0;
+-            case Cop_Le: return wL <= wR ? 1 : 0;
+-            case Cop_Lt: return wL < wR ? 1 : 0;
++            case Cop_Ge: return (Word) wL >= (Word) wR ? 1 : 0;
++            case Cop_Gt: return (Word) wL > (Word) wR ? 1 : 0;
++            case Cop_Le: return (Word) wL <= (Word) wR ? 1 : 0;
++            case Cop_Lt: return (Word) wL < (Word) wR ? 1 : 0;
+             case Cop_Ne: return wL != wR ? 1 : 0;
+             default: goto unhandled;
+          }
