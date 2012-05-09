@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-ManageSieve
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ManageSieve Protocol Client
 
-RUN_DEPENDS=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+BUILD_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::ManageSieve.3
 
