@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Error
-PORTVERSION=	0.17017
+PORTVERSION=	0.17018
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to provide Error/exception support for perl: Error
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 MAKE_JOBS_SAFE=	yes
 PERL_CONFIGURE=	yes
