@@ -3713,7 +3713,6 @@ fortune-mod-bofh                ports/misc/fortune-mod-bofh
 fortune-mod-culmea-culmilor     ports/misc/fortune-mod-culmea-culmilor
 fortune-mod-ferengi_rules_of_acquisition  ports/misc/fortune-mod-ferengi_rules_of_acquisition
 fortune-mod-futurama            ports/misc/fortune-mod-futurama
-fortune-mod-the-godfather       ports/misc/fortune-mod-the-godfather
 fortuneit                       ports/misc/fortuneit
 fortunelock                     ports/sysutils/fortunelock
 fortytwo                        ports/graphics/fortytwo
@@ -10386,6 +10385,7 @@ npadmin                         ports/sysutils/npadmin
 npapi-xine                      ports/www/npapi-xine
 npc                             ports/www/npc
 nph                             ports/net/nph
+npm                             ports/www/npm
 npretty                         ports/graphics/npretty
 npush                           ports/games/npush
 nqc                             ports/lang/nqc
@@ -15353,6 +15353,7 @@ p5-XML-RegExp                   ports/textproc/p5-XML-RegExp
 p5-XML-Rewrite                  ports/textproc/p5-XML-Rewrite
 p5-XML-Rules                    ports/textproc/p5-XML-Rules
 p5-XML-SAX                      ports/textproc/p5-XML-SAX
+p5-XML-SAX-Base                 ports/textproc/p5-XML-SAX-Base
 p5-XML-SAX-Expat                ports/textproc/p5-XML-SAX-Expat
 p5-XML-SAX-Expat-Incremental    ports/textproc/p5-XML-SAX-Expat-Incremental
 p5-XML-SAX-ExpatXS              ports/textproc/p5-XML-SAX-ExpatXS
@@ -19931,6 +19932,7 @@ p5-xml-rsslite                  ports/textproc/p5-XML-RSSLite
 p5-xml-rules                    ports/textproc/p5-XML-Rules
 p5-xml-sablotron                ports/textproc/p5-XML-Sablotron
 p5-xml-sax                      ports/textproc/p5-XML-SAX
+p5-xml-sax-base                 ports/textproc/p5-XML-SAX-Base
 p5-xml-sax-expat                ports/textproc/p5-XML-SAX-Expat
 p5-xml-sax-expat-incremental    ports/textproc/p5-XML-SAX-Expat-Incremental
 p5-xml-sax-expatxs              ports/textproc/p5-XML-SAX-ExpatXS
