@@ -1,0 +1,11 @@
+--- oox/source/token/makefile.mk~	2011-12-21 09:52:48.000000000 +0900
++++ oox/source/token/makefile.mk	2011-12-25 13:12:55.000000000 +0900
+@@ -48,7 +48,7 @@
+ 
+ .INCLUDE :  target.mk
+ .IF "$(GPERF)" == "" || !DEFINED $(GPERF)
+-GPERF=gperf
++GPERF=/usr/local/bin/gperf
+ .ENDIF
+ 
+ GENHEADERPATH = $(INCCOM)$/oox$/token
