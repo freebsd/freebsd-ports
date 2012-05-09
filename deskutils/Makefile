@@ -26,6 +26,7 @@
     SUBDIR += cartotheque
     SUBDIR += cdcat
     SUBDIR += charmap
+    SUBDIR += charmtimetracker
     SUBDIR += checkrdf
     SUBDIR += chmsee
     SUBDIR += conduit

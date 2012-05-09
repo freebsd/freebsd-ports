@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2012-04-19 18:05:29.938959913 +0300
++++ CMakeLists.txt	2012-04-19 18:05:39.398959691 +0300
+@@ -47,7 +47,7 @@ IF( APPLE AND "${QT_VERSION_MAJOR}.${QT_
+ ENDIF()
+ 
+ IF( CMAKE_BUILD_TYPE MATCHES "^[Rr]elease$" )
+-    ADD_DEFINITIONS( -DQT_NO_DEBUG_OUTPUT )
++    ADD_DEFINITIONS( -DQT_NO_DEBUG_OUTPUT -DNDEBUG )
+ ELSE()
+     MESSAGE( WARNING
+         "Only run Charm in Debug mode if you are doing development!\n"
