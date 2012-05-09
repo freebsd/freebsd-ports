@@ -10,8 +10,11 @@ PORTVERSION=	93.02.16
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.tux.org/pub/net/lprng/TOOLS/PCNFSD/ \
-		http://lprng.sourceforge.net/DISTRIB/TOOLS/PCNFSD/ \
-		http://public.planetmirror.com/pub/lprng/UNIXTOOLS/PCNFSD/
+		http://ftp.comp.hkbu.edu.hk/pub/packages/plp/LPRng/TOOLS/PCNFSD/ \
+		http://www.cise.ufl.edu/mirrors/LPRng/UNIXTOOLS/PCNFSD/ \
+		http://ftp.gwdg.de/linux/plp/LPRng/TOOLS/PCNFSD/ \
+		http://www.lprng.com/DISTRIB/UNIXTOOLS/PCNFSD/ \
+		http://ftp.st.ryukoku.ac.jp/pub/utils/print/LPRng/TOOLS/PCNFSD/
 DISTNAME=	pcnfsd.93.02.16
 EXTRACT_SUFX=	.tar.Z
 
