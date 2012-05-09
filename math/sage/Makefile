@@ -7,7 +7,7 @@
 
 PORTNAME=	sage
 PORTVERSION=	4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://modular.math.jmu.edu/src/ \
 		http://boxen.math.washington.edu/sage/src/ \
