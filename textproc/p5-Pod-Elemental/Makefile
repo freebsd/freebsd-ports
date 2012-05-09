@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Pod-Elemental
-PORTVERSION=	0.102361
+PORTVERSION=	0.102362
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Treating a Pod documents as trees of elements
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-Moose-Autobox>=0.10:${PORTSDIR}/devel/p5-Moose-Autobox \
@@ -21,9 +24,11 @@ BUILD_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-String-RewritePrefix>=0:${PORTSDIR}/textproc/p5-String-RewritePrefix \
 		p5-String-Truncate>=0:${PORTSDIR}/textproc/p5-String-Truncate \
 		p5-Sub-Exporter-ForMethods>=0:${PORTSDIR}/devel/p5-Sub-Exporter-ForMethods \
-		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	yes
 
