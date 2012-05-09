@@ -9,7 +9,7 @@ PORTNAME=	libxfce4gui
 PORTVERSION=	4.8.1
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/libxfcegui4/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	src/archive/libxfcegui4/${PORTVERSION:R}
 DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_LIBSTARTUP)
+.if !defined(WITHOUT_STARTUP)
 LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
