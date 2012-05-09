@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ggplot2
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -19,7 +18,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	R-cran-plyr>=1.0:${PORTSDIR}/devel/R-cran-plyr \
 		R-cran-digest>=0:${PORTSDIR}/security/R-cran-digest \
 		R-cran-reshape2>=0:${PORTSDIR}/devel/R-cran-reshape2 \
-		R-cran-scales>=0:${PORTSDIR}/graphics/R-cran-scales \
+		R-cran-scales>=0.2.1:${PORTSDIR}/graphics/R-cran-scales \
 		R-cran-memoise>=0:${PORTSDIR}/devel/R-cran-memoise \
 		R-cran-proto>=0:${PORTSDIR}/devel/R-cran-proto
 
