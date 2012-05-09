@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/Attic/openoffice.org-wrapper,v 1.5 2008-07-12 22:56:44 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-3/files/Attic/openoffice.org-wrapper,v 1.6 2012-05-09 03:27:05 maho Exp $
 
 oopath=%%PREFIX%%/%%INSTALLATION_BASEDIR%%/%%OOODIR%%
 program=`echo $0 | sed -e 's|.*-%%OOOVERSION%%-||'`
