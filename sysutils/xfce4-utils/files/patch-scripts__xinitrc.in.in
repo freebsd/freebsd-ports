@@ -1,0 +1,16 @@
+--- scripts/xinitrc.in.in.orig	2012-04-09 22:20:51.000000000 +0200
++++ scripts/xinitrc.in.in	2012-04-09 22:21:29.000000000 +0200
+@@ -155,11 +155,11 @@
+     case "$ssh_agent_type" in
+         gpg-agent)
+             if test -z "$SSH_AGENT_PID"; then
+-                eval `gpg-agent --daemon --enable-ssh-support --write-env-file $XDG_CACHE_HOME/gpg-agent-info`
++                eval `gpg-agent --sh --daemon --enable-ssh-support --write-env-file $XDG_CACHE_HOME/gpg-agent-info`
+                 ssh_agent_kill_cmd="kill -INT $SSH_AGENT_PID; rm -f $XDG_CACHE_HOME/gpg-agent-info"
+             elif test -z "$GPG_AGENT_INFO"; then
+                 echo "ssh-agent is already running; starting gpg-agent without ssh support"
+-                eval `gpg-agent --daemon --write-env-file $XDG_CACHE_HOME/gpg-agent-info`
++                eval `gpg-agent --sh --daemon --write-env-file $XDG_CACHE_HOME/gpg-agent-info`
+                 ssh_agent_kill_cmd="pkill -INT ^gpg-agent\$; rm -f $XDG_CACHE_HOME/gpg-agent-info"
+             else
+                 echo "gpg-agent is already running"
