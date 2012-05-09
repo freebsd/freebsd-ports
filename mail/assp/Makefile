@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.9.3.4
+PORTVERSION=	1.9.3.5
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
