@@ -31,6 +31,12 @@ MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
 		colors-white keymap-emacs mainmenu mainmenu-ru syntax
 SRC_DATA=	le.hlp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.x
+.endif
+
 do-install:
 	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${PREFIX}/bin
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${MANPREFIX}/man/man1
@@ -51,4 +57,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
