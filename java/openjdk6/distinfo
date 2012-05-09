@@ -8,5 +8,5 @@ SHA256 (jdk6-jaf-b20.zip) = 78c7b5c9d6271e88ee46abadd018a61f1e9645f8936cc8df1617
 SIZE (jdk6-jaf-b20.zip) = 71243
 SHA256 (apache-ant-1.8.2-bin.tar.bz2) = ecb49f5017807c9320bf19702149328cf4779a01bddca2b6c47e3ebb0e39c9c7
 SIZE (apache-ant-1.8.2-bin.tar.bz2) = 6740047
-SHA256 (jtreg-4.1-bin-b03_11_jul_2011.zip) = 7ae38e80d3342670cc9142eee423d0a755bf005e4d83b40c5681f0f7d95f1cce
-SIZE (jtreg-4.1-bin-b03_11_jul_2011.zip) = 4901245
+SHA256 (jtreg-4.1-bin-b04_14_mar_2012.zip) = 6d63447f3b70828b4d5f9e5c2416ba08ca00d54714a9d219837eae989df676c5
+SIZE (jtreg-4.1-bin-b04_14_mar_2012.zip) = 6126941

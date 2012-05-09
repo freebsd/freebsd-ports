@@ -63,8 +63,8 @@ JAXWS_BUILD=	2_1_6-2011_06_13
 JAXWSFILE=	jdk6-jaxws${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-JTREGVERSION=	b03
-JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_11_jul_2011.zip
+JTREGVERSION=	b04
+JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_14_mar_2012.zip
 UPDATE_VERSION=	32
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
