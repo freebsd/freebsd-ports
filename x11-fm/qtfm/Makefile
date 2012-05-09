@@ -7,6 +7,7 @@
 
 PORTNAME=	qtfm
 DISTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.qtfm.org/
 
@@ -17,8 +18,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(h|cpp)
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network qmake_build moc_build rcc_build
+QT_COMPONENTS=	gui network qmake_build moc_build rcc_build \
+		imageformats_run
 
 # Override -A option:
 FETCH_ARGS=	-Fpr
