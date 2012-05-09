@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Acme-MetaSyntactic
-PORTVERSION=	0.99
+PORTVERSION=	1.000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Themed metasyntactic variables names
 
-RUN_DEPENDS=	p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
-.include "Makefile.man"
+MAN1=		meta.1 \
+		metafy.1
+MAN3=		Acme::MetaSyntactic.3 \
+		Acme::MetaSyntactic::Alias.3 \
+		Acme::MetaSyntactic::List.3 \
+		Acme::MetaSyntactic::Locale.3 \
+		Acme::MetaSyntactic::MultiList.3 \
+		Acme::MetaSyntactic::RemoteList.3 \
+		Acme::MetaSyntactic::any.3 \
+		Acme::MetaSyntactic::contributors.3 \
+		Acme::MetaSyntactic::foo.3 \
+		Test::MetaSyntactic.3 \
+		eta.3
+
 .include <bsd.port.mk>
