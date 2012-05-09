@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07022
+PORTVERSION=	0.07024
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RKITOVER
@@ -21,7 +21,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.10002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0008:${PORTSDIR}/devel/p5-Class-C3-Componentised \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Class-Inspector>=1.27:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
 		p5-DBIx-Class>=0.08127:${PORTSDIR}/databases/p5-DBIx-Class \
