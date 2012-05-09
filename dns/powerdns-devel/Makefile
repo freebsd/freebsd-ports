@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.22.${SNAPSHOT}
-PORTREVISION=	1
+PORTVERSION=	3.1.r2
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://svn.powerdns.com/snapshots/${REVISION}/
-PKGNAMESUFFIX=	-devel
-DISTNAME=	pdns-${PORTVERSION:S/.${SNAPSHOT}//}-rc1.${SNAPSHOT}.${REVISION}
+MASTER_SITES=	http://powerdnssec.org/downloads/
+DISTNAME=	pdns-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
-		${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
+		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
+LIB_DEPENDS=	botan.0:${PORTSDIR}/security/botan \
+		boost_serialization.[4-9]:${PORTSDIR}/devel/boost-libs
 
-SNAPSHOT=	20081119
-REVISION=	1305
+USE_LUA=	5.1
+LUA_COMPS=	lua
 
-CONFLICTS=	powerdns-[0-2]*
+CONFLICTS=	powerdns-3.0*
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
@@ -31,10 +32,12 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-modules="pipe" \
-			--with-dynmodules="${CONFIGURE_MODULES}" \
-			--sysconfdir="${PREFIX}/etc/pdns" \
-#			--enable-debug
+CONFIGURE_ARGS=	--with-modules="" \
+		--with-dynmodules="pipe ${CONFIGURE_MODULES}" \
+		--sysconfdir="${PREFIX}/etc/pdns" \
+		--with-boost="${LOCALBASE}" \
+		--enable-botan1.8 \
+		--enable-cryptopp
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR2="${.CURDIR}" \
 		MKDIR="${MKDIR}" \
@@ -76,18 +79,19 @@ CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 CONFIGURE_MODULES+=	"gpgsql"
 PLIST_SUB+=		WITHPGSQL=""
 .else
-CONFIGURE_ARGS+=	--disable-pgsql
+CONFIGURE_ARGS+=	--without-pgsql
 PLIST_SUB+=		WITHPGSQL="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL?=		YES
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 CONFIGURE_MODULES+=	"gmysql"
-CXXFLAGS+=		-I${LOCALBASE}/include/mysql
-LDFLAGS+=		-L${LOCALBASE}/lib/mysql
+#CXXFLAGS+=		-I${LOCALBASE}/include/mysql
+#LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 PLIST_SUB+=		WITHMYSQL=""
 .else
-CONFIGURE_ARGS+=	--disable-mysql
+CONFIGURE_ARGS+=	--without-mysql
 PLIST_SUB+=		WITHMYSQL="@comment "
 .endif
 
@@ -96,18 +100,18 @@ PLIST_SUB+=		WITHMYSQL="@comment "
 USE_PGSQL?=		YES
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 SUB_LIST+=	PGSQL=postgresql
-.	else
-SUB_LIST+=	PGSQL=
 .	endif
+.else
+SUB_LIST+=	PGSQL=
 .endif
 .if defined(WITH_OPENDBX) || defined(WITH_MYSQL)
 .	if defined(WITH_MYSQL_LOCAL)
 USE_MYSQL?=		YES
 RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 SUB_LIST+=	MYSQL=mysql
-.	else
-SUB_LIST+=	MYSQL=
 .	endif
+.else
+SUB_LIST+=	MYSQL=
 .endif
 
 .if defined(WITH_OPENLDAP)
