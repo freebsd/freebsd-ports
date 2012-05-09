@@ -6,14 +6,19 @@
 %%SITE_PERL%%/POE/Request/Return.pm
 %%SITE_PERL%%/POE/Request/Upward.pm
 %%SITE_PERL%%/POE/Stage.pm
+%%SITE_PERL%%/POE/Stage/App.pm
 %%SITE_PERL%%/POE/Stage/Echoer.pm
 %%SITE_PERL%%/POE/Stage/Receiver.pm
 %%SITE_PERL%%/POE/Stage/Resolver.pm
 %%SITE_PERL%%/POE/Stage/Ticker.pm
-%%SITE_PERL%%/POE/Stage/TiedAttributes.pm
 %%SITE_PERL%%/POE/Watcher.pm
 %%SITE_PERL%%/POE/Watcher/Delay.pm
 %%SITE_PERL%%/POE/Watcher/Input.pm
+%%SITE_PERL%%/POE/Watcher/Wheel.pm
+%%SITE_PERL%%/POE/Watcher/Wheel/ReadWrite.pm
+%%SITE_PERL%%/POE/Watcher/Wheel/Run.pm
+%%SITE_PERL%%/POE/Watcher/Wheel/SocketFactory.pm
+@dirrm %%SITE_PERL%%/POE/Watcher/Wheel
 @dirrm %%SITE_PERL%%/POE/Watcher
 @dirrm %%SITE_PERL%%/POE/Stage
 @dirrm %%SITE_PERL%%/POE/Request
