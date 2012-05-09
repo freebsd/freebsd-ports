@@ -270,8 +270,8 @@
     SUBDIR += nxml
     SUBDIR += nxml-emacs21
     SUBDIR += omegaT
+    SUBDIR += openoffice-3
     SUBDIR += openoffice-3-devel
-    SUBDIR += openoffice.org-3
     SUBDIR += openoffice.org-vcltesttool
     SUBDIR += p5-Padre
     SUBDIR += p5-Proc-InvokeEditor
