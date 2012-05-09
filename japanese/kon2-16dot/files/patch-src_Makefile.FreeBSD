@@ -1,0 +1,21 @@
+--- src/Makefile.FreeBSD.orig	1997-01-30 10:29:25.000000000 +0900
++++ src/Makefile.FreeBSD	2012-05-10 02:50:12.820551080 +0900
+@@ -1,10 +1,17 @@
+ # FreeBSD makefile for kon
+ # Tatsumi Hosokawa <hosokawa@jp.FreeBSD.org>
+ 
++.include <bsd.own.mk>
++
+ PROG=	kon
+ BINOWN=		root
+ BINMODE=	4555
+-SRCS=	vt.c sock.c fnld.c vc.c mouse.c term.c main.c utmp.c errors.c child.c
++SRCS=	vt.c sock.c fnld.c vc.c mouse.c term.c main.c errors.c child.c
++.if exists(${INCLUDEDIR}/utmpx.h)
++SRCS+=	utmpx.c
++.else
++SRCS+=	utmp.c
++.endif
+ LIBS+=	-L${.CURDIR}/display -L${.CURDIR}/../lib -ldisplay -lgon
+ NOMAN=	YES
+ CFLAGS+=	-I${.CURDIR}/../include

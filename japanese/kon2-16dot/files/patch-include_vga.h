@@ -1,5 +1,5 @@
---- include/vga.h.orig	Fri Jan 24 16:08:01 1997
-+++ include/vga.h	Mon Jan 31 14:13:08 2000
+--- include/vga.h.orig	1997-01-24 16:08:01.000000000 +0900
++++ include/vga.h	2012-05-10 00:14:28.621553061 +0900
 @@ -59,7 +59,11 @@
  #if defined(linux)
  #define GRAPH_BASE 0xA0000

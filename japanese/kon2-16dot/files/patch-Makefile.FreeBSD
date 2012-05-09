@@ -1,5 +1,5 @@
---- Makefile.FreeBSD.orig	Thu Jan 30 10:29:44 1997
-+++ Makefile.FreeBSD	Fri Apr 11 20:51:39 1997
+--- Makefile.FreeBSD.orig	1997-01-30 10:29:44.000000000 +0900
++++ Makefile.FreeBSD	2012-05-10 00:14:28.022551143 +0900
 @@ -16,7 +16,6 @@
  	@echo \#define	VERSION	\"ver.$(VERSION).`cat .VERSION` \(`date +%m/%d`\)\" > include/version.h
  

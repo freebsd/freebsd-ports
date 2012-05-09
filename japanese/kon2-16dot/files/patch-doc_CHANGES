@@ -1,5 +1,5 @@
---- doc/CHANGES.orig	Sat Aug  7 05:03:30 1999
-+++ doc/CHANGES	Sat Aug  7 05:03:34 1999
+--- doc/CHANGES.orig	1997-02-06 09:58:16.000000000 +0900
++++ doc/CHANGES	2012-05-10 00:14:28.145552672 +0900
 @@ -128,3 +128,9 @@
  	FreeBSD での kon.cfg, kon のインストール時のパーミッション修正
  KON2 0.3(97/2/06) manabe@dsl.ics.tut.ac.jp

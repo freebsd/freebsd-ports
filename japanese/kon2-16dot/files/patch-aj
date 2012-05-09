@@ -1,5 +1,0 @@
---- include/version.h.orig	Sat Aug  7 05:04:19 1999
-+++ include/version.h	Sat Aug  7 05:04:26 1999
-@@ -1 +1 @@
--#define VERSION "ver.0.3 (01/28)"
-+#define VERSION "ver.0.3 (1998/10/31)"
