@@ -1,0 +1,7 @@
+Backports some of the Ruby 1.9 API changes into Ruby 1.8,
+which allows for better compatibility between the two versions.
+
+The goal of backports is to make it easier to write ruby code
+that runs across different versions of Ruby.
+
+WWW: https://github.com/marcandre/backports
