@@ -7,7 +7,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.24.2
+PORTVERSION=	0.25
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -18,7 +18,8 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		tag.1:${PORTSDIR}/audio/taglib
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		wget:${PORTSDIR}/ftp/wget
@@ -50,10 +51,9 @@ CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
 		QTDIR="${QT_PREFIX}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} --dvb-path=${LOCALBASE}/include \
-		--extra-cflags=-g --extra-cxxflags=-g --enable-v4l \
-		--enable-ivtv --enable-xvmc --disable-xvmcw \
-		--disable-directfb --disable-audio-alsa
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --dvb-path="${LOCALBASE}/include" \
+		--enable-v4l2 --enable-ivtv --enable-xv \
+		--disable-audio-alsa --disable-indev=alsa --disable-outdev=alsa
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
@@ -74,13 +74,15 @@ PYDISTUTILS_PKGNAME=MythTV
 PYDISTUTILS_PKGVERSION=${PORTVERSION}.0
 
 BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber
 RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
-		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
-CONFIGURE_ARGS+=--without-bindings=perl
+		${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb \
+		${PYTHON_PKGNAMEPREFIX}urlgrabber>=3.1.0_1:${PORTSDIR}/www/py-urlgrabber
+CONFIGURE_ARGS+=--without-bindings=perl,php
 PLIST_SUB+=	BINDINGS=""
 .else
-CONFIGURE_ARGS+=--without-bindings=perl,python
+CONFIGURE_ARGS+=--without-bindings=perl,python,php
 PLIST_SUB+=	BINDINGS="@comment "
 .endif
 
@@ -94,9 +96,9 @@ RUN_DEPENDS+=	mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
 .if defined(WITH_OPENGL)
 QT_COMPONENTS+=	opengl
-CONFIGURE_ARGS+=	--enable-opengl-video --enable-opengl-vsync
+CONFIGURE_ARGS+=	--enable-opengl-video
 .else
-CONFIGURE_ARGS+=	--disable-opengl-video --disable-opengl-vsync
+CONFIGURE_ARGS+=	--disable-opengl-video
 .endif
 
 .if defined(WITH_VDPAU)

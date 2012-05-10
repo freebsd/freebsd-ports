@@ -1,10 +1,32 @@
---- configure.orig	2009-10-30 16:45:12.000000000 +0100
-+++ configure	2010-03-07 10:51:57.000000000 +0100
-@@ -724,6 +724,7 @@
-         echo "LIBS += `sdl-config --libs`" >> ./mythmusic/mythmusic/config.pro
-         echo "QMAKE_CXXFLAGS_RELEASE += `sdl-config --cflags`" >> ./mythmusic/mythmusic/config.pro
-         echo "QMAKE_CXXFLAGS_DEBUG += `sdl-config --cflags`" >> ./mythmusic/mythmusic/config.pro
-+	echo "QMAKE_CXXFLAGS_RELEASE -= -I/usr/local/include" >> ./mythmusic/mythmusic/config.pro
+--- configure.orig	2012-04-10 07:29:22.000000000 +0200
++++ configure	2012-04-13 22:04:24.501203271 +0200
+@@ -227,6 +227,10 @@
+     append ECXXFLAGS "$@"
+ }
+ 
++add_cppflags(){
++    append CPPFLAGS "$@"
++}
++
+ check_cxx(){
+     log check_cxx "$@"
+     cat > $TMPCXX
+@@ -555,6 +559,10 @@
+ CXXPPFLAGS=${CXXPPFLAGS#CXXPPFLAGS=}
+ OPENGLV=$(cat mythconfig.mak | grep -e "^CONFIG_OPENGL_VIDEO=yes")
+ 
++add_cppflags "-I${prefix}/include"
++add_cxxflags "-I${prefix}/include"
++add_ldflags "-L${prefix}/lib"
++
+ if ! is_qmake4 $qmake; then
+     is_qmake4 qmake-qt4 && qmake=qmake-qt4 || die "qmake for Qt4.6 or newer not found.\nPlease specify the correct qmake with --qmake="
+ fi
+@@ -646,6 +654,7 @@
+         echo "MythMusic requires FLAC."
      fi
-     if test "$sdl" = "no" ; then
-         echo "        SDL            support will not be included in MythMusic"
+ 
++    enable cdio
+     if ! check_lib cdio/cdio.h cdio_open -lcdio || ! check_lib cdio/cdda.h cdio_cddap_open -lcdio_cdda || ! check_lib cdio/paranoia.h cdio_paranoia_init -lcdio_paranoia ; then
+         disable cdio
+     fi

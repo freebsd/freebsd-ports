@@ -18,18 +18,10 @@
 %%WWWDIR%%/classes/Database/mysqlicompat.php
 %%WWWDIR%%/classes/FeedItem.php
 %%WWWDIR%%/classes/FeedWriter.php
-%%WWWDIR%%/classes/JSON.php
 %%WWWDIR%%/classes/Modules.php
-%%WWWDIR%%/classes/MythBackend.php
-%%WWWDIR%%/classes/MythBase.php
-%%WWWDIR%%/classes/MythFrontend.php
-%%WWWDIR%%/classes/MythTV.php
-%%WWWDIR%%/classes/MythTVChannel.php
-%%WWWDIR%%/classes/MythTVProgram.php
-%%WWWDIR%%/classes/MythTVRecording.php
-%%WWWDIR%%/classes/MythTVStorageGroup.php
-%%WWWDIR%%/classes/Services/JSON.php
 %%WWWDIR%%/classes/Translate.php
+%%WWWDIR%%/classes/UPnP/Client.php
+%%WWWDIR%%/classes/UPnP/Device.php
 %%WWWDIR%%/classes/Video.php
 %%WWWDIR%%/classes/vcalendar.php
 %%WWWDIR%%/configuration/canned_searches.conf.php.Australia
@@ -57,7 +49,11 @@
 %%WWWDIR%%/includes/translate.php
 %%WWWDIR%%/includes/utils.php
 %%WWWDIR%%/js/AC_OETags.js
-%%WWWDIR%%/js/flowplayer-3.1.1.min.js
+%%WWWDIR%%/js/dialog/dialog.css
+%%WWWDIR%%/js/dialog/dialog.js
+%%WWWDIR%%/js/libs/flowplayer/flowplayer.controls.swf
+%%WWWDIR%%/js/libs/flowplayer/flowplayer.js
+%%WWWDIR%%/js/libs/flowplayer/flowplayer.swf
 %%WWWDIR%%/js/pngbehavior.htc
 %%WWWDIR%%/js/prototip/classic_toolbar.gif
 %%WWWDIR%%/js/prototip/close.gif
@@ -101,6 +97,7 @@
 %%WWWDIR%%/modules/_shared/lang/German.lang
 %%WWWDIR%%/modules/_shared/lang/Hungarian.cat
 %%WWWDIR%%/modules/_shared/lang/Hungarian.lang
+%%WWWDIR%%/modules/_shared/lang/Italian.cat
 %%WWWDIR%%/modules/_shared/lang/Japanese.cat
 %%WWWDIR%%/modules/_shared/lang/Japanese.lang
 %%WWWDIR%%/modules/_shared/lang/Norwegian_NB.cat
@@ -111,9 +108,12 @@
 %%WWWDIR%%/modules/_shared/lang/Slovenian.lang
 %%WWWDIR%%/modules/_shared/lang/Spanish.cat
 %%WWWDIR%%/modules/_shared/lang/Spanish.lang
+%%WWWDIR%%/modules/_shared/lang/Spanish_ES.cat
+%%WWWDIR%%/modules/_shared/lang/Spanish_ES.lang
 %%WWWDIR%%/modules/_shared/lang/Swedish.cat
 %%WWWDIR%%/modules/_shared/lang/Swedish.lang
 %%WWWDIR%%/modules/_shared/lang/build_translation.pl
+%%WWWDIR%%/modules/_shared/lang/db_strings.php
 %%WWWDIR%%/modules/_shared/lang/translations.txt
 %%WWWDIR%%/modules/_shared/tmpl/_errors/db_access_denied.php
 %%WWWDIR%%/modules/_shared/tmpl/_errors/db_vars_error.php
@@ -227,8 +227,6 @@
 %%WWWDIR%%/modules/tv/classes/Recording.php
 %%WWWDIR%%/modules/tv/classes/Schedule.php
 %%WWWDIR%%/modules/tv/detail.php
-%%WWWDIR%%/modules/tv/flowplayer-3.1.1.swf
-%%WWWDIR%%/modules/tv/flowplayer.controls-3.1.1.swf
 %%WWWDIR%%/modules/tv/get_pixmap.php
 %%WWWDIR%%/modules/tv/get_schedule_details.php
 %%WWWDIR%%/modules/tv/get_show_details.php
@@ -241,6 +239,7 @@
 %%WWWDIR%%/modules/tv/list_recording_groups.php
 %%WWWDIR%%/modules/tv/list_shows_in_title_and_group.php
 %%WWWDIR%%/modules/tv/list_titles_in_group.php
+%%WWWDIR%%/modules/tv/lookup_metadata.php
 %%WWWDIR%%/modules/tv/opensearch.php
 %%WWWDIR%%/modules/tv/playerProductInstall.swf
 %%WWWDIR%%/modules/tv/recorded.php
@@ -296,6 +295,7 @@
 %%WWWDIR%%/modules/tv/tmpl/wap/recorded.php
 %%WWWDIR%%/modules/tv/tmpl/wap/search.php
 %%WWWDIR%%/modules/tv/tmpl/wap/upcoming.php
+%%WWWDIR%%/modules/tv/ttvdb_proxy.php
 %%WWWDIR%%/modules/tv/upcoming.php
 %%WWWDIR%%/modules/video/edit.php
 %%WWWDIR%%/modules/video/handler.php
@@ -306,20 +306,6 @@
 %%WWWDIR%%/modules/video/tmpl/default/set_settings.php
 %%WWWDIR%%/modules/video/tmpl/default/video.php
 %%WWWDIR%%/modules/video/tmpl/default/welcome.php
-%%WWWDIR%%/modules/weather/classes/WeatherScreen.php
-%%WWWDIR%%/modules/weather/handler.php
-%%WWWDIR%%/modules/weather/includes/weather_utils.php
-%%WWWDIR%%/modules/weather/init.php
-%%WWWDIR%%/modules/weather/set_screen.php
-%%WWWDIR%%/modules/weather/tmpl/default/set_screen.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.18h.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.3d.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.6d.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.am.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.cc.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.php
-%%WWWDIR%%/modules/weather/tmpl/default/weather.sm.php
-%%WWWDIR%%/modules/weather/tmpl/default/welcome.php
 %%WWWDIR%%/modules/welcome.php
 %%WWWDIR%%/mythweb.conf.apache
 %%WWWDIR%%/mythweb.conf.lighttpd
@@ -375,20 +361,6 @@
 %%WWWDIR%%/skins/clean_blue/img/tv.png
 %%WWWDIR%%/skins/clean_blue/img/video.png
 %%WWWDIR%%/skins/clean_blue/img/video_sm.png
-%%WWWDIR%%/skins/clean_blue/img/weather.png
-%%WWWDIR%%/skins/clean_blue/img/weather/cloudy.png
-%%WWWDIR%%/skins/clean_blue/img/weather/fair.png
-%%WWWDIR%%/skins/clean_blue/img/weather/flurries.png
-%%WWWDIR%%/skins/clean_blue/img/weather/fog.png
-%%WWWDIR%%/skins/clean_blue/img/weather/lshowers.png
-%%WWWDIR%%/skins/clean_blue/img/weather/mcloudy.png
-%%WWWDIR%%/skins/clean_blue/img/weather/pcloudy.png
-%%WWWDIR%%/skins/clean_blue/img/weather/rainsnow.png
-%%WWWDIR%%/skins/clean_blue/img/weather/showers.png
-%%WWWDIR%%/skins/clean_blue/img/weather/snowshow.png
-%%WWWDIR%%/skins/clean_blue/img/weather/sunny.png
-%%WWWDIR%%/skins/clean_blue/img/weather/thunshowers.png
-%%WWWDIR%%/skins/clean_blue/img/weather/unknown.png
 %%WWWDIR%%/skins/clean_blue/menus.css
 %%WWWDIR%%/skins/clean_blue/music.css
 %%WWWDIR%%/skins/clean_blue/programming.css
@@ -406,7 +378,6 @@
 %%WWWDIR%%/skins/clean_blue/tv_search.css
 %%WWWDIR%%/skins/clean_blue/tv_upcoming.css
 %%WWWDIR%%/skins/clean_blue/video.css
-%%WWWDIR%%/skins/clean_blue/weather.css
 %%WWWDIR%%/skins/clean_blue/welcome.css
 %%WWWDIR%%/skins/default/backend_log.css
 %%WWWDIR%%/skins/default/header.css
@@ -455,20 +426,6 @@
 %%WWWDIR%%/skins/default/img/tv.png
 %%WWWDIR%%/skins/default/img/video.png
 %%WWWDIR%%/skins/default/img/video_sm.png
-%%WWWDIR%%/skins/default/img/weather.png
-%%WWWDIR%%/skins/default/img/weather/cloudy.png
-%%WWWDIR%%/skins/default/img/weather/fair.png
-%%WWWDIR%%/skins/default/img/weather/flurries.png
-%%WWWDIR%%/skins/default/img/weather/fog.png
-%%WWWDIR%%/skins/default/img/weather/lshowers.png
-%%WWWDIR%%/skins/default/img/weather/mcloudy.png
-%%WWWDIR%%/skins/default/img/weather/pcloudy.png
-%%WWWDIR%%/skins/default/img/weather/rainsnow.png
-%%WWWDIR%%/skins/default/img/weather/showers.png
-%%WWWDIR%%/skins/default/img/weather/snowshow.png
-%%WWWDIR%%/skins/default/img/weather/sunny.png
-%%WWWDIR%%/skins/default/img/weather/thunshowers.png
-%%WWWDIR%%/skins/default/img/weather/unknown.png
 %%WWWDIR%%/skins/default/menus.css
 %%WWWDIR%%/skins/default/music.css
 %%WWWDIR%%/skins/default/programming.css
@@ -487,7 +444,6 @@
 %%WWWDIR%%/skins/default/tv_upcoming.css
 %%WWWDIR%%/skins/default/video.css
 %%WWWDIR%%/skins/default/video.css.php
-%%WWWDIR%%/skins/default/weather.css
 %%WWWDIR%%/skins/default/welcome.css
 %%WWWDIR%%/skins/elkin/backend_log.css
 %%WWWDIR%%/skins/elkin/header.css
@@ -537,20 +493,6 @@
 %%WWWDIR%%/skins/elkin/img/tv.png
 %%WWWDIR%%/skins/elkin/img/video.png
 %%WWWDIR%%/skins/elkin/img/video_sm.png
-%%WWWDIR%%/skins/elkin/img/weather.png
-%%WWWDIR%%/skins/elkin/img/weather/cloudy.png
-%%WWWDIR%%/skins/elkin/img/weather/fair.png
-%%WWWDIR%%/skins/elkin/img/weather/flurries.png
-%%WWWDIR%%/skins/elkin/img/weather/fog.png
-%%WWWDIR%%/skins/elkin/img/weather/lshowers.png
-%%WWWDIR%%/skins/elkin/img/weather/mcloudy.png
-%%WWWDIR%%/skins/elkin/img/weather/pcloudy.png
-%%WWWDIR%%/skins/elkin/img/weather/rainsnow.png
-%%WWWDIR%%/skins/elkin/img/weather/showers.png
-%%WWWDIR%%/skins/elkin/img/weather/snowshow.png
-%%WWWDIR%%/skins/elkin/img/weather/sunny.png
-%%WWWDIR%%/skins/elkin/img/weather/thunshowers.png
-%%WWWDIR%%/skins/elkin/img/weather/unknown.png
 %%WWWDIR%%/skins/elkin/menus.css
 %%WWWDIR%%/skins/elkin/music.css
 %%WWWDIR%%/skins/elkin/programming.css
@@ -569,7 +511,6 @@
 %%WWWDIR%%/skins/elkin/tv_upcoming.css
 %%WWWDIR%%/skins/elkin/video.css
 %%WWWDIR%%/skins/elkin/video.css.php
-%%WWWDIR%%/skins/elkin/weather.css
 %%WWWDIR%%/skins/elkin/welcome.css
 %%WWWDIR%%/skins/errors.css
 %%WWWDIR%%/skins/grey/backend_log.css
@@ -604,21 +545,6 @@
 %%WWWDIR%%/skins/grey/img/tv.png
 %%WWWDIR%%/skins/grey/img/video.png
 %%WWWDIR%%/skins/grey/img/video_sm.png
-%%WWWDIR%%/skins/grey/img/weather.png
-%%WWWDIR%%/skins/grey/img/weather/cloudy.png
-%%WWWDIR%%/skins/grey/img/weather/fair.png
-%%WWWDIR%%/skins/grey/img/weather/flurries.png
-%%WWWDIR%%/skins/grey/img/weather/fog.png
-%%WWWDIR%%/skins/grey/img/weather/lshowers.png
-%%WWWDIR%%/skins/grey/img/weather/mcloudy.png
-%%WWWDIR%%/skins/grey/img/weather/myth_logo.png
-%%WWWDIR%%/skins/grey/img/weather/pcloudy.png
-%%WWWDIR%%/skins/grey/img/weather/rainsnow.png
-%%WWWDIR%%/skins/grey/img/weather/showers.png
-%%WWWDIR%%/skins/grey/img/weather/snowshow.png
-%%WWWDIR%%/skins/grey/img/weather/sunny.png
-%%WWWDIR%%/skins/grey/img/weather/thunshowers.png
-%%WWWDIR%%/skins/grey/img/weather/unknown.png
 %%WWWDIR%%/skins/grey/menus.css
 %%WWWDIR%%/skins/grey/music.css
 %%WWWDIR%%/skins/grey/programming.css
@@ -630,7 +556,6 @@
 %%WWWDIR%%/skins/grey/tv_recorded.css
 %%WWWDIR%%/skins/grey/tv_schedules.css
 %%WWWDIR%%/skins/grey/tv_upcoming.css
-%%WWWDIR%%/skins/grey/weather.css
 %%WWWDIR%%/skins/grey/welcome.css
 %%WWWDIR%%/skins/haze_dark/backend_log.css
 %%WWWDIR%%/skins/haze_dark/header.css
@@ -649,21 +574,6 @@
 %%WWWDIR%%/skins/haze_dark/img/status.png
 %%WWWDIR%%/skins/haze_dark/img/tv.png
 %%WWWDIR%%/skins/haze_dark/img/video.png
-%%WWWDIR%%/skins/haze_dark/img/weather.png
-%%WWWDIR%%/skins/haze_dark/img/weather/cloudy.png
-%%WWWDIR%%/skins/haze_dark/img/weather/fair.png
-%%WWWDIR%%/skins/haze_dark/img/weather/flurries.png
-%%WWWDIR%%/skins/haze_dark/img/weather/fog.png
-%%WWWDIR%%/skins/haze_dark/img/weather/lshowers.png
-%%WWWDIR%%/skins/haze_dark/img/weather/mcloudy.png
-%%WWWDIR%%/skins/haze_dark/img/weather/myth_logo.png
-%%WWWDIR%%/skins/haze_dark/img/weather/pcloudy.png
-%%WWWDIR%%/skins/haze_dark/img/weather/rainsnow.png
-%%WWWDIR%%/skins/haze_dark/img/weather/showers.png
-%%WWWDIR%%/skins/haze_dark/img/weather/snowshow.png
-%%WWWDIR%%/skins/haze_dark/img/weather/sunny.png
-%%WWWDIR%%/skins/haze_dark/img/weather/thunshowers.png
-%%WWWDIR%%/skins/haze_dark/img/weather/unknown.png
 %%WWWDIR%%/skins/haze_dark/img/y
 %%WWWDIR%%/skins/haze_dark/menus.css
 %%WWWDIR%%/skins/haze_dark/programming.css
@@ -675,7 +585,6 @@
 %%WWWDIR%%/skins/haze_dark/tv_schedules_custom.css
 %%WWWDIR%%/skins/haze_dark/tv_schedules_manual.css
 %%WWWDIR%%/skins/haze_dark/tv_upcoming.css
-%%WWWDIR%%/skins/haze_dark/weather.css
 %%WWWDIR%%/skins/haze_dark/welcome.css
 %%WWWDIR%%/skins/haze_light/backend_log.css
 %%WWWDIR%%/skins/haze_light/header.css
@@ -694,21 +603,6 @@
 %%WWWDIR%%/skins/haze_light/img/status.png
 %%WWWDIR%%/skins/haze_light/img/tv.png
 %%WWWDIR%%/skins/haze_light/img/video.png
-%%WWWDIR%%/skins/haze_light/img/weather.png
-%%WWWDIR%%/skins/haze_light/img/weather/cloudy.png
-%%WWWDIR%%/skins/haze_light/img/weather/fair.png
-%%WWWDIR%%/skins/haze_light/img/weather/flurries.png
-%%WWWDIR%%/skins/haze_light/img/weather/fog.png
-%%WWWDIR%%/skins/haze_light/img/weather/lshowers.png
-%%WWWDIR%%/skins/haze_light/img/weather/mcloudy.png
-%%WWWDIR%%/skins/haze_light/img/weather/myth_logo.png
-%%WWWDIR%%/skins/haze_light/img/weather/pcloudy.png
-%%WWWDIR%%/skins/haze_light/img/weather/rainsnow.png
-%%WWWDIR%%/skins/haze_light/img/weather/showers.png
-%%WWWDIR%%/skins/haze_light/img/weather/snowshow.png
-%%WWWDIR%%/skins/haze_light/img/weather/sunny.png
-%%WWWDIR%%/skins/haze_light/img/weather/thunshowers.png
-%%WWWDIR%%/skins/haze_light/img/weather/unknown.png
 %%WWWDIR%%/skins/haze_light/menus.css
 %%WWWDIR%%/skins/haze_light/programming.css
 %%WWWDIR%%/skins/haze_light/stats.css
@@ -719,45 +613,35 @@
 %%WWWDIR%%/skins/haze_light/tv_schedules_custom.css
 %%WWWDIR%%/skins/haze_light/tv_schedules_manual.css
 %%WWWDIR%%/skins/haze_light/tv_upcoming.css
-%%WWWDIR%%/skins/haze_light/weather.css
 %%WWWDIR%%/skins/haze_light/welcome.css
 %%WWWDIR%%/skins/wap/handheld.css
 %%WWWDIR%%/skins/wap/img/mythtv-logo.gif
 %%WWWDIR%%/skins/wap/img/spacer.gif
 %%WWWDIR%%/skins/wap/style.css
+%%WWWDIR%%/tests/testUPnP.php
+@dirrm %%WWWDIR%%/tests
 @dirrm %%WWWDIR%%/skins/wap/img
 @dirrm %%WWWDIR%%/skins/wap
-@dirrm %%WWWDIR%%/skins/haze_light/img/weather
 @dirrm %%WWWDIR%%/skins/haze_light/img
 @dirrm %%WWWDIR%%/skins/haze_light
-@dirrm %%WWWDIR%%/skins/haze_dark/img/weather
 @dirrm %%WWWDIR%%/skins/haze_dark/img
 @dirrm %%WWWDIR%%/skins/haze_dark
-@dirrm %%WWWDIR%%/skins/grey/img/weather
 @dirrm %%WWWDIR%%/skins/grey/img/flags
 @dirrm %%WWWDIR%%/skins/grey/img
 @dirrm %%WWWDIR%%/skins/grey
-@dirrm %%WWWDIR%%/skins/elkin/img/weather
 @dirrm %%WWWDIR%%/skins/elkin/img/music
 @dirrm %%WWWDIR%%/skins/elkin/img/flags
 @dirrm %%WWWDIR%%/skins/elkin/img
 @dirrm %%WWWDIR%%/skins/elkin
-@dirrm %%WWWDIR%%/skins/default/img/weather
 @dirrm %%WWWDIR%%/skins/default/img/music
 @dirrm %%WWWDIR%%/skins/default/img/flags
 @dirrm %%WWWDIR%%/skins/default/img
 @dirrm %%WWWDIR%%/skins/default
-@dirrm %%WWWDIR%%/skins/clean_blue/img/weather
 @dirrm %%WWWDIR%%/skins/clean_blue/img/music
 @dirrm %%WWWDIR%%/skins/clean_blue/img/flags
 @dirrm %%WWWDIR%%/skins/clean_blue/img
 @dirrm %%WWWDIR%%/skins/clean_blue
 @dirrm %%WWWDIR%%/skins
-@dirrm %%WWWDIR%%/modules/weather/tmpl/default
-@dirrm %%WWWDIR%%/modules/weather/tmpl
-@dirrm %%WWWDIR%%/modules/weather/includes
-@dirrm %%WWWDIR%%/modules/weather/classes
-@dirrm %%WWWDIR%%/modules/weather
 @dirrm %%WWWDIR%%/modules/video/tmpl/default
 @dirrm %%WWWDIR%%/modules/video/tmpl
 @dirrm %%WWWDIR%%/modules/video
@@ -820,11 +704,16 @@
 @dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/js/scriptaculous
 @dirrm %%WWWDIR%%/js/prototip
+@dirrm %%WWWDIR%%/js/libs/flowplayer
+@dirrm %%WWWDIR%%/js/libs
+@dirrm %%WWWDIR%%/js/dialog
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/includes
+@dirrm %%WWWDIR%%/data/tv_icons
+@dirrm %%WWWDIR%%/data/cache
 @dirrmtry %%WWWDIR%%/data
 @dirrm %%WWWDIR%%/configuration
-@dirrm %%WWWDIR%%/classes/Services
+@dirrm %%WWWDIR%%/classes/UPnP
 @dirrm %%WWWDIR%%/classes/Database/Query
 @dirrm %%WWWDIR%%/classes/Database
 @dirrm %%WWWDIR%%/classes/Cache

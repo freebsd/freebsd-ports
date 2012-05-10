@@ -1,15 +1,17 @@
 @comment $FreeBSD$
 bin/mythavtest
+bin/mythccextractor
 bin/mythcommflag
 bin/mythffmpeg
 bin/mythfrontend
 bin/mythjobqueue
 bin/mythlcdserver
+bin/mythmediaserver
 bin/mythpreviewgen
 bin/mythreplex
 bin/mythshutdown
 bin/mythtranscode
-bin/mythtvosd
+bin/mythutil
 bin/mythwelcome
 include/mythtv/audiooutput.h
 include/mythtv/audiooutputsettings.h
@@ -19,6 +21,7 @@ include/mythtv/bluray/attributes.h
 include/mythtv/bluray/bdparse.h
 include/mythtv/bluray/bits.h
 include/mythtv/bluray/bluray.h
+include/mythtv/bluray/clpi_data.h
 include/mythtv/bluray/clpi_parse.h
 include/mythtv/bluray/dl.h
 include/mythtv/bluray/file.h
@@ -30,6 +33,8 @@ include/mythtv/bluray/index_parse.h
 include/mythtv/bluray/log_control.h
 include/mythtv/bluray/logging.h
 include/mythtv/bluray/macro.h
+include/mythtv/bluray/meta_data.h
+include/mythtv/bluray/meta_parse.h
 include/mythtv/bluray/mobj_parse.h
 include/mythtv/bluray/mpls_parse.h
 include/mythtv/bluray/mutex.h
@@ -37,6 +42,7 @@ include/mythtv/bluray/navigation.h
 include/mythtv/bluray/sound_parse.h
 include/mythtv/bluray/strutl.h
 include/mythtv/bluray/uo_mask_table.h
+include/mythtv/bonjourregister.h
 include/mythtv/compat.h
 include/mythtv/dbutil.h
 include/mythtv/dialogbox.h
@@ -48,8 +54,10 @@ include/mythtv/dvdread/ifo_read.h
 include/mythtv/dvdread/ifo_types.h
 include/mythtv/dvdread/nav_read.h
 include/mythtv/dvdread/nav_types.h
+include/mythtv/eldutils.h
 include/mythtv/exitcodes.h
-include/mythtv/generictree.h
+include/mythtv/filesysteminfo.h
+include/mythtv/hardwareprofile.h
 include/mythtv/httpcomms.h
 include/mythtv/iso3166.h
 include/mythtv/iso639.h
@@ -63,25 +71,29 @@ include/mythtv/libavcodec/opt.h
 include/mythtv/libavcodec/vaapi.h
 include/mythtv/libavcodec/vdpau.h
 include/mythtv/libavcodec/xvmc.h
-include/mythtv/libavcore/avcore.h
-include/mythtv/libavcore/imgutils.h
-include/mythtv/libavcore/parseutils.h
 include/mythtv/libavdevice/avdevice.h
 include/mythtv/libavfilter/avfilter.h
+include/mythtv/libavfilter/avfiltergraph.h
 include/mythtv/libavformat/avformat.h
 include/mythtv/libavformat/avio.h
+include/mythtv/libavformat/version.h
 include/mythtv/libavutil/adler32.h
 include/mythtv/libavutil/attributes.h
+include/mythtv/libavutil/audioconvert.h
+include/mythtv/libavutil/avassert.h
 include/mythtv/libavutil/avconfig.h
 include/mythtv/libavutil/avstring.h
 include/mythtv/libavutil/avutil.h
 include/mythtv/libavutil/base64.h
 include/mythtv/libavutil/bswap.h
 include/mythtv/libavutil/common.h
+include/mythtv/libavutil/cpu.h
 include/mythtv/libavutil/crc.h
 include/mythtv/libavutil/error.h
 include/mythtv/libavutil/eval.h
 include/mythtv/libavutil/fifo.h
+include/mythtv/libavutil/file.h
+include/mythtv/libavutil/imgutils.h
 include/mythtv/libavutil/intfloat_readwrite.h
 include/mythtv/libavutil/intreadwrite.h
 include/mythtv/libavutil/lfg.h
@@ -90,63 +102,30 @@ include/mythtv/libavutil/lzo.h
 include/mythtv/libavutil/mathematics.h
 include/mythtv/libavutil/md5.h
 include/mythtv/libavutil/mem.h
+include/mythtv/libavutil/opt.h
+include/mythtv/libavutil/parseutils.h
 include/mythtv/libavutil/pixdesc.h
 include/mythtv/libavutil/pixfmt.h
 include/mythtv/libavutil/random_seed.h
 include/mythtv/libavutil/rational.h
+include/mythtv/libavutil/samplefmt.h
 include/mythtv/libavutil/sha1.h
 include/mythtv/libmyth/audiooutput.h
 include/mythtv/libmyth/audiooutputsettings.h
 include/mythtv/libmyth/audiosettings.h
-include/mythtv/libmyth/autodeletedeque.h
-include/mythtv/libmyth/compat.h
-include/mythtv/libmyth/dbutil.h
 include/mythtv/libmyth/dialogbox.h
-include/mythtv/libmyth/exitcodes.h
-include/mythtv/libmyth/generictree.h
-include/mythtv/libmyth/httpcomms.h
-include/mythtv/libmyth/iso3166.h
-include/mythtv/libmyth/iso639.h
+include/mythtv/libmyth/eldutils.h
 include/mythtv/libmyth/langsettings.h
-include/mythtv/libmyth/lcddevice.h
-include/mythtv/libmyth/managedlist.h
-include/mythtv/libmyth/mcodecs.h
-include/mythtv/libmyth/msocketdevice.h
-include/mythtv/libmyth/mythcdrom.h
-include/mythtv/libmyth/mythconfig.h
-include/mythtv/libmyth/mythconfig.mak
 include/mythtv/libmyth/mythconfigdialogs.h
 include/mythtv/libmyth/mythconfiggroups.h
 include/mythtv/libmyth/mythcontext.h
-include/mythtv/libmyth/mythcorecontext.h
-include/mythtv/libmyth/mythcoreutil.h
-include/mythtv/libmyth/mythdb.h
-include/mythtv/libmyth/mythdbcon.h
-include/mythtv/libmyth/mythdbparams.h
-include/mythtv/libmyth/mythdeque.h
 include/mythtv/libmyth/mythdialogs.h
-include/mythtv/libmyth/mythdirs.h
-include/mythtv/libmyth/mythdownloadmanager.h
-include/mythtv/libmyth/mythevent.h
 include/mythtv/libmyth/mythexp.h
-include/mythtv/libmyth/mythhttppool.h
-include/mythtv/libmyth/mythlocale.h
-include/mythtv/libmyth/mythmedia.h
 include/mythtv/libmyth/mythmediamonitor.h
-include/mythtv/libmyth/mythobservable.h
 include/mythtv/libmyth/mythplugin.h
 include/mythtv/libmyth/mythpluginapi.h
 include/mythtv/libmyth/mythrssmanager.h
-include/mythtv/libmyth/mythsocket.h
-include/mythtv/libmyth/mythsocket_cb.h
-include/mythtv/libmyth/mythstorage.h
-include/mythtv/libmyth/mythsystem.h
 include/mythtv/libmyth/mythterminal.h
-include/mythtv/libmyth/mythtimer.h
-include/mythtv/libmyth/mythtranslation.h
-include/mythtv/libmyth/mythuifilebrowser.h
-include/mythtv/libmyth/mythverbose.h
-include/mythtv/libmyth/mythversion.h
 include/mythtv/libmyth/mythwidgets.h
 include/mythtv/libmyth/mythwizard.h
 include/mythtv/libmyth/netgrabbermanager.h
@@ -161,45 +140,104 @@ include/mythtv/libmyth/remoteutil.h
 include/mythtv/libmyth/rssparse.h
 include/mythtv/libmyth/schemawizard.h
 include/mythtv/libmyth/settings.h
-include/mythtv/libmyth/storagegroup.h
 include/mythtv/libmyth/storagegroupeditor.h
-include/mythtv/libmyth/uilistbtntype.h
 include/mythtv/libmyth/uitypes.h
-include/mythtv/libmyth/util.h
 include/mythtv/libmyth/virtualkeyboard_qt.h
 include/mythtv/libmyth/visual.h
 include/mythtv/libmyth/volumebase.h
 include/mythtv/libmyth/xmlparse.h
-include/mythtv/libmythdb/compat.h
-include/mythtv/libmythdb/exitcodes.h
-include/mythtv/libmythdb/httpcomms.h
-include/mythtv/libmythdb/iso3166.h
-include/mythtv/libmythdb/iso639.h
-include/mythtv/libmythdb/lcddevice.h
-include/mythtv/libmythdb/mcodecs.h
-include/mythtv/libmythdb/msocketdevice.h
-include/mythtv/libmythdb/mythconfig.h
-include/mythtv/libmythdb/mythconfig.mak
-include/mythtv/libmythdb/mythcorecontext.h
-include/mythtv/libmythdb/mythcoreutil.h
-include/mythtv/libmythdb/mythdb.h
-include/mythtv/libmythdb/mythdbcon.h
-include/mythtv/libmythdb/mythdbparams.h
-include/mythtv/libmythdb/mythdirs.h
-include/mythtv/libmythdb/mythdownloadmanager.h
-include/mythtv/libmythdb/mythevent.h
-include/mythtv/libmythdb/mythexp.h
-include/mythtv/libmythdb/mythlocale.h
-include/mythtv/libmythdb/mythobservable.h
-include/mythtv/libmythdb/mythsocket.h
-include/mythtv/libmythdb/mythsocket_cb.h
-include/mythtv/libmythdb/mythstorage.h
-include/mythtv/libmythdb/mythsystem.h
-include/mythtv/libmythdb/mythtimer.h
-include/mythtv/libmythdb/mythtranslation.h
-include/mythtv/libmythdb/mythverbose.h
-include/mythtv/libmythdb/mythversion.h
-include/mythtv/libmythdb/storagegroup.h
+include/mythtv/libmythbase/autodeletedeque.h
+include/mythtv/libmythbase/bonjourregister.h
+include/mythtv/libmythbase/compat.h
+include/mythtv/libmythbase/dbutil.h
+include/mythtv/libmythbase/exitcodes.h
+include/mythtv/libmythbase/filesysteminfo.h
+include/mythtv/libmythbase/hardwareprofile.h
+include/mythtv/libmythbase/httpcomms.h
+include/mythtv/libmythbase/iso3166.h
+include/mythtv/libmythbase/iso639.h
+include/mythtv/libmythbase/lcddevice.h
+include/mythtv/libmythbase/mcodecs.h
+include/mythtv/libmythbase/msocketdevice.h
+include/mythtv/libmythbase/mthread.h
+include/mythtv/libmythbase/mthreadpool.h
+include/mythtv/libmythbase/mythbaseexp.h
+include/mythtv/libmythbase/mythcdrom.h
+include/mythtv/libmythbase/mythcommandlineparser.h
+include/mythtv/libmythbase/mythconfig.h
+include/mythtv/libmythbase/mythconfig.mak
+include/mythtv/libmythbase/mythcorecontext.h
+include/mythtv/libmythbase/mythcoreutil.h
+include/mythtv/libmythbase/mythdb.h
+include/mythtv/libmythbase/mythdbcon.h
+include/mythtv/libmythbase/mythdbparams.h
+include/mythtv/libmythbase/mythdeque.h
+include/mythtv/libmythbase/mythdirs.h
+include/mythtv/libmythbase/mythdownloadmanager.h
+include/mythtv/libmythbase/mythevent.h
+include/mythtv/libmythbase/mythhttppool.h
+include/mythtv/libmythbase/mythlocale.h
+include/mythtv/libmythbase/mythlogging.h
+include/mythtv/libmythbase/mythmedia.h
+include/mythtv/libmythbase/mythmiscutil.h
+include/mythtv/libmythbase/mythobservable.h
+include/mythtv/libmythbase/mythsocket.h
+include/mythtv/libmythbase/mythsocket_cb.h
+include/mythtv/libmythbase/mythstorage.h
+include/mythtv/libmythbase/mythsystem.h
+include/mythtv/libmythbase/mythtimer.h
+include/mythtv/libmythbase/mythtranslation.h
+include/mythtv/libmythbase/mythversion.h
+include/mythtv/libmythbase/plist.h
+include/mythtv/libmythbase/referencecounter.h
+include/mythtv/libmythbase/serverpool.h
+include/mythtv/libmythbase/storagegroup.h
+include/mythtv/libmythbase/verbosedefs.h
+include/mythtv/libmythbase/version.h
+include/mythtv/libmythservicecontracts/datacontracthelper.h
+include/mythtv/libmythservicecontracts/datacontracts/artworkInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/artworkInfoList.h
+include/mythtv/libmythservicecontracts/datacontracts/blurayInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/captureCard.h
+include/mythtv/libmythservicecontracts/datacontracts/captureCardList.h
+include/mythtv/libmythservicecontracts/datacontracts/channelInfoList.h
+include/mythtv/libmythservicecontracts/datacontracts/connectionInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/databaseInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/frontendActionList.h
+include/mythtv/libmythservicecontracts/datacontracts/frontendStatus.h
+include/mythtv/libmythservicecontracts/datacontracts/labelValue.h
+include/mythtv/libmythservicecontracts/datacontracts/lineup.h
+include/mythtv/libmythservicecontracts/datacontracts/liveStreamInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/liveStreamInfoList.h
+include/mythtv/libmythservicecontracts/datacontracts/logMessage.h
+include/mythtv/libmythservicecontracts/datacontracts/logMessageList.h
+include/mythtv/libmythservicecontracts/datacontracts/programAndChannel.h
+include/mythtv/libmythservicecontracts/datacontracts/programGuide.h
+include/mythtv/libmythservicecontracts/datacontracts/recRule.h
+include/mythtv/libmythservicecontracts/datacontracts/recRuleList.h
+include/mythtv/libmythservicecontracts/datacontracts/recording.h
+include/mythtv/libmythservicecontracts/datacontracts/settingList.h
+include/mythtv/libmythservicecontracts/datacontracts/timeZoneInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/versionInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/videoLookupInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/videoLookupInfoList.h
+include/mythtv/libmythservicecontracts/datacontracts/videoMetadataInfo.h
+include/mythtv/libmythservicecontracts/datacontracts/videoMetadataInfoList.h
+include/mythtv/libmythservicecontracts/datacontracts/videoMultiplex.h
+include/mythtv/libmythservicecontracts/datacontracts/videoMultiplexList.h
+include/mythtv/libmythservicecontracts/datacontracts/videoSource.h
+include/mythtv/libmythservicecontracts/datacontracts/videoSourceList.h
+include/mythtv/libmythservicecontracts/datacontracts/wolInfo.h
+include/mythtv/libmythservicecontracts/service.h
+include/mythtv/libmythservicecontracts/serviceexp.h
+include/mythtv/libmythservicecontracts/services/captureServices.h
+include/mythtv/libmythservicecontracts/services/channelServices.h
+include/mythtv/libmythservicecontracts/services/contentServices.h
+include/mythtv/libmythservicecontracts/services/dvrServices.h
+include/mythtv/libmythservicecontracts/services/frontendServices.h
+include/mythtv/libmythservicecontracts/services/guideServices.h
+include/mythtv/libmythservicecontracts/services/mythServices.h
+include/mythtv/libmythservicecontracts/services/videoServices.h
 include/mythtv/libmythui/mythdialogbox.h
 include/mythtv/libmythui/mythfontproperties.h
 include/mythtv/libmythui/mythgenerictree.h
@@ -215,24 +253,32 @@ include/mythtv/libmythui/mythscreenstack.h
 include/mythtv/libmythui/mythscreentype.h
 include/mythtv/libmythui/myththemebase.h
 include/mythtv/libmythui/myththemedmenu.h
+include/mythtv/libmythui/mythuiactions.h
+include/mythtv/libmythui/mythuianimation.h
 include/mythtv/libmythui/mythuibutton.h
 include/mythtv/libmythui/mythuibuttonlist.h
 include/mythtv/libmythui/mythuibuttontree.h
 include/mythtv/libmythui/mythuicheckbox.h
 include/mythtv/libmythui/mythuiclock.h
 include/mythtv/libmythui/mythuieditbar.h
+include/mythtv/libmythui/mythuiexp.h
+include/mythtv/libmythui/mythuifilebrowser.h
 include/mythtv/libmythui/mythuigroup.h
 include/mythtv/libmythui/mythuiguidegrid.h
 include/mythtv/libmythui/mythuihelper.h
 include/mythtv/libmythui/mythuiimage.h
 include/mythtv/libmythui/mythuiprogressbar.h
+include/mythtv/libmythui/mythuiscrollbar.h
 include/mythtv/libmythui/mythuishape.h
+include/mythtv/libmythui/mythuisimpletext.h
 include/mythtv/libmythui/mythuispinbox.h
+include/mythtv/libmythui/mythuistatetracker.h
 include/mythtv/libmythui/mythuistatetype.h
 include/mythtv/libmythui/mythuitext.h
 include/mythtv/libmythui/mythuitextedit.h
 include/mythtv/libmythui/mythuitype.h
 include/mythtv/libmythui/mythuiutils.h
+include/mythtv/libmythui/mythuivideo.h
 include/mythtv/libmythui/mythuiwebbrowser.h
 include/mythtv/libmythui/mythvirtualkeyboard.h
 include/mythtv/libmythui/themeinfo.h
@@ -240,24 +286,34 @@ include/mythtv/libmythui/x11colors.h
 include/mythtv/libmythui/xmlparsebase.h
 include/mythtv/libpostproc/postprocess.h
 include/mythtv/libswscale/swscale.h
-include/mythtv/managedlist.h
 include/mythtv/mcodecs.h
+include/mythtv/metadata/bluraymetadata.h
 include/mythtv/metadata/cleanup.h
 include/mythtv/metadata/dbaccess.h
 include/mythtv/metadata/dirscan.h
 include/mythtv/metadata/globals.h
 include/mythtv/metadata/metadatacommon.h
 include/mythtv/metadata/metadatadownload.h
+include/mythtv/metadata/metadatafactory.h
 include/mythtv/metadata/metadataimagedownload.h
+include/mythtv/metadata/metadataimagehelper.h
+include/mythtv/metadata/mythmetaexp.h
+include/mythtv/metadata/mythuiimageresults.h
+include/mythtv/metadata/mythuimetadataresults.h
 include/mythtv/metadata/parentalcontrols.h
 include/mythtv/metadata/quicksp.h
 include/mythtv/metadata/videometadata.h
 include/mythtv/metadata/videometadatalistmanager.h
 include/mythtv/metadata/videoscan.h
 include/mythtv/metadata/videoutils.h
+include/mythtv/metadataimagehelper.h
 include/mythtv/mpeg2dec/mpeg2.h
 include/mythtv/msocketdevice.h
+include/mythtv/mthread.h
+include/mythtv/mthreadpool.h
+include/mythtv/mythbaseexp.h
 include/mythtv/mythcdrom.h
+include/mythtv/mythcommandlineparser.h
 include/mythtv/mythconfig.h
 include/mythtv/mythconfig.mak
 include/mythtv/mythconfigdialogs.h
@@ -276,8 +332,10 @@ include/mythtv/mythevent.h
 include/mythtv/mythexp.h
 include/mythtv/mythhttppool.h
 include/mythtv/mythlocale.h
+include/mythtv/mythlogging.h
 include/mythtv/mythmedia.h
 include/mythtv/mythmediamonitor.h
+include/mythtv/mythmiscutil.h
 include/mythtv/mythobservable.h
 include/mythtv/mythplugin.h
 include/mythtv/mythpluginapi.h
@@ -289,8 +347,7 @@ include/mythtv/mythsystem.h
 include/mythtv/mythterminal.h
 include/mythtv/mythtimer.h
 include/mythtv/mythtranslation.h
-include/mythtv/mythuifilebrowser.h
-include/mythtv/mythverbose.h
+include/mythtv/mythtvexp.h
 include/mythtv/mythversion.h
 include/mythtv/mythwidgets.h
 include/mythtv/mythwizard.h
@@ -298,103 +355,117 @@ include/mythtv/netgrabbermanager.h
 include/mythtv/netutils.h
 include/mythtv/oldsettings.h
 include/mythtv/output.h
+include/mythtv/playgroup.h
+include/mythtv/plist.h
 include/mythtv/programinfo.h
 include/mythtv/programtypes.h
 include/mythtv/recordingtypes.h
+include/mythtv/referencecounter.h
 include/mythtv/remotefile.h
 include/mythtv/remoteutil.h
 include/mythtv/rssparse.h
 include/mythtv/samplerate.h
 include/mythtv/schemawizard.h
+include/mythtv/serverpool.h
 include/mythtv/settings.h
 include/mythtv/storagegroup.h
 include/mythtv/storagegroupeditor.h
-include/mythtv/uilistbtntype.h
 include/mythtv/uitypes.h
-include/mythtv/upnp/broadcast.h
 include/mythtv/upnp/bufferedsocketdevice.h
 include/mythtv/upnp/configuration.h
 include/mythtv/upnp/eventing.h
+include/mythtv/upnp/htmlserver.h
 include/mythtv/upnp/httprequest.h
 include/mythtv/upnp/httpserver.h
+include/mythtv/upnp/jsonSerializer.h
 include/mythtv/upnp/mmembuf.h
-include/mythtv/upnp/multicast.h
 include/mythtv/upnp/mythxmlclient.h
+include/mythtv/upnp/serializer.h
+include/mythtv/upnp/serverSideScripting.h
+include/mythtv/upnp/servicehost.h
+include/mythtv/upnp/soapSerializer.h
 include/mythtv/upnp/soapclient.h
 include/mythtv/upnp/ssdp.h
 include/mythtv/upnp/ssdpcache.h
 include/mythtv/upnp/taskqueue.h
-include/mythtv/upnp/threadpool.h
 include/mythtv/upnp/upnp.h
 include/mythtv/upnp/upnpcds.h
 include/mythtv/upnp/upnpcdsobjects.h
 include/mythtv/upnp/upnpcmgr.h
 include/mythtv/upnp/upnpdevice.h
-include/mythtv/upnp/upnpimpl.h
+include/mythtv/upnp/upnpsubscription.h
 include/mythtv/upnp/upnptaskcache.h
 include/mythtv/upnp/upnptaskevent.h
 include/mythtv/upnp/upnptasknotify.h
 include/mythtv/upnp/upnptasksearch.h
 include/mythtv/upnp/upnputil.h
-include/mythtv/util.h
+include/mythtv/upnp/wsdl.h
+include/mythtv/upnp/xmlSerializer.h
+include/mythtv/verbosedefs.h
+include/mythtv/version.h
 include/mythtv/virtualkeyboard_qt.h
 include/mythtv/visual.h
 include/mythtv/volumebase.h
 include/mythtv/xmlparse.h
-lib/libmyth-0.24.so
-lib/libmyth-0.24.so.0
-lib/libmyth-0.24.so.0.24
-lib/libmyth-0.24.so.0.24.0
+lib/libmyth-0.25.so
+lib/libmyth-0.25.so.0
+lib/libmyth-0.25.so.0.25
+lib/libmyth-0.25.so.0.25.0
 lib/libmythavcodec.so
 lib/libmythavcodec.so.52
-lib/libmythavcodec.so.52.86.1
-lib/libmythavcore.so
-lib/libmythavcore.so.0
-lib/libmythavcore.so.0.6.0
+lib/libmythavcodec.so.52.113.1
 lib/libmythavdevice.so
 lib/libmythavdevice.so.52
-lib/libmythavdevice.so.52.2.1
+lib/libmythavdevice.so.52.2.3
 lib/libmythavfilter.so
 lib/libmythavfilter.so.1
-lib/libmythavfilter.so.1.37.0
+lib/libmythavfilter.so.1.76.0
 lib/libmythavformat.so
 lib/libmythavformat.so.52
-lib/libmythavformat.so.52.78.3
+lib/libmythavformat.so.52.101.0
 lib/libmythavutil.so
 lib/libmythavutil.so.50
-lib/libmythavutil.so.50.24.0
-lib/libmythbluray-0.24.a
-lib/libmythdb-0.24.so
-lib/libmythdb-0.24.so.0
-lib/libmythdb-0.24.so.0.24
-lib/libmythdb-0.24.so.0.24.0
-lib/libmythdvdnav-0.24.a
-lib/libmythfreemheg-0.24.so
-lib/libmythfreemheg-0.24.so.0
-lib/libmythfreemheg-0.24.so.0.24
-lib/libmythfreemheg-0.24.so.0.24.0
-lib/libmythmetadata-0.24.so
-lib/libmythmetadata-0.24.so.0
-lib/libmythmetadata-0.24.so.0.24
-lib/libmythmetadata-0.24.so.0.24.0
+lib/libmythavutil.so.50.39.0
+lib/libmythbase-0.25.so
+lib/libmythbase-0.25.so.0
+lib/libmythbase-0.25.so.0.25
+lib/libmythbase-0.25.so.0.25.0
+lib/libmythbluray-0.25.a
+lib/libmythdvdnav-0.25.a
+lib/libmythfreemheg-0.25.so
+lib/libmythfreemheg-0.25.so.0
+lib/libmythfreemheg-0.25.so.0.25
+lib/libmythfreemheg-0.25.so.0.25.0
+lib/libmythmetadata-0.25.so
+lib/libmythmetadata-0.25.so.0
+lib/libmythmetadata-0.25.so.0.25
+lib/libmythmetadata-0.25.so.0.25.0
 lib/libmythpostproc.so
 lib/libmythpostproc.so.51
 lib/libmythpostproc.so.51.2.0
+lib/libmythprotoserver-0.25.so
+lib/libmythprotoserver-0.25.so.0
+lib/libmythprotoserver-0.25.so.0.25
+lib/libmythprotoserver-0.25.so.0.25.0
+lib/libmythservicecontracts-0.25.so
+lib/libmythservicecontracts-0.25.so.0
+lib/libmythservicecontracts-0.25.so.0.25
+lib/libmythservicecontracts-0.25.so.0.25.0
 lib/libmythswscale.so
 lib/libmythswscale.so.0
-lib/libmythswscale.so.0.11.0
-lib/libmythtv-0.24.so
-lib/libmythtv-0.24.so.0
-lib/libmythtv-0.24.so.0.24
-lib/libmythtv-0.24.so.0.24.0
-lib/libmythui-0.24.so
-lib/libmythui-0.24.so.0
-lib/libmythui-0.24.so.0.24
-lib/libmythui-0.24.so.0.24.0
-lib/libmythupnp-0.24.so
-lib/libmythupnp-0.24.so.0
-lib/libmythupnp-0.24.so.0.24
-lib/libmythupnp-0.24.so.0.24.0
+lib/libmythswscale.so.0.12.0
+lib/libmythtv-0.25.so
+lib/libmythtv-0.25.so.0
+lib/libmythtv-0.25.so.0.25
+lib/libmythtv-0.25.so.0.25.0
+lib/libmythui-0.25.so
+lib/libmythui-0.25.so.0
+lib/libmythui-0.25.so.0.25
+lib/libmythui-0.25.so.0.25.0
+lib/libmythupnp-0.25.so
+lib/libmythupnp-0.25.so.0
+lib/libmythupnp-0.25.so.0.25
+lib/libmythupnp-0.25.so.0.25.0
 lib/mythtv/filters/libadjust.so
 lib/mythtv/filters/libbobdeint.so
 lib/mythtv/filters/libcrop.so
@@ -417,10 +488,161 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/fonts/FreeMono.ttf
 %%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/fonts/FreeSansBold.ttf
+%%DATADIR%%/fonts/Tiresias Infofont Bold.ttf
 %%DATADIR%%/fonts/Tiresias Infofont Italic.ttf
 %%DATADIR%%/fonts/Tiresias Infofont.ttf
-%%DATADIR%%/fonts/Tiresias Infofont Bold.ttf
 %%DATADIR%%/fonts/tiresias_gpl3.txt
+%%DATADIR%%/html/3rdParty/jwplayer.qsp
+%%DATADIR%%/html/css/Status.css
+%%DATADIR%%/html/css/images/ui-bg_flat_30_cccccc_40x100.png
+%%DATADIR%%/html/css/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%DATADIR%%/html/css/images/ui-bg_glass_40_ffc73d_1x400.png
+%%DATADIR%%/html/css/images/ui-bg_hexagon_10_000000_12x10.png
+%%DATADIR%%/html/css/images/ui-bg_highlight-hard_20_0b6a98_1x100.png
+%%DATADIR%%/html/css/images/ui-bg_highlight-soft_33_003147_1x100.png
+%%DATADIR%%/html/css/images/ui-bg_highlight-soft_35_222222_1x100.png
+%%DATADIR%%/html/css/images/ui-bg_highlight-soft_44_444444_1x100.png
+%%DATADIR%%/html/css/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+%%DATADIR%%/html/css/images/ui-icons_222222_256x240.png
+%%DATADIR%%/html/css/images/ui-icons_4b8e0b_256x240.png
+%%DATADIR%%/html/css/images/ui-icons_a83300_256x240.png
+%%DATADIR%%/html/css/images/ui-icons_cccccc_256x240.png
+%%DATADIR%%/html/css/images/ui-icons_ffffff_256x240.png
+%%DATADIR%%/html/css/jquery-ui.css
+%%DATADIR%%/html/css/menustyle.css
+%%DATADIR%%/html/css/setup.css
+%%DATADIR%%/html/css/site.css
+%%DATADIR%%/html/css/ui.jqgrid.css
+%%DATADIR%%/html/css/ui.multiselect.css
+%%DATADIR%%/html/css/wsdl.css
+%%DATADIR%%/html/images/blank.gif
+%%DATADIR%%/html/images/checkerboard_100x100.png
+%%DATADIR%%/html/images/favicon.ico
+%%DATADIR%%/html/images/menu-button-bg.gif
+%%DATADIR%%/html/images/mythtv.png
+%%DATADIR%%/html/images/ui-bg_flat_30_cccccc_40x100.png
+%%DATADIR%%/html/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%DATADIR%%/html/images/ui-bg_glass_40_ffc73d_1x400.png
+%%DATADIR%%/html/images/ui-bg_hexagon_10_000000_12x10.png
+%%DATADIR%%/html/images/ui-bg_highlight-hard_20_0b6a98_1x100.png
+%%DATADIR%%/html/images/ui-bg_highlight-soft_33_003147_1x100.png
+%%DATADIR%%/html/images/ui-bg_highlight-soft_35_222222_1x100.png
+%%DATADIR%%/html/images/ui-bg_highlight-soft_44_444444_1x100.png
+%%DATADIR%%/html/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+%%DATADIR%%/html/images/ui-icons_222222_256x240.png
+%%DATADIR%%/html/images/ui-icons_4b8e0b_256x240.png
+%%DATADIR%%/html/images/ui-icons_a83300_256x240.png
+%%DATADIR%%/html/images/ui-icons_cccccc_256x240.png
+%%DATADIR%%/html/images/ui-icons_ffffff_256x240.png
+%%DATADIR%%/html/index.html
+%%DATADIR%%/html/js/databaseutil.js
+%%DATADIR%%/html/js/fileutil.js
+%%DATADIR%%/html/js/galleria/LICENSE
+%%DATADIR%%/html/js/galleria/galleria-1.2.3.js
+%%DATADIR%%/html/js/galleria/galleria-1.2.3.min.js
+%%DATADIR%%/html/js/galleria/themes/classic/README.rst
+%%DATADIR%%/html/js/galleria/themes/classic/classic-demo.html
+%%DATADIR%%/html/js/galleria/themes/classic/classic-loader.gif
+%%DATADIR%%/html/js/galleria/themes/classic/classic-map.png
+%%DATADIR%%/html/js/galleria/themes/classic/galleria.classic.css
+%%DATADIR%%/html/js/galleria/themes/classic/galleria.classic.js
+%%DATADIR%%/html/js/galleria/themes/classic/galleria.classic.min.js
+%%DATADIR%%/html/js/grid.locale-en.js
+%%DATADIR%%/html/js/inspect.js
+%%DATADIR%%/html/js/jquery-ui.min.js
+%%DATADIR%%/html/js/jquery.contextmenu.js
+%%DATADIR%%/html/js/jquery.jqGrid.min.js
+%%DATADIR%%/html/js/jquery.min.js
+%%DATADIR%%/html/js/jqueryFileTree/images/application.png
+%%DATADIR%%/html/js/jqueryFileTree/images/code.png
+%%DATADIR%%/html/js/jqueryFileTree/images/css.png
+%%DATADIR%%/html/js/jqueryFileTree/images/db.png
+%%DATADIR%%/html/js/jqueryFileTree/images/directory.png
+%%DATADIR%%/html/js/jqueryFileTree/images/doc.png
+%%DATADIR%%/html/js/jqueryFileTree/images/file.png
+%%DATADIR%%/html/js/jqueryFileTree/images/film.png
+%%DATADIR%%/html/js/jqueryFileTree/images/flash.png
+%%DATADIR%%/html/js/jqueryFileTree/images/folder_open.png
+%%DATADIR%%/html/js/jqueryFileTree/images/html.png
+%%DATADIR%%/html/js/jqueryFileTree/images/java.png
+%%DATADIR%%/html/js/jqueryFileTree/images/linux.png
+%%DATADIR%%/html/js/jqueryFileTree/images/music.png
+%%DATADIR%%/html/js/jqueryFileTree/images/pdf.png
+%%DATADIR%%/html/js/jqueryFileTree/images/php.png
+%%DATADIR%%/html/js/jqueryFileTree/images/picture.png
+%%DATADIR%%/html/js/jqueryFileTree/images/ppt.png
+%%DATADIR%%/html/js/jqueryFileTree/images/psd.png
+%%DATADIR%%/html/js/jqueryFileTree/images/ruby.png
+%%DATADIR%%/html/js/jqueryFileTree/images/script.png
+%%DATADIR%%/html/js/jqueryFileTree/images/spinner.gif
+%%DATADIR%%/html/js/jqueryFileTree/images/txt.png
+%%DATADIR%%/html/js/jqueryFileTree/images/xls.png
+%%DATADIR%%/html/js/jqueryFileTree/images/zip.png
+%%DATADIR%%/html/js/jqueryFileTree/jqueryFileTree.css
+%%DATADIR%%/html/js/jqueryFileTree/jqueryFileTree.js
+%%DATADIR%%/html/js/menu.js
+%%DATADIR%%/html/js/ui-multiselect-en.js
+%%DATADIR%%/html/js/ui.multiselect.js
+%%DATADIR%%/html/js/util.qjs
+%%DATADIR%%/html/menu.qsp
+%%DATADIR%%/html/misc/database-backup.html
+%%DATADIR%%/html/misc/database-repair.html
+%%DATADIR%%/html/misc/databasetabs.html
+%%DATADIR%%/html/misc/hardwareprofile-general.html
+%%DATADIR%%/html/misc/hardwareprofile-myprofile.html
+%%DATADIR%%/html/misc/hardwareprofile.html
+%%DATADIR%%/html/misc/js/databasetabs.js
+%%DATADIR%%/html/misc/js/hardwareprofile.js
+%%DATADIR%%/html/misc/js/messagetab.js
+%%DATADIR%%/html/misc/js/viewlogs.js
+%%DATADIR%%/html/misc/message.html
+%%DATADIR%%/html/misc/messagetab.html
+%%DATADIR%%/html/misc/overview.qsp
+%%DATADIR%%/html/misc/placeholder.html
+%%DATADIR%%/html/misc/viewlogs.html
+%%DATADIR%%/html/samples/hlstest.qsp
+%%DATADIR%%/html/samples/js/samples.js
+%%DATADIR%%/html/samples/livestream_rec.qsp
+%%DATADIR%%/html/samples/livestream_sg.qsp
+%%DATADIR%%/html/samples/recorded.qsp
+%%DATADIR%%/html/samples/serverside.qsp
+%%DATADIR%%/html/samples/storagegroups.qsp
+%%DATADIR%%/html/setup/channeleditor-channeldetail-multi.html
+%%DATADIR%%/html/setup/channeleditor-channeldetail.html
+%%DATADIR%%/html/setup/channeleditor.html
+%%DATADIR%%/html/setup/database.html
+%%DATADIR%%/html/setup/expert.html
+%%DATADIR%%/html/setup/general.html
+%%DATADIR%%/html/setup/guidedatasources-sourcedetail.html
+%%DATADIR%%/html/setup/guidedatasources.html
+%%DATADIR%%/html/setup/jobqueue-backend.html
+%%DATADIR%%/html/setup/jobqueue-job-editor.html
+%%DATADIR%%/html/setup/jobqueue-jobs.qsp
+%%DATADIR%%/html/setup/jobqueue.html
+%%DATADIR%%/html/setup/js/channeleditor.js
+%%DATADIR%%/html/setup/js/database.js
+%%DATADIR%%/html/setup/js/general.js
+%%DATADIR%%/html/setup/js/guidedatasources.js
+%%DATADIR%%/html/setup/js/jobqueue.js
+%%DATADIR%%/html/setup/js/password.js
+%%DATADIR%%/html/setup/js/setup.js
+%%DATADIR%%/html/setup/js/storagegroups.js
+%%DATADIR%%/html/setup/js/systemevents.js
+%%DATADIR%%/html/setup/js/wizard.js
+%%DATADIR%%/html/setup/overview.html
+%%DATADIR%%/html/setup/password.html
+%%DATADIR%%/html/setup/storagegroups-add-dir.html
+%%DATADIR%%/html/setup/storagegroups-add-new.html
+%%DATADIR%%/html/setup/storagegroups.html
+%%DATADIR%%/html/setup/systemevents.html
+%%DATADIR%%/html/setup/wizard-database.html
+%%DATADIR%%/html/setup/wizard-guide_data.html
+%%DATADIR%%/html/setup/wizard-media_storage.html
+%%DATADIR%%/html/setup/wizard-network.qsp
+%%DATADIR%%/html/setup/wizard-recording_devices.html
+%%DATADIR%%/html/setup/wizard.html
+%%DATADIR%%/html/xslt/class.xslt
+%%DATADIR%%/html/xslt/service.xslt
 %%DATADIR%%/i18n/mythfrontend_bg.qm
 %%DATADIR%%/i18n/mythfrontend_ca.qm
 %%DATADIR%%/i18n/mythfrontend_cs.qm
@@ -431,10 +653,12 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/i18n/mythfrontend_en_gb.qm
 %%DATADIR%%/i18n/mythfrontend_en_us.qm
 %%DATADIR%%/i18n/mythfrontend_es.qm
+%%DATADIR%%/i18n/mythfrontend_es_es.qm
 %%DATADIR%%/i18n/mythfrontend_et.qm
 %%DATADIR%%/i18n/mythfrontend_fi.qm
 %%DATADIR%%/i18n/mythfrontend_fr.qm
 %%DATADIR%%/i18n/mythfrontend_he.qm
+%%DATADIR%%/i18n/mythfrontend_hr.qm
 %%DATADIR%%/i18n/mythfrontend_hu.qm
 %%DATADIR%%/i18n/mythfrontend_is.qm
 %%DATADIR%%/i18n/mythfrontend_it.qm
@@ -448,16 +672,20 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/i18n/mythfrontend_sl.qm
 %%DATADIR%%/i18n/mythfrontend_sv.qm
 %%DATADIR%%/i18n/mythfrontend_tr.qm
+%%DATADIR%%/i18n/mythfrontend_zh_cn.qm
+%%DATADIR%%/i18n/mythfrontend_zh_hk.qm
 %%DATADIR%%/locales/da_dk.xml
 %%DATADIR%%/locales/de_de.xml
 %%DATADIR%%/locales/en_ca.xml
 %%DATADIR%%/locales/en_gb.xml
 %%DATADIR%%/locales/en_us.xml
+%%DATADIR%%/locales/es_es.xml
 %%DATADIR%%/locales/et_ee.xml
 %%DATADIR%%/locales/fr_ca.xml
 %%DATADIR%%/locales/fr_fr.xml
 %%DATADIR%%/locales/nb_no.xml
 %%DATADIR%%/locales/ru_ru.xml
+%%DATADIR%%/locales/zh_hk.xml
 %%DATADIR%%/themes/DVR/dvr-preview.png
 %%DATADIR%%/themes/DVR/main_settings.xml
 %%DATADIR%%/themes/DVR/mainmenu.xml
@@ -469,14 +697,25 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/DVR/tv_settings.xml
 %%DATADIR%%/themes/DVR/tvmenu.xml
 %%DATADIR%%/themes/DVR/util_menu.xml
+%%DATADIR%%/themes/DVR/video_settings.xml
+%%DATADIR%%/themes/DVR/videomenu.xml
 %%DATADIR%%/themes/MythCenter-wide/README
 %%DATADIR%%/themes/MythCenter-wide/appear-ui.xml
 %%DATADIR%%/themes/MythCenter-wide/base.xml
 %%DATADIR%%/themes/MythCenter-wide/config-ui.xml
 %%DATADIR%%/themes/MythCenter-wide/controls-ui.xml
+%%DATADIR%%/themes/MythCenter-wide/fonts/DroidSans.ttf
+%%DATADIR%%/themes/MythCenter-wide/fonts/DroidSans-Bold.ttf
+%%DATADIR%%/themes/MythCenter-wide/fonts/LICENSE
 %%DATADIR%%/themes/MythCenter-wide/htmls/progdetails_page1.html
 %%DATADIR%%/themes/MythCenter-wide/htmls/progdetails_page2.html
+%%DATADIR%%/themes/MythCenter-wide/keyboard/keyboard.xml
 %%DATADIR%%/themes/MythCenter-wide/menu-ui.xml
+%%DATADIR%%/themes/MythCenter-wide/music-base.xml
+%%DATADIR%%/themes/MythCenter-wide/music-ui.xml
+%%DATADIR%%/themes/MythCenter-wide/mytharchive-ui.xml
+%%DATADIR%%/themes/MythCenter-wide/mythburn-ui.xml
+%%DATADIR%%/themes/MythCenter-wide/mythnative-ui.xml
 %%DATADIR%%/themes/MythCenter-wide/osd.xml
 %%DATADIR%%/themes/MythCenter-wide/osd/bd.png
 %%DATADIR%%/themes/MythCenter-wide/osd/dvd.png
@@ -577,6 +816,9 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/MythCenter/htmls/progdetails_page2.html
 %%DATADIR%%/themes/MythCenter/menu-ui.xml
 %%DATADIR%%/themes/MythCenter/osd.xml
+%%DATADIR%%/themes/MythCenter/osd/fill_green.png
+%%DATADIR%%/themes/MythCenter/osd/osd-mid.png
+%%DATADIR%%/themes/MythCenter/osd/slider_frame.png
 %%DATADIR%%/themes/MythCenter/preview.png
 %%DATADIR%%/themes/MythCenter/qtlook.txt
 %%DATADIR%%/themes/MythCenter/recordings-ui.xml
@@ -650,6 +892,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/MythCenter/watermark/video_settings.png
 %%DATADIR%%/themes/MythCenter/watermark/weather.png
 %%DATADIR%%/themes/MythCenter/watermark/zoneminder.png
+%%DATADIR%%/themes/Slave/mainmenu.xml
+%%DATADIR%%/themes/Slave/themeinfo.xml
 %%DATADIR%%/themes/Terra/backgrounds/background.png
 %%DATADIR%%/themes/Terra/backgrounds/bottombar.png
 %%DATADIR%%/themes/Terra/backgrounds/horizontal_menu_background.png
@@ -670,6 +914,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/Terra/controls/short_textedit_background_selected.png
 %%DATADIR%%/themes/Terra/controls/small_button.png
 %%DATADIR%%/themes/Terra/controls/small_button_pushed.png
+%%DATADIR%%/themes/Terra/controls-ui.xml
 %%DATADIR%%/themes/Terra/gallery-ui.xml
 %%DATADIR%%/themes/Terra/game-ui.xml
 %%DATADIR%%/themes/Terra/guide/guide_arrow_left.png
@@ -686,6 +931,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/Terra/music/miniplayer_pauseicon.png
 %%DATADIR%%/themes/Terra/music/miniplayer_playicon.png
 %%DATADIR%%/themes/Terra/music/miniplayer_stopicon.png
+%%DATADIR%%/themes/Terra/musicsettings-ui.xml
 %%DATADIR%%/themes/Terra/netvision-ui.xml
 %%DATADIR%%/themes/Terra/news-ui.xml
 %%DATADIR%%/themes/Terra/osd.xml
@@ -838,6 +1084,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/Terra/watermarks/aerial.png
 %%DATADIR%%/themes/Terra/watermarks/appearance.png
 %%DATADIR%%/themes/Terra/watermarks/archive.png
+%%DATADIR%%/themes/Terra/watermarks/audio.png
 %%DATADIR%%/themes/Terra/watermarks/browser.png
 %%DATADIR%%/themes/Terra/watermarks/cd.png
 %%DATADIR%%/themes/Terra/watermarks/clock.png
@@ -888,6 +1135,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/Terra/watermarks/zm_events.png
 %%DATADIR%%/themes/Terra/watermarks/zm_live.png
 %%DATADIR%%/themes/Terra/watermarks/zoneminder.png
+%%DATADIR%%/themes/Terra/weather-ui.xml
 %%DATADIR%%/themes/Terra/welcome-ui.xml
 %%DATADIR%%/themes/classic/classic-preview.png
 %%DATADIR%%/themes/classic/main_settings.xml
@@ -898,6 +1146,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/classic/tv_search.xml
 %%DATADIR%%/themes/classic/tv_settings.xml
 %%DATADIR%%/themes/classic/tvmenu.xml
+%%DATADIR%%/themes/classic/video_settings.xml
+%%DATADIR%%/themes/classic/videomenu.xml
 %%DATADIR%%/themes/default-wide/appear-ui.xml
 %%DATADIR%%/themes/default-wide/bar.png
 %%DATADIR%%/themes/default-wide/base.xml
@@ -911,6 +1161,11 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default-wide/def-ro-lines.png
 %%DATADIR%%/themes/default-wide/filler.png
 %%DATADIR%%/themes/default-wide/md_progress_background.png
+%%DATADIR%%/themes/default-wide/mv_browse_background.png
+%%DATADIR%%/themes/default-wide/mv_browse_nocover_large.png
+%%DATADIR%%/themes/default-wide/mv_browse_selector.png
+%%DATADIR%%/themes/default-wide/mv_itemdetail_popup.png
+%%DATADIR%%/themes/default-wide/mv_results_popup.png
 %%DATADIR%%/themes/default-wide/osd.xml
 %%DATADIR%%/themes/default-wide/pd-background.png
 %%DATADIR%%/themes/default-wide/pf-background.png
@@ -943,6 +1198,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default-wide/trans-cr-background.png
 %%DATADIR%%/themes/default-wide/trans-rk-background.png
 %%DATADIR%%/themes/default-wide/trans-sr-background.png
+%%DATADIR%%/themes/default-wide/video-ui.xml
 %%DATADIR%%/themes/default-wide/welcome-ui.xml
 %%DATADIR%%/themes/default/appear-ui.xml
 %%DATADIR%%/themes/default/autoexpire.png
@@ -1002,6 +1258,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/cr-selectbar.png
 %%DATADIR%%/themes/default/cursor.png
 %%DATADIR%%/themes/default/cutlist.png
+%%DATADIR%%/themes/default/damaged.png
 %%DATADIR%%/themes/default/dd.png
 %%DATADIR%%/themes/default/def-ro-lines.png
 %%DATADIR%%/themes/default/down_arrow.png
@@ -1036,10 +1293,10 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/htmls/progdetails_page2.html
 %%DATADIR%%/themes/default/keyboard/ar.xml
 %%DATADIR%%/themes/default/keyboard/ar_ui.xml
-%%DATADIR%%/themes/default/keyboard/de.xml
-%%DATADIR%%/themes/default/keyboard/de_ui.xml
 %%DATADIR%%/themes/default/keyboard/da.xml
 %%DATADIR%%/themes/default/keyboard/da_ui.xml
+%%DATADIR%%/themes/default/keyboard/de.xml
+%%DATADIR%%/themes/default/keyboard/de_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_gb.xml
 %%DATADIR%%/themes/default/keyboard/en_gb_ui.xml
 %%DATADIR%%/themes/default/keyboard/en_us.xml
@@ -1361,7 +1618,19 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/locale/za.png
 %%DATADIR%%/themes/default/locale/zm.png
 %%DATADIR%%/themes/default/locale/zw.png
+%%DATADIR%%/themes/default/md_progress_background.png
+%%DATADIR%%/themes/default/md_rip_banner.png
 %%DATADIR%%/themes/default/mono.png
+%%DATADIR%%/themes/default/mv_browse_background.png
+%%DATADIR%%/themes/default/mv_browse_selector.png
+%%DATADIR%%/themes/default/mv_filerequest.png
+%%DATADIR%%/themes/default/mv_itemdetail_popup.png
+%%DATADIR%%/themes/default/mv_level_high.png
+%%DATADIR%%/themes/default/mv_level_low.png
+%%DATADIR%%/themes/default/mv_level_lowest.png
+%%DATADIR%%/themes/default/mv_level_medium.png
+%%DATADIR%%/themes/default/mv_level_none.png
+%%DATADIR%%/themes/default/mv_results_popup.png
 %%DATADIR%%/themes/default/mythdialogbox-background.png
 %%DATADIR%%/themes/default/mythfilebrowser-background.png
 %%DATADIR%%/themes/default/mythprogressdialog-background.png
@@ -1412,6 +1681,8 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/shared/grid_back_reg.png
 %%DATADIR%%/themes/default/shared/grid_back_sel.png
 %%DATADIR%%/themes/default/shared/grid_noimage.png
+%%DATADIR%%/themes/default/shared/secure.png
+%%DATADIR%%/themes/default/shared/unsecure.png
 %%DATADIR%%/themes/default/shared/updirectory.png
 %%DATADIR%%/themes/default/small_watched.png
 %%DATADIR%%/themes/default/solid-container.png
@@ -1439,6 +1710,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/default/very_wide_button_background.png
 %%DATADIR%%/themes/default/very_wide_button_pushed_background.png
 %%DATADIR%%/themes/default/very_wide_button_selected_background.png
+%%DATADIR%%/themes/default/video-ui.xml
 %%DATADIR%%/themes/default/watched.png
 %%DATADIR%%/themes/default/welcome-ui.xml
 %%DATADIR%%/themes/default/wide.png
@@ -1461,6 +1733,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/defaultmenu/tv_settings.xml
 %%DATADIR%%/themes/defaultmenu/tvmenu.xml
 %%DATADIR%%/themes/defaultmenu/util_menu.xml
+%%DATADIR%%/themes/defaultmenu/video_settings.xml
 %%DATADIR%%/themes/mediacentermenu/advanced.xml
 %%DATADIR%%/themes/mediacentermenu/info_settings.xml
 %%DATADIR%%/themes/mediacentermenu/main_settings.xml
@@ -1475,31 +1748,11 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/themes/mediacentermenu/tv_schedule.xml
 %%DATADIR%%/themes/mediacentermenu/tv_search.xml
 %%DATADIR%%/themes/mediacentermenu/tv_settings.xml
+%%DATADIR%%/themes/mediacentermenu/video_settings.xml
 %%DATADIR%%/themes/mythuitheme.dtd
-@dirrm include/mythtv/upnp
-@dirrm include/mythtv/libpostproc
-@dirrm include/mythtv/mpeg2dec
-@dirrm include/mythtv/metadata
-@dirrm include/mythtv/libswscale
-@dirrm include/mythtv/libmythui
-@dirrm include/mythtv/libmythdb
-@dirrm include/mythtv/libmyth
-@dirrm include/mythtv/libavutil
-@dirrm include/mythtv/libavformat
-@dirrm include/mythtv/libavfilter
-@dirrm include/mythtv/libavdevice
-@dirrm include/mythtv/libavcore
-@dirrm include/mythtv/libavcodec
-@dirrm include/mythtv/dvdread
-@dirrm include/mythtv/dvdnav
-@dirrm include/mythtv/bluray
-@dirrm include/mythtv
-@dirrm lib/mythtv/filters
-@dirrm lib/mythtv
 @dirrm %%DATADIR%%/themes/mediacentermenu
 @dirrm %%DATADIR%%/themes/defaultmenu
 @dirrm %%DATADIR%%/themes/default/shared
-@dirrm %%DATADIR%%/themes/default/recording
 @dirrm %%DATADIR%%/themes/default/locale
 @dirrm %%DATADIR%%/themes/default/keyboard
 @dirrm %%DATADIR%%/themes/default/htmls
@@ -1525,20 +1778,64 @@ lib/mythtv/filters/libyadif.so
 @dirrm %%DATADIR%%/themes/Terra/config
 @dirrm %%DATADIR%%/themes/Terra/backgrounds
 @dirrm %%DATADIR%%/themes/Terra
+@dirrm %%DATADIR%%/themes/Slave
 @dirrm %%DATADIR%%/themes/MythCenter/watermark
 @dirrm %%DATADIR%%/themes/MythCenter/ui
 @dirrm %%DATADIR%%/themes/MythCenter/title
+@dirrm %%DATADIR%%/themes/MythCenter/osd
 @dirrm %%DATADIR%%/themes/MythCenter/htmls
 @dirrm %%DATADIR%%/themes/MythCenter-wide/watermark
-@dirrm %%DATADIR%%/themes/MythCenter-wide/osd
 @dirrm %%DATADIR%%/themes/MythCenter-wide/ui
 @dirrm %%DATADIR%%/themes/MythCenter-wide/title
+@dirrm %%DATADIR%%/themes/MythCenter-wide/osd
+@dirrm %%DATADIR%%/themes/MythCenter-wide/keyboard
 @dirrm %%DATADIR%%/themes/MythCenter-wide/htmls
+@dirrm %%DATADIR%%/themes/MythCenter-wide/fonts
 @dirrm %%DATADIR%%/themes/MythCenter-wide
 @dirrm %%DATADIR%%/themes/MythCenter
 @dirrm %%DATADIR%%/themes/DVR
 @dirrmtry %%DATADIR%%/themes
 @dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%/html/xslt
+@dirrm %%DATADIR%%/html/setup/js
+@dirrm %%DATADIR%%/html/setup
+@dirrm %%DATADIR%%/html/samples/js
+@dirrm %%DATADIR%%/html/samples
+@dirrm %%DATADIR%%/html/misc/js
+@dirrm %%DATADIR%%/html/misc
+@dirrm %%DATADIR%%/html/js/jqueryFileTree/images
+@dirrm %%DATADIR%%/html/js/jqueryFileTree
+@dirrm %%DATADIR%%/html/js/galleria/themes/classic
+@dirrm %%DATADIR%%/html/js/galleria/themes
+@dirrm %%DATADIR%%/html/js/galleria
+@dirrm %%DATADIR%%/html/js
+@dirrm %%DATADIR%%/html/images
+@dirrm %%DATADIR%%/html/css/images
+@dirrm %%DATADIR%%/html/css
+@dirrm %%DATADIR%%/html/3rdParty
+@dirrm %%DATADIR%%/html
 @dirrm %%DATADIR%%/fonts
 @dirrmtry %%DATADIR%%
+@dirrm lib/mythtv/filters
+@dirrmtry lib/mythtv
+@dirrm include/mythtv/upnp
+@dirrm include/mythtv/mpeg2dec
+@dirrm include/mythtv/metadata
+@dirrm include/mythtv/libswscale
+@dirrm include/mythtv/libpostproc
+@dirrm include/mythtv/libmythui
+@dirrm include/mythtv/libmythservicecontracts/services
+@dirrm include/mythtv/libmythservicecontracts/datacontracts
+@dirrm include/mythtv/libmythservicecontracts
+@dirrm include/mythtv/libmythbase
+@dirrm include/mythtv/libmyth
+@dirrm include/mythtv/libavutil
+@dirrm include/mythtv/libavformat
+@dirrm include/mythtv/libavfilter
+@dirrm include/mythtv/libavdevice
+@dirrm include/mythtv/libavcodec
+@dirrm include/mythtv/dvdread
+@dirrm include/mythtv/dvdnav
+@dirrm include/mythtv/bluray
+@dirrm include/mythtv
