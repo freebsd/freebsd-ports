@@ -92,7 +92,6 @@ fake-pkg:
 		shift 3; \
 	done >> ${MANIFESTF}
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
-	@${CAT} ${MANIFESTF}
 	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
 	[ -f ${PKGPREINSTALL} ] && ${CP} ${PKGPREINSTALL} ${METADIR}/+PRE_INSTALL; \
 	[ -f ${PKGPOSTINSTALL} ] && ${CP} ${PKGPOSTINSTALL} ${METADIR}/+POST_INSTALL; \
