@@ -8,13 +8,15 @@
 PORTNAME=	pythk
 PORTVERSION=	0.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://pypi.python.org/packages/source/p/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Python functions
 
-USE_PYTHON=	yes
+LICENSE=	BSD
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>
