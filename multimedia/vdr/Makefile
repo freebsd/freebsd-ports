@@ -7,24 +7,22 @@
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.27
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
-
-PATCH_SITES=	http://www.udo-richter.de/vdr/files/
-PATCHFILES=	vdr-1.7.24-s2apiwrapper-0.8.diff
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - development version
 
-BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=    jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On \
 		TTXPATCH "Support patches for teletext subtitle plugin" On \
-		DVBPATCH "DVB audio patch for some countries" Off
+		DVBPATCH "DVB audio patch for some countries" Off \
+		STB0899_SIGNAL "STB0899 signal strength patch" Off
 
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
@@ -94,6 +92,11 @@ post-patch:
 .if defined(WITH_TTXPATCH)
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-1
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.21-ttxtsubs.patch-2
+.endif
+.if defined(WITH_STB0899_SIGNAL)
+# This fixes signal strength display for e.g. pctv452e-based tuners.
+# (like TT S2-36?0.)
+	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/stb0899-signalstrength.patch
 .endif
 	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
 		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config

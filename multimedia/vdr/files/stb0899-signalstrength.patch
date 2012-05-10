@@ -1,0 +1,15 @@
+--- dvbdevice.c.orig
++++ dvbdevice.c
+@@ -559,6 +560,12 @@ int cDvbTuner::GetSignalStrength(void) c
+   switch (subsystemId) {
+     case 0x13C21019: MaxSignal = 670; break; // TT-budget S2-3200 (DVB-S/DVB-S2)
+     }
++#if 1
++  // XXX This is likely not correct for all cards using stb0899
++  // but pctv452e usb ones seem to be affected too...
++  if (!strcmp(device->DeviceName(), "STB0899 Multistandard"))
++    MaxSignal = 670;
++#endif
+   int s = int(Signal) * 100 / MaxSignal;
+   if (s > 100)
+      s = 100;
