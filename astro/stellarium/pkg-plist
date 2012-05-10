@@ -753,6 +753,8 @@ share/locale/lt/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/lt/LC_MESSAGES/stellarium.mo
 share/locale/lv/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/lv/LC_MESSAGES/stellarium.mo
+share/locale/mi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mi/LC_MESSAGES/stellarium.mo
 share/locale/mk/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/mk/LC_MESSAGES/stellarium.mo
 share/locale/ml/LC_MESSAGES/stellarium-skycultures.mo
@@ -832,6 +834,8 @@ share/locale/zh_TW/LC_MESSAGES/stellarium.mo
 @dirrmtry share/locale/nan
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
 @dirrmtry share/locale/ia/LC_MESSAGES
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES

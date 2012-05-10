@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stellarium
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -48,17 +48,20 @@ PLIST_SUB+=	MORE_STARS=""
 PLIST_SUB+=	MORE_STARS="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/typedef.*void.*__GLXextFuncPtr/d' \
+post-patch: .SILENT
+	${REINPLACE_CMD} -e '/typedef.*void.*__GLXextFuncPtr/d' \
 		${WRKSRC}/src/core/external/GLee.h
-	@${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
+	${REINPLACE_CMD} -e '/QTTEST/d' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
 		${WRKSRC}/doc/CMakeLists.txt
-# avoid picking up the wrong `fixx11h.h' (x11/kdelibs3 port installs one that
-# doesn't handle FontChange)
-	@${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
+# Remove options which our old GCC does not know about (GCC 4.6 specific)
+	${REINPLACE_CMD} -e 's| -Wno-unused-but-set-[[:alpha:]]*||g' \
+		${WRKSRC}/plugins/Satellites/src/CMakeLists.txt
+# Avoid picking up the wrong `fixx11h.h' (`x11/kdelibs3' port installs one
+# that does not handle FontChange)
+	${GREP} -Rl --null fixx11h\\.h ${WRKSRC}/src ${WRKSRC}/plugins | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/fixx11h\.h/fixx11qt4h.h/'
-	@cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
+	cd ${WRKSRC}/src/core/external && ${MV} fixx11h.h fixx11qt4h.h
 
 post-install:
 .if defined(WITH_MORE_STARS)
