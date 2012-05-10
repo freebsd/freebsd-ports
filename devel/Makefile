@@ -3698,6 +3698,7 @@
     SUBDIR += rubygem-echoe
     SUBDIR += rubygem-edavis10-object_daddy
     SUBDIR += rubygem-elif
+    SUBDIR += rubygem-errand
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-execjs
     SUBDIR += rubygem-extlib
