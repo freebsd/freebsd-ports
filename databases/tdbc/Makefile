@@ -7,6 +7,7 @@
 
 PORTNAME=	tdbc
 DISTVERSION=	1.0b17
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://tdbc.tcl.tk/index.cgi/tarball/
 DISTFILES=	${PORTNAME:U}-${FOSSIL_HASH}.${EXTRACT_SUFX}?uuid=${FOSSIL_HASH}
@@ -121,7 +122,7 @@ do-install:
 	cd ${WRKSRC}/${module} && ${MAKE} ${INSTALL_TARGET}
 .endfor
 .if defined(WITH_SQLITE)
-	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${TCL_LIBDIR}/tdbc
+	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${TCL_LIBDIR:S/${LOCALBASE}/${PREFIX}/}/tdbc
 .endif
 
 test:
