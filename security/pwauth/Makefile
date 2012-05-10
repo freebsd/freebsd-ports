@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pwauth
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.10
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://www.unixpapa.com/software/
@@ -21,8 +21,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIB="-lcrypt -lpam"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900006
-BROKEN=		does not compile on 9.X
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-utmpx
 .endif
 
 WWWUID!=	${ID} -u ${WWWOWN}
