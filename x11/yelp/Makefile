@@ -8,7 +8,7 @@
 
 PORTNAME=	yelp
 PORTVERSION=	2.30.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -49,5 +49,8 @@ LDFLAGS+=	-fstack-protector
 
 post-extract:
 	${RM} -f ${WRKSRC}/data/yelp.schemas
+
+post-install:
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>
