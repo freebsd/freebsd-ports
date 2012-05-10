@@ -15,7 +15,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for readline interactive completion
 
-USE_PYTHON=	2.2+
+LICENSE=	MIT
+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/rlcompleter2.py \
+		%%PYTHON_SITELIBDIR%%/rlcompleter2.pyc \
+		%%PYTHON_SITELIBDIR%%/rlcompleter2.pyo
 
 .include <bsd.port.mk>
