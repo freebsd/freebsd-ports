@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.1.14
+PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -67,7 +68,7 @@ KMK_BUILDTYPE=	debug
 
 .if !defined(WITHOUT_X11)
 VBOX_WITH_X11=	1
-USE_XORG=	xcursor xmu inputproto xrandr
+USE_XORG=	xcursor xmu inputproto xorg-server xrandr
 PLIST_SUB+=	X11=""
 .else
 VBOX_WITH_X11=
@@ -85,6 +86,8 @@ KMK_ARCH=	freebsd.x86
 .else
 KMK_ARCH=	freebsd.${ARCH}
 .endif
+
+XSERVER_ABI:=	${XSERVER_VER:S/.//:R}
 
 .if !exists(${SRC_BASE}/sys/kern/bus_if.m)
 IGNORE=		requires kernel sources
@@ -155,10 +158,10 @@ do-install:
 		${PREFIX}/share/autostart/
 
 	${MKDIR} ${VIDEODIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_17.so ${VIDEODIR}/vboxvideo_drv.so
+	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_${XSERVER_ABI}.so ${VIDEODIR}/vboxvideo_drv.so
 
 	${MKDIR} ${INPUTDIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_17.so ${INPUTDIR}/vboxmouse_drv.so
+	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_${XSERVER_ABI}.so ${INPUTDIR}/vboxmouse_drv.so
 .endif
 
 post-install:
