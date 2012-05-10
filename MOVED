@@ -3293,3 +3293,5 @@ misc/fortune-mod-the-godfather||2012-05-07|Has expired: No longer supported
 editors/openoffice.org-3|editors/openoffice-3|2012-05-09|Project renamed
 devel/py-boto-devel|devel/py-boto|2012-05-09|Upstream does not provide development snapshots anymore, use devel/py-boto instead
 graphics/R-cran-labeling||2012-05-09|Removed
+multimedia/mythtv-themes||2012-05-10|Included in multimedia/mythtv since 0.25
+multimedia/mytplugin-mythvideo||2012-05-10|Included in multimedia/mythtv since 0.25

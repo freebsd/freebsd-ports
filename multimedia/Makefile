@@ -223,10 +223,8 @@
     SUBDIR += mplex
     SUBDIR += msdl
     SUBDIR += mxflib
-    SUBDIR += mythplugin-mythvideo
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
-    SUBDIR += mythtv-themes
     SUBDIR += noatun-plugins
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
