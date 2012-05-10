@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cantarell-fonts
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.8
 CATEGORIES=	x11-fonts gnome
 MASTER_SITES=	GNOME
 
@@ -16,7 +16,7 @@ COMMENT=	Cantarell, a Humanist sans-serif font family
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GNOME=	pkgconfig
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 FONTSDIR=	share/fonts/cantarell
