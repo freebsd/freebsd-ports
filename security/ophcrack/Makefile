@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -23,7 +23,7 @@ USE_OPENSSL=	yes
 PLIST_FILES=	bin/ophcrack
 PORTDOCS=	*
 
-OPTIONS=	GUI	"Build GUI frontend (Qt4)"		on \
+OPTIONS=	GUI	"Build GUI frontend (Qt4 based)"	on \
 		GRAPH	"Enable graph rendering with Qwt"	on \
 		DEBUG	"Make debug build"			off
 
