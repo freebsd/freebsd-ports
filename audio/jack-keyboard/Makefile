@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jack-keyboard
-DISTVERSION=	2.6
+DISTVERSION=	2.7.1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://hselasky.homeunix.org:8192/distfiles/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
 
 LICENSE=	BSD
