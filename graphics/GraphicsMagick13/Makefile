@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.12
-PORTREVISION=	1
+PORTVERSION=	1.3.15
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -39,6 +38,7 @@ USE_AUTOTOOLS=	libtool libltdl
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
+
 LATEST_LINK=	GraphicsMagick13
 
 MAN1=	GraphicsMagick++-config.1 \
