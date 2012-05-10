@@ -13,6 +13,10 @@ MASTER_SITES=	http://cloud.github.com/downloads/algernon/libumberlog/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	CEE-enhanced syslog API
 
+.if ${OSVERSION} < 800000
+BROKEN=		Fails to install umberlog.3 under 7.X.
+.endif
+
 GNU_CONFIGURE=  yes
 USE_LDCONFIG=	yes
 
