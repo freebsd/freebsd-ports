@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_MARC
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc pear
 
 MAINTAINER=	wen@FreeBSD.org
@@ -20,10 +20,13 @@ FILES=		File/MARC.php \
 		File/MARC/Exception.php \
 		File/MARC/Field.php \
 		File/MARC/List.php \
+		File/MARC/Lint.php \
+		File/MARC/Lint/CodeData.php \
 		File/MARC/Record.php \
 		File/MARC/Subfield.php
 TESTS=		bad_example.mrc bad_example.xml \
-		bigarchive.xml example.mrc \
+		bigarchive.xml \
+		camel.mrc example.mrc \
 		marc_001.phpt marc_002.phpt \
 		marc_003.phpt marc_004.phpt \
 		marc_005.phpt marc_006.phpt \
@@ -36,6 +39,9 @@ TESTS=		bad_example.mrc bad_example.xml \
 		marc_16783.phpt \
 		marc_field_001.phpt marc_field_002.phpt \
 		marc_field_003.phpt marc_field_004.phpt \
+		marc_lint_001.phpt marc_lint_002.phpt \
+		marc_lint_003.phpt marc_lint_004.phpt \
+		marc_lint_005.phpt \
 		marc_record_001.phpt \
 		marc_subfield_001.phpt marc_subfield_002.phpt \
 		marc_xml_001.phpt marc_xml_002.phpt \
