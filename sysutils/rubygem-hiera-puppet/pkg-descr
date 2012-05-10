@@ -1,0 +1,9 @@
+Hiera-puppet is a data backend for Hiera that queries the internal
+Puppet scope for data. The data structure and approach is heavily
+based on work by Nigel Kersten but made more configurable and with
+full hierarchy.
+
+It also includes a Puppet function that works like extlookup() but
+uses the Hiera backends.
+
+WWW: https://github.com/puppetlabs/hiera-puppet
