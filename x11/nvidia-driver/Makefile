@@ -61,6 +61,10 @@ MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
 ONLY_FOR_ARCHS=	i386
 .endif
 
+.if ${NVVERSION} <= 1905300
+EXTRA_PATCHES=	${PATCHDIR}/security-patch-CVE-2012-0946
+.endif
+
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 		ACPI_PM		"Enable support for ACPI Power Management" off \
 		LINUX		"Build with support for Linux compatibility" on
