@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	32.0.1
+DISTVERSION=	33.0.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION} \
 		http://semiletov.ho.ua/${PORTNAME}-releases/
