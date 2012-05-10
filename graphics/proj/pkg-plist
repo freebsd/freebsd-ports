@@ -6,6 +6,7 @@ bin/nad2bin
 bin/proj
 include/org_proj4_Projections.h
 include/proj_api.h
+include/projects.h
 lib/libproj.a
 lib/libproj.la
 lib/libproj.so
