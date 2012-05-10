@@ -783,6 +783,7 @@
     SUBDIR += rubygem-guard
     SUBDIR += rubygem-guard-livereload
     SUBDIR += rubygem-guard-rspec
+    SUBDIR += rubygem-hiera
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
