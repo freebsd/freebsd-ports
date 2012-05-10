@@ -12,5 +12,6 @@ seconds.  Features:
   - Loads hashes from local and remote SAM
   - Loads hashes from encrypted SAM recovered from a Windows partition,
     Vista included
+  - Supports soon to be released XP flash and Vista eight XL tables
 
 WWW: http://ophcrack.sourceforge.net/
