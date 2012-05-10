@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120510:
+  AFFECTS: users of devel/gitolite
+  AUTHOR: milki@rescomp.berkeley.edu
+
+  gitolite has been split into two ports: devel/gitolite for 3.x and
+  devel/gitolite2 for 2.x
+
+  gitolite 3.x is NOT "API" compatible with gitolite 2.x and requires
+  additional manual migration steps which can be found in the online
+  documentation.
+
+  http://sitaramc.github.com/gitolite/install.html#migr                       
+
+  Current users wishing to continue using gitolite 2.x should run:
+
+  # portmaster -o devel/gitolite2 gitolite
+    or
+  # portupgrade -o devel/gitolite2 gitolite
+
 20120508:
   AFFECTS: users of www/node and www/node-devel
   AUTHOR: sunpoet@FreeBSD.org
