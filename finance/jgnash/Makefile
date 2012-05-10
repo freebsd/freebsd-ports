@@ -5,15 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	jGnash
-PORTVERSION=	2.5.1
+PORTNAME=	jgnash
+PORTVERSION=	2.8.0
 CATEGORIES=	finance java
-MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.5.x%20Releases
+MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.8.x%20Releases
+DISTNAME=	jgnash2-${PORTVERSION}-bin
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A free personal finance manager
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/jgnash2-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jgnash2.desktop
 SUB_LIST=	JAVA="${JAVA}"
