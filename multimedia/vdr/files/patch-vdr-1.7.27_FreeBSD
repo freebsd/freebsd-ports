@@ -425,13 +425,6 @@ diff -u -r1.1.1.4 -r1.5
    free(codeBuf);
    return code != stNone && description && *description;
 Index: svdrp.c
-===================================================================
-RCS file: /progs/network/ccvs/vdr/svdrp.c,v
-retrieving revision 1.1.1.2
-retrieving revision 1.4
-diff -u -r1.1.1.2 -r1.4
---- svdrp.c	2010/02/17 10:14:45	1.1.1.2
-+++ svdrp.c	2010/02/17 12:34:54	1.4
 @@ -40,6 +40,12 @@
  #include "tools.h"
  #include "videodir.h"
@@ -445,6 +438,30 @@ diff -u -r1.1.1.2 -r1.4
  // --- cSocket ---------------------------------------------------------------
  
  cSocket::cSocket(int Port, int Queue)
+@@ -124,6 +130,23 @@ int cSocket::Accept(void)
+         }
+      else if (errno != EINTR && errno != EAGAIN)
+         LOG_ERROR;
++#ifdef __FreeBSD__
++     // Linux' accept() doesn't inherit O_NONBLOCK... (this fixes
++     // cSVDRP::Send() failing due to EAGAIN when vdradmin-am downloads EPG.)
++     if (newsock >= 0) {
++        // make it blocking:
++        int oldflags = fcntl(newsock, F_GETFL, 0);
++        if (oldflags < 0) {
++           LOG_ERROR;
++           return -1;
++           }
++        oldflags &= ~O_NONBLOCK;
++        if (fcntl(newsock, F_SETFL, oldflags) < 0) {
++           LOG_ERROR;
++           return -1;
++           }
++        }
++#endif
+      return newsock;
+      }
+   return -1;
 Index: themes.c
 ===================================================================
 RCS file: /progs/network/ccvs/vdr/themes.c,v

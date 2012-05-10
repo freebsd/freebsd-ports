@@ -136,7 +136,6 @@ include/vdr/cutter.h
 include/vdr/ci.h
 include/vdr/config.h
 include/vdr/channels.h
-include/vdr/s2apiwrapper.h
 include/vdr/Make.global
 %%TTXPATCH%%include/vdr/vdrttxtsubshooks.h
 @exec mkdir -p %D/etc/vdr/plugins
