@@ -6,6 +6,7 @@
 
 PORTNAME=	proj
 PORTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/proj/ \
 		http://download.osgeo.org/proj/
@@ -33,5 +34,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+	${CP} ${WRKSRC}/src/projects.h ${PREFIX}/include/
 
 .include <bsd.port.mk>
