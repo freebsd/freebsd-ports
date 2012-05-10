@@ -243,6 +243,7 @@ R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-inline                   ports/math/R-cran-inline
 R-cran-iterators                ports/devel/R-cran-iterators
 R-cran-itertools                ports/devel/R-cran-itertools
+R-cran-labeling                 ports/math/R-cran-labeling
 R-cran-lmtest                   ports/finance/R-cran-lmtest
 R-cran-maptools                 ports/astro/R-cran-maptools
 R-cran-memisc                   ports/math/R-cran-memisc
@@ -898,6 +899,7 @@ avrdude                         ports/devel/avrdude
 awale                           ports/games/awale
 awele                           ports/games/awele
 awesome                         ports/x11-wm/awesome
+awesome-vicious                 ports/x11-wm/awesome-vicious
 awesome2                        ports/x11-wm/awesome2
 awffull                         ports/www/awffull
 awka                            ports/lang/awka
@@ -1562,6 +1564,7 @@ chapping                        ports/games/chapping
 charis                          ports/x11-fonts/charis
 charis-compact                  ports/x11-fonts/charis-compact
 charmap                         ports/deskutils/charmap
+charmtimetracker                ports/deskutils/charmtimetracker
 charva                          ports/devel/charva
 charybdis                       ports/irc/charybdis
 chattahoochie                   ports/net-im/chattahoochie
@@ -10800,8 +10803,8 @@ opennurbs                       ports/graphics/opennurbs
 opennx                          ports/net/opennx
 openobex                        ports/comms/openobex
 openocd                         ports/devel/openocd
+openoffice-3                    ports/editors/openoffice-3
 openoffice-3-devel              ports/editors/openoffice-3-devel
-openoffice.org-3                ports/editors/openoffice.org-3
 openoffice.org-vcltesttool      ports/editors/openoffice.org-vcltesttool
 openospfd                       ports/net/openospfd
 openpgpsdk                      ports/security/openpgpsdk
@@ -22359,7 +22362,6 @@ py-blockdiagcontrib-cisco       ports/graphics/py-blockdiagcontrib-cisco
 py-blogofile                    ports/www/py-blogofile
 py-borg.localrole               ports/security/py-borg.localrole
 py-boto                         ports/devel/py-boto
-py-boto-devel                   ports/devel/py-boto-devel
 py-bottle                       ports/www/py-bottle
 py-breve                        ports/devel/py-Breve
 py-bsdconv                      ports/converters/py-bsdconv
@@ -22458,6 +22460,7 @@ py-django-sekizai               ports/www/py-django-sekizai
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
+py-django-tastypie              ports/www/py-django-tastypie
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
 py-django12                     ports/www/py-django12
 py-django13                     ports/www/py-django13
@@ -22599,6 +22602,8 @@ py-gyp-devel                    ports/devel/py-gyp-devel
 py-h5py                         ports/science/py-h5py
 py-hashring                     ports/devel/py-hashring
 py-hcluster                     ports/science/py-hcluster
+py-hghooks                      ports/devel/py-hghooks
+py-hgsubversion                 ports/devel/py-hgsubversion
 py-html2text                    ports/textproc/py-html2text
 py-html5lib                     ports/www/py-html5lib
 py-htmlgen                      ports/www/py-HTMLgen
@@ -22705,6 +22710,7 @@ py-mez_xml                      ports/devel/py-mez_xml
 py-mhash                        ports/security/py-mhash
 py-migrate                      ports/databases/py-migrate
 py-milter                       ports/mail/py-milter
+py-mimeparse                    ports/devel/py-mimeparse
 py-ming                         ports/graphics/py-ming
 py-minimongo                    ports/devel/py-minimongo
 py-miniupnpc                    ports/net/py-miniupnpc
@@ -23745,6 +23751,7 @@ qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
 qtcurve-qt4                     ports/x11-themes/qtcurve-qt4
 qtella                          ports/net-p2p/qtella
 qtemu                           ports/emulators/qtemu
+qtfm                            ports/x11-fm/qtfm
 qtfw                            ports/security/qtfw
 qtgtl                           ports/graphics/qtgtl
 qtiplot                         ports/math/qtiplot
@@ -23876,6 +23883,7 @@ r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
 r-cran-kfas                     ports/math/R-cran-KFAS
+r-cran-labeling                 ports/math/R-cran-labeling
 r-cran-lmtest                   ports/finance/R-cran-lmtest
 r-cran-maptools                 ports/astro/R-cran-maptools
 r-cran-memisc                   ports/math/R-cran-memisc
@@ -24606,6 +24614,7 @@ rubygem-atoulme-antwrap         ports/devel/rubygem-atoulme-antwrap
 rubygem-attic                   ports/devel/rubygem-attic
 rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
+rubygem-backports               ports/devel/rubygem-backports
 rubygem-backup                  ports/sysutils/rubygem-backup
 rubygem-bcrypt-ruby             ports/security/rubygem-bcrypt-ruby
 rubygem-benelux                 ports/devel/rubygem-benelux
