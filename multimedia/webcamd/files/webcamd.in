@@ -15,7 +15,7 @@ hald_enable=${hald_enable-"NO"}
 . /etc/rc.subr
 
 name=webcamd
-rcvar=`set_rcvar`
+rcvar=webcamd_enable
 iface=${3-0}
 command=%%PREFIX%%/sbin/webcamd
 command_args="-B -U webcamd -G webcamd"
