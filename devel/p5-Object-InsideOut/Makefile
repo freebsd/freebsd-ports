@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	3.93
+PORTVERSION=	3.94
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JDHEDDEN
@@ -20,7 +20,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Dumper>=2.131:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
-		p5-Want>=0.18:${PORTSDIR}/devel/p5-Want
+		p5-Want>=0.21:${PORTSDIR}/devel/p5-Want
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
