@@ -226,6 +226,9 @@ bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/testutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/testutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/testutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/time_comparisons.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/time_comparisons.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/time_comparisons.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/time_format.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/time_format.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/time_format.pyo
