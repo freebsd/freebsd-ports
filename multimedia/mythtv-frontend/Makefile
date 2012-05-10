@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.24.2
+PORTVERSION=	0.25
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -42,13 +42,11 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 CPPFLAGS+=	${QTCPPFLAGS}
 CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
 		QTDIR="${QT_PREFIX}"
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-audio-alsa --disable-firewire --disable-iptv \
-		--disable-hdhomerun \
-		--disable-v4l --disable-ivtv --disable-hdpvr --disable-dvb --enable-xvmc \
-		--disable-xvmcw --enable-xvmc --enable-opengl-video \
-		--disable-directfb --without-bindings=perl,python
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-audio-alsa --disable-indev=alsa \
+		--disable-outdev=alsa --disable-firewire --disable-iptv \
+		--disable-hdhomerun --disable-v4l2 --disable-ivtv --disable-hdpvr \
+		--disable-dvb --enable-opengl-video --without-bindings=perl,python,php
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
@@ -71,9 +69,9 @@ CONFIGURE_ARGS+=	--disable-audio-jack
 
 .if defined(WITH_OPENGL)
 QT_COMPONENTS+=	opengl
-CONFIGURE_ARGS+=	--enable-opengl-video --enable-opengl-vsync
+CONFIGURE_ARGS+=	--enable-opengl-video
 .else
-CONFIGURE_ARGS+=	--disable-opengl-video --disable-opengl-vsync
+CONFIGURE_ARGS+=	--disable-opengl-video
 .endif
 
 .if defined(WITH_PULSEAUDIO)

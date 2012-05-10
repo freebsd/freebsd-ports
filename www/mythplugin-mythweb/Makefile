@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythweb
-PORTVERSION=	0.24.2
+PORTVERSION=	0.25
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
