@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validate_Finance
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
