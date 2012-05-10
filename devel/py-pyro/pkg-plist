@@ -172,6 +172,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itunes/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itunes/itunescontroller.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itunes/remote.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxsize/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxsize/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nameserverstress/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nameserverstress/stress.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nonameserver/Readme.txt
@@ -244,6 +246,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oneway
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nonameserver
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nameserverstress
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/maxsize
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/itunes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gui_eventloop
