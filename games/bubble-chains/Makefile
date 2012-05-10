@@ -1,15 +1,16 @@
 # New ports collection makefile for:	bubble-chains
-# Date created:		21 April 2012
+# Date created:		2012-04-21
 # Whom:			nemysis@gmx.ch
 #
 # $FreeBSD$
 #
 
-PORTNAME=	chains
+PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/
-PKGNAMEPREFIX=	bubble-
+DISTNAME=	chains-${DISTVERSION}
 EXTRACT_SUFX=	-src.7z
 
 MAINTAINER=	nemysis@gmx.ch
@@ -20,7 +21,7 @@ LICENSE=	GPLv2
 EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 BUILD_DEPENDS=		7z:${PORTSDIR}/archivers/p7zip
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+WRKSRC=		${WRKDIR}/chains-${PORTVERSION}-src
 
 USE_SDL=	sdl image mixer
 USE_GL=		glut glew glu
@@ -32,6 +33,11 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	UIC="${UIC}" QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}"
 MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
+
+PLIST_FILES=	bin/bubble-chains \
+		share/pixmaps/bubble-chains.ico \
+		share/pixmaps/bubble-chains.png
+PLIST_DIRSTRY=	share/applications
 
 PORTDATA=	*
 PORTDOCS=	README
@@ -54,17 +60,17 @@ do-configure:
 		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} ${WRKSRC}/Game.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/chains ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/images/logo.png \
-		${PREFIX}/share/pixmaps/bubble-chains.png
+		${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_DATA} ${WRKSRC}/icon.ico \
-		${PREFIX}/share/pixmaps/bubble-chains.ico
+		${PREFIX}/share/pixmaps/${PORTNAME}.ico
+
 .if !defined (NOPORTDATA)
 	${MKDIR} ${DATADIR}
-.  for d in data
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
-.  endfor
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
 .endif
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .  for f in ${PORTDOCS}
