@@ -8,7 +8,7 @@
 PORTNAME=	condor
 PORTVERSION=	7.6.6
 CATEGORIES=	sysutils net
-MASTER_SITES=	http://research.cs.wisc.edu/condor/
+MASTER_SITES=	# empty
 DISTNAME=	condor_src-${PORTVERSION}-all-all
 
 MAINTAINER=	jwbacon@tds.net
@@ -18,6 +18,7 @@ LIB_DEPENDS+=	krb5support:${PORTSDIR}/security/krb5 \
 		pcre:${PORTSDIR}/devel/pcre \
 		curl:${PORTSDIR}/ftp/curl
 
+RESTRICTED=	Requires manual distfile fetch
 WRKSRC=		${WRKDIR}/condor-${PORTVERSION}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -108,8 +109,8 @@ MAN1=	\
 
 .include <bsd.port.pre.mk>
 
-.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	requires that you go to ${MASTER_SITES} to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again."
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=	requires that you go to http://research.cs.wisc.edu/condor/ to register and manually download the source distribution ${DISTNAME}${EXTRACT_SUFX}, place it in ${DISTDIR}, and then run make again."
 .endif
 
 pre-everything::
