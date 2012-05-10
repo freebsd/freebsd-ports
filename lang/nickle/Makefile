@@ -28,7 +28,7 @@ MAN1=		nickle.1
 post-patch:
 # Do not descend into "examples" subdirectory to prevent them being installed
 # under DATADIR (instead, we manually install them later in post-install into
-# EXAMPLESDIR; also remove extra -O2 since we provide our own CFLAGS.
+# EXAMPLESDIR); also remove extra -O2 since we provide our own CFLAGS.
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|examples|| ; s| -O2||' \
 		${WRKSRC}/Makefile.in
 
