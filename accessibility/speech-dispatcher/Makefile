@@ -6,7 +6,7 @@
 
 PORTNAME=	speech-dispatcher
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
@@ -19,21 +19,24 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_GNOME=	glib20 pkgconfig
-MAKE_JOBS_SAFE=	yes
+# gnomehier is required because of share/sounds directory.
+USE_GNOME=	glib20 gnomehier pkgconfig
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
-CONFFILES=	clients/emacs.conf clients/gnome-speech.conf \
+ETCFILES=	clients/emacs.conf clients/gnome-speech.conf \
 		modules/cicero.conf modules/dtk-generic.conf \
 		modules/epos-generic.conf modules/espeak-generic.conf \
 		modules/espeak-mbrola-generic.conf modules/espeak.conf \
 		modules/festival.conf modules/flite.conf modules/ibmtts.conf \
 		modules/ivona.conf modules/llia_phon-generic.conf \
 		modules/swift-generic.conf speechd.conf
+
+PLIST_SUB+=	ETCFILES="${ETCFILES}"
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
@@ -45,10 +48,14 @@ OPTIONS=	ALSA	"ALSA support" off \
 		FLITE	"Festival Lite output module" off \
 		LIBAO	"libao support" off \
 		NAS	"Network Audio System support" off \
-		PULSEAUDIO	"PulseAudio support (broken on FreeBSD 6.X)" off \
+		PULSEAUDIO	"PulseAudio support" off \
 		PYTHON	"Python support" off
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 800067 && ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 
 .ifdef(WITH_ALSA)
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
@@ -95,6 +102,13 @@ CONFIGURE_ARGS+=	--with-nas
 CONFIGURE_ARGS+=	--without-nas
 .endif
 
+.if defined(WITH_PULSEAUDIO) && ${OSVERSION} >= 700041
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=	--with-pulse
+.else
+CONFIGURE_ARGS+=	--without-pulse
+.endif
+
 .ifdef(WITH_PYTHON)
 USE_PYTHON=	2.5+
 CONFIGURE_ARGS+=	--enable-python
@@ -102,21 +116,6 @@ PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PULSEAUDIO) && ${OSVERSION} >= 700041
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--with-pulse
-PLIST_SUB+=	GNOMEHIER="@comment "
-.else
-CONFIGURE_ARGS+=	--without-pulse
-PLIST_SUB+=	GNOMEHIER=""
-.endif
-
-.if ${OSVERSION} < 800067 && ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
 .endif
 
 post-patch:
@@ -131,7 +130,7 @@ post-patch:
 		${WRKSRC}/src/server/Makefile.in
 
 post-install:
-.for f in ${CONFFILES}
+.for f in ${ETCFILES}
 	@if [ ! -f ${ETCDIR}/${f} ]; then \
 		${CP} -p ${ETCDIR}/${f}.sample ${ETCDIR}/${f}; \
 	fi
@@ -143,4 +142,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
