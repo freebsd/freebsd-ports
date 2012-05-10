@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	smb
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/files/Projects/py${PORTNAME}/ \
 		CHEESESHOP
