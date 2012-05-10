@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flex-sdk
-PORTVERSION=	4.1.0.16076
+PORTVERSION=	4.6.0.23201
 CATEGORIES=	devel java
-MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4/
+MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.6/
 DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -18,7 +18,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk-2.* flex-sdk-3.*
 USE_ZIP=	YES
-USE_DOS2UNIX=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}
