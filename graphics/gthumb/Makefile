@@ -7,7 +7,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -44,7 +44,8 @@ OPTIONS=	EXIV2 "Exif support (image metadata)" On \
 		GSTREAMER "Video playback" On \
 		OPENRAW "Support for camera RAW files" On \
 		SOUP "Web services uploaders" On \
-		BRASERO "Write galleries to CD/DVD (large dependency)" On
+		BRASERO "Write galleries to CD/DVD (large dependency)" On \
+		YELP "Viewer for built-in help system" On
 
 .include <bsd.port.pre.mk>
 
@@ -98,6 +99,10 @@ PLIST_SUB+=	BRASERO=""
 .else
 CONFIGURE_ARGS+=--disable-libbrasero
 PLIST_SUB+=	BRASERO="@comment "
+.endif
+
+.if defined(WITH_YELP)
+RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp
 .endif
 
 .include <bsd.port.post.mk>
