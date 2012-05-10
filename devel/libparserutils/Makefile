@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libparserutils
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.rurs.us/fbsd/ports/
+MASTER_SITES=	http://www.netsurf-browser.org/projects/releases/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	unobe@cpan.org
 COMMENT=	A library useful when writing parsers (formerly a part of NetSurf)
@@ -18,12 +19,14 @@ USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 OPTIONS=	ICONV	"Adds iconv support"			On \
 		STATIC	"Build statically linked library"	On \
 		TEST	"Enable tests"				On \
 		DOXYGEN	"Build Doxygen Documentation"		On
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_ICONV)
 CFLAGS+=	-DWITH_ICONV_FILTER
@@ -53,4 +56,4 @@ ALL_TARGET+=	docs
 MAKE_ENV+=	PATH=${PATH}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
