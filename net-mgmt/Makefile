@@ -267,6 +267,7 @@
     SUBDIR += routers2-extras
     SUBDIR += rrdbot
     SUBDIR += rubygem-snmp
+    SUBDIR += rubygem-visage-app
     SUBDIR += satellite
     SUBDIR += sblim-wbemcli
     SUBDIR += scdp
