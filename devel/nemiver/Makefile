@@ -28,6 +28,7 @@ OPTIONS=	GHEX "Enable memory view" off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	ac_cv_path_GDB_PROG=${LOCALBASE}/bin/gdb
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intltool gnomedocutils gconf2 vte
 USE_GCC=	4.4+
