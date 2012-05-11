@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.27
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -37,6 +38,7 @@ OPTIONS=	CONTROL "telnet control" On \
 		XVDR "XVDR plugin (for connecting XBMC PVR)" On \
 		EEPG "extended EPG plugin (for UK/NL/etc.)" On \
 		VDRMANAGER "plugin for VDR-Manager Android clients" On \
+		SOFTHDDEVICE "softhddevice plugin" On \
 		VNSISERVER "VNSI server (for XBMC PVR branch - old)" Off \
 		SOFTDEVICE "softdevice (broken?)" Off \
 		MARKAD "MarkAd plugin" Off
@@ -111,6 +113,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-markad.so.${PORTVERSION}:${PORTSDIR}/m
 .endif
 .if defined(WITH_VDRMANAGER)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-vdrmanager.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-vdrmanager
+.endif
+.if defined(WITH_SOFTHDDEVICE)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-softhddevice.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-softhddevice
 .endif
 
 do-install:	# empty
