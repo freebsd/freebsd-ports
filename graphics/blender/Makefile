@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.62
+PORTVERSION=	2.63
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -27,29 +27,31 @@ WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_OUTSOURCE=	yes
-CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF \
-		-DWITH_LIBMV:BOOL=OFF -DWITH_CYCLES:BOOL=OFF \
-		-DWITH_CARVE:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF
 
 SUB_FILES=	blender blenderplayer
 MAN1=		blender.1
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.62
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.63
 
-LANG=		ar bg ca cs de el es es_ES es_MX fa fi fr id it ja ne pl pt_BR \
-		ru sr sr@latin sv zh_CN zh_TW
+LANG=		ar bg ca cs de el es es_ES fa fi fr hr id it ja ky ne pl pt \
+        ru sr sr@latin sv tr uk zh_CN zh_TW
 
 OPTIONS=	BULLET		"Enable bullet physics engine" on \
+		CARVE		"Carve boolean library" on \
 		CINEON		"CINEON and DPX graphics format support" on \
+		CAMERATRACK	"Camera tracking" on \
+		CYCLES		"Cycles render engine" on \
 		DDS		"DDS graphics format support" on \
 		FFMPEG		"Audio and video support using ffmpeg" on \
-		FFTW3		"Floating point support using fftw" off \
+		FFTW3		"Floating point support using fftw" on \
 		GAMEENGINE	"Enable game engine" on \
 		HDR		"Generic high dynamic-range (HDR) support" on \
 		HEADLESS	"Disable user interface" off \
 		JACK		"Audio support using JackAudio" off \
 		NLS		"Native language support" on \
 		MENU		"Install desktop menu" on \
+		OCEANSIM	"Ocean sim support" on \
 		OPENAL		"3D sound support using OpenAL" on \
 		OPENEXR		"High dynamic-range (HDR) support using OpenEXR" on \
 		OPENJPEG	"Enhanced JPEG graphics support using OpenJPEG" on \
@@ -70,10 +72,38 @@ CMAKE_ARGS+=	-DWITH_BULLET:BOOL=OFF
 CMAKE_ARGS+=	-DWITH_BULLET:BOOL=ON
 .endif
 
+.if defined(WITHOUT_CARVE)
+CMAKE_ARGS+=	-DWITH_CARVE:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DWITH_CARVE:BOOL=ON
+LIB_DEPENDS+=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+.endif
+
 .if defined(WITHOUT_CINEON)
 CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=ON
+.endif
+
+.if defined(WITHOUT_CAMERATRACK)
+CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DWITH_LIBMV:BOOL=ON
+LIB_DEPENDS+=	unwind:${PORTSDIR}/devel/libunwind
+.endif
+
+# openimageio to enable cycles requires 8.0 or higher
+.if defined(WITH_CYCLES) && ${OSVERSION} >= 800000
+CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=ON
+.if ${ARCH} == "i386" || ${OSVERSION} < 803000
+# this is needed for linking with openimageio
+LDFLAGS+=	-L${LOCALBASE}/lib/gcc46 -rpath ${LOCALBASE}/lib/gcc46
+.endif
+LIB_DEPENDS+=	OpenImageIO:${PORTSDIR}/graphics/openimageio
+PLIST_SUB+=	CYCLES=""
+.else
+CMAKE_ARGS+=	-DWITH_CYCLES:BOOL=OFF
+PLIST_SUB+=	CYCLES="@comment "
 .endif
 
 .if defined(WITHOUT_DDS)
@@ -139,6 +169,15 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 PLIST_SUB+=	NLS=""
 CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=ON
+.endif
+
+.if defined(WITHOUT_OCEANSIM)
+CMAKE_ARGS+=	-DWITH_MOD_OCEANSIM:BOOL=OFF
+.else
+.if defined(WITHOUT_FFTW3)
+BROKEN=		WITH_OCEANSIM requires WITH_FFTW3
+.endif
+CMAKE_ARGS+=	-DWITH_MOD_OCEANSIM:BOOL=ON
 .endif
 
 .if defined(WITHOUT_OPENAL)
@@ -227,6 +266,11 @@ CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=OFF
 .else
 USE_XORG+=	xi
 CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=ON
+.endif
+
+post-configure:
+.if defined(WITH_CYCLES) && ${OSVERSION} < 800000
+	@${ECHO_MSG} "Cycles render engine is only available in 8.0 or higher."
 .endif
 
 post-install:
