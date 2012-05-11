@@ -72,6 +72,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPLOAD_PROGRESS	"3rd party uploadprogress module" off \
 		HTTP_UPSTREAM_FAIR	"3rd party upstream fair module" off \
 		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
+		HTTP_UPSTREAM_STICKY	"3rd party upstream sticky module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		ARRAYVAR_MODULE		"3rd party array_var module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
@@ -80,6 +81,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		FORMINPUT_MODULE	"3rd party form_input module" off \
 		GRIDFS_MODULE		"3rd party gridfs module" off \
 		ICONV_MODULE		"3rd party iconv module" off \
+		LET_MODULE		"3rd party let module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		NAXSI_MODULE		"3rd party naxsi module" off \
@@ -377,11 +379,6 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_
 CONFIGURE_ARGS+=--with-http_secure_link_module
 .endif
 
-.if defined(WITH_HTTP_SSL_MODULE)
-NGINX_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-http_ssl_module
-.endif
-
 .if defined(WITH_HTTP_STATUS_MODULE)
 CONFIGURE_ARGS+=--with-http_stub_status_module
 .endif
@@ -421,6 +418,14 @@ MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
 DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
+.endif
+
+.if defined(WITH_HTTP_UPSTREAM_STICKY)
+USE_HTTP_SSL_MODULE=	yes
+NGINX_UPSTREAM_STICKY_VERSION=	1.0
+MASTER_SITES+=	http://nginx-sticky-module.googlecode.com/files/:upstreamsticky
+DISTFILES+=	nginx-sticky-module-${NGINX_UPSTREAM_STICKY_VERSION}.tar.gz:upstreamsticky
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-sticky-module-${NGINX_UPSTREAM_STICKY_VERSION}
 .endif
 
 .if defined(WITH_HTTP_XSLT_MODULE)
@@ -476,6 +481,15 @@ MASTER_SITES+=	https://github.com/mongodb/mongo-c-driver/tarball/v${MONGO_C_DRIV
 DISTFILES+=	mdirolf-nginx-gridfs-v${NGINX_GRIDFS_MODULE_VERSION}-${GIT_GRIDFS_MODULE_VERSION}.tar.gz:gridfs
 DISTFILES+=	mongodb-mongo-c-driver-v${MONGO_C_DRIVER_VERSION}-${GIT_MONGO_C_DRIVER_VERSION}.tar.gz:mongo_c
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}
+.endif
+
+.if defined(WITH_LET_MODULE)
+NGINX_LET_MODULE_VERSION=	0.0.4
+GIT_LET_MODULE_VERSION=	0-ga5e1dc5
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/arut/nginx-let-module/tarball/v${NGINX_LET_MODULE_VERSION}/:let
+DISTFILES+=	arut-nginx-let-module-v${NGINX_LET_MODULE_VERSION}-${GIT_LET_MODULE_VERSION}.tar.gz:let
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-let-module-${GIT_LET_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_LUA_MODULE)
@@ -658,8 +672,9 @@ CONFIGURE_ARGS+=--with-mail_ssl_module
 .endif
 .endif		# WITH_MAIL_MODULE
 
-.if defined(NGINX_OPENSSL)
-USE_OPENSSL=	yes
+.if defined(WITH_HTTP_SSL_MODULE) || defined(USE_HTTP_SSL_MODULE)
+NGINX_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
 .if defined(USE_NGINX_DEVEL_KIT)
@@ -709,6 +724,10 @@ USERS?=	${WWWOWN}
 GROUPS?=${WWWGRP}
 
 .include <bsd.port.pre.mk>
+
+.if defined(NGINX_OPENSSL)
+USE_OPENSSL=	yes
+.endif
 
 pre-everything::
 	@${ECHO_MSG}
