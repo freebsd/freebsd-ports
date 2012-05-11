@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libserver
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
