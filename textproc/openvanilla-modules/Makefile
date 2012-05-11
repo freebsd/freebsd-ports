@@ -37,8 +37,8 @@ MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800501
-BROKEN=		does not build
+.if (${OSVERSION} >= 800501)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Modules-SharedSource-OVCINInfo.cpp
 .endif
 
 .if !defined(WITHOUT_OVIMArray)
