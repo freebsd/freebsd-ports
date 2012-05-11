@@ -25,7 +25,7 @@
 #           and under FreeBSD 5.1.
 #
 #   Note:   The SUMA build process (as of Aug, 2003) requires GNU make,
-#           which is /usr/local/bin/gmake on BSD systems.  
+#           which is ${LOCALBASE}/bin/gmake on BSD systems.  
 #           Be sure the MAKE macro below is set to gmake.
 #
 #   Note:   Compilation of netcdf-3.5.0 may fail due to m4's lack of
@@ -61,16 +61,17 @@ CCFAST = ${CC} -O3
 CCMIN  = ${CC}
 CCD    = ${CC} ${CCDEBS}
 CCSVD  = ${CC} -O0
+CCOLD  = ${CC}
 
-IFLAGS = -I. -I${LOCALBASE}/include -I/usr/local/include
-LFLAGS = -s -L. -L${LOCALBASE}/lib
+IFLAGS = -I. -I${X11BASE}/include -I${LOCALBASE}/include
+LFLAGS = -s -L. -L${X11BASE}/lib -L${LOCALBASE}/lib
 
 MAKE   = gmake
 
 PLUGIN_SUFFIX = so
 PLUGIN_LFLAGS = -shared
 PLUGIN_CC     = ${CC}
-PLFLAGS       = -s -rdynamic -L. -L${LOCALBASE}/lib
+PLFLAGS       = -s -rdynamic -L. -L${X11BASE}/lib -L${LOCALBASE}/lib
 
 AR     = /usr/bin/ar
 RANLIB = /usr/bin/ranlib
@@ -90,12 +91,12 @@ LIBDIR = ${INSTALLDIR}
 
 # for dynamic linking
 
-LLIBS  = -lmri -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB)
+LLIBS  = -lmri -lf2c -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB)
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # For suma (NO STATIC LINKING OF GL libs)
-SUMA_INCLUDE_PATH = -I${LOCALBASE}/include -I/usr/local/include -I./ -I../ -I../niml/ -Igts/src 
-SUMA_LINK_PATH = -L/usr/lib -L${LOCALBASE}/lib -L../
+SUMA_INCLUDE_PATH = -I${X11BASE}/include -I${LOCALBASE}/include -I./ -I../ -I../niml/ -Igts/src 
+SUMA_LINK_PATH = -L/usr/lib -L${X11BASE}/lib -L${LOCALBASE}/lib -L../
 #use -lGLw if you have libGLw.a or libGLw.so* or 
 #  -lMesaGLw if you have Mesa's version (libMesaGLw*) of libGLw
 SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB)
