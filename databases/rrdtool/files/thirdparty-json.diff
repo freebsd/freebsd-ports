@@ -1,9 +1,6 @@
-#
-# From: https://gist.github.com/raw/614476/19f1b1bc9499bb9dd761e5e03eff225d2316707d/0001-work-in-progress.patch
-#
---- src/rrd_tool.c.orig	2010-07-05 12:31:21.000000000 -0700
-+++ src/rrd_tool.c	2011-01-06 15:17:04.453738239 -0800
-@@ -55,7 +55,7 @@
+--- src/rrd_tool.c.orig	2012-01-24 08:08:48.000000000 -0200
++++ src/rrd_tool.c	2012-05-11 15:57:51.000000000 -0300
+@@ -57,7 +57,7 @@
          N_
          ("Valid commands: create, update, updatev, graph, graphv,  dump, restore,\n"
           "\t\tlast, lastupdate, first, info, fetch, tune,\n"
@@ -12,8 +9,8 @@
  
      const char *help_listremote =
          N_("Valid remote commands: quit, ls, cd, mkdir, pwd\n");
-@@ -208,6 +208,13 @@
-            "\t\t[--enumds]\n" "\t\t[DEF:vname=rrd:ds-name:CF]\n"
+@@ -210,6 +210,13 @@
+            "\t\t[--enumds] [--json]\n" "\t\t[DEF:vname=rrd:ds-name:CF]\n"
             "\t\t[CDEF:vname=rpn-expression]\n"
             "\t\t[XPORT:vname:legend]\n");
 +    const char *help_json =
@@ -26,7 +23,7 @@
      const char *help_quit =
          N_(" * quit - closing a session in remote mode\n\n"
             "\trrdtool quit\n");
-@@ -230,7 +237,7 @@
+@@ -232,7 +239,7 @@
      enum { C_NONE, C_CREATE, C_DUMP, C_INFO, C_RESTORE, C_LAST,
          C_LASTUPDATE, C_FIRST, C_UPDATE, C_FETCH, C_GRAPH, C_GRAPHV,
          C_TUNE,
@@ -35,7 +32,7 @@
          C_UPDATEV, C_FLUSHCACHED
      };
      int       help_cmd = C_NONE;
-@@ -268,6 +275,8 @@
+@@ -270,6 +277,8 @@
              help_cmd = C_RESIZE;
          else if (!strcmp(cmd, "xport"))
              help_cmd = C_XPORT;
@@ -44,7 +41,7 @@
          else if (!strcmp(cmd, "quit"))
              help_cmd = C_QUIT;
          else if (!strcmp(cmd, "ls"))
-@@ -343,6 +352,9 @@
+@@ -345,6 +354,9 @@
      case C_XPORT:
          puts(_(help_xport));
          break;
@@ -54,7 +51,7 @@
      case C_QUIT:
          puts(_(help_quit));
          break;
-@@ -770,6 +782,58 @@
+@@ -844,6 +856,58 @@
              setlocale(LC_NUMERIC, old_locale);
          }
          free(vtag);
@@ -79,7 +76,6 @@
 +
 +                printf("\t{\n\t\t\"%s\": {\n", entry);
 +                free(entry);
-+
 +                printf("\t\t\t\"%s\": %lld,\n", META_START_TAG,
 +                      (long long int) start + step);
 +                printf("\t\t\t\"%s\": %lu,\n", META_STEP_TAG, step);
@@ -102,6 +98,7 @@
 +
 +                printf("\n\t\t\t]\n");
 +                printf("\t\t}\n");
++
 +                printf("\t}%s\n", (j<col_cnt-1) ? "," : "");
 +            }
 +            free(legend_v);
@@ -110,6 +107,6 @@
 +            printf("]\n");
 +            setlocale(LC_NUMERIC, old_locale);
 +        }
-     } else if (strcmp("graph", argv[1]) == 0) {
-         char    **calcpr;
- 
+ #else
+         rrd_set_error("the instance of rrdtool has been compiled without graphics");
+ #endif
