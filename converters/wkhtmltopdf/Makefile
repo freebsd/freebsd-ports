@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	wkhtmltopdf
-DISTVERSION=	0.10.0_rc2
+DISTVERSION=	0.11.0_rc1
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:wkhtmltopdf \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mm
+MASTER_SITE_SUBDIR=	mm/wkhtmltopdf
 DISTFILES=	${DISTNAME}.tar.bz2:wkhtmltopdf \
-		wkhtml2pdf-wkhtmltopdf-qt-${WKQTVERSION}.tar.bz2
+		wkhtmltopdf-qt-${WKQTVERSION}.tar.xz
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image files
 LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2
 
-WRKSRC=		${WRKDIR}/qt-${PORTNAME}-qt
+WRKSRC=		${WRKDIR}/${PORTNAME}-qt
 INSTALL_WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-WKQTVERSION=		1806ef3b
+WKQTVERSION=		6053b687
 USE_XORG=		x11 xext xrender
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
@@ -32,18 +32,15 @@ MAKE_JOBS_SAFE=		yes
 
 OPTIONS=	BUNDLED_LIBS "Use Qt-bundled jpeg, mng, png and tiff" off
 
-LICENSE=	GPLv3 LGPL3 LGPL21
-LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3=	${INSTALL_WRKSRC}/COPYING
-LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING.LGPL
-LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE.LGPL
+LICENSE=	LGPL3
+LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
 
 CONFIGURE_ARGS=	-prefix ${WRKDIR}/wkqt \
 	-release -static -fast -exceptions -no-accessibility -no-stl \
 	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-sql-sqlite \
 	-no-sql-sqlite2 -no-qt3support -xmlpatterns -no-phonon \
 	-no-phonon-backend -webkit -no-scripttools -no-mmx -no-3dnow -no-sse \
-	-no-sse2 -system-zlib -qt-gif \
+	-no-sse2 -system-zlib \
 	-graphicssystem raster -opensource -confirm-license \
 	-nomake tools -nomake examples -nomake demos -nomake docs \
 	-nomake translations -no-opengl -no-dbus -no-multimedia -openssl \
