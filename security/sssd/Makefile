@@ -74,7 +74,10 @@ IGNORE=		is not supported prior to 8.0-RELEASE
 BROKEN=		Does not link on ia64, powerpc, or sparc64
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|SIGCLD|SIGCHLD|g' ${WRKSRC}/src/util/signal.c
 	@${REINPLACE_CMD} -e '/#define SIZE_T_MAX ((size_t) -1)/d' ${WRKSRC}/src/util/util.h
 	@${REINPLACE_CMD} -e '/pam_misc/d' ${WRKSRC}/src/sss_client/pam_test_client.c

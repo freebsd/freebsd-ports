@@ -15,10 +15,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and robust communication library based on UDP
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake
+USE_AUTOTOOLS=	automake autoconf:env
 USE_LDCONFIG=	yes
 
 DOCS=		design.txt docs/FAQ.dox docs/design.dox docs/tutorial.dox
+
+
+AUTOTOOLSFILES=	aclocal.m4
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|2.67|%%AUTOCONF_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
 
 post-install:
 .if !defined(NOPORTDOCS)

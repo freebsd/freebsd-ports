@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5_BUILD=yes
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 pre-configure:
 	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} -f admin/Makefile.common

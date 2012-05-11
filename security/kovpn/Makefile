@@ -29,6 +29,8 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 .include <bsd.port.pre.mk>
 
 pre-configure:

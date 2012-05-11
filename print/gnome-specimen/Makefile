@@ -29,4 +29,7 @@ INSTALLS_ICONS=	yes
 pre-configure:
 	( cd ${WRKSRC} ; ${AUTORECONF} ; ${AUTOMAKE} )
 
+post-configure:
+	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}
+
 .include <bsd.port.post.mk>

@@ -21,6 +21,8 @@ USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 post-extract:
 	@${RM} -f ${WRKSRC}/po/gl.po
 

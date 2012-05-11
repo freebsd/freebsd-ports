@@ -48,7 +48,14 @@ BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,|| mv,|| cp -p,' ${WRKSRC}/proxy/config/Makefile.am
+	@${REINPLACE_CMD} -e 's,|| mv,|| cp -p,' ${WRKSRC}/proxy/config/Makefile.am
+
+pre-configure:
+	@${FIND} ${WRKSRC}/example ${WRKSRC}/plugins/conf_remap \
+	    -name Makefile.am | ${XARGS} ${REINPLACE_CMD} \
+		-e 's,CFLAGS+=,AM_CFLAGS=,' \
+		-e 's,CXXFLAGS+=,AM_CXXFLAGS=,'
+	@cd ${WRKSRC} && ${AUTORECONF} -i
 
 post-configure:
 	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} \

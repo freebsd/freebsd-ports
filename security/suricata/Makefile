@@ -87,8 +87,13 @@ CONFIGURE_ARGS+=	--enable-dag \
 			--with-dag-libraries=${LOCALBASE}/lib
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4 libhtp/aclocal.m4
+
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|^(install-data-am: )install-pkgconfigDATA|\1|' ${WRKSRC}/libhtp/Makefile.in
+.for f in ${AUTOTOOLSFILES}
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' ${WRKSRC}/${f}
+.endfor
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|/etc/suricata|${PREFIX}/etc/suricata|g' ${WRKSRC}/suricata.yaml

@@ -394,7 +394,12 @@ CONFIGURE_ARGS+=--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|2.67|%%AUTOCONF_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} \
 		-e 's;@prefix@/var/;/var/;' \
 		-e 's;/var/lib/;/var/db/;' \

@@ -33,6 +33,7 @@ MAKE_JOBS_SAFE=	yes
 #.else
 USE_AUTOTOOLS=	autoconf autoheader aclocal automake libtool
 ACLOCAL_ARGS=	-I m4
+AUTOMAKE_ARGS=	--add-missing
 #.endif
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd --enable-static
 

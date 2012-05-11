@@ -26,7 +26,7 @@ LIB_DEPENDS=	lept.2:${PORTSDIR}/graphics/leptonica
 DIST_SUBDIR=	${PORTNAME}
 PROJECTHOST=	tesseract-ocr
 
-USE_AUTOTOOLS=	automake
+USE_AUTOTOOLS=	automake autoconf:env
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LIBLEPT_HEADERSDIR="${LOCALBASE}/include/leptonica"
@@ -55,7 +55,12 @@ PORTDOCS=	AUTHORS ChangeLog README ReleaseNotes
 PORTEXAMPLES=	eurotext.tif phototest.tif
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'\
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '1s|.*|/*|' ${WRKSRC}/ccutil/strngs.h

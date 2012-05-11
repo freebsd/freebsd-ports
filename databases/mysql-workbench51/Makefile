@@ -47,6 +47,7 @@ LUA_COMPS=	lua
 
 .if ${PKGNAMESUFFIX} == 51
 CONFLICTS=	mysql-workbench-oss52*
+EXTRA_PATCHES=	${PATCHDIR}/extra-51-modules__wb.utils__Makefile.am
 .endif
 
 DATADIR=	${PREFIX}/share/mysql-workbench

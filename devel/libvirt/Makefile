@@ -61,7 +61,11 @@ PLIST_SUB+=	NLS="@comment "
 MAN1=		virsh.1 virt-pki-validate.1 virt-xml-validate.1 virt-host-validate.1
 MAN8=		libvirtd.8
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  ${WRKSRC}/aclocal.m4
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
 	@${REINPLACE_CMD} -e 's|libvirtd.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.am \

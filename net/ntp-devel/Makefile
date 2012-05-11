@@ -77,6 +77,12 @@ MAN8+=		ntpsnmpd.8
 PLIST_SUB+=	NETSNMP="@comment "
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  ${WRKSRC}/aclocal.m4
+
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/conf/* ${EXAMPLESDIR}

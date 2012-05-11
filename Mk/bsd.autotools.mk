@@ -142,8 +142,8 @@ GNU_CONFIGURE=				yes
 .endif
 
 .if defined(_AUTOTOOL_automake)
-AUTOMAKE_VERSION=	1.11
-AUTOMAKE_APIVER=	1.11.1
+AUTOMAKE_VERSION=	1.12
+AUTOMAKE_APIVER=	1.12
 AUTOMAKE_PORT=		devel/automake
 
 . if ${_AUTOTOOL_automake} == "yes"
@@ -202,7 +202,7 @@ GNU_CONFIGURE?=				yes
 .endif
 
 .if defined(_AUTOTOOL_autoconf)
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 AUTOCONF_PORT=		devel/autoconf
 
 . if ${_AUTOTOOL_autoconf} == "yes"

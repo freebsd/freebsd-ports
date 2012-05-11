@@ -1,14 +1,8 @@
-Feature silent-rules needs atleast autoconf 1.11, however we still have
-at most autoconf 1.10 in ports tree (2010/09/10).
-
---- configure.ac.orig	2010-03-24 13:31:39.000000000 +0100
-+++ configure.ac	2010-03-24 13:31:39.000000000 +0200
-@@ -18,7 +18,7 @@
- AC_CONFIG_HEADERS([tnftpd_config.h])
- AC_CONFIG_LIBOBJ_DIR([libnetbsd])
- 
--AM_INIT_AUTOMAKE([-Wall -Werror foreign nostdinc silent-rules])
-+AM_INIT_AUTOMAKE([-Wall -Werror foreign nostdinc])
- AM_MAINTAINER_MODE
- 
+--- configure.ac.orig	2010-03-24 05:31:39.000000000 -0700
++++ configure.ac	2012-05-03 15:55:32.000000000 -0700
+@@ -87,3 +87,4 @@
  #
+-AC_PROG_CC
++AM_PROG_CC_C_O
++AM_PROG_AR
+ AC_PROG_AWK

@@ -1,0 +1,10 @@
+--- modules/wb.utils/Makefile.am.orig	2009-06-29 14:51:26.000000000 -0700
++++ modules/wb.utils/Makefile.am	2012-04-17 13:39:25.000000000 -0700
+@@ -1,5 +1,5 @@
+ 
+-pkglibdir=$(libdir)/@PACKAGE@/modules
++wbutilsdir=$(libdir)/@PACKAGE@/modules
+ 
+-pkglib_DATA=catalog_utils.grt.lua  table_utils.grt.lua  tools.grt.lua  wb_utils_grt.py
++wbutils_DATA=catalog_utils.grt.lua  table_utils.grt.lua  tools.grt.lua  wb_utils_grt.py
+ 

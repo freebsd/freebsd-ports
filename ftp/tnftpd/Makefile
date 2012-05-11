@@ -14,6 +14,7 @@ MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
 
 USE_AUTOTOOLS=	aclocal automake libtool
+AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 .include <bsd.port.pre.mk>
