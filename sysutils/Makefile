@@ -379,6 +379,7 @@
     SUBDIR += httplog
     SUBDIR += hwstat
     SUBDIR += hyperic-sigar
+    SUBDIR += i2c-tools
     SUBDIR += iat
     SUBDIR += iextract
     SUBDIR += installwatch
