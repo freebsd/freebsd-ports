@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b91234e7-9a8b-11e1-b666-001636d274f3">
+    <topic>NVIDIA UNIX driver -- access to arbitrary system memory</topic>
+    <affects>
+      <package>
+	<name>nvidia-driver</name>
+	<range><gt>173.14.31_1</gt><lt>295.40</lt></range>
+	<range><ge>100.14.03</ge><lt>173.14.31_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVIDIA Unix security team reports:</p>
+	<blockquote cite="http://nvidia.custhelp.com/app/answers/detail/a_id/3109">
+	  <p>Security vulnerability CVE-2012-0946 in the NVIDIA UNIX driver
+	    was disclosed to NVIDIA on March 20th, 2012.  The vulnerability
+	    makes it possible for an attacker who has read and write access
+	    to the GPU device nodes to reconfigure GPUs to gain access to
+	    arbitrary system memory.  NVIDIA is not aware of any reports of
+	    this vulnerability, outside of the disclosure which was made
+	    privately to NVIDIA.</p>
+	  <p>NVIDIA has identified the root cause of the vulnerability and
+	    has released updated drivers which close it.  [NVIDIA encourages]
+	    all users with Geforce 8 or newer, G80 Quadro or newer, and all
+	    Tesla GPUs to update their drivers to 295.40 or later.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0946</cvename>
+    </references>
+    <dates>
+      <discovery>2012-03-20</discovery>
+      <entry>2012-05-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d55b961-9a2e-11e1-a2ef-001fd0af1a4c">
      <topic>rubygem-mail -- multiple vulnerabilities</topic>
      <affects>
