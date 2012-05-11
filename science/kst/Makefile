@@ -25,6 +25,8 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 OPTIONS=	NETCDF "Enable netcdf data support" off \
 		CDF "Enable cdf data support" off \
 		KDEBASE "Enable JavaScript console" off

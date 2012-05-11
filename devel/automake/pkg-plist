@@ -1,6 +1,7 @@
 bin/aclocal-%%BUILD_VERSION%%
 bin/automake-%%BUILD_VERSION%%
 share/aclocal-%%BUILD_VERSION%%/amversion.m4
+share/aclocal-%%BUILD_VERSION%%/ar-lib.m4
 share/aclocal-%%BUILD_VERSION%%/as.m4
 share/aclocal-%%BUILD_VERSION%%/auxdir.m4
 share/aclocal-%%BUILD_VERSION%%/ccstdc.m4
@@ -21,14 +22,12 @@ share/aclocal-%%BUILD_VERSION%%/make.m4
 share/aclocal-%%BUILD_VERSION%%/minuso.m4
 share/aclocal-%%BUILD_VERSION%%/missing.m4
 share/aclocal-%%BUILD_VERSION%%/mkdirp.m4
-share/aclocal-%%BUILD_VERSION%%/multi.m4
 share/aclocal-%%BUILD_VERSION%%/obsol-gt.m4
 share/aclocal-%%BUILD_VERSION%%/obsol-lt.m4
 share/aclocal-%%BUILD_VERSION%%/obsolete.m4
 share/aclocal-%%BUILD_VERSION%%/options.m4
 share/aclocal-%%BUILD_VERSION%%/protos.m4
 share/aclocal-%%BUILD_VERSION%%/python.m4
-share/aclocal-%%BUILD_VERSION%%/regex.m4
 share/aclocal-%%BUILD_VERSION%%/runlog.m4
 share/aclocal-%%BUILD_VERSION%%/sanity.m4
 share/aclocal-%%BUILD_VERSION%%/silent.m4
@@ -45,13 +44,13 @@ share/automake-%%BUILD_VERSION%%/Automake/Configure_ac.pm
 share/automake-%%BUILD_VERSION%%/Automake/DisjConditions.pm
 share/automake-%%BUILD_VERSION%%/Automake/FileUtils.pm
 share/automake-%%BUILD_VERSION%%/Automake/General.pm
+share/automake-%%BUILD_VERSION%%/Automake/Getopt.pm
 share/automake-%%BUILD_VERSION%%/Automake/Item.pm
 share/automake-%%BUILD_VERSION%%/Automake/ItemDef.pm
 share/automake-%%BUILD_VERSION%%/Automake/Location.pm
 share/automake-%%BUILD_VERSION%%/Automake/Options.pm
 share/automake-%%BUILD_VERSION%%/Automake/Rule.pm
 share/automake-%%BUILD_VERSION%%/Automake/RuleDef.pm
-share/automake-%%BUILD_VERSION%%/Automake/Struct.pm
 share/automake-%%BUILD_VERSION%%/Automake/VarDef.pm
 share/automake-%%BUILD_VERSION%%/Automake/Variable.pm
 share/automake-%%BUILD_VERSION%%/Automake/Version.pm
@@ -59,8 +58,6 @@ share/automake-%%BUILD_VERSION%%/Automake/Wrap.pm
 share/automake-%%BUILD_VERSION%%/Automake/XFile.pm
 share/automake-%%BUILD_VERSION%%/COPYING
 share/automake-%%BUILD_VERSION%%/INSTALL
-share/automake-%%BUILD_VERSION%%/acinstall
-share/automake-%%BUILD_VERSION%%/am/ansi2knr.am
 share/automake-%%BUILD_VERSION%%/am/check.am
 share/automake-%%BUILD_VERSION%%/am/check2.am
 share/automake-%%BUILD_VERSION%%/am/clean-hdr.am
@@ -88,7 +85,6 @@ share/automake-%%BUILD_VERSION%%/am/ltlib.am
 share/automake-%%BUILD_VERSION%%/am/ltlibrary.am
 share/automake-%%BUILD_VERSION%%/am/mans-vars.am
 share/automake-%%BUILD_VERSION%%/am/mans.am
-share/automake-%%BUILD_VERSION%%/am/multilib.am
 share/automake-%%BUILD_VERSION%%/am/program.am
 share/automake-%%BUILD_VERSION%%/am/progs.am
 share/automake-%%BUILD_VERSION%%/am/python.am
@@ -101,10 +97,8 @@ share/automake-%%BUILD_VERSION%%/am/texibuild.am
 share/automake-%%BUILD_VERSION%%/am/texinfos.am
 share/automake-%%BUILD_VERSION%%/am/vala.am
 share/automake-%%BUILD_VERSION%%/am/yacc.am
-share/automake-%%BUILD_VERSION%%/ansi2knr.1
-share/automake-%%BUILD_VERSION%%/ansi2knr.c
+share/automake-%%BUILD_VERSION%%/ar-lib
 share/automake-%%BUILD_VERSION%%/compile
-share/automake-%%BUILD_VERSION%%/config-ml.in
 share/automake-%%BUILD_VERSION%%/config.guess
 share/automake-%%BUILD_VERSION%%/config.sub
 share/automake-%%BUILD_VERSION%%/depcomp
@@ -114,11 +108,11 @@ share/automake-%%BUILD_VERSION%%/mdate-sh
 share/automake-%%BUILD_VERSION%%/missing
 share/automake-%%BUILD_VERSION%%/mkinstalldirs
 share/automake-%%BUILD_VERSION%%/py-compile
-share/automake-%%BUILD_VERSION%%/symlink-tree
+share/automake-%%BUILD_VERSION%%/tap-driver.pl
+share/automake-%%BUILD_VERSION%%/tap-driver.sh
+share/automake-%%BUILD_VERSION%%/test-driver
 share/automake-%%BUILD_VERSION%%/texinfo.tex
 share/automake-%%BUILD_VERSION%%/ylwrap
-share/doc/automake/amhello-1.0.tar.gz
-@dirrm share/doc/automake
 @dirrm share/aclocal-%%BUILD_VERSION%%
 @dirrm share/automake-%%BUILD_VERSION%%/Automake
 @dirrm share/automake-%%BUILD_VERSION%%/am

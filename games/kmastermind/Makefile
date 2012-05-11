@@ -26,11 +26,13 @@ USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 pre-configure:
-	${LN} -sfh \
+	@${TOUCH} ${WRKSRC}/NEWS
+	@${LN} -sfh \
 		`cd ${PORTSDIR}/x11/kdelibs3 && ${MAKE} -V WRKSRC`/admin \
 		${WRKSRC}/admin
-	${TOUCH} ${WRKSRC}/NEWS
-	@${REINPLACE_CMD} -e 's|1.10|${AUTOMAKE_VERSION}|' ${WRKSRC}/admin/cvs.sh
+	@${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/kdelibs3-admin-cvs.sh
+	@${REINPLACE_CMD} -e s,%%AUTOMAKE_VERSION%%,${AUTOMAKE_VERSION}, \
+		${WRKSRC}/admin/cvs.sh
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f admin/Makefile.common cvs
 
 .include <bsd.port.mk>

@@ -26,6 +26,8 @@ USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
 USE_PERL5_BUILD=	yes
 
+AUTOTOOLSFILES=		admin/cvs.sh
+
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${MAKE} -f admin/Makefile.common
 

@@ -1,0 +1,7 @@
+--- libnetbsd/Makefile.am.orig	2010-01-03 21:46:29.000000000 -0800
++++ libnetbsd/Makefile.am	2012-05-03 15:58:12.000000000 -0700
+@@ -6,3 +6,3 @@
+ 
+-CPPFLAGS = \
++AM_CPPFLAGS = \
+ 	-I$(srcdir) \

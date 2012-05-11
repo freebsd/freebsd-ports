@@ -42,6 +42,13 @@ MAN8=		ovs-appctl.8 ovs-controller.8 ovs-discover.8 ovs-dpctl.8 \
 BROKEN=		does not compile
 .endif
 
+AUTOTOOLSFILES=	aclocal.m4
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  -e 's|2.65|%%AUTOCONF_VERSION%%|g' \
+			  ${WRKSRC}/aclocal.m4
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/vswitchd/vswitch.ovsschema ${PREFIX}/share/openvswitch/
 

@@ -13,4 +13,7 @@ PORTREVISION=	3
 PKGNAMESUFFIX=	-kernel
 SAL_MODULE_UPPER=	KERNEL
 
+post-configure::
+	 @${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/salome_adm/unix/config_files
+
 .include "${MASTERDIR}/Makefile"

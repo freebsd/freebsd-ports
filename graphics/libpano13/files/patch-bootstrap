@@ -1,17 +1,70 @@
---- bootstrap.orig	2009-02-01 19:35:46.000000000 +0200
-+++ bootstrap	2011-02-27 08:26:52.000000000 +0200
-@@ -23,7 +23,7 @@
- 	libtool_version=`$LIBTOOLIZE --version | sed 's/.*) \([0-9.][0-9.]*\).*/\1/'`
- #	echo libtool version: $libtool_version
- 	case $libtool_version in
--	    1.4*|1.5*|2.0*|2.2*|2.4*)
-+	    1.4*|1.5*|[2-9]*)
- 		have_libtool=true
- 		;;
- 	esac
-@@ -96,27 +96,3 @@
- $AUTOMAKE --add-missing --copy || exit $?
+--- bootstrap.orig	2011-02-22 11:06:38.000000000 -0800
++++ bootstrap	2012-05-03 17:40:55.000000000 -0700
+@@ -18,63 +18,2 @@
  
+-DIE=0
+-
+-have_libtool=false
+-if $LIBTOOLIZE --version < /dev/null > /dev/null 2>&1 ; then
+-	libtool_version=`$LIBTOOLIZE --version | sed 's/.*) \([0-9.][0-9.]*\).*/\1/'`
+-#	echo libtool version: $libtool_version
+-	case $libtool_version in
+-	    1.4*|1.5*|2.0*|2.2*|2.4*)
+-		have_libtool=true
+-		;;
+-	esac
+-fi
+-if $have_libtool ; then : ; else
+-	echo
+-	echo "You must have libtool 1.4 or later installed to compile $PROJECT."
+-	echo "Install the appropriate package for your distribution,"
+-	echo "or get the source tarball at http://ftp.gnu.org/gnu/libtool/"
+-	DIE=1
+-fi
+-
+-# Assume if we have this that aclocal and autoheader are available
+-have_autoconf=false
+-if $AUTOCONF --version < /dev/null > /dev/null 2>&1 ; then
+-	autoconf_version=`$AUTOCONF --version | sed 's/^[^0-9]*\([0-9.][0-9.]*\).*/\1/'`
+-#	echo autoconf version: $autoconf_version
+-	case $autoconf_version in
+-	    2.5*|2.6*)
+-		have_autoconf=true
+-		;;
+-	esac
+-fi
+-if $have_autoconf ; then : ; else
+-	echo
+-	echo "You must have autoconf installed to compile $PROJECT."
+-	echo "Install the appropriate package for your distribution,"
+-	echo "or get the source tarball at http://ftp.gnu.org/gnu/autoconf/"
+-	DIE=1
+-fi
+-
+-have_automake=false
+-if $AUTOMAKE --version < /dev/null > /dev/null 2>&1 ; then
+-	automake_version=`$AUTOMAKE --version | sed 's/^[^0-9]*\([0-9.][0-9.]*\).*/\1/'`
+-#	echo automake version: $automake_version
+-	case $automake_version in
+-	    1.7*|1.8*|1.9*|1.10*|1.11*)
+-		have_automake=true
+-		;;
+-	esac
+-fi
+-if $have_automake ; then : ; else
+-	echo
+-	echo "You must have automake 1.7.x or later installed to compile $PROJECT."
+-	echo "Install the appropriate package for your distribution,"
+-	echo "or get the source tarball at http://ftp.gnu.org/gnu/automake/"
+-	DIE=1
+-fi
+-
+-if test "$DIE" -eq 1; then
+-	exit 1
+-fi
+-
+ test $TEST_TYPE $FILE || {
+@@ -98,25 +37 @@
  $AUTOCONF || exit $?
 -
 -cd $ORIGDIR || exit $?

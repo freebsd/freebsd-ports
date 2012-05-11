@@ -27,7 +27,11 @@ USE_WX=		yes
 USE_AUTOTOOLS=	automake
 WX_CONF_ARGS=	absolute
 
+AUTOTOOLSFILES=	aclocal.m4
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
+			  ${WRKSRC}/aclocal.m4
 	@cd ${WRKSRC} && \
 		${TOUCH} -f NEWS INSTALL
 #	@${REINPLACE_CMD} -e 's|WX_CONFIG_NAME=wx-config|WX_CONFIG_NAME=${WX_CONFIG}|' \

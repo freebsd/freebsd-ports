@@ -36,6 +36,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--with-docdir=${EXAMPLESDIR}/
 USE_LDCONFIG=	yes
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_DOCS)

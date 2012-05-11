@@ -25,6 +25,8 @@ USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
 

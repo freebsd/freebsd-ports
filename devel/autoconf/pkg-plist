@@ -11,8 +11,8 @@ share/autoconf-%%BUILD_VERSION%%/Autom4te/Channels.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/Configure_ac.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/FileUtils.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/General.pm
+share/autoconf-%%BUILD_VERSION%%/Autom4te/Getopt.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/Request.pm
-share/autoconf-%%BUILD_VERSION%%/Autom4te/Struct.pm
 share/autoconf-%%BUILD_VERSION%%/Autom4te/XFile.pm
 share/autoconf-%%BUILD_VERSION%%/INSTALL
 share/autoconf-%%BUILD_VERSION%%/autoconf/autoconf.m4
@@ -26,6 +26,7 @@ share/autoconf-%%BUILD_VERSION%%/autoconf/erlang.m4
 share/autoconf-%%BUILD_VERSION%%/autoconf/fortran.m4
 share/autoconf-%%BUILD_VERSION%%/autoconf/functions.m4
 share/autoconf-%%BUILD_VERSION%%/autoconf/general.m4
+share/autoconf-%%BUILD_VERSION%%/autoconf/go.m4
 share/autoconf-%%BUILD_VERSION%%/autoconf/headers.m4
 share/autoconf-%%BUILD_VERSION%%/autoconf/lang.m4
 share/autoconf-%%BUILD_VERSION%%/autoconf/libs.m4

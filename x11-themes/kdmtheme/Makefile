@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	automake:env autoconf:env libtool autoheader:env
 USE_GMAKE=	yes
-AUTOTOOLSFILES=	admin/detect-autoconf.sh
+AUTOTOOLSFILES=	admin/cvs.sh admin/detect-autoconf.sh
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)

@@ -1,0 +1,13 @@
+--- configure.ac.orig	2012-03-17 18:02:10.000000000 -0700
++++ configure.ac	2012-05-03 16:16:05.000000000 -0700
+@@ -458,2 +458,6 @@
+ 
++# required by automake-1.12
++m4_pattern_allow([AM_PROG_AR])
++AM_PROG_AR
++
+ AC_PROG_CPP
+@@ -467,3 +471,2 @@
+ AC_CHECK_PROG(ASCPP, cpp, cpp)
+-AC_CHECK_TOOL(AR, ar, ar)
+ AC_ISC_POSIX

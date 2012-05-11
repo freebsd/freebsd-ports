@@ -1,0 +1,20 @@
+--- configure.ac.orig	2011-07-03 09:33:11.000000000 -0700
++++ configure.ac	2012-05-03 16:49:19.000000000 -0700
+@@ -18,2 +18,3 @@
+ AM_PROG_CC_C_O
++AM_PROG_AR
+ AC_PROG_LD
+@@ -26,7 +27,2 @@
+ 
+-dnl check environment
+-AC_AIX
+-AC_ISC_POSIX
+-AC_MINIX
+-
+ dnl AC_CANONICAL_HOST
+@@ -40,5 +36,2 @@
+ 
+-dnl more automake stuff
+-AM_C_PROTOTYPES
+-
+ dnl libtool

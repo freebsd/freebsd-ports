@@ -30,6 +30,9 @@ MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	PYVER=${_PYTHON_VERSION:S/./_/}
 
+post-configure:
+	@${INSTALL_SCRIPT} ${AUTOMAKE_DIR}/py-compile ${WRKSRC}/config
+
 test:
 	@cd ${WRKSRC} && ${MAKE} check
 

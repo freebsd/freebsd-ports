@@ -1,6 +1,27 @@
---- Makefile.in.orig	Sun Oct 15 10:25:23 2006
-+++ Makefile.in	Sat Apr 14 16:04:04 2007
-@@ -591,3 +591,2 @@
+--- Makefile.in.orig	2012-04-25 08:49:53.000000000 -0700
++++ Makefile.in	2012-04-26 11:27:28.000000000 -0700
+@@ -173,4 +173,3 @@
+ am__dirstamp = $(am__leading_dot)dirstamp
+-INFO_DEPS = $(srcdir)/doc/automake.info \
+-	$(srcdir)/doc/automake-history.info
++INFO_DEPS = $(srcdir)/doc/automake.info
+ TEXINFO_TEX = $(top_srcdir)/lib/texinfo.tex
+@@ -626,3 +625,3 @@
+ 
+-dist_system_ac_DATA = m4/acdir/README
++dist_system_ac_DATA = 
+ 
+@@ -2165,3 +2164,3 @@
+ am__tdf = diff-in-tests-lists.tmp
+-info_TEXINFOS = doc/automake.texi doc/automake-history.texi
++info_TEXINFOS = doc/automake.texi
+ doc_automake_TEXINFOS = doc/fdl.texi
+@@ -2200,3 +2199,3 @@
+ dist_noinst_DATA = $(amhello_sources)
+-dist_doc_DATA = $(srcdir)/doc/amhello-1.0.tar.gz
++dist_doc_DATA = 
+ 
+@@ -3247,3 +3246,2 @@
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
- 
+ install-html: install-html-am

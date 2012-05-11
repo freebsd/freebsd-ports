@@ -1,0 +1,6 @@
+--- configure.in.orig	1999-05-02 05:58:01.000000000 -0700
++++ configure.in	2012-05-03 16:53:21.000000000 -0700
+@@ -17,3 +17,2 @@
+ dnl Checks for typedefs, structures, and compiler characteristics.
+-AM_C_PROTOTYPES
+ AC_C_CONST

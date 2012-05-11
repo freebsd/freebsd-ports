@@ -21,6 +21,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
 GNU_CONFIGURE=	yes
 
+AUTOTOOLSFILES=	admin/cvs.sh
+
 .include <bsd.port.pre.mk>
 
 pre-configure:
