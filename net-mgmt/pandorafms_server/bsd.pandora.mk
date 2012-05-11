@@ -25,6 +25,8 @@ GROUPS=		pandora
 ETCDIR?=	${PANDORA_ETCDIR}
 SPOOLDIR?=	${PANDORA_SPOOLDIR}
 LOGDIR?=	${PANDORA_LOGDIR}
+HOMEDIR?=	${PANDORA_HOMEDIR}
+HOMEDIR_REL=	${HOMEDIR:S,^${PREFIX}/,,}
 
 PLIST_SUB+=	SPOOLDIR="${PANDORA_SPOOLDIR}" LOGDIR="${PANDORA_LOGDIR}" \
 		USE_SPOOL_IN=${USE_SPOOL_IN} USE_SPOOL_OUT=${USE_SPOOL_OUT} \
@@ -58,3 +60,7 @@ post-extract:
 pre-install:
 	@${CAT} ${PKGDIR}/../pandorafms_server/pkg-plist.spool > ${PLIST}
 	@${CAT} ${PKGDIR}/pkg-plist >> ${PLIST}
+	@${ECHO_MSG} '@exec [ -e "%D/${ETCDIR_REL}" ] || ${MKDIR} "%D/${ETCDIR_REL}"' >> ${PLIST}
+	@${ECHO_MSG} '@exec if [ -e "%D/${HOMEDIR_REL}" ];then ${TRUE}; else ${MKDIR} "%D/${HOMEDIR_REL}"; ${CHOWN} ${USER}:${GROUP} "%D/${HOMEDIR_REL}";fi' >> ${PLIST}
+	@${ECHO_MSG} '@unexec ${RMDIR} "%D/${HOMEDIR_REL}" 2>/dev/null || ${TRUE}' >> ${PLIST}
+	@${ECHO_MSG} '@unexec ${RMDIR} "%D/${ETCDIR_REL}" 2>/dev/null || ${TRUE}' >> ${PLIST}

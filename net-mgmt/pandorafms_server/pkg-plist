@@ -84,8 +84,9 @@ bin/pandora_server
 %%DATADIR%%/util/udp_client.pl
 %%DATADIR%%/util/windows.README
 etc/periodic/daily/199.clean-pandoradb
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PandoraFMS
 @dirrm %%SITE_PERL%%/PandoraFMS/Traceroute
-@dirrm %%SITE_PERL%%/PandoraFMS
+@dirrmtry %%SITE_PERL%%/PandoraFMS
 @dirrm %%DATADIR%%/util/plugin/babel_plugin
 @dirrm %%DATADIR%%/util/plugin/integria_plugin
 @dirrm %%DATADIR%%/util/pandora2ast
@@ -95,4 +96,3 @@ etc/periodic/daily/199.clean-pandoradb
 @dirrmtry %%DATADIR%%
 @dirrmtry %%PREFIX%%/etc/periodic/daily
 @dirrmtry %%PREFIX%%/etc/periodic
-@dirrmtry %%ETCDIR%%

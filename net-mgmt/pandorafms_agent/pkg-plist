@@ -25,4 +25,3 @@ bin/tentacle_client
 @dirrmtry %%DATADIR%%
 @dirrmtry %%ETCDIR%%/collections
 @dirrmtry %%ETCDIR%%/plugins
-@dirrmtry %%ETCDIR%%
