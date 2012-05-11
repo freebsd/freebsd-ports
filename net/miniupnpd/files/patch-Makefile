@@ -1,6 +1,15 @@
---- Makefile.orig	2009-11-06 08:23:18.000000000 +0800
-+++ Makefile	2009-11-06 08:23:31.000000000 +0800
-@@ -25,10 +25,12 @@
+--- Makefile.orig	2011-05-27 00:49:17.000000000 +0200
++++ Makefile	2012-05-11 19:42:37.000000000 +0200
+@@ -11,7 +11,7 @@
+ # Linux users, please use Makefile.linux :
+ #  make -f Makefile.linux
+ 
+-CFLAGS = -pipe -Wall -Os
++CFLAGS += -pipe -Wall
+ #CFLAGS = -pipe -Wall -O -g -DDEBUG
+ CC ?= gcc
+ RM = rm -f
+@@ -32,10 +32,12 @@
  
  # better way to find if we are using ipf or pf
  .if $(OSNAME) == "FreeBSD"
