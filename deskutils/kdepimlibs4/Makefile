@@ -37,12 +37,6 @@ QT_COMPONENTS=	dbus designer gui network sql xml \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-.if exists(${LOCALBASE}/lib/libgpgme-pth.so)
-PLIST_SUB+=	WITH_PTH=''
-.else
-PLIST_SUB+=	WITH_PTH='@comment '
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/cmake/modules/*.cmake

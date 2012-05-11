@@ -968,9 +968,6 @@ lib/libakonadi-kde.so.5.0.1
 lib/libakonadi-kmime.so
 lib/libakonadi-kmime.so.5
 lib/libakonadi-kmime.so.5.0.1
-%%WITH_PTH%%lib/libgpgme++-pth.so
-%%WITH_PTH%%lib/libgpgme++-pth.so.2
-%%WITH_PTH%%lib/libgpgme++-pth.so.2.8.0
 lib/libgpgme++-pthread.so
 lib/libgpgme++-pthread.so.2
 lib/libgpgme++-pthread.so.2.8.0
