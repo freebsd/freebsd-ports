@@ -1,0 +1,11 @@
+Pharo is a clean, innovative, open-source Smalltalk-inspired environment.
+- pure object-oriented language
+- runs on all major platforms
+- stable core with large test suite
+- a clean look and feel
+- good developer tools
+- low memory footprint
+
+It runs under squeak virtual machine.
+
+WWW: http://www.pharo-project.org/
