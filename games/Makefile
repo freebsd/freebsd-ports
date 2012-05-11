@@ -573,6 +573,7 @@
     SUBDIR += netpanzer
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
+    SUBDIR += netrek-client-cow
     SUBDIR += netris
     SUBDIR += netspades
     SUBDIR += nettoe

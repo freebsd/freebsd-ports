@@ -1,0 +1,11 @@
+--- ./system.mk.in.orig	2011-10-18 05:35:35.000000000 -0500
++++ ./system.mk.in	2012-04-23 18:10:55.000000000 -0500
+@@ -200,8 +200,6 @@
+ install: netrek-client-cow
+ 	mkdir -p $(DESTDIR)$(BINDIR)
+ 	install netrek-client-cow $(DESTDIR)$(BINDIR)
+-	mkdir -p $(DESTDIR)$(DOCDIR)
+-	cp $(KEYFILE) $(DESTDIR)$(DOCDIR)
+ 	mkdir -p $(DESTDIR)$(PIXMAPDIR)
+ 	cp -pr pixmaps/* $(DESTDIR)$(PIXMAPDIR)/
+ 	mkdir -p $(DESTDIR)$(APPDIR)
