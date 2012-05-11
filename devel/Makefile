@@ -3673,6 +3673,7 @@
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bugspots
     SUBDIR += rubygem-builder
+    SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-classifier
     SUBDIR += rubygem-clio
