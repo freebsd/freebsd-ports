@@ -387,7 +387,6 @@
     SUBDIR += jpegoptim
     SUBDIR += jpegpixi
     SUBDIR += jpg2pdf
-    SUBDIR += jpgraph
     SUBDIR += jpgraph2
     SUBDIR += jpgtn
     SUBDIR += jslice
@@ -719,9 +718,6 @@
     SUBDIR += php-facedetect
     SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
-    SUBDIR += php4-chartdirector
-    SUBDIR += php4-exif
-    SUBDIR += php4-gd
     SUBDIR += php5-chartdirector
     SUBDIR += php5-exif
     SUBDIR += php5-ffmpeg

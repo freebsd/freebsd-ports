@@ -2935,7 +2935,6 @@
     SUBDIR += pear-XML_Transformer
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
-    SUBDIR += pear-XML_XPath
     SUBDIR += pear-channel-horde
     SUBDIR += pear-channel-openpear
     SUBDIR += pear-channel-phpunit
@@ -2951,7 +2950,6 @@
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
     SUBDIR += pecl-intl
-    SUBDIR += pecl-json
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
     SUBDIR += pecl-ncurses
@@ -2977,18 +2975,6 @@
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-xdebug
-    SUBDIR += php4-dio
-    SUBDIR += php4-gettext
-    SUBDIR += php4-mcve
-    SUBDIR += php4-ncurses
-    SUBDIR += php4-pcntl
-    SUBDIR += php4-pcre
-    SUBDIR += php4-readline
-    SUBDIR += php4-shmop
-    SUBDIR += php4-sysvmsg
-    SUBDIR += php4-sysvsem
-    SUBDIR += php4-sysvshm
-    SUBDIR += php4-tokenizer
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
     SUBDIR += php5-dav

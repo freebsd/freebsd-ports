@@ -522,7 +522,6 @@
     SUBDIR += pecl-mongo
     SUBDIR += pecl-mysqlnd_ms
     SUBDIR += pecl-rrd
-    SUBDIR += pecl-sqlite
     SUBDIR += pecl-tokyo_tyrant
     SUBDIR += percona-toolkit
     SUBDIR += pg_filedump
@@ -550,18 +549,6 @@
     SUBDIR += php-mdcached
     SUBDIR += php-sqlite3
     SUBDIR += php-sqlrelay
-    SUBDIR += php4-dba
-    SUBDIR += php4-dbase
-    SUBDIR += php4-dbx
-    SUBDIR += php4-filepro
-    SUBDIR += php4-interbase
-    SUBDIR += php4-mssql
-    SUBDIR += php4-mysql
-    SUBDIR += php4-odbc
-    SUBDIR += php4-oracle
-    SUBDIR += php4-pgsql
-    SUBDIR += php4-rrdtool
-    SUBDIR += php4-sybase_ct
     SUBDIR += php5-creole
     SUBDIR += php5-dba
     SUBDIR += php5-interbase
