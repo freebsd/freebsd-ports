@@ -7,7 +7,6 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
@@ -27,8 +26,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-OPERA_VER?=	11.62
-OPERA_BUILD?=	1347
+OPERA_VER?=	11.64
+OPERA_BUILD?=	1403
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_XZ=		yes
