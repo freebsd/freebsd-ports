@@ -7,6 +7,7 @@
 
 PORTNAME=	xcache
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
