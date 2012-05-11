@@ -1,7 +1,5 @@
 bin/bsnes
-lib/libsnesfilter.so
-lib/libsnesreader.so
-lib/libsupergameboy.so
+bin/snespurify
 share/applications/bsnes.desktop
 share/pixmaps/bsnes.png
 @dirrmtry share/applications
