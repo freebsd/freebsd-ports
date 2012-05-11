@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seaside
-DISTVERSION=	070930-sq38
-PORTREVISION=	1
+DISTVERSION=	080908-sq39
 CATEGORIES=	japanese lang
 MASTER_SITES=	ftp://swikis.ddo.jp/SeasideJ/
 DISTNAME=	Seaside-JPatched${DISTVERSION}
@@ -23,18 +22,15 @@ USE_ZIP=	yes
 
 DIST_SUBDIR=	squeak
 
-FILES_TO_GZIP=	Seaside-JPatched20${DISTVERSION}.image \
-		Seaside-JPatched20${DISTVERSION}.changes
+FILES_TO_INSTALL=	Seaside-JPatched${DISTVERSION}.image \
+		Seaside-JPatched${DISTVERSION}.changes
 
-PLIST_SUB=	DATADIR=share/squeak
-post-extract:
-.for file in ${FILES_TO_GZIP}
-	(cd ${WRKDIR} && ${GZIP_CMD} ${file})
-.endfor
+PLIST_SUB=	DATADIR=lib/squeak \
+		SEASIDEVERSION=${DISTVERSION}
 
 do-install:
-.for f in ${FILES_TO_GZIP}
-	(cd ${WRKDIR} && ${INSTALL_DATA} ${f}.gz ${PREFIX}/share/squeak/)
+.for f in ${FILES_TO_INSTALL}
+	(cd ${WRKDIR} && ${INSTALL_DATA} ${f} ${PREFIX}/lib/squeak/)
 .endfor
 	${CAT} ${PKGMESSAGE}
 
