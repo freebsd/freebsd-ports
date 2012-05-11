@@ -17,7 +17,7 @@ DISTNAME=	autoconf-000227
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
 MAINTAINER=	autotools@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (2.13)
+COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
