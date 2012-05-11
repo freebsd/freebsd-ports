@@ -10033,11 +10033,9 @@ mysqltcl                        ports/databases/mysqltcl
 mysqltuner                      ports/databases/mysqltuner
 mythes                          ports/textproc/mythes
 mythplugin-mythmusic            ports/audio/mythplugin-mythmusic
-mythplugin-mythvideo            ports/multimedia/mythplugin-mythvideo
 mythplugin-mythweb              ports/www/mythplugin-mythweb
 mythtv                          ports/multimedia/mythtv
 mythtv-frontend                 ports/multimedia/mythtv-frontend
-mythtv-themes                   ports/multimedia/mythtv-themes
 mytop                           ports/databases/mytop
 mywiki                          ports/deskutils/mywiki
 mywwwatcher                     ports/databases/mywwwatcher
@@ -24706,6 +24704,7 @@ rubygem-elif                    ports/devel/rubygem-elif
 rubygem-em-http-request         ports/www/rubygem-em-http-request
 rubygem-em-websocket            ports/www/rubygem-em-websocket
 rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
+rubygem-errand                  ports/devel/rubygem-errand
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-escape_utils            ports/textproc/rubygem-escape_utils
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
@@ -24756,6 +24755,8 @@ rubygem-guard-rspec             ports/sysutils/rubygem-guard-rspec
 rubygem-haml                    ports/www/rubygem-haml
 rubygem-hashie                  ports/devel/rubygem-hashie
 rubygem-heredoc_unindent        ports/textproc/rubygem-heredoc_unindent
+rubygem-hiera                   ports/sysutils/rubygem-hiera
+rubygem-hiera-puppet            ports/sysutils/rubygem-hiera-puppet
 rubygem-highline                ports/devel/rubygem-highline
 rubygem-hike                    ports/devel/rubygem-hike
 rubygem-hoe                     ports/devel/rubygem-hoe
@@ -25064,6 +25065,7 @@ rubygem-url_escape              ports/www/rubygem-url_escape
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
+rubygem-visage-app              ports/net-mgmt/rubygem-visage-app
 rubygem-vmail                   ports/mail/rubygem-vmail
 rubygem-vmc                     ports/devel/rubygem-vmc
 rubygem-warbler                 ports/devel/rubygem-warbler
