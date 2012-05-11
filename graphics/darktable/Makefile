@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	darktable
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -21,6 +20,9 @@ LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		lensfun.2:${PORTSDIR}/graphics/lensfun \
 		lcms2.2:${PORTSDIR}/graphics/lcms2 \
 		curl.6:${PORTSDIR}/ftp/curl
+
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	uses SSE extensions
 
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=	yes
@@ -37,13 +39,10 @@ OPTIONS=	GCONF	"Enable GConf backend"			off \
 		SLIDESHOW "Build OpenGL/SDL slideshow viewer"	off \
 		KWALLET	"Enable KWallet support (requires dbus-glib)" off \
 		GKEYRING "Enable GNOME Keyring support"		off \
-		NLS	"Enable Native Language Support"	on
+		NLS	"Enable Native Language Support"	on \
+		GCC46	"Build with GCC 4.6+ (better OpenMP support)" on
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		does not compile: invokes i386 assembler
-.endif
 
 .if defined(WITH_GCONF)
 USE_GNOME+=	gconf2
@@ -100,14 +99,26 @@ USE_GETTEXT=	yes
 CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 .endif
 
-post-patch:
-# FreeBSD 7.X does not have dprintf()
-.if ${OSVERSION} < 800071
-	@${REINPLACE_CMD} -e '80s,APPLE,${OPSYS}, ; /va_start/s,&,,' \
-		${WRKSRC}/src/common/darktable.c
+.if defined(WITH_GCC46)
+USE_GCC=	4.6+
+# libdarktable.so has parts written in C++ (built-in rawspeed and libraw)
+# and is linked to GCC 4.6's libstdc++.  However CMake removes RPATH from
+# this library, and libstdc++ from base (GCC 4.2.1) is pulled at runtime,
+# preventing darktable from starting.
+#
+# To workaround this, link darktable executable with libstdc++ explicitly;
+# it still has the RPATH and the correct libstdc++ is pulled.
+LDFLAGS+=	-lstdc++
 .endif
-# Do not install useless (to end-user) documentation files
-	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/doc/CMakeLists.txt
+
+post-patch:
+# Do not define _XOPEN_SOURCE, it breaks the build on FreeBSD (and is bogus
+# here anyways); instead, use this space to define required _WITH_DPRINTF
+	@${REINPLACE_CMD} -e 's,_XOPEN_SOURCE 700,_WITH_DPRINTF,' \
+		${WRKSRC}/src/common/darktable.h
+# Do not install useless (to end-user) documentation; adjust manpages path
+	@${REINPLACE_CMD} -e '/DOC_FILES/d ; s,share/man/man1,man/man1,' \
+		${WRKSRC}/doc/CMakeLists.txt
 # Respect CFLAGS for release builds; remove `-g' from common CFLAGS which
 # are used for release builds as well
 	@${REINPLACE_CMD} -e '/-O3/s,^,#, ; /-msse2/s, -g,,' \
@@ -115,9 +126,9 @@ post-patch:
 # Fix GConf schemas installation prefix
 	@${REINPLACE_CMD} -e 's,/etc/gconf/schemas,.&,' \
 		${WRKSRC}/data/CMakeLists.txt
-# Adjust manpages path
-	@${REINPLACE_CMD} -e 's,share/man/man1,man/man1,' \
-		${WRKSRC}/doc/CMakeLists.txt
+# Do not use bash(1) when good ol' sh(1) can suffice
+	@${REINPLACE_CMD} -e 's,usr/bin/env bash,bin/sh,' \
+		${WRKSRC}/tools/create_preferences.sh.in
 
 post-install:
 .if !defined(WITH_RAWSPEED)
