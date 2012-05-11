@@ -43,10 +43,6 @@ lib/qtcreator/libQmlJSDebugClient.so
 lib/qtcreator/libQmlJSDebugClient.so.1
 lib/qtcreator/libQmlJSDebugClient.so.1.0
 lib/qtcreator/libQmlJSDebugClient.so.1.0.0
-lib/qtcreator/libQtConcurrent.so
-lib/qtcreator/libQtConcurrent.so.1
-lib/qtcreator/libQtConcurrent.so.1.0
-lib/qtcreator/libQtConcurrent.so.1.0.0
 lib/qtcreator/libUtils.so
 lib/qtcreator/libUtils.so.1
 lib/qtcreator/libUtils.so.1.0
@@ -55,7 +51,12 @@ lib/qtcreator/libsymbianutils.so
 lib/qtcreator/libsymbianutils.so.1
 lib/qtcreator/libsymbianutils.so.1.0
 lib/qtcreator/libsymbianutils.so.1.0.0
+lib/qtcreator/libzeroconf.so
+lib/qtcreator/libzeroconf.so.1
+lib/qtcreator/libzeroconf.so.1.0
+lib/qtcreator/libzeroconf.so.1.0.0
 lib/qtcreator/plugins/Nokia/AnalyzerBase.pluginspec
+lib/qtcreator/plugins/Nokia/AutotoolsProjectManager.pluginspec
 lib/qtcreator/plugins/Nokia/Bazaar.pluginspec
 lib/qtcreator/plugins/Nokia/BinEditor.pluginspec
 lib/qtcreator/plugins/Nokia/Bookmarks.pluginspec
@@ -72,6 +73,7 @@ lib/qtcreator/plugins/Nokia/FakeVim.pluginspec
 lib/qtcreator/plugins/Nokia/Find.pluginspec
 lib/qtcreator/plugins/Nokia/GLSLEditor.pluginspec
 lib/qtcreator/plugins/Nokia/GenericProjectManager.pluginspec
+lib/qtcreator/plugins/Nokia/Git.pluginspec
 lib/qtcreator/plugins/Nokia/HelloWorld.pluginspec
 lib/qtcreator/plugins/Nokia/Help.pluginspec
 lib/qtcreator/plugins/Nokia/ImageViewer.pluginspec
@@ -90,15 +92,16 @@ lib/qtcreator/plugins/Nokia/Qt4ProjectManager.pluginspec
 lib/qtcreator/plugins/Nokia/QtSupport.pluginspec
 lib/qtcreator/plugins/Nokia/RemoteLinux.pluginspec
 lib/qtcreator/plugins/Nokia/ResourceEditor.pluginspec
-lib/qtcreator/plugins/Nokia/ScmGit.pluginspec
 lib/qtcreator/plugins/Nokia/Subversion.pluginspec
 lib/qtcreator/plugins/Nokia/TaskList.pluginspec
 lib/qtcreator/plugins/Nokia/TextEditor.pluginspec
+lib/qtcreator/plugins/Nokia/Todo.pluginspec
 lib/qtcreator/plugins/Nokia/UpdateInfo.pluginspec
-lib/qtcreator/plugins/Nokia/VCSBase.pluginspec
 lib/qtcreator/plugins/Nokia/Valgrind.pluginspec
+lib/qtcreator/plugins/Nokia/VcsBase.pluginspec
 lib/qtcreator/plugins/Nokia/Welcome.pluginspec
 lib/qtcreator/plugins/Nokia/libAnalyzerBase.so
+lib/qtcreator/plugins/Nokia/libAutotoolsProjectManager.so
 lib/qtcreator/plugins/Nokia/libBazaar.so
 lib/qtcreator/plugins/Nokia/libBinEditor.so
 lib/qtcreator/plugins/Nokia/libBookmarks.so
@@ -115,6 +118,7 @@ lib/qtcreator/plugins/Nokia/libFakeVim.so
 lib/qtcreator/plugins/Nokia/libFind.so
 lib/qtcreator/plugins/Nokia/libGLSLEditor.so
 lib/qtcreator/plugins/Nokia/libGenericProjectManager.so
+lib/qtcreator/plugins/Nokia/libGit.so
 lib/qtcreator/plugins/Nokia/libHelloWorld.so
 lib/qtcreator/plugins/Nokia/libHelp.so
 lib/qtcreator/plugins/Nokia/libImageViewer.so
@@ -133,13 +137,13 @@ lib/qtcreator/plugins/Nokia/libQt4ProjectManager.so
 lib/qtcreator/plugins/Nokia/libQtSupport.so
 lib/qtcreator/plugins/Nokia/libRemoteLinux.so
 lib/qtcreator/plugins/Nokia/libResourceEditor.so
-lib/qtcreator/plugins/Nokia/libScmGit.so
 lib/qtcreator/plugins/Nokia/libSubversion.so
 lib/qtcreator/plugins/Nokia/libTaskList.so
 lib/qtcreator/plugins/Nokia/libTextEditor.so
+lib/qtcreator/plugins/Nokia/libTodo.so
 lib/qtcreator/plugins/Nokia/libUpdateInfo.so
-lib/qtcreator/plugins/Nokia/libVCSBase.so
 lib/qtcreator/plugins/Nokia/libValgrind.so
+lib/qtcreator/plugins/Nokia/libVcsBase.so
 lib/qtcreator/plugins/Nokia/libWelcome.so
 lib/qtcreator/qtcomponents/Button.qml
 lib/qtcreator/qtcomponents/ButtonRow.qml
@@ -223,6 +227,7 @@ share/qtcreator/externaltools/qmlviewer.xml
 share/qtcreator/externaltools/sort.xml
 share/qtcreator/externaltools/vi.xml
 share/qtcreator/generic-highlighter/alert.xml
+share/qtcreator/generic-highlighter/autoconf.xml
 share/qtcreator/generic-highlighter/bash.xml
 share/qtcreator/generic-highlighter/cmake.xml
 share/qtcreator/generic-highlighter/css.xml
@@ -759,10 +764,18 @@ share/qtcreator/templates/wizards/helloworld/wizard_sample.xml
 share/qtcreator/templates/wizards/listmodel/listmodel.cpp
 share/qtcreator/templates/wizards/listmodel/listmodel.h
 share/qtcreator/templates/wizards/listmodel/wizard_sample.xml
+share/qtcreator/templates/wizards/plaincapp-cmake/CMakeLists.txt
+share/qtcreator/templates/wizards/plaincapp-cmake/console.png
+share/qtcreator/templates/wizards/plaincapp-cmake/main.c
+share/qtcreator/templates/wizards/plaincapp-cmake/wizard.xml
 share/qtcreator/templates/wizards/plaincapp/console.png
 share/qtcreator/templates/wizards/plaincapp/main.c
 share/qtcreator/templates/wizards/plaincapp/project.pro
 share/qtcreator/templates/wizards/plaincapp/wizard.xml
+share/qtcreator/templates/wizards/plaincppapp-cmake/CMakeLists.txt
+share/qtcreator/templates/wizards/plaincppapp-cmake/console.png
+share/qtcreator/templates/wizards/plaincppapp-cmake/main.cpp
+share/qtcreator/templates/wizards/plaincppapp-cmake/wizard.xml
 share/qtcreator/templates/wizards/plaincppapp/console.png
 share/qtcreator/templates/wizards/plaincppapp/main.cpp
 share/qtcreator/templates/wizards/plaincppapp/project.pro
@@ -794,46 +807,106 @@ share/qtcreator/translations/qtcreator_ru.qm
 share/qtcreator/translations/qtcreator_sl.qm
 share/qtcreator/translations/qtcreator_zh_CN.qm
 share/qtcreator/welcomescreen/develop.qml
+share/qtcreator/welcomescreen/dummydata/examplesModel.qml
+share/qtcreator/welcomescreen/dummydata/pagesModel.qml
+share/qtcreator/welcomescreen/dummydata/projectList.qml
+share/qtcreator/welcomescreen/dummydata/sessionList.qml
+share/qtcreator/welcomescreen/dummydata/tutorialsModel.qml
 share/qtcreator/welcomescreen/examples.qml
 share/qtcreator/welcomescreen/examples_fallback.xml
 share/qtcreator/welcomescreen/gettingstarted.qml
+share/qtcreator/welcomescreen/images_areaofinterest.xml
 share/qtcreator/welcomescreen/qtcreator_tutorials.xml
+share/qtcreator/welcomescreen/tutorials.qml
 share/qtcreator/welcomescreen/welcomescreen.qml
 share/qtcreator/welcomescreen/welcomescreen.qmlproject
-share/qtcreator/welcomescreen/widgets/Button.qml
-share/qtcreator/welcomescreen/widgets/Caption.qml
-share/qtcreator/welcomescreen/widgets/CheckBox.qml
-share/qtcreator/welcomescreen/widgets/ExampleBrowser.qml
-share/qtcreator/welcomescreen/widgets/ExampleDelegate.qml
-share/qtcreator/welcomescreen/widgets/ExampleGridView.qml
-share/qtcreator/welcomescreen/widgets/FallbackNewsModel.qml
-share/qtcreator/welcomescreen/widgets/FeaturedAndNewsListing.qml
+share/qtcreator/welcomescreen/widgets/CustomColors.qml
+share/qtcreator/welcomescreen/widgets/CustomFonts.qml
+share/qtcreator/welcomescreen/widgets/CustomTab.qml
+share/qtcreator/welcomescreen/widgets/CustomizedGridView.qml
+share/qtcreator/welcomescreen/widgets/Delegate.qml
 share/qtcreator/welcomescreen/widgets/Feedback.qml
-share/qtcreator/welcomescreen/widgets/HeaderItemView.qml
-share/qtcreator/welcomescreen/widgets/InsetText.qml
-share/qtcreator/welcomescreen/widgets/LineEdit.qml
+share/qtcreator/welcomescreen/widgets/GettingStartedItem.qml
+share/qtcreator/welcomescreen/widgets/LinkedText.qml
 share/qtcreator/welcomescreen/widgets/LinksBar.qml
-share/qtcreator/welcomescreen/widgets/NewsListing.qml
+share/qtcreator/welcomescreen/widgets/Logo.qml
+share/qtcreator/welcomescreen/widgets/PageCaption.qml
+share/qtcreator/welcomescreen/widgets/PageLoader.qml
+share/qtcreator/welcomescreen/widgets/ProjectItem.qml
 share/qtcreator/welcomescreen/widgets/RecentProjects.qml
-share/qtcreator/welcomescreen/widgets/RecentSessions.qml
-share/qtcreator/welcomescreen/widgets/SingleTab.qml
-share/qtcreator/welcomescreen/widgets/TabWidget.qml
+share/qtcreator/welcomescreen/widgets/SearchBar.qml
+share/qtcreator/welcomescreen/widgets/SessionItem.qml
+share/qtcreator/welcomescreen/widgets/Sessions.qml
+share/qtcreator/welcomescreen/widgets/ToolTip.qml
 share/qtcreator/welcomescreen/widgets/dummydata/context/ExampleDelegate.qml
 share/qtcreator/welcomescreen/widgets/dummydata/context/ExampleGridView.qml
 share/qtcreator/welcomescreen/widgets/dummydata/examplesModel.qml
 share/qtcreator/welcomescreen/widgets/dummydata/mockupTags.qml
 share/qtcreator/welcomescreen/widgets/dummydata/pagesModel.qml
 share/qtcreator/welcomescreen/widgets/dummydata/tabsModel.qml
-share/qtcreator/welcomescreen/widgets/qmldir
+share/qtcreator/welcomescreen/widgets/images/arrowBig.png
+share/qtcreator/welcomescreen/widgets/images/arrow_down.png
+share/qtcreator/welcomescreen/widgets/images/arrow_up.png
+share/qtcreator/welcomescreen/widgets/images/bullet.png
+share/qtcreator/welcomescreen/widgets/images/dropshadow.png
+share/qtcreator/welcomescreen/widgets/images/gettingStarted01.png
+share/qtcreator/welcomescreen/widgets/images/gettingStarted02.png
+share/qtcreator/welcomescreen/widgets/images/gettingStarted03.png
+share/qtcreator/welcomescreen/widgets/images/gettingStarted04.png
+share/qtcreator/welcomescreen/widgets/images/icons/adressbook.png
+share/qtcreator/welcomescreen/widgets/images/icons/buildrun.png
+share/qtcreator/welcomescreen/widgets/images/icons/clone.png
+share/qtcreator/welcomescreen/widgets/images/icons/communityIcon.png
+share/qtcreator/welcomescreen/widgets/images/icons/components.png
+share/qtcreator/welcomescreen/widgets/images/icons/createIcon.png
+share/qtcreator/welcomescreen/widgets/images/icons/ddays09.png
+share/qtcreator/welcomescreen/widgets/images/icons/ddays10.png
+share/qtcreator/welcomescreen/widgets/images/icons/ddays11.png
+share/qtcreator/welcomescreen/widgets/images/icons/delete.png
+share/qtcreator/welcomescreen/widgets/images/icons/developing_with_qt_creator.png
+share/qtcreator/welcomescreen/widgets/images/icons/feedbackIcon.png
+share/qtcreator/welcomescreen/widgets/images/icons/ico_community.png
+share/qtcreator/welcomescreen/widgets/images/icons/labsIcon.png
+share/qtcreator/welcomescreen/widgets/images/icons/openIcon.png
+share/qtcreator/welcomescreen/widgets/images/icons/qt_quick_1.png
+share/qtcreator/welcomescreen/widgets/images/icons/qt_quick_2.png
+share/qtcreator/welcomescreen/widgets/images/icons/qt_quick_3.png
+share/qtcreator/welcomescreen/widgets/images/icons/qt_sdk.png
+share/qtcreator/welcomescreen/widgets/images/icons/qtquick.png
+share/qtcreator/welcomescreen/widgets/images/icons/qwidget.png
+share/qtcreator/welcomescreen/widgets/images/icons/rename.png
+share/qtcreator/welcomescreen/widgets/images/icons/userguideIcon.png
+share/qtcreator/welcomescreen/widgets/images/icons/videoIcon.png
+share/qtcreator/welcomescreen/widgets/images/info.png
+share/qtcreator/welcomescreen/widgets/images/mockup/designer-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/desktop-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/draganddrop-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/itemview-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/layout-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/mainwindow-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/network-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/opengl-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/penguin.png
+share/qtcreator/welcomescreen/widgets/images/mockup/qtscript-examples.png
+share/qtcreator/welcomescreen/widgets/images/mockup/thread-examples.png
+share/qtcreator/welcomescreen/widgets/images/more.png
+share/qtcreator/welcomescreen/widgets/images/qtcreator.png
+share/qtcreator/welcomescreen/widgets/images/tab.png
+@dirrm share/qtcreator/welcomescreen/widgets/images/mockup
+@dirrm share/qtcreator/welcomescreen/widgets/images/icons
+@dirrm share/qtcreator/welcomescreen/widgets/images
 @dirrm share/qtcreator/welcomescreen/widgets/dummydata/context
 @dirrm share/qtcreator/welcomescreen/widgets/dummydata
 @dirrm share/qtcreator/welcomescreen/widgets
+@dirrm share/qtcreator/welcomescreen/dummydata
 @dirrm share/qtcreator/welcomescreen
 @dirrm share/qtcreator/translations
 @dirrm share/qtcreator/templates/wizards/scriptgeneratedproject
 @dirrm share/qtcreator/templates/wizards/qtcreatorplugin
 @dirrm share/qtcreator/templates/wizards/qml-extension
+@dirrm share/qtcreator/templates/wizards/plaincppapp-cmake
 @dirrm share/qtcreator/templates/wizards/plaincppapp
+@dirrm share/qtcreator/templates/wizards/plaincapp-cmake
 @dirrm share/qtcreator/templates/wizards/plaincapp
 @dirrm share/qtcreator/templates/wizards/listmodel
 @dirrm share/qtcreator/templates/wizards/helloworld

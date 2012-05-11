@@ -1,13 +1,12 @@
-### -*-mode: makefile-*-
 # New ports collection makefile for:	qtcreator
-# Date created:			  	Thu May  7 15:19:01 EDT 2009
+# Date created:			  	2009-05-07
 # Whom:					kris@pcbsd.org
 #
 # $FreeBSD$
 #
 
 PORTNAME=	qtcreator
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.qt.nokia.com/qtcreator/
 DISTNAME=	qt-creator-${PORTVERSION}-src
