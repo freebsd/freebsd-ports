@@ -1,0 +1,3 @@
+Hiera-json is a backend for Hiera that queries JSON data.
+
+WWW: https://github.com/puppetlabs/hiera-json
