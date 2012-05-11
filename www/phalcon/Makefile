@@ -7,13 +7,15 @@
 
 PORTNAME=	phalcon
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/c${PORTNAME}/tarball/master/
+DISTNAME=	${PORTNAME}-c${PORTNAME}-${GITVERSION}
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	Phalcon PHP Framework written in C-language
 
-GITVERSION=	bb24857
+GITVERSION=	c6df8a4
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${PORTNAME}-c${PORTNAME}-${GITVERSION}/release/
 
