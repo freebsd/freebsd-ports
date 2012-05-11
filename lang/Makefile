@@ -244,6 +244,7 @@
     SUBDIR += petite-chez
     SUBDIR += pfe
     SUBDIR += phantomjs
+    SUBDIR += pharo
     SUBDIR += phc
     SUBDIR += php-mode.el
     SUBDIR += php5
