@@ -7,6 +7,7 @@
 
 PORTNAME=	pandora_agent
 PORTVERSION=	${PANDORA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	koichiro@rworks.jp
