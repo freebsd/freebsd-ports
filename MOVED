@@ -3364,3 +3364,4 @@ www/php-dyn||2012-05-11|Has expired: php4 is EOLed
 security/pecl-hash||2012-05-11|Has expired: php4 is EOLed
 net/phpldapadmin098||2012-05-11|Has expired: php4 is EOLed
 graphics/jpgraph||2012-05-11|Removed
+games/netrek-COW3-bin|games/netrek-client-cow|2012-05-11|COW3-bin obsolete in favor of client-cow
