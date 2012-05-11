@@ -80,6 +80,7 @@
     SUBDIR += bloboats
     SUBDIR += block
     SUBDIR += blockade
+    SUBDIR += blockrage
     SUBDIR += blockout
     SUBDIR += blokish
     SUBDIR += bloodfrontier

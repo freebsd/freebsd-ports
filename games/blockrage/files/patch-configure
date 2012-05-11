@@ -1,0 +1,13 @@
+--- configure.orig	2005-10-24 21:47:16.000000000 +0200
++++ configure	2012-05-03 01:41:10.000000000 +0200
+@@ -39,8 +39,8 @@
+ #SOUND_OPT=-DNOSOUND
+ SOUND_OPT=
+ 
+-MYCC=gcc
+-MYCFLAGS='-s -O2 -Wall `sdl-config --cflags`'" $SOUND_OPT -DSYSCONFDIR=\\\"\${sysconfdir}/\${progname}\\\""
++MYCC=
++MYCFLAGS='-s `sdl-config --cflags`'" $SOUND_OPT -DSYSCONFDIR=\\\"\${sysconfdir}/\${progname}\\\""
+ 
+ if test -z "$CC" ; then
+   CC="$MYCC";
