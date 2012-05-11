@@ -24,7 +24,7 @@ LATEST_LINK=	subcommander2
 CONFLICTS=	subcommander-1.*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.b/b/g}
-USE_DOS2UNIX=	*.cpp
+USE_DOS2UNIX=	*.cpp *.h
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}/include --with-neon=${LOCALBASE} \
 			--with-openssl=${OPENSSLBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/qt4 ${PTHREAD_LIBS}
+MAKE_JOBS_SAFE=	yes
 
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/configure
