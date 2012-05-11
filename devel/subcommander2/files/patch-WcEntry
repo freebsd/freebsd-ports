@@ -1,0 +1,18 @@
+--- svn/WcEntry.h	2008-11-08 11:23:48.000000000 -0500
++++ svn/WcEntry.h	2012-05-11 17:46:20.000000000 -0400
+@@ -39,5 +39,5 @@
+   
+ public:
+-  WcEntry( svn_wc_entry_t* );
++  WcEntry(const svn_wc_entry_t*);
+   WcEntry( const WcEntry& src );
+ 
+--- svn/WcEntry.cpp	2008-11-08 11:23:48.000000000 -0500
++++ svn/WcEntry.cpp	2012-05-11 17:46:01.000000000 -0400
+@@ -21,5 +21,5 @@
+ }
+   
+-WcEntry::WcEntry( svn_wc_entry_t* entry )
++WcEntry::WcEntry(const svn_wc_entry_t* entry)
+ {
+   _name        = sc::String(entry->name);
