@@ -19,7 +19,7 @@ COMMENT=	Advanced, stable IRC daemon, used widely on EFnet ('testing' release)
 
 LICENSE=	GPLv2
 
-CONFLICTS=	ircd-ratbox-[0-9]*
+CONFLICTS=	ircd-ratbox-[0-9]* charybdis-[0-9]*
 
 USE_BZIP2=	yes
 #MAN8=		ircd.8
