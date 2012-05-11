@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pbi-manager
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
