@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miniupnpd
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
@@ -21,12 +21,13 @@ SUB_LIST=	UUID=${UUID}
 UUID!=		uuidgen
 FWNAME?=	pf
 PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd
+MAKE_JOBS_UNSAFE=yes
 
 MAN8=		miniupnpd.8
 
 USE_RC_SUBR=	miniupnpd.sh
 
-OPTIONS=	PF_ENABLE_FILTER_RULES		"Enable pf generation of filter rules" off \
+OPTIONS=	PF_ENABLE_FILTER_RULES		"Enable pf generation of filter rules" off
 
 .include <bsd.port.options.mk>
 .if defined(WITH_PF_ENABLE_FILTER_RULES)
