@@ -50,9 +50,7 @@ PHP_EXT_INC=	pcre spl
 DEFAULT_PHP_VER?=	5
 
 PHP_VER?=	${DEFAULT_PHP_VER}
-.if ${PHP_VER} == 4
-PHP_EXT_DIR=	20020429
-.elif ${PHP_VER}  == 52
+if ${PHP_VER}  == 52
 PHP_EXT_DIR=	20060613
 .else
 PHP_EXT_DIR=	20090626
@@ -247,8 +245,6 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba \
 		sockets sybase_ct sysvmsg sysvsem sysvshm \
 		tokenizer wddx xml xmlrpc yaz zip zlib
 # version specific components
-_USE_PHP_VER4=	${_USE_PHP_ALL} crack dbase dbx dio domxml filepro mcal mcve \
-		mhash ncurses oracle overload pfpro xslt yp
 _USE_PHP_VER5=	${_USE_PHP_ALL} dom filter mysqli pdo \
 		pdo_mysql pdo_pgsql pdo_sqlite phar \
 		simplexml soap spl sqlite sqlite3 tidy xmlreader xmlwriter xsl
@@ -338,12 +334,6 @@ xslt_DEPENDS=	textproc/php${PHP_VER}-xslt
 yaz_DEPENDS=	net/pecl-yaz
 yp_DEPENDS=	net/php${PHP_VER}-yp
 zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
-.if ${PHP_VER} == 4
-fileinfo_DEPENDS=	sysutils/pecl-fileinfo
-hash_DEPENDS=	security/pecl-hash
-json_DEPENDS=	devel/pecl-json
-zip_DEPENDS=	archivers/pecl-zip
-.else
 .if ${PHP_VER} == 52
 fileinfo_DEPENDS=	sysutils/pecl-fileinfo
 .else
@@ -352,7 +342,6 @@ fileinfo_DEPENDS=	sysutils/php${PHP_VER}-fileinfo
 hash_DEPENDS=	security/php${PHP_VER}-hash
 json_DEPENDS=	devel/php${PHP_VER}-json
 zip_DEPENDS=	archivers/php${PHP_VER}-zip
-.endif
 
 .	for extension in ${USE_PHP}
 .		if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
