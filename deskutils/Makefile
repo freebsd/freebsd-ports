@@ -36,6 +36,7 @@
     SUBDIR += cycle
     SUBDIR += dailystrips
     SUBDIR += deskbar-applet
+    SUBDIR += devd-notifier
     SUBDIR += displaycalibrator
     SUBDIR += dlume
     SUBDIR += docear
