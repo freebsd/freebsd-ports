@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -16,8 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library to make access to GnuPG easier
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL21
 
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
@@ -36,7 +35,6 @@ PORTDOCS=	AUTHORS ChangeLog COPYING COPYING.LESSER INSTALL \
 		NEWS README THANKS TODO
 
 OPTIONS=	GNUPG1 "Use GNUPG 1.x instead of GNUPG 2.x" off \
-		PTH "Build alternate lib with GNU portable threads" off \
 		UISERVER "Enable the GNUPG UI Server support" off
 
 .include <bsd.port.pre.mk>
@@ -59,14 +57,6 @@ CONFIGURE_ARGS+=--with-gpgsm=no
 .endif
 .endif
 
-.if defined(WITH_PTH)
-LIB_DEPENDS+=	pth:${PORTSDIR}/devel/pth
-PLIST_SUB+=	WITH_PTH=''
-.else
-CONFIGURE_ARGS+=--without-pth --without-pth-test
-PLIST_SUB+=	WITH_PTH='@comment '
-.endif
-
 .if defined(WITH_UISERVER)
 CONFIGURE_ARGS+=--enable-fd-passing
 .endif
@@ -78,7 +68,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 					${WRKSRC}/${CONFIGURE_SCRIPT} \
 					${WRKSRC}/src/Makefile.in \
-					${WRKSRC}/src/gpgme-config.in
+					${WRKSRC}/src/gpgme-config.in \
+					${WRKSRC}/tests/gpg/Makefile.in
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
 					${WRKSRC}/lang/cl/Makefile.in
 

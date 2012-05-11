@@ -3,10 +3,6 @@ include/gpgme/gpgme.h
 lib/common-lisp/gpgme/gpgme-package.lisp
 lib/common-lisp/gpgme/gpgme.asd
 lib/common-lisp/gpgme/gpgme.lisp
-%%WITH_PTH%%lib/libgpgme-pth.a
-%%WITH_PTH%%lib/libgpgme-pth.la
-%%WITH_PTH%%lib/libgpgme-pth.so
-%%WITH_PTH%%lib/libgpgme-pth.so.19
 lib/libgpgme-pthread.a
 lib/libgpgme-pthread.la
 lib/libgpgme-pthread.so
