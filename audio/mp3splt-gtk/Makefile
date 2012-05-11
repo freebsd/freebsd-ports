@@ -6,14 +6,13 @@
 
 PORTNAME=	mp3splt-gtk
 PORTVERSION=	0.5.7a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
 
-BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt \
 		mad.2:${PORTSDIR}/audio/libmad \
 		ogg.7:${PORTSDIR}/audio/libogg \
@@ -22,10 +21,11 @@ LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt \
 
 USE_AUTOTOOLS=	libltdl
 USE_GSTREAMER=	yes
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--enable-audacious --with-mp3splt=${LOCALBASE} --with-mp3splt-includes=${LOCALBASE}/include --with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest
+CONFIGURE_ARGS+=--disable-audacious --with-mp3splt=${LOCALBASE} --with-mp3splt-includes=${LOCALBASE}/include --with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest
 
 MAN1=	mp3splt-gtk.1
 
