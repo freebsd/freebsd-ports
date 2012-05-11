@@ -1,4 +1,0 @@
-lib/php/%%PHP_EXT_DIR%%/php_dyn.so
-%%PORTDOCS%%share/doc/php-dyn/README
-@dirrmtry lib/php/%%PHP_EXT_DIR%%
-%%PORTDOCS%%@dirrm share/doc/php-dyn

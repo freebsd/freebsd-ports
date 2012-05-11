@@ -236,7 +236,6 @@
     SUBDIR += pandorafms_console
     SUBDIR += pandorafms_server
     SUBDIR += pftabled
-    SUBDIR += php4-snmp
     SUBDIR += php5-snmp
     SUBDIR += php52-snmp
     SUBDIR += phpip

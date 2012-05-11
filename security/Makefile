@@ -646,7 +646,6 @@
     SUBDIR += pear-Text_Password
     SUBDIR += pecl-crack
     SUBDIR += pecl-gnupg
-    SUBDIR += pecl-hash
     SUBDIR += pecl-pam
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-tcpwrap
@@ -658,10 +657,6 @@
     SUBDIR += php-Auth_OpenID
     SUBDIR += php-Auth_OpenID2
     SUBDIR += php-suhosin
-    SUBDIR += php4-crack
-    SUBDIR += php4-mcrypt
-    SUBDIR += php4-mhash
-    SUBDIR += php4-openssl
     SUBDIR += php5-filter
     SUBDIR += php5-hash
     SUBDIR += php5-mcrypt

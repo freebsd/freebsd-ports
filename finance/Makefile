@@ -92,7 +92,6 @@
     SUBDIR += pear_Payment_DTA
     SUBDIR += pfpro
     SUBDIR += php-tclink
-    SUBDIR += php4-pfpro
     SUBDIR += prestashop
     SUBDIR += py-vatnumber
     SUBDIR += qhacc

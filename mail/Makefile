@@ -485,7 +485,6 @@
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
     SUBDIR += pgpsendmail
-    SUBDIR += php4-imap
     SUBDIR += php5-imap
     SUBDIR += php52-imap
     SUBDIR += phplist

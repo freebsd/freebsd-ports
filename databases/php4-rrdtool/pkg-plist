@@ -1,7 +1,0 @@
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc3p16.rrd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrd_create.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrd_graph.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrd_last.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rrd_update.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_fetch.php
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

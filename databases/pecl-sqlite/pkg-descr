@@ -1,5 +1,0 @@
-SQLite is a C library that implements an embeddable SQL database engine.
-Programs that link with the SQLite library can have SQL database access
-without running a separate RDBMS process.
-
-WWW: http://pecl.php.net/package/sqlite

@@ -1065,12 +1065,6 @@
     SUBDIR += pecl-yaml
     SUBDIR += perl2html
     SUBDIR += permute
-    SUBDIR += php4-ctype
-    SUBDIR += php4-domxml
-    SUBDIR += php4-pspell
-    SUBDIR += php4-wddx
-    SUBDIR += php4-xml
-    SUBDIR += php4-xslt
     SUBDIR += php5-ctype
     SUBDIR += php5-dom
     SUBDIR += php5-pspell
