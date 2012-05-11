@@ -1,0 +1,199 @@
+--- eeprom/decode-dimms.orig	2012-04-18 10:02:28.495892381 +0300
++++ eeprom/decode-dimms	2012-04-18 10:02:38.695897992 +0300
+@@ -41,9 +41,9 @@ use strict;
+ use POSIX qw(ceil);
+ use Fcntl qw(:DEFAULT :seek);
+ use vars qw($opt_html $opt_bodyonly $opt_side_by_side $opt_merge
+-	    $opt_igncheck $use_sysfs $use_hexdump $sbs_col_width
++	    $opt_igncheck $use_hexdump $sbs_col_width
+ 	    @vendors %decode_callback $revision @dimm $current %hexdump_cache);
+ 
+ use constant LITTLEENDIAN	=> "little-endian";
+ use constant BIGENDIAN		=> "big-endian";
+ 
+@@ -252,8 +252,6 @@ $revision =~ s/ \([^()]*\)//;
+  "Edgewater Computer Systems", "XMOS Semiconductor Ltd.", "GENUSION, Inc.", "Memory Corp NV",
+  "SiliconBlue Technologies", "Rambus Inc."]);
+ 
+-$use_sysfs = -d '/sys/bus';
+-
+ # We consider that no data was written to this area of the SPD EEPROM if
+ # all bytes read 0x00 or all bytes read 0xff
+ sub spd_written(@)
+@@ -525,16 +523,21 @@ sub sdram_voltage_interface_level($)
+ 	return ($_[0] < @levels) ? $levels[$_[0]] : "Undefined!";
+ }
+ 
+-# Common to SDR and DDR SDRAM
++# Common to SDR, DDR and DDR2 SDRAM
+ sub sdram_module_configuration_type($)
+ {
+-	my @types = (
+-		"No Parity",			# 0
+-		"Parity",			# 1
+-		"ECC",				# 2
+-	);
++	my $byte = $_[0] & 0x07;
++	my @edc;
++
++	return "No Parity" if $byte == 0;
+ 
+-	return ($_[0] < @types) ? $types[$_[0]] : "Undefined!";
++	# Data ECC includes Data Parity so don't print both
++	push @edc, "Data Parity" if ($byte & 0x03) == 0x01;
++	push @edc, "Data ECC" if ($byte & 0x02);
++	# New in DDR2 specification
++	push @edc, "Address/Command Parity" if ($byte & 0x04);
++
++	return join ", ", @edc;
+ }
+ 
+ # Parameter: EEPROM bytes 0-127 (using 3-62)
+@@ -1019,6 +1022,9 @@ sub decode_ddr2_sdram($)
+ 	printl("Voltage Interface Level",
+ 	       sdram_voltage_interface_level($bytes->[8]));
+ 
++	printl("Module Configuration Type",
++	       sdram_module_configuration_type($bytes->[11]));
++
+ 	printl("Refresh Rate", ddr2_refresh_rate($bytes->[12]));
+ 
+ 	my @burst;
+@@ -1557,6 +1563,26 @@ sub spd_sizes($)
+ 	}
+ }
+ 
++sub freebsd_readbyte ($$) {
++	my ($offset, $dimm_i) = @_;
++
++	my $command = sprintf('/usr/sbin/smbmsg -s %#02x -c %d -i 1 -F %%02x 2>/dev/null', $dimm_i, $offset);
++	my $output = `$command`;
++	chomp($output);
++	my $byte = hex($output);
++	return $byte;
++}
++
++sub freebsd_readword ($$) {
++	my ($offset, $dimm_i) = @_;
++
++	my $command = sprintf('/usr/sbin/smbmsg -s %#02x -c %d -w -i 2 -F %%04x 2>/dev/null', $dimm_i, $offset);
++	my $output = `$command`;
++	chomp($output);
++	my $word = hex($output);
++	return $word;
++}
++
+ # Read bytes from SPD-EEPROM
+ # Note: offset must be a multiple of 16!
+ sub readspd($$$)
+@@ -1566,22 +1592,14 @@ sub readspd($$$)
+ 	if ($use_hexdump) {
+ 		@bytes = read_hexdump($dimm_i);
+ 		return @bytes[$offset..($offset + $size - 1)];
+-	} elsif ($use_sysfs) {
+-		# Kernel 2.6 with sysfs
+-		sysopen(HANDLE, "$dimm_i/eeprom", O_RDONLY)
+-			or die "Cannot open $dimm_i/eeprom";
+-		binmode HANDLE;
+-		sysseek(HANDLE, $offset, SEEK_SET)
+-			or die "Cannot seek $dimm_i/eeprom";
+-		sysread(HANDLE, my $eeprom, $size)
+-			or die "Cannot read $dimm_i/eeprom";
+-		close HANDLE;
+-		@bytes = unpack("C*", $eeprom);
+ 	} else {
+-		# Kernel 2.4 with procfs
+-		for my $i (0 .. ($size-1)/16) {
+-			my $hexoff = sprintf('%02x', $offset + $i * 16);
+-			push @bytes, split(" ", `cat $dimm_i/$hexoff`);
++#		for my $i (0 .. ($size - 1)) {
++#			push (@bytes, freebsd_readbyte($offset + $i, $dimm_i));
++#		}
++		for my $i (0 .. (($size - 1) / 2)) {
++			my $word = freebsd_readword($offset + 2 * $i, $dimm_i);
++			push (@bytes, $word & 0xff);
++			push (@bytes, $word >> 8);
+ 		}
+ 	}
+ 	return @bytes;
+@@ -1710,60 +1728,20 @@ printh('Memory Serial Presence Detect De
+ Jean Delvare, Trent Piepho and others');
+ 
+ 
+-# From a sysfs device path and an attribute name, return the attribute
+-# value, or undef (stolen from sensors-detect)
+-sub sysfs_device_attribute
+-{
+-	my ($device, $attr) = @_;
+-	my $value;
+-
+-	open(local *FILE, "$device/$attr") or return "";
+-	$value = <FILE>;
+-	close(FILE);
+-	return unless defined $value;
+-
+-	chomp($value);
+-	return $value;
+-}
+-
+ sub get_dimm_list
+ {
+-	my (@dirs, $dir, $file, @files);
+-
+-	if ($use_sysfs) {
+-		@dirs = ('/sys/bus/i2c/drivers/eeprom', '/sys/bus/i2c/drivers/at24');
+-	} else {
+-		@dirs = ('/proc/sys/dev/sensors');
+-	}
+-
+-	foreach $dir (@dirs) {
+-		next unless opendir(local *DIR, $dir);
+-		while (defined($file = readdir(DIR))) {
+-			if ($use_sysfs) {
+-				# We look for I2C devices like 0-0050 or 2-0051
+-				next unless $file =~ /^\d+-[\da-f]+$/i;
+-				next unless -d "$dir/$file";
+-
+-				# Device name must be eeprom (driver eeprom)
+-				# or spd (driver at24)
+-				my $attr = sysfs_device_attribute("$dir/$file", "name");
+-				next unless defined $attr &&
+-					    ($attr eq "eeprom" || $attr eq "spd");
+-			} else {
+-				next unless $file =~ /^eeprom-/;
+-			}
+-			push @files, { eeprom => "$file",
+-				       file => "$dir/$file" };
+-		}
+-		close(DIR);
+-	}
+-
+-	if (@files) {
+-		return sort { $a->{file} cmp $b->{file} } @files;
+-	} elsif (! -d '/sys/module/eeprom') {
+-		print "No EEPROM found, are you sure the eeprom module is loaded?\n";
+-		exit;
++	my @dimms;
++	if (! -c '/dev/smb0') {
++        	print "SMBus device not found\n";
++	        exit;
++	}
++	for my $spd (0xA0 .. 0xAE) {
++		next if ($spd % 2 != 0);
++		my @test_bytes = readspd(0, 4, $spd);
++		next unless spd_written(@test_bytes);
++		push @dimms, { eeprom => sprintf('0x%02X', $spd), file => $spd };
+ 	}
++	return @dimms;
+ }
+ 
+ # @dimm is a list of hashes. There's one hash for each EEPROM we found.
+@@ -1954,7 +1932,7 @@ for $current (0 .. $#dimm) {
+ 		print "\n\n";
+ 	} else {
+ 		print "<b><u>" if $opt_html;
+-		printl2("\n\nDecoding EEPROM", $dimm[$current]->{file});
++		printl2("\n\nDecoding EEPROM", $dimm[$current]->{eeprom});
+ 		print "</u></b>" if $opt_html;
+ 	}
+ 	print "<table border=1>\n" if $opt_html;

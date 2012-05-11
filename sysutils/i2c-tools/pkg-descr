@@ -1,0 +1,7 @@
+The i2c-tools package contains a heterogeneous set of I2C tools for
+Linux: a bus probing tool, a chip dumper, register-level SMBus access
+helpers, EEPROM decoding scripts, EEPROM programming tools, and a python
+module for SMBus access.
+Only DIMM SPD decoding tool is ported at the moment.
+
+WWW:	http://www.lm-sensors.org/wiki/I2CTools
