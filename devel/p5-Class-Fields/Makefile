@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of modules to operate with class fields and members access
 
+DEPRECATED=	considered obsolete by upstream
+EXPIRATION_DATE=	2012-07-11
+
 BUILD_DEPENDS=	${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
 		${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-base
 RUN_DEPENDS:=	${BUILD_DEPENDS}
