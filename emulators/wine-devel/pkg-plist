@@ -1094,6 +1094,8 @@ lib/wine/fakedlls/mssign32.dll
 lib/wine/fakedlls/mssip32.dll
 lib/wine/fakedlls/mstask.dll
 lib/wine/fakedlls/msvcirt.dll
+lib/wine/fakedlls/msvcm80.dll
+lib/wine/fakedlls/msvcm90.dll
 lib/wine/fakedlls/msvcp100.dll
 lib/wine/fakedlls/msvcp60.dll
 lib/wine/fakedlls/msvcp70.dll
@@ -1320,6 +1322,7 @@ lib/wine/fakedlls/wldap32.dll
 lib/wine/fakedlls/wmi.dll
 lib/wine/fakedlls/wmic.exe
 lib/wine/fakedlls/wmiutils.dll
+lib/wine/fakedlls/wmvcore.dll
 lib/wine/fakedlls/wnaspi32.dll
 lib/wine/fakedlls/wordpad.exe
 lib/wine/fakedlls/wow32.dll
@@ -1327,6 +1330,7 @@ lib/wine/fakedlls/write.exe
 lib/wine/fakedlls/ws2_32.dll
 lib/wine/fakedlls/wscript.exe
 lib/wine/fakedlls/wshom.ocx
+lib/wine/fakedlls/wsnmp32.dll
 lib/wine/fakedlls/wsock32.dll
 lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
@@ -1604,6 +1608,8 @@ lib/wine/mssign32.dll.so
 lib/wine/mssip32.dll.so
 lib/wine/mstask.dll.so
 lib/wine/msvcirt.dll.so
+lib/wine/msvcm80.dll.so
+lib/wine/msvcm90.dll.so
 lib/wine/msvcp100.dll.so
 lib/wine/msvcp60.dll.so
 lib/wine/msvcp70.dll.so
@@ -1830,6 +1836,7 @@ lib/wine/wldap32.dll.so
 lib/wine/wmi.dll.so
 lib/wine/wmic.exe.so
 lib/wine/wmiutils.dll.so
+lib/wine/wmvcore.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so
 lib/wine/wow32.dll.so
@@ -1837,6 +1844,7 @@ lib/wine/write.exe.so
 lib/wine/ws2_32.dll.so
 lib/wine/wscript.exe.so
 lib/wine/wshom.ocx.so
+lib/wine/wsnmp32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
