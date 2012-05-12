@@ -30,7 +30,7 @@ NO_CDROM=	contains data under CC-by-NC-SA
 
 PORTDOCS=	AUTHORS
 
-PORTDCOUT=	ignore:0.5 # unplayable due to broken double jump
+PORTSCOUT=	ignore:0.5 # unplayable due to broken double jump
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|main.lua|${DATADIR}/&|' ${WRKSRC}/src/main.cpp
