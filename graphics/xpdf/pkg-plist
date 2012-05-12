@@ -1,10 +1,11 @@
-bin/pdffonts
-bin/pdfimages
-bin/pdfinfo
-bin/pdfdetach
-bin/pdftoppm
-bin/pdftops
-bin/pdftotext
+lib/xpdf/pdffonts
+lib/xpdf/pdfimages
+lib/xpdf/pdfinfo
+lib/xpdf/pdfdetach
+lib/xpdf/pdftoppm
+lib/xpdf/pdftops
+lib/xpdf/pdftotext
+%%X11%%lib/xpdf/xpdf
 %%X11%%bin/xpdf
 etc/xpdfrc
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
@@ -12,3 +13,4 @@ etc/xpdfrc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/hello.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/xpdf

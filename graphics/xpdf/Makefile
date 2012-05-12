@@ -18,15 +18,14 @@ COMMENT=	Display PDF files, and convert them to other formats
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-CONFLICTS=	poppler-utils-[0-9]*
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
-		--with-freetype2-includes="${LOCALBASE}/include/freetype2/"
+		--with-freetype2-includes="${LOCALBASE}/include/freetype2/" \
+		--bindir="${LOCALBASE}/lib/xpdf"
 
 OPTIONS=	LIBPAPER "Enable libpaper"      off     \
 		TYPE1	"Ghostscript type1 fonts" on \
@@ -80,6 +79,9 @@ post-install:
 .for file in ANNOUNCE CHANGES README misc/hello.pdf
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.endif
+.if !defined(WITHOUT_X11)
+	${LN} -sf ${LOCALBASE}/lib/xpdf/xpdf ${LOCALBASE}/bin/xpdf 
 .endif
 
 .include <bsd.port.mk>
