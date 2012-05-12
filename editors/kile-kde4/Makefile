@@ -17,8 +17,6 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		identify:${PORTSDIR}/graphics/ImageMagick \
 		${KDE4_PREFIX}/lib/kde4/katepart.so:${PORTSDIR}/editors/kate
 
-BROKEN=		does not build
-
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
