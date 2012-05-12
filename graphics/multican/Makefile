@@ -10,12 +10,12 @@ DISTVERSION=	0.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote control utility for Canon DSLR cameras
 
 LICENSE=	GPLv2
 
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC				# required at least on amd64
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/multican lib/libmultican.so.0 lib/libmultican.so \
