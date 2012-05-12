@@ -9,7 +9,8 @@ PORTNAME=	widelands
 DISTVERSION=	build16
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://launchpadlibrarian.net/69520494/
+MASTER_SITES=	http://launchpadlibrarian.net/69520494/ \
+		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
