@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	backports
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	bryan@shatow.net
+MAINTAINER=	ruby@freebsd.org
 COMMENT=	Ruby 1.9 backports for 1.8
 
 LICENSE=	MIT
