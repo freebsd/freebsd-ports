@@ -26,6 +26,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 LATEST_LINK=	${PORTNAME}07
 
+PORTSCOUT=	limit:^0\.7\.
+
 USE_GMAKE=	yes
 USE_OPENAL=	yes
 USE_SDL=	sdl mixer
