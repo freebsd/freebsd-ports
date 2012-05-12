@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120511:
+  AFFECTS: users of graphics/xpdf
+  AUTHOR: cy@FreeBSD.org
+
+  In order to allow graphics/xpdf and graphics/poppler-utils to coexist,
+  graphics/xpdf binaries have been moved from ${LOCALBASE}/bin to
+  ${LOCALBASE}/lib/xpdf. The symlink ${LOCALBASE}/bin/xpdf points to
+  ${LOCALBASE}/lib/xpdf/xpdf. However the other utilities installed by
+  the xpdf port conflict with poppler-utils, no symlinks are maintained.
+  Applicaions and scripts which use the pdf* utilities provided by
+  graphics/xpdf must reference them using their new location, specify
+  ${LOCALBASE}/lib/xpdf in $PATH, or use the same utilities provided by
+  graphics/poppler-utils.
+
 20120510:
   AFFECTS: users of devel/gitolite
   AUTHOR: milki@rescomp.berkeley.edu
