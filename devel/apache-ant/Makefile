@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		LOCAL/hq:man
@@ -18,9 +17,9 @@ EXTRACT_ONLY=	${ANT_DISTFILE}
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
-RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
-
 LICENSE=	AL2
+
+RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
 ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz
@@ -35,6 +34,8 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 READMES=	LICENSE README WHATSNEW
 
 .if !defined(NOPORTDOCS)
+DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.tar.bz2:doc
+MASTER_SITES+=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/manual/:doc,} \
 PORTDOCS=	*
 .endif
 
@@ -60,8 +61,7 @@ do-install:
 
 .for d in etc lib
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
-	@cd ${WRKSRC} && ${FIND} ${d} -type d -exec ${MKDIR} ${DATADIR}/\{} \;
-	@cd ${WRKSRC} && ${FIND} ${d} -type f -exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
@@ -78,8 +78,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Installing documentation files..."
-	@cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \;
-	@cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} manual ${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
