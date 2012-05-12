@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	w_scan
-PORTVERSION=	20111203
+PORTVERSION=	20120415
 CATEGORIES=	multimedia
 MASTER_SITES=	http://wirbel.htpc-forum.de/w_scan/
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Perform frequency scans for DVB and ATSC transmissions
 
-BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 
 OPTIONS=	LINUX "Install Linux binary too (linux-w_scan)" off
 
@@ -29,6 +29,7 @@ PORTDOCS=	COPYING ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		w_scan.1
 MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}
 
 .if defined(WITH_LINUX)
 USE_LINUX=	yes
