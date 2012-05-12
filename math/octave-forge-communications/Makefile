@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-communications
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -21,13 +20,9 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 MAKE_ENV+=	MKOCTFILE=mkoctfile
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
-RUN_DEPENDS+=	${TARBALLS_DIR}/image.tar.gz:${PORTSDIR}/math/octave-forge-image
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
-post-patch:
-	${REINPLACE_CMD} -e s/LU/galoisLU/g ${WRKSRC}/*
-
 post-build:
 	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
