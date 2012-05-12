@@ -18,6 +18,8 @@ COMMENT=	New Python implementation targeting the .NET
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
+BROKEN=		does not build
+
 WRKSRC=	${WRKDIR}/IronPython-${PORTVERSION}
 USE_ZIP=	yes
 USE_GMAKE=	yes
