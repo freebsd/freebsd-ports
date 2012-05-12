@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	net-ldap
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby LDAP support library with most client features
 
 USE_RUBY=	yes
