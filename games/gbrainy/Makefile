@@ -21,6 +21,8 @@ BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		does not build
+
 USE_GNOME=	desktopfileutils gnomehack gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
