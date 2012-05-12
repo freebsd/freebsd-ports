@@ -21,9 +21,7 @@ NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.if defined(PACKAGE_BUILDING)
-IGNORE=		ignore on pointyhat
-.endif
+MANUAL_PACKAGE_BUILD=huge
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/bin ${WRKSRC}/I* ${WRKSRC}/.vsinstall.sh.swp
