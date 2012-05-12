@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120512:
+  AFFECTS: users of textproc/p5-XML-SAX
+  AUTHOR: crees@FreeBSD.org
+
+  p5-XML-SAX (X-S) was split into p5-XML-SAX-Base (X-S-B) and p5-XML-SAX for
+  version 0.99.  Since X-S-B now installs some files formerly installed by X-S
+  the package for X-S must be deinstalled before updating X-S.
+
+  # pkg_delete -fx p5-XML-SAX
+  # portmaster textproc/p5-XML-SAX
+
+  (users of pkgng can substitute pkg_delete with pkg delete)
+
 20120511:
   AFFECTS: users of graphics/xpdf
   AUTHOR: cy@FreeBSD.org
