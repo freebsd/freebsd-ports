@@ -15,17 +15,23 @@ sbin/portsclean
 sbin/portsdb
 sbin/portupgrade
 sbin/portversion
-%%RUBY_SITELIBDIR%%/pkg.rb
-%%RUBY_SITELIBDIR%%/pkgdb.rb
-%%RUBY_SITELIBDIR%%/pkgdbtools.rb
-%%RUBY_SITELIBDIR%%/pkginfo.rb
-%%RUBY_SITELIBDIR%%/pkgmisc.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkg.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkgdb.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkgdbtools.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkginfo.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkgmisc.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkgtools.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkgtsort.rb
+%%RUBY_SITELIBDIR%%/pkgtools/pkgversion.rb
+%%RUBY_SITELIBDIR%%/pkgtools/portinfo.rb
+%%RUBY_SITELIBDIR%%/pkgtools/ports.rb
+%%RUBY_SITELIBDIR%%/pkgtools/portsdb.rb
+%%RUBY_SITELIBDIR%%/pkgtools/revision.rb
 %%RUBY_SITELIBDIR%%/pkgtools.rb
-%%RUBY_SITELIBDIR%%/pkgtsort.rb
-%%RUBY_SITELIBDIR%%/pkgversion.rb
-%%RUBY_SITELIBDIR%%/portinfo.rb
-%%RUBY_SITELIBDIR%%/ports.rb
-%%RUBY_SITELIBDIR%%/portsdb.rb
+@dirrm %%RUBY_SITELIBDIR%%/pkgtools
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby
 @unexec if cmp -s %D/etc/pkgtools.conf %D/etc/pkgtools.conf.sample; then rm -f %D/etc/pkgtools.conf; fi
 etc/pkgtools.conf.sample
 @exec [ -f %B/pkgtools.conf ] || cp %B/%f %B/pkgtools.conf
