@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.9.0
-PORTREVISION=	10
+PORTVERSION=	0.9.2
 CATEGORIES=	security
-MASTER_SITES=	http://wald.intevation.org/frs/download.php/603/
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	gpa
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A graphical frontend for the GNU Privacy Guard
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gpgme.19:${PORTSDIR}/security/gpgme
@@ -23,13 +25,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
-		GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"
-CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	GPGKEYS_LDAP="${LOCALBASE}/libexec/gpg2keys_ldap"
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+MAN1=		gpa.1
 
 OPTIONS=	NLS "Native language support" on
 
