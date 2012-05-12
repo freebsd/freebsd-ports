@@ -64,6 +64,10 @@ Note:  Please add new entries to the beginning of this file.
 	<name>php53</name>
 	<range><lt>5.3.13</lt></range>
       </package>
+      <package>
+	<name>php52</name>
+	<range><lt>5.2.17_9</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
