@@ -3365,3 +3365,9 @@ security/pecl-hash||2012-05-11|Has expired: php4 is EOLed
 net/phpldapadmin098||2012-05-11|Has expired: php4 is EOLed
 graphics/jpgraph||2012-05-11|Removed
 games/netrek-COW3-bin|games/netrek-client-cow|2012-05-11|COW3-bin obsolete in favor of client-cow
+www/firefox-sync|www/firefox-esr|2012-05-12|Integrated in newer version of Firefox
+www/firefox36|www/firefox-esr|2012-05-12|Upstream support dropped
+www/firefox36-i18n|www/firefox-esr-i18n|2012-05-12|Upstream support dropped
+mail/enigmail-thunderbird3|mail/enigmail-thunderbird-esr|2012-05-12|Depends on obsolete Thunderbird 3.1
+mail/thunderbird3|mail/thunderbird-esr|2012-05-12|Upstream support dropped
+mail/thunderbird3-i18n|mail/thunderbird-esr-i18n|2012-05-12|Upstream support dropped
