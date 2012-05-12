@@ -1,4 +1,4 @@
-games/netrek-client-cow
+bin/netrek-client-cow
 share/applications/netrek-client-cow.desktop
 share/pixmaps/netrek-client-cow/Fed/AS.png
 share/pixmaps/netrek-client-cow/Fed/AS0.png
@@ -322,6 +322,4 @@ share/pixmaps/netrek-client-cow/ss/scrshot9.png
 @dirrm share/pixmaps/netrek-client-cow/Rom
 @dirrm share/pixmaps/netrek-client-cow/ss
 @dirrm share/pixmaps/netrek-client-cow
-@dirrmtry games
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
