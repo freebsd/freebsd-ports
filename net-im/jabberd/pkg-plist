@@ -38,6 +38,9 @@ etc/jabberd/templates/roster.xml.dist
 %%SUB_PGSQL%%lib/jabberd/authreg_pgsql.so
 %%SUB_SQLITE%%lib/jabberd/authreg_sqlite.la
 %%SUB_SQLITE%%lib/jabberd/authreg_sqlite.so
+lib/jabberd/libstorage.la
+lib/jabberd/libstorage.so
+lib/jabberd/libstorage.so.0
 lib/jabberd/mod_active.la
 lib/jabberd/mod_active.so
 lib/jabberd/mod_active.so.0
