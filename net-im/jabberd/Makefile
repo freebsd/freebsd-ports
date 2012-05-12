@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTVERSION=	2.2.16
 CATEGORIES=	net-im
-MASTER_SITES=	http://codex.xiaoka.com/pub/jabberd2/releases/
+MASTER_SITES=	http://cloud.github.com/downloads/Jabberd2/jabberd2/
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	mm@FreeBSD.org
@@ -41,11 +40,11 @@ USE_PERL5_RUN=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	jabberd
-USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
 		--enable-ssl --enable-mio=poll \
+		--disable-tests \
 		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
 		--with-extra-library-path="${LOCALBASE}/lib ${ELP}"
 
