@@ -69,7 +69,7 @@ UPDATE_VERSION=	32
 
 # do not depend on devel/apache-ant to avoid circular dependency, but
 # use .tar.bz2 distfile to avoid duplicated downloads
-ANTVERSION=	1.8.2
+ANTVERSION=	1.8.3
 ANTFILE=	apache-ant-${ANTVERSION}-bin.tar.bz2
 
 # rely on bsdtar ability to extract .gz, .bz2 and .zip archives
