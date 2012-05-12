@@ -26,7 +26,8 @@ MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" \
 		DP_PRELOAD_DEPENDENCIES=yes \
 		CFLAGS_LIBJPEG="-I${LOCALBASE}/include -DLINK_TO_LIBJPEG" \
-		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
+		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops" \
+		STRIP="${STRIP_CMD}"
 MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	#
 BINARIES=	#

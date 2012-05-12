@@ -17,19 +17,22 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		jpeg.11:${PORTSDIR}/graphics/jpeg
+
 LICENSE=	GPLv2
 
-# Package size below is for default set of OPTIONS
-NO_PACKAGE=	Package will be 942MB, set FORCE_PACKAGE if you really want it
+MANUAL_PACKAGE_BUILD=   huge
 
 USE_ZIP=	yes
-
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
 MAKEFILE=	BSDmakefile
 MAKE_ARGS=	DP_FS_BASEDIR="${DATADIR}" CC="${CC}" \
 		DP_PRELOAD_DEPENDENCIES=yes DP_LINK_TO_LIBJPEG=yes \
 		CFLAGS_LIBJPEG="-I${LOCALBASE}/include" \
-		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
+		OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops" \
+		STRIP="${STRIP_CMD}"
+MAKE_JOBS_UNSAFE=yes
 ALL_TARGET=	#
 
 OPTIONS=	CLIENT		"Build GLX client"		on \
@@ -50,8 +53,6 @@ PLIST_SUB+=	MAPPACK=""
 PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
 .if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug \
 		png.6:${PORTSDIR}/graphics/png \
