@@ -10,7 +10,7 @@ DISTVERSION=	0.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Relase	# yes, this is not a typo (here)
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application for capturing images to generate timelapse videos
 
 LICENSE=	GPLv2
@@ -22,6 +22,6 @@ CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 USE_WX=		2.8+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/gtimelapse
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>

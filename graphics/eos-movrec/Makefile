@@ -10,7 +10,7 @@ DISTVERSION=	0.3.1_beta
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.3_beta
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to capture short movies with Canon DSLR camera
 
 LICENSE=	GPLv2
@@ -28,6 +28,6 @@ DISTVERSIONSUFFIX=	-src
 PLIST_FILES=	bin/eos_movrec
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,GLIBC,FreeBSD,' ${WRKSRC}/os_api.h
+	@${REINPLACE_CMD} -e 's,GLIBC,${OPSYS},' ${WRKSRC}/os_api.h
 
 .include <bsd.port.mk>
