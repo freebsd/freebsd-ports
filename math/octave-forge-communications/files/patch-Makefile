@@ -1,0 +1,12 @@
+--- Makefile-orig	2012-05-12 18:39:44.000000000 +0000
++++ Makefile	2012-05-12 18:40:33.000000000 +0000
+@@ -29,6 +29,9 @@
+ 
+ $(GALOISOBJECTS): $(GALOISHEADERS)
+ 
++%.oct: %.o
++	$(MKOCTFILE) $(MOFLAGS) $(@:.oct=.o) -o $@
++
+ %.o:%.cc
+ 	$(MKOCTFILE) $(MOFLAGS) $(DEFINES) -c $< 
+ 
