@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	postfix-policyd-spf-python
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0
 CATEGORIES=	mail python
-MASTER_SITES=	http://launchpad.net/pypolicyd-spf/0.8/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/pypolicyd-spf/${PORTVERSION}/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pypolicyd-spf-${PORTVERSION}
 
@@ -30,7 +30,7 @@ MAN5=		policyd-spf.conf.5 \
 		policyd-spf.peruser.5
 
 PORTDOCS=	CHANGES \
-		LICENSE \
+		COPYING \
 		README \
 		README.per_user_whitelisting \
 		TODO \
@@ -40,6 +40,9 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+
+post-patch:
+	@${REINPLACE_CMD} -e '\/etc/s|/etc|etc|' ${WRKSRC}/setup.py
 
 do-install:
 	@# Install data to an unused directory to ensure it doesn't pollute the system
