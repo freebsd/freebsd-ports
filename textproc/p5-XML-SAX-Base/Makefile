@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base class SAX Drivers and Filters
 
+CONFLICTS=	p5-XML-SAX-0.[0-8]* p5-XML-SAX-0.9[0-8]*
+
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::SAX::Base.3 \
