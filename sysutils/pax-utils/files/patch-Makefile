@@ -1,30 +1,11 @@
---- ./Makefile.orig	2012-01-24 00:49:40.000000000 +0100
-+++ ./Makefile	2012-02-04 04:30:30.000000000 +0100
-@@ -24,7 +24,7 @@
- LDFLAGS   +=
- LIBS      :=
- DESTDIR    =
--PREFIX    := $(DESTDIR)/usr
-+#PREFIX    := $(DESTDIR)/usr
- STRIP     := strip
- MKDIR     := mkdir -p
- CP        := cp
-@@ -100,15 +100,15 @@
- 	$(STRIP) --strip-unneeded $(TARGETS)
- 
- install: all
--	$(MKDIR) $(PREFIX)/bin/ $(PREFIX)/share/man/man1/
-+	$(MKDIR) $(PREFIX)/bin/ $(MANPREFIX)/share/man/man1/
+--- ./Makefile.orig	2012-05-12 19:01:03.000000000 +0200
++++ ./Makefile	2012-05-12 19:03:03.000000000 +0200
+@@ -107,7 +107,7 @@
  	for sh in *.sh ; do $(INS_EXE) $$sh $(PREFIX)/bin/$${sh%.sh} || exit $$? ; done
  	$(INS_EXE) $(TARGETS) $(PREFIX)/bin/
- ifeq ($(S),)
- 	$(MKDIR) $(PREFIX)/share/doc/pax-utils/
- 	$(CP) README BUGS TODO $(PREFIX)/share/doc/pax-utils/
--	-$(INS_DATA) $(MPAGES) $(PREFIX)/share/man/man1/
-+	-$(INS_DATA) $(MPAGES) $(MANPREFIX)/share/man/man1/
- else
--	$(INS_DATA) $(MPAGES) $(PREFIX)/share/man/man1/
-+	$(INS_DATA) $(MPAGES) $(MANPREFIX)/share/man/man1/
- endif
+ 	$(INS_DATA) README BUGS TODO $(PKGDOCDIR)/
+-	$(INS_DATA) $(MPAGES) $(MANDIR)/man1/
++	$(INS_DATA) $(MPAGES) $(MANPREFIX)/man1/
  
- dist:
+ PN = pax-utils
+ P = $(PN)-$(PV)

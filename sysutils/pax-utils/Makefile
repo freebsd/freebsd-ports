@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	pax-utils
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		http://dev.gentoo.org/~vapier/dist/
+		http://dev.gentoo.org/~vapier/dist/ \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,sbz,}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	sbz@FreeBSD.org
