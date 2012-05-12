@@ -117,7 +117,6 @@
     SUBDIR += enigmail-seamonkey
     SUBDIR += enigmail-thunderbird
     SUBDIR += enigmail-thunderbird-esr
-    SUBDIR += enigmail-thunderbird3
     SUBDIR += enma
     SUBDIR += eps
     SUBDIR += epstools
@@ -720,8 +719,6 @@
     SUBDIR += thunderbird-esr
     SUBDIR += thunderbird-esr-i18n
     SUBDIR += thunderbird-i18n
-    SUBDIR += thunderbird3
-    SUBDIR += thunderbird3-i18n
     SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda

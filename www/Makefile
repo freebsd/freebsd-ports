@@ -209,9 +209,6 @@
     SUBDIR += firefox-esr-i18n
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
-    SUBDIR += firefox-sync
-    SUBDIR += firefox36
-    SUBDIR += firefox36-i18n
     SUBDIR += flat-frog
     SUBDIR += flickcurl
     SUBDIR += flood
