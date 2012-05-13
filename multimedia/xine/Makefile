@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
@@ -100,7 +100,7 @@ LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
-CONFIGURE_ARGS+=	--without-caca --disable-cacatest
+CONFIGURE_ARGS+=	--without-caca
 .endif
 
 .if defined(WITH_AALIB)
