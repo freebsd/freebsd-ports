@@ -29,6 +29,9 @@ MAKE_ARGS=	CONFIGURE_ENV=${CONFIGURE_ENV:Q} \
 		CONFIGURE_ARGS=${CONFIGURE_ARGS:Q}
 
 post-extract:
-	(cd ${WRKSRC};  ${TAR} zxvpf libgfx-1.0.1.tar.gz)
+	@(cd ${WRKSRC};  ${TAR} zxpf libgfx-1.0.1.tar.gz)
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|fltk|ignored-&|' ${WRKSRC}/libgfx/configure
 
 .include <bsd.port.mk>
