@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/
 DISTNAME=	qca-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform crypto API for QT
 
 USE_BZIP2=	yes
