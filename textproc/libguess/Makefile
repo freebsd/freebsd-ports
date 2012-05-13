@@ -7,7 +7,7 @@
 
 PORTNAME=	libguess
 PORTVERSION=	1.1
-CATEGORIES=	devel textproc
+CATEGORIES=	textproc devel
 MASTER_SITES=	http://distfiles.atheme.org/
 
 MAINTAINER=	william88@gmail.com
