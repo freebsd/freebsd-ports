@@ -6,9 +6,9 @@ Python.  The design goals were:
 - To make the templating language as similar to Python as possible, in both
   syntax and semantics.  The aim is to make as many of the skills and
   structural techniques used in writing regular Python code applicable to Web
-  applications built using Quixote.                   
+  applications built using Quixote
 - No magic.  When it's not obvious what to do in a certain case, Quixote
-  refuses to guess.                                  
+  refuses to guess
 
 Quixote works by using a Python package to store all the code and HTML for a
 Web-based application.  There's a simple framework for publishing code and
@@ -18,4 +18,4 @@ smaller, simpler version of Zope, specialized for your application.
 
 See also: http://www.amk.ca/python/writing/mx-architecture/
 
-WWW:      http://www.mems-exchange.org/software/quixote/
+WWW:	http://quixote.ca/
