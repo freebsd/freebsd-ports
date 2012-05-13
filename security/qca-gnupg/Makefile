@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/plugins/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QCA GnuPG plugin
 
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
