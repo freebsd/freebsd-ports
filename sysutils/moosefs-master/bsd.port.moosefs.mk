@@ -1,6 +1,6 @@
-PORTVERSION=	1.6.24
+PORTVERSION=	1.6.25
 PORTREVISION?=	0
-MASTER_SITES=	http://moosefs.org/tl_files/mfscode/ \
+MASTER_SITES=	http://www.moosefs.org/tl_files/mfscode/ \
 		http://ports.quxingwen.com/dist/mfs/
 
 DISTNAME=	mfs-${PORTVERSION}
