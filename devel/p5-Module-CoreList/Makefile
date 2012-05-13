@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.61
+PORTVERSION=	2.65
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	See what modules shipped with versions of perl
 
 PERL_CONFIGURE=	yes
