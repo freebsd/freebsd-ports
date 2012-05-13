@@ -24,7 +24,7 @@ include/libkgoogle/services/tasks.h
 include/libkgoogle/ui/accountscombo.h
 lib/libkgoogle.so
 lib/libkgoogle.so.0
-lib/libkgoogle.so.0.3.0
+lib/libkgoogle.so.0.3.1
 libdata/pkgconfig/libkgoogle.pc
 share/akonadi/agents/googlecalendarresource.desktop
 share/akonadi/agents/googlecontactsresource.desktop
