@@ -26,6 +26,8 @@ ALL_TARGET=	test
 
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 PLIST_SUB=	SOVERSION=${SOVERSION}
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 # chase graphics/jpeg
 SOVERSION=	11
@@ -36,6 +38,23 @@ OPTIONS+=	PIC "Static library with PIC (required for VirtualGL)" off
 
 .if defined(WITH_PIC)
 CONFIGURE_ARGS+=--with-pic
+.endif
+
+post-patch:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/^install-data-am/s,install-dist_docDATA,,' \
+		${WRKSRC}/Makefile.in
+.else
+	${REINPLACE_CMD} -e '/^docdir/s,=.*,= ${DOCSDIR},' \
+		${WRKSRC}/Makefile.in
+.endif
+
+.if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e '/^install-data-am/s,install-dist_exampleDATA,,' \
+		${WRKSRC}/Makefile.in
+.else
+	${REINPLACE_CMD} -e '/^exampledir/s,=.*,= ${EXAMPLESDIR},' \
+		${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
