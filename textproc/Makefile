@@ -359,6 +359,7 @@
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libexttextcat
+    SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += liblinebreak
     SUBDIR += liblingoteach
