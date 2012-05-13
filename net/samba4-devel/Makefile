@@ -16,6 +16,8 @@ DISTNAME=		${SAMBA_DISTNAME}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
+BROKEN=			does not configure
+
 CONFLICTS?=		ldb-1.*
 
 SAMBA_PORTNAME=		samba4
