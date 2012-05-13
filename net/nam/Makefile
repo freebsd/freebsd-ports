@@ -18,6 +18,8 @@ COMMENT=	Animation tool for network simulation traces
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 LIB_DEPENDS=	otcl.1:${PORTSDIR}/lang/otcl
 
+BROKEN=		does not configure
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	xmu
