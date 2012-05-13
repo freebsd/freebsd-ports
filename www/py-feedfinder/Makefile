@@ -14,7 +14,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra-liberal feed finder
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/feedfinder.py \
+		%%PYTHON_SITELIBDIR%%/feedfinder.pyc \
+		%%PYTHON_SITELIBDIR%%/feedfinder.pyo
 
 .include <bsd.port.mk>
