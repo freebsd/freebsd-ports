@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.6.5
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -34,11 +35,12 @@ DOCS=		CHANGES LICENSE README.TXT modsecurity.conf-minimal
 DOCSDIR=	${PREFIX}/share/doc/${MODULENAME}
 SUB_FILES+=	mod_security2.conf
 SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
-PLIST_FILES+=	${APACHEMODDIR}/mod_security2.so
+PLIST_FILES=	etc/modsecurity.conf-example \
+		${APACHEMODDIR}/mod_security2.so \
+		bin/rules-updater.pl \
+		lib/mod_security2.so
 OPTIONS=	LUA "Embedded Lua language support" off \
 		MLOGC "Build ModSecurity Log Collector" off
-
-PLIST_FILES=	etc/modsecurity.conf-example
 
 .include <bsd.port.pre.mk>
 
