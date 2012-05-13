@@ -35,7 +35,8 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 OPTIONS=	MINIMAL "Build with minmal dependencies" Off \
-		DEBUG "Build debug version" Off
+		DEBUG "Build debug version" Off \
+		UARTLIRC "Install serial LIRC driver" Off
 
 USE_RC_SUBR=	lircd.sh
 PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
@@ -61,6 +62,10 @@ CONFIGURE_ARGS+=	--with-driver=dvico
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITH_UARTLIRC)
+RUN_DEPENDS+=		uartlirc>=0.3:${PORTSDIR}/comms/uartlirc
 .endif
 
 MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
