@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
 
+BROKEN=		does not patch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
