@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:    wine
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
@@ -72,6 +71,8 @@ OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
 		WINEMAKER "Fully support winemaker (requires Perl)"	Off
 
 PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
+
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
