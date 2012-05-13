@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	akonadi-google
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.progdan.cz/wp-content/uploads/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Akonadi resources for accessing Google services
