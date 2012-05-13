@@ -15,9 +15,9 @@ DISTNAME=	Webware-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A versatile web application server written in Python
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime:${PORTSDIR}/lang/py-mx-base
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 NO_BUILD=	yes
 
 WEBWARE_USER?=	webkit

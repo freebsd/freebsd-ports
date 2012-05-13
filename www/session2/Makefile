@@ -16,7 +16,7 @@ DISTNAME=	session2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quixote session manager with persistence support
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.6
 
@@ -30,7 +30,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if defined(WITH_POSTGRESQL)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psycopg
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg>0:${PORTSDIR}/databases/py-psycopg
 .endif
 
 post-install:
