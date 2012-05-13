@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-DISTVERSION=	2.0.4
+DISTVERSION=	2.0.5
 CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${DISTVERSION:C/-r.*//}/
 
@@ -27,6 +27,7 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS+=	-Dkst_install_prefix=${PREFIX}
 
 MAN1=		kst2.1
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 OPTIONS=	FITS "Support for data in FITS format" off \
 		NETCDF "Support for data in NetCDF format" off
