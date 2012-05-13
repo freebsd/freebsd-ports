@@ -26,6 +26,9 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		tag:${PORTSDIR}/audio/taglib \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
+DEPRECATED=	MusicBrainz RDF webservice no longer functions
+EXPIRATION_DATE=	2012-05-30
+
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
