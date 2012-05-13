@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lth@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Twitter/IRC gateway
 
 RUN_DEPENDS=	p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
