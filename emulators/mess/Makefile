@@ -64,6 +64,7 @@ post-patch:
 		's|^BUILD_EXPAT|# BUILD_EXPAT| ; \
 		 s|^BUILD_ZLIB|# BUILD_ZLIB| ; \
 		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
+		 /LDFLAGS/s|-s|| ; \
 		 s| = @gcc| := $$(CC)| ; \
 		 s| = @g++| := $$(CXX)| ; \
 		 s|^FULLNAME =.*|FULLNAME = $$(NAME)|' ${WRKSRC}/makefile
