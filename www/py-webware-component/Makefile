@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}webware-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webware servlet component extension
 
-RUN_DEPENDS=	${LOCALBASE}/share/webware/__init__.py:${PORTSDIR}/www/py-webware
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webware>0:${PORTSDIR}/www/py-webware
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 
 do-build:
 	@${ECHO_MSG} -n ">> Compiling ..."
