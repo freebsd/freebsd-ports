@@ -1,5 +1,7 @@
 @stopdaemon smokeping
+bin/smokeinfo
 bin/smokeping
+bin/smokeping_cgi
 bin/tSmoke
 @unexec if cmp -s %D/etc/smokeping/basepage.html %D/etc/smokeping/basepage.html.dist; then rm -f %D/etc/smokeping/basepage.html; fi
 etc/smokeping/basepage.html.dist
@@ -13,96 +15,12 @@ etc/smokeping/smokemail.dist
 @unexec if cmp -s %D/etc/smokeping/tmail %D/etc/smokeping/tmail.dist; then rm -f %D/etc/smokeping/tmail; fi
 etc/smokeping/tmail.dist
 @exec [ -f %B/tmail ] || cp %B/%f %B/tmail
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping.cgi.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping.cgi.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_config.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_config.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_install.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_install.txt
-%%PORTDOCS%%%%DOCSDIR%%/Config/Grammar.html
-%%PORTDOCS%%%%DOCSDIR%%/Config/Grammar.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/matchers/Avgratio.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/matchers/Avgratio.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/matchers/base.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/matchers/base.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/matchers/Median.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/matchers/Median.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/AnotherDNS.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/AnotherDNS.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/AnotherSSH.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/AnotherSSH.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/CiscoRTTMonDNS.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/CiscoRTTMonDNS.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/CiscoRTTMonEchoICMP.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/CiscoRTTMonEchoICMP.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/CiscoRTTMonTcpConnect.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/CiscoRTTMonTcpConnect.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/Curl.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/Curl.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/DNS.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/DNS.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPing.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPing.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingChargen.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingChargen.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingDiscard.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingDiscard.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingHttp.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingHttp.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingHttps.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingHttps.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingIcp.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingIcp.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingSmtp.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/EchoPingSmtp.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/FPing.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/FPing.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/FPing6.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/FPing6.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/IOSPing.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/IOSPing.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/LDAP.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/LDAP.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/Radius.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/Radius.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/RemoteFPing.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/RemoteFPing.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/SSH.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/SSH.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/TelnetIOSPing.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/TelnetIOSPing.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/base.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/base.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/basefork.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/basefork.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/basevars.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/basevars.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/passwordchecker.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/passwordchecker.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/skel.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/probes/skel.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/Examples.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/Examples.txt
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/RRDtools.html
-%%PORTDOCS%%%%DOCSDIR%%/Smokeping/RRDtools.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_examples.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_examples.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_extend.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_extend.txt
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_upgrade.html
-%%PORTDOCS%%%%DOCSDIR%%/smokeping_upgrade.txt
-%%PORTDOCS%%%%DOCSDIR%%/tSmoke.html
-%%PORTDOCS%%%%DOCSDIR%%/tSmoke.txt
+@unexec if cmp -s %D/etc/smokeping/smokeping_secrets %D/etc/smokeping/smokeping_secrets.dist; then rm -f %D/etc/smokeping/smokeping_secrets; fi
+etc/smokeping/smokeping_secrets.dist
+@exec [ -f %B/smokeping_secrets ] || cp %B/%f %B/smokeping_secrets
+@unexec if cmp -s %D/smokeping/htdocs/smokeping.fcgi %D/smokeping/htdocs/smokeping.fcgi.dist; then rm -f %D/smokeping/htdocs/smokeping.fcgi; fi
+smokeping/htdocs/smokeping.fcgi.dist
+@exec [ -f %B/smokeping.fcgi ] || cp %B/%f %B/smokeping.fcgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.echoping
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.fping-instances
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.multiple-probes
@@ -117,59 +35,20 @@ smokeping/htdocs/cropper/lib/controls.js
 smokeping/htdocs/cropper/lib/dragdrop.js
 smokeping/htdocs/cropper/lib/effects.js
 smokeping/htdocs/cropper/lib/prototype.js
-smokeping/htdocs/cropper/lib/prototype.js.LICENSE
 smokeping/htdocs/cropper/lib/scriptaculous.js
 smokeping/htdocs/cropper/lib/slider.js
+smokeping/htdocs/cropper/lib/sound.js
 smokeping/htdocs/cropper/lib/unittest.js
 smokeping/htdocs/cropper/licence.txt
 smokeping/htdocs/cropper/marqueeHoriz.gif
 smokeping/htdocs/cropper/marqueeVert.gif
 smokeping/htdocs/cropper/smokeping-zoom.js
-smokeping/htdocs/resource/Tr/image/ajax-loader.gif
-smokeping/htdocs/resource/qx/icon/CrystalClear/16/actions/view-refresh.png
-smokeping/htdocs/resource/qx/icon/Nuvola/16/actions/view-refresh.png
-smokeping/htdocs/resource/qx/static/image/blank.gif
-smokeping/htdocs/resource/qx/static/image/dotted_white.gif
-smokeping/htdocs/resource/qx/widget/Windows/arrows/down.gif
-smokeping/htdocs/resource/qx/widget/Windows/arrows/down_small.gif
-smokeping/htdocs/resource/qx/widget/Windows/arrows/next.gif
-smokeping/htdocs/resource/qx/widget/Windows/arrows/up.gif
-smokeping/htdocs/resource/qx/widget/Windows/arrows/up_small.gif
-smokeping/htdocs/resource/qx/widget/Windows/cursors/alias.gif
-smokeping/htdocs/resource/qx/widget/Windows/cursors/copy.gif
-smokeping/htdocs/resource/qx/widget/Windows/cursors/move.gif
-smokeping/htdocs/resource/qx/widget/Windows/cursors/nodrop.gif
-smokeping/htdocs/resource/qx/widget/Windows/menu/checkbox.gif
-smokeping/htdocs/resource/qx/widget/Windows/menu/radiobutton.gif
-smokeping/htdocs/resource/qx/widget/Windows/splitpane/knob-horizontal.png
-smokeping/htdocs/resource/qx/widget/Windows/splitpane/knob-vertical.png
-smokeping/htdocs/resource/qx/widget/Windows/table/ascending.png
-smokeping/htdocs/resource/qx/widget/Windows/table/descending.png
-smokeping/htdocs/resource/qx/widget/Windows/table/selectColumnOrder.png
-smokeping/htdocs/resource/qx/widget/Windows/window/close.gif
-smokeping/htdocs/resource/qx/widget/Windows/window/maximize.gif
-smokeping/htdocs/resource/qx/widget/Windows/window/minimize.gif
-smokeping/htdocs/resource/qx/widget/Windows/window/restore.gif
-smokeping/htdocs/script/Tr.js
-smokeping/htdocs/smokeping.cgi
-smokeping/htdocs/tr.cgi
-smokeping/htdocs/tr.html
-smokeping/lib/Config/Grammar.pm
-smokeping/lib/Config/Grammar/Document.pm
-smokeping/lib/Config/Grammar/Dynamic.pm
-smokeping/lib/JSON.pm
-smokeping/lib/JSON/Converter.pm
-smokeping/lib/JSON/PP.pm
-smokeping/lib/JSON/PP5005.pm
-smokeping/lib/JSON/PP56.pm
-smokeping/lib/JSON/Parser.pm
-smokeping/lib/Qooxdoo/JSONRPC.pm
-smokeping/lib/Qooxdoo/Services/Tr.pm
 smokeping/lib/Smokeping.pm
 smokeping/lib/Smokeping/Colorspace.pm
 smokeping/lib/Smokeping/Config.pm
 smokeping/lib/Smokeping/Examples.pm
 smokeping/lib/Smokeping/Graphs.pm
+smokeping/lib/Smokeping/Info.pm
 smokeping/lib/Smokeping/Master.pm
 smokeping/lib/Smokeping/RRDhelpers.pm
 smokeping/lib/Smokeping/RRDtools.pm
@@ -178,9 +57,11 @@ smokeping/lib/Smokeping/ciscoRttMonMIB.pm
 smokeping/lib/Smokeping/matchers/Avgratio.pm
 smokeping/lib/Smokeping/matchers/CheckLatency.pm
 smokeping/lib/Smokeping/matchers/CheckLoss.pm
+smokeping/lib/Smokeping/matchers/ExpLoss.pm
 smokeping/lib/Smokeping/matchers/Median.pm
 smokeping/lib/Smokeping/matchers/Medratio.pm
 smokeping/lib/Smokeping/matchers/base.pm
+smokeping/lib/Smokeping/pingMIB.pm
 smokeping/lib/Smokeping/probes/AnotherDNS.pm
 smokeping/lib/Smokeping/probes/AnotherSSH.pm
 smokeping/lib/Smokeping/probes/CiscoRTTMonDNS.pm
@@ -188,6 +69,7 @@ smokeping/lib/Smokeping/probes/CiscoRTTMonEchoICMP.pm
 smokeping/lib/Smokeping/probes/CiscoRTTMonTcpConnect.pm
 smokeping/lib/Smokeping/probes/Curl.pm
 smokeping/lib/Smokeping/probes/DNS.pm
+smokeping/lib/Smokeping/probes/DismanPing.pm
 smokeping/lib/Smokeping/probes/EchoPing.pm
 smokeping/lib/Smokeping/probes/EchoPingChargen.pm
 smokeping/lib/Smokeping/probes/EchoPingDNS.pm
@@ -204,9 +86,12 @@ smokeping/lib/Smokeping/probes/FPing6.pm
 smokeping/lib/Smokeping/probes/FTPtransfer.pm
 smokeping/lib/Smokeping/probes/IOSPing.pm
 smokeping/lib/Smokeping/probes/LDAP.pm
+smokeping/lib/Smokeping/probes/NFSping.pm
+smokeping/lib/Smokeping/probes/OpenSSHJunOSPing.pm
 smokeping/lib/Smokeping/probes/Radius.pm
 smokeping/lib/Smokeping/probes/RemoteFPing.pm
 smokeping/lib/Smokeping/probes/SSH.pm
+smokeping/lib/Smokeping/probes/SipSak.pm
 smokeping/lib/Smokeping/probes/TCPPing.pm
 smokeping/lib/Smokeping/probes/TacacsPlus.pm
 smokeping/lib/Smokeping/probes/TelnetIOSPing.pm
@@ -233,41 +118,9 @@ smokeping/lib/Smokeping/sorters/base.pm
 @dirrm smokeping/lib/Smokeping/probes
 @dirrm smokeping/lib/Smokeping/matchers
 @dirrm smokeping/lib/Smokeping
-@dirrm smokeping/lib/Qooxdoo/Services
-@dirrm smokeping/lib/Qooxdoo
-@dirrm smokeping/lib/JSON
-@dirrm smokeping/lib/Config/Grammar
-@dirrm smokeping/lib/Config
 @dirrm smokeping/lib
-@dirrm smokeping/htdocs/script
-@dirrm smokeping/htdocs/resource/qx/widget/Windows/window
-@dirrm smokeping/htdocs/resource/qx/widget/Windows/table
-@dirrm smokeping/htdocs/resource/qx/widget/Windows/splitpane
-@dirrm smokeping/htdocs/resource/qx/widget/Windows/menu
-@dirrm smokeping/htdocs/resource/qx/widget/Windows/cursors
-@dirrm smokeping/htdocs/resource/qx/widget/Windows/arrows
-@dirrm smokeping/htdocs/resource/qx/widget/Windows
-@dirrm smokeping/htdocs/resource/qx/widget
-@dirrm smokeping/htdocs/resource/qx/static/image
-@dirrm smokeping/htdocs/resource/qx/static
-@dirrm smokeping/htdocs/resource/qx/icon/Nuvola/16/actions
-@dirrm smokeping/htdocs/resource/qx/icon/Nuvola/16
-@dirrm smokeping/htdocs/resource/qx/icon/Nuvola
-@dirrm smokeping/htdocs/resource/qx/icon/CrystalClear/16/actions
-@dirrm smokeping/htdocs/resource/qx/icon/CrystalClear/16
-@dirrm smokeping/htdocs/resource/qx/icon/CrystalClear
-@dirrm smokeping/htdocs/resource/qx/icon
-@dirrm smokeping/htdocs/resource/qx
-@dirrm smokeping/htdocs/resource/Tr/image
-@dirrm smokeping/htdocs/resource/Tr
-@dirrm smokeping/htdocs/resource
 @dirrm smokeping/htdocs/cropper/lib
 @dirrm smokeping/htdocs/cropper
 @dirrm smokeping/htdocs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/matchers
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/probes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry smokeping

@@ -2,12 +2,8 @@
 
 SmokePing has now been installed in %%PREFIX%%/smokeping/.
 
-NOTE: A set of sample configuration files have been installed:
-
-  %%ETCDIR%%/config
-  %%ETCDIR%%/smokemail
-  %%ETCDIR%%/basepage.html
-  %%ETCDIR%%/tmail
+NOTE: A set of sample configuration files have been installed in
+%%ETCDIR%%.
 
 You *MUST* edit these to suit your requirements. Please read the
 manpages 'smokeping_install' and 'smokeping_config' for further
@@ -24,12 +20,8 @@ to /etc/rc.conf, and then running, as root:
 
   %%PREFIX%%/etc/rc.d/smokeping start
 
-To enable Apache web access, add something like the following to
-your %%PREFIX%%/etc/apache/httpd.conf:
-
-  DocumentRoot %%PREFIX%%/smokeping/htdocs
-  ScriptAlias /smokeping.cgi %%PREFIX%%/smokeping/htdocs/smokeping.cgi
-  ScriptAlias /tr.cgi %%PREFIX%%/smokeping/htdocs/tr.cgi
+For configuration of web access, please see the 'smokeping_install'
+manpage.
 
 Enjoy!
 

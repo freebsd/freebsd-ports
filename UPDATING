@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120513:
+  AFFECTS: users of net-mgmt/smokeping
+  AUTHOR: lth@FreeBSD.org
+
+  Smokeping has been updated to 2.6.7, and the web server configuration
+  has changed. FastCGI is now preferred. Please check the documentation
+  that your web server configuration is OK.
+
 20120512:
   AFFECTS: users of textproc/p5-XML-SAX
   AUTHOR: crees@FreeBSD.org
