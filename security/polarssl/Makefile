@@ -17,6 +17,8 @@ COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
 
+BROKEN=		does not fetch
+
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
 
