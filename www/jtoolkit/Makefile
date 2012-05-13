@@ -14,11 +14,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webapp framework with modpython-based and stand-alone modes
 
-RUN_DEPENDS=	py*-kid>=0.9.5:${PORTSDIR}/devel/py-kid
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}kid>=0.9.5:${PORTSDIR}/devel/py-kid
 # Has optional dependencies on database engines
 # Can optionally use py-lucene (on i386)
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 PYSETUP=	${PORTNAME}Setup.py
 

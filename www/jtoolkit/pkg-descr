@@ -7,4 +7,4 @@ pages (for which there are templating solutions). Pages can be produced
 using a variety of widgets. It handles sessions and database
 connections (and multi-database portability).
 
-WWW: http://jtoolkit.sourceforge.net/
+WWW:	http://jtoolkit.sourceforge.net/
