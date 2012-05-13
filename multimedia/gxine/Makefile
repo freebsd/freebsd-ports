@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative GUI for the Xine media player
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/multimedia/libxine
