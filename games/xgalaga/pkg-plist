@@ -1,4 +1,5 @@
 bin/xgalaga
+bin/xgalaga-hyperspace
 %%SOUND%%lib/X11/xgalaga/xgal.sndsrv.freebsd
 lib/X11/xgalaga/sounds/ddloo.raw
 lib/X11/xgalaga/sounds/explode.raw
@@ -23,7 +24,7 @@ lib/X11/xgalaga/levels/level12.xgl
 lib/X11/xgalaga/levels/level13.xgl
 lib/X11/xgalaga/levels/level14.xgl
 lib/X11/xgalaga/levels/level15.xgl
-lib/X11/xgalaga/scores
+lib/X11/xgalaga/CREDITS
 @dirrm lib/X11/xgalaga/levels
 @dirrm lib/X11/xgalaga/sounds
 @dirrm lib/X11/xgalaga

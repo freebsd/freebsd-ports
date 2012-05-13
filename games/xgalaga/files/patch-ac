@@ -1,11 +1,11 @@
---- configure.orig	Thu Apr 30 07:19:38 1998
-+++ configure	Thu May 28 10:23:39 1998
-@@ -1805,7 +1808,7 @@
-   fi
- fi
+--- configure.orig	2008-03-06 06:58:16.000000000 +0900
++++ configure	2012-04-23 14:21:29.000000000 +0900
+@@ -4544,7 +4544,7 @@
  
+ { echo "$as_me:$LINENO: host os is detected as $host_os " >&5
+ echo "$as_me: host os is detected as $host_os " >&6;}
 -if test -n "$sound-type"; then
-+if test "$sound_type" != "no" ; then
-   case $host_alias in
-     *linux*) 
- 	sound_type=native
++if test "$sound-type" != "no" ; then
+   case $host_os in
+     *linux*)
+       sound_type=native
