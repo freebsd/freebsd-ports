@@ -16,10 +16,13 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ticket and ticket change deletion
 
+DEPRECATED=	Functionality of this plugin has been incorporated into Trac 0.12
+EXPIRATION_DATE=2012-06-13
+
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=        easy_install
 PYDISTUTILS_PKGNAME=    TracTicketDelete
 PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}
