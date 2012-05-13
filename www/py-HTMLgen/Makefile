@@ -18,7 +18,7 @@ DISTNAME=	HTMLgen
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python library for the generation of HTML documents
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)
