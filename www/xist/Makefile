@@ -19,10 +19,10 @@ COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_PKGNAMEPREFIX}ll-core>=1.11.1:${PORTSDIR}/devel/py-ll-core \
-		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.7:${PORTSDIR}/www/py-cssutils
 
-USE_PYTHON=		2.6+
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 USE_BZIP2=		yes
