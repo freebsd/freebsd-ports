@@ -5,5 +5,4 @@ In the OpenMoko project (for example), this program is used to communicate
 with the specially enhanced u-boot boot loader, which implements the DFU 
 device side.
 
-Author:	Bruce Cran <bruce@cran.org.uk>
 WWW:   http://wiki.openmoko.org/wiki/Dfu-util
