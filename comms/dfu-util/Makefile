@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.cran.org.uk/~brucec/software/
 
-MAINTAINER=	bruce@cran.org.uk
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Device firmware update (DFU) USB programmer
 
 MAN1=		dfu-util.1
