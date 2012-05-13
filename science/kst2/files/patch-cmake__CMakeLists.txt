@@ -1,17 +1,8 @@
---- ./cmake/CMakeLists.txt.orig	2011-09-12 15:34:28.000000000 +0000
-+++ ./cmake/CMakeLists.txt	2011-10-15 00:37:11.813906096 +0000
-@@ -37,7 +37,7 @@
- 	set(kst_version ${kst_version_string})
- else()
- 	set(kst_version_minor 0)
--	set(kst_version_patch x)
-+	set(kst_version_patch 4)
- 	set(kst_version ${kst_version_major}.${kst_version_minor}.${kst_version_patch})
- endif()
+--- ./cmake/CMakeLists.txt.orig	2012-05-11 22:16:54.000000000 +0000
++++ ./cmake/CMakeLists.txt	2012-05-13 16:13:25.632207723 +0000
+@@ -41,19 +41,12 @@
+ message(STATUS)
  
-@@ -101,17 +101,6 @@
- 
- # React on options
  
 -if(kst_release)
 -	set(CMAKE_BUILD_TYPE Release)
@@ -19,6 +10,21 @@
 -	set(CMAKE_BUILD_TYPE Debug)
 -endif()
 -
+-
+ set(kst_version_major 2)
+ if(kst_version_string)
+ 	set(kst_version ${kst_version_string})
+ else()
+ 	set(kst_version_minor 0)
+-	set(kst_version_patch x)
++	set(kst_version_patch 5)
+ 	set(kst_version ${kst_version_major}.${kst_version_minor}.${kst_version_patch})
+ endif()
+ 
+@@ -133,11 +126,6 @@
+ # React on options
+ 
+ 
 -if(kst_verbose)
 -	set(CMAKE_VERBOSE_MAKEFILE 1)
 -else()
@@ -27,7 +33,7 @@
  
  if(kst_install_prefix)
  	set(CMAKE_INSTALL_PREFIX ${kst_install_prefix} CACHE PATH "User's choice for install prefix" FORCE)
-@@ -135,7 +124,7 @@
+@@ -161,7 +149,7 @@
  endif()
  
  #path to install the .desktop files
@@ -36,7 +42,7 @@
  
  
  
-@@ -182,7 +171,9 @@
+@@ -210,7 +198,9 @@
  
  configure_file(${kst_dir}/cmake/config.h.cmake ${CMAKE_BINARY_DIR}/config.h)
  
@@ -47,11 +53,11 @@
  
  message(STATUS "Build summary----------------------------------")
  message(STATUS)
-@@ -208,7 +199,6 @@
+@@ -236,7 +226,6 @@
  endif()
  
  if (NOT APPLE)
 -	add_subdirectory(misc)
  endif()
  
- 
+ if(kst_python)
