@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kid3
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -23,7 +22,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	svg gui network dbus xml \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DWITH_TUNEPIMP=OFF
+# libchromaprint has not been ported yet
+CMAKE_ARGS=	-DWITH_CHROMAPRINT=off
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
