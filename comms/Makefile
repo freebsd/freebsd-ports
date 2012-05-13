@@ -149,6 +149,7 @@
     SUBDIR += trustedqsl
     SUBDIR += twpsk
     SUBDIR += uarduno
+    SUBDIR += uartlirc
     SUBDIR += uhso-kmod
     SUBDIR += uird
     SUBDIR += umcs7840
