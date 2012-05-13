@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-Tagger
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Part-of-speech tagger for English natural language processing
 
-BUILD_DEPENDS=	${SITE_PERL}/Lingua/Stem/En.pm:${PORTSDIR}/textproc/p5-Lingua-Stem \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Memoize/ExpireLRU.pm:${PORTSDIR}/devel/p5-Memoize-ExpireLRU \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	p5-HTML-Parser>=3.45:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tagset>=3.20:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-Lingua-Stem>=0.81:${PORTSDIR}/textproc/p5-Lingua-Stem \
+		p5-Memoize-ExpireLRU>=0.55:${PORTSDIR}/devel/p5-Memoize-ExpireLRU
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
