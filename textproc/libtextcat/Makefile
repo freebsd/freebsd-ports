@@ -17,6 +17,8 @@ COMMENT=	Language guessing by N-Gram-Based Text Categorization
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+CONFLICTS_INSTALL=	libexttextcat*
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
