@@ -1,13 +1,15 @@
---- Makefile.in.orig	Fri Sep 20 03:24:43 2002
-+++ Makefile.in	Fri Sep 20 03:25:29 2002
-@@ -46,7 +46,9 @@
- 	./mkinstalldirs $(bindir)
- 	./mkinstalldirs $(prefix)
- 	$(INSTALL) $(TARGET) $(bindir)/$(TARGET)
--	$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV)
-+	if [ "X$(SOUNDSRV)" != "X" ]; then \
-+		$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV); \
-+	fi
- 	./mkinstalldirs $(prefix)/sounds
- 	./mkinstalldirs $(prefix)/levels
- 	for i in levels/*.xgl; do $(INSTALL) $$i $(prefix)/$$i ; done
+--- Makefile.in.orig	2008-03-06 06:58:16.000000000 +0900
++++ Makefile.in	2012-04-23 23:27:39.000000000 +0900
+@@ -15,9 +15,9 @@
+ bindir = $(exec_prefix)
+ libdir = $(prefix)/lib
+ infodir = $(prefix)/info
+-#mandir = @mandir@
+-mandir = /usr/share/man
+-creditsfile = @CREDITSFILE@
++mandir = @mandir@
++#mandir = /usr/share/man
++creditsfile = $(prefix)/CREDITS
+ distversion = 2.1.1.0
+ 
+ @SET_MAKE@
