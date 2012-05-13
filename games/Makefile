@@ -809,6 +809,7 @@
     SUBDIR += shootingstar
     SUBDIR += simplevaders
     SUBDIR += simutrans
+    SUBDIR += simsu
     SUBDIR += six
     SUBDIR += sjeng
     SUBDIR += sl

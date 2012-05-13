@@ -1,0 +1,13 @@
+bin/simsu
+share/applications/simsu.desktop
+share/icons/hicolor/128x128/apps/simsu.png
+share/icons/hicolor/16x16/apps/simsu.png
+share/icons/hicolor/22x22/apps/simsu.png
+share/icons/hicolor/24x24/apps/simsu.png
+share/icons/hicolor/256x256/apps/simsu.png
+share/icons/hicolor/32x32/apps/simsu.png
+share/icons/hicolor/48x48/apps/simsu.png
+share/icons/hicolor/64x64/apps/simsu.png
+share/icons/hicolor/scalable/apps/simsu.svg
+share/pixmaps/simsu_32.xpm
+@dirrmtry share/applications

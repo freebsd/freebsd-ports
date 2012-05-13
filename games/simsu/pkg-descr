@@ -1,0 +1,8 @@
+Simsu is a basic Sudoku game. You can switch between filling in notes
+(pencil mode), or filling in answers (pen mode).
+To make it easier to see where to place numbers, you can highlight
+all instances of a number. You can also check your answers for
+correctness while playing. The game stores your current notes and answers,
+so that you can pick up where you left off the next time you play.
+
+WWW: http://gottcode.org/simsu/
