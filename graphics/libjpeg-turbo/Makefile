@@ -1,14 +1,12 @@
 # New ports collection makefile for:   libjpeg-turbo
 # Date created:		2010-04-09
-# Date modified:	2010-04-12
-# Whom:			Denis Podolskiy bytestore@yandex.ru (based on D. R. Commander)
+# Whom:			Denis Podolskiy <bytestore@yandex.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libjpeg-turbo
-PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
