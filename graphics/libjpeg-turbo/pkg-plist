@@ -1,8 +1,8 @@
 bin/cjpeg
 bin/djpeg
 bin/jpegtran
-bin/jpgtest
 bin/rdjpgcom
+bin/tjbench
 bin/wrjpgcom
 include/jconfig.h
 include/jerror.h
@@ -16,3 +16,10 @@ lib/libjpeg.so.%%SOVERSION%%
 lib/libturbojpeg.a
 lib/libturbojpeg.la
 lib/libturbojpeg.so
+share/doc/README
+share/doc/README-turbo.txt
+share/doc/example.c
+share/doc/libjpeg.txt
+share/doc/structure.txt
+share/doc/usage.txt
+share/doc/wizard.txt
