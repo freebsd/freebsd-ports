@@ -29,6 +29,8 @@ MAKE_JOBS_UNSAFE=yes
 # Moonlight is installed as part of www/moonlight
 CONFIGURE_ARGS=	--with-moonlight=no
 
+CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
+
 # Set location for .wapi creation.
 MONO_SHARED_DIR=${WRKDIR}
 
