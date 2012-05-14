@@ -19,6 +19,7 @@ RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/hiera
 HIERA_DBDIR=	/var/db/hiera
 
 post-install:
@@ -29,6 +30,7 @@ post-install:
 	@${REINPLACE_CMD} "s!/var/lib/hiera!${HIERA_DBDIR}!" \
 		${PREFIX}/${GEM_LIB_DIR}/lib/hiera/backend.rb \
 		${PREFIX}/${GEM_LIB_DIR}/spec/unit/backend_spec.rb
+	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -name \*.bak -delete
 	@${MKDIR} ${HIERA_DBDIR}
 	@${ECHO_CMD} '@cwd /' >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${MKDIR} ${HIERA_DBDIR}" >> ${TMPPLIST}
