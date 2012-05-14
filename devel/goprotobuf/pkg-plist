@@ -1,11 +1,34 @@
 bin/protoc-gen-go
-%%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler/descriptor.a
-%%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler/generator.a
-%%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler/plugin.a
-%%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/proto.a
-go/src/pkg/goprotobuf.googlecode.com/hg/Make.protobuf
-@dirrm %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg/compiler
-@dirrm %%GO_LIBDIR%%/goprotobuf.googlecode.com/hg
-@dirrm %%GO_LIBDIR%%/goprotobuf.googlecode.com
-@dirrm go/src/pkg/goprotobuf.googlecode.com/hg
-@dirrm go/src/pkg/goprotobuf.googlecode.com
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/proto.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go/descriptor.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go/generator.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go/plugin.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/all_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/clone.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/clone_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/decode.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/encode.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/equal.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/equal_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/extensions.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/lib.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/message_set.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/properties.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/golden_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/test.pb.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/test.proto
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text_parser.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text_parser_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/text_test.go
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_LIBDIR%%/code.google.com/p
+@dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/code.google.com/p
+@dirrmtry %%GO_SRCDIR%%/code.google.com
