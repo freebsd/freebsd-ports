@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--without-sasl \
 		--without-udev \
 		--without-netcf \
 		--without-network \
+		--without-sysctl \
 		--with-libssh2
 
 #limit to non-stable release x.x.x
@@ -67,7 +68,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|1.11.1|%%AUTOMAKE_APIVER%%|g' \
 			  ${WRKSRC}/aclocal.m4
 	@${MV} ${WRKSRC}/daemon/libvirtd.conf ${WRKSRC}/daemon/libvirtd.conf.sample
-	@${REINPLACE_CMD} -e 's|libvirtd.conf|libvirtd.conf.sample|' \
+	@${REINPLACE_CMD} -e 's|libvirtd\.conf|libvirtd.conf.sample|' \
 		${WRKSRC}/daemon/Makefile.am \
 		${WRKSRC}/daemon/Makefile.in
 
