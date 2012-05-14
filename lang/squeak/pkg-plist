@@ -1,6 +1,7 @@
 bin/squeak
 bin/squeak.sh
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.AioPlugin
+lib/squeak/%%SQUEAK_LIB_DIR%%/so.B3DAcceleratorPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.ClipboardExtendedPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.DBusPlugin
 lib/squeak/%%SQUEAK_LIB_DIR%%/so.FileCopyPlugin
