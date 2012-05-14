@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- bootstrap.orig
++++ bootstrap
+@@ -36,7 +36,7 @@
+ 
+ # Check for automake
+ amvers="no"
+-for v in 11 10 9 8 7 6 5; do
++for v in 12 11 10 9 8 7 6 5; do
+   if automake-1.${v} --version >/dev/null 2>&1; then
+     amvers="-1.${v}"
+     break
+@@ -62,7 +62,7 @@
+ 
+ # Check for autoconf
+ acvers="no"
+-for v in "259" "-2.59" "253" "-2.53" ""; do
++for v in "269" "-2.69" "259" "-2.59" "253" "-2.53" ""; do
+   if autoconf${v} --version >/dev/null 2>&1; then
+     acvers="${v}"
+     break
