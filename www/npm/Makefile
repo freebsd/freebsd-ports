@@ -13,7 +13,7 @@ MASTER_SITES=	LOCAL/sunpoet
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Node package manager
 
-RUN_DEPENDS=	node>=0.6:${PORTSDIR}/www/node
+OPTIONS=	NODE_DEVEL "Use www/node-devel instead of www/node" off
 
 NO_BUILD=	yes
 USE_XZ=		yes
@@ -41,5 +41,13 @@ MAN3=		npm.3 npm-bin.3 npm-bugs.3 npm-commands.3 npm-config.3 \
 		npm-shrinkwrap.3 npm-start.3 npm-stop.3 npm-submodule.3 \
 		npm-tag.3 npm-test.3 npm-uninstall.3 npm-unpublish.3 \
 		npm-update.3 npm-version.3 npm-view.3 npm-whoami.3
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITH_NODE_DEVEL)
+RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
+.else
+RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node-devel
+.endif
 
 .include <bsd.port.mk>
