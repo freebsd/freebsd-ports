@@ -645,6 +645,7 @@
     SUBDIR += py-MySQLdb41
     SUBDIR += py-MySQLdb50
     SUBDIR += py-MySQLdb51
+    SUBDIR += py-MySQLdb55
     SUBDIR += py-PyGreSQL
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
