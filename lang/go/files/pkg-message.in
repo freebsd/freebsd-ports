@@ -7,8 +7,6 @@
  GOARCH=%%ARCH%%
  GOROOT=%%PREFIX%%/go
 
- Your compiler is %%GOOBJ%%g and your linker is %%GOOBJ%%l.
-
  For more information on programming in Go and for more
  documentation, see http://www.golang.org.
 ------------------------------------------------------------------
