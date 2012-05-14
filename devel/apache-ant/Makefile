@@ -7,6 +7,7 @@
 
 PORTNAME=	apache-ant
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		LOCAL/hq:man
@@ -35,7 +36,7 @@ READMES=	LICENSE README WHATSNEW
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.tar.bz2:doc
-MASTER_SITES+=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/manual/:doc,} \
+MASTER_SITES+=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/manual/:doc,}
 PORTDOCS=	*
 .endif
 
