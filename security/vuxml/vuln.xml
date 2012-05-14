@@ -52,6 +52,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6601127c-9e09-11e1-b5e0-000c299b62e1">
+    <topic>socat -- Heap-based buffer overflow</topic>
+    <affects>
+      <package>
+	<name>socat</name>
+	<range><lt>1.7.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The socat development team reports:</p>
+	<blockquote cite="http://www.dest-unreach.org/socat/contrib/socat-secadv3.html">
+	  <p>This vulnerability can be exploited when socat is invoked with the
+	     READLINE address (this is usually only used interactively) without
+	     option "prompt" and without option "noprompt" and an attacker succeeds
+	     to provide malicious data to the other (arbitrary) address that is then
+	     transferred by socat to the READLINE address for output.</p>
+	  <p>Successful exploitation may allow an attacker to execute arbitrary
+	     code with the privileges of the socat process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-0219</cvename>
+      <url>www.dest-unreach.org/socat/contrib/socat-secadv3.html</url>
+    </references>
+    <dates>
+      <discovery>2012-05-14</discovery>
+      <entry>2012-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59b68b1e-9c78-11e1-b5e0-000c299b62e1">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
