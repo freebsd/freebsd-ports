@@ -1,0 +1,23 @@
+%%GO_LIBDIR%%/github.com/hoisie/web.a
+go/src/pkg/%%GO_PKGNAME%%/LICENSE
+go/src/pkg/%%GO_PKGNAME%%/Makefile
+go/src/pkg/%%GO_PKGNAME%%/Readme.md
+go/src/pkg/%%GO_PKGNAME%%/fcgi.go
+go/src/pkg/%%GO_PKGNAME%%/scgi.go
+go/src/pkg/%%GO_PKGNAME%%/status.go
+go/src/pkg/%%GO_PKGNAME%%/web.go
+go/src/pkg/%%GO_PKGNAME%%/web_test.go
+go/src/pkg/%%GO_PKGNAME%%/examples/Makefile
+go/src/pkg/%%GO_PKGNAME%%/examples/arcchallenge.go
+go/src/pkg/%%GO_PKGNAME%%/examples/hello.go
+go/src/pkg/%%GO_PKGNAME%%/examples/logger.go
+go/src/pkg/%%GO_PKGNAME%%/examples/methodhandler.go
+go/src/pkg/%%GO_PKGNAME%%/examples/multipart.go
+go/src/pkg/%%GO_PKGNAME%%/examples/multiserver.go
+go/src/pkg/%%GO_PKGNAME%%/examples/params.go
+@dirrm go/src/pkg/%%GO_PKGNAME%%/examples
+@dirrm go/src/pkg/%%GO_PKGNAME%%
+@dirrmtry go/src/pkg/github.com/hoisie
+@dirrmtry go/src/pkg/github.com/
+@dirrmtry %%GO_LIBDIR%%/github.com/hoisie
+@dirrmtry %%GO_LIBDIR%%/github.com
