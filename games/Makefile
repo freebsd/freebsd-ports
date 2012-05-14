@@ -804,6 +804,7 @@
     SUBDIR += secretmaryochronicles
     SUBDIR += secretmaryochronicles-music
     SUBDIR += senken
+    SUBDIR += sets
     SUBDIR += sex
     SUBDIR += sfbol
     SUBDIR += shaaft
