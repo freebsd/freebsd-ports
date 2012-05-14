@@ -1,6 +1,6 @@
-# New ports collection makefile for:   libjpeg-turbo
-# Date created:		2010-04-09
-# Whom:			Denis Podolskiy <bytestore@yandex.ru>
+# New ports collection makefile for:	libjpeg-turbo
+# Date created:				2010-04-09
+# Whom:					Denis Podolskiy <bytestore@yandex.ru>
 #
 # $FreeBSD$
 #
