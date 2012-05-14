@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.32
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
 		${SITE_PERL}/Set/IntSpan.pm:${PORTSDIR}/math/p5-Set-IntSpan \
@@ -25,7 +26,25 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Per
 		${SITE_PERL}/${PERL_ARCH}/Pango.pm:${PORTSDIR}/x11-toolkits/p5-Pango \
 		${SITE_PERL}/${PERL_ARCH}/Acme/Damn.pm:${PORTSDIR}/devel/p5-Acme-Damn \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
+		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
+		cjb2:${PORTSDIR}/graphics/djvulibre-nox11 \
+		gocr:${PORTSDIR}/graphics/gocr \
+		p5-Sane>=0:${PORTSDIR}/graphics/p5-Sane \
+		scanimage:${PORTSDIR}/graphics/sane-backends \
+		scanadf:${PORTSDIR}/graphics/sane-frontends \
+		tesseract:${PORTSDIR}/graphics/tesseract \
+		unpaper:${PORTSDIR}/graphics/unpaper \
+		xdg-open:${PORTSDIR}/devel/xdg-utils \
+		ocropus:${PORTSDIR}/graphics/ocropus \
+		p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
+		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
+		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
+		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView \
+		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
@@ -43,9 +62,8 @@ RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
-		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView
-
-LICENSE=	GPLv3
+		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView \
+		bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 librsvg2
