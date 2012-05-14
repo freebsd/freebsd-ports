@@ -139,12 +139,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-2012-2274</cvename>
       <bid>52159</bid>
+      <cvename>CVE-2012-2274</cvename>
+      <url>https://www.htbridge.com/advisory/HTB23087</url>
     </references>
     <dates>
       <discovery>2012-05-09</discovery>
       <entry>2012-05-12</entry>
+      <modified>2012-05-14</modified>
     </dates>
   </vuln>
 
