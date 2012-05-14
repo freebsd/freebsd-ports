@@ -1,0 +1,10 @@
+--- Makefile.orig	2008-07-30 17:51:49.000000000 +0200
++++ Makefile	2012-04-21 14:25:52.000000000 +0200
+@@ -1,5 +1,5 @@
+-CFLAGS = -O2 -Wall $(shell sdl-config --cflags)
+-LDFLAGS = -lm $(shell sdl-config --libs)
++CFLAGS = $(shell ${SDL_CONFIG} --cflags)
++LDFLAGS = -lm $(shell ${SDL_CONFIG} --libs)
+ 
+ all: sets
+ 
