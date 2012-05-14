@@ -643,6 +643,7 @@
     SUBDIR += py-Elixir
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb41
+    SUBDIR += py-MySQLdb50
     SUBDIR += py-PyGreSQL
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
