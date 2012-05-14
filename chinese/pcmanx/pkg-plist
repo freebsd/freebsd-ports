@@ -1,9 +1,6 @@
 bin/pcmanx
-lib/libpcmanx_core.la
-lib/libpcmanx_core.so
-lib/libpcmanx_core.so.3
 share/applications/pcmanx.desktop
-share/pixmaps/pcmanx.png
+share/pixmaps/pcmanx.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
 %%DATADIR%%/emoticons
@@ -18,3 +15,6 @@ share/pixmaps/pcmanx.png
 @dirrmtry %%DATADIR%%/nancy_bot
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry %%JAVAJARDIR%%
+@exec mkdir -p %D/%%DATADIR%%/script
+@exec mkdir -p %D/%%JAVAJARDIR%%

@@ -6,29 +6,37 @@
 #
 
 PORTNAME=	pcmanx
-PORTVERSION=	0.3.9
+PORTVERSION=	1.1
 CATEGORIES=	chinese net gnome
-MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/svn/website/release/
+MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/files/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	linpc@cs.nctu.edu.tw
 COMMENT=	BBS client using GTK+ 2.x
 
-USE_BZIP2=	yes
+LICENSE=	GPLv2
+
+USE_XZ=		yes
 USE_GNOME=	gtk20 intlhack
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	WGET	"enable wget support for download articles" on
+OPTIONS=	NLS		"Use Native Language Support"		on  \
+		DEBUG		"Build with debugging support"		off \
+		DOCKLET		"Docklet / system tray support"		on  \
+		NOTIFIER	"Popup notifier support"		on  \
+		LIBNOTIFY	"Popup notifier support by libnotify"	off \
+		NANCY		"Nancy bot support"			on  \
+		MOUSE		"Mouse click and wheel support"		on  \
+		EXTERNAL	"Eexternal SSH/Telnet support"		on  \
+		IPLOOKUP	"IP location lookup support"		off \
+		PROXY		"Proxy support"				off
+
+MAN1=		pcmanx.1
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_WGET)
-RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-CONFIGURE_ARGS+=--enable-wget
-.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -40,14 +48,40 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-extract:
-	@${REINPLACE_CMD} -e 's/wget/fetch/' ${WRKSRC}/po/zh_CN.po \
-		${WRKSRC}/po/zh_TW.po ${WRKSRC}/src/generalprefpage.cpp \
-		${WRKSRC}/src/view/telnetview.cpp
-	@${REINPLACE_CMD} -e 's/wget -O/fetch -o/' ${WRKSRC}/src/mainframe.cpp
-	@${REINPLACE_CMD} -e 's/Antiidlestr/AntiIdleStr/' \
-		${WRKSRC}/src/appconfig.cpp
-	@${REINPLACE_CMD} -e '136 s/, \(.*\)/,1\);/' \
-	  	${WRKSRC}/src/view/telnetview.cpp
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.endif
+
+.if defined(WITHOUT_DOCKLET)
+CONFIGURE_ARGS+=--disable-docklet
+.endif
+
+.if defined(WITHOUT_NOTIFIER)
+CONFIGURE_ARGS+=--disable-notifier
+.endif
+
+.if defined(WITH_LIBNOTIFY)
+CONFIGURE_ARGS+=--enable-libnotify
+.endif
+
+.if defined(WITHOUT_NANCY)
+CONFIGURE_ARGS+=--disable-nancy
+.endif
+
+.if defined(WITHOUT_MOUSE)
+CONFIGURE_ARGS+=--disable-mouse
+.endif
+
+.if defined(WITHOUT_EXTERNAL)
+CONFIGURE_ARGS+=--disable-external
+.endif
+
+.if defined(WITH_IPLOOKUP)
+CONFIGURE_ARGS+=--enable-iplookup
+.endif
+
+.if defined(WITH_PROXY)
+CONFIGURE_ARGS+=--enable-proxy
+.endif
 
 .include <bsd.port.post.mk>
