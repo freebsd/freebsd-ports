@@ -24,6 +24,7 @@ include/cego/CegoObject.h
 include/cego/CegoOutput.h
 include/cego/CegoProcObject.h
 include/cego/CegoProcVar.h
+include/cego/CegoSerial.h
 include/cego/CegoTableObject.h
 include/cego/CegoViewObject.h
 include/cego/cgwrap.h
