@@ -1,0 +1,142 @@
+@comment $FreeBSD$
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/bcrypt.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/blowfish.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/cast5.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/curve25519.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/md4.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ocsp.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/openpgp.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/pbkdf2.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ripemd160.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ssh.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/twofish.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/xtea.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt/base64.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt/bcrypt.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt/bcrypt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/block.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/blowfish_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/cipher.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish/const.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5/cast5.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5/cast5_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/const_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/cswap_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/curve25519.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/curve25519_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/freeze_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/ladderstep_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/mont25519_amd64.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/mul_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519/square_amd64.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/md4/md4block.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp/ocsp.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp/ocsp_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor/armor.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor/armor_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor/encode.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/canonical_text.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/canonical_text_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/clearsign/clearsign.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/clearsign/clearsign_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/elgamal/elgamal.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/elgamal/elgamal_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/errors/errors.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/keys.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/compressed.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/compressed_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/config.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/encrypted_key.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/encrypted_key_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/literal.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/ocfb.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/ocfb_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/one_pass_signature.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/packet.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/packet_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/private_key.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/private_key_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/public_key.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/public_key_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/reader.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/signature.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/signature_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/symmetric_key_encrypted.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/symmetric_key_encrypted_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/symmetrically_encrypted.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/symmetrically_encrypted_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/userid.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet/userid_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/read.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/read_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k/s2k.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k/s2k_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/write.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/write_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2/pbkdf2.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2/pbkdf2_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160/ripemd160.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160/ripemd160_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160/ripemd160block.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/agent.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/certs.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/channel.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/cipher.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/cipher_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_auth.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_auth_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/client_func_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/common.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/common_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/keys.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/mac.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/messages.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/messages_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server_terminal.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/server_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/session_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/tcpip.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/tcpip_func_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/terminal.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/terminal_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal/util.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/transport_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish/twofish.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish/twofish_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/block.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/cipher.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea/xtea_test.go
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_LIBDIR%%/code.google.com/p
+@dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/xtea
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/twofish
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh/terminal
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ssh
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ripemd160
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/pbkdf2
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/s2k
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/packet
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/errors
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/elgamal
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/clearsign
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp/armor
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/openpgp
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/ocsp
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/md4
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/curve25519
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/cast5
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/blowfish
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/bcrypt
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/code.google.com/p
+@dirrmtry %%GO_SRCDIR%%/code.google.com
