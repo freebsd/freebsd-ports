@@ -7,6 +7,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -35,6 +36,11 @@ post-patch:
 	@${RM} ${WRKSRC}/tools/wafadmin/Node.py.orig
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	${MKDIR} ${PREFIX}/lib/node_modules/
+	${TOUCH} ${PREFIX}/lib/node_modules/.keepme
+	${INSTALL_MAN} ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note: If you need npm (Node Package Manager), please install www/npm."
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
