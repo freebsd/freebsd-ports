@@ -163,6 +163,7 @@
     SUBDIR += gnupg1
     SUBDIR += gnutls
     SUBDIR += gnutls-devel
+    SUBDIR += go.crypto
     SUBDIR += gorilla
     SUBDIR += gpa
     SUBDIR += gpasman
