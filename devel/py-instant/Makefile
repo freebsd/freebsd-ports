@@ -6,25 +6,31 @@
 #
 
 PORTNAME=	instant
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	SF/py${PORTNAME}/Instant-${PORTVERSION}/${PORTVERSION}
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.0.x/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Instant-${PORTVERSION}
 
-MAINTAINER=	lwhsu@FreeBSD.org
+MAINTAINER=	jwbacon@tds.net
 COMMENT=	Python module for instant inlining of C and C++ code in Python
 
-RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
+LICENSE=	LGPL3
 
-USE_PYTHON=	2.5+
+RUN_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20
+
+USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Instant
-PYDISTUTILS_PKGVERSION=	0.8
+PYDISTUTILS_PKGNAME=	instant
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/Instant.py \
-		%%PYTHON_SITELIBDIR%%/Instant.pyc \
-		%%PYTHON_SITELIBDIR%%/Instant.pyo
+FETCH_ARGS=	-F
+
+MAN1=		instant-clean.1 \
+		instant-showcache.1
+MANCOMPRESSED=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+	's|\[(join("share", "man", "man1"),|\[(join("man", "man1"),|' \
+	${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
