@@ -435,6 +435,7 @@
     SUBDIR += kpicframer
     SUBDIR += kpictorial
     SUBDIR += kpuzzle
+    SUBDIR += krank
     SUBDIR += ksudoku
     SUBDIR += ktritoc
     SUBDIR += kuklomenos
