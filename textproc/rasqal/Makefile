@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rasqal
-PORTVERSION=	0.9.28
-PORTREVISION=	1
+PORTVERSION=	0.9.29
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}

@@ -17,6 +17,7 @@ share/gtk-doc/html/rasqal/rasqal-changes-0-9-23-to-0-9-24.html
 share/gtk-doc/html/rasqal/rasqal-changes-0-9-24-to-0-9-25.html
 share/gtk-doc/html/rasqal/rasqal-changes-0-9-25-to-0-9-26.html
 share/gtk-doc/html/rasqal/rasqal-changes-0-9-26-to-0-9-27.html
+share/gtk-doc/html/rasqal/rasqal-changes-0-9-28-to-0-9-29.html
 share/gtk-doc/html/rasqal/rasqal-changes.html
 share/gtk-doc/html/rasqal/rasqal-section-data.html
 share/gtk-doc/html/rasqal/rasqal-section-expression.html
@@ -32,6 +33,7 @@ share/gtk-doc/html/rasqal/rasqal-section-service.html
 share/gtk-doc/html/rasqal/rasqal-section-triple.html
 share/gtk-doc/html/rasqal/rasqal-section-triples-source.html
 share/gtk-doc/html/rasqal/rasqal-section-updates.html
+share/gtk-doc/html/rasqal/rasqal-section-utilities.html
 share/gtk-doc/html/rasqal/rasqal-section-variable.html
 share/gtk-doc/html/rasqal/rasqal-section-variables-table.html
 share/gtk-doc/html/rasqal/rasqal-section-xsd.html
