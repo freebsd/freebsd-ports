@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
@@ -21,12 +20,13 @@ LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	glib20
 USE_KDE4=	automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui \
+QT_COMPONENTS=	corelib gui opengl declarative \
 		qmake_build moc_build rcc_build uic_build qtestlib_build
 
 PLIST_SUB=	VERSION="${GST_VERSION}"

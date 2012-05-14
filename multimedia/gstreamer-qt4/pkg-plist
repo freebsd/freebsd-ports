@@ -56,14 +56,19 @@ include/QtGStreamer/QGst/Query
 include/QtGStreamer/QGst/StreamVolume
 include/QtGStreamer/QGst/Structure
 include/QtGStreamer/QGst/TagList
+include/QtGStreamer/QGst/Ui/GraphicsVideoSurface
+include/QtGStreamer/QGst/Ui/GraphicsVideoWidget
 include/QtGStreamer/QGst/Ui/VideoWidget
 include/QtGStreamer/QGst/Ui/global.h
+include/QtGStreamer/QGst/Ui/graphicsvideosurface.h
+include/QtGStreamer/QGst/Ui/graphicsvideowidget.h
 include/QtGStreamer/QGst/Ui/videowidget.h
 include/QtGStreamer/QGst/UriHandler
 include/QtGStreamer/QGst/Utils/ApplicationSink
 include/QtGStreamer/QGst/Utils/ApplicationSource
 include/QtGStreamer/QGst/Utils/applicationsink.h
 include/QtGStreamer/QGst/Utils/applicationsource.h
+include/QtGStreamer/QGst/Utils/global.h
 include/QtGStreamer/QGst/VideoOrientation
 include/QtGStreamer/QGst/XOverlay
 include/QtGStreamer/QGst/bin.h
@@ -101,23 +106,27 @@ include/QtGStreamer/QGst/xoverlay.h
 lib/QtGStreamer/QtGStreamerConfig.cmake
 lib/QtGStreamer/QtGStreamerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/QtGStreamer/QtGStreamerTargets.cmake
-lib/gstreamer-%%VERSION%%/libgstqwidgetvideosink.so
+lib/gstreamer-%%VERSION%%/libgstqtvideosink.so
 lib/libQtGLib-2.0.so
 lib/libQtGLib-2.0.so.0
-lib/libQtGLib-2.0.so.0.10.1
+lib/libQtGLib-2.0.so.0.10.2
 lib/libQtGStreamer-0.10.so
 lib/libQtGStreamer-0.10.so.0
-lib/libQtGStreamer-0.10.so.0.10.1
+lib/libQtGStreamer-0.10.so.0.10.2
 lib/libQtGStreamerUi-0.10.so
 lib/libQtGStreamerUi-0.10.so.0
-lib/libQtGStreamerUi-0.10.so.0.10.1
+lib/libQtGStreamerUi-0.10.so.0.10.2
 lib/libQtGStreamerUtils-0.10.so
 lib/libQtGStreamerUtils-0.10.so.0
-lib/libQtGStreamerUtils-0.10.so.0.10.1
+lib/libQtGStreamerUtils-0.10.so.0.10.2
+lib/qt4/imports/QtGStreamer/libQtGStreamerQML.so
+lib/qt4/imports/QtGStreamer/qmldir
 libdata/pkgconfig/QtGLib-2.0.pc
 libdata/pkgconfig/QtGStreamer-0.10.pc
 libdata/pkgconfig/QtGStreamerUi-0.10.pc
 libdata/pkgconfig/QtGStreamerUtils-0.10.pc
+@dirrm lib/qt4/imports/QtGStreamer
+@dirrmtry lib/qt4/imports
 @dirrm lib/QtGStreamer
 @dirrm include/QtGStreamer/QGst/Ui
 @dirrm include/QtGStreamer/QGst/Utils
