@@ -1,0 +1,9 @@
+%%GO_LIBDIR%%/github.com/simonz05/godis.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/godis.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/commands.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/conn.go
+@dirrmtry %%GO_LIBDIR%%/github.com/simonz05
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/github.com/simonz05
+@dirrmtry %%GO_SRCDIR%%/github.com
