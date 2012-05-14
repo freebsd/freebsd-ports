@@ -7,15 +7,16 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.6.7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	Latency logging and graphing system
 
-RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		p5-CGI-Session>0:${PORTSDIR}/www/p5-CGI-Session \
+LIB_DEPENDS=	rrd.6:${PORTSDIR}/databases/rrdtool
+BUILD_DEPENDS=	p5-CGI-Session>0:${PORTSDIR}/www/p5-CGI-Session \
 		p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
@@ -23,6 +24,7 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI \
 		p5-Config-Grammar>0:${PORTSDIR}/devel/p5-Config-Grammar \
 		p5-Socket6>0:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -157,13 +159,18 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/doc/Makefile.in
+		${WRKSRC}/doc/Makefile.in \
+		${WRKSRC}/bin/smokeping \
+		${WRKSRC}/bin/smokeping_cgi \
+		${WRKSRC}/bin/tSmoke
 
 post-install:
 .for FILE in basepage.html config smokemail tmail
 	[ -f ${ETCDIR}/${FILE} ] || ${CP} ${ETCDIR}/${FILE}.dist ${ETCDIR}/${FILE}
 .endfor
 	[ -f ${PREFIX}/smokeping/htdocs/smokeping.fcgi ] || ${CP} ${PREFIX}/smokeping/htdocs/smokeping.fcgi.dist ${PREFIX}/smokeping/htdocs/smokeping.fcgi
+	${MKDIR} ${PREFIX}/smokeping/htdocs/img
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs
 .if !defined(BATCH)
 	${CAT} ${PKGMESSAGE}
 .endif
