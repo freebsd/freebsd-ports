@@ -137,6 +137,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/migration-unmanaged-direct.png
 %%DOCSDIR%%%%PORTVERSION%%/html/news.html
 %%DOCSDIR%%%%PORTVERSION%%/html/node.gif
+%%DOCSDIR%%%%PORTVERSION%%/html/pending.html
 %%DOCSDIR%%%%PORTVERSION%%/html/php.html
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/relatedlinks.html
