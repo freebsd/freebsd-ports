@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -18,6 +18,8 @@ COMMENT=	A probabilistic text search database engine
 LICENSE=	GPLv2
 
 OPTIONS=	SSE2	"Use SSE2 for floating point" off
+
+PORTSCOUT=	limitw:1,even
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -44,7 +46,7 @@ post-patch:
 .endif
 
 post-install:
-.for file in delve quest copydatabase
+.for file in copydatabase delve quest
 	${INSTALL_PROGRAM} ${WRKSRC}/examples/.libs/${file} ${PREFIX}/bin/xapian-${file}
 .endfor
 

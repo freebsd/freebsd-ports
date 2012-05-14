@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -20,6 +20,8 @@ LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre \
 		xapian.26:${PORTSDIR}/databases/xapian-core
 
 OPTIONS=	ICONV	"Enable iconv character set conversion support" on
+
+PORTSCOUT=	limitw:1,even
 
 CONFIGURE_ENV=	PCRE_CONFIG=${LOCALBASE}/bin/pcre-config \
 		XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
