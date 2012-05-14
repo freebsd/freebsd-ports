@@ -7,6 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		4.4.7
+PORTREVISION=		1
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/:vmsrc \
@@ -46,6 +47,7 @@ DIST_SUBDIR=		squeak
 ONLY_FOR_ARCHS=		i386
 MAN1=			squeak.1
 USE_GMAKE=		yes
+USE_GL=			gl
 HAS_CONFIGURE=		yes
 
 # Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
