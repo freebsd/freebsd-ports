@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTVERSION=	0.7.9
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
@@ -23,6 +22,7 @@ LIB_DEPENDS=	boost_system.4:${PORTSDIR}/devel/boost-libs \
 		quvi.7:${PORTSDIR}/multimedia/libquvi
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-boost=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 USE_XZ=		yes
 
