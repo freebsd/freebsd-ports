@@ -6,19 +6,25 @@
 #
 
 PORTNAME=	prettygo
-PORTVERSION=	20110611
-PORTREVISION=	1
+PORTVERSION=	20120306
 CATEGORIES=	devel
-MASTER_SITES=	http://files.roorback.net/
-DISTNAME=	pretty.go-${PORTVERSION}
+MASTER_SITES=	LOCAL/jlaffaye
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Pretty-printing package for go values
 
-FETCH_ARGS=	-Fpr
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_GO=		yes
+GO_PKGNAME=	github.com/kr/pretty
+
+SUBLIBDIR=	github.com/kr
+
+do-install:
+	${MKDIR} ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
+	${INSTALL_DATA} ${GO_WRKDIR_PKG}/${SUBLIBDIR}/pretty.a ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
+	${MKDIR} ${GO_LOCAL_SRCDIR}/${GO_PKGNAME}
+.for f in diff.go formatter.go pretty.go
+	${INSTALL_DATA} ${GO_WRKSRC}/${f} ${GO_LOCAL_SRCDIR}/${GO_PKGNAME}
+.endfor
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"
