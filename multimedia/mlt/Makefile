@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.7.6
-PORTREVISION=	2
+PORTVERSION=	0.7.8
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	avilla@FreeBSD.org
-COMMENT=	A multimedia framework and video playout server for TV broadcasting
+COMMENT=	Multimedia framework and video playout server for TV broadcasting
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
@@ -31,9 +30,6 @@ USE_LDCONFIG=	yes
 # Required at least for frei0r detection.
 CFLAGS+=	-I${LOCALBASE}/include
 
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON_sparc64=	does not compile on sparc64 (invokes i386 asm)
-
 PORTDOCS=	AUTHORS ChangeLog NEWS README docs demo
 
 OPTIONS=	DV	"Quasar DV Codec module" on \
@@ -49,10 +45,6 @@ OPTIONS=	DV	"Quasar DV Codec module" on \
 		VDPAU	"NVIDIA VDPAU support (requires FFMPEG)" off \
 		VORBIS	"Vorbis module" on
 
-#MMX	"MMX support (might cause problems on amd64)" off \
-#SSE	"SSE support (requires MMX)" off \
-#SSE2	"SSE2 support (requires SSE)" off \
-
 .ifndef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--disable-debug
 .else
@@ -61,23 +53,9 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .include <bsd.port.options.mk>
 
-#.ifdef(WITH_MMX)
-#CONFIGURE_ARGS+=	--enable-mmx
-#.else
-#CONFIGURE_ARGS+=	--disable-mmx
-#.endif
-
-#.ifdef(WITH_SSE)
-#CONFIGURE_ARGS+=	--enable-sse
-#.else
-#CONFIGURE_ARGS+=	--disable-sse
-#.endif
-
-#.ifdef(WITH_SSE2)
-#CONFIGURE_ARGS+=	--enable-sse2
-#.else
-#CONFIGURE_ARGS+=	--disable-sse2
-#.endif
+.if ${ARCH} == "sparc64"
+BROKEN=		does not compile on sparc64 (invokes i386 asm)
+.endif
 
 .ifndef(WITHOUT_DV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
