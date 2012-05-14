@@ -1,0 +1,8 @@
+--- krank.orig	2012-05-14 09:01:50.000000000 +0200
++++ krank	2012-05-14 09:01:37.000000000 +0200
+@@ -2,4 +2,5 @@
+ KRANKPATH=`dirname $0`
+ PYTHONPATH=$KRANKPATH:$PYTHONPATH
+ export PYTHONPATH
++cd $KRANKPATH
+ python $KRANKPATH/src/Main.py
