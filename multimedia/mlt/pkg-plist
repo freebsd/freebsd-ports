@@ -50,10 +50,10 @@ include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 include/mlt/framework/mlt_version.h
 lib/libmlt++.so
-lib/libmlt++.so.0.7.6
+lib/libmlt++.so.0.7.8
 lib/libmlt++.so.3
 lib/libmlt.so
-lib/libmlt.so.0.7.6
+lib/libmlt.so.0.7.8
 lib/libmlt.so.4
 %%FFMPEG%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
@@ -86,12 +86,14 @@ libdata/pkgconfig/mlt++.pc
 libdata/pkgconfig/mlt-framework.pc
 %%FFMPEG%%%%DATADIR%%/avformat/consumer_avformat.yml
 %%FFMPEG%%%%DATADIR%%/avformat/producer_avformat.yml
+%%DATADIR%%/core/consumer_multi.yml
 %%DATADIR%%/core/data_fx.properties
 %%DATADIR%%/core/filter_audiowave.yml
 %%DATADIR%%/core/filter_brightness.yml
 %%DATADIR%%/core/filter_channelcopy.yml
 %%DATADIR%%/core/filter_crop.yml
 %%DATADIR%%/core/filter_data_show.yml
+%%DATADIR%%/core/filter_fieldorder.yml
 %%DATADIR%%/core/filter_gamma.yml
 %%DATADIR%%/core/filter_greyscale.yml
 %%DATADIR%%/core/filter_luma.yml
@@ -303,6 +305,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/profiles/quarter_pal
 %%DATADIR%%/profiles/quarter_pal_wide
 %%DATADIR%%/profiles/sdi_486i_5994
+%%DATADIR%%/profiles/sdi_486p_2398
 %%DATADIR%%/profiles/square_ntsc
 %%DATADIR%%/profiles/square_ntsc_wide
 %%DATADIR%%/profiles/square_pal
@@ -315,6 +318,7 @@ libdata/pkgconfig/mlt-framework.pc
 %%DATADIR%%/profiles/vcd_pal
 %%QT4%%%%DATADIR%%/qimage/producer_kdenlivetitle.yml
 %%QT4%%%%DATADIR%%/qimage/producer_qimage.yml
+%%QT4%%%%DATADIR%%/qimage/transition_vqm.yml
 %%RESAMPLE%%%%DATADIR%%/resample/filter_resample.yml
 %%DATADIR%%/rotoscoping/filter_rotoscoping.yml
 %%DATADIR%%/sdl/consumer_sdl.yml
