@@ -856,6 +856,7 @@
     SUBDIR += sxsame
     SUBDIR += tads
     SUBDIR += taipan
+    SUBDIR += tanglet
     SUBDIR += tank
     SUBDIR += taxipilot
     SUBDIR += tbclock

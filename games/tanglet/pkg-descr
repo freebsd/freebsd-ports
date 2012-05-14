@@ -1,0 +1,13 @@
+Tanglet is a single player word finding game based on Boggle. The
+object of the game is to list as many words as you can before the
+time runs out. There are several timer modes that determine how
+much time you start with, and if you get extra time when you find
+a word.
+
+You can join letters horizontally, vertically, or diagonally in any
+direction to make a word, so as long as the letters are next to
+each other on the board. However, you can not reuse the same letter
+cells in a single word. Also, each word must be at least three
+letters on a normal board, and four letters on a large board.
+
+WWW: http://gottcode.org/tanglet/
