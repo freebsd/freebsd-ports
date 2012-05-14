@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pianobar
-PORTVERSION=	2012.04.24
+PORTVERSION=	2012.05.06
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
@@ -16,7 +16,9 @@ COMMENT=	Command line Pandora player
 LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao \
 		faad:${PORTSDIR}/audio/faad \
 		mad:${PORTSDIR}/audio/libmad \
-		gnutls.47:${PORTSDIR}/security/gnutls
+		gnutls.47:${PORTSDIR}/security/gnutls \
+		json.0:${PORTSDIR}/devel/json-c \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 
 LICENSE=	MIT
 
