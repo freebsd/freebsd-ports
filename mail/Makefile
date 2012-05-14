@@ -322,6 +322,7 @@
     SUBDIR += nullpop
     SUBDIR += offlineimap
     SUBDIR += opendkim
+    SUBDIR += opensmtpd
     SUBDIR += openwebmail
     SUBDIR += osbf-lua
     SUBDIR += ovs
