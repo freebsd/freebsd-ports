@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Search-Xapian
-PORTVERSION=	1.2.9.0
+PORTVERSION=	1.2.10.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
@@ -23,6 +23,8 @@ LIB_DEPENDS=	xapian.26:${PORTSDIR}/databases/xapian-core
 
 TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
+
+PORTSCOUT=	limitw:1,even
 
 CC=		${CXX}
 CONFIGURE_ARGS=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
