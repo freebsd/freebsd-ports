@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	gosqlite3
-PORTVERSION=	20110316
-PORTREVISION=	3
+PORTVERSION=	20120330
 CATEGORIES=	databases
-MASTER_SITES=	LOCAL/wen
-DISTNAME=	${GITHUB_USER}-${PORTNAME}-${GIT_REVISION}
+MASTER_SITES=	LOCAL/jlaffaye
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A Go interface for SQLite3
 
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 
-PLIST_FILES=	${GO_LIBDIR}/sqlite3.a
-
 USE_GO=		yes
-MAKE_ARGS+=	CGO_CFLAGS+="-I${LOCALBASE}/include" CFLAGS="-I${LOCALBASE}/${GO_LIBDIR}" CGO_LDFLAGS="-L${LOCALBASE}/lib -lsqlite3"
+GO_PKGNAME=	${SUBLIBDIR}/${PORTNAME}
 
-GITHUB_USER=	feyeleanor
-GIT_REVISION=	0f3e536
+SUBLIBDIR=	github.com/kuroneko
+
+do-install:
+	${MKDIR} ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
+	${INSTALL_DATA} ${GO_WRKDIR_PKG}/${SUBLIBDIR}/gosqlite3.a ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
+	${MKDIR} ${GO_LOCAL_SRCDIR}/${GO_PKGNAME}
+	(cd ${GO_WRKSRC}/ && ${COPYTREE_SHARE} \* ${GO_LOCAL_SRCDIR}/${GO_PKGNAME})
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"
