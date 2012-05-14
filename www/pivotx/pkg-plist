@@ -235,7 +235,7 @@
 %%WWWDIR%%/pivotx/includes/index.html
 %%WWWDIR%%/pivotx/includes/js/bookmarklet.js
 %%WWWDIR%%/pivotx/includes/js/index.html
-%%WWWDIR%%/pivotx/includes/js/jquery-1.7.1.min.js
+%%WWWDIR%%/pivotx/includes/js/jquery-1.7.2.min.js
 %%WWWDIR%%/pivotx/includes/js/jquery-plugins.js
 %%WWWDIR%%/pivotx/includes/js/jquery-ui-1.8.17.custom.min.js
 %%WWWDIR%%/pivotx/includes/js/jquery.Jcrop.min.js
@@ -257,10 +257,10 @@
 %%WWWDIR%%/pivotx/includes/magpie/rss_fetch.inc
 %%WWWDIR%%/pivotx/includes/magpie/rss_parse.inc
 %%WWWDIR%%/pivotx/includes/magpie/rss_utils.inc
-%%WWWDIR%%/pivotx/includes/markdown/License.txt
-%%WWWDIR%%/pivotx/includes/markdown/PHP Markdown Readme.txt
-%%WWWDIR%%/pivotx/includes/markdown/PHP SmartyPants Readme.txt
+%%WWWDIR%%/pivotx/includes/markdown/License.text
 %%WWWDIR%%/pivotx/includes/markdown/markdown.php
+%%WWWDIR%%/pivotx/includes/markdown/PHP Markdown Readme.text
+%%WWWDIR%%/pivotx/includes/markdown/PHP SmartyPants Readme.txt
 %%WWWDIR%%/pivotx/includes/markdown/smartypants.php
 %%WWWDIR%%/pivotx/includes/markitup/images/bg-container.png
 %%WWWDIR%%/pivotx/includes/markitup/images/bg.png

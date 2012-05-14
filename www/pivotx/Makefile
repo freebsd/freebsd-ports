@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pivotx
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	www
 MASTER_SITES=	SF/pivot-weblog/PivotX \
 		http://pivotx.net/files/ \
@@ -18,7 +18,6 @@ MAINTAINER=	fumifumi@abacustech.jp
 COMMENT=	Software to help you maintain dynamic sites such as weblogs
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${DOCS_WRKSRC}/LICENSE.txt
 
 DOCS=		LICENSE.txt README.txt example.htaccess
 DOCS_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}-docs
@@ -32,7 +31,6 @@ OPTIONS=	MYSQL	"Use MySQL instead of flat files" off \
 .include <bsd.port.options.mk>
 
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=4
 USE_PHP=	session gettext xml tokenizer gd pcre
 USE_GETTEXT=	yes
 
