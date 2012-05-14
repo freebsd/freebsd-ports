@@ -179,6 +179,7 @@
     SUBDIR += gnome-vnc
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
+    SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
     SUBDIR += googlecl

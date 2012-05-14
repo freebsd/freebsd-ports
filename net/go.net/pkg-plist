@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/dict.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/spdy.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/websocket.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/dict/dict.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/read.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/spdy_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/types.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/write.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/client.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hixie.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hixie_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hybi.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hybi_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/server.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket_test.go
+@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_LIBDIR%%/code.google.com/p
+@dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket
+@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/
+@dirrmtry %%GO_SRCDIR%%/code.google.com/p
+@dirrmtry %%GO_SRCDIR%%/code.google.com
