@@ -8090,6 +8090,7 @@ libgtk-java                     ports/x11-toolkits/libgtk-java
 libgtkhtml                      ports/www/libgtkhtml
 libgtksourceviewmm              ports/x11-toolkits/libgtksourceviewmm
 libgtop                         ports/devel/libgtop
+libguess                        ports/textproc/libguess
 libgutenfetch                   ports/devel/libgutenfetch
 libgweather                     ports/net/libgweather
 libharu                         ports/print/libharu
@@ -25462,6 +25463,7 @@ simpleviewer                    ports/graphics/simpleviewer
 simplexml                       ports/textproc/simplexml
 simplog                         ports/www/simplog
 simscan                         ports/mail/simscan
+simsu                           ports/games/simsu
 simulavr                        ports/devel/simulavr
 simutrans                       ports/games/simutrans
 since                           ports/misc/since
@@ -26948,6 +26950,7 @@ ua-ispell                       ports/textproc/ua-ispell
 uade                            ports/audio/uade
 uae                             ports/emulators/uae
 uarduno                         ports/comms/uarduno
+uartlirc                        ports/comms/uartlirc
 ubench                          ports/benchmarks/ubench
 ubh                             ports/news/ubh
 ubuntu-font                     ports/x11-fonts/ubuntu-font
