@@ -497,8 +497,8 @@ LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_MODULE_VERSION=	0.5.0rc24
-GIT_LUA_MODULE_VERSION=	0-g6ff5df6
+NGINX_LUA_MODULE_VERSION=	0.5.0rc27
+GIT_LUA_MODULE_VERSION=	0-gdbe0dc4
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_MODULE_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_MODULE_VERSION}-${GIT_LUA_MODULE_VERSION}.tar.gz:lua
@@ -581,8 +581,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 
 .if defined(WITH_SET_MISC_MODULE)
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_SET_MISC_MODULE_VERSION=	0.22rc5
-GIT_SET_MISC_VERSION=	0-ge6a54ab
+NGINX_SET_MISC_MODULE_VERSION=	0.22rc8
+GIT_SET_MISC_VERSION=	0-g658c235
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_MODULE_VERSION}/:setmisc
 DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_MODULE_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
@@ -598,8 +598,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MOD
 .endif
 
 .if defined(WITH_SRCACHE_MODULE)
-NGINX_SRCACHE_MODULE_VERSION=	0.13rc6
-GIT_SRCACHE_MODULE_VERSION=	0-gfa2da58
+NGINX_SRCACHE_MODULE_VERSION=	0.13rc8
+GIT_SRCACHE_MODULE_VERSION=	0-g5237f26
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_MODULE_VERSION}/:srcache
 DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_MODULE_VERSION}-${GIT_SRCACHE_MODULE_VERSION}.tar.gz:srcache
