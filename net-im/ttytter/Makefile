@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ttytter
-PORTVERSION=	1.2.05
+PORTVERSION=	2.0.00
 CATEGORIES=	net-im perl5
-MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist1/
+MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist2/
 DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.txt
 
