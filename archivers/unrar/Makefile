@@ -21,6 +21,7 @@ OPTIONS=	OPENSSL_AES "Use OpenSSL implementation of AES" on
 
 CONFLICTS?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
+MAKE_ARGS=	STRIP=${STRIP_CMD}
 MAKEFILE=	makefile.unix
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
