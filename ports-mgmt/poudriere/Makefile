@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poudriere
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/poudriere/
 
@@ -26,6 +26,7 @@ PLIST_FILES=	etc/poudriere.conf.sample \
 		share/poudriere/common.sh \
 		share/poudriere/test_ports.sh \
 		share/poudriere/ports.sh \
+		share/poudriere/pbi.sh \
 		share/poudriere/jail.sh \
 		share/poudriere/bulk.sh \
 		share/poudriere/cron.sh \
