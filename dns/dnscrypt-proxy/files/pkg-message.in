@@ -1,0 +1,18 @@
+
+This port/software comes all 'working out of the box'.
+
+By default this port is using OpenDNS' resolvers,
+but other nameservers are also possible.
+
+To view available options, run:
+%%PREFIX%%/sbin/dnscrypt-proxy --help
+or read the manual: `man dnscrypt-proxy`
+
+You might like to adjust
+%%ETCDIR%%/rc.d/dnscrypt-proxy
+accordingly with your needs and/or preferences.
+
+To enable dnscrypt-proxy at boot:
+echo dnscrypt_proxy_enable=\"YES\" >> /etc/rc.conf
+
+
