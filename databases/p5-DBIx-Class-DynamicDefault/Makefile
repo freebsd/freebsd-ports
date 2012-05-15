@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	DBIx-Class-DynamicDefault
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatically set and update fields
 
-RUN_DEPENDS=	p5-parent>=0:${PORTSDIR}/devel/p5-parent \
-		p5-DBIx-Class>=0.08009:${PORTSDIR}/databases/p5-DBIx-Class
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-DBIx-Class>=0.08127:${PORTSDIR}/databases/p5-DBIx-Class
+RUN_DEPENDS=	p5-DBIx-Class>=0.08127:${PORTSDIR}/databases/p5-DBIx-Class
+
 TEST_DEPENDS=	p5-DBICx-TestDatabase>=0:${PORTSDIR}/databases/p5-DBICx-TestDatabase
 
 PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::DynamicDefault.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>
