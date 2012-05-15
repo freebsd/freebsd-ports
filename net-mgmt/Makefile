@@ -284,6 +284,7 @@
     SUBDIR += snmptt
     SUBDIR += softflowd
     SUBDIR += spectools
+    SUBDIR += ssgless
     SUBDIR += subcalc
     SUBDIR += sysmon
     SUBDIR += tcpreplay
