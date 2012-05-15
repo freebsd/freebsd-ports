@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=	4.10
-PORTREVISION=	2
+PORTVERSION=	4.20
 PORTEPOCH=	5
 CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/ \
 		LOCAL/sunpoet
-DISTNAME=	unrarsrc-4.1.4
+DISTNAME=	unrarsrc-4.2.1
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
