@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.90
+PORTVERSION=	1.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

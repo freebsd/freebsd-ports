@@ -4,7 +4,10 @@ share/locale/ar/LC_MESSAGES/shared-mime-info.mo
 share/locale/az/LC_MESSAGES/shared-mime-info.mo
 share/locale/be@latin/LC_MESSAGES/shared-mime-info.mo
 share/locale/bg/LC_MESSAGES/shared-mime-info.mo
+share/locale/bg_BG/LC_MESSAGES/shared-mime-info.mo
+share/locale/bn_IN/LC_MESSAGES/shared-mime-info.mo
 share/locale/ca/LC_MESSAGES/shared-mime-info.mo
+share/locale/ca@valencia/LC_MESSAGES/shared-mime-info.mo
 share/locale/cs/LC_MESSAGES/shared-mime-info.mo
 share/locale/cy/LC_MESSAGES/shared-mime-info.mo
 share/locale/da/LC_MESSAGES/shared-mime-info.mo
@@ -14,11 +17,14 @@ share/locale/en_GB/LC_MESSAGES/shared-mime-info.mo
 share/locale/eo/LC_MESSAGES/shared-mime-info.mo
 share/locale/es/LC_MESSAGES/shared-mime-info.mo
 share/locale/eu/LC_MESSAGES/shared-mime-info.mo
+share/locale/fa_IR/LC_MESSAGES/shared-mime-info.mo
 share/locale/fi/LC_MESSAGES/shared-mime-info.mo
+share/locale/fo/LC_MESSAGES/shared-mime-info.mo
 share/locale/fr/LC_MESSAGES/shared-mime-info.mo
 share/locale/ga/LC_MESSAGES/shared-mime-info.mo
 share/locale/gl/LC_MESSAGES/shared-mime-info.mo
 share/locale/he/LC_MESSAGES/shared-mime-info.mo
+share/locale/hi/LC_MESSAGES/shared-mime-info.mo
 share/locale/hu/LC_MESSAGES/shared-mime-info.mo
 share/locale/id/LC_MESSAGES/shared-mime-info.mo
 share/locale/it/LC_MESSAGES/shared-mime-info.mo
@@ -31,6 +37,7 @@ share/locale/ms/LC_MESSAGES/shared-mime-info.mo
 share/locale/nb/LC_MESSAGES/shared-mime-info.mo
 share/locale/nl/LC_MESSAGES/shared-mime-info.mo
 share/locale/nn/LC_MESSAGES/shared-mime-info.mo
+share/locale/pa/LC_MESSAGES/shared-mime-info.mo
 share/locale/pl/LC_MESSAGES/shared-mime-info.mo
 share/locale/pt/LC_MESSAGES/shared-mime-info.mo
 share/locale/pt_BR/LC_MESSAGES/shared-mime-info.mo
@@ -41,9 +48,12 @@ share/locale/sk/LC_MESSAGES/shared-mime-info.mo
 share/locale/sl/LC_MESSAGES/shared-mime-info.mo
 share/locale/sq/LC_MESSAGES/shared-mime-info.mo
 share/locale/sr/LC_MESSAGES/shared-mime-info.mo
+share/locale/sr@latin/LC_MESSAGES/shared-mime-info.mo
 share/locale/sv/LC_MESSAGES/shared-mime-info.mo
+share/locale/tr/LC_MESSAGES/shared-mime-info.mo
 share/locale/uk/LC_MESSAGES/shared-mime-info.mo
 share/locale/vi/LC_MESSAGES/shared-mime-info.mo
+share/locale/wa/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/mime/application/andrew-inset.xml
@@ -61,6 +71,7 @@ share/mime/application/mathematica.xml
 share/mime/application/mathml+xml.xml
 share/mime/application/mbox.xml
 share/mime/application/metalink+xml.xml
+share/mime/application/metalink4+xml.xml
 share/mime/application/msword-template.xml
 share/mime/application/msword.xml
 share/mime/application/mxf.xml
@@ -89,6 +100,7 @@ share/mime/application/rtf.xml
 share/mime/application/sdp.xml
 share/mime/application/sieve.xml
 share/mime/application/smil.xml
+share/mime/application/vnd.android.package-archive.xml
 share/mime/application/vnd.apple.mpegurl.xml
 share/mime/application/vnd.corel-draw.xml
 share/mime/application/vnd.emusic-emusic_package.xml
@@ -101,9 +113,21 @@ share/mime/application/vnd.lotus-1-2-3.xml
 share/mime/application/vnd.mozilla.xul+xml.xml
 share/mime/application/vnd.ms-access.xml
 share/mime/application/vnd.ms-cab-compressed.xml
+share/mime/application/vnd.ms-excel.addin.macroEnabled.12.xml
+share/mime/application/vnd.ms-excel.sheet.binary.macroEnabled.12.xml
+share/mime/application/vnd.ms-excel.sheet.macroEnabled.12.xml
+share/mime/application/vnd.ms-excel.template.macroEnabled.12.xml
 share/mime/application/vnd.ms-excel.xml
+share/mime/application/vnd.ms-htmlhelp.xml
+share/mime/application/vnd.ms-powerpoint.addin.macroEnabled.12.xml
+share/mime/application/vnd.ms-powerpoint.presentation.macroEnabled.12.xml
+share/mime/application/vnd.ms-powerpoint.slide.macroEnabled.12.xml
+share/mime/application/vnd.ms-powerpoint.slideshow.macroEnabled.12.xml
+share/mime/application/vnd.ms-powerpoint.template.macroEnabled.12.xml
 share/mime/application/vnd.ms-powerpoint.xml
 share/mime/application/vnd.ms-tnef.xml
+share/mime/application/vnd.ms-word.document.macroEnabled.12.xml
+share/mime/application/vnd.ms-word.template.macroEnabled.12.xml
 share/mime/application/vnd.ms-works.xml
 share/mime/application/vnd.ms-wpl.xml
 share/mime/application/vnd.oasis.opendocument.chart-template.xml
@@ -128,9 +152,13 @@ share/mime/application/vnd.oasis.opendocument.text-web.xml
 share/mime/application/vnd.oasis.opendocument.text.xml
 share/mime/application/vnd.openofficeorg.extension.xml
 share/mime/application/vnd.openxmlformats-officedocument.presentationml.presentation.xml
+share/mime/application/vnd.openxmlformats-officedocument.presentationml.slide.xml
 share/mime/application/vnd.openxmlformats-officedocument.presentationml.slideshow.xml
+share/mime/application/vnd.openxmlformats-officedocument.presentationml.template.xml
 share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.xml
+share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.template.xml
 share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.document.xml
+share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.template.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
 share/mime/application/vnd.stardivision.chart.xml
@@ -150,6 +178,8 @@ share/mime/application/vnd.sun.xml.writer.global.xml
 share/mime/application/vnd.sun.xml.writer.template.xml
 share/mime/application/vnd.sun.xml.writer.xml
 share/mime/application/vnd.symbian.install.xml
+share/mime/application/vnd.tcpdump.pcap.xml
+share/mime/application/vnd.visio.xml
 share/mime/application/vnd.wordperfect.xml
 share/mime/application/x-7z-compressed.xml
 share/mime/application/x-abiword.xml
@@ -180,7 +210,6 @@ share/mime/application/x-cbz.xml
 share/mime/application/x-cd-image.xml
 share/mime/application/x-cdrdao-toc.xml
 share/mime/application/x-chess-pgn.xml
-share/mime/application/x-chm.xml
 share/mime/application/x-cisco-vpn-settings.xml
 share/mime/application/x-class-file.xml
 share/mime/application/x-compress.xml
@@ -287,6 +316,7 @@ share/mime/application/x-magicpoint.xml
 share/mime/application/x-markaby.xml
 share/mime/application/x-matroska.xml
 share/mime/application/x-mif.xml
+share/mime/application/x-mobipocket-ebook.xml
 share/mime/application/x-mozilla-bookmarks.xml
 share/mime/application/x-ms-dos-executable.xml
 share/mime/application/x-ms-wim.xml
@@ -301,6 +331,7 @@ share/mime/application/x-nes-rom.xml
 share/mime/application/x-netcdf.xml
 share/mime/application/x-netshow-channel.xml
 share/mime/application/x-nintendo-ds-rom.xml
+share/mime/application/x-nzb.xml
 share/mime/application/x-object.xml
 share/mime/application/x-ole-storage.xml
 share/mime/application/x-oleo.xml
@@ -321,7 +352,6 @@ share/mime/application/x-quattropro.xml
 share/mime/application/x-quicktime-media-link.xml
 share/mime/application/x-qw.xml
 share/mime/application/x-rar.xml
-share/mime/application/x-reject.xml
 share/mime/application/x-rpm.xml
 share/mime/application/x-ruby.xml
 share/mime/application/x-sami.xml
@@ -362,6 +392,7 @@ share/mime/application/x-ustar.xml
 share/mime/application/x-wais-source.xml
 share/mime/application/x-windows-themepack.xml
 share/mime/application/x-wpg.xml
+share/mime/application/x-wwf.xml
 share/mime/application/x-x509-ca-cert.xml
 share/mime/application/x-xbel.xml
 share/mime/application/x-xliff.xml
@@ -541,7 +572,6 @@ share/mime/text/cache-manifest.xml
 share/mime/text/calendar.xml
 share/mime/text/css.xml
 share/mime/text/csv.xml
-share/mime/text/directory.xml
 share/mime/text/enriched.xml
 share/mime/text/html.xml
 share/mime/text/htmlh.xml
@@ -552,12 +582,14 @@ share/mime/text/sgml.xml
 share/mime/text/spreadsheet.xml
 share/mime/text/tab-separated-values.xml
 share/mime/text/troff.xml
+share/mime/text/vcard.xml
 share/mime/text/vnd.graphviz.xml
 share/mime/text/vnd.rn-realtext.xml
 share/mime/text/vnd.sun.j2me.app-descriptor.xml
 share/mime/text/vnd.trolltech.linguist.xml
 share/mime/text/vnd.wap.wml.xml
 share/mime/text/vnd.wap.wmlscript.xml
+share/mime/text/vtt.xml
 share/mime/text/x-adasrc.xml
 share/mime/text/x-authors.xml
 share/mime/text/x-bibtex.xml
@@ -594,6 +626,7 @@ share/mime/text/x-literate-haskell.xml
 share/mime/text/x-log.xml
 share/mime/text/x-lua.xml
 share/mime/text/x-makefile.xml
+share/mime/text/x-markdown.xml
 share/mime/text/x-matlab.xml
 share/mime/text/x-microdvd.xml
 share/mime/text/x-moc.xml
@@ -611,8 +644,11 @@ share/mime/text/x-opml+xml.xml
 share/mime/text/x-pascal.xml
 share/mime/text/x-patch.xml
 share/mime/text/x-python.xml
+share/mime/text/x-qml.xml
 share/mime/text/x-readme.xml
+share/mime/text/x-reject.xml
 share/mime/text/x-rpm-spec.xml
+share/mime/text/x-scala.xml
 share/mime/text/x-scheme.xml
 share/mime/text/x-setext.xml
 share/mime/text/x-sql.xml
@@ -635,6 +671,7 @@ share/mime/text/x-vhdl.xml
 share/mime/text/x-xmi.xml
 share/mime/text/x-xslfo.xml
 share/mime/text/xmcd.xml
+share/mime/version
 share/mime/video/3gpp.xml
 share/mime/video/3gpp2.xml
 share/mime/video/annodex.xml
@@ -646,6 +683,7 @@ share/mime/video/mpeg.xml
 share/mime/video/ogg.xml
 share/mime/video/quicktime.xml
 share/mime/video/vivo.xml
+share/mime/video/vnd.mpegurl.xml
 share/mime/video/vnd.rn-realvideo.xml
 share/mime/video/wavelet.xml
 share/mime/video/webm.xml
@@ -709,5 +747,9 @@ share/mime/x-epoc/x-sisx-app.xml
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/bg_BG/LC_MESSAGES
+@dirrmtry share/locale/bg_BG
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
