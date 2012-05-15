@@ -1,12 +1,6 @@
-lib/locale/de/LC_MESSAGES/pidgin-privacy-please.mo
-lib/locale/pl/LC_MESSAGES/pidgin-privacy-please.mo
-lib/locale/ru/LC_MESSAGES/pidgin-privacy-please.mo
+libdata/ldconfig/pidgin-privacy-please
 lib/pidgin/libpidgin_pp.la
 lib/pidgin/libpidgin_pp.so
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/pl/LC_MESSAGES
-@dirrmtry lib/locale/ru/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale/pl
-@dirrmtry lib/locale/ru
-@dirrmtry lib/locale
+share/locale/de/LC_MESSAGES/pidgin-privacy-please.mo
+share/locale/pl/LC_MESSAGES/pidgin-privacy-please.mo
+share/locale/ru/LC_MESSAGES/pidgin-privacy-please.mo
