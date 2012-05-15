@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	inspircd
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	irc
-MASTER_SITES=	http://www.inspircd.org/downloads/ \
-		http://www.chatspike.net/downloads/
-DISTNAME=	InspIRCd-${PORTVERSION}
+MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
+DISTNAME=	InspIRCd-v${PORTVERSION}
 
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	A modular C++ IRC daemon
 
-CONFLICTS=	inspircd-1.1* inspircd-2.*
+CONFLICTS=	inspircd-2.*
 
 LATEST_LINK=	inspircd12
 
