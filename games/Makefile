@@ -72,6 +72,7 @@
     SUBDIR += biniax2
     SUBDIR += biorythm
     SUBDIR += bitefusion
+    SUBDIR += black-box
     SUBDIR += blackjack
     SUBDIR += blackshadeselite
     SUBDIR += blinken
