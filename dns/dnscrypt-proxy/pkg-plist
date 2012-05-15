@@ -1,0 +1,2 @@
+@stopdaemon dnscrypt-proxy
+sbin/dnscrypt-proxy

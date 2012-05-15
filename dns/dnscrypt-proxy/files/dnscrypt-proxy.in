@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dnscrypt-proxy
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable dnscrypt-proxy:
+#
+# dnscrypt_proxy_enable="YES":	Set to NO by default.
+#				Set it to YES to enable dnscrypt-proxy.
+
+. /etc/rc.subr
+
+name=dnscrypt_proxy
+rcvar=dnscrypt_proxy_enable
+
+stop_cmd="dnscrypt_proxy_stop"
+
+load_rc_config dnscrypt_proxy
+
+: {dnscrypt_proxy_enable:="NO"}
+
+command=%%PREFIX%%/sbin/dnscrypt-proxy
+procname=%%PREFIX%%/sbin/dnscrypt-proxy
+pidfile=/var/run/dnscrypt-proxy.pid
+logdir=/var/log/dnscrypt-proxy.log
+
+command_args="-d -p ${pidfile} -l ${logdir}"
+
+dnscrypt_proxy_stop() {
+        kill -KILL `cat ${pidfile}` 2> /dev/null && echo "Killed ${name}."
+        }
+
+run_rc_command "$1"
