@@ -7553,6 +7553,7 @@ kpuzzle                         ports/games/kpuzzle
 kqemu-kmod                      ports/emulators/kqemu-kmod
 kqemu-kmod-devel                ports/emulators/kqemu-kmod-devel
 kradview                        ports/graphics/kradview
+krank                           ports/games/krank
 krb5                            ports/security/krb5
 krb5-appl                       ports/security/krb5-appl
 krdesktop                       ports/net/krdesktop
@@ -10820,6 +10821,7 @@ openser                         ports/net/openser
 opensfx                         ports/games/opensfx
 openshot                        ports/multimedia/openshot
 openslp                         ports/net/openslp
+opensmtpd                       ports/mail/opensmtpd
 opensonic                       ports/games/opensonic
 opensp                          ports/textproc/opensp
 openspc                         ports/audio/openspc
@@ -25333,6 +25335,7 @@ setcdboot                       ports/sysutils/setcdboot
 setedit                         ports/editors/setedit
 setlayout                       ports/x11/setlayout
 setquota                        ports/sysutils/setquota
+sets                            ports/games/sets
 settitle                        ports/x11/settitle
 setxkbmap                       ports/x11/setxkbmap
 sex                             ports/games/sex
