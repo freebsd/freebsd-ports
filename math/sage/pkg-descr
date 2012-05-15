@@ -5,8 +5,4 @@ Python-based interface.
 Mission: Creating a viable free open source alternative to Magma, Maple,
 Mathematica and Matlab.
 
-This port is a work in progress.  It creates a sage that is mostly functional,
-but it does fail a few tests.  Suggestions for improvement to the maintainer
-are welcome.
-
 WWW: http://www.sagemath.org/
