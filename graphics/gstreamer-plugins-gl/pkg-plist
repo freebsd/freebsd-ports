@@ -5,6 +5,7 @@ include/gstreamer-0.10/gst/gl/gstglfilter.h
 include/gstreamer-0.10/gst/gl/gstglmixer.h
 include/gstreamer-0.10/gst/gl/gstglmixerpad.h
 include/gstreamer-0.10/gst/gl/gstglshader.h
+include/gstreamer-0.10/gst/gl/gstglshadervariables.h
 include/gstreamer-0.10/gst/gl/gstglwindow.h
 lib/gstreamer-0.10/libgstopengl.a
 lib/gstreamer-0.10/libgstopengl.la
@@ -16,7 +17,6 @@ lib/libgstgl-0.10.so.1
 libdata/pkgconfig/gstreamer-gl-0.10.pc
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/api-index.html
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/ch01.html
-share/gtk-doc/html/gst-plugins-gl-libs-0.10/gst-plugins-gl-libs-0.10.devhelp
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/gst-plugins-gl-libs-0.10.devhelp2
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/gst-plugins-gl-libs-gettext.html
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/gst-plugins-gl-libs-gst-i18n-plugin.html
@@ -34,7 +34,6 @@ share/gtk-doc/html/gst-plugins-gl-libs-0.10/style.css
 share/gtk-doc/html/gst-plugins-gl-libs-0.10/up.png
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/ch01.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/ch02.html
-share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-0.10.devhelp
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-0.10.devhelp2
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glbumper.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glcolorscale.html
@@ -48,8 +47,10 @@ share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glfiltercu
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glfilterglass.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glfilterlaplacian.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glfilterreflectedscreen.html
+share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glfiltershader.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glfiltersobel.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glimagesink.html
+share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glmosaic.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-gloverlay.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-gltestsrc.html
 share/gtk-doc/html/gst-plugins-gl-plugins-0.10/gst-plugins-gl-plugins-glupload.html
