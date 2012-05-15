@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.014
+PORTVERSION=	2.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:DDUMONT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -80,6 +81,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::ListId.3 \
 		Config::Model::Lister.3 \
 		Config::Model::Loader.3 \
+		Config::Model::Manual::DataMigration.3 \
 		Config::Model::Manual::ModelCreationAdvanced.3 \
 		Config::Model::Manual::ModelCreationIntroduction.3 \
 		Config::Model::Node.3 \
