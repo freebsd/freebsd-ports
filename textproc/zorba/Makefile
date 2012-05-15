@@ -34,8 +34,8 @@ USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
 CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAME}
-DATADIR=	${PREFIX}/share/${PKGNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
