@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	showip
-PORTVERSION=	1.3
-DISTVERSIONSUFFIX=	-tb+fx+sm
+PORTVERSION=	1.5
+DISTVERSIONSUFFIX=	-tb+sm+fx
 CATEGORIES=	www
 
 MAINTAINER=	barbara.xxx1975@libero.it
