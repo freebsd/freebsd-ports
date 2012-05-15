@@ -23,7 +23,7 @@ USE_XORG=	x11 xext xextproto xpm
 INSTALLS_ICONS=	yes
 MAN1=		komclean
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
