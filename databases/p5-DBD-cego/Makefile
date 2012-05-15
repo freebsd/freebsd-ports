@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-cego
-PORTVERSION=	1.1.15
+PORTVERSION=	1.2.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
