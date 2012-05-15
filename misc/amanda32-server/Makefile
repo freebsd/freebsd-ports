@@ -19,7 +19,7 @@ RUN_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
 BUILD_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
-SLAVEDIRS=	misc/amanda-client
+SLAVEDIRS=	misc/amanda32-client
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
@@ -92,10 +92,10 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-server-2.5.* amanda-server-2.6.*
+CONFLICTS=	amanda-server-2.5.* amanda-server-2.6.* amanda-server-3.3.*
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
-RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda32-client
+RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda32-client
 
 CONFIGURE_ARGS+=--without-client
 
@@ -171,7 +171,7 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-client-2.5.* amanda-client-2.6.*
+CONFLICTS=	amanda-client-2.5.* amanda-client-2.6.* amanda-client-3.3.*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 .if defined(AMANDA_NO_SNAPSHOT_DUMP)
 CFLAGS=		-DFreeBSD_NO_SNAPSHOT_DUMP=t

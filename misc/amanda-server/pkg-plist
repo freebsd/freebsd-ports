@@ -7,6 +7,7 @@ lib/amanda/libamserver.a
 lib/amanda/libamserver.la
 lib/amanda/libamserver.so
 %%SITE_PERL%%/Amanda/Changer.pm
+%%SITE_PERL%%/Amanda/Changer/aggregate.pm
 %%SITE_PERL%%/Amanda/Changer/compat.pm
 %%SITE_PERL%%/Amanda/Changer/disk.pm
 %%SITE_PERL%%/Amanda/Changer/multi.pm
@@ -22,8 +23,11 @@ lib/amanda/libamserver.so
 %%SITE_PERL%%/Amanda/Device.pm
 %%SITE_PERL%%/Amanda/Disklist.pm
 %%SITE_PERL%%/Amanda/Holding.pm
-%%SITE_PERL%%/Amanda/Interactive.pm
-%%SITE_PERL%%/Amanda/Interactive/stdin.pm
+%%SITE_PERL%%/Amanda/Interactivity.pm
+%%SITE_PERL%%/Amanda/Interactivity/email.pm
+%%SITE_PERL%%/Amanda/Interactivity/stdin.pm
+%%SITE_PERL%%/Amanda/Interactivity/tty.pm
+%%SITE_PERL%%/Amanda/Interactivity/tty_email.pm
 %%SITE_PERL%%/Amanda/Logfile.pm
 %%SITE_PERL%%/Amanda/Recovery/Clerk.pm
 %%SITE_PERL%%/Amanda/Recovery/Planner.pm
@@ -32,10 +36,13 @@ lib/amanda/libamserver.so
 %%SITE_PERL%%/Amanda/Report/human.pm
 %%SITE_PERL%%/Amanda/Report/postscript.pm
 %%SITE_PERL%%/Amanda/Report/xml.pm
+%%SITE_PERL%%/Amanda/ScanInventory.pm
 %%SITE_PERL%%/Amanda/Tapelist.pm
 %%SITE_PERL%%/Amanda/Taper/Controller.pm
 %%SITE_PERL%%/Amanda/Taper/Protocol.pm
 %%SITE_PERL%%/Amanda/Taper/Scan.pm
+%%SITE_PERL%%/Amanda/Taper/Scan/lexical.pm
+%%SITE_PERL%%/Amanda/Taper/Scan/oldest.pm
 %%SITE_PERL%%/Amanda/Taper/Scan/traditional.pm
 %%SITE_PERL%%/Amanda/Taper/Scribe.pm
 %%SITE_PERL%%/Amanda/Taper/Worker.pm
@@ -54,7 +61,7 @@ lib/amanda/libamserver.so
 %%SITE_PERL%%/auto/Amanda/XferServer/libXferServer.so
 %%PLOT%%libexec/amanda/amcat.awk
 libexec/amanda/amcheck-device
-libexec/amanda/amcleanupdisk
+libexec/amanda/amdumpd
 libexec/amanda/amindexd
 libexec/amanda/amlogroll
 %%PLOT%%libexec/amanda/amplot.awk
@@ -80,6 +87,7 @@ sbin/amcheck
 sbin/amcheckdb
 sbin/amcheckdump
 sbin/amcleanup
+sbin/amcleanupdisk
 sbin/amdevcheck
 sbin/amdump
 sbin/amfetchdump
@@ -91,7 +99,6 @@ sbin/amreport
 sbin/amrestore
 sbin/amrmtape
 sbin/amserverconfig
-sbin/amservice
 sbin/amstatus
 sbin/amtape
 sbin/amtapetype
@@ -107,7 +114,7 @@ sbin/amvault
 @dirrm %%SITE_PERL%%/Amanda/Taper
 @dirrm %%SITE_PERL%%/Amanda/Report
 @dirrm %%SITE_PERL%%/Amanda/Recovery
-@dirrm %%SITE_PERL%%/Amanda/Interactive
+@dirrm %%SITE_PERL%%/Amanda/Interactivity
 @dirrm %%SITE_PERL%%/Amanda/DB
 @dirrm %%SITE_PERL%%/Amanda/Curinfo
 @dirrm %%SITE_PERL%%/Amanda/Changer

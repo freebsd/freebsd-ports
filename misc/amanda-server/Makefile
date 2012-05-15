@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -92,7 +92,7 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-server-2.5.* amanda-server-2.6.*
+CONFLICTS=	amanda-server-2.5.* amanda-server-2.6.* amanda-server-3.2.*
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
 RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
@@ -104,15 +104,18 @@ MAN5=		disklist.5 \
 MAN7=		amanda-changers.7 \
 		amanda-compatibility.7 \
 		amanda-devices.7 \
+		amanda-interactivity.7 \
 		amanda-taperscan.7
 MAN8=		amaddclient.8 amadmin.8 amaespipe.8 amcheck.8 \
-		amcheckdb.8 amcheckdump.8 amcleanup.8 \
+		amcheckdb.8 amcheckdump.8 \
+		amcleanup.8 \
+		amcleanupdisk.8 \
 		amcrypt.8 amcryptsimple.8 amcrypt-ossl-asym.8 amcrypt-ossl.8 \
 		amdevcheck.8 \
 		amdump.8 amfetchdump.8 amflush.8 amgetconf.8 amgpgcrypt.8 \
 		amlabel.8 \
 		amoverview.8 amreport.8 amrestore.8 amrmtape.8 \
-		amserverconfig.8 amservice.8 amstatus.8 \
+		amserverconfig.8 amstatus.8 \
 		amtape.8 amtoc.8 amtapetype.8 \
 		amvault.8
 
@@ -171,7 +174,7 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-client-2.5.* amanda-client-2.6.*
+CONFLICTS=	amanda-client-2.5.* amanda-client-2.6.* amanda-client-3.2.*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 .if defined(AMANDA_NO_SNAPSHOT_DUMP)
 CFLAGS=		-DFreeBSD_NO_SNAPSHOT_DUMP=t
@@ -186,11 +189,13 @@ MAN7=		amanda-applications.7 \
 		amanda-scripts.7
 MAN8=		amanda.8 \
 		amarchiver.8 \
+		amdump_client.8 \
 		amgtar.8 \
 		ampgsql.8 \
 		amraw.8 \
 		amrecover.8 \
 		amsamba.8 \
+		amservice.8 \
 		amstar.8 \
 		amsuntar.8 \
 		amzfs-sendrecv.8 \
