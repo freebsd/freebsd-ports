@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-C3
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,19 +18,23 @@ OPTIONS=	XS "XS speed optimizations" off
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.ifdef(WITH_XS)
-RUN_DEPENDS=	p5-Class-C3-XS>=0.07:${PORTSDIR}/devel/p5-Class-C3-XS
-.else
-RUN_DEPENDS=	p5-Algorithm-C3>=0.06:${PORTSDIR}/devel/p5-Algorithm-C3
-.endif
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 MAN3=		Class::C3.3 \
 		Class::C3::next.3
 
-post-extract:
-	@${PERL} -i.bak -ne 'print unless m,^if, .. m,}$$,' ${WRKSRC}/Makefile.PL
+.include <bsd.port.options.mk>
+
+.ifdef(WITH_XS)
+BUILD_DEPENDS+=	p5-Class-C3-XS>=0.13:${PORTSDIR}/devel/p5-Class-C3-XS
+RUN_DEPENDS+=	p5-Class-C3-XS>=0.13:${PORTSDIR}/devel/p5-Class-C3-XS
+.else
+BUILD_DEPENDS+=	p5-Algorithm-C3>=0.07:${PORTSDIR}/devel/p5-Algorithm-C3
+RUN_DEPENDS+=	p5-Algorithm-C3>=0.07:${PORTSDIR}/devel/p5-Algorithm-C3
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+.endif
 
 .include <bsd.port.post.mk>
