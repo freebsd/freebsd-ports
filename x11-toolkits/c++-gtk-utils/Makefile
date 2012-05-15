@@ -19,9 +19,8 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=configure-gtk2
 USE_GCC=	4.4+
-USE_GNOME=	gtk20 gnomehack
+USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -32,10 +31,22 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|c++-gtk-utils po docs|c++-gtk-utils po|' \
-		-e 's|install-pkgconfigDATA install-pkgdocDATA|install-pkgconfigDATA|' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${REINPLACE_FILE}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+USE_AUTOTOOLS=	autoconf aclocal libtool
+ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
+REINPLACE_FILE=	${WRKSRC}/Makefile.am
+
+pre-configure:
+	@cd ${WRKSRC} && ./bootstrap-gtk2.sh
+
+.else
+CONFIGURE_SCRIPT=	configure-gtk2
+REINPLACE_FILE=		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
