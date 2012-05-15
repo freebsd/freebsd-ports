@@ -1,0 +1,21 @@
+Viewer configuration files of devices with ScreenOS
+(of Juniper Networks), considers the context of commands.
+
+				For example to:
+set vrouter trust-vr sharable
+set vrouter "trust-vr"
+unset auto-route-export
+set protocol ospf
+set enable
+exit
+exit
+unset alg sip enable
+				and after:
+set vrouter trust-vr sharable
+set vrouter "trust-vr"
+   unset auto-route-export
+   set protocol ospf
+      set enable
+   exit
+exit
+unset alg sip enable

@@ -1,0 +1,3 @@
+#!/bin/sh
+export LESSOPEN="|%%PREFIX%%/bin/lesspipe-ssg.awk %s"
+exec %%LESS%% "$@"
