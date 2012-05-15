@@ -442,6 +442,7 @@
     SUBDIR += fsmgenerator
     SUBDIR += ftjam
     SUBDIR += ftnchek
+    SUBDIR += fuel
     SUBDIR += fujaba
     SUBDIR += funnelweb
     SUBDIR += g-wrap
