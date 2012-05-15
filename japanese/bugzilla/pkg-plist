@@ -218,7 +218,6 @@
 %%WWWDIR%%/template/ja/default/list/list.csv.tmpl
 %%WWWDIR%%/template/ja/default/list/list.html.tmpl
 %%WWWDIR%%/template/ja/default/list/list.ics.tmpl
-%%WWWDIR%%/template/ja/default/list/list.js.tmpl
 %%WWWDIR%%/template/ja/default/list/list.rdf.tmpl
 %%WWWDIR%%/template/ja/default/list/quips.html.tmpl
 %%WWWDIR%%/template/ja/default/list/server-push.html.tmpl
