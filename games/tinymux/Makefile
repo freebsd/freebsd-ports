@@ -7,10 +7,9 @@
 
 PORTNAME=	tinymux
 PORTVERSION=	2.6.5.${PATCHLEVEL}
-PORTREVISION=	2
 CATEGORIES=	games net
 MASTER_SITES=	GOOGLE_CODE \
-		ftp://ftp.tinymux.org/TinyMUX/tinymux-2.6/${PATCHLEVEL}/
+		ftp://ftp.tinymux.org/TinyMUX/old/tinymux-2.6/
 DISTNAME=	mux-${PORTVERSION}.unix
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,13 +27,9 @@ PORTDOCS=	*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PATCHLEVEL=	32
+PATCHLEVEL=	33
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
