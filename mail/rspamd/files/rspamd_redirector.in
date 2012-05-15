@@ -1,11 +1,10 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
 # PROVIDE: rspamd_redirector
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
-
 #
 # Add the following line to /etc/rc.conf to enable rspamd_redirector:
 #
@@ -16,18 +15,17 @@
 
 name="rspamd_redirector"
 rcvar=rspamd_redirector_enable
-command="%%PREFIX%%/bin/rspamd-redirector"
 
 load_rc_config $name
 
-: ${rspamd_redirector_enable="NO"}
-: ${rspamd_redirector_pidfile="/var/run/rspamd/redirector.pid"}
+: ${rspamd_redirector_enable:="NO"}
 
-stop_postcmd="rm -f $rspamd_redirector_pidfile"
+pidfile=${rspamd_redirector_pidfile:-"/var/run/rspamd/redirector.pid"}
 
+command="%%PREFIX%%/bin/rspamd-redirector"
+command_interpreter="/usr/bin/perl"
 extra_commands="reload"
 sig_reload="USR1"
-
-command_interpreter="/usr/bin/perl"
+stop_postcmd="rm -f $pidfile"
 
 run_rc_command "$1"

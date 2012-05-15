@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
 # PROVIDE: rspamd
@@ -21,40 +21,37 @@
 
 name=rspamd
 rcvar=rspamd_enable
+
+load_rc_config $name
+
+: ${rspamd_enable:="NO"}
+: ${rspamd_user="nobody"}
+: ${rspamd_group="nobody"}
+: ${rspamd_flags="-c %%PREFIX%%/etc/rspamd.xml"}
+
+pidfile=${rspamd_pidfile:-"/var/run/rspamd/rspamd.pid"}
+
 command=%%PREFIX%%/bin/rspamd
 restart_precmd="rspamd_checkconfig"
 reload_precmd="rspamd_checkconfig"
 configtest_cmd="rspamd_checkconfig"
 reopenlog_cmd="reopenlog_cmd"
 
-pidfile="$rspamd_pidfile"
 required_files=%%PREFIX%%/etc/rspamd.xml
-
-load_rc_config $name
-
-: ${rspamd_enable="NO"}
-: ${rspamd_pidfile="/var/run/rspamd/rspamd.pid"}
-: ${rspamd_user="nobody"}
-: ${rspamd_group="nobody"}
-: ${rspamd_flags="-c %%PREFIX%%/etc/rspamd.xml"}
-
-stop_postcmd="rm -f $rspamd_pidfile"
+command_args="-u ${rspamd_user} -g ${rspamd_group}"
+sig_reload="HUP"
+extra_commands="reload configtest reopenlog"
+stop_postcmd="rm -f $pidfile"
 
 rspamd_checkconfig()
 {
-        echo "Performing sanity check on rspamd configuration:"
-        eval ${command} ${command_args} -t
+	echo "Performing sanity check on rspamd configuration:"
+	eval ${command} ${command_args} -t
 }
 
 reopenlog_cmd()
 {
-   pkill -USR1 -F $rspamd_pidfile
+	pkill -USR1 -F $pidfile
 }
 
-sig_reload="HUP"
-
-command_args="-u ${rspamd_user} -g ${rspamd_group}"
-
-extra_commands="reload configtest reopenlog"
 run_rc_command "$1"
-
