@@ -388,6 +388,10 @@ include/scribus/plugins/tools/2geomtools/meshdistortion/ui_meshdistortiondialog.
 include/scribus/plugins/tools/2geomtools/pathalongpath/pathalongpath.h
 include/scribus/plugins/tools/2geomtools/pathalongpath/pathdialog.h
 include/scribus/plugins/tools/2geomtools/pathalongpath/ui_pathdialogbase.h
+include/scribus/plugins/tools/hunspellcheck/hunspelldialog.h
+include/scribus/plugins/tools/hunspellcheck/hunspellplugin.h
+include/scribus/plugins/tools/hunspellcheck/hunspellpluginimpl.h
+include/scribus/plugins/tools/hunspellcheck/hunspellpluginstructs.h
 include/scribus/plugins/tools/lenseffects/lensdialog.h
 include/scribus/plugins/tools/lenseffects/lenseffects.h
 include/scribus/plugins/tools/lenseffects/ui_lensdialogbase.h
@@ -691,170 +695,6 @@ lib/scribus/plugins/libsvgimplugin.so
 lib/scribus/plugins/libtransformeffect.so
 lib/scribus/plugins/libwmfimplugin.so
 lib/scribus/plugins/libx_aspellplugin.so
-lib/scribus/profiles/GenericCMYK.icm
-lib/scribus/profiles/GenericCMYK.txt
-lib/scribus/profiles/Readme
-lib/scribus/profiles/sRGB.icm
-lib/scribus/profiles/srgb.license
-lib/scribus/swatches/AFNOR_X_08-002.xml
-lib/scribus/swatches/AS_2007S-1996.xml
-lib/scribus/swatches/Alligator Collection 3000_bs00_3.eps
-lib/scribus/swatches/Alligator Collection 3000_bs01_3.eps
-lib/scribus/swatches/Alligator Collection 3000_kd01_4.eps
-lib/scribus/swatches/Alligator Collection 3000_np01_4.eps
-lib/scribus/swatches/Alligator Collection 3000_zd01_4.eps
-lib/scribus/swatches/Alligator Collection 4000_bs00_3.eps
-lib/scribus/swatches/Alligator Collection 4000_bs01_3.eps
-lib/scribus/swatches/Alligator Collection 4000_kd01_4.eps
-lib/scribus/swatches/Alligator Collection 4000_np01_4.eps
-lib/scribus/swatches/Alligator Collection 4000_zd01_4.eps
-lib/scribus/swatches/BS_381C.xml
-lib/scribus/swatches/BS_4800.xml
-lib/scribus/swatches/BannerRite_bs00_3.eps
-lib/scribus/swatches/BannerRite_bs01_3.eps
-lib/scribus/swatches/BannerRite_kd01_4.eps
-lib/scribus/swatches/BannerRite_np01_4.eps
-lib/scribus/swatches/BannerRite_zd01_4.eps
-lib/scribus/swatches/Baumann System Prase_bs00_3.eps
-lib/scribus/swatches/Baumann System Prase_bs01_3.eps
-lib/scribus/swatches/Baumann System Prase_kd01_4.eps
-lib/scribus/swatches/Baumann System Prase_np01_4.eps
-lib/scribus/swatches/Baumann System Prase_zd01_4.eps
-lib/scribus/swatches/COPYING_RESENE.txt
-lib/scribus/swatches/Colortrend Wood Stains_bs00_3.eps
-lib/scribus/swatches/Colortrend Wood Stains_bs01_3.eps
-lib/scribus/swatches/Colortrend Wood Stains_kd01_4.eps
-lib/scribus/swatches/Colortrend Wood Stains_np01_4.eps
-lib/scribus/swatches/Colortrend Wood Stains_zd01_4.eps
-lib/scribus/swatches/CrayonTM.xml
-lib/scribus/swatches/DEUTSCHEpapier_bs00_3.eps
-lib/scribus/swatches/DEUTSCHEpapier_bs01_3.eps
-lib/scribus/swatches/DEUTSCHEpapier_kd01_4.eps
-lib/scribus/swatches/DEUTSCHEpapier_np01_4.eps
-lib/scribus/swatches/DEUTSCHEpapier_zd01_4.eps
-lib/scribus/swatches/DRAKA POLYA_bs00_3.eps
-lib/scribus/swatches/DRAKA POLYA_bs01_3.eps
-lib/scribus/swatches/DRAKA POLYA_kd01_4.eps
-lib/scribus/swatches/DRAKA POLYA_np01_4.eps
-lib/scribus/swatches/DRAKA POLYA_zd01_4.eps
-lib/scribus/swatches/GCMI_Colors.xml
-lib/scribus/swatches/GS Palette 141 Kunstdruck_bs00_3.eps
-lib/scribus/swatches/GS Palette 141 Kunstdruck_bs01_3.eps
-lib/scribus/swatches/GS Palette 141 Kunstdruck_kd01_4.eps
-lib/scribus/swatches/GS Palette 141 Kunstdruck_np01_4.eps
-lib/scribus/swatches/GS Palette 141 Kunstdruck_zd01_4.eps
-lib/scribus/swatches/GS Palette 141 Naturpapier_bs00_3.eps
-lib/scribus/swatches/GS Palette 141 Naturpapier_bs01_3.eps
-lib/scribus/swatches/GS Palette 141 Naturpapier_kd01_4.eps
-lib/scribus/swatches/GS Palette 141 Naturpapier_np01_4.eps
-lib/scribus/swatches/GS Palette 141 Naturpapier_zd01_4.eps
-lib/scribus/swatches/Gnome.xml
-lib/scribus/swatches/Heidelberger ip Oberputze_bs00_3.eps
-lib/scribus/swatches/Heidelberger ip Oberputze_bs01_3.eps
-lib/scribus/swatches/Heidelberger ip Oberputze_kd01_4.eps
-lib/scribus/swatches/Heidelberger ip Oberputze_np01_4.eps
-lib/scribus/swatches/Heidelberger ip Oberputze_zd01_4.eps
-lib/scribus/swatches/J&S K_bs00_3.eps
-lib/scribus/swatches/J&S K_bs01_3.eps
-lib/scribus/swatches/J&S K_kd01_4.eps
-lib/scribus/swatches/J&S K_np01_4.eps
-lib/scribus/swatches/J&S K_zd01_4.eps
-lib/scribus/swatches/JIS_8721.xml
-lib/scribus/swatches/Japanese_Traditional.xml
-lib/scribus/swatches/Japanese_Traditional_README.txt
-lib/scribus/swatches/KOBRA_bs00_3.eps
-lib/scribus/swatches/KOBRA_bs01_3.eps
-lib/scribus/swatches/KOBRA_kd01_4.eps
-lib/scribus/swatches/KOBRA_np01_4.eps
-lib/scribus/swatches/KOBRA_zd01_4.eps
-lib/scribus/swatches/Koessinger Keramik-Druck_bs00_3.eps
-lib/scribus/swatches/Koessinger Keramik-Druck_bs01_3.eps
-lib/scribus/swatches/Koessinger Keramik-Druck_kd01_4.eps
-lib/scribus/swatches/Koessinger Keramik-Druck_np01_4.eps
-lib/scribus/swatches/Koessinger Keramik-Druck_zd01_4.eps
-lib/scribus/swatches/LibreOffice.xml
-lib/scribus/swatches/Munsell_Soil_Colors.xml
-lib/scribus/swatches/NBS-ISCC_Colors.xml
-lib/scribus/swatches/OSMO Einmallasur_bs00_3.eps
-lib/scribus/swatches/OSMO Einmallasur_bs01_3.eps
-lib/scribus/swatches/OSMO Einmallasur_kd01_4.eps
-lib/scribus/swatches/OSMO Einmallasur_np01_4.eps
-lib/scribus/swatches/OSMO Einmallasur_zd01_4.eps
-lib/scribus/swatches/OpenOffice_dot_org_CMYK.xml
-lib/scribus/swatches/OpenSUSE.xml
-lib/scribus/swatches/Oracal 451_bs00_3.eps
-lib/scribus/swatches/Oracal 451_bs01_3.eps
-lib/scribus/swatches/Oracal 451_kd01_4.eps
-lib/scribus/swatches/Oracal 451_np01_4.eps
-lib/scribus/swatches/Oracal 451_zd01_4.eps
-lib/scribus/swatches/Oracal 6510_bs00_3.eps
-lib/scribus/swatches/Oracal 6510_bs01_3.eps
-lib/scribus/swatches/Oracal 6510_kd01_4.eps
-lib/scribus/swatches/Oracal 6510_np01_4.eps
-lib/scribus/swatches/Oracal 6510_zd01_4.eps
-lib/scribus/swatches/Oxygen.xml
-lib/scribus/swatches/PRB Color_bs00_3.eps
-lib/scribus/swatches/PRB Color_bs01_3.eps
-lib/scribus/swatches/PRB Color_kd01_4.eps
-lib/scribus/swatches/PRB Color_np01_4.eps
-lib/scribus/swatches/PRB Color_zd01_4.eps
-lib/scribus/swatches/Resene_BS2660_101.xml
-lib/scribus/swatches/Resene_BS5252_2008.xml
-lib/scribus/swatches/Resene_Decks_Paths_2009.xml
-lib/scribus/swatches/Resene_Heritage_2008.xml
-lib/scribus/swatches/Resene_Karen_Walker_2008.xml
-lib/scribus/swatches/Resene_KidzColour_2008.xml
-lib/scribus/swatches/Resene_Multi-Finish.xml
-lib/scribus/swatches/Resene_Summit_Roof_2010.xml
-lib/scribus/swatches/Resene_The_Range_2011-12.xml
-lib/scribus/swatches/Resene_The_Range_WandN_2010.xml
-lib/scribus/swatches/SVG.xml
-lib/scribus/swatches/Scribus_Basic.xml
-lib/scribus/swatches/Scribus_Splash.xml
-lib/scribus/swatches/Sericol_UCG_Leuchtfarben_bs00_3.eps
-lib/scribus/swatches/Sericol_UCG_Leuchtfarben_bs01_3.eps
-lib/scribus/swatches/Sericol_UCG_Leuchtfarben_kd01_4.eps
-lib/scribus/swatches/Sericol_UCG_Leuchtfarben_np01_4.eps
-lib/scribus/swatches/Sericol_UCG_Leuchtfarben_zd01_4.eps
-lib/scribus/swatches/Sericol_UCG_MatchingSystem_bs00_3.eps
-lib/scribus/swatches/Sericol_UCG_MatchingSystem_bs01_3.eps
-lib/scribus/swatches/Sericol_UCG_MatchingSystem_kd01_4.eps
-lib/scribus/swatches/Sericol_UCG_MatchingSystem_np01_4.eps
-lib/scribus/swatches/Sericol_UCG_MatchingSystem_zd01_4.eps
-lib/scribus/swatches/Standardised_Rock_Colours.xml
-lib/scribus/swatches/TAG Farbe erleben_bs00_3.eps
-lib/scribus/swatches/TAG Farbe erleben_bs01_3.eps
-lib/scribus/swatches/TAG Farbe erleben_kd01_4.eps
-lib/scribus/swatches/TAG Farbe erleben_np01_4.eps
-lib/scribus/swatches/TAG Farbe erleben_zd01_4.eps
-lib/scribus/swatches/Tango.xml
-lib/scribus/swatches/US_FS_595.xml
-lib/scribus/swatches/Ubuntu_CMYK.xml
-lib/scribus/swatches/Ubuntu_RGB.xml
-lib/scribus/swatches/X11.xml
-lib/scribus/swatches/X11Grey.xml
-lib/scribus/swatches/Xfig.xml
-lib/scribus/swatches/dtp-studio-free-palettes-license.rtf
-lib/scribus/swatches/ispo 2001_bs00_3.eps
-lib/scribus/swatches/ispo 2001_bs01_3.eps
-lib/scribus/swatches/ispo 2001_kd01_4.eps
-lib/scribus/swatches/ispo 2001_np01_4.eps
-lib/scribus/swatches/ispo 2001_zd01_4.eps
-lib/scribus/swatches/ispo 840_bs00_3.eps
-lib/scribus/swatches/ispo 840_bs01_3.eps
-lib/scribus/swatches/ispo 840_kd01_4.eps
-lib/scribus/swatches/ispo 840_np01_4.eps
-lib/scribus/swatches/ispo 840_zd01_4.eps
-lib/scribus/swatches/kera Colour-Line_bs00_3.eps
-lib/scribus/swatches/kera Colour-Line_bs01_3.eps
-lib/scribus/swatches/kera Colour-Line_kd01_4.eps
-lib/scribus/swatches/kera Colour-Line_np01_4.eps
-lib/scribus/swatches/kera Colour-Line_zd01_4.eps
-lib/scribus/swatches/swedex_bs00_3.eps
-lib/scribus/swatches/swedex_bs01_3.eps
-lib/scribus/swatches/swedex_kd01_4.eps
-lib/scribus/swatches/swedex_np01_4.eps
-lib/scribus/swatches/swedex_zd01_4.eps
 share/applications/scribus.desktop
 share/mime/application/vnd.scribus.xml
 share/mime/packages/scribus.xml
@@ -872,6 +712,401 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/README.MacOSX
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/TRANSLATION
+%%DOCSDIR%%/de/about1.html
+%%DOCSDIR%%/de/about2.html
+%%DOCSDIR%%/de/bugreport.html
+%%DOCSDIR%%/de/cms.html
+%%DOCSDIR%%/de/cms2.html
+%%DOCSDIR%%/de/cms3.html
+%%DOCSDIR%%/de/codingstandards.html
+%%DOCSDIR%%/de/color1.html
+%%DOCSDIR%%/de/config.html
+%%DOCSDIR%%/de/contributions.html
+%%DOCSDIR%%/de/developers.html
+%%DOCSDIR%%/de/doccopyright.html
+%%DOCSDIR%%/de/docinfo.html
+%%DOCSDIR%%/de/documentation.html
+%%DOCSDIR%%/de/download.html
+%%DOCSDIR%%/de/editorial.html
+%%DOCSDIR%%/de/faq1.html
+%%DOCSDIR%%/de/faq2.html
+%%DOCSDIR%%/de/faq3.html
+%%DOCSDIR%%/de/fonts1.html
+%%DOCSDIR%%/de/fonts2.html
+%%DOCSDIR%%/de/gettexthowto.html
+%%DOCSDIR%%/de/gsview.html
+%%DOCSDIR%%/de/hyphenator.html
+%%DOCSDIR%%/de/images/Cover_en1-page1.png
+%%DOCSDIR%%/de/images/DrawLatexFrame.png
+%%DOCSDIR%%/de/images/Image_Properties.png
+%%DOCSDIR%%/de/images/Mantis_my_view.png
+%%DOCSDIR%%/de/images/Mantis_new_report1.png
+%%DOCSDIR%%/de/images/Mantis_new_report2.png
+%%DOCSDIR%%/de/images/Mantis_new_report3.png
+%%DOCSDIR%%/de/images/Mantis_searching.png
+%%DOCSDIR%%/de/images/Mantis_signup.png
+%%DOCSDIR%%/de/images/RYB_color_wheel.png
+%%DOCSDIR%%/de/images/Rembrandt1.png
+%%DOCSDIR%%/de/images/Rembrandt10.png
+%%DOCSDIR%%/de/images/Rembrandt11.png
+%%DOCSDIR%%/de/images/Rembrandt12.png
+%%DOCSDIR%%/de/images/Rembrandt13.png
+%%DOCSDIR%%/de/images/Rembrandt14.png
+%%DOCSDIR%%/de/images/Rembrandt15.png
+%%DOCSDIR%%/de/images/Rembrandt16.png
+%%DOCSDIR%%/de/images/Rembrandt17.png
+%%DOCSDIR%%/de/images/Rembrandt17a.png
+%%DOCSDIR%%/de/images/Rembrandt17b.png
+%%DOCSDIR%%/de/images/Rembrandt18.png
+%%DOCSDIR%%/de/images/Rembrandt18b.png
+%%DOCSDIR%%/de/images/Rembrandt19.png
+%%DOCSDIR%%/de/images/Rembrandt2.png
+%%DOCSDIR%%/de/images/Rembrandt20.png
+%%DOCSDIR%%/de/images/Rembrandt21.png
+%%DOCSDIR%%/de/images/Rembrandt3.png
+%%DOCSDIR%%/de/images/Rembrandt4.png
+%%DOCSDIR%%/de/images/Rembrandt5.png
+%%DOCSDIR%%/de/images/Rembrandt6.png
+%%DOCSDIR%%/de/images/Rembrandt7.png
+%%DOCSDIR%%/de/images/Rembrandt8.png
+%%DOCSDIR%%/de/images/Rembrandt9.png
+%%DOCSDIR%%/de/images/Scripter.png
+%%DOCSDIR%%/de/images/SwB.png
+%%DOCSDIR%%/de/images/XYZ_Prop.png
+%%DOCSDIR%%/de/images/XYZ_Prop1.png
+%%DOCSDIR%%/de/images/alert.png
+%%DOCSDIR%%/de/images/batik1.png
+%%DOCSDIR%%/de/images/boundingbox.png
+%%DOCSDIR%%/de/images/boundingbox1.png
+%%DOCSDIR%%/de/images/cmcanvas.png
+%%DOCSDIR%%/de/images/cms-gamut1.png
+%%DOCSDIR%%/de/images/cms-gamut2.png
+%%DOCSDIR%%/de/images/cms.png
+%%DOCSDIR%%/de/images/cmsmodify1.png
+%%DOCSDIR%%/de/images/cmyk.png
+%%DOCSDIR%%/de/images/colormanager2.png
+%%DOCSDIR%%/de/images/colorwheel.png
+%%DOCSDIR%%/de/images/colrs-caricature.png
+%%DOCSDIR%%/de/images/colrs-mgt1.png
+%%DOCSDIR%%/de/images/colrs-mgt2.png
+%%DOCSDIR%%/de/images/combine_polygons.png
+%%DOCSDIR%%/de/images/combine_polygons1.png
+%%DOCSDIR%%/de/images/combine_polygons2.png
+%%DOCSDIR%%/de/images/combine_polygons3.png
+%%DOCSDIR%%/de/images/combine_polygons4.png
+%%DOCSDIR%%/de/images/combine_polygons5.png
+%%DOCSDIR%%/de/images/context_image.png
+%%DOCSDIR%%/de/images/context_shape.png
+%%DOCSDIR%%/de/images/context_text135.png
+%%DOCSDIR%%/de/images/contourline_flow.png
+%%DOCSDIR%%/de/images/cw-analogous.png
+%%DOCSDIR%%/de/images/cw-compl.png
+%%DOCSDIR%%/de/images/cw-splitcompl.png
+%%DOCSDIR%%/de/images/cw-tetradic.png
+%%DOCSDIR%%/de/images/cw-triadic.png
+%%DOCSDIR%%/de/images/cw-warning.png
+%%DOCSDIR%%/de/images/docheader1.png
+%%DOCSDIR%%/de/images/docheader2.png
+%%DOCSDIR%%/de/images/docinfo.png
+%%DOCSDIR%%/de/images/docinfo1.png
+%%DOCSDIR%%/de/images/docinfo2.png
+%%DOCSDIR%%/de/images/dtp-studio.png
+%%DOCSDIR%%/de/images/duotone-imp.png
+%%DOCSDIR%%/de/images/duotone-imp2.png
+%%DOCSDIR%%/de/images/edit_shapes.png
+%%DOCSDIR%%/de/images/editcols1.png
+%%DOCSDIR%%/de/images/editcols1a.png
+%%DOCSDIR%%/de/images/editcols2.png
+%%DOCSDIR%%/de/images/editcols3.png
+%%DOCSDIR%%/de/images/eps-imp1.png
+%%DOCSDIR%%/de/images/eps-imp2.png
+%%DOCSDIR%%/de/images/eps-imp3.png
+%%DOCSDIR%%/de/images/eps-imp4.png
+%%DOCSDIR%%/de/images/eps-imp5.png
+%%DOCSDIR%%/de/images/file-error1.png
+%%DOCSDIR%%/de/images/file-error2.png
+%%DOCSDIR%%/de/images/file-error3.png
+%%DOCSDIR%%/de/images/fileimport.png
+%%DOCSDIR%%/de/images/font-preview.png
+%%DOCSDIR%%/de/images/font-subst.png
+%%DOCSDIR%%/de/images/fontmatrix.png
+%%DOCSDIR%%/de/images/fontpref1.png
+%%DOCSDIR%%/de/images/fontpref2.png
+%%DOCSDIR%%/de/images/fontpref3.png
+%%DOCSDIR%%/de/images/fonts.png
+%%DOCSDIR%%/de/images/fonts2.png
+%%DOCSDIR%%/de/images/frame_shape_flow.png
+%%DOCSDIR%%/de/images/geometry.png
+%%DOCSDIR%%/de/images/geometry1.png
+%%DOCSDIR%%/de/images/gimpoptions1.png
+%%DOCSDIR%%/de/images/gimpoptions2.png
+%%DOCSDIR%%/de/images/gimpoptions3.png
+%%DOCSDIR%%/de/images/givelife1.png
+%%DOCSDIR%%/de/images/gradient_adjuster.png
+%%DOCSDIR%%/de/images/gradient_adjuster1.png
+%%DOCSDIR%%/de/images/gradient_adjuster_vector.png
+%%DOCSDIR%%/de/images/htmlimport.png
+%%DOCSDIR%%/de/images/htmlstyle.png
+%%DOCSDIR%%/de/images/hyphen1.png
+%%DOCSDIR%%/de/images/hyphen2.png
+%%DOCSDIR%%/de/images/hyphen3.png
+%%DOCSDIR%%/de/images/import-pdfimage.png
+%%DOCSDIR%%/de/images/ink-cov.png
+%%DOCSDIR%%/de/images/insert-frame-1.png
+%%DOCSDIR%%/de/images/insert-frame-2.png
+%%DOCSDIR%%/de/images/krita.jpg
+%%DOCSDIR%%/de/images/krita1.jpg
+%%DOCSDIR%%/de/images/layers1.png
+%%DOCSDIR%%/de/images/layers2.png
+%%DOCSDIR%%/de/images/lilyp.png
+%%DOCSDIR%%/de/images/line_tab.png
+%%DOCSDIR%%/de/images/line_tab1.png
+%%DOCSDIR%%/de/images/line_tab2.png
+%%DOCSDIR%%/de/images/line_tab3.png
+%%DOCSDIR%%/de/images/line_tab4.png
+%%DOCSDIR%%/de/images/line_tab5.png
+%%DOCSDIR%%/de/images/line_tab6.png
+%%DOCSDIR%%/de/images/line_tab7.png
+%%DOCSDIR%%/de/images/lprof.png
+%%DOCSDIR%%/de/images/missing-gs.png
+%%DOCSDIR%%/de/images/mpage1.png
+%%DOCSDIR%%/de/images/mpage2.png
+%%DOCSDIR%%/de/images/mpage3.png
+%%DOCSDIR%%/de/images/mpage4.png
+%%DOCSDIR%%/de/images/mpage5.png
+%%DOCSDIR%%/de/images/multipledup_copies.png
+%%DOCSDIR%%/de/images/multipledup_rotation.png
+%%DOCSDIR%%/de/images/multipledup_rows.png
+%%DOCSDIR%%/de/images/new1.png
+%%DOCSDIR%%/de/images/new2.png
+%%DOCSDIR%%/de/images/new3.png
+%%DOCSDIR%%/de/images/new4.png
+%%DOCSDIR%%/de/images/new5.png
+%%DOCSDIR%%/de/images/new6.png
+%%DOCSDIR%%/de/images/node_edit_close.png
+%%DOCSDIR%%/de/images/nodes_edit.png
+%%DOCSDIR%%/de/images/numb-sections.png
+%%DOCSDIR%%/de/images/oogettext1.png
+%%DOCSDIR%%/de/images/pagenumbering.png
+%%DOCSDIR%%/de/images/patterns1.png
+%%DOCSDIR%%/de/images/patterns2.png
+%%DOCSDIR%%/de/images/pdf-form-ht1.png
+%%DOCSDIR%%/de/images/pdf-form-ht2.png
+%%DOCSDIR%%/de/images/pdf-form-ht3.png
+%%DOCSDIR%%/de/images/pdf-form-ht4.png
+%%DOCSDIR%%/de/images/pdf-form-ht5.png
+%%DOCSDIR%%/de/images/pdf-form-ht6.png
+%%DOCSDIR%%/de/images/pdfx1a-lo.png
+%%DOCSDIR%%/de/images/pdfx3-1.png
+%%DOCSDIR%%/de/images/pdfxcolor.png
+%%DOCSDIR%%/de/images/pdfxintent.png
+%%DOCSDIR%%/de/images/plot1.png
+%%DOCSDIR%%/de/images/plot2.png
+%%DOCSDIR%%/de/images/polygons.png
+%%DOCSDIR%%/de/images/polygons1.png
+%%DOCSDIR%%/de/images/povray.png
+%%DOCSDIR%%/de/images/preflight-v.png
+%%DOCSDIR%%/de/images/prefs-mac-1.png
+%%DOCSDIR%%/de/images/prefs_9parts.png
+%%DOCSDIR%%/de/images/prefs_colormgmt.png
+%%DOCSDIR%%/de/images/prefs_display.png
+%%DOCSDIR%%/de/images/prefs_document.png
+%%DOCSDIR%%/de/images/prefs_document1.png
+%%DOCSDIR%%/de/images/prefs_exttools.png
+%%DOCSDIR%%/de/images/prefs_fibonacci.png
+%%DOCSDIR%%/de/images/prefs_general.png
+%%DOCSDIR%%/de/images/prefs_goldenmean.png
+%%DOCSDIR%%/de/images/prefs_guides.png
+%%DOCSDIR%%/de/images/prefs_guides1.png
+%%DOCSDIR%%/de/images/prefs_gutenberg.png
+%%DOCSDIR%%/de/images/prefs_keyboard.png
+%%DOCSDIR%%/de/images/prefs_magazine.png
+%%DOCSDIR%%/de/images/prefs_misc.png
+%%DOCSDIR%%/de/images/prefs_pdfexport.png
+%%DOCSDIR%%/de/images/prefs_pdfexport1.png
+%%DOCSDIR%%/de/images/prefs_preflight.png
+%%DOCSDIR%%/de/images/prefs_shortwords.png
+%%DOCSDIR%%/de/images/prefs_tools.png
+%%DOCSDIR%%/de/images/prefs_tools1.png
+%%DOCSDIR%%/de/images/prefs_tools2.png
+%%DOCSDIR%%/de/images/prefs_tools3.png
+%%DOCSDIR%%/de/images/prefs_tools4.png
+%%DOCSDIR%%/de/images/prefs_tools5.png
+%%DOCSDIR%%/de/images/prefs_tools6.png
+%%DOCSDIR%%/de/images/prefs_typog.png
+%%DOCSDIR%%/de/images/print-dialog1.png
+%%DOCSDIR%%/de/images/print-dialog2.png
+%%DOCSDIR%%/de/images/printer2.png
+%%DOCSDIR%%/de/images/printpreview.png
+%%DOCSDIR%%/de/images/prop_shape.png
+%%DOCSDIR%%/de/images/qsg-col1.png
+%%DOCSDIR%%/de/images/qsg-col2.png
+%%DOCSDIR%%/de/images/register.png
+%%DOCSDIR%%/de/images/resene-pal.png
+%%DOCSDIR%%/de/images/result.png
+%%DOCSDIR%%/de/images/rf-error1.png
+%%DOCSDIR%%/de/images/rf-error2.png
+%%DOCSDIR%%/de/images/rf-error3.png
+%%DOCSDIR%%/de/images/rf1.png
+%%DOCSDIR%%/de/images/rf2.png
+%%DOCSDIR%%/de/images/rf3.png
+%%DOCSDIR%%/de/images/rf4.png
+%%DOCSDIR%%/de/images/rf5.png
+%%DOCSDIR%%/de/images/rf6.png
+%%DOCSDIR%%/de/images/rf7.png
+%%DOCSDIR%%/de/images/rf8.png
+%%DOCSDIR%%/de/images/rgb-cmyk.png
+%%DOCSDIR%%/de/images/rgb.png
+%%DOCSDIR%%/de/images/round_rectangle.png
+%%DOCSDIR%%/de/images/sadie4by2b.png
+%%DOCSDIR%%/de/images/scribus-os2.png
+%%DOCSDIR%%/de/images/scribus-pres1.png
+%%DOCSDIR%%/de/images/scribus-pres2.png
+%%DOCSDIR%%/de/images/shape_edit.png
+%%DOCSDIR%%/de/images/shapes7.png
+%%DOCSDIR%%/de/images/shapes8.png
+%%DOCSDIR%%/de/images/skewing.png
+%%DOCSDIR%%/de/images/spot.png
+%%DOCSDIR%%/de/images/squat_tux.png
+%%DOCSDIR%%/de/images/style_manager1.png
+%%DOCSDIR%%/de/images/style_manager10.png
+%%DOCSDIR%%/de/images/style_manager1b.png
+%%DOCSDIR%%/de/images/style_manager3b.png
+%%DOCSDIR%%/de/images/style_manager7.png
+%%DOCSDIR%%/de/images/style_manager8.png
+%%DOCSDIR%%/de/images/style_manager9.png
+%%DOCSDIR%%/de/images/swdialog.png
+%%DOCSDIR%%/de/images/table-import-1.png
+%%DOCSDIR%%/de/images/table-import-2.png
+%%DOCSDIR%%/de/images/table-import-3.png
+%%DOCSDIR%%/de/images/tb-bookbinder.png
+%%DOCSDIR%%/de/images/tb-gsview.png
+%%DOCSDIR%%/de/images/tb-inkscape.png
+%%DOCSDIR%%/de/images/tb-jpdf.png
+%%DOCSDIR%%/de/images/tb-libreoffice.png
+%%DOCSDIR%%/de/images/tb-pdf-imp.png
+%%DOCSDIR%%/de/images/text-frame-link.png
+%%DOCSDIR%%/de/images/text-frame-unlink.png
+%%DOCSDIR%%/de/images/text_filter135.png
+%%DOCSDIR%%/de/images/text_filter136.png
+%%DOCSDIR%%/de/images/text_filter136b.png
+%%DOCSDIR%%/de/images/text_flow.png
+%%DOCSDIR%%/de/images/text_linking.png
+%%DOCSDIR%%/de/images/text_tab1.png
+%%DOCSDIR%%/de/images/text_tab10.png
+%%DOCSDIR%%/de/images/text_tab11.png
+%%DOCSDIR%%/de/images/text_tab11b.png
+%%DOCSDIR%%/de/images/text_tab12.png
+%%DOCSDIR%%/de/images/text_tab13.png
+%%DOCSDIR%%/de/images/text_tab2.png
+%%DOCSDIR%%/de/images/text_tab3.png
+%%DOCSDIR%%/de/images/text_tab4.png
+%%DOCSDIR%%/de/images/text_tab5.png
+%%DOCSDIR%%/de/images/text_tab6.png
+%%DOCSDIR%%/de/images/text_tab7.png
+%%DOCSDIR%%/de/images/text_tab7a.png
+%%DOCSDIR%%/de/images/text_tab7b.png
+%%DOCSDIR%%/de/images/text_tab8.png
+%%DOCSDIR%%/de/images/text_tab9.png
+%%DOCSDIR%%/de/images/transform_dialogb.png
+%%DOCSDIR%%/de/images/transform_translaterotation.png
+%%DOCSDIR%%/de/images/transform_translaterotation1.png
+%%DOCSDIR%%/de/images/transform_translatescaling.png
+%%DOCSDIR%%/de/images/transform_translateskewing.png
+%%DOCSDIR%%/de/images/transform_translateskewing1.png
+%%DOCSDIR%%/de/images/vectimp1.png
+%%DOCSDIR%%/de/images/vectimp2.png
+%%DOCSDIR%%/de/images/vectimp3.png
+%%DOCSDIR%%/de/images/vectimp4.png
+%%DOCSDIR%%/de/images/vectimp5.png
+%%DOCSDIR%%/de/images/vector-advanced.png
+%%DOCSDIR%%/de/images/vector-clipart.png
+%%DOCSDIR%%/de/images/xnview.png
+%%DOCSDIR%%/de/importhints.html
+%%DOCSDIR%%/de/importhints1.html
+%%DOCSDIR%%/de/importhints2.html
+%%DOCSDIR%%/de/importhints3.html
+%%DOCSDIR%%/de/importhints4.html
+%%DOCSDIR%%/de/index.html
+%%DOCSDIR%%/de/install-dpkg.html
+%%DOCSDIR%%/de/install.html
+%%DOCSDIR%%/de/install1.html
+%%DOCSDIR%%/de/install2.html
+%%DOCSDIR%%/de/install4.html
+%%DOCSDIR%%/de/install5.html
+%%DOCSDIR%%/de/intro.html
+%%DOCSDIR%%/de/irc.html
+%%DOCSDIR%%/de/keys.html
+%%DOCSDIR%%/de/layers.html
+%%DOCSDIR%%/de/mailing_lists.html
+%%DOCSDIR%%/de/menu.xml
+%%DOCSDIR%%/de/moncal.html
+%%DOCSDIR%%/de/mouse.html
+%%DOCSDIR%%/de/otherinfo.html
+%%DOCSDIR%%/de/pagenumber.html
+%%DOCSDIR%%/de/pagetemplate1.html
+%%DOCSDIR%%/de/pdf_form.html
+%%DOCSDIR%%/de/pdfexport1.html
+%%DOCSDIR%%/de/pdfexport2.html
+%%DOCSDIR%%/de/pdfexport3.html
+%%DOCSDIR%%/de/pdfexport4.html
+%%DOCSDIR%%/de/pdflavor.html
+%%DOCSDIR%%/de/pdfx3.html
+%%DOCSDIR%%/de/plugin_howto.html
+%%DOCSDIR%%/de/print1.html
+%%DOCSDIR%%/de/print2.html
+%%DOCSDIR%%/de/print3.html
+%%DOCSDIR%%/de/psd.html
+%%DOCSDIR%%/de/readme-macosx.html
+%%DOCSDIR%%/de/readme-os2.html
+%%DOCSDIR%%/de/readme-win32.html
+%%DOCSDIR%%/de/readme.html
+%%DOCSDIR%%/de/releases.html
+%%DOCSDIR%%/de/resources.html
+%%DOCSDIR%%/de/scribus-svg.html
+%%DOCSDIR%%/de/scribuscopyright.html
+%%DOCSDIR%%/de/scribusfileformat.html
+%%DOCSDIR%%/de/scripter-extensions.html
+%%DOCSDIR%%/de/scripter-faq.html
+%%DOCSDIR%%/de/scripter1.html
+%%DOCSDIR%%/de/scripterapi-ImageExport.html
+%%DOCSDIR%%/de/scripterapi-PDFfile.html
+%%DOCSDIR%%/de/scripterapi-Printer.html
+%%DOCSDIR%%/de/scripterapi-color.html
+%%DOCSDIR%%/de/scripterapi-constants.html
+%%DOCSDIR%%/de/scripterapi-dialogs.html
+%%DOCSDIR%%/de/scripterapi-doc.html
+%%DOCSDIR%%/de/scripterapi-font.html
+%%DOCSDIR%%/de/scripterapi-getobjprop.html
+%%DOCSDIR%%/de/scripterapi-layer.html
+%%DOCSDIR%%/de/scripterapi-manobj.html
+%%DOCSDIR%%/de/scripterapi-object.html
+%%DOCSDIR%%/de/scripterapi-page.html
+%%DOCSDIR%%/de/scripterapi-pydoc.html
+%%DOCSDIR%%/de/scripterapi-select.html
+%%DOCSDIR%%/de/scripterapi-setobjprop.html
+%%DOCSDIR%%/de/scripterapi-textframes.html
+%%DOCSDIR%%/de/scripterapi.html
+%%DOCSDIR%%/de/settings1.html
+%%DOCSDIR%%/de/short-words.html
+%%DOCSDIR%%/de/specs.html
+%%DOCSDIR%%/de/toolbox.html
+%%DOCSDIR%%/de/toolbox1.html
+%%DOCSDIR%%/de/toolbox12.html
+%%DOCSDIR%%/de/toolbox13.html
+%%DOCSDIR%%/de/toolbox14.html
+%%DOCSDIR%%/de/toolbox15.html
+%%DOCSDIR%%/de/toolbox2.html
+%%DOCSDIR%%/de/toolbox3.html
+%%DOCSDIR%%/de/toolbox4.html
+%%DOCSDIR%%/de/toolbox5.html
+%%DOCSDIR%%/de/toolbox6.html
+%%DOCSDIR%%/de/toolbox7.html
+%%DOCSDIR%%/de/toolbox8.html
+%%DOCSDIR%%/de/toolbox9.html
+%%DOCSDIR%%/de/topten.html
+%%DOCSDIR%%/de/translation_howto.html
+%%DOCSDIR%%/de/tutorials.html
 %%DOCSDIR%%/en/EditingShapes.html
 %%DOCSDIR%%/en/WwFill.html
 %%DOCSDIR%%/en/WwFrames.html
@@ -888,7 +1123,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/cms.html
 %%DOCSDIR%%/en/cms2.html
 %%DOCSDIR%%/en/cms3.html
-%%DOCSDIR%%/en/cms4.html
 %%DOCSDIR%%/en/codingstandards.html
 %%DOCSDIR%%/en/color1.html
 %%DOCSDIR%%/en/color2.html
@@ -896,12 +1130,11 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/color4.html
 %%DOCSDIR%%/en/color5.html
 %%DOCSDIR%%/en/color6.html
+%%DOCSDIR%%/en/color7.html
 %%DOCSDIR%%/en/color8.html
 %%DOCSDIR%%/en/colorwheel.html
 %%DOCSDIR%%/en/config.html
 %%DOCSDIR%%/en/contributions.html
-%%DOCSDIR%%/en/cross-platform.html
-%%DOCSDIR%%/en/cups.html
 %%DOCSDIR%%/en/developers.html
 %%DOCSDIR%%/en/doccopyright.html
 %%DOCSDIR%%/en/docinfo.html
@@ -911,15 +1144,9 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/faq1.html
 %%DOCSDIR%%/en/faq3.html
 %%DOCSDIR%%/en/fileproblems.html
-%%DOCSDIR%%/en/fonts-win32.html
 %%DOCSDIR%%/en/fonts1.html
 %%DOCSDIR%%/en/fonts2.html
-%%DOCSDIR%%/en/fonts3.html
-%%DOCSDIR%%/en/fonts4.html
-%%DOCSDIR%%/en/fonts5.html
 %%DOCSDIR%%/en/gettexthowto.html
-%%DOCSDIR%%/en/gsadv.html
-%%DOCSDIR%%/en/gsfont.html
 %%DOCSDIR%%/en/gsview.html
 %%DOCSDIR%%/en/hyphenator.html
 %%DOCSDIR%%/en/images/Cover_en1-page1.png
@@ -931,7 +1158,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/Mantis_new_report3.png
 %%DOCSDIR%%/en/images/Mantis_searching.png
 %%DOCSDIR%%/en/images/Mantis_signup.png
-%%DOCSDIR%%/en/images/RDF.png
 %%DOCSDIR%%/en/images/RYB_color_wheel.png
 %%DOCSDIR%%/en/images/Rembrandt1.png
 %%DOCSDIR%%/en/images/Rembrandt10.png
@@ -958,22 +1184,11 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/Rembrandt8.png
 %%DOCSDIR%%/en/images/Rembrandt9.png
 %%DOCSDIR%%/en/images/Scripter.png
-%%DOCSDIR%%/en/images/Scripter_error_string.png
 %%DOCSDIR%%/en/images/SwB.png
 %%DOCSDIR%%/en/images/XYZ_Prop.png
 %%DOCSDIR%%/en/images/XYZ_Prop1.png
-%%DOCSDIR%%/en/images/acro1.png
-%%DOCSDIR%%/en/images/acro2.png
-%%DOCSDIR%%/en/images/acro3.png
-%%DOCSDIR%%/en/images/acroinfo.png
-%%DOCSDIR%%/en/images/acropass.png
-%%DOCSDIR%%/en/images/acroreader5.1.png
-%%DOCSDIR%%/en/images/acrosec.png
-%%DOCSDIR%%/en/images/after_short_words.png
 %%DOCSDIR%%/en/images/alert.png
-%%DOCSDIR%%/en/images/automargins.png
 %%DOCSDIR%%/en/images/batik1.png
-%%DOCSDIR%%/en/images/before_short_words.png
 %%DOCSDIR%%/en/images/boundingbox.png
 %%DOCSDIR%%/en/images/boundingbox1.png
 %%DOCSDIR%%/en/images/cmcanvas.png
@@ -981,9 +1196,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/cms-gamut2.png
 %%DOCSDIR%%/en/images/cmsmodify1.png
 %%DOCSDIR%%/en/images/cmyk.png
-%%DOCSDIR%%/en/images/colormanager1.png
 %%DOCSDIR%%/en/images/colormanager2.png
-%%DOCSDIR%%/en/images/colormgmtscreen.png
 %%DOCSDIR%%/en/images/colorwheel.png
 %%DOCSDIR%%/en/images/colrs-caricature.png
 %%DOCSDIR%%/en/images/colrs-mgt1.png
@@ -998,8 +1211,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/context_shape.png
 %%DOCSDIR%%/en/images/context_text135.png
 %%DOCSDIR%%/en/images/contourline_flow.png
-%%DOCSDIR%%/en/images/cups1.png
-%%DOCSDIR%%/en/images/cups2.png
 %%DOCSDIR%%/en/images/cw-analogous.png
 %%DOCSDIR%%/en/images/cw-compl.png
 %%DOCSDIR%%/en/images/cw-splitcompl.png
@@ -1023,7 +1234,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/eps-imp3.png
 %%DOCSDIR%%/en/images/eps-imp4.png
 %%DOCSDIR%%/en/images/eps-imp5.png
-%%DOCSDIR%%/en/images/external.png
 %%DOCSDIR%%/en/images/file-error1.png
 %%DOCSDIR%%/en/images/file-error2.png
 %%DOCSDIR%%/en/images/file-error3.png
@@ -1034,44 +1244,26 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/fontpref1.png
 %%DOCSDIR%%/en/images/fontpref2.png
 %%DOCSDIR%%/en/images/fontpref3.png
-%%DOCSDIR%%/en/images/fontpref4.png
-%%DOCSDIR%%/en/images/fontprev.png
 %%DOCSDIR%%/en/images/fonts.png
 %%DOCSDIR%%/en/images/fonts2.png
-%%DOCSDIR%%/en/images/fonts3.png
-%%DOCSDIR%%/en/images/fonts4.png
-%%DOCSDIR%%/en/images/fontsampler.png
-%%DOCSDIR%%/en/images/fontsampler2.png
-%%DOCSDIR%%/en/images/formularz_export_PDF.png
-%%DOCSDIR%%/en/images/formularz_js_skrypt.png
-%%DOCSDIR%%/en/images/formularz_js_sprawdzanie.png
-%%DOCSDIR%%/en/images/formularz_nowy.png
-%%DOCSDIR%%/en/images/formularz_pole_num.png
 %%DOCSDIR%%/en/images/frame_shape_flow.png
-%%DOCSDIR%%/en/images/gammagrayscale.png
 %%DOCSDIR%%/en/images/geometry.png
 %%DOCSDIR%%/en/images/geometry1.png
 %%DOCSDIR%%/en/images/gimpoptions1.png
 %%DOCSDIR%%/en/images/gimpoptions2.png
 %%DOCSDIR%%/en/images/gimpoptions3.png
+%%DOCSDIR%%/en/images/givelife1.png
 %%DOCSDIR%%/en/images/gradient_adjuster.png
 %%DOCSDIR%%/en/images/gradient_adjuster1.png
 %%DOCSDIR%%/en/images/gradient_adjuster_vector.png
-%%DOCSDIR%%/en/images/gsadv1.png
-%%DOCSDIR%%/en/images/gsadv2.png
-%%DOCSDIR%%/en/images/gsadv3.png
 %%DOCSDIR%%/en/images/htmlimport.png
 %%DOCSDIR%%/en/images/htmlstyle.png
 %%DOCSDIR%%/en/images/hyphen1.png
-%%DOCSDIR%%/en/images/imageeffects.png
 %%DOCSDIR%%/en/images/import-pdfimage.png
 %%DOCSDIR%%/en/images/ink-cov.png
-%%DOCSDIR%%/en/images/inkscape.png
 %%DOCSDIR%%/en/images/insert-frame-1.png
 %%DOCSDIR%%/en/images/insert-frame-2.png
-%%DOCSDIR%%/en/images/kfontinstaller.png
 %%DOCSDIR%%/en/images/krita1.jpg
-%%DOCSDIR%%/en/images/ksnapshot.png
 %%DOCSDIR%%/en/images/layers1.png
 %%DOCSDIR%%/en/images/layers2.png
 %%DOCSDIR%%/en/images/lilyp.png
@@ -1085,10 +1277,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/line_tab7.png
 %%DOCSDIR%%/en/images/lprof.png
 %%DOCSDIR%%/en/images/missing-gs.png
-%%DOCSDIR%%/en/images/monprof1.png
-%%DOCSDIR%%/en/images/monprof2.png
-%%DOCSDIR%%/en/images/monprof3.png
-%%DOCSDIR%%/en/images/monprof4.png
 %%DOCSDIR%%/en/images/mpage1.png
 %%DOCSDIR%%/en/images/mpage2.png
 %%DOCSDIR%%/en/images/mpage3.png
@@ -1106,10 +1294,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/node_edit_close.png
 %%DOCSDIR%%/en/images/nodes_edit.png
 %%DOCSDIR%%/en/images/numb-sections.png
-%%DOCSDIR%%/en/images/oochart.png
-%%DOCSDIR%%/en/images/ooeps1.png
 %%DOCSDIR%%/en/images/oogettext1.png
-%%DOCSDIR%%/en/images/pagetemplate1.png
 %%DOCSDIR%%/en/images/patterns1.png
 %%DOCSDIR%%/en/images/patterns2.png
 %%DOCSDIR%%/en/images/pdf-form-ht1.png
@@ -1118,8 +1303,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/pdf-form-ht4.png
 %%DOCSDIR%%/en/images/pdf-form-ht5.png
 %%DOCSDIR%%/en/images/pdf-form-ht6.png
-%%DOCSDIR%%/en/images/pdfeffect1.png
-%%DOCSDIR%%/en/images/pdfeffect2.png
 %%DOCSDIR%%/en/images/pdfx1a-lo.png
 %%DOCSDIR%%/en/images/pdfx3-1.png
 %%DOCSDIR%%/en/images/pdfxcolor.png
@@ -1131,17 +1314,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/povray.png
 %%DOCSDIR%%/en/images/preflight-v.png
 %%DOCSDIR%%/en/images/prefs-mac-1.png
-%%DOCSDIR%%/en/images/prefs.png
-%%DOCSDIR%%/en/images/prefs10.png
-%%DOCSDIR%%/en/images/prefs11.png
-%%DOCSDIR%%/en/images/prefs12.png
-%%DOCSDIR%%/en/images/prefs15.png
-%%DOCSDIR%%/en/images/prefs2.png
-%%DOCSDIR%%/en/images/prefs3.png
-%%DOCSDIR%%/en/images/prefs4.png
-%%DOCSDIR%%/en/images/prefs5.png
-%%DOCSDIR%%/en/images/prefs6.png
-%%DOCSDIR%%/en/images/prefs8.png
 %%DOCSDIR%%/en/images/prefs_9parts.png
 %%DOCSDIR%%/en/images/prefs_colormgmt.png
 %%DOCSDIR%%/en/images/prefs_display.png
@@ -1169,18 +1341,11 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/prefs_tools5.png
 %%DOCSDIR%%/en/images/prefs_tools6.png
 %%DOCSDIR%%/en/images/prefs_typog.png
-%%DOCSDIR%%/en/images/prefsblgrid1.png
-%%DOCSDIR%%/en/images/prefsdisplay.png
-%%DOCSDIR%%/en/images/prefsgeneral.png
 %%DOCSDIR%%/en/images/print-dialog1.png
 %%DOCSDIR%%/en/images/print-dialog2.png
-%%DOCSDIR%%/en/images/printer1.png
 %%DOCSDIR%%/en/images/printer2.png
-%%DOCSDIR%%/en/images/printer3.png
 %%DOCSDIR%%/en/images/printpreview.png
-%%DOCSDIR%%/en/images/printseps.png
 %%DOCSDIR%%/en/images/prop_shape.png
-%%DOCSDIR%%/en/images/pstoedit1.png
 %%DOCSDIR%%/en/images/qsg-col1.png
 %%DOCSDIR%%/en/images/qsg-col2.png
 %%DOCSDIR%%/en/images/register.png
@@ -1204,16 +1369,10 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/scribus-os2.png
 %%DOCSDIR%%/en/images/scribus-pres1.png
 %%DOCSDIR%%/en/images/scribus-pres2.png
-%%DOCSDIR%%/en/images/scribus2.png
-%%DOCSDIR%%/en/images/scribuscms1.png
-%%DOCSDIR%%/en/images/scribustru4.png
 %%DOCSDIR%%/en/images/shape_edit.png
 %%DOCSDIR%%/en/images/shapes7.png
 %%DOCSDIR%%/en/images/shapes8.png
-%%DOCSDIR%%/en/images/siatka_jednostki_miar.png
-%%DOCSDIR%%/en/images/siatka_menu.png
 %%DOCSDIR%%/en/images/skewing.png
-%%DOCSDIR%%/en/images/spinbox1.png
 %%DOCSDIR%%/en/images/spot.png
 %%DOCSDIR%%/en/images/squat_tux.png
 %%DOCSDIR%%/en/images/style_manager1.png
@@ -1223,10 +1382,7 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/style_manager7.png
 %%DOCSDIR%%/en/images/style_manager8.png
 %%DOCSDIR%%/en/images/style_manager9.png
-%%DOCSDIR%%/en/images/svg1.png
 %%DOCSDIR%%/en/images/swdialog.png
-%%DOCSDIR%%/en/images/swmenu.png
-%%DOCSDIR%%/en/images/symbole.png
 %%DOCSDIR%%/en/images/table-import-1.png
 %%DOCSDIR%%/en/images/table-import-2.png
 %%DOCSDIR%%/en/images/table-import-3.png
@@ -1259,16 +1415,12 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/text_tab7b.png
 %%DOCSDIR%%/en/images/text_tab8.png
 %%DOCSDIR%%/en/images/text_tab9.png
-%%DOCSDIR%%/en/images/toolbar1.png
-%%DOCSDIR%%/en/images/toolbar1d.png
-%%DOCSDIR%%/en/images/toolbar3.png
 %%DOCSDIR%%/en/images/transform_dialogb.png
 %%DOCSDIR%%/en/images/transform_translaterotation.png
 %%DOCSDIR%%/en/images/transform_translaterotation1.png
 %%DOCSDIR%%/en/images/transform_translatescaling.png
 %%DOCSDIR%%/en/images/transform_translateskewing.png
 %%DOCSDIR%%/en/images/transform_translateskewing1.png
-%%DOCSDIR%%/en/images/ulica.png
 %%DOCSDIR%%/en/images/vectimp1.png
 %%DOCSDIR%%/en/images/vectimp2.png
 %%DOCSDIR%%/en/images/vectimp3.png
@@ -1276,8 +1428,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/images/vectimp5.png
 %%DOCSDIR%%/en/images/vector-advanced.png
 %%DOCSDIR%%/en/images/vector-clipart.png
-%%DOCSDIR%%/en/images/wlasciwosci_pola.png
-%%DOCSDIR%%/en/images/wyslij_formularz.png
 %%DOCSDIR%%/en/images/xnview.png
 %%DOCSDIR%%/en/importbitmap1.html
 %%DOCSDIR%%/en/importhints.html
@@ -1295,12 +1445,9 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/install5.html
 %%DOCSDIR%%/en/intro.html
 %%DOCSDIR%%/en/irc.html
-%%DOCSDIR%%/en/javascriptpdf.html
 %%DOCSDIR%%/en/keys.html
 %%DOCSDIR%%/en/layers.html
 %%DOCSDIR%%/en/lipsum.html
-%%DOCSDIR%%/en/machints1.html
-%%DOCSDIR%%/en/machints2.html
 %%DOCSDIR%%/en/mailing_lists.html
 %%DOCSDIR%%/en/menu.xml
 %%DOCSDIR%%/en/moncal.html
@@ -1309,7 +1456,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/otherinfo.html
 %%DOCSDIR%%/en/pagenumber.html
 %%DOCSDIR%%/en/pagetemplate1.html
-%%DOCSDIR%%/en/parallel-install.html
 %%DOCSDIR%%/en/pdf_form.html
 %%DOCSDIR%%/en/pdfexport1.html
 %%DOCSDIR%%/en/pdfexport2.html
@@ -1318,7 +1464,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/pdflavor.html
 %%DOCSDIR%%/en/pdfx3.html
 %%DOCSDIR%%/en/plugin_howto.html
-%%DOCSDIR%%/en/prepress.html
 %%DOCSDIR%%/en/print1.html
 %%DOCSDIR%%/en/print2.html
 %%DOCSDIR%%/en/print3.html
@@ -1332,7 +1477,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/releases.html
 %%DOCSDIR%%/en/renderframes.html
 %%DOCSDIR%%/en/resources.html
-%%DOCSDIR%%/en/scprinters.html
 %%DOCSDIR%%/en/scribus-svg.html
 %%DOCSDIR%%/en/scribuscopyright.html
 %%DOCSDIR%%/en/scribusfileformat.html
@@ -1362,8 +1506,6 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/en/specs.html
 %%DOCSDIR%%/en/toolbox.html
 %%DOCSDIR%%/en/toolbox1.html
-%%DOCSDIR%%/en/toolbox10.html
-%%DOCSDIR%%/en/toolbox11.html
 %%DOCSDIR%%/en/toolbox12.html
 %%DOCSDIR%%/en/toolbox13.html
 %%DOCSDIR%%/en/toolbox14.html
@@ -1399,79 +1541,39 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/WwShapes.html
 %%DOCSDIR%%/it/WwStyles.html
 %%DOCSDIR%%/it/WwText.html
+%%DOCSDIR%%/it/about1.html
 %%DOCSDIR%%/it/about2.html
+%%DOCSDIR%%/it/bugreport.html
 %%DOCSDIR%%/it/cli.html
+%%DOCSDIR%%/it/cms.html
+%%DOCSDIR%%/it/cms2.html
+%%DOCSDIR%%/it/cms3.html
+%%DOCSDIR%%/it/codingstandards.html
 %%DOCSDIR%%/it/color1.html
 %%DOCSDIR%%/it/color2.html
 %%DOCSDIR%%/it/color3.html
 %%DOCSDIR%%/it/color4.html
 %%DOCSDIR%%/it/color5.html
 %%DOCSDIR%%/it/color6.html
+%%DOCSDIR%%/it/color7.html
 %%DOCSDIR%%/it/color8.html
+%%DOCSDIR%%/it/colorwheel.html
 %%DOCSDIR%%/it/config.html
+%%DOCSDIR%%/it/contributions.html
+%%DOCSDIR%%/it/developers.html
+%%DOCSDIR%%/it/doccopyright.html
 %%DOCSDIR%%/it/docinfo.html
 %%DOCSDIR%%/it/documentation.html
+%%DOCSDIR%%/it/download.html
+%%DOCSDIR%%/it/editorial.html
+%%DOCSDIR%%/it/faq1.html
+%%DOCSDIR%%/it/faq3.html
+%%DOCSDIR%%/it/fileproblems.html
 %%DOCSDIR%%/it/fonts1.html
 %%DOCSDIR%%/it/fonts2.html
+%%DOCSDIR%%/it/gettexthowto.html
+%%DOCSDIR%%/it/gsview.html
 %%DOCSDIR%%/it/hyphenator.html
-%%DOCSDIR%%/it/images/Image_Properties.png
-%%DOCSDIR%%/it/images/XYZ_Prop.png
-%%DOCSDIR%%/it/images/XYZ_Prop1.png
-%%DOCSDIR%%/it/images/cmcanvas.png
-%%DOCSDIR%%/it/images/context_image.png
-%%DOCSDIR%%/it/images/context_text135.png
-%%DOCSDIR%%/it/images/docinfo.png
-%%DOCSDIR%%/it/images/docinfo2.png
-%%DOCSDIR%%/it/images/font-preview.png
-%%DOCSDIR%%/it/images/font-subst.png
-%%DOCSDIR%%/it/images/fontpref1.png
-%%DOCSDIR%%/it/images/fontpref2.png
-%%DOCSDIR%%/it/images/fontpref3.png
-%%DOCSDIR%%/it/images/hyphen1.png
-%%DOCSDIR%%/it/images/plot1.png
-%%DOCSDIR%%/it/images/plot2.png
-%%DOCSDIR%%/it/images/prefs_colormgmt.png
-%%DOCSDIR%%/it/images/prefs_display.png
-%%DOCSDIR%%/it/images/prefs_document.png
-%%DOCSDIR%%/it/images/prefs_exttools.png
-%%DOCSDIR%%/it/images/prefs_general.png
-%%DOCSDIR%%/it/images/prefs_guides.png
-%%DOCSDIR%%/it/images/prefs_keyboard.png
-%%DOCSDIR%%/it/images/prefs_misc.png
-%%DOCSDIR%%/it/images/prefs_pdfexport.png
-%%DOCSDIR%%/it/images/prefs_pdfexport1.png
-%%DOCSDIR%%/it/images/prefs_preflight.png
-%%DOCSDIR%%/it/images/prefs_shortwords.png
-%%DOCSDIR%%/it/images/prefs_tools.png
-%%DOCSDIR%%/it/images/prefs_tools1.png
-%%DOCSDIR%%/it/images/prefs_tools2.png
-%%DOCSDIR%%/it/images/prefs_tools3.png
-%%DOCSDIR%%/it/images/prefs_tools4.png
-%%DOCSDIR%%/it/images/prefs_tools5.png
-%%DOCSDIR%%/it/images/prefs_tools6.png
-%%DOCSDIR%%/it/images/prefs_typog.png
-%%DOCSDIR%%/it/images/rf-error2.png
-%%DOCSDIR%%/it/images/rf-error3.png
-%%DOCSDIR%%/it/images/rf1.png
-%%DOCSDIR%%/it/images/rf4.png
-%%DOCSDIR%%/it/images/rf5.png
-%%DOCSDIR%%/it/images/rf6.png
-%%DOCSDIR%%/it/images/rf7.png
-%%DOCSDIR%%/it/images/rf8.png
-%%DOCSDIR%%/it/images/shapes7.png
-%%DOCSDIR%%/it/images/style_manager1.png
-%%DOCSDIR%%/it/images/style_manager10.png
-%%DOCSDIR%%/it/images/style_manager1b.png
-%%DOCSDIR%%/it/images/style_manager3b.png
-%%DOCSDIR%%/it/images/style_manager9.png
-%%DOCSDIR%%/it/images/text_filter135.png
-%%DOCSDIR%%/it/images/text_filter136.png
-%%DOCSDIR%%/it/images/text_filter136b.png
-%%DOCSDIR%%/it/images/text_linking.png
-%%DOCSDIR%%/it/images/text_tab1.png
-%%DOCSDIR%%/it/images/text_tab10.png
-%%DOCSDIR%%/it/images/text_tab13.png
-%%DOCSDIR%%/it/images/text_tab3.png
 %%DOCSDIR%%/it/importbitmap1.html
 %%DOCSDIR%%/it/importhints.html
 %%DOCSDIR%%/it/importhints1.html
@@ -1479,11 +1581,21 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/importhints3.html
 %%DOCSDIR%%/it/importhints4.html
 %%DOCSDIR%%/it/index.html
+%%DOCSDIR%%/it/install-dpkg.html
 %%DOCSDIR%%/it/install.html
+%%DOCSDIR%%/it/install1.html
+%%DOCSDIR%%/it/install2.html
+%%DOCSDIR%%/it/install3.html
+%%DOCSDIR%%/it/install4.html
+%%DOCSDIR%%/it/install5.html
 %%DOCSDIR%%/it/intro.html
+%%DOCSDIR%%/it/irc.html
 %%DOCSDIR%%/it/keys.html
 %%DOCSDIR%%/it/layers.html
+%%DOCSDIR%%/it/lipsum.html
+%%DOCSDIR%%/it/mailing_lists.html
 %%DOCSDIR%%/it/menu.xml
+%%DOCSDIR%%/it/moncal.html
 %%DOCSDIR%%/it/mouse.html
 %%DOCSDIR%%/it/multiple_transform.html
 %%DOCSDIR%%/it/otherinfo.html
@@ -1496,13 +1608,69 @@ share/pixmaps/scribus.png
 %%DOCSDIR%%/it/pdfexport4.html
 %%DOCSDIR%%/it/pdflavor.html
 %%DOCSDIR%%/it/pdfx3.html
+%%DOCSDIR%%/it/plugin_howto.html
+%%DOCSDIR%%/it/print1.html
+%%DOCSDIR%%/it/print2.html
+%%DOCSDIR%%/it/print3.html
+%%DOCSDIR%%/it/print4.html
 %%DOCSDIR%%/it/psd.html
 %%DOCSDIR%%/it/qsg.html
+%%DOCSDIR%%/it/readme-macosx.html
+%%DOCSDIR%%/it/readme-os2.html
+%%DOCSDIR%%/it/readme-win32.html
+%%DOCSDIR%%/it/readme.html
+%%DOCSDIR%%/it/releases.html
 %%DOCSDIR%%/it/renderframes.html
 %%DOCSDIR%%/it/resources.html
 %%DOCSDIR%%/it/scribus-svg.html
+%%DOCSDIR%%/it/scribuscopyright.html
+%%DOCSDIR%%/it/scribusfileformat.html
+%%DOCSDIR%%/it/scripter-extensions.html
+%%DOCSDIR%%/it/scripter-faq.html
+%%DOCSDIR%%/it/scripter1.html
+%%DOCSDIR%%/it/scripterapi-ImageExport.html
+%%DOCSDIR%%/it/scripterapi-PDFfile.html
+%%DOCSDIR%%/it/scripterapi-Printer.html
+%%DOCSDIR%%/it/scripterapi-color.html
+%%DOCSDIR%%/it/scripterapi-constants.html
+%%DOCSDIR%%/it/scripterapi-dialogs.html
+%%DOCSDIR%%/it/scripterapi-doc.html
+%%DOCSDIR%%/it/scripterapi-extensions.html
+%%DOCSDIR%%/it/scripterapi-font.html
+%%DOCSDIR%%/it/scripterapi-getobjprop.html
+%%DOCSDIR%%/it/scripterapi-layer.html
+%%DOCSDIR%%/it/scripterapi-manobj.html
+%%DOCSDIR%%/it/scripterapi-object.html
+%%DOCSDIR%%/it/scripterapi-page.html
+%%DOCSDIR%%/it/scripterapi-select.html
+%%DOCSDIR%%/it/scripterapi-setobjprop.html
+%%DOCSDIR%%/it/scripterapi-textframes.html
+%%DOCSDIR%%/it/scripterapi.html
 %%DOCSDIR%%/it/settings1.html
 %%DOCSDIR%%/it/short-words.html
+%%DOCSDIR%%/it/specs.html
+%%DOCSDIR%%/it/toolbox.html
+%%DOCSDIR%%/it/toolbox1.html
+%%DOCSDIR%%/it/toolbox12.html
+%%DOCSDIR%%/it/toolbox13.html
+%%DOCSDIR%%/it/toolbox14.html
+%%DOCSDIR%%/it/toolbox15.html
+%%DOCSDIR%%/it/toolbox16.html
+%%DOCSDIR%%/it/toolbox17.html
+%%DOCSDIR%%/it/toolbox18.html
+%%DOCSDIR%%/it/toolbox19.html
+%%DOCSDIR%%/it/toolbox2.html
+%%DOCSDIR%%/it/toolbox3.html
+%%DOCSDIR%%/it/toolbox4.html
+%%DOCSDIR%%/it/toolbox5.html
+%%DOCSDIR%%/it/toolbox6.html
+%%DOCSDIR%%/it/toolbox7.html
+%%DOCSDIR%%/it/toolbox8.html
+%%DOCSDIR%%/it/toolbox9.html
+%%DOCSDIR%%/it/topten.html
+%%DOCSDIR%%/it/translation_howto.html
+%%DOCSDIR%%/it/tutorials.html
+%%DOCSDIR%%/it/workspace1.html
 %%DATADIR%%/dicts/CMakeLists.txt
 %%DATADIR%%/dicts/README_ca_ES.txt
 %%DATADIR%%/dicts/README_cs_CZ.txt
@@ -2068,6 +2236,11 @@ share/pixmaps/scribus.png
 %%DATADIR%%/loremipsum/sl.xml
 %%DATADIR%%/plugins/barcode.ps
 %%DATADIR%%/plugins/scribus-short-words.rc
+%%DATADIR%%/profiles/GenericCMYK.icm
+%%DATADIR%%/profiles/GenericCMYK.txt
+%%DATADIR%%/profiles/Readme
+%%DATADIR%%/profiles/sRGB.icm
+%%DATADIR%%/profiles/srgb.license
 %%DATADIR%%/samples/3columnA4.py
 %%DATADIR%%/samples/3columnUSLTR.py
 %%DATADIR%%/samples/Calender.py
@@ -2096,6 +2269,168 @@ share/pixmaps/scribus.png
 %%DATADIR%%/scripts/color2csv.py
 %%DATADIR%%/scripts/csv2color.py
 %%DATADIR%%/scripts/importcsv2table.py
+%%DATADIR%%/swatches/AFNOR_X_08-002.xml
+%%DATADIR%%/swatches/AS_2007S-1996.xml
+%%DATADIR%%/swatches/Alligator Collection 3000_bs00_3.eps
+%%DATADIR%%/swatches/Alligator Collection 3000_bs01_3.eps
+%%DATADIR%%/swatches/Alligator Collection 3000_kd01_4.eps
+%%DATADIR%%/swatches/Alligator Collection 3000_np01_4.eps
+%%DATADIR%%/swatches/Alligator Collection 3000_zd01_4.eps
+%%DATADIR%%/swatches/Alligator Collection 4000_bs00_3.eps
+%%DATADIR%%/swatches/Alligator Collection 4000_bs01_3.eps
+%%DATADIR%%/swatches/Alligator Collection 4000_kd01_4.eps
+%%DATADIR%%/swatches/Alligator Collection 4000_np01_4.eps
+%%DATADIR%%/swatches/Alligator Collection 4000_zd01_4.eps
+%%DATADIR%%/swatches/BS_381C.xml
+%%DATADIR%%/swatches/BS_4800.xml
+%%DATADIR%%/swatches/BannerRite_bs00_3.eps
+%%DATADIR%%/swatches/BannerRite_bs01_3.eps
+%%DATADIR%%/swatches/BannerRite_kd01_4.eps
+%%DATADIR%%/swatches/BannerRite_np01_4.eps
+%%DATADIR%%/swatches/BannerRite_zd01_4.eps
+%%DATADIR%%/swatches/Baumann System Prase_bs00_3.eps
+%%DATADIR%%/swatches/Baumann System Prase_bs01_3.eps
+%%DATADIR%%/swatches/Baumann System Prase_kd01_4.eps
+%%DATADIR%%/swatches/Baumann System Prase_np01_4.eps
+%%DATADIR%%/swatches/Baumann System Prase_zd01_4.eps
+%%DATADIR%%/swatches/COPYING_RESENE.txt
+%%DATADIR%%/swatches/Colortrend Wood Stains_bs00_3.eps
+%%DATADIR%%/swatches/Colortrend Wood Stains_bs01_3.eps
+%%DATADIR%%/swatches/Colortrend Wood Stains_kd01_4.eps
+%%DATADIR%%/swatches/Colortrend Wood Stains_np01_4.eps
+%%DATADIR%%/swatches/Colortrend Wood Stains_zd01_4.eps
+%%DATADIR%%/swatches/CrayonTM.xml
+%%DATADIR%%/swatches/DEUTSCHEpapier_bs00_3.eps
+%%DATADIR%%/swatches/DEUTSCHEpapier_bs01_3.eps
+%%DATADIR%%/swatches/DEUTSCHEpapier_kd01_4.eps
+%%DATADIR%%/swatches/DEUTSCHEpapier_np01_4.eps
+%%DATADIR%%/swatches/DEUTSCHEpapier_zd01_4.eps
+%%DATADIR%%/swatches/DRAKA POLYA_bs00_3.eps
+%%DATADIR%%/swatches/DRAKA POLYA_bs01_3.eps
+%%DATADIR%%/swatches/DRAKA POLYA_kd01_4.eps
+%%DATADIR%%/swatches/DRAKA POLYA_np01_4.eps
+%%DATADIR%%/swatches/DRAKA POLYA_zd01_4.eps
+%%DATADIR%%/swatches/GCMI_Colors.xml
+%%DATADIR%%/swatches/GS Palette 141 Kunstdruck_bs00_3.eps
+%%DATADIR%%/swatches/GS Palette 141 Kunstdruck_bs01_3.eps
+%%DATADIR%%/swatches/GS Palette 141 Kunstdruck_kd01_4.eps
+%%DATADIR%%/swatches/GS Palette 141 Kunstdruck_np01_4.eps
+%%DATADIR%%/swatches/GS Palette 141 Kunstdruck_zd01_4.eps
+%%DATADIR%%/swatches/GS Palette 141 Naturpapier_bs00_3.eps
+%%DATADIR%%/swatches/GS Palette 141 Naturpapier_bs01_3.eps
+%%DATADIR%%/swatches/GS Palette 141 Naturpapier_kd01_4.eps
+%%DATADIR%%/swatches/GS Palette 141 Naturpapier_np01_4.eps
+%%DATADIR%%/swatches/GS Palette 141 Naturpapier_zd01_4.eps
+%%DATADIR%%/swatches/GiveLife_Color_System_CMYK.xml
+%%DATADIR%%/swatches/GiveLife_Color_System_RGB.xml
+%%DATADIR%%/swatches/Gnome.xml
+%%DATADIR%%/swatches/Heidelberger ip Oberputze_bs00_3.eps
+%%DATADIR%%/swatches/Heidelberger ip Oberputze_bs01_3.eps
+%%DATADIR%%/swatches/Heidelberger ip Oberputze_kd01_4.eps
+%%DATADIR%%/swatches/Heidelberger ip Oberputze_np01_4.eps
+%%DATADIR%%/swatches/Heidelberger ip Oberputze_zd01_4.eps
+%%DATADIR%%/swatches/J&S K_bs00_3.eps
+%%DATADIR%%/swatches/J&S K_bs01_3.eps
+%%DATADIR%%/swatches/J&S K_kd01_4.eps
+%%DATADIR%%/swatches/J&S K_np01_4.eps
+%%DATADIR%%/swatches/J&S K_zd01_4.eps
+%%DATADIR%%/swatches/JIS_8721.xml
+%%DATADIR%%/swatches/Japanese_Traditional.xml
+%%DATADIR%%/swatches/Japanese_Traditional_README.txt
+%%DATADIR%%/swatches/KOBRA_bs00_3.eps
+%%DATADIR%%/swatches/KOBRA_bs01_3.eps
+%%DATADIR%%/swatches/KOBRA_kd01_4.eps
+%%DATADIR%%/swatches/KOBRA_np01_4.eps
+%%DATADIR%%/swatches/KOBRA_zd01_4.eps
+%%DATADIR%%/swatches/Koessinger Keramik-Druck_bs00_3.eps
+%%DATADIR%%/swatches/Koessinger Keramik-Druck_bs01_3.eps
+%%DATADIR%%/swatches/Koessinger Keramik-Druck_kd01_4.eps
+%%DATADIR%%/swatches/Koessinger Keramik-Druck_np01_4.eps
+%%DATADIR%%/swatches/Koessinger Keramik-Druck_zd01_4.eps
+%%DATADIR%%/swatches/LibreOffice.xml
+%%DATADIR%%/swatches/Munsell_Soil_Colors.xml
+%%DATADIR%%/swatches/NBS-ISCC_Colors.xml
+%%DATADIR%%/swatches/OSMO Einmallasur_bs00_3.eps
+%%DATADIR%%/swatches/OSMO Einmallasur_bs01_3.eps
+%%DATADIR%%/swatches/OSMO Einmallasur_kd01_4.eps
+%%DATADIR%%/swatches/OSMO Einmallasur_np01_4.eps
+%%DATADIR%%/swatches/OSMO Einmallasur_zd01_4.eps
+%%DATADIR%%/swatches/OpenOffice_dot_org_CMYK.xml
+%%DATADIR%%/swatches/OpenSUSE.xml
+%%DATADIR%%/swatches/Oracal 451_bs00_3.eps
+%%DATADIR%%/swatches/Oracal 451_bs01_3.eps
+%%DATADIR%%/swatches/Oracal 451_kd01_4.eps
+%%DATADIR%%/swatches/Oracal 451_np01_4.eps
+%%DATADIR%%/swatches/Oracal 451_zd01_4.eps
+%%DATADIR%%/swatches/Oracal 6510_bs00_3.eps
+%%DATADIR%%/swatches/Oracal 6510_bs01_3.eps
+%%DATADIR%%/swatches/Oracal 6510_kd01_4.eps
+%%DATADIR%%/swatches/Oracal 6510_np01_4.eps
+%%DATADIR%%/swatches/Oracal 6510_zd01_4.eps
+%%DATADIR%%/swatches/Oxygen.xml
+%%DATADIR%%/swatches/PRB Color_bs00_3.eps
+%%DATADIR%%/swatches/PRB Color_bs01_3.eps
+%%DATADIR%%/swatches/PRB Color_kd01_4.eps
+%%DATADIR%%/swatches/PRB Color_np01_4.eps
+%%DATADIR%%/swatches/PRB Color_zd01_4.eps
+%%DATADIR%%/swatches/Resene_BS2660_101.xml
+%%DATADIR%%/swatches/Resene_BS5252_2008.xml
+%%DATADIR%%/swatches/Resene_Decks_Paths_2009.xml
+%%DATADIR%%/swatches/Resene_Heritage_2008.xml
+%%DATADIR%%/swatches/Resene_Karen_Walker_2008.xml
+%%DATADIR%%/swatches/Resene_KidzColour_2008.xml
+%%DATADIR%%/swatches/Resene_Multi-Finish.xml
+%%DATADIR%%/swatches/Resene_Summit_Roof_2010.xml
+%%DATADIR%%/swatches/Resene_The_Range_2011-12.xml
+%%DATADIR%%/swatches/Resene_The_Range_WandN_2010.xml
+%%DATADIR%%/swatches/SVG.xml
+%%DATADIR%%/swatches/Scribus_Basic.xml
+%%DATADIR%%/swatches/Scribus_Splash.xml
+%%DATADIR%%/swatches/Sericol_UCG_Leuchtfarben_bs00_3.eps
+%%DATADIR%%/swatches/Sericol_UCG_Leuchtfarben_bs01_3.eps
+%%DATADIR%%/swatches/Sericol_UCG_Leuchtfarben_kd01_4.eps
+%%DATADIR%%/swatches/Sericol_UCG_Leuchtfarben_np01_4.eps
+%%DATADIR%%/swatches/Sericol_UCG_Leuchtfarben_zd01_4.eps
+%%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_bs00_3.eps
+%%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_bs01_3.eps
+%%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_kd01_4.eps
+%%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_np01_4.eps
+%%DATADIR%%/swatches/Sericol_UCG_MatchingSystem_zd01_4.eps
+%%DATADIR%%/swatches/Standardised_Rock_Colours.xml
+%%DATADIR%%/swatches/TAG Farbe erleben_bs00_3.eps
+%%DATADIR%%/swatches/TAG Farbe erleben_bs01_3.eps
+%%DATADIR%%/swatches/TAG Farbe erleben_kd01_4.eps
+%%DATADIR%%/swatches/TAG Farbe erleben_np01_4.eps
+%%DATADIR%%/swatches/TAG Farbe erleben_zd01_4.eps
+%%DATADIR%%/swatches/Tango.xml
+%%DATADIR%%/swatches/US_FS_595.xml
+%%DATADIR%%/swatches/Ubuntu_CMYK.xml
+%%DATADIR%%/swatches/Ubuntu_RGB.xml
+%%DATADIR%%/swatches/X11.xml
+%%DATADIR%%/swatches/X11Grey.xml
+%%DATADIR%%/swatches/Xfig.xml
+%%DATADIR%%/swatches/dtp-studio-free-palettes-license.rtf
+%%DATADIR%%/swatches/givelife_colors_license.rtf
+%%DATADIR%%/swatches/ispo 2001_bs00_3.eps
+%%DATADIR%%/swatches/ispo 2001_bs01_3.eps
+%%DATADIR%%/swatches/ispo 2001_kd01_4.eps
+%%DATADIR%%/swatches/ispo 2001_np01_4.eps
+%%DATADIR%%/swatches/ispo 2001_zd01_4.eps
+%%DATADIR%%/swatches/ispo 840_bs00_3.eps
+%%DATADIR%%/swatches/ispo 840_bs01_3.eps
+%%DATADIR%%/swatches/ispo 840_kd01_4.eps
+%%DATADIR%%/swatches/ispo 840_np01_4.eps
+%%DATADIR%%/swatches/ispo 840_zd01_4.eps
+%%DATADIR%%/swatches/kera Colour-Line_bs00_3.eps
+%%DATADIR%%/swatches/kera Colour-Line_bs01_3.eps
+%%DATADIR%%/swatches/kera Colour-Line_kd01_4.eps
+%%DATADIR%%/swatches/kera Colour-Line_np01_4.eps
+%%DATADIR%%/swatches/kera Colour-Line_zd01_4.eps
+%%DATADIR%%/swatches/swedex_bs00_3.eps
+%%DATADIR%%/swatches/swedex_bs01_3.eps
+%%DATADIR%%/swatches/swedex_kd01_4.eps
+%%DATADIR%%/swatches/swedex_np01_4.eps
+%%DATADIR%%/swatches/swedex_zd01_4.eps
 %%DATADIR%%/templates/br1/br1.png
 %%DATADIR%%/templates/br1/br1.sla.gz
 %%DATADIR%%/templates/br1/br1tn.png
@@ -2337,8 +2672,10 @@ share/pixmaps/scribus.png
 @dirrm %%DATADIR%%/templates/buscard1
 @dirrm %%DATADIR%%/templates/br1
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/swatches
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/samples
+@dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/loremipsum
 @dirrm %%DATADIR%%/keysets
@@ -2350,15 +2687,14 @@ share/pixmaps/scribus.png
 @dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%/dicts
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/it/images
 @dirrm %%DOCSDIR%%/it
 @dirrm %%DOCSDIR%%/en/tutorials/scribus-short-words
 @dirrm %%DOCSDIR%%/en/tutorials
 @dirrm %%DOCSDIR%%/en/images
 @dirrm %%DOCSDIR%%/en
+@dirrm %%DOCSDIR%%/de/images
+@dirrm %%DOCSDIR%%/de
 @dirrm %%DOCSDIR%%
-@dirrm lib/scribus/swatches
-@dirrm lib/scribus/profiles
 @dirrm lib/scribus/plugins/gettext
 @dirrm lib/scribus/plugins
 @dirrm lib/scribus
@@ -2399,6 +2735,7 @@ share/pixmaps/scribus.png
 @dirrm include/scribus/plugins/tools/lenseffects/CMakeFiles/lenseffects.dir
 @dirrm include/scribus/plugins/tools/lenseffects/CMakeFiles
 @dirrm include/scribus/plugins/tools/lenseffects
+@dirrm include/scribus/plugins/tools/hunspellcheck
 @dirrm include/scribus/plugins/tools/CMakeFiles
 @dirrm include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles/pathalongpath.dir
 @dirrm include/scribus/plugins/tools/2geomtools/pathalongpath/CMakeFiles
