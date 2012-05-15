@@ -52,6 +52,84 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1449af37-9eba-11e1-b9c1-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>19.0.1084.46</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[112983] Low CVE-2011-3083: Browser crash with video + FTP. Credit
+	    to Aki Helin of OUSPG.</p>
+	  <p>[113496] Low CVE-2011-3084: Load links from internal pages in their
+	    own process. Credit to Brett Wilson of the Chromium development
+	    community.</p>
+	  <p>[118374] Medium CVE-2011-3085: UI corruption with long autofilled
+	    values. Credit to "psaldorn".</p>
+	  <p>[118642] High CVE-2011-3086: Use-after-free with style element.
+	    Credit to Arthur Gerkis.</p>
+	  <p>[118664] Low CVE-2011-3087: Incorrect window navigation. Credit to
+	    Charlie Reis of the Chromium development community.</p>
+	  <p>[120648] Medium CVE-2011-3088: Out-of-bounds read in hairline
+	    drawing. Credit to Aki Helin of OUSPG.</p>
+	  <p>[120711] High CVE-2011-3089: Use-after-free in table handling.
+	    Credit to miaubiz.</p>
+	  <p>[121223] Medium CVE-2011-3090: Race condition with workers. Credit
+	    to Arthur Gerkis.</p>
+	  <p>[121734] High CVE-2011-3091: Use-after-free with indexed DB. Credit
+	    to Google Chrome Security Team (Inferno).</p>
+	  <p>[122337] High CVE-2011-3092: Invalid write in v8 regex. Credit to
+	    Christian Holler.</p>
+	  <p>[122585] Medium CVE-2011-3093: Out-of-bounds read in glyph
+	    handling. Credit to miaubiz.</p>
+	  <p>[122586] Medium CVE-2011-3094: Out-of-bounds read in Tibetan
+	    handling. Credit to miaubiz.</p>
+	  <p>[123481] High CVE-2011-3095: Out-of-bounds write in OGG container.
+	    Credit to Hannu Heikkinen.</p>
+	  <p>[Linux only] [123530] Low CVE-2011-3096: Use-after-free in GTK
+	    omnibox handling. Credit to Arthur Gerkis.</p>
+	  <p>[123733] [124182] High CVE-2011-3097: Out-of-bounds write in
+	    sampled functions with PDF. Credit to Kostya Serebryany of Google
+	    and Evgeniy Stepanov of Google.</p>
+	  <p>[124479] High CVE-2011-3099: Use-after-free in PDF with corrupt
+	    font encoding name. Credit to Mateusz Jurczyk of Google Security
+	    Team and Gynvael Coldwind of Google Security Team.</p>
+	  <p>[124652] Medium CVE-2011-3100: Out-of-bounds read drawing dash
+ 	    paths. Credit to Google Chrome Security Team (Inferno).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3083</cvename>
+      <cvename>CVE-2011-3084</cvename>
+      <cvename>CVE-2011-3085</cvename>
+      <cvename>CVE-2011-3086</cvename>
+      <cvename>CVE-2011-3087</cvename>
+      <cvename>CVE-2011-3088</cvename>
+      <cvename>CVE-2011-3089</cvename>
+      <cvename>CVE-2011-3090</cvename>
+      <cvename>CVE-2011-3091</cvename>
+      <cvename>CVE-2011-3092</cvename>
+      <cvename>CVE-2011-3093</cvename>
+      <cvename>CVE-2011-3094</cvename>
+      <cvename>CVE-2011-3095</cvename>
+      <cvename>CVE-2011-3096</cvename>
+      <cvename>CVE-2011-3097</cvename>
+      <cvename>CVE-2011-3099</cvename>
+      <cvename>CVE-2011-3100</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-05-15</discovery>
+      <entry>2012-05-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6601127c-9e09-11e1-b5e0-000c299b62e1">
     <topic>socat -- Heap-based buffer overflow</topic>
     <affects>
