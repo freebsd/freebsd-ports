@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p0f
-PORTVERSION=	3.04b
+PORTVERSION=	3.05b
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/
 EXTRACT_SUFX=	.tgz
