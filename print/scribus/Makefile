@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -33,13 +32,15 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	desktopfileutils libartlgpl2 libxml2 pkgconfig
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_CMAKE=	yes
+USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/Scribus
 
 MAN1=		scribus.1
 MANLANG=	"" pl de
