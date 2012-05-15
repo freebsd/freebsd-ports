@@ -1,9 +1,9 @@
---- common-src/Makefile.in.orig	2010-10-16 18:21:52.890010063 +0900
-+++ common-src/Makefile.in	2010-10-16 18:22:26.842453745 +0900
-@@ -1346,7 +1346,7 @@
+--- common-src/Makefile.in.orig	2012-02-21 20:37:54.000000000 +0900
++++ common-src/Makefile.in	2012-05-08 11:49:17.145335897 +0900
+@@ -1363,7 +1363,7 @@
  INCLUDES = -I$(top_srcdir)/gnulib   
  AM_CFLAGS = $(AMANDA_WARNING_CFLAGS)
- AM_LDFLAGS = $(AMANDA_STATIC_LDFLAGS)
+ AM_LDFLAGS = $(AMANDA_STATIC_LDFLAGS) $(AS_NEEDED_FLAGS)
 -amlib_LTLIBRARIES = libamanda.la
 +@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = libamanda.la
  LINT = $(AMLINT)

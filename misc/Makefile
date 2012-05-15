@@ -14,6 +14,8 @@
     SUBDIR += amanda25-server
     SUBDIR += amanda26-client
     SUBDIR += amanda26-server
+    SUBDIR += amanda32-client
+    SUBDIR += amanda32-server
     SUBDIR += amfm
     SUBDIR += apparix
     SUBDIR += asbutton
