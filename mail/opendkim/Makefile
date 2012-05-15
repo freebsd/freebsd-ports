@@ -141,7 +141,7 @@ PLIST_SUB+=		LUA="@comment "
 .endif
 
 post-install:
-.if !defined(WITH_DEBUG)
+.if !defined(WITH_DEBUG) && defined(WITH_FILTER) && !defined(WITHOUT_FILTER)
 	@${STRIP_CMD} ${PREFIX}/sbin/opendkim
 .endif
 	@${MKDIR} ${PREFIX}/etc/mail
