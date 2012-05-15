@@ -7,7 +7,7 @@
 
 PORTNAME=	libexttextcat
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://dev-www.libreoffice.org/src/libexttextcat/
 
@@ -20,6 +20,7 @@ CONFLICTS_INSTALL=	libtextcat*
 
 USE_XZ=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
