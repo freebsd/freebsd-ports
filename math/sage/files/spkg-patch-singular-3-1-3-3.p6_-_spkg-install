@@ -1,0 +1,11 @@
+--- singular-3-1-3-3.p6/spkg-install-orig	2012-04-08 01:57:01.000000000 +0000
++++ singular-3-1-3-3.p6/spkg-install	2012-04-08 01:58:19.000000000 +0000
+@@ -108,7 +108,7 @@
+ 
+     patches="assert.h.diff sing_win.cc.diff Minor.h.patch os_x_ppc.patch \
+ 	Singular.configure.patch make_parallel.patch Singular.Makefile.in.shared.patch \
+-	factory.GNUmakefile.in.patch"
++	factory.GNUmakefile.in.patch omalloc.configure.patch"
+ 
+     if [ "$UNAME" = "CYGWIN" ]; then
+         patches="$patches IntegerProgramming-Makefile.in.diff"
