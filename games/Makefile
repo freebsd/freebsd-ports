@@ -80,8 +80,8 @@
     SUBDIR += bloboats
     SUBDIR += block
     SUBDIR += blockade
-    SUBDIR += blockrage
     SUBDIR += blockout
+    SUBDIR += blockrage
     SUBDIR += blokish
     SUBDIR += bloodfrontier
     SUBDIR += blue
@@ -810,8 +810,8 @@
     SUBDIR += shaaft
     SUBDIR += shootingstar
     SUBDIR += simplevaders
-    SUBDIR += simutrans
     SUBDIR += simsu
+    SUBDIR += simutrans
     SUBDIR += six
     SUBDIR += sjeng
     SUBDIR += sl
@@ -854,6 +854,7 @@
     SUBDIR += supertux
     SUBDIR += supertuxkart
     SUBDIR += sxsame
+    SUBDIR += syobon
     SUBDIR += tads
     SUBDIR += taipan
     SUBDIR += tanglet
