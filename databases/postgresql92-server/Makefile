@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.1.3
+DISTVERSION?=	9.2beta1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
+MASTER_SITE_SUBDIR=	source/v9.2.0beta1
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	pgsql@FreeBSD.org
@@ -237,9 +237,12 @@ IGNORE=	has OPTIONS for MIT's and Heimdal Kerberos, which are mutually exclusive
 MAN1?=		pg_basebackup.1
 MAN1+=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
+		oid2name.1 pg_archivecleanup.1 \
 		pg_config.1 pg_controldata.1 pg_ctl.1		   \
-		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
-		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1
+		pg_dump.1 pg_dumpall.1 pg_receivexlog.1 pg_resetxlog.1 pg_restore.1 \
+		pg_standby.1 pg_test_fsync.1 pg_test_timing.1 pg_upgrade.1 \
+		pgbench.1 \
+		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1 vacuumlo.1
 
 MAN3+=		SPI_connect.3 SPI_copytuple.3 SPI_cursor_close.3 SPI_cursor_fetch.3 \
 		SPI_cursor_find.3 SPI_cursor_move.3 SPI_cursor_open.3 \
@@ -250,7 +253,7 @@ MAN3+=		SPI_connect.3 SPI_copytuple.3 SPI_cursor_close.3 SPI_cursor_fetch.3 \
 		SPI_freetuple.3 SPI_freetuptable.3 SPI_getargcount.3 \
 		SPI_getargtypeid.3 SPI_getbinval.3 SPI_getnspname.3 \
 		SPI_getrelname.3 SPI_gettype.3 SPI_gettypeid.3 \
-		SPI_getvalue.3 SPI_is_cursor_plan.3 SPI_modifytuple.3 \
+		SPI_getvalue.3 SPI_is_cursor_plan.3 SPI_keepplan.3 SPI_modifytuple.3 \
 		SPI_palloc.3 SPI_pfree.3 SPI_pop.3 SPI_prepare.3 \
 		SPI_prepare_cursor.3 SPI_prepare_params.3 SPI_push.3 \
 		SPI_repalloc.3 SPI_returntuple.3 SPI_saveplan.3 \
@@ -351,7 +354,7 @@ PLIST_SUB+=	PG_USER=${PG_USER}
 .  endif
 
 post-patch:
-.  if defined(WITH_ICU)
+.  if defined(SERVER_ONLY) && defined(WITH_ICU)
 	@${REINPLACE_CMD} -E -e \
 		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
 		${WRKSRC}/configure.in

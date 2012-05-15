@@ -1,6 +1,7 @@
 bin/oid2name
 bin/pg_archivecleanup
 bin/pg_standby
+bin/pg_test_timing
 bin/pg_upgrade
 bin/pgbench
 bin/vacuumlo
@@ -39,6 +40,7 @@ lib/postgresql/refint.so
 lib/postgresql/seg.so
 lib/postgresql/sslinfo.so
 lib/postgresql/tablefunc.so
+lib/postgresql/tcn.so
 lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
@@ -92,7 +94,8 @@ share/postgresql/extension/file_fdw.control
 share/postgresql/extension/fuzzystrmatch--1.0.sql
 share/postgresql/extension/fuzzystrmatch--unpackaged--1.0.sql
 share/postgresql/extension/fuzzystrmatch.control
-share/postgresql/extension/hstore--1.0.sql
+share/postgresql/extension/hstore--1.0--1.1.sql
+share/postgresql/extension/hstore--1.1.sql
 share/postgresql/extension/hstore--unpackaged--1.0.sql
 share/postgresql/extension/hstore.control
 share/postgresql/extension/insert_username--1.0.sql
@@ -125,7 +128,8 @@ share/postgresql/extension/pg_buffercache.control
 share/postgresql/extension/pg_freespacemap--1.0.sql
 share/postgresql/extension/pg_freespacemap--unpackaged--1.0.sql
 share/postgresql/extension/pg_freespacemap.control
-share/postgresql/extension/pg_stat_statements--1.0.sql
+share/postgresql/extension/pg_stat_statements--1.0--1.1.sql
+share/postgresql/extension/pg_stat_statements--1.1.sql
 share/postgresql/extension/pg_stat_statements--unpackaged--1.0.sql
 share/postgresql/extension/pg_stat_statements.control
 share/postgresql/extension/pg_trgm--1.0.sql
@@ -152,6 +156,8 @@ share/postgresql/extension/sslinfo.control
 share/postgresql/extension/tablefunc--1.0.sql
 share/postgresql/extension/tablefunc--unpackaged--1.0.sql
 share/postgresql/extension/tablefunc.control
+share/postgresql/extension/tcn--1.0.sql
+share/postgresql/extension/tcn.control
 share/postgresql/extension/test_parser--1.0.sql
 share/postgresql/extension/test_parser--unpackaged--1.0.sql
 share/postgresql/extension/test_parser.control
