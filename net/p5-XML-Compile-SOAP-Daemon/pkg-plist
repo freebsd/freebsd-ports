@@ -8,6 +8,8 @@
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/LWPutil.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/NetServer.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Daemon/NetServer.pod
+%%SITE_PERL%%/XML/Compile/SOAP/Daemon/PSGI.pm
+%%SITE_PERL%%/XML/Compile/SOAP/Daemon/PSGI.pod
 %%SITE_PERL%%/XML/Compile/SOAP/HTTPDaemon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/Daemon/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/Daemon
