@@ -8,14 +8,6 @@
  #log_destination = 'stderr'		# Valid values are combinations of
  					# stderr, csvlog, syslog, and eventlog,
  					# depending on platform.  csvlog
-@@ -290,6 +291,7 @@
- #syslog_facility = 'LOCAL0'
- #syslog_ident = 'postgres'
- 
-+silent_mode = on
- #silent_mode = off			# Run server silently.
- 					# DO NOT USE without syslog or
- 					# logging_collector
 @@ -394,6 +396,9 @@
  #track_counts = on
  #track_functions = none			# none, pl, all
