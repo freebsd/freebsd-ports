@@ -18,8 +18,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		latex:${PORTSDIR}/print/teTeX-base \
-		autoconf-2.68:${PORTSDIR}/devel/autoconf
+		latex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -85,6 +84,12 @@ CXXFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
 # Note that the above addition to LDFLAGS, as a side effect, provides a
 # work-around for the make(1) idiosyncracy mentioned in PR 164361 (which
 # otherwise breaks the build of the maxima sub-package).
+
+USE_AUTOTOOLS=	autoconf
+run-autotools:
+		@${DO_NADA}
+do-configure:
+		@${DO_NADA}
 
 .include <bsd.port.pre.mk>
 
