@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Fields
-PORTVERSION=	0.203
+PORTVERSION=	0.204
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Set of modules to operate with class fields and members access
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Carp-Assert>=0:${PORTSDIR}/devel/p5-Carp-Assert
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 DEPRECATED=	considered obsolete by upstream
 EXPIRATION_DATE=	2012-07-11
-
-BUILD_DEPENDS=	${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert \
-		${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-base
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
