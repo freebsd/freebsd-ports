@@ -409,6 +409,7 @@
     SUBDIR += jvgs
     SUBDIR += jzip
     SUBDIR += kaid
+    SUBDIR += kajaani-kombat
     SUBDIR += kajongg
     SUBDIR += kamikaze
     SUBDIR += kanagram
