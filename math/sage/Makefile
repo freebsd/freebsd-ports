@@ -8,9 +8,9 @@
 PORTNAME=	sage
 PORTVERSION=	5.0
 CATEGORIES=	math
-MASTER_SITES=	http://modular.math.jmu.edu/src/ \
-		http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
+MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
+		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
 		http://www.sagemath.org/src-old/
 EXTRACT_SUFX=	.tar
 
