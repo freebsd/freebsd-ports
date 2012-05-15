@@ -17,7 +17,7 @@ COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	ac_cv_prog_ac_yasm=no
