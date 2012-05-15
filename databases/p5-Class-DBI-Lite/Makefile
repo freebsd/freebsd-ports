@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Lite
-PORTVERSION=	1.033
+PORTVERSION=	1.034
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +26,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle
+
+DEPRECATED=	deprecated by upstream
 
 PERL_CONFIGURE=	yes
 
