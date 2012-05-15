@@ -93,18 +93,18 @@
 +#endif
  
  #endif
---- loclang.hpp.orig	2011-01-04 20:28:47.000000000 +0800
-+++ loclang.hpp	2011-01-18 11:21:35.000000000 +0800
+--- loclang.hpp.orig	2012-05-02 17:34:19.000000000 +0800
++++ loclang.hpp	2012-05-15 15:25:33.520723073 +0800
 @@ -7,7 +7,7 @@
  #define   MCopyright         "\nRAR %s   Copyright (c) 1993-%d Alexander Roshal   %d %s %d"
  #define   MRegTo             "\nRegistered to %s\n"
- #define   MShare             "\nShareware version         Type RAR -? for help\n"
+ #define   MShare             "\nTrial version             Type RAR -? for help\n"
 -#define   MUCopyright        "\nUNRAR %s freeware      Copyright (c) 1993-%d Alexander Roshal\n"
 +#define   MUCopyright        "\nUNRAR %s (iconv) freeware      Copyright (c) 1993-%d Alexander Roshal\n"
  #define   MBeta              "beta"
  #define   MMonthJan          "Jan"
  #define   MMonthFeb          "Feb"
-@@ -319,7 +319,7 @@
+@@ -321,7 +321,7 @@
  #define   MSyncScanError     "\nFile search errors, cannot synchronize archive"
  #define   MCorrectingName    "\nWARNING: Attempting to correct the invalid file name"
  #define   MUnpCannotMerge    "\nWARNING: You need to start extraction from a previous volume to unpack %s"
@@ -113,15 +113,15 @@
  #define   MSubHeadCorrupt    "\nERROR: Corrupt data header found, ignored"
  #define   MSubHeadUnknown    "\nWARNING: Unknown data header format, ignored"
  #define   MSubHeadDataCRC    "\nERROR: Corrupt %s data block"
-@@ -347,6 +347,12 @@
+@@ -349,6 +349,12 @@
  #define   MMaxPathLimit      "\nTotal path and file name length must not exceed %d characters"
  #define   MRecVolLimit       "\nTotal number of usual and recovery volumes must not exceed 255"
  #define   MVolumeNumber      "volume %d"
 +#ifdef WITH_ICONV
-+#define MCHelpSwLA           "\n  la<encoding>  Archive internal filenames encoding"
-+#define MCHelpSwLL           "\n  ll<encoding>  Your locale encoding"
-+#define MCHelpSwLO           "\n  lo<option>    Encoding option {ignore,translit,<empty>}"
-+#define MIconvCannotOpen     "\nCannot open iconv to convert between '%s' and '%s' with option '%s'"
++#define   MCHelpSwLA         "\n  la<encoding>  Archive internal filenames encoding"
++#define   MCHelpSwLL         "\n  ll<encoding>  Your locale encoding"
++#define   MCHelpSwLO         "\n  lo<option>    Encoding option {ignore,translit,<empty>}"
++#define   MIconvCannotOpen   "\nCannot open iconv to convert between '%s' and '%s' with option '%s'"
 +#endif
  #define   MCannotDelete      "\nCannot delete %s"
  #define   MCalcCRC           "\nCalculating the control sum"
