@@ -1,0 +1,3 @@
+extension used for detecting XSS codes(tainted string)
+
+WWW: http://pecl.php.net/package/taint
