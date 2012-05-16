@@ -201,8 +201,8 @@ post-patch:
 .endif
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} '/install-data-am: /s/install-dist_docDATA//' \
-		${WRKSRC}/tools/u2boat/Makefile.in
+	@${REINPLACE_CMD} -e '/README.u2boat/d' \
+		-e '/test.*docdir.*MKDIR.*DEST/d' ${WRKSRC}/tools/u2boat/Makefile.*
 .endif
 
 pre-configure:
