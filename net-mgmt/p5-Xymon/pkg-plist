@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon/.packlist
+%%SITE_PERL%%/Xymon.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon
