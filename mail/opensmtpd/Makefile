@@ -31,6 +31,9 @@ CONFLICTS=	postfix-[0-9]* sendmail-[0-9]*
 MAN8=		makemap.8 newaliases.8 smtpctl.8 smtpd.8
 MAN5=		smtpd.conf.5
 
+USERS=		_smtpd
+GROUPS=		_smtpd
+
 pre-configure:
 		@cd ${WRKSRC} && ./bootstrap
 
