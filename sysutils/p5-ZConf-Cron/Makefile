@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ZConf-Cron
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:VVELOX
@@ -21,7 +20,11 @@ BUILD_DEPENDS=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cro
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
 		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
-RUN_DEPENS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
+		p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
 
 PERL_CONFIGURE=	yes
 
