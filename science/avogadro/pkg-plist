@@ -452,9 +452,9 @@ lib/libavogadro.so.1.0.3
 %%PYTHON%%share/libavogadro/engineScripts/wireframe.py
 %%PYTHON%%share/libavogadro/extensionScripts/example.py
 share/qt4/mkspecs/features/avogadro.prf
-@dirrm share/libavogadro/extensionScripts
-@dirrm share/libavogadro/engineScripts
-@dirrm share/libavogadro
+%%PYTHON%%@dirrm share/libavogadro/extensionScripts
+%%PYTHON%%@dirrm share/libavogadro/engineScripts
+%%PYTHON%%@dirrm share/libavogadro
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/fragments/thiols
 @dirrm %%DATADIR%%/fragments/sulfoxides
