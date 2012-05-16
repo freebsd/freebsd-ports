@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	lang python
 MASTER_SITES=	http://downloads.egenix.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
