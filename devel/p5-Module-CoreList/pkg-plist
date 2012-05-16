@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Module/CoreList.pm
+%%SITE_PERL%%/Module/CoreList.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CoreList
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
