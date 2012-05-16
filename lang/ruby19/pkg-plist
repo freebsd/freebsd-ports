@@ -258,6 +258,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/coverage.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/curses.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/date_core.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dbm.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/bubblebabble.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/md5.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/rmd160.so
@@ -507,12 +508,12 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/psych/coder.rb
 %%RUBY_LIBDIR%%/psych/core_ext.rb
 %%RUBY_LIBDIR%%/psych/deprecated.rb
+%%RUBY_LIBDIR%%/psych/handlers/document_stream.rb
 %%RUBY_LIBDIR%%/psych/handler.rb
 %%RUBY_LIBDIR%%/psych/json/ruby_events.rb
 %%RUBY_LIBDIR%%/psych/json/stream.rb
 %%RUBY_LIBDIR%%/psych/json/tree_builder.rb
 %%RUBY_LIBDIR%%/psych/json/yaml_events.rb
-%%RUBY_LIBDIR%%/psych/json.rb
 %%RUBY_LIBDIR%%/psych/nodes/alias.rb
 %%RUBY_LIBDIR%%/psych/nodes/document.rb
 %%RUBY_LIBDIR%%/psych/nodes/mapping.rb
@@ -527,6 +528,7 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/psych/set.rb
 %%RUBY_LIBDIR%%/psych/stream.rb
 %%RUBY_LIBDIR%%/psych/streaming.rb
+%%RUBY_LIBDIR%%/psych/syntax_error.rb
 %%RUBY_LIBDIR%%/psych/tree_builder.rb
 %%RUBY_LIBDIR%%/psych/visitors/depth_first.rb
 %%RUBY_LIBDIR%%/psych/visitors/emitter.rb
@@ -815,6 +817,8 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/package_task.rb
 %%RUBY_LIBDIR%%/rubygems/path_support.rb
 %%RUBY_LIBDIR%%/rubygems/platform.rb
+%%RUBY_LIBDIR%%/rubygems/psych_additions.rb
+%%RUBY_LIBDIR%%/rubygems/psych_tree.rb
 %%RUBY_LIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/require_paths_builder.rb
 %%RUBY_LIBDIR%%/rubygems/requirement.rb
@@ -823,6 +827,11 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rubygems/source_index.rb
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/AddTrustExternalCARoot.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/ca-bundle.pem
+%%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
 %%RUBY_LIBDIR%%/rubygems/test_utilities.rb
 %%RUBY_LIBDIR%%/rubygems/text.rb
@@ -945,6 +954,7 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/test
 @dirrm %%RUBY_LIBDIR%%/syck
 @dirrm %%RUBY_LIBDIR%%/shell
+@dirrm %%RUBY_LIBDIR%%/rubygems/ssl_certs
 @dirrm %%RUBY_LIBDIR%%/rubygems/package/tar_reader
 @dirrm %%RUBY_LIBDIR%%/rubygems/package
 @dirrm %%RUBY_LIBDIR%%/rubygems/ext
@@ -977,6 +987,7 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/psych/visitors
 @dirrm %%RUBY_LIBDIR%%/psych/nodes
 @dirrm %%RUBY_LIBDIR%%/psych/json
+@dirrm %%RUBY_LIBDIR%%/psych/handlers
 @dirrm %%RUBY_LIBDIR%%/psych
 @dirrm %%RUBY_LIBDIR%%/optparse
 @dirrm %%RUBY_LIBDIR%%/openssl
