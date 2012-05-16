@@ -36,9 +36,6 @@
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test.pyo
-%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test64bit.pyo
-%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test64bit.py
-%%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/test64bit.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.py
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.pyc
 %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase/testernesto.pyo
@@ -134,9 +131,6 @@
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnow.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnow.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnow.pyo
-%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnumpy.py
-%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnumpy.pyc
-%%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testnumpy.pyo
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.py
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.pyc
 %%PYTHON_SITELIBDIR%%/mx/DateTime/mxDateTime/testpydatetime.pyo
@@ -439,7 +433,7 @@
 %%PYTHON_SITELIBDIR%%/mx/__init__.py
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mx/__init__.pyo
-%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/Doc
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase/mxBeeBase
 @dirrm %%PYTHON_SITELIBDIR%%/mx/BeeBase
