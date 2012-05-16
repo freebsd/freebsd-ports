@@ -88,7 +88,6 @@ include/epix/tile.h
 include/epix/triples.h
 include/epix/utils.h
 include/epix/verbatim.h
-lib/epix/epix-lib.sh
 lib/epix/libepix.a
 %%PORTDOCS%%%%DOCSDIR%%/config/bash_completions
 %%PORTDOCS%%%%DOCSDIR%%/config/epix.el
@@ -106,6 +105,8 @@ lib/epix/libepix.a
 %%PORTDOCS%%%%DOCSDIR%%/notes/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/notes/VERSION
 %%PORTDOCS%%%%DOCSDIR%%/sample_src.tar.gz
+%%DATADIR%%/epix-lib.sh
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/notes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
