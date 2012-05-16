@@ -1,0 +1,103 @@
+bin/mason.pl
+man/man1/mason.pl.1
+%%SITE_PERL%%/mach/auto/Mason/.packlist
+%%SITE_PERL%%/Mason/PluginBundle/Default.pm
+%%SITE_PERL%%/Mason/Types.pm
+%%SITE_PERL%%/Mason/App.pm
+%%SITE_PERL%%/Mason/Component.pm
+%%SITE_PERL%%/Mason/Manual/Filters.pod
+%%SITE_PERL%%/Mason/Manual/Components.pod
+%%SITE_PERL%%/Mason/Manual/Syntax.pod
+%%SITE_PERL%%/Mason/Manual/UpgradingFromMason1.pod
+%%SITE_PERL%%/Mason/Manual/FAQ.pod
+%%SITE_PERL%%/Mason/Manual/Plugins.pod
+%%SITE_PERL%%/Mason/Manual/Tutorial.pod
+%%SITE_PERL%%/Mason/Manual/Cookbook.pod
+%%SITE_PERL%%/Mason/Manual/RequestDispatch.pod
+%%SITE_PERL%%/Mason/Manual/Subclasses.pod
+%%SITE_PERL%%/Mason/Manual/Intro.pod
+%%SITE_PERL%%/Mason/Manual/Admin.pod
+%%SITE_PERL%%/Mason/Exceptions.pm
+%%SITE_PERL%%/Mason/Component/Import.pm
+%%SITE_PERL%%/Mason/Component/ClassMeta.pm
+%%SITE_PERL%%/Mason/Component/Moose.pm
+%%SITE_PERL%%/Mason/PluginRole.pm
+%%SITE_PERL%%/Mason/Result.pm
+%%SITE_PERL%%/Mason/Util.pm
+%%SITE_PERL%%/Mason/Moose/Role.pm
+%%SITE_PERL%%/Mason/Filters/Standard.pm
+%%SITE_PERL%%/Mason/Plugin/Defer/Filters.pm
+%%SITE_PERL%%/Mason/Plugin/Defer/Request.pm
+%%SITE_PERL%%/Mason/Plugin/LvalueAttributes/Interp.pm
+%%SITE_PERL%%/Mason/Plugin/DollarDot/Compilation.pm
+%%SITE_PERL%%/Mason/Plugin/Defer.pm
+%%SITE_PERL%%/Mason/Plugin/TidyObjectFiles.pm
+%%SITE_PERL%%/Mason/Plugin/DollarDot.pm
+%%SITE_PERL%%/Mason/Plugin/TidyObjectFiles/Interp.pm
+%%SITE_PERL%%/Mason/Plugin/LvalueAttributes.pm
+%%SITE_PERL%%/Mason/Request.pm
+%%SITE_PERL%%/Mason/CodeCache.pm
+%%SITE_PERL%%/Mason/Manual.pod
+%%SITE_PERL%%/Mason/Plugin.pm
+%%SITE_PERL%%/Mason/Compilation.pm
+%%SITE_PERL%%/Mason/TieHandle.pm
+%%SITE_PERL%%/Mason/PluginBundle.pm
+%%SITE_PERL%%/Mason/Test/Overrides/Component/StrictMoose.pm
+%%SITE_PERL%%/Mason/Test/RootClass/Compilation.pm
+%%SITE_PERL%%/Mason/Test/RootClass/Request.pm
+%%SITE_PERL%%/Mason/Test/RootClass/Component.pm
+%%SITE_PERL%%/Mason/Test/RootClass/Interp.pm
+%%SITE_PERL%%/Mason/Test/Plugins/Notify.pm
+%%SITE_PERL%%/Mason/Test/Plugins/Notify/Request.pm
+%%SITE_PERL%%/Mason/Test/Plugins/Notify/Compilation.pm
+%%SITE_PERL%%/Mason/Test/Plugins/Notify/Interp.pm
+%%SITE_PERL%%/Mason/Test/Plugins/Notify/Component.pm
+%%SITE_PERL%%/Mason/Test/RootClass.pm
+%%SITE_PERL%%/Mason/Test/Class.pm
+%%SITE_PERL%%/Mason/t/ComponentMeta.pm
+%%SITE_PERL%%/Mason/t/Defer.pm
+%%SITE_PERL%%/Mason/t/Autobase.pm
+%%SITE_PERL%%/Mason/t/ResolveURI.pm
+%%SITE_PERL%%/Mason/t/HTMLFilters.pm
+%%SITE_PERL%%/Mason/t/Util.pm
+%%SITE_PERL%%/Mason/t/StaticSource.pm
+%%SITE_PERL%%/Mason/t/Cache.pm
+%%SITE_PERL%%/Mason/t/Errors.pm
+%%SITE_PERL%%/Mason/t/Sections.pm
+%%SITE_PERL%%/Mason/t/Reload.pm
+%%SITE_PERL%%/Mason/t/Plugins.pm
+%%SITE_PERL%%/Mason/t/DollarDot.pm
+%%SITE_PERL%%/Mason/t/Sanity.pm
+%%SITE_PERL%%/Mason/t/Skel.pm
+%%SITE_PERL%%/Mason/t/Request.pm
+%%SITE_PERL%%/Mason/t/Filters.pm
+%%SITE_PERL%%/Mason/t/Interp.pm
+%%SITE_PERL%%/Mason/t/CompCalls.pm
+%%SITE_PERL%%/Mason/t/Compilation.pm
+%%SITE_PERL%%/Mason/t/Syntax.pm
+%%SITE_PERL%%/Mason/t/Globals.pm
+%%SITE_PERL%%/Mason/t/LvalueAttributes.pm
+%%SITE_PERL%%/Mason/Moose.pm
+%%SITE_PERL%%/Mason/PluginManager.pm
+%%SITE_PERL%%/Mason/DynamicFilter.pm
+%%SITE_PERL%%/Mason/Interp.pm
+%%SITE_PERL%%/Mason.pm
+@dirrm %%SITE_PERL%%/mach/auto/Mason
+@dirrm %%SITE_PERL%%/Mason/Test/RootClass
+@dirrm %%SITE_PERL%%/Mason/Test/Overrides/Component
+@dirrm %%SITE_PERL%%/Mason/Test/Overrides
+@dirrm %%SITE_PERL%%/Mason/Test/Plugins/Notify
+@dirrm %%SITE_PERL%%/Mason/Test/Plugins
+@dirrm %%SITE_PERL%%/Mason/Test
+@dirrm %%SITE_PERL%%/Mason/Filters
+@dirrm %%SITE_PERL%%/Mason/Moose
+@dirrm %%SITE_PERL%%/Mason/Component
+@dirrm %%SITE_PERL%%/Mason/PluginBundle
+@dirrm %%SITE_PERL%%/Mason/Plugin/Defer
+@dirrm %%SITE_PERL%%/Mason/Plugin/TidyObjectFiles
+@dirrm %%SITE_PERL%%/Mason/Plugin/DollarDot
+@dirrm %%SITE_PERL%%/Mason/Plugin/LvalueAttributes
+@dirrm %%SITE_PERL%%/Mason/Plugin
+@dirrm %%SITE_PERL%%/Mason/t
+@dirrm %%SITE_PERL%%/Mason/Manual
+@dirrmtry %%SITE_PERL%%/Mason
