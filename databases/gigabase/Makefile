@@ -7,6 +7,7 @@
 
 PORTNAME=	gigabase
 PORTVERSION=	3.86
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://www.garret.ru/
@@ -14,10 +15,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
 
-BROKEN=		does not patch
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_DOS2UNIX=	Makefile.in
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	${PTHREAD_CFLAGS}
