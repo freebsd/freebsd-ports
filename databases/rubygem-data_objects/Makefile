@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data_objects
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
