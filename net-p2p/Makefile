@@ -78,8 +78,6 @@
     SUBDIR += phex
     SUBDIR += py-bittornado
     SUBDIR += py-bittornado-core
-    SUBDIR += py-bittorrent
-    SUBDIR += py-bittorrent-core
     SUBDIR += py-fngrab
     SUBDIR += py-kenosis
     SUBDIR += py-py2play
