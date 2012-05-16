@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	epix
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 
