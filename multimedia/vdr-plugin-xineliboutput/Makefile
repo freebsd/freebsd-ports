@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	vdr-plugin-xineliboutput
-PORTVERSION=	1.0.90s20120403.2257
+PORTVERSION=	1.0.90s20120511
 CATEGORIES=	multimedia
 MASTER_SITES=	SF:release \
 		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	xineliboutput/files/xineliboutput/vdr-xineliboutput-${PORTVERSION}/:release \
 		nox/:snapshot
-DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION:S/s/+cvs/}${DISTVERSIONSUFFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 
 MAINTAINER=	nox@FreeBSD.org
