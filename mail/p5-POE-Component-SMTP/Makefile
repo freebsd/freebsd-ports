@@ -18,7 +18,7 @@ COMMENT=	SMTP Protocol Implementation
 BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-POE-Session-MultiDispatch>=0:${PORTSDIR}/devel/p5-POE-Session-MultiDispatch \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
