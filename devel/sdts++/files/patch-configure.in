@@ -1,0 +1,31 @@
+--- configure.in.orig	2012-03-11 19:45:25.000000000 +0300
++++ configure.in	2012-03-11 19:46:08.000000000 +0300
+@@ -23,13 +23,6 @@
+ 
+ AC_HEADER_STAT
+ 
+-dnl
+-dnl see if std::vector<char>::iterator == char *
+-dnl
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <vector>]], [[
+-char v[2];
+-std::vector<char>::iterator i = &v[0];
+-]])],[],[AC_DEFINE(VECTOR_ITERATOR_POINTER_NOT_EQUIVALENT) ])
+ 
+ dnl program checks
+ 
+@@ -93,6 +86,14 @@
+ export BOOST_HEADER
+ 
+ 
++dnl
++dnl see if std::vector<char>::iterator == char *
++dnl
++AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <stlport/vector>]], [[
++char const v[2];
++std::vector<char>::const_iterator i = &v[0];
++]])],[],[AC_DEFINE(VECTOR_ITERATOR_POINTER_NOT_EQUIVALENT) ])
++
+ 
+ dnl
+ dnl let's make sure the sysutils package is happy
