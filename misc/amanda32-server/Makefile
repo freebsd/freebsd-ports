@@ -21,7 +21,7 @@ BUILD_DEPENDS=	perl-amanda:${PORTSDIR}/misc/amanda-perl-wrapper
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda32-client
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig glib20
 USE_GMAKE=	yes
