@@ -20,6 +20,8 @@ USE_BZIP2=	yes
 USE_PHP=	ctype curl gd hash json mbstring mysql pdo session \
 		simplexml sqlite xml zip
 WANT_PHP_WEB=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 WWWDOCROOT?=	www
 

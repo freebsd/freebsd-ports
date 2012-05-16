@@ -14,7 +14,8 @@ DISTNAME=	SQLiteManager-${PORTVERSION}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A multilingual web based tool to manage SQLite database
 
-IGNORE_WITH_PHP=	4
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 NO_BUILD=	yes
 PLIST_SUB+=	WWWDIR_REL="${WWWDIR_REL}"
 USE_PHP=	sqlite
