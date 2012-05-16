@@ -10,7 +10,6 @@ etc/php.ini-production
 %%FPM%%etc/php-fpm.conf.default
 %%FPM%%@exec cp -n %D/%F %B/php-fpm.conf
 include/php/TSRM/TSRM.h
-include/php/TSRM/acconfig.h
 include/php/TSRM/readdir.h
 include/php/TSRM/tsrm_config.h
 include/php/TSRM/tsrm_config.w32.h
@@ -19,7 +18,6 @@ include/php/TSRM/tsrm_nw.h
 include/php/TSRM/tsrm_strtok_r.h
 include/php/TSRM/tsrm_virtual_cwd.h
 include/php/TSRM/tsrm_win32.h
-include/php/Zend/acconfig.h
 include/php/Zend/zend.h
 include/php/Zend/zend_API.h
 include/php/Zend/zend_alloc.h
@@ -31,12 +29,12 @@ include/php/Zend/zend_config.h
 include/php/Zend/zend_config.nw.h
 include/php/Zend/zend_config.w32.h
 include/php/Zend/zend_constants.h
+include/php/Zend/zend_dtrace.h
 include/php/Zend/zend_dynamic_array.h
 include/php/Zend/zend_errors.h
 include/php/Zend/zend_exceptions.h
 include/php/Zend/zend_execute.h
 include/php/Zend/zend_extensions.h
-include/php/Zend/zend_fast_cache.h
 include/php/Zend/zend_float.h
 include/php/Zend/zend_gc.h
 include/php/Zend/zend_globals.h
@@ -65,9 +63,11 @@ include/php/Zend/zend_objects_API.h
 include/php/Zend/zend_operators.h
 include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_qsort.h
+include/php/Zend/zend_signal.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
 include/php/Zend/zend_stream.h
+include/php/Zend/zend_string.h
 include/php/Zend/zend_strtod.h
 include/php/Zend/zend_ts_hash.h
 include/php/Zend/zend_types.h
@@ -90,16 +90,19 @@ include/php/ext/ereg/regex/utils.h
 include/php/ext/libxml/php_libxml.h
 include/php/ext/mysqlnd/config-win.h
 include/php/ext/mysqlnd/mysqlnd.h
+include/php/ext/mysqlnd/mysqlnd_alloc.h
 include/php/ext/mysqlnd/mysqlnd_block_alloc.h
 include/php/ext/mysqlnd/mysqlnd_charset.h
 include/php/ext/mysqlnd/mysqlnd_debug.h
 include/php/ext/mysqlnd/mysqlnd_enum_n_def.h
+include/php/ext/mysqlnd/mysqlnd_ext_plugin.h
 include/php/ext/mysqlnd/mysqlnd_libmysql_compat.h
 include/php/ext/mysqlnd/mysqlnd_net.h
 include/php/ext/mysqlnd/mysqlnd_portability.h
 include/php/ext/mysqlnd/mysqlnd_priv.h
 include/php/ext/mysqlnd/mysqlnd_result.h
 include/php/ext/mysqlnd/mysqlnd_result_meta.h
+include/php/ext/mysqlnd/mysqlnd_reverse_api.h
 include/php/ext/mysqlnd/mysqlnd_statistics.h
 include/php/ext/mysqlnd/mysqlnd_structs.h
 include/php/ext/mysqlnd/mysqlnd_wireprotocol.h
@@ -135,6 +138,7 @@ include/php/ext/standard/flock_compat.h
 include/php/ext/standard/fsock.h
 include/php/ext/standard/head.h
 include/php/ext/standard/html.h
+include/php/ext/standard/html_tables.h
 include/php/ext/standard/info.h
 include/php/ext/standard/md5.h
 include/php/ext/standard/microtime.h
@@ -185,7 +189,6 @@ include/php/main/build-defs.h
 include/php/main/fopen_wrappers.h
 include/php/main/logos.h
 include/php/main/php.h
-include/php/main/php3_compat.h
 include/php/main/php_compat.h
 include/php/main/php_config.h
 include/php/main/php_content_types.h
@@ -206,7 +209,6 @@ include/php/main/php_ticks.h
 include/php/main/php_variables.h
 include/php/main/php_version.h
 include/php/main/rfc1867.h
-include/php/main/safe_mode.h
 include/php/main/snprintf.h
 include/php/main/spprintf.h
 include/php/main/streams/php_stream_context.h
@@ -217,11 +219,14 @@ include/php/main/streams/php_streams_int.h
 include/php/main/streams/php_stream_transport.h
 include/php/main/streams/php_stream_userspace.h
 include/php/main/streams/php_stream_plain_wrapper.h
+include/php/sapi/cli/cli.h
+%%EMBED%%include/php/sapi/embed/php_embed.h
 %%SUHOSIN%%include/php/main/suhosin_globals.h
 %%SUHOSIN%%include/php/main/suhosin_logo.h
 %%SUHOSIN%%include/php/main/suhosin_patch.h
 include/php/main/win32_internal_function_disabled.h
 include/php/main/win95nt.h
+%%EMBED%%lib/libphp5.so
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
 lib/php/build/config.guess
@@ -251,6 +256,9 @@ lib/php/build/shtool
 @dirrmtry include/php/ext
 @dirrm include/php/main/streams
 @dirrm include/php/main
+@dirrm include/php/sapi/cli
+%%EMBED%%@dirrm include/php/sapi/embed
+@dirrm include/php/sapi
 @dirrmtry include/php
 @dirrm lib/php/build
 @dirrmtry lib/php

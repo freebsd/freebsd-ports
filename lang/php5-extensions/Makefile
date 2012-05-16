@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	lang
 MASTER_SITES=	# none
 PKGNAMESUFFIX=	-extensions
@@ -18,7 +18,7 @@ COMMENT=	A "meta-port" to install PHP extensions
 
 USE_PHP=	yes
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
+IGNORE_WITH_PHP=52 53
 USE_PHP_BUILD=	yes
 
 NO_BUILD=	yes
@@ -37,7 +37,6 @@ WITH_PHAR=	yes
 WITH_POSIX=	yes
 WITH_SESSION=	yes
 WITH_SIMPLEXML=	yes
-WITH_SQLITE=	yes
 WITH_SQLITE3=	yes
 WITH_TOKENIZER=	yes
 WITH_XML=	yes
@@ -54,7 +53,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		EXIF            "EXIF support" off \
 		FILEINFO        "fileinfo support" off \
 		FILTER          "input filter support" on \
-		FRIBIDI         "FriBidi support" off \
 		FTP             "FTP support" off \
 		GD              "GD library support" off \
 		GETTEXT         "gettext library support" off \
@@ -88,7 +86,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		SNMP            "SNMP support" off \
 		SOAP            "SOAP support" off \
 		SOCKETS         "sockets support" off \
-		SQLITE          "sqlite support" on \
 		SQLITE3         "sqlite3 support" on \
 		SYBASE_CT       "Sybase database support" off \
 		SYSVMSG         "System V message support" off \
@@ -102,19 +99,18 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		XMLRPC          "XMLRPC-EPI support" off \
 		XMLWRITER       "XMLWriter support" on \
 		XSL             "XSL support (Implies DOM)" off \
-		YAZ             "YAZ support (ANSI/NISO Z39.50)" off \
 		ZIP             "ZIP support" off \
 		ZLIB            "ZLIB support" off
 
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA \
-		DOM EXIF FILEINFO FILTER FRIBIDI FTP GD GETTEXT \
+		DOM EXIF FILEINFO FILTER FTP GD GETTEXT \
 		GMP HASH ICONV IMAP INTERBASE JSON LDAP MBSTRING MCRYPT \
 		MSSQL MYSQL MYSQLI \
 		ODBC OPENSSL PCNTL PDF PDO PDO_SQLITE PGSQL PHAR POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
-		SOCKETS SQLITE SQLITE3 SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
+		SOCKETS SQLITE3 SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
-		YAZ ZIP ZLIB
+		ZIP ZLIB
 
 .include <bsd.port.options.mk>
 

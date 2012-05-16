@@ -26,6 +26,7 @@
 # WANT_PHP_CGI=yes  - Want the CGI version of PHP.
 # WANT_PHP_MOD=yes  - Want the Apache Module for PHP.
 # WANT_PHP_WEB=yes  - Want the Apache Module or the CGI version of PHP.
+# WANT_PHP_EMB=yes  - Want the embedded library version of PHP.
 #
 # You may combine multiple WANT_PHP_* knobs.
 # Don't specify any WANT_PHP_* knob if your port will work with every PHP SAPI.
@@ -41,10 +42,6 @@ PHPBASE?=	${LOCALBASE}
 .if exists(${PHPBASE}/etc/php.conf)
 .include "${PHPBASE}/etc/php.conf"
 PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBASE}/lib/php/\(.*\),\1,p'
-# The following block should be eventually removed from here or php5 port
-.if ${PHP_VER} == 5
-PHP_EXT_INC=	pcre spl
-.endif
 
 .else
 DEFAULT_PHP_VER?=	5
@@ -52,8 +49,11 @@ DEFAULT_PHP_VER?=	5
 PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER}  == 52
 PHP_EXT_DIR=	20060613
-.else
+.elif ${PHP_VER}  == 53
 PHP_EXT_DIR=	20090626
+PHP_EXT_INC=	pcre spl
+.else
+PHP_EXT_DIR=	20100412
 PHP_EXT_INC=	pcre spl
 .endif
 
@@ -95,15 +95,13 @@ check-makevars::
 		@${ECHO_CMD} "If you define WANT_PHP_WEB you cannot set also WANT_PHP_CGI"
 		@${ECHO_CMD} "or WANT_PHP_MOD. Use only one of them."
 		@${FALSE}
-.	else
-.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "" && ${PHP_SAPI:Mmod} == ""
+.	elif defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "" && ${PHP_SAPI:Mmod} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the Apache Module or the CGI version of PHP, but you have"
 		@${ECHO_CMD} "already installed a PHP port without them."
 		@${FALSE}
 .	endif
-.	endif
-.else
+.endif
 
 .if defined(WANT_PHP_CGI)
 .	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == ""
@@ -112,7 +110,7 @@ check-makevars::
 		@${ECHO_CMD} "installed a PHP port without CGI."
 		@${FALSE}
 .	endif
-.else
+.endif
 
 .if defined(WANT_PHP_CLI)
 .	if defined(PHP_VERSION) && ${PHP_SAPI:Mcli} == ""
@@ -121,7 +119,7 @@ check-makevars::
 		@${ECHO_CMD} "installed a PHP port without CLI."
 		@${FALSE}
 .	endif
-.else
+.endif
 
 .if defined(WANT_PHP_MOD)
 .	if defined(PHP_VERSION) && ${PHP_SAPI:Mmod} == ""
@@ -132,10 +130,13 @@ check-makevars::
 .	endif
 .endif
 
-.endif
-
-.endif
-
+.if defined(WANT_PHP_EMB)
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Membed} == ""
+check-makevars::
+		@${ECHO_CMD} "This port requires the embedded library version of PHP, but you have already"
+		@${ECHO_CMD} "installed a PHP port without the embedded library."
+		@${FALSE}
+.	endif
 .endif
 
 PHP_PORT?=	lang/php${PHP_VER}
@@ -236,40 +237,31 @@ php-ini:
 # Extensions
 .if defined(_POSTMKINCLUDED) && ${USE_PHP:L} != "yes"
 # non-version specific components
-_USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba \
-		exif fileinfo fribidi ftp gd gettext gmp \
+_USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dom \
+		exif fileinfo filter ftp gd gettext gmp \
 		hash iconv imap interbase intl json ldap mbstring mcrypt \
-		memcache mssql mysql odbc \
-		openssl pcntl pcre pdf pgsql posix \
-		pspell radius readline recode session shmop snmp \
-		sockets sybase_ct sysvmsg sysvsem sysvshm \
-		tokenizer wddx xml xmlrpc yaz zip zlib
+		memcache mssql mysql mysqli odbc \
+		openssl pcntl pcre pdf pdo pdo_mysql pdo_pgsql pdo_sqlite pgsql posix \
+		pspell radius readline recode session shmop simplexml snmp soap\
+		sockets spl sybase_ct sysvmsg sysvsem sysvshm \
+		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter mysqli pdo \
-		pdo_mysql pdo_pgsql pdo_sqlite phar \
-		simplexml soap spl sqlite sqlite3 tidy xmlreader xmlwriter xsl
-_USE_PHP_VER52=	${_USE_PHP_ALL} dbase ncurses dom filter ming mysqli oci8 \
-		pdo pdo_mysql pdo_sqlite simplexml soap spl sqlite tidy \
-		xmlreader xmlwriter xsl mhash
+_USE_PHP_VER5=	${_USE_PHP_ALL} phar sqlite3
+_USE_PHP_VER52=	${_USE_PHP_ALL} dbase mhash ming ncurses oci8 sqlite
+_USE_PHP_VER53=	${_USE_PHP_ALL} phar sqlite sqlite3
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bitset_DEPENDS=	math/pecl-bitset
 bz2_DEPENDS=	archivers/php${PHP_VER}-bz2
 calendar_DEPENDS=	misc/php${PHP_VER}-calendar
-crack_DEPENDS=	security/php${PHP_VER}-crack
 ctype_DEPENDS=	textproc/php${PHP_VER}-ctype
 curl_DEPENDS=	ftp/php${PHP_VER}-curl
 dba_DEPENDS=	databases/php${PHP_VER}-dba
 dbase_DEPENDS=	databases/php${PHP_VER}-dbase
-dbx_DEPENDS=	databases/php${PHP_VER}-dbx
-dio_DEPENDS=	devel/php${PHP_VER}-dio
 dom_DEPENDS=	textproc/php${PHP_VER}-dom
-domxml_DEPENDS=	textproc/php${PHP_VER}-domxml
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
-filepro_DEPENDS=databases/php${PHP_VER}-filepro
 filter_DEPENDS=	security/php${PHP_VER}-filter
-fribidi_DEPENDS=converters/pecl-fribidi
 ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd
 gettext_DEPENDS=devel/php${PHP_VER}-gettext
@@ -280,9 +272,7 @@ interbase_DEPENDS=	databases/php${PHP_VER}-interbase
 intl_DEPENDS=	devel/pecl-intl
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
-mcal_DEPENDS=	misc/php${PHP_VER}-mcal
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
-mcve_DEPENDS=	devel/php${PHP_VER}-mcve
 memcache_DEPENDS=	databases/pecl-memcache
 mhash_DEPENDS=	security/php${PHP_VER}-mhash
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
@@ -292,8 +282,6 @@ ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 oci8_DEPENDS=	databases/php${PHP_VER}-oci8
 openssl_DEPENDS=security/php${PHP_VER}-openssl
-oracle_DEPENDS=	databases/php${PHP_VER}-oracle
-overload_DEPENDS=lang/php${PHP_VER}-overload
 pcntl_DEPENDS=	devel/php${PHP_VER}-pcntl
 pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
@@ -301,7 +289,6 @@ pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_mysql_DEPENDS=	databases/php${PHP_VER}-pdo_mysql
 pdo_pgsql_DEPENDS=	databases/php${PHP_VER}-pdo_pgsql
 pdo_sqlite_DEPENDS=	databases/php${PHP_VER}-pdo_sqlite
-pfpro_DEPENDS=	finance/php${PHP_VER}-pfpro
 pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
 phar_DEPENDS=	archivers/php${PHP_VER}-phar
 posix_DEPENDS=	sysutils/php${PHP_VER}-posix
@@ -330,9 +317,6 @@ xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
 xmlrpc_DEPENDS=	net/php${PHP_VER}-xmlrpc
 xmlwriter_DEPENDS=	textproc/php${PHP_VER}-xmlwriter
 xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
-xslt_DEPENDS=	textproc/php${PHP_VER}-xslt
-yaz_DEPENDS=	net/pecl-yaz
-yp_DEPENDS=	net/php${PHP_VER}-yp
 zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 .if ${PHP_VER} == 52
 fileinfo_DEPENDS=	sysutils/pecl-fileinfo
@@ -353,7 +337,7 @@ RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${
 .			endif
 .		else
 ext=		${extension}
-.			if ${ext} == "mhash" && ${PHP_VER} == 5
+.			if ${ext} == "mhash"
 .				if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
 .				endif

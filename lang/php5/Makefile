@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.3.13
+PORTVERSION=	5.4.3
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -15,6 +15,8 @@ DISTNAME=	php-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PHP Scripting Language
+
+LICENSE=	PHP301
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
@@ -41,17 +43,18 @@ USE_GNOME=	libxml2
 
 OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
-		FPM "Build FPM version (experimental)" off \
+		FPM "Build FPM version" off \
 		APACHE "Build Apache module" off \
 		AP2FILTER " Use Apache 2.x filter interface (experimental)" off \
+		EMBED "Build embedded library" off \
 		DEBUG "Enable debug" off \
-		SUHOSIN "Enable Suhosin protection system" on \
-		MULTIBYTE "Enable zend multibyte support" off \
+		DTRACE "Enable DTrace support" off \
 		IPV6 "Enable ipv6 support" on \
 		MAILHEAD "Enable mail header patch" off \
-		LINKTHR "Link thread lib (for threaded extensions)" off
+		LINKTHR "Link thread lib (for threaded extensions)" on
+#		SUHOSIN "Enable Suhosin protection system" on \
 
-CONFLICTS=	php4-4* php5-pcre-* php5-spl-*
+CONFLICTS=	php52-5* php53-5*
 
 MAN1=		php-config.1 phpize.1
 
@@ -62,16 +65,16 @@ PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
 
-.if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
-PATCH_SITES+=	http://download.suhosin.org/:suhosin
-PLIST_SUB+=	SUHOSIN=""
-.else
+#.if !defined(WITHOUT_SUHOSIN)
+#PATCHFILES+=	suhosin-patch-5.3.x-0.9.10.patch.gz
+#PATCH_SITES+=	http://download.suhosin.org/:suhosin
+#PLIST_SUB+=	SUHOSIN=""
+#.else
 PLIST_SUB+=	SUHOSIN="@comment "
-.endif
+#.endif
 
 .if defined(WITH_MAILHEAD)
-PATCHFILES+=	php-5.3.x-mail-header.patch:mail
+PATCHFILES+=	php-5.4.x-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
@@ -104,6 +107,10 @@ PLIST_SUB+=	FPM=""
 PLIST_SUB+=	FPM="@comment "
 .endif
 
+.if defined(WITH_APACHE) && defined(WITH_EMBED)
+IGNORE=		cannot be built with multiple SAPI (apache and embedded)
+.endif
+
 .if defined(WITH_APACHE)
 PHP_SAPI+=	mod
 USE_APACHE=	20+
@@ -119,6 +126,14 @@ SHORTMODNAME=	${PORTNAME}
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "
+.endif
+
+.if defined(WITH_EMBED)
+PHP_SAPI+=	embed
+CONFIGURE_ARGS+=--enable-embed
+PLIST_SUB+=	EMBED=""
+.else
+PLIST_SUB+=	EMBED="@comment "
 .endif
 
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
@@ -148,8 +163,11 @@ CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITH_MULTIBYTE)
-CONFIGURE_ARGS+=--enable-zend-multibyte
+.if defined(WITH_DTRACE)
+.if ${OSVERSION} < 900000
+IGNORE=		cannot be built with DTrace support on FreeBSD < 9.x
+.endif
+CONFIGURE_ARGS+=--enable-dtrace
 .endif
 
 .if defined(WITHOUT_IPV6)

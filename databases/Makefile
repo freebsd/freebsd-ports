@@ -569,7 +569,6 @@
     SUBDIR += php5-propel
     SUBDIR += php5-redis
     SUBDIR += php5-rrdtool
-    SUBDIR += php5-sqlite
     SUBDIR += php5-sqlite3
     SUBDIR += php5-sybase_ct
     SUBDIR += php52-dba
