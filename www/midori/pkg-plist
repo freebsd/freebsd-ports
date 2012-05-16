@@ -63,6 +63,7 @@ share/applications/midori-private.desktop
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriViewable.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-app.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-array.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-bookmarks.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-locationaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panedaction.html
 %%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panel.html
@@ -100,6 +101,7 @@ share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/news-feed.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/be/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/da/LC_MESSAGES/midori.mo
@@ -109,6 +111,7 @@ share/icons/hicolor/scalable/status/news-feed.svg
 %%NLS%%share/locale/eo/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/es/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/et/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/midori.mo
