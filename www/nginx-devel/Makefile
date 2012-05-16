@@ -496,13 +496,12 @@ LIB_DEPENDS+=	luajit-5.1.2:${PORTSDIR}/lang/luajit
 CONFIGURE_ENV+=	"LUAJIT_INC=${LOCALBASE}/include/luajit-2.0"
 CONFIGURE_ENV+=	"LUAJIT_LIB=${LOCALBASE}/lib"
 USE_NGINX_DEVEL_KIT=	yes
-NGINX_LUA_MODULE_VERSION=	0.5.0rc27
-GIT_LUA_MODULE_VERSION=	0-gdbe0dc4
+NGINX_LUA_MODULE_VERSION=	0.5.0rc28
+GIT_LUA_MODULE_VERSION=	0-g7a7ac79
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_MODULE_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_MODULE_VERSION}-${GIT_LUA_MODULE_VERSION}.tar.gz:lua
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-lua-nginx-module::config
 .endif
 
 .if defined(WITH_MEMC_MODULE)
@@ -552,8 +551,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
 .endif
 
 .if defined(WITH_RDS_CSV_MODULE)
-NGINX_RDS_CSV_MODULE_VERSION=	0.05rc1
-GIT_RDS_CSV_MODULE_VERSION=	0-g98c7907
+NGINX_RDS_CSV_MODULE_VERSION=	0.05rc2
+GIT_RDS_CSV_MODULE_VERSION=	0-gc15d3a4
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/rds-csv-nginx-module/tarball/v${NGINX_RDS_CSV_MODULE_VERSION}/:rdscsv
 DISTFILES+=	agentzh-rds-csv-nginx-module-v${NGINX_RDS_CSV_MODULE_VERSION}-${GIT_RDS_CSV_MODULE_VERSION}.tar.gz:rdscsv
@@ -771,11 +770,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!--std=c99!-DMONGO_HAVE_STDINT!' \
 		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/config
-.endif
-.if defined(WITH_LUA_MODULE)
-	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}/config
 .endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
