@@ -18,7 +18,7 @@ MAINTAINER=	admin@lissyara.su
 COMMENT=	A "meta-port" to install PHP extensions
 
 DEFAULT_PHP_VER=52
-IGNORE_WITH_PHP=4 5
+IGNORE_WITH_PHP=5 53
 USE_PHP_BUILD=	yes
 
 NO_BUILD=	yes
@@ -53,7 +53,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		EXIF            "EXIF support" off \
 		FILEINFO        "fileinfo support" off \
 		FILTER          "input filter support" on \
-		FRIBIDI         "FriBidi support" off \
 		FTP             "FTP support" off \
 		GD              "GD library support" off \
 		GETTEXT         "gettext library support" off \
@@ -105,7 +104,6 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		XMLRPC          "XMLRPC-EPI support" off \
 		XMLWRITER       "XMLWriter support" on \
 		XSL             "XSL support (Implies DOM)" off \
-		YAZ             "YAZ support (ANSI/NISO Z39.50)" off \
 		ZIP             "ZIP support" off \
 		ZLIB            "ZLIB support" off
 
@@ -118,14 +116,14 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 .endif
 
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE \
-		DOM EXIF FILEINFO FILTER FRIBIDI FTP GD GETTEXT \
+		DOM EXIF FILEINFO FILTER FTP GD GETTEXT \
 		GMP HASH ICONV IMAP INTERBASE JSON LDAP MBSTRING MCRYPT \
 		MHASH MING MSSQL MYSQL MYSQLI NCURSES ODBC OPENSSL \
 		PCNTL PCRE PDF PDO PDO_SQLITE PDO_MYSQL PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
 		SOCKETS SPL SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLREADER XMLRPC XMLWRITER XSL \
-		YAZ ZIP ZLIB
+		ZIP ZLIB
 
 SEL_OPTIONS=	yes
 .for opt in ${ALL_OPTIONS}
