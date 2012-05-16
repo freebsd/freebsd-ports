@@ -26,6 +26,7 @@ include/wx-2.9/wx/aui/dockart.h
 include/wx-2.9/wx/aui/floatpane.h
 include/wx-2.9/wx/aui/framemanager.h
 include/wx-2.9/wx/aui/tabmdi.h
+include/wx-2.9/wx/bannerwindow.h
 include/wx-2.9/wx/base64.h
 include/wx-2.9/wx/beforestd.h
 include/wx-2.9/wx/bitmap.h
@@ -73,11 +74,13 @@ include/wx-2.9/wx/crt.h
 include/wx-2.9/wx/cshelp.h
 include/wx-2.9/wx/ctrlsub.h
 include/wx-2.9/wx/cursor.h
+include/wx-2.9/wx/custombgwin.h
 include/wx-2.9/wx/dataobj.h
 include/wx-2.9/wx/dataview.h
 include/wx-2.9/wx/datectrl.h
 include/wx-2.9/wx/dateevt.h
 include/wx-2.9/wx/datetime.h
+include/wx-2.9/wx/datetimectrl.h
 include/wx-2.9/wx/datstrm.h
 include/wx-2.9/wx/dc.h
 include/wx-2.9/wx/dcbuffer.h
@@ -115,6 +118,7 @@ include/wx-2.9/wx/effects.h
 include/wx-2.9/wx/encconv.h
 include/wx-2.9/wx/encinfo.h
 include/wx-2.9/wx/event.h
+include/wx-2.9/wx/eventfilter.h
 include/wx-2.9/wx/evtloop.h
 include/wx-2.9/wx/evtloopsrc.h
 include/wx-2.9/wx/except.h
@@ -161,6 +165,7 @@ include/wx-2.9/wx/generic/caret.h
 include/wx-2.9/wx/generic/choicdgg.h
 include/wx-2.9/wx/generic/colrdlgg.h
 include/wx-2.9/wx/generic/combo.h
+include/wx-2.9/wx/generic/custombgwin.h
 include/wx-2.9/wx/generic/dataview.h
 include/wx-2.9/wx/generic/datectrl.h
 include/wx-2.9/wx/generic/dcpsg.h
@@ -207,6 +212,7 @@ include/wx-2.9/wx/generic/statbmpg.h
 include/wx-2.9/wx/generic/stattextg.h
 include/wx-2.9/wx/generic/statusbr.h
 include/wx-2.9/wx/generic/textdlgg.h
+include/wx-2.9/wx/generic/timectrl.h
 include/wx-2.9/wx/generic/treectlg.h
 include/wx-2.9/wx/generic/wizard.h
 include/wx-2.9/wx/geometry.h
@@ -273,6 +279,7 @@ include/wx-2.9/wx/gtk/menu.h
 include/wx-2.9/wx/gtk/menuitem.h
 include/wx-2.9/wx/gtk/minifram.h
 include/wx-2.9/wx/gtk/msgdlg.h
+include/wx-2.9/wx/gtk/nonownedwnd.h
 include/wx-2.9/wx/gtk/notebook.h
 include/wx-2.9/wx/gtk/pen.h
 include/wx-2.9/wx/gtk/popupwin.h
@@ -298,6 +305,8 @@ include/wx-2.9/wx/gtk/toolbar.h
 include/wx-2.9/wx/gtk/tooltip.h
 include/wx-2.9/wx/gtk/toplevel.h
 include/wx-2.9/wx/gtk/treeentry_gtk.h
+include/wx-2.9/wx/gtk/webview_webkit.h
+include/wx-2.9/wx/gtk/webviewhistoryitem_webkit.h
 include/wx-2.9/wx/gtk/window.h
 include/wx-2.9/wx/hash.h
 include/wx-2.9/wx/hashmap.h
@@ -349,6 +358,7 @@ include/wx-2.9/wx/iosfwrap.h
 include/wx-2.9/wx/ioswrap.h
 include/wx-2.9/wx/ipc.h
 include/wx-2.9/wx/ipcbase.h
+include/wx-2.9/wx/itemid.h
 include/wx-2.9/wx/joystick.h
 include/wx-2.9/wx/kbdstate.h
 include/wx-2.9/wx/language.h
@@ -404,6 +414,7 @@ include/wx-2.9/wx/paper.h
 include/wx-2.9/wx/pen.h
 include/wx-2.9/wx/persist.h
 include/wx-2.9/wx/persist/bookctrl.h
+include/wx-2.9/wx/persist/splitter.h
 include/wx-2.9/wx/persist/toplevel.h
 include/wx-2.9/wx/persist/treebook.h
 include/wx-2.9/wx/persist/window.h
@@ -476,6 +487,7 @@ include/wx-2.9/wx/richtext/richtextstyles.h
 include/wx-2.9/wx/richtext/richtextsymboldlg.h
 include/wx-2.9/wx/richtext/richtextuicustomization.h
 include/wx-2.9/wx/richtext/richtextxml.h
+include/wx-2.9/wx/richtooltip.h
 include/wx-2.9/wx/rtti.h
 include/wx-2.9/wx/sashwin.h
 include/wx-2.9/wx/sckaddr.h
@@ -532,6 +544,8 @@ include/wx-2.9/wx/textwrapper.h
 include/wx-2.9/wx/tglbtn.h
 include/wx-2.9/wx/thread.h
 include/wx-2.9/wx/thrimpl.cpp
+include/wx-2.9/wx/time.h
+include/wx-2.9/wx/timectrl.h
 include/wx-2.9/wx/timer.h
 include/wx-2.9/wx/tipdlg.h
 include/wx-2.9/wx/tipwin.h
@@ -546,6 +560,7 @@ include/wx-2.9/wx/translation.h
 include/wx-2.9/wx/treebase.h
 include/wx-2.9/wx/treebook.h
 include/wx-2.9/wx/treectrl.h
+include/wx-2.9/wx/treelist.h
 include/wx-2.9/wx/txtstrm.h
 include/wx-2.9/wx/typeinfo.h
 include/wx-2.9/wx/types.h
@@ -589,9 +604,12 @@ include/wx-2.9/wx/vms_x_fix.h
 include/wx-2.9/wx/volume.h
 include/wx-2.9/wx/vscroll.h
 include/wx-2.9/wx/weakref.h
+include/wx-2.9/wx/webview.h
+include/wx-2.9/wx/webviewarchivehandler.h
 include/wx-2.9/wx/wfstream.h
 include/wx-2.9/wx/window.h
 include/wx-2.9/wx/windowid.h
+include/wx-2.9/wx/withimages.h
 include/wx-2.9/wx/wizard.h
 include/wx-2.9/wx/wrapsizer.h
 include/wx-2.9/wx/wupdlock.h
@@ -608,6 +626,7 @@ include/wx-2.9/wx/xpmdecod.h
 include/wx-2.9/wx/xpmhand.h
 include/wx-2.9/wx/xrc/xh_all.h
 include/wx-2.9/wx/xrc/xh_animatctrl.h
+include/wx-2.9/wx/xrc/xh_bannerwindow.h
 include/wx-2.9/wx/xrc/xh_bmp.h
 include/wx-2.9/wx/xrc/xh_bmpbt.h
 include/wx-2.9/wx/xrc/xh_bmpcbox.h
@@ -661,6 +680,7 @@ include/wx-2.9/wx/xrc/xh_stlin.h
 include/wx-2.9/wx/xrc/xh_sttxt.h
 include/wx-2.9/wx/xrc/xh_text.h
 include/wx-2.9/wx/xrc/xh_tglbtn.h
+include/wx-2.9/wx/xrc/xh_timectrl.h
 include/wx-2.9/wx/xrc/xh_toolb.h
 include/wx-2.9/wx/xrc/xh_toolbk.h
 include/wx-2.9/wx/xrc/xh_tree.h
@@ -679,50 +699,50 @@ include/wx-2.9/wx/xtixml.h
 include/wx-2.9/wx/zipstrm.h
 include/wx-2.9/wx/zstream.h
 lib/libwx_baseu-2.9.so
-lib/libwx_baseu-2.9.so.2
-lib/libwx_baseu-2.9.so.2.0.0
+lib/libwx_baseu-2.9.so.3
+lib/libwx_baseu-2.9.so.3.0.0
 lib/libwx_baseu_net-2.9.so
-lib/libwx_baseu_net-2.9.so.2
-lib/libwx_baseu_net-2.9.so.2.0.0
+lib/libwx_baseu_net-2.9.so.3
+lib/libwx_baseu_net-2.9.so.3.0.0
 lib/libwx_baseu_xml-2.9.so
-lib/libwx_baseu_xml-2.9.so.2
-lib/libwx_baseu_xml-2.9.so.2.0.0
+lib/libwx_baseu_xml-2.9.so.3
+lib/libwx_baseu_xml-2.9.so.3.0.0
 lib/libwx_gtk2u_adv-2.9.so
-lib/libwx_gtk2u_adv-2.9.so.2
-lib/libwx_gtk2u_adv-2.9.so.2.0.0
+lib/libwx_gtk2u_adv-2.9.so.3
+lib/libwx_gtk2u_adv-2.9.so.3.0.0
 lib/libwx_gtk2u_aui-2.9.so
-lib/libwx_gtk2u_aui-2.9.so.2
-lib/libwx_gtk2u_aui-2.9.so.2.0.0
+lib/libwx_gtk2u_aui-2.9.so.3
+lib/libwx_gtk2u_aui-2.9.so.3.0.0
 lib/libwx_gtk2u_core-2.9.so
-lib/libwx_gtk2u_core-2.9.so.2
-lib/libwx_gtk2u_core-2.9.so.2.0.0
+lib/libwx_gtk2u_core-2.9.so.3
+lib/libwx_gtk2u_core-2.9.so.3.0.0
 lib/libwx_gtk2u_gl-2.9.so
-lib/libwx_gtk2u_gl-2.9.so.2
-lib/libwx_gtk2u_gl-2.9.so.2.0.0
+lib/libwx_gtk2u_gl-2.9.so.3
+lib/libwx_gtk2u_gl-2.9.so.3.0.0
 lib/libwx_gtk2u_html-2.9.so
-lib/libwx_gtk2u_html-2.9.so.2
-lib/libwx_gtk2u_html-2.9.so.2.0.0
+lib/libwx_gtk2u_html-2.9.so.3
+lib/libwx_gtk2u_html-2.9.so.3.0.0
 lib/libwx_gtk2u_media-2.9.so
-lib/libwx_gtk2u_media-2.9.so.2
-lib/libwx_gtk2u_media-2.9.so.2.0.0
+lib/libwx_gtk2u_media-2.9.so.3
+lib/libwx_gtk2u_media-2.9.so.3.0.0
 lib/libwx_gtk2u_propgrid-2.9.so
-lib/libwx_gtk2u_propgrid-2.9.so.2
-lib/libwx_gtk2u_propgrid-2.9.so.2.0.0
+lib/libwx_gtk2u_propgrid-2.9.so.3
+lib/libwx_gtk2u_propgrid-2.9.so.3.0.0
 lib/libwx_gtk2u_qa-2.9.so
-lib/libwx_gtk2u_qa-2.9.so.2
-lib/libwx_gtk2u_qa-2.9.so.2.0.0
+lib/libwx_gtk2u_qa-2.9.so.3
+lib/libwx_gtk2u_qa-2.9.so.3.0.0
 lib/libwx_gtk2u_ribbon-2.9.so
-lib/libwx_gtk2u_ribbon-2.9.so.2
-lib/libwx_gtk2u_ribbon-2.9.so.2.0.0
+lib/libwx_gtk2u_ribbon-2.9.so.3
+lib/libwx_gtk2u_ribbon-2.9.so.3.0.0
 lib/libwx_gtk2u_richtext-2.9.so
-lib/libwx_gtk2u_richtext-2.9.so.2
-lib/libwx_gtk2u_richtext-2.9.so.2.0.0
+lib/libwx_gtk2u_richtext-2.9.so.3
+lib/libwx_gtk2u_richtext-2.9.so.3.0.0
 lib/libwx_gtk2u_stc-2.9.so
-lib/libwx_gtk2u_stc-2.9.so.2
-lib/libwx_gtk2u_stc-2.9.so.2.0.0
+lib/libwx_gtk2u_stc-2.9.so.3
+lib/libwx_gtk2u_stc-2.9.so.3.0.0
 lib/libwx_gtk2u_xrc-2.9.so
-lib/libwx_gtk2u_xrc-2.9.so.2
-lib/libwx_gtk2u_xrc-2.9.so.2.0.0
+lib/libwx_gtk2u_xrc-2.9.so.3
+lib/libwx_gtk2u_xrc-2.9.so.3.0.0
 lib/wx/include/gtk2-unicode-2.9/wx/setup.h
 share/aclocal/wxwin29.m4
 share/bakefile/presets/wx29.bkl
@@ -730,12 +750,12 @@ share/bakefile/presets/wx29_presets.py
 share/bakefile/presets/wx29_unix.bkl
 share/bakefile/presets/wx29_win32.bkl
 share/bakefile/presets/wx29_xrc.bkl
-@dirrmtry share/bakefile/presets
-@dirrmtry share/bakefile
+@dirrm share/bakefile/presets
+@dirrm share/bakefile
 @dirrm lib/wx/include/gtk2-unicode-2.9/wx
 @dirrm lib/wx/include/gtk2-unicode-2.9
-@dirrmtry lib/wx/include
-@dirrmtry lib/wx
+@dirrm lib/wx/include
+@dirrm lib/wx
 @dirrm include/wx-2.9/wx/xrc
 @dirrm include/wx-2.9/wx/xml
 @dirrm include/wx-2.9/wx/unix
