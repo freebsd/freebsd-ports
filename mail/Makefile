@@ -487,6 +487,7 @@
     SUBDIR += pgpsendmail
     SUBDIR += php5-imap
     SUBDIR += php52-imap
+    SUBDIR += php53-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer2

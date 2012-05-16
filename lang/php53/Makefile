@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	php5
-PORTVERSION=	5.3.11
+PORTNAME=	php53
+PORTVERSION=	5.3.13
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -24,8 +24,6 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	autoconf
 
 LIB_DEPENDS=	pcre.1:${PORTSDIR}/devel/pcre
-
-IGNORE=		not usable until php5.4.x is in lang/php5
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
@@ -53,7 +51,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		MAILHEAD "Enable mail header patch" off \
 		LINKTHR "Link thread lib (for threaded extensions)" off
 
-CONFLICTS=	php4-4* php5-pcre-* php5-spl-*
+CONFLICTS=	php52-5* php5-5*
 
 MAN1=		php-config.1 phpize.1
 
@@ -174,7 +172,7 @@ pre-configure:
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
 
 post-build:
-	@${ECHO_CMD} "PHP_VER=5" > ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_VER=53" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_EXT_INC=pcre spl" >> ${WRKDIR}/php.conf

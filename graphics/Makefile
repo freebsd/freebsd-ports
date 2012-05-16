@@ -726,6 +726,8 @@
     SUBDIR += php52-exif
     SUBDIR += php52-gd
     SUBDIR += php52-ming
+    SUBDIR += php53-exif
+    SUBDIR += php53-gd
     SUBDIR += phplot
     SUBDIR += phpsview
     SUBDIR += picpuz
