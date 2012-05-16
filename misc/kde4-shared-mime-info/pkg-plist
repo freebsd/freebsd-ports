@@ -22,6 +22,7 @@
 %%HACK%%@unexec [ -f %D/share/mime/subclasses ] && rm -f %D/share/mime/subclasses || true
 %%HACK%%@unexec [ -f %D/share/mime/treemagic ] && rm -f %D/share/mime/treemagic || true
 %%HACK%%@unexec [ -f %D/share/mime/types ] && rm -f %D/share/mime/types || true
+%%HACK%%@unexec [ -f %D/share/mime/version ] && rm -f %D/share/mime/version || true
 %%HACK%%@dirrmtry share/mime/x-epoc
 %%HACK%%@dirrmtry share/mime/x-content
 %%HACK%%@dirrmtry share/mime/video
