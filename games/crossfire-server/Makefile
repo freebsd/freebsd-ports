@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.60.0
+PORTVERSION=	1.70.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
-		SF/${PORTNAME}/${PORTNAME}-maps/${PORTVERSION}:maps
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-server
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
-		${DISTNAME}.maps${EXTRACT_SUFX}:maps
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.maps.tar.bz2
+EXTRACR_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
@@ -31,6 +30,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-check=no
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		crossfire-config.6 crossfire-server.6 crossloop.6 \
 		crossloop.web.6
@@ -39,6 +39,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-extract:
+	@cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DISTNAME}.maps.tar.bz2 ${EXTRACT_AFTER_ARGS}
 	@${CHMOD} a+x ${WRKSRC}/utils/install-sh
 
 post-patch:
