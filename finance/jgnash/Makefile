@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	jgnash
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	finance java
-MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.8.x%20Releases
-DISTNAME=	jgnash2-${PORTVERSION}-bin
+MASTER_SITES=	SF/jgnash/Active%20Stable%202.x
+DISTNAME=	jgnash-${PORTVERSION}-bin
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A free personal finance manager
 
-WRKSRC=		${WRKDIR}/jgnash2-${PORTVERSION}
+WRKSRC=		${WRKDIR}/jgnash-${PORTVERSION}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-SUB_FILES=	jgnash2.desktop
+SUB_FILES=	jgnash.desktop
 SUB_LIST=	JAVA="${JAVA}"
 PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
@@ -32,6 +32,6 @@ do-install:
 	@${CP} ${WRKSRC}/jgnash2.jar ${DATADIR}
 	@${CP} -R ${WRKSRC}/lib ${DATADIR}
 	@${MKDIR} ${DESKTOPDIR}
-	@${CP} ${WRKDIR}/jgnash2.desktop ${DESKTOPDIR}
+	@${CP} ${WRKDIR}/jgnash.desktop ${DESKTOPDIR}
 
 .include <bsd.port.mk>
