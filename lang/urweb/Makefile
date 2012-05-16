@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	urweb
-PORTVERSION=	20120329
-PORTREVISION=	1
+PORTVERSION=	20120512
 CATEGORIES=	lang www
 MASTER_SITES=	http://www.impredicative.com/ur/
 EXTRACT_SUFX=	.tgz
