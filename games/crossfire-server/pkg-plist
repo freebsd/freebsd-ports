@@ -13,9 +13,7 @@ etc/crossfire/motd
 etc/crossfire/news
 etc/crossfire/rules
 etc/crossfire/settings
-lib/crossfire/add_throw.perl
-lib/crossfire/metaserver.pl
-lib/crossfire/mktable.script
+etc/crossfire/stat_bonus
 lib/crossfire/plugins/cfanim.a
 lib/crossfire/plugins/cfanim.la
 lib/crossfire/plugins/cfanim.so
@@ -28,13 +26,13 @@ lib/crossfire/plugins/cfnewspaper.so
 lib/crossfire/plugins/cfpython.a
 lib/crossfire/plugins/cfpython.la
 lib/crossfire/plugins/cfpython.so
-lib/crossfire/plugins/cfrhg.a
-lib/crossfire/plugins/cfrhg.la
-lib/crossfire/plugins/cfrhg.so
 lib/crossfire/plugins/citylife.a
 lib/crossfire/plugins/citylife.la
 lib/crossfire/plugins/citylife.so
-lib/crossfire/random_map
+libexec/crossfire/add_throw.perl
+libexec/crossfire/metaserver.pl
+libexec/crossfire/mktable.script
+libexec/crossfire/random_map
 %%DATADIR%%/adm/archsearch.pl
 %%DATADIR%%/adm/collect_images.pl
 %%DATADIR%%/adm/map_expand.pl
@@ -676,7 +674,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/darcap/undead/undead.2
 %%DATADIR%%/maps/darcap/undead/undead.3
 %%DATADIR%%/maps/darcap/village1
-%%DATADIR%%/maps/default.quests
 %%DATADIR%%/maps/dragonisland/advguild
 %%DATADIR%%/maps/dragonisland/advguild2
 %%DATADIR%%/maps/dragonisland/advguild3
@@ -900,6 +897,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/lake_country/elven_moon/elvenmoon.7
 %%DATADIR%%/maps/lake_country/elven_moon/elvenmoon.8
 %%DATADIR%%/maps/lake_country/elven_moon/elvenmoon.9
+%%DATADIR%%/maps/lake_country/lake_country.quests
 %%DATADIR%%/maps/lake_country/marsh/marsh1_1
 %%DATADIR%%/maps/lake_country/marsh/marsh1_2
 %%DATADIR%%/maps/lake_country/marsh/marsh2_1
@@ -1119,6 +1117,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/misc/theaterb2
 %%DATADIR%%/maps/navar_city/misc/theaterb3
 %%DATADIR%%/maps/navar_city/misc/theaterb4
+%%DATADIR%%/maps/navar_city/misc/wizard.msg
 %%DATADIR%%/maps/navar_city/mlab/dream
 %%DATADIR%%/maps/navar_city/mlab/tadobebuild2
 %%DATADIR%%/maps/navar_city/mlab/tadobebuild3
@@ -1176,6 +1175,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/mlab/zealothouse2
 %%DATADIR%%/maps/navar_city/mlab/zealothouseb1
 %%DATADIR%%/maps/navar_city/mouse_house
+%%DATADIR%%/maps/navar_city/navar_city.quests
 %%DATADIR%%/maps/navar_city/slums/Iggys_house
 %%DATADIR%%/maps/navar_city/slums/Iggys_house_lower
 %%DATADIR%%/maps/navar_city/slums/Iggys_house_upper
@@ -1184,6 +1184,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/smugglers_cove/sc_warehouse2
 %%DATADIR%%/maps/navar_city/smugglers_cove/sc_warehouse3
 %%DATADIR%%/maps/navar_city/smugglers_cove/smugglercamp
+%%DATADIR%%/maps/navar_city/southgatehouse
 %%DATADIR%%/maps/navar_city/spyhouse
 %%DATADIR%%/maps/navar_city/temples/gaea
 %%DATADIR%%/maps/navar_city/temples/gorokh
@@ -1224,6 +1225,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/warehouse6
 %%DATADIR%%/maps/navar_city/warehouse7
 %%DATADIR%%/maps/navar_city/warehouse8
+%%DATADIR%%/maps/navar_city/westgatehouse
 %%DATADIR%%/maps/planes/IPO_storage
 %%DATADIR%%/maps/planes/README
 %%DATADIR%%/maps/planes/bigchest
@@ -1697,7 +1699,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/pup_land/terminal
 %%DATADIR%%/maps/pup_land/terminal_u1
 %%DATADIR%%/maps/pup_land/world
-%%DATADIR%%/maps/python/.cvsignore
 %%DATADIR%%/maps/python/CFBank.py
 %%DATADIR%%/maps/python/CFBoard.py
 %%DATADIR%%/maps/python/CFCampfire.py
@@ -1730,6 +1731,8 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/casino/imperialslots.py
 %%DATADIR%%/maps/python/casino/platinumslots.py
 %%DATADIR%%/maps/python/casino/silverslots.py
+%%DATADIR%%/maps/python/commands/autojail.py
+%%DATADIR%%/maps/python/commands/disinfect.py
 %%DATADIR%%/maps/python/commands/give.py
 %%DATADIR%%/maps/python/dialog/commongive.py
 %%DATADIR%%/maps/python/dialog/dialog_check.py
@@ -1756,9 +1759,13 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/events/README
 %%DATADIR%%/maps/python/events/born/log_born.py
 %%DATADIR%%/maps/python/events/clock/bell.py
+%%DATADIR%%/maps/python/events/death/autojail.py
+%%DATADIR%%/maps/python/events/init/autojail_command.py
+%%DATADIR%%/maps/python/events/init/disinfect_command.py
 %%DATADIR%%/maps/python/events/init/give_command.py
 %%DATADIR%%/maps/python/events/init/guild_init.py
 %%DATADIR%%/maps/python/events/kick/log_kick.py
+%%DATADIR%%/maps/python/events/login/autojail_login.py
 %%DATADIR%%/maps/python/events/login/log_login.py
 %%DATADIR%%/maps/python/events/login/mail_login.py
 %%DATADIR%%/maps/python/events/muzzle/log_muzzle.py
@@ -1815,6 +1822,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/misc/death_message.py
 %%DATADIR%%/maps/python/misc/doNothing.py
 %%DATADIR%%/maps/python/misc/greet_message.py
+%%DATADIR%%/maps/python/misc/hall_of_fame.py
 %%DATADIR%%/maps/python/misc/swallow_whole.py
 %%DATADIR%%/maps/python/monsters/combat_chicken.py
 %%DATADIR%%/maps/python/monsters/farnass.py
@@ -2022,6 +2030,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/quests/todd/aljwaf/tower4
 %%DATADIR%%/maps/regions.reg
 %%DATADIR%%/maps/santo_dominion/basement
+%%DATADIR%%/maps/santo_dominion/blue_wizard.msg
 %%DATADIR%%/maps/santo_dominion/city_hall
 %%DATADIR%%/maps/santo_dominion/crossfire
 %%DATADIR%%/maps/santo_dominion/den
@@ -2083,9 +2092,12 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/santo_dominion/mudman/mudman.2
 %%DATADIR%%/maps/santo_dominion/mudman/mudman.3
 %%DATADIR%%/maps/santo_dominion/noble_rest
+%%DATADIR%%/maps/santo_dominion/noble_rest_2nd
 %%DATADIR%%/maps/santo_dominion/north_barn
 %%DATADIR%%/maps/santo_dominion/north_farm
 %%DATADIR%%/maps/santo_dominion/peacock
+%%DATADIR%%/maps/santo_dominion/santo_dominion.quests
+%%DATADIR%%/maps/santo_dominion/sdgatehouse
 %%DATADIR%%/maps/santo_dominion/sdomino_appartment
 %%DATADIR%%/maps/santo_dominion/shaft/undeadshaft.1
 %%DATADIR%%/maps/santo_dominion/shaft/undeadshaft.2
@@ -2126,7 +2138,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/README.txt
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/basement
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/bigchest
-%%DATADIR%%/maps/scorn/guilds/mailed_fist/bigchest~
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/ground
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/guild_alchemy
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/guild_bbq
@@ -2140,7 +2151,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/hallofjoining
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/journeyman_lounge
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/mainfloor
-%%DATADIR%%/maps/scorn/guilds/mailed_fist/mainfloor~
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/master_lounge
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/masters_lounge
 %%DATADIR%%/maps/scorn/guilds/mailed_fist/novice_lounge
@@ -2235,6 +2245,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/misc/battle_arena/snack
 %%DATADIR%%/maps/scorn/misc/beginners
 %%DATADIR%%/maps/scorn/misc/beginners2
+%%DATADIR%%/maps/scorn/misc/beginners_entry
 %%DATADIR%%/maps/scorn/misc/castle
 %%DATADIR%%/maps/scorn/misc/castle2
 %%DATADIR%%/maps/scorn/misc/castle_kitchen
@@ -2277,6 +2288,8 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/misc/prison
 %%DATADIR%%/maps/scorn/misc/prison.1
 %%DATADIR%%/maps/scorn/misc/puddings.place
+%%DATADIR%%/maps/scorn/misc/rhyz.msg
+%%DATADIR%%/maps/scorn/misc/rhyz.quests
 %%DATADIR%%/maps/scorn/misc/testing_area
 %%DATADIR%%/maps/scorn/misc/training_center
 %%DATADIR%%/maps/scorn/misc/wizhide
@@ -2905,6 +2918,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/test/quest_handling/apples.msg
 %%DATADIR%%/maps/test/quest_handling/bothquests.msg
 %%DATADIR%%/maps/test/quest_handling/cantkillme.msg
+%%DATADIR%%/maps/test/quest_handling/checkinv.msg
 %%DATADIR%%/maps/test/quest_handling/connectiontest.msg
 %%DATADIR%%/maps/test/quest_handling/friendly.msg
 %%DATADIR%%/maps/test/quest_handling/girl2.msg
@@ -3143,7 +3157,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/wolfsburg/guilds/damned_heretics/secondfloor
 %%DATADIR%%/maps/wolfsburg/guilds/damned_heretics/storage_room
 %%DATADIR%%/maps/wolfsburg/guilds/damned_heretics/upper
-%%DATADIR%%/maps/wolfsburg/inns
 %%DATADIR%%/maps/wolfsburg/lursendis
 %%DATADIR%%/maps/wolfsburg/magara/castle/cellar
 %%DATADIR%%/maps/wolfsburg/magara/castle/floor_1
@@ -3166,6 +3179,8 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/wolfsburg/slave_pit2
 %%DATADIR%%/maps/wolfsburg/slave_pit3
 %%DATADIR%%/maps/wolfsburg/snakepit
+%%DATADIR%%/maps/wolfsburg/taverns/dolphinsdelight
+%%DATADIR%%/maps/wolfsburg/taverns/thebloodycutlass
 %%DATADIR%%/maps/wolfsburg/temple/enterance
 %%DATADIR%%/maps/wolfsburg/temple/ixalovh
 %%DATADIR%%/maps/wolfsburg/temple/temp_dung1
@@ -4147,6 +4162,7 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/wolfsburg/volcano
 @dirrm %%DATADIR%%/maps/wolfsburg/tt
 @dirrm %%DATADIR%%/maps/wolfsburg/temple
+@dirrm %%DATADIR%%/maps/wolfsburg/taverns
 @dirrm %%DATADIR%%/maps/wolfsburg/shops
 @dirrm %%DATADIR%%/maps/wolfsburg/magara/tower2
 @dirrm %%DATADIR%%/maps/wolfsburg/magara/tower1
@@ -4309,6 +4325,7 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/python/events/login
 @dirrm %%DATADIR%%/maps/python/events/kick
 @dirrm %%DATADIR%%/maps/python/events/init
+@dirrm %%DATADIR%%/maps/python/events/death
 @dirrm %%DATADIR%%/maps/python/events/clock
 @dirrm %%DATADIR%%/maps/python/events/born
 @dirrm %%DATADIR%%/maps/python/events
@@ -4513,9 +4530,11 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/adm
 @dirrm %%DATADIR%%
+@dirrm libexec/crossfire
 @dirrm lib/crossfire/plugins
 @dirrm lib/crossfire
 @dirrm etc/crossfire
+@exec mkdir -p %D/var/crossfire/account
 @exec mkdir -p %D/var/crossfire/datafiles
 @exec mkdir -p %D/var/crossfire/maps
 @exec mkdir -p %D/var/crossfire/players
@@ -4526,5 +4545,6 @@ var/crossfire/temp.maps
 @dirrmtry var/crossfire/players
 @dirrmtry var/crossfire/maps
 @dirrmtry var/crossfire/datafiles
+@dirrmtry var/crossfire/account
 @dirrmtry var/crossfire
 @dirrmtry var
