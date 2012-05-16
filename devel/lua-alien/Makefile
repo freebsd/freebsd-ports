@@ -16,15 +16,15 @@ DIST_SUBDIR=	lua-${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua -> C FFI
 
+LICENSE=	MIT
+
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
 
-LICENSE=	MIT
-
-LICENSE=	MIT
 USE_LUA=	5.1
 
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_SRC_SUFX}
-CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} -DBSD -fPIC #-fno-stack-protector
+CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} \
+		-DBSD -fPIC
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} -llua -shared
 MAKE_ENV+=	LIB_OPTION="${LDFLAGS}" LIB_EXT=".so" LUA="${LUA_CMD}"
 TESTS_EXCLUDE=	tests/alien tests/alien.lua
