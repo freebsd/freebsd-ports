@@ -110,9 +110,12 @@ bin/rstpep2html
 %%PYTHON_SITELIBDIR%%/docutils/math/math2html.py
 %%PYTHON_SITELIBDIR%%/docutils/math/math2html.pyc
 %%PYTHON_SITELIBDIR%%/docutils/math/math2html.pyo
-%%PYTHON_SITELIBDIR%%/docutils/math/unimathsymbols2tex.py
-%%PYTHON_SITELIBDIR%%/docutils/math/unimathsymbols2tex.pyc
-%%PYTHON_SITELIBDIR%%/docutils/math/unimathsymbols2tex.pyo
+%%PYTHON_SITELIBDIR%%/docutils/math/tex2unichar.py
+%%PYTHON_SITELIBDIR%%/docutils/math/tex2unichar.pyc
+%%PYTHON_SITELIBDIR%%/docutils/math/tex2unichar.pyo
+%%PYTHON_SITELIBDIR%%/docutils/math/unichar2tex.py
+%%PYTHON_SITELIBDIR%%/docutils/math/unichar2tex.pyc
+%%PYTHON_SITELIBDIR%%/docutils/math/unichar2tex.pyo
 %%PYTHON_SITELIBDIR%%/docutils/nodes.py
 %%PYTHON_SITELIBDIR%%/docutils/nodes.pyc
 %%PYTHON_SITELIBDIR%%/docutils/nodes.pyo
@@ -309,9 +312,18 @@ bin/rstpep2html
 %%PYTHON_SITELIBDIR%%/docutils/urischemes.py
 %%PYTHON_SITELIBDIR%%/docutils/urischemes.pyc
 %%PYTHON_SITELIBDIR%%/docutils/urischemes.pyo
-%%PYTHON_SITELIBDIR%%/docutils/utils.py
-%%PYTHON_SITELIBDIR%%/docutils/utils.pyc
-%%PYTHON_SITELIBDIR%%/docutils/utils.pyo
+%%PYTHON_SITELIBDIR%%/docutils/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/docutils/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/docutils/utils/code_analyzer.py
+%%PYTHON_SITELIBDIR%%/docutils/utils/code_analyzer.pyc
+%%PYTHON_SITELIBDIR%%/docutils/utils/code_analyzer.pyo
+%%PYTHON_SITELIBDIR%%/docutils/utils/punctuation_chars.py
+%%PYTHON_SITELIBDIR%%/docutils/utils/punctuation_chars.pyc
+%%PYTHON_SITELIBDIR%%/docutils/utils/punctuation_chars.pyo
+%%PYTHON_SITELIBDIR%%/docutils/utils/roman.py
+%%PYTHON_SITELIBDIR%%/docutils/utils/roman.pyc
+%%PYTHON_SITELIBDIR%%/docutils/utils/roman.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/__init__.py
 %%PYTHON_SITELIBDIR%%/docutils/writers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/__init__.pyo
@@ -380,9 +392,6 @@ bin/rstpep2html
 %%PYTHON_SITELIBDIR%%/docutils/writers/xetex/__init__.py
 %%PYTHON_SITELIBDIR%%/docutils/writers/xetex/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/xetex/__init__.pyo
-%%PYTHON_SITELIBDIR%%/roman.py
-%%PYTHON_SITELIBDIR%%/roman.pyc
-%%PYTHON_SITELIBDIR%%/roman.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/xetex
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html/themes/small-white
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html/themes/small-black
@@ -398,6 +407,7 @@ bin/rstpep2html
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/latex2e
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/utils
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/transforms
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/readers
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages
