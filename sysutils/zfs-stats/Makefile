@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zfs-stats
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/mmatuska/zfs-stats/
 
