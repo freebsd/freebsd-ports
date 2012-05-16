@@ -52,6 +52,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aa71daaa-9f8c-11e1-bd0a-0082a0c18826">
+    <topic>pidgin-otr -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>pidgin-otr</name>
+	<range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The authors report:</p>
+	<blockquote cite="http://www.cypherpunks.ca/otr/">
+	  <p>Versions 3.2.0 and earlier of the pidgin-otr plugin contain
+	    a format string security flaw. This flaw could potentially be
+	    exploited by a remote attacker to cause arbitrary code to be
+	    executed on the user's machine.</p>
+	  <p>The flaw is in pidgin-otr, not in libotr. Other applications
+	    that use libotr are not affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2369</cvename>
+      <url>http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2012-2369</url>
+    </references>
+    <dates>
+      <discovery>2012-05-16</discovery>
+      <entry>2012-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3435b68-9ee8-11e1-997c-002354ed89bc">
     <topic>sudo -- netmask vulnerability</topic>
     <affects>
