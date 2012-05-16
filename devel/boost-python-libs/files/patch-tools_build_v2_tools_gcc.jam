@@ -1,15 +1,33 @@
---- tools/build/v2/tools/gcc.jam.orig	Thu Oct 16 12:42:03 2008
-+++ tools/build/v2/tools/gcc.jam	Tue Nov 11 23:48:37 2008
-@@ -88,7 +88,7 @@
- {
-     # Information about the gcc command...
-     #   The command.
--    local command = [ common.get-invocation-command gcc : g++ : $(command) ] ;
-+    local command = [ common.get-invocation-command gcc : %%CXX%% : $(command) ] ;
-     #   The root directory of the tool install.
-     local root = [ feature.get-values <root> : $(options) ] ;
-     #   The bin directory where to find the command to execute.
-@@ -292,7 +292,7 @@
+--- tools/build/v2/tools/gcc.jam.orig	2011-06-07 00:36:21.000000000 +0400
++++ tools/build/v2/tools/gcc.jam	2011-12-15 18:01:36.000000000 +0300
+@@ -70,7 +70,7 @@
+     local tool-command = ;
+     if $(command)
+     {
+-       tool-command  =  [ common.get-invocation-command-nodefault gcc : g++ : $(command) ] ;
++       tool-command  =  [ common.get-invocation-command-nodefault gcc : %%CXX%% : $(command) ] ;
+        if ! $(tool-command)
+        {
+            errors.error "toolset gcc initialization:" :
+@@ -86,7 +86,7 @@
+         #2.1) fallback: check whether "g++" reports the requested version
+         if ! $(tool-command)
+         {
+-            tool-command = [ common.get-invocation-command-nodefault gcc : g++ ] ;
++            tool-command = [ common.get-invocation-command-nodefault gcc : %%CXX%% ] ;
+             if $(tool-command)
+             {
+                 local tool-command-string = $(tool-command:J=" ") ;
+@@ -122,7 +122,7 @@
+     #3) default: no command and no version specified, try using default command "g++"
+     else
+     {
+-        tool-command = [ common.get-invocation-command-nodefault gcc : g++ ] ;
++        tool-command = [ common.get-invocation-command-nodefault gcc : %%CXX%% ] ;
+         if ! $(tool-command)
+         {
+             errors.error "toolset gcc initialization:" :
+@@ -365,7 +365,7 @@
  
  # Declare flags and action for compilation.
  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
@@ -18,7 +36,7 @@
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -811,7 +811,7 @@
+@@ -1049,7 +1049,7 @@
              }        
              case *bsd :
              {

@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	boost-libs
-PORTREVISION=	2
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 USE_BZIP2=	yes
 
@@ -37,8 +36,6 @@ BROKEN=		Does not compile on sparc64: invokes i386 assembler
 .endif
 
 post-patch: customize-boost-build
-# The following directory is empty and causes issues with pkg_{add,delete}
-	${RMDIR} ${WRKSRC}/boost/interprocess/containers/detail
 # Remove Boost.Python
 	${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
 # Add symlink to help build system to find random_device.cpp

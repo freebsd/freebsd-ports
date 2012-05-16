@@ -14,8 +14,11 @@ USE_BZIP2=	yes
 
 BJAM=		${WRKSRC}/bjam
 
+post-patch:
+	@${REINPLACE_CMD} -e '/toolset cc/,/;/ { /opt --release/d; }' ${WRKSRC}/tools/build/v2/engine/build.jam
+
 do-build:
-	cd ${WRKSRC} && ${MAKE_ENV} ./bootstrap.sh --prefix=${PREFIX};
+	cd ${WRKSRC} && ${MAKE_ENV} ./bootstrap.sh --with-toolset=cc --prefix=${PREFIX}
 
 do-install:
 	${MKDIR} ${PREFIX}/bin

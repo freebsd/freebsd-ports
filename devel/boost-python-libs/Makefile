@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	boost-python-libs
-PORTREVISION=	1
 COMMENT=	Framework for interfacing Python and C++
 
 USE_BZIP2=	yes
