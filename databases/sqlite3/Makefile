@@ -25,6 +25,8 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 
+MAKE_JOBS_UNSAFE=	yes
+
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS=	\
 		FTS3		"Enable FTS3/4 (Full Text Search) module" on \
