@@ -20,6 +20,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A computational geometry library
 
+BROKEN=		does not build with boost-1.48.0
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \

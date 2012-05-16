@@ -18,6 +18,8 @@ COMMENT=	2D platform jump and run game
 LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		claw_application.1:${PORTSDIR}/devel/libclaw
 
+BROKEN=		does not build with boost-1.48.0
+
 USE_BZIP2=	yes
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
