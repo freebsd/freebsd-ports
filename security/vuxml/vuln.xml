@@ -52,6 +52,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b3435b68-9ee8-11e1-997c-002354ed89bc">
+    <topic>sudo -- netmask vulnerability</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><le>1.8.4_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/netmask.html">
+	  <p>Sudo supports granting access to commands on a per-host basis.
+	    The host specification may be in the form of a host name, a
+	    netgroup, an IP address, or an IP network (an IP address with an
+	    associated netmask).</p>
+	  <p>When IPv6 support was added to sudo, a bug was introduced that
+	    caused the IPv6 network matching code to be called when an IPv4
+	    network address does not match. Deepending on the value of the
+	    uninitialized portion of the IPv6 address, it is possible for the
+	    IPv4 network number to match when it should not. This bug only
+	    affects IP network matching and does not affect simple IP address
+	    matching.</p>
+	  <p>The reported configuration that exhibited the bug was an
+	    LDAP-based sudo installation where the sudoRole object contained
+	    multiple sudoHost entries, each containing a different IPv4
+	    network. File-based sudoers should be affected as well as the
+	    same matching code is used.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2012-2337</cvename>
+      <url>http://www.sudo.ws/sudo/alerts/netmask.html</url>
+    </references>
+    <dates>
+      <discovery>2012-05-16</discovery>
+      <entry>2012-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dba5d1c9-9f29-11e1-b511-003067c2616f">
     <topic>OpenSSL -- DTLS and TLS 1.1, 1.2 denial of service</topic>
     <affects>
