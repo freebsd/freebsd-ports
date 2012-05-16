@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tom@tomjudge.com
 COMMENT=	A call graph generator for C code
 
 CONFLICTS=	bsdcflow-[0-9]* gnucflow-[0-9]*
