@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	istgt
-PORTVERSION=	20111008
-PORTREVISION=	2
+PORTNAME=	openistgt
+PORTVERSION=	20120516
 CATEGORIES=	net
-MASTER_SITES=	http://www.peach.ne.jp/archives/istgt/
+MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	aoyama@peach.ne.jp
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	An iSCSI target for FreeBSD
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+CONFLICTS=	istgt-2*
 
 GNU_CONFIGURE=	yes
 
@@ -24,7 +24,7 @@ MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/istgt \
 		bin/istgtcontrol \
-		etc/rc.d/istgt \
+		etc/rc.d/openistgt \
 		%%ETCDIR%%/auth.conf.sample \
 		%%ETCDIR%%/istgt.conf.sample \
 		%%ETCDIR%%/istgt.large.conf.sample \
