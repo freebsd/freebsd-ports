@@ -241,6 +241,7 @@
     SUBDIR += pftabled
     SUBDIR += php5-snmp
     SUBDIR += php52-snmp
+    SUBDIR += php53-snmp
     SUBDIR += phpip
     SUBDIR += phpweathermap
     SUBDIR += pixilate

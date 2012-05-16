@@ -1084,6 +1084,15 @@
     SUBDIR += php52-xmlreader
     SUBDIR += php52-xmlwriter
     SUBDIR += php52-xsl
+    SUBDIR += php53-ctype
+    SUBDIR += php53-dom
+    SUBDIR += php53-pspell
+    SUBDIR += php53-simplexml
+    SUBDIR += php53-wddx
+    SUBDIR += php53-xml
+    SUBDIR += php53-xmlreader
+    SUBDIR += php53-xmlwriter
+    SUBDIR += php53-xsl
     SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += pootle

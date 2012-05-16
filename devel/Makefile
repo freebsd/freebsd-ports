@@ -3006,6 +3006,15 @@
     SUBDIR += php52-sysvsem
     SUBDIR += php52-sysvshm
     SUBDIR += php52-tokenizer
+    SUBDIR += php53-gettext
+    SUBDIR += php53-json
+    SUBDIR += php53-pcntl
+    SUBDIR += php53-readline
+    SUBDIR += php53-shmop
+    SUBDIR += php53-sysvmsg
+    SUBDIR += php53-sysvsem
+    SUBDIR += php53-sysvshm
+    SUBDIR += php53-tokenizer
     SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phptags

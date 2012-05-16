@@ -668,6 +668,10 @@
     SUBDIR += php52-mcrypt
     SUBDIR += php52-mhash
     SUBDIR += php52-openssl
+    SUBDIR += php53-filter
+    SUBDIR += php53-hash
+    SUBDIR += php53-mcrypt
+    SUBDIR += php53-openssl
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd

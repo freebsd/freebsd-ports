@@ -449,6 +449,7 @@
     SUBDIR += pecl-timezonedb
     SUBDIR += php5-calendar
     SUBDIR += php52-calendar
+    SUBDIR += php53-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe

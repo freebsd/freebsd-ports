@@ -139,6 +139,10 @@
     SUBDIR += php52-bz2
     SUBDIR += php52-zip
     SUBDIR += php52-zlib
+    SUBDIR += php53-bz2
+    SUBDIR += php53-phar
+    SUBDIR += php53-zip
+    SUBDIR += php53-zlib
     SUBDIR += pigz
     SUBDIR += plzip
     SUBDIR += ppmd
