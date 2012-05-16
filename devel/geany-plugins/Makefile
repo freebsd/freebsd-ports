@@ -165,7 +165,7 @@ PLUGINS+=	shiftcolumn.so
 
 .if !defined(WITHOUT_GEANY_SPELLCHECK)
 BUILD_PLUGINS+=	,spellcheck
-LIBDEPENS+=	enchant:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS+=	enchant:${PORTSDIR}/textproc/enchant
 PLUGINS+=	spellcheck.so
 .endif
 
