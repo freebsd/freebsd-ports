@@ -3375,3 +3375,4 @@ databases/php5-sqlite||2012-05-16|Removed from core php
 www/py-django-css|www/py-django_compressor|2012-05-16|Upstream development stopped. Use www/py-django_compressor instead
 net-p2p/py-bittorrent-core||2012-05-16|BROKEN for more than 6 month, there is no upstream distfiles anymore
 net-p2p/py-bittorrent||2012-05-16|BROKEN for more than 6 month, there is no upstream distfiles anymore
+astro/boinc-einsteinathome||2012-05-16|Not usable with current project
