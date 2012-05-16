@@ -1,0 +1,24 @@
+etc/php/extensions.ini
+include/php/ext/mysqlnd_qc/config.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_apc_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_classes.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_logs.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_memcache_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_nop_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_object_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_priv.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_sqlite_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_std_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_tokenize.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_user_handler.h
+include/php/ext/mysqlnd_qc/mysqlnd_qc_zval_util.h
+include/php/ext/mysqlnd_qc/php_mysqlnd_qc.h
+include/php/ext/php_config.h
+lib/php/20090626-zts/mysqlnd_qc.so
+@dirrm lib/php/20090626-zts
+@dirrm lib/php
+@dirrm include/php/ext/mysqlnd_qc
+@dirrm include/php/ext
+@dirrm include/php
+@dirrm etc/php
