@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-Keepalive
-PORTVERSION=	0.2690
+PORTVERSION=	0.2710
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
@@ -21,7 +21,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Net-IP-Minimal>=0.02:${PORTSDIR}/net/p5-Net-IP-Minimal  \
 		p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-Resolver>=0.916:${PORTSDIR}/dns/p5-POE-Component-Resolver
+		p5-POE-Component-Resolver>=0.917:${PORTSDIR}/dns/p5-POE-Component-Resolver
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
