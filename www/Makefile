@@ -1025,6 +1025,7 @@
     SUBDIR += p5-LWPx-ParanoidAgent
     SUBDIR += p5-LWPx-TimedHTTP
     SUBDIR += p5-Markup-Perl
+    SUBDIR += p5-Mason
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Profiler
     SUBDIR += p5-MasonX-Request-WithApacheSession

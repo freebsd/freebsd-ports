@@ -1,0 +1,13 @@
+Mason is a powerful Perl-based templating system, designed to generate dynamic
+ content of all kinds.
+
+Unlike many templating systems, Mason does not attempt to invent an alternate,
+"easier" syntax for templates. It provides a set of syntax and features specific
+to template creation, but underneath it is still clearly and proudly
+recognizable as Perl.
+
+Mason is most often used for generating web pages. It can handle web requests
+directly via PSGI, or act as the view layer for a web framework such as
+Catalyst or Dancer.
+
+WWW: https://github.com/jonswar/perl-mason
