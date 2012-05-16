@@ -1449,7 +1449,6 @@
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
-    SUBDIR += py-django-css
     SUBDIR += py-django-devel
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions

@@ -3372,3 +3372,4 @@ mail/enigmail-thunderbird3|mail/enigmail-thunderbird-esr|2012-05-12|Depends on o
 mail/thunderbird3|mail/thunderbird-esr|2012-05-12|Upstream support dropped
 mail/thunderbird3-i18n|mail/thunderbird-esr-i18n|2012-05-12|Upstream support dropped
 databases/php5-sqlite||2012-05-16|Removed from core php
+www/py-django-css|www/py-django_compressor|2012-05-16|Upstream development stopped. Use www/py-django_compressor instead
