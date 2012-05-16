@@ -16,7 +16,7 @@ MAINTAINER=	vvelox@vvelox.net
 COMMENT=	A module to simplify connecting up to a LDAP server
 
 BUILD_DEPENDS=	p5-perl-ldap>=0.23:${PORTSDIR}/net/p5-perl-ldap
-RUN_DEPENS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
