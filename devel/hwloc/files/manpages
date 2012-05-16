@@ -1,5 +1,8 @@
-MAN1=		hwloc-bind.1 \
+MAN1=		hwloc-assembler.1 \
+		hwloc-assembler-remote.1 \
+		hwloc-bind.1 \
 		hwloc-calc.1 \
+		hwloc-distances.1 \
 		hwloc-distrib.1 \
 		hwloc-ps.1 \
 		lstopo.1
@@ -49,7 +52,10 @@ MAN3=		HWLOC_API_VERSION.3 \
 		HWLOC_TOPOLOGY_FLAG_IS_THISSYSTEM.3 \
 		HWLOC_TOPOLOGY_FLAG_WHOLE_IO.3 \
 		HWLOC_TOPOLOGY_FLAG_WHOLE_SYSTEM.3 \
+		HWLOC_TYPE_DEPTH_BRIDGE.3 \
 		HWLOC_TYPE_DEPTH_MULTIPLE.3 \
+		HWLOC_TYPE_DEPTH_OS_DEVICE.3 \
+		HWLOC_TYPE_DEPTH_PCI_DEVICE.3 \
 		HWLOC_TYPE_DEPTH_UNKNOWN.3 \
 		HWLOC_TYPE_UNORDERED.3 \
 		hwloc_alloc.3 \
@@ -126,7 +132,13 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_cpuset_to_nodeset.3 \
 		hwloc_cpuset_to_nodeset_strict.3 \
 		hwloc_cuda_get_device_cpuset.3 \
+		hwloc_cuda_get_device_pci_ids.3 \
+		hwloc_cuda_get_device_pcidev.3 \
 		hwloc_cudart_get_device_cpuset.3 \
+		hwloc_cudart_get_device_pci_ids.3 \
+		hwloc_cudart_get_device_pcidev.3 \
+		hwloc_custom_insert_group_object_by_parent.3 \
+		hwloc_custom_insert_topology.3 \
 		hwloc_distances_s.3 \
 		hwloc_distribute.3 \
 		hwloc_distributev.3 \
@@ -171,6 +183,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_get_obj_by_depth.3 \
 		hwloc_get_obj_by_type.3 \
 		hwloc_get_obj_covering_cpuset.3 \
+		hwloc_get_obj_index_inside_cpuset.3 \
 		hwloc_get_obj_inside_cpuset_by_depth.3 \
 		hwloc_get_obj_inside_cpuset_by_type.3 \
 		hwloc_get_pcidev_by_busid.3 \
@@ -265,6 +278,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwloc_topology_load.3 \
 		hwloc_topology_membind_support.3 \
 		hwloc_topology_restrict.3 \
+		hwloc_topology_set_custom.3 \
 		hwloc_topology_set_distance_matrix.3 \
 		hwloc_topology_set_flags.3 \
 		hwloc_topology_set_fsroot.3 \
@@ -283,6 +297,7 @@ MAN3=		HWLOC_API_VERSION.3 \
 		hwlocality_creation.3 \
 		hwlocality_cuda.3 \
 		hwlocality_cudart.3 \
+		hwlocality_custom.3 \
 		hwlocality_distances.3 \
 		hwlocality_glibc_sched.3 \
 		hwlocality_helper_binding.3 \

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	hwloc
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.3/downloads/ \
-		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.3/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v1.4/downloads/ \
+		http://icl.cs.utk.edu/open-mpi/software/hwloc/v1.4/downloads/
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	The Portable Hardware Locality software package
