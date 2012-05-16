@@ -7,7 +7,7 @@
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=${OPSYS}-
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/ \
 		http://chirashi-no-ura.net/files/
@@ -18,7 +18,7 @@ COMMENT=	Multilingual terminal emulator for framebuffer
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	requires VESA support in kernel
 
 MAKE_JOBS_SAFE=	yes
