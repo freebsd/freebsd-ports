@@ -22,9 +22,9 @@ NO_WRKSUBDIR=	yes
 STRIP=		#
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
-BOINC_USER?=	boinc
-BOINC_GROUP?=	nobody
-BOINC_HOME?=	/var/db/boinc
+BOINC_CLIENT_USER?=	boinc
+BOINC_CLIENT_GROUP?=	nobody
+BOINC_CLIENT_HOME?=	/var/db/boinc
 
 SIMAP_SITE=	boinc.bio.wzw.tum.de_boincsimap
 SIMAP_URL=	boinc.bio.wzw.tum.de/boincsimap
@@ -34,7 +34,7 @@ HMMER_BINARY=	hmmer_${HMMER_VERSION}_${MACH}-pc-freebsd
 HMMER_VERSION=	5.09
 
 PLIST_SUB=	SIMAP_BINARY=${SIMAP_BINARY} HMMER_BINARY=${HMMER_BINARY} SIMAP_SITE=${SIMAP_SITE} \
-		BOINC_HOME=${BOINC_HOME}
+		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -76,11 +76,11 @@ do-extract:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${HMMER_BINARY} ${EXTRACT_AFTER_ARGS})
 
 do-install:
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects/${SIMAP_SITE}
-	${INSTALL_DATA} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/app_info.xml ${BOINC_HOME}/projects/${SIMAP_SITE}
+	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} ${BOINC_CLIENT_HOME}/projects
+	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} ${BOINC_CLIENT_HOME}/projects/${SIMAP_SITE}
+	${INSTALL_DATA} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} ${WRKDIR}/app_info.xml ${BOINC_CLIENT_HOME}/projects/${SIMAP_SITE}
 .for APP in ${DISTNAME}
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} ${WRKDIR}/${APP} ${BOINC_HOME}/projects/${SIMAP_SITE}
+	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} ${WRKDIR}/${APP} ${BOINC_CLIENT_HOME}/projects/${SIMAP_SITE}
 .endfor
 
 post-install:

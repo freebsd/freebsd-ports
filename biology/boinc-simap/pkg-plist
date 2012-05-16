@@ -1,4 +1,4 @@
-@cwd %%BOINC_HOME%%
+@cwd %%BOINC_CLIENT_HOME%%
 projects/%%SIMAP_SITE%%/app_info.xml
 projects/%%SIMAP_SITE%%/%%SIMAP_BINARY%%
 projects/%%SIMAP_SITE%%/%%HMMER_BINARY%%

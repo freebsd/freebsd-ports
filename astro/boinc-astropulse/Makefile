@@ -35,9 +35,9 @@ CFLAGS+=	-march=${CPUTYPE}
 .endif
 
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
-BOINC_USER?=	boinc
-BOINC_GROUP?=	nobody
-BOINC_HOME?=	/var/db/boinc
+BOINC_CLIENT_USER?=	boinc
+BOINC_CLIENT_GROUP?=	nobody
+BOINC_CLIENT_HOME?=	/var/db/boinc
 
 #OPTIONS=	X11		"Build screensaver (requires net/boinc-client with X11)" on
 
@@ -84,25 +84,25 @@ SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	AP_BINARY=${AP_BINARY} \
 		AP_VERSION=${PORTVERSION:S/.//} \
 		SETI_SITE=${SETI_SITE} \
-		BOINC_HOME=${BOINC_HOME} \
-		BOINC_USER=${BOINC_USER} \
-		BOINC_GROUP=${BOINC_GROUP}
+		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
+		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
+		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
 PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
 		SETI_SITE=${SETI_SITE} \
-		BOINC_HOME=${BOINC_HOME}
+		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME}
 
 pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup)
 
 do-install:
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} ${BOINC_HOME}/projects
-	${INSTALL} -d -o ${BOINC_USER} -g ${BOINC_GROUP} \
-	    ${BOINC_HOME}/projects/${SETI_SITE}
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} \
-	    ${WRKSRC}/${AP_BINARY} ${BOINC_HOME}/projects/${SETI_SITE}/
+	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} ${BOINC_CLIENT_HOME}/projects
+	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
+	    ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
+	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
+	    ${WRKSRC}/${AP_BINARY} ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .if !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} -o ${BOINC_USER} -g ${BOINC_GROUP} \
-	    ${WRKSRC}/ap_graphics ${BOINC_HOME}/projects/${SETI_SITE}/
+	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
+	    ${WRKSRC}/ap_graphics ${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
 
 post-install:

@@ -11,6 +11,6 @@ MANUAL INSTALLATION
  *) Or get your account key at http://%%SETI_SITE%%/get_passwd.php
 
  *) Attach to the project:
-    cd %%BOINC_HOME%%
+    cd %%BOINC_CLIENT_HOME%%
     boinc_cmd --project_attach %%SETI_SITE%% <account key>
 *****************************************************************************

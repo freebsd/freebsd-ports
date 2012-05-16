@@ -6,7 +6,7 @@ if [ "$2" != "POST-INSTALL" ]; then
     exit 0
 fi
 
-F=%%BOINC_HOME%%/projects/%%SETI_SITE%%/app_info.xml
+F=%%BOINC_CLIENT_HOME%%/projects/%%SETI_SITE%%/app_info.xml
 
 if [ ! -f $F ]; then
     echo Creating new $F
