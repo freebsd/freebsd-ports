@@ -18,6 +18,8 @@ COMMENT=	A physically based and unbiased rendering system
 
 LICENSE=	GPLv3
 
+BROKEN=		does not build with boost-1.48.0
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		png.6:${PORTSDIR}/graphics/png \
