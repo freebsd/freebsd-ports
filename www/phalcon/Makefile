@@ -7,9 +7,9 @@
 
 PORTNAME=	phalcon
 PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${PORTNAME}/c${PORTNAME}/tarball/master/
+MASTER_SITES=	https://github.com/${PORTNAME}/c${PORTNAME}/tarball/${GITVERSION}/
 DISTNAME=	${PORTNAME}-c${PORTNAME}-${GITVERSION}
 
 MAINTAINER=	linpct@gmail.com
