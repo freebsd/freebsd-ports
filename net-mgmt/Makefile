@@ -230,6 +230,7 @@
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += p5-Xymon
     SUBDIR += p5-Xymon-Client
+    SUBDIR += p5-Xymon-Server
     SUBDIR += p5-Zenoss
     SUBDIR += packit
     SUBDIR += pads
