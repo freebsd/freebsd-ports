@@ -3757,6 +3757,7 @@
     SUBDIR += rubygem-moneta
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-msgpack
+    SUBDIR += rubygem-mspec
     SUBDIR += rubygem-multi_json
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-ncurses
