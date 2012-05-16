@@ -1,5 +1,5 @@
---- tools/build/v2/engine/src/build.jam.orig	Tue Jul 29 15:43:31 2008
-+++ tools/build/v2/engine/src/build.jam	Tue Nov 11 23:52:09 2008
+--- tools/build/v2/engine/build.jam.orig	Tue Jul 29 15:43:31 2008
++++ tools/build/v2/engine/build.jam	Tue Nov 11 23:52:09 2008
 @@ -176,7 +176,7 @@
  ## GCC 2.x, 3.x, 4.x
  toolset gcc gcc : "-o " : -D
