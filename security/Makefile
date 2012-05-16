@@ -649,6 +649,7 @@
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-pam
     SUBDIR += pecl-ssh2
+    SUBDIR += pecl-taint
     SUBDIR += pecl-tcpwrap
     SUBDIR += pft
     SUBDIR += pgp
