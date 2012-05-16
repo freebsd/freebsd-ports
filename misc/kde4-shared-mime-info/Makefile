@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	kde4-
