@@ -21,7 +21,8 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=4
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 USE_GETTEXT=	yes
 
 SUB_FILES=	pkg-message

@@ -32,6 +32,8 @@ USE_PHP=	ctype curl gettext hash iconv json mysql \
 		pcre pdo pdo_sqlite posix session \
 		simplexml spl sqlite tokenizer \
 		xmlwriter zlib xmlreader
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 USE_MYSQL=	5.0
 

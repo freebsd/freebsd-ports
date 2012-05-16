@@ -18,6 +18,8 @@ LICENSE=	AL2
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	mssql mysql odbc pgsql session sqlite
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 SUB_FILES=	pkg-message
 
 do-install:

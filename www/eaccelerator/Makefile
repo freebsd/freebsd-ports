@@ -20,7 +20,8 @@ OPTIONS=	DOCCOMM "Retain doc-comments in internal php structures" off
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
-IGNORE_WITH_PHP=4
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared \
 		--with-eaccelerator-userid=80 \
