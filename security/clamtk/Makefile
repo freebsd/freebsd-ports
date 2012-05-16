@@ -10,7 +10,7 @@ PORTVERSION=	4.38
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tom@tomjudge.com
 COMMENT=	GTK front-end for Clam Antivirus
 
 LICENSE=	ART10 GPLv1
