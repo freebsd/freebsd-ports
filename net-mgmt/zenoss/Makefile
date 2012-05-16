@@ -7,6 +7,7 @@
 
 PORTNAME=	zenoss
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.1/${PORTNAME}-${PORTVERSION}:source1 \
 		http://dev.sencha.com/deploy/:source2
