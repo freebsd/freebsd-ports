@@ -499,6 +499,8 @@ amanda25-client                 ports/misc/amanda25-client
 amanda25-server                 ports/misc/amanda25-server
 amanda26-client                 ports/misc/amanda26-client
 amanda26-server                 ports/misc/amanda26-server
+amanda32-client                 ports/misc/amanda32-client
+amanda32-server                 ports/misc/amanda32-server
 amanith                         ports/graphics/amanith
 amap                            ports/security/amap
 amarok                          ports/audio/amarok
@@ -1118,6 +1120,7 @@ bk2site                         ports/www/bk2site
 bkmrkconv                       ports/www/bkmrkconv
 bkpupsd                         ports/sysutils/bkpupsd
 bksh                            ports/sysutils/bksh
+black-box                       ports/games/black-box
 blackbox                        ports/x11-wm/blackbox
 blackjack                       ports/games/blackjack
 blackshadeselite                ports/games/blackshadeselite
@@ -4026,6 +4029,7 @@ ftpsesame                       ports/ftp/ftpsesame
 ftpsync                         ports/ftp/ftpsync
 ftrack                          ports/mail/ftrack
 ftwin                           ports/sysutils/ftwin
+fuel                            ports/devel/fuel
 fugu                            ports/net-im/fugu
 fuhquake                        ports/games/fuhquake
 fujaba                          ports/devel/fujaba
@@ -4768,6 +4772,8 @@ gnutls                          ports/security/gnutls
 gnutls-devel                    ports/security/gnutls-devel
 gnuwash                         ports/deskutils/gnuwash
 go                              ports/lang/go
+go.crypto                       ports/security/go.crypto
+go.net                          ports/net/go.net
 goaccess                        ports/sysutils/goaccess
 gob2                            ports/devel/gob2
 gobby                           ports/editors/gobby
@@ -6969,6 +6975,7 @@ kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffeine                        ports/multimedia/kaffeine
 kaffeine-mozilla                ports/multimedia/kaffeine-mozilla
 kaid                            ports/games/kaid
+kajaani-kombat                  ports/games/kajaani-kombat
 kajongg                         ports/games/kajongg
 kalbum                          ports/graphics/kalbum
 kalgebra                        ports/math/kalgebra
@@ -22159,6 +22166,10 @@ py-MarkupSafe                   ports/textproc/py-MarkupSafe
 py-Missing                      ports/devel/py-Missing
 py-MultiMapping                 ports/devel/py-MultiMapping
 py-MySQLdb                      ports/databases/py-MySQLdb
+py-MySQLdb41                    ports/databases/py-MySQLdb41
+py-MySQLdb50                    ports/databases/py-MySQLdb50
+py-MySQLdb51                    ports/databases/py-MySQLdb51
+py-MySQLdb55                    ports/databases/py-MySQLdb55
 py-PEAK-Rules                   ports/devel/py-PEAK-Rules
 py-PF                           ports/security/py-PF
 py-Persistence                  ports/devel/py-Persistence
@@ -22670,6 +22681,10 @@ py-mx-base                      ports/lang/py-mx-base
 py-mx-experimental              ports/devel/py-mx-experimental
 py-mygpoclient                  ports/devel/py-mygpoclient
 py-mysqldb                      ports/databases/py-MySQLdb
+py-mysqldb41                    ports/databases/py-MySQLdb41
+py-mysqldb50                    ports/databases/py-MySQLdb50
+py-mysqldb51                    ports/databases/py-MySQLdb51
+py-mysqldb55                    ports/databases/py-MySQLdb55
 py-nagiosplugin                 ports/sysutils/py-nagiosplugin
 py-namebench                    ports/dns/py-namebench
 py-nautilus                     ports/x11-fm/py-nautilus
@@ -25888,6 +25903,7 @@ ssddiff                         ports/textproc/ssddiff
 ssdeep                          ports/security/ssdeep
 ssed                            ports/editors/ssed
 sselp                           ports/x11/sselp
+ssgless                         ports/net-mgmt/ssgless
 ssh-copy-id                     ports/security/ssh-copy-id
 ssh-gui                         ports/security/ssh-gui
 ssh-multiadd                    ports/security/ssh-multiadd
@@ -26141,6 +26157,7 @@ synergy                         ports/sysutils/synergy
 synfig                          ports/devel/synfig
 synfigstudio                    ports/graphics/synfigstudio
 synonym                         ports/mail/synonym
+syobon                          ports/games/syobon
 sysbench                        ports/benchmarks/sysbench
 sysconftool                     ports/devel/sysconftool
 sysfsutils                      ports/devel/sysfsutils
@@ -26198,6 +26215,7 @@ talksoup                        ports/irc/talksoup
 talloc                          ports/devel/talloc
 tamago                          ports/editors/tamago
 tamago-emacs21                  ports/editors/tamago-emacs21
+tanglet                         ports/games/tanglet
 tangogps                        ports/astro/tangogps
 tank                            ports/games/tank
 tap-plugins                     ports/audio/tap-plugins
@@ -28823,6 +28841,7 @@ zfs-snapshot-clean              ports/sysutils/zfs-snapshot-clean
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
 zfs-stats                       ports/sysutils/zfs-stats
 zfsnap                          ports/sysutils/zfsnap
+zfstools                        ports/sysutils/zfstools
 zgv                             ports/graphics/zgv
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
 zh-CNS11643-font                ports/chinese/CNS11643-font
