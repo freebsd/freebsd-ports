@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer-plugins-fluendo-mpegdemux
-PORTVERSION=	0.10.70
+PORTVERSION=	0.10.71
 CATEGORIES=	multimedia
 MASTER_SITES=	http://core.fluendo.com/gstreamer/src/gst-fluendo-mpegdemux/
 DISTNAME=	gst-fluendo-mpegdemux-${PORTVERSION}
