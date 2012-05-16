@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.45
+PORTVERSION=	1.48
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,13 +15,11 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
 
 BUILD_DEPENDS=	p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
-		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
-RUN_DEPENDS=	p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache \
-		p5-Class-Container>=0.7:${PORTSDIR}/devel/p5-Class-Container \
+		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Exception-Class>=1.15:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Log-Any>=0.08:${PORTSDIR}/devel/p5-Log-Any \
-		p5-Params-Validate>=0.07:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
+		p5-Cache-Cache>=1:${PORTSDIR}/devel/p5-Cache-Cache
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
 PERL_MODBUILD=	yes
@@ -58,8 +56,7 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Tools.3 \
 		HTML::Mason::Utils.3
 
-OPTIONS=	MOD_PERL "with mod_perl dependency" off \
-		APACHE2 "with mod_perl for Apache 2" off
+OPTIONS=	MOD_PERL "with mod_perl dependency" off
 
 post-build:
 	${MV} -f ${WRKSRC}/bin ${WRKSRC}/bin.orig
@@ -71,11 +68,8 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MOD_PERL)
-.if defined(WITH_APACHE2)
+USE_APACHE=	2.0+
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/libapreq.pm:${PORTSDIR}/www/p5-libapreq
-.endif
 .endif
 
 .include <bsd.port.post.mk>
