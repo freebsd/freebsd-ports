@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	sql-ledger
-PORTVERSION=	2.8.23
+PORTVERSION=	3.0.2
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/ \
 		http://abacus.sql-ledger.com/source/ \
 		http://pluto.sql-ledger.com/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A double entry accounting system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
