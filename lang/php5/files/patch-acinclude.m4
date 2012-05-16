@@ -1,14 +1,5 @@
 --- acinclude.m4.orig	2009-05-09 22:28:02.000000000 +0200
 +++ acinclude.m4	2009-06-25 08:08:05.000000000 +0200
-@@ -194,7 +194,7 @@
- dnl
- dnl which array to append to?
- AC_DEFUN([PHP_ADD_SOURCES],[
--  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,PHP_GLOBAL_OBJS)))
-+  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,ifelse($4,cgi,PHP_CGI_OBJS,ifelse($4,fpm,PHP_FPM_OBJS,PHP_GLOBAL_OBJS)))))
- ])
- 
- dnl
 @@ -968,15 +968,9 @@
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module

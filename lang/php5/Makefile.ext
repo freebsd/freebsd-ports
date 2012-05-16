@@ -44,6 +44,7 @@ OPTIONS=	CDB "cdb database support" on \
 		DB4 "Berkeley DB4 support" off \
 		GDBM "GDBM database support" off \
 		QDBM "QDBM database support" off \
+		TOKYO "Tokyo Cabinet database support" off \
 		INIFILE "INI file support" on \
 		FLATFILE "flatfile support" on
 
@@ -100,7 +101,8 @@ CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 
 OPTIONS=	T1LIB "Include T1lib support" on \
 		TRUETYPE "Enable TrueType string function" on \
-		JIS "Enable JIS-mapped Japanese font support" off
+		JIS "Enable JIS-mapped Japanese font support" off \
+		VPX "Enable VP8 codec support" off
 
 PHP_HEADER_DIRS=libgd
 .endif
@@ -318,8 +320,9 @@ USE_GNOME=	libxml2
 
 .if ${PHP_MODNAME} == "snmp"
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
-		--with-openssl-dir=${OPENSSLBASE} \
-		--enable-ucd-snmp-hack
+		--with-openssl-dir=${OPENSSLBASE}
+
+CONFIGURE_ENV+=	ac_cv_buggy_snprint_value="no"
 
 LIB_DEPENDS+=   netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
@@ -338,16 +341,6 @@ USE_PHP_BUILD=	yes
 
 .if ${PHP_MODNAME} == "sockets"
 CONFIGURE_ARGS+=--enable-sockets
-.endif
-
-.if ${PHP_MODNAME} == "sqlite"
-CONFIGURE_ARGS+=--with-sqlite
-
-USE_PHP=	session
-USE_PHP_BUILD=	yes
-PHP_HEADER_DIRS=libsqlite/src
-
-OPTIONS=	UTF8 "Enable UTF-8 support" off
 .endif
 
 .if ${PHP_MODNAME} == "sqlite3"
@@ -471,6 +464,11 @@ LIB_DEPENDS+=	qdbm.14:${PORTSDIR}/databases/qdbm
 
 CONFIGURE_ARGS+=--with-qdbm=${LOCALBASE}
 .	endif
+.	if defined(WITH_TOKYO)
+LIB_DEPENDS+=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
+
+CONFIGURE_ARGS+=--with-tcadb=${LOCALBASE}
+.	endif
 .	if defined(WITHOUT_INIFILE)
 CONFIGURE_ARGS+=--disable-inifile
 .	endif
@@ -490,6 +488,11 @@ CONFIGURE_ARGS+=--enable-gd-native-ttf
 .	endif
 .	if defined(WITH_JIS)
 CONFIGURE_ARGS+=--enable-gd-jis-conv
+.	endif
+.	if defined(WITH_VPX)
+LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
+
+CONFIGURE_ARGS+=--with-vpx-dir=${LOCALBASE}
 .	endif
 .endif
 
@@ -570,12 +573,6 @@ CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
 		--with-zlib-dir=/usr
 
 USE_MYSQL=	yes
-.	endif
-.endif
-
-.if ${PHP_MODNAME} == "sqlite"
-.	if defined(WITH_UTF8)
-CONFIGURE_ARGS+=--enable-sqlite-utf8
 .	endif
 .endif
 

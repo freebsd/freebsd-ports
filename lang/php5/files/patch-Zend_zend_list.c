@@ -1,6 +1,6 @@
---- Zend/zend_list.c.orig	2007-01-01 10:35:46.000000000 +0100
-+++ Zend/zend_list.c	2008-01-29 11:05:14.000000000 +0100
-@@ -48,7 +48,7 @@
+--- Zend/zend_list.c.orig	2012-01-01 14:15:04.000000000 +0100
++++ Zend/zend_list.c	2012-03-02 10:29:02.000000000 +0100
+@@ -47,7 +47,7 @@
  	return index;
  }
  
@@ -9,7 +9,7 @@
  {
  	zend_rsrc_list_entry *le;
  	
-@@ -65,7 +65,7 @@
+@@ -64,7 +64,7 @@
  }
  
  
@@ -18,7 +18,7 @@
  {
  	zend_rsrc_list_entry *le;
  
-@@ -78,7 +78,7 @@
+@@ -77,7 +77,7 @@
  	}
  }
  
@@ -27,12 +27,12 @@
  {
  	zend_rsrc_list_entry *le;
  	
-@@ -350,7 +350,7 @@
+@@ -348,7 +348,7 @@
  }
  
  
--char *zend_rsrc_list_get_rsrc_type(int resource TSRMLS_DC)
-+char *zend_rsrc_list_get_rsrc_type(ulong resource TSRMLS_DC)
+-const char *zend_rsrc_list_get_rsrc_type(int resource TSRMLS_DC)
++const char *zend_rsrc_list_get_rsrc_type(ulong resource TSRMLS_DC)
  {
  	zend_rsrc_list_dtors_entry *lde;
  	int rsrc_type;
