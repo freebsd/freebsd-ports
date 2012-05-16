@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.5-10
+DISTVERSION=	6.7.6-9
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		http://image_magick.veidrodis.com/image_magick/ \
@@ -349,8 +349,10 @@ CONFIGURE_ARGS+=	--without-rsvg --without-xml
 # Pango support
 .if defined(WITH_IMAGEMAGICK_PANGO)
 LIB_DEPENDS+=		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
+PLIST_SUB+=		PANGO=""
 .else
 CONFIGURE_ARGS+=	--without-pango
+PLIST_SUB+=		PANGO="@comment "
 .endif
 
 # PDF (Adobe Portable Document Format) support
