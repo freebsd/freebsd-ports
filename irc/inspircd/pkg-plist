@@ -207,7 +207,7 @@ lib/inspircd/modules/m_xline_db.so
 @dirrm lib/inspircd/data
 @dirrm lib/inspircd
 @mode 640
-@group %%INSPIRCD_GRP%%
+@group %%GROUPS%%
 @unexec if cmp -s %D/%%ETCDIR%%/inspircd.censor.example %D/%%ETCDIR%%/inspircd.censor; then rm -f %D/%%ETCDIR%%/inspircd.censor; fi
 %%ETCDIR%%/inspircd.censor.example
 @exec if [ ! -f %B/inspircd.censor ] ; then cp -p %D/%F %B/inspircd.censor; fi
@@ -244,4 +244,3 @@ lib/inspircd/modules/m_xline_db.so
 @dirrmtry %%ETCDIR%%
 @mode
 @group
-

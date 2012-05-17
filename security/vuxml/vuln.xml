@@ -52,6 +52,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5f00804-a03b-11e1-a284-0023ae8e59f0">
+    <topic>inspircd -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>inspircd</name>
+	<range><lt>2.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>InspIRCd reports:</p>
+	<blockquote cite="http://inspircd.github.com/">
+	  <p>InspIRCd contains a heap corruption vulnerability that exists in the
+	    dns.cpp code. The res[] buffer is allocated on the heap and can be
+		 overflowed. The res[] buffer can be exploited during its deallocation.
+		 The number of overflowed bytes can be controlled with DNS compression
+		 features.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	 <cvename>CVE-2012-1836</cvename>
+    </references>
+    <dates>
+      <discovery>2012-05-19</discovery>
+      <entry>2012-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa71daaa-9f8c-11e1-bd0a-0082a0c18826">
     <topic>pidgin-otr -- format string vulnerability</topic>
     <affects>
@@ -78,8 +107,8 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.cypherpunks.ca/otr/</url>
     </references>
     <dates>
-      <discovery>2012-05-16</discovery>
-      <entry>2012-05-16</entry>
+      <discovery>2012-03-19</discovery>
+      <entry>2012-05-17</entry>
     </dates>
   </vuln>
 

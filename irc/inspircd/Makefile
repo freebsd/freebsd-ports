@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	inspircd
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	irc
-MASTER_SITES=	SF/${PORTNAME}/InspIRCd-2.0/${PORTVERSION}
+MASTER_SITES=	http://cloud.github.com/downloads/inspircd/inspircd/
 DISTNAME=	InspIRCd-${PORTVERSION}
 
 MAINTAINER=	feld@feld.me
 COMMENT=	A modular C++ IRC daemon
+
+CONFLICTS=	inspircd-1.*
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME}
