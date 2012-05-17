@@ -25,6 +25,9 @@ ALL_TARGET=	# empty
 MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	No longer supported
+EXPIRATION_DATE=	2012-06-16
+
 .include <bsd.port.pre.mk>
 
 post-extract:
