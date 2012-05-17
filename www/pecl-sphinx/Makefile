@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sphinx
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
