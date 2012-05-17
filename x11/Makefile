@@ -24,6 +24,7 @@
     SUBDIR += bigreqsproto
     SUBDIR += bitmap
     SUBDIR += blast
+    SUBDIR += bmpanel2
     SUBDIR += bricons
     SUBDIR += brightside
     SUBDIR += cl-clx
