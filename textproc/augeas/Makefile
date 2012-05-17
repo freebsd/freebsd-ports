@@ -8,7 +8,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 
@@ -35,5 +35,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:$$(libdir)/pkgconfig:${PREFIX}/libdata/pkgconfig:' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's:/bin/bash:/usr/bin/env bash:' ${WRKSRC}/tests/*.sh
 	@${REINPLACE_CMD} -e 's:sed:gsed:' ${WRKSRC}/tests/test-augtool.sh
+	@${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${LOCALBASE}:' \
+		${WRKSRC}/lenses/puppet.aug \
+		${WRKSRC}/lenses/puppetfileserver.aug
 
 .include <bsd.port.mk>
