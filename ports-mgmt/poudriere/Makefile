@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poudriere
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/poudriere/
 
