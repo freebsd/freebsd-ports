@@ -901,6 +901,7 @@
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
     SUBDIR += libixp
+    SUBDIR += libjson++
     SUBDIR += libk8055
     SUBDIR += liblas
     SUBDIR += libleaftag
