@@ -101,7 +101,7 @@ Note:  Please add new entries to the beginning of this file.
 	    associated netmask).</p>
 	  <p>When IPv6 support was added to sudo, a bug was introduced that
 	    caused the IPv6 network matching code to be called when an IPv4
-	    network address does not match. Deepending on the value of the
+	    network address does not match. Depending on the value of the
 	    uninitialized portion of the IPv6 address, it is possible for the
 	    IPv4 network number to match when it should not. This bug only
 	    affects IP network matching and does not affect simple IP address
