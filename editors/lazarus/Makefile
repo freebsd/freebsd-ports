@@ -21,6 +21,8 @@ COMMENT?=	A portable Delphi-like IDE for the FreePascal compiler
 BUILD_DEPENDS?=	#
 RUN_DEPENDS?=	#
 
+BROKEN=		does not build
+
 PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
