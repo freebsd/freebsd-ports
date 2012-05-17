@@ -6,7 +6,7 @@
 
 PORTNAME=	qbittorrent
 PORTVERSION=	2.9.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 
@@ -15,7 +15,7 @@ COMMENT?=	Bittorrent client using Qt4 and libtorrent-rasterbar
 
 # lib versions specified on purpose
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
-		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
+		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-16
 
 MAKE_JOBS_SAFE=	yes
 
