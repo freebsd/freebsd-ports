@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mailparse
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	mail www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL extension to create and decode MIME messages
 
 USE_PHP=	mbstring
