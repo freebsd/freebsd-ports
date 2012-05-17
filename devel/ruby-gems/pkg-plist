@@ -74,6 +74,8 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/package_task.rb
 %%RUBY_SITELIBDIR%%/rubygems/path_support.rb
 %%RUBY_SITELIBDIR%%/rubygems/platform.rb
+%%RUBY_SITELIBDIR%%/rubygems/psych_additions.rb
+%%RUBY_SITELIBDIR%%/rubygems/psych_tree.rb
 %%RUBY_SITELIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/require_paths_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/requirement.rb
@@ -82,6 +84,8 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/source_index.rb
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/ca-bundle.pem
+%%RUBY_SITELIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
@@ -92,6 +96,7 @@ bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
 %%RUBY_SITELIBDIR%%/ubygems.rb
 lib/ruby/gems/%%RUBY_VER%%/doc/.keep_this
+@dirrm %%RUBY_SITELIBDIR%%/rubygems/ssl_certs
 @dirrm %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader
 @dirrm %%RUBY_SITELIBDIR%%/rubygems/package
 @dirrm %%RUBY_SITELIBDIR%%/rubygems/ext
