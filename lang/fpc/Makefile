@@ -154,7 +154,7 @@ post-install:
 	if [ -e "${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${PREFIX}/bin/${PPNAME}"; fi
 	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/${PPNAME}" "${PREFIX}/bin"
 	${SH} "${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PREFIX}/lib/fpc/${PORTVERSION}" "${PREFIX}/etc"
-	@${REINPLACE_CMD} -i "" -e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${PREFIX}/etc/fpc.cfg
+	@${REINPLACE_CMD} -i "" -e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${PREFIX}/etc/fpc.cfg.sample
 	@if [ ! -f ${PREFIX}/etc/fpc.cfg ]; then \
 		${CP} ${PREFIX}/etc/fpc.cfg.sample ${PREFIX}/etc/fpc.cfg; \
 	fi
