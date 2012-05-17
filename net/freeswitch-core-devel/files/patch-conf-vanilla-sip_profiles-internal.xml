@@ -1,0 +1,14 @@
+--- conf/vanilla/sip_profiles/internal.xml
++++ conf/vanilla/sip_profiles/internal.xml
+@@ -379,7 +379,10 @@
+ 	     It's probably not what you want so stick with the default unless you really need to change this.
+ 	-->
+ 	<!--<param name="renegotiate-codec-on-hold" value="true"/>-->
+-    
++
++	<!-- Enable call revovery -->
++	<param name="track-calls" value="true"/>    
++
+   </settings>
+ </profile>
+ 

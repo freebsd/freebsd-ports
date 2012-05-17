@@ -1,0 +1,20 @@
+
+*****************************************************
+*		Please read			    *
+*****************************************************
+		FreeBSD 7.x		
+There are some known issues with FreeBSD's libpthread 
+implementation and APR that can affect throughput at 
+high volume. A possible fix is to use libmap.conf to 
+remap FreeSWITCH. and its libraries to use libthr 
+(the better performance threading library)
+
+/etc/libmap.conf
+
+[freeswitch]
+libc_r.so.5 libthr.so.2
+libc_r.so.6 libthr.so.2
+libpthread.so.1 libthr.so.2
+libpthread.so.2 libthr.so.2
+
+
