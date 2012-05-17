@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swish
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +17,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Swish-e bindings for PHP
 
 BUILD_DEPENDS=	swish-config:${PORTSDIR}/www/swish-e
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	swish-config:${PORTSDIR}/www/swish-e
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
