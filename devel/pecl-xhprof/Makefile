@@ -21,6 +21,7 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 ONLY_FOR_ARCHS=	i386 amd64
+DEFAULT_PHP_VER=53
 
 .include <bsd.port.pre.mk>
 

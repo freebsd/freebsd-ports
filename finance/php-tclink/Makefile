@@ -18,5 +18,6 @@ COMMENT=	A PHP extension for TrustCommerce credit card processing
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_OPENSSL=	yes
+DEFAULT_PHP_VER=53
 
 .include <bsd.port.mk>

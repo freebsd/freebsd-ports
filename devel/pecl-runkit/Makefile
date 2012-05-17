@@ -20,6 +20,7 @@ COMMENT=	PECL extension to modify constants, user-defined functions and classes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	runkit
+DEFAULT_PHP_VER=53
 
 CONFIGURE_ARGS=	--enable-runkit=classkit
 
