@@ -1,5 +1,5 @@
---- configure.orig	2009-09-20 05:28:22.000000000 -0400
-+++ configure	2009-09-20 14:16:07.000000000 -0400
+--- configure	2009-09-28 17:29:14.000000000 -0400
++++ configure	2012-05-17 15:32:33.000000000 -0400
 @@ -4867,9 +4867,9 @@
    goodsvn="bad";
  elif test $SVN_MAJOR -eq 1 -a $SVN_MINOR -le 3; then
@@ -53,3 +53,15 @@
        QT_LIBS="-L$QT_LIBPATH -lQt3Support -lQtGui -lQtNetwork -lQtCore"
      ;;
      esac
+@@ -6888,11 +6888,6 @@
+      QT_INCLUDES="$QT_INCLUDES -I$x_includes"
+    fi
+ 
+-   if test x$x_libraries != x; then
+-     QT_LIBS="$QT_LIBS -L$x_libraries $X_PRE_LIBS -lX11 -lXext -lXmu -lXt"
+-     QT_LIBS="$QT_LIBS -lXi $X_EXTRA_LIBS"
+-   fi
+-
+    ;;
+ esac
+ 
