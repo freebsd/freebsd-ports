@@ -76,7 +76,7 @@ Note:  Please add new entries to the beginning of this file.
 	 <cvename>CVE-2012-1836</cvename>
     </references>
     <dates>
-      <discovery>2012-05-19</discovery>
+      <discovery>2012-03-19</discovery>
       <entry>2012-05-17</entry>
     </dates>
   </vuln>
@@ -107,8 +107,8 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.cypherpunks.ca/otr/</url>
     </references>
     <dates>
-      <discovery>2012-03-19</discovery>
-      <entry>2012-05-17</entry>
+      <discovery>2012-05-16</discovery>
+      <entry>2012-05-16</entry>
     </dates>
   </vuln>
 
@@ -448,7 +448,7 @@ Note:  Please add new entries to the beginning of this file.
      </references>
      <dates>
         <discovery>2012-03-14</discovery>
-        <entry>2012-05-9</entry>
+        <entry>2012-05-09</entry>
      </dates>
   </vuln>
 
@@ -474,7 +474,7 @@ Note:  Please add new entries to the beginning of this file.
      </references>
      <dates>
         <discovery>2012-04-17</discovery>
-        <entry>2012-05-7</entry>
+        <entry>2012-05-07</entry>
      </dates>
   </vuln>
 
