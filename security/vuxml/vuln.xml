@@ -75,7 +75,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2012-2369</cvename>
-      <url>http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2012-2369</url>
+      <url>http://www.cypherpunks.ca/otr/</url>
     </references>
     <dates>
       <discovery>2012-05-16</discovery>
