@@ -40,6 +40,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tiff:${PORTSDIR}/graphics/tiff \
 		odbc:${PORTSDIR}/databases/unixODBC
 
+CONFLICTS=	freeswitch-core-devel-[0-9]*
+
 WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}
 
 USE_AUTOTOOLS=	autoconf:env automake:env libtool:env

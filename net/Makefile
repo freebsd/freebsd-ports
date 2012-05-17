@@ -155,6 +155,7 @@
     SUBDIR += freerdp
     SUBDIR += freeswitch
     SUBDIR += freeswitch-core
+    SUBDIR += freeswitch-core-devel
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += frickin
