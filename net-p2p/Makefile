@@ -48,6 +48,8 @@
     SUBDIR += libtorrent-rasterbar-14
     SUBDIR += libtorrent-rasterbar-15
     SUBDIR += libtorrent-rasterbar-15-python
+    SUBDIR += libtorrent-rasterbar-16
+    SUBDIR += libtorrent-rasterbar-16-python
     SUBDIR += limewire
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
