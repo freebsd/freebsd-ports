@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnsflood
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.20
 CATEGORIES=	dns
 MASTER_SITES=	http://www.adotout.com/ \
 		http://mirrors.rit.edu/zi/
@@ -17,18 +16,18 @@ MAINTAINER=	zi@FreeBSD.org
 COMMENT=	DNS flood detector
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=		${WRKDIR}/dns_flood_detector
+WRKSRC=		${WRKDIR}/dns_flood_detector_1.2
 
 PLIST_FILES=	sbin/dns_flood_detector
+USE_RC_SUBR=	dnsflood
 PORTDOCS=	README
 
 pre-patch:
-	${CP} ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
-
-post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/Makefile
+		${WRKSRC}/makefiles/Makefile-FreeBSD
+	@${LN} -sf ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dns_flood_detector ${PREFIX}/sbin
