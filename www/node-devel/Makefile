@@ -22,7 +22,7 @@ MAN1=		node.1
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2.7
 USE_GMAKE=	yes
 
 CONFLICTS=	node-0.[0-9]*
