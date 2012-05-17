@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaf
-PORTVERSION=	2.1.11
+PORTVERSION=	2.1.15
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
