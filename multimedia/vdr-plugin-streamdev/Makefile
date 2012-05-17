@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	vdr-plugin-streamdev
-PORTVERSION=	0.5.1p20120311
+PORTVERSION=	0.5.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/497/:release \
+MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/953/:release \
 		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	nox/:snapshot
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
+DISTFILES=	${DISTNAME:S/plugin-//}${EXTRACT_SUFX}:release
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - stream device plugin
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
-USE_BZIP2=	yes
 PORTDOCS=	COPYING README
 HAVE_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/client/Makefile \
 		${WRKSRC}/server/Makefile
 
