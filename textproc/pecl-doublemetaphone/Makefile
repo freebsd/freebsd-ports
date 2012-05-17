@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doublemetaphone
-PORTVERSION=	0.2.0
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
