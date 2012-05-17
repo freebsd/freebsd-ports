@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moo
-PORTVERSION=	0.091005
+PORTVERSION=	0.091006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTROUT
@@ -18,8 +18,8 @@ COMMENT=	Minimalist Object Orientation (with Moose compatiblity)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.07:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
-		p5-Module-Runtime>=0.013:${PORTSDIR}/devel/p5-Module-Runtime \
+BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.04:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Role-Tiny>=1.001.001:${PORTSDIR}/devel/p5-Role-Tiny \
 		p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures
 RUN_DEPENDS:=	${BUILD_DEPENDS}
