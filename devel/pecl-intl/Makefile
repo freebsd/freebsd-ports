@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	intl
-PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTVERSION=	2.0.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,12 +16,12 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to support Internationalization(ICU)
 
-LIB_DEPENDS=	icui18n.48:${PORTSDIR}/devel/icu
-
 LICENSE=	PHP301
+
+LIB_DEPENDS=	icui18n.48:${PORTSDIR}/devel/icu
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-IGNORE_WITH_PHP=4 52
+IGNORE_WITH_PHP=52
 
 .include <bsd.port.mk>
