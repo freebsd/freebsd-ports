@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
+MANUAL_PACKAGE_BUILD=	it needs an old PHP version
+
 NO_BUILD=	yes
 USE_PHP=	spl
 WANT_PHP_WEB=	yes
