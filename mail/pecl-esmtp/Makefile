@@ -20,6 +20,7 @@ LIB_DEPENDS=	esmtp:${PORTSDIR}/mail/libesmtp
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
 
 OPTIONS=	RE2C	"Enable re2c to regenerate PHP parsers"	on
 
