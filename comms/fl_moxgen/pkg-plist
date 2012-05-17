@@ -1,0 +1,3 @@
+bin/fl_moxgen
+%%DATADIR%%/moxgen.png
+@dirrm %%DATADIR%%

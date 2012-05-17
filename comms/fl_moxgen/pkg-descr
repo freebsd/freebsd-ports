@@ -1,0 +1,5 @@
+Fl_MoxGen is a program that will compute the dimensions
+of a Moxon Rectangle antenna based on user input of the
+desired resonant frequency in MHz and the wire diameter.
+
+WWW: http://home.comcast.net/~andystewart/moxon_sw.html
