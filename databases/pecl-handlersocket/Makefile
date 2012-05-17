@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	handlersocket
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.1
 CATEGORIES=	databases pear
 MASTER_SITES=	http://php-handlersocket.googlecode.com/files/
 PKGNAMEPREFIX=	pecl-
 DISTNAME=	php-${PORTNAME}-${PORTVERSION}
+DISTFILES=	php-handelrsocket-0.3.1${EXTRACT_SUFX}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	A PECL extension for HandlerSocket
