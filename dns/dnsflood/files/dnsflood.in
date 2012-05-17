@@ -6,7 +6,6 @@
 # PROVIDE: dnsflood
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable dnsflood:
 #
@@ -16,13 +15,13 @@
 . /etc/rc.subr
 
 name=dnsflood
-rcvar=`set_rcvar`
+rcvar=dnsflood_enable
+
+load_rc_config $name
 
 command=%%PREFIX%%/sbin/dns_flood_detector
 command_args="-d"
 
-# set defaults
 dnsflood_enable=${dnsflood_enable:-"NO"}
 
-load_rc_config $name
 run_rc_command "$1"
