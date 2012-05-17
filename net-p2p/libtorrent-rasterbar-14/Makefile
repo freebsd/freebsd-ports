@@ -15,6 +15,9 @@ PROJECTHOST=	libtorrent
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client
 
+DEPRECATED=	Upstream development stopped, time to move on
+EXPIRATION_DATE=	2012-06-30
+
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
