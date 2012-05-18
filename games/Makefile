@@ -149,6 +149,7 @@
     SUBDIR += crafty-tablebase-no-pawn
     SUBDIR += crafty-tablebase-pawn
     SUBDIR += cre
+    SUBDIR += cretan-hubris
     SUBDIR += crimson
     SUBDIR += criticalmass
     SUBDIR += critterding
