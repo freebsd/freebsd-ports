@@ -1,0 +1,23 @@
+include/girara/callbacks.h
+include/girara/commands.h
+include/girara/completion.h
+include/girara/config.h
+include/girara/datastructures.h
+include/girara/girara.h
+include/girara/gtk2-compat.h
+include/girara/macros.h
+include/girara/session.h
+include/girara/settings.h
+include/girara/shortcuts.h
+include/girara/statusbar.h
+include/girara/tabs.h
+include/girara/types.h
+include/girara/utils.h
+include/girara/version.h
+%%NLS%%share/locale/de/LC_MESSAGES/libgirara-gtk2-0.mo
+lib/libgirara-gtk2.a
+lib/libgirara-gtk2.so
+lib/libgirara-gtk2.so.0
+lib/libgirara-gtk2.so.0.1
+libdata/pkgconfig/girara-gtk2.pc
+@dirrm include/girara
