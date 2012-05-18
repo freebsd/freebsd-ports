@@ -5,10 +5,16 @@ include/libexttextcat/exttextcat-version.h
 include/libexttextcat/fingerprint.h
 include/libexttextcat/textcat.h
 include/libexttextcat/utf8misc.h
+%%TEXTCAT%%include/textcat.h
+%%TEXTCAT%%include/libtextcat
 lib/libexttextcat.a
 lib/libexttextcat.la
 lib/libexttextcat.so
 lib/libexttextcat.so.0
+%%TEXTCAT%%lib/libtextcat.a
+%%TEXTCAT%%lib/libtextcat.la
+%%TEXTCAT%%lib/libtextcat.so
+%%TEXTCAT%%lib/libtextcat.so.0
 libdata/pkgconfig/libexttextcat.pc
 %%DATADIR%%/af.lm
 %%DATADIR%%/am.lm
