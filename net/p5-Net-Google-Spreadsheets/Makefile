@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	Net-Google-Spreadsheets
-PORTVERSION=	0.14
+PORTVERSION=	0.15.01
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	gunter@six-two.net
 COMMENT=	A Perl module for using Google Spreadhseets API
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom \
-		${SITE_PERL}/Net/Google/AuthSub.pm:${PORTSDIR}/net/p5-Net-Google-AuthSub \
-		${SITE_PERL}/Net/Google/DataAPI.pm:${PORTSDIR}/net/p5-Net-Google-DataAPI \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/namespace/autoclean.pm:${PORTSDIR}/devel/p5-namespace-autoclean \
-		${SITE_PERL}/Any/Moose.pm:${PORTSDIR}/devel/p5-Any-Moose \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Test/MockModule.pm:${PORTSDIR}/devel/p5-Test-MockModule \
-		${SITE_PERL}/Test/MockObject.pm:${PORTSDIR}/devel/p5-Test-MockObject
+BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-Mouse>=0.51:${PORTSDIR}/devel/p5-Mouse \
+		p5-Net-Google-AuthSub>=0:${PORTSDIR}/net/p5-Net-Google-AuthSub \
+		p5-Net-Google-DataAPI>=0.27:${PORTSDIR}/net/p5-Net-Google-DataAPI \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
+		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 
 PERL_CONFIGURE=	yes
 
@@ -36,4 +37,10 @@ MAN3=		Net::Google::Spreadsheets.3 \
 		Net::Google::Spreadsheets::Table.3 \
 		Net::Google::Spreadsheets::Worksheet.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
