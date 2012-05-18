@@ -7,6 +7,7 @@
 
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
