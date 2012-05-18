@@ -8,6 +8,7 @@
 
 PORTNAME=	poco
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
@@ -40,7 +41,9 @@ CONFIGURE_ARGS+= --no-samples
 #
 .if defined(WITH_UODBC) && defined(WITH_IODBC)
 IGNORE=		please select either UODBC or IODBC, but not both
-.else
+.endif
+
+.if !defined(WITH_UODBC) && !defined(WITH_IODBC)
 CONFIGURE_ARGS+= --omit=Data/ODBC
 .endif
 
