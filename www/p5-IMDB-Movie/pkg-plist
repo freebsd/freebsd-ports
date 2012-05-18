@@ -1,5 +1,0 @@
-%%SITE_PERL%%/IMDB/Movie.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB/Movie/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB/Movie
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDB
-@dirrmtry %%SITE_PERL%%/IMDB

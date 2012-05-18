@@ -902,7 +902,6 @@
     SUBDIR += p5-HTML-RSSAutodiscovery
     SUBDIR += p5-HTML-ResolveLink
     SUBDIR += p5-HTML-RobotsMETA
-    SUBDIR += p5-HTML-Sanitizer
     SUBDIR += p5-HTML-Scrubber
     SUBDIR += p5-HTML-Seamstress
     SUBDIR += p5-HTML-Selector-XPath
@@ -1006,7 +1005,6 @@
     SUBDIR += p5-HTTPD-User-Manage
     SUBDIR += p5-I18N-AcceptLanguage
     SUBDIR += p5-IMDB-Film
-    SUBDIR += p5-IMDB-Movie
     SUBDIR += p5-Image-Delivery
     SUBDIR += p5-JE
     SUBDIR += p5-Jemplate

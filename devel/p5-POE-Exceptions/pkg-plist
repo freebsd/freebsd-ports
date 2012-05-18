@@ -1,9 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Exceptions/.packlist
-%%SITE_PERL%%/POE/Exceptions.pm
-%%SITE_PERL%%/POE/Kernel/Exception.pm
-%%SITE_PERL%%/POE/Session/Exception.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Exceptions
-@dirrmtry %%SITE_PERL%%/POE/Kernel
-@dirrmtry %%SITE_PERL%%/POE/Session
-@dirrmtry %%SITE_PERL%%/POE
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
