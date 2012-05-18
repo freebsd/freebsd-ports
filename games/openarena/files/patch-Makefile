@@ -1,5 +1,5 @@
---- Makefile.orig	2011-11-04 21:03:54.000000000 +0100
-+++ Makefile	2011-11-04 21:09:54.000000000 +0100
+--- Makefile.orig	2011-12-12 23:48:49.000000000 +0100
++++ Makefile	2012-03-07 23:00:53.000000000 +0100
 @@ -205,6 +205,8 @@
      OPENAL_LIBS=$(shell pkg-config --silence-errors --libs openal)
      SDL_CFLAGS=$(shell pkg-config --silence-errors --cflags sdl|sed 's/-Dmain=SDL_main//')
@@ -9,7 +9,7 @@
    endif
    # Use sdl-config if all else fails
    ifeq ($(SDL_CFLAGS),)
-@@ -569,9 +571,15 @@
+@@ -570,9 +572,15 @@
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -25,7 +25,7 @@
      -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
    CLIENT_CFLAGS = $(SDL_CFLAGS)
    SERVER_CFLAGS = 
-@@ -594,27 +602,24 @@
+@@ -595,27 +603,24 @@
  
    # optional features/libraries
    ifeq ($(USE_OPENAL),1)
