@@ -56,6 +56,7 @@
     SUBDIR += atris
     SUBDIR += atris-sounds
     SUBDIR += avanor
+    SUBDIR += avoision
     SUBDIR += avp-demo
     SUBDIR += awale
     SUBDIR += awele
