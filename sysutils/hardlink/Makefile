@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	hardlink
-PORTVERSION=	0.1.2
-CATEGORIES=	sysutils python
+PORTVERSION=	0.2.0
+CATEGORIES=	sysutils
 MASTER_SITES=	http://jak-linux.org/projects/hardlink/ \
 		DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,19 +17,26 @@ COMMENT=	Replace file copies using hardlinks
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+
 MAN1=		hardlink.1
-NO_BUILD=	yes
 PLIST_FILES=	bin/hardlink
-USE_PYTHON=	2.5+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-PORTSCOUT=	limit:~rc[0-9]+$$
+OPTIONS=	PCRE "Use PCRE for regular expressions" On
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/hardlink.py
+PORTSCOUT=	limit:(?<!~rc[0-9])$$
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_PCRE)
+MAKE_ENV+=	ENABLE=
+.else
+LIB_DEPENDS+=	pcreposix.0:${PORTSDIR}/devel/pcre
+.endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/hardlink.py ${PREFIX}/bin/hardlink
+	${INSTALL_PROGRAM} ${WRKSRC}/hardlink ${PREFIX}/bin/hardlink
 	${INSTALL_MAN} ${WRKSRC}/hardlink.1 ${MAN1PREFIX}/man/man1/hardlink.1
 
 .include <bsd.port.mk>
