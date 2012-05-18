@@ -887,7 +887,6 @@
     SUBDIR += testdisk
     SUBDIR += thefish
     SUBDIR += throttle
-    SUBDIR += thunar-volman-plugin
     SUBDIR += timelimit
     SUBDIR += timemon
     SUBDIR += titlefix

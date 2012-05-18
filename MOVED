@@ -3376,3 +3376,7 @@ www/py-django-css|www/py-django_compressor|2012-05-16|Upstream development stopp
 net-p2p/py-bittorrent-core||2012-05-16|BROKEN for more than 6 month, there is no upstream distfiles anymore
 net-p2p/py-bittorrent||2012-05-16|BROKEN for more than 6 month, there is no upstream distfiles anymore
 astro/boinc-einsteinathome||2012-05-16|Not usable with current project
+x11/avant-window-navigator-xfce4||2012-05-18|Has expired: BROKEN for more than 6 month
+deskutils/xfce4-volstatus-icon||2012-05-18|Has expired: BROKEN for more than 6 month
+multimedia/xfmedia-remote-plugin||2012-05-18|Has expired: BROKEN for more than 6 month
+sysutils/thunar-volman-plugin||2012-05-18|Has expired: BROKEN for more than 6 month
