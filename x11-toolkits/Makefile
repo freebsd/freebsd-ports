@@ -37,6 +37,7 @@
     SUBDIR += gal2-reference
     SUBDIR += gdl
     SUBDIR += gigi
+    SUBDIR += girara
     SUBDIR += gnocl
     SUBDIR += gnome-desktop-sharp20
     SUBDIR += gnome-sharp20
