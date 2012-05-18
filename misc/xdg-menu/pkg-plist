@@ -1,0 +1,35 @@
+apps/XDG-Menu/.DirIcon
+apps/XDG-Menu/AppInfo.xml
+apps/XDG-Menu/AppRun
+apps/XDG-Menu/AppletRun
+apps/XDG-Menu/Help/COPYING
+apps/XDG-Menu/Help/ChangeLog
+apps/XDG-Menu/Help/README
+apps/XDG-Menu/Help/README.ru
+apps/XDG-Menu/Help/TODO
+apps/XDG-Menu/Makefile
+apps/XDG-Menu/Messages/XDG-Menu.pot
+apps/XDG-Menu/Messages/it.gmo
+apps/XDG-Menu/Messages/it.po
+apps/XDG-Menu/Messages/opts2po.py
+apps/XDG-Menu/Messages/ru.gmo
+apps/XDG-Menu/Messages/ru.po
+apps/XDG-Menu/Messages/uk.gmo
+apps/XDG-Menu/Messages/uk.po
+apps/XDG-Menu/Options.xml
+apps/XDG-Menu/findrox.py
+apps/XDG-Menu/python/config.py
+apps/XDG-Menu/python/ctxmenu.py
+apps/XDG-Menu/python/dndsource.py
+apps/XDG-Menu/python/i18n.py
+apps/XDG-Menu/python/imagemenu.py
+apps/XDG-Menu/python/main.py
+apps/XDG-Menu/python/roxmenu.py
+apps/XDG-Menu/python/xdgmenu.py
+bin/xdg-menu
+@dirrmtry share/applications
+@dirrm apps/XDG-Menu/python
+@dirrm apps/XDG-Menu/Messages
+@dirrm apps/XDG-Menu/Help
+@dirrm apps/XDG-Menu
+@dirrmtry apps
