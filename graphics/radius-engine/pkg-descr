@@ -1,0 +1,5 @@
+Radius Engine is a Lua script-based real-time 2D graphics engine designed
+for rapidly prototyping games. Built on top of SDL and OpenGL,
+games made with Radius Engine are portable to both Windows and Linux.
+
+WWW: http://radius-engine.sourceforge.net/
