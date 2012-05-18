@@ -225,7 +225,6 @@
     SUBDIR += kde3-i18n-gl
     SUBDIR += kde3-i18n-hi
     SUBDIR += kde3-i18n-hr
-    SUBDIR += kde3-i18n-hsb
     SUBDIR += kde3-i18n-is
     SUBDIR += kde3-i18n-it
     SUBDIR += kde3-i18n-kk
@@ -235,12 +234,10 @@
     SUBDIR += kde3-i18n-mk
     SUBDIR += kde3-i18n-mn
     SUBDIR += kde3-i18n-ms
-    SUBDIR += kde3-i18n-mt
     SUBDIR += kde3-i18n-nb
     SUBDIR += kde3-i18n-nds
     SUBDIR += kde3-i18n-nl
     SUBDIR += kde3-i18n-nn
-    SUBDIR += kde3-i18n-nso
     SUBDIR += kde3-i18n-pa
     SUBDIR += kde3-i18n-ro
     SUBDIR += kde3-i18n-rw

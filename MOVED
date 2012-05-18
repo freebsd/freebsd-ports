@@ -3380,3 +3380,10 @@ x11/avant-window-navigator-xfce4||2012-05-18|Has expired: BROKEN for more than 6
 deskutils/xfce4-volstatus-icon||2012-05-18|Has expired: BROKEN for more than 6 month
 multimedia/xfmedia-remote-plugin||2012-05-18|Has expired: BROKEN for more than 6 month
 sysutils/thunar-volman-plugin||2012-05-18|Has expired: BROKEN for more than 6 month
+databases/sqlite34||2012-05-18|Has expired: No more supported, please use databases/sqlite3 instead
+graphics/long-exposure-tools||2012-05-18|Has expired: BROKEN for more than 6 month
+misc/kde3-i18n-hsb||2012-05-18|Has expired: BROKEN for more than 6 month
+misc/kde3-i18n-mt||2012-05-18|Has expired: BROKEN for more than 6 month
+misc/kde3-i18n-nso||2012-05-18|Has expired: BROKEN for more than 6 month
+net-im/pino||2012-05-18|Has expired: BROKEN for more than 6 month
+print/perlftlib||2012-05-18|Has expired: No more upstream, no more used in the ports tree

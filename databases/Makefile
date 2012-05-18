@@ -824,7 +824,6 @@
     SUBDIR += sqlite-ext-mobigroup
     SUBDIR += sqlite2
     SUBDIR += sqlite3
-    SUBDIR += sqlite34
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
     SUBDIR += sqlrelay
