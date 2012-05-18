@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.6
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${PORTVERSION:R}/
 
@@ -63,7 +63,8 @@ OPTIONS=	KQUEUE		"kqueue(2) support"	on  \
 		LDAP		"OpenLDAP support"	off \
 		PGSQL		"PostgreSQL support"	off \
 		MYSQL		"MySQL support"		off \
-		SQLITE		"SQLite support"	off
+		SQLITE		"SQLite support"	off \
+		SOLR		"Solr support"		off
 
 .include <bsd.port.pre.mk>
 
@@ -155,6 +156,26 @@ PLIST_SUB+=	SQL=""
 .else
 CONFIGURE_ARGS+=--without-sqlite
 PLIST_SUB+=	SQL="@comment "
+.endif
+
+## SOLR support
+#
+.if defined(WITH_SOLR) && !defined(WITHOUT_SOLR)
+USE_SOLR=	yes
+CONFIGURE_ARGS+=--with-solr
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+PLIST_SUB+=	WITHSOLR=""
+SUB_LIST+=	ITHSOLR=""
+.else
+CONFIGURE_ARGS+=--without-solr
+PLIST_SUB+=	WITHSOLR="@comment "
+SUB_LIST+=	WITHSOLR="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+PLIST_SUB+=	PORT=""
+.else
+PLIST_SUB+=	PORT="@comment "
 .endif
 
 SUB_LIST=	REQUIRE="${_REQUIRE}"

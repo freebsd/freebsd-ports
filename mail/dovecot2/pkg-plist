@@ -2,7 +2,7 @@
 bin/doveadm
 bin/doveconf
 bin/dsync
-%%PORTDOCS%%%%ETCDIR%%/README
+%%PORT%%%%ETCDIR%%/README
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
 include/dovecot/anvil-client.h
@@ -379,6 +379,9 @@ lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.a
 lib/dovecot/lib02_lazy_expunge_plugin.la
 lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib05_pop3_migration_plugin.a
+lib/dovecot/lib05_pop3_migration_plugin.la
+lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.a
 lib/dovecot/lib05_snarf_plugin.la
 lib/dovecot/lib05_snarf_plugin.so
@@ -421,6 +424,9 @@ lib/dovecot/lib20_zlib_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.a
 lib/dovecot/lib21_fts_squat_plugin.la
 lib/dovecot/lib21_fts_squat_plugin.so
+%%WITHSOLR%%lib/dovecot/lib21_fts_solr_plugin.a
+%%WITHSOLR%%lib/dovecot/lib21_fts_solr_plugin.la
+%%WITHSOLR%%lib/dovecot/lib21_fts_solr_plugin.so
 lib/dovecot/lib30_imap_zlib_plugin.a
 lib/dovecot/lib30_imap_zlib_plugin.la
 lib/dovecot/lib30_imap_zlib_plugin.so
