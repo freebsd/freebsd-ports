@@ -161,7 +161,6 @@ PLIST_SUB+=	SQL="@comment "
 ## SOLR support
 #
 .if defined(WITH_SOLR) && !defined(WITHOUT_SOLR)
-USE_SOLR=	yes
 CONFIGURE_ARGS+=--with-solr
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=	WITHSOLR=""
