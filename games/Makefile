@@ -391,7 +391,10 @@
     SUBDIR += interlogic
     SUBDIR += ioquake3
     SUBDIR += ioquake3-devel
+    SUBDIR += ioquake3-devel-server
+    SUBDIR += ioquake3-server
     SUBDIR += iourbanterror
+    SUBDIR += iourbanterror-server
     SUBDIR += irrlamb
     SUBDIR += ishido
     SUBDIR += ivan
@@ -617,6 +620,7 @@
     SUBDIR += openarena
     SUBDIR += openarena-data
     SUBDIR += openarena-oax
+    SUBDIR += openarena-server
     SUBDIR += openastromenace
     SUBDIR += opencity
     SUBDIR += opengfx

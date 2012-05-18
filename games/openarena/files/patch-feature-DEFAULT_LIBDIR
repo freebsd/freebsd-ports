@@ -1,5 +1,5 @@
---- code/qcommon/files.c.orig	2011-03-10 02:01:27.599036000 +0100
-+++ code/qcommon/files.c	2011-03-19 22:40:42.000000000 +0100
+--- code/qcommon/files.c.orig	2011-12-24 13:29:32.000000000 +0100
++++ code/qcommon/files.c	2012-03-07 23:00:53.000000000 +0100
 @@ -250,6 +250,7 @@
  #endif
  
@@ -8,15 +8,15 @@
  static	cvar_t		*fs_basegame;
  static	cvar_t		*fs_gamedirvar;
  static	searchpath_t	*fs_searchpaths;
-@@ -2956,6 +2957,7 @@
+@@ -2859,6 +2860,7 @@
  	fs_debug = Cvar_Get( "fs_debug", "0", 0 );
- 	fs_basepath = Cvar_Get ("fs_basepath", Sys_DefaultInstallPath(), CVAR_INIT|CVAR_PROTECTED );
+ 	fs_basepath = Cvar_Get ("fs_basepath", Sys_DefaultInstallPath(), CVAR_INIT );
  	fs_basegame = Cvar_Get ("fs_basegame", "", CVAR_INIT );
 +	fs_libpath = Cvar_Get ("fs_libpath", Sys_DefaultLibPath(), CVAR_INIT );
  	homePath = Sys_DefaultHomePath();
  	if (!homePath || !homePath[0]) {
  		homePath = fs_basepath->string;
-@@ -2975,6 +2977,11 @@
+@@ -2878,6 +2880,11 @@
  	if (fs_apppath->string[0])
  		FS_AddGameDirectory(fs_apppath->string, gameName);
  	#endif
@@ -28,9 +28,9 @@
  	
  	// NOTE: same filtering below for mods and basegame
  	if (fs_homepath->string[0] && Q_stricmp(fs_homepath->string,fs_basepath->string)) {
---- code/qcommon/qcommon.h.orig	2011-03-10 02:01:27.599036000 +0100
-+++ code/qcommon/qcommon.h	2011-03-19 22:40:42.000000000 +0100
-@@ -1104,6 +1104,9 @@
+--- code/qcommon/qcommon.h.orig	2011-12-24 13:29:32.000000000 +0100
++++ code/qcommon/qcommon.h	2012-03-07 23:00:53.000000000 +0100
+@@ -1099,6 +1099,9 @@
  char    *Sys_DefaultAppPath(void);
  #endif
  
@@ -40,8 +40,8 @@
  void  Sys_SetDefaultHomePath(const char *path);
  char	*Sys_DefaultHomePath(void);
  const char	*Sys_TempPath(void);
---- code/sys/sys_main.c.orig	2011-02-23 17:17:09.009063000 +0100
-+++ code/sys/sys_main.c	2011-03-19 22:40:42.000000000 +0100
+--- code/sys/sys_main.c.orig	2011-12-24 13:29:37.000000000 +0100
++++ code/sys/sys_main.c	2012-03-07 23:00:53.000000000 +0100
 @@ -49,6 +49,7 @@
  
  static char binaryPath[ MAX_OSPATH ] = { 0 };

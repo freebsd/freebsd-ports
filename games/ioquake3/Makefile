@@ -7,7 +7,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 # Using zip this way enables slaves to override it.
@@ -20,25 +20,46 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 USE_GMAKE=	yes
 
-OPTIONS+=	CLIENT "Build client" on \
-		DEDICATED "Build dedicated server" on \
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX:M*-server}
+# Server config
+WITH_DEDICATED=	yes
+WITHOUT_CLIENT=	yes
+WITHOUT_SERVER=	yes
+WITHOUT_CURL=	yes
+WITHOUT_OPENAL=	yes
+WITHOUT_MUMBLE=	yes
+WITHOUT_VORBIS=	yes
+WITHOUT_TOOLS=	yes
+WITHOUT_DLRENDERER=	yes
+.else
+# Client config
+WITH_CLIENT=	yes
+WITHOUT_DEDICATED=	yes
+OPTIONS+=	SERVER "Install dedicated server" on \
 		CURL "Enable cURL for http/ftp download" on \
 		OPENAL "Enable OpenAL audio output" on \
 		MUMBLE "Enable Mumble support (no dependencies)" on \
 		VORBIS "Enable Ogg Vorbis support" on
+. if defined(NO_TOOLS)
+WITHOUT_TOOLS=	yes
+. else
+OPTIONS+=	TOOLS "Enable modding tools" on
+. endif
+. if defined(HAS_DLRENDERER)
+OPTIONS+=	DLRENDERER "Build dynamically loaded renderer" on
+. else
+WITHOUT_DLRENDERER=	yes
+. endif
+.endif
+# Common config
 .if !defined(NO_GAMELIBS)
 OPTIONS+=	GAMELIBS "Build game libraries" off
-.endif
-.if defined(HAS_DLRENDERER)
-OPTIONS+=	DLRENDERER "Build dynamically loaded renderer" on
-.else
-WITHOUT_DLRENDERER=	yes
 .endif
 
 MAKE_ARGS+=	DEFAULT_BASEDIR="${Q3DIR}" \
 		DEFAULT_LIBDIR="${LIBDIR}" \
 		HOMEPATH="${HOMEPATH}" \
-		VERSION="${DISTVERSION}" \
+		VERSION="${Q3ENGINEVER}" \
 		ARCH="${ARCH}" \
 		USE_LOCAL_HEADERS=0
 PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
@@ -47,7 +68,8 @@ PLIST_SUB+=	LIBDIR="${LIBDIR:S/${PREFIX}\///}" \
 ALL_TARGET=	release
 MAKE_JOBS_SAFE=	yes
 
-LIBDIR=		${PREFIX}/lib/${PORTNAME}
+LIBDIR=		${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 BUILDDIR=	${WRKSRC}/build/${ALL_TARGET}-${OPSYS:L}-${ARCH}
 BINSUFFIX?=
 HOMEPATH?=	/.${PORTNAME}
@@ -62,12 +84,9 @@ Q3BASE?=	baseq3 \
 Q3ICON?=	${PREFIX}/share/pixmaps/quake3.xpm
 Q3RENDERER?=	renderer_opengl1_${ARCH}
 Q3INSTALL?=
+Q3ENGINEVER?=	${DISTVERSION}
 
 ONLY_FOR_ARCHS=	amd64 i386
-
-# Make sure TARGET and CFLAGS fit together for cross-compiling.
-MACHINE_ARCH=	${ARCH}
-.include <bsd.cpu.mk>
 
 .include <bsd.port.options.mk>
 
@@ -82,14 +101,18 @@ IGNORE=		does not support WITH_DLRENDERER
 ALL_TARGET=	debug
 .endif
 
+.if !defined(WITHOUT_SERVER)
+RUN_DEPENDS+=	${Q3SERVER}${BINSUFFIX}:${PORTSDIR}/games/${PORTNAME}-server
+.endif
+
 .if !defined(DESKTOP_ENTRIES)
 . if !defined(WITHOUT_CLIENT)
-DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION}" "${COMMENT}"  \
+DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER}" "${COMMENT}"  \
 		"${Q3ICON}" \
 		"${Q3CLIENT}${BINSUFFIX}" "Application;Game;" false
 . endif
 . if defined(WITH_SMP)
-DESKTOP_ENTRIES+=	"${Q3CLIENT} ${DISTVERSION} SMP" "${COMMENT}" \
+DESKTOP_ENTRIES+=	"${Q3CLIENT} ${Q3ENGINEVER} SMP" "${COMMENT}" \
 		"${Q3ICON}" \
 		"${Q3CLIENT}-smp${BINSUFFIX}" "Application;Game;" false
 . endif
@@ -179,15 +202,23 @@ MAKE_ARGS+=	USE_RENDERER_DLOPEN=0
 PLIST_SUB+=	DLRENDERER="@comment "
 .endif
 
+.if !defined(WITHOUT_TOOLS)
+PLIST_SUB+=	TOOLS=""
+.else
+PLIST_SUB+=	TOOLS="@comment "
+.endif
+
 do-install: ${Q3INSTALL}
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${ARCH} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
+.if !defined(WITHOUT_TOOLS)
 .for bin in ${Q3TOOLS}
 	${INSTALL_PROGRAM} ${BUILDDIR}/tools/${bin} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
+.endif
 .if !defined(WITHOUT_DLRENDERER)
 .for renderer in ${Q3RENDERER}
 	${MKDIR} ${LIBDIR}

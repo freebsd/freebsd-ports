@@ -6,5 +6,6 @@
 %%DATADIR%%/pak5-TA.pk3
 %%DATADIR%%/pak6-misc.pk3
 %%DATADIR%%/pak6-patch085.pk3
+%%DATADIR%%/pak6-patch088.pk3
 @dirrm %%DATADIR%%
 @dirrmtry %%OADIR%%
