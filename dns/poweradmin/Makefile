@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	poweradmin
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	dns www
-MASTER_SITES=	https://www.poweradmin.org/download/
+MASTER_SITES=	SF/${PORTNAME} \
+		https://www.poweradmin.org/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	A set of PHP-scripts to manage PowerDNS over the web
 
-USE_PHP=	gettext session
+USE_PHP=	gettext session mcrypt
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PEARDIR=	${PREFIX}/share/pear
 
-OPTIONS=    	MYSQL	"Use Mysql database support" on \
+OPTIONS=	MYSQL	"Use Mysql database support" on \
 		PGSQL	"Use Pgsql database support" off
 
 SUB_FILES=	pkg-message
@@ -29,7 +30,7 @@ CFGFILE=	config.inc.php
 
 PLIST=		${WRKDIR}/plist
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${PEARDIR}/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
@@ -75,4 +76,4 @@ install-conf: install-app
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
