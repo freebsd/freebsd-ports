@@ -696,6 +696,7 @@
     SUBDIR += pear-IO_SWF
     SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
+    SUBDIR += pear-Image_Barcode2
     SUBDIR += pear-Image_Canvas
     SUBDIR += pear-Image_Color
     SUBDIR += pear-Image_Graph
