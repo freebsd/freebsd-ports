@@ -233,6 +233,7 @@
     SUBDIR += falconseye
     SUBDIR += farblazer
     SUBDIR += fargoal
+    SUBDIR += fbg2
     SUBDIR += fgkicker
     SUBDIR += fgrun
     SUBDIR += fillets-ng
