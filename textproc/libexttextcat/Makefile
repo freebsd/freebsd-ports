@@ -24,4 +24,39 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
+PORTDOCS=	README README.libtextcat TODO
+
+OPTIONS=	COMPAT_TEXTCAT "Install libtextcat compatible files" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_COMPAT_TEXTCAT)
+PLIST_SUB+=	TEXTCAT=''
+.else
+PLIST_SUB+=	TEXTCAT='@comment '
+.endif
+
+.if defined(WITH_LM_FILES)
+PLIST_SUB+=	LM=''
+.else
+PLIST_SUB+=	LM='@comment '
+.endif
+
+post-install:
+.if defined(WITH_COMPAT_TEXTCAT)
+	${LN} -sf libexttextcat/textcat.h ${PREFIX}/include/
+	${LN} -sf libexttextcat ${PREFIX}/include/libtextcat
+	${LN} -sf libexttextcat.a ${PREFIX}/lib/libtextcat.a
+	${LN} -sf libexttextcat.la ${PREFIX}/lib/libtextcat.la
+	${LN} -sf libexttextcat.so.0 ${PREFIX}/lib/libtextcat.so
+	${LN} -sf libexttextcat.so.0 ${PREFIX}/lib/libtextcat.so.0
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.endif
+
+check:
+	cd ${WRKSRC}/src && make check
+
 .include <bsd.port.mk>
