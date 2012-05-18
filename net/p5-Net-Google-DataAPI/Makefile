@@ -6,29 +6,33 @@
 #
 
 PORTNAME=	Net-Google-DataAPI
-PORTVERSION=	0.24
+PORTVERSION=	0.28.01
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	gunter@six-two.net
 COMMENT=	Base implementations for modules to negotiate with Google Data APIs
 
-RUN_DEPENDS=	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+BUILD_DEPENDS=	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-Lingua-EN-Inflect-Number>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
 		p5-Mouse>=0.51:${PORTSDIR}/devel/p5-Mouse \
 		p5-Net-Google-AuthSub>=0.5:${PORTSDIR}/net/p5-Net-Google-AuthSub \
 		p5-Net-OAuth>=0:${PORTSDIR}/net/p5-Net-OAuth \
+		p5-Net-OAuth2>=0.07:${PORTSDIR}/net/p5-Net-OAuth2 \
 		p5-Text-Glob>=0:${PORTSDIR}/textproc/p5-Text-Glob \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
-TEST_DEPENDS=	p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	yes
@@ -36,6 +40,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Google::DataAPI.3 \
 		Net::Google::DataAPI::Auth::ClientLogin::Multiple.3 \
 		Net::Google::DataAPI::Auth::OAuth.3 \
+		Net::Google::DataAPI::Auth::OAuth2.3 \
 		Net::Google::DataAPI::Role::Entry.3 \
 		Net::Google::DataAPI::Role::HasContent.3 \
 		Net::Google::DataAPI::Role::Service.3

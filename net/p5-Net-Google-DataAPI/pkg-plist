@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Net/Google/DataAPI/Auth/ClientLogin/Multiple.pm
 %%SITE_PERL%%/Net/Google/DataAPI/Auth/Null.pm
 %%SITE_PERL%%/Net/Google/DataAPI/Auth/OAuth.pm
+%%SITE_PERL%%/Net/Google/DataAPI/Auth/OAuth2.pm
 %%SITE_PERL%%/Net/Google/DataAPI/Role/Auth.pm
 %%SITE_PERL%%/Net/Google/DataAPI/Role/Entry.pm
 %%SITE_PERL%%/Net/Google/DataAPI/Role/HasContent.pm
