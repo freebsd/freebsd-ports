@@ -157,6 +157,8 @@ bin/arm
 %%PYTHON_SITELIBDIR%%/arm/gui/graphing/bandwidthStats.pyo
 %%PYTHON_SITELIBDIR%%/arm/resources/arm.1
 %%PYTHON_SITELIBDIR%%/arm/resources/startTor
+%%PYTHON_SITELIBDIR%%/arm/resources/tor-arm.desktop
+%%PYTHON_SITELIBDIR%%/arm/resources/tor-arm.svg
 %%PYTHON_SITELIBDIR%%/arm/resources/torConfigDesc.txt
 %%PYTHON_SITELIBDIR%%/arm/resources/torrcTemplate.txt
 %%PYTHON_SITELIBDIR%%/arm/resources/exitNotice/how_tor_works_thumb.png

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arm
-DISTVERSION=	1.4.4.1
+DISTVERSION=	1.4.5.0
 CATEGORIES=	security net python
 MASTER_SITES=	https://archive.torproject.org/arm/ \
 		http://www.c-s.li/ports/
