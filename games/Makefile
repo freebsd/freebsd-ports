@@ -875,6 +875,7 @@
     SUBDIR += tetrons
     SUBDIR += tetzle
     SUBDIR += textmaze
+    SUBDIR += thegrind
     SUBDIR += thevalley
     SUBDIR += thudboard
     SUBDIR += tileworld
