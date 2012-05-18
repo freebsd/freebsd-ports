@@ -18,7 +18,7 @@ COMMENT=	A PECL extension for HandlerSocket
 
 BUILD_DEPENDS=	libhsclient>0:${PORTSDIR}/databases/libhsclient
 
-WRKSRC=		${WRKDIR}/php-${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
