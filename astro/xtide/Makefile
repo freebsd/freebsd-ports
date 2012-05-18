@@ -7,12 +7,13 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/ \
 		http://www.c-s.li/ports/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TCD_DISTNAME}${EXTRACT_SUFX} \
-		${HARM_DISTNAME}${EXTRACT_SUFX}
+		${HARM_DISTNAME}-free${EXTRACT_SUFX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
@@ -33,7 +34,7 @@ LDFLAGS+=	-L../${TCD_DISTNAME}/.libs -L${LOCALBASE}/lib
 MAKE_JOBS_SAFE=	yes
 
 TCD_DISTNAME=	libtcd-2.2.5
-HARM_DISTNAME=	harmonics-dwf-20100529-free
+HARM_DISTNAME=	harmonics-dwf-20120302
 WVS_DISTNAME=	wvs
 
 OPTIONS=	WVS "Use world vector shoreline data (big file!)" Off
@@ -59,7 +60,7 @@ PLIST_SUB+=	X11=""
 .endif
 
 post-extract:
-	@${LN} -sf ../${HARM_DISTNAME}.tcd ${WRKSRC}/harmonics.tcd
+	@${LN} -sf ../${HARM_DISTNAME}/${HARM_DISTNAME}-free.tcd ${WRKSRC}/harmonics.tcd
 
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/s|==|=|g' ${WRKDIR}/${TCD_DISTNAME}/configure
