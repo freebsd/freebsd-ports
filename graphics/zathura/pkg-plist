@@ -1,0 +1,10 @@
+bin/zathura
+include/zathura/document.h
+include/zathura/macros.h
+include/zathura/version.h
+include/zathura/zathura.h
+share/applications/zathura.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/zathura.mo
+libdata/pkgconfig/zathura.pc
+@dirrmtry share/applications
+@dirrm include/zathura
