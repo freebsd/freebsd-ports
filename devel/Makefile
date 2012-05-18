@@ -47,6 +47,7 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
+    SUBDIR += app
     SUBDIR += apr0
     SUBDIR += apr1
     SUBDIR += apr2

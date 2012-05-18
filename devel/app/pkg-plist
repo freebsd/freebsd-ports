@@ -1,0 +1,6 @@
+bin/app
+%%DATADIR%%/include/exceptions.mal
+%%DATADIR%%/include/lowio.mal
+%%DATADIR%%/include/syscalls.mal
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%
