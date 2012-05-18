@@ -114,8 +114,8 @@ CONFIGURE_ARGS+=--with-apxs2filter=${APXS}
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
 .endif
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
-MODULENAME=	lib${PORTNAME}
-SHORTMODNAME=	${PORTNAME}
+MODULENAME=	libphp5
+SHORTMODNAME=	php5
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "
