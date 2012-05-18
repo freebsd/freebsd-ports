@@ -1,0 +1,18 @@
+The Net::DNS::Zone::Parser should be considered a preprocessor that "normalizes"
+a zonefile.
+
+It will read a zonefile in a format conforming to the relevant RFCs with the
+addition of BIND's GENERATE directive from disk and will write fully specified
+resource records (RRs) to a filehandle. Whereby:
+- All comments are stripped
+- There is one RR per line
+- Each RR is fully expanded i.e. all domain names are fully qualified
+  (canonicalised) and the CLASS and TTLs are specified.
+- Some RRs may be 'stripped' from the source or otherwise processed. For details
+  see the 'read' method.
+
+Note that this module does not have a notion of what constitutes a valid zone,
+it only parses. For example, the parser will happilly parse RRs with ownernames
+that are below in another zone because a NS RR elsewhere in the zone.
+
+WWW: http://search.cpan.org/dist/Net-DNS-Zone-Parser/
