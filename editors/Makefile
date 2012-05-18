@@ -205,7 +205,6 @@
     SUBDIR += libreoffice-kok
     SUBDIR += libreoffice-ks
     SUBDIR += libreoffice-ku
-    SUBDIR += libreoffice-legacy
     SUBDIR += libreoffice-lo
     SUBDIR += libreoffice-lt
     SUBDIR += libreoffice-lv
