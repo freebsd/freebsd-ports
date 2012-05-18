@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-builder
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/84852974/ \
+MASTER_SITES=	http://launchpadlibrarian.net/100761063/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
