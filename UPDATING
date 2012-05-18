@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120518:
+  AFFECTS: users of dns/poweradmin
+  AUTHOR: Edmondas Girkantas <eg@fbsd.lt>
+
+  Some database changes have been made between version 2.1.4 and 2.1.5,
+  upgrading needs to be done manually by running the following SQL:
+
+  For MySQL users:
+
+  ALTER TABLE `zones` ADD `zone_templ_id` INT( 11 ) NOT NULL;
+  ALTER TABLE zones ENGINE = InnoDB;
+  ALTER TABLE zone_templ ENGINE = InnoDB;
+  ALTER TABLE zone_templ_records ENGINE = InnoDB;
+
+  For PostgreSQL users:
+
+  ALTER TABLE zones ADD zone_templ_id INT DEFAULT NULL;
+
+  Source: https://www.poweradmin.org/trac/wiki/ReleaseNotes/2.1.5
+
 20120516:
   AFFECTS: users of lang/php5
   AUTHOR: ale@FreeBSD.org
