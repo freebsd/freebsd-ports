@@ -1,11 +1,105 @@
 bin/mp3splt-gtk
 share/applications/mp3splt-gtk.desktop
-share/locale/de/LC_MESSAGES/mp3splt-gtk.mo
-share/locale/fr/LC_MESSAGES/mp3splt-gtk.mo
+share/gnome/help/mp3splt-gtk/C/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/C/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/C/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/C/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/C/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/C/legal.xml
+share/gnome/help/mp3splt-gtk/C/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/cs/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/cs/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/cs/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/cs/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/cs/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/cs/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/de/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/de/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/de/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/de/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/de/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/de/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/en/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/en/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/en/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/en/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/en/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/en/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/es/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/es/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/es/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/es/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/es/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/es/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/es_CL/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/es_CL/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/es_CL/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/es_CL/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/es_CL/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/es_CL/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/fr/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/fr/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/fr/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/fr/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/fr/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/fr/mp3splt-gtk.xml
+share/gnome/help/mp3splt-gtk/ru_RU/figures/FreeDBSearch.png
+share/gnome/help/mp3splt-gtk/ru_RU/figures/Preferences.png
+share/gnome/help/mp3splt-gtk/ru_RU/figures/SplitType.png
+share/gnome/help/mp3splt-gtk/ru_RU/figures/Tracklist.png
+share/gnome/help/mp3splt-gtk/ru_RU/figures/mp3splt-gtk.png
+share/gnome/help/mp3splt-gtk/ru_RU/mp3splt-gtk.xml
+%%NLS%%share/locale/cs/LC_MESSAGES/mp3splt-gtk.mo
+%%NLS%%share/locale/de_DE/LC_MESSAGES/mp3splt-gtk.mo
+%%NLS%%share/locale/es/LC_MESSAGES/mp3splt-gtk.mo
+%%NLS%%share/locale/es_CL/LC_MESSAGES/mp3splt-gtk.mo
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/mp3splt-gtk.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/mp3splt-gtk.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/mp3splt-gtk.mo
+%%DATADIR%%/backward.svg
+%%DATADIR%%/backward_inactive.svg
+%%DATADIR%%/forward.svg
+%%DATADIR%%/forward_inactive.svg
+%%DATADIR%%/pause.svg
+%%DATADIR%%/pause_inactive.svg
+%%DATADIR%%/play.svg
+%%DATADIR%%/play_inactive.svg
+%%DATADIR%%/stop.svg
+%%DATADIR%%/stop_inactive.svg
+share/omf/mp3splt-gtk/mp3splt-gtk-C.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-cs.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-de.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-en.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-es.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-es_CL.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-fr.omf
+share/omf/mp3splt-gtk/mp3splt-gtk-ru_RU.omf
 share/pixmaps/mp3splt-gtk.png
-share/pixmaps/mp3splt-gtk_ico.png
+share/pixmaps/mp3splt-gtk_ico.svg
 @dirrmtry share/applications
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
+@dirrm share/omf/mp3splt-gtk
+@dirrmtry share/omf
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/mp3splt-gtk/ru_RU/figures
+@dirrm share/gnome/help/mp3splt-gtk/ru_RU
+@dirrm share/gnome/help/mp3splt-gtk/fr/figures
+@dirrm share/gnome/help/mp3splt-gtk/fr
+@dirrm share/gnome/help/mp3splt-gtk/es_CL/figures
+@dirrm share/gnome/help/mp3splt-gtk/es_CL
+@dirrm share/gnome/help/mp3splt-gtk/es/figures
+@dirrm share/gnome/help/mp3splt-gtk/es
+@dirrm share/gnome/help/mp3splt-gtk/en/figures
+@dirrm share/gnome/help/mp3splt-gtk/en
+@dirrm share/gnome/help/mp3splt-gtk/de/figures
+@dirrm share/gnome/help/mp3splt-gtk/de
+@dirrm share/gnome/help/mp3splt-gtk/cs/figures
+@dirrm share/gnome/help/mp3splt-gtk/cs
+@dirrm share/gnome/help/mp3splt-gtk/C/figures
+@dirrm share/gnome/help/mp3splt-gtk/C
+@dirrm share/gnome/help/mp3splt-gtk
+@dirrmtry share/gnome/help
+@dirrmtry share/gnome
+@dirrmtry share/locale/es_CL/LC_MESSAGES
+@dirrmtry share/locale/es_CL
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
