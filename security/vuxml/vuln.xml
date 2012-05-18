@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b8ae4659-a0da-11e1-a294-bcaec565249c">
+    <topic>libxml2 -- An off-by-one out-of-bounds write by XPointer</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.7.8_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google chrome team reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html">
+	  <p>An off-by-one out-of-bounds write flaw was found in the way libxml, a library
+	     for providing XML and HTML support, evaluated certain XPointer parts (XPointer
+	     is used by libxml to include only the part from the returned XML document, that
+	     can be accessed using the XPath expression given with the XPointer). A remote
+	     attacker could provide a specially-crafted XML file, which once opened in an
+	     application, linked against libxml, would lead to that application crash, or,
+	     potentially arbitrary code execution with the privileges of the user running
+	     the application.</p>
+	     <p>Note: The flaw to be exploited requires the particular application, linked
+	     against libxml, to use the XPointer evaluation functionality.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3201</cvename>
+      <url>http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-3102</url>
+    </references>
+    <dates>
+      <discovery>2012-05-15</discovery>
+      <entry>2012-05-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5f00804-a03b-11e1-a284-0023ae8e59f0">
     <topic>inspircd -- buffer overflow</topic>
     <affects>
