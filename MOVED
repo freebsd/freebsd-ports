@@ -3388,3 +3388,9 @@ misc/kde3-i18n-nso||2012-05-18|Has expired: BROKEN for more than 6 month
 net-im/pino||2012-05-18|Has expired: BROKEN for more than 6 month
 print/perlftlib||2012-05-18|Has expired: No more upstream, no more used in the ports tree
 editors/libreoffice-legacy||2012-05-18|Has expired: not supported upstream, maintaining 2 version of libreoffice is really painful
+devel/p5-POE-Exceptions||2012-05-18|Has expired: included in devel/p5-POE and not needed according to configure message
+net/p5-Net-Services||2012-05-18|Has expired: Removed from CPAN
+net/perldap||2012-05-18|Has expired: BROKEN for more than 6 month
+security/p5-Crypt-Cryptix||2012-05-18|Has expired: Gone from CPAN, project site says project is dead
+www/p5-HTML-Sanitizer||2012-05-18|Has expired: no longer in CPAN
+www/p5-IMDB-Movie||2012-05-18|Has expired: Removed from CPAN

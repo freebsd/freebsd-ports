@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Sanitizer/.packlist
-%%SITE_PERL%%/HTML/Sanitizer.pm
-@dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Sanitizer
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
