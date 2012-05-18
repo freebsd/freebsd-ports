@@ -7,7 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -115,6 +115,7 @@ CONFIGURE_ARGS+=	--disable-multibyte
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/LIBS/s/-lrt//' ${WRKSRC}/configure
 	@${SED} -i "" -e "s,link=dynamic,link=either," \
 		${WRKSRC}/Src/Modules/*.mdd
 	@${SED} -i "" -e "s,/etc/,${LOCALBASE}/etc/," \
