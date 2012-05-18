@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.11
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server

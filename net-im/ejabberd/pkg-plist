@@ -50,6 +50,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_node_groups.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_piefxis.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_rdbms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_receiver.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_regexp.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_router.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_s2s.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_s2s_in.beam
@@ -83,7 +84,9 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jd2ejd.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jlib.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_adhoc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_announce.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_announce_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_blocking.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_blocking_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_caps.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_configure.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_configure2.beam
@@ -93,10 +96,12 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_http_bind.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_http_fileserver.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_ip_blacklist.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_irc_connection.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_last.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_last_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_log.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_room.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_offline.beam
@@ -120,6 +125,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_roster.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_roster_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_service_log.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_shared_roster.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_shared_roster_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_shared_roster_ldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_sic.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_stats.beam
@@ -128,6 +134,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_ldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_xupdate.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_xupdate_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_version.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/node_buddy.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/node_club.beam
@@ -252,6 +259,8 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.7.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.8.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.9.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.10.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.11.txt
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
