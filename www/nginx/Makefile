@@ -90,6 +90,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		RDS_CSV_MODULE		"3rd party rds_csv module" off \
 		RDS_JSON_MODULE		"3rd party rds_json module" off \
 		REDIS2_MODULE		"3rd party redis2 module" off \
+		RTMP_MODULE		"3rd party rtmp module" off \
 		SET_MISC_MODULE		"3rd party set_misc module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SRCACHE_MODULE		"3rd party srcache module" off \
@@ -576,6 +577,15 @@ FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_MODULE_VERSION}/:redis2
 DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_MODULE_VERSION}-${GIT_REDIS2_MODULE_VERSION}.tar.gz:redis2
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_MODULE_VERSION:S/^0-g//}
+.endif
+
+.if defined(WITH_RTMP_MODULE)
+NGINX_RTMP_MODULE_VERSION=	0.1.5
+GIT_RTMP_MODULE_VERSION=	0-gd216f3d
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/tarball/v${NGINX_RTMP_MODULE_VERSION}/:rtmp
+DISTFILES+=	arut-rtmp-nginx-module-v${NGINX_RTMP_MODULE_VERSION}-${GIT_RTMP_MODULE_VERSION}.tar.gz:rtmp
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/arut-nginx-rtmp-module-${GIT_RTMP_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_SET_MISC_MODULE)
