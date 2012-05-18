@@ -2031,21 +2031,32 @@
 %%DATADIR%%/mt-static/codemirror/mode/diff/diff.css
 %%DATADIR%%/mt-static/codemirror/mode/diff/diff.js
 %%DATADIR%%/mt-static/codemirror/mode/diff/index.html
+%%DATADIR%%/mt-static/codemirror/mode/ecl/ecl.js
+%%DATADIR%%/mt-static/codemirror/mode/ecl/index.html
+%%DATADIR%%/mt-static/codemirror/mode/gfm/gfm.js
+%%DATADIR%%/mt-static/codemirror/mode/gfm/index.html
+%%DATADIR%%/mt-static/codemirror/mode/go/go.js
+%%DATADIR%%/mt-static/codemirror/mode/go/index.html
 %%DATADIR%%/mt-static/codemirror/mode/groovy/groovy.js
 %%DATADIR%%/mt-static/codemirror/mode/groovy/index.html
 %%DATADIR%%/mt-static/codemirror/mode/haskell/haskell.js
 %%DATADIR%%/mt-static/codemirror/mode/haskell/index.html
+%%DATADIR%%/mt-static/codemirror/mode/htmlembedded/htmlembedded.js
+%%DATADIR%%/mt-static/codemirror/mode/htmlembedded/index.html
 %%DATADIR%%/mt-static/codemirror/mode/htmlmixed/htmlmixed.js
 %%DATADIR%%/mt-static/codemirror/mode/htmlmixed/index.html
 %%DATADIR%%/mt-static/codemirror/mode/javascript/index.html
 %%DATADIR%%/mt-static/codemirror/mode/javascript/javascript.js
 %%DATADIR%%/mt-static/codemirror/mode/jinja2/index.html
 %%DATADIR%%/mt-static/codemirror/mode/jinja2/jinja2.js
+%%DATADIR%%/mt-static/codemirror/mode/less/index.html
+%%DATADIR%%/mt-static/codemirror/mode/less/less.js
 %%DATADIR%%/mt-static/codemirror/mode/lua/index.html
 %%DATADIR%%/mt-static/codemirror/mode/lua/lua.js
 %%DATADIR%%/mt-static/codemirror/mode/markdown/index.html
-%%DATADIR%%/mt-static/codemirror/mode/markdown/markdown.css
 %%DATADIR%%/mt-static/codemirror/mode/markdown/markdown.js
+%%DATADIR%%/mt-static/codemirror/mode/mysql/index.html
+%%DATADIR%%/mt-static/codemirror/mode/mysql/mysql.js
 %%DATADIR%%/mt-static/codemirror/mode/ntriples/index.html
 %%DATADIR%%/mt-static/codemirror/mode/ntriples/ntriples.js
 %%DATADIR%%/mt-static/codemirror/mode/pascal/LICENSE
@@ -2058,14 +2069,21 @@
 %%DATADIR%%/mt-static/codemirror/mode/php/php.js
 %%DATADIR%%/mt-static/codemirror/mode/plsql/index.html
 %%DATADIR%%/mt-static/codemirror/mode/plsql/plsql.js
+%%DATADIR%%/mt-static/codemirror/mode/properties/index.html
+%%DATADIR%%/mt-static/codemirror/mode/properties/properties.css
+%%DATADIR%%/mt-static/codemirror/mode/properties/properties.js
 %%DATADIR%%/mt-static/codemirror/mode/python/LICENSE.txt
 %%DATADIR%%/mt-static/codemirror/mode/python/index.html
 %%DATADIR%%/mt-static/codemirror/mode/python/python.js
 %%DATADIR%%/mt-static/codemirror/mode/r/LICENSE
 %%DATADIR%%/mt-static/codemirror/mode/r/index.html
 %%DATADIR%%/mt-static/codemirror/mode/r/r.js
+%%DATADIR%%/mt-static/codemirror/mode/rpm/changes/changes.js
+%%DATADIR%%/mt-static/codemirror/mode/rpm/changes/index.html
+%%DATADIR%%/mt-static/codemirror/mode/rpm/spec/index.html
+%%DATADIR%%/mt-static/codemirror/mode/rpm/spec/spec.css
+%%DATADIR%%/mt-static/codemirror/mode/rpm/spec/spec.js
 %%DATADIR%%/mt-static/codemirror/mode/rst/index.html
-%%DATADIR%%/mt-static/codemirror/mode/rst/rst.css
 %%DATADIR%%/mt-static/codemirror/mode/rst/rst.js
 %%DATADIR%%/mt-static/codemirror/mode/ruby/LICENSE
 %%DATADIR%%/mt-static/codemirror/mode/ruby/index.html
@@ -2085,6 +2103,8 @@
 %%DATADIR%%/mt-static/codemirror/mode/tiddlywiki/tiddlywiki.js
 %%DATADIR%%/mt-static/codemirror/mode/velocity/index.html
 %%DATADIR%%/mt-static/codemirror/mode/velocity/velocity.js
+%%DATADIR%%/mt-static/codemirror/mode/verilog/index.html
+%%DATADIR%%/mt-static/codemirror/mode/verilog/verilog.js
 %%DATADIR%%/mt-static/codemirror/mode/xml/index.html
 %%DATADIR%%/mt-static/codemirror/mode/xml/xml.js
 %%DATADIR%%/mt-static/codemirror/mode/xmlpure/index.html
@@ -2096,43 +2116,58 @@
 %%DATADIR%%/mt-static/codemirror/mt/javascript.js
 %%DATADIR%%/mt-static/codemirror/mt/mt.css
 %%DATADIR%%/mt-static/codemirror/mt/xml.js
-%%DATADIR%%/mt-static/codemirror/oldrelease.html
 %%DATADIR%%/mt-static/codemirror/test/index.html
 %%DATADIR%%/mt-static/codemirror/test/test.js
 %%DATADIR%%/mt-static/codemirror/theme/cobalt.css
-%%DATADIR%%/mt-static/codemirror/theme/default.css
 %%DATADIR%%/mt-static/codemirror/theme/eclipse.css
 %%DATADIR%%/mt-static/codemirror/theme/elegant.css
 %%DATADIR%%/mt-static/codemirror/theme/monokai.css
 %%DATADIR%%/mt-static/codemirror/theme/neat.css
 %%DATADIR%%/mt-static/codemirror/theme/night.css
-%%DATADIR%%/mt-static/codemirror/manual.html
+%%DATADIR%%/mt-static/codemirror/theme/rubyblue.css
 %%DATADIR%%/mt-static/codemirror/lib/codemirror.css
 %%DATADIR%%/mt-static/codemirror/lib/codemirror.js
+%%DATADIR%%/mt-static/codemirror/lib/util/dialog.css
+%%DATADIR%%/mt-static/codemirror/lib/util/dialog.js
 %%DATADIR%%/mt-static/codemirror/lib/util/foldcode.js
+%%DATADIR%%/mt-static/codemirror/lib/util/formatting.js
 %%DATADIR%%/mt-static/codemirror/lib/util/javascript-hint.js
+%%DATADIR%%/mt-static/codemirror/lib/util/match-highlighter.js
 %%DATADIR%%/mt-static/codemirror/lib/util/overlay.js
 %%DATADIR%%/mt-static/codemirror/lib/util/runmode.js
+%%DATADIR%%/mt-static/codemirror/lib/util/search.js
+%%DATADIR%%/mt-static/codemirror/lib/util/searchcursor.js
 %%DATADIR%%/mt-static/codemirror/lib/util/simple-hint.css
 %%DATADIR%%/mt-static/codemirror/lib/util/simple-hint.js
-%%DATADIR%%/mt-static/codemirror/internals.html
+%%DATADIR%%/mt-static/codemirror/keymap/emacs.js
+%%DATADIR%%/mt-static/codemirror/keymap/vim.js
 %%DATADIR%%/mt-static/codemirror/index.html
+%%DATADIR%%/mt-static/codemirror/doc/baboon.png
+%%DATADIR%%/mt-static/codemirror/doc/baboon_vector.svg
+%%DATADIR%%/mt-static/codemirror/doc/compress.html
+%%DATADIR%%/mt-static/codemirror/doc/docs.css
+%%DATADIR%%/mt-static/codemirror/doc/internals.html
+%%DATADIR%%/mt-static/codemirror/doc/manual.html
+%%DATADIR%%/mt-static/codemirror/doc/oldrelease.html
+%%DATADIR%%/mt-static/codemirror/doc/reporting.html
+%%DATADIR%%/mt-static/codemirror/doc/upgrade_v2.2.html
 %%DATADIR%%/mt-static/codemirror/demo/activeline.html
 %%DATADIR%%/mt-static/codemirror/demo/changemode.html
 %%DATADIR%%/mt-static/codemirror/demo/complete.html
+%%DATADIR%%/mt-static/codemirror/demo/emacs.html
 %%DATADIR%%/mt-static/codemirror/demo/folding.html
+%%DATADIR%%/mt-static/codemirror/demo/formatting.html
 %%DATADIR%%/mt-static/codemirror/demo/fullscreen.html
 %%DATADIR%%/mt-static/codemirror/demo/marker.html
+%%DATADIR%%/mt-static/codemirror/demo/matchhighlighter.html
 %%DATADIR%%/mt-static/codemirror/demo/mustache.html
 %%DATADIR%%/mt-static/codemirror/demo/preview.html
 %%DATADIR%%/mt-static/codemirror/demo/resize.html
 %%DATADIR%%/mt-static/codemirror/demo/runmode.html
 %%DATADIR%%/mt-static/codemirror/demo/search.html
 %%DATADIR%%/mt-static/codemirror/demo/theme.html
-%%DATADIR%%/mt-static/codemirror/css/docs.css
-%%DATADIR%%/mt-static/codemirror/css/baboon_vector.svg
-%%DATADIR%%/mt-static/codemirror/css/baboon.png
-%%DATADIR%%/mt-static/codemirror/compress.html
+%%DATADIR%%/mt-static/codemirror/demo/vim.html
+%%DATADIR%%/mt-static/codemirror/demo/visibletabs.html
 %%DATADIR%%/mt-static/codemirror/README.md
 %%DATADIR%%/mt-static/codemirror/LICENSE
 %%CGIDIR%%/mt-search.cgi
@@ -2409,6 +2444,7 @@
 %%CGIDIR%%/extlib/auto/Image/Size/mngsize.al
 %%CGIDIR%%/extlib/auto/Image/Size/jpegsize.al
 %%CGIDIR%%/extlib/auto/Image/Size/gifsize.al
+%%CGIDIR%%/extlib/auto/Image/Size/emfsize.al
 %%CGIDIR%%/extlib/auto/Image/Size/bmpsize.al
 %%CGIDIR%%/extlib/auto/Image/Size/autosplit.ix
 %%CGIDIR%%/extlib/YAML/Tiny.pm
@@ -2554,6 +2590,7 @@
 %%CGIDIR%%/extlib/SOAP/Transport/POP3.pm
 %%CGIDIR%%/extlib/SOAP/Transport/MQ.pm
 %%CGIDIR%%/extlib/SOAP/Transport/MAILTO.pm
+%%CGIDIR%%/extlib/SOAP/Transport/LOOPBACK.pm
 %%CGIDIR%%/extlib/SOAP/Transport/LOCAL.pm
 %%CGIDIR%%/extlib/SOAP/Transport/JABBER.pm
 %%CGIDIR%%/extlib/SOAP/Transport/IO.pm
@@ -2996,6 +3033,7 @@
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/yaml
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/xmlpure
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/xml
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/verilog
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/velocity
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/tiddlywiki
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/stex
@@ -3005,21 +3043,31 @@
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/rust
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/ruby
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/rst
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/rpm/spec
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/rpm/changes
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/rpm
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/r
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/python
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/properties
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/plsql
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/php
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/perl
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/pascal
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/ntriples
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/mysql
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/markdown
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/lua
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/less
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/jinja2
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/javascript
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/htmlmixed
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/htmlembedded
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/haskell
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/groovy
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/go
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/gfm
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/diff
+@dirrm %%DATADIR%%/mt-static/codemirror/mode/ecl
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/css
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/coffeescript
 @dirrm %%DATADIR%%/mt-static/codemirror/mode/clojure
@@ -3027,8 +3075,9 @@
 @dirrm %%DATADIR%%/mt-static/codemirror/mode
 @dirrm %%DATADIR%%/mt-static/codemirror/lib/util
 @dirrm %%DATADIR%%/mt-static/codemirror/lib
+@dirrm %%DATADIR%%/mt-static/codemirror/keymap
+@dirrm %%DATADIR%%/mt-static/codemirror/doc
 @dirrm %%DATADIR%%/mt-static/codemirror/demo
-@dirrm %%DATADIR%%/mt-static/codemirror/css
 @dirrm %%DATADIR%%/mt-static/codemirror
 @dirrm %%DATADIR%%/mt-static
 @dirrm %%CGIDIR%%/lib/MT/Worker

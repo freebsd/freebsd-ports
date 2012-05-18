@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	5.13
+PORTVERSION=	5.14
 CATEGORIES?=	www
 MASTER_SITES?=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
