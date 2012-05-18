@@ -227,7 +227,6 @@
     SUBDIR += pecl-haru
     SUBDIR += pecl-pdflib
     SUBDIR += pecl-ps
-    SUBDIR += perlftlib
     SUBDIR += pfbtopfa
     SUBDIR += phppdflib
     SUBDIR += pic2fig
