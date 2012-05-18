@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yed
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.2
 CATEGORIES=	graphics java
 MASTER_SITES=	#
 DISTNAME=	yEd-${PORTVERSION}
@@ -14,11 +14,17 @@ DISTNAME=	yEd-${PORTVERSION}
 MAINTAINER=	myc@barev.net
 COMMENT=	An editor for graphs and diagrams
 
+LICENSE=	YED_1_1
+LICENSE_NAME=	yEd Software License Agreement (Version 1.1)
+LICENSE_TEXT=	Description of the license can be obtained from the following URL: \
+		http://www.yworks.com/products/yed/license.html
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
-RESTRICTED=	Restrictive license
+RESTRICTED=	Downloading requires acceptance of license agreement
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "" "false"
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
