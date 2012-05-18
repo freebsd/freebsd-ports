@@ -7,17 +7,17 @@
 
 PORTNAME=	Test-Unit
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlUnit testing framework
 
-BUILD_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/Class/Inner.pm:${PORTSDIR}/devel/p5-Class-Inner \
-		${SITE_PERL}/base.pm:${PORTSDIR}/devel/p5-Class-Fields
+BUILD_DEPENDS=	p5-Class-Inner>=0:${PORTSDIR}/devel/p5-Class-Inner \
+		p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+		p5-Error>=0:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
