@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cakephp
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
@@ -16,9 +16,9 @@ COMMENT=	A framework for developing PHP web applications
 
 LICENSE=	MIT
 
-GITVERSION=	0-g43cf2f0
+GITVERSION=	0-g7fd1995
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-0cad237
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-77aa960
 
 PORTDOCS=	README
 
@@ -28,7 +28,7 @@ CONFLICTS=	cakephp-1.*
 
 NO_BUILD=	yes
 USE_GETTEXT=	yes
-USE_PHP=	session
+USE_PHP=	ctype session
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
@@ -92,26 +92,16 @@ SUB_FILES+=	${CONF}
 PLIST_SUB+=	CONFDIR=${CONFDIR_REL} ECHO_MSG=${ECHO_MSG} \
 		HTACCESS=${HTACCESS} APDEP=${APDEP}
 
-DB_DEFINED=	no
-
 .if defined(WITH_MYSQL)
-DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
-DB_DEFINED=	yes
+USE_PHP+=	pdo pdo_mysql
 .endif
 
 .if defined(WITH_PGSQL)
-DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-DB_DEFINED=	yes
+USE_PHP+=	pdo pdo_pgsql
 .endif
 
 .if defined(WITH_SQLITE)
-DB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_sqlite.so:${PORTSDIR}/databases/php5-pdo_sqlite
-DB_DEFINED=	yes
-.endif
-
-.if ${DB_DEFINED} == "yes"
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/php5-pdo \
-		${DB_DEPENDS}
+USE_PHP+=	pdo pdo_sqlite
 .endif
 
 .if defined(WITH_APC)

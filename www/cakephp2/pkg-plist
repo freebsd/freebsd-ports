@@ -370,6 +370,7 @@
 %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/PostgresTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/SqliteTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Database/SqlserverTest.php
+%%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/DataSourceTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/DboSourceTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Session/CacheSessionTest.php
 %%WWWDIR%%/lib/Cake/Test/Case/Model/Datasource/Session/DatabaseSessionTest.php
@@ -716,6 +717,7 @@
 %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/welcome.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/Example/ExampleExample.php
 %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/plugin_element.ctp
+%%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/sub_dir/sub_element.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/test_plugin_element.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/translate.ctp
 %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Emails/text/test_plugin_tpl.ctp
@@ -1005,6 +1007,7 @@
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Helper
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Emails/text
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Emails
+@dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements/sub_dir
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View/Elements
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/View
 @dirrm %%WWWDIR%%/lib/Cake/Test/test_app/Plugin/TestPlugin/Vendor/sample
