@@ -7,7 +7,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	System for Automated Geoscientific Analyses
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	proj.7:${PORTSDIR}/graphics/proj \
-		gdal.16:${PORTSDIR}/graphics/gdal \
+		gdal.17:${PORTSDIR}/graphics/gdal \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		iodbc.3:${PORTSDIR}/databases/libiodbc \

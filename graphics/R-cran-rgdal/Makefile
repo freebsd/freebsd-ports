@@ -7,6 +7,7 @@
 
 PORTNAME=	rgdal
 DISTVERSION=	0.7-11
+PORTREVISION=	1
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +17,7 @@ COMMENT=	Bindings for the Geospatial Data Abstraction Library
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	gdal.16:${PORTSDIR}/graphics/gdal \
+LIB_DEPENDS=	gdal.17:${PORTSDIR}/graphics/gdal \
 		proj.7:${PORTSDIR}/graphics/proj
 RUN_DEPENDS=	R-cran-sp>=0.9.99:${PORTSDIR}/math/R-cran-sp
 

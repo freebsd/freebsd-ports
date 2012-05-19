@@ -7,7 +7,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.18.a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	https://secure.ohos.nl/downloads/
 
