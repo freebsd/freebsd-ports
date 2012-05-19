@@ -31,8 +31,6 @@ ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.
 						For personal use only.
 						Must accept license to download.
 aacplusenc-*		audio/aacplusenc	Unclear legal status
-ac3dlx*			graphics/linux-ac3d	Commercial license, no
-						distribution
 acroread/AdbeRdr9.*	print/acroread9		Must fill out redistribution
 						form at
 						http://www.adobe.com/products/acrobat/distribute.html
