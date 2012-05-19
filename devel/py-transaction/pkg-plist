@@ -32,6 +32,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/savepointsample.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/savepointsample.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/savepointsample.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/test_attempt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/test_attempt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/test_attempt.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/test_SampleDataManager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/test_SampleDataManager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/test_SampleDataManager.pyo
