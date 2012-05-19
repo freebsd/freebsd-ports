@@ -17,7 +17,7 @@ COMMENT=	Client for the OpenStack Nova API
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argparse>=0:${PORTSDIR}/devel/py-argparse \
 		${PYTHON_PKGNAMEPREFIX}prettytable>=0:${PORTSDIR}/devel/py-prettytable \
-		${PYTHON_SITELIBDIR}/httplib2/__init__.py:${PORTSDIR}/www/py-httplib2
+		${PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
