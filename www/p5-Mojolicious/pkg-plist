@@ -1,3 +1,6 @@
+bin/hypnotoad
+bin/mojo
+bin/morbo
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/.packlist
 %%SITE_PERL%%/Mojo.pm
 %%SITE_PERL%%/Mojo/Asset.pm
@@ -56,6 +59,7 @@
 %%SITE_PERL%%/Mojo/UserAgent.pm
 %%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
+%%SITE_PERL%%/Mojo/entities.txt
 %%SITE_PERL%%/Mojolicious.pm
 %%SITE_PERL%%/Mojolicious/Command/cgi.pm
 %%SITE_PERL%%/Mojolicious/Command/cpanify.pm
@@ -143,9 +147,6 @@
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
-bin/hypnotoad
-bin/mojo
-bin/morbo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
 @dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/Mojolicious/templates
