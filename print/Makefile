@@ -61,6 +61,7 @@
     SUBDIR += enscriptfonts
     SUBDIR += epsonepl
     SUBDIR += es-acroread8
+    SUBDIR += examplep
     SUBDIR += fi-acroread8
     SUBDIR += flpsed
     SUBDIR += font-amsfonts
