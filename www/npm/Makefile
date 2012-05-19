@@ -50,4 +50,39 @@ RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node
 RUN_DEPENDS=	${LOCALBASE}/bin/node:${PORTSDIR}/www/node-devel
 .endif
 
+# maintainer section:
+# require: bash, git, gmake, node
+
+MS_DISTNAME=	${PORTNAME}-${MS_VERSION}
+MS_TAGS=	${MS_WRKSRC}/tags
+MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
+MS_VERSIONFILE=	${MS_WRKSRC}/.version
+MS_WRKSRC=	${WRKSRC}/tmp
+
+GITHUB_PROJECT=	${PORTNAME}
+GITHUB_TAGSURL=	https://github.com/isaacs/npm/tags
+GITHUB_TARBALL=	https://github.com/${GITHUB_USER}/${GITHUB_PROJECT}/tarball/${GITHUB_VERSION}
+GITHUB_USER=	isaacs
+GITHUB_VERSION=	v${MS_VERSION}
+
+maketar: do-clean extract
+	${MKDIR} ${MS_WRKSRC}/
+	${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/tags ${GITHUB_TAGSURL}
+	g -o '/isaacs/npm/tarball/[^"]*' tags | head -1 | cut -d/ -f5 | sed 's|^v||'
+	${GREP} -o '/${GITHUB_USER}/${GITHUB_PROJECT}/tarball/[^"]*' ${MS_WRKSRC}/tags | ${HEAD} -1 | ${CUT} -d/ -f5 | ${SED} 's|^v||' > ${MS_VERSIONFILE}
+	${ECHO_MSG} "*** Updating from ${PORTVERSION} to ${MS_VERSION} ..."
+	${FETCH_BINARY} ${FETCH_ARGS:C/A//} -o ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz ${GITHUB_TARBALL}
+	${MKDIR} ${MS_WRKSRC}/${MS_DISTNAME}/
+	${TAR} -xf ${MS_WRKSRC}/${MS_DISTNAME}.tar.gz -C ${MS_WRKSRC}/${MS_DISTNAME}/ --strip-components 1
+	${REINPLACE_CMD} -e '/manRoot/ s|, "share"||' ${MS_WRKSRC}/${MS_DISTNAME}/lib/build.js ${MS_WRKSRC}/${MS_DISTNAME}/lib/unbuild.js
+	${SED} -i '' -e '1 s|#!/bin/bash|#!${LOCALBASE}/bin/bash|' ${MS_WRKSRC}/${MS_DISTNAME}/scripts/doc-build.sh
+	${GREP} -lr share/man ${MS_WRKSRC}/${MS_DISTNAME}/doc/ ${MS_WRKSRC}/${MS_DISTNAME}/scripts/ | ${XARGS} -I % ${SED} -i '' 's|share/man|man|g' %
+	cd ${MS_WRKSRC}/${MS_DISTNAME}/ && ${GMAKE}
+	${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type d -exec ${CHMOD} 755 '{}' \;
+	${FIND} ${MS_WRKSRC}/${MS_DISTNAME}/ -type f -exec ${CHMOD} 644 '{}' \;
+	cd ${MS_WRKSRC}/ && ${TAR} -Jcf ${MS_DISTNAME}.tar.xz ${MS_DISTNAME}/
+	${SED} -i '' -e '/^PORTVERSION=/ s|${PORTVERSION}|'${MS_VERSION}'|; /^PORTREVISION=/d' ${.CURDIR}/Makefile
+	${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.xz ${DISTDIR}/
+	cd ${.CURDIR}/ && ${MAKE} makesum
+
 .include <bsd.port.mk>
