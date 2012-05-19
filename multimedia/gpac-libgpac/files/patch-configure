@@ -1,5 +1,5 @@
---- configure.orig	2008-12-02 13:04:42.000000000 -0500
-+++ configure	2009-02-19 15:16:18.000000000 -0500
+--- configure.orig	2008-12-02 19:04:42.000000000 +0100
++++ configure	2012-05-19 17:09:20.000000000 +0200
 @@ -33,6 +33,7 @@
  make="make"
  strip="strip"
@@ -8,6 +8,15 @@
  debuginfo="no"
  sdl_path=""
  sdl_local="no"
+@@ -102,7 +103,7 @@
+ bigendian="no"
+ SHFLAGS=-shared
+ need_inet_aton="no"
+-LDFLAGS="$LDFLAGS -Wl --warn-common"
++LDFLAGS="$LDFLAGS -Wl,--warn-common"
+ CFLAGS=""
+ CPPFLAGS=""
+ GPAC_SH_FLAGS=-lpthread
 @@ -222,7 +223,9 @@
      if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
        if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
