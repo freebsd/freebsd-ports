@@ -5,7 +5,7 @@ when it establishes a connection to our system.  Captured packets contain
 enough information to identify the operating system.  In contrast to active
 scanners such as nmap and QueSO, p0f does not send anything to the host being
 identified.
-  
+
 For more information, read Spitzner's text at:
 http://www.enteract.com/~lspitz/finger.html .
 
