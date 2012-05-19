@@ -6,6 +6,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
