@@ -414,7 +414,6 @@
     SUBDIR += netwib
     SUBDIR += neubot
     SUBDIR += nfsshell
-    SUBDIR += ng_car
     SUBDIR += ng_daphne
     SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep

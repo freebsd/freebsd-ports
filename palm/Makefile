@@ -5,7 +5,6 @@
 
     SUBDIR += barry
     SUBDIR += bibelot
-    SUBDIR += coldsync
     SUBDIR += gnome-pilot
     SUBDIR += gnome-pilot-conduits
     SUBDIR += iSiloXC
