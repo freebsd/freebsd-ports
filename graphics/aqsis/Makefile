@@ -33,7 +33,7 @@ USE_CMAKE=	yes
 CMAKE_OUTSOURCE=	yes
 CMAKE_VERBOSE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	opengl qmake moc rcc uic
+QT_COMPONENTS=	opengl qmake_build moc_build rcc_build uic_build
 PLIST_SUB+=	LIBVERS=${PORTVERSION:R}
 
 INSTALLS_ICONS=	yes
