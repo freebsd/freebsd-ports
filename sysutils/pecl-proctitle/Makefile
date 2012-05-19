@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proctitle
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
