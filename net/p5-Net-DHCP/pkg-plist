@@ -1,5 +1,5 @@
-%%SITE_PERL%%/Net/DHCP/Packet.pm
 %%SITE_PERL%%/Net/DHCP/Constants.pm
+%%SITE_PERL%%/Net/DHCP/Packet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DHCP/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DHCP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
