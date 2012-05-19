@@ -6,7 +6,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.12
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -52,6 +52,7 @@ OPTIONS=	AACPLUS "Enable aac via libaacplus" off \
 		VO_AMRWBENC "AMR Wide Band audio encoder (vo-amrwbenc)" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
+		X11GRAB	"Enable x11 grabbing" off \
 		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
 
@@ -82,6 +83,13 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 	libpostproc/postprocess.h \
 	libswscale/swscale.h
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_X11GRAB)
+USE_XORG=	x11 xext xfixes
+CONFIGURE_ARGS+=	--enable-x11grab
+.endif
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -94,7 +102,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-postproc \
 		--enable-avfilter \
 		--enable-pthreads \
-		--enable-x11grab \
 		--enable-memalign-hack \
 		--enable-runtime-cpudetect \
 		--cc="${CC}" \

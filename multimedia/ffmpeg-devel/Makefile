@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2012-04-25
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm/ffmpeg
@@ -66,6 +66,7 @@ OPTIONS=	AACPLUS	"Enable aac via libaacplus" off \
 		VO_AMRWBENC "AMR Wide Band audio encoder (vo-amrwbenc)" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
+		X11GRAB	"Enable x11grabbing" off \
 		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
 
@@ -101,6 +102,11 @@ USE_OPENSSL=	yes
 FFMPEG_NONFREE=	yes
 .endif
 
+.if defined(WITH_X11GRAB)
+USE_XORG=	x11 xext xfixes
+CONFIGURE_ARGS+=	--enable-x11grab
+.endif
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -113,7 +119,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-postproc \
 		--enable-avfilter \
 		--enable-pthreads \
-		--enable-x11grab \
 		--enable-memalign-hack \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
