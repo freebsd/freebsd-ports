@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.8.1
-PORTREVISION=	5
+PORTVERSION=	1.9.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -17,7 +16,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
 CONFIGURE_ARGS=	--datadir=${DATADIR} --with-libz=/usr
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}
 MAKEFILE=	GNUmakefile
@@ -25,10 +23,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-.endif
 
 OPTIONS=	CFITSIO	"FITS support"			off \
 		CURL	"Curl support"			off \
@@ -50,7 +44,7 @@ OPTIONS=	CFITSIO	"FITS support"			off \
 		PHP	"PHP support"			off \
 		PNG	"PNG support"			on \
 		PROJ	"Projection support via proj"	off \
-		PYTHON	"Python support"		on \
+		PYTHON	"Python support"		off \
 		RUBY	"Ruby support"			off \
 		SQLITE	"SQLite support"		off \
 		THREAD	"Thread support"		off \
@@ -63,135 +57,145 @@ XERCES_PORT?=	textproc/xerces-c3
 
 .include <bsd.port.options.mk>
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+.endif
+
 .if defined(WITH_NETCDF) && (${NETCDF_VER} == "4")
 WITH_HDF5=	yes
 HDF5_VER=	18
 .endif
 
 .if defined(WITH_CFITSIO)
-LIB_DEPENDS+=		cfitsio.0:${PORTSDIR}/astro/cfitsio
-CONFIGURE_ARGS+=	--with-cfitsio=${LOCALBASE}
+LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
+CONFIGURE_ARGS+=--with-cfitsio=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-cfitsio=no
+CONFIGURE_ARGS+=--with-cfitsio=no
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}/bin/curl-config
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=--with-curl=${LOCALBASE}/bin/curl-config
 .else
-CONFIGURE_ARGS+=	--with-curl=no
+CONFIGURE_ARGS+=--with-curl=no
 .endif
 
 .if defined(WITH_EXPAT)
-LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=	--with-expat=${LOCALBASE} \
-			--with-expat-inc=${LOCALBASE}/include \
-			--with-expat-lib=-lexpat
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=--with-expat=${LOCALBASE} \
+		--with-expat-inc=${LOCALBASE}/include \
+		--with-expat-lib=-lexpat
 .else
-CONFIGURE_ARGS+=	--with-expat=no
+CONFIGURE_ARGS+=--with-expat=no
 .endif
 
 .if defined(WITH_GEOS)
-LIB_DEPENDS+=		geos.0:${PORTSDIR}/graphics/geos
-CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
+LIB_DEPENDS+=	geos.0:${PORTSDIR}/graphics/geos
+CONFIGURE_ARGS+=--with-geos=${LOCALBASE}/bin/geos-config
 .else
-CONFIGURE_ARGS+=	--with-geos=no
+CONFIGURE_ARGS+=--with-geos=no
 .endif
 
 .if !defined(WITHOUT_GEOTIFF)
-LIB_DEPENDS+=		geotiff.3:${PORTSDIR}/graphics/libgeotiff
-CONFIGURE_ARGS+=	--with-geotiff=${LOCALBASE}
+LIB_DEPENDS+=	geotiff.3:${PORTSDIR}/graphics/libgeotiff
+CONFIGURE_ARGS+=--with-geotiff=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_GIF)
-LIB_DEPENDS+=		gif.5:${PORTSDIR}/graphics/giflib
-CONFIGURE_ARGS+=	--with-gif=${LOCALBASE}
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+CONFIGURE_ARGS+=--with-gif=${LOCALBASE}
 .endif
 
 .if defined(WITH_GRASS)
-GRASS_INST_DIR=		grass
-CONFIGURE_ARGS+=	--with-grass=${LOCALBASE}/${GRASS_INST_DIR} \
-			--with-grasslib=${LOCALBASE}/${GRASS_INST_DIR}/lib
+GRASS_INST_DIR?=grass
+BUILD_DEPENDS+=	grass>=0:${PORTSDIR}/databases/grass
+RUN_DEPENDS+=	grass>=0:${PORTSDIR}/databases/grass
+CONFIGURE_ARGS+=--with-grass=${LOCALBASE}/${GRASS_INST_DIR} \
+		--with-grasslib=${LOCALBASE}/${GRASS_INST_DIR}/lib
 .else
-CONFIGURE_ARGS+=	--with-grass=no
+CONFIGURE_ARGS+=--with-grass=no
 .endif
 
 .if defined(WITH_HDF4)
-LIB_DEPENDS+=		mfhdf.3:${PORTSDIR}/science/hdf
-CONFIGURE_ARGS+=	--with-hdf4=${LOCALBASE}
+LIB_DEPENDS+=	mfhdf.3:${PORTSDIR}/science/hdf
+CONFIGURE_ARGS+=--with-hdf4=${LOCALBASE}
 .endif
 
 .if defined(WITH_HDF5)
 .if (${NETCDF_VER} == "4")
-LIB_DEPENDS+=		hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 .else
-LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 .endif
-CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
+CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_JASPER)
-LIB_DEPENDS+=		jasper.4:${PORTSDIR}/graphics/jasper
-CONFIGURE_ARGS+=	--with-jasper=${LOCALBASE}
+LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+CONFIGURE_ARGS+=--with-jasper=${LOCALBASE}
 .endif
 
 .if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=		jpeg.11:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=	--with-jpeg=${LOCALBASE}
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE}
 .endif
 
 .if defined(WITH_MYSQL)
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}/bin/mysql_config
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/bin/mysql_config
 .else
-CONFIGURE_ARGS+=	--with-mysql=no
+CONFIGURE_ARGS+=--with-mysql=no
 .endif
 
 .if defined(WITH_NETCDF)
 .if (${NETCDF_VER} == "4")
-LIB_DEPENDS+=		netcdf.7:${PORTSDIR}/science/netcdf4
+LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
 .else
-LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 .endif
-CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
+CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-netcdf=no
+CONFIGURE_ARGS+=--with-netcdf=no
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
+LIB_DEPENDS+=	odbc.2:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=--with-odbc=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-odbc=no
+CONFIGURE_ARGS+=--with-odbc=no
 .endif
 
 .if defined(WITH_PERL)
-USE_PERL5=		yes
-CONFIGURE_ARGS+=	--with-perl
+USE_PERL5=	yes
+CONFIGURE_ARGS+=--with-perl
 .endif
 
 .if defined(WITH_PGSQL)
-USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--with-pg=${LOCALBASE}/bin/pg_config
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=--with-pg=${LOCALBASE}/bin/pg_config
 .else
-CONFIGURE_ARGS+=	--with-pg=no
+CONFIGURE_ARGS+=--with-pg=no
 .endif
 
 .if defined(WITH_PHP)
-USE_PHP=		yes
-CONFIGURE_ARGS+=	--with-php
+USE_PHP=	yes
+CONFIGURE_ARGS+=--with-php
+.endif
+
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
+CONFIGURE_ARGS+=	--with-png=${LOCALBASE}
 .endif
 
 .if defined(WITH_PROJ)
-LIB_DEPENDS+=		proj.7:${PORTSDIR}/graphics/proj
-CONFIGURE_ARGS+=	--with-static-proj4=${LOCALBASE}
+LIB_DEPENDS+=	proj.7:${PORTSDIR}/graphics/proj
+CONFIGURE_ARGS+=--with-static-proj4=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-static-proj4=no
+CONFIGURE_ARGS+=--with-static-proj4=no
 .endif
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=		yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=	--with-python
 
 BUILD_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
@@ -212,14 +216,8 @@ PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG} PYTHON=""
 PLIST_SUB+=		PYTHON="@comment "
 .endif
 
-.if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--with-png=${LOCALBASE}
-.endif
-
 .if defined(WITH_RUBY)
 USE_RUBY=		yes
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 CONFIGURE_ARGS+=	--with-ruby
 .endif
 
@@ -263,28 +261,28 @@ CONFIGURE_ARGS+=	--with-xerces=no
 .endif
 
 .if defined(WITH_HDF4) && defined(WITH_HDF5)
-IGNORE=			You can't use HDF4 with HDF5.
-.endif
-
-pre-build:
-.if defined(WITH_PYTHON)
-	@(cd ${BUILD_WRKSRC}/swig/python; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-temp -s temp.${PYEASYINSTALL_OSARCH:S/^-//}-${PYTHON_VER}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//})
+IGNORE=			you cannot use HDF4 with HDF5
 .endif
 
 post-patch:
 .if defined(WITH_PYTHON)
-	@${REINPLACE_CMD} -e '\
-		s,%%MAKE_ENV%%,${MAKE_ENV},; \
-		s,%%PYTHON_SITELIBDIR%%,${PYTHON_SITELIBDIR},; \
-		s,%%PYEASYINSTALL_BINDIR%%,${PYEASYINSTALL_BINDIR},; \
-		s,%%PYEASYINSTALL_SITELIBDIR%%,${PYEASYINSTALL_SITELIBDIR},; \
-		s,%%PYEASYINSTALL_EGG%%,${PYEASYINSTALL_EGG},; \
-		s,%%WRKSRC%%,${WRKSRC},; \
-		' ${WRKSRC}/swig/python/GNUmakefile
+	@${REINPLACE_CMD} \
+		-e 's|%%MAKE_ENV%%|${MAKE_ENV}|' \
+		-e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|' \
+		-e 's|%%PYEASYINSTALL_BINDIR%%|${PYEASYINSTALL_BINDIR}|' \
+		-e 's|%%PYEASYINSTALL_SITELIBDIR%%|${PYEASYINSTALL_SITELIBDIR}|' \
+		-e 's|%%PYEASYINSTALL_EGG%%|${PYEASYINSTALL_EGG}|' \
+		-e 's|%%WRKSRC%%|${WRKSRC}|' \
+			${WRKSRC}/swig/python/GNUmakefile
+.endif
+
+post-build:
+.if defined(WITH_PYTHON)
+	@cd ${BUILD_WRKSRC}/swig/python/ && \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-platlib -s lib.${PYEASYINSTALL_OSARCH:S/^-//} && \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c build -o build-temp -s temp.${PYEASYINSTALL_OSARCH:S/^-//}-${PYTHON_VER} && \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//} && \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}
 .endif
 
 .include <bsd.port.mk>

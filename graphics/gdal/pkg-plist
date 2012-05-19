@@ -28,6 +28,7 @@ bin/gdalenhance
 bin/gdalinfo
 bin/gdallocationinfo
 bin/gdalmanage
+bin/gdalsrsinfo
 bin/gdaltindex
 bin/gdaltransform
 bin/gdalwarp
@@ -40,7 +41,6 @@ bin/ogrtindex
 %%PYTHON%%bin/rgb2pct.py
 bin/testepsg
 include/cpl_atomic_ops.h
-include/cpl_base64.h
 include/cpl_config.h
 include/cpl_config_extras.h
 include/cpl_conv.h
@@ -96,7 +96,7 @@ include/vrtdataset.h
 lib/libgdal.a
 lib/libgdal.la
 lib/libgdal.so
-lib/libgdal.so.16
+lib/libgdal.so.17
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -163,14 +163,19 @@ lib/libgdal.so.16
 %%DATADIR%%/ecw_cs.wkt
 %%DATADIR%%/ellipsoid.csv
 %%DATADIR%%/epsg.wkt
+%%DATADIR%%/esri_StatePlane_extra.wkt
+%%DATADIR%%/esri_Wisconsin_extra.wkt
 %%DATADIR%%/esri_extra.wkt
 %%DATADIR%%/gcs.csv
 %%DATADIR%%/gcs.override.csv
 %%DATADIR%%/gdal_datum.csv
 %%DATADIR%%/gdalicon.png
+%%DATADIR%%/geoccs.csv
 %%DATADIR%%/gt_datum.csv
 %%DATADIR%%/gt_ellips.csv
 %%DATADIR%%/header.dxf
+%%DATADIR%%/nitf_spec.xml
+%%DATADIR%%/nitf_spec.xsd
 %%DATADIR%%/pci_datum.txt
 %%DATADIR%%/pci_ellips.txt
 %%DATADIR%%/pcs.csv

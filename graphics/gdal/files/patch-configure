@@ -1,0 +1,15 @@
+--- configure.orig	2011-12-23 09:51:45.000000000 +0800
++++ configure	2011-12-23 15:30:42.540316668 +0800
+@@ -21140,10 +21140,10 @@
+         if { test -x "$ncdump"; }; then
+       { $as_echo "$as_me:${as_lineno-$LINENO}: checking libnetcdf version with $ncdump" >&5
+ $as_echo_n "checking libnetcdf version with $ncdump... " >&6; }
+-      netcdf_version=`$ncdump 2>&1 | grep "netcdf library version" | awk '{gsub(/"/,"");print $4}'`
++      netcdf_version=`$ncdump 2>&1 | grep "netcdf library version" | awk '{gsub(/"/,"");print $4}' | sed 's|^\(.\).*$|\1|'`
+       { $as_echo "$as_me:${as_lineno-$LINENO}: result: got $netcdf_version" >&5
+ $as_echo "got $netcdf_version" >&6; }
+-      if test "$netcdf_version" != "" -a "${netcdf_version:0:1}" == "4" ; then
++      if test "$netcdf_version" != "" -a "${netcdf_version}" == "4" ; then
+           nc_config=$NETCDF_ROOT"/bin/nc-config"
+       fi
+     fi
