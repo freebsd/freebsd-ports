@@ -1,0 +1,12 @@
+This is a puzzle from the old C64 Impossible Mission game.
+The idea is to combine the 36 tiles in sets of 4, such that each set
+of 4 makes a solid block. Clicking on the tiles on the left toggles
+them. A tile can't be turned on if it overlaps with any existing on
+tiles. The lone rectangle on the right is the combination of all
+the on tiles. Clicking on that is an easy way to turn all tiles off.
+
+When 4 tiles combine to make a solid block, they vanish. The goal is
+to get rid of all the tiles. There is no score or timer. Just do it
+for the intellectual exercise.
+
+WWW: http://www.linuxmotors.com/puzzle
