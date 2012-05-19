@@ -7,7 +7,7 @@
 
 PORTNAME=	gmt
 PORTVERSION=	4.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://falcon.grdl.noaa.gov/pub/${PORTNAME}/	\
 		ftp://ftp.soest.hawaii.edu/${PORTNAME}/		\
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--enable-eps
 .endif
 
 .if defined(WITH_GDAL)
-LIB_DEPENDS+=		gdal.16:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		gdal.17:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--enable-gdal
 .endif
 
