@@ -20,5 +20,6 @@ RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/extlookup2hiera
 
 .include <bsd.port.mk>
