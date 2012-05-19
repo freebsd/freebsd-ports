@@ -8,15 +8,23 @@
 PORTNAME=	p0f
 PORTVERSION=	3.05b
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/
+MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/ \
+		http://fossies.org/unix/privat/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Passive OS fingerprinting tool
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/docs/COPYING
+
 PLIST_FILES=	bin/p0f bin/p0f-client bin/p0f-sendsyn \
 		bin/p0f-sendsyn6 etc/p0f.fp
-PORTDOCS=	COPYING ChangeLog README TODO existential-notes.txt extra-sigs.txt
+PORTDOCS=	COPYING ChangeLog README TODO existential-notes.txt \
+		extra-sigs.txt
+
+MAKE_JOBS_SAFE=	yes
+MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/README
