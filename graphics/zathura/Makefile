@@ -59,7 +59,7 @@ post-patch:	.SILENT
 		${WRKSRC}/config.h \
 		${WRKSRC}/zathurarc.5.rst
 
-post-install:	.SILENT
-	${CAT} pkg-message
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
