@@ -1,0 +1,45 @@
+# New ports collection makefile for:    bophook
+# Date created:         2012-05-11
+# Whom:                 Hiroto Kagotani <hiroto.kagotani@gmail.com>
+#
+# $FreeBSD$
+
+PORTNAME=	bophook
+PORTVERSION=	0.02
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	macros/latex/contrib/
+DISTNAME=	${PORTNAME}
+
+MAINTAINER=	hiroto.kagotani@gmail.com
+COMMENT=	Style file providing a beginning-of-page hook for LaTeX
+
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_ZIP=	yes
+
+PLIST=		${WRKDIR}/pkg-plist
+
+TEXMFDIR=	share/texmf-local
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME}
+CLASS_FILES=	${PORTNAME}.sty
+
+do-build:
+	cd ${WRKSRC}  && latex ${PORTNAME}.ins
+
+pre-install:
+	${ECHO_CMD} "${CLASSDIR}/${CLASS_FILES}" > ${PLIST}
+	${ECHO_CMD} "@dirrm ${CLASSDIR}" >> ${PLIST}
+	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
+
+do-install:
+	@${MKDIR} ${PREFIX}/${CLASSDIR}
+	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
+
+post-install:
+	${MKTEXLSR}
+
+.include <bsd.port.mk>

@@ -26,6 +26,7 @@
     SUBDIR += bibcursed
     SUBDIR += biblio-py
     SUBDIR += bibview
+    SUBDIR += bophook
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
     SUBDIR += catdvi
