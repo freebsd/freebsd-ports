@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net-http-digest_auth
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
