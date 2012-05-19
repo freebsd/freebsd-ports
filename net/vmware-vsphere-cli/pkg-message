@@ -12,4 +12,3 @@ If you want to disable this important security feature, you may set the
 following variable to 0:
 $ENV{PERL_LWP_SSL_VERIFY_HOSTNAME}
 ========================================================================
-

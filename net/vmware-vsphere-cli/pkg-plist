@@ -1,3 +1,5 @@
+@comment $FreeBSD$
+bin/svmotion
 bin/vmware-cmd
 bin/vmkfstools
 bin/vicfg-vswitch
@@ -25,7 +27,8 @@ bin/vicfg-authconfig
 bin/vicfg-advcfg
 bin/vifs
 bin/vihostupdate
-bin/svmotion
+bin/vihostupdate35
+bin/viperl-support
 %%SITE_PERL%%/WSMan/WSBasic.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storagepool.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storageextent.pm
