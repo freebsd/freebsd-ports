@@ -384,6 +384,7 @@
     SUBDIR += icebreaker
     SUBDIR += ifm
     SUBDIR += imaze
+    SUBDIR += impossible_mission_puzzle
     SUBDIR += inform
     SUBDIR += inform7
     SUBDIR += instead
