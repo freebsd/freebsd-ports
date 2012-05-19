@@ -506,7 +506,6 @@
     SUBDIR += libx3dtk
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
-    SUBDIR += linux-ac3d
     SUBDIR += linux-adobesvg
     SUBDIR += linux-cairo
     SUBDIR += linux-dri74
