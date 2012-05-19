@@ -1,24 +1,22 @@
-share/freeswitch/sounds/.freeswitch-music
-%%WITH_8K%%share/freeswitch/sounds/music/8000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
-%%WITH_8K%%share/freeswitch/sounds/music/8000/ponce-preludio-in-e-major.wav
-%%WITH_8K%%share/freeswitch/sounds/music/8000/suite-espanola-op-47-leyenda.wav
-%%WITH_8K%%share/freeswitch/sounds/music/8000/danza-espanola-op-37-h-142-xii-arabesca.wav
-%%WITH_16K%%share/freeswitch/sounds/music/16000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
-%%WITH_16K%%share/freeswitch/sounds/music/16000/ponce-preludio-in-e-major.wav
-%%WITH_16K%%share/freeswitch/sounds/music/16000/suite-espanola-op-47-leyenda.wav
-%%WITH_16K%%share/freeswitch/sounds/music/16000/danza-espanola-op-37-h-142-xii-arabesca.wav
-%%WITH_16K%%share/freeswitch/sounds/music/32000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
-%%WITH_32K%%share/freeswitch/sounds/music/32000/ponce-preludio-in-e-major.wav
-%%WITH_32K%%share/freeswitch/sounds/music/32000/suite-espanola-op-47-leyenda.wav
-%%WITH_32K%%share/freeswitch/sounds/music/32000/danza-espanola-op-37-h-142-xii-arabesca.wav
-%%WITH_48K%%share/freeswitch/sounds/music/48000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
-%%WITH_48K%%share/freeswitch/sounds/music/48000/ponce-preludio-in-e-major.wav
-%%WITH_48K%%share/freeswitch/sounds/music/48000/suite-espanola-op-47-leyenda.wav
-%%WITH_48K%%share/freeswitch/sounds/music/48000/danza-espanola-op-37-h-142-xii-arabesca.wav
-%%WITH_8K%%@dirrm share/freeswitch/sounds/music/8000
-%%WITH_16K%%@dirrm share/freeswitch/sounds/music/16000
-%%WITH_32K%%@dirrm share/freeswitch/sounds/music/32000
-%%WITH_48K%%@dirrm share/freeswitch/sounds/music/48000
-@dirrm share/freeswitch/sounds/music
-@dirrmtry share/freeswitch/sounds
-@dirrmtry share/freeswitch
+%%DATADIR%%/sounds/.freeswitch-music
+%%WITH_8K%%%%DATADIR%%/sounds/music/8000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
+%%WITH_8K%%%%DATADIR%%/sounds/music/8000/ponce-preludio-in-e-major.wav
+%%WITH_8K%%%%DATADIR%%/sounds/music/8000/suite-espanola-op-47-leyenda.wav
+%%WITH_8K%%%%DATADIR%%/sounds/music/8000/danza-espanola-op-37-h-142-xii-arabesca.wav
+%%WITH_16K%%%%DATADIR%%/sounds/music/16000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
+%%WITH_16K%%%%DATADIR%%/sounds/music/16000/ponce-preludio-in-e-major.wav
+%%WITH_16K%%%%DATADIR%%/sounds/music/16000/suite-espanola-op-47-leyenda.wav
+%%WITH_16K%%%%DATADIR%%/sounds/music/16000/danza-espanola-op-37-h-142-xii-arabesca.wav
+%%WITH_16K%%%%DATADIR%%/sounds/music/32000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
+%%WITH_32K%%%%DATADIR%%/sounds/music/32000/ponce-preludio-in-e-major.wav
+%%WITH_32K%%%%DATADIR%%/sounds/music/32000/suite-espanola-op-47-leyenda.wav
+%%WITH_32K%%%%DATADIR%%/sounds/music/32000/danza-espanola-op-37-h-142-xii-arabesca.wav
+%%WITH_48K%%%%DATADIR%%/sounds/music/48000/partita-no-3-in-e-major-bwv-1006-1-preludio.wav
+%%WITH_48K%%%%DATADIR%%/sounds/music/48000/ponce-preludio-in-e-major.wav
+%%WITH_48K%%%%DATADIR%%/sounds/music/48000/suite-espanola-op-47-leyenda.wav
+%%WITH_48K%%%%DATADIR%%/sounds/music/48000/danza-espanola-op-37-h-142-xii-arabesca.wav
+%%WITH_8K%%@dirrm %%DATADIR%%/sounds/music/8000
+%%WITH_16K%%@dirrm %%DATADIR%%/sounds/music/16000
+%%WITH_32K%%@dirrm %%DATADIR%%/sounds/music/32000
+%%WITH_48K%%@dirrm %%DATADIR%%/sounds/music/48000
+@dirrm %%DATADIR%%/sounds/music
