@@ -607,6 +607,7 @@ apinger                         ports/net/apinger
 apngasm                         ports/graphics/apngasm
 apoolGL                         ports/games/apoolGL
 apoolgl                         ports/games/apoolGL
+app                             ports/devel/app
 apparix                         ports/misc/apparix
 appkonference                   ports/net/appkonference
 appres                          ports/x11/appres
@@ -875,7 +876,6 @@ avalon-framework                ports/devel/avalon-framework
 avanor                          ports/games/avanor
 avant-window-navigator          ports/x11/avant-window-navigator
 avant-window-navigator-gnome    ports/x11/avant-window-navigator-gnome
-avant-window-navigator-xfce4    ports/x11/avant-window-navigator-xfce4
 avarice                         ports/devel/avarice
 avbin                           ports/multimedia/avbin
 avce00                          ports/devel/avce00
@@ -890,6 +890,7 @@ avinfo                          ports/multimedia/avinfo
 avis                            ports/java/avis
 avltree                         ports/devel/avltree
 avogadro                        ports/science/avogadro
+avoision                        ports/games/avoision
 avp-demo                        ports/games/avp-demo
 avr-binutils                    ports/devel/avr-binutils
 avr-gcc                         ports/devel/avr-gcc
@@ -1985,6 +1986,7 @@ createrepo                      ports/sysutils/createrepo
 createtorrent                   ports/net-p2p/createtorrent
 credis                          ports/databases/credis
 creox                           ports/audio/creox
+cretan-hubris                   ports/games/cretan-hubris
 crf++                           ports/science/crf++
 cricket                         ports/net-mgmt/cricket
 crip                            ports/audio/crip
@@ -3404,6 +3406,7 @@ fb303                           ports/devel/fb303
 fbbi                            ports/lang/fbbi
 fbcmd                           ports/x11-wm/fbcmd
 fbdesk                          ports/x11/fbdesk
+fbg2                            ports/games/fbg2
 fbpager                         ports/x11-wm/fbpager
 fbpanel                         ports/x11/fbpanel
 fbreader                        ports/deskutils/fbreader
@@ -3949,6 +3952,7 @@ freesci                         ports/games/freesci
 freesweep                       ports/games/freesweep
 freeswitch                      ports/net/freeswitch
 freeswitch-core                 ports/net/freeswitch-core
+freeswitch-core-devel           ports/net/freeswitch-core-devel
 freeswitch-music                ports/audio/freeswitch-music
 freeswitch-pizzademo            ports/misc/freeswitch-pizzademo
 freeswitch-scripts              ports/misc/freeswitch-scripts
@@ -7101,7 +7105,6 @@ kde3-i18n-ga                    ports/misc/kde3-i18n-ga
 kde3-i18n-gl                    ports/misc/kde3-i18n-gl
 kde3-i18n-hi                    ports/misc/kde3-i18n-hi
 kde3-i18n-hr                    ports/misc/kde3-i18n-hr
-kde3-i18n-hsb                   ports/misc/kde3-i18n-hsb
 kde3-i18n-is                    ports/misc/kde3-i18n-is
 kde3-i18n-it                    ports/misc/kde3-i18n-it
 kde3-i18n-kk                    ports/misc/kde3-i18n-kk
@@ -7111,12 +7114,10 @@ kde3-i18n-lv                    ports/misc/kde3-i18n-lv
 kde3-i18n-mk                    ports/misc/kde3-i18n-mk
 kde3-i18n-mn                    ports/misc/kde3-i18n-mn
 kde3-i18n-ms                    ports/misc/kde3-i18n-ms
-kde3-i18n-mt                    ports/misc/kde3-i18n-mt
 kde3-i18n-nb                    ports/misc/kde3-i18n-nb
 kde3-i18n-nds                   ports/misc/kde3-i18n-nds
 kde3-i18n-nl                    ports/misc/kde3-i18n-nl
 kde3-i18n-nn                    ports/misc/kde3-i18n-nn
-kde3-i18n-nso                   ports/misc/kde3-i18n-nso
 kde3-i18n-pa                    ports/misc/kde3-i18n-pa
 kde3-i18n-ro                    ports/misc/kde3-i18n-ro
 kde3-i18n-rw                    ports/misc/kde3-i18n-rw
@@ -8135,6 +8136,7 @@ libjbigi                        ports/math/libjbigi
 libjingle                       ports/net-im/libjingle
 libjit                          ports/lang/libjit
 libjpeg-turbo                   ports/graphics/libjpeg-turbo
+libjson++                       ports/devel/libjson++
 libk8055                        ports/devel/libk8055
 libkate                         ports/multimedia/libkate
 libkdcraw                       ports/graphics/libkdcraw
@@ -8374,7 +8376,6 @@ libreoffice-km                  ports/editors/libreoffice-km
 libreoffice-kok                 ports/editors/libreoffice-kok
 libreoffice-ks                  ports/editors/libreoffice-ks
 libreoffice-ku                  ports/editors/libreoffice-ku
-libreoffice-legacy              ports/editors/libreoffice-legacy
 libreoffice-lo                  ports/editors/libreoffice-lo
 libreoffice-lt                  ports/editors/libreoffice-lt
 libreoffice-lv                  ports/editors/libreoffice-lv
@@ -9027,7 +9028,6 @@ logtool                         ports/sysutils/logtool
 logtools                        ports/www/logtools
 logwatch                        ports/sysutils/logwatch
 loki                            ports/devel/loki
-long-exposure-tools             ports/graphics/long-exposure-tools
 lookat                          ports/sysutils/lookat
 lookout                         ports/mail/lookout
 looks                           ports/devel/looks
@@ -13629,6 +13629,7 @@ p5-Net-DNS-Resolver-Programmable  ports/dns/p5-Net-DNS-Resolver-Programmable
 p5-Net-DNS-SEC                  ports/dns/p5-Net-DNS-SEC
 p5-Net-DNS-TestNS               ports/dns/p5-Net-DNS-TestNS
 p5-Net-DNS-ToolKit              ports/dns/p5-Net-DNS-ToolKit
+p5-Net-DNS-Zone-Parser          ports/dns/p5-Net-DNS-Zone-Parser
 p5-Net-DNS-ZoneCheck            ports/dns/p5-Net-DNS-ZoneCheck
 p5-Net-DNS-ZoneFile             ports/dns/p5-Net-DNS-ZoneFile
 p5-Net-DNS-ZoneFile-Fast        ports/dns/p5-Net-DNS-ZoneFile-Fast
@@ -18171,6 +18172,7 @@ p5-net-dns-rr-srv-helper        ports/dns/p5-Net-DNS-RR-SRV-Helper
 p5-net-dns-sec                  ports/dns/p5-Net-DNS-SEC
 p5-net-dns-testns               ports/dns/p5-Net-DNS-TestNS
 p5-net-dns-toolkit              ports/dns/p5-Net-DNS-ToolKit
+p5-net-dns-zone-parser          ports/dns/p5-Net-DNS-Zone-Parser
 p5-net-dns-zonecheck            ports/dns/p5-Net-DNS-ZoneCheck
 p5-net-dns-zonefile             ports/dns/p5-Net-DNS-ZoneFile
 p5-net-dns-zonefile-fast        ports/dns/p5-Net-DNS-ZoneFile-Fast
@@ -20412,6 +20414,7 @@ pear-IO_Bit                     ports/devel/pear-IO_Bit
 pear-IO_SWF                     ports/graphics/pear-IO_SWF
 pear-Image_3D                   ports/graphics/pear-Image_3D
 pear-Image_Barcode              ports/graphics/pear-Image_Barcode
+pear-Image_Barcode2             ports/graphics/pear-Image_Barcode2
 pear-Image_Canvas               ports/graphics/pear-Image_Canvas
 pear-Image_Color                ports/graphics/pear-Image_Color
 pear-Image_Graph                ports/graphics/pear-Image_Graph
@@ -20795,6 +20798,7 @@ pear-i18n                       ports/devel/pear-I18N
 pear-i18nv2                     ports/sysutils/pear-I18Nv2
 pear-image_3d                   ports/graphics/pear-Image_3D
 pear-image_barcode              ports/graphics/pear-Image_Barcode
+pear-image_barcode2             ports/graphics/pear-Image_Barcode2
 pear-image_canvas               ports/graphics/pear-Image_Canvas
 pear-image_color                ports/graphics/pear-Image_Color
 pear-image_graph                ports/graphics/pear-Image_Graph
@@ -21101,7 +21105,6 @@ perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
 perlconsole                     ports/devel/perlconsole
 perldap                         ports/net/perldap
-perlftlib                       ports/print/perlftlib
 perltidy                        ports/devel/perltidy
 permute                         ports/textproc/permute
 personality                     ports/sysutils/personality
@@ -21534,7 +21537,6 @@ pinfo                           ports/misc/pinfo
 pingus                          ports/games/pingus
 pingwi                          ports/x11-fonts/pingwi
 pink-pony                       ports/games/pink-pony
-pino                            ports/net-im/pino
 pinot                           ports/deskutils/pinot
 pinpoint                        ports/graphics/pinpoint
 pioneers                        ports/games/pioneers
@@ -23972,6 +23974,7 @@ radare2                         ports/devel/radare2
 raddump                         ports/net/raddump
 radeontool                      ports/sysutils/radeontool
 radiator                        ports/net/radiator
+radius-engine                   ports/graphics/radius-engine
 radiusclient                    ports/net/radiusclient
 radiusd-cistron                 ports/net/radiusd-cistron
 radiusniff                      ports/security/radiusniff
@@ -24858,6 +24861,7 @@ rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-method_source           ports/devel/rubygem-method_source
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-minitest                ports/devel/rubygem-minitest
+rubygem-mirror                  ports/devel/rubygem-mirror
 rubygem-mixlib-authentication   ports/devel/rubygem-mixlib-authentication
 rubygem-mixlib-cli              ports/devel/rubygem-mixlib-cli
 rubygem-mixlib-config           ports/devel/rubygem-mixlib-config
@@ -25894,7 +25898,6 @@ sqlite-ext-miscfuncs            ports/databases/sqlite-ext-miscfuncs
 sqlite-ext-mobigroup            ports/databases/sqlite-ext-mobigroup
 sqlite2                         ports/databases/sqlite2
 sqlite3                         ports/databases/sqlite3
-sqlite34                        ports/databases/sqlite34
 sqlitejdbc                      ports/java/sqlitejdbc
 sqliteman                       ports/databases/sqliteman
 sqlitemanager                   ports/databases/sqlitemanager
@@ -26501,6 +26504,7 @@ thcrut                          ports/net/thcrut
 the                             ports/editors/the
 thebridge                       ports/comms/thebridge
 thefish                         ports/sysutils/thefish
+thegrind                        ports/games/thegrind
 thevalley                       ports/games/thevalley
 thewidgetfactory                ports/x11-themes/thewidgetfactory
 thinglaunch                     ports/x11/thinglaunch
@@ -26520,7 +26524,6 @@ thunar-archive-plugin           ports/archivers/thunar-archive-plugin
 thunar-media-tags-plugin        ports/audio/thunar-media-tags-plugin
 thunar-vcs-plugin               ports/devel/thunar-vcs-plugin
 thunar-vfs                      ports/x11-fm/thunar-vfs
-thunar-volman-plugin            ports/sysutils/thunar-volman-plugin
 thunderbird                     ports/mail/thunderbird
 thunderbird-dictionaries        ports/mail/thunderbird-dictionaries
 thunderbird-esr                 ports/mail/thunderbird-esr
@@ -28019,6 +28022,7 @@ xdelta3                         ports/misc/xdelta3
 xdemineur                       ports/games/xdemineur
 xdesktopwaves                   ports/games/xdesktopwaves
 xdeview                         ports/converters/xdeview
+xdg-menu                        ports/misc/xdg-menu
 xdg-user-dirs                   ports/devel/xdg-user-dirs
 xdg-utils                       ports/devel/xdg-utils
 xdgagrab                        ports/graphics/xdgagrab
@@ -28172,7 +28176,6 @@ xfce4-timer-plugin              ports/x11-clocks/xfce4-timer-plugin
 xfce4-tumbler                   ports/deskutils/xfce4-tumbler
 xfce4-utils                     ports/sysutils/xfce4-utils
 xfce4-verve-plugin              ports/x11/xfce4-verve-plugin
-xfce4-volstatus-icon            ports/deskutils/xfce4-volstatus-icon
 xfce4-wavelan-plugin            ports/sysutils/xfce4-wavelan-plugin
 xfce4-weather-plugin            ports/misc/xfce4-weather-plugin
 xfce4-wm                        ports/x11-wm/xfce4-wm
@@ -28192,7 +28195,6 @@ xfishtank                       ports/x11/xfishtank
 xflame                          ports/games/xflame
 xfm                             ports/x11-fm/xfm
 xfmail                          ports/mail/xfmail
-xfmedia-remote-plugin           ports/multimedia/xfmedia-remote-plugin
 xfmpc                           ports/audio/xfmpc
 xfontsel                        ports/x11-fonts/xfontsel
 xforms                          ports/x11-toolkits/xforms
