@@ -40,6 +40,9 @@
 %%PYTHON_SITELIBDIR%%/testtools/runtest.py
 %%PYTHON_SITELIBDIR%%/testtools/runtest.pyc
 %%PYTHON_SITELIBDIR%%/testtools/runtest.pyo
+%%PYTHON_SITELIBDIR%%/testtools/tags.py
+%%PYTHON_SITELIBDIR%%/testtools/tags.pyc
+%%PYTHON_SITELIBDIR%%/testtools/tags.pyo
 %%PYTHON_SITELIBDIR%%/testtools/testcase.py
 %%PYTHON_SITELIBDIR%%/testtools/testcase.pyc
 %%PYTHON_SITELIBDIR%%/testtools/testcase.pyo
@@ -94,6 +97,9 @@
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_spinner.py
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_spinner.pyc
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_spinner.pyo
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_tags.py
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_tags.pyc
+%%PYTHON_SITELIBDIR%%/testtools/tests/test_tags.pyo
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_testcase.py
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_testcase.pyc
 %%PYTHON_SITELIBDIR%%/testtools/tests/test_testcase.pyo
