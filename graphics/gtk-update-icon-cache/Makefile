@@ -53,10 +53,10 @@ MAN1=		gtk-update-icon-cache.1
 .include <bsd.port.pre.mk>
 
 pre-configure:
-.if !exists(${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc)
-	@${ECHO_CMD} "${PKGNAME}: Needs cairo build with X11 support."
-	@${FALSE}
-.endif
+	@if [ ! -f ${LOCALBASE}/libdata/pkgconfig/cairo-xlib.pc ]; then \
+		${ECHO_CMD} "${PKGNAME}: Needs cairo built with X11 support."; \
+		${FALSE}; \
+	fi
 
 do-build:
 	@cd ${WRKSRC}/gtk && ${GMAKE} gtk-update-icon-cache
