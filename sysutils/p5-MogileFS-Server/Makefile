@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.60
+PORTVERSION=	2.61
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+REINPLACE_ARGS=	-i ''
 USE_RC_SUBR=	mogilefsd mogstored
 
 MAN1=		mogautomount.1 \
@@ -53,10 +54,20 @@ MAN3=		MogileFS::Checksum.3 \
 		MogileFS::Worker::Query.3 \
 		MogileFS::Worker::Replicate.3
 
+# https://github.com/mogilefs/MogileFS-Server/commit/28fad964f2eee3f4b13614cce97e5423ebd54875
+post-patch:
+	@${REINPLACE_CMD} -e '/MogileFS::Sys/d' ${WRKSRC}/lib/MogileFS/Server.pm
+
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
