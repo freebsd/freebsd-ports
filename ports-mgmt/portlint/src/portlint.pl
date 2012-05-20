@@ -1614,7 +1614,7 @@ sub checkmakefile {
 	if ($whole =~ /\nNO_CHECKSUM/) {
 		my $lineno = &linenumber($`);
 		&perror("FATAL", $file, $lineno, "NO_CHECKSUM is a user ".
-			"variab;e and is not to be set in a port's Makefile.");
+			"variable and is not to be set in a port's Makefile.");
 	}
 
 	#
