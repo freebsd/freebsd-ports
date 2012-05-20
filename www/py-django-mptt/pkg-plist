@@ -1,0 +1,56 @@
+%%PYTHON_SITELIBDIR%%/mptt/__init__.py
+%%PYTHON_SITELIBDIR%%/mptt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mptt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mptt/admin.py
+%%PYTHON_SITELIBDIR%%/mptt/admin.pyc
+%%PYTHON_SITELIBDIR%%/mptt/admin.pyo
+%%PYTHON_SITELIBDIR%%/mptt/exceptions.py
+%%PYTHON_SITELIBDIR%%/mptt/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/mptt/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/mptt/fields.py
+%%PYTHON_SITELIBDIR%%/mptt/fields.pyc
+%%PYTHON_SITELIBDIR%%/mptt/fields.pyo
+%%PYTHON_SITELIBDIR%%/mptt/forms.py
+%%PYTHON_SITELIBDIR%%/mptt/forms.pyc
+%%PYTHON_SITELIBDIR%%/mptt/forms.pyo
+%%PYTHON_SITELIBDIR%%/mptt/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/mptt/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/mptt/locale/dk/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/mptt/locale/dk/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/mptt/managers.py
+%%PYTHON_SITELIBDIR%%/mptt/managers.pyc
+%%PYTHON_SITELIBDIR%%/mptt/managers.pyo
+%%PYTHON_SITELIBDIR%%/mptt/models.py
+%%PYTHON_SITELIBDIR%%/mptt/models.pyc
+%%PYTHON_SITELIBDIR%%/mptt/models.pyo
+%%PYTHON_SITELIBDIR%%/mptt/templates/admin/mptt_change_list.html
+%%PYTHON_SITELIBDIR%%/mptt/templates/admin/mptt_change_list_results.html
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/mptt_admin.py
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/mptt_admin.pyc
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/mptt_admin.pyo
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/mptt_tags.py
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/mptt_tags.pyc
+%%PYTHON_SITELIBDIR%%/mptt/templatetags/mptt_tags.pyo
+%%PYTHON_SITELIBDIR%%/mptt/utils.py
+%%PYTHON_SITELIBDIR%%/mptt/utils.pyc
+%%PYTHON_SITELIBDIR%%/mptt/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/templates
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/dk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/dk
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/mptt/locale
+@dirrm %%PYTHON_SITELIBDIR%%/mptt
