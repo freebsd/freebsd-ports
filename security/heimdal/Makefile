@@ -7,7 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=	--with-libintl=${LOCALBASE} \
 			--with-readline=${DESTDIR}/usr \
 			--enable-pthread-support \
 			--with-hdbdir=/var/db/${PORTNAME}
+MAKE_ENV+=	INSTALL_CATPAGES=no
 
 INFO=		heimdal hx509
 PLIST=		${WRKDIR}/PLIST
