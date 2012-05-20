@@ -119,6 +119,7 @@
     SUBDIR += freebsd-doc-tr
     SUBDIR += freebsd-doc-zh_cn
     SUBDIR += freebsd-doc-zh_tw
+    SUBDIR += freecode-submit
     SUBDIR += freeguide
     SUBDIR += freeswitch-pizzademo
     SUBDIR += freeswitch-scripts
