@@ -1,0 +1,6 @@
+include/freexl.h
+lib/libfreexl.a
+lib/libfreexl.la
+lib/libfreexl.so
+lib/libfreexl.so.1
+libdata/pkgconfig/freexl.pc
