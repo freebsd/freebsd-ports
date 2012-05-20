@@ -149,8 +149,8 @@ lib/gegl-0.1/introspect.la
 lib/gegl-0.1/introspect.so
 lib/gegl-0.1/invert.la
 lib/gegl-0.1/invert.so
-lib/gegl-0.1/jp2-load.la
-lib/gegl-0.1/jp2-load.so
+%%JP2%%lib/gegl-0.1/jp2-load.la
+%%JP2%%lib/gegl-0.1/jp2-load.so
 lib/gegl-0.1/layer.la
 lib/gegl-0.1/layer.so
 lib/gegl-0.1/levels.la
@@ -191,8 +191,8 @@ lib/gegl-0.1/over.la
 lib/gegl-0.1/over.so
 lib/gegl-0.1/overlay.la
 lib/gegl-0.1/overlay.so
-lib/gegl-0.1/pixbuf.la
-lib/gegl-0.1/pixbuf.so
+%%GDK%%lib/gegl-0.1/pixbuf.la
+%%GDK%%lib/gegl-0.1/pixbuf.so
 lib/gegl-0.1/pixelise.la
 lib/gegl-0.1/pixelise.so
 lib/gegl-0.1/plus.la
@@ -213,8 +213,8 @@ lib/gegl-0.1/rgbe-load.la
 lib/gegl-0.1/rgbe-load.so
 lib/gegl-0.1/rgbe-save.la
 lib/gegl-0.1/rgbe-save.so
-lib/gegl-0.1/save-pixbuf.la
-lib/gegl-0.1/save-pixbuf.so
+%%GDK%%lib/gegl-0.1/save-pixbuf.la
+%%GDK%%lib/gegl-0.1/save-pixbuf.so
 lib/gegl-0.1/save.la
 lib/gegl-0.1/save.so
 lib/gegl-0.1/screen.la

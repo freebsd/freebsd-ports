@@ -7,7 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
@@ -21,7 +21,9 @@ LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
 OPTIONS=	CAIRO		"Enable Cairo" on \
 		ENSCRIPT	"Enable Enscript" on \
 		FFMPEG		"Enable videos through ffmpeg (BROKEN)" off \
+		GDK		"Enable gdk-pixbuf2 formats support" on \
 		GRAPHVIZ	"Enable Graphviz" on \
+		JP2		"Enable JPEG2000 format support" on \
 		JPEG		"Enable JPEG format support" on \
 		LUA		"Enable LUA" on \
 		OPENEXR		"Enable High Dynamic Range (HDR) format support" on \
@@ -37,7 +39,7 @@ OPTIONS=	CAIRO		"Enable Cairo" on \
 # Disable docs until I fix the problem with graphviz's dot
 NOPORTDOCS=	yes
 
-USE_GNOME=	gtk20 glib20 pkgconfig gnomehack
+USE_GNOME=	glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -55,6 +57,14 @@ EXAMPLES=	2geglbuffer csugar float-lookup \
 		geglbuffer-clock hello-world-video hello-world
 
 .include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_GDK)
+USE_GNOME+=	gdkpixbuf2
+PLIST_SUB+=	GDK=""
+.else
+CONFIGURE_ARGS+=--without-gdk-pixbuf
+PLIST_SUB+=	GDK="@comment "
+.endif
 
 .if !defined(WITHOUT_CAIRO)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
@@ -96,6 +106,14 @@ PLIST_SUB+=	FFMPEG="@comment "
 LIB_DEPENDS+=	graph:${PORTSDIR}/graphics/graphviz
 .else
 CONFIGURE_ARGS+=--without-graphviz
+.endif
+
+.if !defined(WITHOUT_JP2)
+LIB_DEPENDS+=	jasper.4:${PORTSDIR}/graphics/jasper
+PLIST_SUB+=	JP2=""
+.else
+CONFIGURE_ARGS+=--without-jasper
+PLIST_SUB+=	JP2="@comment "
 .endif
 
 .if !defined(WITHOUT_JPEG)
