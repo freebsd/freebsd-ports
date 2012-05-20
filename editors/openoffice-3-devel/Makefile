@@ -56,7 +56,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SVNREVISION=		1335359
+SVNREVISION=		1340369
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -136,7 +136,7 @@ MAKE_JOBS_NUMBER=	4
 .endif
 
 CONFIGURE_ARGS+=	--enable-verbose \
-			--enable-symbols \
+			--enable-symbols=small \
 			--enable-crashdump \
 			--with-vendor="FreeBSD ports system"	\
 			--with-epm=${LOCALBASE}/bin/epm \
