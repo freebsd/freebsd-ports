@@ -18,7 +18,5 @@ COMMENT=	A PECL extension that allows changing the current process' name
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
