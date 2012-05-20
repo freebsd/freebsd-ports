@@ -34,7 +34,6 @@ bin/mogstored
 %%SITE_PERL%%/MogileFS/Store/MySQL.pm
 %%SITE_PERL%%/MogileFS/Store/Postgres.pm
 %%SITE_PERL%%/MogileFS/Store/SQLite.pm
-%%SITE_PERL%%/MogileFS/Sys.pm
 %%SITE_PERL%%/MogileFS/Test.pm
 %%SITE_PERL%%/MogileFS/Util.pm
 %%SITE_PERL%%/MogileFS/Worker.pm
