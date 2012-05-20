@@ -1,5 +1,5 @@
---- mytop.orig	2007-02-17 05:57:46.000000000 +0100
-+++ mytop	2009-10-15 00:19:14.000000000 +0200
+--- mytop.orig	2007-02-17 12:57:46.000000000 +0800
++++ mytop	2012-05-18 13:58:30.000000000 +0800
 @@ -153,7 +153,7 @@
      "idle|i"              => \$config{idle},
      "resolve|r"           => \$config{resolve},
@@ -54,16 +54,62 @@
  
          ## if the server died or we lost connectivity
          if (not @recs)
-@@ -819,7 +825,7 @@
+@@ -800,8 +806,15 @@
+ 
+         ## Queries per second...
+ 
+-        my $avg_queries_per_sec  = sprintf("%.2f", $STATUS{Questions} / $STATUS{Uptime});
+-        my $num_queries          = $STATUS{Questions};
++        my ($num_queries, $old_num_queries);
++        if(defined($STATUS{Queries})) {
++            $num_queries = $STATUS{Queries};
++            $old_num_queries = $OLD_STATUS{Queries};
++        } else {
++            $num_queries = $STATUS{Questions};
++            $old_num_queries = $OLD_STATUS{Questions};
++        }
++        my $avg_queries_per_sec  = sprintf("%.2f", $num_queries / $STATUS{Uptime});
+ 
+         my @t = localtime(time);
+ 
+@@ -819,26 +832,26 @@
          $lines_left--;
  
  
 -        printf " Queries: %-5s  qps: %4.0f Slow: %7s         Se/In/Up/De(%%):    %02.0f/%02.0f/%02.0f/%02.0f \n",
+-               make_short( $STATUS{Questions} ),  # q total
+-               $STATUS{Questions} / $STATUS{Uptime},  # qps, average
 +        printf " Queries: %-6s qps: %4.0f Slow: %7s         Se/In/Up/De(%%):    %02.0f/%02.0f/%02.0f/%02.0f \n",
-                make_short( $STATUS{Questions} ),  # q total
-                $STATUS{Questions} / $STATUS{Uptime},  # qps, average
++               make_short( $num_queries ),  # q total
++               $num_queries / $STATUS{Uptime},  # qps, average
                 make_short( $STATUS{Slow_queries} ),    # slow
-@@ -889,8 +895,42 @@
+ 
+                # hmm. a Qcache hit is really a select and should be counted.
+-               100 * ($STATUS{Com_select} + ($STATUS{Qcache_hits}||0) )    / $STATUS{Questions},
+-               100 * ($STATUS{Com_insert} +  $STATUS{Com_replace} ) / $STATUS{Questions},
+-               100 * ($STATUS{Com_update} )  / $STATUS{Questions},
+-               100 * $STATUS{Com_delete} / $STATUS{Questions};
++               100 * ($STATUS{Com_select} + ($STATUS{Qcache_hits}||0) )    / $num_queries,
++               100 * ($STATUS{Com_insert} +  $STATUS{Com_replace} ) / $num_queries,
++               100 * ($STATUS{Com_update} )  / $num_queries,
++               100 * $STATUS{Com_delete} / $num_queries;
+ 
+         $lines_left--;
+ 
+         if ($t_delta)
+         {
+-          my $q_diff = ( $STATUS{Questions} - $OLD_STATUS{Questions} );
+-#          print("q_diff: $STATUS{Questions} - $OLD_STATUS{Questions}  / $t_delta = $q_diff\n");
++          my $q_diff = ( $num_queries - $old_num_queries );
++#          print("q_diff: $num_queries - $old_num_queries  / $t_delta = $q_diff\n");
+ 
+           printf("             qps now: %4.0f Slow qps: %3.1f  Threads: %4.0f (%4.0f/%4.0f) %02.0f/%02.0f/%02.0f/%02.0f \n",
+-                 ( $STATUS{Questions} - $OLD_STATUS{Questions} ) / $t_delta,
++                 ( $num_queries - $old_num_queries ) / $t_delta,
+                  ( # slow now (qps)
+                   ($STATUS{Slow_queries} ) ?
+                   ( $STATUS{Slow_queries} - $OLD_STATUS{Slow_queries} ) / $t_delta :
+@@ -889,8 +902,42 @@
                 make_short(($STATUS{Bytes_received} - $OLD_STATUS{Bytes_received}) / $t_delta ),
                 make_short(($STATUS{Bytes_sent} - $OLD_STATUS{Bytes_sent}) / $t_delta ))
            if ($t_delta);
@@ -107,7 +153,7 @@
          $lines_left--;
      }
  
-@@ -952,8 +992,11 @@
+@@ -952,8 +999,11 @@
          {
              $thread->{Host} =~ s/:\d+$//;
              my $host = gethostbyaddr(inet_aton($thread->{Host}), AF_INET);
@@ -121,7 +167,7 @@
          }
  
          ## Fix possible undefs
-@@ -1099,8 +1142,8 @@
+@@ -1099,8 +1149,8 @@
      my @data = Hashes("SHOW INNODB STATUS");
  
      open P, "|$config{pager}" or die "$!";
