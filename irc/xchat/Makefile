@@ -36,6 +36,7 @@ OPTIONS=	DBUS "Enable DBUS support" on \
 		NOTIFY "Depend on libnotify for notifications" off \
 		PERL "Enable Perl support" on \
 		PYTHON "Enable Python support" off \
+		SOCKS "Build with socks5 support" off \
 		TCL "Enable TCL support" off
 
 .if defined(WITH_PYTHON)
@@ -96,6 +97,11 @@ PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_SOCKS)
+LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
+CONFIGURE_ARGS+=--enable-socks
 .endif
 
 .if defined(WITH_TCL)
