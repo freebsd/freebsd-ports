@@ -1420,6 +1420,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
     SUBDIR += py-Products.CMFPlone
+    SUBDIR += py-Products.PloneLDAP
     SUBDIR += py-Products.TinyMCE
     SUBDIR += py-Products.kupu
     SUBDIR += py-WebError
