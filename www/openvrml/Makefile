@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.18.6
-PORTREVISION=	2
+PORTVERSION=	0.18.9
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -27,10 +26,12 @@ USE_GL=		yes
 USE_GNOME=	gnomehack libglade2 libgnomeui
 USE_SDL=	sdl
 USE_JAVA=	yes
+USE_GCC=	4.6+
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure
-CONFIGURE_ARGS=	--enable-gecko-rpath
-CONFIGURE_ENV=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"	\
+CONFIGURE_ARGS=	--enable-gecko-rpath \
+		--disable-mozilla-plugin
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		LIBS="-lm" BOOST_LIB_SUFFIX=""
 CPPFLAGS+=	-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}

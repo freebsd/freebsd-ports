@@ -28,10 +28,7 @@ lib/libopenvrml-gl.so.8
 lib/libopenvrml.a
 lib/libopenvrml.la
 lib/libopenvrml.so
-lib/libopenvrml.so.9
-%%WEBPLUGINS_DIR%%/openvrml.a
-%%WEBPLUGINS_DIR%%/openvrml.la
-%%WEBPLUGINS_DIR%%/openvrml.so
+lib/libopenvrml.so.10
 lib/openvrml/node/vrml97.a
 lib/openvrml/node/vrml97.la
 lib/openvrml/node/vrml97.so
