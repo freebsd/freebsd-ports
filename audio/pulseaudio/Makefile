@@ -42,6 +42,10 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.if ${CC} == clang
+CFLAGS+=	-fheinous-gnu-extensions
+.endif
+
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-database=gdbm \
 		--without-caps \
