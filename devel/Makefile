@@ -3118,6 +3118,7 @@
     SUBDIR += py-Products.ExternalEditor
     SUBDIR += py-Products.ExternalMethod
     SUBDIR += py-Products.GenericSetup
+    SUBDIR += py-Products.LDAPUserFolder
     SUBDIR += py-Products.MIMETools
     SUBDIR += py-Products.Marshall
     SUBDIR += py-Products.MimetypesRegistry
