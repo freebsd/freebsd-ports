@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texinfo
-PORTVERSION=	4.13.20120406
+PORTVERSION=	4.13.20120516
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -20,6 +20,7 @@ COMMENT=	A typeset documentation system with multiple format output
 
 BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man
 
+FETCH_ARGS=	-Ap
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALL_TARGET=	install install-tex
