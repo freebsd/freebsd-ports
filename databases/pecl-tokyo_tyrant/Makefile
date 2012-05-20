@@ -17,11 +17,11 @@ COMMENT=	Wrapper to the Tokyo Tyrant client library
 
 LIB_DEPENDS=	tokyotyrant.3:${PORTSDIR}/databases/tokyotyrant
 
-IGNORE_WITH_PHP=4
-
 USE_PHP=	session
 USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>

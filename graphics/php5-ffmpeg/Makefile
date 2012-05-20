@@ -21,12 +21,12 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
 CFLAGS+=	-I${LOCALBASE}/include
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 USE_BZIP2=	yes
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS+=	--with-ffmpeg=${LOCALBASE}/include
 

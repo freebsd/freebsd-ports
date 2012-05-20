@@ -20,6 +20,8 @@ LIB_DEPENDS=	xdiff.0:${PORTSDIR}/textproc/libxdiff
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 

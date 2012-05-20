@@ -16,11 +16,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Caches the parsed XSL stylesheet between sessions
 
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
-
 USE_PHP=	dom xml xsl
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>

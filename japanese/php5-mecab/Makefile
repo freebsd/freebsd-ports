@@ -19,8 +19,9 @@ COMMENT=	A PHP5 extension for MeCab Morphological Analyzer
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
 USE_PHP=	yes
-DEFAULT_PHP_VER=5
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
 CONFIGURE_ENV=	LIBS="${LIBS} ${PTHREAD_LIBS}"
 CFLAGS+=	${PTHREAD_CFLAGS}

@@ -22,5 +22,7 @@ USE_PHP=		yes
 USE_PHPIZE=		yes
 USE_PHPEXT=		yes
 USE_PHP_BUILD=		yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
