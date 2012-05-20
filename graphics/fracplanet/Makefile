@@ -7,7 +7,7 @@
 
 PORTNAME=	fracplanet
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	boost_program_options.4:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_GL=		glu
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui opengl \
 		moc_build qmake_build
