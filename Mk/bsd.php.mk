@@ -261,15 +261,22 @@ dba_DEPENDS=	databases/php${PHP_VER}-dba
 dbase_DEPENDS=	databases/php${PHP_VER}-dbase
 dom_DEPENDS=	textproc/php${PHP_VER}-dom
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
+.if ${PHP_VER} == 52
+fileinfo_DEPENDS=	sysutils/pecl-fileinfo
+.else
+fileinfo_DEPENDS=	sysutils/php${PHP_VER}-fileinfo
+.endif
 filter_DEPENDS=	security/php${PHP_VER}-filter
 ftp_DEPENDS=	ftp/php${PHP_VER}-ftp
 gd_DEPENDS=	graphics/php${PHP_VER}-gd
 gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
+hash_DEPENDS=	security/php${PHP_VER}-hash
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
 intl_DEPENDS=	devel/pecl-intl
+json_DEPENDS=	devel/php${PHP_VER}-json
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
 mbstring_DEPENDS=	converters/php${PHP_VER}-mbstring
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
@@ -317,15 +324,8 @@ xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
 xmlrpc_DEPENDS=	net/php${PHP_VER}-xmlrpc
 xmlwriter_DEPENDS=	textproc/php${PHP_VER}-xmlwriter
 xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
-zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
-.if ${PHP_VER} == 52
-fileinfo_DEPENDS=	sysutils/pecl-fileinfo
-.else
-fileinfo_DEPENDS=	sysutils/php${PHP_VER}-fileinfo
-.endif
-hash_DEPENDS=	security/php${PHP_VER}-hash
-json_DEPENDS=	devel/php${PHP_VER}-json
 zip_DEPENDS=	archivers/php${PHP_VER}-zip
+zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 
 .	for extension in ${USE_PHP}
 .		if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
