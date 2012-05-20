@@ -164,7 +164,7 @@ PLIST_SUB+=	SQL="@comment "
 CONFIGURE_ARGS+=--with-solr
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=	WITHSOLR=""
-SUB_LIST+=	ITHSOLR=""
+SUB_LIST+=	WITHSOLR=""
 .else
 CONFIGURE_ARGS+=--without-solr
 PLIST_SUB+=	WITHSOLR="@comment "
