@@ -9,8 +9,7 @@ PORTNAME=	lamarc
 PORTVERSION=	2.1.5
 PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/ \
-		http://www.c-s.li/ports/
+MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	cs@FreeBSD.org
