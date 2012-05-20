@@ -7,6 +7,7 @@
 
 PORTNAME=	stellarium
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -19,6 +20,7 @@ LICENSE=	GPLv2
 
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
+USE_GL=		glu
 USE_ICONV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build rcc_build uic_build qmake_build \
