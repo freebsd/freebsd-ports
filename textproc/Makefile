@@ -192,6 +192,7 @@
     SUBDIR += fpc-aspell
     SUBDIR += fpc-libxml2
     SUBDIR += freegrep
+    SUBDIR += freexl
     SUBDIR += fy-aspell
     SUBDIR += ga-aspell
     SUBDIR += gastex
