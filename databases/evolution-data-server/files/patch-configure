@@ -1,7 +1,7 @@
---- configure.orig	2009-12-25 20:21:00.000000000 +0100
-+++ configure	2009-12-25 20:21:01.000000000 +0100
-@@ -15968,6 +15968,14 @@
- _ACEOF
+--- configure.orig	2012-05-19 23:39:42.000000000 -0500
++++ configure	2012-05-19 23:42:47.000000000 -0500
+@@ -14174,6 +14174,14 @@
+ $as_echo "#define _WIN32_WINNT 0x501" >>confdefs.h
  
  	;;
 +*freebsd*)
@@ -13,5 +13,23 @@
 +	LIBEXECDIR_IN_SERVER_FILE="$libexecdir"
 +	;;
  *)
- 	os_win32=no
+ 	os_win32='no'
  	NO_UNDEFINED=''
+@@ -16196,6 +16204,8 @@
+ 
+ 
+ 	ac_fn_c_check_header_compile "$LINENO" "et/com_err.h" "ac_cv_header_et_com_err_h" "	#if HAVE_ET_COM_ERR_H
++			#include <stdio.h>
++			#include <stdarg.h>
+ 			#include <com_err.h>
+ 			#endif
+ 
+@@ -16208,6 +16218,8 @@
+ 
+ 
+ 	ac_fn_c_check_header_compile "$LINENO" "com_err.h" "ac_cv_header_com_err_h" "	#if HAVE_COM_ERR_H
++			#include <stdio.h>
++			#include <stdarg.h>
+ 			#include <com_err.h>
+ 			#endif
+ 
