@@ -7,7 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	2.32.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +20,8 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		cdrdao:${PORTSDIR}/sysutils/cdrdao
+		cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		yelp:${PORTSDIR}/x11/yelp
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
