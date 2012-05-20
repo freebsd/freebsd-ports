@@ -7,6 +7,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	http://people.apache.org/~jsc/aoo34-rc/rc1/src/ ${MASTER_SITE_LOCAL}:extsrc
 MASTER_SITE_SUBDIR=	maho/openoffice:extsrc
@@ -137,7 +138,7 @@ MAKE_JOBS_NUMBER=	4
 .endif
 
 CONFIGURE_ARGS+=	--enable-verbose \
-			--enable-symbols \
+			--enable-symbols=small \
 			--enable-crashdump \
 			--with-vendor="FreeBSD ports system"	\
 			--with-epm=${LOCALBASE}/bin/epm \
