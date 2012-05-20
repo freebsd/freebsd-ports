@@ -15,6 +15,9 @@ COMMENT=	IPv4LL network address configuration daemon
 
 LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi-app
 
+USERS=		avahi-autoipd
+GROUPS=		${USERS}
+
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-autoipd
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -25,6 +28,5 @@ AVAHI_SLAVE=	autoipd
 
 MAN8=		avahi-autoipd.8
 USE_GNOME=	gnomehack ltverhack intltool
-PKGINSTALL=	${.CURDIR}/pkg-install
 
 .include "${MASTERDIR}/Makefile"
