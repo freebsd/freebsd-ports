@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ \
 		http://gateway11.ath.cx/sams/
 
-MAINTAINER=	uzgrishin@mail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Squid 2.x Accounting Management System
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
