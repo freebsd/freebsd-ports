@@ -7,6 +7,7 @@
 
 PORTNAME=	structuresynth
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Structure%20Synth/Version%201.5%20%28Hinxton%29
 DISTNAME=	StructureSynth-Source-v${PORTVERSION}
@@ -14,6 +15,7 @@ DISTNAME=	StructureSynth-Source-v${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Rule-based 3D structure generator
 
+USE_GL=		glu
 USE_ZIP=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build corelib gui opengl moc_build rcc_build xml script
@@ -31,7 +33,8 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -project \
-		-after "CONFIG+=opengl" -after "QT+=xml opengl script"
+		-after "CONFIG+=opengl" -after "QT+=xml opengl script" \
+		-after "LIBS+=-lGLU"
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS}
 
 do-install:
