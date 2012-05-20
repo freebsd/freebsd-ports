@@ -1,0 +1,11 @@
+--- linux/contrib/echoprint-codegen/src/Makefile.orig	2012-05-17 08:26:52.738877942 +0200
++++ linux/contrib/echoprint-codegen/src/Makefile	2012-05-17 08:27:18.755880033 +0200
+@@ -9,7 +9,7 @@
+ CC=gcc
+ #OPTFLAGS=-g -O0
+ OPTFLAGS=-O3 -DBOOST_UBLAS_NDEBUG -DNDEBUG
+-BOOST_CFLAGS=-I/usr/local/include/boost-1_35
++BOOST_CFLAGS=-I/usr/local/include
+ TAGLIB_CFLAGS=`taglib-config --cflags`
+ TAGLIB_LIBS=`taglib-config --libs`
+ CXXFLAGS=-Wall $(BOOST_CFLAGS) $(TAGLIB_CFLAGS) -fPIC $(OPTFLAGS)

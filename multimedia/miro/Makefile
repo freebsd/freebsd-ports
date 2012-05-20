@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	miro
-PORTVERSION=	4.0.6
+PORTVERSION=	5.0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
 
-MAINTAINER=	armin@frozen-zone.org
+MAINTAINER=	sperber@FreeBSD.org
 COMMENT=	A video player to get internet TV broadcasts
 
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex \
 		${PYTHON_SITELIBDIR}/webkit/__init__.py:${PORTSDIR}/www/py-webkitgtk \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
+		update-mime-database:${PORTSDIR}/misc/shared-mime-info \
+		${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:${PORTSDIR}/devel/boost-libs \
+		${LOCALBASE}/include/taglib/taglib.h:${PORTSDIR}/audio/taglib
 LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
@@ -33,6 +35,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux
 
+USE_GMAKE=	yes
 USE_GNOME=	gconf2 gtk20
 USE_GSTREAMER=	python gconf
 USE_GETTEXT=	yes
