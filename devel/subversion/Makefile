@@ -33,7 +33,8 @@ OPTIONS=	P4_STYLE_MARKERS	"Perforce-style conflict markers" on \
 		STATIC			"Build static version (no shared libs)" off \
 		GNOME_KEYRING		"Build with GNOME Keyring auth support" off \
 		KDE_KWALLET		"Build with KDE KWallet auth support" off \
-		BOOK			"Install the Subversion Book" off
+		BOOK			"Install the Subversion Book" off \
+		TEST			"Run subversion test suite" off
 #		ASVN			"Build and install Archive SVN (asvn)" off \
 
 .include "Makefile.common"
@@ -81,6 +82,11 @@ DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
 PLIST_SUB+=	BOOK=""
 .else
 PLIST_SUB+=	BOOK="@comment "
+.endif
+
+# testsuite will fail until PR156076 is committed
+.if defined(WITH_TEST)
+TEST_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 #.if defined(WITH_ASVN)
@@ -210,18 +216,11 @@ pre-configure:
 	fi
 .endif
 
-post-build:
-.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
-	cd ${WRKSRC}/tools/server-side/mod_dontdothat && \
-		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
+# takes a long time, and will fail but gives maintainer a good oversight
+.if defined(WITH_TEST)
+test:
+	make check -C ${WRKSRC}
 .endif
-# subversion 1.7+ -- it is not optional
-#.if defined(WITH_SVNAUTHZ_VALIDATE)
-#	# place binary in ${WRKDIR}, else we install it twice
-#	cd ${WRKSRC}/tools/server-side && \
-#		${CC} svnauthz-validate.c -o ../../svnauthz-validate -I${WRKSRC}/subversion/include -I${APR_INCLUDE_DIR} \
-#		-L${WRKSRC}/subversion/libsvn_repos/.libs -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_repos-1 -lsvn_subr-1
-#.endif
 
 pre-install:
 .if defined(WITH_MOD_DAV_SVN)
@@ -235,17 +234,17 @@ post-install:	${MKREPOS_TARGET}
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav_svn ${PREFIX}/${APACHEMODDIR}/mod_dav_svn.so
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n authz_svn ${PREFIX}/${APACHEMODDIR}/mod_authz_svn.so
 .if defined(WITH_MOD_DONTDOTHAT)
-	cd ${WRKSRC}/tools/server-side/mod_dontdothat && \
-		${APXS} -i -n dontdothat mod_dontdothat.la
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
 .endif
 .endif
 .if defined(WITH_SVNAUTHZ_VALIDATE)
-	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/tools/server-side/svnauthz-validate ${PREFIX}/bin
+	${LIBTOOL} --mode=install ${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE} ${WRKSRC}/tools/server-side/svnauthz-validate ${PREFIX}/bin
 .endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
-	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' -cf - * | ${TAR} -C ${DATADIR} -xf -
+	  ${TAR} --exclude '*.in' --exclude '.libs' --exclude '*.o' --exclude '*.lo' --exclude='*.slo' -cf - * | ${TAR} -C ${DATADIR} -xf -
+# ugly hack to remove libtool scripts ...
+	@${GREP} -R ${WRKSRC} ${DATADIR} | ${CUT} -d\: -f 1 | ${XARGS} ${RM} -f
 	@${CHMOD} -R a-st,o+rX ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

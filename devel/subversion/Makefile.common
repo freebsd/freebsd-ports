@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.7.4
-PORTREVISION?=	1
+PORTVERSION=	1.7.5
+#PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:main/} \
 		${MASTER_SITE_LOCAL:S/$/:book/}
@@ -66,6 +66,10 @@ PLIST_SUB+=	BDB=""
 .else
 CONFIGURE_ARGS+=--without-berkeley-db
 PLIST_SUB+=	BDB="@comment "
+.endif
+
+.if defined(WITH_MOD_DONTDOTHAT) && defined(WITHOUT_MOD_DAV_SVN)
+IGNORE=	to build mod_dontdothat option mod_dav_svn is required
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)

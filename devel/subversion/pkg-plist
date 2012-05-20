@@ -229,7 +229,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/client-side/svn-graph.pl
 %%DATADIR%%/client-side/svn-ssl-fingerprints.sh
 %%DATADIR%%/client-side/svn-viewspec.py
-%%DATADIR%%/client-side/svnmucc/svnmucc
 %%DATADIR%%/client-side/svnmucc/svnmucc.c
 %%DATADIR%%/client-side/svnmucc/svnmucc-test.py
 %%DATADIR%%/client-side/wcfind
@@ -272,7 +271,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/svn-entries.el
 %%DATADIR%%/dev/svn-merge-revs.py
 %%DATADIR%%/dev/svnqlite3-dump
-%%DATADIR%%/dev/svnraisetreeconflict/svnraisetreeconflict
 %%DATADIR%%/dev/svnraisetreeconflict/main.c
 %%DATADIR%%/dev/trails.py
 %%DATADIR%%/dev/unix-build/Makefile.svn
@@ -289,11 +287,8 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/dev/windows-build/document-version.pl
 %%DATADIR%%/dev/windows-build/Makefile
 %%DATADIR%%/dev/windows-build/README
-%%DATADIR%%/diff/diff
 %%DATADIR%%/diff/diff.c
-%%DATADIR%%/diff/diff3
 %%DATADIR%%/diff/diff3.c
-%%DATADIR%%/diff/diff4
 %%DATADIR%%/diff/diff4.c
 %%DATADIR%%/dist/backport.pl
 %%DATADIR%%/dist/checksums.py
@@ -353,16 +348,11 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/po/po-update.sh
 %%DATADIR%%/server-side/mod_dontdothat/README
 %%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.c
-%%MOD_DONTDOTHAT%%%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.la
-%%MOD_DONTDOTHAT%%%%DATADIR%%/server-side/mod_dontdothat/mod_dontdothat.slo
 %%DATADIR%%/server-side/fsfs-reshard.py
 %%DATADIR%%/server-side/svn-backup-dumps.py
-%%DATADIR%%/server-side/svn-populate-node-origins-index
 %%DATADIR%%/server-side/svn-populate-node-origins-index.c
-%%DATADIR%%/server-side/svn-rep-sharing-stats
 %%DATADIR%%/server-side/svn-rep-sharing-stats.c
 %%DATADIR%%/server-side/svn_server_log_parse.py
-%%DATADIR%%/server-side/svnauthz-validate
 %%DATADIR%%/server-side/svnauthz-validate.c
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
@@ -371,7 +361,7 @@ lib/libsvn_wc-1.la
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n authz_svn libexec/%%APACHEDIR%%/mod_authz_svn.so
-%%MOD_DONTDOTHAT%%%%APACHEMODDIR%%/mod_dontdothat.so
+%%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dontdothat.so
 %%MOD_DONTDOTHAT%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dontdothat libexec/%%APACHEDIR%%/mod_dontdothat.so
 %%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html/images
 %%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html
