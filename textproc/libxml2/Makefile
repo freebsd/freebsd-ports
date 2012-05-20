@@ -39,6 +39,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if !defined(WITHOUT_ICONV)
 USE_ICONV=	yes
 CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-iconv=no
 .endif
 
 .if !defined(MASTERDIR)
