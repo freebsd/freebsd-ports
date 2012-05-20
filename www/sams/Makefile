@@ -34,6 +34,7 @@ USE_PHP=	ctype curl gettext hash iconv json mysql \
 		xmlwriter zlib xmlreader
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
+MANUAL_PACKAGE_BUILD=	it needs an old PHP version
 
 USE_MYSQL=	5.0
 
