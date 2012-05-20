@@ -6,22 +6,30 @@
 #
 
 PORTNAME=	django-mptt
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.2
 CATEGORIES=	www python
-MASTER_SITES=	http://www.c-s.li/ports/
+MASTER_SITES=	https://github.com/django-mptt/django-mptt/tarball/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Utilities for implementing a pre-order traversal tree in django
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 LICENSE=	BSD
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-7d3e111
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
+
+GITVERSION=	8ab6a85
+
+FETCH_ARGS=	-Fpr
+USE_GETTEXT=	yes
+USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GITVERSION}
+
+do fetch:
+	[ -f ${DISTDIR}/${DISTFILES} ] || \
+		${FETCH_CMD} -o ${DISTDIR}/${DISTFILES} \
+			${MASTER_SITES}${PORTVERSION}
 
 .include <bsd.port.mk>
