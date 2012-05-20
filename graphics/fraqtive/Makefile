@@ -18,10 +18,12 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl qmake_build uic_build moc_build rcc_build
 QT_NONSTANDARD=	yes
+USE_GL=		glu
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 		QMAKE_CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	-prefix ${PREFIX} -qmake ${QMAKE}
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	SSE2 "Enable SSE2 optimization" off
 
