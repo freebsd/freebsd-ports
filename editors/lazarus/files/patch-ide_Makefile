@@ -1,0 +1,11 @@
+--- ide/Makefile	2012-05-19 18:19:56.000000000 -0500
++++ ide/Makefile	2012-05-19 18:20:30.000000000 -0500
+@@ -3315,7 +3315,7 @@
+ revisioninc:
+ ifneq ($(USESVN2REVISIONINC),0)
+ ifeq ($(wildcard ../tools/svn2revisioninc$(SRCEXEEXT)),)
+-	$(MAKE) -C ../tools svn2revisioninc$(SRCEXEEXT) OS_TARGET=$(OS_SOURCE) CPU_TARGET=$(CPU_SOURCE) OPT=''
++	$(MAKE) -C ../tools svn2revisioninc$(SRCEXEEXT) OS_TARGET=$(OS_SOURCE) CPU_TARGET=$(CPU_SOURCE) OPT='$(OPT)'
+ endif
+ 	../tools/svn2revisioninc$(SRCEXEEXT) .. revision.inc
+ endif
