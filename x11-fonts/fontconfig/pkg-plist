@@ -2,6 +2,7 @@ bin/fc-cache
 bin/fc-cat
 bin/fc-list
 bin/fc-match
+bin/fc-pattern
 bin/fc-query
 bin/fc-scan
 etc/fonts/conf.avail/10-autohint.conf
@@ -11,6 +12,9 @@ etc/fonts/conf.avail/10-sub-pixel-rgb.conf
 etc/fonts/conf.avail/10-sub-pixel-vbgr.conf
 etc/fonts/conf.avail/10-sub-pixel-vrgb.conf
 etc/fonts/conf.avail/10-unhinted.conf
+etc/fonts/conf.avail/11-lcdfilter-default.conf
+etc/fonts/conf.avail/11-lcdfilter-legacy.conf
+etc/fonts/conf.avail/11-lcdfilter-light.conf
 etc/fonts/conf.avail/20-fix-globaladvance.conf
 etc/fonts/conf.avail/20-unhint-small-vera.conf
 etc/fonts/conf.avail/25-unhint-nonlatin.conf
