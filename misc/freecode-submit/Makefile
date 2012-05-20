@@ -1,33 +1,33 @@
-# New ports collection makefile for:	freshmeat-submit
+# New ports collection makefile for:	freecode-submit (before freshmeat-submit)
 # Date created:		2 Jan 2005
 # Whom:			x
 #
 # $FreeBSD$
 #
 
-PORTNAME=	freshmeat-submit
-PORTVERSION=	2.2
+PORTNAME=	freecode-submit
+PORTVERSION=	2.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.catb.org/~esr/freshmeat-submit/ \
+MASTER_SITES=	http://www.catb.org/~esr/freecode-submit/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
-COMMENT=	Submission of updates to Freshmeat via its XML-RPC
+COMMENT=	Submission of updates to Freecode via its JSON API
 
 LICENSE=	BSD
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/freshmeat-submit
-MAN1=		freshmeat-submit.1
+PLIST_FILES=	bin/freecode-submit
+MAN1=		freecode-submit.1
 
 .include <bsd.port.pre.mk>
 
 do-install:
 	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/freshmeat-submit ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/freecode-submit ${PREFIX}/bin
 	${MKDIR} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/freshmeat-submit.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/freecode-submit.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
