@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
 USE_PHP=	spl hash
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-syck
 

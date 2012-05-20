@@ -20,6 +20,8 @@ LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--with-gmagick=${LOCALBASE}
 

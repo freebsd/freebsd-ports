@@ -22,6 +22,7 @@ CONFIGURE_ARGS=	--with-uuid=${LOCALBASE} CFLAGS=-I${LOCALBASE}/include LDFLAGS=-
 PHP_MODNAME=	${PORTNAME}
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -19,6 +19,8 @@ COMMENT=	A PECL extension if imlib2
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 USE_EFL=	imlib2
 
 # libImlib2 may or may not depend on X, however,

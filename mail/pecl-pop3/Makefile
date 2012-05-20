@@ -21,5 +21,7 @@ USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	pop3
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>

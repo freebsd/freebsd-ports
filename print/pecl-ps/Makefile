@@ -22,8 +22,9 @@ LIB_DEPENDS=	ps.4:${PORTSDIR}/print/pslib
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-DEFAULT_PHP_VER=	5
 PHP_MODNAME=	${PORTNAME}
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl|-lintl|g' ${WRKSRC}/config.m4

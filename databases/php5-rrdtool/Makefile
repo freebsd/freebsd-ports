@@ -23,7 +23,8 @@ LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 WRKSRC=		${WRKDIR}/rrdtool
 
 USE_PHP=	yes
-DEFAULT_PHP_VER=5
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>

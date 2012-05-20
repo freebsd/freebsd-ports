@@ -21,17 +21,12 @@ LIB_DEPENDS=	statgrab.8:${PORTSDIR}/devel/libstatgrab
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PHP_VER} < 5
-post-patch:
-	@${PATCH} -d ${WRKSRC} -p0 < ${FILESDIR}/php_statgrab.h.patch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

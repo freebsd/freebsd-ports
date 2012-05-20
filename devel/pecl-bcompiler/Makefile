@@ -18,6 +18,8 @@ COMMENT=	A bytecode compiler extension
 
 USE_PHP=	bz2
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-bcompiler
 

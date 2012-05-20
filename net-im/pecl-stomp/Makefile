@@ -18,5 +18,7 @@ COMMENT=	PECL extension of stomp client
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>

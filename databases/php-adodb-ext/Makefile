@@ -20,9 +20,10 @@ WRKSRC=		${WRKDIR}/adodb-${PORTVERSION:S/.//}
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 USE_ZIP=	yes
 
-DEFAULT_PHP_VER=	5
 CONFIGURE_ARGS=		--with-php-config=${PREFIX}/bin/php-config \
 			--prefix=${PREFIX}/lib/php/${PHP_EXT_DIR}
 SUB_FILES=	pkg-message

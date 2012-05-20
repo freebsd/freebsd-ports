@@ -19,6 +19,8 @@ COMMENT=	A PECL extension to retrieve info about files
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+DEFAULT_PHP_VER=53
+IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--with-fileinfo=/usr
 
