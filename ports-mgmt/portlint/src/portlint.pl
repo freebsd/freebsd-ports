@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.241 2012/03/04 18:40:53 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.245 2012/05/20 05:12:07 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 9;
+my $micro = 10;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1195,8 +1195,8 @@ sub check_depends_syntax {
 
 	$ENV{'PORTSDIR'} //= $portsdir;
 
-	foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
-		$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)[?+]?=[ \t]*//;
+	foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
+		$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)[?+]?=[ \t]*//;
 		$j = $1;
 		$seen_depends{$j}++;
 		if ($j ne 'DEPENDS' &&
@@ -1222,7 +1222,7 @@ sub check_depends_syntax {
 
 			print "OK: checking dependency value for $j.\n"
 				if ($verbose);
-			if ($k =~ /\${((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)}/) {
+			if ($k =~ /\${((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)*DEPENDS)}/) {
 				&perror("WARN", $file, -1, "do not set $j to $k. ".
 					"Instead, explicity list out required $j dependencies.");
 			}
@@ -1327,6 +1327,13 @@ sub check_depends_syntax {
 					"port in *_DEPENDS directly.  ".
 					"Instead use USE_APACHE=VERSION, where VERSION can be ".
 					"found in \${PORTSDIR}/Mk/bsd.apache.mk.");
+			}
+
+			# Check for over-specific shared library dependencies
+			if ($j eq 'LIB_DEPENDS' && $m{'dep'} =~ m/(\.\d+$)/) {
+				&perror("WARN", $file, -1, "$j don't specify the " .
+					"ABI version number $1 in $m{'dep'} unless it is " .
+					"really necessary.");
 			}
 
 			# check port dir existence
@@ -1606,8 +1613,8 @@ sub checkmakefile {
 	print "OK: checking NO_CHECKSUM.\n" if ($verbose);
 	if ($whole =~ /\nNO_CHECKSUM/) {
 		my $lineno = &linenumber($`);
-		&perror("FATAL", $file, $lineno, "use of NO_CHECKSUM discouraged. ".
-			"it is intended to be a user variable.");
+		&perror("FATAL", $file, $lineno, "NO_CHECKSUM is a user ".
+			"variab;e and is not to be set in a port's Makefile.");
 	}
 
 	#
@@ -2885,10 +2892,10 @@ MAINTAINER COMMENT
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
 	@linestocheck = qw(
 EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
-FETCH_DEPENDS DEPENDS_TARGET
+TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	);
 
-	if ($tmp =~ /^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)DEPENDS/m) {
+	if ($tmp =~ /^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)DEPENDS/m) {
 		&checkearlier($file, $tmp, @varnames);
 
 		check_depends_syntax($tmp, $file);
