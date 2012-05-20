@@ -1,11 +1,11 @@
---- Makefile.in.orig	2010-07-12 20:04:30.000000000 +0200
-+++ Makefile.in	2010-07-12 20:05:35.000000000 +0200
-@@ -327,7 +327,7 @@
+--- Makefile.in.orig	2012-05-17 10:40:32.679878656 +0200
++++ Makefile.in	2012-05-17 10:40:50.695880481 +0200
+@@ -331,7 +331,7 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--SUBDIRS = doc ide-projects models src data examples tests
-+SUBDIRS = ide-projects models src data examples tests
+-SUBDIRS = doc models src data examples tests
++SUBDIRS = models src data examples tests
  ACLOCAL_AMFLAGS = -I m4
  EXTRA_DIST = \
          openvrml.pc.in \
