@@ -7,7 +7,7 @@
 
 PORTNAME=	mytop
 PORTVERSION=	1.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases
 MASTER_SITES=	http://jeremy.zawodny.com/mysql/mytop/
 
