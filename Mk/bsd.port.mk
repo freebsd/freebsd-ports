@@ -5665,9 +5665,6 @@ generate-plist:
 	done
 	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
-	@for i in $$(${ECHO_CMD} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||} ' ' | ${SED} -E -e 's|man([1-9ln])/([^/ ]+) |cat\1/\2 |g'); do \
-		${ECHO_CMD} "@unexec rm -f %D/$$i %D/$${i%.gz} %D/$${i%.bz2} %D/$$i.gz %D/$$i.bz2" >> ${TMPPLIST}; \
-	done
 .endfor
 	@if [ -f ${PLIST} ]; then \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
