@@ -7,7 +7,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.30.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
@@ -21,8 +21,6 @@ COMMENT?=	A portable Delphi-like IDE for the FreePascal compiler
 BUILD_DEPENDS?=	#
 RUN_DEPENDS?=	#
 
-BROKEN=		does not build
-
 PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -31,7 +29,10 @@ USE_GMAKE=	yes
 USE_GNOME=	#
 USE_FPC?=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
 		iconvenc pasjpeg x11
-MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 ${OPT_EXTRA}"
+MAKE_ENV=	OPT="-Sgic -Fu../lcl -Fu../lcl/widgetset -Fu../lcl/forms -Fu../../lcl \
+			-Fu../../lcl/forms -Fu../../lcl/widgetset -Fu../../lcl/nonwin32 \
+			-Fu. -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 \
+				${OPT_EXTRA} -Fi../lcl/include -Fi../../lcl/include"
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 
@@ -53,8 +54,10 @@ LCL_UNITS_DIR=	${LOCALBASE}/share/lazarus/lcl/units/${BUILDNAME}
 
 .if !defined(PKGNAMESUFFIX)
 BUILD_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
+		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
 		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
 RUN_DEPENDS+=	fpcres:${PORTSDIR}/lang/fpc-utils \
+		${LCL_UNITS_DIR}/alllclunits.ppu:${PORTSDIR}/editors/lazarus-lcl-units \
 		${LCL_UNITS_DIR}/nogui/interfaces.ppu:${PORTSDIR}/editors/lazarus-lcl-nogui
 
 USE_ICONV=	yes
