@@ -36,22 +36,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		LIBVERSION=2.2
 
+OPTIONS=	CUPS "Enable CUPS support" on
+
 .include <bsd.port.pre.mk>
 
-.if (defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)) && !defined(WITHOUT_CUPS)
+.if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
 CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=		gnomecups-1.0:${PORTSDIR}/print/libgnomecups
 PLIST_SUB+=		CUPS:=""
 .else
 CONFIGURE_ARGS+=	--without-cups
 PLIST_SUB+=		CUPS:="@comment "
-.endif
-
-pre-everything::
-.if !defined(WITH_CUPS)
-	@${ECHO_MSG} " Enable cups support by defining"
-	@${ECHO_MSG} " WITH_CUPS"
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
