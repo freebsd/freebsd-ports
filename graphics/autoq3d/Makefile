@@ -7,6 +7,7 @@
 
 PORTNAME=	autoq3d
 DISTVERSION=	1.40
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
 DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
@@ -17,6 +18,7 @@ COMMENT=	A complete QT quick 3d model editor program
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+USE_GL=		glu
 USE_ZIP=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui opengl \
