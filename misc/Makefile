@@ -123,7 +123,6 @@
     SUBDIR += freeguide
     SUBDIR += freeswitch-pizzademo
     SUBDIR += freeswitch-scripts
-    SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
