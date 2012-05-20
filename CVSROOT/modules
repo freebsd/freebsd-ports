@@ -1229,6 +1229,7 @@ boost-jam                       ports/devel/boost-jam
 boost-libs                      ports/devel/boost-libs
 boost-python-libs               ports/devel/boost-python-libs
 boost_build                     ports/devel/boost_build
+bophook                         ports/print/bophook
 bopm                            ports/irc/bopm
 boswars                         ports/games/boswars
 botan                           ports/security/botan
@@ -1832,7 +1833,6 @@ codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
 coin                            ports/graphics/Coin
 coinmp                          ports/math/coinmp
-coldsync                        ports/palm/coldsync
 cole                            ports/textproc/cole
 collectd                        ports/net-mgmt/collectd
 collectd5                       ports/net-mgmt/collectd5
@@ -3294,6 +3294,7 @@ evtviewer                       ports/sysutils/evtviewer
 exact                           ports/mail/exact
 exact-image                     ports/graphics/exact-image
 exaile                          ports/audio/exaile
+examplep                        ports/print/examplep
 excido                          ports/games/excido
 execline                        ports/lang/execline
 exempi                          ports/textproc/exempi
@@ -4401,6 +4402,7 @@ gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 gio-sharp                       ports/devel/gio-sharp
 giram                           ports/graphics/giram
+girara                          ports/x11-toolkits/girara
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
 git                             ports/devel/git
@@ -6077,6 +6079,7 @@ imlib2_loaders                  ports/graphics/imlib2_loaders
 imp-interpreter                 ports/lang/imp-interpreter
 impact                          ports/cad/impact
 import-pictures                 ports/graphics/import-pictures
+impossible_mission_puzzle       ports/games/impossible_mission_puzzle
 impress                         ports/editors/impress
 impresscms                      ports/www/impresscms
 impressive                      ports/graphics/impressive
@@ -6134,7 +6137,10 @@ ioncube                         ports/devel/ioncube
 ioping                          ports/sysutils/ioping
 ioquake3                        ports/games/ioquake3
 ioquake3-devel                  ports/games/ioquake3-devel
+ioquake3-devel-server           ports/games/ioquake3-devel-server
+ioquake3-server                 ports/games/ioquake3-server
 iourbanterror                   ports/games/iourbanterror
+iourbanterror-server            ports/games/iourbanterror-server
 iozone                          ports/benchmarks/iozone
 iozone21                        ports/benchmarks/iozone21
 ip4r                            ports/databases/ip4r
@@ -8701,7 +8707,6 @@ linrad                          ports/comms/linrad
 linrename                       ports/sysutils/linrename
 linsmith                        ports/science/linsmith
 linux-XnViewMP                  ports/graphics/linux-XnViewMP
-linux-ac3d                      ports/graphics/linux-ac3d
 linux-adobesvg                  ports/graphics/linux-adobesvg
 linux-afaapps                   ports/sysutils/linux-afaapps
 linux-allegro                   ports/devel/linux-allegro
@@ -10296,7 +10301,6 @@ nfdump                          ports/net-mgmt/nfdump
 nfdump-devel                    ports/net-mgmt/nfdump-devel
 nfsen                           ports/net-mgmt/nfsen
 nfsshell                        ports/net/nfsshell
-ng_car                          ports/net/ng_car
 ng_daphne                       ports/net/ng_daphne
 ng_ipacct                       ports/net-mgmt/ng_ipacct
 ng_mikrotik_eoip                ports/net/ng_mikrotik_eoip
@@ -10732,6 +10736,7 @@ openam                          ports/net/openam
 openarena                       ports/games/openarena
 openarena-data                  ports/games/openarena-data
 openarena-oax                   ports/games/openarena-oax
+openarena-server                ports/games/openarena-server
 openark-kit                     ports/databases/openark-kit
 openastromenace                 ports/games/openastromenace
 openbabel                       ports/science/openbabel
@@ -11805,7 +11810,6 @@ p5-Crypt-Camellia_PP            ports/security/p5-Crypt-Camellia_PP
 p5-Crypt-Chimera                ports/security/p5-Crypt-Chimera
 p5-Crypt-CipherSaber            ports/security/p5-Crypt-CipherSaber
 p5-Crypt-Cracklib               ports/security/p5-Crypt-Cracklib
-p5-Crypt-Cryptix                ports/security/p5-Crypt-Cryptix
 p5-Crypt-Ctr                    ports/security/p5-Crypt-Ctr
 p5-Crypt-DES                    ports/security/p5-Crypt-DES
 p5-Crypt-DES_EDE3               ports/security/p5-Crypt-DES_EDE3
@@ -12781,7 +12785,6 @@ p5-HTML-ResolveLink             ports/www/p5-HTML-ResolveLink
 p5-HTML-RewriteAttributes       ports/textproc/p5-HTML-RewriteAttributes
 p5-HTML-RobotsMETA              ports/www/p5-HTML-RobotsMETA
 p5-HTML-SBC                     ports/textproc/p5-HTML-SBC
-p5-HTML-Sanitizer               ports/www/p5-HTML-Sanitizer
 p5-HTML-Scrubber                ports/www/p5-HTML-Scrubber
 p5-HTML-Seamstress              ports/www/p5-HTML-Seamstress
 p5-HTML-Selector-XPath          ports/www/p5-HTML-Selector-XPath
@@ -12918,7 +12921,6 @@ p5-IMAP-Admin                   ports/mail/p5-IMAP-Admin
 p5-IMAP-Client                  ports/mail/p5-IMAP-Client
 p5-IMAP-Sieve                   ports/mail/p5-IMAP-Sieve
 p5-IMDB-Film                    ports/www/p5-IMDB-Film
-p5-IMDB-Movie                   ports/www/p5-IMDB-Movie
 p5-IO                           ports/devel/p5-IO
 p5-IO-AIO                       ports/devel/p5-IO-AIO
 p5-IO-All                       ports/devel/p5-IO-All
@@ -13803,7 +13805,6 @@ p5-Net-Server-Coro              ports/net/p5-Net-Server-Coro
 p5-Net-Server-Mail              ports/mail/p5-Net-Server-Mail
 p5-Net-Server-Mail-ESMTP-AUTH   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
 p5-Net-Server-SS-PreFork        ports/net/p5-Net-Server-SS-PreFork
-p5-Net-Services                 ports/net/p5-Net-Services
 p5-Net-SinFP                    ports/security/p5-Net-SinFP
 p5-Net-Stomp                    ports/net-im/p5-Net-Stomp
 p5-Net-Subnet                   ports/net/p5-Net-Subnet
@@ -13996,7 +13997,6 @@ p5-POE-Component-Spread         ports/net/p5-POE-Component-Spread
 p5-POE-Component-Syndicator     ports/devel/p5-POE-Component-Syndicator
 p5-POE-Component-TSTP           ports/devel/p5-POE-Component-TSTP
 p5-POE-Devel-Profiler           ports/devel/p5-POE-Devel-Profiler
-p5-POE-Exceptions               ports/devel/p5-POE-Exceptions
 p5-POE-Filter-Bzip2             ports/archivers/p5-POE-Filter-Bzip2
 p5-POE-Filter-HTTP-Parser       ports/www/p5-POE-Filter-HTTP-Parser
 p5-POE-Filter-IRCD              ports/irc/p5-POE-Filter-IRCD
@@ -16303,7 +16303,6 @@ p5-crypt-cfb                    ports/security/p5-Crypt-CFB
 p5-crypt-chimera                ports/security/p5-Crypt-Chimera
 p5-crypt-ciphersaber            ports/security/p5-Crypt-CipherSaber
 p5-crypt-cracklib               ports/security/p5-Crypt-Cracklib
-p5-crypt-cryptix                ports/security/p5-Crypt-Cryptix
 p5-crypt-ctr                    ports/security/p5-Crypt-Ctr
 p5-crypt-des                    ports/security/p5-Crypt-DES
 p5-crypt-des_ede3               ports/security/p5-Crypt-DES_EDE3
@@ -17323,7 +17322,6 @@ p5-html-resolvelink             ports/www/p5-HTML-ResolveLink
 p5-html-rewriteattributes       ports/textproc/p5-HTML-RewriteAttributes
 p5-html-robotsmeta              ports/www/p5-HTML-RobotsMETA
 p5-html-rssautodiscovery        ports/www/p5-HTML-RSSAutodiscovery
-p5-html-sanitizer               ports/www/p5-HTML-Sanitizer
 p5-html-sbc                     ports/textproc/p5-HTML-SBC
 p5-html-scrubber                ports/www/p5-HTML-Scrubber
 p5-html-seamstress              ports/www/p5-HTML-Seamstress
@@ -17470,7 +17468,6 @@ p5-imap-admin                   ports/mail/p5-IMAP-Admin
 p5-imap-client                  ports/mail/p5-IMAP-Client
 p5-imap-sieve                   ports/mail/p5-IMAP-Sieve
 p5-imdb-film                    ports/www/p5-IMDB-Film
-p5-imdb-movie                   ports/www/p5-IMDB-Movie
 p5-imlib2                       ports/graphics/p5-Imlib2
 p5-indirect                     ports/devel/p5-indirect
 p5-inline                       ports/devel/p5-Inline
@@ -18321,7 +18318,6 @@ p5-net-server-coro              ports/net/p5-Net-Server-Coro
 p5-net-server-mail              ports/mail/p5-Net-Server-Mail
 p5-net-server-mail-esmtp-auth   ports/security/p5-Net-Server-Mail-ESMTP-AUTH
 p5-net-server-ss-prefork        ports/net/p5-Net-Server-SS-PreFork
-p5-net-services                 ports/net/p5-Net-Services
 p5-net-sflow                    ports/net/p5-Net-sFlow
 p5-net-sftp                     ports/net/p5-Net-SFTP
 p5-net-sftp-foreign             ports/net/p5-Net-SFTP-Foreign
@@ -18727,7 +18723,6 @@ p5-poe-component-sslify         ports/security/p5-POE-Component-SSLify
 p5-poe-component-syndicator     ports/devel/p5-POE-Component-Syndicator
 p5-poe-component-tstp           ports/devel/p5-POE-Component-TSTP
 p5-poe-devel-profiler           ports/devel/p5-POE-Devel-Profiler
-p5-poe-exceptions               ports/devel/p5-POE-Exceptions
 p5-poe-filter-bzip2             ports/archivers/p5-POE-Filter-Bzip2
 p5-poe-filter-http-parser       ports/www/p5-POE-Filter-HTTP-Parser
 p5-poe-filter-ircd              ports/irc/p5-POE-Filter-IRCD
@@ -21104,7 +21099,6 @@ perl5.14                        ports/lang/perl5.14
 perl5.8                         ports/lang/perl5.8
 perlbal                         ports/www/perlbal
 perlconsole                     ports/devel/perlconsole
-perldap                         ports/net/perldap
 perltidy                        ports/devel/perltidy
 permute                         ports/textproc/permute
 personality                     ports/sysutils/personality
@@ -28889,6 +28883,7 @@ zabit                           ports/mail/zabit
 zangband                        ports/games/zangband
 zatacka                         ports/games/zatacka
 zathura                         ports/graphics/zathura
+zathura-pdf-poppler             ports/graphics/zathura-pdf-poppler
 zaz                             ports/games/zaz
 zbar                            ports/graphics/zbar
 zbase32                         ports/converters/zbase32
