@@ -15,12 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ClearSilver view class for Catalyst
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/ClearSilver.pm:${PORTSDIR}/www/p5-ClearSilver \
+BUILD_DEPENDS=	p5-ClearSilver>=0:${PORTSDIR}/www/p5-ClearSilver \
 		p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		${SITE_PERL}/${PERL_ARCH}/Data/Structure/Util.pm:${PORTSDIR}/devel/p5-Data-Structure-Util \
-		${SITE_PERL}/Class/C3.pm:${PORTSDIR}/devel/p5-Class-C3 \
-		${SITE_PERL}/Catalyst/View/Templated.pm:${PORTSDIR}/www/p5-Catalyst-View-Templated
+		p5-Data-Structure-Util>=0:${PORTSDIR}/devel/p5-Data-Structure-Util \
+		p5-Class-C3>=0:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-Catalyst-View-Templated>=0:${PORTSDIR}/www/p5-Catalyst-View-Templated
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Catalyst-View-Template-Declare>=0:${PORTSDIR}/www/p5-Catalyst-View-Template-Declare
 
 PERL_CONFIGURE=	yes
 
