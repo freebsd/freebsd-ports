@@ -1521,6 +1521,7 @@
     SUBDIR += py-plone.app.jquerytools
     SUBDIR += py-plone.app.kss
     SUBDIR += py-plone.app.layout
+    SUBDIR += py-plone.app.ldap
     SUBDIR += py-plone.app.linkintegrity
     SUBDIR += py-plone.app.locales
     SUBDIR += py-plone.app.portlets
