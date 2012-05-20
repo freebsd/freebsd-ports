@@ -23,6 +23,9 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 		gdbm.4:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
+USERS?=		${PORTNAME}
+GROUPS?=	${USERS}
+
 USE_GNOME?=	gnomehack ltverhack glib20 intltool
 USE_GETTEXT=	yes
 USE_GNOME_SUBR=	yes
@@ -169,9 +172,6 @@ avahi-post-install:
 .if ${AVAHI_SLAVE}=="no"
 	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
 		${LOCALBASE}/share/dbus-1/system-services
-.endif
-.if !defined(PACKAGE_BUILDING) && (${AVAHI_SLAVE}=="no" || ${AVAHI_SLAVE}=="autoipd")
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.post.mk>
