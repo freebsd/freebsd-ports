@@ -326,8 +326,6 @@ include/Poco/Unicode.h
 include/Poco/UnicodeConverter.h
 include/Poco/UniqueAccessExpireCache.h
 include/Poco/UniqueAccessExpireLRUCache.h
-include/Poco/._.DS_Store
-include/Poco/.DS_Store
 include/Poco/UniqueAccessExpireStrategy.h
 include/Poco/UniqueExpireCache.h
 include/Poco/UniqueExpireLRUCache.h
