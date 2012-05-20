@@ -8,6 +8,7 @@
 
 PORTNAME=	meshlab
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MeshLab%20v${PORTVERSION}/
 DISTNAME=	MeshLabSrc_AllInc_v123a
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A tool for processing and editing 3D triangular meshes
 
-USE_GL=		glew
+USE_GL=		glew glu
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake corelib gui xml opengl network moc uic rcc
 
