@@ -13,6 +13,7 @@
 %%WWWDIR%%/bin/attach
 %%WWWDIR%%/bin/changes
 %%WWWDIR%%/bin/compare
+%%WWWDIR%%/bin/compareauth
 %%WWWDIR%%/bin/configure
 %%WWWDIR%%/bin/edit
 %%WWWDIR%%/bin/login
@@ -20,12 +21,14 @@
 %%WWWDIR%%/bin/manage
 %%WWWDIR%%/bin/oops
 %%WWWDIR%%/bin/preview
+%%WWWDIR%%/bin/previewauth
 %%WWWDIR%%/bin/rdiff
 %%WWWDIR%%/bin/rdiffauth
 %%WWWDIR%%/bin/register
 %%WWWDIR%%/bin/rename
 %%WWWDIR%%/bin/resetpasswd
 %%WWWDIR%%/bin/rest
+%%WWWDIR%%/bin/restauth
 %%WWWDIR%%/bin/save
 %%WWWDIR%%/bin/search
 %%WWWDIR%%/bin/setlib.cfg
@@ -34,6 +37,7 @@
 %%WWWDIR%%/bin/view
 %%WWWDIR%%/bin/viewauth
 %%WWWDIR%%/bin/viewfile
+%%WWWDIR%%/bin/viewfileauth
 @unexec if [ ! -s %%WWWDIR%%/data/.htpasswd ]; then rm -f %D/%%WWWDIR%%/data/.htpasswd; fi
 %%WWWDIR%%/data/Main/AdminGroup.txt
 %%WWWDIR%%/data/Main/AdminUser.txt
@@ -62,7 +66,6 @@
 %%WWWDIR%%/data/Main/WebRss.txt
 %%WWWDIR%%/data/Main/WebSearch.txt
 %%WWWDIR%%/data/Main/WebSearchAdvanced.txt
-%%WWWDIR%%/data/Main/WebStatistics.txt
 %%WWWDIR%%/data/Main/WebTopicList.txt
 %%WWWDIR%%/data/Main/WikiGroups.txt
 %%WWWDIR%%/data/Main/WikiGuest.txt
@@ -83,7 +86,6 @@
 %%WWWDIR%%/data/Sandbox/WebRss.txt
 %%WWWDIR%%/data/Sandbox/WebSearch.txt
 %%WWWDIR%%/data/Sandbox/WebSearchAdvanced.txt
-%%WWWDIR%%/data/Sandbox/WebStatistics.txt
 %%WWWDIR%%/data/Sandbox/WebTopicList.txt
 %%WWWDIR%%/data/System/ACRONYM.txt
 %%WWWDIR%%/data/System/AccessControl.txt
@@ -115,6 +117,7 @@
 %%WWWDIR%%/data/System/DefaultPreferences.txt
 %%WWWDIR%%/data/System/DefaultPreferencesForm.txt
 %%WWWDIR%%/data/System/DefaultUserRegistration.txt
+%%WWWDIR%%/data/System/DefaultWebStatistics.txt
 %%WWWDIR%%/data/System/DeveloperDocumentationCategory.txt
 %%WWWDIR%%/data/System/DevelopingPlugins.txt
 %%WWWDIR%%/data/System/DocumentGraphics.txt
@@ -194,12 +197,14 @@
 %%WWWDIR%%/data/System/JQueryHoverIntent.txt
 %%WWWDIR%%/data/System/JQueryInnerFade.txt
 %%WWWDIR%%/data/System/JQueryLiveQuery.txt
+%%WWWDIR%%/data/System/JQueryLoader.txt
 %%WWWDIR%%/data/System/JQueryLocalScroll.txt
 %%WWWDIR%%/data/System/JQueryMaskedInput.txt
 %%WWWDIR%%/data/System/JQueryMasonry.txt
 %%WWWDIR%%/data/System/JQueryMedia.txt
 %%WWWDIR%%/data/System/JQueryMetadata.txt
 %%WWWDIR%%/data/System/JQueryPNotify.txt
+%%WWWDIR%%/data/System/JQueryPlaceholder.txt
 %%WWWDIR%%/data/System/JQueryPlugin.txt
 %%WWWDIR%%/data/System/JQueryPopUpWindow.txt
 %%WWWDIR%%/data/System/JQueryQueryObject.txt
@@ -213,11 +218,14 @@
 %%WWWDIR%%/data/System/JQuerySuperfish.txt
 %%WWWDIR%%/data/System/JQuerySupersubs.txt
 %%WWWDIR%%/data/System/JQueryTabpane.txt
+%%WWWDIR%%/data/System/JQueryTmpl.txt
 %%WWWDIR%%/data/System/JQueryTextboxList.txt
 %%WWWDIR%%/data/System/JQueryThemeSwitcher.txt
 %%WWWDIR%%/data/System/JQueryTooltip.txt
 %%WWWDIR%%/data/System/JQueryTreeview.txt
 %%WWWDIR%%/data/System/JQueryUI.txt
+%%WWWDIR%%/data/System/JQueryUIAutocomplete.txt
+%%WWWDIR%%/data/System/JQueryUIDialog.txt
 %%WWWDIR%%/data/System/JQueryValidate.txt
 %%WWWDIR%%/data/System/JQueryWikiWord.txt
 %%WWWDIR%%/data/System/JSCalendarContrib.txt
@@ -267,6 +275,7 @@
 %%WWWDIR%%/data/System/PrintSkin.txt
 %%WWWDIR%%/data/System/ProjectContributor.txt
 %%WWWDIR%%/data/System/ProjectLogos.txt
+%%WWWDIR%%/data/System/PublishedAPI.txt
 %%WWWDIR%%/data/System/QuerySearch.txt
 %%WWWDIR%%/data/System/QuietSave.txt
 %%WWWDIR%%/data/System/ReferenceManual.txt
@@ -284,8 +293,10 @@
 %%WWWDIR%%/data/System/SiteChanges.txt
 %%WWWDIR%%/data/System/SiteMap.txt
 %%WWWDIR%%/data/System/SitePermissions.txt
+%%WWWDIR%%/data/System/SiteToolStatistics.txt
 %%WWWDIR%%/data/System/SiteTools.txt
 %%WWWDIR%%/data/System/SkinBrowser.txt
+%%WWWDIR%%/data/System/SkinTemplateTokens.txt
 %%WWWDIR%%/data/System/SkinTemplateViewTemplate.txt
 %%WWWDIR%%/data/System/SkinTemplates.txt
 %%WWWDIR%%/data/System/Skins.txt
@@ -461,7 +472,9 @@
 %%WWWDIR%%/data/System/VarREMOTEUSER.txt
 %%WWWDIR%%/data/System/VarRENDERLIST.txt
 %%WWWDIR%%/data/System/VarRENDERZONE.txt
+%%WWWDIR%%/data/System/VarREVARG.txt
 %%WWWDIR%%/data/System/VarREVINFO.txt
+%%WWWDIR%%/data/System/VarREVTITLE.txt
 %%WWWDIR%%/data/System/VarS.txt
 %%WWWDIR%%/data/System/VarSCRIPTNAME.txt
 %%WWWDIR%%/data/System/VarSCRIPTSUFFIX.txt
@@ -547,7 +560,7 @@
 %%WWWDIR%%/data/System/WebSearch.txt
 %%WWWDIR%%/data/System/WebSearchAdvanced.txt
 %%WWWDIR%%/data/System/WebSiteTools.txt
-%%WWWDIR%%/data/System/WebStatistics.txt
+%%WWWDIR%%/data/System/WebStatisticsTemplate.txt
 %%WWWDIR%%/data/System/WebTemplateTopics.txt
 %%WWWDIR%%/data/System/WebTopBarExample.txt
 %%WWWDIR%%/data/System/WebTopicCreator.txt
@@ -578,7 +591,6 @@
 %%WWWDIR%%/data/TWiki/WebRss.txt
 %%WWWDIR%%/data/TWiki/WebSearch.txt
 %%WWWDIR%%/data/TWiki/WebSearchAdvanced.txt
-%%WWWDIR%%/data/TWiki/WebStatistics.txt
 %%WWWDIR%%/data/TWiki/WebTopicList.txt
 %%WWWDIR%%/data/Trash/TrashAttachment.txt
 %%WWWDIR%%/data/Trash/WebAtom.txt
@@ -591,7 +603,6 @@
 %%WWWDIR%%/data/Trash/WebRss.txt
 %%WWWDIR%%/data/Trash/WebSearch.txt
 %%WWWDIR%%/data/Trash/WebSearchAdvanced.txt
-%%WWWDIR%%/data/Trash/WebStatistics.txt
 %%WWWDIR%%/data/Trash/WebTopicList.txt
 %%WWWDIR%%/data/_default/WebAtom.txt
 %%WWWDIR%%/data/_default/WebChanges.txt
@@ -604,14 +615,12 @@
 %%WWWDIR%%/data/_default/WebRss.txt
 %%WWWDIR%%/data/_default/WebSearch.txt
 %%WWWDIR%%/data/_default/WebSearchAdvanced.txt
-%%WWWDIR%%/data/_default/WebStatistics.txt
 %%WWWDIR%%/data/_default/WebTopicList.txt
 %%WWWDIR%%/data/_empty/WebPreferences.txt
 %%WWWDIR%%/data/mime.types
 %%WWWDIR%%/foswiki_httpd_conf.txt
 %%WWWDIR%%/index.html
 %%WWWDIR%%/lib/Assert.pm
-%%WWWDIR%%/lib/DEPENDENCIES
 %%WWWDIR%%/lib/Foswiki.pm
 %%WWWDIR%%/lib/Foswiki.spec
 %%WWWDIR%%/lib/Foswiki/AccessControlException.pm
@@ -633,14 +642,27 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/CGISetup.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/Debug.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/DependencyFilter.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/RootDir.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/DBFile.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache/NameSpace.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/CacheManager.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/DataDir.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/DefaultUrlHost.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/DispScriptUrlPath.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Email/EnableSMIME.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Email/MailMethod.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Email/SmimeCertificateFile.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Email/SmimeKeyFile.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/AutoDetect.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/Encoding.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/FileName.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd/LockFileName.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/HttpCompress.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Introduction.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Autocomplete/Enabled.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Chili/Enabled.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Shake/Enabled.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Nifty/Enabled.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/JQueryVersion.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/LocalesDir.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Log/Dir.pm
@@ -682,11 +704,13 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register/AllowLoginName.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register/NeedVerification.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/RegistrationApprovals.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/SMTP/MAILHOST.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/SMTP/Username.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/SafeEnvPath.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptDir.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptSuffix.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptUrlPath.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptUrlPaths/view.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Sessions/ExpireAfter.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site/CharSet.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site/Locale.pm
@@ -694,6 +718,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Store/FgrepCmd.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Store/Implementation.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Store/SearchAlgorithm.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/SwitchBoard/compareauth.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/TemplateDir.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/TemplatePath.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/ToolsDir.pm
@@ -712,11 +737,13 @@
 %%WWWDIR%%/lib/Foswiki/Configure/GlobalControls.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Item.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Load.pm
+%%WWWDIR%%/lib/Foswiki/Logger/PlainFile/Obfuscating.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Package.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Pluggable.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Pluggables/FINDEXTENSIONS.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Pluggables/LANGUAGES.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Pluggables/PLUGINS.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Pluggables/TESTEMAIL.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Root.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Section.pm
 %%WWWDIR%%/lib/Foswiki/Configure/TemplateParser.pm
@@ -750,6 +777,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/UIs/PLUGINS.pm
 %%WWWDIR%%/lib/Foswiki/Configure/UIs/Root.pm
 %%WWWDIR%%/lib/Foswiki/Configure/UIs/Section.pm
+%%WWWDIR%%/lib/Foswiki/Configure/UIs/TESTEMAIL.pm
 %%WWWDIR%%/lib/Foswiki/Configure/UIs/UPDATE.pm
 %%WWWDIR%%/lib/Foswiki/Configure/UIs/Value.pm
 %%WWWDIR%%/lib/Foswiki/Configure/UIs/Welcome.pm
@@ -799,6 +827,8 @@
 %%WWWDIR%%/lib/Foswiki/Configure/templates/pagebegin.tmpl
 %%WWWDIR%%/lib/Foswiki/Configure/templates/pageend.tmpl
 %%WWWDIR%%/lib/Foswiki/Configure/templates/sanity.tmpl
+%%WWWDIR%%/lib/Foswiki/Configure/templates/sanitypw.tmpl
+%%WWWDIR%%/lib/Foswiki/Configure/templates/testemailintro.tmpl
 %%WWWDIR%%/lib/Foswiki/Configure/templates/section.tmpl
 %%WWWDIR%%/lib/Foswiki/Contrib/CompareRevisionsAddOn.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/CompareRevisionsAddOn/Compare.pm
@@ -809,7 +839,6 @@
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Change.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Config.spec
-%%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Constants.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Subscriber.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/Subscription.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib/UpData.pm
@@ -818,6 +847,8 @@
 %%WWWDIR%%/lib/Foswiki/Contrib/TipsContrib.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib.pm
 %%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib/Config.spec
+%%WWWDIR%%/lib/Foswiki/Contrib/core/DEPENDENCIES
+%%WWWDIR%%/lib/Foswiki/Contrib/core/MANIFEST
 %%WWWDIR%%/lib/Foswiki/Engine.pm
 %%WWWDIR%%/lib/Foswiki/Engine/CGI.pm
 %%WWWDIR%%/lib/Foswiki/Engine/CLI.pm
@@ -957,6 +988,7 @@
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/HOVERINTENT.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/INNERFADE.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/LIVEQUERY.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/LOADER.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/LOCALSCROLL.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/MASKEDINPUT.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/MASONRY.pm
@@ -965,6 +997,7 @@
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/NIFTY.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/PNOTIFY.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/POPUPWINDOW.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/PLACEHOLDER.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/Plugin.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/Plugins.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/QUERYOBJECT.pm
@@ -982,7 +1015,18 @@
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/THEMESWITCHER.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/TOOLTIP.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/TREEVIEW.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/TMPL.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/PROGRESSBAR.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/SLIDER.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/TABS.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/BUTTON.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/DATEPICKER.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/AUTOCOMPLETE.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/DRAGGABLE.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/DIALOG.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/ACCORDION.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI/RESIZABLE.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/VALIDATE.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/WIKIWORD.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/MailerContribPlugin.pm
@@ -1130,6 +1174,7 @@
 %%WWWDIR%%/locale/pl.po
 %%WWWDIR%%/locale/pt-br.po
 %%WWWDIR%%/locale/pt.po
+%%WWWDIR%%/locale/ro.po
 %%WWWDIR%%/locale/ru.po
 %%WWWDIR%%/locale/sv.po
 %%WWWDIR%%/locale/tr.po
@@ -1268,6 +1313,8 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/closed.png
 %%WWWDIR%%/pub/System/DocumentGraphics/code.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/code.png
+%%WWWDIR%%/pub/System/DocumentGraphics/cog.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/cog.png
 %%WWWDIR%%/pub/System/DocumentGraphics/comments.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/comments.png
 %%WWWDIR%%/pub/System/DocumentGraphics/connections.gif
@@ -1803,6 +1850,8 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/traffic-light.png
 %%WWWDIR%%/pub/System/DocumentGraphics/trash.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/trash.png
+%%WWWDIR%%/pub/System/DocumentGraphics/trash-small.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/trash-small.png
 %%WWWDIR%%/pub/System/DocumentGraphics/ttf.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/ttf.png
 %%WWWDIR%%/pub/System/DocumentGraphics/tumblr.gif
@@ -3968,6 +4017,8 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-af.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ar.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ar.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ar-DZ.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ar-DZ.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-az.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-az.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-bg.js
@@ -3984,8 +4035,12 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-de.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-el.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-el.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-en-AU.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-en-AU.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-en-GB.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-en-GB.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-en-NZ.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-en-NZ.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-eo.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-eo.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-es.js
@@ -4004,6 +4059,8 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-fr-CH.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-fr.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-fr.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-gl.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-gl.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-he.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-he.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-hr.js
@@ -4028,6 +4085,8 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-lt.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-lv.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-lv.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ml.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ml.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ms.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ms.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-nl.js
@@ -4036,8 +4095,12 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-no.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-pl.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-pl.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-pt.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-pt.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-pt-BR.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-pt-BR.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-rm.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-rm.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ro.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ro.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ru.js
@@ -4058,6 +4121,8 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-ta.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-th.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-th.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-tj.js
+%%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-tj.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-tr.js
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-tr.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/i18n/jquery.ui.datepicker-uk.js
@@ -4082,8 +4147,33 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.4.4.js
 %%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.4.4.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.4.4.uncompressed.js
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery.noconflict.js
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery.patch
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.1.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.1.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.1.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.2.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.2.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.2.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.5.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.1.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.1.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.1.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.2.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.2.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.2.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.3.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.3.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.3.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.4.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.4.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.6.4.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.7.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.7.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.7.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.7.1.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.7.1.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-1.7.1.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/autocomplete/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/autocomplete/jquery.autocomplete.css
@@ -4235,6 +4325,10 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/livequery/jquery.livequery.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/livequery/jquery.livequery.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/livequery/jquery.livequery.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/loader/jquery.loader.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/loader/jquery.loader.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/loader/jquery.loader.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/loader/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/localscroll/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/localscroll/jquery.localscroll.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/localscroll/jquery.localscroll.js.gz
@@ -4266,6 +4360,16 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/mediaplayer/player.swf
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/mediaplayer/swfobject.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/mediaplayer/yt.swf
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/chrome.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/fs31.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/fs35.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/fs37.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/fs38.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/fs39.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/iskin.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/simple.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/stormtrooper.zip
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins/whotube.zip
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/metadata/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/metadata/jquery.metadata.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/metadata/jquery.metadata.js.gz
@@ -4283,6 +4387,10 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/nifty/jquery.rounded.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/nifty/jquery.rounded.uncompressed.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/nifty/jquery.rounded.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/placeholder/jquery.placeholder.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/placeholder/jquery.placeholder.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/placeholder/jquery.placeholder.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/placeholder/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/pnotify/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/pnotify/jquery.pnotify.default.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/pnotify/jquery.pnotify.default.uncompressed.css
@@ -4412,6 +4520,14 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/textboxlist/jquery.textboxlist.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/textboxlist/jquery.textboxlist.uncompressed.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/textboxlist/jquery.textboxlist.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/images/ui-icons_666666_256x240.png
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/images/x.png
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/jquery-ui.css
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/jquery-ui.css.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher/themeswitcher.init.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher/themeswitcher.init.js.gz
@@ -4419,6 +4535,10 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher/themeswitcher.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher/themeswitcher.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher/themeswitcher.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/tmpl/jquery.tmpl.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/tmpl/jquery.tmpl.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/tmpl/jquery.tmpl.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/tmpl/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/tooltip/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/tooltip/jquery.tooltip.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/tooltip/jquery.tooltip.css.gz
@@ -4464,6 +4584,9 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.additional-methods.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.foswiki-methods.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.init.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.methods.js
@@ -4473,6 +4596,13 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_ar.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_bg.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_cn.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_ca.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_ge.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_ja.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_si.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_sr.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_th.js
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_vi.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_cs.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_da.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/localization/messages_de.js
@@ -4645,6 +4775,36 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.sortable.js
 %%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.tabs.js
 %%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.widget.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.accordion.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.accordion.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.accordion.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.autocomplete.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.autocomplete.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.autocomplete.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.button.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.button.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.button.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.datepicker.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.datepicker.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.datepicker.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.dialog.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.dialog.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.dialog.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.draggable.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.draggable.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.draggable.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.progressbar.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.progressbar.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.progressbar.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.resizable.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.resizable.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.resizable.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.slider.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.slider.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.slider.init.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.tabs.init.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.tabs.init.js
+%%WWWDIR%%/pub/System/JQueryPlugin/ui/jquery.ui.tabs.init.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/wikiringlogo40x40.png
 %%WWWDIR%%/pub/System/JQueryMasonry/jQuery-Masonry.jpg
 %%WWWDIR%%/pub/System/JQuerySlimbox/IMG_1190.JPG
@@ -4718,6 +4878,36 @@
 %%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-sv.js
 %%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-tr.js
 %%WWWDIR%%/pub/System/JSCalendarContrib/lang/calendar-zh.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar_src.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar.js.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-blue_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-blue.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-blue2_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-blue2.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-brown_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-brown.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-green_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-green.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-large_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-large.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-large.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-setup_src.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-setup.js.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-system_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-system.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-tas_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-tas.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-1_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-1.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-2_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-2.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-cold-1_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-cold-1.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-cold-2_src.css
+%%WWWDIR%%/pub/System/JSCalendarContrib/calendar-win2k-cold-2.css.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/foswiki_src.js
+%%WWWDIR%%/pub/System/JSCalendarContrib/foswiki.js.gz
+%%WWWDIR%%/pub/System/JSCalendarContrib/menuarrow3.gif
 %%WWWDIR%%/pub/System/JSCalendarContrib/lang/cn_utf8.js
 %%WWWDIR%%/pub/System/JSCalendarContrib/menuarrow.gif
 %%WWWDIR%%/pub/System/JSCalendarContrib/menuarrow2.gif
@@ -4748,6 +4938,9 @@
 %%WWWDIR%%/pub/System/JavascriptFiles/foswikiCSS.js
 %%WWWDIR%%/pub/System/JavascriptFiles/foswikiCSS.js.gz
 %%WWWDIR%%/pub/System/JavascriptFiles/foswikiCSS_src.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiDate.js
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiDate.js.gz
+%%WWWDIR%%/pub/System/JavascriptFiles/foswikiDate_src.js
 %%WWWDIR%%/pub/System/JavascriptFiles/foswikiEvent.js
 %%WWWDIR%%/pub/System/JavascriptFiles/foswikiEvent.js.gz
 %%WWWDIR%%/pub/System/JavascriptFiles/foswikiEvent_src.js
@@ -5094,6 +5287,9 @@
 %%WWWDIR%%/pub/System/OriginalDocumentGraphics/xsl.gif
 %%WWWDIR%%/pub/System/OriginalDocumentGraphics/ying-yang.gif
 %%WWWDIR%%/pub/System/OriginalDocumentGraphics/zip.gif
+%%WWWDIR%%/pub/System/PatternSkin/foswiki_edit_01x01_src.js
+%%WWWDIR%%/pub/System/PatternSkin/foswiki_edit_01x01.js
+%%WWWDIR%%/pub/System/PatternSkin/foswiki_edit_01x01.js.gz
 %%WWWDIR%%/pub/System/PatternSkin/header1.gif
 %%WWWDIR%%/pub/System/PatternSkin/header2.gif
 %%WWWDIR%%/pub/System/PatternSkin/header3.gif
@@ -5197,6 +5393,12 @@
 %%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/colors.css
 %%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/colors.css.gz
 %%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/colors_src.css
+%%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/column_none_src.css
+%%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/column_none.css
+%%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/column_none.css.gz
+%%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/column_right_src.css
+%%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/column_right.css
+%%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/column_right.css.gz
 %%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/header-left.gif
 %%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/header.gif
 %%WWWDIR%%/pub/System/PatternSkinThemeFatWilly/layout.css
@@ -5292,9 +5494,54 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki_tiny.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki_tiny.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki_tiny_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswiki/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswiki/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswiki/editor_plugin.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/attach.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/attach_error_autoinc.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/colours.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/css/popup_src.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/css/popup.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/css/popup.css.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/editor_plugin.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img/attach.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img/colour.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img/exdent.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img/hide.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img/indent.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img/tt.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts/attach_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts/attach.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts/attach.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts/colour_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts/colour.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts/colour.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/langs/en.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/langs/en_dlg.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/langs/en_dlg.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/css/foswikiimage_src.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/css/foswikiimage.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/css/foswikiimage.css.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/editor_plugin.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/image.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/img/sample.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/js/image.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/js/image.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/langs/en.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/langs/en.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/langs/en_dlg.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/langs/en_dlg.js.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/readme.txt
 %%WWWDIR%%/pub/System/TinyMCEPlugin/screenshot.png
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/LICENSE.TXT
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/changelog.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/accessibility.html
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/css/content.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/css/content.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/css/word.css
@@ -5315,6 +5562,7 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/logo_over.jpg
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/sample.avi
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/sample.dcr
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/sample.flv
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/sample.mov
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/sample.ram
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/media/sample.rm
@@ -5324,7 +5572,6 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/skins.html
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/layout1.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/templates/snippet1.htm
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/translate.html
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/word.html
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/jquery.tinymce.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/jquery.tinymce.js.gz
@@ -5365,6 +5612,9 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autolink/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
@@ -5417,47 +5667,9 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs/en_dlg.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswiki/editor_plugin.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswiki/editor_plugin.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswiki/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/attach.htm
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/attach_error_autoinc.htm
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/colours.htm
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup.css.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css/popup_src.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/editor_plugin.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/editor_plugin.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/img/attach.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/img/colour.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/img/hide.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/img/tt.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/attach.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/attach.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/attach_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/colour.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/colour.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts/colour_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en_dlg.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs/en_dlg.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/foswikiimage.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/foswikiimage.css.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css/foswikiimage_src.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/image.htm
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/img/sample.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/js/image.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/js/image.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs/en.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs/en.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs/en_dlg.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs/en_dlg.js.gz
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/readme.txt
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example_dependency/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example_dependency/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example_dependency/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
@@ -5497,20 +5709,14 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css/content.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css/content.css.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/lists/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css/media.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css/media.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/flash.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/flv_player.swf
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/quicktime.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/realmedia.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/shockwave.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/trans.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img/windowsmedia.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js/media.js
@@ -5518,19 +5724,16 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs/en_dlg.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs/en_dlg.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/media.htm
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/moxieplayer.swf
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/css/content.css
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/css/content.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/editor_plugin_src.js
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/pagebreak.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/img/trans.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/editor_plugin_src.js
@@ -5660,6 +5863,16 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/editor_template.js.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/editor_template_src.js
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/flash.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/iframe.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/pagebreak.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/quicktime.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/realmedia.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/shockwave.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/trans.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/video.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/windowsmedia.gif
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/shortcuts.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/image.htm
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/colorpicker.jpg
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/img/icons.gif
@@ -5694,6 +5907,12 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img/tabs.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/ui.css.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/content.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/content.css.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/dialog.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/dialog.css.gz
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/ui.css
+%%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast/ui.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/content.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7/dialog.css
@@ -5784,6 +6003,11 @@
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/root-htaccess.txt
 %%WWWDIR%%/subdir-htaccess.txt
+%%WWWDIR%%/templates/attachtables.pattern01x00.tmpl
+%%WWWDIR%%/templates/backlinks.pattern01x00.tmpl
+%%WWWDIR%%/templates/foswiki.pattern01x00.tmpl
+%%WWWDIR%%/templates/oops.pattern01x00.tmpl
+%%WWWDIR%%/templates/search.pattern01x00.tmpl
 %%WWWDIR%%/templates/addform.tmpl
 %%WWWDIR%%/templates/attach.pattern.tmpl
 %%WWWDIR%%/templates/attach.tmpl
@@ -5940,6 +6164,7 @@
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/o2k7
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/img
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins/highcontrast
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/skins
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/langs
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/themes/advanced/js
@@ -5979,16 +6204,16 @@
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/langs
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste/js
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/paste
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/img
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak/css
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/pagebreak
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/noneditable
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/nonbreaking
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/langs
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/js
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/img
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media/css
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/media
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/lists
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example_dependency
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/autolink
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/legacyoutput
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/layer
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/insertdatetime
@@ -6002,17 +6227,6 @@
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/js
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage/css
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/fullpage
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/langs
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/js
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/img
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage/css
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikiimage
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/langs
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/jscripts
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/img
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons/css
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswikibuttons
-@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/foswiki
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/langs
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/js
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/jscripts/tiny_mce/plugins/example/img
@@ -6051,6 +6265,18 @@
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples/css
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce/examples
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/tinymce
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/js
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage/img
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikiimage
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/css
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/img
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/jscripts
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons/langs
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswikibuttons
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins/foswiki
+@dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin/plugins
 @dirrm %%WWWDIR%%/pub/System/TinyMCEPlugin
 @dirrm %%WWWDIR%%/pub/System/SmiliesPlugin
 @dirrm %%WWWDIR%%/pub/System/SlideShowPlugin
@@ -6092,6 +6318,8 @@
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/redmond
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/lightness/images
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/lightness
+@dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki/images
+@dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/foswiki
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/flickr/images
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/flickr
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/themes/base/images
@@ -6103,6 +6331,7 @@
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/treeview/images
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/treeview
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/tooltip
+@dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/tmpl
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/themeswitcher
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/textboxlist
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/tabpane
@@ -6118,13 +6347,16 @@
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/queryobject
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/popupwindow
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/pnotify
+@dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/placeholder
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/nifty
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/metadata
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/mediaplayer
+@dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/media/skins
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/media
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/masonry
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/maskedinput
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/localscroll
+@dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/loader
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/livequery
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/innerfade
 @dirrm %%WWWDIR%%/pub/System/JQueryPlugin/plugins/hoverintent
@@ -6191,6 +6423,7 @@
 @dirrm %%WWWDIR%%/lib/Foswiki/Plugins/TWikiCompatibilityPlugin
 @dirrm %%WWWDIR%%/lib/Foswiki/Plugins/SpreadSheetPlugin
 @dirrm %%WWWDIR%%/lib/Foswiki/Plugins/SlideShowPlugin
+@dirrm %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin/UI
 @dirrm %%WWWDIR%%/lib/Foswiki/Plugins/JQueryPlugin
 @dirrm %%WWWDIR%%/lib/Foswiki/Plugins/EditTablePlugin
 @dirrm %%WWWDIR%%/lib/Foswiki/Plugins/CommentPlugin
@@ -6199,6 +6432,7 @@
 @dirrm %%WWWDIR%%/lib/Foswiki/Net
 @dirrm %%WWWDIR%%/lib/Foswiki/Macros
 @dirrm %%WWWDIR%%/lib/Foswiki/LoginManager
+@dirrm %%WWWDIR%%/lib/Foswiki/Logger/PlainFile
 @dirrm %%WWWDIR%%/lib/Foswiki/Logger
 @dirrm %%WWWDIR%%/lib/Foswiki/Iterator
 @dirrm %%WWWDIR%%/lib/Foswiki/Infix
@@ -6207,6 +6441,7 @@
 @dirrm %%WWWDIR%%/lib/Foswiki/I18N
 @dirrm %%WWWDIR%%/lib/Foswiki/Form
 @dirrm %%WWWDIR%%/lib/Foswiki/Engine
+@dirrm %%WWWDIR%%/lib/Foswiki/Contrib/core
 @dirrm %%WWWDIR%%/lib/Foswiki/Contrib/TopicUserMappingContrib
 @dirrm %%WWWDIR%%/lib/Foswiki/Contrib/MailerContrib
 @dirrm %%WWWDIR%%/lib/Foswiki/Contrib/JSCalendarContrib
@@ -6219,8 +6454,10 @@
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/TemplateParser
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Pluggables
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Validation
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/SwitchBoard
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Store
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Site
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/ScriptUrlPaths
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Sessions
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/SMTP
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Register
@@ -6230,8 +6467,14 @@
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Plugins
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/PROXY
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Log
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Autocomplete
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Chili
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Shake
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins/Nifty
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin/Plugins
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/JQueryPlugin
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Htpasswd
+@dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Email
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Cache
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure/Checkers
 @dirrm %%WWWDIR%%/lib/Foswiki/Configure

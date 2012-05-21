@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foswiki
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -78,6 +78,8 @@ SUB_FILES+=	LocalSite.cfg
 
 post-patch:
 	@${RM} -rf ${WRKSRC}/lib/CPAN
+	@${MV} ${WRKSRC}/bin-htaccess.txt ${WRKSRC}/bin/.htaccess.txt
+	@${CP} ${WRKSRC}/subdir-htaccess.txt ${WRKSRC}/working/.htaccess
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -i "" \
 		-e "s|^#[[:space:]]*\(.*\)/home/httpd/foswiki|\1${WWWDIR}|g" \
