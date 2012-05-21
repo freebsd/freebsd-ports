@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fv
-PORTVERSION=	1.02
-PORTREVISION=	2
+PORTVERSION=	1.03
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eaflux.com/fv/sources/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -15,28 +14,50 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer of hdr/pfm images
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_GL=		glut
+USE_GNOME=	pkgconfig
+USE_GMAKE=	yes
+ALL_TARGET=	${PORTNAME}
+MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	README
+CXXFLAGS+=	$$(pkg-config --cflags libpng14) \
+		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	$$(pkg-config --libs libpng14) \
+		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm ${PTHREAD_LIBS}
+
+PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
-do-build:
-	cd ${BUILD_WRKSRC} \
-		&& ${CXX} ${CXXFLAGS} -DNDEBUG -I${WRKSRC} \
-		-I${LOCALBASE}/include ${CPPFLAGS} ${PTHREAD_CFLAGS} \
-		${LDFLAGS} -L${LOCALBASE}/lib -lpng -lz -lbz2 -lglut \
-		-lGLU -lGL -lXi -lXmu -lX11 -lXext -lSM -lm ${PTHREAD_LIBS} \
-		-o ${PORTNAME} *.c
+.include <bsd.port.pre.mk>
+
+.if ((${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505)
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+CXXFLAGS+=	$$(pkg-config --cflags liblzma)
+LDFLAGS+=	$$(pkg-config --libs liblzma)
+.else
+LDFLAGS+=	-llzma
+.endif
+
+.if !defined(WITH_DEBUG)
+CXXFLAGS+=	-DNDEBUG
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CXX=|CXX?=| ; \
+		 s|^CXXFLAGS=|CXXFLAGS?=| ; \
+		 s|^LDFLAGS=|LDFLAGS?=|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-.ifndef (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
