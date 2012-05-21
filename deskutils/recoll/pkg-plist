@@ -19,6 +19,7 @@ bin/recollindex
 %%DATADIR%%/filters/rclaptosidman
 %%DATADIR%%/filters/rclaudio
 %%DATADIR%%/filters/rclchm
+%%DATADIR%%/filters/rcldia
 %%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
 %%DATADIR%%/filters/rcldvi

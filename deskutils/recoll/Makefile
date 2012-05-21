@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	recoll
-PORTVERSION=	1.17.1
+PORTVERSION=	1.17.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal full text search package, based on Xapian
-
-BROKEN=		does not compile
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -43,7 +41,7 @@ CONFIGURE_ARGS+=--disable-qtgui
 PLIST_SUB+=	QT="@comment "
 .else
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	webkit moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	QTDIR="${QT_PREFIX}" QMAKE="${QMAKE}"
 INSTALLS_ICONS=	yes
@@ -77,7 +75,7 @@ CONFIGURE_ARGS+=--with-fam
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/recoll.pro/s|^|#|' ${WRKSRC}/Makefile.in
+		's|@QMAKE@|${TRUE}|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/lib|${LOCALBASE}/lib|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
