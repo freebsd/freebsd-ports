@@ -20,12 +20,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 MAN4=		biosfont.4
 
+.include <bsd.port.pre.mk>
+
 KMODDIR?=	/boot/modules
 
 PLIST_SUB=	KMODDIR=${KMODDIR} PREFIX=${PREFIX}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
-
-.include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
