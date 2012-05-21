@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ne
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/
 
@@ -52,9 +52,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		%%DATADIR%%/syntax/sml.jsf %%DATADIR%%/syntax/spec.jsf \
 		%%DATADIR%%/syntax/sql.jsf %%DATADIR%%/syntax/tabs.jsf \
 		%%DATADIR%%/syntax/tcl.jsf %%DATADIR%%/syntax/tex.jsf \
-		%%DATADIR%%/syntax/troff.jsf %%DATADIR%%/syntax/txt2tags.jsf \
-		%%DATADIR%%/syntax/verilog.jsf %%DATADIR%%/syntax/vhdl.jsf \
-		%%DATADIR%%/syntax/xml.jsf
+		%%DATADIR%%/syntax/texinfo.jsf %%DATADIR%%/syntax/troff.jsf \
+		%%DATADIR%%/syntax/txt2tags.jsf %%DATADIR%%/syntax/verilog.jsf \
+		%%DATADIR%%/syntax/vhdl.jsf %%DATADIR%%/syntax/xml.jsf
 PLIST_DIRS=	%%DATADIR%%/syntax %%DATADIR%%
 
 .if !defined(WITH_DEBUG)
