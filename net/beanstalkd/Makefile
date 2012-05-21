@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beanstalkd
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/kr/beanstalkd/
 
@@ -14,8 +14,12 @@ MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast, distributed, in-memory workqueue service
 
 LICENSE=	MIT
+
 USE_RC_SUBR=	beanstalkd
 USE_GMAKE=	yes
+
+MAKE_JOBS_SAFE=	yes
+MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/beanstalkd
 SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
