@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	knot
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://public.nic.cz/files/knot-dns/ \
 		http://www.dns-lab.com/downloads/knot-dns/
@@ -15,14 +15,18 @@ MAINTAINER=	freebsd@dns-lab.com
 COMMENT=	Knot DNS is a high performance authoritative-only DNS server
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		flex>=2.5.35_1:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	urcu.1:${PORTSDIR}/sysutils/userspace-rcu
 
+.if ${CC} == "clang"
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-configure
+.endif
+
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 
