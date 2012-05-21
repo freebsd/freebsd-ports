@@ -7,6 +7,7 @@
 
 PORTNAME=	nmapsi4
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 
@@ -22,7 +23,7 @@ USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network \
-		linguist webkit
+		linguist webkit dbus
 
 pre-configure:
 	${REINPLACE_CMD} -e 's#share/applications/kde4/#share/applications/#g' \
