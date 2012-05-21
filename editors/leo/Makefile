@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	leo
-PORTVERSION=	4.9
+PORTVERSION=	4.10
 CATEGORIES=	editors python
-MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}-final
-DISTNAME=	Leo-${PORTVERSION}-final-a
+MASTER_SITES=	SF/${PORTNAME}/Leo/${PORTVERSION}%20final
+DISTNAME=	Leo-${PORTVERSION}-final
 DIST_SUBDIR=	leo
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,6 +19,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}qt4-svg>=0:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0:${PORTSDIR}/textproc/py-docutils \
 		silvercity>=0:${PORTSDIR}/textproc/silvercity \
 		${PYTHON_PKGNAMEPREFIX}Pmw>=0:${PORTSDIR}/x11-toolkits/py-Pmw \

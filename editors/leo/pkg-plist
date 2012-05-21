@@ -33,6 +33,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/core/LeoPyRef.leo
 %%PYTHON_SITELIBDIR%%/leo/core/__init__.py
 %%PYTHON_SITELIBDIR%%/leo/core/buttons.txt
+%%PYTHON_SITELIBDIR%%/leo/core/bzr_version.py
 %%PYTHON_SITELIBDIR%%/leo/core/format-code.py
 %%PYTHON_SITELIBDIR%%/leo/core/key-handling-notes.txt
 %%PYTHON_SITELIBDIR%%/leo/core/leoApp.py
@@ -54,11 +55,11 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/core/leoGlobals.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoGui.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoImport.py
+%%PYTHON_SITELIBDIR%%/leo/core/leoInspect.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoKeys.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoMenu.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoNodes.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoPlugins.py
-%%PYTHON_SITELIBDIR%%/leo/core/leoProjects.txt
 %%PYTHON_SITELIBDIR%%/leo/core/leoPymacs.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoRst.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoShadow.py
@@ -66,11 +67,6 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/core/leoTest.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoUndo.py
 %%PYTHON_SITELIBDIR%%/leo/core/leoVersion.py
-%%PYTHON_SITELIBDIR%%/leo/core/leo_Debugger.py
-%%PYTHON_SITELIBDIR%%/leo/core/leo_FileList.py
-%%PYTHON_SITELIBDIR%%/leo/core/leo_RemoteDebugger.py
-%%PYTHON_SITELIBDIR%%/leo/core/leo_Shell.py
-%%PYTHON_SITELIBDIR%%/leo/core/leo_run.py
 %%PYTHON_SITELIBDIR%%/leo/core/runLeo.py
 %%PYTHON_SITELIBDIR%%/leo/core/test_core.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/FAQ.txt
@@ -86,6 +82,7 @@ bin/leo
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/design.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/directives.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/doc-startup.txt
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/download.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/emacs.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/frontMatter.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/glossary.txt
@@ -107,26 +104,16 @@ bin/leo
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/leo_rst.css
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/leo_toc.html.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/make.bat
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/PCWindow.gif
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/PCWindow.png
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/at-test-nodes.jpg
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/find-tab.jpg
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-qt-at-file-first-child.JPG
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-qt-at-file-main-node.JPG
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-qt-at-file-named-child.JPG
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-qt-find-tab.JPG
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-qt-main-window-linux.png
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-qt-main-window.JPG
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/leo-tk-main-window.jpg
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/spell-tab.jpg
-%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/screen-shots/unit-test-leo.jpg
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/silver_city.css
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/html/techReport.html
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/inkscape-template.svg
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/installing.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/intro.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoBridge.txt
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoInspect.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoNotes.txt
+%%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoProjects.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoSlideShows.leo
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoToDo.txt
 %%PORTDOCS%%%%PYTHON_SITELIBDIR%%/leo/doc/leoToDoLater.txt
@@ -166,7 +153,9 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/extensions/testExtension.py
 %%PYTHON_SITELIBDIR%%/leo/external/__init__.py
 %%PYTHON_SITELIBDIR%%/leo/external/codewise.py
+%%PYTHON_SITELIBDIR%%/leo/external/edb.py
 %%PYTHON_SITELIBDIR%%/leo/external/ipy_leo.py
+%%PYTHON_SITELIBDIR%%/leo/external/leoSAGlobals.py
 %%PYTHON_SITELIBDIR%%/leo/external/leosax.py
 %%PYTHON_SITELIBDIR%%/leo/external/lproto.py
 %%PYTHON_SITELIBDIR%%/leo/external/stringlist.py
@@ -495,6 +484,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/backlink.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/baseNativeTree.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/bibtex.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/bigdash.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/bookmarks.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/bzr_qcommands.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/chapter_hoist.py
@@ -506,7 +496,6 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/datenodes.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/debugger_pudb.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/default
-%%PYTHON_SITELIBDIR%%/leo/plugins/detect_urls.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/dragdropgoodies.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/dtest.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/dump_globals.py
@@ -536,7 +525,6 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/jinjarender.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/keys.css
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoGuiPluginsRef.leo
-%%PYTHON_SITELIBDIR%%/leo/plugins/leoOPML.leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoOPML.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoPluginNotes.txt
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoPluginsRef.leo
@@ -548,6 +536,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/leo_to_rtf.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leocursor.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leofeeds.py
+%%PYTHON_SITELIBDIR%%/leo/plugins/leofts.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leomail.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoremote.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/leoscreen.py
@@ -609,7 +598,6 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/screenshots.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/script_io_to_body.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/scripts_menu.py
-%%PYTHON_SITELIBDIR%%/leo/plugins/scrolledmessage.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/setHomeDirectory.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/slideshow.py
 %%PYTHON_SITELIBDIR%%/leo/plugins/spellpyx.txt
@@ -644,6 +632,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/plugins/zenity_file_dialogs.py
 %%PYTHON_SITELIBDIR%%/leo/scripts/LinixInstall.py
 %%PYTHON_SITELIBDIR%%/leo/scripts/convert_to_shadow.py
+%%PYTHON_SITELIBDIR%%/leo/scripts/gen_blender_docs.py
 %%PYTHON_SITELIBDIR%%/leo/scripts/leo
 %%PYTHON_SITELIBDIR%%/leo/scripts/leoFindScript.py
 %%PYTHON_SITELIBDIR%%/leo/scripts/leoScripts.txt
@@ -665,6 +654,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/test/unitTestStartup.txt
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-asis-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-auto-line-number-test.py
+%%PYTHON_SITELIBDIR%%/leo/test/unittest/at-auto-section-ref-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-auto-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-file-line-number-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-file-test.leo
@@ -679,6 +669,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-root-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-shadow-line-number-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-shadow-test.py
+%%PYTHON_SITELIBDIR%%/leo/test/unittest/at-shadow-unlink-clones.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-thin-html-test.html
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-thin-line-number-test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/at-thin-test.py
@@ -702,6 +693,7 @@ bin/leo
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/read_test.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/replaceFileWithStringTestFile.py
 %%PYTHON_SITELIBDIR%%/leo/test/unittest/shadowWriteTest-2.py
+%%PYTHON_SITELIBDIR%%/leo/test/unittest/tex-error.tex
 %%PYTHON_SITELIBDIR%%/leo/www/default.css
 %%PYTHON_SITELIBDIR%%/leo/www/index.html
 %%PYTHON_SITELIBDIR%%/leo/www/leo_rst.css
