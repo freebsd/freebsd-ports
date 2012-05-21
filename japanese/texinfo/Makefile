@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://jupiter.fsci.fuk.kindai.ac.jp/pub/ptex/utils/ \
 PATCHFILES=	${DISTNAME}-j.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	mitsuru@riken.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex

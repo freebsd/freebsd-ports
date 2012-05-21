@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-core
 DISTNAME=	jp.azzurri.clay.core_${PORTVERSION}.bin.dist.${DISTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	mitsuru@riken.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A database design tool for the Eclipse development environment
 
 RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
