@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.8.4
-PORTREVISION=	2
+DISTVERSION=	1.8.5p1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
-DISTNAME=	sudo-${PORTVERSION}p5
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
