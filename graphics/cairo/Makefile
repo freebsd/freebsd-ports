@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.10.2
-PORTREVISION=	3
+PORTVERSION=	1.12.2
+PORTREVISION=	0
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
-#MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -24,6 +23,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		pixman-1.9:${PORTSDIR}/x11/pixman
 
+USE_XZ=		yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--enable-tee \
@@ -78,13 +78,16 @@ PLIST_SUB+=	GLIB="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s/==/=/g' \
-		-e '/LIBS/s/-lrt//' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/test/s/==/=/g ; /LIBS/s/-lrt// ; \
+		/LIBS/s|-ldld||g ; /LIBS/s|-ldl||g' \
+			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo ${PTHREAD_LIBS}|' \
 		${WRKSRC}/src/*.pc.in
 	@${REINPLACE_CMD} -e '/@CAIRO_HAS_PNG_FUNCTIONS_TRUE@.*=/d' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ldl||g' \
+		${WRKSRC}/util/*/Makefile.in \
+		${WRKSRC}/boilerplate/Makefile.in
 .if defined(WITH_GL)
 	@${REINPLACE_CMD} 's|@CAIRO_CFLAGS@|-I$$(top_srcdir)/src/glew &|' \
 		${WRKSRC}/src/Makefile.in
