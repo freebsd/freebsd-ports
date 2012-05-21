@@ -1,0 +1,42 @@
+--- ./configure.orig	2012-05-17 18:19:19.000000000 +0900
++++ ./configure	2012-05-17 21:40:12.000000000 +0900
+@@ -13237,38 +13237,7 @@
+ fi
+ 
+ 
+-# Check for link time optimizations support and predictive commoning
+- { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts \"-flto\"" >&5
+-$as_echo_n "checking whether C compiler accepts \"-flto\"... " >&6; }
+-ax_save_FLAGS=$CFLAGS
+-   CFLAGS=""-flto""
+-   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-int
+-main ()
+-{
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_compile "$LINENO"; then :
+-  eval `$as_echo "ax_cv_c_flags_"-flto"" | $as_tr_sh`=yes
+-else
+-  eval `$as_echo "ax_cv_c_flags_"-flto"" | $as_tr_sh`=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-   CFLAGS=$ax_save_FLAGS
+-eval ax_check_compiler_flags=$`$as_echo "ax_cv_c_flags_"-flto"" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_check_compiler_flags" >&5
+-$as_echo "$ax_check_compiler_flags" >&6; }
+-if test "x$ax_check_compiler_flags" = xyes; then
+-	CFLAGS="$CFLAGS -flto"
+-else
+-	:
+-fi
+-
++# Check for predictive commoning
+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether C compiler accepts \"-fpredictive-commoning\"" >&5
+ $as_echo_n "checking whether C compiler accepts \"-fpredictive-commoning\"... " >&6; }
+ ax_save_FLAGS=$CFLAGS

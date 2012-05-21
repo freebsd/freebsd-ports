@@ -1,0 +1,11 @@
+--- ./src/config.h.in.orig	2012-05-17 20:44:57.000000000 +0900
++++ ./src/config.h.in	2012-05-17 20:46:19.000000000 +0900
+@@ -362,3 +362,8 @@
+ 
+ /* Define as `fork' if `vfork' does not work. */
+ #undef vfork
++
++/* Define cpu_set_t because <sys/cpuset.h> does not define. */
++#if defined(__FreeBSD__)
++#define cpu_set_t cpuset_t
++#endif
