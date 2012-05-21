@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxappearance
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
