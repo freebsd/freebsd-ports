@@ -671,7 +671,6 @@ share/mime/text/x-vhdl.xml
 share/mime/text/x-xmi.xml
 share/mime/text/x-xslfo.xml
 share/mime/text/xmcd.xml
-share/mime/version
 share/mime/video/3gpp.xml
 share/mime/video/3gpp2.xml
 share/mime/video/annodex.xml
@@ -730,6 +729,7 @@ share/mime/x-epoc/x-sisx-app.xml
 @unexec [ -f %D/share/mime/subclasses ] && rm -f %D/share/mime/subclasses || true
 @unexec [ -f %D/share/mime/treemagic ] && rm -f %D/share/mime/treemagic || true
 @unexec [ -f %D/share/mime/types ] && rm -f %D/share/mime/types || true
+@unexec [ -f %D/share/mime/version ]&&  rm -f %D/share/mime/version || true
 @dirrmtry share/mime/x-epoc
 @dirrmtry share/mime/x-content
 @dirrmtry share/mime/video
