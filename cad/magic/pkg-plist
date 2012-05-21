@@ -1,7 +1,7 @@
 bin/ext2sim
 bin/ext2spice
 bin/magic
-bin/spice2sim
+@comment bin/spice2sim
 lib/magic/doc/addendum6_5.ps
 lib/magic/doc/copyright.ps
 lib/magic/doc/html/Makefile
@@ -263,8 +263,8 @@ lib/magic/tcl/bitmaps/right.xbm
 lib/magic/tcl/bitmaps/up.xbm
 lib/magic/tcl/bitmaps/zoom.xbm
 lib/magic/tcl/console.tcl
-lib/magic/tcl/exttosim.so
-lib/magic/tcl/exttospice.so
+@comment lib/magic/tcl/exttosim.so
+@comment lib/magic/tcl/exttospice.so
 lib/magic/tcl/magic.tcl
 lib/magic/tcl/magicdnull
 lib/magic/tcl/magicexec
