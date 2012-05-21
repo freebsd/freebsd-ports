@@ -40,6 +40,8 @@ BUILD_DEPENDS+=								\
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+FORBIDDEN=	Possible to open archive management page for any list
+
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 
