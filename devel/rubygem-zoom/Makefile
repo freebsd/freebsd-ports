@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	mitsuru@riken.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby binding to the Z39.50 Object-Orientation Model (ZOOM)
 
 LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
