@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyml
-PORTVERSION=	5.4
+PORTVERSION=	5.4.1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -35,10 +35,4 @@ PLIST_FILES=	bin/poly		\
 MAN1=		poly.1 polyimport.1
 MANCOMPRESSED=	no
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
