@@ -150,6 +150,7 @@ bin/vym
 %%NLS%%%%DATADIR%%/lang/vym_en.qm
 %%NLS%%%%DATADIR%%/lang/vym_es.qm
 %%NLS%%%%DATADIR%%/lang/vym_fr.qm
+%%NLS%%%%DATADIR%%/lang/vym_ia.qm
 %%NLS%%%%DATADIR%%/lang/vym_it.qm
 %%NLS%%%%DATADIR%%/lang/vym_pt_BR.qm
 %%NLS%%%%DATADIR%%/lang/vym_ru.qm

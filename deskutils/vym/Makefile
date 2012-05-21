@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vym
-PORTVERSION=	1.99.0
+PORTVERSION=	2.0.12
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/vym/${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	lichray@gmail.com
 COMMENT=	VYM is a tool to generate and manipulate mind maps
 
 USE_BZIP2=	yes
