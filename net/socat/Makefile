@@ -28,6 +28,10 @@ MAN1=		socat.1
 PLIST_FILES=	bin/filan bin/procan bin/socat sbin/socat_wrapper
 PORTDOCS=	EXAMPLES README SECURITY FAQ
 
+.if ${CC} == clang
+CFLAGS+=	-Wno-unused-comparison
+.endif
+
 do-install:
 .for f in filan procan socat
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
