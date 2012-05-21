@@ -7,40 +7,51 @@
 
 PORTNAME=	dbs
 PORTVERSION=	1.1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.kusa.ac.jp/~yukio-m/dbs/software1.1.5/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jkoshy
+		LOCAL/jkoshy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A distributed network benchmarking system
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-DOCDIR=		${PREFIX}/share/doc/dbs/
-DOCS=		dbs.man dbs.man.jis dbs_paper.ps Copyright
-EXDIR=		${PREFIX}/share/examples/dbs/
-EXS=		TCP2.cmd TCPvsMPEG.cmd
+BUILD_WRKSRC=	${WRKSRC}/obj/${OPSYS}
+INSTALL_WRKSRC=	${WRKSRC}/obj/${OPSYS}
 
-.include <bsd.port.pre.mk>
+USE_PERL5_RUN=	yes
+MAKEFILE=	makefile
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/dbs_view bin/dbsc bin/dbsd
 
-do-build:
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/bin/perl|${PERL}|' ${WRKSRC}/script/dbs_view
+
+pre-build:
 	cd ${WRKSRC}/src; ${MAKE} dir
-	cd ${WRKSRC}/obj/${OPSYS}; ${MAKE} ${ALL_TARGET} PREFIX=${PREFIX}
 
 do-install:
-	cd ${WRKSRC}/obj/${OPSYS}; ${MAKE} ${INSTALL_TARGET} PREFIX=${PREFIX}
-	${STRIP_CMD} ${PREFIX}/bin/dbsc ${PREFIX}/bin/dbsd
-	${MKDIR} ${EXDIR}
-	cd ${WRKSRC}/sample; ${CP} -p ${EXS} ${EXDIR}
+.for bin in dbsc dbsd
+	cd ${INSTALL_WRKSRC}; ${INSTALL_PROGRAM} ${bin} ${PREFIX}/bin
+.endfor
+.for bin in dbs_view
+	cd ${WRKSRC}/script; ${INSTALL_SCRIPT} ${bin} ${PREFIX}/bin
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	cd ${WRKSRC}/doc; ${CP} -p ${DOCS} ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+.for doc in Copyright dbs.man dbs.man.jis dbs_paper.ps
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} ${doc} ${DOCSDIR}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for ex in TCP2.cmd TCPvsMPEG.cmd
+	cd ${WRKSRC}/sample; ${INSTALL_DATA} ${ex} ${EXAMPLESDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

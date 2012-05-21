@@ -9,7 +9,7 @@
  
  #CC     =gcc
 -CFLAGS  =-O
-+CFLAGS  =-O -DHAVE_SYS_PARAM_H
++CFLAGS  +=-DHAVE_SYS_PARAM_H
  
  #CFLAGS	=-g                    # debug
  #CFLAGS =-g -DDEBUGMODE
