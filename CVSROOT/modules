@@ -3914,6 +3914,7 @@ freecell-solver                 ports/games/freecell-solver
 freeciv                         ports/games/freeciv
 freeciv-nox11                   ports/games/freeciv-nox11
 freeciv-sounds                  ports/games/freeciv-sounds
+freecode-submit                 ports/misc/freecode-submit
 freecol                         ports/games/freecol
 freecolor                       ports/sysutils/freecolor
 freedbd                         ports/net/freedbd
@@ -3972,6 +3973,7 @@ freevo                          ports/multimedia/freevo
 freevrrpd                       ports/net/freevrrpd
 freewais-sf                     ports/net/freewais-sf
 freeway                         ports/www/freeway
+freexl                          ports/textproc/freexl
 freeze                          ports/archivers/freeze
 frei0r                          ports/graphics/frei0r
 frei0r-plugins                  ports/graphics/frei0r-plugins
@@ -3979,7 +3981,6 @@ frei0r-plugins-gavl             ports/graphics/frei0r-plugins-gavl
 frei0r-plugins-opencv           ports/graphics/frei0r-plugins-opencv
 freqsdwn                        ports/sysutils/freqsdwn
 frescobaldi                     ports/print/frescobaldi
-freshmeat-submit                ports/misc/freshmeat-submit
 fretsonfire                     ports/games/fretsonfire
 fretsonfire-data                ports/games/fretsonfire-data
 fribidi                         ports/converters/fribidi
@@ -20987,7 +20988,6 @@ pecl-bbcode                     ports/devel/pecl-bbcode
 pecl-bcompiler                  ports/devel/pecl-bcompiler
 pecl-big_int                    ports/math/pecl-big_int
 pecl-bitset                     ports/math/pecl-bitset
-pecl-bz2                        ports/archivers/pecl-bz2
 pecl-chdb                       ports/databases/pecl-chdb
 pecl-crack                      ports/security/pecl-crack
 pecl-ctemplate                  ports/textproc/pecl-ctemplate
@@ -22276,6 +22276,8 @@ py-Products.ExtendedPathIndex   ports/devel/py-Products.ExtendedPathIndex
 py-Products.ExternalEditor      ports/devel/py-Products.ExternalEditor
 py-Products.ExternalMethod      ports/devel/py-Products.ExternalMethod
 py-Products.GenericSetup        ports/devel/py-Products.GenericSetup
+py-Products.LDAPMultiPlugins    ports/devel/py-Products.LDAPMultiPlugins
+py-Products.LDAPUserFolder      ports/devel/py-Products.LDAPUserFolder
 py-Products.MIMETools           ports/devel/py-Products.MIMETools
 py-Products.MailHost            ports/mail/py-Products.MailHost
 py-Products.Marshall            ports/devel/py-Products.Marshall
@@ -22283,6 +22285,7 @@ py-Products.MimetypesRegistry   ports/devel/py-Products.MimetypesRegistry
 py-Products.OFSP                ports/devel/py-Products.OFSP
 py-Products.PasswordResetTool   ports/devel/py-Products.PasswordResetTool
 py-Products.PlacelessTranslationService  ports/devel/py-Products.PlacelessTranslationService
+py-Products.PloneLDAP           ports/www/py-Products.PloneLDAP
 py-Products.PloneLanguageTool   ports/devel/py-Products.PloneLanguageTool
 py-Products.PlonePAS            ports/security/py-Products.PlonePAS
 py-Products.PloneTestCase       ports/devel/py-Products.PloneTestCase
@@ -22865,6 +22868,7 @@ py-plone.app.iterate            ports/www/py-plone.app.iterate
 py-plone.app.jquerytools        ports/www/py-plone.app.jquerytools
 py-plone.app.kss                ports/www/py-plone.app.kss
 py-plone.app.layout             ports/www/py-plone.app.layout
+py-plone.app.ldap               ports/www/py-plone.app.ldap
 py-plone.app.linkintegrity      ports/www/py-plone.app.linkintegrity
 py-plone.app.locales            ports/www/py-plone.app.locales
 py-plone.app.openid             ports/security/py-plone.app.openid
@@ -22958,6 +22962,8 @@ py-products.externaleditor      ports/devel/py-Products.ExternalEditor
 py-products.externalmethod      ports/devel/py-Products.ExternalMethod
 py-products.genericsetup        ports/devel/py-Products.GenericSetup
 py-products.kupu                ports/www/py-Products.kupu
+py-products.ldapmultiplugins    ports/devel/py-Products.LDAPMultiPlugins
+py-products.ldapuserfolder      ports/devel/py-Products.LDAPUserFolder
 py-products.mailhost            ports/mail/py-Products.MailHost
 py-products.marshall            ports/devel/py-Products.Marshall
 py-products.mimetools           ports/devel/py-Products.MIMETools
@@ -22966,6 +22972,7 @@ py-products.ofsp                ports/devel/py-Products.OFSP
 py-products.passwordresettool   ports/devel/py-Products.PasswordResetTool
 py-products.placelesstranslationservice  ports/devel/py-Products.PlacelessTranslationService
 py-products.plonelanguagetool   ports/devel/py-Products.PloneLanguageTool
+py-products.ploneldap           ports/www/py-Products.PloneLDAP
 py-products.plonepas            ports/security/py-Products.PlonePAS
 py-products.plonetestcase       ports/devel/py-Products.PloneTestCase
 py-products.pluggableauthservice  ports/security/py-Products.PluggableAuthService
