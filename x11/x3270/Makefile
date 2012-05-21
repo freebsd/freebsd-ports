@@ -19,7 +19,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-10
+EXPIRATION_DATE=	2012-05-30
 
 BROKEN=		does not package
 
