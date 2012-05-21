@@ -7,7 +7,7 @@
 
 PORTNAME=	goldendict
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:C|(.*)\.[0-9]*$|\1|}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_XORG=	xtst
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui webkit \
+QT_COMPONENTS=	corelib gui webkit phonon \
 		qmake_build linguist_build moc_build rcc_build script_build uic_build
 
 WRKSRC=		${WRKDIR}
