@@ -17,6 +17,9 @@ COMMENT=		A port for the PHP sqlite3 extension
 
 BUILD_DEPENDS=		sqlite3>=3.0:${PORTSDIR}/databases/sqlite3
 
+DEPRECATED=		No upstream development and superseded by databases/php5-sqlite3 and databases/php53-sqlite3
+EXPIRATION_DATE=	2012-06-21
+
 CONFIGURE_ARGS=		--with-sqlite3=${LOCALBASE}
 USE_PHP=		yes
 USE_PHPIZE=		yes
