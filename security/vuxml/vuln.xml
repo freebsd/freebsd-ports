@@ -161,6 +161,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>inspircd</name>
+	<range><gt>1.2.9</gt></range>
 	<range><lt>2.0.5</lt></range>
       </package>
     </affects>
@@ -182,6 +183,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-03-19</discovery>
       <entry>2012-05-17</entry>
+      <modified>2012-05-21</modified>
     </dates>
   </vuln>
 
