@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cdcat
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		GOOGLE_CODE:lib7zip
@@ -30,7 +30,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 PROJECTHOST=	lib7zip
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui qt3support xml \
+QT_COMPONENTS=	corelib gui xml \
 		linguist_build moc_build qmake_build uic_build
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
@@ -41,7 +41,10 @@ QMAKEFLAGS+=	INCLUDEPATH+="${L7Z_WRKSRC}/Lib7Zip" \
 		LIBS+="${L7Z_WRKSRC}/Lib7Zip/lib7zip.a" \
 		LIBS+="${MIF_WRKSRC}/MediaInfoLib/Project/GNU/Library/.libs/libmediainfo.a" \
 		LIBS+="${MIF_WRKSRC}/ZenLib/Project/GNU/Library/.libs/libzen.a" \
-		DEFINES+="MEDIAINFO_STATIC"
+		LIBS+="-lz -lbz2 -ltar -lexif" \
+		DEFINES+="MEDIAINFO_STATIC" \
+		DEFINES+="MEDIAINFO_UNICODE" \
+		DEFINES+="USE_LIBEXIF"
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
 # spoof tinderbox: build deps for multimedia/mediainfo
@@ -74,13 +77,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/lib7zip.a/s|^|#| ; \
-		 /-lmediainfo/s|^|#| ; \
-		 /libmediainfo/s|^|#| ; \
-		 s|-ldl|| ; \
-		 s|-std=c++0x || ; \
-		 s|-g || ; \
-		 s|-O2 ||' ${BUILD_WRKSRC}/${PORTNAME}.pro
+		'/LIBS/s|^|#|' ${BUILD_WRKSRC}/${PORTNAME}.pro
 	@${REINPLACE_CMD} -e \
 		's|/dev/sr0|/dev/cd0|' ${BUILD_WRKSRC}/config.cpp
 	@${REINPLACE_CMD} -e \
