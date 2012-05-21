@@ -28,7 +28,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		microhttpd.23:${PORTSDIR}/www/libmicrohttpd
 
 DEPRECATED=	BROKEN for more than 6 month
-EXPIRATION_DATE=	2012-05-20
+EXPIRATION_DATE=	2012-05-27
 
 BROKEN=		does not configure
 
