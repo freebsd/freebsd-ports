@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	WebMagick
-PORTVERSION=	2.03p10
+PORTVERSION=	2.03p11
 PORTEPOCH=	1
 CATEGORIES=	www graphics
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/2.03pre10
-DISTNAME=	${PORTNAME}-2.03pre10
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}-beta/2.03pre11
+DISTNAME=	${PORTNAME}-2.03pre11
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
