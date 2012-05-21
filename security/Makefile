@@ -782,6 +782,7 @@
     SUBDIR += rarcrack
     SUBDIR += ratproxy
     SUBDIR += rats
+    SUBDIR += razorback-api
     SUBDIR += rdigest
     SUBDIR += retranslator
     SUBDIR += revelation
