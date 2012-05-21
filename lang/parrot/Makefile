@@ -15,17 +15,17 @@ COMMENT=	Parrot - virtual machine for dynamic languages
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/bin/gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		icudata.48:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
+		icudata:${PORTSDIR}/devel/icu
 
 MAKE_JOBS_UNSAFE=	yes
 
 USE_BZIP2=	yes
 USE_BISON=	build
-USE_PERL5=	5.8.0+
+USE_PERL5=	yes
 USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes
