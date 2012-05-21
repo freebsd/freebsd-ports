@@ -27,6 +27,8 @@ MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		CATDIR="${MANPREFIX}/man/man" \
 		NLSDIR="${PREFIX}/share/nls"
 
+CFLAGS+=	-std=c99
+
 OPTIONS=	THREADS		"Compile with threads support"	on \
 		NLS		"Compile with NLS support"	on \
 		OVERWRITE_BASE	"Replaces base GNU sort"	off
