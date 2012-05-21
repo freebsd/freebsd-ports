@@ -783,6 +783,7 @@
     SUBDIR += ratproxy
     SUBDIR += rats
     SUBDIR += razorback-api
+    SUBDIR += razorback-fileInject
     SUBDIR += rdigest
     SUBDIR += retranslator
     SUBDIR += revelation
