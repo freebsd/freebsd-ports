@@ -7,6 +7,7 @@
 
 PORTNAME=	kadu
 PORTVERSION=	0.11.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -46,7 +47,7 @@ CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 MAKE_JOBS_SAFE=	yes
 
 USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network script scripttools webkit xml \
+QT_COMPONENTS=	dbus gui network script scripttools webkit xml phonon \
 		linguist_build moc_build qmake_build rcc_build uic_build \
 		imageformats_run sql-sqlite3_run
 WANT_GNOME=	yes
