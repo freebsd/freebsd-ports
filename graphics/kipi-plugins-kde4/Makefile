@@ -7,7 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -28,9 +28,10 @@ LATEST_LINK=	${PORTNAME}-kde4
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
+USE_GL=		glu
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network svg xml \
+QT_COMPONENTS=	gui dbus network svg xml opengl \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
