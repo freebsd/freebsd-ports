@@ -8,6 +8,7 @@
 PORTNAME=	mixxx
 PORTVERSION=	1.10.0
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://mixxx.rasant-records.de/downloads/%SUBDIR%/ \
 		http://moo.glines.org/mixxx/%SUBDIR%/ \
@@ -34,6 +35,7 @@ OPTIONS=	LAME "LAME MP3 audio encoder support" off \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_GL=		glu
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network opengl script sql svg webkit xml \
 		xmlpatterns linguist_build moc_build qmake_build rcc_build \
