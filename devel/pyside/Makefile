@@ -11,7 +11,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pyside.org/files/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
-DISTNAME=	${PORTNAME}-qt${QT4_VERSION:R}+${PORTVERSION}
+DISTNAME=	${PORTNAME}-qt4.7+${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python bindings for the Qt applications and UI framework
