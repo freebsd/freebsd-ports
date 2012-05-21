@@ -7,6 +7,7 @@
 
 PORTNAME=	django-caching-app-plugins
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +17,7 @@ COMMENT=	Django app for writting pluggable reusable django applications
 
 LICENSE=	BSD
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_hg>=0.4:${PORTSDIR}/devel/py-setuptools_hg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
 WRKSRC=		${WRKDIR}/bkroeze-django-caching-app-plugins-tip
