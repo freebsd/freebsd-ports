@@ -7,6 +7,7 @@
 
 PORTNAME=	freeswitch
 DISTVERSION=	1.2.rc2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/ \
 		http://files.freeswitch.org/downloads/libs/:2 \
@@ -344,9 +345,6 @@ post-install:
 	@${FIND} ${ETCDIR}/. -type d | ${XARGS} ${CHMOD} 770
 	@${MKDIR} ${PREFIX}/share/${BASE_PORTNAME}/sounds
 	@${CHMOD} -R 770 ${PREFIX}/share/${BASE_PORTNAME}
-	@${INSTALL} -o ${FREESWITCH_USER} -g ${FREESWITCH_GROUP} -m 664 ${WRKSRC}/conf/freeswitch.xml ${ETCDIR}/conf/freeswitch.xml.sample
-	@for i in $$(${FIND} ${ETCDIR}/conf/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
-#	@for i in $$(${FIND} ${WWWDIR}/htdocs/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
 	@${FIND} ${ETCDIR}/. -type f | ${XARGS} ${CHMOD} 660
 	@${FIND} ${WWWDIR}/. -type f | ${XARGS} ${CHMOD} 660
 
