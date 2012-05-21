@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Directory/Queue/.packlist
 %%SITE_PERL%%/Directory/Queue.pm
-%%SITE_PERL%%/Directory/Queue/Base.pm
+%%SITE_PERL%%/Directory/Queue/Normal.pm
+%%SITE_PERL%%/Directory/Queue/Null.pm
 %%SITE_PERL%%/Directory/Queue/Set.pm
 %%SITE_PERL%%/Directory/Queue/Simple.pm
 @dirrmtry %%SITE_PERL%%/Directory/Queue
