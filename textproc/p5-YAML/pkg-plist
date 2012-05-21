@@ -9,7 +9,6 @@
 %%SITE_PERL%%/YAML/Loader/Base.pm
 %%SITE_PERL%%/YAML/Marshall.pm
 %%SITE_PERL%%/YAML/Mo.pm
-%%SITE_PERL%%/YAML/Mo.pod
 %%SITE_PERL%%/YAML/Node.pm
 %%SITE_PERL%%/YAML/Tag.pm
 %%SITE_PERL%%/YAML/Types.pm

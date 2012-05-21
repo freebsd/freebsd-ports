@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAML
-PORTVERSION=	0.77
+PORTVERSION=	0.81
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,6 @@ MAN3=	\
 	YAML::Loader.3 \
 	YAML::Loader::Base.3 \
 	YAML::Marshall.3 \
-	YAML::Mo.3 \
 	YAML::Node.3 \
 	YAML::Tag.3 \
 	YAML::Types.3
