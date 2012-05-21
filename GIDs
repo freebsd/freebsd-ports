@@ -231,5 +231,5 @@ bitten-slave:*:952:
 _neubot:*:953:
 hadoop:*:955:
 pandora:*:956:
-razorback:*:957
+razorback:*:957:
 nobody:*:65534:
