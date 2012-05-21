@@ -19,18 +19,19 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900035
-BROKEN=		Does not compile on recent FreeBSD-9
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|gcc|$${CC}| ; \
+		 /strip/d' ${WRKSRC}/Makefile
 
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/fc ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/fastcrc.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${PREFIX}/lib
 	${LN} -fs ${PREFIX}/lib/libfcrc.so.1 ${PREFIX}/lib/libfcrc.so
-	${INSTALL_DATA} ${WRKSRC}/fastcrc.h ${PREFIX}/include
-	${MKDIR} ${PREFIX}/share/doc/fastcrc
-	${INSTALL_MAN} ${WRKSRC}/index.html ${PREFIX}/share/doc/fastcrc
-	${INSTALL_PROGRAM} ${WRKSRC}/fc ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
