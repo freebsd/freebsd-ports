@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MogileFS-Server
-PORTVERSION=	2.61
+PORTVERSION=	2.62
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
@@ -53,10 +53,6 @@ MAN3=		MogileFS::Checksum.3 \
 		MogileFS::Store::SQLite.3 \
 		MogileFS::Worker::Query.3 \
 		MogileFS::Worker::Replicate.3
-
-# https://github.com/mogilefs/MogileFS-Server/commit/28fad964f2eee3f4b13614cce97e5423ebd54875
-post-patch:
-	@${REINPLACE_CMD} -e '/MogileFS::Sys/d' ${WRKSRC}/lib/MogileFS/Server.pm
 
 post-install:
 .ifndef(NOPORTDOCS)
