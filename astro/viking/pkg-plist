@@ -1,41 +1,40 @@
 bin/viking
-bin/viking-remote
 share/applications/viking.desktop
 share/gnome/help/viking/C/figures/properties_degree.png
 share/gnome/help/viking/C/figures/properties_units.png
 share/gnome/help/viking/C/legal.xml
 share/gnome/help/viking/C/viking.xml
 share/icons/hicolor/48x48/apps/viking.png
-%%NLS%%share/locale/cs/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/da/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/de/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/el/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/es/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/he/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/id/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/it/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/jv/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/sl/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/viking.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/viking.mo
+share/locale/cs/LC_MESSAGES/viking.mo
+share/locale/da/LC_MESSAGES/viking.mo
+share/locale/de/LC_MESSAGES/viking.mo
+share/locale/el/LC_MESSAGES/viking.mo
+share/locale/en_GB/LC_MESSAGES/viking.mo
+share/locale/es/LC_MESSAGES/viking.mo
+share/locale/fr/LC_MESSAGES/viking.mo
+share/locale/he/LC_MESSAGES/viking.mo
+share/locale/hu/LC_MESSAGES/viking.mo
+share/locale/id/LC_MESSAGES/viking.mo
+share/locale/it/LC_MESSAGES/viking.mo
+share/locale/ja/LC_MESSAGES/viking.mo
+share/locale/jv/LC_MESSAGES/viking.mo
+share/locale/lt/LC_MESSAGES/viking.mo
+share/locale/lv/LC_MESSAGES/viking.mo
+share/locale/nb/LC_MESSAGES/viking.mo
+share/locale/nl/LC_MESSAGES/viking.mo
+share/locale/pl/LC_MESSAGES/viking.mo
+share/locale/pt_BR/LC_MESSAGES/viking.mo
+share/locale/ru/LC_MESSAGES/viking.mo
+share/locale/sl/LC_MESSAGES/viking.mo
+share/locale/sv/LC_MESSAGES/viking.mo
+share/locale/uk/LC_MESSAGES/viking.mo
+share/locale/zh_CN/LC_MESSAGES/viking.mo
+share/locale/zh_TW/LC_MESSAGES/viking.mo
 share/omf/viking/viking-C.omf
-%%NLS%%@dirrm share/locale/jv/LC_MESSAGES
-%%NLS%%@dirrm share/locale/jv
-@dirrmtry share/applications
 @dirrm share/omf/viking
+@dirrmtry share/locale/jv/LC_MESSAGES
+@dirrmtry share/locale/jv
 @dirrm share/gnome/help/viking/C/figures
 @dirrm share/gnome/help/viking/C
 @dirrm share/gnome/help/viking
+@dirrmtry share/applications

@@ -6,29 +6,41 @@
 #
 
 PORTNAME=	viking
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to manage GPS data (tracks, waypoints, etc)
 
+LICENSE=	GPLv2 # (or later)
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-OPTIONS=	GPSD	"Enable realtime GPS tracking"	off
+OPTIONS=	GEOTAG	"Enable Geotag support"		on \
+		GPSD	"Enable realtime GPS tracking"	off
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CPPFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+USE_GNOME=	gnomedocutils gtk20
+USE_PERL5_RUN=	yes
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomedocutils gtk20 libglade2
-USE_PERL5_RUN=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_GEOTAG)
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+.else
+CONFIGURE_ARGS+=	--disable-geotag
+.endif
 
 .if defined(WITH_GPSD)
 LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
@@ -36,15 +48,7 @@ LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
 CONFIGURE_ARGS+=	--disable-realtime-gps-tracking
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|gps_poll|gps_read|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^AM_CFLAGS/s| -g | |' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
