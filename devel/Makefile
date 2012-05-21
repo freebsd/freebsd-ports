@@ -3374,6 +3374,7 @@
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools_darcs
+    SUBDIR += py-setuptools_hg
     SUBDIR += py-shapely
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
