@@ -39,6 +39,8 @@ SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
 
+.include <bsd.port.pre.mk>
+
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
@@ -46,8 +48,6 @@ CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
 PLIST_FILES=	sbin/lsof
 MAN8=		lsof.8
-
-.include <bsd.port.pre.mk>
 
 .if !exists(${SRC_BASE}/sys/kern/kern_lockf.c)
 IGNORE=		requires kernel sources
