@@ -65,20 +65,20 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Google chrome team reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html">
 	  <p>An off-by-one out-of-bounds write flaw was found in the way libxml, a library
-	     for providing XML and HTML support, evaluated certain XPointer parts (XPointer
-	     is used by libxml to include only the part from the returned XML document, that
-	     can be accessed using the XPath expression given with the XPointer). A remote
-	     attacker could provide a specially-crafted XML file, which once opened in an
-	     application, linked against libxml, would lead to that application crash, or,
-	     potentially arbitrary code execution with the privileges of the user running
-	     the application.</p>
-	     <p>Note: The flaw to be exploited requires the particular application, linked
-	     against libxml, to use the XPointer evaluation functionality.</p>
+	    for providing XML and HTML support, evaluated certain XPointer parts (XPointer
+	    is used by libxml to include only the part from the returned XML document, that
+	    can be accessed using the XPath expression given with the XPointer). A remote
+	    attacker could provide a specially-crafted XML file, which once opened in an
+	    application, linked against libxml, would lead to that application crash, or,
+	    potentially arbitrary code execution with the privileges of the user running
+	    the application.</p>
+	  <p>Note: The flaw to be exploited requires the particular application, linked
+	    against libxml, to use the XPointer evaluation functionality.</p>
 	</blockquote>
       </body>
     </description>
     <references>
-      <cvename>CVE-2011-3201</cvename>
+      <cvename>CVE-2011-3202</cvename>
       <url>http://googlechromereleases.blogspot.com/2012/05/stable-channel-update.html</url>
       <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-3102</url>
     </references>
@@ -102,9 +102,9 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://inspircd.github.com/">
 	  <p>InspIRCd contains a heap corruption vulnerability that exists in the
 	    dns.cpp code. The res[] buffer is allocated on the heap and can be
-		 overflowed. The res[] buffer can be exploited during its deallocation.
-		 The number of overflowed bytes can be controlled with DNS compression
-		 features.</p>
+	    overflowed. The res[] buffer can be exploited during its deallocation.
+	    The number of overflowed bytes can be controlled with DNS compression
+	    features.</p>
 	</blockquote>
       </body>
     </description>
@@ -308,12 +308,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The socat development team reports:</p>
 	<blockquote cite="http://www.dest-unreach.org/socat/contrib/socat-secadv3.html">
 	  <p>This vulnerability can be exploited when socat is invoked with the
-	     READLINE address (this is usually only used interactively) without
-	     option "prompt" and without option "noprompt" and an attacker succeeds
-	     to provide malicious data to the other (arbitrary) address that is then
-	     transferred by socat to the READLINE address for output.</p>
+	    READLINE address (this is usually only used interactively) without
+	    option "prompt" and without option "noprompt" and an attacker succeeds
+	    to provide malicious data to the other (arbitrary) address that is then
+	    transferred by socat to the READLINE address for output.</p>
 	  <p>Successful exploitation may allow an attacker to execute arbitrary
-	     code with the privileges of the socat process.</p>
+	    code with the privileges of the socat process.</p>
 	</blockquote>
       </body>
     </description>
