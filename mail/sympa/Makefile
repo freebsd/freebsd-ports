@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.9
+PORTVERSION=	6.1.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -16,31 +16,28 @@ COMMENT=	Sympa is an electronic mailing list manager
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS+=								\
-	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
-	${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
-	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy	\
-	${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl \
-	${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
-	${SITE_PERL}/MIME/EncWords.pm:${PORTSDIR}/mail/p5-MIME-EncWords	\
-	${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools	\
-	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools	\
-	${SITE_PERL}/${PERL_ARCH}/Locale/Msgcat.pm:${PORTSDIR}/misc/p5-Locale-Msgcat \
-	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap		\
-	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask	\
-	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-	${SITE_PERL}/Crypt/CipherSaber.pm:${PORTSDIR}/security/p5-Crypt-CipherSaber \
-	${SITE_PERL}/HTML/Formatter.pm:${PORTSDIR}/textproc/p5-HTML-Format	\
-	${SITE_PERL}/mach/Unicode/LineBreak.pm:${PORTSDIR}/textproc/p5-Unicode-LineBreak \
-	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-	${SITE_PERL}/HTML/StripScripts/Parser.pm:${PORTSDIR}/www/p5-HTML-StripScripts-Parser \
-	${SITE_PERL}/HTML/Tree.pm:${PORTSDIR}/www/p5-HTML-Tree		\
-	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-FORBIDDEN=	Possible to open archive management page for any list
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS+=	\
+	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
+	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI	\
+	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy	\
+	p5-Locale-libintl>=0:${PORTSDIR}/devel/p5-Locale-libintl \
+	p5-Term-ProgressBar>=0:${PORTSDIR}/devel/p5-Term-ProgressBar \
+	p5-MIME-EncWords>=0:${PORTSDIR}/mail/p5-MIME-EncWords	\
+	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools	\
+	p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools	\
+	p5-Msgcat>=0:${PORTSDIR}/misc/p5-Locale-Msgcat \
+	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap		\
+	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask	\
+	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
+	p5-Crypt-CipherSaber>=0:${PORTSDIR}/security/p5-Crypt-CipherSaber \
+	p5-HTML-Format>=0:${PORTSDIR}/textproc/p5-HTML-Format	\
+	p5-Unicode-LineBreak>=0:${PORTSDIR}/textproc/p5-Unicode-LineBreak \
+	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
+	p5-HTML-StripScripts-Parser>=0:${PORTSDIR}/www/p5-HTML-StripScripts-Parser \
+	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree		\
+	p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit
 
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
@@ -82,37 +79,31 @@ MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
 CONFLICTS=	sympa-5*
 
-DB_TYPE=
+DB_TYPE:=	${DB_TYPE:L}
 
-.if ${DB_TYPE} == "mysql"
+.if ${DB_TYPE:Mmysql}
 USE_MYSQL=	yes
 .endif
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_FASTCGI)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
+RUN_DEPENDS+=	p5-FCGI>=0:${PORTSDIR}/www/p5-FCGI
 . if !defined(WITHOUT_APACHE)
 USE_APACHE=	20+
-BUILD_DEPENDS+= ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=   ${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 . endif
 .endif
 
-.if ${DB_TYPE:L} == "oracle"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
-.elif ${DB_TYPE:L} == "pg"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.elif ${DB_TYPE:L} == "sybase"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
-.elif ${DB_TYPE:L} == "mysql"
+.if ${DB_TYPE:Moracle}
+RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
+.elif ${DB_TYPE:Mpg}
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+.elif ${DB_TYPE:Msybase}
+RUN_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
+.elif ${DB_TYPE:Mmysql}
 . if exists (${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}/Makefile)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 . else
 IGNORE=	Your MySQL installation is at ${MYSQL_VER}, and there is no p5-DBD-mysql${MYSQL_VER} port
 . endif

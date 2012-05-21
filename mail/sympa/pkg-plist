@@ -421,6 +421,7 @@ libexec/sympa/wwsympa.fcgi
 %%NLS%%share/locale/fi/LC_MESSAGES/web_help.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/sympa.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/web_help.mo
 %%NLS%%share/locale/id/LC_MESSAGES/sympa.mo
