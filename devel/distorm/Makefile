@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	distorm
-DISTVERSION=	20110707-r193
-PORTREVISION?=	1
+DISTVERSION=	20120514-r214
+PORTREVISION?=	0
 CATEGORIES=	devel
 .if defined(PYTHON_SLAVEPORT)
 CATEGORIES+=	python
@@ -34,7 +34,7 @@ USE_PYTHON=		-2.7
 
 USE_PYDISTUTILS=		yes
 PYDISTUTILS_PKGNAME=		distorm3
-PYDISTUTILS_PKGVERSION =	1.0
+PYDISTUTILS_PKGVERSION =	2
 
 PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/distorm3
 
@@ -85,9 +85,8 @@ do-build:
 	${MAKE_ARGS} clib clean)
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 	EXTRAFLAGS="-DDISTORM_STATIC" ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} staticlib)
-	${CC} ${CFLAGS} ${LDFLAGS} -DSUPPORT_64BIT_OFFSET \
-	-o ${BUILD_WRKSRC}/disasm ${WRKSRC}/examples/linux/main.c \
-	${BUILD_WRKSRC}/libdistorm3.a
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${BUILD_WRKSRC}/disasm \
+	${WRKSRC}/examples/linux/main.c ${BUILD_WRKSRC}/libdistorm3.a
 
 do-install:
 	@(cd ${BUILD_WRKSRC}; ${INSTALL_LIB} libdistorm3.a ${PREFIX}/lib; \
