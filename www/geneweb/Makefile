@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/geneweb/Src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	hubert@frbsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced genealogy software
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
