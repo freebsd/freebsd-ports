@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	rtf2latex2e
-PORTVERSION=	1.0
+PORTVERSION=	2.0.1
 CATEGORIES=	print
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION}fc2
-DISTNAME=	${PORTNAME}Unix1
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/2-0
+DISTNAME=	${PORTNAME}-${PORTVERSION:C|\.|-|g}
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	A newer filter that converts RTF (MS Rich Text Format) into LaTeX
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}Unix-${PORTVERSION}fc1/Unix
+USE_ZIP=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
