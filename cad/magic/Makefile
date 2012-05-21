@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	magic
-PORTVERSION=	7.5.216
+PORTVERSION=	7.5.220
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
 		http://fossies.org/linux/misc/
