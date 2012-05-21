@@ -210,9 +210,13 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
 .if defined(WITH_PDF_MANUALS) && !defined(NOPORTDOCS)
+BROKEN =		WITH_PDF_MANUALS cannot be used, because print/texinfo is\
+			incompatible with print/teTeX-base
 BUILD_DEPENDS +=	pdftex:${PORTSDIR}/print/teTeX-base \
 			texi2dvi:${PORTSDIR}/print/texinfo
 ALL_TARGET+=		pdf
+CONFIGURE_ENV +=	INSTALL_INFO="${LOCALBASE}/bin/install-info" \
+			MAKEINFO="${LOCALBASE}/bin/makeinfo"
 INSTALL_TARGET+=	install-pdf
 PLIST_SUB+=		PDF_MANUAL=""
 .else
