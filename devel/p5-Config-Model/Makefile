@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.015
+PORTVERSION=	2.016
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM \
 		p5-Text-Autoformat>=0:${PORTSDIR}/textproc/p5-Text-Autoformat \
 		p5-Text-Diff>=0:${PORTSDIR}/textproc/p5-Text-Diff \
-		p5-YAML>=0.68:${PORTSDIR}/textproc/p5-YAML \
+		p5-YAML>=0.30.3:${PORTSDIR}/textproc/p5-YAML \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
