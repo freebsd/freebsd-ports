@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PECL extension to create/apply binary and text patches
 
 LIB_DEPENDS=	xdiff.0:${PORTSDIR}/textproc/libxdiff
