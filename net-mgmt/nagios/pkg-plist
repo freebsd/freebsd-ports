@@ -97,12 +97,17 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/contexthelp/N5.html
 %%NAGIOSWWWDIR%%/contexthelp/N6.html
 %%NAGIOSWWWDIR%%/contexthelp/N7.html
+%%NAGIOSWWWDIR%%/images/Nagios-clearbg.png
 %%NAGIOSWWWDIR%%/images/NagiosEnterprises-whitebg-112x46.png
 %%NAGIOSWWWDIR%%/images/ack.gif
 %%NAGIOSWWWDIR%%/images/action-graph.gif
 %%NAGIOSWWWDIR%%/images/action-nagios.gif
 %%NAGIOSWWWDIR%%/images/action-orig.gif
 %%NAGIOSWWWDIR%%/images/action.gif
+%%NAGIOSWWWDIR%%/images/b_first2.png
+%%NAGIOSWWWDIR%%/images/b_last2.png
+%%NAGIOSWWWDIR%%/images/b_next2.png
+%%NAGIOSWWWDIR%%/images/b_prev2.png
 %%NAGIOSWWWDIR%%/images/command.png
 %%NAGIOSWWWDIR%%/images/comment.gif
 %%NAGIOSWWWDIR%%/images/contexthelp1.gif
@@ -349,10 +354,14 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/includes/rss/rss_fetch.inc
 %%NAGIOSWWWDIR%%/includes/rss/rss_parse.inc
 %%NAGIOSWWWDIR%%/includes/rss/rss_utils.inc
+%%NAGIOSWWWDIR%%/includes/jquery-1.7.1.min.js
 %%NAGIOSWWWDIR%%/includes/utils.inc.php
 %%NAGIOSWWWDIR%%/index.php
+%%NAGIOSWWWDIR%%/js/jquery-1.7.1.min.js
 %%NAGIOSWWWDIR%%/main.php
 %%NAGIOSWWWDIR%%/robots.txt
+%%NAGIOSWWWDIR%%/rss-corefeed.php
+%%NAGIOSWWWDIR%%/rss-newsfeed.php
 %%NAGIOSWWWDIR%%/side.php
 %%NAGIOSWWWDIR%%/stylesheets/avail.css
 %%NAGIOSWWWDIR%%/stylesheets/checksanity.css
@@ -382,6 +391,7 @@ etc/nagios/resource.cfg-sample
 @dirrm %%NAGIOSWWWDIR%%/includes/rss/extlib
 @dirrm %%NAGIOSWWWDIR%%/includes/rss
 @dirrm %%NAGIOSWWWDIR%%/includes
+@dirrm %%NAGIOSWWWDIR%%/js
 @dirrm %%NAGIOSWWWDIR%%/media
 @dirrm %%NAGIOSWWWDIR%%/ssi
 @dirrm %%NAGIOSWWWDIR%%/stylesheets

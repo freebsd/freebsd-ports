@@ -1,6 +1,6 @@
---- html/Makefile.in.orig	2011-07-25 03:23:52.000000000 +0930
-+++ html/Makefile.in	2011-08-20 19:32:21.000000000 +0930
-@@ -33,52 +33,52 @@
+--- html/Makefile.in.orig	2012-02-14 07:10:42.000000000 +1030
++++ html/Makefile.in	2012-05-21 21:34:09.000000000 +0930
+@@ -34,55 +34,55 @@
  devclean: distclean
  
  install:
@@ -10,6 +10,7 @@
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/contexthelp
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/js
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes
@@ -24,6 +25,7 @@
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/contexthelp
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/docs/images
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/js
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes
@@ -48,6 +50,9 @@
  	for file in contexthelp/*.html; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/contexthelp; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/contexthelp; done
+ 	for file in js/*.js; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/js; done
++	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/js; done
  #	for file in docs/*.html; \
 -#	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs; done
 +#	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs; done
@@ -71,12 +76,11 @@
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images/logos; done
  	for file in includes/*.*; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes; done
--	for file in includes/rss/*; \
--	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes; done
-+	for file in includes/rss/*.*; \
+ 	for file in includes/rss/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss; done
- 	for file in includes/rss/extlib/*; \
+ 	for file in includes/rss/extlib/*.*; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss/extlib; done
 +	do $(INSTALL) -m 644 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss/extlib; done
  
