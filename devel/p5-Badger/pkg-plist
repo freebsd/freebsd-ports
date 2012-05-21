@@ -1,4 +1,6 @@
 %%SITE_PERL%%/Badger.pm
+%%SITE_PERL%%/Badger/App.pm
+%%SITE_PERL%%/Badger/Apps.pm
 %%SITE_PERL%%/Badger/Base.pm
 %%SITE_PERL%%/Badger/Class.pm
 %%SITE_PERL%%/Badger/Class/Config.pm
@@ -9,14 +11,18 @@
 %%SITE_PERL%%/Badger/Codec/Chain.pm
 %%SITE_PERL%%/Badger/Codec/Encode.pm
 %%SITE_PERL%%/Badger/Codec/Encoding.pm
+%%SITE_PERL%%/Badger/Codec/HTML.pm
 %%SITE_PERL%%/Badger/Codec/JSON.pm
 %%SITE_PERL%%/Badger/Codec/Storable.pm
+%%SITE_PERL%%/Badger/Codec/TT.pm
 %%SITE_PERL%%/Badger/Codec/URI.pm
 %%SITE_PERL%%/Badger/Codec/URL.pm
 %%SITE_PERL%%/Badger/Codec/Unicode.pm
 %%SITE_PERL%%/Badger/Codec/YAML.pm
 %%SITE_PERL%%/Badger/Codecs.pm
 %%SITE_PERL%%/Badger/Config.pm
+%%SITE_PERL%%/Badger/Config/Item.pm
+%%SITE_PERL%%/Badger/Config/Schema.pm
 %%SITE_PERL%%/Badger/Constants.pm
 %%SITE_PERL%%/Badger/Debug.pm
 %%SITE_PERL%%/Badger/Exception.pm
@@ -31,18 +37,24 @@
 %%SITE_PERL%%/Badger/Filesystem/Virtual.pm
 %%SITE_PERL%%/Badger/Filesystem/Visitor.pm
 %%SITE_PERL%%/Badger/Hub.pm
+%%SITE_PERL%%/Badger/Hub/Badger.pm
 %%SITE_PERL%%/Badger/Log.pm
 %%SITE_PERL%%/Badger/Log/File.pm
 %%SITE_PERL%%/Badger/Logic.pm
 %%SITE_PERL%%/Badger/Mixin.pm
 %%SITE_PERL%%/Badger/Prototype.pm
 %%SITE_PERL%%/Badger/Rainbow.pm
+%%SITE_PERL%%/Badger/Reporter.pm
+%%SITE_PERL%%/Badger/Reporter/App.pm
 %%SITE_PERL%%/Badger/Test.pm
 %%SITE_PERL%%/Badger/Test/Manager.pm
 %%SITE_PERL%%/Badger/Timestamp.pm
+%%SITE_PERL%%/Badger/URL.pm
 %%SITE_PERL%%/Badger/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Badger/.packlist
+@dirrmtry %%SITE_PERL%%/Badger/Reporter
 @dirrmtry %%SITE_PERL%%/Badger/Log
+@dirrmtry %%SITE_PERL%%/Badger/Hub
 @dirrmtry %%SITE_PERL%%/Badger/Filesystem/Log
 @dirrmtry %%SITE_PERL%%/Badger/Filesystem/Base
 @dirrmtry %%SITE_PERL%%/Badger/Filesystem
@@ -50,5 +62,6 @@
 @dirrmtry %%SITE_PERL%%/Badger/Factory
 @dirrmtry %%SITE_PERL%%/Badger/Class
 @dirrmtry %%SITE_PERL%%/Badger/Codec
+@dirrmtry %%SITE_PERL%%/Badger/Config
 @dirrmtry %%SITE_PERL%%/Badger/Test
 @dirrmtry %%SITE_PERL%%/Badger
