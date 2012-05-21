@@ -8,6 +8,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
@@ -18,7 +19,7 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 libxml2 intltool gnomehack intlhack
+USE_GNOME=	glib20 libxml2 intltool gnomehack intlhack pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
