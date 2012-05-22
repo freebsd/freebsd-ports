@@ -7,9 +7,9 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.realvnc.com/:vnc
+MASTER_SITES=	http://home.bluelife.at/ports/distfiles/${DIST_SUBDIR}/:vnc
 DISTNAME=	vnc-4_1_3-unixsrc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:vnc
 DIST_SUBDIR=	xc
@@ -45,7 +45,6 @@ PREFIX=${REALVNC_BASE}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SERVER)
-# This is a placeholder MASTER_SITES entry -- see the pre-fetch target.
 MASTER_SITES+=	${MASTER_SITE_XORG:S/$/:x/}
 MASTER_SITE_SUBDIR+=	4.3.0/:x
 DISTFILES+=	X430src-1.tgz:x \
@@ -72,11 +71,6 @@ PLIST_SUB+=	SERVER=""
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
-
-# No direct URL for VNC -- have to pseudo-submit their webform.
-pre-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && cd ${DISTDIR}/${DIST_SUBDIR} && \
-	${FETCH_CMD} -o ${DISTNAME}.tar.gz 'http://www.realvnc.com/cgi-bin/download.cgi?product=free4/src/unix&acceptLicense=1&haveDetails=1&filetype=tar_gz&filever=${PORTVERSION}'
 
 post-extract:
 .if !defined(WITHOUT_SERVER)
