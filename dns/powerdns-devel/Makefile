@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	3.1.r2
+PORTVERSION=	3.1.r3
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
@@ -15,6 +15,8 @@ DISTNAME=	pdns-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
@@ -25,6 +27,8 @@ USE_LUA=	5.1
 LUA_COMPS=	lua
 
 CONFLICTS=	powerdns-3.0*
+
+NO_LATEST_LINK=	YES
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES
