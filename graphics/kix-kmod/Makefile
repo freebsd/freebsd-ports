@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	A graphical screensaver kernel module
 
+.include <bsd.port.pre.mk>
+
 SYSDIR?=	${SRC_BASE}/sys
 .if !exists(${SYSDIR}/dev/syscons/syscons.h)
 IGNORE=		requires kernel source (in ${SYSDIR}) to build
@@ -30,4 +32,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
