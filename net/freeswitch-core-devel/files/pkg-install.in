@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/net/freeswitch-core-devel/files/pkg-install.in,v 1.1 2012-05-17 21:03:11 crees Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/freeswitch-core-devel/files/pkg-install.in,v 1.2 2012-05-22 19:12:47 crees Exp $
 #
 
 if [ "$2" != "POST-INSTALL" ]; then
@@ -13,16 +13,14 @@ for dir in \
 	do install -d -o %%FREESWITCH_USER%% -g %%FREESWITCH_GROUP%% ${PKG_PREFIX}/$dir
 done
 
-for dir in etc/freeswitch include/freeswitch lib/freeswitch share/freeswitch
-	do chown %%FREESWITCH_USER%%:%%FREESWITCH_GROUP%% ${PKG_PREFIX}/$dir
-done
-
 find ${PKG_PREFIX}/etc/freeswitch/ -type d -exec chmod 770 {} +
 find ${PKG_PREFIX}/etc/freeswitch/ -type f -exec chmod 660 {} +
+/usr/sbin/chown -R %%FREESWITCH_USER%%:%%FREESWITCH_GROUP%% \
+		%%ETCDIR%% %%DATADIR%% \
+                ${PKG_PREFIX}/include/freeswitch \
+                ${PKG_PREFIX}/lib/freeswitch
 
 chmod 775 ${PKG_PREFIX}/share/freeswitch
-
-@cwd /var
 
 for dir in \
     db/freeswitch \
@@ -33,7 +31,7 @@ done
 
 echo "This port chown -R various directories %%FREESWITCH_USER%%:%%FREESWITCH_GROUP%%"
 echo "This port chmod -R 770 various directories"
-echo" This port chmod -R 660 various files"
+echo "This port chmod -R 660 various files"
 echo "This is for security reasons.  In the event something should"
 echo "stop working, please take the time to check the following dirs:"
 echo " /var/log/freeswitch /var/freeswitch"

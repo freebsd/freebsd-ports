@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch
 DISTVERSION=	1.2.rc2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/ \
 		http://files.freeswitch.org/downloads/libs/:2 \
@@ -88,8 +88,6 @@ GROUPS=	${FREESWITCH_GROUP}
 
 SUB_LIST=	FREESWITCH_USER=${FREESWITCH_USER} \
 		FREESWITCH_GROUP=${FREESWITCH_GROUP}
-
-BASE_PORTNAME=	${FREESWITCH_USER}
 
 VARBASE=	/var
 ETCDIR=	${PREFIX}/etc/${PORTNAME}
@@ -334,18 +332,20 @@ post-configure:
 pre-install:
 	@${CHMOD} 664 ${WRKSRC}/libs/freetdm/conf/*
 	@${MKDIR} ${ETCDIR}/conf
+	@${TOUCH} ${ETCDIR}/conf/.freeswitch-core-devel
 .if defined(WITH_MODFREETDM)
 	@${MKDIR} ${ETCDIR}/conf/autoload_configs
 .endif
-	@${FIND} ${PREFIX}/etc/${BASE_PORTNAME}/. -type d | ${XARGS} ${CHMOD} 770
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-	    ${SH} ${PKGINSTALL} ${BASE_PORTNAME} POST-INSTALL
-	@${FIND} ${ETCDIR}/. -type d | ${XARGS} ${CHMOD} 770
-	@${MKDIR} ${PREFIX}/share/${BASE_PORTNAME}/sounds
-	@${CHMOD} -R 770 ${PREFIX}/share/${BASE_PORTNAME}
-	@${FIND} ${ETCDIR}/. -type f | ${XARGS} ${CHMOD} 660
-	@${FIND} ${WWWDIR}/. -type f | ${XARGS} ${CHMOD} 660
+	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CHOWN} -R ${USERS}:${GROUPS} ${ETCDIR} ${DATADIR} \
+		${PREFIX}/include/${PORTNAME} \
+		${PREFIX}/lib/${PORTNAME}
+	@${FIND} ${ETCDIR} -type d | ${XARGS} ${CHMOD} 770
+	@${MKDIR} ${DATADIR}/sounds
+	@${CHMOD} -R 770 ${DATADIR}
+	@${FIND} ${ETCDIR} ${WWWDIR} -type f | ${XARGS} ${CHMOD} 660
 
 .include <bsd.port.mk>

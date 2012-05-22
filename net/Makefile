@@ -156,6 +156,10 @@
     SUBDIR += freeswitch
     SUBDIR += freeswitch-core
     SUBDIR += freeswitch-core-devel
+    SUBDIR += freeswitch-curl-devel
+    SUBDIR += freeswitch-insideout-devel
+    SUBDIR += freeswitch-sbc-devel
+    SUBDIR += freeswitch-vanilla-devel
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += frickin
