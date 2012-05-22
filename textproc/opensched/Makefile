@@ -14,21 +14,17 @@ MASTER_SITES=	http://hitachi-id.com/dlsoftware/opensched/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A project scheduler
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
+ALL_TARGET=	build
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		opensched.1
 PLIST_FILES=	bin/opensched
 
-.include <bsd.port.pre.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/opensched ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/opensched.1 ${MANPREFIX}/man/man1
 
-.if ${ARCH} == "i386"
-BROKEN=		Does not install
-.endif
-
-.if ${ARCH} == "alpha"
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
