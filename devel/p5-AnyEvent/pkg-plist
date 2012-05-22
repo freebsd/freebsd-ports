@@ -4,6 +4,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Debug.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/FAQ.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/IO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/IO/IOAIO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/IO/Perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Impl/Cocoa.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Impl/EV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Impl/Event.pm
@@ -30,4 +33,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Util
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/Impl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/AnyEvent
