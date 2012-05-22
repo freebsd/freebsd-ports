@@ -22,6 +22,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
+BROKEN=		installs an unwanted file
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 MAN1=		kon.1
