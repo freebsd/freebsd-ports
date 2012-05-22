@@ -37,7 +37,7 @@ post-patch:
 post-install:
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/ksh /etc/shells.bak; \
+	@(${GREP} -v "${PREFIX}/bin/ksh$$" /etc/shells.bak; \
 		${ECHO_CMD} ${PREFIX}/bin/ksh) > /etc/shells
 	@${RM} /etc/shells.bak
 
