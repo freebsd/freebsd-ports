@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,13 +17,11 @@ COMMENT=	Code coverage metrics for Perl
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
-		p5-PPI-HTML>=1.07:${PORTSDIR}/textproc/p5-PPI-HTML \
+BUILD_DEPENDS=	p5-PPI-HTML>=1.07:${PORTSDIR}/textproc/p5-PPI-HTML \
 		p5-Parallel-Iterator>=0:${PORTSDIR}/devel/p5-Parallel-Iterator \
 		p5-Pod-Coverage>=0.06:${PORTSDIR}/devel/p5-Pod-Coverage \
 		p5-Template-Toolkit>=2:${PORTSDIR}/www/p5-Template-Toolkit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
@@ -49,6 +47,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::DB::IO::JSON.3 \
 		Devel::Cover::DB::IO::Storable.3 \
 		Devel::Cover::DB::Structure.3 \
+		Devel::Cover::Dumper.3 \
 		Devel::Cover::Op.3 \
 		Devel::Cover::Pod.3 \
 		Devel::Cover::Report::Compilation.3 \
@@ -67,7 +66,6 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Truth_Table.3 \
 		Devel::Cover::Tutorial.3 \
 		Devel::Cover::Web.3
-
 PORTDOCS=	README
 
 post-install:
@@ -77,4 +75,13 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Regarding JSON format, Devel::Cover will try JSON and JSON:PP.
+# Thus, users of Perl 5.14 and above use JSON:PP (core module).
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+RUN_DEPENDS+=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON
+.endif
+
+.include <bsd.port.post.mk>
