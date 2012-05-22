@@ -12041,19 +12041,19 @@
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.9_p1-r4/README.tun.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.9_p1-r4/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.9_p1-r4/sshd_config.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/CHANGES.SSLeay.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/CHANGES.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/FAQ.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/c-indentation.el.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/fingerprints.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/html/openssl_button.gif
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/html/openssl_button.html
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/openssl-shared.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/openssl.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/ssleay.txt.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/standards.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/CHANGES.SSLeay.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/CHANGES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/FAQ.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/c-indentation.el.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/fingerprints.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/html/openssl_button.gif
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/html/openssl_button.html
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/openssl-shared.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/openssl.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/ssleay.txt.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/standards.txt.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/CHANGELOG.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/ChangeLog.bz2
@@ -28364,38 +28364,38 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4/mpfr-3.0.1_p4.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4/repository
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CC
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/PDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/PF
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/USE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/openssl-1.0.0i.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i/repository
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CC
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/PDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/PF
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/USE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/openssl-1.0.0j.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j/repository
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1/CATEGORY
@@ -30995,7 +30995,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl/Authen-SASL-2.150.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-perl
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0i
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0j
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.1_p4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpc-0.8.2
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r5
@@ -31753,8 +31753,8 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/modules
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pam-1.1.5
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i/html
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0i
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j/html
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0j
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.9_p1-r4
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.9.8.4
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728
