@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.56
+PORTVERSION=	1.0.57
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -117,6 +117,11 @@ MAKE_SH_ARGS+=	--xc-host='${XC_HOST}'
 
 .if defined(WITH_THREADS)
 MAKE_SH_ARGS+=	--with-sb-thread
+.if defined(WITH_FUTEX)
+MAKE_SH_ARGS+=	--with-sb-futex
+.else
+MAKE_SH_ARGS+=	--without-sb-futex
+.endif
 .else
 MAKE_SH_ARGS+=	--without-sb-thread
 .endif

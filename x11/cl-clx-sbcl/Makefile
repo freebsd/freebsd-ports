@@ -18,6 +18,6 @@ FASL_TARGET=	sbcl
 
 PLIST=		${.CURDIR}/pkg-plist
 
-BROKEN =	: Changes in sbcl 1.0.55 have exposed problems in ${ASDF_PATHNAME}/depdefs.lisp
+BROKEN =	Changes in sbcl 1.0.55 have exposed problems in ${ASDF_PATHNAME}/depdefs.lisp
 
 .include "${MASTERDIR}/Makefile"

@@ -7,6 +7,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.27.0
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -116,7 +117,7 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-check test: build
+check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
 	${MAKE_ARGS} check
 
