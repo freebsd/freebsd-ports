@@ -2,3 +2,5 @@ SHA256 (git-1.7.10.2.tar.gz) = 335e978814659f328e377715b13a33336859275ae6f215bf2
 SIZE (git-1.7.10.2.tar.gz) = 3809702
 SHA256 (git-manpages-1.7.10.2.tar.gz) = bc57810ec8d87f7a10f320e31ceeb1f9eaf254e62e0f6414af67f17d0cf7d522
 SIZE (git-manpages-1.7.10.2.tar.gz) = 511363
+SHA256 (git-htmldocs-1.7.10.2.tar.gz) = 4cb17519eb621060d657c71ba8b10d755a6ea71123642ed6cc73d24ce8f0b734
+SIZE (git-htmldocs-1.7.10.2.tar.gz) = 1764063
