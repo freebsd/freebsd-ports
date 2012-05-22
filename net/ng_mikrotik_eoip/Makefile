@@ -25,11 +25,11 @@ KMODDIR?=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR} \
 		PORTNAME=${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 .if !exists(${SRC_BASE}/sys/sys/module.h)
 IGNORE=		requires kernel source files
 .endif
-
-.include <bsd.port.options.mk>
 
 .if defined(WITH_PTABLE)
 MAKE_ARGS+=	NO_LINEAR_HOOK_LOOKUP=1
