@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	editors python
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	desktopfileutils gtk20 pygtk2 pygobject
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
 
 MAN1=		zim.1
@@ -32,9 +32,12 @@ OPTIONS=	GNUR "Add support of plot editor based on GNU R" Off \
 		GRAPHVIZ "Add diagram editor support" Off \
 		SCROT "Add screenshot taking and inserting support" Off \
 		GNUPLOT "Add plot editor support" Off \
-		BZR "Add version control for notebooks support" Off
+		BZR "Use bzr for notebooks version control support" Off \
+		GIT "Use git for notebooks version control support" Off \
+		MERCURIAL "Use hg for notebooks version control support" Off \
+		DITAA "Add diagram editor support" Off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GNUR)
 RUN_DEPENDS+=	R:${PORTSDIR}/math/R
@@ -54,9 +57,14 @@ RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .if defined(WITH_BZR)
 RUN_DEPENDS+=	bzr:${PORTSDIR}/devel/bazaar-ng
 .endif
-
-.if ${PYTHON_REL} < 260
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
+.if defined(WITH_GIT)
+RUN_DEPENDS+=	git:${PORTSDIR}/devel/git
+.endif
+.if defined(WITH_MERCURIAL)
+RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial
+.endif
+.if defined(WITH_DITAA)
+RUN_DEPENDS+=	ditaa:${PORTSDIR}/graphics/ditaa
 .endif
 
 post-patch:
@@ -65,4 +73,4 @@ post-patch:
 post-install:
 	-@update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
