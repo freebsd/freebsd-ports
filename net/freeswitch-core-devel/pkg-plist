@@ -6,6 +6,7 @@ bin/fs_ivrd
 bin/fsxs
 bin/gentls_cert
 bin/tone2wav
+%%ETCDIR%%/conf/.freeswitch-core-devel
 %%MODFREETDM%%%%ETCDIR%%/conf/autoload_configs/freetdm.conf.xml.sample
 %%MODFREETDM%%%%ETCDIR%%/conf/freetdm.conf.sample
 %%MODFREETDM%%%%ETCDIR%%/conf/pika.conf.sample
