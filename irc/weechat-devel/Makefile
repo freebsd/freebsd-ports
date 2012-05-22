@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20120515
+PORTVERSION=	20120522
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -27,7 +27,7 @@ USE_CMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 WANT_PERL=	yes
 
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
 # Please note: the DEBUG option is *NOT* empty, it is utilised by
 # bsd.cmake.mk to set the cmake build type to Debug instead of
@@ -47,7 +47,7 @@ OPTIONS=	RUBY		"Ruby scripting support"	Off	\
 		NLS		"NLS support"			On	\
 		DOCUMENTATION	"Build documentation"		Off
 
-GITREV=	b645947
+GITREV=	6f5a20e
 WRKSRC=	${WRKDIR}/${PORTNAME}-${GITREV}
 
 .include <bsd.port.options.mk>
@@ -96,7 +96,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
 .endif
@@ -134,7 +134,7 @@ PLIST_SUB+=	LUA="@comment "
 
 .if defined(WITH_GUILE)
 IGNORE=		guile support currently causes a segfault on exit. Please re-run 'make config' and disable GUILE
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
 CMAKE_ARGS+=	-DENABLE_GUILE=no
@@ -151,7 +151,7 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
 .if defined(WITH_BACKTRACE)
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 .endif
 
 MAN1=	weechat-curses.1
