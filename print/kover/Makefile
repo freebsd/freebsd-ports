@@ -4,28 +4,28 @@
 #
 # $FreeBSD$
 
-PORTNAME=		kover
-PORTVERSION=		2.9.5
-PORTREVISION=	9
-CATEGORIES=		print kde
-MASTER_SITES=		http://lisas.de/kover/
+PORTNAME=	kover
+PORTVERSION=	4
+CATEGORIES=	print kde
+MASTER_SITES=	http://lisas.de/kover/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		WYSIWYG CD cover printer
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	WYSIWYG CD cover printer
 
-EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
+LICENSE=	GPLv2
 
-USE_KDELIBS_VER=	3
-USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool
+LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
+		cdio.13:${PORTSDIR}/sysutils/libcdio
 
-MAN1=	kover.1 cddb-id.1
+USE_BZIP2=	yes
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib dbus gui network svg xml \
+		qmake_build uic_build rcc_build
+USE_PERL5_BUILD=yes
+USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
-post-extract:
-	@${TOUCH} -t 200404270000 ${WRKSRC}/Makefile.am.in
-	@${TOUCH} -t 200404270001 ${WRKSRC}/subdirs
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+MAN1=		kover.1
 
 .include <bsd.port.mk>
