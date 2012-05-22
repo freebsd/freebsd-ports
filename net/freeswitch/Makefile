@@ -16,6 +16,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch meta-port to pull in all the components
 
+CONFLICTS=	freeswitch-devel-[0-9]*
+
 RUN_DEPENDS=	${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
 
 NO_WRKSUBDIR=	yes
