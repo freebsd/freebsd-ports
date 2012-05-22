@@ -37,11 +37,11 @@ MAKE_ENV+=	KMODDIR=${KMODDIR} DATADIR=${DATADIR} SYSDIR="${SRC_BASE}/sys"
 
 IET_CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources to build
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107
 BROKEN=		requires 8.0-RELEASE or higher
