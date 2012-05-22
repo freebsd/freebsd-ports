@@ -833,6 +833,7 @@
     SUBDIR += tablelog
     SUBDIR += tarantool
     SUBDIR += tcl-Mysql
+    SUBDIR += tcl-sqlite3
     SUBDIR += tdb
     SUBDIR += tdbc
     SUBDIR += tinycdb
