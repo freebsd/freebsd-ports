@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Acme-MetaSyntactic
-PORTVERSION=	1.000
+PORTVERSION=	1.002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Themed metasyntactic variables names
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
