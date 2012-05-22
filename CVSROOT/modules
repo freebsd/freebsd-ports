@@ -3957,6 +3957,7 @@ freeswitch-core                 ports/net/freeswitch-core
 freeswitch-core-devel           ports/net/freeswitch-core-devel
 freeswitch-music                ports/audio/freeswitch-music
 freeswitch-pizzademo            ports/misc/freeswitch-pizzademo
+freeswitch-pizzademo-devel      ports/misc/freeswitch-pizzademo-devel
 freeswitch-scripts              ports/misc/freeswitch-scripts
 freeswitch-sounds               ports/audio/freeswitch-sounds
 freesynd                        ports/games/freesynd
@@ -23147,6 +23148,7 @@ py-serial                       ports/comms/py-serial
 py-setproctitle                 ports/devel/py-setproctitle
 py-setuptools                   ports/devel/py-setuptools
 py-setuptools_darcs             ports/devel/py-setuptools_darcs
+py-setuptools_hg                ports/devel/py-setuptools_hg
 py-sexy                         ports/x11-toolkits/py-sexy
 py-sgflib                       ports/games/py-sgflib
 py-sgfsummary                   ports/games/py-sgfsummary
@@ -24032,6 +24034,9 @@ rawtherapee                     ports/graphics/rawtherapee
 raysfilter                      ports/mail/raysfilter
 rayshade                        ports/graphics/rayshade
 razor-agents                    ports/mail/razor-agents
+razorback-api                   ports/security/razorback-api
+razorback-fileInject            ports/security/razorback-fileInject
+razorback-fileinject            ports/security/razorback-fileInject
 rbl-milter                      ports/mail/rbl-milter
 rblcheck                        ports/mail/rblcheck
 rbldnsd                         ports/dns/rbldnsd
