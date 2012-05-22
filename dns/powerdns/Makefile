@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.1
+PORTREVISION?=	0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -15,6 +15,8 @@ DISTNAME=	pdns-${PORTVERSION}
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	An advanced DNS server with multiple backends including SQL
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
