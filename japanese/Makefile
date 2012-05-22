@@ -69,6 +69,7 @@
     SUBDIR += esecanna-module-wnn6
     SUBDIR += eterm
     SUBDIR += exmh2
+    SUBDIR += fcitx-mozc
     SUBDIR += flex-sdk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
