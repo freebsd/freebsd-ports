@@ -29,9 +29,9 @@ share/icons/oxygen/scalable/media-playback-pause.svgz
 share/icons/oxygen/scalable/zoom-in.svgz
 share/icons/oxygen/scalable/zoom-out.svgz
 share/pixmaps/cutemaze.png
-@dirrm share/icons/oxygen/scalable
-@dirrm share/icons/oxygen/22x22
-@dirrm share/icons/oxygen/16x16
-@dirrm share/icons/oxygen
+@dirrmtry share/icons/oxygen/scalable
+@dirrmtry share/icons/oxygen/22x22
+@dirrmtry share/icons/oxygen/16x16
+@dirrmtry share/icons/oxygen
 @dirrmtry share/icons
-@dirrm share/applications
+@dirrmtry share/applications
