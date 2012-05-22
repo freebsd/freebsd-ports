@@ -7,7 +7,7 @@
 
 PORTNAME=	bubble-chains
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://bubble-chains.sintegrial.com/files/
 DISTNAME=	chains-${DISTVERSION}
@@ -29,10 +29,8 @@ USE_XORG=	xrandr
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build iconengines imageformats \
 		corelib svg xml opengl network
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ENV+=	UIC="${UIC}" QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}"
-MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
+
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/bubble-chains \
 		share/pixmaps/bubble-chains.ico \
@@ -45,8 +43,6 @@ PORTDOCS=	README
 P7ZIP_CMD=	${LOCALBASE}/bin/7z
 P7ZIP_ARGS=	x -o${WRKDIR}
 
-MAKE_JOBS_SAFE=	yes
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${P7ZIP_CMD} ${P7ZIP_ARGS} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -57,25 +53,28 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX} ${WRKSRC}/Game.pro
+		${QMAKE} ${QMAKEFLAGS}
 
 do-install:
+# Executable
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/chains ${PREFIX}/bin/${PORTNAME}
+
+# Pixmaps and Desktop
 	${INSTALL_DATA} ${WRKSRC}/images/logo.png \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_DATA} ${WRKSRC}/icon.ico \
 		${PREFIX}/share/pixmaps/${PORTNAME}.ico
 
+# Data
 .if !defined (NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
 .endif
 
+# Documentation
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
