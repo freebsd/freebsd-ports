@@ -3374,6 +3374,7 @@
     SUBDIR += py-sendfile
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
+    SUBDIR += py-setuptools-git
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
     SUBDIR += py-shapely
