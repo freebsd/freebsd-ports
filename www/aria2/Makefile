@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.14.1
+PORTVERSION=	1.15.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -16,8 +16,10 @@ COMMENT=	Yet another download tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	z.1:${PORTSDIR}/archivers/zlib
+
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-libxml2 \
-		--without-gnutls --with-openssl --with-openssl-prefix=/usr \
+		--without-gnutls --with-openssl \
 		--without-libcares --with-libz --enable-bittorrent \
 		--enable-metalink --disable-epoll --enable-threads=pth
 
@@ -25,6 +27,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=	yes
 MAKE_JOBS_SAFE=	yes
 
 .ifdef WITHOUT_NLS
