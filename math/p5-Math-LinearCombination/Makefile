@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sum of variables with a numerical coefficient
 
-BUILD_DEPENDS=	${SITE_PERL}/fields.pm:${PORTSDIR}/devel/p5-Class-Fields \
-		${SITE_PERL}/Math/SimpleVariable.pm:${PORTSDIR}/math/p5-Math-SimpleVariable
+BUILD_DEPENDS=	p5-Class-Fields>=0:${PORTSDIR}/devel/p5-Class-Fields \
+		p5-Math-SimpleVariable>=0:${PORTSDIR}/math/p5-Math-SimpleVariable
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
