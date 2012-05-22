@@ -6,26 +6,28 @@
 #
 
 PORTNAME=	latd
-PORTVERSION=	1.25
+PORTVERSION=	1.29
 CATEGORIES=	net
 MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The linux-decnet project LAT protocol suite
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-CFLAGS+=	-Wno-deprecated
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		llogin.1
 MAN5=		latd.conf.5
 MAN8=		latd.8 latcp.8 moprc.8
+PLIST_FILES=	bin/llogin etc/latd.conf.sample sbin/latcp sbin/latd sbin/moprc
 
-.include <bsd.port.pre.mk>
+post-extract:
+	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.cc" | ${XARGS} ${REINPLACE_CMD} -e \
+		'/<utmp.h>/s|^|// |'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
