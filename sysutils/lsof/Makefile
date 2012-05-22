@@ -39,10 +39,11 @@ SRCBALL_NAME=	${DISTNAME:S/_W$//}_src
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
 
-.include <bsd.port.pre.mk>
-
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
+
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}" FREEBSD_SYS="${SRC_BASE}/sys"
