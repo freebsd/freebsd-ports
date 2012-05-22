@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	dev86
-PORTVERSION=	0.16.17
+PORTVERSION=	0.16.18
 CATEGORIES=	devel
-MASTER_SITES=	http://homepage.ntlworld.com/robert.debath/dev86/
+MASTER_SITES=	http://www.debath.co.uk/dev86/ \
+		http://tmp.chruetertee.ch/ \
+		http://disasterarea.chruetertee.ch/
 DISTNAME=	Dev86src-${PORTVERSION}
 
 MAINTAINER=	phs@deadc0.de
