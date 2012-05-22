@@ -1,5 +1,0 @@
-sbin/latd
-sbin/latcp
-sbin/moprc
-bin/llogin
-etc/latd.conf.sample
