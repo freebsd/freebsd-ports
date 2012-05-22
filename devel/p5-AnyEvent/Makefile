@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	AnyEvent
-PORTVERSION=	6.10
+PORTVERSION=	7.01
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
@@ -25,12 +27,15 @@ MAN3=		AE.3 \
 		AnyEvent::Debug.3 \
 		AnyEvent::FAQ.3 \
 		AnyEvent::Handle.3 \
+		AnyEvent::IO.3 \
+		AnyEvent::IO::IOAIO.3 \
+		AnyEvent::IO::Perl.3 \
 		AnyEvent::Impl::Cocoa.3 \
 		AnyEvent::Impl::EV.3 \
 		AnyEvent::Impl::Event.3 \
 		AnyEvent::Impl::EventLib.3 \
-		AnyEvent::Impl::Glib.3 \
 		AnyEvent::Impl::FLTK.3 \
+		AnyEvent::Impl::Glib.3 \
 		AnyEvent::Impl::IOAsync.3 \
 		AnyEvent::Impl::Irssi.3 \
 		AnyEvent::Impl::POE.3 \
