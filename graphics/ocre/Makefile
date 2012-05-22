@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocre
-PORTVERSION=	0.039
+PORTVERSION=	0.041
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
