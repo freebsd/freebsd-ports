@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	south
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.5
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.aeracode.org/releases/south/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	South-${PORTVERSION}
 
-MAINTAINER=	count@211.ru
+MAINTAINER=	william88@gmail.com
 COMMENT=	This is South, intelligent schema migrations for Django apps
 
 LICENSE=	AL2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 PYDISTUTILS_PKGNAME=	South
 USE_PYDISTUTILS=	easy_install
