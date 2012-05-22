@@ -30,9 +30,9 @@ MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
 PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" \
 		RTC_H_DIR="${RTC_H_DIR}"
 
-SRC_BASE?=	/usr/src
-
 .include <bsd.port.pre.mk>
+
+SRC_BASE?=	/usr/src
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		needs kernel source files
