@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1053.102
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -58,7 +58,6 @@ BUILD_MODE=	Release
 .endif
 
 LOCALBASE_REPLACE_FILES= \
-		build_mozc.py \
 		gyp/common.gypi \
 		unix/ibus/gen_mozc_xml.py \
 		unix/ibus/mozc.xml \
@@ -78,7 +77,7 @@ BUILD_CMD=	${SETENV} ${MAKE_ENV} ${GMAKE}
 BUILD_MOZC_CMD=	cd ${BUILD_WRKSRC} && \
 		${SETENV} BUILD_COMMAND="${WRKSRC}/mozcmake" \
 		PYTHONPATH=${WRKSRC}/third_party/gyp/local/lib/python${PYTHON_VER}/site-packages \
-		MOZC_SERVER_DIRECTORY="${PREFIX}/bin" GYP_DEFINES="use_libprotobuf=1" \
+		GYP_DEFINES="use_libprotobuf=1" \
 		${PYTHON_CMD} build_mozc.py
 BUILD_GYP_CMD=	cd ${WRKSRC}/third_party/gyp && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP}
 
@@ -95,7 +94,8 @@ pre-build:
 	${BUILD_GYP_CMD} ${PYDISTUTILS_CONFIGURE_TARGET} ${PYDISTUTILS_CONFIGUREARGS}
 	${BUILD_GYP_CMD} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS}
 	${BUILD_GYP_CMD} ${PYDISTUTILS_INSTALL_TARGET} --prefix=${WRKSRC}/third_party/gyp/local
-	${BUILD_MOZC_CMD} gyp --gypdir=${WRKSRC}/third_party/gyp/local/bin --channel_dev=0
+	${BUILD_MOZC_CMD} gyp --gypdir=${WRKSRC}/third_party/gyp/local/bin \
+		--server_dir="${PREFIX}/bin" --channel_dev=0
 	${BUILD_MOZC_CMD} build_tools -c ${BUILD_MODE}
 
 # mozc_server
@@ -225,6 +225,65 @@ do-install-scim_mozc:
 	@${INSTALL_DATA} \
 		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
 		${DATADIR}/icons/scim-mozc.png
+.endif
+
+# fcitx_mozc
+.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
+LIB_DEPENDS+=	fcitx-config.4:${PORTSDIR}/chinese/fcitx
+RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
+		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
+		mozc_server_start:${PORTSDIR}/japanese/mozc-additions
+
+PLIST_FILES+=	lib/fcitx/fcitx-mozc.so \
+		share/fcitx/addon/fcitx-mozc.conf \
+		share/fcitx/inputmethod/mozc.conf \
+		${DATADIR_REL}/icon/mozc.png \
+		${DATADIR_REL}/icon/mozc-alpha_full.png \
+		${DATADIR_REL}/icon/mozc-alpha_half.png \
+		${DATADIR_REL}/icon/mozc-direct.png \
+		${DATADIR_REL}/icon/mozc-hiragana.png \
+		${DATADIR_REL}/icon/mozc-katakana_full.png \
+		${DATADIR_REL}/icon/mozc-katakana_half.png \
+		${DATADIR_REL}/icon/mozc-dictionary.png \
+		${DATADIR_REL}/icon/mozc-properties.png \
+		${DATADIR_REL}/icon/mozc-tool.png \
+		share/locale/ja/LC_MESSAGES/fcitx-mozc.mo \
+		share/locale/zh_CN/LC_MESSAGES/fcitx-mozc.mo \
+		share/locale/zh_TW/LC_MESSAGES/fcitx-mozc.mo
+PLIST_DIRS+=	${DATADIR_REL}/icon ${DATADIR_REL}
+
+do-build-fcitx_mozc:
+		${BUILD_MOZC_CMD} build -c ${BUILD_MODE} unix/fcitx/fcitx.gyp:fcitx-mozc
+
+do-install-fcitx_mozc:
+	${MKDIR} \
+		${PREFIX}/lib/fcitx \
+		${PREFIX}/share/fcitx/addon \
+		${PREFIX}/share/fcitx/inputmethod
+	${INSTALL_LIB} \
+		${WRKSRC}/out_linux/${BUILD_MODE}/fcitx-mozc.so \
+		${PREFIX}/lib/fcitx/fcitx-mozc.so
+	${INSTALL_DATA} \
+		${WRKSRC}/unix/fcitx/fcitx-mozc.conf \
+		${PREFIX}/share/fcitx/addon/fcitx-mozc.conf
+	${INSTALL_DATA} \
+		${WRKSRC}/unix/fcitx/mozc.conf \
+		${PREFIX}/share/fcitx/inputmethod/mozc.conf
+	${MKDIR} ${DATADIR}/icon
+.for F in ui-alpha_full ui-alpha_half ui-dictionary ui-direct \
+	ui-hiragana ui-katakana_full ui-katakana_half ui-properties ui-tool
+	@${INSTALL_DATA} \
+		${WRKSRC}/data/images/unix/${F}.png \
+		${DATADIR}/icon/${F:S/^ui-/mozc-/}.png
+.endfor
+	@${INSTALL_DATA} \
+		${WRKSRC}/data/images/product_icon_32bpp-128.png \
+		${DATADIR}/icon/mozc.png
+.for L in ja zh_CN zh_TW
+	@${INSTALL_DATA} \
+		${WRKSRC}/out_linux/${BUILD_MODE}/obj/gen/unix/fcitx/po/${L}.mo \
+		${PREFIX}/share/locale/${L}/LC_MESSAGES/fcitx-mozc.mo
+.endfor
 .endif
 
 # mozc-el
