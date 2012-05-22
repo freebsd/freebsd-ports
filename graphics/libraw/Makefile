@@ -1,13 +1,13 @@
 # New ports collection makefile for:	raw images library
-# Date created:		26 Apr 2008
-# Whom:			osa
+# Date created:				26 Apr 2008
+# Whom:					Sergey A. Osokin <osa@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libraw
 PORTVERSION=	0.14.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -19,17 +19,19 @@ COMMENT=	Library for manipulating raw images
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
-OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable demosaic pack GPL2" off \
-		DEMOSAIC_PACK_GPL3	"Enable demosaic pack GPL3" off \
-		LCMS			"Build with lcms" on \
-		OPTIMIZED_CFLAGS	"Enable optimization" off
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-examples --disable-jasper
+CFLAGS+=	-fPIC
+
+OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable GPLv2 demosaic pack"	off \
+		DEMOSAIC_PACK_GPL3	"Enable GPLv3 demosaic pack"	off \
+		LCMS			"Build with LCMS support"	on \
+		OPTIMIZED_CFLAGS	"Enable optimizations (on x86)"	off
 
 .include <bsd.port.options.mk>
-
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--program-prefix=${PREFIX} --disable-examples --disable-jasper
-CFLAGS+=	-fPIC
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 .if ${ARCH} == "i386"
@@ -60,9 +62,10 @@ CONFIGURE_ARGS+=--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTV
 CONFIGURE_ARGS+=--disable-demosaic-pack-gpl3
 .endif
 
-PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html API-CXX-rus.html \
-		API-datastruct-eng.html API-datastruct-rus.html API-notes-eng.html \
-		API-notes-rus.html API-overview-eng.html API-overview-rus.html \
+PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html \
+		API-CXX-rus.html API-datastruct-eng.html \
+		API-datastruct-rus.html API-notes-eng.html API-notes-rus.html \
+		API-overview-eng.html API-overview-rus.html \
 		Install-LibRaw-eng.html Install-LibRaw-rus.html \
 		Samples-LibRaw-eng.html Samples-LibRaw-rus.html \
 		Why-LibRaw-eng.html Why-LibRaw-rus.html \
@@ -78,17 +81,17 @@ do-install:
 
 .for f in libraw.h libraw_alloc.h libraw_const.h libraw_datastream.h \
 	libraw_internal.h libraw_types.h libraw_version.h
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
 .endfor
 .for f in libraw.a libraw_r.a libraw.so.5 libraw_r.so.5
-	@${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
 .endfor
 .for f in libraw libraw_r
-	@ cd ${PREFIX}/lib ; ${LN} -sf ${f}.so.0 ${f}.so
+	@cd ${PREFIX}/lib ; ${LN} -sf ${f}.so.5 ${f}.so
 .endfor
 
 .for f in libraw.pc libraw_r.pc
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
 .endfor
 
 .if !defined(NOPORTDOCS)
