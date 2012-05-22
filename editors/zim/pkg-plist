@@ -137,6 +137,9 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/diagrameditor.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/ditaaeditor.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/ditaaeditor.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/ditaaeditor.pyo
 %%PYTHON_SITELIBDIR%%/zim/plugins/equationeditor.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/equationeditor.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/equationeditor.pyo
@@ -191,6 +194,12 @@ bin/zim
 %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/bzr.py
 %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/bzr.pyc
 %%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/bzr.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/git.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/git.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/git.pyo
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/hg.py
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/hg.pyc
+%%PYTHON_SITELIBDIR%%/zim/plugins/versioncontrol/hg.pyo
 %%PYTHON_SITELIBDIR%%/zim/search.py
 %%PYTHON_SITELIBDIR%%/zim/search.pyc
 %%PYTHON_SITELIBDIR%%/zim/search.pyo
@@ -256,6 +265,7 @@ share/locale/pl/LC_MESSAGES/zim.mo
 share/locale/ru/LC_MESSAGES/zim.mo
 share/locale/sk/LC_MESSAGES/zim.mo
 share/locale/sl/LC_MESSAGES/zim.mo
+share/locale/sr/LC_MESSAGES/zim.mo
 share/locale/sv/LC_MESSAGES/zim.mo
 share/locale/tr/LC_MESSAGES/zim.mo
 share/locale/uk/LC_MESSAGES/zim.mo
@@ -304,6 +314,9 @@ share/pixmaps/zim.png
 %%DATADIR%%/manual/Plugins/Calendar.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor.txt
 %%DATADIR%%/manual/Plugins/Diagram_Editor/diagram.png
+%%DATADIR%%/manual/Plugins/Ditaa_Editor.txt
+%%DATADIR%%/manual/Plugins/Ditaa_Editor/ditaa.dia
+%%DATADIR%%/manual/Plugins/Ditaa_Editor/ditaa.png
 %%DATADIR%%/manual/Plugins/Equation_Editor.txt
 %%DATADIR%%/manual/Plugins/Equation_Editor/equation_01.png
 %%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor.txt
@@ -375,6 +388,7 @@ share/pixmaps/zim.png
 @dirrm %%DATADIR%%/manual/Plugins/Gnuplot_Editor
 @dirrm %%DATADIR%%/manual/Plugins/GNU_R_Plot_Editor
 @dirrm %%DATADIR%%/manual/Plugins/Equation_Editor
+@dirrm %%DATADIR%%/manual/Plugins/Ditaa_Editor
 @dirrm %%DATADIR%%/manual/Plugins/Diagram_Editor
 @dirrm %%DATADIR%%/manual/Plugins
 @dirrm %%DATADIR%%/manual/Help/Export
