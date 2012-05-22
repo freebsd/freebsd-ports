@@ -852,6 +852,7 @@
     SUBDIR += spinner
     SUBDIR += spiped
     SUBDIR += squashfs-tools
+    SUBDIR += sshsudo
     SUBDIR += ssid
     SUBDIR += ssync
     SUBDIR += stalepid
