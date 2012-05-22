@@ -24,6 +24,7 @@ USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui opengl network sql xml linguist_build \
 		moc_build uic_build rcc_build qmake_build
+USE_GL=		glu
 MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	qlandkartegt
