@@ -20,6 +20,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO/JSON.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/Structure.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Dumper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Inc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Op.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Pod.pm
