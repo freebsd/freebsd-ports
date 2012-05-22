@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=	BINDING_PHP="@comment "
 .else
+BROKEN=		does not compile
 CONFIGURE_ARGS+=	--with-php
 CONFIGURE_ENV+=	PHP_CONFIG="${LOCALBASE}/bin/php-config"
 PLIST_SUB+=	BINDING_PHP=""
