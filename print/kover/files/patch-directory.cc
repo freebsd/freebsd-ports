@@ -1,5 +1,5 @@
---- kover/directory.cc.orig	Sun Jun  6 16:25:27 2004
-+++ kover/directory.cc	Sun Jun  6 16:36:15 2004
+--- src/directory.cc.orig	2008-11-16 06:59:26.000000000 +0900
++++ src/directory.cc	2012-05-10 17:27:13.000000000 +0900
 @@ -153,7 +153,7 @@
      for (dir = childs.begin(); dir != childs.end(); dir++) {
          printf("%s:%s:%d\n",(*dir)->get_current().c_str(),
