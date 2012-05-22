@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	mysql${MYSQL_VER}-
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A message queue that works as a pluggable storage engine of MySQL
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:build
+FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:build
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
 USE_GMAKE=	yes
