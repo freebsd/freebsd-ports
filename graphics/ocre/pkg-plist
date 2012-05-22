@@ -1,5 +1,6 @@
 bin/ocre
 share/locale/es/LC_MESSAGES/ocre.mo
+%%DATADIR%%/conv/cod39a2c
 %%DATADIR%%/conv/maymin
 %%DATADIR%%/conv/minmay
 %%DATADIR%%/conv/puntua
@@ -188,6 +189,7 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodCyrillic/arbol-u2015.dcw
 %%DATADIR%%/decsWoodLatin/0.tu2i
 %%DATADIR%%/decsWoodLatin/00index
+%%DATADIR%%/decsWoodLatin/00indexw
 %%DATADIR%%/decsWoodLatin/arbol-u0021.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u0023.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u0024.dcw
@@ -477,8 +479,10 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodLatin/arbol-u201c.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u201d.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u201e.dcw
+%%DATADIR%%/decsWoodLatin/arbol-w0030.dcw
+%%DATADIR%%/decsWoodLatin/arbol-w0031.dcw
+%%DATADIR%%/decsWoodLatin/arbol-w0043.dcw
 %%DATADIR%%/decsWoodLatinW/00index
-%%DATADIR%%/decsWoodLatinW/00indexw
 %%DATADIR%%/decsWoodLatinW/arbol-w0030.dcw
 %%DATADIR%%/decsWoodLatinW/arbol-w0031.dcw
 %%DATADIR%%/decsWoodLatinW/arbol-w0043.dcw
