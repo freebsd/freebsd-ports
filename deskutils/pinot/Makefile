@@ -40,6 +40,8 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		unrtf:${PORTSDIR}/textproc/unrtf			\
 		catdvi:${PORTSDIR}/print/catdvi
 
+BROKEN=		unsatisfiable dependency on xpdf
+
 PROJECTHOST=	${PORTNAME}-search
 
 LDFLAGS+=	-L${LOCALBASE}/lib
