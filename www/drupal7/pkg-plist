@@ -300,6 +300,7 @@
 %%DRUPAL_BASE%%/modules/contextual/contextual.info
 %%DRUPAL_BASE%%/modules/contextual/contextual.js
 %%DRUPAL_BASE%%/modules/contextual/contextual.module
+%%DRUPAL_BASE%%/modules/contextual/contextual.test
 %%DRUPAL_BASE%%/modules/contextual/images/gear-select.png
 %%DRUPAL_BASE%%/modules/dashboard/dashboard-rtl.css
 %%DRUPAL_BASE%%/modules/dashboard/dashboard.api.php
@@ -679,8 +680,11 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/module_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/pager.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/password.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/path.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/path_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/path_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/registry.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/requirements1_test.install
@@ -728,6 +732,9 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_test_3.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_test_3.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/update_test_3.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/update.user.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/update.field.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/update.trigger.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.bare.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.comments.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.filled.database.php
@@ -736,13 +743,16 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.menu.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.node_type_broken.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.translatable.database.php
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.trigger.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.upload.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.user-no-password-token.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-6.user-password-token.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.bare.minimal.database.php.gz
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.bare.standard_all.database.php.gz
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.field.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.filled.minimal.database.php.gz
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.filled.standard_all.database.php.gz
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/drupal-7.trigger.database.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.comment.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.filter.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.forum.test
@@ -753,6 +763,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.taxonomy.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.translatable.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.trigger.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.upload.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/upgrade/upgrade.user.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/url_alter_test.info
@@ -761,6 +772,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/xmlrpc.test
 %%DRUPAL_BASE%%/modules/simpletest/tests/xmlrpc_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/xmlrpc_test.module
+%%DRUPAL_BASE%%/modules/simpletest/tests/theme_test.inc
 %%DRUPAL_BASE%%/modules/statistics/statistics.admin.inc
 %%DRUPAL_BASE%%/modules/statistics/statistics.info
 %%DRUPAL_BASE%%/modules/statistics/statistics.install
@@ -774,6 +786,7 @@
 %%DRUPAL_BASE%%/modules/syslog/syslog.test
 %%DRUPAL_BASE%%/modules/system/html.tpl.php
 %%DRUPAL_BASE%%/modules/system/image.gd.inc
+%%DRUPAL_BASE%%/modules/system/language.api.php
 %%DRUPAL_BASE%%/modules/system/maintenance-page.tpl.php
 %%DRUPAL_BASE%%/modules/system/page.tpl.php
 %%DRUPAL_BASE%%/modules/system/region.tpl.php
@@ -905,6 +918,8 @@
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.info
 %%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.module
+%%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_compatible_test
+%%DRUPAL_BASE%%/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.test
 %%DRUPAL_BASE%%/profiles/testing/testing.info
 %%DRUPAL_BASE%%/profiles/testing/testing.install
 %%DRUPAL_BASE%%/profiles/testing/testing.profile
