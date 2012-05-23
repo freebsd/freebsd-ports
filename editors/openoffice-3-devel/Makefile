@@ -7,6 +7,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.${SVNREVISION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -237,11 +238,13 @@ do-install:
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/*/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
-
+	@${REINPLACE_CMD} -e 's/^UserInstallation.*$$/USERINSTALLATION/' ${PREFIX}/${INSTALLATION_BASEDIR}/openoffice.org3/program/bootstraprc
+	@${REINPLACE_CMD} -e 's/USERINSTALLATION/UserInstallation=$$SYSUSERCONFIG\/\.openoffice\.org-devel\/3/' ${PREFIX}/${INSTALLATION_BASEDIR}/openoffice.org3/program/bootstraprc
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 
 post-install:
+	@${FIND} ${PREFIX}/${INSTALLATION_BASEDIR} -type d -exec ${CHMOD} 755 {} \;
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
