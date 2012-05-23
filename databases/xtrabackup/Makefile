@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtrabackup
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL_GRP} \
 		http://downloads.skysql.com/archives/mysql-5.5/:mysql55 \
@@ -38,7 +38,7 @@ USE_AUTOTOOLS=	automake autoheader autoconf libtool aclocal
 # use MASTER_SITE_MYSQL for the MySQL 5.1
 MASTER_SITE_MYSQL_GRP=	${MASTER_SITE_MYSQL:S@%SUBDIR%/@%SUBDIR%/:mysql51@g}
 MASTER_SITE_SUBDIR=	MySQL-5.1/:mysql51 community/:libtar \
-	XtraBackup/XtraBackup-1.6.5/source/:xtrabackup \
+	XtraBackup/XtraBackup-${PORTVERSION}/source/:xtrabackup \
 	Percona-Server-5.1/Percona-Server-5.1.59-13.0/source/:percsrc51 \
 	Percona-Server-5.5/Percona-Server-5.5.16-22.0/source/:percsrc55
 
