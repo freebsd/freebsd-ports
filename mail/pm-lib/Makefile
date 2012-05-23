@@ -7,6 +7,7 @@
 
 PORTNAME=	pm-lib
 PORTVERSION=	20091202
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	procmail-lib
@@ -31,7 +32,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/article/index.txt ${DOCSDIR}/README.txt
 	${INSTALL_DATA} ${WRKSRC}/doc/manual/index.txt ${DOCSDIR}/manual.txt
-	${COPYTREE_SHARE} ${WRKSRC}/doc/examples ${DOCSDIR}
+	cd ${WRKSRC}/doc/examples && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
