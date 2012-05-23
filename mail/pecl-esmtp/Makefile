@@ -7,6 +7,7 @@
 
 PORTNAME=	esmtp
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
