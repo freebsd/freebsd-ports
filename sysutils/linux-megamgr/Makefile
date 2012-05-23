@@ -37,12 +37,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${DISTNAME}.txt ${DOCSDIR}/readme.txt
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601000
-IGNORE=			needs at least FreeBSD 6.1 and amr_linux.ko
-.endif
-
 pre-fetch:
 	#
 	# You may need to accept LSI's End-User License Agreement
@@ -54,4 +48,4 @@ pre-fetch:
 	# and save the downloaded file into ${DISTDIR}/
 	#
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
