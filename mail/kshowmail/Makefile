@@ -5,29 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	kshowmail
-PORTVERSION=	3.3.1
-PORTREVISION=	7
+PORTVERSION=	4.1
 CATEGORIES=	mail kde
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20for%20KDE3/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20for%20KDE4/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 mail checker for KDE
 
-LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
+LICENSE=	GPLv2
 
-USE_KDELIBS_VER=	3
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs pimlibs
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib dbus gui network svg xml \
+		qmake_build uic_build rcc_build
+USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:env automake:env libtool:env
-GNU_CONFIGURE=	yes
+USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
-AUTOTOOLSFILES=	admin/cvs.sh
-
-.include <bsd.port.pre.mk>
-
-pre-configure:
-	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
-	@cd ${WRKSRC}/admin && ${RM} -f libtool.m4.in && ${CP} -f ${LIBTOOL_M4} libtool.m4.in
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -f admin/Makefile.common
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
