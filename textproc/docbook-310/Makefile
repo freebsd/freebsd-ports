@@ -43,7 +43,7 @@ LATEST_LINK=	docbook-310
 
 do-install:
 	@${MKDIR} ${PREFIX}/${DTDDIR}
-	files=$$(${FIND} ${WRKSRC} -type f | ${GREP} -v "${WRKSRC}/\."); \
+	files=$$(${FIND} ${WRKSRC} -type f \! -name '.*'); \
 	for i in $${files}; do \
 		${INSTALL_DATA} $${i} ${PREFIX}/${DTDDIR}; \
 	done
