@@ -5,19 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	mysql
-PORTVERSION=	5.5.20
+PORTNAME?=	percona
+PORTVERSION=	5.5.19.24.0
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
-MASTER_SITES=	${MASTER_SITE_MYSQL}
-MASTER_SITE_SUBDIR=	MySQL-5.5
+MASTER_SITES=	LOCAL/pgollucci
 PKGNAMESUFFIX?=	-server
+DISTNAME=	Percona-Server-5.5.19-rel24.0
 
-MAINTAINER=	ale@FreeBSD.org
-COMMENT?=	Multithreaded SQL database (server)
+MAINTAINER=	pgollucci@FreeBSD.org
+COMMENT?=	Percona fork of MySQL (server)
 
-SLAVEDIRS=	databases/mysql55-client
+SLAVEDIRS=	databases/percona55-client
 USE_CMAKE=	yes
+USE_BISON=	build
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	OPENSSL "Enable SSL support" on \
@@ -41,8 +42,11 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DWITH_LIBEDIT=0 \
 		-DWITH_LIBWRAP=1
 
+DATADIR=	${PREFIX}/share/mysql
+USE_LDCONFIG=	${PREFIX}/lib/mysql
+
 .ifdef USE_MYSQL
-.error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.error You have USE_MYSQL variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
 .include <bsd.port.options.mk>
@@ -57,9 +61,9 @@ CMAKE_ARGS+=	-DWITH_FAST_MUTEXES=1
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
 USE_MYSQL=	yes
-WANT_MYSQL_VER=	55
+WANT_MYSQL_VER=	55p
 
-LATEST_LINK=	mysql55-server
+LATEST_LINK=	percona55-server
 
 CONFLICTS_INSTALL=	mysql-server-[34].* mysql-server-5.[0-46-9].*
 
@@ -89,5 +93,6 @@ post-install:
 
 post-patch:
 	@${REINPLACE_CMD} 's/*.1/${MAN1}/' ${WRKSRC}/man/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|Distrib %s,|Distrib %s Percona,|g' ${WRKSRC}/client/mysql.cc
 
 .include <bsd.port.mk>
