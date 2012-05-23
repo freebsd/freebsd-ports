@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -21,16 +20,21 @@ LICENSE=	GPLv2
 
 CONFLICTS=	lgeneral-data-[0-9]*
 
+OPTIONS=	SOUND "Enable sound support" on \
+		NLS "Enable native language support" on
+
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAN1=		lgc-pg.1
 MAN6=		lgeneral.6
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_SOUND)
 CONFIGURE_ARGS+=--disable-sound
@@ -47,9 +51,13 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not install on ia64, powerpc, or sparc64
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-g -Wall|-Wall| ; \
-		 s|/games||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|' ${WRKSRC}/Makefile.in
 
 post-install:
@@ -60,12 +68,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64, powerpc, or sparc64
 .endif
 
 .include <bsd.port.post.mk>
