@@ -1,4 +1,4 @@
-#-*- mode: Fundamental; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 # bsd.xorg.mk - Support for X.Org ports and dependencies

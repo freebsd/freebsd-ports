@@ -1,4 +1,4 @@
-#-*- mode: Makefile; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 # USE_CMAKE		- If set, this port uses cmake.
