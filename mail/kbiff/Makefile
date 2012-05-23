@@ -6,27 +6,25 @@
 #
 
 PORTNAME=	kbiff
-PORTVERSION=	3.9
-PORTREVISION=	4
+PORTVERSION=	4.0
 CATEGORIES=	mail kde
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail notification utility for KDE with nice features
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib dbus gui network svg xml \
+		qmake_build uic_build rcc_build
+USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--disable-fast-perl
+USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		kbiff.1
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-pthread|${PTHREAD_LIBS}|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 /if test/s|==|=|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
