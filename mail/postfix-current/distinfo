@@ -1,4 +1,4 @@
-SHA256 (postfix/postfix-2.10-20120423.tar.gz) = 9966b473a5b1867011d6f4d54347e9593c0d410e9f1318d7e89009917648cc60
-SIZE (postfix/postfix-2.10-20120423.tar.gz) = 3772514
+SHA256 (postfix/postfix-2.10-20120520.tar.gz) = 4ca927f8a1932080a5c87e4babd5b024c5ca45c3572c6d51c64e5f9fb4ed3305
+SIZE (postfix/postfix-2.10-20120520.tar.gz) = 3775212
 SHA256 (postfix/postfix-2.8.0-libspf2-1.2.x-0.patch.gz) = e5c38e5bc226cab109c02a4e530ab1aefd3bb06f2169f3e052bdf83d2727aacc
 SIZE (postfix/postfix-2.8.0-libspf2-1.2.x-0.patch.gz) = 8191
