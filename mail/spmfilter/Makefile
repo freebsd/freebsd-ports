@@ -7,6 +7,7 @@
 
 PORTNAME=	spmfilter
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/attachments/download/60/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	geomWatch
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 		http://bk.macroblock.net/${PORTNAME}/
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	spawk@acm.poly.edu
 COMMENT=	Watches for and e-mails admins about GEOM/ZFS state changes
 
-LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS=	esmtp.7:${PORTSDIR}/mail/libesmtp
 
 SUB_FILES=	pkg-message
 

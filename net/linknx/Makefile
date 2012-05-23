@@ -7,7 +7,7 @@
 
 PORTNAME=	linknx
 PORTVERSION=	0.0.1.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -29,7 +29,7 @@ OPTIONS=	LIBESMTP "Install libesmtp for SMTP support" on \
 
 .if (defined(WITH_LIBESMTP) || exists(${LOCALBASE}/include/libesmtp.h))
 CONFIGURE+=	--enable-smtp
-LIB_DEPENDS+=	esmtp.6:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=	esmtp.7:${PORTSDIR}/mail/libesmtp
 .endif
 
 .if (defined(WITH_LIBCURL) || exists(${LOCALBASE}/lib/libcurl.so))

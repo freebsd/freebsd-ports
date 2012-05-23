@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.4.0a2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 DISTVERSION=	$(PORTVERSION:S/a/alpha/)
@@ -100,7 +101,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 
 .if defined(WITH_SMTP)
 CONFIGURE_ARGS+=	--with-libesmtp=/usr/local/
-LIB_DEPENDS+=		esmtp.6:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=		esmtp.7:${PORTSDIR}/mail/libesmtp
 PLIST_FILES+=		lib/syslog-ng/libafsmtp.la lib/syslog-ng/libafsmtp.so
 .else
 CONFIGURE_ARGS+=	--disable-smtp

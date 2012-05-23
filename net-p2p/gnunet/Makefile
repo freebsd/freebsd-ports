@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.8.1b
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		cares.2:${PORTSDIR}/dns/c-ares \
 		curl.6:${PORTSDIR}/ftp/curl \
 		guile.21:${PORTSDIR}/lang/guile \
-		esmtp.6:${PORTSDIR}/mail/libesmtp \
+		esmtp.7:${PORTSDIR}/mail/libesmtp \
 		gmp.10:${PORTSDIR}/math/gmp \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		extractor.3:${PORTSDIR}/textproc/libextractor \
