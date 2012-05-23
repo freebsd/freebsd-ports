@@ -19,6 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_PHP=	sqlite
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
+MANUAL_PACKAGE_BUILD=	it needs an old PHP version
 
 FILES=		MDB2/Driver/Datatype/sqlite.php \
 		MDB2/Driver/Function/sqlite.php \
