@@ -20,6 +20,8 @@ RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword \
 		lynx:${PORTSDIR}/www/lynx \
 		pdftotext:${PORTSDIR}/graphics/xpdf
 
+BROKEN=		unsatisfiable dependency on xpdf
+
 USE_PERL5=	yes
 PLIST_FILES=	bin/${PORTNAME}
 NO_WRKSUBDIR=	yes
