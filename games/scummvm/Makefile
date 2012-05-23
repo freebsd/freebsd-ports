@@ -7,7 +7,7 @@
 
 PORTNAME=	scummvm
 DISTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -49,6 +49,13 @@ ENGINEDATA=	drascula.dat \
 		toon.dat \
 		teenagent.dat
 
+DESKTOP_ENTRIES="ScummVM" \
+		"ScummVM - Run classic adventure games" \
+		"${DATADIR}/scummvm.svg" \
+		"scummvm" \
+		"Application;Game;" \
+		false
+
 PLIST_FILES=	bin/scummvm \
 		%%DATADIR%%/scummvm.svg \
 		%%DATADIR%%/scummmodern.zip \
@@ -82,7 +89,7 @@ CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if defined(WITH_FLUIDSYNTH)
-LIB_DEPENDS+=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
 CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-fluidsynth
