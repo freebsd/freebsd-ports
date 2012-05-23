@@ -7,6 +7,7 @@
 
 PORTNAME=	satchmo
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.caomhin.org/geek/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@caomhin.org
 COMMENT=	Shopping cart application for Django
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_hg>=0.4:${PORTSDIR}/devel/py-setuptools_hg
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab\
