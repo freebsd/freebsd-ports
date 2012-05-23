@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hotcrp
-PORTVERSION=	2.47
+PORTVERSION=	2.50
 CATEGORIES=	www
 MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
 
@@ -15,7 +15,8 @@ COMMENT=	A web based conference management software
 
 RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
-		pdftohtml:${PORTSDIR}/textproc/pdftohtml
+		pdftohtml:${PORTSDIR}/textproc/pdftohtml \
+		zip:${PORTSDIR}/archivers/zip
 
 USE_PHP=	mysql gd session ctype
 USE_MYSQL=	server
