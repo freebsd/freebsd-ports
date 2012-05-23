@@ -1,6 +1,6 @@
---- contrib/Makefile.in.orig	2011-08-24 13:57:57.000000000 +0000
-+++ contrib/Makefile.in	2011-09-05 22:31:21.616521093 +0000
-@@ -51,10 +51,10 @@
+--- contrib/Makefile.in.orig	2012-05-15 13:00:56.000000000 +0000
++++ contrib/Makefile.in	2012-05-16 19:18:25.684923160 +0000
+@@ -52,10 +52,10 @@
  devclean: distclean
  
  install:
