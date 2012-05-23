@@ -918,6 +918,7 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += trousers
+    SUBDIR += truecrack
     SUBDIR += truecrypt
     SUBDIR += tsshbatch
     SUBDIR += tthsum
