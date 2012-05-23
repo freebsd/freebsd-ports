@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1053.102
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -64,7 +64,6 @@ LOCALBASE_REPLACE_FILES= \
 		unix/ibus/path_util.cc \
 		unix/scim/scim.gyp \
 		unix/scim/scim_mozc.cc \
-		unix/fcitx/mozc.conf \
 		base/util.cc \
 		base/process.cc \
 		gui/about_dialog/about_dialog.cc \
@@ -88,6 +87,14 @@ post-patch:
 		${LOCALBASE_REPLACE_FILES}
 	cd ${WRKSRC} && \
 		${REINPLACE_CMD} ${SSL_REINPLACE_STR} base/base.gyp
+.if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
+	cd ${WRKSRC} && \
+		${REINPLACE_CMD} 's,/po/mo},%po}mo,g' \
+		unix/fcitx/gen_fcitx_mozc_i18n.sh
+	cd ${WRKSRC} && \
+		${REINPLACE_CMD} "s,/usr,${LOCALBASE}," \
+		unix/fcitx/mozc.conf
+.endif
 
 pre-build:
 	${PRINTF} "%s\n%s\n" "#!/bin/sh" 'exec ${BUILD_CMD} $$@' > ${WRKSRC}/mozcmake
@@ -230,6 +237,10 @@ do-install-scim_mozc:
 
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
+PATCH_SITES=	http://fcitx.googlecode.com/files/
+PATCHFILES=	fcitx-mozc-${PORTVERSION}-1.patch
+PATCH_DIST_STRIP=-p2
+
 LIB_DEPENDS+=	fcitx-config.4:${PORTSDIR}/chinese/fcitx
 RUN_DEPENDS+=	mozc_server:${PORTSDIR}/japanese/mozc-server \
 		mozc_tool:${PORTSDIR}/japanese/mozc-tool \
