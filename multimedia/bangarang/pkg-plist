@@ -33,6 +33,8 @@ share/icons/hicolor/22x22/status/bangarang-loading-4.png
 share/icons/hicolor/22x22/status/bangarang-loading-5.png
 share/icons/hicolor/22x22/status/bangarang-loading-6.png
 share/icons/hicolor/22x22/status/bangarang-loading-7.png
+share/icons/hicolor/256x256/apps/bangarang.png
+share/icons/hicolor/32x32/apps/bangarang-douban.png
 share/icons/hicolor/32x32/apps/bangarang-notifier-active-pause.png
 share/icons/hicolor/32x32/apps/bangarang-notifier-active.png
 share/icons/hicolor/32x32/apps/bangarang-notifier.png
@@ -56,12 +58,17 @@ share/locale/el/LC_MESSAGES/bangarang.mo
 share/locale/es/LC_MESSAGES/bangarang.mo
 share/locale/fi/LC_MESSAGES/bangarang.mo
 share/locale/fr/LC_MESSAGES/bangarang.mo
+share/locale/hu/LC_MESSAGES/bangarang.mo
 share/locale/it/LC_MESSAGES/bangarang.mo
 share/locale/lt/LC_MESSAGES/bangarang.mo
 share/locale/nl/LC_MESSAGES/bangarang.mo
 share/locale/pl/LC_MESSAGES/bangarang.mo
+share/locale/pt/LC_MESSAGES/bangarang.mo
 share/locale/pt_BR/LC_MESSAGES/bangarang.mo
+share/locale/ru/LC_MESSAGES/bangarang.mo
 share/locale/uk/LC_MESSAGES/bangarang.mo
 share/locale/zh_CN/LC_MESSAGES/bangarang.mo
 @dirrm share/icons/hicolor/8x8/apps
 @dirrm share/icons/hicolor/8x8
+@dirrm share/icons/hicolor/256x256/apps
+@dirrm share/icons/hicolor/256x256
