@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	Catalyst-Devel
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst Development Tools
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0.10:${PORTSDIR}/www/p5-Catalyst-Action-RenderView \
 		p5-Catalyst-Plugin-ConfigLoader>=0.30:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
@@ -26,12 +30,13 @@ BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0.10:${PORTSDIR}/www/p5-Catalyst-A
 		p5-MooseX-Emulate-Class-Accessor-Fast>=0:${PORTSDIR}/devel/p5-MooseX-Emulate-Class-Accessor-Fast \
 		p5-Path-Class>=0.09:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Template-Toolkit>=2.14:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 BUILD_DEPENDS+=	p5-Module-Install>=1.02:${PORTSDIR}/devel/p5-Module-Install
-
-TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
+TEST_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
 PERL_CONFIGURE=	yes
 
