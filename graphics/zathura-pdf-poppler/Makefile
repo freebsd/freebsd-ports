@@ -7,13 +7,14 @@
 
 PORTNAME=	zathura-pdf-poppler
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 
 MAINTAINER=	neko@takino.org
 COMMENT=	Poppler render PDF plugin for Zathura PDF viewer
 
-LIB_DEPENDS=	poppler.18:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 BUILD_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 RUN_DEPENDS=	zathura:${PORTSDIR}/graphics/zathura
 

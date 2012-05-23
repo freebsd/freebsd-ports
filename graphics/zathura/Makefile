@@ -7,19 +7,31 @@
 
 PORTNAME=	zathura
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
 MAINTAINER=	acieroid@awesom.eu
 COMMENT=	Customizable lightweight pdf viewer
 
-LIB_DEPENDS=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
-		cairo.2:${PORTSDIR}/graphics/cairo \
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		girara-gtk2.0:${PORTSDIR}/x11-toolkits/girara
 
 USE_GNOME=	glib20 gtk20
 USE_GMAKE=	yes
+MAKE_ENV=	SFLAGS="${STRIP}"
 FETCH_ARGS=	-Fpr
+
+OPTIONS=	SQLITE "Support sqlite database backend" off
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_SQLITE)
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+MAKE_ENV+=	WITH_SQLITE=1
+.else
+MAKE_ENV+=	WITH_SQLITE=0
+.endif
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
