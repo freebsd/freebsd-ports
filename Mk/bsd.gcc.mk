@@ -1,4 +1,4 @@
-#-*- mode: Fundamental; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 # bsd.gcc.mk - Support for smarter USE_GCC usage.

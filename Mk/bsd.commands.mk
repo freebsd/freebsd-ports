@@ -1,4 +1,4 @@
-#-*- mode: Fundamental; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 # bsd.commands.mk - Common commands used within the ports infrastructure

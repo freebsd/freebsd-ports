@@ -1,4 +1,4 @@
-#-*- mode: makefile; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 # $FreeBSD$
@@ -234,7 +234,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  $PATH (if it is an executable) and go into "dir" to do
 #				  a "make all install" if it's not found.  If the third
 #				  field ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
+#				  ${DEPENDS_TARGET}.  The first field also supports a
+#				  package name with a version range, in the form package>=1.2
+#				  if a particular version is desired.
 # PATCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
 #				  package depends on in the "patch" stage.  "path" is the
 #				  name of a file if it starts with a slash (/), an
@@ -243,7 +245,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  $PATH (if it is an executable) and go into "dir" to do
 #				  a "make all install" if it's not found.  If the third
 #				  field ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
+#				  ${DEPENDS_TARGET}.  The first field also supports a
+#				  package name with a version range, in the form package>=1.2
+#				  if a particular version is desired.
 # FETCH_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
 #				  package depends in the "fetch" stage.  "path" is the
 #				  name of a file if it starts with a slash (/), an
@@ -252,7 +256,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  it in your $PATH (if it is an executable) and go
 #				  into "dir" to do a "make all install" if it's not
 #				  found.  If the third field ("target") exists, it will
-#				  be used instead of ${DEPENDS_TARGET}.
+#				  be used instead of ${DEPENDS_TARGET}.  The first field
+#				  also supports a package name with a version range, in
+#				  the form package>=1.2 if a particular version is desired.
 # BUILD_DEPENDS	- A list of "path:dir[:target]" tuples of other ports this
 #				  package depends to build (between the "extract" and
 #				  "build" stages, inclusive).  The test done to
@@ -266,7 +272,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  "install" stage and the name of the dependency will
 #				  be put into the package as well.  If the third field
 #				  ("target") exists, it will be used instead of
-#				  ${DEPENDS_TARGET}.
+#				  ${DEPENDS_TARGET}.  The first field also supports a
+#				  package name with a version range, in the form package>=1.2
+#				  if a particular version is desired.
 # LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
 #				  package depends on.  "lib" is the name of a shared library.
 #				  make will use "ldconfig -r" to search for the library.
@@ -679,7 +687,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  installed.
 #				  Useful for dynamically generated examples.
 #
-# Set the following to specify all documentation your port installs into
+# Set the following to specify all files and directories your port installs into
 # ${DATADIR}
 #
 # PORTDATA		- A list of files and directories relative to DATADIR.
@@ -4469,7 +4477,7 @@ checkpatch:
 .if !target(reinstall)
 reinstall:
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} install
+	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} -DFORCE_PKG_REGISTER install
 .endif
 
 # Deinstall

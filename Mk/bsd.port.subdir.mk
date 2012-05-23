@@ -1,4 +1,4 @@
-#-*- mode: makefile; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91

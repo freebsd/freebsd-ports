@@ -1,7 +1,7 @@
-#-*- mode: Makefile; tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.26 2011-04-18 13:07:21 netchild Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.27 2012-05-23 08:17:49 miwi Exp $
 #
 
 # Variables:

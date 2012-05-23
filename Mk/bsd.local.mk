@@ -1,4 +1,4 @@
-# -*- mode: Makefile; tab-width: 4; -*-
+# -*- tab-width: 4; -*-
 # ex: ts=4
 #
 # bsd.local.mk - Sandbox for local modification to ports framework.
