@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Net-Async-FastCGI
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to use FastCGI with IO::Async
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-IO-Async>=0:${PORTSDIR}/devel/p5-IO-Async \
