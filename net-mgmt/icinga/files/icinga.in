@@ -4,10 +4,8 @@
 #
 
 # PROVIDE: icinga
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable icinga:
 # icinga_enable (bool):    Set to "NO" by default.
@@ -23,23 +21,28 @@
 name="icinga"
 rcvar=icinga_enable
 
+load_rc_config "${name}"
+
+: ${icinga_enable:="NO"}
+: ${icinga_configfile="%%PREFIX%%/etc/icinga/icinga.cfg"}
+: ${icinga_precache:="NO"}
+
 command="%%PREFIX%%/bin/icinga"
 command_args="-d"
 extra_commands="reload"
 pidfile="%%ICINGADIR%%/icinga.lock"
 icinga_user="%%ICINGAUSER%%"
+icinga_group="%%ICINGAGROUP%%"
+
+icinga_logfile="%%ICINGADIR%%/${name}.log"
+icinga_statusfile="%%ICINGADIR%%/status.sav"
+icinga_cmdfile="%%ICINGADIR%%/rw/${name}.cmd"
 
 start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
 restart_precmd="icinga_checkconfig"
 reload_precmd="reload_precmd"
 sig_reload=HUP
-
-[ -z "${icinga_enable}" ]       && icinga_enable="NO"
-[ -z "${icinga_configfile}" ]   && icinga_configfile="%%PREFIX%%/etc/icinga/icinga.cfg"
-[ -z "${icinga_precache}" ]     && icinga_precache="NO"
-
-load_rc_config "${name}"
 
 required_files="${icinga_configfile}"
 command_args="${command_args} ${icinga_configfile}"
@@ -92,12 +95,17 @@ start_precmd() {
     return 1
   fi
 
-  su -m "${icinga_user}" -c "touch \"%%ICINGADIR%%/icinga.log\" \"%%ICINGADIR%%/status.sav\""
-  rm -f "%%ICINGADIR%%/rw/icinga.cmd"
+  if [ ! -f "${icinga_logfile}" ]; then
+    install -o "${icinga_user}" -g "${icinga_group}" -m 644 /dev/null "${icinga_logfile}"
+  fi
+  if [ ! -f "${icinga_statusfile}" ]; then
+    install -o "${icinga_user}" -g "${icinga_group}" -m 644 /dev/null "${icinga_statusfile}"
+  fi
+  rm -f "${icinga_cmdfile}"
 }
 
 stop_postcmd() {
-  rm -f "%%ICINGADIR%%/icinga.tmp" "%%ICINGADIR%%/rw/icinga.cmd"
+  rm -f "%%ICINGADIR%%/icinga.tmp" "${icinga_cmdfile}"
 }
 
 run_rc_command "$1"
