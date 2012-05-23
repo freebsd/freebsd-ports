@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mysql
+PORTNAME=	percona
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Multithreaded SQL database (client)
 
-MASTERDIR=	${.CURDIR}/../mysql55-server
+MASTERDIR=	${.CURDIR}/../percona55-server
 
 PKGMESSAGE=	mustnotexist
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-LATEST_LINK=	mysql55-client
+LATEST_LINK=	percona55-client
 
 CONFLICTS_INSTALL=	mysql-client-[34].* mysql-client-5.[0-46-9].*
 
