@@ -1,10 +1,10 @@
 bin/gxine
 bin/gxine_client
-etc/gxine/gtkrc
-etc/gxine/keypad.xml
-etc/gxine/startup
-etc/gxine/toolbar-fullscreen.xml
-etc/gxine/toolbar-window.xml
+%%ETCDIR%%/gtkrc
+%%ETCDIR%%/keypad.xml
+%%ETCDIR%%/startup
+%%ETCDIR%%/toolbar-fullscreen.xml
+%%ETCDIR%%/toolbar-window.xml
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.a
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.la
 %%MOZILLA_PLUGIN%%lib/gxine/gxineplugin.so
@@ -18,36 +18,37 @@ share/applications/gxine.desktop
 %%DATADIR%%/pixmaps/set-contrast.svg
 %%DATADIR%%/pixmaps/set-hue.svg
 %%DATADIR%%/pixmaps/set-saturation.svg
+%%DATADIR%%/pixmaps/set-sharpness.svg
 %%DATADIR%%/pixmaps/set-sync.svg
 %%DATADIR%%/pixmaps/set-volume.svg
 %%DATADIR%%/pixmaps/speaker.png
 %%DATADIR%%/pixmaps/splash.png
 %%DATADIR%%/pixmaps/subtitle.svg
 share/icons/hicolor/64x64/apps/gxine.png
-%%NLS%%share/locale/cs/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/de/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/es/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/gxine.theme.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.theme.mo
+share/locale/cs/LC_MESSAGES/gxine.mo
+share/locale/cs/LC_MESSAGES/gxine.theme.mo
+share/locale/de/LC_MESSAGES/gxine.mo
+share/locale/de/LC_MESSAGES/gxine.theme.mo
+share/locale/es/LC_MESSAGES/gxine.mo
+share/locale/es/LC_MESSAGES/gxine.theme.mo
+share/locale/fi/LC_MESSAGES/gxine.mo
+share/locale/fi/LC_MESSAGES/gxine.theme.mo
+share/locale/fr/LC_MESSAGES/gxine.mo
+share/locale/fr/LC_MESSAGES/gxine.theme.mo
+share/locale/it/LC_MESSAGES/gxine.mo
+share/locale/it/LC_MESSAGES/gxine.theme.mo
+share/locale/ja/LC_MESSAGES/gxine.mo
+share/locale/ja/LC_MESSAGES/gxine.theme.mo
+share/locale/pl/LC_MESSAGES/gxine.mo
+share/locale/pl/LC_MESSAGES/gxine.theme.mo
+share/locale/ru/LC_MESSAGES/gxine.mo
+share/locale/ru/LC_MESSAGES/gxine.theme.mo
+share/locale/sv/LC_MESSAGES/gxine.mo
+share/locale/sv/LC_MESSAGES/gxine.theme.mo
+share/locale/uk/LC_MESSAGES/gxine.mo
+share/locale/uk/LC_MESSAGES/gxine.theme.mo
+share/locale/zh_CN/LC_MESSAGES/gxine.mo
+share/locale/zh_CN/LC_MESSAGES/gxine.theme.mo
 share/pixmaps/gxine.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
@@ -58,4 +59,4 @@ share/pixmaps/gxine.png
 @dirrmtry man/de
 @dirrm lib/gxine
 %%MOZILLA_PLUGIN%%@dirrmtry lib/browser_plugins
-@dirrm etc/gxine
+@dirrm %%ETCDIR%%
