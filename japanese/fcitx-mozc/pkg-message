@@ -1,0 +1,31 @@
+fcitx-mozc installation finished. To use fcitx-mozc, please do the following:
+
+If you are using bash or zsh, please add following lines to your $HOME/.bashrc or
+$HOME/.zshrc:
+
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export XMODIFIERS=@im=fcitx
+mozc_server_start
+fcitx
+
+If you are using tcsh, please add following lines to your $HOME/.cshrc:
+
+setenv GTK_IM_MODULE xim
+setenv QT_IM_MODULE xim
+setenv XMODIFIERS @im=fcitx
+mozc_server_start
+fcitx
+
+If you are using KDE4, you may create a shell script in $HOME/.kde4/env, 
+and add following lines:
+
+#!/bin/sh
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export XMODIFIERS=@im=fcitx
+mozc_server_start
+fcitx
+
+You can replace the `xim` above with `fcitx` if you built fcitx with
+the corresponding IM module.
