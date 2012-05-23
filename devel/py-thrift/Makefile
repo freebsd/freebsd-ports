@@ -15,7 +15,7 @@ DISTFILES=
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Python interface to Thrift
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
+FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

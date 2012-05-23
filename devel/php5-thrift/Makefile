@@ -14,7 +14,7 @@ DISTFILES=	# empty
 MAINTAINER=	webmaster@kibab.com
 COMMENT=	PHP interface to Thrift
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
+FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
