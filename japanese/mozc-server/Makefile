@@ -7,7 +7,7 @@
 
 PORTNAME=	mozc
 PORTVERSION=	1.5.1053.102
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -64,6 +64,7 @@ LOCALBASE_REPLACE_FILES= \
 		unix/ibus/path_util.cc \
 		unix/scim/scim.gyp \
 		unix/scim/scim_mozc.cc \
+		unix/fcitx/mozc.conf \
 		base/util.cc \
 		base/process.cc \
 		gui/about_dialog/about_dialog.cc \
