@@ -15,7 +15,7 @@ MAINTAINER=	komarov@valerka.net
 COMMENT=	Node.js bindings for the Apache Thrift RPC system
 
 RUN_DEPENDS=		node:${PORTSDIR}/www/node
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
+FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract
 
 NO_BUILD=	yes
 
