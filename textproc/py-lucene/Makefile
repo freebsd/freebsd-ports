@@ -19,8 +19,8 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A GCJ-compiled version of Java Lucene integrated with Python
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
-		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc \
-		${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
+		${PYTHON_PKGNAMEPREFIX}jcc>0:${PORTSDIR}/devel/py-jcc
+FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
 
 USE_PYTHON=	2.5+
 USE_GCC=	4.2+
