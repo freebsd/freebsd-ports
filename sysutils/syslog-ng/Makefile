@@ -19,7 +19,7 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-$(PORTVERSION)
 
 OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
-		PORTS_SSL "Build with OpenSSL support (from ports)" off \
+		PORTS_SSL "Build with OpenSSL support (from ports)" on \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
 		SQL "Build with database (libdbi) support" off \
 		SPOOF "Build with spoof source support" off \
