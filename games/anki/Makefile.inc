@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	1.2.8
-PORTREVISION?=	1
+PORTVERSION=	1.2.11
+PORTREVISION?=	0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE \
+		http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
 
 USE_PYTHON=	yes
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		py*-matplotlib>=0.90.0:${PORTSDIR}/math/py-matplotlib \
 		py*-qt4-gui>=4.4:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
-		py*-anki>=1.2.8:${PORTSDIR}/games/py-anki \
+		py*-anki>=1.2.11:${PORTSDIR}/games/py-anki \
 		py*-svg>=4.4:${PORTSDIR}/graphics/py-qt4-svg \
 		py*-network>=4.4:${PORTSDIR}/net/py-qt4-network \
 		py*-webkit>=4.4:${PORTSDIR}/www/py-qt4-webkit
