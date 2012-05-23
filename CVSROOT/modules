@@ -3955,11 +3955,15 @@ freesweep                       ports/games/freesweep
 freeswitch                      ports/net/freeswitch
 freeswitch-core                 ports/net/freeswitch-core
 freeswitch-core-devel           ports/net/freeswitch-core-devel
+freeswitch-curl-devel           ports/net/freeswitch-curl-devel
+freeswitch-insideout-devel      ports/net/freeswitch-insideout-devel
 freeswitch-music                ports/audio/freeswitch-music
 freeswitch-pizzademo            ports/misc/freeswitch-pizzademo
 freeswitch-pizzademo-devel      ports/misc/freeswitch-pizzademo-devel
+freeswitch-sbc-devel            ports/net/freeswitch-sbc-devel
 freeswitch-scripts              ports/misc/freeswitch-scripts
 freeswitch-sounds               ports/audio/freeswitch-sounds
+freeswitch-vanilla-devel        ports/net/freeswitch-vanilla-devel
 freesynd                        ports/games/freesynd
 freetalk                        ports/net-im/freetalk
 freetar                         ports/archivers/freetar
@@ -6359,6 +6363,7 @@ ja-esecanna-module-vje30        ports/japanese/esecanna-module-vje30
 ja-esecanna-module-wnn6         ports/japanese/esecanna-module-wnn6
 ja-eterm                        ports/japanese/eterm
 ja-exmh2                        ports/japanese/exmh2
+ja-fcitx-mozc                   ports/japanese/fcitx-mozc
 ja-flex-sdk                     ports/japanese/flex-sdk
 ja-flower-fpw                   ports/japanese/flower-fpw
 ja-foldoc-fpw                   ports/japanese/foldoc-fpw
@@ -12347,6 +12352,7 @@ p5-Email-Valid-Loose            ports/mail/p5-Email-Valid-Loose
 p5-Emplacken                    ports/www/p5-Emplacken
 p5-Encode                       ports/converters/p5-Encode
 p5-Encode-Detect                ports/converters/p5-Encode-Detect
+p5-Encode-Detect-CJK            ports/converters/p5-Encode-Detect-CJK
 p5-Encode-DoubleEncodedUTF8     ports/converters/p5-Encode-DoubleEncodedUTF8
 p5-Encode-IMAPUTF7              ports/converters/p5-Encode-IMAPUTF7
 p5-Encode-JIS2K                 ports/converters/p5-Encode-JIS2K
@@ -14558,6 +14564,7 @@ p5-String-ShellQuote            ports/textproc/p5-String-ShellQuote
 p5-String-ShowDiff              ports/textproc/p5-String-ShowDiff
 p5-String-Similarity            ports/devel/p5-String-Similarity
 p5-String-Strip                 ports/textproc/p5-String-Strip
+p5-String-TT                    ports/devel/p5-String-TT
 p5-String-ToIdentifier-EN       ports/textproc/p5-String-ToIdentifier-EN
 p5-String-Tokenizer             ports/textproc/p5-String-Tokenizer
 p5-String-Truncate              ports/textproc/p5-String-Truncate
@@ -16857,6 +16864,7 @@ p5-emplacken                    ports/www/p5-Emplacken
 p5-encode                       ports/converters/p5-Encode
 p5-encode-compat                ports/converters/p5-Encode-compat
 p5-encode-detect                ports/converters/p5-Encode-Detect
+p5-encode-detect-cjk            ports/converters/p5-Encode-Detect-CJK
 p5-encode-doubleencodedutf8     ports/converters/p5-Encode-DoubleEncodedUTF8
 p5-encode-imaputf7              ports/converters/p5-Encode-IMAPUTF7
 p5-encode-jis2k                 ports/converters/p5-Encode-JIS2K
@@ -19093,6 +19101,7 @@ p5-string-strip                 ports/textproc/p5-String-Strip
 p5-string-toidentifier-en       ports/textproc/p5-String-ToIdentifier-EN
 p5-string-tokenizer             ports/textproc/p5-String-Tokenizer
 p5-string-truncate              ports/textproc/p5-String-Truncate
+p5-string-tt                    ports/devel/p5-String-TT
 p5-string-urandom               ports/textproc/p5-String-Urandom
 p5-sub-alias                    ports/devel/p5-Sub-Alias
 p5-sub-current                  ports/devel/p5-Sub-Current
@@ -26008,6 +26017,7 @@ sshguard-ipfw                   ports/security/sshguard-ipfw
 sshguard-pf                     ports/security/sshguard-pf
 sshit                           ports/security/sshit
 sshpass                         ports/security/sshpass
+sshsudo                         ports/sysutils/sshsudo
 ssid                            ports/sysutils/ssid
 ssl-admin                       ports/security/ssl-admin
 ssldump                         ports/net/ssldump
@@ -26332,6 +26342,7 @@ tcl-manual                      ports/lang/tcl-manual
 tcl-memchan                     ports/devel/tcl-memchan
 tcl-modules                     ports/lang/tcl-modules
 tcl-mysql                       ports/databases/tcl-Mysql
+tcl-sqlite3                     ports/databases/tcl-sqlite3
 tcl-trf                         ports/devel/tcl-trf
 tcl-wrapper                     ports/lang/tcl-wrapper
 tcl82                           ports/lang/tcl82
