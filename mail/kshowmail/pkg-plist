@@ -1,29 +1,28 @@
 bin/kshowmail
-lib/kde3/kcm_kshowmailconfigaccounts.la
-lib/kde3/kcm_kshowmailconfigaccounts.so
-lib/kde3/kcm_kshowmailconfigactions.la
-lib/kde3/kcm_kshowmailconfigactions.so
-lib/kde3/kcm_kshowmailconfigdisplay.la
-lib/kde3/kcm_kshowmailconfigdisplay.so
-lib/kde3/kcm_kshowmailconfigfilter.la
-lib/kde3/kcm_kshowmailconfigfilter.so
-lib/kde3/kcm_kshowmailconfiggeneral.la
-lib/kde3/kcm_kshowmailconfiggeneral.so
-lib/kde3/kcm_kshowmailconfiglog.la
-lib/kde3/kcm_kshowmailconfiglog.so
-lib/kde3/kcm_kshowmailconfigspamcheck.la
-lib/kde3/kcm_kshowmailconfigspamcheck.so
-share/applnk/Internet/kshowmail.desktop
+lib/kde4/kcm_kshowmailconfigaccounts.so
+lib/kde4/kcm_kshowmailconfigactions.so
+lib/kde4/kcm_kshowmailconfigdisplay.so
+lib/kde4/kcm_kshowmailconfigfilter.so
+lib/kde4/kcm_kshowmailconfiggeneral.so
+lib/kde4/kcm_kshowmailconfiglog.so
+lib/kde4/kcm_kshowmailconfigspamcheck.so
+share/applications/kde4/kshowmail.desktop
 share/apps/kshowmail/kshowmailui.rc
-share/apps/kshowmail/pics/eraser.png
-share/apps/kshowmail/pics/kshowmail.png
-share/apps/kshowmail/pics/kshowmail24.png
-share/apps/kshowmail/pics/letter-closed.png
-share/apps/kshowmail/pics/letter-open.png
-share/apps/kshowmail/pics/ok.png
-share/apps/kshowmail/pics/tool.png
-share/apps/kshowmail/sounds/neuepost.wav
-share/apps/kshowmail/sounds/newmail.wav
+share/apps/kshowmail/pics/account.svgz
+share/apps/kshowmail/pics/accountActive.png
+share/apps/kshowmail/pics/accountNotActive.png
+share/apps/kshowmail/pics/button_blacklist.png
+share/apps/kshowmail/pics/button_whitelist.png
+share/apps/kshowmail/pics/deletedFilter.png
+share/apps/kshowmail/pics/deletedManual.png
+share/apps/kshowmail/pics/export.png
+share/apps/kshowmail/pics/import.png
+share/apps/kshowmail/pics/mail-unread-new.png
+share/apps/kshowmail/pics/newMailPic.png
+share/apps/kshowmail/pics/senderOnWhitelist.png
+share/apps/kshowmail/pics/trayIcon.png
+share/apps/kshowmail/sounds/neuepost.ogg
+share/apps/kshowmail/sounds/newmail.ogg
 share/doc/HTML/de/kshowmail/common
 share/doc/HTML/de/kshowmail/index.cache.bz2
 share/doc/HTML/de/kshowmail/index.docbook
@@ -33,58 +32,32 @@ share/doc/HTML/en/kshowmail/index.docbook
 share/doc/HTML/es/kshowmail/common
 share/doc/HTML/es/kshowmail/index.cache.bz2
 share/doc/HTML/es/kshowmail/index.docbook
-share/doc/HTML/fr/kshowmail/common
-share/doc/HTML/fr/kshowmail/index.cache.bz2
-share/doc/HTML/fr/kshowmail/index.docbook
-share/doc/HTML/hu/kshowmail/common
-share/doc/HTML/hu/kshowmail/index.cache.bz2
-share/doc/HTML/hu/kshowmail/index.docbook
 share/doc/HTML/it/kshowmail/common
 share/doc/HTML/it/kshowmail/index.cache.bz2
 share/doc/HTML/it/kshowmail/index.docbook
-share/doc/HTML/ru/kshowmail/common
-share/doc/HTML/ru/kshowmail/index.cache.bz2
-share/doc/HTML/ru/kshowmail/index.docbook
-share/doc/HTML/sv/kshowmail/common
-share/doc/HTML/sv/kshowmail/index.cache.bz2
-share/doc/HTML/sv/kshowmail/index.docbook
-share/locale/cs/LC_MESSAGES/kshowmail.mo
+share/doc/HTML/nl/kshowmail/common
+share/doc/HTML/nl/kshowmail/index.cache.bz2
+share/doc/HTML/nl/kshowmail/index.docbook
+share/icons/hicolor/16x16/apps/kshowmail.png
+share/icons/hicolor/32x32/apps/kshowmail.png
+share/icons/hicolor/48x48/apps/kshowmail.png
+share/kde4/services/kshowmailconfigaccounts.desktop
+share/kde4/services/kshowmailconfigactions.desktop
+share/kde4/services/kshowmailconfigdisplay.desktop
+share/kde4/services/kshowmailconfigfilter.desktop
+share/kde4/services/kshowmailconfiggeneral.desktop
+share/kde4/services/kshowmailconfiglog.desktop
+share/kde4/services/kshowmailconfigspamcheck.desktop
 share/locale/de/LC_MESSAGES/kshowmail.mo
 share/locale/es/LC_MESSAGES/kshowmail.mo
-share/locale/fr/LC_MESSAGES/kshowmail.mo
-share/locale/hu/LC_MESSAGES/kshowmail.mo
 share/locale/it/LC_MESSAGES/kshowmail.mo
-share/locale/ru/LC_MESSAGES/kshowmail.mo
-share/locale/sv/LC_MESSAGES/kshowmail.mo
-share/services/kshowmailconfigaccounts.desktop
-share/services/kshowmailconfigactions.desktop
-share/services/kshowmailconfigdisplay.desktop
-share/services/kshowmailconfigfilter.desktop
-share/services/kshowmailconfiggeneral.desktop
-share/services/kshowmailconfiglog.desktop
-share/services/kshowmailconfigspamcheck.desktop
-@dirrmtry share/services
-@dirrm share/doc/HTML/sv/kshowmail
-@dirrmtry share/doc/HTML/sv
-@dirrm share/doc/HTML/ru/kshowmail
-@dirrmtry share/doc/HTML/ru
+share/locale/nb/LC_MESSAGES/kshowmail.mo
+share/locale/nl/LC_MESSAGES/kshowmail.mo
+@dirrm share/doc/HTML/nl/kshowmail
 @dirrm share/doc/HTML/it/kshowmail
-@dirrmtry share/doc/HTML/it
-@dirrm share/doc/HTML/hu/kshowmail
-@dirrmtry share/doc/HTML/hu
-@dirrm share/doc/HTML/fr/kshowmail
-@dirrmtry share/doc/HTML/fr
 @dirrm share/doc/HTML/es/kshowmail
-@dirrmtry share/doc/HTML/es
 @dirrm share/doc/HTML/en/kshowmail
-@dirrmtry share/doc/HTML/en
 @dirrm share/doc/HTML/de/kshowmail
-@dirrmtry share/doc/HTML/de
-@dirrmtry share/doc/HTML
 @dirrm share/apps/kshowmail/sounds
 @dirrm share/apps/kshowmail/pics
 @dirrm share/apps/kshowmail
-@dirrmtry share/apps
-@dirrmtry share/applnk/Internet
-@dirrmtry share/applnk
-@dirrmtry lib/kde3
