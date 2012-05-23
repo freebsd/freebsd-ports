@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scipy
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
