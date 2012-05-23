@@ -5,40 +5,37 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://ftp.osuosl.org/pub/blfs/svn/l/ \
-		ftp://ftp.linux.ee/pub/gentoo/distfiles/distfiles/
+		GENTOO/distfiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for posting electronic mail
 
-USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
-
-# require-all-recipients (implied by enable-all) is required for Balsa
-CONFIGURE_ARGS=	--enable-all --disable-isoc
+LICENSE=	LGPL21
 
 OPTIONS=	OPENSSL	"Enable TLS support"	on \
 		DEBUG	"Enables debugging support"	off
 
-DOCS=		AUTHORS ChangeLog NEWS Notes README TODO
-EXAMPLES=	examples/*
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+# require-all-recipients (implied by enable-all) is required for Balsa
+CONFIGURE_ARGS=	--enable-all --disable-isoc
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_OPENSSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 PLIST_SUB+=		NEED_OPENSSL=""
 .else
@@ -51,13 +48,15 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in AUTHORS ChangeLog NEWS Notes README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

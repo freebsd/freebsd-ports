@@ -17,16 +17,16 @@ lib/esmtp-plugins/sasl-plain.so
 lib/libesmtp.a
 lib/libesmtp.la
 lib/libesmtp.so
-lib/libesmtp.so.6
+lib/libesmtp.so.7
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/Notes
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/mail-file.c
-%%EXAMPLESDIR%%/test-mail
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail-file.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-mail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/esmtp-plugins
