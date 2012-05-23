@@ -1,5 +1,5 @@
 *********************************************************************
 
-The file needed by the VAX emulator is located in %%PREFIX%%/share/simh
+The file needed by the VAX emulator is located in %%DATADIR%%
 
 *********************************************************************

@@ -6,39 +6,43 @@
 #
 
 PORTNAME=	simh
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}v38-1
+DISTNAME=	${PORTNAME}v${PORTVERSION:R:S/.//}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
-USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-qoa
-USE_GMAKE=	yes
-MAKEFILE=	makefile
-MAKE_ENV=	USE_NETWORK=1
 NO_WRKSUBDIR=	yes
+
+USE_ZIP=	yes
+USE_DOS2UNIX=	VAX/vax_sysdev.c
+USE_GMAKE=	yes
+MAKE_ENV=	GCC="${CC}" CFLAGS_O="${CFLAGS}" USE_NETWORK=1
+MAKEFILE=	makefile
+MAKE_JOBS_SAFE=	yes
+
+SUB_FILES=	pkg-message
 
 BIN_FILES=	altair altairz80 gri h316 hp2100 i1401 i1620 i7094 ibm1130 \
 		id16 id32 lgp nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 pdp9 \
-		s3 sds vax vax780
+		s3 sds swtp6800mp-a swtp6800mp-a2 vax vax780
 
-PORTDOCS=	0readme_38.txt 0readme_ethernet.txt
-
-PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin bin/simh-eclipse
+PORTDOCS=	0readme_${PORTVERSION:R:S/.//}.txt 0readme_ethernet.txt
+PLIST_FILES=	${BIN_FILES:S/^/bin\//g} bin/simh-eclipse %%DATADIR%%/ka655x.bin
 PLIST_DIRS=	%%DATADIR%%
-
-SUB_FILES+=	pkg-message
-
-.include <bsd.port.pre.mk>
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/VAX/vax_sysdev.c
+	@${REINPLACE_CMD} -e \
+		'/shell ldconfig/s|^|#| ; \
+		 s|-lpthread|${PTHREAD_LIBS}| ; \
+		 /-O2/s| = | ?= |' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e \
+		's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/VAX/vax_sysdev.c
 
 do-install:
 .for file in ${BIN_FILES}
@@ -46,18 +50,14 @@ do-install:
 .endfor
 # eclipse conflicts with java/eclipse, install it as simh-eclipse
 	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse ${PREFIX}/bin/simh-eclipse
-
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${DATADIR}
-
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for i in ${PORTDOCS}; do\
-		${INSTALL_DATA} ${WRKDIR}/$$i ${DOCSDIR}; \
-	done
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKDIR}/${file} ${DOCSDIR}
+.endfor
 .endif
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
