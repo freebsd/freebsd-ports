@@ -1,0 +1,18 @@
+--- src/Makefile.in.orig	2012-02-21 04:10:20.000000000 +0900
++++ src/Makefile.in	2012-05-15 17:11:18.000000000 +0900
+@@ -330,12 +330,12 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ GNU_VERBOSITY := $(if $(findstring GNU,$(shell $(MAKE) -v)),0,1)
+-INCLUDES = -I../include -I$(top_srcdir)/include -I$(includedir) \
+-	   -I$(top_builddir)/pixmaps $(LIRC_INCLUDE)
++INCLUDES = -I../include -I$(top_srcdir)/include \
++	   -I$(top_builddir)/pixmaps $(JS_CFLAGS) $(LIRC_INCLUDE)
+ 
+ AM_CFLAGS = $(GNU99) $(XINE_CFLAGS) $(X_CFLAGS) \
+ 	    $(GTK2_CFLAGS) $(GTHREAD2_CFLAGS) \
+-	    $(HAL_CFLAGS) $(UDEV_CFLAGS) $(DBUS_CFLAGS) $(JS_CFLAGS) \
++	    $(HAL_CFLAGS) $(UDEV_CFLAGS) $(DBUS_CFLAGS) $(NSPR_CFLAGS) \
+ 	    -DLOCALEDIR=\"$(localedir)\"
+ 
+ gxine_SOURCES = \
