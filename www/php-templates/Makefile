@@ -8,15 +8,15 @@
 PORTNAME=	php-templates
 PORTVERSION=	1.7.2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.7 \
-		SF/${PORTNAME}/${PORTNAME}-doc/html
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.7:ext \
+		SF/${PORTNAME}/${PORTNAME}-doc/html:doc
 DISTNAME=	php_templates-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:ext
 .if !defined(NOPORTDOCS)
-DISTFILES+=	php_templates-doc-eng-1.1${EXTRACT_SUFX}
+DISTFILES+=	php_templates-doc-eng-1.1${EXTRACT_SUFX}:doc
 .endif
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A template framework for PHP
 
 WRKSRC=		${WRKDIR}/templates
@@ -24,8 +24,6 @@ USE_DOS2UNIX=	yes
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-templates=shared
 
