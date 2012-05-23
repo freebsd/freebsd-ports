@@ -20,7 +20,7 @@ OPTIONS=	EXTENDED	"ELF format extensions" on \
 		NLS		"Native Language Support" on \
 		SANITY		"Avoid loading invalid ELF files" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-compat
@@ -51,16 +51,4 @@ CONFIGURE_ARGS+=	--enable-sanity-checks
 CONFIGURE_ARGS+=	--disable-sanity-checks
 .endif
 
-.if ${OSVERSION} < 600102
-
-FILES_TO_PATCH=lib/32.fsize.c lib/64.xlatetof.c lib/cook.c lib/gelf.h lib/gelftrans.c
-
-post-patch:
-	${REINPLACE_CMD} \
-	-e 's/Elf64_Xword/Elf64_Word/g' \
-	-e 's/Elf64_Sxword/Elf64_Sword/g' \
-	${FILES_TO_PATCH:S,^,${WRKSRC}/,}
-
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
