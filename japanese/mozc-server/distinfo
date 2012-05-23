@@ -1,2 +1,4 @@
 SHA256 (mozc-1.5.1053.102.tar.bz2) = c0b8e2f8db312fb530387c0ac9c67dae8bc723bf02765e54816353b1e8dc11e3
 SIZE (mozc-1.5.1053.102.tar.bz2) = 52230135
+SHA256 (fcitx-mozc-1.5.1053.102-1.patch) = 93ebe5ccf42520212ee81b2eac0b5d8727e211a2fbdef244e44d38576d6c54e6
+SIZE (fcitx-mozc-1.5.1053.102-1.patch) = 96547
