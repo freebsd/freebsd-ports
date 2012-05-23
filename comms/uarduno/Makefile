@@ -19,6 +19,8 @@ NO_PACKAGE=	You must (re)build this port with your kernel source
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 LOCALBASE=	${KMODDIR}
 
+.include <bsd.port.pre.mk>
+
 SRCPREFIX?=	${SRC_BASE}
 
 # disable mtree or you'll get a /boot/kernel/... directory hierarchy put there
@@ -40,8 +42,6 @@ NO_LICENSES_DIALOGS=	yes
 # so make sure I correctly identify them
 #
 CFLAGS+=	-DKERNELVER=${OSVERSION}
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
 # Simple check for 7.x kernel source (find usb.c)
