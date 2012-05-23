@@ -24,10 +24,10 @@ RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.4-2.7
 
-GITDATE=	2011.11.28
-GITVERSION=	e93bd72
+GITDATE=	2012.05.14
+GITVERSION=	228bc38
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
@@ -53,6 +53,8 @@ post-patch:
 		${WRKSRC}/bin/uzbl-event-manager
 	@${REINPLACE_CMD} -e "s|/usr/share/uzbl|${DATADIR}|" \
 		${WRKSRC}/bin/uzbl-tabbed
+	@${REINPLACE_CMD} -e "s|/usr/bin/env python2|/usr/bin/env ${PYTHON_VERSION}|" \
+		${WRKSRC}/bin/uzbl-event-manager
 
 post-build:
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
