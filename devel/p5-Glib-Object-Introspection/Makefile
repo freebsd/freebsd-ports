@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Glib-Object-Introspection
-PORTVERSION=	0.008
+PORTVERSION=	0.009
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	gobject-introspection>=0.10.0:${PORTSDIR}/devel/gobject-introspec
 		p5-Glib2>=1.240:${PORTSDIR}/devel/p5-Glib2
 RUN_DEPENDS=	gobject-introspection>=0.10.0:${PORTSDIR}/devel/gobject-introspection \
 		p5-Glib2>=1.240:${PORTSDIR}/devel/p5-Glib2
-
 TEST_DEPENDS=	p5-Cairo-GObject>=0:${PORTSDIR}/devel/p5-Cairo-GObject
 
 PERL_CONFIGURE=	yes
