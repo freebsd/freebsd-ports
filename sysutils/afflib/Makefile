@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/simsong/AFFLIBv3/ \
 		http://www.c-s.li/ports/
