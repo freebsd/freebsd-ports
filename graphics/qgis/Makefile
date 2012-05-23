@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
@@ -53,8 +53,8 @@ CMAKE_ARGS+=	-DWITH_GRASS:BOOL=FALSE
 .endif
 
 .if defined(WITH_POSTGIS)
+USE_PGSQL=	YES
 CMAKE_ARGS+=	-DWITH_POSTGRESQL:BOOL=TRUE
-BUILD_DEPENDS+=	${LOCALBASE}/share/postgis:${PORTSDIR}/databases/postgis
 PLIST_SUB+=	PGSQL=""
 .else
 CMAKE_ARGS+=	-DWITH_POSTGRESQL:BOOL=FALSE
