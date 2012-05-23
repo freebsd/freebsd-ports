@@ -19,6 +19,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	pdftk:${PORTSDIR}/print/pdftk \
 		pdftoppm:${PORTSDIR}/graphics/xpdf
 
+BROKEN=		unsatisfiable dependency on xpdf
+
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
