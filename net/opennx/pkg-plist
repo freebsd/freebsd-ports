@@ -41,7 +41,7 @@ share/keys/server.id_dsa.key.pub
 %%NLS%%share/locale/de/LC_MESSAGES/opennx.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/opennx.mo
 share/pconnect.html
-@dirrm share/keys
+@dirrmtry share/keys
 @dirrmtry share/icons/scalable/mimetypes
 @dirrmtry share/icons/scalable/apps
 @dirrmtry share/icons/scalable

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opennx
-PORTVERSION=	0.16.0.648
-PORTREVISION=	1
+PORTVERSION=	0.16.0.709
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CI-source
 
@@ -52,5 +51,8 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	@${RM} ${WRKSRC}/share/keys/server.id_dsa.key
 	@${SSH_KEYGEN} -N '' -b 2048 -q -f ${WRKSRC}/share/keys/server.id_dsa.key
+
+post-install:
+	@${CHMOD} 440 ${PREFIX}/share/keys/server.id_dsa.key
 
 .include <bsd.port.mk>
