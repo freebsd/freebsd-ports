@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gambit-c
-DISTVERSION=	v4_6_4
+DISTVERSION=	v4_6_6
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.6/source/
@@ -37,13 +37,9 @@ PLIST_SUB+=	GSI_INC=include/gambit-c
 PLIST_SUB+=	GSI_DOC=share/doc/gambit-c
 PLIST_SUB+=	GSI_LIB=lib/gambit-c
 
-.include <bsd.port.pre.mk>
-
 # This is needed because 4.2 < gcc -v < 4.4 has optimisations that make the
 # build take more than 20Gb of virtual memory.
-.if ${OSVERSION} >= 700042
 CFLAGS+=	-fno-move-loop-invariants
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(FLAGS_OBJ = \).*|\1 ${CFLAGS}|' ${WRKSRC}/makefile.in
@@ -58,4 +54,4 @@ post-patch:
 post-configure:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
