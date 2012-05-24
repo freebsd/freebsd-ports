@@ -7,26 +7,16 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/demos/obe/StarSchemaMining/StarSchemaMining.xml
 %%DATADIR%%/dataminer/demos/obe/TextMining/TextMining.xml
 %%DATADIR%%/dataminer/demos/obe/UsingOracleDataMiner/Targeting_Best_Customers.xml
-%%DATADIR%%/dataminer/doc/dataminer_cue_cards.jar
-%%DATADIR%%/dataminer/doc/dataminer_help.jar
-%%DATADIR%%/dataminer/jlib/chartbuilder.jar
-%%DATADIR%%/dataminer/jlib/dtSchema.jar
-%%DATADIR%%/dataminer/jlib/uic2.jar
-%%DATADIR%%/dataminer/jlib/xmlschema.jar
-%%DATADIR%%/dataminer/scripts/Migrate_11_2_0_1_0_to_11_2_0_2_0.xslt
 %%DATADIR%%/dataminer/scripts/XMLSchema.xsd
-%%DATADIR%%/dataminer/scripts/XMLSchema_11_2_0_2_0.xsd
 %%DATADIR%%/dataminer/scripts/alterDBRestrictSession.sql
 %%DATADIR%%/dataminer/scripts/alterDBUnRestrictSession.sql
 %%DATADIR%%/dataminer/scripts/alterUserDefaultRole.sql
-%%DATADIR%%/dataminer/scripts/compilePackageDebug.sql
-%%DATADIR%%/dataminer/scripts/createTablespace.sql
-%%DATADIR%%/dataminer/scripts/demo.sql
+%%DATADIR%%/dataminer/scripts/createuser.sql
+%%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup.sql
 %%DATADIR%%/dataminer/scripts/disconnectODMRSessions.sql
 %%DATADIR%%/dataminer/scripts/dmsh.sql
 %%DATADIR%%/dataminer/scripts/dmshgrants.sql
 %%DATADIR%%/dataminer/scripts/dropDemoData.sql
-%%DATADIR%%/dataminer/scripts/dropObjects.sql
 %%DATADIR%%/dataminer/scripts/dropPublicSynonyms.sql
 %%DATADIR%%/dataminer/scripts/dropRepository.sql
 %%DATADIR%%/dataminer/scripts/dropRepositoryAndUserObjects.sql
@@ -40,17 +30,25 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/install_scripts_readme.html
 %%DATADIR%%/dataminer/scripts/installodmr.sql
 %%DATADIR%%/dataminer/scripts/instgrants.sql
+%%DATADIR%%/dataminer/scripts/instmessages.sql
+%%DATADIR%%/dataminer/scripts/instmessages_de.sql
+%%DATADIR%%/dataminer/scripts/instmessages_en.sql
+%%DATADIR%%/dataminer/scripts/instmessages_es.sql
+%%DATADIR%%/dataminer/scripts/instmessages_fr.sql
+%%DATADIR%%/dataminer/scripts/instmessages_it.sql
+%%DATADIR%%/dataminer/scripts/instmessages_ja.sql
+%%DATADIR%%/dataminer/scripts/instmessages_ko.sql
+%%DATADIR%%/dataminer/scripts/instmessages_pt_br.sql
+%%DATADIR%%/dataminer/scripts/instmessages_zh_cn.sql
+%%DATADIR%%/dataminer/scripts/instmessages_zh_tw.sql
 %%DATADIR%%/dataminer/scripts/instobjects.sql
-%%DATADIR%%/dataminer/scripts/instobjects2.sql
 %%DATADIR%%/dataminer/scripts/instodmrsys.sql
 %%DATADIR%%/dataminer/scripts/instpackages.sql
-%%DATADIR%%/dataminer/scripts/instpatches.sql
-%%DATADIR%%/dataminer/scripts/instschema.sql
-%%DATADIR%%/dataminer/scripts/instschema2.sql
 %%DATADIR%%/dataminer/scripts/instschema_g.sql
-%%DATADIR%%/dataminer/scripts/instschema_t.sql
 %%DATADIR%%/dataminer/scripts/inststopwords.sql
+%%DATADIR%%/dataminer/scripts/insureWorkflowsInactive.sql
 %%DATADIR%%/dataminer/scripts/migrateodmr.sql
+%%DATADIR%%/dataminer/scripts/migrateodmrhelper.sql
 %%DATADIR%%/dataminer/scripts/odmr_constant_hdr.sql
 %%DATADIR%%/dataminer/scripts/odmr_engine_body.plb
 %%DATADIR%%/dataminer/scripts/odmr_engine_data_body.plb
@@ -92,10 +90,22 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/odmr_workflow_hdr.sql
 %%DATADIR%%/dataminer/scripts/odmr_workflow_sec_body.plb
 %%DATADIR%%/dataminer/scripts/odmr_workflow_sec_hdr.sql
+%%DATADIR%%/dataminer/scripts/restorexmlworkflowfrombackup.sql
 %%DATADIR%%/dataminer/scripts/revokeSHGrants.sql
+%%DATADIR%%/dataminer/scripts/schema11_2_0_1_9to11_2_1_1_1.sql
 %%DATADIR%%/dataminer/scripts/updateRepositoryProperty.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_10To11_2_0_1_11.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_11To11_2_0_1_12.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_12To11_2_0_1_13.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_13To11_2_1_1_1.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_1To11_2_1_1_2.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_2To11_2_1_1_3.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_3To11_2_1_1_4.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_4To11_2_1_1_5.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepository.sql
 %%DATADIR%%/dataminer/scripts/usergrants.sql
 %%DATADIR%%/dataminer/scripts/validateODMRSYS.sql
+%%DATADIR%%/dataminer/scripts/validateVersionUpgrade.sql
 %%DATADIR%%/icon.png
 %%DATADIR%%/ide/bin/edt.properties
 %%DATADIR%%/ide/bin/encodings.xml
@@ -157,9 +167,7 @@ bin/sqldeveloper
 %%DATADIR%%/ide/themes/creating_themes.html
 %%DATADIR%%/ide/themes/fusionblue.jar
 %%DATADIR%%/ide/themes/sizingmargins.png
-%%DATADIR%%/j2ee/home/lib/activation.jar
-%%DATADIR%%/j2ee/home/lib/el-ri.jar
-%%DATADIR%%/j2ee/home/lib/servlet.jar
+%%DATADIR%%/javavm/lib/aurora.zip
 %%DATADIR%%/jdbc/lib/ojdbc6.jar
 %%DATADIR%%/jdbc/lib/ojdbc6dms.jar
 %%DATADIR%%/jdev.label
@@ -226,8 +234,6 @@ bin/sqldeveloper
 %%DATADIR%%/jviews/jviews-diagrammer.jar
 %%DATADIR%%/jviews/jviews-framework-lib.jar
 %%DATADIR%%/jviews/jviews-fwk-support.jar
-%%DATADIR%%/lib/java/api/jaxb-api.jar
-%%DATADIR%%/lib/java/api/jsr173_api.jar
 %%DATADIR%%/modules/glassfish.el_1.0.0.0_2-1.jar
 %%DATADIR%%/modules/glassfish.jaxb.xjc_1.0.0.0_2-1-12.jar
 %%DATADIR%%/modules/glassfish.jaxb_1.0.0.0_2-1-12.jar
@@ -290,15 +296,31 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.conf
 %%DATADIR%%/sqldeveloper/bin/ututil.sh
 %%DATADIR%%/sqldeveloper/bin/version.properties
+%%DATADIR%%/sqldeveloper/doc/dataminer_cue_cards.jar
+%%DATADIR%%/sqldeveloper/doc/dataminer_help.jar
 %%DATADIR%%/sqldeveloper/doc/icon.png
 %%DATADIR%%/sqldeveloper/doc/otn_new.css
 %%DATADIR%%/sqldeveloper/doc/sqldeveloper_help.jar
 %%DATADIR%%/sqldeveloper/doc/sqldevtips.jar
 %%DATADIR%%/sqldeveloper/doc/welcome/TrainingPaths.gif
+%%DATADIR%%/sqldeveloper/doc/welcome/de/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/de/welcome.html
 %%DATADIR%%/sqldeveloper/doc/welcome/en/Training.html
 %%DATADIR%%/sqldeveloper/doc/welcome/en/welcome.html
+%%DATADIR%%/sqldeveloper/doc/welcome/es/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/es/welcome.html
 %%DATADIR%%/sqldeveloper/doc/welcome/footer_style.css
+%%DATADIR%%/sqldeveloper/doc/welcome/fr/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/fr/welcome.html
+%%DATADIR%%/sqldeveloper/doc/welcome/it/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/it/welcome.html
+%%DATADIR%%/sqldeveloper/doc/welcome/ja/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/ja/welcome.html
+%%DATADIR%%/sqldeveloper/doc/welcome/ko/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/ko/welcome.html
 %%DATADIR%%/sqldeveloper/doc/welcome/main.css
+%%DATADIR%%/sqldeveloper/doc/welcome/pt_BR/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/pt_BR/welcome.html
 %%DATADIR%%/sqldeveloper/doc/welcome/startPage_script.js
 %%DATADIR%%/sqldeveloper/doc/welcome/subPage_script.js
 %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages/TPaths.png
@@ -334,6 +356,10 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages/welcome_r2_c3_f3.png
 %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages/welcome_r2_c3_f4.png
 %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages/welcome_r2_c3_f5.png
+%%DATADIR%%/sqldeveloper/doc/welcome/zh_CN/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/zh_CN/welcome.html
+%%DATADIR%%/sqldeveloper/doc/welcome/zh_TW/Training.html
+%%DATADIR%%/sqldeveloper/doc/welcome/zh_TW/welcome.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/datamodeler_help.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/footer_style.css
@@ -342,7 +368,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/subPage_script.js
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcome.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/TPaths.png
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/Thumbs.db
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/closedbook.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/codesampleicon.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/cuecardsicon.png
@@ -376,48 +401,29 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/welcome_r2_c3_f4.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/welcome_r2_c3_f5.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/icon.png
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/avalon-framework-4.2.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/awxml.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-anim.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-awt-util.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-bridge.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-codec.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-css.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-dom.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-ext.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-extension.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-gui-util.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-gvt.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-parser.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-script.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-svg-dom.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-svggen.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-swing.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-transcoder.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-util.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-xml.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-all-1.7.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/commons-io-1.3.1.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/commons-logging-1.0.4.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/fop.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/jlfgr.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/js.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/log4j.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/ojmisc.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/olap_api.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/pdf-transcoder.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/poi.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/serializer-2.7.0.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xalan-2.7.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xml-apis-ext.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xml-apis.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xmlparserv2.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xmlgraphics-commons-1.3.1.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/readme.html
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/AllDomainsDetails.xslt
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/AllEntitiesDetails.xslt
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/AllTablesDetails.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM2.1.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM3.0.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM3.0_DML.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2_DM2patch.sql
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/F_Apply_Java_Transformation.sql
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/F_Apply_PLSQL_Transformation.sql
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/F_Load_Java_SP.sql
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/GlossaryDetails.xslt
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/P_Java_XmlTransform.sql
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.0_DM3.1.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Pkg_Osdm_Utils.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Pkg_Osdm_Utils_body.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams/Data Types model.pdf
@@ -431,13 +437,96 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams/Reporting Schema without Process Model.pdf
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting_Schema_Permissions.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting_Schema_Upgrade_Readme.txt
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/SingleEntityDetails.xslt
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/SingleTableDetails.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reports_Info.txt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/fop.xconf
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/oracle.sqldeveloper.datamodeler_reports.59.46.zip
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/osddm_upgr.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/osddm_upgrerr.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/osddm_upgrrun.sql
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/osddm_upgrrun_11gR2.sql
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllCollectionTypesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllCollectionTypesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllCollectionTypesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllDistinctTypesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllDistinctTypesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllDistinctTypesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllDomainsDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllDomainsDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllDomainsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllEntitiesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllEntitiesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllEntitiesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllStructuredTypesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllStructuredTypesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllStructuredTypesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllTablesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllTablesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/AllTablesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/ChangeRequestsDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/ChangeRequestsDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/ChangeRequestsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/GlossaryDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/GlossaryDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/GlossaryDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/MeasurementsDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/MeasurementsDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/MeasurementsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleCollectionTypeDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleCollectionTypeDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleCollectionTypeDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleDistinctTypeDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleDistinctTypeDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleDistinctTypeDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleEntityDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleEntityDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleEntityDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleStructuredTypeDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleStructuredTypeDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleStructuredTypeDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleTableDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleTableDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleTableDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllCollectionTypesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllCollectionTypesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllCollectionTypesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllDistinctTypesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllDistinctTypesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllDistinctTypesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllDomainsDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllDomainsDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllDomainsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllEntitiesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllEntitiesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllEntitiesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllStructuredTypesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllStructuredTypesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllStructuredTypesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllTablesDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllTablesDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/AllTablesDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/ChangeRequestsDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/ChangeRequestsDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/ChangeRequestsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/GlossaryDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/GlossaryDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/GlossaryDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/MeasurementsDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/MeasurementsDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/MeasurementsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleCollectionTypeDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleCollectionTypeDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleCollectionTypeDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleDistinctTypeDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleDistinctTypeDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleDistinctTypeDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleEntityDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleEntityDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleEntityDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleStructuredTypeDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleStructuredTypeDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleStructuredTypeDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleTableDetails_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleTableDetails_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleTableDetails_rtf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates/ABBREVS_SAMPLE.csv
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates/plurals.csv
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/defaultRDBMSSites.xml
@@ -449,9 +538,11 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AUXTableIndexDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AVT.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractDTObject.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractDesign.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractMDObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractProcessObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractStorageObjectDB2.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractStorageObjectOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractStorageObjectSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractView.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/AbstractViewElement.xml
@@ -482,7 +573,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/BusinessInfoDesign.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CalculatedAttribute.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CandidateKey.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ChangeRequest.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterColumnOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterColumnOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterColumnOraclev9i.xml
@@ -492,12 +582,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ClusterOraclev9i.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.DataTypeWrapper.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxy.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOracle.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev10g.xml
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Column.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnIdentityDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnIdentityDB2v80.xml
@@ -515,8 +599,15 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDBv71.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyUDBv81.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnView.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.DataTypeWrapper.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionType.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxy.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOracle.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev10g.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainedObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainedObjectWithDomain.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainerMapping.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainerObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainerUDB.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContainerUDBv71.xml
@@ -527,7 +618,10 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContextOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ContextOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Cube.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ChangeRequest.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DBConnectionStamp.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DBPartitionGroupUDBv81.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DDLFileStamp.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DPVMultidimensional.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DTReference.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DTRelation.xml
@@ -549,6 +643,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DataFileSqlServerv2k.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DataFileSqlServerv2k5.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DataFlowDesign.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DataTypesDesign.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DefaultSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DefaultSqlServerv2k.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DefaultSqlServerv2k5.xml
@@ -673,6 +768,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ListStorageTemplatePartitionOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LobStorageOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LobStorageOraclev10g.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LobStorageOraclev11g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LobStorageOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LocalIndexProperties.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LogicalDesign.xml
@@ -746,11 +842,14 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/QuotaItemOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/QuotaItemOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/QuotaItemOraclev9i.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RDBMSSite.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RMExtendedMap.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RaggedHLink.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RecordStructure.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RedoLogGroupOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RedoLogGroupOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RedoLogGroupOraclev9i.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RelMapping.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Relation.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RelationalContainerProxy.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RelationalDesign.xml
@@ -773,6 +872,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SQLAccessToAW.SQLHierarchy.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SQLAccessToAW.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SQLAttribute.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SQLNameHelper.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SchemaSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SchemaSqlServerv2k.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SchemaSqlServerv2k5.xml
@@ -804,6 +904,9 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StagingTableUDB.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StagingTableUDBv81.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageDesign.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageDesignOracle.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageDesignOraclev10g.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageDesignOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageGroupDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/StorageObjectPlaceHolder.xml
@@ -933,8 +1036,14 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/index.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc/list.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/chartbuilder.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/dtSchema.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/uic2.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/xmlschema.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.datamodeler_reports.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.dbanavigator.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.dbcart.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.em_cm.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.extras.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.filenavigator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.jar
@@ -950,6 +1059,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.core_antlr3.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.db2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.gui.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.teradata_translator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.oviewer.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.report.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.scheduler.jar
@@ -966,22 +1076,37 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.worksheet.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.xmlschema.jar
 %%DATADIR%%/sqldeveloper/lib/ActiveQueryBuilder.jar
+%%DATADIR%%/sqldeveloper/lib/PropertyStorage.jar
 %%DATADIR%%/sqldeveloper/lib/SQLinForm.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-all-2.7.6.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-runtime-3.1.3.jar
 %%DATADIR%%/sqldeveloper/lib/bcmail-jdk16-145.jar
 %%DATADIR%%/sqldeveloper/lib/bcprov-jdk16-145.jar
 %%DATADIR%%/sqldeveloper/lib/bctsp-jdk16-145.jar
-%%DATADIR%%/sqldeveloper/lib/iText-5.0.3.jar
+%%DATADIR%%/sqldeveloper/lib/commons-codec-1.4.jar
+%%DATADIR%%/sqldeveloper/lib/commons-logging-1.1.1.jar
+%%DATADIR%%/sqldeveloper/lib/dom4j-1.6.1.jar
+%%DATADIR%%/sqldeveloper/lib/emapi.jar
+%%DATADIR%%/sqldeveloper/lib/geronimo-stax-api_1.0_spec-1.0.jar
+%%DATADIR%%/sqldeveloper/lib/httpclient-4.1.1.jar
+%%DATADIR%%/sqldeveloper/lib/httpclient-cache-4.1.1.jar
+%%DATADIR%%/sqldeveloper/lib/httpcore-4.1.jar
+%%DATADIR%%/sqldeveloper/lib/httpmime-4.1.1.jar
+%%DATADIR%%/sqldeveloper/lib/itextpdf-5.1.2.jar
 %%DATADIR%%/sqldeveloper/lib/jgraphx.jar
 %%DATADIR%%/sqldeveloper/lib/jle2.jar
 %%DATADIR%%/sqldeveloper/lib/jline-0.9.9.jar
+%%DATADIR%%/sqldeveloper/lib/jsch.jar
+%%DATADIR%%/sqldeveloper/lib/log4j-1.2.13.jar
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.utils-nodeps.jar
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.utils.jar
-%%DATADIR%%/sqldeveloper/lib/poi-2.5.1-final-20040804.jar
+%%DATADIR%%/sqldeveloper/lib/poi-3.7-20101029.jar
+%%DATADIR%%/sqldeveloper/lib/poi-ooxml-3.7-20101029.jar
+%%DATADIR%%/sqldeveloper/lib/poi-ooxml-schemas-3.7-20101029.jar
 %%DATADIR%%/sqldeveloper/lib/sdoapi.jar
 %%DATADIR%%/sqldeveloper/lib/sdovis.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate-3.1b1.jar
+%%DATADIR%%/sqldeveloper/lib/xmlbeans-2.3.0.jar
 %%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.png
 %%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.src
 %%DATADIR%%/sqldeveloper/searchengines/asktom.png
@@ -1009,10 +1134,15 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/sqlj
 @dirrm %%DATADIR%%/sqldeveloper/searchengines
 @dirrm %%DATADIR%%/sqldeveloper/lib
+@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib
+@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates
+@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20
+@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10
+@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib
@@ -1021,8 +1151,17 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc
 @dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler
 @dirrm %%DATADIR%%/sqldeveloper/extensions
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/zh_TW
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/zh_CN
 @dirrm %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/pt_BR
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/ko
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/ja
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/it
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/fr
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/es
 @dirrm %%DATADIR%%/sqldeveloper/doc/welcome/en
+@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/de
 @dirrm %%DATADIR%%/sqldeveloper/doc/welcome
 @dirrm %%DATADIR%%/sqldeveloper/doc
 @dirrm %%DATADIR%%/sqldeveloper/bin
@@ -1043,9 +1182,6 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/modules/oracle.adf.share.ca_11.1.1
 @dirrm %%DATADIR%%/modules/oracle.adf.model_11.1.1
 @dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/lib/java/api
-@dirrm %%DATADIR%%/lib/java
-@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/jviews
 @dirrm %%DATADIR%%/jlib
 @dirrm %%DATADIR%%/jdev/lib
@@ -1057,9 +1193,8 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/jdev
 @dirrm %%DATADIR%%/jdbc/lib
 @dirrm %%DATADIR%%/jdbc
-@dirrm %%DATADIR%%/j2ee/home/lib
-@dirrm %%DATADIR%%/j2ee/home
-@dirrm %%DATADIR%%/j2ee
+@dirrm %%DATADIR%%/javavm/lib
+@dirrm %%DATADIR%%/javavm
 @dirrm %%DATADIR%%/ide/themes
 @dirrm %%DATADIR%%/ide/macros
 @dirrm %%DATADIR%%/ide/lib
@@ -1069,8 +1204,6 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/ide/bin
 @dirrm %%DATADIR%%/ide
 @dirrm %%DATADIR%%/dataminer/scripts
-@dirrm %%DATADIR%%/dataminer/jlib
-@dirrm %%DATADIR%%/dataminer/doc
 @dirrm %%DATADIR%%/dataminer/demos/obe/UsingOracleDataMiner
 @dirrm %%DATADIR%%/dataminer/demos/obe/TextMining
 @dirrm %%DATADIR%%/dataminer/demos/obe/StarSchemaMining

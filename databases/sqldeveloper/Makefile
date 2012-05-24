@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	3.0.04.34
+PORTVERSION=	3.1.07.42
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
-DISTNAME=	${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 DIST_SUBDIR=	oracle
 
 MAINTAINER=	jjuanino@gmail.com
@@ -26,10 +25,12 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 RESTRICTED=	Packaging prohibited by Oracle license
+NO_CDROM=	Packaging prohibited by Oracle license
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
-SUB_FILES=	pkg-message
+SUB_FILES=	${PORTNAME}.sh
+SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	readme.html
@@ -38,38 +39,23 @@ PORTDOCS=	readme.html
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-ECHO_MSG=		${PRINTF} %b
-
-IGNORE+=		\n\n-=< MARKED AS IGNORED: >=-\n
-IGNORE+=		\n
-IGNORE+=		Due to Oracle license restrictions, you must fetch the source \n
-IGNORE+=		distribution manually.	Please access  \n
-IGNORE+=		http://www.oracle.com/technology/software/products/sql/index.html \n
-IGNORE+=		with a web browser and follow the link for the \n
-IGNORE+=		\"${DISTFILES}\".  \n
-IGNORE+=		You will be required to register and log in, \n
-IGNORE+=		but you can create an account on that page.  \n
-IGNORE+=		After registration and accepting the Oracle License, \n
-IGNORE+=		download the distribution file, \n ${DISTFILES}, \n
-IGNORE+=		into ${DISTDIR}/${DIST_SUBDIR}/ \n
-IGNORE+=		and then restart this installation\n\n
+IGNORE= Due to Oracle license restrictions, you must fetch the source \
+distribution manually. Please access \
+http://www.oracle.com/technology/software/products/sql/index.html \
+with a web browser and follow the link for the ${DISTFILES}. You will be \
+required to register and log in, but you can create an account on that \
+page. After registration and accepting the Oracle License, download the \
+distribution file, ${DISTFILES}, into ${DISTDIR}/${DIST_SUBDIR}/ and then \
+restart this installation
 .endif
 
 do-install:
-	@${REINPLACE_CMD} -e 's|%DATADIR%|${DATADIR}|' \
-			  -e 's|%JAVA_HOME%|${JAVA_HOME}|' \
-	    ${WRKSRC}/sqldeveloper.sh
-	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!${LOCALBASE}/bin/bash|' \
-	    ${WRKSRC}/sqldeveloper.sh \
-	    ${WRKSRC}/ide/bin/launcher.sh \
-	    ${WRKSRC}/ide/bin/product-launcher.template \
-	    ${WRKSRC}/sqldeveloper/bin/sqldeveloper
 	@${ECHO_MSG} -n ">> Installing scripts..."
-	@${INSTALL_SCRIPT} ${WRKSRC}/sqldeveloper.sh ${PREFIX}/bin/sqldeveloper
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 	@${ECHO_MSG} " [ DONE ]"
 
-.for d in dataminer ide j2ee jdbc jdev jlib jviews lib modules rdbms sleepycat \
-    sqldeveloper sqlj timingframework
+.for d in dataminer jdbc jviews sleepycat timingframework \
+    ide jdev modules sqldeveloper javavm jlib rdbms sqlj
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	@cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses" \

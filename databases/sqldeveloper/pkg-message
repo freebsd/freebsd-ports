@@ -17,6 +17,6 @@ Note for MySQL users:
     Developer where the MySQL JDBC classes are. Go to Tools -> Preferences
     menu, select Database -> Third Party JDBC Drivers and add the proper jar.
     Do not install 5.1 version of mysql jdbc connector; see
-    http://download.oracle.com/docs/cd/E18464_01/doc.30/e17472/intro.htm#CHDIEGDD
+    http://docs.oracle.com/cd/E25259_01/doc.31/e26419/install.htm#CIHIHDIF
 
 ************************************************************************
