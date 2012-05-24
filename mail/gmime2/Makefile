@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.2.24
+PORTVERSION=	2.2.27
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	GNOME
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	ahicks@p-o.co.uk
 COMMENT?=	Library (written in C) for parsing and creating messages using MIME
+
+LICENSE=	LGPL21
 
 CONFLICTS=	gmime-1.0.* gmime-2.4.*
 
@@ -23,9 +25,12 @@ USE_GMAKE=	yes
 USE_GNOME?=	gnomehack glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+# www.freebsd.org/cgi/query-pr.cgi?pr=118092
+# Rename uudecode and uuencode to gmime-* to not conflict with userland
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
 			--with-html-dir=${PREFIX}/share/doc \
-			--enable-mono=no
+			--enable-mono=no \
+			--program-transform-name="s/uuencode/gmime-uuencode/;s/uudecode/gmime-uudecode/;"
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
