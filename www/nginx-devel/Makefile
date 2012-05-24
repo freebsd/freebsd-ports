@@ -515,7 +515,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODU
 .endif
 
 .if defined(WITH_NAXSI_MODULE)
-NGINX_NAXSI_MODULE_VERSION=	0.45
+NGINX_NAXSI_MODULE_VERSION=	0.46-1
 MASTER_SITES+=	http://naxsi.googlecode.com/files/:naxsi
 DISTFILES+=	naxsi-${NGINX_NAXSI_MODULE_VERSION}.tgz:naxsi
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/naxsi-${NGINX_NAXSI_MODULE_VERSION}/naxsi_src
