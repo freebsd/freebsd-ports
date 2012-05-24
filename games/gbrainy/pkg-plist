@@ -467,6 +467,7 @@ share/locale/hu/LC_MESSAGES/gbrainy.mo
 share/locale/id/LC_MESSAGES/gbrainy.mo
 share/locale/it/LC_MESSAGES/gbrainy.mo
 share/locale/ko/LC_MESSAGES/gbrainy.mo
+share/locale/lv/LC_MESSAGES/gbrainy.mo
 share/locale/nb/LC_MESSAGES/gbrainy.mo
 share/locale/nl/LC_MESSAGES/gbrainy.mo
 share/locale/pl/LC_MESSAGES/gbrainy.mo
@@ -482,6 +483,7 @@ share/locale/sv/LC_MESSAGES/gbrainy.mo
 share/locale/te/LC_MESSAGES/gbrainy.mo
 share/locale/th/LC_MESSAGES/gbrainy.mo
 share/locale/tr/LC_MESSAGES/gbrainy.mo
+share/locale/ug/LC_MESSAGES/gbrainy.mo
 share/locale/vi/LC_MESSAGES/gbrainy.mo
 share/locale/zh_CN/LC_MESSAGES/gbrainy.mo
 share/locale/zh_HK/LC_MESSAGES/gbrainy.mo
@@ -498,6 +500,8 @@ share/pixmaps/gbrainy48.png
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/vi/LC_MESSAGES
 @dirrmtry share/locale/vi
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/tr/LC_MESSAGES
 @dirrmtry share/locale/tr
 @dirrmtry share/locale/th/LC_MESSAGES
@@ -524,6 +528,8 @@ share/pixmaps/gbrainy48.png
 @dirrmtry share/locale/pl
 @dirrmtry share/locale/nl/LC_MESSAGES
 @dirrmtry share/locale/nl
+@dirrmtry share/locale/lv/LC_MESSAGES
+@dirrmtry share/locale/lv
 @dirrmtry share/locale/nb/LC_MESSAGES
 @dirrmtry share/locale/nb
 @dirrmtry share/locale/ko/LC_MESSAGES
