@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+cd %%DATADIR%%/%%PORTNAME%%/bin
+JAVA_VERSION="%%JAVA_VERSION%%" JAVA_HOME="%%JAVA_HOME%%" exec %%LOCALBASE%%/bin/bash %%PORTNAME%% $*
