@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ess
-PORTVERSION=	12.04
-PORTREVISION=	1
+DISTVERSION=	12.04-2
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
