@@ -41,7 +41,7 @@ CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
- One of it's dependency is p5-GSSAPI which is marked broken for 7.X
+# One of it's dependency is p5-GSSAPI which is marked broken for 7.X
 .if ${OSVERSION} < 800000
 BROKEN=	Does not work on FreeBSD 7.x
 .endif
