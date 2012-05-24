@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.12
+PORTVERSION=	1.6.13
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -22,10 +22,10 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	DOCS "With documentation" Off \
-		EXAMPLES "With example programs" Off \
-		DRILL "With drill program" Off \
+		EXAMPLES "With example programs" On \
+		DRILL "With drill program" On \
 		GOST "GOST signatures enabled (requires openssl >= 1.0.0)" Off \
-		ECDSA "With highly experimental ECDSA support" Off \
+		ECDSA "Without ECDSA support" Off \
 		PYLDNS "Build python bindings" Off
 
 .include <bsd.port.options.mk>
@@ -261,8 +261,8 @@ MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 \
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-.if defined(WITH_ECDSA)
-CONFIGURE_ARGS+=--enable-ecdsa
+.if defined(WITHOUT_ECDSA)
+CONFIGURE_ARGS+=--disable-ecdsa
 .endif
 
 .if defined(WITH_PYLDNS)
