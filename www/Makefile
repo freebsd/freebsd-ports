@@ -1584,6 +1584,7 @@
     SUBDIR += py-requests
     SUBDIR += py-requests-oauth-hook
     SUBDIR += py-restclient
+    SUBDIR += py-rhodecode
     SUBDIR += py-routes
     SUBDIR += py-satchmo
     SUBDIR += py-scgi
