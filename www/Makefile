@@ -1781,6 +1781,7 @@
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
+    SUBDIR += sventon
     SUBDIR += swfdec-plugin
     SUBDIR += swiggle
     SUBDIR += swish++
