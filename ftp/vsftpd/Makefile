@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	2.3.5
+PORTVERSION=	3.0.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://security.appspot.com/downloads/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -24,8 +24,8 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
 
-OPTIONS=	VSFTPD_SSL	"Include support for SSL"	off \
-		PIDFILE		"unofficial support for pidfile"	off
+OPTIONS=	VSFTPD_SSL	"Include support for SSL" off \
+		PIDFILE		"unofficial support for pidfile" off
 
 .include <bsd.port.pre.mk>
 
@@ -40,9 +40,25 @@ LDFLAGS+=	-L${OPENSSLLIB}
 EXTRA_PATCHES+=	${FILESDIR}/pidfile.patch
 .endif
 
+# BROKEN on FreeBSD with undefined reference to `__stack_chk_fail_local'
+LDFLAGS+=	 -lssp_nonshared
+
 do-configure:
-	${REINPLACE_CMD} -e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
+.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
+	${REINPLACE_CMD} -e \
+		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
+		-e "s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
+		${WRKSRC}/builddefs.h
+.else
+	${REINPLACE_CMD} -e \
+		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
+		${WRKSRC}/builddefs.h
+.endif
+	${REINPLACE_CMD} -e "s|^listen=|#listen=|" \
+		-e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
 		${WRKSRC}/defs.h ${WRKSRC}/vsftpd.conf
+	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
+		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
 	${REINPLACE_CMD} \
 		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
 		-e "s|^CFLAGS	=|CFLAGS	= ${CFLAGS}|" \
@@ -50,9 +66,6 @@ do-configure:
 		-e "s|	-Wl,-s| -Wl,-s ${LDFLAGS}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
-	${REINPLACE_CMD} -e \
-		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
-		${WRKSRC}/builddefs.h
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf ""
@@ -60,15 +73,6 @@ do-configure:
 		"# If using vsftpd in standalone mode, uncomment the next two lines:"
 	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# listen=YES"
 	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# background=YES"
-	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
-		-e 's|delay_failed_logins|delay_failed_login|' \
-		-e 's|delay_successful_logins|delay_successful_login|' \
-		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
-.if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
-	${REINPLACE_CMD} -e \
-		"s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
-		${WRKSRC}/builddefs.h
-.endif
 
 pre-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
