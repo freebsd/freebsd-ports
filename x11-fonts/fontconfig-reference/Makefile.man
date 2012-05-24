@@ -5,15 +5,15 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcCacheCopySet.3 FcCacheDir.3 FcCacheNumFont.3 \
 	FcCacheNumSubdir.3 FcCacheSubdir.3 FcCharSetAddChar.3 \
 	FcCharSetCopy.3 FcCharSetCount.3 FcCharSetCoverage.3 \
-	FcCharSetCreate.3 FcCharSetDestroy.3 FcCharSetEqual.3 \
-	FcCharSetFirstPage.3 FcCharSetHasChar.3 FcCharSetIntersect.3 \
-	FcCharSetIntersectCount.3 FcCharSetIsSubset.3 FcCharSetMerge.3 \
-	FcCharSetNew.3 FcCharSetNextPage.3 FcCharSetSubtract.3 \
-	FcCharSetSubtractCount.3 FcCharSetUnion.3 FcConfigAppFontAddDir.3 \
-	FcConfigAppFontAddFile.3 FcConfigAppFontClear.3 \
-	FcConfigBuildFonts.3 FcConfigCreate.3 FcConfigDestroy.3 \
-	FcConfigEnableHome.3 FcConfigFilename.3 FcConfigGetBlanks.3 \
-	FcConfigGetCache.3 FcConfigGetCacheDirs.3 \
+	FcCharSetCreate.3 FcCharSetDelChar.3 FcCharSetDestroy.3 \
+	FcCharSetEqual.3 FcCharSetFirstPage.3 FcCharSetHasChar.3 \
+	FcCharSetIntersect.3 FcCharSetIntersectCount.3 FcCharSetIsSubset.3 \
+	FcCharSetMerge.3 FcCharSetNew.3 FcCharSetNextPage.3 \
+	FcCharSetSubtract.3 FcCharSetSubtractCount.3 FcCharSetUnion.3 \
+	FcConfigAppFontAddDir.3 FcConfigAppFontAddFile.3 \
+	FcConfigAppFontClear.3 FcConfigBuildFonts.3 FcConfigCreate.3 \
+	FcConfigDestroy.3 FcConfigEnableHome.3 FcConfigFilename.3 \
+	FcConfigGetBlanks.3 FcConfigGetCache.3 FcConfigGetCacheDirs.3 \
 	FcConfigGetConfigDirs.3 FcConfigGetConfigFiles.3 \
 	FcConfigGetCurrent.3 FcConfigGetFontDirs.3 FcConfigGetFonts.3 \
 	FcConfigGetRescanInterval.3 FcConfigHome.3 \
@@ -34,12 +34,12 @@ MAN3=	FcAtomicCreate.3 FcAtomicDeleteNew.3 FcAtomicDestroy.3 \
 	FcInitLoadConfigAndFonts.3 FcInitReinitialize.3 FcIsLower.3 \
 	FcIsUpper.3 FcLangGetCharSet.3 FcLangSetAdd.3 FcLangSetCompare.3 \
 	FcLangSetContains.3 FcLangSetCopy.3 FcLangSetCreate.3 \
-	FcLangSetDestroy.3 FcLangSetEqual.3 FcLangSetHasLang.3 \
-	FcLangSetGetLangs.3 FcLangSetHash.3 FcMatrixCopy.3 FcMatrixEqual.3 \
-	FcMatrixInit.3 FcMatrixMultiply.3 FcMatrixRotate.3 FcMatrixScale.3 \
-	FcMatrixShear.3 FcNameConstant.3 FcNameGetConstant.3 \
-	FcNameGetObjectType.3 FcNameParse.3 FcNameRegisterConstants.3 \
-	FcNameRegisterObjectTypes.3 FcNameUnparse.3 \
+	FcLangSetDel.3 FcLangSetDestroy.3 FcLangSetEqual.3 FcLangSetHasLang.3 \
+	FcLangSetGetLangs.3 FcLangSetHash.3 FcLangSetSubtract.3 \
+	FcLangSetUnion.3 FcMatrixCopy.3 FcMatrixEqual.3 FcMatrixInit.3 \
+	FcMatrixMultiply.3 FcMatrixRotate.3 FcMatrixScale.3 FcMatrixShear.3 \
+	FcNameConstant.3 FcNameGetConstant.3 FcNameGetObjectType.3 FcNameParse.3 \
+	FcNameRegisterConstants.3 FcNameRegisterObjectTypes.3 FcNameUnparse.3 \
 	FcNameUnregisterConstants.3 FcNameUnregisterObjectTypes.3 \
 	FcObjectSetAdd.3 FcObjectSetBuild.3 FcObjectSetCreate.3 \
 	FcObjectSetDestroy.3 FcPatternAdd.3 FcPatternAdd-Type.3 \
