@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.101
+PORTVERSION=	2.105
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -32,10 +32,18 @@ COMMON_DEPENDS=	\
 	p5-User-Identity>=0.90:${PORTSDIR}/devel/p5-User-Identity
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS}
+TEST_DEPENDS=	p5-Test-Pod>=1.00:${PORTSDIR}/devel/p5-Test-Pod
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
 CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+ One of it's dependency is p5-GSSAPI which is marked broken for 7.X
+.if ${OSVERSION} < 800000
+BROKEN=	Does not work on FreeBSD 7.x
+.endif
+
+.include <bsd.port.post.mk>
