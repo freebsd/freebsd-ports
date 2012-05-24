@@ -10,7 +10,7 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six
 bin/six-script
-%%GSI_INC%%/gambit-not406004.h
+%%GSI_INC%%/gambit-not406006.h
 %%GSI_INC%%/gambit.h
 %%GSI_LIB%%/_asm#.scm
 %%GSI_LIB%%/_assert#.scm
