@@ -1153,6 +1153,7 @@
     SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
+    SUBDIR += py-whoosh
     SUBDIR += py-wicked
     SUBDIR += py-wordnet
     SUBDIR += py-wtforms
