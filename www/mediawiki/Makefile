@@ -7,11 +7,14 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.19.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The wiki engine used by Wikipedia
+
+LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki-1.1[0-8].*
 
@@ -22,9 +25,11 @@ WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
 OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
+		SQLITE "Use SQLite (instead of MySQL)" off \
 		LDAP "Use LDAP authentication" off \
 		TEXVC "Use built-in TeX rendering" off \
-		APC "Use pecl-APC" on \
+		MEMCACHED "Use memcached" off \
+		APC "Use pecl-APC(Mediawiki recommended)" on \
 		EACCEL "Use eAccelerator (instead of pecl-APC)" off \
 		IMAGICK "Use ImageMagick" off
 
@@ -32,6 +37,8 @@ OPTIONS=	PGSQL "Use PostgreSQL (instead of MySQL)" off \
 
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
+.elif defined(WITH_SQLITE)
+USE_PHP+=	sqlite
 .else
 USE_MYSQL=	server
 USE_PHP+=	mysql
@@ -50,13 +57,19 @@ USE_GMAKE=yes
 WITH_IMAGICK=yes
 .endif
 
+.if defined(WITH_MEMCACHED)
+RUN_DEPENDS=	memcached:${PORTSDIR}/databases/memcached
+.endif
+
 .if defined(WITH_IMAGICK)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
 .endif
 
-.if defined(WITH_APC) || defined(WITH_EACCEL)
+.if defined(WITH_APC) || defined(WITH_EACCEL)||defined(WITH_XCACHE)
 .if defined(WITH_EACCEL)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/eaccelerator.so:${PORTSDIR}/www/eaccelerator
+.elif defined(WITH_XCACHE)
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:${PORTSDIR}/www/xcache
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
