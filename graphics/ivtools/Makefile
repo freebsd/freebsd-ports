@@ -30,10 +30,4 @@ USE_XORG=	x11 xaw ice xext
 MANCOMPRESSED=	no
 MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 604100
-USE_GCC=	4.2+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
