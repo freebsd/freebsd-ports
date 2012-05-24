@@ -428,6 +428,7 @@ share/rt38/html/Elements/BevelBoxRaisedEnd
 share/rt38/html/Elements/BevelBoxRaisedStart
 share/rt38/html/Elements/Callback
 share/rt38/html/Elements/Checkbox
+share/rt38/html/Elements/CSRF
 share/rt38/html/Elements/CollectionAsTable/Header
 share/rt38/html/Elements/CollectionAsTable/ParseFormat
 share/rt38/html/Elements/CollectionAsTable/Row
@@ -981,11 +982,6 @@ share/rt38/html/NoAuth/images/empty_star.gif
 share/rt38/html/NoAuth/images/favicon.png
 share/rt38/html/NoAuth/images/star.gif
 share/rt38/html/NoAuth/images/test.png
-share/rt38/html/NoAuth/js/IE7/IE7.js
-share/rt38/html/NoAuth/js/IE7/IE8.js
-share/rt38/html/NoAuth/js/IE7/blank.gif
-share/rt38/html/NoAuth/js/IE7/ie7-recalc.js
-share/rt38/html/NoAuth/js/IE7/ie7-squish.js
 share/rt38/html/NoAuth/js/ahah.js
 share/rt38/html/NoAuth/js/autohandler
 share/rt38/html/NoAuth/js/cascaded.js
@@ -1170,6 +1166,7 @@ share/rt38/html/autohandler
 share/rt38/html/dhandler
 share/rt38/html/index.html
 share/rt38/html/l
+share/rt38/html/l_unsafe
 @dirrmtry www/rt38
 @dirrm share/rt38/po
 @exec mkdir -p %D/share/rt38/plugins
@@ -1212,7 +1209,6 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/rss
 @dirrm share/rt38/html/NoAuth/js/scriptaculous
 @dirrm share/rt38/html/NoAuth/js/prototype
-@dirrm share/rt38/html/NoAuth/js/IE7
 @dirrm share/rt38/html/NoAuth/js
 @dirrm share/rt38/html/NoAuth/images/css
 @dirrm share/rt38/html/NoAuth/images
