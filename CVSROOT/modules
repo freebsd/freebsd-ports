@@ -3956,6 +3956,7 @@ freeswitch                      ports/net/freeswitch
 freeswitch-core                 ports/net/freeswitch-core
 freeswitch-core-devel           ports/net/freeswitch-core-devel
 freeswitch-curl-devel           ports/net/freeswitch-curl-devel
+freeswitch-devel                ports/net/freeswitch-devel
 freeswitch-insideout-devel      ports/net/freeswitch-insideout-devel
 freeswitch-music                ports/audio/freeswitch-music
 freeswitch-pizzademo            ports/misc/freeswitch-pizzademo
@@ -23156,6 +23157,7 @@ py-seqdiag                      ports/graphics/py-seqdiag
 py-serial                       ports/comms/py-serial
 py-setproctitle                 ports/devel/py-setproctitle
 py-setuptools                   ports/devel/py-setuptools
+py-setuptools-git               ports/devel/py-setuptools-git
 py-setuptools_darcs             ports/devel/py-setuptools_darcs
 py-setuptools_hg                ports/devel/py-setuptools_hg
 py-sexy                         ports/x11-toolkits/py-sexy
@@ -26898,6 +26900,7 @@ trophy                          ports/games/trophy
 trousers                        ports/security/trousers
 trove4j                         ports/java/trove4j
 truc                            ports/devel/truc
+truecrack                       ports/security/truecrack
 truecrypt                       ports/security/truecrypt
 trueprint                       ports/print/trueprint
 truevision                      ports/graphics/truevision
