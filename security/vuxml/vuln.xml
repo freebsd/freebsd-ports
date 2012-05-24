@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="617959ce-a5f6-11e1-a284-0023ae8e59f0">
+    <topic>haproxy -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>haproxy</name>
+	<range><lt>1.4.21</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>HAProxy reports:</p>
+	<blockquote cite="http://haproxy.1wt.eu/news.html">
+	  <p>A flaw was reported in HAProxy where, due to a boundary error
+	    when copying data into the trash buffer, an external attacker could
+	    cause a buffer overflow.  Exploiting this flaw could lead to the
+	    execution of arbitrary code, however it requires non-default settings
+	    for the global.tune.bufsize configuration option (must be set to a
+	    value greater than the default), and also that header rewriting is
+	    enabled (via, for example, the regrep or rsprep directives).
+	    This flaw is reported against 1.4.20, prior versions may also be
+	    affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	 <cvename>CVE-2012-2391</cvename>
+	 <url>https://secunia.com/advisories/49261/</url>
+	 <url>http://haproxy.1wt.eu/download/1.4/src/CHANGELOG</url>
+	 <url>http://haproxy.1wt.eu/git?p=haproxy-1.4.git;a=commit;h=30297cb17147a8d339eb160226bcc08c91d9530b</url>
+    </references>
+    <dates>
+      <discovery>2012-05-21</discovery>
+      <entry>2012-05-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e0a969e4-a512-11e1-90b4-e0cb4e266481">
     <topic>RT -- Multiple Vulnerabilities</topic>
     <affects>
