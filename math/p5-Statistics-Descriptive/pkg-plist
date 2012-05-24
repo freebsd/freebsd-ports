@@ -1,5 +1,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive/.packlist
 %%SITE_PERL%%/Statistics/Descriptive.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
+%%SITE_PERL%%/Statistics/Descriptive/Smoother.pm
+%%SITE_PERL%%/Statistics/Descriptive/Smoother/Exponential.pm
+%%SITE_PERL%%/Statistics/Descriptive/Smoother/Weightedexponential.pm
+@dirrmtry %%SITE_PERL%%/Statistics/Descriptive/Smoother
+@dirrmtry %%SITE_PERL%%/Statistics/Descriptive
 @dirrmtry %%SITE_PERL%%/Statistics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
