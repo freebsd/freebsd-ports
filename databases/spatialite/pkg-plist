@@ -1,15 +1,19 @@
-bin/spatialite
-lib/libsqlite3.la
-lib/libsqlite3.a
-lib/libsqlite3.so
-lib/libsqlite3.so.3
-lib/libspatialite.la
-lib/libspatialite.a
-lib/libspatialite.so
-lib/libspatialite.so.2
 include/spatialite.h
+include/spatialite/gaiaaux.h
+include/spatialite/gaiaexif.h
 include/spatialite/gaiageo.h
+include/spatialite/gg_advanced.h
+include/spatialite/gg_const.h
+include/spatialite/gg_core.h
+include/spatialite/gg_dynamic.h
+include/spatialite/gg_formats.h
+include/spatialite/gg_mbr.h
+include/spatialite/gg_structs.h
 include/spatialite/spatialite.h
-include/spatialite/sqlite3.h
-include/spatialite/sqlite3ext.h
-@dirrm include/spatialite/
+lib/libspatialite.a
+lib/libspatialite.la
+lib/libspatialite.so
+lib/libspatialite.so.4
+lib/pkgconfig/spatialite.pc
+@dirrm lib/pkgconfig
+@dirrm include/spatialite
