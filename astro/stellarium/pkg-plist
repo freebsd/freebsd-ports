@@ -578,6 +578,7 @@ bin/stellarium
 %%DATADIR%%/textures/deimos.png
 %%DATADIR%%/textures/dione.png
 %%DATADIR%%/textures/earth-clouds.png
+%%DATADIR%%/textures/earth_cmap.png
 %%DATADIR%%/textures/earth-shadow.png
 %%DATADIR%%/textures/earthmap.png
 %%DATADIR%%/textures/enceladus.png
@@ -599,6 +600,7 @@ bin/stellarium
 %%DATADIR%%/textures/milkyway.png
 %%DATADIR%%/textures/mimas.png
 %%DATADIR%%/textures/miranda.png
+%%DATADIR%%/textures/moon.png
 %%DATADIR%%/textures/neb.png
 %%DATADIR%%/textures/neptune.png
 %%DATADIR%%/textures/neptune_rings.png
@@ -607,6 +609,7 @@ bin/stellarium
 %%DATADIR%%/textures/ocl.png
 %%DATADIR%%/textures/phobos.png
 %%DATADIR%%/textures/planet-indicator.png
+%%DATADIR%%/textures/pluto.png
 %%DATADIR%%/textures/pnb.png
 %%DATADIR%%/textures/pointeur2.png
 %%DATADIR%%/textures/pointeur4.png
@@ -657,26 +660,56 @@ bin/stellarium
 @dirrm %%DATADIR%%/landscapes
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+share/applications/stellarium.desktop
+share/locale/aa/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/aa/LC_MESSAGES/stellarium.mo
+share/locale/ab/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ab/LC_MESSAGES/stellarium.mo
+share/locale/ae/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ae/LC_MESSAGES/stellarium.mo
 share/locale/af/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/af/LC_MESSAGES/stellarium.mo
+share/locale/ak/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ak/LC_MESSAGES/stellarium.mo
+share/locale/am/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/am/LC_MESSAGES/stellarium.mo
+share/locale/an/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/an/LC_MESSAGES/stellarium.mo
 share/locale/ar/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ar/LC_MESSAGES/stellarium.mo
+share/locale/as/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/as/LC_MESSAGES/stellarium.mo
+share/locale/ast/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ast/LC_MESSAGES/stellarium.mo
+share/locale/av/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/av/LC_MESSAGES/stellarium.mo
 share/locale/az/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/az/LC_MESSAGES/stellarium.mo
+share/locale/ba/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ba/LC_MESSAGES/stellarium.mo
 share/locale/be/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/be/LC_MESSAGES/stellarium.mo
 share/locale/bg/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bg/LC_MESSAGES/stellarium.mo
+share/locale/bh/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bh/LC_MESSAGES/stellarium.mo
+share/locale/bi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/bi/LC_MESSAGES/stellarium.mo
 share/locale/bn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bn/LC_MESSAGES/stellarium.mo
 share/locale/bo/LC_MESSAGES/stellarium.mo
+share/locale/br/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/br/LC_MESSAGES/stellarium.mo
 share/locale/bs/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bs/LC_MESSAGES/stellarium.mo
 share/locale/ca/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ca/LC_MESSAGES/stellarium.mo
+share/locale/ce/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ce/LC_MESSAGES/stellarium.mo
 share/locale/cs/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/cs/LC_MESSAGES/stellarium.mo
+share/locale/cv/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/cv/LC_MESSAGES/stellarium.mo
 share/locale/cy/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/cy/LC_MESSAGES/stellarium.mo
 share/locale/da/LC_MESSAGES/stellarium-skycultures.mo
@@ -695,6 +728,8 @@ share/locale/en_CA/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/en_CA/LC_MESSAGES/stellarium.mo
 share/locale/en_GB/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/en_GB/LC_MESSAGES/stellarium.mo
+share/locale/en_US/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/en_US/LC_MESSAGES/stellarium.mo
 share/locale/eo/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/eo/LC_MESSAGES/stellarium.mo
 share/locale/es/LC_MESSAGES/stellarium-skycultures.mo
@@ -709,13 +744,19 @@ share/locale/fi/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/fi/LC_MESSAGES/stellarium.mo
 share/locale/fil/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/fil/LC_MESSAGES/stellarium.mo
+share/locale/fj/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/fj/LC_MESSAGES/stellarium.mo
 share/locale/fr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/fr/LC_MESSAGES/stellarium.mo
 share/locale/fy/LC_MESSAGES/stellarium.mo
 share/locale/ga/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ga/LC_MESSAGES/stellarium.mo
+share/locale/gd/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gd/LC_MESSAGES/stellarium.mo
 share/locale/gl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/gl/LC_MESSAGES/stellarium.mo
+share/locale/gn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gn/LC_MESSAGES/stellarium.mo
 share/locale/gu/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/gu/LC_MESSAGES/stellarium.mo
 share/locale/gv/LC_MESSAGES/stellarium.mo
@@ -729,6 +770,8 @@ share/locale/hr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/hr/LC_MESSAGES/stellarium.mo
 share/locale/hrx/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/hrx/LC_MESSAGES/stellarium.mo
+share/locale/ht/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ht/LC_MESSAGES/stellarium.mo
 share/locale/hu/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/hu/LC_MESSAGES/stellarium.mo
 share/locale/hy/LC_MESSAGES/stellarium-skycultures.mo
@@ -745,10 +788,22 @@ share/locale/ja/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ja/LC_MESSAGES/stellarium.mo
 share/locale/ka/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ka/LC_MESSAGES/stellarium.mo
+share/locale/kg/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/kg/LC_MESSAGES/stellarium.mo
+share/locale/kk/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/kk/LC_MESSAGES/stellarium.mo
 share/locale/kn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/kn/LC_MESSAGES/stellarium.mo
 share/locale/ko/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ko/LC_MESSAGES/stellarium.mo
+share/locale/ky/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/ky/LC_MESSAGES/stellarium.mo
+share/locale/la/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/la/LC_MESSAGES/stellarium.mo
+share/locale/lb/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/lb/LC_MESSAGES/stellarium.mo
+share/locale/lo/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/lo/LC_MESSAGES/stellarium.mo
 share/locale/lt/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/lt/LC_MESSAGES/stellarium.mo
 share/locale/lv/LC_MESSAGES/stellarium-skycultures.mo
@@ -759,6 +814,10 @@ share/locale/mk/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/mk/LC_MESSAGES/stellarium.mo
 share/locale/ml/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ml/LC_MESSAGES/stellarium.mo
+share/locale/mn/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mn/LC_MESSAGES/stellarium.mo
+share/locale/mo/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/mo/LC_MESSAGES/stellarium.mo
 share/locale/mr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/mr/LC_MESSAGES/stellarium.mo
 share/locale/ms/LC_MESSAGES/stellarium-skycultures.mo
@@ -774,6 +833,10 @@ share/locale/nl/LC_MESSAGES/stellarium.mo
 share/locale/nn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/nn/LC_MESSAGES/stellarium.mo
 share/locale/oc/LC_MESSAGES/stellarium.mo
+share/locale/os/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/os/LC_MESSAGES/stellarium.mo
+share/locale/pa/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/pa/LC_MESSAGES/stellarium.mo
 share/locale/pl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/pl/LC_MESSAGES/stellarium.mo
 share/locale/pt/LC_MESSAGES/stellarium-skycultures.mo
@@ -793,23 +856,36 @@ share/locale/sk/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sk/LC_MESSAGES/stellarium.mo
 share/locale/sl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sl/LC_MESSAGES/stellarium.mo
+share/locale/sm/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sm/LC_MESSAGES/stellarium.mo
 share/locale/sq/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sq/LC_MESSAGES/stellarium.mo
 share/locale/sr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sr/LC_MESSAGES/stellarium.mo
+share/locale/su/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/su/LC_MESSAGES/stellarium.mo
 share/locale/sv/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sv/LC_MESSAGES/stellarium.mo
+share/locale/sw/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/sw/LC_MESSAGES/stellarium.mo
+share/locale/ta/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ta/LC_MESSAGES/stellarium.mo
 share/locale/te/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/te/LC_MESSAGES/stellarium.mo
+share/locale/tg/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/tg/LC_MESSAGES/stellarium.mo
 share/locale/th/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/th/LC_MESSAGES/stellarium.mo
 share/locale/tl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/tl/LC_MESSAGES/stellarium.mo
 share/locale/tr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/tr/LC_MESSAGES/stellarium.mo
+share/locale/tt/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/tt/LC_MESSAGES/stellarium.mo
 share/locale/uk/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/uk/LC_MESSAGES/stellarium.mo
+share/locale/uz/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/uz/LC_MESSAGES/stellarium.mo
 share/locale/vi/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/vi/LC_MESSAGES/stellarium.mo
 share/locale/zh_CN/LC_MESSAGES/stellarium-skycultures.mo
@@ -818,41 +894,99 @@ share/locale/zh_HK/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/zh_HK/LC_MESSAGES/stellarium.mo
 share/locale/zh_TW/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/zh_TW/LC_MESSAGES/stellarium.mo
+share/locale/zu/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/zu/LC_MESSAGES/stellarium.mo
+share/pixmaps/stellarium.xpm
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/su/LC_MESSAGES
+@dirrmtry share/locale/su
+@dirrmtry share/locale/sm/LC_MESSAGES
+@dirrmtry share/locale/sm
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
 @dirrmtry share/locale/sco/LC_MESSAGES
 @dirrmtry share/locale/sco
+@dirrmtry share/locale/os/LC_MESSAGES
+@dirrmtry share/locale/os
 @dirrmtry share/locale/nan/LC_MESSAGES
 @dirrmtry share/locale/nan
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mo/LC_MESSAGES
+@dirrmtry share/locale/mo
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/lo/LC_MESSAGES
+@dirrmtry share/locale/lo
+@dirrmtry share/locale/lb/LC_MESSAGES
+@dirrmtry share/locale/lb
+@dirrmtry share/locale/la/LC_MESSAGES
+@dirrmtry share/locale/la
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
+@dirrmtry share/locale/kg/LC_MESSAGES
+@dirrmtry share/locale/kg
 @dirrmtry share/locale/ia/LC_MESSAGES
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/hw/LC_MESSAGES
 @dirrmtry share/locale/hw
+@dirrmtry share/locale/ht/LC_MESSAGES
+@dirrmtry share/locale/ht
 @dirrmtry share/locale/hrx/LC_MESSAGES
 @dirrmtry share/locale/hrx
 @dirrmtry share/locale/haw/LC_MESSAGES
 @dirrmtry share/locale/haw
 @dirrmtry share/locale/gv/LC_MESSAGES
 @dirrmtry share/locale/gv
+@dirrmtry share/locale/gn/LC_MESSAGES
+@dirrmtry share/locale/gn
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
+@dirrmtry share/locale/fj/LC_MESSAGES
+@dirrmtry share/locale/fj
 @dirrmtry share/locale/fil/LC_MESSAGES
 @dirrmtry share/locale/fil
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
 @dirrmtry share/locale/dv/LC_MESSAGES
 @dirrmtry share/locale/dv
+@dirrmtry share/locale/cv/LC_MESSAGES
+@dirrmtry share/locale/cv
+@dirrmtry share/locale/ce/LC_MESSAGES
+@dirrmtry share/locale/ce
 @dirrmtry share/locale/bo/LC_MESSAGES
 @dirrmtry share/locale/bo
+@dirrmtry share/locale/bi/LC_MESSAGES
+@dirrmtry share/locale/bi
+@dirrmtry share/locale/bh/LC_MESSAGES
+@dirrmtry share/locale/bh
+@dirrmtry share/locale/ba/LC_MESSAGES
+@dirrmtry share/locale/ba
+@dirrmtry share/locale/av/LC_MESSAGES
+@dirrmtry share/locale/av
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an
+@dirrmtry share/locale/ak/LC_MESSAGES
+@dirrmtry share/locale/ak
+@dirrmtry share/locale/ae/LC_MESSAGES
+@dirrmtry share/locale/ae
+@dirrmtry share/locale/ab/LC_MESSAGES
+@dirrmtry share/locale/ab
+@dirrmtry share/locale/aa/LC_MESSAGES
+@dirrmtry share/locale/aa
+@dirrmtry share/applications
