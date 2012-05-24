@@ -460,14 +460,19 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_KDELIBS_VER		- Set to 3 to use the KDE libraries.
 #				  Implies inclusion of bsd.kde.mk.
 #
-# USE_KDE4			- A list of the KDE4 dependencies the port has (e.g.,
+# USE_KDE4		- A list of the KDE4 dependencies the port has (e.g.,
 #				  kdelibs, kdebase).  Implies that the port needs KDE.
 #				  Implies inclusion of bsd.kde4.mk.  See bsd.kde4.mk
 #				  for more details.
 #
-# USE_QT_VER			- Set to 3 or 4 to use the respective version
-#				  of the QT libraries.
-#				  Implies inclusion of bsd.kde.mk.
+# USE_QT_VER	- Set to 3 or 4 to use the respective version
+#				  of the Qt libraries.
+#				  Implies inclusion of bsd.kde.mk or bsd.qt.mk.
+#
+# USE_QT4		- A list of the QT4 dependencies the port has (e.g,
+#				  corelib, webkit).  Implies that the port needs Qt.
+#				  Implies the inclusion of bsd.qt.mk.  See bsd.qt.mk
+#				  for more details.
 #
 # USE_LINUX		- Set to yes to say the port needs the default linux base port.
 #				  Set to value <X>, if the port needs emulators/linux_base-<X>.
@@ -1474,7 +1479,7 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
-.if defined (USE_QT_VER) && ${USE_QT_VER:L} == 4
+.if defined(USE_QT_VER) && ${USE_QT_VER:L} == 4 || defined(USE_QT4)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
@@ -2035,7 +2040,7 @@ IGNORE=	uses unknown USE_BISON construct
 .include "${PORTSDIR}/Mk/bsd.linux-apps.mk"
 .endif
 
-.if defined (USE_QT_VER) && ${USE_QT_VER:L} == 4
+.if defined(USE_QT_VER) && ${USE_QT_VER:L} == 4 || defined(USE_QT4)
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 

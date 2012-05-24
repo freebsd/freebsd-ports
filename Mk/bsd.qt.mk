@@ -353,6 +353,9 @@ ${component}_run_RUN_DEPENDS?=		${${component}_RUN_DEPENDS}
 _QT_COMPONENTS_ALL_SUFFIXED+=	${component} ${component}_build ${component}_run
 .endfor
 
+.if defined(USE_QT4)
+QT_COMPONENTS=	${USE_QT4}
+.endif
 .if defined(QT_COMPONENTS)
 . for component in ${QT_COMPONENTS:O:u}
 .  if ${_QT_COMPONENTS_ALL_SUFFIXED:M${component}}!= ""
