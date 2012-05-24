@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.16
+PORTVERSION=	1.4.17
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -16,7 +16,7 @@ COMMENT=	A validating, recursive, and caching DNS resolver
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --with-ldns-builtin
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 USE_LDCONFIG=	yes
 
 USERS=		${PORTNAME}
@@ -37,7 +37,8 @@ PLIST_SUB+=	PYTHON=${PYTHON}
 OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
 		THREADS "build with threads support" on \
 		PYTHON "build python bindings" off \
-		GOST "build GOST support (requires OpenSSL from ports)" off
+		GOST "build GOST support (requires OpenSSL from ports)" off \
+		ECDSA "build ECDSA (ecliptic curve) support" on
 
 .include <bsd.port.options.mk>
 
@@ -55,8 +56,16 @@ PYTHON=		"@comment "
 
 .if defined(WITH_GOST)
 WITH_OPENSSL_PORT=	yes
+DEPENDS_ARGS+=	WITH_GOST=yes
 .else
 CONFIGURE_ARGS+=	--disable-gost
+.endif
+
+.if defined(WITH_GOST)
+WITH_OPENSSL_PORT=	yes
+DEPENDS_ARGS+=	WITH_ECDSA=yes
+.else
+CONFIGURE_ARGS+=	--disable-ecdsa
 .endif
 
 .if defined(WITH_LIBEVENT)

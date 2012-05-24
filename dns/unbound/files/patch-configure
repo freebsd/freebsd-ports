@@ -1,11 +1,12 @@
---- configure.orig	2011-07-15 14:58:53.000000000 +0400
-+++ configure	2011-07-15 14:59:02.000000000 +0400
-@@ -16825,8 +16825,7 @@
+--- configure.orig	2012-05-24 12:37:55.000000000 +0400
++++ configure	2012-05-24 16:48:58.593092754 +0400
+@@ -17949,9 +17949,7 @@
      -a $ac_cv_func_ldns_key_buf2rsa_raw = yes \
      -a $ac_cv_func_ldns_get_random = yes \
      -a $ac_cv_header_ldns_ldns_h = yes \
 -    -a $ac_cv_func_ldns_b32_ntop_extended_hex = yes \
--    -a $ac_cv_func_ldns_key_EVP_load_gost_id = yes; then
+-    -a $ac_cv_func_ldns_key_EVP_load_gost_id = yes \
+-    -a $ac_cv_have_decl_LDNS_ECDSAP384SHA384 = yes; then
 +    -a $ac_cv_func_ldns_b32_ntop_extended_hex = yes; then
          :
  else
