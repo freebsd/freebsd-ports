@@ -7,7 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-master
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
 		${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/converters/p5-Storable-AMF \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
 RUN_DEPENDS=	${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
 		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/converters/p5-Storable-AMF \
+		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
