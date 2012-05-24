@@ -52,6 +52,88 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e0a969e4-a512-11e1-90b4-e0cb4e266481">
+    <topic>RT -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rt40</name>
+	<range><ge>4.0</ge><lt>4.0.6</lt></range>
+      </package>
+      <package>
+	<name>rt38</name>
+	<range><lt>3.8.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>BestPractical report:</p>
+	<blockquote cite="http://blog.bestpractical.com/2012/05/security-vulnerabilities-in-rt.html">
+	  <p>Internal audits of the RT codebase have uncovered a
+	    number of security vulnerabilities in RT. We are releasing
+	    versions 3.8.12 and 4.0.6 to resolve these vulnerabilities,
+	    as well as patches which apply atop all released versions of
+	    3.8 and 4.0.</p>
+	  <p>The vulnerabilities addressed by 3.8.12, 4.0.6, and the
+	    below patches include the following:</p>
+	  <p>The previously released tool to upgrade weak password
+	    hashes as part of CVE-2011-0009 was an incomplete fix and
+	    failed to upgrade passwords of disabled users.</p>
+	  <p>RT versions 3.0 and above contain a number of cross-site
+	    scripting (XSS) vulnerabilities which allow an attacker to
+	    run JavaScript with the user's credentials. CVE-2011-2083 is
+	    assigned to this vulnerability.</p>
+	  <p>RT versions 3.0 and above are vulnerable to multiple
+	    information disclosure vulnerabilities. This includes the
+	    ability for privileged users to expose users' previous
+	    password hashes -- this vulnerability is particularly
+	    dangerous given RT's weak hashing previous to the fix in
+	    CVE-2011-0009. A separate vulnerability allows privileged
+	    users to obtain correspondence history for any ticket in
+	    RT. CVE-2011-2084 is assigned to this vulnerability.</p>
+	  <p>All publicly released versions of RT are vulnerable to
+	    cross-site request forgery (CSRF). CVE-2011-2085 is assigned
+	    to this vulnerability.</p>
+	  <p>We have also added a separate configuration option
+	    ($RestrictLoginReferrer) to prevent login CSRF, a different
+	    class of CSRF attack.</p>
+	  <p>RT versions 3.6.1 and above are vulnerable to a remote
+	    execution of code vulnerability if the optional VERP
+	    configuration options ($VERPPrefix and $VERPDomain) are
+	    enabled. RT 3.8.0 and higher are vulnerable to a limited
+	    remote execution of code which can be leveraged for
+	    privilege escalation. RT 4.0.0 and above contain a
+	    vulnerability in the global $DisallowExecuteCode option,
+	    allowing sufficiently privileged users to still execute code
+	    even if RT was configured to not allow it. CVE-2011-4458 is
+	    assigned to this set of vulnerabilities.</p>
+	  <p>RT versions 3.0 and above may, under some circumstances,
+	    still respect rights that a user only has by way of a
+	    currently-disabled group. CVE-2011-4459 is assigned to this
+	    vulnerability.</p>
+	  <p>RT versions 2.0 and above are vulnerable to a SQL
+	    injection attack, which allow privileged users to obtain
+	    arbitrary information from the database. CVE-2011-4460 is
+	    assigned to this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0009</cvename>
+      <cvename>CVE-2011-2082</cvename>
+      <cvename>CVE-2011-2083</cvename>
+      <cvename>CVE-2011-2084</cvename>
+      <cvename>CVE-2011-2085</cvename>
+      <cvename>CVE-2011-4458</cvename>
+      <cvename>CVE-2011-4459</cvename>
+      <cvename>CVE-2011-4460</cvename>
+      <url>http://blog.bestpractical.com/2012/05/security-vulnerabilities-in-rt.html</url>
+    </references>
+    <dates>
+      <discovery>2012-05-22</discovery>
+      <entry>2012-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78c39232-a345-11e1-9d81-d0df9acfd7e5">
     <topic>sympa -- Multiple Security Bypass Vulnerabilities</topic>
     <affects>
