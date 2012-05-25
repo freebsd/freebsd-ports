@@ -1,0 +1,10 @@
+--- bin/stop.sh.orig	2012-04-13 18:43:44.000000000 +0200
++++ bin/stop.sh	2012-05-15 18:46:47.292027604 +0200
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+ 
+-export HORNETQ_HOME=..
++if [ -z $HORNETQ_HOME ]; then export HORNETQ_HOME=..;fi
+ if [ a"$1" = a ]; then CONFIG_DIR=$HORNETQ_HOME/config/stand-alone/non-clustered; else CONFIG_DIR="$1"; fi
+ touch $CONFIG_DIR/STOP_ME;
+\ No newline at end of file

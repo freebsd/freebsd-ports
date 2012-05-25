@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Removes unchanged configuration files
+#
+if [ "$2" = "DEINSTALL" ]; then
+   if [ ! -d $PKG_PREFIX/share/hornetq/config/stand-alone ]; then exit 1; fi
+   cd $PKG_PREFIX/share/hornetq/config/stand-alone
+   for cfgdir  in clustered non-clustered; do
+      for cfgfile in hornetq-beans.xml hornetq-users.xml \
+	             hornetq-configuration.xml jndi.properties \
+		     hornetq-jms.xml logging.properties; do
+       if cmp -s $cfgdir/$cfgfile.sample $cfgdir/$cfgfile; then
+          rm $cfgdir/$cfgfile
+       fi
+       done
+   done
+fi

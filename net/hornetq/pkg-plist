@@ -1,0 +1,1994 @@
+@comment $FreeBSD$
+%%DATADIR%%/bin/run.sh
+%%DATADIR%%/bin/stop.sh
+%%DATADIR%%/lib/hornetq-bootstrap.jar
+%%DATADIR%%/lib/jnpserver.jar
+%%DATADIR%%/lib/netty.jar
+%%DATADIR%%/lib/hornetq-jms-client.jar
+%%DATADIR%%/lib/hornetq-twitter-integration.jar
+%%DATADIR%%/lib/hornetq-core-client.jar
+%%DATADIR%%/lib/hornetq-core.jar
+%%DATADIR%%/lib/hornetq-ra.rar
+%%DATADIR%%/lib/rest/jsr250-api.jar
+%%DATADIR%%/lib/rest/hornetq-rest-2.2.14.Final.jar
+%%DATADIR%%/lib/rest/sjsxp.jar
+%%DATADIR%%/lib/rest/jaxb-impl.jar
+%%DATADIR%%/lib/rest/hornetq-rest-2.2.14.Final-sources.jar
+%%DATADIR%%/lib/rest/scannotation.jar
+%%DATADIR%%/lib/rest/resteasy-jaxb-provider.jar
+%%DATADIR%%/lib/rest/jaxrs-api.jar
+%%DATADIR%%/lib/rest/resteasy-jaxrs.jar
+%%DATADIR%%/lib/twitter4j-core.jar
+%%DATADIR%%/lib/hornetq-spring-integration.jar
+%%DATADIR%%/lib/jboss-jms-api.jar
+%%DATADIR%%/lib/hornetq-jms.jar
+%%DATADIR%%/lib/hornetq-core-client-java5.jar
+%%DATADIR%%/lib/jboss-mc.jar
+%%DATADIR%%/lib/hornetq-logging.jar
+%%DATADIR%%/lib/jnp-client.jar
+%%DATADIR%%/lib/hornetq-jms-client-java5.jar
+%%DATADIR%%/lib/hornetq-service.sar
+%%DATADIR%%/lib/hornetq-jboss-as-integration.jar
+%%DATADIR%%/config/ra.xml
+%%DATADIR%%/config/schemas/hornetq-configuration.xsd
+%%DATADIR%%/config/schemas/hornetq-jms.xsd
+%%DATADIR%%/config/schemas/hornetq-users.xsd
+%%DATADIR%%/config/stand-alone/clustered/hornetq-jms.xml.sample
+%%DATADIR%%/config/stand-alone/clustered/logging.properties.sample
+%%DATADIR%%/config/stand-alone/clustered/hornetq-configuration.xml.sample
+%%DATADIR%%/config/stand-alone/clustered/jndi.properties.sample
+%%DATADIR%%/config/stand-alone/clustered/hornetq-beans.xml.sample
+%%DATADIR%%/config/stand-alone/clustered/hornetq-users.xml.sample
+%%DATADIR%%/config/stand-alone/non-clustered/hornetq-users.xml.sample
+%%DATADIR%%/config/stand-alone/non-clustered/hornetq-beans.xml.sample
+%%DATADIR%%/config/stand-alone/non-clustered/logging.properties.sample
+%%DATADIR%%/config/stand-alone/non-clustered/hornetq-jms.xml.sample
+%%DATADIR%%/config/stand-alone/non-clustered/jndi.properties.sample
+%%DATADIR%%/config/stand-alone/non-clustered/hornetq-configuration.xml.sample
+@dirrmtry %%DATADIR%%/config/stand-alone/non-clustered
+@dirrmtry %%DATADIR%%/config/stand-alone/clustered
+@dirrmtry %%DATADIR%%/config/stand-alone
+@dirrm %%DATADIR%%/config/schemas
+@dirrmtry %%DATADIR%%/config
+@dirrm %%DATADIR%%/lib/rest
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/bin
+@dirrmtry %%DATADIR%%
+%%EXAMPLESDIR%%/build.xml
+%%EXAMPLESDIR%%/common/build.bat
+%%EXAMPLESDIR%%/common/build.sh
+%%EXAMPLESDIR%%/common/prettify.css
+%%EXAMPLESDIR%%/common/common.css
+%%EXAMPLESDIR%%/common/build.xml
+%%EXAMPLESDIR%%/common/config/ant.properties
+%%EXAMPLESDIR%%/common/config/logging.properties
+%%EXAMPLESDIR%%/common/config/hornetq-example-beans.xml
+%%EXAMPLESDIR%%/common/config/server.properties
+%%EXAMPLESDIR%%/common/images/hornetQ-banner_final.png
+%%EXAMPLESDIR%%/common/prettify.js
+%%EXAMPLESDIR%%/common/src/org/hornetq/common/example/HornetQExample.java
+%%EXAMPLESDIR%%/common/src/org/hornetq/common/example/KillChecker.java
+%%EXAMPLESDIR%%/common/src/org/hornetq/common/example/DummyXid.java
+%%EXAMPLESDIR%%/common/src/org/hornetq/common/example/SpawnedHornetQServer.java
+%%EXAMPLESDIR%%/common/src/org/hornetq/common/example/SpawnedVMSupport.java
+%%EXAMPLESDIR%%/core/microcontainer/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/core/microcontainer/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/core/microcontainer/build.bat
+%%EXAMPLESDIR%%/core/microcontainer/build.sh
+%%EXAMPLESDIR%%/core/microcontainer/src/org/hornetq/core/example/EmbeddedMicroContainerExample.java
+%%EXAMPLESDIR%%/core/microcontainer/readme.html
+%%EXAMPLESDIR%%/core/microcontainer/build.xml
+%%EXAMPLESDIR%%/core/twitter-connector/build.sh
+%%EXAMPLESDIR%%/core/twitter-connector/build.bat
+%%EXAMPLESDIR%%/core/twitter-connector/build.xml
+%%EXAMPLESDIR%%/core/twitter-connector/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/core/twitter-connector/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/core/twitter-connector/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/core/twitter-connector/server0/client-jndi.properties
+%%EXAMPLESDIR%%/core/twitter-connector/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/core/twitter-connector/readme.html
+%%EXAMPLESDIR%%/core/twitter-connector/src/org/hornetq/core/example/TwitterConnectorExample.java
+%%EXAMPLESDIR%%/core/embedded/build.xml
+%%EXAMPLESDIR%%/core/embedded/readme.html
+%%EXAMPLESDIR%%/core/embedded/build.bat
+%%EXAMPLESDIR%%/core/embedded/src/org/hornetq/core/example/EmbeddedExample.java
+%%EXAMPLESDIR%%/core/embedded/build.sh
+%%EXAMPLESDIR%%/core/perf/server0/hornetq-configuration-messaging-lab.xml
+%%EXAMPLESDIR%%/core/perf/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/core/perf/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/core/perf/build.xml
+%%EXAMPLESDIR%%/core/perf/perf.properties
+%%EXAMPLESDIR%%/core/perf/build.bat
+%%EXAMPLESDIR%%/core/perf/build.sh
+%%EXAMPLESDIR%%/core/perf/src/org/hornetq/core/example/PerfParams.java
+%%EXAMPLESDIR%%/core/perf/src/org/hornetq/core/example/PerfBase.java
+%%EXAMPLESDIR%%/core/perf/src/org/hornetq/core/example/PerfListener.java
+%%EXAMPLESDIR%%/core/perf/src/org/hornetq/core/example/PerfSender.java
+%%EXAMPLESDIR%%/core/embedded-remote/readme.html
+%%EXAMPLESDIR%%/core/embedded-remote/build.xml
+%%EXAMPLESDIR%%/core/embedded-remote/build.sh
+%%EXAMPLESDIR%%/core/embedded-remote/src/org/hornetq/core/example/EmbeddedServer.java
+%%EXAMPLESDIR%%/core/embedded-remote/src/org/hornetq/core/example/EmbeddedRemoteExample.java
+%%EXAMPLESDIR%%/core/embedded-remote/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org/hornetq/javaee/example/MDB_CMT_TxNotSupportedClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org/hornetq/javaee/example/server/MDB_CMT_TxNotSupported.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/backup-server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/backup-server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/server/jms-ds.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/server/ra.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/live-server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/live-server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org/hornetq/javaee/example/server/MDBRemoteFailoverStaticExample.java
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org/hornetq/javaee/example/MDBRemoteFailoverStaticClientExample.java
+%%EXAMPLESDIR%%/javaee/jca-config/config/ant.properties
+%%EXAMPLESDIR%%/javaee/jca-config/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/jca-config/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/server2/StatelessSender.java
+%%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/server2/StatelessSenderService.java
+%%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/server2/MDBQueueB.java
+%%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/server/MDBQueueA.java
+%%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/MDBRemoteClientExample.java
+%%EXAMPLESDIR%%/javaee/jca-config/build.bat
+%%EXAMPLESDIR%%/javaee/jca-config/readme.html
+%%EXAMPLESDIR%%/javaee/jca-config/server2/jms-remote-ds.xml
+%%EXAMPLESDIR%%/javaee/jca-config/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/jca-config/server2/ra.xml
+%%EXAMPLESDIR%%/javaee/jca-config/build.xml
+%%EXAMPLESDIR%%/javaee/jca-config/build.sh
+%%EXAMPLESDIR%%/javaee/jca-config/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/jca-config/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/build.bat
+%%EXAMPLESDIR%%/javaee/servlet-ssl/readme.html
+%%EXAMPLESDIR%%/javaee/servlet-ssl/server/hornetq.example.truststore
+%%EXAMPLESDIR%%/javaee/servlet-ssl/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/server/hornetq.example.keystore
+%%EXAMPLESDIR%%/javaee/servlet-ssl/server/server.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/config/WEB-INF/web.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/servlet-ssl/config/ant.properties
+%%EXAMPLESDIR%%/javaee/servlet-ssl/src/org/hornetq/javaee/example/ServletSSLTransportExample.java
+%%EXAMPLESDIR%%/javaee/servlet-ssl/build.xml
+%%EXAMPLESDIR%%/javaee/servlet-ssl/build.sh
+%%EXAMPLESDIR%%/javaee/xarecovery/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/xarecovery/config/ant.properties
+%%EXAMPLESDIR%%/javaee/xarecovery/build.sh
+%%EXAMPLESDIR%%/javaee/xarecovery/build.xml
+%%EXAMPLESDIR%%/javaee/xarecovery/readme.html
+%%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq/javaee/example/server/XARecoveryExampleService.java
+%%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq/javaee/example/server/XARecoveryExampleBean.java
+%%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq/javaee/example/XARecoveryExample.java
+%%EXAMPLESDIR%%/javaee/xarecovery/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/xarecovery/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/xarecovery/build.bat
+%%EXAMPLESDIR%%/javaee/hajndi/readme.html
+%%EXAMPLESDIR%%/javaee/hajndi/build.bat
+%%EXAMPLESDIR%%/javaee/hajndi/build.sh
+%%EXAMPLESDIR%%/javaee/hajndi/config/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/hajndi/config/hornetq-queues.xml
+%%EXAMPLESDIR%%/javaee/hajndi/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/hajndi/build.xml
+%%EXAMPLESDIR%%/javaee/hajndi/src/org/hornetq/javaee/example/HAJNDIExample.java
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/live-server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/live-server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org/hornetq/javaee/example/server/MDBRemoteFailoverExample.java
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org/hornetq/javaee/example/MDBRemoteFailoverClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/server/jms-ds.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/server/ra.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/backup-server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/backup-server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-remote-failover/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org/hornetq/javaee/example/server/MDB_CMT_TxLocalExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org/hornetq/javaee/example/MDB_CMT_TxLocalClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org/hornetq/javaee/example/MDBMessageSelectorClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org/hornetq/javaee/example/server/MDBMessageSelectorExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org/hornetq/javaee/example/server/MDB_CMT_TxRequiredExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org/hornetq/javaee/example/MDB_CMT_TxRequiredClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/build.bat
+%%EXAMPLESDIR%%/javaee/common/build.xml
+%%EXAMPLESDIR%%/javaee/common/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-bmt/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-bmt/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-bmt/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-bmt/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-bmt/src/org/hornetq/javaee/example/server/MDB_BMTExample.java
+%%EXAMPLESDIR%%/javaee/mdb-bmt/src/org/hornetq/javaee/example/MDB_BMTClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-bmt/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-bmt/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-bmt/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-bmt/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-bmt/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org/hornetq/javaee/example/server/MDBMessageSendTxExample.java
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org/hornetq/javaee/example/MDBMessageSendTxClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/build.sh
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-tx-send/build.bat
+%%EXAMPLESDIR%%/javaee/servlet-transport/build.bat
+%%EXAMPLESDIR%%/javaee/servlet-transport/config/WEB-INF/web.xml
+%%EXAMPLESDIR%%/javaee/servlet-transport/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/servlet-transport/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/servlet-transport/config/ant.properties
+%%EXAMPLESDIR%%/javaee/servlet-transport/build.xml
+%%EXAMPLESDIR%%/javaee/servlet-transport/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/servlet-transport/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/servlet-transport/build.sh
+%%EXAMPLESDIR%%/javaee/servlet-transport/readme.html
+%%EXAMPLESDIR%%/javaee/servlet-transport/src/org/hornetq/javaee/example/ServletTransportExample.java
+%%EXAMPLESDIR%%/javaee/jca-remote/src/org/hornetq/javaee/example/server/MDBQueue.java
+%%EXAMPLESDIR%%/javaee/jca-remote/src/org/hornetq/javaee/example/MDBRemoteServerClientExample.java
+%%EXAMPLESDIR%%/javaee/jca-remote/config/client.jndi.properties
+%%EXAMPLESDIR%%/javaee/jca-remote/config/ant.properties
+%%EXAMPLESDIR%%/javaee/jca-remote/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/build.bat
+%%EXAMPLESDIR%%/javaee/jca-remote/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/server0/client-jndi.properties
+%%EXAMPLESDIR%%/javaee/jca-remote/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/readme.html
+%%EXAMPLESDIR%%/javaee/jca-remote/build.sh
+%%EXAMPLESDIR%%/javaee/jca-remote/server/jms-ds.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/server/ra.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/jca-remote/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/build.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org/hornetq/javaee/example/server/MDB_CMT_SetRollbackOnlyExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org/hornetq/javaee/example/MDB_CMT_SetRollbackOnlyClientExample.java
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/config/ant.properties
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/build.bat
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/readme.html
+%%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/build.sh
+%%EXAMPLESDIR%%/javaee/jms-bridge/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/jms-bridge/config/ant.properties
+%%EXAMPLESDIR%%/javaee/jms-bridge/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/jms-bridge/build.sh
+%%EXAMPLESDIR%%/javaee/jms-bridge/build.bat
+%%EXAMPLESDIR%%/javaee/jms-bridge/readme.html
+%%EXAMPLESDIR%%/javaee/jms-bridge/server/jms-bridge-jboss-beans.xml
+%%EXAMPLESDIR%%/javaee/jms-bridge/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/jms-bridge/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/jms-bridge/src/org/hornetq/javaee/example/JMSBridgeExample.java
+%%EXAMPLESDIR%%/javaee/jms-bridge/build.xml
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/readme.html
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/config/ant.properties
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/config/META-INF/application.xml
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/config/jndi.properties
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/build.bat
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/server/mysql-ds.xml
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/server/hornetq-jms.xml
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/server/hornetq-configuration.xml
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/build.sh
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/build.xml
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq/javaee/example/EJBClientExample.java
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq/javaee/example/server/SendMessageService.java
+%%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq/javaee/example/server/SendMessageBean.java
+%%EXAMPLESDIR%%/jms/transaction-failover/src/org/hornetq/jms/example/TransactionFailoverExample.java
+%%EXAMPLESDIR%%/jms/transaction-failover/build.bat
+%%EXAMPLESDIR%%/jms/transaction-failover/build.sh
+%%EXAMPLESDIR%%/jms/transaction-failover/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/transaction-failover/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/build.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/readme.html
+%%EXAMPLESDIR%%/jms/transaction-failover/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/transaction-failover/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/large-message/build.bat
+%%EXAMPLESDIR%%/jms/large-message/build.sh
+%%EXAMPLESDIR%%/jms/large-message/src/org/hornetq/jms/example/LargeMessageExample.java
+%%EXAMPLESDIR%%/jms/large-message/build.xml
+%%EXAMPLESDIR%%/jms/large-message/ant.properties
+%%EXAMPLESDIR%%/jms/large-message/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/large-message/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/large-message/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/large-message/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/large-message/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/large-message/readme.html
+%%EXAMPLESDIR%%/jms/temp-queue/build.bat
+%%EXAMPLESDIR%%/jms/temp-queue/build.sh
+%%EXAMPLESDIR%%/jms/temp-queue/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/temp-queue/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/temp-queue/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/temp-queue/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/temp-queue/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/temp-queue/src/org/hornetq/jms/example/TemporaryQueueExample.java
+%%EXAMPLESDIR%%/jms/temp-queue/build.xml
+%%EXAMPLESDIR%%/jms/temp-queue/readme.html
+%%EXAMPLESDIR%%/jms/topic-selector-example2/build.sh
+%%EXAMPLESDIR%%/jms/topic-selector-example2/build.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example2/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example2/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example2/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example2/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/topic-selector-example2/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example2/build.bat
+%%EXAMPLESDIR%%/jms/topic-selector-example2/readme.html
+%%EXAMPLESDIR%%/jms/topic-selector-example2/src/org/hornetq/jms/example/TopicSelectorExample2.java
+%%EXAMPLESDIR%%/jms/client-kickoff/src/org/hornetq/jms/example/ClientKickoffExample.java
+%%EXAMPLESDIR%%/jms/client-kickoff/readme.html
+%%EXAMPLESDIR%%/jms/client-kickoff/build.xml
+%%EXAMPLESDIR%%/jms/client-kickoff/build.sh
+%%EXAMPLESDIR%%/jms/client-kickoff/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/client-kickoff/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/client-kickoff/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/client-kickoff/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/client-kickoff/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/client-kickoff/build.bat
+%%EXAMPLESDIR%%/jms/client-kickoff/ant.properties
+%%EXAMPLESDIR%%/jms/stomp/src/org/hornetq/jms/example/StompExample.java
+%%EXAMPLESDIR%%/jms/stomp/readme.html
+%%EXAMPLESDIR%%/jms/stomp/build.xml
+%%EXAMPLESDIR%%/jms/stomp/build.sh
+%%EXAMPLESDIR%%/jms/stomp/build.bat
+%%EXAMPLESDIR%%/jms/stomp/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/stomp/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/stomp/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/stomp/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/stomp/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/xa-with-jta/readme.html
+%%EXAMPLESDIR%%/jms/xa-with-jta/build.bat
+%%EXAMPLESDIR%%/jms/xa-with-jta/build.sh
+%%EXAMPLESDIR%%/jms/xa-with-jta/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/xa-with-jta/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/xa-with-jta/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/xa-with-jta/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/xa-with-jta/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/xa-with-jta/src/org/hornetq/jms/example/XAwithJTAExample.java
+%%EXAMPLESDIR%%/jms/xa-with-jta/build.xml
+%%EXAMPLESDIR%%/jms/http-transport/src/org/hornetq/jms/example/HttpTransportExample.java
+%%EXAMPLESDIR%%/jms/http-transport/build.bat
+%%EXAMPLESDIR%%/jms/http-transport/readme.html
+%%EXAMPLESDIR%%/jms/http-transport/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/http-transport/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/http-transport/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/http-transport/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/http-transport/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/http-transport/build.sh
+%%EXAMPLESDIR%%/jms/http-transport/build.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/readme.html
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/build.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/build.sh
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/build.bat
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/src/org/hornetq/jms/example/ClusteredDurableSubscriptionExample.java
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-durable-subscription/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/readme.html
+%%EXAMPLESDIR%%/jms/stop-server-failover/build.sh
+%%EXAMPLESDIR%%/jms/stop-server-failover/build.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/stop-server-failover/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/src/org/hornetq/jms/example/StopServerFailoverExample.java
+%%EXAMPLESDIR%%/jms/stop-server-failover/build.bat
+%%EXAMPLESDIR%%/jms/stop-server-failover/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/stop-server-failover/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/stop-server-failover/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/build.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/readme.html
+%%EXAMPLESDIR%%/jms/non-transaction-failover/src/org/hornetq/jms/example/NonTransactionFailoverExample.java
+%%EXAMPLESDIR%%/jms/non-transaction-failover/build.bat
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/non-transaction-failover/build.sh
+%%EXAMPLESDIR%%/jms/queue-selector/src/org/hornetq/jms/example/QueueSelectorExample.java
+%%EXAMPLESDIR%%/jms/queue-selector/readme.html
+%%EXAMPLESDIR%%/jms/queue-selector/build.bat
+%%EXAMPLESDIR%%/jms/queue-selector/build.sh
+%%EXAMPLESDIR%%/jms/queue-selector/build.xml
+%%EXAMPLESDIR%%/jms/queue-selector/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/queue-selector/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/queue-selector/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/queue-selector/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/queue-selector/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/durable-subscription/build.sh
+%%EXAMPLESDIR%%/jms/durable-subscription/build.xml
+%%EXAMPLESDIR%%/jms/durable-subscription/readme.html
+%%EXAMPLESDIR%%/jms/durable-subscription/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/durable-subscription/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/durable-subscription/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/durable-subscription/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/durable-subscription/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/durable-subscription/build.bat
+%%EXAMPLESDIR%%/jms/durable-subscription/src/org/hornetq/jms/example/DurableSubscriptionExample.java
+%%EXAMPLESDIR%%/jms/clustered-queue/readme.html
+%%EXAMPLESDIR%%/jms/clustered-queue/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-queue/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/build.bat
+%%EXAMPLESDIR%%/jms/clustered-queue/build.sh
+%%EXAMPLESDIR%%/jms/clustered-queue/src/org/hornetq/jms/example/ClusteredQueueExample.java
+%%EXAMPLESDIR%%/jms/clustered-queue/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-queue/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-queue/build.xml
+%%EXAMPLESDIR%%/jms/message-group2/readme.html
+%%EXAMPLESDIR%%/jms/message-group2/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/message-group2/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/message-group2/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/message-group2/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/message-group2/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/message-group2/build.bat
+%%EXAMPLESDIR%%/jms/message-group2/src/org/hornetq/jms/example/MessageGroup2Example.java
+%%EXAMPLESDIR%%/jms/message-group2/build.sh
+%%EXAMPLESDIR%%/jms/message-group2/build.xml
+%%EXAMPLESDIR%%/jms/queue/src/org/hornetq/jms/example/QueueExample.java
+%%EXAMPLESDIR%%/jms/queue/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/queue/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/queue/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/queue/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/queue/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/queue/build.xml
+%%EXAMPLESDIR%%/jms/queue/build.sh
+%%EXAMPLESDIR%%/jms/queue/readme.html
+%%EXAMPLESDIR%%/jms/queue/build.bat
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/build.bat
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server5/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server5/client-jndi.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server5/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server5/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server5/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/readme.html
+%%EXAMPLESDIR%%/jms/symmetric-cluster/src/org/hornetq/jms/example/SymmetricClusterExample.java
+%%EXAMPLESDIR%%/jms/symmetric-cluster/ant.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server4/client-jndi.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server4/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server4/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server4/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server4/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/build.sh
+%%EXAMPLESDIR%%/jms/symmetric-cluster/build.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server3/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server3/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server3/client-jndi.properties
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server3/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/symmetric-cluster/server3/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-standalone/build.bat
+%%EXAMPLESDIR%%/jms/clustered-standalone/src/org/hornetq/jms/example/ClusteredStandaloneExample.java
+%%EXAMPLESDIR%%/jms/clustered-standalone/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-standalone/build.sh
+%%EXAMPLESDIR%%/jms/clustered-standalone/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-standalone/build.xml
+%%EXAMPLESDIR%%/jms/clustered-standalone/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-standalone/readme.html
+%%EXAMPLESDIR%%/jms/applet/build.sh
+%%EXAMPLESDIR%%/jms/applet/build.xml
+%%EXAMPLESDIR%%/jms/applet/src/org/hornetq/jms/example/HttpStaticFileServerHandler.java
+%%EXAMPLESDIR%%/jms/applet/src/org/hornetq/jms/example/AppletExample.java
+%%EXAMPLESDIR%%/jms/applet/src/org/hornetq/jms/example/HttpStaticFileServerPipelineFactory.java
+%%EXAMPLESDIR%%/jms/applet/src/org/hornetq/jms/example/HttpStaticFileServer.java
+%%EXAMPLESDIR%%/jms/applet/build.bat
+%%EXAMPLESDIR%%/jms/applet/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/applet/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/applet/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/applet/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/applet/readme.html
+%%EXAMPLESDIR%%/jms/applet/applet.html
+%%EXAMPLESDIR%%/jms/topic-hierarchies/build.sh
+%%EXAMPLESDIR%%/jms/topic-hierarchies/build.xml
+%%EXAMPLESDIR%%/jms/topic-hierarchies/readme.html
+%%EXAMPLESDIR%%/jms/topic-hierarchies/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/topic-hierarchies/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/topic-hierarchies/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/topic-hierarchies/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/topic-hierarchies/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/topic-hierarchies/src/org/hornetq/jms/example/TopicHierarchyExample.java
+%%EXAMPLESDIR%%/jms/topic-hierarchies/build.bat
+%%EXAMPLESDIR%%/jms/clustered-grouping/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-grouping/readme.html
+%%EXAMPLESDIR%%/jms/clustered-grouping/build.bat
+%%EXAMPLESDIR%%/jms/clustered-grouping/src/org/hornetq/jms/example/ClusteredGroupingExample.java
+%%EXAMPLESDIR%%/jms/clustered-grouping/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-grouping/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/build.sh
+%%EXAMPLESDIR%%/jms/clustered-grouping/build.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-grouping/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-grouping/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/application-layer-failover/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/readme.html
+%%EXAMPLESDIR%%/jms/application-layer-failover/build.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/src/org/hornetq/jms/example/ApplicationLayerFailoverExample.java
+%%EXAMPLESDIR%%/jms/application-layer-failover/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/application-layer-failover/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/application-layer-failover/build.sh
+%%EXAMPLESDIR%%/jms/application-layer-failover/build.bat
+%%EXAMPLESDIR%%/jms/topic-selector-example1/src/org/hornetq/jms/example/TopicSelectorExample1.java
+%%EXAMPLESDIR%%/jms/topic-selector-example1/build.bat
+%%EXAMPLESDIR%%/jms/topic-selector-example1/readme.html
+%%EXAMPLESDIR%%/jms/topic-selector-example1/build.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example1/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example1/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example1/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example1/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/topic-selector-example1/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/topic-selector-example1/build.sh
+%%EXAMPLESDIR%%/jms/request-reply/build.sh
+%%EXAMPLESDIR%%/jms/request-reply/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/request-reply/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/request-reply/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/request-reply/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/request-reply/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/request-reply/readme.html
+%%EXAMPLESDIR%%/jms/request-reply/build.bat
+%%EXAMPLESDIR%%/jms/request-reply/src/org/hornetq/jms/example/RequestReplyExample.java
+%%EXAMPLESDIR%%/jms/request-reply/build.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/build.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/build.sh
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/readme.html
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/build.bat
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/client-side-load-balancing/src/org/hornetq/jms/example/ClientSideLoadBalancingExample.java
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server2/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server1/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/build.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/src/org/hornetq/jms/example/StaticClusteredQueueExample.java
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/readme.html
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server3/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server3/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server3/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server3/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server3/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server3/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/build.sh
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server0/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-discovery/build.bat
+%%EXAMPLESDIR%%/jms/jmx/ant.properties
+%%EXAMPLESDIR%%/jms/jmx/src/org/hornetq/jms/example/JMXExample.java
+%%EXAMPLESDIR%%/jms/jmx/build.xml
+%%EXAMPLESDIR%%/jms/jmx/build.sh
+%%EXAMPLESDIR%%/jms/jmx/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/jmx/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/jmx/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/jmx/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/jmx/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/jmx/readme.html
+%%EXAMPLESDIR%%/jms/jmx/build.bat
+%%EXAMPLESDIR%%/jms/producer-rate-limit/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/producer-rate-limit/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/producer-rate-limit/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/producer-rate-limit/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/producer-rate-limit/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/producer-rate-limit/src/org/hornetq/jms/example/ProducerRateLimitExample.java
+%%EXAMPLESDIR%%/jms/producer-rate-limit/build.sh
+%%EXAMPLESDIR%%/jms/producer-rate-limit/build.xml
+%%EXAMPLESDIR%%/jms/producer-rate-limit/readme.html
+%%EXAMPLESDIR%%/jms/producer-rate-limit/build.bat
+%%EXAMPLESDIR%%/jms/topic/readme.html
+%%EXAMPLESDIR%%/jms/topic/build.bat
+%%EXAMPLESDIR%%/jms/topic/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/topic/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/topic/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/topic/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/topic/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/topic/build.xml
+%%EXAMPLESDIR%%/jms/topic/src/org/hornetq/jms/example/TopicExample.java
+%%EXAMPLESDIR%%/jms/topic/build.sh
+%%EXAMPLESDIR%%/jms/clustered-topic/build.sh
+%%EXAMPLESDIR%%/jms/clustered-topic/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-topic/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/build.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/src/org/hornetq/jms/example/ClusteredTopicExample.java
+%%EXAMPLESDIR%%/jms/clustered-topic/build.bat
+%%EXAMPLESDIR%%/jms/clustered-topic/readme.html
+%%EXAMPLESDIR%%/jms/clustered-topic/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-topic/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-topic/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/last-value-queue/build.bat
+%%EXAMPLESDIR%%/jms/last-value-queue/build.xml
+%%EXAMPLESDIR%%/jms/last-value-queue/build.sh
+%%EXAMPLESDIR%%/jms/last-value-queue/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/last-value-queue/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/last-value-queue/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/last-value-queue/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/last-value-queue/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/last-value-queue/readme.html
+%%EXAMPLESDIR%%/jms/last-value-queue/src/org/hornetq/jms/example/LastValueQueueExample.java
+%%EXAMPLESDIR%%/jms/embedded-simple/readme.html
+%%EXAMPLESDIR%%/jms/embedded-simple/src/org/hornetq/jms/example/EmbeddedExample.java
+%%EXAMPLESDIR%%/jms/embedded-simple/build.bat
+%%EXAMPLESDIR%%/jms/embedded-simple/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/embedded-simple/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/embedded-simple/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/embedded-simple/build.sh
+%%EXAMPLESDIR%%/jms/embedded-simple/build.xml
+%%EXAMPLESDIR%%/jms/reattach-node/build.xml
+%%EXAMPLESDIR%%/jms/reattach-node/build.sh
+%%EXAMPLESDIR%%/jms/reattach-node/readme.html
+%%EXAMPLESDIR%%/jms/reattach-node/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/reattach-node/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/reattach-node/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/reattach-node/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/reattach-node/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/reattach-node/src/org/hornetq/jms/example/ReattachExample.java
+%%EXAMPLESDIR%%/jms/reattach-node/build.bat
+%%EXAMPLESDIR%%/jms/ssl-enabled/build.sh
+%%EXAMPLESDIR%%/jms/ssl-enabled/build.xml
+%%EXAMPLESDIR%%/jms/ssl-enabled/readme.html
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/hornetq.example.truststore
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/hornetq.example.keystore
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/ssl-enabled/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/ssl-enabled/build.bat
+%%EXAMPLESDIR%%/jms/ssl-enabled/src/org/hornetq/jms/example/SSLExample.java
+%%EXAMPLESDIR%%/jms/perf/perf.properties
+%%EXAMPLESDIR%%/jms/perf/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/perf/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/perf/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/perf/server0/hornetq-configuration-messaging-lab.xml
+%%EXAMPLESDIR%%/jms/perf/build.bat
+%%EXAMPLESDIR%%/jms/perf/build.sh
+%%EXAMPLESDIR%%/jms/perf/src/org/hornetq/jms/example/PerfParams.java
+%%EXAMPLESDIR%%/jms/perf/src/org/hornetq/jms/example/PerfBase.java
+%%EXAMPLESDIR%%/jms/perf/src/org/hornetq/jms/example/PerfListener.java
+%%EXAMPLESDIR%%/jms/perf/src/org/hornetq/jms/example/PerfSender.java
+%%EXAMPLESDIR%%/jms/perf/jndi.properties
+%%EXAMPLESDIR%%/jms/perf/build.xml
+%%EXAMPLESDIR%%/jms/xa-receive/readme.html
+%%EXAMPLESDIR%%/jms/xa-receive/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/xa-receive/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/xa-receive/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/xa-receive/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/xa-receive/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/xa-receive/src/org/hornetq/jms/example/XAReceiveExample.java
+%%EXAMPLESDIR%%/jms/xa-receive/build.bat
+%%EXAMPLESDIR%%/jms/xa-receive/build.sh
+%%EXAMPLESDIR%%/jms/xa-receive/build.xml
+%%EXAMPLESDIR%%/jms/jaas/build.xml
+%%EXAMPLESDIR%%/jms/jaas/src/org/hornetq/jms/example/ExampleConfiguration.java
+%%EXAMPLESDIR%%/jms/jaas/src/org/hornetq/jms/example/ExampleCallbackHandler.java
+%%EXAMPLESDIR%%/jms/jaas/src/org/hornetq/jms/example/ExampleLoginModule.java
+%%EXAMPLESDIR%%/jms/jaas/src/org/hornetq/jms/example/JAASExample.java
+%%EXAMPLESDIR%%/jms/jaas/build.sh
+%%EXAMPLESDIR%%/jms/jaas/build.bat
+%%EXAMPLESDIR%%/jms/jaas/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/jaas/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/jaas/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/jaas/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/jaas/readme.html
+%%EXAMPLESDIR%%/jms/message-group/build.sh
+%%EXAMPLESDIR%%/jms/message-group/src/org/hornetq/jms/example/MessageGroupExample.java
+%%EXAMPLESDIR%%/jms/message-group/build.xml
+%%EXAMPLESDIR%%/jms/message-group/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/message-group/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/message-group/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/message-group/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/message-group/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/message-group/readme.html
+%%EXAMPLESDIR%%/jms/message-group/build.bat
+%%EXAMPLESDIR%%/jms/interceptor/readme.html
+%%EXAMPLESDIR%%/jms/interceptor/build.bat
+%%EXAMPLESDIR%%/jms/interceptor/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/interceptor/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/interceptor/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/interceptor/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/interceptor/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/interceptor/build.sh
+%%EXAMPLESDIR%%/jms/interceptor/src/org/hornetq/jms/example/SimpleInterceptor.java
+%%EXAMPLESDIR%%/jms/interceptor/src/org/hornetq/jms/example/InterceptorExample.java
+%%EXAMPLESDIR%%/jms/interceptor/build.xml
+%%EXAMPLESDIR%%/jms/pre-acknowledge/build.xml
+%%EXAMPLESDIR%%/jms/pre-acknowledge/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/pre-acknowledge/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/pre-acknowledge/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/pre-acknowledge/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/pre-acknowledge/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/pre-acknowledge/readme.html
+%%EXAMPLESDIR%%/jms/pre-acknowledge/build.sh
+%%EXAMPLESDIR%%/jms/pre-acknowledge/build.bat
+%%EXAMPLESDIR%%/jms/pre-acknowledge/src/org/hornetq/jms/example/PreacknowledgeExample.java
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/build.sh
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/build.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/readme.html
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/build.bat
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/queue-message-redistribution/src/org/hornetq/jms/example/QueueMessageRedistributionExample.java
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/build.bat
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/build.sh
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/build.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/multiple-failover-failback/src/org/hornetq/jms/example/MultipleFailoverFailbackExample.java
+%%EXAMPLESDIR%%/jms/bridge/build.bat
+%%EXAMPLESDIR%%/jms/bridge/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/bridge/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/bridge/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/bridge/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/bridge/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/bridge/readme.html
+%%EXAMPLESDIR%%/jms/bridge/build.sh
+%%EXAMPLESDIR%%/jms/bridge/src/org/hornetq/jms/example/HatColourChangeTransformer.java
+%%EXAMPLESDIR%%/jms/bridge/src/org/hornetq/jms/example/BridgeExample.java
+%%EXAMPLESDIR%%/jms/bridge/build.xml
+%%EXAMPLESDIR%%/jms/bridge/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/bridge/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/bridge/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/bridge/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/bridge/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/expiry/src/org/hornetq/jms/example/ExpiryExample.java
+%%EXAMPLESDIR%%/jms/expiry/build.sh
+%%EXAMPLESDIR%%/jms/expiry/readme.html
+%%EXAMPLESDIR%%/jms/expiry/build.bat
+%%EXAMPLESDIR%%/jms/expiry/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/expiry/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/expiry/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/expiry/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/expiry/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/expiry/build.xml
+%%EXAMPLESDIR%%/jms/queue-requestor/build.bat
+%%EXAMPLESDIR%%/jms/queue-requestor/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/queue-requestor/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/queue-requestor/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/queue-requestor/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/queue-requestor/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/queue-requestor/src/org/hornetq/jms/example/TextReverserService.java
+%%EXAMPLESDIR%%/jms/queue-requestor/src/org/hornetq/jms/example/QueueRequestorExample.java
+%%EXAMPLESDIR%%/jms/queue-requestor/build.sh
+%%EXAMPLESDIR%%/jms/queue-requestor/readme.html
+%%EXAMPLESDIR%%/jms/queue-requestor/build.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server1/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/readme.html
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/build.bat
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server2/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/build.sh
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server0/jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/src/org/hornetq/jms/example/ClusterStaticOnewayExample.java
+%%EXAMPLESDIR%%/jms/clustered-static-oneway/build.xml
+%%EXAMPLESDIR%%/jms/static-selector/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/static-selector/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/static-selector/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/static-selector/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/static-selector/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/static-selector/build.bat
+%%EXAMPLESDIR%%/jms/static-selector/build.sh
+%%EXAMPLESDIR%%/jms/static-selector/src/org/hornetq/jms/example/StaticSelectorExample.java
+%%EXAMPLESDIR%%/jms/static-selector/readme.html
+%%EXAMPLESDIR%%/jms/static-selector/build.xml
+%%EXAMPLESDIR%%/jms/management-notifications/build.bat
+%%EXAMPLESDIR%%/jms/management-notifications/build.sh
+%%EXAMPLESDIR%%/jms/management-notifications/src/org/hornetq/jms/example/ManagementNotificationExample.java
+%%EXAMPLESDIR%%/jms/management-notifications/readme.html
+%%EXAMPLESDIR%%/jms/management-notifications/build.xml
+%%EXAMPLESDIR%%/jms/management-notifications/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/management-notifications/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/management-notifications/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/management-notifications/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/management-notifications/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/send-acknowledgements/readme.html
+%%EXAMPLESDIR%%/jms/send-acknowledgements/build.sh
+%%EXAMPLESDIR%%/jms/send-acknowledgements/build.bat
+%%EXAMPLESDIR%%/jms/send-acknowledgements/src/org/hornetq/jms/example/SendAcknowledgementsExample.java
+%%EXAMPLESDIR%%/jms/send-acknowledgements/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/send-acknowledgements/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/send-acknowledgements/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/send-acknowledgements/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/send-acknowledgements/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/send-acknowledgements/build.xml
+%%EXAMPLESDIR%%/jms/message-priority/readme.html
+%%EXAMPLESDIR%%/jms/message-priority/build.xml
+%%EXAMPLESDIR%%/jms/message-priority/build.sh
+%%EXAMPLESDIR%%/jms/message-priority/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/message-priority/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/message-priority/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/message-priority/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/message-priority/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/message-priority/build.bat
+%%EXAMPLESDIR%%/jms/message-priority/src/org/hornetq/jms/example/MessagePriorityExample.java
+%%EXAMPLESDIR%%/jms/multiple-failover/build.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/multiple-failover/src/org/hornetq/jms/example/MultipleFailoverExample.java
+%%EXAMPLESDIR%%/jms/multiple-failover/server2/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server2/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server2/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server2/client-jndi.properties
+%%EXAMPLESDIR%%/jms/multiple-failover/server2/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/build.bat
+%%EXAMPLESDIR%%/jms/multiple-failover/build.sh
+%%EXAMPLESDIR%%/jms/multiple-failover/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/multiple-failover/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/multiple-failover/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/management/build.sh
+%%EXAMPLESDIR%%/jms/management/build.xml
+%%EXAMPLESDIR%%/jms/management/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/management/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/management/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/management/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/management/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/management/src/org/hornetq/jms/example/ManagementExample.java
+%%EXAMPLESDIR%%/jms/management/readme.html
+%%EXAMPLESDIR%%/jms/management/build.bat
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/build.bat
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/readme.html
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/build.sh
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/build.xml
+%%EXAMPLESDIR%%/jms/instantiate-connection-factory/src/org/hornetq/jms/example/InstantiateConnectionFactoryExample.java
+%%EXAMPLESDIR%%/jms/browser/src/org/hornetq/jms/example/QueueBrowserExample.java
+%%EXAMPLESDIR%%/jms/browser/build.xml
+%%EXAMPLESDIR%%/jms/browser/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/browser/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/browser/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/browser/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/browser/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/browser/readme.html
+%%EXAMPLESDIR%%/jms/browser/build.sh
+%%EXAMPLESDIR%%/jms/browser/build.bat
+%%EXAMPLESDIR%%/jms/security/src/org/hornetq/jms/example/SecurityExample.java
+%%EXAMPLESDIR%%/jms/security/build.bat
+%%EXAMPLESDIR%%/jms/security/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/security/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/security/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/security/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/security/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/security/build.xml
+%%EXAMPLESDIR%%/jms/security/readme.html
+%%EXAMPLESDIR%%/jms/security/build.sh
+%%EXAMPLESDIR%%/jms/transactional/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/transactional/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/transactional/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/transactional/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/transactional/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/transactional/readme.html
+%%EXAMPLESDIR%%/jms/transactional/build.xml
+%%EXAMPLESDIR%%/jms/transactional/src/org/hornetq/jms/example/TransactionalExample.java
+%%EXAMPLESDIR%%/jms/transactional/build.bat
+%%EXAMPLESDIR%%/jms/transactional/build.sh
+%%EXAMPLESDIR%%/jms/stomp-websockets/src/org/hornetq/jms/example/StompWebSocketExample.java
+%%EXAMPLESDIR%%/jms/stomp-websockets/readme.html
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/jndi.properties
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/logging.properties
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/stomp-websockets/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/stomp-websockets/build.bat
+%%EXAMPLESDIR%%/jms/stomp-websockets/build.sh
+%%EXAMPLESDIR%%/jms/stomp-websockets/chat/chat.css
+%%EXAMPLESDIR%%/jms/stomp-websockets/chat/chat.js
+%%EXAMPLESDIR%%/jms/stomp-websockets/chat/stomp.js
+%%EXAMPLESDIR%%/jms/stomp-websockets/chat/index.html
+%%EXAMPLESDIR%%/jms/stomp-websockets/build.xml
+%%EXAMPLESDIR%%/jms/scheduled-message/build.xml
+%%EXAMPLESDIR%%/jms/scheduled-message/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/scheduled-message/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/scheduled-message/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/scheduled-message/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/scheduled-message/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/scheduled-message/build.sh
+%%EXAMPLESDIR%%/jms/scheduled-message/build.bat
+%%EXAMPLESDIR%%/jms/scheduled-message/src/org/hornetq/jms/example/ScheduledMessageExample.java
+%%EXAMPLESDIR%%/jms/scheduled-message/readme.html
+%%EXAMPLESDIR%%/jms/embedded/build.sh
+%%EXAMPLESDIR%%/jms/embedded/readme.html
+%%EXAMPLESDIR%%/jms/embedded/build.bat
+%%EXAMPLESDIR%%/jms/embedded/src/org/hornetq/jms/example/EmbeddedExample.java
+%%EXAMPLESDIR%%/jms/embedded/build.xml
+%%EXAMPLESDIR%%/jms/message-counters/src/org/hornetq/jms/example/MessageCounterExample.java
+%%EXAMPLESDIR%%/jms/message-counters/build.sh
+%%EXAMPLESDIR%%/jms/message-counters/ant.properties
+%%EXAMPLESDIR%%/jms/message-counters/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/message-counters/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/message-counters/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/message-counters/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/message-counters/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/message-counters/build.bat
+%%EXAMPLESDIR%%/jms/message-counters/build.xml
+%%EXAMPLESDIR%%/jms/message-counters/readme.html
+%%EXAMPLESDIR%%/jms/delayed-redelivery/build.bat
+%%EXAMPLESDIR%%/jms/delayed-redelivery/build.sh
+%%EXAMPLESDIR%%/jms/delayed-redelivery/src/org/hornetq/jms/example/DelayedRedeliveryExample.java
+%%EXAMPLESDIR%%/jms/delayed-redelivery/build.xml
+%%EXAMPLESDIR%%/jms/delayed-redelivery/readme.html
+%%EXAMPLESDIR%%/jms/delayed-redelivery/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/delayed-redelivery/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/delayed-redelivery/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/delayed-redelivery/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/delayed-redelivery/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/build.bat
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/readme.html
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/src/org/hornetq/jms/example/ConsumerRateLimitExample.java
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/build.sh
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/build.xml
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/consumer-rate-limit/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/divert/build.bat
+%%EXAMPLESDIR%%/jms/divert/build.sh
+%%EXAMPLESDIR%%/jms/divert/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/divert/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/divert/server1/client-jndi.properties
+%%EXAMPLESDIR%%/jms/divert/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/divert/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/divert/build.xml
+%%EXAMPLESDIR%%/jms/divert/src/org/hornetq/jms/example/AddForwardingTimeTransformer.java
+%%EXAMPLESDIR%%/jms/divert/src/org/hornetq/jms/example/DivertExample.java
+%%EXAMPLESDIR%%/jms/divert/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/divert/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/divert/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/divert/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/divert/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/divert/readme.html
+%%EXAMPLESDIR%%/jms/xa-send/src/org/hornetq/jms/example/XASendExample.java
+%%EXAMPLESDIR%%/jms/xa-send/readme.html
+%%EXAMPLESDIR%%/jms/xa-send/build.xml
+%%EXAMPLESDIR%%/jms/xa-send/build.sh
+%%EXAMPLESDIR%%/jms/xa-send/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/xa-send/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/xa-send/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/xa-send/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/xa-send/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/xa-send/build.bat
+%%EXAMPLESDIR%%/jms/xa-heuristic/build.sh
+%%EXAMPLESDIR%%/jms/xa-heuristic/src/org/hornetq/jms/example/XAHeuristicExample.java
+%%EXAMPLESDIR%%/jms/xa-heuristic/readme.html
+%%EXAMPLESDIR%%/jms/xa-heuristic/build.bat
+%%EXAMPLESDIR%%/jms/xa-heuristic/ant.properties
+%%EXAMPLESDIR%%/jms/xa-heuristic/build.xml
+%%EXAMPLESDIR%%/jms/xa-heuristic/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/xa-heuristic/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/xa-heuristic/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/xa-heuristic/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/xa-heuristic/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/build.xml
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/build.sh
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/build.bat
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/src/org/hornetq/jms/example/NoConsumerBufferingExample.java
+%%EXAMPLESDIR%%/jms/no-consumer-buffering/readme.html
+%%EXAMPLESDIR%%/jms/spring-integration/build.xml
+%%EXAMPLESDIR%%/jms/spring-integration/src/org/hornetq/jms/example/ExampleListener.java
+%%EXAMPLESDIR%%/jms/spring-integration/src/org/hornetq/jms/example/MessageSender.java
+%%EXAMPLESDIR%%/jms/spring-integration/src/org/hornetq/jms/example/SpringExample.java
+%%EXAMPLESDIR%%/jms/spring-integration/build.sh
+%%EXAMPLESDIR%%/jms/spring-integration/readme.html
+%%EXAMPLESDIR%%/jms/spring-integration/build.bat
+%%EXAMPLESDIR%%/jms/spring-integration/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/spring-integration/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/spring-integration/server0/spring-jms-beans.xml
+%%EXAMPLESDIR%%/jms/spring-integration/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/paging/build.bat
+%%EXAMPLESDIR%%/jms/paging/src/org/hornetq/jms/example/PagingExample.java
+%%EXAMPLESDIR%%/jms/paging/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/paging/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/paging/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/paging/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/paging/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/paging/build.sh
+%%EXAMPLESDIR%%/jms/paging/build.xml
+%%EXAMPLESDIR%%/jms/paging/readme.html
+%%EXAMPLESDIR%%/jms/paging/ant.properties
+%%EXAMPLESDIR%%/jms/jms-bridge/build.sh
+%%EXAMPLESDIR%%/jms/jms-bridge/build.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server1/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server1/jndi.properties
+%%EXAMPLESDIR%%/jms/jms-bridge/server1/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server1/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server1/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/src/org/hornetq/jms/example/JMSBridgeExample.java
+%%EXAMPLESDIR%%/jms/jms-bridge/build.bat
+%%EXAMPLESDIR%%/jms/jms-bridge/jms-bridge.png
+%%EXAMPLESDIR%%/jms/jms-bridge/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server0/jndi.properties
+%%EXAMPLESDIR%%/jms/jms-bridge/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/jms-bridge/readme.html
+%%EXAMPLESDIR%%/jms/dead-letter/readme.html
+%%EXAMPLESDIR%%/jms/dead-letter/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/dead-letter/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/dead-letter/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/dead-letter/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/dead-letter/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/dead-letter/build.sh
+%%EXAMPLESDIR%%/jms/dead-letter/build.bat
+%%EXAMPLESDIR%%/jms/dead-letter/src/org/hornetq/jms/example/DeadLetterExample.java
+%%EXAMPLESDIR%%/jms/dead-letter/build.xml
+%%EXAMPLESDIR%%/jms/static-selector-jms/build.sh
+%%EXAMPLESDIR%%/jms/static-selector-jms/src/org/hornetq/jms/example/StaticSelectorJMSExample.java
+%%EXAMPLESDIR%%/jms/static-selector-jms/build.xml
+%%EXAMPLESDIR%%/jms/static-selector-jms/server0/client-jndi.properties
+%%EXAMPLESDIR%%/jms/static-selector-jms/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/jms/static-selector-jms/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/jms/static-selector-jms/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/jms/static-selector-jms/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/jms/static-selector-jms/readme.html
+%%EXAMPLESDIR%%/jms/static-selector-jms/build.bat
+%%EXAMPLESDIR%%/soak/normal/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/soak/normal/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/soak/normal/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms/soak/example/SoakSender.java
+%%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms/soak/example/SoakParams.java
+%%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms/soak/example/SoakBase.java
+%%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms/soak/example/SoakReceiver.java
+%%EXAMPLESDIR%%/soak/normal/README
+%%EXAMPLESDIR%%/soak/normal/build.xml
+%%EXAMPLESDIR%%/soak/normal/soak.properties
+%%EXAMPLESDIR%%/soak/tx-restarts/server0/hornetq-users.xml
+%%EXAMPLESDIR%%/soak/tx-restarts/server0/hornetq-configuration.xml
+%%EXAMPLESDIR%%/soak/tx-restarts/server0/jndi.properties
+%%EXAMPLESDIR%%/soak/tx-restarts/server0/hornetq-beans.xml
+%%EXAMPLESDIR%%/soak/tx-restarts/server0/hornetq-jms.xml
+%%EXAMPLESDIR%%/soak/tx-restarts/server0/client-jndi.properties
+%%EXAMPLESDIR%%/soak/tx-restarts/build.xml
+%%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq/jms/example/Receiver.java
+%%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq/jms/example/TXRestartSoak.java
+%%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq/jms/example/Sender.java
+%%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq/jms/example/ClientAbstract.java
+%%EXAMPLESDIR%%/soak/tx-restarts/build.sh
+%%EXAMPLESDIR%%/soak/tx-restarts/build.bat
+%%EXAMPLESDIR%%/soak/tx-restarts/README
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts/src/org
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts/src
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts/server0
+@dirrm %%EXAMPLESDIR%%/soak/tx-restarts
+@dirrm %%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms/soak/example
+@dirrm %%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms/soak
+@dirrm %%EXAMPLESDIR%%/soak/normal/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/soak/normal/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/soak/normal/src/org
+@dirrm %%EXAMPLESDIR%%/soak/normal/src
+@dirrm %%EXAMPLESDIR%%/soak/normal/server0
+@dirrm %%EXAMPLESDIR%%/soak/normal
+@dirrm %%EXAMPLESDIR%%/soak
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta/src/org
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta/src
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta/server0
+@dirrm %%EXAMPLESDIR%%/jms/xa-with-jta
+@dirrm %%EXAMPLESDIR%%/jms/xa-send/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/xa-send/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/xa-send/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/xa-send/src/org
+@dirrm %%EXAMPLESDIR%%/jms/xa-send/src
+@dirrm %%EXAMPLESDIR%%/jms/xa-send/server0
+@dirrm %%EXAMPLESDIR%%/jms/xa-send
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive/src/org
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive/src
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive/server0
+@dirrm %%EXAMPLESDIR%%/jms/xa-receive
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic/src/org
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic/src
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic/server0
+@dirrm %%EXAMPLESDIR%%/jms/xa-heuristic
+@dirrm %%EXAMPLESDIR%%/jms/transactional/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/transactional/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/transactional/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/transactional/src/org
+@dirrm %%EXAMPLESDIR%%/jms/transactional/src
+@dirrm %%EXAMPLESDIR%%/jms/transactional/server0
+@dirrm %%EXAMPLESDIR%%/jms/transactional
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/src/org
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/src
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/server1
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover/server0
+@dirrm %%EXAMPLESDIR%%/jms/transaction-failover
+@dirrm %%EXAMPLESDIR%%/jms/topic/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/topic/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/topic/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/topic/src/org
+@dirrm %%EXAMPLESDIR%%/jms/topic/src
+@dirrm %%EXAMPLESDIR%%/jms/topic/server0
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2/src/org
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2/src
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2/server0
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example2
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1/src/org
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1/src
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1/server0
+@dirrm %%EXAMPLESDIR%%/jms/topic-selector-example1
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies/src/org
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies/src
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies/server0
+@dirrm %%EXAMPLESDIR%%/jms/topic-hierarchies
+@dirrm %%EXAMPLESDIR%%/jms/topic
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue/src/org
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue/src
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue/server0
+@dirrm %%EXAMPLESDIR%%/jms/temp-queue
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/src/org
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/src
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/server5
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/server4
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/server3
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/server2
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/server1
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster/server0
+@dirrm %%EXAMPLESDIR%%/jms/symmetric-cluster
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/src/org
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/src
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/server1
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover/server0
+@dirrm %%EXAMPLESDIR%%/jms/stop-server-failover
+@dirrm %%EXAMPLESDIR%%/jms/stomp/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/stomp/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/stomp/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/stomp/src/org
+@dirrm %%EXAMPLESDIR%%/jms/stomp/src
+@dirrm %%EXAMPLESDIR%%/jms/stomp/server0
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/src/org
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/src
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/server0
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets/chat
+@dirrm %%EXAMPLESDIR%%/jms/stomp-websockets
+@dirrm %%EXAMPLESDIR%%/jms/stomp
+@dirrm %%EXAMPLESDIR%%/jms/static-selector/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/static-selector/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/static-selector/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/static-selector/src/org
+@dirrm %%EXAMPLESDIR%%/jms/static-selector/src
+@dirrm %%EXAMPLESDIR%%/jms/static-selector/server0
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms/src/org
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms/src
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms/server0
+@dirrm %%EXAMPLESDIR%%/jms/static-selector-jms
+@dirrm %%EXAMPLESDIR%%/jms/static-selector
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled/src/org
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled/src
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled/server0
+@dirrm %%EXAMPLESDIR%%/jms/ssl-enabled
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration/src/org
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration/src
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration/server0
+@dirrm %%EXAMPLESDIR%%/jms/spring-integration
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements/src/org
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements/src
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements/server0
+@dirrm %%EXAMPLESDIR%%/jms/send-acknowledgements
+@dirrm %%EXAMPLESDIR%%/jms/security/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/security/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/security/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/security/src/org
+@dirrm %%EXAMPLESDIR%%/jms/security/src
+@dirrm %%EXAMPLESDIR%%/jms/security/server0
+@dirrm %%EXAMPLESDIR%%/jms/security
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message/src/org
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message/src
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message/server0
+@dirrm %%EXAMPLESDIR%%/jms/scheduled-message
+@dirrm %%EXAMPLESDIR%%/jms/request-reply/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/request-reply/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/request-reply/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/request-reply/src/org
+@dirrm %%EXAMPLESDIR%%/jms/request-reply/src
+@dirrm %%EXAMPLESDIR%%/jms/request-reply/server0
+@dirrm %%EXAMPLESDIR%%/jms/request-reply
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node/src/org
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node/src
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node/server0
+@dirrm %%EXAMPLESDIR%%/jms/reattach-node
+@dirrm %%EXAMPLESDIR%%/jms/queue/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/queue/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/queue/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/queue/src/org
+@dirrm %%EXAMPLESDIR%%/jms/queue/src
+@dirrm %%EXAMPLESDIR%%/jms/queue/server0
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector/src/org
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector/src
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector/server0
+@dirrm %%EXAMPLESDIR%%/jms/queue-selector
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor/src/org
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor/src
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor/server0
+@dirrm %%EXAMPLESDIR%%/jms/queue-requestor
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/src/org
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/src
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/server1
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution/server0
+@dirrm %%EXAMPLESDIR%%/jms/queue-message-redistribution
+@dirrm %%EXAMPLESDIR%%/jms/queue
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit/src/org
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit/src
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit/server0
+@dirrm %%EXAMPLESDIR%%/jms/producer-rate-limit
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge/src/org
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge/src
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge/server0
+@dirrm %%EXAMPLESDIR%%/jms/pre-acknowledge
+@dirrm %%EXAMPLESDIR%%/jms/perf/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/perf/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/perf/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/perf/src/org
+@dirrm %%EXAMPLESDIR%%/jms/perf/src
+@dirrm %%EXAMPLESDIR%%/jms/perf/server0
+@dirrm %%EXAMPLESDIR%%/jms/perf
+@dirrm %%EXAMPLESDIR%%/jms/paging/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/paging/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/paging/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/paging/src/org
+@dirrm %%EXAMPLESDIR%%/jms/paging/src
+@dirrm %%EXAMPLESDIR%%/jms/paging/server0
+@dirrm %%EXAMPLESDIR%%/jms/paging
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/src/org
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/src
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/server1
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover/server0
+@dirrm %%EXAMPLESDIR%%/jms/non-transaction-failover
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering/src/org
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering/src
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering/server0
+@dirrm %%EXAMPLESDIR%%/jms/no-consumer-buffering
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/src/org
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/src
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/server2
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/server1
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover/server0
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/src/org
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/src
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/server2
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/server1
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback/server0
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover-failback
+@dirrm %%EXAMPLESDIR%%/jms/multiple-failover
+@dirrm %%EXAMPLESDIR%%/jms/message-priority/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/message-priority/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/message-priority/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/message-priority/src/org
+@dirrm %%EXAMPLESDIR%%/jms/message-priority/src
+@dirrm %%EXAMPLESDIR%%/jms/message-priority/server0
+@dirrm %%EXAMPLESDIR%%/jms/message-priority
+@dirrm %%EXAMPLESDIR%%/jms/message-group2/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/message-group2/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/message-group2/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/message-group2/src/org
+@dirrm %%EXAMPLESDIR%%/jms/message-group2/src
+@dirrm %%EXAMPLESDIR%%/jms/message-group2/server0
+@dirrm %%EXAMPLESDIR%%/jms/message-group2
+@dirrm %%EXAMPLESDIR%%/jms/message-group/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/message-group/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/message-group/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/message-group/src/org
+@dirrm %%EXAMPLESDIR%%/jms/message-group/src
+@dirrm %%EXAMPLESDIR%%/jms/message-group/server0
+@dirrm %%EXAMPLESDIR%%/jms/message-group
+@dirrm %%EXAMPLESDIR%%/jms/message-counters/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/message-counters/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/message-counters/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/message-counters/src/org
+@dirrm %%EXAMPLESDIR%%/jms/message-counters/src
+@dirrm %%EXAMPLESDIR%%/jms/message-counters/server0
+@dirrm %%EXAMPLESDIR%%/jms/message-counters
+@dirrm %%EXAMPLESDIR%%/jms/management/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/management/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/management/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/management/src/org
+@dirrm %%EXAMPLESDIR%%/jms/management/src
+@dirrm %%EXAMPLESDIR%%/jms/management/server0
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications/src/org
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications/src
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications/server0
+@dirrm %%EXAMPLESDIR%%/jms/management-notifications
+@dirrm %%EXAMPLESDIR%%/jms/management
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue/src/org
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue/src
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue/server0
+@dirrm %%EXAMPLESDIR%%/jms/last-value-queue
+@dirrm %%EXAMPLESDIR%%/jms/large-message/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/large-message/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/large-message/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/large-message/src/org
+@dirrm %%EXAMPLESDIR%%/jms/large-message/src
+@dirrm %%EXAMPLESDIR%%/jms/large-message/server0
+@dirrm %%EXAMPLESDIR%%/jms/large-message
+@dirrm %%EXAMPLESDIR%%/jms/jmx/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/jmx/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/jmx/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/jmx/src/org
+@dirrm %%EXAMPLESDIR%%/jms/jmx/src
+@dirrm %%EXAMPLESDIR%%/jms/jmx/server0
+@dirrm %%EXAMPLESDIR%%/jms/jmx
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/src/org
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/src
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/server1
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge/server0
+@dirrm %%EXAMPLESDIR%%/jms/jms-bridge
+@dirrm %%EXAMPLESDIR%%/jms/jaas/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/jaas/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/jaas/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/jaas/src/org
+@dirrm %%EXAMPLESDIR%%/jms/jaas/src
+@dirrm %%EXAMPLESDIR%%/jms/jaas/server0
+@dirrm %%EXAMPLESDIR%%/jms/jaas
+@dirrm %%EXAMPLESDIR%%/jms/interceptor/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/interceptor/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/interceptor/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/interceptor/src/org
+@dirrm %%EXAMPLESDIR%%/jms/interceptor/src
+@dirrm %%EXAMPLESDIR%%/jms/interceptor/server0
+@dirrm %%EXAMPLESDIR%%/jms/interceptor
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory/src/org
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory/src
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory/server0
+@dirrm %%EXAMPLESDIR%%/jms/instantiate-connection-factory
+@dirrm %%EXAMPLESDIR%%/jms/http-transport/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/http-transport/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/http-transport/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/http-transport/src/org
+@dirrm %%EXAMPLESDIR%%/jms/http-transport/src
+@dirrm %%EXAMPLESDIR%%/jms/http-transport/server0
+@dirrm %%EXAMPLESDIR%%/jms/http-transport
+@dirrm %%EXAMPLESDIR%%/jms/expiry/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/expiry/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/expiry/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/expiry/src/org
+@dirrm %%EXAMPLESDIR%%/jms/expiry/src
+@dirrm %%EXAMPLESDIR%%/jms/expiry/server0
+@dirrm %%EXAMPLESDIR%%/jms/expiry
+@dirrm %%EXAMPLESDIR%%/jms/embedded/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/embedded/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/embedded/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/embedded/src/org
+@dirrm %%EXAMPLESDIR%%/jms/embedded/src
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple/src/org
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple/src
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple/server0
+@dirrm %%EXAMPLESDIR%%/jms/embedded-simple
+@dirrm %%EXAMPLESDIR%%/jms/embedded
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription/src/org
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription/src
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription/server0
+@dirrm %%EXAMPLESDIR%%/jms/durable-subscription
+@dirrm %%EXAMPLESDIR%%/jms/divert/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/divert/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/divert/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/divert/src/org
+@dirrm %%EXAMPLESDIR%%/jms/divert/src
+@dirrm %%EXAMPLESDIR%%/jms/divert/server1
+@dirrm %%EXAMPLESDIR%%/jms/divert/server0
+@dirrm %%EXAMPLESDIR%%/jms/divert
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery/src/org
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery/src
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery/server0
+@dirrm %%EXAMPLESDIR%%/jms/delayed-redelivery
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter/src/org
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter/src
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter/server0
+@dirrm %%EXAMPLESDIR%%/jms/dead-letter
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit/src/org
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit/src
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit/server0
+@dirrm %%EXAMPLESDIR%%/jms/consumer-rate-limit
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-topic
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/server2
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-oneway
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/server3
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/server2
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-static-discovery
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/server2
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-standalone
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-queue
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/server2
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-grouping
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/src/org
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/src
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/server1
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription/server0
+@dirrm %%EXAMPLESDIR%%/jms/clustered-durable-subscription
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/src/org
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/src
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/server2
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/server1
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing/server0
+@dirrm %%EXAMPLESDIR%%/jms/client-side-load-balancing
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff/src/org
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff/src
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff/server0
+@dirrm %%EXAMPLESDIR%%/jms/client-kickoff
+@dirrm %%EXAMPLESDIR%%/jms/browser/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/browser/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/browser/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/browser/src/org
+@dirrm %%EXAMPLESDIR%%/jms/browser/src
+@dirrm %%EXAMPLESDIR%%/jms/browser/server0
+@dirrm %%EXAMPLESDIR%%/jms/browser
+@dirrm %%EXAMPLESDIR%%/jms/bridge/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/bridge/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/bridge/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/bridge/src/org
+@dirrm %%EXAMPLESDIR%%/jms/bridge/src
+@dirrm %%EXAMPLESDIR%%/jms/bridge/server1
+@dirrm %%EXAMPLESDIR%%/jms/bridge/server0
+@dirrm %%EXAMPLESDIR%%/jms/bridge
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/src/org
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/src
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/server1
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover/server0
+@dirrm %%EXAMPLESDIR%%/jms/application-layer-failover
+@dirrm %%EXAMPLESDIR%%/jms/applet/src/org/hornetq/jms/example
+@dirrm %%EXAMPLESDIR%%/jms/applet/src/org/hornetq/jms
+@dirrm %%EXAMPLESDIR%%/jms/applet/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/jms/applet/src/org
+@dirrm %%EXAMPLESDIR%%/jms/applet/src
+@dirrm %%EXAMPLESDIR%%/jms/applet/server0
+@dirrm %%EXAMPLESDIR%%/jms/applet
+@dirrm %%EXAMPLESDIR%%/jms
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/src
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/server
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery/config
+@dirrm %%EXAMPLESDIR%%/javaee/xarecovery
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/src
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/server
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/config/WEB-INF
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport/config
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-transport
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/src
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/server
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/config/WEB-INF
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl/config
+@dirrm %%EXAMPLESDIR%%/javaee/servlet-ssl
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-tx-send
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/live-server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover/backup-server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/live-server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static/backup-server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover-static
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-remote-failover
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-message-selector
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-required
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-not-supported
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-tx-local
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-cmt-setrollbackonly
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/src
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/server
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt/config
+@dirrm %%EXAMPLESDIR%%/javaee/mdb-bmt
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/src
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/server
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge/config
+@dirrm %%EXAMPLESDIR%%/javaee/jms-bridge
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/src
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/server0
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/server
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote/config
+@dirrm %%EXAMPLESDIR%%/javaee/jca-remote
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/server2
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/src
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/server2
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/server
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config/config
+@dirrm %%EXAMPLESDIR%%/javaee/jca-config
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/src
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi/config
+@dirrm %%EXAMPLESDIR%%/javaee/hajndi
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq/javaee/example/server
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq/javaee/example
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq/javaee
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src/org
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/src
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/server
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/config/META-INF
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction/config
+@dirrm %%EXAMPLESDIR%%/javaee/ejb-jms-transaction
+@dirrm %%EXAMPLESDIR%%/javaee/common/config
+@dirrm %%EXAMPLESDIR%%/javaee/common
+@dirrm %%EXAMPLESDIR%%/javaee
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector/src/org/hornetq/core/example
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector/src/org/hornetq/core
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector/src/org
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector/src
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector/server0
+@dirrm %%EXAMPLESDIR%%/core/twitter-connector
+@dirrm %%EXAMPLESDIR%%/core/perf/src/org/hornetq/core/example
+@dirrm %%EXAMPLESDIR%%/core/perf/src/org/hornetq/core
+@dirrm %%EXAMPLESDIR%%/core/perf/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/core/perf/src/org
+@dirrm %%EXAMPLESDIR%%/core/perf/src
+@dirrm %%EXAMPLESDIR%%/core/perf/server0
+@dirrm %%EXAMPLESDIR%%/core/perf
+@dirrm %%EXAMPLESDIR%%/core/microcontainer/src/org/hornetq/core/example
+@dirrm %%EXAMPLESDIR%%/core/microcontainer/src/org/hornetq/core
+@dirrm %%EXAMPLESDIR%%/core/microcontainer/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/core/microcontainer/src/org
+@dirrm %%EXAMPLESDIR%%/core/microcontainer/src
+@dirrm %%EXAMPLESDIR%%/core/microcontainer/server0
+@dirrm %%EXAMPLESDIR%%/core/microcontainer
+@dirrm %%EXAMPLESDIR%%/core/embedded/src/org/hornetq/core/example
+@dirrm %%EXAMPLESDIR%%/core/embedded/src/org/hornetq/core
+@dirrm %%EXAMPLESDIR%%/core/embedded/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/core/embedded/src/org
+@dirrm %%EXAMPLESDIR%%/core/embedded/src
+@dirrm %%EXAMPLESDIR%%/core/embedded-remote/src/org/hornetq/core/example
+@dirrm %%EXAMPLESDIR%%/core/embedded-remote/src/org/hornetq/core
+@dirrm %%EXAMPLESDIR%%/core/embedded-remote/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/core/embedded-remote/src/org
+@dirrm %%EXAMPLESDIR%%/core/embedded-remote/src
+@dirrm %%EXAMPLESDIR%%/core/embedded-remote
+@dirrm %%EXAMPLESDIR%%/core/embedded
+@dirrm %%EXAMPLESDIR%%/core
+@dirrm %%EXAMPLESDIR%%/common/src/org/hornetq/common/example
+@dirrm %%EXAMPLESDIR%%/common/src/org/hornetq/common
+@dirrm %%EXAMPLESDIR%%/common/src/org/hornetq
+@dirrm %%EXAMPLESDIR%%/common/src/org
+@dirrm %%EXAMPLESDIR%%/common/src
+@dirrm %%EXAMPLESDIR%%/common/images
+@dirrm %%EXAMPLESDIR%%/common/config
+@dirrm %%EXAMPLESDIR%%/common
+@dirrm %%EXAMPLESDIR%%

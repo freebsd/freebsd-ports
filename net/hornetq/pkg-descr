@@ -1,0 +1,7 @@
+HornetQ is an open source project to build a multi-protocol, embeddable,
+very high performance, clustered, asynchronous messaging system, designed
+with usability in mind.
+
+HornetQ is an example of Message Oriented Middleware (MoM)
+
+WWW:	http://www.jboss.org/hornetq
