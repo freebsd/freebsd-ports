@@ -5,6 +5,7 @@ bin/mtp-delfile
 bin/mtp-detect
 bin/mtp-emptyfolders
 bin/mtp-files
+bin/mtp-filetree
 bin/mtp-folders
 bin/mtp-format
 bin/mtp-getfile
@@ -22,5 +23,5 @@ include/libmtp.h
 lib/libmtp.a
 lib/libmtp.la
 lib/libmtp.so
-lib/libmtp.so.11
+lib/libmtp.so.9
 libdata/pkgconfig/libmtp.pc
