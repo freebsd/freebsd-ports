@@ -398,6 +398,7 @@ raproxy*.tar.gz		audio/raproxy		License allows only use in a
 						firewall, or with RA products
 rarbsd-*		archivers/rar		Only unmodified, original
 						package can be distributed
+rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial
 						organizations

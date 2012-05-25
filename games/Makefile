@@ -775,6 +775,7 @@
     SUBDIR += reminiscence
     SUBDIR += rezerwar
     SUBDIR += rfksay
+    SUBDIR += rftg
     SUBDIR += ri-li
     SUBDIR += rigsofrods
     SUBDIR += robocode
