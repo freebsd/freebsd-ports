@@ -1,16 +1,32 @@
---- GNUmakefile.orig	2010-01-05 09:25:18.000000000 +0800
-+++ GNUmakefile	2010-01-05 09:26:17.000000000 +0800
-@@ -55,10 +55,10 @@
- 	   $(INSTALL) -m 444 CHANGES $(INCDIR)/CHANGES
- 	   $(INSTALL) -m 444 COPYING $(INCDIR)/COPYING
- 	   $(INSTALL) -m 444 README  $(INCDIR)/README
+--- GNUmakefile.orig	2012-03-14 13:40:38.000000000 +0600
++++ GNUmakefile	2012-05-05 17:48:54.102866059 +0600
+@@ -81,26 +81,14 @@
+ 	     $(MAKE) -k -C $$DIR $@ ; \
+ 	   done
+ 	   $(INSTALL) -m 444 wcsconfig.h wcsconfig_f77.h $(INCDIR)
+-	-  if [ ! -d "$(DOCDIR)" ] ; then \
+-	     $(INSTALL) -d -m 2775 $(DOCDIR) ; \
+-	   fi
+-	   $(INSTALL) -m 444 CHANGES COPYING* README $(DOCDIR)
+ 	-  if [ -h $(DOCLINK) ] ; then \
+ 	     $(RM) $(DOCLINK) ; \
+ 	     $(LN_S) $(notdir $(DOCDIR)) $(DOCLINK) ; \
+ 	   fi
+-	-  if [ ! -d "$(PDFDIR)" ] ; then \
+-	     $(INSTALL) -d -m 2775 $(PDFDIR) ; \
+-	   fi
+-	   $(INSTALL) -m 444 wcslib.pdf $(PDFDIR)
+-	-  if [ ! -d "$(HTMLDIR)/html" ] ; then \
+-	     $(INSTALL) -d -m 2775 $(HTMLDIR)/html ; \
+-	   fi
+-	   $(INSTALL) -m 444 html/* $(HTMLDIR)/html
 -	   if [ ! -d "$(LIBDIR)/pkgconfig" ] ; then \
 -	     $(INSTALL) -d -m 2775 $(LIBDIR)/pkgconfig ; \
-+	   if [ ! -d "%%PKGDIR%%/pkgconfig" ] ; then \
-+	     $(INSTALL) -d -m 2775 %%PKGDIR%%/pkgconfig ; \
++	   if [ ! -d "/usr/local/libdata/pkgconfig" ] ; then \
++	     $(INSTALL) -d -m 2775 /usr/local/libdata/pkgconfig ; \
  	   fi
 -	   $(INSTALL) -m 444 wcslib.pc $(LIBDIR)/pkgconfig/wcslib.pc
-+	   $(INSTALL) -m 444 wcslib.pc %%PKGDIR%%/pkgconfig/wcslib.pc
++	   $(INSTALL) -m 444 wcslib.pc /usr/local/libdata/pkgconfig/wcslib.pc
  
- realclean cleanest :
- 	for DIR in $(SUBDIRS) doxygen ; do \
+ clean cleaner :
+ 	   for DIR in $(SUBDIRS) doxygen ; do \
