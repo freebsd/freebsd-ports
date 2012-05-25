@@ -1,6 +1,8 @@
-libexec/xfce4/panel-plugins/xfce4-time-out-plugin
+lib/xfce4/panel/plugins/libtime-out.la
+lib/xfce4/panel/plugins/libtime-out.so
 share/icons/hicolor/48x48/apps/xfce4-time-out-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg
+share/locale/ar/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-time-out-plugin.mo
@@ -19,11 +21,14 @@ share/locale/id/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/kk/LC_MESSAGES/xfce4-time-out-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-time-out-plugin.mo
+share/locale/nl/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-time-out-plugin.mo
+share/locale/sk/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/ug/LC_MESSAGES/xfce4-time-out-plugin.mo
@@ -32,8 +37,9 @@ share/locale/ur/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-time-out-plugin.mo
-share/xfce4/panel-plugins/xfce4-time-out-plugin.desktop
-@dirrmtry share/xfce4/panel-plugins
+share/xfce4/panel/plugins/xfce4-time-out-plugin.desktop
+@dirrmtry share/xfce4/panel/plugins
+@dirrmtry share/xfce4/panel
 @dirrmtry share/xfce4
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
@@ -45,5 +51,6 @@ share/xfce4/panel-plugins/xfce4-time-out-plugin.desktop
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
-@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4/panel/plugins
+@dirrmtry libexec/xfce4/panel
 @dirrmtry libexec/xfce4
