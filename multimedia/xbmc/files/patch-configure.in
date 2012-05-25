@@ -48,6 +48,14 @@
  if test "$host_vendor" = "apple" ; then
    # standard xbmc paths
    INCLUDES="$INCLUDES -I\$(abs_top_srcdir)/xbmc/osx"
+@@ -635,6 +660,7 @@
+ 
+ # Check inotify availability
+ AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
++AC_CHECK_LIB([inotify], [main],,)
+ 
+ # Checks for boost headers using CXX instead of CC
+ AC_LANG_PUSH([C++])
 @@ -713,7 +738,11 @@
  AC_CHECK_LIB([bz2],         [main],, AC_MSG_ERROR($missing_library))
  AC_CHECK_LIB([jpeg],        [main],, AC_MSG_ERROR($missing_library)) # check for cximage
