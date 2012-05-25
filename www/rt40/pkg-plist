@@ -327,6 +327,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.1/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.3/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.4/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -493,6 +495,7 @@ share/rt40/html/Articles/Elements/NewestArticles
 share/rt40/html/Articles/Elements/QuickSearch
 share/rt40/html/Articles/Elements/SelectClass
 share/rt40/html/Articles/Elements/ShowTopic
+share/rt40/html/Articles/Elements/ShowTopicLink
 share/rt40/html/Articles/Elements/UpdatedArticles
 share/rt40/html/Articles/Topics.html
 share/rt40/html/Articles/index.html
@@ -523,6 +526,7 @@ share/rt40/html/Elements/CollectionList
 share/rt40/html/Elements/CollectionListPaging
 share/rt40/html/Elements/ColumnMap
 share/rt40/html/Elements/CreateTicket
+share/rt40/html/Elements/CSRF
 share/rt40/html/Elements/Dashboards
 share/rt40/html/Elements/EditCustomField
 share/rt40/html/Elements/EditCustomFieldAutocomplete
@@ -875,7 +879,6 @@ share/rt40/html/NoAuth/css/aileron/layout.css
 share/rt40/html/NoAuth/css/aileron/login.css
 share/rt40/html/NoAuth/css/aileron/main.css
 share/rt40/html/NoAuth/css/aileron/misc.css
-share/rt40/html/NoAuth/css/aileron/msie-pie.css
 share/rt40/html/NoAuth/css/aileron/msie.css
 share/rt40/html/NoAuth/css/aileron/msie6.css
 share/rt40/html/NoAuth/css/aileron/nav.css
@@ -923,7 +926,6 @@ share/rt40/html/NoAuth/css/base/ui.timepickr.css
 share/rt40/html/NoAuth/css/base/ui.timepickr.custom.css
 share/rt40/html/NoAuth/css/base/yui-fonts.css
 share/rt40/html/NoAuth/css/dhandler
-share/rt40/html/NoAuth/css/images/PIE.htc
 share/rt40/html/NoAuth/css/images/arrows-ffffff.gif
 share/rt40/html/NoAuth/css/images/arrows-ffffff.png
 share/rt40/html/NoAuth/css/images/arrows-grey.gif
@@ -939,7 +941,6 @@ share/rt40/html/NoAuth/css/web2/images/source/background-gradient.png
 share/rt40/html/NoAuth/css/web2/layout.css
 share/rt40/html/NoAuth/css/web2/main.css
 share/rt40/html/NoAuth/css/web2/misc.css
-share/rt40/html/NoAuth/css/web2/msie-pie.css
 share/rt40/html/NoAuth/css/web2/msie.css
 share/rt40/html/NoAuth/css/web2/msie6.css
 share/rt40/html/NoAuth/css/web2/nav.css
@@ -1204,6 +1205,7 @@ share/rt40/html/autohandler
 share/rt40/html/dhandler
 share/rt40/html/index.html
 share/rt40/html/l
+share/rt40/html/l_unsafe
 share/rt40/html/m/_elements/footer
 share/rt40/html/m/_elements/full_site_link
 share/rt40/html/m/_elements/header
@@ -1450,6 +1452,7 @@ share/rt40/po/zh_TW.po
 @dirrm share/rt40/fonts
 @dirrmtry share/rt40/etc
 @dirrm share/rt40
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.6
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/upgrade/4.0.1
