@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce4 systemload plugin with multiple CPU display modes
+COMMENT=	Graphical representation of the CPU load
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui panel
-
-CONFIGURE_ARGS=	--disable-debug
+USE_XFCE=	configenv libmenu panel
+INSTALLS_ICONS=	yes
 
 OPTIONS=	NLS "Enable Native Language Support" on
 
