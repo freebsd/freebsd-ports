@@ -43,29 +43,14 @@ include/xfce4/libxfcegui4/xfce_scaled_image.h
 include/xfce4/libxfcegui4/xfce_systemtray.h
 include/xfce4/libxfcegui4/xfce_togglebutton.h
 include/xfce4/libxfcegui4/xinerama.h
+lib/libglade/2.0/libxfce4.a
+lib/libglade/2.0/libxfce4.la
+lib/libglade/2.0/libxfce4.so
 lib/libxfcegui4.a
 lib/libxfcegui4.la
 lib/libxfcegui4.so
 lib/libxfcegui4.so.7
-%%GLADE3%%lib/glade3/modules/libgladexfce4.a
-%%GLADE3%%lib/glade3/modules/libgladexfce4.la
-%%GLADE3%%lib/glade3/modules/libgladexfce4.so
-lib/libglade/2.0/libxfce4.a
-lib/libglade/2.0/libxfce4.la
-lib/libglade/2.0/libxfce4.so
 libdata/pkgconfig/libxfcegui4-1.0.pc
-%%GLADE3%%share/glade3/catalogs/xfce4.xml
-%%GLADE3%%share/glade3/catalogs/xfce4.xml.in
-%%GLADE3%%share/glade3/pixmaps/hicolor/16x16/actions/widget-xfce4-xfce-app-menu-item.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/16x16/actions/widget-xfce4-xfce-heading.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/16x16/actions/widget-xfce4-xfce-movehandler.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/16x16/actions/widget-xfce4-xfce-scaled-image.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/16x16/actions/widget-xfce4-xfce-titled-dialog.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/22x22/actions/widget-xfce4-xfce-app-menu-item.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/22x22/actions/widget-xfce4-xfce-heading.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/22x22/actions/widget-xfce4-xfce-movehandler.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/22x22/actions/widget-xfce4-xfce-scaled-image.png
-%%GLADE3%%share/glade3/pixmaps/hicolor/22x22/actions/widget-xfce4-xfce-titled-dialog.png
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/XfceAboutDialog.html
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/XfceAppMenuItem.html
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/XfceFramebox.html
@@ -85,7 +70,6 @@ libdata/pkgconfig/libxfcegui4-1.0.pc
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/libxfcegui4-fundamentals.html
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/libxfcegui4-netk.html
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/libxfcegui4-xfce-exec.html
-%%APIDOCS%%share/gtk-doc/html/libxfcegui4/libxfcegui4.devhelp
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/libxfcegui4.devhelp2
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/reference.html
 %%APIDOCS%%share/gtk-doc/html/libxfcegui4/right.png
@@ -128,9 +112,11 @@ share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 %%NLS%%share/locale/gl/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/gu/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/he/LC_MESSAGES/libxfcegui4.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/hy/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/id/LC_MESSAGES/libxfcegui4.mo
+%%NLS%%share/locale/is/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/libxfcegui4.mo
@@ -143,6 +129,7 @@ share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 %%NLS%%share/locale/mr/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libxfcegui4.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/libxfcegui4.mo
@@ -154,6 +141,7 @@ share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 %%NLS%%share/locale/sq/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/libxfcegui4.mo
+%%NLS%%share/locale/te/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/tl_PH/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/libxfcegui4.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/libxfcegui4.mo
@@ -182,20 +170,12 @@ share/icons/hicolor/scalable/apps/xfce-filemanager.svg
 %%NLS%%@dirrmtry share/locale/hy
 %%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-%%APIDOCS%%@dirrm share/gtk-doc/html/libxfcegui4
+%%APIDOCS%%@dirrmtry share/gtk-doc/html/libxfcegui4
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
-%%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm include/xfce4/libxfcegui4
+%%APIDOCS%%@dirrmtry share/gtk-doc 
+@dirrmtry include/xfce4/libxfcegui4
 @dirrmtry include/xfce4
-@dirrmtry lib/glade3/modules
-@dirrmtry lib/glade3
-@dirrmtry share/glade3/catalogs
-@dirrmtry share/glade3
-@dirrm glade3/pixmaps/hicolor/22x22/actions
-@dirrm glade3/pixmaps/hicolor/22x22
-@dirrm glade3/pixmaps/hicolor/16x16/actions
-@dirrm glade3/pixmaps/hicolor/16x16
-@dirrm glade3/pixmaps/hicolor
-@dirrm glade3/pixmaps

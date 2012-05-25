@@ -18,7 +18,7 @@ include/xfce4/libxfce4panel-1.0/libxfce4panel/xfce-panel-plugin.h
 lib/libxfce4panel-1.0.a
 lib/libxfce4panel-1.0.la
 lib/libxfce4panel-1.0.so
-lib/libxfce4panel-1.0.so.3
+lib/libxfce4panel-1.0.so.4
 lib/xfce4/panel/migrate
 lib/xfce4/panel/plugins/libactions.a
 lib/xfce4/panel/plugins/libactions.la
@@ -57,37 +57,6 @@ lib/xfce4/panel/wrapper
 libdata/pkgconfig/libxfce4panel-1.0.pc
 share/applications/panel-desktop-handler.desktop
 share/applications/panel-preferences.desktop
-%%DOCSDIR%%/README.gtkrc-2.0
-%%DOCSDIR%%/html/C/actions.html
-%%DOCSDIR%%/html/C/add-new-items.html
-%%DOCSDIR%%/html/C/applicationsmenu.html
-%%DOCSDIR%%/html/C/clock.html
-%%DOCSDIR%%/html/C/directorymenu.html
-%%DOCSDIR%%/html/C/figures/actions.png
-%%DOCSDIR%%/html/C/figures/add-new-items.png
-%%DOCSDIR%%/html/C/figures/applicationsmenu.png
-%%DOCSDIR%%/html/C/figures/clock.png
-%%DOCSDIR%%/html/C/figures/directorymenu.png
-%%DOCSDIR%%/html/C/figures/launcher.png
-%%DOCSDIR%%/html/C/figures/pager.png
-%%DOCSDIR%%/html/C/figures/preferences.png
-%%DOCSDIR%%/html/C/figures/separator.png
-%%DOCSDIR%%/html/C/figures/systray.png
-%%DOCSDIR%%/html/C/figures/tasklist.png
-%%DOCSDIR%%/html/C/figures/windowmenu.png
-%%DOCSDIR%%/html/C/getting-started.html
-%%DOCSDIR%%/html/C/index.html
-%%DOCSDIR%%/html/C/launcher.html
-%%DOCSDIR%%/html/C/license.html
-%%DOCSDIR%%/html/C/pager.html
-%%DOCSDIR%%/html/C/preferences.html
-%%DOCSDIR%%/html/C/separator.html
-%%DOCSDIR%%/html/C/showdesktop.html
-%%DOCSDIR%%/html/C/systray.html
-%%DOCSDIR%%/html/C/tasklist.html
-%%DOCSDIR%%/html/C/theming.html
-%%DOCSDIR%%/html/C/windowmenu.html
-%%DOCSDIR%%/html/xfce4-panel.css
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/XfceArrowButton.html
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/XfceHVBox.html
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/XfcePanelImage.html
@@ -100,7 +69,6 @@ share/applications/panel-preferences.desktop
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/index.html
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/index.sgml
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/left.png
-%%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-1.0.devhelp
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-1.0.devhelp2
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Commonly-used-plugin-macros.html
 %%APIDOCS%%share/gtk-doc/html/libxfce4panel-1.0/libxfce4panel-Convenience-Functions.html
@@ -172,6 +140,7 @@ share/icons/hicolor/scalable/apps/xfce4-panel.svg
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xfce4-panel.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xfce4-panel.mo
@@ -233,10 +202,6 @@ share/xfce4/panel/plugins/windowmenu.desktop
 %%APIDOCS%%@dirrm share/gtk-doc/html/libxfce4panel-1.0
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
 %%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%/html/C/figures
-@dirrm %%DOCSDIR%%/html/C
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
 @dirrmtry lib/xfce4/panel/plugins
 @dirrmtry lib/xfce4/panel
 @dirrmtry lib/xfce4

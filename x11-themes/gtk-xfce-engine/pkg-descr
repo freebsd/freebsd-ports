@@ -1,3 +1,4 @@
-An Xfce engine for GTK 2.
+This package provides the Xfce Gtk+-2.0 and Gtk+-3.0 engines, which allows
+for homogeneity in applications for both business and personal desktops.
 
-WWW: http://www.xfce4.org/
+WWW: http://www.xfce.org/projects

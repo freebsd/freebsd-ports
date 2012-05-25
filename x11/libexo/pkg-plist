@@ -27,7 +27,6 @@ include/exo-1/exo/exo-utils.h
 include/exo-1/exo/exo-wrap-table.h
 include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
-lib/libexo-1.a
 lib/libexo-1.la
 lib/libexo-1.so
 lib/libexo-1.so.0
@@ -39,60 +38,6 @@ share/applications/exo-mail-reader.desktop
 share/applications/exo-preferred-applications.desktop
 share/applications/exo-terminal-emulator.desktop
 share/applications/exo-web-browser.desktop
-%%DOCSDIR%%/html/C/exo-preferred-applications.html
-%%DOCSDIR%%/html/C/images/exo-preferred-applications-internet.png
-%%DOCSDIR%%/html/C/images/exo-preferred-applications-utilities.png
-%%DOCSDIR%%/html/C/images/exo-preferred-applications-webbrowser-custom.png
-%%DOCSDIR%%/html/C/images/exo-preferred-applications-webbrowser-menu.png
-%%DOCSDIR%%/html/bn/exo-preferred-applications.html
-%%DOCSDIR%%/html/bn/images
-%%DOCSDIR%%/html/ca/exo-preferred-applications.html
-%%DOCSDIR%%/html/ca/images
-%%DOCSDIR%%/html/da/exo-preferred-applications.html
-%%DOCSDIR%%/html/da/images
-%%DOCSDIR%%/html/de/exo-preferred-applications.html
-%%DOCSDIR%%/html/de/images
-%%DOCSDIR%%/html/el/exo-preferred-applications.html
-%%DOCSDIR%%/html/el/images/exo-preferred-applications-internet.png
-%%DOCSDIR%%/html/el/images/exo-preferred-applications-utilities.png
-%%DOCSDIR%%/html/el/images/exo-preferred-applications-webbrowser-custom.png
-%%DOCSDIR%%/html/el/images/exo-preferred-applications-webbrowser-menu.png
-%%DOCSDIR%%/html/es/exo-preferred-applications.html
-%%DOCSDIR%%/html/es/images/exo-preferred-applications-internet.png
-%%DOCSDIR%%/html/es/images/exo-preferred-applications-utilities.png
-%%DOCSDIR%%/html/es/images/exo-preferred-applications-webbrowser-custom.png
-%%DOCSDIR%%/html/es/images/exo-preferred-applications-webbrowser-menu.png
-%%DOCSDIR%%/html/exo-preferred-applications.css
-%%DOCSDIR%%/html/fr/exo-preferred-applications.html
-%%DOCSDIR%%/html/fr/images
-%%DOCSDIR%%/html/gl/exo-preferred-applications.html
-%%DOCSDIR%%/html/gl/images
-%%DOCSDIR%%/html/id/exo-preferred-applications.html
-%%DOCSDIR%%/html/id/images
-%%DOCSDIR%%/html/it/exo-preferred-applications.html
-%%DOCSDIR%%/html/it/images
-%%DOCSDIR%%/html/ja/exo-preferred-applications.html
-%%DOCSDIR%%/html/ja/images/exo-preferred-applications-internet.png
-%%DOCSDIR%%/html/ja/images/exo-preferred-applications-utilities.png
-%%DOCSDIR%%/html/ja/images/exo-preferred-applications-webbrowser-custom.png
-%%DOCSDIR%%/html/ja/images/exo-preferred-applications-webbrowser-menu.png
-%%DOCSDIR%%/html/pt/exo-preferred-applications.html
-%%DOCSDIR%%/html/pt/images
-%%DOCSDIR%%/html/pt_BR/exo-preferred-applications.html
-%%DOCSDIR%%/html/pt_BR/images
-%%DOCSDIR%%/html/ru/exo-preferred-applications.html
-%%DOCSDIR%%/html/ru/images
-%%DOCSDIR%%/html/tr/exo-preferred-applications.html
-%%DOCSDIR%%/html/tr/images
-%%DOCSDIR%%/html/sv/exo-preferred-applications.html
-%%DOCSDIR%%/html/sv/images/exo-preferred-applications-internet.png
-%%DOCSDIR%%/html/sv/images/exo-preferred-applications-utilities.png
-%%DOCSDIR%%/html/sv/images/exo-preferred-applications-webbrowser-custom.png
-%%DOCSDIR%%/html/sv/images/exo-preferred-applications-webbrowser-menu.png
-%%DOCSDIR%%/html/ug/exo-preferred-applications.html
-%%DOCSDIR%%/html/ug/images
-%%DOCSDIR%%/html/zh_CN/exo-preferred-applications.html
-%%DOCSDIR%%/html/zh_CN/images
 %%APIDOCS%%share/gtk-doc/html/exo-1/ExoCellRendererEllipsizedText.html
 %%APIDOCS%%share/gtk-doc/html/exo-1/ExoCellRendererIcon.html
 %%APIDOCS%%share/gtk-doc/html/exo-1/ExoIconBar.html
@@ -108,7 +53,6 @@ share/applications/exo-web-browser.desktop
 %%APIDOCS%%share/gtk-doc/html/exo-1/ExoWrapTable.html
 %%APIDOCS%%share/gtk-doc/html/exo-1/ExoXsessionClient.html
 %%APIDOCS%%share/gtk-doc/html/exo-1/ch01.html
-%%APIDOCS%%share/gtk-doc/html/exo-1/exo-1.devhelp
 %%APIDOCS%%share/gtk-doc/html/exo-1/exo-1.devhelp2
 %%APIDOCS%%share/gtk-doc/html/exo-1/exo-Binding-Properties-Functions.html
 %%APIDOCS%%share/gtk-doc/html/exo-1/exo-Executing-Applications.html
@@ -173,12 +117,14 @@ share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
 %%NLS%%share/locale/ja/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/exo-1.mo
@@ -199,11 +145,11 @@ share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/exo-1.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/exo-1.mo
 share/pixmaps/exo-1/exo-thumbnail-frame.png
-%%PYTHON%%share/pygtk/2.0/defs/%%EXODIR%%/exo.defs
 share/xfce4/helpers/Terminal.desktop
 share/xfce4/helpers/Thunar.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
+share/xfce4/helpers/chromium.desktop
 share/xfce4/helpers/debian-sensible-browser.desktop
 share/xfce4/helpers/debian-x-terminal-emulator.desktop
 share/xfce4/helpers/encompass.desktop
@@ -214,6 +160,7 @@ share/xfce4/helpers/firefox.desktop
 share/xfce4/helpers/galeon.desktop
 share/xfce4/helpers/gnome-terminal.desktop
 share/xfce4/helpers/icedove.desktop
+share/xfce4/helpers/iceweasel.desktop
 share/xfce4/helpers/kmail.desktop
 share/xfce4/helpers/konqueror.desktop
 share/xfce4/helpers/links.desktop
@@ -234,20 +181,6 @@ share/xfce4/helpers/thunderbird.desktop
 share/xfce4/helpers/urxvt.desktop
 share/xfce4/helpers/w3m.desktop
 share/xfce4/helpers/xterm.desktop
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.la
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%
-%%PYTHON%%@dirrm share/pygtk/2.0/defs/%%EXODIR%%
 @dirrm share/xfce4/helpers
 @dirrmtry share/xfce4
 @dirrm share/pixmaps/exo-1
@@ -272,44 +205,12 @@ share/xfce4/helpers/xterm.desktop
 %%APIDOCS%%@dirrm share/gtk-doc/html/exo-1
 %%APIDOCS%%@dirrmtry share/gtk-doc/html
 %%APIDOCS%%@dirrmtry share/gtk-doc
-@dirrm %%DOCSDIR%%/html/zh_CN
-@dirrm %%DOCSDIR%%/html/ug
-@dirrm %%DOCSDIR%%/html/tr
-@dirrm %%DOCSDIR%%/html/sv/images
-@dirrm %%DOCSDIR%%/html/sv
-@dirrm %%DOCSDIR%%/html/ru
-@dirrm %%DOCSDIR%%/html/pt_BR
-@dirrm %%DOCSDIR%%/html/pt
-@dirrm %%DOCSDIR%%/html/ja/images
-@dirrm %%DOCSDIR%%/html/ja
-@dirrm %%DOCSDIR%%/html/it
-@dirrm %%DOCSDIR%%/html/id
-@dirrm %%DOCSDIR%%/html/gl
-@dirrm %%DOCSDIR%%/html/fr
-@dirrm %%DOCSDIR%%/html/es/images
-@dirrm %%DOCSDIR%%/html/es
-@dirrm %%DOCSDIR%%/html/el/images
-@dirrm %%DOCSDIR%%/html/el
-@dirrm %%DOCSDIR%%/html/de
-@dirrm %%DOCSDIR%%/html/da
-@dirrm %%DOCSDIR%%/html/ca
-@dirrm %%DOCSDIR%%/html/bn
-@dirrm %%DOCSDIR%%/html/C/images
-@dirrm %%DOCSDIR%%/html/C
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
 @dirrm lib/xfce4/exo-1
 @dirrmtry lib/xfce4
 @dirrm include/exo-1/exo
 @dirrm include/exo-1
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%
-%%PYTHON%%@dirrm share/pygtk/2.0/defs/%%EXODIR%%
-%%PYTHON%%@dirrmtry share/pygtk/2.0/defs
-%%PYTHON%%@dirrmtry share/pygtk/2.0
-%%PYTHON%%@dirrmtry share/pygtk
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 

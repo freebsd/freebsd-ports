@@ -1,4 +1,3 @@
-lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libxfce.so
 share/themes/Xfce-4.0/gtk-2.0/gtkrc
@@ -21,22 +20,7 @@ share/themes/Xfce-smooth/gtk-2.0/gtkrc
 share/themes/Xfce-stellar/gtk-2.0/gtkrc
 share/themes/Xfce-winter/gtk-2.0/gtkrc
 share/themes/Xfce/gtk-2.0/gtkrc
-@dirrm share/themes/Xfce-4.0/gtk-2.0
-@dirrm share/themes/Xfce-4.0
-@dirrm share/themes/Xfce-4.2/gtk-2.0
-@dirrm share/themes/Xfce-4.2
-@dirrm share/themes/Xfce-4.4/gtk-2.0
-@dirrm share/themes/Xfce-4.4
-@dirrm share/themes/Xfce-4.6/gtk-2.0
-@dirrm share/themes/Xfce-4.6
 @dirrm share/themes/Xfce/gtk-2.0
-@dirrmtry share/themes/Xfce
-@dirrm share/themes/Xfce-cadmium/gtk-2.0
-@dirrm share/themes/Xfce-cadmium
-@dirrm share/themes/Xfce-dawn/gtk-2.0
-@dirrm share/themes/Xfce-dawn
-@dirrm share/themes/Xfce-dusk/gtk-2.0
-@dirrm share/themes/Xfce-dusk
 @dirrm share/themes/Xfce-winter/gtk-2.0
 @dirrm share/themes/Xfce-winter
 @dirrm share/themes/Xfce-stellar/gtk-2.0
@@ -55,13 +39,28 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-kolors
 @dirrm share/themes/Xfce-kde2/gtk-2.0
 @dirrm share/themes/Xfce-kde2
+@dirrm share/themes/Xfce-dusk/gtk-2.0
+@dirrm share/themes/Xfce-dusk
+@dirrm share/themes/Xfce-dawn/gtk-2.0
+@dirrm share/themes/Xfce-dawn
 @dirrm share/themes/Xfce-curve/gtk-2.0
 @dirrm share/themes/Xfce-curve
+@dirrm share/themes/Xfce-cadmium/gtk-2.0
+@dirrm share/themes/Xfce-cadmium
 @dirrm share/themes/Xfce-basic/gtk-2.0
 @dirrm share/themes/Xfce-basic
 @dirrm share/themes/Xfce-b5/gtk-2.0
 @dirrm share/themes/Xfce-b5
-@dirrmtry lib/gtk-2.0/2.4.0/engines
-@dirrmtry lib/gtk-2.0/2.4.0
-@dirrmtry lib/gtk-2.0
+@dirrm share/themes/Xfce-4.6/gtk-2.0
+@dirrm share/themes/Xfce-4.6
+@dirrm share/themes/Xfce-4.4/gtk-2.0
+@dirrm share/themes/Xfce-4.4
+@dirrm share/themes/Xfce-4.2/gtk-2.0
+@dirrm share/themes/Xfce-4.2
+@dirrm share/themes/Xfce-4.0/gtk-2.0
+@dirrm share/themes/Xfce-4.0
+@dirrm share/themes/Xfce
 @dirrmtry share/themes
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
+@dirrmtry lib/gtk-2.0

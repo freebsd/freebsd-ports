@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxfce4gui
-PORTVERSION=	4.8.1
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-toolkits xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/archive/libxfcegui4/${PORTVERSION:R}
@@ -26,9 +26,10 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	sm x11
 
+CONFIGURE_ARGS+=--disable-gtk-doc-html
+
 OPTIONS=	NLS	"Enable Native Language Support"	on  \
 		STARTUP	"Use libstartup-notification"		on  \
-		GLADEUI	"Glade interface designer"		off \
 		APIDOCS	"Install api documentation"		off
 
 .include <bsd.port.pre.mk>
@@ -49,15 +50,6 @@ CONFIGURE_ARGS+=--enable-startup-notification
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
-.if defined(WITH_GLADEUI)
-LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
-CONFIGURE_ARGS+=--enable-gladeui
-PLIST_SUB+=	GLADE3=""
-.else
-CONFIGURE_ARGS+=--disable-gladeui
-PLIST_SUB+=	GLADE3="@comment "
-.endif
-
 .if defined(WITHOUT_APIDOCS)
 CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
@@ -65,8 +57,5 @@ PLIST_SUB+=	APIDOCS="@comment "
 CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
 PLIST_SUB+=	APIDOCS=""
 .endif
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(GMSGFMT)|$$(MSGFMT)|g' \
-		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.post.mk>

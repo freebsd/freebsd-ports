@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	garcon
-PORTVERSION=	0.1.11
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -21,6 +20,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libutil
+
+CONFIGURE_ARGS+=--disable-gtk-doc-html
 
 OPTIONS=	NLS	"Enable Native Language Support"	on \
 		APIDOCS	"Install api documentation"		off

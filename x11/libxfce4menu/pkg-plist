@@ -1,3 +1,4 @@
+bin/xfce4-about
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcut-dialog.h
 include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts-grabber.h
@@ -22,6 +23,7 @@ lib/libxfce4ui-1.so
 lib/libxfce4ui-1.so.0
 libdata/pkgconfig/libxfce4kbd-private-2.pc
 libdata/pkgconfig/libxfce4ui-1.pc
+share/applications/xfce4-about.desktop
 %%APIDOCS%%share/gtk-doc/html/libxfce4ui/XfceSMClient.html
 %%APIDOCS%%share/gtk-doc/html/libxfce4ui/home.png
 %%APIDOCS%%share/gtk-doc/html/libxfce4ui/index.html
@@ -43,6 +45,7 @@ libdata/pkgconfig/libxfce4ui-1.pc
 %%APIDOCS%%share/gtk-doc/html/libxfce4ui/right.png
 %%APIDOCS%%share/gtk-doc/html/libxfce4ui/style.css
 %%APIDOCS%%share/gtk-doc/html/libxfce4ui/up.png
+share/icons/hicolor/48x48/apps/xfce4-logo.png
 %%NLS%%share/locale/ar/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/libxfce4ui.mo
@@ -67,10 +70,11 @@ libdata/pkgconfig/libxfce4ui-1.pc
 %%NLS%%share/locale/kk/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ku/LC_MESSAGES/libxfce4ui.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/libxfce4ui.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libxfce4ui.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/libxfce4ui.mo
@@ -88,6 +92,7 @@ libdata/pkgconfig/libxfce4ui-1.pc
 %%NLS%%share/locale/uk/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/libxfce4ui.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libxfce4ui.mo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
@@ -122,3 +127,5 @@ libdata/pkgconfig/libxfce4ui-1.pc
 @dirrmtry etc/xdg/xfce4/xfconf
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
+@exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true

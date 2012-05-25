@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.8.3
+PORTVERSION=	4.10.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -24,7 +23,6 @@ OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
 		NLS		"Enable Native Language Support"	on \
 		SOUND		"Enable sound control"	off
 
-CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -32,8 +30,11 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 desktopfileutils intltool intlhack \
 		pkgconfig
-USE_XFCE=	configenv libexo libmenu libutil xfconf
+USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	inputproto x11 xi
+
+CONFIGURE_ARGS=	--enable-pluggable-dialogs \
+	--enable-gio-unix
 
 .include <bsd.port.pre.mk>
 

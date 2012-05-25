@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.8.3
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Session manager for the Xfce 4 desktop environment
+COMMENT=	Xfce's session manager
+
+#CONFLICTS=	xfce4-utils-4.8.*
 
 BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth \
@@ -28,19 +29,20 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig desktopfileutils
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_XORG=	x11 sm ice
 
-CONFIGURE_ARGS+=	--enable-panel-plugin \
-		--enable-session-screenshots \
-		--enable-legacy-sm \
-		--disable-gnome \
-		--disable-libgnome-keyring
+CONFIGURE_ARGS+=--enable-legacy-sm \
+	--disable-libgnome-keyring \
+	--with-xsession-prefix=${LOCALBASE}
 
-OPTIONS=	NLS	"Enable Native Language Support"	on  \
-		HAL	"Enable HAL Support"			off
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+OPTIONS=	NLS	"Enable Native Language Support"	on \
+	GNUPG "Add support of GNU Privacy Guard" off
 
 .include <bsd.port.options.mk>
 
@@ -56,13 +58,15 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-.if !defined(WITHOUT_HAL)
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-.else
-CONFIGURE_ARGS+=--disable-hal
+
+.if defined(WITH_GNUPG)
+RUN_DEPENDS+=	gpg-agent:${PORTSDIR}/security/gnupg
 .endif
 
 post-install:
-	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${PKGMESSAGE}
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+	@-update-desktop-database
 
 .include <bsd.port.mk>

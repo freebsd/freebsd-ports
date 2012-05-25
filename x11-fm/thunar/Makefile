@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -31,7 +30,7 @@ OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		NLS		"Enable Native Language Support"		on  \
 		STARTUP		"Enable startup notification support"		on  \
 		NOTIFY		"Enable mount notifications support"		on  \
-		APIDOCS		"Install api documentation"			on  \
+		APIDOCS		"Install api documentation"			off  \
 		PLUG_APR	"Thunar Advanced Properties plugin"		on  \
 		PLUG_APR_EXIF	"Exif support for the APR plugin"		off \
 		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		on  \
@@ -41,10 +40,9 @@ OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		PLUG_WALL	"Thunar Wallpaper plugin"			on \
 		GVFS		"Add support for remote access"			on
 
-CONFIGURE_ARGS+=	--disable-debug \
+CONFIGURE_ARGS+=	--disable-gtk-doc-html \
 		--enable-gio-unix \
 		--disable-gudev
-CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 
 MAN1=		Thunar.1
 
@@ -150,12 +148,6 @@ USE_GNOME+=gvfs
 .if (${OSVERSION} < 701000)
 CFLAGS+=	-DHAVE_SYS_MOUNT_H
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|docdir = .*|docdir = ${DOCSDIR}|' \
-		${WRKSRC}/docs/Makefile.in
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|enable_val|enableval|g' ${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database

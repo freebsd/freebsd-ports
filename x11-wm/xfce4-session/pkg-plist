@@ -1,18 +1,18 @@
+bin/startxfce4
 bin/xfce4-session
 bin/xfce4-session-logout
 bin/xfce4-session-settings
-bin/xfce4-tips
-etc/xdg/autostart/xfce4-tips-autostart.desktop
+bin/xflock4
+etc/xdg/autostart/xscreensaver.desktop
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
+etc/xdg/xfce4/Xft.xrdb
+etc/xdg/xfce4/xinitrc
 include/xfce4/xfce4-session-%%VERSION%%/libxfsm/xfsm-splash-engine.h
 include/xfce4/xfce4-session-%%VERSION%%/libxfsm/xfsm-splash-rc.h
 lib/libxfsm-%%VERSION%%.a
 lib/libxfsm-%%VERSION%%.la
 lib/libxfsm-%%VERSION%%.so
 lib/libxfsm-%%VERSION%%.so.0
-lib/xfce4/panel/plugins/libxfsm-logout-plugin.a
-lib/xfce4/panel/plugins/libxfsm-logout-plugin.la
-lib/xfce4/panel/plugins/libxfsm-logout-plugin.so
 lib/xfce4/session/balou-export-theme
 lib/xfce4/session/balou-install-theme
 lib/xfce4/session/splash-engines/libbalou.a
@@ -28,39 +28,8 @@ lib/xfce4/session/xfsm-shutdown-helper
 libdata/pkgconfig/xfce4-session-2.0.pc
 share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
-%%DOCSDIR%%/html/C/images/xfsm-advanced.png
-%%DOCSDIR%%/html/C/images/xfsm-general.png
-%%DOCSDIR%%/html/C/images/xfsm-splash.png
-%%DOCSDIR%%/html/C/index.html
-%%DOCSDIR%%/html/da/images
-%%DOCSDIR%%/html/da/index.html
-%%DOCSDIR%%/html/el/images/xfsm-advanced.png
-%%DOCSDIR%%/html/el/images/xfsm-general.png
-%%DOCSDIR%%/html/el/images/xfsm-splash.png
-%%DOCSDIR%%/html/el/index.html
-%%DOCSDIR%%/html/gl/images
-%%DOCSDIR%%/html/gl/index.html
-%%DOCSDIR%%/html/hr/images
-%%DOCSDIR%%/html/hr/index.html
-%%DOCSDIR%%/html/it/images
-%%DOCSDIR%%/html/it/index.html
-%%DOCSDIR%%/html/ja/images
-%%DOCSDIR%%/html/ja/index.html
-%%DOCSDIR%%/html/pt_BR/images
-%%DOCSDIR%%/html/pt_BR/index.html
-%%DOCSDIR%%/html/ru/images
-%%DOCSDIR%%/html/ru/index.html
-%%DOCSDIR%%/html/sv/images
-%%DOCSDIR%%/html/sv/index.html
-%%DOCSDIR%%/html/tr/images
-%%DOCSDIR%%/html/tr/index.html
-%%DOCSDIR%%/html/ug/images
-%%DOCSDIR%%/html/ug/index.html
-%%DOCSDIR%%/html/xfce4-session.css
-%%DOCSDIR%%/html/zh_CN/images
-%%DOCSDIR%%/html/zh_CN/index.html
+share/xsessions/xfce.desktop
 share/icons/hicolor/128x128/apps/xfce4-session.png
-share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-splash.png
 share/icons/hicolor/48x48/apps/xfsm-hibernate.png
@@ -68,9 +37,6 @@ share/icons/hicolor/48x48/apps/xfsm-logout.png
 share/icons/hicolor/48x48/apps/xfsm-reboot.png
 share/icons/hicolor/48x48/apps/xfsm-shutdown.png
 share/icons/hicolor/48x48/apps/xfsm-suspend.png
-share/icons/hicolor/64x64/apps/xfsm-gnome-kde-logo.png
-share/icons/hicolor/72x72/apps/xfsm-trash-hilight.png
-share/icons/hicolor/72x72/apps/xfsm-trash-normal.png
 share/icons/hicolor/scalable/apps/xfce4-session.svg
 share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 %%NLS%%share/locale/am/LC_MESSAGES/xfce4-session.mo
@@ -139,8 +105,6 @@ share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
-share/xfce4/panel-plugins/xfsm-logout-plugin.desktop
-share/xfce4/tips/tips
 @dirrmtry share/xfce4/tips
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
@@ -167,24 +131,8 @@ share/xfce4/tips/tips
 %%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrm %%DOCSDIR%%/html/zh_CN
-@dirrm %%DOCSDIR%%/html/ug
-@dirrm %%DOCSDIR%%/html/tr
-@dirrm %%DOCSDIR%%/html/sv
-@dirrm %%DOCSDIR%%/html/ru
-@dirrm %%DOCSDIR%%/html/pt_BR
-@dirrm %%DOCSDIR%%/html/ja
-@dirrm %%DOCSDIR%%/html/it
-@dirrm %%DOCSDIR%%/html/hr
-@dirrm %%DOCSDIR%%/html/gl
-@dirrm %%DOCSDIR%%/html/el/images
-@dirrm %%DOCSDIR%%/html/el
-@dirrm %%DOCSDIR%%/html/da
-@dirrm %%DOCSDIR%%/html/C/images
-@dirrm %%DOCSDIR%%/html/C
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrmtry share/xsessions
 @dirrm lib/xfce4/session/splash-engines
 @dirrm lib/xfce4/session
 @dirrmtry lib/xfce4/panel/plugins
@@ -198,3 +146,5 @@ share/xfce4/tips/tips
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

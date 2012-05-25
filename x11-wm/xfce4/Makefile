@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	4.8
+PORTVERSION=	4.10
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -20,16 +20,16 @@ OPTIONS=	ICONS		"Install a full icon theme"		on  \
 		MOUSEPAD	"Install the Xfce text editor"		on  \
 		TERMINAL	"Install the Xfce terminal application"	on  \
 		APPFINDER	"Install the Xfce application finder"	on  \
-		MIXER		"Install the Xfce mixer application"	on  \
-		PRINT		"Install the Xfce printing helper"	on  \
+		MIXER		"Install the Xfce mixer application"	off  \
+		PRINT		"Install the Xfce printing helper"	off  \
 		SQUEEZE		"Install the Xfce archiver application"	on  \
-		GDM		"Install the login manager gdm"		off
+		GDM		"Install the login manager gdm"		off \
+		NOTIFYD		"Install the Xfce notification daemon"		on
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
 		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel \
 		xfdesktop:${PORTSDIR}/x11-wm/xfce4-desktop \
-		startxfce4:${PORTSDIR}/sysutils/xfce4-utils \
 		${LOCALBASE}/lib/gtk-2.0/2.10.0/engines/libxfce.so:${PORTSDIR}/x11-themes/gtk-xfce-engine \
 		xfsettingsd:${PORTSDIR}/sysutils/xfce4-settings
 
@@ -50,8 +50,7 @@ PLIST_DIRS=	etc/gdm/Sessions
 .endif
 
 .if !defined(WITHOUT_ICONS)
-RUN_DEPENDS+=	${LOCALBASE}/share/themes/Xfce/xfwm4/themerc:${PORTSDIR}/misc/xfce4-wm-themes \
-		icons-tango-extras>=0.1.0:${PORTSDIR}/x11-themes/icons-tango-extras
+RUN_DEPENDS+=	icons-tango-extras>=0.1.0:${PORTSDIR}/x11-themes/icons-tango-extras
 .endif
 
 .if !defined(WITHOUT_ORAGE)
@@ -70,16 +69,20 @@ RUN_DEPENDS+=	Terminal:${PORTSDIR}/x11/Terminal
 RUN_DEPENDS+=	xfce4-appfinder:${PORTSDIR}/misc/xfce4-appfinder
 .endif
 
-.if !defined(WITHOUT_MIXER)
+.if defined(WITH_MIXER)
 RUN_DEPENDS+=	${LOCALBASE}/bin/xfce4-mixer:${PORTSDIR}/audio/xfce4-mixer
 .endif
 
-.if !defined(WITHOUT_PRINT)
+.if defined(WITH_PRINT)
 RUN_DEPENDS+=	xfprint4:${PORTSDIR}/print/xfce4-print
 .endif
 
 .if !defined(WITHOUT_SQUEEZE)
 RUN_DEPENDS+=   squeeze:${PORTSDIR}/archivers/squeeze
+.endif
+
+.if !defined(WITHOUT_NOTIFYD)
+RUN_DEPENDS+=	xfce4-notifyd-config:${PORTSDIR}/deskutils/xfce4-notifyd
 .endif
 
 do-install:	# empty

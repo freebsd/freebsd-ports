@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120526:
+  AFFECTS: users of x11-wm/xfce4
+  AUTHOR: xfce@FreeBSD.org
+
+  When upgrading from Xfce 4.8 to 4.10 make sure you uninstall the following
+  ports:
+ 
+    misc/xfce4-utils
+    x11-fm/thunar-vfs
+
+   You may uninstall them before you start the upgrade procedure (preferred)
+   or even afterwards when the upgrade went fine.
+
+
 20120525:
   AFFECTS: users of deskutils/kdepim4, deskutils/kdepim4-runtime
   AUTHOR: kde@FreeBSD.org

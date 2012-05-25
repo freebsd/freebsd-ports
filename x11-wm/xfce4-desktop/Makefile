@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.8.3
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
 DISTNAME=	xfdesktop-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 desktop background manager and root menu
-
-DOCSDIR=	${PREFIX}/share/doc/xfdesktop
+COMMENT=	Xfce's desktop manager
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
@@ -28,10 +25,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig \
 		desktopfileutils
-USE_XFCE=	configenv garcon libmenu libutil xfconf
+USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
 
-CONFIGURE_ARGS+=	--enable-gio-unix \
-		--enable-notifications
+CONFIGURE_ARGS+=--enable-gio-unix \
+	--enable-notifications
 
 OPTIONS=	THUNAR	"Enable thunar support"		on \
 		NLS "Enable Native Language Support" on
@@ -41,10 +38,10 @@ MAN1=		xfdesktop.1
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_THUNAR)
-CONFIGURE_ARGS+=--enable-thunarx --enable-exo
-USE_XFCE+=	libexo thunar
+CONFIGURE_ARGS+=--enable-thunarx --with-file-manager-fallback=Thunar
+USE_XFCE+=	thunar
 .else
-CONFIGURE_ARGS+=--disable-thunarx --disable-exo
+CONFIGURE_ARGS+=--disable-thunarx --without-file-manager-fallback
 .endif
 
 .if !defined(WITHOUT_NLS)

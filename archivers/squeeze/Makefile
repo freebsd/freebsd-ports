@@ -7,7 +7,7 @@
 
 PORTNAME=	squeeze
 PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -16,20 +16,21 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	markand@malikania.fr
 COMMENT=	Squeeze is a modern and advanced archive manager
 
-MAKE_JOB_SAFE=	yes
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	thunar-vfs-1.5:${PORTSDIR}/x11-fm/thunar-vfs
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-USE_XFCE=	configenv panel thunar thunarvfs
+USE_XFCE=	configenv libutil thunar
 USE_XORG=	x11
-USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig desktopfileutils
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
+MAKE_JOB_SAFE=	yes
 
 OPTIONS=	GTKDOC "Enable GTK html documentation" off
 
