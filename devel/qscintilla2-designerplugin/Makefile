@@ -15,7 +15,7 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Designer plugin for QScintilla2 (Qt4)
 
-LIB_DEPENDS=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
 
 DISTINFO_FILE=	${QSCI2_DISTINFO_FILE}
 USE_QT_VER=	4

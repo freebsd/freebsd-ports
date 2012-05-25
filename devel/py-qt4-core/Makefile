@@ -50,7 +50,7 @@ ARGS+=		--debug
 ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
 .else
-LIB_DEPENDS+=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS+=	qscintilla2.8:${PORTSDIR}/devel/qscintilla2
 ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
 .endif
