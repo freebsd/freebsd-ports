@@ -8,7 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -80,7 +80,7 @@ PLIST_SUB+=	LIRC="@comment "
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=		mtp.11:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=		mtp.9:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=		MTP=""
 CONFIGURE_ARGS+=	--with-mtp
 .else

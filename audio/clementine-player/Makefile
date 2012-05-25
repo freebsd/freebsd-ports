@@ -7,7 +7,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -65,7 +65,7 @@ CMAKE_ARGS+=	-DENABLE_LIBGPOD=Off
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp.9:${PORTSDIR}/audio/libmtp
 .else
 CMAKE_ARGS+=	-DENABLE_LIBMTP=Off
 .endif

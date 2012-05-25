@@ -1,3 +1,4 @@
+
 # New ports collection makefile for:	audacious
 # Date created:			2006-01-01
 # Whom:				Zastupov Stepan [RedChrom] <redchrom@mail.ru>
@@ -7,6 +8,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -285,7 +287,7 @@ PLIST_SUB+=	MMSPLUGIN="@comment "
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp.9:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--enable-mtp_up
 PLIST_SUB+=	MTPPLUGIN=""
 .else
