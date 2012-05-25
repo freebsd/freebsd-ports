@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	String-Flogger
-PORTVERSION=	1.101241
+PORTVERSION=	1.101242
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Params-Util>0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.82:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
