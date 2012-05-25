@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xfce4-time-out-plugin
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -21,6 +21,6 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libutil panel
+USE_XFCE=	configenv libmenu libutil panel
 
 .include <bsd.port.mk>
