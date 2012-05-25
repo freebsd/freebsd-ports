@@ -24,6 +24,7 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/SQ.pm
 %%SITE_PERL%%/Lingua/Identify/SV.pm
 %%SITE_PERL%%/Lingua/Identify/TR.pm
+%%SITE_PERL%%/Lingua/Identify/UK.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Identify/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Identify
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua

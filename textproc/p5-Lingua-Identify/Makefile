@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -47,6 +47,7 @@ MAN3=	Lingua::Identify.3 \
 	Lingua::Identify::SL.3 \
 	Lingua::Identify::SQ.3 \
 	Lingua::Identify::SV.3 \
-	Lingua::Identify::TR.3
+	Lingua::Identify::TR.3 \
+	Lingua::Identify::UK.3
 
 .include <bsd.port.mk>
