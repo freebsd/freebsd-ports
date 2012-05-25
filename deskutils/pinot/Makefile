@@ -7,7 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 #MASTER_SITES=	http://colinf.chez.com/pinot/
@@ -39,8 +39,6 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		unzip:${PORTSDIR}/archivers/unzip			\
 		unrtf:${PORTSDIR}/textproc/unrtf			\
 		catdvi:${PORTSDIR}/print/catdvi
-
-BROKEN=		unsatisfiable dependency on xpdf
 
 PROJECTHOST=	${PORTNAME}-search
 
@@ -93,6 +91,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 post-extract:
 # remove pre-generated messages catalogs
 	${FIND} ${WRKSRC}/po -name "*.gmo" -delete
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		'/<command>/s|pdftotext|${LOCALBASE}/libexec/xpdf/pdftotext|' \
+		${WRKSRC}/Tokenize/filters/external-filters.xml
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|' ${WRKSRC}/configure

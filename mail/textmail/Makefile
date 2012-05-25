@@ -7,7 +7,7 @@
 
 PORTNAME=	textmail
 PORTVERSION=	20070803
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://raf.org/textmail/ CENKES
 
@@ -18,14 +18,15 @@ RUN_DEPENDS=	antiword:${PORTSDIR}/textproc/antiword \
 		catdoc:${PORTSDIR}/textproc/catdoc \
 		xls2csv:${PORTSDIR}/textproc/catdoc \
 		lynx:${PORTSDIR}/www/lynx \
-		pdftotext:${PORTSDIR}/graphics/xpdf
-
-BROKEN=		unsatisfiable dependency on xpdf
+		${LOCALBASE}/libexec/xpdf/pdftotext:${PORTSDIR}/graphics/xpdf
 
 USE_PERL5=	yes
 PLIST_FILES=	bin/${PORTNAME}
 NO_WRKSUBDIR=	yes
 MAN1=	${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e '3s|^|\${.newline}$$ENV{'PATH'} = "${LOCALBASE}/libexec/xpdf:$$ENV{'PATH'}";\${.newline}|' ${WRKSRC}/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC}/&&pod2man ${PORTNAME}>${PORTNAME}.1
