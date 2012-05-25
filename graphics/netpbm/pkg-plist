@@ -329,6 +329,7 @@ include/pbm.h
 include/pbmfont.h
 include/pgm.h
 include/pm.h
+include/pm_c_util.h
 include/pm_config.h
 include/pm_gamma.h
 include/pm_system.h
