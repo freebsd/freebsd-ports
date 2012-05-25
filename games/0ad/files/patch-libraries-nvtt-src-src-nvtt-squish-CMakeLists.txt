@@ -1,0 +1,11 @@
+--- libraries/nvtt/src/src/nvtt/squish/CMakeLists.txt.orig	2012-05-17 23:33:39.561531637 +0200
++++ libraries/nvtt/src/src/nvtt/squish/CMakeLists.txt	2012-05-17 23:33:51.665531705 +0200
+@@ -22,7 +22,4 @@
+ 
+ ADD_LIBRARY(squish STATIC ${SQUISH_SRCS})
+ 
+-IF(CMAKE_COMPILER_IS_GNUCXX)
+-	SET_TARGET_PROPERTIES(squish PROPERTIES COMPILE_FLAGS -fPIC)
+-ENDIF(CMAKE_COMPILER_IS_GNUCXX)
+-
++SET_TARGET_PROPERTIES(squish PROPERTIES COMPILE_FLAGS -fPIC)
