@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	lndir
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	Create a shadow directory of symbolic links to another directory tree
+
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xorg-macros.pc:${PORTSDIR}/devel/xorg-macros
 
 XORG_CAT=	util
 USE_XORG=	xproto
