@@ -1,0 +1,15 @@
+--- SConstruct.orig	2012-05-21 16:35:59.000000000 +0400
++++ SConstruct	2012-05-21 16:43:47.000000000 +0400
+@@ -308,6 +308,12 @@
+ if os.environ.has_key('SWIG'):
+ 	env['SWIG'] = os.environ['SWIG']
+ 
++if os.environ.has_key('CXX'):
++	env['CXX'] = os.environ['CXX']
++
++if os.environ.has_key('CPP'):
++	env['CPP'] = os.environ['CPP']
++
+ haveusercxxflags = False
+ 
+ if os.environ.has_key('CXXFLAGS'):

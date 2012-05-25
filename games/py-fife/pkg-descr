@@ -1,0 +1,5 @@
+FIFE is a cross platform 2D game creation framework written in C++ with Python
+bindings. It's designed to be flexible enough to support a wide variety of
+2D game types but specializes in 2D isometric type views.
+
+WWW: http://www.fifengine.net/
