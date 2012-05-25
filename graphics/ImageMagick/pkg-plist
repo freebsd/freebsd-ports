@@ -155,7 +155,7 @@ include/ImageMagick/wand/pixel-wand.h
 include/ImageMagick/wand/stream.h
 include/ImageMagick/wand/wand-view.h
 lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
-lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/art.la
@@ -388,7 +388,7 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/ycbcr.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/yuv.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/yuv.so
-lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/.keep
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/analyze.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/analyze.so
 lib/libMagick++.a
