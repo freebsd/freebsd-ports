@@ -1,3 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Wrapper/.packlist
 %%SITE_PERL%%/Text/Wrapper.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Wrapper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

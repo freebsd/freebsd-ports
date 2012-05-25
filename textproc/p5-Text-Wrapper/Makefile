@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Wrapper
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Simple word wrapping routine
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	5.10+
 
 MAN3=		Text::Wrapper.3
 
