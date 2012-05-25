@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	kde4-style-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configurable KDE style
 
+IGNORE=		does not build with KDE SC 4.8
+
 WRKSRC=		${WRKDIR}/cloudcity
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT_VER=	4
