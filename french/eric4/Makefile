@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	french devel python
 
 I18N_LANG=	fr

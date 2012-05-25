@@ -7,14 +7,14 @@
 
 PORTNAME=	universalindentgui
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/universalindent/uigui/UniversalIndentGUI_${PORTVERSION}
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Graphical UI for multiple source code indent/format/beautify tools
 
-LIB_DEPENDS=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build \
