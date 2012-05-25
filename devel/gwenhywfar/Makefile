@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.3
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=66&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=67&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Multi-platform helper library for networking and security applications
@@ -73,8 +73,7 @@ PLIST_SUB+=	WITH_GTK2="@comment "
 .endif
 
 .if defined(WITH_QT4)
-USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build uic_build
+USE_QT4=	gui moc_build uic_build
 QT_NONSTANDARD=	yes
 PLIST_SUB+=	WITH_QT4=""
 _GWEN_GUIS+=	qt4
