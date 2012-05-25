@@ -1,3 +1,0 @@
-- Replace blind sed with patch: don't install qtdeclarative files if
-  KDEPIM_MOBILE_UI is not defined
-- Drop needless replacement from qt3toqt4headers. only 4 left
