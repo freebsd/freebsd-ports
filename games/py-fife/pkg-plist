@@ -1,0 +1,584 @@
+%%PYTHON_SITELIBDIR%%/fife/extensions/basicapplication.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/fifelog.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/fife_compat.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/fife_settings.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/fife_timer.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/fife_utils.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/filebrowser.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/loaders.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/attrs.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/autoposition.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/compat.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/dialogs.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/events.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/exceptions.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/fonts.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/internal.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/properties.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/tools.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/basictextwidget.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/buttons.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/checkbox.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/common.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/containers.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/dropdown.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/ext/__init__.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/icon.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/label.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/layout.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/listbox.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/percentagebar.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/radiobutton.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/scrollarea.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/slider.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/textbox.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/textfield.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/widget.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/__init__.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pychan/__init__.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/pythonize.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/savers.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/simplexml.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/xmlanimation.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/xmlmap.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/xmlmapsaver.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/xmlobject.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/xml_loader_tools.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/serializers/__init__.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/soundmanager.py
+%%PYTHON_SITELIBDIR%%/fife/extensions/__init__.py
+%%PYTHON_SITELIBDIR%%/fife/fife.py
+%%PYTHON_SITELIBDIR%%/fife/_fife.so
+%%PYTHON_SITELIBDIR%%/fife/__init__.py
+%%DATADIR%%/demos/pychan_demo/colortester.py
+%%DATADIR%%/demos/pychan_demo/dynamic.py
+%%DATADIR%%/demos/pychan_demo/fonts/freefont.fontdef
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/AUTHORS
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/ChangeLog
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/COPYING
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/CREDITS
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeMono.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeMonoBold.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeMonoBoldOblique.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeMonoOblique.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSans.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSansBold.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSansBoldOblique.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSansOblique.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSerif.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSerifBold.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSerifBoldItalic.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/FreeSerifItalic.ttf
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/INSTALL
+%%DATADIR%%/demos/pychan_demo/fonts/freefont/README
+%%DATADIR%%/demos/pychan_demo/fonts/samanata.fontdef
+%%DATADIR%%/demos/pychan_demo/fonts/samanata.ttf
+%%DATADIR%%/demos/pychan_demo/gui/absolute.xml
+%%DATADIR%%/demos/pychan_demo/gui/all_widgets.xml
+%%DATADIR%%/demos/pychan_demo/gui/backgrounds/background.png
+%%DATADIR%%/demos/pychan_demo/gui/backgrounds/stripe.png
+%%DATADIR%%/demos/pychan_demo/gui/colortester.xml
+%%DATADIR%%/demos/pychan_demo/gui/credits.xml
+%%DATADIR%%/demos/pychan_demo/gui/demoapp.xml
+%%DATADIR%%/demos/pychan_demo/gui/dynamic.xml
+%%DATADIR%%/demos/pychan_demo/gui/icons/pychan_logo.png
+%%DATADIR%%/demos/pychan_demo/gui/loadmap.xml
+%%DATADIR%%/demos/pychan_demo/gui/poc_guianimation.xml
+%%DATADIR%%/demos/pychan_demo/gui/scrollarea.xml
+%%DATADIR%%/demos/pychan_demo/gui/slider.xml
+%%DATADIR%%/demos/pychan_demo/gui/stretching.xml
+%%DATADIR%%/demos/pychan_demo/gui/styling.xml
+%%DATADIR%%/demos/pychan_demo/poc_gui_animation.py
+%%DATADIR%%/demos/pychan_demo/pychan_demo.py
+%%DATADIR%%/demos/pychan_demo/settings-dist.xml
+%%DATADIR%%/demos/pychan_demo/sliders.py
+%%DATADIR%%/demos/pychan_demo/stretching.py
+%%DATADIR%%/demos/pychan_demo/styling.py
+%%DATADIR%%/demos/rio_de_hola/fonts/FreeSans.ttf
+%%DATADIR%%/demos/rio_de_hola/fonts/rpgfont.png
+%%DATADIR%%/demos/rio_de_hola/gui/help.xml
+%%DATADIR%%/demos/rio_de_hola/gui/icons/boy.png
+%%DATADIR%%/demos/rio_de_hola/gui/instancemenu.xml
+%%DATADIR%%/demos/rio_de_hola/gui/rootpanel.xml
+%%DATADIR%%/demos/rio_de_hola/LICENSE
+%%DATADIR%%/demos/rio_de_hola/maps/shrine.xml
+%%DATADIR%%/demos/rio_de_hola/maps/tourist_beach.xml
+%%DATADIR%%/demos/rio_de_hola/maps/tourist_beach_test.xml
+%%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup/LICENSE
+%%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup/non-animated_object_rendersetup.blend
+%%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup/rendering_setup.blend
+%%DATADIR%%/demos/rio_de_hola/misc/diamond_160x96_template_v01.blend
+%%DATADIR%%/demos/rio_de_hola/misc/infotext.txt
+%%DATADIR%%/demos/rio_de_hola/misc/mask_diamond_126_96.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing045/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing045/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing045/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing045/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing090/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing090/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing090/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing090/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing135/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing135/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing135/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing135/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing180/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing180/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing180/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing180/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing225/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing225/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing225/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing225/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing270/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing270/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing270/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing270/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing315/045r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing315/135r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing315/225r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing315/315r.png
+%%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/source/deckchair-blue.blend
+%%DATADIR%%/demos/rio_de_hola/music/bees.ogg
+%%DATADIR%%/demos/rio_de_hola/music/chat.ogg
+%%DATADIR%%/demos/rio_de_hola/music/game_over.ogg
+%%DATADIR%%/demos/rio_de_hola/music/matches.ogg
+%%DATADIR%%/demos/rio_de_hola/music/menu.ogg
+%%DATADIR%%/demos/rio_de_hola/music/rio_de_hola.ogg
+%%DATADIR%%/demos/rio_de_hola/music/victory.ogg
+%%DATADIR%%/demos/rio_de_hola/objects/agents/bee/attack.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/bee/fall.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/bee/fly.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/bee/get_hit.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/bee/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/bee/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/beekeeper/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/beekeeper/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/beekeeper/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/beekeeper/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/cheer.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/kick.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/run.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/boy/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/experiment.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/read.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/repair.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/chemist/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/girl/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/girl/run.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/girl/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/girl/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/girl/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/attack.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/cast_spell.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/fall.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/get_hit.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/read.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/run.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/merchant/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/merchant/pray.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/merchant/run.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/merchant/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/merchant/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female1/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female1/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female1/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female1/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female2/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female2/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female2/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female2/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male1/bend_down.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male1/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male1/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male1/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male1/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male2/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male2/run.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male2/stand.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male2/talk.png
+%%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male2/walk.png
+%%DATADIR%%/demos/rio_de_hola/objects/buildings.png
+%%DATADIR%%/demos/rio_de_hola/objects/buildings.xml
+%%DATADIR%%/demos/rio_de_hola/objects/clouds/disappear.png
+%%DATADIR%%/demos/rio_de_hola/objects/clouds/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid/045.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid/090.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid/135.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid/open.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid/045.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid/090.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid/135.png
+%%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid/object.xml
+%%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid/open.png
+%%DATADIR%%/demos/rio_de_hola/objects/ground1.png
+%%DATADIR%%/demos/rio_de_hola/objects/ground1.xml
+%%DATADIR%%/demos/rio_de_hola/objects/ground2.png
+%%DATADIR%%/demos/rio_de_hola/objects/ground2.xml
+%%DATADIR%%/demos/rio_de_hola/objects/items1.png
+%%DATADIR%%/demos/rio_de_hola/objects/items1.xml
+%%DATADIR%%/demos/rio_de_hola/objects/items2.png
+%%DATADIR%%/demos/rio_de_hola/objects/items2.xml
+%%DATADIR%%/demos/rio_de_hola/objects/nature.png
+%%DATADIR%%/demos/rio_de_hola/objects/nature.xml
+%%DATADIR%%/demos/rio_de_hola/package.xml
+%%DATADIR%%/demos/rio_de_hola/run.py
+%%DATADIR%%/demos/rio_de_hola/scripts/agents/agent.py
+%%DATADIR%%/demos/rio_de_hola/scripts/agents/beekeeper.py
+%%DATADIR%%/demos/rio_de_hola/scripts/agents/cloud.py
+%%DATADIR%%/demos/rio_de_hola/scripts/agents/girl.py
+%%DATADIR%%/demos/rio_de_hola/scripts/agents/hero.py
+%%DATADIR%%/demos/rio_de_hola/scripts/agents/__init__.py
+%%DATADIR%%/demos/rio_de_hola/scripts/common/common.py
+%%DATADIR%%/demos/rio_de_hola/scripts/common/eventlistenerbase.py
+%%DATADIR%%/demos/rio_de_hola/scripts/common/__init__.py
+%%DATADIR%%/demos/rio_de_hola/scripts/world.py
+%%DATADIR%%/demos/rio_de_hola/scripts/__init__.py
+%%DATADIR%%/demos/rio_de_hola/settings-dist.xml
+%%DATADIR%%/demos/rio_de_hola/sounds/explosion.ogg
+%%DATADIR%%/demos/rio_de_hola/sounds/footstep.ogg
+%%DATADIR%%/demos/rio_de_hola/sounds/waves.ogg
+%%DATADIR%%/demos/shooter/fonts/FreeSans.ttf
+%%DATADIR%%/demos/shooter/gui/credits.txt
+%%DATADIR%%/demos/shooter/gui/credits.xml
+%%DATADIR%%/demos/shooter/gui/gameover.xml
+%%DATADIR%%/demos/shooter/gui/highscoredialog.xml
+%%DATADIR%%/demos/shooter/gui/hstemplate.xml
+%%DATADIR%%/demos/shooter/gui/hud.xml
+%%DATADIR%%/demos/shooter/gui/mainmenu.xml
+%%DATADIR%%/demos/shooter/gui/winner.xml
+%%DATADIR%%/demos/shooter/LICENSE
+%%DATADIR%%/demos/shooter/maps/shooter_map1.xml
+%%DATADIR%%/demos/shooter/music/waynesmind2.ogg
+%%DATADIR%%/demos/shooter/objects/backgrounds/starfield/object.xml
+%%DATADIR%%/demos/shooter/objects/backgrounds/starfield/starfield.png
+%%DATADIR%%/demos/shooter/objects/powerups/cannonspread5/cannon_spread.png
+%%DATADIR%%/demos/shooter/objects/powerups/cannonspread5/object.xml
+%%DATADIR%%/demos/shooter/objects/powerups/extralife/extralife.png
+%%DATADIR%%/demos/shooter/objects/powerups/extralife/object.xml
+%%DATADIR%%/demos/shooter/objects/projectiles/bullet1/bullet1.png
+%%DATADIR%%/demos/shooter/objects/projectiles/bullet1/object.xml
+%%DATADIR%%/demos/shooter/objects/projectiles/fireball/fire_ball.png
+%%DATADIR%%/demos/shooter/objects/projectiles/fireball/object.xml
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/boss_0.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/boss_1.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/boss_2.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/boss_3.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/boss_4.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/explode/boss_5.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/flash/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/boss1/flash/boss_0.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/flash/boss_1.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/fly/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/boss1/fly/boss.png
+%%DATADIR%%/demos/shooter/objects/ships/boss1/object.xml
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/ship1_0.png
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/ship1_1.png
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/ship1_2.png
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/ship1_3.png
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/ship1_4.png
+%%DATADIR%%/demos/shooter/objects/ships/player/explode/ship1_5.png
+%%DATADIR%%/demos/shooter/objects/ships/player/flash/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/player/flash/ship1_0.png
+%%DATADIR%%/demos/shooter/objects/ships/player/flash/ship1_1.png
+%%DATADIR%%/demos/shooter/objects/ships/player/fly/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/player/fly/ship1.png
+%%DATADIR%%/demos/shooter/objects/ships/player/object.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/saucer1_0.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/saucer1_1.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/saucer1_2.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/saucer1_3.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/saucer1_4.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/explode/saucer1_5.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/flash/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/flash/saucer1_0.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/flash/saucer1_1.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/fly/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/fly/saucer1.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer1/object.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/saucer2_0.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/saucer2_1.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/saucer2_2.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/saucer2_3.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/saucer2_4.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/explode/saucer2_5.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/flash/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/flash/saucer2_0.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/flash/saucer2_1.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/fly/animation.xml
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/fly/saucer2.png
+%%DATADIR%%/demos/shooter/objects/ships/saucer2/object.xml
+%%DATADIR%%/demos/shooter/run.py
+%%DATADIR%%/demos/shooter/scripts/common/baseobject.py
+%%DATADIR%%/demos/shooter/scripts/common/eventlistenerbase.py
+%%DATADIR%%/demos/shooter/scripts/common/__init__.py
+%%DATADIR%%/demos/shooter/scripts/gui/guis.py
+%%DATADIR%%/demos/shooter/scripts/gui/__init__.py
+%%DATADIR%%/demos/shooter/scripts/powerups.py
+%%DATADIR%%/demos/shooter/scripts/scene.py
+%%DATADIR%%/demos/shooter/scripts/ships/enemies.py
+%%DATADIR%%/demos/shooter/scripts/ships/player.py
+%%DATADIR%%/demos/shooter/scripts/ships/shipbase.py
+%%DATADIR%%/demos/shooter/scripts/ships/__init__.py
+%%DATADIR%%/demos/shooter/scripts/weapons.py
+%%DATADIR%%/demos/shooter/scripts/world.py
+%%DATADIR%%/demos/shooter/scripts/__init__.py
+%%DATADIR%%/demos/shooter/settings-dist.xml
+%%DATADIR%%/demos/shooter/sounds/bossexplode.ogg
+%%DATADIR%%/demos/shooter/sounds/cannon.ogg
+%%DATADIR%%/demos/shooter/sounds/explode.ogg
+%%DATADIR%%/demos/shooter/sounds/fireball.ogg
+%%DATADIR%%/demos/shooter/sounds/hit.ogg
+%%DATADIR%%/demos/shooter/sounds/pickup.ogg
+%%DATADIR%%/tools/animation_generator.py
+%%DATADIR%%/tools/animpacker.py
+%%DATADIR%%/tools/atlas/atlas.h
+%%DATADIR%%/tools/atlas/atlascreator.pro
+%%DATADIR%%/tools/atlas/glwidget.cpp
+%%DATADIR%%/tools/atlas/glwidget.h
+%%DATADIR%%/tools/atlas/LICENSE
+%%DATADIR%%/tools/atlas/main.cpp
+%%DATADIR%%/tools/atlas/mainwindow.cpp
+%%DATADIR%%/tools/atlas/mainwindow.h
+%%DATADIR%%/tools/atlas/mainwindow.ui
+%%DATADIR%%/tools/atlas/objectcreator.cpp
+%%DATADIR%%/tools/atlas/objectcreator.h
+%%DATADIR%%/tools/atlas/objectcreator.ui
+%%DATADIR%%/tools/atlas/rapidxml/license.txt
+%%DATADIR%%/tools/atlas/rapidxml/manual.html
+%%DATADIR%%/tools/atlas/rapidxml/rapidxml.hpp
+%%DATADIR%%/tools/atlas/rapidxml/rapidxml_iterators.hpp
+%%DATADIR%%/tools/atlas/rapidxml/rapidxml_print.hpp
+%%DATADIR%%/tools/atlas/rapidxml/rapidxml_utils.hpp
+%%DATADIR%%/tools/atlas/resources.qrc
+%%DATADIR%%/tools/atlas/resources/add.png
+%%DATADIR%%/tools/atlas/resources/remove.png
+%%DATADIR%%/tools/atlas/resources/save.png
+%%DATADIR%%/tools/atlas/stable.h
+%%DATADIR%%/tools/editor/fonts/FreeSans.ttf
+%%DATADIR%%/tools/editor/gui/cameradialog.xml
+%%DATADIR%%/tools/editor/gui/eleveditor.xml
+%%DATADIR%%/tools/editor/gui/error.xml
+%%DATADIR%%/tools/editor/gui/filebrowser.xml
+%%DATADIR%%/tools/editor/gui/help.xml
+%%DATADIR%%/tools/editor/gui/icons/add_instance.png
+%%DATADIR%%/tools/editor/gui/icons/add_layer.png
+%%DATADIR%%/tools/editor/gui/icons/close_map.png
+%%DATADIR%%/tools/editor/gui/icons/cycle_styles.png
+%%DATADIR%%/tools/editor/gui/icons/delete_layer.png
+%%DATADIR%%/tools/editor/gui/icons/edit.png
+%%DATADIR%%/tools/editor/gui/icons/erase_instance.png
+%%DATADIR%%/tools/editor/gui/icons/help.png
+%%DATADIR%%/tools/editor/gui/icons/import_dir.png
+%%DATADIR%%/tools/editor/gui/icons/import_file.png
+%%DATADIR%%/tools/editor/gui/icons/is_visible.png
+%%DATADIR%%/tools/editor/gui/icons/load_map.png
+%%DATADIR%%/tools/editor/gui/icons/map_wizard.png
+%%DATADIR%%/tools/editor/gui/icons/move_instance.png
+%%DATADIR%%/tools/editor/gui/icons/new_map.png
+%%DATADIR%%/tools/editor/gui/icons/next_branch.png
+%%DATADIR%%/tools/editor/gui/icons/objectpicker.png
+%%DATADIR%%/tools/editor/gui/icons/previous_branch.png
+%%DATADIR%%/tools/editor/gui/icons/quit.png
+%%DATADIR%%/tools/editor/gui/icons/redo.png
+%%DATADIR%%/tools/editor/gui/icons/rotate_clockwise.png
+%%DATADIR%%/tools/editor/gui/icons/rotate_countercw.png
+%%DATADIR%%/tools/editor/gui/icons/save_allmaps.png
+%%DATADIR%%/tools/editor/gui/icons/save_map.png
+%%DATADIR%%/tools/editor/gui/icons/save_mapas.png
+%%DATADIR%%/tools/editor/gui/icons/select_instance.png
+%%DATADIR%%/tools/editor/gui/icons/take_screenshot.png
+%%DATADIR%%/tools/editor/gui/icons/undo.png
+%%DATADIR%%/tools/editor/gui/icons/zoom_default.png
+%%DATADIR%%/tools/editor/gui/icons/zoom_in.png
+%%DATADIR%%/tools/editor/gui/icons/zoom_out.png
+%%DATADIR%%/tools/editor/gui/input.xml
+%%DATADIR%%/tools/editor/gui/layerdialog.xml
+%%DATADIR%%/tools/editor/gui/layertool.xml
+%%DATADIR%%/tools/editor/gui/lightedit.xml
+%%DATADIR%%/tools/editor/gui/objectedit.xml
+%%DATADIR%%/tools/editor/gui/objectselector.xml
+%%DATADIR%%/tools/editor/gui/rootpanel.xml
+%%DATADIR%%/tools/editor/gui/selection.xml
+%%DATADIR%%/tools/editor/gui/statuspanel.xml
+%%DATADIR%%/tools/editor/gui/tools.xml
+%%DATADIR%%/tools/editor/lang/help_object_edit.txt
+%%DATADIR%%/tools/editor/lang/infotext.txt
+%%DATADIR%%/tools/editor/LICENSE
+%%DATADIR%%/tools/editor/plugins/CameraEdit.py
+%%DATADIR%%/tools/editor/plugins/HistoryManager.py
+%%DATADIR%%/tools/editor/plugins/InstanceHighlighter.py
+%%DATADIR%%/tools/editor/plugins/LayerTool.py
+%%DATADIR%%/tools/editor/plugins/LightEdit.py
+%%DATADIR%%/tools/editor/plugins/MapFileHistory.py
+%%DATADIR%%/tools/editor/plugins/ObjectEdit.py
+%%DATADIR%%/tools/editor/plugins/ObjectSelector.py
+%%DATADIR%%/tools/editor/plugins/__init__.py
+%%DATADIR%%/tools/editor/run.py
+%%DATADIR%%/tools/editor/scripts/editor.py
+%%DATADIR%%/tools/editor/scripts/events/events.py
+%%DATADIR%%/tools/editor/scripts/events/saferef.py
+%%DATADIR%%/tools/editor/scripts/events/signal.py
+%%DATADIR%%/tools/editor/scripts/events/__init__.py
+%%DATADIR%%/tools/editor/scripts/gui/action.py
+%%DATADIR%%/tools/editor/scripts/gui/cameradialog.py
+%%DATADIR%%/tools/editor/scripts/gui/dockarea.py
+%%DATADIR%%/tools/editor/scripts/gui/error.py
+%%DATADIR%%/tools/editor/scripts/gui/faketabwidget.py
+%%DATADIR%%/tools/editor/scripts/gui/filemanager.py
+%%DATADIR%%/tools/editor/scripts/gui/input.py
+%%DATADIR%%/tools/editor/scripts/gui/layerdialog.py
+%%DATADIR%%/tools/editor/scripts/gui/mainwindow.py
+%%DATADIR%%/tools/editor/scripts/gui/mapeditor.py
+%%DATADIR%%/tools/editor/scripts/gui/menubar.py
+%%DATADIR%%/tools/editor/scripts/gui/panel.py
+%%DATADIR%%/tools/editor/scripts/gui/resizablebase.py
+%%DATADIR%%/tools/editor/scripts/gui/selection.py
+%%DATADIR%%/tools/editor/scripts/gui/statusbar.py
+%%DATADIR%%/tools/editor/scripts/gui/toolbar.py
+%%DATADIR%%/tools/editor/scripts/gui/__init__.py
+%%DATADIR%%/tools/editor/scripts/mapcontroller.py
+%%DATADIR%%/tools/editor/scripts/mapview.py
+%%DATADIR%%/tools/editor/scripts/plugin.py
+%%DATADIR%%/tools/editor/scripts/tests/undotest.py
+%%DATADIR%%/tools/editor/scripts/tests/__init__.py
+%%DATADIR%%/tools/editor/scripts/undomanager.py
+%%DATADIR%%/tools/editor/scripts/__init__.py
+%%DATADIR%%/tools/editor/settings-dist.xml
+%%DATADIR%%/tools/editor/__init__.py
+%%DATADIR%%/tools/geometry_twister.py
+%%DATADIR%%/tools/object_editor.py
+%%DATADIR%%/tools/object_generator.py
+%%DATADIR%%/tools/object_header.sh
+%%DATADIR%%/tools/pack_anim.py
+%%DATADIR%%/tools/ruleset_tester.py
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+@dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/serializers
+@dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets/ext
+@dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/pychan/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/fife/extensions/pychan
+@dirrm %%PYTHON_SITELIBDIR%%/fife/extensions
+@dirrm %%PYTHON_SITELIBDIR%%/fife
+@dirrm %%DATADIR%%/demos/shooter/sounds
+@dirrm %%DATADIR%%/demos/shooter/scripts/ships
+@dirrm %%DATADIR%%/demos/shooter/scripts/gui
+@dirrm %%DATADIR%%/demos/shooter/scripts/common
+@dirrm %%DATADIR%%/demos/shooter/scripts
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer2/fly
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer2/flash
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer2/explode
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer2
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer1/fly
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer1/flash
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer1/explode
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/saucer1
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/player/fly
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/player/flash
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/player/explode
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/player
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/boss1/fly
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/boss1/flash
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/boss1/explode
+@dirrm %%DATADIR%%/demos/shooter/objects/ships/boss1
+@dirrm %%DATADIR%%/demos/shooter/objects/ships
+@dirrm %%DATADIR%%/demos/shooter/objects/projectiles/fireball
+@dirrm %%DATADIR%%/demos/shooter/objects/projectiles/bullet1
+@dirrm %%DATADIR%%/demos/shooter/objects/projectiles
+@dirrm %%DATADIR%%/demos/shooter/objects/powerups/extralife
+@dirrm %%DATADIR%%/demos/shooter/objects/powerups/cannonspread5
+@dirrm %%DATADIR%%/demos/shooter/objects/powerups
+@dirrm %%DATADIR%%/demos/shooter/objects/backgrounds/starfield
+@dirrm %%DATADIR%%/demos/shooter/objects/backgrounds
+@dirrm %%DATADIR%%/demos/shooter/objects
+@dirrm %%DATADIR%%/demos/shooter/music
+@dirrm %%DATADIR%%/demos/shooter/maps
+@dirrm %%DATADIR%%/demos/shooter/gui
+@dirrm %%DATADIR%%/demos/shooter/fonts
+@dirrm %%DATADIR%%/demos/shooter
+@dirrm %%DATADIR%%/demos/rio_de_hola/sounds
+@dirrm %%DATADIR%%/demos/rio_de_hola/scripts/common
+@dirrm %%DATADIR%%/demos/rio_de_hola/scripts/agents
+@dirrm %%DATADIR%%/demos/rio_de_hola/scripts
+@dirrm %%DATADIR%%/demos/rio_de_hola/saves
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/crates
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/clouds
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male2
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_male1
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female2
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/tourist_female1
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/merchant
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/hippie_priest
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/girl
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/chemist
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/boy
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/beekeeper
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents/bee
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects/agents
+@dirrm %%DATADIR%%/demos/rio_de_hola/objects
+@dirrm %%DATADIR%%/demos/rio_de_hola/music
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/source
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing315
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing270
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing225
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing180
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing135
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing090
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing045
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test/facing000
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/rotation+location_test
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup
+@dirrm %%DATADIR%%/demos/rio_de_hola/misc
+@dirrm %%DATADIR%%/demos/rio_de_hola/maps
+@dirrm %%DATADIR%%/demos/rio_de_hola/imports
+@dirrm %%DATADIR%%/demos/rio_de_hola/gui/icons
+@dirrm %%DATADIR%%/demos/rio_de_hola/gui
+@dirrm %%DATADIR%%/demos/rio_de_hola/fonts
+@dirrm %%DATADIR%%/demos/rio_de_hola/cursors
+@dirrm %%DATADIR%%/demos/rio_de_hola
+@dirrm %%DATADIR%%/demos/pychan_demo/gui/icons
+@dirrm %%DATADIR%%/demos/pychan_demo/gui/backgrounds
+@dirrm %%DATADIR%%/demos/pychan_demo/gui
+@dirrm %%DATADIR%%/demos/pychan_demo/fonts/freefont
+@dirrm %%DATADIR%%/demos/pychan_demo/fonts
+@dirrm %%DATADIR%%/demos/pychan_demo
+@dirrm %%DATADIR%%/demos
+@dirrm %%DATADIR%%/tools/editor/scripts/tests
+@dirrm %%DATADIR%%/tools/editor/scripts/gui
+@dirrm %%DATADIR%%/tools/editor/scripts/events
+@dirrm %%DATADIR%%/tools/editor/scripts
+@dirrm %%DATADIR%%/tools/editor/plugins
+@dirrm %%DATADIR%%/tools/editor/lang
+@dirrm %%DATADIR%%/tools/editor/gui/icons
+@dirrm %%DATADIR%%/tools/editor/gui
+@dirrm %%DATADIR%%/tools/editor/fonts
+@dirrm %%DATADIR%%/tools/editor
+@dirrm %%DATADIR%%/tools/atlas/resources
+@dirrm %%DATADIR%%/tools/atlas/rapidxml
+@dirrm %%DATADIR%%/tools/atlas
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
