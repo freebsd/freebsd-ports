@@ -21,6 +21,7 @@ include/okular/core/version.h
 include/okular/interfaces/configinterface.h
 include/okular/interfaces/guiinterface.h
 include/okular/interfaces/printinterface.h
+include/okular/interfaces/viewerinterface.h
 lib/cmake/Okular/OkularConfig.cmake
 lib/cmake/Okular/OkularConfigVersion.cmake
 lib/kde4/kio_msits.so
@@ -41,7 +42,7 @@ lib/kde4/okularGenerator_xps.so
 lib/kde4/okularpart.so
 lib/libokularcore.so
 lib/libokularcore.so.1
-lib/libokularcore.so.1.7.0
+lib/libokularcore.so.1.8.0
 share/applications/kde4/okular.desktop
 share/applications/kde4/okularApplication_chm.desktop
 share/applications/kde4/okularApplication_comicbook.desktop
@@ -59,6 +60,7 @@ share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_xps.desktop
 share/apps/okular/icons/hicolor/16x16/apps/okular-gv.png
 share/apps/okular/icons/hicolor/32x32/apps/okular-gv.png
+share/apps/okular/part-viewermode.rc
 share/apps/okular/part.rc
 share/apps/okular/pics/checkmark.png
 share/apps/okular/pics/circle.png

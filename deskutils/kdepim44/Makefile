@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	kdepim
-PORTVERSION=	${KDEPIM4_VERSION}
-PORTREVISION=	2
+PORTVERSION=	4.4.11.1
+PORTREVISION=	3
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDEPIM4_BRANCH}/kdepim-${PORTVERSION}/src
+MASTER_SITE_SUBDIR=	stable/kdepim-${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,10 +19,12 @@ LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca
+RUN_DEPENDS=	${KDE4_PREFIX}/bin/akonadi_mbox_resource:${PORTSDIR}/deskutils/kdepim44-runtime
 
-LATEST_LINK=	${PORTNAME}4
+LATEST_LINK=	${PORTNAME}44
+CONFLICTS_INSTALL=	kdepim-4.[89].*
 
-USE_KDE4=	kdelibs pimlibs pimruntime \
+USE_KDE4=	kdelibs pimlibs \
 		akonadi kdeprefix kdehier automoc4 oxygen
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes

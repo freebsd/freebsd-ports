@@ -1,13 +1,7 @@
 share/apps/ktuberling/sounds/ro.soundtheme
-share/apps/ktuberling/sounds/ro/ceas.wav
 share/apps/ktuberling/sounds/ro/cercel.wav
-share/apps/ktuberling/sounds/ro/colier.wav
-share/apps/ktuberling/sounds/ro/corn.wav
 share/apps/ktuberling/sounds/ro/cravata.wav
-share/apps/ktuberling/sounds/ro/domnul-cartof.wav
-share/apps/ktuberling/sounds/ro/fular.wav
 share/apps/ktuberling/sounds/ro/gura.wav
-share/apps/ktuberling/sounds/ro/insigna.wav
 share/apps/ktuberling/sounds/ro/mustata.wav
 share/apps/ktuberling/sounds/ro/nas.wav
 share/apps/ktuberling/sounds/ro/ochelari-de-soare.wav
@@ -16,9 +10,7 @@ share/apps/ktuberling/sounds/ro/ochi.wav
 share/apps/ktuberling/sounds/ro/palarie.wav
 share/apps/ktuberling/sounds/ro/papion.wav
 share/apps/ktuberling/sounds/ro/par.wav
-share/apps/ktuberling/sounds/ro/pinguin.wav
 share/apps/ktuberling/sounds/ro/sprinceana.wav
-share/apps/ktuberling/sounds/ro/tigara.wav
 share/apps/ktuberling/sounds/ro/ureche.wav
 share/apps/kvtml/ro/animals.kvtml
 share/apps/kvtml/ro/easy.kvtml
@@ -102,7 +94,6 @@ share/locale/ro/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ro/LC_MESSAGES/akonadi_nepomuk_email_feeder.mo
 share/locale/ro/LC_MESSAGES/akonadi_nepomukfeeder.mo
 share/locale/ro/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_next.mo
@@ -178,7 +169,6 @@ share/locale/ro/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ro/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ro/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ro/LC_MESSAGES/katefiletemplates.mo
-share/locale/ro/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/ro/LC_MESSAGES/kategdbplugin.mo
 share/locale/ro/LC_MESSAGES/katehelloworld.mo
 share/locale/ro/LC_MESSAGES/katekonsoleplugin.mo
@@ -288,7 +278,6 @@ share/locale/ro/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/ro/LC_MESSAGES/kdelibs4.mo
 share/locale/ro/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ro/LC_MESSAGES/kdepasswd.mo
-share/locale/ro/LC_MESSAGES/kdepimwizards.mo
 share/locale/ro/LC_MESSAGES/kdeqt.mo
 share/locale/ro/LC_MESSAGES/kdesu.mo
 share/locale/ro/LC_MESSAGES/kdesud.mo
@@ -359,7 +348,6 @@ share/locale/ro/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ro/LC_MESSAGES/kio_finger.mo
 share/locale/ro/LC_MESSAGES/kio_fish.mo
 share/locale/ro/LC_MESSAGES/kio_floppy.mo
-share/locale/ro/LC_MESSAGES/kio_groupwise.mo
 share/locale/ro/LC_MESSAGES/kio_help4.mo
 share/locale/ro/LC_MESSAGES/kio_imap4.mo
 share/locale/ro/LC_MESSAGES/kio_info.mo
@@ -439,7 +427,6 @@ share/locale/ro/LC_MESSAGES/krdc.mo
 share/locale/ro/LC_MESSAGES/kreadconfig.mo
 share/locale/ro/LC_MESSAGES/kres-migrator.mo
 share/locale/ro/LC_MESSAGES/kres_blog.mo
-share/locale/ro/LC_MESSAGES/kres_groupwise.mo
 share/locale/ro/LC_MESSAGES/kres_remote.mo
 share/locale/ro/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/ro/LC_MESSAGES/kreversi.mo
@@ -464,13 +451,13 @@ share/locale/ro/LC_MESSAGES/kstars.mo
 share/locale/ro/LC_MESSAGES/kstart.mo
 share/locale/ro/LC_MESSAGES/kstartperf.mo
 share/locale/ro/LC_MESSAGES/kstyle_config.mo
-share/locale/ro/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ro/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/ro/LC_MESSAGES/ksudoku.mo
 share/locale/ro/LC_MESSAGES/ksysguard.mo
 share/locale/ro/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ro/LC_MESSAGES/ksystemlog.mo
 share/locale/ro/LC_MESSAGES/ksystraycmd.mo
+share/locale/ro/LC_MESSAGES/kte_acomment.mo
 share/locale/ro/LC_MESSAGES/kteatime.mo
 share/locale/ro/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/ro/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -509,6 +496,7 @@ share/locale/ro/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/ro/LC_MESSAGES/libakonadi.mo
 share/locale/ro/LC_MESSAGES/libeventviews.mo
 share/locale/ro/LC_MESSAGES/libincidenceeditors.mo
+share/locale/ro/LC_MESSAGES/libkalarmcal.mo
 share/locale/ro/LC_MESSAGES/libkasten.mo
 share/locale/ro/LC_MESSAGES/libkblog.mo
 share/locale/ro/LC_MESSAGES/libkcal.mo
@@ -572,11 +560,11 @@ share/locale/ro/LC_MESSAGES/mplayerthumbs.mo
 share/locale/ro/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ro/LC_MESSAGES/nepomukbackup.mo
 share/locale/ro/LC_MESSAGES/nepomukcontroller.mo
+share/locale/ro/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/ro/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/ro/LC_MESSAGES/nepomukserver.mo
 share/locale/ro/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ro/LC_MESSAGES/nepomukstorage.mo
-share/locale/ro/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/ro/LC_MESSAGES/notes-mobile.mo
 share/locale/ro/LC_MESSAGES/nsplugin.mo
 share/locale/ro/LC_MESSAGES/okteta.mo
@@ -620,7 +608,6 @@ share/locale/ro/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/ro/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_fileWatcher.mo
@@ -651,6 +638,7 @@ share/locale/ro/LC_MESSAGES/plasma_applet_news.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/ro/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -753,6 +741,7 @@ share/locale/ro/LC_MESSAGES/plasmapkg.mo
 share/locale/ro/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/ro/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ro/LC_MESSAGES/powerdevil.mo
+share/locale/ro/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/ro/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/ro/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/ro/LC_MESSAGES/printer-applet.mo

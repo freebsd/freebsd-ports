@@ -7,7 +7,6 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,19 +15,17 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE4
 
-LIB_DEPENDS=	kexiv2.10:${PORTSDIR}/graphics/libkexiv2-kde4 \
-		qalculate.5:${PORTSDIR}/math/libqalculate \
+LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		soprano.4:${PORTSDIR}/textproc/soprano \
-		attica.0:${PORTSDIR}/x11-toolkits/attica \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		qca.2:${PORTSDIR}/devel/qca
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
 
-USE_BZIP2=	yes
-USE_KDE4=	kdehier kdelibs kdeprefix pimlibs workspace \
-		akonadi sharedmime automoc4
+CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
+
+USE_XZ=	yes
+USE_KDE4=	kdehier kdelibs kdeprefix libkexiv2 pimlibs workspace \
+		akonadi attica automoc4 qimageblitz sharedmime soprano
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui network opengl script sql svg webkit xml \
@@ -37,16 +34,25 @@ USE_XORG=	x11 xrender xtst
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MARBLE "Support for desktop globe wallpaper" on \
-		SCIM "Enable SCIM method input dialog" off
+		IBUS "Enable IBUS backend for input dialog" off \
+		SCIM "Enable SCIM backend for input dialog" off
 
 .include <bsd.port.options.mk>
 
 .ifndef(WITHOUT_MARBLE)
-LIB_DEPENDS+=	marblewidget.12:${PORTSDIR}/astro/marble
+USE_KDE4+=	marble
 PLIST_SUB+=	MARBLE=""
 .else
 CMAKE_ARGS+=	-DWITH_Marble:BOOL=FALSE
 PLIST_SUB+=	MARBLE="@comment "
+.endif
+
+.ifdef(WITH_IBUS)
+LIB_DEPENDS+=	ibus-1.0:${PORTSDIR}/textproc/ibus
+PLIST_SUB+=	IBUS=""
+.else
+CMAKE_ARGS+=	-DWITH_IBUS:BOOL=FALSE
+PLIST_SUB+=	IBUS="@comment "
 .endif
 
 .ifdef(WITH_SCIM)

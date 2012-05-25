@@ -1,13 +1,5 @@
-bin/kmag
-bin/kmousetool
 bin/kmouth
-lib/kde4/libexec/kaccessibleapp
-lib/kde4/plugins/accessiblebridge/kaccessiblebridge.so
-share/applications/kde4/kmag.desktop
-share/applications/kde4/kmousetool.desktop
 share/applications/kde4/kmouth.desktop
-share/apps/kmag/kmagui.rc
-share/apps/kmousetool/sounds/mousetool_tap.wav
 share/apps/kmouth/books/de/de-courteousness.phrasebook
 share/apps/kmouth/books/de/de-greetings.phrasebook
 share/apps/kmouth/books/de/de-howareyou.phrasebook
@@ -66,16 +58,6 @@ share/apps/kmouth/icons/hicolor/48x48/actions/speak.png
 share/apps/kmouth/kmouthui.rc
 share/apps/kmouth/phrasebookdialogui.rc
 share/config/kmouthrc
-share/dbus-1/services/org.kde.kaccessible.service
-share/doc/HTML/en/kmag/common
-share/doc/HTML/en/kmag/index.cache.bz2
-share/doc/HTML/en/kmag/index.docbook
-share/doc/HTML/en/kmag/man-kmag.1.docbook
-share/doc/HTML/en/kmag/screenshot.png
-share/doc/HTML/en/kmousetool/common
-share/doc/HTML/en/kmousetool/index.cache.bz2
-share/doc/HTML/en/kmousetool/index.docbook
-share/doc/HTML/en/kmousetool/man-kmousetool.1.docbook
 share/doc/HTML/en/kmouth/common
 share/doc/HTML/en/kmouth/index.cache.bz2
 share/doc/HTML/en/kmouth/index.docbook
@@ -88,24 +70,11 @@ share/doc/HTML/en/kmouth/kmouthwizard1.png
 share/doc/HTML/en/kmouth/kmouthwizard2.png
 share/doc/HTML/en/kmouth/kmouthwizard3.png
 share/doc/HTML/en/kmouth/man-kmouth.1.docbook
-share/icons/hicolor/16x16/actions/followmouse.png
-share/icons/hicolor/16x16/actions/hidemouse.png
-share/icons/hicolor/16x16/actions/kmousetool_off.png
-share/icons/hicolor/16x16/actions/kmousetool_on.png
-share/icons/hicolor/16x16/actions/window.png
-share/icons/hicolor/16x16/apps/kmag.png
-share/icons/hicolor/16x16/apps/kmousetool.png
 share/icons/hicolor/16x16/apps/kmouth.png
 share/icons/hicolor/22x22/apps/kmouth.png
-share/icons/hicolor/32x32/actions/kmousetool_off.png
-share/icons/hicolor/32x32/actions/kmousetool_on.png
-share/icons/hicolor/32x32/apps/kmag.png
-share/icons/hicolor/32x32/apps/kmousetool.png
 share/icons/hicolor/32x32/apps/kmouth.png
 share/icons/hicolor/48x48/apps/kmouth.png
 @dirrm share/doc/HTML/en/kmouth
-@dirrm share/doc/HTML/en/kmousetool
-@dirrm share/doc/HTML/en/kmag
 @dirrm share/apps/kmouth/icons/hicolor/48x48/actions
 @dirrm share/apps/kmouth/icons/hicolor/48x48
 @dirrm share/apps/kmouth/icons/hicolor/32x32/actions
@@ -121,7 +90,3 @@ share/icons/hicolor/48x48/apps/kmouth.png
 @dirrm share/apps/kmouth/books/de
 @dirrm share/apps/kmouth/books
 @dirrm share/apps/kmouth
-@dirrm share/apps/kmousetool/sounds
-@dirrm share/apps/kmousetool
-@dirrm share/apps/kmag
-@dirrm lib/kde4/plugins/accessiblebridge

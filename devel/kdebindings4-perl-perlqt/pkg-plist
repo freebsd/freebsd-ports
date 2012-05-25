@@ -1,0 +1,102 @@
+bin/prcc4_bin
+bin/puic4
+bin/qdbusxml2perl
+env/perl-kdebindings-env.sh
+include/perlqt/QtCore4.h
+include/perlqt/binding.h
+include/perlqt/handlers.h
+include/perlqt/listclass_macros.h
+include/perlqt/marshall.h
+include/perlqt/marshall_basetypes.h
+include/perlqt/marshall_complex.h
+include/perlqt/marshall_macros.h
+include/perlqt/marshall_primitives.h
+include/perlqt/marshall_types.h
+include/perlqt/perlqt.h
+include/perlqt/ppport.h
+include/perlqt/smokehelp.h
+include/perlqt/smokeperl.h
+include/perlqt/util.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Phonon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QImageBlitz.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Qsci.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Qt3Support4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtCore4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtCore4/classinfo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtCore4/debug.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtCore4/isa.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtCore4/signals.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtCore4/slots.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtDBus4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtDeclarative4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtGui4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtHelp4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtMultimedia4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtNetwork4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtOpenGL4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtScript4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtSql4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtSvg4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtTest4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtUiTools4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtWebKit4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtXml4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/QtXmlPatterns4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Qwt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Phonon/Phonon.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QImageBlitz/QImageBlitz.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qsci/Qsci.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qt3Support4/Qt3Support4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtCore4/QtCore4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtDBus4/QtDBus4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtDeclarative4/QtDeclarative4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtGui4/QtGui4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtHelp4/QtHelp4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtMultimedia4/QtMultimedia4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtNetwork4/QtNetwork4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtOpenGL4/QtOpenGL4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtScript4/QtScript4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtSql4/QtSql4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtSvg4/QtSvg4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtTest4/QtTest4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtUiTools4/QtUiTools4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtWebKit4/QtWebKit4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtXml4/QtXml4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/QtXmlPatterns4/QtXmlPatterns4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Qwt/Qwt.so
+share/perlqt/cmake/FindPerlMore.cmake
+share/perlqt/cmake/PerlQtConfig.cmake
+share/perlqt/cmake/PerlQtExport-%%CMAKE_BUILD_TYPE%%.cmake
+share/perlqt/cmake/PerlQtExport.cmake
+share/perlqt/doxsubpp.pl
+@dirrm share/perlqt/cmake
+@dirrm share/perlqt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qwt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtXmlPatterns4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtXml4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtWebKit4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtUiTools4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtTest4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtSvg4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtSql4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtScript4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtOpenGL4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtNetwork4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtMultimedia4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtHelp4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtGui4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtDeclarative4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtDBus4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QtCore4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qt3Support4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Qsci
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/QImageBlitz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Phonon
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/QtCore4
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl
+@dirrmtry lib/perl5
+@dirrm include/perlqt
+@dirrmtry env

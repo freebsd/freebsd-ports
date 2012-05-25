@@ -8,7 +8,6 @@
 
 PORTNAME=	kde-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -24,24 +23,20 @@ LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		slp.1:${PORTSDIR}/net/openslp \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
 		ssh.4:${PORTSDIR}/security/libssh \
-		attica.0:${PORTSDIR}/x11-toolkits/attica \
-		searchclient.0:${PORTSDIR}/deskutils/strigi \
-		soprano.4:${PORTSDIR}/textproc/soprano \
-		qzeitgeist.0:${PORTSDIR}/sysutils/qzeitgeist
+		qzeitgeist.1:${PORTSDIR}/sysutils/qzeitgeist
 
 # Explicitly depend on libssh to avoid interference with ssh.4 from
 # compat7x.
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 
-RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
 
 CONFLICTS=	kdebase-runtime-4.[0-6].* kdebase-workspace-4.5.[0-5] nepomukcontroller-0.2
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GETTEXT=	yes
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
+USE_KDE4=	kdehier kdelibs kdeprefix \
+		attica automoc4 ontologies sharedmime soprano strigi
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus declarative designer gui phonon qt3support \
@@ -87,6 +82,15 @@ RUN_DEPENDS+=	zeitgeist-daemon:${PORTSDIR}/sysutils/zeitgeist
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
+.endif
+
+.if ${KDE4_PREFIX} != ${LOCALBASE}
+PLIST_SUB+=	HACK=""
+.else
+PLIST_SUB+=	HACK="@comment "
+post-extract:
+	${REINPLACE_CMD} -e '/add_subdirectory.*hicolor/d' \
+		${PATCH_WRKSRC}/pics/CMakeLists.txt
 .endif
 
 post-patch:

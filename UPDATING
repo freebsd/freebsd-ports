@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120525:
+  AFFECTS: users of deskutils/kdepim4, deskutils/kdepim4-runtime
+  AUTHOR: kde@FreeBSD.org
+
+  kdepim4 has been updated to 4.8.3. For those who prefer old
+  kdepim-4.4.11.1 deskutils/kdepim44* ports have been added.
+  To stay with kdepim-4.4.11.1 run the following commands:
+
+  # portmaster -o deskutils/kdepim44-runtime kdepim-runtime-4\*
+  # portmaster -o deskutils/kdepim44 kdepim-4\*
+
+20120525:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.8.3. Several ports were split,
+  thus manual intervention into update procedure is required:
+
+  # pkg_delete -f kde-runtime-\* ruby\*-kdebindings-korundum\* \
+    kalgebra-4\* kdeaccessibility-4\* kdeutils-4\* kde-baseapps-\* \
+    plasma-applet-icontasks\*
+  # portmaster -a
+
 20120518:
   AFFECTS: users of dns/poweradmin
   AUTHOR: Edmondas Girkantas <eg@fbsd.lt>

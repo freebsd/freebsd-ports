@@ -8,7 +8,6 @@
 
 PORTNAME=	kde-baseapps
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,16 +16,15 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	searchclient.0:${PORTSDIR}/deskutils/strigi \
-		soprano.4:${PORTSDIR}/textproc/soprano \
-		tidy-0.99.0:${PORTSDIR}/www/tidy-lib
+LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 
 CONFLICTS=	kdebase-4.[0-6].* konq-plugins-4.[0-6].*
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_KDE4=	kdehier kdelibs kdeprefix libkonq \
+		automoc4 soprano strigi
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui qt3support script \
@@ -49,7 +47,14 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/konsole:${PORTSDIR}/x11/konsole
 .endif
 
 .ifndef(WITHOUT_KWRITE)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwrite:${PORTSDIR}/editors/kate
+USE_KDE4+=	kate_run
 .endif
+
+pre-configure:
+# Quick hack to avoid building libkonq here
+	${REINPLACE_CMD} -e '/add_subdirectory (konq)/d' \
+		${WRKSRC}/lib/CMakeLists.txt
+	${MKDIR} ${BUILD_WRKSRC}/lib && \
+	${LN} -s ${KDE4_PREFIX}/lib/libkonq.so ${BUILD_WRKSRC}/lib
 
 .include <bsd.port.mk>

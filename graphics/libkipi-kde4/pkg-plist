@@ -13,7 +13,7 @@ include/libkipi/uploadwidget.h
 include/libkipi/version.h
 lib/libkipi.so
 lib/libkipi.so.8
-lib/libkipi.so.8.0.0
+lib/libkipi.so.8.0.1
 libdata/pkgconfig/libkipi-kde4.pc
 share/apps/kipi/data/kipi-icon.svg
 share/apps/kipi/data/kipi-logo.svg

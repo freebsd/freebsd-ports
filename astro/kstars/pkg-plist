@@ -204,6 +204,7 @@ share/apps/kstars/saturn.R3.vsop
 share/apps/kstars/saturn.R4.vsop
 share/apps/kstars/saturn.R5.vsop
 share/apps/kstars/saturn.orbit
+share/apps/kstars/scripts/supernova_updates_parser.py
 share/apps/kstars/smc.dat
 share/apps/kstars/starlnum.idx
 share/apps/kstars/starnames.dat
@@ -425,6 +426,7 @@ share/icons/hicolor/64x64/apps/kstars.png
 share/icons/hicolor/scalable/apps/kstars.svgz
 @dirrm share/doc/HTML/en/kstars
 @dirrm share/apps/kstars/textures
+@dirrm share/apps/kstars/scripts
 @dirrm share/apps/kstars/icons/hicolor/scalable/actions
 @dirrm share/apps/kstars/icons/hicolor/scalable
 @dirrm share/apps/kstars/icons/hicolor/64x64/actions

@@ -1,4 +1,5 @@
-This port contains a set of KDE-based applications for
-accessibility needs.
+Kaccessible implements a QAccessibleBridgePlugin to provide
+accessibility services like focus tracking and a screenreader.
 
-WWW:	http://www.kde.org/
+WWW:	http://www.kde.org
+

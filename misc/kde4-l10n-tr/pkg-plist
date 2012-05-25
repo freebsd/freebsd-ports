@@ -23,9 +23,6 @@ share/locale/tr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_kabc_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_kalarm_dir_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_kalarm_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_kalarm_resource_common.mo
 share/locale/tr/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_kdeaccounts_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_knut_resource.mo
@@ -38,7 +35,6 @@ share/locale/tr/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_nepomuk_email_feeder.mo
 share/locale/tr/LC_MESSAGES/akonadi_nepomukfeeder.mo
 share/locale/tr/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_next.mo
@@ -120,7 +116,6 @@ share/locale/tr/LC_MESSAGES/katebuild-plugin.mo
 share/locale/tr/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/tr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/tr/LC_MESSAGES/katefiletemplates.mo
-share/locale/tr/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/tr/LC_MESSAGES/kategdbplugin.mo
 share/locale/tr/LC_MESSAGES/katehelloworld.mo
 share/locale/tr/LC_MESSAGES/katekonsoleplugin.mo
@@ -128,7 +123,6 @@ share/locale/tr/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/tr/LC_MESSAGES/kateopenheader.mo
 share/locale/tr/LC_MESSAGES/katepart4.mo
 share/locale/tr/LC_MESSAGES/katequickdocumentswitcherplugin.mo
-share/locale/tr/LC_MESSAGES/katesearch.mo
 share/locale/tr/LC_MESSAGES/katesnippets_tng.mo
 share/locale/tr/LC_MESSAGES/katesql.mo
 share/locale/tr/LC_MESSAGES/katesymbolviewer.mo
@@ -232,8 +226,6 @@ share/locale/tr/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/tr/LC_MESSAGES/kdelibs4.mo
 share/locale/tr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/tr/LC_MESSAGES/kdepasswd.mo
-share/locale/tr/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/tr/LC_MESSAGES/kdepimwizards.mo
 share/locale/tr/LC_MESSAGES/kdeqt.mo
 share/locale/tr/LC_MESSAGES/kdesu.mo
 share/locale/tr/LC_MESSAGES/kdesud.mo
@@ -304,7 +296,6 @@ share/locale/tr/LC_MESSAGES/kio_bookmarks.mo
 share/locale/tr/LC_MESSAGES/kio_finger.mo
 share/locale/tr/LC_MESSAGES/kio_fish.mo
 share/locale/tr/LC_MESSAGES/kio_floppy.mo
-share/locale/tr/LC_MESSAGES/kio_groupwise.mo
 share/locale/tr/LC_MESSAGES/kio_help4.mo
 share/locale/tr/LC_MESSAGES/kio_imap4.mo
 share/locale/tr/LC_MESSAGES/kio_info.mo
@@ -389,7 +380,6 @@ share/locale/tr/LC_MESSAGES/kreadconfig.mo
 share/locale/tr/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/tr/LC_MESSAGES/kres-migrator.mo
 share/locale/tr/LC_MESSAGES/kres_blog.mo
-share/locale/tr/LC_MESSAGES/kres_groupwise.mo
 share/locale/tr/LC_MESSAGES/kres_remote.mo
 share/locale/tr/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/tr/LC_MESSAGES/kreversi.mo
@@ -414,7 +404,6 @@ share/locale/tr/LC_MESSAGES/kstars.mo
 share/locale/tr/LC_MESSAGES/kstart.mo
 share/locale/tr/LC_MESSAGES/kstartperf.mo
 share/locale/tr/LC_MESSAGES/kstyle_config.mo
-share/locale/tr/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/tr/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/tr/LC_MESSAGES/ksudoku.mo
 share/locale/tr/LC_MESSAGES/ksysguard.mo
@@ -459,6 +448,7 @@ share/locale/tr/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/tr/LC_MESSAGES/libakonadi.mo
 share/locale/tr/LC_MESSAGES/libeventviews.mo
 share/locale/tr/LC_MESSAGES/libincidenceeditors.mo
+share/locale/tr/LC_MESSAGES/libkalarmcal.mo
 share/locale/tr/LC_MESSAGES/libkasten.mo
 share/locale/tr/LC_MESSAGES/libkblog.mo
 share/locale/tr/LC_MESSAGES/libkcal.mo
@@ -524,11 +514,11 @@ share/locale/tr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/tr/LC_MESSAGES/nepomukbackup.mo
 share/locale/tr/LC_MESSAGES/nepomukcontroller.mo
+share/locale/tr/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/tr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/tr/LC_MESSAGES/nepomukserver.mo
 share/locale/tr/LC_MESSAGES/nepomukservicestub.mo
 share/locale/tr/LC_MESSAGES/nepomukstorage.mo
-share/locale/tr/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/tr/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/tr/LC_MESSAGES/notes-mobile.mo
 share/locale/tr/LC_MESSAGES/nsplugin.mo
@@ -555,6 +545,7 @@ share/locale/tr/LC_MESSAGES/palapeli.mo
 share/locale/tr/LC_MESSAGES/parley.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
+share/locale/tr/LC_MESSAGES/phonon_vlc.mo
 share/locale/tr/LC_MESSAGES/phononserver.mo
 share/locale/tr/LC_MESSAGES/plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma-netbook.mo
@@ -574,7 +565,6 @@ share/locale/tr/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/tr/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_fileWatcher.mo
@@ -606,6 +596,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_news.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -625,7 +616,6 @@ share/locale/tr/LC_MESSAGES/plasma_applet_rtm.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_searchbox.mo
-share/locale/tr/LC_MESSAGES/plasma_applet_showactivitymanager.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_skapplet.mo
@@ -715,7 +705,6 @@ share/locale/tr/LC_MESSAGES/processcore.mo
 share/locale/tr/LC_MESSAGES/processui.mo
 share/locale/tr/LC_MESSAGES/randrmonitor.mo
 share/locale/tr/LC_MESSAGES/rellinks.mo
-share/locale/tr/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/tr/LC_MESSAGES/rocs.mo
 share/locale/tr/LC_MESSAGES/searchbarplugin.mo
 share/locale/tr/LC_MESSAGES/solid-hardware.mo

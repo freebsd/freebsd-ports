@@ -6,7 +6,6 @@
 
 PORTNAME=	kdegames
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -22,13 +21,14 @@ LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
 
 LATEST_LINK=	${PORTNAME}4
 
+USE_GL=		glu
 USE_KDE4=	kdehier kdelibs kdeprefix sharedmime automoc4
 KDE4_BUILDENV=	yes
 USE_OPENAL=	al
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui network opengl qt3support script svg xml \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
+USE_XZ=		yes
 CMAKE_ARGS+=	-DBUILD_kajongg:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes
 

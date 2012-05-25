@@ -1,0 +1,11 @@
+--- ./src/plugins/CMakeLists.txt.orig	2011-12-20 19:19:11.000000000 +0000
++++ ./src/plugins/CMakeLists.txt	2012-05-22 15:24:05.930574748 +0000
+@@ -6,6 +6,6 @@
+ add_subdirectory( templates )
+ add_subdirectory( positionprovider )
+ 
+-if( QT_QTDECLARATIVE_FOUND )
++if( MOBILE AND QT_QTDECLARATIVE_FOUND )
+     add_subdirectory( qt-components )
+-endif( QT_QTDECLARATIVE_FOUND )
++endif( MOBILE AND QT_QTDECLARATIVE_FOUND )

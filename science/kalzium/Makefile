@@ -7,7 +7,6 @@
 
 PORTNAME=	kalzium
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -33,7 +32,7 @@ NO_OCAML_RUNDEPENDS=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus designer opengl script xml \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kalzium.1

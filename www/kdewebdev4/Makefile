@@ -6,7 +6,6 @@
 
 PORTNAME=	kdewebdev
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -20,7 +19,7 @@ LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib \
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes

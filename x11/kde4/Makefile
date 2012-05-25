@@ -7,7 +7,6 @@
 
 PORTNAME=	kde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -17,7 +16,8 @@ COMMENT=	The meta-port for KDE Software Compilation 4
 
 LATEST_LINK=	kde4
 
-USE_KDE4=	baseapps kdelibs kdeprefix oxygen pimlibs runtime workspace
+USE_KDE4=	baseapps_run kdelibs_run kdeprefix oxygen_run \
+		pimlibs_run runtime_run workspace_run
 NO_BUILD=	yes
 
 OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
@@ -39,7 +39,7 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 .include <bsd.port.options.mk>
 
 .ifndef(WITHOUT_KDEACCESSIBILITY)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmag:${PORTSDIR}/accessibility/kdeaccessibility4
+RUN_DEPENDS+=	kdeaccessibility>=4.8.0:${PORTSDIR}/accessibility/kdeaccessibility4
 .endif
 
 .ifndef(WITHOUT_KDEADMIN)
@@ -75,7 +75,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kget:${PORTSDIR}/net/kdenetwork4
 .endif
 
 .ifndef(WITHOUT_KDEPIM)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmail:${PORTSDIR}/deskutils/kdepim4
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmail:${PORTSDIR}/deskutils/kdepim44
 .endif
 
 .ifndef(WITHOUT_KDEPLASMA)
@@ -91,7 +91,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kteatime:${PORTSDIR}/x11-clocks/kdetoys4
 .endif
 
 .ifndef(WITHOUT_KDEUTILS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/misc/kdeutils4
+RUN_DEPENDS+=	kdeutils>=4.8.0:${PORTSDIR}/misc/kdeutils4
 .endif
 
 .ifndef(WITHOUT_KDEWEBDEV)

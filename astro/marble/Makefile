@@ -7,7 +7,6 @@
 
 PORTNAME=	marble
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -24,9 +23,10 @@ USE_QT_VER=	4
 QT_COMPONENTS=	dbus declarative gui network \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
+CMAKE_ARGS=	-DMOBILE:BOOL=FALSE
 
 OPTIONS=	GPS "Support for GPS position provider" on
 

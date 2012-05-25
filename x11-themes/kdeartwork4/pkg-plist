@@ -6333,6 +6333,16 @@ share/kde4/services/ScreenSavers/xspirograph.desktop
 share/kde4/services/ScreenSavers/zoom.desktop
 share/sounds/KDE_Logout_new.wav
 share/sounds/KDE_Startup_new.wav
+share/wallpapers/Aghi/contents/images/1024x768.jpg
+share/wallpapers/Aghi/contents/images/1280x1024.jpg
+share/wallpapers/Aghi/contents/images/1280x800.jpg
+share/wallpapers/Aghi/contents/images/1440x900.jpg
+share/wallpapers/Aghi/contents/images/1600x1200.jpg
+share/wallpapers/Aghi/contents/images/1920x1080.jpg
+share/wallpapers/Aghi/contents/images/1920x1200.jpg
+share/wallpapers/Aghi/contents/images/800x600.jpg
+share/wallpapers/Aghi/contents/screenshot.jpg
+share/wallpapers/Aghi/metadata.desktop
 share/wallpapers/Atra_Dot/contents/images/1280x1024.jpg
 share/wallpapers/Atra_Dot/contents/images/1600x1200.jpg
 share/wallpapers/Atra_Dot/contents/images/1920x1080.jpg
@@ -6411,12 +6421,23 @@ share/wallpapers/Ethais/contents/images/1920x1080.png
 share/wallpapers/Ethais/contents/images/1920x1200.png
 share/wallpapers/Ethais/contents/screenshot.png
 share/wallpapers/Ethais/metadata.desktop
+share/wallpapers/Evening/contents/images/1280x1024.jpg
+share/wallpapers/Evening/contents/images/1600x1200.jpg
+share/wallpapers/Evening/contents/images/1920x1080.jpg
+share/wallpapers/Evening/contents/images/1920x1200.jpg
+share/wallpapers/Evening/contents/screnshot.jpg
+share/wallpapers/Evening/metadata.desktop
 share/wallpapers/Field/contents/images/1280x1024.jpg
 share/wallpapers/Field/contents/images/1600x1200.jpg
 share/wallpapers/Field/contents/images/1920x1200.jpg
 share/wallpapers/Field/contents/images/2560x1600.jpg
 share/wallpapers/Field/contents/screenshot.png
 share/wallpapers/Field/metadata.desktop
+share/wallpapers/Fields_of_Peace/contents/images/1280x1024.JPG
+share/wallpapers/Fields_of_Peace/contents/images/1600x1200.JPG
+share/wallpapers/Fields_of_Peace/contents/images/1920x1200.JPG
+share/wallpapers/Fields_of_Peace/contents/screenshot.png
+share/wallpapers/Fields_of_Peace/metadata.desktop
 share/wallpapers/Flower_drops/contents/images/1280x1024.jpg
 share/wallpapers/Flower_drops/contents/images/1600x1200.jpg
 share/wallpapers/Flower_drops/contents/images/1920x1200.jpg
@@ -6475,11 +6496,6 @@ share/wallpapers/Leafs_Labyrinth/contents/images/1600x1200.jpg
 share/wallpapers/Leafs_Labyrinth/contents/images/1920x1200.jpg
 share/wallpapers/Leafs_Labyrinth/contents/screenshot.png
 share/wallpapers/Leafs_Labyrinth/metadata.desktop
-share/wallpapers/Lightning/contents/images/1280x1024.jpg
-share/wallpapers/Lightning/contents/images/1600x1200.jpg
-share/wallpapers/Lightning/contents/images/1920x1200.jpg
-share/wallpapers/Lightning/contents/screenshot.png
-share/wallpapers/Lightning/metadata.desktop
 share/wallpapers/Media_Life/contents/images/2560x1080.jpg
 share/wallpapers/Media_Life/contents/images/2560x1600.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1280x1024.jpg
@@ -6488,6 +6504,21 @@ share/wallpapers/Midnight_in_Karelia/contents/images/1920x1080.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1920x1200.jpg
 share/wallpapers/Midnight_in_Karelia/contents/screnshot.jpg
 share/wallpapers/Midnight_in_Karelia/metadata.desktop
+share/wallpapers/Quadros/contents/images/1024x768.jpg
+share/wallpapers/Quadros/contents/images/1280x1024.jpg
+share/wallpapers/Quadros/contents/images/1280x800.jpg
+share/wallpapers/Quadros/contents/images/1440x900.jpg
+share/wallpapers/Quadros/contents/images/1600x1200.jpg
+share/wallpapers/Quadros/contents/images/1920x1080.jpg
+share/wallpapers/Quadros/contents/images/1920x1200.jpg
+share/wallpapers/Quadros/contents/images/800x600.jpg
+share/wallpapers/Quadros/contents/screenshot.png
+share/wallpapers/Quadros/metadata.desktop
+share/wallpapers/Red_Leaf/contents/images/1280x1024.jpg
+share/wallpapers/Red_Leaf/contents/images/1600x1200.jpg
+share/wallpapers/Red_Leaf/contents/images/1920x1200.jpg
+share/wallpapers/Red_Leaf/contents/screenshot.png
+share/wallpapers/Red_Leaf/metadata.desktop
 share/wallpapers/Skeeter_Hawk/contents/images/1280x1024.jpg
 share/wallpapers/Skeeter_Hawk/contents/images/1600x1200.jpg
 share/wallpapers/Skeeter_Hawk/contents/images/1920x1200.jpg
@@ -6499,6 +6530,11 @@ share/wallpapers/Spring_Sunray/contents/images/1920x1080.jpg
 share/wallpapers/Spring_Sunray/contents/images/1920x1200.jpg
 share/wallpapers/Spring_Sunray/contents/screnshot.jpg
 share/wallpapers/Spring_Sunray/metadata.desktop
+share/wallpapers/Storm/contents/contents.png
+share/wallpapers/Storm/contents/images/1600x1200.jpg
+share/wallpapers/Storm/contents/images/1920x1080.jpg
+share/wallpapers/Storm/contents/images/1920x1200.jpg
+share/wallpapers/Storm/metadata.desktop
 share/wallpapers/The_Rings_of_Saturn/contents/images/1280x1024.jpg
 share/wallpapers/The_Rings_of_Saturn/contents/images/1280x800.jpg
 share/wallpapers/The_Rings_of_Saturn/contents/images/1440x900.jpg
@@ -6547,21 +6583,27 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/wallpapers/The_Rings_of_Saturn/contents/images
 @dirrm share/wallpapers/The_Rings_of_Saturn/contents
 @dirrm share/wallpapers/The_Rings_of_Saturn
+@dirrm share/wallpapers/Storm/contents/images
+@dirrm share/wallpapers/Storm/contents
+@dirrm share/wallpapers/Storm
 @dirrm share/wallpapers/Spring_Sunray/contents/images
 @dirrm share/wallpapers/Spring_Sunray/contents
 @dirrm share/wallpapers/Spring_Sunray
 @dirrm share/wallpapers/Skeeter_Hawk/contents/images
 @dirrm share/wallpapers/Skeeter_Hawk/contents
 @dirrm share/wallpapers/Skeeter_Hawk
+@dirrm share/wallpapers/Red_Leaf/contents/images
+@dirrm share/wallpapers/Red_Leaf/contents
+@dirrm share/wallpapers/Red_Leaf
+@dirrm share/wallpapers/Quadros/contents/images
+@dirrm share/wallpapers/Quadros/contents
+@dirrm share/wallpapers/Quadros
 @dirrm share/wallpapers/Midnight_in_Karelia/contents/images
 @dirrm share/wallpapers/Midnight_in_Karelia/contents
 @dirrm share/wallpapers/Midnight_in_Karelia
 @dirrmtry share/wallpapers/Media_Life/contents/images
 @dirrmtry share/wallpapers/Media_Life/contents
 @dirrmtry share/wallpapers/Media_Life
-@dirrm share/wallpapers/Lightning/contents/images
-@dirrm share/wallpapers/Lightning/contents
-@dirrm share/wallpapers/Lightning
 @dirrm share/wallpapers/Leafs_Labyrinth/contents/images
 @dirrm share/wallpapers/Leafs_Labyrinth/contents
 @dirrm share/wallpapers/Leafs_Labyrinth
@@ -6598,9 +6640,15 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/wallpapers/Flower_drops/contents/images
 @dirrm share/wallpapers/Flower_drops/contents
 @dirrm share/wallpapers/Flower_drops
+@dirrm share/wallpapers/Fields_of_Peace/contents/images
+@dirrm share/wallpapers/Fields_of_Peace/contents
+@dirrm share/wallpapers/Fields_of_Peace
 @dirrm share/wallpapers/Field/contents/images
 @dirrm share/wallpapers/Field/contents
 @dirrm share/wallpapers/Field
+@dirrm share/wallpapers/Evening/contents/images
+@dirrm share/wallpapers/Evening/contents
+@dirrm share/wallpapers/Evening
 @dirrm share/wallpapers/Ethais/contents/images
 @dirrm share/wallpapers/Ethais/contents
 @dirrm share/wallpapers/Ethais
@@ -6643,6 +6691,9 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/wallpapers/Atra_Dot/contents/images
 @dirrm share/wallpapers/Atra_Dot/contents
 @dirrm share/wallpapers/Atra_Dot
+@dirrm share/wallpapers/Aghi/contents/images
+@dirrm share/wallpapers/Aghi/contents
+@dirrm share/wallpapers/Aghi
 @dirrm share/icons/nuvola/scalable/status
 @dirrm share/icons/nuvola/scalable/places
 @dirrm share/icons/nuvola/scalable/mimetypes

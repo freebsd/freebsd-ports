@@ -222,6 +222,7 @@ include/KDE/KArchiveDirectory
 include/KDE/KArchiveEntry
 include/KDE/KArchiveFile
 include/KDE/KArrowButton
+include/KDE/KAscii
 include/KDE/KAssistantDialog
 include/KDE/KAuth/Action
 include/KDE/KAuth/ActionReply
@@ -312,6 +313,7 @@ include/KDE/KDateTimeWidget
 include/KDE/KDateValidator
 include/KDE/KDateWidget
 include/KDE/KDebug
+include/KDE/KDescendantsProxyModel
 include/KDE/KDesktopFile
 include/KDE/KDialog
 include/KDE/KDialogButtonBox
@@ -602,6 +604,7 @@ include/KDE/KRandomSequence
 include/KDE/KRatingWidget
 include/KDE/KRecentDocument
 include/KDE/KRecentFilesAction
+include/KDE/KRecursiveFilterProxyModel
 include/KDE/KRemoteEncoding
 include/KDE/KReplace
 include/KDE/KReplaceDialog
@@ -1103,9 +1106,6 @@ include/kactioncollection.h
 include/kactionmenu.h
 include/kactionselector.h
 include/kactivelabel.h
-include/kactivityconsumer.h
-include/kactivitycontroller.h
-include/kactivityinfo.h
 include/kallocator.h
 include/kanimatedbutton.h
 include/kapplication.h
@@ -1907,6 +1907,10 @@ include/threadweaver/ThreadWeaver.h
 include/threadweaver/WeaverInterface.h
 include/threadweaver/WeaverObserver.h
 include/threadweaver/threadweaver_export.h
+lib/cmake/KDeclarative/KDeclarativeConfig.cmake
+lib/cmake/KDeclarative/KDeclarativeConfigVersion.cmake
+lib/cmake/KDeclarative/KDeclarativeLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KDeclarative/KDeclarativeLibraryTargets.cmake
 lib/kde4/emoticonstheme_adium.so
 lib/kde4/emoticonstheme_kde.so
 lib/kde4/emoticonstheme_pidgin.so
@@ -1974,9 +1978,6 @@ lib/kde4/plugins/script/libkrossqtsplugin.so
 lib/kde4/plugins/script/libkrossqtsplugin.so.5
 lib/kde4/plugins/script/libkrossqtsplugin.so.5.0.1
 lib/kde4/spellcheckplugin.so
-lib/libkactivities.so
-lib/libkactivities.so.7
-lib/libkactivities.so.7.0.1
 lib/libkcmutils.so
 lib/libkcmutils.so.5
 lib/libkcmutils.so.5.0.1
@@ -2267,8 +2268,6 @@ share/apps/kconf_update/kioslave.upd
 share/apps/kconf_update/ksslcertificatemanager.upd
 share/apps/kconf_update/ksslcertificatemanager.upd.sh
 share/apps/kconf_update/move_kio_help_cache.sh
-share/apps/kconf_update/plasma_popupapplet_fix_groups.pl
-share/apps/kconf_update/plasma_popupapplet_fix_groups.upd
 share/apps/kconf_update/proxytype.pl
 share/apps/kconf_update/useragent.pl
 share/apps/kdeui/about/bar-bottom-left.png
@@ -2936,6 +2935,7 @@ share/apps/ksgmltools2/customization/ru/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/ru/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/ru/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/ru/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/ru/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/ru/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/ru/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/ru/lang.entities
@@ -3471,7 +3471,6 @@ share/locale/all_languages
 share/locale/en_US/entry.desktop
 share/mime/all/all.xml
 share/mime/all/allfiles.xml
-share/mime/application/metalink+xml.xml
 share/mime/application/relaxng.xml
 share/mime/application/vnd.kde.fontspackage.xml
 share/mime/application/vnd.kde.kphotoalbum-import.xml
@@ -3484,11 +3483,6 @@ share/mime/application/x-icq.xml
 share/mime/application/x-java-applet.xml
 share/mime/application/x-kcachegrind.xml
 share/mime/application/x-kcsrc.xml
-share/mime/application/x-kexi-connectiondata.xml
-share/mime/application/x-kexiproject-shortcut.xml
-share/mime/application/x-kexiproject-sqlite.xml
-share/mime/application/x-kexiproject-sqlite2.xml
-share/mime/application/x-kexiproject-sqlite3.xml
 share/mime/application/x-kgeo.xml
 share/mime/application/x-kgetlist.xml
 share/mime/application/x-khtml-adaptor.xml
@@ -3508,8 +3502,7 @@ share/mime/application/x-kvtml.xml
 share/mime/application/x-kwallet.xml
 share/mime/application/x-kwordquiz.xml
 share/mime/application/x-mimearchive.xml
-share/mime/application/x-mobipocket-ebook.xml
-share/mime/application/x-nzb.xml
+share/mime/application/x-ms-shortcut.xml
 share/mime/application/x-plasma.xml
 share/mime/application/x-quanta.xml
 share/mime/application/x-smb-server.xml
@@ -3532,9 +3525,7 @@ share/mime/audio/x-pn-realaudio-plugin.xml
 share/mime/image/x-hdr.xml
 share/mime/image/x-kde-raw.xml
 share/mime/image/x-pic.xml
-share/mime/interface/x-winamp-skin.xml
 share/mime/packages/kde.xml
-share/mime/text/plain.xml
 share/mime/text/vnd.abc.xml
 share/mime/text/x-hex.xml
 share/mime/text/x-katefilelist.xml
@@ -3547,7 +3538,6 @@ share/mime/uri/rtspt.xml
 share/mime/uri/rtspu.xml
 share/mime/video/x-ms-wmp.xml
 @dirrmtry share/mime/uri
-@dirrmtry share/mime/interface
 @dirrmtry share/mime/all
 @dirrm share/kde4/services/qimageioplugins
 @dirrm share/doc/HTML/en/sonnet
@@ -3680,6 +3670,7 @@ share/mime/video/x-ms-wmp.xml
 @dirrm lib/kde4/plugins/kauth/backend
 @dirrm lib/kde4/plugins/kauth
 @dirrm lib/kde4/plugins/imageformats
+@dirrm lib/cmake/KDeclarative
 @dirrm include/threadweaver
 @dirrm include/sonnet
 @dirrmtry include/solid

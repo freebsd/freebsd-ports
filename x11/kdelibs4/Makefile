@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,9 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-LIB_DEPENDS=	searchclient.0:${PORTSDIR}/deskutils/strigi \
-		soprano.4:${PORTSDIR}/textproc/soprano \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		aspell.16:${PORTSDIR}/textproc/aspell \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		pcre.1:${PORTSDIR}/devel/pcre \
@@ -31,18 +28,15 @@ LIB_DEPENDS=	searchclient.0:${PORTSDIR}/deskutils/strigi \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		qca.2:${PORTSDIR}/devel/qca \
 		HUpnp.1:${PORTSDIR}/net/hupnp \
-		attica.0:${PORTSDIR}/x11-toolkits/attica \
 		polkit-qt-core-1.1:${PORTSDIR}/sysutils/polkit-qt \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
 		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
 		xauth:${PORTSDIR}/x11/xauth \
 		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
@@ -51,11 +45,12 @@ CONFLICTS=	kdebase-runtime-4.5.[0-5]
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	automoc4 kdehier kdeprefix oxygen sharedmime
+USE_KDE4=	kdehier kdeprefix oxygen \
+		attica automoc4 ontologies sharedmime soprano strigi
 KDE4_BUILDENV=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	yes
@@ -70,15 +65,18 @@ MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS+=	-DWITH_ACL:BOOL=Off \
 		-DWITH_FAM:BOOL=On \
 		-DHUPNP_INCLUDE_PATH:PATH="${LOCALBASE}/include" \
-		-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4"
+		-DKDE_DISTRIBUTION_TEXT:STRING="${OPSYS}" \
+		-DKDE_DEFAULT_HOME:STRING=".kde4"
 
 MAN1=	checkXML.1 \
+	kconfig_compiler.1 \
 	kde4-config.1 \
 	kdecmake.1 \
 	kjs.1 \
 	kjscmd.1 \
 	kross.1 \
-	makekdewidgets.1
+	makekdewidgets.1 \
+	preparetips.1
 MAN7=	kdeoptions.7 \
 	qtoptions.7
 MAN8=	kbuildsycoca4.8 \

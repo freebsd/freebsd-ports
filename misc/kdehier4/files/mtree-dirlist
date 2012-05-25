@@ -2,8 +2,8 @@
 bin
 etc
 @comment the following commented dirs will be linked from the corresponding LOCALBASE dirs
-@comment etc/pam.d
-@comment etc/rc.d
+@comment-dir etc/pam.d
+@comment-dir etc/rc.d
 include
 include/X11
 info
@@ -14,9 +14,9 @@ lib/X11/fonts
 lib/X11/fonts/local
 libdata
 @comment the following commented dirs will be linked from the corresponding LOCALBASE dirs
-@comment libdata/ldconfig
-@comment libdata/ldconfig32
-@comment libdata/pkgconfig
+@comment-dir libdata/ldconfig
+@comment-dir libdata/ldconfig32
+@comment-dir libdata/pkgconfig
 libexec
 man
 man/cat1
@@ -131,7 +131,7 @@ share
 @comment -- polkit-1 does not support files in different prefixes,
 @comment -- share/polkit-1/actions will be linked from LOCALBASE
 share/polkit-1
-@comment share/polkit-1/actions
+@comment-dir share/polkit-1/actions
 @comment ---------------------------------------------------------------------
 share/aclocal
 share/dict

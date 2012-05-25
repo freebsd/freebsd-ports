@@ -21,7 +21,7 @@ CONFLICTS=	kdebindings-smoke-4.[0-6].*
 USE_KDE4=	kdehier kdeprefix
 USE_QT_VER=	4
 QT_COMPONENTS=	xml qmake_build moc_build uic_build rcc_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DSMOKE_CMAKE_MODULE_DIR:PATH=${PREFIX}/lib/cmake/smoke
 MAKE_JOBS_SAFE=	yes

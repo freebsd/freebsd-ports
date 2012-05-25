@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -107,7 +106,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwordquiz:${PORTSDIR}/misc/kwordquiz
 .endif
 
 .ifndef(WITHOUT_MARBLE)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/marble:${PORTSDIR}/astro/marble
+USE_KDE4+=	marble_run
 .endif
 
 .ifndef(WITHOUT_PARLEY)

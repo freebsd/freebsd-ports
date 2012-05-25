@@ -584,6 +584,8 @@ share/apps/kfourinline/grafix/yellow_reflection.rc
 share/apps/kfourinline/kfourinlineui.rc
 share/apps/kgoldrunner/kgoldrunnerui.rc
 share/apps/kgoldrunner/system/game_CM.txt
+share/apps/kgoldrunner/system/game_GMEP.txt
+share/apps/kgoldrunner/system/game_GMGR.txt
 share/apps/kgoldrunner/system/game_MAZ.txt
 share/apps/kgoldrunner/system/game_cnt.txt
 share/apps/kgoldrunner/system/game_ende.txt
@@ -636,6 +638,9 @@ share/apps/kigo/kigoui.rc
 share/apps/kigo/themes/default.desktop
 share/apps/kigo/themes/kigo_default.png
 share/apps/kigo/themes/kigo_default.svgz
+share/apps/kigo/themes/kigo_plain.png
+share/apps/kigo/themes/kigo_plain.svgz
+share/apps/kigo/themes/plain.desktop
 share/apps/killbots/killbotsui.rc
 share/apps/killbots/rulesets/classic.desktop
 share/apps/killbots/rulesets/daleks.desktop
@@ -1852,7 +1857,9 @@ share/kde4/services/palapeli_jigsawslicer.desktop
 share/kde4/services/palapeli_rectslicer.desktop
 share/kde4/services/palathumbcreator.desktop
 share/kde4/servicetypes/libpala-slicerplugin.desktop
+share/mime/application/vnd.kde.kpatience.savedstate.xml
 share/mime/application/x-palapeli-puzzle.xml
+share/mime/packages/kpatience.xml
 share/mime/packages/palapeli-mimetypes.xml
 share/sounds/KDiamond-Stone-Drop.ogg
 share/sounds/KDiamond-Stone-Swap.ogg

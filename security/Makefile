@@ -232,6 +232,7 @@
     SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += kgpg
+    SUBDIR += kgpg-kde4
     SUBDIR += klamav
     SUBDIR += knock
     SUBDIR += knocker
@@ -241,6 +242,7 @@
     SUBDIR += krb5-appl
     SUBDIR += kripp
     SUBDIR += kssh
+    SUBDIR += kwallet
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += l5

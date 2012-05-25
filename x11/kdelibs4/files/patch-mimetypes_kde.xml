@@ -1,0 +1,94 @@
+--- ./mimetypes/kde.xml.orig	2012-01-11 01:17:51.000000000 +1100
++++ ./mimetypes/kde.xml	2012-05-14 20:50:05.000000000 +1100
+@@ -13,11 +13,6 @@
+   the mime type there.
+ -->
+ <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+-  <mime-type type="application/metalink+xml">
+-    <sub-class-of type="application/xml"/>
+-    <comment>Metalink download</comment>
+-    <glob pattern="*.metalink"/>
+-  </mime-type>
+   <mime-type type="application/relaxng">
+     <sub-class-of type="application/xml"/>
+     <comment>RELAX NG</comment>
+@@ -66,14 +61,6 @@
+     <glob pattern="*.mhtml"/>
+     <glob pattern="*.mht"/>
+   </mime-type>
+-  <mime-type type="application/x-nzb"> <!-- fdo #10029 -->
+-    <comment>NewzBin usenet index</comment>
+-    <sub-class-of type="application/xml"/>
+-    <magic priority="80">
+-      <match type="string" value="&lt;nzb" offset="0:256"/>
+-    </magic>
+-    <glob pattern="*.nzb"/>
+-  </mime-type>
+   <mime-type type="application/x-plasma">
+     <sub-class-of type="application/zip"/>
+     <comment>plasmoid</comment>
+@@ -152,9 +139,6 @@
+     <glob pattern="*.pnx"/>
+     <glob pattern="*.rdc"/>
+   </mime-type>
+-  <mime-type type="text/plain"> <!-- As discussed on xdg list, *.doc is needed here for disambiguation -->
+-    <glob pattern="*.doc"/>
+-  </mime-type>
+   <mime-type type="text/x-hex">
+     <sub-class-of type="text/plain"/>
+     <comment>Intel® hexadecimal object file</comment>
+@@ -355,28 +339,10 @@
+     <glob pattern="*.wmp"/>
+   </mime-type>
+ 
+-  <mime-type type="application/x-kexiproject-shortcut"> <!-- FIXED 0.70 -->
+-    <comment>shortcut to Kexi project on database server</comment>
+-    <glob pattern="*.kexis"/>
+-  </mime-type>
+   <mime-type type="application/x-kexiproject-sqlite"> <!-- FIXED 0.70 -->
+     <comment>Kexi database file-based project</comment>
+     <glob pattern="*.kexi"/>
+   </mime-type>
+-  <mime-type type="application/x-kexiproject-sqlite2"> <!-- FIXED 0.70 -->
+-    <sub-class-of type="application/x-sqlite2"/>
+-    <comment>Kexi database file-based project</comment>
+-    <glob pattern="*.kexi"/>
+-  </mime-type>
+-  <mime-type type="application/x-kexiproject-sqlite3"> <!-- FIXED 0.70 -->
+-    <sub-class-of type="application/x-sqlite3"/>
+-    <comment>Kexi database file-based project</comment>
+-    <glob pattern="*.kexi"/>
+-  </mime-type>
+-  <mime-type type="application/x-kexi-connectiondata"> <!-- FIXED 0.70 -->
+-    <comment>data for database server connection</comment>
+-    <glob pattern="*.kexic"/>
+-  </mime-type>
+ 
+   <!-- http://www4.wiwiss.fu-berlin.de/bizer/TriG/ -->
+   <!-- Used in Nepomuk to encode almost all ontologies -->
+@@ -398,25 +364,4 @@
+     </magic>
+     <glob pattern="*.pic"/>
+   </mime-type>
+-  <mime-type type="text/x-qml"> <!-- in fdo smi > 0.90 -->
+-    <comment>Qt Markup Language file</comment>
+-    <magic priority="80">
+-      <match type="string" value="import Qt " offset="0:256"/>
+-    </magic>
+-    <glob pattern="*.qml"/>
+-  </mime-type>
+-  <mime-type type="application/x-mobipocket-ebook">
+-    <comment>Mobipocket e-book</comment>
+-    <sub-class-of type="application/x-palm-database"/>
+-    <generic-icon name="x-office-document"/>
+-    <glob pattern="*.mobi"/>
+-    <glob pattern="*.prc" />
+-    <magic priority="30">
+-      <!-- This also matches AportisDoc, so lower the priority and prefer extension -->
+-      <match type="string" offset="60" value="TEXtREAd" />
+-    </magic>
+-    <magic priority="80">
+-      <match type="string" offset="60" value="BOOKMOBI" />
+-    </magic>
+-  </mime-type>
+ </mime-info>

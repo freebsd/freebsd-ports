@@ -7,11 +7,9 @@
 
 PORTNAME=	filelight
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DISTNAME=	kdeutils-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,10 +23,7 @@ USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
-USE_BZIP2=	yes
-DISTINFO_FILE=	${PORTSDIR}/misc/kdeutils4/distinfo
+USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 .include <bsd.port.mk>

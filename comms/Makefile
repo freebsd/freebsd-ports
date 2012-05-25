@@ -68,6 +68,7 @@
     SUBDIR += klog
     SUBDIR += kmobiletools
     SUBDIR += kpsk
+    SUBDIR += kremotecontrol
     SUBDIR += ktrack
     SUBDIR += libfec
     SUBDIR += libimobiledevice

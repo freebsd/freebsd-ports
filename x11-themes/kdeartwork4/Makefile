@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,16 +14,16 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Artworks Themes
 
-LIB_DEPENDS=	kexiv2.10:${PORTSDIR}/graphics/libkexiv2-kde4
-
 BUILD_DEPENDS=	eigen>=2.0.b1:${PORTSDIR}/math/eigen2
 
-CONFLICTS=	kdeaccessibility-4.[0-6].* kdebase-workspace-4.5.[0-5]
+CONFLICTS_INSTALL=	kdeaccessibility-4.[0-6].* \
+			kdebase-workspace-4.5.[0-5] \
+			kde-wallpapers-4.7.*
 
 LATEST_LINK=	${PORTNAME}4
 
-USE_BZIP2=	yes
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
+USE_XZ=	yes
+USE_KDE4=	kdehier kdelibs kdeprefix libkexiv2 workspace automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl \

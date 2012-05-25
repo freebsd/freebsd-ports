@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ %%PREFIX%% != %%LOCALBASE%% ]; then
+PERL5LIB=${PERL5LIB}:%%PERL5LIBDIR%%
+export PERL5LIB
+fi

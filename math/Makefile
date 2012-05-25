@@ -35,6 +35,7 @@
     SUBDIR += algae
     SUBDIR += algotutor
     SUBDIR += alt-ergo
+    SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += apc
     SUBDIR += aribas
@@ -182,6 +183,7 @@
     SUBDIR += kalgebra
     SUBDIR += kash3
     SUBDIR += kbruch
+    SUBDIR += kcalc
     SUBDIR += kig
     SUBDIR += kktdirect
     SUBDIR += kmplot

@@ -6,88 +6,87 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	misc kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+MASTER_SITES=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of utilities for KDE 4
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
-
-RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
-
 LATEST_LINK=	${PORTNAME}4
 
-KDE4_BUILDENV=	yes
-USE_KDE4=	kdeprefix kdehier automoc4 sharedmime \
-		kdelibs pimlibs workspace baseapps
-USE_PYTHON=	2.5+
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network script xml xmlpatterns \
-		qmake_build moc_build rcc_build uic_build
-USE_XORG=	x11 xrender xtst
-USE_BZIP2=	yes
-CMAKE_ARGS+=	-DBUILD_filelight:BOOL=FALSE \
-		-DBUILD_printer-applet:BOOL=FALSE
-MAKE_JOBS_SAFE=	yes
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
 
-MAN1=		ark.1
-
-OPTIONS=	FILELIGHT "Install Filelight file system viewer" on \
-		LIRC "Support for IR remote controls" off \
-		PRINTER_APPLET "Install printer system tray utility" off \
-		7ZIP "Support for 7-Zip archives in Ark" off \
-		RAR "Support for RAR archives in Ark" off \
-		ZIP "Support for ZIP archives in Ark" off
+OPTIONS=	ARK "Install archiving tool Ark" on \
+		FILELIGHT "Install file system viewer Filelight" on \
+		KCALC "Install scientific calculator KCalc" on \
+		KCHARSELECT "Install character selector KCharSelect" on \
+		KDF "Install disk usage tool KDiskFree" on \
+		KFLOPPY "Install floppy formatter KFloppy" on \
+		KGPG "Install encryption tool KGpg" on \
+		KREMOTECONTROL "Install KRemoteControl" on \
+		KTIMER "Install countdown launcher KTimer" on \
+		KWALLET "Install password manager KWallet" on \
+		PRINTER_APPLET "Install printer system tray utility" on \
+		SUPERKARAMBA "Install widget framework SuperKaramba" on \
+		SWEEPER "Install system cleaner Sweeper" on
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_FILELIGHT)
+.ifdef(WITH_ARK)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ark:${PORTSDIR}/archivers/ark
+.endif
+
+.ifdef(WITH_FILELIGHT)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/filelight:${PORTSDIR}/sysutils/filelight-kde4
 .endif
 
-.ifdef(WITH_LIRC)
-RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
+.ifdef(WITH_KCALC)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/math/kcalc
+.endif
+
+.ifdef(WITH_KCHARSELECT)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcharselect:${PORTSDIR}/deskutils/kcharselect
+.endif
+
+.ifdef(WITH_KDF)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kdf:${PORTSDIR}/sysutils/kdf
+.endif
+
+.ifdef(WITH_KFLOPPY)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kfloppy:${PORTSDIR}/sysutils/kfloppy
+.endif
+
+.ifdef(WITH_KGPG)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kgpg:${PORTSDIR}/security/kgpg-kde4
+.endif
+
+.ifdef(WITH_KREMOTECONTROL)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krcdnotifieritem:${PORTSDIR}/comms/kremotecontrol
+.endif
+
+.ifdef(WITH_KTIMER)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktimer:${PORTSDIR}/x11-clocks/ktimer
+.endif
+
+.ifdef(WITH_KWALLET)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwallet
 .endif
 
 .ifdef(WITH_PRINTER_APPLET)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/printer-applet:${PORTSDIR}/print/kdeutils4-printer-applet
 .endif
 
-.ifdef(WITH_7ZIP)
-RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
+.ifdef(WITH_SUPERKARAMBA)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/superkaramba:${PORTSDIR}/deskutils/superkaramba
 .endif
 
-.ifdef(WITH_ZIP)
-RUN_DEPENDS+=	unzip>0:${PORTSDIR}/archivers/unzip \
-		zip:${PORTSDIR}/archivers/zip
+.ifdef(WITH_SWEEPER)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/sweeper:${PORTSDIR}/sysutils/sweeper
 .endif
 
-.include <bsd.port.pre.mk>
+do-install:
+		${DO_NADA}
 
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	archive.12:${PORTSDIR}/archivers/libarchive
-.endif
-
-.ifdef(WITH_RAR)
-RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
-.if ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "powerpc" && ${ARCH} != "sparc64"
-INSTALL_RAR=	YES
-.elif ${ARCH} == "amd64"
-.ifndef(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then ${ECHO_CMD} YES; fi
-.endif
-.if ${HAVE_COMPAT_IA32_KERN} == "YES"
-INSTALL_RAR=	YES
-.endif
-.endif
-.ifdef(INSTALL_RAR)
-RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

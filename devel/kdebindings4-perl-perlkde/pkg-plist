@@ -1,0 +1,69 @@
+lib/kde4/kperlpluginfactory.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Akonadi.pm
+%%ATTICA%%%%SITE_PERL%%/%%PERL_ARCH%%/Attica.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KDECore4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KDEUi4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KFile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KHTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KIO4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KNewStuff2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KNewStuff3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KParts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KTextEditor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/KUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Kate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Nepomuk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/NepomukQuery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Okular.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Plasma4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Solid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Soprano.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SopranoClient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SopranoServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Akonadi/Akonadi.so
+%%ATTICA%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Attica/Attica.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KDECore4/KDECore4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KDEUi4/KDEUi4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KFile/KFile.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KHTML/KHTML.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KIO4/KIO4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KNewStuff2/KNewStuff2.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KNewStuff3/KNewStuff3.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KParts/KParts.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KTextEditor/KTextEditor.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/KUtils/KUtils.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kate/Kate.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nepomuk/Nepomuk.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/NepomukQuery/NepomukQuery.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Okular/Okular.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plasma4/Plasma4.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Solid/Solid.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Soprano/Soprano.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoClient/SopranoClient.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoServer/SopranoServer.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoServer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SopranoClient
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Soprano
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Solid
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plasma4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Okular
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NepomukQuery
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nepomuk
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kate
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KUtils
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KTextEditor
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KParts
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KNewStuff3
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KNewStuff2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KIO4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KHTML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KFile
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KDEUi4
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KDECore4
+%%ATTICA%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Attica
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Akonadi
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%
+@dirrmtry lib/perl5/site_perl
+@dirrmtry lib/perl5

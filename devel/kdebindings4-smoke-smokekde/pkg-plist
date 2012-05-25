@@ -1,5 +1,5 @@
 include/smoke/akonadi_smoke.h
-@comment include/smoke/attica_smoke.h
+%%ATTICA%%include/smoke/attica_smoke.h
 include/smoke/kate_smoke.h
 include/smoke/kdecore_smoke.h
 include/smoke/kdeui_smoke.h
@@ -22,9 +22,9 @@ include/smoke/sopranoserver_smoke.h
 lib/libsmokeakonadi.so
 lib/libsmokeakonadi.so.3
 lib/libsmokeakonadi.so.3.0.0
-@comment lib/libsmokeattica.so
-@comment lib/libsmokeattica.so.3
-@comment lib/libsmokeattica.so.3.0.0
+%%ATTICA%%lib/libsmokeattica.so
+%%ATTICA%%lib/libsmokeattica.so.3
+%%ATTICA%%lib/libsmokeattica.so.3.0.0
 lib/libsmokekate.so
 lib/libsmokekate.so.3
 lib/libsmokekate.so.3.0.0

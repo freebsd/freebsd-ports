@@ -26,7 +26,6 @@ share/locale/ko/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ko/LC_MESSAGES/akonadi_nepomuk_email_feeder.mo
 share/locale/ko/LC_MESSAGES/akonadi_nepomukfeeder.mo
 share/locale/ko/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_next.mo
@@ -97,7 +96,6 @@ share/locale/ko/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ko/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletemplates.mo
-share/locale/ko/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/ko/LC_MESSAGES/kategdbplugin.mo
 share/locale/ko/LC_MESSAGES/katehelloworld.mo
 share/locale/ko/LC_MESSAGES/katekonsoleplugin.mo
@@ -337,6 +335,11 @@ share/locale/ko/LC_MESSAGES/krunner.mo
 share/locale/ko/LC_MESSAGES/ksaneplugin.mo
 share/locale/ko/LC_MESSAGES/kscd.mo
 share/locale/ko/LC_MESSAGES/kscreensaver.mo
+share/locale/ko/LC_MESSAGES/ksecrets_kio.mo
+share/locale/ko/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/ko/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/ko/LC_MESSAGES/ksecretsserviced.mo
+share/locale/ko/LC_MESSAGES/ksecretsync.mo
 share/locale/ko/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ko/LC_MESSAGES/kshisen.mo
 share/locale/ko/LC_MESSAGES/kshorturifilter.mo
@@ -347,13 +350,13 @@ share/locale/ko/LC_MESSAGES/kstars.mo
 share/locale/ko/LC_MESSAGES/kstart.mo
 share/locale/ko/LC_MESSAGES/kstartperf.mo
 share/locale/ko/LC_MESSAGES/kstyle_config.mo
-share/locale/ko/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ko/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/ko/LC_MESSAGES/ksudoku.mo
 share/locale/ko/LC_MESSAGES/ksysguard.mo
 share/locale/ko/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/ko/LC_MESSAGES/ksystemlog.mo
 share/locale/ko/LC_MESSAGES/ksystraycmd.mo
+share/locale/ko/LC_MESSAGES/kte_acomment.mo
 share/locale/ko/LC_MESSAGES/kteatime.mo
 share/locale/ko/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/ko/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -376,12 +379,14 @@ share/locale/ko/LC_MESSAGES/kwin_clients.mo
 share/locale/ko/LC_MESSAGES/kwin_effects.mo
 share/locale/ko/LC_MESSAGES/kwinshutdown.mo
 share/locale/ko/LC_MESSAGES/kwinstartmenu.mo
+share/locale/ko/LC_MESSAGES/kwl2kss.mo
 share/locale/ko/LC_MESSAGES/kwordquiz.mo
 share/locale/ko/LC_MESSAGES/kwrite.mo
 share/locale/ko/LC_MESSAGES/kwriteconfig.mo
 share/locale/ko/LC_MESSAGES/kxkb.mo
 share/locale/ko/LC_MESSAGES/kxsconfig.mo
 share/locale/ko/LC_MESSAGES/lancelot.mo
+share/locale/ko/LC_MESSAGES/libkalarmcal.mo
 share/locale/ko/LC_MESSAGES/libkasten.mo
 share/locale/ko/LC_MESSAGES/libkcddb.mo
 share/locale/ko/LC_MESSAGES/libkcompactdisc.mo
@@ -418,11 +423,11 @@ share/locale/ko/LC_MESSAGES/mplayerthumbs.mo
 share/locale/ko/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ko/LC_MESSAGES/nepomukbackup.mo
 share/locale/ko/LC_MESSAGES/nepomukcontroller.mo
+share/locale/ko/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/ko/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/ko/LC_MESSAGES/nepomukserver.mo
 share/locale/ko/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ko/LC_MESSAGES/nepomukstorage.mo
-share/locale/ko/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/ko/LC_MESSAGES/nsplugin.mo
 share/locale/ko/LC_MESSAGES/okteta-mobile.mo
 share/locale/ko/LC_MESSAGES/okteta.mo
@@ -464,7 +469,6 @@ share/locale/ko/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/ko/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_fileWatcher.mo
@@ -495,6 +499,7 @@ share/locale/ko/LC_MESSAGES/plasma_applet_news.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/ko/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_opendesktop.mo

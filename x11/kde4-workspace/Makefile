@@ -8,7 +8,6 @@
 
 PORTNAME=	kde-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE_kde} \
 		${MASTER_SITE_LOCAL} \
@@ -16,33 +15,30 @@ MASTER_SITES=	${MASTER_SITE_KDE_kde} \
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src/:kde \
 			avilla/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kde \
-		stripes-freebsd-1.0${EXTRACT_SUFX}
+		stripes-freebsd-1.0.tar.bz2
 DIST_SUBDIR=	KDE
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
+LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 		ck-connector.0:${PORTSDIR}/sysutils/consolekit \
 		pci.3:${PORTSDIR}/devel/libpci \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		qalculate.5:${PORTSDIR}/math/libqalculate \
 		prison.0:${PORTSDIR}/graphics/prison \
-		searchclient.0:${PORTSDIR}/deskutils/strigi \
-		soprano.4:${PORTSDIR}/textproc/soprano \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		png.6:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		kactivities.6:${PORTSDIR}/x11/kactivities
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
-		xrdb:${PORTSDIR}/x11/xrdb
+BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		xprop:${PORTSDIR}/x11/xprop \
 		xsetroot:${PORTSDIR}/x11/xsetroot \
@@ -59,11 +55,13 @@ CONFLICTS=	kdeaccessibility-4.[0-6].* kdebase-workspace-4.[0-6].*
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	kdm4
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
+USE_GL=		glu
 USE_GNOME=	glib20
 USE_ICONV=	yes
-USE_KDE4=	akonadi automoc4 kdehier kdelibs kdeprefix oxygen pimlibs
+USE_KDE4=	kdehier kdelibs kdeprefix oxygen pimlibs \
+		akonadi automoc4 ontologies qimageblitz soprano strigi
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus declarative gui network opengl phonon \
@@ -143,6 +141,10 @@ LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .if ${OSVERSION} < 900004
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
+
+post-extract:
+	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${_DISTDIR}/stripes-freebsd-1.0.tar.bz2 ${EXTRACT_AFTER_ARGS})
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \

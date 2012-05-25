@@ -131,12 +131,15 @@
     SUBDIR += katapult
     SUBDIR += kbirthday
     SUBDIR += kblticker
+    SUBDIR += kcharselect
     SUBDIR += kchm
     SUBDIR += kchmviewer
     SUBDIR += kchmviewer-kde4
     SUBDIR += kdepim3
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
+    SUBDIR += kdepim44
+    SUBDIR += kdepim44-runtime
     SUBDIR += kdepimlibs4
     SUBDIR += kdeplasma-addons
     SUBDIR += kdissert
@@ -254,6 +257,7 @@
     SUBDIR += steadyflow
     SUBDIR += strigi
     SUBDIR += sugarcrm
+    SUBDIR += superkaramba
     SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
     SUBDIR += surrealtodo
