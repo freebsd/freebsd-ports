@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcitx-configtool
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
@@ -14,7 +14,8 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Fcitx IM framework configure tool
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 LIB_DEPENDS=	fcitx-config.4:${PORTSDIR}/chinese/fcitx
 
 USE_XZ=		yes
