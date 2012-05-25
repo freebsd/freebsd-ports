@@ -445,12 +445,14 @@ post-install:
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
 	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 .endif
-.if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
+.if !defined(WITHOUT_IMAGEMAGICK_MODULES)
+. if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
 	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/coders/.keep
 	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/filters/.keep
-.else
+. else
 	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/coders/.keep
 	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/filters/.keep
+. endif
 .endif
 
 test check:
