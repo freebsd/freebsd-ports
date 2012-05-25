@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=		wcslib
-PORTVERSION=	4.4.4
+PORTVERSION=	4.13.4
 CATEGORIES=		astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 
@@ -20,6 +20,7 @@ MAKEFILE=		GNUmakefile
 USE_LDCONFIG=	yes
 
 PLIST_SUB=		VERSION="${PORTVERSION}"
+MAN1=			fitshdr.1
 
 # See makedefs.in which describes why you want to set the extra support.
 # For most users it will not be required.
@@ -44,5 +45,13 @@ LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%PKGDIR%%#${LOCALBASE}/libdata#g' \
 		${WRKSRC}/GNUmakefile
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README COPYING COPYING.LESSER wcslib.pdf ${DOCSDIR})
+	@${MKDIR} ${DOCSDIR}/html
+	(cd ${WRKSRC}/html && ${INSTALL_DATA} * ${DOCSDIR}/html)
+.endif
 
 .include <bsd.port.mk>
