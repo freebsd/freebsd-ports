@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libopkele
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://kin.klever.net/dist/
 
@@ -31,10 +30,11 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
 # This port needs OpenSSL 0.9.8b which is present in 7.0 and up
 USE_OPENSSL=	yes
+
+.include <bsd.port.pre.mk>
+
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 # If we use the base OpenSSL either by default or
