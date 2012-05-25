@@ -7,6 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.03
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -25,7 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2/" \
-		--bindir="${LOCALBASE}/lib/xpdf"
+		--bindir="${LOCALBASE}/libexec/xpdf"
 
 OPTIONS=	LIBPAPER "Enable libpaper"      off     \
 		TYPE1	"Ghostscript type1 fonts" on \
@@ -81,7 +82,7 @@ post-install:
 .endfor
 .endif
 .if !defined(WITHOUT_X11)
-	${LN} -sf ${LOCALBASE}/lib/xpdf/xpdf ${LOCALBASE}/bin/xpdf 
+	${LN} -sf ${LOCALBASE}/libexec/xpdf/xpdf ${LOCALBASE}/bin/xpdf 
 .endif
 
 .include <bsd.port.mk>
