@@ -1,35 +1,6 @@
 bin/ristretto
 share/applications/ristretto.desktop
-%%DOCS%%%%DOCSDIR%%/html/C/getting-started.html
-%%DOCS%%%%DOCSDIR%%/html/C/index.html
-%%DOCS%%%%DOCSDIR%%/html/C/media/preferences-behaviour.png
-%%DOCS%%%%DOCSDIR%%/html/C/media/preferences-control.png
-%%DOCS%%%%DOCSDIR%%/html/C/media/preferences-display.png
-%%DOCS%%%%DOCSDIR%%/html/C/media/preferences-slideshow.png
-%%DOCS%%%%DOCSDIR%%/html/C/media/ristretto.png
-%%DOCS%%%%DOCSDIR%%/html/C/media/view-images-1.png
-%%DOCS%%%%DOCSDIR%%/html/C/preferences.html
-%%DOCS%%%%DOCSDIR%%/html/fr/getting-started.html
-%%DOCS%%%%DOCSDIR%%/html/fr/index.html
-%%DOCS%%%%DOCSDIR%%/html/fr/preferences.html
-%%DOCS%%%%DOCSDIR%%/html/ja/getting-started.html
-%%DOCS%%%%DOCSDIR%%/html/ja/index.html
-%%DOCS%%%%DOCSDIR%%/html/ja/preferences.html
-%%DOCS%%%%DOCSDIR%%/html/nl/getting-started.html
-%%DOCS%%%%DOCSDIR%%/html/nl/index.html
-%%DOCS%%%%DOCSDIR%%/html/nl/preferences.html
-%%DOCS%%%%DOCSDIR%%/html/ristretto.css
-%%DOCS%%%%DOCSDIR%%/html/uk/getting-started.html
-%%DOCS%%%%DOCSDIR%%/html/uk/index.html
-%%DOCS%%%%DOCSDIR%%/html/uk/preferences.html
-%%DOCS%%%%DOCSDIR%%/html/zh_CN/getting-started.html
-%%DOCS%%%%DOCSDIR%%/html/zh_CN/index.html
-%%DOCS%%%%DOCSDIR%%/html/zh_CN/preferences.html
 share/icons/hicolor/16x16/apps/ristretto.png
-share/icons/hicolor/22x22/apps/ristretto.png
-share/icons/hicolor/24x24/apps/ristretto.png
-share/icons/hicolor/32x32/apps/ristretto.png
-share/icons/hicolor/36x36/apps/ristretto.png
 share/icons/hicolor/48x48/apps/ristretto.png
 share/icons/hicolor/scalable/apps/ristretto.svg
 share/locale/ar/LC_MESSAGES/ristretto.mo
@@ -74,15 +45,6 @@ share/locale/ur_PK/LC_MESSAGES/ristretto.mo
 share/locale/vi/LC_MESSAGES/ristretto.mo
 share/locale/zh_CN/LC_MESSAGES/ristretto.mo
 share/locale/zh_TW/LC_MESSAGES/ristretto.mo
-%%DOCS%%@dirrm %%DOCSDIR%%/html/zh_CN
-%%DOCS%%@dirrm %%DOCSDIR%%/html/uk
-%%DOCS%%@dirrm %%DOCSDIR%%/html/nl
-%%DOCS%%@dirrm %%DOCSDIR%%/html/ja
-%%DOCS%%@dirrm %%DOCSDIR%%/html/fr
-%%DOCS%%@dirrm %%DOCSDIR%%/html/C/media
-%%DOCS%%@dirrm %%DOCSDIR%%/html/C
-%%DOCS%%@dirrm %%DOCSDIR%%/html
-%%DOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
