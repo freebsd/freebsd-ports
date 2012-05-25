@@ -88,7 +88,7 @@ WX_CONF_ARGS=	absolute
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--with-sqlite3-prefix=${LOCALBASE}
-. if ${OSVERSION} < 1000002
+. if ${OSVERSION} < 900506 || (${OSVERSION} >= 1000000 && ${OSVERSION} < 1000002)
 CPPFLAGS+=	-DNO_PER_THREAD_LOCALE
 . endif
 PLIST_SUB+=	BOINC_MANAGER=""
