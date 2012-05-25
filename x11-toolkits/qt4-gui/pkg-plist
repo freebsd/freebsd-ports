@@ -71,8 +71,11 @@ include/qt4/Qt/qfontmetrics.h
 include/qt4/Qt/qformlayout.h
 include/qt4/Qt/qframe.h
 include/qt4/Qt/qgenericmatrix.h
+include/qt4/Qt/qgenericplugin_qpa.h
+include/qt4/Qt/qgenericpluginfactory_qpa.h
 include/qt4/Qt/qgesture.h
 include/qt4/Qt/qgesturerecognizer.h
+include/qt4/Qt/qglyphrun.h
 include/qt4/Qt/qgraphicsanchorlayout.h
 include/qt4/Qt/qgraphicseffect.h
 include/qt4/Qt/qgraphicsgridlayout.h
@@ -84,6 +87,7 @@ include/qt4/Qt/qgraphicslinearlayout.h
 include/qt4/Qt/qgraphicsproxywidget.h
 include/qt4/Qt/qgraphicsscene.h
 include/qt4/Qt/qgraphicssceneevent.h
+include/qt4/Qt/qgraphicssystemhelper_symbian.h
 include/qt4/Qt/qgraphicstransform.h
 include/qt4/Qt/qgraphicsview.h
 include/qt4/Qt/qgraphicswidget.h
@@ -95,6 +99,7 @@ include/qt4/Qt/qheaderview.h
 include/qt4/Qt/qicon.h
 include/qt4/Qt/qiconengine.h
 include/qt4/Qt/qiconengineplugin.h
+include/qt4/Qt/qidentityproxymodel.h
 include/qt4/Qt/qimage.h
 include/qt4/Qt/qimageiohandler.h
 include/qt4/Qt/qimagereader.h
@@ -109,6 +114,7 @@ include/qt4/Qt/qitemselectionmodel.h
 include/qt4/Qt/qkbd_qws.h
 include/qt4/Qt/qkbddriverfactory_qws.h
 include/qt4/Qt/qkbddriverplugin_qws.h
+include/qt4/Qt/qkbdintegrity_qws.h
 include/qt4/Qt/qkbdlinuxinput_qws.h
 include/qt4/Qt/qkbdqnx_qws.h
 include/qt4/Qt/qkbdtty_qws.h
@@ -142,6 +148,7 @@ include/qt4/Qt/qmouse_qws.h
 include/qt4/Qt/qmousedriverfactory_qws.h
 include/qt4/Qt/qmousedriverplugin_qws.h
 include/qt4/Qt/qmouseeventtransition.h
+include/qt4/Qt/qmouseintegrity_qws.h
 include/qt4/Qt/qmouselinuxinput_qws.h
 include/qt4/Qt/qmouselinuxtp_qws.h
 include/qt4/Qt/qmousepc_qws.h
@@ -162,6 +169,17 @@ include/qt4/Qt/qpixmap.h
 include/qt4/Qt/qpixmapcache.h
 include/qt4/Qt/qplaintextedit.h
 include/qt4/Qt/qplastiquestyle.h
+include/qt4/Qt/qplatformclipboard_qpa.h
+include/qt4/Qt/qplatformcursor_qpa.h
+include/qt4/Qt/qplatformeventloopintegration_qpa.h
+include/qt4/Qt/qplatformfontdatabase_qpa.h
+include/qt4/Qt/qplatformglcontext_qpa.h
+include/qt4/Qt/qplatformintegration_qpa.h
+include/qt4/Qt/qplatformintegrationplugin_qpa.h
+include/qt4/Qt/qplatformnativeinterface_qpa.h
+include/qt4/Qt/qplatformscreen_qpa.h
+include/qt4/Qt/qplatformwindow_qpa.h
+include/qt4/Qt/qplatformwindowformat_qpa.h
 include/qt4/Qt/qpolygon.h
 include/qt4/Qt/qprintdialog.h
 include/qt4/Qt/qprintengine.h
@@ -176,6 +194,7 @@ include/qt4/Qt/qproxystyle.h
 include/qt4/Qt/qpushbutton.h
 include/qt4/Qt/qquaternion.h
 include/qt4/Qt/qradiobutton.h
+include/qt4/Qt/qrawfont.h
 include/qt4/Qt/qregion.h
 include/qt4/Qt/qrgb.h
 include/qt4/Qt/qrubberband.h
@@ -186,6 +205,7 @@ include/qt4/Qt/qs60style.h
 include/qt4/Qt/qscreen_qws.h
 include/qt4/Qt/qscreendriverfactory_qws.h
 include/qt4/Qt/qscreendriverplugin_qws.h
+include/qt4/Qt/qscreenintegrityfb_qws.h
 include/qt4/Qt/qscreenlinuxfb_qws.h
 include/qt4/Qt/qscreenproxy_qws.h
 include/qt4/Qt/qscreenqnx_qws.h
@@ -264,6 +284,7 @@ include/qt4/Qt/qwindowsstyle.h
 include/qt4/Qt/qwindowsvistastyle.h
 include/qt4/Qt/qwindowsxpstyle.h
 include/qt4/Qt/qwindowsystem_qws.h
+include/qt4/Qt/qwindowsysteminterface_qpa.h
 include/qt4/Qt/qwizard.h
 include/qt4/Qt/qwmatrix.h
 include/qt4/Qt/qworkspace.h
@@ -308,6 +329,8 @@ include/qt4/QtGui/QAccessibleObject
 include/qt4/QtGui/QAccessibleObjectEx
 include/qt4/QtGui/QAccessiblePlugin
 include/qt4/QtGui/QAccessibleSimpleEditableTextInterface
+include/qt4/QtGui/QAccessibleTable2CellInterface
+include/qt4/QtGui/QAccessibleTable2Interface
 include/qt4/QtGui/QAccessibleTableInterface
 include/qt4/QtGui/QAccessibleTextInterface
 include/qt4/QtGui/QAccessibleValueInterface
@@ -391,9 +414,13 @@ include/qt4/QtGui/QFontMetricsF
 include/qt4/QtGui/QFormLayout
 include/qt4/QtGui/QFrame
 include/qt4/QtGui/QGenericMatrix
+include/qt4/QtGui/QGenericPlugin
+include/qt4/QtGui/QGenericPluginFactory
+include/qt4/QtGui/QGenericPluginFactoryInterface
 include/qt4/QtGui/QGesture
 include/qt4/QtGui/QGestureEvent
 include/qt4/QtGui/QGestureRecognizer
+include/qt4/QtGui/QGlyphRun
 include/qt4/QtGui/QGradient
 include/qt4/QtGui/QGradientStop
 include/qt4/QtGui/QGradientStops
@@ -453,6 +480,7 @@ include/qt4/QtGui/QIconEnginePlugin
 include/qt4/QtGui/QIconEnginePluginV2
 include/qt4/QtGui/QIconEngineV2
 include/qt4/QtGui/QIconSet
+include/qt4/QtGui/QIdentityProxyModel
 include/qt4/QtGui/QImage
 include/qt4/QtGui/QImageIOHandler
 include/qt4/QtGui/QImageIOHandlerFactoryInterface
@@ -467,7 +495,9 @@ include/qt4/QtGui/QInputContextPlugin
 include/qt4/QtGui/QInputDialog
 include/qt4/QtGui/QInputEvent
 include/qt4/QtGui/QInputMethodEvent
+include/qt4/QtGui/QIntMouseHandler
 include/qt4/QtGui/QIntValidator
+include/qt4/QtGui/QIntfbScreen
 include/qt4/QtGui/QItemDelegate
 include/qt4/QtGui/QItemEditorCreator
 include/qt4/QtGui/QItemEditorCreatorBase
@@ -545,6 +575,20 @@ include/qt4/QtGui/QPixmapCache
 include/qt4/QtGui/QPlainTextDocumentLayout
 include/qt4/QtGui/QPlainTextEdit
 include/qt4/QtGui/QPlastiqueStyle
+include/qt4/QtGui/QPlatformClipboard
+include/qt4/QtGui/QPlatformCursor
+include/qt4/QtGui/QPlatformCursorImage
+include/qt4/QtGui/QPlatformCursorPrivate
+include/qt4/QtGui/QPlatformEventLoopIntegration
+include/qt4/QtGui/QPlatformFontDatabase
+include/qt4/QtGui/QPlatformGLContext
+include/qt4/QtGui/QPlatformIntegration
+include/qt4/QtGui/QPlatformIntegrationFactoryInterface
+include/qt4/QtGui/QPlatformIntegrationPlugin
+include/qt4/QtGui/QPlatformNativeInterface
+include/qt4/QtGui/QPlatformScreen
+include/qt4/QtGui/QPlatformWindow
+include/qt4/QtGui/QPlatformWindowFormat
 include/qt4/QtGui/QPolygon
 include/qt4/QtGui/QPolygonF
 include/qt4/QtGui/QPoolEntry
@@ -566,6 +610,7 @@ include/qt4/QtGui/QQnxScreen
 include/qt4/QtGui/QQuaternion
 include/qt4/QtGui/QRadialGradient
 include/qt4/QtGui/QRadioButton
+include/qt4/QtGui/QRawFont
 include/qt4/QtGui/QRegExpValidator
 include/qt4/QtGui/QRegion
 include/qt4/QtGui/QResizeEvent
@@ -660,8 +705,10 @@ include/qt4/QtGui/QStyleOptionViewItemV4
 include/qt4/QtGui/QStylePainter
 include/qt4/QtGui/QStylePlugin
 include/qt4/QtGui/QStyledItemDelegate
+include/qt4/QtGui/QSupportedWritingSystems
 include/qt4/QtGui/QSwipeGesture
 include/qt4/QtGui/QSymbianEvent
+include/qt4/QtGui/QSymbianGraphicsSystemHelper
 include/qt4/QtGui/QSyntaxHighlighter
 include/qt4/QtGui/QSystemTrayIcon
 include/qt4/QtGui/QTabBar
@@ -744,6 +791,7 @@ include/qt4/QtGui/QWSDisplay
 include/qt4/QtGui/QWSEmbedWidget
 include/qt4/QtGui/QWSEvent
 include/qt4/QtGui/QWSInputMethod
+include/qt4/QtGui/QWSIntKeyboardHandler
 include/qt4/QtGui/QWSInternalWindowInfo
 include/qt4/QtGui/QWSKeyboardHandler
 include/qt4/QtGui/QWSKeyboardHandlerFactoryInterface
@@ -782,6 +830,7 @@ include/qt4/QtGui/QWidgetList
 include/qt4/QtGui/QWidgetMapper
 include/qt4/QtGui/QWidgetSet
 include/qt4/QtGui/QWindowStateChangeEvent
+include/qt4/QtGui/QWindowSystemInterface
 include/qt4/QtGui/QWindowsCEStyle
 include/qt4/QtGui/QWindowsMime
 include/qt4/QtGui/QWindowsMobileStyle
@@ -868,8 +917,11 @@ include/qt4/QtGui/qfontmetrics.h
 include/qt4/QtGui/qformlayout.h
 include/qt4/QtGui/qframe.h
 include/qt4/QtGui/qgenericmatrix.h
+include/qt4/QtGui/qgenericplugin_qpa.h
+include/qt4/QtGui/qgenericpluginfactory_qpa.h
 include/qt4/QtGui/qgesture.h
 include/qt4/QtGui/qgesturerecognizer.h
+include/qt4/QtGui/qglyphrun.h
 include/qt4/QtGui/qgraphicsanchorlayout.h
 include/qt4/QtGui/qgraphicseffect.h
 include/qt4/QtGui/qgraphicsgridlayout.h
@@ -881,6 +933,7 @@ include/qt4/QtGui/qgraphicslinearlayout.h
 include/qt4/QtGui/qgraphicsproxywidget.h
 include/qt4/QtGui/qgraphicsscene.h
 include/qt4/QtGui/qgraphicssceneevent.h
+include/qt4/QtGui/qgraphicssystemhelper_symbian.h
 include/qt4/QtGui/qgraphicstransform.h
 include/qt4/QtGui/qgraphicsview.h
 include/qt4/QtGui/qgraphicswidget.h
@@ -892,6 +945,7 @@ include/qt4/QtGui/qheaderview.h
 include/qt4/QtGui/qicon.h
 include/qt4/QtGui/qiconengine.h
 include/qt4/QtGui/qiconengineplugin.h
+include/qt4/QtGui/qidentityproxymodel.h
 include/qt4/QtGui/qimage.h
 include/qt4/QtGui/qimageiohandler.h
 include/qt4/QtGui/qimagereader.h
@@ -906,6 +960,7 @@ include/qt4/QtGui/qitemselectionmodel.h
 include/qt4/QtGui/qkbd_qws.h
 include/qt4/QtGui/qkbddriverfactory_qws.h
 include/qt4/QtGui/qkbddriverplugin_qws.h
+include/qt4/QtGui/qkbdintegrity_qws.h
 include/qt4/QtGui/qkbdlinuxinput_qws.h
 include/qt4/QtGui/qkbdqnx_qws.h
 include/qt4/QtGui/qkbdtty_qws.h
@@ -939,6 +994,7 @@ include/qt4/QtGui/qmouse_qws.h
 include/qt4/QtGui/qmousedriverfactory_qws.h
 include/qt4/QtGui/qmousedriverplugin_qws.h
 include/qt4/QtGui/qmouseeventtransition.h
+include/qt4/QtGui/qmouseintegrity_qws.h
 include/qt4/QtGui/qmouselinuxinput_qws.h
 include/qt4/QtGui/qmouselinuxtp_qws.h
 include/qt4/QtGui/qmousepc_qws.h
@@ -959,6 +1015,17 @@ include/qt4/QtGui/qpixmap.h
 include/qt4/QtGui/qpixmapcache.h
 include/qt4/QtGui/qplaintextedit.h
 include/qt4/QtGui/qplastiquestyle.h
+include/qt4/QtGui/qplatformclipboard_qpa.h
+include/qt4/QtGui/qplatformcursor_qpa.h
+include/qt4/QtGui/qplatformeventloopintegration_qpa.h
+include/qt4/QtGui/qplatformfontdatabase_qpa.h
+include/qt4/QtGui/qplatformglcontext_qpa.h
+include/qt4/QtGui/qplatformintegration_qpa.h
+include/qt4/QtGui/qplatformintegrationplugin_qpa.h
+include/qt4/QtGui/qplatformnativeinterface_qpa.h
+include/qt4/QtGui/qplatformscreen_qpa.h
+include/qt4/QtGui/qplatformwindow_qpa.h
+include/qt4/QtGui/qplatformwindowformat_qpa.h
 include/qt4/QtGui/qpolygon.h
 include/qt4/QtGui/qprintdialog.h
 include/qt4/QtGui/qprintengine.h
@@ -973,6 +1040,7 @@ include/qt4/QtGui/qproxystyle.h
 include/qt4/QtGui/qpushbutton.h
 include/qt4/QtGui/qquaternion.h
 include/qt4/QtGui/qradiobutton.h
+include/qt4/QtGui/qrawfont.h
 include/qt4/QtGui/qregion.h
 include/qt4/QtGui/qrgb.h
 include/qt4/QtGui/qrubberband.h
@@ -983,6 +1051,7 @@ include/qt4/QtGui/qs60style.h
 include/qt4/QtGui/qscreen_qws.h
 include/qt4/QtGui/qscreendriverfactory_qws.h
 include/qt4/QtGui/qscreendriverplugin_qws.h
+include/qt4/QtGui/qscreenintegrityfb_qws.h
 include/qt4/QtGui/qscreenlinuxfb_qws.h
 include/qt4/QtGui/qscreenproxy_qws.h
 include/qt4/QtGui/qscreenqnx_qws.h
@@ -1061,6 +1130,7 @@ include/qt4/QtGui/qwindowsstyle.h
 include/qt4/QtGui/qwindowsvistastyle.h
 include/qt4/QtGui/qwindowsxpstyle.h
 include/qt4/QtGui/qwindowsystem_qws.h
+include/qt4/QtGui/qwindowsysteminterface_qpa.h
 include/qt4/QtGui/qwizard.h
 include/qt4/QtGui/qwmatrix.h
 include/qt4/QtGui/qworkspace.h

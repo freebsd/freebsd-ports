@@ -2,6 +2,7 @@ include/qt4/Qt/QtDeclarative
 include/qt4/Qt/qdeclarative.h
 include/qt4/Qt/qdeclarativecomponent.h
 include/qt4/Qt/qdeclarativecontext.h
+include/qt4/Qt/qdeclarativedebug.h
 include/qt4/Qt/qdeclarativeengine.h
 include/qt4/Qt/qdeclarativeerror.h
 include/qt4/Qt/qdeclarativeexpression.h
@@ -23,6 +24,7 @@ include/qt4/Qt/qdeclarativeview.h
 include/qt4/QtDeclarative/QDeclarativeAttachedPropertiesFunc
 include/qt4/QtDeclarative/QDeclarativeComponent
 include/qt4/QtDeclarative/QDeclarativeContext
+include/qt4/QtDeclarative/QDeclarativeDebuggingEnabler
 include/qt4/QtDeclarative/QDeclarativeEngine
 include/qt4/QtDeclarative/QDeclarativeError
 include/qt4/QtDeclarative/QDeclarativeExpression
@@ -47,6 +49,7 @@ include/qt4/QtDeclarative/QtDeclarative
 include/qt4/QtDeclarative/qdeclarative.h
 include/qt4/QtDeclarative/qdeclarativecomponent.h
 include/qt4/QtDeclarative/qdeclarativecontext.h
+include/qt4/QtDeclarative/qdeclarativedebug.h
 include/qt4/QtDeclarative/qdeclarativeengine.h
 include/qt4/QtDeclarative/qdeclarativeerror.h
 include/qt4/QtDeclarative/qdeclarativeexpression.h

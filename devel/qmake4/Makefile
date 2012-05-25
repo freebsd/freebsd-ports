@@ -51,21 +51,17 @@ post-patch:
 		-e 's|moc|moc-qt4|' \
 		${WRKSRC}/../mkspecs/freebsd-*/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix
-	# Add mkspecs for all the available compilers.
-	@${CP} ${WRKSRC}/../mkspecs/common/g++.conf ${WRKSRC}/../mkspecs/common/clang.conf
-	@${REINPLACE_CMD} -e 's|gcc|clang|g' -e 's|g++|clang++|g' \
-		${WRKSRC}/../mkspecs/common/clang.conf
 
 	# FIXME: This is ugly
 	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++/*.orig
 	@${RM} ${WRKSRC}/../mkspecs/freebsd-g++40/*.orig
 
-.for c in clang llvm
-	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++ ${WRKSRC}/../mkspecs/freebsd-${c}
-	@${REINPLACE_CMD} -e 's|g++|${c}|g' \
-		${WRKSRC}/../mkspecs/freebsd-${c}/qmake.conf
-.endfor
-.for v in 42 43 44 45 46
+# Add mkspec for clang
+	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++ ${WRKSRC}/../mkspecs/freebsd-clang
+	@${REINPLACE_CMD} -e 's|g++-unix.conf|clang.conf|g' \
+		${WRKSRC}/../mkspecs/freebsd-clang/qmake.conf
+# Add mkspecs for the different GCC versions in the ports tree
+.for v in 42 44 46 47 48
 	@${CP} -PpR ${WRKSRC}/../mkspecs/freebsd-g++40 ${WRKSRC}/../mkspecs/freebsd-g++${v}
 	@${REINPLACE_CMD} -e 's|40|${v}|g' \
 		${WRKSRC}/../mkspecs/freebsd-g++${v}/qmake.conf
@@ -78,7 +74,6 @@ do-configure:
 		< ${FILESDIR}/qconfig.cpp \
 		> ${WRKSRC:H}/src/corelib/global/qconfig.cpp
 	${ECHO} '/* empty */' > ${WRKSRC}/qconfig.h
-#	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../include/QtCore/qconfig.h
 	${LN} ${WRKSRC}/qconfig.h ${WRKSRC}/../src/corelib/global/qconfig.h
 
 .include <bsd.port.pre.mk>

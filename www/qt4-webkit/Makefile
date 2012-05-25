@@ -13,8 +13,10 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 WebKit engine
 
+USE_GNOME=	glib20
+USE_GSTREAMER=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib declarative gui network phonon \
+QT_COMPONENTS=	corelib declarative gui network \
 		qmake_build moc_build rcc_build
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
@@ -40,7 +42,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-BUILD_WRKSRC=	${WRKSRC}/src/3rdparty/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src/3rdparty/${PORTNAME}/Source
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	-I../../../../include/Qt -I../../../../include
@@ -52,6 +54,8 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	# Avoid building and installing several tests. Should this be
+	# made an option?
 	${REINPLACE_CMD} -e '/WebKit\/qt\/tests/ d' \
 		${BUILD_WRKSRC}/WebKit.pro
 
@@ -61,12 +65,16 @@ post-configure:
 		-e 's|.*$$(QMAKE).*||g' \
 		-e '/^CFLAGS/ s|-I${LOCALBASE}/include ||g' \
 		-e '/^CXXFLAGS/ s|-I${LOCALBASE}/include ||g' \
-		${BUILD_WRKSRC}/WebCore/Makefile
+		${BUILD_WRKSRC}/Makefile \
+		${BUILD_WRKSRC}/WebCore/Makefile \
+		${BUILD_WRKSRC}/WebKit/qt/Makefile
+	${CP} ${BUILD_WRKSRC}/WebKit/qt/Makefile \
+		${BUILD_WRKSRC}/WebKit/qt/Makefile.QtWebKit
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc
-# QtWebKit is statically linked with jscore, remove the latest.
-	${REINPLACE_CMD} -e 's|-L../JavaScriptCore/release||;s|-ljscore||' \
+	# QtWebKit is statically linked with jscore, remove the latest.
+	${REINPLACE_CMD} -e 's|-L../JavaScriptCore/release||; s|-ljscore||' \
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc \
 		${WRKSRC}/lib/libQtWebKit.la
 

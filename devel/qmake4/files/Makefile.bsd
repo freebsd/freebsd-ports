@@ -23,7 +23,7 @@ CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-g++
 CXXFLAGS+=-I${.CURDIR:H}/$s
 .endfor
 
-.for g in /. /unix /win32 /mac /symbian
+.for g in /. /unix /win32 /mac /symbian /integrity
 .PATH:	${.CURDIR}/generators$g
 CXXFLAGS+=-I${.CURDIR}/generators$g
 .endfor

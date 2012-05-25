@@ -3,6 +3,7 @@ include/qt4/Qt/qgl.h
 include/qt4/Qt/qglbuffer.h
 include/qt4/Qt/qglcolormap.h
 include/qt4/Qt/qglframebufferobject.h
+include/qt4/Qt/qglfunctions.h
 include/qt4/Qt/qglpixelbuffer.h
 include/qt4/Qt/qglscreen_qws.h
 include/qt4/Qt/qglshaderprogram.h
@@ -12,6 +13,8 @@ include/qt4/QtOpenGL/QGLContext
 include/qt4/QtOpenGL/QGLFormat
 include/qt4/QtOpenGL/QGLFramebufferObject
 include/qt4/QtOpenGL/QGLFramebufferObjectFormat
+include/qt4/QtOpenGL/QGLFunctions
+include/qt4/QtOpenGL/QGLFunctionsPrivate
 include/qt4/QtOpenGL/QGLPixelBuffer
 include/qt4/QtOpenGL/QGLScreen
 include/qt4/QtOpenGL/QGLScreenSurfaceFunctions
@@ -27,6 +30,7 @@ include/qt4/QtOpenGL/qgl.h
 include/qt4/QtOpenGL/qglbuffer.h
 include/qt4/QtOpenGL/qglcolormap.h
 include/qt4/QtOpenGL/qglframebufferobject.h
+include/qt4/QtOpenGL/qglfunctions.h
 include/qt4/QtOpenGL/qglpixelbuffer.h
 include/qt4/QtOpenGL/qglscreen_qws.h
 include/qt4/QtOpenGL/qglshaderprogram.h

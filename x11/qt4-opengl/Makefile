@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/qt4
-USE_GL=		glu
+USE_GL=		gl
 USE_XORG=	x11
 
 ALL_TARGET=	first

@@ -8,7 +8,6 @@
 
 PORTNAME=	designer
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -18,7 +17,7 @@ COMMENT=	Qt ui editor
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build assistant_run \
 		qt3support corelib declarative gui network script sql xml \
-		webkit
+		webkit phonon
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_SAFE=	yes

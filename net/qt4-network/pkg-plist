@@ -6,6 +6,7 @@ include/qt4/Qt/qftp.h
 include/qt4/Qt/qhostaddress.h
 include/qt4/Qt/qhostinfo.h
 include/qt4/Qt/qhttp.h
+include/qt4/Qt/qhttpmultipart.h
 include/qt4/Qt/qlocalserver.h
 include/qt4/Qt/qlocalsocket.h
 include/qt4/Qt/qnetworkaccessmanager.h
@@ -38,6 +39,8 @@ include/qt4/QtNetwork/QHostAddress
 include/qt4/QtNetwork/QHostInfo
 include/qt4/QtNetwork/QHttp
 include/qt4/QtNetwork/QHttpHeader
+include/qt4/QtNetwork/QHttpMultiPart
+include/qt4/QtNetwork/QHttpPart
 include/qt4/QtNetwork/QHttpRequestHeader
 include/qt4/QtNetwork/QHttpResponseHeader
 include/qt4/QtNetwork/QIPv6Address
@@ -78,6 +81,7 @@ include/qt4/QtNetwork/qftp.h
 include/qt4/QtNetwork/qhostaddress.h
 include/qt4/QtNetwork/qhostinfo.h
 include/qt4/QtNetwork/qhttp.h
+include/qt4/QtNetwork/qhttpmultipart.h
 include/qt4/QtNetwork/qlocalserver.h
 include/qt4/QtNetwork/qlocalsocket.h
 include/qt4/QtNetwork/qnetworkaccessmanager.h

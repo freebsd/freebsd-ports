@@ -1,6 +1,6 @@
---- ./configure.orig	2011-03-05 18:49:09.908552467 +0100
-+++ ./configure	2011-03-05 18:51:40.918572488 +0100
-@@ -796,7 +796,7 @@
+--- ./configure.orig	2012-01-06 11:42:45.828388787 +0100
++++ ./configure	2012-01-06 11:46:01.318339795 +0100
+@@ -829,7 +829,7 @@
  CFG_SILENT=no
  CFG_GRAPHICS_SYSTEM=default
  CFG_RUNTIME_SYSTEM=
@@ -9,7 +9,7 @@
  CFG_PULSEAUDIO=auto
  CFG_COREWLAN=auto
  CFG_ICD=auto
-@@ -2445,11 +2445,6 @@
+@@ -2576,11 +2576,6 @@
          fi
      done
  
@@ -21,7 +21,7 @@
  
      ShadowMkspecs()
      {
-@@ -2495,7 +2490,7 @@
+@@ -2626,7 +2621,7 @@
  # find a make command
  if [ -z "$MAKE" ]; then
      MAKE=
@@ -30,7 +30,7 @@
          if "$WHICH" $mk >/dev/null 2>&1; then
              MAKE=`"$WHICH" $mk`
              break
-@@ -4596,7 +4591,7 @@
+@@ -4816,7 +4811,7 @@
  }
  
  # build qmake
@@ -39,7 +39,7 @@
      echo "Creating qmake. Please wait..."
  
      OLD_QCONFIG_H=
-@@ -5564,14 +5559,6 @@
+@@ -5831,14 +5826,6 @@
          X11TESTS_FLAGS="$X11TESTS_FLAGS -fpermissive"
      fi
  
@@ -53,4 +53,4 @@
 -    fi
  fi
  
- # X11/MINGW OpenGL
+ # X11/MINGW/SYMBIAN OpenGL

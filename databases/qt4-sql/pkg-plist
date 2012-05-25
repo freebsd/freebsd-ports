@@ -8,6 +8,7 @@ include/qt4/Qt/qsql_odbc.h
 include/qt4/Qt/qsql_psql.h
 include/qt4/Qt/qsql_sqlite.h
 include/qt4/Qt/qsql_sqlite2.h
+include/qt4/Qt/qsql_symsql.h
 include/qt4/Qt/qsql_tds.h
 include/qt4/Qt/qsqldatabase.h
 include/qt4/Qt/qsqldriver.h
@@ -55,6 +56,8 @@ include/qt4/QtSql/QSqlRelationalDelegate
 include/qt4/QtSql/QSqlRelationalTableModel
 include/qt4/QtSql/QSqlResult
 include/qt4/QtSql/QSqlTableModel
+include/qt4/QtSql/QSymSQLDriver
+include/qt4/QtSql/QSymSQLResult
 include/qt4/QtSql/QTDSDriver
 include/qt4/QtSql/QTDSResult
 include/qt4/QtSql/QtSql
@@ -67,6 +70,7 @@ include/qt4/QtSql/qsql_odbc.h
 include/qt4/QtSql/qsql_psql.h
 include/qt4/QtSql/qsql_sqlite.h
 include/qt4/QtSql/qsql_sqlite2.h
+include/qt4/QtSql/qsql_symsql.h
 include/qt4/QtSql/qsql_tds.h
 include/qt4/QtSql/qsqldatabase.h
 include/qt4/QtSql/qsqldriver.h
