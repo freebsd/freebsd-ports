@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gprename
-PORTVERSION=	2.6.6
+PORTVERSION=	2.7
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}/trunk
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
@@ -30,13 +30,17 @@ NO_BUILD=	yes
 
 MAN1=		gprename.1
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/build
+
 post-patch:
-	@${REINPLACE_CMD} 's|/usr/|${PREFIX}/|' \
-		${WRKSRC}/bin/gprename
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|$$(CURDIR)|$$(.CURDIR)|; \
-		s|share/man|man|;' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^#!/s|/.*|${PERL}|' ${WRKSRC}/bin/gprename
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${PREFIX}| ; \
+		 s|$$(CURDIR)|$$(.CURDIR)| ; \
+		 s|uninstall build|build| ; \
+		 s|share/man|man|' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
