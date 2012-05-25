@@ -1,0 +1,11 @@
+--- configure.bak	2012-05-16 09:40:52.000000000 +0100
++++ configure	2012-05-16 10:02:02.000000000 +0100
+@@ -2967,7 +2967,7 @@
+ sieveprefixes="/usr /usr/local"
+ 
+ 
+-$as_echo "#define _GNU_SOURCE ''" >>confdefs.h
++$as_echo '#define _GNU_SOURCE' >>confdefs.h
+ 
+ 
+ # Turn off both defaults.
