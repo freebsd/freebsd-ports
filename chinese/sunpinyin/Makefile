@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sunpinyin
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+DISTVERSION=	2.0.4rc1
 CATEGORIES=	chinese devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:1 \
+MASTER_SITES=	LOCAL/wen:1 \
+		${MASTER_SITE_GOOGLE_CODE}:1 \
 		http://open-gram.googlecode.com/files/:2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:1 \
 		lm_sc.t3g.arpa.tar.bz2:2 dict.utf8.tar.bz2:2
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL.LICENSE
 LICENSE_FILE_CDDL=	${WRKSRC}/OPENSOLARIS.LICENSE
 
+USE_XZ=		yes
 USE_SCONS=	yes
 SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
