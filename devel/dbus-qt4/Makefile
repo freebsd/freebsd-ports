@@ -50,6 +50,11 @@ EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 .include <bsd.port.pre.mk>
 
+# Without this workaround, qdbus crashes.
+.if ${OSVERSION} > 1000000
+CXXFLAGS+=	-fno-use-cxa-atexit
+.endif
+
 CONFIGURE_ARGS+=	--no-gui \
 			--no-phonon
 

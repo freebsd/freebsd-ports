@@ -11,13 +11,16 @@ include/qt4/Qt/qatomic.h
 include/qt4/Qt/qatomic_alpha.h
 include/qt4/Qt/qatomic_arch.h
 include/qt4/Qt/qatomic_arm.h
+include/qt4/Qt/qatomic_armv5.h
 include/qt4/Qt/qatomic_armv6.h
+include/qt4/Qt/qatomic_armv7.h
 include/qt4/Qt/qatomic_avr32.h
 include/qt4/Qt/qatomic_bfin.h
 include/qt4/Qt/qatomic_bootstrap.h
 include/qt4/Qt/qatomic_generic.h
 include/qt4/Qt/qatomic_i386.h
 include/qt4/Qt/qatomic_ia64.h
+include/qt4/Qt/qatomic_integrity.h
 include/qt4/Qt/qatomic_macosx.h
 include/qt4/Qt/qatomic_mips.h
 include/qt4/Qt/qatomic_parisc.h
@@ -43,6 +46,7 @@ include/qt4/Qt/qconfig-dist.h
 include/qt4/Qt/qconfig-large.h
 include/qt4/Qt/qconfig-medium.h
 include/qt4/Qt/qconfig-minimal.h
+include/qt4/Qt/qconfig-nacl.h
 include/qt4/Qt/qconfig-small.h
 include/qt4/Qt/qconfig.h
 include/qt4/Qt/qcontainerfwd.h
@@ -67,6 +71,7 @@ include/qt4/Qt/qfileinfo.h
 include/qt4/Qt/qfilesystemwatcher.h
 include/qt4/Qt/qfinalstate.h
 include/qt4/Qt/qfsfileengine.h
+include/qt4/Qt/qfunctions_nacl.h
 include/qt4/Qt/qfunctions_vxworks.h
 include/qt4/Qt/qfunctions_wince.h
 include/qt4/Qt/qfuture.h
@@ -112,6 +117,7 @@ include/qt4/Qt/qregexp.h
 include/qt4/Qt/qresource.h
 include/qt4/Qt/qrunnable.h
 include/qt4/Qt/qscopedpointer.h
+include/qt4/Qt/qscopedvaluerollback.h
 include/qt4/Qt/qsemaphore.h
 include/qt4/Qt/qsequentialanimationgroup.h
 include/qt4/Qt/qset.h
@@ -178,6 +184,7 @@ include/qt4/QtCore/QAbstractListModel
 include/qt4/QtCore/QAbstractState
 include/qt4/QtCore/QAbstractTableModel
 include/qt4/QtCore/QAbstractTransition
+include/qt4/QtCore/QAnimationDriver
 include/qt4/QtCore/QAnimationGroup
 include/qt4/QtCore/QArgument
 include/qt4/QtCore/QAtomicInt
@@ -297,6 +304,7 @@ include/qt4/QtCore/QMutableSetIterator
 include/qt4/QtCore/QMutableStringListIterator
 include/qt4/QtCore/QMutableVectorIterator
 include/qt4/QtCore/QMutex
+include/qt4/QtCore/QMutexData
 include/qt4/QtCore/QMutexLocker
 include/qt4/QtCore/QNoDebug
 include/qt4/QtCore/QNoImplicitBoolCast
@@ -330,6 +338,7 @@ include/qt4/QtCore/QScopedPointer
 include/qt4/QtCore/QScopedPointerArrayDeleter
 include/qt4/QtCore/QScopedPointerDeleter
 include/qt4/QtCore/QScopedPointerPodDeleter
+include/qt4/QtCore/QScopedValueRollback
 include/qt4/QtCore/QSemaphore
 include/qt4/QtCore/QSequentialAnimationGroup
 include/qt4/QtCore/QSet
@@ -448,13 +457,16 @@ include/qt4/QtCore/qatomic.h
 include/qt4/QtCore/qatomic_alpha.h
 include/qt4/QtCore/qatomic_arch.h
 include/qt4/QtCore/qatomic_arm.h
+include/qt4/QtCore/qatomic_armv5.h
 include/qt4/QtCore/qatomic_armv6.h
+include/qt4/QtCore/qatomic_armv7.h
 include/qt4/QtCore/qatomic_avr32.h
 include/qt4/QtCore/qatomic_bfin.h
 include/qt4/QtCore/qatomic_bootstrap.h
 include/qt4/QtCore/qatomic_generic.h
 include/qt4/QtCore/qatomic_i386.h
 include/qt4/QtCore/qatomic_ia64.h
+include/qt4/QtCore/qatomic_integrity.h
 include/qt4/QtCore/qatomic_macosx.h
 include/qt4/QtCore/qatomic_mips.h
 include/qt4/QtCore/qatomic_parisc.h
@@ -480,6 +492,7 @@ include/qt4/QtCore/qconfig-dist.h
 include/qt4/QtCore/qconfig-large.h
 include/qt4/QtCore/qconfig-medium.h
 include/qt4/QtCore/qconfig-minimal.h
+include/qt4/QtCore/qconfig-nacl.h
 include/qt4/QtCore/qconfig-small.h
 include/qt4/QtCore/qconfig.h
 include/qt4/QtCore/qcontainerfwd.h
@@ -504,6 +517,7 @@ include/qt4/QtCore/qfileinfo.h
 include/qt4/QtCore/qfilesystemwatcher.h
 include/qt4/QtCore/qfinalstate.h
 include/qt4/QtCore/qfsfileengine.h
+include/qt4/QtCore/qfunctions_nacl.h
 include/qt4/QtCore/qfunctions_vxworks.h
 include/qt4/QtCore/qfunctions_wince.h
 include/qt4/QtCore/qfuture.h
@@ -549,6 +563,7 @@ include/qt4/QtCore/qregexp.h
 include/qt4/QtCore/qresource.h
 include/qt4/QtCore/qrunnable.h
 include/qt4/QtCore/qscopedpointer.h
+include/qt4/QtCore/qscopedvaluerollback.h
 include/qt4/QtCore/qsemaphore.h
 include/qt4/QtCore/qsequentialanimationgroup.h
 include/qt4/QtCore/qset.h

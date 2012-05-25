@@ -8,7 +8,6 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
@@ -105,5 +104,8 @@ post-configure:
 		-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 		-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtGui.pc
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -22,6 +22,8 @@ include/qt4/Qt/qdbuspendingreply.h
 include/qt4/Qt/qdbusreply.h
 include/qt4/Qt/qdbusserver.h
 include/qt4/Qt/qdbusservicewatcher.h
+include/qt4/Qt/qdbusunixfiledescriptor.h
+include/qt4/Qt/qdbusvirtualobject.h
 include/qt4/QtDBus/QDBusAbstractAdaptor
 include/qt4/QtDBus/QDBusAbstractInterface
 include/qt4/QtDBus/QDBusAbstractInterfaceBase
@@ -42,7 +44,9 @@ include/qt4/QtDBus/QDBusReply
 include/qt4/QtDBus/QDBusServer
 include/qt4/QtDBus/QDBusServiceWatcher
 include/qt4/QtDBus/QDBusSignature
+include/qt4/QtDBus/QDBusUnixFileDescriptor
 include/qt4/QtDBus/QDBusVariant
+include/qt4/QtDBus/QDBusVirtualObject
 include/qt4/QtDBus/QtDBus
 include/qt4/QtDBus/qdbusabstractadaptor.h
 include/qt4/QtDBus/qdbusabstractinterface.h
@@ -61,6 +65,8 @@ include/qt4/QtDBus/qdbuspendingreply.h
 include/qt4/QtDBus/qdbusreply.h
 include/qt4/QtDBus/qdbusserver.h
 include/qt4/QtDBus/qdbusservicewatcher.h
+include/qt4/QtDBus/qdbusunixfiledescriptor.h
+include/qt4/QtDBus/qdbusvirtualobject.h
 lib/qt4/libQtDBus.la
 lib/qt4/libQtDBus.prl
 lib/qt4/libQtDBus.so

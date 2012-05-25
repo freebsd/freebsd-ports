@@ -1,4 +1,4 @@
-=====================================================================
+======================================================================
 
 Qt 4 can be built with optional support for:
  - Common UNIX Printing System (CUPS)
@@ -13,4 +13,4 @@ x11-toolkits/qt4-gui ports.
 Attention! Whenever you change the QT4_OPTIONS both
 devel/qt4-corelib and x11-toolkits/qt4-gui ports must be rebuilt!
 
-=====================================================================
+======================================================================

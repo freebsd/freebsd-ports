@@ -1,5 +1,5 @@
---- src/3rdparty/javascriptcore/JavaScriptCore/jit/JITStubs.cpp.orig	2010-11-06 02:55:22.000000000 +0100
-+++ src/3rdparty/javascriptcore/JavaScriptCore/jit/JITStubs.cpp	2011-01-17 14:32:18.000000000 +0100
+--- ./src/3rdparty/javascriptcore/JavaScriptCore/jit/JITStubs.cpp.orig	2011-12-08 06:06:02.000000000 +0100
++++ ./src/3rdparty/javascriptcore/JavaScriptCore/jit/JITStubs.cpp	2012-01-08 17:18:52.511348683 +0100
 @@ -80,7 +80,7 @@
  #define THUMB_FUNC_PARAM(name)
  #endif
