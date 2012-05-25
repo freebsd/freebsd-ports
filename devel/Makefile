@@ -1264,6 +1264,7 @@
     SUBDIR += p5-AnyEvent-DBI-Abstract
     SUBDIR += p5-AnyEvent-DBus
     SUBDIR += p5-AnyEvent-Filesys-Notify
+    SUBDIR += p5-AnyEvent-Gearman
     SUBDIR += p5-AnyEvent-Graphite
     SUBDIR += p5-AnyEvent-I3
     SUBDIR += p5-AnyEvent-Run
