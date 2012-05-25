@@ -10797,6 +10797,7 @@ openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
 openimageio                     ports/graphics/openimageio
 openipmi                        ports/sysutils/openipmi
+openistgt                       ports/net/openistgt
 openjade                        ports/textproc/openjade
 openjazz                        ports/games/openjazz
 openjdk6                        ports/java/openjdk6
@@ -23124,6 +23125,7 @@ py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-restrictedpython             ports/security/py-RestrictedPython
 py-reverend                     ports/textproc/py-reverend
+py-rhodecode                    ports/www/py-rhodecode
 py-riak                         ports/databases/py-riak
 py-rijndael                     ports/security/py-rijndael
 py-rlcompleter2                 ports/devel/py-rlcompleter2
@@ -23338,6 +23340,7 @@ py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
 py-werkzeug                     ports/www/py-werkzeug
 py-whisper                      ports/databases/py-whisper
+py-whoosh                       ports/textproc/py-whoosh
 py-wicked                       ports/textproc/py-wicked
 py-wikitools                    ports/www/py-wikitools
 py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
@@ -26185,6 +26188,7 @@ sv-acroread8                    ports/print/sv-acroread8
 sv-aspell                       ports/textproc/sv-aspell
 sv-hyphen                       ports/textproc/sv-hyphen
 sv-mythes                       ports/textproc/sv-mythes
+sventon                         ports/www/sventon
 svg2pdf                         ports/graphics/svg2pdf
 svg2png                         ports/graphics/svg2png
 svg2swf                         ports/graphics/svg2swf
