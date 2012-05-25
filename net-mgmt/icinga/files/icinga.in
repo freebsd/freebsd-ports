@@ -38,6 +38,7 @@ icinga_logfile="%%ICINGADIR%%/${name}.log"
 icinga_statusfile="%%ICINGADIR%%/status.sav"
 icinga_cmdfile="%%ICINGADIR%%/rw/${name}.cmd"
 
+start_cmd="start_cmd"
 start_precmd="start_precmd"
 stop_postcmd="stop_postcmd"
 restart_precmd="icinga_checkconfig"
@@ -106,6 +107,10 @@ start_precmd() {
 
 stop_postcmd() {
   rm -f "%%ICINGADIR%%/icinga.tmp" "${icinga_cmdfile}"
+}
+
+start_cmd() {
+  ${command} ${command_args}
 }
 
 run_rc_command "$1"
