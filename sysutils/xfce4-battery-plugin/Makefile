@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -18,15 +17,12 @@ COMMENT=	Battery monitor panel plugin for Xfce4
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui libutil panel
+USE_XFCE=	configenv libmenu libutil panel
 INSTALLS_ICONS=	yes
-
-CONFIGURE_ARGS=	--disable-debug
 
 OPTIONS=	NLS "Enable Native Language Support" on
 
