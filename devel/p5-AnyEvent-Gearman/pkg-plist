@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman/.packlist
+%%SITE_PERL%%/AnyEvent/Gearman.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Client.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Client/Connection.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Connection.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Constants.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Job.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Task.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Types.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Worker.pm
+%%SITE_PERL%%/AnyEvent/Gearman/Worker/Connection.pm
+@dirrmtry %%SITE_PERL%%/AnyEvent/Gearman/Worker
+@dirrmtry %%SITE_PERL%%/AnyEvent/Gearman/Client
+@dirrmtry %%SITE_PERL%%/AnyEvent/Gearman
+@dirrmtry %%SITE_PERL%%/AnyEvent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Gearman
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
