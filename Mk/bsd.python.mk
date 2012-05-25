@@ -264,7 +264,7 @@ PYTHON_VERSION=	python2.4
 .if !defined(PYTHON_DEFAULT_VERSION)
 . if exists(${LOCALBASE}/bin/python)
 _PYTHON_DEFAULT_VERSION!=	(${LOCALBASE}/bin/python -c \
-							'import sys; print sys.version[:3]' 2> /dev/null \
+							'import sys; print(sys.version[:3])' 2> /dev/null \
 							|| ${ECHO_CMD} ${_PYTHON_PORTBRANCH}) | ${TAIL} -1
 . else
 _PYTHON_DEFAULT_VERSION=	${_PYTHON_PORTBRANCH}
@@ -336,7 +336,7 @@ _PYTHON_VERSION=	${_PYTHON_PORTBRANCH} # just to avoid version sanity checking.
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
 PYTHON_CMD?=		${_PYTHON_CMD}
 .if !defined(PYTHONBASE)
-PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix' \
+PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print(sys.prefix)' \
 						2> /dev/null || ${ECHO_CMD} ${LOCALBASE}) | ${TAIL} -1
 .endif
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
@@ -345,8 +345,8 @@ DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 # should point to some other version we have installed, according to the port USE_PYTHON
 # specification
 .if !defined(PYTHON_DEFAULT_PORTVERSION) || (${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION})
-_PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
-							print string.split(sys.version)[0].replace("b",".b")' 2> /dev/null) | ${TAIL} -1
+_PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import sys; \
+							print(sys.version.split()[0].replace("b",".b"))' 2> /dev/null) | ${TAIL} -1
 .if !defined(PYTHON_NO_DEPENDS) && !empty(_PYTHON_PORTVERSION)
 PYTHON_PORTVERSION=	${_PYTHON_PORTVERSION}
 .endif
@@ -413,10 +413,10 @@ PYTHON_VER=			2.4
 PYTHON_PORTSDIR=	# empty
 PYTHON_NO_DEPENDS=	YES
 PYTHON_REL!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
-						print h[0]+h[2]+h[4]'
+						print(h[0]+h[2]+h[4])'
 PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
-						print h[0]+h[2]'
-PYTHON_VER!=		${PYTHON_CMD} -c 'import sys; print sys.version[:3]'
+						print(h[0]+h[2])'
+PYTHON_VER!=		${PYTHON_CMD} -c 'import sys; print(sys.version[:3])'
 
 .else
 check-makevars::
