@@ -19,10 +19,7 @@ SUB_FILES=	pkg-message
 MAN1=		bsmtrace.1
 MAN5=		bsmtrace.conf.5
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 602000
-IGNORE=		release 6.2-RELEASE or later is required
-.endif
+MAKE_JOBS_UNSAFE=	yes
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
@@ -44,4 +41,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
