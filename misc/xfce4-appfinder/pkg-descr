@@ -1,7 +1,4 @@
-This is an application finder for the Xfce environment. It is an
-useful software that permits you to find every application in the
-system supporting Desktop entry format. You can search for "lost"
-software with it, and add entries to the menu, and obviously run
-the selected software from it.
+This application allows you to search, launch and find information about 
+applications installed on your system.
 
-WWW: http://www.xfce.org/projects/xfce4-appfinder/
+WWW: http://docs.xfce.org/xfce4-appfinder/start

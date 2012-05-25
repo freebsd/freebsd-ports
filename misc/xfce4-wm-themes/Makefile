@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	xfce4-wm-themes
-PORTVERSION=	4.6.0
-PORTREVISION=	1
+PORTVERSION=	4.10.0
 CATEGORIES=	misc xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/art/xfwm4-themes/${PORTVERSION:R}
 DISTNAME=	xfwm4-themes-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MASTER_SITE_SUBDIR=xfce/4.6.0/src
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 window decoration themes for xfwm4
 

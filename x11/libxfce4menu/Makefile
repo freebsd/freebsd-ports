@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	libxfce4menu
-PORTVERSION=	4.8.1
+PORTVERSION=	4.10.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/libxfce4ui/${PORTVERSION:R}
 DISTNAME=	libxfce4ui-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 library for a freedesktop.org compliant menu implementation
+COMMENT=	Widgets library for the Xfce desktop environment
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig desktopfileutils
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
+INSTALLS_ICONS=	yes
+
+CONFIGURE_ARGS=	--disable-gtk-doc-html \
+	--with-vendor-info=FreeBSD
 
 OPTIONS=	APIDOCS	"Install api documentation"	off \
 		NLS	"Enable Native Language Support"	on \

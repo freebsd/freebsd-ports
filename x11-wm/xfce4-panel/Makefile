@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.8.6
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 panel module
+COMMENT=	Xfce's panel
 
 LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-CONFLICTS=	xfce4-systray-*
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool
@@ -32,7 +30,8 @@ USE_PERL5=	yes
 USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	x11 sm
 
-CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
+CONFIGURE_ARGS+=--enable-gio-unix \
+	--disable-gtk-doc-html
 
 OPTIONS=	NLS	"Enable Native Language Support" 	on \
 		APIDOCS	"Install api documentation"		off

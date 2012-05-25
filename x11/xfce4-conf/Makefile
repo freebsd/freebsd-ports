@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	xfce4-conf
-PORTVERSION=	4.8.1
+PORTVERSION=	4.10.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/xfconf/${PORTVERSION:R}
 DISTNAME=	xfconf-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 configuration mananger
+COMMENT=	D-Bus-based configuration storage system
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
@@ -26,6 +25,8 @@ USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
 USE_XORG=	x11
+
+CONFIGURE_ARGS+=--disable-gtk-doc-html
 
 OPTIONS=	APIDOCS	"Install api documentation"	off \
 		PERL	"Install Perl bindings"			off \
@@ -64,9 +65,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|--module-dir|--module=xfconf &|' \
-		${WRKSRC}/docs/reference/Makefile.in
 
 .include <bsd.port.post.mk>

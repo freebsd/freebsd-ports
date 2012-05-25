@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.8.3
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 window manager
-
-DATADIR=	${PREFIX}/share/xfwm4
-DOCSDIR=	${PREFIX}/share/doc/xfwm4
+COMMENT=	Xfce's window manager
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck
@@ -35,6 +31,7 @@ USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig desktopfileutils
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11 sm xext xrandr xrender
+DATADIR=	${PREFIX}/share/xfwm4
 
 OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
 		STARTUP 	"Enable startup notification support"			on \

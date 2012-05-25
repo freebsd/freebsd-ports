@@ -1,8 +1,4 @@
-The desktop manager sets the background image, provides a right-click
-menu to launch applications and can optionally show files (including
-application launchers) or iconified windows. It includes gradient
-support for background color, saturation support for background image,
-real multiscreen and xinerama support, and it provides a desktop menu
-editor.
+The desktop manager sets the background image, and provides a root  
+window menu, desktop icons or minimized icons and windows list.
 
-WWW: http://www.xfce.org/projects/xfdesktop/
+WWW: http://docs.xfce.org/xfce/xfdesktop/start

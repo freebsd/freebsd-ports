@@ -1,6 +1,4 @@
-The session manager allows the user to save sessions and restore them
-after login. It is capable of saving several different sessions. It
-comes with three splash screen engines. And at last it helps you to
-log out, reboot, and shutdown the system.
+The session manager controls all aspects of the startup and the 
+shutdown of the user session.
 
-WWW: http://www.xfce.org/projects/xfce4-session/
+WWW: http://docs.xfce.org/xfce/xfce4-session/start

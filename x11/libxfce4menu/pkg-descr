@@ -1,3 +1,4 @@
-Xfce 4 library for a freedesktop.org compliant menu implementation
+libxfce4ui is used to share commonly used Xfce widgets amoung the Xfce 
+applications.
 
-WWW: http://www.xfce.org/projects/libraries/
+WWW: http://www.xfce.org/projects

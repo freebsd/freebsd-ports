@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	libxfce4util
-PORTVERSION=	4.8.2
+PORTVERSION=	4.10.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce 4 library with non-graphical helper functions
+COMMENT=	Extension library for the Xfce desktop environment
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -23,6 +22,8 @@ USE_GNOME=	glib20 gnomehack intltool intlhack pkgconfig
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv
+
+CONFIGURE_ARGS+=--disable-gtk-doc-html
 
 OPTIONS=	NLS "Enable Native Language Support" on \
 	APIDOCS "Install api documentation" off
