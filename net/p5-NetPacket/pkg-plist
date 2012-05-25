@@ -2,11 +2,8 @@
 %%SITE_PERL%%/NetPacket/ARP.pm
 %%SITE_PERL%%/NetPacket/Ethernet.pm
 %%SITE_PERL%%/NetPacket/ICMP.pm
-%%SITE_PERL%%/NetPacket/ICMPv6.pm
 %%SITE_PERL%%/NetPacket/IGMP.pm
 %%SITE_PERL%%/NetPacket/IP.pm
-%%SITE_PERL%%/NetPacket/IPv6.pm
-%%SITE_PERL%%/NetPacket/PFLog.pm
 %%SITE_PERL%%/NetPacket/TCP.pm
 %%SITE_PERL%%/NetPacket/UDP.pm
 @dirrm %%SITE_PERL%%/NetPacket
