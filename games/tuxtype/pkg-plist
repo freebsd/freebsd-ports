@@ -1,548 +1,916 @@
 bin/tuxtype
-%%DATADIR%%/data/images/backgrounds/0.jpg
-%%DATADIR%%/data/images/backgrounds/1.jpg
-%%DATADIR%%/data/images/backgrounds/2.jpg
-%%DATADIR%%/data/images/backgrounds/3.jpg
-%%DATADIR%%/data/images/backgrounds/4.jpg
-%%DATADIR%%/data/images/cities/cdead-blue.png
-%%DATADIR%%/data/images/cities/cdead-green.png
-%%DATADIR%%/data/images/cities/cdead-orange.png
-%%DATADIR%%/data/images/cities/cdead-red.png
-%%DATADIR%%/data/images/cities/city-blue.png
-%%DATADIR%%/data/images/cities/city-green.png
-%%DATADIR%%/data/images/cities/city-orange.png
-%%DATADIR%%/data/images/cities/city-red.png
-%%DATADIR%%/data/images/cities/csplode-blue-1.png
-%%DATADIR%%/data/images/cities/csplode-blue-2.png
-%%DATADIR%%/data/images/cities/csplode-blue-3.png
-%%DATADIR%%/data/images/cities/csplode-blue-4.png
-%%DATADIR%%/data/images/cities/csplode-blue-5.png
-%%DATADIR%%/data/images/cities/csplode-green-1.png
-%%DATADIR%%/data/images/cities/csplode-green-2.png
-%%DATADIR%%/data/images/cities/csplode-green-3.png
-%%DATADIR%%/data/images/cities/csplode-green-4.png
-%%DATADIR%%/data/images/cities/csplode-green-5.png
-%%DATADIR%%/data/images/cities/csplode-orange-1.png
-%%DATADIR%%/data/images/cities/csplode-orange-2.png
-%%DATADIR%%/data/images/cities/csplode-orange-3.png
-%%DATADIR%%/data/images/cities/csplode-orange-4.png
-%%DATADIR%%/data/images/cities/csplode-orange-5.png
-%%DATADIR%%/data/images/cities/csplode-red-1.png
-%%DATADIR%%/data/images/cities/csplode-red-2.png
-%%DATADIR%%/data/images/cities/csplode-red-3.png
-%%DATADIR%%/data/images/cities/csplode-red-4.png
-%%DATADIR%%/data/images/cities/csplode-red-5.png
-%%DATADIR%%/data/images/cities/shields.png
-%%DATADIR%%/data/images/cities/shield0.png
-%%DATADIR%%/data/images/cities/shield1.png
-%%DATADIR%%/data/images/cities/shield2.png
-%%DATADIR%%/data/images/cities/shield3.png
-%%DATADIR%%/data/images/comets/comet1.png
-%%DATADIR%%/data/images/comets/comet2.png
-%%DATADIR%%/data/images/comets/comet3.png
-%%DATADIR%%/data/images/comets/cometex1.png
-%%DATADIR%%/data/images/comets/cometex2.png
-%%DATADIR%%/data/images/hands/0.png
-%%DATADIR%%/data/images/hands/1.png
-%%DATADIR%%/data/images/hands/hands.png
-%%DATADIR%%/data/images/hands/2.png
-%%DATADIR%%/data/images/hands/3.png
-%%DATADIR%%/data/images/hands/4.png
-%%DATADIR%%/data/images/hands/5.png
-%%DATADIR%%/data/images/hands/6.png
-%%DATADIR%%/data/images/hands/7.png
-%%DATADIR%%/data/images/hands/8.png
-%%DATADIR%%/data/images/hands/9.png
-%%DATADIR%%/data/images/icons/tuxtype.ico
-%%DATADIR%%/data/images/keyboard/keyboard.png
-%%DATADIR%%/data/images/keyboard/keyboard-us.png
-%%DATADIR%%/data/images/keyboard/keyboard.eps
-%%DATADIR%%/data/images/keyboard/keyboard-us.eps
-%%DATADIR%%/data/images/keyboard/esc.png
-%%DATADIR%%/data/images/keyboard/larrow.png
-%%DATADIR%%/data/images/keyboard/space.png
-%%DATADIR%%/data/images/keyboard/rarrow.png
-%%DATADIR%%/data/images/menu/cascade0.png
-%%DATADIR%%/data/images/menu/cascade1.png
-%%DATADIR%%/data/images/menu/cascade10.png
-%%DATADIR%%/data/images/menu/cascade2.png
-%%DATADIR%%/data/images/menu/cascade3.png
-%%DATADIR%%/data/images/menu/cascade4.png
-%%DATADIR%%/data/images/menu/cascade5.png
-%%DATADIR%%/data/images/menu/cascade6.png
-%%DATADIR%%/data/images/menu/cascade7.png
-%%DATADIR%%/data/images/menu/cascade8.png
-%%DATADIR%%/data/images/menu/cascade9.png
-%%DATADIR%%/data/images/menu/cascaded.png
-%%DATADIR%%/data/images/menu/comet0.png
-%%DATADIR%%/data/images/menu/comet1.png
-%%DATADIR%%/data/images/menu/comet2.png
-%%DATADIR%%/data/images/menu/comet3.png
-%%DATADIR%%/data/images/menu/comet4.png
-%%DATADIR%%/data/images/menu/comet5.png
-%%DATADIR%%/data/images/menu/cometd.png
-%%DATADIR%%/data/images/menu/keyboard0.png
-%%DATADIR%%/data/images/menu/keyboard1.png
-%%DATADIR%%/data/images/menu/keyboard2.png
-%%DATADIR%%/data/images/menu/keyboardd.png
-%%DATADIR%%/data/images/menu/keycas0.png
-%%DATADIR%%/data/images/menu/keycas1.png
-%%DATADIR%%/data/images/menu/keycas2.png
-%%DATADIR%%/data/images/menu/keycas3.png
-%%DATADIR%%/data/images/menu/keycas4.png
-%%DATADIR%%/data/images/menu/keycas5.png
-%%DATADIR%%/data/images/menu/keycas6.png
-%%DATADIR%%/data/images/menu/keycas7.png
-%%DATADIR%%/data/images/menu/keycas8.png
-%%DATADIR%%/data/images/menu/keycas9.png
-%%DATADIR%%/data/images/menu/keycasd.png
-%%DATADIR%%/data/images/menu/lesson0.png
-%%DATADIR%%/data/images/menu/lesson1.png
-%%DATADIR%%/data/images/menu/lesson2.png
-%%DATADIR%%/data/images/menu/lesson3.png
-%%DATADIR%%/data/images/menu/lessond.png
-%%DATADIR%%/data/images/menu/main0.png
-%%DATADIR%%/data/images/menu/main1.png
-%%DATADIR%%/data/images/menu/main2.png
-%%DATADIR%%/data/images/menu/main3.png
-%%DATADIR%%/data/images/menu/main4.png
-%%DATADIR%%/data/images/menu/main5.png
-%%DATADIR%%/data/images/menu/main6.png
-%%DATADIR%%/data/images/menu/main7.png
-%%DATADIR%%/data/images/menu/maind.png
-%%DATADIR%%/data/images/menu/quit0.png
-%%DATADIR%%/data/images/menu/quit1.png
-%%DATADIR%%/data/images/menu/quit2.png
-%%DATADIR%%/data/images/menu/quit3.png
-%%DATADIR%%/data/images/menu/quit4.png
-%%DATADIR%%/data/images/menu/quit5.png
-%%DATADIR%%/data/images/menu/quit6.png
-%%DATADIR%%/data/images/menu/quit7.png
-%%DATADIR%%/data/images/menu/quit8.png
-%%DATADIR%%/data/images/menu/quitd.png
-%%DATADIR%%/data/images/menu/reg0.png
-%%DATADIR%%/data/images/menu/reg1.png
-%%DATADIR%%/data/images/menu/reg2.png
-%%DATADIR%%/data/images/menu/sel0.png
-%%DATADIR%%/data/images/menu/sel1.png
-%%DATADIR%%/data/images/menu/sel2.png
-%%DATADIR%%/data/images/status/gameover.png
-%%DATADIR%%/data/images/status/numbers.png
-%%DATADIR%%/data/images/status/score.png
-%%DATADIR%%/data/images/status/tux_helmet1.png
-%%DATADIR%%/data/images/status/tux_helmet2.png
-%%DATADIR%%/data/images/status/tux_helmet3.png
-%%DATADIR%%/data/images/status/wave.png
-%%DATADIR%%/data/images/tux/console.png
-%%DATADIR%%/data/images/tux/gulp0.png
-%%DATADIR%%/data/images/tux/gulp1.png
-%%DATADIR%%/data/images/tux/gulp2.png
-%%DATADIR%%/data/images/tux/gulp3.png
-%%DATADIR%%/data/images/tux/run0.png
-%%DATADIR%%/data/images/tux/run1.png
-%%DATADIR%%/data/images/tux/stand-.png
-%%DATADIR%%/data/images/tux/stand0.png
-%%DATADIR%%/data/images/tux/stand1.png
-%%DATADIR%%/data/images/tux/tux-console1.png
-%%DATADIR%%/data/images/tux/tux-console2.png
-%%DATADIR%%/data/images/tux/tux-console3.png
-%%DATADIR%%/data/images/tux/tux-console4.png
-%%DATADIR%%/data/images/tux/tux-drat.png
-%%DATADIR%%/data/images/tux/tux-egypt0.png
-%%DATADIR%%/data/images/tux/tux-egypt1.png
-%%DATADIR%%/data/images/tux/tux-fist0.png
-%%DATADIR%%/data/images/tux/tux-fist1.png
-%%DATADIR%%/data/images/tux/tux-kiss1.png
-%%DATADIR%%/data/images/tux/tux-kiss2.png
-%%DATADIR%%/data/images/tux/tux-relax1.png
-%%DATADIR%%/data/images/tux/tux-relax2.png
-%%DATADIR%%/data/images/tux/tux-sit.png
-%%DATADIR%%/data/images/tux/tux-yay1.png
-%%DATADIR%%/data/images/tux/tux-yay2.png
-%%DATADIR%%/data/images/tux/tux-yes1.png
-%%DATADIR%%/data/images/tux/tux-yes2.png
-%%DATADIR%%/data/images/tux/tux-yipe.png
-%%DATADIR%%/data/images/tux/walk0.png
-%%DATADIR%%/data/images/tux/walk1.png
-%%DATADIR%%/data/images/tux/walk2.png
-%%DATADIR%%/data/images/tux/walk3.png
-%%DATADIR%%/data/images/tux/win0.png
-%%DATADIR%%/data/images/tux/yipe0.png
-%%DATADIR%%/data/images/README_IMAGES.TXT
-%%DATADIR%%/data/images/down.png
-%%DATADIR%%/data/images/fishy-.png
-%%DATADIR%%/data/images/fishy0.png
-%%DATADIR%%/data/images/fishy1.png
-%%DATADIR%%/data/images/fishy2.png
-%%DATADIR%%/data/images/fishy3.png
-%%DATADIR%%/data/images/hidden.jpg
-%%DATADIR%%/data/images/insert1.png
-%%DATADIR%%/data/images/kcas1_1.jpg
-%%DATADIR%%/data/images/kcas1_2.jpg
-%%DATADIR%%/data/images/kcas1_3.jpg
-%%DATADIR%%/data/images/kcas1_4.jpg
-%%DATADIR%%/data/images/kcas2_1.jpg
-%%DATADIR%%/data/images/kcas2_2.jpg
-%%DATADIR%%/data/images/kcas2_3.jpg
-%%DATADIR%%/data/images/kcas2_4.jpg
-%%DATADIR%%/data/images/kcas3_1.jpg
-%%DATADIR%%/data/images/kcas3_2.jpg
-%%DATADIR%%/data/images/kcas3_3.jpg
-%%DATADIR%%/data/images/kcas3_4.jpg
-%%DATADIR%%/data/images/left.png
-%%DATADIR%%/data/images/line2.png
-%%DATADIR%%/data/images/main_bkg.png
-%%DATADIR%%/data/images/num_0.png
-%%DATADIR%%/data/images/nosound.png
-%%DATADIR%%/data/images/num_1.png
-%%DATADIR%%/data/images/num_2.png
-%%DATADIR%%/data/images/num_3.png
-%%DATADIR%%/data/images/num_4.png
-%%DATADIR%%/data/images/num_5.png
-%%DATADIR%%/data/images/num_6.png
-%%DATADIR%%/data/images/num_7.png
-%%DATADIR%%/data/images/num_8.png
-%%DATADIR%%/data/images/num_9.png
-%%DATADIR%%/data/images/pract.png
-%%DATADIR%%/data/images/right.png
-%%DATADIR%%/data/images/splat0.png
-%%DATADIR%%/data/images/sound.png
-%%DATADIR%%/data/images/standby.png
-%%DATADIR%%/data/images/title1.png
-%%DATADIR%%/data/images/tutor-alpha.png
-%%DATADIR%%/data/images/tutor-alpha2.png
-%%DATADIR%%/data/images/tutor.png
-%%DATADIR%%/data/images/tutor2.png
-%%DATADIR%%/data/images/tutor3.png
-%%DATADIR%%/data/images/tux0.png
-%%DATADIR%%/data/images/tux1.png
-%%DATADIR%%/data/images/tux2.png
-%%DATADIR%%/data/images/tux3.png
-%%DATADIR%%/data/images/up.png
-%%DATADIR%%/data/images/world.png
-%%DATADIR%%/data/scripts/projectInfo.xml
-%%DATADIR%%/data/scripts/laser.xml
-%%DATADIR%%/data/scripts/cascade.xml
-%%DATADIR%%/data/scripts/Lesson_1.xml
-%%DATADIR%%/data/scripts/Lesson_2.xml
-%%DATADIR%%/data/scripts/Lesson_3.xml
-%%DATADIR%%/data/scripts/Lesson_4.xml
-%%DATADIR%%/data/sounds/tuxi.ogg
-%%DATADIR%%/data/sounds/alarm.wav
-%%DATADIR%%/data/sounds/bite.wav
-%%DATADIR%%/data/sounds/buzz.wav
-%%DATADIR%%/data/sounds/click.wav
-%%DATADIR%%/data/sounds/excuseme.wav
-%%DATADIR%%/data/sounds/explosion.wav
-%%DATADIR%%/data/sounds/kmus1.wav
-%%DATADIR%%/data/sounds/kmus2.wav
-%%DATADIR%%/data/sounds/kmus3.wav
-%%DATADIR%%/data/sounds/kmus4.wav
-%%DATADIR%%/data/sounds/laser.wav
-%%DATADIR%%/data/sounds/lose.wav
-%%DATADIR%%/data/sounds/pause.wav
-%%DATADIR%%/data/sounds/pop.wav
-%%DATADIR%%/data/sounds/run.wav
-%%DATADIR%%/data/sounds/shieldsdown.wav
-%%DATADIR%%/data/sounds/splat.wav
-%%DATADIR%%/data/sounds/tock.wav
-%%DATADIR%%/data/sounds/win.wav
-%%DATADIR%%/data/sounds/winfinal.wav
-%%DATADIR%%/data/sounds/game.mod
-%%DATADIR%%/data/sounds/game2.mod
-%%DATADIR%%/data/sounds/game3.mod
-%%DATADIR%%/data/sounds/README_SOUNDS.TXT
-%%DATADIR%%/data/themes/armenian/images/splat0.png
-%%DATADIR%%/data/themes/armenian/images/title1.png
-%%DATADIR%%/data/themes/armenian/lang.po
-%%DATADIR%%/data/themes/armenian/keyboard.lst
-%%DATADIR%%/data/themes/bokmal/images/status/score.png
-%%DATADIR%%/data/themes/bokmal/images/status/wave.png
-%%DATADIR%%/data/themes/bokmal/images/splat0.png
-%%DATADIR%%/data/themes/bokmal/images/map.png
-%%DATADIR%%/data/themes/bokmal/words/3boks.txt
-%%DATADIR%%/data/themes/bokmal/words/4boks.txt
-%%DATADIR%%/data/themes/bokmal/words/5boks.txt
-%%DATADIR%%/data/themes/bokmal/words/6boks.txt
-%%DATADIR%%/data/themes/bokmal/words/dyrenavn.txt
-%%DATADIR%%/data/themes/bokmal/words/frukt.txt
-%%DATADIR%%/data/themes/bokmal/words/land.txt
-%%DATADIR%%/data/themes/bokmal/words/sprak.txt
-%%DATADIR%%/data/themes/bokmal/words/yrke.txt
-%%DATADIR%%/data/themes/bokmal/lang.po
-%%DATADIR%%/data/themes/bokmal/keyboard.lst
-%%DATADIR%%/data/themes/brazilian-portuguese/images/map.png
-%%DATADIR%%/data/themes/brazilian-portuguese/words/fingers.txt
-%%DATADIR%%/data/themes/brazilian-portuguese/words/plants.txt
-%%DATADIR%%/data/themes/brazilian-portuguese/words/words1.txt
-%%DATADIR%%/data/themes/brazilian-portuguese/words/words2.txt
-%%DATADIR%%/data/themes/brazilian-portuguese/words/words3.txt
-%%DATADIR%%/data/themes/brazilian-portuguese/lang.po
-%%DATADIR%%/data/themes/brazilian-portuguese/keyboard.lst
-%%DATADIR%%/data/themes/catalan/words/words1.txt
-%%DATADIR%%/data/themes/catalan/words/words2.txt
-%%DATADIR%%/data/themes/catalan/words/words3.txt
-%%DATADIR%%/data/themes/catalan/words/words4.txt
-%%DATADIR%%/data/themes/catalan/words/words5.txt
-%%DATADIR%%/data/themes/catalan/lang.po
-%%DATADIR%%/data/themes/catalan/keyboard.lst
-%%DATADIR%%/data/themes/czech/words/prsty.txt
-%%DATADIR%%/data/themes/czech/words/rostliny.txt
-%%DATADIR%%/data/themes/czech/words/slova2.txt
-%%DATADIR%%/data/themes/czech/words/slova3.txt
-%%DATADIR%%/data/themes/czech/words/slova4.txt
-%%DATADIR%%/data/themes/czech/words/slova5.txt
-%%DATADIR%%/data/themes/czech/words/abeceda.txt
-%%DATADIR%%/data/themes/czech/lang.po
-%%DATADIR%%/data/themes/czech/keyboard.lst
-%%DATADIR%%/data/themes/czech/settings.txt
-%%DATADIR%%/data/themes/dansk/sounds/excuseme.wav
-%%DATADIR%%/data/themes/dansk/words/words1.txt
-%%DATADIR%%/data/themes/dansk/words/words2.txt
-%%DATADIR%%/data/themes/dansk/words/words3.txt
-%%DATADIR%%/data/themes/dansk/words/words4.txt
-%%DATADIR%%/data/themes/dansk/lang.po
-%%DATADIR%%/data/themes/dansk/keyboard.lst
-%%DATADIR%%/data/themes/deutsch/words/kurz2-3-mit.txt
-%%DATADIR%%/data/themes/deutsch/words/kurz2-3.txt
-%%DATADIR%%/data/themes/deutsch/words/lang7-8-mit.txt
-%%DATADIR%%/data/themes/deutsch/words/lang7-8.txt
-%%DATADIR%%/data/themes/deutsch/words/mittel4-6-mit.txt
-%%DATADIR%%/data/themes/deutsch/words/mittel4-6.txt
-%%DATADIR%%/data/themes/deutsch/lang.po
-%%DATADIR%%/data/themes/deutsch/keyboard.lst
-%%DATADIR%%/data/themes/espanol/images/map.png
-%%DATADIR%%/data/themes/espanol/words/words1.txt
-%%DATADIR%%/data/themes/espanol/words/words2.txt
-%%DATADIR%%/data/themes/espanol/words/words3.txt
-%%DATADIR%%/data/themes/espanol/lang.po
-%%DATADIR%%/data/themes/euskara/images/map.png
-%%DATADIR%%/data/themes/euskara/images/photo.png
-%%DATADIR%%/data/themes/euskara/words/words1.txt
-%%DATADIR%%/data/themes/euskara/words/words2.txt
-%%DATADIR%%/data/themes/euskara/words/words3.txt
-%%DATADIR%%/data/themes/euskara/AUTHOR
-%%DATADIR%%/data/themes/euskara/lang.po
-%%DATADIR%%/data/themes/euskara/keyboard.lst
-%%DATADIR%%/data/themes/french/words/fingers.txt
-%%DATADIR%%/data/themes/french/words/names.txt
-%%DATADIR%%/data/themes/french/words/words1.txt
-%%DATADIR%%/data/themes/french/words/words2.txt
-%%DATADIR%%/data/themes/french/words/words3.txt
-%%DATADIR%%/data/themes/french/words/words4.txt
-%%DATADIR%%/data/themes/french/lang.po
-%%DATADIR%%/data/themes/french/keyboard.lst
-%%DATADIR%%/data/themes/greek/words/easy.txt
-%%DATADIR%%/data/themes/greek/lang.po
-%%DATADIR%%/data/themes/greek/keyboard.lst
-%%DATADIR%%/data/themes/italian/words/freq.txt
-%%DATADIR%%/data/themes/italian/words/word1.txt
-%%DATADIR%%/data/themes/italian/words/word2.txt
-%%DATADIR%%/data/themes/italian/words/word3.txt
-%%DATADIR%%/data/themes/italian/words/word4.txt
-%%DATADIR%%/data/themes/italian/lang.po
-%%DATADIR%%/data/themes/italian/keyboard.lst
-%%DATADIR%%/data/themes/jamaican/images/map.png
-%%DATADIR%%/data/themes/jamaican/images/photo.png
-%%DATADIR%%/data/themes/jamaican/images/tux0.png
-%%DATADIR%%/data/themes/jamaican/images/tux1.png
-%%DATADIR%%/data/themes/jamaican/images/tux2.png
-%%DATADIR%%/data/themes/jamaican/images/tux3.png
-%%DATADIR%%/data/themes/jamaican/words/jam-long.txt
-%%DATADIR%%/data/themes/jamaican/words/jam-med.txt
-%%DATADIR%%/data/themes/jamaican/words/jam-short.txt
-%%DATADIR%%/data/themes/jamaican/keyboard.lst
-%%DATADIR%%/data/themes/lithuanian/images/status/gameover.png
-%%DATADIR%%/data/themes/lithuanian/images/status/score.png
-%%DATADIR%%/data/themes/lithuanian/images/status/wave.png
-%%DATADIR%%/data/themes/lithuanian/sounds/excuseme.wav
-%%DATADIR%%/data/themes/lithuanian/words/1-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/words/2-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/words/3-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/words/4-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/words/5-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/words/6-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/words/7-pamoka.txt
-%%DATADIR%%/data/themes/lithuanian/lang.po
-%%DATADIR%%/data/themes/lithuanian/keyboard.lst
-%%DATADIR%%/data/themes/malayalam/images/status/score.png
-%%DATADIR%%/data/themes/malayalam/images/status/wave.png
-%%DATADIR%%/data/themes/malayalam/images/keyboard/key.png
-%%DATADIR%%/data/themes/malayalam/images/splat0.png
-%%DATADIR%%/data/themes/malayalam/scripts/projectInfo.xml
-%%DATADIR%%/data/themes/malayalam/scripts/laser.xml
-%%DATADIR%%/data/themes/malayalam/scripts/cascade.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_01.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_02.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_03.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_04.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_05.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_06.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_07.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_08.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_09.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_10.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_11.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_12.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_13.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_14.xml
-%%DATADIR%%/data/themes/malayalam/scripts/Lesson_15.xml
-%%DATADIR%%/data/themes/malayalam/words/words1.txt
-%%DATADIR%%/data/themes/malayalam/words/words2.txt
-%%DATADIR%%/data/themes/malayalam/words/words3.txt
-%%DATADIR%%/data/themes/malayalam/lang.po
-%%DATADIR%%/data/themes/malayalam/keyboard.lst
-%%DATADIR%%/data/themes/malayalam/phrases.txt
-%%DATADIR%%/data/themes/malayalam/settings.txt
-%%DATADIR%%/data/themes/nederlands/words/planten.txt
-%%DATADIR%%/data/themes/nederlands/words/vingers.txt
-%%DATADIR%%/data/themes/nederlands/words/woorden1.txt
-%%DATADIR%%/data/themes/nederlands/words/woorden2.txt
-%%DATADIR%%/data/themes/nederlands/words/woorden3.txt
-%%DATADIR%%/data/themes/nederlands/lang.po
-%%DATADIR%%/data/themes/nederlands/nederlands.txt
-%%DATADIR%%/data/themes/nederlands/keyboard.lst
-%%DATADIR%%/data/themes/nynorsk/images/status/score.png
-%%DATADIR%%/data/themes/nynorsk/images/status/wave.png
-%%DATADIR%%/data/themes/nynorsk/images/splat0.png
-%%DATADIR%%/data/themes/nynorsk/images/map.png
-%%DATADIR%%/data/themes/nynorsk/words/3boks.txt
-%%DATADIR%%/data/themes/nynorsk/words/4boks.txt
-%%DATADIR%%/data/themes/nynorsk/words/5boks.txt
-%%DATADIR%%/data/themes/nynorsk/words/6boks.txt
-%%DATADIR%%/data/themes/nynorsk/words/dyrenamn.txt
-%%DATADIR%%/data/themes/nynorsk/words/frukt.txt
-%%DATADIR%%/data/themes/nynorsk/words/land.txt
-%%DATADIR%%/data/themes/nynorsk/words/sprak.txt
-%%DATADIR%%/data/themes/nynorsk/words/yrke.txt
-%%DATADIR%%/data/themes/nynorsk/lang.po
-%%DATADIR%%/data/themes/nynorsk/keyboard.lst
-%%DATADIR%%/data/themes/russian/images/status/score.png
-%%DATADIR%%/data/themes/russian/images/status/wave.png
-%%DATADIR%%/data/themes/russian/images/splat0.png
-%%DATADIR%%/data/themes/russian/words/words1.txt
-%%DATADIR%%/data/themes/russian/words/words2.txt
-%%DATADIR%%/data/themes/russian/words/words3.txt
-%%DATADIR%%/data/themes/russian/lang.po
-%%DATADIR%%/data/themes/russian/keyboard.lst
-%%DATADIR%%/data/themes/russian/settings.txt
-%%DATADIR%%/data/themes/svenska/words/ord1.txt
-%%DATADIR%%/data/themes/svenska/words/ord2.txt
-%%DATADIR%%/data/themes/svenska/words/ord3.txt
-%%DATADIR%%/data/themes/svenska/lang.po
-%%DATADIR%%/data/themes/svenska/keyboard.lst
-%%DATADIR%%/data/themes/swahili/words/words1.txt
-%%DATADIR%%/data/themes/swahili/lang.po
-%%DATADIR%%/data/themes/swahili/keyboard.lst
-%%DATADIR%%/data/themes/swahili/AUTHOR
-%%DATADIR%%/data/themes/wolof/images/photo.png
-%%DATADIR%%/data/themes/wolof/images/map.png
-%%DATADIR%%/data/themes/wolof/words/names.txt
-%%DATADIR%%/data/themes/wolof/words/plants.txt
-%%DATADIR%%/data/themes/wolof/words/words1.txt
-%%DATADIR%%/data/themes/wolof/words/words2.txt
-%%DATADIR%%/data/themes/wolof/words/words3.txt
-%%DATADIR%%/data/themes/wolof/words/words4.txt
-%%DATADIR%%/data/themes/wolof/lang.po
-%%DATADIR%%/data/themes/wolof/keyboard.lst
-%%DATADIR%%/data/themes/lang.po
-%%DATADIR%%/data/words/alphabet.txt
-%%DATADIR%%/data/words/fingers.txt
-%%DATADIR%%/data/words/plants.txt
-%%DATADIR%%/data/words/words1.txt
-%%DATADIR%%/data/words/words2.txt
-%%DATADIR%%/data/words/words3.txt
-%%DATADIR%%/data/fonts/AndikaDesRevG.ttf
-%%DATADIR%%/data/fonts/DoulosSILR.ttf
-%%DATADIR%%/data/fonts/Rachana_w01.ttf
-%%DATADIR%%/data/keyboard.lst
+%%ETCDIR%%/.keep_me
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/OFL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/en/howtotheme.html
+%%PORTDOCS%%%%DOCSDIR%%/en/lesson_scripting_reference.html
+%%NLS%%share/locale/ar/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/as/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/da/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/de/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/el/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/es/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/it/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ne/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/or/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/sw/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/te/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/wo/LC_MESSAGES/tuxtype.mo
+%%NLS%%share/locale/zh_N/LC_MESSAGES/tuxtype.mo
+%%DATADIR%%/fonts/AndikaDesRevG.ttf
+%%DATADIR%%/fonts/DoulosSILR.ttf
+%%DATADIR%%/fonts/Kedage-n.ttf
+%%DATADIR%%/fonts/Rachana_w01.ttf
+%%DATADIR%%/fonts/Vemana.ttf
+%%DATADIR%%/fonts/lohit_bn.ttf
+%%DATADIR%%/fonts/lohit_gu.ttf
+%%DATADIR%%/fonts/lohit_hi.ttf
+%%DATADIR%%/fonts/lohit_pa.ttf
+%%DATADIR%%/fonts/lohit_ta.ttf
+%%DATADIR%%/fonts/utkal.ttf
+%%DATADIR%%/im/ja.im
+%%DATADIR%%/im/ko.im
+%%DATADIR%%/im/th.im
+%%DATADIR%%/im/zh_tw.im
+%%DATADIR%%/images/README_IMAGES.TXT
+%%DATADIR%%/images/backgrounds/0.jpg
+%%DATADIR%%/images/backgrounds/1.jpg
+%%DATADIR%%/images/backgrounds/2.jpg
+%%DATADIR%%/images/backgrounds/3.jpg
+%%DATADIR%%/images/backgrounds/4.jpg
+%%DATADIR%%/images/cities/cdead-blue.png
+%%DATADIR%%/images/cities/cdead-green.png
+%%DATADIR%%/images/cities/cdead-orange.png
+%%DATADIR%%/images/cities/cdead-red.png
+%%DATADIR%%/images/cities/city-blue.png
+%%DATADIR%%/images/cities/city-green.png
+%%DATADIR%%/images/cities/city-orange.png
+%%DATADIR%%/images/cities/city-red.png
+%%DATADIR%%/images/cities/csplode-blue-1.png
+%%DATADIR%%/images/cities/csplode-blue-2.png
+%%DATADIR%%/images/cities/csplode-blue-3.png
+%%DATADIR%%/images/cities/csplode-blue-4.png
+%%DATADIR%%/images/cities/csplode-blue-5.png
+%%DATADIR%%/images/cities/csplode-green-1.png
+%%DATADIR%%/images/cities/csplode-green-2.png
+%%DATADIR%%/images/cities/csplode-green-3.png
+%%DATADIR%%/images/cities/csplode-green-4.png
+%%DATADIR%%/images/cities/csplode-green-5.png
+%%DATADIR%%/images/cities/csplode-orange-1.png
+%%DATADIR%%/images/cities/csplode-orange-2.png
+%%DATADIR%%/images/cities/csplode-orange-3.png
+%%DATADIR%%/images/cities/csplode-orange-4.png
+%%DATADIR%%/images/cities/csplode-orange-5.png
+%%DATADIR%%/images/cities/csplode-red-1.png
+%%DATADIR%%/images/cities/csplode-red-2.png
+%%DATADIR%%/images/cities/csplode-red-3.png
+%%DATADIR%%/images/cities/csplode-red-4.png
+%%DATADIR%%/images/cities/csplode-red-5.png
+%%DATADIR%%/images/cities/shield0.png
+%%DATADIR%%/images/cities/shield1.png
+%%DATADIR%%/images/cities/shield2.png
+%%DATADIR%%/images/cities/shield3.png
+%%DATADIR%%/images/cities/shields.png
+%%DATADIR%%/images/comets/comet1.png
+%%DATADIR%%/images/comets/comet1.svg
+%%DATADIR%%/images/comets/comet2.png
+%%DATADIR%%/images/comets/comet2.svg
+%%DATADIR%%/images/comets/comet3.png
+%%DATADIR%%/images/comets/comet3.svg
+%%DATADIR%%/images/comets/cometex1.png
+%%DATADIR%%/images/comets/cometex2.png
+%%DATADIR%%/images/down.png
+%%DATADIR%%/images/fishy-.png
+%%DATADIR%%/images/fishy0.png
+%%DATADIR%%/images/fishy1.png
+%%DATADIR%%/images/fishy2.png
+%%DATADIR%%/images/fishy3.png
+%%DATADIR%%/images/hands/0.png
+%%DATADIR%%/images/hands/1.png
+%%DATADIR%%/images/hands/2.png
+%%DATADIR%%/images/hands/3.png
+%%DATADIR%%/images/hands/4.png
+%%DATADIR%%/images/hands/5.png
+%%DATADIR%%/images/hands/6.png
+%%DATADIR%%/images/hands/7.png
+%%DATADIR%%/images/hands/8.png
+%%DATADIR%%/images/hands/9.png
+%%DATADIR%%/images/hands/hands.png
+%%DATADIR%%/images/hands/lshift.png
+%%DATADIR%%/images/hands/none.png
+%%DATADIR%%/images/hands/rshift.png
+%%DATADIR%%/images/hidden.jpg
+%%DATADIR%%/images/icons/icon.png
+%%DATADIR%%/images/icons/tuxtype.icns
+%%DATADIR%%/images/icons/tuxtype.ico
+%%DATADIR%%/images/insert1.png
+%%DATADIR%%/images/kcas0.jpg
+%%DATADIR%%/images/kcas1.jpg
+%%DATADIR%%/images/kcas10.jpg
+%%DATADIR%%/images/kcas11.jpg
+%%DATADIR%%/images/kcas2.jpg
+%%DATADIR%%/images/kcas3.jpg
+%%DATADIR%%/images/kcas4.jpg
+%%DATADIR%%/images/kcas5.jpg
+%%DATADIR%%/images/kcas6.jpg
+%%DATADIR%%/images/kcas7.jpg
+%%DATADIR%%/images/kcas8.jpg
+%%DATADIR%%/images/kcas9.jpg
+%%DATADIR%%/images/keyboard/esc.png
+%%DATADIR%%/images/keyboard/keyboard-us.eps
+%%DATADIR%%/images/keyboard/keyboard-us.png
+%%DATADIR%%/images/keyboard/keyboard.eps
+%%DATADIR%%/images/keyboard/keyboard.png
+%%DATADIR%%/images/keyboard/keyboardN_A00.png
+%%DATADIR%%/images/keyboard/keyboardN_A01.png
+%%DATADIR%%/images/keyboard/keyboardN_A02.png
+%%DATADIR%%/images/keyboard/keyboardN_A03.png
+%%DATADIR%%/images/keyboard/keyboardN_A04.png
+%%DATADIR%%/images/keyboard/keyboardN_A05.png
+%%DATADIR%%/images/keyboard/keyboardN_A06.png
+%%DATADIR%%/images/keyboard/keyboardN_A07.png
+%%DATADIR%%/images/keyboard/keyboardN_A08.png
+%%DATADIR%%/images/keyboard/keyboardN_A09.png
+%%DATADIR%%/images/keyboard/keyboardN_A10.png
+%%DATADIR%%/images/keyboard/keyboardN_A11.png
+%%DATADIR%%/images/keyboard/keyboardN_A12.png
+%%DATADIR%%/images/keyboard/keyboardN_A13.png
+%%DATADIR%%/images/keyboard/keyboardN_B00.png
+%%DATADIR%%/images/keyboard/keyboardN_B01.png
+%%DATADIR%%/images/keyboard/keyboardN_B02.png
+%%DATADIR%%/images/keyboard/keyboardN_B03.png
+%%DATADIR%%/images/keyboard/keyboardN_B04.png
+%%DATADIR%%/images/keyboard/keyboardN_B05.png
+%%DATADIR%%/images/keyboard/keyboardN_B06.png
+%%DATADIR%%/images/keyboard/keyboardN_B07.png
+%%DATADIR%%/images/keyboard/keyboardN_B08.png
+%%DATADIR%%/images/keyboard/keyboardN_B09.png
+%%DATADIR%%/images/keyboard/keyboardN_B10.png
+%%DATADIR%%/images/keyboard/keyboardN_B11.png
+%%DATADIR%%/images/keyboard/keyboardN_B12.png
+%%DATADIR%%/images/keyboard/keyboardN_B13.png
+%%DATADIR%%/images/keyboard/keyboardN_C00.png
+%%DATADIR%%/images/keyboard/keyboardN_C01.png
+%%DATADIR%%/images/keyboard/keyboardN_C02.png
+%%DATADIR%%/images/keyboard/keyboardN_C03.png
+%%DATADIR%%/images/keyboard/keyboardN_C04.png
+%%DATADIR%%/images/keyboard/keyboardN_C05.png
+%%DATADIR%%/images/keyboard/keyboardN_C06.png
+%%DATADIR%%/images/keyboard/keyboardN_C07.png
+%%DATADIR%%/images/keyboard/keyboardN_C08.png
+%%DATADIR%%/images/keyboard/keyboardN_C09.png
+%%DATADIR%%/images/keyboard/keyboardN_C10.png
+%%DATADIR%%/images/keyboard/keyboardN_C11.png
+%%DATADIR%%/images/keyboard/keyboardN_C12.png
+%%DATADIR%%/images/keyboard/keyboardN_D00.png
+%%DATADIR%%/images/keyboard/keyboardN_D01.png
+%%DATADIR%%/images/keyboard/keyboardN_D02.png
+%%DATADIR%%/images/keyboard/keyboardN_D03.png
+%%DATADIR%%/images/keyboard/keyboardN_D04.png
+%%DATADIR%%/images/keyboard/keyboardN_D05.png
+%%DATADIR%%/images/keyboard/keyboardN_D06.png
+%%DATADIR%%/images/keyboard/keyboardN_D07.png
+%%DATADIR%%/images/keyboard/keyboardN_D08.png
+%%DATADIR%%/images/keyboard/keyboardN_D09.png
+%%DATADIR%%/images/keyboard/keyboardN_D10.png
+%%DATADIR%%/images/keyboard/keyboardN_D11.png
+%%DATADIR%%/images/keyboard/keyboardN_D12.png
+%%DATADIR%%/images/keyboard/keyboardN_E00.png
+%%DATADIR%%/images/keyboard/keyboardN_E01.png
+%%DATADIR%%/images/keyboard/keyboardN_E02.png
+%%DATADIR%%/images/keyboard/keyboardN_E03.png
+%%DATADIR%%/images/keyboard/keyboardN_E04.png
+%%DATADIR%%/images/keyboard/keyboardN_E05.png
+%%DATADIR%%/images/keyboard/keyboardN_E06.png
+%%DATADIR%%/images/keyboard/keyboardN_E07.png
+%%DATADIR%%/images/keyboard/keyboardN_None.png
+%%DATADIR%%/images/keyboard/keyboard_A00.png
+%%DATADIR%%/images/keyboard/keyboard_A01.png
+%%DATADIR%%/images/keyboard/keyboard_A02.png
+%%DATADIR%%/images/keyboard/keyboard_A03.png
+%%DATADIR%%/images/keyboard/keyboard_A04.png
+%%DATADIR%%/images/keyboard/keyboard_A05.png
+%%DATADIR%%/images/keyboard/keyboard_A06.png
+%%DATADIR%%/images/keyboard/keyboard_A07.png
+%%DATADIR%%/images/keyboard/keyboard_A08.png
+%%DATADIR%%/images/keyboard/keyboard_A09.png
+%%DATADIR%%/images/keyboard/keyboard_A10.png
+%%DATADIR%%/images/keyboard/keyboard_A11.png
+%%DATADIR%%/images/keyboard/keyboard_A12.png
+%%DATADIR%%/images/keyboard/keyboard_A13.png
+%%DATADIR%%/images/keyboard/keyboard_B00.png
+%%DATADIR%%/images/keyboard/keyboard_B01.png
+%%DATADIR%%/images/keyboard/keyboard_B02.png
+%%DATADIR%%/images/keyboard/keyboard_B03.png
+%%DATADIR%%/images/keyboard/keyboard_B04.png
+%%DATADIR%%/images/keyboard/keyboard_B05.png
+%%DATADIR%%/images/keyboard/keyboard_B06.png
+%%DATADIR%%/images/keyboard/keyboard_B07.png
+%%DATADIR%%/images/keyboard/keyboard_B08.png
+%%DATADIR%%/images/keyboard/keyboard_B09.png
+%%DATADIR%%/images/keyboard/keyboard_B10.png
+%%DATADIR%%/images/keyboard/keyboard_B11.png
+%%DATADIR%%/images/keyboard/keyboard_B12.png
+%%DATADIR%%/images/keyboard/keyboard_B13.png
+%%DATADIR%%/images/keyboard/keyboard_C00.png
+%%DATADIR%%/images/keyboard/keyboard_C01.png
+%%DATADIR%%/images/keyboard/keyboard_C02.png
+%%DATADIR%%/images/keyboard/keyboard_C03.png
+%%DATADIR%%/images/keyboard/keyboard_C04.png
+%%DATADIR%%/images/keyboard/keyboard_C05.png
+%%DATADIR%%/images/keyboard/keyboard_C06.png
+%%DATADIR%%/images/keyboard/keyboard_C07.png
+%%DATADIR%%/images/keyboard/keyboard_C08.png
+%%DATADIR%%/images/keyboard/keyboard_C09.png
+%%DATADIR%%/images/keyboard/keyboard_C10.png
+%%DATADIR%%/images/keyboard/keyboard_C11.png
+%%DATADIR%%/images/keyboard/keyboard_C12.png
+%%DATADIR%%/images/keyboard/keyboard_D00.png
+%%DATADIR%%/images/keyboard/keyboard_D01.png
+%%DATADIR%%/images/keyboard/keyboard_D02.png
+%%DATADIR%%/images/keyboard/keyboard_D03.png
+%%DATADIR%%/images/keyboard/keyboard_D04.png
+%%DATADIR%%/images/keyboard/keyboard_D05.png
+%%DATADIR%%/images/keyboard/keyboard_D06.png
+%%DATADIR%%/images/keyboard/keyboard_D07.png
+%%DATADIR%%/images/keyboard/keyboard_D08.png
+%%DATADIR%%/images/keyboard/keyboard_D09.png
+%%DATADIR%%/images/keyboard/keyboard_D10.png
+%%DATADIR%%/images/keyboard/keyboard_D11.png
+%%DATADIR%%/images/keyboard/keyboard_D12.png
+%%DATADIR%%/images/keyboard/keyboard_E00.png
+%%DATADIR%%/images/keyboard/keyboard_E01.png
+%%DATADIR%%/images/keyboard/keyboard_E02.png
+%%DATADIR%%/images/keyboard/keyboard_E03.png
+%%DATADIR%%/images/keyboard/keyboard_E04.png
+%%DATADIR%%/images/keyboard/keyboard_E05.png
+%%DATADIR%%/images/keyboard/keyboard_E06.png
+%%DATADIR%%/images/keyboard/keyboard_E07.png
+%%DATADIR%%/images/keyboard/keyboard_None.png
+%%DATADIR%%/images/keyboard/larrow.png
+%%DATADIR%%/images/keyboard/rarrow.png
+%%DATADIR%%/images/keyboard/space.png
+%%DATADIR%%/images/left.png
+%%DATADIR%%/images/line2.png
+%%DATADIR%%/images/main_bkg.png
+%%DATADIR%%/images/menu/cascade0.png
+%%DATADIR%%/images/menu/cascade1.png
+%%DATADIR%%/images/menu/cascade10.png
+%%DATADIR%%/images/menu/cascade2.png
+%%DATADIR%%/images/menu/cascade3.png
+%%DATADIR%%/images/menu/cascade4.png
+%%DATADIR%%/images/menu/cascade5.png
+%%DATADIR%%/images/menu/cascade6.png
+%%DATADIR%%/images/menu/cascade7.png
+%%DATADIR%%/images/menu/cascade8.png
+%%DATADIR%%/images/menu/cascade9.png
+%%DATADIR%%/images/menu/cascaded.png
+%%DATADIR%%/images/menu/comet0.png
+%%DATADIR%%/images/menu/comet1.png
+%%DATADIR%%/images/menu/comet2.png
+%%DATADIR%%/images/menu/comet3.png
+%%DATADIR%%/images/menu/comet4.png
+%%DATADIR%%/images/menu/comet5.png
+%%DATADIR%%/images/menu/cometd.png
+%%DATADIR%%/images/menu/keyboard0.png
+%%DATADIR%%/images/menu/keyboard1.png
+%%DATADIR%%/images/menu/keyboard2.png
+%%DATADIR%%/images/menu/keyboardd.png
+%%DATADIR%%/images/menu/keycas0.png
+%%DATADIR%%/images/menu/keycas1.png
+%%DATADIR%%/images/menu/keycas2.png
+%%DATADIR%%/images/menu/keycas3.png
+%%DATADIR%%/images/menu/keycas4.png
+%%DATADIR%%/images/menu/keycas5.png
+%%DATADIR%%/images/menu/keycas6.png
+%%DATADIR%%/images/menu/keycas7.png
+%%DATADIR%%/images/menu/keycas8.png
+%%DATADIR%%/images/menu/keycas9.png
+%%DATADIR%%/images/menu/keycasd.png
+%%DATADIR%%/images/menu/lesson0.png
+%%DATADIR%%/images/menu/lesson1.png
+%%DATADIR%%/images/menu/lesson2.png
+%%DATADIR%%/images/menu/lesson3.png
+%%DATADIR%%/images/menu/lessond.png
+%%DATADIR%%/images/menu/list0.png
+%%DATADIR%%/images/menu/list1.png
+%%DATADIR%%/images/menu/list2.png
+%%DATADIR%%/images/menu/list3.png
+%%DATADIR%%/images/menu/list4.png
+%%DATADIR%%/images/menu/list5.png
+%%DATADIR%%/images/menu/list6.png
+%%DATADIR%%/images/menu/list7.png
+%%DATADIR%%/images/menu/listd.png
+%%DATADIR%%/images/menu/main0.png
+%%DATADIR%%/images/menu/main1.png
+%%DATADIR%%/images/menu/main2.png
+%%DATADIR%%/images/menu/main3.png
+%%DATADIR%%/images/menu/main4.png
+%%DATADIR%%/images/menu/main5.png
+%%DATADIR%%/images/menu/main6.png
+%%DATADIR%%/images/menu/main7.png
+%%DATADIR%%/images/menu/maind.png
+%%DATADIR%%/images/menu/quit0.png
+%%DATADIR%%/images/menu/quit1.png
+%%DATADIR%%/images/menu/quit2.png
+%%DATADIR%%/images/menu/quit3.png
+%%DATADIR%%/images/menu/quit4.png
+%%DATADIR%%/images/menu/quit5.png
+%%DATADIR%%/images/menu/quit6.png
+%%DATADIR%%/images/menu/quit7.png
+%%DATADIR%%/images/menu/quit8.png
+%%DATADIR%%/images/menu/quitd.png
+%%DATADIR%%/images/menu/reg0.png
+%%DATADIR%%/images/menu/reg1.png
+%%DATADIR%%/images/menu/reg2.png
+%%DATADIR%%/images/menu/sel0.png
+%%DATADIR%%/images/menu/sel1.png
+%%DATADIR%%/images/menu/sel2.png
+%%DATADIR%%/images/menu/tux_config0.png
+%%DATADIR%%/images/menu/tux_config1.png
+%%DATADIR%%/images/menu/tux_configd.png
+%%DATADIR%%/images/nosound.png
+%%DATADIR%%/images/num_0.png
+%%DATADIR%%/images/num_1.png
+%%DATADIR%%/images/num_2.png
+%%DATADIR%%/images/num_3.png
+%%DATADIR%%/images/num_4.png
+%%DATADIR%%/images/num_5.png
+%%DATADIR%%/images/num_6.png
+%%DATADIR%%/images/num_7.png
+%%DATADIR%%/images/num_8.png
+%%DATADIR%%/images/num_9.png
+%%DATADIR%%/images/pract.png
+%%DATADIR%%/images/right.png
+%%DATADIR%%/images/sound.png
+%%DATADIR%%/images/splat0.png
+%%DATADIR%%/images/standby.png
+%%DATADIR%%/images/status/gameover.png
+%%DATADIR%%/images/status/numbers.png
+%%DATADIR%%/images/status/score.png
+%%DATADIR%%/images/status/tux_helmet1.png
+%%DATADIR%%/images/status/tux_helmet2.png
+%%DATADIR%%/images/status/tux_helmet3.png
+%%DATADIR%%/images/status/wave.png
+%%DATADIR%%/images/title1.png
+%%DATADIR%%/images/tutor-alpha.png
+%%DATADIR%%/images/tutor-alpha2.png
+%%DATADIR%%/images/tutor.png
+%%DATADIR%%/images/tutor2.png
+%%DATADIR%%/images/tutor3.png
+%%DATADIR%%/images/tux/console.png
+%%DATADIR%%/images/tux/gulp0.png
+%%DATADIR%%/images/tux/gulp1.png
+%%DATADIR%%/images/tux/gulp2.png
+%%DATADIR%%/images/tux/gulp3.png
+%%DATADIR%%/images/tux/run0.png
+%%DATADIR%%/images/tux/run1.png
+%%DATADIR%%/images/tux/stand-.png
+%%DATADIR%%/images/tux/stand0.png
+%%DATADIR%%/images/tux/stand1.png
+%%DATADIR%%/images/tux/tux-console1.png
+%%DATADIR%%/images/tux/tux-console2.png
+%%DATADIR%%/images/tux/tux-console3.png
+%%DATADIR%%/images/tux/tux-console4.png
+%%DATADIR%%/images/tux/tux-drat.png
+%%DATADIR%%/images/tux/tux-egypt0.png
+%%DATADIR%%/images/tux/tux-egypt1.png
+%%DATADIR%%/images/tux/tux-fist0.png
+%%DATADIR%%/images/tux/tux-fist1.png
+%%DATADIR%%/images/tux/tux-kiss1.png
+%%DATADIR%%/images/tux/tux-kiss2.png
+%%DATADIR%%/images/tux/tux-relax1.png
+%%DATADIR%%/images/tux/tux-relax2.png
+%%DATADIR%%/images/tux/tux-sit.png
+%%DATADIR%%/images/tux/tux-yay1.png
+%%DATADIR%%/images/tux/tux-yay2.png
+%%DATADIR%%/images/tux/tux-yes1.png
+%%DATADIR%%/images/tux/tux-yes2.png
+%%DATADIR%%/images/tux/tux-yipe.png
+%%DATADIR%%/images/tux/walk0.png
+%%DATADIR%%/images/tux/walk1.png
+%%DATADIR%%/images/tux/walk2.png
+%%DATADIR%%/images/tux/walk3.png
+%%DATADIR%%/images/tux/win0.png
+%%DATADIR%%/images/tux/win1.png
+%%DATADIR%%/images/tux/yipe0.png
+%%DATADIR%%/images/tux0.png
+%%DATADIR%%/images/tux1.png
+%%DATADIR%%/images/tux2.png
+%%DATADIR%%/images/tux3.png
+%%DATADIR%%/images/up.png
+%%DATADIR%%/images/wordlist_button.png
+%%DATADIR%%/images/world.png
+%%DATADIR%%/keyboard.lst
+%%DATADIR%%/phrases.txt
+%%DATADIR%%/scripts/basic_lesson_01.xml
+%%DATADIR%%/scripts/basic_lesson_02.xml
+%%DATADIR%%/scripts/basic_lesson_03.xml
+%%DATADIR%%/scripts/basic_lesson_04.xml
+%%DATADIR%%/scripts/basic_lesson_05.xml
+%%DATADIR%%/scripts/basic_lesson_06.xml
+%%DATADIR%%/scripts/basic_lesson_07.xml
+%%DATADIR%%/scripts/basic_lesson_08.xml
+%%DATADIR%%/scripts/basic_lesson_09.xml
+%%DATADIR%%/scripts/basic_lesson_10.xml
+%%DATADIR%%/scripts/basic_lesson_11.xml
+%%DATADIR%%/scripts/basic_lesson_12.xml
+%%DATADIR%%/scripts/basic_lesson_13.xml
+%%DATADIR%%/scripts/basic_lesson_14.xml
+%%DATADIR%%/scripts/basic_lesson_15.xml
+%%DATADIR%%/scripts/basic_lesson_16.xml
+%%DATADIR%%/scripts/basic_lesson_17.xml
+%%DATADIR%%/scripts/basic_lesson_18.xml
+%%DATADIR%%/scripts/basic_lesson_19.xml
+%%DATADIR%%/scripts/basic_lesson_20.xml
+%%DATADIR%%/scripts/basic_lesson_21.xml
+%%DATADIR%%/scripts/basic_lesson_22.xml
+%%DATADIR%%/scripts/basic_lesson_23.xml
+%%DATADIR%%/scripts/basic_lesson_24.xml
+%%DATADIR%%/scripts/basic_lesson_25.xml
+%%DATADIR%%/scripts/basic_lesson_26.xml
+%%DATADIR%%/scripts/basic_lesson_27.xml
+%%DATADIR%%/scripts/basic_lesson_28.xml
+%%DATADIR%%/scripts/basic_lesson_29.xml
+%%DATADIR%%/scripts/basic_lesson_30.xml
+%%DATADIR%%/scripts/basic_lesson_31.xml
+%%DATADIR%%/scripts/basic_lesson_32.xml
+%%DATADIR%%/scripts/basic_lesson_33.xml
+%%DATADIR%%/scripts/basic_lesson_34.xml
+%%DATADIR%%/scripts/basic_lesson_35.xml
+%%DATADIR%%/scripts/basic_lesson_36.xml
+%%DATADIR%%/scripts/basic_lesson_37.xml
+%%DATADIR%%/scripts/basic_lesson_38.xml
+%%DATADIR%%/scripts/basic_lesson_39.xml
+%%DATADIR%%/scripts/basic_lesson_40.xml
+%%DATADIR%%/scripts/basic_lesson_41.xml
+%%DATADIR%%/scripts/basic_lesson_42.xml
+%%DATADIR%%/scripts/basic_lesson_43.xml
+%%DATADIR%%/scripts/cascade.xml
+%%DATADIR%%/scripts/laser.xml
+%%DATADIR%%/scripts/projectInfo.xml
+%%DATADIR%%/sounds/README_SOUNDS.TXT
+%%DATADIR%%/sounds/alarm.wav
+%%DATADIR%%/sounds/amidst_the_raindrops.ogg
+%%DATADIR%%/sounds/bite.wav
+%%DATADIR%%/sounds/buzz.wav
+%%DATADIR%%/sounds/cheer.wav
+%%DATADIR%%/sounds/chiptune2.ogg
+%%DATADIR%%/sounds/excuseme.wav
+%%DATADIR%%/sounds/explosion.wav
+%%DATADIR%%/sounds/game.mod
+%%DATADIR%%/sounds/game2.mod
+%%DATADIR%%/sounds/game3.mod
+%%DATADIR%%/sounds/harp.wav
+%%DATADIR%%/sounds/laser.wav
+%%DATADIR%%/sounds/lose.wav
+%%DATADIR%%/sounds/pause.wav
+%%DATADIR%%/sounds/pop.wav
+%%DATADIR%%/sounds/run.wav
+%%DATADIR%%/sounds/shieldsdown.wav
+%%DATADIR%%/sounds/splat.wav
+%%DATADIR%%/sounds/tock.wav
+%%DATADIR%%/sounds/tuxi.ogg
+%%DATADIR%%/sounds/win.wav
+%%DATADIR%%/sounds/winfinal.wav
+%%DATADIR%%/themes/armenian/images/splat0.png
+%%DATADIR%%/themes/armenian/images/title1.png
+%%DATADIR%%/themes/armenian/keyboard.lst
+%%DATADIR%%/themes/armenian/settings.txt
+%%DATADIR%%/themes/assamese/alphabet.txt
+%%DATADIR%%/themes/assamese/keyboard.lst
+%%DATADIR%%/themes/assamese/settings.txt
+%%DATADIR%%/themes/assamese/words/words1.txt
+%%DATADIR%%/themes/assamese/words/words2.txt
+%%DATADIR%%/themes/assamese/words/words3.txt
+%%DATADIR%%/themes/bokmal/images/map.png
+%%DATADIR%%/themes/bokmal/images/splat0.png
+%%DATADIR%%/themes/bokmal/images/status/score.png
+%%DATADIR%%/themes/bokmal/images/status/wave.png
+%%DATADIR%%/themes/bokmal/keyboard.lst
+%%DATADIR%%/themes/bokmal/settings.txt
+%%DATADIR%%/themes/bokmal/words/3boks.txt
+%%DATADIR%%/themes/bokmal/words/4boks.txt
+%%DATADIR%%/themes/bokmal/words/5boks.txt
+%%DATADIR%%/themes/bokmal/words/6boks.txt
+%%DATADIR%%/themes/bokmal/words/dyrenavn.txt
+%%DATADIR%%/themes/bokmal/words/frukt.txt
+%%DATADIR%%/themes/bokmal/words/land.txt
+%%DATADIR%%/themes/bokmal/words/sprak.txt
+%%DATADIR%%/themes/bokmal/words/yrke.txt
+%%DATADIR%%/themes/brazilian-portuguese/AUTHOR
+%%DATADIR%%/themes/brazilian-portuguese/images/map.png
+%%DATADIR%%/themes/brazilian-portuguese/keyboard.lst
+%%DATADIR%%/themes/brazilian-portuguese/settings.txt
+%%DATADIR%%/themes/brazilian-portuguese/words/fingers.txt
+%%DATADIR%%/themes/brazilian-portuguese/words/plants.txt
+%%DATADIR%%/themes/brazilian-portuguese/words/words1.txt
+%%DATADIR%%/themes/brazilian-portuguese/words/words2.txt
+%%DATADIR%%/themes/brazilian-portuguese/words/words3.txt
+%%DATADIR%%/themes/bulgarian/keyboard.lst
+%%DATADIR%%/themes/bulgarian/scripts/Lesson_1.xml
+%%DATADIR%%/themes/bulgarian/settings.txt
+%%DATADIR%%/themes/bulgarian/words/alphabet.txt
+%%DATADIR%%/themes/bulgarian/words/animals.txt
+%%DATADIR%%/themes/bulgarian/words/astronomy.txt
+%%DATADIR%%/themes/bulgarian/words/fingers.txt
+%%DATADIR%%/themes/bulgarian/words/jobs.txt
+%%DATADIR%%/themes/bulgarian/words/names.txt
+%%DATADIR%%/themes/bulgarian/words/plants.txt
+%%DATADIR%%/themes/bulgarian/words/words1.txt
+%%DATADIR%%/themes/bulgarian/words/words2.txt
+%%DATADIR%%/themes/bulgarian/words/words3.txt
+%%DATADIR%%/themes/catalan/keyboard.lst
+%%DATADIR%%/themes/catalan/settings.txt
+%%DATADIR%%/themes/catalan/words/words1.txt
+%%DATADIR%%/themes/catalan/words/words2.txt
+%%DATADIR%%/themes/catalan/words/words3.txt
+%%DATADIR%%/themes/catalan/words/words4.txt
+%%DATADIR%%/themes/catalan/words/words5.txt
+%%DATADIR%%/themes/czech/keyboard.lst
+%%DATADIR%%/themes/czech/settings.txt
+%%DATADIR%%/themes/czech/words/abeceda.txt
+%%DATADIR%%/themes/czech/words/prsty.txt
+%%DATADIR%%/themes/czech/words/rostliny.txt
+%%DATADIR%%/themes/czech/words/slova2.txt
+%%DATADIR%%/themes/czech/words/slova3.txt
+%%DATADIR%%/themes/czech/words/slova4.txt
+%%DATADIR%%/themes/czech/words/slova5.txt
+%%DATADIR%%/themes/dansk/keyboard.lst
+%%DATADIR%%/themes/dansk/settings.txt
+%%DATADIR%%/themes/dansk/sounds/excuseme.wav
+%%DATADIR%%/themes/dansk/words/words1.txt
+%%DATADIR%%/themes/dansk/words/words2.txt
+%%DATADIR%%/themes/dansk/words/words3.txt
+%%DATADIR%%/themes/dansk/words/words4.txt
+%%DATADIR%%/themes/deutsch/keyboard.lst
+%%DATADIR%%/themes/deutsch/settings.txt
+%%DATADIR%%/themes/deutsch/words/kurz2-3-mit.txt
+%%DATADIR%%/themes/deutsch/words/kurz2-3.txt
+%%DATADIR%%/themes/deutsch/words/lang7-8-mit.txt
+%%DATADIR%%/themes/deutsch/words/lang7-8.txt
+%%DATADIR%%/themes/deutsch/words/mittel4-6-mit.txt
+%%DATADIR%%/themes/deutsch/words/mittel4-6.txt
+%%DATADIR%%/themes/espanol/images/map.png
+%%DATADIR%%/themes/espanol/keyboard.lst
+%%DATADIR%%/themes/espanol/settings.txt
+%%DATADIR%%/themes/espanol/words/words1.txt
+%%DATADIR%%/themes/espanol/words/words2.txt
+%%DATADIR%%/themes/espanol/words/words3.txt
+%%DATADIR%%/themes/euskara/AUTHOR
+%%DATADIR%%/themes/euskara/images/map.png
+%%DATADIR%%/themes/euskara/images/photo.png
+%%DATADIR%%/themes/euskara/keyboard.lst
+%%DATADIR%%/themes/euskara/settings.txt
+%%DATADIR%%/themes/euskara/words/words1.txt
+%%DATADIR%%/themes/euskara/words/words2.txt
+%%DATADIR%%/themes/euskara/words/words3.txt
+%%DATADIR%%/themes/french/keyboard.lst
+%%DATADIR%%/themes/french/scripts/les_jours_de_la_semaine.xml
+%%DATADIR%%/themes/french/scripts/les_mois_de_l_annee.xml
+%%DATADIR%%/themes/french/settings.txt
+%%DATADIR%%/themes/french/words/fingers.txt
+%%DATADIR%%/themes/french/words/months.txt
+%%DATADIR%%/themes/french/words/names.txt
+%%DATADIR%%/themes/french/words/weekdays.txt
+%%DATADIR%%/themes/french/words/words1.txt
+%%DATADIR%%/themes/french/words/words2.txt
+%%DATADIR%%/themes/french/words/words3.txt
+%%DATADIR%%/themes/french/words/words4.txt
+%%DATADIR%%/themes/greek/keyboard.lst
+%%DATADIR%%/themes/greek/settings.txt
+%%DATADIR%%/themes/greek/words/easy.txt
+%%DATADIR%%/themes/gujarati/alphabet.txt
+%%DATADIR%%/themes/gujarati/keyboard.lst
+%%DATADIR%%/themes/gujarati/settings.txt
+%%DATADIR%%/themes/gujarati/words/words1.txt
+%%DATADIR%%/themes/gujarati/words/words2.txt
+%%DATADIR%%/themes/gujarati/words/words3.txt
+%%DATADIR%%/themes/hindi/alphabet.txt
+%%DATADIR%%/themes/hindi/keyboard.lst
+%%DATADIR%%/themes/hindi/settings.txt
+%%DATADIR%%/themes/hindi/words/words1.txt
+%%DATADIR%%/themes/hindi/words/words2.txt
+%%DATADIR%%/themes/hindi/words/words3.txt
+%%DATADIR%%/themes/italian/images/map.png
+%%DATADIR%%/themes/italian/images/photo.png
+%%DATADIR%%/themes/italian/keyboard.lst
+%%DATADIR%%/themes/italian/settings.txt
+%%DATADIR%%/themes/italian/words/animali.txt
+%%DATADIR%%/themes/italian/words/citta.txt
+%%DATADIR%%/themes/italian/words/diteggiatura.txt
+%%DATADIR%%/themes/italian/words/freq.txt
+%%DATADIR%%/themes/italian/words/nomi.txt
+%%DATADIR%%/themes/italian/words/piantefiorifrutta.txt
+%%DATADIR%%/themes/italian/words/stati.txt
+%%DATADIR%%/themes/italian/words/word1.txt
+%%DATADIR%%/themes/italian/words/word2.txt
+%%DATADIR%%/themes/italian/words/word3.txt
+%%DATADIR%%/themes/italian/words/word4.txt
+%%DATADIR%%/themes/jamaican/images/map.png
+%%DATADIR%%/themes/jamaican/images/photo.png
+%%DATADIR%%/themes/jamaican/images/tux0.png
+%%DATADIR%%/themes/jamaican/images/tux1.png
+%%DATADIR%%/themes/jamaican/images/tux2.png
+%%DATADIR%%/themes/jamaican/images/tux3.png
+%%DATADIR%%/themes/jamaican/keyboard.lst
+%%DATADIR%%/themes/jamaican/settings.txt
+%%DATADIR%%/themes/jamaican/words/jam-long.txt
+%%DATADIR%%/themes/jamaican/words/jam-med.txt
+%%DATADIR%%/themes/jamaican/words/jam-short.txt
+%%DATADIR%%/themes/kannada/alphabet.txt
+%%DATADIR%%/themes/kannada/keyboard.lst
+%%DATADIR%%/themes/kannada/settings.txt
+%%DATADIR%%/themes/kannada/words/words1.txt
+%%DATADIR%%/themes/kannada/words/words2.txt
+%%DATADIR%%/themes/kannada/words/words3.txt
+%%DATADIR%%/themes/lithuanian/images/status/gameover.png
+%%DATADIR%%/themes/lithuanian/images/status/score.png
+%%DATADIR%%/themes/lithuanian/images/status/wave.png
+%%DATADIR%%/themes/lithuanian/keyboard.lst
+%%DATADIR%%/themes/lithuanian/settings.txt
+%%DATADIR%%/themes/lithuanian/sounds/excuseme.wav
+%%DATADIR%%/themes/lithuanian/words/1-pamoka.txt
+%%DATADIR%%/themes/lithuanian/words/2-pamoka.txt
+%%DATADIR%%/themes/lithuanian/words/3-pamoka.txt
+%%DATADIR%%/themes/lithuanian/words/4-pamoka.txt
+%%DATADIR%%/themes/lithuanian/words/5-pamoka.txt
+%%DATADIR%%/themes/lithuanian/words/6-pamoka.txt
+%%DATADIR%%/themes/lithuanian/words/7-pamoka.txt
+%%DATADIR%%/themes/malayalam/images/keyboard/key.png
+%%DATADIR%%/themes/malayalam/images/splat0.png
+%%DATADIR%%/themes/malayalam/images/status/score.png
+%%DATADIR%%/themes/malayalam/images/status/wave.png
+%%DATADIR%%/themes/malayalam/keyboard.lst
+%%DATADIR%%/themes/malayalam/phrases.txt
+%%DATADIR%%/themes/malayalam/scripts/Lesson_01.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_02.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_03.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_04.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_05.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_06.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_07.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_08.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_09.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_10.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_11.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_12.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_13.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_14.xml
+%%DATADIR%%/themes/malayalam/scripts/Lesson_15.xml
+%%DATADIR%%/themes/malayalam/scripts/cascade.xml
+%%DATADIR%%/themes/malayalam/scripts/laser.xml
+%%DATADIR%%/themes/malayalam/scripts/projectInfo.xml
+%%DATADIR%%/themes/malayalam/settings.txt
+%%DATADIR%%/themes/malayalam/words/words1.txt
+%%DATADIR%%/themes/malayalam/words/words2.txt
+%%DATADIR%%/themes/malayalam/words/words3.txt
+%%DATADIR%%/themes/nederlands/keyboard.lst
+%%DATADIR%%/themes/nederlands/nederlands.txt
+%%DATADIR%%/themes/nederlands/settings.txt
+%%DATADIR%%/themes/nederlands/words/planten.txt
+%%DATADIR%%/themes/nederlands/words/vingers.txt
+%%DATADIR%%/themes/nederlands/words/woorden1.txt
+%%DATADIR%%/themes/nederlands/words/woorden2.txt
+%%DATADIR%%/themes/nederlands/words/woorden3.txt
+%%DATADIR%%/themes/nepali/authors.txt
+%%DATADIR%%/themes/nepali/keyboard.lst
+%%DATADIR%%/themes/nepali/settings.txt
+%%DATADIR%%/themes/nepali/words/alphabet.txt
+%%DATADIR%%/themes/nepali/words/fingers.txt
+%%DATADIR%%/themes/nepali/words/plants.txt
+%%DATADIR%%/themes/nepali/words/words1.txt
+%%DATADIR%%/themes/nepali/words/words2.txt
+%%DATADIR%%/themes/nepali/words/words3.txt
+%%DATADIR%%/themes/nynorsk/images/map.png
+%%DATADIR%%/themes/nynorsk/images/splat0.png
+%%DATADIR%%/themes/nynorsk/images/status/score.png
+%%DATADIR%%/themes/nynorsk/images/status/wave.png
+%%DATADIR%%/themes/nynorsk/keyboard.lst
+%%DATADIR%%/themes/nynorsk/settings.txt
+%%DATADIR%%/themes/nynorsk/words/3boks.txt
+%%DATADIR%%/themes/nynorsk/words/4boks.txt
+%%DATADIR%%/themes/nynorsk/words/5boks.txt
+%%DATADIR%%/themes/nynorsk/words/6boks.txt
+%%DATADIR%%/themes/nynorsk/words/dyrenamn.txt
+%%DATADIR%%/themes/nynorsk/words/frukt.txt
+%%DATADIR%%/themes/nynorsk/words/land.txt
+%%DATADIR%%/themes/nynorsk/words/sprak.txt
+%%DATADIR%%/themes/nynorsk/words/yrke.txt
+%%DATADIR%%/themes/oriya/alphabet.txt
+%%DATADIR%%/themes/oriya/keyboard.lst
+%%DATADIR%%/themes/oriya/settings.txt
+%%DATADIR%%/themes/oriya/words/words1.txt
+%%DATADIR%%/themes/oriya/words/words2.txt
+%%DATADIR%%/themes/oriya/words/words3.txt
+%%DATADIR%%/themes/punjabi/alphabet.txt
+%%DATADIR%%/themes/punjabi/keyboard.lst
+%%DATADIR%%/themes/punjabi/settings.txt
+%%DATADIR%%/themes/punjabi/words/words1.txt
+%%DATADIR%%/themes/punjabi/words/words2.txt
+%%DATADIR%%/themes/punjabi/words/words3.txt
+%%DATADIR%%/themes/russian/images/splat0.png
+%%DATADIR%%/themes/russian/images/status/score.png
+%%DATADIR%%/themes/russian/images/status/wave.png
+%%DATADIR%%/themes/russian/keyboard.lst
+%%DATADIR%%/themes/russian/settings.txt
+%%DATADIR%%/themes/russian/words/words1.txt
+%%DATADIR%%/themes/russian/words/words2.txt
+%%DATADIR%%/themes/russian/words/words3.txt
+%%DATADIR%%/themes/suomi/keyboard.lst
+%%DATADIR%%/themes/suomi/settings.txt
+%%DATADIR%%/themes/suomi/words/alphabet.txt
+%%DATADIR%%/themes/suomi/words/kasvit.txt
+%%DATADIR%%/themes/suomi/words/sanat1.txt
+%%DATADIR%%/themes/suomi/words/sanat2.txt
+%%DATADIR%%/themes/suomi/words/sanat3.txt
+%%DATADIR%%/themes/suomi/words/sormet.txt
+%%DATADIR%%/themes/svenska/keyboard.lst
+%%DATADIR%%/themes/svenska/settings.txt
+%%DATADIR%%/themes/svenska/words/ord1.txt
+%%DATADIR%%/themes/svenska/words/ord2.txt
+%%DATADIR%%/themes/svenska/words/ord3.txt
+%%DATADIR%%/themes/swahili/AUTHOR
+%%DATADIR%%/themes/swahili/keyboard.lst
+%%DATADIR%%/themes/swahili/settings.txt
+%%DATADIR%%/themes/swahili/words/words1.txt
+%%DATADIR%%/themes/tamil/keyboard.lst
+%%DATADIR%%/themes/tamil/phrases.txt
+%%DATADIR%%/themes/tamil/settings.txt
+%%DATADIR%%/themes/tamil/words/words1.txt
+%%DATADIR%%/themes/tamil/words/words2.txt
+%%DATADIR%%/themes/tamil/words/words3.txt
+%%DATADIR%%/themes/telugu/keyboard.lst
+%%DATADIR%%/themes/telugu/settings.txt
+%%DATADIR%%/themes/telugu/words/words1.txt
+%%DATADIR%%/themes/telugu/words/words2.txt
+%%DATADIR%%/themes/telugu/words/words3.txt
+%%DATADIR%%/themes/wolof/images/map.png
+%%DATADIR%%/themes/wolof/images/photo.png
+%%DATADIR%%/themes/wolof/keyboard.lst
+%%DATADIR%%/themes/wolof/settings.txt
+%%DATADIR%%/themes/wolof/words/names.txt
+%%DATADIR%%/themes/wolof/words/plants.txt
+%%DATADIR%%/themes/wolof/words/words1.txt
+%%DATADIR%%/themes/wolof/words/words2.txt
+%%DATADIR%%/themes/wolof/words/words3.txt
+%%DATADIR%%/themes/wolof/words/words4.txt
 %%DATADIR%%/tuxtype.ico
-%%DATADIR%%/autorun.inf
-%%DATADIR%%/OFL.txt
-%%DOCSDIR%%/howtotheme.html
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/tuxtype.lsm
-@dirrm %%DATADIR%%/data/words
-@dirrm %%DATADIR%%/data/themes/wolof/words
-@dirrm %%DATADIR%%/data/themes/wolof/images
-@dirrm %%DATADIR%%/data/themes/wolof
-@dirrm %%DATADIR%%/data/themes/swahili/words
-@dirrm %%DATADIR%%/data/themes/swahili
-@dirrm %%DATADIR%%/data/themes/svenska/words
-@dirrm %%DATADIR%%/data/themes/svenska
-@dirrm %%DATADIR%%/data/themes/russian/words
-@dirrm %%DATADIR%%/data/themes/russian/images/status
-@dirrm %%DATADIR%%/data/themes/russian/images
-@dirrm %%DATADIR%%/data/themes/russian
-@dirrm %%DATADIR%%/data/themes/nynorsk/words
-@dirrm %%DATADIR%%/data/themes/nynorsk/images/status
-@dirrm %%DATADIR%%/data/themes/nynorsk/images
-@dirrm %%DATADIR%%/data/themes/nynorsk
-@dirrm %%DATADIR%%/data/themes/nederlands/words
-@dirrm %%DATADIR%%/data/themes/nederlands
-@dirrm %%DATADIR%%/data/themes/malayalam/words
-@dirrm %%DATADIR%%/data/themes/malayalam/scripts
-@dirrm %%DATADIR%%/data/themes/malayalam/images/status
-@dirrm %%DATADIR%%/data/themes/malayalam/images/keyboard
-@dirrm %%DATADIR%%/data/themes/malayalam/images
-@dirrm %%DATADIR%%/data/themes/malayalam
-@dirrm %%DATADIR%%/data/themes/lithuanian/words
-@dirrm %%DATADIR%%/data/themes/lithuanian/sounds
-@dirrm %%DATADIR%%/data/themes/lithuanian/images/status
-@dirrm %%DATADIR%%/data/themes/lithuanian/images
-@dirrm %%DATADIR%%/data/themes/lithuanian
-@dirrm %%DATADIR%%/data/themes/jamaican/words
-@dirrm %%DATADIR%%/data/themes/jamaican/images
-@dirrm %%DATADIR%%/data/themes/jamaican
-@dirrm %%DATADIR%%/data/themes/italian/words
-@dirrm %%DATADIR%%/data/themes/italian
-@dirrm %%DATADIR%%/data/themes/greek/words
-@dirrm %%DATADIR%%/data/themes/greek
-@dirrm %%DATADIR%%/data/themes/french/words
-@dirrm %%DATADIR%%/data/themes/french
-@dirrm %%DATADIR%%/data/themes/euskara/words
-@dirrm %%DATADIR%%/data/themes/euskara/images
-@dirrm %%DATADIR%%/data/themes/euskara
-@dirrm %%DATADIR%%/data/themes/espanol/words
-@dirrm %%DATADIR%%/data/themes/espanol/images
-@dirrm %%DATADIR%%/data/themes/espanol
-@dirrm %%DATADIR%%/data/themes/deutsch/words
-@dirrm %%DATADIR%%/data/themes/deutsch
-@dirrm %%DATADIR%%/data/themes/dansk/words
-@dirrm %%DATADIR%%/data/themes/dansk/sounds
-@dirrm %%DATADIR%%/data/themes/dansk
-@dirrm %%DATADIR%%/data/themes/czech/words
-@dirrm %%DATADIR%%/data/themes/czech
-@dirrm %%DATADIR%%/data/themes/catalan/words
-@dirrm %%DATADIR%%/data/themes/catalan
-@dirrm %%DATADIR%%/data/themes/brazilian-portuguese/words
-@dirrm %%DATADIR%%/data/themes/brazilian-portuguese/images
-@dirrm %%DATADIR%%/data/themes/brazilian-portuguese
-@dirrm %%DATADIR%%/data/themes/bokmal/words
-@dirrm %%DATADIR%%/data/themes/bokmal/images/status
-@dirrm %%DATADIR%%/data/themes/bokmal/images
-@dirrm %%DATADIR%%/data/themes/bokmal
-@dirrm %%DATADIR%%/data/themes/armenian/images
-@dirrm %%DATADIR%%/data/themes/armenian
-@dirrm %%DATADIR%%/data/themes
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/scripts
-@dirrm %%DATADIR%%/data/images/tux
-@dirrm %%DATADIR%%/data/images/status
-@dirrm %%DATADIR%%/data/images/menu
-@dirrm %%DATADIR%%/data/images/keyboard
-@dirrm %%DATADIR%%/data/images/icons
-@dirrm %%DATADIR%%/data/images/hands
-@dirrm %%DATADIR%%/data/images/comets
-@dirrm %%DATADIR%%/data/images/cities
-@dirrm %%DATADIR%%/data/images/backgrounds
-@dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data/fonts
-@dirrm %%DATADIR%%/data
+%%DATADIR%%/words/alphabet.txt
+%%DATADIR%%/words/animals.txt
+%%DATADIR%%/words/astronomy.txt
+%%DATADIR%%/words/colors.txt
+%%DATADIR%%/words/fingers.txt
+%%DATADIR%%/words/fruit.txt
+%%DATADIR%%/words/geography.txt
+%%DATADIR%%/words/numbers.txt
+%%DATADIR%%/words/plants.txt
+%%DATADIR%%/words/shapes.txt
+%%DATADIR%%/words/trees.txt
+%%DATADIR%%/words/words1.txt
+%%DATADIR%%/words/words2.txt
+%%DATADIR%%/words/words3.txt
+@exec mkdir -p %D/var
+@exec mkdir -p %D/var/tuxtype
+@exec mkdir -p %D/var/tuxtype/words
+@dirrmtry var/tuxtype/words
+@dirrmtry var/tuxtype
+@dirrmtry var
+@dirrm %%DATADIR%%/words
+@dirrm %%DATADIR%%/themes/wolof/words
+@dirrm %%DATADIR%%/themes/wolof/images
+@dirrm %%DATADIR%%/themes/wolof
+@dirrm %%DATADIR%%/themes/telugu/words
+@dirrm %%DATADIR%%/themes/telugu
+@dirrm %%DATADIR%%/themes/tamil/words
+@dirrm %%DATADIR%%/themes/tamil
+@dirrm %%DATADIR%%/themes/swahili/words
+@dirrm %%DATADIR%%/themes/swahili
+@dirrm %%DATADIR%%/themes/svenska/words
+@dirrm %%DATADIR%%/themes/svenska
+@dirrm %%DATADIR%%/themes/suomi/words
+@dirrm %%DATADIR%%/themes/suomi
+@dirrm %%DATADIR%%/themes/russian/words
+@dirrm %%DATADIR%%/themes/russian/images/status
+@dirrm %%DATADIR%%/themes/russian/images
+@dirrm %%DATADIR%%/themes/russian
+@dirrm %%DATADIR%%/themes/punjabi/words
+@dirrm %%DATADIR%%/themes/punjabi
+@dirrm %%DATADIR%%/themes/oriya/words
+@dirrm %%DATADIR%%/themes/oriya
+@dirrm %%DATADIR%%/themes/nynorsk/words
+@dirrm %%DATADIR%%/themes/nynorsk/images/status
+@dirrm %%DATADIR%%/themes/nynorsk/images
+@dirrm %%DATADIR%%/themes/nynorsk
+@dirrm %%DATADIR%%/themes/nepali/words
+@dirrm %%DATADIR%%/themes/nepali
+@dirrm %%DATADIR%%/themes/nederlands/words
+@dirrm %%DATADIR%%/themes/nederlands
+@dirrm %%DATADIR%%/themes/malayalam/words
+@dirrm %%DATADIR%%/themes/malayalam/scripts
+@dirrm %%DATADIR%%/themes/malayalam/images/status
+@dirrm %%DATADIR%%/themes/malayalam/images/keyboard
+@dirrm %%DATADIR%%/themes/malayalam/images
+@dirrm %%DATADIR%%/themes/malayalam
+@dirrm %%DATADIR%%/themes/lithuanian/words
+@dirrm %%DATADIR%%/themes/lithuanian/sounds
+@dirrm %%DATADIR%%/themes/lithuanian/images/status
+@dirrm %%DATADIR%%/themes/lithuanian/images
+@dirrm %%DATADIR%%/themes/lithuanian
+@dirrm %%DATADIR%%/themes/kannada/words
+@dirrm %%DATADIR%%/themes/kannada
+@dirrm %%DATADIR%%/themes/jamaican/words
+@dirrm %%DATADIR%%/themes/jamaican/images
+@dirrm %%DATADIR%%/themes/jamaican
+@dirrm %%DATADIR%%/themes/italian/words
+@dirrm %%DATADIR%%/themes/italian/images
+@dirrm %%DATADIR%%/themes/italian
+@dirrm %%DATADIR%%/themes/hindi/words
+@dirrm %%DATADIR%%/themes/hindi
+@dirrm %%DATADIR%%/themes/gujarati/words
+@dirrm %%DATADIR%%/themes/gujarati
+@dirrm %%DATADIR%%/themes/greek/words
+@dirrm %%DATADIR%%/themes/greek
+@dirrm %%DATADIR%%/themes/french/words
+@dirrm %%DATADIR%%/themes/french/scripts
+@dirrm %%DATADIR%%/themes/french
+@dirrm %%DATADIR%%/themes/euskara/words
+@dirrm %%DATADIR%%/themes/euskara/images
+@dirrm %%DATADIR%%/themes/euskara
+@dirrm %%DATADIR%%/themes/espanol/words
+@dirrm %%DATADIR%%/themes/espanol/images
+@dirrm %%DATADIR%%/themes/espanol
+@dirrm %%DATADIR%%/themes/deutsch/words
+@dirrm %%DATADIR%%/themes/deutsch
+@dirrm %%DATADIR%%/themes/dansk/words
+@dirrm %%DATADIR%%/themes/dansk/sounds
+@dirrm %%DATADIR%%/themes/dansk
+@dirrm %%DATADIR%%/themes/czech/words
+@dirrm %%DATADIR%%/themes/czech
+@dirrm %%DATADIR%%/themes/catalan/words
+@dirrm %%DATADIR%%/themes/catalan
+@dirrm %%DATADIR%%/themes/bulgarian/words
+@dirrm %%DATADIR%%/themes/bulgarian/scripts
+@dirrm %%DATADIR%%/themes/bulgarian
+@dirrm %%DATADIR%%/themes/brazilian-portuguese/words
+@dirrm %%DATADIR%%/themes/brazilian-portuguese/images
+@dirrm %%DATADIR%%/themes/brazilian-portuguese
+@dirrm %%DATADIR%%/themes/bokmal/words
+@dirrm %%DATADIR%%/themes/bokmal/images/status
+@dirrm %%DATADIR%%/themes/bokmal/images
+@dirrm %%DATADIR%%/themes/bokmal
+@dirrm %%DATADIR%%/themes/assamese/words
+@dirrm %%DATADIR%%/themes/assamese
+@dirrm %%DATADIR%%/themes/armenian/images
+@dirrm %%DATADIR%%/themes/armenian
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/images/tux
+@dirrm %%DATADIR%%/images/status
+@dirrm %%DATADIR%%/images/menu
+@dirrm %%DATADIR%%/images/keyboard
+@dirrm %%DATADIR%%/images/icons
+@dirrm %%DATADIR%%/images/hands
+@dirrm %%DATADIR%%/images/comets
+@dirrm %%DATADIR%%/images/cities
+@dirrm %%DATADIR%%/images/backgrounds
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/im
+@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%NLS%%@dirrmtry share/locale/zh_N/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_N
+%%NLS%%@dirrmtry share/locale/sw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sw
+%%NLS%%@dirrmtry share/locale/wo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/wo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%
