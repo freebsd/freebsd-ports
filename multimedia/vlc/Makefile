@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.13
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -435,7 +435,7 @@ CONFIGURE_ARGS+=--enable-libmpeg2
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp.9:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--enable-mtp
 .else
 CONFIGURE_ARGS+=--disable-mtp
