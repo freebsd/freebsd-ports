@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.83
-PORTREVISION=	1
+PORTVERSION=	2.85
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/ \
+MASTER_SITES=	http://wpd.home.xs4all.nl/symon/philes/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	uqs
 
