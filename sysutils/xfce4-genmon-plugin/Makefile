@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
@@ -20,8 +20,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libgui panel
+USE_XFCE=	configenv libmenu panel
 
-CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.mk>
