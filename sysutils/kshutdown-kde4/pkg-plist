@@ -4,13 +4,13 @@ share/apps/kshutdown/extras/multimedia/.directory
 share/apps/kshutdown/extras/multimedia/amarok.desktop
 share/apps/kshutdown/extras/multimedia/juk.desktop
 share/apps/kshutdown/extras/multimedia/kaffeine.desktop
-share/apps/kshutdown/extras/multimedia/kdetv.desktop
 share/apps/kshutdown/extras/multimedia/kscd.desktop
 share/apps/kshutdown/extras/multimedia/mplayer.desktop
 share/apps/kshutdown/extras/multimedia/tvtime.desktop
 share/apps/kshutdown/extras/multimedia/xmms.desktop
 share/apps/kshutdown/extras/system/.directory
 share/apps/kshutdown/extras/system/kppp.desktop
+share/apps/kshutdown/extras/unlock-kde.desktop
 share/apps/kshutdown/kshutdown.notifyrc
 share/icons/hicolor/128x128/apps/kshutdown.png
 share/icons/hicolor/16x16/apps/kshutdown.png
@@ -32,6 +32,7 @@ share/locale/it/LC_MESSAGES/kshutdown.mo
 share/locale/nb/LC_MESSAGES/kshutdown.mo
 share/locale/nl/LC_MESSAGES/kshutdown.mo
 share/locale/pl/LC_MESSAGES/kshutdown.mo
+share/locale/pt/LC_MESSAGES/kshutdown.mo
 share/locale/pt_BR/LC_MESSAGES/kshutdown.mo
 share/locale/ru/LC_MESSAGES/kshutdown.mo
 share/locale/sk/LC_MESSAGES/kshutdown.mo
