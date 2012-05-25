@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sieve-connect
-PORTVERSION=	0.81
+PORTVERSION=	0.83
 CATEGORIES=	mail
 MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
@@ -14,17 +14,17 @@ MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Command-line client for the MANAGESIEVE protocol
 
+LICENSE=	unknown
+LICENSE_NAME=	Public Domain
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-IO-Socket-INET6>=0:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
-
-LICENSE=	unknown
-LICENSE_NAME=	Public Domain
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
