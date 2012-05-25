@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	russian devel python
 
 .include "${.CURDIR}/../../devel/eric4/Makefile.inc"
