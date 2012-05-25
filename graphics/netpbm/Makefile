@@ -7,6 +7,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	10.35.84
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -66,6 +67,7 @@ pre-build:
 	fi)
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${PREFIX}/include/
 	@${ECHO_MSG} "===>  Installing man pages..."
 	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \
 		${WRKSRC}/doc/netpbm.1
