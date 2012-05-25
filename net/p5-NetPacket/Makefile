@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	NetPacket
-PORTVERSION=	0.43.1
+PORTVERSION=	1.3.1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,7 @@ LICENSE=	ART20
 PERL_MODBUILD=	yes
 
 MAN3=		NetPacket.3 NetPacket::ARP.3 NetPacket::Ethernet.3 \
-		NetPacket::ICMP.3 NetPacket::ICMPv6.3 NetPacket::IGMP.3 \
-		NetPacket::IP.3 NetPacket::IPv6.3 NetPacket::PFLog.3 \
-		NetPacket::TCP.3 NetPacket::UDP.3
+		NetPacket::ICMP.3 NetPacket::IGMP.3 NetPacket::UDP.3\
+		NetPacket::IP.3 NetPacket::TCP.3
 
 .include <bsd.port.mk>
