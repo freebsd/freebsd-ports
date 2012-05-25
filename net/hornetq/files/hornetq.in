@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# Copyright (c) 2012, Radim Kolar
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+#  * Redistributions of source code must retain the above copyright notice,
+#    this list of conditions and the following disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+# DAMAGE.
+
+# PROVIDE: hornetq
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# $FreeBSD$
+
+. /etc/rc.subr
+
+name="hornetq"
+rcvar=hornetq_enable
+load_rc_config $name
+
+hornetq_enable=${hornetq_enable:-"NO"}
+hornetq_config=${hornetq_config:-"non-clustered"}
+hornetq_deployment=${hornetq_deployment:-"hornetq-beans.xml"}
+hornetq_data=${hornetq_data:-"/var/spool/hornetq"}
+
+command=%%DATADIR%%/bin/run.sh
+command_args="%%DATADIR%%/config/stand-alone/${hornetq_config} ${hornetq_deployment}"
+stop_precmd="${name}_prestop"
+start_cmd="${name}_start"
+sig_stop="KILL"
+
+command_interpreter="/bin/sh"
+pidfile=/var/run/hornetq.pid
+
+export PATH=$PATH:%%LOCALBASE%%/bin
+export HORNETQ_HOME=%%DATADIR%%
+export CLUSTER_PROPS=-Ddata.dir=${hornetq_data}
+export JAVA_VENDOR=openjdk
+export JAVA_VERSION=1.6
+
+hornetq_prestop() {
+	$HORNETQ_HOME/bin/stop.sh %%DATADIR%%/config/stand-alone/${hornetq_config}
+	sleep 10
+	return 0
+}
+
+hornetq_start()
+{
+  if [ -z "$rc_pid" ]; then
+	   echo -n "Starting $name"
+	   mkdir -p ${hornetq_data}
+	   ${command} ${command_args} &
+	   echo -n $! > $pidfile
+	   echo "."
+  else
+           echo "$name is already running with pid=$rc_pid."
+  fi
+}
+run_rc_command "$1"

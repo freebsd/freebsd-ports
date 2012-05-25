@@ -1,0 +1,15 @@
+--- config/stand-alone/clustered/logging.properties.sample.orig	2012-04-13 18:43:44.000000000 +0200
++++ config/stand-alone/clustered/logging.properties.sample	2012-05-16 09:21:49.552599669 +0200
+@@ -15,10 +15,10 @@
+ # Note that these classes must be on the system classpath.
+ # By default we only configure a ConsoleHandler, which will only
+ # show messages at the INFO and above levels.
+-handlers=java.util.logging.ConsoleHandler,java.util.logging.FileHandler
++handlers=java.util.logging.FileHandler
+ java.util.logging.ConsoleHandler.formatter=org.hornetq.integration.logging.HornetQLoggerFormatter
+ java.util.logging.FileHandler.level=INFO
+-java.util.logging.FileHandler.pattern=../logs/hornetq.log
++java.util.logging.FileHandler.pattern=/var/log/hornetq.log
+ java.util.logging.FileHandler.formatter=org.hornetq.integration.logging.HornetQLoggerFormatter
+ # Default global logging level.
+ # This specifies which kinds of events are logged across

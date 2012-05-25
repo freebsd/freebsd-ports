@@ -1,0 +1,19 @@
+--- bin/run.sh.orig	2012-04-13 18:43:44.000000000 +0200
++++ bin/run.sh	2012-05-16 06:16:41.267520836 +0200
+@@ -1,7 +1,6 @@
+-#!/bin/sh
++#!/bin/sh -T
+ 
+-export HORNETQ_HOME=..
+-mkdir -p ../logs
++if [ -z $HORNETQ_HOME ]; then export HORNETQ_HOME=..; fi
+ # By default, the server is started in the non-clustered standalone configuration
+ 
+ if [ a"$1" = a ]; then CONFIG_DIR=$HORNETQ_HOME/config/stand-alone/non-clustered; else CONFIG_DIR="$1"; fi
+@@ -20,4 +19,4 @@
+ echo "***********************************************************************************"
+ echo "java $JVM_ARGS -classpath $CLASSPATH org.hornetq.integration.bootstrap.HornetQBootstrapServer $FILENAME"
+ echo "***********************************************************************************"
+-java $JVM_ARGS -classpath $CLASSPATH -Dcom.sun.management.jmxremote org.hornetq.integration.bootstrap.HornetQBootstrapServer $FILENAME
+\ No newline at end of file
++java $JVM_ARGS -classpath $CLASSPATH -Dcom.sun.management.jmxremote org.hornetq.integration.bootstrap.HornetQBootstrapServer $FILENAME

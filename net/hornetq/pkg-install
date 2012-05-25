@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# Copy sample hornetq config files to real ones if real ones does not exists
+#
+if [ "$2" = "POST-INSTALL" ]; then
+   if [ ! -d $PKG_PREFIX/share/hornetq/config/stand-alone ]; then exit 1; fi
+   umask 027
+   cd $PKG_PREFIX/share/hornetq/config/stand-alone
+   for cfgdir  in clustered non-clustered; do
+      for cfgfile in hornetq-beans.xml hornetq-users.xml \
+	             hornetq-configuration.xml jndi.properties \
+		     hornetq-jms.xml logging.properties; do
+         if [ ! -f $cfgdir/$cfgfile ]; then
+            cp -p $cfgdir/$cfgfile.sample $cfgdir/$cfgfile
+         fi
+      done
+   done
+fi
