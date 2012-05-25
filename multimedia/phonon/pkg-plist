@@ -67,6 +67,7 @@ include/phonon/EffectInterface
 include/phonon/EffectParameter
 include/phonon/EffectWidget
 include/phonon/Global
+include/phonon/GlobalDescriptionContainer
 include/phonon/MediaController
 include/phonon/MediaNode
 include/phonon/MediaObject
@@ -133,6 +134,7 @@ include/phonon/experimental/videoframe2.h
 include/phonon/experimental/videowidget.h
 include/phonon/experimental/visualization.h
 include/phonon/globalconfig.h
+include/phonon/globaldescriptioncontainer.h
 include/phonon/mediacontroller.h
 include/phonon/medianode.h
 include/phonon/mediaobject.h
@@ -155,37 +157,50 @@ include/phonon/videowidgetinterface.h
 include/phonon/volumefadereffect.h
 include/phonon/volumefaderinterface.h
 include/phonon/volumeslider.h
+lib/cmake/phonon/PhononConfig.cmake
+lib/cmake/phonon/PhononConfigVersion.cmake
+lib/cmake/phonon/PhononTargets-release.cmake
+lib/cmake/phonon/PhononTargets.cmake
 lib/libphonon.so
 lib/libphonon.so.4
-lib/libphonon.so.4.5.1
+lib/libphonon.so.4.6.0
 lib/libphononexperimental.so
 lib/libphononexperimental.so.4
-lib/libphononexperimental.so.4.5.1
-%%DESIGNER%%lib/kde4/libphononwidgets.so
+lib/libphononexperimental.so.4.6.0
 libdata/pkgconfig/phonon.pc
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
-share/phonon-buildsystem/COPYING-CMAKE-SCRIPTS
-share/phonon-buildsystem/FindAutomoc4.cmake
-share/phonon-buildsystem/FindPackageHandleStandardArgs.cmake
-share/phonon-buildsystem/FindPhononInternal.cmake
-share/phonon-buildsystem/FindQt4.cmake
-share/phonon-buildsystem/MacroEnsureVersion.cmake
-share/phonon-buildsystem/MacroLogFeature.cmake
-share/phonon-buildsystem/MacroOptionalFindPackage.cmake
-share/phonon-buildsystem/MacroPushRequiredVars.cmake
-share/phonon-buildsystem/PhononMacros.cmake
-share/phonon-buildsystem/cmake_uninstall.cmake.in
-@dirrm share/phonon-buildsystem
+%%DATADIR%%/buildsystem/COPYING-CMAKE-SCRIPTS
+%%DATADIR%%/buildsystem/FindAutomoc4.cmake
+%%DATADIR%%/buildsystem/FindPackageHandleStandardArgs.cmake
+%%DATADIR%%/buildsystem/FindPhononInternal.cmake
+%%DATADIR%%/buildsystem/FindQt4.cmake
+%%DATADIR%%/buildsystem/MacroEnsureVersion.cmake
+%%DATADIR%%/buildsystem/MacroLogFeature.cmake
+%%DATADIR%%/buildsystem/MacroOptionalFindPackage.cmake
+%%DATADIR%%/buildsystem/MacroPushRequiredVars.cmake
+%%DATADIR%%/buildsystem/PhononMacros.cmake
+%%DATADIR%%/buildsystem/Qt4ConfigDependentSettings.cmake
+%%DATADIR%%/buildsystem/Qt4Macros.cmake
+%%DATADIR%%/buildsystem/cmake_uninstall.cmake.in
+@dirrm %%DATADIR%%/buildsystem
+@dirrm %%DATADIR%%
+@dirrm lib/cmake/phonon
+@dirrmtry lib/cmake
 @dirrm include/phonon/experimental
 @dirrm include/phonon
 @dirrm include/KDE/Phonon/Experimental
 @dirrm include/KDE/Phonon
 @cwd %%QT_PREFIX%%
-%%QT_INCDIR_REL%%/phonon
 %%QT_INCDIR_REL%%/Phonon
+%%QT_INCDIR_REL%%/phonon
 %%QT_LIBDIR_REL%%/libphonon.so
 %%QT_LIBDIR_REL%%/libphonon.so.4
 %%QT_LIBDIR_REL%%/libphononexperimental.so
 %%QT_LIBDIR_REL%%/libphononexperimental.so.4
+%%DESIGNER%%%%QT_PLUGINDIR_REL%%/designer/libphononwidgets.so
 share/qt4/mkspecs/modules/qt_phonon.pri
 @dirrmtry share/qt4/mkspecs/modules
+%%DESIGNER%%@dirrmtry %%QT_PLUGINDIR_REL%%/designer
+%%DESIGNER%%@dirrmtry %%QT_PLUGINDIR_REL%%
+@dirrmtry %%QT_LIBDIR_REL%%
+@dirrmtry %%QT_INCDIR_REL%%

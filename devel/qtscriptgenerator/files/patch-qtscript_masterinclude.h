@@ -1,8 +1,12 @@
-diff -up ./generator/qtscript_masterinclude.h.kde_phonon ./generator/qtscript_masterinclude.h
---- ./generator/qtscript_masterinclude.h.kde_phonon	2010-10-26 02:53:53.000000000 -0500
-+++ ./generator/qtscript_masterinclude.h	2010-12-11 17:00:08.456338081 -0600
-@@ -58,7 +58,7 @@
+--- ./generator/qtscript_masterinclude.h.orig	2012-01-23 03:30:03.000000000 -0800
++++ ./generator/qtscript_masterinclude.h	2012-04-24 04:41:24.458404620 -0700
+@@ -53,12 +53,10 @@
+ #  include <QtXmlPatterns/QtXmlPatterns>
  #endif
+ 
+-#ifndef QT_NO_WEBKIT
+ #  include <QtWebKit/QtWebKit>
+-#endif
  
  #ifndef QT_NO_PHONON
 -#  include <phonon/phonon>

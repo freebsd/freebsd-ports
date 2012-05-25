@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	phonon
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PHONON_BRANCH}/${PORTNAME}/${PORTNAME}-backend${PKGNAMESUFFIX}/${PORTVERSION}/src
 PKGNAMESUFFIX=	-vlc
 DISTNAME=	${PORTNAME}-backend${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The VLC backend for Phonon
+COMMENT=	VLC backend for Phonon
+
+# Required in order to avoid conflicts with multimedia/phonon.
+LATEST_LINK=    ${PORTNAME}${PKGNAMESUFFIX}
 
 LIB_DEPENDS=	vlc.7:${PORTSDIR}/multimedia/vlc
 
 PHONON_BRANCH=	stable
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_KDE4=	kdehier automoc4 kdeprefix
+
+USE_KDE4=	kdehier kdeprefix automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	dbus phonon \
+QT_COMPONENTS=	gui phonon \
 		qmake_build moc_build rcc_build uic_build
+USE_XZ=		yes
+USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB+=	QT_PREFIX=${QT_PREFIX}

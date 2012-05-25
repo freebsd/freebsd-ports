@@ -1,2 +1,4 @@
-SHA256 (QtZeitgeist-0.7.0.tar.bz2) = 12c3073196ba5ea871759e79bc0a1ecf5a3a20f1d90abd814d2555ff21175d7e
-SIZE (QtZeitgeist-0.7.0.tar.bz2) = 31260
+SHA256 (libqzeitgeist-0.8.0.tar.bz2) = 0a8aa980d64549cce93691705807681fd7e3e079a48aee68fc4b2653f17d61ad
+SIZE (libqzeitgeist-0.8.0.tar.bz2) = 29459
+SHA256 (zeitgeist-0.8.2.tar.gz) = 6155611ee182f642cc1fe9f8aadc25c7e2942fdef2565b1f29e8388bc4643703
+SIZE (zeitgeist-0.8.2.tar.gz) = 358781

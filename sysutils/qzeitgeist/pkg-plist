@@ -1,31 +1,42 @@
-include/QtZeitgeist/DataModel/DataSource
-include/QtZeitgeist/DataModel/Event
-include/QtZeitgeist/DataModel/Subject
-include/QtZeitgeist/DataModel/TimeRange
-include/QtZeitgeist/DataModel/datasource.h
-include/QtZeitgeist/DataModel/event.h
-include/QtZeitgeist/DataModel/subject.h
-include/QtZeitgeist/DataModel/timerange.h
-include/QtZeitgeist/DataSourceRegistry
-include/QtZeitgeist/Interpretation
-include/QtZeitgeist/Log
-include/QtZeitgeist/Manifestation
-include/QtZeitgeist/Monitor
-include/QtZeitgeist/QtZeitgeist
-include/QtZeitgeist/datasourceregistry.h
-include/QtZeitgeist/interpretation.h
-include/QtZeitgeist/log.h
-include/QtZeitgeist/manifestation.h
-include/QtZeitgeist/monitor.h
-include/QtZeitgeist/qtzeitgeist.h
-lib/cmake/qzeitgeist/QZeitgeistConfig.cmake
-lib/cmake/qzeitgeist/QZeitgeistExport-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/qzeitgeist/QZeitgeistExport.cmake
+include/QZeitgeist/DataModel/DataSource
+include/QZeitgeist/DataModel/Event
+include/QZeitgeist/DataModel/Subject
+include/QZeitgeist/DataModel/TimeRange
+include/QZeitgeist/DataModel/datasource.h
+include/QZeitgeist/DataModel/event.h
+include/QZeitgeist/DataModel/subject.h
+include/QZeitgeist/DataModel/timerange.h
+include/QZeitgeist/DataSourceRegistry
+include/QZeitgeist/Interpretation
+include/QZeitgeist/Log
+include/QZeitgeist/LogModel
+include/QZeitgeist/Manifestation
+include/QZeitgeist/Monitor
+include/QZeitgeist/QZeitgeist
+include/QZeitgeist/datasourceregistry.h
+include/QZeitgeist/interpretation.h
+include/QZeitgeist/log.h
+include/QZeitgeist/logmodel.h
+include/QZeitgeist/manifestation.h
+include/QZeitgeist/monitor.h
+include/QZeitgeist/qzeitgeist.h
+include/QZeitgeist/qzeitgeist_version.h
+include/QZeitgeist/refreshjob.h
+lib/cmake/QZeitgeist/QZeitgeistConfig.cmake
+lib/cmake/QZeitgeist/QZeitgeistConfigVersion.cmake
+lib/cmake/QZeitgeist/QZeitgeistExport-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/QZeitgeist/QZeitgeistExport.cmake
 lib/libqzeitgeist.so
-lib/libqzeitgeist.so.0
-lib/libqzeitgeist.so.0.7
-libdata/pkgconfig/QtZeitgeist.pc
-@dirrm lib/cmake/qzeitgeist
+lib/libqzeitgeist.so.0.8.0
+lib/libqzeitgeist.so.1
+%%QT_LIBDIR_REL%%/imports/org/gnome/zeitgeist/libQZeitgeistDeclarativePlugin.so
+%%QT_LIBDIR_REL%%/imports/org/gnome/zeitgeist/qmldir
+libdata/pkgconfig/QZeitgeist.pc
+@dirrm %%QT_LIBDIR_REL%%/imports/org/gnome/zeitgeist
+@dirrm %%QT_LIBDIR_REL%%/imports/org/gnome
+@dirrmtry %%QT_LIBDIR_REL%%/imports/org
+@dirrmtry %%QT_LIBDIR_REL%%/imports
+@dirrm lib/cmake/QZeitgeist
 @dirrmtry lib/cmake
-@dirrm include/QtZeitgeist/DataModel
-@dirrm include/QtZeitgeist
+@dirrm include/QZeitgeist/DataModel
+@dirrm include/QZeitgeist
