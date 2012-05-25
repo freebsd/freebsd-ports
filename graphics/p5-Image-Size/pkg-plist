@@ -3,6 +3,7 @@ bin/imgsize
 %%SITE_PERL%%/Image/Size.pm
 %%SITE_PERL%%/auto/Image/Size/autosplit.ix
 %%SITE_PERL%%/auto/Image/Size/bmpsize.al
+%%SITE_PERL%%/auto/Image/Size/emfsize.al
 %%SITE_PERL%%/auto/Image/Size/gifsize.al
 %%SITE_PERL%%/auto/Image/Size/jpegsize.al
 %%SITE_PERL%%/auto/Image/Size/mngsize.al
