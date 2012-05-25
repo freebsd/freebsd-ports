@@ -16,6 +16,8 @@ COMMENT=	Accessibility applications for KDE4
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
 
+LATEST_LINK=	${PORTNAME}4
+
 OPTIONS=	JOVIE "Install Jovie text-to-speech system" on \
 		KACCESSIBLE "Install Accessibility services for KDE" on \
 		KMAG "Install Screen magnifier" on \
