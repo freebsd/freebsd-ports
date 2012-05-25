@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdbusmenu-qt
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 

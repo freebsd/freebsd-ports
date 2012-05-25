@@ -1,5 +1,4 @@
-Phonon is multimedia framework for KDE4.
-This port provides VLC backend.
+Phonon is the multimedia framework for KDE Software Compilation 4.
+This port provides the VLC backend.
 
-WWW:	http://www.videolan.org
-WWW:	http://phonon.kde.org
+WWW: http://phonon.kde.org

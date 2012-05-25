@@ -5,20 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	qtscriptgenerator
-PORTVERSION=	0.1.0.20101126
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
-#MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://ns.ael.ru/~fluffy.khv/distfiles/
-MASTER_SITE_SUBDIR=	fluffy
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	syncer@gmail.com
-COMMENT=	Qt Script Generator is a tool that generates Qt bindings for Qt Script
+COMMENT=	Tool that generates Qt bindings for Qt Script
 
 OPTIONS=	PHONON	"Build Phonon support" on
 
-USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib declarative designer doc help help-tools gui \
 		iconengines imageformats inputmethods linguist network \
@@ -26,13 +22,13 @@ QT_COMPONENTS=	corelib declarative designer doc help help-tools gui \
 		qt3support qtestlib qvfb script scripttools \
 		sql svg webkit xml xmlpatterns xmlpatterns-tool \
 		qmake_build moc_build rcc_build uic_build
-HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-INSTALL_QT_PLUGINS_DIR=	${PREFIX}/lib/qt4/plugins/
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PHONON)
+.if !defined(WITHOUT_PHONON)
 QT_COMPONENTS+=	phonon
 PLIST_SUB+=	PHONON=""
 .else
@@ -41,22 +37,31 @@ PLIST_SUB+=	PHONON="@comment "
 .endif
 
 do-configure:
-	@cd ${WRKSRC}/generator/ && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} generator.pro
+	@cd ${WRKSRC}/generator && \
+		${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
+		PREFIX=${PREFIX} \
+		generator.pro
 
 do-build:
 	@echo "--->  Building generator"
-	@cd ${WRKSRC}/generator && ${GMAKE} && ${SETENV} ${CONFIGURE_ENV} \
-		./generator --include-paths=${PREFIX}/include/:${PREFIX}/include/qt4/
-	@echo "--->  Configure generated files"
-	@cd ${WRKSRC}/qtbindings && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} PREFIX=${PREFIX} INCLUDEPATH+=${PREFIX}/include/qt4/phonon \
-		LIBS+=-L${PREFIX}/lib qtbindings.pro
+	@cd ${WRKSRC}/generator && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} && \
+		${SETENV} ${CONFIGURE_ENV} ./generator \
+		--include-paths=${PREFIX}/include/:${PREFIX}/include/qt4/
+	@echo "--->  Configuring generated files"
+	@cd ${WRKSRC}/qtbindings && \
+		${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
+		PREFIX=${PREFIX} \
+		INCLUDEPATH+=${PREFIX}/include/qt4/phonon \
+		LIBS+=-L${PREFIX}/lib \
+		qtbindings.pro
 	@echo "--->  Building generated files"
-	@cd ${WRKSRC}/qtbindings && ${SETENV} ${MAKE_ENV} && ${GMAKE}
+	@cd ${WRKSRC}/qtbindings && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
 
 do-install:
-	${MKDIR} ${INSTALL_QT_PLUGINS_DIR}/script
-	cd ${WRKSRC}/plugins/script/ && ${COPYTREE_SHARE} \* ${INSTALL_QT_PLUGINS_DIR}/script
+	${MKDIR} ${PREFIX}/${QT_PLUGINDIR_REL}/script
+	cd ${WRKSRC}/plugins/script && \
+		${COPYTREE_SHARE} \* ${PREFIX}/${QT_PLUGINDIR_REL}/script
 
 .include <bsd.port.mk>
