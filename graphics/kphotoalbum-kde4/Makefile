@@ -6,7 +6,7 @@
 
 PORTNAME=	kphotoalbum
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/extragear
@@ -37,7 +37,7 @@ OPTIONS=	MARBLE "Geolocation support" on
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MARBLE)
-LIB_DEPENDS+=	marblewidget.12:${PORTSDIR}/astro/marble
+USE_KDE4+=	marble
 .else
 CMAKE_ARGS+=	-DWITH_Marble:BOOL=Off
 .endif
