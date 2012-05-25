@@ -3,6 +3,7 @@
 
     COMMENT = Games
 
+    SUBDIR += 0ad
     SUBDIR += 0verkill
     SUBDIR += 3dc
     SUBDIR += 3dpong
