@@ -24,6 +24,12 @@ PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 MAN8=		bftpd.8
 PORTDOCS=	en pl sk
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900000
+BROKEN=		does not compile on FreeBSD 7.x and 8.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
 		${WRKSRC}/mypaths.h
@@ -38,4 +44,4 @@ do-install:
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
