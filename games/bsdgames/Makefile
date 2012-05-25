@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdgames
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v2.4.0:/games
