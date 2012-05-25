@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.12
+PORTVERSION=	3.7.12.1
 CATEGORIES=	databases tcl
-MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
+MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/ http://www3.sqlite.org/
 PKGNAMEPREFIX=	tcl-
-DISTNAME=	sqlite-autoconf-3071200
+DISTNAME=	sqlite-autoconf-3071201
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
