@@ -6,7 +6,6 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -65,7 +64,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ksnapshot:${PORTSDIR}/graphics/ksnapshot
 .endif
 
 .ifndef(WITHOUT_OKULAR)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/okular:${PORTSDIR}/graphics/okular
+USE_KDE4+=	okular_run
 .endif
 
 .ifndef(WITHOUT_SANE)

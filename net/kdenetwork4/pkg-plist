@@ -159,6 +159,7 @@ lib/kde4/libchattexteditpart.so
 lib/kde4/plasma_engine_kget.so
 lib/kde4/plasma_kget_barapplet.so
 lib/kde4/plasma_kget_piechart.so
+lib/kde4/plugins/accessible/chatwindowaccessiblewidgetfactory.so
 lib/kde4/sambausershareplugin.so
 lib/libkgetcore.so
 lib/libkgetcore.so.5
@@ -212,6 +213,9 @@ share/applications/kde4/krdc.desktop
 share/applications/kde4/krfb.desktop
 share/apps/dolphinpart/kpartplugins/kget_plug_in.desktop
 share/apps/dolphinpart/kpartplugins/kget_plug_in.rc
+share/apps/kconf_update/kget.upd
+share/apps/kconf_update/kget_limitdownloads.pl
+share/apps/kconf_update/kget_sensitive.pl
 share/apps/kconf_update/kopete-account-0.10.pl
 share/apps/kconf_update/kopete-account-kconf_update.sh
 share/apps/kconf_update/kopete-account-kconf_update.upd
@@ -1523,8 +1527,6 @@ share/sounds/Kopete_Event.ogg
 share/sounds/Kopete_Received.ogg
 share/sounds/Kopete_Sent.ogg
 share/sounds/Kopete_User_is_Online.ogg
-@dirrmtry share/telepathy/clients
-@dirrmtry share/telepathy
 @dirrm share/kde4/services/kconfiguredialog
 @dirrm share/doc/HTML/en/krfb
 @dirrm share/doc/HTML/en/krdc
@@ -1714,6 +1716,9 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/apps/kget/www
 @dirrm share/apps/kget/pics
 @dirrm share/apps/kget
+@dirrmtry share/apps/dolphinpart/kpartplugins
+@dirrmtry share/apps/dolphinpart
+@dirrmtry lib/kde4/plugins/accessible
 @dirrmtry lib/browser_plugins
 @dirrm include/krdc
 @dirrm include/kopete/ui

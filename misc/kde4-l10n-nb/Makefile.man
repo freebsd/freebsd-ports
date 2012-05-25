@@ -1,1 +1,1 @@
-MAN1=	kbookmarkmerger.1
+MAN1+=	kbookmarkmerger.1

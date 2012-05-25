@@ -4,59 +4,34 @@
 #
 # $FreeBSD$
 
-PORTNAME=	kdeutils
+PORTNAME=	ark
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
-CATEGORIES=	misc kde
+CATEGORIES=	archivers kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Collection of utilities for KDE 4
+COMMENT=	Archiving tool for KDE
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
+LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
 
-RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
+CONFLICTS_INSTALL=	kdeutils-4.[0-7].*
 
-LATEST_LINK=	${PORTNAME}4
-
+USE_XZ=	yes
+USE_KDE4=	kdeprefix kdehier automoc4 kdelibs libkonq
 KDE4_BUILDENV=	yes
-USE_KDE4=	kdeprefix kdehier automoc4 sharedmime \
-		kdelibs pimlibs workspace baseapps
-USE_PYTHON=	2.5+
 USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network script xml xmlpatterns \
-		qmake_build moc_build rcc_build uic_build
-USE_XORG=	x11 xrender xtst
-USE_BZIP2=	yes
-CMAKE_ARGS+=	-DBUILD_filelight:BOOL=FALSE \
-		-DBUILD_printer-applet:BOOL=FALSE
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		ark.1
 
-OPTIONS=	FILELIGHT "Install Filelight file system viewer" on \
-		LIRC "Support for IR remote controls" off \
-		PRINTER_APPLET "Install printer system tray utility" off \
-		7ZIP "Support for 7-Zip archives in Ark" off \
+OPTIONS=	7ZIP "Support for 7-Zip archives in Ark" off \
 		RAR "Support for RAR archives in Ark" off \
 		ZIP "Support for ZIP archives in Ark" off
 
 .include <bsd.port.options.mk>
-
-.ifndef(WITHOUT_FILELIGHT)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/filelight:${PORTSDIR}/sysutils/filelight-kde4
-.endif
-
-.ifdef(WITH_LIRC)
-RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
-.endif
-
-.ifdef(WITH_PRINTER_APPLET)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/printer-applet:${PORTSDIR}/print/kdeutils4-printer-applet
-.endif
 
 .ifdef(WITH_7ZIP)
 RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip

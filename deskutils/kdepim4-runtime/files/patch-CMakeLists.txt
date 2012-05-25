@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2009-08-10 19:43:44.000000000 +1100
-+++ ./CMakeLists.txt	2009-08-10 19:58:07.000000000 +1100
-@@ -47,7 +47,7 @@
+--- ./CMakeLists.txt.orig	2012-04-29 20:39:36.039069000 +0000
++++ ./CMakeLists.txt	2012-05-22 12:35:44.176575376 +0000
+@@ -154,7 +154,7 @@
  
  ############### Needed commands before building anything ###############
  
@@ -8,4 +8,16 @@
 +include_directories(${kdepim-runtime_SOURCE_DIR} ${kdepim-runtime_BINARY_DIR} ${KDE4_INCLUDES} ${KDEPIMLIBS_INCLUDE_DIRS} ${AKONADI_INCLUDE_DIR} ${Boost_INCLUDE_DIR})
  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
  
+ ############### Generate akonadi-config.h ###############
+@@ -216,9 +216,9 @@
+   add_subdirectory(kresources)
+ endif (KDEPIMLIBS_KRESOURCES_LIBS)
+ endif(NOT WINCE)
+-if (QT_QTDECLARATIVE_FOUND)
++if (KDEPIM_MOBILE_UI AND QT_QTDECLARATIVE_FOUND)
+   add_subdirectory(qml)
+-endif (QT_QTDECLARATIVE_FOUND)
++endif (KDEPIM_MOBILE_UI AND QT_QTDECLARATIVE_FOUND)
  
+ #if(OPENSYNC_FOUND)
+ #  add_subdirectory(opensync)

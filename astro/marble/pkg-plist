@@ -1,4 +1,3 @@
-bin/geodatatest
 bin/marble
 bin/routing-instructions
 bin/tilecreator
@@ -9,10 +8,12 @@ include/marble/AbstractFloatItem.h
 include/marble/AbstractMarbleGraphicsLayout.h
 include/marble/AbstractProjection.h
 include/marble/AbstractWorkerThread.h
+include/marble/AlternativeRoutesModel.h
 include/marble/BookmarkManager.h
 include/marble/ClipPainter.h
 include/marble/CurrentLocationWidget.h
 include/marble/DownloadRegionDialog.h
+include/marble/ElevationModel.h
 include/marble/EquirectProjection.h
 include/marble/FileViewWidget.h
 include/marble/FrameGraphicsItem.h
@@ -47,12 +48,14 @@ include/marble/GeoDataStyleMap.h
 include/marble/GeoDataStyleSelector.h
 include/marble/GeoDocument.h
 include/marble/GeoGraphicsItem.h
+include/marble/GeoGraphicsScene.h
 include/marble/GeoPainter.h
 include/marble/LabelGraphicsItem.h
 include/marble/LatLonBoxWidget.h
 include/marble/LatLonEdit.h
 include/marble/LayerInterface.h
 include/marble/LegendWidget.h
+include/marble/Maneuver.h
 include/marble/MapThemeManager.h
 include/marble/MapViewWidget.h
 include/marble/MapWizard.h
@@ -78,7 +81,12 @@ include/marble/QtMarbleConfigDialog.h
 include/marble/Quaternion.h
 include/marble/RenderPlugin.h
 include/marble/RenderPluginInterface.h
+include/marble/Route.h
+include/marble/RouteRequest.h
+include/marble/RouteSegment.h
 include/marble/RoutingManager.h
+include/marble/RoutingModel.h
+include/marble/RoutingProfile.h
 include/marble/RoutingWidget.h
 include/marble/RunnerPlugin.h
 include/marble/ScreenGraphicsItem.h
@@ -90,7 +98,6 @@ include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
 include/marble/TileLevelRangeWidget.h
 include/marble/TinyWebBrowser.h
-include/marble/ViewParams.h
 include/marble/ViewportParams.h
 include/marble/WidgetGraphicsItem.h
 include/marble/geodata_export.h
@@ -98,14 +105,20 @@ include/marble/global.h
 include/marble/marble_export.h
 lib/kde4/libmarble_part.so
 lib/kde4/plasma_applet_worldclock.so
+lib/kde4/plasma_runner_marble.so
 lib/kde4/plugins/marble/AprsPlugin.so
+lib/kde4/plugins/marble/CachePlugin.so
 lib/kde4/plugins/marble/CompassFloatItem.so
 lib/kde4/plugins/marble/CrosshairsPlugin.so
 lib/kde4/plugins/marble/EarthquakePlugin.so
+lib/kde4/plugins/marble/ElevationProfileFloatItem.so
 lib/kde4/plugins/marble/GosmorePlugin.so
+lib/kde4/plugins/marble/GpsInfo.so
 %%GPS%%lib/kde4/plugins/marble/GpsdPositionProviderPlugin.so
+lib/kde4/plugins/marble/GpxPlugin.so
 lib/kde4/plugins/marble/GraticulePlugin.so
 lib/kde4/plugins/marble/HostipPlugin.so
+lib/kde4/plugins/marble/KmlPlugin.so
 lib/kde4/plugins/marble/LatLonPlugin.so
 lib/kde4/plugins/marble/LocalDatabasePlugin.so
 lib/kde4/plugins/marble/LocalOsmSearchPlugin.so
@@ -115,22 +128,26 @@ lib/kde4/plugins/marble/NavigationFloatItem.so
 lib/kde4/plugins/marble/NominatimPlugin.so
 lib/kde4/plugins/marble/OpenDesktopPlugin.so
 lib/kde4/plugins/marble/OpenRouteServicePlugin.so
+lib/kde4/plugins/marble/OsmPlugin.so
 lib/kde4/plugins/marble/OverviewMap.so
 lib/kde4/plugins/marble/Photo.so
+lib/kde4/plugins/marble/PlacemarkPositionProviderPlugin.so
+lib/kde4/plugins/marble/PntPlugin.so
 lib/kde4/plugins/marble/PositionMarker.so
 lib/kde4/plugins/marble/ProgressFloatItem.so
 lib/kde4/plugins/marble/QNamNetworkPlugin.so
 lib/kde4/plugins/marble/RoutingPlugin.so
 lib/kde4/plugins/marble/RoutinoPlugin.so
+lib/kde4/plugins/marble/SatellitesPlugin.so
+lib/kde4/plugins/marble/Speedometer.so
 lib/kde4/plugins/marble/StarsPlugin.so
+lib/kde4/plugins/marble/SunPlugin.so
 lib/kde4/plugins/marble/Weather.so
 lib/kde4/plugins/marble/Wikipedia.so
 lib/kde4/plugins/marble/YoursPlugin.so
-lib/kde4/plugins/marble/org/kde/edu/marble/libMarbleDeclarativePlugin.so
-lib/kde4/plugins/marble/org/kde/edu/marble/qmldir
 lib/libmarblewidget.so
-lib/libmarblewidget.so.0.12.0
-lib/libmarblewidget.so.12
+lib/libmarblewidget.so.0.13.0
+lib/libmarblewidget.so.13
 share/applications/kde4/marble.desktop
 share/apps/cmake/modules/FindMarble.cmake
 share/apps/marble/data/LICENSE.txt
@@ -169,6 +186,7 @@ share/apps/marble/data/bitmaps/cursor_tl.xpm
 share/apps/marble/data/bitmaps/cursor_tr.xpm
 share/apps/marble/data/bitmaps/default_location.png
 share/apps/marble/data/bitmaps/earth_apollo.jpg
+share/apps/marble/data/bitmaps/flag.png
 share/apps/marble/data/bitmaps/folder.png
 share/apps/marble/data/bitmaps/hand.png
 share/apps/marble/data/bitmaps/lake.png
@@ -199,6 +217,16 @@ share/apps/marble/data/bitmaps/poi/health_hospital.p.16.png
 share/apps/marble/data/bitmaps/poi/health_pharmacy.p.16.png
 share/apps/marble/data/bitmaps/poi/money_atm2.p.16.png
 share/apps/marble/data/bitmaps/poi/money_bank2.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_bahai3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_buddhist3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_christian3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_hindu3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_islamic3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_jain3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_jewish3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_shinto3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_sikh3.p.16.png
+share/apps/marble/data/bitmaps/poi/place_of_worship_unknown3.p.16.png
 share/apps/marble/data/bitmaps/poi/shopping_alcohol.p.16.png
 share/apps/marble/data/bitmaps/poi/shopping_hifi.p.16.png
 share/apps/marble/data/bitmaps/poi/shopping_supermarket.p.16.png
@@ -733,6 +761,9 @@ share/apps/marble/data/maps/earth/srtm/3/000007/000007_000014.jpg
 share/apps/marble/data/maps/earth/srtm/3/000007/000007_000015.jpg
 share/apps/marble/data/maps/earth/srtm/srtm-preview.png
 share/apps/marble/data/maps/earth/srtm/srtm.dgml
+share/apps/marble/data/maps/earth/srtm2/0/000000/000000_000000.png
+share/apps/marble/data/maps/earth/srtm2/0/000000/000000_000001.png
+share/apps/marble/data/maps/earth/srtm2/srtm2.dgml
 share/apps/marble/data/maps/earth/temp-dec/temp-dec-preview.png
 share/apps/marble/data/maps/earth/temp-dec/temp-dec.dgml
 share/apps/marble/data/maps/earth/temp-dec/temp-dec.jpg
@@ -840,6 +871,7 @@ share/icons/hicolor/48x48/apps/marble.png
 share/icons/hicolor/64x64/apps/marble.png
 share/kde4/services/marble_part.desktop
 share/kde4/services/plasma-applet-kworldclock.desktop
+share/kde4/services/plasma-runner-marble.desktop
 @dirrm share/doc/HTML/en/marble
 @dirrm share/apps/marble/data/weather
 @dirrm share/apps/marble/data/svg
@@ -850,6 +882,9 @@ share/kde4/services/plasma-applet-kworldclock.desktop
 @dirrm share/apps/marble/data/maps/moon
 @dirrm share/apps/marble/data/maps/earth/temp-july
 @dirrm share/apps/marble/data/maps/earth/temp-dec
+@dirrm share/apps/marble/data/maps/earth/srtm2/0/000000
+@dirrm share/apps/marble/data/maps/earth/srtm2/0
+@dirrm share/apps/marble/data/maps/earth/srtm2
 @dirrm share/apps/marble/data/maps/earth/srtm/3/000007
 @dirrm share/apps/marble/data/maps/earth/srtm/3/000006
 @dirrm share/apps/marble/data/maps/earth/srtm/3/000005
@@ -898,9 +933,5 @@ share/kde4/services/plasma-applet-kworldclock.desktop
 @dirrm share/apps/marble/data/audio
 @dirrm share/apps/marble/data
 @dirrm share/apps/marble
-@dirrm lib/kde4/plugins/marble/org/kde/edu/marble
-@dirrm lib/kde4/plugins/marble/org/kde/edu
-@dirrm lib/kde4/plugins/marble/org/kde
-@dirrm lib/kde4/plugins/marble/org
 @dirrm lib/kde4/plugins/marble
 @dirrm include/marble

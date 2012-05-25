@@ -12,6 +12,7 @@ share/apps/konsole/GreenOnBlack.colorscheme
 share/apps/konsole/Linux.colorscheme
 share/apps/konsole/README.KeyTab
 share/apps/konsole/Shell.profile
+share/apps/konsole/Solarized.colorscheme
 share/apps/konsole/WhiteOnBlack.schema
 share/apps/konsole/default.keytab
 share/apps/konsole/konsole.notifyrc

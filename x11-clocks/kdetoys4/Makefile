@@ -6,7 +6,6 @@
 
 PORTNAME=	kdetoys
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-clocks kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -23,7 +22,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui qt3support \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
-USE_BZIP2=	yes
+USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN6=	amor.6

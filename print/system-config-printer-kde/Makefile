@@ -7,7 +7,6 @@
 
 PORTNAME=	system-config-printer-kde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -26,7 +25,7 @@ USE_PYTHON=	2.5+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
 DISTINFO_FILE=	${PORTSDIR}/sysutils/kdeadmin4/distinfo
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DINSTALL_SYSTEM_CONFIG_PRINTER:BOOL=ON \
 		-DBUILD_kuser:BOOL=OFF # Avoid checking for kdepimlibs.

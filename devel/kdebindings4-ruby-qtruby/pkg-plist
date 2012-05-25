@@ -1,6 +1,7 @@
 bin/rbqtapi
 bin/rbrcc
 bin/rbuic4
+env/ruby-kdebindings-env.sh
 include/qtruby/marshall.h
 include/qtruby/marshall_basetypes.h
 include/qtruby/marshall_complex.h
@@ -54,3 +55,4 @@ lib/libqtruby4shared.so.2.0.0
 @dirrm lib/cmake/qtruby4
 @dirrmtry lib/cmake
 @dirrm include/qtruby
+@dirrmtry env

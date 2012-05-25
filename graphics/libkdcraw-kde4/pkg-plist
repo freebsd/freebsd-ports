@@ -11,7 +11,7 @@ include/libkdcraw/squeezedcombobox.h
 include/libkdcraw/version.h
 lib/libkdcraw.so
 lib/libkdcraw.so.20
-lib/libkdcraw.so.20.0.0
+lib/libkdcraw.so.20.0.1
 libdata/pkgconfig/libkdcraw-kde4.pc
 share/apps/libkdcraw/profiles/adobergb.icm
 share/apps/libkdcraw/profiles/applergb.icm

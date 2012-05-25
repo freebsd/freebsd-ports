@@ -9,6 +9,7 @@
     SUBDIR += aolserver-nszlib
     SUBDIR += arc
     SUBDIR += arj
+    SUBDIR += ark
     SUBDIR += bicom
     SUBDIR += bsdar
     SUBDIR += bzip

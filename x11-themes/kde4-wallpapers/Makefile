@@ -7,7 +7,6 @@
 
 PORTNAME=	kde-wallpapers
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,7 +17,7 @@ COMMENT=	Set of wallpapers for the KDE Plasma workspace
 
 CONFLICTS=	kdebase-workspace-4.[0-6].*
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4

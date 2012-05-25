@@ -1,59 +1,45 @@
-%%READLINE%%bin/calgebra
 bin/kalgebra
 bin/kalgebramobile
-include/analitza/abstractlexer.h
-include/analitza/analitzaexport.h
-include/analitza/analitzautils.h
-include/analitza/analyzer.h
-include/analitza/builtinmethods.h
-include/analitza/expression.h
-include/analitza/expressiontype.h
-include/analitza/object.h
-include/analitza/operations.h
-include/analitza/operator.h
-include/analitza/value.h
-include/analitza/variables.h
-include/analitzagui/algebrahighlighter.h
-include/analitzagui/analitzaguiexport.h
-include/analitzagui/operatorsmodel.h
-include/analitzagui/variablesmodel.h
 lib/kde4/plasma_applet_kalgebra.so
-lib/libanalitza.so
-lib/libanalitza.so.5
-lib/libanalitza.so.5.0.1
-lib/libanalitzagui.so
-lib/libanalitzagui.so.5
-lib/libanalitzagui.so.5.0.1
 share/applications/kde4/kalgebra.desktop
 share/applications/kde4/kalgebramobile.desktop
 share/apps/cmake/modules/FindAnalitza.cmake
-share/apps/kalgebra/scripts/console/console.js
-share/apps/kalgebra/scripts/console/kalgebraconsole.desktop
-share/apps/kalgebra/scripts/plot2d/kalgebraplot2d.desktop
-share/apps/kalgebra/scripts/plot2d/plot2d.js
-share/apps/kalgebra/scripts/tables/kalgebratables.desktop
-share/apps/kalgebra/scripts/tables/tables.js
-share/apps/kalgebra/scripts/variables/kalgebravariables.desktop
-share/apps/kalgebra/scripts/variables/variables.js
+share/apps/kalgebra/plugins/Console.qml
+share/apps/kalgebra/plugins/Graph2D.qml
+share/apps/kalgebra/plugins/Plot2D.qml
+share/apps/kalgebra/plugins/Tables.qml
+share/apps/kalgebra/plugins/kalgebraconsole.desktop
+share/apps/kalgebra/plugins/kalgebraplot2d.desktop
+share/apps/kalgebra/plugins/kalgebratables.desktop
+share/apps/kalgebra/plugins/widgets/Button.qml
+share/apps/kalgebra/plugins/widgets/CalcButton.qml
+share/apps/kalgebra/plugins/widgets/ExpressionInput.qml
+share/apps/kalgebra/plugins/widgets/KAlgebraMobile.qml
+share/apps/kalgebra/plugins/widgets/KAlgebraPage.qml
+share/apps/kalgebra/plugins/widgets/Keyboard.qml
+share/apps/kalgebra/plugins/widgets/Label.qml
+share/apps/kalgebra/plugins/widgets/RealInput.qml
+share/apps/kalgebra/plugins/widgets/SimpleListView.qml
+share/apps/kalgebra/plugins/widgets/ToolTip.qml
 share/apps/katepart/syntax/kalgebra.xml
 share/doc/HTML/en/kalgebra/commands.docbook
 share/doc/HTML/en/kalgebra/common
 share/doc/HTML/en/kalgebra/index.cache.bz2
 share/doc/HTML/en/kalgebra/index.docbook
+share/doc/HTML/en/kalgebra/kalgebra-2dgraph-window.png
+share/doc/HTML/en/kalgebra/kalgebra-3dgraph-window.png
+share/doc/HTML/en/kalgebra/kalgebra-console-window.png
+share/doc/HTML/en/kalgebra/kalgebra-dictionary-window.png
 share/doc/HTML/en/kalgebra/kalgebra-main-window.png
 share/icons/hicolor/128x128/apps/kalgebra.png
 share/icons/hicolor/16x16/apps/kalgebra.png
 share/icons/hicolor/32x32/apps/kalgebra.png
 share/icons/hicolor/48x48/apps/kalgebra.png
 share/icons/hicolor/64x64/apps/kalgebra.png
+share/icons/hicolor/scalable/apps/kalgebra.svgz
 share/kde4/services/kalgebraplasmoid.desktop
 share/kde4/servicetypes/kalgebrascript.desktop
 @dirrm share/doc/HTML/en/kalgebra
-@dirrm share/apps/kalgebra/scripts/variables
-@dirrm share/apps/kalgebra/scripts/tables
-@dirrm share/apps/kalgebra/scripts/plot2d
-@dirrm share/apps/kalgebra/scripts/console
-@dirrm share/apps/kalgebra/scripts
+@dirrm share/apps/kalgebra/plugins/widgets
+@dirrm share/apps/kalgebra/plugins
 @dirrm share/apps/kalgebra
-@dirrm include/analitzagui
-@dirrm include/analitza

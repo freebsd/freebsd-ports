@@ -6,38 +6,45 @@
 
 PORTNAME=	kdeaccessibility
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	accessibility kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE
+MASTER_SITES=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibility applications for KDE4
 
-LIB_DEPENDS=	speechd.5:${PORTSDIR}/accessibility/speech-dispatcher
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
 
-LATEST_LINK=	${PORTNAME}4
-
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
-KDE4_BUILDENV=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui qmake_build moc_build rcc_build uic_build
-USE_XORG=	x11 xext xtst
-MAKE_JOBS_SAFE=	yes
-CMAKE_ARGS+=	-DBUILD_jovie=OFF
-
-MAN1=	kmag.1 \
-	kmousetool.1 \
-	kmouth.1
-
-OPTIONS=	JOVIE "Install Jovie text-to-speech system" on
+OPTIONS=	JOVIE "Install Jovie text-to-speech system" on \
+		KACCESSIBLE "Install Accessibility services for KDE" on \
+		KMAG "Install Screen magnifier" on \
+		KMOUSETOOL "Install Automatic mouse click tool" on \
+		KMOUTH "Install Speech synthesizer frontend" on
 
 .include <bsd.port.options.mk>
 
 .ifndef(WITHOUT_JOVIE)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/jovie:${PORTSDIR}/accessibility/jovie
 .endif
+
+.ifndef(WITHOUT_KACCESSIBLE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/libexec/kaccessibleapp:${PORTSDIR}/accessibility/kaccessible
+.endif
+
+.ifndef(WITHOUT_KMAG)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmag:${PORTSDIR}/accessibility/kmag
+.endif
+
+.ifndef(WITHOUT_KMOUSETOOL)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmousetool:${PORTSDIR}/accessibility/kmousetool
+.endif
+
+.ifndef(WITHOUT_KMOUTH)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kmouth:${PORTSDIR}/accessibility/kmouth
+.endif
+
+do-install:
+	${DO_NADA}
 
 .include <bsd.port.mk>

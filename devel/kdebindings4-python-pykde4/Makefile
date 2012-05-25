@@ -7,7 +7,6 @@
 
 PORTNAME=	pykde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde python
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,9 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for KDE
 
-LIB_DEPENDS=	okularcore.1:${PORTSDIR}/graphics/okular \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		soprano.4:${PORTSDIR}/textproc/soprano
+LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4-designer \
 		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -35,11 +32,12 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
 
-USE_KDE4=	kdehier kdelibs kdeprefix pimlibs akonadi automoc4
+USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
+		akonadi automoc4 soprano
 USE_PYTHON=	2.5+
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build uic_build rcc_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DWITH_PolkitQt:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes

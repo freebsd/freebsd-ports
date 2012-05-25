@@ -6,7 +6,6 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -20,16 +19,13 @@ LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		ical.44:${PORTSDIR}/devel/libical \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		prison.0:${PORTSDIR}/graphics/prison \
-		soprano.4:${PORTSDIR}/textproc/soprano
+		prison.0:${PORTSDIR}/graphics/prison
 
-BUILD_DEPENDS=	${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
-RUN_DEPENDS=	${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
-
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs akonadi kdeprefix kdehier automoc4 sharedmime
+USE_XZ=	yes
+USE_KDE4=	kdelibs akonadi kdeprefix kdehier \
+		automoc4 ontologies sharedmime soprano
 KDE4_BUILDENV=	yes
 USE_OPENLDAP=	yes
 USE_QT_VER=	4

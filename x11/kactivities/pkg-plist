@@ -1,0 +1,33 @@
+bin/kactivitymanagerd
+include/KDE/KActivities/Consumer
+include/KDE/KActivities/Controller
+include/KDE/KActivities/Info
+include/KDE/KActivities/ResourceInstance
+include/kactivities/consumer.h
+include/kactivities/controller.h
+include/kactivities/info.h
+include/kactivities/kactivities_export.h
+include/kactivities/resourceinstance.h
+lib/cmake/KActivities/KActivitiesConfig.cmake
+lib/cmake/KActivities/KActivitiesConfigVersion.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
+lib/kde4/activitymanager_plugin_dummy.so
+lib/kde4/activitymanager_plugin_globalshortcuts.so
+lib/kde4/activitymanager_plugin_nepomuk.so
+lib/kde4/activitymanager_plugin_slc.so
+lib/libkactivities.so
+lib/libkactivities.so.6
+lib/libkactivities.so.6.0.0
+libdata/pkgconfig/libkactivities.pc
+share/kde4/services/activitymanager-plugin-dummy.desktop
+share/kde4/services/activitymanager-plugin-globalshortcuts.desktop
+share/kde4/services/activitymanager-plugin-nepomuk.desktop
+share/kde4/services/activitymanager-plugin-slc.desktop
+share/kde4/services/kactivitymanagerd.desktop
+share/kde4/services/kded/activitymanager.desktop
+share/kde4/servicetypes/activitymanager-plugin.desktop
+@dirrm lib/cmake/KActivities
+@dirrmtry lib/cmake
+@dirrm include/kactivities
+@dirrm include/KDE/KActivities

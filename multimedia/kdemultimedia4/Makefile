@@ -6,7 +6,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -21,7 +20,6 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		tag.1:${PORTSDIR}/audio/taglib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
-		xine.2:${PORTSDIR}/multimedia/libxine \
 		swscale.1:${PORTSDIR}/multimedia/ffmpeg
 
 .if !defined(PACKAGE_BUILDING)
@@ -35,7 +33,7 @@ KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus qt3support svg xml \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS=	-DWITH_TunePimp:BOOL=OFF
 
@@ -45,7 +43,7 @@ OPTIONS=	ALSA "Build with ALSA compatibility library" off \
 .include <bsd.port.options.mk>
 
 .if !defined(WITH_ALSA)
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-CMakeLists.txt
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no_alsa
 .else
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .endif

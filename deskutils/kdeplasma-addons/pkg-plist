@@ -1,4 +1,3 @@
-%%SCIM%%bin/kimpanel
 bin/lancelot
 include/KDE/Lancelot/ActionListModel
 include/KDE/Lancelot/ActionListView
@@ -110,6 +109,8 @@ lib/kde4/krunner_konsolesessions.so
 lib/kde4/krunner_kopete.so
 lib/kde4/krunner_mediawiki.so
 lib/kde4/krunner_spellcheckrunner.so
+%%IBUS%%lib/kde4/libexec/kimpanel-ibus-panel
+%%SCIM%%lib/kde4/libexec/kimpanel-scim-panel
 lib/kde4/plasma-applet_systemloadviewer.so
 lib/kde4/plasma_applet_bball.so
 lib/kde4/plasma_applet_binaryclock.so
@@ -125,9 +126,10 @@ lib/kde4/plasma_applet_fifteenPuzzle.so
 lib/kde4/plasma_applet_fileWatcher.so
 lib/kde4/plasma_applet_frame.so
 lib/kde4/plasma_applet_fuzzy_clock.so
+lib/kde4/plasma_applet_icontasks.so
 lib/kde4/plasma_applet_incomingmsg.so
 lib/kde4/plasma_applet_kdeobservatory.so
-%%SCIM%%lib/kde4/plasma_applet_kimpanel.so
+lib/kde4/plasma_applet_kimpanel.so
 lib/kde4/plasma_applet_knowledgebase.so
 lib/kde4/plasma_applet_kolourpicker.so
 lib/kde4/plasma_applet_konqprofiles.so
@@ -166,6 +168,7 @@ lib/kde4/plasma_containment_groupingdesktop.so
 lib/kde4/plasma_containment_groupingpanel.so
 lib/kde4/plasma_engine_comic.so
 lib/kde4/plasma_engine_kdeobservatory.so
+lib/kde4/plasma_engine_kimpanel.so
 lib/kde4/plasma_engine_microblog.so
 lib/kde4/plasma_engine_ocs.so
 lib/kde4/plasma_engine_potd.so
@@ -181,10 +184,9 @@ lib/kde4/plasma_runner_events.so
 lib/kde4/plasma_wallpaper_mandelbrot.so
 %%MARBLE%%lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
+lib/kde4/plasma_wallpaper_potd.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
-%%SCIM%%lib/libkimpanelruntime.so
-%%SCIM%%lib/libkimpanelruntime.so.0
 lib/liblancelot-datamodels.so
 lib/liblancelot-datamodels.so.1
 lib/liblancelot-datamodels.so.1.7.0
@@ -263,6 +265,11 @@ share/apps/desktoptheme/Tibanna/lancelot/system-buttons.svgz
 share/apps/desktoptheme/Tibanna/lancelot/theme.config
 share/apps/desktoptheme/default/bubblemon/bubble.svg
 share/apps/desktoptheme/default/fifteenPuzzle/blanksquare.svg
+share/apps/desktoptheme/default/icontasks/badge.svgz
+share/apps/desktoptheme/default/icontasks/dropindicators.svgz
+share/apps/desktoptheme/default/icontasks/indicators.svgz
+share/apps/desktoptheme/default/icontasks/launcherseparator.svgz
+share/apps/desktoptheme/default/icontasks/progress.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-drop-indicator.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/default/lancelot/category-triangle.svgz
@@ -276,9 +283,8 @@ share/apps/desktoptheme/default/lancelot/section-buttons.svgz
 share/apps/desktoptheme/default/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/default/lancelot/system-buttons.svgz
 share/apps/desktoptheme/default/lancelot/theme.config
+share/apps/desktoptheme/default/rssnow/arrows.svgz
 share/apps/desktoptheme/default/rssnow/background.svgz
-share/apps/desktoptheme/default/rssnow/left.svgz
-share/apps/desktoptheme/default/rssnow/right.svgz
 share/apps/desktoptheme/default/rssnow/rssnow.svgz
 share/apps/desktoptheme/default/stylesheets/news.css
 share/apps/desktoptheme/default/weather/wind-arrows.svgz
@@ -318,11 +324,13 @@ share/apps/desktoptheme/slim-glow/lancelot/section-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/system-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/theme.config
+share/apps/kdeplasma-addons/mediabuttonsrc
 share/apps/lancelot/lancelot.notifyrc
 share/apps/plasma-applet-frame/picture-frame-default.jpg
 share/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 share/apps/plasma-applet-opendesktop/user.css
 share/apps/plasma/services/kdeobservatory.operations
+share/apps/plasma/services/kimpanel.operations
 share/apps/plasma/services/ocsPerson.operations
 share/apps/plasma/services/rtmauth.operations
 share/apps/plasma/services/rtmtask.operations
@@ -367,12 +375,11 @@ share/apps/plasmaboard/full.xml
 share/apps/plasmaboard/mid.xml
 share/apps/plasmaboard/tablet.xml
 share/apps/rssnow/feeds
-%%SCIM%%share/config.kcfg/kimpanelconfig.kcfg
+share/config.kcfg/kimpanelconfig.kcfg
 share/config/comic.knsrc
 share/config/pastebin.knsrc
 share/config/plasmaweather.knsrc
 share/config/virus_wallpaper.knsrc
-%%SCIM%%share/dbus-1/interfaces/org.kde.impanel.xml
 share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/eyes.png
 share/icons/hicolor/128x128/apps/kdeobservatory.png
@@ -455,9 +462,10 @@ share/kde4/services/plasma-applet-calculator.desktop
 share/kde4/services/plasma-applet-charselect.desktop
 share/kde4/services/plasma-applet-eyes.desktop
 share/kde4/services/plasma-applet-fifteenPuzzle.desktop
+share/kde4/services/plasma-applet-icontasks.desktop
 share/kde4/services/plasma-applet-incomingmsg.desktop
 share/kde4/services/plasma-applet-kdeobservatory.desktop
-%%SCIM%%share/kde4/services/plasma-applet-kimpanel.desktop
+share/kde4/services/plasma-applet-kimpanel.desktop
 share/kde4/services/plasma-applet-knowledgebase.desktop
 share/kde4/services/plasma-applet-konqprofiles.desktop
 share/kde4/services/plasma-applet-konsoleprofiles.desktop
@@ -494,6 +502,7 @@ share/kde4/services/plasma-containment-griddesktop.desktop
 share/kde4/services/plasma-containment-groupingdesktop.desktop
 share/kde4/services/plasma-containment-groupingpanel.desktop
 share/kde4/services/plasma-dataengine-comic.desktop
+share/kde4/services/plasma-dataengine-kimpanel.desktop
 share/kde4/services/plasma-dataengine-microblog.desktop
 share/kde4/services/plasma-dataengine-ocs.desktop
 share/kde4/services/plasma-dataengine-potd.desktop
@@ -521,6 +530,7 @@ share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
 %%MARBLE%%share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
+share/kde4/services/plasma-wallpaper-potd.desktop
 share/kde4/services/plasma-wallpaper-virus.desktop
 share/kde4/services/plasma-wallpaper-weather.desktop
 share/kde4/services/plasma_applet_plasmaboard.desktop
@@ -539,6 +549,7 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/plasma-applet-opendesktop
 @dirrm share/apps/plasma-applet-frame
 @dirrm share/apps/lancelot
+@dirrm share/apps/kdeplasma-addons
 @dirrm share/apps/desktoptheme/slim-glow/lancelot
 @dirrmtry share/apps/desktoptheme/slim-glow
 @dirrm share/apps/desktoptheme/oxygen/lancelot
@@ -549,6 +560,7 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/desktoptheme/default/stylesheets
 @dirrm share/apps/desktoptheme/default/rssnow
 @dirrm share/apps/desktoptheme/default/lancelot
+@dirrm share/apps/desktoptheme/default/icontasks
 @dirrm share/apps/desktoptheme/default/fifteenPuzzle
 @dirrm share/apps/desktoptheme/default/bubblemon
 @dirrm share/apps/desktoptheme/Tibanna/lancelot
@@ -572,5 +584,3 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm include/KDE/Lancelot
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-%%SCIM%%@cwd %%LOCALBASE%%
-%%SCIM%%lib/scim-1.0/scim-panel-dbus

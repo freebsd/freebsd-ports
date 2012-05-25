@@ -31,9 +31,11 @@ share/locale/si/LC_MESSAGES/katexmltools.mo
 share/locale/si/LC_MESSAGES/kblankscrn.mo
 share/locale/si/LC_MESSAGES/kbruch.mo
 share/locale/si/LC_MESSAGES/kcharselect.mo
+share/locale/si/LC_MESSAGES/kcm_attica.mo
 share/locale/si/LC_MESSAGES/kcm_autostart.mo
 share/locale/si/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/si/LC_MESSAGES/kcm_desktopthemedetails.mo
+share/locale/si/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/si/LC_MESSAGES/kcm_emoticons.mo
 share/locale/si/LC_MESSAGES/kcm_infobase.mo
 share/locale/si/LC_MESSAGES/kcm_kwindesktop.mo
@@ -66,6 +68,7 @@ share/locale/si/LC_MESSAGES/kcmkded.mo
 share/locale/si/LC_MESSAGES/kcmkdnssd.mo
 share/locale/si/LC_MESSAGES/kcmkeyboard.mo
 share/locale/si/LC_MESSAGES/kcmkeys.mo
+share/locale/si/LC_MESSAGES/kcmkgamma.mo
 share/locale/si/LC_MESSAGES/kcmkio.mo
 share/locale/si/LC_MESSAGES/kcmkonq.mo
 share/locale/si/LC_MESSAGES/kcmkonqhtml.mo
@@ -176,7 +179,6 @@ share/locale/si/LC_MESSAGES/ksplashthemes.mo
 share/locale/si/LC_MESSAGES/kstars.mo
 share/locale/si/LC_MESSAGES/kstart.mo
 share/locale/si/LC_MESSAGES/kstyle_config.mo
-share/locale/si/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/si/LC_MESSAGES/ksudoku.mo
 share/locale/si/LC_MESSAGES/ksysguard.mo
 share/locale/si/LC_MESSAGES/ksysguardlsofwidgets.mo
@@ -197,6 +199,7 @@ share/locale/si/LC_MESSAGES/kwordquiz.mo
 share/locale/si/LC_MESSAGES/kwrite.mo
 share/locale/si/LC_MESSAGES/kwriteconfig.mo
 share/locale/si/LC_MESSAGES/kxkb.mo
+share/locale/si/LC_MESSAGES/libkalarmcal.mo
 share/locale/si/LC_MESSAGES/libkdecorations.mo
 share/locale/si/LC_MESSAGES/libkdeedu.mo
 share/locale/si/LC_MESSAGES/libkonq.mo
@@ -207,11 +210,12 @@ share/locale/si/LC_MESSAGES/libtaskmanager.mo
 share/locale/si/LC_MESSAGES/mailreader.mo
 share/locale/si/LC_MESSAGES/marble.mo
 share/locale/si/LC_MESSAGES/marble_qt.mo
+share/locale/si/LC_MESSAGES/nepomukbackup.mo
+share/locale/si/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/si/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/si/LC_MESSAGES/nepomukserver.mo
 share/locale/si/LC_MESSAGES/nepomukservicestub.mo
 share/locale/si/LC_MESSAGES/nepomukstorage.mo
-share/locale/si/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/si/LC_MESSAGES/nsplugin.mo
 share/locale/si/LC_MESSAGES/okular.mo
 share/locale/si/LC_MESSAGES/okular_chm.mo
@@ -238,7 +242,6 @@ share/locale/si/LC_MESSAGES/plasma-overlay.mo
 share/locale/si/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/si/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/si/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/si/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/si/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/si/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/si/LC_MESSAGES/plasma_applet_icon.mo
@@ -246,6 +249,7 @@ share/locale/si/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/si/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/si/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/si/LC_MESSAGES/plasma_applet_lockout.mo
+share/locale/si/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/si/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/si/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/si/LC_MESSAGES/plasma_applet_panelspacer_internal.mo

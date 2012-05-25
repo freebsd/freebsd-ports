@@ -6,7 +6,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,22 +17,18 @@ COMMENT=	KDE Software Development Kit
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
-		searchclient.0:${PORTSDIR}/deskutils/strigi \
 		qca.2:${PORTSDIR}/devel/qca
-
-BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl \
-		${LOCALBASE}/include/qimageblitz/qimageblitz.h:${PORTSDIR}/x11/qimageblitz
-
+BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LATEST_LINK=	${PORTNAME}4
 
 CONFLICTS=	kdeutils-4.5.[0-5]
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdelibs pimlibs kdeprefix kdehier \
-		automoc4 akonadi baseapps sharedmime
+USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs sharedmime \
+		akonadi automoc4 qimageblitz_build strigi
 KDE4_BUILDENV=	yes
 USE_PERL5=	yes
 USE_QT_VER=	4
@@ -83,10 +78,12 @@ PLIST_SUB+=	ANTLR="@comment "
 .endif
 
 .ifndef(WITHOUT_KATE)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kate:${PORTSDIR}/editors/kate
+USE_KDE4+=	kate_run
 .endif
 
 post-patch:
+	${FIND} ${WRKSRC}/scripts -type f | \
+		${XARGS} ${REINPLACE_CMD} -Ee 's,/usr/bin/(perl|python|ruby|svn),${LOCALBASE}/bin/\1,g'
 	# Prevent updating MIME during build.
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
 		${PATCH_WRKSRC}/okteta/mimetypes/CMakeLists.txt

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +16,6 @@ COMMENT=	KDE Network applications
 
 LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		idn.17:${PORTSDIR}/dns/libidn \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		qca.2:${PORTSDIR}/devel/qca \
 		otr.4:${PORTSDIR}/security/libotr \
 		vncserver.0:${PORTSDIR}/net/libvncserver \
@@ -33,21 +31,18 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		gif.5:${PORTSDIR}/graphics/giflib \
-		soprano.4:${PORTSDIR}/textproc/soprano \
 		mms.0:${PORTSDIR}/net/libmms \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		searchclient.0:${PORTSDIR}/deskutils/strigi
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
-RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 LATEST_LINK=	${PORTNAME}4
 
 USE_GNOME=	glib20 libxml2 libxslt
-USE_KDE4=	automoc4 baseapps kdehier kdelibs kdeprefix pimlibs workspace
+USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs workspace \
+		automoc4 ontologies qimageblitz soprano strigi
 KDE4_BUILDENV=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	4
@@ -55,7 +50,7 @@ QT_COMPONENTS=	dbus gui network qt3support sql xml \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
-USE_BZIP2=	yes
+USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
 # Explicitly disable ALSA, as it's not used (Jabber Jingle support is

@@ -416,8 +416,10 @@
     SUBDIR += kcpuload
     SUBDIR += kdeadmin3
     SUBDIR += kdeadmin4
+    SUBDIR += kdf
     SUBDIR += kdirstat
     SUBDIR += keep
+    SUBDIR += kfloppy
     SUBDIR += kgrubeditor
     SUBDIR += kgtk
     SUBDIR += kiconvtool
@@ -865,6 +867,7 @@
     SUBDIR += swapd
     SUBDIR += swapexd
     SUBDIR += swapmon
+    SUBDIR += sweeper
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy

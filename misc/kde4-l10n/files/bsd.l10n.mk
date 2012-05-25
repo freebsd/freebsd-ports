@@ -5,7 +5,7 @@ PKGNAMEPREFIX=	${KDE4_L10N:S/@/_/}-
 DISTNAME=	${PORTNAME}-${KDE4_L10N}-${PORTVERSION}
 DIST_SUBDIR?=	KDE/kde-l10n
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	uic_build moc_build qmake_build rcc_build xml
 USE_GETTEXT=	yes

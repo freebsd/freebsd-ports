@@ -20,8 +20,12 @@
     SUBDIR += gok
     SUBDIR += java-access-bridge
     SUBDIR += jovie
+    SUBDIR += kaccessible
     SUBDIR += kdeaccessibility
     SUBDIR += kdeaccessibility4
+    SUBDIR += kmag
+    SUBDIR += kmousetool
+    SUBDIR += kmouth
     SUBDIR += linux-atk
     SUBDIR += linux-f10-atk
     SUBDIR += mousetweaks

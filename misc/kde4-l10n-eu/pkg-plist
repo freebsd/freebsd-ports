@@ -61,7 +61,6 @@ share/locale/eu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/eu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/eu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katefiletemplates.mo
-share/locale/eu/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/eu/LC_MESSAGES/kategdbplugin.mo
 share/locale/eu/LC_MESSAGES/katehelloworld.mo
 share/locale/eu/LC_MESSAGES/katekonsoleplugin.mo
@@ -169,7 +168,6 @@ share/locale/eu/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/eu/LC_MESSAGES/kdelibs4.mo
 share/locale/eu/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/eu/LC_MESSAGES/kdepasswd.mo
-share/locale/eu/LC_MESSAGES/kdepimwizards.mo
 share/locale/eu/LC_MESSAGES/kdeqt.mo
 share/locale/eu/LC_MESSAGES/kdesu.mo
 share/locale/eu/LC_MESSAGES/kdesud.mo
@@ -235,7 +233,6 @@ share/locale/eu/LC_MESSAGES/kio_bookmarks.mo
 share/locale/eu/LC_MESSAGES/kio_finger.mo
 share/locale/eu/LC_MESSAGES/kio_fish.mo
 share/locale/eu/LC_MESSAGES/kio_floppy.mo
-share/locale/eu/LC_MESSAGES/kio_groupwise.mo
 share/locale/eu/LC_MESSAGES/kio_help4.mo
 share/locale/eu/LC_MESSAGES/kio_imap4.mo
 share/locale/eu/LC_MESSAGES/kio_info.mo
@@ -306,7 +303,6 @@ share/locale/eu/LC_MESSAGES/krdb.mo
 share/locale/eu/LC_MESSAGES/krdc.mo
 share/locale/eu/LC_MESSAGES/kreadconfig.mo
 share/locale/eu/LC_MESSAGES/kremotecontroldaemon.mo
-share/locale/eu/LC_MESSAGES/kres_groupwise.mo
 share/locale/eu/LC_MESSAGES/kres_remote.mo
 share/locale/eu/LC_MESSAGES/kreversi.mo
 share/locale/eu/LC_MESSAGES/krfb.mo
@@ -327,13 +323,13 @@ share/locale/eu/LC_MESSAGES/kstars.mo
 share/locale/eu/LC_MESSAGES/kstart.mo
 share/locale/eu/LC_MESSAGES/kstartperf.mo
 share/locale/eu/LC_MESSAGES/kstyle_config.mo
-share/locale/eu/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/eu/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/eu/LC_MESSAGES/ksudoku.mo
 share/locale/eu/LC_MESSAGES/ksysguard.mo
 share/locale/eu/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/eu/LC_MESSAGES/ksystemlog.mo
 share/locale/eu/LC_MESSAGES/ksystraycmd.mo
+share/locale/eu/LC_MESSAGES/kte_acomment.mo
 share/locale/eu/LC_MESSAGES/kteatime.mo
 share/locale/eu/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/eu/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -366,6 +362,7 @@ share/locale/eu/LC_MESSAGES/kwriteconfig.mo
 share/locale/eu/LC_MESSAGES/kxkb.mo
 share/locale/eu/LC_MESSAGES/kxsconfig.mo
 share/locale/eu/LC_MESSAGES/lancelot.mo
+share/locale/eu/LC_MESSAGES/libkalarmcal.mo
 share/locale/eu/LC_MESSAGES/libkasten.mo
 share/locale/eu/LC_MESSAGES/libkcal.mo
 share/locale/eu/LC_MESSAGES/libkcddb.mo
@@ -406,11 +403,11 @@ share/locale/eu/LC_MESSAGES/mf_konqplugin.mo
 share/locale/eu/LC_MESSAGES/minitoolsplugin.mo
 share/locale/eu/LC_MESSAGES/nepomukbackup.mo
 share/locale/eu/LC_MESSAGES/nepomukcontroller.mo
+share/locale/eu/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/eu/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/eu/LC_MESSAGES/nepomukserver.mo
 share/locale/eu/LC_MESSAGES/nepomukservicestub.mo
 share/locale/eu/LC_MESSAGES/nepomukstorage.mo
-share/locale/eu/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/eu/LC_MESSAGES/nsplugin.mo
 share/locale/eu/LC_MESSAGES/okteta-mobile.mo
 share/locale/eu/LC_MESSAGES/okteta.mo
@@ -447,7 +444,6 @@ share/locale/eu/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/eu/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_folderview.mo
@@ -460,6 +456,7 @@ share/locale/eu/LC_MESSAGES/plasma_applet_luna.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/eu/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/eu/LC_MESSAGES/plasma_applet_panel.mo
@@ -526,6 +523,7 @@ share/locale/eu/LC_MESSAGES/plasmapkg.mo
 share/locale/eu/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/eu/LC_MESSAGES/plasmoidviewer.mo
 share/locale/eu/LC_MESSAGES/powerdevil.mo
+share/locale/eu/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/eu/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/eu/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/eu/LC_MESSAGES/printer-applet.mo

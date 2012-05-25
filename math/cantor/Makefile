@@ -7,7 +7,6 @@
 
 PORTNAME=	cantor
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,7 +15,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 frontend to mathematical software
 
-LIB_DEPENDS=	spectre.1:${PORTSDIR}/print/libspectre
+LIB_DEPENDS=	spectre.1:${PORTSDIR}/print/libspectre \
+		qalculate.5:${PORTSDIR}/math/libqalculate \
+		analitza.5:${PORTSDIR}/math/analitza
 
 CONFLICTS=	kdeedu-4.[0-6].*
 
@@ -25,23 +26,14 @@ KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qtestlib_build xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	KALGEBRA "KAlgebra backend" on \
-		MAXIMA "Maxima backend" off \
+OPTIONS=	MAXIMA "Maxima backend" off \
 		OCTAVE "Octave backend" off \
 		R "R backend" off
 
 .include <bsd.port.options.mk>
-
-.ifndef(WITHOUT_KALGEBRA)
-LIB_DEPENDS+=	analitza.5:${PORTSDIR}/math/kalgebra
-PLIST_SUB+=	KALGEBRA=""
-.else
-CMAKE_ARGS+=	-DWITH_Analitza:BOOL=FALSE
-PLIST_SUB+=	KALGEBRA="@comment "
-.endif
 
 .ifdef(WITH_MAXIMA)
 RUN_DEPENDS+=	maxima:${PORTSDIR}/math/maxima

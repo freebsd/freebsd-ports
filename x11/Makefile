@@ -117,6 +117,7 @@
     SUBDIR += innerspace
     SUBDIR += inputproto
     SUBDIR += ipager
+    SUBDIR += kactivities
     SUBDIR += kb2mb2
     SUBDIR += kbproto
     SUBDIR += kde-lite
@@ -174,6 +175,7 @@
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm
     SUBDIR += libgnomemm26
+    SUBDIR += libkonq
     SUBDIR += liboldX
     SUBDIR += libsx
     SUBDIR += libsynaptics

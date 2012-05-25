@@ -3,6 +3,7 @@ share/applications/kde4/khangman.desktop
 share/apps/khangman/fonts/Domestic_Manners.ttf
 share/apps/khangman/fonts/Dustismo_Roman.ttf
 share/apps/khangman/khangmanui.rc
+share/apps/khangman/pics/bees/khangman_bees.svg
 share/apps/khangman/pics/desert/khangman_desert.svg
 share/apps/khangman/pics/sea/khangman_sea.svg
 share/apps/khangman/pics/standardthemes.xml
@@ -34,6 +35,7 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 @dirrm share/apps/khangman/sounds
 @dirrm share/apps/khangman/pics/sea
 @dirrm share/apps/khangman/pics/desert
+@dirrm share/apps/khangman/pics/bees
 @dirrm share/apps/khangman/pics
 @dirrm share/apps/khangman/fonts
 @dirrm share/apps/khangman

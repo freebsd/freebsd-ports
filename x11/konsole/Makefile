@@ -6,7 +6,6 @@
 
 PORTNAME=	konsole
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,8 +16,8 @@ COMMENT=	KDE terminal emulator
 
 CONFLICTS=	kdebase-4.[0-6].*
 
-USE_BZIP2=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_XZ=	yes
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4 libkonq
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	xml moc_build qmake_build rcc_build uic_build

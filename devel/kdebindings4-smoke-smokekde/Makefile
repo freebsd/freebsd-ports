@@ -7,7 +7,6 @@
 
 PORTNAME=	smokekde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,24 +16,29 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for KDE
 
-LIB_DEPENDS=	okularcore.1:${PORTSDIR}/graphics/okular \
-		kateinterfaces.5:${PORTSDIR}/editors/kate \
-		smokeqtcore.3:${PORTSDIR}/devel/kdebindings4-smoke-smokeqt \
-		soprano.4:${PORTSDIR}/textproc/soprano \
-		smokebase.3:${PORTSDIR}/devel/kdebindings4-smoke-smokegen
-
 CONFLICTS=	kdebindings-smoke-4.[0-6].*
 
-USE_KDE4=	kdehier kdelibs kdeprefix pimlibs akonadi automoc4
+USE_KDE4=	kate kdehier kdelibs kdeprefix okular pimlibs \
+		smokegen smokeqt akonadi automoc4 soprano
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus designer gui network opengl qt3support sql svg xml \
 		qmake_build moc_build uic_build rcc_build
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_CMAKE=	yes
-# Attica bindings often cause the build to coredump.
-CMAKE_ARGS+=	-DWITH_LibAttica:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+
+OPTIONS=	ATTICA "Bindings for libattica (may crash build)" off
+
+.include <bsd.port.options.mk>
+
+# Attica bindings often cause the build to coredump.
+.ifdef(WITH_ATTICA)
+PLIST_SUB+=	ATTICA=""
+.else
+CMAKE_ARGS+=	-DWITH_LibAttica:BOOL=FALSE
+PLIST_SUB+=	ATTICA="@comment "
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e '/kde-config.xml/ s|$${SMOKE_GEN_BIN}|smokegen|' \

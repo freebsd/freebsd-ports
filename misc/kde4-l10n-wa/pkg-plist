@@ -29,7 +29,6 @@ share/apps/ktuberling/sounds/wa/egypt_yebe.ogg
 share/apps/ktuberling/sounds/wa/fleur.ogg
 share/apps/ktuberling/sounds/wa/flo.ogg
 share/apps/ktuberling/sounds/wa/medaye.ogg
-share/apps/ktuberling/sounds/wa/monsieu-crompire.ogg
 share/apps/ktuberling/sounds/wa/monte.ogg
 share/apps/ktuberling/sounds/wa/moon_astronote.ogg
 share/apps/ktuberling/sounds/wa/moon_daegne.ogg
@@ -274,7 +273,6 @@ share/locale/wa/LC_MESSAGES/ksnapshot.mo
 share/locale/wa/LC_MESSAGES/ksplashthemes.mo
 share/locale/wa/LC_MESSAGES/kstart.mo
 share/locale/wa/LC_MESSAGES/kstyle_config.mo
-share/locale/wa/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/wa/LC_MESSAGES/ksysguard.mo
 share/locale/wa/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/wa/LC_MESSAGES/ksystraycmd.mo
@@ -289,11 +287,13 @@ share/locale/wa/LC_MESSAGES/kwalletd.mo
 share/locale/wa/LC_MESSAGES/kwin.mo
 share/locale/wa/LC_MESSAGES/kwin_clients.mo
 share/locale/wa/LC_MESSAGES/kwin_effects.mo
+share/locale/wa/LC_MESSAGES/kwinshutdown.mo
 share/locale/wa/LC_MESSAGES/kwinstartmenu.mo
 share/locale/wa/LC_MESSAGES/kwrite.mo
 share/locale/wa/LC_MESSAGES/kwriteconfig.mo
 share/locale/wa/LC_MESSAGES/kxkb.mo
 share/locale/wa/LC_MESSAGES/lancelot.mo
+share/locale/wa/LC_MESSAGES/libkalarmcal.mo
 share/locale/wa/LC_MESSAGES/libkcompactdisc.mo
 share/locale/wa/LC_MESSAGES/libkdecorations.mo
 share/locale/wa/LC_MESSAGES/libkdegames.mo
@@ -316,11 +316,12 @@ share/locale/wa/LC_MESSAGES/lokalize.mo
 share/locale/wa/LC_MESSAGES/marble.mo
 share/locale/wa/LC_MESSAGES/marble_qt.mo
 share/locale/wa/LC_MESSAGES/nepomukbackup.mo
+share/locale/wa/LC_MESSAGES/nepomukcontroller.mo
+share/locale/wa/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/wa/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/wa/LC_MESSAGES/nepomukserver.mo
 share/locale/wa/LC_MESSAGES/nepomukservicestub.mo
 share/locale/wa/LC_MESSAGES/nepomukstorage.mo
-share/locale/wa/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/wa/LC_MESSAGES/nsplugin.mo
 share/locale/wa/LC_MESSAGES/okular.mo
 share/locale/wa/LC_MESSAGES/okular_chm.mo
@@ -342,6 +343,7 @@ share/locale/wa/LC_MESSAGES/phononserver.mo
 share/locale/wa/LC_MESSAGES/plasma-desktop.mo
 share/locale/wa/LC_MESSAGES/plasma-netbook.mo
 share/locale/wa/LC_MESSAGES/plasma-overlay.mo
+share/locale/wa/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/wa/LC_MESSAGES/plasma-windowed.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -351,7 +353,6 @@ share/locale/wa/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/wa/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_fileWatcher.mo
@@ -373,6 +374,7 @@ share/locale/wa/LC_MESSAGES/plasma_applet_news.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/wa/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_panel.mo

@@ -325,9 +325,39 @@ share/doc/HTML/ru/kalgebra/index.cache.bz2
 share/doc/HTML/ru/kalgebra/index.docbook
 share/doc/HTML/ru/kalgebra/kalgebra-main-window.png
 share/doc/HTML/ru/kalzium/common
+share/doc/HTML/ru/kalzium/gradient.png
 share/doc/HTML/ru/kalzium/index.cache.bz2
 share/doc/HTML/ru/kalzium/index.docbook
+share/doc/HTML/ru/kalzium/infodialog_bohr.png
+share/doc/HTML/ru/kalzium/infodialog_data_overview.png
+share/doc/HTML/ru/kalzium/infodialog_extra.png
+share/doc/HTML/ru/kalzium/infodialog_isotopes.png
+share/doc/HTML/ru/kalzium/infodialog_misc.png
+share/doc/HTML/ru/kalzium/infodialog_spectrum.png
 share/doc/HTML/ru/kalzium/man-kalzium.1.docbook
+share/doc/HTML/ru/kalzium/quick-1.png
+share/doc/HTML/ru/kalzium/quick-2.png
+share/doc/HTML/ru/kalzium/quick-3.png
+share/doc/HTML/ru/kalzium/quick-4.png
+share/doc/HTML/ru/kalzium/screenshot-calc-conc.png
+share/doc/HTML/ru/kalzium/screenshot-calc-eq.png
+share/doc/HTML/ru/kalzium/screenshot-calc-gas.png
+share/doc/HTML/ru/kalzium/screenshot-calc-mass.png
+share/doc/HTML/ru/kalzium/screenshot-calc-nucl.png
+share/doc/HTML/ru/kalzium/screenshot-mol-edit.png
+share/doc/HTML/ru/kalzium/screenshot-tables.png
+share/doc/HTML/ru/kalzium/screenshot1.png
+share/doc/HTML/ru/kalzium/screenshot2.png
+share/doc/HTML/ru/kalzium/screenshot5.png
+share/doc/HTML/ru/kalzium/screenshot6.png
+share/doc/HTML/ru/kalzium/screenshot7.png
+share/doc/HTML/ru/kalzium/screenshotnuclidboard.png
+share/doc/HTML/ru/kalzium/settings1.png
+share/doc/HTML/ru/kalzium/settings2.png
+share/doc/HTML/ru/kalzium/settings3.png
+share/doc/HTML/ru/kalzium/settings4.png
+share/doc/HTML/ru/kalzium/sidebar1.png
+share/doc/HTML/ru/kalzium/sidebar2.png
 share/doc/HTML/ru/kanagram/common
 share/doc/HTML/ru/kanagram/index.cache.bz2
 share/doc/HTML/ru/kanagram/index.docbook
@@ -419,6 +449,17 @@ share/doc/HTML/ru/kcontrol/keyboard/index.docbook
 share/doc/HTML/ru/kcontrol/keys/common
 share/doc/HTML/ru/kcontrol/keys/index.cache.bz2
 share/doc/HTML/ru/kcontrol/keys/index.docbook
+share/doc/HTML/ru/kcontrol/kremotecontrol/AddAction.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/AddActionOptions.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/AddDBusAction.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/AddMode.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/AddProfileAction.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/AutoPopulate.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/EditMasterMode.png
+share/doc/HTML/ru/kcontrol/kremotecontrol/common
+share/doc/HTML/ru/kcontrol/kremotecontrol/index.cache.bz2
+share/doc/HTML/ru/kcontrol/kremotecontrol/index.docbook
+share/doc/HTML/ru/kcontrol/kremotecontrol/kcmremotecontrol.png
 share/doc/HTML/ru/kcontrol/language/common
 share/doc/HTML/ru/kcontrol/language/index.cache.bz2
 share/doc/HTML/ru/kcontrol/language/index.docbook
@@ -848,6 +889,12 @@ share/doc/HTML/ru/kteatime/index.docbook
 share/doc/HTML/ru/ktimer/common
 share/doc/HTML/ru/ktimer/index.cache.bz2
 share/doc/HTML/ru/ktimer/index.docbook
+share/doc/HTML/ru/ktimetracker/common
+share/doc/HTML/ru/ktimetracker/csvexport.png
+share/doc/HTML/ru/ktimetracker/idle-detect.png
+share/doc/HTML/ru/ktimetracker/index.cache.bz2
+share/doc/HTML/ru/ktimetracker/index.docbook
+share/doc/HTML/ru/ktimetracker/ktimetracker.png
 share/doc/HTML/ru/ktouch/common
 share/doc/HTML/ru/ktouch/index.cache.bz2
 share/doc/HTML/ru/ktouch/index.docbook
@@ -876,9 +923,36 @@ share/doc/HTML/ru/lokalize/index.docbook
 share/doc/HTML/ru/lskat/common
 share/doc/HTML/ru/lskat/index.cache.bz2
 share/doc/HTML/ru/lskat/index.docbook
+share/doc/HTML/ru/marble/common
+share/doc/HTML/ru/marble/configure-cacheproxy.png
+share/doc/HTML/ru/marble/configure-navigation.png
+share/doc/HTML/ru/marble/configure-plugins.png
+share/doc/HTML/ru/marble/configure-routing.png
+share/doc/HTML/ru/marble/configure-view.png
+share/doc/HTML/ru/marble/download-region-3.png
+share/doc/HTML/ru/marble/index.cache.bz2
+share/doc/HTML/ru/marble/index.docbook
+share/doc/HTML/ru/marble/mapview-1.png
+share/doc/HTML/ru/marble/measure-1.png
+share/doc/HTML/ru/marble/quick-1.png
+share/doc/HTML/ru/marble/routing-1.png
+share/doc/HTML/ru/marble/routing-2.png
+share/doc/HTML/ru/marble/routing-3.png
+share/doc/HTML/ru/marble/routing-4.png
+share/doc/HTML/ru/marble/routing-5.png
+share/doc/HTML/ru/marble/routing-6.png
+share/doc/HTML/ru/marble/search-1.png
+share/doc/HTML/ru/marble/search-2.png
 share/doc/HTML/ru/palapeli/common
 share/doc/HTML/ru/palapeli/index.cache.bz2
 share/doc/HTML/ru/palapeli/index.docbook
+share/doc/HTML/ru/rocs/common
+share/doc/HTML/ru/rocs/index.cache.bz2
+share/doc/HTML/ru/rocs/index.docbook
+share/doc/HTML/ru/rocs/rocs-interfaces.png
+share/doc/HTML/ru/rocs/rocs-screenshot.png
+share/doc/HTML/ru/rocs/rocs-toolbar-alignment.png
+share/doc/HTML/ru/rocs/rocs-toolbar-main.png
 share/doc/HTML/ru/sonnet/common
 share/doc/HTML/ru/sonnet/index.cache.bz2
 share/doc/HTML/ru/sonnet/index.docbook
@@ -910,7 +984,6 @@ share/locale/ru/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
-share/locale/ru/LC_MESSAGES/akonadi_nepomuk_email_feeder.mo
 share/locale/ru/LC_MESSAGES/akonadi_nepomukfeeder.mo
 share/locale/ru/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_next.mo
@@ -927,6 +1000,7 @@ share/locale/ru/LC_MESSAGES/akonaditray.mo
 share/locale/ru/LC_MESSAGES/akregator.mo
 share/locale/ru/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ru/LC_MESSAGES/amor.mo
+share/locale/ru/LC_MESSAGES/analitza.mo
 share/locale/ru/LC_MESSAGES/ark.mo
 share/locale/ru/LC_MESSAGES/attica_kde.mo
 share/locale/ru/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -992,7 +1066,6 @@ share/locale/ru/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ru/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ru/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ru/LC_MESSAGES/katefiletemplates.mo
-share/locale/ru/LC_MESSAGES/katefindinfilesplugin.mo
 share/locale/ru/LC_MESSAGES/kategdbplugin.mo
 share/locale/ru/LC_MESSAGES/katehelloworld.mo
 share/locale/ru/LC_MESSAGES/katekonsoleplugin.mo
@@ -1104,7 +1177,6 @@ share/locale/ru/LC_MESSAGES/kdelibs4.mo
 share/locale/ru/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ru/LC_MESSAGES/kdepasswd.mo
 share/locale/ru/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/ru/LC_MESSAGES/kdepimwizards.mo
 share/locale/ru/LC_MESSAGES/kdeqt.mo
 share/locale/ru/LC_MESSAGES/kdesu.mo
 share/locale/ru/LC_MESSAGES/kdesud.mo
@@ -1175,7 +1247,6 @@ share/locale/ru/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ru/LC_MESSAGES/kio_finger.mo
 share/locale/ru/LC_MESSAGES/kio_fish.mo
 share/locale/ru/LC_MESSAGES/kio_floppy.mo
-share/locale/ru/LC_MESSAGES/kio_groupwise.mo
 share/locale/ru/LC_MESSAGES/kio_help4.mo
 share/locale/ru/LC_MESSAGES/kio_imap4.mo
 share/locale/ru/LC_MESSAGES/kio_info.mo
@@ -1259,7 +1330,6 @@ share/locale/ru/LC_MESSAGES/kreadconfig.mo
 share/locale/ru/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/ru/LC_MESSAGES/kres-migrator.mo
 share/locale/ru/LC_MESSAGES/kres_blog.mo
-share/locale/ru/LC_MESSAGES/kres_groupwise.mo
 share/locale/ru/LC_MESSAGES/kres_remote.mo
 share/locale/ru/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/ru/LC_MESSAGES/kreversi.mo
@@ -1284,7 +1354,6 @@ share/locale/ru/LC_MESSAGES/kstars.mo
 share/locale/ru/LC_MESSAGES/kstart.mo
 share/locale/ru/LC_MESSAGES/kstartperf.mo
 share/locale/ru/LC_MESSAGES/kstyle_config.mo
-share/locale/ru/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ru/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/ru/LC_MESSAGES/ksudoku.mo
 share/locale/ru/LC_MESSAGES/ksysguard.mo
@@ -1329,6 +1398,7 @@ share/locale/ru/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/ru/LC_MESSAGES/libakonadi.mo
 share/locale/ru/LC_MESSAGES/libeventviews.mo
 share/locale/ru/LC_MESSAGES/libincidenceeditors.mo
+share/locale/ru/LC_MESSAGES/libkalarmcal.mo
 share/locale/ru/LC_MESSAGES/libkasten.mo
 share/locale/ru/LC_MESSAGES/libkblog.mo
 share/locale/ru/LC_MESSAGES/libkcal.mo
@@ -1394,11 +1464,11 @@ share/locale/ru/LC_MESSAGES/mplayerthumbs.mo
 share/locale/ru/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ru/LC_MESSAGES/nepomukbackup.mo
 share/locale/ru/LC_MESSAGES/nepomukcontroller.mo
+share/locale/ru/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/ru/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/ru/LC_MESSAGES/nepomukserver.mo
 share/locale/ru/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ru/LC_MESSAGES/nepomukstorage.mo
-share/locale/ru/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/ru/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/ru/LC_MESSAGES/notes-mobile.mo
 share/locale/ru/LC_MESSAGES/nsplugin.mo
@@ -1444,7 +1514,6 @@ share/locale/ru/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_comic.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_currentappcontrol.mo
-share/locale/ru/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_fileWatcher.mo
@@ -1454,6 +1523,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -1476,6 +1546,7 @@ share/locale/ru/LC_MESSAGES/plasma_applet_news.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/ru/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -1615,7 +1686,9 @@ share/locale/ru/entry.desktop
 @dirrm share/locale/ru/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/ru/LC_SCRIPTS
 @dirrm share/doc/HTML/ru/sonnet
+@dirrm share/doc/HTML/ru/rocs
 @dirrm share/doc/HTML/ru/palapeli
+@dirrm share/doc/HTML/ru/marble
 @dirrm share/doc/HTML/ru/lskat
 @dirrm share/doc/HTML/ru/lokalize
 @dirrm share/doc/HTML/ru/kwrite
@@ -1625,6 +1698,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kuser
 @dirrm share/doc/HTML/ru/ktuberling
 @dirrm share/doc/HTML/ru/ktouch
+@dirrm share/doc/HTML/ru/ktimetracker
 @dirrm share/doc/HTML/ru/ktimer
 @dirrm share/doc/HTML/ru/kteatime
 @dirrm share/doc/HTML/ru/ksysguard
@@ -1714,6 +1788,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kcontrol/performance
 @dirrm share/doc/HTML/ru/kcontrol/netpref
 @dirrm share/doc/HTML/ru/kcontrol/language
+@dirrm share/doc/HTML/ru/kcontrol/kremotecontrol
 @dirrm share/doc/HTML/ru/kcontrol/keys
 @dirrm share/doc/HTML/ru/kcontrol/keyboard
 @dirrm share/doc/HTML/ru/kcontrol/kcmsmserver

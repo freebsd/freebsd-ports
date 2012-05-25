@@ -1,0 +1,23 @@
+--- ./src/CMakeLists.txt.orig	2012-02-29 22:57:03.966438000 +0000
++++ ./src/CMakeLists.txt	2012-05-22 15:24:05.892577235 +0000
+@@ -8,7 +8,7 @@
+ add_definitions(-DMARBLE_DBUS)
+ endif(BUILD_WITH_DBUS)
+ 
+-if( QT_QTDECLARATIVE_FOUND )
++if( MOBILE AND QT_QTDECLARATIVE_FOUND )
+   OPTION(IGNORE_CMAKE_INSTALL_PREFIX_FOR_DECLARATIVE_PLUGINS "Install Marble Qt Declarative plugins to QT_IMPORTS_DIR even if that is out of the CMAKE_INSTALL_PREFIX")
+   IF(DEFINED QT_IMPORTS_DIR)
+     SET(MARBLE_QT_IMPORTS_DIR ${QT_IMPORTS_DIR})
+@@ -44,9 +44,9 @@
+ add_subdirectory( plugins )
+ add_subdirectory( bindings )
+ 
+-if( QT_QTDECLARATIVE_FOUND )
++if( MOBILE AND QT_QTDECLARATIVE_FOUND )
+     add_subdirectory( qt-components )
+-endif( QT_QTDECLARATIVE_FOUND )
++endif( MOBILE AND QT_QTDECLARATIVE_FOUND )
+ 
+ if( NOT QTONLY AND KDE4_PLASMA_LIBS )   # don't try to build this against kdelibs < 4.2
+    add_subdirectory( plasmoid )

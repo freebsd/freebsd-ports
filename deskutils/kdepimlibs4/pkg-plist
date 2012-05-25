@@ -57,6 +57,7 @@ include/KDE/Akonadi/Contact/StandardContactActionManager
 include/KDE/Akonadi/Contact/StandardContactFormatter
 include/KDE/Akonadi/Contact/StandardContactGroupFormatter
 include/KDE/Akonadi/Control
+include/KDE/Akonadi/ETMViewStateSaver
 include/KDE/Akonadi/Entity
 include/KDE/Akonadi/EntityDisplayAttribute
 include/KDE/Akonadi/EntityListView
@@ -79,6 +80,7 @@ include/KDE/Akonadi/ItemSerializerPlugin
 include/KDE/Akonadi/ItemSync
 include/KDE/Akonadi/ItemView
 include/KDE/Akonadi/Job
+include/KDE/Akonadi/KCal/FreeBusyProviderBase
 include/KDE/Akonadi/KCal/IncidenceMimeTypeVisitor
 include/KDE/Akonadi/KMime/AddressAttribute
 include/KDE/Akonadi/KMime/MessageFolderAttribute
@@ -88,6 +90,7 @@ include/KDE/Akonadi/KMime/MessageThreadingAttribute
 include/KDE/Akonadi/KMime/SpecialMailCollections
 include/KDE/Akonadi/KMime/SpecialMailCollectionsRequestJob
 include/KDE/Akonadi/LinkJob
+include/KDE/Akonadi/MimeTypeChecker
 include/KDE/Akonadi/Monitor
 include/KDE/Akonadi/PreprocessorBase
 include/KDE/Akonadi/ResourceBase
@@ -135,6 +138,15 @@ include/KDE/KABC/TimeZone
 include/KDE/KABC/VCardConverter
 include/KDE/KABC/VCardDrag
 include/KDE/KABC/VCardFormat
+include/KDE/KAlarmCal/AlarmText
+include/KDE/KAlarmCal/CollectionAttribute
+include/KDE/KAlarmCal/CompatibilityAttribute
+include/KDE/KAlarmCal/DateTime
+include/KDE/KAlarmCal/EventAttribute
+include/KDE/KAlarmCal/KAAlarm
+include/KDE/KAlarmCal/KAEvent
+include/KDE/KAlarmCal/KARecurrence
+include/KDE/KAlarmCal/Repetition
 include/KDE/KBlog/Blog
 include/KDE/KBlog/BlogComment
 include/KDE/KBlog/BlogMedia
@@ -402,6 +414,7 @@ include/akonadi/attributefactory.h
 include/akonadi/cachepolicy.h
 include/akonadi/cachepolicypage.h
 include/akonadi/calendar/akonadi-calendar_export.h
+include/akonadi/calendar/freebusyproviderbase.h
 include/akonadi/calendar/standardcalendaractionmanager.h
 include/akonadi/changerecorder.h
 include/akonadi/collection.h
@@ -425,6 +438,7 @@ include/akonadi/collectionstatistics.h
 include/akonadi/collectionstatisticsdelegate.h
 include/akonadi/collectionstatisticsjob.h
 include/akonadi/collectionstatisticsmodel.h
+include/akonadi/collectionutils_p.h
 include/akonadi/collectionview.h
 include/akonadi/contact/abstractcontactformatter.h
 include/akonadi/contact/abstractcontactgroupformatter.h
@@ -455,6 +469,7 @@ include/akonadi/control.h
 include/akonadi/dbusconnectionpool.h
 include/akonadi/differencesalgorithminterface.h
 include/akonadi/entity.h
+include/akonadi/entitydeletedattribute.h
 include/akonadi/entitydisplayattribute.h
 include/akonadi/entityhiddenattribute.h
 include/akonadi/entitylistview.h
@@ -487,6 +502,7 @@ include/akonadi/job.h
 include/akonadi/kabc/akonadi-kabc_export.h
 include/akonadi/kabc/contactparts.h
 include/akonadi/kcal/akonadi-kcal_export.h
+include/akonadi/kcal/freebusyproviderbase.h
 include/akonadi/kcal/incidencemimetypevisitor.h
 include/akonadi/kmime/addressattribute.h
 include/akonadi/kmime/akonadi-kmime_export.h
@@ -503,6 +519,8 @@ include/akonadi/kmime/standardmailactionmanager.h
 include/akonadi/linkjob.h
 include/akonadi/mimetypechecker.h
 include/akonadi/monitor.h
+include/akonadi/notes/akonadi-notes_export.h
+include/akonadi/notes/noteutils.h
 include/akonadi/partfetcher.h
 include/akonadi/persistentsearchattribute.h
 include/akonadi/preprocessorbase.h
@@ -525,6 +543,10 @@ include/akonadi/statisticsproxymodel.h
 include/akonadi/transactionjobs.h
 include/akonadi/transactionsequence.h
 include/akonadi/transportresourcebase.h
+include/akonadi/trashfilterproxymodel.h
+include/akonadi/trashjob.h
+include/akonadi/trashrestorejob.h
+include/akonadi/trashsettings.h
 include/akonadi/unlinkjob.h
 include/gpgme++/assuanresult.h
 include/gpgme++/configuration.h
@@ -599,6 +621,18 @@ include/kabc/vcarddrag.h
 include/kabc/vcardformat.h
 include/kabc/vcardline.h
 include/kabc/vcardparser.h
+include/kalarmcal/alarmtext.h
+include/kalarmcal/collectionattribute.h
+include/kalarmcal/compatibilityattribute.h
+include/kalarmcal/datetime.h
+include/kalarmcal/eventattribute.h
+include/kalarmcal/identities.h
+include/kalarmcal/kacalendar.h
+include/kalarmcal/kaevent.h
+include/kalarmcal/kalarmcal_export.h
+include/kalarmcal/karecurrence.h
+include/kalarmcal/repetition.h
+include/kalarmcal/version.h
 include/kblog/blog.h
 include/kblog/blogcomment.h
 include/kblog/blogger1.h
@@ -968,6 +1002,9 @@ lib/libakonadi-kde.so.5.0.1
 lib/libakonadi-kmime.so
 lib/libakonadi-kmime.so.5
 lib/libakonadi-kmime.so.5.0.1
+lib/libakonadi-notes.so
+lib/libakonadi-notes.so.5
+lib/libakonadi-notes.so.5.0.1
 lib/libgpgme++-pthread.so
 lib/libgpgme++-pthread.so.2
 lib/libgpgme++-pthread.so.2.8.0
@@ -980,6 +1017,9 @@ lib/libkabc.so.5.0.1
 lib/libkabc_file_core.so
 lib/libkabc_file_core.so.5
 lib/libkabc_file_core.so.5.0.1
+lib/libkalarmcal.so
+lib/libkalarmcal.so.2
+lib/libkalarmcal.so.2.7.0
 lib/libkblog.so
 lib/libkblog.so.5
 lib/libkblog.so.5.0.1
@@ -1108,6 +1148,8 @@ share/apps/libkholidays/plan2/holiday_hk_en-gb
 share/apps/libkholidays/plan2/holiday_hk_zh-cn
 share/apps/libkholidays/plan2/holiday_hr_hr
 share/apps/libkholidays/plan2/holiday_hu_hu
+share/apps/libkholidays/plan2/holiday_id_en-us
+share/apps/libkholidays/plan2/holiday_id_id
 share/apps/libkholidays/plan2/holiday_ie_en-gb
 share/apps/libkholidays/plan2/holiday_ie_ga
 share/apps/libkholidays/plan2/holiday_il_en-us
@@ -1141,8 +1183,10 @@ share/apps/libkholidays/plan2/holiday_re_fr
 share/apps/libkholidays/plan2/holiday_ro_ro
 share/apps/libkholidays/plan2/holiday_ru_ru
 share/apps/libkholidays/plan2/holiday_se_sv
+share/apps/libkholidays/plan2/holiday_sg_en-gb
 share/apps/libkholidays/plan2/holiday_si_sl
 share/apps/libkholidays/plan2/holiday_sk_sk
+share/apps/libkholidays/plan2/holiday_sm_it
 share/apps/libkholidays/plan2/holiday_th_en-gb
 share/apps/libkholidays/plan2/holiday_ua_uk
 share/apps/libkholidays/plan2/holiday_us_en-us
@@ -1266,10 +1310,12 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm include/kcalcore
 @dirrm include/kcal
 @dirrm include/kblog
+@dirrm include/kalarmcal
 @dirrm include/kabc
 @dirrm include/gpgme++/interfaces
 @dirrm include/gpgme++
 @dirrmtry include/akonadi/private
+@dirrm include/akonadi/notes
 @dirrm include/akonadi/kmime
 @dirrm include/akonadi/kcal
 @dirrm include/akonadi/kabc
@@ -1292,6 +1338,7 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm include/KDE/KCalCore
 @dirrm include/KDE/KCal
 @dirrm include/KDE/KBlog
+@dirrm include/KDE/KAlarmCal
 @dirrm include/KDE/KABC
 @dirrm include/KDE/Akonadi/KMime
 @dirrm include/KDE/Akonadi/KCal

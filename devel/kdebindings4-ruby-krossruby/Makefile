@@ -7,8 +7,7 @@
 
 PORTNAME=	krossruby
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
-CATEGORIES=	devel kde
+CATEGORIES=	devel kde ruby
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}kdebindings-
@@ -24,13 +23,14 @@ USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
 USE_RUBY=	yes
-USE_BZIP2=	yes
-DISTINFO_FILE=	${PORTSDIR}/devel/kdebindings4-kross-interpreters/distinfo
+USE_XZ=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DBUILD_python:BOOL=FALSE \
 		-DBUILD_falcon:BOOL=FALSE \
 		-DBUILD_java:BOOL=FALSE
 MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	lib/kde4/krossruby.so
 
 .include <bsd.port.pre.mk>
 

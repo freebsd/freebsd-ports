@@ -273,6 +273,7 @@
     SUBDIR += kde4-l10n-es
     SUBDIR += kde4-l10n-et
     SUBDIR += kde4-l10n-eu
+    SUBDIR += kde4-l10n-fa
     SUBDIR += kde4-l10n-fi
     SUBDIR += kde4-l10n-fy
     SUBDIR += kde4-l10n-ga

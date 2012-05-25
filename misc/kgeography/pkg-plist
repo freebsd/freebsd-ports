@@ -8,6 +8,8 @@ share/apps/kgeography/albania_districts.kgm
 share/apps/kgeography/albania_districts.png
 share/apps/kgeography/albania_prefectures.kgm
 share/apps/kgeography/albania_prefectures.png
+share/apps/kgeography/algeria.kgm
+share/apps/kgeography/algeria.png
 share/apps/kgeography/andhrapradesh.kgm
 share/apps/kgeography/andhrapradesh.png
 share/apps/kgeography/andorra.kgm
@@ -22,10 +24,16 @@ share/apps/kgeography/arunachalpradesh.kgm
 share/apps/kgeography/arunachalpradesh.png
 share/apps/kgeography/asia.kgm
 share/apps/kgeography/asia.png
+share/apps/kgeography/assam-district-map.png
+share/apps/kgeography/assam.kgm
 share/apps/kgeography/australia.kgm
 share/apps/kgeography/australia.png
 share/apps/kgeography/austria.kgm
 share/apps/kgeography/austria.png
+share/apps/kgeography/azerbaijan.kgm
+share/apps/kgeography/azerbaijan.png
+share/apps/kgeography/bangladesh.kgm
+share/apps/kgeography/bangladesh.png
 share/apps/kgeography/belarus.kgm
 share/apps/kgeography/belarus.png
 share/apps/kgeography/belgium.kgm
@@ -91,7 +99,6 @@ share/apps/kgeography/europe.png
 share/apps/kgeography/finland_regions.kgm
 share/apps/kgeography/finland_regions.png
 share/apps/kgeography/flags/Monaco.png
-share/apps/kgeography/flags/NewZealand.png
 share/apps/kgeography/flags/SriLanka.png
 share/apps/kgeography/flags/Vatican.png
 share/apps/kgeography/flags/afghanistan.png
@@ -102,7 +109,6 @@ share/apps/kgeography/flags/andorra.png
 share/apps/kgeography/flags/angola.png
 share/apps/kgeography/flags/anguilla.png
 share/apps/kgeography/flags/antigua.png
-share/apps/kgeography/flags/antigua_and_barbuda.png
 share/apps/kgeography/flags/argentina.png
 share/apps/kgeography/flags/armenia.png
 share/apps/kgeography/flags/aruba.png
@@ -251,7 +257,6 @@ share/apps/kgeography/flags/djibouti.png
 share/apps/kgeography/flags/dominica.png
 share/apps/kgeography/flags/dominicanrepublic.png
 share/apps/kgeography/flags/dutch_antilles.png
-share/apps/kgeography/flags/east_timor.png
 share/apps/kgeography/flags/easter_island.png
 share/apps/kgeography/flags/easttimor.png
 share/apps/kgeography/flags/ecuador.png
@@ -772,6 +777,8 @@ share/apps/kgeography/georgia.kgm
 share/apps/kgeography/georgia.png
 share/apps/kgeography/germany.kgm
 share/apps/kgeography/germany.png
+share/apps/kgeography/goa.kgm
+share/apps/kgeography/goa.png
 share/apps/kgeography/great-britain_counties.kgm
 share/apps/kgeography/great-britain_counties.png
 share/apps/kgeography/greece.kgm
@@ -790,6 +797,8 @@ share/apps/kgeography/haiti.kgm
 share/apps/kgeography/haiti.png
 share/apps/kgeography/haryana.kgm
 share/apps/kgeography/haryana.png
+share/apps/kgeography/himachal_pradesh.kgm
+share/apps/kgeography/himachal_pradesh.png
 share/apps/kgeography/honduras.kgm
 share/apps/kgeography/honduras.png
 share/apps/kgeography/hungary.kgm
@@ -818,6 +827,8 @@ share/apps/kgeography/jamaica.kgm
 share/apps/kgeography/jamaica.png
 share/apps/kgeography/japan.kgm
 share/apps/kgeography/japan.png
+share/apps/kgeography/jharkhand-map.png
+share/apps/kgeography/jharkhand.kgm
 share/apps/kgeography/kazakhstan.kgm
 share/apps/kgeography/kazakhstan.png
 share/apps/kgeography/kgeographyui.rc
@@ -905,6 +916,8 @@ share/apps/kgeography/spain.kgm
 share/apps/kgeography/spain.png
 share/apps/kgeography/spain_provinces.kgm
 share/apps/kgeography/spain_provinces.png
+share/apps/kgeography/sri-lanka.kgm
+share/apps/kgeography/sri-lanka.png
 share/apps/kgeography/sudan.kgm
 share/apps/kgeography/sudan.png
 share/apps/kgeography/suriname.kgm
