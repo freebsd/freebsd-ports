@@ -11,8 +11,7 @@
 #   o install a sample into etc/apache22/Includes
 
 PORTNAME=	rt
-PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTVERSION=	4.0.6
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -92,6 +91,7 @@ RUN_DEPENDS+=	${MODPERL2_DEPS}
 IGNORE=	please select at most one of AP_MODPERL, AP_MODFASTCGI, LIGHTTPD or SPAWN_FCGI
 .endif
 
+USE_APACHE=	20+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 		${FASTCGI_DEPS}

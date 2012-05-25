@@ -104,7 +104,7 @@ DEV_DEPS=	p5-Email-Abstract>0:${PORTSDIR}/mail/p5-Email-Abstract \
 		p5-XML-Simple>0:${PORTSDIR}/textproc/p5-XML-Simple
 
 FASTCGI_DEPS=	p5-FCGI-ProcManager>0:${PORTSDIR}/www/p5-FCGI-ProcManager \
-		p5-FCGI>0:${PORTSDIR}/www/p5-FCGI
+		p5-FCGI>=0.74:${PORTSDIR}/www/p5-FCGI
 
 MODPERL2_DEPS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
 		p5-Apache-DBI>0:${PORTSDIR}/www/p5-Apache-DBI
