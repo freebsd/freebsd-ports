@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	t-prot
-PORTVERSION=	2.99
-PORTREVISION=	1
+PORTVERSION=	2.101
 CATEGORIES=	mail
 MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/ \
 		LOCAL/sergei
