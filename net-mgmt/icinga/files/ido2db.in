@@ -25,7 +25,13 @@ load_rc_config "${name}"
 command="%%PREFIX%%/bin/${name}"
 command_args="-c"
 
+start_cmd="start_cmd"
+
 required_files="${ido2db_configfile}"
 command_args="${command_args} ${ido2db_configfile}"
+
+start_cmd() {
+  ${command} ${command_args}
+}
 
 run_rc_command "$1"
