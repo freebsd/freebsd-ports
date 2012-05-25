@@ -109,6 +109,7 @@ share/cmake/fcitx/FcitxMacro.cmake
 %%DATADIR%%/data/AutoEng.dat
 %%DATADIR%%/data/gbks2t.tab
 %%DATADIR%%/data/punc.mb.zh_CN
+%%DATADIR%%/data/punc.mb.zh_HK
 %%DATADIR%%/data/punc.mb.zh_TW
 %%DATADIR%%/data/vk.conf
 %%DATADIR%%/inputmethod/pinyin.conf
@@ -295,6 +296,7 @@ share/icons/hicolor/scalable/status/fcitx-punc-active.svg
 share/icons/hicolor/scalable/status/fcitx-punc-inactive.svg
 share/icons/hicolor/scalable/status/fcitx-vk-active.svg
 share/icons/hicolor/scalable/status/fcitx-vk-inactive.svg
+share/locale/ja/LC_MESSAGES/fcitx.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
