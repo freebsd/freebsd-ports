@@ -2,6 +2,7 @@ bin/komparator
 share/applnk/Utilities/komparator.desktop
 %%PORTDOCS%%%%DOCSDIR%%/common
 %%PORTDOCS%%%%DOCSDIR%%/komparator_search_options_basic.png
+%%PORTDOCS%%%%DOCSDIR%%/komparator_settings.png
 %%PORTDOCS%%%%DOCSDIR%%/komparator_missing.png
 %%PORTDOCS%%%%DOCSDIR%%/komparator_duplicates.png
 %%PORTDOCS%%%%DOCSDIR%%/komparator_enable_tab.png
@@ -18,8 +19,11 @@ share/applnk/Utilities/komparator.desktop
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 share/icons/hicolor/16x16/apps/komparator.png
 share/icons/hicolor/32x32/apps/komparator.png
+share/icons/hicolor/32x32/apps/komparator_working.mng
 share/icons/hicolor/64x64/apps/komparator.png
 share/locale/de/LC_MESSAGES/komparator.mo
+share/locale/fr/LC_MESSAGES/komparator.mo
 share/locale/nl/LC_MESSAGES/komparator.mo
+share/locale/it/LC_MESSAGES/komparator.mo
 share/locale/ru/LC_MESSAGES/komparator.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

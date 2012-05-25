@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	komparator
-PORTVERSION=	0.5
-PORTREVISION=	6
+PORTVERSION=	0.9
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF
 
@@ -19,6 +18,7 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 
+INSTALLS_ICONS=	yes
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/komparator
 
 post-patch:
