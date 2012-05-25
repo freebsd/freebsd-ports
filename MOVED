@@ -3403,3 +3403,4 @@ devel/kdebindings4-kross-interpreters||2012-05-25|kdebindings4 ports have been r
 devel/kdebindings4-python||2012-05-25|kdebindings4 ports have been refactored
 devel/kdebindings4-ruby||2012-05-25|kdebindings4 ports have been refactored
 devel/kdebindings4-smoke||2012-05-25|kdebindings4 ports have been refactored
+deskutils/plasma-applet-icontasks||2012-05-25|Integrated to KDE SC 4.8
