@@ -169,6 +169,7 @@
     SUBDIR += jacal
     SUBDIR += jags
     SUBDIR += jakarta-commons-math
+    SUBDIR += jakarta-commons-math3
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += javaview
