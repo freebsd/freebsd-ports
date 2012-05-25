@@ -7,7 +7,7 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	misc kde
+CATEGORIES=	vietnamese kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Vietnamese messages and documentation for KDE4
