@@ -1,6 +1,3 @@
-Written by Alexander Nordfelth, this new systemload plugin offers multiple
-display modes (LED, gradient, fire, etc...) to show the current CPU load
-of the system. The colors and the size of the plugin are customizable.
+Panel plugin to display a graphical representation of the CPU load.
 
-Author: Alexander Nordfelth <alex.nordfelth@telia.com>
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-cpugraph-plugin
