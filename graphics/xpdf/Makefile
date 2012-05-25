@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	support/xpdf
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 GNU_CONFIGURE=	yes
@@ -26,7 +25,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-opi \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2/" \
-		--bindir="${LOCALBASE}/libexec/xpdf"
+		--bindir="${PREFIX}/libexec/xpdf"
 
 OPTIONS=	LIBPAPER "Enable libpaper"      off     \
 		TYPE1	"Ghostscript type1 fonts" on \
@@ -82,7 +81,7 @@ post-install:
 .endfor
 .endif
 .if !defined(WITHOUT_X11)
-	${LN} -sf ${LOCALBASE}/libexec/xpdf/xpdf ${LOCALBASE}/bin/xpdf 
+	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${PREFIX}/bin/xpdf 
 .endif
 
 .include <bsd.port.mk>
