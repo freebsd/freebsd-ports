@@ -56,6 +56,27 @@
 %%EXAMPLESDIR%%/animation/stickman/stickman.py
 %%EXAMPLESDIR%%/animation/stickman/stickman.pyc
 %%EXAMPLESDIR%%/animation/stickman/stickman.qrc
+%%EXAMPLESDIR%%/dbus/chat/chat.py
+%%EXAMPLESDIR%%/dbus/chat/chat.pyc
+%%EXAMPLESDIR%%/dbus/chat/chatmainwindow.ui
+%%EXAMPLESDIR%%/dbus/chat/chatsetnickname.ui
+%%EXAMPLESDIR%%/dbus/chat/ui_chatmainwindow.py
+%%EXAMPLESDIR%%/dbus/chat/ui_chatmainwindow.pyc
+%%EXAMPLESDIR%%/dbus/chat/ui_chatsetnickname.py
+%%EXAMPLESDIR%%/dbus/chat/ui_chatsetnickname.pyc
+%%EXAMPLESDIR%%/dbus/listnames.py
+%%EXAMPLESDIR%%/dbus/listnames.pyc
+%%EXAMPLESDIR%%/dbus/pingpong/ping.py
+%%EXAMPLESDIR%%/dbus/pingpong/ping.pyc
+%%EXAMPLESDIR%%/dbus/pingpong/pong.py
+%%EXAMPLESDIR%%/dbus/pingpong/pong.pyc
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/car/car.py
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/car/car.pyc
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/controller/controller.py
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/controller/controller.pyc
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/controller/controller.ui
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/controller/ui_controller.py
+%%EXAMPLESDIR%%/dbus/remotecontrolledcar/controller/ui_controller.pyc
 %%EXAMPLESDIR%%/declarative/modelviews/objectlistmodel/objectlistmodel.py
 %%EXAMPLESDIR%%/declarative/modelviews/objectlistmodel/objectlistmodel.pyc
 %%EXAMPLESDIR%%/declarative/modelviews/objectlistmodel/objectlistmodel.qrc
@@ -1011,6 +1032,12 @@
 @dirrm %%EXAMPLESDIR%%/declarative/modelviews/objectlistmodel
 @dirrm %%EXAMPLESDIR%%/declarative/modelviews
 @dirrm %%EXAMPLESDIR%%/declarative
+@dirrm %%EXAMPLESDIR%%/dbus/remotecontrolledcar/controller
+@dirrm %%EXAMPLESDIR%%/dbus/remotecontrolledcar/car
+@dirrm %%EXAMPLESDIR%%/dbus/remotecontrolledcar
+@dirrm %%EXAMPLESDIR%%/dbus/pingpong
+@dirrm %%EXAMPLESDIR%%/dbus/chat
+@dirrm %%EXAMPLESDIR%%/dbus
 @dirrm %%EXAMPLESDIR%%/animation/stickman/animations
 @dirrm %%EXAMPLESDIR%%/animation/stickman
 @dirrm %%EXAMPLESDIR%%/animation/states

@@ -22,6 +22,8 @@
 %%QT_INCDIR_REL%%/Qsci/qscilexerjavascript.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerlua.h
 %%QT_INCDIR_REL%%/Qsci/qscilexermakefile.h
+%%QT_INCDIR_REL%%/Qsci/qscilexermatlab.h
+%%QT_INCDIR_REL%%/Qsci/qscilexeroctave.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerpascal.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerperl.h
 %%QT_INCDIR_REL%%/Qsci/qscilexerpostscript.h
@@ -44,14 +46,15 @@
 %%QT_INCDIR_REL%%/Qsci/qscistyle.h
 %%QT_INCDIR_REL%%/Qsci/qscistyledtext.h
 %%QT_LIBDIR_REL%%/libqscintilla2.so
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5.5
-%%QT_LIBDIR_REL%%/libqscintilla2.so.5.5.0
+%%QT_LIBDIR_REL%%/libqscintilla2.so.8
+%%QT_LIBDIR_REL%%/libqscintilla2.so.8.0
+%%QT_LIBDIR_REL%%/libqscintilla2.so.8.0.1
 share/qt4/qsci/api/python/Python-2.4.api
 share/qt4/qsci/api/python/Python-2.5.api
 share/qt4/qsci/api/python/Python-2.6.api
 share/qt4/qsci/api/python/Python-2.7.api
 share/qt4/qsci/api/python/Python-3.1.api
+share/qt4/qsci/api/python/Python-3.2.api
 %%NLS%%share/qt4/translations/qscintilla_cs.qm
 %%NLS%%share/qt4/translations/qscintilla_de.qm
 %%NLS%%share/qt4/translations/qscintilla_es.qm

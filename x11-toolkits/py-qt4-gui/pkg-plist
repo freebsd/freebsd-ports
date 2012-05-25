@@ -55,6 +55,7 @@
 %%SIP%%share/py-sip/QtGui/qgenericmatrix.sip
 %%SIP%%share/py-sip/QtGui/qgesture.sip
 %%SIP%%share/py-sip/QtGui/qgesturerecognizer.sip
+%%SIP%%share/py-sip/QtGui/qglyphrun.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsanchorlayout.sip
 %%SIP%%share/py-sip/QtGui/qgraphicseffect.sip
 %%SIP%%share/py-sip/QtGui/qgraphicsgridlayout.sip
@@ -74,6 +75,7 @@
 %%SIP%%share/py-sip/QtGui/qheaderview.sip
 %%SIP%%share/py-sip/QtGui/qicon.sip
 %%SIP%%share/py-sip/QtGui/qiconengine.sip
+%%SIP%%share/py-sip/QtGui/qidentityproxymodel.sip
 %%SIP%%share/py-sip/QtGui/qimage.sip
 %%SIP%%share/py-sip/QtGui/qimageiohandler.sip
 %%SIP%%share/py-sip/QtGui/qimagereader.sip
@@ -129,6 +131,7 @@
 %%SIP%%share/py-sip/QtGui/qpytextobject.sip
 %%SIP%%share/py-sip/QtGui/qquaternion.sip
 %%SIP%%share/py-sip/QtGui/qradiobutton.sip
+%%SIP%%share/py-sip/QtGui/qrawfont.sip
 %%SIP%%share/py-sip/QtGui/qregion.sip
 %%SIP%%share/py-sip/QtGui/qrgb.sip
 %%SIP%%share/py-sip/QtGui/qrubberband.sip

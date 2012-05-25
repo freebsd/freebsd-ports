@@ -7,11 +7,12 @@
 %%SIP%%share/py-sip/QtNetwork/qhostaddress.sip
 %%SIP%%share/py-sip/QtNetwork/qhostinfo.sip
 %%SIP%%share/py-sip/QtNetwork/qhttp.sip
+%%SIP%%share/py-sip/QtNetwork/qhttpmultipart.sip
 %%SIP%%share/py-sip/QtNetwork/qlocalserver.sip
 %%SIP%%share/py-sip/QtNetwork/qlocalsocket.sip
+%%SIP%%share/py-sip/QtNetwork/qnetworkaccessmanager.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkconfigmanager.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkconfiguration.sip
-%%SIP%%share/py-sip/QtNetwork/qnetworkaccessmanager.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkcookie.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkcookiejar.sip
 %%SIP%%share/py-sip/QtNetwork/qnetworkdiskcache.sip

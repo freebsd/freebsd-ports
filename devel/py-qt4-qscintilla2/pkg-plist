@@ -22,6 +22,8 @@
 %%SIP%%share/py-sip/Qsci/qscilexerjavascript.sip
 %%SIP%%share/py-sip/Qsci/qscilexerlua.sip
 %%SIP%%share/py-sip/Qsci/qscilexermakefile.sip
+%%SIP%%share/py-sip/Qsci/qscilexermatlab.sip
+%%SIP%%share/py-sip/Qsci/qscilexeroctave.sip
 %%SIP%%share/py-sip/Qsci/qscilexerpascal.sip
 %%SIP%%share/py-sip/Qsci/qscilexerperl.sip
 %%SIP%%share/py-sip/Qsci/qscilexerpostscript.sip
