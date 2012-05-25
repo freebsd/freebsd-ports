@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmail-scanner
-PORTVERSION=	2.01
-PORTREVISION=	6
+PORTVERSION=	2.10
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -20,7 +19,8 @@ RUN_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 		setuidgid:${PORTSDIR}/sysutils/daemontools
 BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 		unzip:${PORTSDIR}/archivers/unzip \
-		setuidgid:${PORTSDIR}/sysutils/daemontools
+		setuidgid:${PORTSDIR}/sysutils/daemontools \
+		bash:${PORTSDIR}/shells/bash
 
 CONFLICTS=	qmail-scanner-1.*
 
@@ -36,6 +36,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
 		--qmaildir "${QMAIL_PREFIX}" \
 		--spooldir "${SPOOLDIR}" \
+		--etcdir "${SPOOLDIR}" \
+		--logdir "${SPOOLDIR}" \
 		--bindir "${PREFIX}/bin" \
 		--qmail-queue-binary "${QMAIL_QUEUE}" \
 		--mime-unpacker "reformime" \
@@ -67,13 +69,10 @@ SUB_LIST+=	QS_USER=${QS_USER} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
 # Options
 .if defined(WITH_TNEF)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
 
 .if !defined(WITH_FIX_MIME)
@@ -93,6 +92,7 @@ SUB_LIST+=	CWRAPPER=yes
 SUB_LIST+=	QSQ_TARGET=qmail-scanner-queue
 CWRAPPER_FLG=	yes
 PLIST_SUB+=	CWRAPPER=""
+CONFIGURE_ARGS+=--skip-setuid-test
 .else
 SUB_LIST+=	CWRAPPER=no
 SUB_LIST+=	QSQ_TARGET=qmail-scanner-queue.pl
@@ -106,6 +106,10 @@ CONFIGURE_ARGS+=	--qs-user "${QS_USER}"
 
 .if defined(QS_ADMIN)
 CONFIGURE_ARGS+=	--admin "${QS_ADMIN}"
+.endif
+
+.if defined(QS_DOMAIN)
+CONFIGURE_ARGS+=	--domain "${QS_DOMAIN}"
 .endif
 
 .if defined(QS_ADMIN_DESC)
@@ -130,8 +134,24 @@ CONFIGURE_ARGS+=	--notify psender,precips
 CONFIGURE_ARGS+=	--local-domains "${QS_LOCALDOMAINS}"
 .endif
 
+.if defined(QS_DLPMONITOR)
+CONFIGURE_ARGS+=	--dlp-monitor "${QS_DLPMONITOR}"
+.endif
+
 .if defined(QS_SA_QUARANTINE)
 CONFIGURE_ARGS+=	--sa-quarantine "${QS_SA_QUARANTINE}"
+.endif
+
+.if defined(QS_SA_TIMEOUT)
+CONFIGURE_ARGS+=	--sa-timeout "${QS_SA_TIMEOUT}"
+.endif
+
+.if defined(QS_SA_FT)
+CONFIGURE_ARGS+=	--sa-faulttolerant "${QS_SA_FT}"
+.endif
+
+.if defined(QS_SA_MAXSIZE)
+CONFIGURE_ARGS+=	--sa-maxsize "${QS_SA_MAXSIZE}"
 .endif
 
 .if defined(QS_LANG)
@@ -177,8 +197,10 @@ pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "QS_USER			User to run Q-S"
 	@${ECHO_MSG} "			(Default: qscand)"
-	@${ECHO_MSG} "QS_ADMIN		Administrator Q-S Address"
+	@${ECHO_MSG} "QS_ADMIN		Administrator Q-S Address (just username)"
 	@${ECHO_MSG} "			(Default: postmaster)"
+	@${ECHO_MSG} "QS_DOMAIN		Administrator Domain (QS_ADMIN@QS_DOMAIN)"
+	@${ECHO_MSG} "			(Default: hostname)"
 	@${ECHO_MSG} "QS_ADMIN_DESC		Real Name of Administrator Q-S"
 	@${ECHO_MSG} "			(Default: System Anti-Virus Administrator)"
 	@${ECHO_MSG} "QS_SCANNERS		List of scanners installed, e.g. bitdefender,nod32"
@@ -188,8 +210,18 @@ pre-configure:
 	@${ECHO_MSG} "			(Default: yes|no)"
 	@${ECHO_MSG} "QS_NOTIFY		Who has to be notify of viruses/spams"
 	@${ECHO_MSG} "			(Default: 'psender|precips')"
-	@${ECHO_MSG} "QS_LOCALDOMAINS	Domains classified as local domains preventing alerts"
+	@${ECHO_MSG} "QS_LOCALDOMAINS		Domains classified as local domains preventing alerts"
 	@${ECHO_MSG} "			of externals users (and mailing-lists...)"
+	@${ECHO_MSG} "QS_DLPMONITOR		Using this will cause Q-S to *not* block events that match"
+	@${ECHO_MSG} "			this regex."
+	@${ECHO_MSG} "QS_SA_TIMEOUT		This is the max number of seconds you will allow spamc to"
+	@${ECHO_MSG} "			take on processing a mail message."
+	@${ECHO_MSG} "QS_SA_FT		This can be used in addition to sa-timeout as a way of"
+	@${ECHO_MSG} "			telling Qmail-Scanner to let SA 'have another go'"
+	@${ECHO_MSG} "			at processing a message if it was unable to get it right"
+	@${ECHO_MSG} "			the first time."
+	@${ECHO_MSG} "QS_SA_MAXSIZE		This size (in bytes) sets the max size email that will be"
+	@${ECHO_MSG} "			processed by SpamAssassin."
 	@${ECHO_MSG} "QS_SA_QUARANTINE	If SA tags a message as having a score higher than"
 	@${ECHO_MSG} "			'required_hits', then that message will be quarantined"
 	@${ECHO_MSG} "			into a new maildir '/.spam/' and not delivered to end-user"
@@ -246,7 +278,7 @@ do-build:
 	@${REINPLACE_CMD} -E 's|^(#define REAL_PATH ")/var/qmail/bin/qmail-scanner-queue.pl(".*)$$|\1${PREFIX}/bin/qmail-scanner-queue.pl\2|' \
 		${WRKSRC}/contrib/qmail-scanner-queue.c
 	# compile the c wrapper:
-	@${CC} ${CFLAGS} -o ${WRKSRC}/contrib/qmail-scanner-queue ${WRKSRC}/contrib/qmail-scanner-queue.c
+	@${MAKE} -C ${WRKSRC}/contrib
 .endif
 
 do-install:

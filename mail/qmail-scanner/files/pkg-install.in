@@ -18,7 +18,7 @@ PRE-INSTALL)
   ${PW} groupshow -n ${QS_USER} >/dev/null 2>&1 \
     || ${PW} groupadd -n ${QS_USER} -g ${QS_ID}
   ${PW} usershow -n ${QS_USER} >/dev/null 2>&1 \
-    || ${PW} useradd ${QS_USER} -g ${QS_USER} -u ${QS_ID} -s ${NOLOGIN}
+    || ${PW} useradd ${QS_USER} -g ${QS_USER} -u ${QS_ID} -s ${NOLOGIN} -d ${SPOOLDIR}
   ;;
 POST-INSTALL)
   # Directories
