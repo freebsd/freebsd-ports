@@ -7,13 +7,12 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
 		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
-		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/heimdal/src/ \
-		ftp://ftp.ayamura.org/pub/heimdal/
+		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/heimdal/src/
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	A popular BSD-licensed implementation of Kerberos 5
@@ -77,10 +76,10 @@ USE_BDB=	yes
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${BDB_LIB_DIR}
-CONFIGURE_ARGS+=	--with-berkeley-db=${LOCALBASE}
-#			--with-berkeley-db-include=${BDB_INCLUDE_DIR}
+CONFIGURE_ARGS+=	--with-berkeley-db=${LOCALBASE} \
+			--with-berkeley-db-include=${BDB_INCLUDE_DIR}
 .else
-CONFIGURE_ARGS+=	--without-berkeley-db
+CONFIGURE_ARGS+=	--with-berkeley-db=no
 .endif
 
 .if defined(WITH_SQLITE)
