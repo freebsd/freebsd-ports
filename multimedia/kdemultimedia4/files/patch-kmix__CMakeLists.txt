@@ -1,0 +1,54 @@
+commit 7d8054b0e80e8a060c37f815ceb11d66cd67d302
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Sat May 26 12:35:20 2012 -0300
+
+    Do not look for libcanberra instead of undefining HAVE_CANBERRA.
+    
+    Follow-up to commit e1cfb1341a21437e0406c421161ff280f6b77fdc. Instead
+    of simply #undef'ing HAVE_CANBERRA in mixer_pulse.cpp, it is better to
+    not look for libcanberra at compile-time, otherwise CMake will still
+    try to link agaist libcanberra via -lcanberra instead of
+    -l/path/to/libcanberra.so (this is due to libcanberra being found via
+    pkg-config instead of CMake; I will fix this in master in a few
+    minutes) and break compilation when libcanberra is not in a standard
+    linker path.
+    
+    CCMAIL: esken@kde.org
+    CCMAIL: colin@mageia.org
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b3dff75..bf8a800 100644
+--- kmix/CMakeLists.txt
++++ kmix/CMakeLists.txt
+@@ -9,8 +9,11 @@ find_package(Alsa)
+ macro_optional_find_package(PulseAudio "0.9.12")
+ macro_log_feature(PULSEAUDIO_FOUND "PulseAudio" "PulseAudio Audio Server" "http://www.pulseaudio.org/" FALSE "0.9.12" "libpulse is needed to let KMix control PulseAudio")
+ find_package(GLIB2)
+-pkg_check_modules(CANBERRA libcanberra)
+-macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library" "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
++
++# FIXME: Disable libcanberra support in the 4.8 branch because it is
++#        still under development in master.
++# pkg_check_modules(CANBERRA libcanberra)
++# macro_log_feature(CANBERRA_FOUND "libcanberra" "libcanberra audio library" "http://0pointer.de/lennart/projects/libcanberra/" FALSE "" "libcanberra is needed for kmix sound feedback")
+ 
+ alsa_configure_file(${CMAKE_BINARY_DIR}/config-alsa.h)
+ 
+diff --git a/backends/mixer_pulse.cpp b/backends/mixer_pulse.cpp
+index 51c7dc9..7a51b72 100644
+--- kmix/backends/mixer_pulse.cpp
++++ kmix/backends/mixer_pulse.cpp
+@@ -32,13 +32,6 @@
+ #include <pulse/glib-mainloop.h>
+ #include <pulse/ext-stream-restore.h>
+ 
+-// Undef'ing HAVE_CANBERRA here, because it should not yet be active
+-// in bracnh 4.8 and I cannot get it disabled otherwise.
+-// Commenting out pkg_check_modules(CANBERRA libcanberra) in 
+-// kmix/CMakeLists.txt doesn't search for canberra, but still
+-// HAVE_CANBERRA is defined.
+-#undef HAVE_CANBERRA
+-
+ #if defined(HAVE_CANBERRA)
+ #  include <canberra.h>
+ #endif
