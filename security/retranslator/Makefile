@@ -20,11 +20,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 630000
 LIB_DEPENDS+=	m.4:${PORTSDIR}/misc/compat6x
-.endif
 
 do-configure:
 
@@ -46,4 +42,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
