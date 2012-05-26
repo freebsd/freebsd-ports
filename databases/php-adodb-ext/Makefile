@@ -7,7 +7,7 @@
 
 PORTNAME=	adodb-ext
 PORTVERSION=	5.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://phplens.com/lens/dl/
 PKGNAMEPREFIX=	php-
@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/adodb-${PORTVERSION:S/.//}
 USE_PHP=	yes
 USE_PHPIZE=	yes
 DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 USE_ZIP=	yes
 
 CONFIGURE_ARGS=		--with-php-config=${PREFIX}/bin/php-config \
@@ -32,7 +31,9 @@ USE_DOS2UNIX=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} != "52"
+.if ${PHP_VER} == "5"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-php54-adodb.c
+.elif ${PHP_VER} != "52"
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-adodb.c
 .endif
 
