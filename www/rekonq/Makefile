@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	rekonq
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.9.2
 CATEGORIES=	www kde
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:R}
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	A lightweight KDE browser based on WebKit
+COMMENT=	Lightweight KDE browser based on WebKit
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	kdelibs automoc4 kdeprefix
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	script webkit \
+		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
