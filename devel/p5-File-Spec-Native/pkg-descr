@@ -1,0 +1,6 @@
+This module is a stupid hack to make the default File::Spec behavior
+available from a subclass.  This can be useful when using another
+module that expects a subclass of File::Spec but you want to use the
+current, native OS format (automatically detected by File::Spec).
+
+WWW: http://search.cpan.org/dist/File-Spec-Native/
