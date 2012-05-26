@@ -31,7 +31,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.cyberarmy.at/dist/ \
 		http://tor.dont-know-me.at/dist/ \
 		http://tor.factor.cc/dist/ \
-		http://tor.fodt.it/dist/ \
 		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
 		http://tor.myrl.net/dist/ \
