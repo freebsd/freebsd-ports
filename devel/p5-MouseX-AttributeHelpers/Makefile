@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MouseX-AttributeHelpers
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MASAKI
@@ -35,6 +35,7 @@ MAN3=	MouseX::AttributeHelpers.3 \
 	MouseX::AttributeHelpers::Collection::List.3 \
 	MouseX::AttributeHelpers::Counter.3 \
 	MouseX::AttributeHelpers::Number.3 \
-	MouseX::AttributeHelpers::String.3
+	MouseX::AttributeHelpers::String.3 \
+	MouseX::README.3
 
 .include <bsd.port.mk>

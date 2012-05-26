@@ -10,6 +10,7 @@
 %%SITE_PERL%%/MouseX/AttributeHelpers/Counter.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/Number.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/String.pm
+%%SITE_PERL%%/MouseX/README.pod
 @dirrm %%SITE_PERL%%/MouseX/AttributeHelpers/Collection
 @dirrm %%SITE_PERL%%/MouseX/AttributeHelpers
 @dirrmtry %%SITE_PERL%%/MouseX
