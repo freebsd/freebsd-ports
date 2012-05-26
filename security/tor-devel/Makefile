@@ -70,8 +70,6 @@ CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBAS
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
-MAKE_JOBS_UNSAFE=	yes
-
 OPTIONS=	BUFFEREVENTS "use libevent's buffered IO" off \
 		BUFFREELISTS "freelists for buffer RAM" on \
 		GMAKE "parallel build safety via GNU make" off \
