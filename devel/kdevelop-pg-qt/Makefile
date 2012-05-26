@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdevelop
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/src
@@ -17,6 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parser-generator from KDevplatform
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+
+USE_GCC=        4.6+
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
