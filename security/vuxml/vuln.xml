@@ -27119,7 +27119,7 @@ Note:  Please add new entries to the beginning of this file.
 	  Mandatory Access Control (MAC) restrictions.</p>
 	<h1>Workaround:</h1>
 	<p>No workaround is available, but only systems running the 64
-	  bit FreeSD/amd64 kernels are vulnerable.</p>
+	  bit FreeBSD/amd64 kernels are vulnerable.</p>
 	<p>Systems with 64 bit capable CPUs, but running the 32 bit
 	  FreeBSD/i386 kernel are not vulnerable.</p>
       </body>
