@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	UNIVERSAL-isa
-PORTVERSION=	1.03
+PORTVERSION=	1.20120418
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Try to recover from people calling UNIVERSAL::isa as a function
 
-BUILD_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		UNIVERSAL::isa.3
 
