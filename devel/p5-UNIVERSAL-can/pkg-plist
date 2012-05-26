@@ -1,2 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/can/.packlist
 %%SITE_PERL%%/UNIVERSAL/can.pm
 @dirrmtry %%SITE_PERL%%/UNIVERSAL
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/can
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
