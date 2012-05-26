@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i3
-DISTVERSION=	4.1.2
+DISTVERSION=	4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -24,8 +24,11 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-icccm.4:${PORTSDIR}/x11/xcb-util-wm \
 		ev.4:${PORTSDIR}/devel/libev \
 		yajl.2:${PORTSDIR}/devel/yajl
-RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
+RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
+USE_PERL5=	yes
 USE_XORG=	x11 xcursor
 USE_BISON=	build
 USE_BZIP2=	yes
@@ -45,24 +48,30 @@ PLIST_FILES=	bin/i3 \
 		bin/i3-sensible-terminal \
 		bin/i3-wsbar \
 		etc/i3/config.sample \
+		etc/i3/config.keycodes \
 		etc/i3/welcome
 
 PLIST_DIRS=	etc/i3
 
-MANUALS=	i3-config-wizard.1 i3-input.1 i3-migrate-config-to-v4.1 i3-msg.1 i3-nagbar.1 i3-wsbar.1 i3.1
+MANUALS=	i3-config-wizard.1 i3-input.1 \
+		i3-migrate-config-to-v4.1 i3-msg.1 \
+		i3-nagbar.1 i3-wsbar.1 \
+		i3.1 i3-sensible-terminal.1
 
 MAN1=	${MANUALS}
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd ${WRKSRC} && ${CP} i3.config config.sample
 	@cd ${WRKSRC} && ${CP} i3.welcome welcome
+	@cd ${WRKSRC} && ${CP} i3.config config.sample
+	@cd ${WRKSRC} && ${CP} i3.config.keycodes config.keycodes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/src/config.c
-	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/config.sample
 	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/welcome
+	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/config.sample
+	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/config.keycodes
 	@${REINPLACE_CMD} -e 's|PREFIX|${PREFIX}/|g' ${WRKSRC}/man/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/common.mk
 	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' ${WRKSRC}/man/i3.1
@@ -81,16 +90,17 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/bin/
 .endfor
 	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/welcome ${PREFIX}/etc/${PORTNAME}/welcome
+	${INSTALL_DATA} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/config.keycodes ${PREFIX}/etc/${PORTNAME}
 .for i in ${MANUALS}
 	${INSTALL_MAN} ${WRKSRC}/man/${i} ${MANPREFIX}/man/man1/
 .endfor
 
 	@${ECHO_MSG} "======================================================================================"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	${PORTNAME} need a config file! A example do you found on ${PREFIX}/etc/${PORTNAME}"
-	@${ECHO_MSG} "	Please rename it in ${PREFIX}/etc/${PORTNAME}/config"
+	@${ECHO_MSG} "	${PORTNAME} needs a config file! You can find an example in ${PREFIX}/etc/${PORTNAME}"
+	@${ECHO_MSG} "	Please rename it to ${PREFIX}/etc/${PORTNAME}/config"
 	@${ECHO_MSG} "	For more information read the manpage :)"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "======================================================================================"
