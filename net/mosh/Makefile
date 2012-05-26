@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mosh
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/keithw/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
