@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple, fast implementation of an in-memory LRU cache
 
-TEST_DEPENDS=	p5-Test-Simple>=0.98:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
+TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	yes
 
