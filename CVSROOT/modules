@@ -134,6 +134,7 @@ ports_x11_wm                    ports/x11-wm
 #
 # Ports modules
 #
+0ad                             ports/games/0ad
 0verkill                        ports/games/0verkill
 2bsd-diff                       ports/textproc/2bsd-diff
 2bsd-vi                         ports/editors/2bsd-vi
@@ -534,6 +535,7 @@ amule                           ports/net-p2p/amule
 amule-devel                     ports/net-p2p/amule-devel
 an                              ports/games/an
 anacron                         ports/sysutils/anacron
+analitza                        ports/math/analitza
 analog                          ports/www/analog
 and                             ports/sysutils/and
 angband                         ports/games/angband
@@ -673,6 +675,7 @@ ario                            ports/audio/ario
 arirang                         ports/security/arirang
 arista                          ports/multimedia/arista
 arj                             ports/archivers/arj
+ark                             ports/archivers/ark
 arkpandora                      ports/x11-fonts/arkpandora
 arm                             ports/security/arm
 arm-elf-binutils                ports/devel/arm-elf-binutils
@@ -5455,6 +5458,7 @@ horde4-turba                    ports/mail/horde4-turba
 horde4-webmail                  ports/mail/horde4-webmail
 horde4-whups                    ports/devel/horde4-whups
 horde4-wicked                   ports/www/horde4-wicked
+hornetq                         ports/net/hornetq
 host-setup                      ports/sysutils/host-setup
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
@@ -6752,6 +6756,7 @@ jakarta-commons-jxpath          ports/devel/jakarta-commons-jxpath
 jakarta-commons-lang            ports/java/jakarta-commons-lang
 jakarta-commons-logging         ports/java/jakarta-commons-logging
 jakarta-commons-math            ports/math/jakarta-commons-math
+jakarta-commons-math3           ports/math/jakarta-commons-math3
 jakarta-commons-modeler         ports/devel/jakarta-commons-modeler
 jakarta-commons-net             ports/net/jakarta-commons-net
 jakarta-commons-pool            ports/java/jakarta-commons-pool
@@ -6991,6 +6996,8 @@ k9copy                          ports/multimedia/k9copy
 k9copy-kde4                     ports/multimedia/k9copy-kde4
 kBuild                          ports/devel/kBuild
 kBuild-devel                    ports/devel/kBuild-devel
+kaccessible                     ports/accessibility/kaccessible
+kactivities                     ports/x11/kactivities
 kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffeine                        ports/multimedia/kaffeine
 kaffeine-mozilla                ports/multimedia/kaffeine-mozilla
@@ -7040,9 +7047,11 @@ kbruch                          ports/math/kbruch
 kbuild                          ports/devel/kBuild
 kbuild-devel                    ports/devel/kBuild-devel
 kcachegrind                     ports/devel/kcachegrind
+kcalc                           ports/math/kcalc
 kcd                             ports/misc/kcd
 kcdlabel                        ports/print/kcdlabel
 kcemu                           ports/emulators/kcemu
+kcharselect                     ports/deskutils/kcharselect
 kcheckers                       ports/games/kcheckers
 kcheckgmail                     ports/mail/kcheckgmail
 kchm                            ports/deskutils/kchm
@@ -7171,6 +7180,7 @@ kde4-l10n-eo                    ports/misc/kde4-l10n-eo
 kde4-l10n-es                    ports/misc/kde4-l10n-es
 kde4-l10n-et                    ports/misc/kde4-l10n-et
 kde4-l10n-eu                    ports/misc/kde4-l10n-eu
+kde4-l10n-fa                    ports/misc/kde4-l10n-fa
 kde4-l10n-fi                    ports/misc/kde4-l10n-fi
 kde4-l10n-fy                    ports/misc/kde4-l10n-fy
 kde4-l10n-ga                    ports/misc/kde4-l10n-ga
@@ -7228,16 +7238,14 @@ kdeartwork3                     ports/x11-themes/kdeartwork3
 kdeartwork4                     ports/x11-themes/kdeartwork4
 kdebase3                        ports/x11/kdebase3
 kdebindings4                    ports/devel/kdebindings4
-kdebindings4-kross-interpreters  ports/devel/kdebindings4-kross-interpreters
-kdebindings4-python             ports/devel/kdebindings4-python
+kdebindings4-perl-perlkde       ports/devel/kdebindings4-perl-perlkde
+kdebindings4-perl-perlqt        ports/devel/kdebindings4-perl-perlqt
 kdebindings4-python-krosspython  ports/devel/kdebindings4-python-krosspython
 kdebindings4-python-pykde4      ports/devel/kdebindings4-python-pykde4
 kdebindings4-python-pykdeuic4   ports/devel/kdebindings4-python-pykdeuic4
-kdebindings4-ruby               ports/devel/kdebindings4-ruby
 kdebindings4-ruby-korundum      ports/devel/kdebindings4-ruby-korundum
 kdebindings4-ruby-krossruby     ports/devel/kdebindings4-ruby-krossruby
 kdebindings4-ruby-qtruby        ports/devel/kdebindings4-ruby-qtruby
-kdebindings4-smoke              ports/devel/kdebindings4-smoke
 kdebindings4-smoke-smokegen     ports/devel/kdebindings4-smoke-smokegen
 kdebindings4-smoke-smokekde     ports/devel/kdebindings4-smoke-smokekde
 kdebindings4-smoke-smokeqt      ports/devel/kdebindings4-smoke-smokeqt
@@ -7264,6 +7272,8 @@ kdenlive                        ports/multimedia/kdenlive
 kdepim3                         ports/deskutils/kdepim3
 kdepim4                         ports/deskutils/kdepim4
 kdepim4-runtime                 ports/deskutils/kdepim4-runtime
+kdepim44                        ports/deskutils/kdepim44
+kdepim44-runtime                ports/deskutils/kdepim44-runtime
 kdepimlibs4                     ports/deskutils/kdepimlibs4
 kdeplasma-addons                ports/deskutils/kdeplasma-addons
 kdesdk3                         ports/devel/kdesdk3
@@ -7282,6 +7292,7 @@ kdevelop-php-docs               ports/devel/kdevelop-php-docs
 kdevplatform                    ports/devel/kdevplatform
 kdewebdev                       ports/www/kdewebdev
 kdewebdev4                      ports/www/kdewebdev4
+kdf                             ports/sysutils/kdf
 kdiff3                          ports/textproc/kdiff3
 kdirstat                        ports/sysutils/kdirstat
 kdissert                        ports/deskutils/kdissert
@@ -7304,11 +7315,13 @@ keynav                          ports/x11/keynav
 keynote                         ports/security/keynote
 keyprint                        ports/security/keyprint
 kfile-plugins                   ports/misc/kfile-plugins
+kfloppy                         ports/sysutils/kfloppy
 kfreerings                      ports/games/kfreerings
 kftpgrabber                     ports/ftp/kftpgrabber
 kgamma                          ports/x11/kgamma
 kgeography                      ports/misc/kgeography
 kgpg                            ports/security/kgpg
+kgpg-kde4                       ports/security/kgpg-kde4
 kgraphviewer                    ports/graphics/kgraphviewer
 kgrubeditor                     ports/sysutils/kgrubeditor
 kgtk                            ports/sysutils/kgtk
@@ -7369,6 +7382,7 @@ klondike                        ports/games/klondike
 klone                           ports/lang/klone
 kludge3d                        ports/graphics/kludge3d
 kluje                           ports/deskutils/kluje
+kmag                            ports/accessibility/kmag
 kmancala                        ports/games/kmancala
 kmastermind                     ports/games/kmastermind
 kmatrix3d                       ports/deskutils/kmatrix3d
@@ -7388,6 +7402,8 @@ kmflcomp                        ports/textproc/kmflcomp
 kmilo                           ports/sysutils/kmilo
 kmldonkey                       ports/net-p2p/kmldonkey
 kmobiletools                    ports/comms/kmobiletools
+kmousetool                      ports/accessibility/kmousetool
+kmouth                          ports/accessibility/kmouth
 kmovisto                        ports/science/kmovisto
 kmp                             ports/audio/kmp
 kmplayer                        ports/multimedia/kmplayer
@@ -7584,6 +7600,7 @@ krdesktop                       ports/net/krdesktop
 krecipes                        ports/misc/krecipes
 krecipes-kde4                   ports/misc/krecipes-kde4
 krefty                          ports/deskutils/krefty
+kremotecontrol                  ports/comms/kremotecontrol
 krename                         ports/sysutils/krename
 krename-kde4                    ports/sysutils/krename-kde4
 kripp                           ports/security/kripp
@@ -7617,6 +7634,7 @@ ksynaptics                      ports/sysutils/ksynaptics
 ksysguardd                      ports/sysutils/ksysguardd
 ktagebuch                       ports/deskutils/ktagebuch
 ktextdecode                     ports/converters/ktextdecode
+ktimer                          ports/x11-clocks/ktimer
 ktoblzcheck                     ports/finance/ktoblzcheck
 ktorrent                        ports/net-p2p/ktorrent
 ktorrent2                       ports/net-p2p/ktorrent2
@@ -7632,6 +7650,7 @@ kuklomenos                      ports/games/kuklomenos
 kumofs                          ports/databases/kumofs
 kvirc                           ports/irc/kvirc
 kvirc-qt4                       ports/irc/kvirc-qt4
+kwallet                         ports/security/kwallet
 kwappen                         ports/games/kwappen
 kwatch                          ports/misc/kwatch
 kwebkitpart                     ports/www/kwebkitpart
@@ -8163,6 +8182,7 @@ libkipi                         ports/graphics/libkipi
 libkipi-kde4                    ports/graphics/libkipi-kde4
 libkmfl                         ports/textproc/libkmfl
 libkml                          ports/science/libkml
+libkonq                         ports/x11/libkonq
 libkpass                        ports/security/libkpass
 libksane                        ports/graphics/libksane
 libksba                         ports/security/libksba
@@ -11039,6 +11059,7 @@ p5-AnyEvent-DBI                 ports/devel/p5-AnyEvent-DBI
 p5-AnyEvent-DBI-Abstract        ports/devel/p5-AnyEvent-DBI-Abstract
 p5-AnyEvent-DBus                ports/devel/p5-AnyEvent-DBus
 p5-AnyEvent-Filesys-Notify      ports/devel/p5-AnyEvent-Filesys-Notify
+p5-AnyEvent-Gearman             ports/devel/p5-AnyEvent-Gearman
 p5-AnyEvent-Graphite            ports/devel/p5-AnyEvent-Graphite
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
@@ -13890,6 +13911,7 @@ p5-ORLite-Migrate               ports/databases/p5-ORLite-Migrate
 p5-Object-Accessor              ports/devel/p5-Object-Accessor
 p5-Object-Array                 ports/devel/p5-Object-Array
 p5-Object-Authority             ports/devel/p5-Object-Authority
+p5-Object-Container             ports/devel/p5-Object-Container
 p5-Object-Declare               ports/devel/p5-Object-Declare
 p5-Object-Destroyer             ports/devel/p5-Object-Destroyer
 p5-Object-Enum                  ports/devel/p5-Object-Enum
@@ -15525,6 +15547,7 @@ p5-anyevent-dbi                 ports/devel/p5-AnyEvent-DBI
 p5-anyevent-dbi-abstract        ports/devel/p5-AnyEvent-DBI-Abstract
 p5-anyevent-dbus                ports/devel/p5-AnyEvent-DBus
 p5-anyevent-filesys-notify      ports/devel/p5-AnyEvent-Filesys-Notify
+p5-anyevent-gearman             ports/devel/p5-AnyEvent-Gearman
 p5-anyevent-graphite            ports/devel/p5-AnyEvent-Graphite
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
@@ -18422,6 +18445,7 @@ p5-oai-harvester                ports/net/p5-OAI-Harvester
 p5-object-accessor              ports/devel/p5-Object-Accessor
 p5-object-array                 ports/devel/p5-Object-Array
 p5-object-authority             ports/devel/p5-Object-Authority
+p5-object-container             ports/devel/p5-Object-Container
 p5-object-declare               ports/devel/p5-Object-Declare
 p5-object-destroyer             ports/devel/p5-Object-Destroyer
 p5-object-enum                  ports/devel/p5-Object-Enum
@@ -21681,7 +21705,6 @@ plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
 plasma-applet-fancytasks        ports/deskutils/plasma-applet-fancytasks
 plasma-applet-ftpmonitor        ports/ftp/plasma-applet-ftpmonitor
 plasma-applet-geekclock         ports/x11-clocks/plasma-applet-geekclock
-plasma-applet-icontasks         ports/deskutils/plasma-applet-icontasks
 plasma-applet-panelspacer       ports/deskutils/plasma-applet-panelspacer
 plasma-applet-playwolf          ports/deskutils/plasma-applet-playwolf
 plasma-applet-serverstatuswidget  ports/deskutils/plasma-applet-serverstatuswidget
@@ -22544,6 +22567,7 @@ py-feedgenerator                ports/www/py-feedgenerator
 py-feedparser                   ports/textproc/py-feedparser
 py-ffc                          ports/math/py-ffc
 py-fiat                         ports/math/py-fiat
+py-fife                         ports/games/py-fife
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
 py-firebirdsql                  ports/databases/py-firebirdsql
@@ -26170,6 +26194,7 @@ super-smack                     ports/benchmarks/super-smack
 super_methane_brothers          ports/games/super_methane_brothers
 supercat                        ports/textproc/supercat
 superiotool                     ports/sysutils/superiotool
+superkaramba                    ports/deskutils/superkaramba
 superkaramba-lwp                ports/deskutils/superkaramba-lwp
 superlu                         ports/math/superlu
 superlu_mt                      ports/math/superlu_mt
@@ -26217,6 +26242,7 @@ swarp                           ports/x11/swarp
 swatch                          ports/security/swatch
 swe                             ports/astro/swe
 sweep                           ports/audio/sweep
+sweeper                         ports/sysutils/sweeper
 swfdec                          ports/graphics/swfdec
 swfdec-gnome                    ports/multimedia/swfdec-gnome
 swfdec-plugin                   ports/www/swfdec-plugin
@@ -27400,6 +27426,7 @@ vhcp                            ports/net-p2p/vhcp
 vi-aspell                       ports/vietnamese/aspell
 vi-hunspell                     ports/vietnamese/hunspell
 vi-kde3-i18n                    ports/vietnamese/kde3-i18n
+vi-kde4-l10n                    ports/vietnamese/kde4-l10n
 vi-libreoffice                  ports/vietnamese/libreoffice
 vi-libviet                      ports/vietnamese/libviet
 vi-unicode-uhoai                ports/vietnamese/unicode-uhoai
