@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Physics-Unit
-PORTVERSION=	0.04
+PORTVERSION=	0.53
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +14,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Manipulate Physics units and dimensions
 
-PERL_CONFIGURE=	yes
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-MAN3=		Physics::Unit.3 Physics::UnitImpl.3 Physics::Unit::Scalar.3 \
-		Physics::Unit::ScalarImpl.3 Physics::Unit::ScalarSubtypes.3 \
-		Physics::Unit::Vector.3
+PERL_MODBUILD=	yes
+
+MAN1=		physics-unit.1
+MAN3=		Physics::Unit.3 \
+		Physics::Unit::Implementation.3 \
+		Physics::Unit::Scalar.3 \
+		Physics::Unit::Scalar::Implementation.3 \
+		Physics::Unit::UnitsByName.3 \
+		Physics::Unit::UnitsByType.3
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-.endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/eg/ && ${COPYTREE_SHARE} '*.pl' ${EXAMPLESDIR})
