@@ -1348,6 +1348,7 @@
     SUBDIR += p5-Cache-AgainstFile
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Cache-FastMmap
+    SUBDIR += p5-Cache-LRU
     SUBDIR += p5-Cache-Memcached-Tie
     SUBDIR += p5-Cache-Mmap
     SUBDIR += p5-Cache-Simple-TimedExpiry
