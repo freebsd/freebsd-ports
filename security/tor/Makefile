@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.35
-PORTREVISION=	1
+DISTVERSION=	0.2.2.36
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -31,7 +30,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://tor.cyberarmy.at/dist/ \
 		http://tor.dont-know-me.at/dist/ \
 		http://tor.factor.cc/dist/ \
-		http://tor.fodt.it/dist/ \
 		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
 		http://tor.myrl.net/dist/ \
