@@ -25,13 +25,6 @@ BUILD_WRKSRC=	${WRKSRC}/nxserver-helper
 
 NXPREFIX?=	${PREFIX}/NX
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601101
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-freenx-nxserver \
-	${PATCHDIR}/extra-patch-freenx-nxsetup
-.endif
-
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|/usr/local/|${PREFIX}/|" \
 		-e "s|!/bin/bash|!${PREFIX}/bin/bash|" \
@@ -53,4 +46,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
