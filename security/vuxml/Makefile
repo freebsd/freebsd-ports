@@ -80,6 +80,7 @@ validate: tidy
 	@if ${DIFF} -u "${VUXML_FILE}" "${VUXML_FILE}.tidy"; \
 	then \
 		${ECHO_MSG} ... seems okay; \
+		${RM} "${VUXML_FILE}.tidy"; \
 	else \
 		return 1; \
 	fi
