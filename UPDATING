@@ -5,13 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120527:
+  AFFECTS: users of x11-toolkits/qt4-gui
+  AUTHOR: kde@FreeBSD.org
+
+  Qt started using the raster graphics system engine, which relies on
+  shared memory. Be sure to check pkg-message.
+
 20120526:
   AFFECTS: users of x11-wm/xfce4
   AUTHOR: xfce@FreeBSD.org
 
   When upgrading from Xfce 4.8 to 4.10 make sure you uninstall the following
   ports:
- 
+
     misc/xfce4-utils
     x11-fm/thunar-vfs
 
