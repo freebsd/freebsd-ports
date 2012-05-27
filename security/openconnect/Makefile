@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openconnect
-PORTVERSION=	3.16
+PORTVERSION=	3.20
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -18,10 +18,10 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls --with-openssl=/usr
-MAKE_ENV+=	OPENSSL_CFLAGS=-I/usr/include
+CONFIGURE_ARGS=	--disable-nls --with-vpnc-script=${LOCALBASE}/sbin/vpnc-script
 USE_AUTOTOOLS=	aclocal autoconf libtool
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
@@ -53,14 +53,10 @@ LIB_DEPENDS+=	proxy.1:${PORTSDIR}/net/libproxy
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e '/SUBDIRS += www/d' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|.{with_openssl}/libssl.a .{with_openssl}/libcrypto.a -ldl|-lssl -lcrypto|g' \
-		${WRKSRC}/configure.ac
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/openconnect.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/TODO ${DOCSDIR}
 .endif
 
