@@ -56,6 +56,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/clang:${PORTSDIR}/lang/clang
 CFLAGS+=	-march=i586
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: Unsupported relocation type 10
+.endif
+
 post-patch:
 	${RM} ${WRKSRC}/GNUmakefile
 
