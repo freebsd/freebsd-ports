@@ -46,6 +46,10 @@ IGNORE=		needs <sys/buf_ring.h>
 IGNORE=		requires kernel source to be installed
 .endif
 
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on powerpc or sparc64
+.endif
+
 do-install:
 	${INSTALL} ${WRKSRC}/${PORTNAME}.ko ${KMODDIR}
 	kldxref ${KMODDIR}
