@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Middleware-Deflater
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZEBURO
@@ -18,6 +18,9 @@ COMMENT=	Perl extension to compress response body with Gzip or Deflate
 RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	\
+	p5-IO-Handle-Util>0:${PORTSDIR}/devel/p5-IO-Handle-Util \
+	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 
 PERL_CONFIGURE=	yes
 
