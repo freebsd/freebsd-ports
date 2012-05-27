@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Metadata/.packlist
+%%SITE_PERL%%/Dist/Metadata.pm
+%%SITE_PERL%%/Dist/Metadata/Archive.pm
+%%SITE_PERL%%/Dist/Metadata/Dir.pm
+%%SITE_PERL%%/Dist/Metadata/Dist.pm
+%%SITE_PERL%%/Dist/Metadata/Struct.pm
+%%SITE_PERL%%/Dist/Metadata/Tar.pm
+%%SITE_PERL%%/Dist/Metadata/Zip.pm
+@dirrm %%SITE_PERL%%/Dist/Metadata
+@dirrmtry %%SITE_PERL%%/Dist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Metadata
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist
