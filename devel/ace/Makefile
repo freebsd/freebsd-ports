@@ -24,8 +24,6 @@ OPTIONS=	OPENSSL "Build with OpenSSL support " on \
 
 CONFLICTS=	ace+tao-5*
 
-NOT_FOR_ARCHS=	sparc64
-
 WRKSRC=		${WRKDIR}/ACE_wrappers
 
 USE_BZIP2=	yes
@@ -95,6 +93,10 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
