@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cplanet
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www textproc
 MASTER_SITES=	http://files.etoilebsd.net/cplanet/
 
