@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 PKGNAMESUFFIX=	-ja
@@ -18,14 +18,17 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-de-3.* ru-wordpress-ru-3.*
+CONFLICTS_INSTALL=	wordpress-3.* de-wordpress-de-3.* ru-wordpress-ru-3.*\
+			zh-wordpress-zh_CN-3.* zh-wordpress-zh_TW-3.*
 
 NO_BUILD=	yes
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	CHGRP="${CHGRP}" CHOWN="${CHOWN}" CHMOD="${CHMOD}"\
+		FIND="${FIND}" WWWGRP="${WWWGRP}" WWWOWN="${WWWOWN}"
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
 
@@ -50,6 +53,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
