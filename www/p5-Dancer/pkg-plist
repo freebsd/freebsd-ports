@@ -3,6 +3,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer.pm
 %%SITE_PERL%%/Dancer/App.pm
 %%SITE_PERL%%/Dancer/Config.pm
+%%SITE_PERL%%/Dancer/Config/Object.pm
 %%SITE_PERL%%/Dancer/Continuation.pm
 %%SITE_PERL%%/Dancer/Continuation/Halted.pm
 %%SITE_PERL%%/Dancer/Continuation/Route.pm
@@ -91,5 +92,6 @@ bin/dancer
 @dirrm %%SITE_PERL%%/Dancer/Development
 @dirrm %%SITE_PERL%%/Dancer/Continuation/Route
 @dirrm %%SITE_PERL%%/Dancer/Continuation
+@dirrm %%SITE_PERL%%/Dancer/Config
 @dirrm %%SITE_PERL%%/Dancer
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer

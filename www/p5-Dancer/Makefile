@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3093
+PORTVERSION=	1.3095
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
@@ -40,6 +40,7 @@ PERL_CONFIGURE=	yes
 MAN1=	dancer.1
 MAN3=	Dancer.3 \
 	Dancer::Config.3 \
+	Dancer::Config::Object.3 \
 	Dancer::Cookbook.3 \
 	Dancer::Cookie.3 \
 	Dancer::Cookies.3 \
