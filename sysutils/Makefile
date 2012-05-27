@@ -960,6 +960,7 @@
     SUBDIR += vobcopy
     SUBDIR += volman
     SUBDIR += vordog
+    SUBDIR += vpnc-scripts
     SUBDIR += vstrip
     SUBDIR += vttest
     SUBDIR += wait_on

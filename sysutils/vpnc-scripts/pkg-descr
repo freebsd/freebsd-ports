@@ -1,0 +1,6 @@
+A collection of scripts that do route modification and other changes to
+a system after establishing a VPN connection to a remote network.
+
+These are typically used with openconnect or Cisco's VPN client.
+
+WWW: http://git.infradead.org/users/dwmw2/vpnc-scripts.git
