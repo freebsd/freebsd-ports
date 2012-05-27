@@ -11444,6 +11444,7 @@ p5-Cache-AgainstFile            ports/devel/p5-Cache-AgainstFile
 p5-Cache-BDB                    ports/databases/p5-Cache-BDB
 p5-Cache-Cache                  ports/devel/p5-Cache-Cache
 p5-Cache-FastMmap               ports/devel/p5-Cache-FastMmap
+p5-Cache-LRU                    ports/devel/p5-Cache-LRU
 p5-Cache-Memcached              ports/databases/p5-Cache-Memcached
 p5-Cache-Memcached-Fast         ports/databases/p5-Cache-Memcached-Fast
 p5-Cache-Memcached-Managed      ports/databases/p5-Cache-Memcached-Managed
@@ -12520,6 +12521,7 @@ p5-File-Signature               ports/sysutils/p5-File-Signature
 p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
 p5-File-Sort                    ports/misc/p5-File-Sort
+p5-File-Spec-Native             ports/devel/p5-File-Spec-Native
 p5-File-Stat-Bits               ports/sysutils/p5-File-Stat-Bits
 p5-File-Stat-ModeString         ports/sysutils/p5-File-Stat-ModeString
 p5-File-Stream                  ports/devel/p5-File-Stream
@@ -15831,6 +15833,7 @@ p5-cache-againstfile            ports/devel/p5-Cache-AgainstFile
 p5-cache-bdb                    ports/databases/p5-Cache-BDB
 p5-cache-cache                  ports/devel/p5-Cache-Cache
 p5-cache-fastmmap               ports/devel/p5-Cache-FastMmap
+p5-cache-lru                    ports/devel/p5-Cache-LRU
 p5-cache-memcached              ports/databases/p5-Cache-Memcached
 p5-cache-memcached-fast         ports/databases/p5-Cache-Memcached-Fast
 p5-cache-memcached-libmemcached  ports/databases/p5-Cache-Memcached-libmemcached
@@ -17038,6 +17041,7 @@ p5-file-signature               ports/sysutils/p5-File-Signature
 p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
 p5-file-sort                    ports/misc/p5-File-Sort
+p5-file-spec-native             ports/devel/p5-File-Spec-Native
 p5-file-stat-bits               ports/sysutils/p5-File-Stat-Bits
 p5-file-stat-modestring         ports/sysutils/p5-File-Stat-ModeString
 p5-file-stream                  ports/devel/p5-File-Stream
@@ -24205,6 +24209,7 @@ rfc                             ports/misc/rfc
 rfcdiff                         ports/textproc/rfcdiff
 rfksay                          ports/games/rfksay
 rfstool                         ports/sysutils/rfstool
+rftg                            ports/games/rftg
 rftp                            ports/mail/rftp
 rgb                             ports/x11/rgb
 rgbpaint                        ports/graphics/rgbpaint
