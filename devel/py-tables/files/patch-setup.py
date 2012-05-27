@@ -1,6 +1,6 @@
---- setup.py.orig	2010-07-06 11:11:43.000000000 +0800
-+++ setup.py	2010-07-06 11:13:13.000000000 +0800
-@@ -83,8 +83,8 @@
+--- setup.py.orig	2012-03-25 19:20:35.000000000 +0900
++++ setup.py	2012-03-25 19:22:53.000000000 +0900
+@@ -96,8 +96,8 @@
  debug = '--debug' in sys.argv
  
  # Global variables
@@ -11,16 +11,19 @@
  optional_libs = []
  data_files = []    # list of data files to add to packages (mainly for DLL's)
  
-@@ -93,10 +93,10 @@
- default_runtime_dirs = None
- 
- if os.name == 'posix':
--    default_header_dirs = ['/usr/include', '/usr/local/include']
+@@ -121,13 +121,12 @@
+     add_from_path("CPATH", default_header_dirs)
+     add_from_path("C_INCLUDE_PATH", default_header_dirs)
+     add_from_flags("CPPFLAGS", "-I", default_header_dirs)
+-    default_header_dirs.extend(['/usr/include', '/usr/local/include'])
+-
 +    default_header_dirs = ['/usr/include', '/usr/local/include','%%LOCALBASE%%/include']
-     default_library_dirs = [
+     default_library_dirs = []
+     add_from_flags("LDFLAGS", "-L", default_library_dirs)
+     default_library_dirs.extend(
          os.path.join(_tree, _arch)
 -        for _tree in ('/', '/usr', '/usr/local')
-+        for _tree in ('/', '/usr', '/usr/local','%%LOCALBASE%%')
-         for _arch in ('lib64', 'lib') ]
++	for _tree in ('/', '/usr', '/usr/local','%%LOCALBASE%%')
+         for _arch in ('lib64', 'lib') )
      default_runtime_dirs = default_library_dirs
  
