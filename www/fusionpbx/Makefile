@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fusionpbx
-DISTVERSION=	3.0.3
+DISTVERSION=	3.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.fusionpbx.com/downloads/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -15,7 +15,7 @@ MAINTAINER=	r.neese@gmail.com
 COMMENT=	Fusionpbx PHP5 Graphical User Interface for FreeSwitch
 
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php5-pdo_odbc
+RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php5-pdo_odbc
 
 USE_SQLITE=	yes
 
@@ -36,6 +36,7 @@ OPTIONS=	PDOPGSQL	"Install POSTGRESQL PDO Connecor" off \
 		PDOMYSQL	"Install MySQL PDO Connector " off
 
 .include <bsd.port.options.mk>
+
 .if !defined(WITH_PDOPGSQL)
 PLIST_SUB+=	WITH_PDOPGSQL="@comment "
 .else
