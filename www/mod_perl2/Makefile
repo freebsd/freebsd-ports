@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR= perl
+MASTER_SITE_SUBDIR=perl
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
@@ -55,10 +54,11 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		Apache2::SubProcess.3 Apache2::SubRequest.3 Apache2::URI.3 \
 		Apache2::Util.3 Apache2::compat.3 Apache2::porting.3 \
 		Apache::Reload.3 Apache::SizeLimit.3 Apache::SizeLimit::Core.3 \
-		Apache::Test.3 Apache::TestConfig.3 Apache::TestMB.3 \
-		Apache::TestMM.3 Apache::TestReport.3 Apache::TestRequest.3 \
-		Apache::TestRun.3 Apache::TestRunPHP.3 Apache::TestRunPerl.3 \
-		Apache::TestServer.3 Apache::TestSmoke.3 Apache::TestTrace.3 Apache::TestUtil.3 \
+		Apache::Test.3 Apache::TestConfig.3 Apache::TestHandler.3 \
+		Apache::TestMB.3 Apache::TestMM.3 Apache::TestReport.3 \
+		Apache::TestRequest.3 Apache::TestRun.3 Apache::TestRunPHP.3 \
+		Apache::TestRunPerl.3 Apache::TestServer.3 Apache::TestSmoke.3 \
+		Apache::TestTrace.3 Apache::TestUtil.3 \
 		Bundle::Apache2.3 Bundle::ApacheTest.3 ModPerl::BuildMM.3 \
 		ModPerl::CScan.3 ModPerl::Code.3 ModPerl::Config.3 \
 		ModPerl::Const.3 ModPerl::Global.3 ModPerl::MM.3 \
