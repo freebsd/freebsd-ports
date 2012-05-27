@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.10.2
+PORTVERSION=	1.7.10.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -268,7 +268,9 @@ MAKE_ENV+=	NO_CURL=1 \
 PLIST_SUB+=	CURL="@comment "
 .endif
 
-.ifdef (WITH_HTMLDOCS)
+# Always fetch the htmldocs distfile in maintainer mode.
+# Always include it when building distinfo (makesum)
+.if defined (WITH_HTMLDOCS) || make(makesum) || (defined(MAINTAINER_MODE) && make(fetch))
 DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
 PLIST_SUB+=	HTMLDOCS=""
 .else
