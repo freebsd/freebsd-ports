@@ -6,19 +6,19 @@ bin/milter-test-client
 bin/milter-test-client-libmilter
 bin/milter-test-server
 etc/cron.d/milter-manager-log
-etc/milter-manager/applicable-conditions/authentication.conf
-etc/milter-manager/applicable-conditions/remote-network.conf
-etc/milter-manager/applicable-conditions/restrict-accounts.conf
-etc/milter-manager/applicable-conditions/s25r.conf
-etc/milter-manager/applicable-conditions/sendmail-compatible.conf
-etc/milter-manager/applicable-conditions/stress.conf
-etc/milter-manager/applicable-conditions/trust.conf
-etc/milter-manager/defaults/debian.conf
-etc/milter-manager/defaults/freebsd.conf
-etc/milter-manager/defaults/pkgsrc.conf
-etc/milter-manager/defaults/redhat.conf
-etc/milter-manager/milter-manager.conf
-etc/milter-manager/models/example.rb
+%%ETCDIR%%/applicable-conditions/authentication.conf
+%%ETCDIR%%/applicable-conditions/remote-network.conf
+%%ETCDIR%%/applicable-conditions/restrict-accounts.conf
+%%ETCDIR%%/applicable-conditions/s25r.conf
+%%ETCDIR%%/applicable-conditions/sendmail-compatible.conf
+%%ETCDIR%%/applicable-conditions/stress.conf
+%%ETCDIR%%/applicable-conditions/trust.conf
+%%ETCDIR%%/defaults/debian.conf
+%%ETCDIR%%/defaults/freebsd.conf
+%%ETCDIR%%/defaults/pkgsrc.conf
+%%ETCDIR%%/defaults/redhat.conf
+%%ETCDIR%%/milter-manager.conf
+%%ETCDIR%%/models/example.rb
 include/milter-manager/libmilter/libmilter/mfapi.h
 include/milter-manager/libmilter/libmilter/mfdef.h
 include/milter-manager/milter/client.h
@@ -173,6 +173,7 @@ share/gtk-doc/html/milter-manager/install-options-to-debian.html
 share/gtk-doc/html/milter-manager/install-options-to-freebsd.html
 share/gtk-doc/html/milter-manager/install-options-to-ubuntu.html
 share/gtk-doc/html/milter-manager/install-to-centos.html
+share/gtk-doc/html/milter-manager/install-to-centos5.html
 share/gtk-doc/html/milter-manager/install-to-debian.html
 share/gtk-doc/html/milter-manager/install-to-freebsd.html
 share/gtk-doc/html/milter-manager/install-to-others.html
@@ -195,6 +196,7 @@ share/gtk-doc/html/milter-manager/ja/install-options-to-debian.html
 share/gtk-doc/html/milter-manager/ja/install-options-to-freebsd.html
 share/gtk-doc/html/milter-manager/ja/install-options-to-ubuntu.html
 share/gtk-doc/html/milter-manager/ja/install-to-centos.html
+share/gtk-doc/html/milter-manager/ja/install-to-centos5.html
 share/gtk-doc/html/milter-manager/ja/install-to-debian.html
 share/gtk-doc/html/milter-manager/ja/install-to-freebsd.html
 share/gtk-doc/html/milter-manager/ja/install-to-others.html
@@ -271,6 +273,7 @@ share/gtk-doc/html/milter-manager/ja/milter-version.xml
 share/gtk-doc/html/milter-manager/ja/milter-writer.xml
 share/gtk-doc/html/milter-manager/ja/mta-and-milter-manager-and-child-milter-ja.png
 share/gtk-doc/html/milter-manager/ja/mta-and-milter-manager-and-child-milter.png
+share/gtk-doc/html/milter-manager/ja/news.html
 share/gtk-doc/html/milter-manager/ja/reverse-dictionary.html
 share/gtk-doc/html/milter-manager/ja/right.png
 share/gtk-doc/html/milter-manager/ja/ruby-milter-configuration.html
@@ -333,257 +336,257 @@ share/gtk-doc/html/milter-manager/upgrade-options-on-freebsd.html
 share/gtk-doc/html/milter-manager/upgrade-options-on-ubuntu.html
 share/gtk-doc/html/milter-manager/upgrade.html
 share/gtk-doc/html/milter-manager/users.html
-share/milter-manager/admin/.autotest
-share/milter-manager/admin/README
-share/milter-manager/admin/Rakefile
-share/milter-manager/admin/TODO
-share/milter-manager/admin/app/controllers/application_controller.rb
-share/milter-manager/admin/app/controllers/config/applicable_conditions_controller.rb
-share/milter-manager/admin/app/controllers/config/connections_controller.rb
-share/milter-manager/admin/app/controllers/config/milters_controller.rb
-share/milter-manager/admin/app/controllers/config_controller.rb
-share/milter-manager/admin/app/controllers/control_controller.rb
-share/milter-manager/admin/app/controllers/sessions_controller.rb
-share/milter-manager/admin/app/controllers/users_controller.rb
-share/milter-manager/admin/app/controllers/welcome_controller.rb
-share/milter-manager/admin/app/helpers/application_helper.rb
-share/milter-manager/admin/app/helpers/config/applicable_conditions_helper.rb
-share/milter-manager/admin/app/helpers/config/connections_helper.rb
-share/milter-manager/admin/app/helpers/config/milters_helper.rb
-share/milter-manager/admin/app/helpers/config_helper.rb
-share/milter-manager/admin/app/helpers/control_helper.rb
-share/milter-manager/admin/app/helpers/sessions_helper.rb
-share/milter-manager/admin/app/helpers/users_helper.rb
-share/milter-manager/admin/app/helpers/welcome_helper.rb
-share/milter-manager/admin/app/models/config/applicable_condition.rb
-share/milter-manager/admin/app/models/config/connection.rb
-share/milter-manager/admin/app/models/config/milter.rb
-share/milter-manager/admin/app/models/config/restriction.rb
-share/milter-manager/admin/app/models/configuration.rb
-share/milter-manager/admin/app/models/user.rb
-share/milter-manager/admin/app/views/config/applicable_conditions/index.html.erb
-share/milter-manager/admin/app/views/config/applicable_conditions/show.html.erb
-share/milter-manager/admin/app/views/config/connections/edit.html.erb
-share/milter-manager/admin/app/views/config/connections/show.html.erb
-share/milter-manager/admin/app/views/config/index.html.erb
-share/milter-manager/admin/app/views/config/milters/edit.html.erb
-share/milter-manager/admin/app/views/config/milters/index.html.erb
-share/milter-manager/admin/app/views/config/milters/new.html.erb
-share/milter-manager/admin/app/views/config/milters/show.html.erb
-share/milter-manager/admin/app/views/control/index.html.erb
-share/milter-manager/admin/app/views/layouts/_footer.html.erb
-share/milter-manager/admin/app/views/layouts/_header.html.erb
-share/milter-manager/admin/app/views/layouts/application.html.erb
-share/milter-manager/admin/app/views/rescues/404.html.erb
-share/milter-manager/admin/app/views/rescues/500.html.erb
-share/milter-manager/admin/app/views/sessions/new.html.erb
-share/milter-manager/admin/app/views/users/new.html.erb
-share/milter-manager/admin/app/views/welcome/index.html.erb
-share/milter-manager/admin/config/boot.rb
-share/milter-manager/admin/config/database.yml
-share/milter-manager/admin/config/environment.rb
-share/milter-manager/admin/config/environments/development.rb
-share/milter-manager/admin/config/environments/production.rb
-share/milter-manager/admin/config/environments/test.rb
-share/milter-manager/admin/config/initializers/inflections.rb
-share/milter-manager/admin/config/initializers/mime_types.rb
-share/milter-manager/admin/config/initializers/new_rails_defaults.rb
-share/milter-manager/admin/config/initializers/site_keys.rb
-share/milter-manager/admin/config/locales/en.yml
-share/milter-manager/admin/config/locales/ja.yml
-share/milter-manager/admin/config/locales/rails/ja.yml
-share/milter-manager/admin/config/routes.rb
-share/milter-manager/admin/db/.gitignore
-share/milter-manager/admin/db/migrate/20081125042659_create_milters.rb
-share/milter-manager/admin/db/migrate/20081126000659_create_connections.rb
-share/milter-manager/admin/db/migrate/20081126001355_add_default_config_connection.rb
-share/milter-manager/admin/db/migrate/20081202083637_add_connection_spec_to_milters.rb
-share/milter-manager/admin/db/migrate/20081203131215_create_configurations.rb
-share/milter-manager/admin/db/migrate/20081209042157_create_applicable_conditions.rb
-share/milter-manager/admin/db/migrate/20081209074801_create_restrictions.rb
-share/milter-manager/admin/db/migrate/20081209082702_remove_target_from_milters.rb
-share/milter-manager/admin/db/migrate/20081212075410_add_enabled_to_milters.rb
-share/milter-manager/admin/db/migrate/20081212080532_add_description_to_milters.rb
-share/milter-manager/admin/db/migrate/20081214112549_decompose_spec.rb
-share/milter-manager/admin/db/migrate/20081216125103_add_timeout_to_milters.rb
-share/milter-manager/admin/db/migrate/20081216130836_add_user_name_to_milters.rb
-share/milter-manager/admin/db/migrate/20090107013320_add_command_options_to_milters.rb
-share/milter-manager/admin/db/migrate/20090116065917_create_users.rb
-share/milter-manager/admin/db/migrate/20090512123747_add_fallback_status_to_milters.rb
-share/milter-manager/admin/db/migrate/20090826132057_add_evaluation_mode_to_milters.rb
-share/milter-manager/admin/doc/README_FOR_APP
-share/milter-manager/admin/lib/authenticated_system.rb
-share/milter-manager/admin/lib/authenticated_test_helper.rb
-share/milter-manager/admin/lib/milter/manager.rb
-share/milter-manager/admin/lib/milter/manager/connection_spec.rb
-share/milter-manager/admin/lib/milter/manager/controller_client.rb
-share/milter-manager/admin/lib/tasks/testing.rake
-share/milter-manager/admin/public/404.html
-share/milter-manager/admin/public/422.html
-share/milter-manager/admin/public/500.html
-share/milter-manager/admin/public/dispatch.cgi
-share/milter-manager/admin/public/dispatch.fcgi
-share/milter-manager/admin/public/dispatch.rb
-share/milter-manager/admin/public/favicon.ico
-share/milter-manager/admin/public/images/logo.png
-share/milter-manager/admin/public/images/logo.svg
-share/milter-manager/admin/public/images/menu-background.png
-share/milter-manager/admin/public/images/menu-background.svg
-share/milter-manager/admin/public/images/rails.png
-share/milter-manager/admin/public/javascripts/application.js
-share/milter-manager/admin/public/javascripts/controls.js
-share/milter-manager/admin/public/javascripts/dragdrop.js
-share/milter-manager/admin/public/javascripts/effects.js
-share/milter-manager/admin/public/javascripts/prototype.js
-share/milter-manager/admin/public/robots.txt
-share/milter-manager/admin/public/stylesheets/base.css
-share/milter-manager/admin/public/stylesheets/config.css
-share/milter-manager/admin/script/about
-share/milter-manager/admin/script/console
-share/milter-manager/admin/script/dbconsole
-share/milter-manager/admin/script/destroy
-share/milter-manager/admin/script/generate
-share/milter-manager/admin/script/performance/benchmarker
-share/milter-manager/admin/script/performance/profiler
-share/milter-manager/admin/script/performance/request
-share/milter-manager/admin/script/plugin
-share/milter-manager/admin/script/process/inspector
-share/milter-manager/admin/script/process/reaper
-share/milter-manager/admin/script/process/spawner
-share/milter-manager/admin/script/runner
-share/milter-manager/admin/script/server
-share/milter-manager/admin/test/fixtures/applicable_conditions.yml
-share/milter-manager/admin/test/fixtures/configurations.yml
-share/milter-manager/admin/test/fixtures/connections.yml
-share/milter-manager/admin/test/fixtures/milters.yml
-share/milter-manager/admin/test/fixtures/restrictions.yml
-share/milter-manager/admin/test/fixtures/users.yml
-share/milter-manager/admin/test/functional/config/applicable_conditions_controller_test.rb
-share/milter-manager/admin/test/functional/config/connections_controller_test.rb
-share/milter-manager/admin/test/functional/config/milters_controller_test.rb
-share/milter-manager/admin/test/functional/config_controller_test.rb
-share/milter-manager/admin/test/functional/control_controller_test.rb
-share/milter-manager/admin/test/functional/sessions_controller_test.rb
-share/milter-manager/admin/test/functional/users_controller_test.rb
-share/milter-manager/admin/test/functional/welcome_controller_test.rb
-share/milter-manager/admin/test/integration/connection_actions_test.rb
-share/milter-manager/admin/test/integration/milter_actions_test.rb
-share/milter-manager/admin/test/performance/browsing_test.rb
-share/milter-manager/admin/test/run-test.sh
-share/milter-manager/admin/test/test_helper.rb
-share/milter-manager/admin/test/unit/config/applicable_condition_test.rb
-share/milter-manager/admin/test/unit/config/connection_test.rb
-share/milter-manager/admin/test/unit/config/milter_test.rb
-share/milter-manager/admin/test/unit/config/restriction_test.rb
-share/milter-manager/admin/test/unit/configuration_test.rb
-share/milter-manager/admin/test/unit/connection_spec_test.rb
-share/milter-manager/admin/test/unit/controller_client_test.rb
-share/milter-manager/admin/test/unit/user_test.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/.gitignore
-share/milter-manager/admin/vendor/plugins/restful-auth/CHANGELOG
-share/milter-manager/admin/vendor/plugins/restful-auth/README.textile
-share/milter-manager/admin/vendor/plugins/restful-auth/Rakefile
-share/milter-manager/admin/vendor/plugins/restful-auth/TODO
-share/milter-manager/admin/vendor/plugins/restful-auth/init.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/install.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/authentication.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/authentication/by_cookie_token.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/authentication/by_password.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/authorization.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/authorization/aasm_roles.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/authorization/stateful_roles.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/tasks/auth.rake
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/trustification.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/lib/trustification/email_validation.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/AccessControl.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/Authentication.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/Authorization.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/RailsPlugins.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/SecurityFramework.graffle
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/SecurityFramework.png
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/SecurityPatterns.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/Tradeoffs.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/notes/Trustification.txt
-share/milter-manager/admin/vendor/plugins/restful-auth/rails/init.rb
-share/milter-manager/admin/vendor/plugins/restful-auth/restful-authentication.gemspec
-share/milter-manager/license/agpl.txt
-share/milter-manager/license/fdl.txt
-share/milter-manager/license/gpl.txt
-share/milter-manager/license/lgpl.txt
-share/milter-manager/license/ruby.ja.txt
-share/milter-manager/license/ruby.txt
-share/milter-manager/munin/plugins/milter_manager_
-share/milter-manager/munin/plugins/milter_manager_memory
-share/milter-manager/munin/plugins/postfix_processes
-share/milter-manager/munin/plugins/sendmail_processes
-share/milter-manager/sample/ruby/milter-regexp.rb
-share/milter-manager/sample/ruby/milter-reject-empty-body.rb
-share/milter-manager/sample/ruby/milter-reject-nil-sender.rb
-share/milter-manager/sample/ruby/milter-tarpit.rb
-share/milter-manager/sample/ruby/milter-test-client-composite.rb
-share/milter-manager/sample/ruby/milter-test-client.rb
-@dirrm share/milter-manager/sample/ruby
-@dirrm share/milter-manager/sample
-@dirrm share/milter-manager/munin/plugins
-@dirrm share/milter-manager/munin
-@dirrm share/milter-manager/license
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/rails
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/notes
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/lib/trustification
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/lib/tasks
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/lib/authorization
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/lib/authentication
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth/lib
-@dirrm share/milter-manager/admin/vendor/plugins/restful-auth
-@dirrm share/milter-manager/admin/vendor/plugins
-@dirrm share/milter-manager/admin/vendor
-@dirrm share/milter-manager/admin/test/unit/config
-@dirrm share/milter-manager/admin/test/unit
-@dirrm share/milter-manager/admin/test/performance
-@dirrm share/milter-manager/admin/test/integration
-@dirrm share/milter-manager/admin/test/functional/config
-@dirrm share/milter-manager/admin/test/functional
-@dirrm share/milter-manager/admin/test/fixtures
-@dirrm share/milter-manager/admin/test
-@dirrm share/milter-manager/admin/script/process
-@dirrm share/milter-manager/admin/script/performance
-@dirrm share/milter-manager/admin/script
-@dirrm share/milter-manager/admin/public/stylesheets
-@dirrm share/milter-manager/admin/public/javascripts
-@dirrm share/milter-manager/admin/public/images
-@dirrm share/milter-manager/admin/public
-@dirrm share/milter-manager/admin/lib/tasks
-@dirrm share/milter-manager/admin/lib/milter/manager
-@dirrm share/milter-manager/admin/lib/milter
-@dirrm share/milter-manager/admin/lib
-@dirrm share/milter-manager/admin/doc
-@dirrm share/milter-manager/admin/db/migrate
-@dirrm share/milter-manager/admin/db
-@dirrm share/milter-manager/admin/config/locales/rails
-@dirrm share/milter-manager/admin/config/locales
-@dirrm share/milter-manager/admin/config/initializers
-@dirrm share/milter-manager/admin/config/environments
-@dirrm share/milter-manager/admin/config
-@dirrm share/milter-manager/admin/app/views/welcome
-@dirrm share/milter-manager/admin/app/views/users
-@dirrm share/milter-manager/admin/app/views/sessions
-@dirrm share/milter-manager/admin/app/views/rescues
-@dirrm share/milter-manager/admin/app/views/layouts
-@dirrm share/milter-manager/admin/app/views/control
-@dirrm share/milter-manager/admin/app/views/config/milters
-@dirrm share/milter-manager/admin/app/views/config/connections
-@dirrm share/milter-manager/admin/app/views/config/applicable_conditions
-@dirrm share/milter-manager/admin/app/views/config
-@dirrm share/milter-manager/admin/app/views
-@dirrm share/milter-manager/admin/app/models/config
-@dirrm share/milter-manager/admin/app/models
-@dirrm share/milter-manager/admin/app/helpers/config
-@dirrm share/milter-manager/admin/app/helpers
-@dirrm share/milter-manager/admin/app/controllers/config
-@dirrm share/milter-manager/admin/app/controllers
-@dirrm share/milter-manager/admin/app
-@dirrm share/milter-manager/admin
-@dirrm share/milter-manager
+%%DATADIR%%/admin/.autotest
+%%DATADIR%%/admin/README
+%%DATADIR%%/admin/Rakefile
+%%DATADIR%%/admin/TODO
+%%DATADIR%%/admin/app/controllers/application_controller.rb
+%%DATADIR%%/admin/app/controllers/config/applicable_conditions_controller.rb
+%%DATADIR%%/admin/app/controllers/config/connections_controller.rb
+%%DATADIR%%/admin/app/controllers/config/milters_controller.rb
+%%DATADIR%%/admin/app/controllers/config_controller.rb
+%%DATADIR%%/admin/app/controllers/control_controller.rb
+%%DATADIR%%/admin/app/controllers/sessions_controller.rb
+%%DATADIR%%/admin/app/controllers/users_controller.rb
+%%DATADIR%%/admin/app/controllers/welcome_controller.rb
+%%DATADIR%%/admin/app/helpers/application_helper.rb
+%%DATADIR%%/admin/app/helpers/config/applicable_conditions_helper.rb
+%%DATADIR%%/admin/app/helpers/config/connections_helper.rb
+%%DATADIR%%/admin/app/helpers/config/milters_helper.rb
+%%DATADIR%%/admin/app/helpers/config_helper.rb
+%%DATADIR%%/admin/app/helpers/control_helper.rb
+%%DATADIR%%/admin/app/helpers/sessions_helper.rb
+%%DATADIR%%/admin/app/helpers/users_helper.rb
+%%DATADIR%%/admin/app/helpers/welcome_helper.rb
+%%DATADIR%%/admin/app/models/config/applicable_condition.rb
+%%DATADIR%%/admin/app/models/config/connection.rb
+%%DATADIR%%/admin/app/models/config/milter.rb
+%%DATADIR%%/admin/app/models/config/restriction.rb
+%%DATADIR%%/admin/app/models/configuration.rb
+%%DATADIR%%/admin/app/models/user.rb
+%%DATADIR%%/admin/app/views/config/applicable_conditions/index.html.erb
+%%DATADIR%%/admin/app/views/config/applicable_conditions/show.html.erb
+%%DATADIR%%/admin/app/views/config/connections/edit.html.erb
+%%DATADIR%%/admin/app/views/config/connections/show.html.erb
+%%DATADIR%%/admin/app/views/config/index.html.erb
+%%DATADIR%%/admin/app/views/config/milters/edit.html.erb
+%%DATADIR%%/admin/app/views/config/milters/index.html.erb
+%%DATADIR%%/admin/app/views/config/milters/new.html.erb
+%%DATADIR%%/admin/app/views/config/milters/show.html.erb
+%%DATADIR%%/admin/app/views/control/index.html.erb
+%%DATADIR%%/admin/app/views/layouts/_footer.html.erb
+%%DATADIR%%/admin/app/views/layouts/_header.html.erb
+%%DATADIR%%/admin/app/views/layouts/application.html.erb
+%%DATADIR%%/admin/app/views/rescues/404.html.erb
+%%DATADIR%%/admin/app/views/rescues/500.html.erb
+%%DATADIR%%/admin/app/views/sessions/new.html.erb
+%%DATADIR%%/admin/app/views/users/new.html.erb
+%%DATADIR%%/admin/app/views/welcome/index.html.erb
+%%DATADIR%%/admin/config/boot.rb
+%%DATADIR%%/admin/config/database.yml
+%%DATADIR%%/admin/config/environment.rb
+%%DATADIR%%/admin/config/environments/development.rb
+%%DATADIR%%/admin/config/environments/production.rb
+%%DATADIR%%/admin/config/environments/test.rb
+%%DATADIR%%/admin/config/initializers/inflections.rb
+%%DATADIR%%/admin/config/initializers/mime_types.rb
+%%DATADIR%%/admin/config/initializers/new_rails_defaults.rb
+%%DATADIR%%/admin/config/initializers/site_keys.rb
+%%DATADIR%%/admin/config/locales/en.yml
+%%DATADIR%%/admin/config/locales/ja.yml
+%%DATADIR%%/admin/config/locales/rails/ja.yml
+%%DATADIR%%/admin/config/routes.rb
+%%DATADIR%%/admin/db/.gitignore
+%%DATADIR%%/admin/db/migrate/20081125042659_create_milters.rb
+%%DATADIR%%/admin/db/migrate/20081126000659_create_connections.rb
+%%DATADIR%%/admin/db/migrate/20081126001355_add_default_config_connection.rb
+%%DATADIR%%/admin/db/migrate/20081202083637_add_connection_spec_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20081203131215_create_configurations.rb
+%%DATADIR%%/admin/db/migrate/20081209042157_create_applicable_conditions.rb
+%%DATADIR%%/admin/db/migrate/20081209074801_create_restrictions.rb
+%%DATADIR%%/admin/db/migrate/20081209082702_remove_target_from_milters.rb
+%%DATADIR%%/admin/db/migrate/20081212075410_add_enabled_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20081212080532_add_description_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20081214112549_decompose_spec.rb
+%%DATADIR%%/admin/db/migrate/20081216125103_add_timeout_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20081216130836_add_user_name_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20090107013320_add_command_options_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20090116065917_create_users.rb
+%%DATADIR%%/admin/db/migrate/20090512123747_add_fallback_status_to_milters.rb
+%%DATADIR%%/admin/db/migrate/20090826132057_add_evaluation_mode_to_milters.rb
+%%DATADIR%%/admin/doc/README_FOR_APP
+%%DATADIR%%/admin/lib/authenticated_system.rb
+%%DATADIR%%/admin/lib/authenticated_test_helper.rb
+%%DATADIR%%/admin/lib/milter/manager.rb
+%%DATADIR%%/admin/lib/milter/manager/connection_spec.rb
+%%DATADIR%%/admin/lib/milter/manager/controller_client.rb
+%%DATADIR%%/admin/lib/tasks/testing.rake
+%%DATADIR%%/admin/public/404.html
+%%DATADIR%%/admin/public/422.html
+%%DATADIR%%/admin/public/500.html
+%%DATADIR%%/admin/public/dispatch.cgi
+%%DATADIR%%/admin/public/dispatch.fcgi
+%%DATADIR%%/admin/public/dispatch.rb
+%%DATADIR%%/admin/public/favicon.ico
+%%DATADIR%%/admin/public/images/logo.png
+%%DATADIR%%/admin/public/images/logo.svg
+%%DATADIR%%/admin/public/images/menu-background.png
+%%DATADIR%%/admin/public/images/menu-background.svg
+%%DATADIR%%/admin/public/images/rails.png
+%%DATADIR%%/admin/public/javascripts/application.js
+%%DATADIR%%/admin/public/javascripts/controls.js
+%%DATADIR%%/admin/public/javascripts/dragdrop.js
+%%DATADIR%%/admin/public/javascripts/effects.js
+%%DATADIR%%/admin/public/javascripts/prototype.js
+%%DATADIR%%/admin/public/robots.txt
+%%DATADIR%%/admin/public/stylesheets/base.css
+%%DATADIR%%/admin/public/stylesheets/config.css
+%%DATADIR%%/admin/script/about
+%%DATADIR%%/admin/script/console
+%%DATADIR%%/admin/script/dbconsole
+%%DATADIR%%/admin/script/destroy
+%%DATADIR%%/admin/script/generate
+%%DATADIR%%/admin/script/performance/benchmarker
+%%DATADIR%%/admin/script/performance/profiler
+%%DATADIR%%/admin/script/performance/request
+%%DATADIR%%/admin/script/plugin
+%%DATADIR%%/admin/script/process/inspector
+%%DATADIR%%/admin/script/process/reaper
+%%DATADIR%%/admin/script/process/spawner
+%%DATADIR%%/admin/script/runner
+%%DATADIR%%/admin/script/server
+%%DATADIR%%/admin/test/fixtures/applicable_conditions.yml
+%%DATADIR%%/admin/test/fixtures/configurations.yml
+%%DATADIR%%/admin/test/fixtures/connections.yml
+%%DATADIR%%/admin/test/fixtures/milters.yml
+%%DATADIR%%/admin/test/fixtures/restrictions.yml
+%%DATADIR%%/admin/test/fixtures/users.yml
+%%DATADIR%%/admin/test/functional/config/applicable_conditions_controller_test.rb
+%%DATADIR%%/admin/test/functional/config/connections_controller_test.rb
+%%DATADIR%%/admin/test/functional/config/milters_controller_test.rb
+%%DATADIR%%/admin/test/functional/config_controller_test.rb
+%%DATADIR%%/admin/test/functional/control_controller_test.rb
+%%DATADIR%%/admin/test/functional/sessions_controller_test.rb
+%%DATADIR%%/admin/test/functional/users_controller_test.rb
+%%DATADIR%%/admin/test/functional/welcome_controller_test.rb
+%%DATADIR%%/admin/test/integration/connection_actions_test.rb
+%%DATADIR%%/admin/test/integration/milter_actions_test.rb
+%%DATADIR%%/admin/test/performance/browsing_test.rb
+%%DATADIR%%/admin/test/run-test.sh
+%%DATADIR%%/admin/test/test_helper.rb
+%%DATADIR%%/admin/test/unit/config/applicable_condition_test.rb
+%%DATADIR%%/admin/test/unit/config/connection_test.rb
+%%DATADIR%%/admin/test/unit/config/milter_test.rb
+%%DATADIR%%/admin/test/unit/config/restriction_test.rb
+%%DATADIR%%/admin/test/unit/configuration_test.rb
+%%DATADIR%%/admin/test/unit/connection_spec_test.rb
+%%DATADIR%%/admin/test/unit/controller_client_test.rb
+%%DATADIR%%/admin/test/unit/user_test.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/.gitignore
+%%DATADIR%%/admin/vendor/plugins/restful-auth/CHANGELOG
+%%DATADIR%%/admin/vendor/plugins/restful-auth/README.textile
+%%DATADIR%%/admin/vendor/plugins/restful-auth/Rakefile
+%%DATADIR%%/admin/vendor/plugins/restful-auth/TODO
+%%DATADIR%%/admin/vendor/plugins/restful-auth/init.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/install.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authentication.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authentication/by_cookie_token.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authentication/by_password.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authorization.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authorization/aasm_roles.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authorization/stateful_roles.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/tasks/auth.rake
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/trustification.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/lib/trustification/email_validation.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/AccessControl.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/Authentication.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/Authorization.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/RailsPlugins.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/SecurityFramework.graffle
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/SecurityFramework.png
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/SecurityPatterns.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/Tradeoffs.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/notes/Trustification.txt
+%%DATADIR%%/admin/vendor/plugins/restful-auth/rails/init.rb
+%%DATADIR%%/admin/vendor/plugins/restful-auth/restful-authentication.gemspec
+%%DATADIR%%/license/agpl.txt
+%%DATADIR%%/license/fdl.txt
+%%DATADIR%%/license/gpl.txt
+%%DATADIR%%/license/lgpl.txt
+%%DATADIR%%/license/ruby.ja.txt
+%%DATADIR%%/license/ruby.txt
+%%DATADIR%%/munin/plugins/milter_manager_
+%%DATADIR%%/munin/plugins/milter_manager_memory
+%%DATADIR%%/munin/plugins/postfix_processes
+%%DATADIR%%/munin/plugins/sendmail_processes
+%%DATADIR%%/sample/ruby/milter-regexp.rb
+%%DATADIR%%/sample/ruby/milter-reject-empty-body.rb
+%%DATADIR%%/sample/ruby/milter-reject-nil-sender.rb
+%%DATADIR%%/sample/ruby/milter-tarpit.rb
+%%DATADIR%%/sample/ruby/milter-test-client-composite.rb
+%%DATADIR%%/sample/ruby/milter-test-client.rb
+@dirrm %%DATADIR%%/sample/ruby
+@dirrm %%DATADIR%%/sample
+@dirrm %%DATADIR%%/munin/plugins
+@dirrm %%DATADIR%%/munin
+@dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/rails
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/notes
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/lib/trustification
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/lib/tasks
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authorization
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/lib/authentication
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth/lib
+@dirrm %%DATADIR%%/admin/vendor/plugins/restful-auth
+@dirrm %%DATADIR%%/admin/vendor/plugins
+@dirrm %%DATADIR%%/admin/vendor
+@dirrm %%DATADIR%%/admin/test/unit/config
+@dirrm %%DATADIR%%/admin/test/unit
+@dirrm %%DATADIR%%/admin/test/performance
+@dirrm %%DATADIR%%/admin/test/integration
+@dirrm %%DATADIR%%/admin/test/functional/config
+@dirrm %%DATADIR%%/admin/test/functional
+@dirrm %%DATADIR%%/admin/test/fixtures
+@dirrm %%DATADIR%%/admin/test
+@dirrm %%DATADIR%%/admin/script/process
+@dirrm %%DATADIR%%/admin/script/performance
+@dirrm %%DATADIR%%/admin/script
+@dirrm %%DATADIR%%/admin/public/stylesheets
+@dirrm %%DATADIR%%/admin/public/javascripts
+@dirrm %%DATADIR%%/admin/public/images
+@dirrm %%DATADIR%%/admin/public
+@dirrm %%DATADIR%%/admin/lib/tasks
+@dirrm %%DATADIR%%/admin/lib/milter/manager
+@dirrm %%DATADIR%%/admin/lib/milter
+@dirrm %%DATADIR%%/admin/lib
+@dirrm %%DATADIR%%/admin/doc
+@dirrm %%DATADIR%%/admin/db/migrate
+@dirrm %%DATADIR%%/admin/db
+@dirrm %%DATADIR%%/admin/config/locales/rails
+@dirrm %%DATADIR%%/admin/config/locales
+@dirrm %%DATADIR%%/admin/config/initializers
+@dirrm %%DATADIR%%/admin/config/environments
+@dirrm %%DATADIR%%/admin/config
+@dirrm %%DATADIR%%/admin/app/views/welcome
+@dirrm %%DATADIR%%/admin/app/views/users
+@dirrm %%DATADIR%%/admin/app/views/sessions
+@dirrm %%DATADIR%%/admin/app/views/rescues
+@dirrm %%DATADIR%%/admin/app/views/layouts
+@dirrm %%DATADIR%%/admin/app/views/control
+@dirrm %%DATADIR%%/admin/app/views/config/milters
+@dirrm %%DATADIR%%/admin/app/views/config/connections
+@dirrm %%DATADIR%%/admin/app/views/config/applicable_conditions
+@dirrm %%DATADIR%%/admin/app/views/config
+@dirrm %%DATADIR%%/admin/app/views
+@dirrm %%DATADIR%%/admin/app/models/config
+@dirrm %%DATADIR%%/admin/app/models
+@dirrm %%DATADIR%%/admin/app/helpers/config
+@dirrm %%DATADIR%%/admin/app/helpers
+@dirrm %%DATADIR%%/admin/app/controllers/config
+@dirrm %%DATADIR%%/admin/app/controllers
+@dirrm %%DATADIR%%/admin/app
+@dirrm %%DATADIR%%/admin
+@dirrm %%DATADIR%%
 @dirrm share/gtk-doc/html/milter-manager/ja
 @dirrm share/gtk-doc/html/milter-manager
 @dirrmtry share/gtk-doc/html
@@ -607,8 +610,8 @@ share/milter-manager/sample/ruby/milter-test-client.rb
 @dirrm include/milter-manager/libmilter/libmilter
 @dirrm include/milter-manager/libmilter
 @dirrm include/milter-manager
-@dirrm etc/milter-manager/models
-@dirrm etc/milter-manager/defaults
-@dirrm etc/milter-manager/applicable-conditions
-@dirrm etc/milter-manager
+@dirrm %%ETCDIR%%/models
+@dirrm %%ETCDIR%%/defaults
+@dirrm %%ETCDIR%%/applicable-conditions
+@dirrmtry %%ETCDIR%%
 @dirrmtry etc/cron.d

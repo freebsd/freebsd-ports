@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	milter-manager
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES=	mail ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/-/%20/}/${PORTVERSION}
 
@@ -15,17 +14,20 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A super milter that can invoke several milters selectively
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+LIB_DEPENDS=	ev.4:${PORTSDIR}/devel/libev
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RC_SUBR=	milter-manager
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+		--with-libev \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_GMAKE=	yes
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
+MAKE_JOBS_SAFE=	yes
 
 ## TEMPORARY DISABLED
 #.if defined(WITH_LOG_ANALYZER)
