@@ -1,4 +1,3 @@
-bin/audinfo
 bin/snd
 bin/snd-info
 bin/sndplay
@@ -273,7 +272,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/scldlog.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/selpop.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/shepard.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/simprec.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sin3.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sin30.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/sin300.png

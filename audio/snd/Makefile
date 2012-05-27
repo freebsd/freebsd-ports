@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	12.10
+PORTVERSION=	12.11
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -28,7 +28,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
-ALL_TARGET=	audinfo snd snd-info sndplay
+ALL_TARGET=	snd snd-info sndplay
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		snd.1
@@ -106,7 +106,7 @@ post-patch:
 		 s|-o sndinfo|-o snd-info|g' ${WRKSRC}/makefile.in
 
 do-install:
-.for i in audinfo snd snd-info sndplay
+.for i in snd snd-info sndplay
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
