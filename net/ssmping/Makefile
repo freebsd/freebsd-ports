@@ -25,7 +25,7 @@ PLIST_FILES=	bin/ssmping \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 8100000 && ${OSVERSION} >= 6400000
+.if ${OSVERSION} <= 810000
 IGNORE=		does not work at FreeBSD 7.x
 .endif
 
