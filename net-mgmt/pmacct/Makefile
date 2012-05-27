@@ -106,7 +106,8 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ChangeLog EXAMPLES FAQS README
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+.for i in ChangeLog EXAMPLES FAQS README TOOLS CONFIG-KEYS KNOWN-BUGS
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
