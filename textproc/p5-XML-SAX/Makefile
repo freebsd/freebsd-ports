@@ -25,6 +25,21 @@ MAN3=		XML::SAX.3 XML::SAX::DocumentLocator.3 XML::SAX::Intro.3 \
 		XML::SAX::ParserFactory.3 XML::SAX::PurePerl.3 \
 		XML::SAX::PurePerl::Reader.3
 
+OPTIONS=	WRITE_INI_OK	"Alter ParserDetails.ini with relevant information"	on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_WRITE_INI_OK)
+WRITE_INI_OK=	1
+.else
+WRITE_INI_OK=	0
+.endif
+
+post-patch:
+# dirty hack to stop asking for confirmation to alter ParserDetails.ini
+	@${REINPLACE_CMD} -e 's/%%WRITE_INI_OK%%/${WRITE_INI_OK}/' \
+		${WRKSRC}/Makefile.PL
+
 post-configure:
 # dirty hack to deceive irritable pod2man
 	@${PERL} -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
