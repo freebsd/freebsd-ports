@@ -40,6 +40,8 @@ MAKE_ENV+=	DEBUG_FLAGS='${DEBUG_FLAGS}'
 
 .if ${OSVERSION} < 800069
 IGNORE=		does not build with the old USB stack
+.elif ${OSVERSION} > 1000012
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-uhidd-parser.y
 .endif
 
 .if !(exists(${SYSDIR}/Makefile) || exists(${SRC_BASE}/sys/Makefile))
