@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.pytables.org/download/stable/ \
-		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	SF/py${PORTNAME:L}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	tables-${PORTVERSION}.tar.gz pytablesmanual-${PORTVERSION}.pdf
 EXTRACT_ONLY=	tables-${PORTVERSION}.tar.gz
