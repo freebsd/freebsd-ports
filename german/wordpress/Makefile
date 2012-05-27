@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	german www
 MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/
 PKGNAMESUFFIX=	-de
@@ -22,12 +22,15 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 CONFLICTS_INSTALL=	wordpress-3.* ja-wordpress-ja-3.* \
 			zh-wordpress-zh_CN-3.* zh-wordpress-zh_TW-3.* \
 			ru-wordpress-ru-3.*
-USE_ZIP=	yes
+EXTRACT_SUFX:=	.zip
 NO_BUILD=	yes
 USE_PHP=	curl gd mysql pcre tokenizer xml zip
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST=	CHGRP="${CHGRP}" CHOWN="${CHOWN}" CHMOD="${CHMOD}"\
+		FIND="${FIND}" WWWGRP="${WWWGRP}" WWWOWN="${WWWOWN}"
 PLIST=		${WRKDIR}/pkg-plist
 PORTDOCS=	license.txt readme.html
 
@@ -52,6 +55,7 @@ do-install:
 .endif
 
 post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
