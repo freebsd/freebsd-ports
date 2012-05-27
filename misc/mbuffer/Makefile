@@ -7,6 +7,7 @@
 
 PORTNAME=	mbuffer
 PORTVERSION=	2011.07.24
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -25,6 +26,19 @@ MAKE_ARGS=	SHELL=${SH}
 PLIST_FILES=	bin/mbuffer
 
 MAN1=		${PORTNAME}.1
+
+OPTIONS=	MHASH	"Use mhash for hash generation"	on
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_MHASH)
+LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=ac_cv_search_mhash_init=no
+USE_OPENSSL=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
