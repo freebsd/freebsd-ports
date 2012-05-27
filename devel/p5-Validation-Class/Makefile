@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validation-Class
-PORTVERSION=	1.112870
+PORTVERSION=	7.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AWNCORP
@@ -16,13 +16,24 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for centralized input validation for any application
 
 RUN_DEPENDS=	\
-	p5-Array-Unique>0:${PORTSDIR}/devel/p5-Array-Unique \
 	p5-Hash-Flatten>0:${PORTSDIR}/devel/p5-Hash-Flatten \
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose
+	p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
+	p5-Module-Find>0:${PORTSDIR}/devel/p5-Module-Find
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Validation::Class.3
+MAN3=	\
+	Validation::Class.3 \
+	Validation::Class::Backwards.3 \
+	Validation::Class::Collection.3 \
+	Validation::Class::Errors.3 \
+	Validation::Class::Exporter.3 \
+	Validation::Class::Field.3 \
+	Validation::Class::Fields.3 \
+	Validation::Class::Intro.3 \
+	Validation::Class::Params.3 \
+	Validation::Class::Prototype.3 \
+	Validation::Class::Relatives.3
 
 .include <bsd.port.mk>
