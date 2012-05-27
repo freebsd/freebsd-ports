@@ -7,7 +7,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 		CRITICAL
@@ -16,6 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+RUN_DEPENDS=	vpnc-script:${PORTSDIR}/sysutils/vpnc-scripts
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -64,7 +65,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 .endif
-	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-script ${PREFIX}/sbin/vpnc-script
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect ${PREFIX}/sbin/vpnc-disconnect
 	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
 .if !exists(${PREFIX}/etc/vpnc.conf)
