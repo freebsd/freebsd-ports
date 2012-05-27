@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Facebook/Graph/Cookbook.pod
 %%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe1.pod
 %%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe2.pod
+%%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe3.pod
 %%SITE_PERL%%/Facebook/Graph/Picture.pm
 %%SITE_PERL%%/Facebook/Graph/Publish.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Checkin.pm
@@ -14,6 +15,7 @@
 %%SITE_PERL%%/Facebook/Graph/Publish/Like.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Link.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Note.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Photo.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/Post.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/RSVPAttending.pm
 %%SITE_PERL%%/Facebook/Graph/Publish/RSVPDeclined.pm

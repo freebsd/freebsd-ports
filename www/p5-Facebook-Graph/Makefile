@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Facebook-Graph
-PORTVERSION=	1.0301
+PORTVERSION=	1.0401
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIZEN
@@ -25,8 +25,7 @@ RUN_DEPENDS=	\
 	p5-MIME-Base64-URLSafe>=0.01:${PORTSDIR}/converters/p5-MIME-Base64-URLSafe \
 	p5-Mozilla-CA>=20110409:${PORTSDIR}/www/p5-Mozilla-CA \
 	p5-Ouch>=0.0400:${PORTSDIR}/devel/p5-Ouch \
-	p5-URI>=1.54:${PORTSDIR}/net/p5-URI \
-	p5-URI-Encode>=0.02:${PORTSDIR}/www/p5-URI-Encode
+	p5-URI>=1.54:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -38,6 +37,7 @@ MAN3=	Facebook::Graph.3 \
 	Facebook::Graph::Cookbook.3 \
 	Facebook::Graph::Cookbook::Recipe1.3 \
 	Facebook::Graph::Cookbook::Recipe2.3 \
+	Facebook::Graph::Cookbook::Recipe3.3 \
 	Facebook::Graph::Picture.3 \
 	Facebook::Graph::Publish.3 \
 	Facebook::Graph::Publish::Checkin.3 \
@@ -46,6 +46,7 @@ MAN3=	Facebook::Graph.3 \
 	Facebook::Graph::Publish::Like.3 \
 	Facebook::Graph::Publish::Link.3 \
 	Facebook::Graph::Publish::Note.3 \
+	Facebook::Graph::Publish::Photo.3 \
 	Facebook::Graph::Publish::Post.3 \
 	Facebook::Graph::Publish::RSVPAttending.3 \
 	Facebook::Graph::Publish::RSVPDeclined.3 \
