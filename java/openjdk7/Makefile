@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	openjdk
-PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
+PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.java.net/openjdk/jdk7u2/promoted/b${JDK_BUILD_NUMBER}/ \
+MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
 		http://icedtea.classpath.org/download/drops/:jaxp \
 		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk7/:jaxws \
@@ -39,11 +38,9 @@ OPTIONS=	POLICY   "Install the Unlimited Strength Policy Files"      on \
 		TZUPDATE "Update the time zone data"                        on
 
 JDK_MAJOR_VERSION=	7
-JDK_MINOR_VERSION=	2
-PORT_MINOR_VERSION=	3
-JDK_BUILD_NUMBER=	13
-PORT_BUILD_NUMBER=	04
-JDK_BUILD_DATE=		17_nov_2011
+JDK_MINOR_VERSION=	4
+JDK_BUILD_NUMBER=	22
+JDK_BUILD_DATE=		02_may_2012
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
@@ -134,22 +131,6 @@ BOOTSTRAPJDKDIR=	${BJDK}
 BOOTSTRAPJDKDIR?=	${LOCALBASE}/diablo-jdk1.6.0
 BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/diablo-jdk16
 .endif
-
-post-extract:
-	@for dir in `${FIND} ${WRKSRC} -name '*[Ll][Ii][Nn][Uu][Xx]*' -type d`; do \
-		${MKDIR} `echo $$dir | ${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g'`; \
-		for subdir in `${FIND} $$dir -type d`; do \
-			${MKDIR} `echo $$subdir | ${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g'`; \
-		done; \
-		for file in `${FIND} $$dir -type f`; do \
-			newfile=`echo $$file | ${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g'`; \
-			${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g' $$file > $$newfile; \
-		done; \
-	done
-	@for file in `${FIND} ${WRKSRC} -name '*[Ll][Ii][Nn][Uu][Xx]*' -type f | ${GREP} -v '\/[^/]*[Ll][Ii][Nn][Uu][Xx][^/]*\/'`; do \
-		newfile=`echo $$file | ${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g'`; \
-		${SED} -e 's/linux/bsd/g' -e 's/Linux/Bsd/g' -e 's/LINUX/BSD/g' $$file > $$newfile; \
-	done
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
