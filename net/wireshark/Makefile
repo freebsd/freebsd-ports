@@ -6,15 +6,16 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.6.8
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
-    		http://wireshark.osmirror.nl/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
-		http://wireshark.askapache.com/download/src/ \
-		http://wireshark.dsmirror.nl/download/src/ \
-		ftp://ftp.uni-kl.de/pub/wireshark/src/
+		http://wireshark.askapache.com/download/src/all-versions/ \
+		ftp://ftp.uni-kl.de/pub/wireshark/src/ \
+		http://prdownloads.sourceforge.net/wireshark/ \
+		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
+		ftp://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
+		http://wireshark.zing.org/download/src/
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -100,7 +101,7 @@ CONFIGURE_ARGS+=	--enable-threads
 .endif
 
 .if !defined(WITHOUT_PCRE) && !defined(LITE)
-LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=	--with-pcre=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-pcre=no
@@ -124,36 +125,36 @@ CONFIGURE_ARGS+=--without-portaudio
 .endif
 
 .if !defined(WITHOUT_SNMP) && !defined(LITE)
-LIB_DEPENDS+=		smi.2:${PORTSDIR}/net-mgmt/libsmi
+LIB_DEPENDS+=		smi:${PORTSDIR}/net-mgmt/libsmi
 CONFIGURE_ARGS+=	--with-libsmi=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-libsmi=no
 .endif
 
 .if !defined(WITHOUT_ADNS) && !defined(LITE)
-LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
+LIB_DEPENDS+=	adns:${PORTSDIR}/dns/adns
 CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-adns=no
 .endif
 
 .if !defined(WITHOUT_CARES) && !defined(LITE)
-LIB_DEPENDS+=		cares.2:${PORTSDIR}/dns/c-ares
+LIB_DEPENDS+=		cares:${PORTSDIR}/dns/c-ares
 CONFIGURE_ARGS+=	--with-c-ares=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-c-ares=no
 .endif
 
 .if !defined(WITHOUT_GEOIP) && !defined(LITE)
-LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=	--with-geoip=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-geoip=no
 .endif
 
 .if !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE} \
 		--with-gnutls=yes
 .else
@@ -161,7 +162,7 @@ CONFIGURE_ARGS+=--with-gnutls=no
 .endif
 
 .if !defined(WITHOUT_LIBGCRYPT)
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 .endif
 
