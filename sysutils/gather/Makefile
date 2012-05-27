@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gather
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	to.my.trociny@gmail.com
+MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Utility to store and display system statistics
+
+LICENSE=	BSD
 
 PROJECTHOST=	gatherit
 
