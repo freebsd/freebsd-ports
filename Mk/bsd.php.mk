@@ -15,7 +15,7 @@
 #
 # USE_PHP=	ext1 ext2 ext3
 #
-# The port can set these options in its Makefile before bsd.ports.pre.mk:
+# The port can set these options in its Makefile before bsd.port.pre.mk:
 #
 # DEFAULT_PHP_VER=N - Use PHP version N if PHP is not yet installed.
 # IGNORE_WITH_PHP=N - The port doesn't work with PHP version N.
