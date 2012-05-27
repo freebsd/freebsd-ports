@@ -190,6 +190,7 @@
     SUBDIR += wine-devel
     SUBDIR += wine-doors
     SUBDIR += wine-gecko
+    SUBDIR += wine-gecko-devel
     SUBDIR += wxmupen64plus
     SUBDIR += x48
     SUBDIR += xbraitenberg
