@@ -7,6 +7,7 @@
 
 PORTNAME=	freeswitch-scripts
 PORTVERSION=	1.0.7.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://dl.dropbox.com/u/152504/
@@ -16,11 +17,13 @@ DIST_SUBDIR=	${BASE_PORTNAME}
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch Scripts
 
+RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
+
+CONFLICTS=	freeswitch-scripts-devel-[0-9]*
+
 NO_BUILD=	yes
 BASE_PORTNAME=	freeswitch
 SUB_FILES=	pkg-install
-
-RUN_DEPENDS=    ${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch-core
 
 FREESWITCH_USER=	freeswitch
 FREESWITCH_GROUP=	${FREESWITCH_USER}
