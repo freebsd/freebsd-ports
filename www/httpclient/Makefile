@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpclient
-DISTVERSION=	4.1.3
+DISTVERSION=	4.2
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -29,7 +29,8 @@ WRKSRC=		${WRKDIR}/httpcomponents-client-${DISTVERSION}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-cache.jar \
-		%%JAVAJARDIR%%/${PORTNAME:S/client/mime/}.jar
+		%%JAVAJARDIR%%/${PORTNAME:S/client/mime/}.jar \
+		%%JAVAJARDIR%%/fluent-hc.jar
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -46,6 +47,10 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME:S/client/mime/}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME:S/client/mime/}-${DISTVERSION}.jar \
 		${JAVAJARDIR}/${PORTNAME:S/client/mime/}.jar
+	@${ECHO_MSG} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/fluent-hc.jar..."
+	@${INSTALL_DATA} ${WRKSRC}/lib/fluent-hc-${DISTVERSION}.jar \
+		${JAVAJARDIR}/fluent-hc.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
