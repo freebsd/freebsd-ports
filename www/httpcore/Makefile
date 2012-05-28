@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httpcore
-DISTVERSION=	4.1.4
+DISTVERSION=	4.2
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/httpcomponents-core-${DISTVERSION}
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-nio.jar
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
@@ -42,6 +43,13 @@ do-install:
 	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}/
+	@${ECHO_MSG} " [DONE]"
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO_MSG} -n ">> Installing examples..."
+	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [DONE]"
 .endif
 
