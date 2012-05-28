@@ -1,5 +1,5 @@
---- Makefile.orig	2011-11-11 09:41:38.000000000 +0800
-+++ Makefile	2011-11-15 11:51:22.387400943 +0800
+--- Makefile.orig	2012-05-18 07:56:24.000000000 +0800
++++ Makefile	2012-05-23 14:47:29.661831756 +0800
 @@ -92,7 +92,7 @@
  	cd $(abs_top_srcdir)
  	[ -d $(DESTDIR)/$(bindir) ] || $(MKDIR_P) $(DESTDIR)/$(bindir)
@@ -18,15 +18,16 @@
  	  cd $(abs_top_srcdir) && \
  	  $(INSTALL) -d $(DESTDIR)$(ATSNEWHOME)/"$$d" && \
  	  find "$$d" -name .svn -prune -o -type f \
-@@ -140,6 +140,7 @@
+@@ -140,6 +140,8 @@
  	done
  
  install:: install_files
 +	find $(DESTDIR)$(ATSNEWHOME) -depth -type d -empty -delete
++	find $(DESTDIR)$(ATSNEWHOME) -type f -name '*.orig' -delete
  
  ######
  
-@@ -152,8 +153,7 @@
+@@ -152,8 +154,7 @@
    bin/atslex \
    ccomp/runtime/GCATS/gc.o \
    ccomp/runtime/GCATS/gc_mt.o \
@@ -36,33 +37,33 @@
  	@echo "ATS/Anairiats has been built up successfully!"
  	@echo "The value of ATSHOME for this build is \"$(ATSHOME)\"."
  	@echo "The value of ATSHOMERELOC for this build is \"$(ATSHOMERELOC)\"."
-@@ -212,25 +212,25 @@
+@@ -212,25 +213,25 @@
  
  ATSLIB=$(ATSHOMEQ)/bin/atslib
  
 -.libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $<
 +.libfiles_local: .libfiles ; $(CC) -E -P -x c -o $@ $< ; sed -i '' -e '/linordset_randbst/d' $@
  libfiles: .libfiles_local
--	$(ATSLIB) $(ATS_PROOFCHECK) -D_XOPEN_SOURCE -O2 --libats
+-	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_lex
 -	$(ATSLIB) $(ATS_PROOFCHECK) -O2 --libats_smlbas
-+	$(ATSLIB) $(ATS_PROOFCHECK) -D_XOPEN_SOURCE -O2 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats
 +	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats_lex
 +	$(ATSLIB) $(ATS_PROOFCHECK) -O2 $(CFLAGS) --libats_smlbas
  
  lib32files: .libfiles_local
--	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -D_XOPEN_SOURCE -O2 --libats
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats_lex
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 --libats_smlbas
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -D_XOPEN_SOURCE -O2 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats
 +	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats_lex
 +	$(ATSLIB) $(ATS_PROOFCHECK) -m32 -O2 $(CFLAGS) --libats_smlbas
  
  lib64files: .libfiles_local
--	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -D_XOPEN_SOURCE -O2 --libats
+-	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats_lex
 -	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 --libats_smlbas
-+	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -D_XOPEN_SOURCE -O2 $(CFLAGS) --libats
++	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats
 +	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats_lex
 +	$(ATSLIB) $(ATS_PROOFCHECK) -m64 -O2 $(CFLAGS) --libats_smlbas
  
