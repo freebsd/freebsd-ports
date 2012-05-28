@@ -7,11 +7,11 @@
 
 PORTNAME=	ats
 PORTVERSION=	${ATS_VER}
-PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-lang/${PORTNAME}-lang/${ATS_IMPL}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-lang-${ATS_IMPL}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	A language with a type system rooted in the Applied Type System
@@ -43,6 +43,16 @@ LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .if !defined(WITHOUT_PCRE)
 LIB_DEPENDS+=	pcre.1:${PORTSDIR}/devel/pcre
 .endif
+
+post-patch:
+	${SED} -i '' -e 's/gcc/${CC}/' \
+	    ${WRKSRC}/ccomp/runtime/GCATS/Makefile \
+	    ${WRKSRC}/utils/scripts/Makefile
+	${SED} -i '' -e 's/ATSCCOMP_def "gcc"/ATSCCOMP_def "${CC}"/' \
+	    ${WRKSRC}/utils/scripts/basics.dats
+	${SED} -i '' -e 's/argv_p = "gcc"/argv_p = "${CC}"/' \
+	             -e 's/execvp("gcc", argv)/execvp("${CC}", argv)/' \
+	    ${WRKSRC}/utils/scripts/atslib.dats
 
 post-configure:
 .if defined(WITHOUT_GMP)
