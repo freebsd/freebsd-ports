@@ -14,6 +14,7 @@ bin/dcshare
 %%SITE_PERL%%/Net/DirectConnect/ipv6.pm
 %%SITE_PERL%%/Net/DirectConnect/nmdc.pm
 %%SITE_PERL%%/Net/DirectConnect/pslib/psmisc.pm
+%%SITE_PERL%%/Net/DirectConnect/pslib/psweb.pm
 %%SITE_PERL%%/Net/DirectConnect/pslib/pssql.pm
 %%SITE_PERL%%/Net/DirectConnect/sctp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DirectConnect/.packlist
