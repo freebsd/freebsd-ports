@@ -136,7 +136,7 @@ MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE
 
 . if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
-.  if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK2)
+.  if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME2) && !defined(WITH_GTK2)
 WITH_GTK2=	yes
 .  endif
 
@@ -148,14 +148,11 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" ${I1
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
 .  elif defined(WITH_GNOME2)
-.   if ${WITH_GNOME2:Mlibgnomeui}!="" || ${WITH_GNOME2}=="yes" || \
-	${WITH_GNOME2}=="1"
 USE_GNOME=	libgnomeui
 PKGNAMESUFFIX=	-gnome2
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome2" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
-.   endif
 .  elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${LOCALBASE} ${I18N}
