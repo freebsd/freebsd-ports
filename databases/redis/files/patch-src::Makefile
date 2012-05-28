@@ -1,5 +1,5 @@
---- src/Makefile.orig	2011-11-28 14:22:08.000000000 +0400
-+++ src/Makefile	2011-11-30 16:33:17.000000000 +0400
+--- src/Makefile.orig	2012-05-28 11:14:39.000000000 +0400
++++ src/Makefile	2012-05-28 11:15:45.000000000 +0400
 @@ -28,6 +28,9 @@
    CFLAGS?=-std=c99 -pedantic $(OPTIMIZATION) -Wall -W -D__EXTENSIONS__ -D_XPG6
    CCLINK?=-ldl -lnsl -lsocket -lm -lpthread
@@ -17,8 +17,8 @@
 -CCOPT= $(CFLAGS) $(ARCH) $(PROF)
 +CCOPT= $(CFLAGS) $(PROF)
  
--PREFIX= /usr/local
+-PREFIX?=/usr/local
 +PREFIX:= ${PREFIX}
  INSTALL_BIN= $(PREFIX)/bin
- INSTALL= cp -p
+ INSTALL= cp -pf
  
