@@ -33,6 +33,7 @@ pre-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PHPMRSS)
+BROKEN=		does not compile
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_AUTOTOOLS+=	autoconf:env
