@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2010-11-27 01:06:01.000000000 +0300
-+++ CMakeLists.txt	2011-01-12 17:53:37.638940558 +0300
-@@ -250,7 +250,7 @@ ENDIF (APPLEBUNDLE)
+--- CMakeLists.txt.orig	2012-05-09 22:05:21.000000000 +0200
++++ CMakeLists.txt	2012-05-20 22:29:49.000000000 +0200
+@@ -238,7 +238,7 @@
  #Setp all the directories we will use
  #MAN
  CMAKE_POLICY(SET CMP0005 OLD)
 -SET(MANDIR "share/man/")
 +SET(MANDIR "man/")
- SET(SHAREDIR "share/${MAIN_DIR_NAME}${TAG_VERSION}/")
- ADD_DEFINITIONS("-DSHAREDIR=\\\"${CMAKE_INSTALL_PREFIX}/${SHAREDIR}\\\"")
- 
-@@ -792,10 +792,10 @@ INSTALL(FILES
+ IF(WANT_VERSIONING)
+     SET(SHAREDIR "share/${MAIN_DIR_NAME}${TAG_VERSION}/")
+ ELSE(WANT_VERSIONING)
+@@ -912,10 +912,10 @@
  
  ## PL We may not need this anymore
  #Install the desktop file
@@ -18,8 +18,8 @@
 - # #DESTINATION ${DESKTOPDIR}
 -#)
 +INSTALL(FILES
-+  scribus.desktop
-+  DESTINATION ${DESKTOPDIR}
++ scribus.desktop
++ DESTINATION ${DESKTOPDIR}
 +)
  
  #If building an Apple bundle, install these specific files
