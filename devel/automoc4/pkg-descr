@@ -1,3 +1,4 @@
-Add automoc4 tool, used to build kde4 and related packages.
+Automoc4 is a tool to add rules to CMake projects for generating Qt 4
+moc files automatically.
 
-WWW: http://www.kde.org/
+WWW: http://www.kde.org
