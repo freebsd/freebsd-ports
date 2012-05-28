@@ -28,6 +28,6 @@ post-extract:
 
 do-install:
 	${MKDIR} ${TARGET_DIR}
-	${PAX} -rw -s${WRKSRC} ${WRKSRC}/locale ${TARGET_DIR}
+	${PAX} -rw -s,${WRKSRC},, ${WRKSRC}/locale ${TARGET_DIR}
 
 .include <bsd.port.mk>
