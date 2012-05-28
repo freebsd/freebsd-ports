@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	20110228
+PORTVERSION=	20111115
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ircii.warped.com/pub/ircII/ \
-		ftp://ftp.irc.org/irc/clients/unix/ircII/
+MASTER_SITES=	http://ircii.warped.com/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
