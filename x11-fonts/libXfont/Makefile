@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X font libary
+COMMENT=	X font library
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
