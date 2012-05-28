@@ -667,6 +667,10 @@ include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
 include/wine/windows/wmistr.h
+include/wine/windows/wmsbuffer.h
+include/wine/windows/wmsbuffer.idl
+include/wine/windows/wmsdkidl.h
+include/wine/windows/wmsdkidl.idl
 include/wine/windows/wnaspi32.h
 include/wine/windows/wownt32.h
 include/wine/windows/wpcapi.h
