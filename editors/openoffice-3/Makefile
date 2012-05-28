@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 #de facto maintainer is maho@FreeBSD.org
 #Frequent Patch submitters should optionally sign Apache iCLA
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
+COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 LICENSE=	AL2
 
