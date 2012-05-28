@@ -1,12 +1,6 @@
---- base/allocator/allocator.gyp.orig	2012-03-28 00:39:56.000000000 +0300
-+++ base/allocator/allocator.gyp	2012-03-28 00:41:11.709398120 +0300
-@@ -1,4 +1,4 @@
--# Copyright (c) 2012 The Chromium Authors. All rights reserved.
-+# Copyright (c) 2009 The Chromium Authors. All rights reserved.
- # Use of this source code is governed by a BSD-style license that can be
- # found in the LICENSE file.
- 
-@@ -7,331 +7,203 @@
+--- base/allocator/allocator.gyp.orig	2012-05-20 01:26:46.857105914 +0300
++++ base/allocator/allocator.gyp	2012-05-20 01:52:58.243106608 +0300
+@@ -7,353 +7,210 @@
      'jemalloc_dir': '../../third_party/jemalloc/chromium',
      'tcmalloc_dir': '../../third_party/tcmalloc/chromium',
    },
@@ -48,7 +42,7 @@
 +          'type': 'none',
 +          'direct_dependent_settings': {
              'defines': [
--              ['PERFTOOLS_DLL_DECL', '']
+-              'PERFTOOLS_DLL_DECL=',
 +              'USE_SYSTEM_TCMALLOC',
 +            ],
 +          },
@@ -73,7 +67,6 @@
 -        '<(tcmalloc_dir)/src/addressmap-inl.h',
 -        '<(tcmalloc_dir)/src/base/atomicops-internals-linuxppc.h',
 -        '<(tcmalloc_dir)/src/base/arm_instruction_set_select.h',
--        '<(tcmalloc_dir)/src/base/atomicops-internals-arm-gcc.h',
 -        '<(tcmalloc_dir)/src/base/atomicops-internals-arm-generic.h',
 -        '<(tcmalloc_dir)/src/base/atomicops-internals-arm-v6plus.h',
 -        '<(tcmalloc_dir)/src/base/atomicops-internals-macosx.h',
@@ -87,6 +80,8 @@
 -        # We don't list dynamic_annotations.c since its copy is already
 -        # present in the dynamic_annotations target.
 -        '<(tcmalloc_dir)/src/base/dynamic_annotations.h',
+-        '<(tcmalloc_dir)/src/base/elf_mem_image.cc',
+-        '<(tcmalloc_dir)/src/base/elf_mem_image.h',
 -        '<(tcmalloc_dir)/src/base/elfcore.h',
 -        '<(tcmalloc_dir)/src/base/googleinit.h',
 -        '<(tcmalloc_dir)/src/base/linux_syscall_support.h',
@@ -121,15 +116,15 @@
 -        '<(tcmalloc_dir)/src/free_list.cc',
 -        '<(tcmalloc_dir)/src/free_list.h',
 -        '<(tcmalloc_dir)/src/getpc.h',
--        '<(tcmalloc_dir)/src/google/heap-checker.h',
--        '<(tcmalloc_dir)/src/google/heap-profiler.h',
--        '<(tcmalloc_dir)/src/google/malloc_extension.h',
--        '<(tcmalloc_dir)/src/google/malloc_extension_c.h',
--        '<(tcmalloc_dir)/src/google/malloc_hook.h',
--        '<(tcmalloc_dir)/src/google/malloc_hook_c.h',
--        '<(tcmalloc_dir)/src/google/profiler.h',
--        '<(tcmalloc_dir)/src/google/stacktrace.h',
--        '<(tcmalloc_dir)/src/google/tcmalloc.h',
+-        '<(tcmalloc_dir)/src/gperftools/heap-checker.h',
+-        '<(tcmalloc_dir)/src/gperftools/heap-profiler.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_extension.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_extension_c.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_hook.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_hook_c.h',
+-        '<(tcmalloc_dir)/src/gperftools/profiler.h',
+-        '<(tcmalloc_dir)/src/gperftools/stacktrace.h',
+-        '<(tcmalloc_dir)/src/gperftools/tcmalloc.h',
 -        '<(tcmalloc_dir)/src/heap-checker-bcad.cc',
 -        '<(tcmalloc_dir)/src/heap-checker.cc',
 -        '<(tcmalloc_dir)/src/heap-profile-table.cc',
@@ -137,10 +132,17 @@
 -        '<(tcmalloc_dir)/src/heap-profiler.cc',
 -        '<(tcmalloc_dir)/src/internal_logging.cc',
 -        '<(tcmalloc_dir)/src/internal_logging.h',
+-        '<(tcmalloc_dir)/src/libc_override.h',
+-        '<(tcmalloc_dir)/src/libc_override_gcc_and_weak.h',
+-        '<(tcmalloc_dir)/src/libc_override_glibc.h',
+-        '<(tcmalloc_dir)/src/libc_override_osx.h',
+-        '<(tcmalloc_dir)/src/libc_override_redefine.h',
 -        '<(tcmalloc_dir)/src/linked_list.h',
 -        '<(tcmalloc_dir)/src/malloc_extension.cc',
 -        '<(tcmalloc_dir)/src/malloc_hook-inl.h',
 -        '<(tcmalloc_dir)/src/malloc_hook.cc',
+-        '<(tcmalloc_dir)/src/malloc_hook_mmap_freebsd.h',
+-        '<(tcmalloc_dir)/src/malloc_hook_mmap_linux.h',
 -        '<(tcmalloc_dir)/src/maybe_threads.cc',
 -        '<(tcmalloc_dir)/src/maybe_threads.h',
 -        '<(tcmalloc_dir)/src/memfs_malloc.cc',
@@ -165,6 +167,7 @@
 -        '<(tcmalloc_dir)/src/stack_trace_table.cc',
 -        '<(tcmalloc_dir)/src/stack_trace_table.h',
 -        '<(tcmalloc_dir)/src/stacktrace.cc',
+-        '<(tcmalloc_dir)/src/stacktrace_arm-inl.h',
 -        '<(tcmalloc_dir)/src/stacktrace_config.h',
 -        '<(tcmalloc_dir)/src/stacktrace_generic-inl.h',
 -        '<(tcmalloc_dir)/src/stacktrace_libunwind-inl.h',
@@ -172,7 +175,6 @@
 -        '<(tcmalloc_dir)/src/stacktrace_win32-inl.h',
 -        '<(tcmalloc_dir)/src/stacktrace_with_context.cc',
 -        '<(tcmalloc_dir)/src/stacktrace_x86-inl.h',
--        '<(tcmalloc_dir)/src/stacktrace_x86_64-inl.h',
 -        '<(tcmalloc_dir)/src/static_vars.cc',
 -        '<(tcmalloc_dir)/src/static_vars.h',
 -        '<(tcmalloc_dir)/src/symbolize.cc',
@@ -185,7 +187,7 @@
 -        '<(tcmalloc_dir)/src/thread_cache.h',
 -        '<(tcmalloc_dir)/src/windows/config.h',
 -        '<(tcmalloc_dir)/src/windows/get_mangled_names.cc',
--        '<(tcmalloc_dir)/src/windows/google/tcmalloc.h',
+-        '<(tcmalloc_dir)/src/windows/gperftools/tcmalloc.h',
 -        '<(tcmalloc_dir)/src/windows/ia32_modrm_map.cc',
 -        '<(tcmalloc_dir)/src/windows/ia32_opcode_map.cc',
 -        '<(tcmalloc_dir)/src/windows/mingw.h',
@@ -230,6 +232,7 @@
 -        '<(tcmalloc_dir)/src/base/basictypes.h',
 -        '<(tcmalloc_dir)/src/base/commandlineflags.h',
 -        '<(tcmalloc_dir)/src/base/cycleclock.h',
+-        '<(tcmalloc_dir)/src/base/elf_mem_image.h',
 -        '<(tcmalloc_dir)/src/base/elfcore.h',
 -        '<(tcmalloc_dir)/src/base/googleinit.h',
 -        '<(tcmalloc_dir)/src/base/linux_syscall_support.h',
@@ -240,17 +243,27 @@
 -        '<(tcmalloc_dir)/src/base/stl_allocator.h',
 -        '<(tcmalloc_dir)/src/base/thread_annotations.h',
 -        '<(tcmalloc_dir)/src/getpc.h',
--        '<(tcmalloc_dir)/src/google/heap-checker.h',
--        '<(tcmalloc_dir)/src/google/heap-profiler.h',
--        '<(tcmalloc_dir)/src/google/malloc_extension_c.h',
--        '<(tcmalloc_dir)/src/google/malloc_hook.h',
--        '<(tcmalloc_dir)/src/google/malloc_hook_c.h',
--        '<(tcmalloc_dir)/src/google/profiler.h',
--        '<(tcmalloc_dir)/src/google/stacktrace.h',
+-        '<(tcmalloc_dir)/src/gperftools/heap-checker.h',
+-        '<(tcmalloc_dir)/src/gperftools/heap-profiler.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_extension.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_extension_c.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_hook.h',
+-        '<(tcmalloc_dir)/src/gperftools/malloc_hook_c.h',
+-        '<(tcmalloc_dir)/src/gperftools/profiler.h',
+-        '<(tcmalloc_dir)/src/gperftools/stacktrace.h',
+-        '<(tcmalloc_dir)/src/gperftools/tcmalloc.h',
+-        '<(tcmalloc_dir)/src/libc_override.h',
+-        '<(tcmalloc_dir)/src/libc_override_gcc_and_weak.h',
+-        '<(tcmalloc_dir)/src/libc_override_glibc.h',
+-        '<(tcmalloc_dir)/src/libc_override_osx.h',
+-        '<(tcmalloc_dir)/src/libc_override_redefine.h',
+-        '<(tcmalloc_dir)/src/malloc_hook_mmap_freebsd.h',
+-        '<(tcmalloc_dir)/src/malloc_hook_mmap_linux.h',
 -        '<(tcmalloc_dir)/src/memfs_malloc.cc',
 -        '<(tcmalloc_dir)/src/packed-cache-inl.h',
 -        '<(tcmalloc_dir)/src/page_heap_allocator.h',
 -        '<(tcmalloc_dir)/src/pagemap.h',
+-        '<(tcmalloc_dir)/src/stacktrace_arm-inl.h',
 -        '<(tcmalloc_dir)/src/stacktrace_config.h',
 -        '<(tcmalloc_dir)/src/stacktrace_generic-inl.h',
 -        '<(tcmalloc_dir)/src/stacktrace_libunwind-inl.h',
@@ -258,10 +271,9 @@
 -        '<(tcmalloc_dir)/src/stacktrace_win32-inl.h',
 -        '<(tcmalloc_dir)/src/stacktrace_with_context.cc',
 -        '<(tcmalloc_dir)/src/stacktrace_x86-inl.h',
--        '<(tcmalloc_dir)/src/stacktrace_x86_64-inl.h',
 -        '<(tcmalloc_dir)/src/tcmalloc_guard.h',
 -        '<(tcmalloc_dir)/src/windows/config.h',
--        '<(tcmalloc_dir)/src/windows/google/tcmalloc.h',
+-        '<(tcmalloc_dir)/src/windows/gperftools/tcmalloc.h',
 -        '<(tcmalloc_dir)/src/windows/get_mangled_names.cc',
 -        '<(tcmalloc_dir)/src/windows/ia32_modrm_map.cc',
 -        '<(tcmalloc_dir)/src/windows/ia32_opcode_map.cc',
@@ -301,7 +313,7 @@
 -      'conditions': [
 -        ['OS=="win"', {
 -          'defines': [
--            ['PERFTOOLS_DLL_DECL', '']
+-            'PERFTOOLS_DLL_DECL=',
 -          ],
 -          'dependencies': [
 -            'libcmt',
@@ -319,13 +331,12 @@
 +          },
            'include_dirs': [
 -            '<(tcmalloc_dir)/src/windows',
--          ],
--          'sources!': [
 +            '.',
 +            '<(tcmalloc_dir)/src/base',
 +            '<(tcmalloc_dir)/src',
 +            '../..',
-+          ],
+           ],
+-          'sources!': [
 +          'direct_dependent_settings': {
 +            'configurations': {
 +              'Common_Base': {
@@ -342,7 +353,7 @@
 +            'conditions': [
 +              ['OS=="win"', {
 +                'defines': [
-+                  ['PERFTOOLS_DLL_DECL', '']
++                  'PERFTOOLS_DLL_DECL=',
 +                ],
 +              }],
 +            ],
@@ -353,13 +364,11 @@
 +            '<(tcmalloc_dir)/src/config.h',
 +            '<(tcmalloc_dir)/src/config_linux.h',
 +            '<(tcmalloc_dir)/src/config_win.h',
-+            '<(tcmalloc_dir)/src/config_freebsd.h',
 +
 +            # all tcmalloc native and forked files
 +            '<(tcmalloc_dir)/src/addressmap-inl.h',
 +            '<(tcmalloc_dir)/src/base/atomicops-internals-linuxppc.h',
 +            '<(tcmalloc_dir)/src/base/arm_instruction_set_select.h',
-+            '<(tcmalloc_dir)/src/base/atomicops-internals-arm-gcc.h',
 +            '<(tcmalloc_dir)/src/base/atomicops-internals-arm-generic.h',
 +            '<(tcmalloc_dir)/src/base/atomicops-internals-arm-v6plus.h',
 +            '<(tcmalloc_dir)/src/base/atomicops-internals-macosx.h',
@@ -373,6 +382,8 @@
 +            # We don't list dynamic_annotations.c since its copy is already
 +            # present in the dynamic_annotations target.
 +            '<(tcmalloc_dir)/src/base/dynamic_annotations.h',
+             '<(tcmalloc_dir)/src/base/elf_mem_image.cc',
+             '<(tcmalloc_dir)/src/base/elf_mem_image.h',
 +            '<(tcmalloc_dir)/src/base/elfcore.h',
 +            '<(tcmalloc_dir)/src/base/googleinit.h',
 +            '<(tcmalloc_dir)/src/base/linux_syscall_support.h',
@@ -419,26 +430,34 @@
 +            '<(tcmalloc_dir)/src/free_list.cc',
 +            '<(tcmalloc_dir)/src/free_list.h',
 +            '<(tcmalloc_dir)/src/getpc.h',
-+            '<(tcmalloc_dir)/src/google/heap-checker.h',
-+            '<(tcmalloc_dir)/src/google/heap-profiler.h',
-+            '<(tcmalloc_dir)/src/google/malloc_extension.h',
-+            '<(tcmalloc_dir)/src/google/malloc_extension_c.h',
-+            '<(tcmalloc_dir)/src/google/malloc_hook.h',
-+            '<(tcmalloc_dir)/src/google/malloc_hook_c.h',
-+            '<(tcmalloc_dir)/src/google/profiler.h',
-+            '<(tcmalloc_dir)/src/google/stacktrace.h',
-+            '<(tcmalloc_dir)/src/google/tcmalloc.h',
++            '<(tcmalloc_dir)/src/gperftools/heap-checker.h',
++            '<(tcmalloc_dir)/src/gperftools/heap-profiler.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_extension.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_extension_c.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_hook.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_hook_c.h',
++            '<(tcmalloc_dir)/src/gperftools/profiler.h',
++            '<(tcmalloc_dir)/src/gperftools/stacktrace.h',
++            '<(tcmalloc_dir)/src/gperftools/tcmalloc.h',
              '<(tcmalloc_dir)/src/heap-checker-bcad.cc',
              '<(tcmalloc_dir)/src/heap-checker.cc',
-+            '<(tcmalloc_dir)/src/heap-profile-table.cc',
-+            '<(tcmalloc_dir)/src/heap-profile-table.h',
-             '<(tcmalloc_dir)/src/heap-profiler.cc',
+-            '<(tcmalloc_dir)/src/heap-profiler.cc',
+             '<(tcmalloc_dir)/src/heap-profile-table.cc',
+             '<(tcmalloc_dir)/src/heap-profile-table.h',
++            '<(tcmalloc_dir)/src/heap-profiler.cc',
 +            '<(tcmalloc_dir)/src/internal_logging.cc',
 +            '<(tcmalloc_dir)/src/internal_logging.h',
++            '<(tcmalloc_dir)/src/libc_override.h',
++            '<(tcmalloc_dir)/src/libc_override_gcc_and_weak.h',
++            '<(tcmalloc_dir)/src/libc_override_glibc.h',
++            '<(tcmalloc_dir)/src/libc_override_osx.h',
++            '<(tcmalloc_dir)/src/libc_override_redefine.h',
 +            '<(tcmalloc_dir)/src/linked_list.h',
 +            '<(tcmalloc_dir)/src/malloc_extension.cc',
 +            '<(tcmalloc_dir)/src/malloc_hook-inl.h',
 +            '<(tcmalloc_dir)/src/malloc_hook.cc',
++            '<(tcmalloc_dir)/src/malloc_hook_mmap_freebsd.h',
++            '<(tcmalloc_dir)/src/malloc_hook_mmap_linux.h',
 +            '<(tcmalloc_dir)/src/maybe_threads.cc',
 +            '<(tcmalloc_dir)/src/maybe_threads.h',
 +            '<(tcmalloc_dir)/src/memfs_malloc.cc',
@@ -472,6 +491,7 @@
 +            '<(tcmalloc_dir)/src/stack_trace_table.cc',
 +            '<(tcmalloc_dir)/src/stack_trace_table.h',
 +            '<(tcmalloc_dir)/src/stacktrace.cc',
++            '<(tcmalloc_dir)/src/stacktrace_arm-inl.h',
 +            '<(tcmalloc_dir)/src/stacktrace_config.h',
 +            '<(tcmalloc_dir)/src/stacktrace_generic-inl.h',
 +            '<(tcmalloc_dir)/src/stacktrace_libunwind-inl.h',
@@ -479,7 +499,6 @@
 +            '<(tcmalloc_dir)/src/stacktrace_win32-inl.h',
 +            '<(tcmalloc_dir)/src/stacktrace_with_context.cc',
 +            '<(tcmalloc_dir)/src/stacktrace_x86-inl.h',
-+            '<(tcmalloc_dir)/src/stacktrace_x86_64-inl.h',
 +            '<(tcmalloc_dir)/src/static_vars.cc',
 +            '<(tcmalloc_dir)/src/static_vars.h',
 +            '<(tcmalloc_dir)/src/symbolize.cc',
@@ -492,7 +511,7 @@
 +            '<(tcmalloc_dir)/src/thread_cache.h',
 +            '<(tcmalloc_dir)/src/windows/config.h',
 +            '<(tcmalloc_dir)/src/windows/get_mangled_names.cc',
-+            '<(tcmalloc_dir)/src/windows/google/tcmalloc.h',
++            '<(tcmalloc_dir)/src/windows/gperftools/tcmalloc.h',
 +            '<(tcmalloc_dir)/src/windows/ia32_modrm_map.cc',
 +            '<(tcmalloc_dir)/src/windows/ia32_opcode_map.cc',
 +            '<(tcmalloc_dir)/src/windows/mingw.h',
@@ -514,7 +533,7 @@
              # jemalloc files
              '<(jemalloc_dir)/jemalloc.c',
              '<(jemalloc_dir)/jemalloc.h',
-@@ -339,87 +211,238 @@
+@@ -361,70 +218,235 @@
              '<(jemalloc_dir)/qr.h',
              '<(jemalloc_dir)/rb.h',
  
@@ -557,6 +576,19 @@
 +          # sources! means that these are not compiled directly.
            'sources!': [
 -            '<(tcmalloc_dir)/src/debugallocation.cc',
+-          ],
+-        }],
+-        [ 'linux_keep_shadow_stacks==1', {
+-          'sources': [
+-            '<(tcmalloc_dir)/src/linux_shadow_stacks.cc',
+-            '<(tcmalloc_dir)/src/linux_shadow_stacks.h',
+-            '<(tcmalloc_dir)/src/stacktrace_shadow-inl.h',
+-          ],
+-          'cflags': [
+-            '-finstrument-functions',
+-          ],
+-          'defines': [
+-            'KEEP_SHADOW_STACKS',
 +            # Included by allocator_shim.cc for maximal inlining.
 +            'generic_allocators.cc',
 +            'win_allocator.cc',
@@ -573,6 +605,7 @@
 +            '<(tcmalloc_dir)/src/base/basictypes.h',
 +            '<(tcmalloc_dir)/src/base/commandlineflags.h',
 +            '<(tcmalloc_dir)/src/base/cycleclock.h',
++            '<(tcmalloc_dir)/src/base/elf_mem_image.h',
 +            '<(tcmalloc_dir)/src/base/elfcore.h',
 +            '<(tcmalloc_dir)/src/base/googleinit.h',
 +            '<(tcmalloc_dir)/src/base/linux_syscall_support.h',
@@ -583,17 +616,27 @@
 +            '<(tcmalloc_dir)/src/base/stl_allocator.h',
 +            '<(tcmalloc_dir)/src/base/thread_annotations.h',
 +            '<(tcmalloc_dir)/src/getpc.h',
-+            '<(tcmalloc_dir)/src/google/heap-checker.h',
-+            '<(tcmalloc_dir)/src/google/heap-profiler.h',
-+            '<(tcmalloc_dir)/src/google/malloc_extension_c.h',
-+            '<(tcmalloc_dir)/src/google/malloc_hook.h',
-+            '<(tcmalloc_dir)/src/google/malloc_hook_c.h',
-+            '<(tcmalloc_dir)/src/google/profiler.h',
-+            '<(tcmalloc_dir)/src/google/stacktrace.h',
++            '<(tcmalloc_dir)/src/gperftools/heap-checker.h',
++            '<(tcmalloc_dir)/src/gperftools/heap-profiler.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_extension.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_extension_c.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_hook.h',
++            '<(tcmalloc_dir)/src/gperftools/malloc_hook_c.h',
++            '<(tcmalloc_dir)/src/gperftools/profiler.h',
++            '<(tcmalloc_dir)/src/gperftools/stacktrace.h',
++            '<(tcmalloc_dir)/src/gperftools/tcmalloc.h',
++            '<(tcmalloc_dir)/src/libc_override.h',
++            '<(tcmalloc_dir)/src/libc_override_gcc_and_weak.h',
++            '<(tcmalloc_dir)/src/libc_override_glibc.h',
++            '<(tcmalloc_dir)/src/libc_override_osx.h',
++            '<(tcmalloc_dir)/src/libc_override_redefine.h',
++            '<(tcmalloc_dir)/src/malloc_hook_mmap_freebsd.h',
++            '<(tcmalloc_dir)/src/malloc_hook_mmap_linux.h',
 +            '<(tcmalloc_dir)/src/memfs_malloc.cc',
 +            '<(tcmalloc_dir)/src/packed-cache-inl.h',
 +            '<(tcmalloc_dir)/src/page_heap_allocator.h',
 +            '<(tcmalloc_dir)/src/pagemap.h',
++            '<(tcmalloc_dir)/src/stacktrace_arm-inl.h',
 +            '<(tcmalloc_dir)/src/stacktrace_config.h',
 +            '<(tcmalloc_dir)/src/stacktrace_generic-inl.h',
 +            '<(tcmalloc_dir)/src/stacktrace_libunwind-inl.h',
@@ -601,10 +644,9 @@
 +            '<(tcmalloc_dir)/src/stacktrace_win32-inl.h',
 +            '<(tcmalloc_dir)/src/stacktrace_with_context.cc',
 +            '<(tcmalloc_dir)/src/stacktrace_x86-inl.h',
-+            '<(tcmalloc_dir)/src/stacktrace_x86_64-inl.h',
 +            '<(tcmalloc_dir)/src/tcmalloc_guard.h',
 +            '<(tcmalloc_dir)/src/windows/config.h',
-+            '<(tcmalloc_dir)/src/windows/google/tcmalloc.h',
++            '<(tcmalloc_dir)/src/windows/gperftools/tcmalloc.h',
 +            '<(tcmalloc_dir)/src/windows/get_mangled_names.cc',
 +            '<(tcmalloc_dir)/src/windows/ia32_modrm_map.cc',
 +            '<(tcmalloc_dir)/src/windows/ia32_opcode_map.cc',
@@ -619,16 +661,17 @@
 +            '<(tcmalloc_dir)/src/windows/preamble_patcher_with_stub.cc',
            ],
 -        }],
--        [ 'linux_keep_shadow_stacks==1', {
--          'sources': [
--            '<(tcmalloc_dir)/src/linux_shadow_stacks.cc',
--            '<(tcmalloc_dir)/src/linux_shadow_stacks.h',
--            '<(tcmalloc_dir)/src/stacktrace_shadow-inl.h',
+-        [ 'linux_use_heapchecker==0', {
+-          # Do not compile and link the heapchecker source.
+-          'sources!': [
+-            '<(tcmalloc_dir)/src/heap-checker-bcad.cc',
+-            '<(tcmalloc_dir)/src/heap-checker.cc',
 +          'dependencies': [
 +            '../third_party/dynamic_annotations/dynamic_annotations.gyp:dynamic_annotations',
            ],
--          'cflags': [
--            '-finstrument-functions',
+-          # Disable the heap checker in tcmalloc.
+-          'defines': [
+-            'NO_HEAP_CHECK',
 +          'msvs_settings': {
 +            # TODO(sgk):  merge this with build/common.gypi settings
 +            'VCLibrarianTool': {
@@ -652,7 +695,7 @@
 +          'conditions': [
 +            ['OS=="win"', {
 +              'defines': [
-+                ['PERFTOOLS_DLL_DECL', '']
++                'PERFTOOLS_DLL_DECL=',
 +              ],
 +              'dependencies': [
 +                'libcmt',
@@ -661,6 +704,8 @@
 +                '<(tcmalloc_dir)/src/windows',
 +              ],
 +              'sources!': [
++                '<(tcmalloc_dir)/src/base/elf_mem_image.cc',
++                '<(tcmalloc_dir)/src/base/elf_mem_image.h',
 +                '<(tcmalloc_dir)/src/base/linuxthreads.cc',
 +                '<(tcmalloc_dir)/src/base/linuxthreads.h',
 +                '<(tcmalloc_dir)/src/base/vdso_support.cc',
@@ -680,6 +725,8 @@
 +                '<(tcmalloc_dir)/src/heap-checker-bcad.cc',
 +                '<(tcmalloc_dir)/src/heap-checker.cc',
 +                '<(tcmalloc_dir)/src/heap-profiler.cc',
++                '<(tcmalloc_dir)/src/heap-profile-table.cc',
++                '<(tcmalloc_dir)/src/heap-profile-table.h',
 +                '<(tcmalloc_dir)/src/memory_region_map.cc',
 +                '<(tcmalloc_dir)/src/memory_region_map.h',
 +                '<(tcmalloc_dir)/src/profiledata.cc',
@@ -770,56 +817,11 @@
 +              ],
 +            }],
            ],
--          'defines': [
--            'KEEP_SHADOW_STACKS',
-+        },
-+        {
-+          'target_name': 'allocator_unittests',
-+          'type': 'executable',
-+          'dependencies': [
-+            'allocator',
-+            '../../testing/gtest.gyp:gtest',
-           ],
--        }],
--        [ 'linux_use_heapchecker==0', {
--          # Do not compile and link the heapchecker source.
--          'sources!': [
--            '<(tcmalloc_dir)/src/heap-checker-bcad.cc',
--            '<(tcmalloc_dir)/src/heap-checker.cc',
-+          'include_dirs': [
-+            '.',
-+            '<(tcmalloc_dir)/src/base',
-+            '<(tcmalloc_dir)/src',
-+            '../..',
-           ],
--          # Disable the heap checker in tcmalloc.
--          'defines': [
--            'NO_HEAP_CHECK',
-+          'sources': [
-+            'allocator_unittests.cc',
-           ],
 -        }],
 -      ],
 -    },
--    {
--      'target_name': 'allocator_unittests',
--      'type': 'executable',
--      'dependencies': [
--        'allocator',
--        '../../testing/gtest.gyp:gtest',
--      ],
--      'include_dirs': [
--        '.',
--        '<(tcmalloc_dir)/src/base',
--        '<(tcmalloc_dir)/src',
--        '../..',
--      ],
--      'sources': [
--        'allocator_unittests.cc',
 +        },
        ],
--    },
--  ],
 -  'conditions': [
 +    }],
      ['OS=="win"', {

@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	18.0.1025.168
+DISTVERSION=	19.0.1084.52
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
@@ -38,8 +38,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		nss3.1:${PORTSDIR}/security/nss \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		cups.2:${PORTSDIR}/print/cups-client \
-		event-1.4:${PORTSDIR}/devel/libevent \
-		tcmalloc.2:${PORTSDIR}/devel/google-perftools
+		event-1.4:${PORTSDIR}/devel/libevent
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
@@ -67,6 +66,7 @@ GYP_DEFINES+=	use_cups=1 \
 		use_system_ffmpeg=0 \
 		use_system_libevent=1 \
 		use_system_tcmalloc=1 \
+		linux_use_tcmalloc=0 \
 		linux_use_heapchecker=0 \
 		disable_nacl=1 \
 		enable_webrtc=0 \

@@ -1,6 +1,6 @@
---- content/browser/gpu/gpu_blacklist.cc.orig	2012-02-01 21:23:10.000000000 +0200
-+++ content/browser/gpu/gpu_blacklist.cc	2012-02-01 21:23:18.000000000 +0200
-@@ -817,7 +817,7 @@
+--- chrome/browser/gpu_blacklist.cc.orig	2012-04-29 20:49:40.000000000 +0300
++++ chrome/browser/gpu_blacklist.cc	2012-04-29 20:49:54.000000000 +0300
+@@ -940,7 +940,7 @@
    return kOsChromeOS;
  #elif defined(OS_WIN)
    return kOsWin;

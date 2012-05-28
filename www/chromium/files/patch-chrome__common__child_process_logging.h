@@ -1,11 +1,11 @@
---- chrome/common/child_process_logging.h.orig	2012-01-18 11:13:17.000000000 +0200
-+++ chrome/common/child_process_logging.h	2012-01-29 15:30:03.000000000 +0200
-@@ -33,7 +33,7 @@
+--- chrome/common/child_process_logging.h.orig	2012-04-25 10:02:56.000000000 +0300
++++ chrome/common/child_process_logging.h	2012-04-29 20:33:00.000000000 +0300
+@@ -98,7 +98,7 @@
+ // values in |command_line|.
+ void SetCommandLine(const CommandLine* command_line);
  
- namespace child_process_logging {
- 
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX) || defined(OS_BSD)
- // These are declared here so the crash reporter can access them directly in
- // compromised context without going through the standard library.
- extern char g_active_url[];
+-#if defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_BSD) || defined(OS_MACOSX)
+ // Sets the product channel data to send along with crash reports to |channel|.
+ void SetChannel(const std::string& channel);
+ #endif

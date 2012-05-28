@@ -1,5 +1,5 @@
---- third_party/WebKit/Source/WebCore/config.h.orig	2011-11-10 16:05:10.000000000 +0200
-+++ third_party/WebKit/Source/WebCore/config.h	2011-12-01 20:58:22.000000000 +0200
+--- third_party/WebKit/Source/WebCore/config.h.orig	2012-02-15 03:05:44.000000000 +0100
++++ third_party/WebKit/Source/WebCore/config.h	2012-02-27 23:06:55.000000000 +0100
 @@ -164,6 +164,14 @@
  #define WTF_USE_NEW_THEME 1
  #endif // PLATFORM(MAC)
