@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wwwstat
-# Date created:			So   2 M-Aär 1997 18:10:49 MET$)B
+# Date created:			1997-04-02
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
