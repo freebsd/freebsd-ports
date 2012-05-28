@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	secretmaryochronicles
-PORTVERSION=	1.9
-PORTREVISION=	6
+PORTVERSION=	1.10.git20120512
 CATEGORIES=	games
-MASTER_SITES=	SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
+MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+#		SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
 DISTNAME=	smc-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
-BROKEN=		Does not work with CEGUI 0.7.x
-
-LIB_DEPENDS=	CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui \
+LIB_DEPENDS=	CEGUIBase-0.7.5.0:${PORTSDIR}/graphics/cegui \
 		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
 		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
+USE_AUTOTOOLS=	aclocal:env autoheader:env autoconf:env automake:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer ttf
@@ -30,11 +29,18 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-DBOOST_FILESYSTEM_VERSION=3
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/smc
 
+WRKSRC=		${WRKDIR}/smc
+
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/autogen.sh
+
+run-autotools:
+	cd ${WRKSRC} && ${SH} ./autogen.sh
 	@${REINPLACE_CMD} -e '/^LIBS =/ s|$$|$$(INTLLIBS)|' \
 		${WRKSRC}/src/Makefile.in
 
