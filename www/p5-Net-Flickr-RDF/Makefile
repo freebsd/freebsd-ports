@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Flickr-RDF
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Describe Flickr photos as RDF
 
-RUN_DEPENDS=	${SITE_PERL}/RDF/Simple.pm:${PORTSDIR}/textproc/p5-RDF-Simple \
-		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate \
-		p5-Net-Flickr-API>=1.68:${PORTSDIR}/www/p5-Net-Flickr-API
-BUILD_DEPENDS=	${RUN_DEPENDS}
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
-PERL_MODBUILD=	yes
+BUILD_DEPENDS=	p5-Net-Flickr-API>=1.7:${PORTSDIR}/www/p5-Net-Flickr-API \
+		p5-RDF-Simple>=0.22:${PORTSDIR}/textproc/p5-RDF-Simple \
+		p5-TimeDate>=1.16:${PORTSDIR}/devel/p5-TimeDate
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Net::Flickr::RDF.3
 
