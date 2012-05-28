@@ -107,12 +107,7 @@ CONFIGURE_ARGS+=	--enable-unicode=ucs4
 CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
-.if ${ARCH} == powerpc
-PLIST_SUB+=	NOT_FOR_POWERPC="@comment "
-.else
-PLIST_SUB+=	NOT_FOR_POWERPC=""
-.endif
-.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == alpha
+.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64
 PLIST_SUB+=	32BIT_ONLY="@comment "
 .else
 PLIST_SUB+=	32BIT_ONLY=""
