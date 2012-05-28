@@ -952,6 +952,7 @@
     SUBDIR += tiff2png
     SUBDIR += tifmerge
     SUBDIR += tilecache
+    SUBDIR += tiled
     SUBDIR += timeless
     SUBDIR += tintfu
     SUBDIR += tinyows
