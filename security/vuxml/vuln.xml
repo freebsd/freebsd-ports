@@ -52,6 +52,74 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="219d0bfd-a915-11e1-b519-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>19.0.1084.52</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>[117409] High CVE-2011-3103: Crashes in v8 garbage collection.
+	    Credit to the Chromium development community (Brett Wilson).</p>
+	  <p>[118018] Medium CVE-2011-3104: Out-of-bounds read in Skia. Credit
+	    to Google Chrome Security Team (Inferno).</p>
+	  <p>[120912] High CVE-2011-3105: Use-after-free in first-letter
+	    handling. Credit to miaubiz.</p>
+	  <p>[122654] Critical CVE-2011-3106: Browser memory corruption with
+	    websockets over SSL. Credit to the Chromium development community
+	    (Dharani Govindan).</p>
+	  <p>[124625] High CVE-2011-3107: Crashes in the plug-in JavaScript
+	    bindings. Credit to the Chromium development community (Dharani
+	    Govindan).</p>
+	  <p>[125159] Critical CVE-2011-3108: Use-after-free in browser cache.
+	    Credit to "efbiaiinzinz".</p>
+	  <p>[Linux only] [126296] High CVE-2011-3109: Bad cast in GTK UI.
+	    Credit to Micha Bartholome.</p>
+	  <p>[126337] [126343] [126378] [127349] [127819] [127868] High
+	    CVE-2011-3110: Out of bounds writes in PDF. Credit to Mateusz
+	    Jurczyk of the Google Security Team, with contributions by Gynvael
+	    Coldwind of the Google Security Team.</p>
+	  <p>[126414] Medium CVE-2011-3111: Invalid read in v8. Credit to
+	    Christian Holler.</p>
+	  <p>[127331] High CVE-2011-3112: Use-after-free with invalid encrypted
+	    PDF. Credit to Mateusz Jurczyk of the Google Security Team, with
+	    contributions by Gynvael Coldwind of the Google Security Team.</p>
+	  <p>[127883] High CVE-2011-3113: Invalid cast with colorspace handling
+	    in PDF. Credit to Mateusz Jurczyk of the Google Security Team, with
+	    contributions by Gynvael Coldwind of the Google Security Team.</p>
+	  <p>[128014] High CVE-2011-3114: Buffer overflows with PDF functions.
+	    Credit to Google Chrome Security Team (scarybeasts).</p>
+	  <p>[128018] High CVE-2011-3115: Type corruption in v8. Credit to
+	    Christian Holler.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-3103</cvename>
+      <cvename>CVE-2011-3104</cvename>
+      <cvename>CVE-2011-3105</cvename>
+      <cvename>CVE-2011-3106</cvename>
+      <cvename>CVE-2011-3107</cvename>
+      <cvename>CVE-2011-3108</cvename>
+      <cvename>CVE-2011-3110</cvename>
+      <cvename>CVE-2011-3111</cvename>
+      <cvename>CVE-2011-3112</cvename>
+      <cvename>CVE-2011-3113</cvename>
+      <cvename>CVE-2011-3114</cvename>
+      <cvename>CVE-2011-3115</cvename>
+      <url>http://googlechromereleases.blogspot.com/search/label/Stable%20updates</url>
+    </references>
+    <dates>
+      <discovery>2012-05-23</discovery>
+      <entry>2012-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="617959ce-a5f6-11e1-a284-0023ae8e59f0">
     <topic>haproxy -- buffer overflow</topic>
     <affects>
