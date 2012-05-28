@@ -5,4 +5,6 @@ Python-based interface.
 Mission: Creating a viable free open source alternative to Magma, Maple,
 Mathematica and Matlab.
 
+For instructions on adding optional packages, see files/optional-packages.txt.
+
 WWW: http://www.sagemath.org/
