@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libshout2
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/ \
@@ -16,9 +16,9 @@ DISTNAME=	libshout-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connect and transmit data to an Icecast media streaming server
 
-LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
-		theora.0:${PORTSDIR}/multimedia/libtheora \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	speex:${PORTSDIR}/audio/speex \
+		theora:${PORTSDIR}/multimedia/libtheora \
+		vorbis:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	libshout-[0-9]*
 
