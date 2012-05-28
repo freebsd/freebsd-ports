@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBD-Multi
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,22 +14,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Manage Multiple Data Sources with Failover and Load Balancing
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction \
-		${SITE_PERL}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod \
-		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction \
-		${SITE_PERL}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Class-Accessor>=0.19:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-Sys-SigAction>=0.10:${PORTSDIR}/devel/p5-Sys-SigAction
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+TEST_DEPENDS=	p5-DBD-SQLite>=1.09:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Simple \
+		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage
 
 PERL_CONFIGURE=	yes
 
