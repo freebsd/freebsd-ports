@@ -7,7 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/crayzedsgui/CEGUI%20Mk-2/0.7.5
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
@@ -24,7 +24,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
 WRKSRC=		${WRKDIR}/${DISTNAME:S/2b/2/}
 CONFIGURE_ARGS=	--disable-toluacegui --disable-irrlicht-renderer \
 		--disable-corona --enable-devil --disable-freeimage --disable-silly \
-		--disable-libxml --disable-xerces-c --disable-expat --disable-samples
+		--disable-libxml --disable-xerces-c --disable-expat --disable-samples \
+		--enable-null-renderer
 
 CONFIGURE_ENV+=	Lua_LIBS="-L${LUA_LIBDIR} -llua -lm" \
 		Lua_CFLAGS="-I${LUA_INCDIR}"
@@ -49,7 +50,7 @@ post-patch:
 		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|CEGUI_LUA_VER=..|CEGUI_LUA_VER=${USE_LUA:S/.//}|g; \
 		s|DevIL_CFLAGS=.*|DevIL_CFLAGS="-DUSE_DEVIL_LIBRARY -I${LOCALBASE}/include"|g; \
-		s|-release $$cegui_lib_version_suffix|-release ${PORTVERSION:C/\.[0-9]$//g} -version-number ${PORTVERSION:C/^[0-9]\.[0-9]\.//g}|g' \
+		s|-release $$cegui_lib_version_suffix|& -version-number 0|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = tolua\+\+|SUBDIRS =|g' \
 		${WRKSRC}/cegui/include/ScriptingModules/LuaScriptModule/support/Makefile.in

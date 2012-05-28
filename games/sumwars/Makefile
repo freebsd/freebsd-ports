@@ -7,7 +7,7 @@
 
 PORTNAME=	sumwars
 PORTVERSION=	0.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/sumwars/${PORTVERSION}
 DISTNAME=	sumwars-${PORTVERSION}-src
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d
 		${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 RUN_DEPENDS=	${LOCALBASE}/lib/libOgreMain.so.1.7.4:${PORTSDIR}/graphics/ogre3d \
 		${LOCALBASE}/lib/libOIS-1.2.0.so:${PORTSDIR}/devel/ois
-LIB_DEPENDS=	CEGUIBase-0.7.5:${PORTSDIR}/graphics/cegui \
+LIB_DEPENDS=	CEGUIBase-0.7.5.0:${PORTSDIR}/graphics/cegui \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		PocoNet.12:${PORTSDIR}/devel/poco \
 		physfs.1:${PORTSDIR}/devel/physfs
