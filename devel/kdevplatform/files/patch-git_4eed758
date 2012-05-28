@@ -1,0 +1,127 @@
+commit 4eed75814ae984ff80ec0e9fb990422c01f7c091
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Mon May 28 15:30:43 2012 -0300
+
+    Look for ext/hash_map and unordered_map instead of checking gcc's version.
+    
+    Follow-up to commits 3455de70d45a260607e1a4aa992a507ab979cd48 and
+    321e7c40bfbe838eb0a8354ff388cd88689166f9. The decision of whether to
+    include <ext/hash_map> or <unordered_map> for gcc/clang was based on
+    whether gcc > 4.3 was installed or whether clang was being used. The
+    latter implicitly assumed a recent enough libstdc++ version (ie. >=
+    4.3) was being used, which might not be the case on systems such as
+    FreeBSD and possibly OS X.
+    
+    Instead of checking for compiler versions, we now look for these
+    headers: CMake first detects whether <unordered_map> is present and,
+    in case it is not, it looks for <ext/hash_map>. The checks in
+    language/editor/modificationrevision.cpp have been updated as
+    well. This should cover all the cases being previously detected, as
+    well as fix the checks for FreeBSD and other systems where the build
+    was failing before with clang.
+    
+    Reviewed-by:       Millian Wolff
+    REVIEW:            105066
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 6c29e9f..0eacbad 100644
+--- ./CMakeLists.txt
++++ ./CMakeLists.txt
+@@ -37,27 +37,27 @@ macro_bool_to_01(KOMPARE_FOUND HAVE_KOMPARE)
+ #macro_log_feature(KOMPARE_FOUND "Kompare" "KPart to view file differences."
+ #                        "http://www.caffeinated.me.uk/kompare/" FALSE ""
+ #                        "Required for difference checking. From KDE SDK package, KDE 4.3.61 or higher needed.")
+-configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/config-kdevplatform.h.cmake
+-                ${CMAKE_CURRENT_BINARY_DIR}/config-kdevplatform.h )
+ 
+ 
+ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS -DQURL_NO_CAST_FROM_QSTRING)
+-if(CMAKE_COMPILER_IS_GNUCXX)
+-  # TODO: Remove when LTS for g++ < 4.3 has ended.
+-  #       See also: languages/cpp/parser/parser.h
+-  macro_ensure_version("4.3.0" "${_gcc_version}" GCC_IS_NEWER_THAN_4_3)
+-  if (GCC_IS_NEWER_THAN_4_3)
+-    message(STATUS "Enabling c++0x support for unordered map")
+-    add_definitions( -std=c++0x ) # For unordered_map
+-  else(GCC_IS_NEWER_THAN_4_3)
+-    add_definitions( -DGXX_LT_4_3 )
+-  endif (GCC_IS_NEWER_THAN_4_3)
+-endif(CMAKE_COMPILER_IS_GNUCXX)
+-if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+-  # TODO: version check?
+-  add_definitions( -std=c++0x )
+-endif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
++
++# TODO: Remove when LTS for g++ < 4.3 has ended.
++#       See also: languages/cpp/parser/parser.h in KDevelop
++if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
++    include(CheckIncludeFileCXX)
++    check_include_file_cxx(unordered_map HAVE_UNORDERED_MAP)
++
++    if(HAVE_UNORDERED_MAP)
++        message(STATUS "Enabling c++0x support for unordered map")
++        add_definitions( -std=c++0x )
++    else(HAVE_UNORDERED_MAP)
++        check_include_file_cxx(ext/hash_map HAVE_EXT_HASH_MAP)
++    endif(HAVE_UNORDERED_MAP)
++endif(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
++
++configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/config-kdevplatform.h.cmake
++                ${CMAKE_CURRENT_BINARY_DIR}/config-kdevplatform.h )
+ 
+ include_directories(${KDevPlatform_SOURCE_DIR} ${KDevPlatform_BINARY_DIR} ${KDE4_INCLUDES})
+ 
+diff --git a/config-kdevplatform.h.cmake b/config-kdevplatform.h.cmake
+index 6737e06..1ec2ad5 100644
+--- ./config-kdevplatform.h.cmake
++++ ./config-kdevplatform.h.cmake
+@@ -1,2 +1,8 @@
+ /* Define to 1 if you have Kompare support, 0 otherwise */
+ #define HAVE_KOMPARE @HAVE_KOMPARE@
++
++/* Define to 1 if the unordered_map header is present, 0 otherwise */
++#define HAVE_UNORDERED_MAP @HAVE_UNORDERED_MAP@
++
++/* Define to 1 if the ext/hash_map header is present, 0 otherwise */
++#define HAVE_EXT_HASH_MAP @HAVE_EXT_HASH_MAP@
+diff --git a/language/editor/modificationrevision.cpp b/language/editor/modificationrevision.cpp
+index ac8a852..ee0d510 100644
+--- ./language/editor/modificationrevision.cpp
++++ ./language/editor/modificationrevision.cpp
+@@ -16,6 +16,7 @@
+    Boston, MA 02110-1301, USA.
+ */
+ 
++#include "config-kdevplatform.h"
+ #include "modificationrevision.h"
+ 
+ #include <QString>
+@@ -23,13 +24,7 @@
+ 
+ #include <ktexteditor/document.h>
+ 
+-#if defined(Q_CC_MSVC)
+-#include <hash_map>
+-using namespace stdext;
+-#elif defined GXX_LT_4_3
+-#include <ext/hash_map>
+-using namespace __gnu_cxx;
+-#else // C++0X
++#if defined(HAVE_UNORDERED_MAP) // C++0X
+ // TODO: Replace hash_map with unordered map when support for G++ < 4.3 has 
+ //       ended. This class was added as a temporary workaround, to get rid of
+ //       hash_map related warnings for g++ >= 4.3.
+@@ -39,6 +34,12 @@ template<class _Key, class _Tp,
+        class _Pred = std::equal_to<_Key>,
+        class _Alloc = std::allocator<std::pair<const _Key, _Tp> > >
+ class  hash_map : public std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc> { };
++#elif defined(HAVE_EXT_HASH_MAP)
++#include <ext/hash_map>
++using namespace __gnu_cxx;
++#elif defined(Q_CC_MSVC)
++#include <hash_map>
++using namespace stdext;
+ #endif
+ 
+ 
