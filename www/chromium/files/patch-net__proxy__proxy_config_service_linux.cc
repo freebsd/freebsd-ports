@@ -1,5 +1,5 @@
---- net/proxy/proxy_config_service_linux.cc.orig	2011-07-01 00:30:51.106692749 +0300
-+++ net/proxy/proxy_config_service_linux.cc	2011-07-01 01:15:28.391693775 +0300
+--- net/proxy/proxy_config_service_linux.cc.orig	2012-04-25 10:01:34.000000000 +0300
++++ net/proxy/proxy_config_service_linux.cc	2012-04-29 21:37:33.000000000 +0300
 @@ -18,7 +18,13 @@
  #include <limits.h>
  #include <stdio.h>
@@ -14,7 +14,7 @@
  #include <unistd.h>
  
  #include <map>
-@@ -861,9 +867,10 @@
+@@ -907,9 +913,10 @@
                               public base::MessagePumpLibevent::Watcher {
   public:
    explicit SettingGetterImplKDE(base::Environment* env_var_getter)
@@ -28,7 +28,7 @@
      // This has to be called on the UI thread (http://crbug.com/69057).
      base::ThreadRestrictions::ScopedAllowIO allow_io;
  
-@@ -926,9 +933,14 @@
+@@ -972,9 +979,14 @@
      // task is left pending on the file loop after the loop was quit,
      // and pending tasks may then be deleted without being run.
      // Here in the KDE version, we can safely close the file descriptor
@@ -44,7 +44,7 @@
      DCHECK(inotify_fd_ < 0);
    }
  
-@@ -937,18 +949,25 @@
+@@ -983,18 +995,25 @@
      // This has to be called on the UI thread (http://crbug.com/69057).
      base::ThreadRestrictions::ScopedAllowIO allow_io;
      DCHECK(inotify_fd_ < 0);
@@ -70,7 +70,7 @@
      file_loop_ = file_loop;
      // The initial read is done on the current thread, not |file_loop_|,
      // since we will need to have it for SetUpAndFetchInitialConfig().
-@@ -968,6 +987,18 @@
+@@ -1014,6 +1033,18 @@
    bool SetUpNotifications(ProxyConfigServiceLinux::Delegate* delegate) {
      DCHECK(inotify_fd_ >= 0);
      DCHECK(MessageLoop::current() == file_loop_);
@@ -89,7 +89,7 @@
      // We can't just watch the kioslaverc file directly, since KDE will write
      // a new copy of it and then rename it whenever settings are changed and
      // inotify watches inodes (so we'll be watching the old deleted file after
-@@ -976,6 +1007,7 @@
+@@ -1022,6 +1053,7 @@
      if (inotify_add_watch(inotify_fd_, kde_config_dir_.value().c_str(),
                            IN_MODIFY | IN_MOVED_TO) < 0)
        return false;
@@ -97,9 +97,9 @@
      notify_delegate_ = delegate;
      if (!file_loop_->WatchFileDescriptor(inotify_fd_, true,
              MessageLoopForIO::WATCH_READ, &inotify_watcher_, this))
-@@ -993,7 +1025,23 @@
+@@ -1039,7 +1071,23 @@
    void OnFileCanReadWithoutBlocking(int fd) {
-     DCHECK(fd == inotify_fd_);
+     DCHECK_EQ(fd, inotify_fd_);
      DCHECK(MessageLoop::current() == file_loop_);
 +#if defined(OS_FREEBSD)
 +    struct kevent ev;
@@ -121,23 +121,24 @@
    }
    void OnFileCanWriteWithoutBlocking(int fd) {
      NOTREACHED();
-@@ -1262,10 +1310,14 @@
+@@ -1317,10 +1365,14 @@
    // from the inotify file descriptor and starts up a debounce timer if
    // an event for kioslaverc is seen.
    void OnChangeNotification() {
-+    DCHECK(config_fd_ >= 0);
-     DCHECK(inotify_fd_ >= 0);
-     DCHECK(MessageLoop::current() == file_loop_);
++    DCHECK_GE(config_fd_,  0);
+     DCHECK_GE(inotify_fd_,  0);
+-    DCHECK(MessageLoop::current() == file_loop_);
 -    char event_buf[(sizeof(inotify_event) + NAME_MAX + 1) * 4];
++    DCHECK(MessageLoop::current() == file_loop_);    
      bool kioslaverc_touched = false;
-+#if defined(OS_FREEBSD)
-+    kioslaverc_touched = true;
-+#else
++    #if defined(OS_FREEBSD)
++      kioslaverc_touched = true;
++    #else
 +    char event_buf[(sizeof(inotify_event) + NAME_MAX + 1) * 4];
      ssize_t r;
      while ((r = read(inotify_fd_, event_buf, sizeof(event_buf))) > 0) {
        // inotify returns variable-length structures, which is why we have
-@@ -1302,6 +1354,7 @@
+@@ -1357,6 +1409,7 @@
          inotify_fd_ = -1;
        }
      }
@@ -145,7 +146,7 @@
      if (kioslaverc_touched) {
        // We don't use Reset() because the timer may not yet be running.
        // (In that case Stop() is a no-op.)
-@@ -1316,6 +1369,7 @@
+@@ -1371,6 +1424,7 @@
    typedef std::map<StringListSetting,
                     std::vector<std::string> > strings_map_type;
  
