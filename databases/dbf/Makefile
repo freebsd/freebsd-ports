@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
 
+DEPRECATED=	berlios masters no longer have any code on them. Upstream unavailable for years
+EXPIRATION_DATE=2012-8-28
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PLIST_FILES=	bin/dbf
