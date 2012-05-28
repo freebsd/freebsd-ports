@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polarssl
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
@@ -16,8 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
-
-BROKEN=		does not fetch
 
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
