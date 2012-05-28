@@ -58,8 +58,10 @@ MLINKS=		vim.1 rvim.1	vim.1 rview.1
 MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 		vim.1 rgvim.1	vim.1 rgview.1	evim.1 eview.1
 .endif
+.if !defined(WITHOUT_NLS)
 MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
 		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
+.endif
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 WITH_CSCOPE=	yes
@@ -109,7 +111,6 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 .else	# !LITE
 MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
-USE_GETTEXT=   	yes
 
 . if defined(NO_GUI) || defined(WITHOUT_GUI)
 WITHOUT_X11=	yes
@@ -169,8 +170,10 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}
 .if exists(${LOCALBASE}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
-.if exists(${LOCALBASE}/lib/libintl.so)
+.if exists(${LOCALBASE}/lib/libintl.so) && !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+.else
+MAKE_ARGS+=	CONF_OPT_NLS="--disable-nls"
 .endif
 
 .if defined(WITH_EXUBERANT_CTAGS)
