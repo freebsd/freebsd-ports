@@ -1,0 +1,30 @@
+bin/tiled
+bin/tmxviewer
+lib/libtiled.so
+lib/libtiled.so.1
+lib/libtiled.so.1.0
+lib/libtiled.so.1.0.0
+lib/tiled/plugins/libdroidcraft.so
+lib/tiled/plugins/libflare.so
+lib/tiled/plugins/libjson.so
+lib/tiled/plugins/liblua.so
+lib/tiled/plugins/libtengine.so
+lib/tiled/plugins/libtmw.so
+%%DATADIR%%/translations/tiled_cs.qm
+%%DATADIR%%/translations/tiled_de.qm
+%%DATADIR%%/translations/tiled_en.qm
+%%DATADIR%%/translations/tiled_es.qm
+%%DATADIR%%/translations/tiled_fr.qm
+%%DATADIR%%/translations/tiled_he.qm
+%%DATADIR%%/translations/tiled_it.qm
+%%DATADIR%%/translations/tiled_ja.qm
+%%DATADIR%%/translations/tiled_lv.qm
+%%DATADIR%%/translations/tiled_nl.qm
+%%DATADIR%%/translations/tiled_pt.qm
+%%DATADIR%%/translations/tiled_pt_BR.qm
+%%DATADIR%%/translations/tiled_ru.qm
+%%DATADIR%%/translations/tiled_zh.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
+@dirrm lib/tiled/plugins
+@dirrm lib/tiled
