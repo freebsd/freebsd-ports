@@ -3966,6 +3966,7 @@ freeswitch-pizzademo            ports/misc/freeswitch-pizzademo
 freeswitch-pizzademo-devel      ports/misc/freeswitch-pizzademo-devel
 freeswitch-sbc-devel            ports/net/freeswitch-sbc-devel
 freeswitch-scripts              ports/misc/freeswitch-scripts
+freeswitch-scripts-devel        ports/misc/freeswitch-scripts-devel
 freeswitch-sounds               ports/audio/freeswitch-sounds
 freeswitch-vanilla-devel        ports/net/freeswitch-vanilla-devel
 freesynd                        ports/games/freesynd
@@ -12337,6 +12338,7 @@ p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
 p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
 p5-Dist-CheckConflicts          ports/devel/p5-Dist-CheckConflicts
 p5-Dist-Joseki                  ports/devel/p5-Dist-Joseki
+p5-Dist-Metadata                ports/devel/p5-Dist-Metadata
 p5-DocSet                       ports/textproc/p5-DocSet
 p5-DynaLoader-Functions         ports/devel/p5-DynaLoader-Functions
 p5-EBook-Tools                  ports/textproc/p5-EBook-Tools
@@ -16843,6 +16845,7 @@ p5-directory-scratch            ports/devel/p5-Directory-Scratch
 p5-directory-scratch-structured  ports/devel/p5-Directory-Scratch-Structured
 p5-dist-checkconflicts          ports/devel/p5-Dist-CheckConflicts
 p5-dist-joseki                  ports/devel/p5-Dist-Joseki
+p5-dist-metadata                ports/devel/p5-Dist-Metadata
 p5-djabberd                     ports/net-im/p5-DJabberd
 p5-dmoz-parserdf                ports/databases/p5-DMOZ-ParseRDF
 p5-dns-config                   ports/dns/p5-DNS-Config
@@ -27551,6 +27554,7 @@ vorbisgain                      ports/audio/vorbisgain
 vordog                          ports/sysutils/vordog
 vp                              ports/graphics/vp
 vpnc                            ports/security/vpnc
+vpnc-scripts                    ports/sysutils/vpnc-scripts
 vpopmail                        ports/mail/vpopmail
 vqadmin                         ports/mail/vqadmin
 vqcc-gtk                        ports/net-im/vqcc-gtk
@@ -27735,6 +27739,7 @@ wine                            ports/emulators/wine
 wine-devel                      ports/emulators/wine-devel
 wine-doors                      ports/emulators/wine-doors
 wine-gecko                      ports/emulators/wine-gecko
+wine-gecko-devel                ports/emulators/wine-gecko-devel
 winefish                        ports/editors/winefish
 wings                           ports/graphics/wings
 wings-devel                     ports/graphics/wings-devel
