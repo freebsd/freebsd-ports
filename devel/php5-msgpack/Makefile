@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	msgpack
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel
 MASTER_SITES=	http://php-msgpack.googlecode.com/files/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	php-msgpack-${PORTVERSION}
+DISTNAME=	php-msgpack-0.5.3
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP extension for interfacing with MessagePack
@@ -21,7 +21,5 @@ USE_PHP=	session
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	msgpack
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
