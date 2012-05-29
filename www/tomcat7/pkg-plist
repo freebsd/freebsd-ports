@@ -44,7 +44,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-3.7.1.jar
+%%T%%/lib/ecj-3.7.2.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -200,6 +200,7 @@
 %%T%%/webapps/docs/tribes/status.html
 %%T%%/webapps/docs/tribes/transport.html
 %%T%%/webapps/docs/virtual-hosting-howto.html
+%%T%%/webapps/docs/web-socket-howto.html
 %%T%%/webapps/docs/windows-auth-howto.html
 %%T%%/webapps/docs/windows-service-howto.html
 %%T%%/webapps/examples/WEB-INF/classes/CookieExample.class
@@ -311,6 +312,28 @@
 %%T%%/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
 %%T%%/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet$ChatMessageInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage$EchoMessageInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream$EchoStreamInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet$SnakeMessageInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet.java
 %%T%%/webapps/examples/WEB-INF/jsp/applet/Clock2.java
 %%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
@@ -512,6 +535,10 @@
 %%T%%/webapps/examples/servlets/reqinfo.html
 %%T%%/webapps/examples/servlets/reqparams.html
 %%T%%/webapps/examples/servlets/sessions.html
+%%T%%/webapps/examples/websocket/chat.html
+%%T%%/webapps/examples/websocket/echo.html
+%%T%%/webapps/examples/websocket/index.html
+%%T%%/webapps/examples/websocket/snake.html
 %%T%%/webapps/host-manager/META-INF/context.xml
 %%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
 %%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
@@ -562,6 +589,7 @@
 @dirrm %%T%%/webapps/host-manager/WEB-INF
 @dirrm %%T%%/webapps/host-manager/META-INF
 @dirrm %%T%%/webapps/host-manager
+@dirrm %%T%%/webapps/examples/websocket
 @dirrm %%T%%/webapps/examples/servlets/images
 @dirrm %%T%%/webapps/examples/servlets
 @dirrm %%T%%/webapps/examples/jsp/xml
@@ -598,6 +626,10 @@
 @dirrm %%T%%/webapps/examples/WEB-INF/jsp2
 @dirrm %%T%%/webapps/examples/WEB-INF/jsp/applet
 @dirrm %%T%%/webapps/examples/WEB-INF/jsp
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/snake
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/echo
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/chat
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/validators
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/util
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/sessions
