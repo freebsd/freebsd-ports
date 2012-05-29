@@ -7,7 +7,7 @@
 
 PORTNAME=	icinga
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -28,8 +28,8 @@ OPTIONS=	EMBEDDED_PERL "Enable embedded Perl" on \
 		NANOSLEEP "Use nanosleep in event timing" off \
 		UNHANDLED_HACK "Display passive checks in unhandled queries" off \
 		IDOUTILS "Enable IDOUtils" on \
+		PGSQL "Enable support for PostgreSQL" off \
 		MYSQL "Depend on MySQL" off \
-		PGSQL "Depend on PostgreSQL" off \
 		APACHE "Depend on Apache and install webconfig" off
 
 GNU_CONFIGURE=	yes
@@ -37,6 +37,7 @@ GNU_CONFIGURE=	yes
 ICINGAUSER?=	icinga
 ICINGAGROUP?=	icinga
 ICINGADIR?=	/var/spool/icinga
+ICINGALOGDIR?=	/var/log/icinga
 
 ICINGAUID=	183
 ICINGAGID=	${ICINGAUID}
@@ -57,12 +58,14 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--with-htmurl=${ICINGAHTMURL} \
 		--with-cgiurl=${ICINGACGIURL} \
 		--sbindir=${PREFIX}/${ICINGAWWWDIR}/cgi-bin \
-		--libexecdir=${PREFIX}/libexec/icinga \
 		--datarootdir=${PREFIX}/${ICINGAWWWDIR} \
 		--datadir=${PREFIX}/${ICINGAWWWDIR} \
 		--sysconfdir=${PREFIX}/etc/icinga \
 		--localstatedir=${ICINGADIR} \
 		--with-checkresult-dir=${ICINGADIR}/checkresults \
+		--libexecdir=${PREFIX}/libexec/icinga \
+		--with-plugin-dir=${LOCALBASE}/libexec/nagios \
+		--with-log-dir=${ICINGALOGDIR} \
 		--enable-event-broker
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
@@ -73,6 +76,7 @@ MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install install-commandmode install-config install-eventhandlers
 
 PLIST_SUB=	ICINGADIR=${ICINGADIR} \
+		ICINGALOGDIR=${ICINGALOGDIR} \
 		ICINGAWWWDIR=${ICINGAWWWDIR} \
 		ICINGAUSER=${ICINGAUSER} \
 		ICINGAGROUP=${ICINGAGROUP} \
@@ -122,6 +126,7 @@ USE_MYSQL=		yes
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=		yes
+CONFIGURE_ARGS+=	--enable-pgsql
 .endif
 
 .if defined(WITH_APACHE)
@@ -154,8 +159,9 @@ post-install:
 	cd ${WRKSRC}/module/idoutils/config && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/idoutils/config
 	cd ${WRKSRC}/module/idoutils/db     && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/idoutils/db
 .endif
-	@${CHMOD} 775 ${ICINGADIR} ${ICINGADIR}/archives ${ICINGADIR}/checkresults ${ICINGADIR}/rw
-	@${CHOWN} ${ICINGAUSER}:${ICINGAGROUP} ${ICINGADIR} ${ICINGADIR}/archives ${ICINGADIR}/checkresults
+	@${CHMOD} 775 ${ICINGADIR} ${ICINGALOGDIR}/archives ${ICINGADIR}/checkresults ${ICINGADIR}/rw
+	@${CHMOD} g+s ${ICINGADIR}/rw
+	@${CHOWN} ${ICINGAUSER}:${ICINGAGROUP} ${ICINGADIR} ${ICINGALOGDIR}/archives ${ICINGADIR}/checkresults
 	@${CHOWN} ${ICINGAUSER}:${WWWGRP} ${ICINGADIR}/rw
 	@${CAT} ${PKGMESSAGE}
 

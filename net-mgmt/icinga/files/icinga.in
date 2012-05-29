@@ -34,7 +34,7 @@ pidfile="%%ICINGADIR%%/icinga.lock"
 icinga_user="%%ICINGAUSER%%"
 icinga_group="%%ICINGAGROUP%%"
 
-icinga_logfile="%%ICINGADIR%%/${name}.log"
+icinga_logfile="%%ICINGALOGDIR%%/${name}.log"
 icinga_statusfile="%%ICINGADIR%%/status.sav"
 icinga_cmdfile="%%ICINGADIR%%/rw/${name}.cmd"
 
