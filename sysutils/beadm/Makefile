@@ -8,7 +8,8 @@
 PORTNAME=	beadm
 PORTVERSION=	0.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.shatow.net/freebsd/
+MASTER_SITES=	SF/beadm/dist/ \
+	http://www.shatow.net/freebsd/
 
 MAINTAINER=	bryan@shatow.net
 COMMENT=	Solaris-like utility to manage Boot Environments on ZFS
