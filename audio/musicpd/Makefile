@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.16.7
-PORTREVISION=	1
+PORTVERSION=	0.16.8
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -39,30 +38,12 @@ PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
-		IPV6            "Support IPv6 protocol"                 on \
-		AVAHI		"Support Zeroconf through Avahi"	off \
-		FLAC            "Support FLAC audio format"             on \
-		VORBIS          "Support OGG Vorbis audio format"       on \
-		WAV             "Support WAV audio format"              on \
-		FFMPEG          "Support FFMPEG (wma aiff ac3 ape...)"  on \
-		TREMOR		"Support Tremor (integer-only Vorbis)"	off \
-		AAC		"Support MP4/AAC audio format"		off \
-		MUSEPACK	"Support MPC audio format"		off \
-		MIKMOD		"Support MOD audio format"		off \
-		MODPLUG		"Support MODPLUG decoder"		off \
-		ARCHIVE		"Support bzip2/zip/iso9660 archive"	off \
-		MMS             "Support MMS stream input"              off \
-		LASTFM		"Support Last.FM stream input (experimental)"	off \
-		AO		"Support libao audio library"		off \
-		PULSEAUDIO	"Support PulseAudio sound server"	off \
-		JACK		"Support JACK audio server"		off \
-		SHOUTCAST	"Support for OGG Icecast and Shoutcast"	off \
-		SNDFILE		"Adds support for libsndfile"		on \
-		LAME		"Support for MP3 Icecast Streams"	off \
-		HTTPD		"Support for httpd output streaming"	off \
-		SAMPLERATE	"Support sample rate conversion"	off \
-		CUE		"Support embedded cue sheets"		off
+OPTIONS_DEFINE=	ID3TAG IPV6 AVAHI FLAC VORBIS WAV FFMPEG TREMOR AAC \
+		MUSEPACK MIKMOD MODPLUG ARCHIVE MMS LASTFM AO PULSEAUDIO \
+		JACK SHOUTCAST SNDFILE LAME HTTPD SAMPLERATE CUE
+
+OPTIONS_DEFAULT=ID3TAG IPV6 FLAC VORBIS WAV FFMPEG SNDFILE 
+LAME_DESC=	Support for MP3 Icecast Streams
 
 MPDDIR?=	/var/mpd
 MPDUSER?=	mpd
@@ -78,70 +59,70 @@ SUB_LIST+=	MPDDIR=${MPDDIR} \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.else
 CONFIGURE_ARGS+=--disable-flac \
 		--disable-oggflac
-.else
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITHOUT_VORBIS)
-CONFIGURE_ARGS+=--disable-vorbis
-.else
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if defined(WITH_TREMOR)
+.if ${PORT_OPTIONS:MTREMOR}
 CONFIGURE_ARGS+=--with-tremor
 LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 .endif
 
-.if defined(WITH_AAC)
+.if ${PORT_OPTIONS:MAAC}
 LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 CONFIGURE_ARGS+=--enable-lame-encoder
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 .else
 CONFIGURE_ARGS+=--disable-lame-encoder
 .endif
 
-.if defined(WITH_HTTPD)
+.if ${PORT_OPTIONS:MHTTPD}
 CONFIGURE_ARGS+=--enable-httpd-output
 .else
 CONFIGURE_ARGS+=--disable-httpd-output
 .endif
 
-.if defined(WITHOUT_WAV)
-CONFIGURE_ARGS+=--disable-audiofile
-.else
+.if ${PORT_OPTIONS:MWAV}
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+.else
+CONFIGURE_ARGS+=--disable-audiofile
 .endif
 
-.if defined(WITH_MUSEPACK)
+.if ${PORT_OPTIONS:MMUSEPACK}
 LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 .else
 CONFIGURE_ARGS+=--disable-mpc
 .endif
 
-.if defined(WITH_MIKMOD)
+.if ${PORT_OPTIONS:MMIKMOD}
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--enable-mikmod
 .else
 CONFIGURE_ARGS+=--disable-mikmod
 .endif
 
-.if defined(WITH_MODPLUG)
+.if ${PORT_OPTIONS:MMODPLUG}
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=--enable-modplug
 .else
 CONFIGURE_ARGS+=--disable-modplug
 .endif
 
-.if defined(WITH_ARCHIVE)
+.if ${PORT_OPTIONS:MARCHIVE}
 CONFIGURE_ARGS+=--enable-bzip2 \
 		--enable-zip \
 		--enable-iso9660
@@ -149,58 +130,58 @@ LIB_DEPENDS+=	zzip.13:${PORTSDIR}/devel/zziplib \
 		iso9660.8:${PORTSDIR}/sysutils/libcdio
 .endif
 
-.if defined(WITHOUT_FFMPEG)
-CONFIGURE_ARGS+=--disable-ffmpeg
-.else
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		avformat:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
+.else
+CONFIGURE_ARGS+=--disable-ffmpeg
 .endif
 
-.if defined(WITH_LASTFM)
+.if ${PORT_OPTIONS:MLASTFM}
 CONFIGURE_ARGS+=--enable-lastfm
 .else
 CONFIGURE_ARGS+=--disable-lastfm
 .endif
 
-.if defined(WITH_MMS)
+.if ${PORT_OPTIONS:MMMS}
 CONFIGURE_ARGS+=--enable-mms
 LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
 .else
 CONFIGURE_ARGS+=--disable-mms
 .endif
 
-.if defined(WITHOUT_ID3TAG)
-CONFIGURE_ARGS+=--disable-id3
-.else
+.if ${PORT_OPTIONS:MID3TAG}
 LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
+.else
+CONFIGURE_ARGS+=--disable-id3
 .endif
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if defined(WITHOUT_AVAHI)
-CONFIGURE_ARGS+=--with-zeroconf=no
-.else
+.if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=--with-zeroconf=avahi
 LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+.else
+CONFIGURE_ARGS+=--with-zeroconf=no
 .endif
 
-.if defined(WITH_AO)
+.if ${PORT_OPTIONS:MAO}
 CONFIGURE_ARGS+=--enable-ao
 LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 .else
 CONFIGURE_ARGS+=--disable-ao
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=--disable-pulse
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=--disable-jack
@@ -208,7 +189,10 @@ CONFIGURE_ARGS+=--disable-jack
 
 # libshout streaming support will be disabled by configure script when built
 # also with tremor since the latter does not support vorbis encoding
-.if defined(WITH_SHOUTCAST) && !defined(WITH_TREMOR)
+.if ${PORT_OPTIONS:MSHOUTCAST}
+.  if ${PORT_OPTIONS:MTREMOR}
+IGNORE=		shoutcast and tremor do not coexist; use vorbis instead
+.  endif
 LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
 CONFIGURE_ARGS+=--enable-vorbis-encoder \
 		--enable-shout
@@ -216,21 +200,21 @@ CONFIGURE_ARGS+=--enable-vorbis-encoder \
 CONFIGURE_ARGS+=--disable-shout
 .endif
 
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 CONFIGURE_ARGS+=	--enable-sndfile
 .else
 CONFIGURE_ARGS+=	--disable-sndfile
 .endif
 
-.if defined(WITHOUT_SAMPLERATE)
-CONFIGURE_ARGS+=--disable-lsr
-.else
+.if ${PORT_OPTIONS:MSAMPLERATE}
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-lsr
+.else
+CONFIGURE_ARGS+=--disable-lsr
 .endif
 
-.if defined(WITH_CUE)
+.if ${PORT_OPTIONS:MCUE}
 CONFIGURE_ARGS+=--enable-cue
 LIB_DEPENDS+=	cue:${PORTSDIR}/textproc/libcue
 .else
