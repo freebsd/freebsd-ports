@@ -31,10 +31,10 @@ PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 
 USE_RC_SUBR=	prayer
 
-OPTIONS=	SESSIONCACHE	"Activate Session Cache" On \
-		TIDY	"Enable tidy support" On \
-		SSL	"Enable SSL support" On \
-		LDAP	"Enable LDAP support" On
+OPTIONS_DEFINE=	SESSIONCACHE TIDY SSL LDAP
+OPTIONS_DEFAULT=	SESSIONCACHE TIDY SSL LDAP
+
+SESSIONCACHE_DESC=	Activate Session Cache
 
 USERS=		_prayer
 GROUPS=		prayer
@@ -44,15 +44,15 @@ MAN8=		prayer-session.8 prayer-ssl-prune.8 prayer.8
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SESSIONCACHE)
+.if ${PORT_OPTIONS:MSESSIONCACHE}
 USE_BDB=	yes
 .endif
 
-.if !defined(WITHOUT_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	yes
 .endif
 
-.if !defined(WITHOUT_TIDY)
+.if ${PORT_OPTIONS:MTIDY}
 LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 .endif
 
