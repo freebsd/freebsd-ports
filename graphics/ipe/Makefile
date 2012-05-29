@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ipe
-DISTVERSION=	7.0.10
-PORTREVISION=	1
+DISTVERSION=	7.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	ipe7/ipe
+MASTER_SITE_SUBDIR=	${PORTNAME}7/${PORTNAME}/7.1.0
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	tkjacobsen@gmail.com
@@ -27,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_QT_VER=	4
 QT_COMPONENTS=	gui qt3support qmake_build moc_build uic_build rcc_build
-MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1
+MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 ipescript.1
 
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-ipe__Makefile
