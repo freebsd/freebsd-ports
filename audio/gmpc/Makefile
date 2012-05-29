@@ -34,16 +34,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		gmpc-remote.1 gmpc.1 gmpc-remote-stream.1
 
-OPTIONS=	MMKEYS "Enable multimedia keys support" on \
-		XSPF "Enable support for XSPF playlists" off
+OPTIONS_DEFINE=	MMKEYS XSPF
+OPTIONS_DEFAULT=	MMKEYS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_MMKEYS)
+.if ${PORT_OPTIONS:MMMKEYS}
 CONFIGURE_ARGS+=--disable-mmkeys
 .endif
 
-.if defined(WITH_XSPF)
+.if ${PORT_OPTIONS:MXSPF}
 LIB_DEPENDS+=	xspf.4:${PORTSDIR}/multimedia/libxspf
 CONFIGURE_ARGS+=--enable-libxspf
 .else
