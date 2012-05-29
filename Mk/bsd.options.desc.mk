@@ -16,6 +16,7 @@ EXAMPLES_DESC?=		Build and install the examples
 FLAC_DESC?=		Enable support for flac
 GOGO_DESC?=		Enable gogo mp3 encoder
 GUI_DESC?=		Enable GUI support
+ICONV_DESC?=		Enable ICONV support
 ID3_DESC?=		Enable support for id3 tags
 LDAP_DESC?=		Enable LDAP support
 MAGICK_DESC?=		Enable ImageMagick Library
