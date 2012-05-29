@@ -6045,11 +6045,10 @@ config: pre-config
 	${MKDIR} $${optionsdir} 2> /dev/null) || \
 	(${ECHO_MSG} "===> Cannot create $${optionsdir}, check permissions"; exit 1)
 .endif
-	TMPOPTIONSFILE=$$(mktemp -t portoptions); \
+	@TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
 	${SH} -c '${DIALOG} --checklist "Options for ${PKGNAME:C/-([^-]+)$/ \1/}" 21 70 15 ${DEFOPTIONS}' 2> $${TMPOPTIONSFILE}; \
 	status=$$?; \
-	echo $$status; \
 	if [ $${status} -ne 0 ]; then \
 		${RM} -f $${TMPOPTIONSFILE}; \
 		${ECHO_MSG} "===> Options unchanged"; \
