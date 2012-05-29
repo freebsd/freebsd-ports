@@ -213,21 +213,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/autodoc_rstx.py
 %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/autodoc_rstx.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/autodoc_rstx.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders/texinfo.py
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders/texinfo.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders/texinfo.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/conf.py
 %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/conf.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/conf.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers/texinfo.py
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers/texinfo.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers/texinfo.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/email_message.py
 %%PYTHON_SITELIBDIR%%/bzrlib/email_message.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/email_message.pyo
@@ -1043,21 +1031,6 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders/test_texinfo.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders/test_texinfo.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders/test_texinfo.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers/test_texinfo.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers/test_texinfo.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers/test_texinfo.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/fake_command.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/fake_command.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/fake_command.pyo
@@ -2443,66 +2416,102 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.py
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle/serializer
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc/api
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/builders
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate/writers
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/export
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/filters
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/changelog_merge/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/changelog_merge
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/netrc_credential_store/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/netrc_credential_store
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/news_merge/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/news_merge
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/po_merge/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/po_merge
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/weave_fmt
-@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/repofmt
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/smart
+share/locale/ar/LC_MESSAGES/bzr.mo
+share/locale/ast/LC_MESSAGES/bzr.mo
+share/locale/bs/LC_MESSAGES/bzr.mo
+share/locale/ca/LC_MESSAGES/bzr.mo
+share/locale/cs/LC_MESSAGES/bzr.mo
+share/locale/de/LC_MESSAGES/bzr.mo
+share/locale/en_AU/LC_MESSAGES/bzr.mo
+share/locale/en_GB/LC_MESSAGES/bzr.mo
+share/locale/es/LC_MESSAGES/bzr.mo
+share/locale/fo/LC_MESSAGES/bzr.mo
+share/locale/fr/LC_MESSAGES/bzr.mo
+share/locale/gl/LC_MESSAGES/bzr.mo
+share/locale/he/LC_MESSAGES/bzr.mo
+share/locale/it/LC_MESSAGES/bzr.mo
+share/locale/ja/LC_MESSAGES/bzr.mo
+share/locale/ms/LC_MESSAGES/bzr.mo
+share/locale/my/LC_MESSAGES/bzr.mo
+share/locale/nb/LC_MESSAGES/bzr.mo
+share/locale/nl/LC_MESSAGES/bzr.mo
+share/locale/oc/LC_MESSAGES/bzr.mo
+share/locale/pl/LC_MESSAGES/bzr.mo
+share/locale/pt_BR/LC_MESSAGES/bzr.mo
+share/locale/ro/LC_MESSAGES/bzr.mo
+share/locale/ru/LC_MESSAGES/bzr.mo
+share/locale/sco/LC_MESSAGES/bzr.mo
+share/locale/sv/LC_MESSAGES/bzr.mo
+share/locale/tr/LC_MESSAGES/bzr.mo
+share/locale/ug/LC_MESSAGES/bzr.mo
+share/locale/vi/LC_MESSAGES/bzr.mo
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/sco/LC_MESSAGES
+@dirrmtry share/locale/sco
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/my/LC_MESSAGES
+@dirrmtry share/locale/my
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util/configobj
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/ui
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/transport/http
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/transport/ftp
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/transport
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches_data
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_uifactory
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_vf
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_chk
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_lock
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_inventory
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_intertree
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interrepository
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_foreign_vcs
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_controldir_colo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_controldir
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/store/versioned
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/store
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/builders
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate/writers
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/doc_generate
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_controldir
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_controldir_colo
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_foreign_vcs
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interrepository
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_intertree
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_inventory
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_lock
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_chk
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_reference
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_repository_vf
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_uifactory
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/ssl_certs
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_patches_data
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/transport/ftp
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/transport/http
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/transport
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/ui
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util/configobj
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util/tests
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/util
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/smart
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/repofmt
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/weave_fmt
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/po_merge/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/po_merge
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/news_merge/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/news_merge
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/netrc_credential_store/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/netrc_credential_store
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/changelog_merge/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/changelog_merge
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/filters
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/export
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc_generate
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc/api
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle/serializer
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
