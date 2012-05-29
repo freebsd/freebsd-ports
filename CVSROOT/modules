@@ -26608,6 +26608,7 @@ tikiwiki                        ports/www/tikiwiki
 tilda                           ports/x11/tilda
 tile                            ports/x11-toolkits/tile
 tilecache                       ports/graphics/tilecache
+tiled                           ports/graphics/tiled
 tilem                           ports/emulators/tilem
 tileworld                       ports/games/tileworld
 tilp2                           ports/comms/tilp2
