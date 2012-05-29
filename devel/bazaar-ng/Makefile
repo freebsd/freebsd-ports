@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/94128585/
+MASTER_SITES=	https://launchpadlibrarian.net/105804510/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
@@ -23,6 +23,7 @@ OPTIONS=	SFTP "Enable Paramiko for SFTP support" on \
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
+USE_GETTEXT=	yes
 
 MAN1=		bzr.1
 
