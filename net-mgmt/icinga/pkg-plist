@@ -1,5 +1,6 @@
-@exec chmod 775 %%ICINGADIR%% %%ICINGADIR%%/archives %%ICINGADIR%%/checkresults %%ICINGADIR%%/rw
-@exec chown %%ICINGAUSER%%:%%ICINGAGROUP%% %%ICINGADIR%% %%ICINGADIR%%/archives %%ICINGADIR%%/checkresults
+@exec chmod 775 %%ICINGADIR%% %%ICINGALOGDIR%%/archives %%ICINGADIR%%/checkresults %%ICINGADIR%%/rw
+@exec chmod g+s %%ICINGADIR%%/rw
+@exec chown %%ICINGAUSER%%:%%ICINGAGROUP%% %%ICINGADIR%% %%ICINGALOGDIR%%/archives %%ICINGADIR%%/checkresults
 @exec chown %%ICINGAUSER%%:%%WWWGRP%% %%ICINGADIR%%/rw
 @exec mkdir -p %%ICINGADIR%%/archives
 @exec mkdir -p %%ICINGADIR%%/checkresults
@@ -842,7 +843,8 @@ libexec/icinga/eventhandlers/enable_notifications
 @dirrmtry %%ICINGAWWWDIR%%/contexthelp
 @dirrmtry %%ICINGAWWWDIR%%/cgi-bin
 @dirrmtry %%ICINGAWWWDIR%%
-@dirrmtry %%ICINGADIR%%/archives
 @dirrmtry %%ICINGADIR%%/checkresults
 @dirrmtry %%ICINGADIR%%/rw
 @dirrmtry %%ICINGADIR%%
+@dirrmtry %%ICINGALOGDIR%%/archives
+@dirrmtry %%ICINGALOGDIR%%

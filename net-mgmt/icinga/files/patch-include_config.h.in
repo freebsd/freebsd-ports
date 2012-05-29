@@ -1,0 +1,15 @@
+--- include/config.h.in.orig	2012-05-25 21:46:46.000000000 +0200
++++ include/config.h.in	2012-05-25 21:47:05.000000000 +0200
+@@ -222,10 +222,12 @@
+ #include <errno.h>
+ #endif
+ 
++#if 0
+ #undef HAVE_SYS_TIMEB_H
+ #if HAVE_SYS_TIMEB_H
+ #include <sys/timeb.h>
+ #endif
++#endif
+ 
+ #undef HAVE_SYS_IPC_H
+ #ifdef HAVE_SYS_IPC_H
