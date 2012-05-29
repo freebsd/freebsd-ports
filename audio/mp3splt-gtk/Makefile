@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp3splt-gtk
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -16,10 +16,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt \
-		mad.2:${PORTSDIR}/audio/libmad \
-		ogg.7:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		id3tag.0:${PORTSDIR}/audio/libid3tag
+		mad:${PORTSDIR}/audio/libmad \
+		ogg:${PORTSDIR}/audio/libogg \
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		id3tag:${PORTSDIR}/audio/libid3tag
 
 USE_GNOME+=	libxml2
 INSTALLS_OMF=	yes

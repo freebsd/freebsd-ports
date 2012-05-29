@@ -97,9 +97,9 @@ share/pixmaps/mp3splt-gtk_ico.svg
 @dirrm share/gnome/help/mp3splt-gtk/C/figures
 @dirrm share/gnome/help/mp3splt-gtk/C
 @dirrm share/gnome/help/mp3splt-gtk
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/es_CL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_CL
 @dirrmtry share/gnome/help
 @dirrmtry share/gnome
-@dirrmtry share/locale/es_CL/LC_MESSAGES
-@dirrmtry share/locale/es_CL
-@dirrmtry share/locale/ru_RU/LC_MESSAGES
-@dirrmtry share/locale/ru_RU
