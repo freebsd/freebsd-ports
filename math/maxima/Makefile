@@ -40,22 +40,29 @@ PLIST_SUB+=	LISPBIN=${LISPBINARY}
 PLIST_SUB+=	MAXIMABIN=${MAXIMABINARY}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-OPTIONS=	CLISP "Build with Clisp" off \
-		CMUCL "Build with CMU Common Lisp" off \
-		GCL "Build with GNU Common Lisp" off \
-		SBCL "Build with Steel Bank Common Lisp" on
+OPTIONS_SINGLE=	LISP
+OPTIONS_SINGLE_LISP=	CLISP CMUCL GCL SBCL
+
+OPTIONS_DEFAULT=	SBCL
+
+CLISP_DESC=	Build with Clisp
+CMUCL_DESC=	Build with CMU Common Lisp
+GCL_DESC=	Build with GNU Common Lisp
+SBCL_DESC=	Build with Steel Bank Common Lisp
 
 .include <bsd.port.pre.mk>
 
 # Lisp to build with. Define only ONE of these!
-.if defined(WITH_CLISP) && defined(WITHOUT_CMUCL) && defined(WITHOUT_GCL) && defined(WITHOUT_SBCL)
+.if ${PORT_OPTIONS:MCLISP}
 LISPSELECT=	--enable-clisp
 LISPPORT=	clisp:${PORTSDIR}/lang/clisp
 BINDIRECTORY=	binary-clisp
 LISPBINARY=	lisp.run
 PLIST_SUB+=	LISPBINARY=""
 MAXIMABINARY=	maxima.mem
-.elif defined(WITHOUT_CLISP) && defined(WITH_CMUCL) && defined(WITHOUT_GCL) && defined(WITHOUT_SBCL)
+.endif
+
+.if ${PORT_OPTIONS:MCMUCL}
 LISPSELECT=	--enable-cmucl
 LISPPORT=	lisp:${PORTSDIR}/lang/cmucl
 BINDIRECTORY=	binary-cmucl
@@ -63,14 +70,18 @@ LISPBINARY=	lisp
 PLIST_SUB+=	LISPBINARY=""
 MAXIMABINARY=	maxima_core
 STRIP=	#strip(1) chokes on LISPBINARY
-.elif defined(WITHOUT_CLISP) && defined(WITHOUT_CMUCL) && defined(WITH_GCL) && defined(WITHOUT_SBCL)
+.endif
+
+.if ${PORT_OPTIONS:MGCL}
 LISPSELECT=	--enable-gcl
 LISPPORT=	gcl:${PORTSDIR}/lang/gcl
 BINDIRECTORY=	binary-gcl
 #LISPBINARY is null so fudge this so deinstall works cleanly
 PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima
-.elif defined(WITHOUT_CLISP) && defined(WITHOUT_CMUCL) && defined(WITHOUT_GCL) && defined(WITH_SBCL)
+.endif
+
+.if ${PORT_OPTIONS:MSBCL}
 .  if ${ARCH} == "i386"
 DYNAMIC_SPACE_SIZE?=	512
 .  else
@@ -89,8 +100,6 @@ BINDIRECTORY=	binary-sbcl
 #LISPBINARY is null so fudge this so deinstall works cleanly
 PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima_core
-.else
-IGNORE=		define only one lisp
 .endif
 
 post-patch:
