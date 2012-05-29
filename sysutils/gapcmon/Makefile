@@ -22,12 +22,6 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601103
-IGNORE=		needs gethostbyname_r(3)
-.endif
-
 post-extract:
 	@${REINPLACE_CMD} 's|install-gapcmondocDATA \\|\\|' \
 		${WRKSRC}/Makefile.in
@@ -39,4 +33,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
