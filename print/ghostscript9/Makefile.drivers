@@ -1,5 +1,9 @@
-# $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/Makefile.drivers,v 1.2 2012-02-12 18:10:49 hrs Exp $
+# $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/Makefile.drivers,v 1.3 2012-05-29 09:54:27 bapt Exp $
 
+OPTIONS_X11_DEFAULT=	off
+OPTIONS_ICONV_DEFAULT=	off
+OPTIONS_CUPS_DEFAULT=	off
+OPTIONS_SVGALIB_DEFAULT=	off
 OPTIONS_GS_DEFAULT_ON=	on
 OPTIONS_GS_DEFAULT_OFF=	off
 
