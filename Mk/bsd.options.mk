@@ -145,43 +145,16 @@ WITHOUT_NLS=	yes
 .endif
 
 ### to be removed once old OPTIONS disappear
-.if defined(OPTIONS)
-# include OPTIONSFILE first if exists
-.       if exists(${OPTIONSFILE}) && !make(rmconfig)
-.       include "${OPTIONSFILE}"
-.       endif
-.       if exists(${OPTIONSFILE}.local)
-.       include "${OPTIONSFILE}.local"
-.       endif
-WITHOUT:=
-WITH:=
-.       if defined(OPTIONS)
-REALOPTIONS=${OPTIONS:C/".*"//g}
-.       for O in ${REALOPTIONS}
-RO:=${O}
-.       if ${RO:L} == off
-WITHOUT:=       ${WITHOUT} ${OPT}
-.       endif
-.       if ${RO:L} == on
-WITH:=          ${WITH} ${OPT}
-.       endif
-OPT:=${RO}
-.       endfor
-.       endif
-# define only if NO WITH/WITHOUT_${W} is defined
-.       for W in ${WITH}
-.   if !defined(WITH_${W}) && !defined(WITHOUT_${W})
-WITH_${W}:=     true
+.for opt in ${ALL_OPTIONS}
+.if empty(PORT_OPTIONS:M${opt})
+.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt})
+WITHOUT_${opt}:=	true
 .   endif
-.       endfor
-.       for W in ${WITHOUT}
-.   if !defined(WITH_${W}) && !defined(WITHOUT_${W})
-WITHOUT_${W}:=  true
+.else
+.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt})
+WITH_${opt}:=  true
 .   endif
-.       endfor
-.       undef WITH
-.       undef WITHOUT
-.       undef RO
-.       undef REALOPTIONS
 .endif
+.      undef opt
+.endfor
 ###
