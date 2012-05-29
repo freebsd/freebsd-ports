@@ -1,4 +1,4 @@
-#-*- mode: Makefile: tab-width: 4; -*-
+#-*- tab-width: 4; -*-
 # ex:ts=4
 #
 # $FreeBSD$
@@ -71,26 +71,34 @@ fake-pkg:
 .endfor
 	@${ECHO_CMD} "]" >> ${MANIFESTF}
 	@${ECHO_CMD} -n "options: {" >> ${MANIFESTF}
-	-@if [ -e ${OPTIONSFILE} ]; then \
-		. ${OPTIONSFILE}; \
-	fi; \
-	set -- ${OPTIONS} XXX; \
-	while [ $$# -gt 3 ]; do \
-		defaultval=$$3 \
-		withvar=WITH_$$1; \
-		withoutvar=WITHOUT_$$1; \
-		withval=$$(eval ${ECHO_CMD} $$\{$${withvar}\}); \
-		withoutval=$$(eval ${ECHO_CMD} $$\{$${withoutvar}\}); \
-		if [ ! -z "$${withval}" ]; then \
-			val=on; \
-		elif [ ! -z "$${withoutval}" ]; then \
-			val=off; \
-		else \
-			val="$${defaultval}"; \
-		fi; \
-		${ECHO_MSG} -n "$$1: $${val},"; \
-		shift 3; \
-	done >> ${MANIFESTF}
+.for opt in ${ALL_OPTIONS}
+.if empty(PORT_OPTIONS:M${opt})
+	@${ECHO_CMD} -n "${opt}: off," >> ${MANIFESTF}
+.else
+	@${ECHO_CMD} -n "${opt}: on," >> ${MANIFESTF}
+.endif
+.endfor
+.for multi in ${OPTIONS_MULTI}
+.  for opt in ${OPTIONS_MULTI_${multi}}
+.    if empty(PORT_OPTIONS:M${opt})
+	@${ECHO_MSG} -n "${opt}: off, " >> ${MANIFESTF}
+.    else
+	@${ECHO_MSG} -n "${opt}: on, " >> ${MANIFESTF}
+.    endif
+.  endfor
+.endfor
+.for single in ${OPTIONS_SINGLE}
+.  for opt in ${OPTIONS_SINGLE_${single}}
+.    if empty(PORT_OPTIONS:M${opt})
+	@${ECHO_MSG} -n "${opt}: off, " >> ${MANIFESTF}
+.    else
+	@${ECHO_MSG} -n "${opt}: on, " >> ${MANIFESTF}
+.    endif
+.  endfor
+.endfor
+.undef multi
+.undef single
+.undef opt
 	@${ECHO_CMD} "}" >> ${MANIFESTF}
 	@[ -f ${PKGINSTALL} ] && ${CP} ${PKGINSTALL} ${METADIR}/+INSTALL; \
 	[ -f ${PKGPREINSTALL} ] && ${CP} ${PKGPREINSTALL} ${METADIR}/+PRE_INSTALL; \
