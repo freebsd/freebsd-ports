@@ -1,0 +1,16 @@
+--- configure.ac.orig	2011-12-26 23:46:57.000000000 +0200
++++ configure.ac	2012-05-16 17:39:50.000000000 +0300
+@@ -23,11 +23,12 @@
+ 
+ # Checks for libraries.
+ AC_CHECK_LIB([m], [ceil], [], [missing_libraries="$missing_libraries libm"])
++AC_CHECK_LIB([kvm], [kvm_open], [], [missing_libraries="$missing_libraries libkvm"])
+ 
+ # Checks for header files.
+ AC_HEADER_DIRENT
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS([stdlib.h string.h strings.h sys/param.h sys/time.h unistd.h curses.h],[:],[
++AC_CHECK_HEADERS([stdlib.h string.h strings.h sys/param.h sys/time.h unistd.h curses.h kvm.h paths.h fcntl.h sys/sysctl.h],[:],[
+   missing_headers="$missing_headers $ac_header"
+ ])
+ AC_CHECK_HEADERS([execinfo.h],[:],[:])
