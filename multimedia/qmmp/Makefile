@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmmp
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -27,8 +27,8 @@ OPTIONS=	SKINNEDUI	"Skinned GUI" on \
 		APIDOC	"Doxygen generated class reference document" off \
 		PULSE	"Support the PulseAudio output" on \
 		ALSA	"Support the ALSA output" off \
-		OSS	"Support the OSS output" on \
-		OSS4	"Support the OSS4 output" off \
+		OSS	"Support the OSS output" off \
+		OSS4	"Support the OSS4 output" on \
 		JACK	"Support the JACK output" on \
 		NULLOUT	"Support a null output" on \
 		FLAC	"Support to playback FLAC files" on \
@@ -148,12 +148,12 @@ PLUGIN_OPTIONS_CMAKE+=	-DUSE_GME:BOOL=FALSE
 
 .ifndef(WITHOUT_FFMPEG)
 PLIST_SUB+=	FFMPEG=""
-PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFMPEG:BOOL=TRUE
 . if exists(${LOCALBASE}/include/libavcodec/vda.h)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
 . else
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 . endif
+PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFMPEG:BOOL=TRUE
 .else
 PLIST_SUB+=	FFMPEG="@comment "
 PLUGIN_OPTIONS_CMAKE+=	-DUSE_FFMPEG:BOOL=FALSE
@@ -451,6 +451,8 @@ PLUGIN_OPTIONS_CMAKE+=	-DUSE_QMMP_DIALOG:BOOL=FALSE
 	|| !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 .endif
+
+PLIST_SUB+=	SHLIB_VER=${PORTVERSION:C/-.*//}
 
 PORTDOCS=	README README.RUS AUTHORS
 SUB_FILES=	qmmp
