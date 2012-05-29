@@ -33,6 +33,7 @@ JACK_DESC?=		Support JACK audio server
 JPEG_DESC?=		Enable JPEG support
 LAME_DESC?=		Support for MP3 Icecast Streams
 LASTFM_DESC?=		Support Last.FM stream input
+LCMS2_DESC?=		Enable LCMS2 support
 LDAP_DESC?=		Enable LDAP support
 MAGICK_DESC?=		Enable ImageMagick Library
 MIKMOD_DESC?=		Support MOD audio format
