@@ -19,6 +19,11 @@ PORT_OPTIONS+=	DOCS
 .endif
 PORT_OPTIONS+=	NLS
 
+# Set the default values for the global options, as defined by portmgr
+.if !defined(NOPORTEXAMPLES)
+PORT_OPTIONS+=	EXAMPLES
+.endif
+
 # Append options set by the port Makefile
 .for opt in ${OPTIONS_DEFINE}
 ALL_OPTIONS+=	${opt}
