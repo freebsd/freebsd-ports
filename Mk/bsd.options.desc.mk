@@ -10,6 +10,7 @@ CDDA2WAV_DESC?=		Enable cdda2was CD ripper
 CURL_DESC?=		Enable CURL support
 DAGRAB_DESC?=		Enable dagrab CD ripper
 DBUS_DESC?=		Enable D-Bus support
+DEBUG_DESC?=		Enable debug flags
 DOCS_DESC?=		Build and install the documentation
 EXAMPLES_DESC?=		Build and install the examples
 FLAC_DESC?=		Enable support for flac
