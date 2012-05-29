@@ -28,56 +28,51 @@ MAN1=		abcde.1 cddb-tool.1
 
 PLIST_FILES=	bin/abcde bin/cddb-tool etc/abcde.conf.sample
 
-OPTIONS=	CDDA2WAV "support cdda2wav to rip CD" Off \
-		DAGRAB	"support dagrab to rip IDE CD" Off \
-		EJECT	"enable auto-eject support" Off \
-		GOGO	"support gogo MP3 encoder" Off \
-		FLAC	"support FLAC format" Off \
-		AAC	"support AAC format" Off \
-		MPP	"support Musepack format" Off \
-		NORMALIZE "enable normalize support" Off \
-		REPLAYGAIN "support (vorbis|mp3)gain" Off \
-		SPEEX	"enable Speex support" Off
+OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT GOGO FLAC MPP NORMALIZE REPLAYGAIN SPEEX
+
+EJECT_DESC?=	Enable auto-eject support
+NORMALIZE_DESC?=	Enable normalize support
+REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_CDDA2WAV)
+.if ${PORT_OPTIONS:MCDDA2WAV}
 USE_CDRTOOLS=	yes
 .endif
 
-.if defined(WITH_DAGRAB)
+.if ${PORT_OPTIONS:MDAGRAB}
 RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
 .endif
 
-.if defined(WITH_EJECT)
+.if ${PORT_OPTIONS:MEJECT}
 RUN_DEPENDS+=	eject:${PORTSDIR}/sysutils/eject
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITH_NORMALIZE)
+.if ${PORT_OPTIONS:MNORMALIZE}
 RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
 .endif
 
-.if defined(WITH_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
 .endif
 
-.if defined(WITH_GOGO)
+.if ${PORT_OPTIONS:MGOGO}
 RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
-.if defined(WITH_AAC)
+.if ${PORT_OPTIONS:MAAC}
 RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .endif
 
-.if defined(WITH_MPP)
+.if ${PORT_OPTIONS:MMPP}
 RUN_DEPENDS+=	mpcenc:${PORTSDIR}/audio/musepack
 .endif
 
-.if defined(WITH_REPLAYGAIN)
+.if ${PORT_OPTIONS:MREPLAYGAIN}
 RUN_DEPENDS+=	mp3gain:${PORTSDIR}/audio/mp3gain \
 		vorbisgain:${PORTSDIR}/audio/vorbisgain
 .endif
