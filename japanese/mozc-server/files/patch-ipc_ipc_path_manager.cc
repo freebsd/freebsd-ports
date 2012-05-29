@@ -1,4 +1,4 @@
---- ipc/ipc_path_manager.cc.orig	2012-05-01 12:21:13.686691614 +0900
+--- ipc/ipc_path_manager.cc.orig	2012-05-29 15:37:10.807960643 +0900
 +++ ipc/ipc_path_manager.cc	2012-05-01 12:46:21.263693646 +0900
 @@ -284,7 +284,7 @@
    *ipc_name = kIPCPrefix;

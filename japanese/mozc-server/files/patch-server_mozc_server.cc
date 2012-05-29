@@ -1,4 +1,4 @@
---- server/mozc_server.cc.orig	2012-05-01 12:21:08.112691771 +0900
+--- server/mozc_server.cc.orig	2012-05-29 15:37:00.266961647 +0900
 +++ server/mozc_server.cc	2012-04-02 08:24:24.633727039 +0900
 @@ -32,6 +32,9 @@
  #ifdef OS_WINDOWS
