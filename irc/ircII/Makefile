@@ -8,7 +8,9 @@
 PORTNAME=	ircii
 PORTVERSION=	20111115
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://ircii.warped.com/
+MASTER_SITES=	http://ircii.warped.com/ \
+				${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
