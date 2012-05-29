@@ -71,7 +71,7 @@ PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
 .endif # !defined(WITHOUT_THREADS)
 
-.if .if ${PORT_OPTIONS:MUCS4}
+.if ${PORT_OPTIONS:MUCS4}
 CONFIGURE_ARGS+=	--with-wide-unicode
 .endif
 
