@@ -14,8 +14,10 @@ OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 #		NLS
 
 # Set the default values for the global options, as defined by portmgr
-PORT_OPTIONS+=	NLS \
-		DOCS
+.if !defined(NOPORTDOCS)
+PORT_OPTIONS+=	DOCS
+.endif
+PORT_OPTIONS+=	NLS
 
 # Append options set by the port Makefile
 .for opt in ${OPTIONS_DEFINE}
