@@ -1,6 +1,6 @@
---- configure.orig	2011-01-20 03:24:42.000000000 +0100
-+++ configure	2011-05-10 15:10:45.000000000 +0200
-@@ -15399,13 +15399,13 @@
+--- configure.orig	2012-04-14 20:02:59.000000000 +0200
++++ configure	2012-05-29 22:31:25.785277676 +0200
+@@ -16046,7 +16046,7 @@
                 DATADIRNAME=share
  else
    CATOBJEXT=.mo
@@ -9,6 +9,8 @@
  fi
  
  	    ;;
+@@ -16056,7 +16056,7 @@
+ 	    ;;
  	    *)
  	    CATOBJEXT=.mo
 -            DATADIRNAME=lib
@@ -16,8 +18,8 @@
  	    ;;
  	    esac
  fi
-@@ -16063,12 +16063,12 @@
- if test "x$ac_cv_func_bind_textdomain_codeset" = x""yes; then :
+@@ -16723,12 +16723,12 @@
+ if test "x$ac_cv_func_bind_textdomain_codeset" = xyes; then :
    DATADIRNAME=share
  else
 -  DATADIRNAME=lib
@@ -31,3 +33,51 @@
      ;;
      esac
  fi
+@@ -16793,9 +16793,9 @@
+ fi
+ 
+ 
+-OPTIMIZATION_LEVEL="-O3"
+-echo "setting optimization level to $OPTIMIZATION_LEVEL"
+-CFLAGS="$CFLAGS $OPTIMIZATION_LEVEL"
++#OPTIMIZATION_LEVEL="-O3"
++#echo "setting optimization level to $OPTIMIZATION_LEVEL"
++#CFLAGS="$CFLAGS $OPTIMIZATION_LEVEL"
+ 
+ if test $CC = "gcc"; then
+    echo -n "checking version of gcc... "
+@@ -17443,8 +17443,8 @@
+   THREAD_LIBS=""
+ fi
+ 
+-AMIDE_LIBDCMDATA_LIBS="-L/usr/local/dicom/lib -L/usr/lib64/dcmtk -L/usr/lib/dcmtk -ldcmdata -loflog -lofstd -lz $THREAD_LIBS"
+-AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include"
++AMIDE_LIBDCMDATA_LIBS="-L%%LOCALBASE%%/lib -L/usr/local/dicom/lib -L/usr/lib64/dcmtk -L/usr/lib/dcmtk -ldcmdata -loflog -lofstd -lz $THREAD_LIBS"
++AMIDE_LIBDCMDATA_CFLAGS="-I%%LOCALBASE%%/include -I/usr/local/dicom/include"
+ saved_libs="${LIBS}"
+ LIBS="${LIBS} ${AMIDE_LIBDCMDATA_LIBS}"
+ saved_cxxflags="${CXXFLAGS}"
+@@ -17982,6 +17982,7 @@
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
+       CFLAGS="$CFLAGS $LIBFAME_CFLAGS"
++      CXXFLAGS="$CFLAGS $LIBFAME_CFLAGS"
+       LIBS="$LIBFAME_LIBS $LIBS"
+       rm -f conf.libfametest
+       if test "$cross_compiling" = yes; then :
+@@ -17993,6 +17994,7 @@
+ #include <fame.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ int
+ main ()
+@@ -21896,7 +21898,3 @@
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-
+-echo "Moving SPEC file to base directory"
+-mv etc/amide.spec ./

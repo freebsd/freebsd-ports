@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amide
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -27,46 +27,77 @@ INSTALLS_OMF=	yes
 
 MAN1=		amide.1
 
-OPTIONS=	XMEDCON	"Use xmedcon"	on \
-		DCMTK	"Use dcmtk"	on \
-		FFMPEG	"Use ffmpeg"	on \
-		GSL	"Use gsl"	on
+OPTIONS_DEFINE=	DCMTK FAME FFMPEG GSL VOLPACK XMEDCON
+OPTIONS_DEFAULT= DCMTK FFMPEG GSL VOLPACK XMEDCON
 
-.include <bsd.port.pre.mk>
+DCMTK_DESC=	"Use dcmtk"
+FAME_DESC=	"Use libfame (mutually exclusive with ffmpeg)"
+FFMPEG_DESC=	"Use ffmpeg (mutually exclusive with libfame)"
+GSL_DESC=	"Use gsl"
+VOLPACK_DESC=	"Use volpack"
+XMEDCON_DESC=	"Use xmedcon"
 
-.if !defined(WITHOUT_XMEDCON)
-LIB_DEPENDS+=	mdc.2:${PORTSDIR}/graphics/xmedcon
-CONFIGUE_ARGS+=	--enable-libmdc
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDCMTK}
+LIB_DEPENDS+=	dcmdata:${PORTSDIR}/devel/dcmtk
+CONFIGURE_ARGS+=	--enable-libdcmdata
 .else
-CONFIGUE_ARGS+=	--disable-libmdc
+CONFIGURE_ARGS+=	--disable-libdcmdata
 .endif
 
-.if !defined(WITHOUT_DCMTK)
-LIB_DEPENDS+=	dcmdata.3:${PORTSDIR}/devel/dcmtk
-CONFIGUE_ARGS+=	--enable-libdcmdata
+.if ${PORT_OPTIONS:MFAME}
+.  if${PORT_OPTIONS:MFFMPEG}
+IGNORE=		libfame and ffmpeg support are mutually exclusive, please check options.
+.  endif
+LIB_DEPENDS+=	fame:${PORTSDIR}/multimedia/libfame
+CONFIGURE_ARGS+=	--enable-libfame
 .else
-CONFIGUE_ARGS+=	--disable-libdcmdata
+CONFIGURE_ARGS+=	--disable-libfame
 .endif
 
-.if !defined(WITHOUT_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-CONFIGUE_ARGS+=	--enable-ffmpeg
+.if ${PORT_OPTIONS:MFFMPEG}
+.  if${PORT_OPTIONS:MFAME}
+IGNORE=		libfame and ffmpeg support are mutually exclusive, please check options.
+.  endif
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+CONFIGURE_ARGS+=	--enable-ffmpeg
 .else
-CONFIGUE_ARGS+=	--disable-ffmpeg
+CONFIGURE_ARGS+=	--disable-ffmpeg
 .endif
 
-.if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
-CONFIGUE_ARGS+=	--enable-libgsl
+.if ${PORT_OPTIONS:MGSL}
+LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+CONFIGURE_ARGS+=	--enable-libgsl
 .else
-CONFIGUE_ARGS+=	--disable-libgsl
+CONFIGURE_ARGS+=	--disable-libgsl
 .endif
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MVOLPACK}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libvolpack.a:${PORTSDIR}/graphics/volpack
+CONFIGURE_ARGS+=	--enable-libvolpack
+.else
+CONFIGURE_ARGS+=	--disable-libvolpack
+.endif
+
+.if ${PORT_OPTIONS:MXMEDCON}
+LIB_DEPENDS+=	mdc:${PORTSDIR}/graphics/xmedcon
+CONFIGURE_ARGS+=	--enable-libmdc
+.else
+CONFIGURE_ARGS+=	--disable-libmdc
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+PLIST_SUB+=	NLS=''
+.else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS='@comment '
-.else
-PLIST_SUB+=	NLS=''
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+		${WRKSRC}/amide_config.h.in
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/configure
+
+.include <bsd.port.mk>
