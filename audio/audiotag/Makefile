@@ -7,6 +7,7 @@
 
 PORTNAME=	audiotag
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	 http://cloud.github.com/downloads/Daenyth/audiotag/
 
@@ -16,9 +17,8 @@ COMMENT=	A command-line tool for mass tagging/renaming of audio files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	VORBIS "Support renaming/tagging ogg vorbis files" On \
-		ID3 "Support renaming/tagging files supporting id3 tags" On \
-		MP4 "Support renaming/tagging mp4 files" On
+OPTIONS_DEFINE=	VORBIS ID3 MP4 FLAC DOCS
+OPTIONS_DEFAULT=	VORBIS ID3 MP4 FLAC
 
 USE_PERL5_RUN=	yes
 
@@ -28,16 +28,16 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 RUN_DEPENDS+=	vorbiscomment:${PORTSDIR}/audio/vorbis-tools
 .endif
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
-.if defined(WITH_ID3)
+.if ${PORT_OPTIONS:MID3}
 RUN_DEPENDS+=	id3tag:${PORTSDIR}/audio/id3lib
 .endif
-.if defined(WITH_MP4)
+.if ${PORT_OPTIONS:MMP4}
 RUN_DEPENDS+=	AtomicParsley:${PORTSDIR}/multimedia/atomicparsley
 .endif
 
@@ -48,7 +48,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/audiotag ${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
