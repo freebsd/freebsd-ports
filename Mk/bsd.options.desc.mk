@@ -11,6 +11,7 @@ CURL_DESC?=		Enable CURL support
 DAGRAB_DESC?=		Enable dagrab CD ripper
 DBUS_DESC?=		Enable D-Bus support
 DOCS_DESC?=		Build and install the documentation
+EXAMPLES_DESC?=		Build and install the examples
 FLAC_DESC?=		Enable support for flac
 GOGO_DESC?=		Enable gogo mp3 encoder
 ID3_DESC?=		Enable support for id3 tags
