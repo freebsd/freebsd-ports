@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	blitz-devel
-PORTVERSION=	0.7.1.12
+PORTVERSION=	0.7.2
 CATEGORIES=	devel
 MASTER_SITES=	http://alexeyrybak.com/blitz/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	blitz-${PORTVERSION}-dev
+DISTNAME=	blitz-${PORTVERSION}-devel
 
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP templating engine
@@ -20,7 +20,5 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	blitz
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
