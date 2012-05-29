@@ -8,13 +8,3 @@
  ))
  $(eval $(call gb_Library_set_ldflags,vclplug_gen,\
      $$(LDFLAGS) \
-@@ -204,4 +203,9 @@
- 	Xinerama Xrandr					\
- ))
- endif
-+ifeq ($(OS),FREEBSD)
-+$(eval $(call gb_Library_add_external_libs,vclplug_gen,	\
-+	Xinerama Xrandr					\
-+))
-+endif
- # vim: set noet sw=4 ts=4:
