@@ -1,25 +1,31 @@
---- config.mak.orig    2009-11-22 01:56:12.000000000 +0100
-+++ config.mak 2009-11-22 14:03:58.000000000 +0100
-@@ -18,8 +18,8 @@
+--- config.mak.orig	2012-05-22 11:50:19.537220266 +0600
++++ config.mak	2012-05-22 11:57:03.846226857 +0600
+@@ -46,14 +46,8 @@
  CAIRO_CFLAGS  ?= $(shell pkg-config --cflags cairo)
  CAIRO_LIBS    ?= $(shell pkg-config --libs cairo)
- ifndef MACOS
--LUA_CFLAGS    ?= $(shell pkg-config --cflags lua5.1)
--LUA_LIBS      ?= $(shell pkg-config --libs lua5.1)
-+LUA_CFLAGS    ?= -I$(LUA_INCDIR)
-+LUA_LIBS      ?= -L$(LUA_LIBDIR) -llua
+ # The lua package might be called "lua" or "lua5.1"
+-luatest = $(shell pkg-config --modversion --silence-errors lua)
+-ifneq "$(luatest)" ""
+-  LUA_CFLAGS  ?= $(shell pkg-config --cflags lua)
+-  LUA_LIBS    ?= $(shell pkg-config --libs lua)
+-else
+-  LUA_CFLAGS  ?= $(shell pkg-config --cflags lua5.1)
+-  LUA_LIBS    ?= $(shell pkg-config --libs lua5.1)
+-endif
++LUA_CFLAGS  ?= -I$(LUA_INCDIR)
++LUA_LIBS    ?= -L$(LUA_LIBDIR) -llua
+ GTK_CFLAGS    ?= $(shell pkg-config --cflags gtk+-2.0)
+ GTK_LIBS      ?= $(shell pkg-config --libs gtk+-2.0)
  QT_CFLAGS     ?= $(shell pkg-config --cflags QtGui QtCore)
- QT_LIBS             ?= $(shell pkg-config --libs QtGui QtCore)
- #
-@@ -75,6 +75,7 @@
- #IPEPREFIX  := /usr/local
+@@ -123,6 +117,7 @@
  #IPEPREFIX  := /usr
  #IPEPREFIX  := /opt/ipe7
-+IPEPREFIX  := $(PREFIX)
  #
++IPEPREFIX  := $(PREFIX)
  ifeq "$(IPEPREFIX)" ""
  $(error You need to specify IPEPREFIX!)
-@@ -115,11 +116,11 @@
+ endif
+@@ -157,11 +152,11 @@
  #
  # IPEDOCDIR contains the Ipe documentation (mostly html files)
  #
