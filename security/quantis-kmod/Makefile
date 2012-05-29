@@ -28,8 +28,6 @@ WRKSRC=		${WRKDIR}/Quantis-${DISTVERSION}/Drivers/Unix/QuantisPci
 
 KMODDIR?=	/boot/modules
 
-SRC_BASE?=	/usr/src
-
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 PLIST_FILES=	"@cwd ${KMODDIR}" \
