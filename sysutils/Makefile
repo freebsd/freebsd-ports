@@ -1006,6 +1006,7 @@
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
     SUBDIR += xfce4-minicmd-plugin
+    SUBDIR += xfce4-mount-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-power-manager
     SUBDIR += xfce4-settings
