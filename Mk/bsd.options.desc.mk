@@ -1,12 +1,12 @@
 # $FreeBSD$
 #
-# Please keep description ordered alphabetically ordered by variable name
+# Please keep descriptions sorted alphabetically by variable name.
 #
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
 
 CURL_DESC?=		Enable CURL support
-DBUS_DESC?=		Enable DBUS support
+DBUS_DESC?=		Enable D-Bus support
 DOCS_DESC?=		Build and install the documentation
 FLAC_DESC?=		Enable support for flac
 ID3_DESC?=		Enable support for id3 tags
