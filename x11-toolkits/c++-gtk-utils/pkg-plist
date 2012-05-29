@@ -134,6 +134,9 @@ libdata/pkgconfig/c++-gtk-utils-2-2.0.pc
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__function-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__function.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__function.png
+%%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__lambda-members.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__lambda.html
+%%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1Callback__lambda.png
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1FunctorArg-members.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1FunctorArg.html
 %%DOCSDIR%%/2.0/html/classCgu_1_1Callback_1_1SafeFunctorArg-members.html
