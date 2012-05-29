@@ -5,6 +5,8 @@
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
 
+CURL_DESC?=	Enable CURL support
+DBUS_DESC?=	Enable DBUS support
 DOCS_DESC?=	Build and install the documentation
 LDAP_DESC?=	Enable LDAP support
 NLS_DESC?=	Build and install the localisation data
