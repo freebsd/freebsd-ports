@@ -17,14 +17,11 @@ COMMENT=	PHP extension for interfacing with MessagePack
 
 WRKSRC=		${WRKDIR}/php-msgpack
 
-USE_PHP=	yes
+USE_PHP=	session
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	msgpack
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
-
-BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/session.so:${PORTSDIR}/www/php5-session
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 .include <bsd.port.mk>
