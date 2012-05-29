@@ -977,6 +977,7 @@
     SUBDIR += vips
     SUBDIR += visionworkbench
     SUBDIR += visprint
+    SUBDIR += volpack
     SUBDIR += vp
     SUBDIR += webp
     SUBDIR += whirlgif

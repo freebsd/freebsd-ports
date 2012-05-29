@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2012-05-29 12:53:53.868426143 +0200
++++ Makefile.in	2012-05-29 12:54:07.467425832 +0200
+@@ -175,7 +175,7 @@
+ 	cc -o makeopts makeopts.c
+ 
+ vp_opts.c: makeopts Makefile
+-	makeopts vp_opts.c $(CFLAGS)
++	./makeopts vp_opts.c $(CFLAGS)
+ 
+ $(COMP_SRCS): $(COMP_IN)
+ 	@for i in $(COMP_SRCS) ; \
