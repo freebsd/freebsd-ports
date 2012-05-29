@@ -17,7 +17,7 @@ COMMENT=	PHP-extension part of statistics server for PHP
 
 LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
 
-GITVERSION=	4de401c
+GITVERSION=	f76b673
 FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -25,7 +25,5 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_PHP=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	pinba
-DEFAULT_PHP_VER=53
-IGNORE_WITH_PHP=5
 
 .include <bsd.port.mk>
