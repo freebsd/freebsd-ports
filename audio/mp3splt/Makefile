@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/mp3splt/${PORTNAME}
+MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	Utility to split mp3 and ogg files (via CUE sheets)
