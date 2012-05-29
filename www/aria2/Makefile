@@ -7,6 +7,7 @@
 
 PORTNAME=	aria2
 PORTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -16,30 +17,29 @@ COMMENT=	Yet another download tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	z.1:${PORTSDIR}/archivers/zlib
-
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-libxml2 \
 		--without-gnutls --with-openssl \
 		--without-libcares --with-libz --enable-bittorrent \
 		--enable-metalink --disable-epoll --enable-threads=pth
+CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} OPENSSL_LIBS="-L${OPENSSLLIB} -lssl" \
+		ZLIB_CFLAGS=-I${INCLUDEDIR} ZLIB_LIBS="-L${LIBDIR} -lz"
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 MAKE_JOBS_SAFE=	yes
 
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	ar bg ca da de el en@boldquot en@quot es fi fr he hu id it ko ja \
+LANGS=		ar bg ca da de el en@boldquot en@quot es fi fr he hu id it ko ja \
 		nl nn pl pt pt_BR ru sk sr sv th tr uk vi zh_CN zh_TW
 .endif
 
 PLIST_FILES=	bin/aria2c \
-		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2.mo|} \
+		${LANGS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2.mo|} \
 		share/doc/aria2/README \
 		share/doc/aria2/README.html \
 		share/doc/aria2/aria2c.1.html \
