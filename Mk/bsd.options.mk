@@ -147,6 +147,10 @@ PORT_OPTIONS:=	${PORT_OPTIONS:N${opt}}
 NOPORTDOCS=	yes
 .endif
 
+.if empty(PORT_OPTIONS:MEXAMPLES)
+NOPORTEXAMPLES=	yes
+.endif
+
 .if empty(PORT_OPTIONS:MNLS)
 WITHOUT_NLS=	yes
 .endif
