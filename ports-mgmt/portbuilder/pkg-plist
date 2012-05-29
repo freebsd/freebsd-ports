@@ -50,6 +50,28 @@ bin/portbuilder
 %%PYTHON_SITELIBDIR%%/libpb/signal.py
 %%PYTHON_SITELIBDIR%%/libpb/signal.pyc
 %%PYTHON_SITELIBDIR%%/libpb/signal.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/__init__.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/__init__.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/__init__.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/base.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/base.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/base.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/build.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/build.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/build.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/common.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/common.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/common.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/mutators.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/mutators.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/mutators.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/package.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/package.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/package.pyo
+%%PYTHON_SITELIBDIR%%/libpb/stacks/repo.py
+%%PYTHON_SITELIBDIR%%/libpb/stacks/repo.pyc
+%%PYTHON_SITELIBDIR%%/libpb/stacks/repo.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/libpb/stacks
 @dirrm %%PYTHON_SITELIBDIR%%/libpb/port
 @dirrm %%PYTHON_SITELIBDIR%%/libpb/pkg
 @dirrm %%PYTHON_SITELIBDIR%%/libpb
