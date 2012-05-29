@@ -6031,7 +6031,7 @@ _COMPLETE_OPTIONS_LIST:=	${_COMPLETE_OPTIONS_LIST:u}
 
 .if !target(config)
 config: pre-config
-.if empty(ALL_OPTIONS)
+.if empty(ALL_OPTIONS) && empty(OPTIONS_SINGLE) && empty(OPTIONS_MULTI)
 	@${ECHO_MSG} "===> No options to configure"
 .else
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
