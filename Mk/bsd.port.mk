@@ -6047,13 +6047,11 @@ config: pre-config
 .endif
 	@TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
-	${SH} -c '${DIALOG} --checklist "Options for ${PKGNAME:C/-([^-]+)$/ \1/}" 21 70 15 ${DEFOPTIONS}' 2> $${TMPOPTIONSFILE}; \
-	status=$$?; \
-	if [ $${status} -ne 0 ]; then \
+	${SH} -c '${DIALOG} --checklist "Options for ${PKGNAME:C/-([^-]+)$/ \1/}" 21 70 15 ${DEFOPTIONS}' 2> $${TMPOPTIONSFILE} || { \
 		${RM} -f $${TMPOPTIONSFILE}; \
 		${ECHO_MSG} "===> Options unchanged"; \
 		exit 0; \
-	fi; \
+	}; \
 	if [ ! -e $${TMPOPTIONSFILE} ]; then \
 		${ECHO_MSG} "===> No user-specified options to save for ${PKGNAME}"; \
 		exit 0; \
