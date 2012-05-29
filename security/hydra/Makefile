@@ -1,28 +1,25 @@
 # ex:ts=8
-# Ports collection makefile for:  hydra
-# Date created:			  Tue Oct 08, 2002
-# Whom:				  Laurent LEVIER (llevier@argosnet.com)
+# Ports collection makefile for:	hydra
+# Date created:				Tue Oct 08, 2002
+# Whom:					Laurent LEVIER (llevier@argosnet.com)
 #
 # $FreeBSD$
 #
 
 PORTNAME=	hydra
-PORTVERSION=	7.2
-PORTREVISION=	1
+PORTVERSION=	7.3
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/ \
 		PACKETSTORM/groups/thc/
-EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Brute force attack utility working on multiple network services
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
-		pcre.1:${PORTSDIR}/devel/pcre \
-		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+		pcre:${PORTSDIR}/devel/pcre \
+		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
 NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh
@@ -31,29 +28,32 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 MAN1=		hydra.1 pw-inspector.1
 
-OPTIONS=	FIREBIRD "Enable firebird support" off \
-		SSH "Enable ssh support" off \
-		SVN "Enable subversion support" off \
-		X11 "Install xhydra" off
+OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
+FIREBIRD_DESC=	Enable firebird support
+SSH_DESC=	Enable ssh support
+SVN_DESC=	Enable subversion support
+OPTIONS_EXCLUDE=NLS DOCS
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FIREBIRD)
-LIB_DEPENDS+=	fbclient.2:${PORTSDIR}/databases/firebird20-client
+.if ${PORT_OPTIONS:MFIREBIRD}
+LIB_DEPENDS+=	fbclient:${PORTSDIR}/databases/firebird20-client
 .endif
-.if defined(WITH_SSH)
-LIB_DEPENDS+=	ssh.4:${PORTSDIR}/security/libssh
+
+.if ${PORT_OPTIONS:MSSH}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libssh.so.4:${PORTSDIR}/security/libssh
+RUN_DEPENDS+=	${LOCALBASE}/lib/libssh.so.4:${PORTSDIR}/security/libssh
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
-.if defined(WITH_SVN)
+
+.if ${PORT_OPTIONS:MSVN}
 LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 .endif
 
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_GNOME=	gtk20 pkgconfig
 PLIST_FILES+=	bin/xhydra
 MAN1+=		xhydra.1
@@ -73,9 +73,9 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/dpl4hydra.sh ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/hydra.1 ${MANPREFIX}/man/man1/hydra.1
 	@${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${MANPREFIX}/man/man1/pw-inspector.1
-.if defined(WITH_X11)
+.if ${PORT_OPTIONS:MX11}
 	@${INSTALL_PROGRAM} ${WRKSRC}/hydra-gtk/src/xhydra ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${MANPREFIX}/man/man1/xhydra.1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
