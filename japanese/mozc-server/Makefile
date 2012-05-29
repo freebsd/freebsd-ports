@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozc
-PORTVERSION=	1.5.1053.102
-PORTREVISION=	4
+PORTVERSION=	1.5.1090.102
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX?=	ja-
@@ -238,7 +237,7 @@ do-install-scim_mozc:
 # fcitx_mozc
 .if ${BUILD_MOZC_LIST:Mfcitx_mozc} == "fcitx_mozc"
 PATCH_SITES=	http://fcitx.googlecode.com/files/
-PATCHFILES=	fcitx-mozc-${PORTVERSION}-1.patch
+PATCHFILES=	fcitx-mozc-${PORTVERSION}.1.patch
 PATCH_DIST_STRIP=-p2
 
 LIB_DEPENDS+=	fcitx-config.4:${PORTSDIR}/chinese/fcitx

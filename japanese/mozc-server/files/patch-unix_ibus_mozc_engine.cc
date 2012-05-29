@@ -1,4 +1,4 @@
---- unix/ibus/mozc_engine.cc.orig	2012-05-01 12:21:08.068691602 +0900
+--- unix/ibus/mozc_engine.cc.orig	2012-05-29 15:36:59.665961241 +0900
 +++ unix/ibus/mozc_engine.cc	2012-05-01 12:45:44.250693013 +0900
 @@ -893,7 +893,7 @@
        //     on size_t, not uint32.

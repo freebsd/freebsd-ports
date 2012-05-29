@@ -7,7 +7,6 @@
 
 PKGNAMESUFFIX=	-el-${EMACS_PORT_NAME}
 COMMENT=	Mozc for GNU Emacs
-PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../../japanese/mozc-server
 PKGMESSAGE=	${.CURDIR}/pkg-message

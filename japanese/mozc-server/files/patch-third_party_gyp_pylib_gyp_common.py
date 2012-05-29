@@ -1,4 +1,4 @@
---- third_party/gyp/pylib/gyp/common.py.orig	2012-05-01 12:21:08.076690903 +0900
+--- third_party/gyp/pylib/gyp/common.py.orig	2012-05-29 15:36:59.734962050 +0900
 +++ third_party/gyp/pylib/gyp/common.py	2012-05-01 12:46:18.154691389 +0900
 @@ -353,8 +353,10 @@
      'win32': 'win',

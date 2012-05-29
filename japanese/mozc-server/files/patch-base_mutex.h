@@ -1,4 +1,4 @@
---- base/mutex.h.orig	2012-05-01 12:21:08.064690752 +0900
+--- base/mutex.h.orig	2012-05-29 15:36:59.661959825 +0900
 +++ base/mutex.h	2012-05-01 12:46:18.966692632 +0900
 @@ -93,11 +93,11 @@
      // PTHREAD_MUTEX_RECURSIVE_NP and PTHREAD_MUTEX_RECURSIVE seem to be
