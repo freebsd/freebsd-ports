@@ -20,8 +20,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PNG "Enable png support" On	\
-		TESTS "Download and use test-images for post-build testing" Off
+OPTIONS_DEFINE=	PNG TESTS
+OPTIONS_DEFAULT=	PNG
+
+TESTS_DESC=	Download and use test-images for post-build testing
 
 MAN1=		jbig2dec.1
 
@@ -33,12 +35,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng=${LOCALBASE}
 .endif
 
-.if defined(WITH_TESTS)
+.if ${PORT_OPTIONS:MTESTS}
 MASTER_SITES+=	http://jbig2dec.sourceforge.net/ubc/:tests
 DISTFILES+=	jb2streams.zip:tests
 EXTRACT_ONLY=	${DISTFILES:M*xz}
