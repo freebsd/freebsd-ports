@@ -24,26 +24,24 @@ SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
 USE_BZIP2=	YES
 
-OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off \
-		SQLITE "Use SQLite backend (php5 only)" off \
-		MAGICK "Use ImageMagick Library" on
+OPTIONS_DEFINE= MYSQL PGSQL SQLITE MAGICK
+OPTIONS_DEFAULT= MYSQL MAGICK
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 . endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	sqlite
 .endif
 
-.if !defined(WITHOUT_MAGICK)
+.if ${PORT_OPTIONS:MMAGICK}
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
@@ -56,4 +54,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
