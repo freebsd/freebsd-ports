@@ -64,6 +64,7 @@
     SUBDIR += gobby
     SUBDIR += gphpedit
     SUBDIR += gwrite
+    SUBDIR += heme
     SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexpert
