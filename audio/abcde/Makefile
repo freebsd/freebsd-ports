@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	CDDA2WAV DAGRAB EJECT GOGO FLAC MPP NORMALIZE REPLAYGAIN SPEEX
 
 EJECT_DESC?=	Enable auto-eject support
 NORMALIZE_DESC?=	Enable normalize support
-REPLAYGAIN_DESC?=	Enable (vorbis|mp3)gain support
+REPLAYGAIN_DESC?=	"Enable (vorbis|mp3)gain support"
 
 .include <bsd.port.options.mk>
 
