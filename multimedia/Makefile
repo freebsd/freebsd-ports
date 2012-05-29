@@ -298,6 +298,7 @@
     SUBDIR += smplayer
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
+    SUBDIR += smtube
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += streamanalyze
