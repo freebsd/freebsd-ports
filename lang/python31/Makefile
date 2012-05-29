@@ -49,11 +49,8 @@ BIN_FILES=	python python-shared python-config python-shared-config \
 BINLINKS_SUB=	-e 's,(2to3|idle3|pydoc3),\1-${PYTHON_VER},' \
 		-e 's,(python-shared|python),\1${PYTHON_VER},'
 
-OPTIONS=	THREADS "Enable thread support" on \
-		UCS4 "Use UCS4 for unicode support" on \
-		PYMALLOC "Use python's internal malloc" on \
-		IPV6 "Enable IPv6 support" on \
-		FPECTL "Enable floating point exception handling" off
+OPTIONS_DEFINE=		THREADS UCS4 PYMALLOC IPV6 FPECTL EXAMPLES
+OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
 
 .include <bsd.port.pre.mk>
 
@@ -64,7 +61,7 @@ PLIST_SUB+=	IF_DEFAULT=""
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
@@ -74,11 +71,11 @@ PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
 .endif # !defined(WITHOUT_THREADS)
 
-.if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
+.if .if ${PORT_OPTIONS:MUCS4}
 CONFIGURE_ARGS+=	--with-wide-unicode
 .endif
 
-.if defined(WITHOUT_PYMALLOC)
+.if ${PORT_OPTIONS:MPYMALLOC}
 CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
@@ -94,13 +91,13 @@ WITHOUT_NIS?=	detected
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_FPECTL)
+.if ${PORT_OPTIONS:MFPECTL}
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
@@ -218,7 +215,7 @@ post-install:
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
 		(cd ${DATADIR}; ${TAR} -xf -)
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
 		(cd ${EXAMPLESDIR}; ${TAR} -xf -)

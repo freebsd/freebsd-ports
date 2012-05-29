@@ -49,25 +49,23 @@ BINLINKS_SUB=	-e 's,smtpd,smtpd${PYTHON_VER},' \
 		-e 's,2to3,2to3-${PYTHON_VER},' \
 		-e 's,(idle|pydoc|python-shared|python),\1${PYTHON_VER},'
 
-OPTIONS=	THREADS "Enable thread support" on \
-		SEM "Use POSIX semaphores (experimental)" off \
-		PTH "Use GNU Pth for threading/multiprocessing" off \
-		UCS4 "Use UCS4 for unicode support" on \
-		PYMALLOC "Use python's internal malloc" on \
-		IPV6 "Enable IPv6 support" on \
-		FPECTL "Enable floating point exception handling" off
+OPTIONS_DEFINE=		THREADS SEM PTH PYMALLOC IPV6 FPECTL EXAMPLES
+OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
+
+OPTIONS_SINGLE=	UCS
+OPTIONS_SINGLE_UCS=	UCS4 UCS2
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SEM)
+.if ${PORT_OPTIONS:MSEM}
 .if ${OSVERSION} >= 701106
 SEM_MSG=	""
 .else
 IGNORE=		POSIX semaphore support only works in FreeBSD 7-STABLE and later
 .endif # ${OSVERSION} >= 701106
-.else # !defined(WITH_SEM)
+.else
 SEM_MSG=	"@comment "
-.endif # defined(WITH_SEM)
+.endif
 
 SUB_FILES=	pkg-message
 SUB_LIST=	SEM=${SEM_MSG}
@@ -79,9 +77,9 @@ PLIST_SUB+=	IF_DEFAULT=""
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-.if !defined(WITHOUT_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 PLIST_SUB+=	THREADS=""
-.if defined(WITH_PTH)
+.if ${PORT_OPTIONS:MPTH}
 BROKEN=			does not build with PTH enabled
 CONFIGURE_ARGS+=	--with-pth
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
@@ -90,21 +88,25 @@ _PTH_CPPFLAGS=		"-I${LOCALBASE}/include/pth"
 _PTH_LDFLAGS=		"-L${LOCALBASE}/lib/pth"
 CPPFLAGS:=		${_PTH_CPPFLAGS} ${CPPFLAGS}
 LDFLAGS+=		${_PTH_LDFLAGS}
-.else # !defined(WITH_PTH)
+.else
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		${PTHREAD_LIBS}
-.endif # defined(WITH_PTH)
-.else # defined(WITHOUT_THREADS)
+.endif
+.else
 PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
-.endif # !defined(WITHOUT_THREADS)
+.endif
 
-.if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
+.if ${PORT_OPTIONS:MUCS4}
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
-.if defined(WITHOUT_PYMALLOC)
+.if ${PORT_OPTIONS:MUCS2}
+CONFIGURE_ARGS+=	--enable-unicode=ucs2
+.endif
+
+.if ${PORT_OPTIONS:MPYMALLOC}
 CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
@@ -133,13 +135,13 @@ WITHOUT_NIS?=	detected
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-.if !defined(WITHOUT_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_FPECTL)
+.if ${PORT_OPTIONS:MFPECTL}
 CONFIGURE_ARGS+=	--with-fpectl
 .endif
 
@@ -175,13 +177,13 @@ pre-patch:
 	${SED} -e 's|^#!.*|#!${PREFIX}/bin/${PYTHON_VERSION:S/thon/thon-shared/}|' \
 		${PATCH_WRKSRC}/Misc/python-config.in > ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config
 
-.if defined(WITH_FPECTL) && ${ARCH} == i386
+.if ${PORT_OPTIONS:MFPECTL) && ${ARCH} == i386
 	${MKDIR} ${WRKSRC}/Modules
 	${ECHO} "fpectl fpectlmodule.c" >> ${WRKSRC}/Modules/Setup.dist
 .endif
 
 post-patch:
-.if defined(WITH_SEM)
+.if ${PORT_OPTIONS:MSEM}
 .if ${OSVERSION} >= 701106
 	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-setup.py
 .endif
@@ -266,7 +268,7 @@ post-install:
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
 		(cd ${DATADIR}; ${TAR} -xf -)
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
 		(cd ${EXAMPLESDIR}; ${TAR} -xf -)
