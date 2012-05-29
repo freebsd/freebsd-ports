@@ -1,0 +1,11 @@
+Heme is intended to be fast and portable console hex editor for Unix-like
+systems.  It has undo support (number of undo operations is only limited by
+available memory), ability to fill a range of addresses with the specified
+byte, ability to search for a single byte or character string.  Offsets can
+be given in hexadecimal, octal, or decimal forms.  There are two editing
+modes: hex (binary) and ASCII (text).
+
+Heme uses standard curses library for screen and input handling, and offers
+colors support (they can be set in the configuration file).
+
+WWW: http://sourceforge.net/projects/heme/
