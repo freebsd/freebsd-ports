@@ -12,9 +12,6 @@ CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
-.endif
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Z shell
@@ -42,13 +39,13 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 #EXTRA_COMPLETION_FILES=	_sockstat
 #EXTRA_COMPLETION_DIR=	Completion/BSD/Command
 
-OPTIONS=	ZSH_GDBM	"Enable GDBM support (GPL)" off \
-		ZSH_MEM		"Enable zsh-mem options" off \
-		ZSH_SECURE_FREE	"Enable zsh-secure-free" on \
-		ZSH_MAILDIR	"Enable support for Maildirs in MAIL(PATH)" on \
-		ZSH_MULTIBYTE	"Enable multibyte character support" on \
-		ZSH_PCRE	"Enable PCRE support" off \
-		ZSH_STATIC	"Build static executable" off
+OPTIONS_DEFINE=	GDBM MEM SECURE_FREE MAILDIR MULTIBYTE PCRE STATIC DOCS
+OPTIONS_DEFAULT=	SECURE_FREE MAILDIR MULTIBYTE
+
+GDBM_DESC=	Enable GDBM support (GPL)
+MEM_DESC=	Enable zsh-mem options
+SECURE_FREE_DESC=	Enable zsh-secure-free
+MAILDIR_DESC=	Enable support for Maildirs in MAIL(PATH)
 
 PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
 
@@ -64,7 +61,11 @@ SHELLS=		/etc/shells
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ZSH_GDBM)
+.if ${PORT_OPTIONS:MDOCS}
+DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
+.endif
+
+.if ${PORT_OPTIONS:MGDBM}
 LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=		GDBM=""
 .else
@@ -72,7 +73,7 @@ CONFIGURE_ARGS+=	--disable-gdbm
 PLIST_SUB+=		GDBM="@comment "
 .endif
 
-.if defined(WITH_ZSH_PCRE)
+.if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=	--enable-pcre
 LIB_DEPENDS+=		pcre.1:${PORTSDIR}/devel/pcre
 PLIST_SUB+=		PCRE=""
@@ -81,19 +82,19 @@ CONFIGURE_ARGS+=	--disable-pcre
 PLIST_SUB+=		PCRE="@comment "
 .endif
 
-.if defined(WITH_ZSH_MEM)
+.if ${PORT_OPTIONS:MMEM}
 CONFIGURE_ARGS+=	--enable-zsh-mem
 .endif
 
-.if defined(WITH_ZSH_SECURE_FREE)
+.if ${PORT_OPTIONS:MSECURE_FREE}
 CONFIGURE_ARGS+=	--enable-zsh-secure-free
 .endif
 
-.if defined(WITH_ZSH_MAILDIR)
+.if ${PORT_OPTIONS:MMAILDIR}
 CONFIGURE_ARGS+=	--enable-maildir-support
 .endif
 
-.if defined(WITH_ZSH_STATIC)
+.if ${PORT_OPTIONS:MSTATIC}
 LDFLAGS+=	-static
 CONFIGURE_ARGS+=	--disable-dynamic
 PLIST_SUB+=		SHARED="@comment "
@@ -102,13 +103,13 @@ CONFIGURE_ARGS+=	--enable-dynamic
 PLIST_SUB+=		SHARED=""
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--enable-zsh-debug
 .else
 CONFIGURE_ARGS+=	--disable-zsh-debug
 .endif
 
-.if defined(WITH_ZSH_MULTIBYTE)
+.if ${PORT_OPTIONS:MMULTIBYTE}
 CONFIGURE_ARGS+=	--enable-multibyte
 .else
 CONFIGURE_ARGS+=	--disable-multibyte
@@ -141,7 +142,7 @@ post-build:
 	${MV} ${WRKSRC}/Doc/zshall.1 ${WRKSRC}/Doc/zshall.1.source
 	cd ${WRKSRC} && /usr/bin/soelim ${WRKSRC}/Doc/zshall.1.source > \
 		${WRKSRC}/Doc/zshall.1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/info
 	makeinfo --no-split --output=${WRKSRC}/Doc/zsh.info \
 		${WRKSRC}/Doc/zsh.texi
@@ -156,7 +157,7 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/StartupFiles && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info/zsh.info
