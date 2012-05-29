@@ -6126,7 +6126,7 @@ showconfig:
 	@${ECHO_MSG} -n "     ${opt}=on"
 .    endif
 .    if !empty(${opt}_DESC)
-	@${ECHO_MSG} ": "${${opt}_DESC}
+	@${ECHO_MSG} -n ": "${${opt}_DESC}
 .    endif
 	@${ECHO_MSG} ""
 .  endfor
@@ -6142,7 +6142,7 @@ showconfig:
 	@${ECHO_MSG} -n "     ${opt}=on"
 .    endif
 .    if !empty(${opt}_DESC)
-	@${ECHO_MSG} ": "${${opt}_DESC}
+	@${ECHO_MSG} -n ": "${${opt}_DESC}
 .    endif
 	@${ECHO_MSG} ""
 .  endfor
