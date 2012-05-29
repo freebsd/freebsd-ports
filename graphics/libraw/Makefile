@@ -26,27 +26,29 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC
 
-OPTIONS=	DEMOSAIC_PACK_GPL2	"Enable GPLv2 demosaic pack"	off \
-		DEMOSAIC_PACK_GPL3	"Enable GPLv3 demosaic pack"	off \
-		LCMS			"Build with LCMS support"	on \
-		OPTIMIZED_CFLAGS	"Enable optimizations (on x86)"	off
+OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 LCMS2 OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	LCMS2
+
+DEMOSAIC_PACK_GPL2_DESC=	Enable GPLv2 demosaic pack
+DEMOSAIC_PACK_GPL3_DESC=	Enable GPLv3 demosaic pack
+OPTIMIZED_CFLAGS_DESC=	"Enable optimizations (on x86)"
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 .if ${ARCH} == "i386"
 CFLAGS+=	-O3
 .endif
 .endif
 
-.if defined(WITH_LCMS)
+.if ${PORT_OPTIONS:MLCMS2}
 LIB_DEPENDS+=	lcms2.2:${PORTSDIR}/graphics/lcms2
 CONFIGURE_ARGS+=--enable-lcms
 .else
 CONFIGURE_ARGS+=--disable-lcms
 .endif
 
-.if defined(WITH_DEMOSAIC_PACK_GPL2)
+.if ${PORT_OPTIONS:MDEMOSAIC_PACK_GPL2}
 LICENSE+=	GPLv2
 DISTFILES+=	LibRaw-demosaic-pack-GPL2-${PORTVERSION}.tar.gz
 CONFIGURE_ARGS+=--enable-demosaic-pack-gpl2=../LibRaw-demosaic-pack-GPL2-${PORTVERSION}
@@ -54,7 +56,7 @@ CONFIGURE_ARGS+=--enable-demosaic-pack-gpl2=../LibRaw-demosaic-pack-GPL2-${PORTV
 CONFIGURE_ARGS+=--disable-demosaic-pack-gpl2
 .endif
 
-.if defined(WITH_DEMOSAIC_PACK_GPL3)
+.if ${PORT_OPTIONS:MDEMOSAIC_PACK_GPL3)
 LICENSE+=	GPLv3
 DISTFILES+=	LibRaw-demosaic-pack-GPL3-${PORTVERSION}.tar.gz
 CONFIGURE_ARGS+=--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTVERSION}
