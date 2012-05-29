@@ -41,6 +41,7 @@ include/dovecot/sieve/sieve-runtime-trace.h
 include/dovecot/sieve/sieve-runtime.h
 include/dovecot/sieve/sieve-script-private.h
 include/dovecot/sieve/sieve-script.h
+include/dovecot/sieve/sieve-script-file.h
 include/dovecot/sieve/sieve-settings.h
 include/dovecot/sieve/sieve-smtp.h
 include/dovecot/sieve/sieve-stringlist.h

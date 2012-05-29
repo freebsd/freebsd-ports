@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -15,8 +14,10 @@ DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
 MAINTAINER=	bra@fsn.hu
 COMMENT=	A Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 
-BUILD_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
-RUN_DEPENDS=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
+LICENSE=	LGPL21
+
+BUILD_DEPENDS:=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
+RUN_DEPENDS:=	dovecot>=${DOVECOTVERSION}:${PORTSDIR}/mail/dovecot${DOVECOTVERSION:R}
 
 DOVECOTVERSION=	2.1
 
@@ -34,23 +35,41 @@ MAN7=		pigeonhole.7
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-/\//}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO spamtest-virustest.txt vacation.txt
+EXTENSIONDOCS=	editheader.txt include.txt spamtest-virustest.txt \
+		vacation.txt vnd.dovecot.duplicate.txt
+PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO \
+		script-location-dict.txt ${EXTENSIONDOCS}
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:S/-/\//}
+PORTEXAMPLES=	*.sieve
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '\
-		s!/doc/$${PACKAGE_TARNAME}!/doc/${PORTNAME:S/-/\//}!g;\
-		s!$${docdir}/dovecot/sieve!$${docdir}!g;\
-		' ${WRKSRC}/configure
-	@${LN} -f ${WRKSRC}/doc/spamtest-virustest.txt ${WRKSRC}/
-	@${LN} -f ${WRKSRC}/doc/vacation.txt ${WRKSRC}/
+	@${REINPLACE_CMD} -E '\
+		s!^(install-data-am:) install-sieve_docDATA!\1!; \
+		s!^(uninstall-am:) uninstall-sieve_docDATA!\1!;' \
+		${WRKSRC}/doc/Makefile.in
+.if !defined(NOPORTDOCS)
+.for f in ${EXTENSIONDOCS}
+	@${LN} -f ${WRKSRC}/doc/extensions/${f} ${WRKSRC}/
+.endfor
+	@${LN} -f ${WRKSRC}/doc/script-location-dict.txt ${WRKSRC}/
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} ${_SHROWNGRP} -m ${BINMODE} -d ${DOCSDIR}
+	@${INSTALL} ${_SHROWNGRP} -m ${BINMODE} -d ${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${INSTALL} ${_SHROWNGRP} -m ${BINMODE} -d ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.sieve ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}"
 .endif
 	@${CAT} ${PKGMESSAGE}
 
