@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	salt
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.9.9.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/downloads/saltstack/salt/
 
@@ -58,10 +57,11 @@ post-patch:
 	    -e 's|/srv/salt|${PREFIX}/etc/salt/states|' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/setup.py
-	@${MV} ${WRKSRC}/conf/master.template ${WRKSRC}/conf/master.sample
-	@${MV} ${WRKSRC}/conf/minion.template ${WRKSRC}/conf/minion.sample
 
 post-install:
+	${MKDIR} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/master.template ${PREFIX}/etc/salt/master.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/minion.template ${PREFIX}/etc/salt/minion.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
