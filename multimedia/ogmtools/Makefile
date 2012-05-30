@@ -24,6 +24,10 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		ogmcat.1 ogmdemux.1 ogminfo.1 ogmmerge.1 ogmsplit.1
 
+OPTIONS_DEFINE=	DVDREAD
+OPTIONS_DEFAULT=	DVDREAD
+DVDREAD_DESC=	DVD title chapter extraction via libdvdread
+
 post-patch:
 # disable GNU auto* tools
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
@@ -46,22 +50,20 @@ post-configure:
 		's!malloc.h!stdlib.h!; \
 		s|stdint.h|inttypes.h|'
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-OPTIONS=	DVDREAD "DVD title chapter extraction via libdvdread" on
-
-.ifdef(WITH_DVDREAD)
+.if ${PORT_OPTIONS:MDVDREAD}
 LIB_DEPENDS+=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--with-dvdread \
 			--with-dvdread-includes=${LOCALBASE} \
 			--with-dvdread-libs=${LOCALBASE}
-PLIST_SUB+=	WITH_DVDREAD=""
+PLIST_SUB+=	DVDREAD=""
 
 MAN1+=	dvdxchap.1
 .else
 CONFIGURE_ARGS+=	--without-dvdread
-PLIST_SUB+=	WITH_DVDREAD="@comment "
+PLIST_SUB+=	DVDREAD="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
