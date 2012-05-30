@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache_Lite
-PORTVERSION=	1.7.12
+PORTVERSION=	1.7.15
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
 
