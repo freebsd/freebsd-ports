@@ -1,0 +1,21 @@
+Kyoto Tycoon is a lightweight database server with auto expiration mechanism,
+which is useful to handle cache data and persistent data of various
+applications. Kyoto Tycoon is also a package of network interface to the DBM
+called Kyoto Cabinet. Though the DBM has high performance and high concurrency,
+you might bother in case that multiple processes share the same database, or
+remote processes access the database. Thus, Kyoto Tycoon is provided for
+concurrent and remote connections to Kyoto Cabinet. Kyoto Tycoon is composed of
+the server process managing multiple databases and its access library for client
+applications.
+
+The network protocol between the server and clients is HTTP so that you can
+write client applications and client libraries in almost all popular languages.
+Both of RESTful-style interface by the GET, HEAD, PUT, DELETE methods and
+RPC-style inteface by the POST method are supported. The server can handle more
+than 10 thousand connections at the same time because it uses modern I/O event
+notification facilities such as "epoll" and "kqueue" of underlying systems. The
+server supports high availability mechanisms, which are hot backup, update
+logging, and asynchronous replication. The server can embed Lua, a lightweight
+script language so that you can define arbitrary operations of the database.
+
+WWW: http://fallabs.com/kyototycoon/

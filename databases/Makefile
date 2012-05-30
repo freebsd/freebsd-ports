@@ -133,6 +133,7 @@
     SUBDIR += ksqlshell
     SUBDIR += kumofs
     SUBDIR += kyotocabinet
+    SUBDIR += kyototycoon
     SUBDIR += ldb
     SUBDIR += leveldb
     SUBDIR += libdbi
