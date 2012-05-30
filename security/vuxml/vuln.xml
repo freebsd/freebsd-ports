@@ -52,6 +52,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8864f8f-aa9e-11e1-a284-0023ae8e59f0">
+    <topic>databases/postgresql*-server -- crypt vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>8.3.18_1</lt></range>
+	<range><lt>8.4.11_1</lt></range>
+	<range><lt>9.0.7_2</lt></range>
+	<range><lt>9.1.3_1</lt></range>
+	<range><lt>9.2.b1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL Global Development Group reports:</p>
+	<blockquote cite="http://www.postgresql.org/about/news/1397/">
+	  <p>Affected users are those who use the crypt(text, text) function
+	  with DES encryption in the optional pg_crypto module. Passwords
+	  affected are those that contain characters that cannot be
+	  represented with 7-bit ASCII. If a password contains a character
+	  that has the most significant bit set (0x80), and DES encryption
+	  is used, that character and all characters after it will be ignored.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	 <cvename>CVE-2012-2143</cvename>
+	 <url>http://www.postgresql.org/about/news/1397/</url>
+	 <url>http://git.postgresql.org/gitweb/?p=postgresql.git;a=patch;h=932ded2ed51e8333852e370c7a6dad75d9f236f9</url>
+    </references>
+    <dates>
+      <discovery>2012-05-30</discovery>
+      <entry>2012-05-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47f13540-c4cb-4971-8dc6-28d0dabfd9cd">
     <topic>nut -- upsd can be remotely crashed</topic>
     <affects>

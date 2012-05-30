@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20120530:
+  AFFECTS: users of databases/postgresql*-server
+  AUTHOR:  jgh@FreeBSD.org
+
+  Affected users are those who use the crypt(text, text) function with
+  DES encryption in the optional pg_crypto module. Passwords affected
+  are those that contain characters that cannot be represented with
+  7-bit ASCII. If a password contains a character that has the most
+  significant bit set (0x80), and DES encryption is used, that character
+  and all characters after it will be ignored.
+
+20120530:
   AFFECTS: users of net/nss-pam-ldap
   AUTHOR: scheidell@FreeBSD.org
 
