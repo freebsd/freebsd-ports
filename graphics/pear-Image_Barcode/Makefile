@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image_Barcode
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,13 +18,15 @@ RUN_DEPENDS:=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 USE_PHP=	gd
 
 LATEST_LINK=	pear-${PORTNAME}
-OPTIONS=	PEAR_PHP_COMPAT "PEAR::PHP_Compat support" off
+
+OPTIONS_DEFINE=		PEAR_PHP_COMPAT
+PEAR_PHP_COMPAT_DESC=	"PEAR::PHP_Compat support"
 
 PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PEAR_PHP_COMPAT)
+.if ${PORT_OPTIONS:MPEAR_PHP_COMPAT}
 RUN_DEPENDS+=	${PEARDIR}/PHP/Compat.php:${PORTSDIR}/devel/pear-PHP_Compat
 .endif
 
