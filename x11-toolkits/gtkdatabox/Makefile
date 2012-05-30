@@ -13,7 +13,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF http://www.eudoxos.de/gtk/gtkdatabox/download/
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+2 widget to display large amounts of numerical data
 
 USE_LDCONFIG=	yes

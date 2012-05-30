@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
 
-MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO image manipulation tool based on Libburnia
 
 BUILD_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \

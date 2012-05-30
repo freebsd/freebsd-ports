@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pl01
 
-MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia library to read/write optical discs
 
 GNU_CONFIGURE=	yes
