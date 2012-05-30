@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipplan
-PORTVERSION=	4.92a
+PORTVERSION=	4.92b
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 
@@ -15,7 +15,6 @@ COMMENT=	IP address management and tracking
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
-MAKE_JOBS_SAFE=	yes
 USE_PERL5_RUN=	yes
 USE_PHP=	gettext pcre xml zlib
 
