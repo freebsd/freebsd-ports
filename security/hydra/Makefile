@@ -33,8 +33,6 @@ MAN1=		hydra.1 pw-inspector.1
 
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 FIREBIRD_DESC=	Enable firebird support
-SSH_DESC=	Enable ssh support
-SVN_DESC=	Enable subversion support
 OPTIONS_EXCLUDE=NLS DOCS
 
 .include <bsd.port.options.mk>
