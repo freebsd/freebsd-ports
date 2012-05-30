@@ -1,6 +1,9 @@
 # $FreeBSD$
 #
-# Please keep descriptions sorted alphabetically by variable name.
+# READ BEFORE EDITING:
+# - Please keep descriptions sorted alphabetically by variable name.
+# - Do not forget to wrap the description with double quotes if it contains
+#   parentheses or single quotes.
 #
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
@@ -10,8 +13,8 @@ ALSA_DESC?=		Enable alsa audio support
 AO_DESC?=		Support libao audio library
 ARCHIVE_DESC?=		Support bzip2/zip/iso9660 archive
 AVAHI_DESC?=		Support Zeroconf through Avahi
-CDPARANOIA_DESC?=	Enable cdparanoia CD ripper
 CDDA2WAV_DESC?=		Enable cdda2wav CD ripper
+CDPARANOIA_DESC?=	Enable cdparanoia CD ripper
 CUE_DESC?=		Support embedded cue sheets
 CURL_DESC?=		Enable CURL support
 DAGRAB_DESC?=		Enable dagrab CD ripper
@@ -24,7 +27,7 @@ FFMPEG_DESC?=		"Support FFMPEG (wma aiff ac3 ape...)"
 FLAC_DESC?=		Enable support for flac
 FPECTL_DESC?=		Enable floating point exception handling
 GDM_DESC?=		Build GDM login manager
-GEOTIFF_DESC?=		Enable GEOTIFF support
+GEOTIFF_DESC?=		Enable GeoTIFF support
 GIF_DESC?=		Enable GIF support
 GOGO_DESC?=		Enable gogo mp3 encoder
 GUI_DESC?=		Enable GUI support
@@ -36,11 +39,11 @@ ID3_DESC?=		Enable support for id3 tags
 IPV6_DESC?=		Enable IPv6 support
 JACK_DESC?=		Support JACK audio server
 JPEG_DESC?=		Enable JPEG support
+LADSPA_DESC?=		Enable LDSPA audio support
 LAME_DESC?=		Enable lame mp3 encoder support
+LASH_DESC?=		Enable LDASH audio support
 LASTFM_DESC?=		Support Last.FM stream input
 LCMS2_DESC?=		Enable LCMS2 support
-LADSPA_DESC?=		Enable LDSPA audio support
-LASH_DESC?=		Enable LDASH audio support
 LDAP_DESC?=		Enable LDAP support
 MAGICK_DESC?=		Enable ImageMagick Library
 MIKMOD_DESC?=		Support MOD audio format
@@ -56,16 +59,16 @@ MYSQL_DESC?=		Enable MySQL backend
 NLS_DESC?=		Build and install the localisation data
 PCRE_DESC?=		Enable regular expressions using libpcre
 PGSQL_DESC?=		Enable PostgreSQL backend
-PORTAUDIO_DESC?=	Enable PortAudio support
 PNG_DESC?=		Enable PNG support
+PORTAUDIO_DESC?=	Enable PortAudio support
 PRINT_DESC?=		Enable Printer support
 PTH_DESC?=		Enable GNU Pth for threading/multiprocessing
 PULSEAUDIO_DESC?=	Support PulseAudio sound server
 PYMALLOC_DESC?=		"Enable python's internal malloc"
 SAMPLERATE_DESC?=	Support sample rate conversion
 SEM_DESC?=		Enable POSIX semaphores support
-SHOUTCAST_DESC?=	Support for OGG Icecast and Shoutcast
-SNDFILE_DESC?=		Adds support for libsndfile
+SHOUTCAST_DESC?=	Support for Ogg Icecast and Shoutcast
+SNDFILE_DESC?=		Add support for libsndfile
 SPEEX_DESC?=		Enable support for speex audio format
 SQLITE_DESC?=		Enable SQLite backend
 SSH_DESC?=		Enable SSH support
@@ -79,9 +82,9 @@ TOMCAT5_DESC?=		Enable Tomcat 5.x support
 TOMCAT6_DESC?=		Enable Tomcat 6.x support
 TOMCAT7_DESC?=		Enable Tomcat 7.x support
 TREMOR_DESC?=		Support Tremor
-UCS2_DESC?=		Enable unicode support
-UCS4_DESC?=		Enable unicode support
-VORBIS_DESC?=		Enable support for ogg vorbis
+UCS2_DESC?=		Enable Unicode UCS-2 support
+UCS4_DESC?=		Enable Unicode UCS-4 support
+VORBIS_DESC?=		Enable support for Ogg Vorbis
 WAV_DESC?=		Support WAV audio format
 X11_DESC?=		Enable support for X11
 XSPF_DESC?=		Enable support for XSPF
