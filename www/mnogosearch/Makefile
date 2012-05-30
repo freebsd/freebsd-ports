@@ -17,15 +17,17 @@ COMMENT=	Full featured SQL-based hypertext search engine
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-OPTIONS=	THREADS "Enable pthreads"		on  \
-		SSL     "Enable SSL"			on  \
-		ASIAN   "Enable asian charsets"	off \
-		SYSLOG  "Send logs to syslog"   on  \
-		PGSQL   "Use PGSQL"				off \
-		MSQL    "Use MSQL"				off \
-		MYSQL   "Use MySQL"				off \
-		SQLITE  "Use SQLite 2.x"		off \
-		SQLITE3 "Use SQLite 3.x"		on
+OPTIONS_DEFINE=	THREADS SSL ASIAN SYSLOG
+
+OPTIONS_MULTI=	database
+OPTIONS_MULTI_database=	PGSQL MSQL MYSQL SQLITE2 SQLITE3
+
+OPTIONS_DEFAULT=	THREADS SSL SYSLOG SQLITE3
+
+ASIAN_DESC=	Enable asian charsets
+SYSLOG_DESC=	Send logs to syslog
+SQLITE2_DESC=	Use SQLite 2.x
+SQLITE3_DESC=	Use SQLite 3.x
 
 USE_LDCONFIG=	yes
 USE_GNOME=	lthack
@@ -45,59 +47,54 @@ SUB_FILES+=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 .endif
 
-.ifdef WITHOUT_THREADS
-CONFIGURE_ARGS+=	--disable-pthreads
-CFLAGS+=	-DCONSOLE
-.else
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="${PTHREAD_LIBS}"
+.else
+CONFIGURE_ARGS+=	--disable-pthreads
+CFLAGS+=	-DCONSOLE
 .endif
 
-.if !defined(WITHOUT_SSL)
+.if ${PORT_OPTIONS:MSSL}
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
 
-.ifdef WITH_ASIAN
+.if ${PORT_OPTIONS:MASIAN}
 CONFIGURE_ARGS+=	--with-extra-charsets=all
 .endif
 
-.ifdef WITHOUT_SYSLOG
+.if empty(PORT_OPTIONS:MSYSLOG)
 CONFIGURE_ARGS+=	--disable-syslog
 .endif
 
-.ifdef WITH_PGSQL
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 .endif
 
-.ifdef WITH_MSQL
+.if ${PORT_OPTIONS:MMSQL}
 LIB_DEPENDS+=		msql.1:${PORTSDIR}/databases/msql
 CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 .endif
 
-.ifdef WITH_MYSQL
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .endif
 
-.ifdef WITH_SQLITE
+.if ${PORT_OPTIONS:MSQLITE2}
 USE_SQLITE=	2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 .endif
 
-.ifndef WITHOUT_SQLITE3
+.if ${PORT_OPTIONS:MSQLITE3}
 USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
-.endif
-
-.if defined(WITHOUT_SQLITE) && !defined(WITH_MYSQL) && \
-    !defined(WITH_MSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE3)
-IGNORE=	needs at least one database driver
 .endif
 
 DOCS=		ChangeLog INSTALL

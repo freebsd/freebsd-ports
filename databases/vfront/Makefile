@@ -20,17 +20,17 @@ PLIST=		${WRKDIR}/pkg-plist
 
 USE_PHP=	yes
 
-OPTIONS+=	MYSQL "Use MySQL databases"		off
-OPTIONS+=	PGSQL "Use PostgreSQL databases"	off
+OPTIONS_MULTI=	database
+OPTIONS_MULTI_database=	MYSQL PGSQL
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysqli
 USE_MYSQL=	yes
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 USE_PGSQL=	yes
 .endif
