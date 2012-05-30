@@ -54,8 +54,8 @@ MAKE_ARGS+=	INSTALL_ROOT="${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		Does not build below FreeBSD 7.x
+.if ${OSVERSION} < 800000
+BROKEN=		fails to extract on FreeBSD 7.X
 .endif
 
 .if ${ARCH} == "powerpc"
