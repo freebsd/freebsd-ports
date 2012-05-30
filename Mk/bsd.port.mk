@@ -6093,7 +6093,7 @@ config-recursive:
 config-conditional: pre-config
 .if defined(_COMPLETE_OPTIONS_LIST) && !defined(NO_DIALOG)
 .  if ${_COMPLETE_OPTIONS_LIST} != "${_FILE_COMPLETE_OPTIONS_LIST}"
-	cd ${.CURDIR} && ${MAKE} config;
+	@cd ${.CURDIR} && ${MAKE} config;
 .  endif
 .endif
 .endif # config-conditional
