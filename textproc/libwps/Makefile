@@ -31,9 +31,9 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--without-docs
-.else
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+.else
+CONFIGURE_ARGS+=	--without-docs
 .endif
 
 .include <bsd.port.mk>
