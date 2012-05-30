@@ -13,10 +13,13 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	osa@FreeBSD.ORG
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
-OPTIONS=	APACHEPORT	"Use apache22"			on  \
-		NGINXPORT	"Use nginx"			off \
-		DEBUG		"Build with debugging info"	off \
-		SYMLINK 	"Create 'passenger' symlink"	off
+OPTIONS_DEFINE=	DEBUG SYMLINK
+OPTIONS_SINGLE=	SERVER
+OPTIONS_SINGLE_SERVER=	APACHE22 NGINX
+APACHE22_DESC=	Build with apache22 support
+NGINX_DESC=	Build with nginx support
+SYMLINK_DESC= 	"Create passenger symlink"
+OPTIONS_DEFAULT=	APACHE22
 
 USE_RUBY=	yes
 USE_RAKE=	yes
@@ -25,16 +28,11 @@ RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_APACHEPORT) && defined(WITH_NGINXPORT)
-IGNORE=		supports only one web-server: apache22 or nginx. \
-		Please 'make config' again
-.endif
-
-.if !defined(WITHOUT_APACHEPORT)
+.if ${PORT_OPTIONS:MAPACHE22}
 USE_APACHE=	22+
 .endif
 
-.if defined(WITH_NGINXPORT)
+.if ${PORT_OPTIONS:MNGINX}
 NGINXVERSION!=	${PKG_INFO} -qO www/nginx-devel 2>/dev/null || true
 .if empty(NGINXVERSION)
 BUILD_DEPENDS+=	nginx:${PORTSDIR}/www/nginx
@@ -60,17 +58,16 @@ PLIST_FILES=	bin/passenger \
 		bin/passenger-memory-stats \
 		bin/passenger-status \
 		bin/passenger-install-nginx-module
-.if defined(WITH_SYMLINK)
+
+.if ${PORT_OPTIONS:MSYMLINK}
 PLIST_FILES+=	${GEMS_DIR}/${PORTNAME}
 SUB_LIST+=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEMS_DIR}/${PORTNAME}"
-.endif
-
-.if !defined(WITH_SYMLINK)
+.else
 SUB_LIST+=	PASSENGER_INSTALL_DIR="${PREFIX}/${GEM_LIB_DIR}"
 .endif
 
 pre-patch:
-.if defined(WITH_NGINXPORT)
+.if ${PORT_OPTIONS:MNGINX}
 	@${ECHO_CMD}
 	@${ECHO_CMD} "Do not forget compile www/nginx"
 	@${ECHO_CMD} "with PASSENGER_MODULE support"
@@ -89,7 +86,7 @@ post-install:
 		s!-O2!!g; \
 		46s!true!false!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
-.if !defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:NDEBUG}
 	@${REINPLACE_CMD} \
 		's!-DPASSENGER_DEBUG!-DNDEBUG!g' \
 		${PREFIX}/${GEM_LIB_DIR}/build/config.rb
@@ -106,18 +103,18 @@ post-install:
 		269s!-lev!-L${LOCALBASE}/lib -lev!' \
 		${PREFIX}/${GEM_LIB_DIR}/build/common_library.rb
 
-.if !defined(WITHOUT_APACHEPORT)
+.if ${PORT_OPTIONS:MAPACHE22}
 	(${PREFIX}/bin/passenger-install-apache2-module --auto)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.if defined(WITH_NGINXPORT)
+.if ${PORT_OPTIONS:MNGINX}
 	(cd ${PREFIX}/${GEM_LIB_DIR} && ${RAKE_BIN} nginx)
 .endif
 
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.o' -delete
 	${FIND} ${PREFIX}/${GEM_LIB_DIR} -name '*.bak' -delete
-.if defined(WITH_SYMLINK)
+.if ${PORT_OPTIONS:MSYMLINK}
 	${LN} -s ${PREFIX}/${GEM_LIB_DIR} ${PREFIX}/${GEMS_DIR}/${PORTNAME}
 .endif
 
