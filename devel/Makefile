@@ -3222,6 +3222,7 @@
     SUBDIR += py-five.formlib
     SUBDIR += py-five.globalrequest
     SUBDIR += py-five.localsitemanager
+    SUBDIR += py-flake8
     SUBDIR += py-flakes
     SUBDIR += py-flask-babel
     SUBDIR += py-flexmock
