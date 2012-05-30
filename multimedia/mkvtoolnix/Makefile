@@ -43,7 +43,8 @@ MAKE_JOBS_SAFE=	yes
 MANLANG=	"" ja zh_CN nl
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
 
-OPTIONS=	WXGTK "build wxGTK2 based GUI" on
+OPTIONS_DEFINE=	WXGTK
+OPTIONS_DEFAULT=	WXGTK
 
 .include <bsd.port.pre.mk>
 
@@ -55,7 +56,7 @@ BROKEN=		Does not install on sparc64
 MAKE_ENV+=	V=1
 .endif
 
-.ifndef(WITHOUT_WXGTK)
+.if ${PORT_OPTIONS:MWXGTK}
 USE_WX=		2.8+
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute

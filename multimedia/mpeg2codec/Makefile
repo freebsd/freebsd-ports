@@ -18,7 +18,8 @@ DISTNAME=	mpeg2vidcodec_v12
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-2 Encoder and Decoder
 
-OPTIONS=	X11 "Support for X11" on
+OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFAULT=	X11
 
 WRKSRC=		${WRKDIR}/mpeg2
 
@@ -38,7 +39,7 @@ PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
+.if ${PORT_OPTIONS:MX11}
 USE_XORG=	xext
 MAKE_ARGS+=	USE_DISP="-DDISPLAY" \
 		USE_SHMEM="-DSH_MEM" \
@@ -52,7 +53,7 @@ do-install:
 .endfor
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/par/* ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/mpeg2enc.doc ${DOCSDIR}
 .endif
