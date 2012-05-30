@@ -3412,6 +3412,7 @@
     SUBDIR += py-turbojson
     SUBDIR += py-turbojson11
     SUBDIR += py-turbokid
+    SUBDIR += py-tw.forms
     SUBDIR += py-twisted
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
