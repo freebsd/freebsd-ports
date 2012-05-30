@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tig
-PORTVERSION=	0.18
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 
@@ -33,6 +33,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}rc.5 ${MANPREFIX}/man/man5/
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
