@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
