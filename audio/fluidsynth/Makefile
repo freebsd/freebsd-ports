@@ -16,14 +16,8 @@ COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	JACK "Enable Jack audio support" On \
-		ALSA "Enable ALSA audio support" Off \
-		DBUS "Enable D-Bus support" Off \
-		LADSPA "Enable LADSPA audio support" Off \
-		LASH "Enable LASH audio support" Off \
-		PORTAUDIO "Enable PortAudio support" Off \
-		PULSEAUDIO "Enable PulseAudio support" Off \
-		SNDFILE "Enable Libsndfile support" Off
+OPTIONS_DEFINE=	JACK ALSA DBUS LADSPA LASH PORTAUDIO PULSEAUDIO SNDFILE
+OPTIONS_DEFAULT=	JACK
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 pkgconfig
@@ -39,49 +33,49 @@ MAN1=		fluidsynth.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CMAKE_ARGS+=	-Denable-jack:BOOL=FALSE
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 .else
 CMAKE_ARGS+=	-Denable-alsa:BOOL=FALSE
 .endif
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .else
 CMAKE_ARGS+=	-Denable-dbus:BOOL=FALSE
 .endif
 
-.if defined(WITH_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 CMAKE_ARGS+=	-Denable-ladspa:BOOL=TRUE
 .endif
 
-.if defined(WITH_LASH)
+.if ${PORT_OPTIONS:MLASH}
 LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
 .else
 CMAKE_ARGS+=	-Denable-lash:BOOL=FALSE
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 BUILD_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	${LOCALBASE}/include/portaudio2/portaudio.h:${PORTSDIR}/audio/portaudio2
 CMAKE_ARGS+=	-Denable-portaudio:BOOL=TRUE
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
 CMAKE_ARGS+=	-Denable-pulseaudio:BOOL=FALSE
 .endif
 
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .else
 CMAKE_ARGS+=	-Denable-libsndfile:BOOL=FALSE
