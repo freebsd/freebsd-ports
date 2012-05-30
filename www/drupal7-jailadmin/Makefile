@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jailadmin
-DISTVERSION=	7.x-0.2
+DISTVERSION=	7.x-0.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://0xfeedface.org/~shawn/freebsd/ports/distfiles/
 
@@ -28,6 +28,7 @@ MODULE_FILES=	README \
 				jailadmin.install \
 				jailadmin.module \
 				jailconfig.inc \
+				jailnetwork.inc \
 				jailstatus.inc \
 				classes/Jail.php \
 				classes/Mount.php \
