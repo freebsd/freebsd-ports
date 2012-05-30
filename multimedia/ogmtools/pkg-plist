@@ -1,4 +1,4 @@
-%%WITH_DVDREAD%%bin/dvdxchap
+%%DVDREAD%%bin/dvdxchap
 bin/ogmcat
 bin/ogmdemux
 bin/ogminfo
