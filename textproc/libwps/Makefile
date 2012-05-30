@@ -15,6 +15,8 @@ COMMENT=	A Microsoft file word processor format import filter library
 
 LICENSE=	LGPL21
 
+OPTIONS_DEFINE=	DOCS
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd
 
@@ -26,7 +28,9 @@ CONFIGURE_ARGS+=	--disable-werror
 
 PORTDOCS=	*
 
-.if defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--without-docs
 .else
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
