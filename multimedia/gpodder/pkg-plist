@@ -111,8 +111,6 @@ bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyc
 %%GTK%%share/applications/gpodder.desktop
 %%GTK%%share/dbus-1/services/org.gpodder.service
-%%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/credits.txt
 %%DATADIR%%/examples/gpodder_mark_played.py
 %%DATADIR%%/examples/hello_world.py
@@ -154,6 +152,7 @@ bin/gpodder-migrate2tres
 %%GTK%%share/icons/hicolor/48x48/gpodder.png
 %%GTK%%share/icons/hicolor/64x64/gpodder.png
 %%GTK%%share/icons/hicolor/scalable/apps/gpodder.svg
+share/locale/ca/LC_MESSAGES/gpodder.mo
 share/locale/cs/LC_MESSAGES/gpodder.mo
 share/locale/cs_CZ/LC_MESSAGES/gpodder.mo
 share/locale/da/LC_MESSAGES/gpodder.mo
@@ -161,11 +160,13 @@ share/locale/de/LC_MESSAGES/gpodder.mo
 share/locale/el/LC_MESSAGES/gpodder.mo
 share/locale/es/LC_MESSAGES/gpodder.mo
 share/locale/es_ES/LC_MESSAGES/gpodder.mo
+share/locale/es_MX/LC_MESSAGES/gpodder.mo
 share/locale/eu/LC_MESSAGES/gpodder.mo
 share/locale/fi/LC_MESSAGES/gpodder.mo
 share/locale/fr/LC_MESSAGES/gpodder.mo
 share/locale/gl/LC_MESSAGES/gpodder.mo
 share/locale/he/LC_MESSAGES/gpodder.mo
+share/locale/id_ID/LC_MESSAGES/gpodder.mo
 share/locale/it/LC_MESSAGES/gpodder.mo
 share/locale/kk/LC_MESSAGES/gpodder.mo
 share/locale/nb/LC_MESSAGES/gpodder.mo
@@ -185,6 +186,8 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @dirrmtry share/locale/tr_TR
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/id_ID/LC_MESSAGES
+@dirrmtry share/locale/id_ID
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
 @dirrmtry share/locale/cs_CZ
 @dirrm %%DATADIR%%/ui/web
@@ -194,7 +197,6 @@ share/locale/zh_CN/LC_MESSAGES/gpodder.mo
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%GTK%%@dirrmtry share/applications
 %%GTK%%@dirrmtry share/icons/hicolor
 %%GTK%%@dirrmtry share/icons/hicolor/26x26
