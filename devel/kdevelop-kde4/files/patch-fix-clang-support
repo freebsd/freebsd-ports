@@ -1,3 +1,16 @@
+commit 934b7b7b7571cec0e0f4affdc181807080a999cf
+Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
+Date:   Tue May 29 16:14:00 2012 -0300
+
+    Fix finding the unordered_map header.
+    
+    Apply the fix made in kdevplatform commit
+    d756d28f4b000d2b7af12822c935dd13754876b4.
+    
+    Including unordered_map generates a warning when the compiler is not
+    passed the -std=c++0x option, which made the check fail when the
+    compilation CMake tried in check_include_file_cxx did not use it.
+
 commit e37294eaa6694e4cf93012569f5ef947651f50e3
 Author: Raphael Kubo da Costa <rakuco@FreeBSD.org>
 Date:   Mon May 28 15:40:15 2012 -0300
@@ -24,10 +37,10 @@ Date:   Mon May 28 15:40:15 2012 -0300
     REVIEW:         105067
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8a3be21..ce2a828 100644
+index 8a3be21..bd79a69 100644
 --- ./CMakeLists.txt
 +++ ./CMakeLists.txt
-@@ -34,6 +34,20 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+@@ -34,6 +34,22 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
  
  include_directories(${KDevelop_SOURCE_DIR} ${KDevelop_BINARY_DIR} ${KDE4_INCLUDES} )
  
@@ -35,7 +48,9 @@ index 8a3be21..ce2a828 100644
 +#       See also: languages/cpp/parser/parser.h
 +if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 +    include(CheckIncludeFileCXX)
++    set(CMAKE_REQUIRED_FLAGS "-std=c++0x")
 +    check_include_file_cxx(unordered_map HAVE_UNORDERED_MAP)
++    set(CMAKE_REQUIRED_FLAGS "")
 +
 +    if(HAVE_UNORDERED_MAP)
 +        message(STATUS "Enabling c++0x support for unordered map")
