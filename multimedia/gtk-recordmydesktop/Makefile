@@ -9,11 +9,12 @@ PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
 PORTREVISION=	1
 CATEGORIES=	multimedia deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
+MASTER_SITES=	SF/recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	GTK+ frontend to recordMyDesktop
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/bin/recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 
@@ -22,12 +23,9 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_GNOME=	gtk20 pygtk2 desktopfileutils
 INSTALL_ICONS=	yes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-build:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
