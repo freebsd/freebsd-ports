@@ -1,25 +1,33 @@
 bin/ssi-cgi
 sbin/cgi-wrapper
 sbin/hiawatha
-sbin/newroot
 sbin/php-fcgi
 sbin/wigwam
-%%ETCDIR%%/index.xslt
 @unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf.sample %D/etc/hiawatha/cgi-wrapper.conf ; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
 %%ETCDIR%%/cgi-wrapper.conf.sample
-@exec if [ ! -f %D/etc/hiawatha/cgi-wrapper.conf ] ; then cp -p %D/%F %%ETCDIR%%/cgi-wrapper.conf; fi
+@exec if [ ! -f %D/etc/hiawatha/cgi-wrapper.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/cgi-wrapper.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/hiawatha.conf.sample %D/etc/hiawatha/hiawatha.conf ; then rm -f %D/etc/hiawatha/hiawatha.conf; fi
 %%ETCDIR%%/hiawatha.conf.sample
-@exec if [ ! -f %D/etc/hiawatha/hiawatha.conf ] ; then cp -p %D/%F %%ETCDIR%%/hiawatha.conf; fi
+@exec if [ ! -f %D/etc/hiawatha/hiawatha.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/hiawatha.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/index.xslt.sample %D/etc/hiawatha/index.xslt ; then rm -f %D/etc/hiawatha/index.xslt; fi
+%%ETCDIR%%/index.xslt.sample
+@exec if [ ! -f %D/etc/hiawatha/index.xslt.sample ] ; then cp -p %D/%F %%ETCDIR%%/index.xslt; fi
 @unexec if cmp -s %D/etc/hiawatha/mimetype.conf.sample %D/etc/hiawatha/mimetype.conf ; then rm -f %D/etc/hiawatha/mimetype.conf; fi
 %%ETCDIR%%/mimetype.conf.sample
-@exec if [ ! -f %D/etc/hiawatha/mimetype.conf ] ; then cp -p %D/%F %%ETCDIR%%/mimetype.conf; fi
+@exec if [ ! -f %D/etc/hiawatha/mimetype.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/mimetype.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/php-fcgi.conf.sample %D/etc/hiawatha/php-fcgi.conf ; then rm -f %D/etc/hiawatha/php-fcgi.conf; fi
 %%ETCDIR%%/php-fcgi.conf.sample
-@exec if [ ! -f %D/etc/hiawatha/php-fcgi.conf ] ; then cp -p %D/%F %%ETCDIR%%/php-fcgi.conf; fi
+@exec if [ ! -f %D/etc/hiawatha/php-fcgi.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/php-fcgi.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/toolkit.conf.sample %D/etc/hiawatha/toolkit.conf ; then rm -f %D/etc/hiawatha/toolkit.conf; fi
+%%ETCDIR%%/toolkit.conf.sample
+@exec if [ ! -f %D/etc/hiawatha/toolkit.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/toolkit.conf; fi
 @unexec t=`/bin/ls %D/etc/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Configuration directory is empty, removing it."; rmdir %D/etc/hiawatha; fi;
 @unexec t=`/bin/ls /var/log/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Log directory is empty, removing it."; rmdir /var/log/hiawatha; fi;
 @unexec if cmp -s %D/www/hiawatha/index.html %D/www/hiawatha/index.hiawatha.html ; then rm -f %D/www/hiawatha/index.html; fi
 %%WWWDIR%%/index.hiawatha.html
 @exec if [ ! -f %D/www/hiawatha/index.html ] ; then cp -p %D/%F %%WWWDIR%%/index.html; fi
 @unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    WWW directory is empty, removing it."; rmdir %D/www/hiawatha; fi;
+lib/hiawatha/libpolarssl.so
+lib/hiawatha/libpolarssl.so.1
+lib/hiawatha/libpolarssl.so.1.1.3
+@dirrm lib/hiawatha
