@@ -23,16 +23,18 @@ MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
 	fame_open.3 fame_register.3 fame_unregister.3 fame_encode_slice.3 \
 	fame_start_frame.3 fame_end_frame.3
 
-OPTIONS=	SSE "SSE optimized routines (no effect in this release)" off \
-		MMX "MMX optimized routines" on
+OPTIONS_DEFINE=	SSE MMX
+OPTIONS_DEFAULT=	MMX
 
-.include <bsd.port.pre.mk>
+SSE_DESC=	"SSE optimized routines (no effect in this release)"
 
-.if defined(WITH_SSE)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSE}
 CONFIGURE_ARGS+=	--enable-sse
 .endif
 
-.if defined(WITHOUT_MMX)
+.if empty(PORT_OPTIONS:MMMX)
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
@@ -43,4 +45,4 @@ post-patch:
 		-e 's|AC_DEFUN(AM_PATH_LIBFAME|AC_DEFUN([AM_PATH_LIBFAME]|g' \
 		${WRKSRC}/libfame.m4 ${WRKSRC}/libfame.m4.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

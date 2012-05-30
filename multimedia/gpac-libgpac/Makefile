@@ -27,12 +27,8 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
 LIBVER=	1
 
-OPTIONS=	IPV6 "IPv6 support"		on \
-		JPEG "JPEG support"		on \
-		OPENGL "OpenGL support"		off \
-		OPENSSL "OpenSSL support"	on \
-		PNG "PNG support"		on \
-		XVIDEO "Xvideo support (libXv)"	off
+OPTIONS_DEFINE=	IPV6 JPEG OPENGL SSL PNG XVIDEO
+OPTIONS_DEFAULT=	IPV6 JPEG SSL PNG
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -49,19 +45,19 @@ CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_OPENSSL)
+.if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-.if defined(WITH_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		gl glu
 .else
 CONFIGURE_ARGS+=	--disable-opengl
 .endif
 
-.if defined(WITH_XVIDEO)
+.if ${PORT_OPTIONS:MXVIDEO}
 LIB_DEPENDS+=	Xv.1:${PORTSDIR}/x11/libXv
 .else
 CONFIGURE_ARGS+=	--disable-x11-xv --disable-x11-shm
@@ -69,18 +65,18 @@ CONFIGURE_ARGS+=	--disable-x11-xv --disable-x11-shm
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_IPV6)
+.if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--use-jpeg=local
 .else
 CONFIGURE_ARGS+=	--use-jpeg=no
 .endif
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--use-png=local
 .else
