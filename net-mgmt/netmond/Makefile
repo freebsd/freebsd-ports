@@ -22,6 +22,9 @@ PATCHFILES=	${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX}  ${DISTNAME}.docs${
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netmond - IP network monitoring daemon
 
+USERS=	netmon
+GROUPS=	${USERS}
+
 #MK_IFGRAPH=	yes
 PATCHDIR=	${WRKDIR}/patches
 
@@ -56,16 +59,6 @@ post-extract:
 	${CP} ${PATCHDIR}/pipe.c ${WRKSRC}
 
 do-install:
-	@if pw user show netmon 2>/dev/null ; then \
-	    ${ECHO} "User 'netmon' exists." ; \
-	else \
-	    pw useradd -n netmon -g wheel -c 'Network monitor account' -s /usr/sbin/nologin ; \
-	fi
-	@if pw group show ${BINGRP} 2>/dev/null ; then \
-	    ${ECHO} "Group '${BINGRP}' exists." ;  \
-	else \
-	    pw groupadd ${BINGRP} -M root,netmon ; \
-	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/netmond      ${PREFIX}/sbin/netmond
 .if defined(MK_IFGRAPH)
 	${INSTALL_PROGRAM} ${WRKSRC}/ifgraph      ${PREFIX}/sbin/ifgraph
