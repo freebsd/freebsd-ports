@@ -47,11 +47,13 @@ ADDITIONAL_CODECS_WRKSRC=	${DISTFILES:S/.tar.bz2//}
 REMOVE_CODECS_FILES=	AvidQTAVUICodec.qtx QuickTimeEssentials.qtx QuickTime.qts \
 			QuickTimeInternetExtras.qtx qtmlClient.dll BeHereiVideo.qtx
 
-OPTIONS=	REALPLAYER	"Install realplayer codec"	on
+OPTIONS_DEFINE=	REALPLAYER
+OPTIONS_DEFAULT=	REALPLAYER
+REALPLAYER_DESC=	Install realplayer codec
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_REALPLAYER)
+.if ${PORT_OPTIONS:MREALPLAYER}
 ADDITIONAL_CODECS_DISTFILES+=	rp9codecs-20050115.tar.bz2 \
 				rp9codecs-win32-20050115.tar.bz2
 PLIST_SUB+=	REALPLAYER=""
@@ -83,4 +85,4 @@ do-install:
 	@${CP} /dev/null ${PREFIX}/lib/win32/${PKGNAME}
 	@${CHMOD} 0444 ${PREFIX}/lib/win32/${PKGNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
