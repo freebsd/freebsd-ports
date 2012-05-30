@@ -32,11 +32,11 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 MAKE_JOB_SAFE=	yes
 
-OPTIONS=	GTKDOC "Enable GTK html documentation" off
+OPTIONS_DEFINE=		DOCS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GTKDOC)
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_SUB=	GTKDOC=""
 .else
 PLIST_SUB=	GTKDOC="@comment "
@@ -44,7 +44,7 @@ PLIST_SUB=	GTKDOC="@comment "
 
 post-patch:
 # Needed to remove gtk-doc installation
-.if !defined(WITH_GTKDOC)
+.if emty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e "s|docs||g" ${WRKSRC}/Makefile.in
 .endif
 

@@ -33,24 +33,23 @@ USE_XFCE=	configenv libmenu libutil
 USE_XORG=	x11
 
 CONFIGURE_ARGS+=--enable-gio-unix \
-	--disable-gtk-doc-html
+		--disable-gtk-doc-html
 
-OPTIONS=	APIDOCS	"Install api documentation"		off \
-		NLS	"Enable Native Language Support"	on
+OPTIONS_DEFINE=	DOCS NLS
 
 MAN1=		exo-csource.1 exo-open.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_APIDOCS)
-CONFIGURE_ARGS+=--without-html-dir
-PLIST_SUB+=	APIDOCS="@comment "
-.else
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
 PLIST_SUB+=	APIDOCS=""
+.else
+CONFIGURE_ARGS+=--without-html-dir
+PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""

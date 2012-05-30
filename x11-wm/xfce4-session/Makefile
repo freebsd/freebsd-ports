@@ -35,14 +35,13 @@ USE_XFCE=	configenv libmenu libutil panel xfconf
 USE_XORG=	x11 sm ice
 
 CONFIGURE_ARGS+=--enable-legacy-sm \
-	--disable-libgnome-keyring \
-	--with-xsession-prefix=${LOCALBASE}
+		--disable-libgnome-keyring \
+		--with-xsession-prefix=${LOCALBASE}
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	NLS	"Enable Native Language Support"	on \
-	GNUPG "Add support of GNU Privacy Guard" off
+OPTIONS_DEFINE=	NLS GNUPG
 
 .include <bsd.port.options.mk>
 
@@ -50,7 +49,7 @@ MAN1=		xfce4-session.1 xfce4-session-logout.1
 
 PLIST_SUB=	VERSION="4.6"
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
@@ -59,7 +58,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_GNUPG)
+.if ${PORT_OPTIONS:MGNUPG}
 RUN_DEPENDS+=	gpg-agent:${PORTSDIR}/security/gnupg
 .endif
 

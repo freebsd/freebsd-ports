@@ -30,20 +30,13 @@ USE_XFCE=	configenv
 CONFIGURE_ARGS=	--enable-xdg-cache \
 		--disable-gtk-doc-html
 
-OPTIONS=	NLS "Enable Native Language Support" on \
-		APIDOCS "Install api documentation" off \
-		PIXBUF "Enable gdk-pixbuf plugin thumbnailer" on \
-		FONTS "Enable fonts plugin thumbnailer" on \
-		JPEG "Enable JPEG and EXIF plugin thumbnailer" on \
-		FFMPEG "Enable FFMPEG plugin thumbnailer" off \
-		POPPLER "Enable PDF/PS plugin thumbnailer" on \
-		GSTREAMER "Enable videos plugin thumbnailer" on \
-		ODF "Enable ODF plugin thumbnailer" on \
-		RAW "Enable RAW plugin thumbnailer" off \
+OPTIONS_DEFINE=	DOCS NLS PIXBUF FONTS JPEG FFMPEG POPPLER GSTREAMER ODF RAW
+OPTIONS_DEFAULT=	PIXBUF FONTS JEPG POPPLER GSTREAMER ODF
+FONTS_DESC=	Enable fonts plugin thumbnailer
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -52,15 +45,15 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_APIDOCS)
-CONFIGURE_ARGS+=--without-html-dir
-PLIST_SUB+=	APIDOCS="@comment "
-.else
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--with-html-dir=${PREFIX}/share/gtk-doc/html
 PLIST_SUB+=	APIDOCS=""
+.else
+CONFIGURE_ARGS+=--without-html-dir
+PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
-.if !defined(WITHOUT_PIXBUF)
+.if ${PORT_OPTIONS:MPIXBUF}
 USE_GNOME+=	gdkpixbuf2
 CONFIGURE_ARGS+=--enable-pixbuf-thumbnailer
 PLIST_SUB+=	PIXBUF=""
@@ -69,7 +62,7 @@ CONFIGURE_ARGS+=--disable-pixbuf-thumbnailer
 PLIST_SUB+=	PIXBUF="@comment "
 .endif
 
-.if !defined(WITHOUT_FONTS)
+.if ${PORT_OPTIONS:MFONTS}
 CONFIGURE_ARGS+=--enable-font-thumbnailer
 PLIST_SUB+=	FONTS=""
 .else
@@ -77,7 +70,7 @@ CONFIGURE_ARGS+=--disable-font-thumbnailer
 PLIST_SUB+=	FONTS="@comment "
 .endif
 
-.if !defined(WITHOUT_JPEG)
+.if ${PORT_OPTIONS:MJPEG}
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		exif.12:${PORTSDIR}/graphics/exif
 CONFIGURE_ARGS+=--enable-jpeg-thumbnailer
@@ -87,7 +80,7 @@ CONFIGURE_ARGS+=--disable-jpeg-thumbnailer
 PLIST_SUB+=	JPEG="@comment "
 .endif
 
-.if !defined(WITHOUT_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=	ffmpegthumbnailer.4:${PORTSDIR}/multimedia/ffmpegthumbnailer
 CONFIGURE_ARGS+=--enable-ffmpeg-thumbnailer
 PLIST_SUB+=	FFMPEG=""
@@ -96,7 +89,7 @@ CONFIGURE_ARGS+=--disable-ffmpeg-thumbnailer
 PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
-.if !defined(WITHOUT_POPPLER)
+.if ${PORT_OPTIONS:MPOPPLER}
 LIB_DEPENDS+=	poppler-glib.8:${PORTSDIR}/graphics/poppler-glib
 CONFIGURE_ARGS+=--enable-poppler-thumbnailer
 PLIST_SUB+=	POPPLER=""
@@ -105,7 +98,7 @@ CONFIGURE_ARGS+=--disable-poppler-thumbnailer
 PLIST_SUB+=	POPPLER="@comment "
 .endif
 
-.if !defined(WITHOUT_GSTREAMER)
+.if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=--enable-gstreamer-thumbnailer
 PLIST_SUB+=	GSTREAMER=""
@@ -114,7 +107,7 @@ CONFIGURE_ARGS+=--disable-gstreamer-thumbnailer
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
-.if !defined(WITHOUT_ODF)
+.if ${PORT_OPTIONS:MODF}
 USE_GNOME+=	libgsf
 CONFIGURE_ARGS+=--enable-odf-thumbnailer
 PLIST_SUB+=	ODF=""
@@ -123,7 +116,7 @@ CONFIGURE_ARGS+=--disable-odf-thumbnailer
 PLIST_SUB+=	ODF="@comment "
 .endif
 
-.if defined(WITH_RAW)
+.if ${PORT_OPTIONS:MRAW}
 LIB_DEPENDS+=	openraw.6:${PORTSDIR}/graphics/libopenraw
 CONFIGURE_ARGS+=--enable-raw-thumbnailer
 PLIST_SUB+=	RAW=""
@@ -132,4 +125,4 @@ CONFIGURE_ARGS+=--disable-raw-thumbnailer
 PLIST_SUB+=	RAW="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
