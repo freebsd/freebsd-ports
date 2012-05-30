@@ -22,21 +22,20 @@ MAN1=		sapserver.1
 PLIST_FILES=	bin/sapserver etc/sap.cfg-dist
 USE_RC_SUBR=	sapserver
 SUB_FILES=	pkg-message
-OPTIONS=	SLP "Enable SLP support via openslp" off
+OPTIONS_DEFINE=	SLP
+SLP_DESC=	"Enable SLP support via openslp"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_SLP)
+.if ${PORT_OPTIONS:MSLP}
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 CONFIGURE_ARGS+=--enable-slp
 .else
 CONFIGURE_ARGS+=--disable-slp
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(prefix)/share/man|${MANPREFIX}/man|; \
@@ -53,4 +52,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -16,12 +16,9 @@ COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
-OPTIONS=	GTK2        "Build GTK+2 player (needs SDL)"              on  \
-		SDL         "Enable SDL support"                          on  \
-		PNG         "Enable libPNG support"                       on  \
-		DV          "Enable libDV support"                        off \
-		QUICKTIME   "Enable libQuickTime support"                 off \
-		SIMD 	    "Use cpu-specific optimizations if possible"  off
+OPTIONS_DEFINE=	GTK2 SDL PNG DV QUICKTIME SIMD DOCS
+OPTIONS_DEFAULT=	GTK2 SDL PNG
+QUICKTIME_DESC=		Enable libQuickTime support
 
 CONFLICTS=	mplex-[0-9]*
 
@@ -61,45 +58,45 @@ CFLAGS=	-O0
 BROKEN=		Does not build on powerpc-9
 .endif
 
-.if !defined(WITHOUT_GTK2) && defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MGTK2}
+
+.if empty(${PORT_OPTIONS:MSDL})
 IGNORE=		GTK+2 player needs SDL
 .endif # GTK2/SDL
 
-.if defined(WITHOUT_GTK2)
-PLIST_SUB+=	GTK2:="@comment "
-_HAVE_GTK=	false
-.else
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK2:=""
-_HAVE_GTK=	true
+.else
+PLIST_SUB+=	GTK2:="@comment "
+_HAVE_GTK=	false
 .endif # GTK2
 
-.if defined(WITHOUT_SDL)
+.if ${PORT_OPTIONS:MSDL}
+USE_SDL+=	gfx sdl
+PLIST_SUB+=	SDL:=""
+.else
 CONFIGURE_ENV+=	ac_cv_path_SDL_CONFIG=no
 PLIST_SUB+=	SDL:="@comment "
 CONFIGURE_ARGS+=	--without-libsdl
-.else
-USE_SDL+=	gfx sdl
-PLIST_SUB+=	SDL:=""
 .endif # SDL
 
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=--without-libpng
-PLIST_SUB+=	PNG:="@comment "
-.else
+.if ${PORT_OPTIONS:MPNG}
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng
 PLIST_SUB+=	PNG:=""
+.else
+CONFIGURE_ARGS+=--without-libpng
+PLIST_SUB+=	PNG:="@comment "
 .endif # PNG
 
-.if defined(WITH_DV)
+.if ${PORT_OPTIONS:MDV}
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--with-libdv
 .else
 CONFIGURE_ARGS+=--without-libdv
 .endif # DV
 
-.if defined(WITH_QUICKTIME)
+.if ${PORT_OPTIONS:MQUICKTIME}
 PLIST_SUB+=	QUICKTIME=""
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=--with-libquicktime
@@ -108,7 +105,7 @@ PLIST_SUB+=	QUICKTIME="@comment "
 CONFIGURE_ARGS+=--without-libquicktime
 .endif # QUICKTIME
 
-.if defined(WITH_SIMD)
+.if ${PORT_OPTIONS:MSIMD}
 CONFIGURE_ARGS+=--enable-simd-accel
 .else
 CONFIGURE_ARGS+=--disable-simd-accel
@@ -120,7 +117,7 @@ post-patch:
 		 /^CXXFLAGS=/s|$$ARCHFLAGS||g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
