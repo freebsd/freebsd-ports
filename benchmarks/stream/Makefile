@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.cs.virginia.edu/stream/FTP/Code/
 DISTFILES=	stream.c
 DIST_SUBDIR=	${PORTNAME}-1.0/${PORTVERSION}
 
-MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
 PLIST_FILES=	bin/stream_bench

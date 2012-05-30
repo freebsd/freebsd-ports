@@ -20,7 +20,7 @@ DISTFILES=	${DISTFILE_0}:file_0 \
 DIST_SUBDIR=	acx
 EXTRACT_ONLY=	${DISTFILE_0}
 
-MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Texas Instruments (TI) ACX100 and ACX111 IEEE 802.11 driver
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

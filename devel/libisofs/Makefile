@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
-MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia ISO9660 filesystem creation library
 
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn
