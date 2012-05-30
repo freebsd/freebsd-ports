@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpmtools
-PORTVERSION=	2.13
+PORTVERSION=	2.15
 CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://www.moria.de/~michael/cpmtools/
 
