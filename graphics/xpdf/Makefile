@@ -81,7 +81,7 @@ post-install:
 .endfor
 .endif
 .if !defined(WITHOUT_X11)
-	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${PREFIX}/bin/xpdf 
+	${LN} -sf ${PREFIX}/libexec/xpdf/xpdf ${PREFIX}/bin/xpdf
 .endif
 
 .include <bsd.port.mk>
