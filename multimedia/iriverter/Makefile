@@ -21,13 +21,14 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" off
+OPTIONS_DEFINE=	SWTDEVEL
+SWTDEVEL_DESC=	Use SWT Development port
 
 CONFIGURE_ARGS=	--with-swt="${JAVALIBDIR}/${SWT_JAR}"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SWTDEVEL)
+.if ${PORT_OPTIONS:MSWTDEVEL}
 BUILD_DEPENDS+=	\
 		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 RUN_DEPENDS+=	\
@@ -41,4 +42,4 @@ RUN_DEPENDS+=	\
 SWT_JAR=	swt.jar
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
