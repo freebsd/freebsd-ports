@@ -29,12 +29,13 @@
 #
 # Original shell script & idea: Will Andrews <will@FreeBSD.org>
 # Original conversion to Perl : Michael Haro <mharo@FreeBSD.org>
+# Maintainer alumni           : Renato Botelho <garga@FreeBSD.org>
 #
 # Id: addport,v 1.2 2000/04/02 06:21:13 will Exp (original shell script)
 # Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp (perl conversion)
 # $FreeBSD$
 #
-# MAINTAINER=	garga@FreeBSD.org
+# MAINTAINER=	crees@FreeBSD.org
 #
 
 use Cwd "abs_path";
@@ -402,7 +403,7 @@ print <<EOF;
 You're done! The new port $portname has been completely imported in
 the tree. Don't forget to add the creator's name and email address to
 the Contributors' List if they are not already there. To do this, edit
-doc/en_US.ISO8859-1/articles/contributors/contrib.additional.sgml.
+doc/head/en_US.ISO8859-1/articles/contributors/contrib.additional.sgml.
 EOF
 
 sub warnx($) {
