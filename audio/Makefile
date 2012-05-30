@@ -50,7 +50,6 @@
     SUBDIR += aubio
     SUBDIR += audacious-dumb
     SUBDIR += audacity
-    SUBDIR += audacity-devel
     SUBDIR += audex
     SUBDIR += audiere
     SUBDIR += audiotag
