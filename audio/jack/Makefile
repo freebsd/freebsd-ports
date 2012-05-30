@@ -35,12 +35,11 @@ USE_GNOME=	pkgconfig gnomehack
 
 MAN1=		jackd.1 jackstart.1
 
-OPTIONS=	ALSA "Build with ALSA compatibility library" off \
-		DOCS "Build documentation" off
+OPTIONS_DEFINE=	ALSA DOCS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DOCS) && !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 PLIST_SUB+=	DOCS=""
 .else
@@ -52,7 +51,7 @@ PLIST_SUB+=	DOCS="@comment "
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 PLIST_SUB+=	ALSA=""
 .else

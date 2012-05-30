@@ -24,18 +24,12 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	CDPARANOIA "Ripper: Enable cdparanoia support" on \
-		CDDA2WAV "Ripper: cdda2wav: Install sysutils/cdrtools" off
-.if defined(PACKAGE_BUILDING)
-OPTIONS+=	LAME "Encoder: lame: Install audio/lame" off \
-		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" on
-.else
-OPTIONS+=	LAME "Encoder: lame: Install audio/lame" on \
-		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" off
+OPTIONS_DEFINE=	CDPARANOIA CDDA2WAV LAME VORBIS FAAC FLAC GOGO
+OPTIONS_DEFAULT=	CDPARANOIA VORBIS
+
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT+=	LAME
 .endif
-OPTIONS+=	FAAC "Encoder: faac: Install audio/faac" off \
-		FLAC "Encoder: flac: Install audio/flac" off \
-		GOGO "Encoder: gogo: Install audio/gogo" off
 
 .include <bsd.port.pre.mk>
 
@@ -45,34 +39,34 @@ DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
-.if !defined(WITHOUT_CDPARANOIA)
+.if ${PORT_OPTIONS:MCDPARANOIA}
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 CONFIGURE_ARGS+=	--enable-cdpar
 .else
 CONFIGURE_ARGS+=	--disable-cdpar
 .endif
 
-.if defined(WITH_CDDA2WAV)
+.if ${PORT_OPTIONS:MCDDA2WAV}
 USE_CDRTOOLS=	yes
 .endif
 
-.if defined(WITH_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITH_GOGO)
+.if ${PORT_OPTIONS:MGOGO}
 RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
-.if !defined(WITHOUT_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
