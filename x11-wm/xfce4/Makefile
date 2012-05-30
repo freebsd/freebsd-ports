@@ -15,14 +15,13 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The "meta-port" for the Xfce 4 desktop environment
 
-OPTIONS_DEFINE=	ICONS ORANGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFYD
-OPTIONS_DEFAULT=	ICONS ORANGE MOUSEPAD TERMINAL APPFINDER SQUEEZE NOTIFYD
+OPTIONS_DEFINE=	ICONS ORANGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFY
+OPTIONS_DEFAULT=	ICONS ORANGE MOUSEPAD TERMINAL APPFINDER SQUEEZE NOTIFY
 ORANGE_DESC=	Install the Xfce calendar application
 MOUSEPAD_DESC=	Install the Xfce text editor
 TERMINAL_DESC=	Install the Xfce terminal application
 APPFINDER_DESC=	Install the Xfce application finder
 SQUEEZE_DESC=	Install the Xfce archiver application
-NOTIFYD_DESC=	Install the Xfce notification daemon
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
@@ -79,7 +78,7 @@ RUN_DEPENDS+=	xfprint4:${PORTSDIR}/print/xfce4-print
 RUN_DEPENDS+=   squeeze:${PORTSDIR}/archivers/squeeze
 .endif
 
-.if ${PORT_OPTIONS:MNOTIFYD}
+.if ${PORT_OPTIONS:MNOTIFY}
 RUN_DEPENDS+=	xfce4-notifyd-config:${PORTSDIR}/deskutils/xfce4-notifyd
 .endif
 
