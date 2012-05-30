@@ -75,6 +75,7 @@ MMX_DESC?=		Enable MMX optimized routines
 MODPLUG_DESC?=		Support MODPLUG decoder
 MP4_DESC?=		Enable support for mp4
 MPP_DESC?=		Enable support for musepack
+MSQL_DESC?=		Enable msql backend
 MULTIBYTE_DESC?=	Enable multibyte character support
 MUSEPACK_DESC?=		Support MPC audio format
 MYSQL_DESC?=		Enable MySQL backend
