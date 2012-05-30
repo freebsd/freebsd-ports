@@ -26,19 +26,18 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
 
-OPTIONS=	DBUS		"Enable D-BUS support"				on  \
-		NLS		"Enable Native Language Support"		on  \
-		STARTUP		"Enable startup notification support"		on  \
-		NOTIFY		"Enable mount notifications support"		on  \
-		APIDOCS		"Install api documentation"			off  \
-		PLUG_APR	"Thunar Advanced Properties plugin"		on  \
-		PLUG_APR_EXIF	"Exif support for the APR plugin"		off \
-		PLUG_SBR	"Thunar Simple Builtin Renamers plugin"		on  \
-		PLUG_SBR_PCRE	"Regular expression support for the SBR plugin"	off \
-		PLUG_TPA	"Thunar Trash Panel Applet plugin"		on  \
-		PLUG_UCA	"Thunar User Customizable Actions plugin"	on  \
-		PLUG_WALL	"Thunar Wallpaper plugin"			on \
-		GVFS		"Add support for remote access"			on
+OPTIONS_DEFINE=	 STARTUP DBUS NLS DOCS PLUG_APR PLUG_APR_EXIF PLUG_SBR PLUG_SBR_PCRE PLUG_TPA PLUG_UCA PLUG_WALL GVFS
+OPTIONS_DEFAULT= STARTUP DBUS NOTIFY PLUG_APR PLUG_SBR PLUG_SBR_PCRE PLUG_UCA PLUG_WALL GVFS
+STARTUP_DESC=	Enable startup notification support
+PLUG_APR_DESC=	Thunar Advanced Properties plugin
+PLUG_APR_EXIF_DESC=	Exif support for the APR plugin
+PLUG_PLUG_SBR_DESC=	Thunar Simple Builtin Renamers plugin
+PLUG_PLUG_SBR_PCRE_DESC=	Regular expression support for the SBR plugin
+PLUG_TPA_DESC=		Thunar Trash Panel Applet plugin
+PLUG_UCA_DESC=		Thunar User Customizable Actions plugin
+PLUG_WALL_DESC=		Thunar Wallpaper plugin
+
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--disable-gtk-doc-html \
 		--enable-gio-unix \
@@ -46,9 +45,9 @@ CONFIGURE_ARGS+=	--disable-gtk-doc-html \
 
 MAN1=		Thunar.1
 
-.include  <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 PLIST_SUB+=	WITH_DBUS=""
@@ -57,7 +56,7 @@ CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -66,25 +65,25 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_NOTIFY)
+.if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notifications
 .else
 CONFIGURE_ARGS+=--disable-notifications
 .endif
 
-.if defined(WITHOUT_APIDOCS)
-CONFIGURE_ARGS+=	--without-html-dir
-PLIST_SUB+=	APIDOCS="@comment "
-.else
+.if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/gtk-doc/html
 PLIST_SUB+=	APIDOCS=""
+.else
+CONFIGURE_ARGS+=	--without-html-dir
+PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
-.if !defined(WITHOUT_PLUG_APR)
+.if ${PORT_OPTIONS:MPLUG_APR}
 CONFIGURE_ARGS+=--enable-apr-plugin
 PLIST_SUB+=	PLUGIN_APR=""
-.if defined(WITH_PLUG_APR_EXIF)
+.if ${PORT_OPTIONS:MPLUG_APR_EXIF}
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=--enable-exif
 .else
@@ -95,10 +94,10 @@ CONFIGURE_ARGS+=--disable-apr-plugin --disable-exif
 PLIST_SUB+=	PLUGIN_APR="@comment "
 .endif
 
-.if !defined(WITHOUT_PLUG_SBR)
+.if ${PORT_OPTIONS:MPLUG_SBR}
 CONFIGURE_ARGS+=--enable-sbr-plugin
 PLIST_SUB+=	PLUGIN_SBR=""
-.if defined(WITH_PLUG_SBR_PCRE)
+.if ${PORT_OPTIONS:MPLUG_SBR_PCRE}
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--enable-pcre
 .else
@@ -109,7 +108,7 @@ CONFIGURE_ARGS+=--disable-sbr-plugin --disable-pcre
 PLIST_SUB+=	PLUGIN_SBR="@comment "
 .endif
 
-.if !defined(WITHOUT_PLUG_TPA)
+.if ${PORT_OPTIONS:MPLUG_TPA}
 CONFIGURE_ARGS+=--enable-tpa-plugin
 PLIST_SUB+=	PLUGIN_TPA=""
 USE_XFCE+=	panel
@@ -118,7 +117,7 @@ CONFIGURE_ARGS+=--disable-tpa-plugin
 PLIST_SUB+=	PLUGIN_TPA="@comment "
 .endif
 
-.if !defined(WITHOUT_PLUG_UCA)
+.if ${PORT_OPTIONS:MPLUG_UCA}
 CONFIGURE_ARGS+=--enable-uca-plugin
 PLIST_SUB+=	PLUGIN_UCA=""
 .else
@@ -126,7 +125,7 @@ CONFIGURE_ARGS+=--disable-uca-plugin
 PLIST_SUB+=	PLUGIN_UCA="@comment "
 .endif
 
-.if !defined(WITHOUT_PLUG_WALL)
+.if ${PORT_OPTIONS:MPLUG_WALL}
 CONFIGURE_ARGS+=--enable-wallpaper-plugin
 PLIST_SUB+=	PLUGIN_WALL=""
 .else
@@ -134,22 +133,18 @@ CONFIGURE_ARGS+=--disable-wallpaper-plugin
 PLIST_SUB+=	PLUGIN_WALL="@comment "
 .endif
 
-.if !defined(WITHOUT_STARTUP)
+.if ${PORT_OPTIONS:MSTARTUP}
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
-.if defined(WITH_GVFS)
+.if ${PORT_OPTIONS:MGVFS}
 USE_GNOME+=gvfs
-.endif
-
-.if (${OSVERSION} < 701000)
-CFLAGS+=	-DHAVE_SYS_MOUNT_H
 .endif
 
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

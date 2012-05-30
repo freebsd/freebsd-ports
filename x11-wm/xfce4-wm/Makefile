@@ -33,30 +33,30 @@ USE_XFCE=	configenv libmenu libutil xfconf
 USE_XORG=	x11 sm xext xrandr xrender
 DATADIR=	${PREFIX}/share/xfwm4
 
-OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
-		STARTUP 	"Enable startup notification support"			on \
-		REVMOUSE	"Reverse mouse workspace changing direction"		off
+OPTIONS_DEFINE=		COMPOSITE NOTIFY REVMOUSE
+OPTIONS_DEFAULT=	COMPOSITE NOTIFY
+REVMOUSE_DESC=		Reverse mouse workspace changing direction
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_COMPOSITE)
+.if ${PORT_OPTIONS:MCOMPOSITE}
 CONFIGURE_ARGS+=--enable-compositor
 .else
 CONFIGURE_ARGS+=--disable-compositor
 .endif
 
-.if !defined(WITHOUT_STARTUP)
+.if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
-.if defined(WITH_REVMOUSE)
+.if ${PORT_OPTIONS:MREVMOUSE}
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-src__events.c
 .endif
 
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

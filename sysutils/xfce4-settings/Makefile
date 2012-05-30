@@ -16,13 +16,6 @@ COMMENT=	Xfce 4 settings application
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
-		XCURSOR		"Enable cursor themes support"		on \
-		XRANDR		"Enable Xrandr support"			on \
-		NOTIFY		"Enable notification support"		on \
-		NLS		"Enable Native Language Support"	on \
-		SOUND		"Enable sound control"	off
-
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -34,25 +27,29 @@ USE_XFCE=	configenv garcon libexo libmenu libutil xfconf
 USE_XORG=	inputproto x11 xi
 
 CONFIGURE_ARGS=	--enable-pluggable-dialogs \
-	--enable-gio-unix
+		--enable-gio-unix
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		XKLAVIER XCURSOR XRANDR NOTIFY NLS SOUND
+OPTIONS_DEFAULT=	XCURSOR XRANDR NOTIFY NLS SOUND
+SOUND_DESC=		Enable sound control
 
-.if defined(WITH_XKLAVIER)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MXKLAVIER}
 LIB_DEPENDS+=	xklavier.12:${PORTSDIR}/x11/libxklavier
 CONFIGURE_ARGS+=--enable-libxklavier
 .else
 CONFIGURE_ARGS+=--disable-libxklavier
 .endif
 
-.if defined(WITH_XCURSOR)
+.if ${PORT_OPTIONS:MXCURSOR}
 USE_XORG+=	xcursor
 CONFIGURE_ARGS+=--enable-xcursor
 .else
 CONFIGURE_ARGS+=--disable-xcursor
 .endif
 
-.if defined(WITH_XRANDR)
+.if ${PORT_OPTIONS:MXRANDR}
 USE_XORG+=	xrandr
 CONFIGURE_ARGS+=--enable-xrandr
 PLIST_SUB+=	XRANDR=""
@@ -61,14 +58,14 @@ CONFIGURE_ARGS+=--disable-xrandr
 PLIST_SUB+=	XRANDR="@comment "
 .endif
 
-.if defined(WITH_NOTIFY)
+.if ${PORT_OPTIONS:MNOTIFY}
 LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -77,7 +74,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_SOUND)
+.if ${PORT_OPTIONS:MSOUND}
 LIB_DEPENDS+=	canberra.0:${PORTSDIR}/audio/libcanberra
 CONFIGURE_ARGS+=--enable-sound-settings
 .else
@@ -96,4 +93,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

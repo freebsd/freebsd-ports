@@ -30,21 +30,22 @@ USE_XFCE=	configenv garcon libmenu libutil libexo xfconf
 CONFIGURE_ARGS+=--enable-gio-unix \
 	--enable-notifications
 
-OPTIONS=	THUNAR	"Enable thunar support"		on \
-		NLS "Enable Native Language Support" on
+OPTIONS_DEFINE=		THUNAR NLS
+OPTIONS_DEFAULT=	THUNAR NLS
+THUNAR_DESC=	Enable thunar support
 
 MAN1=		xfdesktop.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_THUNAR)
+.if ${PORT_OPTIONS:MTHUNAR}
 CONFIGURE_ARGS+=--enable-thunarx --with-file-manager-fallback=Thunar
 USE_XFCE+=	thunar
 .else
 CONFIGURE_ARGS+=--disable-thunarx --without-file-manager-fallback
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
@@ -56,4 +57,4 @@ PLIST_SUB+=	NLS="@comment "
 post-install:
 	@-update-desktop-database
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,16 +15,14 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	The "meta-port" for the Xfce 4 desktop environment
 
-OPTIONS=	ICONS		"Install a full icon theme"		on  \
-		ORAGE		"Install the Xfce calendar application"	on  \
-		MOUSEPAD	"Install the Xfce text editor"		on  \
-		TERMINAL	"Install the Xfce terminal application"	on  \
-		APPFINDER	"Install the Xfce application finder"	on  \
-		MIXER		"Install the Xfce mixer application"	off  \
-		PRINT		"Install the Xfce printing helper"	off  \
-		SQUEEZE		"Install the Xfce archiver application"	on  \
-		GDM		"Install the login manager gdm"		off \
-		NOTIFYD		"Install the Xfce notification daemon"		on
+OPTIONS_DEFINE=	ICONS ORANGE MOUSEPAD TERMINAL APPFINDER MIXER PRINT SQUEEZE GDM NOTIFYD
+OPTIONS_DEFAULT=	ICONS ORANGE MOUSEPAD TERMINAL APPFINDER SQUEEZE NOTIFYD
+ORANGE_DESC=	Install the Xfce calendar application
+MOUSEPAD_DESC=	Install the Xfce text editor
+TERMINAL_DESC=	Install the Xfce terminal application
+APPFINDER_DESC=	Install the Xfce application finder
+SQUEEZE_DESC=	Install the Xfce archiver application
+NOTIFYD_DESC=	Install the Xfce notification daemon
 
 RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 		xfce4-session:${PORTSDIR}/x11-wm/xfce4-session \
@@ -36,59 +34,59 @@ RUN_DEPENDS=	xfwm4:${PORTSDIR}/x11-wm/xfce4-wm \
 NO_BUILD=	yes
 LATEST_LINK=	xfce4
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/sbin/gdm)
 WITH_GDM=	yes
 .endif
 
-.if defined(WITH_GDM)
+.if ${PORT_OPTIONS:MGDM}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
 PLIST_FILES=	etc/gdm/Sessions/XFce4 \
 		etc/dm/Sessions/XFce4.desktop
 PLIST_DIRS=	etc/gdm/Sessions
 .endif
 
-.if !defined(WITHOUT_ICONS)
+.if ${PORT_OPTIONS:MICONS}
 RUN_DEPENDS+=	icons-tango-extras>=0.1.0:${PORTSDIR}/x11-themes/icons-tango-extras
 .endif
 
-.if !defined(WITHOUT_ORAGE)
+.if ${PORT_OPTIONS:MORAGE}
 RUN_DEPENDS+=	orage:${PORTSDIR}/deskutils/orage
 .endif
 
-.if !defined(WITHOUT_MOUSEPAD)
+.if ${PORT_OPTIONS:MMOUSEPAD}
 RUN_DEPENDS+=	mousepad:${PORTSDIR}/editors/mousepad
 .endif
 
-.if !defined(WITHOUT_TERMINAL)
+.if ${PORT_OPTIONS:MTERMINAL}
 RUN_DEPENDS+=	Terminal:${PORTSDIR}/x11/Terminal
 .endif
 
-.if !defined(WITHOUT_APPFINDER)
+.if ${PORT_OPTIONS:MAPPFINDER}
 RUN_DEPENDS+=	xfce4-appfinder:${PORTSDIR}/misc/xfce4-appfinder
 .endif
 
-.if defined(WITH_MIXER)
+.if ${PORT_OPTIONS:MMIXER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/xfce4-mixer:${PORTSDIR}/audio/xfce4-mixer
 .endif
 
-.if defined(WITH_PRINT)
+.if ${PORT_OPTIONS:MPRINT}
 RUN_DEPENDS+=	xfprint4:${PORTSDIR}/print/xfce4-print
 .endif
 
-.if !defined(WITHOUT_SQUEEZE)
+.if ${PORT_OPTIONS:MSQUEEZE}
 RUN_DEPENDS+=   squeeze:${PORTSDIR}/archivers/squeeze
 .endif
 
-.if !defined(WITHOUT_NOTIFYD)
+.if ${PORT_OPTIONS:MNOTIFYD}
 RUN_DEPENDS+=	xfce4-notifyd-config:${PORTSDIR}/deskutils/xfce4-notifyd
 .endif
 
 do-install:	# empty
 
 post-install:
-.if defined(WITH_GDM)
+.if ${PORT_OPTIONS:MGDM}
 	@${TEST} -d ${PREFIX}/etc/gdm/Sessions || \
 		${MKDIR} -p ${PREFIX}/etc/gdm/Sessions
 	@${INSTALL_SCRIPT} ${FILESDIR}/XFce4 ${PREFIX}/etc/gdm/Sessions
@@ -115,4 +113,4 @@ post-install:
 	@${ECHO} "================================================================"
 
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
