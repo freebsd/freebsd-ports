@@ -33,7 +33,8 @@ include/cxxtools/application.h
 include/cxxtools/arg.h
 include/cxxtools/argin.h
 include/cxxtools/argout.h
-include/cxxtools/atomicity.gcc.x86_64.h
+%%X86_64_ONLY%%include/cxxtools/atomicity.gcc.x86_64.h
+%%I386_ONLY%%include/cxxtools/atomicity.gcc.x86.h
 include/cxxtools/atomicity.h
 include/cxxtools/base64codec.h
 include/cxxtools/base64stream.h
@@ -124,7 +125,7 @@ include/cxxtools/md5.h
 include/cxxtools/md5stream.h
 include/cxxtools/membar.gcc.h
 include/cxxtools/membar.gcc.nosmp.h
-include/cxxtools/membar.gcc.x86.h
+%%X86_ONLY%%include/cxxtools/membar.gcc.x86.h
 include/cxxtools/membar.h
 include/cxxtools/method.h
 include/cxxtools/method.tpp
