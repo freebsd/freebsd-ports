@@ -17,21 +17,21 @@ COMMENT=	Simple GUI based video editor
 post-configure: post-configure-common
 
 post-install:
-.if defined(WITH_GTK) || defined(WITH_QT4)
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MQT4}
 	@${MKDIR} "${DATADIR}"
 	${INSTALL_DATA} "${WRKSRC}/avidemux_icon.png" "${DATADIR}/${PORTNAME}.png"
 	@${ECHO_CMD} "${DATADIR_REL}/${PORTNAME}.png" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/${DATADIR_REL} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${MKDIR} "${DESKTOPDIR}"
 	@${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}
-.if defined(WITH_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%DATADIR%%|${DATADIR}|g" \
 	    -e "s|%%NAME%%|${PORTNAME}|g" -e "s|%%API%%|gtk|g" \
 	    < ${FILESDIR}/avidemux2.desktop.in > ${WRKDIR}/${PORTNAME}.desktop
 	${INSTALL_DATA} "${WRKDIR}/${PORTNAME}.desktop" "${DESKTOPDIR}"
 	@${ECHO_CMD} "${PORTNAME}.desktop" >> ${TMPPLIST}
 .endif
-.if defined(WITH_QT4)
+.if ${PORT_OPTIONS:MQT4
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%DATADIR%%|${DATADIR}|g" \
 	    -e "s|%%NAME%%|${PORTNAME}|g" -e "s|%%API%%|qt4|g" \
 	    < ${FILESDIR}/avidemux2.desktop.in > ${WRKDIR}/${PORTNAME}_qt4.desktop
