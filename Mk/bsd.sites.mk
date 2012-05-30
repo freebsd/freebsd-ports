@@ -145,7 +145,7 @@ MASTER_SITE_CSME+=	${MASTER_SITE_CENKES}
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+=	\
-	http://www.gtlib.cc.gatech.edu/pub/debian/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/debian/%SUBDIR%/ \
 	ftp://ftp.us.debian.org/debian/%SUBDIR%/ \
 	${MASTER_SITE_DEBIAN_NON_US:S,/debian-non-US/,/debian/,}
 .endif
@@ -278,7 +278,7 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://mirror.web-ster.com/fedora/core/%SUBDIR%/ \
 	http://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
 	ftp://rpmfind.net/linux/fedora/core/%SUBDIR%/ \
-	ftp://ftp.gtlib.cc.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
+	ftp://ftp.gtlib.gatech.edu/pub/fedora.redhat/linux/core/%SUBDIR%/ \
 	ftp://fedora.mirrors.tds.net/pub/fedora-core/%SUBDIR%/ \
 	http://ftp.ndlug.nd.edu/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.ndlug.nd.edu/pub/fedora/linux/core/%SUBDIR%/ \
@@ -479,7 +479,7 @@ MASTER_SITE_GENTOO+=	\
 	http://gentoo.mirror.sdv.fr/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
 	http://gentoo.kems.net/%SUBDIR%/ \
-	ftp://ftp.gtlib.cc.gatech.edu/pub/gentoo/%SUBDIR%/ \
+	ftp://ftp.gtlib.gatech.edu/pub/gentoo/%SUBDIR%/ \
 	ftp://mirror.iawnet.sandia.gov/pub/gentoo/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/linux/gentoo/%SUBDIR%/ \
 	ftp://ftp.ucsb.edu/pub/mirrors/linux/gentoo/%SUBDIR%/ \
@@ -520,6 +520,7 @@ MASTER_SITE_GNOME+=	\
 	http://ftp.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	http://linorg.usp.br/gnome/%SUBDIR%/ \
 	http://mirror.aarnet.edu.au/pub/gnome/%SUBDIR%/ \
@@ -534,8 +535,8 @@ MASTER_SITE_GNOME+=	\
 MASTER_SITE_GNU+=	\
 	http://ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
-	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/gnu/gnu/%SUBDIR%/ \
+	http://mirrors.kernel.org/gnu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/GNU/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/GNU/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
@@ -642,9 +643,9 @@ MASTER_SITE_KENAI+=	\
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+=	\
 	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.gtlib.cc.gatech.edu/pub/kde/%SUBDIR%/ \
+	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
-	http://ftp.gtlib.cc.gatech.edu/pub/kde/%SUBDIR%/ \
+	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.oregonstate.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.solnet.ch/mirror/KDE/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/kde/%SUBDIR%/ \
@@ -755,7 +756,7 @@ MASTER_SITE_MOZILLA+= \
 	http://mirror.internode.on.net/pub/mozilla/%SUBDIR%/ \
 	http://ftp.acc.umu.se/pub/mozilla.org/%SUBDIR%/ \
 	http://mozilla.c3sl.ufpr.br/releases/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
 	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	ftp://ftp.fh-wolfenbuettel.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
@@ -1047,7 +1048,7 @@ MASTER_SITE_QT+= \
 .if !defined(IGNORE_MASTER_SITE_REDHAT_LINUX)
 MASTER_SITE_REDHAT_LINUX+= \
 	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://mirror.cs.wisc.edu/pub/mirrors/linux/redhat/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/pub/linux/redhat/linux/%SUBDIR%/ \
@@ -1196,7 +1197,7 @@ MASTER_SITE_SUDO+=	\
 .if !defined(IGNORE_MASTER_SITE_SUNSITE)
 MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/Linux/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.physics.auth.gr/pub/mirrors/ibiblio/Linux/%SUBDIR%/ \
 	ftp://ftp.edisontel.com/pub/Sunsite_Mirror/%SUBDIR%/ \
