@@ -3366,6 +3366,7 @@
     SUBDIR += py-repoze.what
     SUBDIR += py-repoze.what-pylons
     SUBDIR += py-repoze.who
+    SUBDIR += py-repoze.who-friendlyform
     SUBDIR += py-repoze.who-testutil
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-resourcepackage
