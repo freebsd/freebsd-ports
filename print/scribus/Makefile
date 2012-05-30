@@ -32,6 +32,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+NO_LATEST_LINK=	yes
 USE_XZ=		yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui linguist_build moc_build qmake_build rcc_build uic_build xml network
