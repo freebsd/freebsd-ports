@@ -27,4 +27,7 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
+DEPRECATED=		deprecated via upstream please use databases/pecl-rrd.
+EXPIRATION_DATE=	2012-06-30
+
 .include <bsd.port.mk>
