@@ -302,6 +302,7 @@
     SUBDIR += ldapsdk
     SUBDIR += ldapsh
     SUBDIR += lft
+    SUBDIR += libarms
     SUBDIR += libbgpdump
     SUBDIR += libcmis
     SUBDIR += libconnect
