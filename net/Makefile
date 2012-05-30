@@ -431,6 +431,7 @@
     SUBDIR += nph
     SUBDIR += ns
     SUBDIR += nss-pam-ldapd
+    SUBDIR += nss-pam-ldapd-sasl
     SUBDIR += nss_ldap
     SUBDIR += nstxd
     SUBDIR += ntlmaps
