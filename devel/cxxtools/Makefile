@@ -7,6 +7,7 @@
 
 PORTNAME=	cxxtools
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tntnet.org/download/
 
@@ -25,6 +26,21 @@ MAKE_JOBS_SAFE=	yes
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
+.endif
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	X86_64_ONLY=""
+.else
+PLIST_SUB+=	X86_64_ONLY="@comment "
+.endif
+.if ${ARCH} == "i386"
+PLIST_SUB+=	I386_ONLY=""
+.else
+PLIST_SUB+=	I386_ONLY="@comment "
+.endif
+.if (${ARCH} == "amd64") || (${ARCH} == "i386")
+PLIST_SUB+=	X86_ONLY=""
+.else
+PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
 .include <bsd.port.post.mk>
