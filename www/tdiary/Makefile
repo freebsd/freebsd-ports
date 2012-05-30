@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	3.1.3
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://www.tdiary.org/download/
@@ -17,11 +16,10 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/doc/LICENSE
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 RUN_DEPENDS=	hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
 		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize \
-		rubygem-json_pure>=1.6.5:${PORTSDIR}/devel/rubygem-json_pure \
 		rd2:${PORTSDIR}/textproc/ruby-rdtool
 
 NO_BUILD=	yes
@@ -39,10 +37,13 @@ RUBY_SHEBANG_FILES=	index.fcgi \
 			misc/plugin/xmlrpc/xmlrpc.rb \
 			misc/standalone_cgi/bin/server
 
-PORTDOCS=	ChangeLog HOWTO-make-io.rd HOWTO-make-plugin.html \
-		HOWTO-make-theme.html HOWTO-use-plugin.html \
-		HOWTO-write-tDiary.en.html HOWTO-write-tDiary.html INSTALL.html \
-		README.en.html README.html README.md UPGRADE doc.css
+HTML=	HOWTO-make-io.html HOWTO-make-plugin.html HOWTO-make-theme.html \
+	HOWTO-testing-tDiary.html HOWTO-use-plugin.html \
+	HOWTO-write-tDiary.en.html HOWTO-write-tDiary.html \
+	INSTALL-heroku.html INSTALL.html README.en.html README.html \
+	UPGRADE.html
+MD=	${HTML:C|$|.md|}
+PORTDOCS=	ChangeLog LICENSE doc.css ${HTML} ${MD}
 
 SUB_FILES=	pkg-message tdiaryinst.rb
 SUB_LIST+=	TDIARY_LANG=${TDIARY_LANG} \
@@ -80,27 +81,22 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 
 post-extract:
 	@${RM} ${WRKSRC}/.gitignore
-	@${RM} ${WRKSRC}/.rspec
 	@${RM} ${WRKSRC}/.travis.yml
 	@${RM} ${WRKSRC}/Capfile
 	@${RM} ${WRKSRC}/Gemfile
 	@${RM} ${WRKSRC}/Gemfile.lock
 	@${RM} ${WRKSRC}/Rakefile
 	@${RM} ${WRKSRC}/config.ru
+	@${RM} -r ${WRKSRC}/.bundle
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test
 	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
 	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
-	@${RM} -r ${WRKSRC}/vendor/json_pure-1.6.5
-	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.29
+	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.33
 	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/doc
 	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
-	@${MV} ${WRKSRC}/doc ${WRKDIR}
-
-post-patch:
-	@${RUBY} -i -pe "sub %r|((\s*)require 'json')|, %Q|\\\2require 'rubygems'\n\\\1|" ${WRKSRC}/tdiary.rb
 
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
@@ -111,8 +107,8 @@ pre-install:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${TDIARY_SCRIPT} ${PREFIX}/bin
 	@-${MKDIR} ${WWWDIR}
-	@${CP} -pR ${WRKSRC}/ ${WWWDIR}
-	@${LN} -s ${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/imagesize-0.1.1/lib ${WWWDIR}/vendor/imagesize-0.1.1/lib
+	@${TAR} --exclude "doc" -C ${WRKSRC} -cf - . | ${TAR} --unlink -C ${WWWDIR} -xf -
+	@${LN} -sf ${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/imagesize-0.1.1/lib ${WWWDIR}/vendor/imagesize-0.1.1/lib
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
@@ -120,7 +116,7 @@ post-install:
 	@${ECHO_CMD} bin/${TDIARY_SCRIPT} >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKDIR}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
