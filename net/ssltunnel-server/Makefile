@@ -17,14 +17,15 @@ COMMENT=	PPP over SSL virtual private networking (server part)
 
 LICENSE=	BSD
 
-OPTIONS=	TCPWRAPPERS "libwrap support" off
+OPTIONS_DEFINE=	TCPWRAPPERS
+TCPWRAPPERS_DESC=	libwrap support
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-client
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_TCPWRAPPERS)
+.if ${PORT_OPTIONS:MTCPWRAPPERS}
 CONFIGURE_ARGS+=--with-libwrap
 .endif
 

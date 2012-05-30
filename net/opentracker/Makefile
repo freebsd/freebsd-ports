@@ -20,42 +20,53 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-OPTIONS=	WANT_ACCESSLIST_BLACK "Enable client blacklisting" Off \
-		WANT_ACCESSLIST_WHITE "Enable client whitelisting" Off \
-		WANT_COMPRESSION_GZIP "Deliver gzip compressed full scrapes" Off \
-		DEBUG_HTTPERROR "Verbose HTTPERRORs" Off \
-		WANT_FULLSCRAPE "Can query tracker for all torrents" On \
-		WANT_V6 "IPv6-only" Off \
-		WANT_RESTRICT_STATS "Limit stats access based on IP" On
+OPTIONS_DEFINE= COMPRESSION_GZIP DEBUG_HTTPERROR FULLSCRAPE RESTRICT_STATS IPV6
+OPTIONS_SINGLE=	accesslist
+OPTIONS_SINGLE_accesslist=	ACCESSLIST_OPEN ACCESSLIST_BLACK \
+				ACCESSLIST_WHITE
+
+OPTIONS_DEFAULT=	FULLSCRAPE RESTRICT_STATS ACCESSLIST_OPEN
+
+ACCESSLIST_OPEN_DESC=	Disable black/whitelisting
+ACCESSLIST_BLACK_DESC=	Enable client blacklisting
+ACCESSLIST_WHITE_DESC=	Enable client whitelisting
+COMPRESSION_GZIP_DESC=	Deliver gzip compressed full scrapes
+DEBUG_HTTPERROR_DESC=	Verbose HTTPERRORs
+FULLSCRAPE_DESC=	Can query tracker for all torrents
+RESTRICT_STATS_DESC=	Limit stats access based on IP
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_WANT_ACCESSLIST_BLACK)
+.if ${PORT_OPTIONS:MACCESSLIST_BLACK}
 FEATURES+=-DWANT_ACCESSLIST_BLACK
-.endif
-.if defined(WITH_WANT_ACCESSLIST_WHITE)
+.elif ${PORT_OPTIONS:MACCESSLIST_WHITE}
 FEATURES+=-DWANT_ACCESSLIST_WHITE
 .endif
-.if defined(WITH_WANT_COMPRESSION_GZIP)
+
+.if ${PORT_OPTIONS:MCOMPRESSION_GZIP}
 FEATURES+=-DWANT_COMPRESSION_GZIP
 .endif
-.if defined(WITH_DEBUG_HTTPERROR)
+
+.if ${PORT_OPTIONS:MDEBUG_HTTPERROR}
 FEATURES+=-D_DEBUG_HTTPERROR
 .endif
-.if defined(WITH_WANT_FULLSCRAPE)
+
+.if ${PORT_OPTIONS:MFULLSCRAPE}
 FEATURES+=-DWANT_FULLSCRAPE
 .endif
-.if defined(WITH_WANT_V6)
+
+.if ${PORT_OPTIONS:MIPV6}
 FEATURES+=-DWANT_V6
 .endif
-.if defined(WITH_WANT_RESTRICT_STATS)
+
+.if ${PORT_OPTIONS:MRESTRICT_STATS}
 FEATURES+=-DWANT_RESTRICT_STATS
 .endif
 
 MAKE_ENV+=FEATURES="${FEATURES}"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

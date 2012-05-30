@@ -26,11 +26,11 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	openradius
 SUB_LIST=	LOGFILE="${LOGFILE}"
 
-OPTIONS=	LDAP	"With LDAP user database" off
+OPTIONS_DEFINE=	LDAP
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_LDAP)
+.if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=	YES
 PLIST_SUB+=	LDAP=""
 SCRIPTS_ENV+=	USE_LDAP=yes
@@ -93,4 +93,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
