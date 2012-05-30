@@ -37,8 +37,6 @@ PLUG_TPA_DESC=		Thunar Trash Panel Applet plugin
 PLUG_UCA_DESC=		Thunar User Customizable Actions plugin
 PLUG_WALL_DESC=		Thunar Wallpaper plugin
 
-.include <bsd.port.options.mk>
-
 CONFIGURE_ARGS+=	--disable-gtk-doc-html \
 		--enable-gio-unix \
 		--disable-gudev
