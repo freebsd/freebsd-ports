@@ -7,6 +7,7 @@
 
 PORTNAME=	xhprof
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -21,12 +22,5 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-DEFAULT_PHP_VER=53
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700110
-BROKEN=	Requires cpuset support
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
