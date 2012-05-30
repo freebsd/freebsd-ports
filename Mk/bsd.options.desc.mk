@@ -65,6 +65,7 @@ MUSEPACK_DESC?=		Support MPC audio format
 MYSQL_DESC?=		Enable MySQL backend
 NLS_DESC?=		Build and install the localisation data
 OSS_DESC?=		Enable Open Sound System support
+OPENGL_DESC?=		Enable OpenGL support
 PCRE_DESC?=		Enable regular expressions using libpcre
 PGSQL_DESC?=		Enable PostgreSQL backend
 PNG_DESC?=		Enable PNG support
