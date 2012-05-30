@@ -1476,6 +1476,7 @@
     SUBDIR += py-dotcloud.cli
     SUBDIR += py-dtflickr
     SUBDIR += py-fcgi
+    SUBDIR += py-fedex
     SUBDIR += py-feedfinder
     SUBDIR += py-feedgenerator
     SUBDIR += py-flask
