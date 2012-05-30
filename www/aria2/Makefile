@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.15.0
-PORTREVISION=	1
+PORTVERSION=	1.15.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -42,6 +41,7 @@ PLIST_FILES=	bin/aria2c \
 		${LANGS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2.mo|} \
 		share/doc/aria2/README \
 		share/doc/aria2/README.html \
+		share/doc/aria2/README.rst \
 		share/doc/aria2/aria2c.1.html \
 		share/doc/aria2/aria2c.1.asciidoc \
 		share/doc/aria2/README.asciidoc \
@@ -61,7 +61,8 @@ PLIST_DIRS=	share/doc/aria2/bash_completion \
 MANLANG=	"" ru
 MAN1=		aria2c.1
 
-OPTIONS=	SQLITE "Support for Firefox cookies" Off
+OPTIONS_DEFINE=	SQLITE
+OPTIONS_DEFAULT=	SQLITE
 
 .include <bsd.port.pre.mk>
 
@@ -69,7 +70,7 @@ OPTIONS=	SQLITE "Support for Firefox cookies" Off
 BROKEN=		Does not install on powerpc-9
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 CONFIGURE_ARGS+=	--with-sqlite3
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 .else
