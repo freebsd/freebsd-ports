@@ -36,6 +36,7 @@ GEOTIFF_DESC?=		Enable GeoTIFF support
 GIF_DESC?=		Enable GIF support
 GTK2_DESC?=		Enable GTK2 gui toolkit support
 GOGO_DESC?=		Enable gogo mp3 encoder
+GNUPG_DESC?=		Enable GNU Privacy Guard support
 GUI_DESC?=		Enable GUI support
 HTTPD_DESC?=		Support for httpd output streaming
 ICONS_DESC?=		Enable Icons theme
