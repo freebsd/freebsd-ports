@@ -44,7 +44,7 @@ PLIST_SUB=	GTKDOC="@comment "
 
 post-patch:
 # Needed to remove gtk-doc installation
-.if emty(PORT_OPTIONS:MDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e "s|docs||g" ${WRKSRC}/Makefile.in
 .endif
 
