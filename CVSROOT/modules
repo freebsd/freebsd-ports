@@ -5350,6 +5350,7 @@ hello                           ports/misc/hello
 helma                           ports/www/helma
 help2man                        ports/misc/help2man
 helpviewer                      ports/deskutils/helpviewer
+heme                            ports/editors/heme
 hercules                        ports/emulators/hercules
 heretic                         ports/games/heretic
 hermes                          ports/graphics/Hermes
@@ -28217,6 +28218,7 @@ xfce4-media                     ports/multimedia/xfce4-media
 xfce4-messenger-plugin          ports/net-im/xfce4-messenger-plugin
 xfce4-minicmd-plugin            ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer                     ports/audio/xfce4-mixer
+xfce4-mount-plugin              ports/sysutils/xfce4-mount-plugin
 xfce4-mpc-plugin                ports/audio/xfce4-mpc-plugin
 xfce4-netload-plugin            ports/sysutils/xfce4-netload-plugin
 xfce4-notes-plugin              ports/deskutils/xfce4-notes-plugin
