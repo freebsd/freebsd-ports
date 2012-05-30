@@ -6006,9 +6006,9 @@ DEFOPTIONS+=	${opt} "${${opt}_DESC:S|"||g:S|'| |g}" on
 .  for opt in ${OPTIONS_MULTI_${multi}}
 _COMPLETE_OPTIONS_LIST+=	${opt}
 .    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "M(${multi}): ${${opt}_DESC}" off
+DEFOPTIONS+=	${opt} "M(${multi}): ${${opt}_DESC:S|"||g:S|'| |g}" off
 .    else
-DEFOPTIONS+=    ${opt} "M(${multi}): ${${opt}_DESC}" on
+DEFOPTIONS+=    ${opt} "M(${multi}): ${${opt}_DESC:S|"||g:S|'| |g}" on
 .    endif
 .  endfor
 .endfor
@@ -6016,9 +6016,9 @@ DEFOPTIONS+=    ${opt} "M(${multi}): ${${opt}_DESC}" on
 .  for opt in ${OPTIONS_SINGLE_${single}}
 _COMPLETE_OPTIONS_LIST+=	${opt}
 .    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "S(${single}): ${${opt}_DESC}" off
+DEFOPTIONS+=	${opt} "S(${single}): ${${opt}_DESC:S|"||g:S|'| |g}" off
 .    else
-DEFOPTIONS+=	${opt} "S(${single}): ${${opt}_DESC}" on
+DEFOPTIONS+=	${opt} "S(${single}): ${${opt}_DESC:S|"||g:S|'| |g}" on
 .    endif
 .  endfor
 .endfor
@@ -6110,7 +6110,7 @@ showconfig:
 	@${ECHO_MSG} -n "     ${opt}=on"
 .  endif
 .  if !empty(${opt}_DESC)
-	@${ECHO_MSG} -n ": "${${opt}_DESC}
+	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
 .  endif
 	@${ECHO_MSG} ""
 .endfor
@@ -6124,7 +6124,7 @@ showconfig:
 	@${ECHO_MSG} -n "     ${opt}=on"
 .    endif
 .    if !empty(${opt}_DESC)
-	@${ECHO_MSG} -n ": "${${opt}_DESC}
+	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
 .    endif
 	@${ECHO_MSG} ""
 .  endfor
@@ -6140,7 +6140,7 @@ showconfig:
 	@${ECHO_MSG} -n "     ${opt}=on"
 .    endif
 .    if !empty(${opt}_DESC)
-	@${ECHO_MSG} -n ": "${${opt}_DESC}
+	@${ECHO_MSG} -n ": "${${opt}_DESC:Q}
 .    endif
 	@${ECHO_MSG} ""
 .  endfor
