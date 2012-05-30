@@ -3404,4 +3404,4 @@ devel/kdebindings4-python||2012-05-25|kdebindings4 ports have been refactored
 devel/kdebindings4-ruby||2012-05-25|kdebindings4 ports have been refactored
 devel/kdebindings4-smoke||2012-05-25|kdebindings4 ports have been refactored
 deskutils/plasma-applet-icontasks||2012-05-25|Integrated to KDE SC 4.8
-audio/audacity-devel||2012-05-30|Removed
+audio/audacity-devel|audio/audacity|2012-05-30|Removed in favor of stable
