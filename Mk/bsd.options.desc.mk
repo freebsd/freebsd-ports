@@ -2,8 +2,6 @@
 #
 # READ BEFORE EDITING:
 # - Please keep descriptions sorted alphabetically by variable name.
-# - Do not forget to wrap the description with double quotes if it contains
-#   parentheses or single quotes.
 #
 
 Options_Desc_MAINTAINER=	ports@FreeBSD.org
@@ -32,7 +30,7 @@ EXAMPLES_DESC?=		Build and install the examples
 EXPAT_DESC?=		Enable Expat support
 FAAC_DESC?=		Enable FAAC encoder support
 FAAD_DESC?=		Enable FAAD aac decoder support
-FFMPEG_DESC?=		"Support FFMPEG (wma aiff ac3 ape...)"
+FFMPEG_DESC?=		Support FFMPEG (wma aiff ac3 ape...)
 FLAC_DESC?=		Enable support for flac
 FONTCONFIG_DESC?=	Enable Font configuration API for X
 FPECTL_DESC?=		Enable floating point exception handling
@@ -100,7 +98,7 @@ PRINT_DESC?=		Enable Printer support
 PROJ_DESC?=		Enable PROJ.4 support 
 PTH_DESC?=		Enable GNU Pth for threading/multiprocessing
 PULSEAUDIO_DESC?=	Support PulseAudio sound server
-PYMALLOC_DESC?=		"Enable python's internal malloc"
+PYMALLOC_DESC?=		Enable python's internal malloc
 PYTHON_DESC?=		Enable Python binding/support
 QT4_DESC?=		Enable Qt4 gui toolkit support
 RAW_DESC?=		Enable RAW support
