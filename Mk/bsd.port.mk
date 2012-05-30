@@ -6102,6 +6102,7 @@ config-conditional: pre-config
 .if !target(showconfig)
 .include "${PORTSDIR}/Mk/bsd.options.desc.mk"
 showconfig:
+.if !empty(ALL_OPTIONS) || !empty(OPTIONS_SINGLE) || !empty(OPTIONS_MULTI)
 	@${ECHO_MSG} "===> The following configuration options are available for ${PKGNAME}":
 .for opt in ${ALL_OPTIONS}
 .  if empty(PORT_OPTIONS:M${opt})
@@ -6150,6 +6151,7 @@ showconfig:
 .undef single
 .undef opt
 	@${ECHO_MSG} "===> Use 'make config' to modify these settings"
+.endif
 .endif # showconfig
 
 .if !target(showconfig-recursive)
