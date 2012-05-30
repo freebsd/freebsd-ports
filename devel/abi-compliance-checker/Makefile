@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.97.5
+PORTVERSION=	1.97.7
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://forge.ispras.ru/attachments/download/1940/ \
+MASTER_SITES=	http://forge.ispras.ru/attachments/download/2009/ \
 		http://cloud.github.com/downloads/lvc/abi-compliance-checker/ \
 		LOCAL/bf
 
