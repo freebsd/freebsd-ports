@@ -30,6 +30,9 @@ USE_PYTHON=	yes
 PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 
+DEPRECATED=		deprecated via upstream
+EXPIRATION_DATE=	2012-06-30
+
 PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 plat-freebsd7 \
 		plat-freebsd8 plat-freebsd9 plat-freebsd10
 SHARED_WRKSRC=	${WRKSRC}/build.shared
