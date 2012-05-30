@@ -8,8 +8,7 @@ MASTER_SITES=	BERLIOS \
 DISTNAME=	avidemux_${PORTVERSION}
 
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame \
-		mad.2:${PORTSDIR}/audio/libmad \
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		png.6:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
@@ -37,33 +36,15 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 
-OPTIONS=	GTK "GTK+ GUI" on \
-		QT4 "QT4 GUI (Experimental)" off \
-		FREETYPE "TrueType font rendering engine" on \
-		FONTCONFIG "Font configuration API for X" on \
-		OSS "OSS audio device" on \
-		ESD "ESOUND audio device" off \
-		JACK "JACK audio device" off \
-		PULSE "PULSE audio device" off \
-		XVIDEO "X Video Extension library" on \
-		FAAC "FAAC (mpeg4/aac encoder)" on \
-		FAAD "FAAD (mpeg4/aac decoder)" on \
-		X264 "H.264 encoding" on \
-		VPX "VP8 decoding" on \
-		XVID "Xvid video" on \
-		SDL "SDL audio/video framework" on \
-		AMR "OpenCORE AMR 3GPP Speech Codecs" on \
-		VORBIS "OGG/Vorbis audio support" on \
-		NLS "Native languages support" on
+OPTIONS_DEFINE=	GTK2 QT4 FREETYPE FONTCONFIG OSS ESOUND JACK PULSEAUDIO XVIDEO FAAC \
+		FAAD X264 VPX XVID SDL AMR VORBIS NLS LAME
+OPTIONS_DEFAULT=	GTK2 FREETYPE FONTCONFIG OSS XVIDEO VPX XVID SDL FAAD VORBIS
+
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT=	LAME FAAC AMR
+.endif
 
 .include <bsd.port.pre.mk>
-
-# Package server cannot distribute these
-.if defined(PACKAGE_BUILDING)
-WITHOUT_LAME=	yes
-WITHOUT_FAAC=	yes
-WITHOUT_AMR=	yes
-.endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
 # of the stack)
@@ -74,150 +55,153 @@ CFLAGS+=	-fno-omit-frame-pointer
 # We haven't ALSA(Never) & Aften(Yet) on FreeBSD
 CMAKE_ARGS+=	-DARTS:BOOL=OFF -DALSA:BOOL=OFF -DAFTEN:BOOL=OFF
 
-.if !defined(WITH_GTK) && !defined(WITH_QT4)
-CMAKE_ARGS+=	-DX11:BOOL=OFF -DGTK:BOOL=OFF -DQT4:BOOL=OFF
-.endif
-
-.if defined(WITHOUT_GTK)
-CMAKE_ARGS+=	-DGTK:BOOL=OFF
-PLIST_SUB+=	GTK="@comment "
+.if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MQT4)
+CMAKE_ARGS+=	-DX11:BOOL=OFF
 .else
-USE_GNOME+=	gnomeprefix gnomehack gtk20
-PLIST_SUB+=	GTK=""
-.endif
-
-.if defined(WITHOUT_QT4)
-CMAKE_ARGS+=	-DQT4:BOOL=OFF
-PLIST_SUB+=	QT4="@comment "
-.else
-CMAKE_ARGS+=	-DLRELEASE_EXECUTABLE=${LOCALBASE}/bin/lrelease-qt4
-QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build gui
-PLIST_SUB+=	QT4=""
-.endif
-
-.if defined(WITH_GTK) || defined(WITH_QT4)
 USE_GNOME+=	libxslt desktopfileutils
 .endif
 
-.if defined(WITHOUT_OSS)
-CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=OFF
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME+=	gnomeprefix gnomehack gtk20
+PLIST_SUB+=	GTK=""
 .else
-CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=ON
+CMAKE_ARGS+=	-DGTK:BOOL=OFF
+PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if defined(WITHOUT_ESD)
-CMAKE_ARGS+=	-DESD:BOOL=OFF
-PLIST_SUB+=	ESD="@comment "
+.if ${PORT_OPTIONS:MQT4}
+CMAKE_ARGS+=	-DLRELEASE_EXECUTABLE=${LOCALBASE}/bin/lrelease-qt4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build linguist_build gui
+PLIST_SUB+=	QT4=""
 .else
+CMAKE_ARGS+=	-DQT4:BOOL=OFF
+PLIST_SUB+=	QT4="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MOSS}
+CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=ON
+.else
+CMAKE_ARGS+=	-DOSS_SUPPORT:BOOL=OFF
+.endif
+
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 PLIST_SUB+=	ESD=""
+.else
+CMAKE_ARGS+=	-DESD:BOOL=OFF
+PLIST_SUB+=	ESD="@comment "
 .endif
 
-.if defined(WITHOUT_JACK)
-CMAKE_ARGS+=	-DJACK:BOOL=OFF
-PLIST_SUB+=	JACK="@comment "
-.else
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
+.else
+CMAKE_ARGS+=	-DJACK:BOOL=OFF
+PLIST_SUB+=	JACK="@comment "
 .endif
 
-.if defined(WITHOUT_PULSE)
-CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
-PLIST_SUB+=	PULSE="@comment "
-.else
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE=""
+.else
+CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
+PLIST_SUB+=	PULSE="@comment "
 .endif
 
-.if defined(WITHOUT_FREETYPE)
-CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
-PLIST_SUB+=	FREETYPE="@comment "
-.else
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	FREETYPE=""
+.else
+CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
+PLIST_SUB+=	FREETYPE="@comment "
 .endif
 
-.if defined(WITHOUT_FONTCONFIG)
-CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MFONTCONFIG}
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+.else
+CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_XVIDEO)
-CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MXVIDEO}
 LIB_DEPENDS+=	Xv.1:${PORTSDIR}/x11/libXv
+.else
+CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_FAAC)
-CMAKE_ARGS+=	-DFAAC:BOOL=OFF
-PLIST_SUB+=	FAAC="@comment "
-.else
+.if ${PORT_OPTIONS:MFAAC}
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 PLIST_SUB+=	FAAC=""
+.else
+CMAKE_ARGS+=	-DFAAC:BOOL=OFF
+PLIST_SUB+=	FAAC="@comment "
 .endif
 
-.if defined(WITHOUT_FAAD)
-CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
-PLIST_SUB+=	FAAD="@comment "
+.if ${PORT_OPTIONS:MLAME}
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+PLIST_SUB+=	LAME=""
 .else
+CMAKE_ARGS+=	-DLAME:BOOL=OFF
+PLIST_SUB+=	LAME="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MFAAD}
 LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
+.else
+CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
+PLIST_SUB+=	FAAD="@comment "
 .endif
 
-.if defined(WITHOUT_X264)
-CMAKE_ARGS+=	-DX264:BOOL=OFF
-PLIST_SUB+=	X264="@comment "
-.else
+.if ${PORT_OPTIONS:MX264}
 LIB_DEPENDS+=	x264.123:${PORTSDIR}/multimedia/x264
 PLIST_SUB+=	X264=""
+.else
+CMAKE_ARGS+=	-DX264:BOOL=OFF
+PLIST_SUB+=	X264="@comment "
 .endif
 
-.if defined(WITHOUT_VPX)
-CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
-.else
+.if ${PORT_OPTIONS:MVPX}
 LIB_DEPENDS+=	vpx.1:${PORTSDIR}/multimedia/libvpx
+.else
+CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_XVID)
-CMAKE_ARGS+=	-DXVID:BOOL=OFF
-PLIST_SUB+=	XVID="@comment "
-.else
+.if ${PORT_OPTIONS:MXVID}
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 PLIST_SUB+=	XVID=""
+.else
+CMAKE_ARGS+=	-DXVID:BOOL=OFF
+PLIST_SUB+=	XVID="@comment "
 .endif
 
-.if defined(WITHOUT_SDL)
-CMAKE_ARGS+=	-DSDL:BOOL=OFF
-PLIST_SUB+=	SDL="@comment "
-.else
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 PLIST_SUB+=	SDL=""
+.else
+CMAKE_ARGS+=	-DSDL:BOOL=OFF
+PLIST_SUB+=	SDL="@comment "
 .endif
 
-.if defined(WITHOUT_VORBIS)
-CMAKE_ARGS+=	-DVORBIS:BOOL=OFF
-PLIST_SUB+=	VORBIS="@comment "
-.else
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
+.else
+CMAKE_ARGS+=	-DVORBIS:BOOL=OFF
+PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if defined(WITHOUT_AMR)
+.if ${PORT_OPTIONS:MAMR}
+LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
+PLIST_SUB+=	AMRNB=""
+PLIST_SUB+=	AMRWB=""
+.else
 CMAKE_ARGS+=	-DOPENCORE_AMRNB:BOOL=OFF
 PLIST_SUB+=	AMRNB="@comment "
 CMAKE_ARGS+=	-DOPENCORE_AMRWB:BOOL=OFF
 PLIST_SUB+=	AMRWB="@comment "
-.else
-LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
-PLIST_SUB+=	AMRNB=""
-PLIST_SUB+=	AMRWB=""
 .endif
 
-.if defined(WITHOUT_NLS)
-CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
-PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 . 	if !defined(WITH_QT4)
@@ -225,6 +209,9 @@ PLIST_SUB+=	QT_NLS="@comment "
 .	else
 PLIST_SUB+=	QT_NLS=""
 .	endif
+.else
+CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
+PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
 .endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
