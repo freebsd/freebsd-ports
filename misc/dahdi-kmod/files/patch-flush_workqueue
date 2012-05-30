@@ -1,0 +1,91 @@
+Index: freebsd/include/dahdi/compat/bsd.h
+===================================================================
+--- freebsd/include/dahdi/compat/bsd.h	(revision 10598)
++++ freebsd/include/dahdi/compat/bsd.h	(working copy)
+@@ -330,6 +330,7 @@
+ 
+ struct workqueue_struct *create_singlethread_workqueue(const char *name);
+ void destroy_workqueue(struct workqueue_struct *wq);
++void flush_workqueue(struct workqueue_struct *wq);
+ void queue_work(struct workqueue_struct *wq, struct work_struct *work);
+ 
+ /*
+Index: freebsd/freebsd/dahdi/bsd-compat.c
+===================================================================
+--- freebsd/freebsd/dahdi/bsd-compat.c	(revision 10598)
++++ freebsd/freebsd/dahdi/bsd-compat.c	(working copy)
+@@ -33,6 +33,8 @@
+ #include <sys/bus.h>
+ #include <sys/callout.h>
+ #include <sys/firmware.h>
++#include <sys/param.h>
++#include <sys/proc.h>
+ #include <sys/syscallsubr.h>
+ #include <sys/systm.h>
+ #include <sys/taskqueue.h>
+@@ -324,7 +326,31 @@
+ 	free(wq, M_DAHDI);
+ }
+ 
++static void
++_flush_workqueue_fn(void *context, int pending)
++{
++	/* nothing to do */
++}
++
++static void
++_flush_taskqueue(struct taskqueue **tq)
++{
++	struct task flushtask;
++
++	PHOLD(curproc);
++	TASK_INIT(&flushtask, 0, _flush_workqueue_fn, NULL);
++	taskqueue_enqueue_fast(*tq, &flushtask);
++	taskqueue_drain(*tq, &flushtask);
++	PRELE(curproc);
++}
++
+ void
++flush_workqueue(struct workqueue_struct *wq)
++{
++	_flush_taskqueue(&wq->tq);
++}
++
++void
+ queue_work(struct workqueue_struct *wq, struct work_struct *work)
+ {
+ 	work->tq = wq->tq;
+Index: freebsd/drivers/dahdi/wcte12xp/base.c
+===================================================================
+--- freebsd/drivers/dahdi/wcte12xp/base.c	(revision 10598)
++++ freebsd/drivers/dahdi/wcte12xp/base.c	(working copy)
+@@ -2441,13 +2441,11 @@
+ 	clear_bit(INITIALIZED, &wc->bit_flags);
+ 
+ 	del_timer_sync(&wc->timer);
+-#if !defined(__FreeBSD__)
+ 	flush_workqueue(wc->wq);
+ #ifdef VPM_SUPPORT
+ 	if (vpm)
+ 		flush_workqueue(vpm->wq);
+ #endif
+-#endif
+ 
+ 	voicebus_release(&wc->vb);
+ 
+Index: freebsd/drivers/dahdi/wctdm24xxp/xhfc.c
+===================================================================
+--- freebsd/drivers/dahdi/wctdm24xxp/xhfc.c	(revision 10598)
++++ freebsd/drivers/dahdi/wctdm24xxp/xhfc.c	(working copy)
+@@ -2129,11 +2129,7 @@
+ 			down(&wc->syncsem);
+ 			b4s[i]->shutdown = 1;
+ 			up(&wc->syncsem);
+-#if defined(__FreeBSD__)
+-			flush_work(&b4s[i]->xhfc_wq);
+-#else
+ 			flush_workqueue(b4s[i]->xhfc_ws);
+-#endif
+ 		}
+ 	}
+ }

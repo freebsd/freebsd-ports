@@ -867,13 +867,15 @@ Index: freebsd/drivers/dahdi/dahdi-base.c
  #endif
  	write_lock_irqsave(&chan_lock, flags);
  	if (test_bit(DAHDI_FLAGBIT_REGISTERED, &chan->flags)) {
-@@ -4649,6 +4679,10 @@
+@@ -4649,6 +4679,12 @@
  			chans[ch.chan]->hdlcnetdev = NULL;
  			chans[ch.chan]->flags &= ~DAHDI_FLAG_NETDEV;
  		}
 +#elif defined(__FreeBSD__)
 +		if (chans[ch.chan]->flags & DAHDI_FLAG_NETDEV) {
++			spin_unlock_irqrestore(&chans[ch.chan]->lock, flags);
 +			dahdi_iface_destroy(chans[ch.chan]);
++			spin_lock_irqsave(&chans[ch.chan]->lock, flags);
 +		}
  #else
  		if (ch.sigtype == DAHDI_SIG_HDLCNET) {
