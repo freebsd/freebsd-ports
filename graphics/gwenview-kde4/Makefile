@@ -30,4 +30,11 @@ QT_COMPONENTS=	dbus qmake_build moc_build uic_build rcc_build
 USE_XZ=	yes
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# mkdtemp() is not defined in stdlib.h in FreeBSD 7.
+.if ${OSVERSION} < 800000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-importer__fileutils.cpp
+.endif
+
+.include <bsd.port.post.mk>
