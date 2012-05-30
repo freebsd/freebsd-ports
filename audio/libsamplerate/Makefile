@@ -21,16 +21,17 @@ USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-OPTIONS=	CPU_CLIP "Allow machine-dependent clipping" off
+OPTIONS_DEFINE=	CPU_CLIP DOCS EXAMPLES
+CPU_CLIP_DESC=	Allow machine-dependent clipping
 
 .include <bsd.port.options.mk>
 
 MAKE_ARGS+=	htmldocdir=${PREFIX}/share/doc/libsamplerate
 
-.if !defined(WITH_CPU_CLIP)
-CONFIGURE_ARGS+=	--disable-cpu-clip
+.if ${PORT_OPTIONS:MCPU_CLIP}
+MANUAL_PACKAGE_BUILD=	CPU_CLIP may customize the package for the build machine
 .else
-MANUAL_PACKAGE_BUILD=	WITH_CPU_CLIP may customize the package for the build machine
+CONFIGURE_ARGS+=	--disable-cpu-clip
 .endif
 
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
@@ -39,7 +40,7 @@ BUILD_DEPENDS +=	${LOCALBASE}/lib/libfftw3.so:${PORTSDIR}/math/fftw3
 CONFIGURE_ARGS+=	--disable-fftw
 .endif
 
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .elif defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS +=	${LOCALBASE}/lib/libsndfile.so:${PORTSDIR}/audio/libsndfile
@@ -48,10 +49,10 @@ CONFIGURE_ARGS+=	--disable-sndfile
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	@${REINPLACE_CMD} -e '/SUBDIRS =/s/doc //' ${WRKSRC}/Makefile.in
 .endif
-.if defined(NOPORTEXAMPLES)
+.if empty(PORT_OPTIONS:MEXAMPLES)
 	@${REINPLACE_CMD} -e '/SUBDIRS =/s/examples //' ${WRKSRC}/Makefile.in
 .endif
 

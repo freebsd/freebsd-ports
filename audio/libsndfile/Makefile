@@ -35,22 +35,24 @@ MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \
 PORTDOCS=	AUTHORS ChangeLog NEWS README libsndfile.css \
 		new_file_type.HOWTO libsndfile.jpg *.html
 
-OPTIONS=	CPU_CLIP "Allow machine-dependent clipping" off \
-		EXTERNAL "Enable FLAC and Ogg Vorbis support" on
+OPTIONS_DEFINE=	CPU_CLIP EXTERNAL DOCS
+OPTIONS_DEFAULT=	EXTERNAL
+CPU_CLIP_DESC=	Allow machine-dependent clipping
+EXTERNAL_DESC=	Enable FLAC and Ogg Vorbis support
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_CPU_CLIP)
-CONFIGURE_ARGS+=	--disable-cpu-clip
-.else
+.if ${PORT_OPTIONS:MCPU_CLIP}
 MANUAL_PACKAGE_BUILD=	WITH_CPU_CLIP may customize the package for the build machine
+.else
+CONFIGURE_ARGS+=	--disable-cpu-clip
 .endif
 
-.if defined(WITHOUT_EXTERNAL)
-CONFIGURE_ARGS+=--disable-external-libs
-.else
+.if ${PORT_OPTIONS:MEXTERNAL}
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
+.else
+CONFIGURE_ARGS+=--disable-external-libs
 .endif
 
 post-patch:
@@ -61,7 +63,7 @@ check regression-test test: build
 	check
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
 		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
