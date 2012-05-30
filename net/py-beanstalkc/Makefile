@@ -11,8 +11,10 @@ CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	eyecue+freebsdports@gmail.com
-COMMENT=	A simple beanstalkd client library
+MAINTAINER=	koobs.freebsd@gmail.com
+COMMENT=	A simple beanstalkd client library for Python
+
+LICENSE=	AL2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
