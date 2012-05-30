@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libburn
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.pl01
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Libburnia library to read/write optical discs
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
