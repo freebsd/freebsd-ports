@@ -20,11 +20,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${SVGPNG}
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 
-OPTIONS=	PNG "Install png files" on
+OPTIONS_DEFINE=	PNG
+OPTIONS_DEFAULT=	PNG
+PNG_DESC=	Install png files
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_PNG)
+.if ${PORT_OPTIONS:MPNG}
 SVGPNG=	-full
 .else
 SVGPNG=	-svgonly
@@ -45,4 +47,4 @@ do-install:
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
