@@ -1,0 +1,12 @@
+=====================================================================
+
+LDAP and nslcd daemon parameters should be set in %%CONFIG_FILE%%. When upgrading review %%CONFIG_FILE%%.sample for additional or changed parameters.
+
+%%NSS_MESSAGE%%
+
+To start nslcd add nslcd_enable="YES" to /etc/rc.conf and run:
+
+  # service nslcd start
+
+See the comments in %%PREFIX%%/etc/rc.d/nslcd for additional tunables.
+=====================================================================

@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120530:
+  AFFECTS: users of net/nss-pam-ldap
+  AUTHOR: scheidell@FreeBSD.org
+
+  The net/nss-pam-ldapd port no longer provides an option for SASL. This has
+  been sourced out to the new net/nss-pam-ldapd-sasl port, to accomodate
+  users using packages (see ports/162240). Users with openldap-sasl-client
+  installed are encouraged to change the port's origin to:
+  net/nss-pam-ldapd-sasl using their favorite ports management tool.
+  Example for portmaster:
+  portmaster -o net/nss-pam-ldapd-sasl nss-pam-ldapd
+
 20120527:
   AFFECTS: users of x11-toolkits/qt4-gui
   AUTHOR: kde@FreeBSD.org
