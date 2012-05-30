@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	faraday
-PORTVERSION=	0.7.6
+PORTVERSION=	0.8.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A HTTP/REST API client library in Ruby
 
-RUN_DEPENDS=	rubygem-rack>=1.1:${PORTSDIR}/www/rubygem-rack \
-		rubygem-multipart-post>=1.1:${PORTSDIR}/www/rubygem-multipart-post \
-		rubygem-addressable>=2.2:${PORTSDIR}/www/rubygem-addressable
+RUN_DEPENDS=	rubygem-multipart-post>=1.1:${PORTSDIR}/www/rubygem-multipart-post
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
