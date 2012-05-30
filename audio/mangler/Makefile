@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mangler
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.mangler.org/downloads/
+MASTER_SITES=	http://www.mangler.org/downloads/ \
+		http://ultimeordi.com/pub/mangler/
 
 MAINTAINER=	janik@hikarihq.com
 COMMENT=	A Ventrilo VOIP combatible client
@@ -29,6 +30,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS=	PULSEAUDIO "Adds support for the PulseAudio sound server" off
+
+MAN1=   mangler.1
 
 .include <bsd.port.pre.mk>
 
