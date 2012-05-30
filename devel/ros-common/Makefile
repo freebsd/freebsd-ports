@@ -21,6 +21,8 @@ EXTRACT_ONLY=	common-${PORTVERSION}.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot Operating System - common utilities
 
+BROKEN=		does not compile
+
 #LICENSE_COMB=	multi
 #LICENSE=	BSD Zlib MIT LGPL Poco MPL11 #which?
 
