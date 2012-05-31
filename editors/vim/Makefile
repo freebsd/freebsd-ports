@@ -167,7 +167,7 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}
 .if exists(${LOCALBASE}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
-.if exists(${LOCALBASE}/lib/libintl.so) && !defined(WITHOUT_NLS)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .else
 MAKE_ARGS+=	CONF_OPT_NLS="--disable-nls"
