@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20120531:
+  AFFECTS: users of editors/koffice-kde4
+  AUTHOR: kde@FreeBSD.org
+
+  KOffice 2 has been replaced by Calligra. You are encouraged to
+  deinstall any KOffice port and install equivalent Calligra ones:
+
+  # pkg_delete \*koffice\*
+  # portmaster editors/calligra <additional l10n ports>
+
 20120530:
   AFFECTS: users of databases/postgresql*-server
   AUTHOR:  jgh@FreeBSD.org

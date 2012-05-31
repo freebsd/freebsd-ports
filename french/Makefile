@@ -10,6 +10,7 @@
     SUBDIR += aspell
     SUBDIR += aster
     SUBDIR += belote
+    SUBDIR += calligra-l10n
     SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += eficas_doc
@@ -28,7 +29,6 @@
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += koffice-i18n
-    SUBDIR += koffice-kde4-l10n
     SUBDIR += libreoffice
     SUBDIR += med
     SUBDIR += mythes

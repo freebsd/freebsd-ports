@@ -21,6 +21,8 @@
     SUBDIR += bitchx
     SUBDIR += bug5
     SUBDIR += c2t
+    SUBDIR += calligra-l10n-zh_CN
+    SUBDIR += calligra-l10n-zh_TW
     SUBDIR += cce
     SUBDIR += cconv
     SUBDIR += celvis
@@ -69,8 +71,6 @@
     SUBDIR += kde4-l10n-zh_TW
     SUBDIR += koffice-i18n-zh_CN
     SUBDIR += koffice-i18n-zh_TW
-    SUBDIR += koffice-kde4-l10n-zh_CN
-    SUBDIR += koffice-kde4-l10n-zh_TW
     SUBDIR += kon2
     SUBDIR += libchewing
     SUBDIR += libgooglepinyin

@@ -1,3 +1,19 @@
-KOffice is a free, integrated office suite for KDE, the K Desktop Environment.
+Calligra is an integrated suite of KDE applications that cover office,
+creative and management needs.
 
-WWW:	http://koffice.org/
+Office productivity:
+- Words for text processing;
+- Sheets for computations;
+- Stage for presentations;
+- Flow for diagrams and flowcharts;
+- Kexi for database management;
+- Braindump for note taking.
+
+Graphics:
+- Krita for advanced drawing and image manipulation;
+- Karbon for vector graphics.
+
+Management:
+- Plan for project planning.
+
+WWW: http://calligra.org
