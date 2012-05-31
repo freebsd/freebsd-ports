@@ -65,16 +65,12 @@ lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/expansions.m4
 lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/make-dist.targets
 lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/package.pc.template
 lib/monodevelop/AddIns/MonoDevelop.Autotools/templates/rules.make
-lib/monodevelop/AddIns/MonoDevelop.CodeMetrics/MonoDevelop.CodeMetrics.dll
-lib/monodevelop/AddIns/MonoDevelop.CodeMetrics/MonoDevelop.CodeMetrics.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/Mono.Debugger.Soft.dll
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/Mono.Debugger.Soft.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/Mono.Debugging.Soft.dll
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/Mono.Debugging.Soft.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/MonoDevelop.Debugger.Soft.AspNet.dll
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/MonoDevelop.Debugger.Soft.AspNet.dll.mdb
-lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/MonoDevelop.Debugger.Soft.Moonlight.dll
-lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/MonoDevelop.Debugger.Soft.Moonlight.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/MonoDevelop.Debugger.Soft.dll
 lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft/MonoDevelop.Debugger.Soft.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Debugger/MonoDevelop.Debugger.dll
@@ -93,18 +89,10 @@ lib/monodevelop/AddIns/MonoDevelop.GtkCore/MonoDevelop.GtkCore.dll
 lib/monodevelop/AddIns/MonoDevelop.GtkCore/MonoDevelop.GtkCore.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll
 lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll.config
-lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.GtkCore/libsteticui.dll
 lib/monodevelop/AddIns/MonoDevelop.GtkCore/libsteticui.dll.config
-lib/monodevelop/AddIns/MonoDevelop.GtkCore/libsteticui.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.HexEditor.dll
 lib/monodevelop/AddIns/MonoDevelop.HexEditor.dll.mdb
-lib/monodevelop/AddIns/MonoDevelop.Moonlight/MonoDevelop.Moonlight.dll
-lib/monodevelop/AddIns/MonoDevelop.Moonlight/MonoDevelop.Moonlight.dll.mdb
-lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/Silverlight.js
-lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/framework_SL_2_0.xml
-lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/framework_SL_3_0.xml
-lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates/framework_SL_4_0.xml
 lib/monodevelop/AddIns/MonoDevelop.MsVisualStudio/MonoDevelop.MsVisualStudio.dll
 lib/monodevelop/AddIns/MonoDevelop.MsVisualStudio/MonoDevelop.MsVisualStudio.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Refactoring/MonoDevelop.Refactoring.dll
@@ -173,8 +161,16 @@ lib/monodevelop/AddIns/VersionControl/menu_status.png
 lib/monodevelop/AddIns/VersionControl/menu_update.png
 lib/monodevelop/bin/ICSharpCode.Decompiler.dll
 lib/monodevelop/bin/ICSharpCode.Decompiler.dll.mdb
+lib/monodevelop/bin/ICSharpCode.NRefactory.CSharp.dll
+lib/monodevelop/bin/ICSharpCode.NRefactory.CSharp.dll.mdb
 lib/monodevelop/bin/ICSharpCode.NRefactory.dll
 lib/monodevelop/bin/ICSharpCode.NRefactory.dll.mdb
+lib/monodevelop/bin/MSBuild/2.0/MonoDevelop.Projects.Formats.MSBuild.exe
+lib/monodevelop/bin/MSBuild/2.0/MonoDevelop.Projects.Formats.MSBuild.exe.config
+lib/monodevelop/bin/MSBuild/2.0/MonoDevelop.Projects.Formats.MSBuild.exe.mdb
+lib/monodevelop/bin/MSBuild/3.5/MonoDevelop.Projects.Formats.MSBuild.exe
+lib/monodevelop/bin/MSBuild/3.5/MonoDevelop.Projects.Formats.MSBuild.exe.config
+lib/monodevelop/bin/MSBuild/3.5/MonoDevelop.Projects.Formats.MSBuild.exe.mdb
 lib/monodevelop/bin/Mono.Cecil.Mdb.dll
 lib/monodevelop/bin/Mono.Cecil.Mdb.dll.mdb
 lib/monodevelop/bin/Mono.Cecil.dll
@@ -280,6 +276,9 @@ share/mime/text/x-vb.xml
 @dirrmtry share/applications
 @dirrm lib/monodevelop/data/options
 @dirrm lib/monodevelop/data
+@dirrm lib/monodevelop/bin/MSBuild/3.5
+@dirrm lib/monodevelop/bin/MSBuild/2.0
+@dirrm lib/monodevelop/bin/MSBuild
 @dirrm lib/monodevelop/bin
 @dirrm lib/monodevelop/AddIns/VersionControl
 @dirrm lib/monodevelop/AddIns/NUnit
@@ -292,15 +291,12 @@ share/mime/text/x-vb.xml
 @dirrm lib/monodevelop/AddIns/MonoDevelop.RegexToolkit
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Refactoring
 @dirrm lib/monodevelop/AddIns/MonoDevelop.MsVisualStudio
-@dirrm lib/monodevelop/AddIns/MonoDevelop.Moonlight/Templates
-@dirrm lib/monodevelop/AddIns/MonoDevelop.Moonlight
 @dirrm lib/monodevelop/AddIns/MonoDevelop.GtkCore
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Gettext
 @dirrm lib/monodevelop/AddIns/MonoDevelop.DesignerSupport
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Deployment
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Debugger.Soft
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Debugger
-@dirrm lib/monodevelop/AddIns/MonoDevelop.CodeMetrics
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Autotools/templates
 @dirrm lib/monodevelop/AddIns/MonoDevelop.Autotools
 @dirrm lib/monodevelop/AddIns/MonoDevelop.AspNet/Schemas
