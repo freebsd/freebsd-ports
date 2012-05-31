@@ -71,7 +71,7 @@ PLIST_SUB+=	LANG_RU=""
 .else
 PLIST_SUB+=	LANG_RU="@comment "
 .endif
-.if ${PORT_OPTIONS:MLANG_DE} && ${PORT_OPTIONS:MLANG_FR} && ${PORT_OPTIONS:MLANG_PTBR} && ${PORT_OPTIONS:MLANG_RU}
+.if !empty(PORT_OPTIONS:MLANG_DE) && !empty(PORT_OPTIONS:MLANG_FR) && !empty(PORT_OPTIONS:MLANG_PTBR) && !empty(PORT_OPTIONS:MLANG_RU)
 PLIST_SUB+=	TRANSLATIONS=""
 .else
 PLIST_SUB+=	TRANSLATIONS="@comment "
@@ -117,7 +117,7 @@ do-install:
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} designer/libqscintillaplugin.so ${PLUGINDIR} )
 .endif
-.if ${PORT_OPTIONS:MLANG_DE} || ${PORT_OPTIONS:MLANG_FR} || ${PORT_OPTIONS:MLANG_PTBR} || ${PORT_OPTIONS:MLANG_RU}
+.if !empty(PORT_OPTIONS:MLANG_DE) || !empty(PORT_OPTIONS:MLANG_FR) || !empty(PORT_OPTIONS:MLANG_PTBR) || !empty(PORT_OPTIONS:MLANG_RU)
 	${MKDIR} -m 0755 ${DATADIR}/translations
 .endif
 .if ${PORT_OPTIONS:MLANG_DE}
