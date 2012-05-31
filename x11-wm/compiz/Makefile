@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	--disable-gtk
 PLIST_SUB+=	GTK2="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MMETACITY} && ${PORT_OPTIONS:MGNOME} && ${PORT_OPTIONS:MGTK2}
+.if !empty(PORT_OPTIONS:MMETACITY) && !empty(PORT_OPTIONS:MGNOME) && !empty(PORT_OPTIONS:MGTK2)
 CONFIGURE_ARGS+=	--enable-metacity
 USE_GNOME+=	metacity
 .else
