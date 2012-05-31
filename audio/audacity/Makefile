@@ -9,7 +9,6 @@ PORTVERSION=	2.0.0
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
-PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -20,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-CONFLICTS=	audacity-[0-9]*
+CONFLICTS=	audacity-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
