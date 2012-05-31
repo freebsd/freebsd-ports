@@ -14,8 +14,8 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Abraca is a GTK2 client for the XMMS2 music player
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	xmmsclient.6:${PORTSDIR}/audio/xmms2 \
-		gee.2:${PORTSDIR}/devel/libgee
+LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2 \
+		gee:${PORTSDIR}/devel/libgee
 
 USE_SCONS=	yes
 USE_GNOME=	gtk30
@@ -25,11 +25,12 @@ SCONS_ARGS=	MANDIR=${MANPREFIX}/man
 MAN1=		abraca.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	NLS	"Enable gettext support" on
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=	NLS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS='@comment '
 .else
@@ -38,7 +39,7 @@ USE_GETTEXT=	yes
 .endif
 
 post-configure:
-.if defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's/%%NLS%%/0/' ${WRKSRC}/SConstruct
 .else
 	@${REINPLACE_CMD} -e 's/%%NLS%%/1/' ${WRKSRC}/SConstruct

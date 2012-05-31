@@ -17,11 +17,11 @@ COMMENT=	A poker game written in C++/QT4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		mikmod.2:${PORTSDIR}/audio/libmikmod \
-		gnutls.47:${PORTSDIR}/security/gnutls \
-		curl.6:${PORTSDIR}/ftp/curl \
-		gsasl.15:${PORTSDIR}/security/gsasl \
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
+		mikmod:${PORTSDIR}/audio/libmikmod \
+		gnutls:${PORTSDIR}/security/gnutls \
+		curl:${PORTSDIR}/ftp/curl \
+		gsasl5:${PORTSDIR}/security/gsasl \
 		tinyxml:${PORTSDIR}/textproc/tinyxml
 BUILD_DEPENDS=	${LOCALBASE}/include/libircclient.h:${PORTSDIR}/irc/libircclient
 
@@ -39,6 +39,8 @@ QMAKE_ARGS+=	PREFIX=${PREFIX}
 PORTDOCS=	server_setup_howto.txt
 MAN1=		pokerth.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|/usr([a-z|/]*)|${LOCALBASE}/\1|g' \
@@ -55,7 +57,7 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/pokerth ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pokerth_server ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/server_setup_howto.txt ${DOCSDIR}
 .endif

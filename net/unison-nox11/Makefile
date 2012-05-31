@@ -13,7 +13,8 @@ COMMENT=	A user-level file synchronization tool (without x11 stuff)
 
 CONFLICTS=	unison-[0-9]*, unison-devel-[0-9]*
 
-WITHOUT_X11=	yes
+OPTIONS_EXCLUDE=	GTK2
+OPTIONS_DEFAULT=	DOCS
 MASTERDIR=	${.CURDIR}/../unison
 
 .include "${MASTERDIR}/Makefile"

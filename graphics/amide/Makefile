@@ -30,12 +30,12 @@ MAN1=		amide.1
 OPTIONS_DEFINE=	DCMTK FAME FFMPEG GSL VOLPACK XMEDCON
 OPTIONS_DEFAULT= DCMTK FFMPEG GSL VOLPACK XMEDCON
 
-DCMTK_DESC=	"Use dcmtk"
-FAME_DESC=	"Use libfame (mutually exclusive with ffmpeg)"
-FFMPEG_DESC=	"Use ffmpeg (mutually exclusive with libfame)"
-GSL_DESC=	"Use gsl"
-VOLPACK_DESC=	"Use volpack"
-XMEDCON_DESC=	"Use xmedcon"
+DCMTK_DESC=	Use dcmtk
+FAME_DESC=	Use libfame (mutually exclusive with ffmpeg)
+FFMPEG_DESC=	Use ffmpeg (mutually exclusive with libfame)
+GSL_DESC=	Use gsl
+VOLPACK_DESC=	Use volpack
+XMEDCON_DESC=	Use xmedcon
 
 .include <bsd.port.options.mk>
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-libdcmdata
 
 .if ${PORT_OPTIONS:MFAME}
 .  if${PORT_OPTIONS:MFFMPEG}
-IGNORE=		libfame and ffmpeg support are mutually exclusive, please check options.
+IGNORE=		libfame and ffmpeg support are mutually exclusive, please check options
 .  endif
 LIB_DEPENDS+=	fame:${PORTSDIR}/multimedia/libfame
 CONFIGURE_ARGS+=	--enable-libfame

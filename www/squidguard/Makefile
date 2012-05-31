@@ -19,10 +19,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	A fast redirector for squid
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 USE_BDB=	40+
 GNU_CONFIGURE=	yes
@@ -50,30 +50,32 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 		SAMPLE_BL_DIR=${SAMPLE_BL_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	SAMPLE_BL	"Install sample blacklists" On \
-		LDAP		"Enable LDAP support" Off \
-		DNS_BL		"Enable DNS based blacklists" Off \
-		QUOTE_STRING	"Add quoted string patch" Off
+OPTIONS_DEFINE=	DNS_BL DOCS LDAP QUOTE_STRING SAMPLE_BL
+OPTIONS_DEFAULT=	SAMPLE_BL
 
-.include <bsd.port.pre.mk>
+SAMPLE_BL_DESC=	Install sample blacklists
+DNS_BL_DESC=	Enable DNS based blacklists
+QUOTE_STRING=	Add quoted string patch
 
-.if defined(WITH_LDAP)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=	--with-ldap
 USE_OPENLDAP=		yes
 .else
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
-.if defined(WITHOUT_SAMPLE_BL)
+.if ${PORT_OPTIONS:MSAMPLE_BL}
+. if !exists(${DATADIR})
+INSTALL_BL=	yes
+. else
+INSTALL_BL=	no
+. endif
+PLIST_SUB+=	BLACKLIST=""
+.else
 INSTALL_BL=	no
 PLIST_SUB+=	BLACKLIST="@comment "
-.else
-.if !exists(${DATADIR})
-INSTALL_BL=	yes
-.else
-INSTALL_BL=	no
-.endif
-PLIST_SUB+=	BLACKLIST=""
 .endif
 
 pre-fetch:
@@ -90,15 +92,15 @@ post-patch:
 		${REINPLACE_CMD} -E -e 's,(db_version),\1_4002,g' \
 			${WRKSRC}/configure ; \
 	fi
-.if defined(WITH_QUOTE_STRING)
+.if ${PORT_OPTIONS:MQUOTE_STRING}
 	${PATCH} -d ${WRKSRC} --forward --quiet -p2 <${DISTDIR}/squidGuard-1.4-quoted_string_support.diff
 .endif
-.if defined(WITH_DNS_BL)
+.if ${PORT_OPTIONS:MDNS_BL}
 	${PATCH} -d ${WRKSRC} --forward --quiet -p1 <${DISTDIR}/squidGuard-1.4-dnsbl.patch
 .endif
 
 post-build:
-.if !defined(WITHOUT_SAMPLE_BL)
+.if ${PORT_OPTIONS:MSAMPLE_BL}
 	@${ECHO_MSG} "===>   Building blacklists"
 	${MKDIR} ${_DATADIR}
 	@${TAR} -C ${_DATADIR} --exclude *.diff -pxzf \
@@ -112,7 +114,7 @@ pre-install:
 #
 # Install blacklists
 #
-.if !defined(WITHOUT_SAMPLE_BL)
+.if ${PORT_OPTIONS:MSAMPLE_BL}
 	@${MKDIR} ${SAMPLE_BL_DIR}
 	@${CP} -Rpf ${_DATADIR}/* ${SAMPLE_BL_DIR}
 	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${SAMPLE_BL_DIR}
@@ -179,12 +181,12 @@ post-install:
 #
 # Install documentation
 #
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing ${PORTNAME} documentation"
 	-@${MKDIR} ${DOCSDIR}
-.for i in ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif ${WRKSRC}/doc/README
+. for i in ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.gif ${WRKSRC}/doc/README
 	@${INSTALL_DATA} ${WRKSRC}$i ${DOCSDIR}
-.endfor
+. endfor
 	@if [ -f ${WRKDIR}/README.blacklists ] ; then \
 		${INSTALL_DATA} ${WRKDIR}/README.blacklists ${DOCSDIR} ; \
 	fi
@@ -198,4 +200,4 @@ post-install:
 
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
