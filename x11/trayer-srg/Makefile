@@ -26,18 +26,17 @@ USE_XORG=	xmu
 USE_GMAKE=	yes
 MAKE_ARGS=	"PREFIX=${PREFIX}"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README CREDITS CHANGELOG
-.endif
-
 PLIST_FILES=	bin/trayer
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
+. for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+. endfor
 .endif
 
 .include <bsd.port.mk>

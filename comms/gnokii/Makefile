@@ -46,66 +46,78 @@ MAN8=		gnokiid.8 mgnokiidev.8
 
 CONFLICTS=	smstools-[0-9]* sendsms-[0-9]*
 
-OPTIONS=	ICAL	"Build with IETF iCal support"		off \
-		USB	"Build with libusb support"		off \
-		PCSC	"Build with PC/SC-Lite support"		off \
-		SMSD	"Enable smsd daemon"			off \
-		MYSQL	"Enable MySQL support for smsd"		off \
-		PGSQL	"Enable PostgreSQL support for smsd"	off \
-		SQLITE	"Enable SQLite support in smsd"		off \
-		X11	"Build graphical version (xgnokii)"	on
+OPTIONS_DEFINE=	DOCS ICAL MYSQL PCSC PGSQL SMSD SQLITE USB X11
+OPTIONS_DEFAULT=	X11
 
-.include <bsd.port.pre.mk>
+ICAL_DESC=	Build with IETF iCal support
+USB_DESC=	Build with libusb support
+PCSC_DESC=	Build with PC/SC-Lite support
+SMSD_DESC=	Enable smsd daemon
+MYSQL_DESC=	Enable MySQL backend for smsd
+PGSQL_DESC=	Enable PostgreSQL backend for smsd
+SQLITE_DESC=	Enable SQLite backend in smsd
+X11_DESC=	Build graphical version (xgnokii)
 
-.if exists(${LOCALBASE}/lib/libical.so) || defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.44:${PORTSDIR}/devel/libical
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MICAL}
+LIB_DEPENDS+=		ical:${PORTSDIR}/devel/libical
+.else
+CONFIGURE_ARGS+=	--disable-libical
 .endif
 
 .if ${OSVERSION} < 800069
-. if exists(${LOCALBASE}/lib/libusb.so) || defined(WITH_USB)
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+. if ${PORT_OPTIONS:MUSB}
+LIB_DEPENDS+=		usb-0.1.8:${PORTSDIR}/devel/libusb
+. else
+CONFIGURE_ARGS+=	--disable-libusb
 . endif
 .endif
 
-.if exists(${LOCALBASE}/lib/libpcsclite.so) || defined(WITH_PCSC)
-LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+.if ${PORT_OPTIONS:MPCSC}
+LIB_DEPENDS+=		pcsclite:${PORTSDIR}/devel/pcsc-lite
+.else
+CONFIGURE_ARGS+=	--disable-libpcsclite
 .endif
 
-.if !defined(WITH_SMSD)
+.if !${PORT_OPTIONS:MSMSD}
 PLIST_SUB+=	SMSD='@comment ' MSM='@comment ' PGM='@comment ' SQLT='@comment '
 CONFIGURE_ARGS+=	--disable-smsd
 .else
 PLIST_SUB+=	SMSD=''
 USE_GNOME+=	glib20
 MAN8+=		smsd.8
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so) && !defined(WITHOUT_MYSQL)
+. if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 PLIST_SUB+=	MSM=''
-.else
+. else
+CONFIGURE_ARGS+=	--disable-mysql
 PLIST_SUB+=	MSM='@comment '
-.endif
-.if exists(${LOCALBASE}/bin/psql) && !defined(WITHOUT_PGSQL)
+. endif
+. if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 PLIST_SUB+=	PGM=''
-.else
+. else
+CONFIGURE_ARGS+=	--disable-postgres
 PLIST_SUB+=	PGM='@comment '
-.endif
-.if exists(${LOCALBASE}/lib/libsqlite3.so) && !defined(WITHOUT_SQLITE)
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+. endif
+. if ${PORT_OPTIONS:MSQLITE}
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 PLIST_SUB+=	SQLT=''
-.else
+. else
+CONFIGURE_ARGS+=	--disable-sqlite
 PLIST_SUB+=	SQLT='@comment '
-.endif
+. endif
 .endif
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=	X11='@comment '
-.else
+.if ${PORT_OPTIONS:MX11}
 CONFIGURE_ARGS+=	--with-x
 USE_XORG=	xpm
 USE_GNOME+=	gtk20
 PLIST_SUB+=	X11=''
+.else
+CONFIGURE_ARGS+=	--without-x
+PLIST_SUB+=	X11='@comment '
 .endif
 
 FIXPREFIX=	Docs/man/gnokiid.8 Docs/DataCalls-QuickStart Docs/README \
@@ -130,27 +142,27 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${PREFIX}/libdata/pkgconfig
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${GMAKE} install -C ${WRKSRC}/Docs
 .else
 	${GMAKE} install -C ${WRKSRC}/Docs/man
 .endif
 	${INSTALL_DATA} ${WRKSRC}/Docs/sample/gnokiirc \
 		${PREFIX}/etc/gnokiirc.sample
-.if defined(WITH_SMSD)
+.if ${PORT_OPTIONS:MSMSD}
 	@cd ${WRKSRC}/smsd && ${GMAKE} install
 	${MKDIR} ${PREFIX}/share/smsd
 	${INSTALL_SCRIPT} ${WRKSRC}/smsd/action ${PREFIX}/share/smsd
 	${INSTALL_DATA} ${WRKSRC}/smsd/README ${PREFIX}/share/smsd
-.if defined(WITH_MYSQL)
+.  if ${PORT_OPTIONS:MMYSQL}
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.mysql.sql ${PREFIX}/share/smsd
-.endif
-.if defined(WITH_PGSQL)
+.  endif
+.  if ${PORT_OPTIONS:MPGSQL}
 	${INSTALL_DATA} ${WRKSRC}/smsd/sms.tables.pq.sql ${PREFIX}/share/smsd
-.endif
+.  endif
 .endif
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

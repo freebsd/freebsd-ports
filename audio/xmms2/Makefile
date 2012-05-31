@@ -29,39 +29,36 @@ PLIST_SUB+=	INCLUDEDIR="include/${PORTNAME}" LIBDIR="lib/${PORTNAME}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	AIRPLAY	"Support output via Airport Express" off \
-		AO	"Support to output via libao" off \
-		APE	"Support to playback Monkey's Audio files" off \
-		AVCODEC	"Support to playback files with avcodec" off \
-		CDDA	"Support to playback AudioCD" off \
-		CURL	"Support to playback files via HTTP" on \
-		FAAD	"Support to playback AAC files" on \
-		FAM	"Support to update Media Library on file change" off \
-		FLAC	"Support to playback FLAC files" on \
-		GME	"Support to playback video game music files" off \
-		GVFS	"Support to playback files via GVFS" off \
-		ICES	"Support to playback files to an icecast server" off \
-		JACK	"Support to output via the Jack output server" off \
-		MAD	"Support to playback MP3 files" on \
-		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
-		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
-		MMS	"Support to playback streams via MMS" off \
-		MODPLUG	"Support to playback MOD files" off \
-		MPG123	"Support to playback MP3 files" off \
-		MUSEPACK "Support to playback MPC files" off \
-		OFA	"Support to collect MusicDNS fingerprints" off \
-		PULSE	"Support to output via the PulseAudio" off \
-		SAMBA	"Support to playback files via SMB" off \
-		SID	"Support to playback SID files" off \
-		SNDFILE	"Support to playback AIFF/AU/CAF/PAF files" off \
-		SPEEX	"Support to playback SPEEX files" off \
-		TREMOR	"Support to playback OGG files" off \
-		VISUAL	"Support for visualization plugins" off \
-		VOCODER	"Phase Vocoder effect plugin" off \
-		VORBIS	"Support to playback OGG files" on \
-		WAVPACK	"Support to playback WV files" off \
-		XML	"Support for XML based playlists (XSPF, RSS)" off \
-		ET	"Install usage feedback reporting client" off
+OPTIONS_DEFINE=	AIRPLAY AO APE AVCODEC CDDA CURL ET FAAD FAM FLAC \
+		GME GVFS ICES JACK MAD MDNS_APPLE MDNS_AVAHI MMS \
+		MODPLUG MPG123 MUSEPACK OFA PULSEAUDIO SAMBA SID \
+		SNDFILE SPEEX TREMOR VISUAL VOCODER VORBIS WAVPACK XML
+OPTIONS_DEFAULT=	CURL FAAD FLAC MAD MDNS_APPLE VORBIS
+
+AIRPLAY_DESC=	Support output via Airport Express
+APE_DESC=	Support to playback Monkey's Audio files
+AVCODEC_DESC=	Support to playback files with avcodec
+CDDA_DESC=	Support to playback AudioCD
+CURL_DESC=	Support to playback files via HTTP
+ET_DESC=	Install usage feedback reporting client
+FAAD_DESC=	Support to playback AAC files
+FAM_DESC=	Support to update Media Library on file change
+GME_DESC=	Support to playback video game music files
+GVFS_DESC=	Support to playback files via GVFS
+ICES_DESC=	Support to playback files to an icecast server
+MAD_DESC=	Support to playback MP3 files
+MDNS_APPLE_DESC=	Support to announce XMMS2d via mDNS (Apple)
+MDNS_AVAHI_DESC=	Support to announce XMMS2d via mDNS (Avahi)
+MMS_DESC=	Support to playback streams via MMS
+MPG123_DESC=	Support to playback MP3 files
+OFA_DESC=	Support to collect MusicDNS fingerprints
+SAMBA_DESC=	Support to playback files via SMB
+SID_DESC=	Support to playback SID files
+VISUAL_DESC=	Support for visualization plugins
+VOCODER_DESC=	Phase Vocoder effect plugin
+WAVPACK_DESC=	Support to playback WV files
+XML_DESC=	Support for XML based playlists (XSPF, RSS)
+
 .endif # !XMMS_SLAVE
 
 .include <bsd.port.options.mk>
@@ -97,7 +94,7 @@ EXCLUDE+=	--without-optionals="python" \
 
 .if !defined(XMMS2_SLAVE)
 
-.if !defined(WITHOUT_AIRPLAY)
+.if ${PORT_OPTIONS:MAIRPLAY}
 USE_OPENSSL=	yes
 PLIST_SUB+=	AIRPLAY=""
 .else
@@ -105,56 +102,56 @@ EXCLUDE+=	--without-plugins="airplay"
 PLIST_SUB+=	AIRPLAY="@comment "
 .endif
 
-.if !defined(WITHOUT_AO)
-LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
+.if ${PORT_OPTIONS:MAO}
+LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
 PLIST_SUB+=	AO=""
 .else
 EXCLUDE+=	--without-plugins="ao"
 PLIST_SUB+=	AO="@comment "
 .endif
 
-.if !defined(WITHOUT_APE)
-LIB_DEPENDS+=	mac.2:${PORTSDIR}/audio/mac
+.if ${PORT_OPTIONS:MAPE}
+LIB_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 PLIST_SUB+=	MAC=""
 .else
 EXCLUDE+=	--without-plugins="mac"
 PLIST_SUB+=	MAC="@comment "
 .endif
 
-.if !defined(WITHOUT_AVCODEC)
-LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
+.if ${PORT_OPTIONS:MAVCODEC}
+LIB_DEPENDS+=	avutil:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	AVCODEC=""
 .else
 EXCLUDE+=	--without-plugins="avcodec"
 PLIST_SUB+=	AVCODEC="@comment "
 .endif
 
-.if !defined(WITHOUT_CDDA)
-LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio \
-		discid.0:${PORTSDIR}/audio/libdiscid
+.if ${PORT_OPTIONS:MCDDA}
+LIB_DEPENDS+=	cdio:${PORTSDIR}/sysutils/libcdio \
+		discid:${PORTSDIR}/audio/libdiscid
 PLIST_SUB+=	CDDA=""
 .else
 EXCLUDE+=	--without-plugins="cdda"
 PLIST_SUB+=	CDDA="@comment "
 .endif
 
-.if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+.if ${PORT_OPTIONS:MCURL}
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 EXCLUDE+=	--without-plugins="curl" --without-plugins="icymetaint"
 PLIST_SUB+=	CURL="@comment "
 .endif
 
-.if !defined(WITHOUT_FAAD)
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+.if ${PORT_OPTIONS:MFAAD}
+LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 .else
 EXCLUDE+=	--without-plugins="faad" --without-plugins="mp4"
 PLIST_SUB+=	FAAD="@comment "
 .endif
 
-.if !defined(WITHOUT_FAM)
+.if ${PORT_OPTIONS:MDAM}
 USE_FAM=	yes
 WANT_FAM_SYSTEM=gamin
 PLIST_SUB+=	FAM=""
@@ -163,23 +160,23 @@ EXCLUDE+=	--without-optionals="medialib-updater"
 PLIST_SUB+=	FAM="@comment "
 .endif
 
-.if !defined(WITHOUT_FLAC)
-LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
+.if ${PORT_OPTIONS:MFLAC}
+LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 EXCLUDE+=	--without-plugins="flac"
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
-.if !defined(WITHOUT_GME)
-LIB_DEPENDS+=	gme.0:${PORTSDIR}/audio/libgme
+.if ${PORT_OPTIONS:MGME}
+LIB_DEPENDS+=	gme:${PORTSDIR}/audio/libgme
 PLIST_SUB+=	GME=""
 .else
 EXCLUDE+=	--without-plugins="gme"
 PLIST_SUB+=	GME="@comment "
 .endif
 
-.if !defined(WITHOUT_GVFS)
+.if ${PORT_OPTIONS:MGVFS}
 USE_GNOME+=	gvfs
 PLIST_SUB+=	GVFS=""
 .else
@@ -187,37 +184,37 @@ EXCLUDE+=	--without-plugins="gvfs"
 PLIST_SUB+=	GVFS="@comment "
 .endif
 
-.if !defined(WITHOUT_ICES)
-LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+.if ${PORT_OPTIONS:MICES}
+LIB_DEPENDS+=	shout:${PORTSDIR}/audio/libshout2
 PLIST_SUB+=	ICES=""
 .else
 EXCLUDE+=	--without-plugins="ices"
 PLIST_SUB+=	ICES="@comment "
 .endif
 
-.if !defined(WITHOUT_JACK)
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.if ${PORT_OPTIONS:MJACK}
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
 EXCLUDE+=	--without-plugins="jack"
 PLIST_SUB+=	JACK="@comment "
 .endif
 
-.if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+.if ${PORT_OPTIONS:MMAD}
+LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
 PLIST_SUB+=	MAD=""
 .else
 EXCLUDE+=	--without-plugins="mad"
 PLIST_SUB+=	MAD="@comment "
 .endif
 
-.if !defined(WITHOUT_MDNS_APPLE) && !defined(WITHOUT_MDNS_AVAHI)
-BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
-.elif defined(WITHOUT_MDNS_APPLE) && defined(WITHOUT_MDNS_AVAHI)
+.if ${PORT_OPTIONS:MMDNS_APPLE} && ${PORT_OPTIONS:MMDNS_AVAHI}
+IGNORE=		you may choose either MDNS_APPLE or MDNS_AVAHI, but not both
+.elif !${PORT_OPTIONS:MMDNS_APPLE} && !${PORT_OPTIONS:MMDNS_AVAHI}
 EXCLUDE+=	--without-optionals="mdns"
 .endif
 
-.if !defined(WITHOUT_MDNS_APPLE)
+.if ${PORT_OPTIONS:MMDNS_APPLE}
 EXCLUDE+=	--with-mdns-backend="dns_sd"
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
@@ -225,7 +222,7 @@ PLIST_SUB+=	MDNS_APPLE=""
 PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 
-.if !defined(WITHOUT_MDNS_AVAHI)
+.if ${PORT_OPTIONS:MMDNS_AVAHI}
 EXCLUDE+=	--with-mdns-backend="avahi"
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	MDNS_AVAHI=""
@@ -234,88 +231,88 @@ MAN1+=		xmms2-mdns-avahi.1
 PLIST_SUB+=	MDNS_AVAHI="@comment "
 .endif
 
-.if !defined(WITHOUT_MMS)
-LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
+.if ${PORT_OPTIONS:MMMS}
+LIB_DEPENDS+=	mms:${PORTSDIR}/net/libmms
 PLIST_SUB+=	MMS=""
 .else
 EXCLUDE+=	--without-plugins="mms"
 PLIST_SUB+=	MMS="@comment "
 .endif
 
-.if !defined(WITHOUT_MODPLUG)
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
+.if ${PORT_OPTIONS:MMODPLUG}
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 .else
 EXCLUDE+=	--without-plugins="modplug"
 PLIST_SUB+=	MODPLUG="@comment "
 .endif
 
-.if !defined(WITHOUT_MPG123)
-LIB_DEPENDS+=	mpg123.0:${PORTSDIR}/audio/mpg123
+.if ${PORT_OPTIONS:MMPG123}
+LIB_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 PLIST_SUB+=	MPG123=""
 .else
 EXCLUDE+=	--without-plugins="mpg123"
 PLIST_SUB+=	MPG123="@comment "
 .endif
 
-.if !defined(WITHOUT_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
+.if ${PORT_OPTIONS:MMUSEPACK}
+LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
 PLIST_SUB+=	MUSEPACK=""
 .else
 EXCLUDE+=	--without-plugins="musepack"
 PLIST_SUB+=	MUSEPACK="@comment "
 .endif
 
-.if !defined(WITHOUT_OFA)
-LIB_DEPENDS+=	ofa.0:${PORTSDIR}/audio/libofa
+.if ${PORT_OPTIONS:MOFA}
+LIB_DEPENDS+=	ofa:${PORTSDIR}/audio/libofa
 PLIST_SUB+=	OFA=""
 .else
 EXCLUDE+=	--without-plugins="ofa"
 PLIST_SUB+=	OFA="@comment "
 .endif
 
-.if !defined(WITHOUT_PULSE)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MPULSEAUDIO}
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
 EXCLUDE+=	--without-plugins="pulse"
 PLIST_SUB+=	PULSE="@comment "
 .endif
 
-.if !defined(WITHOUT_SAMBA)
-LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+.if ${PORT_OPTIONS:MSAMBA}
+LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
 EXCLUDE+=	--without-plugins="samba"
 PLIST_SUB+=	SAMBA="@comment "
 .endif
 
-.if !defined(WITHOUT_SID)
-LIB_DEPENDS+=	sidplay2.[0-9]:${PORTSDIR}/audio/libsidplay2
+.if ${PORT_OPTIONS:MSID}
+LIB_DEPENDS+=	sidplay2:${PORTSDIR}/audio/libsidplay2
 PLIST_SUB+=	SID=""
 .else
 EXCLUDE+=	--without-plugins="sid"
 PLIST_SUB+=	SID="@comment "
 .endif
 
-.if !defined(WITHOUT_SNDFILE)
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+.if ${PORT_OPTIONS:MSNDFILE}
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 PLIST_SUB+=	SNDFILE=""
 .else
 EXCLUDE+=	--without-plugins="sndfile"
 PLIST_SUB+=	SNDFILE="@comment "
 .endif
 
-.if !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
+.if ${PORT_OPTIONS:MSPEEX}
+LIB_DEPENDS+=	speex:${PORTSDIR}/audio/speex
 PLIST_SUB+=	SPEEX=""
 .else
 EXCLUDE+=	--without-plugins="speex"
 PLIST_SUB+=	SPEEX="@comment "
 .endif
 
-.if !defined(WITHOUT_TREMOR)
-LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+.if ${PORT_OPTIONS:MTREMOR}
+LIB_DEPENDS+=	vorbisidec:${PORTSDIR}/audio/libtremor
 PLIST_SUB+=	TREMOR=""
 .else
 EXCLUDE+=	--without-plugins="tremor"
@@ -323,52 +320,52 @@ PLIST_SUB+=	TREMOR="@comment "
 .endif
 
 # xmms2-ripper
-.if !defined(WITHOUT_VISUAL) && !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbisenc.2:${PORTSDIR}/audio/libvorbis
+.if ${PORT_OPTIONS:MVISUAL} && ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbisenc:${PORTSDIR}/audio/libvorbis
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-clients-vistest-wscript
 .endif
 
 # XXX: shm support requires semtimedop(2)
-.if !defined(WITHOUT_VISUAL)
+.if ${PORT_OPTIONS:MVISUAL}
 USE_SDL=	yes
 LIB_DEPENDS+=	visual-0.4.0:${PORTSDIR}/graphics/libvisual04
 .else
 EXCLUDE+=	--without-optionals="vistest"
 .endif
 
-.if !defined(WITHOUT_VISUAL) && ${EXCLUDE:M--with-vis-reference-clients}
+.if ${PORT_OPTIONS:MVISUAL} && ${EXCLUDE:M--with-vis-reference-clients}
 PLIST_SUB+=	VISUAL=""
 .else
 PLIST_SUB+=	VISUAL="@comment "
 .endif
 
-.if !defined(WITHOUT_VOCODER)
+.if ${PORT_OPTIONS:MVOCODER}
 LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
 PLIST_SUB+=	VOCODER=""
 .else
 EXCLUDE+=	--without-plugins="vocoder"
 PLIST_SUB+=	VOCODER="@comment "
 .endif
 
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+.if ${PORT_OPTIONS:MVORBIS}
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 EXCLUDE+=	--without-plugins="vorbis"
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-.if !defined(WITHOUT_WAVPACK)
-LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
+.if ${PORT_OPTIONS:MWAVPACK}
+LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WAVPACK=""
 .else
 EXCLUDE+=	--without-plugins="wavpack"
 PLIST_SUB+=	WAVPACK="@comment "
 .endif
 
-.if !defined(WITHOUT_XML)
+.if ${PORT_OPTIONS:MXML}
 USE_GNOME+=	libxml2
 PLIST_SUB+=	XML=""
 .else
@@ -377,7 +374,7 @@ EXCLUDE+=	--without-plugins="xml" --without-plugins="rss" \
 PLIST_SUB+=	XML="@comment "
 .endif
 
-.if !defined(WITHOUT_ET)
+.if ${PORT_OPTIONS:MET}
 PLIST_SUB+=	ET=""
 MAN1+=		xmms2-et.1
 .else

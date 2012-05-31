@@ -20,11 +20,13 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	LIBUSB "Enable OBEX over USB" no
+OPTIONS_DEFINE=	USB
 
-.include <bsd.port.pre.mk>
+USB_DESC=	Enable OBEX over USB
 
-.if defined(WITH_LIBUSB)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MUSB}
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 CFLAGS+=	-I${PREFIX}/include
@@ -36,4 +38,4 @@ CONFIGURE_ARGS+=--enable-usb
 CONFIGURE_ARGS+=--disable-usb
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
