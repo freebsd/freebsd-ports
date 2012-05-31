@@ -862,6 +862,7 @@
     SUBDIR += libev
     SUBDIR += libevent
     SUBDIR += libevent2
+    SUBDIR += libewf
     SUBDIR += libexecinfo
     SUBDIR += libexplain
     SUBDIR += libffi

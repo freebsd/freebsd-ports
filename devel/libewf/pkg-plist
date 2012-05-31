@@ -1,0 +1,24 @@
+bin/ewfacquire
+bin/ewfacquirestream
+bin/ewfdebug
+bin/ewfexport
+bin/ewfinfo
+bin/ewfmount
+bin/ewfrecover
+bin/ewfverify
+include/libewf.h
+include/libewf/codepage.h
+include/libewf/definitions.h
+include/libewf/error.h
+include/libewf/extern.h
+include/libewf/features.h
+include/libewf/types.h
+lib/libewf.a
+lib/libewf.la
+lib/libewf.so
+lib/libewf.so.2
+%%PYTHON_SITELIBDIR%%/pyewf.a
+%%PYTHON_SITELIBDIR%%/pyewf.la
+%%PYTHON_SITELIBDIR%%/pyewf.so
+libdata/pkgconfig/libewf.pc
+@dirrm include/libewf
