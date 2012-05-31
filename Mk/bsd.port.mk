@@ -5997,18 +5997,18 @@ pre-config:
 _COMPLETE_OPTIONS_LIST:=	${ALL_OPTIONS}
 .for opt in ${ALL_OPTIONS}
 .  if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "${${opt}_DESC:S|"||g:S|'| |g}" off
+DEFOPTIONS+=	${opt} ${${opt}_DESC:Q} off
 .  else
-DEFOPTIONS+=	${opt} "${${opt}_DESC:S|"||g:S|'| |g}" on
+DEFOPTIONS+=	${opt} ${${opt}_DESC:Q} on
 .  endif
 .endfor
 .for multi in ${OPTIONS_MULTI}
 .  for opt in ${OPTIONS_MULTI_${multi}}
 _COMPLETE_OPTIONS_LIST+=	${opt}
 .    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "M(${multi}): ${${opt}_DESC:S|"||g:S|'| |g}" off
+DEFOPTIONS+=	${opt} "M(${multi}): "${${opt}_DESC:Q} off
 .    else
-DEFOPTIONS+=    ${opt} "M(${multi}): ${${opt}_DESC:S|"||g:S|'| |g}" on
+DEFOPTIONS+=    ${opt} "M(${multi}): "${${opt}_DESC:Q} on
 .    endif
 .  endfor
 .endfor
@@ -6016,9 +6016,9 @@ DEFOPTIONS+=    ${opt} "M(${multi}): ${${opt}_DESC:S|"||g:S|'| |g}" on
 .  for opt in ${OPTIONS_SINGLE_${single}}
 _COMPLETE_OPTIONS_LIST+=	${opt}
 .    if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} "S(${single}): ${${opt}_DESC:S|"||g:S|'| |g}" off
+DEFOPTIONS+=	${opt} "S(${single}): "${${opt}_DESC:Q} off
 .    else
-DEFOPTIONS+=	${opt} "S(${single}): ${${opt}_DESC:S|"||g:S|'| |g}" on
+DEFOPTIONS+=	${opt} "S(${single}): "${${opt}_DESC:Q} on
 .    endif
 .  endfor
 .endfor
@@ -6047,7 +6047,7 @@ config: pre-config
 .endif
 	@TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
-	${SH} -c '${DIALOG} --checklist "Options for ${PKGNAME:C/-([^-]+)$/ \1/}" 21 70 15 ${DEFOPTIONS}' 2> $${TMPOPTIONSFILE} || { \
+	${DIALOG} --checklist "Options for ${PKGNAME:C/-([^-]+)$/ \1/}" 21 70 15 ${DEFOPTIONS} 2> $${TMPOPTIONSFILE} || { \
 		${RM} -f $${TMPOPTIONSFILE}; \
 		${ECHO_MSG} "===> Options unchanged"; \
 		exit 0; \
