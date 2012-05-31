@@ -13,7 +13,7 @@ MASTER_SITES=	SF/mysql-python/mysql-python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MySQL-python-${DISTVERSION}
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
 USE_PYTHON=		-2.7

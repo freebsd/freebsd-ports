@@ -9,7 +9,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://phptal.org/files/
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	PEAR PHPTAL is a XML/XHTML template library for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

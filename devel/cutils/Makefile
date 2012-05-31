@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Miscellaneous C programmer's utilities
 
 GNU_CONFIGURE=	yes

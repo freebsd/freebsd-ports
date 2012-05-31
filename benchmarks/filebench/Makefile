@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.fsl.cs.sunysb.edu/~vass/filebench/
 DISTNAME=	go_filebench-1.4.8.fsl.0.8
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64 ppc

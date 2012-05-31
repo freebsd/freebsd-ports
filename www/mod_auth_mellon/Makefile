@@ -11,7 +11,7 @@ CATEGORIES=		www
 MASTER_SITES=		http://modmellon.googlecode.com/files/
 DIST_SUBDIR=		apache2
 
-MAINTAINER=		tom@tomjudge.com
+MAINTAINER=		tj@FreeBSD.org
 COMMENT=		Apache auth module for identifying SSO users
 
 LIB_DEPENDS=		lasso.8:${PORTSDIR}/security/lasso \
