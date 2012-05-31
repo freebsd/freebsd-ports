@@ -1,0 +1,15 @@
+bin/vshadowinfo
+bin/vshadowmount
+include/libvshadow.h
+include/libvshadow/codepage.h
+include/libvshadow/definitions.h
+include/libvshadow/error.h
+include/libvshadow/extern.h
+include/libvshadow/features.h
+include/libvshadow/types.h
+lib/libvshadow.a
+lib/libvshadow.la
+lib/libvshadow.so
+lib/libvshadow.so.1
+libdata/pkgconfig/libvshadow.pc
+@dirrm include/libvshadow
