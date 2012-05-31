@@ -9,15 +9,22 @@ PORTNAME=	fwtk
 PORTVERSION=	2.1
 PORTREVISION=	3
 CATEGORIES=	security
+MASTER_SITES=	# pet portlint. Restricted source.
 DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tar.Z
-DISTFILES=	fwtk2.1${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}.tar.Z fwtk-doc-only.tar.Z
 DIST_SUBDIR=	fwtk
 
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	A toolkit used for building firewalls based on proxy services
 
 RESTRICTED=	No form of redistribution is allowed
+BROKEN=		Won't fetch, ftp site mentioned in 'IGNORE' has no readme. Web site changed hands?
+
+# from scheidell@.  Can't find sources (did, but checksums wrong), can't see the 'readme' you mention below. if you can
+# update this so that it fetches, and/or give valid, reproducable instructions on how to get permission to discribute
+# source, then put this back in.
+
+EXPIRATION_DATE=2012-09-01
 
 OPTIONS=	X11 "Build X11 programs" On \
 		JUMBO_PATCH "Build with  the \"Jumbo\" patch kit" Off \
@@ -60,9 +67,9 @@ PATCH_SITES=	http://www.fwtk.org/fwtk/patches/
 PATCH_DIST_STRIP=	-p1
 .endif
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/fwtk2.1${EXTRACT_SUFX}) \
-	&& !exists(${DISTDIR}/${DIST_SUBDIR}fwtk-doc-only${EXTRACT_SUFX})
-IGNORE='Please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/dist/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR}/${DIST_SUBDIR} and run make again'
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.Z) \
+	|| !exists(${DISTDIR}/${DIST_SUBDIR}/fwtk-doc-only.tar.Z)
+IGNORE=	please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/dist/README for details of how to obtain the FTWK source.  Put the files ${DISTNAME}.tar.Z and fwtk-doc-only.tar.Z into the directory ${DISTDIR}/${DIST_SUBDIR} and run make again
 .endif
 
 post-patch:
