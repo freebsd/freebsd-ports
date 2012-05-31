@@ -7,7 +7,7 @@
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.honeyd.org/uploads/ \
 		http://www.citi.umich.edu/u/provos/honeyd/
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 MAKE_JOBS_SAFE=	yes
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	2.4
+USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
