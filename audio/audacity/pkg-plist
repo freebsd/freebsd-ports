@@ -58,17 +58,18 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/tremolo.ny
 %%DATADIR%%/plug-ins/vocalremover.ny
 %%DATADIR%%/plug-ins/vocoder.ny
-%%PORTDOCS%%/share/doc/audacity/LICENSE.txt
-%%PORTDOCS%%/share/doc/audacity/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 share/icons/hicolor/16x16/apps/audacity.png
 share/icons/hicolor/22x22/apps/audacity.png
 share/icons/hicolor/24x24/apps/audacity.png
 share/icons/hicolor/32x32/apps/audacity.png
 share/icons/hicolor/48x48/apps/audacity.png
 share/icons/hicolor/scalable/apps/audacity.svg
-share/licenses/audacity-devel-2.0.0/GPLv2
-share/licenses/audacity-devel-2.0.0/LICENSE
-share/licenses/audacity-devel-2.0.0/catalog.mk
+share/licenses/audacity-2.0.0/GPLv2
+share/licenses/audacity-2.0.0/LICENSE
+share/licenses/audacity-2.0.0/catalog.mk
 share/locale/af/LC_MESSAGES/audacity.mo
 share/locale/ar/LC_MESSAGES/audacity.mo
 share/locale/be/LC_MESSAGES/audacity.mo
@@ -136,7 +137,7 @@ share/pixmaps/gnome-mime-application-x-audacity-project.xpm
 @dirrmtry share/locale/km
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
-@dirrmtry share/licenses/audacity-devel-2.0.0
+@dirrmtry share/licenses/audacity-2.0.0
 @dirrmtry share/licenses
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
@@ -152,7 +153,6 @@ share/pixmaps/gnome-mime-application-x-audacity-project.xpm
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry %%PORTDOCS%%/share/doc/audacity
 @dirrmtry %%DATADIR%%/plug-ins
 @dirrmtry %%DATADIR%%/nyquist/rawwaves
 @dirrmtry %%DATADIR%%/nyquist
