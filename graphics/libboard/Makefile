@@ -6,13 +6,14 @@
 #
 
 PORTNAME=		libboard
-DISTVERSION=		0.8.6b-2
-PORTREVISION=	2
+DISTVERSION=		0.9.0
 CATEGORIES=		graphics
-MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/0.8.6b
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		A vector graphics C++ library
+
+LICENSE=		LGPL3
 
 BUILD_DEPENDS=		doxygen:${PORTSDIR}/devel/doxygen
 

@@ -1,12 +1,17 @@
 include/Board.h
 include/board/Color.h
+include/board/Path.h
 include/board/PSFonts.h
 include/board/Point.h
 include/board/Rect.h
 include/board/ShapeList.h
+include/board/ShapeList.ih
 include/board/Shapes.h
+include/board/Shapes.ih
 include/board/Tools.h
+include/board/Tools.ih
 include/board/Transforms.h
+include/board/Transforms.ih
 lib/libboard.a
 lib/libboard.so
 lib/libboard.so.0
@@ -16,6 +21,8 @@ lib/libboard.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arithmetic.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrows
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrows.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clipping
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clipping.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ellipse
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ellipse.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1
@@ -26,6 +33,8 @@ lib/libboard.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example3.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example4.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flag
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flag.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/koch
@@ -34,5 +43,7 @@ lib/libboard.so.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/logo.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruler
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruler.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scale_ellipse
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scale_ellipse.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/board
