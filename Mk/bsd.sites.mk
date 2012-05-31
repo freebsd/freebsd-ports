@@ -1213,7 +1213,6 @@ MASTER_SITE_SUNSITE+= \
 .if !defined(IGNORE_MASTER_SITE_SUSE)
 MASTER_SITE_SUSE+= 	\
 	http://mirrors.usc.edu/pub/linux/distributions/suse/%SUBDIR%/ \
-	ftp://ftp-linux.cc.gatech.edu/pub/suse/suse/%SUBDIR%/ \
 	http://mirror.usu.edu/mirrors/suse/%SUBDIR%/ \
 	ftp://mirror.mcs.anl.gov/pub/suse/%SUBDIR%/ \
 	ftp://chuck.ucs.indiana.edu/linux/suse/suse/%SUBDIR%/ \
