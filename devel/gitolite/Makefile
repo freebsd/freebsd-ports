@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gitolite
-PORTVERSION=	3.01
-PORTREVISION=	1
+PORTVERSION=	3.03
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
 		LOCAL/tdb
@@ -38,7 +37,7 @@ PLIST_SUB+=	GITUSER="@comment "
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC}/t ${WRKSRC}/src \
+	@${FIND} ${WRKSRC} \
 		-exec ${GREP} -qs \#\!/usr/bin/perl {} \; \
 		-exec ${REINPLACE_CMD} -Ee 's|#!/usr/bin/perl|#!${PERL}|' {} \;
 
@@ -46,6 +45,8 @@ do-build:
 	@${MKDIR} ${WRKSRC}/lib
 	@${MV} ${WRKSRC}/src/lib/Gitolite ${WRKSRC}/lib/
 	@${RMDIR} ${WRKSRC}/src/lib
+	@${MV} ${WRKSRC}/check-g2-compat ${WRKSRC}/src/
+	@${MV} ${WRKSRC}/convert-gitosis-conf ${WRKSRC}/src/
 
 post-build:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
