@@ -57,17 +57,22 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>postgresql-server</name>
-	<range><lt>8.3.18_1</lt></range>
-	<range><lt>8.4.11_1</lt></range>
-	<range><lt>9.0.7_2</lt></range>
-	<range><lt>9.1.3_1</lt></range>
-	<range><lt>9.2.b1_1</lt></range>
+	<range><gt>8.3.*</gt><lt>8.3.18_1</lt></range>
+	<range><gt>8.4.*</gt><lt>8.4.11_1</lt></range>
+	<range><gt>9.0.*</gt><lt>9.0.7_2</lt></range>
+	<range><gt>9.1.*</gt><lt>9.1.3_1</lt></range>
+	<range><gt>9.2.*</gt><lt>9.2.b1_1</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The PostgreSQL Global Development Group reports:</p>
 	<blockquote cite="http://www.postgresql.org/about/news/1397/">
+	  <p>Today the PHP, OpenBSD and FreeBSD communities announced updates to
+	  patch a security hole involving their crypt() hashing algorithms. This
+	  issue is described in CVE-2012-2143. This vulnerability also affects a
+	  minority of PostgreSQL users, and will be fixed in an update release on
+	  June 4, 2012.</p>
 	  <p>Affected users are those who use the crypt(text, text) function
 	  with DES encryption in the optional pg_crypto module. Passwords
 	  affected are those that contain characters that cannot be
@@ -85,6 +90,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2012-05-30</discovery>
       <entry>2012-05-30</entry>
+      <modified>2012-05-31</modified>
     </dates>
   </vuln>
 
