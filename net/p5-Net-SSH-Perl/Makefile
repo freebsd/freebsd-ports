@@ -71,11 +71,13 @@ MAN3=	Net::SSH::Perl.3 \
 CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="1"
 PERL_CONFIGURE=	yes
 
-OPTIONS=	GMP	"Use the optimized Math::BigInt::GMP backend" on
+OPTIONS_DEFINE=	GMP
+OPTIONS_DEFAULT=	GMP
+GMP_DESC=	Use the optimized Math::BigInt::GMP backend
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GMP)
+.if ${PORT_OPTIONS:MGMP}
 GMP_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Math/BigInt/GMP.pm:${PORTSDIR}/math/p5-Math-BigInt-GMP
 BUILD_DEPENDS+=	${GMP_DEPEND}
 RUN_DEPENDS+=	${GMP_DEPEND}

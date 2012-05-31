@@ -21,10 +21,11 @@ RUN_DEPENDS=	p5-AppConfig>=1.56:${PORTSDIR}/devel/p5-AppConfig
 TEST_DEPENDS=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
 
-OPTIONS=	DATE_CALC	"With Date::Calc Plugin"	off \
-		IMAGE_INFO	"With Image::Info Plugin"	off \
-		IMAGE_SIZE	"With Image::Size Plugin"	off \
-		POD_POM		"With Pod::POM Plugin"		off
+OPTIONS_DEFINE=	DATE_CALC IMAGE_INFO IMAGE_SIZE POD_POM
+DATE_CALC_DESC=		With Date::Calc Plugin
+IMAGE_INFO_DESC=	With Image::Info Plugin
+IMAGE_SIZE_DESC=	With Image::Size Plugin
+POD_POM_DESC=		With Pod::POM Plugin
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	TT_ACCEPT=y
@@ -33,22 +34,22 @@ CONFIGURE_ARGS=	TT_ACCEPT=y
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DATE_CALC)
+.if ${PORT_OPTIONS:MDATE_CALC}
 BUILD_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
-.if defined(WITH_IMAGE_INFO)
+.if ${PORT_OPTIONS:MIMAGE_INFO}
 BUILD_DEPENDS+=	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
 RUN_DEPENDS+=	p5-Image-Info>=0:${PORTSDIR}/graphics/p5-Image-Info
 .endif
 
-.if defined(WITH_IMAGE_SIZE)
+.if ${PORT_OPTIONS:MIMAGE_SIZE}
 BUILD_DEPENDS+=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 RUN_DEPENDS+=	p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 .endif
 
-.if defined(WITH_POD_POM)
+.if ${PORT_OPTIONS:MPOD_POM}
 BUILD_DEPENDS+=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
 RUN_DEPENDS+=	p5-Pod-POM>=0:${PORTSDIR}/textproc/p5-Pod-POM
 .endif

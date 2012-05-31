@@ -25,17 +25,18 @@ PLIST_FILES=	${SITE_PERL_REL}/Business/ISBN.pm \
 		${SITE_PERL_REL}/Business/ISBN13.pm \
 		${SITE_PERL_REL}/${PERL_ARCH}/auto/Business/ISBN/.packlist
 
-OPTIONS=	BARCODE "Barcode support" off \
-		XISBN "xISBN support" off
+OPTIONS_DEFINE=	BARCODE XISBN
+BARCODE_DESC=	Barcode support
+XISBN_DESC=	xISBN support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_BARCODE)
+.if ${PORT_OPTIONS:MBARCODE}
 RUN_DEPENDS+=	p5-GD-Barcode>=0:${PORTSDIR}/graphics/p5-GD-Barcode
 .endif
 
-.if defined(WITH_XISBN)
+.if ${PORT_OPTIONS:MXISBN}
 RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

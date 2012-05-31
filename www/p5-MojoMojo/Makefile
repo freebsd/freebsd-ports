@@ -189,63 +189,65 @@ MAN3=	MojoMojo.3 \
 	Text::SmartyPants.3 \
 	Text::Wikispaces2Markdown.3
 
-OPTIONS=	DEPLOY		"Automatic database deployment" Off \
-		FASTCGI		"FastCGI support"		Off \
-		TOCGEN		"Table of Contents generator"	Off \
-		RECAPTCHA	"reCAPTCHA for anonymous edits"	Off \
-		SYNTAX_HIGHLIGHT "Syntax highlighter"		Off \
-		RSS_FORMATTER	"RSS formatter"			Off \
-		DOCBOOK_FORMATTER "DocBook formatter"		Off \
-		POD_FORMATTER	"POD formatter"			Off \
-		TRANSCLUSION	"Transclusion support"		Off \
-		AMAZON		"Amazon boxes"			Off \
-		EMOTICONS	"Emoticons"			Off
+OPTIONS_DEFINE=	DEPLOY FASTCGI TOCGEN RECAPTCHA SYNTAX_HIGHLIGHT RSS_FORMATTER \
+		DOCBOOK_FORMATTER POD_FORMATTER TRANSCLUSION AMAZON EMOTICONS
+
+DEPLOY_DESC=		Automatic database deployment
+TOCGEN_DESC=		Table of Contents generator
+RECAPTCHA_DESC=		reCAPTCHA for anonymous edits
+SYNTAX_HIGHLIGHT_DESC=	Syntax highlighter
+RSS_FORMATTER_DESC=	RSS formatter
+DOCBOOK_FORMATTER_DESC=	DocBook formatter
+POD_FORMATTER_DESC=	POD formatter
+TRANSCLUSION_DESC=	Transclusion support
+AMAZON_DESC=		Amazon boxes
+EMOTICONS_DESC=		Emoticons
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEPLOY)
+.if ${PORT_OPTIONS:MDEPLOY}
 RUN_DEPENDS+=	p5-SQL-Translator>=0.09006:${PORTSDIR}/databases/p5-SQL-Translator
 .endif
 
-.if defined(WITH_FASTCGI)
+.if ${PORT_OPTIONS:MFASTCGI}
 RUN_DEPENDS+=	p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager
 .endif
 
-.if defined(WITH_TOCGEN)
+.if ${PORT_OPTIONS:MTOCGEN}
 RUN_DEPENDS+=	p5-HTML-Toc>=1.10:${PORTSDIR}/www/p5-HTML-Toc
 .endif
 
-.if defined(WITH_RECAPTCHA)
+.if ${PORT_OPTIONS:MRECAPTCHA}
 RUN_DEPENDS+=	p5-HTML-FormFu>=0:${PORTSDIR}/www/p5-HTML-FormFu
 .endif
 
-.if defined(WITH_SYNTAX_HIGHLIGHT)
+.if ${PORT_OPTIONS:MSYNTAX_HIGHLIGHT}
 RUN_DEPENDS+=	p5-Syntax-Highlight-Engine-Kate>=0:${PORTSDIR}/textproc/p5-Syntax-Highlight-Engine-Kate
 .endif
 
-.if defined(WITH_RSS_FORMATTER)
+.if ${PORT_OPTIONS:MRSS_FORMATTER}
 RUN_DEPENDS+=	p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed
 .endif
 
-.if defined(WITH_DOCBOOK_FORMATTER)
+.if ${PORT_OPTIONS:MDOCBOOK_FORMATTER}
 RUN_DEPENDS+=	p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-LibXSLT>=1.66:${PORTSDIR}/textproc/p5-XML-LibXSLT
 .endif
 
-.if defined(WITH_POD_FORMATTER)
+.if ${PORT_OPTIONS:MPOD_FORMATTER}
 RUN_DEPENDS+=	p5-Pod-Simple>=3.01:${PORTSDIR}/textproc/p5-Pod-Simple
 .endif
 
-.if defined(WITH_TRANSCLUSION)
+.if ${PORT_OPTIONS:MTRANSCLUSION}
 RUN_DEPENDS+=	p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 .endif
 
-.if defined(WITH_AMAZON)
+.if ${PORT_OPTIONS:MAMAZON}
 RUN_DEPENDS+=	p5-Net-Amazon>=0:${PORTSDIR}/net/p5-Net-Amazon
 .endif
 
-.if defined(WITH_EMOTICONS)
+.if ${PORT_OPTIONS:MEMOTICONS}
 RUN_DEPENDS+=	p5-Text-Emoticon-MSN>=0:${PORTSDIR}/textproc/p5-Text-Emoticon-MSN
 .endif
 

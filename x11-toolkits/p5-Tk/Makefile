@@ -17,7 +17,8 @@ COMMENT=	A re-port of a perl5 interface to Tk8.4
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
-OPTIONS=	XFT	"Client-side fonts via libXft (experimental)" off
+OPTIONS_DEFINE=	XFT
+XFT_DESC=	Client-side fonts via libXft (experimental)
 
 CONFIGURE_ARGS=	X11INC=${LOCALBASE}/include X11LIB=${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
@@ -146,7 +147,7 @@ MAN3=		Tie::Watch.3 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_XFT)
+.if ${PORT_OPTIONS:MXFT}
 CONFIGURE_ARGS=	XFT=1
 USE_XORG+=	xft
 .endif

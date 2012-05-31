@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-IO-Multiplex>=1.01:${PORTSDIR}/devel/p5-IO-Multiplex
 
 PERL_CONFIGURE=	yes
 
-OPTIONS=	IPV6	"Enable ipv6 support patch from Debian"	off
+OPTIONS_DEFINE=	IPV6
 
 MAN3=		Net::Server.3 \
 		Net::Server::Daemonize.3\
@@ -41,14 +41,14 @@ MAN3=		Net::Server.3 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 BUILD_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS+=	p5-Socket6>=0.23:${PORTSDIR}/net/p5-Socket6
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ipv6-support
 .endif
 
 post-patch:
-.if defined(WITH_IPV6)
+.if ${PORT_OPTIONS:MIPV6}
 	@cd ${WRKSRC}/ && ${FIND} . -name '*.orig' -delete
 .endif
 

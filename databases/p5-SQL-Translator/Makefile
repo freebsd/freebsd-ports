@@ -36,7 +36,9 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0.61:${PORTSDIR}/devel/p5-Test-Differences \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
-OPTIONS=	DIAGRAM "Diagram generation support" Off
+
+OPTIONS_DEFINE=	DIAGRAM
+DIAGRAM_DESC=	Diagram generation support
 
 PERL_CONFIGURE=	yes
 
@@ -116,12 +118,12 @@ post-patch:
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_DIAGRAM)
+.if ${PORT_OPTIONS:MDIAGRAM}
 BUILD_DEPENDS+= p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

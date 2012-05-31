@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	DBI driver for Oracle RDBMS server
 
-OPTIONS=	OCI8 "Use OCI8" off
+OPTIONS_DEFINE=	OCI8 DOCS
+OCI8_DESC=	Use OCI8
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -26,19 +27,9 @@ CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
 MAN1=		ora_explain.1
 MAN3=		DBD::Oracle.3 DBD::Oraperl.3
 
-post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Oracle.ex/Readme 	${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/*.pl	${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/japh	${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/sql	${EXAMPLESDIR}
-.endif
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.ifdef WITH_OCI8
+.if ${PORT_OPTIONS:MOCI8}
 PORTVERSION=	1.19
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ORACLE_HOME=	${LOCALBASE}/oracle8-client
@@ -58,4 +49,14 @@ post-patch:
 	@${PERL} -pi -e 's!\(void\*\)(SvOK)!$$1!g' ${WRKSRC}/oci7.c
 .endif
 
-.include <bsd.port.post.mk>
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Oracle.ex/Readme 	${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/*.pl	${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/japh	${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/sql	${EXAMPLESDIR}
+.endif
+
+.include <bsd.port.mk>

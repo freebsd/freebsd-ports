@@ -39,15 +39,18 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::IMAP::Simple.3 \
 		Net::IMAP::Simple::PipeSocket.3
 
-OPTIONS=	SX "Simple protocol extensions (use Parse::RecDescent)" off
+OPTIONS_DEFINE=	SX
+SX_DESC=	Simple protocol extensions (use Parse::RecDescent)
 
 .include <bsd.port.options.mk>
 
-CONFIGURE_ENV+=	WITH_SX="${WITH_SX}"
+.if ${PORT_OPTIONS:MSX}
+CONFIGURE_ENV+=	WITH_SX="true"
+.endif
 
 .include <bsd.port.pre.mk>
 
-.ifdef(WITH_SX)
+.if ${PORT_OPTIONS:MSX}
 PLIST_SUB+=	WITH_SX=""
 MAN3+=		Net::IMAP::SimpleX.3
 RUN_DEPENDS+=	p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent

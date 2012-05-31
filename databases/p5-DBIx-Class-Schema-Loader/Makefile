@@ -51,10 +51,8 @@ TEST_DEPENDS=	p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean
 
-OPTIONS=	MYSQL "MySQL Support" Off \
-		ORACLE "Oracle Support (experimental)" Off \
-		PGSQL "PostgreSQL Support" Off \
-		SQLITE "SQLite Support" Off
+OPTIONS_DEFINE=	MYSQL ORACLE PGSQL SQLITE
+ORACLE_DESC=	Enable Oracle backend (experimental)
 
 PERL_CONFIGURE=	yes
 
@@ -101,20 +99,20 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
 .endif
 
-.if defined(WITH_ORACLE)
+.if ${PORT_OPTIONS:MORACLE}
 BUILD_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 .endif
 
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 .endif
 

@@ -25,11 +25,13 @@ MAN3=		XML::SAX.3 XML::SAX::DocumentLocator.3 XML::SAX::Intro.3 \
 		XML::SAX::ParserFactory.3 XML::SAX::PurePerl.3 \
 		XML::SAX::PurePerl::Reader.3
 
-OPTIONS=	WRITE_INI_OK	"Alter ParserDetails.ini with relevant information"	on
+OPTIONS_DEFINE=	WRITE_INI_OK
+
+WRITE_INI_OK_DESC=	Alter ParserDetails.ini with relevant information
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_WRITE_INI_OK)
+.if ${PORT_OPTIONS:MWRITE_INI_OK}
 WRITE_INI_OK=	1
 .else
 WRITE_INI_OK=	0

@@ -16,8 +16,10 @@ COMMENT=	Perl module for generating random data
 
 BUILD_DEPENDS=	p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny
 
-OPTIONS=	DATE_CALC	"Support for rand_date()" on \
-		GD		"Support for rand_image()" off
+OPTIONS_DEFINE=	DATE_CALC GD
+OPTIONS_DEFAULT=	DATE_CALC
+DATE_CALC_DESC=	Support for rand_date()
+GD_DESC=	Support for rand_image()
 
 PERL_CONFIGURE=	yes
 
@@ -25,12 +27,12 @@ MAN3=		Data::Random.3 Data::Random::WordList.3
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_DATE_CALC)
+.if ${PORT_OPTIONS:MDATE_CALC}
 BUILD_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 RUN_DEPENDS+=	p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 .endif
 
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 BUILD_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS+=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 .endif

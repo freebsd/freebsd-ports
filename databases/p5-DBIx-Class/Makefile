@@ -60,7 +60,8 @@ TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5
 		p5-Time-Piece-MySQL>=0:${PORTSDIR}/databases/p5-Time-Piece-MySQL \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
-OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" off
+OPTIONS_DEFINE= SQLT
+SQLT_DESC=	SQL::Translator (generate DDL from schema)
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
@@ -183,7 +184,7 @@ MAN3=	DBIx::Class.3 \
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_SQLT)
+.if ${PORT_OPTIONS:MSQLT}
 RUN_DEPENDS+=	p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator
 .endif
 

@@ -24,9 +24,11 @@ BUILD_DEPENDS+=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	CLIPBOARD "Support X11 Clipboard" On \
-		PASTEBIN "Support pastebin.com" On \
-		GITHUB "Support github" On
+OPTIONS_DEFINE=	CLIPBOARD PASTEBIN GITHUB
+OPTIONS_DEFAULT=	CLIPBOARD PASTEBIN GITHUB
+CLIPBOARD_DESC=	Support X11 Clipboard
+PASTEBIN_DESC=	Support pastebin.com
+GITHUB_DESC=	Support github
 
 PERL_CONFIGURE=	yes
 
@@ -47,17 +49,17 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service::ssh.3 \
 		App::Nopaste::Service::Ubuntu.3
 
-.include <bsd.port.pre.mk>
-.if defined(WITH_PASTEBIN)
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MPASTEBIN}
 BUILD_DEPENDS+=	p5-WWW-Pastebin-PastebinCom-Create>=0:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
 RUN_DEPENDS+=	p5-WWW-Pastebin-PastebinCom-Create>=0:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
 .endif
-.if defined(WITH_CLIPBOARD)
+.if ${PORT_OPTIONS:MCLIPBOARD}
 BUILD_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
 RUN_DEPENDS+=	p5-Clipboard>=0:${PORTSDIR}/x11/p5-Clipboard
 .endif
-.if defined(WITH_GITHUB)
+.if ${PORT_OPTIONS:MGITHUB}
 BUILD_DEPENDS+=	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike
 RUN_DEPENDS+=	p5-Config-GitLike>=0:${PORTSDIR}/devel/p5-Config-GitLike
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

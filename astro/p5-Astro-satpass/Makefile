@@ -21,11 +21,13 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Date-Manip>=1.14:${PORTSDIR}/devel/p5-Date-Manip
 RUN_DEPENDS=	p5-Date-Manip>=1.14:${PORTSDIR}/devel/p5-Date-Manip
 
-OPTIONS=	GEOCODER_US	"Add support for Geo::Coder::Geocoder::US" on \
-		SIMBAD		"Add support for Astro::SIMBAD::Client" on \
-		SOAPLITE	"Add support for SOAP::Lite (deprecated)" off \
-		SPACETRACK	"Add support for Astro::SpaceTrack" on \
-		USGS		"Add support for Geo::WebService::Elevation::USGS" on
+OPTIONS_DEFINE=	GEOCODER_US SIMBAD SOAPLITE SPACETRACK USGS
+OPTIONS_DEFAULT=	GEOCODER_US SIMBAD SPACETRACK USGS
+GEOCODER_US_DESC=	Add support for Geo::Coder::Geocoder::US
+SIMBAD_DESC=		Add support for Astro::SIMBAD::Client
+SOAPLITE_DESC=		Add support for SOAP::Lite (deprecated)
+SPACETRACK_DESC=	Add support for Astro::SpaceTrack
+USGS_DESC=		Add support for Geo::WebService::Elevation::USGS
 
 CONFIGURE_ARGS=	-y
 PERL_CONFIGURE=	yes
@@ -44,23 +46,23 @@ MAN3=		Astro::Coord::ECI.3 \
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_GEOCODER_US)
+.if ${PORT_OPTIONS:MGEOCODER_US}
 RUN_DEPENDS+=	p5-Geo-Coder-Geocoder-US>=0:${PORTSDIR}/misc/p5-Geo-Coder-Geocoder-US
 .endif
 
-.if !defined(WITHOUT_SIMBAD)
+.if ${PORT_OPTIONS:MSIMBAD}
 RUN_DEPENDS+=	p5-Astro-SIMBAD-Client>=0:${PORTSDIR}/astro/p5-Astro-SIMBAD-Client
 .endif
 
-.if !defined(WITHOUT_SPACETRACK)
+.if ${PORT_OPTIONS:MSPACETRACK}
 RUN_DEPENDS+=	p5-Astro-SpaceTrack>=0:${PORTSDIR}/astro/p5-Astro-SpaceTrack
 .endif
 
-.if !defined(WITHOUT_USGS)
+.if ${PORT_OPTIONS:MUSGS}
 RUN_DEPENDS+=	p5-Geo-WebService-Elevation-USGS>=0:${PORTSDIR}/science/p5-Geo-WebService-Elevation-USGS
 .endif
 
-.if defined(WITH_SOAPLITE)
+.if ${PORT_OPTIONS:MSOAPLITE}
 RUN_DEPENDS+=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 

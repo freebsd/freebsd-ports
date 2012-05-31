@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A pragma to use the C3 method resolution order algorithm
 
-OPTIONS=	XS "XS speed optimizations" off
+OPTIONS_DEFINE=	XS
+XS_DESC=	XS speed optimizations
 
 PERL_CONFIGURE=	yes
 
@@ -23,7 +24,7 @@ MAN3=		Class::C3.3 \
 
 .include <bsd.port.options.mk>
 
-.ifdef(WITH_XS)
+.if ${PORT_OPTIONS:MXS}
 BUILD_DEPENDS+=	p5-Class-C3-XS>=0.13:${PORTSDIR}/devel/p5-Class-C3-XS
 RUN_DEPENDS+=	p5-Class-C3-XS>=0.13:${PORTSDIR}/devel/p5-Class-C3-XS
 .else

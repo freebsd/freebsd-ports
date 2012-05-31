@@ -20,11 +20,13 @@ RUN_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 
 TEST_DEPENDS =	p5-Error>=0:${PORTSDIR}/lang/p5-Error
 
-OPTIONS=	ARGNAMES "Enable DwarnN subroutine" On
+OPTIONS_DEFINE=	ARGNAMES
+OPTIONS_DEFAULT=	ARGNAMES
+ARGNAMES_DESC=	Enable DwarnN subroutine
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ARGNAMES)
+.if ${PORT_OPTIONS:MARGNAMES}
 BUILD_DEPENDS+=	p5-Devel-ArgNames>=0.03:${PORTSDIR}/devel/p5-Devel-ArgNames
 RUN_DEPENDS+=	p5-Devel-ArgNames>=0.03:${PORTSDIR}/devel/p5-Devel-ArgNames
 .endif

@@ -29,7 +29,11 @@ MAN3=		Class::DBI::Loader.3 \
 		Class::DBI::Loader::SQLite.3 \
 		Class::DBI::Loader::mysql.3
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	PGSQL MYSQL SQLITE DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DOCS=	Changes README
 
 post-install:
@@ -38,20 +42,14 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-OPTIONS=	PGSQL "Enable support for PostgreSQL" Off \
-		MYSQL "Enable support for MySQL" Off \
-		SQLITE "Enable support for SQLite" Off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 RUN_DEPENDS+=	p5-Class-DBI-Pg>=0:${PORTSDIR}/databases/p5-Class-DBI-Pg
 .endif
-.if defined(WITH_MYSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 RUN_DEPENDS+=	p5-Class-DBI-mysql>=0:${PORTSDIR}/databases/p5-Class-DBI-mysql
 .endif
-.if defined(WITH_SQLITE)
+.if ${PORT_OPTIONS:MSQLITE}
 RUN_DEPENDS+=	p5-Class-DBI-SQLite>=0:${PORTSDIR}/databases/p5-Class-DBI-SQLite
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
