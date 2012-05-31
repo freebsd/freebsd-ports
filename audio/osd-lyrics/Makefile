@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	osdlyrics
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	audio deskutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	osd-lyrics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -23,6 +22,9 @@ LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
+# Cannot enable -Werror yet: Clang does not like the code `printf(_("..."))',
+# see this bug for details: http://llvm.org/bugs/show_bug.cgi?id=3814
+#CONFIGURE_ARGS=	--with-werror
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
@@ -35,10 +37,6 @@ OPTIONS=	MPD	"Enable MPD support"		off \
 		AMAROK	"Enable Amarok 1.4 support"	off
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
 
 .if defined(WITH_MPD)
 LIB_DEPENDS+=	mpd.4:${PORTSDIR}/audio/libmpd
@@ -55,21 +53,6 @@ CONFIGURE_ARGS+=	--disable-xmms2
 .if defined(WITH_AMAROK)
 CONFIGURE_ARGS+=	--enable-amarok1
 .endif
-
-post-patch:
-# Fix compilation warnings to unbreak the build with -Werror
-	@${REINPLACE_CMD} -E 's/(char \*in = inbuf),/const \1; char/' \
-		${WRKSRC}/src/ol_lrc_parser.c
-	@${REINPLACE_CMD} -e '/convert/s/char \*src/const &/' -e \
-		's/char \*\*input/const &/' \
-			${WRKSRC}/src/ol_lrc_fetch_utils.[ch]
-	@${REINPLACE_CMD} -e 's/GdkColor ret/& = { .pixel = 0 }/' \
-		${WRKSRC}/src/ol_option.c
-	@${REINPLACE_CMD} -e 's/static const gboolean/static gboolean/' \
-		${WRKSRC}/src/ol_player_muine.c
-	@${REINPLACE_CMD} -e \
-		'/!ol_player_amarok1_get_uint/s/[^ ]*))/(guint *)&/' \
-			${WRKSRC}/src/ol_player_amarok1.c
 
 post-install:
 .if !defined(NOPORTDOCS)
