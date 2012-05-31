@@ -5971,7 +5971,7 @@ OPTNOCHECK=	true
 .    endif
 .  endfor
 .  if !defined(OPTFOUND) && !defined(OPTNOCHECK)
-OPTIONS_WRONG_MULTI+=	${opt}
+OPTIONS_WRONG_MULTI+=	${multi}
 .  endif
 .  undef OPTFOUND
 .  undef OPTNOCHECK
