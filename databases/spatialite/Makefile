@@ -34,4 +34,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/configure
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
