@@ -42,10 +42,10 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 OPTIONS_DEFINE=	GDBM MEM SECURE_FREE MAILDIR MULTIBYTE PCRE STATIC DOCS DEBUG
 OPTIONS_DEFAULT=	SECURE_FREE MAILDIR MULTIBYTE
 
-GDBM_DESC=	"Enable GDBM support (GPL)"
+GDBM_DESC=	Enable GDBM support (GPL)
 MEM_DESC=	Enable zsh-mem options
 SECURE_FREE_DESC=	Enable zsh-secure-free
-MAILDIR_DESC=	"Enable support for Maildirs in MAIL(PATH)"
+MAILDIR_DESC=	Enable support for Maildirs in MAIL(PATH)
 
 PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
 
