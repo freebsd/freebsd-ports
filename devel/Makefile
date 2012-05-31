@@ -993,6 +993,7 @@
     SUBDIR += libvc
     SUBDIR += libvirt
     SUBDIR += libvolume_id
+    SUBDIR += libvshadow
     SUBDIR += libwfut
     SUBDIR += libx86
     SUBDIR += libxalloc
