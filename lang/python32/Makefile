@@ -7,6 +7,7 @@
 
 PORTNAME=	python32
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -50,12 +51,6 @@ BIN_FILES=	python python-shared python-config python-shared-config \
 BINLINKS_SUB=	-e 's,(2to3|idle3|pydoc3),\1-${PYTHON_VER},' \
 		-e 's,(python-shared|python),\1${PYTHON_VER},'
 
-OPTIONS=	THREADS "Enable thread support" on \
-		UCS4 "Use UCS4 for unicode support" on \
-		PYMALLOC "Use python's internal malloc" on \
-		IPV6 "Enable IPv6 support" on \
-		FPECTL "Enable floating point exception handling" off
-
 OPTIONS_DEFINE=	THREADS UCS4 PYMALLOC IPV6 FPECTL EXAMPLES
 OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
 
@@ -83,7 +78,7 @@ CONFIGURE_ARGS+=	--with-wide-unicode
 PYABIVER:=	${PYABIVER}u
 .endif
 
-.if ${PORT_OPTIONS:MPYMALLOC}
+.if empty(PORT_OPTIONS:MPYMALLOC)
 CONFIGURE_ARGS+=	--without-pymalloc
 .else
 PYABIVER:=	m${PYABIVER}

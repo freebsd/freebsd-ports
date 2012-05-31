@@ -7,6 +7,7 @@
 
 PORTNAME=	python31
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -75,7 +76,7 @@ CONFIGURE_ARGS+=	--without-threads
 CONFIGURE_ARGS+=	--with-wide-unicode
 .endif
 
-.if ${PORT_OPTIONS:MPYMALLOC}
+.if empty(PORT_OPTIONS:MPYMALLOC)
 CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
