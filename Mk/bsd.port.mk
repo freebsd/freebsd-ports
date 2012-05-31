@@ -5997,9 +5997,9 @@ pre-config:
 _COMPLETE_OPTIONS_LIST:=	${ALL_OPTIONS}
 .for opt in ${ALL_OPTIONS}
 .  if empty(PORT_OPTIONS:M${opt})
-DEFOPTIONS+=	${opt} ${${opt}_DESC:Q} off
+DEFOPTIONS+=	${opt} ""${${opt}_DESC:Q} off
 .  else
-DEFOPTIONS+=	${opt} ${${opt}_DESC:Q} on
+DEFOPTIONS+=	${opt} ""${${opt}_DESC:Q} on
 .  endif
 .endfor
 .for multi in ${OPTIONS_MULTI}
