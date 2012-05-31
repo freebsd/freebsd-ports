@@ -22,23 +22,22 @@ XFREE86_HTML_MAN=	no
 MAN8=		xmotd.8
 PLIST_FILES=	bin/xmotd
 
-OPTIONS=	HTML "Use HTML widget instead of ASCII text" off
-OPTIONS+=	MOTIF "Use Motif widget library" off
-OPTIONS+=	XPM "Allows colour XPM pixmaps" off
+OPTIONS_DEFINE=	HTML MOTIF XPM
+HTML_DESC=	Use HTML widget instead of ASCII text
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 MAKE_ARGS+=	-DHAVE_HTML
 BROKEN=		Does not compile when WITH_HTML is set
 .endif
 
-.if defined(WITH_MOTIF)
+.if ${PORT_OPTIONS:MMOTIF}
 MAKE_ARGS+=	-DMOTIF
 USE_MOTIF=	yes
 .endif
 
-.if defined(WITH_XPM)
+.if ${PORT_OPTIONS:MXPM}
 USE_XORG+=	xpm
 .endif
 
@@ -50,13 +49,13 @@ post-patch:
 .for file in libhtmlw/HTML-PSformat.c main.c textmode.c xmotd.c
 	@${REINPLACE_CMD} -e 's:malloc.h:stdlib.h:' ${WRKSRC}/${file}
 .endfor
-.if defined(WITH_HTML)
+.if ${PORT_OPTIONS:MHTML}
 	@${REINPLACE_CMD} -e 's:XCOMM #define HAVE_HTML:#define HAVE_HTML:g' ${WRKSRC}/Imakefile
 .endif
-.if defined (WITH_MOTIF)
+.if ${PORT_OPTIONS:MMOTIF}
 	@${REINPLACE_CMD} -e 's:XCOMM #define MOTIF:#define MOTIF:g' ${WRKSRC}/Imakefile
 .endif
-.if defined(WITH_XPM)
+.if ${PORT_OPTIONS:MXPM}
 	@${REINPLACE_CMD} -e 's:XCOMM #define HAVE_XPM:#define HAVE_XPM:g' ${WRKSRC}/Imakefile
 .endif
 
@@ -64,4 +63,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${LOCALBASE}/bin/xmotd
 	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${MANPREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
