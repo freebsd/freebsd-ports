@@ -712,6 +712,7 @@
     SUBDIR += pwsafe
     SUBDIR += py-XenAPI
     SUBDIR += py-bcfg2
+    SUBDIR += py-danzfs
     SUBDIR += py-drmaa
     SUBDIR += py-filelike
     SUBDIR += py-nagiosplugin

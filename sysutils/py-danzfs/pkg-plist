@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/danzfs.py
+%%PYTHON_SITELIBDIR%%/danzfs.pyc
+%%PYTHON_SITELIBDIR%%/danzfs.pyo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_get.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_everything.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_filesystems.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_snapshots.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zfs_list_volumes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_iostat.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_list.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zpool_status.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
