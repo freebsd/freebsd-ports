@@ -1,0 +1,4 @@
+DanZFS provides a Python API for checking the status of ZFS without the use of
+libzfs.
+
+WWW:	http://code.google.com/p/danzfs/
