@@ -46,8 +46,6 @@ bin/drush
 %%DATADIR%%/commands/runserver/runserver.drush.inc
 %%DATADIR%%/commands/make/make.download.inc
 %%DATADIR%%/commands/make/make.drush.inc
-%%DATADIR%%/commands/make/README.txt
-%%DATADIR%%/commands/make/EXAMPLE.make
 %%DATADIR%%/commands/make/generate.make.inc
 %%DATADIR%%/commands/make/make.utilities.inc
 %%DATADIR%%/commands/make/make.project.inc
@@ -63,6 +61,7 @@ bin/drush
 %%DATADIR%%/docs/context.html
 %%DATADIR%%/docs/drush.api.php
 %%DATADIR%%/docs/shellscripts.html
+%%DATADIR%%/docs/make.txt
 %%DATADIR%%/drush.complete.sh
 %%DATADIR%%/drush.info
 %%DATADIR%%/drush.php
@@ -70,6 +69,7 @@ bin/drush
 %%DATADIR%%/drush_logo-black.png
 %%DATADIR%%/examples/example.aliases.drushrc.php
 %%DATADIR%%/examples/example.bashrc
+%%DATADIR%%/examples/example.make
 %%DATADIR%%/examples/example.drush.ini
 %%DATADIR%%/examples/example.drushrc.php
 %%DATADIR%%/examples/helloworld.script
@@ -99,6 +99,7 @@ bin/drush
 %%DATADIR%%/lib/README.txt
 %%DATADIR%%/tests/siteIntallD6Test.php
 %%DATADIR%%/tests/completeTest.php
+%%DATADIR%%/tests/filesystemTest.php
 %%DATADIR%%/tests/makefiles/contrib-destination.make
 %%DATADIR%%/tests/makefiles/svn.make
 %%DATADIR%%/tests/makefiles/translations-inside7.make
