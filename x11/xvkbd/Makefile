@@ -19,37 +19,38 @@ LICENSE_COMB=	dual
 
 MAN1=		xvkbd.1
 
-OPTIONS=	XAW3D	"Xaw3d support" off \
-		XTEST	"XTEST extensions support" on \
-		I18N	"internationalization" on
+OPTIONS_DEFINE=	XAW3D XTEST NLS DOCS
+OPTIONS_DEFAULT=	XTEST
+XAW3D_DESC=	Xaw3d support
+XTEST_DESC=	XTEST extensions support
 
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
 .include <bsd.port.pre.mk>
 
-.if	defined(WITH_XAW3D)
+.if ${PORT_OPTIONS:MXAW3D}
 BUILD_DEPENDS=	${LOCALBASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-.if	defined(WITH_XAW3D)
+.if ${PORT_OPTIONS:MXAW3D}
 XK_DEFSUBST +=	-e 's/XCOMM define XAW3D/\#define XAW3D/;'
 .endif
-.if	defined(WITH_XTEST)
+.if ${PORT_OPTIONS:MXTEST}
 XK_DEFSUBST +=	-e 's/XCOMM define XTEST/\#define XTEST/;'
 USE_XORG+=	xtst
 .endif
-.if	defined(WITH_I18N)
+.if ${PORT_OPTIONS:MNLS}
 XK_DEFSUBST +=	-e 's/XCOMM define I18N/\#define I18N/;'
 .endif
 
 post-patch:
-.if	defined(XK_DEFSUBST)
+.if defined(XK_DEFSUBST)
 		${REINPLACE_CMD} ${XK_DEFSUBST} ${WRKSRC}/Imakefile
 .endif
 		${REINPLACE_CMD} -e "s@/usr/include/@${LOCALBASE}/include/@" ${WRKSRC}/XVkbd-small.ad
 
-.if	!defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/

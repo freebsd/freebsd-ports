@@ -16,7 +16,8 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
-OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off
+OPTIONS_DEFINE=	GTK1
+GTK1_DESC=	GTK1 support (Default is GTK2)
 
 USE_XORG=	x11 xv
 WANT_GNOME=	yes
@@ -26,9 +27,9 @@ PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME}
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GTK1)
+.if ${PORT_OPTIONS:MGTK1}
 USE_GNOME+=	gtk12
 GTK_PC=		gtk+
 .else
@@ -50,4 +51,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/g${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
