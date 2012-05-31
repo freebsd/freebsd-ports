@@ -23,6 +23,10 @@ QT4_VER_MIN=	4.5.3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
 .if  ${QT4_VERSION:S/.//g} < ${QT4_VER_MIN:S/.//g}
 IGNORE=	Please update your current qt4 version to ${QT4_VER_MIN}
 .endif
