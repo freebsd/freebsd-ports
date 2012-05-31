@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.98.4
+PORTVERSION=	0.98.9
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -47,7 +47,7 @@ CONFIGURE_ENV+=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS+="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
+	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	${REINPLACE_CMD} -e 's|Linux|FreeBSD|g' ${WRKSRC}/amsn.desktop
 
