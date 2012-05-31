@@ -17,6 +17,7 @@ include/uim/uim-scm.h
 include/uim/uim-scm-abbrev.h
 include/uim/uim-util.h
 include/uim/uim.h
+include/uim/version.h
 lib/libgcroots.a
 lib/libgcroots.la
 lib/libgcroots.so
@@ -382,6 +383,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/tutcode-kigou-rule.scm
 %%DATADIR%%/tutcode-kigoudic.scm
 %%DATADIR%%/tutcode-rule.scm
+%%DATADIR%%/tutcode-rule-custom.scm
 %%DATADIR%%/tutcode.scm
 %%DATADIR%%/uim-help.scm
 %%DATADIR%%/uim-module-manager.scm
