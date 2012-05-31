@@ -69,16 +69,16 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The PostgreSQL Global Development Group reports:</p>
 	<blockquote cite="http://www.postgresql.org/about/news/1397/">
 	  <p>Today the PHP, OpenBSD and FreeBSD communities announced updates to
-	  patch a security hole involving their crypt() hashing algorithms. This
-	  issue is described in CVE-2012-2143. This vulnerability also affects a
-	  minority of PostgreSQL users, and will be fixed in an update release on
-	  June 4, 2012.</p>
+	    patch a security hole involving their crypt() hashing algorithms. This
+	    issue is described in CVE-2012-2143. This vulnerability also affects a
+	    minority of PostgreSQL users, and will be fixed in an update release on
+	    June 4, 2012.</p>
 	  <p>Affected users are those who use the crypt(text, text) function
-	  with DES encryption in the optional pg_crypto module. Passwords
-	  affected are those that contain characters that cannot be
-	  represented with 7-bit ASCII. If a password contains a character
-	  that has the most significant bit set (0x80), and DES encryption
-	  is used, that character and all characters after it will be ignored.</p>
+	    with DES encryption in the optional pg_crypto module. Passwords
+	    affected are those that contain characters that cannot be
+	    represented with 7-bit ASCII. If a password contains a character
+	    that has the most significant bit set (0x80), and DES encryption
+	    is used, that character and all characters after it will be ignored.</p>
 	</blockquote>
       </body>
     </description>
