@@ -8,6 +8,7 @@ modifications - hooks, scripts, ADCs, etc - must be migrated.
 Please refer to [0] or [1] before moving on.
 
 tl;dr:
+    Run %%PREFIX%%/libexec/gitolite/check-g2-compat as your gitolite provider
     Backup gitolite-admin repo
     Remove old gitolite references (authorized_keys, rc file, gitolite-admin,
         ~/.gitolite)
@@ -26,8 +27,7 @@ the user:
 
 %%PREFIX%%/bin/gitolite setup -pk /path/to/admin.ssh.key.pub
 
-This will setup up the configuration files for gitolite, designating where the
-repositories are located and other options.
+This will setup up the configuration files and repositories for gitolite.
 
 The admin ssh key allows full access to the gitolite-admin repository where
 additional users and repositories can be configured.
