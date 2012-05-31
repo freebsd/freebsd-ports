@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 DISTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6 security
 MASTER_SITES=	GNU
 
@@ -52,6 +53,9 @@ MAN1=	gnunet-arm.1 gnunet-directory.1 gnunet-download.1 \
 	gnunet-search.1 gnunet-statistics.1 gnunet-transport.1 \
 	gnunet-unindex.1 gnunet-vpn.1
 
+#If a non-default GNUNET_DAEMON_DIR is defined, the home directory
+#of the gnunet user may need to be adjusted -- e.g., via:
+#pw usermod gnunet -d $GNUNET_DAEMON_DIR
 GNUNET_DAEMON_DIR?=		/var/lib/gnunet
 PLIST_SUB=	GNUNET_DAEMON_DIR=${GNUNET_DAEMON_DIR}
 SUB_FILES=	pkg-message
@@ -63,7 +67,8 @@ PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README
 .endif
 
 .if !defined(NOPORTEXAMPLES)
-PORTEXAMPLES=	gnunet_janitor.py gnunet_pyexpect.py hostlist.cgi hostlist.php report.sh
+PORTEXAMPLES=	gnunet_janitor.py gnunet_pyexpect.py hostlist.cgi hostlist.php \
+report.sh
 .endif
 
 .if defined(WITH_HTTP)
@@ -125,8 +130,8 @@ post-patch:
 		${WRKSRC}/pkgconfig/Makefile.in
 
 post-install:
-	@${PRINTF} "%s\n%s\n" "[PATHS]" "SERVICEHOME = ${GNUNET_DAEMON_DIR}" \
-	> ${PREFIX}/etc/gnunet.conf.sample
+	@${PRINTF} "%s\n%s\n%s\n" "[PATHS]" "SERVICEHOME = ${GNUNET_DAEMON_DIR}" \
+	"DEFAULTCONFIG = ${PREFIX}/etc/gnunet.conf" > ${PREFIX}/etc/gnunet.conf.sample
 .if !exists(${PREFIX}/etc/gnunet.conf)
 	@${CP} ${PREFIX}/etc/gnunet.conf.sample ${PREFIX}/etc/gnunet.conf
 .endif
