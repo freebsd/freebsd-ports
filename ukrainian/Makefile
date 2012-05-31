@@ -12,7 +12,6 @@
     SUBDIR += ispell
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
-    SUBDIR += koffice-i18n
     SUBDIR += libreoffice
     SUBDIR += monacofonts
     SUBDIR += mythes
