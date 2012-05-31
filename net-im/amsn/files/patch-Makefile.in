@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-10-06 15:51:12.000000000 -0300
-+++ Makefile.in	2009-10-09 20:46:42.000000000 -0300
-@@ -67,7 +67,7 @@
+--- Makefile.in.orig	2012-05-28 18:20:27.000000000 -0300
++++ Makefile.in	2012-05-28 18:22:05.000000000 -0300
+@@ -74,7 +74,7 @@
  TCL_STUB_LIB_SPEC := @TCL_STUB_LIB_SPEC@
  
  # Directories in which the Tk core can be found
@@ -8,12 +8,12 @@
 +TK_INC_SPEC 	:= @TK_INC_SPEC@/generic
  TK_STUB_LIB_SPEC := @TK_STUB_LIB_SPEC@
  
- # C Flags for X
-@@ -118,6 +118,7 @@
- CXXFLAGS   += -DPACKAGE='"$(PACKAGE)"'
- CXXFLAGS   += -DVERSION='"$(VERSION)"'
- CXXFLAGS   += -DLIBDIR='"$(LIBDIR)"'
-+CXXFLAGS   += -I${LOCALBASE}/include
+ # stuff configure has found
+@@ -95,6 +95,7 @@
+ endif
+ ADDITIONAL_FLAGS   += -DPACKAGE='"$(PACKAGE)"'
+ ADDITIONAL_FLAGS   += -DVERSION='"$(VERSION)"'
++ADDITIONAL_FLAGS   += -I${LOCALBASE}/include
  
- ifeq ($(STATIC),yes)
- CXXFLAGS += -static-libgcc -L.
+ # shared objects need -fPIC
+ ADDITIONAL_FLAGS   += -fPIC

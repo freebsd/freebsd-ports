@@ -15,6 +15,7 @@ share/pixmaps/amsn.png
 %%DATADIR%%/abook.tcl
 %%DATADIR%%/addressbook.tcl
 %%DATADIR%%/alarm.tcl
+%%DATADIR%%/amsn-e
 %%DATADIR%%/amsn
 %%DATADIR%%/amsn-remote
 %%DATADIR%%/amsn-remote-CLI
@@ -127,6 +128,24 @@ share/pixmaps/amsn.png
 %%DATADIR%%/hotmail.tcl
 %%DATADIR%%/hotmlog.htm
 %%DATADIR%%/lang.tcl
+%%DATADIR%%/msnp2p/constants.tcl
+%%DATADIR%%/msnp2p/filetransfer.tcl
+%%DATADIR%%/msnp2p/message.tcl
+%%DATADIR%%/msnp2p/msnobject.tcl
+%%DATADIR%%/msnp2p/p2p.tcl
+%%DATADIR%%/msnp2p/session.tcl
+%%DATADIR%%/msnp2p/session_manager.tcl
+%%DATADIR%%/msnp2p/slp.tcl
+%%DATADIR%%/msnp2p/sourcefiles.tcl
+%%DATADIR%%/msnp2p/webcam.tcl
+%%DATADIR%%/msnp2p/transport/TLP.tcl
+%%DATADIR%%/msnp2p/transport/TLPv1.tcl
+%%DATADIR%%/msnp2p/transport/TLPv2.tcl
+%%DATADIR%%/msnp2p/transport/base.tcl
+%%DATADIR%%/msnp2p/transport/constants.tcl
+%%DATADIR%%/msnp2p/transport/direct.tcl
+%%DATADIR%%/msnp2p/transport/switchboard.tcl
+%%DATADIR%%/msnp2p/transport/transport_manager.tcl
 %%DATADIR%%/lang/LANG-HOWTO
 %%DATADIR%%/lang/convert.tcl
 %%DATADIR%%/lang/langal
@@ -2309,11 +2328,6 @@ share/pixmaps/amsn.png
 %%DATADIR%%/utils/BWidget-1.9.0/widget.tcl
 %%DATADIR%%/utils/BWidget-1.9.0/wizard.tcl
 %%DATADIR%%/utils/BWidget-1.9.0/xpm2image.tcl
-%%DATADIR%%/utils/TkCximage/TkCximage.so
-%%DATADIR%%/utils/TkCximage/pkgIndex.tcl
-%%DATADIR%%/utils/asyncresolver/asyncresolver.tcl
-%%DATADIR%%/utils/asyncresolver/libasyncresolver.so
-%%DATADIR%%/utils/asyncresolver/pkgIndex.tcl
 %%DATADIR%%/utils/base64/base64.tcl
 %%DATADIR%%/utils/base64/license.terms
 %%DATADIR%%/utils/base64/pkgIndex.tcl
@@ -2332,17 +2346,11 @@ share/pixmaps/amsn.png
 %%DATADIR%%/utils/drawboard/drawboard.tcl
 %%DATADIR%%/utils/drawboard/grid.png
 %%DATADIR%%/utils/drawboard/pkgIndex.tcl
-%%DATADIR%%/utils/farsight/pkgIndex.tcl
-%%DATADIR%%/utils/farsight/tcl_farsight.so
 %%DATADIR%%/utils/framec/framec.tcl
 %%DATADIR%%/utils/framec/pkgIndex.tcl
 %%DATADIR%%/utils/http/http.tcl
 %%DATADIR%%/utils/http/license.terms
 %%DATADIR%%/utils/http/pkgIndex.tcl
-%%DATADIR%%/utils/linux/linflash/flash.so
-%%DATADIR%%/utils/linux/linflash/pkgIndex.tcl
-%%DATADIR%%/utils/linux/traydock/libtray.so
-%%DATADIR%%/utils/linux/traydock/pkgIndex.tcl
 %%DATADIR%%/utils/log/license.terms
 %%DATADIR%%/utils/log/log.tcl
 %%DATADIR%%/utils/log/logger.tcl
@@ -2434,24 +2442,43 @@ share/pixmaps/amsn.png
 %%DATADIR%%/utils/snit/snit83.tcl
 %%DATADIR%%/utils/snit/snit_tcl83_utils.tcl
 %%DATADIR%%/utils/snit/validate.tcl
-%%DATADIR%%/utils/tclISF/pkgIndex.tcl
-%%DATADIR%%/utils/tclISF/tclISF.so
-%%DATADIR%%/utils/tcl_siren/pkgIndex.tcl
-%%DATADIR%%/utils/tcl_siren/tcl_siren.so
 %%DATADIR%%/utils/uri/pkgIndex.tcl
 %%DATADIR%%/utils/uri/uri.tcl
 %%DATADIR%%/utils/uri/urn-scheme.tcl
 %%DATADIR%%/utils/voipcontrols/pkgIndex.tcl
 %%DATADIR%%/utils/voipcontrols/test.tcl
 %%DATADIR%%/utils/voipcontrols/voipcontrols.tcl
-%%DATADIR%%/utils/webcamsn/pkgIndex.tcl
-%%DATADIR%%/utils/webcamsn/webcamsn.so
+lib/amsn/utils/farsight/tcl_farsight.so
+lib/amsn/utils/farsight/pkgIndex.tcl
+lib/amsn/utils/webcamsn/webcamsn.so
+lib/amsn/utils/webcamsn/pkgIndex.tcl
+lib/amsn/utils/TkCximage/TkCximage.so
+lib/amsn/utils/TkCximage/pkgIndex.tcl
+lib/amsn/utils/linux/linflash/flash.so
+lib/amsn/utils/linux/linflash/pkgIndex.tcl
+lib/amsn/utils/linux/traydock/libtray.so
+lib/amsn/utils/linux/traydock/pkgIndex.tcl
+lib/amsn/utils/tcl_siren/tcl_siren.so
+lib/amsn/utils/tcl_siren/pkgIndex.tcl
+lib/amsn/utils/tclISF/tclISF.so
+lib/amsn/utils/tclISF/pkgIndex.tcl
+lib/amsn/utils/asyncresolver/libasyncresolver.so
+lib/amsn/utils/asyncresolver/asyncresolver.tcl
+lib/amsn/utils/asyncresolver/pkgIndex.tcl
 @dirrm share/applications
-@dirrm %%DATADIR%%/utils/webcamsn
+@dirrm lib/amsn/utils/asyncresolver
+@dirrm lib/amsn/utils/tclISF
+@dirrm lib/amsn/utils/tcl_siren
+@dirrm lib/amsn/utils/linux/traydock
+@dirrm lib/amsn/utils/linux/linflash
+@dirrm lib/amsn/utils/linux
+@dirrm lib/amsn/utils/TkCximage
+@dirrm lib/amsn/utils/webcamsn
+@dirrm lib/amsn/utils/farsight
+@dirrm lib/amsn/utils
+@dirrm lib/amsn
 @dirrm %%DATADIR%%/utils/voipcontrols
 @dirrm %%DATADIR%%/utils/uri
-@dirrm %%DATADIR%%/utils/tcl_siren
-@dirrm %%DATADIR%%/utils/tclISF
 @dirrm %%DATADIR%%/utils/snit
 @dirrm %%DATADIR%%/utils/sha1
 @dirrm %%DATADIR%%/utils/sexytile
@@ -2464,20 +2491,14 @@ share/pixmaps/amsn.png
 @dirrm %%DATADIR%%/utils/md4
 @dirrm %%DATADIR%%/utils/log/msgs
 @dirrm %%DATADIR%%/utils/log
-@dirrm %%DATADIR%%/utils/linux/traydock
-@dirrm %%DATADIR%%/utils/linux/linflash
-@dirrm %%DATADIR%%/utils/linux
 @dirrm %%DATADIR%%/utils/http
 @dirrm %%DATADIR%%/utils/framec
-@dirrm %%DATADIR%%/utils/farsight
 @dirrm %%DATADIR%%/utils/drawboard
 @dirrm %%DATADIR%%/utils/dpbrowser
 @dirrm %%DATADIR%%/utils/des
 @dirrm %%DATADIR%%/utils/contentmanager
 @dirrm %%DATADIR%%/utils/combobox
 @dirrm %%DATADIR%%/utils/base64
-@dirrm %%DATADIR%%/utils/asyncresolver
-@dirrm %%DATADIR%%/utils/TkCximage
 @dirrm %%DATADIR%%/utils/BWidget-1.9.0/lang
 @dirrm %%DATADIR%%/utils/BWidget-1.9.0/images
 @dirrm %%DATADIR%%/utils/BWidget-1.9.0
@@ -2652,4 +2673,6 @@ share/pixmaps/amsn.png
 @dirrm %%DATADIR%%/desktop-icons/128x128
 @dirrm %%DATADIR%%/desktop-icons
 @dirrm %%DATADIR%%/ca-certs
+@dirrm %%DATADIR%%/msnp2p/transport
+@dirrm %%DATADIR%%/msnp2p
 @dirrm %%DATADIR%%
