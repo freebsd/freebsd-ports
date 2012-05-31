@@ -1807,6 +1807,7 @@ cmucl-extra                     ports/lang/cmucl-extra
 cmunge                          ports/devel/cmunge
 cmus                            ports/audio/cmus
 cmus-post.fm                    ports/audio/cmus-post.fm
+cnagios                         ports/net-mgmt/cnagios
 cnd                             ports/net/cnd
 cnet                            ports/net/cnet
 cnews                           ports/news/cnews
@@ -7662,6 +7663,7 @@ kwordquiz                       ports/misc/kwordquiz
 kxmleditor                      ports/editors/kxmleditor
 ky-aspell                       ports/textproc/ky-aspell
 kyotocabinet                    ports/databases/kyotocabinet
+kyototycoon                     ports/databases/kyototycoon
 kyra                            ports/devel/kyra
 l0pht-watch                     ports/security/l0pht-watch
 l0phtcrack                      ports/security/l0phtcrack
@@ -7894,6 +7896,7 @@ libao                           ports/audio/libao
 libapreq2                       ports/www/libapreq2
 libarc                          ports/archivers/libarc
 libarena                        ports/devel/libarena
+libarms                         ports/net/libarms
 libart_lgpl                     ports/graphics/libart_lgpl
 libass                          ports/multimedia/libass
 libassa                         ports/devel/libassa
@@ -10453,6 +10456,7 @@ nspmod                          ports/audio/nspmod
 nspr                            ports/devel/nspr
 nss                             ports/security/nss
 nss-pam-ldapd                   ports/net/nss-pam-ldapd
+nss-pam-ldapd-sasl              ports/net/nss-pam-ldapd-sasl
 nss_ldap                        ports/net/nss_ldap
 nss_mdns                        ports/dns/nss_mdns
 nss_resinit                     ports/dns/nss_resinit
@@ -23149,6 +23153,7 @@ py-repoze.tm2                   ports/devel/py-repoze.tm2
 py-repoze.what                  ports/devel/py-repoze.what
 py-repoze.what-pylons           ports/devel/py-repoze.what-pylons
 py-repoze.who                   ports/devel/py-repoze.who
+py-repoze.who-friendlyform      ports/devel/py-repoze.who-friendlyform
 py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
 py-repoze.xmliter               ports/devel/py-repoze.xmliter
 py-requests                     ports/www/py-requests
@@ -23305,6 +23310,7 @@ py-turbomail                    ports/mail/py-turbomail
 py-tvdb_api                     ports/www/py-tvdb_api
 py-tvgrab                       ports/textproc/py-tvgrab
 py-tvnamer                      ports/multimedia/py-tvnamer
+py-tw.forms                     ports/devel/py-tw.forms
 py-tweepy                       ports/net/py-tweepy
 py-twisted                      ports/devel/py-twisted
 py-twistedConch                 ports/security/py-twistedConch
@@ -25764,6 +25770,7 @@ smtpmail                        ports/mail/smtpmail
 smtprc                          ports/mail/smtprc
 smtpscan                        ports/security/smtpscan
 smtptrapd                       ports/mail/smtptrapd
+smtube                          ports/multimedia/smtube
 smu                             ports/textproc/smu
 smurflog                        ports/security/smurflog
 smuxi                           ports/irc/smuxi
@@ -27547,6 +27554,7 @@ vodmr                           ports/mail/vodmr
 voipong                         ports/audio/voipong
 volleyball                      ports/games/volleyball
 volman                          ports/sysutils/volman
+volpack                         ports/graphics/volpack
 volta                           ports/www/volta
 voltcraft304                    ports/misc/voltcraft304
 volumecontrol.app               ports/audio/volumecontrol.app
