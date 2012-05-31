@@ -1,8 +1,8 @@
 @comment $FreeBSD$
 bin/compiz
 bin/compiz-manager
-%%GTK%%bin/gtk-window-decorator
-%%KDE%%bin/kde-window-decorator
+%%GTK2%%bin/gtk-window-decorator
+%%KDE3%%bin/kde-window-decorator
 include/compiz/compiz.h
 include/compiz/compiz-common.h
 include/compiz/compiz-core.h
@@ -34,9 +34,9 @@ lib/compiz/libdecoration.so
 lib/compiz/libfade.a
 lib/compiz/libfade.la
 lib/compiz/libfade.so
-%%FUSEFS%%lib/compiz/libfs.a
-%%FUSEFS%%lib/compiz/libfs.la
-%%FUSEFS%%lib/compiz/libfs.so
+%%FUSE%%lib/compiz/libfs.a
+%%FUSE%%lib/compiz/libfs.la
+%%FUSE%%lib/compiz/libfs.so
 lib/compiz/libgconf.a
 lib/compiz/libgconf.la
 lib/compiz/libgconf.so

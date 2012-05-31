@@ -19,7 +19,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-OPTIONS=	IMLIB2 "Imlib2 (pixmap themes) support" On
+OPTIONS_DEFINE=	IMLIB2 DOCS
+OPTIONS_DEFAULT=	IMLIB2
 
 USE_XORG=	xext xft xpm xrender
 WANT_EFL=	yes
@@ -29,20 +30,20 @@ MAKE_JOBS_SAFE=	yes
 PORTDOCS=	ChangeLog INSTALL README
 PLIST_FILES=	bin/fbdesk
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_IMLIB2)
-CONFIGURE_ARGS+=	--disable-imlib2
-.else
+.if ${PORT_OPTIONS:MIMLIB2}
 USE_EFL+=	imlib2
+.else
+CONFIGURE_ARGS+=	--disable-imlib2
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

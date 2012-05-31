@@ -22,16 +22,17 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=	--includedir="${PREFIX}/include/${PORTNAME}" \
 			--with-html-dir="${PREFIX}/share/doc"
 
-OPTIONS=	GLADE "Enable libglade2 support" off \
-		GLADEUI "Enable glade3 support" off
+OPTIONS_DEFINE= GLADE GLADEUI DOCS EXAMPLES
+GLADE_DESC=	Enable libglade2 support
+GLADEUI_DESC=	Enable glade3 support
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 USE_GNOME+=	referencehack
 .endif
 
-.if !defined(WITHOUT_GLADE)
+.if ${PORT_OPTIONS:MGLADE}
 USE_GNOME+=	libglade2
 CONFIGURE_ARGS+=	--enable-libglade
 PLIST_SUB+=	GLADE=""
@@ -40,7 +41,7 @@ CONFIGURE_ARGS+=	--disable-libglade
 PLIST_SUB+=	GLADE="@comment "
 .endif
 
-.if !defined(WITHOUT_GLADEUI)
+.if ${PORT_OPTIONS:MGLADEUI}
 LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=	--enable-glade
 PLIST_SUB+=	GLADEUI=""
@@ -58,7 +59,7 @@ post-patch:
 		${WRKSRC}/gtk/Makefile.in ${WRKSRC}/examples/Makefile.in
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${EXAMPLESDIR}
 .endif

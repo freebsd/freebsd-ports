@@ -60,11 +60,9 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/include/np*' \
 	--exclude '${DISTNAME}/doc/html/qmake*'
 
-OPTIONS=	CUPS "Enable CUPS support" on \
-		KDE_PATCHES "Apply KDE patches" off \
-		NAS "Enable NAS support" on \
-		OPENGL "Enable OpenGL support" on \
-		XFT "Enable Xft support" on
+OPTIONS_DEFINE=	CUPS KDE_PATCHES NAS OPENGL XFT
+OPTIONS_DEFAULT= CUPS NAS OPENGL XFT
+KDE_PATCHES_DESC=	Apply KDE patches
 
 EXTRACT_COOKIE=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
 CONFIGURE_COOKIE=${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
@@ -93,7 +91,7 @@ CONFIGURE_ARGS+=-platform ${PLATFORM}
 CONFIGURE_ARGS+=-platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 .endif
 
-.if !defined(WITHOUT_XFT)
+.if ${PORT_OPTIONS:MXFT}
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .elif defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=-no-xft
@@ -103,28 +101,28 @@ CONFIGURE_ARGS+=-no-xft
 CONFIGURE_ARGS+=-debug
 .endif
 
-.if !defined(WITHOUT_OPENGL)
+.if ${PORT_OPTIONS:MOPENGL}
 USE_GL=		glu
 CONFIGURE_ARGS+=-dlopen-opengl
-.elif defined(WITHOUT_OPENGL)
+.else
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
 
-.if !defined(WITHOUT_CUPS)
+.if ${PORT_OPTIONS:MCUPS}
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
-.elif defined(WITHOUT_CUPS)
+.else
 CUPS=
 .endif
 
-.if !defined(WITHOUT_NAS)
+.if ${PORT_OPTIONS:MNAS}
 LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound -no-pch
-.elif defined(WITHOUT_NAS)
+.else
 CONFIGURE_ARGS+=-no-nas-sound
 .endif
 
-.if defined(WITH_KDE_PATCHES)
+.if ${PORT_OPTIONS:MKDE_PATCHES}
 EXTRA_PATCHES+=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0002-dnd_active_window_fix.patch \
 		${PATCHDIR}/0007-qpixmap_constants.patch \
@@ -153,7 +151,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/0001-dnd_optimization.patch \
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*
-.elif defined(WITHOUT_KDE_PATCHES)
+.else
 CONFLICTS+=	qt-copy-[0-9]*
 .endif
 

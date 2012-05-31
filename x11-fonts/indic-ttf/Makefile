@@ -24,17 +24,23 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S|_|-|}
 
 NO_BUILD=	yes
 
-OPTIONS=	BENGALI		"BENGALI font set" on \
-		DEVANAGARI	"DEVANAGARI font set" on \
-		GUJARATI	"GUJARATI font set" on \
-		KANNADA		"KANNADA font set" on \
-		MALAYALAM	"MALAYALAM font set" on \
-		ORIYA		"ORIYA font set" on \
-		PUNJABI		"PUNJABI font set" on \
-		TAMIL		"TAMIL font set" on \
-		TELUGU		"TELUGU font set" on
+OPTIONS_MULTI=	FONTS
+OPTIONS_MULTI_FONTS=	BENGALI DEVANAGARI GUJARATI KANNADA ORIYA PUNJABI \
+			TAMIL TELUGU
+OPTIONS_DEFAULT=	BENGALI DEVANAGARI GUJARATI KANNADA ORIYA PUNJABI \
+			TAMIL TELUGU
 
-.include <bsd.port.pre.mk>
+BENGALI_DESC=		BENGALI font set
+DEVANAGARI_DESC=	DEVANAGARI font set
+GUJARATI_DESC=		GUJARATI font set
+KANNADA_DESC=		KANNADA font set
+MALAYALAM_DESC=		MALAYALAM font set
+ORIYA_DESC=		ORIYA font set
+PUNJABI_DESC=		PUNJABI font set
+TAMIL_DESC=		TAMIL font set
+TELUGU_DESC=		TELUGU font set
+
+.include <bsd.port.options.mk>
 
 FONTSNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTSNAME}
@@ -53,74 +59,70 @@ SUB_FILES=	pkg-message
 SUB_LIST=	FONTSDIR=${FONTSDIR} \
 		CONFAVAILDIR=${CONFAVAILDIR}
 
-.if defined(WITHOUT_BENGALI)
-PLIST_SUB+=	BENGALI='@comment '
-.else
+.if ${PORT_OPTIONS:MBENGALI}
 FONTS=		bengali
 PLIST_SUB+=	BENGALI=''
+.else
+PLIST_SUB+=	BENGALI='@comment '
 .endif
 
-.if defined(WITHOUT_DEVANAGARI)
-PLIST_SUB+=	DEVANAGARI='@comment '
-.else
+.if ${PORT_OPTIONS:MDEVANAGARI}
 FONTS+=		devanagari
 PLIST_SUB+=	DEVANAGARI=''
+.else
+PLIST_SUB+=	DEVANAGARI='@comment '
 .endif
 
-.if defined(WITHOUT_GUJARATI)
-PLIST_SUB+=	GUJARATI='@comment '
-.else
+.if ${PORT_OPTIONS:MGUJARATI}
 FONTS+=		gujarati
 PLIST_SUB+=	GUJARATI=''
+.else
+PLIST_SUB+=	GUJARATI='@comment '
 .endif
 
-.if defined(WITHOUT_KANNADA)
-PLIST_SUB+=	KANNADA='@comment '
-.else
+.if ${PORT_OPTIONS:MKANNADA}
 FONTS+=		kannada
 PLIST_SUB+=	KANNADA=''
+.else
+PLIST_SUB+=	KANNADA='@comment '
 .endif
 
-.if defined(WITHOUT_MALAYALAM)
-PLIST_SUB+=	MALAYALAM='@comment '
-.else
+.if ${PORT_OPTIONS:MMALAYALAM}
 FONTS+=		malayalam
 PLIST_SUB+=	MALAYALAM=''
+.else
+PLIST_SUB+=	MALAYALAM='@comment '
 .endif
 
-.if defined(WITHOUT_ORIYA)
-PLIST_SUB+=	ORIYA='@comment '
-.else
+.if ${PORT_OPTIONS:MORIYA}
 FONTS+=		oriya
 PLIST_SUB+=	ORIYA=''
+.else
+PLIST_SUB+=	ORIYA='@comment '
 .endif
 
-.if defined(WITHOUT_PUNJABI)
-PLIST_SUB+=	PUNJABI='@comment '
-.else
+.if ${PORT_OPTIONS:MPUNJABI}
 FONTS+=		punjabi
 PLIST_SUB+=	PUNJABI=''
+.else
+PLIST_SUB+=	PUNJABI='@comment '
 .endif
 
-.if defined(WITHOUT_TAMIL)
-PLIST_SUB+=	TAMIL='@comment '
-.else
+.if ${PORT_OPTIONS:MTAMIL}
 FONTS+=		tamil
 PLIST_SUB+=	TAMIL=''
+.else
+PLIST_SUB+=	TAMIL='@comment '
 .endif
 
-.if defined(WITHOUT_TELUGU)
-PLIST_SUB+=	TELUGU='@comment '
-.else
+.if ${PORT_OPTIONS:MTELUGU}
 FONTS+=		telugu
 PLIST_SUB+=	TELUGU=''
+.else
+PLIST_SUB+=	TELUGU='@comment '
 .endif
 
 SUB_LIST+=	FONTS="${FONTS}"
-
-.if empty(FONTS)
-IGNORE=	you have to select at least an option
-.endif
 
 do-install: install-fonts install-conf
 
@@ -147,4 +149,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

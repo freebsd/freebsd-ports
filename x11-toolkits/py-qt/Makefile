@@ -25,9 +25,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-s
 USE_QT_VER=	3
 USE_PYTHON=	2.5+
 
-OPTIONS=	DEBUG "Enable debugging symbols" off \
-		OPENGL "Enable OpenGL support" on \
-		TRACING	"Enable tracing in generated code" off
+OPTIONS_DEFINE=	DEBUG OPENGL TRACING EXAMPLES DOCS
+OPTIONS_DEFAULT=	OPENGL
+TRACING_DESC=	Enable tracing in generated code
 
 DATADIR=	${PREFIX}/share/py-sip
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
@@ -40,10 +40,10 @@ MODULES=	qt qtcanvas qtnetwork qttable qtxml qtui qtsql qtext
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 ARGS+=		-u
 .endif
-.if exists(${LOCALBASE}/include/qgl.h) && !defined(WITHOUT_OPENGL)
+.if exists(${LOCALBASE}/include/qgl.h) && ${PORT_OPTIONS:MOPENGL}
 PLIST_SUB+=	OPENGL=""
 MODULES+=	qtgl
 .else
@@ -53,7 +53,7 @@ pre-configure:
 		"**  OpenGL is disabled (chosen here or your Qt3 has no OpenGL support) **"\
 		&& ${ECHO_CMD}
 .endif
-.if defined(WITH_TRACING)
+.if ${PORT_OPTIONS:MTRACING}
 ARGS+=		-r
 .endif
 
@@ -72,7 +72,7 @@ post-configure:
 .endfor
 
 post-build:
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC} &&\
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py examples3
 .endif
@@ -81,12 +81,12 @@ post-install:
 	cd ${PYTHON_SITELIBDIR} &&\
 		${PYTHON_CMD} -c "import pyqtconfig" &&\
 		${PYTHON_CMD} -O -c "import pyqtconfig"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR} &&\
 		${INSTALL_DATA} ChangeLog NEWS README doc/* ${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	cd ${WRKSRC}/examples3 &&\
 		${MKDIR} ${EXAMPLESDIR}/SQL ${EXAMPLESDIR}/canvas\
 			${EXAMPLESDIR}/i18n ${EXAMPLESDIR}/webbrowser &&\

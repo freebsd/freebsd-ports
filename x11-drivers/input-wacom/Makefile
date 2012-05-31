@@ -50,15 +50,16 @@ CONFIGURE_WRKSRC=	${WRKDIR}/${LINUXWACOM}
 USE_AUTOTOOLS=	autoconf
 MAKE_ARGS+=	UDEV_CFLAGS=""
 
+OPTIONS_DEFINE=	UWACOMKLD
+UWACOMKLD_DESC=	Install USB kernel module (not supported on 8.x)
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800064
-OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" Off
-.else
-OPTIONS=	UWACOMKLD "Install USB kernel module (not supported on 8.x)" On
+.if ${OSVERSION} < 800064
+OPTIONS_DEFAULT=	UWACOMKLD
 .endif
 
-.if defined(WITH_UWACOMKLD)
+.if ${PORT_OPTIONS:MUWACOMKLD}
 .if ${OSVERSION} >= 800064
 BROKEN=		does not build with USB support
 .endif
@@ -70,7 +71,7 @@ PORTTYPE=	serial
 .endif
 
 do-build:
-.if defined(WITH_UWACOMKLD)
+.if ${PORT_OPTIONS:MUWACOMKLD}
 	@cd ${WRKDIR}/uwacom \
 		&& ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
 .endif
@@ -78,7 +79,7 @@ do-build:
 		&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS}
 
 do-install:
-.if defined(WITH_UWACOMKLD)
+.if ${PORT_OPTIONS:MUWACOMKLD}
 	@${MKDIR} ${KMODDIR}
 	@${INSTALL_KLD} ${WRKDIR}/uwacom/uwacom.ko ${KMODDIR}/
 .endif

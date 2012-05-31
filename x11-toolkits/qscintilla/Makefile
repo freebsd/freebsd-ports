@@ -21,13 +21,14 @@ USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 USE_LDCONFIG=	yes
 
-OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on \
-		DOCS "Install documentation" on \
-		EXAMPLES "Install examples" on \
-		LANG_DE "Install German translation" on \
-		LANG_FR "Install French translation" on \
-		LANG_PTBR "Install Brazilian Portuguese translation" on \
-		LANG_RU "Install Russian translation" on
+OPTIONS_DEFINE=	DESIGNER_PLUGIN DOCS EXAMPLES LANG_DE LANG_FR LANG_PTBR LANG_RU
+OPTIONS_DEFAULT=	DESIGNER_PLUGIN DOCS EXAMPLES LANG_DE LANG_FR LANG_PTBR LANG_RU
+
+DESIGNER_PLUGIN_DESC=	Install plugin for Qt Designer
+LANG_DE_DESC=		Install German translation
+LANG_FR_DESC=		Install French translation
+LANG_PTBR_DESC=		Install Brazilian Portuguese translation
+LANG_RU_DESC=		Install Russian translation
 
 QMAKE=		${LOCALBASE}/bin/qmake
 SPEC=		${LOCALBASE}/share/qt/mkspecs/freebsd-g++
@@ -35,45 +36,45 @@ PLUGINDIR=	${LOCALBASE}/lib/plugins/designer
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS) || defined(WITHOUT_DOCS)
-PLIST_SUB+=	DOCS="@comment "
-.else
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_SUB+=	DOCS=""
-.endif
-.if defined(NOPORTEXAMPLES) || defined(WITHOUT_EXAMPLES)
-PLIST_SUB+=	EXAMPLES="@comment "
 .else
+PLIST_SUB+=	DOCS="@comment "
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 PLIST_SUB+=	EXAMPLES=""
-.endif
-.if defined(WITHOUT_DESIGNER_PLUGIN)
-PLIST_SUB+=	DESIGNER_PLUGIN="@comment "
 .else
+PLIST_SUB+=	EXAMPLES="@comment "
+.endif
+.if ${PORT_OPTIONS:MDESIGNER_PLUGIN}
 PLIST_SUB+=	DESIGNER_PLUGIN=""
-.endif
-.if defined(WITHOUT_LANG_DE)
-PLIST_SUB+=	LANG_DE="@comment "
 .else
+PLIST_SUB+=	DESIGNER_PLUGIN="@comment "
+.endif
+.if ${PORT_OPTIONS:MLANG_DE}
 PLIST_SUB+=	LANG_DE=""
-.endif
-.if defined(WITHOUT_LANG_FR)
-PLIST_SUB+=	LANG_FR="@comment "
 .else
+PLIST_SUB+=	LANG_DE="@comment "
+.endif
+.if ${PORT_OPTIONS:MLANG_FR}
 PLIST_SUB+=	LANG_FR=""
-.endif
-.if defined(WITHOUT_LANG_PTBR)
-PLIST_SUB+=	LANG_PTBR="@comment "
 .else
+PLIST_SUB+=	LANG_FR="@comment "
+.endif
+.if ${PORT_OPTIONS:MLANG_PTBR}
 PLIST_SUB+=	LANG_PTBR=""
-.endif
-.if defined(WITHOUT_LANG_RU)
-PLIST_SUB+=	LANG_RU="@comment "
 .else
+PLIST_SUB+=	LANG_PTBR="@comment "
+.endif
+.if ${PORT_OPTIONS:MLANG_RU}
 PLIST_SUB+=	LANG_RU=""
-.endif
-.if defined(WITHOUT_LANG_DE) && defined(WITHOUT_LANG_FR) && defined(WITHOUT_LANG_PTBR) && defined(WITHOUT_LANG_RU)
-PLIST_SUB+=	TRANSLATIONS="@comment "
 .else
+PLIST_SUB+=	LANG_RU="@comment "
+.endif
+.if ${PORT_OPTIONS:MLANG_DE} && ${PORT_OPTIONS:MLANG_FR} && ${PORT_OPTIONS:MLANG_PTBR} && ${PORT_OPTIONS:MLANG_RU}
 PLIST_SUB+=	TRANSLATIONS=""
+.else
+PLIST_SUB+=	TRANSLATIONS="@comment "
 .endif
 
 do-configure:
@@ -100,7 +101,7 @@ do-build:
 	( cd ${WRKSRC}/qt && ${SETENV} ${MAKE_ENV} ${MAKE} )
 
 post-build:
-.if !defined(WITHOUT_DESIGNER_PLUGIN)
+.if ${PORT_OPTIONS:MDESIGNER_PLUGIN}
 	( cd ${WRKSRC}/designer && ${SETENV} ${MAKE_ENV} \
 		${QMAKE} -spec ${SPEC} designer.pro && ${MAKE} )
 .endif
@@ -112,30 +113,30 @@ do-install:
 			${PREFIX}/lib/libqscintilla.so.7 && \
 		${LN} -sf ${PREFIX}/lib/libqscintilla.so.7 \
 			${PREFIX}/lib/libqscintilla.so )
-.if !defined(WITHOUT_DESIGNER_PLUGIN)
+.if ${PORT_OPTIONS:MDESIGNER_PLUGIN}
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} designer/libqscintillaplugin.so ${PLUGINDIR} )
 .endif
-.if !defined(WITHOUT_LANG_DE) || !defined(WITHOUT_LANG_FR) || !defined(WITHOUT_LANG_PTBR) || !defined(WITHOUT_LANG_RU)
+.if ${PORT_OPTIONS:MLANG_DE} || ${PORT_OPTIONS:MLANG_FR} || ${PORT_OPTIONS:MLANG_PTBR} || ${PORT_OPTIONS:MLANG_RU}
 	${MKDIR} -m 0755 ${DATADIR}/translations
 .endif
-.if !defined(WITHOUT_LANG_DE)
+.if ${PORT_OPTIONS:MLANG_DE}
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} qt/qscintilla_de.qm ${DATADIR}/translations )
 .endif
-.if !defined(WITHOUT_LANG_FR)
+.if ${PORT_OPTIONS:MLANG_FR}
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} qt/qscintilla_fr.qm ${DATADIR}/translations )
 .endif
-.if !defined(WITHOUT_LANG_PTBR)
+.if ${PORT_OPTIONS:MLANG_PTBR}
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} qt/qscintilla_pt_br.qm ${DATADIR}/translations )
 .endif
-.if !defined(WITHOUT_LANG_RU)
+.if ${PORT_OPTIONS:MLANG_RU}
 	( cd ${WRKSRC} && \
 		${INSTALL_DATA} qt/qscintilla_ru.qm ${DATADIR}/translations )
 .endif
-.if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	( cd ${WRKSRC} && \
 		${MKDIR} -m 0755 ${DOCSDIR}/html ${DOCSDIR}/Scintilla && \
 		${INSTALL_DATA} ChangeLog NEWS README ${DOCSDIR} && \
@@ -143,7 +144,7 @@ do-install:
 		${INSTALL_DATA} doc/html/* ${DOCSDIR}/html &&  \
 		${INSTALL_DATA} doc/Scintilla/* ${DOCSDIR}/Scintilla )
 .endif
-.if !defined(NOPORTEXAMPLES) && !defined(WITHOUT_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	( cd ${WRKSRC} && \
 		${MKDIR} -m 0755 ${EXAMPLESDIR} && \
 		${INSTALL_DATA} example/* ${EXAMPLESDIR} )
