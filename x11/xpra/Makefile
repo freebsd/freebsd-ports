@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xpra
-PORTVERSION=	0.0.7.35
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	x11
-MASTER_SITES=	http://winswitch.org/src/
+MASTER_SITES=	http://xpra.org/src/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Xpra gives you persistent remote applications for X
@@ -21,7 +20,9 @@ RUN_DEPENDS=	cython:${PORTSDIR}/lang/cython \
 		ipython:${PORTSDIR}/devel/ipython \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+		py*-notify>=0:${PORTSDIR}/devel/py-notify \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	README.wimpiggy README.xpra

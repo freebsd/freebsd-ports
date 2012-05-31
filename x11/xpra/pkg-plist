@@ -5,6 +5,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/wimpiggy/composite.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/error.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/error.pyc
+%%PYTHON_SITELIBDIR%%/wimpiggy/gobject_compat.py
+%%PYTHON_SITELIBDIR%%/wimpiggy/gobject_compat.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/keys.py
 %%PYTHON_SITELIBDIR%%/wimpiggy/keys.pyc
 %%PYTHON_SITELIBDIR%%/wimpiggy/log.py
@@ -58,6 +60,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/client_base.pyc
 %%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.py
 %%PYTHON_SITELIBDIR%%/xpra/dbus_notifications_forwarder.pyc
+%%PYTHON_SITELIBDIR%%/xpra/deque.py
+%%PYTHON_SITELIBDIR%%/xpra/deque.pyc
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.py
 %%PYTHON_SITELIBDIR%%/xpra/dotxpra.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_view_keyboard.py
@@ -90,15 +94,37 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/scripts/server.pyc
 %%PYTHON_SITELIBDIR%%/xpra/server.py
 %%PYTHON_SITELIBDIR%%/xpra/server.pyc
+%%PYTHON_SITELIBDIR%%/xpra/test_DoS_client.py
+%%PYTHON_SITELIBDIR%%/xpra/test_DoS_client.pyc
+%%PYTHON_SITELIBDIR%%/xpra/test_DoS_memory_client.py
+%%PYTHON_SITELIBDIR%%/xpra/test_DoS_memory_client.pyc
+%%PYTHON_SITELIBDIR%%/xpra/test_DoS_timeout_client.py
+%%PYTHON_SITELIBDIR%%/xpra/test_DoS_timeout_client.pyc
 %%PYTHON_SITELIBDIR%%/xpra/test_HMAC.py
 %%PYTHON_SITELIBDIR%%/xpra/test_HMAC.pyc
 %%PYTHON_SITELIBDIR%%/xpra/test_bencode.py
 %%PYTHON_SITELIBDIR%%/xpra/test_bencode.pyc
 %%PYTHON_SITELIBDIR%%/xpra/test_dump_gtk_keymap.py
 %%PYTHON_SITELIBDIR%%/xpra/test_dump_gtk_keymap.pyc
+%%PYTHON_SITELIBDIR%%/xpra/test_gibbering_client.py
+%%PYTHON_SITELIBDIR%%/xpra/test_gibbering_client.pyc
+%%PYTHON_SITELIBDIR%%/xpra/test_illegal_command.py
+%%PYTHON_SITELIBDIR%%/xpra/test_illegal_command.pyc
+%%PYTHON_SITELIBDIR%%/xpra/test_measure_perf.py
+%%PYTHON_SITELIBDIR%%/xpra/test_measure_perf.pyc
 %%PYTHON_SITELIBDIR%%/xpra/version_util.py
 %%PYTHON_SITELIBDIR%%/xpra/version_util.pyc
+%%PYTHON_SITELIBDIR%%/xpra/vpx/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/vpx/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/vpx/codec.so
 %%PYTHON_SITELIBDIR%%/xpra/wait_for_x_server.so
+%%PYTHON_SITELIBDIR%%/xpra/window_backing.py
+%%PYTHON_SITELIBDIR%%/xpra/window_backing.pyc
+%%PYTHON_SITELIBDIR%%/xpra/x264/__init__.py
+%%PYTHON_SITELIBDIR%%/xpra/x264/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xpra/x264/codec.so
+%%PYTHON_SITELIBDIR%%/xpra/x264/main.py
+%%PYTHON_SITELIBDIR%%/xpra/x264/main.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xkbhelper.py
 %%PYTHON_SITELIBDIR%%/xpra/xkbhelper.pyc
 %%PYTHON_SITELIBDIR%%/xpra/xposix/__init__.py
@@ -115,6 +141,8 @@ bin/xpra
 %%PYTHON_SITELIBDIR%%/xpra/xposix/xsettings.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/platform
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/vpx
+@dirrm %%PYTHON_SITELIBDIR%%/xpra/x264
 @dirrm %%PYTHON_SITELIBDIR%%/xpra/xposix
 @dirrm %%PYTHON_SITELIBDIR%%/xpra
 @dirrm %%PYTHON_SITELIBDIR%%/wimpiggy/lowlevel
