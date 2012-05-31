@@ -10,7 +10,7 @@ CATEGORIES=		sysutils perl5
 MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		tom@tomjudge.com
+MAINTAINER=		tj@FreeBSD.org
 COMMENT=		A simple Object Orientated Logger
 
 PERL_CONFIGURE=		yes

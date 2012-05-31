@@ -10,7 +10,7 @@ PORTVERSION=	0.9.16a
 CATEGORIES=	textproc
 MASTER_SITES=	SF/clucene/clucene-contribs-unstable/${PORTVERSION}
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	CLucene Contrib Code and Tools
 
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - File Injector
 
 LICENSE=	GPLv2

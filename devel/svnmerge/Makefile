@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	tom@tomjudge.com
+MAINTAINER=	tj@FreeBSD.org
 COMMENT=	A Python script to managing merges in a Subversion repository
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
