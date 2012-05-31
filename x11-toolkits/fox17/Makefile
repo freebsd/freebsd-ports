@@ -44,6 +44,10 @@ MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == i386
+BROKEN=		does not build
+.endif
+
 .if defined(WITHOUT_JPEG)
 CONFIGURE_ARGS+=--disable-jpeg
 .else
