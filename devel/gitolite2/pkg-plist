@@ -24,7 +24,6 @@ libexec/gitolite/sshkeys-lint
 %%DATADIR%%/hooks/common/gl-pre-git.hub-sample
 %%DATADIR%%/hooks/common/post-receive.mirrorpush
 %%DATADIR%%/hooks/common/update
-%%DATADIR%%/hooks/common/update.secondary.sample
 %%DATADIR%%/hooks/gitolite-admin/post-update
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%/hooks/gitolite-admin
