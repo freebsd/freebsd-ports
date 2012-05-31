@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	CPANPLUS
-PORTVERSION=	0.8400
-PORTREVISION=	2
+PORTVERSION=	0.9130
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:BINGOS
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Ameliorated interface to the CPAN
@@ -23,6 +22,8 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS_DEFINE=	TEST_REPORTER YAML
 
 TEST_REPORTER_DESC=	Send reports to cpan-testers
@@ -31,8 +32,10 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Backend.3 \
 	CPANPLUS::Backend::RV.3 \
 	CPANPLUS::Config.3 \
+	CPANPLUS::Config::HomeEnv.3 \
 	CPANPLUS::Configure.3 \
 	CPANPLUS::Dist.3 \
+	CPANPLUS::Dist::Autobundle.3 \
 	CPANPLUS::Dist::Base.3 \
 	CPANPLUS::Dist::MM.3 \
 	CPANPLUS::Dist::Sample.3 \
@@ -45,6 +48,8 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Internals::Report.3 \
 	CPANPLUS::Internals::Search.3 \
 	CPANPLUS::Internals::Source.3 \
+	CPANPLUS::Internals::Source::Memory.3 \
+	CPANPLUS::Internals::Source::SQLite.3 \
 	CPANPLUS::Internals::Utils.3 \
 	CPANPLUS::Module.3 \
 	CPANPLUS::Module::Author.3 \
@@ -58,8 +63,7 @@ MAN3=	CPANPLUS.3 \
 	CPANPLUS::Shell::Default::Plugins::CustomSource.3 \
 	CPANPLUS::Shell::Default::Plugins::HOWTO.3 \
 	CPANPLUS::Shell::Default::Plugins::Remote.3 \
-	CPANPLUS::Shell::Default::Plugins::Source.3 \
-	CPANPLUS::inc.3
+	CPANPLUS::Shell::Default::Plugins::Source.3
 
 .include <bsd.port.pre.mk>
 
@@ -94,11 +98,11 @@ post-patch:
 .endif
 
 .if ${PORT_OPTIONS:MTEST_REPORTER}
-RUN_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
+RUN_DEPENDS+=	p5-Test-Reporter>=0:${PORTSDIR}/devel/p5-Test-Reporter
 .endif
 
 .if ${PORT_OPTIONS:MYAML}
-RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS+=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 .endif
 
 .include <bsd.port.post.mk>
