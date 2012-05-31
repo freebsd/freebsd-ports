@@ -46,7 +46,6 @@
     SUBDIR += dnswalk
     SUBDIR += dnswall
     SUBDIR += doc
-    SUBDIR += drill
     SUBDIR += dualserver
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve

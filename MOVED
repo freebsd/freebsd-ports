@@ -3434,3 +3434,4 @@ portuguese/koffice-kde4-l10n-pt_BR|portuguese/calligra-l10n-pt_BR|2012-05-31|Unm
 portuguese/koffice-kde4-l10n|portuguese/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
 russian/koffice-kde4-l10n|russian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
 ukrainian/koffice-kde4-l10n|ukrainian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+dns/drill||2012-05-31|drill tool is not part of ldns package
