@@ -27,7 +27,9 @@ USE_GNOME=	gnomehack intltool libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-OPTIONS=	INOTIFY "Enable inotify support" on
+OPTONS_DEFINE=	INOTIFY
+OPTIONS_DEFAULT=	INOTIFY
+INOTIFY_DESC?=	Enable inotify support
 
 .include <bsd.port.pre.mk>
 
@@ -36,13 +38,13 @@ OPTIONS=	INOTIFY "Enable inotify support" on
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-compiz.cpp
 .endif
 
-.if !defined(WITHOUT_INOTIFY)
+.if ${PORT_OPTIONS:MINOTIFY}
 LIB_DEPENDS+=	inotify.0:${PORTSDIR}/devel/libinotify
 LDFLAGS+=	-linotify
 .endif
 
 post-patch:
-.if defined(WITHOUT_INOTIFY)
+.if empty(PORT_OPTIONS:MINOTIFY)
 	@${REINPLACE_CMD} -e 's|sys/inotify.h||' ${WRKSRC}/configure
 .endif
 	@echo "OSVERSION=${OSVERSION}"

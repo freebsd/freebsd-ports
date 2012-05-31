@@ -36,10 +36,12 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 SNAPSHOT=	r9166
 
-OPTIONS=	FLTK_THREADS "Install with threads support" on \
-		FLTK_CAIRO "Use cairo as graphics backend" off \
-		FLTK_EXAMPLES "Build and install example programs" on \
-		FLTK_XINERAMA "Enable Xinerama support" on
+OPTIONS_DEFINE=	THREADS CAIRO EXAMPLES XINERAMA DOCS
+OPTIONS_DEFAULT=	THREADS XINERAMA
+#OPTIONS=	THREADS "Install with threads support" on \
+#		CAIRO "Use cairo as graphics backend" off \
+#		EXAMPLES "Build and install example programs" on \
+#		XINERAMA "Enable Xinerama support" on
 
 EXAMPLESDIR=	${PREFIX}/share/examples/fltk2
 LATEST_LINK=	fltk2
@@ -63,9 +65,9 @@ CONFIGURE_ARGS+=	--disable-shared
 DOCSDIR=	${PREFIX}/share/doc/fltk2
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_FLTK_THREADS)
+.if ${PORT_OPTIONS:MTHREADS}
 CONFIGURE_ARGS+=	--enable-threads
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -73,7 +75,7 @@ LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
-.if defined(WITH_FLTK_CAIRO)
+.if ${PORT_OPTIONS:MCAIRO}
 CONFIGURE_ARGS+=	--enable-cairo
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
 # XXX:
@@ -83,7 +85,7 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 CONFIGURE_ARGS+=	--disable-cairo
 .endif
 
-.if defined(WITH_FLTK_EXAMPLES) && !defined (NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 example_apps=	ansiwidget arc \
 		bitmap boxtype browser button buttons \
 		cairo callbacks checkers clock color_chooser cube \
@@ -113,7 +115,7 @@ PORTEXAMPLES=	*
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile
 .endif
 
-.if defined(WITH_FLTK_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
 CONFIGURE_ARGS+=	--enable-xinerama
 .else
@@ -126,12 +128,12 @@ post-patch:
 	    ${WRKSRC}/makeinclude.in
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/documentation && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README_fltk1_to_fltk2.txt ${DOCSDIR}
 .endif
-.if defined(WITH_FLTK_EXAMPLES) && !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/images
 	for f in ${example_apps} ; do \
 	    ${INSTALL_PROGRAM} ${WRKSRC}/test/$${f} ${EXAMPLESDIR} ; \
@@ -144,4 +146,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

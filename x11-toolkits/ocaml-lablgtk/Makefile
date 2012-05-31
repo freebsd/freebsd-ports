@@ -27,9 +27,8 @@ CONFIGURE_ENV=	USE_DOTOPT=1 GTK_CONFIG=${GTK_CONFIG} \
 		DLLDIR=${PREFIX}/lib/ocaml/stublibs
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	GL	"Enable OpenGL support" on \
-		GNOME	"Enable GNOME support" off \
-		GLADE	"Enable Glade support" off
+OPTIONS_DEFINE=	OPENGL GNOME GLADE DOCS
+OPTIONS_DEFAULT=	OPENGL
 
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
@@ -39,18 +38,18 @@ PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_GL)
-PLIST_SUB+=	GL="@comment "
-SFXGL=		-nogl
-.else
+.if ${PORT_OPTIONS:MOPENGL}
 PLIST_SUB+=	GL=""
 BUILD_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 RUN_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 CONFIGURE_ENV+=	USE_GL=1
+.else
+PLIST_SUB+=	GL="@comment "
+SFXGL=		-nogl
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 PLIST_SUB+=	GNOME=""
 USE_GNOME=	gdkpixbuf
 CONFIGURE_ENV+=	USE_GNOME=1
@@ -59,9 +58,9 @@ PLIST_SUB+=	GNOME="@comment "
 SFXGNOME=	-nognome
 .endif
 
-.if defined(WITH_GLADE)
+.if ${PORT_OPTIONS:MGLADE}
 PLIST_SUB+=	GLADE=""
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	libglade
 .else
 LIB_DEPENDS+=	glade.4:${PORTSDIR}/devel/libglade
@@ -92,19 +91,19 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/*.rgb \
 		${WRKSRC}/examples/*.ml ${WRKSRC}/examples/*.xpm ${EXAMPLESDIR}
-.if !defined(WITHOUT_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 	@${MKDIR} ${EXAMPLESDIR}/GL
 	@${INSTALL_DATA} ${WRKSRC}/examples/GL/* ${EXAMPLESDIR}/GL
 .endif
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 	@${MKDIR} ${EXAMPLESDIR}/xmhtml
 	@${INSTALL_DATA} ${WRKSRC}/examples/xmhtml/* ${EXAMPLESDIR}/xmhtml
 .endif
-.if defined(WITH_GLADE)
+.if ${PORT_OPTIONS:MGLADE}
 	@${MKDIR} ${EXAMPLESDIR}/glade
 	@${INSTALL_DATA} ${WRKSRC}/examples/glade/* ${EXAMPLESDIR}/glade
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif

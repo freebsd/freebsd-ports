@@ -24,7 +24,8 @@ LDFLAGS+=	${PTHREAD_LIBS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	pkg-message
 
-OPTIONS=	FREETYPE "Build with Freetype support" on
+OPTIONS_DEFINE=	FREETYPE DOCS
+OPTIONS_DEFAULT=	FREETYPE
 
 PORTDOCS=	AUTHORS README
 
@@ -34,7 +35,7 @@ PORTDOCS=	AUTHORS README
 BROKEN=		fails to build with new utmpx
 .endif
 
-.if !defined(WITHOUT_FREETYPE)
+.if ${PORT_OPTIONS:MFREETYPE}
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 USE_ICONV=	yes
 CONFIGURE_ARGS+=--with-ft-prefix=${LOCALBASE}
@@ -46,7 +47,7 @@ MAN1=		ggiterm.1
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/ggiterm.termcap ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

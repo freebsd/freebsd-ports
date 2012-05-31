@@ -23,36 +23,32 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz 
 
 NO_BUILD=	yes
 
-OPTIONS=	EXTRA "Enable extra plugins" on \
-		UNSUP "Enable unsupported plugins" off \
-		EMERALD "Enable emerald window decorator" on \
-		GCONF "Enable the gconf backend" on
-# Hold off on this until I can get a clean tb run...
-#		KCONFIG "Enable kconfig backend" off
+OPTIONS_DEFINE=	EXTRA UNSUP EMERALD GCONF
+OPTIONS_DEFAULT=	GCONF EXTRA EMERALD
+
+EXTRA_DESC=	Enable extra plugins
+UNSUP_DESC=	Enable unsupported plugins
+EMERALD_DESC=	Enable emerald window decorator
 
 do-install:	# empty
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_EXTRA)
+.if ${PORT_OPTIONS:MEXTRA}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compiz/libaddhelper.so:${PORTSDIR}/x11-wm/compiz-plugins-extra
 .endif
 
-.if defined(WITH_UNSUP)
+.if ${PORT_OPTIONS:MUNSUP}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compiz/libfakeargb.so:${PORTSDIR}/x11-wm/compiz-plugins-unsupported
 .endif
 
-.if !defined(WITHOUT_EMERALD)
+.if ${PORT_OPTIONS:MEMERALD}
 RUN_DEPENDS+=	${LOCALBASE}/bin/emerald:${PORTSDIR}/x11-wm/emerald \
 		${LOCALBASE}/share/emerald/themes/Adonis_Mod/theme.ini:${PORTSDIR}/x11-themes/emerald-themes
 .endif
 
-.if !defined(WITHOUT_GCONF)
+.if ${PORT_OPTIONS:MGCONF}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compizconfig/backends/libgconf.so:${PORTSDIR}/x11-wm/compizconfig-backend-gconf
 .endif
 
-#.if defined(WITH_KCONFIG)
-#RUN_DEPENDS+=	${LOCALBASE}/lib/compizconfig/backends/libkconfig.so:${PORTSDIR}/x11-wm/compizconfig-backend-kconfig
-#.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

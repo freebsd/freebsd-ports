@@ -15,8 +15,8 @@ COMMENT=	Small window manager with themes and plugins
 
 LICENSE=	BSD
 
-OPTIONS=	ESOUND "Build sound plugin (requires EsounD)" off \
-		XINERAMA "Enable Xinerama extension support" on
+OPTIONS_DEFINE=	ESOUND XINERAMA
+OPTIONS_DEFAULT=	XINERAMA
 
 USE_PERL5_BUILD=yes
 USE_BZIP2=	yes
@@ -39,7 +39,7 @@ CFLAGS+=	-fPIC
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if defined(WITH_ESOUND)
+.if ${PORT_OPTIONS:MESOUND}
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-sound
 PLIST_SUB+=	ESOUND=""
@@ -47,7 +47,7 @@ PLIST_SUB+=	ESOUND=""
 PLIST_SUB+=	ESOUND="@comment "
 .endif
 
-.if !defined(WITHOUT_XINERAMA)
+.if ${PORT_OPTIONS:MXINERAMA}
 USE_XORG+=	xinerama
 CONFIGURE_ARGS+=--enable-xinerama
 .endif

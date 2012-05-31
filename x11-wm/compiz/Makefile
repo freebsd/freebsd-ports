@@ -69,13 +69,10 @@ GCONF_SCHEMAS=	gwd.schemas \
 CONFIGURE_ARGS=	--disable-kde4
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-OPTIONS=	RSVG "Enable librsvg2 support" on \
-		GTK "Enable gtk2 support" on \
-		METACITY "Enable Metacity support" on \
-		GNOME "Enable Gnome support" on \
-		DBUS "Enable DBUS support" on \
-		FUSEFS "Enable fusefs support" off \
-		KDE "Enable KDE support" off
+OPTIONS_DEFINE=	SVG GTK2 METACITY GNOME DBUS FUSE KDE3
+OPTIONS_DEFAULT=	SVG GTK2 METACITY GNOME DBUS
+
+METACITY_DESC=	Enable Metacity support
 
 SUB_FILES=		compiz-manager
 DESKTOP_ENTRIES=	"Compiz Manager" \
@@ -93,7 +90,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/compiz-manager ${PREFIX}/bin/compiz-manager
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_RSVG)
+.if ${PORT_OPTIONS:MSVG}
 CONFIGURE_ARGS+=	--enable-librsvg
 USE_GNOME+=		librsvg2
 PLIST_SUB+=		RSVG=""
@@ -102,23 +99,23 @@ CONFIGURE_ARGS+=	--disable-librsvg
 PLIST_SUB+=		RSVG="@comment "
 .endif
 
-.if !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-gtk
 USE_GNOME+=	 glib20 libwnck
-PLIST_SUB+=	GTK=""
+PLIST_SUB+=	GTK2=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk
-PLIST_SUB+=	GTK="@comment "
+PLIST_SUB+=	GTK2="@comment "
 .endif
 
-.if !defined(WITHOUT_METACITY) && !defined(WITHOUT_GNOME) && !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MMETACITY} && ${PORT_OPTIONS:MGNOME} && ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-metacity
 USE_GNOME+=	metacity
 .else
 CONFIGURE_ARGS+=	--disable-metacity
 .endif
 
-.if !defined(WITHOUT_GNOME) && !defined(WITHOUT_GTK)
+.if ${PORT_OPTIONS:MGNOME} && ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-gnome \
 			--enable-gnome-keybindings
 USE_GNOME+=	 gnomecontrolcenter2
@@ -135,11 +132,11 @@ CONFIGURE_ARGS+=	--disable-gnome \
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if !defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 CONFIGURE_ARGS+=	--enable-dbus
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
-.if !defined(WITHOUT_GTK) && !defined(WITHOUT_GNOME)
+.if ${PORT_OPTIONS:MGTK} && ${PORT_OPTIONS:MGNOME}
 CONFIGURE_ARGS+=	--enable-dbus-glib
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
@@ -150,25 +147,25 @@ CONFIGURE_ARGS+=	--disable-dbus --disable-dbus-glib
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
-.if defined(WITH_FUSEFS)
+.if ${PORT_OPTIONS:MFUSE}
 CONFIGURE_ARGS+=	--enable-fuse
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fuse.pc:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fuse.pc:${PORTSDIR}/sysutils/fusefs-libs
-PLIST_SUB+=		FUSEFS=""
+PLIST_SUB+=		FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse
-PLIST_SUB+=		FUSEFS="@comment "
+PLIST_SUB+=		FUSE="@comment "
 .endif
 
-.if defined(WITH_KDE)
+.if ${PORT_OPTIONS:MKDE3}
 USE_KDEBASE_VER=	3
 CONFIGURE_ARGS+=	--enable-kde
-PLIST_SUB+=	KDE=""
+PLIST_SUB+=	KDE3=""
 # allow bsd.kde.mk to be included after bsd.port.mk
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .else
 CONFIGURE_ARGS+=	--disable-kde
-PLIST_SUB+=	KDE="@comment "
+PLIST_SUB+=	KDE3="@comment "
 .endif
 
 .include <bsd.port.post.mk>
