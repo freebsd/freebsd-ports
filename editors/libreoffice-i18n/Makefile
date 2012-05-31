@@ -38,14 +38,16 @@ zh_CN_PORT=	chinese/${PORTNAME}-zh_CN
 zh_TW_PORT=	chinese/${PORTNAME}-zh_TW
 vi_PORT=	vietnamese/${PORTNAME}
 
-OPTIONS=	ALL "All localizations" on
+OPTIONS_DEFINE=	ALL
+ALL_DESC=	All locatizations data
+OPTIONS_DEFAULT=	ALL
 
 .for lang in ${LO_LANG_ALL}
 ${lang}_DETECT?=	${PREFIX}/lib/${PORTNAME}/readmes/README_${lang:S/_/-/}
 ${lang}_PORT?=		editors/${PORTNAME}-${lang}
 ${lang}_NAME?=		${lang}
-${lang}_OPTION=		${lang}
-OPTIONS+=	${${lang}_OPTION} "${${lang}_NAME} localization" off
+OPTIONS_DEFINE+=	${lang}
+${lang}_DESC=		${${lang}_NAME} localization data
 .endfor
 
 .include <bsd.port.options.mk>
