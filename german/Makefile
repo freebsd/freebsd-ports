@@ -14,6 +14,7 @@
     SUBDIR += bsdpaste
     SUBDIR += bugzilla
     SUBDIR += bugzilla3
+    SUBDIR += calligra-l10n
     SUBDIR += dict
     SUBDIR += digibux
     SUBDIR += ding
@@ -32,7 +33,6 @@
     SUBDIR += kde4-l10n
     SUBDIR += kheisereg
     SUBDIR += koffice-i18n
-    SUBDIR += koffice-kde4-l10n
     SUBDIR += ksteak
     SUBDIR += libreoffice
     SUBDIR += manpages

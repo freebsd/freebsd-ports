@@ -1,0 +1,304 @@
+commit c804712c97b24a3774a53a3825f50762089f1f49
+Author: Boudewijn Rempt <boud@valdyas.org>
+Date:   Fri Apr 20 16:35:40 2012 +0200
+
+    Make calligra compile with clang
+    
+    Clang has some additional restriction.
+    
+    if (foo = bar) becomes if ((foo = bar)), while (foo=bar) while ((foo=bar))
+    and if ((baz==boz)) if (bas==boz) and so on.
+    
+    patch by Matthew Rezny
+    
+    CCMAIL: mrezny@hexaneinc.com
+    CCMAIL: calligra-devel@kde.org
+    CCMAIL: kimageshop@kde.org
+
+diff --git a/filters/libmsooxml/MsooXmlUtils.cpp b/filters/libmsooxml/MsooXmlUtils.cpp
+index 3975c88..657ce05 100644
+--- filters/libmsooxml/MsooXmlUtils.cpp
++++ filters/libmsooxml/MsooXmlUtils.cpp
+@@ -1944,7 +1944,7 @@ QString Utils::ParagraphBulletProperties::convertToListProperties(KoGenStyles& m
+         }
+         //MSPowerPoint: A label does NOT inherit Underline from text-properties
+         //of the 1st text chunk.  A bullet does NOT inherit {Italics, Bold}.
+-        if ((currentFilter == Utils::PptxFilter)) {
++        if (currentFilter == Utils::PptxFilter) {
+             if (m_type != ParagraphBulletProperties::NumberType) {
+                 out.addAttribute("fo:font-style", "normal");
+                 out.addAttribute("fo:font-weight", "normal");
+diff --git a/filters/sheets/opencalc/opencalcexport.cc b/filters/sheets/opencalc/opencalcexport.cc
+index 7f34f5b..383d328 100644
+--- filters/sheets/opencalc/opencalcexport.cc
++++ filters/sheets/opencalc/opencalcexport.cc
+@@ -449,12 +449,11 @@ bool OpenCalcExport::exportBody(QDomDocument & doc, QDomElement & content, const
+         QString name(sheet->sheetName());
+ 
+         int n = name.indexOf(' ');
+-        if (n != -1) {
++        if (n > -1) {
+             kDebug(30518) << "Sheet name converting:" << name;
+-            name[n] == '_';
++            name.replace(' ','_');
+             kDebug(30518) << "Sheet name converted:" << name;
+         }
+-        name = name.replace(' ', "_");
+ 
+         QRect _printRange = sheet->printSettings()->printRegion().lastRange();
+         if (_printRange != (QRect(QPoint(1, 1), QPoint(KS_colMax, KS_rowMax)))) {
+diff --git a/filters/words/libexport/ProcessDocument.cc b/filters/words/libexport/ProcessDocument.cc
+index 30a4465..0dad6a7 100644
+--- filters/words/libexport/ProcessDocument.cc
++++ filters/words/libexport/ProcessDocument.cc
+@@ -515,7 +515,7 @@ static void SubProcessFormatTwoTag(QDomNode myNode,
+                                    ValueListFormatData *formatDataList, int formatPos, int formatLen,
+                                    KWEFWordsLeader *leader)
+ {
+-    if ((formatPos == -1)) {
++    if (formatPos == -1) {
+         // We have no position defined
+         kWarning(30508) << "Missing text image position!";
+         return;
+@@ -551,7 +551,7 @@ static void SubProcessFormatThreeTag(QDomNode myNode,
+                                      ValueListFormatData *formatDataList, int formatPos, int /*formatLen*/,
+                                      KWEFWordsLeader *leader)
+ {
+-    if ((formatPos == -1)) { // formatLen is never there but is 1.
++    if (formatPos == -1) { // formatLen is never there but is 1.
+         // We have no position and no length defined
+         kWarning(30508) << "Missing variable formatting!";
+         return;
+diff --git a/filters/words/msword-odf/wv2/src/bookmark.cpp b/filters/words/msword-odf/wv2/src/bookmark.cpp
+index 63e8e6a..cf40c67 100644
+--- filters/words/msword-odf/wv2/src/bookmark.cpp
++++ filters/words/msword-odf/wv2/src/bookmark.cpp
+@@ -363,7 +363,7 @@ bool Bookmarks::valid(U16 &num, const U32 ccpText)
+     //check bookmark names
+     for (uint i = 0; i < m_name.size(); i++) {
+         if ( (m_name[i] == UString::null) ) {
+-            m_name[i] == UString().from(i + 1);
++            m_name[i] = UString().from(i + 1);
+         }
+     }
+     if (m_name.size() < m_start->count()) {
+diff --git a/filters/words/rtf/import/rtf-qt/src/UserPropsDestination.cpp b/filters/words/rtf/import/rtf-qt/src/UserPropsDestination.cpp
+index 4e6d185..6b9b76e 100644
+--- filters/words/rtf/import/rtf-qt/src/UserPropsDestination.cpp
++++ filters/words/rtf/import/rtf-qt/src/UserPropsDestination.cpp
+@@ -38,13 +38,13 @@ namespace RtfReader
+ 	    if ( value == 30 ) {
+ 		m_propertyType = QVariant::String;
+ 	    } else if ( value == 3 ) {
+-		m_propertyType == QVariant::Int;
++		m_propertyType = QVariant::Int;
+ 	    } else if ( value == 5 ) {
+-		m_propertyType == QVariant::Double;
++		m_propertyType = QVariant::Double;
+ 	    } else if ( value == 64 ) {
+-	      	m_propertyType == QVariant::Date;
++	      	m_propertyType = QVariant::Date;
+ 	    } else if ( value == 11 ) {
+-		m_propertyType == QVariant::Bool;
++		m_propertyType = QVariant::Bool;
+ 	    } else {
+ 		qDebug() << "unhandled value type in UserPropsDestination:" << value;
+ 	    }
+diff --git a/karbon/plugins/tools/filterEffectTool/FilterEffectResource.cpp b/karbon/plugins/tools/filterEffectTool/FilterEffectResource.cpp
+index 2b0c959..a31afb1 100644
+--- karbon/plugins/tools/filterEffectTool/FilterEffectResource.cpp
++++ karbon/plugins/tools/filterEffectTool/FilterEffectResource.cpp
+@@ -119,10 +119,10 @@ KoFilterEffectStack * FilterEffectResource::toFilterStack() const
+ 
+     // only allow obect bounding box units
+     if (e.hasAttribute("filterUnits") && e.attribute("filterUnits") != "objectBoundingBox")
+-        return false;
++        return 0;
+ 
+     if (e.attribute("primitiveUnits") != "objectBoundingBox")
+-        return false;
++        return 0;
+ 
+     // parse filter region rectangle
+     QRectF filterRegion;
+diff --git a/kexi/kexidb/connection.cpp b/kexi/kexidb/connection.cpp
+index d6ccd9c..1eac0b9 100644
+--- kexi/kexidb/connection.cpp
++++ kexi/kexidb/connection.cpp
+@@ -3015,7 +3015,7 @@ KexiDB::QuerySchema* Connection::setupQuerySchema(const RecordData &data)
+     bool ok = true;
+     const int objID = data[0].toInt(&ok);
+     if (!ok)
+-        return false;
++        return 0;
+     QString sqlText;
+     if (!loadDataBlock(objID, sqlText, "sql")) {
+         setError(ERR_OBJECT_NOT_FOUND,
+diff --git a/kexi/kexidb/drivers/sqlite/sqlitevacuum.cpp b/kexi/kexidb/drivers/sqlite/sqlitevacuum.cpp
+index 5dc1f1d..5c20482 100644
+--- kexi/kexidb/drivers/sqlite/sqlitevacuum.cpp
++++ kexi/kexidb/drivers/sqlite/sqlitevacuum.cpp
+@@ -194,7 +194,7 @@ void SQLiteVacuum::sqliteProcessFinished(int exitCode, QProcess::ExitStatus exit
+ 
+     if (0 != KDE::rename(m_tmpFilePath, m_filePath)) {
+         kWarning() << "Rename" << m_tmpFilePath << "to" << m_filePath << "failed.";
+-        m_result == false;
++        m_result = false;
+     }
+ 
+     if (m_result == true) {
+diff --git a/kexi/kexidb/parser/parser_p.cpp b/kexi/kexidb/parser/parser_p.cpp
+index b1e8efe..6d69429 100644
+--- kexi/kexidb/parser/parser_p.cpp
++++ kexi/kexidb/parser/parser_p.cpp
+@@ -564,7 +564,7 @@ QuerySchema* buildSelectQuery(
+             if (!options->whereExpr->validate(parseInfo)) {
+                 setError(parseInfo.errMsg, parseInfo.errDescr);
+                 CLEANUP;
+-                return false;
++                return 0;
+             }
+             querySchema->setWhereExpression(options->whereExpr);
+         }
+diff --git a/kexi/kexiutils/utils.h b/kexi/kexiutils/utils.h
+index 4629d66..5d06a2d 100644
+--- kexi/kexiutils/utils.h
++++ kexi/kexiutils/utils.h
+@@ -538,7 +538,7 @@ public:
+         return QHash<Key, T>::insertMulti(key.toLower(), value);
+     }
+     const Key key(const T& value, const Key& defaultKey) const {
+-        return QHash<Key, T>::key(value, key.toLower());
++        return QHash<Key, T>::key(value, defaultKey.toLower());
+     }
+     int remove(const Key& key) {
+         return QHash<Key, T>::remove(key.toLower());
+diff --git a/kexi/main/KexiMainWindow.cpp b/kexi/main/KexiMainWindow.cpp
+index 33f81f5..3bef113 100644
+--- kexi/main/KexiMainWindow.cpp
++++ kexi/main/KexiMainWindow.cpp
+@@ -3434,7 +3434,7 @@ KexiMainWindow::openObjectFromNavigator(KexiPart::Item* item, Kexi::ViewMode vie
+         return 0;
+     }
+     if (!d->prj || !item)
+-        return false;
++        return 0;
+ #ifndef KEXI_NO_PENDING_DIALOGS
+     Private::PendingJobType pendingType;
+     KexiWindow *window = d->openedWindowFor(item, pendingType);
+diff --git a/kexi/migration/mdb/src/mdbtools/libmdb/write.c b/kexi/migration/mdb/src/mdbtools/libmdb/write.c
+index 8506b71..b1fbb46 100644
+--- kexi/migration/mdb/src/mdbtools/libmdb/write.c
++++ kexi/migration/mdb/src/mdbtools/libmdb/write.c
+@@ -170,7 +170,7 @@ mdb_crack_row(MdbTableDef *table, int row_start, int row_end, MdbField *fields)
+ 	}
+ 
+ 	bitmask_sz = (row_cols + 7) / 8;
+-	nullmask = (char*)pg_buf + row_end - bitmask_sz + 1;
++	nullmask = (unsigned char*)pg_buf + row_end - bitmask_sz + 1;
+ 
+ 	/* read table of variable column locations */
+ 	row_var_cols = IS_JET4(mdb) ?
+diff --git a/krita/image/tiles3/kis_tiled_data_manager.cc b/krita/image/tiles3/kis_tiled_data_manager.cc
+index dacef5e..cac55d7 100644
+--- krita/image/tiles3/kis_tiled_data_manager.cc
++++ krita/image/tiles3/kis_tiled_data_manager.cc
+@@ -138,7 +138,7 @@ bool KisTiledDataManager::write(KoStore *store)
+     KisAbstractTileCompressorSP compressor =
+         KisTileCompressorFactory::create(CURRENT_VERSION);
+ 
+-    while (tile = iter.tile()) {
++    while ((tile = iter.tile())) {
+         compressor->writeTile(tile, store);
+         ++iter;
+     }
+@@ -287,7 +287,7 @@ void KisTiledDataManager::purge(const QRect& area)
+         KisTileHashTableIterator iter(m_hashTable);
+         KisTileSP tile;
+ 
+-        while (tile = iter.tile()) {
++        while ((tile = iter.tile())) {
+             if (tile->extent().intersects(area)) {
+                 tile->lockForRead();
+                 if(memcmp(defaultData, tile->data(), tileDataSize) == 0) {
+diff --git a/krita/plugins/formats/psd/psd_colormode_block.cpp b/krita/plugins/formats/psd/psd_colormode_block.cpp
+index 3466725..ccd6099 100644
+--- krita/plugins/formats/psd/psd_colormode_block.cpp
++++ krita/plugins/formats/psd/psd_colormode_block.cpp
+@@ -89,7 +89,7 @@ bool PSDColorModeBlock::valid()
+         return false;
+     }
+     if (colormode == DuoTone && blocksize == 0) {
+-        error == QString("DuoTone mode, but data block is empty");
++        error = QString("DuoTone mode, but data block is empty");
+         return false;
+     }
+     if ((quint32)data.size() != blocksize) {
+diff --git a/krita/plugins/tools/tool_perspectivegrid/kis_tool_perspectivegrid.cc b/krita/plugins/tools/tool_perspectivegrid/kis_tool_perspectivegrid.cc
+index ba1e1de..c4ae45e 100644
+--- krita/plugins/tools/tool_perspectivegrid/kis_tool_perspectivegrid.cc
++++ krita/plugins/tools/tool_perspectivegrid/kis_tool_perspectivegrid.cc
+@@ -138,7 +138,7 @@ void KisToolPerspectiveGrid::mousePressEvent(KoPointerEvent *event)
+                 KisSubPerspectiveGrid* grid = *it;
+                 QPointF gridCenter = grid->center();
+                 dbgKrita << "click at " << event->point << " top left at " << *grid->topLeft();
+-                if (m_selectedNode1 = nodeNearPoint(grid, mousep)) {
++                if (m_selectedNode1 == nodeNearPoint(grid, mousep)) {
+                     m_internalMode = MODE_DRAGING_NODE;
+                     break;
+                 } else if (mouseNear(mousep, ((pixelToView(*grid->topLeft()) + pixelToView(*grid->bottomLeft()))*0.5))) {
+@@ -233,7 +233,7 @@ void KisToolPerspectiveGrid::mouseMoveEvent(KoPointerEvent *event)
+         KisPerspectiveGrid* pGrid = m_canvas->view()->resourceProvider()->currentImage()->perspectiveGrid();
+         for (QList<KisSubPerspectiveGrid*>::const_iterator it = pGrid->begin(); it != pGrid->end(); ++it) {
+             KisSubPerspectiveGrid* grid = *it;
+-            if (m_higlightedNode = nodeNearPoint(grid, mousep)) {
++            if ((m_higlightedNode = nodeNearPoint(grid, mousep))) {
+                 if (m_higlightedNode == m_selectedNode1 || m_higlightedNode == m_selectedNode2) {
+                     m_higlightedNode = 0;
+                 } else {
+diff --git a/libs/kotext/styles/KoTableStyle.cpp b/libs/kotext/styles/KoTableStyle.cpp
+index a9ebe62..21bf9af 100644
+--- libs/kotext/styles/KoTableStyle.cpp
++++ libs/kotext/styles/KoTableStyle.cpp
+@@ -633,13 +633,13 @@ void KoTableStyle::saveOdf(KoGenStyle &style)
+                 style.addProperty("fo:background-color", backBrush.color().name(), KoGenStyle::TableType);
+             else
+                 style.addProperty("fo:background-color", "transparent", KoGenStyle::TableType);
+-        } else if ((key == QTextFormat::FrameLeftMargin)) {
++        } else if (key == QTextFormat::FrameLeftMargin) {
+             style.addPropertyLength("fo:margin-left", propertyLength(QTextFormat::FrameLeftMargin), KoGenStyle::TableType);
+-        } else if ((key == QTextFormat::FrameRightMargin)) {
++        } else if (key == QTextFormat::FrameRightMargin) {
+             style.addPropertyLength("fo:margin-right", propertyLength(QTextFormat::FrameRightMargin), KoGenStyle::TableType);
+-        } else if ((key == QTextFormat::FrameTopMargin)) {
++        } else if (key == QTextFormat::FrameTopMargin) {
+             style.addPropertyLength("fo:margin-top", propertyLength(QTextFormat::FrameTopMargin), KoGenStyle::TableType);
+-        } else if ((key == QTextFormat::FrameBottomMargin)) {
++        } else if (key == QTextFormat::FrameBottomMargin) {
+             style.addPropertyLength("fo:margin-bottom", propertyLength(QTextFormat::FrameBottomMargin), KoGenStyle::TableType);
+         } else if (key == KoTableStyle::CollapsingBorders) {
+             if (collapsingBorderModel())
+diff --git a/libs/odf/KoElementReference.cpp b/libs/odf/KoElementReference.cpp
+index 8747574..b51f97f 100644
+--- libs/odf/KoElementReference.cpp
++++ libs/odf/KoElementReference.cpp
+@@ -110,5 +110,5 @@ KoElementReference KoElementReference::loadOdf(const KoXmlElement &element)
+ 
+ void KoElementReference::invalidate()
+ {
+-    d->xmlid == QString::null;
++    d->xmlid = QString::null;
+ }
+diff --git a/words/part/KWDocument.cpp b/words/part/KWDocument.cpp
+index 30ac20a..65d027c 100644
+--- words/part/KWDocument.cpp
++++ words/part/KWDocument.cpp
+@@ -24,7 +24,7 @@
+  */
+ 
+ #include "KWDocument.h"
+-#include "KWFactory.h"<
++#include "KWFactory.h"
+ #include "KWView.h"
+ #include "KWCanvas.h"
+ #include "KWCanvasItem.h"

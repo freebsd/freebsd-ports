@@ -3405,3 +3405,32 @@ devel/kdebindings4-ruby||2012-05-25|kdebindings4 ports have been refactored
 devel/kdebindings4-smoke||2012-05-25|kdebindings4 ports have been refactored
 deskutils/plasma-applet-icontasks||2012-05-25|Integrated to KDE SC 4.8
 audio/audacity-devel|audio/audacity|2012-05-30|Removed in favor of stable
+chinese/koffice-kde4-l10n-zh_CN|chinese/calligra-l10n-zh_CN|2012-05-31|Unmaintained upstream, use Calligra
+chinese/koffice-kde4-l10n-zh_TW|chinese/calligra-l10n-zh_TW|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-ca_valencia|editors/calligra-l10n-ca_valencia|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-ca|editors/calligra-l10n-ca|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-da|editors/calligra-l10n-da|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-el|editors/calligra-l10n-el|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-en_GB|editors/calligra-l10n-en_GB|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-es|editors/calligra-l10n-es|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-et|editors/calligra-l10n-et|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-gl||2012-05-31|Unmaintained upstream
+editors/koffice-kde4-l10n-it|editors/calligra-l10n-it|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-kk|editors/calligra-l10n-kk|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-nb|editors/calligra-l10n-nb|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-nds|editors/calligra-l10n-nds|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-nl|editors/calligra-l10n-nl|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-sv|editors/calligra-l10n-sv|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4-l10n-tr||2012-05-31|Unmaintained upstream
+editors/koffice-kde4-l10n-wa||2012-05-31|Unmaintained upstream
+editors/koffice-kde4-l10n|editors/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+editors/koffice-kde4|editors/calligra|2012-05-31|Unmaintained upstream, use Calligra
+french/koffice-kde4-l10n|french/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+german/koffice-kde4-l10n|german/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+hungarian/koffice-kde4-l10n|hungarian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+japanese/koffice-kde4-l10n||2012-05-31|Unmaintained upstream
+polish/koffice-kde4-l10n|polish/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+portuguese/koffice-kde4-l10n-pt_BR|portuguese/calligra-l10n-pt_BR|2012-05-31|Unmaintained upstream, use Calligra
+portuguese/koffice-kde4-l10n|portuguese/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+russian/koffice-kde4-l10n|russian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra
+ukrainian/koffice-kde4-l10n|ukrainian/calligra-l10n|2012-05-31|Unmaintained upstream, use Calligra

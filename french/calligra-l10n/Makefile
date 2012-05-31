@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	koffice-l10n
-PORTVERSION=	${KOFFICE2_VERSION}
+PORTNAME=	calligra-l10n
+PORTVERSION=	${CALLIGRA_VERSION}
 CATEGORIES?=	french editors kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	French messages and documentation for KOffice2
+COMMENT=	French messages and documentation for Calligra
 
-KOFFICE2_L10N=	fr
+CALLIGRA_L10N=	fr
 
-.include "${.CURDIR}/../../editors/koffice-kde4-l10n/files/bsd.l10n.mk"
+.include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

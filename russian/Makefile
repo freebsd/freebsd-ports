@@ -8,6 +8,7 @@
     SUBDIR += aspell
     SUBDIR += bugzilla-ru
     SUBDIR += bugzilla3-ru
+    SUBDIR += calligra-l10n
     SUBDIR += d1489
     SUBDIR += eric4
     SUBDIR += fortune-bashorgru
@@ -20,7 +21,6 @@
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += koffice-i18n
-    SUBDIR += koffice-kde4-l10n
     SUBDIR += koi2koi
     SUBDIR += koi8r-ps
     SUBDIR += ksocrat
