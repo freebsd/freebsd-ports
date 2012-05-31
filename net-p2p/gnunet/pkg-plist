@@ -37,9 +37,9 @@ bin/gnunet-transport-certificate-creation
 bin/gnunet-unindex
 bin/mockup-service
 bin/timeout_watchdog
+@unexec cd %D/etc ; if cmp -s gnunet.conf.sample gnunet.conf ; then rm -f gnunet.conf ; fi
 etc/gnunet.conf.sample
 @exec if [ ! -f %B/gnunet.conf ] ; then cp -p %D/%F %B/gnunet.conf ; fi
-@unexec if cmp -s %D/%F %B/gnunet.conf ; then rm -f %B/gnunet.conf ; fi
 include/gnunet/block_dns.h
 include/gnunet/block_fs.h
 include/gnunet/block_gns.h
