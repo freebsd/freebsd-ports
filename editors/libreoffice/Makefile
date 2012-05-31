@@ -7,7 +7,7 @@
 
 .include "${.CURDIR}/Makefile.common"
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 MASTER_SITE_SUBDIR=	src/${PORTVERSION}/
 MASTER_SITES+=	http://dev-www.libreoffice.org/src/:ext \
@@ -97,18 +97,15 @@ USE_GL=		gl glu
 MAKE_JOBS_UNSAFE=	yes
 USE_GETTEXT=	yes
 
-OPTIONS=	WEBDAV	"Support webdav protocol" off \
-		KDE4	"With Qt4/KDE4 vclplug support" off \
-		GTK	"With GTK vclplug support" on \
-		GTK3	"With GTK3 vclplug support" off \
-		GNOME	"Better integration in gnome environnement" off \
-		JAVA	"Add Java support (XML Filters, macros)" off \
-		SYSTRAY	"Enable systemtray quickstarter" off \
-		MMEDIA	"Enable multimedia backend for impress" off \
-		SDK	"Build with SDK" off \
-		SVG	"Enable SVG support" on \
-		DEBUG	"Build with debug symbols and verbose output" off \
-		PGSQL	"Build with PostgreSQL-SDBC driver" on
+OPTIONS_DEFINE=	WEBDAV KDE4 GTK2 GTK3 GNOME JAVA SYSTRAY MMEDIA SDK SVG DEBUG PGSQL
+OPTIONS_DEFAULT=	GTK2 SVG
+
+PGSQL_DESC=	Build with PostgreSQL-SDBC driver
+SDK_DESC=	Build with SDK
+MMEDIA_DESC=	Enable multimedia backend for impress
+SYSTRAY_DESC=	Enable systemtray quickstarter
+WEBDAV_DESC=	Enable webdav protocol
+JAVA_DESC=	Add java support (XML Filters, macros)
 
 CONFIGURE_ENV=		GPERF=${LOCALBASE}/bin/gperf \
 			DMAKE=${LOCALBASE}/bin/dmake \
@@ -236,52 +233,53 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit
 MAKE_ENV+=	USE_GMAKE=1 DESTDIR=${LODESTDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/db${BDB_VER}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	90+
 .else
 CONFIGURE_ARGS+=	--disable-postgresql-sdbc
 .endif
-.if defined(WITHOUT_SYSTRAY)
+.if empty(PORT_OPTIONS:MSYSTRAY)
 CONFIGURE_ARGS+=	--disable-systray
 .endif
 
-.if defined(WITH_MMEDIA)
+.if ${PORT_OPTIONS:MMMEDIA}
 USE_GSTREAMER=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gstreamer
 .endif
 
-.if defined(WITH_SVG)
+.if ${PORT_OPTIONS:MSVG}
 CONFIGURE_ARGS+=	--enable-librsvg=system
 USE_GNOME+=	librsvg2
 .else
 CONFIGURE_ARGS+=	--enable-librsvg=no
 .endif
 
-.if defined(WITH_GTK) || defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
-.if defined(WITH_GTK3)
+.if ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30 desktopfileutils
 INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=	--disable-gtk3
 .endif
 
-.if defined(WITH_WEBDAV)
+.if ${PORT_OPTIONS:MWEBDAV}
 CONFIGURE_ARGS+=	--enable-neon --with-system-neon
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 .else
 CONFIGURE_ARGS+=	--disable-neon
 .endif
 
-.if defined(WITH_KDE4)
+.if ${PORT_OPTIONS:MKDE4}
 USE_KDE4=	kdelibs
 USE_QT_VER=	4
 CONFIGURE_ARGS+=	--enable-kde4 QT4DIR="${QT_PREFIX}" QT4LIB="${QT_LIBDIR}" QT4INC="${QT_INCDIR}" KDE4DIR="${KDE4_PREFIX}"
@@ -290,14 +288,14 @@ QT_COMPONENTS+=		moc_build
 CONFIGURE_ARGS+=	--disable-kde4
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=		gconf2
 CONFIGURE_ARGS+=	--enable-gconf
 .else
 CONFIGURE_ARGS+=	--disable-gconf --disable-lockdown
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 #additionnal distfiles needed for java
 DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:GoOOSrc \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:GoOOSrc \
@@ -348,7 +346,7 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
 CONFIGURE_ARGS+=	--without-java
 .endif
 
-.if defined(WITH_SDK)
+.if ${PORT_OPTIONS:MSDK}
 DISTFILES+=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:GoOOExtern
 
 CONFIGURE_ARGS+=	--enable-odk
@@ -356,7 +354,8 @@ CONFIGURE_ARGS+=	--enable-odk
 CONFIGURE_ARGS+=	--disable-odk
 .endif
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
+IGNORE=			Known as broken
 CONFIGURE_ARGS+=	--enable-debug \
 			--enable-dbgutil \
 			--enable-verbose \
@@ -396,7 +395,7 @@ post-patch:
 		
 .endif
 
-.if defined(WITH_JAVA)
+.if ${PORT_OPTIONS:MJAVA}
 	@${REINPLACE_CMD} -e 's/^ANT_OPT/#ANT_OPT/g' \
 		${WRKSRC}/apache-commons/java/codec/makefile.mk \
 		${WRKSRC}/apache-commons/java/httpclient/makefile.mk \
@@ -432,12 +431,12 @@ post-install:
 .endfor
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin \( -type f -o -type l \) -print >> ${PLISTF}
 
-.if defined(WITH_GTK) || defined(WITH_GNOME) || defined(WITH_GTK3)
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MGTK3}
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
 
-.if defined(WITH_SDK)
+.if ${PORT_OPTIONS:MSDK}
 .for subdir in include share/idl share/libreoffice share/doc
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s ${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d ${subdir} -type d -exec echo "@dirrm {}" \; >> ${PLISTD}
@@ -447,14 +446,14 @@ post-install:
 	@${SORT} ${PLISTF} >> ${TMPPLIST}
 	@${SORT} -r ${PLISTD} >> ${TMPPLIST}
 
-.if defined(WITH_SDK)
+.if ${PORT_OPTIONS:MSDK}
 .for subdir in include share/idl share/libreoffice share/doc
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/${subdir} 2>/dev/null || ${TRUE}" >> ${TMPPLIST}
 .endfor
 .endif
 
 	@cd ${LODESTDIR}/${PREFIX} ; ${PAX} -rw . ${PREFIX}
-.if defined(WITH_GTK) || defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGNOME}
 	@${LOCALBASE}/bin/update-desktop-database 2>/dev/null || ${TRUE}
 .endif
 
