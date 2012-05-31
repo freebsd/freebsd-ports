@@ -148,7 +148,6 @@
     SUBDIR += kdrill
     SUBDIR += kinput2
     SUBDIR += kiten
-    SUBDIR += koffice-i18n
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kpcal

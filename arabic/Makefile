@@ -11,7 +11,6 @@
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
     SUBDIR += khotot
-    SUBDIR += koffice-i18n
     SUBDIR += libitl
     SUBDIR += libreoffice
 
