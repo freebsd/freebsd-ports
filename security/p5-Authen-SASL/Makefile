@@ -17,7 +17,8 @@ COMMENT=	Perl5 module for SASL authentication
 RUN_DEPENDS=	p5-Digest-HMAC>0:${PORTSDIR}/security/p5-Digest-HMAC
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-OPTIONS=	KERBEROS "Enable Kerberos support" On
+OPTIONS_DEFINE=	KERBEROS
+OPTIONS_DEFAULT=	KERBEROS
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	AUTOMATED_TESTING=yes
@@ -32,10 +33,10 @@ MAN3=		Authen::SASL.3 \
 		Authen::SASL::Perl::LOGIN.3 \
 		Authen::SASL::Perl::PLAIN.3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_KERBEROS)
+.if ${PORT_OPTIONS:MKERBEROS}
 RUN_DEPENDS+=	p5-GSSAPI>0:${PORTSDIR}/security/p5-GSSAPI
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

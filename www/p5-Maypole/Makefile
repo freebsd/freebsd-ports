@@ -44,12 +44,14 @@ PORTSCOUT=	skipv:2.121
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MODPERL2 "mod_perl2 support" on
+OPTIONS_DEFINE=	MODPERL2 DOCS EXAMPLES
+OPTIONS_DEFAULT=	MODPERL2
+MODPERL2_DESC=	mod_perl2 support
 
 PERL_CONFIGURE=	yes
 .include <bsd.port.options.mk>
 
-.if defined(WITH_MODPERL2)
+.if ${PORT_OPTIONS:MMODPERL2}
 USE_APACHE_RUN=	20+
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
@@ -103,13 +105,13 @@ DOC_FILES=	../Manual.pod \
 		Workflow.pod
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${MKDIR} ${DOCSDIR}/
 .for FILE in ${DOC_FILES}
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/Maypole/Manual/${FILE} ${DOCSDIR}/
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@ ${MKDIR} ${EXAMPLESDIR}/
 	@ ${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}/
 .endif

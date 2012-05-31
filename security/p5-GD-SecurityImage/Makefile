@@ -18,7 +18,8 @@ COMMENT=	Perl5 module for creating CAPTCHA security images
 BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
-OPTIONS=	IMAGEMAGICK "Build ImageMagick module" off
+OPTIONS_DEFINE=	IMAGEMAGICK
+IMAGEMAGICK_DESC=	Build ImageMagick module
 
 PORTSCOUT=	skipv:1.581
 
@@ -31,7 +32,7 @@ MAN3=		GD::SecurityImage.3 \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_IMAGEMAGICK)
+.if ${PORT_OPTIONS:MIMAGEMAGICK}
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 .endif

@@ -19,53 +19,52 @@ USE_PERL5_RUN=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
-OPTIONS=	BONK		"Bonk support"			off \
-		CDPARANOIA	"CD Ripping support"		on \
-		CDDB		"CDDB support"			on \
-		FAAC		"FAAC support"			on \
-		FAAD		"FAAD support"			on \
-		FFMPEG		"FFMPEG suport"			on \
-		FLAC		"FLAC support"			on \
-		FLACTAG		"FLAC tagging support"		on \
-		GOGO		"GOGO-no-coda support"		off \
-		LAME		"Lame support"			on \
-		LAUDIO		"Laudio support"		off \
-		SNDFILE		"libsndfile support"		off \
-		LPAC		"LPAC support"			off \
-		MONKEY		"Monkey's Audio support"	off \
-		APETAG		"Monkey's tagging support"	off \
-		MP3TAG		"MP3 tagging support"		on \
-		MP4TAG		"MP4 tagging support"		off \
-		MPLAYER		"MPlayer support"		on \
-		MUSEPACK	"Musepack support"		off \
-		MUSETAG		"Musepack tagging support"	off \
-		OPTIMFROG	"OptimFROG support"		off \
-		OGGVORBIS	"Ogg/Vorbis support"		off \
-		OGGTAG		"Ogg/Vorbis tagging support"	off \
-		SHORTEN		"Shorten support"		off \
-		SOX		"SoX support"			off \
-		SPEEX		"Speex support"			off \
-		TOOLAME		"tooLAME support"		off \
-		TTA		"TTA support"			off \
-		WAVPACK		"WavPack support"		off \
-		WMATAG		"WMA Tagging support"		off \
-		KDE4SM		"Konqueror/Dolphin integration"	off \
-		AMAROK		"Amarok integration (BROKEN)"	off \
-		MORELANGS	"Additional language support"	off
+OPTIONS_DEFINE=	BONK CDPARANOIA CDDB FAAC FAAD FFMPEG FLAC FLACTAG GOGO \
+		LAME LAUDIO SNDFILE LPAC APE APETAG MP3TAG MP4TAG \
+		MPP  MPLAYER OPTIMFROG VORBIS VORBISTAG SHORTEN \
+		SOX SPEEX TOOLAME TTA WAVPACK WMATAG KDE4 AMAROK NORELANGS \
+		DOCS
+
+OPTIONS_DEFAULT=	CDPARANOIA CDDB FAAD FFMPEG FLAC FLACTAG MP3TAG \
+			VORBIS VORBISTAG
+.if !defined(PACKAGE_BUILDING)
+OPTIONS_DEFAULT=	LAME FAAC
+.endif
+
+BONK_DESC=	Enable Bonk support
+AMAROK_DESC=	Enable Amarok integration (BROKEN)
+APETAG_DESC=	Enable Monkey's tagging support
+FLACTAG_DESC=	Enable FLAC tagging support
+KDE4_DESC=	Enable Konqueror/Dolphin integration
+LAUDIO_DESC=	Enable laudio support
+LPAC_DESC=	Enable LPAC support
+MP3TAG_DESC=	Enable MP3 tagging support
+MP4TAG_DESC=	Enable MP4 tagging support
+MPLAYER_DESC=	Enable Mplayer support
+MPPTAG_DESC=	Enable Musepack tagging support
+OPTIMFROG_DESC=	Enable OptimFROG support"
+VORBISTAG_DESC=	Enable Ogg/Vorbis tagging support
+SHORTEN_DESC=	Enable Shorten support
+SOX_DESC=	Enable SoX support
+TOOLAME_DESC=	Enable tooLAME support
+TTA_DESC=	Enable TTA support
+WAVPACK_DESC=	Enable wavpack support
+WMATAG_DESC=	Enable WMA tagging support
+MORELANGS_DESC=	Enable Additional language support
 
 MAN1=		pacpl.1
 PACPL_PO=	en_US.po
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_KDE4SM)
+.if ${PORT_OPTIONS:MKDE4}
 USE_KDE4=	kdebase
 PLIST_SUB+=	KDE4SERVICEMENU="" KDE4_PREFIX="${KDE4_PREFIX}"
 .else
 PLIST_SUB+=	KDE4SERVICEMENU="@comment "
 .endif
 
-.if defined(WITH_AMAROK)
+.if ${PORT_OPTIONS:MAMAROK}
 BROKEN=		Amarok support temporarily broken in 4.05+
 RUN_DEPENDS+=	amarok:${PORTSDIR}/audio/amarok
 PLIST_SUB+=	AMAROK=""
@@ -75,123 +74,123 @@ PLIST_SUB+=	AMAROK="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BONK)
+.if ${PORT_OPTIONS:MBONK}
 RUN_DEPENDS+=	bonk:${PORTSDIR}/audio/bonk
 .endif
 
-.if defined(WITH_CDDB)
+.if ${PORT_OPTIONS:MCDDB}
 RUN_DEPENDS+=	p5-CDDB_get>0:${PORTSDIR}/audio/p5-CDDB_get
 .endif
 
-.if defined(WITH_CDPARANOIA)
+.if ${PORT_OPTIONS:MCDPARANOIA}
 RUN_DEPENDS+=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 .endif
 
-.if defined(WITH_FAAC)
+.if ${PORT_OPTIONS:MFAAC}
 RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .endif
 
-.if defined(WITH_FAAD)
+.if ${PORT_OPTIONS:MFAAD}
 RUN_DEPENDS+=	faad:${PORTSDIR}/audio/faad
 .endif
 
-.if defined(WITH_FFMPEG)
+.if ${PORT_OPTIONS:MFFMPEG}
 RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
-.if defined(WITH_FLAC)
+.if ${PORT_OPTIONS:MFLAC}
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 
-.if defined(WITH_FLACTAG)
+.if ${PORT_OPTIONS:MFLACTAG}
 RUN_DEPENDS+=	p5-Audio-FLAC-Header>0:${PORTSDIR}/audio/p5-Audio-FLAC-Header
 .endif
 
-.if defined(WITH_GOGO)
+.if ${PORT_OPTIONS:MGOGO}
 RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
-.if defined(WITH_LAME)
+.if ${PORT_OPTIONS:MLAME}
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 
-.if defined(WITH_LAUDIO)
+.if ${PORT_OPTIONS:MLAUDIO}
 RUN_DEPENDS+=	laudio:${PORTSDIR}/audio/laudio
 .endif
 
-.if defined(WITH_SNDFILE)
+.if ${PORT_OPTIONS:MSNDFILE}
 RUN_DEPENDS+=	sndfile-convert:${PORTSDIR}/audio/libsndfile
 .endif
 
-.if defined(WITH_LPAC)
+.if ${PORT_OPTIONS:MLPAC}
 RUN_DEPENDS+=	lpac:${PORTSDIR}/audio/lpac
 .endif
 
-.if defined(WITH_MONKEY)
+.if ${PORT_OPTIONS:MAPE}
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 .endif
 
-.if defined(WITH_MUSETAG) || defined(WITH_APETAG)
+.if ${PORT_OPTIONS:MMPPTAG} || ${PORT_OPTIONS:MAPETAG}
 RUN_DEPENDS+=	p5-Audio-Musepack>0:${PORTSDIR}/audio/p5-Audio-Musepack
 .endif
 
-.if defined(WITH_MP3TAG)
+.if ${PORT_OPTIONS:MMP3TAG}
 RUN_DEPENDS+=	p5-MP3-Tag>0:${PORTSDIR}/audio/p5-MP3-Tag
 .endif
 
-.if defined(WITH_MP4TAG)
+.if ${PORT_OPTIONS:MMP4TAG}
 RUN_DEPENDS+=	p5-MP4-Info>0:${PORTSDIR}/multimedia/p5-MP4-Info
 .endif
 
-.if defined(WITH_MPLAYER)
+.if ${PORT_OPTIONS:MMPLAYER}
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
-.if defined(WITH_MUSEPACK)
+.if ${PORT_OPTIONS:MMPPPACK}
 RUN_DEPENDS+=	mppenc:${PORTSDIR}/audio/musepack
 .endif
 
-.if defined(WITH_OPTIMFROG)
+.if ${PORT_OPTIONS:MOPTIMFROG}
 RUN_DEPENDS+=	ofr:${PORTSDIR}/audio/optimfrog
 .endif
 
-.if defined(WITH_OGGVORBIS)
+.if ${PORT_OPTIONS:MVORBISVORBIS}
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-.if defined(WITH_OGGTAG)
+.if ${PORT_OPTIONS:MVORBISTAG}
 RUN_DEPENDS+=	p5-Ogg-Vorbis-Header>0:${PORTSDIR}/audio/p5-Ogg-Vorbis-Header
 .endif
 
-.if defined(WITH_SHORTEN)
+.if ${PORT_OPTIONS:MSHORTEN}
 RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 .endif
 
-.if defined(WITH_SOX)
+.if ${PORT_OPTIONS:MSOX}
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-.if defined(WITH_SPEEX)
+.if ${PORT_OPTIONS:MSPEEX}
 RUN_DEPENDS+=	speexenc:${PORTSDIR}/audio/speex
 .endif
 
-.if defined(WITH_TOOLAME)
+.if ${PORT_OPTIONS:MTOOLAME}
 RUN_DEPENDS+=	toolame:${PORTSDIR}/audio/toolame
 .endif
 
-.if defined(WITH_TTA)
+.if ${PORT_OPTIONS:MTTA}
 RUN_DEPENDS+=	ttaenc:${PORTSDIR}/audio/tta
 .endif
 
-.if defined(WITH_WAVPACK)
+.if ${PORT_OPTIONS:MWAVPACK}
 RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 .endif
 
-.if defined(WITH_WMATAG)
+.if ${PORT_OPTIONS:MWMATAG}
 RUN_DEPENDS+=	p5-Audio-WMA>0:${PORTSDIR}/audio/p5-Audio-WMA
 .endif
 
-.if defined(WITH_MORELANGS)
+.if ${PORT_OPTIONS:MMORELANGS}
 PACPL_PO+=	ca.po de.po es.po et.po fr_FR.po it_IT.po nl_NL.po pl.po pt.po ro.po ru_RU.po tr.po zh_CN.po
 PLIST_SUB+=	ADDITIONAL_LANGS=""
 .else
@@ -239,17 +238,17 @@ do-install:
 	@pod2man ${WRKSRC}/pacpl ${WRKSRC}/pacpl.1
 	${INSTALL_MAN} ${WRKSRC}/pacpl.1 ${MAN1PREFIX}/man/man1/
 
-.if defined(WITH_KDE4SM)
+.if ${PORT_OPTIONS:MKDE4}
 	${INSTALL_DATA} ${WRKSRC}/plugins/konqueror/pacpl.desktop ${KDE4_PREFIX}/share/kde4/services/ServiceMenus
 .endif
 
-.if defined(WITH_AMAROK)
+.if ${PORT_OPTIONS:MAMAROK)
 	${MKDIR} ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx
 	${INSTALL_DATA} ${WRKSRC}/plugins/amarok/pacx ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.pl
 	${PERL} -e 'print qq(name = Pacx\ntype = transcode)' > ${PREFIX}/share/apps/amarok/scripts/transcoding_pacx/transcoding_pacx.spec
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/README.module ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
 .endif

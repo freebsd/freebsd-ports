@@ -32,8 +32,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gt
 		${SITE_PERL}/Event/RPC.pm:${PORTSDIR}/devel/p5-Event-RPC \
 		${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl
 
-OPTIONS=	SUBTITLE	"Enable support for getting subtitles"	on \
-		VORBIS		"OGG/Vorbis audio support" on
+OPTIONS_DEFINE=	VORBIS SUBTITLE
+OPTIONS_DEFAULT=	VORBIS SUBTITLE
+SUBTITLE_DESC=	Enable support for getting subtitles
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
@@ -43,14 +44,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_VORBIS)
+.if ${PORT_OPTIONS:MVORBIS}
 RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools
 .endif
 
-.if !defined(WITHOUT_SUBTITLE)
+.if ${PORT_OPTIONS:MSUBTITLE}
 RUN_DEPENDS+=	subtitle2pgm:${PORTSDIR}/multimedia/subtitleripper
 .endif
 
@@ -73,4 +74,4 @@ post-install:
 	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
 		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

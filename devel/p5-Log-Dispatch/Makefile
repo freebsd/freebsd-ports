@@ -38,47 +38,50 @@ MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::Screen.3 \
 	Log::Dispatch::Syslog.3
 
-OPTIONS=	APACHELOG "Apache::Log support" off \
-		EMAIL_MIMELITE "MIME::Lite support" off \
-		EMAIL_MAILSEND "Mail::Send support" off \
-		EMAIL_MAILSENDMAIL "Mail::Sendmail support" on \
-		MAIL_SENDER "Mail::Sender support" off
+OPTIONS_DEFINE=	APACHELOG EMAIL_MIMELITE EMAIL_MAILSEND EMAIL_MAILSENDMAIL MAIL_SENDER DOCS
+OPTIONS_DEFAULT=	EMAIL_MAILSENDMAIL
 
-.if !defined(NOPORTDOCS)
+APACHELOG_DESC=			Apache::Log support
+EMAIL_MIMELITE_DESC=		MIME::Lite support
+EMAIL_MAILSEND_DESC=		Mail::Send support
+EMAIL_MAILSENDMAIL_DESC=	Mail::Sendmail support
+MAIL_SENDER_DESC=		Mail::Sender support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAPACHELOG}
+USE_APACHE=	20+
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MAPACHELOG}
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
+.endif
+
+.if ${PORT_OPTIONS:MEMAIL_MIMELITE}
+RUN_DEPENDS+=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
+.endif
+
+.if ${PORT_OPTIONS:MEMAIL_MAILSEND}
+RUN_DEPENDS+=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
+.endif
+
+.if ${PORT_OPTIONS:MEMAIL_MAILSENDMAIL}
+RUN_DEPENDS+=	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail
+.endif
+
+.if ${PORT_OPTIONS:MMAIL_SENDER}
+RUN_DEPENDS+=	${SITE_PERL}/Mail/Sender.pm:${PORTSDIR}/mail/p5-Mail-Sender
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	Changes README
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_APACHELOG)
-USE_APACHE=	20+
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_APACHELOG)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
-.endif
-
-.if defined(WITH_EMAIL_MIMELITE)
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
-.endif
-
-.if defined(WITH_EMAIL_MAILSEND)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
-.endif
-
-.if !defined(WITHOUT_EMAIL_MAILSENDMAIL)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail
-.endif
-
-.if defined(WITH_MAIL_SENDER)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/Sender.pm:${PORTSDIR}/mail/p5-Mail-Sender
 .endif
 
 .include <bsd.port.post.mk>

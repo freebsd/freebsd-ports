@@ -23,8 +23,9 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	AUTOINSTALL=1
 INSTALL_TARGET=	pure_install
 
-OPTIONS=	TEST_REPORTER "Send reports to cpan-testers" off \
-		YAML "Check reports from cpan-testers" off
+OPTIONS_DEFINE=	TEST_REPORTER YAML
+
+TEST_REPORTER_DESC=	Send reports to cpan-testers
 
 MAN3=	CPANPLUS.3 \
 	CPANPLUS::Backend.3 \
@@ -92,11 +93,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/5.009/5.666/; /install_script/d' ${WRKSRC}/Makefile.PL
 .endif
 
-.if defined(WITH_TEST_REPORTER)
+.if ${PORT_OPTIONS:MTEST_REPORTER}
 RUN_DEPENDS+=	${SITE_PERL}/Test/Reporter.pm:${PORTSDIR}/devel/p5-Test-Reporter
 .endif
 
-.if defined(WITH_YAML)
+.if ${PORT_OPTIONS:MYAML}
 RUN_DEPENDS+=	${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 .endif
 

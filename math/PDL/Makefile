@@ -32,65 +32,68 @@ PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_PERL_REL}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	PGPLOT "Enable PDL::Graphics::PGPLOT" on \
-		PLPLOT "Enable PDL::Graphics::PLplot" off \
-		GL "Enable PDL::Graphics::TriD and OpenGL" on \
-		GD "Enable PDL::IO::GD" off \
-		FFTW "Enable PDL::FFTW" on \
-		GSL "Enable PDL::GSL interface" off \
-		HDF "Enable PDL::IO::HDF interface" off \
-		PROJ "Enable PDL::GIS::Proj interface" off \
-		F77 "Enable PDL::Minuit and PDL::Slatec" on \
-		READLINE "Use GNU readline" off \
-		SINK "Include PDL kitchen sink" off
+OPTIONS_DEFINE=	PGPLOT PLPLOT OPENGL GD FFTW GSL HDF PROJ F77 READLINE SINK
+OPTIONS_DEFAULT=	PGPLOT OPENGL FFTW F77
+
+PGPLOT_DESC=	Enable PDL::Graphics::PGPLOT
+PLPLOT_DESC=	Enable PDL::Graphics::PLplot
+OPENGL_DESC=	Enable PDL::Graphics::TriD and OpenGL
+GD_DESC=	Enable PDL::IO::GD
+FFTW_DESC=	Enable PDL::FFTW
+GSL_DESC=	Enable PDL::GSL interface
+HDF_DESC=	Enable PDL::IO::HDF interface
+PROJ_DESC=	Enable PDL::GIS::Proj interface
+F77_DESC=	Enable PDL::Minuit and PDL::Slatec
+READLINE_DESC=	Use GNU readline
+SINK_DESC=	Include PDL kitchen sink
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_PGPLOT)
+.if ${PORT_OPTIONS:MPGPLOT}
 BUILD_DEPENDS+=	p5-PGPLOT>=0:${PORTSDIR}/graphics/p5-PGPLOT
 .endif
 
-.if defined(WITH_PLPLOT)
+.if ${PORT_OPTIONS:MPLPLOT}
 LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot
 .endif
 
-.if defined(WITH_GL)
+.if ${PORT_OPTIONS:MOPENGL}
 BUILD_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
 RUN_DEPENDS+=	p5-OpenGL>=0.60:${PORTSDIR}/graphics/p5-OpenGL
 USE_GL=		yes
 .endif
 
-.if defined(WITH_GD)
+.if ${PORT_OPTIONS:MGD}
 LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
 .endif
 
-.if defined(WITH_F77)
+.if ${PORT_OPTIONS:MF77}
 BUILD_DEPENDS+=	p5-ExtUtils-F77>=0:${PORTSDIR}/lang/p5-ExtUtils-F77
 .endif
 
-.if defined(WITH_FFTW)
+.if ${PORT_OPTIONS:MFFTW}
 LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
 .endif
 
-.if defined(WITH_GSL)
+.if ${PORT_OPTIONS:MGSL}
 LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
 .endif
 
-.if defined(WITH_HDF)
+.if ${PORT_OPTIONS:MHDF}
 LIB_DEPENDS+=	df:${PORTSDIR}/science/hdf
 .endif
 
-.if defined(WITH_PROJ)
+.if ${PORT_OPTIONS:MPROJ}
 LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 .endif
 
-.if defined(WITH_READLINE)
+.if ${PORT_OPTIONS:MREADLINE}
 RUN_DEPENDS+=	p5-ReadLine-Gnu>=0:${PORTSDIR}/devel/p5-ReadLine-Gnu
 .else
 RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 .endif
 
-.if defined(WITH_SINK)
+.if ${PORT_OPTIONS:MSINK}
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		saoimage:${PORTSDIR}/astro/saoimage
