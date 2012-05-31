@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gitolite
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://milki.github.com/${PORTNAME}/ \
 		LOCAL/tdb
@@ -63,10 +63,10 @@ do-build:
 		-E 's%^GL_PACKAGE_CONF=.*%GL_PACKAGE_CONF=${DATADIR}/conf;%' \
 		${WRKSRC}/src/gl-setup
 	@${REINPLACE_CMD} \
-		-E "s%^#[[:blank:]]*\\\$$GL_PACKAGE_CONF[[:blank:]]*=.*%\$$GL_PACKAGE_CONF = '${DATADIR}/conf';%" \
+		-E "s%^[[:blank:]]*\\\$$GL_PACKAGE_CONF[[:blank:]]*=.*%\$$GL_PACKAGE_CONF = '${DATADIR}/conf';%" \
 		${WRKSRC}/conf/example.gitolite.rc
 	@${REINPLACE_CMD} \
-		-E "s%^#[[:blank:]]*\\\$$GL_PACKAGE_HOOKS[[:blank:]]*=.*%\$$GL_PACKAGE_HOOKS = '${DATADIR}/hooks';%" \
+		-E "s%^[[:blank:]]*\\\$$GL_PACKAGE_HOOKS[[:blank:]]*=.*%\$$GL_PACKAGE_HOOKS = '${DATADIR}/hooks';%" \
 		${WRKSRC}/conf/example.gitolite.rc
 
 post-build:
