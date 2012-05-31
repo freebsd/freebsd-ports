@@ -45,7 +45,6 @@
 %%WWWDIR%%/images/archive.png
 %%WWWDIR%%/images/art-email.png
 %%WWWDIR%%/images/art-pub-note.png
-%%WWWDIR%%/images/art-readitlater.png
 %%WWWDIR%%/images/art-set-unread.png
 %%WWWDIR%%/images/art-share.png
 %%WWWDIR%%/images/art-tweet.png
@@ -1361,6 +1360,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Filter.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Font.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/FontFamily.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Ident.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Length.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.php
@@ -1369,6 +1369,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Clone.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Class.php
@@ -1409,6 +1410,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/ScriptRequired.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/TargetBlank.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Textarea.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTypes.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrValidator.php
@@ -1418,6 +1420,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Chameleon.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Custom.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Empty.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/List.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Optional.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Required.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/StrictBlockquote.php
@@ -1430,7 +1433,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Id.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Namespace.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
@@ -1450,7 +1452,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
@@ -1461,9 +1462,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
@@ -1473,16 +1471,15 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
@@ -1495,20 +1492,16 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksEscaping.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksScope.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksTidyImpl.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
@@ -1526,23 +1519,22 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
@@ -1559,7 +1551,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/info.ini
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ContentSets.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Context.php
@@ -1572,8 +1564,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Null.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README
-@exec chmod -R 777 %B
-@exec chmod 444 %D/%F
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCacheFactory.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Doctype.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DoctypeRegistry.php
@@ -1596,6 +1586,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Edit.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Forms.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Hypertext.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Iframe.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Image.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
@@ -1612,6 +1603,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/StyleAttribute.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tables.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Target.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/TargetBlank.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Text.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Name.php
@@ -1641,7 +1633,6 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/DOMLex.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/DirectLex.php
-%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/PEARSax3.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/PH5P.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/PercentEncoder.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer.php
@@ -1681,6 +1672,7 @@
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/SafeIframe.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIParser.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/data.php
@@ -1747,7 +1739,6 @@
 %%WWWDIR%%/lib/tmhoauth/README.md
 %%WWWDIR%%/lib/tmhoauth/tmhOAuth.php
 %%WWWDIR%%/lib/xsl_mop-up.js
-@comment php-gettext is not required (replacement included)
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
@@ -1880,6 +1871,8 @@
 %%WWWDIR%%/schema/versions/mysql/88.sql
 %%WWWDIR%%/schema/versions/mysql/89.sql
 %%WWWDIR%%/schema/versions/mysql/9.sql
+%%WWWDIR%%/schema/versions/mysql/90.sql
+%%WWWDIR%%/schema/versions/mysql/91.sql
 %%WWWDIR%%/schema/versions/pgsql/10.sql
 %%WWWDIR%%/schema/versions/pgsql/11.sql
 %%WWWDIR%%/schema/versions/pgsql/12.sql
@@ -1967,6 +1960,8 @@
 %%WWWDIR%%/schema/versions/pgsql/88.sql
 %%WWWDIR%%/schema/versions/pgsql/89.sql
 %%WWWDIR%%/schema/versions/pgsql/9.sql
+%%WWWDIR%%/schema/versions/pgsql/90.sql
+%%WWWDIR%%/schema/versions/pgsql/91.sql
 %%WWWDIR%%/templates/digest_template.txt
 %%WWWDIR%%/templates/digest_template_html.txt
 %%WWWDIR%%/templates/email_article_template.txt
@@ -1989,6 +1984,9 @@
 %%WWWDIR%%/utils/stats.php
 %%WWWDIR%%/utils/update-schema-translations.sh
 %%WWWDIR%%/utils/update-translations.sh
+@comment php-gettext is not required (replacement included)
+@exec chmod -R 777 %B
+@exec chmod 444 %D/%F
 @exec chown -R %%WWWOWN%% %D/%%WWWDIR%%
 @dirrm %%WWWDIR%%/utils
 @dirrm %%WWWDIR%%/themes/triple-pane
