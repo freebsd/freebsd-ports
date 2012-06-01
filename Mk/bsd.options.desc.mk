@@ -14,6 +14,7 @@ APE_DESC?=		Enable Monkey's Audio support
 AO_DESC?=		Support libao audio library
 ARCHIVE_DESC?=		Support bzip2/zip/iso9660 archive
 ARTS_DESC?=		Enable Arts audio system support
+ASSERT_DESC?=		Enable debug assertions
 AVAHI_DESC?=		Support Zeroconf through Avahi
 BDB1_DESC?=		Enable Berkeley DB 1.85 support
 BDB_DESC?=		Enable Berkeley DB support
