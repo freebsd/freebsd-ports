@@ -1,5 +1,8 @@
---- mytop.orig	2007-02-17 12:57:46.000000000 +0800
-+++ mytop	2012-05-18 13:58:30.000000000 +0800
+
+$FreeBSD$
+
+--- mytop.orig
++++ mytop
 @@ -153,7 +153,7 @@
      "idle|i"              => \$config{idle},
      "resolve|r"           => \$config{resolve},
@@ -127,7 +130,7 @@
 +				$lines_left--;
 +			}
 +		}
-+
+ 
 +        my @slave_status = Hashes("show slave status");
 +        if (@slave_status)
 +        {
@@ -148,11 +151,34 @@
 +				$lines_left--;
 +			}
 +		}
- 
++
 +        print "\n";
          $lines_left--;
      }
  
+@@ -905,19 +952,19 @@
+     ##
+ 
+     #my $sz = $width - 52;
+-    my @sz   = (8, 9, 15, 10, 9, 6);
++    my @sz   = (9, 9, 15, 10, 9, 6);
+     my $used = scalar(@sz) + Sum(@sz);
+     my $free = $width - $used;
+ 
+     print BOLD();
+ 
+-    printf "%8s %9s %15s %10s %9s %6s %-${free}s\n",
++    printf "%9s %9s %15s %10s %9s %6s %-${free}s\n",
+         'Id','User','Host/IP','DB','Time', 'Cmd', 'Query or State';
+ 
+     print RESET();
+ 
+     ##      Id User Host DB
+-    printf "%8s %9s %15s %10s %9s %6s %-${free}s\n",
++    printf "%9s %9s %15s %10s %9s %6s %-${free}s\n",
+         '--','----','-------','--','----', '---', '----------';
+ 
+     $lines_left -= 2;
 @@ -952,8 +999,11 @@
          {
              $thread->{Host} =~ s/:\d+$//;
@@ -167,6 +193,15 @@
          }
  
          ## Fix possible undefs
+@@ -1044,7 +1094,7 @@
+             print GREEN()  if $thread->{Command} eq 'Connect';
+         }
+ 
+-        printf "%8d %9.9s %15.15s %10.10s %9d %6.6s %-${free}.${free}s\n",
++        printf "%9d %9.9s %15.15s %10.10s %9d %6.6s %-${free}.${free}s\n",
+             $thread->{Id}, $thread->{User}, $thread->{Host}, $thread->{db},
+             $thread->{Time}, $thread->{Command}, $smInfo;
+ 
 @@ -1099,8 +1149,8 @@
      my @data = Hashes("SHOW INNODB STATUS");
  
