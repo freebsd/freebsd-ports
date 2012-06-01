@@ -20,8 +20,10 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-OPTIONS=	GEOTAG	"Enable Geotag support"		on \
-		GPSD	"Enable realtime GPS tracking"	off
+OPTIONS_DEFINE=	GEOTAR GPSD
+OPTIONS_DEFAULT=	GEOTAG
+GEOTAG_DESC=	Enable Geotag support
+GPSD_DESC=	Enable realtime GPS tracking
 
 USE_GNOME=	gnomedocutils gtk20
 USE_PERL5_RUN=	yes
@@ -37,13 +39,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GEOTAG)
+.if ${PORT_OPTIONS:MGEOTAG}
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 .else
 CONFIGURE_ARGS+=	--disable-geotag
 .endif
 
-.if defined(WITH_GPSD)
+.if ${PORT_OPTIONS:MGPSD}
 LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
 .else
 CONFIGURE_ARGS+=	--disable-realtime-gps-tracking

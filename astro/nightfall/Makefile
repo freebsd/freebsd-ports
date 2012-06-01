@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.la-samhna.de/nightfall/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive binary star application
 
-OPTIONS=	GNOMEUI "Enable LibGnomeUI support" off \
-		PGPLOT "Enable PGPLOT support" on \
-		OPENGL "Enable OpenGL support" on
+OPTIONS_DEFINE=	GNOME PGPLOT OPENGL
+OPTIONS_DEFAULT=	PGPLOT OPENGL
+PGPLOT_DESC=	Enable PGPLOT support
 
 USE_GNOME=	gnomehack gnomehier gtk20
 USE_PERL5=	yes
@@ -29,9 +29,9 @@ CONFIGURE_ARGS=	--with-locale-prefix=${PREFIX}/share/locale
 
 MAN1=		nightfall.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_GNOMEUI)
+.if ${PORT_OPTIONS:MGNOMEUI}
 USE_GNOME+=	gnomeprefix libgnomeui
 CONFIGURE_ARGS+=	--with-gnomedoc-prefix=${PREFIX}/share
 INSTALLS_OMF=	yes
@@ -41,22 +41,22 @@ CONFIGURE_ARGS+=	--disable-gnome
 PLIST_SUB+=	GNOMEUI="@comment "
 .endif
 
-.if defined(WITHOUT_PGPLOT)
-RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
-CONFIGURE_ARGS+=	--with-gnuplot
-.else
+.if ${PORT_OPTIONS:MPGPLOT}
 LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
 USE_FORTRAN=	yes
 CONFIGURE_ARGS+=	--with-pgplot-include=${LOCALBASE}/include \
 			--with-pgplot-lib=${LOCALBASE}/lib
+.else
+RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
+CONFIGURE_ARGS+=	--with-gnuplot
 .endif
 
-.if defined(WITHOUT_OPENGL)
-CONFIGURE_ARGS+=	--disable-opengl
-.else
+.if ${PORT_OPTIONS:MOPENGL}
 LIB_DEPENDS+=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 USE_GL=		glut
 CONFIGURE_ARGS+=	--with-lib-GL
+.else
+CONFIGURE_ARGS+=	--disable-opengl
 .endif
 
 post-patch:
@@ -69,4 +69,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
 		${PREFIX}/share/applications
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,14 +27,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-OPTIONS=	ALSA "Build ALSA I/O module" off \
-		DSSI "Build DSSI/LADSPA host opcodes" off \
-		FLUIDSYNTH "Building FluidSynth opcodes" off \
-		JACK "Build Jack I/O module and opcodes" off \
-		OSC "Build OSC opcodes" off \
-		PORTAUDIO "Build the PortAudio I/O module" off \
-		PULSEAUDIO "Build the PulseAudio I/O module" off \
-		FLTKGUI "Build FLTK plugin and GUI" on
+OPTIONS_DEFINE=	ALSA LADSPA FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO FLTK
+OPTIONS_DEFAULT=	FLTK
+FLTK_DESC=		Build FLTK plugin and GUI
+OSC_DESC=		Build OSC opcodes
+FLUIDSYNTH_DESC=	Build FluidSynth opcodes
 
 CONFLICTS_INSTALL=	outguess-*
 
@@ -56,7 +53,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 SCONS_ARGS+=	useALSA=1
 PLIST_SUB+=	ALSA=""
@@ -67,17 +64,17 @@ PLIST_SUB+=	ALSA="@comment "
 ALSA_H=		##alsa/asoundlib.h##
 .endif
 
-.if defined(WITH_DSSI)
+.if ${PORT_OPTIONS:MLADSPA}
 BUILD_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
 RUN_DEPENDS+=	dssi>=0:${PORTSDIR}/audio/dssi
-SCONS_ARGS+=	buildDSSI=1
-PLIST_SUB+=	DSSI=""
+SCONS_ARGS+=	buildLADSPA=1
+PLIST_SUB+=	LADSPA=""
 .else
-SCONS_ARGS+=	buildDSSI=0
-PLIST_SUB+=	DSSI="@comment "
+SCONS_ARGS+=	buildLADSPA=0
+PLIST_SUB+=	LADSPA="@comment "
 .endif
 
-.if defined(WITH_FLUIDSYNTH)
+.if ${PORT_OPTIONS:MFLUIDSYNTH}
 LIB_DEPENDS+=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth
 PLIST_SUB+=	FLUIDSYNTH=""
 FLUIDSYNTH_H=	fluidsynth.h
@@ -86,7 +83,7 @@ PLIST_SUB+=	FLUIDSYNTH="@comment "
 FLUIDSYNTH_H=	##fluidsynth.h##
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 SCONS_ARGS+=	useJack=1
 PLIST_SUB+=	JACK=""
@@ -95,7 +92,7 @@ SCONS_ARGS+=	useJack=0
 PLIST_SUB+=	JACK="@comment "
 .endif
 
-.if defined(WITH_OSC)
+.if ${PORT_OPTIONS:MOSC}
 LIB_DEPENDS+=	lo.7:${PORTSDIR}/audio/liblo
 SCONS_ARGS+=	useOSC=1
 PLIST_SUB+=	OSC=""
@@ -104,7 +101,7 @@ SCONS_ARGS+=	useOSC=0
 PLIST_SUB+=	OSC="@comment "
 .endif
 
-.if defined(WITH_PORTAUDIO)
+.if ${PORT_OPTIONS:MPORTAUDIO}
 BUILD_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 RUN_DEPENDS+=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 SCONS_ARGS+=	usePortAudio=1
@@ -118,7 +115,7 @@ PORTAUDIO_L=	# empty
 PORTAUDIO_R=	# empty
 .endif
 
-.if defined(WITH_PULSEAUDIO)
+.if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse-simple.0:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSEAUDIO=""
 PULSEAUDIO_H=	pulse/simple.h
@@ -127,16 +124,16 @@ PLIST_SUB+=	PULSEAUDIO="@comment "
 PULSEAUDIO_H=	##pulse/simple.h##
 .endif
 
-.if !defined(WITHOUT_FLTKGUI)
+.if ${PORT_OPTIONS:MFLTK}
 LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
-PLIST_SUB+=	FLTKGUI=""
+PLIST_SUB+=	FLTK=""
 SCONS_ARGS+=	buildCsound5GUI=1 buildCSEditor=1 buildWinsound=1 useFLTK=1
 .else
-PLIST_SUB+=	FLTKGUI="@comment "
+PLIST_SUB+=	FLTK="@comment "
 SCONS_ARGS+=	buildCsound5GUI=0 buildCSEditor=0 buildWinsound=0 useFLTK=0
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 EXTRACT_DEPENDS+=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 DISTFILES+=	Csound${PORTVERSION:R}_manual_html.zip:manual
 .endif
@@ -148,7 +145,7 @@ CMAKE_ARGS+=	Word64=1
 .endif
 
 post-extract:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${UNZIP_CMD} -qo \
 		Csound${PORTVERSION:R}_manual_html.zip -d ${WRKDIR})
 .endif
@@ -197,7 +194,7 @@ post-patch:
 
 post-install:
 	@${LN} -sf libcsound64.so.5 ${PREFIX}/lib/libcsound64.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${ECHO_MSG} " Installing the manual."
 	@(cd ${WRKDIR}/html && ${COPYTREE_SHARE} . ${DOCSDIR})

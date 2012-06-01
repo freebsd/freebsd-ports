@@ -26,37 +26,32 @@ USE_GNOME=	gnomehier
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes
 
-OPTIONS=	DBUS	"D-Bus extension" on \
-		FLAC	"Flac export/import" on \
-		GCONF	"Gnome Audio playback/record" on \
-		JACK	"Jack audio playback/record" off \
-		LADSPA	"Instrument effects" on \
-		LAME	"Mp3 export" off \
-		MP3	"Mp3 import" off \
-		PIDGIN	"Pidgin status extension" off \
-		PROFILES "Gnome Audio Profiles extension" off \
-		PULSE	"PulseAudio playback/record" off \
-		VORBIS	"Ogg Vorbis export/import" on
+OPTIONS_DEFINE=	DBUS FLAC GCONF JACK LADSPA LAME MP3 PIDGIN PROFILES PULSE VORBIS
+OPTIONS_DEFAULT=	DBUS FLAC GCONF LADSPA VORBIS
+MP3_DESC=	MP3 import
+PIDGIN_DESC=	Pidgin status extension
+PROFILES_DESC=	Gnome Audio Profiels extension
+PULSE_DESC=	${PULSEAUDIO_DESC}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DBUS)
+.if ${PORT_OPTIONS:MDBUS}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
 
-.if defined(WITH_GNOME) || defined(WITH_PROFILES) \
+.if ${PORT_OPTIONS:MGNOME} || ${PORT_OPTIONS:MPROFILES}
 	|| ${HAVE_GNOME:Mpygnome2}!=""
 USE_GNOME+=	pygnome2
 .endif
 
-.if defined(WITH_PIDGIN)
-. if defined(WITHOUT_DBUS)
+.if ${PORT_OPTIONS:MPIDGIN}
+.if empty(PORT_OPTIONS:MDBUS)
 IGNORE=		requires DBUS support
 . endif
 RUN_DEPENDS+=	pidgin:${PORTSDIR}/net-im/pidgin
 .endif
 
-.if !defined(WITHOUT_OMF) || exists(${LOCALBASE}/bin/scrollkeeper-update)
+.if ${PORT_OPTIONS:MOMF} || exists(${LOCALBASE}/bin/scrollkeeper-update)
 RUN_DEPENDS+=	scrollkeeper-update:${PORTSDIR}/textproc/scrollkeeper
 INSTALLS_OMF=	yes
 PLIST_SUB+=	OMF=""
@@ -65,7 +60,7 @@ PLIST_SUB+=	OMF="@comment "
 .endif
 
 .for plugin in flac gconf jack ladspa lame mp3 pulse vorbis
-. if defined(WITH_${plugin:U})
+. if ${PORT_OPTIONS:M${plugin:U})
 USE_GSTREAMER+=${plugin}
 . endif
 .endfor

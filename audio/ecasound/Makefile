@@ -15,12 +15,10 @@ COMMENT=	Multitrack audio processing software
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-OPTIONS=	ARTS		"Enable aRts support"		off \
-		AUDIOFILE	"Enable libaudiofile support"	off \
-		JACK		"Enable JACK support"		off \
-		LO		"Enable liblo support"		off \
-		OIL		"Enable liboil support"		off \
-		SAMPLERATE	"Enable libsamplerate support"	off
+OPTIONS_DEFINE=	ARTS AUDIOFILE JACK LO OIL SAMPLERATE
+AUDIOFILE_DESC=	Enable libaudiofile support
+LO_DESC=	Enable liblo support
+OIL_DESC=	Enable liboil support
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -40,43 +38,43 @@ MAN5=		ecasoundrc.5
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libreadline.so.6)
 LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
 .endif
 
-.if defined(WITH_ARTS)
+.if ${PORT_OPTIONS:MARTS}
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
 
-.if defined(WITH_AUDIOFILE)
+.if ${PORT_OPTIONS:MAUDIOFILE}
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
 CONFIGURE_ARGS+=	--disable-audiofile
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-.if defined(WITH_LO)
+.if ${PORT_OPTIONS:MLO}
 LIB_DEPENDS+=	lo.7:${PORTSDIR}/audio/liblo
 .else
 CONFIGURE_ARGS+=	--disable-liblo
 .endif
 
-.if defined(WITH_OIL)
+.if ${PORT_OPTIONS:MOIL}
 LIB_DEPENDS+=	oil-0.3.0:${PORTSDIR}/devel/liboil
 .else
 CONFIGURE_ARGS+=	--disable-liboil
 .endif
 
-.if defined(WITH_SAMPLERATE)
+.if ${PORT_OPTIONS:MSAMPLERATE}
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .else
 CONFIGURE_ARGS+=	--disable-libsamplerate --disable-sndfile
@@ -90,4 +88,4 @@ post-patch:
 		 s| -D_THREAD_SAFE||g ; \
 		 s| -D_P1003_1B_VISIBLE||' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
