@@ -14,6 +14,7 @@ bin/cpants_lint.pl
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Pod.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Prereq.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Repackageable.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Signature.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Uses.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Version.pm
 @dirrmtry %%SITE_PERL%%/Module/CPANTS/Kwalitee
