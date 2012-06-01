@@ -23,10 +23,12 @@ LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig \
 		curl.6:${PORTSDIR}/ftp/curl \
 		json.0:${PORTSDIR}/devel/json-c
 
-OPTIONS=	DEBUG "Enable Debug" off \
-		ASSERT "Enable Asserts" off \
-		CNC_DEBUG "Enable Command and Control Debug" off \
-		STOMP_DEBUG "Enable STOMP Debug" off
+OPTIONS_DEFINE=	DEBUG ASSERT CNC_DEBUG STOMP_DEBUG
+
+CNC_DEBUG_DESC=		Enable Command and Control Debug
+STOMP_DEBUG_DESC=	Enable STOMP Debug
+
+.include <bsd.port.options.mk>
 
 USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
@@ -35,19 +37,19 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_DEBUG)
+.if !empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITH_ASSERT)
+.if !empty(PORT_OPTIONS:MASSERT)
 CONFIGURE_ARGS+=--enable-assert
 .endif
 
-.if defined(WITH_CNC_DEBUG)
+.if !empty(PORT_OPTIONS:MCNC_DEBUG)
 CONFIGURE_ARGS+=--enable-cnc-debug
 .endif
 
-.if defined(WITH_STOMP_DEBUG)
+.if !empty(PORT_OPTIONS:MSTOMP_DEBUG)
 CONFIGURE_ARGS+=--enable-stomp-debug
 .endif
 
