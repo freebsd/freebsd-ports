@@ -148,6 +148,7 @@
     SUBDIR += qwit-devel
     SUBDIR += qxmpp
     SUBDIR += ramblercontacts
+    SUBDIR += rubygem-earthquake
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-xmpp4r
     SUBDIR += sendxmpp
