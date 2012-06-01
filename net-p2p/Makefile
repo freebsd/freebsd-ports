@@ -30,6 +30,7 @@
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
     SUBDIR += gnunet
+    SUBDIR += gnunet-gtk
     SUBDIR += gtk-gnutella
     SUBDIR += gtkhx
     SUBDIR += gtorrentviewer
