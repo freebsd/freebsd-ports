@@ -155,6 +155,18 @@ NOPORTEXAMPLES=	yes
 WITHOUT_NLS=	yes
 .endif
 
+.if defined(NO_OPTIONS_SORT)
+_SORTED_OPTIONS:=	${ALL_OPTIONS}
+ALL_OPTIONS:=
+.for opt in ${OPTIONS_DEFINE}
+.if ${_SORTED_OPTIONS:M${opt}}
+ALL_OPTIONS+=	${opt}
+.endif
+.endfor
+.undef opt
+.undef _SORTED_OPTIONS
+.endif
+
 ### to be removed once old OPTIONS disappear
 .for opt in ${ALL_OPTIONS}
 .if empty(PORT_OPTIONS:M${opt})
