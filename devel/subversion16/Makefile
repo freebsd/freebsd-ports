@@ -21,20 +21,20 @@ TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 OPTIONS=	P4_STYLE_MARKERS	"Perforce-style conflict markers" on \
 		ENHANCED_KEYWORD	"Enhanced svn:keyword support" on \
 		FREEBSD_TEMPLATE	"FreeBSD Project log template" on \
-		MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
-		MOD_DONTDOTHAT	"mod_dontdothat for Apache 2.X" off \
-		NEON		"WebDAV/Delta-V repo access module (neon)" on \
-		SERF		"WebDAV/Delta-V repo access module (serf)" off \
-		SASL		"SASL2 authorization support" off \
-		BDB		"Berkeley DB (4 or 5) repository backend" on \
-		ASVN		"Build and install Archive SVN (asvn)" off \
+		MOD_DAV_SVN		"mod_dav_svn module for Apache 2.X" off \
+		MOD_DONTDOTHAT		"mod_dontdothat for Apache 2.X" off \
+		NEON			"WebDAV/Delta-V repo access module (neon)" on \
+		SERF			"WebDAV/Delta-V repo access module (serf)" off \
+		SASL			"SASL2 authorization support" off \
+		BDB			"Berkeley DB (4 or 5) repository backend" on \
+		ASVN			"Build and install Archive SVN (asvn)" off \
 		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
 		SVNAUTHZ_VALIDATE	"install svnauthz-validate" off \
-		STATIC		"Build static version (no shared libs)" off \
-		GNOME_KEYRING	"Build with GNOME Keyring auth support" off \
-		KDE_KWALLET	"Build with KDE KWallet auth support" off \
-		BOOK		"Install the Subversion Book" off
+		STATIC			"Build static version (no shared libs)" off \
+		GNOME_KEYRING		"Build with GNOME Keyring auth support" off \
+		KDE_KWALLET		"Build with KDE KWallet auth support" off \
+		BOOK			"Install the Subversion Book" off
 
 .include "Makefile.common"
 
@@ -111,12 +111,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_MOD_DAV_SVN)
-.if defined(WITH_STATIC)
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
@@ -133,12 +127,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_SVNAUTHZ_VALIDATE)
-.if defined(WITH_STATIC)
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${ECHO_MSG} "!!! svnauthz-validate and static build are not compatible !!!"
-	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@${FALSE}
-.endif
 	@${ECHO_MSG} "svnauthz-validate enabled."
 	@${ECHO_MSG} ""
 .endif
@@ -169,6 +157,30 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 .if defined(WITH_STATIC)
+.if defined(WITH_MOD_DAV_SVN)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! mod_dav_svn and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.if defined(WITH_SVNAUTHZ_VALIDATE)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! svnauthz_validate and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.if defined(WITH_GNOME_KEYRING)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! Gnome Keyring and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+.if defined(WITH_KDE_WALLET)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! KDE Wallet and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
 	@${ECHO_MSG} "Static binaries will be built."
 .endif
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
@@ -242,7 +254,8 @@ post-install:	${MKREPOS_TARGET}
 
 repository:	_mkrepos
 
-_SVNGRPFILES=	dav db locks locks/db.lock locks/db-logs.lock
+_SVNGRPFILES=	db locks locks/db.lock locks/db-logs.lock
+_SVNGRPFILES+=	dav
 SVNGRPFILES=	${_SVNGRPFILES:S,^,${SVNREPOS}/,}
 
 _mkrepos:	.USE
