@@ -23,9 +23,9 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-OPTIONS=	PLOTUTILS "Use GNU plotutils for plotting" off \
-		GNUPLOT "Use gnuplot for plotting" on \
-		EXAMPLES "Install example spice files" off
+OPTIONS_DEFINE=	PLOTUTILS GNUPLOT EXAMPLES
+OPTIONS_DEFAULT=	GNUPLOT
+PLOTUTILS_DESC=	Enable plotting using plotutils
 
 DOCFILES=	Guile.notes \
 		gwave-concepts.txt \
@@ -38,25 +38,25 @@ DOCFILES=	Guile.notes \
 
 MAN1=		sp2sp.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_PLOTUTILS)
+.if ${PORT_OPTIONS:MPLOTUTILS}
 RUN_DEPENDS+=	graph:${PORTSDIR}/graphics/plotutils
 .endif
 
-.if !defined(WITHOUT_GNUPLOT)
+.if ${PORT_OPTIONS:MGNUPLOT}
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
-.if defined(WITH_EXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 PLIST_SUB+=	EXAMPLES=""
@@ -64,4 +64,4 @@ PLIST_SUB+=	EXAMPLES=""
 PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

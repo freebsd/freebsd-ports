@@ -25,21 +25,22 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/xmms/Effect/libeq.la \
 		lib/xmms/Effect/libeq.so
 
-OPTIONS=	BENCHMARK "Enable counting the cycles used by the IIR" off \
-		EXT_INS "Use MMX/SSE/SSE2 instructions if available" on \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+OPTIONS_DEFINE=	BENCHMARK EXT_INS OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	EXT_INS OPTIMIZED_CFLAGS
+BENCHMARK_DESC=	Enable counting the cycles used by the IIR
+EXT_INS_DESC=	Use MMX/SSE/SSE2 instructions if available
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_BENCHMARK)
+.if ${PORT_OPTIONS:MBENCHMARK}
 CONFIGURE_ARGS+=	--enable-benchmark
 .endif
 
-.if defined(WITHOUT_EXT_INS) || defined(PACKAGE_BUILDING)
+.if empty(PORT_OPTIONS:MEXT_INS) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--disable-autodetect
 .endif
 
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
+.if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g; \
 		s|-fomit-frame-pointer||g; \
@@ -53,4 +54,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

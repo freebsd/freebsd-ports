@@ -17,7 +17,8 @@ COMMENT=	A QT-based music manager with fuzzy search
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		tag.1:${PORTSDIR}/audio/taglib
 
-OPTIONS=	XMMS "XMMS backend support" off
+OPTIONS_DEFINE=	XMMS
+XMMS_DESC=	XMMS backend support
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
@@ -25,9 +26,9 @@ USE_AUTOTOOLS=	autoconf:env automake:env libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gstreamer
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_XMMS)
+.if ${PORT_OPTIONS:MXMMS}
 CONFIGURE_ARGS+=--enable-xmms
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
@@ -47,4 +48,4 @@ pre-configure:
 	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
 	@cd ${WRKSRC} && ${GMAKE} -f admin/Makefile.common
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

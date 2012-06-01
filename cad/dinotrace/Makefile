@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical signal trace waveform viewer
 
-OPTIONS=	EMACS "Install Emacs supplimentary files" on
+OPTIONS_DEFINE=	EMACS
+OPTIONS_DEFAULT=	EMACS
+EMACS_DESC=	Install Emacs supplimentary files
 
 GNU_CONFIGURE=	yes
 USE_MOTIF=	yes
@@ -30,8 +32,8 @@ ELFILES=	dinotrace.el sim-log.el
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
-.include <bsd.port.pre.mk>
-.if !defined(WITHOUT_EMACS)
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MEMACS}
 RUN_DEPENDS+=	${VERILOGEL_FILE}:${PORTSDIR}/cad/verilog-mode.el
 PLIST_SUB+=	EMACS=""
 .else
@@ -39,7 +41,7 @@ PLIST_SUB+=	EMACS="@comment "
 .endif
 
 post-install:
-.if !defined(WITHOUT_EMACS)
+.if ${PORT_OPTIONS:MEMACS}
 	${MKDIR} ${DATADIR}/
 	${MKDIR} ${XEMACSLISPDIR}
 . for FILE in ${ELFILES}
@@ -50,4 +52,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

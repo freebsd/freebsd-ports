@@ -18,14 +18,14 @@ COMMENT=	A sophisticated electrical CAD system
 
 GNU_CONFIGURE=	yes
 
-OPTIONS=	QT	"Use QT gui (instead of Motif)" off \
-		T1LIB	"Use T1lib Type1 font library" on \
-		NLS	"Build with internationalization support" on \
-		OPT	"Build with optimized CFLAGS" off
+OPTIONS_DEFINE=	QT3 T1LIB NLS OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	T1LIB
+QT3_DESC=	Use QT gui (instead of Motif)
+T1LIB_DESC=	Use T1lib Type1 font library
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_QT)
+.if ${PORT_OPTIONS:MQT3}
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 FEATURES+=	QT
 .else
@@ -33,17 +33,17 @@ USE_MOTIF=	yes
 FEATURES+=	MOTIF
 .endif
 
-.if !defined(WITHOUT_T1LIB)
+.if ${PORT_OPTIONS:MT1LIB}
 LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
 FEATURES+=	T1LIB
 .endif
 
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 FEATURES+=	INT
 .endif
 
-.if defined(WITH_OPT)
+.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 FEATURES+=	OPT
 .endif
 
@@ -66,4 +66,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/electric
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

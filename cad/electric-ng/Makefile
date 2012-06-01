@@ -29,50 +29,45 @@ SUB_LIST+=	LIBFILES="${LIBFILES}" \
 		JARFILE="${JARFILE}"
 SUB_FILES=	electric-ng
 
-OPTIONS=	BSH	"Enable embedded java interpreter via BSH"	off \
-		3D	"Enable 3D visualization via Java3D"		off \
-		IRSIM	"Install IRSIM plugin"				off \
-		ANIM	"Install 3D animation plugin"			off \
-		AXIS	"Install 3D Axis Controller plugin"		off \
-		RUSSIAN	"Install Russian manual"			off
+OPTIONS_DEFINE=	BSH 3D IRSIM ANIM AXIS RUSSIAN
+BSH_DESC=	Enable embedded java interpreter via BSH
+3D_DESC=	Enable 3D visualization via Java3D
+IRSIM_DESC=	Install IRSIM plugin
+ANIM_DESC=	Install 3D animation plugin
+AXIS_DESC=	Install 3D Axis Controller plugin
+RUSSIAN_DESC=	Install Russian manual
 
 JARFILE=	${DISTNAME}${EXTRACT_SUFX}
 J3DLIB=		${LOCALBASE}/share/java/java3d/jar/j3dcore.jar
 PLUGINDIR=	${PREFIX}/libexec/electric/
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if exists(${JAVALIBDIR}/bsh.jar)
-WITH_BSH=	yes
-.endif
-.if defined(WITH_BSH)
+.if ${PORT_OPTIONS:MBSH} || exists(${JAVALIBDIR}/bsh.jar)
 RUN_DEPENDS+=	${JAVALIBDIR}/bsh.jar:${PORTSDIR}/lang/bsh
 LIBFILES+=	${JAVALIBDIR}/bsh.jar
 .endif
 
-.if defined(WITH_AXIS)
+.if ${PORT_OPTIONS:MAXIS}
 WITH_3D=	yes
 PLUGINS+=	electricJava3D-8.11
 .endif
 
-.if defined(WITH_ANIM)
+.if ${PORT_OPTIONS:MANIM}
 WITH_3D=	yes
 RUN_DEPENDS+=	${JAVALIBDIR}/jmf.jar:${PORTSDIR}/java/jmf
 PLUGINS+=	electricJMF-8.11
 .endif
 
-.if exists(${J3DLIB})
-WITH_3D=	yes
-.endif
-.if defined(WITH_3D)
+.if ${PORT_OPTIONS:M3D} || exists(${J3DLIB})
 RUN_DEPENDS+=	${J3DLIB}:${PORTSDIR}/java/java3d
 .endif
 
-.if defined(WITH_IRSIM)
+.if ${PORT_OPTIONS:MIRSIM}
 PLUGINS+=	electricIRSIM-8.11
 .endif
 
-.if defined(WITH_RUSSIAN)
+.if ${PORT_OPTIONS:MRUSSIAN}
 PLUGINS+=	electricRussianManual-8.11
 .endif
 
@@ -93,4 +88,4 @@ do-install:
 	${INSTALL_DATA} ${PLUGINS:S,^,${DISTDIR}/,:S,$,.jar,} ${PLUGINDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

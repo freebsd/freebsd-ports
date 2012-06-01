@@ -17,7 +17,8 @@ COMMENT=	Benchmark SMTP/POP servers
 
 LICENSE=	GPLv3
 
-OPTIONS=	SSL "Build with OpenSSL support" on
+OPTIONS_DEFINE=	SSL
+OPTIONS_DEFAULT=	SSL
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -29,15 +30,15 @@ PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
 MAN1=	postal-list.1
 MAN8=	bhm.8 postal.8 rabid.8
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--disable-gnutls
 
-.if !defined(WITH_SSL)
+.if empty(PORT_OPTIONS:MSSL)
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
 CFLAGS+=	${PTHREAD_CFLAGS} -Wno-long-long
 LDFLAGS+=	${PTHREAD_LIBS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
