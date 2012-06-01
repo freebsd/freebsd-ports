@@ -201,7 +201,7 @@ PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 GNUSTEP_WITH_GCC42=yes
 .endif
 .endif
-.if !exists(${DESTDIR}/usr/lib/libobjc.so) 
+.if !exists(${DESTDIR}/usr/lib/libobjc.so)
 GNUSTEP_WITH_GCC42=yes
 .endif
 .endif
