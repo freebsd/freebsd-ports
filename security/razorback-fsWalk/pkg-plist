@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/fsWalk
+@unexec if cmp -s %D/etc/razorback/fsWalk.conf %D/etc/razorback/fsWalk.conf.sample; then rm -f %D/etc/razorback/fsWalk.conf; fi
+etc/razorback/fsWalk.conf.sample
+@exec if [ ! -f %D/etc/razorback/fsWalk.conf ]; then cp -p %D/%F %B/fsWalk.conf; fi
+@dirrmtry etc/razorback
