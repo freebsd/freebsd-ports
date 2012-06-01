@@ -52,6 +52,7 @@ GIF_DESC?=		Enable GIF support
 GLADE_DESC?=		Enable Glade interface support
 GNOME_DESC?=		Enable GNOME Desktop support
 GNUPG_DESC?=		Enable GNU Privacy Guard support
+GNUPLOT_DESC?=		Enable plotting using gnuplot
 GOGO_DESC?=		Enable gogo mp3 encoder
 GRASS_DESC?=		Enable GRASS support
 GSTREAMER_DESC?=	Enable GStreamer for multimedia support
