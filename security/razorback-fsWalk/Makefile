@@ -20,19 +20,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	razorback_api.2:${PORTSDIR}/security/razorback-api
 
-OPTIONS=	DEBUG "Enable Debug" off \
-		ASSERT "Enable Asserts" off
+OPTIONS_DEFINE=	DEBUG ASSERT
+
+.include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_DEBUG)
+.if !empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITH_ASSERT)
+.if !empty(PORT_OPTIONS:MASSERT)
 CONFIGURE_ARGS+=--enable-assert
 .endif
 
