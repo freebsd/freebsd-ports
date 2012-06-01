@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Int64
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Manipulate 64 bits integers in Perl
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Math::Int64.3
+MAN3=		Math::Int64.3 \
+		Math::Int64::die_on_overflow.3
 
 .include <bsd.port.mk>
