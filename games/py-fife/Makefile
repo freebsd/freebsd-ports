@@ -6,6 +6,7 @@
 
 PORTNAME=		fife
 PORTVERSION=		0.3.3r3
+PORTREVISION=	1
 CATEGORIES=		games
 MASTER_SITES=		http://sourceforge.net/projects/${PORTNAME}/files/active/src/:source \
 			http://sourceforge.net/projects/${PORTNAME}/files/active/demos/:demo
@@ -23,7 +24,7 @@ BUILD_DEPENDS=		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=		vorbisfile.6:${PORTSDIR}/audio/libvorbis \
 			guichan.2:${PORTSDIR}/devel/guichan \
 			boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-			png.6:${PORTSDIR}/graphics/png
+			png15:${PORTSDIR}/graphics/png
 
 USE_SDL=		sdl ttf image
 USE_OPENAL=		al
