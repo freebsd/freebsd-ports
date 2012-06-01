@@ -60,7 +60,7 @@ BROKEN=		Does not build on powerpc-9
 
 .if ${PORT_OPTIONS:MGTK2}
 
-.if empty(${PORT_OPTIONS:MSDL})
+.if empty(PORT_OPTIONS:MSDL)
 IGNORE=		GTK+2 player needs SDL
 .endif # GTK2/SDL
 
