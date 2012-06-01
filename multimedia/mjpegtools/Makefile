@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--without-libsdl
 .endif # SDL
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng
 PLIST_SUB+=	PNG:=""
 .else
