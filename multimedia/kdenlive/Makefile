@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.8.2.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia kde
-MASTER_SITES=	SF
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	KDE professional quality non-linear video editing suite
@@ -19,43 +19,50 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	mlt.4:${PORTSDIR}/multimedia/mlt \
 		qjson.0:${PORTSDIR}/devel/qjson
 
-USE_GETTEXT=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network opengl script svg xml \
+USE_QT4=	dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
+USE_BZIP2=	yes
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
 OPTIONS=	DVD	"DVD creation with cdrtools and dvdauthor" on \
-		FREI0R	"frei0r plugins" on \
-		LADSPA	"LADSPA plugins" on \
+		FREI0R	"frei0r video plugins" on \
+		LADSPA	"LADSPA audio plugins" on \
 		SCREENGRAB	"Screen capture with recordMyDesktop" on \
 		XINE	"DVD preview with xine" on
 
 .include <bsd.port.options.mk>
 
-.ifndef(WITHOUT_DVD)
-USE_CDRTOOLS=	yes
+.if ${PORT_OPTIONS:MDVD}
 RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
+USE_CDRTOOLS=	yes
 .endif
 
-.ifndef(WITHOUT_FREI0R)
+.if ${PORT_OPTIONS:MFREI0R}
 RUN_DEPENDS+=	frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins
 .endif
 
-.ifndef(WITHOUT_LADSPA)
+.if ${PORT_OPTIONS:MLADSPA}
 RUN_DEPENDS+=	swhplugins>=0:${PORTSDIR}/audio/swhplugins
 .endif
 
-.ifndef(WITHOUT_SCREENGRAB)
+.if ${PORT_OPTIONS:MNLS}
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSCREENGRAB}
 RUN_DEPENDS+=	recordmydesktop:${PORTSDIR}/multimedia/recordmydesktop
 .endif
 
-.ifndef(WITHOUT_XINE)
+.if ${PORT_OPTIONS:MXINE}
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 .endif
 
