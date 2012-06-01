@@ -20,7 +20,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		lo.7:${PORTSDIR}/audio/liblo \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-OPTIONS=	LASH "Enable LASH support" off
+OPTIONS_DEFINE=	LASH
 
 USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
@@ -29,7 +29,7 @@ MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_LASH)
+.if ${PORT_OPTIONS:MLASH}
 LIB_DEPENDS+=	lash.2:${PORTSDIR}/audio/lash
 .else
 CONFIGURE_ARGS+=--disable-lash

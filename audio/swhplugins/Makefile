@@ -31,25 +31,25 @@ USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC -DPIC
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+OPTIONS_DEFINE=	NLS 3DNOW SSE
+3DNOW_DESC=	use 3DNow! instructions
+SSE_DESC=	use SSE instructions
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 LDFLAGS+=	-lintl
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-OPTIONS=	3DNOW "use 3DNow! instructions" off \
-		SSE "use SSE instructions" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_3DNOW)
+.if ${PORT_OPTIONS:M3DNOW}
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
-.if defined(WITH_SSE)
+.if ${PORT_OPTIONS:MSSE}
 CONFIGURE_ARGS+=	--enable-sse
 .endif
 
@@ -59,4 +59,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<inttypes.h>|g' ${WRKSRC}/ladspa-util.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

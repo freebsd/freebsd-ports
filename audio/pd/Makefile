@@ -16,8 +16,7 @@ COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
 LICENSE=	BSD
 
-OPTIONS=	ALSA "Enable ALSA support" off \
-		JACK "Enable JACK support" off
+OPTIONS_DEFINE=	ALSA JACK DOCS
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S;.src;/src;}
 PATCH_WRKSRC=	${WRKSRC}/..
@@ -37,14 +36,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_ALSA)
+.if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
 CONFIGURE_ARGS+=	--enable-alsa
 .else
 CONFIGURE_ARGS+=	--disable-alsa
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--enable-jack
 .else
@@ -93,7 +92,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/pd-watchdog ${PREFIX}/lib/pd/bin
 	@${MKDIR} ${PREFIX}/lib/pd/tcl
 	${INSTALL_DATA} ${WRKSRC}/../tcl/*.tcl ${PREFIX}/lib/pd/tcl
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(${TAR} -C ${WRKSRC}/../doc --exclude "*.bak" --exclude "*.orig" \
 		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -)

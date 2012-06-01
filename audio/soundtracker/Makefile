@@ -22,10 +22,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS=	GNOME "use GNOME 1.x (enables envelope editors)" off \
-		I386_ASM "i386 asm optimizations (potentially unstable)" off \
-		JACK "JACK support" off \
-		SDL "SDL support" off
+OPTIONS_DEFINE=	GNOME1 I386_ASM JACK SDL NLS
+GNOME1_DESC=	use GNOME 1.x (enables envelope editors)
+I386_ASM_DESC=	i386 asm optimizations (potentially unstable)
 
 DESKTOP_ENTRIES="SoundTracker" \
 		"Compose music" \
@@ -36,35 +35,35 @@ DESKTOP_ENTRIES="SoundTracker" \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && defined(WITH_I386_ASM)
+.if ${ARCH} == "i386" && ${PORT_OPTIONS:MI386_ASM}
 CONFIGURE_ARGS+=	--enable-asm
 .endif
 
-.if defined(WITH_GNOME)
+.if ${PORT_OPTIONS:MGNOME}
 USE_GNOME+=	gnomelibs gnomeprefix
 CONFIGURE_ARGS+=	--enable-gnome
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
-.if defined(WITH_JACK)
+.if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=		jack.0:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-.if defined(WITH_SDL)
+.if ${PORT_OPTIONS:MSDL}
 USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if ${PORT_OPTIONS:MNLS}
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
@@ -78,7 +77,7 @@ post-patch:
 		${WRKSRC}/app/gui.c
 
 pre-build:
-.if !defined(WITHOUT_NLS)
+.if ${PORT_OPTIONS:MNLS}
 	cd ${WRKSRC}/po && ${LOCALBASE}/bin/msgfmt -c -o ja.gmo ja.po
 .endif
 
