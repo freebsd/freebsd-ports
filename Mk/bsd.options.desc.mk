@@ -136,6 +136,7 @@ RADIUS_DESC?=		Enable RADIUS support
 RAW_DESC?=		Enable RAW support
 RUBY_DESC?=		Enable Ruby binding/support
 SAMPLERATE_DESC?=	Support sample rate conversion
+SASL_DESC?=		Enable SASL support
 SDL_DESC?=		Enable Simple Direct Madia Layer support
 SEM_DESC?=		Enable POSIX semaphores support
 SHOUTCAST_DESC?=	Support for Ogg Icecast and Shoutcast
