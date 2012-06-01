@@ -4,6 +4,7 @@ lib/liboath.a
 lib/liboath.la
 lib/liboath.so
 lib/liboath.so.1
+lib/security/pam_oath.la
 lib/security/pam_oath.so
 libdata/pkgconfig/liboath.pc
 @dirrm include/liboath
