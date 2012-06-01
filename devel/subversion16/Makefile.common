@@ -37,12 +37,11 @@ CONFLICTS_BUILD+=	${PORTNAME}-1.7.[0-9]*
 LIB_DEPENDS+=		svn_client-1.0:${PORTSDIR}/devel/subversion16
 OPTIONSFILE=		${PORT_DBDIR}/${PORTNAME}16/options
 OPTIONS=		# Dirty hack: if OPTIONS is not defined, OPTIONSFILE will not be included
-OPTIONS=
 .endif
 
 .include <bsd.port.options.mk>
 .include "Makefile.inc"
-			
+
 # Default is "on"
 .if !defined(WITHOUT_NEON)
 LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
