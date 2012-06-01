@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Test/CPAN/Meta/YAML.pm
+%%SITE_PERL%%/Test/CPAN/Meta/YAML/Version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN/Meta/YAML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN/Meta/YAML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN/Meta
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/CPAN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/Test/CPAN/Meta/YAML
+@dirrmtry %%SITE_PERL%%/Test/CPAN/Meta
+@dirrmtry %%SITE_PERL%%/Test/CPAN
+@dirrmtry %%SITE_PERL%%/Test
