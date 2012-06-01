@@ -12,6 +12,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/api/client.pyc
 %%DATADIR%%/api/server.py
 %%DATADIR%%/api/server.pyc
+%%DATADIR%%/api_results.py
+%%DATADIR%%/api_results.pyc
 %%DATADIR%%/api_server.py
 %%DATADIR%%/api_server.pyc
 %%DATADIR%%/backend.py
@@ -52,6 +54,8 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/browser_nt.pyc
 %%DATADIR%%/browser_null.py
 %%DATADIR%%/browser_null.pyc
+%%DATADIR%%/bytegen_speedtest.py
+%%DATADIR%%/bytegen_speedtest.pyc
 %%DATADIR%%/compat.py
 %%DATADIR%%/compat.pyc
 %%DATADIR%%/config.py
@@ -130,8 +134,6 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/net/CA.pyc
 %%DATADIR%%/net/__init__.py
 %%DATADIR%%/net/__init__.pyc
-%%DATADIR%%/net/dns.py
-%%DATADIR%%/net/dns.pyc
 %%DATADIR%%/net/poller.py
 %%DATADIR%%/net/poller.pyc
 %%DATADIR%%/net/stream.py
@@ -218,24 +220,26 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/updater_win32.pyc
 %%DATADIR%%/utils/__init__.py
 %%DATADIR%%/utils/__init__.pyc
-%%DATADIR%%/utils/blocks.py
-%%DATADIR%%/utils/blocks.pyc
-%%DATADIR%%/utils/version.py
-%%DATADIR%%/utils/version.pyc
 %%DATADIR%%/utils_ctl.py
 %%DATADIR%%/utils_ctl.pyc
 %%DATADIR%%/utils_module.py
 %%DATADIR%%/utils_module.pyc
+%%DATADIR%%/utils_net.py
+%%DATADIR%%/utils_net.pyc
 %%DATADIR%%/utils_path.py
 %%DATADIR%%/utils_path.pyc
 %%DATADIR%%/utils_posix.py
 %%DATADIR%%/utils_posix.pyc
+%%DATADIR%%/utils_random.py
+%%DATADIR%%/utils_random.pyc
 %%DATADIR%%/utils_rc.py
 %%DATADIR%%/utils_rc.pyc
-%%DATADIR%%/viewer/__init__.py
-%%DATADIR%%/viewer/__init__.pyc
-%%DATADIR%%/viewer/unix.py
-%%DATADIR%%/viewer/unix.pyc
+%%DATADIR%%/utils_version.py
+%%DATADIR%%/utils_version.pyc
+%%DATADIR%%/viewer.py
+%%DATADIR%%/viewer.pyc
+%%DATADIR%%/viewer_webkit_gtk.py
+%%DATADIR%%/viewer_webkit_gtk.pyc
 %%DATADIR%%/www/bittorrent.html
 %%DATADIR%%/www/css/jquery.jqplot.css
 %%DATADIR%%/www/css/style.css
@@ -248,21 +252,14 @@ share/icons/hicolor/scalable/apps/neubot.svg
 %%DATADIR%%/www/js/contrib.js
 %%DATADIR%%/www/js/excanvas.min.js
 %%DATADIR%%/www/js/i18n.js
-%%DATADIR%%/www/js/ie8_jqplot.canvasAxisTickRenderer.min.js
-%%DATADIR%%/www/js/ie8_jqplot.canvasTextRenderer.min.js
-%%DATADIR%%/www/js/ie8_jqplot.categoryAxisRenderer.min.js
-%%DATADIR%%/www/js/ie8_jqplot.cursor.min.js
-%%DATADIR%%/www/js/ie8_jqplot.dateAxisRenderer.min.js
-%%DATADIR%%/www/js/ie8_jqplot.highlighter.min.js
-%%DATADIR%%/www/js/ie8_jquery.jqplot.min.js
 %%DATADIR%%/www/js/index.js
+%%DATADIR%%/www/js/jqplot.canvasAxisLabelRenderer.min.js
 %%DATADIR%%/www/js/jqplot.canvasAxisTickRenderer.min.js
 %%DATADIR%%/www/js/jqplot.canvasTextRenderer.min.js
 %%DATADIR%%/www/js/jqplot.categoryAxisRenderer.min.js
 %%DATADIR%%/www/js/jqplot.cursor.min.js
 %%DATADIR%%/www/js/jqplot.dateAxisRenderer.min.js
 %%DATADIR%%/www/js/jqplot.highlighter.min.js
-%%DATADIR%%/www/js/jquery-ui.min.js
 %%DATADIR%%/www/js/jquery.jqplot.min.js
 %%DATADIR%%/www/js/jquery.min.js
 %%DATADIR%%/www/js/jquery.qtip.min.js
@@ -286,7 +283,6 @@ share/icons/hicolor/scalable/apps/neubot.svg
 @dirrm %%DATADIR%%/www/img
 @dirrm %%DATADIR%%/www/css
 @dirrm %%DATADIR%%/www
-@dirrm %%DATADIR%%/viewer
 @dirrm %%DATADIR%%/utils
 @dirrm %%DATADIR%%/updater
 @dirrm %%DATADIR%%/system
