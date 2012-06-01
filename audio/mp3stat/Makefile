@@ -37,8 +37,7 @@ OPTIONS_DEFAULT=	VORBIS
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_VORBIS)
-.if ${PÖRT_OPTIONS:MVORBIS}
+.if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/mp3stat/input_vorb.so
 .else
