@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -31,28 +31,30 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?
 CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
-		SDL "SDL/X dependency (graphical output)" On \
-		OPENGL "OpenGL dependency" On \
-		GNUTLS "gnutls dependency (vnc encryption)" On \
-		SASL "cyrus-sasl dependency (vnc encryption)" On \
-		JPEG "jpeg dependency (vnc lossy compression)" On \
-		PNG "png dependency (vnc compression)" On \
-		CURL "libcurl dependency (remote images)" On \
-		CDROM_DMA "IDE CDROM DMA" On \
-		PCAP "pcap dependency (networking with bpf)" On \
-		SEABIOS_GIT "add seabios snapshot (-bios bios.bin-1.6.3.1)" On \
-		USBREDIR "usb device network redirection (experimental!)" Off \
-		GNS3 "gns3 patches (udp, promiscuous multicast)" Off \
-		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
-		ALL_TARGETS "Also build bsd-user targets (for testing)" Off
+OPTIONS_DEFINE=	SAMBA SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
+		SEABIOS_GIT USBREDIR GNS3 ADD_AUDIO ALL_TARGETS
+SAMBA_DESC=		"samba dependency (for -smb)"
+GNUTLS_DESC=		"gnutls dependency (vnc encryption)"
+SASL_DESC=		"cyrus-sasl dependency (vnc encryption)"
+JPEG_DESC=		"jpeg dependency (vnc lossy compression)"
+PNG_DESC=		"png dependency (vnc compression)"
+CURL_DESC=		"libcurl dependency (remote images)"
+CDROM_DMA_DESC=		IDE CDROM DMA
+PCAP_DESC=		"pcap dependency (networking with bpf)"
+SEABIOS_GIT_DESC=	"add seabios snapshot (-bios bios.bin-1.6.3.1)"
+USBREDIR_DESC=		"usb device network redirection (experimental!)"
+GNS3_DESC=		"gns3 patches (udp, promiscuous multicast)"
+ADD_AUDIO_DESC=		"Emulate more audio hardware (experimental!)"
+ALL_TARGETS_DESC=	"Also build bsd-user targets (for testing)"
+OPTIONS_DEFAULT=SDL OPENGL GNUTLS SASL JPEG PNG CURL CDROM_DMA PCAP \
+		SEABIOS_GIT
 
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
 PORTDOCS=	docs qemu-doc.html qemu-tech.html
 
-.if defined(WITHOUT_ALL_TARGETS)
+.if empty(PORT_OPTIONS:MALL_TARGETS)
 CONFIGURE_ARGS+=	--disable-bsd-user
 PLIST_SUB+=	ALLTARGETS="@comment "
 .else
@@ -62,7 +64,7 @@ IGNORE=		bsd-user targets not tested on sparc64
 .endif
 .endif
 
-.if defined(WITH_GNS3)
+.if ${PORT_OPTIONS:MGNS3}
 EXTRA_PATCHES+=	${FILESDIR}/hw_e1000_c.patch \
 		${FILESDIR}/net_c.patch \
 		${FILESDIR}/net_h.patch \
@@ -80,67 +82,67 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 	--smbd=${LOCALBASE}/sbin/smbd \
 	--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
-.if defined(WITHOUT_SDL)
+.if empty(PORT_OPTIONS:MSDL)
 CONFIGURE_ARGS+=	--disable-sdl
 .else
 USE_SDL=	sdl
 .endif
 
-.if defined(WITHOUT_GNUTLS)
+.if empty(PORT_OPTIONS:MGNUTLS)
 CONFIGURE_ARGS+=	--disable-vnc-tls
 .else
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
-.if defined(WITHOUT_SASL)
+.if empty(PORT_OPTIONS:MSASL)
 CONFIGURE_ARGS+=	--disable-vnc-sasl
 .else
 LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
-.if defined(WITHOUT_JPEG)
+.if empty(PORT_OPTIONS:MJPEG)
 CONFIGURE_ARGS+=	--disable-vnc-jpeg
 .else
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .endif
 
-.if defined(WITHOUT_PNG)
+.if empty(PORT_OPTIONS:MPNG)
 CONFIGURE_ARGS+=	--disable-vnc-png
 .else
 LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
 .endif
 
-.if defined(WITHOUT_CURL)
+.if empty(PORT_OPTIONS:MCURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
-.if defined(WITHOUT_OPENGL)
+.if empty(PORT_OPTIONS:MOPENGL)
 CONFIGURE_ARGS+=	--disable-opengl
 .else
 USE_GL=		yes
 .endif
 
-.if defined(WITHOUT_USBREDIR)
+.if empty(PORT_OPTIONS:MUSBREDIR)
 CONFIGURE_ARGS+=	--disable-usb-redir
 .else
 LIB_DEPENDS+=	usbredirparser:${PORTSDIR}/net/usbredir
 .endif
 
-.if defined(WITH_PCAP)
+.if ${PORT_OPTIONS:MPCAP}
 CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
-.if defined(WITH_ADD_AUDIO)
+.if ${PORT_OPTIONS:MADD_AUDIO}
 CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus,hda
 .endif
 
-.if defined(WITH_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba35
 .endif
 
-.if defined(WITH_SEABIOS_GIT)
+.if ${PORT_OPTIONS:MSEABIOS_GIT}
 RUN_DEPENDS+=	seabios-devel>=1.6.3.1:${PORTSDIR}/emulators/seabios-devel
 .endif
 
@@ -173,11 +175,11 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 post-patch:
-.if defined(WITH_PCAP)
+.if ${PORT_OPTIONS:MPCAP}
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 	@${REINPLACE_CMD} -f ${FILESDIR}/pcap-client-type.sed ${WRKSRC}/net.h
 .endif
-.if defined(WITHOUT_CDROM_DMA)
+.if empty(PORT_OPTIONS:MCDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
 .endif
 	@${REINPLACE_CMD} -E \
