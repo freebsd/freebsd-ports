@@ -27,21 +27,24 @@ ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-devel-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
-		RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
-		SAMBA "samba dependency (for -smb)" Off \
-		SDL "SDL/X dependency (graphical output)" On \
-		GNUTLS "gnutls dependency (vnc encryption)" On \
-		CURL "libcurl dependency (remote images)" On \
-		PCAP "pcap dependency (networking with bpf)" On \
-		GNS3 "gns3 patches (udp, promiscuous multicast)" On \
-		CDROM_DMA "IDE CDROM DMA" On \
-		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
-		ALL_TARGETS "Also build non-x86 targets" On
+OPTIONS_DEFINE=	KQEMU RTL8139_TIMER SAMBA SDL GNUTLS CURL PCAP GNS3 \
+		CDROM_DMA ADD_AUDIO ALL_TARGETS
+KQEMU_DESC=		"Build with (alpha!) accelerator module"
+RTL8139_TIMER_DESC=	"allow use of re(4) nic with FreeBSD guests"
+SAMBA_DESC=		"samba dependency (for -smb)"
+SDL_DESC=		"SDL/X dependency (graphical output)"
+GNUTLS_DESC=		"gnutls dependency (vnc encryption)"
+CURL_DESC=		"libcurl dependency (remote images)"
+PCAP_DESC=		"pcap dependency (networking with bpf)"
+GNS3_DESC=		"gns3 patches (udp, promiscuous multicast)"
+CDROM_DMA_DESC=		IDE CDROM DMA
+ADD_AUDIO_DESC=		"Emulate more audio hardware (experimental!)"
+ALL_TARGETS_DESC=	Also build non-x86 targets
+OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA ALL_TARGETS
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_ALL_TARGETS)
+.if empty(PORT_OPTIONS:MALL_TARGETS)
 CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
 PLIST_SUB+=	ALLTARGETS="@comment "
 .else
@@ -52,40 +55,40 @@ WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
-.if defined(WITHOUT_SDL)
+.if empty(PORT_OPTIONS:MSDL)
 CONFIGURE_ARGS+=	--disable-sdl
 .else
 USE_SDL=	sdl
 .endif
 
-.if defined(WITHOUT_GNUTLS)
+.if empty(PORT_OPTIONS:MGNUTLS)
 CONFIGURE_ARGS+=	--disable-vnc-tls
 .else
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
-.if defined(WITHOUT_CURL)
+.if empty(PORT_OPTIONS:MCURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
-.if defined(WITH_PCAP)
+.if ${PORT_OPTIONS:MPCAP}
 CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
-.if defined(WITH_ADD_AUDIO)
+.if ${PORT_OPTIONS:MADD_AUDIO}
 CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
 .endif
 
 # XXX
 CONFIGURE_ARGS+=	--disable-bsd-user
 
-.if defined(WITH_SAMBA)
+.if ${PORT_OPTIONS:MSAMBA}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba35
 .endif
 
-.if defined(WITH_KQEMU)
+.if ${PORT_OPTIONS:MKQEMU}
 BUILD_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
 RUN_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
 .else
@@ -117,16 +120,16 @@ pre-patch:
 	done
 
 post-patch:
-.if defined(WITH_RTL8139_TIMER)
+.if ${PORT_OPTIONS:MRTL8139_TIMER}
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
 .endif
-.if defined(WITH_PCAP)
+.if ${PORT_OPTIONS:MPCAP}
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 .endif
-.if defined(WITH_GNS3)
+.if ${PORT_OPTIONS:MGNS3}
 	@cd ${WRKSRC} && ${PATCH} -p1 --quiet < ${FILESDIR}/gns3-patch
 .endif
-.if defined(WITHOUT_CDROM_DMA)
+.if empty(PORT_OPTIONS:MCDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
 .endif
 	@${REINPLACE_CMD} -E \

@@ -1,0 +1,133 @@
+Message-ID: <4FC741F1.4000905@redhat.com>
+Date: Thu, 31 May 2012 12:03:29 +0200
+From: Paolo Bonzini <pbonzini@redhat.com>
+To: Jan Kiszka <jan.kiszka@web.de>
+References: <20120530202311.GA1768@onelab2.iet.unipi.it>
+	<20120530212333.GD2672@onelab2.iet.unipi.it>
+	<4FC69389.8050404@web.de>
+	<CA+hQ2+g-2FdgWnqZUh1-oTZkziq8CTNJ5SeA+aCW32FFF=zi4A@mail.gmail.com>
+	<4FC69B28.1000106@web.de>
+	<CA+hQ2+gA5hZ2Zk-kwPNDVcguBsu2UfNiLxs84MgqBUK_MQuC4g@mail.gmail.com>
+	<4FC71FEB.9030100@redhat.com> <4FC72A95.4040808@web.de>
+In-Reply-To: <4FC72A95.4040808@web.de>
+Cc: Luigi Rizzo <rizzo.unipi@gmail.com>, rizzo@iet.unipi.it,
+	qemu-devel@nongnu.org,
+	Stefano Stabellini <Stefano.Stabellini@eu.citrix.com>
+Subject: Re: [Qemu-devel] Proposed patch: huge RX speedup for hw/e1000.c
+
+Il 31/05/2012 10:23, Jan Kiszka ha scritto:
+>> > @@ -922,6 +923,7 @@ set_rdt(E1000State *s, int index, uint32_t val)
+>> >  {
+>> >      s->check_rxov = 0;
+>> >      s->mac_reg[index] = val & 0xffff;
+>> > +    qemu_notify_event();
+> This still looks like the wrong tool: Packets that can't be delivered
+> are queued.
+
+Packets that are read from the tap but can't be delivered are queued;
+packets that are left on the tap need qemu_notify_event to be flushed.
+
+> So we need to flush the queue and clear the blocked delivery
+> there. qemu_flush_queued_packets appears more appropriate for this.
+
+Right, and qemu_flush_queued_packets needs to call qemu_notify_event
+which makes the call in virtio-net unnecessary.
+
+Paolo
+
+diff --git a/hw/e1000.c b/hw/e1000.c
+index 4573f13..43d933a 100644
+--- a/hw/e1000.c
++++ b/hw/e1000.c
+@@ -295,6 +295,7 @@ set_rx_control(E1000State *s, int index, uint32_t val)
+     s->rxbuf_min_shift = ((val / E1000_RCTL_RDMTS_QUAT) & 3) + 1;
+     DBGOUT(RX, "RCTL: %d, mac_reg[RCTL] = 0x%x\n", s->mac_reg[RDT],
+            s->mac_reg[RCTL]);
++    qemu_flush_queued_packets(&s->nic->nc);
+ }
+ 
+ static void
+@@ -926,6 +927,9 @@ set_rdt(E1000State *s, int index, uint32_t val)
+ {
+     s->check_rxov = 0;
+     s->mac_reg[index] = val & 0xffff;
++    if (e1000_has_rxbufs(s, 1)) {
++        qemu_flush_queued_packets(&s->nic->nc);
++    }
+ }
+ 
+ static void
+diff --git a/hw/virtio-net.c b/hw/virtio-net.c
+index 3f190d4..0974945 100644
+--- a/hw/virtio-net.c
++++ b/hw/virtio-net.c
+@@ -447,10 +447,6 @@ static void virtio_net_handle_rx(VirtIODevice *vdev, VirtQueue *vq)
+     VirtIONet *n = to_virtio_net(vdev);
+ 
+     qemu_flush_queued_packets(&n->nic->nc);
+-
+-    /* We now have RX buffers, signal to the IO thread to break out of the
+-     * select to re-poll the tap file descriptor */
+-    qemu_notify_event();
+ }
+ 
+ static int virtio_net_can_receive(VLANClientState *nc)
+diff --git a/net.c b/net.c
+index 1922d8a..fa846ae 100644
+--- a/net.c
++++ b/net.c
+@@ -491,7 +491,12 @@ void qemu_flush_queued_packets(VLANClientState *vc)
+         queue = vc->send_queue;
+     }
+ 
+-    qemu_net_queue_flush(queue);
++    if (qemu_net_queue_flush(queue)) {
++        /* We emptied the queue successfully, signal to the IO thread to repoll
++         * the file descriptor (for tap, for example).
++         */
++        qemu_notify_event();
++    }
+ }
+ 
+ static ssize_t qemu_send_packet_async_with_flags(VLANClientState *sender,
+diff --git a/net/queue.c b/net/queue.c
+index 1ab5247..fd1c7e6 100644
+--- a/net/queue.c
++++ b/net/queue.c
+@@ -232,7 +232,7 @@ void qemu_net_queue_purge(NetQueue *queue, VLANClientState *from)
+     }
+ }
+ 
+-void qemu_net_queue_flush(NetQueue *queue)
++bool qemu_net_queue_flush(NetQueue *queue)
+ {
+     while (!QTAILQ_EMPTY(&queue->packets)) {
+         NetPacket *packet;
+@@ -248,7 +248,7 @@ void qemu_net_queue_flush(NetQueue *queue)
+                                      packet->size);
+         if (ret == 0) {
+             QTAILQ_INSERT_HEAD(&queue->packets, packet, entry);
+-            break;
++            return 0;
+         }
+ 
+         if (packet->sent_cb) {
+@@ -257,4 +257,5 @@ void qemu_net_queue_flush(NetQueue *queue)
+ 
+         g_free(packet);
+     }
++    return 1;
+ }
+diff --git a/net/queue.h b/net/queue.h
+index a31958e..4bf6d3c 100644
+--- a/net/queue.h
++++ b/net/queue.h
+@@ -66,6 +66,6 @@ ssize_t qemu_net_queue_send_iov(NetQueue *queue,
+                                 NetPacketSent *sent_cb);
+ 
+ void qemu_net_queue_purge(NetQueue *queue, VLANClientState *from);
+-void qemu_net_queue_flush(NetQueue *queue);
++bool qemu_net_queue_flush(NetQueue *queue);
+ 
+ #endif /* QEMU_NET_QUEUE_H */
+
