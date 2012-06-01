@@ -786,6 +786,7 @@
     SUBDIR += rats
     SUBDIR += razorback-api
     SUBDIR += razorback-fileInject
+    SUBDIR += razorback-fsWalk
     SUBDIR += rdigest
     SUBDIR += retranslator
     SUBDIR += revelation
