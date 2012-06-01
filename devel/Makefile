@@ -3678,6 +3678,7 @@
     SUBDIR += rubygem-atoulme-antwrap
     SUBDIR += rubygem-attic
     SUBDIR += rubygem-authlogic
+    SUBDIR += rubygem-awesome_print
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bioruby
