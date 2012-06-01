@@ -7,7 +7,7 @@
 
 PORTNAME=	bbrun
 PORTVERSION=	1.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 USE_XORG=	xpm
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 
 PORTDOCS=	README
 PLIST_FILES=	bin/bbrun
